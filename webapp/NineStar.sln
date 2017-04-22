@@ -1,13 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webapp", "webapp\webapp.csproj", "{52A9C4A6-64FE-4068-A40E-A24D1DC5AB56}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication", "webapp\WebApplication.csproj", "{52A9C4A6-64FE-4068-A40E-A24D1DC5AB56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webapp.Tests", "webapp.Tests\webapp.Tests.csproj", "{D97496B7-28DB-405E-9819-5A57EA8EF4D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication.Tests", "webapp.Tests\WebApplication.Tests.csproj", "{D97496B7-28DB-405E-9819-5A57EA8EF4D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dataaccesslayer", "dataaccesslayer\dataaccesslayer.csproj", "{20948D36-2ABE-4429-B175-AF781A5F6CB3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "dataaccesslayer\DataAccess.csproj", "{20948D36-2ABE-4429-B175-AF781A5F6CB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.Tests", "DataAccess.Tests\DataAccess.Tests.csproj", "{1D9FE8D3-9E9B-45CB-9527-D4171D8A5F35}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{72731317-282B-4F7D-8B1F-8CF8CD00D32D}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		NineStar.vsmdi = NineStar.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
 EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = NineStar.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -25,6 +37,10 @@ Global
 		{20948D36-2ABE-4429-B175-AF781A5F6CB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20948D36-2ABE-4429-B175-AF781A5F6CB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20948D36-2ABE-4429-B175-AF781A5F6CB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D9FE8D3-9E9B-45CB-9527-D4171D8A5F35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D9FE8D3-9E9B-45CB-9527-D4171D8A5F35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D9FE8D3-9E9B-45CB-9527-D4171D8A5F35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D9FE8D3-9E9B-45CB-9527-D4171D8A5F35}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

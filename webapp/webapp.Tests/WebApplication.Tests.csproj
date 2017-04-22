@@ -106,7 +106,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\webapp\webapp.csproj">
+    <ProjectReference Include="..\webapp\WebApplication.csproj">
       <Project>{52A9C4A6-64FE-4068-A40E-A24D1DC5AB56}</Project>
       <Name>webapp</Name>
     </ProjectReference>

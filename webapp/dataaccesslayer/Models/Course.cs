@@ -1,10 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace K9.DataAccess.Models
 {
-	public class Course
+	public class Course : ObjectBase
 	{
-		public int ID { get; set; }
+		[Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+		public new int Id { get; set; }
 		public string Title { get; set; }
 		public int Credits { get; set; }
 

@@ -19,6 +19,7 @@ namespace K9.DataAccess.Database
 		#region Tables
 
 		public DbSet<User> Users { get; set; }
+		public DbSet<Country> Countries { get; set; }
 		public DbSet<Course> Courses { get; set; }
 		public DbSet<Enrollment> Enrollments { get; set; }
 		public DbSet<Student> Students { get; set; }

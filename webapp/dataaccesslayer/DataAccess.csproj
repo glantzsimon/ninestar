@@ -54,13 +54,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\AppConfig.cs" />
+    <Compile Include="Database\Seeds\Schools.cs" />
+    <Compile Include="Database\Seeds\Countries.cs" />
+    <Compile Include="Database\Seeds\UsersAndRoles.cs" />
     <Compile Include="Database\DatabaseInitialiser.cs" />
     <Compile Include="Database\Db.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Enrollment.cs" />
     <Compile Include="Models\ObjectBase.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -20,8 +20,19 @@
 		<h1>@ViewBag.Title</h1>
 	</div>
 	<div class="container text-center">
-		@RenderBody()
+		<div class="row">
+			<div class="col-sm-3 well">
+				@RenderSection("left")
+			</div>
+			<div class="col-sm-7">
+				@RenderSection("middle")
+			</div>
+			<div class="col-sm-2 well">
+				@RenderSection("right")
+			</div>
+		</div>
 	</div>
+	@RenderBody()
 </div>
 <footer class="container-fluid text-center">
 	@Html.Partial("_Footer")

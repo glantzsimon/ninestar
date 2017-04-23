@@ -9,17 +9,14 @@ using WebMatrix.WebData;
 
 namespace K9.DataAccess.Database
 {
-	public class DatabaseInitialiser : DbMigrationsConfiguration<Db>
+	public partial class DatabaseInitialiser : DbMigrationsConfiguration<Db>
 	{
 
 		public DatabaseInitialiser()
 		{
-			AutomaticMigrationsEnabled = true;
-			AutomaticMigrationDataLossAllowed = true;
+			AutomaticMigrationsEnabled = AppConfig.AutomaticMigrationsEnabled;
+			AutomaticMigrationDataLossAllowed = AppConfig.AutomaticMigrationDataLossAllowed;
 		}
-
-
-		#region Main Methods
 
 		public static void InitialiseWebsecurity()
 		{
@@ -31,58 +28,9 @@ namespace K9.DataAccess.Database
 
 		protected override void Seed(Db context)
 		{
-			SeedMemership(context);
+			SeedUsersAndRoles(context);
+			SeedCountries(context);
 		}
-
-		#endregion
-
-
-		#region Membership
-
-		private void SeedMemership(Db context)
-		{
-			SeedSystemUser();
-			SeedRoles();
-			AssignRoles();
-		}
-
-		private void SeedSystemUser()
-		{
-			if (!WebSecurity.UserExists(SystemUser.System))
-			{
-				WebSecurity.CreateUserAndAccount(SystemUser.System, AppConfig.SystemUserPassword, new
-				{
-					EmailAddress = "system@default.net",
-					CreatedBy = SystemUser.System,
-					CreatedOn = DateTime.Now,
-					LastUpdatedBy = SystemUser.System,
-					LastUpdatedOn = DateTime.Now
-				});
-			}
-		}
-
-		private void SeedRoles()
-		{
-			if (!Roles.RoleExists(UserRoles.Administrators))
-			{
-				Roles.CreateRole(UserRoles.Administrators);
-			}
-
-			if (!Roles.RoleExists(UserRoles.PowerUsers))
-			{
-				Roles.CreateRole(UserRoles.PowerUsers);
-			}
-		}
-
-		private void AssignRoles()
-		{
-			if (!Roles.GetRolesForUser(SystemUser.System).Contains(UserRoles.Administrators))
-			{
-				Roles.AddUsersToRoles(new[] { SystemUser.System }, new[] { UserRoles.Administrators });
-			}
-		}
-
-		#endregion
 
 	}
 }

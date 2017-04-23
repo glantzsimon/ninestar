@@ -9,8 +9,8 @@
     <ProjectGuid>{D97496B7-28DB-405E-9819-5A57EA8EF4D6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>webapp.Tests</RootNamespace>
-    <AssemblyName>webapp.Tests</AssemblyName>
+    <RootNamespace>K9.WebApplication.Tests</RootNamespace>
+    <AssemblyName>K9.WebApplication.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

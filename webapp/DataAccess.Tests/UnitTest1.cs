@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DataAccess.Tests
+namespace K9.DataAccess.Tests
 {
 	/// <summary>
 	/// Summary description for UnitTest1

@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace webapp.Controllers
+namespace K9.WebApplication.Controllers
 {
     public class HomeController : Controller
     {

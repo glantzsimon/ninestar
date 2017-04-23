@@ -1,10 +1,5 @@
-﻿
-using System;
-using System.Data.Entity.Migrations;
-using System.Linq;
-using System.Web.Security;
+﻿using System.Data.Entity.Migrations;
 using K9.DataAccess.Config;
-using K9.SharedLibrary.Authentication;
 using WebMatrix.WebData;
 
 namespace K9.DataAccess.Database
@@ -30,6 +25,7 @@ namespace K9.DataAccess.Database
 		{
 			SeedUsersAndRoles(context);
 			SeedCountries(context);
+			SeedSchool(context);
 		}
 
 	}

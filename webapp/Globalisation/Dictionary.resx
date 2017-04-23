@@ -117,11 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CreatedByLabel" xml:space="preserve">
+    <value>Created By</value>
+  </data>
+  <data name="CreatedOnLabel" xml:space="preserve">
+    <value>Created On</value>
+  </data>
   <data name="FieldIsRequired" xml:space="preserve">
     <value>This is a required field.</value>
   </data>
   <data name="FriendlyErrorMessage" xml:space="preserve">
     <value>Sorry, we are having a few problems processing your request. Please try again later.</value>
+  </data>
+  <data name="InvalidEmailAddress" xml:space="preserve">
+    <value>Please enter a valid email address.</value>
+  </data>
+  <data name="LastUpdatedByLabel" xml:space="preserve">
+    <value>Last Updated By</value>
+  </data>
+  <data name="LastUpdatedOnLabel" xml:space="preserve">
+    <value>Last Updated On</value>
+  </data>
+  <data name="NameLabel" xml:space="preserve">
+    <value>Name</value>
   </data>
   <data name="NineStarKiTitle" xml:space="preserve">
     <value>Nine Star Ki</value>

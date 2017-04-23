@@ -61,6 +61,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Created By.
+        /// </summary>
+        public static string CreatedByLabel {
+            get {
+                return ResourceManager.GetString("CreatedByLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Created On.
+        /// </summary>
+        public static string CreatedOnLabel {
+            get {
+                return ResourceManager.GetString("CreatedOnLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This is a required field..
         /// </summary>
         public static string FieldIsRequired {
@@ -75,6 +93,42 @@ namespace K9.Globalisation {
         public static string FriendlyErrorMessage {
             get {
                 return ResourceManager.GetString("FriendlyErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter a valid email address..
+        /// </summary>
+        public static string InvalidEmailAddress {
+            get {
+                return ResourceManager.GetString("InvalidEmailAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last Updated By.
+        /// </summary>
+        public static string LastUpdatedByLabel {
+            get {
+                return ResourceManager.GetString("LastUpdatedByLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last Updated On.
+        /// </summary>
+        public static string LastUpdatedOnLabel {
+            get {
+                return ResourceManager.GetString("LastUpdatedOnLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string NameLabel {
+            get {
+                return ResourceManager.GetString("NameLabel", resourceCulture);
             }
         }
         

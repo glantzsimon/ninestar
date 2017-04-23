@@ -25,7 +25,10 @@ namespace K9.DataAccess.Database
 			{
 				WebSecurity.CreateUserAndAccount(SystemUser.System, AppConfig.SystemUserPassword, new
 				{
-					EmailAddress = "system@default.net",
+					FirstName = "System",
+					LastName = "User",
+					Name = "System User",
+					EmailAddress = "simon@glantzconsulting.co.uk",
 					CreatedBy = SystemUser.System,
 					CreatedOn = DateTime.Now,
 					LastUpdatedBy = SystemUser.System,

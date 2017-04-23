@@ -4,7 +4,7 @@ using Autofac.Integration.Mvc;
 
 namespace K9.WebApplication
 {
-	public static class Starup
+	public static class Startup
 	{
 		public static void Register()
 		{

@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using K9.DataAccess.Database;
 using K9.Globalisation;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Interfaces;
@@ -19,7 +18,7 @@ namespace K9.DataAccess.Models
 		[Key, DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
 		public int Id { get; set; }
 
-		[Required(ErrorMessageResourceType = typeof(K9.Globalisation.Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 		[StringLength(128)]
 		[Index(IsUnique = true)]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NameLabel)]
@@ -31,7 +30,7 @@ namespace K9.DataAccess.Models
 		#region Audit Fields
 
 		[StringLength(255)]
-		[Display(ResourceType = typeof(Dictionary<,>), Name = Strings.Labels.CreatedByLabel)]
+		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CreatedByLabel)]
 		public string CreatedBy { get; set; }
 
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CreatedOnLabel)]

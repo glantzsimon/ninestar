@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using K9.DataAccess.Database;
 using K9.Globalisation;
+using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Interfaces;
 using WebMatrix.WebData;
 

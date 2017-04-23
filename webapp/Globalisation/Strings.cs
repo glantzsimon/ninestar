@@ -1,14 +1,14 @@
 ﻿
 namespace K9.Globalisation
 {
-	public static class Strings
+	public class Strings
 	{
-		public static class ErrorMessages
+		public class ErrorMessages
 		{
 			public const string FieldIsRequired = "FieldIsRequired";
 		}
 
-		public static class Labels
+		public class Labels
 		{
 			public const string NameLabel = "NameLabel";
 			public const string CreatedByLabel = "CreatedByLabel";

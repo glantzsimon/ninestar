@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Mvc;
 using Autofac;
-using System.Web.Mvc;
 using Autofac.Integration.Mvc;
 
-namespace webapp
+namespace K9.WebApplication
 {
 	public static class Starup
 	{

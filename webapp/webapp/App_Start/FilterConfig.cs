@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
-namespace webapp
+namespace K9.WebApplication
 {
 	public class FilterConfig
 	{

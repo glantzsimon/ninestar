@@ -22,7 +22,7 @@ namespace K9.WebApplication
 			builder.RegisterFilterProvider();
 
 			builder.RegisterType<Db>().As<DbContext>();
-			builder.RegisterType<Logger>().As<ILogger>();
+			builder.RegisterType<ILoggerBase>().As<ILogger>();
 			
 			var container = builder.Build();
 			DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

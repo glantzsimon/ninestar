@@ -117,20 +117,47 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AccountNotActivatedError" xml:space="preserve">
+    <value>Votre compte n'a pas encore été activé. Vérifiez votre adresse email. Vous allez recevoir un email de validation.</value>
+  </data>
+  <data name="ConfirmNewPasswordLabel" xml:space="preserve">
+    <value>Confirmer Nouveau Mot de Passe</value>
+  </data>
+  <data name="ConfirmPasswordLabel" xml:space="preserve">
+    <value>Confirmer Mot de Passe</value>
+  </data>
   <data name="CreatedByLabel" xml:space="preserve">
     <value>Crée Par</value>
   </data>
   <data name="CreatedOnLabel" xml:space="preserve">
     <value>Crée Le</value>
   </data>
+  <data name="CurrentPasswordCorrectNewInvalidError" xml:space="preserve">
+    <value>Le mot de passe actuel est incorrect ou le nouveau mot de passe est invalide.</value>
+  </data>
+  <data name="CurrentPasswordLabel" xml:space="preserve">
+    <value>Mot de Passe Actuel</value>
+  </data>
+  <data name="EmailAddressLabel" xml:space="preserve">
+    <value>Adresse Email</value>
+  </data>
+  <data name="EmailIsUnavailableError" xml:space="preserve">
+    <value>Cette adresse e-mail existe déjà.</value>
+  </data>
   <data name="FieldIsRequired" xml:space="preserve">
     <value>Ce champ est obligatoire.</value>
+  </data>
+  <data name="FirstNameLabel" xml:space="preserve">
+    <value>Prénom</value>
   </data>
   <data name="FriendlyErrorMessage" xml:space="preserve">
     <value>Une erreur s'est produite. S'il vous plaît réessayer plus tard.</value>
   </data>
   <data name="InvalidEmailAddress" xml:space="preserve">
     <value>Veuillez entrer une adresse e-mail valide.</value>
+  </data>
+  <data name="LastNameLabel" xml:space="preserve">
+    <value>Nom de Famille</value>
   </data>
   <data name="LastUpdatedByLabel" xml:space="preserve">
     <value>Modifié Par </value>
@@ -141,7 +168,43 @@
   <data name="NameLabel" xml:space="preserve">
     <value>Nom</value>
   </data>
+  <data name="NewPasswordLabel" xml:space="preserve">
+    <value>Nouveau Mot de Passe</value>
+  </data>
+  <data name="NewPasswordMatchError" xml:space="preserve">
+    <value>Le nouveau mot de passe de confirmation ne correspond pas.</value>
+  </data>
   <data name="NineStarKiTitle" xml:space="preserve">
     <value>Nine Star Ki</value>
+  </data>
+  <data name="PasswordLabel" xml:space="preserve">
+    <value>Mode de Passe</value>
+  </data>
+  <data name="PasswordMatchError" xml:space="preserve">
+    <value>Le mot de passe de confirmation de correspond pas.</value>
+  </data>
+  <data name="PasswordMinLengthError" xml:space="preserve">
+    <value>Le {0} doit contenir au moins {2} caractères</value>
+  </data>
+  <data name="PasswordResetEmailSent" xml:space="preserve">
+    <value>Nous vous avons envoyé un email pour réinitialiser votre mot de passe.</value>
+  </data>
+  <data name="PasswordResetFailError" xml:space="preserve">
+    <value>Il n'a pas été possible de réinitialiser votre mot de passe. Nous vous prions de contacter notre service clients.</value>
+  </data>
+  <data name="PhoneNumberLabel" xml:space="preserve">
+    <value>Numéro de Téléphone</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Se souvenir de moi ?</value>
+  </data>
+  <data name="UsernameIsUnavailableError" xml:space="preserve">
+    <value>Cet identifiant n'est pas disponible.</value>
+  </data>
+  <data name="UserNameLabel" xml:space="preserve">
+    <value>Identifiant</value>
+  </data>
+  <data name="UsernamePasswordIncorrectError" xml:space="preserve">
+    <value>Identifiant ou mot de passe invalide.</value>
   </data>
 </root>

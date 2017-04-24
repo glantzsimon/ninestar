@@ -1,6 +1,9 @@
-﻿using System.Web.Mvc;
+﻿using System.Data.Entity;
+using System.Web.Mvc;
 using Autofac;
 using Autofac.Integration.Mvc;
+using K9.DataAccess.Database;
+using NLog;
 
 namespace K9.WebApplication
 {
@@ -16,6 +19,9 @@ namespace K9.WebApplication
 			builder.RegisterModule<AutofacWebTypesModule>();
 			builder.RegisterSource(new ViewRegistrationSource());
 			builder.RegisterFilterProvider();
+
+			builder.RegisterType<Db>().As<DbContext>();
+			builder.RegisterType<Logger>().As<ILogger>();
 
 			var container = builder.Build();
 			DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

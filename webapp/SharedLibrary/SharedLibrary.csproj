@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helpers\ConfigurationFileHelpers.cs" />
+    <Compile Include="Extensions\ConfigurationFileExtensions.cs" />
     <Compile Include="Interfaces\IIdentity.cs" />
     <Compile Include="Authentication\UserRoles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

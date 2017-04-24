@@ -117,20 +117,47 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AccountNotActivatedError" xml:space="preserve">
+    <value>Your account has not yet been activated. Please check your email and follow the link to activate your account.</value>
+  </data>
+  <data name="ConfirmNewPasswordLabel" xml:space="preserve">
+    <value>Confirm New Password</value>
+  </data>
+  <data name="ConfirmPasswordLabel" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
   <data name="CreatedByLabel" xml:space="preserve">
     <value>Created By</value>
   </data>
   <data name="CreatedOnLabel" xml:space="preserve">
     <value>Created On</value>
   </data>
+  <data name="CurrentPasswordCorrectNewInvalidError" xml:space="preserve">
+    <value>The current password is incorrect or the new password is invalid.</value>
+  </data>
+  <data name="CurrentPasswordLabel" xml:space="preserve">
+    <value>Current Password</value>
+  </data>
+  <data name="EmailAddressLabel" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+  <data name="EmailIsUnavailableError" xml:space="preserve">
+    <value>The email address is unavailable.</value>
+  </data>
   <data name="FieldIsRequired" xml:space="preserve">
     <value>This is a required field.</value>
+  </data>
+  <data name="FirstNameLabel" xml:space="preserve">
+    <value>First Name</value>
   </data>
   <data name="FriendlyErrorMessage" xml:space="preserve">
     <value>Sorry, we are having a few problems processing your request. Please try again later.</value>
   </data>
   <data name="InvalidEmailAddress" xml:space="preserve">
     <value>Please enter a valid email address.</value>
+  </data>
+  <data name="LastNameLabel" xml:space="preserve">
+    <value>Last Name</value>
   </data>
   <data name="LastUpdatedByLabel" xml:space="preserve">
     <value>Last Updated By</value>
@@ -141,7 +168,43 @@
   <data name="NameLabel" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="NewPasswordLabel" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="NewPasswordMatchError" xml:space="preserve">
+    <value>The new password and confirmation password do not match.</value>
+  </data>
   <data name="NineStarKiTitle" xml:space="preserve">
     <value>Nine Star Ki</value>
+  </data>
+  <data name="PasswordLabel" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="PasswordMatchError" xml:space="preserve">
+    <value>The password and confirmation password do not match</value>
+  </data>
+  <data name="PasswordMinLengthError" xml:space="preserve">
+    <value>The {0} must be at least {2} characters long.</value>
+  </data>
+  <data name="PasswordResetEmailSent" xml:space="preserve">
+    <value>We've sent you an email with a link to reset your password.</value>
+  </data>
+  <data name="PasswordResetFailError" xml:space="preserve">
+    <value>We are unable to reset your password. Please contact support for further assistance.</value>
+  </data>
+  <data name="PhoneNumberLabel" xml:space="preserve">
+    <value>Telephone Number</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Remember me?</value>
+  </data>
+  <data name="UsernameIsUnavailableError" xml:space="preserve">
+    <value>The username is unavailable.</value>
+  </data>
+  <data name="UserNameLabel" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="UsernamePasswordIncorrectError" xml:space="preserve">
+    <value>The user name or password is incorrect.</value>
   </data>
 </root>

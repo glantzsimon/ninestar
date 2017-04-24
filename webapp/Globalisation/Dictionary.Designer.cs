@@ -61,6 +61,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your account has not yet been activated. Please check your email and follow the link to activate your account..
+        /// </summary>
+        public static string AccountNotActivatedError {
+            get {
+                return ResourceManager.GetString("AccountNotActivatedError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm New Password.
+        /// </summary>
+        public static string ConfirmNewPasswordLabel {
+            get {
+                return ResourceManager.GetString("ConfirmNewPasswordLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm password.
+        /// </summary>
+        public static string ConfirmPasswordLabel {
+            get {
+                return ResourceManager.GetString("ConfirmPasswordLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Created By.
         /// </summary>
         public static string CreatedByLabel {
@@ -79,11 +106,56 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The current password is incorrect or the new password is invalid..
+        /// </summary>
+        public static string CurrentPasswordCorrectNewInvalidError {
+            get {
+                return ResourceManager.GetString("CurrentPasswordCorrectNewInvalidError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current Password.
+        /// </summary>
+        public static string CurrentPasswordLabel {
+            get {
+                return ResourceManager.GetString("CurrentPasswordLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email Address.
+        /// </summary>
+        public static string EmailAddressLabel {
+            get {
+                return ResourceManager.GetString("EmailAddressLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The email address is unavailable..
+        /// </summary>
+        public static string EmailIsUnavailableError {
+            get {
+                return ResourceManager.GetString("EmailIsUnavailableError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This is a required field..
         /// </summary>
         public static string FieldIsRequired {
             get {
                 return ResourceManager.GetString("FieldIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to First Name.
+        /// </summary>
+        public static string FirstNameLabel {
+            get {
+                return ResourceManager.GetString("FirstNameLabel", resourceCulture);
             }
         }
         
@@ -102,6 +174,15 @@ namespace K9.Globalisation {
         public static string InvalidEmailAddress {
             get {
                 return ResourceManager.GetString("InvalidEmailAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last Name.
+        /// </summary>
+        public static string LastNameLabel {
+            get {
+                return ResourceManager.GetString("LastNameLabel", resourceCulture);
             }
         }
         
@@ -133,11 +214,119 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New Password.
+        /// </summary>
+        public static string NewPasswordLabel {
+            get {
+                return ResourceManager.GetString("NewPasswordLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The new password and confirmation password do not match..
+        /// </summary>
+        public static string NewPasswordMatchError {
+            get {
+                return ResourceManager.GetString("NewPasswordMatchError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nine Star Ki.
         /// </summary>
         public static string NineStarKiTitle {
             get {
                 return ResourceManager.GetString("NineStarKiTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        public static string PasswordLabel {
+            get {
+                return ResourceManager.GetString("PasswordLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The password and confirmation password do not match.
+        /// </summary>
+        public static string PasswordMatchError {
+            get {
+                return ResourceManager.GetString("PasswordMatchError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The {0} must be at least {2} characters long..
+        /// </summary>
+        public static string PasswordMinLengthError {
+            get {
+                return ResourceManager.GetString("PasswordMinLengthError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We&apos;ve sent you an email with a link to reset your password..
+        /// </summary>
+        public static string PasswordResetEmailSent {
+            get {
+                return ResourceManager.GetString("PasswordResetEmailSent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We are unable to reset your password. Please contact support for further assistance..
+        /// </summary>
+        public static string PasswordResetFailError {
+            get {
+                return ResourceManager.GetString("PasswordResetFailError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telephone Number.
+        /// </summary>
+        public static string PhoneNumberLabel {
+            get {
+                return ResourceManager.GetString("PhoneNumberLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remember me?.
+        /// </summary>
+        public static string RememberMe {
+            get {
+                return ResourceManager.GetString("RememberMe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The username is unavailable..
+        /// </summary>
+        public static string UsernameIsUnavailableError {
+            get {
+                return ResourceManager.GetString("UsernameIsUnavailableError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Name.
+        /// </summary>
+        public static string UserNameLabel {
+            get {
+                return ResourceManager.GetString("UserNameLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The user name or password is incorrect..
+        /// </summary>
+        public static string UsernamePasswordIncorrectError {
+            get {
+                return ResourceManager.GetString("UsernamePasswordIncorrectError", resourceCulture);
             }
         }
     }

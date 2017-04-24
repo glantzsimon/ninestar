@@ -1,0 +1,10 @@
+﻿@{
+	ViewBag.Title = Dictionary.AccountCreatedSuccessfully;
+}
+
+<h1>@ViewBag.Title</h1>
+
+<p>
+	@this.GetViewBagProperty(ViewBagProperty.Message)
+	@Html.ValidationSummary(true)
+</p>

@@ -142,7 +142,7 @@
     <value>Adresse Email</value>
   </data>
   <data name="EmailIsUnavailableError" xml:space="preserve">
-    <value>Cette adresse e-mail existe déjà.</value>
+    <value>Cette adresse email existe déjà.</value>
   </data>
   <data name="FieldIsRequired" xml:space="preserve">
     <value>Ce champ est obligatoire.</value>
@@ -154,7 +154,7 @@
     <value>Une erreur s'est produite. S'il vous plaît réessayer plus tard.</value>
   </data>
   <data name="InvalidEmailAddress" xml:space="preserve">
-    <value>Veuillez entrer une adresse e-mail valide.</value>
+    <value>Veuillez entrer une adresse email valide.</value>
   </data>
   <data name="LastNameLabel" xml:space="preserve">
     <value>Nom de Famille</value>
@@ -206,5 +206,75 @@
   </data>
   <data name="UsernamePasswordIncorrectError" xml:space="preserve">
     <value>Identifiant ou mot de passe invalide.</value>
+  </data>
+  <data name="AccountActivatedSuccessfully" xml:space="preserve">
+    <value>Votre compte a été activé avec succès.</value>
+  </data>
+  <data name="AccountActivationFailed" xml:space="preserve">
+    <value>Il n'a pas été possible d'activer votre compte. Merci de contacter le support.</value>
+  </data>
+  <data name="AccountActivationTitle" xml:space="preserve">
+    <value>Activation de Compte</value>
+  </data>
+  <data name="AccountAlreadyActivated" xml:space="preserve">
+    <value>Votre compte a déjà été activé.</value>
+  </data>
+  <data name="AccountCreatedSuccessfully" xml:space="preserve">
+    <value>Votre compte a été créé avec succès.</value>
+  </data>
+  <data name="ClientServices" xml:space="preserve">
+    <value>Service Clients</value>
+  </data>
+  <data name="ExternalLoginRemovedConfirmation" xml:space="preserve">
+    <value>L'identifiant externe a été supprimé de votre compte.</value>
+  </data>
+  <data name="InvalidEmailError" xml:space="preserve">
+    <value>L'adresse email est invalide. Merci d'essayer de nouveau.</value>
+  </data>
+  <data name="InvalidPasswordEnteredError" xml:space="preserve">
+    <value>Le mot de passe est incorrecte.</value>
+  </data>
+  <data name="InvalidPasswordRetreivalError" xml:space="preserve">
+    <value>La réponse à la question de récuperation de mot de passe est incorrecte. Merci d'essayer de nouveau.</value>
+  </data>
+  <data name="InvalidRetrievalQuestionError" xml:space="preserve">
+    <value>La question de récuperation de mot de passe est incorrecte. Merci d'essayer de nouveau.</value>
+  </data>
+  <data name="InvalidUsernameError" xml:space="preserve">
+    <value>L'identifiant que vous avez saisi est invalide. Veuillez essayer de nouveau.</value>
+  </data>
+  <data name="PasswordHasChangedConfirmation" xml:space="preserve">
+    <value>Votre mot de passe a été actualisé.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PasswordResetEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>templates\fr\passwordresetemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PasswordResetTitle" xml:space="preserve">
+    <value>Réinitialiser Mot de Passe</value>
+  </data>
+  <data name="PasswordSetConfirmation" xml:space="preserve">
+    <value>Votre mot de masse a été actualisé.</value>
+  </data>
+  <data name="ProviderError" xml:space="preserve">
+    <value>Le service d'authentification a renvoyé une erreur. Merci d'essayer de nouveau.</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>S'inscrire</value>
+  </data>
+  <data name="SupportQuery" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>templates\fr\supportquery.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="UserNameEmailExistsError" xml:space="preserve">
+    <value>Cette adresse email existe déjà. Merci d'en choisir un autre.</value>
+  </data>
+  <data name="UsernameExistsError" xml:space="preserve">
+    <value>Cet identifiant existe déjà. Merci d'en choisir un autre.</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Bievenue</value>
+  </data>
+  <data name="WelcomeEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>templates\fr\welcomeemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

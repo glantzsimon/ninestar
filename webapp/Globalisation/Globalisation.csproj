@@ -72,6 +72,17 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Templates\en-gb\PasswordResetEmail.htm" />
+    <Content Include="Templates\en-gb\SupportQuery.htm" />
+    <Content Include="Templates\en-gb\WelcomeEmail.htm" />
+    <Content Include="Templates\fr\PasswordResetEmail.htm" />
+    <Content Include="Templates\fr\SupportQuery.htm" />
+    <Content Include="Templates\fr\WelcomeEmail.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

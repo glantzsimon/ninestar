@@ -1,0 +1,33 @@
+﻿@model LoginModel
+
+@using (Html.BeginAjaxFormEx("#loginForms", title: Dictionary.Login))
+ {
+	@Html.AntiForgeryToken()
+	using (Html.BeginFieldsetGroup())
+{
+		<div class="editor-label">
+			@Html.LabelFor(model => model.UserName)
+		</div>
+		<div class="editor-field">
+			@Html.KendoTextBoxFor(model => model.UserName)
+		</div>
+		<div class="editor-label">
+			@Html.LabelFor(model => model.Password)
+		</div>
+		<div class="editor-field">
+			@Html.KendoPasswordFor(model => model.Password)
+		</div>
+		<div class="editor-field">					
+			@Html.CheckBoxFor(model => model.RememberMe)
+			@Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+		</div>
+		<input type="submit" value="@Dictionary.Login" />
+	}
+	@Html.ValidationSummary(true)
+	<div class="bottom">
+		@Dictionary.ForgottenPasswordQuestion @Html.ActionLink(Dictionary.ResetPassword, "PasswordResetRequest")
+		<br />
+		<br />
+        @Html.ActionLink(Dictionary.Register, "Register") @Dictionary.IfNoAccount
+    </div>
+ }

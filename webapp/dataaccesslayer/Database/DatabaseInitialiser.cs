@@ -17,7 +17,7 @@ namespace K9.DataAccess.Database
 		{
 			if (!WebSecurity.Initialized)
 			{
-				WebSecurity.InitializeDatabaseConnection("DefaultConnection", "User", "Id", "UserName", autoCreateTables: true);
+				WebSecurity.InitializeDatabaseConnection("DefaultConnection", "User", "Id", "UserName", true);
 			}
 		}
 

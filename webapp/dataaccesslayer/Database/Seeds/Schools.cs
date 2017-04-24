@@ -27,13 +27,13 @@ namespace K9.DataAccess.Database
 			context.SaveChanges();
 			var courses = new List<Course>
             {
-            new Course{Id=1050,Title="Chemistry",Credits=3,},
-            new Course{Id=4022,Title="Microeconomics",Credits=3,},
-            new Course{Id=4041,Title="Macroeconomics",Credits=3,},
-            new Course{Id=1045,Title="Calculus",Credits=4,},
-            new Course{Id=3141,Title="Trigonometry",Credits=4,},
-            new Course{Id=2021,Title="Composition",Credits=3,},
-            new Course{Id=2042,Title="Literature",Credits=4,}
+            new Course{Id=1050,Title="Chemistry",Credits=3},
+            new Course{Id=4022,Title="Microeconomics",Credits=3},
+            new Course{Id=4041,Title="Macroeconomics",Credits=3},
+            new Course{Id=1045,Title="Calculus",Credits=4},
+            new Course{Id=3141,Title="Trigonometry",Credits=4},
+            new Course{Id=2021,Title="Composition",Credits=3},
+            new Course{Id=2042,Title="Literature",Credits=4}
             };
 			courses.ForEach(s => context.Courses.Add(s));
 			context.SaveChanges();
@@ -46,11 +46,11 @@ namespace K9.DataAccess.Database
             new Enrollment{StudentId=2,CourseId=3141,Grade=Grade.F},
             new Enrollment{StudentId=2,CourseId=2021,Grade=Grade.F},
             new Enrollment{StudentId=3,CourseId=1050},
-            new Enrollment{StudentId=4,CourseId=1050,},
+            new Enrollment{StudentId=4,CourseId=1050},
             new Enrollment{StudentId=4,CourseId=4022,Grade=Grade.F},
             new Enrollment{StudentId=5,CourseId=4041,Grade=Grade.C},
             new Enrollment{StudentId=6,CourseId=1045},
-            new Enrollment{StudentId=7,CourseId=3141,Grade=Grade.A},
+            new Enrollment{StudentId=7,CourseId=3141,Grade=Grade.A}
             };
 			enrollments.ForEach(s => context.Enrollments.Add(s));
 			context.SaveChanges();

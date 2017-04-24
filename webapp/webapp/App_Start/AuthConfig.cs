@@ -1,4 +1,5 @@
 ﻿
+using K9.DataAccess.Database;
 using K9.WebApplication.Config;
 using Microsoft.Web.WebPages.OAuth;
 
@@ -8,7 +9,7 @@ namespace K9.WebApplication
 	{
 		public static void InitialiseWebSecurity()
 		{
-			DataAccess.Database.DatabaseInitialiser.InitialiseWebsecurity();
+			DatabaseInitialiser.InitialiseWebsecurity();
 
 			OAuthWebSecurity.RegisterFacebookClient(AppConfig.FacebookAppId, AppConfig.FacebookAppSecret);
 			OAuthWebSecurity.RegisterGoogleClient();

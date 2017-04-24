@@ -61,11 +61,65 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your account was activated successfully..
+        /// </summary>
+        public static string AccountActivatedSuccessfully {
+            get {
+                return ResourceManager.GetString("AccountActivatedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your account could not be activated. Please email our support team for further information..
+        /// </summary>
+        public static string AccountActivationFailed {
+            get {
+                return ResourceManager.GetString("AccountActivationFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account Activation.
+        /// </summary>
+        public static string AccountActivationTitle {
+            get {
+                return ResourceManager.GetString("AccountActivationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your account has already been activated..
+        /// </summary>
+        public static string AccountAlreadyActivated {
+            get {
+                return ResourceManager.GetString("AccountAlreadyActivated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your account was created successfully..
+        /// </summary>
+        public static string AccountCreatedSuccessfully {
+            get {
+                return ResourceManager.GetString("AccountCreatedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your account has not yet been activated. Please check your email and follow the link to activate your account..
         /// </summary>
         public static string AccountNotActivatedError {
             get {
                 return ResourceManager.GetString("AccountNotActivatedError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Client Services.
+        /// </summary>
+        public static string ClientServices {
+            get {
+                return ResourceManager.GetString("ClientServices", resourceCulture);
             }
         }
         
@@ -142,6 +196,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The external login was removed..
+        /// </summary>
+        public static string ExternalLoginRemovedConfirmation {
+            get {
+                return ResourceManager.GetString("ExternalLoginRemovedConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This is a required field..
         /// </summary>
         public static string FieldIsRequired {
@@ -174,6 +237,51 @@ namespace K9.Globalisation {
         public static string InvalidEmailAddress {
             get {
                 return ResourceManager.GetString("InvalidEmailAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The email address provided is invalid. Please check the value and try again..
+        /// </summary>
+        public static string InvalidEmailError {
+            get {
+                return ResourceManager.GetString("InvalidEmailError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The password provided is invalid. Please enter a valid password..
+        /// </summary>
+        public static string InvalidPasswordEnteredError {
+            get {
+                return ResourceManager.GetString("InvalidPasswordEnteredError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The password retrieval answer provided is invalid. Please check the value and try again..
+        /// </summary>
+        public static string InvalidPasswordRetreivalError {
+            get {
+                return ResourceManager.GetString("InvalidPasswordRetreivalError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The password retrieval question provided is invalid. Please check the value and try again..
+        /// </summary>
+        public static string InvalidRetrievalQuestionError {
+            get {
+                return ResourceManager.GetString("InvalidRetrievalQuestionError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The user name provided is invalid. Please check and try again..
+        /// </summary>
+        public static string InvalidUsernameError {
+            get {
+                return ResourceManager.GetString("InvalidUsernameError", resourceCulture);
             }
         }
         
@@ -241,6 +349,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your password has been changed..
+        /// </summary>
+        public static string PasswordHasChangedConfirmation {
+            get {
+                return ResourceManager.GetString("PasswordHasChangedConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string PasswordLabel {
@@ -268,6 +385,38 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///
+        ///&lt;head&gt;
+        ///    &lt;title&gt;{Title}&lt;/title&gt;
+        ///&lt;/head&gt;
+        ///
+        ///&lt;style type=&quot;text/css&quot;&gt;
+        ///    html
+        ///    {
+        ///        margin: 0;
+        ///		padding: 0;
+        ///		font-family: &quot;Segoe UI&quot; , Verdana, Helvetica, Sans-Serif;
+        ///		font-size: 100%;
+        ///		text-rendering: optimizeLegibility !important;
+        ///		-webkit-font-smoothing: antialiased !important;
+        ///        margin: 0; 
+        ///        color: #333;
+        ///    }
+        ///&lt;/style&gt;
+        ///
+        ///&lt;body&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;Dear {FirstName},&lt;/p&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;Your password has been reset. Please [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string PasswordResetEmail {
+            get {
+                return ResourceManager.GetString("PasswordResetEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to We&apos;ve sent you an email with a link to reset your password..
         /// </summary>
         public static string PasswordResetEmailSent {
@@ -286,6 +435,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Password Reset.
+        /// </summary>
+        public static string PasswordResetTitle {
+            get {
+                return ResourceManager.GetString("PasswordResetTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your password has been set..
+        /// </summary>
+        public static string PasswordSetConfirmation {
+            get {
+                return ResourceManager.GetString("PasswordSetConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Telephone Number.
         /// </summary>
         public static string PhoneNumberLabel {
@@ -295,11 +462,74 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The authentication provider returned an error. Please try again..
+        /// </summary>
+        public static string ProviderError {
+            get {
+                return ResourceManager.GetString("ProviderError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register.
+        /// </summary>
+        public static string Register {
+            get {
+                return ResourceManager.GetString("Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remember me?.
         /// </summary>
         public static string RememberMe {
             get {
                 return ResourceManager.GetString("RememberMe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; &gt;
+        ///
+        ///&lt;head&gt;
+        ///    &lt;title&gt;Puppydog Software&lt;/title&gt;
+        ///&lt;/head&gt;
+        ///
+        ///&lt;style type=&quot;text/css&quot;&gt;
+        ///    .text
+        ///    {{
+        ///        font-family: lucida grande, Segoe UI, arial, verdana, lucida sans unicode, tahoma, sans-serif; 
+        ///        margin: 0; 
+        ///        font-size: 10pt; 
+        ///        color: #333399;
+        ///        padding-bottom: 12px;
+        ///    }}
+        ///    .title
+        ///    {{
+        ///    [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string SupportQuery {
+            get {
+                return ResourceManager.GetString("SupportQuery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to That email address already is already in use. Please enter a different one..
+        /// </summary>
+        public static string UserNameEmailExistsError {
+            get {
+                return ResourceManager.GetString("UserNameEmailExistsError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User name already exists. Please enter a different user name..
+        /// </summary>
+        public static string UsernameExistsError {
+            get {
+                return ResourceManager.GetString("UsernameExistsError", resourceCulture);
             }
         }
         
@@ -327,6 +557,47 @@ namespace K9.Globalisation {
         public static string UsernamePasswordIncorrectError {
             get {
                 return ResourceManager.GetString("UsernamePasswordIncorrectError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome.
+        /// </summary>
+        public static string Welcome {
+            get {
+                return ResourceManager.GetString("Welcome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///
+        ///&lt;head&gt;
+        ///    &lt;title&gt;{Title}&lt;/title&gt;
+        ///&lt;/head&gt;
+        ///
+        ///&lt;style type=&quot;text/css&quot;&gt;
+        ///    html
+        ///    {
+        ///        margin: 0;
+        ///		padding: 0;
+        ///		font-family: &quot;Segoe UI&quot; , Verdana, Helvetica, Sans-Serif;
+        ///		font-size: 100%;
+        ///		text-rendering: optimizeLegibility !important;
+        ///		-webkit-font-smoothing: antialiased !important;
+        ///        margin: 0; 
+        ///        color: #333;
+        ///    }
+        ///&lt;/style&gt;
+        ///
+        ///&lt;body&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;Dear {FirstName},&lt;/p&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;Thank you for registering with {Comp [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string WelcomeEmail {
+            get {
+                return ResourceManager.GetString("WelcomeEmail", resourceCulture);
             }
         }
     }

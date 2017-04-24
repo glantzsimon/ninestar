@@ -1,5 +1,6 @@
 ﻿
 using System.Data.Entity.Migrations;
+using K9.DataAccess.Database;
 
 namespace K9.WebApplication
 {
@@ -7,7 +8,7 @@ namespace K9.WebApplication
 	{
 		public static void InitialiseDatabase()
 		{
-			var migrator = new DbMigrator(new K9.DataAccess.Database.DatabaseInitialiser());
+			var migrator = new DbMigrator(new DatabaseInitialiser());
 			migrator.Update();
 		}
 	}

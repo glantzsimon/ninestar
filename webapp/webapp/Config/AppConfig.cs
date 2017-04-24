@@ -14,5 +14,15 @@ namespace K9.WebApplication.Config
 		{
 			get { return ConfigurationManager.AppSettings.GetValue("FacebookAppSecret"); }
 		}
+
+		public static string CompanyLogoUrl
+		{
+			get { return ConfigurationManager.AppSettings.GetValue("CompanyLogoUrl"); }
+		}
+
+		public static string CompanyName
+		{
+			get { return ConfigurationManager.AppSettings.GetValue("CompanyName"); }
+		}
 	}
 }

@@ -14,7 +14,7 @@ namespace K9.DataAccess.Models
 
 		#region Properties
 
-		[Key, DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+		[Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int Id { get; set; }
 
 		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]

@@ -72,7 +72,7 @@ namespace K9.DataAccess.Models
 			[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 			[DataType(DataType.Password)]
 			[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ConfirmPasswordLabel)]
-			[EqualToAttribute("Password", ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.PasswordMatchError)]
+			[EqualTo("Password", ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.PasswordMatchError)]
 			public string ConfirmPassword { get; set; }
 
 			[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
@@ -85,7 +85,7 @@ namespace K9.DataAccess.Models
 			{
 				get
 				{
-					return string.Format("{0} {1}", this.Firstame, this.LastName);
+					return string.Format("{0} {1}", Firstame, LastName);
 				}
 			}
 
@@ -129,7 +129,7 @@ namespace K9.DataAccess.Models
 			[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 			[DataType(DataType.Password)]
 			[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ConfirmPasswordLabel)]
-			[EqualToAttribute("NewPassword", ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.PasswordMatchError)]
+			[EqualTo("NewPassword", ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.PasswordMatchError)]
 			public string ConfirmPassword { get; set; }
 
 			public string Token { get; set; }

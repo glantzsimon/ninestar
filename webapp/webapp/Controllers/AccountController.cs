@@ -124,7 +124,9 @@ namespace K9.WebApplication.Controllers
 							new
 							{
 								model.EmailAddress,
-								FirstName = model.Firstame, model.LastName, model.PhoneNumber,
+								FirstName = model.Firstame,
+								model.LastName,
+								model.PhoneNumber,
 								CreatedBy = SystemUser.System,
 								CreatedOn = DateTime.Now,
 								LastUpdatedBy = SystemUser.System,
@@ -499,7 +501,7 @@ namespace K9.WebApplication.Controllers
 		public ActionResult AccountCreated(string userName)
 		{
 			var userId = WebSecurity.GetUserId(userName);
-			
+
 			if (!_db.Exists<User>(userId))
 			{
 				ModelState.AddModelError("", Dictionary.InvalidUsernameError);
@@ -516,7 +518,7 @@ namespace K9.WebApplication.Controllers
 		public ActionResult AccountActivated(string userName, string token)
 		{
 			var userId = WebSecurity.GetUserId(userName);
-			
+
 			if (!_db.Exists<User>(userId))
 			{
 				ModelState.AddModelError("", Dictionary.InvalidUsernameError);
@@ -531,7 +533,7 @@ namespace K9.WebApplication.Controllers
 			}
 			else
 			{
-				ViewBag.Message = Dictionary.AccountActivatedSuccessfully);
+				ViewBag.Message = Dictionary.AccountActivatedSuccessfully;
 			}
 
 			return View();
@@ -550,7 +552,7 @@ namespace K9.WebApplication.Controllers
 			}
 			else
 			{
-				return RedirectToAction("AccountActivated", "Account", new {userName, token });
+				return RedirectToAction("AccountActivated", "Account", new { userName, token });
 			}
 
 			return View();

@@ -10,6 +10,14 @@ namespace K9.DataAccess.Models
 		public string FirstMidName { get; set; }
 		public DateTime EnrollmentDate { get; set; }
 
+		public new string Name
+		{
+			get
+			{
+				return string.Format("{0} {1}", FirstMidName, LastName);
+			}
+		}
+
 		public virtual ICollection<Enrollment> Enrollments { get; set; }
 	}
 }

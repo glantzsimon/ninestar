@@ -1,18 +1,11 @@
-﻿using System.Data.Entity.Migrations;
-using K9.DataAccess.Config;
-using K9.DataAccess.Database.Seeds;
+﻿using System.Data.Entity;
 using WebMatrix.WebData;
+using K9.DataAccess.Database.Seeds;
 
 namespace K9.DataAccess.Database
 {
-	public class DatabaseInitialiser : DbMigrationsConfiguration<Db>
+	public class DatabaseInitialiserRecreate : DropCreateDatabaseIfModelChanges<Db>
 	{
-
-		public DatabaseInitialiser()
-		{
-			AutomaticMigrationsEnabled = AppConfig.AutomaticMigrationsEnabled;
-			AutomaticMigrationDataLossAllowed = AppConfig.AutomaticMigrationDataLossAllowed;
-		}
 
 		public static void InitialiseWebsecurity()
 		{

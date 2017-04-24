@@ -1,25 +1,23 @@
-﻿
-using System;
-using System.Data.Entity.Migrations;
+﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Security;
 using K9.DataAccess.Config;
 using K9.SharedLibrary.Authentication;
 using WebMatrix.WebData;
 
-namespace K9.DataAccess.Database
+namespace K9.DataAccess.Database.Seeds
 {
-	public partial class DatabaseInitialiser : DbMigrationsConfiguration<Db>
+	public static class UsersAndRolesSeeder
 	{
-
-		private void SeedUsersAndRoles(Db context)
+		public static void SeedUsersAndRoles(DbContext context)
 		{
 			SeedSystemUser();
 			SeedRoles();
 			AssignRoles();
 		}
 
-		private void SeedSystemUser()
+		private static void SeedSystemUser()
 		{
 			if (!WebSecurity.UserExists(SystemUser.System))
 			{
@@ -37,7 +35,7 @@ namespace K9.DataAccess.Database
 			}
 		}
 
-		private void SeedRoles()
+		private static void SeedRoles()
 		{
 			if (!Roles.RoleExists(UserRoles.Administrators))
 			{
@@ -50,7 +48,7 @@ namespace K9.DataAccess.Database
 			}
 		}
 
-		private void AssignRoles()
+		private static void AssignRoles()
 		{
 			if (!Roles.GetRolesForUser(SystemUser.System).Contains(UserRoles.Administrators))
 			{

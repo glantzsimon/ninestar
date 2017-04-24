@@ -11,6 +11,11 @@ namespace K9.DataAccess.Models
 		public string Title { get; set; }
 		public int Credits { get; set; }
 
+		public new string Name
+		{
+			get { return Title; }
+		}
+
 		public virtual ICollection<Enrollment> Enrollments { get; set; }
 	}
 }

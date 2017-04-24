@@ -222,8 +222,14 @@
   <data name="AccountCreatedSuccessfully" xml:space="preserve">
     <value>Your account was created successfully.</value>
   </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
   <data name="ClientServices" xml:space="preserve">
     <value>Client Services</value>
+  </data>
+  <data name="DefaultAuthError" xml:space="preserve">
+    <value>An unknown error occurred. Please verify your entry and try again. If the problem persists, please contact support.</value>
   </data>
   <data name="ExternalLoginRemovedConfirmation" xml:space="preserve">
     <value>The external login was removed.</value>
@@ -270,6 +276,9 @@
   </data>
   <data name="UsernameExistsError" xml:space="preserve">
     <value>User name already exists. Please enter a different user name.</value>
+  </data>
+  <data name="UserRejectedError" xml:space="preserve">
+    <value>The user creation request has been canceled. Please verify your entry and try again. If the problem persists, please contact support.</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Welcome</value>

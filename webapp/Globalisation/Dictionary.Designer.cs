@@ -115,6 +115,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change Password.
+        /// </summary>
+        public static string ChangePassword {
+            get {
+                return ResourceManager.GetString("ChangePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Client Services.
         /// </summary>
         public static string ClientServices {
@@ -174,6 +183,15 @@ namespace K9.Globalisation {
         public static string CurrentPasswordLabel {
             get {
                 return ResourceManager.GetString("CurrentPasswordLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An unknown error occurred. Please verify your entry and try again. If the problem persists, please contact support..
+        /// </summary>
+        public static string DefaultAuthError {
+            get {
+                return ResourceManager.GetString("DefaultAuthError", resourceCulture);
             }
         }
         
@@ -557,6 +575,15 @@ namespace K9.Globalisation {
         public static string UsernamePasswordIncorrectError {
             get {
                 return ResourceManager.GetString("UsernamePasswordIncorrectError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The user creation request has been canceled. Please verify your entry and try again. If the problem persists, please contact support..
+        /// </summary>
+        public static string UserRejectedError {
+            get {
+                return ResourceManager.GetString("UserRejectedError", resourceCulture);
             }
         }
         

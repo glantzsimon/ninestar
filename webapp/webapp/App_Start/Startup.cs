@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Web.Mvc;
 using Autofac;
 using Autofac.Integration.Mvc;
@@ -9,7 +10,7 @@ namespace K9.WebApplication
 {
 	public static class Startup
 	{
-		public static void Register()
+		public static void RegisterTypes()
 		{
 			var builder = new ContainerBuilder();
 
@@ -22,7 +23,7 @@ namespace K9.WebApplication
 
 			builder.RegisterType<Db>().As<DbContext>();
 			builder.RegisterType<Logger>().As<ILogger>();
-
+			
 			var container = builder.Build();
 			DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
 		}

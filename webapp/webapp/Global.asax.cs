@@ -10,15 +10,18 @@ namespace K9.WebApplication
 	{
 		protected void Application_Start()
 		{
-			AuthConfig.InitialiseWebSecurity();
-			DataConfig.InitialiseDatabase();
 			AreaRegistration.RegisterAllAreas();
 
 			WebApiConfig.Register(GlobalConfiguration.Configuration);
 			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
-			Startup.Register();
+			
+			Startup.RegisterTypes();
+			
+			AuthConfig.InitialiseWebSecurity();
+			DataConfig.InitialiseDatabase();
+			
 		}
 	}
 }

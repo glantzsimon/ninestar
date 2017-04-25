@@ -50,7 +50,7 @@ namespace K9.WebApplication.Controllers
 		#region Views
 
 		[Authorize]
-		[OutputCache(CacheProfile = SiteConstants.CacheProfiles.Moderate, VaryByParam = "page", VaryByHeader = "Accept-Language")]
+		[OutputCache(CacheProfile = Site.CacheProfiles.Moderate, VaryByParam = "page", VaryByHeader = "Accept-Language")]
 		public ActionResult Index()
 		{
 			return View("Index");

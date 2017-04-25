@@ -1,0 +1,14 @@
+﻿@model UserAccount.LoginModel
+@using K9.WebApplication.Extensions
+@{
+	ViewBag.Title = "Index";
+}
+@using (Html.BeginForm("Manage", "Account"))
+{
+	using (Html.BeginBootstrapForm(Dictionary.PasswordResetTitle))
+	{
+		@Html.BootstrapFormGroupFor(model => model.UserName)
+		@Html.BootstrapFormGroupFor(model => model.Password)
+		@Html.BootstrapButton(Dictionary.ChangePassword)
+	}
+}

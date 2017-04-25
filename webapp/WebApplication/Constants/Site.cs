@@ -1,7 +1,7 @@
 ﻿
 namespace K9.WebApplication.Constants
 {
-	public class SiteConstants
+	public class Site
 	{
 
 		public class CacheProfiles

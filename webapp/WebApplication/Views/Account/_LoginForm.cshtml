@@ -1,9 +1,8 @@
-﻿@model LoginModel
+﻿@model UserAccount.LoginModel
 
-@using (Html.BeginAjaxFormEx("#loginForms", title: Dictionary.Login))
+@using (Html.BeginForm())
  {
 	@Html.AntiForgeryToken()
-	using (Html.BeginFieldsetGroup())
 {
 		<div class="editor-label">
 			@Html.LabelFor(model => model.UserName)

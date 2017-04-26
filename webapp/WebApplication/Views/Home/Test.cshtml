@@ -7,8 +7,9 @@
 {
 	using (Html.BeginBootstrapForm(Dictionary.PasswordResetTitle))
 	{
-		@Html.BootstrapFormGroupFor(model => model.UserName)
-		@Html.BootstrapFormGroupFor(model => model.Password)
+		@Html.EditorFor(model => model.UserName)
+		@Html.EditorFor(model => model.Password)
+		@Html.EditorFor(model => model.RememberMe)
 		@Html.BootstrapButton(Dictionary.ChangePassword)
 	}
 }

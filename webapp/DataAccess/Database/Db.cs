@@ -12,6 +12,7 @@ namespace K9.DataAccess.Database
 		{
 		}
 
+
 		#region Tables
 
 		public DbSet<User> Users { get; set; }
@@ -21,6 +22,7 @@ namespace K9.DataAccess.Database
 		public DbSet<Student> Students { get; set; }
 		
 		#endregion
+
 
 		#region Event Handlers
 

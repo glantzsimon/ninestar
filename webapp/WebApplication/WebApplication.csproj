@@ -177,7 +177,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Extensions\BoostrapFormGroup.cs" />
+    <Compile Include="Enums\Bootstrap.cs" />
     <Compile Include="Extensions\BootstrapForm.cs" />
     <Compile Include="Extensions\BootstrapButton.cs" />
     <Compile Include="Extensions\HtmlExtensions.cs" />
@@ -266,6 +266,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\EditorTemplates\Password.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
   </ItemGroup>
   <PropertyGroup>
@@ -284,7 +285,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>3704</DevelopmentServerPort>
+          <DevelopmentServerPort>2715</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

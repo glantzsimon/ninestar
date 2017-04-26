@@ -241,11 +241,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Forgotten your password?.
+        /// </summary>
+        public static string ForgottenPasswordQuestion {
+            get {
+                return ResourceManager.GetString("ForgottenPasswordQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sorry, we are having a few problems processing your request. Please try again later..
         /// </summary>
         public static string FriendlyErrorMessage {
             get {
                 return ResourceManager.GetString("FriendlyErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to if you don&apos;t have an account.
+        /// </summary>
+        public static string IfNoAccount {
+            get {
+                return ResourceManager.GetString("IfNoAccount", resourceCulture);
             }
         }
         
@@ -327,6 +345,15 @@ namespace K9.Globalisation {
         public static string LastUpdatedOnLabel {
             get {
                 return ResourceManager.GetString("LastUpdatedOnLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log in.
+        /// </summary>
+        public static string LogIn {
+            get {
+                return ResourceManager.GetString("LogIn", resourceCulture);
             }
         }
         
@@ -503,6 +530,15 @@ namespace K9.Globalisation {
         public static string RememberMe {
             get {
                 return ResourceManager.GetString("RememberMe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset your password.
+        /// </summary>
+        public static string ResetPassword {
+            get {
+                return ResourceManager.GetString("ResetPassword", resourceCulture);
             }
         }
         

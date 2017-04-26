@@ -3,6 +3,7 @@ using System.Data.Entity;
 using System.Web.Mvc;
 using K9.DataAccess.Extensions;
 using K9.DataAccess.Models;
+using K9.DataAccess.Respositories;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Interfaces;
 using K9.WebApplication.Constants;
@@ -16,7 +17,7 @@ namespace K9.WebApplication.Controllers
 
 		#region Variables
 
-		private readonly DbContext _db;
+		private readonly BaseRepository<T> _repository;
 		private readonly ILogger _logger;
 
 		#endregion
@@ -26,9 +27,9 @@ namespace K9.WebApplication.Controllers
 
 		protected override void Dispose(bool disposing)
 		{
-			if (_db != null)
+			if (_repository != null)
 			{
-				_db.Dispose();
+				_repository.Dispose();
 			}
 			base.Dispose(disposing);
 		}
@@ -38,9 +39,9 @@ namespace K9.WebApplication.Controllers
 
 		#region Constructors
 
-		protected BaseController(DbContext db, ILogger logger)
+		protected BaseController(BaseRepository<T> repository, ILogger logger)
 		{
-			_db = db;
+			_repository = repository;
 			_logger = logger;
 		}
 
@@ -59,7 +60,7 @@ namespace K9.WebApplication.Controllers
 		[Authorize]
 		public virtual ActionResult Details(int id = 0)
 		{
-			T item = _db.Find<T>(id);
+			T item = _repository.Find(id);
 			if (item == null)
 			{
 				return HttpNotFound();
@@ -87,7 +88,7 @@ namespace K9.WebApplication.Controllers
 			{
 				try
 				{
-					_db.Create(item);
+					_repository.Create(item);
 					return RedirectToAction("Index");
 				}
 				catch (Exception ex)
@@ -103,7 +104,7 @@ namespace K9.WebApplication.Controllers
 		[Authorize(Roles = UserRoles.Administrators)]
 		public virtual ActionResult Edit(int id = 0)
 		{
-			var item = _db.Find<T>(id);
+			var item = _repository.Find(id);
 			if (item == null)
 			{
 				return HttpNotFound();
@@ -120,7 +121,7 @@ namespace K9.WebApplication.Controllers
 			{
 				try
 				{
-					_db.Update(item);
+					_repository.Update(item);
 					return RedirectToAction("Index");
 				}
 				catch (Exception ex)
@@ -136,7 +137,7 @@ namespace K9.WebApplication.Controllers
 		[Authorize(Roles = UserRoles.Administrators)]
 		public virtual ActionResult Delete(int id)
 		{
-			T item = _db.Find<T>(id);
+			T item = _repository.Find(id);
 			if (item == null)
 			{
 				return HttpNotFound();
@@ -153,7 +154,7 @@ namespace K9.WebApplication.Controllers
 			{
 				try
 				{
-					_db.Delete<T>(id);
+					_repository.Delete(id);
 					return RedirectToAction("Index");
 				}
 				catch (Exception ex)
@@ -163,7 +164,7 @@ namespace K9.WebApplication.Controllers
 				}
 			}
 
-			T item = _db.Find<T>(id);
+			T item = _repository.Find(id);
 			if (item == null)
 			{
 				return HttpNotFound();

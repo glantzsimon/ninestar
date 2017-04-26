@@ -1,14 +1,14 @@
 ﻿@{
-    ViewBag.Title = Dictionary.Login;
+    ViewBag.Title = Dictionary.LogIn;
 }
 
 <div class="form floating" id="loginForms">
-	<section id="loginForm" class="formAlignLeft">
+	<section id="loginForm">
 		@Html.Partial("_loginForm")
 	</section>
 
-	<section id="socialLoginForm" class="formAlignRight">
-		@Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+	<section id="socialLoginForm">
+		@Html.Action("ExternalLoginsList", new { ViewBag.ReturnUrl })
 	</section>
 </div>
 

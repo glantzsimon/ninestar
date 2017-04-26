@@ -1,32 +1,17 @@
-﻿@model UserAccount.LoginModel
-
+﻿@using K9.WebApplication.Extensions
+@model UserAccount.LoginModel
 @using (Html.BeginForm())
- {
-	@Html.AntiForgeryToken()
 {
-		<div class="editor-label">
-			@Html.LabelFor(model => model.UserName)
+	using (Html.BeginBootstrapForm())
+	{
+		@Html.EditorFor(model => model.UserName)
+		@Html.EditorFor(model => model.Password)
+		@Html.EditorFor(model => model.RememberMe)
+		@Html.BootstrapButton(Dictionary.LogIn)
+
+		<div>
+			@Dictionary.ForgottenPasswordQuestion @Html.ActionLink(Dictionary.ResetPassword, "PasswordResetRequest")
+			@Html.ActionLink(Dictionary.Register, "Register") @Dictionary.IfNoAccount
 		</div>
-		<div class="editor-field">
-			@Html.KendoTextBoxFor(model => model.UserName)
-		</div>
-		<div class="editor-label">
-			@Html.LabelFor(model => model.Password)
-		</div>
-		<div class="editor-field">
-			@Html.KendoPasswordFor(model => model.Password)
-		</div>
-		<div class="editor-field">					
-			@Html.CheckBoxFor(model => model.RememberMe)
-			@Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
-		</div>
-		<input type="submit" value="@Dictionary.Login" />
 	}
-	@Html.ValidationSummary(true)
-	<div class="bottom">
-		@Dictionary.ForgottenPasswordQuestion @Html.ActionLink(Dictionary.ResetPassword, "PasswordResetRequest")
-		<br />
-		<br />
-        @Html.ActionLink(Dictionary.Register, "Register") @Dictionary.IfNoAccount
-    </div>
- }
+}

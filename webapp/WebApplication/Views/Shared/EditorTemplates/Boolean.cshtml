@@ -1,0 +1,5 @@
+﻿@using K9.WebApplication.Extensions
+@model Boolean
+<div class="@Bootstrap.Classes.Checkbox">
+	<label>@Html.CheckBoxFor(model => model)@Html.GetDisplayNameFor(model => model)</label>
+</div>

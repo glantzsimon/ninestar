@@ -12,14 +12,12 @@ namespace K9.DataAccess.Extensions
 
 		public static void Create<T>(this DbContext context, T item) where T : ObjectBase, IIdentity
 		{
-			item.UpdateAuditFields();
 			context.Set<T>().Add(item);
 			context.SaveChanges();
 		}
 
 		public static void Update<T>(this DbContext context, T item) where T : ObjectBase, IIdentity
 		{
-			item.UpdateAuditFields();
 			context.Set<T>().Attach(item);
 			context.Entry(item).State = EntityState.Modified;
 			context.SaveChanges();

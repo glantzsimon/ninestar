@@ -286,4 +286,16 @@
   <data name="WelcomeEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>templates\en-gb\welcomeemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="ForgottenPasswordQuestion" xml:space="preserve">
+    <value>Forgotten your password?</value>
+  </data>
+  <data name="IfNoAccount" xml:space="preserve">
+    <value>if you don't have an account</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="ResetPassword" xml:space="preserve">
+    <value>Reset your password</value>
+  </data>
 </root>

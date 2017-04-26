@@ -8,7 +8,7 @@ namespace K9.WebApplication.Extensions
 	public static partial class HtmlExtensions
 	{
 
-		public static IDisposable BeginBootstrapForm(this HtmlHelper html, string title)
+		public static IDisposable BeginBootstrapForm(this HtmlHelper html, string title = "")
 		{
 			html.ViewContext.Writer.WriteLine(html.AntiForgeryToken());
 			html.ViewContext.Writer.WriteLine(html.ValidationSummary(true));
@@ -17,9 +17,12 @@ namespace K9.WebApplication.Extensions
 			div.MergeAttribute(Html.Attributes.Class, Bootstrap.Classes.Well);
 			html.ViewContext.Writer.WriteLine(div.ToString(TagRenderMode.StartTag));
 
-			var h2 = new TagBuilder(Html.Tags.H2);
-			h2.SetInnerText(title);
-			html.ViewContext.Writer.WriteLine(h2.ToString());
+			if (!string.IsNullOrEmpty(title))
+			{
+				var h2 = new TagBuilder(Html.Tags.H2);
+				h2.SetInnerText(title);
+				html.ViewContext.Writer.WriteLine(h2.ToString());
+			}
 
 			return new TagCloser(html, Html.Tags.Div);
 		}

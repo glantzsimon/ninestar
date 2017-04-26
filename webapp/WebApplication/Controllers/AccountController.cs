@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Transactions;
 using System.Web.Mvc;
 using System.Web.Security;
 using DotNetOpenAuth.AspNet;
-using K9.DataAccess.Extensions;
 using K9.DataAccess.Models;
+using K9.DataAccess.Respositories;
 using K9.Globalisation;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
@@ -21,14 +20,14 @@ namespace K9.WebApplication.Controllers
 {
 	public class AccountController : Controller
 	{
-		private readonly DbContext _db;
+		private readonly BaseRepository<User> _repository;
 		private readonly ILogger _logger;
 
 		#region Constructors
 
-		public AccountController(DbContext db, ILogger logger)
+		public AccountController(BaseRepository<User> repository, ILogger logger)
 		{
-			_db = db;
+			_repository = repository;
 			_logger = logger;
 		}
 
@@ -102,11 +101,11 @@ namespace K9.WebApplication.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				if (_db.Exists<User>(u => u.Username == model.UserName))
+				if (_repository.Exists(u => u.Username == model.UserName))
 				{
 					ModelState.AddModelError("UserName", Dictionary.UsernameIsUnavailableError);
 				}
-				else if (_db.Exists<User>(u => u.EmailAddress == model.EmailAddress))
+				else if (_repository.Exists(u => u.EmailAddress == model.EmailAddress))
 				{
 					ModelState.AddModelError("EmailAddress", Dictionary.EmailAddressLabel);
 				}
@@ -301,11 +300,10 @@ namespace K9.WebApplication.Controllers
 
 			if (ModelState.IsValid)
 			{
-				User user = _db.Find<User>(u => u.Username.ToLower() == model.UserName.ToLower()).FirstOrDefault();
+				User user = _repository.Find(u => u.Username.ToLower() == model.UserName.ToLower()).FirstOrDefault();
 				if (user == null)
 				{
-					_db.Create(new User { Username = model.UserName, EmailAddress = model.EmailAddress });
-					_db.SaveChanges();
+					_repository.Create(new User { Username = model.UserName, EmailAddress = model.EmailAddress });
 
 					OAuthWebSecurity.CreateOrUpdateAccount(provider, providerUserId, model.UserName);
 					OAuthWebSecurity.Login(provider, providerUserId, false);
@@ -397,7 +395,7 @@ namespace K9.WebApplication.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				var user = _db.Find<User>(u => u.EmailAddress == model.EmailAddress).FirstOrDefault();
+				var user = _repository.Find(u => u.EmailAddress == model.EmailAddress).FirstOrDefault();
 				if (user == null)
 				{
 					ModelState.AddModelError("", Dictionary.PasswordResetFailError);
@@ -468,7 +466,7 @@ namespace K9.WebApplication.Controllers
 		{
 			var resetPasswordLink = GetPasswordResetLink(model, token);
 			var imageUrl = Url.AbsoluteContent(AppConfig.CompanyLogoUrl);
-			var user = _db.Find<User>(u => u.Username == model.UserName).First();
+			var user = _repository.Find(u => u.Username == model.UserName).First();
 
 			if (user == null)
 			{
@@ -502,7 +500,7 @@ namespace K9.WebApplication.Controllers
 		{
 			var userId = WebSecurity.GetUserId(userName);
 
-			if (!_db.Exists<User>(userId))
+			if (!_repository.Exists(userId))
 			{
 				ModelState.AddModelError("", Dictionary.InvalidUsernameError);
 			}
@@ -519,7 +517,7 @@ namespace K9.WebApplication.Controllers
 		{
 			var userId = WebSecurity.GetUserId(userName);
 
-			if (!_db.Exists<User>(userId))
+			if (!_repository.Exists(userId))
 			{
 				ModelState.AddModelError("", Dictionary.InvalidUsernameError);
 			}

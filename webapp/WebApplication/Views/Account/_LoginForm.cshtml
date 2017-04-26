@@ -1,17 +1,14 @@
-﻿@using K9.WebApplication.Extensions
+﻿@using K9.WebApplication.Enums
+@using K9.WebApplication.Extensions
 @model UserAccount.LoginModel
 @using (Html.BeginForm())
 {
 	using (Html.BeginBootstrapForm())
 	{
-		@Html.EditorFor(model => model.UserName)
-		@Html.EditorFor(model => model.Password)
+		@Html.EditorFor(model => model.UserName, EInputSize.Small)
+		@Html.EditorFor(model => model.Password, EInputSize.Large, new { placeholder = "Enter your password..."})
+		<span class="help-block">@Html.ActionLink(Dictionary.ResetPassword, "PasswordResetRequest") | @Html.ActionLink(Dictionary.Register, "Register")</span>
 		@Html.EditorFor(model => model.RememberMe)
 		@Html.BootstrapButton(Dictionary.LogIn)
-
-		<div>
-			@Dictionary.ForgottenPasswordQuestion @Html.ActionLink(Dictionary.ResetPassword, "PasswordResetRequest")
-			@Html.ActionLink(Dictionary.Register, "Register") @Dictionary.IfNoAccount
-		</div>
 	}
 }

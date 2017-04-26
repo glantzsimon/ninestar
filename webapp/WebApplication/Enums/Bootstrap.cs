@@ -11,8 +11,16 @@ namespace K9.WebApplication.Enums
 	public enum EInputSize
 	{
 		Default,
-		Large,
-		Small
+		Small,
+		Large
+	}
+
+	public enum EInputWidth
+	{
+		Default,
+		Narrow,
+		Medium,
+		Wide
 	}
 
 	public static class ExtensionMethods
@@ -21,15 +29,34 @@ namespace K9.WebApplication.Enums
 		{
 			switch (size)
 			{
-				case EInputSize.Large:
-					return "input-lg";
-
 				case EInputSize.Small:
 					return "input-sm";
+
+				case EInputSize.Large:
+					return "input-lg";
 
 				default:
 					return string.Empty;
 			}
 		}
+
+		public static string ToCssClass(this EInputWidth size)
+		{
+			switch (size)
+			{
+				case EInputWidth.Narrow:
+					return "col-xs-2";
+
+				case EInputWidth.Medium:
+					return "col-xs-3";
+
+				case EInputWidth.Wide:
+					return "col-xs-4";
+
+				default:
+					return string.Empty;
+			}
+		}
+
 	}
 }

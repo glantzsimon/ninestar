@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using System.Web;
 using System.Web.Mvc;
 
@@ -27,18 +28,30 @@ namespace K9.SharedLibrary.Extensions
 			return HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) + helper.Content(contentPath);
 		}
 
-		public static ViewDataDictionary AddCssClass(this ViewDataDictionary viewDataDictionary, string cssClass)
+		public static ViewDataDictionary MergeAttribute(this ViewDataDictionary viewDataDictionary, string key, string value)
 		{
-			var key = "class";
 			if (viewDataDictionary.ContainsKey(key))
 			{
-				viewDataDictionary[key] += string.Format(" {0}", cssClass);
+				viewDataDictionary[key] += string.Format(" {0}", value);
 			}
 			else
 			{
-				viewDataDictionary.Add(key, cssClass);
+				viewDataDictionary.Add(key, value);
 			}
 			return viewDataDictionary;
+		}
+
+		public static object Add(this object item, string key, object value)
+		{
+			var dictionary = new Dictionary<string, object>();
+
+			foreach (var prop in item.GetProperties())
+			{
+				dictionary.Add(prop.Name, item.GetProperty(prop.Name));
+			}
+
+			dictionary.Add(key, value);
+			return dictionary;
 		}
 	}
 }

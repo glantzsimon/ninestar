@@ -1,6 +1,7 @@
-﻿@model Object
+﻿@using K9.SharedLibrary.Extensions
+@model Object
 @{
-	ViewData.Add("class", Bootstrap.Classes.FormControl);
+	ViewData.AddCssClass(Bootstrap.Classes.FormControl);
 }
 <div class="@Bootstrap.Classes.FormGroup">
 	@Html.LabelFor(model => model)

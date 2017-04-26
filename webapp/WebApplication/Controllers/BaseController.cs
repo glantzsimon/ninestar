@@ -17,7 +17,7 @@ namespace K9.WebApplication.Controllers
 
 		#region Variables
 
-		private readonly BaseRepository<T> _repository;
+		private readonly IRepository<T> _repository;
 		private readonly ILogger _logger;
 
 		#endregion
@@ -39,7 +39,7 @@ namespace K9.WebApplication.Controllers
 
 		#region Constructors
 
-		protected BaseController(BaseRepository<T> repository, ILogger logger)
+		protected BaseController(IRepository<T> repository, ILogger logger)
 		{
 			_repository = repository;
 			_logger = logger;

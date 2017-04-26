@@ -1,5 +1,8 @@
 ﻿@model Object
+@{
+	ViewData.Add("class", Bootstrap.Classes.FormControl);
+}
 <div class="@Bootstrap.Classes.FormGroup">
 	@Html.LabelFor(model => model)
-	@Html.TextBoxFor(model => model, new { @class = Bootstrap.Classes.FormControl })
+	@Html.TextBoxFor(model => model, ViewData)
 </div>

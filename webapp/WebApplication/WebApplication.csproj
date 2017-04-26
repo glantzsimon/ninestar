@@ -178,6 +178,9 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Enums\Bootstrap.cs" />
+    <Compile Include="Extensions\EditorFor.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Extensions\BootstrapForm.cs" />
     <Compile Include="Extensions\BootstrapButton.cs" />
     <Compile Include="Extensions\HtmlExtensions.cs" />
@@ -285,7 +288,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>2715</DevelopmentServerPort>
+          <DevelopmentServerPort>3772</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

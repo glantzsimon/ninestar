@@ -26,5 +26,19 @@ namespace K9.SharedLibrary.Extensions
 		{
 			return HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) + helper.Content(contentPath);
 		}
+
+		public static ViewDataDictionary AddCssClass(this ViewDataDictionary viewDataDictionary, string cssClass)
+		{
+			var key = "class";
+			if (viewDataDictionary.ContainsKey(key))
+			{
+				viewDataDictionary[key] += string.Format(" {0}", cssClass);
+			}
+			else
+			{
+				viewDataDictionary.Add(key, cssClass);
+			}
+			return viewDataDictionary;
+		}
 	}
 }

@@ -1,42 +1,32 @@
-﻿@model ICollection<AuthenticationClientData>
-
-@if (Model.Count == 0)
+﻿@using K9.WebApplication.Extensions
+@model ICollection<AuthenticationClientData>
+@if (Model.Any())
 {
-    <div class="message-info">
-        <p>@Dictionary.NoExternalAuthServicesError</p>
-    </div>
-}
-else
-{
-    using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = ViewBag.ReturnUrl }))
-    {
-    @Html.AntiForgeryToken()
-    <fieldset id="socialLoginList">
-        <legend>@Dictionary.LogInWithOtherService</legend>
-        <p>
-        @foreach (AuthenticationClientData p in Model)
-        {
-			switch(p.DisplayName)
+	using (Html.BeginForm("ExternalLogin", "Account", new {ReturnUrl = ViewBag.ReturnUrl}))
+	{
+		using (Html.BeginBootstrapForm(Dictionary.LogInWithOtherService))
+		{
+			foreach (AuthenticationClientData p in Model)
 			{
-				case "Google":
-					<button type="submit" class="imageButton" name="provider" value="@p.AuthenticationClient.ProviderName" title="@String.Format(Dictionary.LogIntoYourExternalAccount, p.DisplayName)">
-						<img src="~/images/register/google_button_med.png" alt="Google" />
-					</button>
-					break;
+				switch (p.DisplayName)
+				{
+					case "Google":
+						<button type="submit" class="imageButton" name="provider" value="@p.AuthenticationClient.ProviderName" title="@String.Format(Dictionary.LogIntoYourExternalAccount, p.DisplayName)">
+							<img src="~/images/register/google_button_med.png" alt="Google"/>
+						</button>
+						break;
 
-				case "Facebook":
-					<button type="submit" class="imageButton" name="provider" value="@p.AuthenticationClient.ProviderName" title="@String.Format(Dictionary.LogIntoYourExternalAccount, p.DisplayName)">
-						<img src="~/images/register/facebook_button_med.png" alt="Facebook" />
-					</button>
-					break;
+					case "Facebook":
+						<button type="submit" class="imageButton" name="provider" value="@p.AuthenticationClient.ProviderName" title="@String.Format(Dictionary.LogIntoYourExternalAccount, p.DisplayName)">
+							<img src="~/images/register/facebook_button_med.png" alt="Facebook"/>
+						</button>
+						break;
 
-				default:
-					<button type="submit" name="provider" value="@p.AuthenticationClient.ProviderName" title="@String.Format(Dictionary.LogIntoYourExternalAccount, p.DisplayName)">@p.DisplayName</button>
-					break;
+					default:
+						<button type="submit" name="provider" value="@p.AuthenticationClient.ProviderName" title="@String.Format(Dictionary.LogIntoYourExternalAccount, p.DisplayName)">@p.DisplayName</button>
+						break;
+				}
 			}
 		}
-        </p>
-		@Html.ValidationSummary(true)
-    </fieldset>
-    }
+	}
 }

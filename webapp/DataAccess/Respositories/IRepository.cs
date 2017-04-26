@@ -29,5 +29,7 @@ namespace K9.DataAccess.Respositories
 
 		T Find(params object[] keyValues);
 
+		void Dispose();
+
 	}
 }

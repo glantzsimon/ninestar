@@ -358,6 +358,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Log in using your {0} account..
+        /// </summary>
+        public static string LogIntoYourExternalAccount {
+            get {
+                return ResourceManager.GetString("LogIntoYourExternalAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log in using another service..
+        /// </summary>
+        public static string LogInWithOtherService {
+            get {
+                return ResourceManager.GetString("LogInWithOtherService", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string NameLabel {

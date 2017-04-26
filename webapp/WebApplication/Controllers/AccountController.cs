@@ -20,12 +20,12 @@ namespace K9.WebApplication.Controllers
 {
 	public class AccountController : Controller
 	{
-		private readonly BaseRepository<User> _repository;
+		private readonly IRepository<User> _repository;
 		private readonly ILogger _logger;
 
 		#region Constructors
 
-		public AccountController(BaseRepository<User> repository, ILogger logger)
+		public AccountController(IRepository<User> repository, ILogger logger)
 		{
 			_repository = repository;
 			_logger = logger;

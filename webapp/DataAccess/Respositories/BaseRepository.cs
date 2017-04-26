@@ -8,7 +8,7 @@ using K9.DataAccess.Models;
 
 namespace K9.DataAccess.Respositories
 {
-	public class BaseRepository<T> : IRepository<T>, IDisposable where T : ObjectBase
+	public class BaseRepository<T> : IRepository<T> where T : ObjectBase
 	{
 		private readonly DbContext _db;
 

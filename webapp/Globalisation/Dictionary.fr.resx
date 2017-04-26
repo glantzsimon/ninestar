@@ -298,4 +298,10 @@
   <data name="ResetPassword" xml:space="preserve">
     <value>Réinitialiser votre mot de passe</value>
   </data>
+  <data name="LogIntoYourExternalAccount" xml:space="preserve">
+    <value>Se connecter avec votre compte {0}.</value>
+  </data>
+  <data name="LogInWithOtherService" xml:space="preserve">
+    <value>Se connecter avec un autre service.</value>
+  </data>
 </root>

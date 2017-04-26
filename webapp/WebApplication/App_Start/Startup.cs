@@ -23,6 +23,7 @@ namespace K9.WebApplication
 
 			builder.RegisterType<Db>().As<DbContext>();
 			builder.Register(c => LogManager.GetCurrentClassLogger()).As<ILogger>();
+			//builder.RegisterType<B()
 			
 			var container = builder.Build();
 			DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

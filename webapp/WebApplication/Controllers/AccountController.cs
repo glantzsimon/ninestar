@@ -45,7 +45,7 @@ namespace K9.WebApplication.Controllers
 			}
 
 			ViewBag.ReturnUrl = returnUrl;
-			return View();
+			return View(new UserAccount.LoginModel());
 		}
 
 		[HttpPost]

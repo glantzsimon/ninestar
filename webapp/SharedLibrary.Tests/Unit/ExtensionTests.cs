@@ -10,12 +10,12 @@ namespace K9.SharedLibrary.Tests.Unit
 		[TestMethod]
 		public void ViewDataDictionary_AddCssClass_ShouldAddCssClassesWithSpace()
 		{
-			var viewDataDictionary = new ViewDataDictionary(null);
+			var viewDataDictionary = new ViewDataDictionary(new { });
 
 			viewDataDictionary.MergeAttribute("class", "test2");
 			viewDataDictionary.MergeAttribute("class", "test3");
 
-			Assert.AreEqual("test test2 test3", viewDataDictionary["class"]);
+			Assert.AreEqual("test2 test3", viewDataDictionary["class"]);
 		}
 	}
 }

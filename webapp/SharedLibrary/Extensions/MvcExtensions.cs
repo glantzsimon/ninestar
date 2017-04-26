@@ -41,17 +41,17 @@ namespace K9.SharedLibrary.Extensions
 			return viewDataDictionary;
 		}
 
-		public static object Add(this object item, string key, object value)
+		public static ViewDataDictionary Extend(this ViewDataDictionary viewDataDictionary, object attributes)
 		{
-			var dictionary = new Dictionary<string, object>();
-
-			foreach (var prop in item.GetProperties())
+			if (attributes != null)
 			{
-				dictionary.Add(prop.Name, item.GetProperty(prop.Name));
+				foreach (var propInfo in attributes.GetProperties())
+				{
+					viewDataDictionary.Add(propInfo.Name, attributes.GetProperty(propInfo.Name));
+				}
 			}
-
-			dictionary.Add(key, value);
-			return dictionary;
+			return viewDataDictionary;
 		}
+		
 	}
 }

@@ -10,12 +10,12 @@ namespace K9.WebApplication.Extensions
 
 		public static IDisposable BeginBootstrapForm(this HtmlHelper html, string title = "")
 		{
-			html.ViewContext.Writer.WriteLine(html.AntiForgeryToken());
-			html.ViewContext.Writer.WriteLine(html.ValidationSummary(true));
-
 			var div = new TagBuilder(Html.Tags.Div);
 			div.MergeAttribute(Html.Attributes.Class, Bootstrap.Classes.Well);
 			html.ViewContext.Writer.WriteLine(div.ToString(TagRenderMode.StartTag));
+
+			html.ViewContext.Writer.WriteLine(html.AntiForgeryToken());
+			html.ViewContext.Writer.WriteLine(html.ValidationSummary(true));
 
 			if (!string.IsNullOrEmpty(title))
 			{

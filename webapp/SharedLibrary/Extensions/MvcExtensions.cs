@@ -1,8 +1,11 @@
 ﻿
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Web;
 using System.Web.Mvc;
+using WebGrease.Css.Extensions;
 
 namespace K9.SharedLibrary.Extensions
 {
@@ -28,30 +31,18 @@ namespace K9.SharedLibrary.Extensions
 			return HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) + helper.Content(contentPath);
 		}
 
-		public static ViewDataDictionary MergeAttribute(this ViewDataDictionary viewDataDictionary, string key, string value)
+		public static IDictionary<string, object> MergeAttribute(this IDictionary<string, object> dictionary, string key, object value)
 		{
-			if (viewDataDictionary.ContainsKey(key))
+			if (dictionary.ContainsKey(key))
 			{
-				viewDataDictionary[key] += string.Format(" {0}", value);
+				dictionary[key] += string.Format(" {0}", value);
 			}
 			else
 			{
-				viewDataDictionary.Add(key, value);
+				dictionary.Add(key, value);
 			}
-			return viewDataDictionary;
+			return dictionary;
 		}
 
-		public static ViewDataDictionary Extend(this ViewDataDictionary viewDataDictionary, object attributes)
-		{
-			if (attributes != null)
-			{
-				foreach (var propInfo in attributes.GetProperties())
-				{
-					viewDataDictionary.Add(propInfo.Name, attributes.GetProperty(propInfo.Name));
-				}
-			}
-			return viewDataDictionary;
-		}
-		
 	}
 }

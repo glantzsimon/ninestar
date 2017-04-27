@@ -1,7 +1,7 @@
 ﻿@using K9.SharedLibrary.Extensions
 @model Object
 @{
-	ViewData.AddCssClass(Bootstrap.Classes.FormControl);
+	ViewData.MergeAttribute(K9.WebApplication.Constants.Html.Attributes.Class, Bootstrap.Classes.FormControl);
 }
 <div class="@Bootstrap.Classes.FormGroup">
 	@Html.LabelFor(model => model)

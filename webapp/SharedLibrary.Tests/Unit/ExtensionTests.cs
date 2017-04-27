@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Dynamic;
+using System.Web.Mvc;
 using K9.SharedLibrary.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -17,5 +18,6 @@ namespace K9.SharedLibrary.Tests.Unit
 
 			Assert.AreEqual("test2 test3", viewDataDictionary["class"]);
 		}
+
 	}
 }

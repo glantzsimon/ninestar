@@ -2,9 +2,9 @@
 using System.Linq.Expressions;
 using System.Web.Mvc;
 
-namespace K9.WebApplication.Extensions
+namespace K9.WebApplication.Helpers
 {
-	public static partial class HtmlExtensions
+	public static partial class HtmlHelpers
 	{
 
 		public static string GetDisplayNameFor<TModel, TProperty>(this HtmlHelper<TModel> html, Expression<Func<TModel, TProperty>> expression)

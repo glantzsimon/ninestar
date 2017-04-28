@@ -50,6 +50,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -88,21 +89,23 @@
   <ItemGroup>
     <Compile Include="Config\AppConfig.cs" />
     <Compile Include="Extensions\ConfigurationFileExtensions.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Extensions\MvcExtensions.cs" />
     <Compile Include="Extensions\ReflectionExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Helpers\ImageProcessor.cs" />
     <Compile Include="Helpers\Mailer.cs" />
     <Compile Include="Helpers\TemplateProcessor.cs" />
-    <Compile Include="Interfaces\IIdentity.cs" />
     <Compile Include="Authentication\UserRoles.cs" />
+    <Compile Include="Models\AssetInfo.cs" />
+    <Compile Include="Models\IAssetInfo.cs" />
+    <Compile Include="Models\ImageInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

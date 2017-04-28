@@ -1,5 +1,5 @@
 ﻿
-namespace K9.SharedLibrary.Interfaces
+namespace K9.DataAccess.Models
 {
 	public interface IIdentity
 	{

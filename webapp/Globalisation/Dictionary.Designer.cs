@@ -115,6 +115,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy.
+        /// </summary>
+        public static string AgreeToTerms {
+            get {
+                return ResourceManager.GetString("AgreeToTerms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All Rights Reserved.
+        /// </summary>
+        public static string AllRightsReserved {
+            get {
+                return ResourceManager.GetString("AllRightsReserved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change Password.
         /// </summary>
         public static string ChangePassword {

@@ -1,18 +1,16 @@
-﻿@using K9.WebApplication.Enums
-@using K9.WebApplication.Extensions
-@using K9.WebApplication.Options
+﻿@using K9.WebApplication.Helpers
 @model UserAccount.LoginModel
 
-<div style="width: 300px;">
-@using (Html.BeginForm())
-{
-	using (Html.BeginBootstrapForm())
+<div style="text-align: center; width: 300px;" >
+	@using (Html.BeginForm())
 	{
-		@Html.EditorFor(model => model.UserName, new EditorOptions { InputSize = EInputSize.Large })
-		@Html.EditorFor(model => model.Password, new EditorOptions { InputSize = EInputSize.Large })
-		<span class="help-block">@Html.ActionLink(Dictionary.ResetPassword, "PasswordResetRequest") | @Html.ActionLink(Dictionary.Register, "Register")</span>
-		@Html.EditorFor(model => model.RememberMe)
-		@Html.BootstrapButton(Dictionary.LogIn)
+		using (Html.BeginBootstrapForm())
+		{
+			@Html.EditorFor(model => model.UserName, new EditorOptions { InputSize = EInputSize.Large })
+			@Html.EditorFor(model => model.Password, new EditorOptions { InputSize = EInputSize.Large })
+			<span class="help-block">@Html.ActionLink(Dictionary.ResetPassword, "PasswordResetRequest") | @Html.ActionLink(Dictionary.Register, "Register")</span>
+			@Html.EditorFor(model => model.RememberMe)
+			@Html.BootstrapButton(Dictionary.LogIn)
+		}
 	}
-}
 </div>

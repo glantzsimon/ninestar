@@ -304,4 +304,10 @@
   <data name="LogInWithOtherService" xml:space="preserve">
     <value>Log in using another service.</value>
   </data>
+  <data name="AgreeToTerms" xml:space="preserve">
+    <value>While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy</value>
+  </data>
+  <data name="AllRightsReserved" xml:space="preserve">
+    <value>All Rights Reserved</value>
+  </data>
 </root>

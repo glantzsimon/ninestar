@@ -3,7 +3,6 @@ using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using K9.DataAccess.Models;
-using K9.SharedLibrary.Interfaces;
 
 namespace K9.DataAccess.Extensions
 {

@@ -2,16 +2,18 @@
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using K9.WebApplication.Constants;
+using K9.WebApplication.Constants.Html;
+using K9.WebApplication.Extensions;
 
-namespace K9.WebApplication.Extensions
+namespace K9.WebApplication.Helpers
 {
-	public static partial class HtmlExtensions
+	public static partial class HtmlHelpers
 	{
 
 		public static IDisposable BeginBootstrapForm(this HtmlHelper html, string title = "")
 		{
-			var div = new TagBuilder(Html.Tags.Div);
-			div.MergeAttribute(Html.Attributes.Class, Bootstrap.Classes.Well);
+			var div = new TagBuilder(Tags.Div);
+			div.MergeAttribute(Attributes.Class, Bootstrap.Classes.Well);
 			html.ViewContext.Writer.WriteLine(div.ToString(TagRenderMode.StartTag));
 
 			html.ViewContext.Writer.WriteLine(html.AntiForgeryToken());
@@ -19,12 +21,12 @@ namespace K9.WebApplication.Extensions
 
 			if (!string.IsNullOrEmpty(title))
 			{
-				var h2 = new TagBuilder(Html.Tags.H2);
+				var h2 = new TagBuilder(Tags.H2);
 				h2.SetInnerText(title);
 				html.ViewContext.Writer.WriteLine(h2.ToString());
 			}
 
-			return new TagCloser(html, Html.Tags.Div);
+			return new TagCloser(html, Tags.Div);
 		}
 
 	}

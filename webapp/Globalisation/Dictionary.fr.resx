@@ -304,4 +304,10 @@
   <data name="LogInWithOtherService" xml:space="preserve">
     <value>Se connecter avec un autre service.</value>
   </data>
+  <data name="AgreeToTerms" xml:space="preserve">
+    <value>L'utilisation de ce site constitue une acceptation des conditions d'utilisation, les politiques en matière de confidentialité et de cookies.</value>
+  </data>
+  <data name="AllRightsReserved" xml:space="preserve">
+    <value>Tous Droits Réservés</value>
+  </data>
 </root>

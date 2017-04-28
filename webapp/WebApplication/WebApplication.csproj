@@ -172,30 +172,50 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Config\AppConfig.cs" />
     <Compile Include="Constants\Bootstrap.cs" />
-    <Compile Include="Constants\Attributes.cs" />
-    <Compile Include="Constants\Types.cs" />
-    <Compile Include="Constants\Tags.cs" />
+    <Compile Include="Constants\Html\Attributes.cs" />
+    <Compile Include="Constants\Html\Types.cs" />
+    <Compile Include="Constants\Html\Tags.cs" />
     <Compile Include="Constants\Site.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Enums\Bootstrap.cs" />
-    <Compile Include="Extensions\EditorFor.cs">
+    <Compile Include="Enums\ImageSwitcher.cs" />
+    <Compile Include="Helpers\EditorFor.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Extensions\BootstrapForm.cs" />
-    <Compile Include="Extensions\BootstrapButton.cs" />
-    <Compile Include="Extensions\HtmlExtensions.cs" />
-    <Compile Include="Extensions\TagCloser.cs" />
+    <Compile Include="Helpers\BootstrapForm.cs" />
+    <Compile Include="Helpers\BootstrapButton.cs" />
+    <Compile Include="Helpers\HtmlHelpers.cs" />
+    <Compile Include="Helpers\ImageLoader.cs" />
+    <Compile Include="Helpers\ImageSwitcher.cs" />
+    <Compile Include="Helpers\WebsiteContent.cs" />
+    <Compile Include="Helpers\TagCloser.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Options\BackgroundImageSwitcherOptions.cs" />
     <Compile Include="Options\EditorOptions.cs" />
+    <Compile Include="Options\ImageSwitcherOptions.cs" />
+    <Compile Include="Options\ImageSwitcherOptionsBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\k9\imagePreloader.css" />
+    <Content Include="Content\k9\responsiveslides.css" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\site.css" />
+    <Content Include="Images\background\slides\1leaves_background.jpg" />
+    <Content Include="Images\background\slides\blueswirl.jpg" />
+    <Content Include="Images\background\slides\squares_background.jpg" />
+    <Content Include="Images\home\slides\HomeBanneCity2sm.jpg" />
+    <Content Include="Images\home\slides\HomeBannerCitySm.jpg" />
+    <Content Include="Images\home\slides\HomeBannerOfficeSm.jpg" />
+    <Content Include="Images\home\slides\slide1.jpg" />
+    <Content Include="Images\home\slides\slide2.jpg" />
+    <Content Include="Images\home\slides\slide3.jpg" />
+    <Content Include="Scripts\imageSwitcher\backgroundSwitcher.js" />
+    <Content Include="Scripts\imageSwitcher\responsiveslides.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -273,6 +293,8 @@
   <ItemGroup>
     <Content Include="Views\Shared\EditorTemplates\Password.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
+    <Content Include="Views\Shared\Controls\_BackgroundImageSwitcher.cshtml" />
+    <Content Include="Views\Shared\Controls\_ImageSwitcher.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
   </ItemGroup>
   <PropertyGroup>

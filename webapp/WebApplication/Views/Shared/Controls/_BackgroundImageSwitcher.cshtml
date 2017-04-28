@@ -1,0 +1,41 @@
+﻿@using System.Web.Script.Serialization
+@model BackgroundImageSwitcherOptions
+@{
+	var images = Model.Images;
+	var imagesArray = new JavaScriptSerializer().Serialize(images.ToArray());
+	var initialImage = images.FirstOrDefault();
+	
+	var element = String.IsNullOrEmpty(Model.ElementId) ? "body" : string.Format("#{0}", Model.ElementId);
+	var autoPlay = Model.AutoPlay.ToString().ToLower();
+	var transitionDuration = Model.TransitionDuration.ToString().ToLower();
+	var interval = Model.Interval.ToString().ToLower();
+	var loop = Model.Loop.ToString().ToLower();
+	var shuffle = (Model.TransitionOrder == ImageSwitcherTransitionOrder.Random).ToString().ToLower();
+	var effect = Model.Effect.ToString().ToLower();
+	
+}
+<script>
+
+	jQuery(document).ready(function ($)
+	{
+		try
+		{
+			$("@element").background = 'url(@initialImage)';
+		}
+		catch(e)
+		{
+		}
+
+		$("@element").bgswitcher({
+			images: [@imagesArray],
+			interval: @interval,
+			start: @autoPlay,
+			loop: @loop,
+			snuffle: @shuffle,
+			effect: "@effect",
+			duration: @transitionDuration
+		});
+
+	});
+
+</script>

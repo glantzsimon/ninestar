@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace K9.SharedLibrary.Extensions
 {
-	public static class Extensions
+	public static class ReflectionExtensions
 	{
 
 		/// <summary>

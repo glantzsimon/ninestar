@@ -41,6 +41,7 @@ namespace K9.WebApplication.Controllers
 		{
 			if (WebSecurity.IsAuthenticated)
 			{
+				WebSecurity.Logout();
 				return RedirectToAction("Index", "Home");
 			}
 

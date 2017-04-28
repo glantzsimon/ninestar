@@ -1,5 +1,4 @@
-﻿using System.Dynamic;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using K9.SharedLibrary.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

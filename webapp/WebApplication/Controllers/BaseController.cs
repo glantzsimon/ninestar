@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Data.Entity;
 using System.Web.Mvc;
-using K9.DataAccess.Extensions;
 using K9.DataAccess.Models;
 using K9.DataAccess.Respositories;
 using K9.SharedLibrary.Authentication;
-using K9.SharedLibrary.Interfaces;
 using K9.WebApplication.Constants;
 using NLog;
 

@@ -4,7 +4,7 @@ using K9.SharedLibrary.Extensions;
 
 namespace K9.DataAccess.Config
 {
-	public class AppConfig
+	public static class AppConfig
 	{
 		public static bool AutomaticMigrationsEnabled
 		{
@@ -20,5 +20,6 @@ namespace K9.DataAccess.Config
 		{
 			get { return ConfigurationManager.AppSettings.GetValue("SystemUserPassword"); }
 		}
+
 	}
 }

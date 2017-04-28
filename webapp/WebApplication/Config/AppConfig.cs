@@ -3,7 +3,7 @@ using K9.SharedLibrary.Extensions;
 
 namespace K9.WebApplication.Config
 {
-	public class AppConfig
+	public static class AppConfig
 	{
 		public static string FacebookAppId
 		{

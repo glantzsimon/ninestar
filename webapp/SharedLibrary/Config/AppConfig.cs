@@ -4,7 +4,7 @@ using K9.SharedLibrary.Extensions;
 
 namespace K9.SharedLibrary.Config
 {
-	public class AppConfig
+	public static class AppConfig
 	{
 		public static string SmtpServer
 		{

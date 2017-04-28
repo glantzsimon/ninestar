@@ -7,9 +7,10 @@ namespace K9.WebApplication
 		public static void RegisterBundles(BundleCollection bundles)
 		{
 			bundles.Add(new StyleBundle("~/Content/css").Include(
-				"~/Content/site.css",
+				"~/Content/elements.css",
+				"~/Content/classes.css",
+				"~/Content/mobile.css",
 				"~/Content/k9/*.css"));
-
 		}
 	}
 }

@@ -201,10 +201,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\mobile.css" />
+    <Content Include="Content\elements.css" />
     <Content Include="Content\k9\imagePreloader.css" />
     <Content Include="Content\k9\responsiveslides.css" />
     <Content Include="Global.asax" />
-    <Content Include="Content\site.css" />
+    <Content Include="Content\classes.css" />
     <Content Include="Images\background\slides\1leaves_background.jpg" />
     <Content Include="Images\background\slides\blueswirl.jpg" />
     <Content Include="Images\background\slides\squares_background.jpg" />
@@ -257,7 +259,7 @@
     <Content Include="Views\Shared\_Navbar.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\_LayoutMain.cshtml" />
+    <Content Include="Views\Shared\_LayoutForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_Footer.cshtml" />
@@ -295,6 +297,7 @@
     <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
     <Content Include="Views\Shared\Controls\_BackgroundImageSwitcher.cshtml" />
     <Content Include="Views\Shared\Controls\_ImageSwitcher.cshtml" />
+    <Content Include="Views\Shared\Copy of _Layout.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
   </ItemGroup>
   <PropertyGroup>

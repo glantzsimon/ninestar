@@ -13,21 +13,22 @@
 	@Styles.Render("~/Content/css")
 </head>
 <body>
-	<nav class="navbar navbar-default">
+@Html.BackgroundImageSwitcher(new BackgroundImageSwitcherOptions("Images/background")
+{
+	Interval =	20000
+})
+<nav class="navbar navbar-default">
 	@Html.Partial("_Navbar")
-	</nav>
-	<div class="container container-fluid">
-		<div class="page-header">
-			<h1>@ViewBag.Title</h1>
-		</div>
-		<div class="container">
-			@RenderSection("layout")
-			@RenderBody()
-		</div>
+</nav>
+<div class="container container-fluid">
+	<div class="container">
+	@RenderSection("layout")
+	@RenderBody()
 	</div>
-	<footer class="container-fluid text-center">
+</div>
+<footer class="container-fluid text-center">
 	@Html.Partial("_Footer")
-	</footer>
-	@RenderSection("scripts", required: false)
+</footer>
+@RenderSection("scripts", required: false)
 </body>
 </html>

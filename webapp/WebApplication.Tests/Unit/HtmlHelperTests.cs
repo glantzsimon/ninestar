@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
+﻿using System.IO;
+using System.Text;
 using System.Web;
-using System.Web.Http.Routing;
 using System.Web.Mvc;
 using System.Web.Routing;
+using K9.DataAccess.Models;
+using K9.WebApplication.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
@@ -14,18 +14,24 @@ namespace K9.WebApplication.Tests.Unit
 	public class HtmlHelperTests
 	{
 		private MemoryStream _stream;
+		private StreamWriter _streamWriter;
 
-		public string GetHtmlOutput()
+		public string GetOutputFromStream()
 		{
-			var reader = new StreamReader(_stream);
-			return reader.ReadToEnd();
+			_streamWriter.Flush();
+			var result = Encoding.UTF8.GetString(_stream.ToArray());
+
+			_stream.Close();
+			_streamWriter.Close();
+
+			return result;
 		}
 
-		private HtmlHelper CreateHtmlHelper(ViewDataDictionary viewDataDictionary = null)
+		private HtmlHelper<TModel> CreateHtmlHelper<TModel>(ViewDataDictionary viewDataDictionary = null) where TModel : class
 		{
-			viewDataDictionary = viewDataDictionary ?? new ViewDataDictionary(new{});
+			viewDataDictionary = viewDataDictionary ?? new ViewDataDictionary(new { });
 			_stream = new MemoryStream();
-			var textWriter = new StreamWriter(_stream);
+			_streamWriter = new StreamWriter(_stream);
 			var mockViewContext = new Mock<ViewContext>(
 				new ControllerContext(
 					new Mock<HttpContextBase>().Object,
@@ -35,24 +41,33 @@ namespace K9.WebApplication.Tests.Unit
 				new Mock<IView>().Object,
 				viewDataDictionary,
 				new TempDataDictionary(),
-				textWriter
+				_streamWriter
 			);
-			mockViewContext.Setup(vc => vc.Writer).Returns(textWriter);
-
+			mockViewContext.Setup(vc => vc.Writer).Returns(_streamWriter);
 			var mockDataContainer = new Mock<IViewDataContainer>();
 			mockDataContainer.Setup(c => c.ViewData).Returns(viewDataDictionary);
-
-			return new HtmlHelper(mockViewContext.Object, mockDataContainer.Object);
+			return new HtmlHelper<TModel>(mockViewContext.Object, mockDataContainer.Object);
 		}
 
 		[TestMethod]
-		public void EditorFor_ShouldRenderCorrectly()
+		public void HtmlHelper_ShouldWriteToStream()
 		{
-			var html = CreateHtmlHelper();
+			var html = CreateHtmlHelper<ObjectBase>();
 
-			html.ViewContext.Writer.WriteLine(("test"));
+			html.ViewContext.Writer.Write("test");
 
-			Assert.AreEqual("test", GetHtmlOutput());
+			Assert.AreEqual("test", GetOutputFromStream());
+		}
+
+		[TestMethod]
+		public void HtmlHelper_BootstrapEditoFor_ShouldRenderCorrectly()
+		{
+			var html = CreateHtmlHelper<UserAccount.LoginModel>();
+			var model = new UserAccount.LoginModel();
+
+			html.BootstrapEditorFor(m => model.UserName);
+
+			Assert.AreEqual("<input>", GetOutputFromStream());
 		}
 	}
 }

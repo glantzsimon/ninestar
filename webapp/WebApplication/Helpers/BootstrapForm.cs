@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
-using System.Web.Mvc.Html;
 using K9.WebApplication.Constants;
 using K9.WebApplication.Constants.Html;
-using K9.WebApplication.Extensions;
 
 namespace K9.WebApplication.Helpers
 {
@@ -17,7 +15,7 @@ namespace K9.WebApplication.Helpers
 			html.ViewContext.Writer.WriteLine(div.ToString(TagRenderMode.StartTag));
 
 			html.ViewContext.Writer.WriteLine(html.AntiForgeryToken());
-			html.ViewContext.Writer.WriteLine(html.ValidationSummary(true));
+			html.ViewContext.Writer.WriteLine(html.BootstrapValidationSummary());
 
 			if (!string.IsNullOrEmpty(title))
 			{

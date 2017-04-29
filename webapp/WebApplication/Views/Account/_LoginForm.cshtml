@@ -1,16 +1,15 @@
 ﻿@using K9.WebApplication.Helpers
 @model UserAccount.LoginModel
 
-<div style="text-align: center; width: 300px;" >
-	@using (Html.BeginForm())
+@using (Html.BeginForm())
+{
+	using (Html.BeginBootstrapForm())
 	{
-		using (Html.BeginBootstrapForm())
-		{
-			@Html.EditorFor(model => model.UserName, new EditorOptions { InputSize = EInputSize.Large })
-			@Html.EditorFor(model => model.Password, new EditorOptions { InputSize = EInputSize.Large })
-			<span class="help-block">@Html.ActionLink(Dictionary.ResetPassword, "PasswordResetRequest") | @Html.ActionLink(Dictionary.Register, "Register")</span>
-			@Html.EditorFor(model => model.RememberMe)
-			@Html.BootstrapButton(Dictionary.LogIn)
-		}
+	@Html.EditorFor(model => model.UserName)
+	@Html.EditorFor(model => model.Password)
+	<span class="help-block">@Html.ActionLink(Dictionary.ResetPassword, "PasswordResetRequest")
+		| @Html.ActionLink(Dictionary.Register, "Register")</span>
+	@Html.EditorFor(model => model.RememberMe)
+	@Html.BootstrapButton(Dictionary.LogIn)
 	}
-</div>
+}

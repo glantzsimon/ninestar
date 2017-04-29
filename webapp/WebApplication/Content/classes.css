@@ -39,3 +39,8 @@
 	-moz-box-shadow: 0 0 64px rgba(0, 0, 0, 0.8);
 	box-shadow: 0 0 64px rgba(0, 0, 0, 0.8);
 }
+
+.small
+{
+	max-width: 400px;
+}

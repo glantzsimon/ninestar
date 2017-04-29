@@ -12,6 +12,8 @@ namespace K9.WebApplication.Constants.Html
 		public const string Style = "style";
 		public const string Src = "src";
 		public const string Display = "display";
+		public const string DataDismiss = "data-dismiss";
+		public const string AreaLabel = "aria-label";
 
 	}
 

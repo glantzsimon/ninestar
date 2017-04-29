@@ -9,6 +9,8 @@ namespace K9.WebApplication.Constants.Html
 		public const string H2 = "h2";
 		public const string Button = "button";
 		public const string Image = "image";
+		public const string Anchor = "a";
+		public const string Strong = "strong";
 	}
 
 }

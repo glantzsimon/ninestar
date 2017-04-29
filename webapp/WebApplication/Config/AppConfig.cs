@@ -24,5 +24,11 @@ namespace K9.WebApplication.Config
 		{
 			get { return ConfigurationManager.AppSettings.GetValue("CompanyName"); }
 		}
+
+		public static string DefaultInputSize
+		{
+			get { return ConfigurationManager.AppSettings.GetValue("DefaultInputSize"); }
+		}
+		
 	}
 }

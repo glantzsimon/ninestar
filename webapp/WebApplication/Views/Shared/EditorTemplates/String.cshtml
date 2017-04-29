@@ -3,7 +3,5 @@
 @{
 	ViewData.MergeAttribute(K9.WebApplication.Constants.Html.Attributes.Class, Bootstrap.Classes.FormControl);
 }
-<div class="@Bootstrap.Classes.FormGroup">
-	@Html.LabelFor(model => model)
-	@Html.TextBoxFor(model => model, ViewData)
-</div>
+@Html.LabelFor(model => model)
+@Html.TextBoxFor(model => model, ViewData)

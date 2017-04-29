@@ -310,4 +310,7 @@
   <data name="AllRightsReserved" xml:space="preserve">
     <value>Tous Droits Réservés</value>
   </data>
+  <data name="Error" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
 </root>

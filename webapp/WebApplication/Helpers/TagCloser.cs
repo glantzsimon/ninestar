@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 
-namespace K9.WebApplication.Extensions
+namespace K9.WebApplication.Helpers
 {
 	public class TagCloser : IDisposable
 	{
@@ -17,7 +17,7 @@ namespace K9.WebApplication.Extensions
 		public TagCloser(HtmlHelper html, string tagName)
 		{
 			_html = html;
-			_tagNames = new string[] { tagName };
+			_tagNames = new[] { tagName };
 		}
 
 		public void Dispose()
@@ -25,7 +25,7 @@ namespace K9.WebApplication.Extensions
 			foreach (var tag in _tagNames)
 			{
 				var tb = new TagBuilder(tag);
-				_html.ViewContext.Writer.Write(tb.ToString(TagRenderMode.EndTag));
+				_html.ViewContext.Writer.WriteLine(tb.ToString(TagRenderMode.EndTag));
 			}
 		}
 	}

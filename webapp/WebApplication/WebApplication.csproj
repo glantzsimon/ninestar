@@ -297,8 +297,8 @@
     <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
     <Content Include="Views\Shared\Controls\_BackgroundImageSwitcher.cshtml" />
     <Content Include="Views\Shared\Controls\_ImageSwitcher.cshtml" />
-    <Content Include="Views\Shared\Copy of _Layout.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="Views\Shared\_LayoutMain.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

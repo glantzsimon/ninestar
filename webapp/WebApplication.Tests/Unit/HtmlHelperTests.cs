@@ -27,9 +27,9 @@ namespace K9.WebApplication.Tests.Unit
 			return result;
 		}
 
-		private HtmlHelper<TModel> CreateHtmlHelper<TModel>(ViewDataDictionary viewDataDictionary = null) where TModel : class
+		private HtmlHelper<TModel> CreateHtmlHelper<TModel>(TModel model) where TModel : class
 		{
-			viewDataDictionary = viewDataDictionary ?? new ViewDataDictionary(new { });
+			var viewDataDictionary = new ViewDataDictionary(model);
 			_stream = new MemoryStream();
 			_streamWriter = new StreamWriter(_stream);
 			var mockViewContext = new Mock<ViewContext>(
@@ -62,10 +62,10 @@ namespace K9.WebApplication.Tests.Unit
 		[TestMethod]
 		public void HtmlHelper_BootstrapEditoFor_ShouldRenderCorrectly()
 		{
-			var html = CreateHtmlHelper<UserAccount.LoginModel>();
 			var model = new UserAccount.LoginModel();
+			var html = CreateHtmlHelper(model);
 
-			html.BootstrapEditorFor(m => model.UserName);
+			html.BootstrapEditorFor(m => m.UserName);
 
 			Assert.AreEqual("<input>", GetOutputFromStream());
 		}

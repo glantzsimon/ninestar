@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Web;
@@ -15,6 +18,9 @@ namespace K9.SharedLibrary.Helpers
 		public static TestHtmlHelper<TModel> CreateHtmlHelper<TModel>(TModel model) where TModel : class
 		{
 			var viewDataDictionary = new ViewDataDictionary(model);
+			var modelState = new ModelState {Value = new ValueProviderResult("", "", CultureInfo.CurrentCulture)};
+			viewDataDictionary.ModelState.Add("", modelState);
+
 			var stream = new MemoryStream();
 			var streamWriter = new StreamWriter(stream);
 			var mockViewContext = new Mock<ViewContext>(
@@ -31,14 +37,13 @@ namespace K9.SharedLibrary.Helpers
 			mockViewContext.Setup(vc => vc.Writer).Returns(streamWriter);
 			var mockDataContainer = new Mock<IViewDataContainer>();
 			mockDataContainer.Setup(c => c.ViewData).Returns(viewDataDictionary);
-			
+
 			return new TestHtmlHelper<TModel>(mockViewContext.Object, mockDataContainer.Object, stream, streamWriter);
 		}
 	}
 
 	public class TestHtmlHelper<TModel> : HtmlHelper<TModel> where TModel : class
 	{
-
 		private readonly MemoryStream _stream;
 		private readonly StreamWriter _streamWriter;
 
@@ -74,6 +79,11 @@ namespace K9.SharedLibrary.Helpers
 			Expression<Func<TModel, TValue>> expression, object additionalViewData)
 		{
 			return MvcHtmlString.Empty;
+		}
+
+		public static List<ModelError> GetModelErrorsFor<TModel, TProperty>(this HtmlHelper<TModel> html, Expression<Func<TModel, TProperty>> expression)
+		{
+			return new List<ModelError>();
 		}
 	}
 }

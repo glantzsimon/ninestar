@@ -24,7 +24,7 @@ namespace K9.WebApplication.Helpers
 
 		public static List<ModelError> GetModelErrors(this HtmlHelper html, bool excludePropertyErrors = false)
 		{
-			return html.ViewData.ModelState.Where(x => !excludePropertyErrors || string.IsNullOrEmpty(x.Key)).SelectMany(x => x.Value.Errors).ToList();
+			return html.ViewData.ModelState.ToList().Where(x => !excludePropertyErrors || string.IsNullOrEmpty(x.Key)).SelectMany(x => x.Value.Errors).ToList();
 		}
 
 		public static List<ModelError> GetModelErrorsFor<TModel, TProperty>(this HtmlHelper<TModel> html, Expression<Func<TModel, TProperty>> expression)

@@ -97,6 +97,7 @@
     <Compile Include="Helpers\Mailer.cs" />
     <Compile Include="Helpers\TemplateProcessor.cs" />
     <Compile Include="Authentication\UserRoles.cs" />
+    <Compile Include="Helpers\TestHtmlHelper.cs" />
     <Compile Include="Models\AssetInfo.cs" />
     <Compile Include="Models\IAssetInfo.cs" />
     <Compile Include="Models\ImageInfo.cs" />

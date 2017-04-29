@@ -18,7 +18,7 @@ namespace K9.SharedLibrary.Helpers
 		public static TestHtmlHelper<TModel> CreateHtmlHelper<TModel>(TModel model) where TModel : class
 		{
 			var viewDataDictionary = new ViewDataDictionary(model);
-			var modelState = new ModelState {Value = new ValueProviderResult("", "", CultureInfo.CurrentCulture)};
+			var modelState = new ModelState { Value = new ValueProviderResult("", "", CultureInfo.CurrentCulture) };
 			viewDataDictionary.ModelState.Add("", modelState);
 
 			var stream = new MemoryStream();
@@ -71,19 +71,7 @@ namespace K9.SharedLibrary.Helpers
 
 			return result;
 		}
+
 	}
 
-	public static class TestHtmlHelperExtensions
-	{
-		public static MvcHtmlString EditorFor<TModel, TValue>(this HtmlHelper<TModel> html,
-			Expression<Func<TModel, TValue>> expression, object additionalViewData)
-		{
-			return MvcHtmlString.Empty;
-		}
-
-		public static List<ModelError> GetModelErrorsFor<TModel, TProperty>(this HtmlHelper<TModel> html, Expression<Func<TModel, TProperty>> expression)
-		{
-			return new List<ModelError>();
-		}
-	}
 }

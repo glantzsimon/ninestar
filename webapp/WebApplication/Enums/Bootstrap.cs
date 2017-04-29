@@ -12,10 +12,9 @@ namespace K9.WebApplication.Enums
 
 	public enum EInputSize
 	{
-		Default,
-		Small,
+		Large,
 		Medium,
-		Large
+		Small,
 	}
 
 	public enum EInputWidth
@@ -37,9 +36,6 @@ namespace K9.WebApplication.Enums
 
 				case EInputSize.Large:
 					return "input-lg";
-
-				case EInputSize.Default:
-					return AppConfig.DefaultInputSize;
 
 				default:
 					return string.Empty;

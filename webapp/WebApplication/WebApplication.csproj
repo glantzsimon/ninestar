@@ -182,7 +182,7 @@
     <Compile Include="Enums\Bootstrap.cs" />
     <Compile Include="Enums\ImageSwitcher.cs" />
     <Compile Include="Helpers\BootstrapValidationSummary.cs" />
-    <Compile Include="Helpers\EditorFor.cs">
+    <Compile Include="Helpers\BootstrapEditorFor.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Helpers\BootstrapForm.cs" />

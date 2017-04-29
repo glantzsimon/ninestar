@@ -5,11 +5,10 @@
 {
 	using (Html.BeginBootstrapForm())
 	{
-	@Html.EditorFor(model => model.UserName)
-	@Html.EditorFor(model => model.Password)
-	<span class="help-block">@Html.ActionLink(Dictionary.ResetPassword, "PasswordResetRequest")
-		| @Html.ActionLink(Dictionary.Register, "Register")</span>
-	@Html.EditorFor(model => model.RememberMe)
+	@Html.BootstrapEditorFor(model => model.UserName)
+	@Html.BootstrapEditorFor(model => model.Password)
+	<span class="help-block">@Html.ActionLink(Dictionary.ResetPassword, "PasswordResetRequest")| @Html.ActionLink(Dictionary.Register, "Register")</span>
+	@Html.BootstrapEditorFor(model => model.RememberMe)
 	@Html.BootstrapButton(Dictionary.LogIn)
 	}
 }

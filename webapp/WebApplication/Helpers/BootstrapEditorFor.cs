@@ -14,7 +14,7 @@ namespace K9.WebApplication.Helpers
 	public static partial class HtmlHelpers
 	{
 
-		public static MvcHtmlString EditorFor<TModel, TProperty>(this HtmlHelper<TModel> html, Expression<Func<TModel, TProperty>> expression, EditorOptions options = null)
+		public static MvcHtmlString BootstrapEditorFor<TModel, TProperty>(this HtmlHelper<TModel> html, Expression<Func<TModel, TProperty>> expression, EditorOptions options = null)
 		{
 			var viewDataDictionary = new ViewDataDictionary();
 			options = options ?? new EditorOptions();

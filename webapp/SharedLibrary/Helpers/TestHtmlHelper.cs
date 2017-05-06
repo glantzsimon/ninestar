@@ -18,12 +18,9 @@ namespace K9.SharedLibrary.Helpers
 		public static TestHtmlHelper<TModel> CreateHtmlHelper<TModel>(TModel model) where TModel : class
 		{
 			var viewDataDictionary = new ViewDataDictionary(model);
-			var modelState = new ModelState { Value = new ValueProviderResult("", "", CultureInfo.CurrentCulture) };
-			viewDataDictionary.ModelState.Add("", modelState);
-
 			var stream = new MemoryStream();
 			var streamWriter = new StreamWriter(stream);
-			var mockViewContext = new Mock<ViewContext>(
+			var viewContext = new ViewContext(
 				new ControllerContext(
 					new Mock<HttpContextBase>().Object,
 					new RouteData(),
@@ -34,11 +31,10 @@ namespace K9.SharedLibrary.Helpers
 				new TempDataDictionary(),
 				streamWriter
 			);
-			mockViewContext.Setup(vc => vc.Writer).Returns(streamWriter);
 			var mockDataContainer = new Mock<IViewDataContainer>();
 			mockDataContainer.Setup(c => c.ViewData).Returns(viewDataDictionary);
 
-			return new TestHtmlHelper<TModel>(mockViewContext.Object, mockDataContainer.Object, stream, streamWriter);
+			return new TestHtmlHelper<TModel>(viewContext, mockDataContainer.Object, stream, streamWriter);
 		}
 	}
 

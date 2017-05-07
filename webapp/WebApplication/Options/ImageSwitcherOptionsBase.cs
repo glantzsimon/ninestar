@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Enums;
 using K9.WebApplication.Helpers;
@@ -49,6 +50,11 @@ namespace K9.WebApplication.Options
 		private void LoadImages()
 		{
 			_images = ContentHelper.GetImageFiles(PathToImages);
+		}
+
+		public List<string> GetImageSourceList()
+		{
+			return Images.Select(i => i.Src).ToList();
 		}
 	}
 }

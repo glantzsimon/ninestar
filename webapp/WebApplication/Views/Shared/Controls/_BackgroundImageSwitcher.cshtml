@@ -1,8 +1,8 @@
 ﻿@using System.Web.Script.Serialization
 @model BackgroundImageSwitcherOptions
 @{
-	var images = Model.Images;
-	var imagesArray = new JavaScriptSerializer().Serialize(images.ToArray());
+	var images = Model.GetImageSourceList();
+	var imagesArray = MvcHtmlString.Create(new JavaScriptSerializer().Serialize(images.ToArray()));
 	var initialImage = images.FirstOrDefault();
 	
 	var element = String.IsNullOrEmpty(Model.ElementId) ? "body" : string.Format("#{0}", Model.ElementId);
@@ -26,7 +26,7 @@
 		}
 
 		$("@element").bgswitcher({
-			images: [@imagesArray],
+			images: @imagesArray,
 			interval: @interval,
 			start: @autoPlay,
 			loop: @loop,

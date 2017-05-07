@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Web.Mvc;
@@ -16,6 +17,8 @@ namespace K9.WebApplication.Helpers
 
 		public static MvcHtmlString BootstrapEditorFor<TModel, TProperty>(this HtmlHelper<TModel> html, Expression<Func<TModel, TProperty>> expression, EditorOptions options = null)
 		{
+			var modelType = ModelMetadata.FromLambdaExpression(expression, html.ViewData).ModelType;
+			
 			var viewDataDictionary = new ViewDataDictionary();
 			options = options ?? new EditorOptions();
 
@@ -29,14 +32,20 @@ namespace K9.WebApplication.Helpers
 			};
 
 			var div = new TagBuilder(Tags.Div);
-			div.MergeAttribute(Attributes.Class, Bootstrap.Classes.FormGroup);
+			var attributes = new Dictionary<string, object>();
+			attributes.MergeAttribute(Attributes.Class, modelType == typeof(bool) ? Bootstrap.Classes.Checkbox : Bootstrap.Classes.FormGroup);
 			if (html.GetModelErrorsFor(expression).Any())
 			{
-				div.MergeAttribute(Attributes.Class, Bootstrap.Classes.Error);
+				attributes.MergeAttribute(Attributes.Class, Bootstrap.Classes.HasError);
 			}
+			
+			div.MergeAttributes(attributes);
+			html.ViewContext.Writer.WriteLine(div.ToString(TagRenderMode.StartTag));
+			html.ViewContext.Writer.Write(html.EditorFor(expression, additionalViewData));
+			html.ViewContext.Writer.Write(html.ValidationMessageFor(expression));
 			html.ViewContext.Writer.WriteLine(div.ToString(TagRenderMode.EndTag));
 
-			return html.EditorFor(expression, additionalViewData);
+			return MvcHtmlString.Empty;
 		}
 
 	}

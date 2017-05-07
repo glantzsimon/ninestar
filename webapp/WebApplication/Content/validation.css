@@ -1,0 +1,17 @@
+﻿.field-validation-error
+{
+	display: inline-block;
+	width: 100%;
+	min-height: 40px;
+	background-color: #a94442;
+	color: white;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	padding: 8px;
+}
+
+.input-validation-error
+{
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}

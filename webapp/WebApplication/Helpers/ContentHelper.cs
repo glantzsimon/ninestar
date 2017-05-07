@@ -8,7 +8,7 @@ using K9.SharedLibrary.Models;
 namespace K9.WebApplication.Helpers
 {
 
-	public static class WebsiteContent
+	public static class ContentHelper
 	{
 
 		/// <summary>

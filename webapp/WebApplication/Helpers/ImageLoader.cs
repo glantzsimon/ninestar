@@ -9,7 +9,7 @@ namespace K9.WebApplication.Helpers
 
 		public static MvcHtmlString ImageLoader(this HtmlHelper html, string imagePath)
 		{
-			var images = WebsiteContent.GetImageFiles(imagePath);
+			var images = ContentHelper.GetImageFiles(imagePath);
 
 			var divBuilder = new TagBuilder(Tags.Div);
 			divBuilder.MergeAttribute(Attributes.Id, "imagePreloader");

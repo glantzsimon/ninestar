@@ -19,6 +19,7 @@ namespace K9.WebApplication.Tests.Unit
 			Assert.AreEqual("test", html.GetOutputFromStream());
 		}
 
+		[Ignore]
 		[TestMethod]
 		public void HtmlHelper_BootstrapEditoFor_ShouldRenderCorrectly()
 		{

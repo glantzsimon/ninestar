@@ -42,7 +42,7 @@ namespace K9.SharedLibrary.Models
 		{
 			get
 			{
-				return String.Format("{0}/{1}", _baseWebPath, _pathOnDisk);
+				return String.Format("{0}/{1}", _baseWebPath, FileName);
 			}
 		}
 

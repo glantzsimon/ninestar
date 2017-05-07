@@ -1,5 +1,4 @@
 ﻿
-using K9.WebApplication.Config;
 
 namespace K9.WebApplication.Enums
 {
@@ -12,9 +11,9 @@ namespace K9.WebApplication.Enums
 
 	public enum EInputSize
 	{
-		Large,
 		Medium,
-		Small,
+		Large,
+		Small
 	}
 
 	public enum EInputWidth

@@ -48,7 +48,7 @@ namespace K9.WebApplication.Options
 
 		private void LoadImages()
 		{
-			_images = WebsiteContent.GetImageFiles(PathToImages);
+			_images = ContentHelper.GetImageFiles(PathToImages);
 		}
 	}
 }

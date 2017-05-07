@@ -179,8 +179,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Enums\Bootstrap.cs" />
-    <Compile Include="Enums\ImageSwitcher.cs" />
+    <Compile Include="Enums\BootstrapEnums.cs" />
+    <Compile Include="Enums\ImageSwitcherEnums.cs" />
     <Compile Include="Helpers\BootstrapValidationSummary.cs" />
     <Compile Include="Helpers\BootstrapEditorFor.cs">
       <SubType>Code</SubType>
@@ -190,7 +190,7 @@
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Helpers\ImageLoader.cs" />
     <Compile Include="Helpers\ImageSwitcher.cs" />
-    <Compile Include="Helpers\WebsiteContent.cs" />
+    <Compile Include="Helpers\ContentHelper.cs" />
     <Compile Include="Helpers\TagCloser.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -202,6 +202,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\validation.css" />
     <Content Include="Content\mobile.css" />
     <Content Include="Content\elements.css" />
     <Content Include="Content\k9\imagePreloader.css" />
@@ -316,7 +317,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>3772</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

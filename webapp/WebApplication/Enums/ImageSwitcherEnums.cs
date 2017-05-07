@@ -1,13 +1,13 @@
 ﻿namespace K9.WebApplication.Enums
 {
 
-	public enum ImageSwitcherTransitionOrder : int
+	public enum ImageSwitcherTransitionOrder 
 	{
 		Sequence,
 		Random
 	}
 
-	public enum ImageSwitcherSizeMode : int
+	public enum ImageSwitcherSizeMode 
 	{
 		Auto,
 		FullScreen

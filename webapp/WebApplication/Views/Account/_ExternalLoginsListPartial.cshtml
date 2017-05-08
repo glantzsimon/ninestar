@@ -1,10 +1,11 @@
-﻿@using K9.WebApplication.Helpers
+﻿@using K9.WebApplication.Constants.Html
+@using K9.WebApplication.Helpers
 @model ICollection<AuthenticationClientData>
 @if (Model.Any())
 {
 	using (Html.BeginForm("ExternalLogin", "Account", new {ReturnUrl = ViewBag.ReturnUrl}))
 	{
-		using (Html.BeginBootstrapForm(Dictionary.LogInWithOtherService))
+		using (Html.BeginBootstrapForm(Dictionary.LogInWithOtherService, Tags.H3))
 		{
 			foreach (AuthenticationClientData p in Model)
 			{
@@ -12,13 +13,13 @@
 				{
 					case "Google":
 						<button type="submit" class="imageButton" name="provider" value="@p.AuthenticationClient.ProviderName" title="@String.Format(Dictionary.LogIntoYourExternalAccount, p.DisplayName)">
-							<img src="~/images/register/google_button_med.png" alt="Google"/>
+							<img src="~/Images/ui/google_sm.png" alt="Google"/>
 						</button>
 						break;
 
 					case "Facebook":
 						<button type="submit" class="imageButton" name="provider" value="@p.AuthenticationClient.ProviderName" title="@String.Format(Dictionary.LogIntoYourExternalAccount, p.DisplayName)">
-							<img src="~/images/register/facebook_button_med.png" alt="Facebook"/>
+							<img src="~/Images/ui/facebook_sm.png" alt="Facebook"/>
 						</button>
 						break;
 

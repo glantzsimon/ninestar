@@ -394,6 +394,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Login Failed.
+        /// </summary>
+        public static string LoginFailure {
+            get {
+                return ResourceManager.GetString("LoginFailure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Log in using your {0} account..
         /// </summary>
         public static string LogIntoYourExternalAccount {
@@ -620,6 +629,15 @@ namespace K9.Globalisation {
         public static string SupportQuery {
             get {
                 return ResourceManager.GetString("SupportQuery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unsuccessful login with service..
+        /// </summary>
+        public static string UnsuccessfulLoginServiceError {
+            get {
+                return ResourceManager.GetString("UnsuccessfulLoginServiceError", resourceCulture);
             }
         }
         

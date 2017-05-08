@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Linq;
 using System.Web.Mvc;
 using K9.WebApplication.Constants;
 using K9.WebApplication.Constants.Html;
+using K9.WebApplication.Enums;
 
 namespace K9.WebApplication.Helpers
 {
 	public static partial class HtmlHelpers
 	{
 
-		public static IDisposable BeginBootstrapForm(this HtmlHelper html, string title = "")
+		public static IDisposable BeginBootstrapForm(this HtmlHelper html, string title = "", string titleSize = Tags.H2)
 		{
 			var div = new TagBuilder(Tags.Div);
 			div.MergeAttribute(Attributes.Class, Bootstrap.Classes.Well);
@@ -20,9 +20,9 @@ namespace K9.WebApplication.Helpers
 
 			if (!string.IsNullOrEmpty(title))
 			{
-				var h2 = new TagBuilder(Tags.H2);
-				h2.SetInnerText(title);
-				html.ViewContext.Writer.WriteLine(h2.ToString());
+				var h = new TagBuilder(titleSize);
+				h.SetInnerText(title);
+				html.ViewContext.Writer.WriteLine(h.ToString());
 			}
 
 			return new TagCloser(html, Tags.Div);

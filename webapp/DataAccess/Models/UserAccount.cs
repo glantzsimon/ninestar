@@ -78,14 +78,14 @@ namespace K9.DataAccess.Models
 			[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 			[DataType(DataType.Text)]
 			[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FirstNameLabel)]
-			public string Firstame { get; set; }
+			public string FirstName { get; set; }
 
 			[NotMapped]
 			public string FullName
 			{
 				get
 				{
-					return string.Format("{0} {1}", Firstame, LastName);
+					return string.Format("{0} {1}", FirstName, LastName);
 				}
 			}
 
@@ -94,7 +94,7 @@ namespace K9.DataAccess.Models
 			public string LastName { get; set; }
 
 			[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
-			[DataType(DataType.EmailAddress)]
+			[DataType(DataType.EmailAddress, ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.InvalidEmailAddress)]
 			[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EmailAddressLabel)]
 			public string EmailAddress { get; set; }
 

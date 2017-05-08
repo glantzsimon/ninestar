@@ -124,7 +124,7 @@ namespace K9.WebApplication.Controllers
 							new
 							{
 								model.EmailAddress,
-								FirstName = model.Firstame,
+								FirstName = model.FirstName,
 								model.LastName,
 								model.PhoneNumber,
 								CreatedBy = SystemUser.System,
@@ -570,7 +570,7 @@ namespace K9.WebApplication.Controllers
 			var emailContent = TemplateProcessor.PopulateTemplate(Dictionary.WelcomeEmail, new
 			{
 				Title = Dictionary.Welcome,
-				FirstName = model.Firstame,
+				FirstName = model.FirstName,
 				Company = AppConfig.CompanyName,
 				ActivationLink = activationLink,
 				ImageUrl = imageUrl,

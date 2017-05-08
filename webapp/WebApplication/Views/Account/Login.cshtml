@@ -1,14 +1,13 @@
-﻿@{
-    ViewBag.Title = Dictionary.LogIn;
+﻿@using K9.WebApplication.Config
+@{
+	ViewBag.Title = Dictionary.LogIn;
 	Layout = "~/Views/Shared/_LayoutFormSmall.cshtml";
 }
-
 <div id="loginForms">
-	<section id="loginForm">
-		@Html.Partial("_loginForm")
-	</section>
+	@Html.Partial("_loginForm")
 
-	<section id="socialLoginForm">
+	@if (AppConfig.EnableExternalLogin)
+	{
 		@Html.Action("ExternalLoginsList", new { ViewBag.ReturnUrl })
-	</section>
+	}
 </div>

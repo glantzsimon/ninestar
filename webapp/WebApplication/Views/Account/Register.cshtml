@@ -1,11 +1,23 @@
-﻿@{
-	ViewBag.Title = @Dictionary.CreateNewAccount;
+﻿@model UserAccount.RegisterModel
+
+@{
+	ViewBag.Title = @Dictionary.Register;
+	Layout = "~/Views/Shared/_LayoutForm.cshtml";
 }
 
-<h1>@ViewBag.Title</h1>
-
-<div class="form" id="formContainer">
-	<section id="registrationForm">
-		@Html.Partial("_RegistrationForm")
-	</section>
-</div>
+@using (Html.BeginForm())
+{
+	using (Html.BeginBootstrapForm())
+	{
+		@Html.BootstrapEditorFor(model => model.UserName)
+		@Html.BootstrapEditorFor(model => model.Password)
+		@Html.BootstrapEditorFor(model => model.ConfirmPassword)
+		@Html.BootstrapEditorFor(model => model.FirstName)
+		@Html.BootstrapEditorFor(model => model.LastName)
+		@Html.BootstrapEditorFor(model => model.EmailAddress)
+		@Html.BootstrapEditorFor(model => model.PhoneNumber)
+		
+		@Html.BootstrapButton(Dictionary.Register)
+	
+	}
+}

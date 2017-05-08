@@ -316,4 +316,10 @@
   <data name="Home" xml:space="preserve">
     <value>Accueil</value>
   </data>
+  <data name="LoginFailure" xml:space="preserve">
+    <value>Connexion Echouée</value>
+  </data>
+  <data name="UnsuccessfulLoginServiceError" xml:space="preserve">
+    <value>Echec de connexion avec le service.</value>
+  </data>
 </root>

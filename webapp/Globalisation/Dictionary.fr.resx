@@ -313,4 +313,7 @@
   <data name="Error" xml:space="preserve">
     <value>Erreur</value>
   </data>
+  <data name="Home" xml:space="preserve">
+    <value>Accueil</value>
+  </data>
 </root>

@@ -301,7 +301,7 @@
               top: offset.top,
               left: offset.left,
               width: this.$el.innerWidth(),
-              height: '100%'
+              height: this.$el.innerHeight()
           };
 
             for (; i < length; i++)

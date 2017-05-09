@@ -15,7 +15,7 @@ namespace K9.DataAccess.Models
 			public string UserName { get; set; }
 
 			[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
-			[DataType(DataType.EmailAddress)]
+			[Email(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.InvalidEmailAddress)]
 			[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EmailAddressLabel)]
 			public string EmailAddress { get; set; }
 
@@ -94,7 +94,7 @@ namespace K9.DataAccess.Models
 			public string LastName { get; set; }
 
 			[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
-			[DataType(DataType.EmailAddress, ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.InvalidEmailAddress)]
+			[Email(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.InvalidEmailAddress)]
 			[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EmailAddressLabel)]
 			public string EmailAddress { get; set; }
 
@@ -109,7 +109,7 @@ namespace K9.DataAccess.Models
 			public string UserName { get; set; }
 
 			[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
-			[DataType(DataType.EmailAddress)]
+			[Email(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.InvalidEmailAddress)]
 			[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EmailAddressLabel)]
 			public string EmailAddress { get; set; }
 		}

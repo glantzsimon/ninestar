@@ -22,3 +22,8 @@ p
 	text-align: justify;
 	line-height: 1.8em;
 }
+
+hr
+{
+	border-color: #d9d9d9;
+}

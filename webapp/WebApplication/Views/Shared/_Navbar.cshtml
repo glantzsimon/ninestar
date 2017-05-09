@@ -8,9 +8,9 @@
 	</div>
 	<div class="collapse navbar-collapse" id="myNavbar">
 		<ul class="nav navbar-nav">
-			<li class="active">@Html.ActionLink(Dictionary.Home, "Index", "Home")</li>
+			<li class="active"><a href="@Url.Action("Index", "Home")"><span class="glyphicon glyphicon-home"></span> Home</a></li>
 			<li><a href="#">Messages</a></li>
-			<li>@Html.ActionLink(Dictionary.LogIn, "Login", "Account")</li>
+			<li>@Html.LoginLogout()</li>
 		</ul>
 		<form class="navbar-form navbar-right" role="search">
 		<div class="form-group input-group">

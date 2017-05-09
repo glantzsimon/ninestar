@@ -12,6 +12,10 @@ namespace K9.WebApplication
 				"~/Content/mobile.css",
 				"~/Content/validation.css",
 				"~/Content/k9/*.css"));
+
+			bundles.Add(new ScriptBundle("~/Scripts/k9").Include(
+				"~/Scripts/imageSwitcher/*.js",
+				"~/Scripts/k9/*.js"));
 		}
 	}
 }

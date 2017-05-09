@@ -9,7 +9,7 @@ namespace K9.WebApplication.Helpers
 	public static partial class HtmlHelpers
 	{
 
-		public static IDisposable BeginBootstrapForm(this HtmlHelper html, string title = "", string titleSize = Tags.H2)
+		public static IDisposable BeginBootstrapForm(this HtmlHelper html, string title = "", string titleTag = Tags.H2)
 		{
 			var div = new TagBuilder(Tags.Div);
 			div.MergeAttribute(Attributes.Class, Bootstrap.Classes.Well);
@@ -20,7 +20,7 @@ namespace K9.WebApplication.Helpers
 
 			if (!string.IsNullOrEmpty(title))
 			{
-				var h = new TagBuilder(titleSize);
+				var h = new TagBuilder(titleTag);
 				h.SetInnerText(title);
 				html.ViewContext.Writer.WriteLine(h.ToString());
 			}

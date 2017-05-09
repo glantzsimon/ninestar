@@ -322,4 +322,10 @@
   <data name="UnsuccessfulLoginServiceError" xml:space="preserve">
     <value>Echec de connexion avec le service.</value>
   </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>Déconnexion</value>
+  </data>
+  <data name="PersonalInformation" xml:space="preserve">
+    <value>Informations Personnelles</value>
+  </data>
 </root>

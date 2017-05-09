@@ -81,8 +81,6 @@ namespace K9.WebApplication.Controllers
 			return View(model);
 		}
 
-		[HttpPost]
-		[ValidateAntiForgeryToken]
 		public ActionResult LogOff()
 		{
 			WebSecurity.Logout();

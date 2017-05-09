@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Text;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using K9.SharedLibrary.Extensions;
@@ -18,6 +19,7 @@ namespace K9.WebApplication.Helpers
 
 		public static MvcHtmlString BootstrapEditorFor<TModel, TProperty>(this HtmlHelper<TModel> html, Expression<Func<TModel, TProperty>> expression, EditorOptions options = null)
 		{
+			var sb = new StringBuilder();
 			var modelType = ModelMetadata.FromLambdaExpression(expression, html.ViewData).ModelType;
 
 			// Get additional view data for the control
@@ -34,7 +36,8 @@ namespace K9.WebApplication.Helpers
 			var additionalViewData = new
 			{
 				@class = viewDataDictionary[Attributes.Class],
-				placeholder = options.PlaceHolder
+				placeholder = options.PlaceHolder,
+				title = ""
 			};
 
 			// Get container div
@@ -47,19 +50,19 @@ namespace K9.WebApplication.Helpers
 			}
 
 			div.MergeAttributes(attributes);
-			html.ViewContext.Writer.WriteLine(div.ToString(TagRenderMode.StartTag));
+			sb.AppendLine(div.ToString(TagRenderMode.StartTag));
 
 			// Show label for all types but boolean
 			if (modelType != typeof(bool))
 			{
-				html.ViewContext.Writer.Write(html.LabelFor(expression));
+				sb.AppendLine(html.LabelFor(expression).ToString());
 			}
 
-			html.ViewContext.Writer.Write(html.EditorFor(expression, additionalViewData));
-			html.ViewContext.Writer.Write(html.ValidationMessageFor(expression));
-			html.ViewContext.Writer.WriteLine(div.ToString(TagRenderMode.EndTag));
+			sb.AppendLine(html.EditorFor(expression, additionalViewData).ToString());
+			sb.AppendLine(html.ValidationMessageFor(expression).ToString());
+			sb.AppendLine(div.ToString(TagRenderMode.EndTag));
 
-			return MvcHtmlString.Empty;
+			return MvcHtmlString.Create(sb.ToString());
 		}
 
 	}

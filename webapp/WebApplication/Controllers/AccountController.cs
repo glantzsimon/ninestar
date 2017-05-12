@@ -106,7 +106,7 @@ namespace K9.WebApplication.Controllers
 				}
 				else if (_repository.Exists(u => u.EmailAddress == model.EmailAddress))
 				{
-					ModelState.AddModelError("EmailAddress", Dictionary.EmailAddressLabel);
+					ModelState.AddModelError("EmailAddress", Dictionary.EmailIsUnavailableError);
 				}
 
 				if (model.Password != model.ConfirmPassword)

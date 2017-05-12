@@ -142,6 +142,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to We&apos;ve sent you an email with a link to activate your account..
+        /// </summary>
+        public static string CheckAccountActivationEmail {
+            get {
+                return ResourceManager.GetString("CheckAccountActivationEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Client Services.
         /// </summary>
         public static string ClientServices {
@@ -237,15 +246,6 @@ namespace K9.Globalisation {
         public static string Error {
             get {
                 return ResourceManager.GetString("Error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The external login was removed..
-        /// </summary>
-        public static string ExternalLoginRemovedConfirmation {
-            get {
-                return ResourceManager.GetString("ExternalLoginRemovedConfirmation", resourceCulture);
             }
         }
         
@@ -399,6 +399,15 @@ namespace K9.Globalisation {
         public static string LoginFailure {
             get {
                 return ResourceManager.GetString("LoginFailure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please log into your account..
+        /// </summary>
+        public static string LogIntoYourAccount {
+            get {
+                return ResourceManager.GetString("LogIntoYourAccount", resourceCulture);
             }
         }
         
@@ -602,6 +611,15 @@ namespace K9.Globalisation {
         public static string Register {
             get {
                 return ResourceManager.GetString("Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registration.
+        /// </summary>
+        public static string Registration {
+            get {
+                return ResourceManager.GetString("Registration", resourceCulture);
             }
         }
         

@@ -12,6 +12,7 @@ using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.WebApplication.Config;
+using K9.WebApplication.Models;
 using Microsoft.Web.WebPages.OAuth;
 using NLog;
 using WebMatrix.WebData;
@@ -22,6 +23,7 @@ namespace K9.WebApplication.Controllers
 	{
 		private readonly IRepository<User> _repository;
 		private readonly ILogger _logger;
+
 
 		#region Constructors
 
@@ -56,11 +58,7 @@ namespace K9.WebApplication.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				if (!WebSecurity.IsConfirmed(model.UserName))
-				{
-					ModelState.AddModelError("", Dictionary.AccountNotActivatedError);
-				}
-				else if (WebSecurity.Login(model.UserName, model.Password, model.RememberMe))
+				if (WebSecurity.Login(model.UserName, model.Password, model.RememberMe))
 				{
 					if (!string.IsNullOrEmpty(ViewBag.ReturnUrl))
 					{
@@ -68,10 +66,7 @@ namespace K9.WebApplication.Controllers
 					}
 					return RedirectToAction("Index", "Home");
 				}
-				else
-				{
-					ModelState.AddModelError("", Dictionary.UsernamePasswordIncorrectError);
-				}
+				ModelState.AddModelError("", Dictionary.UsernamePasswordIncorrectError);
 			}
 			else
 			{
@@ -149,30 +144,6 @@ namespace K9.WebApplication.Controllers
 			return View(model);
 		}
 
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public ActionResult Disassociate(string provider, string providerUserId)
-		{
-			string ownerAccount = OAuthWebSecurity.GetUserName(provider, providerUserId);
-			ManageMessageId? message = null;
-
-			if (ownerAccount == User.Identity.Name)
-			{
-				using (var scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions { IsolationLevel = IsolationLevel.Serializable }))
-				{
-					bool hasLocalAccount = OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
-					if (hasLocalAccount || OAuthWebSecurity.GetAccountsFromUserName(User.Identity.Name).Count > 1)
-					{
-						OAuthWebSecurity.DeleteAccount(provider, providerUserId);
-						scope.Complete();
-						message = ManageMessageId.RemoveLoginSuccess;
-					}
-				}
-			}
-
-			return RedirectToAction("Manage", new { Message = message });
-		}
-
 		public ActionResult Manage(ManageMessageId? message)
 		{
 			ViewBag.StatusMessage = GetPasswordChangedMessage(message);
@@ -238,119 +209,6 @@ namespace K9.WebApplication.Controllers
 			}
 
 			return View(model);
-		}
-
-		[HttpPost]
-		[AllowAnonymous]
-		[ValidateAntiForgeryToken]
-		public ActionResult ExternalLogin(string provider, string returnUrl)
-		{
-			return new ExternalLoginResult(provider, Url.Action("ExternalLoginCallback", new { ReturnUrl = returnUrl }));
-		}
-
-		[AllowAnonymous]
-		public ActionResult ExternalLoginCallback(string returnUrl)
-		{
-			AuthenticationResult result = OAuthWebSecurity.VerifyAuthentication(Url.Action("ExternalLoginCallback", new { ReturnUrl = returnUrl }));
-			if (!result.IsSuccessful)
-			{
-				return RedirectToAction("ExternalLoginFailure");
-			}
-
-			if (OAuthWebSecurity.Login(result.Provider, result.ProviderUserId, false))
-			{
-				return Redirect(returnUrl);
-			}
-
-			if (User.Identity.IsAuthenticated)
-			{
-				OAuthWebSecurity.CreateOrUpdateAccount(result.Provider, result.ProviderUserId, User.Identity.Name);
-				return Redirect(returnUrl);
-			}
-
-			// User is new, ask for their desired membership name
-			string loginData = OAuthWebSecurity.SerializeProviderUserId(result.Provider, result.ProviderUserId);
-			var clientData = OAuthWebSecurity.GetOAuthClientData(result.Provider);
-			var emailAddress = result.ExtraData["email"];
-			ViewBag.ProviderDisplayName = clientData.DisplayName;
-			ViewBag.ReturnUrl = returnUrl;
-
-			if (string.IsNullOrEmpty(emailAddress))
-			{
-				emailAddress = string.Format("{0}@{1}.com", result.UserName.RemoveSpaces(), result.Provider.RemoveSpaces());
-			}
-
-			return View("ExternalLoginConfirmation", new UserAccount.RegisterExternalLoginModel { UserName = result.UserName, EmailAddress = emailAddress, ExternalLoginData = loginData });
-
-		}
-
-		[HttpPost]
-		[AllowAnonymous]
-		[ValidateAntiForgeryToken]
-		public ActionResult ExternalLoginConfirmation(UserAccount.RegisterExternalLoginModel model, string returnUrl)
-		{
-			string provider;
-			string providerUserId;
-
-			if (User.Identity.IsAuthenticated || !OAuthWebSecurity.TryDeserializeProviderUserId(model.ExternalLoginData, out provider, out providerUserId))
-			{
-				return RedirectToAction("Manage");
-			}
-
-			if (ModelState.IsValid)
-			{
-				User user = _repository.Find(u => u.Username.ToLower() == model.UserName.ToLower()).FirstOrDefault();
-				if (user == null)
-				{
-					_repository.Create(new User { Username = model.UserName, EmailAddress = model.EmailAddress });
-
-					OAuthWebSecurity.CreateOrUpdateAccount(provider, providerUserId, model.UserName);
-					OAuthWebSecurity.Login(provider, providerUserId, false);
-
-					return Redirect(returnUrl);
-				}
-
-				ModelState.AddModelError("UserName", Dictionary.UsernameIsUnavailableError);
-			}
-
-			ViewBag.ProviderDisplayName = OAuthWebSecurity.GetOAuthClientData(provider).DisplayName;
-			ViewBag.ReturnUrl = returnUrl;
-			return View(model);
-		}
-
-		[AllowAnonymous]
-		public ActionResult ExternalLoginFailure()
-		{
-			return View();
-		}
-
-		[AllowAnonymous]
-		[ChildActionOnly]
-		public ActionResult ExternalLoginsList(string returnUrl)
-		{
-			ViewBag.ReturnUrl = returnUrl;
-			return PartialView("_ExternalLoginsListPartial", OAuthWebSecurity.RegisteredClientData);
-		}
-
-		[ChildActionOnly]
-		public ActionResult RemoveExternalLogins()
-		{
-			ICollection<OAuthAccount> accounts = OAuthWebSecurity.GetAccountsFromUserName(User.Identity.Name);
-			List<UserAccount.ExternalLogin> externalLogins = new List<UserAccount.ExternalLogin>();
-			foreach (OAuthAccount account in accounts)
-			{
-				AuthenticationClientData clientData = OAuthWebSecurity.GetOAuthClientData(account.Provider);
-
-				externalLogins.Add(new UserAccount.ExternalLogin
-				{
-					Provider = account.Provider,
-					ProviderDisplayName = clientData.DisplayName,
-					ProviderUserId = account.ProviderUserId
-				});
-			}
-
-			ViewBag.ShowRemoveButton = externalLogins.Count > 1 || OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
-			return PartialView("_RemoveExternalLoginsPartial", externalLogins);
 		}
 
 		#endregion
@@ -512,27 +370,8 @@ namespace K9.WebApplication.Controllers
 		}
 
 		[AllowAnonymous]
-		public ActionResult AccountActivated(string userName, string token)
+		public ActionResult AccountActivated(string userName)
 		{
-			var userId = WebSecurity.GetUserId(userName);
-
-			if (!_repository.Exists(userId))
-			{
-				ModelState.AddModelError("", Dictionary.InvalidUsernameError);
-			}
-			else if (!WebSecurity.IsConfirmed(userName))
-			{
-				ModelState.AddModelError("", Dictionary.AccountActivationFailed);
-			}
-			else if (!WebSecurity.ConfirmAccount(userName, token))
-			{
-				ModelState.AddModelError("", Dictionary.AccountActivationFailed);
-			}
-			else
-			{
-				ViewBag.Message = Dictionary.AccountActivatedSuccessfully;
-			}
-
 			return View();
 		}
 
@@ -541,18 +380,15 @@ namespace K9.WebApplication.Controllers
 		{
 			if (WebSecurity.IsConfirmed(userName))
 			{
-				ModelState.AddModelError("", Dictionary.AccountAlreadyActivated);
-			}
-			else if (!WebSecurity.ConfirmAccount(userName, token))
-			{
-				ModelState.AddModelError("", Dictionary.AccountActivationFailed);
-			}
-			else
-			{
-				return RedirectToAction("AccountActivated", "Account", new { userName, token });
+				return View(new ViewMessage(Dictionary.AccountAlreadyActivated));
 			}
 
-			return View();
+			if (!WebSecurity.ConfirmAccount(userName, token))
+			{
+				return View(new ViewMessage(Dictionary.AccountActivationFailed));
+			}
+
+			return RedirectToAction("AccountActivated", "Account", new { userName });
 		}
 
 		private string GetActivationLink(UserAccount.RegisterModel model, string token)
@@ -590,28 +426,10 @@ namespace K9.WebApplication.Controllers
 			RemoveLoginSuccess
 		}
 
-		internal class ExternalLoginResult : ActionResult
-		{
-			public ExternalLoginResult(string provider, string returnUrl)
-			{
-				Provider = provider;
-				ReturnUrl = returnUrl;
-			}
-
-			public string Provider { get; private set; }
-			public string ReturnUrl { get; private set; }
-
-			public override void ExecuteResult(ControllerContext context)
-			{
-				OAuthWebSecurity.RequestAuthentication(Provider, ReturnUrl);
-			}
-		}
-
 		private static string GetPasswordChangedMessage(ManageMessageId? messageId)
 		{
 			return messageId == ManageMessageId.ChangePasswordSuccess ? Dictionary.PasswordHasChangedConfirmation
 				: messageId == ManageMessageId.SetPasswordSuccess ? Dictionary.PasswordSetConfirmation
-				: messageId == ManageMessageId.RemoveLoginSuccess ? Dictionary.ExternalLoginRemovedConfirmation
 				: "";
 		}
 

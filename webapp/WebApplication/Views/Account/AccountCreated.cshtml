@@ -1,10 +1,7 @@
 ﻿@{
-	ViewBag.Title = Dictionary.AccountCreatedSuccessfully;
+	ViewBag.Title = Dictionary.Registration;
+	Layout = "~/Views/Shared/_LayoutForm.cshtml";
+	
 }
 
-<h1>@ViewBag.Title</h1>
-
-<p>
-	@this.GetViewBagProperty(ViewBagProperty.Message)
-	@Html.ValidationSummary(true)
-</p>
+@Html.Success(Dictionary.AccountCreatedSuccessfully, Dictionary.CheckAccountActivationEmail)

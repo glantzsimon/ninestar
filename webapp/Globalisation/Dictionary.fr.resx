@@ -231,9 +231,6 @@
   <data name="DefaultAuthError" xml:space="preserve">
     <value>Une erreur inconnue s'est produite. Si le problème persiste, veuillez contacter le support.</value>
   </data>
-  <data name="ExternalLoginRemovedConfirmation" xml:space="preserve">
-    <value>L'identifiant externe a été supprimé de votre compte.</value>
-  </data>
   <data name="InvalidEmailError" xml:space="preserve">
     <value>L'adresse email est invalide. Merci d'essayer de nouveau.</value>
   </data>
@@ -327,5 +324,17 @@
   </data>
   <data name="PersonalInformation" xml:space="preserve">
     <value>Informations Personnelles</value>
+  </data>
+  <data name="Registration" xml:space="preserve">
+    <value>Inscription</value>
+  </data>
+  <data name="CheckAccountActivationEmail" xml:space="preserve">
+    <value>Nous vous avons envoyé un email pour activer votre compte.</value>
+  </data>
+  <data name="AssociateAccount" xml:space="preserve">
+    <value>Associer votre compte {0}.</value>
+  </data>
+  <data name="LogIntoYourAccount" xml:space="preserve">
+    <value>Veuillez vous connecter.</value>
   </data>
 </root>

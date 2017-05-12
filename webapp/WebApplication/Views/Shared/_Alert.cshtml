@@ -1,0 +1,12 @@
+﻿@model AlertOptions
+
+<h3>
+	@MvcHtmlString.Create(@Model.Message)
+</h3>
+
+@if (!string.IsNullOrEmpty(Model.OtherMessage))
+{
+	<p>
+		@MvcHtmlString.Create(@Model.OtherMessage)
+	</p>
+}

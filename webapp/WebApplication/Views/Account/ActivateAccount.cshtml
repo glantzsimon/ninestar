@@ -1,7 +1,7 @@
-﻿@{
+﻿@model ViewMessage
+@{
     ViewBag.Title = Dictionary.AccountActivationTitle;
+	Layout = "~/Views/Shared/_LayoutForm.cshtml";
 }
 
-<h1>@ViewBag.Title</h1>
-
-@Html.ValidationSummary(true)
+@Html.Fail(Model.Text)

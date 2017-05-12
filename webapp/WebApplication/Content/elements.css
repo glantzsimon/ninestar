@@ -27,3 +27,8 @@ hr
 {
 	border-color: #d9d9d9;
 }
+
+a
+{
+	text-decoration: underline;
+}

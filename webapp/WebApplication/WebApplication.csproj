@@ -187,6 +187,8 @@
     </Compile>
     <Compile Include="Helpers\BootstrapForm.cs" />
     <Compile Include="Helpers\BootstrapButton.cs" />
+    <Compile Include="Helpers\Fail.cs" />
+    <Compile Include="Helpers\Success.cs" />
     <Compile Include="Helpers\LoginLogout.cs" />
     <Compile Include="Helpers\SubTitle.cs" />
     <Compile Include="Helpers\HtmlHelpers.cs" />
@@ -197,7 +199,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewMessage.cs" />
     <Compile Include="Options\BackgroundImageSwitcherOptions.cs" />
+    <Compile Include="Options\AlertOptions.cs" />
     <Compile Include="Options\EditorOptions.cs" />
     <Compile Include="Options\ImageSwitcherOptions.cs" />
     <Compile Include="Options\ImageSwitcherOptionsBase.cs" />
@@ -220,6 +224,8 @@
     <Content Include="Images\home\slides\slide1.jpg" />
     <Content Include="Images\home\slides\slide2.jpg" />
     <Content Include="Images\home\slides\slide3.jpg" />
+    <Content Include="Images\ui\fail.png" />
+    <Content Include="Images\ui\success.png" />
     <Content Include="Images\ui\facebook_sm.png" />
     <Content Include="Images\ui\google_sm.png" />
     <Content Include="Scripts\imageSwitcher\backgroundSwitcher.js" />
@@ -240,7 +246,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\company\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -275,8 +280,6 @@
     <Content Include="Views\Account\AccountActivated.cshtml" />
     <Content Include="Views\Account\AccountCreated.cshtml" />
     <Content Include="Views\Account\ActivateAccount.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\PasswordResetEmailSent.cshtml" />
@@ -284,7 +287,6 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\_LoginForm.cshtml" />
     <Content Include="Views\Account\_ManageForm.cshtml" />
     <Content Include="Views\Account\_PasswordResetRequestForm.cshtml" />
@@ -306,6 +308,9 @@
     <Content Include="Views\Shared\EditorTemplates\Text.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\EmailAddress.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\PhoneNumber.cshtml" />
+    <Content Include="Views\Shared\_Success.cshtml" />
+    <Content Include="Views\Shared\_Fail.cshtml" />
+    <Content Include="Views\Shared\_Alert.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />

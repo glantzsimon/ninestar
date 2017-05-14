@@ -38,7 +38,6 @@ namespace K9.WebApplication.Controllers
 
 		#region Membership
 
-		[AllowAnonymous]
 		public ActionResult Login(string returnUrl)
 		{
 			if (WebSecurity.IsAuthenticated)
@@ -52,7 +51,6 @@ namespace K9.WebApplication.Controllers
 		}
 
 		[HttpPost]
-		[AllowAnonymous]
 		[ValidateAntiForgeryToken]
 		public ActionResult Login(UserAccount.LoginModel model)
 		{
@@ -76,20 +74,19 @@ namespace K9.WebApplication.Controllers
 			return View(model);
 		}
 
+		[Authorize]
 		public ActionResult LogOff()
 		{
 			WebSecurity.Logout();
 			return RedirectToAction("Index", "Home");
 		}
 
-		[AllowAnonymous]
 		public ActionResult Register()
 		{
 			return View();
 		}
 
 		[HttpPost]
-		[AllowAnonymous]
 		[ValidateAntiForgeryToken]
 		public ActionResult Register(UserAccount.RegisterModel model)
 		{
@@ -144,67 +141,49 @@ namespace K9.WebApplication.Controllers
 			return View(model);
 		}
 
-		public ActionResult Manage(ManageMessageId? message)
+		[Authorize]
+		public ActionResult UpdatePassword()
 		{
-			ViewBag.StatusMessage = GetPasswordChangedMessage(message);
-
-			ViewBag.HasLocalPassword = OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
-			ViewBag.ReturnUrl = Url.Action("Manage");
 			return View();
 		}
 
+		[Authorize]
+		public ActionResult UpdatePasswordSuccess()
+		{
+			return View();
+		}
+
+		[Authorize]
+		public ActionResult UpdatePasswordFailed()
+		{
+			return View();
+		}
+
+		[Authorize]
+		public ActionResult MyAccount()
+		{
+			return View();
+		}
+
+		[Authorize]
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult Manage(UserAccount.LocalPasswordModel model)
+		public ActionResult UpdatePassword(UserAccount.LocalPasswordModel model)
 		{
-			bool hasLocalAccount = OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
-			ViewBag.HasLocalPassword = hasLocalAccount;
-
-			if (hasLocalAccount)
+			if (ModelState.IsValid)
 			{
-				if (ModelState.IsValid)
+				try
 				{
-					bool changePasswordSucceeded = true;
-					try
+					if (WebSecurity.ChangePassword(User.Identity.Name, model.OldPassword, model.NewPassword))
 					{
-						changePasswordSucceeded = WebSecurity.ChangePassword(User.Identity.Name, model.OldPassword, model.NewPassword);
+						return RedirectToAction("UpdatePasswordSuccess");
 					}
-					catch (Exception)
-					{
-					}
-
-					if (changePasswordSucceeded)
-					{
-						if (Request.IsAjaxRequest())
-						{
-							ViewBag.Message = GetPasswordChangedMessage(ManageMessageId.ChangePasswordSuccess);
-						}
-						return RedirectToAction("Manage", new { Message = ManageMessageId.ChangePasswordSuccess });
-					}
-
 					ModelState.AddModelError("", Dictionary.CurrentPasswordCorrectNewInvalidError);
 				}
-			}
-			else
-			{
-				// User does not have a local password so remove any validation errors caused by a missing OldPassword field
-				ModelState state = ModelState["OldPassword"];
-				if (state != null)
+				catch (Exception ex)
 				{
-					state.Errors.Clear();
-				}
-
-				if (ModelState.IsValid)
-				{
-					try
-					{
-						WebSecurity.CreateAccount(User.Identity.Name, model.NewPassword);
-						return RedirectToAction("Manage", new { Message = ManageMessageId.SetPasswordSuccess });
-					}
-					catch (Exception e)
-					{
-						ModelState.AddModelError("", e);
-					}
+					_logger.Error(ex.Message);
+					return RedirectToAction("UpdatePasswordFailed");
 				}
 			}
 
@@ -216,25 +195,11 @@ namespace K9.WebApplication.Controllers
 
 		#region Password Reset
 
-		[AllowAnonymous]
-		public ActionResult PasswordResetEmailSent(string userName, string token)
+		public ActionResult PasswordResetEmailSent()
 		{
-			var userId = WebSecurity.GetUserIdFromPasswordResetToken(token);
-			var confirmId = WebSecurity.GetUserId(userName);
-
-			if (Equals(userId, confirmId))
-			{
-				ViewBag.Message = Dictionary.PasswordResetEmailSent;
-			}
-			else
-			{
-				ModelState.AddModelError("", Dictionary.PasswordResetFailError);
-			}
-
 			return View();
 		}
 
-		[AllowAnonymous]
 		public ActionResult PasswordResetRequest()
 		{
 			if (WebSecurity.IsAuthenticated)
@@ -246,7 +211,6 @@ namespace K9.WebApplication.Controllers
 		}
 
 		[HttpPost]
-		[AllowAnonymous]
 		[ValidateAntiForgeryToken]
 		public ActionResult PasswordResetRequest(UserAccount.PasswordResetRequestModel model)
 		{
@@ -255,63 +219,79 @@ namespace K9.WebApplication.Controllers
 				var user = _repository.Find(u => u.EmailAddress == model.EmailAddress).FirstOrDefault();
 				if (user == null)
 				{
-					ModelState.AddModelError("", Dictionary.PasswordResetFailError);
+					return RedirectToAction("ResetPasswordFailed");
 				}
-				else
+
+				var token = string.Empty;
+				try
 				{
 					model.UserName = user.Username;
-					var token = WebSecurity.GeneratePasswordResetToken(user.Username);
+					token = WebSecurity.GeneratePasswordResetToken(user.Username);
 					SendPasswordResetEmail(model, token);
-
-					return RedirectToAction("PasswordResetEmailSent", "Account", new { userName = model.UserName, token });
 				}
+				catch (Exception ex)
+				{
+					_logger.Error(ex.Message);
+					return RedirectToAction("ResetPasswordFailed");
+				}
+
+				return RedirectToAction("PasswordResetEmailSent", "Account", new { userName = model.UserName, token });
 			}
 
 			return View(model);
 		}
 
-		[AllowAnonymous]
 		public ActionResult ResetPassword(string userName, string token)
 		{
-			UserAccount.ResetPasswordModel model;
 			var userId = WebSecurity.GetUserIdFromPasswordResetToken(token);
 			var confirmUserId = WebSecurity.GetUserId(userName);
 
 			if (!Equals(userId, confirmUserId))
 			{
-				ModelState.AddModelError("", Dictionary.PasswordResetFailError);
+				return RedirectToAction("ResetPasswordFailed");
+			}
 
-				model = new UserAccount.ResetPasswordModel
-				{
-					Token = ""
-				};
-			}
-			else
+			var model = new UserAccount.ResetPasswordModel
 			{
-				model = new UserAccount.ResetPasswordModel
-				{
-					UserName = userName,
-					Token = token
-				};
-			}
+				UserName = userName,
+				Token = token
+			};
 
 			return View(model);
 		}
 
+		public ActionResult ResetPasswordFailed()
+		{
+			return View();
+		}
+
 		[HttpPost]
-		[AllowAnonymous]
 		[ValidateAntiForgeryToken]
 		public ActionResult ResetPassword(UserAccount.ResetPasswordModel model)
 		{
 			if (ModelState.IsValid)
 			{
-				WebSecurity.ResetPassword(model.Token, model.NewPassword);
-				WebSecurity.Login(model.UserName, model.NewPassword);
-				ViewBag.Message = Dictionary.PasswordSetConfirmation;
-				return RedirectToAction("Index", "Home");
+				try
+				{
+					WebSecurity.ResetPassword(model.Token, model.NewPassword);
+					WebSecurity.Login(model.UserName, model.NewPassword);
+
+					return RedirectToAction("ResetPasswordSuccess");
+				}
+				catch (Exception ex)
+				{
+					_logger.Error(ex.Message);
+					ModelState.AddModelError("", ex.Message);
+				}
 			}
 
 			return View(model);
+		}
+
+		[Authorize]
+		public ActionResult ResetPasswordSuccess()
+		{
+			return View();
 		}
 
 		private string GetPasswordResetLink(UserAccount.PasswordResetRequestModel model, string token)
@@ -380,12 +360,12 @@ namespace K9.WebApplication.Controllers
 		{
 			if (WebSecurity.IsConfirmed(userName))
 			{
-				return View(new ViewMessage(Dictionary.AccountAlreadyActivated));
+				return View("ActivateAccountFailed", new ViewMessage(Dictionary.AccountAlreadyActivated));
 			}
 
 			if (!WebSecurity.ConfirmAccount(userName, token))
 			{
-				return View(new ViewMessage(Dictionary.AccountActivationFailed));
+				return View("ActivateAccountFailed", new ViewMessage(Dictionary.AccountActivationFailed));
 			}
 
 			return RedirectToAction("AccountActivated", "Account", new { userName });
@@ -422,8 +402,7 @@ namespace K9.WebApplication.Controllers
 		public enum ManageMessageId
 		{
 			ChangePasswordSuccess,
-			SetPasswordSuccess,
-			RemoveLoginSuccess
+			SetPasswordSuccess
 		}
 
 		private static string GetPasswordChangedMessage(ManageMessageId? messageId)

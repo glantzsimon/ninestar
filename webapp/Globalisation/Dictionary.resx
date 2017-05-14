@@ -334,4 +334,13 @@
   <data name="LogIntoYourAccount" xml:space="preserve">
     <value>Please log into your account.</value>
   </data>
+  <data name="PasswordResetConfirmation" xml:space="preserve">
+    <value>Your password has been reset.</value>
+  </data>
+  <data name="UpdatePaswordError" xml:space="preserve">
+    <value>It was not possible to update your password.</value>
+  </data>
+  <data name="MyAccountTitle" xml:space="preserve">
+    <value>My Account</value>
+  </data>
 </root>

@@ -17,7 +17,7 @@ footer
 	padding: 15px;
 }
 
-p
+article p, section p
 {
 	text-align: justify;
 	line-height: 1.8em;

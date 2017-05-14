@@ -439,6 +439,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to My Account.
+        /// </summary>
+        public static string MyAccountTitle {
+            get {
+                return ResourceManager.GetString("MyAccountTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string NameLabel {
@@ -507,6 +516,15 @@ namespace K9.Globalisation {
         public static string PasswordMinLengthError {
             get {
                 return ResourceManager.GetString("PasswordMinLengthError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your password has been reset..
+        /// </summary>
+        public static string PasswordResetConfirmation {
+            get {
+                return ResourceManager.GetString("PasswordResetConfirmation", resourceCulture);
             }
         }
         
@@ -674,6 +692,15 @@ namespace K9.Globalisation {
         public static string UnsuccessfulLoginServiceError {
             get {
                 return ResourceManager.GetString("UnsuccessfulLoginServiceError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to It was not possible to update your password..
+        /// </summary>
+        public static string UpdatePaswordError {
+            get {
+                return ResourceManager.GetString("UpdatePaswordError", resourceCulture);
             }
         }
         

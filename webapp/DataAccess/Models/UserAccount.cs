@@ -8,20 +8,6 @@ namespace K9.DataAccess.Models
 {
 	public class UserAccount
 	{
-		public class RegisterExternalLoginModel
-		{
-			[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
-			[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.UserNameLabel)]
-			public string UserName { get; set; }
-
-			[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
-			[Email(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.InvalidEmailAddress)]
-			[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EmailAddressLabel)]
-			public string EmailAddress { get; set; }
-
-			public string ExternalLoginData { get; set; }
-		}
-
 		public class LocalPasswordModel
 		{
 			[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
@@ -133,13 +119,6 @@ namespace K9.DataAccess.Models
 			public string ConfirmPassword { get; set; }
 
 			public string Token { get; set; }
-		}
-
-		public class ExternalLogin
-		{
-			public string Provider { get; set; }
-			public string ProviderDisplayName { get; set; }
-			public string ProviderUserId { get; set; }
 		}
 
 	}

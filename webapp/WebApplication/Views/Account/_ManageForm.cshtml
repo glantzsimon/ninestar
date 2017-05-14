@@ -1,10 +1,5 @@
 ﻿@model K9.DataAccessLayer.LocalPasswordModel
 
-<section class="formAlignRight">    
-	@Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
-	@Html.Action("RemoveExternalLogins")
-</section>
-
 <section class="formAlignLeft">
 @if (ViewBag.HasLocalPassword)
 {

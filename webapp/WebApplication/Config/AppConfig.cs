@@ -25,10 +25,5 @@ namespace K9.WebApplication.Config
 			get { return ConfigurationManager.AppSettings.GetValue("CompanyName"); }
 		}
 
-		public static bool EnableExternalLogin
-		{
-			get { return ConfigurationManager.AppSettings.GetValueAsBoolean("EnableExternalLogin"); }
-		}
-		
 	}
 }

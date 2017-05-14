@@ -337,4 +337,13 @@
   <data name="LogIntoYourAccount" xml:space="preserve">
     <value>Veuillez vous connecter.</value>
   </data>
+  <data name="PasswordResetConfirmation" xml:space="preserve">
+    <value>Votre mot de passe a été actualisé.</value>
+  </data>
+  <data name="UpdatePaswordError" xml:space="preserve">
+    <value>Il n'a pas été possible d'actualiser votre mot de passe.</value>
+  </data>
+  <data name="MyAccountTitle" xml:space="preserve">
+    <value>Mon Compte</value>
+  </data>
 </root>

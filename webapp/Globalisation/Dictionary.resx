@@ -343,4 +343,7 @@
   <data name="MyAccountTitle" xml:space="preserve">
     <value>My Account</value>
   </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
 </root>

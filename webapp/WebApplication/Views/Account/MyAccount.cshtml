@@ -1,4 +1,18 @@
-﻿@{
-	ViewBag.Title = Dictionary.my;
+﻿@model User
+@{
+	ViewBag.Title = Dictionary.MyAccountTitle;
+	Layout = "~/Views/Shared/_LayoutForm.cshtml";
 }
 
+@Html.ActionLink(Dictionary.ChangePassword, "UpdatePassword")
+
+@using(Html.BeginForm("UpdateAccount"))
+{
+	using (Html.BeginBootstrapForm())
+	{
+		@Html.BootstrapEditorFor(model => model.FirstName)
+		@Html.BootstrapEditorFor(model => model.LastName)
+		@Html.BootstrapEditorFor(model => model.PhoneNumber)
+		@Html.BootstrapButton(Dictionary.Update)
+	}
+}

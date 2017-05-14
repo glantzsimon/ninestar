@@ -346,4 +346,7 @@
   <data name="MyAccountTitle" xml:space="preserve">
     <value>Mon Compte</value>
   </data>
+  <data name="Update" xml:space="preserve">
+    <value>Actualiser</value>
+  </data>
 </root>

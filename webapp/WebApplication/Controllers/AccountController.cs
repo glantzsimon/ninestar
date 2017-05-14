@@ -190,6 +190,31 @@ namespace K9.WebApplication.Controllers
 			return View(model);
 		}
 
+		[Authorize]
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult UpdateAccount(UserAccount.LocalPasswordModel model)
+		{
+			if (ModelState.IsValid)
+			{
+				try
+				{
+					if (WebSecurity.ChangePassword(User.Identity.Name, model.OldPassword, model.NewPassword))
+					{
+						return RedirectToAction("UpdatePasswordSuccess");
+					}
+					ModelState.AddModelError("", Dictionary.CurrentPasswordCorrectNewInvalidError);
+				}
+				catch (Exception ex)
+				{
+					_logger.Error(ex.Message);
+					return RedirectToAction("UpdatePasswordFailed");
+				}
+			}
+
+			return View(model);
+		}
+
 		#endregion
 
 

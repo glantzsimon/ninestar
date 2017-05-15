@@ -89,7 +89,7 @@ namespace K9.DataAccess.Models
 			[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PhoneNumberLabel)]
 			public string PhoneNumber { get; set; }
 
-			[DataType(DataType.DateTime)]
+			[DataType(DataType.Date)]
 			[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BirthDateLabel)]
 			public DateTime BirthDate { get; set; }
 		}

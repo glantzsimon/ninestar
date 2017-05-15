@@ -42,7 +42,7 @@ namespace K9.DataAccess.Models
 		[StringLength(255)]
 		public string PhoneNumber { get; set; }
 
-		[DataType(DataType.DateTime)]
+		[DataType(DataType.Date)]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BirthDateLabel)]
 		public DateTime BirthDate { get; set; }
 	}

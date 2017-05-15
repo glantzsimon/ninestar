@@ -3,7 +3,11 @@ $(function ()
 
     function initBootstrapDateTimePickers()
     {
-        $("#datetime1").datetimepicker();
+        $("div.dateonly").datetimepicker({
+            format: "L"
+        });
+
+        $("div.datetime").datetimepicker();
     }
 
     initBootstrapDateTimePickers();

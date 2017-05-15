@@ -1,15 +1,4 @@
-﻿@model UserAccount.LoginModel
-@using K9.WebApplication.Helpers
+﻿@using K9.WebApplication.Helpers
 @{
 	ViewBag.Title = "Index";
-}
-@using (Html.BeginForm("Manage", "Account"))
-{
-	using (Html.BeginBootstrapForm(Dictionary.PasswordResetTitle))
-	{
-		@Html.EditorFor(model => model.UserName)
-		@Html.EditorFor(model => model.Password)
-		@Html.EditorFor(model => model.RememberMe)
-		@Html.BootstrapButton(Dictionary.ChangePassword)
-	}
 }

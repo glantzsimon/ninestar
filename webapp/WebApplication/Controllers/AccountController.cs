@@ -154,18 +154,6 @@ namespace K9.WebApplication.Controllers
 		}
 
 		[Authorize]
-		public ActionResult UpdatePasswordFailed()
-		{
-			return View();
-		}
-
-		[Authorize]
-		public ActionResult MyAccount()
-		{
-			return View();
-		}
-
-		[Authorize]
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public ActionResult UpdatePassword(UserAccount.LocalPasswordModel model)
@@ -183,7 +171,7 @@ namespace K9.WebApplication.Controllers
 				catch (Exception ex)
 				{
 					_logger.Error(ex.Message);
-					return RedirectToAction("UpdatePasswordFailed");
+					ModelState.AddModelError("", Dictionary.UpdatePaswordError);
 				}
 			}
 
@@ -191,28 +179,31 @@ namespace K9.WebApplication.Controllers
 		}
 
 		[Authorize]
+		public ActionResult MyAccount()
+		{
+			var user = _repository.Find(u => u.Username == User.Identity.Name).FirstOrDefault();
+			return View(user);
+		}
+
+		[Authorize]
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult UpdateAccount(UserAccount.LocalPasswordModel model)
+		public ActionResult UpdateAccount(User model)
 		{
 			if (ModelState.IsValid)
 			{
 				try
 				{
-					if (WebSecurity.ChangePassword(User.Identity.Name, model.OldPassword, model.NewPassword))
-					{
-						return RedirectToAction("UpdatePasswordSuccess");
-					}
-					ModelState.AddModelError("", Dictionary.CurrentPasswordCorrectNewInvalidError);
+					_repository.Update(model);
 				}
 				catch (Exception ex)
 				{
 					_logger.Error(ex.Message);
-					return RedirectToAction("UpdatePasswordFailed");
+					ModelState.AddModelError("", Dictionary.FriendlyErrorMessage);
 				}
 			}
 
-			return View(model);
+			return View("MyAccount", model);
 		}
 
 		#endregion
@@ -306,7 +297,7 @@ namespace K9.WebApplication.Controllers
 				catch (Exception ex)
 				{
 					_logger.Error(ex.Message);
-					ModelState.AddModelError("", ex.Message);
+					ModelState.AddModelError("", Dictionary.PasswordResetFailError);
 				}
 			}
 

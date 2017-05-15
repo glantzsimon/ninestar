@@ -281,14 +281,11 @@
     <Content Include="Views\Account\AccountCreated.cshtml" />
     <Content Include="Views\Account\ActivateAccountFailed.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\PasswordResetEmailSent.cshtml" />
     <Content Include="Views\Account\PasswordResetRequest.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\UpdatePassword.cshtml" />
-    <Content Include="Views\Account\_ManageForm.cshtml" />
-    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Test.cshtml" />
@@ -311,7 +308,6 @@
     <Content Include="Views\Account\ResetPasswordSuccess.cshtml" />
     <Content Include="Views\Account\MyAccount.cshtml" />
     <Content Include="Views\Account\UpdatePasswordSuccess.cshtml" />
-    <Content Include="Views\Account\UpdatePasswordFailed.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -332,7 +328,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>3772</DevelopmentServerPort>
+          <DevelopmentServerPort>1674</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost/ninestar</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

@@ -346,4 +346,7 @@
   <data name="Update" xml:space="preserve">
     <value>Update</value>
   </data>
+  <data name="BirthDateLabel" xml:space="preserve">
+    <value>Date of Birth</value>
+  </data>
 </root>

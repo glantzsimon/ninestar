@@ -133,6 +133,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date of Birth.
+        /// </summary>
+        public static string BirthDateLabel {
+            get {
+                return ResourceManager.GetString("BirthDateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change Password.
         /// </summary>
         public static string ChangePassword {

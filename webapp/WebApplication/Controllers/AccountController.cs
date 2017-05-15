@@ -114,9 +114,10 @@ namespace K9.WebApplication.Controllers
 							new
 							{
 								model.EmailAddress,
-								FirstName = model.FirstName,
+								model.FirstName,
 								model.LastName,
 								model.PhoneNumber,
+								model.BirthDate,
 								CreatedBy = SystemUser.System,
 								CreatedOn = DateTime.Now,
 								LastUpdatedBy = SystemUser.System,

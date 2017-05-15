@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using DataAnnotationsExtensions;
@@ -87,6 +88,10 @@ namespace K9.DataAccess.Models
 			[DataType(DataType.PhoneNumber)]
 			[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PhoneNumberLabel)]
 			public string PhoneNumber { get; set; }
+
+			[DataType(DataType.DateTime)]
+			[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BirthDateLabel)]
+			public DateTime BirthDate { get; set; }
 		}
 
 		public class PasswordResetRequestModel

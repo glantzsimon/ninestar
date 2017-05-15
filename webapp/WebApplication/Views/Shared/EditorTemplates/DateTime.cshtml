@@ -1,0 +1,11 @@
+﻿@using K9.SharedLibrary.Extensions
+@model Object
+@{
+	//ViewData.MergeAttribute(K9.WebApplication.Constants.Html.Attributes.Type, K9.WebApplication.Constants.Html.Types.DateTime);
+}
+<div class="input-group date" id="datetime1">
+	@Html.TextBoxFor(model => model, ViewData)
+	<span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+</div>

@@ -207,9 +207,6 @@
   <data name="UsernamePasswordIncorrectError" xml:space="preserve">
     <value>Identifiant ou mot de passe invalide.</value>
   </data>
-  <data name="AccountActivatedSuccessfully" xml:space="preserve">
-    <value>Votre compte a été activé avec succès.</value>
-  </data>
   <data name="AccountActivationFailed" xml:space="preserve">
     <value>Il n'a pas été possible d'activer votre compte. Merci de contacter le support.</value>
   </data>
@@ -348,5 +345,8 @@
   </data>
   <data name="Update" xml:space="preserve">
     <value>Actualiser</value>
+  </data>
+  <data name="BirthDateLabel" xml:space="preserve">
+    <value>Date de Naissance</value>
   </data>
 </root>

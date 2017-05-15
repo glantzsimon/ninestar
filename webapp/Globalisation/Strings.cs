@@ -30,6 +30,7 @@ namespace K9.Globalisation
 			public const string FirstNameLabel = "FirstNameLabel";
 			public const string LastNameLabel = "LastNameLabel";
 			public const string PhoneNumberLabel = "PhoneNumberLabel";
+			public const string BirthDateLabel = "BirthDateLabel";
 			
 		}
 	}

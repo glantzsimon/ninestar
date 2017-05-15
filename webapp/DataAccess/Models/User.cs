@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using K9.Globalisation;
@@ -40,5 +41,9 @@ namespace K9.DataAccess.Models
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PhoneNumberLabel)]
 		[StringLength(255)]
 		public string PhoneNumber { get; set; }
+
+		[DataType(DataType.DateTime)]
+		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BirthDateLabel)]
+		public DateTime BirthDate { get; set; }
 	}
 }

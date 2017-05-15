@@ -181,6 +181,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Enums\BootstrapEnums.cs" />
     <Compile Include="Enums\ImageSwitcherEnums.cs" />
+    <Compile Include="Extensions\MvcExtensions.cs" />
     <Compile Include="Helpers\BootstrapValidationSummary.cs" />
     <Compile Include="Helpers\BootstrapEditorFor.cs">
       <SubType>Code</SubType>

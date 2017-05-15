@@ -41,5 +41,11 @@ namespace K9.SharedLibrary.Extensions
 			return dictionary;
 		}
 
+		public static bool IsActionActive(this ViewContext viewContext, string actionName, string controllerName)
+		{
+			return viewContext.RouteData.Values["action"].ToString() == actionName &&
+				   viewContext.RouteData.Values["controller"].ToString() == controllerName;
+		}
+
 	}
 }

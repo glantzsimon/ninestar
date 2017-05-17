@@ -13,7 +13,7 @@
 			@if (WebSecurity.IsAuthenticated)
 			{
 				<li><a href="#">Messages</a></li>
-				<li class="@ViewContext.GetActiveClass("Index", "Home")"><a href="@Url.Action("Index", "Home")"><span class="glyphicon glyphicon-home"></span> @Dictionary.Home</a></li>
+				<li class="@ViewContext.GetActiveClass("Index", "Students")"><a href="@Url.Action("Index", "Students")">Students</a></li>
 			}
 		</ul>
 		<form class="navbar-form navbar-right" role="search">

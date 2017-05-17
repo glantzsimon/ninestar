@@ -15,6 +15,11 @@ namespace K9.WebApplication.Constants.Html
 		public const string Strong = "strong";
 		public const string Hr = "hr";
 		public const string Span = "span";
+		public const string Table = "table";
+		public const string Thead = "thead";
+		public const string TFoot = "tfoot";
+		public const string Tr = "tr";
+		public const string Th = "th";
 	}
 
 }

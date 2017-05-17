@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using K9.DataAccess.Models;
@@ -8,6 +9,8 @@ namespace K9.DataAccess.Respositories
 {
 	public interface IRepository<T> where T : ObjectBase
 	{
+
+		List<T> List();
 
 		void Create(T item);
 

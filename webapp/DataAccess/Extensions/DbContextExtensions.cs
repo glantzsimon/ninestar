@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
@@ -8,6 +9,11 @@ namespace K9.DataAccess.Extensions
 {
 	public static class DbContextExtensions
 	{
+
+		public static List<T> List<T>(this DbContext context) where T : ObjectBase, IIdentity
+		{
+			return context.Database.SqlQuery<T>(string.Format("SELECT * FROM {0}", typeof(T).Name)).ToList();
+		}
 
 		public static void Create<T>(this DbContext context, T item) where T : ObjectBase, IIdentity
 		{

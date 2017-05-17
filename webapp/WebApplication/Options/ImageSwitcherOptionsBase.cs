@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System.Activities.Validation;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Web.Mvc;
+using System.Web.Script.Serialization;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Enums;
 using K9.WebApplication.Helpers;
@@ -55,6 +58,11 @@ namespace K9.WebApplication.Options
 		public List<string> GetImageSourceList()
 		{
 			return Images.Select(i => i.Src).ToList();
+		}
+
+		public MvcHtmlString GetImagesArray()
+		{
+			return MvcHtmlString.Create(new JavaScriptSerializer().Serialize(Images.Select(i => i.Src).ToArray()));
 		}
 	}
 }

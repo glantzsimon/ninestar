@@ -48,10 +48,23 @@ namespace K9.WebApplication.Controllers
 		#region Views
 
 		[Authorize]
-		[OutputCache(CacheProfile = Site.CacheProfiles.Moderate, VaryByParam = "page", VaryByHeader = "Accept-Language")]
-		public ActionResult Index()
+		public virtual ActionResult Index()
 		{
 			return View("Index");
+		}
+
+		[Authorize]
+		public virtual JsonResult List()
+		{
+			try
+			{
+				return Json(new { data = _repository.List() }, JsonRequestBehavior.AllowGet);
+			}
+			catch (Exception ex)
+			{
+				_logger.Error(ex.Message);
+				throw;
+			}
 		}
 
 		[Authorize]

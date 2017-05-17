@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
@@ -15,6 +16,11 @@ namespace K9.DataAccess.Respositories
 		public BaseRepository(DbContext db)
 		{
 			_db = db;
+		}
+
+		public List<T> List()
+		{
+			return _db.List<T>();
 		}
 
 		public void Create(T item)

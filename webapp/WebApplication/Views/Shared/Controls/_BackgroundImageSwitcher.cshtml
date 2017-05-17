@@ -1,8 +1,7 @@
-﻿@using System.Web.Script.Serialization
-@model BackgroundImageSwitcherOptions
+﻿@model BackgroundImageSwitcherOptions
 @{
 	var images = Model.GetImageSourceList();
-	var imagesArray = MvcHtmlString.Create(new JavaScriptSerializer().Serialize(images.ToArray()));
+	var imagesArray = Model.GetImagesArray();
 	var initialImage = images.FirstOrDefault();
 	
 	var element = String.IsNullOrEmpty(Model.ElementId) ? "body" : string.Format("#{0}", Model.ElementId);

@@ -178,9 +178,11 @@
     <Compile Include="Constants\Site.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Enums\BootstrapEnums.cs" />
     <Compile Include="Enums\ImageSwitcherEnums.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Extensions\MvcExtensions.cs" />
     <Compile Include="Helpers\BootstrapValidationSummary.cs" />
     <Compile Include="Helpers\BootstrapEditorFor.cs">
@@ -188,6 +190,7 @@
     </Compile>
     <Compile Include="Helpers\BootstrapForm.cs" />
     <Compile Include="Helpers\BootstrapButton.cs" />
+    <Compile Include="Helpers\BootstrapTable.cs" />
     <Compile Include="Helpers\Fail.cs" />
     <Compile Include="Helpers\Success.cs" />
     <Compile Include="Helpers\LoginLogout.cs" />
@@ -203,6 +206,7 @@
     <Compile Include="Models\ViewMessage.cs" />
     <Compile Include="Options\BackgroundImageSwitcherOptions.cs" />
     <Compile Include="Options\AlertOptions.cs" />
+    <Compile Include="Options\DataTableOptions.cs" />
     <Compile Include="Options\EditorOptions.cs" />
     <Compile Include="Options\ImageSwitcherOptions.cs" />
     <Compile Include="Options\ImageSwitcherOptionsBase.cs" />
@@ -312,9 +316,11 @@
     <Content Include="Views\Account\UpdatePasswordSuccess.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
+    <Content Include="Views\Shared\_DataTables.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Students\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -332,7 +338,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>1674</DevelopmentServerPort>
+          <DevelopmentServerPort>4009</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost/ninestar</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

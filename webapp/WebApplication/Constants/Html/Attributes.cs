@@ -15,6 +15,9 @@ namespace K9.WebApplication.Constants.Html
 		public const string DataDismiss = "data-dismiss";
 		public const string AreaLabel = "aria-label";
 		public const string DataLoadingText = "data-loading-text";
+		public const string CellSpacing = "cellspacing";
+		public const string Width = "width";
+		public const string DataUrl = "data-url";
 
 	}
 

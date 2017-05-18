@@ -25,7 +25,7 @@ namespace K9.WebApplication.Helpers
 			// Create table
 			var table = new TagBuilder(Tags.Table);
 			table.MergeAttribute(Attributes.Id, modelType.GetTableName());
-			table.MergeAttribute(Attributes.Class, "bootstraptable display");
+			table.MergeAttribute(Attributes.Class, "bootstraptable table table-striped table-bordered");
 			table.MergeAttribute(Attributes.CellSpacing, "0");
 			table.MergeAttribute(Attributes.Width, "100%");
 			table.MergeAttribute(Attributes.DataUrl, string.IsNullOrEmpty(dataUrl) ? modelType.GetDefaultDataUrl() : dataUrl);

@@ -4,6 +4,7 @@ using K9.DataAccess.Models;
 using K9.DataAccess.Respositories;
 using K9.SharedLibrary.Authentication;
 using K9.WebApplication.Constants;
+using Newtonsoft.Json;
 using NLog;
 
 namespace K9.WebApplication.Controllers
@@ -54,11 +55,12 @@ namespace K9.WebApplication.Controllers
 		}
 
 		[Authorize]
-		public virtual JsonResult List()
+		public virtual ActionResult List()
 		{
 			try
 			{
-				return Json(new { data = _repository.List() }, JsonRequestBehavior.AllowGet);
+				var json = JsonConvert.SerializeObject(new { data = _repository.List() }, new JsonSerializerSettings { DateFormatString = "yyyy-MM-ddThh:mm:ssZ" });
+				return Content(json, "application/json");
 			}
 			catch (Exception ex)
 			{

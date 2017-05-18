@@ -3,5 +3,14 @@
 }
 @section layout
 {
-	@RenderBody()
+	<div class="mainContent">
+		<div class="backdrop">
+			<div class="page shadow alphaBackground roundCorners wide-form">
+				<div class="page-header">
+					<h1>@ViewBag.Title</h1>
+				</div>
+				@RenderBody()
+			</div>
+		</div>
+	</div>
 }

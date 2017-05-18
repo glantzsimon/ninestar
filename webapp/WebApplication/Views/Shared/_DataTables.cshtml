@@ -5,7 +5,9 @@
 		var table = $("table.bootstraptable");
 		table.DataTable({
 			"ajax": table.attr("data-url"),
-			"columns": @Model.GetColumnDefs()
+			"columns": @Model.GetColumnDefs(),
+			"processing": true,
+			"serverSide": true
 		});
 	})
 

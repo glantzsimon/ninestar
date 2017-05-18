@@ -45,6 +45,11 @@
 	max-width: 460px;
 }
 
+.wide-form
+{
+	max-width: 90% !important;
+}
+
 .page-header
 {
 	margin-top: 0;

@@ -317,7 +317,7 @@
     <Content Include="Views\Account\UpdatePasswordSuccess.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
-    <Content Include="Views\Shared\_DataTables.cshtml" />
+    <Content Include="Views\Shared\Controls\_DataTablesJs.cshtml" />
     <Content Include="Views\Countries\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />

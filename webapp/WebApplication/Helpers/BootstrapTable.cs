@@ -22,6 +22,10 @@ namespace K9.WebApplication.Helpers
 			var columns = displayColumns.Any() ? properties.Where(p => displayColumns.Contains(p.Name)).ToList() : properties;
 			var columnNames = columns.Select(p => p.Name).ToList();
 
+			// Create table container
+			var div = new TagBuilder(Tags.Div);
+			div.MergeAttribute(Attributes.Class, "datatable-container");
+
 			// Create table
 			var table = new TagBuilder(Tags.Table);
 			table.MergeAttribute(Attributes.Id, modelType.GetTableName());
@@ -41,7 +45,9 @@ namespace K9.WebApplication.Helpers
 			table.InnerHtml += thead.ToString();
 			table.InnerHtml += tfoot.ToString();
 
-			sb.Append(table);
+			div.InnerHtml += table.ToString();
+
+			sb.Append(div);
 			sb.AppendLine(html.DataTable(dataUrl, columns).ToString());
 
 			return MvcHtmlString.Create(sb.ToString());
@@ -62,7 +68,7 @@ namespace K9.WebApplication.Helpers
 
 		private static MvcHtmlString DataTable<T>(this HtmlHelper<T> html, string dataUrl, List<PropertyInfo> columns)
 		{
-			return html.Partial("_DataTables", new DataTableOptions
+			return html.Partial("Controls/_DataTablesJs", new DataTableOptions
 			{
 				DataUrl = dataUrl,
 				Columns = columns

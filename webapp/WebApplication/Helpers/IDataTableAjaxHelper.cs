@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Collections.Generic;
 
 namespace K9.WebApplication.Helpers
@@ -14,7 +15,15 @@ namespace K9.WebApplication.Helpers
 
 	public interface IDataTableColumnInfo
 	{
-		int SortColumn { get; }
-		string SortDirection { get; }
+		int Index { get; }
+		string Data { get; }
+		string Name { get; }
+		string SearchValue { get; }
+		bool IsSearchRegex { get; }
+
+		void UpdateData(string data);
+		void UpdateName(string name);
+		void UpdateSearchValue(string searchValue);
+		void UpdateIsSearchRegex(bool value);
 	}
 }

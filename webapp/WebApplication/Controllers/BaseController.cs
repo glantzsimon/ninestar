@@ -72,12 +72,11 @@ namespace K9.WebApplication.Controllers
 		#region DataTable
 
 		[Authorize]
-		public virtual ActionResult List(int draw, int start, int length)
+		public virtual ActionResult List()
 		{
+			_logger.Info(this.GetQueryString());
 			try
 			{
-
-
 				var json = JsonConvert.SerializeObject(new { data = _repository.List() }, new JsonSerializerSettings { DateFormatString = "yyyy-MM-ddThh:mm:ssZ" });
 				return Content(json, "application/json");
 			}

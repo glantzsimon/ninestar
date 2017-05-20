@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
@@ -9,13 +10,14 @@ namespace K9.WebApplication.Helpers
 	public class DataTableAjaxHelper : IDataTableAjaxHelper
 	{
 
-		private const string SortDirection = "asc";
-		private const int TotalRows = 500;
+		private const int DefaultTotalRows = 500;
 		private const string DrawKey = "draw";
 		private const string StartKey = "start";
 		private const string LengthKey = "length";
 		private const string SearchKey = "search[value]";
 		private const string SearchRegexKey = "search[regex]";
+		private const string SortedColumnIndexKey = "order[0][column]";
+		private const string SortedColumnDirectionKey = "order[0][dir]";
 
 		private readonly NameValueCollection _queryString;
 		private readonly int _draw;
@@ -23,7 +25,11 @@ namespace K9.WebApplication.Helpers
 		private readonly int _length;
 		private readonly string _searchValue;
 		private readonly bool _isRegexSearch;
-		private readonly List<IDataTableColumnInfo> _columnInfos;
+		private readonly List<IDataTableColumnInfo> _columnInfos = new List<IDataTableColumnInfo>();
+		private readonly int _sortedColumnIndex;
+		private readonly string _sortedColumnDirection;
+
+		private delegate void DataColumnInfoUpdateDelegate(IDataTableColumnInfo columnInfo, object value);
 
 		public DataTableAjaxHelper(NameValueCollection queryString)
 		{
@@ -34,6 +40,9 @@ namespace K9.WebApplication.Helpers
 			_length = GetIntegerValueFromQueryString(LengthKey);
 			_searchValue = GetValueFromQueryString(SearchKey);
 			_isRegexSearch = GetBooleanValueFromQueryString(SearchRegexKey);
+			_sortedColumnIndex = GetIntegerValueFromQueryString(SortedColumnIndexKey);
+			_sortedColumnDirection = GetValueFromQueryString(SortedColumnDirectionKey);
+			SetColumnInfosFromQueryString();
 		}
 
 		public int Draw
@@ -66,6 +75,17 @@ namespace K9.WebApplication.Helpers
 			get { return _columnInfos; }
 		}
 
+		public object SortedColumnIndex
+		{
+			get { return _sortedColumnIndex; }
+
+		}
+
+		public string SortedColumnDirection
+		{
+			get { return _sortedColumnDirection; }
+		}
+
 		private string GetValueFromQueryString(string key)
 		{
 			return _queryString[key];
@@ -85,34 +105,82 @@ namespace K9.WebApplication.Helpers
 			return value;
 		}
 
-		//private List<IDataTableColumnInfo> GetColumnInfosFromQueryString()
-		//{
-		//    var columnSortRegex = new Regex(@"order\[[0-9]\]\[column\]");
-		//    var columnDirRegex = new Regex(@"order\[[0-9]\]\[dir\]");
+		private void SetColumnInfosFromQueryString()
+		{
+			var columnDataRegex = new Regex(@"columns\[[0-9]\]\[data\]");
+			var columnNameRegex = new Regex(@"columns\[[0-9]\]\[name\]");
+			var columnSearchValueRegex = new Regex(@"columns\[[0-9]\]\[search\]\[value\]");
+			var columnIsRegexSearchRegex = new Regex(@"columns\[[0-9]\]\[search\]\[regex\]");
 
-		//    var columnOrderKeys = _queryString.AllKeys.Where(k => sortColumnRegex.IsMatch(k)).ToList();
+			AddColumnInfoData(_queryString.AllKeys.Where(k => columnDataRegex.IsMatch(k)).ToList(), (columnInfo, data) =>
+			{
+				columnInfo.UpdateData(data.ToString());
+			});
 
-		//    return columnOrderKeys.Select(key => new DataTableColumnInfo()).ToList();
-		//}
+			AddColumnInfoData(_queryString.AllKeys.Where(k => columnNameRegex.IsMatch(k)).ToList(), (columnInfo, data) =>
+			{
+				columnInfo.UpdateName(data.ToString());
+			});
+
+			AddColumnInfoData(_queryString.AllKeys.Where(k => columnSearchValueRegex.IsMatch(k)).ToList(), (columnInfo, data) =>
+			{
+				columnInfo.UpdateSearchValue(data.ToString());
+			});
+
+			AddColumnInfoData(_queryString.AllKeys.Where(k => columnIsRegexSearchRegex.IsMatch(k)).ToList(), (columnInfo, data) =>
+			{
+				columnInfo.UpdateIsSearchRegex(bool.Parse(data.ToString()));
+			});
+		}
+
+		private void AddColumnInfoData(List<string> keys, DataColumnInfoUpdateDelegate columnUpdater)
+		{
+			foreach (var key in keys)
+			{
+				var columnData = _queryString[key];
+				var columnIndex = GetColumnIndexFromKey(key);
+				var columnInfo = GetColumnInfoAtIndex(columnIndex);
+				columnUpdater(columnInfo, columnData);
+			}
+		}
+
+		private IDataTableColumnInfo GetColumnInfoAtIndex(int index)
+		{
+			var columnInfo = ColumnInfos.FirstOrDefault(c => c.Index == index);
+			if (columnInfo == null)
+			{
+				columnInfo = new DataTableColumnInfo(index);
+				ColumnInfos.Add(columnInfo);
+			}
+			return columnInfo;
+		}
+
+		private int GetColumnIndexFromKey(string key)
+		{
+			var columnIndexRegex = new Regex(@"\[([0-9])\]");
+			int index = 0;
+			var columnIndexValue = columnIndexRegex.Match(key).Groups[1].Value;
+			int.TryParse(columnIndexValue, out index);
+			return index;
+		}
 	}
 
 	public class DataTableColumnInfo : IDataTableColumnInfo
 	{
-		private readonly string _data;
-		private readonly string _name;
-		private readonly string _searchValue;
-		private readonly string _searchRegex;
-		private readonly int _sortColumn;
-		private readonly string _sortDirection;
+		private readonly int _index;
+		private string _data;
+		private string _name;
+		private string _searchValue;
+		private bool _isSearchRegex;
 
-		public DataTableColumnInfo(string data, string name, string searchValue, string searchRegex, int sortColumn, string sortDirection)
+		public DataTableColumnInfo(int index)
 		{
-			_data = data;
-			_name = name;
-			_searchValue = searchValue;
-			_searchRegex = searchRegex;
-			_sortColumn = sortColumn;
-			_sortDirection = sortDirection;
+			_index = index;
+		}
+
+		public int Index
+		{
+			get { return _index; } 
 		}
 
 		public string Data
@@ -130,19 +198,29 @@ namespace K9.WebApplication.Helpers
 			get { return _searchValue; }
 		}
 
-		public string SearchRegex
+		public bool IsSearchRegex
 		{
-			get { return _searchRegex; }
+			get { return _isSearchRegex; }
 		}
 
-		public int SortColumn
+		public void UpdateData(string data)
 		{
-			get { return _sortColumn; }
+			_data = data;
 		}
 
-		public string SortDirection
+		public void UpdateName(string name)
 		{
-			get { return _sortDirection; }
+			_name = name;
+		}
+
+		public void UpdateSearchValue(string searchValue)
+		{
+			_searchValue = searchValue;
+		}
+
+		public void UpdateIsSearchRegex(bool value)
+		{
+			_isSearchRegex = value;
 		}
 	}
 }

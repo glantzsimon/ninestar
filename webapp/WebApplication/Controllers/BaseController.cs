@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 using K9.DataAccess.Models;
 using K9.DataAccess.Respositories;
 using K9.SharedLibrary.Authentication;
+using K9.SharedLibrary.Extensions;
 using K9.WebApplication.Constants;
 using Newtonsoft.Json;
 using NLog;
@@ -55,21 +57,6 @@ namespace K9.WebApplication.Controllers
 		}
 
 		[Authorize]
-		public virtual ActionResult List()
-		{
-			try
-			{
-				var json = JsonConvert.SerializeObject(new { data = _repository.List() }, new JsonSerializerSettings { DateFormatString = "yyyy-MM-ddThh:mm:ssZ" });
-				return Content(json, "application/json");
-			}
-			catch (Exception ex)
-			{
-				_logger.Error(ex.Message);
-				throw;
-			}
-		}
-
-		[Authorize]
 		public virtual ActionResult Details(int id = 0)
 		{
 			T item = _repository.Find(id);
@@ -78,6 +65,27 @@ namespace K9.WebApplication.Controllers
 				return HttpNotFound();
 			}
 			return View(item);
+		}
+
+		#endregion
+
+		#region DataTable
+
+		[Authorize]
+		public virtual ActionResult List(int draw, int start, int length)
+		{
+			try
+			{
+
+
+				var json = JsonConvert.SerializeObject(new { data = _repository.List() }, new JsonSerializerSettings { DateFormatString = "yyyy-MM-ddThh:mm:ssZ" });
+				return Content(json, "application/json");
+			}
+			catch (Exception ex)
+			{
+				_logger.Error(ex.Message);
+				throw;
+			}
 		}
 
 		#endregion

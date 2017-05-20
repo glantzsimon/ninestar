@@ -18,17 +18,6 @@ namespace K9.WebApplication.Tests.Unit
 
 			Assert.AreEqual("test", html.GetOutputFromStream());
 		}
-
-		[Ignore]
-		[TestMethod]
-		public void HtmlHelper_BootstrapEditoFor_ShouldRenderCorrectly()
-		{
-			var model = new UserAccount.LoginModel();
-			var html = HtmlHelper.CreateHtmlHelper(model);
-
-			html.BootstrapEditorFor(m => m.UserName);
-
-			Assert.AreEqual("<input>", html.GetOutputFromStream());
-		}
+		
 	}
 }

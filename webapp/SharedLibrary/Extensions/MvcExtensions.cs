@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
@@ -45,6 +46,12 @@ namespace K9.SharedLibrary.Extensions
 		{
 			return viewContext.RouteData.Values["action"].ToString() == actionName &&
 				   viewContext.RouteData.Values["controller"].ToString() == controllerName;
+		}
+
+		public static string GetQueryString(this ControllerBase controller)
+		{
+			var queryString = controller.ControllerContext.RequestContext.HttpContext.Request.QueryString;
+			return queryString.AllKeys.Select(key => string.Format("{0}={1}", key, queryString.GetValue(key))).Aggregate("", (a, b) => a + (string.IsNullOrEmpty(b) ? "" : string.Format("&{0}", b)));
 		}
 
 	}

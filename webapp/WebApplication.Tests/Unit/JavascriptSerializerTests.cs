@@ -1,7 +1,5 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Web.Script.Serialization;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -24,5 +22,7 @@ namespace K9.WebApplication.Tests.Unit
 
 			Assert.AreEqual("[\"one\",\"two\",\"three\"]", jsArray);
 		}
+		
 	}
+
 }

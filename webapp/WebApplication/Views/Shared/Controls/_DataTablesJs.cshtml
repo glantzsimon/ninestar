@@ -7,7 +7,8 @@
 			"ajax": table.attr("data-url"),
 			"columns": @Model.GetColumnDefs(),
 			"processing": true,
-			"serverSide": true
+			"serverSide": true,
+			"stateSave": true
 		});
 	})
 

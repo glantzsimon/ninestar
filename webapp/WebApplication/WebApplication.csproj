@@ -192,6 +192,8 @@
     <Compile Include="Helpers\BootstrapForm.cs" />
     <Compile Include="Helpers\BootstrapButton.cs" />
     <Compile Include="Helpers\BootstrapTable.cs" />
+    <Compile Include="Helpers\IDataTableAjaxHelper.cs" />
+    <Compile Include="Helpers\DataTableAjaxHelper.cs" />
     <Compile Include="Helpers\Fail.cs" />
     <Compile Include="Helpers\Success.cs" />
     <Compile Include="Helpers\LoginLogout.cs" />
@@ -320,6 +322,7 @@
     <Content Include="Views\Shared\Controls\_DataTablesJs.cshtml" />
     <Content Include="Views\Countries\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Nlog.config" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
     <Content Include="Views\Shared\_Layout100.cshtml" />

@@ -73,3 +73,8 @@
 	width: 100%;
 	overflow: scroll;
 }
+
+.k9-navbar a
+{
+	text-decoration: none;
+}

@@ -100,7 +100,10 @@
     <Compile Include="Helpers\TestHtmlHelper.cs" />
     <Compile Include="Models\AssetInfo.cs" />
     <Compile Include="Models\IAssetInfo.cs" />
+    <Compile Include="Models\IIgnoreColumns.cs" />
+    <Compile Include="Models\IObjectBase.cs" />
     <Compile Include="Models\ImageInfo.cs" />
+    <Compile Include="Models\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

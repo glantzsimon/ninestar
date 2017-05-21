@@ -5,11 +5,11 @@ using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using K9.DataAccess.Extensions;
-using K9.DataAccess.Models;
+using K9.SharedLibrary.Models;
 
 namespace K9.DataAccess.Respositories
 {
-	public class BaseRepository<T> : IRepository<T> where T : ObjectBase
+	public class BaseRepository<T> : IRepository<T> where T : class, IObjectBase
 	{
 		private readonly DbContext _db;
 

@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Linq;
 using System.Web.Mvc;
-using K9.DataAccess.Models;
-using K9.DataAccess.Respositories;
 using K9.SharedLibrary.Authentication;
+using K9.SharedLibrary.Models;
 using K9.WebApplication.Helpers;
 using Newtonsoft.Json;
 using NLog;
@@ -11,7 +9,7 @@ using NLog;
 namespace K9.WebApplication.Controllers
 {
 
-	public abstract class BaseController<T> : Controller where T : ObjectBase, IIdentity
+	public abstract class BaseController<T> : Controller where T : class, IObjectBase
 	{
 
 		#region Variables

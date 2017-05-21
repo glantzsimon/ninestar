@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using K9.SharedLibrary.Models;
 
 namespace K9.DataAccess.Models
 {

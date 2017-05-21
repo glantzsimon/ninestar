@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using K9.DataAccess.Models;
+using K9.SharedLibrary.Models;
 using NLog;
 
 namespace K9.WebApplication.Helpers

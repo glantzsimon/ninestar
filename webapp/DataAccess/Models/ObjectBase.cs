@@ -4,11 +4,12 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using K9.Globalisation;
 using K9.SharedLibrary.Authentication;
+using K9.SharedLibrary.Models;
 using WebMatrix.WebData;
 
 namespace K9.DataAccess.Models
 {
-	public abstract class ObjectBase : IIdentity
+	public abstract class ObjectBase : IObjectBase
 	{
 
 		#region Properties

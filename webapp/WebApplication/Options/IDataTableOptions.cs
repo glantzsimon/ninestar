@@ -2,6 +2,7 @@
 using System.Reflection;
 using System.Web.Mvc;
 using K9.DataAccess.Models;
+using K9.SharedLibrary.Models;
 
 namespace K9.WebApplication.Options
 {

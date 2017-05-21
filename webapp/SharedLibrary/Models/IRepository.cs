@@ -1,13 +1,11 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using K9.DataAccess.Models;
 
-namespace K9.DataAccess.Respositories
+namespace K9.SharedLibrary.Models
 {
-	public interface IRepository<T> where T : ObjectBase
+	public interface IRepository<T> where T : IObjectBase
 	{
 
 		List<T> GetQuery(string sql);

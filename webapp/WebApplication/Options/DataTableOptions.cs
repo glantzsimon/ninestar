@@ -3,7 +3,7 @@ using System.Linq;
 using System.Reflection;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
-using K9.DataAccess.Models;
+using K9.SharedLibrary.Models;
 using K9.WebApplication.Extensions;
 
 namespace K9.WebApplication.Options

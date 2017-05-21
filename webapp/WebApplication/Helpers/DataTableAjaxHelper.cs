@@ -57,18 +57,19 @@ namespace K9.WebApplication.Helpers
 
 		public string GetQuery()
 		{
-			return string.Format("SELECT TOP {0} * " +
-								 "FROM {1} " +
-								 "WHERE {2} " +
-			                     "ORDER BY {3} {4} " +
-			                     "OFFSET {5} * {6} ROWS FETCH NEXT {5} ROWS ONLY OPTION (RECOMPILE)",
-								 Length,
-								 typeof(T).Name,
-								 GetWhereClause(),
+			return string.Format("WITH RESULTS AS " +
+								 "(SELECT *, ROW_NUMBER() OVER " +
+								 "(ORDER BY {0} {1}) AS RowNum " +
+								 "FROM {2} " +
+								 "WHERE {3}) " +
+								 "SELECT * FROM RESULTS " +
+								 "WHERE RowNum BETWEEN {4} AND {5}",
 								 OrderByColumnName,
 								 OrderByDirection,
-								 Length,
-								 Start);
+								 typeof(T).Name,
+								 GetWhereClause(),
+								 PageStart,
+								 PageEnd);
 		}
 
 		public int Draw
@@ -84,6 +85,16 @@ namespace K9.WebApplication.Helpers
 		public int Length
 		{
 			get { return _length; }
+		}
+
+		public int PageStart
+		{
+			get { return _start * _length; }
+		}
+
+		public int PageEnd
+		{
+			get { return (_start + 1) * _length; }
 		}
 
 		public string SearchValue

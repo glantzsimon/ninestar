@@ -104,6 +104,35 @@ namespace K9.WebApplication.Tests.Unit
 							"WHERE RowNum BETWEEN 40 AND 60", helper.GetQuery());
 		}
 
+		[TestMethod]
+		public void ShouldMap_DataTableQueryString_ToDataTableAjaxOptions_WithNoWhereClause()
+		{
+			var querystring = new NameValueCollection
+			{
+				{"draw", "1"},
+				{"start", "0"},
+				{"length", "10"},
+				{"search[value]", ""},
+				{"search[regex]", "false"},
+				{"order[0][column]", "0"},
+				{"order[0][dir]", "asc"},
+				{"columns[0][data]", "TwoLetterCountryCode"},
+				{"columns[0][name]", "Two Letter Country Code"},
+				{"columns[0][search][value]", ""},
+				{"columns[0][search][regex]", "true"}
+			};
+
+			var helper = new DataTableAjaxHelper<Country>(new Mock<ILogger>().Object, new IgnoreColumns());
+			helper.LoadQueryString(querystring);
+
+			Assert.AreEqual("WITH RESULTS AS " +
+							"(SELECT *, ROW_NUMBER() OVER " +
+							"(ORDER BY TwoLetterCountryCode ASC) AS RowNum " +
+							"FROM Country ) " +
+							"SELECT * FROM RESULTS " +
+							"WHERE RowNum BETWEEN 0 AND 10", helper.GetQuery());
+		}
+
 	}
 
 }

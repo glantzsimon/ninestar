@@ -61,7 +61,7 @@ namespace K9.WebApplication.Helpers
 								 "(SELECT *, ROW_NUMBER() OVER " +
 								 "(ORDER BY {0} {1}) AS RowNum " +
 								 "FROM {2} " +
-								 "WHERE {3}) " +
+								 "{3}) " +
 								 "SELECT * FROM RESULTS " +
 								 "WHERE RowNum BETWEEN {4} AND {5}",
 								 OrderByColumnName,
@@ -153,10 +153,7 @@ namespace K9.WebApplication.Helpers
 			{
 				foreach (var columnInfo in GetColumnInfosNotIgnored())
 				{
-					if (sb.Length > 0)
-					{
-						sb.Append(" OR ");
-					}
+					sb.Append(sb.Length == 0 ? "WHERE " : " OR ");
 					sb.AppendFormat("{0} LIKE '{1}'", columnInfo.Data, GetLikeSearchValue());
 				}
 			}
@@ -166,10 +163,7 @@ namespace K9.WebApplication.Helpers
 				{
 					if (!string.IsNullOrEmpty(columnInfo.SearchValue))
 					{
-						if (sb.Length > 0)
-						{
-							sb.Append(" OR ");
-						}
+						sb.Append(sb.Length == 0 ? "WHERE " : " OR ");
 						sb.AppendFormat("{0} LIKE '{1}'", columnInfo.Data, columnInfo.GetLikeSearchValue());
 					}
 				}

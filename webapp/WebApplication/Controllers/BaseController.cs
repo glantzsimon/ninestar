@@ -75,6 +75,7 @@ namespace K9.WebApplication.Controllers
 		public virtual ActionResult List()
 		{
 			_ajaxHelper.LoadQueryString(HttpContext.Request.QueryString);
+			_logger.Info(_ajaxHelper.GetQuery());
 			try
 			{
 				var data = _repository.GetQuery(_ajaxHelper.GetQuery());

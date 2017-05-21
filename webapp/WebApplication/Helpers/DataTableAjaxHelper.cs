@@ -72,6 +72,12 @@ namespace K9.WebApplication.Helpers
 								 PageEnd);
 		}
 
+		public string GetTotalRecordsQuery()
+		{
+			return string.Format("SELECT COUNT(*) FROM {0}",
+								 typeof(T).Name);
+		}
+
 		public int Draw
 		{
 			get { return _draw; }
@@ -137,9 +143,6 @@ namespace K9.WebApplication.Helpers
 		{
 			get { return _orderByDirection; }
 		}
-
-		public int RecordsTotal { get; set; }
-		public int RecordsFiltered { get; set; }
 
 		private List<IDataTableColumnInfo> GetColumnInfosNotIgnored()
 		{

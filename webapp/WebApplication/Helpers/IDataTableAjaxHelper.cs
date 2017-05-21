@@ -10,11 +10,10 @@ namespace K9.WebApplication.Helpers
 		int Start { get; }
 		int Length { get; }
 		string SearchValue { get; }
-		int RecordsTotal { get; set; }
-		int RecordsFiltered { get; set; }
 		List<IDataTableColumnInfo> ColumnInfos { get; }
 		void LoadQueryString(NameValueCollection queryString);
 		string GetQuery();
+		string GetTotalRecordsQuery();
 	}
 
 	public interface IDataTableColumnInfo

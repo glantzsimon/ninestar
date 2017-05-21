@@ -75,18 +75,17 @@ namespace K9.WebApplication.Controllers
 		public virtual ActionResult List()
 		{
 			_ajaxHelper.LoadQueryString(HttpContext.Request.QueryString);
-			_logger.Info(_ajaxHelper.GetQuery());
 			try
 			{
+				var totalRecords = _repository.GetQuery(_ajaxHelper.GetTotalRecordsQuery());
 				var data = _repository.GetQuery(_ajaxHelper.GetQuery());
 				var json = JsonConvert.SerializeObject(new
 				{
-					draw = _ajaxHelper.Draw, 
-					recordsTotal = _ajaxHelper.RecordsTotal,  
-					recordsFiltered = _ajaxHelper.RecordsFiltered,
+					draw = _ajaxHelper.Draw,
+					recordsTotal = totalRecords,  
+					recordsFiltered = data.Count,
 					data,
 				}, new JsonSerializerSettings { DateFormatString = DateTimeConstants.DataTableDateTimeFormat });
-				_logger.Info(json);
 				return Content(json, "application/json");
 			}
 			catch (Exception ex)

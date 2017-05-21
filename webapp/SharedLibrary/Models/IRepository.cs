@@ -8,6 +8,8 @@ namespace K9.SharedLibrary.Models
 	public interface IRepository<T> where T : IObjectBase
 	{
 
+		int GetCount();
+
 		List<T> GetQuery(string sql);
 
 		List<T> List();

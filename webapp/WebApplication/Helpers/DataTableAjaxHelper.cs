@@ -72,12 +72,6 @@ namespace K9.WebApplication.Helpers
 								 PageEnd);
 		}
 
-		public string GetTotalRecordsQuery()
-		{
-			return string.Format("SELECT COUNT(*) FROM {0}",
-								 typeof(T).Name);
-		}
-
 		public int Draw
 		{
 			get { return _draw; }

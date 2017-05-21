@@ -13,7 +13,6 @@ namespace K9.WebApplication.Helpers
 		List<IDataTableColumnInfo> ColumnInfos { get; }
 		void LoadQueryString(NameValueCollection queryString);
 		string GetQuery();
-		string GetTotalRecordsQuery();
 	}
 
 	public interface IDataTableColumnInfo

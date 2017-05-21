@@ -18,6 +18,11 @@ namespace K9.DataAccess.Respositories
 			_db = db;
 		}
 
+		public int GetCount()
+		{
+			return _db.GetCount<T>();
+		}
+
 		public List<T> GetQuery(string sql)
 		{
 			return _db.GetQuery<T>(sql);
@@ -92,6 +97,6 @@ namespace K9.DataAccess.Respositories
 
 		#endregion
 
-		
+
 	}
 }

@@ -20,6 +20,11 @@ namespace K9.DataAccess.Extensions
 			return context.Set<T>().ToList();
 		}
 
+		public static int GetCount<T>(this DbContext context) where T : class, IObjectBase
+		{
+			return context.Database.SqlQuery<int>(string.Format("SELECT COUNT(*) FROM {0}", typeof(T).Name)).First();
+		}
+
 		public static void Create<T>(this DbContext context, T item) where T : class, IObjectBase
 		{
 			context.Set<T>().Add(item);

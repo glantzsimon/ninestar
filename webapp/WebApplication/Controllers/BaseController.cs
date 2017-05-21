@@ -77,7 +77,7 @@ namespace K9.WebApplication.Controllers
 			_ajaxHelper.LoadQueryString(HttpContext.Request.QueryString);
 			try
 			{
-				var totalRecords = _repository.GetQuery(_ajaxHelper.GetTotalRecordsQuery());
+				var totalRecords = _repository.GetCount();
 				var data = _repository.GetQuery(_ajaxHelper.GetQuery());
 				var json = JsonConvert.SerializeObject(new
 				{
@@ -86,6 +86,7 @@ namespace K9.WebApplication.Controllers
 					recordsFiltered = data.Count,
 					data,
 				}, new JsonSerializerSettings { DateFormatString = DateTimeConstants.DataTableDateTimeFormat });
+				_logger.Info(json);
 				return Content(json, "application/json");
 			}
 			catch (Exception ex)

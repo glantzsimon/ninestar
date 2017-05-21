@@ -18,6 +18,11 @@ namespace K9.DataAccess.Respositories
 			_db = db;
 		}
 
+		public List<T> GetQuery(string sql)
+		{
+			return _db.GetQuery<T>(sql);
+		}
+
 		public List<T> List()
 		{
 			return _db.List<T>();

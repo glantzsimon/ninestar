@@ -1,16 +1,20 @@
 ﻿
-using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 
 namespace K9.WebApplication.Helpers
 {
-	public interface IDataTableAjaxHelper
+	public interface IDataTableAjaxHelper<T> where T : class 
 	{
 		int Draw { get; }
 		int Start { get; }
 		int Length { get; }
 		string SearchValue { get; }
+		int RecordsTotal { get; set; }
+		int RecordsFiltered { get; set; }
 		List<IDataTableColumnInfo> ColumnInfos { get; }
+		void LoadQueryString(NameValueCollection queryString);
+		string GetQuery();
 	}
 
 	public interface IDataTableColumnInfo
@@ -19,11 +23,12 @@ namespace K9.WebApplication.Helpers
 		string Data { get; }
 		string Name { get; }
 		string SearchValue { get; }
-		bool IsSearchRegex { get; }
+		bool IsRegexSearch { get; }
 
 		void UpdateData(string data);
 		void UpdateName(string name);
 		void UpdateSearchValue(string searchValue);
 		void UpdateIsSearchRegex(bool value);
+		string GetLikeSearchValue();
 	}
 }

@@ -3,13 +3,15 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
+using K9.DataAccess.Models;
+using NLog;
 
 namespace K9.WebApplication.Helpers
 {
-	public class DataTableAjaxHelper : IDataTableAjaxHelper
+	public class DataTableAjaxHelper<T> : IDataTableAjaxHelper<T> where T : class
 	{
-
 		private const int DefaultTotalRows = 500;
 		private const string DrawKey = "draw";
 		private const string StartKey = "start";
@@ -19,19 +21,27 @@ namespace K9.WebApplication.Helpers
 		private const string SortedColumnIndexKey = "order[0][column]";
 		private const string SortedColumnDirectionKey = "order[0][dir]";
 
-		private readonly NameValueCollection _queryString;
-		private readonly int _draw;
-		private readonly int _start;
-		private readonly int _length;
-		private readonly string _searchValue;
-		private readonly bool _isRegexSearch;
+		private readonly ILogger _logger;
+		private readonly IIgnoreColumns _ignoredColumns;
 		private readonly List<IDataTableColumnInfo> _columnInfos = new List<IDataTableColumnInfo>();
-		private readonly int _sortedColumnIndex;
-		private readonly string _sortedColumnDirection;
+		private NameValueCollection _queryString;
+		private int _draw;
+		private int _start;
+		private int _length;
+		private string _searchValue;
+		private bool _isRegexSearch;
+		private int _orderByColumnIndex;
+		private string _orderByDirection;
 
 		private delegate void DataColumnInfoUpdateDelegate(IDataTableColumnInfo columnInfo, object value);
 
-		public DataTableAjaxHelper(NameValueCollection queryString)
+		public DataTableAjaxHelper(ILogger logger, IIgnoreColumns ignoredColumns)
+		{
+			_logger = logger;
+			_ignoredColumns = ignoredColumns;
+		}
+
+		public void LoadQueryString(NameValueCollection queryString)
 		{
 			_queryString = queryString;
 
@@ -40,9 +50,22 @@ namespace K9.WebApplication.Helpers
 			_length = GetIntegerValueFromQueryString(LengthKey);
 			_searchValue = GetValueFromQueryString(SearchKey);
 			_isRegexSearch = GetBooleanValueFromQueryString(SearchRegexKey);
-			_sortedColumnIndex = GetIntegerValueFromQueryString(SortedColumnIndexKey);
-			_sortedColumnDirection = GetValueFromQueryString(SortedColumnDirectionKey);
+			_orderByColumnIndex = GetIntegerValueFromQueryString(SortedColumnIndexKey);
+			_orderByDirection = GetValueFromQueryString(SortedColumnDirectionKey).ToUpper();
 			SetColumnInfosFromQueryString();
+		}
+
+		public string GetQuery()
+		{
+			return string.Format("SELECT TOP {0} * " +
+								 "FROM {1} " +
+								 "WHERE {2} " +
+			                     "ORDER BY {3} {4}",
+								 Length,
+								 typeof(T).Name,
+								 GetWhereClause(),
+								 OrderByColumnName,
+								 OrderByDirection);
 		}
 
 		public int Draw
@@ -75,15 +98,78 @@ namespace K9.WebApplication.Helpers
 			get { return _columnInfos; }
 		}
 
-		public object SortedColumnIndex
+		public int OrderByColumnIndex
 		{
-			get { return _sortedColumnIndex; }
-
+			get { return _orderByColumnIndex; }
 		}
 
-		public string SortedColumnDirection
+		public string OrderByColumnName
 		{
-			get { return _sortedColumnDirection; }
+			get
+			{
+				try
+				{
+					return ColumnInfos[_orderByColumnIndex].Data;
+				}
+				catch (Exception ex)
+				{
+					_logger.Error(ex.Message);
+					throw new Exception("Invalid order by column index");
+				}
+			}
+		}
+
+		public string OrderByDirection
+		{
+			get { return _orderByDirection; }
+		}
+
+		public int RecordsTotal { get; set; }
+		public int RecordsFiltered { get; set; }
+
+		private List<IDataTableColumnInfo> GetColumnInfosNotIgnored()
+		{
+			return ColumnInfos.Where(c => !_ignoredColumns.ColumnsToIgnore.Contains(c.Name)).ToList();
+		}
+
+		private string GetWhereClause()
+		{
+			var sb = new StringBuilder();
+			if (!string.IsNullOrEmpty(SearchValue))
+			{
+				foreach (var columnInfo in GetColumnInfosNotIgnored())
+				{
+					if (sb.Length > 0)
+					{
+						sb.Append(" OR ");
+					}
+					sb.AppendFormat("{0} LIKE '{1}'", columnInfo.Data, GetLikeSearchValue());
+				}
+			}
+			else
+			{
+				foreach (var columnInfo in GetColumnInfosNotIgnored())
+				{
+					if (!string.IsNullOrEmpty(columnInfo.SearchValue))
+					{
+						if (sb.Length > 0)
+						{
+							sb.Append(" OR ");
+						}
+						sb.AppendFormat("{0} LIKE '{1}'", columnInfo.Data, columnInfo.GetLikeSearchValue());
+					}
+				}
+			}
+			return sb.ToString();
+		}
+
+		/// <summary>
+		/// Takes into account whether it is a regex search or not
+		/// </summary>
+		/// <returns></returns>
+		private string GetLikeSearchValue()
+		{
+			return IsRegexSearch ? string.Format("%[{0}]%", SearchValue) : string.Format("%{0}%", SearchValue);
 		}
 
 		private string GetValueFromQueryString(string key)
@@ -180,7 +266,7 @@ namespace K9.WebApplication.Helpers
 
 		public int Index
 		{
-			get { return _index; } 
+			get { return _index; }
 		}
 
 		public string Data
@@ -198,7 +284,7 @@ namespace K9.WebApplication.Helpers
 			get { return _searchValue; }
 		}
 
-		public bool IsSearchRegex
+		public bool IsRegexSearch
 		{
 			get { return _isSearchRegex; }
 		}
@@ -221,6 +307,15 @@ namespace K9.WebApplication.Helpers
 		public void UpdateIsSearchRegex(bool value)
 		{
 			_isSearchRegex = value;
+		}
+
+		/// <summary>
+		/// Takes into account whether it is a regex search or not
+		/// </summary>
+		/// <returns></returns>
+		public string GetLikeSearchValue()
+		{
+			return IsRegexSearch ? string.Format("%[{0}]%", SearchValue) : string.Format("%{0}%", SearchValue);
 		}
 	}
 }

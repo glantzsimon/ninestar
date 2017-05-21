@@ -10,9 +10,14 @@ namespace K9.DataAccess.Extensions
 	public static class DbContextExtensions
 	{
 
+		public static List<T> GetQuery<T>(this DbContext context, string sql) where T : ObjectBase, IIdentity
+		{
+			return context.GetQuery<T>(sql);
+		}
+
 		public static List<T> List<T>(this DbContext context) where T : ObjectBase, IIdentity
 		{
-			return context.Database.SqlQuery<T>(string.Format("SELECT * FROM {0}", typeof(T).Name)).ToList();
+			return context.Set<T>().ToList();
 		}
 
 		public static void Create<T>(this DbContext context, T item) where T : ObjectBase, IIdentity

@@ -4,8 +4,7 @@ using System.Web.Mvc;
 using K9.DataAccess.Models;
 using K9.DataAccess.Respositories;
 using K9.SharedLibrary.Authentication;
-using K9.SharedLibrary.Extensions;
-using K9.WebApplication.Constants;
+using K9.WebApplication.Helpers;
 using Newtonsoft.Json;
 using NLog;
 
@@ -19,6 +18,7 @@ namespace K9.WebApplication.Controllers
 
 		private readonly IRepository<T> _repository;
 		private readonly ILogger _logger;
+		private readonly IDataTableAjaxHelper<T> _ajaxHelper;
 
 		#endregion
 
@@ -39,10 +39,11 @@ namespace K9.WebApplication.Controllers
 
 		#region Constructors
 
-		protected BaseController(IRepository<T> repository, ILogger logger)
+		protected BaseController(IRepository<T> repository, ILogger logger, IDataTableAjaxHelper<T> ajaxHelper)
 		{
 			_repository = repository;
 			_logger = logger;
+			_ajaxHelper = ajaxHelper;
 		}
 
 		#endregion
@@ -74,10 +75,17 @@ namespace K9.WebApplication.Controllers
 		[Authorize]
 		public virtual ActionResult List()
 		{
-			_logger.Info(this.GetQueryString());
+			_ajaxHelper.LoadQueryString(HttpContext.Request.QueryString);
 			try
 			{
-				var json = JsonConvert.SerializeObject(new { data = _repository.List() }, new JsonSerializerSettings { DateFormatString = "yyyy-MM-ddThh:mm:ssZ" });
+				var data = _repository.GetQuery(_ajaxHelper.GetQuery());
+				var json = JsonConvert.SerializeObject(new
+				{
+					draw = _ajaxHelper.Draw, 
+					recordsTotal = _ajaxHelper.RecordsTotal,  
+					recordsFiltered = _ajaxHelper.RecordsFiltered,
+					data = data,
+				}, new JsonSerializerSettings { DateFormatString = "yyyy-MM-ddThh:mm:ssZ" });
 				return Content(json, "application/json");
 			}
 			catch (Exception ex)

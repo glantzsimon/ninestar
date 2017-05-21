@@ -10,6 +10,8 @@ namespace K9.DataAccess.Respositories
 	public interface IRepository<T> where T : ObjectBase
 	{
 
+		List<T> GetQuery(string sql);
+
 		List<T> List();
 
 		void Create(T item);

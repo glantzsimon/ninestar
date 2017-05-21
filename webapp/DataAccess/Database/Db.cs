@@ -10,6 +10,7 @@ namespace K9.DataAccess.Database
 		public Db()
 			: base("name=DefaultConnection")
 		{
+			Configuration.LazyLoadingEnabled = false;
 		}
 
 

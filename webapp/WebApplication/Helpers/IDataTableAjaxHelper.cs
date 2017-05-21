@@ -12,7 +12,7 @@ namespace K9.WebApplication.Helpers
 		string SearchValue { get; }
 		List<IDataTableColumnInfo> ColumnInfos { get; }
 		void LoadQueryString(NameValueCollection queryString);
-		string GetQuery();
+		string GetQuery(bool selectAllColumns = false);
 	}
 
 	public interface IDataTableColumnInfo

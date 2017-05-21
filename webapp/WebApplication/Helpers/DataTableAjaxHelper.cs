@@ -55,7 +55,7 @@ namespace K9.WebApplication.Helpers
 			SetColumnInfosFromQueryString();
 		}
 
-		public string GetQuery()
+		public string GetQuery(bool selectAllColumns = false)
 		{
 			return string.Format("WITH RESULTS AS " +
 								 "(SELECT {0}, ROW_NUMBER() OVER " +
@@ -64,7 +64,7 @@ namespace K9.WebApplication.Helpers
 								 "{4}) " +
 								 "SELECT * FROM RESULTS " +
 								 "WHERE RowNum BETWEEN {5} AND {6}",
-								 GetSelectColumns(),
+								 GetSelectColumns(selectAllColumns),
 								 OrderByColumnName,
 								 OrderByDirection,
 								 typeof(T).Name,
@@ -144,8 +144,11 @@ namespace K9.WebApplication.Helpers
 			return ColumnInfos.Where(c => !_ignoredColumns.ColumnsToIgnore.Contains(c.Name)).ToList();
 		}
 
-		private string GetSelectColumns()
+		private string GetSelectColumns(bool selectAllColumns = false)
 		{
+			if (selectAllColumns)
+				return "*";
+
 			var sb = new StringBuilder();
 			foreach (var columnInfo in GetColumnInfosNotIgnored())
 			{

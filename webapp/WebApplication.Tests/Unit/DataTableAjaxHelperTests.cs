@@ -56,7 +56,12 @@ namespace K9.WebApplication.Tests.Unit
 			Assert.AreEqual("Two Letter Country Code", firstColumnInfo.Name);
 			Assert.AreEqual("gb", firstColumnInfo.SearchValue);
 			Assert.IsTrue(firstColumnInfo.IsRegexSearch);
-			Assert.AreEqual("SELECT TOP 10 * FROM Country WHERE TwoLetterCountryCode LIKE '%[search]%' OR ThreeLetterCountryCode LIKE '%[search]%' ORDER BY ThreeLetterCountryCode ASC", helper.GetQuery());
+			Assert.AreEqual("SELECT TOP 10 * " +
+			                "FROM Country " +
+			                "WHERE TwoLetterCountryCode LIKE '%[search]%' " +
+			                "OR ThreeLetterCountryCode LIKE '%[search]%' " +
+			                "ORDER BY ThreeLetterCountryCode ASC " +
+							"OFFSET 10 * 0 ROWS FETCH NEXT 10 ROWS ONLY OPTION (RECOMPILE)", helper.GetQuery());
 		}
 
 		[TestMethod]
@@ -88,7 +93,12 @@ namespace K9.WebApplication.Tests.Unit
 			var helper = new DataTableAjaxHelper<Country>(new Mock<ILogger>().Object, new IgnoreColumns());
 			helper.LoadQueryString(querystring);
 
-			Assert.AreEqual("SELECT TOP 20 * FROM Country WHERE TwoLetterCountryCode LIKE '%gb%' OR ThreeLetterCountryCode LIKE '%gb%' ORDER BY ThreeLetterCountryCode DESC", helper.GetQuery());
+			Assert.AreEqual("SELECT TOP 20 * " +
+			                "FROM Country " +
+			                "WHERE TwoLetterCountryCode LIKE '%[gb]%' " +
+			                "OR ThreeLetterCountryCode LIKE '%gb%' " +
+			                "ORDER BY ThreeLetterCountryCode DESC " +
+							"OFFSET 20 * 2 ROWS FETCH NEXT 20 ROWS ONLY OPTION (RECOMPILE)", helper.GetQuery());
 		}
 
 	}

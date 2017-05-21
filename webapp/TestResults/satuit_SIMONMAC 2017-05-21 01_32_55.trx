@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="58698dc7-6ae9-4787-ab12-1db5b43741e7" name="satuit@SIMONMAC 2017-05-21 01:32:55" runUser="SIMONMAC\satuit" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="c3bce97c-007d-4990-8d89-a7885dc47a3e">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="satuit_SIMONMAC 2017-05-21 01_32_55">
+      <DeploymentItem filename="C:\workspace\ninestar\webapp\DataAccess\bin\Debug\K9.DataAccess.dll" />
+      <DeploymentItem filename="C:\workspace\ninestar\webapp\packages\Moq.4.2.1408.0717\lib\net40\Moq.dll" />
+      <DeploymentItem filename="C:\workspace\ninestar\webapp\WebApplication\bin\K9.WebApplication.dll" />
+      <DeploymentItem filename="C:\workspace\ninestar\webapp\SharedLibrary\bin\Debug\K9.SharedLibrary.dll" />
+      <DeploymentItem filename="C:\workspace\ninestar\webapp\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll" />
+      <DeploymentItem filename="C:\workspace\ninestar\webapp\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll" />
+      <DeploymentItem filename="C:\workspace\ninestar\webapp\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll" />
+      <DeploymentItem filename="C:\workspace\ninestar\webapp\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll" />
+      <DeploymentItem filename="C:\workspace\ninestar\webapp\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll" />
+      <DeploymentItem filename="C:\workspace\ninestar\webapp\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll" />
+      <DeploymentItem filename="C:\workspace\ninestar\webapp\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll" />
+      <DeploymentItem filename="C:\workspace\ninestar\webapp\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll" />
+      <DeploymentItem filename="C:\workspace\ninestar\webapp\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll" />
+      <DeploymentItem filename="C:\workspace\ninestar\webapp\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll" />
+      <DeploymentItem filename="C:\workspace\ninestar\webapp\packages\NLog.4.4.6\lib\net40\NLog.dll" />
+      <DeploymentItem filename="C:\workspace\ninestar\webapp\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll" />
+      <DeploymentItem filename="C:\workspace\ninestar\webapp\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll" />
+      <DeploymentItem filename="C:\workspace\ninestar\webapp\packages\Microsoft.AspNet.Mvc.4.0.40804.0\lib\net40\System.Web.Mvc.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2017-05-21T01:32:55.1561250+01:00" queuing="2017-05-21T01:32:55.1561250+01:00" start="2017-05-21T01:32:55.1561250+01:00" finish="2017-05-21T01:33:44.1248750+01:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="4" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="4" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="SIMONMAC" outcome="Error" timestamp="2017-05-21T01:33:44.1248750+01:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+      <RunInfo computerName="SIMONMAC" outcome="Error" timestamp="2017-05-21T01:33:44.1248750+01:00">
+        <Text>Failed to queue test run 'satuit@SIMONMAC 2017-05-21 01:32:55': Unable to start the agent process. </Text>
+        <Exception>Microsoft.VisualStudio.TestTools.Exceptions.EqtException: Unable to start the agent process. 
+   at Microsoft.VisualStudio.TestTools.Agent.AgentProcessManager.HandleCannotStartAgentProcessError(Exception ex)
+   at Microsoft.VisualStudio.TestTools.Agent.AgentProcessManager.HandleCannotStartAgentProcessError()
+   at Microsoft.VisualStudio.TestTools.Agent.OutOfProcessStrategy.StartAgentProcess(AgentProcessStartupInfo agentProcessStartupInfo, Boolean restarting)
+   at Microsoft.VisualStudio.TestTools.Agent.OutOfProcessStrategy.StartAgentProcess(AgentProcessStartupInfo agentProcessStartupInfo)
+   at Microsoft.VisualStudio.TestTools.Agent.AgentProxy.StartAgentProcess(AgentProcessStartupInfo agentProcessStartupInfo)
+   at Microsoft.VisualStudio.TestTools.Agent.AgentProcessProxyManager.StartTestAgentProcesses(AgentProcessStartupInfo agentProcessStartupInfo)
+   at Microsoft.VisualStudio.TestTools.Agent.AgentProcessManager.StartAgentProcess(AgentProcessStartupInfo agentProcessStartupInfo, Boolean startDataCollectionAgent)
+   at Microsoft.VisualStudio.TestTools.Agent.AgentProcessManager.StartAgentProcess(AgentProcessStartupInfo agentProcessStartupInfo, TestRunConfiguration testRunConfiguration)
+   at Microsoft.VisualStudio.TestTools.TestManagement.LocalControllerProxy.StartProcess(TestRun run)
+   at Microsoft.VisualStudio.TestTools.TestManagement.LocalControllerProxy.PrepareProcess(TestRun run)
+   at Microsoft.VisualStudio.TestTools.TestManagement.LocalControllerProxy.InitializeController(TestRun run)
+   at Microsoft.VisualStudio.TestTools.TestManagement.ControllerProxy.QueueTestRunWorker(Object state)</Exception>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="HtmlHelper_ShouldWriteToStream" storage="c:\workspace\ninestar\webapp\webapplication.tests\bin\debug\k9.webapplication.tests.dll" id="7747f089-e2e7-7361-6ab0-2387c9fb84e3">
+      <Execution id="699cd1dc-dab9-4fb4-ac1d-83b18c8921a4" />
+      <TestMethod codeBase="C:/workspace/ninestar/webapp/WebApplication.Tests/bin/Debug/K9.WebApplication.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="K9.WebApplication.Tests.Unit.HtmlHelperTests, K9.WebApplication.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="HtmlHelper_ShouldWriteToStream" />
+    </UnitTest>
+    <UnitTest name="OutputOfJavascriptSerializer_ShouldBeArrayOfString" storage="c:\workspace\ninestar\webapp\webapplication.tests\bin\debug\k9.webapplication.tests.dll" id="e0e05852-5018-c293-3aa8-473c4ecf6203">
+      <Execution id="b585a929-4735-4c0d-a04a-98eac4838778" />
+      <TestMethod codeBase="C:/workspace/ninestar/webapp/WebApplication.Tests/bin/Debug/K9.WebApplication.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="K9.WebApplication.Tests.Unit.JavascriptSerializerTests, K9.WebApplication.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="OutputOfJavascriptSerializer_ShouldBeArrayOfString" />
+    </UnitTest>
+    <UnitTest name="DataTableAjaxHelper_ShouldReturnTheCorrectSqlQuery" storage="c:\workspace\ninestar\webapp\webapplication.tests\bin\debug\k9.webapplication.tests.dll" id="657fdce4-854b-c7c5-191e-a75791802d5f">
+      <Execution id="399ddd8b-be60-4de9-8eb6-d9db4ee5b982" />
+      <TestMethod codeBase="C:/workspace/ninestar/webapp/WebApplication.Tests/bin/Debug/K9.WebApplication.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="K9.WebApplication.Tests.Unit.DataTableAjaxHelperTests, K9.WebApplication.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="DataTableAjaxHelper_ShouldReturnTheCorrectSqlQuery" />
+    </UnitTest>
+    <UnitTest name="ShouldMap_DataTableQueryString_ToDataTableAjaxOptions" storage="c:\workspace\ninestar\webapp\webapplication.tests\bin\debug\k9.webapplication.tests.dll" id="2f60fb83-de9c-c896-63a5-b9abc3cb40ca">
+      <Execution id="21794e32-1ace-48b6-b906-53fee5267792" />
+      <TestMethod codeBase="C:/workspace/ninestar/webapp/WebApplication.Tests/bin/Debug/K9.WebApplication.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="K9.WebApplication.Tests.Unit.DataTableAjaxHelperTests, K9.WebApplication.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ShouldMap_DataTableQueryString_ToDataTableAjaxOptions" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="7747f089-e2e7-7361-6ab0-2387c9fb84e3" executionId="699cd1dc-dab9-4fb4-ac1d-83b18c8921a4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e0e05852-5018-c293-3aa8-473c4ecf6203" executionId="b585a929-4735-4c0d-a04a-98eac4838778" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2f60fb83-de9c-c896-63a5-b9abc3cb40ca" executionId="21794e32-1ace-48b6-b906-53fee5267792" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="657fdce4-854b-c7c5-191e-a75791802d5f" executionId="399ddd8b-be60-4de9-8eb6-d9db4ee5b982" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="699cd1dc-dab9-4fb4-ac1d-83b18c8921a4" testId="7747f089-e2e7-7361-6ab0-2387c9fb84e3" testName="HtmlHelper_ShouldWriteToStream" computerName="SIMONMAC" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="699cd1dc-dab9-4fb4-ac1d-83b18c8921a4">
+    </UnitTestResult>
+    <UnitTestResult executionId="b585a929-4735-4c0d-a04a-98eac4838778" testId="e0e05852-5018-c293-3aa8-473c4ecf6203" testName="OutputOfJavascriptSerializer_ShouldBeArrayOfString" computerName="SIMONMAC" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b585a929-4735-4c0d-a04a-98eac4838778">
+    </UnitTestResult>
+    <UnitTestResult executionId="21794e32-1ace-48b6-b906-53fee5267792" testId="2f60fb83-de9c-c896-63a5-b9abc3cb40ca" testName="ShouldMap_DataTableQueryString_ToDataTableAjaxOptions" computerName="SIMONMAC" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="21794e32-1ace-48b6-b906-53fee5267792">
+    </UnitTestResult>
+    <UnitTestResult executionId="399ddd8b-be60-4de9-8eb6-d9db4ee5b982" testId="657fdce4-854b-c7c5-191e-a75791802d5f" testName="DataTableAjaxHelper_ShouldReturnTheCorrectSqlQuery" computerName="SIMONMAC" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="399ddd8b-be60-4de9-8eb6-d9db4ee5b982">
+    </UnitTestResult>
+  </Results>
+</TestRun>

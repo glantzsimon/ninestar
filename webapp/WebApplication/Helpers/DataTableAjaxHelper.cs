@@ -60,12 +60,15 @@ namespace K9.WebApplication.Helpers
 			return string.Format("SELECT TOP {0} * " +
 								 "FROM {1} " +
 								 "WHERE {2} " +
-			                     "ORDER BY {3} {4}",
+			                     "ORDER BY {3} {4} " +
+			                     "OFFSET {5} * {6} ROWS FETCH NEXT {5} ROWS ONLY OPTION (RECOMPILE)",
 								 Length,
 								 typeof(T).Name,
 								 GetWhereClause(),
 								 OrderByColumnName,
-								 OrderByDirection);
+								 OrderByDirection,
+								 Length,
+								 Start);
 		}
 
 		public int Draw

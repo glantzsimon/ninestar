@@ -85,6 +85,7 @@ namespace K9.WebApplication.Controllers
 					recordsFiltered = _ajaxHelper.RecordsFiltered,
 					data,
 				}, new JsonSerializerSettings { DateFormatString = DateTimeConstants.DataTableDateTimeFormat });
+				_logger.Info(json);
 				return Content(json, "application/json");
 			}
 			catch (Exception ex)

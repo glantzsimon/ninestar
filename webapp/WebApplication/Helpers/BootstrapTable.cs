@@ -21,10 +21,10 @@ namespace K9.WebApplication.Helpers
 			_ignoreColumns = ignoreColumns;
 		}
 
-		public static MvcHtmlString BootstrapTable<T>(this HtmlHelper<T> html, string dataUrl = "", params string[] displayColumns)
+		public static MvcHtmlString BootstrapTable<T>(this HtmlHelper<T> html, string dataUrl = "", bool displayFooter = false, params string[] displayColumns)
 		{
 			var sb = new StringBuilder();
-			var modelType = typeof (T);
+			var modelType = typeof(T);
 			var properties = modelType.GetProperties().Where(p => !_ignoreColumns.ColumnsToIgnore.Contains(p.Name)).ToList();
 			var columns = displayColumns.Any() ? properties.Where(p => displayColumns.Contains(p.Name)).ToList() : properties;
 			var columnNames = columns.Select(p => p.Name).ToList();
@@ -45,13 +45,15 @@ namespace K9.WebApplication.Helpers
 			// Add header
 			var thead = new TagBuilder(Tags.Thead);
 			thead.AddColumns(columnNames);
-			
-			// Add footer
-			var tfoot = new TagBuilder(Tags.TFoot);
-			tfoot.AddColumns(columnNames);
-
 			table.InnerHtml += thead.ToString();
-			table.InnerHtml += tfoot.ToString();
+
+			// Add footer
+			if (displayFooter)
+			{
+				var tfoot = new TagBuilder(Tags.TFoot);
+				tfoot.AddColumns(columnNames);
+				table.InnerHtml += tfoot.ToString();
+			}
 
 			div.InnerHtml += table.ToString();
 
@@ -63,10 +65,10 @@ namespace K9.WebApplication.Helpers
 
 		private static void AddColumns(this TagBuilder builder, List<string> columns)
 		{
-			var tr = new TagBuilder(Tags.Tr);	
+			var tr = new TagBuilder(Tags.Tr);
 			foreach (var column in columns)
 			{
-				var th = new TagBuilder(Tags.Th);	
+				var th = new TagBuilder(Tags.Th);
 				th.SetInnerText(column);
 				tr.InnerHtml += th.ToString();
 			}

@@ -696,6 +696,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Three Letter Country Code.
+        /// </summary>
+        public static string ThreeLetterCountryCodeLabel {
+            get {
+                return ResourceManager.GetString("ThreeLetterCountryCodeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Two Letter Country Code.
+        /// </summary>
+        public static string TwoLetterCountryCodeLabel {
+            get {
+                return ResourceManager.GetString("TwoLetterCountryCodeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unsuccessful login with service..
         /// </summary>
         public static string UnsuccessfulLoginServiceError {

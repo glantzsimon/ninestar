@@ -3,6 +3,7 @@ using System.Linq;
 using System.Reflection;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
+using K9.SharedLibrary.Extensions;
 using K9.WebApplication.Extensions;
 
 namespace K9.WebApplication.Options
@@ -15,7 +16,7 @@ namespace K9.WebApplication.Options
 
 		public MvcHtmlString GetColumnDefs()
 		{
-			return MvcHtmlString.Create(new JavaScriptSerializer().Serialize(Columns.Select(c => new { data = c.Name, type = c.GetDataTableType() }).ToArray()));
+			return MvcHtmlString.Create(new JavaScriptSerializer().Serialize(Columns.Select(c => new { data = c.Name, name = c.GetDisplayName(), type = c.GetDataTableType() }).ToArray()));
 		}
 	}
 }

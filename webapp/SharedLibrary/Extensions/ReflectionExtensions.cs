@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
@@ -42,16 +42,7 @@ namespace K9.SharedLibrary.Extensions
 		/// <returns></returns>
 		public static PropertyInfo[] GetPropertiesWithAttribute(this Object item, Type attributeType)
 		{
-			var list = new List<PropertyInfo>();
-			foreach (var prop in item.GetType().GetProperties())
-			{
-				object[] attributes = prop.GetCustomAttributes(attributeType, true);
-				if (attributes.Any())
-				{
-					list.Add(prop);
-				}
-			}
-			return list.ToArray();
+			return (from prop in item.GetType().GetProperties() let attributes = prop.GetCustomAttributes(attributeType, true) where attributes.Any() select prop).ToArray();
 		}
 
 		public static object GetProperty(this object obj, string propertyName)
@@ -80,14 +71,7 @@ namespace K9.SharedLibrary.Extensions
 				if (propertyInfo.PropertyType.IsGenericType && propertyInfo.PropertyType.GetGenericTypeDefinition() == typeof(Nullable<>))
 				{
 					// Get underlying type, e.g. "int"
-					if (value == null)
-					{
-						formattedValue = null;
-					}
-					else
-					{
-						formattedValue = Convert.ChangeType(value, propertyInfo.PropertyType.GetGenericArguments()[0]);
-					}
+					formattedValue = value == null ? null : Convert.ChangeType(value, propertyInfo.PropertyType.GetGenericArguments()[0]);
 				}
 				else
 				{
@@ -100,7 +84,7 @@ namespace K9.SharedLibrary.Extensions
 
 		public static bool IsPrimaryKey(this PropertyInfo info)
 		{
-			return info.GetCustomAttributes(typeof(KeyAttribute), false).Count() == 1;
+			return info.GetCustomAttributes(typeof(KeyAttribute), false).Length == 1;
 		}
 
 		public static int GetStringLength(this PropertyInfo info)
@@ -108,10 +92,21 @@ namespace K9.SharedLibrary.Extensions
 			var attr = info.GetCustomAttributes(typeof(StringLengthAttribute), false).FirstOrDefault();
 			if (attr != null)
 			{
-				return ((StringLengthAttribute)(attr)).MaximumLength;
+				return ((StringLengthAttribute)attr).MaximumLength;
 			}
 
 			return 0;
+		}
+
+		/// <summary>
+		/// If the property has a DisplayName attribute, return the value of this, else return the property name
+		/// </summary>
+		/// <param name="info"></param>
+		/// <returns></returns>
+		public static string GetDisplayName(this PropertyInfo info)
+		{
+			var attr = info.GetCustomAttributes(typeof(DisplayAttribute), true).FirstOrDefault();
+			return attr == null ? info.Name : ((DisplayAttribute)attr).Name;
 		}
 
 	}

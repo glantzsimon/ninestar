@@ -5,7 +5,8 @@
 		var table = $("table#@Model.TableId");
 		table.DataTable({
 			"ajax": table.attr("data-url"),
-			"columns": @Model.GetColumnDefs(),
+			"columns": @Model.GetColumnsJson(),
+			"columnDefs": @Model.GetColumnDefsJson(),
 			"processing": true,
 			"serverSide": true,
 			"stateSave": true

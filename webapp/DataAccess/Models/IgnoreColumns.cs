@@ -11,7 +11,6 @@ namespace K9.DataAccess.Models
 			{
 				return new List<string>
 				{
-					"Id",
 					"CreatedBy",
 					"CreatedOn",
 					"LastUpdatedBy",

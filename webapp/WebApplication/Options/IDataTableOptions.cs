@@ -9,6 +9,7 @@ namespace K9.WebApplication.Options
 		string TableId { get; set; }
 		string DataUrl { get; set; }
 		List<PropertyInfo> Columns { get; set; }
-		MvcHtmlString GetColumnDefs();
+		MvcHtmlString GetColumnsJson();
+		MvcHtmlString GetColumnDefsJson();
 	}
 }

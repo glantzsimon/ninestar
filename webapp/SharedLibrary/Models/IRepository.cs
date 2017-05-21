@@ -8,7 +8,7 @@ namespace K9.SharedLibrary.Models
 	public interface IRepository<T> where T : IObjectBase
 	{
 
-		int GetCount();
+		int GetCount(string whereClause = "");
 
 		List<T> GetQuery(string sql);
 

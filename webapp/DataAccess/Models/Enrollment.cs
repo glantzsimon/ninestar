@@ -12,7 +12,9 @@ namespace K9.DataAccess.Models
 
 	public class Enrollment : ObjectBase
 	{
+		[ForeignKey("Course")]
 		public int CourseId { get; set; }
+		[ForeignKey("Student")]
 		public int StudentId { get; set; }
 		public Grade? Grade { get; set; }
 

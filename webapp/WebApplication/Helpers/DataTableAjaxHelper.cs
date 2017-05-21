@@ -69,7 +69,7 @@ namespace K9.WebApplication.Helpers
 								 OrderByDirection,
 								 typeof(T).Name,
 								 GetWhereClause(),
-								 PageStart,
+								 Start,
 								 PageEnd);
 		}
 
@@ -88,14 +88,9 @@ namespace K9.WebApplication.Helpers
 			get { return _length == 0 ? DefaultTotalRows : _length; }
 		}
 
-		public int PageStart
-		{
-			get { return _start * _length; }
-		}
-
 		public int PageEnd
 		{
-			get { return (_start + 1) * _length; }
+			get { return _start + _length; }
 		}
 
 		public string SearchValue
@@ -158,7 +153,7 @@ namespace K9.WebApplication.Helpers
 			return sb.ToString();
 		}
 
-		private string GetWhereClause()
+		public string GetWhereClause()
 		{
 			var sb = new StringBuilder();
 			if (!string.IsNullOrEmpty(SearchValue))

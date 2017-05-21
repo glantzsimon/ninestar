@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 using K9.SharedLibrary.Authentication;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Constants;
 using K9.WebApplication.Helpers;
@@ -75,19 +76,18 @@ namespace K9.WebApplication.Controllers
 		public virtual ActionResult List()
 		{
 			_ajaxHelper.LoadQueryString(HttpContext.Request.QueryString);
-			_logger.Info(_ajaxHelper.GetQuery());
 			try
 			{
-				var totalRecords = _repository.GetCount();
+				var recordsTotal = _repository.GetCount();
+				var recordsFiltered = _repository.GetCount(_ajaxHelper.GetWhereClause());
 				var data = _repository.GetQuery(_ajaxHelper.GetQuery(true));
 				var json = JsonConvert.SerializeObject(new
 				{
 					draw = _ajaxHelper.Draw,
-					recordsTotal = totalRecords,  
-					recordsFiltered = data.Count,
+					recordsTotal,  
+					recordsFiltered,
 					data,
 				}, new JsonSerializerSettings { DateFormatString = DateTimeConstants.DataTableDateTimeFormat });
-				_logger.Info(json);
 				return Content(json, "application/json");
 			}
 			catch (Exception ex)

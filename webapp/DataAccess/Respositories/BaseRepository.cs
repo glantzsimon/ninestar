@@ -18,9 +18,9 @@ namespace K9.DataAccess.Respositories
 			_db = db;
 		}
 
-		public int GetCount()
+		public int GetCount(string whereClause = "")
 		{
-			return _db.GetCount<T>();
+			return _db.GetCount<T>(whereClause);
 		}
 
 		public List<T> GetQuery(string sql)

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -29,9 +30,9 @@ namespace K9.SharedLibrary.Extensions
 			}
 		}
 
-		public static PropertyInfo[] GetProperties(this Object item)
+		public static List<PropertyInfo> GetProperties(this Object item)
 		{
-			return item.GetType().GetProperties();
+			return item.GetType().GetProperties().ToList();
 		}
 
 		/// <summary>
@@ -40,9 +41,25 @@ namespace K9.SharedLibrary.Extensions
 		/// <param name="item"></param>
 		/// <param name="attributeType"></param>
 		/// <returns></returns>
-		public static PropertyInfo[] GetPropertiesWithAttribute(this Object item, Type attributeType)
+		public static List<PropertyInfo> GetPropertiesWithAttribute(this Object item, Type attributeType)
 		{
-			return (from prop in item.GetType().GetProperties() let attributes = prop.GetCustomAttributes(attributeType, true) where attributes.Any() select prop).ToArray();
+			return (from prop in item.GetType().GetProperties() let attributes = prop.GetCustomAttributes(attributeType, true) where attributes.Any() select prop).ToList();
+		}
+
+		/// <summary>
+		/// Return a list of properties which are decorated with the specified attribute
+		/// </summary>
+		/// <param name="properties"></param>
+		/// <param name="attributeTypes"></param>
+		/// <returns></returns>
+		public static List<PropertyInfo> GetPropertiesWithAttributes(this List<PropertyInfo> properties, params Type[] attributeTypes)
+		{
+			var items = new List<PropertyInfo>();
+			foreach (var attributeType in attributeTypes)
+			{
+				items.AddRange(from prop in properties let attributes = prop.GetCustomAttributes(attributeType, true) where attributes.Any() select prop);
+			}
+			return items.ToList();
 		}
 
 		public static object GetProperty(this object obj, string propertyName)
@@ -106,7 +123,7 @@ namespace K9.SharedLibrary.Extensions
 		public static string GetDisplayName(this PropertyInfo info)
 		{
 			var attr = info.GetCustomAttributes(typeof(DisplayAttribute), true).FirstOrDefault();
-			return attr == null ? info.Name : ((DisplayAttribute)attr).Name;
+			return attr == null ? info.Name : ((DisplayAttribute)attr).GetName();
 		}
 
 	}

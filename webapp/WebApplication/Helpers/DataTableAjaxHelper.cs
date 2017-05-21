@@ -58,12 +58,13 @@ namespace K9.WebApplication.Helpers
 		public string GetQuery()
 		{
 			return string.Format("WITH RESULTS AS " +
-								 "(SELECT *, ROW_NUMBER() OVER " +
-								 "(ORDER BY {0} {1}) AS RowNum " +
-								 "FROM {2} " +
-								 "{3}) " +
+								 "(SELECT {0}, ROW_NUMBER() OVER " +
+								 "(ORDER BY {1} {2}) AS RowNum " +
+								 "FROM {3} " +
+								 "{4}) " +
 								 "SELECT * FROM RESULTS " +
-								 "WHERE RowNum BETWEEN {4} AND {5}",
+								 "WHERE RowNum BETWEEN {5} AND {6}",
+								 GetSelectColumns(),
 								 OrderByColumnName,
 								 OrderByDirection,
 								 typeof(T).Name,
@@ -141,6 +142,17 @@ namespace K9.WebApplication.Helpers
 		private List<IDataTableColumnInfo> GetColumnInfosNotIgnored()
 		{
 			return ColumnInfos.Where(c => !_ignoredColumns.ColumnsToIgnore.Contains(c.Name)).ToList();
+		}
+
+		private string GetSelectColumns()
+		{
+			var sb = new StringBuilder();
+			foreach (var columnInfo in GetColumnInfosNotIgnored())
+			{
+				sb.Append(sb.Length == 0 ? "" : ", ");
+				sb.Append(columnInfo.Data);
+			}
+			return sb.ToString();
 		}
 
 		private string GetWhereClause()

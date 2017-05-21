@@ -74,6 +74,11 @@
 	overflow: scroll;
 }
 
+.datatable-container div
+{
+	margin: 0;
+}
+
 .k9-navbar a
 {
 	text-decoration: none;

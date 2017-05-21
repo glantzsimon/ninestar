@@ -32,8 +32,8 @@ namespace K9.WebApplication.Tests.Unit
 				{"columns[1][name]", "Three Letter Country Code"},
 				{"columns[1][search][value]", "gb"},
 				{"columns[1][search][regex]", "false"},
-				{"columns[2][data]", "Id"},
-				{"columns[2][name]", "Id"},
+				{"columns[2][data]", "Test"},
+				{"columns[2][name]", "Test"},
 				{"columns[2][search][value]", ""},
 				{"columns[2][search][regex]", "false"}
 			};
@@ -56,11 +56,12 @@ namespace K9.WebApplication.Tests.Unit
 			Assert.AreEqual("gb", firstColumnInfo.SearchValue);
 			Assert.IsTrue(firstColumnInfo.IsRegexSearch);
 			Assert.AreEqual("WITH RESULTS AS " +
-							"(SELECT *, ROW_NUMBER() OVER " +
+							"(SELECT TwoLetterCountryCode, ThreeLetterCountryCode, Test, ROW_NUMBER() OVER " +
 							"(ORDER BY ThreeLetterCountryCode ASC) AS RowNum " +
 							"FROM Country " +
 							"WHERE TwoLetterCountryCode LIKE '%[search]%' " +
-							"OR ThreeLetterCountryCode LIKE '%[search]%') " +
+							"OR ThreeLetterCountryCode LIKE '%[search]%' " +
+							"OR Test LIKE '%[search]%') " +
 							"SELECT * FROM RESULTS " +
 							"WHERE RowNum BETWEEN 0 AND 10", helper.GetQuery());
 		}
@@ -85,8 +86,8 @@ namespace K9.WebApplication.Tests.Unit
 				{"columns[1][name]", "Three Letter Country Code"},
 				{"columns[1][search][value]", "gb"},
 				{"columns[1][search][regex]", "false"},
-				{"columns[2][data]", "Id"},
-				{"columns[2][name]", "Id"},
+				{"columns[2][data]", "Test"},
+				{"columns[2][name]", "Test"},
 				{"columns[2][search][value]", ""},
 				{"columns[2][search][regex]", "false"}
 			};
@@ -95,7 +96,7 @@ namespace K9.WebApplication.Tests.Unit
 			helper.LoadQueryString(querystring);
 
 			Assert.AreEqual("WITH RESULTS AS " +
-			                "(SELECT *, ROW_NUMBER() OVER " +
+							"(SELECT TwoLetterCountryCode, ThreeLetterCountryCode, Test, ROW_NUMBER() OVER " +
 							"(ORDER BY ThreeLetterCountryCode DESC) AS RowNum " +
 			                "FROM Country " +
 			                "WHERE TwoLetterCountryCode LIKE '%[gb]%' " +
@@ -126,7 +127,7 @@ namespace K9.WebApplication.Tests.Unit
 			helper.LoadQueryString(querystring);
 
 			Assert.AreEqual("WITH RESULTS AS " +
-							"(SELECT *, ROW_NUMBER() OVER " +
+							"(SELECT TwoLetterCountryCode, ROW_NUMBER() OVER " +
 							"(ORDER BY TwoLetterCountryCode ASC) AS RowNum " +
 							"FROM Country ) " +
 							"SELECT * FROM RESULTS " +

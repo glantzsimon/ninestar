@@ -41,5 +41,9 @@
 	{
 		display: none;
 	}
+	
+	.wide-form {
+		max-width: 100% !important;
+	}
 
 }

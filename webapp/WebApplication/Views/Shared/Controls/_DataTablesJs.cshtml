@@ -2,7 +2,7 @@
 <script type="text/javascript">
 
 	$(function() {
-		var table = $("table.bootstraptable");
+		var table = $("table#@Model.TableId");
 		table.DataTable({
 			"ajax": table.attr("data-url"),
 			"columns": @Model.GetColumnDefs(),

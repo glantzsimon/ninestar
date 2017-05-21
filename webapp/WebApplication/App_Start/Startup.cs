@@ -6,6 +6,7 @@ using K9.DataAccess.Database;
 using K9.DataAccess.Models;
 using K9.DataAccess.Respositories;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Constants;
 using K9.WebApplication.Helpers;
 using K9.WebApplication.Options;
 using NLog;
@@ -30,11 +31,15 @@ namespace K9.WebApplication
 			builder.RegisterGeneric(typeof (BaseRepository<>)).As(typeof (IRepository<>));
 			builder.RegisterGeneric(typeof(DataTableAjaxHelper<>)).As(typeof(IDataTableAjaxHelper<>));
 			builder.RegisterType<IgnoreColumns>().As<IIgnoreColumns>().SingleInstance();
-			builder.RegisterType<IDataTableOptions>()
-				.OnActivating(_ => _.Instance.SetColumnsToIgnore(_.Context.Resolve<IIgnoreColumns>())).As<DataTableOptions>();
+			builder.RegisterType<DataTableOptions>().As<IDataTableOptions>();
 
 			var container = builder.Build();
 			DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+		}
+
+		public static void RegisterStaticTypes()
+		{
+			HtmlHelpers.SetIgnoreColumns(new IgnoreColumns());
 		}
 	}
 }

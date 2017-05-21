@@ -2,7 +2,6 @@
 using System.Web.Mvc;
 using K9.WebApplication.Constants;
 using K9.WebApplication.Constants.Html;
-using K9.WebApplication.Enums;
 
 namespace K9.WebApplication.Helpers
 {

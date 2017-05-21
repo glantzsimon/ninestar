@@ -1,0 +1,4 @@
+2017-05-21 15:42:50.0155 K9.WebApplication.Startup Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+2017-05-21 15:42:50.0780 K9.WebApplication.Startup Invalid order by column index
+2017-05-21 15:58:54.7967 K9.WebApplication.Startup WITH RESULTS AS (SELECT *, ROW_NUMBER() OVER (ORDER BY 0 ASC) AS RowNum FROM Country WHERE ) SELECT * FROM RESULTS WHERE RowNum BETWEEN 0 AND 10

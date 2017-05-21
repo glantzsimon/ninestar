@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using System.Data.Common;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
+using K9.SharedLibrary.Models;
 using K9.WebApplication.Constants.Html;
 using K9.WebApplication.Extensions;
 using K9.WebApplication.Options;
@@ -14,11 +14,18 @@ namespace K9.WebApplication.Helpers
 	public static partial class HtmlHelpers
 	{
 
+		private static IIgnoreColumns _ignoreColumns;
+
+		public static void SetIgnoreColumns(IIgnoreColumns ignoreColumns)
+		{
+			_ignoreColumns = ignoreColumns;
+		}
+
 		public static MvcHtmlString BootstrapTable<T>(this HtmlHelper<T> html, string dataUrl = "", params string[] displayColumns)
 		{
 			var sb = new StringBuilder();
 			var modelType = typeof (T);
-			var properties = modelType.GetProperties().ToList();
+			var properties = modelType.GetProperties().Where(p => !_ignoreColumns.ColumnsToIgnore.Contains(p.Name)).ToList();
 			var columns = displayColumns.Any() ? properties.Where(p => displayColumns.Contains(p.Name)).ToList() : properties;
 			var columnNames = columns.Select(p => p.Name).ToList();
 
@@ -28,7 +35,8 @@ namespace K9.WebApplication.Helpers
 
 			// Create table
 			var table = new TagBuilder(Tags.Table);
-			table.MergeAttribute(Attributes.Id, modelType.GetTableName());
+			var tableName = modelType.GetTableName();
+			table.MergeAttribute(Attributes.Id, tableName);
 			table.MergeAttribute(Attributes.Class, "bootstraptable table table-striped table-bordered");
 			table.MergeAttribute(Attributes.CellSpacing, "0");
 			table.MergeAttribute(Attributes.Width, "100%");
@@ -48,12 +56,12 @@ namespace K9.WebApplication.Helpers
 			div.InnerHtml += table.ToString();
 
 			sb.Append(div);
-			sb.AppendLine(html.DataTable(dataUrl, columns).ToString());
+			sb.AppendLine(html.DataTable(tableName, dataUrl, columns).ToString());
 
 			return MvcHtmlString.Create(sb.ToString());
 		}
 
-		private static TagBuilder AddColumns(this TagBuilder builder, List<string> columns)
+		private static void AddColumns(this TagBuilder builder, List<string> columns)
 		{
 			var tr = new TagBuilder(Tags.Tr);	
 			foreach (var column in columns)
@@ -63,17 +71,17 @@ namespace K9.WebApplication.Helpers
 				tr.InnerHtml += th.ToString();
 			}
 			builder.InnerHtml += tr.ToString();
-			return builder;
 		}
 
-		private static MvcHtmlString DataTable<T>(this HtmlHelper<T> html, string dataUrl, List<PropertyInfo> columns)
+		private static MvcHtmlString DataTable<T>(this HtmlHelper<T> html, string tableId, string dataUrl, List<PropertyInfo> columns)
 		{
-			return html.Partial("Controls/_DataTablesJs", new DataTableOptions
+			var dataTableOptions = new DataTableOptions
 			{
+				TableId = tableId,
 				DataUrl = dataUrl,
 				Columns = columns
-			});
+			};
+			return html.Partial("Controls/_DataTablesJs", dataTableOptions);
 		}
-
 	}
 }

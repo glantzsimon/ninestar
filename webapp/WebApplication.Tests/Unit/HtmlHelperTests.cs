@@ -1,5 +1,4 @@
 ﻿using K9.DataAccess.Models;
-using K9.WebApplication.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HtmlHelper = K9.SharedLibrary.Helpers.HtmlHelper;
 

@@ -5,7 +5,6 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using K9.DataAccess.Models;
 using K9.SharedLibrary.Models;
 using NLog;
 
@@ -85,7 +84,7 @@ namespace K9.WebApplication.Helpers
 
 		public int Length
 		{
-			get { return _length; }
+			get { return _length == 0 ? DefaultTotalRows : _length; }
 		}
 
 		public int PageStart

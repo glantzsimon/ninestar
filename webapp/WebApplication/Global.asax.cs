@@ -18,6 +18,7 @@ namespace K9.WebApplication
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
 			
 			Startup.RegisterTypes();
+			Startup.RegisterStaticTypes();
 			
 			AuthConfig.InitialiseWebSecurity();
 			DataConfig.InitialiseDatabase();

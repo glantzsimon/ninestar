@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Constants;
 using K9.WebApplication.Helpers;
 using Newtonsoft.Json;
 using NLog;
@@ -82,8 +83,8 @@ namespace K9.WebApplication.Controllers
 					draw = _ajaxHelper.Draw, 
 					recordsTotal = _ajaxHelper.RecordsTotal,  
 					recordsFiltered = _ajaxHelper.RecordsFiltered,
-					data = data,
-				}, new JsonSerializerSettings { DateFormatString = "yyyy-MM-ddThh:mm:ssZ" });
+					data,
+				}, new JsonSerializerSettings { DateFormatString = DateTimeConstants.DataTableDateTimeFormat });
 				return Content(json, "application/json");
 			}
 			catch (Exception ex)

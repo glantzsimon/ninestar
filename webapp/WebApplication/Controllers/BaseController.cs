@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Web.Mvc;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
@@ -84,10 +85,10 @@ namespace K9.WebApplication.Controllers
 				var json = JsonConvert.SerializeObject(new
 				{
 					draw = _ajaxHelper.Draw,
-					recordsTotal,  
+					recordsTotal,
 					recordsFiltered,
 					data,
-				}, new JsonSerializerSettings { DateFormatString = DateTimeConstants.DataTableDateTimeFormat });
+				}, new JsonSerializerSettings { DateFormatString = Thread.CurrentThread.CurrentUICulture.DateTimeFormat.LongDatePattern });
 				return Content(json, "application/json");
 			}
 			catch (Exception ex)

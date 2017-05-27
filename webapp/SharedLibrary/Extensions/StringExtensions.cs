@@ -15,5 +15,15 @@ namespace K9.SharedLibrary.Extensions
 		{
 			return Regex.Replace(value, @"\s+", "");
 		}
+
+		public static string SplitOnCapitalLetter(this string value)
+		{
+			var regex = new Regex(@"
+                (?<=[A-Z])(?=[A-Z][a-z]) |
+                 (?<=[^A-Z])(?=[A-Z]) |
+                 (?<=[A-Za-z])(?=[^A-Za-z])", RegexOptions.IgnorePatternWhitespace);
+
+			return regex.Replace(value, " ");
+		}
 	}
 }

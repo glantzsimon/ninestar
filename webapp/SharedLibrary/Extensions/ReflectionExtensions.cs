@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Net.Configuration;
 using System.Reflection;
+using System.Security.Principal;
 
 namespace K9.SharedLibrary.Extensions
 {
@@ -101,7 +104,13 @@ namespace K9.SharedLibrary.Extensions
 
 		public static bool IsPrimaryKey(this PropertyInfo info)
 		{
-			return info.GetCustomAttributes(typeof(KeyAttribute), false).Length == 1;
+			return info.GetCustomAttributes(typeof(KeyAttribute), false).Any();
+		}
+
+		public static bool IsVirtualCollection(this PropertyInfo info)
+		{
+			return info.GetGetMethod().IsVirtual && info.PropertyType.IsGenericType &&
+				   info.PropertyType.GetGenericTypeDefinition() == typeof(ICollection<>);
 		}
 
 		public static int GetStringLength(this PropertyInfo info)
@@ -123,7 +132,12 @@ namespace K9.SharedLibrary.Extensions
 		public static string GetDisplayName(this PropertyInfo info)
 		{
 			var attr = info.GetCustomAttributes(typeof(DisplayAttribute), true).FirstOrDefault();
-			return attr == null ? info.Name : ((DisplayAttribute)attr).GetName();
+			return attr == null ? info.Name.SplitOnCapitalLetter() : ((DisplayAttribute)attr).GetName();
+		}
+
+		public static bool IsDataBound(this PropertyInfo info)
+		{
+			return !info.GetCustomAttributes(typeof(NotMappedAttribute), false).Any() && info.CanWrite;
 		}
 
 	}

@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Text;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Constants.Html;
 using K9.WebApplication.Extensions;
@@ -25,7 +26,7 @@ namespace K9.WebApplication.Helpers
 		{
 			var sb = new StringBuilder();
 			var modelType = typeof(T);
-			var properties = modelType.GetProperties().Where(p => !_ignoreColumns.ColumnsToIgnore.Contains(p.Name)).ToList();
+			var properties = modelType.GetProperties().Where(p => !p.IsVirtualCollection() && !_ignoreColumns.ColumnsToIgnore.Contains(p.Name)).ToList();
 			var columns = displayColumns.Any() ? properties.Where(p => displayColumns.Contains(p.Name)).ToList() : properties;
 			var columnNames = columns.Select(p => p.Name).ToList();
 

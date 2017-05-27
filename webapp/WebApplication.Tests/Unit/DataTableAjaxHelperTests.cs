@@ -1,4 +1,5 @@
-﻿using System.Collections.Specialized;
+﻿using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using K9.DataAccess.Models;
 using K9.WebApplication.Helpers;
@@ -161,6 +162,17 @@ namespace K9.WebApplication.Tests.Unit
 							"FROM Country ) " +
 							"SELECT * FROM RESULTS " +
 							"WHERE RowNum BETWEEN 0 AND 10", helper.GetQuery(true));
+		}
+
+		[TestMethod]
+		public void ShouldDetect_VirtualICollection_Properties()
+		{
+			var enrollmentsName = "Enrollments";
+			var propertyInfo = typeof(Student).GetProperties().First(p => p.Name == enrollmentsName);
+
+			Assert.AreEqual(enrollmentsName, propertyInfo.Name);
+			Assert.IsTrue(propertyInfo.GetGetMethod().IsVirtual);
+			Assert.IsTrue(propertyInfo.PropertyType.IsGenericType && propertyInfo.PropertyType.GetGenericTypeDefinition() == typeof(ICollection<>));
 		}
 
 	}

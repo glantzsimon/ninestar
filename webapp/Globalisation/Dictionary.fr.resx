@@ -355,4 +355,7 @@
   <data name="TwoLetterCountryCodeLabel" xml:space="preserve">
     <value>Code Pays à Deux Lettres</value>
   </data>
+  <data name="DateFormat" xml:space="preserve">
+    <value>dd/MM/yyyy</value>
+  </data>
 </root>

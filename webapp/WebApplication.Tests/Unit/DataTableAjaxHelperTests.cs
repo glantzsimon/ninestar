@@ -39,7 +39,7 @@ namespace K9.WebApplication.Tests.Unit
 				{"columns[2][search][regex]", "false"}
 			};
 
-			var helper = new DataTableAjaxHelper<Country>(new Mock<ILogger>().Object, new IgnoreColumns());
+			var helper = new DataTableAjaxHelper<Country>(new Mock<ILogger>().Object, new ColumnsConfig());
 			helper.LoadQueryString(querystring);
 
 			Assert.AreEqual(1, helper.Draw);
@@ -57,12 +57,11 @@ namespace K9.WebApplication.Tests.Unit
 			Assert.AreEqual("gb", firstColumnInfo.SearchValue);
 			Assert.IsTrue(firstColumnInfo.IsRegexSearch);
 			Assert.AreEqual("WITH RESULTS AS " +
-							"(SELECT TwoLetterCountryCode, ThreeLetterCountryCode, Test, ROW_NUMBER() OVER " +
+							"(SELECT TwoLetterCountryCode, ThreeLetterCountryCode, ROW_NUMBER() OVER " +
 							"(ORDER BY ThreeLetterCountryCode ASC) AS RowNum " +
 							"FROM Country " +
 							"WHERE TwoLetterCountryCode LIKE '%[search]%' " +
-							"OR ThreeLetterCountryCode LIKE '%[search]%' " +
-							"OR Test LIKE '%[search]%') " +
+							"OR ThreeLetterCountryCode LIKE '%[search]%') " +
 							"SELECT * FROM RESULTS " +
 							"WHERE RowNum BETWEEN 0 AND 10", helper.GetQuery());
 		}
@@ -93,11 +92,11 @@ namespace K9.WebApplication.Tests.Unit
 				{"columns[2][search][regex]", "false"}
 			};
 
-			var helper = new DataTableAjaxHelper<Country>(new Mock<ILogger>().Object, new IgnoreColumns());
+			var helper = new DataTableAjaxHelper<Country>(new Mock<ILogger>().Object, new ColumnsConfig());
 			helper.LoadQueryString(querystring);
 
 			Assert.AreEqual("WITH RESULTS AS " +
-							"(SELECT TwoLetterCountryCode, ThreeLetterCountryCode, Test, ROW_NUMBER() OVER " +
+							"(SELECT TwoLetterCountryCode, ThreeLetterCountryCode, ROW_NUMBER() OVER " +
 							"(ORDER BY ThreeLetterCountryCode DESC) AS RowNum " +
 			                "FROM Country " +
 			                "WHERE TwoLetterCountryCode LIKE '%[gb]%' " +
@@ -124,7 +123,7 @@ namespace K9.WebApplication.Tests.Unit
 				{"columns[0][search][regex]", "true"}
 			};
 
-			var helper = new DataTableAjaxHelper<Country>(new Mock<ILogger>().Object, new IgnoreColumns());
+			var helper = new DataTableAjaxHelper<Country>(new Mock<ILogger>().Object, new ColumnsConfig());
 			helper.LoadQueryString(querystring);
 
 			Assert.AreEqual("WITH RESULTS AS " +
@@ -153,7 +152,7 @@ namespace K9.WebApplication.Tests.Unit
 				{"columns[0][search][regex]", "true"}
 			};
 
-			var helper = new DataTableAjaxHelper<Country>(new Mock<ILogger>().Object, new IgnoreColumns());
+			var helper = new DataTableAjaxHelper<Country>(new Mock<ILogger>().Object, new ColumnsConfig());
 			helper.LoadQueryString(querystring);
 
 			Assert.AreEqual("WITH RESULTS AS " +

@@ -23,7 +23,7 @@
 
 .roundCorners
 {
-	border-radius: 8px;
+	border-radius: 4px;
 }
 
 .alphaBackground
@@ -35,9 +35,9 @@
 
 .shadow
 {
-	-webkit-box-shadow: 0 0 64px rgba(0, 0, 0, 0.8);
-	-moz-box-shadow: 0 0 64px rgba(0, 0, 0, 0.8);
-	box-shadow: 0 0 64px rgba(0, 0, 0, 0.8);
+	-webkit-box-shadow: 0 0 64px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 0 64px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 0 64px rgba(0, 0, 0, 0.5);
 }
 
 .small-form

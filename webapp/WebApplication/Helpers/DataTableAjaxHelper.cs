@@ -5,6 +5,7 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using NLog;
 
@@ -22,7 +23,7 @@ namespace K9.WebApplication.Helpers
 		private const string SortedColumnDirectionKey = "order[0][dir]";
 
 		private readonly ILogger _logger;
-		private readonly IIgnoreColumns _ignoredColumns;
+		private readonly IColumnsConfig _columnsConfig;
 		private readonly List<IDataTableColumnInfo> _columnInfos = new List<IDataTableColumnInfo>();
 		private NameValueCollection _queryString;
 		private int _draw;
@@ -35,10 +36,10 @@ namespace K9.WebApplication.Helpers
 
 		private delegate void DataColumnInfoUpdateDelegate(IDataTableColumnInfo columnInfo, object value);
 
-		public DataTableAjaxHelper(ILogger logger, IIgnoreColumns ignoredColumns)
+		public DataTableAjaxHelper(ILogger logger, IColumnsConfig columnsConfig)
 		{
 			_logger = logger;
-			_ignoredColumns = ignoredColumns;
+			_columnsConfig = columnsConfig;
 		}
 
 		public void LoadQueryString(NameValueCollection queryString)
@@ -134,9 +135,14 @@ namespace K9.WebApplication.Helpers
 			get { return _orderByDirection; }
 		}
 
-		private List<IDataTableColumnInfo> GetColumnInfosNotIgnored()
+		private List<IDataTableColumnInfo> GetDataBoundColumnInfos()
 		{
-			return ColumnInfos.Where(c => !_ignoredColumns.ColumnsToIgnore.Contains(c.Name)).ToList();
+			return ColumnInfos.Where(c => typeof(T).GetProperties().Where(p => p.IsDataBound()).Select(p => p.Name).Contains(c.Data)).ToList();
+		}
+
+		private List<IDataTableColumnInfo> GetDataBoundColumnInfosNotIgnored()
+		{
+			return GetDataBoundColumnInfos().Where(c => !_columnsConfig.ColumnsToIgnore.Contains(c.Name)).ToList();
 		}
 
 		private string GetSelectColumns(bool selectAllColumns = false)
@@ -145,7 +151,7 @@ namespace K9.WebApplication.Helpers
 				return "*";
 
 			var sb = new StringBuilder();
-			foreach (var columnInfo in GetColumnInfosNotIgnored())
+			foreach (var columnInfo in GetDataBoundColumnInfosNotIgnored())
 			{
 				sb.Append(sb.Length == 0 ? "" : ", ");
 				sb.Append(columnInfo.Data);
@@ -158,7 +164,7 @@ namespace K9.WebApplication.Helpers
 			var sb = new StringBuilder();
 			if (!string.IsNullOrEmpty(SearchValue))
 			{
-				foreach (var columnInfo in GetColumnInfosNotIgnored())
+				foreach (var columnInfo in GetDataBoundColumnInfosNotIgnored())
 				{
 					sb.Append(sb.Length == 0 ? "WHERE " : " OR ");
 					sb.AppendFormat("{0} LIKE '{1}'", columnInfo.Data, GetLikeSearchValue());
@@ -166,7 +172,7 @@ namespace K9.WebApplication.Helpers
 			}
 			else
 			{
-				foreach (var columnInfo in GetColumnInfosNotIgnored())
+				foreach (var columnInfo in GetDataBoundColumnInfosNotIgnored())
 				{
 					if (!string.IsNullOrEmpty(columnInfo.SearchValue))
 					{

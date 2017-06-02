@@ -3,7 +3,7 @@ using K9.SharedLibrary.Models;
 
 namespace K9.DataAccess.Models
 {
-	public class IgnoreColumns : IIgnoreColumns
+	public class ColumnsConfig : IColumnsConfig
 	{
 		public List<string> ColumnsToIgnore
 		{

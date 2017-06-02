@@ -15,18 +15,18 @@ namespace K9.WebApplication.Helpers
 	public static partial class HtmlHelpers
 	{
 
-		private static IIgnoreColumns _ignoreColumns;
+		private static IColumnsConfig _columnsConfig;
 
-		public static void SetIgnoreColumns(IIgnoreColumns ignoreColumns)
+		public static void SetIgnoreColumns(IColumnsConfig columnsConfig)
 		{
-			_ignoreColumns = ignoreColumns;
+			_columnsConfig = columnsConfig;
 		}
 
 		public static MvcHtmlString BootstrapTable<T>(this HtmlHelper<T> html, string dataUrl = "", bool displayFooter = false, params string[] displayColumns)
 		{
 			var sb = new StringBuilder();
 			var modelType = typeof(T);
-			var properties = modelType.GetProperties().Where(p => !p.IsVirtualCollection() && !_ignoreColumns.ColumnsToIgnore.Contains(p.Name)).ToList();
+			var properties = modelType.GetProperties().Where(p => !p.IsVirtualCollection() && !_columnsConfig.ColumnsToIgnore.Contains(p.Name)).ToList();
 			var columns = displayColumns.Any() ? properties.Where(p => displayColumns.Contains(p.Name)).ToList() : properties;
 			var columnNames = columns.Select(p => p.Name).ToList();
 

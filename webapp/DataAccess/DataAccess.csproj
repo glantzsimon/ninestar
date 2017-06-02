@@ -70,7 +70,7 @@
     <Compile Include="Database\DatabaseInitialiser.cs" />
     <Compile Include="Database\Db.cs" />
     <Compile Include="Extensions\DbContextExtensions.cs" />
-    <Compile Include="Models\IgnoreColumns.cs" />
+    <Compile Include="Models\ColumnsConfig.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Course.cs" />

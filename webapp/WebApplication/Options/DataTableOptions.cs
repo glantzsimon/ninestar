@@ -38,7 +38,7 @@ namespace K9.WebApplication.Options
 						.Select(x => new
 						{
 							targets = new[] { x.Index },
-							visible = true
+							visible = false
 						})
 						.FirstOrDefault())));
 		}

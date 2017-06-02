@@ -211,14 +211,15 @@
     <Compile Include="Models\ViewMessage.cs" />
     <Compile Include="Options\BackgroundImageSwitcherOptions.cs" />
     <Compile Include="Options\AlertOptions.cs" />
-    <Compile Include="Options\IDataTableOptions.cs" />
     <Compile Include="Options\DataTableOptions.cs" />
     <Compile Include="Options\EditorOptions.cs" />
+    <Compile Include="Options\IDataTableOptions.cs" />
     <Compile Include="Options\ImageSwitcherOptions.cs" />
     <Compile Include="Options\ImageSwitcherOptionsBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\_colors.txt" />
     <Content Include="Content\validation.css" />
     <Content Include="Content\mobile.css" />
     <Content Include="Content\elements.css" />

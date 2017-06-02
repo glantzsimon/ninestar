@@ -1,10 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
-using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Constants.Html;
 using K9.WebApplication.Extensions;
@@ -22,13 +19,13 @@ namespace K9.WebApplication.Helpers
 			_columnsConfig = columnsConfig;
 		}
 
-		public static MvcHtmlString BootstrapTable<T>(this HtmlHelper<T> html, string dataUrl = "", bool displayFooter = false, params string[] displayColumns)
+		public static MvcHtmlString BootstrapTable<T>(this HtmlHelper<T> html, DataTableOptions<T> options = null) where T : IObjectBase
 		{
+			options = options ?? new DataTableOptions<T>();
+			options.ColumnsConfig = _columnsConfig;
+
 			var sb = new StringBuilder();
 			var modelType = typeof(T);
-			var properties = modelType.GetProperties().Where(p => !p.IsVirtualCollection() && !_columnsConfig.ColumnsToIgnore.Contains(p.Name)).ToList();
-			var columns = displayColumns.Any() ? properties.Where(p => displayColumns.Contains(p.Name)).ToList() : properties;
-			var columnNames = columns.Select(p => p.Name).ToList();
 
 			// Create table container
 			var div = new TagBuilder(Tags.Div);
@@ -37,54 +34,53 @@ namespace K9.WebApplication.Helpers
 			// Create table
 			var table = new TagBuilder(Tags.Table);
 			var tableName = modelType.GetTableName();
+			var dataUrl = options.GetDataUrl();
 			table.MergeAttribute(Attributes.Id, tableName);
 			table.MergeAttribute(Attributes.Class, "bootstraptable table table-striped table-bordered");
 			table.MergeAttribute(Attributes.CellSpacing, "0");
 			table.MergeAttribute(Attributes.Width, "100%");
-			table.MergeAttribute(Attributes.DataUrl, string.IsNullOrEmpty(dataUrl) ? modelType.GetDefaultDataUrl() : dataUrl);
+			table.MergeAttribute(Attributes.DataUrl, dataUrl);
 
 			// Add header
 			var thead = new TagBuilder(Tags.Thead);
-			thead.AddColumns(columnNames);
+			var columnNames = options.GetColumnNames();
+			thead.AddColumns(options);
 			table.InnerHtml += thead.ToString();
 
 			// Add footer
-			if (displayFooter)
+			if (options.DisplayFooter)
 			{
 				var tfoot = new TagBuilder(Tags.TFoot);
-				tfoot.AddColumns(columnNames);
+				tfoot.AddColumns(options);
 				table.InnerHtml += tfoot.ToString();
 			}
 
 			div.InnerHtml += table.ToString();
 
 			sb.Append(div);
-			sb.AppendLine(html.DataTable(tableName, dataUrl, columns).ToString());
+			sb.AppendLine(html.Partial("Controls/_DataTablesJs", options).ToString());
 
 			return MvcHtmlString.Create(sb.ToString());
 		}
 
-		private static void AddColumns(this TagBuilder builder, List<string> columns)
+		private static void AddColumns(this TagBuilder builder, IDataTableOptions options)
 		{
 			var tr = new TagBuilder(Tags.Tr);
-			foreach (var column in columns)
+			foreach (var column in options.GetColumnNames())
 			{
 				var th = new TagBuilder(Tags.Th);
 				th.SetInnerText(column);
 				tr.InnerHtml += th.ToString();
 			}
+
+			if (options.AllowCrud())
+			{
+				var th = new TagBuilder(Tags.Th);
+				tr.InnerHtml += th.ToString();
+			}
+
 			builder.InnerHtml += tr.ToString();
 		}
 
-		private static MvcHtmlString DataTable<T>(this HtmlHelper<T> html, string tableId, string dataUrl, List<PropertyInfo> columns)
-		{
-			var dataTableOptions = new DataTableOptions
-			{
-				TableId = tableId,
-				DataUrl = dataUrl,
-				Columns = columns
-			};
-			return html.Partial("Controls/_DataTablesJs", dataTableOptions);
-		}
 	}
 }

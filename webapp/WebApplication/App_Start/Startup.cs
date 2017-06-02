@@ -31,7 +31,6 @@ namespace K9.WebApplication
 			builder.RegisterGeneric(typeof (BaseRepository<>)).As(typeof (IRepository<>));
 			builder.RegisterGeneric(typeof(DataTableAjaxHelper<>)).As(typeof(IDataTableAjaxHelper<>));
 			builder.RegisterType<ColumnsConfig>().As<IColumnsConfig>().SingleInstance();
-			builder.RegisterType<DataTableOptions>().As<IDataTableOptions>();
 
 			var container = builder.Build();
 			DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

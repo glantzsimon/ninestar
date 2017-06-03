@@ -421,7 +421,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sorry, we are having a few problems processing your request. Please try again later..
+        ///   Looks up a localized string similar to We are having a few problems processing your request. Please try again later..
         /// </summary>
         public static string FriendlyErrorMessage {
             get {

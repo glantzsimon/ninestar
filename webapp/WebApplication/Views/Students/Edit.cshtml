@@ -9,11 +9,10 @@
 	using (Html.BeginBootstrapForm())
 	{
 		@Html.HiddenFor(model => model.Id)
-		@Html.BootstrapDisplayFor(model => model.Name)
-		@Html.BootstrapDisplayFor(model => model.TwoLetterCountryCode)
-		@Html.BootstrapDisplayFor(model => model.ThreeLetterCountryCode)
+		@Html.BootstrapEditorFor(model => model.Name)
+		@Html.BootstrapEditorFor(model => model.TwoLetterCountryCode)
+		@Html.BootstrapEditorFor(model => model.ThreeLetterCountryCode)
+		@Html.BootstrapButton(Dictionary.Update)
 		@Html.BootstrapBackToListButton()
-
-		@Html.AuditFieldsForModel(Model);
 	}
 }

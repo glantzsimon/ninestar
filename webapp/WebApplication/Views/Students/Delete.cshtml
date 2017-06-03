@@ -1,6 +1,6 @@
 ﻿@model Country
 @{
-	ViewBag.Title = string.Format("{0} {1}", Dictionary.Edit, Dictionary.Country);
+	ViewBag.Title = string.Format("{0} {1}", Dictionary.Delete, Dictionary.Country);
 	Layout = "~/Views/Shared/_LayoutForm.cshtml";
 }
 
@@ -8,12 +8,13 @@
 {
 	using (Html.BeginBootstrapForm())
 	{
+		<h3>@Dictionary.DeleteConfirm</h3>
+		
 		@Html.HiddenFor(model => model.Id)
 		@Html.BootstrapDisplayFor(model => model.Name)
 		@Html.BootstrapDisplayFor(model => model.TwoLetterCountryCode)
 		@Html.BootstrapDisplayFor(model => model.ThreeLetterCountryCode)
+		@Html.BootstrapButton(Dictionary.Delete, EButtonType.Delete)
 		@Html.BootstrapBackToListButton()
-
-		@Html.AuditFieldsForModel(Model);
 	}
 }

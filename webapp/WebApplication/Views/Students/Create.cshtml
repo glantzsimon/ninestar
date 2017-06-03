@@ -1,0 +1,18 @@
+﻿@model Student
+@{
+	ViewBag.Title = string.Format("{0} Student", Dictionary.Create);
+	Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+	using (Html.BeginBootstrapForm())
+	{
+		@Html.BootstrapEditorFor(model => model.Name)
+		@Html.BootstrapEditorFor(model => model.FirstMidName)
+		@Html.BootstrapEditorFor(model => model.LastName)
+		@Html.BootstrapEditorFor(model => model.EnrollmentDate)
+		@Html.BootstrapButton(Dictionary.Create)
+		@Html.BootstrapBackToListButton()
+	}
+}

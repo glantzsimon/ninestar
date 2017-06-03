@@ -151,7 +151,7 @@
     <value>First Name</value>
   </data>
   <data name="FriendlyErrorMessage" xml:space="preserve">
-    <value>Sorry, we are having a few problems processing your request. Please try again later.</value>
+    <value>We are having a few problems processing your request. Please try again later.</value>
   </data>
   <data name="InvalidEmailAddress" xml:space="preserve">
     <value>Please enter a valid email address.</value>

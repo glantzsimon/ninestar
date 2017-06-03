@@ -195,6 +195,7 @@
     <Compile Include="Helpers\BootstrapForm.cs" />
     <Compile Include="Helpers\BootstrapButton.cs" />
     <Compile Include="Helpers\BootstrapTable.cs" />
+    <Compile Include="Helpers\AuditFieldsForModel.cs" />
     <Compile Include="Helpers\IDataTableAjaxHelper.cs" />
     <Compile Include="Helpers\DataTableAjaxHelper.cs" />
     <Compile Include="Helpers\Fail.cs" />
@@ -344,7 +345,11 @@
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
     <Content Include="Views\Shared\_Layout100.cshtml" />
+    <Content Include="Views\Students\Create.cshtml" />
     <Content Include="Views\Students\Index.cshtml" />
+    <Content Include="Views\Students\Delete.cshtml" />
+    <Content Include="Views\Students\Details.cshtml" />
+    <Content Include="Views\Students\Edit.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

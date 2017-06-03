@@ -83,3 +83,22 @@
 {
 	text-decoration: none;
 }
+
+.bootstraptable .btn 
+{
+	margin-right: 6px;
+}
+
+a.btn {
+	color: #ffffff !important;
+	text-decoration: none !important;
+}
+
+.bootstraptable td {
+	vertical-align: middle !important;
+}
+
+.button-container {
+	margin-bottom: 20px;
+	margin-left: 15px;
+}

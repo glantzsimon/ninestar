@@ -38,3 +38,9 @@ tbody tr:hover
 	background: #337ab7 !important;
 	color: #ffffff !important;
 }
+
+form h3
+{
+	margin-top: 4px;
+	margin-bottom: 18px;
+}

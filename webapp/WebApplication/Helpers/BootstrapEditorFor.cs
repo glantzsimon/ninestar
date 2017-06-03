@@ -57,11 +57,27 @@ namespace K9.WebApplication.Helpers
 				sb.AppendLine(html.LabelFor(expression).ToString());
 			}
 
-			sb.AppendLine(html.EditorFor(expression, additionalViewData).ToString());
-			sb.AppendLine(html.ValidationMessageFor(expression).ToString());
+			if (options.IsReadOnly)
+			{
+				sb.AppendLine(html.DisplayFor(expression, additionalViewData).ToString());
+			}
+			else
+			{
+				sb.AppendLine(html.EditorFor(expression, additionalViewData).ToString());
+				sb.AppendLine(html.ValidationMessageFor(expression).ToString());
+			}
 			sb.AppendLine(div.ToString(TagRenderMode.EndTag));
 
 			return MvcHtmlString.Create(sb.ToString());
+		}
+
+		public static MvcHtmlString BootstrapDisplayFor<TModel, TProperty>(this HtmlHelper<TModel> html,
+			Expression<Func<TModel, TProperty>> expression, EditorOptions options = null)
+		{
+			return BootstrapEditorFor(html, expression, new EditorOptions
+			{
+				IsReadOnly = true
+			});
 		}
 
 	}

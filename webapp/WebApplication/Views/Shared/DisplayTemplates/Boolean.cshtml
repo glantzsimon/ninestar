@@ -1,0 +1,5 @@
+﻿@using K9.WebApplication.Extensions
+@using K9.WebApplication.Helpers
+@model Boolean
+<label>@Html.GetDisplayNameFor(model => model)</label>
+<div>@Model.ToYesNo()</div>

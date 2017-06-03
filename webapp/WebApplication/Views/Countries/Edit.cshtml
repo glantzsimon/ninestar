@@ -1,0 +1,17 @@
+﻿@model Country
+@{
+	ViewBag.Title = string.Format("{0} {1}", Dictionary.Edit, "Country");
+	Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+	using (Html.BeginBootstrapForm())
+	{
+		@Html.HiddenFor(model => model.Id)
+		@Html.BootstrapEditorFor(model => model.Name)
+		@Html.BootstrapEditorFor(model => model.TwoLetterCountryCode)
+		@Html.BootstrapEditorFor(model => model.ThreeLetterCountryCode)
+		@Html.BootstrapButton(Dictionary.Update)
+	}
+}

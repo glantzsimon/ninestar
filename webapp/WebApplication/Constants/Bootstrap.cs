@@ -13,6 +13,7 @@ namespace K9.WebApplication.Constants
 			public const string FormControl = "form-control";
 			public const string DefaultButton = "btn btn-default";
 			public const string PrimaryButton = "btn btn-primary";
+			public const string RedButton = "btn btn-danger";
 			public const string HasError = "has-error";
 		}
 

@@ -8,10 +8,10 @@
 			buttons += '<a href="@Url.Action("Details")/' + data.Id + '" class="btn btn-info">@Dictionary.Details</a>';
 		}
 		if (@Model.AllowEdit.ToString().ToLower()) {
-			buttons += '<a href="@Url.Action("Edit")/' + data.Id + '" class="btn btn-primary">@Dictionary.Edit</a>';
+			buttons += '<a href="@Url.Action("Edit")/' + data.Id + '" class="btn btn-primary"><i class="fa fa-pencil"></i> @Dictionary.Edit</a>';
 		}
 		if (@Model.AllowDelete.ToString().ToLower()) {
-			buttons += '<a href="@Url.Action("Delete")/' + data.Id + '" class="btn btn-danger">@Dictionary.Delete</a>';
+			buttons += '<a href="@Url.Action("Delete")/' + data.Id + '" class="btn btn-danger"><i class="fa fa-trash"></i> @Dictionary.Delete</a>';
 		}
 		return buttons;
 	};

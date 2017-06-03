@@ -2,9 +2,14 @@
 @{
 	ViewBag.Title = "Countries";
 }
+<div class="button-container">
+	@Html.ActionLink(Dictionary.CreateNew, "Create", null, new {@class = "btn btn-primary"})
+</div>
 
 @Html.BootstrapTable(new DataTableOptions<Country>
 {
 	DataUrl = "/Countries/List",
-	AllowEdit = true
+	AllowEdit = true,
+	AllowDetail = true,
+	AllowDelete = true
 })

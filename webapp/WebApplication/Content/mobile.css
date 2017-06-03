@@ -45,5 +45,10 @@
 	.wide-form {
 		max-width: 100% !important;
 	}
+	
+	a.btn 
+	{
+		width: 100%;
+	}
 
 }

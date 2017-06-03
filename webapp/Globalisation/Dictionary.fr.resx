@@ -367,4 +367,19 @@
   <data name="Delete" xml:space="preserve">
     <value>Supprimer</value>
   </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Retourner à La Liste</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Non</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Oui</value>
+  </data>
+  <data name="DeleteConfirm" xml:space="preserve">
+    <value>Etes-vous certain de vouloir supprimer cet enregistrement?</value>
+  </data>
+  <data name="CreateNew" xml:space="preserve">
+    <value>Créer Nouveau</value>
+  </data>
 </root>

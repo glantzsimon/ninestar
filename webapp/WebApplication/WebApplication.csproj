@@ -340,6 +340,7 @@
     <Content Include="Views\Shared\DisplayTemplates\String.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Text.cshtml" />
     <Content Include="Views\Countries\Delete.cshtml" />
+    <Content Include="Views\Countries\Create.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
     <Content Include="Views\Shared\_Layout100.cshtml" />

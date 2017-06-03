@@ -382,4 +382,34 @@
   <data name="CreateNew" xml:space="preserve">
     <value>Créer Nouveau</value>
   </data>
+  <data name="Create" xml:space="preserve">
+    <value>Créer</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Pays</value>
+  </data>
+  <data name="Countries" xml:space="preserve">
+    <value>Pays</value>
+  </data>
+  <data name="CountryDefiniteArticle" xml:space="preserve">
+    <value>Le</value>
+  </data>
+  <data name="CountryIndefiniteArticle" xml:space="preserve">
+    <value>Un</value>
+  </data>
+  <data name="DuplicateIndexError" xml:space="preserve">
+    <value>{0} {1} avec {2} {3} '{4}' existe déjà.</value>
+  </data>
+  <data name="FeminieDefiniteArticle" xml:space="preserve">
+    <value>La</value>
+  </data>
+  <data name="FeminineIndefiniteArticle" xml:space="preserve">
+    <value>Une</value>
+  </data>
+  <data name="MasculineDefiniteArticle" xml:space="preserve">
+    <value>Le</value>
+  </data>
+  <data name="MasculineIndefiniteArticle" xml:space="preserve">
+    <value>Un</value>
+  </data>
 </root>

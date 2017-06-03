@@ -13,7 +13,7 @@ namespace K9.WebApplication.Helpers
 
 		public static MvcHtmlString BootstrapBackToListButton(this HtmlHelper html)
 		{
-			return html.ActionLink(Dictionary.BackToList, "Index", null, new { @class = Bootstrap.Classes.PrimaryButton });
+			return html.ActionLink(string.Format("< {0}", Dictionary.BackToList), "Index", null, new { @class = Bootstrap.Classes.InfoButton });
 		}
 
 		public static MvcHtmlString BootstrapButton(this HtmlHelper html, string value, EButtonType buttonType = EButtonType.Submit)

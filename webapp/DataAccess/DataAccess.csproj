@@ -63,6 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\ArticlesAttribute.cs" />
+    <Compile Include="Attributes\NameAttribute.cs" />
     <Compile Include="Config\AppConfig.cs" />
     <Compile Include="Database\Seeds\Schools.cs" />
     <Compile Include="Database\Seeds\Countries.cs" />
@@ -98,7 +100,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Attributes\" />
     <Folder Include="Enums\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

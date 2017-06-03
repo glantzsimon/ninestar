@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Threading;
 using System.Web.Mvc;
+using K9.Globalisation;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Constants;
+using K9.WebApplication.Extensions;
 using K9.WebApplication.Helpers;
 using Newtonsoft.Json;
 using NLog;
@@ -71,6 +73,7 @@ namespace K9.WebApplication.Controllers
 
 		#endregion
 
+
 		#region DataTable
 
 		[Authorize]
@@ -123,8 +126,8 @@ namespace K9.WebApplication.Controllers
 				}
 				catch (Exception ex)
 				{
-					_logger.Error(ex.Message);
-					throw;
+					_logger.Error(ex.GetFullErrorMessage());
+					ModelState.AddErrorMessageFromException<T>(ex, item);
 				}
 			}
 

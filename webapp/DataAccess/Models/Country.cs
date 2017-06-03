@@ -1,10 +1,13 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using K9.DataAccess.Attributes;
 using K9.Globalisation;
 
 namespace K9.DataAccess.Models
 {
+	[Articles(ResourceType = typeof(Dictionary), DefiniteArticleName = Strings.Articles.CountryDefiniteArticle, IndefiniteArticleName = Strings.Articles.CountryIndefiniteArticle)]
+	[Name(ResourceType = typeof(Dictionary), Name = Strings.Names.Country)]
 	public class Country : ObjectBase
 	{
 		[Index(IsUnique = true)]

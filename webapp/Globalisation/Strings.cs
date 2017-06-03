@@ -33,7 +33,22 @@ namespace K9.Globalisation
 			public const string BirthDateLabel = "BirthDateLabel";
 			public const string TwoLetterCountryCodeLabel = "TwoLetterCountryCodeLabel";
 			public const string ThreeLetterCountryCodeLabel = "ThreeLetterCountryCodeLabel";
-			
 		}
+
+		public class Articles
+		{
+			public const string MasculineDefiniteArticle = "MasculineDefiniteArticle";
+			public const string FeminineDefiniteArticle = "FeminineDefiniteArticle";
+			public const string MasculineIndefiniteArticle = "MasculineIndefiniteArticle";
+			public const string FeminineIndefiniteArticle = "FeminineIndefiniteArticle";
+			public const string CountryDefiniteArticle = "CountryDefiniteArticle";
+			public const string CountryIndefiniteArticle = "CountryIndefiniteArticle";
+		}
+
+		public class Names
+		{
+			public const string Country = "Country";
+		}
+
 	}
 }

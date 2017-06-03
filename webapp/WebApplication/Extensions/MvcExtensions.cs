@@ -1,5 +1,10 @@
 ﻿
+using System;
+using System.Linq;
 using System.Web.Mvc;
+using K9.Globalisation;
+using K9.SharedLibrary.Extensions;
+using K9.SharedLibrary.Models;
 
 namespace K9.WebApplication.Extensions
 {
@@ -12,5 +17,25 @@ namespace K9.WebApplication.Extensions
 				viewContext.RouteData.Values["controller"].ToString() == controllerName ? "active" : "";
 		}
 
+		public static void AddErrorMessageFromException<T>(this ModelStateDictionary modelState, Exception ex, T item) where T : IObjectBase
+		{
+			var duplicateIndexErrorPropertyName = ex.GetDuplicateIndexErrorPropertyName();
+			if (!string.IsNullOrEmpty(duplicateIndexErrorPropertyName))
+			{
+				var classType = typeof (T);
+				var columnInfo = typeof (T).GetProperties().First(c => c.Name == duplicateIndexErrorPropertyName);
+				modelState.AddModelError(duplicateIndexErrorPropertyName, string.Format(
+					Dictionary.DuplicateIndexError, 
+					classType.GetIndefiniteArticle(),
+					classType.GetName().ToLower(),
+					columnInfo.GetDefiniteArticle().ToLower(),
+					columnInfo.GetDisplayName(),
+					item.GetProperty(duplicateIndexErrorPropertyName)));
+			}
+			else
+			{
+				modelState.AddModelError("", Dictionary.FriendlyErrorMessage);
+			}
+		}
 	}
 }

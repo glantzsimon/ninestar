@@ -196,6 +196,51 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Countries.
+        /// </summary>
+        public static string Countries {
+            get {
+                return ResourceManager.GetString("Countries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Country.
+        /// </summary>
+        public static string Country {
+            get {
+                return ResourceManager.GetString("Country", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The.
+        /// </summary>
+        public static string CountryDefiniteArticle {
+            get {
+                return ResourceManager.GetString("CountryDefiniteArticle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A.
+        /// </summary>
+        public static string CountryIndefiniteArticle {
+            get {
+                return ResourceManager.GetString("CountryIndefiniteArticle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create.
+        /// </summary>
+        public static string Create {
+            get {
+                return ResourceManager.GetString("Create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Created By.
         /// </summary>
         public static string CreatedByLabel {
@@ -286,6 +331,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} {1} with {2} {3} &apos;{4}&apos; already exists..
+        /// </summary>
+        public static string DuplicateIndexError {
+            get {
+                return ResourceManager.GetString("DuplicateIndexError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit.
         /// </summary>
         public static string Edit {
@@ -318,6 +372,24 @@ namespace K9.Globalisation {
         public static string Error {
             get {
                 return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The.
+        /// </summary>
+        public static string FeminieDefiniteArticle {
+            get {
+                return ResourceManager.GetString("FeminieDefiniteArticle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A.
+        /// </summary>
+        public static string FeminineIndefiniteArticle {
+            get {
+                return ResourceManager.GetString("FeminineIndefiniteArticle", resourceCulture);
             }
         }
         
@@ -507,6 +579,24 @@ namespace K9.Globalisation {
         public static string LogOut {
             get {
                 return ResourceManager.GetString("LogOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The.
+        /// </summary>
+        public static string MasculineDefiniteArticle {
+            get {
+                return ResourceManager.GetString("MasculineDefiniteArticle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A.
+        /// </summary>
+        public static string MasculineIndefiniteArticle {
+            get {
+                return ResourceManager.GetString("MasculineIndefiniteArticle", resourceCulture);
             }
         }
         

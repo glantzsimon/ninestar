@@ -1,6 +1,6 @@
 ﻿@model Country
 @{
-	ViewBag.Title = string.Format("{0} {1}", Dictionary.Edit, Dictionary.Country);
+	ViewBag.Title = string.Format("{0} {1}", Dictionary.Create, Dictionary.Country);
 	Layout = "~/Views/Shared/_LayoutForm.cshtml";
 }
 
@@ -8,11 +8,10 @@
 {
 	using (Html.BeginBootstrapForm())
 	{
-		@Html.HiddenFor(model => model.Id)
 		@Html.BootstrapEditorFor(model => model.Name)
 		@Html.BootstrapEditorFor(model => model.TwoLetterCountryCode)
 		@Html.BootstrapEditorFor(model => model.ThreeLetterCountryCode)
-		@Html.BootstrapButton(Dictionary.Update)
+		@Html.BootstrapButton(Dictionary.Create)
 		@Html.BootstrapBackToListButton()
 	}
 }

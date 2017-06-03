@@ -310,6 +310,10 @@ namespace K9.WebApplication.Helpers
 			get { return _isSearchRegex; }
 		}
 
+		public bool IsDatabound { get; set; }
+
+		public string Renderer { get; set; }
+
 		public void UpdateData(string data)
 		{
 			_data = data;

@@ -6,6 +6,7 @@ namespace K9.WebApplication.Options
 {
 	public interface IDataTableOptions
 	{
+		string TableId { get; }
 		string DataUrl { get; set; }
 		bool AllowCreate { get; set; }
 		bool AllowEdit { get; set; }

@@ -23,6 +23,8 @@ namespace K9.WebApplication.Helpers
 		string Name { get; }
 		string SearchValue { get; }
 		bool IsRegexSearch { get; }
+		bool IsDatabound { get; set; }
+		string Renderer { get; set; }
 
 		void UpdateData(string data);
 		void UpdateName(string name);

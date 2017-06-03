@@ -3,4 +3,8 @@
 	ViewBag.Title = "Countries";
 }
 
-@Html.BootstrapTable("/Countries/List")
+@Html.BootstrapTable(new DataTableOptions<Country>
+{
+	DataUrl = "/Countries/List",
+	AllowEdit = true
+})

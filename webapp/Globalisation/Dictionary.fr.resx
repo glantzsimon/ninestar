@@ -358,4 +358,13 @@
   <data name="DateFormat" xml:space="preserve">
     <value>dd/MM/yyyy</value>
   </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Modifier</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Détails</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
 </root>

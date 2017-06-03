@@ -43,7 +43,7 @@ namespace K9.WebApplication.Helpers
 
 			// Add header
 			var thead = new TagBuilder(Tags.Thead);
-			var columnNames = options.GetColumnNames();
+			options.GetColumnNames();
 			thead.AddColumns(options);
 			table.InnerHtml += thead.ToString();
 

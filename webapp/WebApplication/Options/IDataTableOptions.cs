@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
 using System.Web.Mvc;
+using K9.WebApplication.Helpers;
 
 namespace K9.WebApplication.Options
 {
@@ -17,5 +18,7 @@ namespace K9.WebApplication.Options
 		List<string> GetColumnNames();
 		MvcHtmlString GetColumnsJson();
 		MvcHtmlString GetColumnDefsJson();
+		string GetButtonRenderFunction();
+		List<DataTableColumnInfo> GetColumnInfos();
 	}
 }

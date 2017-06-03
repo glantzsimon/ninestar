@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
 using System.Web.UI.WebControls;
@@ -13,6 +14,7 @@ using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Extensions;
 using K9.WebApplication.Helpers;
+using Newtonsoft.Json;
 
 namespace K9.WebApplication.Options
 {
@@ -74,74 +76,42 @@ namespace K9.WebApplication.Options
 			{
 				data = c.Data,
 				title = c.Name,
-				orderable = c.IsDatabound,
-				renderer = c.Renderer
+				orderable = c.IsDatabound
 			}).ToArray()));
 		}
 
 		public MvcHtmlString GetColumnDefsJson()
 		{
 			return MvcHtmlString.Create(new JavaScriptSerializer().Serialize(
-				GetKeyColumns().Select(c => GetColumns().Select((co, index) => new
+				GetColumnInfos().Where(c => c.HasColumnDef).Select(c => new
 				{
-					co.Name,
-					Index = index,
-					Type = co.PropertyType
-				})
-					.Where(_ => _.Name == c.Name)
-						.Select(x => new
-						{
-							targets = new[] { x.Index },
-							visible = false
-						})
-						.FirstOrDefault())));
+					targets = new[] { c.Index },
+					visible = c.IsVisible
+				})));
 		}
 
-		public string GetButtonRenderer()
+		public string GetButtonRenderFunction()
 		{
-			if (AllowCrud())
-			{
-				var sb = new StringBuilder();
-				sb.Append("function (data, type, row) { return '");
-
-				if (AllowDetail)
-				{
-					sb.AppendFormat("<a href=\"/details/\"' + data.Id + ' class=\"btn btn-info\">{0}</a>", Dictionary.Details);
-				}
-				if (AllowEdit)
-				{
-					sb.AppendFormat("<a href=\"/edit/\"' + data.Id + ' class=\"btn btn-primary\">{0}</a>", Dictionary.Edit);
-				}
-				if (AllowDelete)
-				{
-					sb.AppendFormat("<a href=\"/delete/\"' + data.Id + ' class=\"btn btn-danger\">{0}</a>", Dictionary.Delete);
-				}
-				sb.Append("';}");
-				return sb.ToString();
-			}
-			return string.Empty;
+			return string.Format("renderButtons{0}", TableId);
 		}
 
-		private List<DataTableColumnInfo> GetColumnInfos()
+		public List<DataTableColumnInfo> GetColumnInfos()
 		{
-			var infos = GetColumns().Select((c, index) =>
+			var keyColumnNames = GetKeyColumns().Select(k => k.Name).ToList();
+			var columnsInfos = GetColumns().Select((c, index) =>
 			{
-				var info = new DataTableColumnInfo(index);
+				var info = new DataTableColumnInfo(index)
+				{
+					IsDatabound = c.IsDataBound(),
+					IsVisible = !keyColumnNames.Contains(c.Name),
+					HasColumnDef = keyColumnNames.Contains(c.Name)
+				};
 				info.UpdateData(c.Name);
 				info.UpdateName(c.GetDisplayName());
-				info.IsDatabound = c.IsDataBound();
 				return info;
 			}).ToList();
 
-			if (AllowCrud())
-			{
-				var info = new DataTableColumnInfo(infos.Count);
-				info.IsDatabound = false;
-				info.Renderer = GetButtonRenderer();
-				infos.Add(info);
-			}
-
-			return infos;
+			return columnsInfos;
 		}
 
 		private List<PropertyInfo> GetKeyColumns()

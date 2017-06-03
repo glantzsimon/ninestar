@@ -1,34 +1,41 @@
 ﻿@model IDataTableOptions
+
 <script type="text/javascript">
 
-	$.fn.dataTable.moment = function(format, locale) {
-		var types = $.fn.dataTable.ext.type;
-
-		// Add type detection
-		types.detect.unshift(function(d) {
-			return moment(d, format, locale, true).isValid() ?
-				'moment-' + format :
-				null;
-		});
-
-		// Add sorting method - use an integer for the sorting
-		types.order['moment-' + format + '-pre'] = function(d) {
-			return moment(d, format, locale, true).unix();
-		};
+	function @Model.GetButtonRenderFunction() (data) {
+		var buttons = "";
+		if (@Model.AllowDetail.ToString().ToLower()) {
+			buttons += '<a href="@Url.Action("Details")/' + data.Id + '" class="btn btn-info">@Dictionary.Details</a>';
+		}
+		if (@Model.AllowEdit.ToString().ToLower()) {
+			buttons += '<a href="@Url.Action("Edit")/' + data.Id + '" class="btn btn-primary">@Dictionary.Edit</a>';
+		}
+		if (@Model.AllowDelete.ToString().ToLower()) {
+			buttons += '<a href="@Url.Action("Delete")/' + data.Id + '" class="btn btn-danger">@Dictionary.Delete</a>';
+		}
+		return buttons;
 	};
 
-	$(function() {
-		$.fn.dataTable.moment('DD MMM YYYY HH:mm');
+	function getColumnDefs() {
+		var columnDefs = @Model.GetColumnDefsJson();
+		columnDefs.push({
+			data: null,
+			targets: [@Model.GetColumnInfos().Count],
+			render: @Model.GetButtonRenderFunction()
+		});
+		return columnDefs;
+	}
 
+	$(function() {
 		var table = $("table#@Model.TableId");
 		table.DataTable({
 			"ajax": table.attr("data-url"),
 			"columns": @Model.GetColumnsJson(),
-			"columnDefs": @Model.GetColumnDefsJson(),
+			"columnDefs": getColumnDefs(),
 			"processing": true,
 			"serverSide": true,
 			"stateSave": true
 		});
-	})
+	});
 
 </script>

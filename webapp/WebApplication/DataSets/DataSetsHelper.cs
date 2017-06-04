@@ -47,9 +47,9 @@ namespace K9.WebApplication.DataSets
 
 		public string GetName<T>(int selectedId, bool refresh = false) where T : class, IObjectBase
 		{
-			var firstOrDefault = GetDataSet<T>().FirstOrDefault(x => x.Id == selectedId);
-			if (firstOrDefault != null)
-				return firstOrDefault.Name;
+			var item = GetDataSet<T>(refresh).FirstOrDefault(x => x.Id == selectedId);
+			if (item != null)
+				return item.Name;
 			return string.Empty;
 		}
 	}

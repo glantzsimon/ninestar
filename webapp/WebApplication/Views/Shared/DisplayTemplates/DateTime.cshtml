@@ -1,2 +1,5 @@
 ﻿@model DateTime?
-<div>@(Model.HasValue ? Model.Value.ToLongDateString() : "")</div>
+@{
+	var value = Model.HasValue ? Model.Value.ToLongDateString() : "";
+}
+<div>@value</div>

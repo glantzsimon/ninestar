@@ -11,6 +11,7 @@ namespace K9.DataAccess.Database
 			: base("name=DefaultConnection")
 		{
 			Configuration.LazyLoadingEnabled = false;
+			Configuration.ProxyCreationEnabled = false;
 		}
 
 

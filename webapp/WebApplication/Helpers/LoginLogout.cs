@@ -18,7 +18,7 @@ namespace K9.WebApplication.Helpers
 			if (WebSecurity.IsAuthenticated)
 			{
 				var icon = new TagBuilder(Tags.Icon);
-				icon.MergeAttribute(Attributes.Class, "fa fa-signin");
+				icon.MergeAttribute(Attributes.Class, "fa fa-sign-out");
 
 				var anchor = new TagBuilder(Tags.Anchor);
 				anchor.MergeAttribute(Attributes.Href, html.GeturlHeler().Action("LogOff", "Account"));
@@ -31,7 +31,7 @@ namespace K9.WebApplication.Helpers
 			else
 			{
 				var icon = new TagBuilder(Tags.Icon);
-				icon.MergeAttribute(Attributes.Class, "fa fa-signout");
+				icon.MergeAttribute(Attributes.Class, "fa fa-sign-in");
 
 				var anchor = new TagBuilder(Tags.Anchor);
 				anchor.MergeAttribute(Attributes.Href, html.GeturlHeler().Action("Login", "Account"));

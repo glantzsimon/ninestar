@@ -90,6 +90,12 @@
 	margin-right: 6px;
 }
 
+.bootstraptable tbody tr:hover
+{
+	background: #337ab7 !important;
+	color: #ffffff !important;
+}
+
 a.btn
 {
 	color: #ffffff !important;

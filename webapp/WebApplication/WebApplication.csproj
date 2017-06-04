@@ -360,6 +360,7 @@
     <Content Include="Views\Shared\EditorTemplates\Course.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Student.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Course.cshtml" />
+    <Content Include="Views\Shared\_FriendlyError.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
     <Content Include="Views\Shared\_Layout100.cshtml" />

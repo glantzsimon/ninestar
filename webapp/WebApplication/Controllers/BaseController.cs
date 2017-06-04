@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Threading;
 using System.Web.Mvc;
-using K9.Globalisation;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
-using K9.WebApplication.Constants;
-using K9.WebApplication.DataSets;
 using K9.WebApplication.Extensions;
 using K9.WebApplication.Helpers;
 using Newtonsoft.Json;
@@ -37,7 +34,7 @@ namespace K9.WebApplication.Controllers
 
 		public IDataSetsHelper DropdownDataSets
 		{
-			get { return _dropdownDataSets; }	
+			get { return _dropdownDataSets; }
 		}
 
 		#endregion
@@ -117,7 +114,7 @@ namespace K9.WebApplication.Controllers
 			catch (Exception ex)
 			{
 				_logger.Error(ex.Message);
-				throw;
+				return View("_FriendlyError");
 			}
 		}
 
@@ -180,7 +177,7 @@ namespace K9.WebApplication.Controllers
 				catch (Exception ex)
 				{
 					_logger.Error(ex.Message);
-					throw;
+					ModelState.AddErrorMessageFromException<T>(ex, item);
 				}
 			}
 
@@ -203,8 +200,15 @@ namespace K9.WebApplication.Controllers
 		[Authorize]
 		public virtual ActionResult DeleteConfirmed(int id = 0)
 		{
+			T item = null;
 			if (ModelState.IsValid)
 			{
+				item = _repository.Find(id);
+				if (item == null)
+				{
+					return HttpNotFound();
+				}
+
 				try
 				{
 					_repository.Delete(id);
@@ -213,15 +217,10 @@ namespace K9.WebApplication.Controllers
 				catch (Exception ex)
 				{
 					_logger.Error(ex.Message);
-					throw;
+					ModelState.AddErrorMessageFromException(ex, item);
 				}
 			}
 
-			T item = _repository.Find(id);
-			if (item == null)
-			{
-				return HttpNotFound();
-			}
 			return View(item);
 		}
 

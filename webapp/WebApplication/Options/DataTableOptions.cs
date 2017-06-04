@@ -65,7 +65,7 @@ namespace K9.WebApplication.Options
 			if (_columnInfos == null)
 			{
 				var columns =
-					typeof(T).GetProperties()
+					typeof(T).GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.DeclaredOnly)
 						.Where(p => !p.IsVirtual() && !ColumnsConfig.ColumnsToIgnore.Contains(p.Name))
 						.ToList();
 				_columnInfos = new HashSet<PropertyInfo>();

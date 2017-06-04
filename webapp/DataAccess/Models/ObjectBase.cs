@@ -21,7 +21,7 @@ namespace K9.DataAccess.Models
 		[Index(IsUnique = true)]
 		[StringLength(128)]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NameLabel)]
-		public string Name { get; set; }
+		public string Name { get; set; }	
 
 		#endregion
 

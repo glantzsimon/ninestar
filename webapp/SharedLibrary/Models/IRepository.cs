@@ -14,6 +14,8 @@ namespace K9.SharedLibrary.Models
 
 		List<T> List();
 
+		List<IListItem> ItemList();
+
 		void Create(T item);
 
 		void Update(T item);

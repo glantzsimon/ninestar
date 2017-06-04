@@ -1,0 +1,5 @@
+﻿@using K9.WebApplication.DataSets
+@model int
+@{
+}
+@Html.DropDownListFor(model => model, new SelectList(DropdownDataSets.Instance.CountriesList, Model), StringConstants.DefaultOptionLabel, ViewData)

@@ -27,7 +27,7 @@
 			</div>
 		</form>
 		<ul class="nav navbar-nav navbar-right">
-			<li>@Html.LoginLogout()</li>
+			@Html.LoginLogout()
 			@if (WebSecurity.IsAuthenticated)
    {
 				<li class="@ViewContext.GetActiveClass("MyAccount", "Account")"><a href="@Url.Action("MyAccount", "Account")"><span class="glyphicon glyphicon-user"></span> @Dictionary.MyAccountTitle</a></li>

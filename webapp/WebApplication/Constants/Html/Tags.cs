@@ -20,6 +20,8 @@ namespace K9.WebApplication.Constants.Html
 		public const string TFoot = "tfoot";
 		public const string Tr = "tr";
 		public const string Th = "th";
+		public const string Ul = "ul";
+		public const string Li = "li";
 	}
 
 }

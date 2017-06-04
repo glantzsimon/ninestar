@@ -1,6 +1,7 @@
 ﻿
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using K9.SharedLibrary.Models;
 
 namespace K9.WebApplication.Helpers
 {
@@ -10,6 +11,7 @@ namespace K9.WebApplication.Helpers
 		int Start { get; }
 		int Length { get; }
 		string SearchValue { get; }
+		IForeignKeyFilter ForeignKeyFilter { get; set; }
 		List<IDataTableColumnInfo> ColumnInfos { get; }
 		void LoadQueryString(NameValueCollection queryString);
 		string GetQuery(bool selectAllColumns = false);

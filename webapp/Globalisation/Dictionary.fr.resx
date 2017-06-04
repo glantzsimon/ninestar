@@ -412,4 +412,7 @@
   <data name="MasculineIndefiniteArticle" xml:space="preserve">
     <value>Un</value>
   </data>
+  <data name="AdditionalInformation" xml:space="preserve">
+    <value>Informations Supplémentaires</value>
+  </data>
 </root>

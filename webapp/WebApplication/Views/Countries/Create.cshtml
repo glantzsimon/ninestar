@@ -8,9 +8,8 @@
 {
 	using (Html.BeginBootstrapForm())
 	{
-		@Html.BootstrapEditorFor(model => model.Name)
-		@Html.BootstrapEditorFor(model => model.TwoLetterCountryCode)
-		@Html.BootstrapEditorFor(model => model.ThreeLetterCountryCode)
+		@Html.Partial("_EditFields")
+		<br/>
 		@Html.BootstrapButton(Dictionary.Create)
 		@Html.BootstrapBackToListButton()
 	}

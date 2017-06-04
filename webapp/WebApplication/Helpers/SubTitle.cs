@@ -16,9 +16,6 @@ namespace K9.WebApplication.Helpers
 			h.MergeAttribute(Attributes.Class, "subtitle");
 			sb.AppendLine(h.ToString());
 
-			var hr = new TagBuilder(Tags.Hr);
-			sb.AppendLine(hr.ToString(TagRenderMode.SelfClosing));
-
 			return MvcHtmlString.Create(sb.ToString());
 		}
 

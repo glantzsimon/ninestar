@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Web.Mvc;
+using K9.SharedLibrary.Extensions;
 
 namespace K9.WebApplication.Helpers
 {
@@ -12,7 +13,7 @@ namespace K9.WebApplication.Helpers
 		public static string GetDisplayNameFor<TModel, TProperty>(this HtmlHelper<TModel> html, Expression<Func<TModel, TProperty>> expression)
 		{
 			var metaData = ModelMetadata.FromLambdaExpression(expression, html.ViewData);
-			string displayName = metaData.DisplayName ?? (metaData.PropertyName ?? ExpressionHelper.GetExpressionText(expression));
+			string displayName = metaData.DisplayName ?? (metaData.PropertyName.SplitOnCapitalLetter() ?? ExpressionHelper.GetExpressionText(expression));
 			return displayName;
 		}
 
@@ -30,6 +31,11 @@ namespace K9.WebApplication.Helpers
 		public static List<ModelError> GetModelErrorsFor<TModel, TProperty>(this HtmlHelper<TModel> html, Expression<Func<TModel, TProperty>> expression)
 		{
 			return html.ViewData.ModelState.Where(x => x.Key == html.GetPropertyNamesFor(expression)).SelectMany(x => x.Value.Errors).ToList();
+		}
+
+		public static UrlHelper GeturlHeler(this HtmlHelper html)
+		{
+			return new UrlHelper(html.ViewContext.RequestContext);
 		}
 
 	}

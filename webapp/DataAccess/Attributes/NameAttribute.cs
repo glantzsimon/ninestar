@@ -6,6 +6,7 @@ namespace K9.DataAccess.Attributes
 	public class NameAttribute : Attribute
 	{
 		public string Name { get; set; }
+		public string PluralName { get; set; }
 		public Type ResourceType { get; set; }
 
 		public string GetName()

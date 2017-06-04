@@ -100,6 +100,8 @@ namespace K9.WebApplication.Helpers
 			get { return _searchValue; }
 		}
 
+		public IForeignKeyFilter ForeignKeyFilter { get; set; }
+
 		public bool IsRegexSearch
 		{
 			get { return _isRegexSearch; }
@@ -182,6 +184,13 @@ namespace K9.WebApplication.Helpers
 					}
 				}
 			}
+
+			if (ForeignKeyFilter != null && !string.IsNullOrEmpty(ForeignKeyFilter.ForeignKeyName))
+			{
+				sb.Append(sb.Length == 0 ? "WHERE " : " AND ");
+				sb.AppendFormat("{0} = {1}", ForeignKeyFilter.ForeignKeyName, ForeignKeyFilter.ForeignKeyId);
+			}
+
 			return sb.ToString();
 		}
 

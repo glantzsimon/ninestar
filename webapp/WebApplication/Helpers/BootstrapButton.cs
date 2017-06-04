@@ -1,5 +1,4 @@
-﻿using System.Text;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using K9.Globalisation;
 using K9.WebApplication.Constants;
@@ -16,15 +15,18 @@ namespace K9.WebApplication.Helpers
 			return html.ActionLink(string.Format("< {0}", Dictionary.BackToList), "Index", null, new { @class = Bootstrap.Classes.InfoButton });
 		}
 
+		public static MvcHtmlString BootstrapLinkButton(this HtmlHelper html, string linkText, string actionName, string controllerName, object routeValues)
+		{
+			return MvcHtmlString.Create(string.Format("<a class=\"btn btn-info\" href=\"{0}\"><i class='fa fa-link'></i> {1}</a>", html.GeturlHeler().Action(actionName, controllerName, routeValues), linkText));
+		}
+
+		public static MvcHtmlString BootstrapCreateNewButton(this HtmlHelper html)
+		{
+			return html.ActionLink(string.Format("{0}", Dictionary.CreateNew), "Create", null, new { @class = Bootstrap.Classes.PrimaryButton });
+		}
+
 		public static MvcHtmlString BootstrapButton(this HtmlHelper html, string value, EButtonType buttonType = EButtonType.Submit)
 		{
-			var sb = new StringBuilder();
-			if (buttonType == EButtonType.Submit || buttonType == EButtonType.Delete || buttonType == EButtonType.Edit)
-			{
-				var hr = new TagBuilder(Tags.Hr);
-				sb.AppendLine(hr.ToString(TagRenderMode.SelfClosing));
-			}
-
 			var button = new TagBuilder(Tags.Button);
 			button.MergeAttribute(Attributes.Type, buttonType.ToString());
 			button.MergeAttribute(Attributes.Class, GetButtonClass(buttonType));
@@ -45,9 +47,7 @@ namespace K9.WebApplication.Helpers
 					break;
 			}
 
-			sb.AppendLine(button.ToString());
-
-			return MvcHtmlString.Create(sb.ToString());
+			return MvcHtmlString.Create(button.ToString());
 		}
 
 		private static string GetButtonClass(EButtonType buttonType)

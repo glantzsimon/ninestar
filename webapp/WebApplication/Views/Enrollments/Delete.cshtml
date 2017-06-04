@@ -1,6 +1,6 @@
-﻿@model Student
+﻿@model Enrollment
 @{
-	ViewBag.Title = string.Format("{0} Student", Dictionary.Delete);
+	ViewBag.Title = string.Format("{0} Enrollment", Dictionary.Delete);
 	Layout = "~/Views/Shared/_LayoutForm.cshtml";
 }
 @using (Html.BeginForm())
@@ -8,7 +8,6 @@
 	using (Html.BeginBootstrapForm())
 	{
 	<h3>@Dictionary.DeleteConfirm</h3>
-		
 	@Html.HiddenFor(model => model.Id)
 	@Html.Partial("_DisplayFields")
 	<hr />

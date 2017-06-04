@@ -12,6 +12,7 @@
 		@Html.BootstrapEditorFor(model => model.Password)
 		<span>@Html.ActionLink(Dictionary.ResetPassword, "PasswordResetRequest") | @Html.ActionLink(Dictionary.Register, "Register")</span>
 		@Html.BootstrapEditorFor(model => model.RememberMe)
+		<hr/>
 		@Html.BootstrapButton(Dictionary.LogIn)
 	}
 }

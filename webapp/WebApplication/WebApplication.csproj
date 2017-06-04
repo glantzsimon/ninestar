@@ -342,6 +342,15 @@
     <Content Include="Views\Shared\DisplayTemplates\Text.cshtml" />
     <Content Include="Views\Countries\Delete.cshtml" />
     <Content Include="Views\Countries\Create.cshtml" />
+    <Content Include="Views\Enrollments\ForStudent.cshtml" />
+    <Content Include="Views\Enrollments\Create.cshtml" />
+    <Content Include="Views\Enrollments\Edit.cshtml" />
+    <Content Include="Views\Enrollments\Delete.cshtml" />
+    <Content Include="Views\Enrollments\Details.cshtml" />
+    <Content Include="Views\Countries\_EditFields.cshtml" />
+    <Content Include="Views\Countries\_DisplayFields.cshtml" />
+    <Content Include="Views\Enrollments\_EditFields.cshtml" />
+    <Content Include="Views\Enrollments\_DisplayFields.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
     <Content Include="Views\Shared\_Layout100.cshtml" />
@@ -350,6 +359,8 @@
     <Content Include="Views\Students\Delete.cshtml" />
     <Content Include="Views\Students\Details.cshtml" />
     <Content Include="Views\Students\Edit.cshtml" />
+    <Content Include="Views\Students\_EditFields.cshtml" />
+    <Content Include="Views\Students\_DisplayFields.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

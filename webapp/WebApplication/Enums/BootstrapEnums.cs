@@ -6,6 +6,7 @@ namespace K9.WebApplication.Enums
 	public enum EButtonType
 	{
 		Submit,
+		Create,
 		Delete,
 		Edit,
 		Button

@@ -1,6 +1,6 @@
-﻿@model Student
+﻿@model Enrollment
 @{
-	ViewBag.Title = string.Format("{0} Student", Dictionary.Create);
+	ViewBag.Title = string.Format("{0} Student", Dictionary.Edit);
 	Layout = "~/Views/Shared/_LayoutForm.cshtml";
 }
 
@@ -8,9 +8,10 @@
 {
 	using (Html.BeginBootstrapForm())
 	{
+		@Html.HiddenFor(model => model.Id)
 		@Html.Partial("_EditFields")
 		<hr/>
-		@Html.BootstrapButton(Dictionary.Create)
+		@Html.BootstrapButton(Dictionary.Update)
 		@Html.BootstrapBackToListButton()
 	}
 }

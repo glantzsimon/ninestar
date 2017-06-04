@@ -115,6 +115,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Additional Information.
+        /// </summary>
+        public static string AdditionalInformation {
+            get {
+                return ResourceManager.GetString("AdditionalInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy.
         /// </summary>
         public static string AgreeToTerms {

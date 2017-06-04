@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
@@ -19,14 +20,24 @@ namespace K9.WebApplication.Helpers
 			_columnsConfig = columnsConfig;
 		}
 
-		public static MvcHtmlString BootstrapTable<T>(this HtmlHelper<T> html, DataTableOptions<T> options = null) where T : IObjectBase
+		public static MvcHtmlString BootstrapTable<T>(this HtmlHelper<T> html, IDataTableOptions options = null) where T : IObjectBase
+		{
+			return GetBootstrapTable<T>(html, options);
+		}
+
+		public static MvcHtmlString BootstrapTable<T>(this HtmlHelper html, IDataTableOptions options = null) where T : IObjectBase
+		{
+			return GetBootstrapTable<T>(html, options);
+		}
+
+		private static MvcHtmlString GetBootstrapTable<T>(this HtmlHelper html, IDataTableOptions options = null) where T : IObjectBase
 		{
 			options = options ?? new DataTableOptions<T>();
 			options.ColumnsConfig = _columnsConfig;
+			var modelType = typeof (T);
 
 			var sb = new StringBuilder();
-			var modelType = typeof(T);
-
+			
 			// Create table container
 			var div = new TagBuilder(Tags.Div);
 			div.MergeAttribute(Attributes.Class, "datatable-container");

@@ -1,15 +1,10 @@
-﻿@model Country
+﻿@model Student
 @{
-	ViewBag.Title = Dictionary.Countries;
+	ViewBag.Title = "Students";
 }
+
 <div class="button-container">
-	@Html.ActionLink(Dictionary.CreateNew, "Create", null, new {@class = "btn btn-primary"})
+	@Html.BootstrapCreateNewButton()
 </div>
 
-@Html.BootstrapTable(new DataTableOptions<Country>
-{
-	DataUrl = "/Countries/List",
-	AllowEdit = true,
-	AllowDetail = true,
-	AllowDelete = true
-})
+@Html.BootstrapTable()

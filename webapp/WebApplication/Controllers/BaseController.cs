@@ -26,6 +26,16 @@ namespace K9.WebApplication.Controllers
 		#endregion
 
 
+		#region Properties
+
+		public IRepository<T> Repository
+		{
+			get { return _repository; }
+		}
+
+		#endregion
+
+
 		#region EventHandlers
 
 		protected override void Dispose(bool disposing)
@@ -77,9 +87,11 @@ namespace K9.WebApplication.Controllers
 		#region DataTable
 
 		[Authorize]
-		public virtual ActionResult List()
+		public virtual ActionResult List(string foreignKeyName = "", int foreignKeyId = 0)
 		{
 			_ajaxHelper.LoadQueryString(HttpContext.Request.QueryString);
+			_ajaxHelper.ForeignKeyFilter = new ForeignKeyFilter(foreignKeyName, foreignKeyId);
+
 			try
 			{
 				var recordsTotal = _repository.GetCount();

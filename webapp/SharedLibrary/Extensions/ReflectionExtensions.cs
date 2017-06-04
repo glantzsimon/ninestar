@@ -113,6 +113,11 @@ namespace K9.SharedLibrary.Extensions
 				   info.PropertyType.GetGenericTypeDefinition() == typeof(ICollection<>);
 		}
 
+		public static bool IsVirtual(this PropertyInfo info)
+		{
+			return info.GetGetMethod().IsVirtual;
+		}
+
 		public static int GetStringLength(this PropertyInfo info)
 		{
 			var attr = info.GetCustomAttributes(typeof(StringLengthAttribute), false).FirstOrDefault();
@@ -132,7 +137,7 @@ namespace K9.SharedLibrary.Extensions
 		public static string GetDisplayName(this PropertyInfo info)
 		{
 			var attr = info.GetCustomAttributes(typeof(DisplayAttribute), true).FirstOrDefault();
-			return attr == null ? info.Name.SplitOnCapitalLetter() : ((DisplayAttribute)attr).GetName();
+			return attr == null ? info.Name : ((DisplayAttribute)attr).GetName();
 		}
 
 		public static bool IsDataBound(this PropertyInfo info)

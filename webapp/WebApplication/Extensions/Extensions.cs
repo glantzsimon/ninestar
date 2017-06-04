@@ -18,7 +18,7 @@ namespace K9.WebApplication.Extensions
 
 		public static string GetDefaultDataUrl(this Type type)
 		{
-			return string.Format("/{0}s/List", type.Name);
+			return string.Format("/{0}/List", type.GetPluralName());
 		}
 
 		public static string GetDataTableType(this PropertyInfo property)
@@ -63,6 +63,12 @@ namespace K9.WebApplication.Extensions
 		{
 			var namettribute = type.GetCustomAttributes(typeof(NameAttribute), true).FirstOrDefault() as NameAttribute;
 			return namettribute == null ? type.Name : namettribute.GetName();
+		}
+
+		public static string GetPluralName(this Type type)
+		{
+			var namettribute = type.GetCustomAttributes(typeof(NameAttribute), true).FirstOrDefault() as NameAttribute;
+			return namettribute == null ? string.Format("{0}s", type.Name) : namettribute.PluralName;
 		}
 
 	}

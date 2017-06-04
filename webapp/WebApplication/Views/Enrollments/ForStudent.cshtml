@@ -1,0 +1,13 @@
+﻿@model int
+@{
+	ViewBag.Title = "Enrollments";
+}
+
+<div class="button-container">
+	@Html.BootstrapCreateNewButton()
+</div>
+
+@(Html.BootstrapTable<Enrollment>(new DataTableOptions<Enrollment>
+{
+	DataUrl = Url.Action("ListForStudent", "Enrollments", new { studentId = Model })
+}))

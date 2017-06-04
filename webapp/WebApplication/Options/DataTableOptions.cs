@@ -39,6 +39,10 @@ namespace K9.WebApplication.Options
 		public DataTableOptions()
 		{
 			VisibleColumns = new List<string>();
+			AllowCreate = true;
+			AllowDelete = true;
+			AllowDetail = true;
+			AllowEdit = true;
 		}
 
 		public bool AllowCrud()
@@ -62,7 +66,7 @@ namespace K9.WebApplication.Options
 			{
 				var columns =
 					typeof(T).GetProperties()
-						.Where(p => !p.IsVirtualCollection() && !ColumnsConfig.ColumnsToIgnore.Contains(p.Name))
+						.Where(p => !p.IsVirtual() && !ColumnsConfig.ColumnsToIgnore.Contains(p.Name))
 						.ToList();
 				_columnInfos = new HashSet<PropertyInfo>();
 				_columnInfos.AddRange(columns);

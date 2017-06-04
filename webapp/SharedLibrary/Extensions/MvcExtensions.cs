@@ -55,6 +55,11 @@ namespace K9.SharedLibrary.Extensions
 			return queryString.AllKeys.Select(key => string.Format("{0}={1}", key, queryString.GetValue(key))).Aggregate("", (a, b) => a + (string.IsNullOrEmpty(b) ? "" : string.Format("&{0}", b)));
 		}
 
+		public static string GetQueryStringValue(this WebViewPage view, string key)
+		{
+			return view.ViewContext.HttpContext.Request.QueryString[key];
+		}
+
 		public static string GetDateTimeDisplayFormat(this CultureInfo cultureInfo)
 		{
 			return string.Format("{0} {1}", cultureInfo.DateTimeFormat.ShortDatePattern, cultureInfo.DateTimeFormat.ShortTimePattern);

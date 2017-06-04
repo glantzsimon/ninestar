@@ -1,6 +1,7 @@
 ﻿
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Web.Mvc;
 using K9.DataAccess.Respositories;
 using K9.SharedLibrary.Models;
 
@@ -38,6 +39,10 @@ namespace K9.WebApplication.DataSets
 			return dataset;
 		}
 
+		public SelectList GetSelectList<T>(int selectedId, bool refresh = false) where T : class, IObjectBase
+		{
+			return new SelectList(GetDataSet<T>(refresh), "Id", "Name", selectedId);
+		}
 	}
 
 }

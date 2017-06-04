@@ -11,8 +11,10 @@
 		@Html.HiddenFor(model => model.Id)
 		@Html.Partial("_DisplayFields")
 		@Html.AuditFieldsForModel(Model);
+		
 		<hr />
 		@Html.BootstrapBackToListButton()
-
+		@Html.BootstrapLinkToEditButton()
+		@Html.BootstrapLinkToDeleteButton()
 	}
 }

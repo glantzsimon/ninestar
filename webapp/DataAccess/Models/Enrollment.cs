@@ -14,10 +14,12 @@ namespace K9.DataAccess.Models
 	{
 		[ForeignKey("Course")]
 		[UIHint("Course")]
+		[Display(Name = "Course")]
 		public int CourseId { get; set; }
 		
 		[ForeignKey("Student")]
 		[UIHint("Student")]
+		[Display(Name = "Student")]
 		public int StudentId { get; set; }
 		public Grade? Grade { get; set; }
 

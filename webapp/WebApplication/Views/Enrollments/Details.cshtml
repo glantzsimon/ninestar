@@ -1,4 +1,4 @@
-﻿@model Student
+﻿@model Enrollment
 @{
 	ViewBag.Title = string.Format("Enrollment {0}", Dictionary.Details);
 	Layout = "~/Views/Shared/_LayoutForm.cshtml";
@@ -11,9 +11,6 @@
 	@Html.Partial("_DisplayFields")
 	@Html.AuditFieldsForModel(Model)
 	
-	@Html.SubTitle(Dictionary.AdditionalInformation)
-	@Html.BootstrapLinkButton("Enrollments", "ForStudent", "Enrollments", new { StudentId = Model.Id })
-
 	<hr />
 	@Html.BootstrapBackToListButton()
 	}

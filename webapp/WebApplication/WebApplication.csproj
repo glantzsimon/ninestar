@@ -358,6 +358,8 @@
     <Content Include="Views\Enrollments\_DisplayFields.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Student.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Course.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Student.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Course.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
     <Content Include="Views\Shared\_Layout100.cshtml" />

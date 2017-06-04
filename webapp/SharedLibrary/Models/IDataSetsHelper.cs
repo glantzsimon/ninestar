@@ -7,5 +7,6 @@ namespace K9.SharedLibrary.Models
 	{
 		List<ListItem> GetDataSet<T>(bool refresh = false) where T : class, IObjectBase;
 		SelectList GetSelectList<T>(int selectedId, bool refresh = false) where T : class, IObjectBase;
+		string GetName<T>(int selectedId, bool refresh = false) where T : class, IObjectBase;
 	}
 }

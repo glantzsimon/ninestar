@@ -18,9 +18,9 @@ namespace K9.WebApplication.DataSets
 			_datasets = datasets;
 		}
 
-		public List<IListItem> GetDataSet<T>(bool refresh = false) where T : class, IObjectBase
+		public List<ListItem> GetDataSet<T>(bool refresh = false) where T : class, IObjectBase
 		{
-			List<IListItem> dataset = null;
+			List<ListItem> dataset = null;
 			if (refresh || !_datasets.Collection.ContainsKey(typeof(T)))
 			{
 				IRepository<T> repo = new BaseRepository<T>(_db);

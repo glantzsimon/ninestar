@@ -6,7 +6,7 @@ namespace K9.SharedLibrary.Models
 
 	public interface IDataSets
 	{
-		IDictionary<Type, List<IListItem>> Collection { get; }
+		IDictionary<Type, List<ListItem>> Collection { get; }
 	}
 
 }

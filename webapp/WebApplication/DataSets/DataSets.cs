@@ -8,16 +8,16 @@ namespace K9.WebApplication.DataSets
 
 	public class DataSets : IDataSets
 	{
-		private readonly IDictionary<Type, List<IListItem>> _collection;
+		private readonly IDictionary<Type, List<ListItem>> _collection;
 
-		public IDictionary<Type, List<IListItem>> Collection
+		public IDictionary<Type, List<ListItem>> Collection
 		{
 			get { return _collection; }
 		}
 
 		public DataSets()
 		{
-			_collection = new Dictionary<Type, List<IListItem>>();
+			_collection = new Dictionary<Type, List<ListItem>>();
 		}
 	}
 

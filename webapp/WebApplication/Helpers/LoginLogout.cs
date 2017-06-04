@@ -19,7 +19,12 @@ namespace K9.WebApplication.Helpers
 			{
 				var icon = new TagBuilder(Tags.Icon);
 				icon.MergeAttribute(Attributes.Class, "fa fa-signin");
-				var li = new TagBuilder(Tags.Li) { InnerHtml = string.Format("{0} {1}", icon, html.ActionLink(Dictionary.LogOut, "LogOff", "Account")) };
+
+				var anchor = new TagBuilder(Tags.Anchor);
+				anchor.MergeAttribute(Attributes.Href, html.GeturlHeler().Action("LogOff", "Account"));
+				anchor.InnerHtml = string.Format("{0} {1}", icon, Dictionary.LogOut);
+
+				var li = new TagBuilder(Tags.Li) { InnerHtml = anchor.ToString() };
 				li.MergeAttribute(Attributes.Class, html.ViewContext.GetActiveClass("LogOff", "Account"));
 				sb.Append(li);
 			}
@@ -27,7 +32,12 @@ namespace K9.WebApplication.Helpers
 			{
 				var icon = new TagBuilder(Tags.Icon);
 				icon.MergeAttribute(Attributes.Class, "fa fa-signout");
-				var li = new TagBuilder(Tags.Li) { InnerHtml = string.Format("{0} {1}", icon, html.ActionLink(Dictionary.LogOut, "Login", "Account")) };
+
+				var anchor = new TagBuilder(Tags.Anchor);
+				anchor.MergeAttribute(Attributes.Href, html.GeturlHeler().Action("Login", "Account"));
+				anchor.InnerHtml = string.Format("{0} {1}", icon, Dictionary.LogIn);
+
+				var li = new TagBuilder(Tags.Li) { InnerHtml = anchor.ToString() };
 				li.MergeAttribute(Attributes.Class, html.ViewContext.GetActiveClass("Login", "Account"));
 				sb.Append(li);
 

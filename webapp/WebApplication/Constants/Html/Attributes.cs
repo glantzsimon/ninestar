@@ -18,6 +18,7 @@ namespace K9.WebApplication.Constants.Html
 		public const string CellSpacing = "cellspacing";
 		public const string Width = "width";
 		public const string DataUrl = "data-url";
+		public const string Href = "href";
 		
 	}
 

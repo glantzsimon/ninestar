@@ -15,14 +15,14 @@ namespace K9.WebApplication.Helpers
 			return html.ActionLink(string.Format("< {0}", Dictionary.BackToList), "Index", null, new { @class = Bootstrap.Classes.InfoButton });
 		}
 
-		public static MvcHtmlString BootstrapLinkToDeleteButton(this HtmlHelper html)
+		public static MvcHtmlString BootstrapLinkToDeleteButton(this HtmlHelper html, int id)
 		{
-			return MvcHtmlString.Create(string.Format("<a class=\"btn btn-danger\" href=\"{0}\"><i class='fa fa-trash	'></i> {1}</a>", html.GeturlHeler().Action("Delete"), Dictionary.Delete));
+			return MvcHtmlString.Create(string.Format("<a class=\"btn btn-danger\" href=\"{0}\"><i class='fa fa-trash'></i> {1}</a>", html.GeturlHeler().Action("Delete", new { Id = id }), Dictionary.Delete));
 		}
 
-		public static MvcHtmlString BootstrapLinkToEditButton(this HtmlHelper html)
+		public static MvcHtmlString BootstrapLinkToEditButton(this HtmlHelper html, int id)
 		{
-			return MvcHtmlString.Create(string.Format("<a class=\"btn btn-primary\" href=\"{0}\"><i class='fa fa-pencil'></i> {1}</a>", html.GeturlHeler().Action("Edit"), Dictionary.Edit));
+			return MvcHtmlString.Create(string.Format("<a class=\"btn btn-primary\" href=\"{0}\"><i class='fa fa-pencil'></i> {1}</a>", html.GeturlHeler().Action("Edit", new { Id = id }), Dictionary.Edit));
 		}
 
 		public static MvcHtmlString BootstrapLinkButton(this HtmlHelper html, string linkText, string actionName, string controllerName, object routeValues)

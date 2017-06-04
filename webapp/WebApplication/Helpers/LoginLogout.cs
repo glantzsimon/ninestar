@@ -20,6 +20,7 @@ namespace K9.WebApplication.Helpers
 			else
 			{
 				sb.Append(html.ActionLink(Dictionary.LogIn, "Login", "Account"));
+				sb.Append(html.ActionLink(Dictionary.Register, "Register", "Account"));
 			}
 
 			return MvcHtmlString.Create(sb.ToString());

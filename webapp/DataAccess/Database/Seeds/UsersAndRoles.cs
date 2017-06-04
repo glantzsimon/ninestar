@@ -19,40 +19,50 @@ namespace K9.DataAccess.Database.Seeds
 
 		private static void SeedSystemUser()
 		{
-			if (!WebSecurity.UserExists(SystemUser.System))
+			if (WebSecurity.Initialized)
 			{
-				WebSecurity.CreateUserAndAccount(SystemUser.System, AppConfig.SystemUserPassword, new
+				if (!WebSecurity.UserExists(SystemUser.System))
 				{
-					FirstName = "System",
-					LastName = "User",
-					Name = "System User",
-					EmailAddress = "simon@glantzconsulting.co.uk",
-					CreatedBy = SystemUser.System,
-					CreatedOn = DateTime.Now,
-					LastUpdatedBy = SystemUser.System,
-					LastUpdatedOn = DateTime.Now
-				});
+					WebSecurity.CreateUserAndAccount(SystemUser.System, AppConfig.SystemUserPassword, new
+					{
+						FirstName = "System",
+						LastName = "User",
+						Name = "System User",
+						EmailAddress = "simon@glantzconsulting.co.uk",
+						BirthDate = DateTime.Now,
+						CreatedBy = SystemUser.System,
+						CreatedOn = DateTime.Now,
+						LastUpdatedBy = SystemUser.System,
+						LastUpdatedOn = DateTime.Now
+					});
+				}
 			}
 		}
 
 		private static void SeedRoles()
 		{
-			if (!Roles.RoleExists(UserRoles.Administrators))
+			if (WebSecurity.Initialized)
 			{
-				Roles.CreateRole(UserRoles.Administrators);
-			}
+				if (!Roles.RoleExists(UserRoles.Administrators))
+				{
+					Roles.CreateRole(UserRoles.Administrators);
+				}
 
-			if (!Roles.RoleExists(UserRoles.PowerUsers))
-			{
-				Roles.CreateRole(UserRoles.PowerUsers);
+				if (!Roles.RoleExists(UserRoles.PowerUsers))
+				{
+					Roles.CreateRole(UserRoles.PowerUsers);
+				}
 			}
 		}
 
 		private static void AssignRoles()
 		{
-			if (!Roles.GetRolesForUser(SystemUser.System).Contains(UserRoles.Administrators))
+			if (WebSecurity.Initialized)
 			{
-				Roles.AddUsersToRoles(new[] { SystemUser.System }, new[] { UserRoles.Administrators });
+				if (!Roles.GetRolesForUser(SystemUser.System).Contains(UserRoles.Administrators))
+				{
+					Roles.AddUsersToRoles(new[] {SystemUser.System}, new[] {UserRoles.Administrators});
+				}
 			}
 		}
 

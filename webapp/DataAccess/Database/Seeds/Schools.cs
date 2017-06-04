@@ -53,18 +53,18 @@ namespace K9.DataAccess.Database.Seeds
 
 				var enrollments = new List<Enrollment>
 				{
-					new Enrollment {StudentId = 1, CourseId = 1050, Grade = Grade.A},
-					new Enrollment {StudentId = 1, CourseId = 4022, Grade = Grade.C},
-					new Enrollment {StudentId = 1, CourseId = 4041, Grade = Grade.B},
-					new Enrollment {StudentId = 2, CourseId = 1045, Grade = Grade.B},
-					new Enrollment {StudentId = 2, CourseId = 3141, Grade = Grade.F},
-					new Enrollment {StudentId = 2, CourseId = 2021, Grade = Grade.F},
-					new Enrollment {StudentId = 3, CourseId = 1050},
-					new Enrollment {StudentId = 4, CourseId = 1050},
-					new Enrollment {StudentId = 4, CourseId = 4022, Grade = Grade.F},
-					new Enrollment {StudentId = 5, CourseId = 4041, Grade = Grade.C},
-					new Enrollment {StudentId = 6, CourseId = 1045},
-					new Enrollment {StudentId = 7, CourseId = 3141, Grade = Grade.A}
+					new Enrollment {StudentId = 1, CourseId = 1050, Grade = Grade.A, Name = Guid.NewGuid().ToString()},
+					new Enrollment {StudentId = 1, CourseId = 4022, Grade = Grade.C, Name = Guid.NewGuid().ToString()},
+					new Enrollment {StudentId = 1, CourseId = 4041, Grade = Grade.B, Name = Guid.NewGuid().ToString()},
+					new Enrollment {StudentId = 2, CourseId = 1045, Grade = Grade.B, Name = Guid.NewGuid().ToString()},
+					new Enrollment {StudentId = 2, CourseId = 3141, Grade = Grade.F, Name = Guid.NewGuid().ToString()},
+					new Enrollment {StudentId = 2, CourseId = 2021, Grade = Grade.F, Name = Guid.NewGuid().ToString()},
+					new Enrollment {StudentId = 3, CourseId = 1050, Name = Guid.NewGuid().ToString()},
+					new Enrollment {StudentId = 4, CourseId = 1050, Name = Guid.NewGuid().ToString()},
+					new Enrollment {StudentId = 4, CourseId = 4022, Grade = Grade.F, Name = Guid.NewGuid().ToString()},
+					new Enrollment {StudentId = 5, CourseId = 4041, Grade = Grade.C, Name = Guid.NewGuid().ToString()},
+					new Enrollment {StudentId = 6, CourseId = 1045, Name = Guid.NewGuid().ToString()},
+					new Enrollment {StudentId = 7, CourseId = 3141, Grade = Grade.A, Name = Guid.NewGuid().ToString()}
 				};
 				enrollments.ForEach(s =>
 				{

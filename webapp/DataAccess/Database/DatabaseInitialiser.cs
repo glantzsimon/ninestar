@@ -1,4 +1,5 @@
-﻿using System.Data.Entity.Migrations;
+﻿using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using K9.DataAccess.Config;
 using K9.DataAccess.Database.Seeds;
 using WebMatrix.WebData;
@@ -24,9 +25,20 @@ namespace K9.DataAccess.Database
 
 		protected override void Seed(Db context)
 		{
-			UsersAndRolesSeeder.SeedUsersAndRoles(context);
 			CountriesSeeder.SeedCountries(context);
 			SchoolSeeder.SeedSchool(context);
+		}
+
+	}
+
+	public class UsersAndRolesInitialiser
+	{
+		
+		public static void Seed()
+		{
+			var db = new Db();
+			UsersAndRolesSeeder.SeedUsersAndRoles(db);
+			db.Dispose();
 		}
 
 	}

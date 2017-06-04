@@ -1,5 +1,5 @@
-﻿@using K9.WebApplication.Extensions
-@model Object
-@{
-}
-@Html.BootstrapDropdownFor(model => model, new SelectList(this.GetDropdownData().GetDataSet<Student>(true), Model), true)
+﻿	@using K9.WebApplication.Extensions
+	@model Object
+	@{
+	}
+	@Html.BootstrapDropdownFor(model => model, new SelectList(this.GetDropdownData().GetDataSet<Student>(true), Model), true)

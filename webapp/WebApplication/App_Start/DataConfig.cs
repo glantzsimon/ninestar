@@ -11,5 +11,10 @@ namespace K9.WebApplication
 			var migrator = new DbMigrator(new DatabaseInitialiser());
 			migrator.Update();
 		}
+
+		public static void InitialiseUsersAndRoles()
+		{
+			UsersAndRolesInitialiser.Seed();	
+		}
 	}
 }

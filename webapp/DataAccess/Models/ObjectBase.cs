@@ -18,8 +18,8 @@ namespace K9.DataAccess.Models
 		public int Id { get; set; }
 
 		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
-		[StringLength(128)]
 		[Index(IsUnique = true)]
+		[StringLength(128)]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NameLabel)]
 		public string Name { get; set; }
 
@@ -50,7 +50,7 @@ namespace K9.DataAccess.Models
 		public void UpdateAuditFields()
 		{
 			var loggedinUser = "";
-	
+
 			try
 			{
 				loggedinUser = WebSecurity.CurrentUserName;
@@ -66,9 +66,7 @@ namespace K9.DataAccess.Models
 			LastUpdatedOn = DateTime.Now;
 		}
 
-		public virtual void UpdateName()
-		{
-		}
+		public virtual void UpdateName() { }
 
 		#endregion
 

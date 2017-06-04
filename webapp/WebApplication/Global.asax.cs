@@ -19,10 +19,10 @@ namespace K9.WebApplication
 			
 			Startup.RegisterTypes();
 			Startup.RegisterStaticTypes();
-			
-			AuthConfig.InitialiseWebSecurity();
+
 			DataConfig.InitialiseDatabase();
-			
+			AuthConfig.InitialiseWebSecurity();
+			DataConfig.InitialiseUsersAndRoles();
 		}
 	}
 }

@@ -20,7 +20,8 @@ footer
 article p, section p
 {
 	text-align: justify;
-	line-height: 1.8em;
+	line-height: 2em;
+	margin-bottom: 24px;
 }
 
 hr

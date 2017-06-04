@@ -22,6 +22,7 @@ namespace K9.WebApplication.Constants.Html
 		public const string Th = "th";
 		public const string Ul = "ul";
 		public const string Li = "li";
+		public const string Icon = "i";
 	}
 
 }

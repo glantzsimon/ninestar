@@ -17,17 +17,21 @@ namespace K9.WebApplication.Helpers
 
 			if (WebSecurity.IsAuthenticated)
 			{
-				var li = new TagBuilder(Tags.Li) {InnerHtml = html.ActionLink(Dictionary.LogOut, "LogOff", "Account").ToString()};
+				var icon = new TagBuilder(Tags.Icon);
+				icon.MergeAttribute(Attributes.Class, "fa fa-signin");
+				var li = new TagBuilder(Tags.Li) { InnerHtml = string.Format("{0} {1}", icon, html.ActionLink(Dictionary.LogOut, "LogOff", "Account")) };
 				li.MergeAttribute(Attributes.Class, html.ViewContext.GetActiveClass("LogOff", "Account"));
 				sb.Append(li);
 			}
 			else
 			{
-				var li = new TagBuilder(Tags.Li) {InnerHtml = html.ActionLink(Dictionary.LogIn, "Login", "Account").ToString()};
+				var icon = new TagBuilder(Tags.Icon);
+				icon.MergeAttribute(Attributes.Class, "fa fa-signout");
+				var li = new TagBuilder(Tags.Li) { InnerHtml = string.Format("{0} {1}", icon, html.ActionLink(Dictionary.LogOut, "Login", "Account")) };
 				li.MergeAttribute(Attributes.Class, html.ViewContext.GetActiveClass("Login", "Account"));
 				sb.Append(li);
 
-				li = new TagBuilder(Tags.Li) {InnerHtml = html.ActionLink(Dictionary.Register, "Register", "Account").ToString()};
+				li = new TagBuilder(Tags.Li) { InnerHtml = html.ActionLink(Dictionary.Register, "Register", "Account").ToString() };
 				li.MergeAttribute(Attributes.Class, html.ViewContext.GetActiveClass("Register", "Account"));
 				sb.Append(li);
 			}

@@ -1,10 +1,10 @@
 ﻿
 namespace K9.SharedLibrary.Models
 {
-	public abstract class ListItem : IListItem
+	public class ListItem : IListItem
 	{
-		public abstract int Id { get; }
-		public abstract string Name { get; }
+		public virtual int Id { get; private set; }
+		public virtual string Name { get; private set; }
 	}
 
 	public class ListItem<T> : ListItem where T : IObjectBase

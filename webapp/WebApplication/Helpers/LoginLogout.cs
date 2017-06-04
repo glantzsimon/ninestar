@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using K9.Globalisation;
 using K9.WebApplication.Constants.Html;
+using K9.WebApplication.Extensions;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Helpers
@@ -17,14 +18,17 @@ namespace K9.WebApplication.Helpers
 			if (WebSecurity.IsAuthenticated)
 			{
 				var li = new TagBuilder(Tags.Li) {InnerHtml = html.ActionLink(Dictionary.LogOut, "LogOff", "Account").ToString()};
+				li.MergeAttribute(Attributes.Class, html.ViewContext.GetActiveClass("LogOff", "Account"));
 				sb.Append(li);
 			}
 			else
 			{
 				var li = new TagBuilder(Tags.Li) {InnerHtml = html.ActionLink(Dictionary.LogIn, "Login", "Account").ToString()};
+				li.MergeAttribute(Attributes.Class, html.ViewContext.GetActiveClass("Login", "Account"));
 				sb.Append(li);
 
 				li = new TagBuilder(Tags.Li) {InnerHtml = html.ActionLink(Dictionary.Register, "Register", "Account").ToString()};
+				li.MergeAttribute(Attributes.Class, html.ViewContext.GetActiveClass("Register", "Account"));
 				sb.Append(li);
 			}
 

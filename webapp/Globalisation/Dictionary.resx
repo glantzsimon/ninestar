@@ -290,7 +290,7 @@
     <value>if you don't have an account</value>
   </data>
   <data name="LogIn" xml:space="preserve">
-    <value>Log in</value>
+    <value>Sign In</value>
   </data>
   <data name="ResetPassword" xml:space="preserve">
     <value>Reset your password</value>
@@ -320,7 +320,7 @@
     <value>Unsuccessful login with service.</value>
   </data>
   <data name="LogOut" xml:space="preserve">
-    <value>Log Out</value>
+    <value>Sign Out</value>
   </data>
   <data name="PersonalInformation" xml:space="preserve">
     <value>Personal Information</value>

@@ -547,7 +547,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Log in.
+        ///   Looks up a localized string similar to Sign In.
         /// </summary>
         public static string LogIn {
             get {
@@ -592,7 +592,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Log Out.
+        ///   Looks up a localized string similar to Sign Out.
         /// </summary>
         public static string LogOut {
             get {

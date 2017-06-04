@@ -17,12 +17,12 @@ namespace K9.WebApplication.Helpers
 
 		public static MvcHtmlString BootstrapLinkToDeleteButton(this HtmlHelper html)
 		{
-			return MvcHtmlString.Create(string.Format("<a class=\"btn btn-danger\" href=\"{0}\"><i class='fa fa-trash'></i> {1}</a>", html.GeturlHeler().Action("Delete"), Dictionary.Delete));
+			return MvcHtmlString.Create(string.Format("<a class=\"btn btn-danger\" href=\"{0}\"><i class='fa fa-trash	'></i> {1}</a>", html.GeturlHeler().Action("Delete"), Dictionary.Delete));
 		}
 
 		public static MvcHtmlString BootstrapLinkToEditButton(this HtmlHelper html)
 		{
-			return MvcHtmlString.Create(string.Format("<a class=\"btn btn-primary\" href=\"{0}\"><i class='fa fa-pencil'></i> {1}</a>", html.GeturlHeler().Action("Delete"), Dictionary.Delete));
+			return MvcHtmlString.Create(string.Format("<a class=\"btn btn-primary\" href=\"{0}\"><i class='fa fa-pencil'></i> {1}</a>", html.GeturlHeler().Action("Edit"), Dictionary.Edit));
 		}
 
 		public static MvcHtmlString BootstrapLinkButton(this HtmlHelper html, string linkText, string actionName, string controllerName, object routeValues)

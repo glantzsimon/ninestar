@@ -142,6 +142,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Audit Information.
+        /// </summary>
+        public static string AuditInformation {
+            get {
+                return ResourceManager.GetString("AuditInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back to List.
         /// </summary>
         public static string BackToList {

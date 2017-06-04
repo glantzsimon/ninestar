@@ -415,4 +415,7 @@
   <data name="AdditionalInformation" xml:space="preserve">
     <value>Additional Information</value>
   </data>
+  <data name="PleaseSelect" xml:space="preserve">
+    <value>Choose one of the following:</value>
+  </data>
 </root>

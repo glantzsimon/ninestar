@@ -6,10 +6,8 @@ using K9.DataAccess.Database;
 using K9.DataAccess.Models;
 using K9.DataAccess.Respositories;
 using K9.SharedLibrary.Models;
-using K9.WebApplication.Constants;
 using K9.WebApplication.DataSets;
 using K9.WebApplication.Helpers;
-using K9.WebApplication.Options;
 using NLog;
 
 namespace K9.WebApplication
@@ -29,18 +27,19 @@ namespace K9.WebApplication
 
 			builder.RegisterType<Db>().As<DbContext>().InstancePerHttpRequest();
 			builder.Register(c => LogManager.GetCurrentClassLogger()).As<ILogger>().SingleInstance();
-			builder.RegisterGeneric(typeof (BaseRepository<>)).As(typeof (IRepository<>));
+			builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IRepository<>));
 			builder.RegisterGeneric(typeof(DataTableAjaxHelper<>)).As(typeof(IDataTableAjaxHelper<>));
 			builder.RegisterType<ColumnsConfig>().As<IColumnsConfig>().SingleInstance();
-			builder.RegisterType<IDropdownDataSets>().As<DropdownDataSets>().SingleInstance();
+			builder.RegisterType<DropdownDataSets>().As<IDropdownDataSets>().SingleInstance();
+
+			builder.Register(c =>
+			{
+				var dropdownDataSets = new DropdownDataSets(c.Resolve<DbContext>());
+				DropdownDataSets.Instance = dropdownDataSets;
+				return dropdownDataSets;
+			});
 
 			var container = builder.Build();
-
-			using (container.BeginLifetimeScope())
-			{
-				DropdownDataSets.Instance = container.Resolve<IDropdownDataSets>();
-			}
-
 			DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
 		}
 

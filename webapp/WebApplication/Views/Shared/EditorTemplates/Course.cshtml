@@ -2,4 +2,4 @@
 @model int
 @{
 }
-@Html.DropDownListFor(model => model, new SelectList(DropdownDataSets.Instance.CoursesList, Model), StringConstants.DefaultOptionLabel, ViewData)
+@Html.BootstrapDropdownFor(model => model, new SelectList(DropdownDataSets.Instance.GetDataSet<Course>(true), Model), true)

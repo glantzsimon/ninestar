@@ -6,7 +6,6 @@ namespace K9.WebApplication.DataSets
 {
 	public interface IDropdownDataSets
 	{
-		List<IListItem> CountriesList { get; }
-		List<IListItem> CoursesList { get; }
+		List<IListItem> GetDataSet<T>(bool refresh = false) where T : class, IObjectBase;
 	}
 }

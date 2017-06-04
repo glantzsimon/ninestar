@@ -3,7 +3,7 @@ using K9.SharedLibrary.Models;
 
 namespace K9.DataAccess.Models
 {
-	public class ListItem : IListItem
+	public class ListItem<T> : IListItem where T : IObjectBase
 	{
 		public int Id { get; private set; }
 		public string Name { get; private set; }

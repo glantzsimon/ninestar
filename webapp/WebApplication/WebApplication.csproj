@@ -200,6 +200,7 @@
     <Compile Include="Helpers\BootstrapButton.cs" />
     <Compile Include="Helpers\BootstrapTable.cs" />
     <Compile Include="Helpers\AuditFieldsForModel.cs" />
+    <Compile Include="Helpers\BootstrapDropdownFor.cs" />
     <Compile Include="Helpers\IDataTableAjaxHelper.cs" />
     <Compile Include="Helpers\DataTableAjaxHelper.cs" />
     <Compile Include="Helpers\Fail.cs" />

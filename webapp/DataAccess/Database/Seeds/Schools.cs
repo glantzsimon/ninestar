@@ -26,6 +26,7 @@ namespace K9.DataAccess.Database.Seeds
 				{
 					if (!context.Exists<Student>(st => st.FirstMidName == s.FirstMidName))
 					{
+						s.UpdateName();
 						context.Set<Student>().Add(s);
 					}
 				});
@@ -33,13 +34,13 @@ namespace K9.DataAccess.Database.Seeds
 
 				var courses = new List<Course>
 				{
-					new Course {Id = 1050, Title = "Chemistry", Credits = 3},
-					new Course {Id = 4022, Title = "Microeconomics", Credits = 3},
-					new Course {Id = 4041, Title = "Macroeconomics", Credits = 3},
-					new Course {Id = 1045, Title = "Calculus", Credits = 4},
-					new Course {Id = 3141, Title = "Trigonometry", Credits = 4},
-					new Course {Id = 2021, Title = "Composition", Credits = 3},
-					new Course {Id = 2042, Title = "Literature", Credits = 4}
+					new Course {Id = 1050, Name = "Chemistry", Credits = 3},
+					new Course {Id = 4022, Name = "Microeconomics", Credits = 3},
+					new Course {Id = 4041, Name = "Macroeconomics", Credits = 3},
+					new Course {Id = 1045, Name = "Calculus", Credits = 4},
+					new Course {Id = 3141, Name = "Trigonometry", Credits = 4},
+					new Course {Id = 2021, Name = "Composition", Credits = 3},
+					new Course {Id = 2042, Name = "Literature", Credits = 4}
 				};
 				courses.ForEach(s =>
 				{

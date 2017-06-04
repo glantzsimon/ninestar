@@ -1,7 +1,6 @@
 ﻿
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using K9.Globalisation;
 
 namespace K9.DataAccess.Models
@@ -12,20 +11,10 @@ namespace K9.DataAccess.Models
 		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.UserNameLabel)]
 		public string Username { get; set; }
-		
+
 		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FirstNameLabel)]
 		public string FirstName { get; set; }
-		
-		[NotMapped]
-		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NameLabel)]
-		public new string Name
-		{
-			get
-			{
-				return string.Format("{0} {1}", FirstName, LastName);
-			}
-		}
 
 		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LastNameLabel)]
@@ -45,5 +34,10 @@ namespace K9.DataAccess.Models
 		[DataType(DataType.Date)]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BirthDateLabel)]
 		public DateTime BirthDate { get; set; }
+
+		public override void UpdateName()
+		{
+			Name = string.Format("{0} {1}", FirstName, LastName);
+		}
 	}
 }

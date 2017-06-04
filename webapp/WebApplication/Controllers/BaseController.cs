@@ -6,6 +6,7 @@ using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Constants;
+using K9.WebApplication.DataSets;
 using K9.WebApplication.Extensions;
 using K9.WebApplication.Helpers;
 using Newtonsoft.Json;
@@ -14,7 +15,7 @@ using NLog;
 namespace K9.WebApplication.Controllers
 {
 
-	public abstract class BaseController<T> : Controller where T : class, IObjectBase
+	public abstract class BaseController<T> : Controller, IBaseController where T : class, IObjectBase
 	{
 
 		#region Variables
@@ -22,6 +23,7 @@ namespace K9.WebApplication.Controllers
 		private readonly IRepository<T> _repository;
 		private readonly ILogger _logger;
 		private readonly IDataTableAjaxHelper<T> _ajaxHelper;
+		private readonly IDataSetsHelper _dropdownDataSets;
 
 		#endregion
 
@@ -31,6 +33,11 @@ namespace K9.WebApplication.Controllers
 		public IRepository<T> Repository
 		{
 			get { return _repository; }
+		}
+
+		public IDataSetsHelper DropdownDataSets
+		{
+			get { return _dropdownDataSets; }	
 		}
 
 		#endregion
@@ -52,11 +59,12 @@ namespace K9.WebApplication.Controllers
 
 		#region Constructors
 
-		protected BaseController(IRepository<T> repository, ILogger logger, IDataTableAjaxHelper<T> ajaxHelper)
+		protected BaseController(IRepository<T> repository, ILogger logger, IDataTableAjaxHelper<T> ajaxHelper, IDataSetsHelper dropdownDataSets)
 		{
 			_repository = repository;
 			_logger = logger;
 			_ajaxHelper = ajaxHelper;
+			_dropdownDataSets = dropdownDataSets;
 		}
 
 		#endregion

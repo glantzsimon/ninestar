@@ -1,0 +1,43 @@
+﻿
+using System.Collections.Generic;
+using System.Data.Entity;
+using K9.DataAccess.Respositories;
+using K9.SharedLibrary.Models;
+
+namespace K9.WebApplication.DataSets
+{
+
+	public class DataSetsHelper : IDataSetsHelper
+	{
+		private readonly DbContext _db;
+		private readonly IDataSets _datasets;
+
+		public DataSetsHelper(DbContext db, IDataSets datasets)
+		{
+			_db = db;
+			_datasets = datasets;
+		}
+
+		public List<IListItem> GetDataSet<T>(bool refresh = false) where T : class, IObjectBase
+		{
+			List<IListItem> dataset = null;
+			if (refresh || !_datasets.Collection.ContainsKey(typeof(T)))
+			{
+				IRepository<T> repo = new BaseRepository<T>(_db);
+				dataset = repo.ItemList();
+				if (refresh)
+				{
+					_datasets.Collection[typeof(T)] = dataset;
+				}
+				else
+				{
+					_datasets.Collection.Add(typeof(T), dataset);
+				}
+
+			}
+			return dataset;
+		}
+
+	}
+
+}

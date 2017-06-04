@@ -7,8 +7,8 @@ namespace K9.WebApplication.Controllers
 {
 	public class CountriesController : BaseController<Country>
 	{
-		public CountriesController(IRepository<Country> repository, ILogger logger, IDataTableAjaxHelper<Country> dataTableAjaxHelper)
-			: base(repository, logger, dataTableAjaxHelper)
+		public CountriesController(IRepository<Country> repository, ILogger logger, IDataTableAjaxHelper<Country> ajaxHelper, IDataSetsHelper dropdownDataSets) 
+			: base(repository, logger, ajaxHelper, dropdownDataSets)
 		{
 		}
 	}

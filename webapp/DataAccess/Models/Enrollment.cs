@@ -1,5 +1,4 @@
 ﻿
-using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -21,12 +20,6 @@ namespace K9.DataAccess.Models
 		[UIHint("Student")]
 		public int StudentId { get; set; }
 		public Grade? Grade { get; set; }
-
-		[Index(IsUnique = false)]
-		public new string Name
-		{
-			get { return Guid.NewGuid().ToString(); }
-		}
 
 		public virtual Course Course { get; set; }
 		public virtual Student Student { get; set; }

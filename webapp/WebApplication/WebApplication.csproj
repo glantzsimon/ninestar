@@ -173,7 +173,6 @@
     <Compile Include="Config\AppConfig.cs" />
     <Compile Include="Constants\Bootstrap.cs" />
     <Compile Include="Constants\StringConstants.cs" />
-    <Compile Include="Constants\ViewDataConstants.cs" />
     <Compile Include="Constants\DateTimeConstants.cs" />
     <Compile Include="Constants\Html\Attributes.cs" />
     <Compile Include="Constants\Html\Types.cs" />
@@ -185,8 +184,8 @@
     <Compile Include="Controllers\CountriesController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DataSets\IDropdownDataSets.cs" />
-    <Compile Include="DataSets\DropdownDataSets.cs" />
+    <Compile Include="DataSets\DataSets.cs" />
+    <Compile Include="DataSets\DataSetsHelper.cs" />
     <Compile Include="Enums\BootstrapEnums.cs" />
     <Compile Include="Enums\ImageSwitcherEnums.cs" />
     <Compile Include="Extensions\FormatExtensions.cs" />

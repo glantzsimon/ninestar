@@ -12,5 +12,6 @@ namespace K9.SharedLibrary.Models
 		string LastUpdatedBy { get; set; }
 		DateTime? LastUpdatedOn { get; set; }
 		void UpdateAuditFields();
+		void UpdateName();
 	}
 }

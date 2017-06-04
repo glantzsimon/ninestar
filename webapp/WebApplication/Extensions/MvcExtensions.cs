@@ -5,6 +5,7 @@ using System.Web.Mvc;
 using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.DataSets;
 
 namespace K9.WebApplication.Extensions
 {
@@ -22,10 +23,10 @@ namespace K9.WebApplication.Extensions
 			var duplicateIndexErrorPropertyName = ex.GetDuplicateIndexErrorPropertyName();
 			if (!string.IsNullOrEmpty(duplicateIndexErrorPropertyName))
 			{
-				var classType = typeof (T);
-				var columnInfo = typeof (T).GetProperties().First(c => c.Name == duplicateIndexErrorPropertyName);
+				var classType = typeof(T);
+				var columnInfo = typeof(T).GetProperties().First(c => c.Name == duplicateIndexErrorPropertyName);
 				modelState.AddModelError(duplicateIndexErrorPropertyName, string.Format(
-					Dictionary.DuplicateIndexError, 
+					Dictionary.DuplicateIndexError,
 					classType.GetIndefiniteArticle(),
 					classType.GetName().ToLower(),
 					columnInfo.GetDefiniteArticle().ToLower(),
@@ -36,6 +37,12 @@ namespace K9.WebApplication.Extensions
 			{
 				modelState.AddModelError("", Dictionary.FriendlyErrorMessage);
 			}
+		}
+
+		public static IDataSetsHelper GetDropdownData(this WebViewPage view)
+		{
+			var baseController = view.ViewContext.Controller as IBaseController;
+			return baseController.DropdownDataSets;
 		}
 	}
 }

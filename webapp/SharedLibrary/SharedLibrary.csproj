@@ -107,6 +107,9 @@
     <Compile Include="Authentication\UserRoles.cs" />
     <Compile Include="Helpers\TestHtmlHelper.cs" />
     <Compile Include="Models\AssetInfo.cs" />
+    <Compile Include="Models\IBaseController.cs" />
+    <Compile Include="Models\IDataSets.cs" />
+    <Compile Include="Models\IDataSetsHelper.cs" />
     <Compile Include="Models\IListItem.cs" />
     <Compile Include="Models\ForeignKeyFilter.cs" />
     <Compile Include="Models\IForeignKeyFilter.cs" />

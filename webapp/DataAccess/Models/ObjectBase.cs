@@ -66,6 +66,10 @@ namespace K9.DataAccess.Models
 			LastUpdatedOn = DateTime.Now;
 		}
 
+		public virtual void UpdateName()
+		{
+		}
+
 		#endregion
 
 	}

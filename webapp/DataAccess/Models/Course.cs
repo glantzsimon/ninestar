@@ -8,14 +8,7 @@ namespace K9.DataAccess.Models
 	{
 		[Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
 		public new int Id { get; set; }
-		public string Title { get; set; }
 		public int Credits { get; set; }
-
-		public new string Name
-		{
-			get { return Title; }
-		}
-
 		public virtual ICollection<Enrollment> Enrollments { get; set; }
 	}
 }

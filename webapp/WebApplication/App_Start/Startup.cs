@@ -30,14 +30,8 @@ namespace K9.WebApplication
 			builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IRepository<>));
 			builder.RegisterGeneric(typeof(DataTableAjaxHelper<>)).As(typeof(IDataTableAjaxHelper<>));
 			builder.RegisterType<ColumnsConfig>().As<IColumnsConfig>().SingleInstance();
-			builder.RegisterType<DropdownDataSets>().As<IDropdownDataSets>().SingleInstance();
-
-			builder.Register(c =>
-			{
-				var dropdownDataSets = new DropdownDataSets(c.Resolve<DbContext>());
-				DropdownDataSets.Instance = dropdownDataSets;
-				return dropdownDataSets;
-			});
+			builder.RegisterType<DataSetsHelper>().As<IDataSetsHelper>().InstancePerHttpRequest();
+			builder.RegisterType<DataSets.DataSets>().As<IDataSets>().SingleInstance();
 
 			var container = builder.Build();
 			DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

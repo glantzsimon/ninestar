@@ -35,7 +35,7 @@ namespace K9.DataAccess.Respositories
 
 		public List<IListItem> ItemList()
 		{
-			return _db.GetQuery<IListItem>(string.Format("SELECT ID, Name FROM {0} ODER BY Name", typeof(T).Name));
+			return _db.GetQuery<IListItem>(string.Format("SELECT ID, Name FROM {0} ORDER BY Name", typeof(T).Name));
 		}
 
 		public void Create(T item)

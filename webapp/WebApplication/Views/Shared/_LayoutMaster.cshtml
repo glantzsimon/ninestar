@@ -32,9 +32,11 @@
 	@Scripts.Render("~/Scripts/k9")
 </head>
 <body>
+<div id="pageSpinner"></div>
+<div id="pageOverlay"></div>
 @Html.BackgroundImageSwitcher(new BackgroundImageSwitcherOptions("Images/background/slides")
 {
-	Interval =	20000
+	Interval = 20000
 })
 <nav class="navbar navbar-default">
 	@Html.Partial("_Navbar")
@@ -44,6 +46,6 @@
 	@RenderBody()
 </div>
 @Html.Partial("_Footer")
-@RenderSection("scripts",  false)
+@RenderSection("scripts", false)
 </body>
 </html>

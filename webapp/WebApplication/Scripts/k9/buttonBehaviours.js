@@ -10,6 +10,16 @@ $(function ()
         });
     }
 
+    function displayPageSpinnerOnLinkClick() {
+        $("a").click(function() {
+            if ($(this).attr("href") !== "#") {
+                $("#pageSpinner").show();
+                $("#pageOverlay").show();
+            }
+        });
+    }
+
     displaySpinnerOnFormSubmit();
+    displayPageSpinnerOnLinkClick();
 
 })

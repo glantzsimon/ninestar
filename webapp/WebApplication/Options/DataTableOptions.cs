@@ -3,19 +3,14 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Script.Serialization;
-using System.Web.UI.WebControls;
 using DotNetOpenAuth.Messaging;
-using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Extensions;
 using K9.WebApplication.Helpers;
-using Newtonsoft.Json;
 
 namespace K9.WebApplication.Options
 {
@@ -126,8 +121,8 @@ namespace K9.WebApplication.Options
 			{
 				return new RouteValueDictionary
 				{
-					{ SharedLibrary.Constants.Constants.ForeignKeyName, ForeignKeyFilter.ForeignKeyName },
-					{ SharedLibrary.Constants.Constants.ForeignKeyValue, ForeignKeyFilter.ForeignKeyValue },
+					{ SharedLibrary.Constants.Constants.ForeignKeyName, ForeignKeyFilter.Key },
+					{ SharedLibrary.Constants.Constants.ForeignKeyValue, ForeignKeyFilter.Id },
 				};
 			}
 			return null;

@@ -92,7 +92,7 @@ namespace K9.WebApplication.Controllers
 		#region DataTable
 
 		[Authorize]
-		public virtual ActionResult List(string foreignKeyName = "", int foreignKeyId = 0)
+		public virtual ActionResult List()
 		{
 			_ajaxHelper.LoadQueryString(HttpContext.Request.QueryString);
 			_ajaxHelper.ForeignKeyFilter = HttpContext.Request.GetForeignKeyFilter();

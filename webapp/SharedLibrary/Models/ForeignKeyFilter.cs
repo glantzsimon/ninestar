@@ -4,13 +4,13 @@ namespace K9.SharedLibrary.Models
 {
 	public class ForeignKeyFilter : IForeignKeyFilter
 	{
-		public string ForeignKeyName { get; private set; }
-		public int ForeignKeyValue { get; private set; }
+		public string Key { get; private set; }
+		public int Id { get; private set; }
 
-		public ForeignKeyFilter(string foreignKeyName, int foreignKeyValue)
+		public ForeignKeyFilter(string key, int id)
 		{
-			ForeignKeyName = foreignKeyName;
-			ForeignKeyValue = foreignKeyValue;
+			Key = key;
+			Id = id;
 		}
 	}
 }

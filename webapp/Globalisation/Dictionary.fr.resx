@@ -421,4 +421,7 @@
   <data name="AuditInformation" xml:space="preserve">
     <value>Informations d'Audit</value>
   </data>
+  <data name="DateLongFormat" xml:space="preserve">
+    <value>dd MMMM yyyy</value>
+  </data>
 </root>

@@ -313,6 +313,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to dd MMMM yyyy.
+        /// </summary>
+        public static string DateLongFormat {
+            get {
+                return ResourceManager.GetString("DateLongFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to An unknown error occurred. Please verify your entry and try again. If the problem persists, please contact support..
         /// </summary>
         public static string DefaultAuthError {

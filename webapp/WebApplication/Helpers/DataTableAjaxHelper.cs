@@ -185,10 +185,10 @@ namespace K9.WebApplication.Helpers
 				}
 			}
 
-			if (ForeignKeyFilter != null && !string.IsNullOrEmpty(ForeignKeyFilter.ForeignKeyName))
+			if (ForeignKeyFilter != null && !string.IsNullOrEmpty(ForeignKeyFilter.Key))
 			{
 				sb.Append(sb.Length == 0 ? "WHERE " : " AND ");
-				sb.AppendFormat("{0} = {1}", ForeignKeyFilter.ForeignKeyName, ForeignKeyFilter.ForeignKeyValue);
+				sb.AppendFormat("{0} = {1}", ForeignKeyFilter.Key, ForeignKeyFilter.Id);
 			}
 
 			return sb.ToString();

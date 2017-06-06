@@ -14,10 +14,15 @@ namespace K9.SharedLibrary.Extensions
 		public static string GetLocaleName(this CultureInfo cultureInfo)
 		{
 			var regionInfo = new RegionInfo(cultureInfo.LCID);
-			var regionName = regionInfo.TwoLetterISORegionName;
-			var languageName = cultureInfo.TwoLetterISOLanguageName;
+			var regionName = regionInfo.TwoLetterISORegionName.ToLower();
+			var languageName = cultureInfo.TwoLetterISOLanguageName.ToLower();
 
 			return regionName == languageName ? languageName : string.Format("{0}-{1}", languageName, regionName);
+		}
+
+		public static string GetLocaleLanguage(this CultureInfo cultureInfo)
+		{
+			return cultureInfo.DisplayName;
 		}
 
 		public static string GetFullErrorMessage(this Exception ex)

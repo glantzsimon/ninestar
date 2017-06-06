@@ -106,10 +106,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Unit\GlobalisationTests.cs" />
     <Compile Include="Unit\ModelStateTests.cs" />
     <Compile Include="Unit\DataTableOptionsTests.cs" />
-    <Compile Include="Unit\DataTableAjaxHelperTests.cs" />
-    <Compile Include="Unit\HtmlHelperTests.cs" />
+    <Compile Include="Unit\Helpers\DataTableAjaxHelperTests.cs" />
+    <Compile Include="Unit\Helpers\HtmlHelperTests.cs" />
     <Compile Include="Unit\JavascriptSerializerTests.cs" />
   </ItemGroup>
   <ItemGroup>

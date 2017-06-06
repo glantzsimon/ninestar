@@ -1,4 +1,6 @@
-﻿@model IDataTableOptions
+﻿@using System.Globalization
+@using K9.SharedLibrary.Extensions
+@model IDataTableOptions
 
 <script type="text/javascript">
 
@@ -36,7 +38,10 @@
 			"columnDefs": getColumnDefs(),
 			"processing": true,
 			"serverSide": true,
-			"stateSave": true
+			"stateSave": true,
+			"language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/@CultureInfo.CurrentUICulture.GetLocaleLanguage().json"
+            }
 		});
 	});
 

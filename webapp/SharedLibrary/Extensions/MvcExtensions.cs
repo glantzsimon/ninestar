@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 using K9.SharedLibrary.Models;
 
 namespace K9.SharedLibrary.Extensions
@@ -59,6 +60,16 @@ namespace K9.SharedLibrary.Extensions
 		public static IStatelessFilter GetStatelessFilter(this HtmlHelper helper)
 		{
 			return helper.ViewContext.HttpContext.Request.GetStatelessFilter();
+		}
+
+		public static RouteValueDictionary GetFilterRouteValueDictionary(this ControllerBase controller)
+		{
+			return controller.ControllerContext.HttpContext.Request.GetStatelessFilter().GetFilterRouteValues();
+		}
+
+		public static IStatelessFilter GetStatelessFilter(this ControllerBase controller)
+		{
+			return controller.ControllerContext.HttpContext.Request.GetStatelessFilter();
 		}
 
 		public static IStatelessFilter GetStatelessFilter(this HttpRequestBase request)

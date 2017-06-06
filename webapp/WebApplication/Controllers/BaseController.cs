@@ -95,7 +95,7 @@ namespace K9.WebApplication.Controllers
 		public virtual ActionResult List()
 		{
 			_ajaxHelper.LoadQueryString(HttpContext.Request.QueryString);
-			_ajaxHelper.StatelessFilter = HttpContext.Request.GetStatelessFilter();
+			_ajaxHelper.StatelessFilter = this.GetStatelessFilter();
 
 			try
 			{
@@ -139,7 +139,7 @@ namespace K9.WebApplication.Controllers
 				try
 				{
 					_repository.Create(item);
-					return RedirectToAction("Index");
+					return RedirectToAction("Index", this.GetFilterRouteValueDictionary());
 				}
 				catch (Exception ex)
 				{
@@ -172,7 +172,7 @@ namespace K9.WebApplication.Controllers
 				try
 				{
 					_repository.Update(item);
-					return RedirectToAction("Index");
+					return RedirectToAction("Index", this.GetFilterRouteValueDictionary());
 				}
 				catch (Exception ex)
 				{
@@ -212,7 +212,7 @@ namespace K9.WebApplication.Controllers
 				try
 				{
 					_repository.Delete(id);
-					return RedirectToAction("Index");
+					return RedirectToAction("Index", this.GetFilterRouteValueDictionary());
 				}
 				catch (Exception ex)
 				{

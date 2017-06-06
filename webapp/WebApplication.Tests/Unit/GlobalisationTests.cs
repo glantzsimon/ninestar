@@ -11,7 +11,7 @@ namespace K9.WebApplication.Tests.Unit
 		[TestMethod]
 		public void GetLocaleLanguage_ReturnsCorrectLanguageName()
 		{
-			var cultureInfo = new CultureInfo("fr");
+			var cultureInfo = new CultureInfo("fr-fr");
 
 			Assert.AreEqual("French", cultureInfo.GetLocaleLanguage());
 		}

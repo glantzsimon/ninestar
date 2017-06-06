@@ -22,7 +22,7 @@ namespace K9.SharedLibrary.Extensions
 
 		public static string GetLocaleLanguage(this CultureInfo cultureInfo)
 		{
-			return cultureInfo.DisplayName;
+			return cultureInfo.IsNeutralCulture ? cultureInfo.EnglishName : cultureInfo.Parent.EnglishName;
 		}
 
 		public static string GetFullErrorMessage(this Exception ex)

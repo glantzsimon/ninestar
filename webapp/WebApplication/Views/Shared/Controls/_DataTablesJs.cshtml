@@ -40,7 +40,7 @@
 			"serverSide": true,
 			"stateSave": true,
 			"language": {
-                "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/@CultureInfo.CurrentUICulture.GetLocaleLanguage().json"
+                "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/@string.Format("{0}.json", CultureInfo.CurrentUICulture.GetLocaleLanguage())"
             }
 		});
 	});

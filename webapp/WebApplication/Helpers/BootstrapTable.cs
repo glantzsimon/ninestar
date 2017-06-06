@@ -39,7 +39,15 @@ namespace K9.WebApplication.Helpers
 
 			var modelType = typeof (T);
 			var sb = new StringBuilder();
-			
+
+			if (options.AllowCreate)
+			{
+				var createDiv = new TagBuilder(Tags.Div);
+				createDiv.MergeAttribute(Attributes.Class, "button-container");
+				createDiv.InnerHtml = html.BootstrapCreateNewButton(options.GetFilterRouteValues()).ToString();
+				sb.Append(createDiv);
+			}
+
 			// Create table container
 			var div = new TagBuilder(Tags.Div);
 			div.MergeAttribute(Attributes.Class, "datatable-container");

@@ -59,12 +59,12 @@ namespace K9.SharedLibrary.Extensions
 		public static IForeignKeyFilter GetForeignKeyFilter(this HttpRequestBase request)
 		{
 			var queryString = request.QueryString;
-			var foreignKeyName = queryString["foreignKeyName"];
-			var foreignKeyId = queryString["foreignKeyName"];
+			var foreignKeyName = queryString[Constants.Constants.ForeignKeyName];
+			var foreignKeyValue = queryString[Constants.Constants.ForeignKeyValue];
 
 			try
 			{
-				return (foreignKeyName != null && foreignKeyId != null) ? new ForeignKeyFilter(foreignKeyName, int.Parse(foreignKeyId)) : null;
+				return (foreignKeyName != null && foreignKeyValue != null) ? new ForeignKeyFilter(foreignKeyName, int.Parse(foreignKeyValue)) : null;
 			}
 			catch (Exception)
 			{

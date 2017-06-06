@@ -348,7 +348,6 @@
     <Content Include="Views\Shared\DisplayTemplates\Text.cshtml" />
     <Content Include="Views\Countries\Delete.cshtml" />
     <Content Include="Views\Countries\Create.cshtml" />
-    <Content Include="Views\Enrollments\ForStudent.cshtml" />
     <Content Include="Views\Enrollments\Create.cshtml" />
     <Content Include="Views\Enrollments\Edit.cshtml" />
     <Content Include="Views\Enrollments\Delete.cshtml" />
@@ -389,7 +388,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>4009</DevelopmentServerPort>
+          <DevelopmentServerPort>3506</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost/ninestar</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

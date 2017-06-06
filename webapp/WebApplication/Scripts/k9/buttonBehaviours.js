@@ -11,10 +11,13 @@ $(function ()
     }
 
     function displayPageSpinnerOnLinkClick() {
-        $("a").click(function() {
-            if ($(this).attr("href") !== "#") {
-                $("#pageSpinner").show();
-                $("#pageOverlay").show();
+        $("a").click(function () {
+            var href = ($(this).attr("href"));
+            if (href) {
+                if (href !== "#") {
+                    $("#pageSpinner").show();
+                    $("#pageOverlay").show();
+                }
             }
         });
     }

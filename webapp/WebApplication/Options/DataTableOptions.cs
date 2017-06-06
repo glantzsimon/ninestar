@@ -126,7 +126,8 @@ namespace K9.WebApplication.Options
 			{
 				return new RouteValueDictionary
 				{
-					{ForeignKeyFilter.ForeignKeyName, ForeignKeyFilter.ForeignKeyId}
+					{ SharedLibrary.Constants.Constants.ForeignKeyName, ForeignKeyFilter.ForeignKeyName },
+					{ SharedLibrary.Constants.Constants.ForeignKeyValue, ForeignKeyFilter.ForeignKeyValue },
 				};
 			}
 			return null;

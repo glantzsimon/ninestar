@@ -7,13 +7,13 @@
 	function @Model.GetButtonRenderFunction() (data) {
 		var buttons = "";
 		if (@Model.AllowDetail.ToString().ToLower()) {
-			buttons += '<a href="@Url.Action("Details")/' + data.Id + '" class="btn btn-info">@Dictionary.Details</a>';
+			buttons += '<a href="@Url.Action("Details", Model.GetFilterRouteValues())/' + data.Id + '" class="btn btn-info">@Dictionary.Details</a>';
 		}
 		if (@Model.AllowEdit.ToString().ToLower()) {
-			buttons += '<a href="@Url.Action("Edit")/' + data.Id + '" class="btn btn-primary"><i class="fa fa-pencil"></i> @Dictionary.Edit</a>';
+			buttons += '<a href="@Url.Action("Edit", Model.GetFilterRouteValues())/' + data.Id + '" class="btn btn-primary"><i class="fa fa-pencil"></i> @Dictionary.Edit</a>';
 		}
 		if (@Model.AllowDelete.ToString().ToLower()) {
-			buttons += '<a href="@Url.Action("Delete")/' + data.Id + '" class="btn btn-danger"><i class="fa fa-trash"></i> @Dictionary.Delete</a>';
+			buttons += '<a href="@Url.Action("Delete", Model.GetFilterRouteValues())/' + data.Id + '" class="btn btn-danger"><i class="fa fa-trash"></i> @Dictionary.Delete</a>';
 		}
 		return buttons == "" ? null : buttons;
 	};
@@ -31,7 +31,7 @@
 	}
 
 	$(function() {
-		var table = $("table#@Model.TableId");
+		var table = @Model.TableId = $("table#@Model.TableId");
 		table.DataTable({
 			"ajax": table.attr("data-url"),
 			"columns": @Model.GetColumnsJson(),

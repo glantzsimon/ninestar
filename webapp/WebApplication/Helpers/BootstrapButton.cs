@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using System.Web.Mvc.Html;
+using System.Web.Routing;
 using K9.Globalisation;
 using K9.WebApplication.Constants;
 using K9.WebApplication.Constants.Html;
@@ -30,9 +31,9 @@ namespace K9.WebApplication.Helpers
 			return MvcHtmlString.Create(string.Format("<a class=\"btn btn-info\" href=\"{0}\"><i class='fa fa-link'></i> {1}</a>", html.GeturlHeler().Action(actionName, controllerName, routeValues), linkText));
 		}
 
-		public static MvcHtmlString BootstrapCreateNewButton(this HtmlHelper html)
+		public static MvcHtmlString BootstrapCreateNewButton(this HtmlHelper html, RouteValueDictionary routeValues)
 		{
-			return html.ActionLink(string.Format("{0}", Dictionary.CreateNew), "Create", null, new { @class = Bootstrap.Classes.PrimaryButton });
+			return html.ActionLink(string.Format("{0}", Dictionary.CreateNew, routeValues), "Create", null, new { @class = Bootstrap.Classes.PrimaryButton });
 		}
 
 		public static MvcHtmlString BootstrapButton(this HtmlHelper html, string value, EButtonType buttonType = EButtonType.Submit)

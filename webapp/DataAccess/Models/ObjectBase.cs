@@ -2,6 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Web.Routing;
 using K9.Globalisation;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Models;
@@ -21,7 +22,12 @@ namespace K9.DataAccess.Models
 		[Index(IsUnique = true)]
 		[StringLength(128)]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NameLabel)]
-		public string Name { get; set; }	
+		public string Name { get; set; }
+
+		public string ForeignKeyName
+		{
+			get { return string.Format("{0}Id", GetType().Name); }
+		}
 
 		#endregion
 
@@ -67,6 +73,15 @@ namespace K9.DataAccess.Models
 		}
 
 		public virtual void UpdateName() { }
+
+		public RouteValueDictionary GetForeignKeyFilterRouteValues()
+		{
+			return new RouteValueDictionary
+			{
+				{ SharedLibrary.Constants.Constants.ForeignKeyName, ForeignKeyName },
+				{ SharedLibrary.Constants.Constants.ForeignKeyValue, Id },
+			};
+		}
 
 		#endregion
 

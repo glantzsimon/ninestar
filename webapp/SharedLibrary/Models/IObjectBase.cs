@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Web.Routing;
 
 namespace K9.SharedLibrary.Models
 {
@@ -10,8 +11,10 @@ namespace K9.SharedLibrary.Models
 		string CreatedBy { get; set; }
 		DateTime? CreatedOn { get; set; }
 		string LastUpdatedBy { get; set; }
+		string ForeignKeyName { get; }
 		DateTime? LastUpdatedOn { get; set; }
 		void UpdateAuditFields();
 		void UpdateName();
+		RouteValueDictionary GetForeignKeyFilterRouteValues();
 	}
 }

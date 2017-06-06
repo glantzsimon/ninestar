@@ -40,14 +40,19 @@ namespace K9.WebApplication.DataSets
 			return dataset;
 		}
 
-		public SelectList GetSelectList<T>(int selectedId, bool refresh = false) where T : class, IObjectBase
+		public SelectList GetSelectList<T>(int? selectedId, bool refresh = false) where T : class, IObjectBase
 		{
 			return new SelectList(GetDataSet<T>(refresh), "Id", "Name", selectedId);
 		}
 
-		public string GetName<T>(int selectedId, bool refresh = false) where T : class, IObjectBase
+		public string GetName<T>(int? selectedId, bool refresh = false) where T : class, IObjectBase
 		{
-			var item = GetDataSet<T>(refresh).FirstOrDefault(x => x.Id == selectedId);
+			if (!selectedId.HasValue)
+			{
+				return string.Empty;
+			}
+
+			var item = GetDataSet<T>(refresh).FirstOrDefault(x => x.Id == selectedId.Value);
 			if (item != null)
 				return item.Name;
 			return string.Empty;

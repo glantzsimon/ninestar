@@ -10,7 +10,7 @@
 		if (@Model.AllowDetail.ToString().ToLower()) {
 			buttons += '<a href="@Url.Action("Details", Model.GetFilterRouteValues())' + join + 'id=' + data.Id + '" class="btn btn-info">@Dictionary.Details</a>';
 		}
-		if (@Model.AllowEdit.ToString().ToLower()) {`
+		if (@Model.AllowEdit.ToString().ToLower()) {
 			buttons += '<a href="@Url.Action("Edit", Model.GetFilterRouteValues())' + join + 'id=' +data.Id + '" class="btn btn-primary"><i class="fa fa-pencil"></i> @Dictionary.Edit</a>';
 		}
 		if (@Model.AllowDelete.ToString().ToLower()) {

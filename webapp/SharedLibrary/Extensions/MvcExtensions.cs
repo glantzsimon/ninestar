@@ -66,15 +66,16 @@ namespace K9.SharedLibrary.Extensions
 			var queryString = request.QueryString;
 			var foreignKeyName = queryString[Constants.Constants.Key];
 			var foreignKeyValue = queryString[Constants.Constants.Value];
+			var emptyFilter = new StatelessFilter(string.Empty, 0);
 
 			try
 			{
-				return (foreignKeyName != null && foreignKeyValue != null) ? new StatelessFilter(foreignKeyName, int.Parse(foreignKeyValue)) : null;
+				return (foreignKeyName != null && foreignKeyValue != null) ? new StatelessFilter(foreignKeyName, int.Parse(foreignKeyValue)) : emptyFilter;
 			}
 			catch (Exception)
 			{
 			}
-			return null;
+			return emptyFilter;
 		}
 
 		public static string GetQueryStringValue(this WebViewPage view, string key)

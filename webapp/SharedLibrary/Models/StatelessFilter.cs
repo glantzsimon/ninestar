@@ -17,11 +17,15 @@ namespace K9.SharedLibrary.Models
 
 		public RouteValueDictionary GetFilterRouteValues()
 		{
-			return new RouteValueDictionary
+			if (!string.IsNullOrEmpty(Key))
+			{
+				return new RouteValueDictionary
 				{
-					{ Constants.Constants.Key, Key },
-					{ Constants.Constants.Value, Id },
+					{Constants.Constants.Key, Key},
+					{Constants.Constants.Value, Id},
 				};
+			}
+			return new RouteValueDictionary();
 		}
 	}
 }

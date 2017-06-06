@@ -14,7 +14,7 @@ namespace K9.WebApplication.Helpers
 
 		public static MvcHtmlString BootstrapBackToListButton(this HtmlHelper html)
 		{
-			return html.ActionLink(string.Format("< {0}", Dictionary.BackToList), "Index", html.GetStatelessFilter().GetFilterRouteValues(), new { @class = Bootstrap.Classes.InfoButton });
+			return MvcHtmlString.Create(string.Format("<a class=\"btn btn-info\" href=\"{0}\"><i class='fa fa-angle-left'></i> {1}</a>", html.GeturlHeler().Action("Index", html.GetStatelessFilter().GetFilterRouteValues()), Dictionary.BackToList));
 		}
 
 		public static MvcHtmlString BootstrapLinkToDeleteButton(this HtmlHelper html, int id)
@@ -27,9 +27,23 @@ namespace K9.WebApplication.Helpers
 			return MvcHtmlString.Create(string.Format("<a class=\"btn btn-primary\" href=\"{0}\"><i class='fa fa-pencil'></i> {1}</a>", html.GeturlHeler().Action("Edit", GetFilterRouteValueDictionaryWithId(html, id)), Dictionary.Edit));
 		}
 
-		public static MvcHtmlString BootstrapLinkButton(this HtmlHelper html, string linkText, string actionName, string controllerName, int id)
+		/// <summary>
+		/// Link to a ICollection property of the model
+		/// </summary>
+		/// <param name="html"></param>
+		/// <param name="linkText"></param>
+		/// <param name="actionName"></param>
+		/// <param name="controllerName"></param>
+		/// <param name="id">The Id of the model, which is used in the IStatelessFilter object to enable navigation back to filtered list</param>
+		/// <returns></returns>
+		public static MvcHtmlString BootstrapLinkToCollectionButton(this HtmlHelper html, string linkText, string actionName, string controllerName, int id)
 		{
 			return MvcHtmlString.Create(string.Format("<a class=\"btn btn-info\" href=\"{0}\"><i class='fa fa-link'></i> {1}</a>", html.GeturlHeler().Action(actionName, controllerName, GetFilterRouteValueDictionaryWithId(html, id)), linkText));
+		}
+
+		public static MvcHtmlString BootstrapLinkButton(this HtmlHelper html, string linkText, string actionName, string controllerName)
+		{
+			return MvcHtmlString.Create(string.Format("<a class=\"btn btn-info\" href=\"{0}\"><i class='fa fa-link'></i> {1}</a>", html.GeturlHeler().Action(actionName, controllerName, null), linkText));
 		}
 
 		public static MvcHtmlString BootstrapCreateNewButton(this HtmlHelper html, RouteValueDictionary routeValues)

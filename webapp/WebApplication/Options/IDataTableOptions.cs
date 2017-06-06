@@ -28,5 +28,6 @@ namespace K9.WebApplication.Options
 		string GetButtonRenderFunction();
 		List<DataTableColumnInfo> GetColumnInfos();
 		RouteValueDictionary GetFilterRouteValues();
+		string GetQueryStringJoiner();
 	}
 }

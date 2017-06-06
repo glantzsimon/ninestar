@@ -127,6 +127,12 @@ namespace K9.WebApplication.Options
 			return null;
 		}
 
+		public string GetQueryStringJoiner()
+		{
+			var routeValues = GetFilterRouteValues();
+			return routeValues != null && routeValues.Any() ? "&" : "?";
+		}
+
 		private List<PropertyInfo> GetKeyColumns()
 		{
 			return GetColumns().GetPropertiesWithAttributes(typeof(KeyAttribute), typeof(ForeignKeyAttribute));

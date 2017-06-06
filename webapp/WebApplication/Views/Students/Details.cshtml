@@ -12,7 +12,7 @@
 	@Html.AuditFieldsForModel(Model)
 	
 	@Html.SubTitle(Dictionary.AdditionalInformation)
-	@Html.BootstrapLinkButton("Enrollments", "Index", "Enrollments", Model.id)
+	@Html.BootstrapLinkToCollectionButton("Enrollments", "Index", "Enrollments", Model.Id)
 
 	<hr />
 	@Html.BootstrapBackToListButton()

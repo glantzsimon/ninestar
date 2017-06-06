@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Constants.Html;
 using K9.WebApplication.Extensions;
@@ -34,8 +35,9 @@ namespace K9.WebApplication.Helpers
 		{
 			options = options ?? new DataTableOptions<T>();
 			options.ColumnsConfig = _columnsConfig;
-			var modelType = typeof (T);
+			options.ForeignKeyFilter = html.ViewContext.HttpContext.Request.GetForeignKeyFilter();
 
+			var modelType = typeof (T);
 			var sb = new StringBuilder();
 			
 			// Create table container

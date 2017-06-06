@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 using System.Web.Script.Serialization;
 using System.Web.UI.WebControls;
 using DotNetOpenAuth.Messaging;
@@ -26,6 +27,7 @@ namespace K9.WebApplication.Options
 		public bool DisplayFooter { get; set; }
 		public List<string> VisibleColumns { get; set; }
 		public IColumnsConfig ColumnsConfig { get; set; }
+		public IForeignKeyFilter ForeignKeyFilter { get; set; }
 		public bool AllowCreate { get; set; }
 		public bool AllowEdit { get; set; }
 		public bool AllowDelete { get; set; }
@@ -116,6 +118,18 @@ namespace K9.WebApplication.Options
 			}).ToList();
 
 			return columnsInfos;
+		}
+
+		public RouteValueDictionary GetFilterRouteValues()
+		{
+			if (ForeignKeyFilter != null)
+			{
+				return new RouteValueDictionary
+				{
+					{ForeignKeyFilter.ForeignKeyName, ForeignKeyFilter.ForeignKeyId}
+				};
+			}
+			return null;
 		}
 
 		private List<PropertyInfo> GetKeyColumns()

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
 using System.Web.Mvc;
+using System.Web.Routing;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Helpers;
 
@@ -11,6 +12,7 @@ namespace K9.WebApplication.Options
 		string TableId { get; }
 		string DataUrl { get; set; }
 		IColumnsConfig ColumnsConfig { get; set; }
+		IForeignKeyFilter ForeignKeyFilter { get; set; }
 		string GetDataUrl();
 		bool AllowCreate { get; set; }
 		bool AllowEdit { get; set; }
@@ -24,5 +26,6 @@ namespace K9.WebApplication.Options
 		MvcHtmlString GetColumnDefsJson();
 		string GetButtonRenderFunction();
 		List<DataTableColumnInfo> GetColumnInfos();
+		RouteValueDictionary GetFilterRouteValues();
 	}
 }

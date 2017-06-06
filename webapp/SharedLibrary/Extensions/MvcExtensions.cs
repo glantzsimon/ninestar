@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using K9.SharedLibrary.Models;
 
 namespace K9.SharedLibrary.Extensions
 {
@@ -53,6 +54,22 @@ namespace K9.SharedLibrary.Extensions
 		{
 			var queryString = controller.ControllerContext.RequestContext.HttpContext.Request.QueryString;
 			return queryString.AllKeys.Select(key => string.Format("{0}={1}", key, queryString.GetValue(key))).Aggregate("", (a, b) => a + (string.IsNullOrEmpty(b) ? "" : string.Format("&{0}", b)));
+		}
+
+		public static IForeignKeyFilter GetForeignKeyFilter(this HttpRequestBase request)
+		{
+			var queryString = request.QueryString;
+			var foreignKeyName = queryString["foreignKeyName"];
+			var foreignKeyId = queryString["foreignKeyName"];
+
+			try
+			{
+				return (foreignKeyName != null && foreignKeyId != null) ? new ForeignKeyFilter(foreignKeyName, int.Parse(foreignKeyId)) : null;
+			}
+			catch (Exception)
+			{
+			}
+			return null;
 		}
 
 		public static string GetQueryStringValue(this WebViewPage view, string key)

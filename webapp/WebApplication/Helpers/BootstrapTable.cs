@@ -35,7 +35,7 @@ namespace K9.WebApplication.Helpers
 		{
 			options = options ?? new DataTableOptions<T>();
 			options.ColumnsConfig = _columnsConfig;
-			options.ForeignKeyFilter = html.ViewContext.HttpContext.Request.GetForeignKeyFilter();
+			options.StatelessFilter = html.ViewContext.HttpContext.Request.GetStatelessFilter();
 
 			var modelType = typeof (T);
 			var sb = new StringBuilder();

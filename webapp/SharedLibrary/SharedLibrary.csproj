@@ -112,8 +112,8 @@
     <Compile Include="Models\IDataSets.cs" />
     <Compile Include="Models\IDataSetsHelper.cs" />
     <Compile Include="Models\IListItem.cs" />
-    <Compile Include="Models\ForeignKeyFilter.cs" />
-    <Compile Include="Models\IForeignKeyFilter.cs" />
+    <Compile Include="Models\StatelessFilter.cs" />
+    <Compile Include="Models\IStatelessFilter.cs" />
     <Compile Include="Models\IAssetInfo.cs" />
     <Compile Include="Models\IColumnsConfig.cs" />
     <Compile Include="Models\IObjectBase.cs" />

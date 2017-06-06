@@ -76,11 +76,7 @@ namespace K9.DataAccess.Models
 
 		public RouteValueDictionary GetForeignKeyFilterRouteValues()
 		{
-			return new RouteValueDictionary
-			{
-				{ SharedLibrary.Constants.Constants.ForeignKeyName, ForeignKeyName },
-				{ SharedLibrary.Constants.Constants.ForeignKeyValue, Id },
-			};
+			return new StatelessFilter(ForeignKeyName, Id).GetFilterRouteValues();
 		}
 
 		#endregion

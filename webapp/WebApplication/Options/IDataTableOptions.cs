@@ -13,7 +13,7 @@ namespace K9.WebApplication.Options
 		string Action { get; set; }
 		string Controller { get; set; }
 		IColumnsConfig ColumnsConfig { get; set; }
-		IForeignKeyFilter ForeignKeyFilter { get; set; }
+		IStatelessFilter StatelessFilter { get; set; }
 		string GetDataUrl(UrlHelper geturlHeler);
 		bool AllowCreate { get; set; }
 		bool AllowEdit { get; set; }

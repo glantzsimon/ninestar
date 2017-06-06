@@ -23,7 +23,7 @@ namespace K9.WebApplication.Options
 		public bool DisplayFooter { get; set; }
 		public List<string> VisibleColumns { get; set; }
 		public IColumnsConfig ColumnsConfig { get; set; }
-		public IForeignKeyFilter ForeignKeyFilter { get; set; }
+		public IStatelessFilter StatelessFilter { get; set; }
 		public bool AllowCreate { get; set; }
 		public bool AllowEdit { get; set; }
 		public bool AllowDelete { get; set; }
@@ -120,13 +120,9 @@ namespace K9.WebApplication.Options
 
 		public RouteValueDictionary GetFilterRouteValues()
 		{
-			if (ForeignKeyFilter != null)
+			if (StatelessFilter != null)
 			{
-				return new RouteValueDictionary
-				{
-					{ SharedLibrary.Constants.Constants.ForeignKeyName, ForeignKeyFilter.Key },
-					{ SharedLibrary.Constants.Constants.ForeignKeyValue, ForeignKeyFilter.Id },
-				};
+				return StatelessFilter.GetFilterRouteValues();
 			}
 			return null;
 		}

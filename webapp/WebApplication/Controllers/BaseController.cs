@@ -95,7 +95,7 @@ namespace K9.WebApplication.Controllers
 		public virtual ActionResult List()
 		{
 			_ajaxHelper.LoadQueryString(HttpContext.Request.QueryString);
-			_ajaxHelper.ForeignKeyFilter = HttpContext.Request.GetForeignKeyFilter();
+			_ajaxHelper.StatelessFilter = HttpContext.Request.GetStatelessFilter();
 
 			try
 			{

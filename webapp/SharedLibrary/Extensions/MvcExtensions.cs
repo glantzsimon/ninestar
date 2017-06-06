@@ -56,15 +56,20 @@ namespace K9.SharedLibrary.Extensions
 			return queryString.AllKeys.Select(key => string.Format("{0}={1}", key, queryString.GetValue(key))).Aggregate("", (a, b) => a + (string.IsNullOrEmpty(b) ? "" : string.Format("&{0}", b)));
 		}
 
-		public static IForeignKeyFilter GetForeignKeyFilter(this HttpRequestBase request)
+		public static IStatelessFilter GetStatelessFilter(this HtmlHelper helper)
+		{
+			return helper.ViewContext.HttpContext.Request.GetStatelessFilter();
+		}
+
+		public static IStatelessFilter GetStatelessFilter(this HttpRequestBase request)
 		{
 			var queryString = request.QueryString;
-			var foreignKeyName = queryString[Constants.Constants.ForeignKeyName];
-			var foreignKeyValue = queryString[Constants.Constants.ForeignKeyValue];
+			var foreignKeyName = queryString[Constants.Constants.Key];
+			var foreignKeyValue = queryString[Constants.Constants.Value];
 
 			try
 			{
-				return (foreignKeyName != null && foreignKeyValue != null) ? new ForeignKeyFilter(foreignKeyName, int.Parse(foreignKeyValue)) : null;
+				return (foreignKeyName != null && foreignKeyValue != null) ? new StatelessFilter(foreignKeyName, int.Parse(foreignKeyValue)) : null;
 			}
 			catch (Exception)
 			{

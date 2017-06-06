@@ -100,7 +100,7 @@ namespace K9.WebApplication.Helpers
 			get { return _searchValue; }
 		}
 
-		public IForeignKeyFilter ForeignKeyFilter { get; set; }
+		public IStatelessFilter StatelessFilter { get; set; }
 
 		public bool IsRegexSearch
 		{
@@ -185,10 +185,10 @@ namespace K9.WebApplication.Helpers
 				}
 			}
 
-			if (ForeignKeyFilter != null && !string.IsNullOrEmpty(ForeignKeyFilter.Key))
+			if (StatelessFilter != null && !string.IsNullOrEmpty(StatelessFilter.Key))
 			{
 				sb.Append(sb.Length == 0 ? "WHERE " : " AND ");
-				sb.AppendFormat("{0} = {1}", ForeignKeyFilter.Key, ForeignKeyFilter.Id);
+				sb.AppendFormat("{0} = {1}", StatelessFilter.Key, StatelessFilter.Id);
 			}
 
 			return sb.ToString();

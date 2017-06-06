@@ -36,9 +36,9 @@ namespace K9.WebApplication.Helpers
 		/// <param name="controllerName"></param>
 		/// <param name="id">The Id of the model, which is used in the IStatelessFilter object to enable navigation back to filtered list</param>
 		/// <returns></returns>
-		public static MvcHtmlString BootstrapLinkToCollectionButton(this HtmlHelper html, string linkText, string actionName, string controllerName, int id)
+		public static MvcHtmlString BootstrapLinkToCollectionButton(this HtmlHelper html, string linkText, string actionName, string controllerName, RouteValueDictionary routeValues)
 		{
-			return MvcHtmlString.Create(string.Format("<a class=\"btn btn-info\" href=\"{0}\"><i class='fa fa-link'></i> {1}</a>", html.GeturlHeler().Action(actionName, controllerName, GetFilterRouteValueDictionaryWithId(html, id)), linkText));
+			return MvcHtmlString.Create(string.Format("<a class=\"btn btn-info\" href=\"{0}\"><i class='fa fa-link'></i> {1}</a>", html.GeturlHeler().Action(actionName, controllerName, routeValues), linkText));
 		}
 
 		public static MvcHtmlString BootstrapLinkButton(this HtmlHelper html, string linkText, string actionName, string controllerName)
@@ -48,7 +48,7 @@ namespace K9.WebApplication.Helpers
 
 		public static MvcHtmlString BootstrapCreateNewButton(this HtmlHelper html, RouteValueDictionary routeValues)
 		{
-			return html.ActionLink(string.Format("{0}", Dictionary.CreateNew, routeValues), "Create", null, new { @class = Bootstrap.Classes.PrimaryButton });
+			return html.ActionLink(string.Format("{0}", Dictionary.CreateNew), "Create", routeValues, new { @class = Bootstrap.Classes.PrimaryButton });
 		}
 
 		public static MvcHtmlString BootstrapButton(this HtmlHelper html, string value, EButtonType buttonType = EButtonType.Submit)

@@ -18,7 +18,8 @@ namespace K9.WebApplication.Options
 	{
 		private HashSet<PropertyInfo> _columnInfos;
 
-		public string DataUrl { get; set; }
+		public string Action { get; set; }
+		public string Controller { get; set; }
 		public bool DisplayFooter { get; set; }
 		public List<string> VisibleColumns { get; set; }
 		public IColumnsConfig ColumnsConfig { get; set; }
@@ -52,9 +53,11 @@ namespace K9.WebApplication.Options
 			return GetColumns().Select(c => c.Name).ToList();
 		}
 
-		public string GetDataUrl()
+		public string GetDataUrl(UrlHelper urlHeler)
 		{
-			return string.IsNullOrEmpty(DataUrl) ? typeof(T).GetDefaultDataUrl() : DataUrl;
+			var actionName = string.IsNullOrEmpty(Action) ? "List" : Action;
+			var controllerName = string.IsNullOrEmpty(Controller) ? typeof(T).GetPluralName() : Controller;
+			return urlHeler.Action(actionName, controllerName, GetFilterRouteValues());
 		}
 
 		public List<PropertyInfo> GetColumns()

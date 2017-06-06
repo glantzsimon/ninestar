@@ -10,10 +10,11 @@ namespace K9.WebApplication.Options
 	public interface IDataTableOptions
 	{
 		string TableId { get; }
-		string DataUrl { get; set; }
+		string Action { get; set; }
+		string Controller { get; set; }
 		IColumnsConfig ColumnsConfig { get; set; }
 		IForeignKeyFilter ForeignKeyFilter { get; set; }
-		string GetDataUrl();
+		string GetDataUrl(UrlHelper geturlHeler);
 		bool AllowCreate { get; set; }
 		bool AllowEdit { get; set; }
 		bool AllowDelete { get; set; }

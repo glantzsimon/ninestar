@@ -16,11 +16,6 @@ namespace K9.WebApplication.Extensions
 			return string.Format("{0}Table", type.Name);
 		}
 
-		public static string GetDefaultDataUrl(this Type type)
-		{
-			return string.Format("/{0}/List", type.GetPluralName());
-		}
-
 		public static string GetDataTableType(this PropertyInfo property)
 		{
 			if (property.PropertyType == typeof(int))

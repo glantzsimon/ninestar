@@ -1,6 +1,7 @@
 ﻿@using System.Globalization
 @using K9.SharedLibrary.Extensions
 @model IDataTableOptions
+
 <script type="text/javascript">
 
 	function @Model.GetButtonRenderFunction() (data) {
@@ -26,14 +27,7 @@
 				targets: [@Model.GetColumnInfos().Count],
 				render: @Model.GetButtonRenderFunction()
 			});
-		}
-
-		$(columnDefs).each(function(cdef) {
-			if (cdef.linkedTableName) {
-				cdef.render = 
-			}
-		});
-
+		}		
 		return columnDefs;
 	}
 

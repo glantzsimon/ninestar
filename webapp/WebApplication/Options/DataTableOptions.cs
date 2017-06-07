@@ -86,13 +86,11 @@ namespace K9.WebApplication.Options
 
 		public MvcHtmlString GetColumnDefsJson()
 		{
-			var foreignKeyColumns = GetForeignKeyColumns();
 			return MvcHtmlString.Create(new JavaScriptSerializer().Serialize(
 				GetColumnInfos().Select(c => new
 				{
 					targets = new[] { c.Index },
-					visible = c.IsVisible,
-					linkedTableName = foreignKeyColumns.Where(x => x.Value.Name == c.Data).Select(x => x.Value.Name)
+					visible = c.IsVisible
 				})));
 		}
 
@@ -103,12 +101,13 @@ namespace K9.WebApplication.Options
 
 		public List<DataTableColumnInfo> GetColumnInfos()
 		{
+			var keyColumns = GetKeyColumns();
 			var columnsInfos = GetColumns().Select((c, index) =>
 			{
 				var info = new DataTableColumnInfo(index)
 				{
 					IsDatabound = c.IsDataBound(),
-					IsVisible = c.Name != "Id"
+					IsVisible = !keyColumns.Select(k => k.Name).Contains(c.Name)
 				};
 				info.UpdateData(c.Name);
 				info.UpdateName(c.GetDisplayName());
@@ -133,9 +132,9 @@ namespace K9.WebApplication.Options
 			return routeValues != null && routeValues.Any() ? "&" : "?";
 		}
 
-		private Dictionary<ForeignKeyAttribute, PropertyInfo> GetForeignKeyColumns()
+		private List<PropertyInfo> GetKeyColumns()
 		{
-			return GetColumns().GetPropertiesAndAttributesWithAttribute<ForeignKeyAttribute>();
+			return GetColumns().GetPropertiesWithAttributes(typeof(KeyAttribute), typeof(ForeignKeyAttribute));
 		}
 
 	}

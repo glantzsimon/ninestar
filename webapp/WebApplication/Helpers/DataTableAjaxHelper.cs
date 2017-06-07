@@ -178,7 +178,7 @@ namespace K9.WebApplication.Helpers
 
 			if (selectAllColumns)
 			{
-				sb.Append("*");
+				sb.AppendFormat("{0}.*", parentType.Name);
 			}
 			else
 			{

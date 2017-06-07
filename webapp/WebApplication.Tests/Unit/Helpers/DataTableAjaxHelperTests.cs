@@ -215,7 +215,7 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 			helper.LoadQueryString(querystring);
 
 			Assert.AreEqual("WITH RESULTS AS " +
-							"(SELECT *, Course.Name AS [CourseName], " +
+							"(SELECT Enrollment.*, Course.Name AS [CourseName], " +
 							"Student.Name AS [StudentName], " +
 							"ROW_NUMBER() OVER " +
 							"(ORDER BY Id ASC) AS RowNum " +

@@ -235,7 +235,7 @@ namespace K9.WebApplication.Helpers
 
 		private List<IDataTableColumnInfo> GetDataBoundColumnInfos()
 		{
-			return ColumnInfos.Where(c => typeof(T).GetProperties().Where(p => p.IsDataBound()).Select(p => p.Name).Contains(c.Data)).ToList();
+			return ColumnInfos.Where(c => typeof(T).GetProperties().Where(p => p.CanWrite).Select(p => p.Name).Contains(c.Data)).ToList();
 		}
 
 		private List<IDataTableColumnInfo> GetDataBoundColumnInfosNotIgnored()

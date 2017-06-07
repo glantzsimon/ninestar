@@ -67,15 +67,6 @@ namespace K9.DataAccess.Models
 			[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FirstNameLabel)]
 			public string FirstName { get; set; }
 
-			[NotMapped]
-			public string FullName
-			{
-				get
-				{
-					return string.Format("{0} {1}", FirstName, LastName);
-				}
-			}
-
 			[DataType(DataType.Text)]
 			[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LastNameLabel)]
 			public string LastName { get; set; }
@@ -92,6 +83,11 @@ namespace K9.DataAccess.Models
 			[DataType(DataType.Date)]
 			[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BirthDateLabel)]
 			public DateTime BirthDate { get; set; }
+
+			public string GetFullName()
+			{
+				return string.Format("{0} {1}", FirstName, LastName);
+			}
 		}
 
 		public class PasswordResetRequestModel

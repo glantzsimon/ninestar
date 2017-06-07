@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net.Configuration;
 using System.Reflection;
 using System.Security.Principal;
+using Microsoft.Ajax.Utilities;
 
 namespace K9.SharedLibrary.Extensions
 {
@@ -47,6 +48,24 @@ namespace K9.SharedLibrary.Extensions
 		public static List<PropertyInfo> GetPropertiesWithAttribute(this Object item, Type attributeType)
 		{
 			return (from prop in item.GetType().GetProperties() let attributes = prop.GetCustomAttributes(attributeType, true) where attributes.Any() select prop).ToList();
+		}
+
+		public static Dictionary<T, PropertyInfo> GetPropertiesAndAttributesWithAttribute<T>(this Object item) where T : Attribute
+		{
+			var dictionary = new Dictionary<T, PropertyInfo>();
+			item.GetType().GetProperties().Select(p =>
+			{
+				var a = p.GetCustomAttributes(typeof(T), true).FirstOrDefault() as T;
+				return new
+				{
+					Property = p,
+					Attribute = a
+				};
+			}).Where(x => x.Attribute != null).ForEach(_ => 
+			{
+				dictionary.Add(_.Attribute, _.Property);
+			});
+			return dictionary;
 		}
 
 		/// <summary>
@@ -143,6 +162,11 @@ namespace K9.SharedLibrary.Extensions
 		public static bool IsDataBound(this PropertyInfo info)
 		{
 			return !info.GetCustomAttributes(typeof(NotMappedAttribute), false).Any() && info.CanWrite;
+		}
+
+		public static Type GetLinkedPropertyType(this Type type, string propertyName)
+		{
+			return type.GetProperty(propertyName).PropertyType;
 		}
 
 	}

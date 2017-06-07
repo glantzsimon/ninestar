@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -69,7 +70,7 @@ namespace K9.WebApplication.Helpers
 								 GetSelectColumns(selectAllColumns),
 								 OrderByColumnName,
 								 OrderByDirection,
-								 typeof(T).Name,
+								 GetFrom(),
 								 GetWhereClause(),
 								 Start,
 								 PageEnd);
@@ -138,30 +139,6 @@ namespace K9.WebApplication.Helpers
 			get { return _orderByDirection; }
 		}
 
-		private List<IDataTableColumnInfo> GetDataBoundColumnInfos()
-		{
-			return ColumnInfos.Where(c => typeof(T).GetProperties().Where(p => p.IsDataBound()).Select(p => p.Name).Contains(c.Data)).ToList();
-		}
-
-		private List<IDataTableColumnInfo> GetDataBoundColumnInfosNotIgnored()
-		{
-			return GetDataBoundColumnInfos().Where(c => !_columnsConfig.ColumnsToIgnore.Contains(c.Name)).ToList();
-		}
-
-		private string GetSelectColumns(bool selectAllColumns = false)
-		{
-			if (selectAllColumns)
-				return "*";
-
-			var sb = new StringBuilder();
-			foreach (var columnInfo in GetDataBoundColumnInfosNotIgnored())
-			{
-				sb.Append(sb.Length == 0 ? "" : ", ");
-				sb.Append(columnInfo.Data);
-			}
-			return sb.ToString();
-		}
-
 		public string GetWhereClause()
 		{
 			var sb = new StringBuilder();
@@ -192,6 +169,50 @@ namespace K9.WebApplication.Helpers
 			}
 
 			return sb.ToString();
+		}
+
+		private string GetFrom()
+		{
+			var foreignKeyColumns = GetForeignKeyColumns();
+			return foreignKeyColumns.Any()
+				? GetFromWithJoins()
+				: typeof(T).Name;
+		}
+
+		private string GetFromWithJoins()
+		{
+			var sb = new StringBuilder();
+			var parentType = typeof(T);
+			var parentName = parentType.Name;
+			sb.Append(parentName);
+
+			foreach (var item in GetForeignKeyColumns())
+			{
+				var linkedTableName = parentType.GetLinkedPropertyType(item.Key.Name).Name;
+				sb.AppendFormat(" JOIN {0} ON {0}.Id = {1}.{2}", linkedTableName, parentName, item.Value.Name);
+			}
+
+			return sb.ToString();
+		}
+
+		private Dictionary<ForeignKeyAttribute, PropertyInfo> _foreignKeyColumnDictionary;
+		private Dictionary<ForeignKeyAttribute, PropertyInfo> GetForeignKeyColumns()
+		{
+			if (_foreignKeyColumnDictionary == null)
+			{
+				_foreignKeyColumnDictionary = typeof (T).GetPropertiesAndAttributesWithAttribute<ForeignKeyAttribute>();
+			}
+			return _foreignKeyColumnDictionary;
+		}
+
+		private List<IDataTableColumnInfo> GetDataBoundColumnInfos()
+		{
+			return ColumnInfos.Where(c => typeof(T).GetProperties().Where(p => p.IsDataBound()).Select(p => p.Name).Contains(c.Data)).ToList();
+		}
+
+		private List<IDataTableColumnInfo> GetDataBoundColumnInfosNotIgnored()
+		{
+			return GetDataBoundColumnInfos().Where(c => !_columnsConfig.ColumnsToIgnore.Contains(c.Name)).ToList();
 		}
 
 		/// <summary>

@@ -32,6 +32,7 @@ namespace K9.WebApplication
 			builder.RegisterType<ColumnsConfig>().As<IColumnsConfig>().SingleInstance();
 			builder.RegisterType<DataSetsHelper>().As<IDataSetsHelper>().InstancePerHttpRequest();
 			builder.RegisterType<DataSets.DataSets>().As<IDataSets>().SingleInstance();
+			
 
 			var container = builder.Build();
 			DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

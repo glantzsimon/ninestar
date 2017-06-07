@@ -151,7 +151,7 @@
     <value>Prénom</value>
   </data>
   <data name="FriendlyErrorMessage" xml:space="preserve">
-    <value>Une erreur s'est produite. S'il vous plaît réessayer plus tard.</value>
+    <value>Une erreur s'est produite. Veuillez réessayer plus tard.</value>
   </data>
   <data name="InvalidEmailAddress" xml:space="preserve">
     <value>Veuillez entrer une adresse email valide.</value>

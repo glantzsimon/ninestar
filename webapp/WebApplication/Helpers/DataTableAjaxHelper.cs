@@ -61,7 +61,7 @@ namespace K9.WebApplication.Helpers
 		public string GetQuery(bool selectAllColumns = false)
 		{
 			return string.Format("WITH RESULTS AS " +
-								 "(SELECT {0}, ROW_NUMBER() OVER " +
+								 "(SELECT {7}.{0}, ROW_NUMBER() OVER " +
 								 "(ORDER BY {1} {2}) AS RowNum " +
 								 "FROM {3} " +
 								 "{4}) " +
@@ -73,7 +73,8 @@ namespace K9.WebApplication.Helpers
 								 GetFrom(),
 								 GetWhereClause(),
 								 Start,
-								 PageEnd);
+								 PageEnd,
+								 typeof(T).Name);
 		}
 
 		public int Draw
@@ -124,7 +125,7 @@ namespace K9.WebApplication.Helpers
 			{
 				try
 				{
-					return ColumnInfos[_orderByColumnIndex].Data;
+					return ColumnInfos.Any() ? ColumnInfos[_orderByColumnIndex].Data : string.Empty;
 				}
 				catch (Exception ex)
 				{
@@ -228,7 +229,7 @@ namespace K9.WebApplication.Helpers
 		{
 			if (_foreignKeyColumnDictionary == null)
 			{
-				_foreignKeyColumnDictionary = typeof (T).GetPropertiesAndAttributesWithAttribute<ForeignKeyAttribute>();
+				_foreignKeyColumnDictionary = typeof(T).GetPropertiesAndAttributesWithAttribute<ForeignKeyAttribute>();
 			}
 			return _foreignKeyColumnDictionary;
 		}
@@ -254,7 +255,7 @@ namespace K9.WebApplication.Helpers
 
 		private string GetValueFromQueryString(string key)
 		{
-			return _queryString[key];
+			return _queryString[key] ?? string.Empty;
 		}
 
 		private int GetIntegerValueFromQueryString(string key)

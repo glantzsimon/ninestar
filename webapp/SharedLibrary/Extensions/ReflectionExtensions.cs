@@ -50,10 +50,10 @@ namespace K9.SharedLibrary.Extensions
 			return (from prop in item.GetType().GetProperties() let attributes = prop.GetCustomAttributes(attributeType, true) where attributes.Any() select prop).ToList();
 		}
 
-		public static Dictionary<T, PropertyInfo> GetPropertiesAndAttributesWithAttribute<T>(this Object item) where T : Attribute
+		public static Dictionary<T, PropertyInfo> GetPropertiesAndAttributesWithAttribute<T>(this IEnumerable<PropertyInfo> propertyInfos) where T : Attribute
 		{
 			var dictionary = new Dictionary<T, PropertyInfo>();
-			item.GetType().GetProperties().Select(p =>
+			propertyInfos.Select(p =>
 			{
 				var a = p.GetCustomAttributes(typeof(T), true).FirstOrDefault() as T;
 				return new
@@ -61,11 +61,22 @@ namespace K9.SharedLibrary.Extensions
 					Property = p,
 					Attribute = a
 				};
-			}).Where(x => x.Attribute != null).ForEach(_ => 
+			}).Where(x => x.Attribute != null)
+			.ForEach(_ =>
 			{
 				dictionary.Add(_.Attribute, _.Property);
 			});
 			return dictionary;
+		}
+
+		public static Dictionary<T, PropertyInfo> GetPropertiesAndAttributesWithAttribute<T>(this Type type) where T : Attribute
+		{
+			return type.GetProperties().GetPropertiesAndAttributesWithAttribute<T>();
+		}
+
+		public static Dictionary<T, PropertyInfo> GetPropertiesAndAttributesWithAttribute<T>(this Object item) where T : Attribute
+		{
+			return item.GetType().GetProperties().GetPropertiesAndAttributesWithAttribute<T>();
 		}
 
 		/// <summary>

@@ -1,18 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using K9.DataAccess.Models;
+using K9.SharedLibrary.Extensions;
 using K9.WebApplication.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using NLog;
 
-namespace K9.WebApplication.Tests.Unit
+namespace K9.WebApplication.Tests.Unit.Helpers
 {
 	[TestClass]
 	public class DataTableAjaxHelperTests
 	{
-		
+
 		[TestMethod]
 		public void ShouldMap_DataTableQueryString_ToDataTableAjaxOptions()
 		{
@@ -98,10 +100,10 @@ namespace K9.WebApplication.Tests.Unit
 			Assert.AreEqual("WITH RESULTS AS " +
 							"(SELECT TwoLetterCountryCode, ThreeLetterCountryCode, ROW_NUMBER() OVER " +
 							"(ORDER BY ThreeLetterCountryCode DESC) AS RowNum " +
-			                "FROM Country " +
-			                "WHERE TwoLetterCountryCode LIKE '%[gb]%' " +
-			                "OR ThreeLetterCountryCode LIKE '%gb%') " +
-			                "SELECT * FROM RESULTS " +
+							"FROM Country " +
+							"WHERE TwoLetterCountryCode LIKE '%[gb]%' " +
+							"OR ThreeLetterCountryCode LIKE '%gb%') " +
+							"SELECT * FROM RESULTS " +
 							"WHERE RowNum BETWEEN 40 AND 60", helper.GetQuery());
 		}
 
@@ -172,6 +174,56 @@ namespace K9.WebApplication.Tests.Unit
 			Assert.AreEqual(enrollmentsName, propertyInfo.Name);
 			Assert.IsTrue(propertyInfo.GetGetMethod().IsVirtual);
 			Assert.IsTrue(propertyInfo.PropertyType.IsGenericType && propertyInfo.PropertyType.GetGenericTypeDefinition() == typeof(ICollection<>));
+		}
+
+		[TestMethod]
+		public void GetAllProperties_IncludingInherited_FromModel()
+		{
+			var columnsConfig = new ColumnsConfig();
+			var columns = typeof(Enrollment).GetProperties()
+						.Where(p => !p.IsVirtual() && !columnsConfig.ColumnsToIgnore.Contains(p.Name))
+						.ToList();
+
+			Assert.IsTrue(columns.Select(c => c.Name).Contains("StudentId"));
+		}
+
+		[TestMethod]
+		public void GetPropertiesAndAttributesWithAttribute_ShouldReturnAllForeignKeyAttributes_AndProperties()
+		{
+			var dictionary = typeof(Enrollment).GetPropertiesAndAttributesWithAttribute<ForeignKeyAttribute>();
+
+			Assert.AreEqual(2, dictionary.Count);
+		}
+
+		[TestMethod]
+		public void GetQuery_ShouldReturnSQL_IncludingLinkedTables()
+		{
+			var querystring = new NameValueCollection
+			{
+				{"draw", "1"},
+				{"start", "0"},
+				{"length", "10"},
+				{"search[value]", ""},
+				{"search[regex]", "false"},
+				{"order[0][column]", "0"},
+				{"order[0][dir]", "asc"},
+				{"columns[0][data]", "Id"},
+				{"columns[0][name]", "Id"}
+			};
+
+			var helper = new DataTableAjaxHelper<Enrollment>(new Mock<ILogger>().Object, new ColumnsConfig());
+			helper.LoadQueryString(querystring);
+
+			Assert.AreEqual("WITH RESULTS AS " +
+							"(SELECT *, Course.Name AS [CourseName], " +
+							"Student.Name AS [StudentName], " +
+							"ROW_NUMBER() OVER " +
+							"(ORDER BY Id ASC) AS RowNum " +
+							"FROM Enrollment ) " +
+							"SELECT * FROM RESULTS " +
+							"JOIN Course ON Course.Id = Enrollment.CourseId " +
+							"JOIN Student ON Student.Id = Enrollment.StudentId " +
+							"WHERE RowNum BETWEEN 0 AND 10", helper.GetQuery(true));
 		}
 
 	}

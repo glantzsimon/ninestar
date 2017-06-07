@@ -171,6 +171,34 @@ namespace K9.WebApplication.Helpers
 			return sb.ToString();
 		}
 
+		private string GetSelectColumns(bool selectAllColumns = false)
+		{
+			var sb = new StringBuilder();
+			var parentType = typeof(T);
+
+			if (selectAllColumns)
+			{
+				sb.Append("*");
+			}
+			else
+			{
+				foreach (var columnInfo in GetDataBoundColumnInfosNotIgnored())
+				{
+					sb.Append(sb.Length == 0 ? "" : ", ");
+					sb.Append(columnInfo.Data);
+				}
+			}
+
+			foreach (var item in GetForeignKeyColumns())
+			{
+				var linkedTableName = parentType.GetLinkedPropertyType(item.Key.Name).Name;
+				sb.Append(", ");
+				sb.AppendFormat(" {0}.Name AS [{0}Name]", linkedTableName);
+			}
+
+			return sb.ToString();
+		}
+
 		private string GetFrom()
 		{
 			var foreignKeyColumns = GetForeignKeyColumns();
@@ -346,8 +374,6 @@ namespace K9.WebApplication.Helpers
 		public string Renderer { get; set; }
 
 		public bool IsVisible { get; set; }
-
-		public bool HasColumnDef { get; set; }
 
 		public void UpdateData(string data)
 		{

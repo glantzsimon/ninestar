@@ -107,7 +107,7 @@ namespace K9.WebApplication.Controllers
 					draw = _ajaxHelper.Draw,
 					recordsTotal,
 					recordsFiltered,
-					data,
+					data
 				}, new JsonSerializerSettings { DateFormatString = Thread.CurrentThread.CurrentUICulture.DateTimeFormat.LongDatePattern });
 				return Content(json, "application/json");
 			}

@@ -65,7 +65,7 @@ namespace K9.WebApplication.Options
 			if (_columnInfos == null)
 			{
 				var columns =
-					typeof(T).GetProperties(BindingFlags.FlattenHierarchy | BindingFlags.Public | BindingFlags.Instance)
+					typeof(T).GetProperties()
 						.Where(p => !p.IsVirtual() && !ColumnsConfig.ColumnsToIgnore.Contains(p.Name))
 						.ToList();
 				_columnInfos = new HashSet<PropertyInfo>();
@@ -86,11 +86,13 @@ namespace K9.WebApplication.Options
 
 		public MvcHtmlString GetColumnDefsJson()
 		{
+			var foreignKeyColumns = GetForeignKeyColumns();
 			return MvcHtmlString.Create(new JavaScriptSerializer().Serialize(
-				GetColumnInfos().Where(c => c.HasColumnDef).Select(c => new
+				GetColumnInfos().Select(c => new
 				{
 					targets = new[] { c.Index },
-					visible = c.IsVisible
+					visible = c.IsVisible,
+					linkedTableName = foreignKeyColumns.Where(x => x.Value.Name == c.Data).Select(x => x.Value.Name)
 				})));
 		}
 
@@ -101,14 +103,12 @@ namespace K9.WebApplication.Options
 
 		public List<DataTableColumnInfo> GetColumnInfos()
 		{
-			var keyColumnNames = GetKeyColumns().Select(k => k.Name).ToList();
 			var columnsInfos = GetColumns().Select((c, index) =>
 			{
 				var info = new DataTableColumnInfo(index)
 				{
 					IsDatabound = c.IsDataBound(),
-					IsVisible = !keyColumnNames.Contains(c.Name),
-					HasColumnDef = keyColumnNames.Contains(c.Name)
+					IsVisible = c.Name != "Id"
 				};
 				info.UpdateData(c.Name);
 				info.UpdateName(c.GetDisplayName());
@@ -133,9 +133,9 @@ namespace K9.WebApplication.Options
 			return routeValues != null && routeValues.Any() ? "&" : "?";
 		}
 
-		private List<PropertyInfo> GetKeyColumns()
+		private Dictionary<ForeignKeyAttribute, PropertyInfo> GetForeignKeyColumns()
 		{
-			return GetColumns().GetPropertiesWithAttributes(typeof(KeyAttribute), typeof(ForeignKeyAttribute));
+			return GetColumns().GetPropertiesAndAttributesWithAttribute<ForeignKeyAttribute>();
 		}
 
 	}

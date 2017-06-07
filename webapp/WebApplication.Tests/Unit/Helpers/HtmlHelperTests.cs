@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HtmlHelper = K9.SharedLibrary.Helpers.HtmlHelper;
 
-namespace K9.WebApplication.Tests.Unit
+namespace K9.WebApplication.Tests.Unit.Helpers
 {
 	[TestClass]
 	public class HtmlHelperTests

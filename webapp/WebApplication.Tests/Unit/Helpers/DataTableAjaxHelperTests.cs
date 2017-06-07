@@ -219,10 +219,9 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 							"Student.Name AS [StudentName], " +
 							"ROW_NUMBER() OVER " +
 							"(ORDER BY Id ASC) AS RowNum " +
-							"FROM Enrollment ) " +
+							"FROM Enrollment " +
+							"JOIN Course ON Course.Id = Enrollment.CourseId JOIN Student ON Student.Id = Enrollment.StudentId ) " +
 							"SELECT * FROM RESULTS " +
-							"JOIN Course ON Course.Id = Enrollment.CourseId " +
-							"JOIN Student ON Student.Id = Enrollment.StudentId " +
 							"WHERE RowNum BETWEEN 0 AND 10", helper.GetQuery(true));
 		}
 

@@ -193,7 +193,7 @@ namespace K9.WebApplication.Helpers
 			{
 				var linkedTableName = parentType.GetLinkedPropertyType(item.Key.Name).Name;
 				sb.Append(", ");
-				sb.AppendFormat(" {0}.Name AS [{0}Name]", linkedTableName);
+				sb.AppendFormat("{0}.Name AS [{0}Name]", linkedTableName);
 			}
 
 			return sb.ToString();

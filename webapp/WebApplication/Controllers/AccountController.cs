@@ -404,7 +404,7 @@ namespace K9.WebApplication.Controllers
 				From = Dictionary.ClientServices
 			});
 
-			Mailer.SendEmail(Dictionary.AccountActivationTitle, emailContent, model.EmailAddress, model.FullName);
+			Mailer.SendEmail(Dictionary.AccountActivationTitle, emailContent, model.EmailAddress, model.GetFullName());
 		}
 
 		#endregion

@@ -27,10 +27,10 @@ namespace K9.DataAccess.Models
 		public virtual Course Course { get; set; }
 		public virtual Student Student { get; set; }
 
-		[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+		[NotMapped]
 		public string StudentName { get; set; }
 
-		[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+		[NotMapped]
 		public string CourseName { get; set; }
 	}
 }

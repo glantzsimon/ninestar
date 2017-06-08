@@ -12,7 +12,7 @@ namespace K9.DataAccess.Extensions
 
 		public static List<T> GetQuery<T>(this DbContext context, string sql) where T : class
 		{
-			return Dapper.SqlMapper.Query<T>(context.Database.Connection, sql).ToList();
+			return context.Database.SqlQuery<T>(sql).ToList();
 		}
 
 		public static List<T> List<T>(this DbContext context) where T : class, IObjectBase

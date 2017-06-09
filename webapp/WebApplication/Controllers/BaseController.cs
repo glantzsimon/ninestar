@@ -86,7 +86,7 @@ namespace K9.WebApplication.Controllers
 				return HttpNotFound();
 			}
 			var type = typeof(T);
-			ViewBag.Title = string.Format(Dictionary.DetailsText, type.GetName(), type.GetOfPreposition());
+			ViewBag.Title = string.Format(Dictionary.DetailsText, type.GetName(), type.GetOfPreposition().ToLower());
 			return View(item);
 		}
 

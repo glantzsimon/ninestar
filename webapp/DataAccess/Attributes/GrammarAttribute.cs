@@ -1,4 +1,5 @@
 ﻿using System;
+using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
 
 namespace K9.DataAccess.Attributes
@@ -12,17 +13,17 @@ namespace K9.DataAccess.Attributes
 
 		public string GetIndefiniteArticle()
 		{
-			return ResourceType.GetValueFromResource(IndefiniteArticleName);
+			return string.IsNullOrEmpty(IndefiniteArticleName) ? Dictionary.MasculineIndefiniteArticle : ResourceType.GetValueFromResource(IndefiniteArticleName);
 		}
 
 		public string GetDefiniteArticle()
 		{
-			return ResourceType.GetValueFromResource(DefiniteArticleName);
+			return string.IsNullOrEmpty(DefiniteArticleName) ? Dictionary.MasculineDefiniteArticle : ResourceType.GetValueFromResource(DefiniteArticleName);
 		}
 
 		public string GetOfPreposition()
 		{
-			return ResourceType.GetValueFromResource(OfPrepositionName);
+			return string.IsNullOrEmpty(OfPrepositionName) ? Dictionary.OfPreposition : ResourceType.GetValueFromResource(OfPrepositionName);
 		}
 	}
 }

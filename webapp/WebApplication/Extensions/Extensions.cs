@@ -32,38 +32,38 @@ namespace K9.WebApplication.Extensions
 
 		public static string GetDefiniteArticle(this Type type)
 		{
-			var articlesAttribute = type.GetCustomAttributes(typeof(GrammarAttribute), true).FirstOrDefault() as GrammarAttribute;
-			return articlesAttribute == null ? typeof(Dictionary).GetValueFromResource(Strings.Grammar.MasculineDefiniteArticle) : articlesAttribute.GetDefiniteArticle();
+			var attribute = type.GetCustomAttributes(typeof(GrammarAttribute), true).FirstOrDefault() as GrammarAttribute;
+			return attribute == null ? typeof(Dictionary).GetValueFromResource(Strings.Grammar.MasculineDefiniteArticle) : attribute.GetDefiniteArticle();
 		}
 
 		public static string GetIndefiniteArticle(this Type type)
 		{
-			var articlesAttribute = type.GetCustomAttributes(typeof(GrammarAttribute), true).FirstOrDefault() as GrammarAttribute;
-			return articlesAttribute == null ? typeof(Dictionary).GetValueFromResource(Strings.Grammar.MasculineDefiniteArticle) : articlesAttribute.GetIndefiniteArticle();
+			var attribute = type.GetCustomAttributes(typeof(GrammarAttribute), true).FirstOrDefault() as GrammarAttribute;
+			return attribute == null ? typeof(Dictionary).GetValueFromResource(Strings.Grammar.MasculineDefiniteArticle) : attribute.GetIndefiniteArticle();
 		}
 
 		public static string GetDefiniteArticle(this PropertyInfo info)
 		{
-			var articlesAttribute = info.GetCustomAttributes(typeof(GrammarAttribute), true).FirstOrDefault() as GrammarAttribute;
-			return articlesAttribute == null ? typeof(Dictionary).GetValueFromResource(Strings.Grammar.MasculineDefiniteArticle) : articlesAttribute.GetDefiniteArticle();
+			var attribute = info.GetCustomAttributes(typeof(GrammarAttribute), true).FirstOrDefault() as GrammarAttribute;
+			return attribute == null ? typeof(Dictionary).GetValueFromResource(Strings.Grammar.MasculineDefiniteArticle) : attribute.GetDefiniteArticle();
 		}
 
 		public static string GetIndefiniteArticle(this PropertyInfo info)
 		{
-			var articlesAttribute = info.GetCustomAttributes(typeof(GrammarAttribute), true).First() as GrammarAttribute;
-			return articlesAttribute == null ? typeof(Dictionary).GetValueFromResource(Strings.Grammar.MasculineDefiniteArticle) : articlesAttribute.GetIndefiniteArticle();
+			var attribute = info.GetCustomAttributes(typeof(GrammarAttribute), true).FirstOrDefault() as GrammarAttribute;
+			return attribute == null ? typeof(Dictionary).GetValueFromResource(Strings.Grammar.MasculineDefiniteArticle) : attribute.GetIndefiniteArticle();
 		}
 
 		public static string GetOfPreposition(this PropertyInfo info)
 		{
-			var articlesAttribute = info.GetCustomAttributes(typeof(GrammarAttribute), true).First() as GrammarAttribute;
-			return articlesAttribute == null ? typeof(Dictionary).GetValueFromResource(Strings.Grammar.OfPreposition) : articlesAttribute.GetOfPreposition();
+			var attribute = info.GetCustomAttributes(typeof(GrammarAttribute), true).FirstOrDefault() as GrammarAttribute;
+			return attribute == null ? typeof(Dictionary).GetValueFromResource(Strings.Grammar.OfPreposition) : attribute.GetOfPreposition();
 		}
 
 		public static string GetOfPreposition(this Type type)
 		{
-			var articlesAttribute = type.GetCustomAttributes(typeof(GrammarAttribute), true).First() as GrammarAttribute;
-			return articlesAttribute == null ? typeof(Dictionary).GetValueFromResource(Strings.Grammar.OfPreposition) : articlesAttribute.GetOfPreposition();
+			var attribute = type.GetCustomAttributes(typeof(GrammarAttribute), true).FirstOrDefault() as GrammarAttribute;
+			return attribute == null ? typeof(Dictionary).GetValueFromResource(Strings.Grammar.OfPreposition) : attribute.GetOfPreposition();
 		}
 
 		public static string GetName(this Type type)

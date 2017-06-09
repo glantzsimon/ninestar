@@ -22,7 +22,7 @@ namespace K9.DataAccess.Attributes
 
 		public string GetListName()
 		{
-			return string.IsNullOrEmpty(PluralName) ? String.Format("{0}s", Name) : ListName;
+			return string.IsNullOrEmpty(ListName) ? String.Format("{0}s", Name) : ListName;
 		}
 	}
 }

@@ -3,5 +3,6 @@ obj
 *.tmp
 *.user
 *.dll
+*.suo
 packages
 logs

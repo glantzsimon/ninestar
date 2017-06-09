@@ -26,11 +26,6 @@ namespace K9.DataAccess.Models
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NameLabel)]
 		public string Name { get; set; }
 
-		public string ForeignKeyName
-		{
-			get { return string.Format("{0}Id", GetType().Name); }
-		}
-
 		#endregion
 
 
@@ -55,6 +50,11 @@ namespace K9.DataAccess.Models
 
 		#region Methods
 
+		public string GetForeignKeyName()
+		{
+			return string.Format("{0}Id", GetType().Name);
+		}
+
 		public void UpdateAuditFields()
 		{
 			var loggedinUser = "";
@@ -78,7 +78,7 @@ namespace K9.DataAccess.Models
 
 		public RouteValueDictionary GetForeignKeyFilterRouteValues()
 		{
-			return new StatelessFilter(ForeignKeyName, Id).GetFilterRouteValues();
+			return new StatelessFilter(GetForeignKeyName(), Id).GetFilterRouteValues();
 		}
 
 		public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
@@ -92,7 +92,7 @@ namespace K9.DataAccess.Models
 
 		private void UpdateNameField()
 		{
-			if (GetType().HasAttribute(typeof (AutoGenerateNameAttribute)))
+			if (GetType().HasAttribute(typeof(AutoGenerateNameAttribute)))
 			{
 				Name = Guid.NewGuid().ToString();
 			}

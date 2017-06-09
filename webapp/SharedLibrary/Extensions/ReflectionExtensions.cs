@@ -147,7 +147,8 @@ namespace K9.SharedLibrary.Extensions
 
 		public static bool IsVirtual(this PropertyInfo info)
 		{
-			return info.GetGetMethod().IsVirtual;
+			var methodInfo = info.GetGetMethod();
+			return methodInfo.IsVirtual && !methodInfo.IsFinal;
 		}
 
 		public static int GetStringLength(this PropertyInfo info)

@@ -162,7 +162,7 @@ namespace K9.WebApplication.Helpers
 				}
 			}
 
-			if (StatelessFilter != null && !string.IsNullOrEmpty(StatelessFilter.Key))
+			if (StatelessFilter != null && StatelessFilter.IsSet())
 			{
 				sb.Append(sb.Length == 0 ? "WHERE " : " AND ");
 				sb.AppendFormat("{0} = {1}", StatelessFilter.Key, StatelessFilter.Id);

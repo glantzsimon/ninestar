@@ -1,6 +1,4 @@
-﻿
-
-using System.Web.Routing;
+﻿using System.Web.Routing;
 
 namespace K9.SharedLibrary.Models
 {
@@ -15,9 +13,14 @@ namespace K9.SharedLibrary.Models
 			Id = id;
 		}
 
+		public bool IsSet()
+		{
+			return !string.IsNullOrEmpty(Key) && Id > 0;
+		}
+
 		public RouteValueDictionary GetFilterRouteValues()
 		{
-			if (!string.IsNullOrEmpty(Key))
+			if (IsSet())
 			{
 				return new RouteValueDictionary
 				{

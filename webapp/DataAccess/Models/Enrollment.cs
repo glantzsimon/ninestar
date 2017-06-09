@@ -1,6 +1,7 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using K9.DataAccess.Attributes;
 
 namespace K9.DataAccess.Models
 {
@@ -10,6 +11,7 @@ namespace K9.DataAccess.Models
 		A, B, C, D, F
 	}
 
+	[AutoGenerateName]
 	public class Enrollment : ObjectBase
 	{
 		[ForeignKey("Course")]

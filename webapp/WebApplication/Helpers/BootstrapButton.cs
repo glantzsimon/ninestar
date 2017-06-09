@@ -46,9 +46,9 @@ namespace K9.WebApplication.Helpers
 			return MvcHtmlString.Create(string.Format("<a class=\"btn btn-info\" href=\"{0}\"><i class='fa fa-link'></i> {1}</a>", html.GeturlHeler().Action(actionName, controllerName, null), linkText));
 		}
 
-		public static MvcHtmlString BootstrapCreateNewButton(this HtmlHelper html, RouteValueDictionary routeValues)
+		public static MvcHtmlString BootstrapCreateNewButton(this HtmlHelper html)
 		{
-			return html.ActionLink(string.Format("{0}", Dictionary.CreateNew), "Create", routeValues, new { @class = Bootstrap.Classes.PrimaryButton });
+			return MvcHtmlString.Create(string.Format("<a class=\"btn btn-primary\" href=\"{0}\"><i class='fa fa-plus-circle'></i> {1}</a>", html.GeturlHeler().Action("Create", html.GetStatelessFilter().GetFilterRouteValues()), Dictionary.CreateNew));
 		}
 
 		public static MvcHtmlString BootstrapButton(this HtmlHelper html, string value, EButtonType buttonType = EButtonType.Submit)

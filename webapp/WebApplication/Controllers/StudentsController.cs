@@ -8,8 +8,8 @@ namespace K9.WebApplication.Controllers
 {
 	public class StudentsController : BaseController<Student>
 	{
-		public StudentsController(IRepository<Student> repository, ILogger logger, IDataTableAjaxHelper<Student> ajaxHelper, IDataSetsHelper dropdownDataSets)
-			: base(repository, logger, ajaxHelper, dropdownDataSets)
+		public StudentsController(IRepository<Student> repository, ILogger logger, IDataTableAjaxHelper<Student> ajaxHelper, IDataSetsHelper dataSetsHelper)
+			: base(repository, logger, ajaxHelper, dataSetsHelper)
 		{
 		}
 	}

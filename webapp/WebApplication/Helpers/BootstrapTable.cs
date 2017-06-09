@@ -44,7 +44,7 @@ namespace K9.WebApplication.Helpers
 			{
 				var createDiv = new TagBuilder(Tags.Div);
 				createDiv.MergeAttribute(Attributes.Class, "button-container");
-				createDiv.InnerHtml = html.BootstrapCreateNewButton(options.GetFilterRouteValues()).ToString();
+				createDiv.InnerHtml = html.BootstrapCreateNewButton().ToString();
 				sb.Append(createDiv);
 			}
 

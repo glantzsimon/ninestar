@@ -9,8 +9,8 @@ namespace K9.WebApplication.Controllers
 	public class EnrollmentsController : BaseController<Enrollment>
 	{
 
-		public EnrollmentsController(IRepository<Enrollment> repository, ILogger logger, IDataTableAjaxHelper<Enrollment> ajaxHelper, IDataSetsHelper dropdownDataSets)
-			: base(repository, logger, ajaxHelper, dropdownDataSets)
+		public EnrollmentsController(IRepository<Enrollment> repository, ILogger logger, IDataTableAjaxHelper<Enrollment> ajaxHelper, IDataSetsHelper dataSetsHelper)
+			: base(repository, logger, ajaxHelper, dataSetsHelper)
 		{
 		}
 

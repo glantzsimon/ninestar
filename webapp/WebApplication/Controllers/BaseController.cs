@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Web.Mvc;
+using K9.Globalisation;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
@@ -20,7 +21,7 @@ namespace K9.WebApplication.Controllers
 		private readonly IRepository<T> _repository;
 		private readonly ILogger _logger;
 		private readonly IDataTableAjaxHelper<T> _ajaxHelper;
-		private readonly IDataSetsHelper _dropdownDataSets;
+		private readonly IDataSetsHelper _dataSetsHelper;
 
 		#endregion
 
@@ -34,7 +35,7 @@ namespace K9.WebApplication.Controllers
 
 		public IDataSetsHelper DropdownDataSets
 		{
-			get { return _dropdownDataSets; }
+			get { return _dataSetsHelper; }
 		}
 
 		#endregion
@@ -56,12 +57,12 @@ namespace K9.WebApplication.Controllers
 
 		#region Constructors
 
-		protected BaseController(IRepository<T> repository, ILogger logger, IDataTableAjaxHelper<T> ajaxHelper, IDataSetsHelper dropdownDataSets)
+		protected BaseController(IRepository<T> repository, ILogger logger, IDataTableAjaxHelper<T> ajaxHelper, IDataSetsHelper dataSetsHelper)
 		{
 			_repository = repository;
 			_logger = logger;
 			_ajaxHelper = ajaxHelper;
-			_dropdownDataSets = dropdownDataSets;
+			_dataSetsHelper = dataSetsHelper;
 		}
 
 		#endregion
@@ -72,6 +73,7 @@ namespace K9.WebApplication.Controllers
 		[Authorize]
 		public virtual ActionResult Index()
 		{
+			ViewBag.Title = string.Format("{0}{1}", typeof(T).GetPluralName(), GetStatelessFilterTitle());
 			return View("Index");
 		}
 
@@ -127,7 +129,16 @@ namespace K9.WebApplication.Controllers
 		[Authorize(Roles = UserRoles.Administrators)]
 		public virtual ActionResult Create()
 		{
-			return View();
+			var itemToCreate = Activator.CreateInstance<T>();
+			var statelessFilter = this.GetStatelessFilter();
+
+			if (statelessFilter.IsSet())
+			{
+				itemToCreate.SetProperty(statelessFilter.Key, statelessFilter.Id);
+			}
+
+			ViewBag.Title = string.Format("{0} {1}{2}", Dictionary.CreateNew, typeof(T).GetName(), GetStatelessFilterTitle());
+			return View(itemToCreate);
 		}
 
 		[HttpPost]
@@ -149,6 +160,7 @@ namespace K9.WebApplication.Controllers
 				}
 			}
 
+			ViewBag.Title = string.Format("{0} {1}{2}", Dictionary.CreateNew, typeof(T).GetName(), GetStatelessFilterTitle());
 			return View(item);
 		}
 
@@ -160,6 +172,7 @@ namespace K9.WebApplication.Controllers
 			{
 				return HttpNotFound();
 			}
+			ViewBag.Title = string.Format("{0} {1}", Dictionary.Edit, typeof(T).GetName());
 			return View(item);
 		}
 
@@ -182,6 +195,7 @@ namespace K9.WebApplication.Controllers
 				}
 			}
 
+			ViewBag.Title = string.Format("{0} {1}", Dictionary.Edit, typeof(T).GetName());
 			return View(item);
 		}
 
@@ -193,6 +207,7 @@ namespace K9.WebApplication.Controllers
 			{
 				return HttpNotFound();
 			}
+			ViewBag.Title = string.Format("{0} {1}", Dictionary.Delete, typeof(T).GetName());
 			return View(item);
 		}
 
@@ -222,10 +237,28 @@ namespace K9.WebApplication.Controllers
 				}
 			}
 
+			ViewBag.Title = string.Format("{0} {1}", Dictionary.Delete, typeof(T).GetName());
 			return View(item);
 		}
 
 		#endregion
+
+
+		#region Helper Methods
+
+		private string GetStatelessFilterTitle()
+		{
+			var statelessFilter = this.GetStatelessFilter();
+			if (statelessFilter.IsSet())
+			{
+				var tableName = typeof(T).GetLinkedForeignTableName(statelessFilter.Key);
+				return string.Format("{0} {1}", Dictionary.For.ToLower(), _repository.GetName(tableName, statelessFilter.Id));
+			}
+			return string.Empty;
+		}
+
+		#endregion
+
 
 	}
 }

@@ -424,4 +424,7 @@
   <data name="DateLongFormat" xml:space="preserve">
     <value>dd MMMM yyyy</value>
   </data>
+  <data name="For" xml:space="preserve">
+    <value>Pour</value>
+  </data>
 </root>

@@ -23,6 +23,11 @@ namespace K9.DataAccess.Respositories
 			return _db.GetCount<T>(whereClause);
 		}
 
+		public string GetName(string tableName, int id)
+		{
+			return _db.GetName(tableName, id);
+		}
+
 		public List<T> GetQuery(string sql)
 		{
 			return _db.GetQuery<T>(sql);

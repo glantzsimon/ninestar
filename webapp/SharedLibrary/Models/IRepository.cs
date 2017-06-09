@@ -10,6 +10,8 @@ namespace K9.SharedLibrary.Models
 
 		int GetCount(string whereClause = "");
 
+		string GetName(string tableName, int id);
+
 		List<T> GetQuery(string sql);
 
 		List<T> List();

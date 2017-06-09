@@ -1,6 +1,4 @@
-﻿
-
-using System.Web.Routing;
+﻿using System.Web.Routing;
 
 namespace K9.SharedLibrary.Models
 {
@@ -8,6 +6,7 @@ namespace K9.SharedLibrary.Models
 	{
 		string Key { get; }
 		int Id { get; }
+		bool IsSet();
 		RouteValueDictionary GetFilterRouteValues();
 	}
 }

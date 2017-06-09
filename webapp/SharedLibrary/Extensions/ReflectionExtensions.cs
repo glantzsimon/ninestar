@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using System.Net.Configuration;
 using System.Reflection;
-using System.Security.Principal;
 using Microsoft.Ajax.Utilities;
 
 namespace K9.SharedLibrary.Extensions
@@ -105,6 +102,11 @@ namespace K9.SharedLibrary.Extensions
 			return obj.GetProperties().Any(p => p.Name == propertyName);
 		}
 
+		public static bool HasAttribute(this Type type, Type attributeType)
+		{
+			return type.GetCustomAttributes(attributeType, true).Any();
+		}
+
 		public static void SetProperty(this object obj, string propertyName, object value)
 		{
 			var propInfo = obj.GetType().GetProperties().FirstOrDefault(p => p.Name == propertyName);
@@ -180,5 +182,19 @@ namespace K9.SharedLibrary.Extensions
 			return type.GetProperty(propertyName).PropertyType;
 		}
 
+		public static string GetLinkedForeignTableName(this Type type, string foreignKeyColumn)
+		{
+			var firstOrDefault = type.GetProperties().FirstOrDefault(p => p.Name == foreignKeyColumn);
+			if (firstOrDefault != null)
+			{
+				var attribute = firstOrDefault.GetCustomAttributes(typeof (ForeignKeyAttribute), true).FirstOrDefault() as ForeignKeyAttribute;
+				if (attribute == null)
+				{
+					throw new Exception(string.Format("No ForeignKey attribute is set on property {0}", foreignKeyColumn));
+				}
+				return attribute.Name;
+			}
+			throw new Exception(string.Format("Invalid property name {0}", foreignKeyColumn));
+		}
 	}
 }

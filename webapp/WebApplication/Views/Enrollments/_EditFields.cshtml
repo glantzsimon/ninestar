@@ -1,5 +1,6 @@
 ﻿@model Enrollment
-@Html.BootstrapEditorFor(model => model.Name)
 @Html.BootstrapEditorFor(model => model.StudentId)
 @Html.BootstrapEditorFor(model => model.CourseId)
 @Html.BootstrapEditorFor(model => model.Grade)
+
+@Html.ValidationSummary()

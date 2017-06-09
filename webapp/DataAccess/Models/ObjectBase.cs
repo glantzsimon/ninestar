@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Web.Routing;
+using K9.DataAccess.Attributes;
 using K9.Globalisation;
 using K9.SharedLibrary.Authentication;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using WebMatrix.WebData;
 
@@ -81,10 +83,22 @@ namespace K9.DataAccess.Models
 
 		public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
 		{
-			UpdateName();
+			UpdateNameField();
 			if (string.IsNullOrEmpty(Name))
 			{
 				yield return new ValidationResult(Dictionary.FieldIsRequired, new[] { "Name" });
+			}
+		}
+
+		private void UpdateNameField()
+		{
+			if (GetType().HasAttribute(typeof (AutoGenerateNameAttribute)))
+			{
+				Name = Guid.NewGuid().ToString();
+			}
+			else
+			{
+				UpdateName();
 			}
 		}
 

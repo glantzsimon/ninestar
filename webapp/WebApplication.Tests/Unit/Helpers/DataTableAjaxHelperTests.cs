@@ -226,6 +226,14 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 							"WHERE RowNum BETWEEN 0 AND 10", helper.GetQuery(true));
 		}
 
+		[TestMethod]
+		public void EnsureNameProperty_IsIncludedInProperties()
+		{
+			var props = typeof (Country).GetProperties();
+
+			Assert.AreEqual(1, props.Count(p => p.Name == "Name"));
+		}
+
 	}
 
 }

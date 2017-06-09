@@ -16,7 +16,8 @@ namespace K9.WebApplication.Options
 {
 	public class DataTableOptions<T> : IDataTableOptions where T : IObjectBase
 	{
-		private HashSet<PropertyInfo> _columnInfos;
+		private HashSet<PropertyInfo> _columns;
+		private HashSet<DataTableColumnInfo> _columnInfos;
 
 		public string Action { get; set; }
 		public string Controller { get; set; }
@@ -62,16 +63,16 @@ namespace K9.WebApplication.Options
 
 		public List<PropertyInfo> GetColumns()
 		{
-			if (_columnInfos == null)
+			if (_columns == null)
 			{
 				var columns =
 					typeof(T).GetProperties()
 						.Where(p => !p.IsVirtual() && !ColumnsConfig.ColumnsToIgnore.Contains(p.Name))
 						.ToList();
-				_columnInfos = new HashSet<PropertyInfo>();
-				_columnInfos.AddRange(columns);
+				_columns = new HashSet<PropertyInfo>();
+				_columns.AddRange(columns);
 			}
-			return _columnInfos.ToList();
+			return _columns.ToList();
 		}
 
 		public MvcHtmlString GetColumnsJson()
@@ -80,7 +81,7 @@ namespace K9.WebApplication.Options
 			{
 				data = c.Data,
 				title = c.Name,
-				orderable = c.IsDatabound
+				orderable = true
 			}).ToArray()));
 		}
 
@@ -101,20 +102,27 @@ namespace K9.WebApplication.Options
 
 		public List<DataTableColumnInfo> GetColumnInfos()
 		{
-			var keyColumns = GetKeyColumns();
-			var columnsInfos = GetColumns().Select((c, index) =>
+			if (_columnInfos == null)
 			{
-				var info = new DataTableColumnInfo(index)
-				{
-					IsDatabound = c.IsDataBound(),
-					IsVisible = !keyColumns.Select(k => k.Name).Contains(c.Name) && (!VisibleColumns.Any() || VisibleColumns.Contains(c.Name))
-				};
-				info.UpdateData(c.Name);
-				info.UpdateName(c.GetDisplayName());
-				return info;
-			}).ToList();
+				_columnInfos = new HashSet<DataTableColumnInfo>();
 
-			return columnsInfos;
+				var keyColumns = GetKeyColumns();
+				var columnsInfos = GetColumns().Select((c, index) =>
+				{
+					var info = new DataTableColumnInfo(index)
+					{
+						IsDatabound = c.IsDataBound(),
+						IsVisible =
+							!keyColumns.Select(k => k.Name).Contains(c.Name) && (!VisibleColumns.Any() || VisibleColumns.Contains(c.Name))
+					};
+					info.UpdateData(c.Name);
+					info.UpdateName(c.GetDisplayName());
+					return info;
+				}).ToList();
+
+				_columnInfos.AddRange(columnsInfos);
+			}
+			return _columnInfos.ToList();
 		}
 
 		public RouteValueDictionary GetFilterRouteValues()

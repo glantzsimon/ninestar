@@ -434,12 +434,12 @@
     <value>L'</value>
   </data>
   <data name="OfPreposition" xml:space="preserve">
-    <value>De</value>
+    <value>De </value>
   </data>
   <data name="OfPrepositionWithApostrophe" xml:space="preserve">
     <value>D'</value>
   </data>
   <data name="DetailsText" xml:space="preserve">
-    <value>Détails {1} {0}</value>
+    <value>Détails {1}{0}</value>
   </data>
 </root>

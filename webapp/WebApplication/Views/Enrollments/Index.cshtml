@@ -1,3 +1,11 @@
 ﻿@model Enrollment
 
-@Html.BootstrapTable()
+@Html.BootstrapTable(new DataTableOptions<Enrollment>
+{
+	 VisibleColumns = new List<string>
+	 {
+		 "Grade",
+		 "StudentName",
+		 "CourseName"
+	 }
+})

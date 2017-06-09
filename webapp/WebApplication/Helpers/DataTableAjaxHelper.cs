@@ -124,7 +124,7 @@ namespace K9.WebApplication.Helpers
 			{
 				try
 				{
-					return ColumnInfos.Any() ? ColumnInfos[_orderByColumnIndex].Data : string.Empty;
+					return GetFullyQualifiedOrderByColumnName();
 				}
 				catch (Exception ex)
 				{
@@ -142,12 +142,18 @@ namespace K9.WebApplication.Helpers
 		public string GetWhereClause()
 		{
 			var sb = new StringBuilder();
+			var parentType = typeof(T);
+			var fkColumns = GetForeignKeyColumns();
+
 			if (!string.IsNullOrEmpty(SearchValue))
 			{
 				foreach (var columnInfo in GetDataBoundColumnInfosNotIgnored())
 				{
+					var linkedTables = fkColumns.Where(c => c.Value.Name == columnInfo.Data).ToList();
+					var tableName = linkedTables.Any() ? parentType.GetLinkedPropertyType(linkedTables.First().Key.Name).Name : parentType.Name;
+
 					sb.Append(sb.Length == 0 ? "WHERE " : " OR ");
-					sb.AppendFormat("{0} LIKE '{1}'", columnInfo.Data, GetLikeSearchValue());
+					sb.AppendFormat("{0}.{1} LIKE '{2}'", tableName, columnInfo.Data, GetLikeSearchValue());
 				}
 			}
 			else
@@ -169,6 +175,23 @@ namespace K9.WebApplication.Helpers
 			}
 
 			return sb.ToString();
+		}
+
+		private string GetFullyQualifiedOrderByColumnName()
+		{
+			if (ColumnInfos.Any())
+			{
+				var columnInfo = ColumnInfos[_orderByColumnIndex];
+				var fkColumns = GetForeignKeyColumns();
+				var parentType = typeof(T);
+				var columnName = columnInfo.Data;
+				var linkedTables = fkColumns.Where(c => c.Value.Name == columnName).ToList();
+				var tableName = linkedTables.Any() ? parentType.GetLinkedPropertyType(linkedTables.First().Key.Name).Name : parentType.Name;
+
+				return string.Format("{0}.{1}", tableName, columnName);
+			}
+
+			return string.Empty;
 		}
 
 		private string GetSelectColumns(bool selectAllColumns = false)
@@ -235,7 +258,7 @@ namespace K9.WebApplication.Helpers
 
 		private List<IDataTableColumnInfo> GetDataBoundColumnInfos()
 		{
-			return ColumnInfos.Where(c => typeof(T).GetProperties(BindingFlags.Public)
+			return ColumnInfos.Where(c => typeof(T).GetProperties()
 				.Where(p => p.CanWrite).Select(p => p.Name).Contains(c.Data)).ToList();
 		}
 

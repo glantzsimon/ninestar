@@ -75,12 +75,7 @@ namespace K9.WebApplication.Extensions
 		public static string GetPluralName(this Type type)
 		{
 			var namettribute = type.GetCustomAttributes(typeof(NameAttribute), true).FirstOrDefault() as NameAttribute;
-			if (namettribute == null)
-			{
-				return string.Format("{0}s", type.Name);
-			}
-			var pluralName = namettribute.GetPluralName();
-			return string.IsNullOrEmpty(pluralName) ? string.Format("{0}s", namettribute.GetName()) : pluralName;
+			return namettribute == null ? string.Format("{0}s", type.Name) : namettribute.GetPluralName();
 		}
 
 	}

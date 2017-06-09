@@ -16,7 +16,7 @@ namespace K9.DataAccess.Attributes
 
 		public string GetPluralName()
 		{
-			return ResourceType.GetValueFromResource(PluralName);
+			return string.IsNullOrEmpty(PluralName) ? String.Format("{0}s", GetName()) : ResourceType.GetValueFromResource(PluralName);
 		}
 	}
 }

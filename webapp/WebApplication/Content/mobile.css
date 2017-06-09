@@ -1,4 +1,4 @@
-﻿@media only screen and (max-width: 960px)
+﻿@media only screen and (max-width: 768px)
 {
 	.page
 	{
@@ -41,15 +41,21 @@
 	{
 		display: none;
 	}
-	
-	.wide-form {
+
+	.wide-form
+	{
 		max-width: 100% !important;
 	}
-	
+
 	.btn
 	{
 		width: 100%;
 		margin-bottom: 4px;
+	}
+
+	ul.pagination
+	{
+		padding: 10px 0;
 	}
 
 }

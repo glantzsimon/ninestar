@@ -2,8 +2,8 @@
 using System.Web.Mvc;
 using Autofac;
 using Autofac.Integration.Mvc;
+using K9.DataAccess.Config;
 using K9.DataAccess.Database;
-using K9.DataAccess.Models;
 using K9.DataAccess.Respositories;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.DataSets;

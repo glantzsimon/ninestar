@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using K9.SharedLibrary.Models;
 
-namespace K9.DataAccess.Models
+namespace K9.DataAccess.Config
 {
 	public class ColumnsConfig : IColumnsConfig
 	{

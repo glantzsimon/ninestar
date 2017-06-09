@@ -2,6 +2,7 @@
 using System.Collections.Specialized;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using K9.DataAccess.Config;
 using K9.DataAccess.Models;
 using K9.SharedLibrary.Extensions;
 using K9.WebApplication.Helpers;

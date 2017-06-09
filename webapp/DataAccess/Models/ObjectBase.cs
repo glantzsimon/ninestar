@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Web.Routing;
@@ -10,7 +11,7 @@ using WebMatrix.WebData;
 
 namespace K9.DataAccess.Models
 {
-	public abstract class ObjectBase : IObjectBase
+	public abstract class ObjectBase : IObjectBase, IValidatableObject
 	{
 
 		#region Properties
@@ -18,7 +19,6 @@ namespace K9.DataAccess.Models
 		[Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int Id { get; set; }
 
-		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 		[Index(IsUnique = true)]
 		[StringLength(128)]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NameLabel)]
@@ -77,6 +77,15 @@ namespace K9.DataAccess.Models
 		public RouteValueDictionary GetForeignKeyFilterRouteValues()
 		{
 			return new StatelessFilter(ForeignKeyName, Id).GetFilterRouteValues();
+		}
+
+		public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+		{
+			UpdateName();
+			if (string.IsNullOrEmpty(Name))
+			{
+				yield return new ValidationResult(Dictionary.FieldIsRequired, new[] { "Name" });
+			}
 		}
 
 		#endregion

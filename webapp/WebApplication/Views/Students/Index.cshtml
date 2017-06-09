@@ -1,3 +1,10 @@
 ﻿@model Student
 
-@Html.BootstrapTable()
+@Html.BootstrapTable(new DataTableOptions<Student>
+{
+	 VisibleColumns = new List<string>
+	 {
+		 "Name",
+		 "EnrollmentDate"
+	 }
+})

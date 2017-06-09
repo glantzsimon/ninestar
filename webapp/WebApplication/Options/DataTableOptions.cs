@@ -107,7 +107,7 @@ namespace K9.WebApplication.Options
 				var info = new DataTableColumnInfo(index)
 				{
 					IsDatabound = c.IsDataBound(),
-					IsVisible = !keyColumns.Select(k => k.Name).Contains(c.Name)
+					IsVisible = !keyColumns.Select(k => k.Name).Contains(c.Name) && (!VisibleColumns.Any() || VisibleColumns.Contains(c.Name))
 				};
 				info.UpdateData(c.Name);
 				info.UpdateName(c.GetDisplayName());

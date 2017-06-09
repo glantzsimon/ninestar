@@ -331,6 +331,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The.
+        /// </summary>
+        public static string DefiniteArticleWithApostrophe {
+            get {
+                return ResourceManager.GetString("DefiniteArticleWithApostrophe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
         public static string Delete {
@@ -354,6 +363,15 @@ namespace K9.Globalisation {
         public static string Details {
             get {
                 return ResourceManager.GetString("Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} Details.
+        /// </summary>
+        public static string DetailsText {
+            get {
+                return ResourceManager.GetString("DetailsText", resourceCulture);
             }
         }
         
@@ -390,6 +408,15 @@ namespace K9.Globalisation {
         public static string EmailIsUnavailableError {
             get {
                 return ResourceManager.GetString("EmailIsUnavailableError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enrollment.
+        /// </summary>
+        public static string Enrollment {
+            get {
+                return ResourceManager.GetString("Enrollment", resourceCulture);
             }
         }
         
@@ -687,6 +714,24 @@ namespace K9.Globalisation {
         public static string No {
             get {
                 return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Of.
+        /// </summary>
+        public static string OfPreposition {
+            get {
+                return ResourceManager.GetString("OfPreposition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Of.
+        /// </summary>
+        public static string OfPrepositionWithApostrophe {
+            get {
+                return ResourceManager.GetString("OfPrepositionWithApostrophe", resourceCulture);
             }
         }
         

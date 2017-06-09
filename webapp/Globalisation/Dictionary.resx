@@ -427,4 +427,19 @@
   <data name="For" xml:space="preserve">
     <value>For</value>
   </data>
+  <data name="Enrollment" xml:space="preserve">
+    <value>Enrollment</value>
+  </data>
+  <data name="DefiniteArticleWithApostrophe" xml:space="preserve">
+    <value>The</value>
+  </data>
+  <data name="OfPreposition" xml:space="preserve">
+    <value>Of</value>
+  </data>
+  <data name="OfPrepositionWithApostrophe" xml:space="preserve">
+    <value>Of</value>
+  </data>
+  <data name="DetailsText" xml:space="preserve">
+    <value>{0} Details</value>
+  </data>
 </root>

@@ -85,6 +85,8 @@ namespace K9.WebApplication.Controllers
 			{
 				return HttpNotFound();
 			}
+			var type = typeof(T);
+			ViewBag.Title = string.Format(Dictionary.DetailsText, type.GetName(), type.GetOfPreposition());
 			return View(item);
 		}
 
@@ -252,7 +254,7 @@ namespace K9.WebApplication.Controllers
 			if (statelessFilter.IsSet())
 			{
 				var tableName = typeof(T).GetLinkedForeignTableName(statelessFilter.Key);
-				return string.Format("{0} {1}", Dictionary.For.ToLower(), _repository.GetName(tableName, statelessFilter.Id));
+				return string.Format(" {0} {1}", Dictionary.For.ToLower(), _repository.GetName(tableName, statelessFilter.Id));
 			}
 			return string.Empty;
 		}

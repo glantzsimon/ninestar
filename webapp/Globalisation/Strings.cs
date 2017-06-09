@@ -35,19 +35,24 @@ namespace K9.Globalisation
 			public const string ThreeLetterCountryCodeLabel = "ThreeLetterCountryCodeLabel";
 		}
 
-		public class Articles
+		public class Grammar
 		{
 			public const string MasculineDefiniteArticle = "MasculineDefiniteArticle";
 			public const string FeminineDefiniteArticle = "FeminineDefiniteArticle";
+			public const string DefiniteArticleWithApostrophe = "DefiniteArticleWithApostrophe";
 			public const string MasculineIndefiniteArticle = "MasculineIndefiniteArticle";
 			public const string FeminineIndefiniteArticle = "FeminineIndefiniteArticle";
 			public const string CountryDefiniteArticle = "CountryDefiniteArticle";
 			public const string CountryIndefiniteArticle = "CountryIndefiniteArticle";
+			public const string OfPreposition = "OfPreposition";
+			public const string OfPrepositionWithApostrophe = "OfPrepositionWithApostrophe";
 		}
 
 		public class Names
 		{
 			public const string Country = "Country";
+			public const string Countries = "Countries";
+			public const string Enrollment = "Enrollment";
 		}
 
 	}

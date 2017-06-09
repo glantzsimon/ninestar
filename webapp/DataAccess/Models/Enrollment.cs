@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using K9.DataAccess.Attributes;
+using K9.Globalisation;
 
 namespace K9.DataAccess.Models
 {
@@ -12,6 +13,8 @@ namespace K9.DataAccess.Models
 	}
 
 	[AutoGenerateName]
+	[Grammar(ResourceType = typeof(Dictionary), DefiniteArticleName = Strings.Grammar.DefiniteArticleWithApostrophe, IndefiniteArticleName = Strings.Grammar.FeminineIndefiniteArticle, OfPrepositionName = Strings.Grammar.OfPrepositionWithApostrophe)]
+	[Name(ResourceType = typeof(Dictionary), Name = Strings.Names.Enrollment)]
 	public class Enrollment : ObjectBase
 	{
 		[ForeignKey("Course")]

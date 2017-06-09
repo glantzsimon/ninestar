@@ -78,5 +78,11 @@ namespace K9.WebApplication.Extensions
 			return namettribute == null ? string.Format("{0}s", type.Name) : namettribute.GetPluralName();
 		}
 
+		public static string GetListName(this Type type)
+		{
+			var namettribute = type.GetCustomAttributes(typeof(NameAttribute), true).FirstOrDefault() as NameAttribute;
+			return namettribute == null ? string.Format("{0}s", type.Name) : namettribute.GetPluralName();
+		}
+
 	}
 }

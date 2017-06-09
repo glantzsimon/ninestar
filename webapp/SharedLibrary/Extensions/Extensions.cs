@@ -60,11 +60,11 @@ namespace K9.SharedLibrary.Extensions
 		public static string GetValueFromResource(this Type resourceType, string key)
 		{
 			var propInfo = resourceType.GetProperties().FirstOrDefault(p => p.Name == key);
-				if (propInfo != null)
-				{
-					return propInfo.GetValue(null, null).ToString();
-				}
-			throw new KeyNotFoundException();
+			if (propInfo != null)
+			{
+				return propInfo.GetValue(null, null).ToString();
+			}
+			throw new KeyNotFoundException(string.Format("The key {0} was not found.", key));
 		}
 
 	}

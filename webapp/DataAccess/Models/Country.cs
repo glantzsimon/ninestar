@@ -7,7 +7,7 @@ using K9.Globalisation;
 namespace K9.DataAccess.Models
 {
 	[Grammar(ResourceType = typeof(Dictionary), DefiniteArticleName = Strings.Grammar.CountryDefiniteArticle, IndefiniteArticleName = Strings.Grammar.CountryIndefiniteArticle)]
-	[Name(ResourceType = typeof(Dictionary), Name = Strings.Names.Country, PluralName = Strings.Names.Countries)]
+	[Name(ResourceType = typeof(Dictionary), Name = Strings.Names.Country, PluralName = Strings.Names.Countries, ListName = "Countries")]
 	public class Country : ObjectBase
 	{
 		[Index(IsUnique = true)]

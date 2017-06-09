@@ -7,6 +7,7 @@ namespace K9.DataAccess.Attributes
 	{
 		public string Name { get; set; }
 		public string PluralName { get; set; }
+		public string ListName { get; set; }
 		public Type ResourceType { get; set; }
 
 		public string GetName()
@@ -17,6 +18,11 @@ namespace K9.DataAccess.Attributes
 		public string GetPluralName()
 		{
 			return string.IsNullOrEmpty(PluralName) ? String.Format("{0}s", GetName()) : ResourceType.GetValueFromResource(PluralName);
+		}
+
+		public string GetListName()
+		{
+			return string.IsNullOrEmpty(PluralName) ? String.Format("{0}s", GetName()) : ListName;
 		}
 	}
 }

@@ -56,7 +56,7 @@ namespace K9.WebApplication.Options
 		public string GetDataUrl(UrlHelper urlHeler)
 		{
 			var actionName = string.IsNullOrEmpty(Action) ? "List" : Action;
-			var controllerName = string.IsNullOrEmpty(Controller) ? typeof(T).GetPluralName() : Controller;
+			var controllerName = string.IsNullOrEmpty(Controller) ? typeof(T).GetListName() : Controller;
 			return urlHeler.Action(actionName, controllerName, GetFilterRouteValues());
 		}
 

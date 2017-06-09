@@ -13,5 +13,10 @@ namespace K9.DataAccess.Attributes
 		{
 			return ResourceType.GetValueFromResource(Name);
 		}
+
+		public string GetPluralName()
+		{
+			return ResourceType.GetValueFromResource(PluralName);
+		}
 	}
 }

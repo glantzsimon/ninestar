@@ -61,7 +61,7 @@ namespace K9.WebApplication.Helpers
 		public string GetQuery(bool selectAllColumns = false)
 		{
 			return string.Format("WITH RESULTS AS " +
-								 "(SELECT {7}.{0}, ROW_NUMBER() OVER " +
+								 "(SELECT {0}, ROW_NUMBER() OVER " +
 								 "(ORDER BY {1} {2}) AS RowNum " +
 								 "FROM {3} " +
 								 "{4}) " +
@@ -73,8 +73,7 @@ namespace K9.WebApplication.Helpers
 								 GetFrom(),
 								 GetWhereClause(),
 								 Start,
-								 PageEnd,
-								 typeof(T).Name);
+								 PageEnd);
 		}
 
 		public int Draw

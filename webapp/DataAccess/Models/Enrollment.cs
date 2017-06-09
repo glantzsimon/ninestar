@@ -32,10 +32,10 @@ namespace K9.DataAccess.Models
 		public virtual Course Course { get; set; }
 		public virtual Student Student { get; set; }
 
-		[NotMapped]
+		[LinkedColumn(LinkedTableName = "Student", LinkedColumnName = "Name")]
 		public string StudentName { get; set; }
 
-		[NotMapped]
+		[LinkedColumn(LinkedTableName = "Course", LinkedColumnName = "Name")]
 		public string CourseName { get; set; }
 	}
 }

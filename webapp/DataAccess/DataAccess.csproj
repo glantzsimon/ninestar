@@ -64,6 +64,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\LinkedColumnAttribute.cs" />
     <Compile Include="Attributes\GrammarAttribute.cs" />
     <Compile Include="Attributes\AutoGenerateNameAttribute.cs" />
     <Compile Include="Attributes\NameAttribute.cs" />

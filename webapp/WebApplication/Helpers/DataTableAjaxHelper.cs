@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
+using K9.DataAccess.Attributes;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using NLog;
@@ -143,27 +144,28 @@ namespace K9.WebApplication.Helpers
 		{
 			var sb = new StringBuilder();
 			var parentType = typeof(T);
-			var fkColumns = GetForeignKeyColumns();
+			var linkedColumns = GetLinkedColumns();
 
 			if (!string.IsNullOrEmpty(SearchValue))
 			{
 				foreach (var columnInfo in GetDataBoundColumnInfosNotIgnored())
 				{
-					var linkedTables = fkColumns.Where(c => c.Value.Name == columnInfo.Data).ToList();
-					var tableName = linkedTables.Any() ? parentType.GetLinkedPropertyType(linkedTables.First().Key.Name).Name : parentType.Name;
+					var linkedTables = linkedColumns.Where(c => c.Value.Name == columnInfo.Data).ToList();
+					var searchValue = !string.IsNullOrEmpty(SearchValue) ? GetLikeSearchValue() : (string.IsNullOrEmpty(columnInfo.SearchValue) ? columnInfo.GetLikeSearchValue() : string.Empty);
 
-					sb.Append(sb.Length == 0 ? "WHERE " : " OR ");
-					sb.AppendFormat("{0}.{1} LIKE '{2}'", tableName, columnInfo.Data, GetLikeSearchValue());
-				}
-			}
-			else
-			{
-				foreach (var columnInfo in GetDataBoundColumnInfosNotIgnored())
-				{
-					if (!string.IsNullOrEmpty(columnInfo.SearchValue))
+					if (!string.IsNullOrEmpty(searchValue))
 					{
 						sb.Append(sb.Length == 0 ? "WHERE " : " OR ");
-						sb.AppendFormat("{0} LIKE '{1}'", columnInfo.Data, columnInfo.GetLikeSearchValue());
+
+						if (linkedTables.Any())
+						{
+							var linkedColumn = linkedTables.First().Key;
+							sb.AppendFormat("{0}.{1} LIKE '{2}'", parentType.GetLinkedPropertyType(linkedColumn.LinkedTableName).Name, parentType.GetLinkedPropertyType(linkedColumn.LinkedColumnName).Name, GetLikeSearchValue());
+						}
+						else
+						{
+							sb.AppendFormat("{0}.{1} LIKE '{2}'", parentType.Name, columnInfo.Data, GetLikeSearchValue());
+						}	
 					}
 				}
 			}
@@ -182,13 +184,18 @@ namespace K9.WebApplication.Helpers
 			if (ColumnInfos.Any())
 			{
 				var columnInfo = ColumnInfos[_orderByColumnIndex];
-				var fkColumns = GetForeignKeyColumns();
+				var linkedColumns = GetLinkedColumns();
 				var parentType = typeof(T);
 				var columnName = columnInfo.Data;
-				var linkedTables = fkColumns.Where(c => c.Value.Name == columnName).ToList();
-				var tableName = linkedTables.Any() ? parentType.GetLinkedPropertyType(linkedTables.First().Key.Name).Name : parentType.Name;
+				var linkedTables = linkedColumns.Where(c => c.Value.Name == columnName).ToList();
 
-				return string.Format("{0}.{1}", tableName, columnName);
+				if (linkedTables.Any())
+				{
+					var linkedColumnAttribute = linkedTables.First().Key;
+					return string.Format("{0}.{1}", parentType.GetLinkedPropertyType(linkedColumnAttribute.LinkedTableName).Name, parentType.GetLinkedPropertyType(linkedColumnAttribute.LinkedColumnName).Name);
+				}
+
+				return string.Format("{0}.{1}", parentType.Name, columnName);
 			}
 
 			return string.Empty;
@@ -254,6 +261,16 @@ namespace K9.WebApplication.Helpers
 				_foreignKeyColumnDictionary = typeof(T).GetPropertiesAndAttributesWithAttribute<ForeignKeyAttribute>();
 			}
 			return _foreignKeyColumnDictionary;
+		}
+
+		private Dictionary<LinkedColumnAttribute, PropertyInfo> _linkedColumnDictionary;
+		private Dictionary<LinkedColumnAttribute, PropertyInfo> GetLinkedColumns()
+		{
+			if (_linkedColumnDictionary == null)
+			{
+				_linkedColumnDictionary = typeof(T).GetPropertiesAndAttributesWithAttribute<LinkedColumnAttribute>();
+			}
+			return _linkedColumnDictionary;
 		}
 
 		private List<IDataTableColumnInfo> GetDataBoundColumnInfos()

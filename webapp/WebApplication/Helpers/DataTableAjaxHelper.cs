@@ -140,7 +140,7 @@ namespace K9.WebApplication.Helpers
 			get { return _orderByDirection; }
 		}
 
-		public string GetWhereClause()
+		public string GetWhereClause(bool ignoreCHildTables = false)
 		{
 			var sb = new StringBuilder();
 			var parentType = typeof(T);
@@ -157,8 +157,11 @@ namespace K9.WebApplication.Helpers
 
 					if (linkedTables.Any())
 					{
-						var linkedColumn = linkedTables.First().Key;
-						sb.AppendFormat("{0}.{1} LIKE '{2}'", linkedColumn.LinkedTableName, linkedColumn.LinkedColumnName, searchValue);
+						if (!ignoreCHildTables)
+						{
+							var linkedColumn = linkedTables.First().Key;
+							sb.AppendFormat("{0}.{1} LIKE '{2}'", linkedColumn.LinkedTableName, linkedColumn.LinkedColumnName, searchValue);
+						}
 					}
 					else
 					{

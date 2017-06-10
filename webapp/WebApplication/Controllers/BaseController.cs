@@ -104,7 +104,7 @@ namespace K9.WebApplication.Controllers
 			try
 			{
 				var recordsTotal = _repository.GetCount();
-				var recordsFiltered = _repository.GetCount(_ajaxHelper.GetWhereClause());
+				var recordsFiltered = _repository.GetCount(_ajaxHelper.GetWhereClause(true));
 				var data = _repository.GetQuery(_ajaxHelper.GetQuery(true));
 				var json = JsonConvert.SerializeObject(new
 				{
@@ -131,16 +131,19 @@ namespace K9.WebApplication.Controllers
 		[Authorize(Roles = UserRoles.Administrators)]
 		public virtual ActionResult Create()
 		{
-			var itemToCreate = Activator.CreateInstance<T>();
 			var statelessFilter = this.GetStatelessFilter();
+
+			ViewBag.Title = string.Format("{0} {1}{2}", Dictionary.CreateNew, typeof(T).GetName(), GetStatelessFilterTitle());
 
 			if (statelessFilter.IsSet())
 			{
+				var itemToCreate = Activator.CreateInstance<T>();
 				itemToCreate.SetProperty(statelessFilter.Key, statelessFilter.Id);
+				return View(itemToCreate);
 			}
 
-			ViewBag.Title = string.Format("{0} {1}{2}", Dictionary.CreateNew, typeof(T).GetName(), GetStatelessFilterTitle());
-			return View(itemToCreate);
+			
+			return View();
 		}
 
 		[HttpPost]

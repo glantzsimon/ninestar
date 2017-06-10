@@ -153,21 +153,26 @@ namespace K9.WebApplication.Helpers
 
 				if (!string.IsNullOrEmpty(searchValue))
 				{
-					sb.Append(sb.Length == 0 ? "WHERE " : " OR ");
-
 					if (linkedTables.Any())
 					{
 						if (!ignoreCHildTables)
 						{
+							sb.Append(sb.Length == 0 ? "WHERE( " : " OR ");
 							var linkedColumn = linkedTables.First().Key;
 							sb.AppendFormat("{0}.{1} LIKE '{2}'", linkedColumn.LinkedTableName, linkedColumn.LinkedColumnName, searchValue);
 						}
 					}
 					else
 					{
+						sb.Append(sb.Length == 0 ? "WHERE( " : " OR ");
 						sb.AppendFormat("{0}.{1} LIKE '{2}'", parentType.Name, columnInfo.Data, searchValue);
 					}
 				}
+			}
+
+			if (sb.Length > 0)
+			{
+				sb.Append(")");
 			}
 
 			if (StatelessFilter != null && StatelessFilter.IsSet())

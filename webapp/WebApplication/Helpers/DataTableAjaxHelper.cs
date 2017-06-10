@@ -157,14 +157,14 @@ namespace K9.WebApplication.Helpers
 					{
 						if (!ignoreCHildTables)
 						{
-							sb.Append(sb.Length == 0 ? "WHERE( " : " OR ");
+							sb.Append(sb.Length == 0 ? "WHERE (" : " OR ");
 							var linkedColumn = linkedTables.First().Key;
 							sb.AppendFormat("[{0}].[{1}] LIKE '{2}'", linkedColumn.LinkedTableName, linkedColumn.LinkedColumnName, searchValue);
 						}
 					}
 					else
 					{
-						sb.Append(sb.Length == 0 ? "WHERE( " : " OR ");
+						sb.Append(sb.Length == 0 ? "WHERE (" : " OR ");
 						sb.AppendFormat("[{0}].[{1}] LIKE '{2}'", parentType.Name, columnInfo.Data, searchValue);
 					}
 				}
@@ -247,7 +247,7 @@ namespace K9.WebApplication.Helpers
 			var sb = new StringBuilder();
 			var parentType = typeof(T);
 			var parentName = parentType.Name;
-			sb.Append(parentName);
+			sb.AppendFormat("[{0}]", parentName);
 
 			foreach (var item in GetForeignKeyColumns())
 			{

@@ -63,8 +63,8 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 							"(SELECT [Country].[TwoLetterCountryCode], [Country].[ThreeLetterCountryCode], ROW_NUMBER() OVER " +
 							"(ORDER BY [Country].[ThreeLetterCountryCode] ASC) AS RowNum " +
 							"FROM [Country] " +
-							"WHERE [Country].[TwoLetterCountryCode] LIKE '%[search]%' " +
-							"OR [Country].[ThreeLetterCountryCode] LIKE '%[search]%') " +
+							"WHERE ([Country].[TwoLetterCountryCode] LIKE '%[search]%' " +
+							"OR [Country].[ThreeLetterCountryCode] LIKE '%[search]%')) " +
 							"SELECT * FROM RESULTS " +
 							"WHERE RowNum BETWEEN 0 AND 10", helper.GetQuery());
 		}
@@ -101,9 +101,9 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 			Assert.AreEqual("WITH RESULTS AS " +
 							"(SELECT [Country].[TwoLetterCountryCode], [Country].[ThreeLetterCountryCode], ROW_NUMBER() OVER " +
 							"(ORDER BY [Country].[ThreeLetterCountryCode] DESC) AS RowNum " +
-							"FROM Country " +
-							"WHERE [Country].[TwoLetterCountryCode] LIKE '%[gb]%' " +
-							"OR [Country].[ThreeLetterCountryCode] LIKE '%gb%') " +
+							"FROM [Country] " +
+							"WHERE ([Country].[TwoLetterCountryCode] LIKE '%[gb]%' " +
+							"OR [Country].[ThreeLetterCountryCode] LIKE '%gb%')) " +
 							"SELECT * FROM RESULTS " +
 							"WHERE RowNum BETWEEN 40 AND 60", helper.GetQuery());
 		}
@@ -132,7 +132,7 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 			Assert.AreEqual("WITH RESULTS AS " +
 							"(SELECT [Country].[TwoLetterCountryCode], ROW_NUMBER() OVER " +
 							"(ORDER BY [Country].[TwoLetterCountryCode] ASC) AS RowNum " +
-							"FROM Country ) " +
+							"FROM [Country] ) " +
 							"SELECT * FROM RESULTS " +
 							"WHERE RowNum BETWEEN 0 AND 10", helper.GetQuery());
 		}
@@ -161,7 +161,7 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 			Assert.AreEqual("WITH RESULTS AS " +
 							"(SELECT [Country].*, ROW_NUMBER() OVER " +
 							"(ORDER BY [Country].[TwoLetterCountryCode] ASC) AS RowNum " +
-							"FROM Country ) " +
+							"FROM [Country] ) " +
 							"SELECT * FROM RESULTS " +
 							"WHERE RowNum BETWEEN 0 AND 10", helper.GetQuery(true));
 		}

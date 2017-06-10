@@ -65,15 +65,14 @@ namespace K9.WebApplication.Options
 		{
 			if (_columns == null)
 			{
-				var columns =
-					typeof(T).GetProperties()
-						.Where(p => !p.IsVirtual() && !ColumnsConfig.ColumnsToIgnore.Contains(p.Name))
-						.Zip(VisibleColumns, (c, v) => new { columnInfo = c, visibleColumn = v })
-						.OrderBy(z => z.visibleColumn)
-						.Select(v => v.columnInfo);
+				var allColumns = typeof(T).GetProperties()
+					.Where(p => !p.IsVirtual() && !ColumnsConfig.ColumnsToIgnore.Contains(p.Name)).ToList();
+
+				var orderedColumns = VisibleColumns.Select(visibleColumn => allColumns.FirstOrDefault(c => c.Name == visibleColumn)).ToList();
+				orderedColumns.AddRange(allColumns.Where(c => !orderedColumns.Contains(c)));
 
 				_columns = new HashSet<PropertyInfo>();
-				_columns.AddRange(columns);
+				_columns.AddRange(orderedColumns);
 			}
 			return _columns.ToList();
 		}

@@ -146,26 +146,23 @@ namespace K9.WebApplication.Helpers
 			var parentType = typeof(T);
 			var linkedColumns = GetLinkedColumns();
 
-			if (!string.IsNullOrEmpty(SearchValue))
+			foreach (var columnInfo in GetDataBoundColumnInfosNotIgnored())
 			{
-				foreach (var columnInfo in GetDataBoundColumnInfosNotIgnored())
+				var linkedTables = linkedColumns.Where(c => c.Value.Name == columnInfo.Data).ToList();
+				var searchValue = !string.IsNullOrEmpty(SearchValue) ? GetLikeSearchValue() : (!string.IsNullOrEmpty(columnInfo.SearchValue) ? columnInfo.GetLikeSearchValue() : string.Empty);
+
+				if (!string.IsNullOrEmpty(searchValue))
 				{
-					var linkedTables = linkedColumns.Where(c => c.Value.Name == columnInfo.Data).ToList();
-					var searchValue = !string.IsNullOrEmpty(SearchValue) ? GetLikeSearchValue() : (string.IsNullOrEmpty(columnInfo.SearchValue) ? columnInfo.GetLikeSearchValue() : string.Empty);
+					sb.Append(sb.Length == 0 ? "WHERE " : " OR ");
 
-					if (!string.IsNullOrEmpty(searchValue))
+					if (linkedTables.Any())
 					{
-						sb.Append(sb.Length == 0 ? "WHERE " : " OR ");
-
-						if (linkedTables.Any())
-						{
-							var linkedColumn = linkedTables.First().Key;
-							sb.AppendFormat("{0}.{1} LIKE '{2}'", parentType.GetLinkedPropertyType(linkedColumn.LinkedTableName).Name, parentType.GetLinkedPropertyType(linkedColumn.LinkedColumnName).Name, GetLikeSearchValue());
-						}
-						else
-						{
-							sb.AppendFormat("{0}.{1} LIKE '{2}'", parentType.Name, columnInfo.Data, GetLikeSearchValue());
-						}	
+						var linkedColumn = linkedTables.First().Key;
+						sb.AppendFormat("{0}.{1} LIKE '{2}'", linkedColumn.LinkedTableName, linkedColumn.LinkedColumnName, searchValue);
+					}
+					else
+					{
+						sb.AppendFormat("{0}.{1} LIKE '{2}'", parentType.Name, columnInfo.Data, searchValue);
 					}
 				}
 			}
@@ -173,7 +170,7 @@ namespace K9.WebApplication.Helpers
 			if (StatelessFilter != null && StatelessFilter.IsSet())
 			{
 				sb.Append(sb.Length == 0 ? "WHERE " : " AND ");
-				sb.AppendFormat("{0} = {1}", StatelessFilter.Key, StatelessFilter.Id);
+				sb.AppendFormat("{0}.{1} = {2}", parentType.Name, StatelessFilter.Key, StatelessFilter.Id);
 			}
 
 			return sb.ToString();
@@ -192,7 +189,7 @@ namespace K9.WebApplication.Helpers
 				if (linkedTables.Any())
 				{
 					var linkedColumnAttribute = linkedTables.First().Key;
-					return string.Format("{0}.{1}", parentType.GetLinkedPropertyType(linkedColumnAttribute.LinkedTableName).Name, parentType.GetLinkedPropertyType(linkedColumnAttribute.LinkedColumnName).Name);
+					return string.Format("{0}.{1}", linkedColumnAttribute.LinkedTableName, linkedColumnAttribute.LinkedColumnName);
 				}
 
 				return string.Format("{0}.{1}", parentType.Name, columnName);
@@ -215,7 +212,7 @@ namespace K9.WebApplication.Helpers
 				foreach (var columnInfo in GetDataBoundColumnInfosNotIgnored())
 				{
 					sb.Append(sb.Length == 0 ? "" : ", ");
-					sb.Append(columnInfo.Data);
+					sb.AppendFormat("{0}.{1}", parentType.Name, columnInfo.Data);
 				}
 			}
 

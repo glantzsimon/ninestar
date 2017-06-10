@@ -60,11 +60,11 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 			Assert.AreEqual("gb", firstColumnInfo.SearchValue);
 			Assert.IsTrue(firstColumnInfo.IsRegexSearch);
 			Assert.AreEqual("WITH RESULTS AS " +
-							"(SELECT TwoLetterCountryCode, ThreeLetterCountryCode, ROW_NUMBER() OVER " +
-							"(ORDER BY ThreeLetterCountryCode ASC) AS RowNum " +
+							"(SELECT Country.TwoLetterCountryCode, Country.ThreeLetterCountryCode, ROW_NUMBER() OVER " +
+							"(ORDER BY Country.ThreeLetterCountryCode ASC) AS RowNum " +
 							"FROM Country " +
-							"WHERE TwoLetterCountryCode LIKE '%[search]%' " +
-							"OR ThreeLetterCountryCode LIKE '%[search]%') " +
+							"WHERE Country.TwoLetterCountryCode LIKE '%[search]%' " +
+							"OR Country.ThreeLetterCountryCode LIKE '%[search]%') " +
 							"SELECT * FROM RESULTS " +
 							"WHERE RowNum BETWEEN 0 AND 10", helper.GetQuery());
 		}
@@ -99,11 +99,11 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 			helper.LoadQueryString(querystring);
 
 			Assert.AreEqual("WITH RESULTS AS " +
-							"(SELECT TwoLetterCountryCode, ThreeLetterCountryCode, ROW_NUMBER() OVER " +
-							"(ORDER BY ThreeLetterCountryCode DESC) AS RowNum " +
+							"(SELECT Country.TwoLetterCountryCode, Country.ThreeLetterCountryCode, ROW_NUMBER() OVER " +
+							"(ORDER BY Country.ThreeLetterCountryCode DESC) AS RowNum " +
 							"FROM Country " +
-							"WHERE TwoLetterCountryCode LIKE '%[gb]%' " +
-							"OR ThreeLetterCountryCode LIKE '%gb%') " +
+							"WHERE Country.TwoLetterCountryCode LIKE '%[gb]%' " +
+							"OR Country.ThreeLetterCountryCode LIKE '%gb%') " +
 							"SELECT * FROM RESULTS " +
 							"WHERE RowNum BETWEEN 40 AND 60", helper.GetQuery());
 		}
@@ -130,8 +130,8 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 			helper.LoadQueryString(querystring);
 
 			Assert.AreEqual("WITH RESULTS AS " +
-							"(SELECT TwoLetterCountryCode, ROW_NUMBER() OVER " +
-							"(ORDER BY TwoLetterCountryCode ASC) AS RowNum " +
+							"(SELECT Country.TwoLetterCountryCode, ROW_NUMBER() OVER " +
+							"(ORDER BY Country.TwoLetterCountryCode ASC) AS RowNum " +
 							"FROM Country ) " +
 							"SELECT * FROM RESULTS " +
 							"WHERE RowNum BETWEEN 0 AND 10", helper.GetQuery());
@@ -159,8 +159,8 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 			helper.LoadQueryString(querystring);
 
 			Assert.AreEqual("WITH RESULTS AS " +
-							"(SELECT *, ROW_NUMBER() OVER " +
-							"(ORDER BY TwoLetterCountryCode ASC) AS RowNum " +
+							"(SELECT Country.*, ROW_NUMBER() OVER " +
+							"(ORDER BY Country.TwoLetterCountryCode ASC) AS RowNum " +
 							"FROM Country ) " +
 							"SELECT * FROM RESULTS " +
 							"WHERE RowNum BETWEEN 0 AND 10", helper.GetQuery(true));
@@ -219,7 +219,7 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 							"(SELECT Enrollment.*, Course.Name AS [CourseName], " +
 							"Student.Name AS [StudentName], " +
 							"ROW_NUMBER() OVER " +
-							"(ORDER BY Id ASC) AS RowNum " +
+							"(ORDER BY Enrollment.Id ASC) AS RowNum " +
 							"FROM Enrollment " +
 							"JOIN Course ON Course.Id = Enrollment.CourseId JOIN Student ON Student.Id = Enrollment.StudentId ) " +
 							"SELECT * FROM RESULTS " +

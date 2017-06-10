@@ -38,7 +38,6 @@ namespace K9.WebApplication.Controllers
 		{
 			if (WebSecurity.IsAuthenticated)
 			{
-				WebSecurity.Logout();
 				return RedirectToAction("Index", "Home");
 			}
 
@@ -54,7 +53,7 @@ namespace K9.WebApplication.Controllers
 			{
 				if (WebSecurity.Login(model.UserName, model.Password, model.RememberMe))
 				{
-					if (!string.IsNullOrEmpty(ViewBag.ReturnUrl))
+					if (ViewBag.ReturnUrl == null)
 					{
 						return Redirect(ViewBag.ReturnUrl);
 					}
@@ -348,17 +347,6 @@ namespace K9.WebApplication.Controllers
 		[AllowAnonymous]
 		public ActionResult AccountCreated(string userName)
 		{
-			var userId = WebSecurity.GetUserId(userName);
-
-			if (!_repository.Exists(userId))
-			{
-				ModelState.AddModelError("", Dictionary.InvalidUsernameError);
-			}
-			else
-			{
-				ViewBag.Message = Dictionary.AccountCreatedSuccessfully;
-			}
-
 			return View();
 		}
 

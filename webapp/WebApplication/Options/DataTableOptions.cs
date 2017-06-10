@@ -68,7 +68,10 @@ namespace K9.WebApplication.Options
 				var columns =
 					typeof(T).GetProperties()
 						.Where(p => !p.IsVirtual() && !ColumnsConfig.ColumnsToIgnore.Contains(p.Name))
-						.ToList();
+						.Zip(VisibleColumns, (c, v) => new { columnInfo = c, visibleColumn = v })
+						.OrderBy(z => z.visibleColumn)
+						.Select(v => v.columnInfo);
+
 				_columns = new HashSet<PropertyInfo>();
 				_columns.AddRange(columns);
 			}

@@ -159,13 +159,13 @@ namespace K9.WebApplication.Helpers
 						{
 							sb.Append(sb.Length == 0 ? "WHERE( " : " OR ");
 							var linkedColumn = linkedTables.First().Key;
-							sb.AppendFormat("{0}.{1} LIKE '{2}'", linkedColumn.LinkedTableName, linkedColumn.LinkedColumnName, searchValue);
+							sb.AppendFormat("[{0}].[{1}] LIKE '{2}'", linkedColumn.LinkedTableName, linkedColumn.LinkedColumnName, searchValue);
 						}
 					}
 					else
 					{
 						sb.Append(sb.Length == 0 ? "WHERE( " : " OR ");
-						sb.AppendFormat("{0}.{1} LIKE '{2}'", parentType.Name, columnInfo.Data, searchValue);
+						sb.AppendFormat("[{0}].[{1}] LIKE '{2}'", parentType.Name, columnInfo.Data, searchValue);
 					}
 				}
 			}
@@ -178,7 +178,7 @@ namespace K9.WebApplication.Helpers
 			if (StatelessFilter != null && StatelessFilter.IsSet())
 			{
 				sb.Append(sb.Length == 0 ? "WHERE " : " AND ");
-				sb.AppendFormat("{0}.{1} = {2}", parentType.Name, StatelessFilter.Key, StatelessFilter.Id);
+				sb.AppendFormat("[{0}].[{1}] = {2}", parentType.Name, StatelessFilter.Key, StatelessFilter.Id);
 			}
 
 			return sb.ToString();
@@ -197,10 +197,10 @@ namespace K9.WebApplication.Helpers
 				if (linkedTables.Any())
 				{
 					var linkedColumnAttribute = linkedTables.First().Key;
-					return string.Format("{0}.{1}", linkedColumnAttribute.LinkedTableName, linkedColumnAttribute.LinkedColumnName);
+					return string.Format("[{0}].[{1}]", linkedColumnAttribute.LinkedTableName, linkedColumnAttribute.LinkedColumnName);
 				}
 
-				return string.Format("{0}.{1}", parentType.Name, columnName);
+				return string.Format("[{0}].[{1}]", parentType.Name, columnName);
 			}
 
 			return string.Empty;
@@ -239,7 +239,7 @@ namespace K9.WebApplication.Helpers
 			var foreignKeyColumns = GetForeignKeyColumns();
 			return foreignKeyColumns.Any()
 				? GetFromWithJoins()
-				: typeof(T).Name;
+				: string.Format("[{0}]", typeof(T).Name);
 		}
 
 		private string GetFromWithJoins()

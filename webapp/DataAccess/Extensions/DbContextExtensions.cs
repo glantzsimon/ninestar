@@ -22,12 +22,12 @@ namespace K9.DataAccess.Extensions
 
 		public static int GetCount<T>(this DbContext context, string whereClause = "") where T : class, IObjectBase
 		{
-			return context.Database.SqlQuery<int>(string.Format("SELECT COUNT(*) FROM {0} {1}", typeof(T).Name, whereClause)).First();
+			return context.Database.SqlQuery<int>(string.Format("SELECT COUNT(*) FROM [{0}] {1}", typeof(T).Name, whereClause)).First();
 		}
 
 		public static string GetName(this DbContext context, string tableName, int id)
 		{
-			return context.Database.SqlQuery<string>(string.Format("SELECT Name FROM {0} WHERE Id = {1}", tableName, id)).First();
+			return context.Database.SqlQuery<string>(string.Format("SELECT Name FROM [{0}] WHERE [Id] = {1}", tableName, id)).First();
 		}
 
 		public static void Create<T>(this DbContext context, T item) where T : class, IObjectBase

@@ -180,6 +180,10 @@
     <Compile Include="Constants\SiteConstants.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\PermissionsController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\UserRolesController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\EnrollmentsController.cs" />
     <Compile Include="Controllers\CountriesController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
@@ -362,6 +366,13 @@
     <Content Include="Views\Shared\DisplayTemplates\Student.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Course.cshtml" />
     <Content Include="Views\Shared\_FriendlyError.cshtml" />
+    <Content Include="Views\Users\_DisplayFields.cshtml" />
+    <Content Include="Views\Users\_EditFields.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
     <Content Include="Views\Shared\_Layout100.cshtml" />

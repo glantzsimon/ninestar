@@ -213,14 +213,14 @@ namespace K9.WebApplication.Helpers
 
 			if (selectAllColumns)
 			{
-				sb.AppendFormat("{0}.*", parentType.Name);
+				sb.AppendFormat("[{0}].*", parentType.Name);
 			}
 			else
 			{
 				foreach (var columnInfo in GetDataBoundColumnInfosNotIgnored())
 				{
 					sb.Append(sb.Length == 0 ? "" : ", ");
-					sb.AppendFormat("{0}.{1}", parentType.Name, columnInfo.Data);
+					sb.AppendFormat("[{0}].[{1}]", parentType.Name, columnInfo.Data);
 				}
 			}
 
@@ -228,7 +228,7 @@ namespace K9.WebApplication.Helpers
 			{
 				var linkedTableName = parentType.GetLinkedPropertyType(item.Key.Name).Name;
 				sb.Append(", ");
-				sb.AppendFormat("{0}.Name AS [{0}Name]", linkedTableName);
+				sb.AppendFormat("[{0}].[Name] AS [{0}Name]", linkedTableName);
 			}
 
 			return sb.ToString();
@@ -252,7 +252,7 @@ namespace K9.WebApplication.Helpers
 			foreach (var item in GetForeignKeyColumns())
 			{
 				var linkedTableName = parentType.GetLinkedPropertyType(item.Key.Name).Name;
-				sb.AppendFormat(" JOIN {0} ON {0}.Id = {1}.{2}", linkedTableName, parentName, item.Value.Name);
+				sb.AppendFormat(" JOIN [{0}] ON [{0}].[Id] = [{1}].[{2}]", linkedTableName, parentName, item.Value.Name);
 			}
 
 			return sb.ToString();

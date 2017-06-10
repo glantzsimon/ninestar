@@ -41,7 +41,7 @@ namespace K9.WebApplication.Controllers
 				return RedirectToAction("Index", "Home");
 			}
 
-			ViewBag.ReturnUrl = returnUrl;
+			TempData["ReturnUrl"] = returnUrl;
 			return View(new UserAccount.LoginModel());
 		}
 
@@ -53,9 +53,9 @@ namespace K9.WebApplication.Controllers
 			{
 				if (WebSecurity.Login(model.UserName, model.Password, model.RememberMe))
 				{
-					if (ViewBag.ReturnUrl == null)
+					if (TempData["ReturnUrl"] != null)
 					{
-						return Redirect(ViewBag.ReturnUrl);
+						return Redirect(TempData["ReturnUrl"].ToString());
 					}
 					return RedirectToAction("Index", "Home");
 				}

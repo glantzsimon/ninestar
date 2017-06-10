@@ -442,4 +442,7 @@
   <data name="DetailsText" xml:space="preserve">
     <value>Détails {1}{0}</value>
   </data>
+  <data name="Oops" xml:space="preserve">
+    <value>Mince !</value>
+  </data>
 </root>

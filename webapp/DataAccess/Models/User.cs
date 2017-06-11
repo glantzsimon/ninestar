@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.ComponentModel.DataAnnotations;
+using DataAnnotationsExtensions;
 using K9.Globalisation;
 
 namespace K9.DataAccess.Models
@@ -22,6 +23,7 @@ namespace K9.DataAccess.Models
 
 		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 		[DataType(DataType.EmailAddress, ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.InvalidEmailAddress)]
+		[Email(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.InvalidEmailAddress)]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EmailAddressLabel)]
 		[StringLength(255)]
 		public string EmailAddress { get; set; }
@@ -31,8 +33,9 @@ namespace K9.DataAccess.Models
 		[StringLength(255)]
 		public string PhoneNumber { get; set; }
 
-		[DataType(DataType.Date)]
+		[DataType(DataType.Date, ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.InvalidDate)]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BirthDateLabel)]
+		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 		public DateTime BirthDate { get; set; }
 
 		public override void UpdateName()

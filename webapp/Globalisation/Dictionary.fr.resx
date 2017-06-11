@@ -154,7 +154,7 @@
     <value>Une erreur s'est produite. Veuillez réessayer plus tard.</value>
   </data>
   <data name="InvalidEmailAddress" xml:space="preserve">
-    <value>Veuillez entrer une adresse email valide.</value>
+    <value>Veuillez saisir une adresse email valide.</value>
   </data>
   <data name="LastNameLabel" xml:space="preserve">
     <value>Nom de Famille</value>
@@ -444,5 +444,8 @@
   </data>
   <data name="Oops" xml:space="preserve">
     <value>Mince !</value>
+  </data>
+  <data name="InvalidDate" xml:space="preserve">
+    <value>Veuillez saisir une date valide.</value>
   </data>
 </root>

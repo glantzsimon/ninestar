@@ -10,6 +10,7 @@ namespace K9.Globalisation
 			public const string PasswordMinLengthError = "PasswordMinLengthError";
 			public const string PasswordMatchError = "PasswordMatchError";
 			public const string NewPasswordMatchError = "NewPasswordMatchError";
+			public const string InvalidDate = "InvalidDate";
 		}
 
 		public class Labels

@@ -445,4 +445,7 @@
   <data name="Oops" xml:space="preserve">
     <value>Oops!</value>
   </data>
+  <data name="InvalidDate" xml:space="preserve">
+    <value>Please enter a valid date.</value>
+  </data>
 </root>

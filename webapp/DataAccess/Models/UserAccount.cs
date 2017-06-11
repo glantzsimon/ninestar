@@ -80,7 +80,7 @@ namespace K9.DataAccess.Models
 			[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PhoneNumberLabel)]
 			public string PhoneNumber { get; set; }
 
-			[DataType(DataType.Date)]
+			[DataType(DataType.Date, ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.InvalidDate)]
 			[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BirthDateLabel)]
 			public DateTime BirthDate { get; set; }
 

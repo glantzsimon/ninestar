@@ -383,6 +383,7 @@
     <Content Include="Views\Students\Edit.cshtml" />
     <Content Include="Views\Students\_EditFields.cshtml" />
     <Content Include="Views\Students\_DisplayFields.cshtml" />
+    <Content Include="Views\Shared\Scripts\Default.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

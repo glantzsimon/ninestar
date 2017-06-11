@@ -1,7 +1,9 @@
-﻿@using K9.SharedLibrary.Extensions
+﻿@using System.Globalization
+@using K9.SharedLibrary.Extensions
 @model Object
 @{
 	ViewData.MergeAttribute(K9.WebApplication.Constants.Html.Attributes.Type, K9.WebApplication.Constants.Html.Types.DateTime);
+	ViewData.MergeAttribute(Bootstrap.Attributes.DateFormat, CultureInfo.CurrentUICulture.DateTimeFormat.FullDateTimePattern);
 }
 <div class="input-group date datetime">
 	@Html.TextBoxFor(model => model, ViewData)

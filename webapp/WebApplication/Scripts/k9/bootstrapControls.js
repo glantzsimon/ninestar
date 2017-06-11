@@ -1,17 +1,16 @@
-$(function ()
-{
+function initBootstrapControls(config) {
 
-    function initBootstrapDateTimePickers()
-    {
+    function initBootstrapDateTimePickers() {
         $("div.dateonly").datetimepicker({
-            format: "L"
+            locale: config.language
         });
 
-        $("div.datetime").datetimepicker();
+        $("div.datetime").datetimepicker({
+            locale: config.language
+        });
     }
 
-    function initBootstrapSelect()
-    {
+    function initBootstrapSelect() {
         $(".selectpicker").selectpicker({
             size: 8
         });
@@ -19,5 +18,4 @@ $(function ()
 
     initBootstrapDateTimePickers();
     initBootstrapSelect();
-
-})
+}

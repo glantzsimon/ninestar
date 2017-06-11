@@ -24,6 +24,7 @@ namespace K9.WebApplication.Constants
 		public static class Attributes
 		{
 			public const string DataLiveSearch = "data-live-search";
+			public const string DateFormat = "date-format";
 		}
 
 	}

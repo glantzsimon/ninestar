@@ -1,12 +1,12 @@
 ﻿@using System.Globalization
-@using K9.SharedLibrary.Extensions
 
 <script type="text/javascript">
 
 	$(function ()
 	{
 		initBootstrapControls({
-			language: "@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower()"
+			language: "@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower()",
+			dateFormat: "@CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern.ToUpper()"
 		});
 
 	});

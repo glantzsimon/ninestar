@@ -1,8 +1,10 @@
-function initBootstrapControls(config) {
+function initBootstrapControls(config)
+{
 
-    function initBootstrapDateTimePickers() {
+    function initBootstrapDateTimePickers()
+    {
         $("div.dateonly").datetimepicker({
-            locale: "fr",
+            locale: config.language,
             format: "L"
         });
 
@@ -10,16 +12,24 @@ function initBootstrapControls(config) {
             locale: config.language,
             format: "L"
         });
-
-        $("input[type=datetime]").removeAttr("data-val-date");
     }
 
-    function initBootstrapSelect() {
+    function initBootstrapSelect()
+    {
         $(".selectpicker").selectpicker({
             size: 8
         });
     }
 
+    function initDateTimeValidation()
+    {
+        $.validator.methods.date = function (value, element)
+        {
+            return this.optional(element) || moment(value, config.dateFormat, true).isValid();
+        }
+    }
+
     initBootstrapDateTimePickers();
     initBootstrapSelect();
+    initDateTimeValidation();
 }

@@ -377,7 +377,7 @@
     <value>Oui</value>
   </data>
   <data name="DeleteConfirm" xml:space="preserve">
-    <value>Etes-vous certain de vouloir supprimer cet enregistrement?</value>
+    <value>Etes-vous sûr de vouloir supprimer cet enregistrement?</value>
   </data>
   <data name="CreateNew" xml:space="preserve">
     <value>Créer Nouveau</value>
@@ -453,5 +453,8 @@
   </data>
   <data name="AccountLockedErrorDetails" xml:space="preserve">
     <value>Le nombre de tentatives de connexion échouées a dépassé le maximum permis.</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Recherche</value>
   </data>
 </root>

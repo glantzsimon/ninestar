@@ -27,7 +27,12 @@ function initBootstrapControls(config)
         }
     }
 
+    function selectFirstformInput() {
+        $("form:first").find("input[type=text], textarea, select").filter(":not(#main-search)").filter(":visible:first").focus();
+    }
+
     initBootstrapDateTimePickers();
     initBootstrapSelect();
     initDateTimeValidation();
+    selectFirstformInput();
 }

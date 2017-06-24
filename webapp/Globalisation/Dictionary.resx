@@ -454,4 +454,7 @@
   <data name="AccountLockedErrorDetails" xml:space="preserve">
     <value>The number of consecutive log-in failures exceeded the maximum allowed.</value>
   </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
 </root>

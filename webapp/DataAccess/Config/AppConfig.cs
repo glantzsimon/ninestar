@@ -21,5 +21,10 @@ namespace K9.DataAccess.Config
 			get { return ConfigurationManager.AppSettings.GetValue("SystemUserPassword"); }
 		}
 
+		public static string DefaultUserPassword
+		{
+			get { return ConfigurationManager.AppSettings.GetValue("DefaultUserPassword"); }
+		}
+
 	}
 }

@@ -29,9 +29,9 @@ namespace K9.WebApplication.Controllers
 
 		#region Events
 
-		public EventHandler RecordCreated;
-		public EventHandler RecordDeleted;
-		public EventHandler RecordUpdated;
+		public event EventHandler<CrudEventArgs> RecordCreated;
+		public event EventHandler<CrudEventArgs> RecordDeleted;
+		public event EventHandler<CrudEventArgs> RecordUpdated;
 
 		#endregion
 

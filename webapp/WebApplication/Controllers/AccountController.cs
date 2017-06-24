@@ -366,16 +366,28 @@ namespace K9.WebApplication.Controllers
 		}
 
 		[AllowAnonymous]
+		public ActionResult AccountActivationFailed()
+		{
+			return View();
+		}
+
+		[AllowAnonymous]
+		public ActionResult AccountAlreadyActivated()
+		{
+			return View();
+		}
+
+		[AllowAnonymous]
 		public ActionResult ActivateAccount(string userName, string token)
 		{
 			if (WebSecurity.IsConfirmed(userName))
 			{
-				return View("ActivateAccountFailed", new ViewMessage(Dictionary.AccountAlreadyActivated));
+				return RedirectToAction("AccountAlreadyActivated", "Account");
 			}
 
 			if (!WebSecurity.ConfirmAccount(userName, token))
 			{
-				return View("ActivateAccountFailed", new ViewMessage(Dictionary.AccountActivationFailed));
+				return RedirectToAction("AccountActivationFailed", "Account");
 			}
 
 			return RedirectToAction("AccountActivated", "Account", new { userName });

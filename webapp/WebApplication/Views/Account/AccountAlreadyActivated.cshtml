@@ -1,7 +1,6 @@
-﻿@model ViewMessage
-@{
+﻿@{
     ViewBag.Title = Dictionary.AccountActivationTitle;
 	Layout = "~/Views/Shared/_LayoutForm.cshtml";
 }
 
-@Html.Failure(Model.Text)
+@Html.Alert(EAlertType.Warning, Dictionary.AccountAlreadyActivated)

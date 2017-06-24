@@ -256,6 +256,7 @@
     <Content Include="Images\ui\success.png" />
     <Content Include="Images\ui\facebook_sm.png" />
     <Content Include="Images\ui\google_sm.png" />
+    <Content Include="Images\ui\warning.png" />
     <Content Include="Scripts\imageSwitcher\backgroundSwitcher.js" />
     <Content Include="Scripts\imageSwitcher\responsiveslides.min.js" />
     <Content Include="Scripts\k9\buttonBehaviours.js" />
@@ -311,7 +312,7 @@
   <ItemGroup>
     <Content Include="Views\Account\AccountActivated.cshtml" />
     <Content Include="Views\Account\AccountCreated.cshtml" />
-    <Content Include="Views\Account\ActivateAccountFailed.cshtml" />
+    <Content Include="Views\Account\AccountActivationFailed.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\PasswordResetEmailSent.cshtml" />
     <Content Include="Views\Account\PasswordResetRequest.cshtml" />
@@ -378,6 +379,7 @@
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Account\AccountLocked.cshtml" />
+    <Content Include="Views\Account\AccountAlreadyActivated.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
     <Content Include="Views\Shared\_Layout100.cshtml" />

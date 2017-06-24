@@ -457,4 +457,7 @@
   <data name="Search" xml:space="preserve">
     <value>Search</value>
   </data>
+  <data name="AccountActivated" xml:space="preserve">
+    <value>Account Activated</value>
+  </data>
 </root>

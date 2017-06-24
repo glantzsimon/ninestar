@@ -34,6 +34,7 @@ namespace K9.Globalisation
 			public const string BirthDateLabel = "BirthDateLabel";
 			public const string TwoLetterCountryCodeLabel = "TwoLetterCountryCodeLabel";
 			public const string ThreeLetterCountryCodeLabel = "ThreeLetterCountryCodeLabel";
+			public const string AccountActivated = "AccountActivated";
 		}
 
 		public class Grammar

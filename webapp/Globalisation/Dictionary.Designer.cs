@@ -61,6 +61,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Account Activated.
+        /// </summary>
+        public static string AccountActivated {
+            get {
+                return ResourceManager.GetString("AccountActivated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your account was activated successfully..
         /// </summary>
         public static string AccountActivatedSuccessfully {

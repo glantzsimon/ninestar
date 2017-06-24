@@ -73,7 +73,6 @@ namespace K9.WebApplication.Controllers
 			return View(model);
 		}
 
-		[Authorize]
 		public ActionResult AccountLocked()
 		{
 			return View();

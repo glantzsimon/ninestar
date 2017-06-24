@@ -42,7 +42,7 @@ namespace K9.WebApplication.Helpers
 			// Get container div
 			var div = new TagBuilder(Tags.Div);
 			var attributes = new Dictionary<string, object>();
-			attributes.MergeAttribute(Attributes.Class, modelType == typeof(bool) ? Bootstrap.Classes.Checkbox : Bootstrap.Classes.FormGroup);
+			attributes.MergeAttribute(Attributes.Class, !options.IsReadOnly && modelType == typeof(bool) ? Bootstrap.Classes.Checkbox : Bootstrap.Classes.FormGroup);
 			if (html.GetModelErrorsFor(expression).Any())
 			{
 				attributes.MergeAttribute(Attributes.Class, Bootstrap.Classes.HasError);

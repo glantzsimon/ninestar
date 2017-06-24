@@ -39,9 +39,13 @@ namespace K9.DataAccess.Models
 		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 		public DateTime BirthDate { get; set; }
 
-		public bool IsActivated()
+		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AccountActivated)]
+		public bool IsActivated
 		{
-			return WebSecurity.IsConfirmed(Username);
+			get
+			{
+				return WebSecurity.Initialized && WebSecurity.IsConfirmed(Username);
+			}
 		}
 
 		public override void UpdateName()

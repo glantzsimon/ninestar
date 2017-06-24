@@ -59,6 +59,10 @@ namespace K9.WebApplication.Controllers
 					}
 					return RedirectToAction("Index", "Home");
 				}
+				if (WebSecurity.IsAccountLockedOut(model.UserName, 10, TimeSpan.FromDays(1)))
+				{
+					return RedirectToAction("AccountLocked");
+				}
 				ModelState.AddModelError("", Dictionary.UsernamePasswordIncorrectError);
 			}
 			else
@@ -67,6 +71,12 @@ namespace K9.WebApplication.Controllers
 			}
 
 			return View(model);
+		}
+
+		[Authorize]
+		public ActionResult AccountLocked()
+		{
+			return View();
 		}
 
 		[Authorize]

@@ -448,4 +448,10 @@
   <data name="InvalidDate" xml:space="preserve">
     <value>Please enter a valid date.</value>
   </data>
+  <data name="AccountLockedError" xml:space="preserve">
+    <value>Your account has been locked</value>
+  </data>
+  <data name="AccountLockedErrorDetails" xml:space="preserve">
+    <value>The number of consecutive log-in failures exceeded the maximum allowed.</value>
+  </data>
 </root>

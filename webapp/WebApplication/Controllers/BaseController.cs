@@ -5,6 +5,7 @@ using K9.Globalisation;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.EventArgs;
 using K9.WebApplication.Extensions;
 using K9.WebApplication.Helpers;
 using Newtonsoft.Json;
@@ -22,6 +23,15 @@ namespace K9.WebApplication.Controllers
 		private readonly ILogger _logger;
 		private readonly IDataTableAjaxHelper<T> _ajaxHelper;
 		private readonly IDataSetsHelper _dataSetsHelper;
+
+		#endregion
+
+
+		#region Events
+
+		public EventHandler RecordCreated;
+		public EventHandler RecordDeleted;
+		public EventHandler RecordUpdated;
 
 		#endregion
 
@@ -142,7 +152,7 @@ namespace K9.WebApplication.Controllers
 				return View(itemToCreate);
 			}
 
-			
+
 			return View();
 		}
 
@@ -156,6 +166,15 @@ namespace K9.WebApplication.Controllers
 				try
 				{
 					_repository.Create(item);
+
+					if (RecordCreated != null)
+					{
+						RecordCreated(this, new CrudEventArgs
+						{
+							Item = item
+						});
+					}
+
 					return RedirectToAction("Index", this.GetFilterRouteValueDictionary());
 				}
 				catch (Exception ex)
@@ -191,6 +210,15 @@ namespace K9.WebApplication.Controllers
 				try
 				{
 					_repository.Update(item);
+
+					if (RecordUpdated != null)
+					{
+						RecordUpdated(this, new CrudEventArgs
+						{
+							Item = item
+						});
+					}
+
 					return RedirectToAction("Index", this.GetFilterRouteValueDictionary());
 				}
 				catch (Exception ex)
@@ -233,6 +261,15 @@ namespace K9.WebApplication.Controllers
 				try
 				{
 					_repository.Delete(id);
+
+					if (RecordDeleted != null)
+					{
+						RecordDeleted(this, new CrudEventArgs
+						{
+							Item = item
+						});
+					}
+
 					return RedirectToAction("Index", this.GetFilterRouteValueDictionary());
 				}
 				catch (Exception ex)

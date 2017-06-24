@@ -3,6 +3,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using DataAnnotationsExtensions;
 using K9.Globalisation;
+using WebMatrix.WebData;
 
 namespace K9.DataAccess.Models
 {
@@ -37,6 +38,11 @@ namespace K9.DataAccess.Models
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BirthDateLabel)]
 		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 		public DateTime BirthDate { get; set; }
+
+		public bool IsActivated()
+		{
+			return WebSecurity.IsConfirmed(Username);
+		}
 
 		public override void UpdateName()
 		{

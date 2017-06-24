@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using System.Web.Mvc.Html;
+using K9.WebApplication.Enums;
 using K9.WebApplication.Options;
 
 namespace K9.WebApplication.Helpers
@@ -24,10 +25,11 @@ namespace K9.WebApplication.Helpers
 
 		public static MvcHtmlString Failure(this HtmlHelper html, string message, string otherMessage = "")
 		{
-			return html.Partial("_Fail", new AlertOptions
+			return html.Partial("_Alert", new AlertOptions
 			{
 				Message = message,
-				OtherMessage = otherMessage
+				OtherMessage = otherMessage,
+				AlertType = EAlertType.Fail
 			});
 		}
 

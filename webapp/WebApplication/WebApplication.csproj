@@ -191,7 +191,9 @@
     <Compile Include="DataSets\DataSets.cs" />
     <Compile Include="DataSets\DataSetsHelper.cs" />
     <Compile Include="Enums\BootstrapEnums.cs" />
+    <Compile Include="Enums\EAlertType.cs" />
     <Compile Include="Enums\ImageSwitcherEnums.cs" />
+    <Compile Include="EventArgs\CrudEventArgs.cs" />
     <Compile Include="Extensions\FormatExtensions.cs" />
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Extensions\MvcExtensions.cs" />
@@ -204,6 +206,7 @@
     <Compile Include="Helpers\BootstrapTable.cs" />
     <Compile Include="Helpers\AuditFieldsForModel.cs" />
     <Compile Include="Helpers\BootstrapDropdownFor.cs" />
+    <Compile Include="Helpers\Alert.cs" />
     <Compile Include="Helpers\IDataTableAjaxHelper.cs" />
     <Compile Include="Helpers\DataTableAjaxHelper.cs" />
     <Compile Include="Helpers\Fail.cs" />
@@ -249,6 +252,7 @@
     <Content Include="Images\home\slides\slide2.jpg" />
     <Content Include="Images\home\slides\slide3.jpg" />
     <Content Include="Images\ui\fail.png" />
+    <Content Include="Images\ui\locked.png" />
     <Content Include="Images\ui\success.png" />
     <Content Include="Images\ui\facebook_sm.png" />
     <Content Include="Images\ui\google_sm.png" />
@@ -329,8 +333,6 @@
     <Content Include="Views\Shared\EditorTemplates\Text.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\EmailAddress.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\PhoneNumber.cshtml" />
-    <Content Include="Views\Shared\_Success.cshtml" />
-    <Content Include="Views\Shared\_Fail.cshtml" />
     <Content Include="Views\Shared\_Alert.cshtml" />
     <Content Include="Views\Account\ResetPasswordFailed.cshtml" />
     <Content Include="Views\Account\ResetPasswordSuccess.cshtml" />
@@ -375,6 +377,7 @@
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Account\AccountLocked.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
     <Content Include="Views\Shared\_Layout100.cshtml" />

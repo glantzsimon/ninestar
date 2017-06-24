@@ -10,3 +10,8 @@
 		@MvcHtmlString.Create(@Model.OtherMessage)
 	</p>
 }
+
+@if (Model.AlertType != EAlertType.Unspecified)
+{
+	<img alt="@Model.AlertType.ToString()" src="~/Images/ui/@Model.GetAlertImage()" />
+}

@@ -106,6 +106,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your account has been locked.
+        /// </summary>
+        public static string AccountLockedError {
+            get {
+                return ResourceManager.GetString("AccountLockedError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The number of consecutive log-in failures exceeded the maximum allowed..
+        /// </summary>
+        public static string AccountLockedErrorDetails {
+            get {
+                return ResourceManager.GetString("AccountLockedErrorDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your account has not yet been activated. Please check your email and follow the link to activate your account..
         /// </summary>
         public static string AccountNotActivatedError {

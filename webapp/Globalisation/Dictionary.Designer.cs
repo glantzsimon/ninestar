@@ -79,7 +79,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your account could not be activated. Please email our support team for further information..
+        ///   Looks up a localized string similar to Your account could not be activated..
         /// </summary>
         public static string AccountActivationFailed {
             get {
@@ -246,6 +246,15 @@ namespace K9.Globalisation {
         public static string ConfirmPasswordLabel {
             get {
                 return ResourceManager.GetString("ConfirmPasswordLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact Us.
+        /// </summary>
+        public static string ContactUsTitle {
+            get {
+                return ResourceManager.GetString("ContactUsTitle", resourceCulture);
             }
         }
         
@@ -876,7 +885,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to We are unable to reset your password. Please contact support for further assistance..
+        ///   Looks up a localized string similar to We are unable to reset your password..
         /// </summary>
         public static string PasswordResetFailError {
             get {
@@ -917,6 +926,15 @@ namespace K9.Globalisation {
         public static string PhoneNumberLabel {
             get {
                 return ResourceManager.GetString("PhoneNumberLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please email our support team for further information..
+        /// </summary>
+        public static string PleaseContactSupport {
+            get {
+                return ResourceManager.GetString("PleaseContactSupport", resourceCulture);
             }
         }
         
@@ -980,6 +998,15 @@ namespace K9.Globalisation {
         public static string Search {
             get {
                 return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Submit.
+        /// </summary>
+        public static string Submit {
+            get {
+                return ResourceManager.GetString("Submit", resourceCulture);
             }
         }
         

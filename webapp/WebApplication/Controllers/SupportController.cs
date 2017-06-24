@@ -2,9 +2,9 @@
 
 namespace K9.WebApplication.Controllers
 {
-	public class HomeController : Controller
+	public class SupportController : Controller
 	{
-		public ActionResult Index()
+		public ActionResult ContactUs()
 		{
 			return View();
 		}

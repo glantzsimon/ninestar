@@ -1,0 +1,15 @@
+﻿@model User
+@{
+	Layout = "~/Views/Shared/_LayoutForm.cshtml";
+	ViewBag.Title = Dictionary.ContactUsTitle;
+}
+
+@using (Html.BeginForm())
+{
+	using (Html.BeginBootstrapForm())
+	{
+		
+		<hr/>
+		@Html.BootstrapButton(Dictionary.Submit)
+	}
+}

@@ -190,7 +190,7 @@
     <value>We've sent you an email with a link to reset your password.</value>
   </data>
   <data name="PasswordResetFailError" xml:space="preserve">
-    <value>We are unable to reset your password. Please contact support for further assistance.</value>
+    <value>We are unable to reset your password.</value>
   </data>
   <data name="PhoneNumberLabel" xml:space="preserve">
     <value>Telephone Number</value>
@@ -211,7 +211,7 @@
     <value>Your account was activated successfully.</value>
   </data>
   <data name="AccountActivationFailed" xml:space="preserve">
-    <value>Your account could not be activated. Please email our support team for further information.</value>
+    <value>Your account could not be activated.</value>
   </data>
   <data name="AccountActivationTitle" xml:space="preserve">
     <value>Account Activation</value>
@@ -462,5 +462,14 @@
   </data>
   <data name="AccountLockedTitle" xml:space="preserve">
     <value>Account Locked</value>
+  </data>
+  <data name="PleaseContactSupport" xml:space="preserve">
+    <value>Please email our support team for further information.</value>
+  </data>
+  <data name="ContactUsTitle" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Submit</value>
   </data>
 </root>

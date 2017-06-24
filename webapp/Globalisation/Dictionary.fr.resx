@@ -190,7 +190,7 @@
     <value>Nous vous avons envoyé un email pour réinitialiser votre mot de passe.</value>
   </data>
   <data name="PasswordResetFailError" xml:space="preserve">
-    <value>Il n'a pas été possible de réinitialiser votre mot de passe. Nous vous prions de contacter notre service clients.</value>
+    <value>Il n'a pas été possible de réinitialiser votre mot de passe.</value>
   </data>
   <data name="PhoneNumberLabel" xml:space="preserve">
     <value>Numéro de Téléphone</value>
@@ -208,7 +208,7 @@
     <value>Identifiant ou mot de passe invalide.</value>
   </data>
   <data name="AccountActivationFailed" xml:space="preserve">
-    <value>Il n'a pas été possible d'activer votre compte. Merci de contacter le support.</value>
+    <value>Il n'a pas été possible d'activer votre compte.</value>
   </data>
   <data name="AccountActivationTitle" xml:space="preserve">
     <value>Activation de Compte</value>
@@ -465,5 +465,14 @@
   </data>
   <data name="AccountActivatedSuccessfully" xml:space="preserve">
     <value>Votre compte a été activé avec succès.</value>
+  </data>
+  <data name="PleaseContactSupport" xml:space="preserve">
+    <value>Merci de contacter le support.</value>
+  </data>
+  <data name="ContactUsTitle" xml:space="preserve">
+    <value>Contacter Nous</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Envoi</value>
   </data>
 </root>

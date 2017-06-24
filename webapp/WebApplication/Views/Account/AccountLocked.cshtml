@@ -1,7 +1,10 @@
 ﻿@model UserAccount.ResetPasswordModel
 @{
-	ViewBag.Title = Dictionary.PasswordResetTitle;
+	ViewBag.Title = Dictionary.AccountLockedTitle;
 	Layout = "~/Views/Shared/_LayoutForm.cshtml";
 }
 
-@Html.Alert(EAlertType.Blocked, Dictionary.AccountLockedError, Dictionary.AccountLockedErrorDetails)
+@Html.Alert(EAlertType.Locked, Dictionary.AccountLockedError, Dictionary.AccountLockedErrorDetails)
+<div class="text-center">
+	@Html.ActionLink(Dictionary.ResetPassword, "PasswordResetRequest")
+</div>

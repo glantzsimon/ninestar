@@ -133,6 +133,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Account Locked.
+        /// </summary>
+        public static string AccountLockedTitle {
+            get {
+                return ResourceManager.GetString("AccountLockedTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your account has not yet been activated. Please check your email and follow the link to activate your account..
         /// </summary>
         public static string AccountNotActivatedError {

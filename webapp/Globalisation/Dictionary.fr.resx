@@ -460,4 +460,10 @@
   <data name="AccountActivated" xml:space="preserve">
     <value>Compte Activé</value>
   </data>
+  <data name="AccountLockedTitle" xml:space="preserve">
+    <value>Compte Verouillé</value>
+  </data>
+  <data name="AccountActivatedSuccessfully" xml:space="preserve">
+    <value>Votre compte a été activé avec succès.</value>
+  </data>
 </root>

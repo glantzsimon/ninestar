@@ -460,4 +460,7 @@
   <data name="AccountActivated" xml:space="preserve">
     <value>Account Activated</value>
   </data>
+  <data name="AccountLockedTitle" xml:space="preserve">
+    <value>Account Locked</value>
+  </data>
 </root>

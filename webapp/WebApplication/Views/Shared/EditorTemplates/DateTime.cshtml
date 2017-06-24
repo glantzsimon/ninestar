@@ -1,9 +1,4 @@
-﻿@using System.Globalization
-@using K9.SharedLibrary.Extensions
-@model Object
-@{
-	ViewData.MergeAttribute(K9.WebApplication.Constants.Html.Attributes.Type, K9.WebApplication.Constants.Html.Types.DateTime);
-}
+﻿@model Object
 <div class="input-group date datetime">
 	@Html.TextBoxFor(model => model, ViewData)
 	<span class="input-group-addon">

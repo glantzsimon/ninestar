@@ -1,4 +1,4 @@
-$(function ()
+function initButtonBehaviours()
 {
 
     function displaySpinnerOnFormSubmit() {
@@ -25,4 +25,4 @@ $(function ()
     displaySpinnerOnFormSubmit();
     displayPageSpinnerOnLinkClick();
 
-})
+};

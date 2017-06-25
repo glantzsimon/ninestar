@@ -61,7 +61,7 @@ namespace K9.DataAccess.Helpers
 
 		public void CreateRole(string roleName)
 		{
-			if (!_roleRepository.Exists(string.Format("SELECT [Id] FROM [Role] WHERE Name = '{0}'", roleName))) ;
+			if (!_roleRepository.Exists(string.Format("SELECT * FROM [Role] WHERE Name = '{0}'", roleName)))
 			{
 				_roleRepository.Create(new Role
 				{
@@ -72,7 +72,7 @@ namespace K9.DataAccess.Helpers
 
 		public void AddUserToRole(string username, string roleName)
 		{
-			if (!UserIsInRole(username, roleName)) ;
+			if (!UserIsInRole(username, roleName))
 			{
 				var user = _users.GetUser(username);
 				var role = GetRole(roleName);

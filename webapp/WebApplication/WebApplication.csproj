@@ -274,7 +274,6 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LayoutMaster.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -408,7 +407,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>3506</DevelopmentServerPort>
+          <DevelopmentServerPort>1605</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost/ninestar</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

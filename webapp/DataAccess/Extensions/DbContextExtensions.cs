@@ -69,8 +69,7 @@ namespace K9.DataAccess.Extensions
 
 		public static bool Exists<T>(this DbContext context, string query) where T : class, IObjectBase
 		{
-			return
-				Dapper.SqlMapper.Query<T>(context.Database.Connection, query).Any();
+			return Dapper.SqlMapper.Query<T>(context.Database.Connection, query).Any();
 		}
 
 		public static bool Exists<T>(this DbContext context, Expression<Func<T, bool>> expression)

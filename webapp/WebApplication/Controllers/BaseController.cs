@@ -141,7 +141,7 @@ namespace K9.WebApplication.Controllers
 		[Authorize]
 		public virtual ActionResult Create()
 		{
-			
+			//TODO: check permissions and roles
 			
 			var statelessFilter = this.GetStatelessFilter();
 

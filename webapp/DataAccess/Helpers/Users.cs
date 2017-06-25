@@ -7,7 +7,7 @@ using K9.SharedLibrary.Models;
 
 namespace K9.DataAccess.Helpers
 {
-	public class Users
+	public class Users : IUsers
 	{
 		private readonly DbContext _db;
 		private readonly IRepository<User> _repository;

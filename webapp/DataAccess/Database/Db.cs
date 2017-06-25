@@ -22,6 +22,9 @@ namespace K9.DataAccess.Database
 		public DbSet<Course> Courses { get; set; }
 		public DbSet<Enrollment> Enrollments { get; set; }
 		public DbSet<Student> Students { get; set; }
+		public DbSet<Role> Roles { get; set; }
+		public DbSet<UserRole> UserRoles { get; set; }
+		public DbSet<Permission> Permissions { get; set; }
 		
 		#endregion
 

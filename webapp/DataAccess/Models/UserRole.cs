@@ -1,9 +1,11 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using K9.DataAccess.Attributes;
 
 namespace K9.DataAccess.Models
 {
+	[AutoGenerateName]
 	public class UserRole : ObjectBase
 	{
 		[Required]

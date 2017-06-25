@@ -46,7 +46,7 @@ namespace K9.DataAccess.Database.Seeds
 				new BaseRepository<Role>(context),
 				new BaseRepository<Permission>(context),
 				new BaseRepository<UserRole>(context),
-				new Users(context, new BaseRepository<User>(context)) as IUsers);
+				new Users(context, new BaseRepository<User>(context)));
 
 			roles.CreateRole(RoleNames.Administrators);
 			roles.CreateRole(RoleNames.PowerUsers);

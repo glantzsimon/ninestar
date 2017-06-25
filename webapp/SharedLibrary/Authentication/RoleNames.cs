@@ -1,7 +1,7 @@
 ﻿
 namespace K9.SharedLibrary.Authentication
 {
-	public class UserRoles
+	public class RoleNames
 	{
 		public const string Administrators = "Administrator";
 		public const string PowerUsers = "PowerUser";

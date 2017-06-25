@@ -70,9 +70,9 @@ namespace K9.DataAccess.Respositories
 			return _db.Exists<T>(id);
 		}
 
-		public bool Exists(string name)
+		public bool Exists(string query)
 		{
-			return _db.Exists<T>(name);
+			return _db.Exists<T>(query);
 		}
 
 		public bool Exists(Expression<Func<T, bool>> expression)
@@ -80,7 +80,7 @@ namespace K9.DataAccess.Respositories
 			return _db.Exists(expression);
 		}
 
-		public IQueryable<T> Find(string name)
+		public List<T> Find(string name)
 		{
 			return _db.Find<T>(name);
 		}

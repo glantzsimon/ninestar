@@ -28,11 +28,11 @@ namespace K9.SharedLibrary.Models
 
 		bool Exists(int id);
 
-		bool Exists(string name);
+		bool Exists(string query);
 
 		bool Exists(Expression<Func<T, bool>> expression);
 
-		IQueryable<T> Find(string name);
+		List<T> Find(string name);
 
 		IQueryable<T> Find(Expression<Func<T, bool>> expression);
 

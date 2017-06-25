@@ -13,7 +13,7 @@ namespace K9.WebApplication.Helpers
 
 		public static MvcHtmlString AuditFieldsForModel<T>(this HtmlHelper<T> html, T model) where T : IObjectBase
 		{
-			if (Roles.IsUserInRole(WebSecurity.CurrentUserName, UserRoles.Administrators))
+			if (Roles.IsUserInRole(WebSecurity.CurrentUserName, RoleNames.Administrators))
 			{
 				var sb = new StringBuilder();
 

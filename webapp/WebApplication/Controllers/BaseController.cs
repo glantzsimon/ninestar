@@ -138,9 +138,11 @@ namespace K9.WebApplication.Controllers
 
 		#region CRUD
 
-		[Authorize(Roles = UserRoles.Administrators)]
+		[Authorize]
 		public virtual ActionResult Create()
 		{
+			
+			
 			var statelessFilter = this.GetStatelessFilter();
 
 			ViewBag.Title = string.Format("{0} {1}{2}", Dictionary.CreateNew, typeof(T).GetName(), GetStatelessFilterTitle());
@@ -158,7 +160,7 @@ namespace K9.WebApplication.Controllers
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		[Authorize(Roles = UserRoles.Administrators)]
+		[Authorize]
 		public virtual ActionResult Create(T item)
 		{
 			if (ModelState.IsValid)
@@ -188,7 +190,7 @@ namespace K9.WebApplication.Controllers
 			return View(item);
 		}
 
-		[Authorize(Roles = UserRoles.Administrators)]
+		[Authorize]
 		public virtual ActionResult Edit(int id = 0)
 		{
 			var item = _repository.Find(id);
@@ -202,7 +204,7 @@ namespace K9.WebApplication.Controllers
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		[Authorize(Roles = UserRoles.Administrators)]
+		[Authorize]
 		public virtual ActionResult Edit(T item)
 		{
 			if (ModelState.IsValid)
@@ -232,7 +234,7 @@ namespace K9.WebApplication.Controllers
 			return View(item);
 		}
 
-		[Authorize(Roles = UserRoles.Administrators)]
+		[Authorize]
 		public virtual ActionResult Delete(int id)
 		{
 			T item = _repository.Find(id);

@@ -13,6 +13,11 @@ namespace K9.SharedLibrary.Models
 		string LastUpdatedBy { get; set; }
 		DateTime? LastUpdatedOn { get; set; }
 		string GetForeignKeyName();
+		string GetCreateRoleName();
+		string GetEditRoleName();
+		string GetDeleteRoleName();
+		string GetViewRoleName();
+		string GetLocalisedDescription();
 		void UpdateAuditFields();
 		void UpdateName();
 		RouteValueDictionary GetForeignKeyFilterRouteValues();

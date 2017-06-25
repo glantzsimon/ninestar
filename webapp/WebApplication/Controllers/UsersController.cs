@@ -1,4 +1,5 @@
-﻿using K9.DataAccess.Config;
+﻿using System.Web.Security;
+using K9.DataAccess.Config;
 using K9.DataAccess.Models;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.EventArgs;
@@ -15,7 +16,6 @@ namespace K9.WebApplication.Controllers
 		{
 
 			RecordCreated += UsersController_RecordCreated;
-
 		}
 
 		void UsersController_RecordCreated(object sender, CrudEventArgs e)

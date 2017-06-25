@@ -912,6 +912,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Permission.
+        /// </summary>
+        public static string PermissionLabel {
+            get {
+                return ResourceManager.GetString("PermissionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Personal Information.
         /// </summary>
         public static string PersonalInformation {
@@ -993,6 +1002,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Role.
+        /// </summary>
+        public static string RoleLabel {
+            get {
+                return ResourceManager.GetString("RoleLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Search.
         /// </summary>
         public static string Search {
@@ -1052,6 +1070,15 @@ namespace K9.Globalisation {
         public static string TwoLetterCountryCodeLabel {
             get {
                 return ResourceManager.GetString("TwoLetterCountryCodeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You do not have permission to view the requested resource..
+        /// </summary>
+        public static string UnauthorizedError {
+            get {
+                return ResourceManager.GetString("UnauthorizedError", resourceCulture);
             }
         }
         

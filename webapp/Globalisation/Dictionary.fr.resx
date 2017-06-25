@@ -475,4 +475,13 @@
   <data name="Submit" xml:space="preserve">
     <value>Envoi</value>
   </data>
+  <data name="RoleLabel" xml:space="preserve">
+    <value>Rôle</value>
+  </data>
+  <data name="PermissionLabel" xml:space="preserve">
+    <value>Permission</value>
+  </data>
+  <data name="UnauthorizedError" xml:space="preserve">
+    <value>Vous n'avez pas la permission d'accéder à cette page.</value>
+  </data>
 </root>

@@ -8,5 +8,15 @@ namespace K9.WebApplication.Controllers
 		{
 			return View();
 		}
+
+		public ActionResult Test()
+		{
+			return new HttpUnauthorizedResult();
+		}
+
+		public ActionResult Unauthorized()
+		{
+			return View();
+		}
 	}
 }

@@ -55,6 +55,39 @@ namespace K9.DataAccess.Models
 			return string.Format("{0}Id", GetType().Name);
 		}
 
+		public string GetCreateRoleName()
+		{
+			return string.Format("Create{0}", GetType().Name);
+		}
+
+		public string GetEditRoleName()
+		{
+			return string.Format("Create{0}", GetType().Name);
+		}
+
+		public string GetDeleteRoleName()
+		{
+			return string.Format("Create{0}", GetType().Name);
+		}
+
+		public string GetViewRoleName()
+		{
+			return string.Format("Create{0}", GetType().Name);
+		}
+
+		public string GetLocalisedDescription()
+		{
+			try
+			{
+				return typeof(Dictionary).GetValueFromResource(Name);
+			}
+			catch (Exception e)
+			{
+			}
+
+			return Name;
+		}
+
 		public void UpdateAuditFields()
 		{
 			var loggedinUser = "";

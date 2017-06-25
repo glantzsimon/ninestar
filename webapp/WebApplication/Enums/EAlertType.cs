@@ -7,6 +7,7 @@ namespace K9.WebApplication.Enums
 		Success,
 		Fail,
 		Warning,
-		Locked
+		Locked,
+		Unauthorized
 	}
 }

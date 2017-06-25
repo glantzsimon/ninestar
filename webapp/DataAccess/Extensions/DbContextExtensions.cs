@@ -27,7 +27,7 @@ namespace K9.DataAccess.Extensions
 
 		public static string GetName(this DbContext context, string tableName, int id)
 		{
-			return context.Database.SqlQuery<string>(string.Format("SELECT Name FROM [{0}] WHERE [Id] = {1}", tableName, id)).First();
+			return Dapper.SqlMapper.Query<string>(context.Database.Connection, string.Format("SELECT Name FROM [{0}] WHERE [Id] = {1}", tableName, id)).First();
 		}
 
 		public static void Create<T>(this DbContext context, T item) where T : class, IObjectBase
@@ -62,13 +62,15 @@ namespace K9.DataAccess.Extensions
 
 		public static bool Exists<T>(this DbContext context, int id) where T : class, IObjectBase
 		{
-			T item = context.Set<T>().Find(id);
-			return item != null;
+			return
+				Dapper.SqlMapper.Query<int>(context.Database.Connection, string.Format("SELECT COUNT(*) FROM [{0}] WHERE [Id] = {1}", typeof(T).Name,
+					id)).First() > 0;
 		}
 
-		public static bool Exists<T>(this DbContext context, string name) where T : class, IObjectBase
+		public static bool Exists<T>(this DbContext context, string query) where T : class, IObjectBase
 		{
-			return context.Set<T>().Any(t => t.Name.Equals(name, StringComparison.CurrentCultureIgnoreCase));
+			return
+				Dapper.SqlMapper.Query<T>(context.Database.Connection, query).Any();
 		}
 
 		public static bool Exists<T>(this DbContext context, Expression<Func<T, bool>> expression)
@@ -77,9 +79,11 @@ namespace K9.DataAccess.Extensions
 			return context.Set<T>().Where(expression).Any();
 		}
 
-		public static IQueryable<T> Find<T>(this DbContext context, string name) where T : class, IObjectBase
+		public static List<T> Find<T>(this DbContext context, string name) where T : class, IObjectBase
 		{
-			return context.Set<T>().Where(t => t.Name.Equals(name, StringComparison.CurrentCultureIgnoreCase));
+			return
+				Dapper.SqlMapper.Query<T>(context.Database.Connection,
+					string.Format("SELECT * FROM [{0}] WHERE [Name] = '{1}'", typeof (T).Name, name)).ToList();
 		}
 
 		public static IQueryable<T> Find<T>(this DbContext context, Expression<Func<T, bool>> expression)

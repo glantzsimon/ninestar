@@ -1,0 +1,6 @@
+﻿@{
+	ViewBag.Title = Dictionary.Oops;
+	Layout = "~/Views/Shared/_LayoutForm.cshtml";
+	Response.StatusCode = (int)HttpStatusCode.Unauthorized;
+}
+@Html.Alert(EAlertType.Unauthorized, Dictionary.UnauthorizedError)

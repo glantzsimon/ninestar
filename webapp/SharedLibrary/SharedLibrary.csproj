@@ -105,7 +105,7 @@
     <Compile Include="Helpers\ImageProcessor.cs" />
     <Compile Include="Helpers\Mailer.cs" />
     <Compile Include="Helpers\TemplateProcessor.cs" />
-    <Compile Include="Authentication\UserRoles.cs" />
+    <Compile Include="Authentication\RoleNames.cs" />
     <Compile Include="Helpers\TestHtmlHelper.cs" />
     <Compile Include="Models\AssetInfo.cs" />
     <Compile Include="Models\IBaseController.cs" />

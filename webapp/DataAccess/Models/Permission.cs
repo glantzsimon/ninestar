@@ -3,6 +3,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using K9.DataAccess.Attributes;
+using K9.Globalisation;
 
 namespace K9.DataAccess.Models
 {
@@ -10,12 +11,22 @@ namespace K9.DataAccess.Models
 	{
 		[ForeignKey("Role")]
 		[UIHint("Role")]
-		[Display(Name = "Role")]
+		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RoleLabel)]
 		public int RoleId { get; set; }
+
+		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PermissionLabel)]
+		public string Description
+		{
+			get
+			{
+				return GetLocalisedDescription();
+			}
+		}
 
 		public virtual Role Role { get; set; }
 
 		[LinkedColumn(LinkedTableName = "Role", LinkedColumnName = "Name")]
+		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RoleLabel)]
 		public string RoleName { get; set; }
 	}
 }

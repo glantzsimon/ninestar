@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Data.Entity;
-using System.Linq;
-using System.Web.Security;
 using K9.DataAccess.Config;
+using K9.DataAccess.Helpers;
+using K9.DataAccess.Models;
+using K9.DataAccess.Respositories;
 using K9.SharedLibrary.Authentication;
 using WebMatrix.WebData;
 
@@ -13,8 +14,7 @@ namespace K9.DataAccess.Database.Seeds
 		public static void SeedUsersAndRoles(DbContext context)
 		{
 			SeedSystemUser();
-			SeedRoles();
-			AssignRoles();
+			SeedRoles(context);
 		}
 
 		private static void SeedSystemUser()
@@ -39,31 +39,19 @@ namespace K9.DataAccess.Database.Seeds
 			}
 		}
 
-		private static void SeedRoles()
+		private static void SeedRoles(DbContext context)
 		{
-			if (WebSecurity.Initialized)
-			{
-				if (!Roles.RoleExists(UserRoles.Administrators))
-				{
-					Roles.CreateRole(UserRoles.Administrators);
-				}
+			var roles = new Helpers.Roles(
+				context,
+				new BaseRepository<Role>(context),
+				new BaseRepository<Permission>(context),
+				new BaseRepository<UserRole>(context),
+				new Users(context, new BaseRepository<User>(context)) as IUsers);
 
-				if (!Roles.RoleExists(UserRoles.PowerUsers))
-				{
-					Roles.CreateRole(UserRoles.PowerUsers);
-				}
-			}
-		}
+			roles.CreateRole(RoleNames.Administrators);
+			roles.CreateRole(RoleNames.PowerUsers);
 
-		private static void AssignRoles()
-		{
-			if (WebSecurity.Initialized)
-			{
-				if (!Roles.GetRolesForUser(SystemUser.System).Contains(UserRoles.Administrators))
-				{
-					Roles.AddUsersToRoles(new[] {SystemUser.System}, new[] {UserRoles.Administrators});
-				}
-			}
+			roles.AddUserToRole(SystemUser.System, RoleNames.Administrators);
 		}
 
 	}

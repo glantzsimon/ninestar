@@ -377,7 +377,7 @@
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Account\AccountLocked.cshtml" />
     <Content Include="Views\Account\AccountAlreadyActivated.cshtml" />
-    <Content Include="Views\Home\Unauthorized.cshtml" />
+    <Content Include="Views\Shared\Unauthorized.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
     <Content Include="Views\Shared\_Layout100.cshtml" />

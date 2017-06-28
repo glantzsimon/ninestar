@@ -54,6 +54,9 @@
       <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net40\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.4.4.6\lib\net40\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -108,10 +111,16 @@
     <Compile Include="Authentication\RoleNames.cs" />
     <Compile Include="Helpers\TestHtmlHelper.cs" />
     <Compile Include="Models\AssetInfo.cs" />
+    <Compile Include="Models\IPermissable.cs" />
+    <Compile Include="Models\IRole.cs" />
+    <Compile Include="Models\IPermission.cs" />
     <Compile Include="Models\IBaseController.cs" />
     <Compile Include="Models\IDataSets.cs" />
     <Compile Include="Models\IDataSetsHelper.cs" />
     <Compile Include="Models\IListItem.cs" />
+    <Compile Include="Models\IRoles.cs" />
+    <Compile Include="Models\IUser.cs" />
+    <Compile Include="Models\IUsers.cs" />
     <Compile Include="Models\StatelessFilter.cs" />
     <Compile Include="Models\IStatelessFilter.cs" />
     <Compile Include="Models\IAssetInfo.cs" />

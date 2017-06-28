@@ -3,10 +3,11 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using K9.Globalisation;
+using K9.SharedLibrary.Models;
 
 namespace K9.DataAccess.Models
 {
-	public class Role : ObjectBase
+	public class Role : ObjectBase, IRole
 	{
 
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RoleLabel)]

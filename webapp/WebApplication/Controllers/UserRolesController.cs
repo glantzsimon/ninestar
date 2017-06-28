@@ -8,8 +8,7 @@ namespace K9.WebApplication.Controllers
 
 	public class UserRolesController : BaseController<UserRole>
 	{
-		public UserRolesController(IRepository<UserRole> repository, ILogger logger, IDataTableAjaxHelper<UserRole> ajaxHelper, IDataSetsHelper dataSetsHelper)
-			: base(repository, logger, ajaxHelper, dataSetsHelper)
+		public UserRolesController(IRepository<UserRole> repository, ILogger logger, IDataTableAjaxHelper<UserRole> ajaxHelper, IDataSetsHelper dataSetsHelper, IRoles roles) : base(repository, logger, ajaxHelper, dataSetsHelper, roles)
 		{
 		}
 	}

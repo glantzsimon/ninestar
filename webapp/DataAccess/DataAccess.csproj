@@ -82,8 +82,6 @@
     <Compile Include="Exceptions\UserNotFoundException.cs" />
     <Compile Include="Extensions\DbContextExtensions.cs" />
     <Compile Include="Config\ColumnsConfig.cs" />
-    <Compile Include="Helpers\IRoles.cs" />
-    <Compile Include="Helpers\IUsers.cs" />
     <Compile Include="Helpers\Users.cs" />
     <Compile Include="Helpers\Roles.cs" />
     <Compile Include="Models\Permission.cs" />

@@ -3,11 +3,12 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using DataAnnotationsExtensions;
 using K9.Globalisation;
+using K9.SharedLibrary.Models;
 using WebMatrix.WebData;
 
 namespace K9.DataAccess.Models
 {
-	public class User : ObjectBase
+	public class User : ObjectBase, IUser
 	{
 		[StringLength(56)]
 		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]

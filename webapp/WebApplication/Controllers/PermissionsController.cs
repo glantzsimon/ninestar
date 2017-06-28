@@ -7,8 +7,7 @@ namespace K9.WebApplication.Controllers
 {
 	public class PermissionsController : BaseController<Permission>
 	{
-		public PermissionsController(IRepository<Permission> repository, ILogger logger, IDataTableAjaxHelper<Permission> ajaxHelper, IDataSetsHelper dataSetsHelper) 
-			: base(repository, logger, ajaxHelper, dataSetsHelper)
+		public PermissionsController(IRepository<Permission> repository, ILogger logger, IDataTableAjaxHelper<Permission> ajaxHelper, IDataSetsHelper dataSetsHelper, IRoles roles) : base(repository, logger, ajaxHelper, dataSetsHelper, roles)
 		{
 		}
 	}

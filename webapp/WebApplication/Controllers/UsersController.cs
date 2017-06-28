@@ -1,5 +1,4 @@
-﻿using System.Web.Security;
-using K9.DataAccess.Config;
+﻿using K9.DataAccess.Config;
 using K9.DataAccess.Models;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.EventArgs;
@@ -11,10 +10,10 @@ namespace K9.WebApplication.Controllers
 {
 	public class UsersController : BaseController<User>
 	{
-		public UsersController(IRepository<User> repository, ILogger logger, IDataTableAjaxHelper<User> ajaxHelper, IDataSetsHelper dataSetsHelper)
-			: base(repository, logger, ajaxHelper, dataSetsHelper)
-		{
 
+		public UsersController(IRepository<User> repository, ILogger logger, IDataTableAjaxHelper<User> ajaxHelper, IDataSetsHelper dataSetsHelper, IRoles roles)
+			: base(repository, logger, ajaxHelper, dataSetsHelper, roles)
+		{
 			RecordCreated += UsersController_RecordCreated;
 		}
 
@@ -23,5 +22,6 @@ namespace K9.WebApplication.Controllers
 			var user = e.Item as User;
 			WebSecurity.CreateAccount(user.Username, AppConfig.DefaultUserPassword);
 		}
+		
 	}
 }

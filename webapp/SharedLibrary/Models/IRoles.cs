@@ -1,15 +1,13 @@
-﻿
-using System.Collections.Generic;
-using K9.DataAccess.Models;
+﻿using System.Collections.Generic;
 
-namespace K9.DataAccess.Helpers
+namespace K9.SharedLibrary.Models
 {
 	public interface IRoles
 	{
 
-		List<Role> GetRolesForUser(string username);
-		List<Permission> GetPermissionsForUser(string username);
-		Role GetRole(string roleName);
+		List<IRole> GetRolesForUser(string username);
+		List<IPermission> GetPermissionsForUser(string username);
+		IRole GetRole(string roleName);
 		bool UserHasPermission(string username, string permissionName);
 		bool UserIsInRole(string username, string roleName);
 		void CreateRole(string roleName);

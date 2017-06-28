@@ -26,6 +26,38 @@ namespace K9.DataAccess.Models
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NameLabel)]
 		public string Name { get; set; }
 
+		public string CreatePermissionName
+		{
+			get
+			{
+				return GetCreatePermissionName();
+			}
+		}
+
+		public string EditPermissionName
+		{
+			get
+			{
+				return GetEditPermissionName();
+			}
+		}
+
+		public string DeletePermissionName
+		{
+			get
+			{
+				return GetDeletePermissionName();
+			}
+		}
+
+		public string ViewPermissionName
+		{
+			get
+			{
+				return GetViewPermissionName();
+			}
+		}
+
 		#endregion
 
 
@@ -55,22 +87,22 @@ namespace K9.DataAccess.Models
 			return string.Format("{0}Id", GetType().Name);
 		}
 
-		public string GetCreateRoleName()
+		private string GetCreatePermissionName()
 		{
 			return string.Format("Create{0}", GetType().Name);
 		}
 
-		public string GetEditRoleName()
+		private string GetEditPermissionName()
 		{
 			return string.Format("Create{0}", GetType().Name);
 		}
 
-		public string GetDeleteRoleName()
+		private string GetDeletePermissionName()
 		{
 			return string.Format("Create{0}", GetType().Name);
 		}
 
-		public string GetViewRoleName()
+		private string GetViewPermissionName()
 		{
 			return string.Format("Create{0}", GetType().Name);
 		}
@@ -136,6 +168,5 @@ namespace K9.DataAccess.Models
 		}
 
 		#endregion
-
 	}
 }

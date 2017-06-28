@@ -18,7 +18,7 @@ namespace K9.DataAccess.Helpers
 			_repository = repository;
 		}
 
-		public User GetUser(string username)
+		public IUser GetUser(string username)
 		{
 			var user = _repository.GetQuery(string.Format("SELECT TOP 1 * FROM [User] WHERE [Username] = '{0}'", username)).FirstOrDefault();
 			if (user == null)

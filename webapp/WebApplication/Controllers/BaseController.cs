@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Web.Mvc;
 using K9.Globalisation;
@@ -7,6 +8,7 @@ using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.EventArgs;
 using K9.WebApplication.Extensions;
+using K9.WebApplication.Filters;
 using K9.WebApplication.Helpers;
 using Newtonsoft.Json;
 using NLog;
@@ -23,6 +25,7 @@ namespace K9.WebApplication.Controllers
 		private readonly ILogger _logger;
 		private readonly IDataTableAjaxHelper<T> _ajaxHelper;
 		private readonly IDataSetsHelper _dataSetsHelper;
+		private readonly IRoles _roles;
 
 		#endregion
 
@@ -48,6 +51,11 @@ namespace K9.WebApplication.Controllers
 			get { return _dataSetsHelper; }
 		}
 
+		public IRoles Roles
+		{
+			get { return _roles; }
+		}
+
 		#endregion
 
 
@@ -67,12 +75,13 @@ namespace K9.WebApplication.Controllers
 
 		#region Constructors
 
-		protected BaseController(IRepository<T> repository, ILogger logger, IDataTableAjaxHelper<T> ajaxHelper, IDataSetsHelper dataSetsHelper)
+		protected BaseController(IRepository<T> repository, ILogger logger, IDataTableAjaxHelper<T> ajaxHelper, IDataSetsHelper dataSetsHelper, IRoles roles)
 		{
 			_repository = repository;
 			_logger = logger;
 			_ajaxHelper = ajaxHelper;
 			_dataSetsHelper = dataSetsHelper;
+			_roles = roles;
 		}
 
 		#endregion
@@ -81,6 +90,7 @@ namespace K9.WebApplication.Controllers
 		#region Views
 
 		[Authorize]
+		[RequirePermissions(Permission = Permissions.View)]
 		public virtual ActionResult Index()
 		{
 			ViewBag.Title = string.Format("{0}{1}", typeof(T).GetPluralName(), GetStatelessFilterTitle());
@@ -88,6 +98,7 @@ namespace K9.WebApplication.Controllers
 		}
 
 		[Authorize]
+		[RequirePermissions(Permission = Permissions.View)]
 		public virtual ActionResult Details(int id = 0)
 		{
 			T item = _repository.Find(id);
@@ -139,10 +150,9 @@ namespace K9.WebApplication.Controllers
 		#region CRUD
 
 		[Authorize]
+		[RequirePermissions(Permission = Permissions.Create)]
 		public virtual ActionResult Create()
 		{
-			//TODO: check permissions and roles
-			
 			var statelessFilter = this.GetStatelessFilter();
 
 			ViewBag.Title = string.Format("{0} {1}{2}", Dictionary.CreateNew, typeof(T).GetName(), GetStatelessFilterTitle());
@@ -161,6 +171,7 @@ namespace K9.WebApplication.Controllers
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		[Authorize]
+		[RequirePermissions(Permission = Permissions.Create)]
 		public virtual ActionResult Create(T item)
 		{
 			if (ModelState.IsValid)
@@ -191,6 +202,7 @@ namespace K9.WebApplication.Controllers
 		}
 
 		[Authorize]
+		[RequirePermissions(Permission = Permissions.Edit)]
 		public virtual ActionResult Edit(int id = 0)
 		{
 			var item = _repository.Find(id);
@@ -205,6 +217,7 @@ namespace K9.WebApplication.Controllers
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		[Authorize]
+		[RequirePermissions(Permission = Permissions.Edit)]
 		public virtual ActionResult Edit(T item)
 		{
 			if (ModelState.IsValid)
@@ -235,6 +248,7 @@ namespace K9.WebApplication.Controllers
 		}
 
 		[Authorize]
+		[RequirePermissions(Permission = Permissions.Delete)]
 		public virtual ActionResult Delete(int id)
 		{
 			T item = _repository.Find(id);
@@ -249,6 +263,7 @@ namespace K9.WebApplication.Controllers
 		[HttpPost, ActionName("Delete")]
 		[ValidateAntiForgeryToken]
 		[Authorize]
+		[RequirePermissions(Permission = Permissions.Delete)]
 		public virtual ActionResult DeleteConfirmed(int id = 0)
 		{
 			T item = null;
@@ -301,8 +316,12 @@ namespace K9.WebApplication.Controllers
 			return string.Empty;
 		}
 
+		public string GetObjectName()
+		{
+			return typeof (T).Name;
+		}
+
 		#endregion
-
-
+		
 	}
 }

@@ -4,7 +4,7 @@ using System.Web.Routing;
 
 namespace K9.SharedLibrary.Models
 {
-	public interface IObjectBase
+	public interface IObjectBase : IPermissable
 	{
 		int Id { get; set; }
 		string Name { get; set; }
@@ -13,10 +13,6 @@ namespace K9.SharedLibrary.Models
 		string LastUpdatedBy { get; set; }
 		DateTime? LastUpdatedOn { get; set; }
 		string GetForeignKeyName();
-		string GetCreateRoleName();
-		string GetEditRoleName();
-		string GetDeleteRoleName();
-		string GetViewRoleName();
 		string GetLocalisedDescription();
 		void UpdateAuditFields();
 		void UpdateName();

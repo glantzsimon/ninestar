@@ -27,19 +27,32 @@ namespace K9.DataAccess.Helpers
 			_users = users;
 		}
 
-		public List<Role> GetRolesForUser(string username)
+		public List<IRole> GetRolesForUser(string username)
 		{
 			var user = _users.GetUser(username);
-			return _roleRepository.GetQuery(string.Format("SELECT * FROM [Role] WHERE [Id] IN (SELECT [RoleId] FROM [UserRole] WHERE [Userid] = {0})", user.Id)).ToList();
+			var roles =
+				_roleRepository.GetQuery(
+					string.Format("SELECT * FROM [Role] WHERE [Id] IN (SELECT [RoleId] FROM [UserRole] WHERE [Userid] = {0})", user.Id))
+					.ToList();
+			var list = new List<IRole>();
+			list.AddRange(roles);
+			return list;
 		}
 
-		public List<Permission> GetPermissionsForUser(string username)
+		public List<IPermission> GetPermissionsForUser(string username)
 		{
 			var user = _users.GetUser(username);
-			return _permissionRepository.GetQuery(string.Format("SELECT * FROM [Permission] WHERE [RoleId] IN (SELECT [RoleId] FROM [UserRole] WHERE [Userid] = {0})", user.Id)).ToList();
+			var permissions =
+				_permissionRepository.GetQuery(
+					string.Format(
+						"SELECT * FROM [Permission] WHERE [RoleId] IN (SELECT [RoleId] FROM [UserRole] WHERE [Userid] = {0})", user.Id))
+					.ToList();
+			var list = new List<IPermission>();
+			list.AddRange(permissions);
+			return list;
 		}
 
-		public Role GetRole(string roleName)
+		public IRole GetRole(string roleName)
 		{
 			var role = _roleRepository.GetQuery(string.Format("SELECT TOP 1 * FROM [Role] WHERE [Name] = '{0}'", roleName)).FirstOrDefault();
 			if (role == null)

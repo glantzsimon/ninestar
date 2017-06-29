@@ -1,6 +1,5 @@
 ﻿
 
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using K9.Globalisation;
 using K9.SharedLibrary.Models;
@@ -18,8 +17,6 @@ namespace K9.DataAccess.Models
 				return GetLocalisedDescription();
 			}
 		}
-
-		public virtual ICollection<Permission> Permissions{ get; set; }
 
 	}
 }

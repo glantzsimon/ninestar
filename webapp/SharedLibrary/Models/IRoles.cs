@@ -10,7 +10,8 @@ namespace K9.SharedLibrary.Models
 		IRole GetRole(string roleName);
 		bool UserHasPermission(string username, string permissionName);
 		bool UserIsInRole(string username, string roleName);
-		void CreateRole(string roleName);
+		void CreateRole(string roleName, bool isSystemStandard = false);
+		void CreatePermission(string permissionName, bool isSystemStandard = false);
 		void AddUserToRole(string username, string roleName);
 	}
 }

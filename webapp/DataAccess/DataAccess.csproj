@@ -84,6 +84,7 @@
     <Compile Include="Config\ColumnsConfig.cs" />
     <Compile Include="Helpers\Users.cs" />
     <Compile Include="Helpers\Roles.cs" />
+    <Compile Include="Models\RolePermission.cs" />
     <Compile Include="Models\Permission.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Country.cs" />

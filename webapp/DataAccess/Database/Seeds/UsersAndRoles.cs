@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Linq;
 using K9.DataAccess.Config;
 using K9.DataAccess.Helpers;
 using K9.DataAccess.Models;
 using K9.DataAccess.Respositories;
 using K9.SharedLibrary.Authentication;
+using K9.SharedLibrary.Models;
 using WebMatrix.WebData;
 
 namespace K9.DataAccess.Database.Seeds
@@ -13,8 +15,16 @@ namespace K9.DataAccess.Database.Seeds
 	{
 		public static void SeedUsersAndRoles(DbContext context)
 		{
+			var roles = new Helpers.Roles(
+				context,
+				new BaseRepository<Role>(context),
+				new BaseRepository<Permission>(context),
+				new BaseRepository<UserRole>(context),
+				new Users(context, new BaseRepository<User>(context)));
+
 			SeedSystemUser();
-			SeedRoles(context);
+			SeedRoles(roles);
+			SeedPermissions(roles);
 		}
 
 		private static void SeedSystemUser()
@@ -30,6 +40,7 @@ namespace K9.DataAccess.Database.Seeds
 						Name = "System User",
 						EmailAddress = "simon@glantzconsulting.co.uk",
 						BirthDate = DateTime.Now,
+						IsSystemStandrad = true,
 						CreatedBy = SystemUser.System,
 						CreatedOn = DateTime.Now,
 						LastUpdatedBy = SystemUser.System,
@@ -39,19 +50,23 @@ namespace K9.DataAccess.Database.Seeds
 			}
 		}
 
-		private static void SeedRoles(DbContext context)
+		private static void SeedRoles(Roles roles)
 		{
-			var roles = new Helpers.Roles(
-				context,
-				new BaseRepository<Role>(context),
-				new BaseRepository<Permission>(context),
-				new BaseRepository<UserRole>(context),
-				new Users(context, new BaseRepository<User>(context)));
-
-			roles.CreateRole(RoleNames.Administrators);
-			roles.CreateRole(RoleNames.PowerUsers);
-
+			roles.CreateRole(RoleNames.Administrators, true);
+			roles.CreateRole(RoleNames.PowerUsers, true);
 			roles.AddUserToRole(SystemUser.System, RoleNames.Administrators);
+		}
+
+		private static void SeedPermissions(Roles roles)
+		{
+			foreach (var item in typeof(ObjectBase).Assembly.GetTypes().Where(t => typeof(IObjectBase).IsAssignableFrom(t)))
+			{
+				var instance = Activator.CreateInstance(item) as IPermissable;
+				roles.CreatePermission(instance.CreatePermissionName);
+				roles.CreatePermission(instance.EditPermissionName);
+				roles.CreatePermission(instance.DeletePermissionName);
+				roles.CreatePermission(instance.ViewPermissionName);
+			}
 		}
 
 	}

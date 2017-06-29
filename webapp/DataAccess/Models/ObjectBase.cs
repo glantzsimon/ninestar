@@ -26,6 +26,8 @@ namespace K9.DataAccess.Models
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NameLabel)]
 		public string Name { get; set; }
 
+		public bool IsSystemStandard { get; set; }
+
 		public string CreatePermissionName
 		{
 			get

@@ -5,8 +5,6 @@ using System.Linq;
 using K9.DataAccess.Exceptions;
 using K9.DataAccess.Models;
 using K9.SharedLibrary.Models;
-using NLog;
-using WebMatrix.WebData;
 
 namespace K9.DataAccess.Helpers
 {
@@ -72,13 +70,26 @@ namespace K9.DataAccess.Helpers
 			return GetRolesForUser(username).Exists(r => r.Name == roleName);
 		}
 
-		public void CreateRole(string roleName)
+		public void CreateRole(string roleName, bool isSystemStandard = false)
 		{
 			if (!_roleRepository.Exists(string.Format("SELECT * FROM [Role] WHERE Name = '{0}'", roleName)))
 			{
 				_roleRepository.Create(new Role
 				{
-					Name = roleName
+					Name = roleName,
+					IsSystemStandard = isSystemStandard
+				});
+			}
+		}
+
+		public void CreatePermission(string permissionName, bool isSystemStandard = false)
+		{
+			if (!_permissionRepository.Exists(string.Format("SELECT * FROM [Permission] WHERE Name = '{0}'", permissionName)))
+			{
+				_permissionRepository.Create(new Permission
+				{
+					Name = permissionName,
+					IsSystemStandard = isSystemStandard
 				});
 			}
 		}

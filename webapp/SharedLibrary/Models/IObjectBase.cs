@@ -12,6 +12,8 @@ namespace K9.SharedLibrary.Models
 		DateTime? CreatedOn { get; set; }
 		string LastUpdatedBy { get; set; }
 		DateTime? LastUpdatedOn { get; set; }
+		bool IsSystemStandard { get; set; }
+
 		string GetForeignKeyName();
 		string GetLocalisedDescription();
 		void UpdateAuditFields();

@@ -133,7 +133,11 @@ namespace K9.WebApplication.Controllers
 					recordsTotal,
 					recordsFiltered,
 					data
-				}, new JsonSerializerSettings { DateFormatString = Thread.CurrentThread.CurrentUICulture.DateTimeFormat.LongDatePattern });
+				}, new JsonSerializerSettings
+				{
+					DateFormatString = Thread.CurrentThread.CurrentUICulture.DateTimeFormat.LongDatePattern, 
+					Culture = Thread.CurrentThread.CurrentUICulture
+				});
 				return Content(json, "application/json");
 			}
 			catch (Exception ex)

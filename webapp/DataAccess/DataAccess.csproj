@@ -78,6 +78,7 @@
     <Compile Include="Database\Seeds\UsersAndRoles.cs" />
     <Compile Include="Database\DatabaseInitialiser.cs" />
     <Compile Include="Database\Db.cs" />
+    <Compile Include="Exceptions\PermissionNotFoundException.cs" />
     <Compile Include="Exceptions\RoleNotFoundException.cs" />
     <Compile Include="Exceptions\UserNotFoundException.cs" />
     <Compile Include="Extensions\DbContextExtensions.cs" />

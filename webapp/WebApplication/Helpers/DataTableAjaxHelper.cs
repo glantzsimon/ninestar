@@ -184,6 +184,13 @@ namespace K9.WebApplication.Helpers
 			return sb.ToString();
 		}
 
+		private static PropertyInfo[] _propertyInfos;
+		private static PropertyInfo[] GetModelProperties()
+		{
+			_propertyInfos = _propertyInfos ?? typeof(T).GetProperties();
+			return _propertyInfos;
+		}
+
 		private string GetFullyQualifiedOrderByColumnName()
 		{
 			if (ColumnInfos.Any())
@@ -280,13 +287,19 @@ namespace K9.WebApplication.Helpers
 
 		private List<IDataTableColumnInfo> GetDataBoundColumnInfos()
 		{
-			return ColumnInfos.Where(c => typeof(T).GetProperties()
+			return ColumnInfos.Where(c => GetModelProperties()
 				.Where(p => p.CanWrite).Select(p => p.Name).Contains(c.Data)).ToList();
 		}
 
 		private List<IDataTableColumnInfo> GetDataBoundColumnInfosNotIgnored()
 		{
-			return GetDataBoundColumnInfos().Where(c => !_columnsConfig.ColumnsToIgnore.Contains(c.Name)).ToList();
+			return GetDataBoundColumnInfos().Where(c => !_columnsConfig.ColumnsToIgnore.Contains(c.Name) && CanWrite(c)).ToList();
+		}
+
+		private bool CanWrite(IDataTableColumnInfo columnInfo)
+		{
+			var info = GetModelProperties().FirstOrDefault(p => p.Name == columnInfo.Data);
+			return info != null && info.CanWrite;
 		}
 
 		/// <summary>

@@ -1004,6 +1004,15 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to Role.
         /// </summary>
+        public static string Role {
+            get {
+                return ResourceManager.GetString("Role", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Role.
+        /// </summary>
         public static string RoleLabel {
             get {
                 return ResourceManager.GetString("RoleLabel", resourceCulture);

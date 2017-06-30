@@ -1,3 +1,10 @@
 ﻿@model Role
 
-@Html.BootstrapTable()
+@Html.BootstrapTable(new DataTableOptions<Role>
+{
+	VisibleColumns = new List<string>
+	{
+		"Description",
+		"IsSystemStandard"
+	}
+})

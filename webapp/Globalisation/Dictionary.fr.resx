@@ -487,4 +487,7 @@
   <data name="SystemStandard" xml:space="preserve">
     <value>Défault du Système</value>
   </data>
+  <data name="Role" xml:space="preserve">
+    <value>Rôle</value>
+  </data>
 </root>

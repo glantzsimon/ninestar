@@ -60,7 +60,7 @@ namespace K9.DataAccess.Database.Seeds
 
 		private static void SeedPermissions(Roles roles)
 		{
-			foreach (var item in typeof(ObjectBase).Assembly.GetTypes().Where(t => typeof(ObjectBase).IsAssignableFrom(t)))
+			foreach (var item in typeof(ObjectBase).Assembly.GetTypes().Where(t => t.IsClass && !t.IsAbstract && t.IsSubclassOf(typeof(ObjectBase))))
 			{
 				var instance = Activator.CreateInstance(item) as IPermissable;
 				roles.CreatePermission(instance.CreatePermissionName);

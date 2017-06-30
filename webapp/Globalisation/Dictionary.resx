@@ -481,4 +481,7 @@
   <data name="UnauthorizedError" xml:space="preserve">
     <value>You do not have permission to view the requested resource.</value>
   </data>
+  <data name="SystemStandard" xml:space="preserve">
+    <value>System Standard</value>
+  </data>
 </root>

@@ -1056,6 +1056,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to System Standard.
+        /// </summary>
+        public static string SystemStandard {
+            get {
+                return ResourceManager.GetString("SystemStandard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Three Letter Country Code.
         /// </summary>
         public static string ThreeLetterCountryCodeLabel {

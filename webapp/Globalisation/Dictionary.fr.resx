@@ -484,4 +484,7 @@
   <data name="UnauthorizedError" xml:space="preserve">
     <value>Vous n'avez pas la permission d'accéder à cette page.</value>
   </data>
+  <data name="SystemStandard" xml:space="preserve">
+    <value>Défault du Système</value>
+  </data>
 </root>

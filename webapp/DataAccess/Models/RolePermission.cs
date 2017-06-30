@@ -7,6 +7,7 @@ using K9.Globalisation;
 
 namespace K9.DataAccess.Models
 {
+	[AutoGenerateName]
 	public class RolePermission : ObjectBase
 	{
 		[ForeignKey("Role")]

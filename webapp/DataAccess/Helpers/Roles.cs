@@ -45,7 +45,7 @@ namespace K9.DataAccess.Helpers
 			var permissions =
 				_permissionRepository.GetQuery(
 					string.Format(
-						"SELECT * FROM [Permission] WHERE [RoleId] IN (SELECT [RoleId] FROM [UserRole] WHERE [Userid] = {0})", user.Id))
+						"SELECT * FROM [Permission] WHERE [Id] IN (SELECT [PermissionId] FROM [RolePermission] JOIN [UserRole] ON [UserRole].[RoleId] = [RolePermission].[RoleId] AND [UserRole].[Userid] = {0})", user.Id))
 					.ToList();
 			var list = new List<IPermission>();
 			list.AddRange(permissions);

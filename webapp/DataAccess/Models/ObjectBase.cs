@@ -26,6 +26,7 @@ namespace K9.DataAccess.Models
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NameLabel)]
 		public string Name { get; set; }
 
+		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SystemStandard)]
 		public bool IsSystemStandard { get; set; }
 
 		public string CreatePermissionName
@@ -96,17 +97,17 @@ namespace K9.DataAccess.Models
 
 		private string GetEditPermissionName()
 		{
-			return string.Format("Create{0}", GetType().Name);
+			return string.Format("Edit{0}", GetType().Name);
 		}
 
 		private string GetDeletePermissionName()
 		{
-			return string.Format("Create{0}", GetType().Name);
+			return string.Format("Delete{0}", GetType().Name);
 		}
 
 		private string GetViewPermissionName()
 		{
-			return string.Format("Create{0}", GetType().Name);
+			return string.Format("View{0}", GetType().Name);
 		}
 
 		public string GetLocalisedDescription()

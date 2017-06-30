@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using K9.SharedLibrary.Models;
 
 namespace K9.DataAccess.Config
@@ -9,13 +10,9 @@ namespace K9.DataAccess.Config
 		{
 			get
 			{
-				return new List<string>
-				{
-					"CreatedBy",
-					"CreatedOn",
-					"LastUpdatedBy",
-					"LastUpdatedOn"
-				};
+				return 
+					typeof(IAuditable).GetProperties().Select(p => p.Name).Concat(
+					typeof(IPermissable).GetProperties().Select(p => p.Name)).ToList();
 			}
 		}
 	}

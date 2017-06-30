@@ -82,7 +82,7 @@ namespace K9.DataAccess.Helpers
 			var user = _users.GetUser(username);
 			var roles =
 				_roleRepository.GetQuery(
-					string.Format("SELECT * FROM [Role] WHERE [Name] = '{0}' [Id] IN (SELECT [RoleId] FROM [UserRole] WHERE [Userid] = {1})", roleName, user.Id))
+					string.Format("SELECT * FROM [Role] WHERE [Name] = '{0}' AND [Id] IN (SELECT [RoleId] FROM [UserRole] WHERE [Userid] = {1})", roleName, user.Id))
 					.ToList();
 			return roles.Any();
 		}
@@ -92,7 +92,7 @@ namespace K9.DataAccess.Helpers
 			var permission = GetPermission(permissionName);
 			var roles =
 				_roleRepository.GetQuery(
-					string.Format("SELECT * FROM [Role] WHERE [Name] = '{0}' [Id] IN (SELECT [RoleId] FROM [RolePermission] WHERE [PermissionId] = {1})", roleName, permission.Id))
+					string.Format("SELECT * FROM [Role] WHERE [Name] = '{0}' AND [Id] IN (SELECT [RoleId] FROM [RolePermission] WHERE [PermissionId] = {1})", roleName, permission.Id))
 					.ToList();
 			return roles.Any();
 		}

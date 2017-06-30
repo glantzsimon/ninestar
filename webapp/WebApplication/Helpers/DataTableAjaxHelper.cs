@@ -195,7 +195,7 @@ namespace K9.WebApplication.Helpers
 		{
 			if (ColumnInfos.Any())
 			{
-				var columnInfo = ColumnInfos[_orderByColumnIndex];
+				var columnInfo = GetDataBoundColumnInfosNotIgnored()[_orderByColumnIndex];
 				var linkedColumns = GetLinkedColumns();
 				var parentType = typeof(T);
 				var columnName = columnInfo.Data;
@@ -293,13 +293,7 @@ namespace K9.WebApplication.Helpers
 
 		private List<IDataTableColumnInfo> GetDataBoundColumnInfosNotIgnored()
 		{
-			return GetDataBoundColumnInfos().Where(c => !_columnsConfig.ColumnsToIgnore.Contains(c.Name) && CanWrite(c)).ToList();
-		}
-
-		private bool CanWrite(IDataTableColumnInfo columnInfo)
-		{
-			var info = GetModelProperties().FirstOrDefault(p => p.Name == columnInfo.Data);
-			return info != null && info.CanWrite;
+			return GetDataBoundColumnInfos().Where(c => (!_columnsConfig.ColumnsToIgnore.Contains(c.Name))).ToList();
 		}
 
 		/// <summary>

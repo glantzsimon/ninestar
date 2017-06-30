@@ -14,14 +14,16 @@ namespace K9.DataAccess.Helpers
 		private readonly IRepository<Role> _roleRepository;
 		private readonly IRepository<Permission> _permissionRepository;
 		private readonly IRepository<UserRole> _userRolesRepository;
+		private readonly IRepository<RolePermission> _rolePermissionsRepository;
 		private readonly IUsers _users;
 
-		public Roles(DbContext db, IRepository<Role> roleRepository, IRepository<Permission> permissionRepository, IRepository<UserRole> userRolesRepository, IUsers users)
+		public Roles(DbContext db, IRepository<Role> roleRepository, IRepository<Permission> permissionRepository, IRepository<UserRole> userRolesRepository, IRepository<RolePermission> rolePermissionsRepository, IUsers users)
 		{
 			_db = db;
 			_roleRepository = roleRepository;
 			_permissionRepository = permissionRepository;
 			_userRolesRepository = userRolesRepository;
+			_rolePermissionsRepository = rolePermissionsRepository;
 			_users = users;
 		}
 
@@ -60,6 +62,16 @@ namespace K9.DataAccess.Helpers
 			return role;
 		}
 
+		public IPermission GetPermission(string permissionName)
+		{
+			var permission = _permissionRepository.GetQuery(string.Format("SELECT TOP 1 * FROM [Permission] WHERE [Name] = '{0}'", permissionName)).FirstOrDefault();
+			if (permission == null)
+			{
+				throw new PermissionNotFoundException(permissionName);
+			}
+			return permission;
+		}
+
 		public bool UserHasPermission(string username, string permissionName)
 		{
 			return GetPermissionsForUser(username).Exists(p => p.Name == permissionName);
@@ -67,7 +79,22 @@ namespace K9.DataAccess.Helpers
 
 		public bool UserIsInRole(string username, string roleName)
 		{
-			return GetRolesForUser(username).Exists(r => r.Name == roleName);
+			var user = _users.GetUser(username);
+			var roles =
+				_roleRepository.GetQuery(
+					string.Format("SELECT * FROM [Role] WHERE [Name] = '{0}' [Id] IN (SELECT [RoleId] FROM [UserRole] WHERE [Userid] = {1})", roleName, user.Id))
+					.ToList();
+			return roles.Any();
+		}
+
+		public bool PermissionIsInRole(string permissionName, string roleName)
+		{
+			var permission = GetPermission(permissionName);
+			var roles =
+				_roleRepository.GetQuery(
+					string.Format("SELECT * FROM [Role] WHERE [Name] = '{0}' [Id] IN (SELECT [RoleId] FROM [RolePermission] WHERE [PermissionId] = {1})", roleName, permission.Id))
+					.ToList();
+			return roles.Any();
 		}
 
 		public void CreateRole(string roleName, bool isSystemStandard = false)
@@ -103,6 +130,20 @@ namespace K9.DataAccess.Helpers
 				_userRolesRepository.Create(new UserRole
 				{
 					UserId = user.Id,
+					RoleId = role.Id
+				});
+			}
+		}
+
+		public void AddPermissionsToRole(string permissionName, string roleName)
+		{
+			if (!PermissionIsInRole(permissionName, roleName))
+			{
+				var permission = GetPermission(permissionName);
+				var role = GetRole(roleName);
+				_rolePermissionsRepository.Create(new RolePermission
+				{
+					PermissionId = permission.Id,
 					RoleId = role.Id
 				});
 			}

@@ -63,9 +63,15 @@ namespace K9.DataAccess.Database.Seeds
 			{
 				var instance = Activator.CreateInstance(item) as IPermissable;
 				roles.CreatePermission(instance.CreatePermissionName);
+				roles.AddPermissionsToRole(instance.CreatePermissionName, RoleNames.PowerUsers);
+				
 				roles.CreatePermission(instance.EditPermissionName);
+				roles.AddPermissionsToRole(instance.EditPermissionName, RoleNames.PowerUsers);
+
 				roles.CreatePermission(instance.DeletePermissionName);
+
 				roles.CreatePermission(instance.ViewPermissionName);
+				roles.AddPermissionsToRole(instance.ViewPermissionName, RoleNames.PowerUsers);
 			}
 		}
 

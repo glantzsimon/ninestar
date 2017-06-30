@@ -305,14 +305,14 @@ namespace K9.WebApplication.Helpers
 
 		private int GetIntegerValueFromQueryString(string key)
 		{
-			int value = 0;
+			int value;
 			int.TryParse(GetValueFromQueryString(key), out value);
 			return value;
 		}
 
 		private bool GetBooleanValueFromQueryString(string key)
 		{
-			bool value = false;
+			bool value;
 			bool.TryParse(GetValueFromQueryString(key), out value);
 			return value;
 		}

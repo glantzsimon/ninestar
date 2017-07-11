@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using System.Web.Mvc;
 using System.Web.Security;
+using K9.DataAccess.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Models;
@@ -11,7 +12,7 @@ namespace K9.WebApplication.Helpers
 	public static partial class HtmlHelpers
 	{
 
-		public static MvcHtmlString AuditFieldsForModel<T>(this HtmlHelper<T> html, T model) where T : IObjectBase
+		public static MvcHtmlString AuditFieldsForModel<T>(this HtmlHelper<T> html, T model) where T : ObjectBase
 		{
 			if (Roles.IsUserInRole(WebSecurity.CurrentUserName, RoleNames.Administrators))
 			{

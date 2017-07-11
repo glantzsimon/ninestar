@@ -70,6 +70,11 @@ namespace K9.DataAccess.Helpers
 			return UserHasPermission(WebSecurity.CurrentUserName, fullyQualifiedPermissionName);
 		}
 
+		public bool CurrentUserIsInRole(string roleName)
+		{
+			return UserIsInRole(WebSecurity.CurrentUserName, roleName);
+		}
+
 		public IPermission GetPermission(string permissionName)
 		{
 			var permission = _permissionRepository.GetQuery(string.Format("SELECT TOP 1 * FROM [Permission] WHERE [Name] = '{0}'", permissionName)).FirstOrDefault();

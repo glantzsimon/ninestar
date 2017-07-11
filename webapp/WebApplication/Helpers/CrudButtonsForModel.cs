@@ -13,11 +13,11 @@ namespace K9.WebApplication.Helpers
 			var sb = new StringBuilder();
 			var roles = html.GetRoles();
 
-			if (roles.CurrentUserHasPermission<T>(Permissions.Edit) && !model.IsSystemStandard)
+			if ((roles.CurrentUserIsInRole(RoleNames.Administrators) || roles.CurrentUserHasPermission<T>(Permissions.Edit)) && !model.IsSystemStandard)
 			{
 				sb.AppendLine(html.BootstrapLinkToEditButton(model.Id).ToString());
 			}
-			if (roles.CurrentUserHasPermission<T>(Permissions.Delete) && !model.IsSystemStandard)
+			if ((roles.CurrentUserIsInRole(RoleNames.Administrators) || roles.CurrentUserHasPermission<T>(Permissions.Delete)) && !model.IsSystemStandard)
 			{
 				sb.AppendLine(html.BootstrapLinkToDeleteButton(model.Id).ToString());
 			}

@@ -1,4 +1,6 @@
-﻿@model Role
+﻿@using K9.SharedLibrary.Authentication
+@using K9.WebApplication.Extensions
+@model Role
 @{
 	Layout = "~/Views/Shared/_LayoutForm.cshtml";
 }
@@ -9,10 +11,9 @@
 	@Html.HiddenFor(model => model.Id)
 	@Html.Partial("_DisplayFields")
 	@Html.AuditFieldsForModel(Model)
-	
+
 	<hr />
 	@Html.BootstrapBackToListButton()
-	@Html.BootstrapLinkToEditButton(Model.Id)
-	@Html.BootstrapLinkToDeleteButton(Model.Id)
+	@Html.CrudButtonsForModel(Model)
 	}
 }

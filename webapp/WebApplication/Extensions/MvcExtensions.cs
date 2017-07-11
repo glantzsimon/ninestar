@@ -44,5 +44,11 @@ namespace K9.WebApplication.Extensions
 			var baseController = view.ViewContext.Controller as IBaseController;
 			return baseController.DropdownDataSets;
 		}
+
+		public static IRoles GetRoles(this WebViewPage view)
+		{
+			var baseController = view.ViewContext.Controller as IBaseController;
+			return baseController.Roles;
+		}
 	}
 }

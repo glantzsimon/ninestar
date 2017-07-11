@@ -8,6 +8,7 @@ namespace K9.SharedLibrary.Models
 		List<IRole> GetRolesForUser(string username);
 		List<IPermission> GetPermissionsForUser(string username);
 		IRole GetRole(string roleName);
+		bool CurrentUserHasPermission<T>(string permissionName) where T : IObjectBase;
 		bool UserHasPermission(string username, string permissionName);
 		bool UserIsInRole(string username, string roleName);
 		void CreateRole(string roleName, bool isSystemStandard = false);

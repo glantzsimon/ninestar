@@ -214,6 +214,12 @@ namespace K9.WebApplication.Controllers
 			{
 				return HttpNotFound();
 			}
+
+			if (item.IsSystemStandard)
+			{
+				return View("Unauthorized");
+			}
+
 			ViewBag.Title = string.Format("{0} {1}", Dictionary.Edit, typeof(T).GetName());
 			return View(item);
 		}
@@ -226,6 +232,11 @@ namespace K9.WebApplication.Controllers
 		{
 			if (ModelState.IsValid)
 			{
+				if (item.IsSystemStandard)
+				{
+					return View("Unauthorized");
+				}
+
 				try
 				{
 					_repository.Update(item);
@@ -260,6 +271,12 @@ namespace K9.WebApplication.Controllers
 			{
 				return HttpNotFound();
 			}
+
+			if (item.IsSystemStandard)
+			{
+				return View("Unauthorized");
+			}
+
 			ViewBag.Title = string.Format("{0} {1}", Dictionary.Delete, typeof(T).GetName());
 			return View(item);
 		}
@@ -277,6 +294,11 @@ namespace K9.WebApplication.Controllers
 				if (item == null)
 				{
 					return HttpNotFound();
+				}
+
+				if (item.IsSystemStandard)
+				{
+					return View("Unauthorized");
 				}
 
 				try

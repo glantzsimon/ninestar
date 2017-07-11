@@ -15,7 +15,6 @@
 
 	<hr />
 	@Html.BootstrapBackToListButton()
-	@Html.BootstrapLinkToEditButton(Model.Id)
-	@Html.BootstrapLinkToDeleteButton(Model.Id)
+	@Html.CrudButtonsForModel(Model)
 	}
 }

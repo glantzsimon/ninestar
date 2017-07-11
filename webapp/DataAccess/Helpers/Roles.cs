@@ -1,10 +1,12 @@
 ﻿
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using K9.DataAccess.Exceptions;
 using K9.DataAccess.Models;
 using K9.SharedLibrary.Models;
+using WebMatrix.WebData;
 
 namespace K9.DataAccess.Helpers
 {
@@ -60,6 +62,12 @@ namespace K9.DataAccess.Helpers
 				throw new RoleNotFoundException(roleName);
 			}
 			return role;
+		}
+
+		public bool CurrentUserHasPermission<T>(string permissionName) where T : IObjectBase
+		{
+			var fullyQualifiedPermissionName = string.Format("{0}{1}", permissionName, typeof(T).Name);
+			return UserHasPermission(WebSecurity.CurrentUserName, fullyQualifiedPermissionName);
 		}
 
 		public IPermission GetPermission(string permissionName)

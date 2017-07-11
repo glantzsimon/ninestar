@@ -210,6 +210,7 @@
     <Compile Include="Helpers\AuditFieldsForModel.cs" />
     <Compile Include="Helpers\BootstrapDropdownFor.cs" />
     <Compile Include="Helpers\Alert.cs" />
+    <Compile Include="Helpers\CrudButtonsForModel.cs" />
     <Compile Include="Helpers\IDataTableAjaxHelper.cs" />
     <Compile Include="Helpers\DataTableAjaxHelper.cs" />
     <Compile Include="Helpers\Fail.cs" />

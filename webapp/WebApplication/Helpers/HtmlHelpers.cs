@@ -4,6 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Web.Mvc;
 using K9.SharedLibrary.Extensions;
+using K9.SharedLibrary.Models;
 
 namespace K9.WebApplication.Helpers
 {
@@ -36,6 +37,12 @@ namespace K9.WebApplication.Helpers
 		public static UrlHelper GeturlHeler(this HtmlHelper html)
 		{
 			return new UrlHelper(html.ViewContext.RequestContext);
+		}
+
+		public static IRoles GetRoles(this HtmlHelper html)
+		{
+			var baseController = html.ViewContext.Controller as IBaseController;
+			return baseController.Roles;
 		}
 
 	}

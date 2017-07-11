@@ -7,13 +7,13 @@
 	function @Model.GetButtonRenderFunction() (data) {
 		var buttons = "";
 		var join = '@Model.GetQueryStringJoiner()';
-		if (@Model.AllowDetail.ToString().ToLower()) {
+		if (@Model.AllowView.ToString().ToLower()) {
 			buttons += '<a href="@Url.Action("Details", Model.GetFilterRouteValues())' + join + 'id=' + data.Id + '" class="btn btn-info">@Dictionary.Details</a>';
 		}
-		if (@Model.AllowEdit.ToString().ToLower()) {
+		if (@Model.AllowEdit.ToString().ToLower() && !data.IsSystemStandard) {
 			buttons += '<a href="@Url.Action("Edit", Model.GetFilterRouteValues())' + join + 'id=' +data.Id + '" class="btn btn-primary"><i class="fa fa-pencil"></i> @Dictionary.Edit</a>';
 		}
-		if (@Model.AllowDelete.ToString().ToLower()) {
+		if (@Model.AllowDelete.ToString().ToLower() && !data.IsSystemStandard) {
 			buttons += '<a href="@Url.Action("Delete", Model.GetFilterRouteValues())' + join + 'id=' + data.Id + '" class="btn btn-danger"><i class="fa fa-trash"></i> @Dictionary.Delete</a>';
 		}
 		return buttons == "" ? null : buttons;

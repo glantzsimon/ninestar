@@ -28,7 +28,7 @@ namespace K9.WebApplication.Options
 		public bool AllowCreate { get; set; }
 		public bool AllowEdit { get; set; }
 		public bool AllowDelete { get; set; }
-		public bool AllowDetail { get; set; }
+		public bool AllowView { get; set; }
 
 		public string TableId
 		{
@@ -40,13 +40,13 @@ namespace K9.WebApplication.Options
 			VisibleColumns = new List<string>();
 			AllowCreate = true;
 			AllowDelete = true;
-			AllowDetail = true;
+			AllowView = true;
 			AllowEdit = true;
 		}
 
 		public bool AllowCrud()
 		{
-			return AllowCreate || AllowEdit || AllowDelete || AllowDetail;
+			return AllowCreate || AllowEdit || AllowDelete || AllowView;
 		}
 
 		public List<string> GetColumnNames()

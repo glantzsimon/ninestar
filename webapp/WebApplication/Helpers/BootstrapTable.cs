@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
+using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Constants.Html;
@@ -36,6 +37,12 @@ namespace K9.WebApplication.Helpers
 			options = options ?? new DataTableOptions<T>();
 			options.ColumnsConfig = _columnsConfig;
 			options.StatelessFilter = html.ViewContext.HttpContext.Request.GetStatelessFilter();
+
+			var roles = html.GetRoles();
+			options.AllowCreate = roles.CurrentUserHasPermission<T>(Permissions.Create);
+			options.AllowDelete = roles.CurrentUserHasPermission<T>(Permissions.Delete);
+			options.AllowView = roles.CurrentUserHasPermission<T>(Permissions.View);
+			options.AllowEdit = roles.CurrentUserHasPermission<T>(Permissions.Edit);
 
 			var modelType = typeof (T);
 			var sb = new StringBuilder();

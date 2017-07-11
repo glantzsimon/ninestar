@@ -18,7 +18,7 @@ namespace K9.WebApplication.Options
 		bool AllowCreate { get; set; }
 		bool AllowEdit { get; set; }
 		bool AllowDelete { get; set; }
-		bool AllowDetail { get; set; }
+		bool AllowView { get; set; }
 		bool DisplayFooter { get; set; }
 		bool AllowCrud();
 		List<PropertyInfo> GetColumns();

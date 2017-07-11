@@ -11,8 +11,7 @@ namespace K9.WebApplication.Helpers
 		public static MvcHtmlString CrudButtonsForModel<T>(this HtmlHelper<T> html, T model) where T : IObjectBase
 		{
 			var sb = new StringBuilder();
-			var baseController = html.ViewContext.Controller as IBaseController;
-			var roles = baseController.Roles;
+			var roles = html.GetRoles();
 
 			if (roles.CurrentUserHasPermission<T>(Permissions.Edit) && !model.IsSystemStandard)
 			{

@@ -135,7 +135,7 @@ namespace K9.WebApplication.Controllers
 					data
 				}, new JsonSerializerSettings
 				{
-					DateFormatString = Thread.CurrentThread.CurrentUICulture.DateTimeFormat.LongDatePattern, 
+					DateFormatString = Thread.CurrentThread.CurrentUICulture.DateTimeFormat.LongDatePattern,
 					Culture = Thread.CurrentThread.CurrentUICulture
 				});
 				return Content(json, "application/json");
@@ -157,19 +157,18 @@ namespace K9.WebApplication.Controllers
 		[RequirePermissions(Permission = Permissions.Create)]
 		public virtual ActionResult Create()
 		{
+			var itemToCreate = Activator.CreateInstance<T>();
 			var statelessFilter = this.GetStatelessFilter();
 
 			ViewBag.Title = string.Format("{0} {1}{2}", Dictionary.CreateNew, typeof(T).GetName(), GetStatelessFilterTitle());
 
 			if (statelessFilter.IsSet())
 			{
-				var itemToCreate = Activator.CreateInstance<T>();
 				itemToCreate.SetProperty(statelessFilter.Key, statelessFilter.Id);
 				return View(itemToCreate);
 			}
 
-
-			return View();
+			return View(itemToCreate);
 		}
 
 		[HttpPost]
@@ -344,10 +343,10 @@ namespace K9.WebApplication.Controllers
 
 		public string GetObjectName()
 		{
-			return typeof (T).Name;
+			return typeof(T).Name;
 		}
 
 		#endregion
-		
+
 	}
 }

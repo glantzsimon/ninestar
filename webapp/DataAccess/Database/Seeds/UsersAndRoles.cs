@@ -63,15 +63,15 @@ namespace K9.DataAccess.Database.Seeds
 			foreach (var item in typeof(ObjectBase).Assembly.GetTypes().Where(t => t.IsClass && !t.IsAbstract && t.IsSubclassOf(typeof(ObjectBase))))
 			{
 				var instance = Activator.CreateInstance(item) as IPermissable;
-				roles.CreatePermission(instance.CreatePermissionName);
+				roles.CreatePermission(instance.CreatePermissionName, true);
 				roles.AddPermissionsToRole(instance.CreatePermissionName, RoleNames.PowerUsers);
-				
-				roles.CreatePermission(instance.EditPermissionName);
+
+				roles.CreatePermission(instance.EditPermissionName, true);
 				roles.AddPermissionsToRole(instance.EditPermissionName, RoleNames.PowerUsers);
 
-				roles.CreatePermission(instance.DeletePermissionName);
+				roles.CreatePermission(instance.DeletePermissionName, true);
 
-				roles.CreatePermission(instance.ViewPermissionName);
+				roles.CreatePermission(instance.ViewPermissionName, true);
 				roles.AddPermissionsToRole(instance.ViewPermissionName, RoleNames.PowerUsers);
 			}
 		}

@@ -1,0 +1,15 @@
+﻿@model Permission
+@{
+	Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+	using (Html.BeginBootstrapForm())
+	{
+		@Html.Partial("_EditFields")
+		<hr/>
+		@Html.BootstrapButton(Dictionary.Create)
+		@Html.BootstrapBackToListButton()
+	}
+}

@@ -490,4 +490,7 @@
   <data name="Role" xml:space="preserve">
     <value>Rôle</value>
   </data>
+  <data name="NotFoundError" xml:space="preserve">
+    <value>La resource demandée n'a pas été trouvée.</value>
+  </data>
 </root>

@@ -170,6 +170,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\RolesPermissionsController.cs" />
     <Compile Include="Filters\RequirePermissionsAttribute.cs" />
     <Compile Include="Config\AppConfig.cs" />
@@ -256,6 +257,7 @@
     <Content Include="Images\home\slides\slide2.jpg" />
     <Content Include="Images\home\slides\slide3.jpg" />
     <Content Include="Images\ui\fail.png" />
+    <Content Include="Images\ui\notfound.png" />
     <Content Include="Images\ui\locked.png" />
     <Content Include="Images\ui\success.png" />
     <Content Include="Images\ui\facebook_sm.png" />
@@ -369,7 +371,7 @@
     <Content Include="Views\Shared\EditorTemplates\Course.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Student.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Course.cshtml" />
-    <Content Include="Views\Shared\_FriendlyError.cshtml" />
+    <Content Include="Views\Shared\FriendlyError.cshtml" />
     <Content Include="Views\Users\_DisplayFields.cshtml" />
     <Content Include="Views\Users\_EditFields.cshtml" />
     <Content Include="Views\Users\Create.cshtml" />
@@ -387,6 +389,15 @@
     <Content Include="Views\Roles\Details.cshtml" />
     <Content Include="Views\Roles\Edit.cshtml" />
     <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\Permissions\_DisplayFields.cshtml" />
+    <Content Include="Views\Permissions\_EditFields.cshtml" />
+    <Content Include="Views\Permissions\Create.cshtml" />
+    <Content Include="Views\Permissions\Delete.cshtml" />
+    <Content Include="Views\Permissions\Details.cshtml" />
+    <Content Include="Views\Permissions\Edit.cshtml" />
+    <Content Include="Views\Permissions\Index.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
     <Content Include="Views\Shared\_Layout100.cshtml" />

@@ -144,7 +144,7 @@ namespace K9.WebApplication.Controllers
 			{
 				_logger.Error(ex.Message);
 				_logger.Info(_ajaxHelper.GetQuery(true));
-				return View("_FriendlyError");
+				return View("FriendlyError");
 			}
 		}
 

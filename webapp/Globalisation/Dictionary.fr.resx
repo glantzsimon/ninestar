@@ -491,6 +491,15 @@
     <value>Rôle</value>
   </data>
   <data name="NotFoundError" xml:space="preserve">
-    <value>La resource demandée n'a pas été trouvée.</value>
+    <value>La resource demandée n'a pas été trouvée. Ellle a pu être supprimée, renomée ou n'est pas disponible pour le moment.</value>
+  </data>
+  <data name="ContactSupport" xml:space="preserve">
+    <value>Contacter le support</value>
+  </data>
+  <data name="GoBackHome" xml:space="preserve">
+    <value>Retourner à la page d'accueil</value>
+  </data>
+  <data name="NotFoundTitle" xml:space="preserve">
+    <value>Il manque quelque chose</value>
   </data>
 </root>

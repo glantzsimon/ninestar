@@ -1,5 +1,10 @@
 ﻿@{
 	ViewBag.Title = Dictionary.Oops;
-	Layout = "~/Views/Shared/_LayoutForm.cshtml";
+	Layout = "~/Views/Shared/_LayoutAlert.cshtml";
 }
 @Html.Alert(EAlertType.Fail, Dictionary.FriendlyErrorMessage)
+<div class="text-center">
+	<p>@Dictionary.PleaseContactSupport</p>
+	@Html.ActionLink(Dictionary.ContactSupport, "ContactUs", "Support")
+	@Html.ActionLink(Dictionary.GoBackHome, "Index", "Home")
+</div>

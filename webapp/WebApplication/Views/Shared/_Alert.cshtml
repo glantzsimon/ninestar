@@ -5,8 +5,8 @@
 	{
 		<img alt="@Model.AlertType.ToString()" src="~/Images/ui/@Model.GetAlertImage()" />
 	}
-	
-	<h3>@MvcHtmlString.Create(@Model.Message)</h3>
+
+	<h3><strong>@MvcHtmlString.Create(@Model.Message)</strong></h3>
 
 	@if (!string.IsNullOrEmpty(Model.OtherMessage))
 	{

@@ -250,6 +250,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contact support.
+        /// </summary>
+        public static string ContactSupport {
+            get {
+                return ResourceManager.GetString("ContactSupport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact Us.
         /// </summary>
         public static string ContactUsTitle {
@@ -538,6 +547,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Go back to the home page.
+        /// </summary>
+        public static string GoBackHome {
+            get {
+                return ResourceManager.GetString("GoBackHome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         public static string Home {
@@ -772,11 +790,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The resource cannot be found..
+        ///   Looks up a localized string similar to The page you are looking for cannot be found. It may have been removed, had its name changed, or is temporarily unavailable..
         /// </summary>
         public static string NotFoundError {
             get {
                 return ResourceManager.GetString("NotFoundError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Something&apos;s missing.
+        /// </summary>
+        public static string NotFoundTitle {
+            get {
+                return ResourceManager.GetString("NotFoundTitle", resourceCulture);
             }
         }
         

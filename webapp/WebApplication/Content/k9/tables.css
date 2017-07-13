@@ -1,0 +1,26 @@
+﻿.datatable-container
+{
+	width: 100%;
+	overflow: scroll;
+}
+
+.datatable-container div
+{
+	margin: 0;
+}
+
+.bootstraptable .btn, form .btn
+{
+	margin-right: 6px;
+}
+
+.bootstraptable tbody tr:hover
+{
+	background: #337ab7 !important;
+	color: #ffffff !important;
+}
+
+.bootstraptable td
+{
+	vertical-align: middle !important;
+}

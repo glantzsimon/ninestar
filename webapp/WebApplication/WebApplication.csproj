@@ -237,6 +237,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\k9\menubar.css" />
+    <Content Include="Content\k9\navbar.css" />
+    <Content Include="Content\k9\tables.css" />
     <Content Include="Content\tablet.css" />
     <Content Include="Content\k9\pageSpinner.css" />
     <Content Include="Content\_colors.txt" />
@@ -399,6 +402,7 @@
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Shared\_LayoutAlert.cshtml" />
+    <Content Include="Views\Shared\_MenuBar.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
     <Content Include="Views\Shared\_Layout100.cshtml" />
@@ -411,6 +415,7 @@
     <Content Include="Views\Students\_DisplayFields.cshtml" />
     <Content Include="Views\Shared\Scripts\Default.cshtml" />
     <Content Include="Views\Support\ContactUs.cshtml" />
+    <Content Include="Views\UserRoles\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -428,7 +433,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>1605</DevelopmentServerPort>
+          <DevelopmentServerPort>4556</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost/ninestar</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

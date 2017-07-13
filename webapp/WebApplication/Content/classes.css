@@ -4,14 +4,13 @@
 	margin-bottom: 40px;
 	padding: 10px 30px 10px 30px;
 	width: auto;
-	max-width: 960px;
+	max-width: 1180px;
 	border: none;
 	background: #ffffff;
 }
 
 .backdrop
 {
-	padding-top: 15px;
 	padding-bottom: 15px;
 }
 
@@ -24,6 +23,13 @@
 .roundCorners
 {
 	border-radius: 4px;
+}
+
+.roundCorners-not-top
+{
+	border-radius: 4px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
 }
 
 .alphaBackground
@@ -69,42 +75,15 @@
 	margin-bottom: 15px;
 }
 
-.datatable-container
-{
-	width: 100%;
-	overflow: scroll;
-}
-
-.datatable-container div
-{
-	margin: 0;
-}
-
 .k9-navbar a
 {
 	text-decoration: none;
-}
-
-.bootstraptable .btn, form .btn
-{
-	margin-right: 6px;
-}
-
-.bootstraptable tbody tr:hover
-{
-	background: #337ab7 !important;
-	color: #ffffff !important;
 }
 
 a.btn
 {
 	color: #ffffff !important;
 	text-decoration: none !important;
-}
-
-.bootstraptable td
-{
-	vertical-align: middle !important;
 }
 
 .button-container

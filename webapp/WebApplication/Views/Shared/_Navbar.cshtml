@@ -10,11 +10,6 @@
 	<div class="collapse navbar-collapse" id="myNavbar">
 		<ul class="nav navbar-nav">
 			<li class="@ViewContext.GetActiveClass("Index", "Home")"><a href="@Url.Action("Index", "Home")"><span class="glyphicon glyphicon-home"></span> @Dictionary.Home</a></li>
-			@if (WebSecurity.IsAuthenticated)
-   {
-				<li><a href="#">Messages</a></li>
-				<li class="@ViewContext.GetActiveClass("Index", "Students")"><a href="@Url.Action("Index", "Students")">Students</a></li>
-   }
 		</ul>
 		<form class="navbar-form navbar-right" role="search">
 			<div class="form-group input-group">

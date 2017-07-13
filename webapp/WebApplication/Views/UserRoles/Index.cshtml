@@ -1,0 +1,12 @@
+﻿@model User
+
+@Html.BootstrapTable(new DataTableOptions<User>
+{
+	VisibleColumns = new List<string>
+	{
+		"Username"
+	},
+	AllowCreate = false,
+	AllowDelete = false,
+	AllowView = false
+})

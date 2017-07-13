@@ -402,7 +402,6 @@
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Shared\_LayoutAlert.cshtml" />
-    <Content Include="Views\Shared\_MenuBar.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
     <Content Include="Views\Shared\_Layout100.cshtml" />
@@ -416,6 +415,7 @@
     <Content Include="Views\Shared\Scripts\Default.cshtml" />
     <Content Include="Views\Support\ContactUs.cshtml" />
     <Content Include="Views\UserRoles\Index.cshtml" />
+    <Content Include="Views\Shared\_MenuBar.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -93,7 +93,8 @@ namespace K9.WebApplication.Controllers
 		[RequirePermissions(Permission = Permissions.View)]
 		public virtual ActionResult Index()
 		{
-			ViewBag.Title = string.Format("{0}{1}", typeof(T).GetPluralName(), GetStatelessFilterTitle());
+			SetTitle();
+			ViewBag.Subtitle = string.Format("{0}{1}", typeof(T).GetPluralName(), GetStatelessFilterTitle()); ;
 			return View("Index");
 		}
 
@@ -107,7 +108,8 @@ namespace K9.WebApplication.Controllers
 				return HttpNotFound();
 			}
 			var type = typeof(T);
-			ViewBag.Title = string.Format(Dictionary.DetailsText, type.GetName(), type.GetOfPreposition().ToLower());
+			SetTitle();
+			ViewBag.SubTitle = string.Format(Dictionary.DetailsText, type.GetName(), type.GetOfPreposition().ToLower());
 			return View(item);
 		}
 
@@ -160,7 +162,8 @@ namespace K9.WebApplication.Controllers
 			var itemToCreate = Activator.CreateInstance<T>();
 			var statelessFilter = this.GetStatelessFilter();
 
-			ViewBag.Title = string.Format("{0} {1}{2}", Dictionary.CreateNew, typeof(T).GetName(), GetStatelessFilterTitle());
+			SetTitle();
+			ViewBag.SubTitle = string.Format("{0} {1}{2}", Dictionary.CreateNew, typeof(T).GetName(), GetStatelessFilterTitle());
 
 			if (statelessFilter.IsSet())
 			{
@@ -200,7 +203,9 @@ namespace K9.WebApplication.Controllers
 				}
 			}
 
-			ViewBag.Title = string.Format("{0} {1}{2}", Dictionary.CreateNew, typeof(T).GetName(), GetStatelessFilterTitle());
+			SetTitle();
+			ViewBag.SubTitle = string.Format("{0} {1}{2}", Dictionary.CreateNew, typeof(T).GetName(), GetStatelessFilterTitle());
+
 			return View(item);
 		}
 
@@ -219,7 +224,9 @@ namespace K9.WebApplication.Controllers
 				return View("Unauthorized");
 			}
 
-			ViewBag.Title = string.Format("{0} {1}", Dictionary.Edit, typeof(T).GetName());
+			SetTitle();
+			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Edit, typeof(T).GetName());
+
 			return View(item);
 		}
 
@@ -257,7 +264,9 @@ namespace K9.WebApplication.Controllers
 				}
 			}
 
-			ViewBag.Title = string.Format("{0} {1}", Dictionary.Edit, typeof(T).GetName());
+			SetTitle();
+			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Edit, typeof(T).GetName());
+
 			return View(item);
 		}
 
@@ -276,7 +285,9 @@ namespace K9.WebApplication.Controllers
 				return View("Unauthorized");
 			}
 
-			ViewBag.Title = string.Format("{0} {1}", Dictionary.Delete, typeof(T).GetName());
+			SetTitle();
+			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Delete, typeof(T).GetName());
+
 			return View(item);
 		}
 
@@ -321,7 +332,9 @@ namespace K9.WebApplication.Controllers
 				}
 			}
 
-			ViewBag.Title = string.Format("{0} {1}", Dictionary.Delete, typeof(T).GetName());
+			SetTitle();
+			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Delete, typeof(T).GetName());
+
 			return View(item);
 		}
 
@@ -344,6 +357,11 @@ namespace K9.WebApplication.Controllers
 		public string GetObjectName()
 		{
 			return typeof(T).Name;
+		}
+
+		private void SetTitle()
+		{
+			ViewBag.Title = typeof(T).GetPluralName();
 		}
 
 		#endregion

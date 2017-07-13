@@ -40,3 +40,7 @@ form h3
 	margin-top: 4px;
 	margin-bottom: 18px;
 }
+
+h4 {
+	font-weight: bold;
+}

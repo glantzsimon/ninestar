@@ -59,6 +59,8 @@ namespace K9.Globalisation
 			public const string Countries = "Countries";
 			public const string Enrollment = "Enrollment";
 			public const string Role = "Role";
+			public const string UserRole = "UserRole";
+			public const string UserRoles = "UserRoles";
 		}
 
 	}

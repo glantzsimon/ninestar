@@ -39,10 +39,10 @@ namespace K9.WebApplication.Helpers
 			options.StatelessFilter = html.ViewContext.HttpContext.Request.GetStatelessFilter();
 
 			var roles = html.GetRoles();
-			options.AllowCreate = roles.CurrentUserHasPermission<T>(Permissions.Create) || roles.CurrentUserIsInRole(RoleNames.Administrators);
-			options.AllowDelete = roles.CurrentUserHasPermission<T>(Permissions.Delete) || roles.CurrentUserIsInRole(RoleNames.Administrators);
-			options.AllowView = roles.CurrentUserHasPermission<T>(Permissions.View) || roles.CurrentUserIsInRole(RoleNames.Administrators);
-			options.AllowEdit = roles.CurrentUserHasPermission<T>(Permissions.Edit) || roles.CurrentUserIsInRole(RoleNames.Administrators);
+			options.AllowCreate = options.AllowCreate && roles.CurrentUserHasPermission<T>(Permissions.Create) || roles.CurrentUserIsInRole(RoleNames.Administrators);
+			options.AllowDelete = options.AllowDelete && roles.CurrentUserHasPermission<T>(Permissions.Delete) || roles.CurrentUserIsInRole(RoleNames.Administrators);
+			options.AllowView = options.AllowView && roles.CurrentUserHasPermission<T>(Permissions.View) || roles.CurrentUserIsInRole(RoleNames.Administrators);
+			options.AllowEdit = options.AllowEdit && roles.CurrentUserHasPermission<T>(Permissions.Edit) || roles.CurrentUserIsInRole(RoleNames.Administrators);
 
 			var modelType = typeof(T);
 			var sb = new StringBuilder();

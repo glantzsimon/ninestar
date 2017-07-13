@@ -2,10 +2,13 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using K9.DataAccess.Attributes;
+using K9.Globalisation;
 
 namespace K9.DataAccess.Models
 {
 	[AutoGenerateName]
+	[Grammar(ResourceType = typeof(Dictionary), DefiniteArticleName = Strings.Grammar.MasculineDefiniteArticle, IndefiniteArticleName = Strings.Grammar.MasculineIndefiniteArticle)]
+	[Name(ResourceType = typeof(Dictionary), Name = Strings.Names.UserRoles, PluralName = Strings.Names.UserRoles)]
 	public class UserRole : ObjectBase
 	{
 		[Required]

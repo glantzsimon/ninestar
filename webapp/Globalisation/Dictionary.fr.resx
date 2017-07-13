@@ -502,4 +502,10 @@
   <data name="NotFoundTitle" xml:space="preserve">
     <value>Il manque quelque chose</value>
   </data>
+  <data name="UserRole" xml:space="preserve">
+    <value>Rôle d'Utilisateur</value>
+  </data>
+  <data name="UserRoles" xml:space="preserve">
+    <value>Rôles d'Utilisateur</value>
+  </data>
 </root>

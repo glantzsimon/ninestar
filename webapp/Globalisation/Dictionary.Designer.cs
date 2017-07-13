@@ -1218,6 +1218,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to User Role.
+        /// </summary>
+        public static string UserRole {
+            get {
+                return ResourceManager.GetString("UserRole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Roles.
+        /// </summary>
+        public static string UserRoles {
+            get {
+                return ResourceManager.GetString("UserRoles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Welcome.
         /// </summary>
         public static string Welcome {

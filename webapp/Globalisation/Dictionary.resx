@@ -499,4 +499,10 @@
   <data name="NotFoundTitle" xml:space="preserve">
     <value>Something's missing</value>
   </data>
+  <data name="UserRole" xml:space="preserve">
+    <value>User Role</value>
+  </data>
+  <data name="UserRoles" xml:space="preserve">
+    <value>User Roles</value>
+  </data>
 </root>

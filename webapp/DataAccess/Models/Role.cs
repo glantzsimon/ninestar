@@ -9,7 +9,6 @@ namespace K9.DataAccess.Models
 {
 	[Grammar(ResourceType = typeof(Dictionary), DefiniteArticleName = Strings.Grammar.MasculineDefiniteArticle, IndefiniteArticleName = Strings.Grammar.MasculineIndefiniteArticle)]
 	[Name(ResourceType = typeof(Dictionary), Name = Strings.Names.Role)]
-	
 	public class Role : ObjectBase, IRole
 	{
 

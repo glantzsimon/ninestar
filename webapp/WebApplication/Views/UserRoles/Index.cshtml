@@ -1,4 +1,5 @@
 ﻿@using K9.SharedLibrary.Models
+@using EButtonType = K9.SharedLibrary.Models.EButtonType
 @model User
 
 @Html.BootstrapTable(new DataTableOptions<User>
@@ -13,10 +14,12 @@
 	AllowEdit = false,
 	CustomButtons = new List<IButton>
 	{
-		new DataTableButton
+		new Button
 		{
 			Action = "EditRolesForUser",
-			Text = Dictionary.Edit
+			Text = Dictionary.Edit,
+			ButtonType = EButtonType.Primary,
+			IconCssClass = "fa fa-pencil"
 		}
 	}
 })

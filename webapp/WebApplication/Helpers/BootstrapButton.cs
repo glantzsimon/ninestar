@@ -94,10 +94,10 @@ namespace K9.WebApplication.Helpers
 			switch (buttonType)
 			{
 				case EButtonType.Delete:
-					return Bootstrap.Classes.RedButton;
+					return Bootstrap.Classes.ButtonDanger;
 
 				default:
-					return Bootstrap.Classes.PrimaryButton;
+					return Bootstrap.Classes.ButtonPrimary;
 
 			}
 		}

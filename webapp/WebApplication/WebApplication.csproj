@@ -229,7 +229,7 @@
     <Compile Include="Models\ViewMessage.cs" />
     <Compile Include="Options\BackgroundImageSwitcherOptions.cs" />
     <Compile Include="Options\AlertOptions.cs" />
-    <Compile Include="Options\DataTableButton.cs" />
+    <Compile Include="Models\DataTableButton.cs" />
     <Compile Include="Options\DataTableOptions.cs" />
     <Compile Include="Options\EditorOptions.cs" />
     <Compile Include="Options\IDataTableOptions.cs" />

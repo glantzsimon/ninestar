@@ -16,6 +16,11 @@
 		if (@Model.AllowDelete.ToString().ToLower() && !data.IsSystemStandard) {
 			buttons += '<a href="@Url.Action("Delete", Model.GetFilterRouteValues())' + join + 'id=' + data.Id + '" class="btn btn-danger"><i class="fa fa-trash"></i> @Dictionary.Delete</a>';
 		}
+		@foreach (var button in Model.CustomButtons)
+		{
+			@:Test
+			@:buttons += '<a href="@Url.Action(button.Action, Model.GetFilterRouteValues())' + join + 'id=' + data.Id + '" class="btn btn-danger"><i class="fa fa-trash"></i> @button.Text</a>';
+		}
 		return buttons == "" ? null : buttons;
 	};
 

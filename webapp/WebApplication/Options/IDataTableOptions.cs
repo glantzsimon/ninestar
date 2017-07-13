@@ -20,6 +20,7 @@ namespace K9.WebApplication.Options
 		bool AllowDelete { get; set; }
 		bool AllowView { get; set; }
 		bool DisplayFooter { get; set; }
+		List<IButton> CustomButtons { get; set; }
 		bool AllowCrud();
 		List<PropertyInfo> GetColumns();
 		List<string> GetColumnNames();

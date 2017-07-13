@@ -22,6 +22,7 @@ namespace K9.WebApplication.Options
 		public string Action { get; set; }
 		public string Controller { get; set; }
 		public bool DisplayFooter { get; set; }
+		public List<IButton> CustomButtons { get; set; }
 		public List<string> VisibleColumns { get; set; }
 		public IColumnsConfig ColumnsConfig { get; set; }
 		public IStatelessFilter StatelessFilter { get; set; }
@@ -38,6 +39,7 @@ namespace K9.WebApplication.Options
 		public DataTableOptions()
 		{
 			VisibleColumns = new List<string>();
+			CustomButtons = new List<IButton>();
 			AllowCreate = true;
 			AllowDelete = true;
 			AllowView = true;
@@ -46,7 +48,7 @@ namespace K9.WebApplication.Options
 
 		public bool AllowCrud()
 		{
-			return AllowCreate || AllowEdit || AllowDelete || AllowView;
+			return AllowCreate || AllowEdit || AllowDelete || AllowView || CustomButtons.Any();
 		}
 
 		public List<string> GetColumnNames()

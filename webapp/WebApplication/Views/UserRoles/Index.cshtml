@@ -1,4 +1,5 @@
-﻿@model User
+﻿@using K9.SharedLibrary.Models
+@model User
 
 @Html.BootstrapTable(new DataTableOptions<User>
 {
@@ -8,5 +9,14 @@
 	},
 	AllowCreate = false,
 	AllowDelete = false,
-	AllowView = false
+	AllowView = false,
+	AllowEdit = false,
+	CustomButtons = new List<IButton>
+	{
+		new DataTableButton
+		{
+			Action = "EditRolesForUser",
+			Text = Dictionary.Edit
+		}
+	}
 })

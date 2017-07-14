@@ -359,7 +359,7 @@ namespace K9.WebApplication.Controllers
 			return typeof(T).Name;
 		}
 
-		private void SetTitle()
+		protected void SetTitle()
 		{
 			ViewBag.Title = typeof(T).GetPluralName();
 		}

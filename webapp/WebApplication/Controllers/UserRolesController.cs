@@ -1,4 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
+using K9.DataAccess.Extensions;
 using K9.DataAccess.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Authentication;
@@ -6,6 +9,7 @@ using K9.SharedLibrary.Models;
 using K9.WebApplication.Extensions;
 using K9.WebApplication.Filters;
 using K9.WebApplication.Helpers;
+using K9.WebApplication.ViewModels;
 using NLog;
 
 namespace K9.WebApplication.Controllers
@@ -19,6 +23,8 @@ namespace K9.WebApplication.Controllers
 		{
 			_userRepository = userRepository;
 		}
+
+
 
 		[Authorize]
 		[RequirePermissions(Permission = Permissions.Edit)]
@@ -36,8 +42,13 @@ namespace K9.WebApplication.Controllers
 			}
 
 			SetTitle();
-			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Edit, typeof(UserRole).GetPluralName());
+			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Edit, typeof (UserRole).GetPluralName());
 
-			return View(item);
+			return View(new UserRolesViewModel
+			{
+				User = user,
+				UserRoles = Repository.GetByUser(user.Id).ToList()
+			});
+		}
 	}
 }

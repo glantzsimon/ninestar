@@ -1,0 +1,19 @@
+﻿@{
+	Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+@section layout
+{
+	<div class="mainContent">
+		<div class="backdrop">
+			<div class="page shadow alphaBackground roundCorners small-form">
+				@if (!string.IsNullOrEmpty(ViewBag.SubTitle))
+				{
+					<div class="page-header">
+						<h4>@ViewBag.SubTitle</h4>
+					</div>
+				}
+				@RenderBody()
+			</div>
+		</div>
+	</div>
+}

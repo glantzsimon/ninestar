@@ -403,10 +403,10 @@
     <Content Include="Views\Permissions\Index.cshtml" />
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
-    <Content Include="Views\Shared\_LayoutAlert.cshtml" />
+    <Content Include="Views\Shared\_LayoutFormSmallNoMenu.cshtml" />
+    <Content Include="Views\Shared\_LayoutFormMaster.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
-    <Content Include="Views\Shared\_LayoutMain.cshtml" />
-    <Content Include="Views\Shared\_Layout100.cshtml" />
+    <Content Include="Views\Shared\_LayoutColumns.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />
     <Content Include="Views\Students\Index.cshtml" />
     <Content Include="Views\Students\Delete.cshtml" />

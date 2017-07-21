@@ -1,7 +1,8 @@
 ﻿@model UserAccount.LoginModel
 @{
 	ViewBag.Title = Dictionary.LogIn;
-	Layout = "~/Views/Shared/_LayoutFormSmall.cshtml";
+	ViewBag.SubTitle = Dictionary.LogIn;
+	Layout = "~/Views/Shared/_LayoutFormSmallNoMenu.cshtml";
 }
 
 @using (Html.BeginForm())

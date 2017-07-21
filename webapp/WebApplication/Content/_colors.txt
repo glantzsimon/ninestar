@@ -1,7 +1,8 @@
 ﻿lightGrey = #d9d9d9
 darkGrey = #555555
-darkerGrey = #333333;
+darkerGrey = #333333
 errorRed = #a94442
+warning =  #234544
 deepBlue = #000080
 midBlue = #337ab7
 successGreen = #22BB44

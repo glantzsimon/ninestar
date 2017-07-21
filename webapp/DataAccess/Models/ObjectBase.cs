@@ -29,6 +29,9 @@ namespace K9.DataAccess.Models
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SystemStandard)]
 		public bool IsSystemStandard { get; set; }
 
+		[NotMapped]
+		public bool IsSelected { get; set; }
+
 		public string CreatePermissionName
 		{
 			get
@@ -171,5 +174,6 @@ namespace K9.DataAccess.Models
 		}
 
 		#endregion
+		
 	}
 }

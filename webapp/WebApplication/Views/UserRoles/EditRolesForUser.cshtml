@@ -2,17 +2,18 @@
 @{
 	Layout = "~/Views/Shared/_LayoutForm.cshtml";
 }
-
 @using (Html.BeginForm())
 {
 	using (Html.BeginBootstrapForm())
 	{
 		foreach (var item in Model.UserRoles)
 		{
-			@item.Role.Name
+			@Html.BootstrapDisplayFor(model => item.Role.Description)
+			@Html.BootstrapEditorFor(model => item.IsSelected)
 		}
 		
-		<hr/>
-		@Html.BootstrapButton(Dictionary.Update)
+	<hr />
+	@Html.BootstrapButton(Dictionary.Update)
+	@Html.BootstrapBackToListButton()
 	}
 }

@@ -3,7 +3,7 @@ using System.Web.Routing;
 
 namespace K9.SharedLibrary.Models
 {
-	public interface IObjectBase : IAuditable, IPermissable
+	public interface IObjectBase : IAuditable, IPermissable, ISelectable
 	{
 		int Id { get; set; }
 		string Name { get; set; }

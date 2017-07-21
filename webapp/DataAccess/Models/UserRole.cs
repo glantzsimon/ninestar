@@ -27,5 +27,6 @@ namespace K9.DataAccess.Models
 
 		[LinkedColumn(LinkedTableName = "Role", LinkedColumnName = "Description")]
 		public string RoleName { get; set; }
+
 	}
 }

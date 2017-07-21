@@ -197,5 +197,10 @@ namespace K9.SharedLibrary.Extensions
 			}
 			throw new Exception(string.Format("Invalid property name {0}", foreignKeyColumn));
 		}
+
+		public static string GetForeignKeyName(this Type type)
+		{
+			return string.Format("{0}Id", type.Name);
+		}
 	}
 }

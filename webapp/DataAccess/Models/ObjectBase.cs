@@ -87,7 +87,7 @@ namespace K9.DataAccess.Models
 
 		public string GetForeignKeyName()
 		{
-			return string.Format("{0}Id", GetType().Name);
+			return GetType().GetForeignKeyName();
 		}
 
 		private string GetCreatePermissionName()

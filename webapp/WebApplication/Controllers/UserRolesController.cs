@@ -19,7 +19,8 @@ namespace K9.WebApplication.Controllers
 	{
 		private readonly IRepository<User> _userRepository;
 
-		public UserRolesController(IRepository<UserRole> repository, IRepository<User> userRepository, ILogger logger, IDataTableAjaxHelper<UserRole> ajaxHelper, IDataSetsHelper dataSetsHelper, IRoles roles) : base(repository, logger, ajaxHelper, dataSetsHelper, roles)
+		public UserRolesController(IRepository<UserRole> repository, IRepository<User> userRepository, ILogger logger, IDataTableAjaxHelper<UserRole> ajaxHelper, IDataSetsHelper dataSetsHelper, IRoles roles)
+			: base(repository, logger, ajaxHelper, dataSetsHelper, roles)
 		{
 			_userRepository = userRepository;
 		}
@@ -47,7 +48,7 @@ namespace K9.WebApplication.Controllers
 			return View(new UserRolesViewModel
 			{
 				User = user,
-				UserRoles = Repository.GetByUser(user.Id).ToList()
+				UserRoles = Repository.GetAllBy<Role, User>(user.Id).ToList()
 			});
 		}
 	}

@@ -21,5 +21,11 @@ namespace K9.DataAccess.Models
 
 		public virtual User User { get; set; }
 		public virtual Role Role { get; set; }
+
+		[LinkedColumn(LinkedTableName = "User", LinkedColumnName = "Username")]
+		public string UserName { get; set; }
+
+		[LinkedColumn(LinkedTableName = "Role", LinkedColumnName = "Description")]
+		public string RoleName { get; set; }
 	}
 }

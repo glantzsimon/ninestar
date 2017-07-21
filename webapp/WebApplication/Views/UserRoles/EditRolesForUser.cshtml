@@ -7,7 +7,10 @@
 {
 	using (Html.BeginBootstrapForm())
 	{
-		foreach(var item in Model.)
+		foreach (var item in Model.UserRoles)
+		{
+			@item.Role.Name
+		}
 		
 		<hr/>
 		@Html.BootstrapButton(Dictionary.Update)

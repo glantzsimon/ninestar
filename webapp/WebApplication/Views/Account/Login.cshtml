@@ -1,8 +1,7 @@
 ﻿@model UserAccount.LoginModel
 @{
 	ViewBag.Title = Dictionary.LogIn;
-	ViewBag.SubTitle = Dictionary.LogIn;
-	Layout = "~/Views/Shared/_LayoutFormSmallNoMenu.cshtml";
+	Layout = "~/Views/Shared/_LayoutFormSmall.cshtml";
 }
 
 @using (Html.BeginForm())
@@ -14,6 +13,6 @@
 		<span>@Html.ActionLink(Dictionary.ResetPassword, "PasswordResetRequest") | @Html.ActionLink(Dictionary.Register, "Register")</span>
 		@Html.BootstrapEditorFor(model => model.RememberMe)
 		<hr/>
-		@Html.BootstrapButton(Dictionary.LogIn)
+		@Html.BootstrapButton(Dictionary.LogInVerb)
 	}
 }

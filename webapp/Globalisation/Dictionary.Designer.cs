@@ -466,6 +466,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please note, the email is valid for 24 hours only..
+        /// </summary>
+        public static string EmailValidFor {
+            get {
+                return ResourceManager.GetString("EmailValidFor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enrollment.
         /// </summary>
         public static string Enrollment {
@@ -696,6 +705,15 @@ namespace K9.Globalisation {
         public static string LogIntoYourExternalAccount {
             get {
                 return ResourceManager.GetString("LogIntoYourExternalAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign In.
+        /// </summary>
+        public static string LogInVerb {
+            get {
+                return ResourceManager.GetString("LogInVerb", resourceCulture);
             }
         }
         
@@ -1160,6 +1178,15 @@ namespace K9.Globalisation {
         public static string UpdatePaswordError {
             get {
                 return ResourceManager.GetString("UpdatePaswordError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update Your Details.
+        /// </summary>
+        public static string UpdateYourDetails {
+            get {
+                return ResourceManager.GetString("UpdateYourDetails", resourceCulture);
             }
         }
         

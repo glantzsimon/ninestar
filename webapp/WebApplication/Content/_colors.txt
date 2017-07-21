@@ -1,4 +1,5 @@
 ﻿lightGrey = #d9d9d9
+grey = #898989
 darkGrey = #555555
 darkerGrey = #333333
 errorRed = #a94442

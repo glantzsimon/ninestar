@@ -3,4 +3,4 @@
 	Layout = "~/Views/Shared/_LayoutForm.cshtml";
 }
 
-@Html.Success(Dictionary.AccountAlreadyActivated)
+@Html.Success(Dictionary.AccountAlreadyActivated, Html.ActionLink(Dictionary.LogIntoYourAccount, "Login"))

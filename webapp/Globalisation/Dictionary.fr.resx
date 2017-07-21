@@ -287,7 +287,7 @@
     <value>Si vous n'avez pas de compte</value>
   </data>
   <data name="LogIn" xml:space="preserve">
-    <value>Se Connecter</value>
+    <value>Connexion</value>
   </data>
   <data name="ResetPassword" xml:space="preserve">
     <value>Réinitialiser votre mot de passe</value>
@@ -507,5 +507,14 @@
   </data>
   <data name="UserRoles" xml:space="preserve">
     <value>Rôles d'Utilisateur</value>
+  </data>
+  <data name="UpdateYourDetails" xml:space="preserve">
+    <value>Mettre à Jour Vos Coordonées</value>
+  </data>
+  <data name="EmailValidFor" xml:space="preserve">
+    <value>Cet email sera valable pendant 24 heures.</value>
+  </data>
+  <data name="LogInVerb" xml:space="preserve">
+    <value>Se Connecter</value>
   </data>
 </root>

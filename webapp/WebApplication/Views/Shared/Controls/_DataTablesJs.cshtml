@@ -18,7 +18,10 @@
 		}
 		@foreach (var button in Model.CustomButtons)
 		{
-			@:buttons += '<a href="@Url.Action(button.Action, Model.GetFilterRouteValues())' + join + 'id=' + data.Id + '" class="btn @button.ButtonCssClass"><i class="@button.IconCssClass"></i> @button.Text</a>';
+			@:if (!data.IsSystemStandard)
+			{
+				@:buttons += '<a href="@Url.Action(button.Action, Model.GetFilterRouteValues())' + join + 'id=' + data.Id + '" class="btn @button.ButtonCssClass"><i class="@button.IconCssClass"></i> @button.Text</a>';
+			}
 		}
 		return buttons == "" ? null : buttons;
 	};

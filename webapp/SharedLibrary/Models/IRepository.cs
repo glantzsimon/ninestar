@@ -20,11 +20,19 @@ namespace K9.SharedLibrary.Models
 
 		void Create(T item);
 
+		void CreateBatch(List<T> items);
+
 		void Update(T item);
+
+		void UpdateBatch(List<T> items);
 
 		void Delete(int id);
 
+		void DeleteBatch(List<int> items);
+
 		void Delete(T item);
+
+		void DeleteBatch(List<T> items);
 
 		bool Exists(int id);
 
@@ -40,7 +48,7 @@ namespace K9.SharedLibrary.Models
 
 		List<T> GetBy<T2>(int id) where T2 : class, IObjectBase;
 
-		List<T> GetAllBy<T2, T3>(int id) 
+		List<T> GetAllBy<T2, T3>(int id)
 			where T2 : class, IObjectBase
 			where T3 : class, IObjectBase;
 

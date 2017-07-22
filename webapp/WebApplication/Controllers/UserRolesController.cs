@@ -60,21 +60,15 @@ namespace K9.WebApplication.Controllers
 
 			try
 			{
-				foreach (var item in model.Items)
+				var itemsToDelete = model.Items.Where(x => x.Id > 0 && !x.IsSelected).Select(x => x.Id).ToList();
+				Repository.DeleteBatch(itemsToDelete);
+
+				var itemsToAdd = model.Items.Where(x => x.Id == 0 && x.IsSelected).Select(x => new UserRole
 				{
-					if (item.Id > 0 && !item.IsSelected)
-					{
-						Repository.Delete(item.Id);
-					}
-					else
-					{
-						Repository.Create(new UserRole
-						{
-							UserId = model.ParentId,
-							RoleId = item.ChildId
-						});
-					}
-				}
+					UserId = model.ParentId,
+					RoleId = x.ChildId
+				}).ToList();
+				Repository.CreateBatch(itemsToAdd);
 				
 				return RedirectToAction("Index", this.GetFilterRouteValueDictionary());
 			}

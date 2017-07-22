@@ -50,10 +50,22 @@ namespace K9.DataAccess.Respositories
 			_db.Create(item);
 		}
 
+		public void CreateBatch(List<T> items)
+		{
+			items.ForEach(x => x.UpdateAuditFields());
+			_db.CreateBatch(items);
+		}
+
 		public void Update(T item)
 		{
 			item.UpdateAuditFields();
 			_db.Update(item);
+		}
+
+		public void UpdateBatch(List<T> items)
+		{
+			items.ForEach(x => x.UpdateAuditFields());
+			_db.UpdateBatch(items);
 		}
 
 		public void Delete(int id)
@@ -61,9 +73,19 @@ namespace K9.DataAccess.Respositories
 			_db.Delete<T>(id);
 		}
 
+		public void DeleteBatch(List<int> ids)
+		{
+			_db.DeleteBatch<T>(ids);
+		}
+
 		public void Delete(T item)
 		{
 			_db.Delete(item);
+		}
+
+		public void DeleteBatch(List<T> items)
+		{
+			_db.DeleteBatch(items);
 		}
 
 		public bool Exists(int id)
@@ -118,7 +140,7 @@ namespace K9.DataAccess.Respositories
 		/// <typeparam name="T3">The type of entity that the foreign key belongs to</typeparam>
 		/// <param name="id"></param>
 		/// <returns></returns>
-		public List<T> GetAllBy<T2, T3>(int id) 
+		public List<T> GetAllBy<T2, T3>(int id)
 			where T2 : class, IObjectBase
 			where T3 : class, IObjectBase
 		{
@@ -132,7 +154,7 @@ namespace K9.DataAccess.Respositories
 
 			foreach (var item in items)
 			{
-				var foreignKeyId = (int)item.GetProperty(typeof (T3).GetForeignKeyName());
+				var foreignKeyId = (int)item.GetProperty(typeof(T3).GetForeignKeyName());
 				item.SetProperty(typeof(T3).Name, allItems.First(x => x.Id == foreignKeyId));
 			}
 

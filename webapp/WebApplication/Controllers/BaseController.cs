@@ -19,6 +19,43 @@ using NLog;
 namespace K9.WebApplication.Controllers
 {
 
+	public abstract class BaseController : Controller, IBaseController
+	{
+		private readonly ILogger _logger;
+		private readonly IDataSetsHelper _dataSetsHelper;
+		private readonly IRoles _roles;
+
+		public IDataSetsHelper DropdownDataSets
+		{
+			get { return _dataSetsHelper; }
+		}
+
+		public IRoles Roles
+		{
+			get { return _roles; }
+		}
+
+		public ILogger Logger
+		{
+			get
+			{
+				return _logger;
+			}
+		}
+		
+		public string GetObjectName()
+		{
+			throw new NotImplementedException();
+		}
+
+		public BaseController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles)
+		{
+			_logger = logger;
+			_dataSetsHelper = dataSetsHelper;
+			_roles = roles;
+		}
+	}
+
 	public abstract class BaseController<T> : Controller, IBaseController where T : class, IObjectBase
 	{
 
@@ -100,7 +137,6 @@ namespace K9.WebApplication.Controllers
 
 		#region Views
 
-		[Authorize]
 		[RequirePermissions(Permission = Permissions.View)]
 		public virtual ActionResult Index()
 		{
@@ -109,7 +145,6 @@ namespace K9.WebApplication.Controllers
 			return View("Index");
 		}
 
-		[Authorize]
 		[RequirePermissions(Permission = Permissions.View)]
 		public virtual ActionResult Details(int id = 0)
 		{
@@ -129,7 +164,6 @@ namespace K9.WebApplication.Controllers
 
 		#region DataTable
 
-		[Authorize]
 		public virtual ActionResult List()
 		{
 			_ajaxHelper.LoadQueryString(HttpContext.Request.QueryString);

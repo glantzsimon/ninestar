@@ -67,12 +67,12 @@ namespace K9.DataAccess.Helpers
 		public bool CurrentUserHasPermission<T>(string permissionName) where T : IObjectBase
 		{
 			var fullyQualifiedPermissionName = string.Format("{0}{1}", permissionName, typeof(T).Name);
-			return UserHasPermission(WebSecurity.CurrentUserName, fullyQualifiedPermissionName);
+			return WebSecurity.IsAuthenticated && UserHasPermission(WebSecurity.CurrentUserName, fullyQualifiedPermissionName);
 		}
 
 		public bool CurrentUserIsInRole(string roleName)
 		{
-			return UserIsInRole(WebSecurity.CurrentUserName, roleName);
+			return WebSecurity.IsAuthenticated && UserIsInRole(WebSecurity.CurrentUserName, roleName);
 		}
 
 		public IPermission GetPermission(string permissionName)

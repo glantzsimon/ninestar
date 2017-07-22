@@ -3,6 +3,15 @@
 	ViewBag.SubTitle = Dictionary.NineStarKiTitle;
 	Layout = "~/Views/Shared/_LayoutForm.cshtml";
 }
+
+@(Html.BootstrapTable<Country>(new DataTableOptions<Country>
+{
+	VisibleColumns = new List<string>
+	{
+		"Name"
+	}
+}))
+
 <article>
 	<p>
 		Lorem ipsum dolor sit amet, mel ne graece oportere, vel ex iusto decore evertitur.

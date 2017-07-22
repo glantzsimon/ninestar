@@ -11,6 +11,7 @@ namespace K9.SharedLibrary.Models
 		bool CurrentUserIsInRole(string roleName);
 		bool CurrentUserHasPermission<T>(string permissionName) where T : IObjectBase;
 		List<IPermission> GetPermissionsForCurrentUser();
+		List<IRole> GetRolesForCurrentUser();
 		bool UserHasPermission(string username, string permissionName);
 		bool UserIsInRole(string username, string roleName);
 		void CreateRole(string roleName, bool isSystemStandard = false);

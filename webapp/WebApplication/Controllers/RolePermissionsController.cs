@@ -9,7 +9,7 @@ using NLog;
 
 namespace K9.WebApplication.Controllers
 {
-
+	[RequirePermissions(Role = RoleNames.Administrators)]
 	public class RolePermissionsController : BaseController<RolePermission>
 	{
 		private readonly IRepository<Role> _roleRepository;

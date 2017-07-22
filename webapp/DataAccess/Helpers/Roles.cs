@@ -80,6 +80,11 @@ namespace K9.DataAccess.Helpers
 			return WebSecurity.IsAuthenticated ? GetPermissionsForUser(WebSecurity.CurrentUserName) : new List<IPermission>();
 		}
 
+		public List<IRole> GetRolesForCurrentUser()
+		{
+			return WebSecurity.IsAuthenticated ? GetRolesForUser(WebSecurity.CurrentUserName) : new List<IRole>();
+		}
+
 		public IPermission GetPermission(string permissionName)
 		{
 			var permission = _permissionRepository.GetQuery(string.Format("SELECT TOP 1 * FROM [Permission] WHERE [Name] = '{0}'", permissionName)).FirstOrDefault();

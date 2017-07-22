@@ -17,7 +17,7 @@ namespace K9.WebApplication.Filters
 		{
 			var controller = filterContext.Controller as IBaseController;
 			var roles = controller.Roles;
-			var permissions = roles.GetPermissionsForUser(WebSecurity.CurrentUserName).Select(r => r.Name).ToList();
+			var permissions = roles.GetPermissionsForCurrentUser().Select(r => r.Name).ToList();
 
 			if (!string.IsNullOrEmpty(Permission))
 			{

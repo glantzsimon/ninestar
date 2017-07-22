@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using K9.DataAccess.Attributes;
+using K9.SharedLibrary.Attributes;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using NLog;
@@ -140,7 +141,7 @@ namespace K9.WebApplication.Helpers
 			get { return _orderByDirection; }
 		}
 
-		public string GetWhereClause(bool ignoreCHildTables = false)
+		public string GetWhereClause(bool ignoreChildTables = false)
 		{
 			var sb = new StringBuilder();
 			var parentType = typeof(T);
@@ -155,7 +156,7 @@ namespace K9.WebApplication.Helpers
 				{
 					if (linkedTables.Any())
 					{
-						if (!ignoreCHildTables)
+						if (!ignoreChildTables)
 						{
 							sb.Append(sb.Length == 0 ? "WHERE (" : " OR ");
 							var linkedColumn = linkedTables.First().Key;
@@ -293,7 +294,7 @@ namespace K9.WebApplication.Helpers
 
 		private List<IDataTableColumnInfo> GetDataBoundColumnInfosNotIgnored()
 		{
-			return GetDataBoundColumnInfos().Where(c => !_columnsConfig.ColumnsToIgnore.Contains(c.Name)).ToList();
+			return GetDataBoundColumnInfos().Where(c => !_columnsConfig.ColumnsToIgnore.Contains(c.Data)).ToList();
 		}
 
 		private List<IDataTableColumnInfo> GetDataBoundColumnInfosNotIdColumns()

@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Reflection;
+using K9.SharedLibrary.Attributes;
 using Microsoft.Ajax.Utilities;
 
 namespace K9.SharedLibrary.Extensions
@@ -180,7 +181,7 @@ namespace K9.SharedLibrary.Extensions
 
 		public static bool IsDataBound(this PropertyInfo info)
 		{
-			return !info.GetCustomAttributes(typeof(NotMappedAttribute), false).Any() && info.CanWrite;
+			return (!info.GetCustomAttributes(typeof(NotMappedAttribute), false).Any() || info.GetCustomAttributes(typeof(LinkedColumnAttribute), false).Any()) && info.CanWrite;
 		}
 
 		public static Type GetLinkedPropertyType(this Type type, string propertyName)

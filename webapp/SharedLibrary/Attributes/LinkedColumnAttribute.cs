@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace K9.DataAccess.Attributes
+namespace K9.SharedLibrary.Attributes
 {
 	public class LinkedColumnAttribute : NotMappedAttribute
 	{

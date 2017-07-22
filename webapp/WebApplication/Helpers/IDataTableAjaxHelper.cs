@@ -15,7 +15,7 @@ namespace K9.WebApplication.Helpers
 		List<IDataTableColumnInfo> ColumnInfos { get; }
 		void LoadQueryString(NameValueCollection queryString);
 		string GetQuery(bool selectAllColumns = false);
-		string GetWhereClause(bool ignoreCHildTables = false);
+		string GetWhereClause(bool ignoreChildTables = false);
 	}
 
 	public interface IDataTableColumnInfo

@@ -9,6 +9,7 @@ using NLog;
 
 namespace K9.WebApplication.Controllers
 {
+	[Authorize]
 	[RequirePermissions(Role = RoleNames.Administrators)]
 	public class UserRolesController : BaseController<UserRole>
 	{

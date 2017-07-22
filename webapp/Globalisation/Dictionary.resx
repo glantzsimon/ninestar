@@ -535,4 +535,16 @@
   <data name="SentToUserLabel" xml:space="preserve">
     <value>Sent To</value>
   </data>
+  <data name="SentOnLabel" xml:space="preserve">
+    <value>Sent On</value>
+  </data>
+  <data name="BodyLabel" xml:space="preserve">
+    <value>Body</value>
+  </data>
+  <data name="MessageDirectionLabel" xml:space="preserve">
+    <value>Message Direction</value>
+  </data>
+  <data name="SubjectLabel" xml:space="preserve">
+    <value>Subject</value>
+  </data>
 </root>

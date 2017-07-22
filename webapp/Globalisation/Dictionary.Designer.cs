@@ -214,6 +214,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Body.
+        /// </summary>
+        public static string BodyLabel {
+            get {
+                return ResourceManager.GetString("BodyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change Password.
         /// </summary>
         public static string ChangePassword {
@@ -781,6 +790,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Message Direction.
+        /// </summary>
+        public static string MessageDirectionLabel {
+            get {
+                return ResourceManager.GetString("MessageDirectionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to My Account.
         /// </summary>
         public static string MyAccountTitle {
@@ -1128,11 +1146,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sent On.
+        /// </summary>
+        public static string SentOnLabel {
+            get {
+                return ResourceManager.GetString("SentOnLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sent To.
         /// </summary>
         public static string SentToUserLabel {
             get {
                 return ResourceManager.GetString("SentToUserLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subject.
+        /// </summary>
+        public static string SubjectLabel {
+            get {
+                return ResourceManager.GetString("SubjectLabel", resourceCulture);
             }
         }
         

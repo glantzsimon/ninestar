@@ -1,0 +1,16 @@
+﻿@model Message
+
+@Html.BootstrapTable(new DataTableOptions<Message>
+{
+	 VisibleColumns = new List<string>
+	 {
+		 "SentByUserId",
+		 "SentToUserId",
+		 "MessageDirection",
+		 "Subject",
+		 "Body",
+		 "SentByUserName",
+		 //"SentToUserName",
+		 "SentOn"
+	 }
+})

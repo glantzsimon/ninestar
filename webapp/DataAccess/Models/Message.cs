@@ -11,8 +11,8 @@ namespace K9.DataAccess.Models
 
 	public enum EMessageDirection
 	{
-		Received,
-		Sent
+		Inbound,
+		Outbound
 	}
 
 	[AutoGenerateName]
@@ -30,11 +30,17 @@ namespace K9.DataAccess.Models
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SentToUserLabel)]
 		public int SentToUserId { get; set; }
 
+		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SentOnLabel)]
+		public DateTime SentOn { get; set; }
+
+		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SentToUserLabel)]
 		public EMessageDirection MessageDirection { get; set; }
 
+		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubjectLabel)]
 		[StringLength(256)]
 		public string Subject { get; set; }
 
+		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BodyLabel)]
 		[StringLength(Int32.MaxValue)]
 		public string Body { get; set; }
 
@@ -44,8 +50,8 @@ namespace K9.DataAccess.Models
 		[LinkedColumn(LinkedTableName = "User", LinkedColumnName = "Name")]
 		public string SentToUserName { get; set; }
 
-		[LinkedColumn(LinkedTableName = "User", LinkedColumnName = "Name")]
-		public string SentByUserName { get; set; }
+		//[LinkedColumn(LinkedTableName = "User", LinkedColumnName = "Name")]
+		//public string SentByUserName { get; set; }
 
 	}
 }

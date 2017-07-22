@@ -9,6 +9,7 @@ using System.Web.Script.Serialization;
 using DotNetOpenAuth.Messaging;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Exceptions;
 using K9.WebApplication.Extensions;
 using K9.WebApplication.Helpers;
 
@@ -70,6 +71,15 @@ namespace K9.WebApplication.Options
 				var allColumns = typeof(T).GetProperties()
 					.Where(p => !ColumnsConfig.ColumnsToIgnore.Contains(p.Name)).ToList();
 				
+				if (VisibleColumns.Any())
+				{
+					var invalidColumns = VisibleColumns.Where(v => !allColumns.Select(c => c.Name).Contains(v));
+					if (invalidColumns.Any())
+					{
+						throw new InvalidColumnNameException(invalidColumns.ToDelimitedString());
+					}
+				}
+
 				var orderedColumns = VisibleColumns.Select(visibleColumn => allColumns.FirstOrDefault(c => c.Name == visibleColumn)).ToList();
 				orderedColumns.AddRange(allColumns.Where(c => !c.IsVirtual() && !orderedColumns.Contains(c)));
 

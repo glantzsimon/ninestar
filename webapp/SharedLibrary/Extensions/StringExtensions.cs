@@ -1,4 +1,6 @@
-﻿using System.Globalization;
+﻿using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace K9.SharedLibrary.Extensions
@@ -24,6 +26,11 @@ namespace K9.SharedLibrary.Extensions
                  (?<=[A-Za-z])(?=[^A-Za-z])", RegexOptions.IgnorePatternWhitespace);
 
 			return regex.Replace(value, " ");
+		}
+
+		public static string ToDelimitedString(this IEnumerable<string> list, string delimiter = ",")
+		{
+			return list.Aggregate("", (a, b) => string.IsNullOrEmpty(a) ? b : string.Format("{0}{1} {2}", a, delimiter, b));
 		}
 	}
 }

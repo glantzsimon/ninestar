@@ -41,6 +41,10 @@ namespace K9.Globalisation
 			public const string DescriptionLabel = "DescriptionLabel";
 			public const string SentByUserLabel = "SentByUserLabel";
 			public const string SentToUserLabel = "SentToUserLabel";
+			public const string SentOnLabel = "SentOnLabel";
+			public const string MessageDirectionLabel = "MessageDirectionLabel";
+			public const string SubjectLabel = "SubjectLabel";
+			public const string BodyLabel = "BodyLabel";
 		}
 
 		public class Grammar

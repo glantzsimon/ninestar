@@ -538,4 +538,16 @@
   <data name="SentToUserLabel" xml:space="preserve">
     <value>Envoyé A</value>
   </data>
+  <data name="SentOnLabel" xml:space="preserve">
+    <value>Envoyé Le</value>
+  </data>
+  <data name="BodyLabel" xml:space="preserve">
+    <value>Corps</value>
+  </data>
+  <data name="MessageDirectionLabel" xml:space="preserve">
+    <value>Direction du Message</value>
+  </data>
+  <data name="SubjectLabel" xml:space="preserve">
+    <value>Objet</value>
+  </data>
 </root>

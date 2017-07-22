@@ -39,6 +39,8 @@ namespace K9.Globalisation
 			public const string PermissionLabel = "PermissionLabel";
 			public const string SystemStandard = "SystemStandard";
 			public const string DescriptionLabel = "DescriptionLabel";
+			public const string SentByUserLabel = "SentByUserLabel";
+			public const string SentToUserLabel = "SentToUserLabel";
 		}
 
 		public class Grammar
@@ -63,6 +65,7 @@ namespace K9.Globalisation
 			public const string UserRole = "UserRole";
 			public const string UserRoles = "UserRoles";
 			public const string User = "User";
+			public const string Message = "Message";
 		}
 
 	}

@@ -529,4 +529,13 @@
   <data name="User" xml:space="preserve">
     <value>Utilisateur</value>
   </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="SentByUserLabel" xml:space="preserve">
+    <value>De</value>
+  </data>
+  <data name="SentToUserLabel" xml:space="preserve">
+    <value>Envoyé A</value>
+  </data>
 </root>

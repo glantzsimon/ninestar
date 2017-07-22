@@ -9,7 +9,7 @@ using WebMatrix.WebData;
 
 namespace K9.DataAccess.Models
 {
-	[Grammar(ResourceType = typeof(Dictionary), DefiniteArticleName = Strings.Grammar.DefiniteArticleWithApostrophe, IndefiniteArticleName = Strings.Grammar.MasculineIndefiniteArticle)]
+	[Grammar(ResourceType = typeof(Dictionary), DefiniteArticleName = Strings.Grammar.DefiniteArticleWithApostrophe, IndefiniteArticleName = Strings.Grammar.MasculineIndefiniteArticle, OfPrepositionName = Strings.Grammar.OfPrepositionWithApostrophe)]
 	[Name(ResourceType = typeof(Dictionary), Name = Strings.Names.User)]
 	public class User : ObjectBase, IUser
 	{

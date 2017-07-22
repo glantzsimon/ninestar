@@ -772,6 +772,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Message.
+        /// </summary>
+        public static string Message {
+            get {
+                return ResourceManager.GetString("Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to My Account.
         /// </summary>
         public static string MyAccountTitle {
@@ -1106,6 +1115,24 @@ namespace K9.Globalisation {
         public static string Search {
             get {
                 return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From.
+        /// </summary>
+        public static string SentByUserLabel {
+            get {
+                return ResourceManager.GetString("SentByUserLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sent To.
+        /// </summary>
+        public static string SentToUserLabel {
+            get {
+                return ResourceManager.GetString("SentToUserLabel", resourceCulture);
             }
         }
         

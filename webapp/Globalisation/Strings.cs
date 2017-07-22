@@ -62,6 +62,7 @@ namespace K9.Globalisation
 			public const string Role = "Role";
 			public const string UserRole = "UserRole";
 			public const string UserRoles = "UserRoles";
+			public const string User = "User";
 		}
 
 	}

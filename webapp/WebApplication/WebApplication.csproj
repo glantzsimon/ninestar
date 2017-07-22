@@ -236,7 +236,8 @@
     <Compile Include="Options\ImageSwitcherOptions.cs" />
     <Compile Include="Options\ImageSwitcherOptionsBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\UserRolesViewModel.cs" />
+    <Compile Include="ViewModels\MultiSelectItem.cs" />
+    <Compile Include="ViewModels\MultiSelectViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\k9\menubar.css" />
@@ -404,6 +405,7 @@
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Shared\_LayoutFormMaster.cshtml" />
+    <Content Include="Views\Shared\Controls\_MultiSelect.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutColumns.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />

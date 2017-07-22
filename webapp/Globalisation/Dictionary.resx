@@ -523,4 +523,7 @@
   <data name="PowerUser" xml:space="preserve">
     <value>Utilisateur Puissant</value>
   </data>
+  <data name="User" xml:space="preserve">
+    <value>User</value>
+  </data>
 </root>

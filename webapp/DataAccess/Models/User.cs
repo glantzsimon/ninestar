@@ -2,12 +2,15 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using DataAnnotationsExtensions;
+using K9.DataAccess.Attributes;
 using K9.Globalisation;
 using K9.SharedLibrary.Models;
 using WebMatrix.WebData;
 
 namespace K9.DataAccess.Models
 {
+	[Grammar(ResourceType = typeof(Dictionary), DefiniteArticleName = Strings.Grammar.DefiniteArticleWithApostrophe, IndefiniteArticleName = Strings.Grammar.MasculineIndefiniteArticle)]
+	[Name(ResourceType = typeof(Dictionary), Name = Strings.Names.User)]
 	public class User : ObjectBase, IUser
 	{
 		[StringLength(56)]

@@ -38,9 +38,11 @@ namespace K9.SharedLibrary.Models
 
 		T Find(params object[] keyValues);
 
-		List<T> GetBy<T2>(int id);
+		List<T> GetBy<T2>(int id) where T2 : class, IObjectBase;
 
-		List<T> GetAllBy<T2, T3>(int id) where T2 : class, IObjectBase;
+		List<T> GetAllBy<T2, T3>(int id) 
+			where T2 : class, IObjectBase
+			where T3 : class, IObjectBase;
 
 		void Dispose();
 

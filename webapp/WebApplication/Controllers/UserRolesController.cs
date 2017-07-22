@@ -1,15 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using K9.DataAccess.Extensions;
 using K9.DataAccess.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Authentication;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Extensions;
 using K9.WebApplication.Filters;
 using K9.WebApplication.Helpers;
 using K9.WebApplication.ViewModels;
+using Microsoft.Ajax.Utilities;
 using NLog;
 
 namespace K9.WebApplication.Controllers
@@ -24,8 +27,6 @@ namespace K9.WebApplication.Controllers
 		{
 			_userRepository = userRepository;
 		}
-
-
 
 		[Authorize]
 		[RequirePermissions(Permission = Permissions.Edit)]
@@ -45,11 +46,46 @@ namespace K9.WebApplication.Controllers
 			SetTitle();
 			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Edit, typeof (UserRole).GetPluralName());
 
-			return View(new UserRolesViewModel
+			return View(MultiSelectViewModel.Create<UserRole, User, Role>(user, Repository.GetAllBy<User, Role>(user.Id)));
+		}
+
+		[Authorize]
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		[RequirePermissions(Permission = Permissions.Edit)]
+		public ActionResult EditRolesForUser(MultiSelectViewModel model)
+		{
+			SetTitle();
+			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Edit, typeof(UserRole).GetPluralName());
+
+			try
 			{
-				User = user,
-				UserRoles = Repository.GetAllBy<Role, User>(user.Id).ToList()
-			});
+				foreach (var item in model.Items)
+				{
+					if (item.Id > 0 && !item.IsSelected)
+					{
+						Repository.Delete(item.Id);
+					}
+					else
+					{
+						Repository.Create(new UserRole
+						{
+							Id = item.Id,
+							UserId = model.ParentId,
+							RoleId = item.ChildId
+						});
+					}
+				}
+				
+				return RedirectToAction("Index", this.GetFilterRouteValueDictionary());
+			}
+			catch (Exception ex)
+			{
+				Logger.Error(ex.Message);
+				ModelState.AddModelError("", ex.Message);
+			}
+
+			return View(model);
 		}
 	}
 }

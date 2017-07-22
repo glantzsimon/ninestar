@@ -103,6 +103,7 @@ namespace K9.DataAccess.Respositories
 		/// <param name="id"></param>
 		/// <returns></returns>
 		public List<T> GetBy<T2>(int id)
+			where T2 : class, IObjectBase
 		{
 			return _db.GetQuery<T>(string.Format("SELECT * FROM [{0}] WHERE [{1}] = {2}",
 				typeof(T2).Name,
@@ -117,20 +118,22 @@ namespace K9.DataAccess.Respositories
 		/// <typeparam name="T3">The type of entity that the foreign key belongs to</typeparam>
 		/// <param name="id"></param>
 		/// <returns></returns>
-		public List<T> GetAllBy<T2, T3>(int id) where T2 : class, IObjectBase
+		public List<T> GetAllBy<T2, T3>(int id) 
+			where T2 : class, IObjectBase
+			where T3 : class, IObjectBase
 		{
-			var allItems = _db.List<T2>();
+			var allItems = _db.List<T3>();
 			var items = _db.GetQuery<T>(string.Format("SELECT [{1}].[Id] AS [{2}], {4} AS {3}, [{0}].* FROM [{0}] RIGHT JOIN [{1}] ON [{0}].[{2}] = [{1}].[Id] AND [{0}].[{3}] = {4}",
 				typeof(T).Name,
-				typeof(T2).Name,
-				typeof(T2).GetForeignKeyName(),
+				typeof(T3).Name,
 				typeof(T3).GetForeignKeyName(),
+				typeof(T2).GetForeignKeyName(),
 				id));
 
 			foreach (var item in items)
 			{
-				var foreignKeyId = (int)item.GetProperty(typeof (T2).GetForeignKeyName());
-				item.SetProperty(typeof(T2).Name, allItems.First(x => x.Id == foreignKeyId));
+				var foreignKeyId = (int)item.GetProperty(typeof (T3).GetForeignKeyName());
+				item.SetProperty(typeof(T3).Name, allItems.First(x => x.Id == foreignKeyId));
 			}
 
 			return items;

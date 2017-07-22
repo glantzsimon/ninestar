@@ -56,6 +56,14 @@ namespace K9.WebApplication.Controllers
 			get { return _roles; }
 		}
 
+		public ILogger Logger
+		{
+			get
+			{
+				return _logger;
+			}
+		}
+
 		#endregion
 
 

@@ -22,6 +22,6 @@ namespace K9.WebApplication.Controllers
 			var user = e.Item as User;
 			WebSecurity.CreateAccount(user.Username, AppConfig.DefaultUserPassword);
 		}
-		
+
 	}
 }

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Web.Mvc;
+using K9.DataAccess.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
@@ -10,6 +12,7 @@ using K9.WebApplication.EventArgs;
 using K9.WebApplication.Extensions;
 using K9.WebApplication.Filters;
 using K9.WebApplication.Helpers;
+using K9.WebApplication.ViewModels;
 using Newtonsoft.Json;
 using NLog;
 
@@ -344,6 +347,69 @@ namespace K9.WebApplication.Controllers
 			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Delete, typeof(T).GetName());
 
 			return View(item);
+		}
+
+		#endregion
+
+
+		#region CRUD Multiple
+
+		[Authorize]
+		[RequirePermissions(Permission = Permissions.Edit)]
+		public ActionResult EditMultiple<T2, T3>(T2 parent)
+			where T2 : class, IObjectBase
+			where T3 : class, IObjectBase
+		{
+			if (parent == null)
+			{
+				return HttpNotFound();
+			}
+
+			if (parent.IsSystemStandard)
+			{
+				return View("Unauthorized");
+			}
+
+			SetTitle();
+			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Edit, typeof(T).GetPluralName());
+
+			return View(MultiSelectViewModel.Create<T, T2, T3>(parent, _repository.GetAllBy<T2, T3>(parent.Id)));
+		}
+
+		[Authorize]
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		[RequirePermissions(Permission = Permissions.Edit)]
+		public ActionResult EditMultiple<T2, T3>(MultiSelectViewModel model)
+			where T2 : class, IObjectBase
+			where T3 : class, IObjectBase
+		{
+			SetTitle();
+			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Edit, typeof(UserRole).GetPluralName());
+
+			try
+			{
+				var itemsToDelete = model.Items.Where(x => x.Id > 0 && !x.IsSelected).Select(x => x.Id).ToList();
+				Repository.DeleteBatch(itemsToDelete);
+
+				var itemsToAdd = model.Items.Where(x => x.Id == 0 && x.IsSelected).Select(x =>
+				{
+					var item = Activator.CreateInstance<T>();
+					item.SetProperty(typeof(T2).GetForeignKeyName(), model.ParentId);
+					item.SetProperty(typeof(T3).GetForeignKeyName(), x.ChildId);
+					return item;
+				}).ToList();
+				_repository.CreateBatch(itemsToAdd);
+				
+				return RedirectToAction("Index", this.GetFilterRouteValueDictionary());
+			}
+			catch (Exception ex)
+			{
+				Logger.Error(ex.Message);
+				ModelState.AddModelError("", ex.Message);
+			}
+
+			return View(model);
 		}
 
 		#endregion

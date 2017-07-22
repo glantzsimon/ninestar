@@ -171,7 +171,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
-    <Compile Include="Controllers\RolesPermissionsController.cs" />
+    <Compile Include="Controllers\RolePermissionsController.cs" />
     <Compile Include="Filters\RequirePermissionsAttribute.cs" />
     <Compile Include="Config\AppConfig.cs" />
     <Compile Include="Constants\Bootstrap.cs" />
@@ -405,7 +405,8 @@
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Shared\_LayoutFormMaster.cshtml" />
-    <Content Include="Views\Shared\Controls\_MultiSelect.cshtml" />
+    <Content Include="Views\Shared\EditMultiple.cshtml" />
+    <Content Include="Views\RolePermissions\Index.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutColumns.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />
@@ -419,7 +420,6 @@
     <Content Include="Views\Support\ContactUs.cshtml" />
     <Content Include="Views\UserRoles\Index.cshtml" />
     <Content Include="Views\Shared\_MenuBar.cshtml" />
-    <Content Include="Views\UserRoles\EditRolesForUser.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -139,6 +139,11 @@ namespace K9.SharedLibrary.Extensions
 			return info.GetCustomAttributes(typeof(KeyAttribute), false).Any();
 		}
 
+		public static bool IsForeignKey(this PropertyInfo info)
+		{
+			return info.GetCustomAttributes(typeof(ForeignKeyAttribute), false).Any();
+		}
+
 		public static bool IsVirtualCollection(this PropertyInfo info)
 		{
 			return info.GetGetMethod().IsVirtual && info.PropertyType.IsGenericType &&

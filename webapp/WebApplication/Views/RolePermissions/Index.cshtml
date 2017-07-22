@@ -1,0 +1,25 @@
+﻿@using K9.SharedLibrary.Models
+@using EButtonType = K9.SharedLibrary.Models.EButtonType
+@model Role
+
+@Html.BootstrapTable(new DataTableOptions<Role>
+{
+	VisibleColumns = new List<string>
+	{
+		"Description"
+	},
+	AllowCreate = false,
+	AllowDelete = false,
+	AllowView = false,
+	AllowEdit = false,
+	CustomButtons = new List<IButton>
+	{
+		new Button
+		{
+			Action = "EditPermissionsForRole",
+			Text = Dictionary.Edit,
+			ButtonType = EButtonType.Primary,
+			IconCssClass = "fa fa-pencil"
+		}
+	}
+})

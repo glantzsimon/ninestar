@@ -146,7 +146,7 @@ namespace K9.WebApplication.Helpers
 			var parentType = typeof(T);
 			var linkedColumns = GetLinkedColumns();
 
-			foreach (var columnInfo in GetDataBoundColumnInfosNotIgnored())
+			foreach (var columnInfo in GetDataBoundColumnInfosNotIdColumns())
 			{
 				var linkedTables = linkedColumns.Where(c => c.Value.Name == columnInfo.Data).ToList();
 				var searchValue = !string.IsNullOrEmpty(SearchValue) ? GetLikeSearchValue() : (!string.IsNullOrEmpty(columnInfo.SearchValue) ? columnInfo.GetLikeSearchValue() : string.Empty);
@@ -288,12 +288,18 @@ namespace K9.WebApplication.Helpers
 		private List<IDataTableColumnInfo> GetDataBoundColumnInfos()
 		{
 			return ColumnInfos.Where(c => GetModelProperties()
-				.Where(p => p.CanWrite).Select(p => p.Name).Contains(c.Data)).ToList();
+				.Where(p => p.IsDataBound()).Select(p => p.Name).Contains(c.Data)).ToList();
 		}
 
 		private List<IDataTableColumnInfo> GetDataBoundColumnInfosNotIgnored()
 		{
-			return GetDataBoundColumnInfos().Where(c => (!_columnsConfig.ColumnsToIgnore.Contains(c.Name))).ToList();
+			return GetDataBoundColumnInfos().Where(c => !_columnsConfig.ColumnsToIgnore.Contains(c.Name)).ToList();
+		}
+
+		private List<IDataTableColumnInfo> GetDataBoundColumnInfosNotIdColumns()
+		{
+			return GetDataBoundColumnInfosNotIgnored().Where(c => GetModelProperties()
+				.Where(p => !p.IsPrimaryKey() && !p.IsForeignKey()).Select(p => p.Name).Contains(c.Data)).ToList();
 		}
 
 		/// <summary>

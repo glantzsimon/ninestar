@@ -1,0 +1,29 @@
+﻿@model K9.WebApplication.ViewModels.MultiSelectViewModel
+@{
+	Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+@using (Html.BeginForm())
+{
+	using (Html.BeginBootstrapForm())
+	{
+		@Html.HiddenFor(model => Model.ParentId)
+		@Html.HiddenFor(model => Model.ParentTypeName)
+		@Html.HiddenFor(model => Model.ParentDescription)
+
+		<h3>@Model.GetSubTitle()</h3>
+	
+			for (int i = 0; i < Model.Items.Count; i++)
+			{
+				@Html.HiddenFor(model => Model.Items[i].Id)
+				@Html.HiddenFor(model => Model.Items[i].ChildId)
+				@Html.HiddenFor(model => Model.Items[i].Description)
+				<div class="checkbox">
+					<label>@Html.CheckBoxFor(model => Model.Items[i].IsSelected)@Model.Items[i].Description</label>
+				</div>
+			}
+		
+		<hr />  
+		@Html.BootstrapButton(Dictionary.Update)
+		@Html.BootstrapBackToListButton()
+	}
+}

@@ -373,7 +373,7 @@ namespace K9.WebApplication.Controllers
 			SetTitle();
 			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Edit, typeof(T).GetPluralName());
 
-			return View(MultiSelectViewModel.Create<T, T2, T3>(parent, _repository.GetAllBy<T2, T3>(parent.Id)));
+			return View("EditMultiple", MultiSelectViewModel.Create<T, T2, T3>(parent, _repository.GetAllBy<T2, T3>(parent.Id)));
 		}
 
 		[Authorize]
@@ -409,7 +409,7 @@ namespace K9.WebApplication.Controllers
 				ModelState.AddModelError("", ex.Message);
 			}
 
-			return View(model);
+			return View("EditMultiple", model);
 		}
 
 		#endregion

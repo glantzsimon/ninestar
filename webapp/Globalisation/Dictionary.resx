@@ -514,4 +514,13 @@
   <data name="LogInVerb" xml:space="preserve">
     <value>Sign In</value>
   </data>
+  <data name="Administrator" xml:space="preserve">
+    <value>Administrator</value>
+  </data>
+  <data name="DescriptionLabel" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="PowerUser" xml:space="preserve">
+    <value>Utilisateur Puissant</value>
+  </data>
 </root>

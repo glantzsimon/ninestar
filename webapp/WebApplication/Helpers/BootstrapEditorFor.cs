@@ -54,7 +54,7 @@ namespace K9.WebApplication.Helpers
 			// Show label for all types but boolean
 			if (modelType != typeof(bool))
 			{
-				sb.AppendLine(html.LabelFor(expression).ToString());
+				sb.AppendLine(html.LabelFor(expression, options.Label).ToString());
 			}
 
 			if (options.IsReadOnly)

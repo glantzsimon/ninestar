@@ -38,6 +38,7 @@ namespace K9.Globalisation
 			public const string RoleLabel = "RoleLabel";
 			public const string PermissionLabel = "PermissionLabel";
 			public const string SystemStandard = "SystemStandard";
+			public const string DescriptionLabel = "DescriptionLabel";
 		}
 
 		public class Grammar

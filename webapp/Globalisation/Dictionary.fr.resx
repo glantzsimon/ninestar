@@ -517,4 +517,13 @@
   <data name="LogInVerb" xml:space="preserve">
     <value>Se Connecter</value>
   </data>
+  <data name="Administrator" xml:space="preserve">
+    <value>Administrateur</value>
+  </data>
+  <data name="DescriptionLabel" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="PowerUser" xml:space="preserve">
+    <value>Utilisateur Puissant</value>
+  </data>
 </root>

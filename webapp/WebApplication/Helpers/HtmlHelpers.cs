@@ -14,8 +14,7 @@ namespace K9.WebApplication.Helpers
 		public static string GetDisplayNameFor<TModel, TProperty>(this HtmlHelper<TModel> html, Expression<Func<TModel, TProperty>> expression)
 		{
 			var metaData = ModelMetadata.FromLambdaExpression(expression, html.ViewData);
-			string displayName = metaData.DisplayName ?? (metaData.PropertyName.SplitOnCapitalLetter() ?? ExpressionHelper.GetExpressionText(expression));
-			return displayName;
+			return metaData.DisplayName ?? (metaData.PropertyName.SplitOnCapitalLetter() ?? ExpressionHelper.GetExpressionText(expression));
 		}
 
 		public static string GetPropertyNamesFor<TModel, TProperty>(this HtmlHelper<TModel> html, Expression<Func<TModel, TProperty>> expression)

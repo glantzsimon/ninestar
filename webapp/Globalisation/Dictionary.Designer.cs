@@ -160,6 +160,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Administrator.
+        /// </summary>
+        public static string Administrator {
+            get {
+                return ResourceManager.GetString("Administrator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy.
         /// </summary>
         public static string AgreeToTerms {
@@ -408,6 +417,15 @@ namespace K9.Globalisation {
         public static string DeleteConfirm {
             get {
                 return ResourceManager.GetString("DeleteConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string DescriptionLabel {
+            get {
+                return ResourceManager.GetString("DescriptionLabel", resourceCulture);
             }
         }
         
@@ -1007,6 +1025,15 @@ namespace K9.Globalisation {
         public static string PleaseSelect {
             get {
                 return ResourceManager.GetString("PleaseSelect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Utilisateur Puissant.
+        /// </summary>
+        public static string PowerUser {
+            get {
+                return ResourceManager.GetString("PowerUser", resourceCulture);
             }
         }
         

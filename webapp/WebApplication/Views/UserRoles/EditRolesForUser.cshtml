@@ -6,13 +6,12 @@
 {
 	using (Html.BeginBootstrapForm())
 	{
-		foreach (var item in Model.UserRoles)
+		for (int i = 0; i < Model.UserRoles.Count; i++)
 		{
-			@Html.BootstrapDisplayFor(model => item.Role.Description)
-			@Html.BootstrapEditorFor(model => item.IsSelected)
+			<label>@Html.CheckBoxFor(model => Model.UserRoles[i].IsSelected)@Model.UserRoles[i].Role.Name</label>
 		}
 		
-	<hr />
+	<hr />  
 	@Html.BootstrapButton(Dictionary.Update)
 	@Html.BootstrapBackToListButton()
 	}

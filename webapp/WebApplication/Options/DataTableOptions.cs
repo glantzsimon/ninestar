@@ -68,10 +68,10 @@ namespace K9.WebApplication.Options
 			if (_columns == null)
 			{
 				var allColumns = typeof(T).GetProperties()
-					.Where(p => !p.IsVirtual() && !ColumnsConfig.ColumnsToIgnore.Contains(p.Name)).ToList();
-
+					.Where(p => !ColumnsConfig.ColumnsToIgnore.Contains(p.Name)).ToList();
+				
 				var orderedColumns = VisibleColumns.Select(visibleColumn => allColumns.FirstOrDefault(c => c.Name == visibleColumn)).ToList();
-				orderedColumns.AddRange(allColumns.Where(c => !orderedColumns.Contains(c)));
+				orderedColumns.AddRange(allColumns.Where(c => !c.IsVirtual() && !orderedColumns.Contains(c)));
 
 				_columns = new HashSet<PropertyInfo>();
 				_columns.AddRange(orderedColumns);

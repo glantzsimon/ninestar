@@ -28,9 +28,18 @@ namespace K9.DataAccess.Models
 
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SystemStandard)]
 		public bool IsSystemStandard { get; set; }
-
+		
 		[NotMapped]
 		public bool IsSelected { get; set; }
+
+		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DescriptionLabel)]
+		public string Description
+		{
+			get
+			{
+				return GetLocalisedDescription();
+			}
+		}
 
 		public string CreatePermissionName
 		{
@@ -82,7 +91,7 @@ namespace K9.DataAccess.Models
 
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LastUpdatedOnLabel)]
 		public DateTime? LastUpdatedOn { get; set; }
-
+		
 		#endregion
 
 

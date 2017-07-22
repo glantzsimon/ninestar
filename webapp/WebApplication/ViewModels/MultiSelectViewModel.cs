@@ -34,8 +34,8 @@ namespace K9.WebApplication.ViewModels
 					var child = item.GetProperty(typeof (T3).Name) as T3;
 					return new MultiSelectItem
 					{
-						Id = parent.Id,
-						ChildId = (int) item.GetProperty(typeof (T2).GetForeignKeyName()),
+						Id = item.Id,
+						ChildId = (int) item.GetProperty(typeof (T3).GetForeignKeyName()),
 						Description = child.Description,
 						IsSelected = item.Id > 0
 					};

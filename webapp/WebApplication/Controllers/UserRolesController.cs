@@ -70,7 +70,6 @@ namespace K9.WebApplication.Controllers
 					{
 						Repository.Create(new UserRole
 						{
-							Id = item.Id,
 							UserId = model.ParentId,
 							RoleId = item.ChildId
 						});

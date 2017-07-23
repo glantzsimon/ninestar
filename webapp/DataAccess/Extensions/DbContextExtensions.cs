@@ -136,10 +136,10 @@ namespace K9.DataAccess.Extensions
 			return context.Set<T>().Where(expression);
 		}
 
-		public static T Find<T>(this DbContext context, params object[] keyValues)
+		public static T Find<T>(this DbContext context, int id)
 			where T : class, IObjectBase
 		{
-			return context.Set<T>().Find(keyValues);
+			return Dapper.SqlMapper.Query<T>(context.Database.Connection, string.Format("SELECT TOP 1 * FROM [{0}] WHERE Id = {1}", typeof(T).Name, id)).FirstOrDefault();
 		}
 
 	}

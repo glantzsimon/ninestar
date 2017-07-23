@@ -12,6 +12,7 @@ namespace K9.DataAccess.Database
 		{
 			Configuration.LazyLoadingEnabled = false;
 			Configuration.ProxyCreationEnabled = false;
+			Configuration.AutoDetectChangesEnabled = false;
 		}
 
 

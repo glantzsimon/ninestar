@@ -44,7 +44,7 @@ namespace K9.SharedLibrary.Models
 
 		IQueryable<T> Find(Expression<Func<T, bool>> expression);
 
-		T Find(params object[] keyValues);
+		T Find(int id);
 
 		List<T> GetBy<T2>(int id) where T2 : class, IObjectBase;
 

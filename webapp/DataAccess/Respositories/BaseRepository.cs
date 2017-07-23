@@ -113,9 +113,9 @@ namespace K9.DataAccess.Respositories
 			return _db.Find(expression);
 		}
 
-		public T Find(params object[] keyValues)
+		public T Find(int id)
 		{
-			return _db.Find<T>(keyValues);
+			return _db.Find<T>(id);
 		}
 
 		/// <summary>

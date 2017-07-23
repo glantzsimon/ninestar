@@ -15,17 +15,19 @@ namespace K9.WebApplication.Controllers
 	[RequirePermissions(Role = RoleNames.Administrators)]
 	public class UsersController : BaseController<User>
 	{
+		private readonly IOptions<DatabaseConfiguration> _dataConfig;
 
-		public UsersController(IRepository<User> repository, ILogger logger, IDataTableAjaxHelper<User> ajaxHelper, IDataSetsHelper dataSetsHelper, IRoles roles)
+		public UsersController(IRepository<User> repository, ILogger logger, IDataTableAjaxHelper<User> ajaxHelper, IDataSetsHelper dataSetsHelper, IRoles roles, IOptions<DatabaseConfiguration> dataConfig)
 			: base(repository, logger, ajaxHelper, dataSetsHelper, roles)
 		{
+			_dataConfig = dataConfig;
 			RecordCreated += UsersController_RecordCreated;
 		}
 
 		void UsersController_RecordCreated(object sender, CrudEventArgs e)
 		{
 			var user = e.Item as User;
-			WebSecurity.CreateAccount(user.Username, AppConfig.DefaultUserPassword);
+			WebSecurity.CreateAccount(user.Username, _dataConfig.Value.DefaultUserPassword);
 		}
 
 	}

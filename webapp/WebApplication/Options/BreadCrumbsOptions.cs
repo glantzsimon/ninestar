@@ -1,5 +1,4 @@
-﻿
-using K9.WebApplication.Enums;
+﻿using K9.WebApplication.Enums;
 
 namespace K9.WebApplication.Options
 {

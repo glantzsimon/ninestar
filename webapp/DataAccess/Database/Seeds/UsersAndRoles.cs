@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using K9.DataAccess.Config;
 using K9.DataAccess.Helpers;
 using K9.DataAccess.Models;
 using K9.DataAccess.Respositories;
 using K9.SharedLibrary.Authentication;
+using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using WebMatrix.WebData;
 
@@ -23,18 +25,21 @@ namespace K9.DataAccess.Database.Seeds
 				new BaseRepository<RolePermission>(context),
 				new Users(context, new BaseRepository<User>(context)));
 
-			SeedSystemUser();
+			var json = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config/appsettings.json"));
+			var dbConfig = ConfigHelper.GetConfiguration<DatabaseConfiguration>(json);
+
+			SeedSystemUser(dbConfig);
 			SeedRoles(roles);
 			SeedPermissions(roles);
 		}
 
-		private static void SeedSystemUser()
+		private static void SeedSystemUser(IOptions<DatabaseConfiguration> dbConfig)
 		{
 			if (WebSecurity.Initialized)
 			{
 				if (!WebSecurity.UserExists(SystemUser.System))
 				{
-					WebSecurity.CreateUserAndAccount(SystemUser.System, AppConfig.SystemUserPassword, new
+					WebSecurity.CreateUserAndAccount(SystemUser.System, dbConfig.Value.SystemUserPassword, new
 					{
 						FirstName = "System",
 						LastName = "User",

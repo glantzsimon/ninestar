@@ -54,11 +54,11 @@ namespace K9.WebApplication
 
 		public static void RegisterConfiguration(ContainerBuilder builder)
 		{
-			var configFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config/appsettings.json");
-			var json = File.ReadAllText(configFilePath);
+			var json = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config/appsettings.json"));
 
 			builder.Register(c => ConfigHelper.GetConfiguration<SmtpConfiguration>(json)).SingleInstance();
-			//builder.Register(c => ConfigHelper.GetConfiguration<OpenAuthConfiguration>(json)).As<ISmtpConfiguration>().SingleInstance();
+			builder.Register(c => ConfigHelper.GetConfiguration<WebsiteConfiguration>(json)).SingleInstance();
+			builder.Register(c => ConfigHelper.GetConfiguration<DatabaseConfiguration>(json)).SingleInstance();
 		}
 	}
 }

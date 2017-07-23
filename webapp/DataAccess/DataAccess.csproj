@@ -71,7 +71,7 @@
     <Compile Include="Attributes\GrammarAttribute.cs" />
     <Compile Include="Attributes\AutoGenerateNameAttribute.cs" />
     <Compile Include="Attributes\NameAttribute.cs" />
-    <Compile Include="Config\AppConfig.cs" />
+    <Compile Include="Config\DatabaseConfiguration.cs" />
     <Compile Include="Database\Seeds\Schools.cs" />
     <Compile Include="Database\Seeds\Countries.cs" />
     <Compile Include="Database\Seeds\UsersAndRoles.cs" />

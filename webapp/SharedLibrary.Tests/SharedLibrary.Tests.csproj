@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Unit\ConfigHelperTests.cs" />
     <Compile Include="Unit\ExtensionTests.cs" />
   </ItemGroup>
   <ItemGroup>

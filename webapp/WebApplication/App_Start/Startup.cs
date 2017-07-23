@@ -1,4 +1,6 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
+using System.IO;
 using System.Web.Mvc;
 using Autofac;
 using Autofac.Integration.Mvc;
@@ -6,6 +8,7 @@ using K9.DataAccess.Config;
 using K9.DataAccess.Database;
 using K9.DataAccess.Helpers;
 using K9.DataAccess.Respositories;
+using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.DataSets;
 using K9.WebApplication.Helpers;
@@ -35,7 +38,10 @@ namespace K9.WebApplication
 			builder.RegisterType<DataSets.DataSets>().As<IDataSets>().SingleInstance();
 			builder.RegisterType<Users>().As<IUsers>().InstancePerHttpRequest();
 			builder.RegisterType<Roles>().As<IRoles>().InstancePerHttpRequest();
-			
+			builder.RegisterType<Mailer>().As<IMailer>().InstancePerHttpRequest();
+
+			RegisterConfiguration(builder);
+
 			var container = builder.Build();
 			DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
 		}
@@ -43,6 +49,14 @@ namespace K9.WebApplication
 		public static void RegisterStaticTypes()
 		{
 			HtmlHelpers.SetIgnoreColumns(new ColumnsConfig());
+		}
+
+		public static void RegisterConfiguration(ContainerBuilder builder)
+		{
+			var configFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config/appsettings.json");
+			var json = File.ReadAllText(configFilePath);
+
+			builder.Register(c => ConfigHelper.GetConfiguration<SmtpConfiguration>(json)).As<ISmtpConfiguration>().SingleInstance();
 		}
 	}
 }

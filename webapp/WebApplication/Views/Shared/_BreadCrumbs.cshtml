@@ -1,0 +1,15 @@
+﻿@model AlertOptions
+
+<div class="text-center">
+	@if (Model.AlertType != EAlertType.Unspecified)
+	{
+		<img alt="@Model.AlertType.ToString()" src="~/Images/ui/@Model.GetAlertImage()" />
+	}
+
+	<h3><strong>@MvcHtmlString.Create(@Model.Message)</strong></h3>
+
+	@if (!string.IsNullOrEmpty(Model.OtherMessage))
+	{
+		<p>@MvcHtmlString.Create(@Model.OtherMessage)</p>
+	}
+</div>

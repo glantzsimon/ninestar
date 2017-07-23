@@ -234,6 +234,7 @@
     <Compile Include="Options\BackgroundImageSwitcherOptions.cs" />
     <Compile Include="Options\AlertOptions.cs" />
     <Compile Include="Models\DataTableButton.cs" />
+    <Compile Include="Options\BreadCrumbsOptions.cs" />
     <Compile Include="Options\DataTableOptions.cs" />
     <Compile Include="Options\EditorOptions.cs" />
     <Compile Include="Options\IDataTableOptions.cs" />
@@ -425,6 +426,8 @@
     <Content Include="Views\Shared\DisplayTemplates\Permission.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Role.cshtml" />
     <Content Include="Views\Shared\_PopupAlert.cshtml" />
+    <Content Include="Views\Shared\_BreadCrumbs.cshtml" />
+    <None Include="Config\appsettings.json" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutColumns.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />

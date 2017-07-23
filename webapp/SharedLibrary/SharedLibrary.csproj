@@ -63,6 +63,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
@@ -107,12 +108,18 @@
     <Compile Include="Extensions\MvcExtensions.cs" />
     <Compile Include="Extensions\ReflectionExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Helpers\ConfigHelper.cs" />
+    <Compile Include="Helpers\Copy of Mailer.cs" />
+    <Compile Include="Helpers\IMailer.cs" />
     <Compile Include="Helpers\ImageProcessor.cs" />
     <Compile Include="Helpers\Mailer.cs" />
     <Compile Include="Helpers\TemplateProcessor.cs" />
     <Compile Include="Authentication\RoleNames.cs" />
     <Compile Include="Helpers\TestHtmlHelper.cs" />
     <Compile Include="Models\AssetInfo.cs" />
+    <Compile Include="Models\IConfigurable.cs" />
+    <Compile Include="Models\SmtpConfiguration.cs" />
+    <Compile Include="Models\ISmtpConfiguration.cs" />
     <Compile Include="Models\IUserData.cs" />
     <Compile Include="Models\IDescribable.cs" />
     <Compile Include="Models\ISelectable.cs" />

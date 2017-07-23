@@ -19,7 +19,7 @@ namespace K9.SharedLibrary.Extensions
 		/// <param name="objectToUpdate"></param>
 		/// <param name="newObject"></param>
 		/// <param name="updatePrimaryKey"></param>        
-		public static void MapTo(this object newObject, object objectToUpdate, bool updatePrimaryKey)
+		public static void MapTo(this object newObject, object objectToUpdate)
 		{
 			foreach (var propInfo in objectToUpdate.GetType().GetProperties())
 			{
@@ -219,5 +219,6 @@ namespace K9.SharedLibrary.Extensions
 		{
 			return string.Format("{0}Id", type.Name);
 		}
+
 	}
 }

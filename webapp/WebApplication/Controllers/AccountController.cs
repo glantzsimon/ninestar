@@ -21,14 +21,15 @@ namespace K9.WebApplication.Controllers
 	{
 		private readonly IRepository<User> _repository;
 		private readonly ILogger _logger;
-
+		private readonly IMailer _mailer;
 
 		#region Constructors
 
-		public AccountController(IRepository<User> repository, ILogger logger)
+		public AccountController(IRepository<User> repository, ILogger logger, IMailer mailer)
 		{
 			_repository = repository;
 			_logger = logger;
+			_mailer = mailer;
 		}
 
 		#endregion
@@ -354,7 +355,7 @@ namespace K9.WebApplication.Controllers
 				From = Dictionary.ClientServices
 			});
 
-			Mailer.SendEmail(Dictionary.PasswordResetTitle, emailContent, model.EmailAddress, name);
+			_mailer.SendEmail(Dictionary.PasswordResetTitle, emailContent, model.EmailAddress, name);
 		}
 
 		#endregion
@@ -422,7 +423,7 @@ namespace K9.WebApplication.Controllers
 				From = Dictionary.ClientServices
 			});
 
-			Mailer.SendEmail(Dictionary.AccountActivationTitle, emailContent, model.EmailAddress, model.GetFullName());
+			_mailer.SendEmail(Dictionary.AccountActivationTitle, emailContent, model.EmailAddress, model.GetFullName());
 		}
 
 		#endregion

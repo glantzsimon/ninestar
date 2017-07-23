@@ -5,10 +5,7 @@
 	Layout = "~/Views/Shared/_LayoutFormSmall.cshtml";
 }
 
-@if (ViewBag.PopupAlert)
-{
-	@Html.PopupAlert(ViewBag.AlertOptions as AlertOptions)
-}
+@Html.PopupAlert()
 
 @using (Html.BeginForm("UpdateAccount", "Account"))
 {

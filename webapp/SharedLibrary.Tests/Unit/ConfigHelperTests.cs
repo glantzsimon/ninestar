@@ -1,4 +1,7 @@
-﻿using K9.SharedLibrary.Helpers;
+﻿using System;
+using System.IO;
+using K9.DataAccess.Config;
+using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -10,21 +13,18 @@ namespace K9.SharedLibrary.Tests.Unit
 		[TestMethod]
 		public void ConfigHelper_ShouldCreateConfiguration_FromJson()
 		{
-			var json = "{\"SmtpConfiguration\": {" +
-			           "\"SmtpServer\": \"mail.vibranthealthnow.co.uk\"," +
-			           "\"SmtpUserId\": \"info@vibranthealthnow.co.uk\"," +
-			           "\"SmtpPassword\": \"12345\"," +
-			           "\"SmtpFromEmailAddress\": \"info@vibranthealthnow.co.uk\"," +
-			           "\"SmtpFromDisplayName\": \"Vibrant Health\"" +
-			           "}}";
+			var json = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "../../appsettings.json"));
 
-			var config = ConfigHelper.GetConfiguration<SmtpConfiguration>(json);
+			var smtpConfig = ConfigHelper.GetConfiguration<SmtpConfiguration>(json);
+			var dbConfig = ConfigHelper.GetConfiguration<DatabaseConfiguration>(json);
+			
+			Assert.AreEqual("mail.vibranthealthnow.co.uk", smtpConfig.Value.SmtpServer);
+			Assert.AreEqual("info@vibranthealthnow.co.uk", smtpConfig.Value.SmtpUserId);
+			Assert.AreEqual("12345", smtpConfig.Value.SmtpPassword);
+			Assert.AreEqual("info@vibranthealthnow.co.uk", smtpConfig.Value.SmtpFromEmailAddress);
+			Assert.AreEqual("Vibrant Health", smtpConfig.Value.SmtpFromDisplayName);
 
-			Assert.AreEqual("mail.vibranthealthnow.co.uk", config.Value.SmtpServer);
-			Assert.AreEqual("info@vibranthealthnow.co.uk", config.Value.SmtpUserId);
-			Assert.AreEqual("12345", config.Value.SmtpPassword);
-			Assert.AreEqual("info@vibranthealthnow.co.uk", config.Value.SmtpFromEmailAddress);
-			Assert.AreEqual("Vibrant Health", config.Value.SmtpFromDisplayName);
+			Assert.IsTrue(dbConfig.Value.AutomaticMigrationDataLossAllowed);
 		}
 
 	}

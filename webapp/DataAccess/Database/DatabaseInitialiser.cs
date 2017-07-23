@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.IO;
 using K9.DataAccess.Config;

@@ -12,7 +12,7 @@ namespace K9.SharedLibrary.Helpers
 			where T : class 
 		{
 			var jsonObject = JObject.Parse(json);
-			var configSection = jsonObject.GetValue("SmtpConfiguration");
+			var configSection = jsonObject.GetValue(typeof(T).Name);
 			var configuration = Activator.CreateInstance<T>();
 			
 			foreach (var propertyInfo in configuration.GetProperties())

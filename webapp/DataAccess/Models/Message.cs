@@ -45,9 +45,10 @@ namespace K9.DataAccess.Models
 		public string Body { get; set; }
 
 		public virtual User SentByUser { get; set; }
+
 		public virtual User SentToUser { get; set; }
 
-		[LinkedColumn(LinkedTableName = "User", LinkedColumnName = "Name")]
+		[LinkedColumn(LinkedTableName = "User", LinkedColumnName = "Name", ForeignKey = "SentToUserId")]
 		public string SentToUserName { get; set; }
 
 		//[LinkedColumn(LinkedTableName = "User", LinkedColumnName = "Name")]

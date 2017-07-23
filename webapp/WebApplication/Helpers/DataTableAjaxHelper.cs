@@ -145,22 +145,21 @@ namespace K9.WebApplication.Helpers
 		{
 			var sb = new StringBuilder();
 			var parentType = typeof(T);
-			var linkedColumns = GetLinkedColumns();
+			var linkedTableInfos = GetLinkedTableInfos();
 
 			foreach (var columnInfo in GetDataBoundColumnInfosNotIdColumns())
 			{
-				var linkedTables = linkedColumns.Where(c => c.Value.Name == columnInfo.Data).ToList();
+				var linkedTable = linkedTableInfos.FirstOrDefault(c => c.ColumnName == columnInfo.Data);
 				var searchValue = !string.IsNullOrEmpty(SearchValue) ? GetLikeSearchValue() : (!string.IsNullOrEmpty(columnInfo.SearchValue) ? columnInfo.GetLikeSearchValue() : string.Empty);
 
 				if (!string.IsNullOrEmpty(searchValue))
 				{
-					if (linkedTables.Any())
+					if (linkedTable != null)
 					{
 						if (!ignoreChildTables)
 						{
 							sb.Append(sb.Length == 0 ? "WHERE (" : " OR ");
-							var linkedColumn = linkedTables.First().Key;
-							sb.AppendFormat("[{0}].[{1}] LIKE '{2}'", linkedColumn.LinkedTableName, linkedColumn.LinkedColumnName, searchValue);
+							sb.AppendFormat("[{0}].[{1}] LIKE '{2}'", linkedTable.LinkedTableName, linkedTable.LinkedTableColumnName, searchValue);
 						}
 					}
 					else
@@ -197,15 +196,14 @@ namespace K9.WebApplication.Helpers
 			if (ColumnInfos.Any())
 			{
 				var columnInfo = GetDataBoundColumnInfosNotIgnored()[_orderByColumnIndex];
-				var linkedColumns = GetLinkedColumns();
+				var linkedTableInfos = GetLinkedTableInfos();
 				var parentType = typeof(T);
 				var columnName = columnInfo.Data;
-				var linkedTables = linkedColumns.Where(c => c.Value.Name == columnName).ToList();
+				var linkedTable = linkedTableInfos.FirstOrDefault(x => x.ColumnName == columnName);
 
-				if (linkedTables.Any())
+				if (linkedTable != null)
 				{
-					var linkedColumnAttribute = linkedTables.First().Key;
-					return string.Format("[{0}].[{1}]", linkedColumnAttribute.LinkedTableName, linkedColumnAttribute.LinkedColumnName);
+					return string.Format("[{0}].[{1}]", linkedTable.LinkedTableAlias, linkedTable.LinkedTableColumnName);
 				}
 
 				return string.Format("[{0}].[{1}]", parentType.Name, columnName);
@@ -232,11 +230,10 @@ namespace K9.WebApplication.Helpers
 				}
 			}
 
-			foreach (var item in GetForeignKeyColumns())
+			foreach (var item in GetLinkedTableInfos())
 			{
-				var linkedTableName = parentType.GetLinkedPropertyType(item.Key.Name).Name;
 				sb.Append(", ");
-				sb.AppendFormat("[{0}].[Name] AS [{0}Name]", linkedTableName);
+				sb.AppendFormat("[{0}].[Name] AS [{0}Name]", item.LinkedTableAlias);
 			}
 
 			return sb.ToString();
@@ -244,7 +241,7 @@ namespace K9.WebApplication.Helpers
 
 		private string GetFrom()
 		{
-			var foreignKeyColumns = GetForeignKeyColumns();
+			var foreignKeyColumns = GetLinkedTableInfos();
 			return foreignKeyColumns.Any()
 				? GetFromWithJoins()
 				: string.Format("[{0}]", typeof(T).Name);
@@ -257,33 +254,46 @@ namespace K9.WebApplication.Helpers
 			var parentName = parentType.Name;
 			sb.AppendFormat("[{0}]", parentName);
 
-			foreach (var item in GetForeignKeyColumns())
+			foreach (var item in GetLinkedTableInfos())
 			{
-				var linkedTableName = parentType.GetLinkedPropertyType(item.Key.Name).Name;
-				sb.AppendFormat(" JOIN [{0}] ON [{0}].[Id] = [{1}].[{2}]", linkedTableName, parentName, item.Value.Name);
+				sb.AppendFormat(" JOIN [{0}] AS [{1}] ON [{1}].[Id] = [{2}].[{3}]", item.LinkedTableName, item.LinkedTableAlias, parentName, item.ForeignKey);
 			}
 
 			return sb.ToString();
 		}
 
-		private Dictionary<ForeignKeyAttribute, PropertyInfo> _foreignKeyColumnDictionary;
-		private Dictionary<ForeignKeyAttribute, PropertyInfo> GetForeignKeyColumns()
+		private List<LinkedTableInfo> _linkedTableInfos;
+		private List<LinkedTableInfo> GetLinkedTableInfos()
 		{
-			if (_foreignKeyColumnDictionary == null)
+			if (_linkedTableInfos == null)
 			{
-				_foreignKeyColumnDictionary = typeof(T).GetPropertiesAndAttributesWithAttribute<ForeignKeyAttribute>();
-			}
-			return _foreignKeyColumnDictionary;
-		}
+				var linkedColumnAttributes = typeof(T).GetPropertiesAndAttributesWithAttribute<LinkedColumnAttribute>();
+				_linkedTableInfos = new List<LinkedTableInfo>();
 
-		private Dictionary<LinkedColumnAttribute, PropertyInfo> _linkedColumnDictionary;
-		private Dictionary<LinkedColumnAttribute, PropertyInfo> GetLinkedColumns()
-		{
-			if (_linkedColumnDictionary == null)
-			{
-				_linkedColumnDictionary = typeof(T).GetPropertiesAndAttributesWithAttribute<LinkedColumnAttribute>();
+				foreach (var value in linkedColumnAttributes)
+				{
+					var linkedColumnAttribute = value.Key;
+					var tableName = linkedColumnAttribute.LinkedTableName;
+					var alias = tableName;
+					var i = 1;
+
+					while (_linkedTableInfos.Exists(t => t.LinkedTableAlias == alias))
+					{
+						alias = string.Format("{0}{1}", tableName, i);
+						i++;
+					}
+
+					_linkedTableInfos.Add(new LinkedTableInfo
+					{
+						LinkedTableName = tableName,
+						LinkedTableAlias = alias,
+						LinkedTableColumnName = linkedColumnAttribute.LinkedColumnName,
+						ColumnName = value.Value.Name,
+						ForeignKey = string.IsNullOrEmpty(linkedColumnAttribute.ForeignKey) ? string.Format("{0}Id", linkedColumnAttribute.LinkedTableName) : linkedColumnAttribute.ForeignKey
+					});
+				}
 			}
-			return _linkedColumnDictionary;
+			return _linkedTableInfos;
 		}
 
 		private List<IDataTableColumnInfo> GetDataBoundColumnInfos()

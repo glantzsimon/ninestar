@@ -18,25 +18,43 @@ namespace K9.WebApplication.Filters
 		{
 			var controller = filterContext.Controller as IBaseController;
 			var roles = controller.Roles;
-			var permissions = roles.GetPermissionsForCurrentUser().Select(r => r.Name).ToList();
-			var userRoles = roles.GetRolesForCurrentUser().Select(r => r.Name).ToList();
-			var unauthorized = "Unauthorized";	
+			var unauthorized = "Unauthorized";
+
+			// Check controller level roles first
+			var controllerPermissionAttribute =
+				controller.GetType().GetCustomAttributes(typeof(RequirePermissionsAttribute), true).FirstOrDefault() as RequirePermissionsAttribute;
+
+			if (controllerPermissionAttribute != null)
+			{
+				if (!string.IsNullOrEmpty(controllerPermissionAttribute.Role))
+				{
+					if (!CheckRole(roles, controllerPermissionAttribute.Role))
+					{
+						filterContext.Result = new ViewResult
+						{
+							ViewName = unauthorized
+						};
+						return;
+					}
+				}
+			}
 
 			if (!string.IsNullOrEmpty(Permission))
 			{
 				var fullyQualifiedPermissionName = string.Format("{0}{1}", Permission, controller.GetObjectName());
-				if (!WebSecurity.IsAuthenticated || !permissions.Contains(fullyQualifiedPermissionName) && !roles.UserIsInRole(WebSecurity.CurrentUserName, RoleNames.Administrators))
+				if (!CheckPermission(roles, fullyQualifiedPermissionName))
 				{
 					filterContext.Result = new ViewResult
 					{
 						ViewName = unauthorized
 					};
+					return;
 				}
 			}
 
 			if (!string.IsNullOrEmpty(Role))
 			{
-				if (!WebSecurity.IsAuthenticated || !userRoles.Contains(Role) && !roles.UserIsInRole(WebSecurity.CurrentUserName, RoleNames.Administrators))
+				if (!CheckRole(roles, Role))
 				{
 					filterContext.Result = new ViewResult
 					{
@@ -45,6 +63,28 @@ namespace K9.WebApplication.Filters
 				}
 			}
 		}
+
+		private bool CheckPermission(IRoles roles, string permissionName)
+		{
+			var permissions = roles.GetPermissionsForCurrentUser().Select(r => r.Name).ToList();
+			if (!WebSecurity.IsAuthenticated || !permissions.Contains(permissionName) && !roles.CurrentUserIsInRole(RoleNames.Administrators))
+			{
+				return false;
+			}
+			return true;
+		}
+
+		private bool CheckRole(IRoles roles, string roleName)
+		{
+			var userRoles = roles.GetRolesForCurrentUser().Select(r => r.Name).ToList();
+			if (!WebSecurity.IsAuthenticated || !userRoles.Contains(roleName) && !roles.CurrentUserIsInRole(RoleNames.Administrators))
+			{
+				return false;
+			}
+
+			return true;
+		}
+
 
 	}
 }

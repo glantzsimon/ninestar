@@ -6,6 +6,7 @@ namespace K9.SharedLibrary.Attributes
 	{
 		public string LinkedTableName { get; set; }
 		public string LinkedColumnName { get; set; }
+		public string ForeignKey { get; set; }
 
 	}
 }

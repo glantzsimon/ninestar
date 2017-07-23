@@ -21,7 +21,7 @@ namespace K9.WebApplication.Tests.Unit
 
 			var propertyInfos = options.GetColumns();
 
-			Assert.AreEqual(4, propertyInfos.Count);
+			Assert.AreEqual(6, propertyInfos.Count);
 			Assert.AreEqual("TwoLetterCountryCode", propertyInfos.First().Name);
 		}
 
@@ -41,7 +41,7 @@ namespace K9.WebApplication.Tests.Unit
 
 			var propertyInfos = options.GetColumns();
 
-			Assert.AreEqual(4, propertyInfos.Count);
+			Assert.AreEqual(6, propertyInfos.Count);
 			Assert.AreEqual("ThreeLetterCountryCode", propertyInfos.First().Name);
 			Assert.AreEqual("Id", propertyInfos[1].Name);
 			Assert.AreEqual("TwoLetterCountryCode", propertyInfos[2].Name);

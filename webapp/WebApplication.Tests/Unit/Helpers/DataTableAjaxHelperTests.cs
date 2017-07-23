@@ -216,12 +216,14 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 			helper.LoadQueryString(querystring);
 
 			Assert.AreEqual("WITH RESULTS AS " +
-							"(SELECT [Enrollment].*, [Course].[Name] AS [CourseName], " +
+							"(SELECT [Enrollment].*, " +
 							"[Student].[Name] AS [StudentName], " +
+							"[Course].[Name] AS [CourseName], " +
 							"ROW_NUMBER() OVER " +
 							"(ORDER BY [Enrollment].[Id] ASC) AS RowNum " +
 							"FROM [Enrollment] " +
-							"JOIN [Course] ON [Course].[Id] = [Enrollment].[CourseId] JOIN [Student] ON [Student].[Id] = [Enrollment].[StudentId] ) " +
+							"JOIN [Student] AS [Student] ON [Student].[Id] = [Enrollment].[StudentId] " +
+							"JOIN [Course] AS [Course] ON [Course].[Id] = [Enrollment].[CourseId] ) " +
 							"SELECT * FROM RESULTS " +
 							"WHERE RowNum BETWEEN 0 AND 10", helper.GetQuery(true));
 		}

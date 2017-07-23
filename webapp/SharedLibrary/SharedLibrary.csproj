@@ -126,6 +126,7 @@
     <Compile Include="Models\IRoles.cs" />
     <Compile Include="Models\IUser.cs" />
     <Compile Include="Models\IUsers.cs" />
+    <Compile Include="Models\LinkedTableInfo.cs" />
     <Compile Include="Models\StatelessFilter.cs" />
     <Compile Include="Models\IStatelessFilter.cs" />
     <Compile Include="Models\IAssetInfo.cs" />

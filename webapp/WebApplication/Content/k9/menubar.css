@@ -1,6 +1,6 @@
 ﻿.menu-bar
 {
-	height: 70px;
+	height: 60px;
 	border-top: 1px solid #333333;
 	border-bottom: 1px solid #333333;
 	background: #555555;
@@ -9,5 +9,5 @@
 
 .menu-bar h3
 {
-	margin-top: 18px;
+	margin-top: 13px;
 }

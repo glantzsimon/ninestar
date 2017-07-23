@@ -1,5 +1,5 @@
 ﻿
-namespace K9.WebApplication.ViewModels
+namespace K9.WebApplication.Models
 {
 	public class MultiSelectItem
 	{

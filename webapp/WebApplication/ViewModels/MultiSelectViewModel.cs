@@ -4,6 +4,7 @@ using System.Linq;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Extensions;
+using K9.WebApplication.Models;
 
 namespace K9.WebApplication.ViewModels
 {

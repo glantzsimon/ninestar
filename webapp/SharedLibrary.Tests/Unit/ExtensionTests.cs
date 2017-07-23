@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.Remoting;
 using System.Web.Mvc;
+using K9.DataAccess.Models;
 using K9.SharedLibrary.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -38,6 +40,12 @@ namespace K9.SharedLibrary.Tests.Unit
 
 			Assert.AreEqual("Wolf, Back, Meow", delimitedString);
 			Assert.AreEqual("Wolf | Back | Meow", delimitedStringCustom);
+		}
+
+		[TestMethod]
+		public void ImplementsIUserData_ShouldReturnTrue()
+		{
+			Assert.IsTrue(typeof(Message).ImplementsIUserData());
 		}
 
 	}

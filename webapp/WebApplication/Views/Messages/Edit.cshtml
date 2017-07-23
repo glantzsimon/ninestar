@@ -8,6 +8,7 @@
 	using (Html.BeginBootstrapForm())
 	{
 		@Html.HiddenFor(model => model.Id)
+		@Html.HiddenFor(model => model.UserId)
 		@Html.Partial("_EditFields")
 		<hr/>
 		@Html.BootstrapButton(Dictionary.Update)

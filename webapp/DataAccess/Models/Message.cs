@@ -26,6 +26,7 @@ namespace K9.DataAccess.Models
 		public Message()
 		{
 			SentOn = DateTime.Now;
+			SentByUserId = WebSecurity.IsAuthenticated ? WebSecurity.CurrentUserId : 0;
 		}
 
 		[ForeignKey("User")]

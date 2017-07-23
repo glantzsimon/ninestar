@@ -205,7 +205,7 @@ namespace K9.WebApplication.Controllers
 			{
 				_logger.Error(ex.Message);
 				_logger.Info(_ajaxHelper.GetQuery(true));
-				return View("FriendlyError");
+				return Content(string.Empty, "application/json");
 			}
 		}
 
@@ -553,6 +553,12 @@ namespace K9.WebApplication.Controllers
 		{
 			HttpContext.Response.StatusCode = (int)HttpStatusCode.Forbidden;
 			return View("Unauthorized");
+		}
+
+		public new ActionResult HttpNotFound()
+		{
+			HttpContext.Response.StatusCode = (int)HttpStatusCode.NotFound;
+			return View("NotFound");
 		}
 
 		#endregion

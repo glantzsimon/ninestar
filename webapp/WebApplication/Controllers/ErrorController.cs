@@ -6,12 +6,12 @@ namespace K9.WebApplication.Controllers
 	{
 		public ActionResult Index()
 		{
-			return View();
+			return View("FriendlyError");
 		}
 
 		public ActionResult NotFound()
 		{
-			return View();
+			return View("NotFound");
 		}
 
 		public ActionResult Unauthorized()

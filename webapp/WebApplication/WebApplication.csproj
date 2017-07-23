@@ -293,6 +293,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\company\" />
+    <Folder Include="Views\Error\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -318,7 +319,7 @@
     <Content Include="Views\Shared\_Navbar.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\_LayoutForm.cshtml" />
+    <Content Include="Views\Shared\_LayoutFormWide.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_Footer.cshtml" />
@@ -405,8 +406,7 @@
     <Content Include="Views\Permissions\Details.cshtml" />
     <Content Include="Views\Permissions\Edit.cshtml" />
     <Content Include="Views\Permissions\Index.cshtml" />
-    <Content Include="Views\Error\Index.cshtml" />
-    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Shared\NotFound.cshtml" />
     <Content Include="Views\Shared\_LayoutFormMaster.cshtml" />
     <Content Include="Views\Shared\EditMultiple.cshtml" />
     <Content Include="Views\RolePermissions\Index.cshtml" />

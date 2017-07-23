@@ -15,6 +15,14 @@ namespace K9.DataAccess.Models
 {
 	public abstract class ObjectBase : IObjectBase, IValidatableObject
 	{
+		protected ObjectBase()
+		{
+			if (GetType().ImplementsIUserData() && WebSecurity.IsAuthenticated)
+			{
+				this.SetProperty("UserId", WebSecurity.CurrentUserId);
+			}
+		}
+
 
 		#region Properties
 

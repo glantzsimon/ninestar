@@ -227,7 +227,6 @@ namespace K9.WebApplication.Controllers
 			if (statelessFilter.IsSet())
 			{
 				itemToCreate.SetProperty(statelessFilter.Key, statelessFilter.Id);
-				return View(itemToCreate);
 			}
 
 			return View(itemToCreate);

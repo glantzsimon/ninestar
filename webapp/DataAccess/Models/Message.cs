@@ -51,8 +51,8 @@ namespace K9.DataAccess.Models
 		[LinkedColumn(LinkedTableName = "User", LinkedColumnName = "Name", ForeignKey = "SentToUserId")]
 		public string SentToUserName { get; set; }
 
-		//[LinkedColumn(LinkedTableName = "User", LinkedColumnName = "Name")]
-		//public string SentByUserName { get; set; }
+		[LinkedColumn(LinkedTableName = "User", LinkedColumnName = "Name", ForeignKey = "SentByUserId")]
+		public string SentByUserName { get; set; }
 
 	}
 }

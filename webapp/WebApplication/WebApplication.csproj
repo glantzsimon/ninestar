@@ -416,6 +416,12 @@
     <Content Include="Views\Messages\Details.cshtml" />
     <Content Include="Views\Messages\Edit.cshtml" />
     <Content Include="Views\Messages\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\User.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\User.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Permission.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Role.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Permission.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Role.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutColumns.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />

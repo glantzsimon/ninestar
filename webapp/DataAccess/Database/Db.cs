@@ -26,6 +26,7 @@ namespace K9.DataAccess.Database
 		public DbSet<UserRole> UserRoles { get; set; }
 		public DbSet<Permission> Permissions { get; set; }
 		public DbSet<RolePermission> RolePermissions { get; set; }
+		public DbSet<Message> Messages { get; set; }
 		
 		#endregion
 
@@ -34,7 +35,8 @@ namespace K9.DataAccess.Database
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
-			modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();	
+			modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+			modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
 		}
 
 		#endregion

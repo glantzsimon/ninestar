@@ -1,5 +1,7 @@
 ﻿@model User
-
+@{
+	Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
+}
 @Html.BootstrapTable(new DataTableOptions<User>
 {
 	 VisibleColumns = new List<string>

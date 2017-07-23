@@ -1,5 +1,7 @@
 ﻿@model Enrollment
-
+@{
+	Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
+}
 @Html.BootstrapTable(new DataTableOptions<Enrollment>
 {
 	VisibleColumns = new List<string>

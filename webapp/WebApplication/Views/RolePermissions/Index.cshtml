@@ -1,7 +1,9 @@
 ﻿@using K9.SharedLibrary.Models
 @using EButtonType = K9.SharedLibrary.Models.EButtonType
 @model Role
-
+@{
+	Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
+}
 @Html.BootstrapTable(new DataTableOptions<Role>
 {
 	VisibleColumns = new List<string>

@@ -146,16 +146,6 @@ namespace K9.WebApplication.Helpers
 			var parentType = typeof(T);
 			var linkedTableInfos = GetLinkedTableInfos();
 
-			if (limitByUserId.HasValue)
-			{
-				if (!typeof(T).ImplementsIUserData())
-				{
-					throw new LimitByUserIdException();
-				}
-				sb.Append("WHERE ");
-				sb.AppendFormat("[{0}].[UserId] = {1}", parentType.Name, limitByUserId.Value);
-			}
-
 			foreach (var columnInfo in GetDataBoundColumnInfosNotIdColumns())
 			{
 				var linkedTable = linkedTableInfos.FirstOrDefault(c => c.ColumnName == columnInfo.Data);
@@ -182,6 +172,16 @@ namespace K9.WebApplication.Helpers
 			if (sb.Length > 0)
 			{
 				sb.Append(")");
+			}
+
+			if (limitByUserId.HasValue)
+			{
+				if (!typeof(T).ImplementsIUserData())
+				{
+					throw new LimitByUserIdException();
+				}
+				sb.Append(sb.Length == 0 ? "WHERE " : " AND ");
+				sb.AppendFormat("[{0}].[UserId] = {1}", parentType.Name, limitByUserId.Value);
 			}
 
 			if (StatelessFilter != null && StatelessFilter.IsSet())

@@ -212,7 +212,7 @@ namespace K9.SharedLibrary.Extensions
 
 		public static bool ImplementsIUserData(this Type type)
 		{
-			return typeof (IUserData).IsAssignableFrom(type);
+			return type.IsAssignableFrom(typeof(IUserData));
 		}
 
 		public static string GetForeignKeyName(this Type type)

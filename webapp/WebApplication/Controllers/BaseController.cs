@@ -219,6 +219,12 @@ namespace K9.WebApplication.Controllers
 		public virtual ActionResult Create()
 		{
 			var itemToCreate = Activator.CreateInstance<T>();
+
+			if (typeof (T).ImplementsIUserData())
+			{
+				itemToCreate.SetProperty("UserId", WebSecurity.CurrentUserId);
+			}
+
 			var statelessFilter = this.GetStatelessFilter();
 
 			SetTitle();

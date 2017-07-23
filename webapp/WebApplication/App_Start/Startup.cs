@@ -59,8 +59,9 @@ namespace K9.WebApplication
 			builder.Register(c => ConfigHelper.GetConfiguration<SmtpConfiguration>(json)).SingleInstance();
 			builder.Register(c => ConfigHelper.GetConfiguration<DatabaseConfiguration>(json)).SingleInstance();
 
-			// Static types
-			WebsiteConfiguration.Instance = ConfigHelper.GetConfiguration<WebsiteConfiguration>(json).Value;
+			var websiteConfig = ConfigHelper.GetConfiguration<WebsiteConfiguration>(json);
+			builder.Register(c => websiteConfig).SingleInstance();
+			WebsiteConfiguration.Instance = websiteConfig.Value;
 		}
 	}
 }

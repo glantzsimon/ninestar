@@ -17,7 +17,10 @@ namespace K9.WebApplication
 			var json = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config/appsettings.json"));
 			var config = ConfigHelper.GetConfiguration<OAuthConfiguration>(json);
 
-			OAuthWebSecurity.RegisterFacebookClient(config.Value.FacebookAppId, config.Value.FacebookAppSecret);
+			if (!string.IsNullOrEmpty(config.Value.FacebookAppId))
+			{
+				OAuthWebSecurity.RegisterFacebookClient(config.Value.FacebookAppId, config.Value.FacebookAppSecret);
+			}
 			OAuthWebSecurity.RegisterGoogleClient();
 		}
 	}

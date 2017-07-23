@@ -2,15 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
-using K9.DataAccess.Attributes;
 using K9.SharedLibrary.Attributes;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Exceptions;
 using NLog;
 
 namespace K9.WebApplication.Helpers
@@ -60,7 +59,7 @@ namespace K9.WebApplication.Helpers
 			SetColumnInfosFromQueryString();
 		}
 
-		public string GetQuery(bool selectAllColumns = false)
+		public string GetQuery(bool selectAllColumns = false, int? limitByUserId = null)
 		{
 			return string.Format("WITH RESULTS AS " +
 								 "(SELECT {0}, ROW_NUMBER() OVER " +
@@ -73,7 +72,7 @@ namespace K9.WebApplication.Helpers
 								 OrderByColumnName,
 								 OrderByDirection,
 								 GetFrom(),
-								 GetWhereClause(),
+								 GetWhereClause(false, limitByUserId),
 								 Start,
 								 PageEnd);
 		}
@@ -141,11 +140,21 @@ namespace K9.WebApplication.Helpers
 			get { return _orderByDirection; }
 		}
 
-		public string GetWhereClause(bool ignoreChildTables = false)
+		public string GetWhereClause(bool ignoreChildTables = false, int? limitByUserId = null)
 		{
 			var sb = new StringBuilder();
 			var parentType = typeof(T);
 			var linkedTableInfos = GetLinkedTableInfos();
+
+			if (limitByUserId.HasValue)
+			{
+				if (!typeof(T).ImplementsIUserData())
+				{
+					throw new LimitByUserIdException();
+				}
+				sb.Append("WHERE ");
+				sb.AppendFormat("[{0}].[UserId] = {1}", parentType.Name, limitByUserId.Value);
+			}
 
 			foreach (var columnInfo in GetDataBoundColumnInfosNotIdColumns())
 			{

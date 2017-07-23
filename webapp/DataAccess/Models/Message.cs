@@ -1,11 +1,11 @@
 ﻿
 using System;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using K9.DataAccess.Attributes;
 using K9.Globalisation;
 using K9.SharedLibrary.Attributes;
+using K9.SharedLibrary.Models;
 
 namespace K9.DataAccess.Models
 {
@@ -19,8 +19,7 @@ namespace K9.DataAccess.Models
 	[AutoGenerateName]
 	[Grammar(ResourceType = typeof(Dictionary), DefiniteArticleName = Strings.Grammar.MasculineDefiniteArticle, IndefiniteArticleName = Strings.Grammar.MasculineIndefiniteArticle)]
 	[Name(ResourceType = typeof(Dictionary), Name = Strings.Names.Message)]
-	[LimitByUserId]
-	public class Message : ObjectBase
+	public class Message : ObjectBase, IUserData
 	{
 
 		public Message()

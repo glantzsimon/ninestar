@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Linq;
+using System.Net;
 using System.Web.Mvc;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Models;
@@ -20,8 +21,7 @@ namespace K9.WebApplication.Filters
 		{
 			var controller = filterContext.Controller as IBaseController;
 			var roles = controller.Roles;
-			var unauthorized = "Unauthorized";
-
+			
 			// Check controller level roles first
 			var controllerPermissionAttribute =
 				controller.GetType().GetCustomAttributes(typeof(RequirePermissionsAttribute), true).FirstOrDefault() as RequirePermissionsAttribute;
@@ -32,10 +32,7 @@ namespace K9.WebApplication.Filters
 				{
 					if (!CheckRole(roles, controllerPermissionAttribute.Role))
 					{
-						filterContext.Result = new ViewResult
-						{
-							ViewName = unauthorized
-						};
+						HttpForbidden(filterContext);
 						return;
 					}
 				}
@@ -46,10 +43,7 @@ namespace K9.WebApplication.Filters
 				var fullyQualifiedPermissionName = string.Format("{0}{1}", Permission, controller.GetObjectName());
 				if (!CheckPermission(roles, fullyQualifiedPermissionName))
 				{
-					filterContext.Result = new ViewResult
-					{
-						ViewName = unauthorized
-					};
+					HttpForbidden(filterContext);
 					return;
 				}
 			}
@@ -58,12 +52,19 @@ namespace K9.WebApplication.Filters
 			{
 				if (!CheckRole(roles, Role))
 				{
-					filterContext.Result = new ViewResult
-					{
-						ViewName = unauthorized
-					};
+					HttpForbidden(filterContext);
 				}
 			}
+		}
+
+		private void HttpForbidden(ActionExecutingContext filterContext)
+		{
+			var unauthorized = "Unauthorized";
+			filterContext.HttpContext.Response.StatusCode = (int)HttpStatusCode.Forbidden;
+			filterContext.Result = new ViewResult
+			{
+				ViewName = unauthorized
+			};
 		}
 
 		private bool CheckPermission(IRoles roles, string permissionName)

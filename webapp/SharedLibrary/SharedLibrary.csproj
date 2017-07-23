@@ -113,6 +113,7 @@
     <Compile Include="Authentication\RoleNames.cs" />
     <Compile Include="Helpers\TestHtmlHelper.cs" />
     <Compile Include="Models\AssetInfo.cs" />
+    <Compile Include="Models\IUserData.cs" />
     <Compile Include="Models\IDescribable.cs" />
     <Compile Include="Models\ISelectable.cs" />
     <Compile Include="Models\IButton.cs" />

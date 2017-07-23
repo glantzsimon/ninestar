@@ -14,8 +14,8 @@ namespace K9.WebApplication.Helpers
 		IStatelessFilter StatelessFilter { get; set; }
 		List<IDataTableColumnInfo> ColumnInfos { get; }
 		void LoadQueryString(NameValueCollection queryString);
-		string GetQuery(bool selectAllColumns = false);
-		string GetWhereClause(bool ignoreChildTables = false);
+		string GetQuery(bool selectAllColumns = false, int? limitByUserId = null);
+		string GetWhereClause(bool ignoreChildTables = false, int? limitByUser = null);
 	}
 
 	public interface IDataTableColumnInfo

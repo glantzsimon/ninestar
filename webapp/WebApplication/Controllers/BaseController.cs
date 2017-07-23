@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading;
 using System.Web.Mvc;
 using K9.DataAccess.Models;
@@ -9,12 +10,14 @@ using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.EventArgs;
+using K9.WebApplication.Exceptions;
 using K9.WebApplication.Extensions;
 using K9.WebApplication.Filters;
 using K9.WebApplication.Helpers;
 using K9.WebApplication.ViewModels;
 using Newtonsoft.Json;
 using NLog;
+using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
 {
@@ -42,7 +45,7 @@ namespace K9.WebApplication.Controllers
 				return _logger;
 			}
 		}
-		
+
 		public string GetObjectName()
 		{
 			throw new NotImplementedException();
@@ -154,9 +157,17 @@ namespace K9.WebApplication.Controllers
 			{
 				return HttpNotFound();
 			}
-			var type = typeof(T);
+
+			if (!CheckLimitByUser(item))
+			{
+				return HttpForbidden();
+			}
+
 			SetTitle();
+
+			var type = typeof(T);
 			ViewBag.SubTitle = string.Format(Dictionary.DetailsText, type.GetName(), type.GetOfPreposition().ToLower());
+
 			return View(item);
 		}
 
@@ -173,8 +184,8 @@ namespace K9.WebApplication.Controllers
 
 			try
 			{
-				var recordsTotal = _repository.GetCount();
-				var recordsFiltered = _repository.GetCount(_ajaxHelper.GetWhereClause(true));
+				var recordsTotal = _repository.GetCount(GetLimitByUserWhereClause());
+				var recordsFiltered = _repository.GetCount(_ajaxHelper.GetWhereClause(true, LimitByUser() ? WebSecurity.CurrentUserId : (int?)null));
 				var data = _repository.GetQuery(_ajaxHelper.GetQuery(true));
 				var json = JsonConvert.SerializeObject(new
 				{
@@ -269,9 +280,14 @@ namespace K9.WebApplication.Controllers
 				return HttpNotFound();
 			}
 
+			if (!CheckLimitByUser(item))
+			{
+				return HttpForbidden();
+			}
+
 			if (item.IsSystemStandard)
 			{
-				return View("Unauthorized");
+				return HttpForbidden();
 			}
 
 			SetTitle();
@@ -294,7 +310,12 @@ namespace K9.WebApplication.Controllers
 					var original = _repository.Find(item.Id);
 					if (original.IsSystemStandard)
 					{
-						return View("Unauthorized");
+						return HttpForbidden();
+					}
+
+					if (!CheckLimitByUser(original))
+					{
+						return HttpForbidden();
 					}
 
 					_repository.Update(item);
@@ -335,7 +356,12 @@ namespace K9.WebApplication.Controllers
 
 			if (item.IsSystemStandard)
 			{
-				return View("Unauthorized");
+				return HttpForbidden();
+			}
+
+			if (!CheckLimitByUser(item))
+			{
+				return HttpForbidden();
 			}
 
 			SetTitle();
@@ -362,7 +388,12 @@ namespace K9.WebApplication.Controllers
 
 				if (item.IsSystemStandard)
 				{
-					return View("Unauthorized");
+					return HttpForbidden();
+				}
+
+				if (!CheckLimitByUser(item))
+				{
+					return HttpForbidden();
 				}
 
 				try
@@ -410,7 +441,12 @@ namespace K9.WebApplication.Controllers
 
 			if (parent.IsSystemStandard)
 			{
-				return View("Unauthorized");
+				return HttpForbidden();
+			}
+
+			if (!CheckLimitByUser(parent))
+			{
+				return HttpForbidden();
 			}
 
 			SetTitle();
@@ -443,7 +479,7 @@ namespace K9.WebApplication.Controllers
 					return item;
 				}).ToList();
 				_repository.CreateBatch(itemsToAdd);
-				
+
 				return RedirectToAction("Index", this.GetFilterRouteValueDictionary());
 			}
 			catch (Exception ex)
@@ -476,9 +512,41 @@ namespace K9.WebApplication.Controllers
 			return typeof(T).Name;
 		}
 
+		private bool LimitByUser()
+		{
+			return GetType().LimitedByUser() && WebSecurity.IsAuthenticated;
+		}
+
+		private string GetLimitByUserWhereClause()
+		{
+			return LimitByUser() ? string.Format(" WHERE [UserId] = {0}", WebSecurity.CurrentUserId) : string.Empty;
+		}
+
+		private bool CheckLimitByUser(IObjectBase item)
+		{
+			if (LimitByUser())
+			{
+				if (!typeof(T).ImplementsIUserData())
+				{
+					throw new LimitByUserIdException();
+				}
+				if ((int)item.GetProperty("UserId") != WebSecurity.CurrentUserId)
+				{
+					return false;
+				}
+			}
+			return true;
+		}
+
 		protected void SetTitle()
 		{
 			ViewBag.Title = typeof(T).GetPluralName();
+		}
+
+		public ActionResult HttpForbidden()
+		{
+			HttpContext.Response.StatusCode = (int)HttpStatusCode.Forbidden;
+			return View("Unauthorized");
 		}
 
 		#endregion

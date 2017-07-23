@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Reflection;
 using K9.SharedLibrary.Attributes;
+using K9.SharedLibrary.Models;
 using Microsoft.Ajax.Utilities;
 
 namespace K9.SharedLibrary.Extensions
@@ -199,9 +200,19 @@ namespace K9.SharedLibrary.Extensions
 				{
 					throw new Exception(string.Format("No ForeignKey attribute is set on property {0}", foreignKeyColumn));
 				}
-				return attribute.Name;
+				return type.GetLinkedPropertyType(attribute.Name).Name;
 			}
 			throw new Exception(string.Format("Invalid property name {0}", foreignKeyColumn));
+		}
+
+		public static bool LimitedByUser(this Type type)
+		{
+			return type.GetCustomAttributes(typeof(LimitByUserIdAttribute), true).Any();
+		}
+
+		public static bool ImplementsIUserData(this Type type)
+		{
+			return typeof (IUserData).IsAssignableFrom(type);
 		}
 
 		public static string GetForeignKeyName(this Type type)

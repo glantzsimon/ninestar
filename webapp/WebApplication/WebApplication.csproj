@@ -173,6 +173,7 @@
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\RolePermissionsController.cs" />
+    <Compile Include="Exceptions\LimitByUserIdException.cs" />
     <Compile Include="Exceptions\InvalidColumnNameException.cs" />
     <Compile Include="Filters\RequirePermissionsAttribute.cs" />
     <Compile Include="Config\AppConfig.cs" />

@@ -57,8 +57,10 @@ namespace K9.WebApplication
 			var json = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config/appsettings.json"));
 
 			builder.Register(c => ConfigHelper.GetConfiguration<SmtpConfiguration>(json)).SingleInstance();
-			builder.Register(c => ConfigHelper.GetConfiguration<WebsiteConfiguration>(json)).SingleInstance();
 			builder.Register(c => ConfigHelper.GetConfiguration<DatabaseConfiguration>(json)).SingleInstance();
+
+			// Static types
+			WebsiteConfiguration.Instance = ConfigHelper.GetConfiguration<WebsiteConfiguration>(json).Value;
 		}
 	}
 }

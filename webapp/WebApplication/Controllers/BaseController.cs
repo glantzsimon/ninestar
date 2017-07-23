@@ -283,13 +283,14 @@ namespace K9.WebApplication.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				if (item.IsSystemStandard)
-				{
-					return View("Unauthorized");
-				}
-
 				try
 				{
+					var original = _repository.Find(item.Id);
+					if (original.IsSystemStandard)
+					{
+						return View("Unauthorized");
+					}
+
 					_repository.Update(item);
 
 					if (RecordUpdated != null)

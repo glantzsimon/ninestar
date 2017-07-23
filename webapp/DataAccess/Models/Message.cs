@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using K9.DataAccess.Attributes;
@@ -20,20 +21,30 @@ namespace K9.DataAccess.Models
 	[Name(ResourceType = typeof(Dictionary), Name = Strings.Names.Message)]
 	public class Message : ObjectBase
 	{
+
+		public Message()
+		{
+			SentOn = DateTime.Now;
+		}
+
 		[ForeignKey("SentByUser")]
 		[UIHint("User")]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SentByUserLabel)]
+		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 		public int SentByUserId { get; set; }
 
 		[ForeignKey("SentToUser")]
 		[UIHint("User")]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SentToUserLabel)]
+		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 		public int SentToUserId { get; set; }
 
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SentOnLabel)]
+		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 		public DateTime SentOn { get; set; }
 
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SentToUserLabel)]
+		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 		public EMessageDirection MessageDirection { get; set; }
 
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubjectLabel)]
@@ -49,9 +60,11 @@ namespace K9.DataAccess.Models
 		public virtual User SentToUser { get; set; }
 
 		[LinkedColumn(LinkedTableName = "User", LinkedColumnName = "Name", ForeignKey = "SentToUserId")]
+		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SentToUserLabel)]
 		public string SentToUserName { get; set; }
 
 		[LinkedColumn(LinkedTableName = "User", LinkedColumnName = "Name", ForeignKey = "SentByUserId")]
+		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SentByUserLabel)]
 		public string SentByUserName { get; set; }
 
 	}

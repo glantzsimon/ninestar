@@ -9,7 +9,9 @@ using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
+using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
+using K9.WebApplication.Options;
 using NLog;
 using WebMatrix.WebData;
 
@@ -200,6 +202,13 @@ namespace K9.WebApplication.Controllers
 				try
 				{
 					_repository.Update(model);
+					ViewBag.PopupAlert = true;
+					ViewBag.AlertOptions = new AlertOptions
+					{
+						AlertType = EAlertType.Success,
+						Message = Dictionary.Success,
+						OtherMessage = Dictionary.AccountUpdatedSuccess
+					};
 				}
 				catch (Exception ex)
 				{

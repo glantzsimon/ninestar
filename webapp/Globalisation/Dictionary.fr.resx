@@ -550,4 +550,10 @@
   <data name="SubjectLabel" xml:space="preserve">
     <value>Objet</value>
   </data>
+  <data name="AccountUpdatedSuccess" xml:space="preserve">
+    <value>Vos coordonées ont été mises à jour avec succès.</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Succès</value>
+  </data>
 </root>

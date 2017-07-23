@@ -214,6 +214,7 @@
     <Compile Include="Helpers\AuditFieldsForModel.cs" />
     <Compile Include="Helpers\BootstrapDropdownFor.cs" />
     <Compile Include="Helpers\Alert.cs" />
+    <Compile Include="Helpers\PopupAlert.cs" />
     <Compile Include="Helpers\CrudButtonsForModel.cs" />
     <Compile Include="Helpers\IDataTableAjaxHelper.cs" />
     <Compile Include="Helpers\DataTableAjaxHelper.cs" />
@@ -423,6 +424,7 @@
     <Content Include="Views\Shared\EditorTemplates\Role.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Permission.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Role.cshtml" />
+    <Content Include="Views\Shared\_PopupAlert.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutColumns.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />

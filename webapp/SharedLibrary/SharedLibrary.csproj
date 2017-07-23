@@ -101,7 +101,6 @@
   <ItemGroup>
     <Compile Include="Attributes\LimitByColumnAttribute.cs" />
     <Compile Include="Attributes\LinkedColumnAttribute.cs" />
-    <Compile Include="Config\AppConfig.cs" />
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="Extensions\ConfigurationFileExtensions.cs" />
     <Compile Include="Extensions\Extensions.cs" />
@@ -109,7 +108,6 @@
     <Compile Include="Extensions\ReflectionExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\ConfigHelper.cs" />
-    <Compile Include="Helpers\Copy of Mailer.cs" />
     <Compile Include="Helpers\IMailer.cs" />
     <Compile Include="Helpers\ImageProcessor.cs" />
     <Compile Include="Helpers\Mailer.cs" />
@@ -149,6 +147,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Config\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

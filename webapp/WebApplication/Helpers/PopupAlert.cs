@@ -36,12 +36,9 @@ namespace K9.WebApplication.Helpers
 
 		public static MvcHtmlString PopupAlert(this HtmlHelper html)
 		{
-			if (html.ViewBag.IsPopuAlert != null)
+			if (html.ViewBag.IsPopuAlert != null && (bool)html.ViewBag.IsPopuAlert)
 			{
-				if ((bool)html.ViewBag.IsPopuAlert)
-				{
-					return html.Partial("_PopupAlert", html.ViewBag.AlertOptions as AlertOptions);		
-				}
+				return html.Partial("_PopupAlert", html.ViewBag.AlertOptions as AlertOptions);
 			}
 			return MvcHtmlString.Empty;
 		}

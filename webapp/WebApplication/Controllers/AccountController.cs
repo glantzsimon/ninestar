@@ -202,7 +202,7 @@ namespace K9.WebApplication.Controllers
 				try
 				{
 					_repository.Update(model);
-					ViewBag.PopupAlert = true;
+					ViewBag.IsPopupAlert = true;
 					ViewBag.AlertOptions = new AlertOptions
 					{
 						AlertType = EAlertType.Success,

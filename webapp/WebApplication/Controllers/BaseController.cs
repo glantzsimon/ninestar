@@ -146,6 +146,7 @@ namespace K9.WebApplication.Controllers
 		}
 
 		[RequirePermissions(Permission = Permissions.View)]
+		[OutputCache(NoStore = true, Duration = 0)]
 		public virtual ActionResult Details(int id = 0)
 		{
 			T item = _repository.Find(id);
@@ -164,6 +165,7 @@ namespace K9.WebApplication.Controllers
 
 		#region DataTable
 
+		[OutputCache(NoStore = true, Duration = 0)]
 		public virtual ActionResult List()
 		{
 			_ajaxHelper.LoadQueryString(HttpContext.Request.QueryString);
@@ -202,6 +204,7 @@ namespace K9.WebApplication.Controllers
 
 		[Authorize]
 		[RequirePermissions(Permission = Permissions.Create)]
+		[OutputCache(NoStore = true, Duration = 0)]
 		public virtual ActionResult Create()
 		{
 			var itemToCreate = Activator.CreateInstance<T>();
@@ -223,6 +226,7 @@ namespace K9.WebApplication.Controllers
 		[ValidateAntiForgeryToken]
 		[Authorize]
 		[RequirePermissions(Permission = Permissions.Create)]
+		[OutputCache(NoStore = true, Duration = 0)]
 		public virtual ActionResult Create(T item)
 		{
 			if (ModelState.IsValid)
@@ -256,6 +260,7 @@ namespace K9.WebApplication.Controllers
 
 		[Authorize]
 		[RequirePermissions(Permission = Permissions.Edit)]
+		[OutputCache(NoStore = true, Duration = 0)]
 		public virtual ActionResult Edit(int id = 0)
 		{
 			var item = _repository.Find(id);
@@ -279,6 +284,7 @@ namespace K9.WebApplication.Controllers
 		[ValidateAntiForgeryToken]
 		[Authorize]
 		[RequirePermissions(Permission = Permissions.Edit)]
+		[OutputCache(NoStore = true, Duration = 0)]
 		public virtual ActionResult Edit(T item)
 		{
 			if (ModelState.IsValid)
@@ -318,6 +324,7 @@ namespace K9.WebApplication.Controllers
 
 		[Authorize]
 		[RequirePermissions(Permission = Permissions.Delete)]
+		[OutputCache(NoStore = true, Duration = 0)]
 		public virtual ActionResult Delete(int id)
 		{
 			T item = _repository.Find(id);
@@ -341,6 +348,7 @@ namespace K9.WebApplication.Controllers
 		[ValidateAntiForgeryToken]
 		[Authorize]
 		[RequirePermissions(Permission = Permissions.Delete)]
+		[OutputCache(NoStore = true, Duration = 0)]
 		public virtual ActionResult DeleteConfirmed(int id = 0)
 		{
 			T item = null;

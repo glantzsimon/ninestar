@@ -233,7 +233,7 @@ namespace K9.WebApplication.Helpers
 			foreach (var item in GetLinkedTableInfos())
 			{
 				sb.Append(", ");
-				sb.AppendFormat("[{0}].[Name] AS [{0}Name]", item.LinkedTableAlias);
+				sb.AppendFormat("[{0}].[Name] AS [{1}]", item.LinkedTableAlias, item.ColumnName);
 			}
 
 			return sb.ToString();

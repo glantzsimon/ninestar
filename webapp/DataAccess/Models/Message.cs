@@ -43,7 +43,7 @@ namespace K9.DataAccess.Models
 		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 		public DateTime SentOn { get; set; }
 
-		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SentToUserLabel)]
+		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MessageDirectionLabel)]
 		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 		public EMessageDirection MessageDirection { get; set; }
 

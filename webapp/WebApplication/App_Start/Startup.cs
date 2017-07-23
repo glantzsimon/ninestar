@@ -10,6 +10,7 @@ using K9.DataAccess.Helpers;
 using K9.DataAccess.Respositories;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Config;
 using K9.WebApplication.DataSets;
 using K9.WebApplication.Helpers;
 using NLog;
@@ -56,7 +57,8 @@ namespace K9.WebApplication
 			var configFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config/appsettings.json");
 			var json = File.ReadAllText(configFilePath);
 
-			builder.Register(c => ConfigHelper.GetConfiguration<SmtpConfiguration>(json)).As<ISmtpConfiguration>().SingleInstance();
+			builder.Register(c => ConfigHelper.GetConfiguration<SmtpConfiguration>(json)).SingleInstance();
+			//builder.Register(c => ConfigHelper.GetConfiguration<OpenAuthConfiguration>(json)).As<ISmtpConfiguration>().SingleInstance();
 		}
 	}
 }

@@ -115,7 +115,9 @@
     <Compile Include="Authentication\RoleNames.cs" />
     <Compile Include="Helpers\TestHtmlHelper.cs" />
     <Compile Include="Models\AssetInfo.cs" />
+    <Compile Include="Models\Options.cs" />
     <Compile Include="Models\IConfigurable.cs" />
+    <Compile Include="Models\IOptions.cs" />
     <Compile Include="Models\SmtpConfiguration.cs" />
     <Compile Include="Models\ISmtpConfiguration.cs" />
     <Compile Include="Models\IUserData.cs" />
@@ -148,9 +150,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Config\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -8,8 +8,8 @@ namespace K9.SharedLibrary.Helpers
 	public class ConfigHelper
 	{
 
-		public static T GetConfiguration<T>(string json) 
-			where T : IConfigurable
+		public static IOptions<T> GetConfiguration<T>(string json) 
+			where T : class 
 		{
 			var jsonObject = JObject.Parse(json);
 			var configSection = jsonObject.GetValue("SmtpConfiguration");
@@ -20,7 +20,7 @@ namespace K9.SharedLibrary.Helpers
 				configuration.SetProperty(propertyInfo.Name, configSection[propertyInfo.Name]);
 			}
 
-			return configuration;
+			return new Options<T>(configuration);
 		}
 
 	}

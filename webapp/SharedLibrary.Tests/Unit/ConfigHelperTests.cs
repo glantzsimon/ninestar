@@ -20,11 +20,11 @@ namespace K9.SharedLibrary.Tests.Unit
 
 			var config = ConfigHelper.GetConfiguration<SmtpConfiguration>(json);
 
-			Assert.AreEqual("mail.vibranthealthnow.co.uk", config.SmtpServer);
-			Assert.AreEqual("info@vibranthealthnow.co.uk", config.SmtpUserId);
-			Assert.AreEqual("12345", config.SmtpPassword);
-			Assert.AreEqual("info@vibranthealthnow.co.uk", config.SmtpFromEmailAddress);
-			Assert.AreEqual("Vibrant Health", config.SmtpFromDisplayName);
+			Assert.AreEqual("mail.vibranthealthnow.co.uk", config.Value.SmtpServer);
+			Assert.AreEqual("info@vibranthealthnow.co.uk", config.Value.SmtpUserId);
+			Assert.AreEqual("12345", config.Value.SmtpPassword);
+			Assert.AreEqual("info@vibranthealthnow.co.uk", config.Value.SmtpFromEmailAddress);
+			Assert.AreEqual("Vibrant Health", config.Value.SmtpFromDisplayName);
 		}
 
 	}

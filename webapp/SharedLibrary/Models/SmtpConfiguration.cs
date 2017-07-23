@@ -1,7 +1,7 @@
 ﻿
 namespace K9.SharedLibrary.Models
 {
-	public class SmtpConfiguration : ISmtpConfiguration, IConfigurable
+	public class SmtpConfiguration
 	{
 		public string SmtpServer { get; set; }
 		public string SmtpUserId { get; set; }

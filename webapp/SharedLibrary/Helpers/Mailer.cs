@@ -7,17 +7,17 @@ namespace K9.SharedLibrary.Helpers
 {
 	public class Mailer : IMailer
 	{
-		private readonly ISmtpConfiguration _config;
+		private readonly IOptions<SmtpConfiguration> _config;
 
-		public Mailer(ISmtpConfiguration config)
+		public Mailer(IOptions<SmtpConfiguration> config)
 		{
 			_config = config;
 		}
 
 		public void SendEmail(string subject, string body, string recipientEmailAddress, string recipientDisplayName, string fromEmailAddress = "", string fromDisplayName = "", bool isHtml = true)
 		{
-			fromEmailAddress = string.IsNullOrEmpty(fromEmailAddress) ? _config.SmtpFromEmailAddress : fromEmailAddress;
-			fromDisplayName = string.IsNullOrEmpty(fromDisplayName) ? _config.SmtpFromDisplayName : fromDisplayName;
+			fromEmailAddress = string.IsNullOrEmpty(fromEmailAddress) ? _config.Value.SmtpFromEmailAddress : fromEmailAddress;
+			fromDisplayName = string.IsNullOrEmpty(fromDisplayName) ? _config.Value.SmtpFromDisplayName : fromDisplayName;
 
 			var from = new MailAddress(fromEmailAddress, fromDisplayName);
 			var recipient = new MailAddress(recipientEmailAddress, recipientDisplayName);
@@ -27,8 +27,8 @@ namespace K9.SharedLibrary.Helpers
 			message.Subject = subject;
 			message.Body = body;
 
-			var emailClient = new SmtpClient(_config.SmtpServer);
-			var smtpUserInfo = new NetworkCredential(_config.SmtpUserId, _config.SmtpPassword);
+			var emailClient = new SmtpClient(_config.Value.SmtpServer);
+			var smtpUserInfo = new NetworkCredential(_config.Value.SmtpUserId, _config.Value.SmtpPassword);
 
 			emailClient.UseDefaultCredentials = false;
 			emailClient.Credentials = smtpUserInfo;

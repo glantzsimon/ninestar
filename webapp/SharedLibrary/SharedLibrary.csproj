@@ -98,6 +98,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\LimitByColumnAttribute.cs" />
     <Compile Include="Attributes\LinkedColumnAttribute.cs" />
     <Compile Include="Config\AppConfig.cs" />
     <Compile Include="Constants\Constants.cs" />

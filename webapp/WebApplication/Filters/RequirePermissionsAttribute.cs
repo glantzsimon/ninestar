@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Web.Mvc;
 using K9.SharedLibrary.Authentication;
@@ -7,6 +8,7 @@ using WebMatrix.WebData;
 
 namespace K9.WebApplication.Filters
 {
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Property | AttributeTargets.Method )]
 	[DefaultProperty("Permission")]
 	public class RequirePermissionsAttribute : ActionFilterAttribute
 	{

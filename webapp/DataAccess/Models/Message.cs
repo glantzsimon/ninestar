@@ -19,6 +19,7 @@ namespace K9.DataAccess.Models
 	[AutoGenerateName]
 	[Grammar(ResourceType = typeof(Dictionary), DefiniteArticleName = Strings.Grammar.MasculineDefiniteArticle, IndefiniteArticleName = Strings.Grammar.MasculineIndefiniteArticle)]
 	[Name(ResourceType = typeof(Dictionary), Name = Strings.Names.Message)]
+	[LimitByUserId]
 	public class Message : ObjectBase
 	{
 
@@ -26,6 +27,12 @@ namespace K9.DataAccess.Models
 		{
 			SentOn = DateTime.Now;
 		}
+
+		[ForeignKey("User")]
+		[UIHint("User")]
+		[Display(ResourceType = typeof(Dictionary), Name = Strings.Names.User)]
+		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+		public int UserId { get; set; }
 
 		[ForeignKey("SentByUser")]
 		[UIHint("User")]
@@ -55,6 +62,8 @@ namespace K9.DataAccess.Models
 		[StringLength(Int32.MaxValue)]
 		public string Body { get; set; }
 
+		public virtual User User { get; set; }
+
 		public virtual User SentByUser { get; set; }
 
 		public virtual User SentToUser { get; set; }
@@ -66,6 +75,10 @@ namespace K9.DataAccess.Models
 		[LinkedColumn(LinkedTableName = "User", LinkedColumnName = "Name", ForeignKey = "SentByUserId")]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SentByUserLabel)]
 		public string SentByUserName { get; set; }
+
+		[LinkedColumn(LinkedTableName = "User", LinkedColumnName = "Name", ForeignKey = "UserId")]
+		[Display(ResourceType = typeof(Dictionary), Name = Strings.Names.User)]
+		public string UserName { get; set; }
 
 	}
 }

@@ -3,6 +3,7 @@ using K9.SharedLibrary.Extensions;
 
 namespace K9.DataAccess.Attributes
 {
+	[AttributeUsage(AttributeTargets.Class)]
 	public class NameAttribute : Attribute
 	{
 		public string Name { get; set; }

@@ -4,6 +4,7 @@ using K9.SharedLibrary.Extensions;
 
 namespace K9.DataAccess.Attributes
 {
+	[AttributeUsage(AttributeTargets.Class)]
 	public class GrammarAttribute : Attribute
 	{
 		public string IndefiniteArticleName { get; set; }

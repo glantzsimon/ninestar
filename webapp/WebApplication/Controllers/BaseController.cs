@@ -185,8 +185,9 @@ namespace K9.WebApplication.Controllers
 			try
 			{
 				var recordsTotal = _repository.GetCount(GetLimitByUserWhereClause());
-				var recordsFiltered = _repository.GetCount(_ajaxHelper.GetWhereClause(true, LimitByUser() ? WebSecurity.CurrentUserId : (int?)null));
-				var data = _repository.GetQuery(_ajaxHelper.GetQuery(true));
+				var limitByUserId = LimitByUser() ? WebSecurity.CurrentUserId : (int?)null;
+				var recordsFiltered = _repository.GetCount(_ajaxHelper.GetWhereClause(true, limitByUserId));
+				var data = _repository.GetQuery(_ajaxHelper.GetQuery(true, limitByUserId));
 				var json = JsonConvert.SerializeObject(new
 				{
 					draw = _ajaxHelper.Draw,

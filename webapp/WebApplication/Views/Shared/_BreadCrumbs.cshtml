@@ -1,14 +1,14 @@
 ﻿@model BreadCrumbsOptions
 <ol class="breadcrumb">
 	@foreach (var crumb in Model.Crumbs)
- {
-	 if (crumb.IsActive)
-	 {
-		 <li class="active">@crumb.Label</li>
-	 }
-	 else
-	 {
-		<li><a href="@crumb.Url">@crumb.Label</a></li> 
-	 }
- }
+	{
+		 if (crumb.IsActive)
+		 {
+			<li class="active">@crumb.Label</li>
+		 }
+		 else
+		 {
+			<li><a href="@Url.Action(crumb.ActionName, crumb.ControllerName)">@crumb.Label</a></li> 
+		 }
+	}
 </ol>

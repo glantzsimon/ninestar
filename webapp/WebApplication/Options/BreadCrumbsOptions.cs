@@ -37,6 +37,7 @@ namespace K9.WebApplication.Options
 
 			var homeCrumb = new Crumb
 			{
+				IsHome = true,
 				Label = Dictionary.Home,
 				ControllerName = "Home",
 				ActionName = "Index",

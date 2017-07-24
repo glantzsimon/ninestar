@@ -169,7 +169,7 @@ namespace K9.WebApplication.Controllers
 			var type = typeof(T);
 			ViewBag.SubTitle = string.Format(Dictionary.DetailsText, type.GetName(), type.GetOfPreposition().ToLower());
 
-			AddSectionBreadcrum();
+			AddControllerBreadcrumb();
 
 			return View(item);
 		}
@@ -239,7 +239,7 @@ namespace K9.WebApplication.Controllers
 				itemToCreate.SetProperty(statelessFilter.Key, statelessFilter.Id);
 			}
 
-			AddSectionBreadcrum();
+			AddControllerBreadcrumb();
 
 			return View(itemToCreate);
 		}
@@ -277,7 +277,7 @@ namespace K9.WebApplication.Controllers
 			SetTitle();
 			ViewBag.SubTitle = string.Format("{0} {1}{2}", Dictionary.CreateNew, typeof(T).GetName(), GetStatelessFilterTitle());
 
-			AddSectionBreadcrum();
+			AddControllerBreadcrumb();
 
 			return View(item);
 		}
@@ -306,7 +306,7 @@ namespace K9.WebApplication.Controllers
 			SetTitle();
 			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Edit, typeof(T).GetName());
 
-			AddSectionBreadcrum();
+			AddControllerBreadcrumb();
 
 			return View(item);
 		}
@@ -355,7 +355,7 @@ namespace K9.WebApplication.Controllers
 			SetTitle();
 			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Edit, typeof(T).GetName());
 
-			AddSectionBreadcrum();
+			AddControllerBreadcrumb();
 
 			return View(item);
 		}
@@ -384,7 +384,7 @@ namespace K9.WebApplication.Controllers
 			SetTitle();
 			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Delete, typeof(T).GetName());
 
-			AddSectionBreadcrum();
+			AddControllerBreadcrumb();
 
 			return View(item);
 		}
@@ -439,7 +439,7 @@ namespace K9.WebApplication.Controllers
 			SetTitle();
 			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Delete, typeof(T).GetName());
 
-			AddSectionBreadcrum();
+			AddControllerBreadcrumb();
 
 			return View(item);
 		}
@@ -473,7 +473,7 @@ namespace K9.WebApplication.Controllers
 			SetTitle();
 			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Edit, typeof(T).GetPluralName());
 
-			AddSectionBreadcrum();
+			AddControllerBreadcrumb();
 
 			return View("EditMultiple", MultiSelectViewModel.Create<T, T2, T3>(parent, _repository.GetAllBy<T2, T3>(parent.Id)));
 		}
@@ -511,7 +511,7 @@ namespace K9.WebApplication.Controllers
 				ModelState.AddModelError("", ex.Message);
 			}
 
-			AddSectionBreadcrum();
+			AddControllerBreadcrumb();
 
 			return View("EditMultiple", model);
 		}
@@ -580,7 +580,7 @@ namespace K9.WebApplication.Controllers
 			return true;
 		}
 
-		private void AddSectionBreadcrum()
+		private void AddControllerBreadcrumb()
 		{
 			ViewBag.Crumbs = new List<Crumb>
 			{
@@ -588,7 +588,7 @@ namespace K9.WebApplication.Controllers
 				{
 					Label = typeof (T).GetPluralName(),
 					ActionName = "Index",
-					ControllerName = typeof (T).GetControllerName()
+					ControllerName = GetType().GetControllerName()
 				}
 			};
 		}

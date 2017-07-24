@@ -582,11 +582,12 @@ namespace K9.WebApplication.Controllers
 
 		private void AddSectionBreadcrum()
 		{
-			ViewBag.BreadCrumbs = new List<Crumb>
+			ViewBag.Crumbs = new List<Crumb>
 			{
 				new Crumb
 				{
-					ActionName = typeof (T).GetPluralName(),
+					Label = typeof (T).GetPluralName(),
+					ActionName = typeof (T).GetListName(),
 					ControllerName = typeof (T).GetControllerName()
 				}
 			};

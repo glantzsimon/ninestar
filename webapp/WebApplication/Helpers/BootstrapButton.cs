@@ -47,7 +47,7 @@ namespace K9.WebApplication.Helpers
 			{
 				return MvcHtmlString.Create(string.Format("<a class=\"btn btn-info\" href=\"{0}\"><i class='fa {2}'></i> {1}</a>", html.GeturlHeler().Action(actionName, controllerName, routeValues), linkText, iconCssClass));
 			}
-			return MvcHtmlString.Create(string.Format("<a class=\"btn btn-info\" href=\"{0}\">{1}</a>", html.GeturlHeler().Action(actionName, controllerName, null), linkText));
+			return MvcHtmlString.Create(string.Format("<a class=\"btn btn-info\" href=\"{0}\">{1}</a>", html.GeturlHeler().Action(actionName, controllerName, routeValues), linkText));
 		}
 
 		public static MvcHtmlString BootstrapCreateNewButton(this HtmlHelper html)

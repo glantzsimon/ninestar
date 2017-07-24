@@ -56,7 +56,7 @@ namespace K9.DataAccess.Models
 		{
 			get
 			{
-				return WebSecurity.Initialized && WebSecurity.IsConfirmed(Username);
+				return !string.IsNullOrEmpty(Username) && WebSecurity.Initialized && WebSecurity.IsConfirmed(Username);
 			}
 		}
 		

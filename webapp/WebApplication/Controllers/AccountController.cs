@@ -415,7 +415,7 @@ namespace K9.WebApplication.Controllers
 		}
 
 		[RequirePermissions(Permission = Permissions.Edit)]
-		public ActionResult ActivateAccount(int userId)
+		public ActionResult ActivateUserAccount(int userId)
 		{
 			var user = _repository.Find(u => u.Id == userId).FirstOrDefault();
 			if (user == null)

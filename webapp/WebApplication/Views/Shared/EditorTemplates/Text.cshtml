@@ -1,4 +1,5 @@
-﻿@model Object
+﻿@using K9.SharedLibrary.Extensions
+@model Object
 @{
 }
-@Html.TextBoxFor(model => model, ViewData)
+@Html.TextBoxFor(model => model, this.GetFilteredViewData())

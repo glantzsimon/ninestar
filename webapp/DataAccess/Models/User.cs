@@ -67,6 +67,7 @@ namespace K9.DataAccess.Models
 		
 		public override void UpdateName()
 		{
+			Name = string.Format("{0} {1}", FirstName, LastName);
 		}
 	}
 }

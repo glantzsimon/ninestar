@@ -3,4 +3,4 @@
 @{
 	ViewData.MergeAttribute(K9.WebApplication.Constants.Html.Attributes.Type, K9.WebApplication.Constants.Html.Types.Email);
 }
-@Html.TextBoxFor(model => model, ViewData)
+@Html.TextBoxFor(model => model, this.GetFilteredViewData())

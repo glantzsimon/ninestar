@@ -14,6 +14,11 @@ namespace K9.DataAccess.Models
 	[Name(ResourceType = typeof(Dictionary), Name = Strings.Names.User)]
 	public class User : ObjectBase, IUser
 	{
+
+		[StringLength(128)]
+		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NameLabel)]
+		public new string Name { get; set; }
+
 		[StringLength(56)]
 		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.UserNameLabel)]
@@ -62,7 +67,6 @@ namespace K9.DataAccess.Models
 		
 		public override void UpdateName()
 		{
-			Name = string.Format("{0} {1}", FirstName, LastName);
 		}
 	}
 }

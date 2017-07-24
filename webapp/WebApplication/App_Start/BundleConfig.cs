@@ -9,10 +9,10 @@ namespace K9.WebApplication
 			bundles.Add(new StyleBundle("~/Content/css").Include(
 				"~/Content/elements.css",
 				"~/Content/classes.css",
-				"~/Content/mobile.css",
-				"~/Content/tablet.css",
 				"~/Content/validation.css",
-				"~/Content/k9/*.css"));
+				"~/Content/k9/*.css",
+				"~/Content/tablet.css",
+				"~/Content/mobile.css"));
 
 			bundles.Add(new ScriptBundle("~/Scripts/k9").Include(
 				"~/Scripts/imageSwitcher/*.js",

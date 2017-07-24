@@ -51,5 +51,11 @@
 	{
 		padding: 10px 0;
 	}
-	
+
+	ol.breadcrumb
+	{
+		margin-top: 7px;
+		font-size: 12px;
+	}
+
 }

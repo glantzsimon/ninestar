@@ -7,6 +7,7 @@
 	using (Html.BeginBootstrapForm())
 	{
 		@Html.Partial("_EditFields")
+		@Html.BootstrapEditorFor(model => model.IsActivated)
 		<hr/>
 		@Html.BootstrapButton(Dictionary.Create)
 		@Html.BootstrapBackToListButton()

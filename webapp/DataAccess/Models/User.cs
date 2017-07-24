@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using DataAnnotationsExtensions;
 using K9.DataAccess.Attributes;
 using K9.Globalisation;
@@ -45,6 +46,10 @@ namespace K9.DataAccess.Models
 
 		[Display(ResourceType = typeof (Dictionary), Name = Strings.Labels.IsUnsubscribedLabel)]
 		public bool IsUnsubscribed{ get; set; }
+
+		[NotMapped]
+		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AccountActivated)]
+		public bool AccountActivated { get; set; }
 
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AccountActivated)]
 		public bool IsActivated

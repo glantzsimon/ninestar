@@ -27,7 +27,7 @@ namespace K9.WebApplication.Controllers
 		void UsersController_RecordCreated(object sender, CrudEventArgs e)
 		{
 			var user = e.Item as User;
-			WebSecurity.CreateAccount(user.Username, _dataConfig.Value.DefaultUserPassword, true);
+			WebSecurity.CreateAccount(user.Username, _dataConfig.Value.DefaultUserPassword, !user.AccountActivated);
 		}
 
 	}

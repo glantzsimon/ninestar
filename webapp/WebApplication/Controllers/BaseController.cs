@@ -587,7 +587,7 @@ namespace K9.WebApplication.Controllers
 				new Crumb
 				{
 					Label = typeof (T).GetPluralName(),
-					ActionName = typeof (T).GetListName(),
+					ActionName = "Index",
 					ControllerName = typeof (T).GetControllerName()
 				}
 			};

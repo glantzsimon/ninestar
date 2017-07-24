@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using K9.DataAccess.Config;
 using K9.DataAccess.Models;
+using K9.WebApplication.Exceptions;
 using K9.WebApplication.Options;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -45,6 +47,30 @@ namespace K9.WebApplication.Tests.Unit
 			Assert.AreEqual("ThreeLetterCountryCode", propertyInfos.First().Name);
 			Assert.AreEqual("Id", propertyInfos[1].Name);
 			Assert.AreEqual("TwoLetterCountryCode", propertyInfos[2].Name);
+		}
+
+		[TestMethod]
+		public void GetColumns_ShouldThrowError_ForInvalidColumn()
+		{
+			var options = new DataTableOptions<Country>
+			{
+				ColumnsConfig = new ColumnsConfig(),
+				VisibleColumns = new List<string>
+				{
+					"ThreeLetterCountryCode",
+					"InvalidColumn",
+					"TwoLetterCountryCode"
+				}
+			};
+
+			try
+			{
+				var propertyInfos = options.GetColumns();
+			}
+			catch (Exception ex)
+			{
+				Assert.IsTrue(ex.GetType() == typeof(InvalidColumnNameException));
+			}
 		}
 
 	}

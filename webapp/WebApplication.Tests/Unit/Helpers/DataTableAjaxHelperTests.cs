@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using K9.DataAccess.Config;
 using K9.DataAccess.Models;
 using K9.SharedLibrary.Extensions;
+using K9.WebApplication.Exceptions;
 using K9.WebApplication.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
@@ -231,9 +233,71 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 		[TestMethod]
 		public void EnsureNameProperty_IsIncludedInProperties()
 		{
-			var props = typeof (Country).GetProperties();
+			var props = typeof(Country).GetProperties();
 
 			Assert.AreEqual(1, props.Count(p => p.Name == "Name"));
+		}
+
+		[TestMethod]
+		public void ShouldThrowError_WhenTryingToPassUserId_AndNoUserIdColumnFound()
+		{
+			var querystring = new NameValueCollection
+			{
+				{"draw", "1"},
+				{"start", "0"},
+				{"length", "10"},
+				{"search[value]", ""},
+				{"search[regex]", "false"},
+				{"order[0][column]", "0"},
+				{"order[0][dir]", "asc"},
+				{"columns[0][data]", "Id"},
+				{"columns[0][name]", "Id"}
+			};
+
+			var helper = new DataTableAjaxHelper<Message>(new Mock<ILogger>().Object, new ColumnsConfig());
+			helper.LoadQueryString(querystring);
+
+			try
+			{
+				helper.GetQuery(true, 4);
+			}
+			catch (Exception ex)
+			{
+				Assert.IsTrue(ex.GetType() == typeof(InvalidColumnNameException));
+			}
+		}
+
+		[TestMethod]
+		public void WhereClause_ShouldIncludeUserIdFilter()
+		{
+			var querystring = new NameValueCollection
+			{
+				{"draw", "1"},
+				{"start", "0"},
+				{"length", "10"},
+				{"search[value]", ""},
+				{"search[regex]", "false"},
+				{"order[0][column]", "0"},
+				{"order[0][dir]", "asc"},
+				{"columns[0][data]", "Id"},
+				{"columns[0][name]", "Id"}
+			};
+
+			var helper = new DataTableAjaxHelper<Message>(new Mock<ILogger>().Object, new ColumnsConfig());
+			helper.LoadQueryString(querystring);
+
+			Assert.AreEqual("WITH RESULTS AS " +
+			                "(SELECT [Message].*, " +
+			                "[User].[Name] AS [SentToUserName], " +
+			                "[User1].[Name] AS [SentByUserName], " +
+			                "[User2].[Name] AS [UserName], " +
+			                "ROW_NUMBER() OVER (ORDER BY [Message].[Id] ASC) AS RowNum " +
+			                "FROM [Message] " +
+			                "JOIN [User] AS [User] ON [User].[Id] = [Message].[SentToUserId] " +
+			                "JOIN [User] AS [User1] ON [User1].[Id] = [Message].[SentByUserId] " +
+			                "JOIN [User] AS [User2] ON [User2].[Id] = [Message].[UserId] " +
+			                "WHERE [Message].[UserId] = 4) " +
+			                "SELECT * FROM RESULTS WHERE RowNum BETWEEN 0 AND 10", helper.GetQuery(true, 4));
 		}
 
 	}

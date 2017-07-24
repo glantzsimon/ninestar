@@ -1,5 +1,7 @@
 ﻿@model User
-
+@{
+	Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
 @using (Html.BeginForm())
 {
 	using (Html.BeginBootstrapForm())
@@ -10,7 +12,7 @@
 		@Html.BootstrapButton(Dictionary.Update)
 		if (!WebSecurity.IsConfirmed(Model.Username))
 		{
-			@Html.BootstrapLinkButton(Dictionary.ActivateAccount, "ActivateAccount", "Account")
+			@Html.BootstrapActionLinkButton(Dictionary.ActivateAccount, "ActivateAccount", "Account")
 		}
 		@Html.BootstrapBackToListButton()
 	}

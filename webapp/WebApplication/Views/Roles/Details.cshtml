@@ -1,7 +1,9 @@
 ﻿@using K9.SharedLibrary.Authentication
 @using K9.WebApplication.Extensions
 @model Role
-
+@{
+	Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
 @using (Html.BeginForm())
 {
 	using (Html.BeginBootstrapForm())

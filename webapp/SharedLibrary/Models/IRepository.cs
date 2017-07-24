@@ -18,6 +18,8 @@ namespace K9.SharedLibrary.Models
 
 		List<ListItem> ItemList();
 
+		List<TModel> CustomQuery<TModel>(string sql) where TModel : class;
+
 		void Create(T item);
 
 		void CreateBatch(List<T> items);

@@ -8,6 +8,10 @@
 		@Html.Partial("_EditFields")
 		<hr/>
 		@Html.BootstrapButton(Dictionary.Update)
+		if (!WebSecurity.IsConfirmed(Model.Username))
+		{
+			@Html.BootstrapLinkButton(Dictionary.ActivateAccount, "ActivateAccount", "Account")
+		}
 		@Html.BootstrapBackToListButton()
 	}
 }

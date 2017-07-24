@@ -160,6 +160,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Activate Account.
+        /// </summary>
+        public static string ActivateAccount {
+            get {
+                return ResourceManager.GetString("ActivateAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Additional Information.
         /// </summary>
         public static string AdditionalInformation {

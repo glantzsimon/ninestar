@@ -14,5 +14,10 @@ namespace K9.WebApplication.Controllers
 		public HomeController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles) : base(logger, dataSetsHelper, roles)
 		{
 		}
+
+		public override string GetObjectName()
+		{
+			return string.Empty;
+		}
 	}
 }

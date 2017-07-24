@@ -10,6 +10,8 @@ using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.Enums;
+using K9.WebApplication.Exceptions;
+using K9.WebApplication.Filters;
 using K9.WebApplication.Models;
 using K9.WebApplication.Options;
 using NLog;
@@ -17,21 +19,26 @@ using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
 {
-	public class AccountController : Controller
+	public class AccountController : BaseController
 	{
 		private readonly IRepository<User> _repository;
 		private readonly ILogger _logger;
 		private readonly IMailer _mailer;
 		private readonly IOptions<WebsiteConfiguration> _websiteConfig;
+		private readonly IDataSetsHelper _dataSetsHelper;
+		private readonly IRoles _roles;
 
 		#region Constructors
 
-		public AccountController(IRepository<User> repository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig)
+		public AccountController(IRepository<User> repository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles)
+			: base(logger, dataSetsHelper, roles)
 		{
 			_repository = repository;
 			_logger = logger;
 			_mailer = mailer;
 			_websiteConfig = websiteConfig;
+			_dataSetsHelper = dataSetsHelper;
+			_roles = roles;
 		}
 
 		#endregion
@@ -341,7 +348,7 @@ namespace K9.WebApplication.Controllers
 			if (user == null)
 			{
 				_logger.Error("SendPasswordResetEmail failed as no user was found. PasswordResetRequestModel: {0}", model);
-				throw new NullReferenceException();
+				throw new NullReferenceException("User cannot be null");
 			}
 
 			var firstName = user.FirstName;
@@ -405,6 +412,25 @@ namespace K9.WebApplication.Controllers
 			return RedirectToAction("AccountActivated", "Account", new { userName });
 		}
 
+		[RequirePermissions(Permission = Permissions.Edit)]
+		public ActionResult ActivateAccount(string userName)
+		{
+			var user = _repository.Find(u => u.Username == userName).First();
+			if (user == null)
+			{
+				_logger.Error("ActivateAccount failed as no user was found.");
+				return RedirectToAction("AccountActivationFailed", "Account");
+			}
+
+			if (WebSecurity.IsConfirmed(userName))
+			{
+				return RedirectToAction("AccountAlreadyActivated", "Account");
+			}
+
+			var token = GetAccountActivationToken(user.Id);
+			return ActivateAccount(userName, token);
+		}
+
 		private string GetActivationLink(UserAccount.RegisterModel model, string token)
 		{
 			return Url.AsboluteAction("ActivateAccount", "Account", new { userName = model.UserName, token });
@@ -432,6 +458,11 @@ namespace K9.WebApplication.Controllers
 
 
 		#region Helpers
+
+		public override string GetObjectName()
+		{
+			return typeof (User).Name;
+		}
 
 		public enum ManageMessageId
 		{
@@ -482,7 +513,14 @@ namespace K9.WebApplication.Controllers
 			}
 		}
 
-		#endregion
+		private string GetAccountActivationToken(int userId)
+		{
+			string sql = string.Format("SELECT ConfirmationToken FROM webpages_Membership " +
+									   "WHERE UserId = {0}", userId);
+			return _repository.CustomQuery<string>(sql).FirstOrDefault();
+		}
 
+		#endregion
+		
 	}
 }

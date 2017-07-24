@@ -44,6 +44,11 @@ namespace K9.DataAccess.Respositories
 			return _db.GetQuery<ListItem>(string.Format("SELECT [Id], [Name] FROM [{0}] ORDER BY [Name]", typeof(T).Name));
 		}
 
+		public List<TModel> CustomQuery<TModel>(string sql) where TModel : class
+		{
+			return _db.GetQuery<TModel>(sql);
+		}
+
 		public void Create(T item)
 		{
 			item.UpdateAuditFields();

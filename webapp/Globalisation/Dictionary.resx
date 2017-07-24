@@ -556,4 +556,7 @@
   <data name="IsUnsubscribedLabel" xml:space="preserve">
     <value>Do Not Mail</value>
   </data>
+  <data name="ActivateAccount" xml:space="preserve">
+    <value>Activate Account</value>
+  </data>
 </root>

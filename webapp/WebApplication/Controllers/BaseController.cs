@@ -47,10 +47,7 @@ namespace K9.WebApplication.Controllers
 			}
 		}
 
-		public string GetObjectName()
-		{
-			throw new NotImplementedException();
-		}
+		public abstract string GetObjectName();
 
 		public BaseController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles)
 		{

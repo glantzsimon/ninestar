@@ -559,4 +559,7 @@
   <data name="IsUnsubscribedLabel" xml:space="preserve">
     <value>Exclure de Toute Liste d'Infusion</value>
   </data>
+  <data name="ActivateAccount" xml:space="preserve">
+    <value>Activer Compte</value>
+  </data>
 </root>

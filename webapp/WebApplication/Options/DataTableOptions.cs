@@ -105,7 +105,8 @@ namespace K9.WebApplication.Options
 				GetColumnInfos().Select(c => new
 				{
 					targets = new[] { c.Index },
-					visible = c.IsVisible
+					visible = c.IsVisible,
+					dataType = c.DataType
 				})));
 		}
 
@@ -126,8 +127,8 @@ namespace K9.WebApplication.Options
 					var info = new DataTableColumnInfo(index)
 					{
 						IsDatabound = c.IsDataBound(),
-						IsVisible =
-							!keyColumns.Select(k => k.Name).Contains(c.Name) && (!VisibleColumns.Any() || VisibleColumns.Contains(c.Name))
+						IsVisible = !keyColumns.Select(k => k.Name).Contains(c.Name) && (!VisibleColumns.Any() || VisibleColumns.Contains(c.Name)),
+						DataType = c.PropertyType.ToString().ToLower()
 					};
 					info.UpdateData(c.Name);
 					info.UpdateName(c.GetDisplayName());

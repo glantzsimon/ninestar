@@ -45,6 +45,7 @@ namespace K9.Globalisation
 			public const string MessageDirectionLabel = "MessageDirectionLabel";
 			public const string SubjectLabel = "SubjectLabel";
 			public const string BodyLabel = "BodyLabel";
+			public const string IsUnsubscribedLabel = "IsUnsubscribedLabel";
 		}
 
 		public class Grammar

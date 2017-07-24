@@ -556,4 +556,7 @@
   <data name="Success" xml:space="preserve">
     <value>Succès</value>
   </data>
+  <data name="IsUnsubscribedLabel" xml:space="preserve">
+    <value>Exclure de Toute Liste d'Infusion</value>
+  </data>
 </root>

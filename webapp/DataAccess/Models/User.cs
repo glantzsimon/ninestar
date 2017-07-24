@@ -43,6 +43,9 @@ namespace K9.DataAccess.Models
 		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 		public DateTime BirthDate { get; set; }
 
+		[Display(ResourceType = typeof (Dictionary), Name = Strings.Labels.IsUnsubscribedLabel)]
+		public bool IsUnsubscribed{ get; set; }
+
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AccountActivated)]
 		public bool IsActivated
 		{
@@ -51,7 +54,7 @@ namespace K9.DataAccess.Models
 				return WebSecurity.Initialized && WebSecurity.IsConfirmed(Username);
 			}
 		}
-
+		
 		public override void UpdateName()
 		{
 			Name = string.Format("{0} {1}", FirstName, LastName);

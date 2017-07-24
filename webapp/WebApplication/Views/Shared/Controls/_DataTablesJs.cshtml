@@ -26,15 +26,27 @@
 		return buttons == "" ? null : buttons;
 	};
 
+	function renderYesNo(data, type, row) {
+		return data ? '@Dictionary.Yes' : '@Dictionary.No';
+	}
+
 	function getColumnDefs() {
 		var columnDefs = @Model.GetColumnDefsJson();
+
+		$(columnDefs).each(function() {
+			var c = this;
+			if (c.dataType === 'system.boolean') {
+				c.render = renderYesNo;
+			}
+		});
+
 		if (@Model.AllowCrud().ToString().ToLower()) {
 			columnDefs.push({
 				data: null,
 				targets: [@Model.GetColumnInfos().Count],
 				render: @Model.GetButtonRenderFunction()
 			});
-		}		
+		}
 		return columnDefs;
 	}
 

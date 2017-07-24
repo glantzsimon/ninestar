@@ -142,6 +142,7 @@ namespace K9.WebApplication.Controllers
 		#region Views
 
 		[RequirePermissions(Permission = Permissions.View)]
+		[OutputCache(NoStore = true, Duration = 0)]
 		public virtual ActionResult Index()
 		{
 			SetTitle();

@@ -454,6 +454,8 @@ namespace K9.WebApplication.Helpers
 
 		public bool IsVisible { get; set; }
 
+		public string DataType { get; set; }
+
 		public void UpdateData(string data)
 		{
 			_data = data;

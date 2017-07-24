@@ -27,6 +27,7 @@ namespace K9.WebApplication.Helpers
 		bool IsRegexSearch { get; }
 		bool IsDatabound { get; set; }
 		string Renderer { get; set; }
+		string DataType { get; set; }
 		bool IsVisible { get; set; }
 
 		void UpdateData(string data);

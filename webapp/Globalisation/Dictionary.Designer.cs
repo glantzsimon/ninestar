@@ -682,6 +682,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do Not Mail.
+        /// </summary>
+        public static string IsUnsubscribedLabel {
+            get {
+                return ResourceManager.GetString("IsUnsubscribedLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Last Name.
         /// </summary>
         public static string LastNameLabel {

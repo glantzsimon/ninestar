@@ -14,6 +14,7 @@ using K9.WebApplication.Exceptions;
 using K9.WebApplication.Extensions;
 using K9.WebApplication.Filters;
 using K9.WebApplication.Helpers;
+using K9.WebApplication.Models;
 using K9.WebApplication.ViewModels;
 using Newtonsoft.Json;
 using NLog;
@@ -168,6 +169,8 @@ namespace K9.WebApplication.Controllers
 			var type = typeof(T);
 			ViewBag.SubTitle = string.Format(Dictionary.DetailsText, type.GetName(), type.GetOfPreposition().ToLower());
 
+			AddSectionBreadcrum();
+
 			return View(item);
 		}
 
@@ -221,7 +224,7 @@ namespace K9.WebApplication.Controllers
 		{
 			var itemToCreate = Activator.CreateInstance<T>();
 
-			if (typeof (T).ImplementsIUserData())
+			if (typeof(T).ImplementsIUserData())
 			{
 				itemToCreate.SetProperty("UserId", WebSecurity.CurrentUserId);
 			}
@@ -235,6 +238,8 @@ namespace K9.WebApplication.Controllers
 			{
 				itemToCreate.SetProperty(statelessFilter.Key, statelessFilter.Id);
 			}
+
+			AddSectionBreadcrum();
 
 			return View(itemToCreate);
 		}
@@ -272,6 +277,8 @@ namespace K9.WebApplication.Controllers
 			SetTitle();
 			ViewBag.SubTitle = string.Format("{0} {1}{2}", Dictionary.CreateNew, typeof(T).GetName(), GetStatelessFilterTitle());
 
+			AddSectionBreadcrum();
+
 			return View(item);
 		}
 
@@ -298,6 +305,8 @@ namespace K9.WebApplication.Controllers
 
 			SetTitle();
 			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Edit, typeof(T).GetName());
+
+			AddSectionBreadcrum();
 
 			return View(item);
 		}
@@ -346,6 +355,8 @@ namespace K9.WebApplication.Controllers
 			SetTitle();
 			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Edit, typeof(T).GetName());
 
+			AddSectionBreadcrum();
+
 			return View(item);
 		}
 
@@ -372,6 +383,8 @@ namespace K9.WebApplication.Controllers
 
 			SetTitle();
 			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Delete, typeof(T).GetName());
+
+			AddSectionBreadcrum();
 
 			return View(item);
 		}
@@ -426,6 +439,8 @@ namespace K9.WebApplication.Controllers
 			SetTitle();
 			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Delete, typeof(T).GetName());
 
+			AddSectionBreadcrum();
+
 			return View(item);
 		}
 
@@ -457,6 +472,8 @@ namespace K9.WebApplication.Controllers
 
 			SetTitle();
 			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Edit, typeof(T).GetPluralName());
+
+			AddSectionBreadcrum();
 
 			return View("EditMultiple", MultiSelectViewModel.Create<T, T2, T3>(parent, _repository.GetAllBy<T2, T3>(parent.Id)));
 		}
@@ -494,6 +511,8 @@ namespace K9.WebApplication.Controllers
 				ModelState.AddModelError("", ex.Message);
 			}
 
+			AddSectionBreadcrum();
+
 			return View("EditMultiple", model);
 		}
 
@@ -501,6 +520,23 @@ namespace K9.WebApplication.Controllers
 
 
 		#region Helper Methods
+
+		protected void SetTitle()
+		{
+			ViewBag.Title = typeof(T).GetPluralName();
+		}
+
+		public ActionResult HttpForbidden()
+		{
+			HttpContext.Response.StatusCode = (int)HttpStatusCode.Forbidden;
+			return View("Unauthorized");
+		}
+
+		public new ActionResult HttpNotFound()
+		{
+			HttpContext.Response.StatusCode = (int)HttpStatusCode.NotFound;
+			return View("NotFound");
+		}
 
 		private string GetStatelessFilterTitle()
 		{
@@ -544,21 +580,16 @@ namespace K9.WebApplication.Controllers
 			return true;
 		}
 
-		protected void SetTitle()
+		private void AddSectionBreadcrum()
 		{
-			ViewBag.Title = typeof(T).GetPluralName();
-		}
-
-		public ActionResult HttpForbidden()
-		{
-			HttpContext.Response.StatusCode = (int)HttpStatusCode.Forbidden;
-			return View("Unauthorized");
-		}
-
-		public new ActionResult HttpNotFound()
-		{
-			HttpContext.Response.StatusCode = (int)HttpStatusCode.NotFound;
-			return View("NotFound");
+			ViewBag.BreadCrumbs = new List<Crumb>
+			{
+				new Crumb
+				{
+					ActionName = typeof (T).GetPluralName(),
+					ControllerName = typeof (T).GetControllerName()
+				}
+			};
 		}
 
 		#endregion

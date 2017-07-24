@@ -49,5 +49,10 @@ namespace K9.WebApplication.Extensions
 			var baseController = view.ViewContext.Controller as IBaseController;
 			return baseController.Roles;
 		}
+
+		public static string GetControllerName(this Type type)
+		{
+			return type.Name.Replace("Controller", string.Empty);
+		}
 	}
 }

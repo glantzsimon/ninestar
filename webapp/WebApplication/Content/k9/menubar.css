@@ -9,5 +9,6 @@
 
 .menu-bar h3
 {
+	display: inline-block;
 	margin-top: 13px;
 }

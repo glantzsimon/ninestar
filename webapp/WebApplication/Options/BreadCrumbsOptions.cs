@@ -44,14 +44,13 @@ namespace K9.WebApplication.Options
 
 			homeCrumb.IsActive = IsCrumbActive(homeCrumb);
 			crumbs.Add(homeCrumb);
-
 			crumbs.AddRange(_crumbs);
 
 			if (!crumbs.Any(c => c.IsActive))
 			{
 				var activeCrumb = new Crumb
 				{
-					Label = _viewContext.ViewBag.Title,
+					Label = _viewContext.ViewBag.SubTitle ?? _viewContext.ViewBag.Title,
 					ControllerName = GetActiveControllerName(),
 					ActionName = GetActiveActionName(),
 					IsActive = true
@@ -75,7 +74,7 @@ namespace K9.WebApplication.Options
 		{
 			return
 				GetActiveControllerName() == crumb.ControllerName &&
-				GetActiveActionName()	== crumb.ActionName;
+				GetActiveActionName() == crumb.ActionName;
 
 		}
 	}

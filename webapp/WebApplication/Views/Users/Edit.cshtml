@@ -12,7 +12,7 @@
 		@Html.BootstrapButton(Dictionary.Update)
 		if (!WebSecurity.IsConfirmed(Model.Username))
 		{
-			@Html.BootstrapActionLinkButton(Dictionary.ActivateAccount, "ActivateAccount", "Account")
+			@Html.BootstrapActionLinkButton(Dictionary.ActivateAccount, "ActivateAccount", "Account", new {})
 		}
 		@Html.BootstrapBackToListButton()
 	}

@@ -343,7 +343,7 @@ namespace K9.WebApplication.Controllers
 		{
 			var resetPasswordLink = GetPasswordResetLink(model, token);
 			var imageUrl = Url.AbsoluteContent(_websiteConfig.Value.CompanyLogoUrl);
-			var user = _repository.Find(u => u.Username == model.UserName).First();
+			var user = _repository.Find(u => u.Username == model.UserName).FirstOrDefault();
 
 			if (user == null)
 			{
@@ -401,11 +401,13 @@ namespace K9.WebApplication.Controllers
 		{
 			if (WebSecurity.IsConfirmed(userName))
 			{
+				_logger.Error(string.Format("Account already activated for user '{0}'."), userName);
 				return RedirectToAction("AccountAlreadyActivated", "Account");
 			}
 
 			if (!WebSecurity.ConfirmAccount(userName, token))
 			{
+				_logger.Error(string.Format("ActivateAccount failed as user '{0}' was not found."), userName);
 				return RedirectToAction("AccountActivationFailed", "Account");
 			}
 
@@ -413,22 +415,17 @@ namespace K9.WebApplication.Controllers
 		}
 
 		[RequirePermissions(Permission = Permissions.Edit)]
-		public ActionResult ActivateAccount(string userName)
+		public ActionResult ActivateAccount(int userId)
 		{
-			var user = _repository.Find(u => u.Username == userName).First();
+			var user = _repository.Find(u => u.Id == userId).FirstOrDefault();
 			if (user == null)
 			{
 				_logger.Error("ActivateAccount failed as no user was found.");
 				return RedirectToAction("AccountActivationFailed", "Account");
 			}
 
-			if (WebSecurity.IsConfirmed(userName))
-			{
-				return RedirectToAction("AccountAlreadyActivated", "Account");
-			}
-
 			var token = GetAccountActivationToken(user.Id);
-			return ActivateAccount(userName, token);
+			return ActivateAccount(user.Username, token);
 		}
 
 		private string GetActivationLink(UserAccount.RegisterModel model, string token)

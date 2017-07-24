@@ -93,16 +93,11 @@ namespace K9.SharedLibrary.Extensions
 		{
 			return view.ViewContext.HttpContext.Request.QueryString[key];
 		}
-
-		public static ViewDataDictionary GetFilteredViewData(this WebViewPage view)
-		{
-			return GetFilteredViewData(view, "SubTitle", "Crumbs", "IsPopupAlert", "AlertOptions");
-		}
-
+		
 		public static ViewDataDictionary GetFilteredViewData(this WebViewPage view, params string[] keysToExclude)
 		{
 			var dictionary = new ViewDataDictionary();
-			foreach (var item in view.ViewContext.ViewData.Where(_ => keysToExclude.Contains(_.Key)))
+			foreach (var item in view.ViewContext.ViewData.Where(_ => !keysToExclude.Contains(_.Key)))
 			{
 				dictionary.Add(item.Key, item.Value);
 			}

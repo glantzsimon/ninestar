@@ -55,9 +55,5 @@ namespace K9.WebApplication.Extensions
 			return type.Name.Replace("Controller", string.Empty);
 		}
 
-		public static ViewDataDictionary GetFilteredViewData(this WebViewPage view)
-		{
-			return SharedLibrary.Extensions.MvcExtensions.GetFilteredViewData(view, "SubTitle", "Crumbs", "IsPopupAlert", "AlertOptions");
-		}
 	}
 }

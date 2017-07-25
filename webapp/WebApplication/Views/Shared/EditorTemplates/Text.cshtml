@@ -1,5 +1,4 @@
-﻿@using K9.WebApplication.Extensions
-@model Object
+﻿@model Object
 @{
 }
-@Html.TextBoxFor(model => model, this.GetFilteredViewData())
+@Html.TextBoxFor(model => model, ViewData["htmlAttributes"])

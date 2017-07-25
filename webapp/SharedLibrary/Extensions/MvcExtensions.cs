@@ -94,16 +94,6 @@ namespace K9.SharedLibrary.Extensions
 			return view.ViewContext.HttpContext.Request.QueryString[key];
 		}
 		
-		public static ViewDataDictionary GetFilteredViewData(this WebViewPage view, params string[] keysToExclude)
-		{
-			var dictionary = new ViewDataDictionary();
-			foreach (var item in view.ViewContext.ViewData.Where(_ => !keysToExclude.Contains(_.Key)))
-			{
-				dictionary.Add(item.Key, item.Value);
-			}
-			return dictionary;
-		}
-
 		public static string GetDateTimeDisplayFormat(this CultureInfo cultureInfo)
 		{
 			return string.Format("{0} {1}", cultureInfo.DateTimeFormat.ShortDatePattern, cultureInfo.DateTimeFormat.ShortTimePattern);

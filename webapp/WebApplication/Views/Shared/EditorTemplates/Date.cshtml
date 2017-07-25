@@ -1,7 +1,6 @@
-﻿@using K9.WebApplication.Extensions
-@model Object
+﻿@model Object
 <div class="input-group date dateonly">
-	@Html.TextBoxFor(model => model, this.GetFilteredViewData())
+	@Html.TextBoxFor(model => model, ViewData["htmlAttributes"])
 	<span class="input-group-addon">
         <span class="glyphicon glyphicon-calendar"></span>
     </span>

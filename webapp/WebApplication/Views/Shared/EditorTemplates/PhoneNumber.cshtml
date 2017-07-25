@@ -1,7 +1,6 @@
 ﻿@using K9.SharedLibrary.Extensions
-@using K9.WebApplication.Extensions;
 @model Object
 @{
 	ViewData.MergeAttribute(K9.WebApplication.Constants.Html.Attributes.Type, K9.WebApplication.Constants.Html.Types.Telephone);
 }
-@Html.TextBoxFor(model => model, this.GetFilteredViewData())
+@Html.TextBoxFor(model => model, ViewData["htmlAttributes"])

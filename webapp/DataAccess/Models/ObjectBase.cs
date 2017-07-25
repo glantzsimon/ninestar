@@ -164,7 +164,7 @@ namespace K9.DataAccess.Models
 		public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
 		{
 			UpdateNameField();
-			if (string.IsNullOrEmpty(Name))
+			if (string.IsNullOrEmpty(this.GetProperty("Name").ToString()))
 			{
 				yield return new ValidationResult(Dictionary.FieldIsRequired, new[] { "Name" });
 			}

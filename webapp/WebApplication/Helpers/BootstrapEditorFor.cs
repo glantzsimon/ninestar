@@ -32,13 +32,9 @@ namespace K9.WebApplication.Helpers
 				viewDataDictionary.MergeAttribute(Attributes.Class, Bootstrap.Classes.FormControl);
 			}
 
-			var htmlAttributes = new
-			{
-				@class = viewDataDictionary[Attributes.Class],
-				placeholder = options.PlaceHolder,
-				title = ""
-			};
-
+			viewDataDictionary.MergeAttribute(Attributes.PlaceHolder,  options.PlaceHolder);
+			viewDataDictionary.MergeAttribute(Attributes.Title,  string.Empty);
+				
 			// Get container div
 			var div = new TagBuilder(Tags.Div);
 			var attributes = new Dictionary<string, object>();
@@ -59,11 +55,11 @@ namespace K9.WebApplication.Helpers
 
 			if (options.IsReadOnly)
 			{
-				sb.AppendLine(html.DisplayFor(expression, new { htmlAttributes }).ToString());
+				sb.AppendLine(html.DisplayFor(expression, new { viewDataDictionary }).ToString());
 			}
 			else
 			{
-				sb.AppendLine(html.EditorFor(expression, new { htmlAttributes }).ToString());
+				sb.AppendLine(html.EditorFor(expression, new { viewDataDictionary }).ToString());
 				sb.AppendLine(html.ValidationMessageFor(expression).ToString());
 			}
 			sb.AppendLine(div.ToString(TagRenderMode.EndTag));

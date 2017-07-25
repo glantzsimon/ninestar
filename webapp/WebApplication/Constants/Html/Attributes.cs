@@ -19,6 +19,7 @@ namespace K9.WebApplication.Constants.Html
 		public const string Width = "width";
 		public const string DataUrl = "data-url";
 		public const string Href = "href";
+		public const string Title = "title";
 		
 	}
 

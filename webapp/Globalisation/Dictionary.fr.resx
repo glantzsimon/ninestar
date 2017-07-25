@@ -178,7 +178,7 @@
     <value>Nine Star Ki</value>
   </data>
   <data name="PasswordLabel" xml:space="preserve">
-    <value>Mode de Passe</value>
+    <value>Mot de Passe</value>
   </data>
   <data name="PasswordMatchError" xml:space="preserve">
     <value>Le mot de passe de confirmation de correspond pas.</value>

@@ -1,6 +1,6 @@
 ﻿@using K9.SharedLibrary.Extensions
 @model Object
 @{
-	ViewData.MergeAttribute(K9.WebApplication.Constants.Html.Attributes.Type, K9.WebApplication.Constants.Html.Types.Telephone);
+	((ViewDataDictionary)ViewData["viewDataDictionary"]).MergeAttribute(K9.WebApplication.Constants.Html.Attributes.Type, K9.WebApplication.Constants.Html.Types.Telephone);
 }
-@Html.TextBoxFor(model => model, ViewData["htmlAttributes"])
+@Html.TextBoxFor(model => model, ViewData["viewDataDictionary"])

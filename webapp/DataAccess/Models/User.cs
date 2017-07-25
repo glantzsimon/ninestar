@@ -56,6 +56,13 @@ namespace K9.DataAccess.Models
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AccountActivated)]
 		public bool AccountActivated { get; set; }
 
+		[NotMapped]
+		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+		[StringLength(100, ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.PasswordMinLengthError, MinimumLength = 8)]
+		[DataType(DataType.Password)]
+		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PasswordLabel)]
+		public string Password { get; set; }
+
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AccountActivated)]
 		public bool IsActivated
 		{

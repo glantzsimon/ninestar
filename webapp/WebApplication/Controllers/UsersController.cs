@@ -22,12 +22,19 @@ namespace K9.WebApplication.Controllers
 		{
 			_dataConfig = dataConfig;
 			RecordCreated += UsersController_RecordCreated;
+			RecordBeforeCreate += UsersController_RecordBeforeCreate;
+		}
+
+		void UsersController_RecordBeforeCreate(object sender, CrudEventArgs e)
+		{
+			var user = e.Item as User;
+			user.Password = _dataConfig.Value.DefaultUserPassword;
 		}
 
 		void UsersController_RecordCreated(object sender, CrudEventArgs e)
 		{
 			var user = e.Item as User;
-			WebSecurity.CreateAccount(user.Username, _dataConfig.Value.DefaultUserPassword, !user.AccountActivated);
+			WebSecurity.CreateAccount(user.Username, user.Password, !user.AccountActivated);
 		}
 
 	}

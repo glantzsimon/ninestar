@@ -22,13 +22,7 @@ namespace K9.DataAccess.Models
 	[Name(ResourceType = typeof(Dictionary), Name = Strings.Names.Message)]
 	public class Message : ObjectBase, IUserData
 	{
-
-		public Message()
-		{
-			SentOn = DateTime.Now;
-			SentByUserId = WebSecurity.IsAuthenticated ? WebSecurity.CurrentUserId : 0;
-		}
-
+		
 		[ForeignKey("User")]
 		[UIHint("User")]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Names.User)]

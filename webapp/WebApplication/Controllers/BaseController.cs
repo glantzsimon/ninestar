@@ -73,6 +73,7 @@ namespace K9.WebApplication.Controllers
 
 		#region Events
 
+		public event EventHandler<CrudEventArgs> RecordBeforeCreate;
 		public event EventHandler<CrudEventArgs> RecordCreated;
 		public event EventHandler<CrudEventArgs> RecordDeleted;
 		public event EventHandler<CrudEventArgs> RecordUpdated;
@@ -235,6 +236,14 @@ namespace K9.WebApplication.Controllers
 			if (statelessFilter.IsSet())
 			{
 				itemToCreate.SetProperty(statelessFilter.Key, statelessFilter.Id);
+			}
+
+			if (RecordBeforeCreate != null)
+			{
+				RecordBeforeCreate(this, new CrudEventArgs
+				{
+					Item = itemToCreate
+				});
 			}
 
 			AddControllerBreadcrumb();

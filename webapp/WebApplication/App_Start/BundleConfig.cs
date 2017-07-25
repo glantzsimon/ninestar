@@ -10,6 +10,7 @@ namespace K9.WebApplication
 				"~/Content/elements.css",
 				"~/Content/classes.css",
 				"~/Content/validation.css",
+				"~/Content/botf.css",
 				"~/Content/k9/*.css",
 				"~/Content/tablet.css",
 				"~/Content/mobile.css"));

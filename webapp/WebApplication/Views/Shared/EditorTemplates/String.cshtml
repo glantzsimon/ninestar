@@ -1,4 +1,4 @@
 ﻿@model Object
 @{
 }
-@Html.TextBoxFor(model => model, ViewData["viewDataDictionary"])
+@Html.TextBoxFor(model => model, ViewData["viewDataDictionary"] as IDictionary<string, object>)

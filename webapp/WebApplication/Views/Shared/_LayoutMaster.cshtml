@@ -32,15 +32,15 @@
 	@Styles.Render("~/Content/css")
 </head>
 <body>
+<div id="pageFadeInOverlay"></div>
 <div id="pageSpinner"></div>
 <div id="pageOverlay"></div>
+@Html.ImageLoader("Images/background/slides")
 @Html.BackgroundImageSwitcher(new BackgroundImageSwitcherOptions("Images/background/slides")
 {
 	Interval = 20000
 })
-<nav class="navbar navbar-default">
-	@Html.Partial("_Navbar")
-</nav>
+@Html.Partial("_Navbar")
 @RenderSection("menu", false)
 <div class="container-fluid main-container">
 	@RenderSection("layout")

@@ -562,4 +562,19 @@
   <data name="ActivateAccount" xml:space="preserve">
     <value>Activer Compte</value>
   </data>
+  <data name="AboutUs" xml:space="preserve">
+    <value>A Propos de Nous</value>
+  </data>
+  <data name="Archive" xml:space="preserve">
+    <value>Archive</value>
+  </data>
+  <data name="HelpUs" xml:space="preserve">
+    <value>Aider Nous</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>Nouvelles</value>
+  </data>
+  <data name="OurMission" xml:space="preserve">
+    <value>Notre Mission</value>
+  </data>
 </root>

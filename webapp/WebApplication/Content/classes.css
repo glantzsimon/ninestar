@@ -49,9 +49,9 @@
 
 .shadow-deep
 {
-	-webkit-box-shadow: 0 0 64px rgba(0, 0, 0, 0.8);
-	-moz-box-shadow: 0 0 64px rgba(0, 0, 0, 0.8);
-	box-shadow: 0 0 64px rgba(0, 0, 0, 0.8);
+	-webkit-box-shadow: 0 0 80px rgba(0, 0, 0, 1.2);
+	-moz-box-shadow: 0 0 80px rgba(0, 0, 0, 1.2);
+	box-shadow: 0 0 80px rgba(0, 0, 0, 1.2);
 }
 
 .small-form

@@ -4,10 +4,10 @@ using NLog;
 
 namespace K9.WebApplication.Controllers
 {
-	public class HomeController : BaseController
+	public class AboutUsController : BaseController
 	{
 
-		public HomeController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles)
+		public AboutUsController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles)
 			: base(logger, dataSetsHelper, roles)
 		{
 		}
@@ -16,7 +16,17 @@ namespace K9.WebApplication.Controllers
 		{
 			return View();
 		}
-		
+
+		public ActionResult OurMission()
+		{
+			return View();
+		}
+
+		public ActionResult HelpUs()
+		{
+			return View();
+		}
+
 		public override string GetObjectName()
 		{
 			return string.Empty;

@@ -61,6 +61,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Us.
+        /// </summary>
+        public static string AboutUs {
+            get {
+                return ResourceManager.GetString("AboutUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Account Activated.
         /// </summary>
         public static string AccountActivated {
@@ -201,6 +210,15 @@ namespace K9.Globalisation {
         public static string AllRightsReserved {
             get {
                 return ResourceManager.GetString("AllRightsReserved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Archive.
+        /// </summary>
+        public static string Archive {
+            get {
+                return ResourceManager.GetString("Archive", resourceCulture);
             }
         }
         
@@ -610,6 +628,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Help Us.
+        /// </summary>
+        public static string HelpUs {
+            get {
+                return ResourceManager.GetString("HelpUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         public static string Home {
@@ -862,6 +889,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to News.
+        /// </summary>
+        public static string News {
+            get {
+                return ResourceManager.GetString("News", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nine Star Ki.
         /// </summary>
         public static string NineStarKiTitle {
@@ -921,6 +957,15 @@ namespace K9.Globalisation {
         public static string Oops {
             get {
                 return ResourceManager.GetString("Oops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Our Mission.
+        /// </summary>
+        public static string OurMission {
+            get {
+                return ResourceManager.GetString("OurMission", resourceCulture);
             }
         }
         

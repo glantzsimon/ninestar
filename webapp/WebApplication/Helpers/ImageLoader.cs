@@ -13,19 +13,18 @@ namespace K9.WebApplication.Helpers
 
 			var divBuilder = new TagBuilder(Tags.Div);
 			divBuilder.MergeAttribute(Attributes.Id, "imagePreloader");
-			divBuilder.MergeAttribute(Attributes.Class, "position: absolute; left: -9999px; top: -9999px;");
+			divBuilder.MergeAttribute(Attributes.Style, "position: absolute; left: -9999px; top: -9999px;");
 
 			var sb = new StringBuilder();
 			foreach (var image in images)
 			{
 				var imgBuilder = new TagBuilder(Tags.Image);
 				imgBuilder.MergeAttribute(Attributes.Src, image.Src);
-				imgBuilder.MergeAttribute(Attributes.Display, "block");
 				sb.AppendLine(imgBuilder.ToString(TagRenderMode.SelfClosing));
 			}
 
 			divBuilder.InnerHtml = sb.ToString();
-			return MvcHtmlString.Create(divBuilder.ToString(TagRenderMode.Normal));
+			return MvcHtmlString.Create(divBuilder.ToString());
 		}
 
 	}

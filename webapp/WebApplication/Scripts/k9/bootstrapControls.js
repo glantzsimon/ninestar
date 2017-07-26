@@ -1,4 +1,4 @@
-function initBootstrapControls(config)
+function BootstrapControls(config)
 {
 
     function initBootstrapDateTimePickers()
@@ -31,8 +31,15 @@ function initBootstrapControls(config)
         $("form").find("input[type=text], textarea, select").filter(":not(#main-search):visible:first").focus();
     }
 
-    initBootstrapDateTimePickers();
-    initBootstrapSelect();
-    initDateTimeValidation();
-    selectFirstformInput();
+    var init = function() {
+        initBootstrapDateTimePickers();
+        initBootstrapSelect();
+        initDateTimeValidation();
+        selectFirstformInput();
+    };
+
+    return {
+        init: init
+    }
+    
 }

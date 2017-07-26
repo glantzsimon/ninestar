@@ -10,10 +10,10 @@ namespace K9.WebApplication
 				"~/Content/elements.css",
 				"~/Content/classes.css",
 				"~/Content/validation.css",
-				"~/Content/botf.css",
 				"~/Content/k9/*.css",
 				"~/Content/tablet.css",
-				"~/Content/mobile.css"));
+				"~/Content/mobile.css",
+				"~/Content/botf.css"));
 
 			bundles.Add(new ScriptBundle("~/Scripts/k9").Include(
 				"~/Scripts/imageSwitcher/*.js",

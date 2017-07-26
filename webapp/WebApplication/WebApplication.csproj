@@ -172,6 +172,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Config\OAuthConfiguration.cs" />
     <Compile Include="Config\WebsiteConfiguration.cs" />
+    <Compile Include="Controllers\AboutUsController.cs" />
+    <Compile Include="Controllers\ArchiveController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\RolePermissionsController.cs" />
@@ -248,6 +251,9 @@
     <Compile Include="ViewModels\MultiSelectViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\botf.css" />
+    <Content Include="Content\k9\fadeIn.css" />
+    <Content Include="Content\_botfColors.txt" />
     <Content Include="Content\k9\breadCrumbs.css" />
     <Content Include="Content\k9\menubar.css" />
     <Content Include="Content\k9\navbar.css" />
@@ -262,9 +268,15 @@
     <Content Include="Content\k9\responsiveslides.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\classes.css" />
-    <Content Include="Images\background\slides\1leaves_background.jpg" />
-    <Content Include="Images\background\slides\blueswirl.jpg" />
-    <Content Include="Images\background\slides\squares_background.jpg" />
+    <Content Include="Images\background\oldslides\1leaves_background.jpg" />
+    <Content Include="Images\background\oldslides\blueswirl.jpg" />
+    <Content Include="Images\background\oldslides\squares_background.jpg" />
+    <Content Include="Images\background\slides\forest3.jpg" />
+    <Content Include="Images\company\botf_med.png" />
+    <Content Include="Images\company\botf_small.png" />
+    <Content Include="Images\background\oldslides\bwiti3.jpg" />
+    <Content Include="Images\background\slides\forest1.jpg" />
+    <Content Include="Images\background\slides\forest2.jpg" />
     <Content Include="Images\home\slides\HomeBanneCity2sm.jpg" />
     <Content Include="Images\home\slides\HomeBannerCitySm.jpg" />
     <Content Include="Images\home\slides\HomeBannerOfficeSm.jpg" />
@@ -283,6 +295,7 @@
     <Content Include="Scripts\imageSwitcher\responsiveslides.min.js" />
     <Content Include="Scripts\k9\buttonBehaviours.js" />
     <Content Include="Scripts\k9\bootstrapControls.js" />
+    <Content Include="Scripts\k9\fadePageIn.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -298,7 +311,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\company\" />
     <Folder Include="Views\Error\" />
   </ItemGroup>
   <ItemGroup>
@@ -432,6 +444,11 @@
     <Content Include="Views\Shared\_PopupAlert.cshtml" />
     <Content Include="Views\Shared\_BreadCrumbs.cshtml" />
     <None Include="Config\appsettings.json" />
+    <Content Include="Views\AboutUs\Index.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\AboutUs\OurMission.cshtml" />
+    <Content Include="Views\AboutUs\HelpUs.cshtml" />
+    <Content Include="Views\Archive\Index.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutColumns.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />

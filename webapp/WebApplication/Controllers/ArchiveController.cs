@@ -4,10 +4,10 @@ using NLog;
 
 namespace K9.WebApplication.Controllers
 {
-	public class HomeController : BaseController
+	public class ArchiveController : BaseController
 	{
 
-		public HomeController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles)
+		public ArchiveController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles)
 			: base(logger, dataSetsHelper, roles)
 		{
 		}

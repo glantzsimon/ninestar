@@ -1,4 +1,4 @@
-function initButtonBehaviours()
+function ButtonBehaviours()
 {
 
     function displaySpinnerOnFormSubmit() {
@@ -22,7 +22,13 @@ function initButtonBehaviours()
         });
     }
 
-    displaySpinnerOnFormSubmit();
-    displayPageSpinnerOnLinkClick();
+    var init = function() {
+        displaySpinnerOnFormSubmit();
+        displayPageSpinnerOnLinkClick();
+    };
+
+    return {
+        init: init
+    }
 
 };

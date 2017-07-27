@@ -577,4 +577,7 @@
   <data name="OurMission" xml:space="preserve">
     <value>Notre Mission</value>
   </data>
+  <data name="Iboga" xml:space="preserve">
+    <value>Iboga</value>
+  </data>
 </root>

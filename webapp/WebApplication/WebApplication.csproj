@@ -174,6 +174,7 @@
     <Compile Include="Config\WebsiteConfiguration.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
     <Compile Include="Controllers\ArchiveController.cs" />
+    <Compile Include="Controllers\IbogaController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
@@ -277,12 +278,9 @@
     <Content Include="Images\background\oldslides\bwiti3.jpg" />
     <Content Include="Images\background\slides\forest1.jpg" />
     <Content Include="Images\background\slides\forest2.jpg" />
-    <Content Include="Images\home\slides\HomeBanneCity2sm.jpg" />
-    <Content Include="Images\home\slides\HomeBannerCitySm.jpg" />
-    <Content Include="Images\home\slides\HomeBannerOfficeSm.jpg" />
-    <Content Include="Images\home\slides\slide1.jpg" />
-    <Content Include="Images\home\slides\slide2.jpg" />
-    <Content Include="Images\home\slides\slide3.jpg" />
+    <Content Include="Images\home\slides\aims1.jpg" />
+    <Content Include="Images\home\slides\aims2.jpg" />
+    <Content Include="Images\home\slides\aims3.jpg" />
     <Content Include="Images\ui\fail.png" />
     <Content Include="Images\ui\notfound.png" />
     <Content Include="Images\ui\locked.png" />
@@ -292,7 +290,7 @@
     <Content Include="Images\ui\unauthorized.png" />
     <Content Include="Images\ui\warning.png" />
     <Content Include="Scripts\imageSwitcher\backgroundSwitcher.js" />
-    <Content Include="Scripts\imageSwitcher\responsiveslides.min.js" />
+    <Content Include="Scripts\imageSwitcher\responsiveslides.js" />
     <Content Include="Scripts\k9\buttonBehaviours.js" />
     <Content Include="Scripts\k9\bootstrapControls.js" />
     <Content Include="Scripts\k9\fadePageIn.js" />
@@ -449,6 +447,7 @@
     <Content Include="Views\AboutUs\OurMission.cshtml" />
     <Content Include="Views\AboutUs\HelpUs.cshtml" />
     <Content Include="Views\Archive\Index.cshtml" />
+    <Content Include="Views\Iboga\Index.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutColumns.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />

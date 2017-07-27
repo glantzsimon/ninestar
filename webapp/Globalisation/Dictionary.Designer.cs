@@ -646,6 +646,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Iboga.
+        /// </summary>
+        public static string Iboga {
+            get {
+                return ResourceManager.GetString("Iboga", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to if you don&apos;t have an account.
         /// </summary>
         public static string IfNoAccount {

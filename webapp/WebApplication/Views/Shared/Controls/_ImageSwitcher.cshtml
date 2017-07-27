@@ -11,7 +11,7 @@
 }
 <script>
 
-	jQuery(document).ready(function ($)
+	$(function ($)
 	{
 
 		$(".rslides").responsiveSlides(
@@ -42,7 +42,7 @@
 @foreach (var image in Model.Images)
  {
 	<li>
-		<img style="@Model.RoundCornersCss" src="@image.Src" alt="">
+		<img style="@Model.RoundCornersStyle" src="@image.Src" alt="">
 	</li>			
  }
 </ul>

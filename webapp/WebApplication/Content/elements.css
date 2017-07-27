@@ -17,8 +17,9 @@ footer {
 }
 
 article p, section p {
+	font-size: 14px;
 	text-align: justify;
-	line-height: 2em;
+	line-height: 2.2em;
 	margin-bottom: 24px;
 }
 
@@ -48,6 +49,6 @@ h2 {
 	line-height: 34px;
 }
 
-form .btn {
+form:not(.navbar-form) .btn {
 	margin-top: 6px;
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
@@ -45,22 +46,21 @@ namespace K9.WebApplication.Helpers
 
 		public static MvcHtmlString BootstrapActionLinkButton(this HtmlHelper html, string linkText, string actionName, string controllerName, object routeValues = null, string iconCssClass = "", params EButtonClass[] buttonClasses)
 		{
-			var buttonCssClass =
-				buttonClasses.Select(_ => _.ToCssClass()).Aggregate((a, b) => String.Format("{0} {1}", a, b)).Trim();
+			var buttonCssClass = GetButtonClass(EButtonType.Custom, buttonClasses);
 			var isRightAligned = buttonClasses.Contains(EButtonClass.IconRight);
 			var rightAlignedText = isRightAligned ? string.Format(" {0}", linkText) : string.Empty;
 			var leftAlignedText = !isRightAligned ? string.Format("{0} ", linkText) : string.Empty;
 
 			if (!string.IsNullOrEmpty(iconCssClass))
 			{
-				return MvcHtmlString.Create(string.Format("<a class=\"btn {0}\" href=\"{1}\">{2}<i class='fa {4}'></i>{3}</a>",
+				return MvcHtmlString.Create(string.Format("<a class=\"{0}\" href=\"{1}\">{2}<i class='fa {4}'></i>{3}</a>",
 					buttonCssClass,
 					html.GeturlHeler().Action(actionName, controllerName, routeValues),
 					leftAlignedText,
 					rightAlignedText,
 					iconCssClass));
 			}
-			return MvcHtmlString.Create(string.Format("<a class=\"btn {2}\" href=\"{0}\">{1}</a>", html.GeturlHeler().Action(actionName, controllerName, routeValues), linkText, buttonCssClass));
+			return MvcHtmlString.Create(string.Format("<a class=\"{2}\" href=\"{0}\">{1}</a>", html.GeturlHeler().Action(actionName, controllerName, routeValues), linkText, buttonCssClass));
 		}
 
 		public static MvcHtmlString BootstrapCreateNewButton(this HtmlHelper html)
@@ -71,9 +71,9 @@ namespace K9.WebApplication.Helpers
 		public static MvcHtmlString BootstrapButton(this HtmlHelper html, string value, EButtonType buttonType = EButtonType.Submit, string iconCssClass = "", params EButtonClass[] buttonClasses)
 		{
 			var button = new TagBuilder(Tags.Button);
-			var isRightAligned = buttonClasses.Contains(EButtonClass.IconRight);
-			var rightAlignedText = isRightAligned ? string.Format(" {0}", value) : string.Empty;
-			var leftAlignedText = !isRightAligned ? string.Format("{0} ", value) : string.Empty;
+			var isRightAlignedCaret = buttonClasses.Contains(EButtonClass.IconRight);
+			var leftAlignedText = isRightAlignedCaret ? string.Format("{0} ", value) : string.Empty;
+			var rightAlignedText = !isRightAlignedCaret ? string.Format(" {0}", value) : string.Empty;
 
 			button.MergeAttribute(Attributes.Type, buttonType.ToString());
 			button.MergeAttribute(Attributes.Class, GetButtonClass(buttonType, buttonClasses));
@@ -129,13 +129,35 @@ namespace K9.WebApplication.Helpers
 					return Bootstrap.Classes.ButtonDanger;
 
 				case EButtonType.Custom:
-					return buttonClasses.Select(_ => _.ToCssClass()).Aggregate((a, b) => string.Format("{0} {1}", a, b)).Trim();
+					return !buttonClasses.Any()
+						? "btn btn-primary"
+						: GetButtonClasses(buttonClasses).Select(_ => _.ToCssClass()).Aggregate((a, b) => string.Format("{0} {1}", a, b)).Trim();
+
 
 				default:
 					return Bootstrap.Classes.ButtonPrimary;
 
 			}
 		}
+
+		private static List<EButtonClass> GetButtonClasses(EButtonClass[] buttonClasses)
+		{
+			var list = buttonClasses.ToList();
+			if (!new List<EButtonClass>
+			{
+				EButtonClass.Default,
+				EButtonClass.Primary,
+				EButtonClass.Info,
+				EButtonClass.Warning,
+				EButtonClass.Success,
+				EButtonClass.Danger
+			}.Any(x => list.Any(y => x == y)))
+			{
+				list.Add(EButtonClass.Primary);
+			}
+			return list;
+		}
+
 
 	}
 }

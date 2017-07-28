@@ -17,7 +17,15 @@ namespace K9.WebApplication.Constants
 			public const string ButtonWarning = "btn btn-warning";
 			public const string ButtonSuccess = "btn btn-success";
 			public const string ButtonDanger = "btn btn-danger";
-			public const string ButtonLink = "btn btn-link";
+			public const string ButtonLarge = "btn btn-lg";
+			public const string ButtonSmall = "btn btn-sm";
+			public const string ButtonExtraSmall = "btn btn-xs";
+			public const string ButtonBlock = "btn btn-block";
+			public const string Active = "active";
+			public const string Disabled = "disabled";
+			public const string ButtonNavbar = "navbar-btn";
+			public const string ButtonLink = "btn-link";
+
 			public const string HasError = "has-error";
 			public const string SelectList = "selectpicker";
 		}

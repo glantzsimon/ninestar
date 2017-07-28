@@ -577,4 +577,19 @@
   <data name="Iboga" xml:space="preserve">
     <value>Iboga</value>
   </data>
+  <data name="CompanyLegalDescription" xml:space="preserve">
+    <value>Blessings Of The Forest C.I.C is a Community Interest Company, a Social Enterprise registered in England in October 2015 as a Company limited by shares (Company No:9816364).</value>
+  </data>
+  <data name="blessings_of_the_forest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\blessings-of-the-forest.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="OnTheBrinkOfExtinctionTitle" xml:space="preserve">
+    <value>On The Brink Of Extinction</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Previous</value>
+  </data>
 </root>

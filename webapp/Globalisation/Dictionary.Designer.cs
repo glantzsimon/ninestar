@@ -250,6 +250,22 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///	There are many blessings of the forest, from the vast array of medicinal plants
+        ///	of the Amazon, to less exotic but no less valuable varieties much closer to home.
+        ///	However, few if any of nature&apos;s gifts are quite as precious as Iboga. Iboga is now
+        ///	an endangered species, classified in July 2000 as a ‘National Cultural Heritage
+        ///	and Strategic Reserve’ by the Ex-President of Gabon, El Hadj Omar Bongo Ondimba.
+        ///	Our organisation has been set up to preserve, research and share knowledge about
+        ///	the med [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string blessings_of_the_forest {
+            get {
+                return ResourceManager.GetString("blessings_of_the_forest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Body.
         /// </summary>
         public static string BodyLabel {
@@ -282,6 +298,15 @@ namespace K9.Globalisation {
         public static string ClientServices {
             get {
                 return ResourceManager.GetString("ClientServices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blessings Of The Forest C.I.C is a Community Interest Company, a Social Enterprise registered in England in October 2015 as a Company limited by shares (Company No:9816364)..
+        /// </summary>
+        public static string CompanyLegalDescription {
+            get {
+                return ResourceManager.GetString("CompanyLegalDescription", resourceCulture);
             }
         }
         
@@ -907,6 +932,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Next.
+        /// </summary>
+        public static string Next {
+            get {
+                return ResourceManager.GetString("Next", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nine Star Ki.
         /// </summary>
         public static string NineStarKiTitle {
@@ -957,6 +991,15 @@ namespace K9.Globalisation {
         public static string OfPrepositionWithApostrophe {
             get {
                 return ResourceManager.GetString("OfPrepositionWithApostrophe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to On The Brink Of Extinction.
+        /// </summary>
+        public static string OnTheBrinkOfExtinctionTitle {
+            get {
+                return ResourceManager.GetString("OnTheBrinkOfExtinctionTitle", resourceCulture);
             }
         }
         
@@ -1142,6 +1185,15 @@ namespace K9.Globalisation {
         public static string PowerUser {
             get {
                 return ResourceManager.GetString("PowerUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Previous.
+        /// </summary>
+        public static string Previous {
+            get {
+                return ResourceManager.GetString("Previous", resourceCulture);
             }
         }
         

@@ -64,6 +64,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Articles\en-gb\blessings-of-the-forest.htm" />
+    <Content Include="Articles\fr\blessings-of-the-forest.htm" />
     <Content Include="Templates\en-gb\PasswordResetEmail.htm" />
     <Content Include="Templates\en-gb\SupportQuery.htm" />
     <Content Include="Templates\en-gb\WelcomeEmail.htm" />

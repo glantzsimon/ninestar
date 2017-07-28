@@ -6,6 +6,9 @@ namespace K9.WebApplication
 	{
 		public static void RegisterBundles(BundleCollection bundles)
 		{
+			bundles.Add(new StyleBundle("~/Content/bootstrap-custom").Include(
+				"~/Content/bootstrap/*.css"));
+
 			bundles.Add(new StyleBundle("~/Content/css").Include(
 				"~/Content/elements.css",
 				"~/Content/classes.css",

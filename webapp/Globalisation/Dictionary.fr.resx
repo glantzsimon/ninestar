@@ -580,4 +580,19 @@
   <data name="Iboga" xml:space="preserve">
     <value>Iboga</value>
   </data>
+  <data name="CompanyLegalDescription" xml:space="preserve">
+    <value>Blessings Of The Forest est une Compagnie des intérêts communautaires, une entreprise sociale immatriculée en Angleterre en octobre de 2015 en tant que société limitée par actions (société numéro 9816364).</value>
+  </data>
+  <data name="blessings_of_the_forest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\blessings-of-the-forest.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="OnTheBrinkOfExtinctionTitle" xml:space="preserve">
+    <value>Au Bord De L'Extinction</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Suivant</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Précédant</value>
+  </data>
 </root>

@@ -1,5 +1,4 @@
-﻿.page
-{
+﻿.page {
 	margin: 0 auto;
 	margin-bottom: 40px;
 	padding: 30px 30px 10px 30px;
@@ -9,96 +8,84 @@
 	background: #ffffff;
 }
 
-.backdrop
-{
+.backdrop {
 	padding-bottom: 15px;
 }
 
-.mainContent
-{
+.mainContent {
 	position: relative;
 	width: 100%;
 	margin-top: 20px;
 }
 
-.roundCorners
-{
+.roundCorners {
 	border-radius: 6px;
 }
 
-.roundCorners-not-top
-{
+.roundCorners-not-top {
 	border-radius: 6px;
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;
 }
 
-.alphaBackground
-{
+.alphaBackground {
 	background: rgb(255, 255, 255);
 	background: rgba(255, 255, 255, 0.8);
 	filter: alpha(opacity=80);
 }
 
-.shadow
-{
+.shadow {
 	-webkit-box-shadow: 0 0 64px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow: 0 0 64px rgba(0, 0, 0, 0.5);
 	box-shadow: 0 0 64px rgba(0, 0, 0, 0.5);
 }
 
-.shadow-deep
-{
+.shadow-deep {
 	-webkit-box-shadow: 0 0 80px rgba(0, 0, 0, 1.2);
 	-moz-box-shadow: 0 0 80px rgba(0, 0, 0, 1.2);
 	box-shadow: 0 0 80px rgba(0, 0, 0, 1.2);
 }
 
-.small-form
-{
+.small-form {
 	max-width: 520px;
 }
 
-.wide-form
-{
+.wide-form {
 	max-width: 90% !important;
 }
 
-.page-header
-{
+.page-header {
 	margin: 0;
 }
 
-.page-header h4, .page-header h3, .page-header h2, .page-header h1
-{
+.page-header h4, .page-header h3, .page-header h2, .page-header h1 {
 	margin-top: 0;
 }
 
-.main-container
-{
+.page-header img {
+	margin-bottom: 10px;
+}
+
+.main-container {
 	min-height: 100%;
 }
 
-.subtitle
-{
+.subtitle {
 	display: block;
 	margin: 0;
 	margin-top: 28px;
 	margin-bottom: 18px;
 }
 
-.k9-navbar a
-{
+.k9-navbar a {
 	text-decoration: none;
 }
 
-a.btn
-{
+a.btn {
 	color: #ffffff !important;
 	text-decoration: none !important;
 }
 
-.button-container
-{
+.button-container {
 	margin-bottom: 20px;
 }

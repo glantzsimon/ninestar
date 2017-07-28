@@ -220,6 +220,7 @@
     <Compile Include="Helpers\BootstrapDropdownFor.cs" />
     <Compile Include="Helpers\Alert.cs" />
     <Compile Include="Helpers\BreadCrumbs.cs" />
+    <Compile Include="Helpers\Carousel.cs" />
     <Compile Include="Helpers\PopupAlert.cs" />
     <Compile Include="Helpers\CrudButtonsForModel.cs" />
     <Compile Include="Helpers\IDataTableAjaxHelper.cs" />
@@ -242,6 +243,7 @@
     <Compile Include="Options\AlertOptions.cs" />
     <Compile Include="Models\DataTableButton.cs" />
     <Compile Include="Options\BreadCrumbsOptions.cs" />
+    <Compile Include="Options\CarouselOptions.cs" />
     <Compile Include="Options\DataTableOptions.cs" />
     <Compile Include="Options\EditorOptions.cs" />
     <Compile Include="Options\IDataTableOptions.cs" />
@@ -252,6 +254,16 @@
     <Compile Include="ViewModels\MultiSelectViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap\bootstrap-datetimepicker.css" />
+    <Content Include="Content\bootstrap\bootstrap-select.css" />
+    <Content Include="Content\bootstrap\bootstrap-select.min.css" />
+    <Content Include="Content\bootstrap\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap\bootstrap.css" />
+    <Content Include="Content\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\bootstrap\bootstrapValidator.css" />
+    <Content Include="Content\bootstrap\bootstrapValidator.min.css" />
     <Content Include="Content\botf.css" />
     <Content Include="Content\k9\fadeIn.css" />
     <Content Include="Content\_botfColors.txt" />
@@ -281,6 +293,18 @@
     <Content Include="Images\home\slides\aims1.jpg" />
     <Content Include="Images\home\slides\aims2.jpg" />
     <Content Include="Images\home\slides\aims3.jpg" />
+    <Content Include="Images\latest\238153122658-1.jpg" />
+    <Content Include="Images\latest\238155407658-1.jpg" />
+    <Content Include="Images\latest\Bois-Sacré-4-1024x363.jpg" />
+    <Content Include="Images\latest\LSZ0015004-copie-1.jpg" />
+    <Content Include="Images\latest\LSZ0015008-copie-1.jpg" />
+    <Content Include="Images\latest\LSZ0015009-copie-1.jpg" />
+    <Content Include="Images\latest\LSZ0015025-1030x661.jpg" />
+    <Content Include="Images\latest\LSZ0015026-1030x651.jpg" />
+    <Content Include="Images\latest\LSZ0015029-695x1030.jpg" />
+    <Content Include="Images\latest\LSZ0015032-1030x682.jpg" />
+    <Content Include="Images\latest\LSZ0508016-1030x687.jpg" />
+    <Content Include="Images\latest\Ritual-688x1030.jpg" />
     <Content Include="Images\ui\fail.png" />
     <Content Include="Images\ui\notfound.png" />
     <Content Include="Images\ui\locked.png" />
@@ -448,6 +472,12 @@
     <Content Include="Views\AboutUs\HelpUs.cshtml" />
     <Content Include="Views\Archive\Index.cshtml" />
     <Content Include="Views\Iboga\Index.cshtml" />
+    <Content Include="Views\Shared\Controls\_Carousel.cshtml" />
+    <None Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutColumns.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />

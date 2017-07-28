@@ -1,0 +1,25 @@
+﻿@model CarouselOptions
+<div id="@Model.Id" class="carousel slide" data-ride="carousel">
+	<ol class="carousel-indicators">
+		<li data-target="#@Model.Id" data-slide-to="0" class="active"></li>
+		<li data-target="#@Model.Id" data-slide-to="1"></li>
+		<li data-target="#@Model.Id" data-slide-to="2"></li>
+	</ol>
+	<div class="carousel-inner" role="listbox">
+		@for (int i = 0; i < Model.Images.Count; i++)
+		{
+			var image = Model.Images[i];
+			var imageClass = i == 0 ? "active" : String.Empty;
+			<div class="item @imageClass">
+				<img src="@image.Src">
+			</div>
+		}
+	</div>
+	<a class="left carousel-control" href="#@Model.Id" data-slide="prev"><span class="glyphicon glyphicon-chevron-left">
+	</span>
+		<span class="sr-only">@Dictionary.Previous</span>
+	</a><a class="right carousel-control" href="#@Model.Id" data-slide="next"><span class="glyphicon glyphicon-chevron-right">
+	</span>
+		<span class="sr-only">@Dictionary.Next</span>
+	</a>
+</div>

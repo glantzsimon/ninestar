@@ -2,20 +2,25 @@
 @{
 	ViewBag.Title = Dictionary.Home;
 }
-
-<div class="row text-center">
+<div class="row text-center page-header">
 	<img src="~/Images/company/botf_med.png"/>
 	<h2>@WebsiteConfiguration.Instance.CompanyName</h2>
 </div>
 
-<br/>
-@Html.ImageSwitcher(new ImageSwitcherOptions("Images/home/slides")
-{
-	Interval = 10000
-})
-
 <article>
-	<br/>
-	<p>Blessings Of The Forest is committed to building a bridge between traditional Gabonese healers and researchers worldwide. We offer humanity the most sacred knowledge of the art of healing using one of the most sacred plants of our common historic origins.</p>
-	<p>With your support, Blessings Of The Forest is committed to planting 10,000 feet of iboga wood in Akanda National Park in Gabon, for the benefit of the local people and also international research</p>
+	@MvcHtmlString.Create(Dictionary.blessings_of_the_forest)
 </article>
+<div class="text-center">
+	@Html.BootstrapActionLinkButton(Dictionary.OurMission, "OurMission", "AboutUs", null, "caret-right", EButtonClass.Large)
+</div>
+
+<hr/>
+<h3>Iboga, @Dictionary.OnTheBrinkOfExtinctionTitle</h3>
+<div class="well well-lg">
+	<div class="embed-responsive embed-responsive-16by9">
+		<iframe src="https://player.vimeo.com/video/161684888" frameborder="0"></iframe>
+	</div>
+</div>
+
+<hr/>
+@Html.Carousel(new CarouselOptions("Images/latest"))

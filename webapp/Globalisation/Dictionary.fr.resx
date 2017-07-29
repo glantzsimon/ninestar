@@ -598,4 +598,10 @@
   <data name="OurLatestPicturesTitle" xml:space="preserve">
     <value>Nos Dernières Images</value>
   </data>
+  <data name="GetInTouchTitle" xml:space="preserve">
+    <value>Contacter Nous</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>Soutenez-Nous!</value>
+  </data>
 </root>

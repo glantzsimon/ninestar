@@ -595,4 +595,10 @@
   <data name="OurLatestPicturesTitle" xml:space="preserve">
     <value>Our Latest Pictures</value>
   </data>
+  <data name="GetInTouchTitle" xml:space="preserve">
+    <value>Get In Touch</value>
+  </data>
+  <data name="SupportUs" xml:space="preserve">
+    <value>Support Us!</value>
+  </data>
 </root>

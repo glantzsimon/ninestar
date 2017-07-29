@@ -1,0 +1,16 @@
+﻿@model K9.WebApplication.ViewModels.ContactUsViewModel
+
+@using (Html.BeginForm())
+{
+	using (Html.BeginBootstrapForm())
+	{
+		<h3>@Dictionary.GetInTouchTitle</h3>
+		@Html.BootstrapEditorFor(m => m.Name)
+		@Html.BootstrapEditorFor(m => m.EmailAddress)
+		@Html.BootstrapEditorFor(m => m.Subject)
+		@Html.BootstrapEditorFor(m => m.Body)
+		
+		<hr/>
+		@Html.BootstrapButton(Dictionary.Submit)
+	}
+}

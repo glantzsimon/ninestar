@@ -1,13 +1,18 @@
-﻿@media only screen and (min-width: 769px) and (max-width: 1024px)
-{
+﻿@media only screen and (min-width: 769px) and (max-width: 1024px) {
+
 	.wide-form {
 		max-width: 100% !important;
 	}
-	
-	ol.breadcrumb
-	{
+
+	ol.breadcrumb {
 		margin-top: 10px;
 		font-size: 14px;
 	}
-	
+
+	.section-full-width {
+		margin-left: -20px;
+		margin-right: -20px;
+		padding: 20px;
+	}
+
 }

@@ -644,6 +644,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Get In Touch.
+        /// </summary>
+        public static string GetInTouchTitle {
+            get {
+                return ResourceManager.GetString("GetInTouchTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Go back to the home page.
         /// </summary>
         public static string GoBackHome {
@@ -1356,6 +1365,15 @@ namespace K9.Globalisation {
         public static string SupportQuery {
             get {
                 return ResourceManager.GetString("SupportQuery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Support Us!.
+        /// </summary>
+        public static string SupportUs {
+            get {
+                return ResourceManager.GetString("SupportUs", resourceCulture);
             }
         }
         

@@ -1,61 +1,57 @@
-﻿@media only screen and (max-width: 768px)
-{
-	.page
-	{
+﻿@media only screen and (max-width: 768px) {
+
+	.page {
 		margin: 0px;
 		padding: 0px;
 		width: auto;
 		background: none;
 	}
 
-	.backdrop
-	{
+	.backdrop {
 		padding: 0px;
 	}
 
 
-	.roundCorners
-	{
+	.roundCorners {
 		border-radius: 0px;
 	}
 
-	.alphaBackground
-	{
+	.alphaBackground {
 		filter: alpha(opacity=80);
 	}
 
-	.shadow
-	{
+	.shadow {
 		-webkit-box-shadow: none;
 		-moz-box-shadow: none;
 		box-shadow: none;
 	}
 
-	#bgSwitcherDiv
-	{
+	#bgSwitcherDiv {
 		display: none;
 	}
 
-	.wide-form
-	{
+	.wide-form {
 		max-width: 100% !important;
 	}
 
-	.btn
-	{
+	.btn {
 		width: 100%;
 		margin-bottom: 4px;
 	}
 
-	ul.pagination
-	{
+	ul.pagination {
 		padding: 10px 0;
 	}
 
-	ol.breadcrumb
-	{
+	ol.breadcrumb {
 		margin-top: 10px;
 		font-size: 14px;
+	}
+
+	.section-full-width {
+		margin-left: -20px;
+		margin-right: -20px;
+		padding: 20px;
 	}
 
 }

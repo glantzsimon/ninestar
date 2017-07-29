@@ -1,14 +1,6 @@
 ﻿@model User
 @{
-	ViewBag.Title = Dictionary.ContactUsTitle;
+	ViewBag.Title = Dictionary.GetInTouchTitle;
 }
 
-@using (Html.BeginForm())
-{
-	using (Html.BeginBootstrapForm())
-	{
-		
-		<hr/>
-		@Html.BootstrapButton(Dictionary.Submit)
-	}
-}
+@Html.Partial("_ContactUs")

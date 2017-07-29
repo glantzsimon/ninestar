@@ -11,15 +11,20 @@
 	@MvcHtmlString.Create(Dictionary.blessings_of_the_forest)
 </article>
 <div class="text-center">
+	@Html.BootstrapActionLinkButton(Dictionary.SupportUs, "OurMission", "AboutUs", null, "fa-thumbs-o-up", EButtonClass.Large)
 	@Html.BootstrapActionLinkButton(Dictionary.OurMission, "OurMission", "AboutUs", null, "fa-chevron-right", EButtonClass.Large, EButtonClass.IconRight)
 </div>
 
-<hr/>
-<h3>Iboga, @Dictionary.OnTheBrinkOfExtinctionTitle</h3>
-<div class="well well-lg">
+<br/>
+<div class="section-full-width bg-black">
+	<h3 class="text-white margin-top-0">Iboga, @Dictionary.OnTheBrinkOfExtinctionTitle</h3>
 	<div class="embed-responsive embed-responsive-16by9">
 		<iframe src="https://player.vimeo.com/video/161684888" frameborder="0"></iframe>
 	</div>
+</div>
+
+<div class="section-full-width">
+	@Html.Partial("_ContactUs")	
 </div>
 
 <hr/>

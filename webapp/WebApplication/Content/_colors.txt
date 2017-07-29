@@ -1,6 +1,7 @@
-﻿lightGrey		#d9d9d9
+﻿LightestGrey	#f6f6f6
+lightGrey		#d9d9d9
 grey			#898989
-midGrey			#888888;
+midGrey			#888888
 darkGrey		#555555
 darkerGrey		#333333
 errorRed		#a94442

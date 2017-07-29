@@ -89,3 +89,14 @@ a.btn {
 .button-container {
 	margin-bottom: 20px;
 }
+
+.carousel-inner > .item > img, 
+.carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }
+
+.carousel {
+	max-height: 500px;
+	overflow-y: hidden;
+}

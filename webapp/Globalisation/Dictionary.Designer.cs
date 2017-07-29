@@ -1013,6 +1013,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Our Latest Pictures.
+        /// </summary>
+        public static string OurLatestPicturesTitle {
+            get {
+                return ResourceManager.GetString("OurLatestPicturesTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Our Mission.
         /// </summary>
         public static string OurMission {

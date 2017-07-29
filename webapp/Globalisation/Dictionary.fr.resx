@@ -595,4 +595,7 @@
   <data name="Previous" xml:space="preserve">
     <value>Précédant</value>
   </data>
+  <data name="OurLatestPicturesTitle" xml:space="preserve">
+    <value>Nos Dernières Images</value>
+  </data>
 </root>

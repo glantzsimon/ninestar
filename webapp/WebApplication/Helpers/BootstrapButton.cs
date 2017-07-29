@@ -47,9 +47,9 @@ namespace K9.WebApplication.Helpers
 		public static MvcHtmlString BootstrapActionLinkButton(this HtmlHelper html, string linkText, string actionName, string controllerName, object routeValues = null, string iconCssClass = "", params EButtonClass[] buttonClasses)
 		{
 			var buttonCssClass = GetButtonClass(EButtonType.Custom, buttonClasses);
-			var isRightAligned = buttonClasses.Contains(EButtonClass.IconRight);
-			var rightAlignedText = isRightAligned ? string.Format(" {0}", linkText) : string.Empty;
-			var leftAlignedText = !isRightAligned ? string.Format("{0} ", linkText) : string.Empty;
+			var isIconRightAligned = buttonClasses.Contains(EButtonClass.IconRight);
+			var leftAlignedText = isIconRightAligned ? string.Format("{0} ", linkText) : string.Empty;
+			var rightAlignedText = !isIconRightAligned ? string.Format(" {0}", linkText) : string.Empty;
 
 			if (!string.IsNullOrEmpty(iconCssClass))
 			{
@@ -131,7 +131,9 @@ namespace K9.WebApplication.Helpers
 				case EButtonType.Custom:
 					return !buttonClasses.Any()
 						? "btn btn-primary"
-						: GetButtonClasses(buttonClasses).Select(_ => _.ToCssClass()).Aggregate((a, b) => string.Format("{0} {1}", a, b)).Trim();
+						: GetButtonClasses(buttonClasses)
+							.Select(_ => _.ToCssClass())
+							.Aggregate((a, b) => string.Format("{0} {1}", a, b).Trim());
 
 
 				default:
@@ -153,7 +155,7 @@ namespace K9.WebApplication.Helpers
 				EButtonClass.Danger
 			}.Any(x => list.Any(y => x == y)))
 			{
-				list.Add(EButtonClass.Primary);
+				list.Insert(0, EButtonClass.Primary);
 			}
 			return list;
 		}

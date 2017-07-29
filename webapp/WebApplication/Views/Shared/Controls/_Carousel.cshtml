@@ -9,9 +9,17 @@
 		@for (int i = 0; i < Model.Images.Count; i++)
 		{
 			var image = Model.Images[i];
+			var fullsizeImage = Model.GetFullSizeImage(image.FileName);
 			var imageClass = i == 0 ? "active" : String.Empty;
 			<div class="item @imageClass">
-				<img src="@image.Src">
+				@if (fullsizeImage != null)
+				{
+					<a href="@fullsizeImage.Src"><img src="@image.Src"></a>
+				}
+				else
+				{
+					<img src="@image.Src">	
+				}
 			</div>
 		}
 	</div>

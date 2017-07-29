@@ -15,20 +15,28 @@
 	@Html.BootstrapActionLinkButton(Dictionary.OurMission, "OurMission", "AboutUs", null, "fa-chevron-right", EButtonClass.Large, EButtonClass.IconRight)
 </div>
 
-<br/>
-<div class="section-full-width bg-black">
-	<h3 class="text-white margin-top-0">Iboga, @Dictionary.OnTheBrinkOfExtinctionTitle</h3>
-	<div class="embed-responsive embed-responsive-16by9">
-		<iframe src="https://player.vimeo.com/video/161684888" frameborder="0"></iframe>
+<hr/>
+<div class="row">
+	<div class="col-sm-6">
+		<h3 class="margin-top-0">Iboga, @Dictionary.OnTheBrinkOfExtinctionTitle</h3>
+		<div class="well well-lg bg-black">
+			<div class="embed-responsive embed-responsive-16by9">
+				<iframe src="https://player.vimeo.com/video/161684888" frameborder="0"></iframe>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-6">
+		<h3 class="margin-top-0">@Dictionary.OurLatestPicturesTitle</h3>
+		<div class="well well-lg">
+			@Html.Carousel(new CarouselOptions("Images/latest"))
+		</div>
 	</div>
 </div>
 
-<div class="section-full-width">
-	@Html.Partial("_ContactUs")	
+<div class="section-full-width bg-grey">
+	<div class="section-full-width">
+		@Html.Partial("_ContactUs")	
+	</div>	
 </div>
 
-<hr/>
-<h3>Iboga, @Dictionary.OurLatestPicturesTitle</h3>
-<div class="well well-lg">
-	@Html.Carousel(new CarouselOptions("Images/latest"))
-</div>
+

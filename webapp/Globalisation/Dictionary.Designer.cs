@@ -1049,6 +1049,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Our Partners.
+        /// </summary>
+        public static string OurPartners {
+            get {
+                return ResourceManager.GetString("OurPartners", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your password has been changed..
         /// </summary>
         public static string PasswordHasChangedConfirmation {

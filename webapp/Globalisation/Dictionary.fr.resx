@@ -607,4 +607,7 @@
   <data name="ContactSupportSuccess" xml:space="preserve">
     <value>Votre message a été bien reçu. Merci !</value>
   </data>
+  <data name="OurPartners" xml:space="preserve">
+    <value>Nos Partenaires</value>
+  </data>
 </root>

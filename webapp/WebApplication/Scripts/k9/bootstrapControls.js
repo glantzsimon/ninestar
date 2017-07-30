@@ -27,19 +27,27 @@ function BootstrapControls(config)
         }
     }
 
-    function selectFirstformInput() {
+    function selectFirstformInput()
+    {
         $("form").find("input[type=text], textarea, select").filter(":not(#main-search):visible:first").focus();
     }
 
-    var init = function() {
+    function initToolTips()
+    {
+        $('[data-toggle="tooltip"]').tooltip();
+    }
+
+    var init = function ()
+    {
         initBootstrapDateTimePickers();
         initBootstrapSelect();
         initDateTimeValidation();
         selectFirstformInput();
+        initToolTips();
     };
 
     return {
         init: init
     }
-    
+
 }

@@ -37,14 +37,6 @@ namespace K9.WebApplication.Controllers
 					model.EmailAddress, 
 					model.Name);
 
-				ViewBag.IsPopupAlert = true;
-				ViewBag.AlertOptions = new AlertOptions
-				{
-					AlertType = EAlertType.Success,
-					Message = Dictionary.Success,
-					OtherMessage = Dictionary.ContactSupportSuccess
-				};
-
 				return RedirectToAction("ContactUsSuccess");
 			}
 			catch (Exception ex)

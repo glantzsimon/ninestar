@@ -601,4 +601,7 @@
   <data name="SupportUs" xml:space="preserve">
     <value>Support Us!</value>
   </data>
+  <data name="ContactSupportSuccess" xml:space="preserve">
+    <value>Your message was received. Thank you!</value>
+  </data>
 </root>

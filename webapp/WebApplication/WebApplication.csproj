@@ -266,6 +266,7 @@
     <Content Include="Content\bootstrap\bootstrapValidator.css" />
     <Content Include="Content\bootstrap\bootstrapValidator.min.css" />
     <Content Include="Content\botf.css" />
+    <Content Include="Content\shared.css" />
     <Content Include="Content\k9\fadeIn.css" />
     <Content Include="Content\_botfColors.txt" />
     <Content Include="Content\k9\breadCrumbs.css" />
@@ -491,6 +492,8 @@
     <None Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <None Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Views\Shared\EditorTemplates\Text.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Text.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutColumns.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />
@@ -505,6 +508,7 @@
     <Content Include="Views\UserRoles\Index.cshtml" />
     <Content Include="Views\Shared\_MenuBar.cshtml" />
     <Content Include="Views\Shared\_ContactUs.cshtml" />
+    <Content Include="Views\Support\ContactUsSuccess.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -24,7 +24,7 @@ namespace K9.WebApplication.Controllers
 		private readonly IRepository<User> _repository;
 		private readonly ILogger _logger;
 		private readonly IMailer _mailer;
-		private readonly IOptions<WebsiteConfiguration> _websiteConfig;
+		private readonly WebsiteConfiguration _websiteConfig;
 		private readonly IDataSetsHelper _dataSetsHelper;
 		private readonly IRoles _roles;
 
@@ -36,7 +36,7 @@ namespace K9.WebApplication.Controllers
 			_repository = repository;
 			_logger = logger;
 			_mailer = mailer;
-			_websiteConfig = websiteConfig;
+			_websiteConfig = websiteConfig.Value;
 			_dataSetsHelper = dataSetsHelper;
 			_roles = roles;
 		}
@@ -342,7 +342,7 @@ namespace K9.WebApplication.Controllers
 		private void SendPasswordResetEmail(UserAccount.PasswordResetRequestModel model, string token)
 		{
 			var resetPasswordLink = GetPasswordResetLink(model, token);
-			var imageUrl = Url.AbsoluteContent(_websiteConfig.Value.CompanyLogoUrl);
+			var imageUrl = Url.AbsoluteContent(_websiteConfig.CompanyLogoUrl);
 			var user = _repository.Find(u => u.Username == model.UserName).FirstOrDefault();
 
 			if (user == null)
@@ -358,7 +358,7 @@ namespace K9.WebApplication.Controllers
 			{
 				Title = Dictionary.Welcome,
 				FirstName = firstName,
-				Company = _websiteConfig.Value.CompanyName,
+				Company = _websiteConfig.CompanyName,
 				ResetPasswordLink = resetPasswordLink,
 				ImageUrl = imageUrl,
 				From = Dictionary.ClientServices
@@ -436,13 +436,13 @@ namespace K9.WebApplication.Controllers
 		private void SendActivationemail(UserAccount.RegisterModel model, string token)
 		{
 			var activationLink = GetActivationLink(model, token);
-			var imageUrl = Url.AbsoluteContent(_websiteConfig.Value.CompanyLogoUrl);
+			var imageUrl = Url.AbsoluteContent(_websiteConfig.CompanyLogoUrl);
 
 			var emailContent = TemplateProcessor.PopulateTemplate(Dictionary.WelcomeEmail, new
 			{
 				Title = Dictionary.Welcome,
 				FirstName = model.FirstName,
-				Company = _websiteConfig.Value.CompanyName,
+				Company = _websiteConfig.CompanyName,
 				ActivationLink = activationLink,
 				ImageUrl = imageUrl,
 				From = Dictionary.ClientServices

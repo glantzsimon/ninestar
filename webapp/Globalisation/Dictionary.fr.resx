@@ -601,7 +601,10 @@
   <data name="GetInTouchTitle" xml:space="preserve">
     <value>Contacter Nous</value>
   </data>
-  <data name="String1" xml:space="preserve">
+  <data name="SupportUs" xml:space="preserve">
     <value>Soutenez-Nous!</value>
+  </data>
+  <data name="ContactSupportSuccess" xml:space="preserve">
+    <value>Votre message a été bien reçu. Merci !</value>
   </data>
 </root>

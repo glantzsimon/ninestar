@@ -15,11 +15,11 @@ namespace K9.WebApplication
 			DatabaseInitialiser.InitialiseWebsecurity();
 
 			var json = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config/appsettings.json"));
-			var config = ConfigHelper.GetConfiguration<OAuthConfiguration>(json);
+			var config = ConfigHelper.GetConfiguration<OAuthConfiguration>(json).Value;
 
-			if (!string.IsNullOrEmpty(config.Value.FacebookAppId))
+			if (!string.IsNullOrEmpty(config.FacebookAppId))
 			{
-				OAuthWebSecurity.RegisterFacebookClient(config.Value.FacebookAppId, config.Value.FacebookAppSecret);
+				OAuthWebSecurity.RegisterFacebookClient(config.FacebookAppId, config.FacebookAppSecret);
 			}
 			OAuthWebSecurity.RegisterGoogleClient();
 		}

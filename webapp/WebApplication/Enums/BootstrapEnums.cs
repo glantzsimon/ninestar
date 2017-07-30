@@ -11,8 +11,7 @@ namespace K9.WebApplication.Enums
 		Create,
 		Delete,
 		Edit,
-		Button,
-		Custom
+		Button
 	}
 
 	public enum EButtonClass

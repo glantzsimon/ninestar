@@ -15,16 +15,16 @@ namespace K9.SharedLibrary.Tests.Unit
 		{
 			var json = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "../../appsettings.json"));
 
-			var smtpConfig = ConfigHelper.GetConfiguration<SmtpConfiguration>(json);
-			var dbConfig = ConfigHelper.GetConfiguration<DatabaseConfiguration>(json);
+			var smtpConfig = ConfigHelper.GetConfiguration<SmtpConfiguration>(json).Value;
+			var dbConfig = ConfigHelper.GetConfiguration<DatabaseConfiguration>(json).Value;
 			
-			Assert.AreEqual("mail.vibranthealthnow.co.uk", smtpConfig.Value.SmtpServer);
-			Assert.AreEqual("info@vibranthealthnow.co.uk", smtpConfig.Value.SmtpUserId);
-			Assert.AreEqual("12345", smtpConfig.Value.SmtpPassword);
-			Assert.AreEqual("info@vibranthealthnow.co.uk", smtpConfig.Value.SmtpFromEmailAddress);
-			Assert.AreEqual("Vibrant Health", smtpConfig.Value.SmtpFromDisplayName);
+			Assert.AreEqual("mail.vibranthealthnow.co.uk", smtpConfig.SmtpServer);
+			Assert.AreEqual("info@vibranthealthnow.co.uk", smtpConfig.SmtpUserId);
+			Assert.AreEqual("12345", smtpConfig.SmtpPassword);
+			Assert.AreEqual("info@vibranthealthnow.co.uk", smtpConfig.SmtpFromEmailAddress);
+			Assert.AreEqual("Vibrant Health", smtpConfig.SmtpFromDisplayName);
 
-			Assert.IsTrue(dbConfig.Value.AutomaticMigrationDataLossAllowed);
+			Assert.IsTrue(dbConfig.AutomaticMigrationDataLossAllowed);
 		}
 
 	}

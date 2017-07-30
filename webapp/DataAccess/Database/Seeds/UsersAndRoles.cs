@@ -26,20 +26,20 @@ namespace K9.DataAccess.Database.Seeds
 				new Users(context, new BaseRepository<User>(context)));
 
 			var json = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config/appsettings.json"));
-			var dbConfig = ConfigHelper.GetConfiguration<DatabaseConfiguration>(json);
+			var dbConfig = ConfigHelper.GetConfiguration<DatabaseConfiguration>(json).Value;
 
 			SeedSystemUser(dbConfig);
 			SeedRoles(roles);
 			SeedPermissions(roles);
 		}
 
-		private static void SeedSystemUser(IOptions<DatabaseConfiguration> dbConfig)
+		private static void SeedSystemUser(DatabaseConfiguration dbConfig)
 		{
 			if (WebSecurity.Initialized)
 			{
 				if (!WebSecurity.UserExists(SystemUser.System))
 				{
-					WebSecurity.CreateUserAndAccount(SystemUser.System, dbConfig.Value.SystemUserPassword, new
+					WebSecurity.CreateUserAndAccount(SystemUser.System, dbConfig.SystemUserPassword, new
 					{
 						FirstName = "System",
 						LastName = "User",

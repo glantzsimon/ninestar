@@ -1,28 +1,36 @@
 function ButtonBehaviours()
 {
 
-    function displaySpinnerOnFormSubmit() {
-        $("form").submit(function () {
-            if ($(this).valid()) {
+    function displaySpinnerOnFormSubmit()
+    {
+        $("form").submit(function ()
+        {
+            if ($(this).valid())
+            {
                 var button = $(this).find("button.btn");
                 button.button('loading');
             }
         });
     }
 
-    function displayPageSpinnerOnLinkClick() {
+    function displayPageSpinnerOnLinkClick()
+    {
         $("a").click(function () {
-            var href = ($(this).attr("href"));
-            if (href) {
-                if (href !== "#") {
-                    $("#pageSpinner").show();
-                    $("#pageOverlay").show();
+            var el = $(this);
+            if (!el.hasClass("carousel-control") && !el.attr("target")) {
+                var href = (el.attr("href"));
+                if (href) {
+                    if (href !== "#") {
+                        $("#pageSpinner").show();
+                        $("#pageOverlay").show();
+                    }
                 }
             }
         });
     }
 
-    var init = function() {
+    var init = function ()
+    {
         displaySpinnerOnFormSubmit();
         displayPageSpinnerOnLinkClick();
     };

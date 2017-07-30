@@ -338,6 +338,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your message was received. Thank you!.
+        /// </summary>
+        public static string ContactSupportSuccess {
+            get {
+                return ResourceManager.GetString("ContactSupportSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact Us.
         /// </summary>
         public static string ContactUsTitle {

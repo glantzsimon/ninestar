@@ -12,6 +12,7 @@ namespace K9.WebApplication
 			bundles.Add(new StyleBundle("~/Content/css").Include(
 				"~/Content/elements.css",
 				"~/Content/classes.css",
+				"~/Content/shared.css",
 				"~/Content/validation.css",
 				"~/Content/k9/*.css",
 				"~/Content/tablet.css",

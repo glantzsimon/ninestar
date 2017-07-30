@@ -102,58 +102,10 @@ a.btn {
 .section-full-width {
 	margin-left: -30px;
 	margin-right: -30px;
-	padding: 30px;
+	padding: 15px 30px;
 }
 
 .row {
 	margin-left: 0;
 	margin-right: 0;
-}
-
-.max-height-100 {
-	max-height: 100px;
-}
-
-.max-height-200 {
-	max-height: 200px;
-}
-
-.max-height-300 {
-	max-height: 300px;
-}
-
-.max-height-400 {
-	max-height: 400px;
-}
-
-.max-height-500 {
-	max-height: 500px;
-}
-
-.text-white {
-	color: white;
-}
-
-.bg-black {
-	background: black;
-}
-
-.bg-grey {
-    background: #888888;
-}
-
-.bg-none {
-    background: none;
-}
-
-.margin-top-0 {
-	margin-top: 0;
-}
-
-.margin-bottom-0 {
-	margin-top: 0;
-}
-
-.margin-0 {
-	margin: 0;
 }

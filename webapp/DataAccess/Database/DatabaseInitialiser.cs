@@ -14,10 +14,10 @@ namespace K9.DataAccess.Database
 		public DatabaseInitialiser()
 		{
 			var json = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config/appsettings.json"));
-			var dbConfig = ConfigHelper.GetConfiguration<DatabaseConfiguration>(json);
+			var dbConfig = ConfigHelper.GetConfiguration<DatabaseConfiguration>(json).Value;
 
-			AutomaticMigrationsEnabled = dbConfig.Value.AutomaticMigrationsEnabled;
-			AutomaticMigrationDataLossAllowed = dbConfig.Value.AutomaticMigrationDataLossAllowed;
+			AutomaticMigrationsEnabled = dbConfig.AutomaticMigrationsEnabled;
+			AutomaticMigrationDataLossAllowed = dbConfig.AutomaticMigrationDataLossAllowed;
 		}
 
 		public static void InitialiseWebsecurity()

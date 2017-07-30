@@ -1,4 +1,10 @@
 ﻿@model CarouselOptions
+<style>
+	#(@Model.Id).carousel-inner > .item > img, 
+	.carousel-inner > .item > a > img {
+		  width: @(Model.ImageWidth)%;
+	  }
+</style>
 <div id="@Model.Id" class="carousel slide" data-ride="carousel">
 	<ol class="carousel-indicators">
 		<li data-target="#@Model.Id" data-slide-to="0" class="active"></li>
@@ -14,7 +20,7 @@
 			<div class="item @imageClass">
 				@if (fullsizeImage != null)
 				{
-					<a href="@fullsizeImage.Src"><img src="@image.Src"></a>
+					<a href="@fullsizeImage.Src" target="_new"><img src="@image.Src"></a>
 				}
 				else
 				{

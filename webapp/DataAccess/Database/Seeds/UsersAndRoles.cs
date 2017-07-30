@@ -46,7 +46,7 @@ namespace K9.DataAccess.Database.Seeds
 						Name = "System User",
 						EmailAddress = "simon@glantzconsulting.co.uk",
 						BirthDate = DateTime.Now,
-						IsSystemStandrad = true,
+						IsSystemStandard = true,
 						CreatedBy = SystemUser.System,
 						CreatedOn = DateTime.Now,
 						LastUpdatedBy = SystemUser.System,

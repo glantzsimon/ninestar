@@ -30,6 +30,10 @@
     background: #888888;
 }
 
+.bg-blue {
+    background: #337ab7;
+}
+
 .bg-none {
     background: none;
 }
@@ -40,16 +44,6 @@
 
 .margin-bottom-0 {
 	margin-top: 0;
-}
-
-.margin-left-xs {
-	margin-left: 2px;
-	margin-right: -2px;
-}
-
-.margin-left-s {
-	margin-left: 4px;
-	margin-right: -4px;
 }
 
 .margin-0 {

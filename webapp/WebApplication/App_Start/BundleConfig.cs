@@ -15,6 +15,7 @@ namespace K9.WebApplication
 				"~/Content/shared.css",
 				"~/Content/validation.css",
 				"~/Content/k9/*.css",
+				"~/Content/desktop.css",
 				"~/Content/tablet.css",
 				"~/Content/mobile.css",
 				"~/Content/botf.css"));

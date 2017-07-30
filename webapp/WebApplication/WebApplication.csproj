@@ -266,6 +266,7 @@
     <Content Include="Content\bootstrap\bootstrapValidator.css" />
     <Content Include="Content\bootstrap\bootstrapValidator.min.css" />
     <Content Include="Content\botf.css" />
+    <Content Include="Content\desktop.css" />
     <Content Include="Content\shared.css" />
     <Content Include="Content\k9\fadeIn.css" />
     <Content Include="Content\_botfColors.txt" />
@@ -319,6 +320,12 @@
     <Content Include="Images\latest\image7.jpg" />
     <Content Include="Images\latest\image8.jpg" />
     <Content Include="Images\latest\image9.jpg" />
+    <Content Include="Images\partners\bokaye.jpg" />
+    <Content Include="Images\partners\global-ibogaine.jpg" />
+    <Content Include="Images\partners\iceers.jpg" />
+    <Content Include="Images\partners\ebando.jpg" />
+    <Content Include="Images\partners\parc-gabon.jpg" />
+    <Content Include="Images\partners\plant-consciousness.jpg" />
     <Content Include="Images\ui\fail.png" />
     <Content Include="Images\ui\notfound.png" />
     <Content Include="Images\ui\locked.png" />

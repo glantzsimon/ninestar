@@ -255,6 +255,7 @@
     <Compile Include="ViewModels\MultiSelectViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="favicon.ico" />
     <Content Include="Content\bootstrap\bootstrap-datetimepicker.css" />
     <Content Include="Content\bootstrap\bootstrap-select.css" />
     <Content Include="Content\bootstrap\bootstrap-theme.css" />

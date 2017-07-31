@@ -50,6 +50,10 @@
 	margin: 0;
 }
 
+.padding-left-2 {
+	  padding-left: 2px;
+  }
+
 .bold {
 	font-weight: bold;
 }

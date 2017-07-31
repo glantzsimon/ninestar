@@ -1,16 +1,19 @@
-﻿@media only screen and (min-width: 1024px)
-{
-	footer {
-		background-color: #183538;
-	}
+﻿footer {
+	background-color: #183538;
+}
 
-	.menu-bar {
-		background-color: #183538;
-		border-top: 1px solid #888888;
-	}
+.menu-bar {
+	background-color: #183538;
+	border-top: 1px solid #888888;
+}
 
-	.alphaBackground
-	{
+.bg-green {
+	background: #183538;
+}
+
+@media only screen and (min-width: 1024px) {
+
+	.alphaBackground {
 		background: rgb(255, 255, 255);
 		background: rgba(255, 255, 255, 0.9);
 		filter: alpha(opacity=90);

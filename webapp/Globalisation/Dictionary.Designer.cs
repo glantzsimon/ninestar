@@ -905,6 +905,22 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///	There are many blessings of the forest, from the vast array of medicinal plants
+        ///	of the Amazon, to less exotic but no less valuable varieties much closer to home.
+        ///	However, few if any of nature&apos;s gifts are quite as precious as Iboga. Iboga is now
+        ///	an endangered species, classified in July 2000 as a ‘National Cultural Heritage
+        ///	and Strategic Reserve’ by the Ex-President of Gabon, El Hadj Omar Bongo Ondimba.
+        ///	Our organisation has been set up to preserve, research and share knowledge about
+        ///	the med [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mission_statement_and_aims {
+            get {
+                return ResourceManager.GetString("mission_statement_and_aims", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to My Account.
         /// </summary>
         public static string MyAccountTitle {

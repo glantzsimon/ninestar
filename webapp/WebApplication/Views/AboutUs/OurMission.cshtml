@@ -1,11 +1,17 @@
 ﻿@using K9.WebApplication.Config
 @{
 	ViewBag.Title = Dictionary.OurMission;
-	ViewBag.SubTitle = "Our Mission Statement And Aims";
 }
 
-<br/>
+<div class="row text-center page-header">
+	<h2><strong>@Dictionary.OurMission</strong></h2>
+</div>
+
 @Html.ImageSwitcher(new ImageSwitcherOptions("Images/home/slides")
 {
 	Interval = 10000
 })
+
+<article>
+	@MvcHtmlString.Create(Dictionary.mission_statement_and_aims)
+</article>

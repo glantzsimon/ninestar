@@ -1,4 +1,4 @@
-function ButtonBehaviours()
+function buttonBehaviours()
 {
 
     function displaySpinnerOnFormSubmit()

@@ -6,7 +6,7 @@ namespace K9.WebApplication
 	{
 		public static void RegisterBundles(BundleCollection bundles)
 		{
-			bundles.Add(new StyleBundle("~/Content/bootstrap-custom").Include(
+			bundles.Add(new StyleBundle("~/Content/bootstrapCustom").Include(
 				"~/Content/bootstrap/*.css"));
 
 			bundles.Add(new StyleBundle("~/Content/css").Include(
@@ -20,9 +20,11 @@ namespace K9.WebApplication
 				"~/Content/mobile.css",
 				"~/Content/botf.css"));
 
-			bundles.Add(new ScriptBundle("~/Scripts/k9").Include(
+			bundles.Add(new ScriptBundle("~/Scripts/js").Include(
 				"~/Scripts/imageSwitcher/*.js",
 				"~/Scripts/k9/*.js"));
+
+			BundleTable.EnableOptimizations = true;
 		}
 	}
 }

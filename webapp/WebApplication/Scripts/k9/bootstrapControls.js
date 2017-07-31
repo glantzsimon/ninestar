@@ -1,4 +1,4 @@
-function BootstrapControls(config)
+function bootstrapControls(config)
 {
 
     function initBootstrapDateTimePickers()

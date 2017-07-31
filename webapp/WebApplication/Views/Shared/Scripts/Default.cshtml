@@ -4,12 +4,12 @@
 
 	$(function ()
 	{
-		BootstrapControls({
+		bootstrapControls({
 			language: "@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower()",
 			dateFormat: "@CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern.ToUpper()"
 		}).init();
 
-		ButtonBehaviours().init();
+		buttonBehaviours().init();
 
 		fadePageIn().init();
 	});

@@ -255,6 +255,11 @@
     <Compile Include="ViewModels\MultiSelectViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\fontawesome\font-awesome.css" />
+    <Content Include="Content\template\lsb.css" />
+    <Content Include="Content\template\owl.carousel.css" />
+    <Content Include="Content\template\owl.theme.css" />
+    <Content Include="Content\template\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="Content\bootstrap\bootstrap-datetimepicker.css" />
     <Content Include="Content\bootstrap\bootstrap-select.css" />
@@ -322,6 +327,27 @@
     <Content Include="Images\partners\ebando.jpg" />
     <Content Include="Images\partners\parc-gabon.jpg" />
     <Content Include="Images\partners\plant-consciousness.jpg" />
+    <Content Include="Images\template\1.jpg" />
+    <Content Include="Images\template\2.jpg" />
+    <Content Include="Images\template\3.jpg" />
+    <Content Include="Images\template\4.jpg" />
+    <Content Include="Images\template\5.jpg" />
+    <Content Include="Images\template\arrow.png" />
+    <Content Include="Images\template\close.png" />
+    <Content Include="Images\template\f1.jpg" />
+    <Content Include="Images\template\f2.jpg" />
+    <Content Include="Images\template\f3.jpg" />
+    <Content Include="Images\template\f4.jpg" />
+    <Content Include="Images\template\g1.jpg" />
+    <Content Include="Images\template\g2.jpg" />
+    <Content Include="Images\template\g3.jpg" />
+    <Content Include="Images\template\g4.jpg" />
+    <Content Include="Images\template\g5.jpg" />
+    <Content Include="Images\template\next.png" />
+    <Content Include="Images\template\prev.png" />
+    <Content Include="Images\template\t1.jpg" />
+    <Content Include="Images\template\t2.jpg" />
+    <Content Include="Images\template\t3.jpg" />
     <Content Include="Images\ui\fail.png" />
     <Content Include="Images\ui\notfound.png" />
     <Content Include="Images\ui\locked.png" />
@@ -335,6 +361,13 @@
     <Content Include="Scripts\k9\buttonBehaviours.js" />
     <Content Include="Scripts\k9\bootstrapControls.js" />
     <Content Include="Scripts\k9\fadePageIn.js" />
+    <Content Include="Scripts\library\easing.js" />
+    <Content Include="Scripts\library\jarallax.js" />
+    <Content Include="Scripts\library\lsb.js" />
+    <Content Include="Scripts\library\move-top.js" />
+    <Content Include="Scripts\library\owl.carousel.js" />
+    <Content Include="Scripts\library\SmoothScroll.min.js" />
+    <Content Include="Scripts\template\scroller.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -490,6 +523,12 @@
     <Content Include="Views\Archive\Index.cshtml" />
     <Content Include="Views\Iboga\Index.cshtml" />
     <Content Include="Views\Shared\Controls\_Carousel.cshtml" />
+    <None Include="Content\fonts\fontawesome-webfont.eot" />
+    <None Include="Content\fonts\fontawesome-webfont.svg" />
+    <None Include="Content\fonts\fontawesome-webfont.ttf" />
+    <None Include="Content\fonts\fontawesome-webfont.woff" />
+    <None Include="Content\fonts\fontawesome-webfont.woff2" />
+    <None Include="Content\fonts\FontAwesome.otf" />
     <None Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <None Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <None Include="Content\fonts\glyphicons-halflings-regular.ttf" />
@@ -497,6 +536,10 @@
     <None Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Views\Shared\EditorTemplates\Text.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Text.cshtml" />
+    <Content Include="Views\Shared\_LayoutTemplateMaster.cshtml" />
+    <Content Include="Views\Shared\_FooterTemplate.cshtml" />
+    <Content Include="Views\Shared\_NavbarTemplate.cshtml" />
+    <Content Include="Views\Home\Test.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutColumns.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />

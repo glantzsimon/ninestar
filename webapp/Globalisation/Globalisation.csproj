@@ -74,6 +74,8 @@
     <Content Include="Templates\fr\PasswordResetEmail.htm" />
     <Content Include="Templates\fr\SupportQuery.htm" />
     <Content Include="Templates\fr\WelcomeEmail.htm" />
+    <Content Include="Text\en-gb\Keywords.txt" />
+    <Content Include="Text\fr\Keywords.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

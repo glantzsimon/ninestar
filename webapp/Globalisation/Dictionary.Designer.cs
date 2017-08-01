@@ -779,6 +779,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Iboga Gabon Medicine Healing Entheogen Ibogaine Addiction Transformation.
+        /// </summary>
+        public static string Keywords {
+            get {
+                return ResourceManager.GetString("Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Last Name.
         /// </summary>
         public static string LastNameLabel {
@@ -905,14 +914,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///	There are many blessings of the forest, from the vast array of medicinal plants
-        ///	of the Amazon, to less exotic but no less valuable varieties much closer to home.
-        ///	However, few if any of nature&apos;s gifts are quite as precious as Iboga. Iboga is now
-        ///	an endangered species, classified in July 2000 as a ‘National Cultural Heritage
-        ///	and Strategic Reserve’ by the Ex-President of Gabon, El Hadj Omar Bongo Ondimba.
-        ///	Our organisation has been set up to preserve, research and share knowledge about
-        ///	the med [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h3&gt;These are our aims in relation to this plant considered as sacred by the Gabonese people.&lt;/h3&gt;
+        ///
+        ///&lt;ul&gt;
+        ///	&lt;li&gt;Providing a voice in the world to explain the impact of the growing international interest for iboga on Gabonese traditions as well as the flora and fauna of Gabon&lt;/li&gt;
+        ///	&lt;li&gt;Using legal expertise, in partnership with all Gabonese institutions and international organizations involved in the protection of biodiversity and traditional medicines, on ways and means to regulate the cultivation, market [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mission_statement_and_aims {
             get {

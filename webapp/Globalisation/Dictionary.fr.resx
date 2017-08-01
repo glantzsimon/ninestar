@@ -613,4 +613,7 @@
   <data name="mission_statement_and_aims" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\mission-statement-and-aims.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="Keywords" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>text\fr\keywords.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

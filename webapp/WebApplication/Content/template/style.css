@@ -112,19 +112,51 @@ ul.nav.navbar-nav {
 .main-section{
     padding: 4em 0;
 }
+.main-section ul {
+	padding: 0;
+}
+.main-section h5{
+    color: #000;
+    font-size: 1em;
+    line-height: 1.5em;
+    font-weight: 600;
+    margin: 0;	
+}
+.main-section h4{
+    font-size: 1.2em;
+    margin: 0 0 1em 0;
+    color: #FFFFFF;
+    line-height: 1.5em;
+    text-transform: uppercase;
+}
+.main-section p{
+    margin: 1em 0 0 0;
+    font-size: .9em;
+    color: #999999;
+    line-height: 1.8em;
+}
+.main-section ul li {
+    display: block;
+    margin-bottom: 20px;	
+    font-size: .9em;
+    text-decoration: none;
+}
 .text-white {
 	color: #fff !important;
 }
-.main-heading h3,.agileits-top-heading h2 {
+.main-heading{
+	text-align:center;
+}
+.main-section .main-heading {
+	margin: 0 0 4em 0;
+}
+.main-heading h3 {
     color: #212121;
     font-size: 2.5em;
     margin: 0;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 6px;
-}
-.main-heading{
-	text-align:center;
 }
 .jarallax {
     position: relative;
@@ -205,66 +237,12 @@ button.btn1:hover i.fa.fa-paper-plane-o{
 .picture-frame img{
 	width:100%;
 }
-.main-section h5{
-    color: #000;
-    font-size: 1em;
-    line-height: 1.5em;
-    font-weight: 600;
-    margin: 0;	
-}
-.main-section p{
-    margin: 1em 0 0 0;
-    font-size: .9em;
-    color: #999999;
-    line-height: 1.8em;
-}
-.offers {
-    background: url(/Images/background/slides/bwiti1.jpg) no-repeat 0px 0px;
+.our-mission {
+    background: url(/Images/background/slides/bwiti1.jpg) no-repeat 0 0;
     background-size: cover;
 }
-.offers-heading h3{
-	color:#FFFFFF;
-}
-.offers-grids{
-	margin:4em 0 0 0;
-}
-.offers-left-heading h4{
-    font-size: 1.2em;
-    margin: 0 0 1em 0;
-    color: #FFFFFF;
-    line-height: 1.5em;
-    text-transform: uppercase;
-}
-.offers-number{
-    float: left;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    background: #FFFFFF;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-}
-.offers-number p{
-    font-size: 1.5em;
-    color: #000000;
-    margin: 0;
-    line-height: 2em;
-}
-.offers-text{
-    float: right;
-    width: 85%;
-}
-.offers-text p{
-    color: #FFFFFF;
-    font-size: .9em;
-    line-height: 1.8em;
-    margin: 0;
-}
-.offers-left-middle{
-    margin: 2em 0;
+.our-mission ul li{
+    color: #fff;
 }
 .wthree-offers-right h5{
 color: #FFFFFF;
@@ -282,24 +260,12 @@ color: #FFFFFF;
 	margin:1em 0 0 0;
 	padding:0;
 }
-.our-mission ul {
-	padding: 0;
-}
-.our-mission ul li{
-    display: block;
-    margin-bottom: 20px;	
-    font-size: .9em;
-    color: #FFFFFF;
-    text-decoration: none;
-}
 .wthree-offers-right ul li a{
     font-size: .9em;
     margin: 0;
     color: #FFFFFF;
     text-decoration: none;
 }
-/*-- //offers --*/
-/*-- team --*/
 .ih-item.circle {
     position: relative;
     width: 220px;
@@ -309,7 +275,7 @@ color: #FFFFFF;
 	-moz-border-radius: 50%;
 	-o-border-radius: 50%;
 	-ms-border-radius: 50%;
-    margin: 0 auto;
+    margin: 0 auto 1em auto;
 }
 .ih-item.circle .img {
   position: relative;
@@ -428,26 +394,23 @@ color: #FFFFFF;
   -o-transform: translateY(-50px) scale(0.5);
   transform: translateY(-50px) scale(0.5);
 }
-.team-icons ul{
+.circle-icons ul{
 	padding:0;
 	margin:0;
 }
-.team-icons ul li{
+.circle-icons ul li{
 	display:inline-block;
 }
-.team-icons ul li:nth-child(2){
+.circle-icons ul li:nth-child(2){
 	margin:0 1em;
 }
-.team-icons ul li a{
+.circle-icons ul li a{
 	color: #FFFFFF;
     text-align: center;	
 }
-.team-icons ul li a:hover{
+.circle-icons ul li a:hover{
 	opacity:.5;
 }
-/*-- //team --*/
-/*-- //about --*/
-/*-- gallery --*/
 .show-reel a img{
 	width:100%;
 }

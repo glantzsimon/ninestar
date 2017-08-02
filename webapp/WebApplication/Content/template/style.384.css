@@ -1,0 +1,31 @@
+@media(max-width:384px){
+	.header-left {
+		float: none;
+		text-align: center;
+	}
+	.header-right {
+		float: none;
+		text-align: center;
+	}
+	.w3layouts-phone h2 {
+		font-size: 1.5em;
+	}
+	.w3-banner {
+		padding: 2em 0 3em 0;
+	}
+	.tabs .nav-tabs li a {
+		padding: 1.5em;
+	}
+	.agileits_tom_right {
+		margin-left: .5em;
+	}
+	.reply {
+		margin-left: .5em;
+	}
+	.agileits_three_comments h3, .w3_leave_comment h3 {
+		font-size: 1.2em;
+	}
+	.agileits-caption {
+		height: 215px;
+	}
+}

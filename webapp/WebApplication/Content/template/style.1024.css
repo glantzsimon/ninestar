@@ -1,0 +1,11 @@
+@media(max-width:1024px){
+	.w3layouts-phone h2 {
+		font-size: 3em;
+	}
+	.w3layouts-phone h3 {
+		font-size: 4em;
+	}
+	.w3layouts-phone i.fa.fa-cutlery {
+		margin: 2em 0 0 0;
+	}
+}

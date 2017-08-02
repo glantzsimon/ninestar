@@ -1,17 +1,18 @@
 ﻿@{
 	ViewBag.Title = Dictionary.Home;
+	ViewBag.SubTitle = "THis is the subtitle";
 	Layout = "../Shared/_LayoutTemplateMaster.cshtml";
 }
 
-<div class="about">
+<div class="about main-section">
 	<div class="container">
 		<div class="about-grids">
-			<div class="col-md-5 wthree-about-left">
-				<div class="wthree-about-left-info">
+			<div class="col-md-5">
+				<div class="picture-frame">
 					<img src="~/Images/home/wood1.jpg" alt="" />
 				</div>
 			</div>
-			<div class="col-md-7 agileits-about-right">
+			<div class="col-md-7">
 				<h5>@Dictionary.blessings_of_the_forest_intro</h5>
 				<article>
 					@MvcHtmlString.Create(Dictionary.blessings_of_the_forest)
@@ -21,10 +22,10 @@
 		</div>
 	</div>
 </div>
-<div class="jarallax offers">
+<div class="jarallax offers main-section">
 	<div class="container">
-		<div class="wthree-heading feedback-heading">
-			<h3>@Dictionary.OurMission</h3>
+		<div class="main-heading">
+			<h3 class="text-white">@Dictionary.OurMission</h3>
 		</div>
 		<div class="offers-grids">
 			<div class="col-md-6 wthree-offers-left our-mission">
@@ -43,14 +44,12 @@
 		</div>
 	</div>
 </div>
-<!-- offers -->
-<!-- team -->
-<div class="team">
+<div class="team main-section">
 	<div class="container">
-		<div class="wthree-heading">
+		<div class="main-heading">
 			<h3>@Dictionary.OurPartners</h3>
 		</div>
-		<div class="team-grids">
+		<div class="main-section">
 			<div class="col-sm-4 team-grid">
 				<div class="ih-item circle effect10 bottom_to_top">
 					<div class="img"><img src="~/Images/partners/global-ibogaine.jpg" alt="GITA">

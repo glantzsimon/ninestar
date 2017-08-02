@@ -250,18 +250,38 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Blessings.
+        /// </summary>
+        public static string Blessings {
+            get {
+                return ResourceManager.GetString("Blessings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///	There are many blessings of the forest, from the vast array of medicinal plants
-        ///	of the Amazon, to less exotic but no less valuable varieties much closer to home.
-        ///	However, few if any of nature&apos;s gifts are quite as precious as Iboga. Iboga is now
+        ///	Iboga is now
         ///	an endangered species, classified in July 2000 as a ‘National Cultural Heritage
         ///	and Strategic Reserve’ by the Ex-President of Gabon, El Hadj Omar Bongo Ondimba.
         ///	Our organisation has been set up to preserve, research and share knowledge about
-        ///	the med [rest of string was truncated]&quot;;.
+        ///	the medicinal plants and indigenous traditions of the Gabonese forest people for
+        ///	the benefit of all of humanity. We are a community interest company (CIC), which
+        ///	is a type of social enterprise. Like a charity, it has a stated mission known [rest of string was truncated]&quot;;.
         /// </summary>
         public static string blessings_of_the_forest {
             get {
                 return ResourceManager.GetString("blessings_of_the_forest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There are many blessings of the forest, from the vast array of medicinal plants
+        ///	of the Amazon, to less exotic but no less valuable varieties much closer to home.
+        ///	However, few if any of nature&apos;s gifts are quite as precious as Iboga. .
+        /// </summary>
+        public static string blessings_of_the_forest_intro {
+            get {
+                return ResourceManager.GetString("blessings_of_the_forest_intro", resourceCulture);
             }
         }
         
@@ -914,15 +934,44 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h3&gt;These are our aims in relation to this plant considered as sacred by the Gabonese people.&lt;/h3&gt;
-        ///
-        ///&lt;ul&gt;
-        ///	&lt;li&gt;Providing a voice in the world to explain the impact of the growing international interest for iboga on Gabonese traditions as well as the flora and fauna of Gabon&lt;/li&gt;
-        ///	&lt;li&gt;Using legal expertise, in partnership with all Gabonese institutions and international organizations involved in the protection of biodiversity and traditional medicines, on ways and means to regulate the cultivation, market [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to These are our aims in relation to this plant considered as sacred by the Gabonese people.
         /// </summary>
-        public static string mission_statement_and_aims {
+        public static string mission_statement_and_aims_title1 {
             get {
-                return ResourceManager.GetString("mission_statement_and_aims", resourceCulture);
+                return ResourceManager.GetString("mission_statement_and_aims_title1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The following aims of Blessings of the Forest do not focus on iboga, but are equally important.
+        /// </summary>
+        public static string mission_statement_and_aims_title2 {
+            get {
+                return ResourceManager.GetString("mission_statement_and_aims_title2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;ul&gt;
+        ///	&lt;li&gt;Providing a voice in the world to explain the impact of the growing international interest for iboga on Gabonese traditions as well as the flora and fauna of Gabon&lt;/li&gt;
+        ///	&lt;li&gt;Using legal expertise, in partnership with all Gabonese institutions and international organizations involved in the protection of biodiversity and traditional medicines, on ways and means to regulate the cultivation, marketing and the therapeutic use of iboga&lt;/li&gt;
+        ///	&lt;li&gt;Mapping the presence of iboga on the whole National te [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mission_statement_and_aims1 {
+            get {
+                return ResourceManager.GetString("mission_statement_and_aims1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;ul&gt;
+        ///	&lt;li&gt;Creating an eco-village with zero environmental impact.
+        ///		The village will be powered by renewable energy systems such as wind and solar. It will also collect, filter, store and distribute rainwater. One or more wells will be drilled to make the village self-sufficient for water.
+        ///		The houses in the village will be made with natural materials of the Gabonese forest. Some structures made out of mobile shipping containers equipt with ecological living facilities also serve to develop the village&lt; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mission_statement_and_aims2 {
+            get {
+                return ResourceManager.GetString("mission_statement_and_aims2", resourceCulture);
             }
         }
         
@@ -1031,6 +1080,15 @@ namespace K9.Globalisation {
         public static string OfPrepositionWithApostrophe {
             get {
                 return ResourceManager.GetString("OfPrepositionWithApostrophe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Of The Forest.
+        /// </summary>
+        public static string OfTheForest {
+            get {
+                return ResourceManager.GetString("OfTheForest", resourceCulture);
             }
         }
         

@@ -6,13 +6,18 @@
 			<div class="header-left">
 				<div class="w3layouts-logo">
 					<h1>
-						<a href="~/">Global <span>@WebsiteConfiguration.Instance.CompanyName</span></a>
+						<a href="~/">@Dictionary.Blessings <span>@Dictionary.OfTheForest</span></a>
 					</h1>
 				</div>
 			</div>
 			<div class="header-right">
-				<p>
-					<i class="fa fa-map-marker" aria-hidden="true"></i>123 T.Globel Place,London</p>
+				<ul class="nav navbar-nav navbar-right navbar-login">
+					@Html.LoginLogout()
+					@if (WebSecurity.IsAuthenticated)
+					{
+						<li class="@ViewContext.GetActiveClass("MyAccount", "Account")"><a href="@Url.Action("MyAccount", "Account")"><span class="glyphicon glyphicon-user"></span> @Dictionary.MyAccountTitle</a></li>
+					}
+				</ul>
 			</div>
 			<div class="clearfix">
 			</div>
@@ -22,44 +27,32 @@
 		<div class="container">
 			<div class="top-nav">
 				<nav class="navbar navbar-default">
-							<div class="navbar-header">
-								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-									<span class="sr-only">Toggle navigation</span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-								</button>
-							</div>
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-							<ul class="nav navbar-nav">
-								<li><a class="list-border" href="index.html">Home</a></li>
-								<li><a class="active" href="about.html">About</a></li>
-								<li><a href="gallery.html">Gallery</a></li>
-								<li class="dropdown">
-									<a href="codes.html" class="dropdown-toggle" data-hover="Pages" data-toggle="dropdown">Pages <b class="caret"></b></a>
-									<ul class="dropdown-menu">
-										<li><a href="icons.html">Icons</a></li>
-										<li><a href="codes.html">Short Codes</a></li>
-									</ul>
-								</li>
-								<li><a href="contact.html">Contact</a></li>
-							</ul>	
-							<div class="clearfix"> </div>
-						</div>	
-					</nav>
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li class="@ViewContext.GetActiveClass("MyAccount", "Account")"><a href="@Url.Action("OurMission", "AboutUs")"> @Dictionary.OurMission</a></li>
+							<li class="@ViewContext.GetActiveClass("MyAccount", "Account")"><a href="@Url.Action("Index", "Iboga")"> @Dictionary.Iboga</a></li>
+							<li class="@ViewContext.GetActiveClass("MyAccount", "Account")"><a href="@Url.Action("HelpUs", "AboutUs")"> @Dictionary.HelpUs</a></li>
+							<li class="@ViewContext.GetActiveClass("MyAccount", "Account")"><a href="@Url.Action("Index", "News")"> @Dictionary.News</a></li>
+							<li class="@ViewContext.GetActiveClass("MyAccount", "Account")"><a href="@Url.Action("Index", "Archive")"> @Dictionary.Archive</a></li>
+						</ul>
+						<div class="clearfix"> </div>
+					</div>	
+				</nav>
 			</div>
-			<!-- w3-banner -->
 			<div class="agileits-top-heading">
-				<h2>
-					About</h2>
+				<h2>@ViewBag.SubTitle</h2>
 			</div>
-			<!-- //w3-banner -->
 		</div>
 	</div>
 </div>
-
-
 @*<nav class="navbar navbar-inverse">
 	<div class="container-fluid k9-navbar">
 		<div class="navbar-header">

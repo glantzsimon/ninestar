@@ -607,10 +607,28 @@
   <data name="OurPartners" xml:space="preserve">
     <value>Our Partners</value>
   </data>
-  <data name="mission_statement_and_aims" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\mission-statement-and-aims.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="Keywords" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>text\en-gb\keywords.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Blessings" xml:space="preserve">
+    <value>Blessings</value>
+  </data>
+  <data name="OfTheForest" xml:space="preserve">
+    <value>Of The Forest</value>
+  </data>
+  <data name="blessings_of_the_forest_intro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\blessings-of-the-forest-intro.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mission_statement_and_aims1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\mission-statement-and-aims1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mission_statement_and_aims2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\mission-statement-and-aims2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mission_statement_and_aims_title1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\mission-statement-and-aims-title1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mission_statement_and_aims_title2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\mission-statement-and-aims-title2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

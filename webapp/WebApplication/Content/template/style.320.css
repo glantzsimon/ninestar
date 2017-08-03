@@ -1,35 +1,9 @@
 @media(max-width:320px){
-	.w3-banner {
-		padding: 1em 0 3em 0;
-	}
-	.w3layouts-phone i.fa.fa-cutlery {
-		font-size: 1em;
-		width: 60px;
-		height: 60px;
-	}
-	.w3layouts-phone h3 {
-		font-size: 2em;
-	}
-	.w3-banner {
-		padding: 1em 0 2em 0;
-	}
 	.tabs .nav-tabs li a {
 		padding: 1em;
 	}
-	.w3-text h3, .w3l-services-heading h3 {
-		font-size: 1.5em;
-	}
-	.tab-grid-right {
-		width: 100%;
-	}
 	.main-heading h3, .agileits-top-heading h2 {
 		letter-spacing: 1px;
-	}
-	.subscribe-grid input[type="text"] {
-		width: 70%;
-	}
-	.offers-text {
-		width: 77%;
 	}
 	.main-section h4 {
 		font-size: 1em;
@@ -40,14 +14,5 @@
 	.top-nav ul li a {
 		font-size: .9em;
 		padding: .5em;
-	}
-	.agileits-caption {
-		height: 170px;
-	}
-	.agileits-caption h4 {
-		margin: 2em 0 0 0;
-	}
-	h3.hdg {
-		font-size: 2em;
 	}
 }

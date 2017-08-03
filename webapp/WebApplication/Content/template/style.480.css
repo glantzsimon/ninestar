@@ -1,38 +1,8 @@
 @media(max-width:480px){
-	.w3layouts-logo h1 a {
-		font-size: 1em;
-	}
 	.header-right {
 		margin: 1em 0 0 0;
 	}
 	.tabs-right {
 		margin: 1em 0 0 0;
-	}
-	.w3-text h3, .w3l-services-heading h3 {
-		font-size: 2em;
-	}
-	.main-heading h3, .agileits-top-heading h2 {
-		font-size: 2em;
-	}
-	.agileits_tom_right {
-		margin-left: 1em;
-	}
-	.agileits_tom {
-		width: 20%;
-	}
-	.w3_leave_comment {
-		width: 100%;
-	}
-	.agile-contact-form input[type="text"], .agile-contact-form input[type="email"] {
-		width: 100%;
-	}
-	.agileits-caption {
-		height: 124px;
-	}
-	.agileits-caption h4 {
-		margin: 0em 0 0 0;
-	}
-	.agileits-caption p {
-		font-size: .9em;
 	}
 }

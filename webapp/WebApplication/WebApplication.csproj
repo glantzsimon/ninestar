@@ -256,6 +256,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\fontawesome\font-awesome.css" />
+    <Content Include="Content\template\style.760.css" />
+    <Content Include="Content\template\style.1024.css" />
     <Content Include="Content\template\style.991.css" />
     <Content Include="Content\template\style.736.css" />
     <Content Include="Content\template\style.480.css" />
@@ -263,7 +265,6 @@
     <Content Include="Content\template\style.375.css" />
     <Content Include="Content\template\style.384.css" />
     <Content Include="Content\template\style.414.css" />
-    <Content Include="Content\template\style.1024.css" />
     <Content Include="Content\template\style.1080.css" />
     <Content Include="Content\template\lsb.css" />
     <Content Include="Content\template\owl.carousel.css" />

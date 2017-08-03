@@ -1,18 +1,8 @@
 @media(max-width:375px){
-	.main-heading h3, .agileits-top-heading h2 {
+	.main-heading h3 {
 		font-size: 1.5em;
 	}
 	.agileits-caption {
 		height: 208px;
-	}
-	.agileits_three_comment_grid1 {
-		padding: 1em 0;
-		padding-left: 1em;
-	}
-	.agileits_three_comment_grid:nth-child(2) {
-		margin: 2em 0 0;
-	}
-	.agileits_three_comments {
-		margin: 2em 0;
 	}
 }

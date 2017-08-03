@@ -14,7 +14,7 @@ namespace K9.WebApplication.Controllers
 
 		public ActionResult Index()
 		{
-			return View();
+			return View("Test");
 		}
 
 		public ActionResult Test()

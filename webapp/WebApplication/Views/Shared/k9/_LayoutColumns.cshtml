@@ -1,0 +1,21 @@
+﻿@{
+	Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+@section menu{
+	@Html.Partial("_MenuBar")
+}
+@section layout
+{
+	<div class="row">
+		<div class="col-sm-3 well">
+			@RenderSection("left")
+		</div>
+		<div class="col-sm-7">
+			@RenderSection("middle")
+		</div>
+		<div class="col-sm-2 well">
+			@RenderSection("right")
+		</div>
+	</div>
+	@RenderBody()
+}

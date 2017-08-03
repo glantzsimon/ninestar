@@ -255,6 +255,14 @@
     <Compile Include="ViewModels\MultiSelectViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\ninestar\botf.css" />
+    <Content Include="Content\ninestar\classes.css" />
+    <Content Include="Content\ninestar\desktop.css" />
+    <Content Include="Content\ninestar\elements.css" />
+    <Content Include="Content\ninestar\mobile.css" />
+    <Content Include="Content\ninestar\shared.css" />
+    <Content Include="Content\ninestar\tablet.css" />
+    <Content Include="Content\ninestar\validation.css" />
     <Content Include="Content\fontawesome\font-awesome.css" />
     <Content Include="Content\template\style.760.css" />
     <Content Include="Content\template\style.1024.css" />
@@ -276,25 +284,25 @@
     <Content Include="Content\bootstrap\bootstrap-theme.css" />
     <Content Include="Content\bootstrap\bootstrap.css" />
     <Content Include="Content\bootstrap\bootstrapValidator.css" />
-    <Content Include="Content\botf.css" />
-    <Content Include="Content\desktop.css" />
-    <Content Include="Content\shared.css" />
+    <Content Include="Content\botf\botf.css" />
+    <Content Include="Content\botf\desktop.css" />
+    <Content Include="Content\botf\shared.css" />
     <Content Include="Content\k9\fadeIn.css" />
     <Content Include="Content\_botfColors.txt" />
     <Content Include="Content\k9\breadCrumbs.css" />
     <Content Include="Content\k9\menubar.css" />
     <Content Include="Content\k9\navbar.css" />
     <Content Include="Content\k9\tables.css" />
-    <Content Include="Content\tablet.css" />
+    <Content Include="Content\botf\tablet.css" />
     <Content Include="Content\k9\pageSpinner.css" />
     <Content Include="Content\_colors.txt" />
-    <Content Include="Content\validation.css" />
-    <Content Include="Content\mobile.css" />
-    <Content Include="Content\elements.css" />
+    <Content Include="Content\botf\validation.css" />
+    <Content Include="Content\botf\mobile.css" />
+    <Content Include="Content\botf\elements.css" />
     <Content Include="Content\k9\imagePreloader.css" />
     <Content Include="Content\k9\responsiveslides.css" />
     <Content Include="Global.asax" />
-    <Content Include="Content\classes.css" />
+    <Content Include="Content\botf\classes.css" />
     <Content Include="Images\background\oldslides\1leaves_background.jpg" />
     <Content Include="Images\background\oldslides\blueswirl.jpg" />
     <Content Include="Images\background\oldslides\squares_background.jpg" />
@@ -393,7 +401,6 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_LayoutMaster.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -420,13 +427,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\_Navbar.cshtml" />
+    <Content Include="Views\Shared\k9\_Navbar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_LayoutFormWide.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\_Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Account\AccountActivated.cshtml" />
@@ -511,7 +515,6 @@
     <Content Include="Views\Permissions\Edit.cshtml" />
     <Content Include="Views\Permissions\Index.cshtml" />
     <Content Include="Views\Shared\NotFound.cshtml" />
-    <Content Include="Views\Shared\_LayoutFormMaster.cshtml" />
     <Content Include="Views\Shared\EditMultiple.cshtml" />
     <Content Include="Views\RolePermissions\Index.cshtml" />
     <Content Include="Views\Messages\_DisplayFields.cshtml" />
@@ -550,10 +553,12 @@
     <None Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Views\Shared\EditorTemplates\Text.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Text.cshtml" />
-    <Content Include="Views\Shared\_LayoutTemplateMaster.cshtml" />
-    <Content Include="Views\Shared\_FooterTemplate.cshtml" />
-    <Content Include="Views\Shared\_NavbarTemplate.cshtml" />
+    <Content Include="Views\Shared\_LayoutMaster.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_Navbar.cshtml" />
     <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\Shared\_LayoutMain.cshtml" />
+    <Content Include="Views\Shared\_LayoutFormMaster.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutColumns.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />
@@ -569,6 +574,13 @@
     <Content Include="Views\Shared\_MenuBar.cshtml" />
     <Content Include="Views\Shared\_ContactUs.cshtml" />
     <Content Include="Views\Support\ContactUsSuccess.cshtml" />
+    <Content Include="Views\Shared\k9\_LayoutColumns.cshtml" />
+    <Content Include="Views\Shared\k9\_Layout.cshtml" />
+    <Content Include="Views\Shared\k9\_LayoutFormMaster.cshtml" />
+    <Content Include="Views\Shared\k9\_LayoutFormSmall.cshtml" />
+    <Content Include="Views\Shared\k9\_LayoutFormWide.cshtml" />
+    <Content Include="Views\Shared\k9\_LayoutMaster.cshtml" />
+    <Content Include="Views\Shared\k9\_Footer.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

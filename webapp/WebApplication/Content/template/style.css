@@ -13,7 +13,7 @@ body{
 	background:#FFFFFF;
 }
 .banner{
-	background:url(/Images/background/slides/bwiti1.jpg) no-repeat 0px 0px;
+	background:url(/Images/background/slides/forest4.jpg) no-repeat 0px 0px;
 	background-size:cover;
 }
 .header {
@@ -67,6 +67,10 @@ ul.navbar-login {
 }
 ul.navbar-login li:hover a {
 	color: #ff9800 !important;
+}
+ul.navbar-login li.active a {
+	color: #ff9800;
+	font-weight: bold;
 }
 ul.navbar-login > li {
 	display: inline;
@@ -225,9 +229,6 @@ button.btn1:hover i.fa.fa-paper-plane-o{
 .page-subtitle {
 	padding: 2.4em 0;
 }
-.page-subtitle h3{
-	padding: 2em 0;
-}
 .agileits-top-heading h2{
 	color:#FFFFFF;
 	text-align:center;
@@ -240,8 +241,8 @@ button.btn1:hover i.fa.fa-paper-plane-o{
 .picture-frame img{
 	width:100%;
 }
-.our-mission {
-    background: url(/Images/background/slides/bwiti1.jpg) no-repeat 0 0;
+.forest-background {
+    background: url(/Images/background/slides/forest4.jpg) no-repeat 0 0;
     background-size: cover;
 }
 .our-mission ul li{

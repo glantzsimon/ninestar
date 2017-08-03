@@ -207,6 +207,7 @@ namespace K9.WebApplication.Controllers
 		[ValidateAntiForgeryToken]
 		public ActionResult UpdateAccount(User model)
 		{
+			model.Password = "not blank";
 			if (ModelState.IsValid)
 			{
 				try

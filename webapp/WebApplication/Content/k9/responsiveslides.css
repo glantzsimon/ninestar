@@ -42,7 +42,9 @@
 	width: 100%;
 }
 
-.imageNavigator a:link, a:visited, a:active
+.imageNavigator a:link, 
+.imageNavigator a:visited, 
+.imageNavigator a:active
 {
 	text-decoration: none;
 	color: #333;

@@ -59,10 +59,7 @@ namespace K9.WebApplication.Options
 		private void LoadImages()
 		{
 			_images = ContentHelper.GetImageFiles(_pathToImages);
-			if (Directory.Exists(_pathToFullSizeImages))
-			{
-				_fullSizeImages = ContentHelper.GetImageFiles(_pathToFullSizeImages);
-			}
+			_fullSizeImages = (Directory.Exists(_pathToFullSizeImages) ? ContentHelper.GetImageFiles(_pathToFullSizeImages) : new List<IAssetInfo>();
 		}
 
 	}

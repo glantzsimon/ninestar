@@ -307,18 +307,21 @@
     <Content Include="Images\background\oldslides\blueswirl.jpg" />
     <Content Include="Images\background\oldslides\squares_background.jpg" />
     <Content Include="Images\background\slides\bwiti1.jpg" />
-    <Content Include="Images\background\slides\forest3.jpg" />
+    <Content Include="Images\background\slides\forest1d.jpg" />
+    <Content Include="Images\background\slides\forest3d.jpg" />
     <Content Include="Images\background\slides\forest4.jpg" />
     <Content Include="Images\company\botf_med.png" />
     <Content Include="Images\company\botf_small.png" />
     <Content Include="Images\background\oldslides\bwiti3.jpg" />
-    <Content Include="Images\background\slides\forest1.jpg" />
     <Content Include="Images\background\slides\forest2.jpg" />
     <Content Include="Images\home\bwiti1.jpg" />
     <Content Include="Images\home\wood1.jpg" />
     <Content Include="Images\home\slides\aims1.jpg" />
     <Content Include="Images\home\slides\aims2.jpg" />
     <Content Include="Images\home\slides\aims3.jpg" />
+    <Content Include="Images\iboga\aims1.jpg" />
+    <Content Include="Images\iboga\aims2.jpg" />
+    <Content Include="Images\iboga\aims3.jpg" />
     <Content Include="Images\latest\full-size\image1.jpg" />
     <Content Include="Images\latest\full-size\image10.jpg" />
     <Content Include="Images\latest\full-size\image11.jpg" />
@@ -410,7 +413,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\OldIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
@@ -556,8 +559,7 @@
     <Content Include="Views\Shared\_LayoutMaster.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_Navbar.cshtml" />
-    <Content Include="Views\Home\Test.cshtml" />
-    <Content Include="Views\Shared\_LayoutMain.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutFormMaster.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutColumns.cshtml" />

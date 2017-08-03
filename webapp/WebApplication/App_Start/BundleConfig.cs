@@ -11,6 +11,7 @@ namespace K9.WebApplication
 				"~/Content/bootstrap/*.css"));
 
 			bundles.Add(new StyleBundle("~/Content/botf").Include(
+				"~/Content/botf/elements.css",
 				"~/Content/botf/classes.css",
 				"~/Content/botf/shared.css",
 				"~/Content/botf/validation.css",

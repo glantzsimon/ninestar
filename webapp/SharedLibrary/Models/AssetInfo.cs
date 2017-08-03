@@ -19,7 +19,7 @@ namespace K9.SharedLibrary.Models
 			_pathOnDisk = pathOnDisk;
 			_baseWebPath = baseWebPath.EndsWith("/") ? baseWebPath.Remove(_baseWebPath.Length - 1) : baseWebPath;
 			_fileInfo = new FileInfo(_pathOnDisk);
-			_imageInfo = ImageProcessor.GetImageInfo(_pathOnDisk);
+			_imageInfo = IsImage() ? ImageProcessor.GetImageInfo(_pathOnDisk) : null;
 		}
 
 		public string PathOnDisk

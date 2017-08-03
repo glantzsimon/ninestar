@@ -18,7 +18,7 @@ namespace K9.WebApplication.Options
 		private List<IAssetInfo> _fullSizeImages;
 		private static Guid _id = Guid.NewGuid();
 
-		public CarouselOptions(string pathToImages, string fullSizeImageFolderName  = "full-size", int imageWidth = 70)
+		public CarouselOptions(string pathToImages, string fullSizeImageFolderName = "full-size", int imageWidth = 70)
 		{
 			_pathToImages = pathToImages;
 			_imageWidth = imageWidth;
@@ -59,7 +59,10 @@ namespace K9.WebApplication.Options
 		private void LoadImages()
 		{
 			_images = ContentHelper.GetImageFiles(_pathToImages);
-			_fullSizeImages = ContentHelper.GetImageFiles(_pathToFullSizeImages);
+			if (Directory.Exists(_pathToFullSizeImages))
+			{
+				_fullSizeImages = ContentHelper.GetImageFiles(_pathToFullSizeImages);
+			}
 		}
 
 	}

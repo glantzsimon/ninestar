@@ -179,6 +179,7 @@
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\RolePermissionsController.cs" />
+    <Compile Include="Enums\CarouselEnums.cs" />
     <Compile Include="Exceptions\LimitByUserIdException.cs" />
     <Compile Include="Exceptions\InvalidColumnNameException.cs" />
     <Compile Include="Filters\RequirePermissionsAttribute.cs" />
@@ -319,9 +320,15 @@
     <Content Include="Images\home\slides\aims1.jpg" />
     <Content Include="Images\home\slides\aims2.jpg" />
     <Content Include="Images\home\slides\aims3.jpg" />
-    <Content Include="Images\iboga\aims1.jpg" />
-    <Content Include="Images\iboga\aims2.jpg" />
-    <Content Include="Images\iboga\aims3.jpg" />
+    <Content Include="Images\iboga\2\dragees-iboga.jpg" />
+    <Content Include="Images\iboga\2\ibogaine-chart.jpg" />
+    <Content Include="Images\iboga\2\ibogaine.jpg" />
+    <Content Include="Images\iboga\2\ivory.jpg" />
+    <Content Include="Images\iboga\1\patent.jpg" />
+    <Content Include="Images\iboga\1\pills-online.jpg" />
+    <Content Include="Images\iboga\1\aims1.jpg" />
+    <Content Include="Images\iboga\1\aims2.jpg" />
+    <Content Include="Images\iboga\1\aims3.jpg" />
     <Content Include="Images\latest\full-size\image1.jpg" />
     <Content Include="Images\latest\full-size\image10.jpg" />
     <Content Include="Images\latest\full-size\image11.jpg" />

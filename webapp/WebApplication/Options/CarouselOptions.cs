@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Enums;
 using K9.WebApplication.Helpers;
 
 namespace K9.WebApplication.Options
@@ -18,10 +19,11 @@ namespace K9.WebApplication.Options
 		private List<IAssetInfo> _fullSizeImages;
 		private static Guid _id = Guid.NewGuid();
 
-		public CarouselOptions(string pathToImages, string fullSizeImageFolderName = "full-size", int imageWidth = 70)
+		public CarouselOptions(string pathToImages, string fullSizeImageFolderName = "full-size", int imageWidth = 70, EImageSizing sizing = EImageSizing.Horizontal)
 		{
 			_pathToImages = pathToImages;
 			_imageWidth = imageWidth;
+			ImageSizing = sizing;
 			_pathToFullSizeImages = Path.Combine(_pathToImages, fullSizeImageFolderName);
 			LoadImages();
 		}
@@ -46,6 +48,8 @@ namespace K9.WebApplication.Options
 			get { return _fullSizeImages; }
 		}
 
+		public EImageSizing ImageSizing { get; set; }
+		
 		public int ImageWidth
 		{
 			get { return _imageWidth; }
@@ -53,7 +57,8 @@ namespace K9.WebApplication.Options
 
 		public IAssetInfo GetFullSizeImage(string imageName)
 		{
-			return _fullSizeImages.FirstOrDefault(i => i.FileName == imageName);
+			var fullSizeImage = _fullSizeImages.FirstOrDefault(i => i.FileName == imageName);
+			return fullSizeImage ?? _images.FirstOrDefault(i => i.FileName == imageName);
 		}
 
 		private void LoadImages()

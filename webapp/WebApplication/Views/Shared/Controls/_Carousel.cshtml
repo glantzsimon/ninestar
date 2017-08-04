@@ -17,14 +17,18 @@
 			var image = Model.Images[i];
 			var fullsizeImage = Model.GetFullSizeImage(image.FileName);
 			var imageClass = i == 0 ? "active" : String.Empty;
+			var imageStyle = Model.ImageSizing == EImageSizing.Horizontal
+				? "width: 100%; height: auto; "
+				: "height: 100%; width: auto; max-width: none;";
+				
 			<div class="item @imageClass">
 				@if (fullsizeImage != null)
 				{
-					<a href="@fullsizeImage.Src" target="_new"><img src="@image.Src"></a>
+					<a href="@fullsizeImage.Src" target="_new"><img src="@image.Src" style="@imageStyle"/></a>
 				}
 				else
 				{
-					<img src="@image.Src">	
+					<img src="@image.Src" style="@imageStyle"/>	
 				}
 			</div>
 		}

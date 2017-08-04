@@ -11,9 +11,12 @@
 	<div class="container">
 		<div>
 			<div class="col-md-5">
-				<div class="picture-frame">
+				<div class="picture-frame picture-frame-300">
 					<div>
-						@Html.Carousel(new CarouselOptions("Images/latest"))
+						@Html.Carousel(new CarouselOptions("Images/iboga/1", "", 70)
+						{
+							ImageSizing = EImageSizing.Vertical
+						})
 					</div>
 				</div>
 			</div>
@@ -28,14 +31,13 @@
 						Today, more and more advertising touts iboga as a “miracle cure” without any apparent regard as to the sustainability of the resource.
 						Bought with gold, Iboga is then sold on the Internet in violation of laws protecting it, without equitable sharing of its benefits and a risk of consumers who have no certainty as to its origin and quality.
 						The price of iboga has increased by over 1000% in 15 years making this fundamental Gabonese medicine too expensive for locals to buy.
-						In what can only be described as biopiracy, more than a dozen patents have been filed regarding the therapeutic use of iboga and its chemical derivatives in total disregard of the Nagoya Protocol protecting the people behind this plant and knowledge.
 					</p>
 				</article>
 			</div>
 			<div class="clearfix"> </div>
 		</div>
 		<br/>
-		<div>
+		<div class="desktop-only">
 			<div class="col-md-7">
 				<article>
 					<p>
@@ -43,16 +45,49 @@
 						The ivory trade and iboga trafficking are interlinked. Elephants love iboga fruit and the poachers track and kill them near the last wild reservations of iboga.
 						Once they have murdered the elephants, the poachers also take all the iboga found on site.
 						With your support, Blessings Of The Forest is committed to planting 10,000 feet of iboga wood in Akanda National Park in Gabon, for the benefit of the local people and also international research.
-						Blessings Of The Forest is committed to building a bridge between traditional Gabonese healers and researchers worldwide. We offer humanity the most sacred knowledge of the art of healing using one of the most sacred plants of our common historic origins.
 					</p>
+					<br/>
+					<h5>
+						Blessings Of The Forest is committed to building a bridge between traditional Gabonese healers and researchers worldwide. We offer humanity the most sacred knowledge of the art of healing using one of the most sacred plants of our common historic origins.
+					</h5>
 				</article>
 			</div>
 			<div class="col-md-5">
-				<div class="picture-frame">
+				<div class="picture-frame picture-frame-300">
 					<div>
-						@Html.Carousel(new CarouselOptions("Images/iboga"))
+						@Html.Carousel(new CarouselOptions("Images/iboga/2")
+						{
+							ImageSizing = EImageSizing.Vertical
+						})
 					</div>
 				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<div class="device-only">
+			<div class="col-md-5">
+				<div class="picture-frame picture-frame-300">
+					<div>
+						@Html.Carousel(new CarouselOptions("Images/iboga/2")
+						{
+							ImageSizing = EImageSizing.Vertical
+						})
+					</div>
+				</div>
+			</div>
+			<div class="col-md-7">
+				<article>
+					<p>
+						In what can only be described as biopiracy, more than a dozen patents have been filed regarding the therapeutic use of iboga and its chemical derivatives in total disregard of the Nagoya Protocol protecting the people behind this plant and knowledge.
+						The ivory trade and iboga trafficking are interlinked. Elephants love iboga fruit and the poachers track and kill them near the last wild reservations of iboga.
+						Once they have murdered the elephants, the poachers also take all the iboga found on site.
+						With your support, Blessings Of The Forest is committed to planting 10,000 feet of iboga wood in Akanda National Park in Gabon, for the benefit of the local people and also international research.
+					</p>
+					<br/>
+					<h5>
+						Blessings Of The Forest is committed to building a bridge between traditional Gabonese healers and researchers worldwide. We offer humanity the most sacred knowledge of the art of healing using one of the most sacred plants of our common historic origins.
+					</h5>
+				</article>
 			</div>
 			<div class="clearfix"> </div>
 		</div>

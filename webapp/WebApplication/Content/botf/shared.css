@@ -77,3 +77,7 @@
 .bolder {
 	font-weight: bolder;
 }
+
+.display-none {
+	display: none;
+}

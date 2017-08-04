@@ -1,4 +1,4 @@
-body a {
+body a, h4 {
 	transition: 0.5s all;
 	-webkit-transition: 0.5s all;
 	-o-transition: 0.5s all;
@@ -437,16 +437,23 @@ button.btn1:hover i.fa.fa-paper-plane-o {
 	position: relative;
 	display: block;
 }
+.captn {
+	padding: 20px 0;
+}
 .captn h4 {
 	color: #fff;
 	font-size: 2.1em;
 	margin-top: 2px;
+	cursor: pointer;
 }
 .captn p {
 	font-size: 1em;
 	margin-top: 0.5em;
 	color: #fff;
 	line-height: 1.8em;
+}
+.captn h4:hover {
+	color: #ff9800;
 }
 .team-grids .captn {
 	display: inline-block;
@@ -464,13 +471,19 @@ button.btn1:hover i.fa.fa-paper-plane-o {
 	transition: all 0.5s;
 }
 .captn-top {
-	padding: 22% 10%;
+	padding: 20px;
+	height: 80%;
+}
+.social-w3lsicon {
+	padding-bottom: 20px;
+	height: 20%;
 }
 .captn-top h4 {
 	font-size: 1em;
 }
 .captn-top p {
-	font-size: 1em;
+	font-size: 0.8em;
+	margin: 0;
 }
 .team-agileimg:hover .captn {
 	width: 100%;

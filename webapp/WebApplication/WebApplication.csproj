@@ -363,10 +363,10 @@
     <Content Include="Images\partners\ebando.jpg" />
     <Content Include="Images\partners\parc-gabon.jpg" />
     <Content Include="Images\partners\plant-consciousness.jpg" />
-    <Content Include="Images\team\t1.jpg" />
-    <Content Include="Images\team\t2.jpg" />
-    <Content Include="Images\team\t3.jpg" />
-    <Content Include="Images\team\t4.jpg" />
+    <Content Include="Images\team\david.jpg" />
+    <Content Include="Images\team\laurent.jpg" />
+    <Content Include="Images\team\simon.jpg" />
+    <Content Include="Images\team\yann.jpg" />
     <Content Include="Images\template\1.jpg" />
     <Content Include="Images\template\2.jpg" />
     <Content Include="Images\template\3.jpg" />
@@ -427,9 +427,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Home\OldIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
@@ -553,7 +550,6 @@
     <None Include="Config\appsettings.json" />
     <Content Include="Views\AboutUs\Index.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
-    <Content Include="Views\AboutUs\OurMission.cshtml" />
     <Content Include="Views\AboutUs\Team.cshtml" />
     <Content Include="Views\Archive\Index.cshtml" />
     <Content Include="Views\Iboga\Index.cshtml" />
@@ -577,6 +573,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutFormMaster.cshtml" />
     <None Include="Images\home\animated-waterfalls.webp" />
+    <Content Include="Views\AboutUs\HelpUs.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutColumns.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />

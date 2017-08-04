@@ -8,8 +8,6 @@ function scroller()
             event.preventDefault();
             $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
         });
-
-
     }
 
     function scrollToTop()
@@ -22,7 +20,7 @@ function scroller()
             speed: 0.5,
             imgWidth: 1366,
             imgHeight: 768
-        })
+        });
     }
 
     var init = function ()

@@ -1,15 +1,21 @@
 ﻿@{
-	Layout = "~/Views/Shared/_LayoutFormMaster.cshtml";
+	Layout = "~/Views/Shared/_LayoutMaster.cshtml";
 }
-@section formLayout
-{
-	<div class="page shadow alphaBackground roundCorners wide-form">
-		@if (!string.IsNullOrEmpty(ViewBag.SubTitle))
-		{
-			<div class="page-header">
-				<h2><strong>@ViewBag.SubTitle</strong></h2>
+<div class="background-forest4">
+	@Html.Partial("_Navbar")
+	<div class="mainContent">
+		<div class="backdrop">
+			<div class="container-fluid">
+				<div class="page shadow alphaBackground roundCorners wide-form">
+					@if (!string.IsNullOrEmpty(ViewBag.SubTitle))
+					{
+						<div class="page-header">
+							<h2><strong>@ViewBag.SubTitle</strong></h2>
+						</div>
+					}
+					@RenderBody()
+				</div>
 			</div>
-		}
-		@RenderBody()
+		</div>
 	</div>
-}
+</div>

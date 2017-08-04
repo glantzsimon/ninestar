@@ -27,6 +27,11 @@ namespace K9.WebApplication.Controllers
 			return View();
 		}
 
+		public ActionResult HelpUs()
+		{
+			return View();
+		}
+
 		public override string GetObjectName()
 		{
 			return string.Empty;

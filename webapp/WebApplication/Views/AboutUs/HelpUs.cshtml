@@ -1,0 +1,20 @@
+﻿@using K9.WebApplication.Config
+@{
+	ViewBag.Title = Dictionary.HelpUs;
+}
+
+<div class="banner-forest1">
+	@Html.Partial("_Navbar")
+</div>
+<div class="team agileits main-section">
+	<div class="team-agileinfo">
+		<div class="container">
+			<div class="main-heading">
+				<h3>@Dictionary.HelpUs</h3>
+			</div>
+			<div class="text-center">
+				@Html.BootstrapActionLinkButton(Dictionary.SupportUs, "OurMission", "AboutUs", null, "fa-thumbs-o-up", EButtonClass.Large)
+			</div>
+		</div>
+	</div>
+</div>

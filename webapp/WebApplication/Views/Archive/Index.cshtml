@@ -1,9 +1,15 @@
 ﻿@using K9.WebApplication.Config
 @{
-	ViewBag.Title = Dictionary.Home;
+	ViewBag.Title = Dictionary.Archive;
 }
 
-<div class="row text-center">
-	<img src="~/Images/company/botf_med.png"/>
-	<h2>@WebsiteConfiguration.Instance.CompanyName</h2>
+<div class="banner-forest3">
+	@Html.Partial("_Navbar")
+</div>
+<div class="main-section">
+	<div class="container">
+		<div class="main-heading">
+			<h3>@Dictionary.Archive</h3>
+		</div>
+	</div>
 </div>

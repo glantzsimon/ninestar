@@ -3,7 +3,13 @@
 	ViewBag.Title = Dictionary.Home;
 }
 
-<div class="row text-center">
-	<img src="~/Images/company/botf_med.png"/>
-	<h2>@WebsiteConfiguration.Instance.CompanyName</h2>
+<div class="banner-forest1">
+	@Html.Partial("_Navbar")
+</div>
+<div class="main-section">
+	<div class="container">
+		<div class="main-heading">
+			<h3>@Dictionary.News</h3>
+		</div>
+	</div>
 </div>

@@ -2,7 +2,7 @@
 <publishData>
   <publishProfile publishUrl="ftp://ftp.vibranthealthnow.co.uk" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="BOTF Release" publishMethod="FTP" replaceMatchingFiles="True" userName="vibrant2_botf" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAA2HOakRGOkKUqNWIwSOrkgAAAAACAAAAAAADZgAAqAAAABAAAAAC6rYA8CUzPSKaXL6scLeqAAAAAASAAACgAAAAEAAAAIxuLnhTEuAlpP7cvdTwhrcYAAAAY29BePJoIEgaZYCCv7COVr+Wbrro+CiUFAAAAIGVW36OIfHpjTG4t0RYkfUImJVI" SelectedForPublish="False">
     <file relUrl="Views/Shared/EditorTemplates/Course.cshtml" publishTime="06/06/2017 20:34:04" />
-    <file relUrl="Views/Shared/DisplayTemplates/DateTime.cshtml" publishTime="06/06/2017 21:01:52" />
+    <file relUrl="Images/ui/success.png" publishTime="07/21/2017 18:46:25" />
     <file relUrl="Views/Shared/_Alert.cshtml" publishTime="07/23/2017 20:25:59" />
     <file relUrl="Views/Shared/_PopupAlert.cshtml" publishTime="07/23/2017 20:25:53" />
     <file relUrl="bin/Antlr3.Runtime.dll" publishTime="04/26/2017 23:41:38" />
@@ -12,7 +12,7 @@
     <file relUrl="Views/Shared/DisplayTemplates/User.cshtml" publishTime="07/23/2017 16:38:52" />
     <file relUrl="Views/Students/Index.cshtml" publishTime="07/23/2017 22:32:04" />
     <file relUrl="Views/Shared/DisplayTemplates/EmailAddress.cshtml" publishTime="06/03/2017 19:05:27" />
-    <file relUrl="Views/Iboga/Index.cshtml" publishTime="07/27/2017 00:33:56" />
+    <file relUrl="Views/Shared/DisplayTemplates/PhoneNumber.cshtml" publishTime="06/03/2017 19:04:26" />
     <file relUrl="bin/System.Web.Helpers.xml" publishTime="03/09/2017 19:22:46" />
     <file relUrl="Views/Users/Index.cshtml" publishTime="07/24/2017 20:34:10" />
     <file relUrl="bin/K9.DataAccess.dll" publishTime="07/30/2017 21:03:56" />
@@ -21,13 +21,13 @@
     <file relUrl="Images/latest/image1.jpg" publishTime="07/29/2017 16:20:35" />
     <file relUrl="Images/ui/unauthorized.png" publishTime="07/21/2017 18:46:23" />
     <file relUrl="Views/Shared/DisplayTemplates/Password.cshtml" publishTime="06/04/2017 23:39:48" />
+    <file relUrl="Views/UserRoles/Index.cshtml" publishTime="07/23/2017 22:32:11" />
     <file relUrl="Views/Roles/Edit.cshtml" publishTime="07/24/2017 23:26:09" />
     <file relUrl="bin/Microsoft.Web.Infrastructure.dll" publishTime="03/09/2017 19:22:44" />
     <file relUrl="Views/Countries/Create.cshtml" publishTime="07/24/2017 23:22:37" />
-    <file relUrl="Images/ui/notfound.png" publishTime="07/21/2017 18:46:24" />
     <file relUrl="Content/k9/imagePreloader.css" publishTime="04/28/2017 23:45:33" />
     <file relUrl="Content/bootstrap/bootstrap-theme.min.css" publishTime="07/27/2017 23:41:28" />
-    <file relUrl="Content/k9/fadeIn.css" publishTime="07/26/2017 23:06:10" />
+    <file relUrl="Views/Shared/_ContactUs.cshtml" publishTime="07/30/2017 20:33:03" />
     <file relUrl="Views/Web.config" publishTime="05/13/2017 00:17:08" />
     <file relUrl="Images/partners/plant-consciousness.jpg" publishTime="07/30/2017 20:51:50" />
     <file relUrl="Images/ui/warning.png" publishTime="07/21/2017 18:46:23" />
@@ -36,7 +36,6 @@
     <file relUrl="Views/Messages/Edit.cshtml" publishTime="07/23/2017 22:27:33" />
     <file relUrl="Views/Support/ContactUs.cshtml" publishTime="07/30/2017 18:34:19" />
     <file relUrl="bin/DotNetOpenAuth.OpenId.RelyingParty.dll" publishTime="04/17/2014 18:09:50" />
-    <file relUrl="Content/mobile.css" publishTime="07/30/2017 19:56:56" />
     <file relUrl="bin/System.Web.Razor.xml" publishTime="03/09/2017 19:22:45" />
     <file relUrl="bin/System.Net.Http.xml" publishTime="03/09/2017 19:22:48" />
     <file relUrl="Views/Permissions/Details.cshtml" publishTime="07/24/2017 23:23:51" />
@@ -53,22 +52,24 @@
     <file relUrl="Views/Shared/EditorTemplates/Student.cshtml" publishTime="06/06/2017 20:33:36" />
     <file relUrl="Images/latest/full-size/image6.jpg" publishTime="07/29/2017 16:20:48" />
     <file relUrl="bin/K9.WebApplication.dll" publishTime="07/30/2017 21:28:08" />
+    <file relUrl="Views/Shared/Unauthorized.cshtml" publishTime="07/23/2017 22:26:29" />
     <file relUrl="Views/Roles/_EditFields.cshtml" publishTime="07/11/2017 21:49:01" />
+    <file relUrl="bin/Newtonsoft.Json.dll" publishTime="04/26/2017 23:41:38" />
     <file relUrl="Views/Countries/Delete.cshtml" publishTime="07/24/2017 23:22:42" />
     <file relUrl="Nlog.config" publishTime="05/20/2017 18:47:43" />
-    <file relUrl="Views/Countries/_DisplayFields.cshtml" publishTime="06/30/2017 21:07:34" />
+    <file relUrl="Views/Enrollments/_EditFields.cshtml" publishTime="06/09/2017 22:37:02" />
     <file relUrl="Views/Shared/EditorTemplates/EmailAddress.cshtml" publishTime="07/25/2017 19:35:11" />
+    <file relUrl="Views/Shared/EditorTemplates/Text.cshtml" publishTime="07/30/2017 18:33:16" />
+    <file relUrl="Views/Messages/_EditFields.cshtml" publishTime="07/23/2017 19:50:25" />
     <file relUrl="Views/News/Index.cshtml" publishTime="07/27/2017 00:19:15" />
     <file relUrl="Views/Archive/Index.cshtml" publishTime="07/27/2017 00:24:10" />
-    <file relUrl="Images/ui/success.png" publishTime="07/21/2017 18:46:25" />
     <file relUrl="Views/Shared/EditorTemplates/PhoneNumber.cshtml" publishTime="07/25/2017 19:35:39" />
     <file relUrl="bin/Newtonsoft.Json.xml" publishTime="04/26/2017 23:41:38" />
-    <file relUrl="Views/AboutUs/HelpUs.cshtml" publishTime="07/27/2017 00:20:05" />
     <file relUrl="Views/Shared/EditorTemplates/Boolean.cshtml" publishTime="07/11/2017 21:33:52" />
     <file relUrl="Views/Account/PasswordResetEmailSent.cshtml" publishTime="07/23/2017 22:28:53" />
-    <file relUrl="Views/UserRoles/Index.cshtml" publishTime="07/23/2017 22:32:11" />
+    <file relUrl="Views/Countries/_DisplayFields.cshtml" publishTime="06/30/2017 21:07:34" />
     <file relUrl="bin/System.Web.Providers.dll" publishTime="03/09/2017 19:22:49" />
-    <file relUrl="Images/partners/ebando.jpg" publishTime="07/30/2017 20:51:50" />
+    <file relUrl="Views/Shared/DisplayTemplates/Date.cshtml" publishTime="06/06/2017 21:01:52" />
     <file relUrl="Images/latest/image10.jpg" publishTime="07/29/2017 16:20:35" />
     <file relUrl="Images/ui/fail.png" publishTime="07/21/2017 18:46:24" />
     <file relUrl="Views/RolePermissions/Index.cshtml" publishTime="07/23/2017 22:31:48" />
@@ -76,44 +77,46 @@
     <file relUrl="Views/Permissions/_EditFields.cshtml" publishTime="07/11/2017 21:49:39" />
     <file relUrl="Views/Shared/Controls/_DataTablesJs.cshtml" publishTime="07/24/2017 21:33:47" />
     <file relUrl="bin/System.Web.WebPages.xml" publishTime="03/09/2017 19:22:46" />
-    <file relUrl="Views/Countries/Index.cshtml" publishTime="07/23/2017 22:31:14" />
     <file relUrl="Images/ui/facebook_sm.png" publishTime="05/08/2017 13:58:53" />
-    <file relUrl="Content/k9/navbar.css" publishTime="07/13/2017 21:10:55" />
+    <file relUrl="Views/Countries/Index.cshtml" publishTime="07/23/2017 22:31:14" />
     <file relUrl="Views/Shared/_MenuBar.cshtml" publishTime="07/24/2017 01:27:56" />
-    <file relUrl="Images/latest/full-size/image12.jpg" publishTime="07/29/2017 16:20:48" />
     <file relUrl="Views/Account/AccountAlreadyActivated.cshtml" publishTime="07/23/2017 22:24:54" />
     <file relUrl="bin/System.Web.WebPages.Deployment.dll" publishTime="03/09/2017 19:22:46" />
-    <file relUrl="bin/Autofac.xml" publishTime="03/09/2017 20:18:49" />
+    <file relUrl="Images/company/botf_med.png" publishTime="07/26/2017 23:42:49" />
     <file relUrl="bin/DotNetOpenAuth.Core.xml" publishTime="04/17/2014 18:09:48" />
     <file relUrl="Views/Account/AccountActivationFailed.cshtml" publishTime="07/23/2017 22:24:48" />
     <file relUrl="Views/Account/Login.cshtml" publishTime="07/21/2017 20:30:01" />
     <file relUrl="Views/Shared/Controls/_BackgroundImageSwitcher.cshtml" publishTime="05/17/2017 21:20:18" />
+    <file relUrl="bin/EntityFramework.dll" publishTime="04/22/2017 20:20:49" />
     <file relUrl="Content/classes.css" publishTime="07/30/2017 19:58:33" />
     <file relUrl="bin/K9.Globalisation.dll" publishTime="07/30/2017 21:03:53" />
+    <file relUrl="Images/background/oldslides/bwiti3.jpg" publishTime="07/26/2017 23:48:53" />
     <file relUrl="Images/background/slides/forest1.jpg" publishTime="07/26/2017 23:48:53" />
     <file relUrl="Images/latest/full-size/image10.jpg" publishTime="07/29/2017 16:20:48" />
-    <file relUrl="Content/bootstrap/bootstrap-datetimepicker.css" publishTime="07/27/2017 23:44:17" />
     <file relUrl="Content/bootstrap/bootstrap.css" publishTime="07/27/2017 23:41:28" />
     <file relUrl="Views/Shared/EditorTemplates/Permission.cshtml" publishTime="07/23/2017 16:40:36" />
-    <file relUrl="Images/company/botf_med.png" publishTime="07/26/2017 23:42:49" />
+    <file relUrl="Global.asax" publishTime="04/23/2017 18:15:11" />
     <file relUrl="Images/home/slides/aims1.jpg" publishTime="07/27/2017 00:53:23" />
     <file relUrl="Views/Users/_EditFields.cshtml" publishTime="07/25/2017 19:13:06" />
     <file relUrl="Content/elements.css" publishTime="07/27/2017 01:08:59" />
     <file relUrl="Views/Shared/DisplayTemplates/String.cshtml" publishTime="06/03/2017 19:06:19" />
     <file relUrl="Content/k9/responsiveslides.css" publishTime="07/27/2017 01:07:18" />
     <file relUrl="Views/Shared/_LayoutFormWide.cshtml" publishTime="07/24/2017 01:18:15" />
+    <file relUrl="bin/WebGrease.dll" publishTime="04/26/2017 23:41:38" />
     <file relUrl="Images/latest/full-size/image2.jpg" publishTime="07/29/2017 16:20:48" />
     <file relUrl="Images/latest/full-size/image11.jpg" publishTime="07/29/2017 16:20:48" />
+    <file relUrl="Views/Shared/DisplayTemplates/DateTime.cshtml" publishTime="06/06/2017 21:01:52" />
+    <file relUrl="Content/bootstrap/bootstrap-select.min.css" publishTime="07/27/2017 23:44:13" />
     <file relUrl="Web.config" publishTime="07/30/2017 21:28:22" />
-    <file relUrl="bin/DataAnnotationsExtensions.dll" publishTime="04/23/2017 21:18:06" />
     <file relUrl="Views/Students/Create.cshtml" publishTime="07/24/2017 23:26:35" />
     <file relUrl="bin/EntityFramework.SqlServer.dll" publishTime="04/22/2017 20:20:49" />
     <file relUrl="bin/System.Web.Mvc.dll" publishTime="04/25/2017 23:28:58" />
     <file relUrl="Images/ui/google_sm.png" publishTime="05/08/2017 13:57:13" />
     <file relUrl="Content/k9/breadCrumbs.css" publishTime="07/26/2017 20:25:13" />
     <file relUrl="packages.config" publishTime="06/08/2017 23:40:47" />
+    <file relUrl="Content/k9/navbar.css" publishTime="07/13/2017 21:10:55" />
     <file relUrl="Scripts/imageSwitcher/backgroundSwitcher.js" publishTime="07/26/2017 22:50:55" />
-    <file relUrl="Views/Shared/EditorTemplates/Date.cshtml" publishTime="07/25/2017 19:33:43" />
+    <file relUrl="bin/System.Net.Http.WebRequest.dll" publishTime="03/09/2017 19:22:48" />
     <file relUrl="Views/Shared/DisplayTemplates/Boolean.cshtml" publishTime="06/04/2017 11:56:06" />
     <file relUrl="Views/Messages/Index.cshtml" publishTime="07/23/2017 22:31:28" />
     <file relUrl="Views/Account/UpdatePasswordSuccess.cshtml" publishTime="07/23/2017 22:28:42" />
@@ -122,11 +125,12 @@
     <file relUrl="Content/shared.css" publishTime="07/30/2017 21:18:37" />
     <file relUrl="bin/WebMatrix.Data.dll" publishTime="04/23/2017 20:27:49" />
     <file relUrl="Images/partners/global-ibogaine.jpg" publishTime="07/30/2017 20:51:50" />
+    <file relUrl="bin/System.Web.WebPages.Razor.xml" publishTime="03/09/2017 19:22:46" />
     <file relUrl="Images/latest/image2.jpg" publishTime="07/29/2017 16:20:35" />
     <file relUrl="Images/latest/full-size/image1.jpg" publishTime="07/29/2017 16:20:48" />
+    <file relUrl="Views/Shared/EditorTemplates/Password.cshtml" publishTime="07/25/2017 19:36:08" />
     <file relUrl="Views/Permissions/Delete.cshtml" publishTime="07/24/2017 23:23:48" />
-    <file relUrl="Views/Users/Create.cshtml" publishTime="07/25/2017 19:12:50" />
-    <file relUrl="bin/K9.Globalisation.pdb" publishTime="07/30/2017 21:03:53" />
+    <file relUrl="Views/Users/Edit.cshtml" publishTime="07/24/2017 23:52:48" />
     <file relUrl="bin/DotNetOpenAuth.OpenId.xml" publishTime="04/17/2014 18:09:50" />
     <file relUrl="bin/System.Web.Optimization.dll" publishTime="03/09/2017 19:22:50" />
     <file relUrl="Views/Roles/Index.cshtml" publishTime="07/23/2017 22:31:56" />
@@ -134,17 +138,12 @@
     <file relUrl="Views/Shared/EditorTemplates/MultiLineText.cshtml" publishTime="07/29/2017 15:25:48" />
     <file relUrl="Views/Users/_DisplayFields.cshtml" publishTime="07/24/2017 20:31:36" />
     <file relUrl="Views/Account/ResetPassword.cshtml" publishTime="07/21/2017 20:50:10" />
-    <file relUrl="bin/DotNetOpenAuth.OAuth.Consumer.xml" publishTime="04/17/2014 18:09:48" />
-    <file relUrl="Global.asax" publishTime="04/23/2017 18:15:11" />
     <file relUrl="Views/_ViewStart.cshtml" publishTime="04/29/2017 02:27:57" />
     <file relUrl="bin/Moq.xml" publishTime="04/25/2017 20:50:38" />
     <file relUrl="Content/bootstrap/bootstrap.min.css" publishTime="07/27/2017 23:41:28" />
     <file relUrl="bin/K9.DataAccess.pdb" publishTime="07/30/2017 21:03:56" />
     <file relUrl="Views/Roles/_DisplayFields.cshtml" publishTime="07/11/2017 21:48:54" />
     <file relUrl="Views/Shared/DisplayTemplates/Role.cshtml" publishTime="07/23/2017 16:40:59" />
-    <file relUrl="Content/bootstrap/bootstrapValidator.min.css" publishTime="07/27/2017 23:45:26" />
-    <file relUrl="bin/DotNetOpenAuth.OAuth.Consumer.dll" publishTime="04/17/2014 18:09:48" />
-    <file relUrl="Content/_colors.txt" publishTime="07/30/2017 21:18:31" />
     <file relUrl="Images/latest/image5.jpg" publishTime="07/29/2017 16:20:35" />
     <file relUrl="Views/Students/Details.cshtml" publishTime="07/24/2017 23:26:45" />
     <file relUrl="Views/Roles/Delete.cshtml" publishTime="07/24/2017 23:25:59" />
@@ -156,48 +155,48 @@
     <file relUrl="Images/partners/bokaye.jpg" publishTime="07/30/2017 20:51:50" />
     <file relUrl="Images/latest/image3.jpg" publishTime="07/29/2017 16:20:35" />
     <file relUrl="Content/validation.css" publishTime="05/08/2017 00:43:17" />
+    <file relUrl="Views/Countries/_EditFields.cshtml" publishTime="06/04/2017 13:58:15" />
     <file relUrl="Views/Students/_EditFields.cshtml" publishTime="06/09/2017 19:03:28" />
     <file relUrl="Content/tablet.css" publishTime="07/30/2017 19:58:47" />
     <file relUrl="Views/Messages/Create.cshtml" publishTime="07/23/2017 22:27:43" />
-    <file relUrl="Images/latest/full-size/image5.jpg" publishTime="07/29/2017 16:20:48" />
-    <file relUrl="Views/Countries/_EditFields.cshtml" publishTime="06/04/2017 13:58:15" />
+    <file relUrl="Images/latest/full-size/image12.jpg" publishTime="07/29/2017 16:20:48" />
     <file relUrl="Views/Messages/Details.cshtml" publishTime="07/23/2017 22:27:36" />
     <file relUrl="Views/Shared/Controls/_ImageSwitcher.cshtml" publishTime="07/27/2017 00:55:40" />
-    <file relUrl="Views/Students/Delete.cshtml" publishTime="07/24/2017 23:26:40" />
     <file relUrl="Views/Shared/DisplayTemplates/MultiLineText.cshtml" publishTime="06/03/2017 19:03:57" />
     <file relUrl="Content/bootstrap/bootstrapValidator.css" publishTime="07/27/2017 23:45:30" />
     <file relUrl="Views/Permissions/Index.cshtml" publishTime="07/23/2017 22:31:41" />
-    <file relUrl="Views/Users/Edit.cshtml" publishTime="07/24/2017 23:52:48" />
+    <file relUrl="Content/bootstrap/bootstrap-datetimepicker.css" publishTime="07/27/2017 23:44:17" />
     <file relUrl="Images/partners/parc-gabon.jpg" publishTime="07/30/2017 20:51:50" />
     <file relUrl="Views/Messages/Delete.cshtml" publishTime="07/23/2017 22:27:40" />
     <file relUrl="bin/WebMatrix.WebData.xml" publishTime="04/23/2017 20:27:49" />
     <file relUrl="Views/Account/AccountCreated.cshtml" publishTime="07/23/2017 22:25:02" />
     <file relUrl="Content/k9/pageSpinner.css" publishTime="06/06/2017 20:31:02" />
     <file relUrl="Content/desktop.css" publishTime="07/30/2017 21:16:05" />
-    <file relUrl="bin/Moq.dll" publishTime="04/25/2017 20:50:38" />
+    <file relUrl="Content/bootstrap/bootstrap-theme.css" publishTime="07/27/2017 23:41:28" />
     <file relUrl="Scripts/imageSwitcher/responsiveslides.js" publishTime="07/27/2017 01:06:38" />
     <file relUrl="bin/K9.SharedLibrary.pdb" publishTime="07/30/2017 20:09:20" />
     <file relUrl="Images/latest/image11.jpg" publishTime="07/29/2017 16:20:35" />
     <file relUrl="Content/k9/tables.css" publishTime="07/24/2017 00:11:26" />
     <file relUrl="Views/Users/Delete.cshtml" publishTime="07/24/2017 23:27:12" />
     <file relUrl="Images/latest/full-size/image8.jpg" publishTime="07/29/2017 16:20:48" />
-    <file relUrl="bin/System.Web.Helpers.dll" publishTime="03/09/2017 19:22:46" />
     <file relUrl="Images/latest/full-size/image4.jpg" publishTime="07/29/2017 16:20:48" />
-    <file relUrl="Views/Shared/Unauthorized.cshtml" publishTime="07/23/2017 22:26:29" />
+    <file relUrl="Content/mobile.css" publishTime="07/30/2017 19:56:56" />
     <file relUrl="Views/Shared/NotFound.cshtml" publishTime="07/23/2017 22:26:33" />
     <file relUrl="Images/latest/image6.jpg" publishTime="07/29/2017 16:20:35" />
     <file relUrl="bin/Antlr3.Runtime.pdb" publishTime="04/26/2017 23:41:38" />
     <file relUrl="Views/Shared/_Layout.cshtml" publishTime="07/24/2017 01:18:18" />
-    <file relUrl="Views/Enrollments/_EditFields.cshtml" publishTime="06/09/2017 22:37:02" />
+    <file relUrl="bin/Moq.dll" publishTime="04/25/2017 20:50:38" />
     <file relUrl="Views/Shared/DisplayTemplates/Permission.cshtml" publishTime="07/23/2017 16:40:53" />
     <file relUrl="Views/Shared/EditorTemplates/Role.cshtml" publishTime="07/23/2017 16:40:28" />
     <file relUrl="bin/DotNetOpenAuth.OAuth.dll" publishTime="04/17/2014 18:09:48" />
-    <file relUrl="bin/WebGrease.dll" publishTime="04/26/2017 23:41:38" />
+    <file relUrl="Content/_colors.txt" publishTime="07/30/2017 21:18:31" />
     <file relUrl="Views/AboutUs/OurMission.cshtml" publishTime="07/27/2017 21:57:08" />
     <file relUrl="bin/K9.WebApplication.pdb" publishTime="07/30/2017 21:28:08" />
     <file relUrl="Views/Roles/Details.cshtml" publishTime="07/24/2017 23:26:05" />
+    <file relUrl="Scripts/k9/fadePageIn.js" publishTime="07/26/2017 23:08:15" />
     <file relUrl="Views/Users/Details.cshtml" publishTime="07/24/2017 23:27:17" />
     <file relUrl="bin/WebMatrix.WebData.dll" publishTime="04/23/2017 20:27:49" />
+    <file relUrl="Views/Permissions/Edit.cshtml" publishTime="07/24/2017 23:23:55" />
     <file relUrl="bin/System.Web.Http.WebHost.dll" publishTime="03/09/2017 19:22:49" />
     <file relUrl="bin/System.Net.Http.WebRequest.xml" publishTime="03/09/2017 19:22:48" />
     <file relUrl="Images/home/slides/aims3.jpg" publishTime="07/27/2017 01:14:31" />
@@ -208,17 +207,18 @@
     <file relUrl="bin/System.Net.Http.Formatting.dll" publishTime="03/09/2017 19:22:47" />
     <file relUrl="Views/Messages/_DisplayFields.cshtml" publishTime="07/23/2017 19:49:27" />
     <file relUrl="bin/Dapper.xml" publishTime="06/10/2017 21:54:20" />
+    <file relUrl="Content/k9/menubar.css" publishTime="07/26/2017 20:21:07" />
     <file relUrl="bin/System.Web.Razor.dll" publishTime="03/09/2017 19:22:45" />
     <file relUrl="Images/company/botf_small.png" publishTime="07/26/2017 23:42:49" />
     <file relUrl="bin/Dapper.dll" publishTime="06/10/2017 21:54:20" />
     <file relUrl="Views/Shared/FriendlyError.cshtml" publishTime="07/23/2017 22:26:36" />
     <file relUrl="Views/Enrollments/Index.cshtml" publishTime="07/23/2017 22:31:21" />
     <file relUrl="Views/Shared/EditMultiple.cshtml" publishTime="07/23/2017 22:26:42" />
-    <file relUrl="Scripts/k9/fadePageIn.js" publishTime="07/26/2017 23:08:15" />
-    <file relUrl="Views/Permissions/Edit.cshtml" publishTime="07/24/2017 23:23:55" />
-    <file relUrl="Images/background/oldslides/bwiti3.jpg" publishTime="07/26/2017 23:48:53" />
-    <file relUrl="bin/System.Web.WebPages.Razor.xml" publishTime="03/09/2017 19:22:46" />
-    <file relUrl="Views/Shared/DisplayTemplates/Date.cshtml" publishTime="06/06/2017 21:01:52" />
+    <file relUrl="bin/Autofac.xml" publishTime="03/09/2017 20:18:49" />
+    <file relUrl="Images/partners/ebando.jpg" publishTime="07/30/2017 20:51:50" />
+    <file relUrl="bin/DataAnnotationsExtensions.dll" publishTime="04/23/2017 21:18:06" />
+    <file relUrl="Views/Iboga/Index.cshtml" publishTime="07/27/2017 00:33:56" />
+    <file relUrl="Content/k9/fadeIn.css" publishTime="07/26/2017 23:06:10" />
     <file relUrl="Views/Shared/Controls/_Carousel.cshtml" publishTime="07/30/2017 18:16:11" />
     <file relUrl="Images/background/oldslides/1leaves_background.jpg" publishTime="04/28/2017 22:38:57" />
     <file relUrl="Images/latest/image7.jpg" publishTime="07/29/2017 16:20:35" />
@@ -237,50 +237,50 @@
     <file relUrl="bin/DotNetOpenAuth.OpenId.dll" publishTime="04/17/2014 18:09:50" />
     <file relUrl="Views/Account/UpdatePassword.cshtml" publishTime="07/21/2017 20:59:07" />
     <file relUrl="Views/Enrollments/_DisplayFields.cshtml" publishTime="06/09/2017 19:40:18" />
-    <file relUrl="bin/EntityFramework.dll" publishTime="04/22/2017 20:20:49" />
+    <file relUrl="Content/bootstrap/bootstrapValidator.min.css" publishTime="07/27/2017 23:45:26" />
     <file relUrl="Views/Account/ResetPasswordFailed.cshtml" publishTime="07/23/2017 22:28:50" />
     <file relUrl="Views/Roles/Create.cshtml" publishTime="07/24/2017 23:25:54" />
     <file relUrl="bin/System.Web.Http.WebHost.xml" publishTime="03/09/2017 19:22:49" />
-    <file relUrl="Content/k9/menubar.css" publishTime="07/26/2017 20:21:07" />
+    <file relUrl="bin/K9.Globalisation.pdb" publishTime="07/30/2017 21:03:53" />
+    <file relUrl="Images/latest/full-size/image3.jpg" publishTime="07/29/2017 16:20:48" />
     <file relUrl="Images/latest/image9.jpg" publishTime="07/29/2017 16:20:35" />
     <file relUrl="bin/DotNetOpenAuth.OpenId.RelyingParty.xml" publishTime="04/17/2014 18:09:50" />
     <file relUrl="bin/System.Web.Http.xml" publishTime="03/09/2017 19:22:49" />
     <file relUrl="Views/Students/Edit.cshtml" publishTime="07/24/2017 23:26:51" />
     <file relUrl="Views/Enrollments/Details.cshtml" publishTime="07/24/2017 23:23:05" />
-    <file relUrl="Images/partners/iceers.jpg" publishTime="07/30/2017 20:51:50" />
+    <file relUrl="Views/AboutUs/HelpUs.cshtml" publishTime="07/27/2017 00:20:05" />
     <file relUrl="bin/Autofac.Integration.Mvc.dll" publishTime="03/09/2017 20:18:49" />
     <file relUrl="Views/Shared/DisplayTemplates/Student.cshtml" publishTime="06/06/2017 20:34:16" />
     <file relUrl="bin/NLog.dll" publishTime="04/23/2017 23:42:40" />
     <file relUrl="Views/Shared/EditorTemplates/DateTime.cshtml" publishTime="07/25/2017 19:33:48" />
     <file relUrl="Images/background/slides/forest2.jpg" publishTime="07/26/2017 23:48:53" />
     <file relUrl="Scripts/k9/buttonBehaviours.js" publishTime="07/30/2017 18:26:33" />
-    <file relUrl="bin/System.Net.Http.WebRequest.dll" publishTime="03/09/2017 19:22:48" />
-    <file relUrl="Views/Messages/_EditFields.cshtml" publishTime="07/23/2017 19:50:25" />
-    <file relUrl="Views/Shared/EditorTemplates/Text.cshtml" publishTime="07/30/2017 18:33:16" />
-    <file relUrl="Views/Shared/_ContactUs.cshtml" publishTime="07/30/2017 20:33:03" />
+    <file relUrl="Images/ui/notfound.png" publishTime="07/21/2017 18:46:24" />
+    <file relUrl="Views/Students/Delete.cshtml" publishTime="07/24/2017 23:26:40" />
+    <file relUrl="bin/System.Web.Helpers.dll" publishTime="03/09/2017 19:22:46" />
+    <file relUrl="bin/DotNetOpenAuth.OAuth.Consumer.xml" publishTime="04/17/2014 18:09:48" />
     <file relUrl="bin/fr/K9.Globalisation.resources.dll" publishTime="07/30/2017 21:03:53" />
     <file relUrl="bin/Autofac.Integration.Mvc.xml" publishTime="03/09/2017 20:18:49" />
     <file relUrl="Views/Students/_DisplayFields.cshtml" publishTime="06/04/2017 14:00:56" />
-    <file relUrl="Content/bootstrap/bootstrap-theme.css" publishTime="07/27/2017 23:41:28" />
     <file relUrl="Images/latest/image12.jpg" publishTime="07/29/2017 16:20:35" />
     <file relUrl="bin/Microsoft.Web.WebPages.OAuth.dll" publishTime="07/10/2012 13:03:34" />
     <file relUrl="Views/Account/AccountLocked.cshtml" publishTime="07/23/2017 22:29:04" />
-    <file relUrl="bin/Newtonsoft.Json.dll" publishTime="04/26/2017 23:41:38" />
+    <file relUrl="Images/latest/full-size/image5.jpg" publishTime="07/29/2017 16:20:48" />
     <file relUrl="Views/Shared/Scripts/Default.cshtml" publishTime="07/26/2017 23:07:37" />
     <file relUrl="Views/Enrollments/Edit.cshtml" publishTime="07/24/2017 23:23:11" />
-    <file relUrl="Views/Shared/DisplayTemplates/PhoneNumber.cshtml" publishTime="06/03/2017 19:04:26" />
+    <file relUrl="Views/Users/Create.cshtml" publishTime="07/25/2017 19:12:50" />
     <file relUrl="Content/botf.css" publishTime="07/28/2017 00:53:45" />
     <file relUrl="Views/Shared/_LayoutFormSmall.cshtml" publishTime="07/21/2017 20:45:43" />
     <file relUrl="Views/Shared/_LayoutFormMaster.cshtml" publishTime="07/24/2017 01:17:29" />
-    <file relUrl="Views/Shared/EditorTemplates/Password.cshtml" publishTime="07/25/2017 19:36:08" />
+    <file relUrl="Views/Shared/EditorTemplates/Date.cshtml" publishTime="07/25/2017 19:33:43" />
     <file relUrl="Views/Account/Register.cshtml" publishTime="07/24/2017 23:21:52" />
-    <file relUrl="Content/bootstrap/bootstrap-select.min.css" publishTime="07/27/2017 23:44:13" />
+    <file relUrl="bin/DotNetOpenAuth.OAuth.Consumer.dll" publishTime="04/17/2014 18:09:48" />
     <file relUrl="Views/AboutUs/Index.cshtml" publishTime="07/27/2017 00:19:08" />
     <file relUrl="Views/Enrollments/Delete.cshtml" publishTime="07/24/2017 23:23:02" />
     <file relUrl="bin/WebMatrix.Data.xml" publishTime="04/23/2017 20:27:49" />
     <file relUrl="Scripts/k9/bootstrapControls.js" publishTime="07/30/2017 21:02:33" />
     <file relUrl="bin/DotNetOpenAuth.Core.dll" publishTime="04/17/2014 18:09:48" />
-    <file relUrl="Images/latest/full-size/image3.jpg" publishTime="07/29/2017 16:20:48" />
+    <file relUrl="Images/partners/iceers.jpg" publishTime="07/30/2017 20:51:50" />
     <file relUrl="bin/System.Web.Http.dll" publishTime="03/09/2017 19:22:48" />
     <file relUrl="bin/System.Net.Http.dll" publishTime="03/09/2017 19:22:48" />
     <file relUrl="bin/System.Web.Mvc.xml" publishTime="04/25/2017 23:28:58" />
@@ -291,25 +291,25 @@
   <publishProfile publishUrl="C:\workspace\botf\publish" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Local" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
     <file relUrl="Views/Students/Create.cshtml" publishTime="07/24/2017 23:26:35" />
     <file relUrl="Views/News/Index.cshtml" publishTime="07/27/2017 00:19:15" />
-    <file relUrl="Views/Countries/Details.cshtml" publishTime="07/24/2017 23:22:46" />
     <file relUrl="Scripts/imageSwitcher/responsiveslides.js" publishTime="07/31/2017 18:56:10" />
     <file relUrl="bin/DotNetOpenAuth.OAuth.Consumer.dll" publishTime="04/17/2014 18:09:48" />
     <file relUrl="Images/ui/notfound.png" publishTime="07/21/2017 18:46:24" />
+    <file relUrl="Content/ninestar/validation.css" publishTime="08/03/2017 22:00:35" />
     <file relUrl="favicon.ico" publishTime="07/31/2017 20:10:12" />
     <file relUrl="Images/template/1.jpg" publishTime="08/01/2017 20:00:52" />
     <file relUrl="bin/System.Web.WebPages.Razor.dll" publishTime="03/09/2017 19:22:46" />
     <file relUrl="bin/WebMatrix.Data.xml" publishTime="04/23/2017 20:27:49" />
     <file relUrl="Views/Account/UpdatePasswordSuccess.cshtml" publishTime="07/23/2017 22:28:42" />
+    <file relUrl="Views/Shared/k9/_Layout.cshtml" publishTime="08/03/2017 22:52:32" />
     <file relUrl="Images/template/g2.jpg" publishTime="08/01/2017 20:00:52" />
     <file relUrl="Views/Account/AccountAlreadyActivated.cshtml" publishTime="07/23/2017 22:24:54" />
     <file relUrl="bin/DotNetOpenAuth.OpenId.xml" publishTime="04/17/2014 18:09:50" />
     <file relUrl="Images/template/f1.jpg" publishTime="08/01/2017 20:00:52" />
+    <file relUrl="Views/Web.config" publishTime="05/13/2017 00:17:08" />
     <file relUrl="Views/Countries/Delete.cshtml" publishTime="07/24/2017 23:22:42" />
-    <file relUrl="Views/Shared/_MenuBar.cshtml" publishTime="07/24/2017 01:27:56" />
-    <file relUrl="Content/botf.css" publishTime="07/31/2017 21:28:43" />
     <file relUrl="Images/ui/unauthorized.png" publishTime="07/21/2017 18:46:23" />
-    <file relUrl="Images/template/5.jpg" publishTime="08/01/2017 20:00:52" />
-    <file relUrl="bin/System.Web.Mvc.xml" publishTime="04/25/2017 23:28:58" />
+    <file relUrl="bin/System.Web.Razor.xml" publishTime="03/09/2017 19:22:45" />
+    <file relUrl="bin/Newtonsoft.Json.xml" publishTime="04/26/2017 23:41:38" />
     <file relUrl="Images/latest/image9.jpg" publishTime="07/29/2017 16:20:35" />
     <file relUrl="Views/Users/Details.cshtml" publishTime="07/24/2017 23:27:17" />
     <file relUrl="bin/System.Web.Http.WebHost.xml" publishTime="03/09/2017 19:22:49" />
@@ -317,46 +317,48 @@
     <file relUrl="Content/template/style.480.css" publishTime="08/03/2017 01:12:22" />
     <file relUrl="Views/Countries/Create.cshtml" publishTime="07/24/2017 23:22:37" />
     <file relUrl="Views/Shared/DisplayTemplates/Boolean.cshtml" publishTime="06/04/2017 11:56:06" />
-    <file relUrl="Images/partners/plant-consciousness.jpg" publishTime="07/30/2017 20:51:50" />
     <file relUrl="Content/template/style.736.css" publishTime="08/03/2017 02:17:16" />
+    <file relUrl="bin/System.Web.Razor.dll" publishTime="03/09/2017 19:22:45" />
     <file relUrl="Images/home/slides/aims1.jpg" publishTime="07/27/2017 00:53:23" />
-    <file relUrl="Content/classes.css" publishTime="07/30/2017 19:58:33" />
     <file relUrl="Views/Enrollments/Index.cshtml" publishTime="07/23/2017 22:31:21" />
-    <file relUrl="bin/K9.WebApplication.dll" publishTime="08/03/2017 02:29:59" />
+    <file relUrl="bin/K9.WebApplication.dll" publishTime="08/04/2017 03:53:27" />
     <file relUrl="Views/UserRoles/Index.cshtml" publishTime="07/23/2017 22:32:11" />
     <file relUrl="Images/partners/parc-gabon.jpg" publishTime="07/30/2017 20:51:50" />
     <file relUrl="Views/Archive/Index.cshtml" publishTime="07/27/2017 00:24:10" />
     <file relUrl="Views/Shared/_LayoutColumns.cshtml" publishTime="07/21/2017 19:14:18" />
-    <file relUrl="Images/template/f3.jpg" publishTime="08/01/2017 20:00:52" />
     <file relUrl="Views/Shared/_Alert.cshtml" publishTime="07/23/2017 20:25:59" />
-    <file relUrl="bin/K9.Globalisation.dll" publishTime="08/02/2017 00:45:12" />
-    <file relUrl="Images/template/g4.jpg" publishTime="08/01/2017 20:00:52" />
+    <file relUrl="bin/K9.Globalisation.dll" publishTime="08/04/2017 02:00:28" />
+    <file relUrl="bin/Microsoft.Web.Infrastructure.dll" publishTime="03/09/2017 19:22:44" />
     <file relUrl="Images/template/2.jpg" publishTime="08/01/2017 20:00:52" />
-    <file relUrl="Images/ui/fail.png" publishTime="07/21/2017 18:46:24" />
+    <file relUrl="Images/home/smokefog-dark.png" publishTime="08/04/2017 03:43:06" />
+    <file relUrl="Images/partners/plant-consciousness.jpg" publishTime="07/30/2017 20:51:50" />
     <file relUrl="Views/Messages/Details.cshtml" publishTime="07/23/2017 22:27:36" />
-    <file relUrl="Views/Shared/_NavbarTemplate.cshtml" publishTime="08/03/2017 01:37:14" />
-    <file relUrl="Views/Shared/EditorTemplates/Text.cshtml" publishTime="07/30/2017 18:33:16" />
+    <file relUrl="Images/iboga/2/ivory.jpg" publishTime="08/04/2017 00:57:23" />
+    <file relUrl="Views/Roles/Details.cshtml" publishTime="07/24/2017 23:26:05" />
     <file relUrl="Views/Messages/_DisplayFields.cshtml" publishTime="07/23/2017 19:49:27" />
     <file relUrl="bin/System.Web.Http.dll" publishTime="03/09/2017 19:22:48" />
-    <file relUrl="Content/template/style.1080.css" publishTime="08/03/2017 01:09:26" />
+    <file relUrl="Images/template/g1.jpg" publishTime="08/01/2017 20:00:52" />
     <file relUrl="Images/latest/image5.jpg" publishTime="07/29/2017 16:20:35" />
     <file relUrl="Views/Users/_EditFields.cshtml" publishTime="07/25/2017 19:13:06" />
     <file relUrl="Views/Shared/DisplayTemplates/MultiLineText.cshtml" publishTime="06/03/2017 19:03:57" />
     <file relUrl="Views/Countries/_DisplayFields.cshtml" publishTime="06/30/2017 21:07:34" />
     <file relUrl="Scripts/template/scroller.js" publishTime="08/01/2017 20:06:06" />
-    <file relUrl="Views/Enrollments/_EditFields.cshtml" publishTime="06/09/2017 22:37:02" />
-    <file relUrl="Content/k9/fadeIn.css" publishTime="07/26/2017 23:06:10" />
+    <file relUrl="Content/k9/responsiveslides.css" publishTime="08/03/2017 22:19:39" />
+    <file relUrl="Images/background/slides/forest2.jpg" publishTime="07/26/2017 23:48:53" />
+    <file relUrl="Content/botf/botf.css" publishTime="08/03/2017 22:02:47" />
     <file relUrl="bin/EntityFramework.SqlServer.dll" publishTime="04/22/2017 20:20:49" />
     <file relUrl="bin/System.Web.Optimization.dll" publishTime="03/09/2017 19:22:50" />
+    <file relUrl="Content/ninestar/shared.css" publishTime="08/03/2017 22:00:35" />
     <file relUrl="Images/template/g5.jpg" publishTime="08/01/2017 20:00:52" />
+    <file relUrl="Views/Shared/k9/_LayoutColumns.cshtml" publishTime="08/03/2017 22:52:30" />
     <file relUrl="bin/System.Net.Http.dll" publishTime="03/09/2017 19:22:48" />
-    <file relUrl="Content/template/style.384.css" publishTime="08/03/2017 01:10:44" />
     <file relUrl="Images/latest/image1.jpg" publishTime="07/29/2017 16:20:35" />
-    <file relUrl="bin/System.Net.Http.WebRequest.dll" publishTime="03/09/2017 19:22:48" />
+    <file relUrl="bin/System.Web.Providers.dll" publishTime="03/09/2017 19:22:49" />
     <file relUrl="Content/bootstrap/bootstrap-theme.css" publishTime="07/27/2017 23:41:28" />
-    <file relUrl="Views/Users/Create.cshtml" publishTime="07/25/2017 19:12:50" />
     <file relUrl="Views/Students/_EditFields.cshtml" publishTime="06/09/2017 19:03:28" />
+    <file relUrl="Content/template/style.1080.css" publishTime="08/03/2017 01:09:26" />
     <file relUrl="Content/bootstrap/bootstrap-select.css" publishTime="07/27/2017 23:44:28" />
+    <file relUrl="Images/company/botf_med.png" publishTime="07/26/2017 23:42:49" />
     <file relUrl="Views/Shared/_LayoutFormSmall.cshtml" publishTime="07/21/2017 20:45:43" />
     <file relUrl="Images/latest/full-size/image8.jpg" publishTime="07/29/2017 16:20:48" />
     <file relUrl="Views/Permissions/Edit.cshtml" publishTime="07/24/2017 23:23:55" />
@@ -364,71 +366,82 @@
     <file relUrl="Views/Shared/EditorTemplates/Course.cshtml" publishTime="06/06/2017 20:34:04" />
     <file relUrl="bin/DotNetOpenAuth.OAuth.xml" publishTime="04/17/2014 18:09:48" />
     <file relUrl="Content/k9/imagePreloader.css" publishTime="04/28/2017 23:45:33" />
-    <file relUrl="Views/Shared/_LayoutFormMaster.cshtml" publishTime="07/24/2017 01:17:29" />
+    <file relUrl="Views/Shared/_LayoutFormMaster.cshtml" publishTime="08/04/2017 01:53:56" />
     <file relUrl="Content/_botfColors.txt" publishTime="07/26/2017 23:54:57" />
     <file relUrl="Images/partners/iceers.jpg" publishTime="07/30/2017 20:51:50" />
     <file relUrl="Scripts/library/jarallax.js" publishTime="08/01/2017 20:01:40" />
     <file relUrl="Views/Account/ResetPassword.cshtml" publishTime="07/21/2017 20:50:10" />
-    <file relUrl="Images/background/slides/forest4.jpg" publishTime="08/02/2017 00:01:17" />
+    <file relUrl="bin/System.Net.Http.WebRequest.dll" publishTime="03/09/2017 19:22:48" />
     <file relUrl="Views/Account/Register.cshtml" publishTime="07/24/2017 23:21:52" />
     <file relUrl="Views/Countries/_EditFields.cshtml" publishTime="06/04/2017 13:58:15" />
     <file relUrl="Views/Support/ContactUsSuccess.cshtml" publishTime="07/30/2017 20:43:00" />
     <file relUrl="Content/_colors.txt" publishTime="07/30/2017 21:18:31" />
-    <file relUrl="Views/Students/Index.cshtml" publishTime="07/23/2017 22:32:04" />
-    <file relUrl="bin/Newtonsoft.Json.xml" publishTime="04/26/2017 23:41:38" />
+    <file relUrl="Content/botf/classes.css" publishTime="08/04/2017 03:43:16" />
     <file relUrl="Content/template/style.1024.css" publishTime="08/03/2017 01:09:00" />
     <file relUrl="Images/partners/bokaye.jpg" publishTime="07/30/2017 20:51:50" />
-    <file relUrl="Views/Shared/DisplayTemplates/Date.cshtml" publishTime="06/06/2017 21:01:52" />
+    <file relUrl="Views/Shared/k9/_Navbar.cshtml" publishTime="07/28/2017 00:18:53" />
+    <file relUrl="Views/Users/Create.cshtml" publishTime="07/25/2017 19:12:50" />
     <file relUrl="Views/Shared/DisplayTemplates/Student.cshtml" publishTime="06/06/2017 20:34:16" />
-    <file relUrl="Content/k9/navbar.css" publishTime="07/13/2017 21:10:55" />
-    <file relUrl="Content/template/style.375.css" publishTime="08/03/2017 01:10:29" />
+    <file relUrl="Content/k9/navbar.css" publishTime="08/03/2017 22:30:54" />
+    <file relUrl="Content/template/style.384.css" publishTime="08/03/2017 01:10:44" />
     <file relUrl="Views/Shared/Scripts/Default.cshtml" publishTime="08/01/2017 19:59:41" />
     <file relUrl="Images/company/botf_small.png" publishTime="07/26/2017 23:42:49" />
-    <file relUrl="bin/fr/K9.Globalisation.resources.dll" publishTime="08/02/2017 00:45:12" />
+    <file relUrl="bin/fr/K9.Globalisation.resources.dll" publishTime="08/04/2017 02:00:28" />
     <file relUrl="Views/Shared/EditorTemplates/Student.cshtml" publishTime="06/06/2017 20:33:36" />
-    <file relUrl="Images/company/botf_med.png" publishTime="07/26/2017 23:42:49" />
+    <file relUrl="bin/System.Web.Mvc.xml" publishTime="04/25/2017 23:28:58" />
+    <file relUrl="bin/Autofac.xml" publishTime="03/09/2017 20:18:49" />
     <file relUrl="Views/Permissions/Index.cshtml" publishTime="07/23/2017 22:31:41" />
-    <file relUrl="Views/Shared/_Navbar.cshtml" publishTime="07/28/2017 00:18:53" />
+    <file relUrl="Views/Shared/_Navbar.cshtml" publishTime="08/04/2017 02:00:19" />
+    <file relUrl="Images/background/slides/forest4.jpg" publishTime="08/02/2017 00:01:17" />
     <file relUrl="Scripts/k9/buttonBehaviours.js" publishTime="07/31/2017 19:33:37" />
-    <file relUrl="Views/Shared/_PopupAlert.cshtml" publishTime="07/23/2017 20:25:53" />
+    <file relUrl="Views/Shared/_PopupAlert.cshtml" publishTime="08/03/2017 23:37:02" />
     <file relUrl="Views/Enrollments/Edit.cshtml" publishTime="07/24/2017 23:23:11" />
     <file relUrl="Views/Shared/_BreadCrumbs.cshtml" publishTime="07/24/2017 02:03:16" />
     <file relUrl="Content/k9/pageSpinner.css" publishTime="06/06/2017 20:31:02" />
     <file relUrl="Views/Roles/Index.cshtml" publishTime="07/23/2017 22:31:56" />
     <file relUrl="Views/Shared/EditorTemplates/Date.cshtml" publishTime="07/25/2017 19:33:43" />
     <file relUrl="Images/latest/image6.jpg" publishTime="07/29/2017 16:20:35" />
+    <file relUrl="Content/ninestar/tablet.css" publishTime="08/03/2017 22:00:35" />
     <file relUrl="bin/Autofac.Integration.Mvc.dll" publishTime="03/09/2017 20:18:49" />
     <file relUrl="Images/template/close.png" publishTime="08/01/2017 20:00:52" />
     <file relUrl="bin/Moq.dll" publishTime="04/25/2017 20:50:38" />
-    <file relUrl="bin/WebMatrix.WebData.xml" publishTime="04/23/2017 20:27:49" />
+    <file relUrl="bin/DotNetOpenAuth.Core.xml" publishTime="04/17/2014 18:09:48" />
     <file relUrl="Images/latest/full-size/image1.jpg" publishTime="07/29/2017 16:20:48" />
-    <file relUrl="Views/Shared/EditorTemplates/DateTime.cshtml" publishTime="07/25/2017 19:33:48" />
+    <file relUrl="Views/Countries/Details.cshtml" publishTime="07/24/2017 23:22:46" />
+    <file relUrl="Images/iboga/2/ibogaine.jpg" publishTime="08/04/2017 00:57:23" />
     <file relUrl="Images/latest/image7.jpg" publishTime="07/29/2017 16:20:35" />
     <file relUrl="Views/Support/ContactUs.cshtml" publishTime="07/30/2017 18:34:19" />
-    <file relUrl="Views/Shared/DisplayTemplates/Password.cshtml" publishTime="06/04/2017 23:39:48" />
     <file relUrl="Views/Students/Edit.cshtml" publishTime="07/24/2017 23:26:51" />
-    <file relUrl="Views/Roles/Details.cshtml" publishTime="07/24/2017 23:26:05" />
+    <file relUrl="Views/Shared/DisplayTemplates/Password.cshtml" publishTime="06/04/2017 23:39:48" />
+    <file relUrl="Images/iboga/2/ibogaine-chart.jpg" publishTime="08/04/2017 00:57:23" />
+    <file relUrl="Views/Shared/EditorTemplates/Text.cshtml" publishTime="07/30/2017 18:33:16" />
+    <file relUrl="Content/k9/fadeIn.css" publishTime="07/26/2017 23:06:10" />
     <file relUrl="Images/template/f2.jpg" publishTime="08/01/2017 20:00:52" />
     <file relUrl="Views/Shared/EditMultiple.cshtml" publishTime="07/23/2017 22:26:42" />
     <file relUrl="Images/latest/image2.jpg" publishTime="07/29/2017 16:20:35" />
     <file relUrl="bin/DotNetOpenAuth.AspNet.dll" publishTime="04/17/2014 18:09:46" />
     <file relUrl="Global.asax" publishTime="04/23/2017 18:15:11" />
     <file relUrl="Images/background/oldslides/squares_background.jpg" publishTime="04/28/2017 22:38:57" />
+    <file relUrl="Content/botf/mobile.css" publishTime="08/04/2017 03:50:46" />
+    <file relUrl="Content/botf/validation.css" publishTime="05/08/2017 00:43:17" />
     <file relUrl="Views/Enrollments/_DisplayFields.cshtml" publishTime="06/09/2017 19:40:18" />
     <file relUrl="Views/Account/ResetPasswordSuccess.cshtml" publishTime="07/23/2017 22:28:47" />
     <file relUrl="bin/Dapper.xml" publishTime="06/10/2017 21:54:20" />
     <file relUrl="Images/latest/full-size/image5.jpg" publishTime="07/29/2017 16:20:48" />
     <file relUrl="Views/Shared/DisplayTemplates/User.cshtml" publishTime="07/23/2017 16:38:52" />
-    <file relUrl="bin/Microsoft.Web.Infrastructure.dll" publishTime="03/09/2017 19:22:44" />
-    <file relUrl="Views/Web.config" publishTime="05/13/2017 00:17:08" />
+    <file relUrl="Images/template/g4.jpg" publishTime="08/01/2017 20:00:52" />
+    <file relUrl="Images/template/next.png" publishTime="08/01/2017 20:00:52" />
     <file relUrl="Views/Account/PasswordResetRequest.cshtml" publishTime="07/21/2017 20:30:04" />
     <file relUrl="Images/latest/image3.jpg" publishTime="07/29/2017 16:20:35" />
     <file relUrl="Images/latest/full-size/image4.jpg" publishTime="07/29/2017 16:20:48" />
+    <file relUrl="Views/Shared/DisplayTemplates/Date.cshtml" publishTime="06/06/2017 21:01:52" />
     <file relUrl="Views/Shared/DisplayTemplates/Role.cshtml" publishTime="07/23/2017 16:40:59" />
+    <file relUrl="Content/botf/elements.css" publishTime="08/04/2017 00:36:43" />
     <file relUrl="Views/Shared/EditorTemplates/Permission.cshtml" publishTime="07/23/2017 16:40:36" />
     <file relUrl="Images/template/3.jpg" publishTime="08/01/2017 20:00:52" />
+    <file relUrl="Images/background/slides/forest3d.jpg" publishTime="08/04/2017 00:14:43" />
     <file relUrl="Images/template/t1.jpg" publishTime="08/01/2017 20:00:52" />
-    <file relUrl="Content/template/style.991.css" publishTime="08/03/2017 02:28:01" />
+    <file relUrl="Content/template/style.991.css" publishTime="08/04/2017 01:41:13" />
     <file relUrl="Views/Messages/_EditFields.cshtml" publishTime="07/23/2017 19:50:25" />
     <file relUrl="Content/k9/menubar.css" publishTime="07/26/2017 20:21:07" />
     <file relUrl="bin/System.Web.WebPages.Razor.xml" publishTime="03/09/2017 19:22:46" />
@@ -437,42 +450,45 @@
     <file relUrl="Images/home/wood1.jpg" publishTime="08/02/2017 00:38:31" />
     <file relUrl="Content/template/lsb.css" publishTime="08/01/2017 19:43:26" />
     <file relUrl="bin/Antlr3.Runtime.pdb" publishTime="04/26/2017 23:41:38" />
+    <file relUrl="bin/WebMatrix.WebData.xml" publishTime="04/23/2017 20:27:49" />
+    <file relUrl="Images/iboga/1/aims2.jpg" publishTime="08/04/2017 00:01:32" />
+    <file relUrl="Images/ui/warning.png" publishTime="07/21/2017 18:46:23" />
     <file relUrl="Views/Shared/EditorTemplates/Role.cshtml" publishTime="07/23/2017 16:40:28" />
-    <file relUrl="Views/Account/MyAccount.cshtml" publishTime="07/23/2017 23:22:33" />
-    <file relUrl="Views/Shared/_FooterTemplate.cshtml" publishTime="08/03/2017 01:21:14" />
+    <file relUrl="Views/Account/MyAccount.cshtml" publishTime="08/03/2017 23:35:47" />
     <file relUrl="Views/Messages/Delete.cshtml" publishTime="07/23/2017 22:27:40" />
-    <file relUrl="Content/tablet.css" publishTime="07/30/2017 19:58:47" />
+    <file relUrl="Content/botf/desktop.css" publishTime="07/31/2017 21:10:33" />
     <file relUrl="bin/Newtonsoft.Json.dll" publishTime="04/26/2017 23:41:38" />
     <file relUrl="Content/bootstrap/bootstrap.css" publishTime="07/31/2017 19:55:54" />
-    <file relUrl="Views/Shared/Controls/_Carousel.cshtml" publishTime="07/30/2017 18:16:11" />
+    <file relUrl="Views/Shared/Controls/_Carousel.cshtml" publishTime="08/04/2017 01:31:23" />
     <file relUrl="bin/System.Web.WebPages.xml" publishTime="03/09/2017 19:22:46" />
-    <file relUrl="Views/AboutUs/HelpUs.cshtml" publishTime="07/27/2017 00:20:05" />
     <file relUrl="Scripts/k9/bootstrapControls.js" publishTime="07/31/2017 19:33:42" />
     <file relUrl="bin/System.Web.Http.WebHost.dll" publishTime="03/09/2017 19:22:49" />
     <file relUrl="bin/NLog.dll" publishTime="04/23/2017 23:42:40" />
     <file relUrl="Nlog.config" publishTime="05/20/2017 18:47:43" />
-    <file relUrl="Content/bootstrap/bootstrapValidator.css" publishTime="07/27/2017 23:45:30" />
+    <file relUrl="bin/Microsoft.Web.WebPages.OAuth.dll" publishTime="07/10/2012 13:03:34" />
+    <file relUrl="Images/ui/fail.png" publishTime="07/21/2017 18:46:24" />
     <file relUrl="Images/background/slides/bwiti1.jpg" publishTime="08/02/2017 00:04:31" />
     <file relUrl="bin/System.Web.WebPages.Deployment.dll" publishTime="03/09/2017 19:22:46" />
     <file relUrl="Views/Shared/EditorTemplates/MultiLineText.cshtml" publishTime="07/29/2017 15:25:48" />
     <file relUrl="Images/latest/full-size/image11.jpg" publishTime="07/29/2017 16:20:48" />
     <file relUrl="Views/Shared/DisplayTemplates/EmailAddress.cshtml" publishTime="06/03/2017 19:05:27" />
-    <file relUrl="Images/template/next.png" publishTime="08/01/2017 20:00:52" />
     <file relUrl="Views/Roles/_DisplayFields.cshtml" publishTime="07/11/2017 21:48:54" />
     <file relUrl="Views/Shared/DisplayTemplates/Course.cshtml" publishTime="06/06/2017 20:34:21" />
     <file relUrl="Views/Shared/DisplayTemplates/DateTime.cshtml" publishTime="06/06/2017 21:01:52" />
     <file relUrl="bin/DotNetOpenAuth.AspNet.xml" publishTime="04/17/2014 18:09:46" />
     <file relUrl="bin/EntityFramework.dll" publishTime="04/22/2017 20:20:49" />
-    <file relUrl="bin/System.Web.Razor.dll" publishTime="03/09/2017 19:22:45" />
+    <file relUrl="Images/template/f4.jpg" publishTime="08/01/2017 20:00:52" />
+    <file relUrl="Content/ninestar/elements.css" publishTime="08/03/2017 22:00:35" />
     <file relUrl="bin/System.Net.Http.WebRequest.xml" publishTime="03/09/2017 19:22:48" />
     <file relUrl="Views/Account/AccountCreated.cshtml" publishTime="07/23/2017 22:25:02" />
     <file relUrl="Views/Shared/DisplayTemplates/PhoneNumber.cshtml" publishTime="06/03/2017 19:04:26" />
-    <file relUrl="Images/template/g1.jpg" publishTime="08/01/2017 20:00:52" />
     <file relUrl="Images/latest/full-size/image3.jpg" publishTime="07/29/2017 16:20:48" />
     <file relUrl="Views/Shared/_Layout.cshtml" publishTime="07/24/2017 01:18:18" />
     <file relUrl="Views/Messages/Edit.cshtml" publishTime="07/23/2017 22:27:33" />
+    <file relUrl="Views/Shared/k9/_Footer.cshtml" publishTime="08/03/2017 22:53:04" />
     <file relUrl="Images/latest/full-size/image2.jpg" publishTime="07/29/2017 16:20:48" />
-    <file relUrl="Images/background/slides/forest1.jpg" publishTime="07/26/2017 23:48:53" />
+    <file relUrl="Views/Shared/_MenuBar.cshtml" publishTime="07/24/2017 01:27:56" />
+    <file relUrl="Images/iboga/2/dragees-iboga.jpg" publishTime="08/04/2017 00:57:23" />
     <file relUrl="Views/Permissions/Details.cshtml" publishTime="07/24/2017 23:23:51" />
     <file relUrl="bin/Antlr3.Runtime.dll" publishTime="04/26/2017 23:41:38" />
     <file relUrl="Views/Roles/Create.cshtml" publishTime="07/24/2017 23:25:54" />
@@ -482,51 +498,58 @@
     <file relUrl="Images/latest/full-size/image9.jpg" publishTime="07/29/2017 16:20:48" />
     <file relUrl="Scripts/library/easing.js" publishTime="08/01/2017 20:01:40" />
     <file relUrl="Images/latest/full-size/image6.jpg" publishTime="07/29/2017 16:20:48" />
+    <file relUrl="Images/iboga/1/pills-online.jpg" publishTime="08/04/2017 00:57:23" />
     <file relUrl="Images/latest/image10.jpg" publishTime="07/29/2017 16:20:35" />
-    <file relUrl="Images/template/f4.jpg" publishTime="08/01/2017 20:00:52" />
-    <file relUrl="Content/desktop.css" publishTime="07/31/2017 21:10:33" />
+    <file relUrl="Content/template/style.375.css" publishTime="08/03/2017 01:10:29" />
     <file relUrl="bin/System.Web.Mvc.dll" publishTime="04/25/2017 23:28:58" />
     <file relUrl="Images/latest/image11.jpg" publishTime="07/29/2017 16:20:35" />
     <file relUrl="Content/template/style.320.css" publishTime="08/03/2017 01:10:10" />
     <file relUrl="Views/Shared/FriendlyError.cshtml" publishTime="07/23/2017 22:26:36" />
     <file relUrl="Images/template/t3.jpg" publishTime="08/01/2017 20:00:52" />
     <file relUrl="bin/WebGrease.dll" publishTime="04/26/2017 23:41:38" />
-    <file relUrl="bin/Microsoft.Web.WebPages.OAuth.dll" publishTime="07/10/2012 13:03:34" />
+    <file relUrl="Views/Shared/EditorTemplates/DateTime.cshtml" publishTime="07/25/2017 19:33:48" />
     <file relUrl="bin/DotNetOpenAuth.OpenId.RelyingParty.dll" publishTime="04/17/2014 18:09:50" />
-    <file relUrl="Content/template/style.css" publishTime="08/03/2017 02:20:53" />
+    <file relUrl="Views/Shared/k9/_LayoutFormMaster.cshtml" publishTime="08/03/2017 22:53:02" />
+    <file relUrl="Content/ninestar/botf.css" publishTime="08/03/2017 22:00:35" />
+    <file relUrl="Content/template/style.css" publishTime="08/04/2017 03:13:40" />
     <file relUrl="Images/background/oldslides/bwiti3.jpg" publishTime="07/26/2017 23:48:53" />
     <file relUrl="bin/System.Web.Http.xml" publishTime="03/09/2017 19:22:49" />
+    <file relUrl="Content/ninestar/classes.css" publishTime="08/03/2017 22:00:35" />
     <file relUrl="Views/Shared/DisplayTemplates/String.cshtml" publishTime="06/03/2017 19:06:19" />
-    <file relUrl="bin/K9.SharedLibrary.dll" publishTime="07/30/2017 20:09:20" />
+    <file relUrl="bin/K9.SharedLibrary.dll" publishTime="08/04/2017 00:29:14" />
     <file relUrl="bin/WebMatrix.Data.dll" publishTime="04/23/2017 20:27:49" />
     <file relUrl="Views/Messages/Index.cshtml" publishTime="07/23/2017 22:31:28" />
     <file relUrl="bin/DotNetOpenAuth.OAuth.Consumer.xml" publishTime="04/17/2014 18:09:48" />
     <file relUrl="bin/System.Net.Http.Formatting.dll" publishTime="03/09/2017 19:22:47" />
     <file relUrl="Views/Shared/Controls/_ImageSwitcher.cshtml" publishTime="07/27/2017 00:55:40" />
     <file relUrl="Views/Account/ResetPasswordFailed.cshtml" publishTime="07/23/2017 22:28:50" />
-    <file relUrl="Images/ui/warning.png" publishTime="07/21/2017 18:46:23" />
+    <file relUrl="Views/Enrollments/_EditFields.cshtml" publishTime="06/09/2017 22:37:02" />
     <file relUrl="Views/Shared/DisplayTemplates/Permission.cshtml" publishTime="07/23/2017 16:40:53" />
-    <file relUrl="Content/mobile.css" publishTime="07/30/2017 19:56:56" />
     <file relUrl="Images/home/slides/aims2.jpg" publishTime="07/27/2017 00:53:23" />
     <file relUrl="Views/RolePermissions/Index.cshtml" publishTime="07/23/2017 22:31:48" />
+    <file relUrl="Content/botf/tablet.css" publishTime="08/03/2017 22:26:53" />
     <file relUrl="Images/template/t2.jpg" publishTime="08/01/2017 20:00:52" />
+    <file relUrl="Images/iboga/1/aims3.jpg" publishTime="08/04/2017 00:04:39" />
+    <file relUrl="Images/iboga/1/aims1.jpg" publishTime="08/04/2017 00:06:58" />
     <file relUrl="Views/Permissions/_DisplayFields.cshtml" publishTime="07/11/2017 21:49:04" />
     <file relUrl="Images/background/oldslides/blueswirl.jpg" publishTime="04/28/2017 22:38:57" />
-    <file relUrl="Views/Home/Index.cshtml" publishTime="08/02/2017 20:20:17" />
+    <file relUrl="Views/Home/Index.cshtml" publishTime="08/04/2017 03:51:35" />
     <file relUrl="Views/Students/Delete.cshtml" publishTime="07/24/2017 23:26:40" />
-    <file relUrl="Images/background/slides/forest2.jpg" publishTime="07/26/2017 23:48:53" />
+    <file relUrl="Images/template/f3.jpg" publishTime="08/01/2017 20:00:52" />
     <file relUrl="packages.config" publishTime="06/08/2017 23:40:47" />
-    <file relUrl="Views/Home/Test.cshtml" publishTime="08/03/2017 01:13:14" />
-    <file relUrl="bin/Autofac.xml" publishTime="03/09/2017 20:18:49" />
+    <file relUrl="Views/Enrollments/Delete.cshtml" publishTime="07/24/2017 23:23:02" />
+    <file relUrl="Views/Shared/k9/_LayoutFormSmall.cshtml" publishTime="08/03/2017 22:53:02" />
     <file relUrl="bin/System.Web.Helpers.xml" publishTime="03/09/2017 19:22:46" />
     <file relUrl="Views/Students/_DisplayFields.cshtml" publishTime="06/04/2017 14:00:56" />
     <file relUrl="Content/fontawesome/font-awesome.css" publishTime="08/01/2017 23:44:26" />
+    <file relUrl="Views/Home/OldIndex.cshtml" publishTime="08/03/2017 23:58:41" />
     <file relUrl="Views/AboutUs/Index.cshtml" publishTime="07/27/2017 00:19:08" />
     <file relUrl="bin/System.Web.WebPages.dll" publishTime="03/09/2017 19:22:46" />
-    <file relUrl="Views/Shared/Unauthorized.cshtml" publishTime="07/23/2017 22:26:29" />
-    <file relUrl="Images/latest/full-size/image10.jpg" publishTime="07/29/2017 16:20:48" />
+    <file relUrl="Views/Roles/Edit.cshtml" publishTime="07/24/2017 23:26:09" />
+    <file relUrl="Content/botf/shared.css" publishTime="08/04/2017 02:43:46" />
     <file relUrl="Images/home/slides/aims3.jpg" publishTime="07/27/2017 01:14:31" />
     <file relUrl="Images/partners/ebando.jpg" publishTime="07/30/2017 20:51:50" />
+    <file relUrl="Views/AboutUs/Team.cshtml" publishTime="07/27/2017 00:20:05" />
     <file relUrl="Views/Shared/Controls/_DataTablesJs.cshtml" publishTime="07/24/2017 21:33:47" />
     <file relUrl="bin/WebMatrix.WebData.dll" publishTime="04/23/2017 20:27:49" />
     <file relUrl="Scripts/library/SmoothScroll.min.js" publishTime="08/01/2017 20:01:40" />
@@ -534,66 +557,66 @@
     <file relUrl="Views/Account/AccountLocked.cshtml" publishTime="07/23/2017 22:29:04" />
     <file relUrl="Views/Shared/EditorTemplates/PhoneNumber.cshtml" publishTime="07/25/2017 19:35:39" />
     <file relUrl="Content/template/style.760.css" publishTime="08/03/2017 02:26:22" />
-    <file relUrl="Views/Iboga/Index.cshtml" publishTime="07/27/2017 00:33:56" />
+    <file relUrl="Views/Iboga/Index.cshtml" publishTime="08/04/2017 01:43:35" />
     <file relUrl="Scripts/library/owl.carousel.js" publishTime="08/01/2017 20:01:40" />
     <file relUrl="Views/Shared/EditorTemplates/Boolean.cshtml" publishTime="07/11/2017 21:33:52" />
     <file relUrl="Views/Enrollments/Details.cshtml" publishTime="07/24/2017 23:23:05" />
     <file relUrl="Content/k9/breadCrumbs.css" publishTime="07/26/2017 20:25:13" />
-    <file relUrl="bin/K9.DataAccess.dll" publishTime="08/02/2017 00:45:14" />
+    <file relUrl="bin/K9.DataAccess.dll" publishTime="08/04/2017 02:00:30" />
     <file relUrl="Views/Shared/DisplayTemplates/Text.cshtml" publishTime="07/30/2017 18:33:33" />
     <file relUrl="Views/Enrollments/Create.cshtml" publishTime="07/24/2017 23:22:58" />
     <file relUrl="Scripts/library/lsb.js" publishTime="08/01/2017 20:01:40" />
     <file relUrl="Content/bootstrap/bootstrap-datetimepicker.css" publishTime="07/27/2017 23:44:17" />
     <file relUrl="Views/AboutUs/OurMission.cshtml" publishTime="07/31/2017 22:39:43" />
     <file relUrl="Views/Account/AccountActivated.cshtml" publishTime="07/23/2017 22:24:44" />
-    <file relUrl="Views/Shared/_Footer.cshtml" publishTime="07/27/2017 22:44:13" />
+    <file relUrl="Views/Shared/_Footer.cshtml" publishTime="08/03/2017 01:21:14" />
     <file relUrl="Images/partners/global-ibogaine.jpg" publishTime="07/30/2017 20:51:50" />
     <file relUrl="Views/Users/Delete.cshtml" publishTime="07/24/2017 23:27:12" />
     <file relUrl="Scripts/imageSwitcher/backgroundSwitcher.js" publishTime="07/26/2017 22:50:55" />
     <file relUrl="Images/latest/image12.jpg" publishTime="07/29/2017 16:20:35" />
     <file relUrl="Views/Users/_DisplayFields.cshtml" publishTime="07/24/2017 20:31:36" />
     <file relUrl="Images/template/arrow.png" publishTime="08/01/2017 20:00:52" />
-    <file relUrl="Content/validation.css" publishTime="05/08/2017 00:43:17" />
     <file relUrl="Images/template/4.jpg" publishTime="08/01/2017 20:00:52" />
     <file relUrl="bin/EntityFramework.SqlServer.xml" publishTime="04/22/2017 20:20:49" />
+    <file relUrl="Views/Shared/k9/_LayoutFormWide.cshtml" publishTime="08/03/2017 22:53:02" />
     <file relUrl="Views/Shared/NotFound.cshtml" publishTime="07/23/2017 22:26:33" />
     <file relUrl="bin/Autofac.Integration.Mvc.xml" publishTime="03/09/2017 20:18:49" />
-    <file relUrl="Content/elements.css" publishTime="07/27/2017 01:08:59" />
     <file relUrl="bin/System.Net.Http.xml" publishTime="03/09/2017 19:22:48" />
-    <file relUrl="bin/K9.WebApplication.pdb" publishTime="08/03/2017 02:29:59" />
-    <file relUrl="bin/System.Web.Providers.dll" publishTime="03/09/2017 19:22:49" />
+    <file relUrl="Content/ninestar/mobile.css" publishTime="08/03/2017 22:00:35" />
+    <file relUrl="bin/K9.WebApplication.pdb" publishTime="08/04/2017 03:53:27" />
     <file relUrl="bin/DotNetOpenAuth.Core.dll" publishTime="04/17/2014 18:09:48" />
-    <file relUrl="bin/K9.Globalisation.pdb" publishTime="08/02/2017 00:45:12" />
+    <file relUrl="bin/K9.Globalisation.pdb" publishTime="08/04/2017 02:00:28" />
     <file relUrl="Views/Shared/_ContactUs.cshtml" publishTime="07/30/2017 20:33:03" />
     <file relUrl="Images/ui/google_sm.png" publishTime="05/08/2017 13:57:13" />
     <file relUrl="Images/ui/success.png" publishTime="07/21/2017 18:46:25" />
     <file relUrl="Views/Account/UpdatePassword.cshtml" publishTime="07/21/2017 20:59:07" />
     <file relUrl="Views/Permissions/_EditFields.cshtml" publishTime="07/11/2017 21:49:39" />
+    <file relUrl="Content/bootstrap/bootstrapValidator.css" publishTime="07/27/2017 23:45:30" />
     <file relUrl="Views/Users/Edit.cshtml" publishTime="07/24/2017 23:52:48" />
     <file relUrl="Views/Roles/_EditFields.cshtml" publishTime="07/11/2017 21:49:01" />
-    <file relUrl="Views/Roles/Edit.cshtml" publishTime="07/24/2017 23:26:09" />
+    <file relUrl="Images/iboga/1/patent.jpg" publishTime="08/04/2017 00:57:23" />
     <file relUrl="bin/Dapper.dll" publishTime="06/10/2017 21:54:20" />
-    <file relUrl="Scripts/k9/fadePageIn.js" publishTime="07/26/2017 23:08:15" />
-    <file relUrl="Content/k9/responsiveslides.css" publishTime="07/27/2017 01:07:18" />
+    <file relUrl="Views/Students/Index.cshtml" publishTime="07/23/2017 22:32:04" />
     <file relUrl="bin/DotNetOpenAuth.OpenId.RelyingParty.xml" publishTime="04/17/2014 18:09:50" />
-    <file relUrl="Content/k9/tables.css" publishTime="07/24/2017 00:11:26" />
-    <file relUrl="bin/DotNetOpenAuth.Core.xml" publishTime="04/17/2014 18:09:48" />
+    <file relUrl="Content/k9/tables.css" publishTime="08/03/2017 22:16:00" />
     <file relUrl="Images/background/oldslides/1leaves_background.jpg" publishTime="04/28/2017 22:38:57" />
+    <file relUrl="Images/latest/full-size/image10.jpg" publishTime="07/29/2017 16:20:48" />
     <file relUrl="Content/template/owl.carousel.css" publishTime="08/01/2017 19:43:26" />
-    <file relUrl="bin/K9.SharedLibrary.pdb" publishTime="07/30/2017 20:09:20" />
+    <file relUrl="bin/K9.SharedLibrary.pdb" publishTime="08/04/2017 00:29:14" />
     <file relUrl="Views/Shared/Controls/_BackgroundImageSwitcher.cshtml" publishTime="05/17/2017 21:20:18" />
     <file relUrl="Views/_ViewStart.cshtml" publishTime="04/29/2017 02:27:57" />
+    <file relUrl="Content/ninestar/desktop.css" publishTime="08/03/2017 22:00:35" />
     <file relUrl="Images/home/bwiti1.jpg" publishTime="08/02/2017 00:25:11" />
-    <file relUrl="Content/shared.css" publishTime="07/31/2017 21:04:42" />
     <file relUrl="bin/DotNetOpenAuth.OAuth.dll" publishTime="04/17/2014 18:09:48" />
+    <file relUrl="Views/Shared/Unauthorized.cshtml" publishTime="07/23/2017 22:26:29" />
     <file relUrl="bin/System.Web.WebPages.Deployment.xml" publishTime="03/09/2017 19:22:46" />
     <file relUrl="Views/Shared/EditorTemplates/Password.cshtml" publishTime="07/25/2017 19:36:08" />
+    <file relUrl="Images/background/slides/forest1d.jpg" publishTime="08/04/2017 00:14:43" />
     <file relUrl="Images/latest/image8.jpg" publishTime="07/29/2017 16:20:35" />
+    <file relUrl="Views/Shared/k9/_LayoutMaster.cshtml" publishTime="08/03/2017 22:53:02" />
     <file relUrl="bin/Autofac.dll" publishTime="03/09/2017 20:18:49" />
     <file relUrl="Views/Permissions/Delete.cshtml" publishTime="07/24/2017 23:23:48" />
     <file relUrl="Images/latest/full-size/image12.jpg" publishTime="07/29/2017 16:20:48" />
-    <file relUrl="bin/System.Web.Razor.xml" publishTime="03/09/2017 19:22:45" />
-    <file relUrl="bin/System.Net.Http.Formatting.xml" publishTime="03/09/2017 19:22:47" />
     <file relUrl="Views/Shared/EditorTemplates/EmailAddress.cshtml" publishTime="07/25/2017 19:35:11" />
     <file relUrl="bin/DataAnnotationsExtensions.dll" publishTime="04/23/2017 21:18:06" />
     <file relUrl="Views/Students/Details.cshtml" publishTime="07/24/2017 23:26:45" />
@@ -602,25 +625,25 @@
     <file relUrl="Web.config" publishTime="07/31/2017 21:31:31" />
     <file relUrl="Views/Roles/Delete.cshtml" publishTime="07/24/2017 23:25:59" />
     <file relUrl="Content/template/style.414.css" publishTime="08/03/2017 01:11:54" />
-    <file relUrl="Images/background/slides/forest3.jpg" publishTime="07/27/2017 00:10:33" />
-    <file relUrl="Views/Shared/_LayoutMaster.cshtml" publishTime="08/02/2017 01:29:22" />
+    <file relUrl="Views/Shared/_ValidationSummary.cshtml" publishTime="04/29/2017 12:54:20" />
+    <file relUrl="Views/Shared/_LayoutMaster.cshtml" publishTime="08/03/2017 22:55:06" />
     <file relUrl="bin/NLog.xml" publishTime="04/23/2017 23:42:40" />
     <file relUrl="Images/ui/facebook_sm.png" publishTime="05/08/2017 13:58:53" />
     <file relUrl="Images/template/prev.png" publishTime="08/01/2017 20:00:52" />
-    <file relUrl="Images/latest/image4.jpg" publishTime="07/29/2017 16:20:35" />
+    <file relUrl="bin/System.Net.Http.Formatting.xml" publishTime="03/09/2017 19:22:47" />
     <file relUrl="Views/Account/Login.cshtml" publishTime="07/21/2017 20:30:01" />
     <file relUrl="Images/ui/locked.png" publishTime="07/21/2017 18:46:24" />
     <file relUrl="Views/Countries/Index.cshtml" publishTime="07/23/2017 22:31:14" />
-    <file relUrl="bin/K9.DataAccess.pdb" publishTime="08/02/2017 00:45:14" />
+    <file relUrl="bin/K9.DataAccess.pdb" publishTime="08/04/2017 02:00:30" />
     <file relUrl="Views/Account/PasswordResetEmailSent.cshtml" publishTime="07/23/2017 22:28:53" />
-    <file relUrl="Views/Enrollments/Delete.cshtml" publishTime="07/24/2017 23:23:02" />
+    <file relUrl="Scripts/k9/fadePageIn.js" publishTime="08/03/2017 22:33:44" />
     <file relUrl="bin/Moq.xml" publishTime="04/25/2017 20:50:38" />
     <file relUrl="Views/Shared/_LayoutFormWide.cshtml" publishTime="07/24/2017 01:18:15" />
     <file relUrl="bin/Microsoft.Web.WebPages.OAuth.xml" publishTime="05/31/2012 02:00:36" />
-    <file relUrl="Views/Shared/_ValidationSummary.cshtml" publishTime="04/29/2017 12:54:20" />
+    <file relUrl="Images/latest/image4.jpg" publishTime="07/29/2017 16:20:35" />
     <file relUrl="bin/EntityFramework.xml" publishTime="04/22/2017 20:20:49" />
-    <file relUrl="Views/Shared/_LayoutTemplateMaster.cshtml" publishTime="08/03/2017 01:19:43" />
     <file relUrl="Images/template/g3.jpg" publishTime="08/01/2017 20:00:52" />
+    <file relUrl="Images/template/5.jpg" publishTime="08/01/2017 20:00:52" />
     <file relUrl="Views/Permissions/Create.cshtml" publishTime="07/24/2017 23:23:44" />
   </publishProfile>
 </publishData>

@@ -1,4 +1,4 @@
-@media(max-width:414px){
+@media (max-width:414px) {
 	.tabs .nav-tabs li {
 		display: inline-block;
 	}
@@ -14,5 +14,17 @@
 	}
 	.agile-gallery-grid:nth-child(1), .agile-gallery-grid:nth-child(2), .agile-gallery-grid:nth-child(3) {
 		margin: 0 0 1em 0;
+	}
+
+	.agileinfo-social-grids ul li a i.fa {
+		width: 35px;
+		height: 35px;
+		font-size: .9em;
+	}
+	.captn-top h4 {
+		font-size: 0.9em;
+	}
+	.captn-top p {
+		font-size: 0.9em;
 	}
 }

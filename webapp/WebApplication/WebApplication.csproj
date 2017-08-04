@@ -265,6 +265,9 @@
     <Content Include="Content\ninestar\tablet.css" />
     <Content Include="Content\ninestar\validation.css" />
     <Content Include="Content\fontawesome\font-awesome.css" />
+    <Content Include="Content\template\style.1200.css" />
+    <Content Include="Content\template\style.610.css" />
+    <Content Include="Content\template\style.525.css" />
     <Content Include="Content\template\style.760.css" />
     <Content Include="Content\template\style.1024.css" />
     <Content Include="Content\template\style.991.css" />
@@ -360,6 +363,10 @@
     <Content Include="Images\partners\ebando.jpg" />
     <Content Include="Images\partners\parc-gabon.jpg" />
     <Content Include="Images\partners\plant-consciousness.jpg" />
+    <Content Include="Images\team\t1.jpg" />
+    <Content Include="Images\team\t2.jpg" />
+    <Content Include="Images\team\t3.jpg" />
+    <Content Include="Images\team\t4.jpg" />
     <Content Include="Images\template\1.jpg" />
     <Content Include="Images\template\2.jpg" />
     <Content Include="Images\template\3.jpg" />
@@ -474,7 +481,6 @@
     <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
     <Content Include="Views\Shared\Controls\_DataTablesJs.cshtml" />
     <Content Include="Views\Countries\Index.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Nlog.config" />
     <Content Include="Views\Enrollments\Index.cshtml" />
     <Content Include="Views\Countries\Edit.cshtml" />

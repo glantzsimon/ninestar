@@ -1,8 +1,11 @@
-@media(max-width:375px){
+@media (max-width:375px) {
 	.main-heading h3 {
 		font-size: 1.5em;
 	}
 	.agileits-caption {
 		height: 208px;
+	}
+	.team-grids {
+		padding: 0 1em;
 	}
 }

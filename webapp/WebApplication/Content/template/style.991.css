@@ -24,6 +24,15 @@
 	.main-section {
 		padding: 2em 0;
 	}
+	.team-grids:nth-child(2) {
+		margin-bottom: 2em;
+	}
+	.captn-top h4 {
+		font-size: 0.9em;
+	}
+	.captn-top p {
+		font-size: 0.9em;
+	}
 }
 
 @media (min-width:991px) {

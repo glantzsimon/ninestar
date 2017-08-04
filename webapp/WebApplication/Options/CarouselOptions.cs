@@ -17,7 +17,7 @@ namespace K9.WebApplication.Options
 		private readonly string _pathToFullSizeImages;
 		private List<IAssetInfo> _images;
 		private List<IAssetInfo> _fullSizeImages;
-		private static Guid _id = Guid.NewGuid();
+		private Guid _id = Guid.NewGuid();
 
 		public CarouselOptions(string pathToImages, string fullSizeImageFolderName = "full-size", int imageWidth = 70, EImageSizing sizing = EImageSizing.Horizontal)
 		{

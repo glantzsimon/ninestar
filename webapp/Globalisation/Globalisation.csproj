@@ -66,10 +66,18 @@
   <ItemGroup>
     <Content Include="Articles\en-gb\blessings-of-the-forest.htm" />
     <Content Include="Articles\en-gb\blessings-of-the-forest-intro.htm" />
+    <Content Include="Articles\en-gb\iboga-title2.htm" />
+    <Content Include="Articles\en-gb\iboga-text2.htm" />
+    <Content Include="Articles\en-gb\iboga-text1.htm" />
+    <Content Include="Articles\en-gb\iboga-title1.htm" />
     <Content Include="Articles\en-gb\mission-statement-and-aims-title1.htm" />
     <Content Include="Articles\en-gb\mission-statement-and-aims-title2.htm" />
     <Content Include="Articles\en-gb\mission-statement-and-aims1.htm" />
     <Content Include="Articles\en-gb\mission-statement-and-aims2.htm" />
+    <Content Include="Articles\fr\iboga-text1.htm" />
+    <Content Include="Articles\fr\iboga-text2.htm" />
+    <Content Include="Articles\fr\iboga-title1.htm" />
+    <Content Include="Articles\fr\iboga-title2.htm" />
     <Content Include="Articles\fr\mission-statement-and-aims1.htm" />
     <Content Include="Articles\fr\mission-statement-and-aims-title2.htm" />
     <Content Include="Articles\fr\mission-statement-and-aims-title1.htm" />

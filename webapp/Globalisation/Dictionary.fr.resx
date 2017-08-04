@@ -575,7 +575,7 @@
     <value>Nouvelles</value>
   </data>
   <data name="OurMission" xml:space="preserve">
-    <value>Notre Mission</value>
+    <value>Notre Engagement</value>
   </data>
   <data name="Iboga" xml:space="preserve">
     <value>Iboga</value>
@@ -599,7 +599,7 @@
     <value>Nos Dernières Images</value>
   </data>
   <data name="GetInTouchTitle" xml:space="preserve">
-    <value>Contacter Nous</value>
+    <value>Envoyez-nou en mail</value>
   </data>
   <data name="SupportUs" xml:space="preserve">
     <value>Soutenez-Nous!</value>
@@ -636,5 +636,17 @@
   </data>
   <data name="OurTeam" xml:space="preserve">
     <value>Notre Equipe</value>
+  </data>
+  <data name="iboga_text1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\iboga-text1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="iboga_title1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\iboga-title1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="iboga_title2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\iboga-title2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="OurMissionTitle" xml:space="preserve">
+    <value>Notre Enoncé &amp; Objectifs Mission</value>
   </data>
 </root>

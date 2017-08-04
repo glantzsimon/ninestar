@@ -265,8 +265,7 @@ namespace K9.Globalisation {
         ///	and Strategic Reserve’ by the Ex-President of Gabon, El Hadj Omar Bongo Ondimba.
         ///	Our organisation has been set up to preserve, research and share knowledge about
         ///	the medicinal plants and indigenous traditions of the Gabonese forest people for
-        ///	the benefit of all of humanity. We are a community interest company (CIC), which
-        ///	is a type of social enterprise. Like a charity, it has a stated mission known [rest of string was truncated]&quot;;.
+        ///	the benefit of all of humanity. We are a &lt;a href=&quot;https://www.gov.uk/government/publications/community-interest-companies-introduction&quot;&gt;community interest compa [rest of string was truncated]&quot;;.
         /// </summary>
         public static string blessings_of_the_forest {
             get {
@@ -718,6 +717,48 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Iboga has been sold in western world since 1901.
+        ///						Today, more and more advertising touts iboga as a “miracle cure” without any apparent regard as to the sustainability of the resource.
+        ///						Bought with gold, Iboga is then sold on the Internet in violation of laws protecting it, without equitable sharing of its benefits and a risk of consumers who have no certainty as to its origin and quality.
+        ///						The price of iboga has increased by over 1000% in 15 years making this fundamental Gabonese medicine [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string iboga_text1 {
+            get {
+                return ResourceManager.GetString("iboga_text1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In what can only be described as biopiracy, more than a dozen patents have been filed regarding the therapeutic use of iboga and its chemical derivatives in total disregard of the Nagoya Protocol protecting the people behind this plant and knowledge.
+        ///						The ivory trade and iboga trafficking are interlinked. Elephants love iboga fruit and the poachers track and kill them near the last wild reservations of iboga.
+        ///						Once they have murdered the elephants, the poachers also take all the iboga found on s [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string iboga_text2 {
+            get {
+                return ResourceManager.GetString("iboga_text2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pygmies have used iboga for over 65,000 years before it was discovered in the west.
+        ///					Now, due to over-consumption without any policy of sustainable management, this sacred plant will disappear from the public domain within 5 years.
+        /// </summary>
+        public static string iboga_title1 {
+            get {
+                return ResourceManager.GetString("iboga_title1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blessings Of The Forest is committed to building a bridge between traditional Gabonese healers and researchers worldwide. We offer humanity the most sacred knowledge of the art of healing using one of the most sacred plants of our common historic origins..
+        /// </summary>
+        public static string iboga_title2 {
+            get {
+                return ResourceManager.GetString("iboga_title2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to if you don&apos;t have an account.
         /// </summary>
         public static string IfNoAccount {
@@ -1124,6 +1165,15 @@ namespace K9.Globalisation {
         public static string OurMission {
             get {
                 return ResourceManager.GetString("OurMission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Our Mission Statement &amp; Aims.
+        /// </summary>
+        public static string OurMissionTitle {
+            get {
+                return ResourceManager.GetString("OurMissionTitle", resourceCulture);
             }
         }
         

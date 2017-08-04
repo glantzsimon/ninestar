@@ -81,3 +81,7 @@
 .display-none {
 	display: none;
 }
+
+.no-wrap {
+	white-space: nowrap;
+}

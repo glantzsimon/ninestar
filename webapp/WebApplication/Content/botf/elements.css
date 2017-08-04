@@ -1,3 +1,7 @@
 ﻿form:not(.navbar-form) .btn {
 	margin-top: 6px;
 }
+
+hr {
+	border-color: #d9d9d9;
+}

@@ -22,7 +22,7 @@ namespace K9.WebApplication.Controllers
 			return View();
 		}
 
-		public ActionResult HelpUs()
+		public ActionResult Team()
 		{
 			return View();
 		}

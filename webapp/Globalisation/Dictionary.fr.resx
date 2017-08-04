@@ -634,4 +634,7 @@
   <data name="mission_statement_and_aims_title2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\mission-statement-and-aims-title2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="OurTeam" xml:space="preserve">
+    <value>Notre Equipe</value>
+  </data>
 </root>

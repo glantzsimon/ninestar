@@ -36,6 +36,10 @@ body{
     background: url(/Images/background/slides/forest4.jpg) no-repeat 0 0;
     background-size: cover;
 }
+.background-waterfall {
+	background: url(/Images/home/animated-waterfalls.webp) no-repeat 0 0;
+	background-size: cover;
+}
 
 .header {
     padding: 1em 0;

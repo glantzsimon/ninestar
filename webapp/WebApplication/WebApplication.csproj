@@ -316,6 +316,7 @@
     <Content Include="Images\background\oldslides\bwiti3.jpg" />
     <Content Include="Images\background\slides\forest2.jpg" />
     <Content Include="Images\home\bwiti1.jpg" />
+    <Content Include="Images\home\smokefog-dark.png" />
     <Content Include="Images\home\wood1.jpg" />
     <Content Include="Images\home\slides\aims1.jpg" />
     <Content Include="Images\home\slides\aims2.jpg" />
@@ -414,6 +415,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Video\" />
     <Folder Include="Views\Error\" />
   </ItemGroup>
   <ItemGroup>
@@ -546,7 +548,7 @@
     <Content Include="Views\AboutUs\Index.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\AboutUs\OurMission.cshtml" />
-    <Content Include="Views\AboutUs\HelpUs.cshtml" />
+    <Content Include="Views\AboutUs\Team.cshtml" />
     <Content Include="Views\Archive\Index.cshtml" />
     <Content Include="Views\Iboga\Index.cshtml" />
     <Content Include="Views\Shared\Controls\_Carousel.cshtml" />
@@ -568,6 +570,7 @@
     <Content Include="Views\Shared\_Navbar.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutFormMaster.cshtml" />
+    <None Include="Images\home\animated-waterfalls.webp" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutColumns.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />

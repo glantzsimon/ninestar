@@ -1,20 +1,9 @@
 ﻿@media only screen and (max-width: 768px) {
 
 	.page {
-		margin: 0px;
-		padding: 0px;
-		width: auto;
-		background: none;
+		
 	}
-
-	.backdrop {
-		padding: 0px;
-	}
-
-	.roundCorners {
-		border-radius: 0px;
-	}
-
+	
 	.alphaBackground {
 		filter: alpha(opacity=80);
 	}

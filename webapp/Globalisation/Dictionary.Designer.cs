@@ -953,9 +953,8 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;ul&gt;
-        ///	&lt;li&gt;Providing a voice in the world to explain the impact of the growing international interest for iboga on Gabonese traditions as well as the flora and fauna of Gabon&lt;/li&gt;
-        ///	&lt;li&gt;Using legal expertise, in partnership with all Gabonese institutions and international organizations involved in the protection of biodiversity and traditional medicines, on ways and means to regulate the cultivation, marketing and the therapeutic use of iboga&lt;/li&gt;
-        ///	&lt;li&gt;Mapping the presence of iboga on the whole National te [rest of string was truncated]&quot;;.
+        ///	&lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Providing a voice in the world to explain the impact of the growing international interest for iboga on Gabonese traditions as well as the flora and fauna of Gabon&lt;/li&gt;
+        ///	&lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Using legal expertise, in partnership with all Gabonese institutions and international organizations involved in the protection of biodiversity and traditional medicines, on ways and means to regulate the cultivation, ma [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mission_statement_and_aims1 {
             get {
@@ -965,9 +964,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;ul&gt;
-        ///	&lt;li&gt;Creating an eco-village with zero environmental impact.
+        ///	&lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Creating an eco-village with zero environmental impact.
         ///		The village will be powered by renewable energy systems such as wind and solar. It will also collect, filter, store and distribute rainwater. One or more wells will be drilled to make the village self-sufficient for water.
-        ///		The houses in the village will be made with natural materials of the Gabonese forest. Some structures made out of mobile shipping containers equipt with ecological living facilities also serve to develop the village&lt; [rest of string was truncated]&quot;;.
+        ///		The houses in the village will be made with natural materials of the Gabonese forest. Some structures made out of mobile shipping containers equipt with ecological [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mission_statement_and_aims2 {
             get {
@@ -1134,6 +1133,15 @@ namespace K9.Globalisation {
         public static string OurPartners {
             get {
                 return ResourceManager.GetString("OurPartners", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Our Team.
+        /// </summary>
+        public static string OurTeam {
+            get {
+                return ResourceManager.GetString("OurTeam", resourceCulture);
             }
         }
         

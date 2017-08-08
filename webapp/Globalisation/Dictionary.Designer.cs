@@ -483,6 +483,28 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;David Nassim, co-director of “Blessings Of The Forest” is a practitioner of Chinese medicine and internal martial arts. Since 1999 his studies include shiatsu, acupuncture, nutrition and herbal medicine, Qi Gong and Tai Chi Chuan.&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///	He studied in several places around the world including the UK and Japan.
+        ///	David is trained in permaculture and is involved in a self-sufficient community project in Europe (Portugal).
+        ///	As part of his research in the field of traditional herbalism, he discovered  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string david_text {
+            get {
+                return ResourceManager.GetString("david_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Co-director of Blessings Of The Forest and practitioner of Chinese medicine.
+        /// </summary>
+        public static string david_title {
+            get {
+                return ResourceManager.GetString("david_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to An unknown error occurred. Please verify your entry and try again. If the problem persists, please contact support..
         /// </summary>
         public static string DefaultAuthError {
@@ -730,8 +752,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to In what can only be described as biopiracy, more than a dozen patents have been filed regarding the therapeutic use of iboga and its chemical derivatives in total disregard of the Nagoya Protocol protecting the people behind this plant and knowledge.
-        ///						The ivory trade and iboga trafficking are interlinked. Elephants love iboga fruit and the poachers track and kill them near the last wild reservations of iboga.
-        ///						Once they have murdered the elephants, the poachers also take all the iboga found on s [rest of string was truncated]&quot;;.
+        ///The ivory trade and iboga trafficking are interlinked. Elephants love iboga fruit and the poachers track and kill them near the last wild reservations of iboga.
+        ///Once they have murdered the elephants, the poachers also take all the iboga found on site.
+        ///With y [rest of string was truncated]&quot;;.
         /// </summary>
         public static string iboga_text2 {
             get {
@@ -872,6 +895,27 @@ namespace K9.Globalisation {
         public static string LastUpdatedOnLabel {
             get {
                 return ResourceManager.GetString("LastUpdatedOnLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Laurent Sazy is a french photojournalist since 1991. He is covering news, wars( Balkans, Sarajevo and caucasus, Algeria, Libya (2011), also politics, economics and socials news and magazines features for photos agencies, magazines and newspapers/&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///	Laurent was photo-correspondent for The Européan Newspaper in Paris.  He works with Sipa, Gamma, Maxppp, Deadline photo agency. In 2006, he joined Fedephoto which became in 2012, Divergence-images, a french  plateform for press photographers.
+        ///	Sinc [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string laurent_text {
+            get {
+                return ResourceManager.GetString("laurent_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Photographer and French photojournalist.
+        /// </summary>
+        public static string laurent_title {
+            get {
+                return ResourceManager.GetString("laurent_title", resourceCulture);
             }
         }
         
@@ -1471,6 +1515,27 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Simon Glantz is a practitoner of holistic nutrition, musician and software developer.&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///	Simon suffered with severe neurological dysfunction from an early age and continued to struggle well into his adult life. Simon used the principles of person-centered nutrition and supplementation,
+        ///	as well as many other holistic and traditional healing modalities, to fully recover his mental and physical health and now teaches holistic nutrition, which is taylored to the individual&apos;s genotype, circumstanc [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string simon_text {
+            get {
+                return ResourceManager.GetString("simon_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Software developer, holistic nutritionist and health coach.
+        /// </summary>
+        public static string simon_title {
+            get {
+                return ResourceManager.GetString("simon_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Subject.
         /// </summary>
         public static string SubjectLabel {
@@ -1724,6 +1789,26 @@ namespace K9.Globalisation {
         public static string WelcomeEmail {
             get {
                 return ResourceManager.GetString("WelcomeEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Yann Guignon is the founder of “Blessings Of The Forest” and the main driver of our strategic direction, managing all our activities in Gabon.&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///	He was initiated to the Gabonese traditions, first in 2006 by Master Atome Ribenga, and was trained to exercise the traditional function of ” Kambo ” (Temple Guardian) by Ribenga and also by Hugues Obiang Poitevin (Ebando NGOs) as well as with other initiatory masters of different branches of the Bwiti. Yann studied iboga intensively and worked with t [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string yann_text {
+            get {
+                return ResourceManager.GetString("yann_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Director and founder of Blessings Of The Forest.
+        /// </summary>
+        public static string yann_title {
+            get {
+                return ResourceManager.GetString("yann_title", resourceCulture);
             }
         }
         

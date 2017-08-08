@@ -634,6 +634,12 @@
   <data name="OurTeam" xml:space="preserve">
     <value>Our Team</value>
   </data>
+  <data name="david_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\david-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="david_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\david-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="iboga_text1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\iboga-text1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -646,7 +652,25 @@
   <data name="iboga_title2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\iboga-title2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="laurent_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\laurent-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="laurent_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\laurent-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="OurMissionTitle" xml:space="preserve">
     <value>Our Mission Statement &amp; Aims</value>
+  </data>
+  <data name="simon_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\simon-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="simon_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\simon-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="yann_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\yann-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="yann_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\yann-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

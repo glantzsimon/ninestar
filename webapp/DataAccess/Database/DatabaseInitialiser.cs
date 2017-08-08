@@ -13,8 +13,21 @@ namespace K9.DataAccess.Database
 
 		public DatabaseInitialiser()
 		{
-			var json = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config/appsettings.json"));
-			var dbConfig = ConfigHelper.GetConfiguration<DatabaseConfiguration>(json).Value;
+			DatabaseConfiguration dbConfig;
+			var appSettingsFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config/appsettings.json");
+			if (File.Exists(appSettingsFile))
+			{
+				var json = File.ReadAllText(appSettingsFile);
+				dbConfig = ConfigHelper.GetConfiguration<DatabaseConfiguration>(json).Value;
+			}
+			else
+			{
+				dbConfig = new DatabaseConfiguration
+				{
+					AutomaticMigrationsEnabled = true,
+					AutomaticMigrationDataLossAllowed = true
+				};
+			}
 
 			AutomaticMigrationsEnabled = dbConfig.AutomaticMigrationsEnabled;
 			AutomaticMigrationDataLossAllowed = dbConfig.AutomaticMigrationDataLossAllowed;
@@ -38,7 +51,7 @@ namespace K9.DataAccess.Database
 
 	public class UsersAndRolesInitialiser
 	{
-		
+
 		public static void Seed()
 		{
 			var db = new Db();

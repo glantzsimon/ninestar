@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\EnumDescriptionAttribute.cs" />
     <Compile Include="Attributes\GrammarAttribute.cs" />
     <Compile Include="Attributes\AutoGenerateNameAttribute.cs" />
     <Compile Include="Attributes\NameAttribute.cs" />
@@ -77,13 +78,16 @@
     <Compile Include="Database\Seeds\UsersAndRoles.cs" />
     <Compile Include="Database\DatabaseInitialiser.cs" />
     <Compile Include="Database\Db.cs" />
+    <Compile Include="Enums\ELanguage.cs" />
     <Compile Include="Exceptions\PermissionNotFoundException.cs" />
     <Compile Include="Exceptions\RoleNotFoundException.cs" />
     <Compile Include="Exceptions\UserNotFoundException.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\DbContextExtensions.cs" />
     <Compile Include="Config\ColumnsConfig.cs" />
     <Compile Include="Helpers\Users.cs" />
     <Compile Include="Helpers\Roles.cs" />
+    <Compile Include="Models\NewsItem.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\RolePermission.cs" />
     <Compile Include="Models\Permission.cs" />
@@ -113,9 +117,7 @@
       <Name>SharedLibrary</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Enums\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

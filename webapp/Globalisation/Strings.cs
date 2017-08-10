@@ -46,6 +46,10 @@ namespace K9.Globalisation
 			public const string SubjectLabel = "SubjectLabel";
 			public const string BodyLabel = "BodyLabel";
 			public const string IsUnsubscribedLabel = "IsUnsubscribedLabel";
+			public const string PublishedOnLabel = "PublishedOnLabel";
+			public const string PublishedByLabel = "PublishedByLabel";
+			public const string LanguageLabel = "LanguageLabel";
+			public const string ImageLabel = "ImageLabel";
 		}
 
 		public class Grammar
@@ -71,6 +75,15 @@ namespace K9.Globalisation
 			public const string UserRoles = "UserRoles";
 			public const string User = "User";
 			public const string Message = "Message";
+			public const string NewsItem = "NewsItem";
+			public const string English = "English";
+			public const string French = "French";
+		}
+
+		public class LanguageCodes
+		{
+			public const string Fr = "fr";
+			public const string En = "en";
 		}
 
 	}

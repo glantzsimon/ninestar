@@ -28,6 +28,7 @@ namespace K9.DataAccess.Database
 		public DbSet<Permission> Permissions { get; set; }
 		public DbSet<RolePermission> RolePermissions { get; set; }
 		public DbSet<Message> Messages { get; set; }
+		public DbSet<NewsItem> NewsItems { get; set; }
 		
 		#endregion
 

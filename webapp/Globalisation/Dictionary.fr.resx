@@ -676,4 +676,25 @@
   <data name="CompanyBlurbFooter" xml:space="preserve">
     <value>Notre organisation est dédiée à la conservation, l’étude et le partage des connaissances au sujet de l’herboristerie traditionnelle gabonaise et des traditions des peuples du Gabon pour le bénéfice de toute l’humanité.</value>
   </data>
+  <data name="NewsItem" xml:space="preserve">
+    <value>Nouvelle</value>
+  </data>
+  <data name="PublishedOnLabel" xml:space="preserve">
+    <value>Publié Le</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>Anglais</value>
+  </data>
+  <data name="French" xml:space="preserve">
+    <value>Français</value>
+  </data>
+  <data name="LanguageLabel" xml:space="preserve">
+    <value>Langue</value>
+  </data>
+  <data name="ImageLabel" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="PublishedByLabel" xml:space="preserve">
+    <value>Publié Par</value>
+  </data>
 </root>

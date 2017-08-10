@@ -1,0 +1,13 @@
+﻿@model NewsItem
+
+@using (Html.BeginForm())
+{
+	using (Html.BeginBootstrapForm())
+	{
+		@Html.HiddenFor(model => model.Id)
+		@Html.Partial("_EditFields")
+		<hr/>
+		@Html.BootstrapButton(Dictionary.Update)
+		@Html.BootstrapBackToListButton()
+	}
+}

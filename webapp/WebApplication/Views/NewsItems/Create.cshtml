@@ -1,0 +1,12 @@
+﻿@model NewsItem
+
+@using (Html.BeginForm())
+{
+	using (Html.BeginBootstrapForm())
+	{
+		@Html.Partial("_EditFields")
+		<hr/>
+		@Html.BootstrapButton(Dictionary.Create)
+		@Html.BootstrapBackToListButton()
+	}
+}

@@ -1,0 +1,15 @@
+﻿@model NewsItem
+
+@using (Html.BeginForm())
+{
+	using (Html.BeginBootstrapForm())
+	{
+	<h3>@Dictionary.DeleteConfirm</h3>
+		
+	@Html.HiddenFor(model => model.Id)
+	@Html.Partial("_DisplayFields")
+	<hr />
+	@Html.BootstrapButton(Dictionary.Delete, EButtonType.Delete)
+	@Html.BootstrapBackToListButton()
+	}
+}

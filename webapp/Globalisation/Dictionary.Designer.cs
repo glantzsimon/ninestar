@@ -622,6 +622,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to English.
+        /// </summary>
+        public static string English {
+            get {
+                return ResourceManager.GetString("English", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enrollment.
         /// </summary>
         public static string Enrollment {
@@ -690,6 +699,15 @@ namespace K9.Globalisation {
         public static string ForgottenPasswordQuestion {
             get {
                 return ResourceManager.GetString("ForgottenPasswordQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to French.
+        /// </summary>
+        public static string French {
+            get {
+                return ResourceManager.GetString("French", resourceCulture);
             }
         }
         
@@ -800,6 +818,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Image.
+        /// </summary>
+        public static string ImageLabel {
+            get {
+                return ResourceManager.GetString("ImageLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please enter a valid date..
         /// </summary>
         public static string InvalidDate {
@@ -881,6 +908,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        public static string LanguageLabel {
+            get {
+                return ResourceManager.GetString("LanguageLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Last Name.
         /// </summary>
         public static string LastNameLabel {
@@ -910,8 +946,9 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Laurent Sazy is a french photojournalist since 1991. He is covering news, wars( Balkans, Sarajevo and caucasus, Algeria, Libya (2011), also politics, economics and socials news and magazines features for photos agencies, magazines and newspapers/&lt;/h5&gt;
         ///&lt;p&gt;
-        ///	Laurent was photo-correspondent for The Européan Newspaper in Paris.  He works with Sipa, Gamma, Maxppp, Deadline photo agency. In 2006, he joined Fedephoto which became in 2012, Divergence-images, a french  plateform for press photographers.
-        ///	Sinc [rest of string was truncated]&quot;;.
+        ///	Laurent was photo-correspondent for The Européan Newspaper in Paris. He works with Sipa, Gamma, Maxppp, Deadline photo agency. In 2006, he joined Fedephoto which became in 2012, Divergence-images, a french plateform for press photographers.
+        ///&lt;/p&gt;
+        ///&lt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string laurent_text {
             get {
@@ -1110,6 +1147,15 @@ namespace K9.Globalisation {
         public static string News {
             get {
                 return ResourceManager.GetString("News", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to News Item.
+        /// </summary>
+        public static string NewsItem {
+            get {
+                return ResourceManager.GetString("NewsItem", resourceCulture);
             }
         }
         
@@ -1434,6 +1480,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Published By.
+        /// </summary>
+        public static string PublishedByLabel {
+            get {
+                return ResourceManager.GetString("PublishedByLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Published On.
+        /// </summary>
+        public static string PublishedOnLabel {
+            get {
+                return ResourceManager.GetString("PublishedOnLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register.
         /// </summary>
         public static string Register {
@@ -1524,9 +1588,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Simon Glantz est développeur, musicien et praticien de nutrition holistique.&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Simon Glantz is practitoner of holistic nutrition, musician and software developer.&lt;/h5&gt;
         ///&lt;p&gt;
-        ///	Dès le plus jeune âge, Simon avait souffert de dysfonction neurologique profonde et avait passé une bonne partie de sa vie d’adulte á lutter contre la dépression, l’anxiété et la fatigue chronique. Grâce aux principes de la nutrition centrée sur la personne et aux modalités de guérison holistiques et traditionnelles, y compris les plantes enthéogènes comme l’ayahuasca et l’iboga, Simon a pu récupérer sa santé physiq [rest of string was truncated]&quot;;.
+        ///	Simon suffered with severe neurological dysfunction from an early age and continued to struggle well into his adult life. Simon used the principles of person-centered nutrition and supplementation,
+        ///	as well as many other holistic and traditional healing modalities, to fully recover his mental and physical health and now teaches holistic nutrition, which is taylored to the individual&apos;s genotype, circumstances [rest of string was truncated]&quot;;.
         /// </summary>
         public static string simon_text {
             get {

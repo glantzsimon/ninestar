@@ -676,4 +676,25 @@
   <data name="CompanyBlurbFooter" xml:space="preserve">
     <value>Our organisation has been set up to preserve, research and share knowledge about the medicinal plants and indigenous traditions of the Gabonese forest people for the benefit of all of humanity.</value>
   </data>
+  <data name="NewsItem" xml:space="preserve">
+    <value>News Item</value>
+  </data>
+  <data name="PublishedOnLabel" xml:space="preserve">
+    <value>Published On</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="French" xml:space="preserve">
+    <value>French</value>
+  </data>
+  <data name="LanguageLabel" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="ImageLabel" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="PublishedByLabel" xml:space="preserve">
+    <value>Published By</value>
+  </data>
 </root>

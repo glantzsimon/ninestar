@@ -195,7 +195,7 @@ namespace K9.SharedLibrary.Extensions
 			var firstOrDefault = type.GetProperties().FirstOrDefault(p => p.Name == foreignKeyColumn);
 			if (firstOrDefault != null)
 			{
-				var attribute = firstOrDefault.GetCustomAttributes(typeof (ForeignKeyAttribute), true).FirstOrDefault() as ForeignKeyAttribute;
+				var attribute = firstOrDefault.GetCustomAttributes(typeof(ForeignKeyAttribute), true).FirstOrDefault() as ForeignKeyAttribute;
 				if (attribute == null)
 				{
 					throw new Exception(string.Format("No ForeignKey attribute is set on property {0}", foreignKeyColumn));
@@ -212,12 +212,35 @@ namespace K9.SharedLibrary.Extensions
 
 		public static bool ImplementsIUserData(this Type type)
 		{
-			return typeof (IUserData).IsAssignableFrom(type);
+			return typeof(IUserData).IsAssignableFrom(type);
 		}
 
 		public static string GetForeignKeyName(this Type type)
 		{
 			return string.Format("{0}Id", type.Name);
+		}
+
+		public static T GetAttribute<T>(this Type type)
+			where T : Attribute
+		{
+			return type.GetCustomAttributes(typeof(T), true).FirstOrDefault() as T;
+		}
+
+		public static T GetAttribute<T>(this PropertyInfo propertyInfo)
+			where T : Attribute
+		{
+			return propertyInfo.GetCustomAttributes(typeof(T), true).FirstOrDefault() as T;
+		}
+
+		public static T GetAttribute<T>(this Enum value)
+		where T : Attribute
+		{
+			var type = value.GetType();
+			var name = Enum.GetName(type, value);
+			return type.GetField(name)
+				.GetCustomAttributes(false)
+				.OfType<T>()
+				.SingleOrDefault();
 		}
 
 	}

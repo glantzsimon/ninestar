@@ -673,4 +673,7 @@
   <data name="yann_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\yann-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="CompanyBlurbFooter" xml:space="preserve">
+    <value>Notre organisation est dédiée à la conservation, l’étude et le partage des connaissances au sujet de l’herboristerie traditionnelle gabonaise et des traditions des peuples du Gabon pour le bénéfice de toute l’humanité.</value>
+  </data>
 </root>

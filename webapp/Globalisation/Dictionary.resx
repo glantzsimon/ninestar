@@ -673,4 +673,7 @@
   <data name="yann_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\yann-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="CompanyBlurbFooter" xml:space="preserve">
+    <value>Our organisation has been set up to preserve, research and share knowledge about the medicinal plants and indigenous traditions of the Gabonese forest people for the benefit of all of humanity.</value>
+  </data>
 </root>

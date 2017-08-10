@@ -321,6 +321,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Our organisation has been set up to preserve, research and share knowledge about the medicinal plants and indigenous traditions of the Gabonese forest people for the benefit of all of humanity..
+        /// </summary>
+        public static string CompanyBlurbFooter {
+            get {
+                return ResourceManager.GetString("CompanyBlurbFooter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Blessings Of The Forest C.I.C is a Community Interest Company, a Social Enterprise registered in England in October 2015 as a Company limited by shares (Company No:9816364)..
         /// </summary>
         public static string CompanyLegalDescription {
@@ -1515,10 +1524,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Simon Glantz is a practitoner of holistic nutrition, musician and software developer.&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Simon Glantz est développeur, musicien et praticien de nutrition holistique.&lt;/h5&gt;
         ///&lt;p&gt;
-        ///	Simon suffered with severe neurological dysfunction from an early age and continued to struggle well into his adult life. Simon used the principles of person-centered nutrition and supplementation,
-        ///	as well as many other holistic and traditional healing modalities, to fully recover his mental and physical health and now teaches holistic nutrition, which is taylored to the individual&apos;s genotype, circumstanc [rest of string was truncated]&quot;;.
+        ///	Dès le plus jeune âge, Simon avait souffert de dysfonction neurologique profonde et avait passé une bonne partie de sa vie d’adulte á lutter contre la dépression, l’anxiété et la fatigue chronique. Grâce aux principes de la nutrition centrée sur la personne et aux modalités de guérison holistiques et traditionnelles, y compris les plantes enthéogènes comme l’ayahuasca et l’iboga, Simon a pu récupérer sa santé physiq [rest of string was truncated]&quot;;.
         /// </summary>
         public static string simon_text {
             get {

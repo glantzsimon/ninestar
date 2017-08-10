@@ -19,7 +19,7 @@ namespace K9.DataAccess.Models
 		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 		public DateTime PublishedOn { get; set; }
 
-		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PublishedOnLabel)]
+		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PublishedByLabel)]
 		public string PublishedBy { get; set; }
 
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LanguageLabel)]

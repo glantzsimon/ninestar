@@ -36,7 +36,8 @@ function buttonBehaviours()
     };
 
     return {
-        init: init
+        init: init,
+        displayPageSpinnerOnLinkClick: displayPageSpinnerOnLinkClick
     }
 
 };

@@ -53,6 +53,10 @@
 	$(function() {
 		var table = @Model.TableId = $("table#@Model.TableId");
 		table.on("xhr.dt", function(e, settings, json, xhr) {
+			var initTableButtons = function() {
+				buttonBehaviours().displayPageSpinnerOnLinkClick();
+			}
+			window.setTimeout(initTableButtons, 200);
 		});
 		table.DataTable({
 			"ajax": table.attr("data-url"),

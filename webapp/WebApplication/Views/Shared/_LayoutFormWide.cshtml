@@ -4,17 +4,15 @@
 <div class="background-forest4">
 	@Html.Partial("_Navbar")
 	<div class="mainContent">
-		<div class="backdrop">
-			<div class="container-fluid">
-				<div class="page shadow alphaBackground roundCorners wide-form">
-					@if (!string.IsNullOrEmpty(ViewBag.SubTitle))
-					{
-						<div class="page-header">
-							<h2><strong>@ViewBag.SubTitle</strong></h2>
-						</div>
-					}
-					@RenderBody()
-				</div>
+		<div class="container-fluid">
+			<div class="page shadow alphaBackground roundCorners wide-form">
+				@if (!string.IsNullOrEmpty(ViewBag.SubTitle))
+				{
+					<div class="page-header">
+						<h2><strong>@ViewBag.SubTitle</strong></h2>
+					</div>
+				}
+				@RenderBody()
 			</div>
 		</div>
 	</div>

@@ -44,31 +44,31 @@
 						<li class="@ViewContext.GetActiveClass("Team", "AboutUs")"><a href="@Url.Action("Team", "AboutUs")"> @Dictionary.OurTeam</a></li>
 						<li class="@ViewContext.GetActiveClass("Index", "News")"><a href="@Url.Action("Index", "News")"> @Dictionary.News</a></li>
 						<li class="@ViewContext.GetActiveClass("Index", "Archive")"><a href="@Url.Action("Index", "Archive")"> @Dictionary.Archive</a></li>
-					
-						@if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || 
-							roles.CurrentUserHasPermissions<NewsItem>(Permissions.Create, Permissions.Edit, Permissions.Delete))
+
+						@if (roles.CurrentUserIsInRoles(RoleNames.Administrators) ||
+						     roles.CurrentUserHasPermissions<NewsItem>(Permissions.Create, Permissions.Edit, Permissions.Delete))
 						{
 							<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#">@Dictionary.Admin
-							<span class="caret"></span></a>
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#">@Dictionary.Admin
+									<span class="caret"></span></a>
 								<ul class="dropdown-menu nav navbar-nav">
 									@if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<NewsItem>(Permissions.Create, Permissions.Edit, Permissions.Delete))
 									{
 										<li class="@ViewContext.GetActiveClass("Index", "NewsItems") sub-item"><a href="@Url.Action("Index", "NewsItems")">@Dictionary.Edit @Dictionary.NewsItems</a></li>
 									}
-							</ul>
-						  </li>
+								</ul>
+							</li>
 						}
 					</ul>
 					<div class="clearfix"> </div>
 				</div>
 			</nav>
 		</div>
-		<div class="main-heading page-subtitle">
-			@if (!string.IsNullOrEmpty(ViewBag.MainHeading))
-			{
+		@if (!string.IsNullOrEmpty(ViewBag.MainHeading))
+		{
+			<div class="main-heading page-subtitle">
 				<h3 class="text-white">@ViewBag.MainHeading</h3>
-			}
-		</div>	
+			</div>	
+		}
 	</div>
 </div>

@@ -425,7 +425,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Images\news\upload\" />
     <Folder Include="Video\" />
-    <Folder Include="Views\Error\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

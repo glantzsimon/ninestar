@@ -25,6 +25,13 @@ namespace K9.WebApplication.Controllers
 			_config = config.Value;
 		}
 
+		[HttpGet]
+		public ActionResult ContactUs()
+		{
+			return View();
+		}
+
+		[HttpPost]
 		public ActionResult ContactUs(ContactUsViewModel model)
 		{
 			try

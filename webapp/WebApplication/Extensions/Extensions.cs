@@ -5,6 +5,7 @@ using System.Reflection;
 using K9.DataAccess.Attributes;
 using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
+using K9.SharedLibrary.Models;
 
 namespace K9.WebApplication.Extensions
 {

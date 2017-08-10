@@ -563,7 +563,7 @@ namespace K9.WebApplication.Controllers
 
 		private bool LimitByUser()
 		{
-			return GetType().LimitedByUser() && WebSecurity.IsAuthenticated && !Roles.CurrentUserIsInRole(RoleNames.Administrators);
+			return GetType().LimitedByUser() && WebSecurity.IsAuthenticated && !Roles.CurrentUserIsInRoles(RoleNames.Administrators);
 		}
 
 		private string GetLimitByUserWhereClause()

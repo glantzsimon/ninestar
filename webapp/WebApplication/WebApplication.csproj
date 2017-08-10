@@ -583,6 +583,7 @@
     <Content Include="Views\NewsItems\Details.cshtml" />
     <Content Include="Views\NewsItems\Edit.cshtml" />
     <Content Include="Views\NewsItems\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutForm.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutColumns.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />

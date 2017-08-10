@@ -39,6 +39,7 @@ namespace K9.DataAccess.Models
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ImageLabel)]
 		public string ImageUrl { get; set; }
 
+		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LanguageLabel)]
 		public string LanguageName
 		{
 			get { return Language.GetLocalisedLanguageName(); }

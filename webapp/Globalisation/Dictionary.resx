@@ -697,4 +697,10 @@
   <data name="PublishedByLabel" xml:space="preserve">
     <value>Published By</value>
   </data>
+  <data name="Admin" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="NewsItems" xml:space="preserve">
+    <value>News Items</value>
+  </data>
 </root>

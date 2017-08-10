@@ -64,15 +64,15 @@ namespace K9.DataAccess.Helpers
 			return role;
 		}
 
-		public bool CurrentUserHasPermission<T>(string permissionName) where T : IObjectBase
+		public bool CurrentUserIsInRoles(params string[] roleNames)
 		{
-			var fullyQualifiedPermissionName = string.Format("{0}{1}", permissionName, typeof(T).Name);
-			return WebSecurity.IsAuthenticated && UserHasPermission(WebSecurity.CurrentUserName, fullyQualifiedPermissionName);
+			return WebSecurity.IsAuthenticated && UserIsInRoles(WebSecurity.CurrentUserName, roleNames);
 		}
 
-		public bool CurrentUserIsInRole(string roleName)
+		public bool CurrentUserHasPermissions<T>(params string[] permissionNames) where T : IObjectBase
 		{
-			return WebSecurity.IsAuthenticated && UserIsInRole(WebSecurity.CurrentUserName, roleName);
+			var fullyQualifiedPermissionNames = permissionNames.Select(permissionName => string.Format("{0}{1}", permissionName, typeof(T).Name));
+			return WebSecurity.IsAuthenticated && UserHasPermissions(WebSecurity.CurrentUserName, fullyQualifiedPermissionNames.ToArray());
 		}
 
 		public List<IPermission> GetPermissionsForCurrentUser()
@@ -95,19 +95,14 @@ namespace K9.DataAccess.Helpers
 			return permission;
 		}
 
-		public bool UserHasPermission(string username, string permissionName)
+		public bool UserHasPermissions(string username, params string[] permissionNames)
 		{
-			return GetPermissionsForUser(username).Exists(p => p.Name == permissionName);
+			return GetPermissionsForUser(username).Exists(p => permissionNames.Contains(p.Name));
 		}
 
-		public bool UserIsInRole(string username, string roleName)
+		public bool UserIsInRoles(string username, params string[] roleNames)
 		{
-			var user = _users.GetUser(username);
-			var roles =
-				_roleRepository.GetQuery(
-					string.Format("SELECT * FROM [Role] WHERE [Name] = '{0}' AND [Id] IN (SELECT [RoleId] FROM [UserRole] WHERE [Userid] = {1})", roleName, user.Id))
-					.ToList();
-			return roles.Any();
+			return GetRolesForUser(username).Any(r => roleNames.Contains(r.Name));
 		}
 
 		public bool PermissionIsInRole(string permissionName, string roleName)
@@ -146,7 +141,7 @@ namespace K9.DataAccess.Helpers
 
 		public void AddUserToRole(string username, string roleName)
 		{
-			if (!UserIsInRole(username, roleName))
+			if (!UserIsInRoles(username, roleName))
 			{
 				var user = _users.GetUser(username);
 				var role = GetRole(roleName);

@@ -2,15 +2,13 @@
 @{
 	Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
 }
-@Html.BootstrapTable(new DataTableOptions<Message>
+@Html.BootstrapTable(new DataTableOptions<NewsItem>
 {
 	VisibleColumns = new List<string>
 	{
 		"PublishedOn",
 		"PublishedBy",
-		"Language",
-		"SentByUserName",
-		"SentToUserName",
-		"SentOn"
+		"LanguageName",
+		"Subject"
 	}
 })

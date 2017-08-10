@@ -187,6 +187,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Admin.
+        /// </summary>
+        public static string Admin {
+            get {
+                return ResourceManager.GetString("Admin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Administrator.
         /// </summary>
         public static string Administrator {
@@ -1156,6 +1165,15 @@ namespace K9.Globalisation {
         public static string NewsItem {
             get {
                 return ResourceManager.GetString("NewsItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to News Items.
+        /// </summary>
+        public static string NewsItems {
+            get {
+                return ResourceManager.GetString("NewsItems", resourceCulture);
             }
         }
         

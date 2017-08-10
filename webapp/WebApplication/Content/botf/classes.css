@@ -50,6 +50,10 @@
 	max-width: 520px;
 }
 
+.default-form {
+	max-width: 1080px;
+}
+
 .wide-form {
 	max-width: 90% !important;
 }

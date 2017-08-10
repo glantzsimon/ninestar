@@ -33,6 +33,21 @@
 	.captn-top p {
 		font-size: 0.9em;
 	}
+	.top-nav ul li ul li {
+		z-index: 4000;
+		height: 54px;
+	}
+	#bs-navbar-collapse-1 {
+		overflow-y: visible;
+	}
+	.top-nav ul li ul.dropdown-menu li.sub-item {
+		display: table;
+	}
+	.top-nav ul li ul.dropdown-menu li.sub-item a {
+		padding: 0;
+		display: table-cell;
+		vertical-align: middle;
+	}
 }
 
 @media (min-width:991px) {

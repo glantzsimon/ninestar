@@ -73,7 +73,14 @@ namespace K9.WebApplication.Controllers
 
 		#region Events
 
+		/// <summary>
+		/// Event fires before the record is passed to the Create view
+		/// </summary>
 		public event EventHandler<CrudEventArgs> RecordBeforeCreate;
+		/// <summary>
+		/// Event fires when the record is posted and before the record is saved to the repository
+		/// </summary>
+		public event EventHandler<CrudEventArgs> RecordBeforeCreated;
 		public event EventHandler<CrudEventArgs> RecordCreated;
 		public event EventHandler<CrudEventArgs> RecordDeleted;
 		public event EventHandler<CrudEventArgs> RecordUpdated;
@@ -262,6 +269,14 @@ namespace K9.WebApplication.Controllers
 			{
 				try
 				{
+					if (RecordBeforeCreated != null)
+					{
+						RecordBeforeCreated(this, new CrudEventArgs
+						{
+							Item = item
+						});
+					}
+
 					_repository.Create(item);
 
 					if (RecordCreated != null)

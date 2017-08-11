@@ -85,5 +85,10 @@ namespace K9.WebApplication.Extensions
 			return namettribute == null ? string.Format("{0}s", type.Name) : namettribute.GetListName();
 		}
 
+		public static string ToPathOnDisk(this string value)
+		{
+			return value.Replace("/", "\\");
+		}
+
 	}
 }

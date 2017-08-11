@@ -573,3 +573,6 @@ img.img-responsive {
 .main-banner {
 	padding-bottom: 3em;
 }
+.btn-file {
+	margin-top: 0 !important;
+}

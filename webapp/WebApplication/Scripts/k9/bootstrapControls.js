@@ -37,12 +37,34 @@ function bootstrapControls(config)
         $('[data-toggle="tooltip"]').tooltip();
     }
 
+    function initFileInputs()
+    {
+        $(':file').on('fileselect', function (event, numFiles, fileName)
+        {
+            var fileDescription = numFiles > 1 ? numFiles + ' files selected' : fileName;
+            var textInput = $(this).parents('.input-group').find(':text.file-label');
+            
+            if (textInput.length)
+            {
+                textInput.val(fileDescription);
+            }
+        });
+
+        $(document).on('change', ':file', function () {
+            var input = $(this);
+            var numFiles = input.get(0).files ? input.get(0).files.length : 1;
+            var fileName = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+            input.trigger('fileselect', [numFiles, fileName]);
+        });
+    }
+
     var init = function ()
     {
         initBootstrapDateTimePickers();
         initBootstrapSelect();
         initDateTimeValidation();
         initToolTips();
+        initFileInputs();
     };
 
     return {

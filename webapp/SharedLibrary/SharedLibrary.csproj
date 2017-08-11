@@ -103,6 +103,7 @@
     <Compile Include="Attributes\LinkedColumnAttribute.cs" />
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="Extensions\ConfigurationFileExtensions.cs" />
+    <Compile Include="Extensions\IOExtensions.cs" />
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Extensions\MvcExtensions.cs" />
     <Compile Include="Extensions\ReflectionExtensions.cs" />

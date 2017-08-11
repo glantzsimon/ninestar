@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Extensions;
 
 namespace K9.WebApplication.Helpers
 {
@@ -18,7 +19,8 @@ namespace K9.WebApplication.Helpers
 		/// <returns></returns>
 		public static List<IAssetInfo> GetFiles(string relativePath)
 		{
-			return Directory.GetFiles(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath.ToPathOnDisk()))
+			var pathToFiles = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath.ToPathOnDisk());	
+			return Directory.GetFiles(pathToFiles)
 				.Select(f => new AssetInfo(f, relativePath)).ToList<IAssetInfo>();
 		}
 
@@ -46,12 +48,7 @@ namespace K9.WebApplication.Helpers
 		{
 			return GetFiles(relativePath).Where(f => f.IsImage()).ToList();
 		}
-
-		private static string ToPathOnDisk(this string value)
-		{
-			return value.Replace("/", "\\");
-		}
-
+		
 	}
 
 

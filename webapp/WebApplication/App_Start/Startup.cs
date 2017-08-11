@@ -13,6 +13,7 @@ using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.DataSets;
 using K9.WebApplication.Helpers;
+using K9.WebApplication.Services;
 using NLog;
 
 namespace K9.WebApplication
@@ -40,6 +41,8 @@ namespace K9.WebApplication
 			builder.RegisterType<Users>().As<IUsers>().InstancePerHttpRequest();
 			builder.RegisterType<Roles>().As<IRoles>().InstancePerHttpRequest();
 			builder.RegisterType<Mailer>().As<IMailer>().InstancePerHttpRequest();
+			builder.RegisterType<PostedFileHelper>().As<IPostedFileHelper>().InstancePerHttpRequest();
+			builder.RegisterType<NewsItemsService>().As<INewsItemsService>().InstancePerHttpRequest();
 
 			RegisterConfiguration(builder);
 

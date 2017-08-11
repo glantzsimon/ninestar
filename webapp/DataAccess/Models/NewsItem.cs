@@ -1,6 +1,8 @@
 ﻿
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Web;
 using K9.DataAccess.Attributes;
 using K9.DataAccess.Enums;
 using K9.DataAccess.Extensions;
@@ -34,10 +36,16 @@ namespace K9.DataAccess.Models
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BodyLabel)]
 		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 		[StringLength(Int32.MaxValue)]
+		[DataType(DataType.MultilineText)]
 		public string Body { get; set; }
 
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ImageLabel)]
 		public string ImageUrl { get; set; }
+
+		[NotMapped]
+		[UIHint("File")]
+		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ImageLabel)]
+		public HttpPostedFileBase ImageFile { get; set; }
 
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LanguageLabel)]
 		public string LanguageName

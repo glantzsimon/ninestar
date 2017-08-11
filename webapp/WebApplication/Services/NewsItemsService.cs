@@ -28,7 +28,8 @@ namespace K9.WebApplication.Services
 
 			_postedFileHelper.SavePostedFileToPath(imageFile, originalSaveToPath);
 
-			ImageProcessor.ResizeAndSaveImage(originalSaveToPath, _defaultImageSize.X, _defaultImageSize.Y, saveToPath);
+			var resizedImage = ImageProcessor.CutOutOfMiddle(originalSaveToPath, _defaultImageSize.X, _defaultImageSize.Y);
+			resizedImage.Save(saveToPath);
 			return string.Format("{0}/{1}", NewsItemsImagesPath, fileName);
 		}
 	}

@@ -712,4 +712,7 @@
   <data name="UploadImage" xml:space="preserve">
     <value>Télécharger Photo</value>
   </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Parcourir</value>
+  </data>
 </root>

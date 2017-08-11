@@ -22,7 +22,7 @@ namespace K9.SharedLibrary.Helpers
 
 		#region Enumerators
 
-		public enum Format 
+		public enum Format
 		{
 			Jpeg = 1,
 			Png = 2,
@@ -106,9 +106,37 @@ namespace K9.SharedLibrary.Helpers
 			return saveToImagePath;
 		}
 
+		public static Image CutOutOfMiddle(string imagePath, int width, int height)
+		{
+			var image = new Bitmap(imagePath);
+			if (width > image.Width)
+			{
+				throw new Exception(string.Format("Image width must be at least {0}px", width));
+			}
+			if (height > image.Height)
+			{
+				throw new Exception(string.Format("Image height must be at least {0}px", height));
+			}
+
+			var newX = (image.Width - width) / 2;
+			var newY = (image.Height - height) / 2;
+
+			return CutOut(image, newX, newY, width, height);
+		}
+
+		public static Image CutOut(string imagePath, Rectangle rectangle)
+		{
+			return CutOut(new Bitmap(imagePath), rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height);
+		}
+
 		public static Image CutOut(Image image, Rectangle rectangle)
 		{
 			return CutOut(image, rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height);
+		}
+
+		public static Image CutOut(string imagePath, int x, int y, int width, int height)
+		{
+			return CutOut(new Bitmap(imagePath), x, y, width, height);
 		}
 
 		public static Image CutOut(Image image, int x, int y, int width, int height)
@@ -118,7 +146,7 @@ namespace K9.SharedLibrary.Helpers
 
 			if (x < 0 || y < 0)
 			{
-				
+
 				throw new Exception(InvalidCoordinatesSpecified);
 			}
 

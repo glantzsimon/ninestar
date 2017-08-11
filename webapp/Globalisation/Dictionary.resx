@@ -712,4 +712,7 @@
   <data name="UploadImage" xml:space="preserve">
     <value>Upload Image</value>
   </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Browse</value>
+  </data>
 </root>

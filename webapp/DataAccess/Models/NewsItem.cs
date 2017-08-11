@@ -39,12 +39,13 @@ namespace K9.DataAccess.Models
 		[DataType(DataType.MultilineText)]
 		public string Body { get; set; }
 
+		[DataType(DataType.ImageUrl)]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ImageLabel)]
 		public string ImageUrl { get; set; }
 
 		[NotMapped]
 		[UIHint("File")]
-		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ImageLabel)]
+		[Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UploadImage)]
 		public HttpPostedFileBase ImageFile { get; set; }
 
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LanguageLabel)]

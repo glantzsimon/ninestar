@@ -13,7 +13,7 @@ namespace K9.WebApplication.Services
 	{
 		private readonly IPostedFileHelper _postedFileHelper;
 		private const string NewsItemsImagesPath = "Images/news/upload";
-		private static Point _defaultImageSize = new Point(80, 80);
+		private static Point _defaultImageSize = new Point(440, 300);
 
 		public NewsItemsService(IPostedFileHelper postedFileHelper)
 		{

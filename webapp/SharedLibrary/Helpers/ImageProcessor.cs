@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 
 namespace K9.SharedLibrary.Helpers
@@ -80,10 +81,10 @@ namespace K9.SharedLibrary.Helpers
 			return path;
 		}
 
-		private static string SaveImageToWebFormat(Bitmap image, string imagePath, string destinationPath)
+		private static string SaveImageToWebFormat(Bitmap image, string imagePath, string saveToImagePath)
 		{
 			FileInfo fileInfo = new FileInfo(imagePath);
-			string savedImageFileName;
+			FileInfo saveToImagePathFileInfo = new FileInfo(saveToImagePath);
 
 			switch (image.RawFormat.ToString().ToLower())
 			{
@@ -93,17 +94,16 @@ namespace K9.SharedLibrary.Helpers
 				case "memorybmp":
 				case "tiff":
 				case "wmf":
-					savedImageFileName = Path.Combine(destinationPath, string.Format("{0}.png", Path.GetFileNameWithoutExtension(imagePath)));
-					image.Save(savedImageFileName, ImageFormat.Png);
+					saveToImagePath = Path.Combine(saveToImagePathFileInfo.Directory.FullName, string.Format("{0}.png", saveToImagePathFileInfo.GetFileNameWithoutExtension()));
+					image.Save(saveToImagePath, ImageFormat.Png);
 					break;
 
 				default:
-					savedImageFileName = Path.Combine(destinationPath, fileInfo.Name);
-					image.Save(savedImageFileName);
+					image.Save(saveToImagePath);
 					break;
 			}
 
-			return savedImageFileName;
+			return saveToImagePath;
 		}
 
 		public static Image CutOut(Image image, Rectangle rectangle)

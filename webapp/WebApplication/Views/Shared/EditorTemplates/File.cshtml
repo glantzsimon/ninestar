@@ -4,8 +4,8 @@
 <div class="input-group">
     <label class="input-group-btn">
         <span class="btn btn-primary btn-file">
-            Browse&hellip; <input type="file" style="display: none;" multiple>
+            Browse&hellip; @Html.TextBoxFor(model => model, new { type = "file", style = "display: none;"})
         </span>
     </label>
-    <input type="text" class="form-control file-label" readonly>
+	<input type="text" class="form-control file-label" readonly/>
 </div>

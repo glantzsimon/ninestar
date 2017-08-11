@@ -78,6 +78,9 @@ namespace K9.Globalisation
 			public const string NewsItem = "NewsItem";
 			public const string English = "English";
 			public const string French = "French";
+			public const string Download = "Download";
+			public const string Upload = "Upload";
+			public const string UploadImage = "UploadImage";
 		}
 
 		public class LanguageCodes

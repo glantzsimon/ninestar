@@ -586,6 +586,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Download.
+        /// </summary>
+        public static string Download {
+            get {
+                return ResourceManager.GetString("Download", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} {1} with {2} {3} &apos;{4}&apos; already exists..
         /// </summary>
         public static string DuplicateIndexError {
@@ -1758,6 +1767,24 @@ namespace K9.Globalisation {
         public static string UpdateYourDetails {
             get {
                 return ResourceManager.GetString("UpdateYourDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload.
+        /// </summary>
+        public static string Upload {
+            get {
+                return ResourceManager.GetString("Upload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload Image.
+        /// </summary>
+        public static string UploadImage {
+            get {
+                return ResourceManager.GetString("UploadImage", resourceCulture);
             }
         }
         

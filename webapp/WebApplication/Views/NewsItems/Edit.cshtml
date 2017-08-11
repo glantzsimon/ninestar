@@ -2,7 +2,7 @@
 @{
 	Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
-@using (Html.BeginForm())
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
 	using (Html.BeginBootstrapForm())
 	{

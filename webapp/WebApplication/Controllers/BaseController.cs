@@ -82,7 +82,25 @@ namespace K9.WebApplication.Controllers
 		/// </summary>
 		public event EventHandler<CrudEventArgs> RecordBeforeCreated;
 		public event EventHandler<CrudEventArgs> RecordCreated;
+
+		/// <summary>
+		/// Event fires before the record is passed to the Delete view
+		/// </summary>
+		public event EventHandler<CrudEventArgs> RecordBeforeDelete;
+		/// <summary>
+		/// Event fires when the record is posted and before the record is removed from the repository
+		/// </summary>
+		public event EventHandler<CrudEventArgs> RecordBeforeDeleted;
 		public event EventHandler<CrudEventArgs> RecordDeleted;
+
+		/// <summary>
+		/// Event fires before the record is passed to the Edit view
+		/// </summary>
+		public event EventHandler<CrudEventArgs> RecordBeforeUpdate;
+		/// <summary>
+		/// Event fires when the record is posted and before the record is saved to the repository
+		/// </summary>
+		public event EventHandler<CrudEventArgs> RecordBeforeUpdated;
 		public event EventHandler<CrudEventArgs> RecordUpdated;
 
 		#endregion
@@ -245,6 +263,8 @@ namespace K9.WebApplication.Controllers
 				itemToCreate.SetProperty(statelessFilter.Key, statelessFilter.Id);
 			}
 
+			AddControllerBreadcrumb();
+
 			if (RecordBeforeCreate != null)
 			{
 				RecordBeforeCreate(this, new CrudEventArgs
@@ -252,8 +272,6 @@ namespace K9.WebApplication.Controllers
 					Item = itemToCreate
 				});
 			}
-
-			AddControllerBreadcrumb();
 
 			return View(itemToCreate);
 		}
@@ -330,6 +348,14 @@ namespace K9.WebApplication.Controllers
 
 			AddControllerBreadcrumb();
 
+			if (RecordBeforeUpdate != null)
+			{
+				RecordBeforeUpdate(this, new CrudEventArgs
+				{
+					Item = item
+				});
+			}
+
 			return View(item);
 		}
 
@@ -353,6 +379,14 @@ namespace K9.WebApplication.Controllers
 					if (!CheckLimitByUser(original))
 					{
 						return HttpForbidden();
+					}
+
+					if (RecordBeforeUpdated != null)
+					{
+						RecordBeforeUpdated(this, new CrudEventArgs
+						{
+							Item = item
+						});
 					}
 
 					_repository.Update(item);
@@ -408,6 +442,14 @@ namespace K9.WebApplication.Controllers
 
 			AddControllerBreadcrumb();
 
+			if (RecordBeforeDelete != null)
+			{
+				RecordBeforeDelete(this, new CrudEventArgs
+				{
+					Item = item
+				});
+			}
+
 			return View(item);
 		}
 
@@ -439,6 +481,14 @@ namespace K9.WebApplication.Controllers
 
 				try
 				{
+					if (RecordBeforeDeleted != null)
+					{
+						RecordBeforeDeleted(this, new CrudEventArgs
+						{
+							Item = item
+						});
+					}
+
 					_repository.Delete(id);
 
 					if (RecordDeleted != null)

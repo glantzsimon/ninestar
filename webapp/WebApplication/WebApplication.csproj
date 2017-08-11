@@ -588,6 +588,8 @@
     <Content Include="Views\NewsItems\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutForm.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\File.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ImageUrl.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ImageUrl.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutColumns.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />

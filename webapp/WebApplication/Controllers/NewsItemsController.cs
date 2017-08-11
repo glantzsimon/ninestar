@@ -22,6 +22,16 @@ namespace K9.WebApplication.Controllers
 			_newsItemsService = NewsItemsService;
 			RecordBeforeCreate += NewsItemsController_RecordBeforeCreate;
 			RecordBeforeCreated += NewsItemsController_RecordBeforeCreated;
+			RecordBeforeUpdated += NewsItemsController_RecordBeforeUpdated;
+		}
+
+		void NewsItemsController_RecordBeforeUpdated(object sender, EventArgs.CrudEventArgs e)
+		{
+			var newsItem = e.Item as NewsItem;
+			if (newsItem.ImageFile != null)
+			{
+				SaveImageFile(newsItem);
+			}
 		}
 
 		void NewsItemsController_RecordBeforeCreated(object sender, EventArgs.CrudEventArgs e)
@@ -29,9 +39,14 @@ namespace K9.WebApplication.Controllers
 			var newsItem = e.Item as NewsItem;
 			if (newsItem.ImageFile != null)
 			{
-				var imageUrl = _newsItemsService.SaveNewsItemImageToDisk(newsItem.ImageFile);
-				newsItem.ImageUrl = imageUrl;
+				SaveImageFile(newsItem);
 			}
+		}
+
+		private void SaveImageFile(NewsItem newsItem)
+		{
+			var imageUrl = _newsItemsService.SaveNewsItemImageToDisk(newsItem.ImageFile);
+			newsItem.ImageUrl = imageUrl;
 		}
 
 		void NewsItemsController_RecordBeforeCreate(object sender, EventArgs.CrudEventArgs e)
@@ -41,6 +56,6 @@ namespace K9.WebApplication.Controllers
 			newsItem.PublishedOn = DateTime.Now;
 		}
 
-
+		
 	}
 }

@@ -703,4 +703,13 @@
   <data name="NewsItems" xml:space="preserve">
     <value>Nouvelles</value>
   </data>
+  <data name="Download" xml:space="preserve">
+    <value>Télécharger</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Télécharger</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>Télécharger Photo</value>
+  </data>
 </root>

@@ -22,12 +22,14 @@ namespace K9.WebApplication.Services
 
 		public string SaveNewsItemImageToDisk(HttpPostedFileBase imageFile)
 		{
-			var saveToPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, NewsItemsImagesPath, imageFile.FileName).ToPathOnDisk();
-			var originalSaveToPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, NewsItemsImagesPath, string.Format("original-{0}", imageFile.FileName)).ToPathOnDisk();
+			var fileName = imageFile.FileName;
+			var saveToPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, NewsItemsImagesPath, fileName).ToPathOnDisk();
+			var originalSaveToPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, NewsItemsImagesPath, string.Format("original-{0}", fileName)).ToPathOnDisk();
 
 			_postedFileHelper.SavePostedFileToPath(imageFile, originalSaveToPath);
 
-			return ImageProcessor.ResizeAndSaveImage(originalSaveToPath, _defaultImageSize.X, _defaultImageSize.Y, saveToPath);
+			ImageProcessor.ResizeAndSaveImage(originalSaveToPath, _defaultImageSize.X, _defaultImageSize.Y, saveToPath);
+			return string.Format("{0}/{1}", NewsItemsImagesPath, fileName);
 		}
 	}
 }

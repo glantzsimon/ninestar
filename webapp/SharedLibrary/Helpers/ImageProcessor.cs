@@ -109,19 +109,31 @@ namespace K9.SharedLibrary.Helpers
 		public static Image CutOutOfMiddle(string imagePath, int width, int height)
 		{
 			var image = new Bitmap(imagePath);
-			if (width > image.Width)
+			Image resizedImage;
+
+			var desiredSizeIsBigger = width > image.Width || height > image.Height;
+			if (desiredSizeIsBigger)
 			{
-				throw new Exception(string.Format("Image width must be at least {0}px", width));
+				var heightDifference = height/image.Height;
+				var widthDifference = width/image.Width;
+				var factor = widthDifference > heightDifference ? widthDifference : heightDifference;
+				var targetWidth = image.Width*factor;
+				var targetHeight = image.Height*factor;
+
+				resizedImage = ResizeImage(image, new Size(new Point(targetWidth, targetHeight)));
 			}
-			if (height > image.Height)
+			else
 			{
-				throw new Exception(string.Format("Image height must be at least {0}px", height));
+				resizedImage = new Bitmap(image);	
 			}
 
-			var newX = (image.Width - width) / 2;
-			var newY = (image.Height - height) / 2;
+			var newX = width < image.Width ? (image.Width - width) / 2 : 0;
+			var newY = height < image.Height ? (image.Height - height) / 2 : 0;
+			var result = CutOut(resizedImage, newX, newY, width, height);
 
-			return CutOut(image, newX, newY, width, height);
+			image.Dispose();
+			resizedImage.Dispose();
+			return result;
 		}
 
 		public static Image CutOut(string imagePath, Rectangle rectangle)
@@ -220,7 +232,7 @@ namespace K9.SharedLibrary.Helpers
 				}
 			}
 
-			if (scale == 0)
+			if (Math.Abs(scale) < 0.001)
 			{
 				scale = 1F;
 			}

@@ -1,5 +1,7 @@
 ﻿
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Web;
 using K9.SharedLibrary.Enums;
 using K9.SharedLibrary.Extensions;
@@ -39,10 +41,22 @@ namespace K9.SharedLibrary.Models
 		{
 			return GetAcceptedFileExtensions().ToDelimitedString();
 		}
-		
+
 		public void LoadFiles()
 		{
-			UploadedFiles = ContentHelper.GetFiles(PathToFiles);
+			var pathOnDisk = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, PathToFiles.ToPathOnDisk());
+			if (Directory.Exists(pathOnDisk))
+			{
+				try
+				{
+					Directory.CreateDirectory(pathOnDisk);
+					UploadedFiles = ContentHelper.GetFiles(PathToFiles);
+				}
+				catch (Exception ex)
+				{
+					throw new Exception("An error occurred whilst trying to load the files.", ex);
+				}
+			}
 		}
 	}
 }

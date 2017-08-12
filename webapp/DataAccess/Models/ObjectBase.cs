@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.IO;
 using System.Linq;
 using System.Web.Routing;
 using K9.DataAccess.Attributes;
@@ -25,8 +26,24 @@ namespace K9.DataAccess.Models
 
 		#region Properties
 
+		private int _id;
+
 		[Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-		public int Id { get; set; }
+		public int Id
+		{
+			get
+			{
+				return _id;
+			}
+			set
+			{
+				if (_id != value)
+				{
+					_id = value;
+					InitFileSources();
+				}
+			}
+		}
 
 		[Index(IsUnique = true)]
 		[StringLength(128)]
@@ -35,7 +52,7 @@ namespace K9.DataAccess.Models
 
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SystemStandard)]
 		public bool IsSystemStandard { get; set; }
-		
+
 		[NotMapped]
 		public bool IsSelected { get; set; }
 
@@ -98,7 +115,7 @@ namespace K9.DataAccess.Models
 
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LastUpdatedOnLabel)]
 		public DateTime? LastUpdatedOn { get; set; }
-		
+
 		#endregion
 
 
@@ -201,14 +218,13 @@ namespace K9.DataAccess.Models
 					throw new FileSourceFilePathNotSpecifiedException();
 				}
 				newFileSource.Filter = info.Filter;
-				newFileSource.PathToFiles = info.PathToFiles;
-				newFileSource.LoadFiles();
+				newFileSource.PathToFiles = string.Join("/", info.PathToFiles, GetType().Name, Id.ToString());
 
 				this.SetProperty(propertyInfo, newFileSource);
 			}
 		}
 
 		#endregion
-		
+
 	}
 }

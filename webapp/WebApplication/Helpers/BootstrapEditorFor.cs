@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using K9.SharedLibrary.Extensions;
+using K9.SharedLibrary.Models;
 using K9.WebApplication.Constants;
 using K9.WebApplication.Constants.Html;
 using K9.WebApplication.Enums;
@@ -48,7 +49,7 @@ namespace K9.WebApplication.Helpers
 			div.MergeAttributes(attributes);
 			sb.AppendLine(div.ToString(TagRenderMode.StartTag));
 
-			var hideLabelForTypes = new List<Type> { typeof(bool), typeof(HttpPostedFileBase) };
+			var hideLabelForTypes = new List<Type> { typeof(bool), typeof(FileSource) };
 			if (!hideLabelForTypes.Contains(modelType))
 			{
 				sb.AppendLine(html.LabelFor(expression, options.Label).ToString());

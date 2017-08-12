@@ -18,7 +18,7 @@ namespace K9.SharedLibrary.Helpers
 		/// <returns></returns>
 		public static List<IAssetInfo> GetFiles(string relativePath)
 		{
-			var pathToFiles = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath.ToPathOnDisk());	
+			var pathToFiles = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath.ToPathOnDisk());
 			return Directory.GetFiles(pathToFiles)
 				.Select(f => new AssetInfo(f, relativePath)).ToList<IAssetInfo>();
 		}
@@ -47,7 +47,7 @@ namespace K9.SharedLibrary.Helpers
 		{
 			return GetFiles(relativePath).Where(f => f.IsImage()).ToList();
 		}
-		
+
 	}
 
 

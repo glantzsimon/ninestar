@@ -16,5 +16,18 @@ namespace K9.SharedLibrary.Extensions
 		{
 			return value.Replace("/", "\\");
 		}
+
+		public static string GetFileSize(this FileInfo fileInfo)
+		{
+			string[] sizes = { "B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB" };
+			var order = 0;
+			var length = fileInfo.Length;
+			while (length >= 1024 && order < sizes.Length - 1)
+			{
+				order++;
+				length = length / 1024;
+			}
+			return String.Format("{0:0.##} {1}", length, sizes[order]);
+		}
 	}
 }

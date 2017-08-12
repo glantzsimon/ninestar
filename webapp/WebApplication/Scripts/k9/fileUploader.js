@@ -27,7 +27,7 @@ function fileUploader(config)
             imageInfo.attr("class", "image-info");
             imageInfo.html("<p>" + f.name + "</p>" +
 											   "<samp>(" + $.fn.formatBytes(f.size) + ")</samp>" +
-											   '<button type="button" class="file-preview-delete btn btn-xs btn-default" title="' + config.deleteText + '" data-url="" data-index="' + index + '"><i class="glyphicon glyphicon-trash text-danger"></i></button>');
+											   '<button type="button" class="file-preview-delete btn btn-xs btn-default" title="' + config.deleteText + '" data-index="' + index + '"><i class="glyphicon glyphicon-trash text-danger"></i></button>');
 
             fileContainer.append(img);
             fileThumbnailContainerDiv.append(fileContainer, imageInfo);
@@ -37,7 +37,7 @@ function fileUploader(config)
         image.src = fileSrc;
     }
 
-    function displayFiles(input)
+    function loadFiles(input)
     {
         if (input.files)
         {
@@ -89,7 +89,7 @@ function fileUploader(config)
     {
         $("input.file-upload").change(function ()
         {
-            displayFiles(this);
+            loadFiles(this);
         });
         initFileInputs();
     }

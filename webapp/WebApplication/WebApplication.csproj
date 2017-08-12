@@ -261,7 +261,7 @@
     <Compile Include="ViewModels\MultiSelectViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\k9\imageUpload.css" />
+    <Content Include="Content\k9\fileUpload.css" />
     <Content Include="Content\ninestar\botf.css" />
     <Content Include="Content\ninestar\classes.css" />
     <Content Include="Content\ninestar\desktop.css" />
@@ -406,6 +406,7 @@
     <Content Include="Scripts\imageSwitcher\responsiveslides.js" />
     <Content Include="Scripts\k9\buttonBehaviours.js" />
     <Content Include="Scripts\k9\bootstrapControls.js" />
+    <Content Include="Scripts\k9\fileUploader.js" />
     <Content Include="Scripts\k9\fadePageIn.js" />
     <Content Include="Scripts\library\easing.js" />
     <Content Include="Scripts\library\jarallax.js" />

@@ -11,6 +11,6 @@ function fadePageIn()
 
     return {
         init: init
-    }
+    };
 
 };

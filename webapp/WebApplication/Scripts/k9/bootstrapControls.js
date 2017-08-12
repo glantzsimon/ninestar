@@ -70,6 +70,6 @@ function bootstrapControls(config)
     return {
         init: init,
         selectFirstFormInput: selectFirstFormInput
-    }
+    };
 
 }

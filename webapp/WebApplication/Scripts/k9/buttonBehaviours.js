@@ -38,6 +38,6 @@ function buttonBehaviours()
     return {
         init: init,
         displayPageSpinnerOnLinkClick: displayPageSpinnerOnLinkClick
-    }
+    };
 
 };

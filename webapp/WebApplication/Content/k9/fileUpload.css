@@ -1,15 +1,15 @@
-﻿.upload-image-preview {
+﻿.upload-file-preview {
 	display: none;
 	width: 100%;
 	padding: 0 !important;
 	margin-bottom: 1em;
 }
-.upload-image-preview div.image-preview-container {
+.upload-file-preview div.file-preview-container {
 	margin: 0;
 	margin-bottom: 1em;
 	padding-left: 2px;
 }
-.upload-image-preview div.image-thumbnail-container {
+.upload-file-preview div.file-thumbnail-container {
 	transition: 0.5s all;
 	-webkit-transition: 0.5s all;
 	-o-transition: 0.5s all;
@@ -24,12 +24,12 @@
 	-moz-box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.5);
 	box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.5);
 }
-.upload-image-preview div.image-thumbnail-container:hover {
+.upload-file-preview div.file-thumbnail-container:hover {
 	-webkit-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.5);
 	-moz-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.5);
 	box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.5);
 }
-.upload-image-preview div.preview-thumbnail {
+.upload-file-preview div.preview-thumbnail {
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
@@ -37,7 +37,7 @@
 	width: 200px;
 	overflow: hidden;
 }
-.upload-image-preview div.preview-thumbnail img {
+.upload-file-preview div.preview-thumbnail img {
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -47,11 +47,11 @@
 	-ms-transform: translate(-50%,-50%);
 	transform: translate(-50%,-50%);
 }
-.upload-image-preview div.preview-thumbnail img.portrait {
+.upload-file-preview div.preview-thumbnail img.portrait {
 	width: 100%;
 	height: auto;
 }
-.image-preview-delete {
+.file-preview-delete {
 	position: absolute;
 	right: 23px;
 	bottom: 12px;
@@ -62,7 +62,7 @@
 }
 
 @media (max-width:760px) {
-	.upload-image-preview div.image-preview-container {
-		padding-left: 0;
+	.upload-file-preview div.file-preview-container {
+		padding: 0 !important;
 	}
 }

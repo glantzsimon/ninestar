@@ -45,7 +45,7 @@ namespace K9.DataAccess.Models
 
 		[NotMapped]
 		[UIHint("ImageFile")]
-		[Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UploadImage)]
+		[Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UploadImages)]
 		public HttpPostedFileBase ImageFile { get; set; }
 
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LanguageLabel)]

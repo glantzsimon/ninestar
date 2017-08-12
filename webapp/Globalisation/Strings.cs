@@ -80,7 +80,8 @@ namespace K9.Globalisation
 			public const string French = "French";
 			public const string Download = "Download";
 			public const string Upload = "Upload";
-			public const string UploadImage = "UploadImage";
+			public const string UploadImages = "UploadImages";
+			public const string UploadFiles = "UploadFiles";
 		}
 
 		public class LanguageCodes

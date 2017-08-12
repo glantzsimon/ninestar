@@ -1,84 +1,14 @@
 ﻿@model Object
 @{
 }
-<div class="upload-image-preview container">
+<div class="upload-file-preview container">
 </div>
 @Html.LabelFor(model => model)
 <div class="input-group">
 	<label class="input-group-btn">
 		<span class="btn btn-primary btn-file">
-			@Dictionary.Browse&hellip; @Html.TextBoxFor(model => model, new { @class = "imagefile-upload", type = "file", style = "display: none;", accept = ".png, .jpg, .jpeg, .bmp, .gif, .tiff", multiple = "multiple" })
+			@Dictionary.Browse&hellip; @Html.TextBoxFor(model => model, new { @class = "file-upload", type = "file", style = "display: none;", accept = ".png, .jpg, .jpeg, .bmp, .gif, .tiff", multiple = "multiple" })
 		</span>
 	</label>
 	<input type="text" class="form-control file-label" readonly />
 </div>
-<script>
-
-	$(function ()
-	{
-
-		function displayImage(input)
-		{
-			if (input.files)
-			{
-				for (var i = 0; i < input.files.length; i++)
-				{
-					var file = input.files[i];
-					if (file)
-					{
-						var reader = new FileReader();
-						var imagesContainer = $("div.upload-image-preview");
-						imagesContainer.fadeIn();
-
-						reader.onload = (function (f)
-						{
-							return function (e)
-							{
-								var image = new Image;
-								image.onload = function ()
-								{
-									var imgContainerDiv = $(document.createElement("DIV"));
-									imgContainerDiv.attr("class", "image-preview-container col-lg-3 col-md-4 col-sm-6 col-xs-12");
-
-									var imgThumbnailContainerDiv = $(document.createElement("DIV"));
-									imgThumbnailContainerDiv.attr("class", "image-thumbnail-container");
-
-									var imgContainer = $(document.createElement("DIV"));
-									imgContainer.attr("class", "preview-thumbnail");
-
-									var img = $(document.createElement("IMG"));
-									if (image.height > image.width)
-									{
-										img.attr("class", "portrait");
-									}
-									img.attr("src", image.src);
-
-									var imageInfo = $(document.createElement("DIV"));
-									imageInfo.attr("class", "image-info");
-									imageInfo.html("<p>" + f.name + "</p>" +
-											   "<samp>(" + $.fn.formatBytes(f.size) + ")</samp>" +
-											   '<button type="button" class="image-preview-delete btn btn-xs btn-default" title="Remove file" data-url="" data-key="' + i + '"><i class="glyphicon glyphicon-trash text-danger"></i></button>');
-
-									imgContainer.append(img);
-									imgThumbnailContainerDiv.append(imgContainer, imageInfo);
-									imgContainerDiv.append(imgThumbnailContainerDiv);
-									imagesContainer.append(imgContainerDiv);
-								};
-								image.src = e.target.result;
-							};
-						})(file);
-
-						reader.readAsDataURL(file);
-					}
-				}
-			}
-		}
-
-		$("input.imagefile-upload").change(function ()
-		{
-			displayImage(this);
-		});
-	});
-	
-
-</script>

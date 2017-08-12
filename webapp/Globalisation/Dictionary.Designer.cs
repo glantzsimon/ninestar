@@ -1789,11 +1789,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Upload Files.
+        /// </summary>
+        public static string UploadFiles {
+            get {
+                return ResourceManager.GetString("UploadFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upload Image.
         /// </summary>
         public static string UploadImage {
             get {
                 return ResourceManager.GetString("UploadImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload Images.
+        /// </summary>
+        public static string UploadImages {
+            get {
+                return ResourceManager.GetString("UploadImages", resourceCulture);
             }
         }
         

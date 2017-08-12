@@ -261,6 +261,7 @@
     <Compile Include="ViewModels\MultiSelectViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\k9\imageUpload.css" />
     <Content Include="Content\ninestar\botf.css" />
     <Content Include="Content\ninestar\classes.css" />
     <Content Include="Content\ninestar\desktop.css" />
@@ -590,6 +591,7 @@
     <Content Include="Views\Shared\EditorTemplates\File.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\ImageUrl.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ImageUrl.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ImageFile.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutColumns.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />

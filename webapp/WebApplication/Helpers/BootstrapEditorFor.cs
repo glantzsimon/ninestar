@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using K9.SharedLibrary.Extensions;
@@ -32,9 +33,9 @@ namespace K9.WebApplication.Helpers
 				viewDataDictionary.MergeAttribute(Attributes.Class, Bootstrap.Classes.FormControl);
 			}
 
-			viewDataDictionary.MergeAttribute(Attributes.PlaceHolder,  options.PlaceHolder);
-			viewDataDictionary.MergeAttribute(Attributes.Title,  string.Empty);
-				
+			viewDataDictionary.MergeAttribute(Attributes.PlaceHolder, options.PlaceHolder);
+			viewDataDictionary.MergeAttribute(Attributes.Title, string.Empty);
+
 			// Get container div
 			var div = new TagBuilder(Tags.Div);
 			var attributes = new Dictionary<string, object>();
@@ -47,8 +48,8 @@ namespace K9.WebApplication.Helpers
 			div.MergeAttributes(attributes);
 			sb.AppendLine(div.ToString(TagRenderMode.StartTag));
 
-			// Show label for all types but boolean
-			if (modelType != typeof(bool))
+			var hideLabelForTypes = new List<Type> { typeof(bool), typeof(HttpPostedFileBase) };
+			if (!hideLabelForTypes.Contains(modelType))
 			{
 				sb.AppendLine(html.LabelFor(expression, options.Label).ToString());
 			}

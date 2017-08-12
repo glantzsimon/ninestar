@@ -44,7 +44,7 @@ namespace K9.DataAccess.Models
 		public string ImageUrl { get; set; }
 
 		[NotMapped]
-		[UIHint("File")]
+		[UIHint("ImageFile")]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UploadImage)]
 		public HttpPostedFileBase ImageFile { get; set; }
 

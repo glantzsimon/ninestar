@@ -99,9 +99,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\FileSourceInfo.cs" />
     <Compile Include="Attributes\LimitByColumnAttribute.cs" />
     <Compile Include="Attributes\LinkedColumnAttribute.cs" />
     <Compile Include="Constants\Constants.cs" />
+    <Compile Include="Enums\EFilesSourceFilter.cs" />
+    <Compile Include="Exceptions\FileSourceFilePathNotSpecifiedException.cs" />
     <Compile Include="Extensions\ConfigurationFileExtensions.cs" />
     <Compile Include="Extensions\IOExtensions.cs" />
     <Compile Include="Extensions\Extensions.cs" />
@@ -109,6 +112,7 @@
     <Compile Include="Extensions\ReflectionExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\ConfigHelper.cs" />
+    <Compile Include="Helpers\ContentHelper.cs" />
     <Compile Include="Helpers\IMailer.cs" />
     <Compile Include="Helpers\ImageProcessor.cs" />
     <Compile Include="Helpers\Mailer.cs" />
@@ -116,6 +120,7 @@
     <Compile Include="Authentication\RoleNames.cs" />
     <Compile Include="Helpers\TestHtmlHelper.cs" />
     <Compile Include="Models\AssetInfo.cs" />
+    <Compile Include="Models\FileSource.cs" />
     <Compile Include="Models\Options.cs" />
     <Compile Include="Models\IOptions.cs" />
     <Compile Include="Models\SmtpConfiguration.cs" />

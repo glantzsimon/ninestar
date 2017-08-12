@@ -11,5 +11,10 @@ namespace K9.SharedLibrary.Extensions
 			var fileName = fileInfo.Name;
 			return fileName.Substring(0, fileName.LastIndexOf(".", StringComparison.Ordinal));
 		}
+
+		public static string ToPathOnDisk(this string value)
+		{
+			return value.Replace("/", "\\");
+		}
 	}
 }

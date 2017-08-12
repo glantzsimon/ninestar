@@ -8,7 +8,7 @@ namespace K9.SharedLibrary.Models
 {
 	public class AssetInfo : IAssetInfo
 	{
-		private static readonly List<string> ImageFileExtensions = new List<string> { ".png", ".jpg", ".jpeg", ".gif" };
+		private static readonly List<string> ImageFileExtensions = new List<string> { ".png", ".jpg", ".jpeg", ".bmp", ".gif", ".tiff" };
 		private readonly string _pathOnDisk;
 		private readonly string _baseWebPath;
 		private readonly FileInfo _fileInfo;

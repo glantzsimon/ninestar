@@ -3,10 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 using System.Web.Routing;
 using K9.DataAccess.Attributes;
 using K9.Globalisation;
+using K9.SharedLibrary.Attributes;
 using K9.SharedLibrary.Authentication;
+using K9.SharedLibrary.Exceptions;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using WebMatrix.WebData;
@@ -15,6 +18,10 @@ namespace K9.DataAccess.Models
 {
 	public abstract class ObjectBase : IObjectBase, IValidatableObject
 	{
+		protected ObjectBase()
+		{
+			InitFileSources();
+		}
 
 		#region Properties
 
@@ -179,6 +186,25 @@ namespace K9.DataAccess.Models
 			else
 			{
 				UpdateName();
+			}
+		}
+
+		private void InitFileSources()
+		{
+			var fileSourceProperties = GetType().GetProperties().Where(p => p.PropertyType == typeof(FileSource)).ToList();
+			foreach (var propertyInfo in fileSourceProperties)
+			{
+				var newFileSource = Activator.CreateInstance<FileSource>();
+				var info = propertyInfo.GetAttribute<FileSourceInfo>();
+				if (info == null)
+				{
+					throw new FileSourceFilePathNotSpecifiedException();
+				}
+				newFileSource.Filter = info.Filter;
+				newFileSource.PathToFiles = info.PathToFiles;
+				newFileSource.LoadFiles();
+
+				this.SetProperty(propertyInfo, newFileSource);
 			}
 		}
 

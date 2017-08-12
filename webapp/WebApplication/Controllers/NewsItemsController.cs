@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using K9.DataAccess.Models;
 using K9.SharedLibrary.Attributes;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Helpers;
 using K9.WebApplication.Services;
@@ -14,12 +15,12 @@ namespace K9.WebApplication.Controllers
 	[LimitByUserId]
 	public class NewsItemsController : BaseController<NewsItem>
 	{
-		private readonly INewsItemsService _newsItemsService;
+		private readonly IFileSourceService _fileSourceService;
 
-		public NewsItemsController(IRepository<NewsItem> repository, ILogger logger, IDataTableAjaxHelper<NewsItem> ajaxHelper, IDataSetsHelper dataSetsHelper, IRoles roles, INewsItemsService NewsItemsService)
+		public NewsItemsController(IRepository<NewsItem> repository, ILogger logger, IDataTableAjaxHelper<NewsItem> ajaxHelper, IDataSetsHelper dataSetsHelper, IRoles roles, IFileSourceService fileSourceService)
 			: base(repository, logger, ajaxHelper, dataSetsHelper, roles)
 		{
-			_newsItemsService = NewsItemsService;
+			_fileSourceService = fileSourceService;
 			RecordBeforeCreate += NewsItemsController_RecordBeforeCreate;
 			RecordBeforeCreated += NewsItemsController_RecordBeforeCreated;
 			RecordBeforeUpdated += NewsItemsController_RecordBeforeUpdated;
@@ -28,25 +29,24 @@ namespace K9.WebApplication.Controllers
 		void NewsItemsController_RecordBeforeUpdated(object sender, EventArgs.CrudEventArgs e)
 		{
 			var newsItem = e.Item as NewsItem;
-			if (newsItem.ImageFile != null)
+			if (newsItem.ImageFileSource != null)
 			{
-				SaveImageFile(newsItem);
+				SaveImageFiles(newsItem);
 			}
 		}
 
 		void NewsItemsController_RecordBeforeCreated(object sender, EventArgs.CrudEventArgs e)
 		{
 			var newsItem = e.Item as NewsItem;
-			if (newsItem.ImageFile != null)
+			if (newsItem.ImageFileSource != null)
 			{
-				SaveImageFile(newsItem);
+				SaveImageFiles(newsItem);
 			}
 		}
 
-		private void SaveImageFile(NewsItem newsItem)
+		private void SaveImageFiles(NewsItem newsItem)
 		{
-			var imageUrl = _newsItemsService.SaveNewsItemImageToDisk(newsItem.ImageFile);
-			newsItem.ImageUrl = imageUrl;
+			_fileSourceService.SaveFilesToDisk(newsItem.ImageFileSource);
 		}
 
 		void NewsItemsController_RecordBeforeCreate(object sender, EventArgs.CrudEventArgs e)

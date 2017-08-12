@@ -236,7 +236,6 @@
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Helpers\ImageLoader.cs" />
     <Compile Include="Helpers\ImageSwitcher.cs" />
-    <Compile Include="Helpers\ContentHelper.cs" />
     <Compile Include="Helpers\TagCloser.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -255,8 +254,8 @@
     <Compile Include="Options\ImageSwitcherOptionsBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\MultiSelectItem.cs" />
-    <Compile Include="Services\INewsItemsService.cs" />
-    <Compile Include="Services\NewsItemsService.cs" />
+    <Compile Include="Services\IFileSourceService.cs" />
+    <Compile Include="Services\FileSourceService.cs" />
     <Compile Include="ViewModels\ContactUsViewModel.cs" />
     <Compile Include="ViewModels\MultiSelectViewModel.cs" />
   </ItemGroup>
@@ -589,10 +588,10 @@
     <Content Include="Views\NewsItems\Edit.cshtml" />
     <Content Include="Views\NewsItems\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutForm.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\File.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\ImageUrl.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ImageUrl.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\ImageFile.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\FileSource.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\FileSource.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutColumns.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />

@@ -42,7 +42,7 @@ namespace K9.WebApplication
 			builder.RegisterType<Roles>().As<IRoles>().InstancePerHttpRequest();
 			builder.RegisterType<Mailer>().As<IMailer>().InstancePerHttpRequest();
 			builder.RegisterType<PostedFileHelper>().As<IPostedFileHelper>().InstancePerHttpRequest();
-			builder.RegisterType<NewsItemsService>().As<INewsItemsService>().InstancePerHttpRequest();
+			builder.RegisterType<FileSourceService>().As<IFileSourceService>().InstancePerHttpRequest();
 
 			RegisterConfiguration(builder);
 

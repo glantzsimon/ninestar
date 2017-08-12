@@ -1,12 +1,13 @@
 ﻿
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Web;
 using K9.DataAccess.Attributes;
 using K9.DataAccess.Enums;
 using K9.DataAccess.Extensions;
 using K9.Globalisation;
+using K9.SharedLibrary.Attributes;
+using K9.SharedLibrary.Enums;
+using K9.SharedLibrary.Models;
 
 namespace K9.DataAccess.Models
 {
@@ -39,14 +40,9 @@ namespace K9.DataAccess.Models
 		[DataType(DataType.MultilineText)]
 		public string Body { get; set; }
 
-		[DataType(DataType.ImageUrl)]
-		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ImageLabel)]
-		public string ImageUrl { get; set; }
-
-		[NotMapped]
-		[UIHint("ImageFile")]
+		[FileSourceInfo("Images/news/upload", Filter = EFilesSourceFilter.Images)]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UploadImages)]
-		public HttpPostedFileBase ImageFile { get; set; }
+		public FileSource ImageFileSource { get; set; }
 
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LanguageLabel)]
 		public string LanguageName

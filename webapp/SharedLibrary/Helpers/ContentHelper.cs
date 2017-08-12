@@ -1,12 +1,11 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
-using K9.WebApplication.Extensions;
 
-namespace K9.WebApplication.Helpers
+namespace K9.SharedLibrary.Helpers
 {
 
 	public static class ContentHelper

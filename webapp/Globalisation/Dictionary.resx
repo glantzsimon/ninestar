@@ -721,4 +721,7 @@
   <data name="UploadImages" xml:space="preserve">
     <value>Upload Images</value>
   </data>
+  <data name="FilesSelected" xml:space="preserve">
+    <value>files selected</value>
+  </data>
 </root>

@@ -1,6 +1,9 @@
 function fileUploader(config)
 {
-    function loadFile(f, fileSrc, index) {
+    var filesContainer = $("div.upload-file-preview");
+
+    function loadFile(f, fileSrc, index)
+    {
         var image = new Image;
         image.onload = function ()
         {
@@ -44,12 +47,12 @@ function fileUploader(config)
                 if (file)
                 {
                     var reader = new FileReader();
-                    var filesContainer = $("div.upload-file-preview");
                     filesContainer.fadeIn();
 
                     reader.onload = (function (f)
                     {
-                        return function (e) {
+                        return function (e)
+                        {
                             loadFile(f, e.target.result, i);
                         };
                     })(file);
@@ -60,12 +63,35 @@ function fileUploader(config)
         }
     }
 
+    function initFileInputs()
+    {
+        $(':file').on('fileselect', function (event, numFiles, fileName)
+        {
+            var fileDescription = numFiles > 1 ? numFiles + ' ' + config.filesSelectedText : fileName;
+            var textInput = $(this).parents('.input-group').find(':text.file-label');
+
+            if (textInput.length)
+            {
+                textInput.val(fileDescription);
+            }
+        });
+
+        $(document).on('change', ':file', function ()
+        {
+            var input = $(this);
+            var numFiles = input.get(0).files ? input.get(0).files.length : 1;
+            var fileName = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+            input.trigger('fileselect', [numFiles, fileName]);
+        });
+    }
+
     function init()
     {
         $("input.file-upload").change(function ()
         {
             displayFiles(this);
         });
+        initFileInputs();
     }
 
     return {

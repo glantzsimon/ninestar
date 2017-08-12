@@ -58,7 +58,10 @@
 	width: auto !important;
 }
 .image-info {
-	padding: 10px;
+	padding-top: 10px;
+}
+.image-info p {
+	height: 12px;
 }
 
 @media (max-width:760px) {

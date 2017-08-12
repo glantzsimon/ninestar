@@ -703,6 +703,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to files selected.
+        /// </summary>
+        public static string FilesSelected {
+            get {
+                return ResourceManager.GetString("FilesSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to First Name.
         /// </summary>
         public static string FirstNameLabel {

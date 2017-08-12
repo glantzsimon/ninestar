@@ -721,4 +721,7 @@
   <data name="UploadImages" xml:space="preserve">
     <value>Télécharger Photos</value>
   </data>
+  <data name="FilesSelected" xml:space="preserve">
+    <value>fichiers selectionnés</value>
+  </data>
 </root>

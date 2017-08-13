@@ -2,13 +2,29 @@ function fileUploader(config)
 {
     var filesContainer = $("div.upload-file-preview");
 
-    function loadFile(f, fileSrc, index)
+    function deleteFilePreview(index)
+    {
+        var preview = $("div.file-preview-container[data-file-index=" + index + "]");
+        preview.remove();
+    }
+
+    function bindButtonEvents()
+    {
+        $("button.file-preview-delete").click(function ()
+        {
+            var index = $(this).attr("data-file-index");
+            deleteFilePreview(index);
+        });
+    }
+
+    function loadFile(f, fileSrc, index, total)
     {
         var image = new Image;
         image.onload = function ()
         {
             var fileContainerDiv = $(document.createElement("DIV"));
             fileContainerDiv.attr("class", "file-preview-container col-lg-3 col-md-4 col-sm-6 col-xs-12");
+            fileContainerDiv.Attr("data-file-index", index);
 
             var fileThumbnailContainerDiv = $(document.createElement("DIV"));
             fileThumbnailContainerDiv.attr("class", "file-thumbnail-container");
@@ -27,12 +43,17 @@ function fileUploader(config)
             imageInfo.attr("class", "image-info");
             imageInfo.html("<p>" + f.name + "</p>" +
 											   "<samp>(" + $.fn.formatBytes(f.size) + ")</samp>" +
-											   '<button type="button" class="file-preview-delete btn btn-xs btn-default" title="' + config.deleteText + '" data-index="' + index + '"><i class="glyphicon glyphicon-trash text-danger"></i></button>');
+											   '<button type="button" class="file-preview-delete btn btn-xs btn-default" title="' + config.deleteText + '" data-file-index="' + index + '"><i class="glyphicon glyphicon-trash text-danger"></i></button>');
 
             fileContainer.append(img);
             fileThumbnailContainerDiv.append(fileContainer, imageInfo);
             fileContainerDiv.append(fileThumbnailContainerDiv);
             filesContainer.append(fileContainerDiv);
+
+            if (index === total - 1)
+            {
+                bindButtonEvents();
+            }
         };
         image.src = fileSrc;
     }
@@ -53,7 +74,7 @@ function fileUploader(config)
                     {
                         return function (e)
                         {
-                            loadFile(f, e.target.result, i);
+                            loadFile(f, e.target.result, i, input.files.length);
                         };
                     })(file);
 
@@ -92,6 +113,7 @@ function fileUploader(config)
             loadFiles(this);
         });
         initFileInputs();
+        bindButtonEvents();
     }
 
     return {

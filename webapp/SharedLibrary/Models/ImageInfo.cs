@@ -13,5 +13,10 @@ namespace K9.SharedLibrary.Models
 		public ImageFormat Format { get; set; }
 
 		public string Src { get; set; }
+
+		public bool IsPortrait()
+		{
+			return Height > Width;
+		}
 	}
 }

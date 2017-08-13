@@ -63,21 +63,18 @@ function fileUploader(config) {
             "<samp>(" + $.fn.formatBytes(file.size) + ")</samp>" +
             '<i class="glyphicon glyphicon-upload file-preview-upload"></i>');
 
+        var img = $(document.createElement("IMG"));
         if (type === "image") {
-            var img = $(document.createElement("IMG"));
             if (data.height > data.width) {
                 img.attr("class", "portrait");
             }
             img.attr("src", data.src);
-
-            fileContainer.append(img);
-            fileThumbnailContainerDiv.append(fileContainer, docInfo);
         } else {
-            var documentDiv = $(document.createElement("DIV"));
-            documentDiv.attr("class", "preview-document fa fa-file-o");
-            fileContainer.append(documentDiv);
-            fileThumbnailContainerDiv.append(fileContainer, docInfo);
+            img.attr("src", "/Images/ui/document.jpg");
         }
+
+        fileContainer.append(img);
+        fileThumbnailContainerDiv.append(fileContainer, docInfo);
         
         fileContainerDiv.append(fileThumbnailContainerDiv);
         filesContainer.append(fileContainerDiv);

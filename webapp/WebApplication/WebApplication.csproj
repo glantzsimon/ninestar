@@ -391,6 +391,7 @@
     <Content Include="Images\template\t1.jpg" />
     <Content Include="Images\template\t2.jpg" />
     <Content Include="Images\template\t3.jpg" />
+    <Content Include="Images\ui\document.jpg" />
     <Content Include="Images\ui\fail.png" />
     <Content Include="Images\ui\notfound.png" />
     <Content Include="Images\ui\locked.png" />

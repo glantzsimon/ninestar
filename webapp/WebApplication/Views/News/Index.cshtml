@@ -1,4 +1,5 @@
 ﻿@using K9.WebApplication.Config
+@model List<NewsItem>
 @{
 	ViewBag.Title = Dictionary.Home;
 }
@@ -6,10 +7,39 @@
 <div class="banner-forest1 main-banner">
 	@Html.Partial("_Navbar")
 </div>
+
 <div class="main-section">
 	<div class="container">
 		<div class="main-heading">
 			<h3>@Dictionary.News</h3>
 		</div>
+		@foreach (var newsItem in Model)
+		{
+			<div>
+				<div class="col-md-5">
+					<div class="picture-frame picture-frame-300">
+						<div>
+							@Html.Carousel(new CarouselOptions("Images/iboga/1", "", 70)
+							{
+								ImageSizing = EImageSizing.Vertical
+							})
+						</div>
+					</div>
+				</div>
+				<div class="col-md-7">
+					<h5>
+						@MvcHtmlString.Create(Dictionary.iboga_title1)
+					</h5>
+					<article>
+						<p>
+							@MvcHtmlString.Create(Dictionary.iboga_text1)
+						</p>
+					</article>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<br/>			
+		}
+		<div class="clearfix"></div>
 	</div>
 </div>

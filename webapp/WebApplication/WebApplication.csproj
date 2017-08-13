@@ -592,6 +592,7 @@
     <Content Include="Views\Shared\DisplayTemplates\ImageUrl.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\FileSource.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\FileSource.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Language.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutColumns.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />

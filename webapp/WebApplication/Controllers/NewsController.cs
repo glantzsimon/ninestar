@@ -1,25 +1,20 @@
 ﻿using System.Web.Mvc;
-using K9.SharedLibrary.Models;
-using NLog;
+using K9.DataAccess.Models;
+using K9.WebApplication.UnitsOfWork;
 
 namespace K9.WebApplication.Controllers
 {
-	public class NewsController : BaseController
+	public class NewsController : BaseController<NewsItem>
 	{
-
-		public NewsController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles)
-			: base(logger, dataSetsHelper, roles)
+		public NewsController(IControllerPackage<NewsItem> controllerPackage)
+			: base(controllerPackage)
 		{
 		}
-
-		public ActionResult Index()
+		
+		public override ActionResult Index()
 		{
-			return View();
+			return View(Repository.List());
 		}
-
-		public override string GetObjectName()
-		{
-			return string.Empty;
-		}
+		
 	}
 }

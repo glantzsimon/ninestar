@@ -1,8 +1,11 @@
 ﻿
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
+using K9.DataAccess.Enums;
+using K9.DataAccess.Extensions;
 using K9.DataAccess.Respositories;
 using K9.SharedLibrary.Models;
 
@@ -40,9 +43,32 @@ namespace K9.WebApplication.DataSets
 			return dataset;
 		}
 
+		public List<ListItem> GetDataSetFromEnum<T>(bool refresh = false)
+		{
+			List<ListItem> dataset = null;
+			if (refresh || !_datasets.Collection.ContainsKey(typeof(T)))
+			{
+				var values = Enum.GetValues(typeof (T)).Cast<T>();
+				dataset = new List<ListItem>(values.Select(e =>
+				{
+					var enumValue = e as Enum;
+					var id = int.Parse(e.ToString());
+					var name = enumValue.GetLocalisedLanguageName();
+					return new ListItem(id, name);
+				}));
+				_datasets.Collection[typeof(T)] = dataset;
+			}
+			return dataset;
+		}
+
 		public SelectList GetSelectList<T>(int? selectedId, bool refresh = false) where T : class, IObjectBase
 		{
 			return new SelectList(GetDataSet<T>(refresh), "Id", "Name", selectedId);
+		}
+
+		public SelectList GetSelectListFromEnum<T>(Enum selectedId, bool refresh = false)
+		{
+			return new SelectList(GetDataSetFromEnum<T>(refresh), "Id", "Name", selectedId);
 		}
 
 		public string GetName<T>(int? selectedId, bool refresh = false) where T : class, IObjectBase

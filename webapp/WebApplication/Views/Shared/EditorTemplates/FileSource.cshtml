@@ -9,7 +9,7 @@
 		for (int i = 0; i < Model.UploadedFiles.Count; i++)
 		{
 			var uploadedFile = Model.UploadedFiles[i];
-			var imgClass = uploadedFile.ImageInfo.IsPortrait() ? "portrait" : string.Empty;
+			var imgClass = uploadedFile.IsImage() && uploadedFile.ImageInfo.IsPortrait() ? "portrait" : string.Empty;
 			
 			<div class="file-preview-container col-lg-3 col-md-4 col-sm-6 col-xs-12" data-file-index="@i">
 				<div class="file-thumbnail-container">

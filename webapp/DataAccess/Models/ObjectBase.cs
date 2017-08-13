@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Web.Routing;
 using K9.DataAccess.Attributes;
 using K9.Globalisation;
@@ -206,9 +207,14 @@ namespace K9.DataAccess.Models
 			}
 		}
 
+		public List<PropertyInfo> GetFileSourceProperties()
+		{
+			return GetType().GetProperties().Where(p => p.PropertyType == typeof(FileSource)).ToList();
+		}
+
 		private void InitFileSources()
 		{
-			var fileSourceProperties = GetType().GetProperties().Where(p => p.PropertyType == typeof(FileSource)).ToList();
+			var fileSourceProperties = GetFileSourceProperties();
 			foreach (var propertyInfo in fileSourceProperties)
 			{
 				var fileSource = (FileSource)this.GetProperty(propertyInfo);

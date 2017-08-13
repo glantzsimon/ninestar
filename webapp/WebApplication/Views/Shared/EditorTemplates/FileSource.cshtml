@@ -3,6 +3,7 @@
 @{
 	var displayStyle = Model.UploadedFiles != null && Model.UploadedFiles.Any() ? string.Empty : "display: none;";
 }
+
 <div class="upload-file-preview container" style="@displayStyle">
 	@if (Model.UploadedFiles != null)
 	{

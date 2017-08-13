@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Threading;
 using System.Web.Mvc;
 using K9.DataAccess.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
+using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.EventArgs;
 using K9.WebApplication.Exceptions;
@@ -15,6 +17,7 @@ using K9.WebApplication.Extensions;
 using K9.WebApplication.Filters;
 using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
+using K9.WebApplication.UnitsOfWork;
 using K9.WebApplication.ViewModels;
 using Newtonsoft.Json;
 using NLog;
@@ -59,18 +62,7 @@ namespace K9.WebApplication.Controllers
 
 	public abstract class BaseController<T> : Controller, IBaseController where T : class, IObjectBase
 	{
-
-		#region Variables
-
-		private readonly IRepository<T> _repository;
-		private readonly ILogger _logger;
-		private readonly IDataTableAjaxHelper<T> _ajaxHelper;
-		private readonly IDataSetsHelper _dataSetsHelper;
-		private readonly IRoles _roles;
-
-		#endregion
-
-
+		
 		#region Events
 
 		/// <summary>
@@ -82,6 +74,7 @@ namespace K9.WebApplication.Controllers
 		/// </summary>
 		public event EventHandler<CrudEventArgs> RecordBeforeCreated;
 		public event EventHandler<CrudEventArgs> RecordCreated;
+		public event EventHandler<CrudEventArgs> RecordCreateError;
 
 		/// <summary>
 		/// Event fires before the record is passed to the Delete view
@@ -92,6 +85,7 @@ namespace K9.WebApplication.Controllers
 		/// </summary>
 		public event EventHandler<CrudEventArgs> RecordBeforeDeleted;
 		public event EventHandler<CrudEventArgs> RecordDeleted;
+		public event EventHandler<CrudEventArgs> RecordDeleteError;
 
 		/// <summary>
 		/// Event fires before the record is passed to the Edit view
@@ -102,32 +96,51 @@ namespace K9.WebApplication.Controllers
 		/// </summary>
 		public event EventHandler<CrudEventArgs> RecordBeforeUpdated;
 		public event EventHandler<CrudEventArgs> RecordUpdated;
+		public event EventHandler<CrudEventArgs> RecordUpdateError;
 
 		#endregion
 
 
 		#region Properties
 
+		public IControllerPackage<T> ControllerPackage { get; set; }
+
 		public IRepository<T> Repository
 		{
-			get { return _repository; }
+			get { return ControllerPackage.Repository; }
 		}
 
 		public IDataSetsHelper DropdownDataSets
 		{
-			get { return _dataSetsHelper; }
+			get { return ControllerPackage.DataSetsHelper; }
 		}
 
 		public IRoles Roles
 		{
-			get { return _roles; }
+			get { return ControllerPackage.Roles; }
 		}
 
 		public ILogger Logger
 		{
 			get
 			{
-				return _logger;
+				return ControllerPackage.Logger;
+			}
+		}
+
+		public IDataTableAjaxHelper<T> AjaxHelper
+		{
+			get
+			{
+				return ControllerPackage.AjaxHelper;
+			}
+		}
+
+		public IFileSourceHelper FileSourceHelper
+		{
+			get
+			{
+				return ControllerPackage.FileSourceHelper;
 			}
 		}
 
@@ -138,9 +151,9 @@ namespace K9.WebApplication.Controllers
 
 		protected override void Dispose(bool disposing)
 		{
-			if (_repository != null)
+			if (Repository != null)
 			{
-				_repository.Dispose();
+				Repository.Dispose();
 			}
 			base.Dispose(disposing);
 		}
@@ -150,13 +163,9 @@ namespace K9.WebApplication.Controllers
 
 		#region Constructors
 
-		protected BaseController(IRepository<T> repository, ILogger logger, IDataTableAjaxHelper<T> ajaxHelper, IDataSetsHelper dataSetsHelper, IRoles roles)
+		protected BaseController(IControllerPackage<T> controllerPackage)
 		{
-			_repository = repository;
-			_logger = logger;
-			_ajaxHelper = ajaxHelper;
-			_dataSetsHelper = dataSetsHelper;
-			_roles = roles;
+			ControllerPackage = controllerPackage;
 		}
 
 		#endregion
@@ -177,7 +186,7 @@ namespace K9.WebApplication.Controllers
 		[OutputCache(NoStore = true, Duration = 0)]
 		public virtual ActionResult Details(int id = 0)
 		{
-			T item = _repository.Find(id);
+			T item = Repository.Find(id);
 			if (item == null)
 			{
 				return HttpNotFound();
@@ -206,18 +215,18 @@ namespace K9.WebApplication.Controllers
 		[OutputCache(NoStore = true, Duration = 0)]
 		public virtual ActionResult List()
 		{
-			_ajaxHelper.LoadQueryString(HttpContext.Request.QueryString);
-			_ajaxHelper.StatelessFilter = this.GetStatelessFilter();
+			AjaxHelper.LoadQueryString(HttpContext.Request.QueryString);
+			AjaxHelper.StatelessFilter = this.GetStatelessFilter();
 
 			try
 			{
-				var recordsTotal = _repository.GetCount(GetLimitByUserWhereClause());
+				var recordsTotal = Repository.GetCount(GetLimitByUserWhereClause());
 				var limitByUserId = LimitByUser() ? WebSecurity.CurrentUserId : (int?)null;
-				var recordsFiltered = _repository.GetCount(_ajaxHelper.GetWhereClause(true, limitByUserId));
-				var data = _repository.GetQuery(_ajaxHelper.GetQuery(true, limitByUserId));
+				var recordsFiltered = Repository.GetCount(AjaxHelper.GetWhereClause(true, limitByUserId));
+				var data = Repository.GetQuery(AjaxHelper.GetQuery(true, limitByUserId));
 				var json = JsonConvert.SerializeObject(new
 				{
-					draw = _ajaxHelper.Draw,
+					draw = AjaxHelper.Draw,
 					recordsTotal,
 					recordsFiltered,
 					data
@@ -230,8 +239,8 @@ namespace K9.WebApplication.Controllers
 			}
 			catch (Exception ex)
 			{
-				_logger.Error(ex.Message);
-				_logger.Info(_ajaxHelper.GetQuery(true));
+				Logger.Error(ex.Message);
+				Logger.Info(AjaxHelper.GetQuery(true));
 				return Content(string.Empty, "application/json");
 			}
 		}
@@ -295,7 +304,9 @@ namespace K9.WebApplication.Controllers
 						});
 					}
 
-					_repository.Create(item);
+					Repository.Create(item);
+
+					SavePostedFiles(item);
 
 					if (RecordCreated != null)
 					{
@@ -309,8 +320,18 @@ namespace K9.WebApplication.Controllers
 				}
 				catch (Exception ex)
 				{
-					_logger.Error(ex.GetFullErrorMessage());
+					Logger.Error(ex.GetFullErrorMessage());
 					ModelState.AddErrorMessageFromException<T>(ex, item);
+
+					LoadUploadedFiles(item);
+
+					if (RecordCreateError != null)
+					{
+						RecordCreateError(this, new CrudEventArgs
+						{
+							Item = item
+						});
+					}
 				}
 			}
 
@@ -327,7 +348,7 @@ namespace K9.WebApplication.Controllers
 		[OutputCache(NoStore = true, Duration = 0)]
 		public virtual ActionResult Edit(int id = 0)
 		{
-			var item = _repository.Find(id);
+			var item = Repository.Find(id);
 			if (item == null)
 			{
 				return HttpNotFound();
@@ -347,6 +368,8 @@ namespace K9.WebApplication.Controllers
 			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Edit, typeof(T).GetName());
 
 			AddControllerBreadcrumb();
+
+			LoadUploadedFiles(item);
 
 			if (RecordBeforeUpdate != null)
 			{
@@ -370,7 +393,7 @@ namespace K9.WebApplication.Controllers
 			{
 				try
 				{
-					var original = _repository.Find(item.Id);
+					var original = Repository.Find(item.Id);
 					if (original.IsSystemStandard)
 					{
 						return HttpForbidden();
@@ -381,6 +404,8 @@ namespace K9.WebApplication.Controllers
 						return HttpForbidden();
 					}
 
+					SavePostedFiles(item);
+
 					if (RecordBeforeUpdated != null)
 					{
 						RecordBeforeUpdated(this, new CrudEventArgs
@@ -389,7 +414,7 @@ namespace K9.WebApplication.Controllers
 						});
 					}
 
-					_repository.Update(item);
+					Repository.Update(item);
 
 					if (RecordUpdated != null)
 					{
@@ -403,8 +428,18 @@ namespace K9.WebApplication.Controllers
 				}
 				catch (Exception ex)
 				{
-					_logger.Error(ex.Message);
+					Logger.Error(ex.Message);
 					ModelState.AddErrorMessageFromException<T>(ex, item);
+
+					LoadUploadedFiles(item);
+
+					if (RecordUpdateError != null)
+					{
+						RecordUpdateError(this, new CrudEventArgs
+						{
+							Item = item
+						});
+					}
 				}
 			}
 
@@ -421,7 +456,7 @@ namespace K9.WebApplication.Controllers
 		[OutputCache(NoStore = true, Duration = 0)]
 		public virtual ActionResult Delete(int id)
 		{
-			T item = _repository.Find(id);
+			T item = Repository.Find(id);
 			if (item == null)
 			{
 				return HttpNotFound();
@@ -463,7 +498,7 @@ namespace K9.WebApplication.Controllers
 			T item = null;
 			if (ModelState.IsValid)
 			{
-				item = _repository.Find(id);
+				item = Repository.Find(id);
 				if (item == null)
 				{
 					return HttpNotFound();
@@ -489,7 +524,7 @@ namespace K9.WebApplication.Controllers
 						});
 					}
 
-					_repository.Delete(id);
+					Repository.Delete(id);
 
 					if (RecordDeleted != null)
 					{
@@ -503,8 +538,16 @@ namespace K9.WebApplication.Controllers
 				}
 				catch (Exception ex)
 				{
-					_logger.Error(ex.Message);
+					Logger.Error(ex.Message);
 					ModelState.AddErrorMessageFromException(ex, item);
+
+					if (RecordDeleteError != null)
+					{
+						RecordDeleteError(this, new CrudEventArgs
+						{
+							Item = item
+						});
+					}
 				}
 			}
 
@@ -547,7 +590,7 @@ namespace K9.WebApplication.Controllers
 
 			AddControllerBreadcrumb();
 
-			return View("EditMultiple", MultiSelectViewModel.Create<T, T2, T3>(parent, _repository.GetAllBy<T2, T3>(parent.Id)));
+			return View("EditMultiple", MultiSelectViewModel.Create<T, T2, T3>(parent, Repository.GetAllBy<T2, T3>(parent.Id)));
 		}
 
 		[Authorize]
@@ -573,7 +616,7 @@ namespace K9.WebApplication.Controllers
 					item.SetProperty(typeof(T3).GetForeignKeyName(), x.ChildId);
 					return item;
 				}).ToList();
-				_repository.CreateBatch(itemsToAdd);
+				Repository.CreateBatch(itemsToAdd);
 
 				return RedirectToAction("Index", this.GetFilterRouteValueDictionary());
 			}
@@ -616,7 +659,7 @@ namespace K9.WebApplication.Controllers
 			if (statelessFilter.IsSet())
 			{
 				var tableName = typeof(T).GetLinkedForeignTableName(statelessFilter.Key);
-				return string.Format(" {0} {1}", Dictionary.For.ToLower(), _repository.GetName(tableName, statelessFilter.Id));
+				return string.Format(" {0} {1}", Dictionary.For.ToLower(), Repository.GetName(tableName, statelessFilter.Id));
 			}
 			return string.Empty;
 		}
@@ -663,6 +706,27 @@ namespace K9.WebApplication.Controllers
 					ControllerName = GetType().GetControllerName()
 				}
 			};
+		}
+
+		private void SavePostedFiles(T item)
+		{
+			foreach (var fileSourcePropertyInfo in item.GetFileSourceProperties())
+			{
+				var fileSource = this.GetProperty(fileSourcePropertyInfo) as FileSource;
+				if (fileSource != null)
+				{
+					FileSourceHelper.SaveFilesToDisk(fileSource, true);
+				}
+			}
+		}
+
+		private void LoadUploadedFiles(T item)
+		{
+			foreach (var fileSourcePropertyInfo in item.GetFileSourceProperties())
+			{
+				var fileSource = this.GetProperty(fileSourcePropertyInfo) as FileSource;
+				FileSourceHelper.LoadFiles(fileSource, false);
+			}
 		}
 
 		#endregion

@@ -5,7 +5,10 @@ function fileUploader(config)
     function deleteFilePreview(index)
     {
         var preview = $("div.file-preview-container[data-file-index=" + index + "]");
-        preview.remove();
+        preview.fadeOut(function() {
+
+            preview.remove();
+        });
     }
 
     function bindButtonEvents()

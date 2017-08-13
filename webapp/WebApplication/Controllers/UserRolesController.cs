@@ -3,9 +3,8 @@ using K9.DataAccess.Models;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Filters;
-using K9.WebApplication.Helpers;
+using K9.WebApplication.UnitsOfWork;
 using K9.WebApplication.ViewModels;
-using NLog;
 
 namespace K9.WebApplication.Controllers
 {
@@ -14,9 +13,9 @@ namespace K9.WebApplication.Controllers
 	public class UserRolesController : BaseController<UserRole>
 	{
 		private readonly IRepository<User> _userRepository;
-
-		public UserRolesController(IRepository<UserRole> repository, IRepository<User> userRepository, ILogger logger, IDataTableAjaxHelper<UserRole> ajaxHelper, IDataSetsHelper dataSetsHelper, IRoles roles)
-			: base(repository, logger, ajaxHelper, dataSetsHelper, roles)
+		
+		public UserRolesController(IControllerPackage<UserRole> controllerPackage, IRepository<User> userRepository)
+			: base(controllerPackage)
 		{
 			_userRepository = userRepository;
 		}
@@ -36,6 +35,6 @@ namespace K9.WebApplication.Controllers
 		{
 			return EditMultiple<User, Role>(model);
 		}
-		
+
 	}
 }

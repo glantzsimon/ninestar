@@ -5,8 +5,7 @@ using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.EventArgs;
 using K9.WebApplication.Filters;
-using K9.WebApplication.Helpers;
-using NLog;
+using K9.WebApplication.UnitsOfWork;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
@@ -17,8 +16,8 @@ namespace K9.WebApplication.Controllers
 	{
 		private readonly IOptions<DatabaseConfiguration> _dataConfig;
 
-		public UsersController(IRepository<User> repository, ILogger logger, IDataTableAjaxHelper<User> ajaxHelper, IDataSetsHelper dataSetsHelper, IRoles roles, IOptions<DatabaseConfiguration> dataConfig)
-			: base(repository, logger, ajaxHelper, dataSetsHelper, roles)
+		public UsersController(IControllerPackage<User> controllerPackage, IOptions<DatabaseConfiguration> dataConfig)
+			: base(controllerPackage)
 		{
 			_dataConfig = dataConfig;
 			RecordCreated += UsersController_RecordCreated;

@@ -1,10 +1,8 @@
 ﻿using System.Web.Mvc;
 using K9.DataAccess.Models;
 using K9.SharedLibrary.Authentication;
-using K9.SharedLibrary.Models;
 using K9.WebApplication.Filters;
-using K9.WebApplication.Helpers;
-using NLog;
+using K9.WebApplication.UnitsOfWork;
 
 namespace K9.WebApplication.Controllers
 {
@@ -12,7 +10,7 @@ namespace K9.WebApplication.Controllers
 	[RequirePermissions(Role = RoleNames.Administrators)]
 	public class RolesController : BaseController<Role>
 	{
-		public RolesController(IRepository<Role> repository, ILogger logger, IDataTableAjaxHelper<Role> ajaxHelper, IDataSetsHelper dataSetsHelper, IRoles roles) : base(repository, logger, ajaxHelper, dataSetsHelper, roles)
+		public RolesController(IControllerPackage<Role> controllerPackage) : base(controllerPackage)
 		{
 		}
 	}

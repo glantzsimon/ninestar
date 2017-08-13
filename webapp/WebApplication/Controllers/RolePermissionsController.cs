@@ -3,9 +3,8 @@ using K9.DataAccess.Models;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Filters;
-using K9.WebApplication.Helpers;
+using K9.WebApplication.UnitsOfWork;
 using K9.WebApplication.ViewModels;
-using NLog;
 
 namespace K9.WebApplication.Controllers
 {
@@ -15,7 +14,8 @@ namespace K9.WebApplication.Controllers
 	{
 		private readonly IRepository<Role> _roleRepository;
 
-		public RolePermissionsController(IRepository<RolePermission> repository, IRepository<Role> roleRepository, ILogger logger, IDataTableAjaxHelper<RolePermission> ajaxHelper, IDataSetsHelper dataSetsHelper, IRoles roles) : base(repository, logger, ajaxHelper, dataSetsHelper, roles)
+		public RolePermissionsController(IRepository<Role> roleRepository, IControllerPackage<RolePermission> controllerPackage)
+			: base(controllerPackage)
 		{
 			_roleRepository = roleRepository;
 		}

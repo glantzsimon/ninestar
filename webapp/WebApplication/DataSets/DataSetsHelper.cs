@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Activities.Expressions;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -52,7 +53,7 @@ namespace K9.WebApplication.DataSets
 				dataset = new List<ListItem>(values.Select(e =>
 				{
 					var enumValue = e as Enum;
-					var id = int.Parse(e.ToString());
+					var id = Convert.ToInt32(e);
 					var name = enumValue.GetLocalisedLanguageName();
 					return new ListItem(id, name);
 				}));

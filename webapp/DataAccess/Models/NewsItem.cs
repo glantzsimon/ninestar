@@ -24,6 +24,7 @@ namespace K9.DataAccess.Models
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PublishedByLabel)]
 		public string PublishedBy { get; set; }
 
+		[UIHint("Language")]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LanguageLabel)]
 		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 		public ELanguage Language { get; set; }

@@ -44,7 +44,9 @@ function fileUploader(config) {
     function loadFile(input, f, fileSrc, index) {
         var uploadedFileWithSameName = getUploadedFileWithSameName(input, f.name);
         if(uploadedFileWithSameName) {
-            deleteUploadedFile(input, uploadedFileWithSameName.attr("id"));
+            var fileId = uploadedFileWithSameName.attr("data-file-id");
+            deleteUploadedFile(input, fileId);
+            deleteFilePreview(input, fileId);
         }
 
         var filesContainer = getFilesContainer(input);

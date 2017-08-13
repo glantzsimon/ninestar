@@ -24,5 +24,6 @@ namespace K9.WebApplication
 			AuthConfig.InitialiseWebSecurity();
 			DataConfig.InitialiseUsersAndRoles();
 		}
+		
 	}
 }

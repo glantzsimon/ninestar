@@ -2,21 +2,29 @@
 using System.Threading;
 using System.Web.Mvc;
 using K9.DataAccess.Models;
-using K9.WebApplication.UnitsOfWork;
+using K9.SharedLibrary.Models;
+using NLog;
 
 namespace K9.WebApplication.Controllers
 {
-	public class NewsController : BaseController<NewsItem>
+	public class NewsController : BaseController
 	{
-		public NewsController(IControllerPackage<NewsItem> controllerPackage)
-			: base(controllerPackage)
+		private readonly IRepository<NewsItem> _newsRepository;
+
+		public NewsController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IRepository<NewsItem> newsRepository)
+			: base(logger, dataSetsHelper, roles)
 		{
+			_newsRepository = newsRepository;
 		}
-		
-		public override ActionResult Index()
+
+		public ActionResult Index()
 		{
-			return View(Repository.List().Where(n => n.LanguageCode == Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName).ToList());
+			return View(_newsRepository.List().Where(n => n.LanguageCode == Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName).ToList());
 		}
-		
+
+		public override string GetObjectName()
+		{
+			return typeof(NewsItem).Name;
+		}
 	}
 }

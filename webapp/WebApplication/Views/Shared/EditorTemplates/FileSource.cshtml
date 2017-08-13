@@ -19,9 +19,16 @@
 			<div class="file-preview-container col-lg-3 col-md-4 col-sm-6 col-xs-12" data-file-id="@fileId">
 				<div class="file-thumbnail-container">
 					<div class="preview-thumbnail">
-						<img src="@assetInfo.Src" class="@imgClass">
+						@if (assetInfo.IsImage())
+						{
+							<img src="@assetInfo.Src" class="@imgClass">
+						}
+						else
+						{
+							<div class="preview-document fa fa-file-o"></div>
+						}
 					</div>
-					<div class="image-info">
+					<div class="doc-info">
 						<p>@assetInfo.FileName</p>
 						<samp>(@assetInfo.FileInfo.GetFileSize())</samp>
 						<button type="button" class="file-preview-delete btn btn-xs btn-default" title="@Dictionary.Delete" data-file-id="@fileId" data-file-name="@assetInfo.FileName">
@@ -37,7 +44,7 @@
 <div class="input-group">
 	<label class="input-group-btn">
 		<span class="btn btn-primary btn-file">
-			@Dictionary.Browse&hellip; @Html.TextBoxFor(model => model.PostedFile, new { @class = "file-upload", type = "file", style = "display: none;", accept = Model.GetAcceptedFileExtensionsList(), multiple = "multiple" })
+			@Dictionary.Browse&hellip; @Html.TextBoxFor(model => model.PostedFile, new { @class = "file-upload", type = "file", style = "display: none;",  multiple = "multiple" })
 		</span>
 	</label>
 	<input type="text" class="form-control file-label" readonly />

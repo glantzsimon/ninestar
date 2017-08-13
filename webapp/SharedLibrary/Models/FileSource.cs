@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Web;
 using K9.SharedLibrary.Enums;
 using K9.SharedLibrary.Extensions;
+using K9.SharedLibrary.Helpers;
 
 namespace K9.SharedLibrary.Models
 {
@@ -23,16 +24,10 @@ namespace K9.SharedLibrary.Models
 			switch (Filter)
 			{
 				case EFilesSourceFilter.Images:
-					return new List<string>()
-					{
-						".png", ".jpg", ".jpeg", ".bmp", ".gif", ".tiff"
-					};
+					return HelperMethods.GetImageFileExtensions();
 
 				case EFilesSourceFilter.Videos:
-					return new List<string>()
-					{
-						".mov", ".mp4"
-					};
+					return HelperMethods.GetVideoFileExtensions();
 
 				default:
 					return new List<string>();

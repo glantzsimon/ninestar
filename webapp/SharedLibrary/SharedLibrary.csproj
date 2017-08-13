@@ -113,6 +113,7 @@
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\ConfigHelper.cs" />
     <Compile Include="Helpers\ContentHelper.cs" />
+    <Compile Include="Helpers\HelperMethods.cs" />
     <Compile Include="Helpers\FileSourceHelper.cs" />
     <Compile Include="Helpers\IFileSourceHelper.cs" />
     <Compile Include="Helpers\IMailer.cs" />

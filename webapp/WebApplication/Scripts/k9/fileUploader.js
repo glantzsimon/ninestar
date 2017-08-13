@@ -26,8 +26,9 @@ function fileUploader(config) {
 
     function getUploadedFileWithSameName(el, fileName) {
         var container = getFilesContainer(el);
-        var uploadedFile = container.find("input.uploaded-file[value='" + fileName + "']");
-        var isDeleted = container.find("input.uploaded-file-deleted[data-file-name='" + fileName + "'][value=true]").length;
+        var htmlEncodedFileName = $.fn.htmlEncode(fileName);
+        var uploadedFile = container.find("input.uploaded-file[value='" + htmlEncodedFileName + "']");
+        var isDeleted = container.find("input.uploaded-file-deleted[data-file-name='" + htmlEncodedFileName + "'][value=true]").length;
         return uploadedFile.length && !isDeleted ? uploadedFile : false;
     }
 
@@ -41,6 +42,49 @@ function fileUploader(config) {
         });
     }
 
+    function displayFile(input, file, type, data) {
+        var filesContainer = getFilesContainer(input);
+    
+        var fileContainerDiv = $(document.createElement("DIV"));
+        fileContainerDiv.attr("class", "file-preview-container col-lg-3 col-md-4 col-sm-6 col-xs-12 file-preview-new");
+
+        var fileId = $.fn.createGuid();
+        fileContainerDiv.attr("data-file-id", fileId);
+
+        var fileThumbnailContainerDiv = $(document.createElement("DIV"));
+        fileThumbnailContainerDiv.attr("class", "file-thumbnail-container");
+
+        var fileContainer = $(document.createElement("DIV"));
+        fileContainer.attr("class", "preview-thumbnail");
+
+        var docInfo = $(document.createElement("DIV"));
+        docInfo.attr("class", "doc-info");
+        docInfo.html("<p>" + file.name + "</p>" +
+            "<samp>(" + $.fn.formatBytes(file.size) + ")</samp>" +
+            '<i class="glyphicon glyphicon-upload file-preview-upload"></i>');
+
+        if (type === "image") {
+            var img = $(document.createElement("IMG"));
+            if (data.height > data.width) {
+                img.attr("class", "portrait");
+            }
+            img.attr("src", data.src);
+
+            fileContainer.append(img);
+            fileThumbnailContainerDiv.append(fileContainer, docInfo);
+        } else {
+            var documentDiv = $(document.createElement("DIV"));
+            documentDiv.setAttribute("class", "preview-document fa fa-file-o");
+            fileContainer.append(documentDiv);
+            fileThumbnailContainerDiv.append(fileContainer, docInfo);
+        }
+        
+        fileContainerDiv.append(fileThumbnailContainerDiv);
+        filesContainer.append(fileContainerDiv);
+
+        bindButtonEvents();
+    }
+
     function loadFile(input, f, fileSrc, index) {
         var uploadedFileWithSameName = getUploadedFileWithSameName(input, f.name);
         if(uploadedFileWithSameName) {
@@ -49,42 +93,15 @@ function fileUploader(config) {
             deleteFilePreview(input, fileId);
         }
 
-        var filesContainer = getFilesContainer(input);
-        var image = new Image;
-
-        image.onload = function () {
-            var fileContainerDiv = $(document.createElement("DIV"));
-            fileContainerDiv.attr("class", "file-preview-container col-lg-3 col-md-4 col-sm-6 col-xs-12 file-preview-new");
-            
-            var fileId = $.fn.createGuid();
-            fileContainerDiv.attr("data-file-id", fileId);
-
-            var fileThumbnailContainerDiv = $(document.createElement("DIV"));
-            fileThumbnailContainerDiv.attr("class", "file-thumbnail-container");
-
-            var fileContainer = $(document.createElement("DIV"));
-            fileContainer.attr("class", "preview-thumbnail");
-
-            var img = $(document.createElement("IMG"));
-            if (image.height > image.width) {
-                img.attr("class", "portrait");
-            }
-            img.attr("src", image.src);
-
-            var imageInfo = $(document.createElement("DIV"));
-            imageInfo.attr("class", "image-info");
-            imageInfo.html("<p>" + f.name + "</p>" +
-											   "<samp>(" + $.fn.formatBytes(f.size) + ")</samp>" +
-											   '<i class="glyphicon glyphicon-upload file-preview-upload"></i>');
-
-            fileContainer.append(img);
-            fileThumbnailContainerDiv.append(fileContainer, imageInfo);
-            fileContainerDiv.append(fileThumbnailContainerDiv);
-            filesContainer.append(fileContainerDiv);
-
-            bindButtonEvents();
-        };
-        image.src = fileSrc;
+        if ($.fn.isImage(f.name)) {
+            var image = new Image;
+            image.onload = function() {
+                displayFile(input, f, "image", image);
+            };
+            image.src = fileSrc;
+        } else {
+            displayFile(input, f, "file");
+        }
     }
 
     function loadFiles(input) {

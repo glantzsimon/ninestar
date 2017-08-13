@@ -37,7 +37,7 @@
 	width: 200px;
 	overflow: hidden;
 }
-.upload-file-preview div.preview-thumbnail img {
+.upload-file-preview div.preview-thumbnail img, .upload-file-preview div.preview-thumbnail .preview-document {
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -61,11 +61,14 @@
 	top: auto !important;
 	color: #22BB44;
 }
-.image-info {
+.doc-info {
 	padding-top: 10px;
 }
-.image-info p {
+.doc-info p {
 	height: 12px;
+}
+.preview-document {
+	background: blue;
 }
 
 @media (max-width:760px) {

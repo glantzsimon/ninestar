@@ -74,7 +74,7 @@ function fileUploader(config) {
             fileThumbnailContainerDiv.append(fileContainer, docInfo);
         } else {
             var documentDiv = $(document.createElement("DIV"));
-            documentDiv.setAttribute("class", "preview-document fa fa-file-o");
+            documentDiv.attr("class", "preview-document fa fa-file-o");
             fileContainer.append(documentDiv);
             fileThumbnailContainerDiv.append(fileContainer, docInfo);
         }

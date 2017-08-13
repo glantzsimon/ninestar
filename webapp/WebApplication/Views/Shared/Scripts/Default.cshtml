@@ -46,7 +46,7 @@
 		};
 
 		$.fn.isImage = function(filename) {
-			return [@JsonConvert.SerializeObject(HelperMethods.GetImageFileExtensions())].contains($.fn.getFileExtension(filename));
+			return @(MvcHtmlString.Create(Json.Encode(HelperMethods.GetImageFileExtensions().ToArray()))).indexOf($.fn.getFileExtension(filename)) >= 0;
 		};
 
 		bootstrapControls({

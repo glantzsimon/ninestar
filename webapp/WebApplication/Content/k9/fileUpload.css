@@ -2,7 +2,8 @@
 	display: none;
 	width: 100%;
 	padding: 0 !important;
-	margin-bottom: 1em;
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
 }
 .upload-file-preview div.file-preview-container {
 	margin: 0;

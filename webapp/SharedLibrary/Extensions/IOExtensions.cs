@@ -33,7 +33,7 @@ namespace K9.SharedLibrary.Extensions
 
 		public static string GetFileExtension(this string fileName)
 		{
-			return string.Format(".{[0}", fileName.Split('.').Last());
+			return string.Format(".{0}", fileName.Split('.').Last());
 		}
 	}
 }

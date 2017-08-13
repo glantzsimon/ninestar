@@ -576,3 +576,11 @@ img.img-responsive {
 .btn-file {
 	margin-top: 0 !important;
 }
+.news-item-title {
+	margin-bottom: 8px;
+	border-bottom: 1px solid #d9d9d9;
+}
+.news-item-title  p {
+	color: black;
+	margin: 0;
+}

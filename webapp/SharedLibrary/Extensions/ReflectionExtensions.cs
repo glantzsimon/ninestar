@@ -96,6 +96,11 @@ namespace K9.SharedLibrary.Extensions
 			return items.ToList();
 		}
 
+		public static object GetProperty(this object obj, PropertyInfo propertyInfo)
+		{
+			return propertyInfo.GetValue(obj, null);
+		}
+
 		public static object GetProperty(this object obj, string propertyName)
 		{
 			return obj.GetType().InvokeMember(propertyName, BindingFlags.GetProperty, null, obj, new object[] { });

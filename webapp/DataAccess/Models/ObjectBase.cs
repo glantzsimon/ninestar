@@ -211,16 +211,20 @@ namespace K9.DataAccess.Models
 			var fileSourceProperties = GetType().GetProperties().Where(p => p.PropertyType == typeof(FileSource)).ToList();
 			foreach (var propertyInfo in fileSourceProperties)
 			{
-				var newFileSource = Activator.CreateInstance<FileSource>();
+				var fileSource = (FileSource)this.GetProperty(propertyInfo);
+				if (fileSource == null)
+				{
+					fileSource = Activator.CreateInstance<FileSource>();
+					this.SetProperty(propertyInfo, fileSource);
+				}
+
 				var info = propertyInfo.GetAttribute<FileSourceInfo>();
 				if (info == null)
 				{
 					throw new FileSourceFilePathNotSpecifiedException();
 				}
-				newFileSource.Filter = info.Filter;
-				newFileSource.PathToFiles = string.Join("/", info.PathToFiles, GetType().Name, Id.ToString());
-
-				this.SetProperty(propertyInfo, newFileSource);
+				fileSource.Filter = info.Filter;
+				fileSource.PathToFiles = string.Join("/", info.PathToFiles, GetType().Name, Id.ToString());
 			}
 		}
 

@@ -3,23 +3,26 @@
 @{
 }
 <div class="upload-file-preview container">
-	@for (int i = 0; i < Model.UploadedFiles.Count; i++)
+	@if (Model.UploadedFiles != null)
 	{
-		var uploadedFile = Model.UploadedFiles[i];		
-		<div class="file-preview-container col-lg-3 col-md-4 col-sm-6 col-xs-12">
-			<div class="file-thumbnail-container">
-				<div class="preview-thumbnail">
-					<img src="@item.Src">
-				</div>
-				<div class="image-info">
-					<p>@item.FileName</p>
-					<samp>(@item.FileInfo.GetFileSize())</samp>
-					<button type="button" class="file-preview-delete btn btn-xs btn-default" title="@Dictionary.Delete" data-index="@i">
-						<i class="glyphicon glyphicon-trash text-danger"></i>
-					</button>
+		for (int i = 0; i < Model.UploadedFiles.Count; i++)
+		{
+			var uploadedFile = Model.UploadedFiles[i];
+			<div class="file-preview-container col-lg-3 col-md-4 col-sm-6 col-xs-12">
+				<div class="file-thumbnail-container">
+					<div class="preview-thumbnail">
+						<img src="@uploadedFile.Src">
+					</div>
+					<div class="image-info">
+						<p>@uploadedFile.FileName</p>
+						<samp>(@uploadedFile.FileInfo.GetFileSize())</samp>
+						<button type="button" class="file-preview-delete btn btn-xs btn-default" title="@Dictionary.Delete" data-index="@i">
+							<i class="glyphicon glyphicon-trash text-danger"></i>
+						</button>
+					</div>
 				</div>
 			</div>
-		</div>
+		}
 	}
 </div>
 @Html.LabelFor(model => model)

@@ -27,7 +27,7 @@ namespace K9.SharedLibrary.Extensions
 				order++;
 				length = length / 1024;
 			}
-			return String.Format("{0:0.##} {1}", length, sizes[order]);
+			return String.Format("{0:0.0##} {1}", length, sizes[order]);
 		}
 	}
 }

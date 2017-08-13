@@ -73,7 +73,7 @@ namespace K9.SharedLibrary.Helpers
 			if (fileSource.UploadedFiles != null)
 			{
 				var filesToDelete = ContentHelper.GetFiles(fileSource.PathToFiles)
-					.Where(f => !fileSource.UploadedFiles.Select(a => a.FileName).Contains(f.FileName)).ToList();
+					.Where(f => fileSource.UploadedFiles.Where(u => u.IsDeleted).Select(a => a.FileName).Contains(f.FileName)).ToList();
 				filesToDelete.ForEach(f =>
 				{
 					try

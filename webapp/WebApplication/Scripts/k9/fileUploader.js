@@ -15,8 +15,8 @@ function fileUploader(config) {
     }
 
     function deleteUploadedFile(index) {
-        var uploadedFile = $("input.uploaded-file[data-file-index=" + index + "]");
-        uploadedFile.remove();
+        var uploadedFile = $("input.uploaded-file-deleted[data-file-index=" + index + "]");
+        uploadedFile.val(true);
     }
 
     function uploadedFileExists(fileName) {

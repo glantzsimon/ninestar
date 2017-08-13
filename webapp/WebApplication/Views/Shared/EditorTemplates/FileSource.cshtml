@@ -12,6 +12,7 @@
 		for (int i = 0; i < Model.UploadedFiles.Count; i++)
 		{
 			@Html.HiddenFor(model => Model.UploadedFiles[i].FileName, new { @class = "uploaded-file", data_file_index = i })
+			@Html.HiddenFor(model => Model.UploadedFiles[i].IsDeleted, new { @class = "uploaded-file-deleted", data_file_index = i })
 				
 			var assetInfo = Model.UploadedFiles[i].AssetInfo;
 			var imgClass = assetInfo.IsImage() && assetInfo.ImageInfo.IsPortrait() ? "portrait" : string.Empty;

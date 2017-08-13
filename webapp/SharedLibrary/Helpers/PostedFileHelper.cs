@@ -1,10 +1,9 @@
-﻿
-using System;
+﻿using System;
 using System.IO;
 using System.Web;
 using K9.SharedLibrary.Extensions;
 
-namespace K9.WebApplication.Helpers
+namespace K9.SharedLibrary.Helpers
 {
 	public class PostedFileHelper : IPostedFileHelper
 	{

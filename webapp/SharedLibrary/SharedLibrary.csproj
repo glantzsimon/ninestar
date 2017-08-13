@@ -113,9 +113,13 @@
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\ConfigHelper.cs" />
     <Compile Include="Helpers\ContentHelper.cs" />
+    <Compile Include="Helpers\FileSourceHelper.cs" />
+    <Compile Include="Helpers\IFileSourceHelper.cs" />
     <Compile Include="Helpers\IMailer.cs" />
     <Compile Include="Helpers\ImageProcessor.cs" />
+    <Compile Include="Helpers\IPostedFileHelper.cs" />
     <Compile Include="Helpers\Mailer.cs" />
+    <Compile Include="Helpers\PostedFileHelper.cs" />
     <Compile Include="Helpers\TemplateProcessor.cs" />
     <Compile Include="Authentication\RoleNames.cs" />
     <Compile Include="Helpers\TestHtmlHelper.cs" />

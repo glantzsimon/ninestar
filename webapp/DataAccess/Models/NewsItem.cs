@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 using K9.DataAccess.Attributes;
 using K9.DataAccess.Enums;

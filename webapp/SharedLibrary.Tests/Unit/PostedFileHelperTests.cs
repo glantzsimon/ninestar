@@ -2,11 +2,11 @@
 using System.IO;
 using System.Web;
 using K9.SharedLibrary.Extensions;
-using K9.WebApplication.Helpers;
+using K9.SharedLibrary.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
-namespace K9.WebApplication.Tests.Unit.Helpers
+namespace K9.SharedLibrary.Tests.Unit
 {
 	[TestClass]
 	public class PostedFileHelperTests

@@ -117,7 +117,6 @@
     <Compile Include="Unit\ExtensionTests.cs" />
     <Compile Include="Unit\GlobalisationTests.cs" />
     <Compile Include="Unit\Helpers\BootstrapButtonTests.cs" />
-    <Compile Include="Unit\Helpers\PostedFileHelperTests.cs" />
     <Compile Include="Unit\ModelStateTests.cs" />
     <Compile Include="Unit\DataTableOptionsTests.cs" />
     <Compile Include="Unit\Helpers\DataTableAjaxHelperTests.cs" />

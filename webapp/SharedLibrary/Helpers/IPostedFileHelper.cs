@@ -1,8 +1,6 @@
-﻿
+﻿using System.Web;
 
-using System.Web;
-
-namespace K9.WebApplication.Helpers
+namespace K9.SharedLibrary.Helpers
 {
 	public interface IPostedFileHelper
 	{

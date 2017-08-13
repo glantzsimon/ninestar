@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 using K9.DataAccess.Attributes;
 using K9.DataAccess.Enums;
 using K9.DataAccess.Extensions;
@@ -37,7 +38,8 @@ namespace K9.DataAccess.Models
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BodyLabel)]
 		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 		[StringLength(Int32.MaxValue)]
-		[DataType(DataType.MultilineText)]
+		[DataType(DataType.Html)]
+		[AllowHtml]
 		public string Body { get; set; }
 
 		[FileSourceInfo("Images/news/upload", Filter = EFilesSourceFilter.Images)]

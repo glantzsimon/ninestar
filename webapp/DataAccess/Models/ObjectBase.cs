@@ -8,6 +8,7 @@ using System.Linq;
 using System.Reflection;
 using System.Web.Routing;
 using K9.DataAccess.Attributes;
+using K9.DataAccess.Extensions;
 using K9.Globalisation;
 using K9.SharedLibrary.Attributes;
 using K9.SharedLibrary.Authentication;
@@ -195,6 +196,11 @@ namespace K9.DataAccess.Models
 			}
 		}
 
+		public List<PropertyInfo> GetFileSourceProperties()
+		{
+			return GetType().GetProperties().Where(p => p.PropertyType == typeof(FileSource)).ToList();
+		}
+
 		private void UpdateNameField()
 		{
 			if (GetType().HasAttribute(typeof(AutoGenerateNameAttribute)))
@@ -207,14 +213,9 @@ namespace K9.DataAccess.Models
 			}
 		}
 
-		public List<PropertyInfo> GetFileSourceProperties()
-		{
-			return GetType().GetProperties().Where(p => p.PropertyType == typeof(FileSource)).ToList();
-		}
-
 		private void InitFileSources()
 		{
-			var fileSourceProperties = GetFileSourceProperties();
+			var fileSourceProperties = this.GetFileSourceProperties();
 			foreach (var propertyInfo in fileSourceProperties)
 			{
 				var fileSource = (FileSource)this.GetProperty(propertyInfo);

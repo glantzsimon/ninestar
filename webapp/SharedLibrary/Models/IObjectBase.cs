@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Reflection;
 using System.Web.Routing;
 
@@ -14,7 +13,7 @@ namespace K9.SharedLibrary.Models
 		string GetLocalisedDescription();
 		void UpdateAuditFields();
 		void UpdateName();
-		RouteValueDictionary GetForeignKeyFilterRouteValues();
 		List<PropertyInfo> GetFileSourceProperties();
+		RouteValueDictionary GetForeignKeyFilterRouteValues();
 	}
 }

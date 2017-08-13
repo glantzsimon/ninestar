@@ -5,6 +5,7 @@ using System.Net;
 using System.Reflection;
 using System.Threading;
 using System.Web.Mvc;
+using K9.DataAccess.Extensions;
 using K9.DataAccess.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Authentication;
@@ -724,7 +725,7 @@ namespace K9.WebApplication.Controllers
 		{
 			foreach (var fileSourcePropertyInfo in item.GetFileSourceProperties())
 			{
-				var fileSource = this.GetProperty(fileSourcePropertyInfo) as FileSource;
+				var fileSource = item.GetProperty(fileSourcePropertyInfo) as FileSource;
 				FileSourceHelper.LoadFiles(fileSource, false);
 			}
 		}

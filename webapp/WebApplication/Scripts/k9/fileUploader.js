@@ -1,8 +1,11 @@
 function fileUploader(config) {
-    var filesContainer = $("div.upload-file-preview");
-    
-    function deleteFilePreview(index) {
-        var preview = $("div.file-preview-container[data-file-index=" + index + "]");
+    function getFilesContainer(el) {
+        return $(el).closest("form").find(".upload-file-preview");
+    }
+
+    function deleteFilePreview(el, id) {
+        var container = getFilesContainer(el);
+        var preview = container.find("div.file-preview-container[data-file-id=" + id + "]");
         if (preview) {
             preview.fadeOut(50, function () {
                 preview.remove();
@@ -10,46 +13,49 @@ function fileUploader(config) {
         }
     }
 
-    function removeNewFiles() {
-        $("div.file-preview-new").remove();
+    function removeNewFiles(el) {
+        var container = getFilesContainer(el);
+        container.find("div.file-preview-new").remove();
     }
 
-    function deleteUploadedFile(index) {
-        var uploadedFile = $("input.uploaded-file-deleted[data-file-index=" + index + "]");
+    function deleteUploadedFile(el, id) {
+        var container = getFilesContainer(el);
+        var uploadedFile = container.find("input.uploaded-file-deleted[data-file-id=" + id + "]");
         uploadedFile.val(true);
     }
 
-    function uploadedFileExists(fileName) {
-        var uploadedFiles = $(".uploaded-file");
-        for (var i = 0; i < uploadedFiles.length; i++) {
-            var uploadedFile = uploadedFiles[i];
-            if (uploadedFile && $(uploadedFile).val() === fileName) {
-                return true;
-            }
-        }
+    function getUploadedFileWithSameName(el, fileName) {
+        var container = getFilesContainer(el);
+        var uploadedFile = container.find("input.uploaded-file[value='" + fileName + "']");
+        var isDeleted = container.find("input.uploaded-file-deleted[data-file-name='" + fileName + "'][value=true]").length;
+        return uploadedFile.length && !isDeleted ? uploadedFile : false;
     }
 
     function bindButtonEvents() {
         $("button.file-preview-delete").click(function () {
             var el = $(this);
-            var index = el.attr("data-file-index");
+            var id = el.attr("data-file-id");
 
-            deleteFilePreview(index);
-            deleteUploadedFile(index);
+            deleteFilePreview(el, id);
+            deleteUploadedFile(el, id);
         });
     }
 
-    function loadFile(f, fileSrc, index, fileCount) {
-        if (uploadedFileExists(f.name)) {
-            return;
+    function loadFile(input, f, fileSrc, index) {
+        var uploadedFileWithSameName = getUploadedFileWithSameName(input, f.name);
+        if(uploadedFileWithSameName) {
+            deleteUploadedFile(input, uploadedFileWithSameName.attr("id"));
         }
 
+        var filesContainer = getFilesContainer(input);
         var image = new Image;
-        var displayIndex = parseInt($(".uploaded-file-count").val()) + index;
+
         image.onload = function () {
             var fileContainerDiv = $(document.createElement("DIV"));
             fileContainerDiv.attr("class", "file-preview-container col-lg-3 col-md-4 col-sm-6 col-xs-12 file-preview-new");
-            fileContainerDiv.attr("data-file-index", displayIndex);
+            
+            var fileId = $.fn.createGuid();
+            fileContainerDiv.attr("data-file-id", fileId);
 
             var fileThumbnailContainerDiv = $(document.createElement("DIV"));
             fileThumbnailContainerDiv.attr("class", "file-thumbnail-container");
@@ -80,20 +86,21 @@ function fileUploader(config) {
     }
 
     function loadFiles(input) {
+        var container = getFilesContainer(input);
         if (input.files) {
-            removeNewFiles();
+            removeNewFiles(container);
             var fileCount = input.files.length;
             for (var i = 0; i < fileCount; i++) {
                 var file = input.files[i];
                 if (file) {
                     var reader = new FileReader();
-                    filesContainer.fadeIn();
+                    container.fadeIn();
 
-                    reader.onload = (function (f, index, count) {
+                    reader.onload = (function (inp, f, index) {
                         return function (e) {
-                            loadFile(f, e.target.result, index, count);
+                            loadFile(inp, f, e.target.result, index);
                         };
-                    })(file, i, fileCount);
+                    })(input, file, i);
 
                     reader.readAsDataURL(file);
                 }
@@ -121,7 +128,8 @@ function fileUploader(config) {
 
     function init() {
         $("input.file-upload").change(function () {
-            filesContainer.show();
+            var input = $(this);
+            getFilesContainer(input).show();
             loadFiles(this);
         });
         initFileInputs();

@@ -13,11 +13,6 @@ namespace K9.SharedLibrary.Models
 		public List<HttpPostedFileBase> PostedFile { get; set; }
 		public List<UploadedFile> UploadedFiles { get; set; }
 
-		public int UploadedFileCount
-		{
-			get { return UploadedFiles == null ? 0 : UploadedFiles.Count; }
-		}
-
 		public FileSource()
 		{
 			UploadedFiles = new List<UploadedFile>();

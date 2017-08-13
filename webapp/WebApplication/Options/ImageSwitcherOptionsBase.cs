@@ -6,7 +6,6 @@ using System.Web.Script.Serialization;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Enums;
-using K9.WebApplication.Helpers;
 
 namespace K9.WebApplication.Options
 {
@@ -14,7 +13,7 @@ namespace K9.WebApplication.Options
 	public abstract class ImageSwitcherOptionsBase
 	{
 		private readonly string _pathToImages;
-		private List<IAssetInfo> _images;
+		private List<AssetInfo> _images;
 
 		protected ImageSwitcherOptionsBase(string pathToImages)
 		{
@@ -33,7 +32,7 @@ namespace K9.WebApplication.Options
 			get { return _pathToImages; }
 		}
 
-		public List<IAssetInfo> Images
+		public List<AssetInfo> Images
 		{
 			get { return _images; }
 		}

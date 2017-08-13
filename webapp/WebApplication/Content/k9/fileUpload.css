@@ -51,11 +51,15 @@
 	width: 100%;
 	height: auto;
 }
-.file-preview-delete {
+.file-preview-delete, .file-preview-upload {
 	position: absolute;
 	right: 23px;
-	bottom: 12px;
+	bottom: 12px !important;
 	width: auto !important;
+}
+.file-preview-upload {
+	top: auto !important;
+	color: #22BB44;
 }
 .image-info {
 	padding-top: 10px;

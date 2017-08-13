@@ -1,28 +1,30 @@
 ﻿@using K9.SharedLibrary.Extensions
 @model K9.SharedLibrary.Models.FileSource
 @{
-	var displayStyle = Model.UploadedFiles.Any() ? string.Empty : "display: none;";
+	var displayStyle = Model.UploadedFiles.Any() ? "display: block;" : "display: none;";
 }
 
-@Html.HiddenFor(model => model.UploadedFileCount, new { @class = "uploaded-filed-count"})
+@Html.HiddenFor(model => model.UploadedFileCount, new { @class = "uploaded-file-count"})
 
 <div class="upload-file-preview container" style="@displayStyle">
 	@if (Model.UploadedFiles != null)
 	{
 		for (int i = 0; i < Model.UploadedFiles.Count; i++)
 		{
-			var uploadedFile = Model.UploadedFiles[i];
-			var imgClass = uploadedFile.IsImage() && uploadedFile.ImageInfo.IsPortrait() ? "portrait" : string.Empty;
+			@Html.HiddenFor(model => Model.UploadedFiles[i].FileName, new { @class = "uploaded-file", data_file_index = i })
+				
+			var assetInfo = Model.UploadedFiles[i].AssetInfo;
+			var imgClass = assetInfo.IsImage() && assetInfo.ImageInfo.IsPortrait() ? "portrait" : string.Empty;
 			
 			<div class="file-preview-container col-lg-3 col-md-4 col-sm-6 col-xs-12" data-file-index="@i">
 				<div class="file-thumbnail-container">
 					<div class="preview-thumbnail">
-						<img src="@uploadedFile.Src" class="@imgClass">
+						<img src="@assetInfo.Src" class="@imgClass">
 					</div>
 					<div class="image-info">
-						<p>@uploadedFile.FileName</p>
-						<samp>(@uploadedFile.FileInfo.GetFileSize())</samp>
-						<button type="button" class="file-preview-delete btn btn-xs btn-default" title="@Dictionary.Delete" data-file-index="@i">
+						<p>@assetInfo.FileName</p>
+						<samp>(@assetInfo.FileInfo.GetFileSize())</samp>
+						<button type="button" class="file-preview-delete btn btn-xs btn-default" title="@Dictionary.Delete" data-file-index="@i" data-file-name="@assetInfo.FileName">
 							<i class="glyphicon glyphicon-trash text-danger"></i>
 						</button>
 					</div>

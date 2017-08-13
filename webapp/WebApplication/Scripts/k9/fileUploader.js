@@ -1,32 +1,54 @@
-function fileUploader(config)
-{
+function fileUploader(config) {
     var filesContainer = $("div.upload-file-preview");
-
-    function deleteFilePreview(index)
-    {
+    
+    function deleteFilePreview(index) {
         var preview = $("div.file-preview-container[data-file-index=" + index + "]");
-        preview.fadeOut(50, function() {
-            preview.remove();
-        });
+        if (preview) {
+            preview.fadeOut(50, function () {
+                preview.remove();
+            });
+        }
     }
 
-    function bindButtonEvents()
-    {
-        $("button.file-preview-delete").click(function ()
-        {
-            var index = $(this).attr("data-file-index");
+    function removeNewFiles() {
+        $("div.file-preview-new").remove();
+    }
+
+    function deleteUploadedFile(index) {
+        var uploadedFile = $("input.uploaded-file[data-file-index=" + index + "]");
+        uploadedFile.remove();
+    }
+
+    function uploadedFileExists(fileName) {
+        var uploadedFiles = $(".uploaded-file");
+        for (var i = 0; i < uploadedFiles.length; i++) {
+            var uploadedFile = uploadedFiles[i];
+            if (uploadedFile && $(uploadedFile).val() === fileName) {
+                return true;
+            }
+        }
+    }
+
+    function bindButtonEvents() {
+        $("button.file-preview-delete").click(function () {
+            var el = $(this);
+            var index = el.attr("data-file-index");
+
             deleteFilePreview(index);
+            deleteUploadedFile(index);
         });
     }
 
-    function loadFile(f, fileSrc, index, total)
-    {
+    function loadFile(f, fileSrc, index, fileCount) {
+        if (uploadedFileExists(f.name)) {
+            return;
+        }
+
         var image = new Image;
-        var displayIndex = $(".uploaded-file-count").val() + index;
-        image.onload = function ()
-        {
+        var displayIndex = parseInt($(".uploaded-file-count").val()) + index;
+        image.onload = function () {
             var fileContainerDiv = $(document.createElement("DIV"));
-            fileContainerDiv.attr("class", "file-preview-container col-lg-3 col-md-4 col-sm-6 col-xs-12");
+            fileContainerDiv.attr("class", "file-preview-container col-lg-3 col-md-4 col-sm-6 col-xs-12 file-preview-new");
             fileContainerDiv.attr("data-file-index", displayIndex);
 
             var fileThumbnailContainerDiv = $(document.createElement("DIV"));
@@ -36,8 +58,7 @@ function fileUploader(config)
             fileContainer.attr("class", "preview-thumbnail");
 
             var img = $(document.createElement("IMG"));
-            if (image.height > image.width)
-            {
+            if (image.height > image.width) {
                 img.attr("class", "portrait");
             }
             img.attr("src", image.src);
@@ -46,40 +67,33 @@ function fileUploader(config)
             imageInfo.attr("class", "image-info");
             imageInfo.html("<p>" + f.name + "</p>" +
 											   "<samp>(" + $.fn.formatBytes(f.size) + ")</samp>" +
-											   '<button type="button" class="file-preview-delete btn btn-xs btn-default" title="' + config.deleteText + '" data-file-index="' + displayIndex + '"><i class="glyphicon glyphicon-trash text-danger"></i></button>');
+											   '<i class="glyphicon glyphicon-upload file-preview-upload"></i>');
 
             fileContainer.append(img);
             fileThumbnailContainerDiv.append(fileContainer, imageInfo);
             fileContainerDiv.append(fileThumbnailContainerDiv);
             filesContainer.append(fileContainerDiv);
 
-            if (index === total - 1)
-            {
-                bindButtonEvents();
-            }
+            bindButtonEvents();
         };
         image.src = fileSrc;
     }
 
-    function loadFiles(input)
-    {
-        if (input.files)
-        {
-            for (var i = 0; i < input.files.length; i++)
-            {
+    function loadFiles(input) {
+        if (input.files) {
+            removeNewFiles();
+            var fileCount = input.files.length;
+            for (var i = 0; i < fileCount; i++) {
                 var file = input.files[i];
-                if (file)
-                {
+                if (file) {
                     var reader = new FileReader();
                     filesContainer.fadeIn();
 
-                    reader.onload = (function (f)
-                    {
-                        return function (e)
-                        {
-                            loadFile(f, e.target.result, i, input.files.length);
+                    reader.onload = (function (f, index, count) {
+                        return function (e) {
+                            loadFile(f, e.target.result, index, count);
                         };
-                    })(file);
+                    })(file, i, fileCount);
 
                     reader.readAsDataURL(file);
                 }
@@ -87,21 +101,17 @@ function fileUploader(config)
         }
     }
 
-    function initFileInputs()
-    {
-        $(':file').on('fileselect', function (event, numFiles, fileName)
-        {
+    function initFileInputs() {
+        $(':file').on('fileselect', function (event, numFiles, fileName) {
             var fileDescription = numFiles > 1 ? numFiles + ' ' + config.filesSelectedText : fileName;
             var textInput = $(this).parents('.input-group').find(':text.file-label');
 
-            if (textInput.length)
-            {
+            if (textInput.length) {
                 textInput.val(fileDescription);
             }
         });
 
-        $(document).on('change', ':file', function ()
-        {
+        $(document).on('change', ':file', function () {
             var input = $(this);
             var numFiles = input.get(0).files ? input.get(0).files.length : 1;
             var fileName = input.val().replace(/\\/g, '/').replace(/.*\//, '');
@@ -109,8 +119,7 @@ function fileUploader(config)
         });
     }
 
-    function init()
-    {
+    function init() {
         $("input.file-upload").change(function () {
             filesContainer.show();
             loadFiles(this);

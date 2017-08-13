@@ -124,6 +124,7 @@
     <Compile Include="Authentication\RoleNames.cs" />
     <Compile Include="Helpers\TestHtmlHelper.cs" />
     <Compile Include="Models\AssetInfo.cs" />
+    <Compile Include="Models\UploadedFile.cs" />
     <Compile Include="Models\FileSource.cs" />
     <Compile Include="Models\Options.cs" />
     <Compile Include="Models\IOptions.cs" />

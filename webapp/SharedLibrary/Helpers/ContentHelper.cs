@@ -16,11 +16,11 @@ namespace K9.SharedLibrary.Helpers
 		/// </summary>
 		/// <param name="relativePath">e.g. Images/home</param>
 		/// <returns></returns>
-		public static List<IAssetInfo> GetFiles(string relativePath)
+		public static List<AssetInfo> GetFiles(string relativePath)
 		{
 			var pathToFiles = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath.ToPathOnDisk());
 			return Directory.GetFiles(pathToFiles)
-				.Select(f => new AssetInfo(f, relativePath)).ToList<IAssetInfo>();
+				.Select(f => new AssetInfo(f, relativePath)).ToList();
 		}
 
 		/// <summary>
@@ -28,7 +28,7 @@ namespace K9.SharedLibrary.Helpers
 		/// </summary>
 		/// <param name="relativePath">e.g. Images/home</param>
 		/// <returns></returns>
-		public static List<IAssetInfo> GetImageFiles(string relativePath)
+		public static List<AssetInfo> GetImageFiles(string relativePath)
 		{
 			return GetFiles(relativePath).Where(name => name.IsImage()).ToList();
 		}
@@ -38,12 +38,12 @@ namespace K9.SharedLibrary.Helpers
 		/// </summary>
 		/// <param name="relativePath">e.g. Images/home</param>
 		/// <returns></returns>
-		public static List<IAssetInfo> GetTextFiles(string relativePath)
+		public static List<AssetInfo> GetTextFiles(string relativePath)
 		{
 			return GetFiles(relativePath).Where(f => f.IsTextFile()).ToList();
 		}
 
-		public static List<IAssetInfo> GetFilesWithExtension(string relativePath, params string[] extensions)
+		public static List<AssetInfo> GetFilesWithExtension(string relativePath, params string[] extensions)
 		{
 			return GetFiles(relativePath).Where(f => f.IsImage()).ToList();
 		}

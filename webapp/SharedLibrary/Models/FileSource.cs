@@ -11,16 +11,16 @@ namespace K9.SharedLibrary.Models
 		public EFilesSourceFilter Filter { get; set; }
 		public string PathToFiles { get; set; }
 		public List<HttpPostedFileBase> PostedFile { get; set; }
-		public List<IAssetInfo> UploadedFiles { get; set; }
+		public List<UploadedFile> UploadedFiles { get; set; }
 
 		public int UploadedFileCount
 		{
-			get { return UploadedFiles.Count; }
+			get { return UploadedFiles == null ? 0 : UploadedFiles.Count; }
 		}
 
 		public FileSource()
 		{
-			UploadedFiles = new List<IAssetInfo>();
+			UploadedFiles = new List<UploadedFile>();
 		}
 
 		public List<string> GetAcceptedFileExtensions()

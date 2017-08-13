@@ -25,7 +25,12 @@ namespace K9.SharedLibrary.Helpers
 			{
 				try
 				{
-					fileSource.UploadedFiles = ContentHelper.GetFiles(fileSource.PathToFiles);
+					fileSource.UploadedFiles = ContentHelper.GetFiles(fileSource.PathToFiles).Select(info =>
+						new UploadedFile
+						{
+							FileName = info.FileName,
+							AssetInfo = info
+						}).ToList();
 				}
 				catch (Exception ex)
 				{
@@ -49,6 +54,7 @@ namespace K9.SharedLibrary.Helpers
 			}
 			UpdateUploadedFiles(fileSource);
 			SavePostedFiles(fileSource);
+			
 		}
 
 		private void SavePostedFiles(FileSource fileSource)
@@ -64,19 +70,22 @@ namespace K9.SharedLibrary.Helpers
 
 		private void UpdateUploadedFiles(FileSource fileSource)
 		{
-			var filesToDelete = ContentHelper.GetFiles(fileSource.PathToFiles)
-				.Where(f => !fileSource.UploadedFiles.Select(a => a.FileName).Contains(f.FileName)).ToList();
-			filesToDelete.ForEach(f =>
+			if (fileSource.UploadedFiles != null)
 			{
-				try
+				var filesToDelete = ContentHelper.GetFiles(fileSource.PathToFiles)
+					.Where(f => !fileSource.UploadedFiles.Select(a => a.FileName).Contains(f.FileName)).ToList();
+				filesToDelete.ForEach(f =>
 				{
-					File.Delete(f.PathOnDisk);
-				}
-				catch (Exception ex)
-				{
-					_logger.Error("UpdateUploadedFiles => could not delete file {0}. {1}", f.FileName, ex.Message);
-				}
-			});
+					try
+					{
+						File.Delete(f.PathOnDisk);
+					}
+					catch (Exception ex)
+					{
+						_logger.Error("UpdateUploadedFiles => could not delete file {0}. {1}", f.FileName, ex.Message);
+					}
+				});
+			}
 		}
 
 		private void CreateDirectory(FileSource fileSource)

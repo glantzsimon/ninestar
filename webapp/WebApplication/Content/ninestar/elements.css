@@ -49,6 +49,6 @@ h2 {
 	line-height: 34px;
 }
 
-form:not(.navbar-form) .btn {
+form:not(.navbar-form) .btn:not(.dropdown-toggle) {
 	margin-top: 6px;
 }

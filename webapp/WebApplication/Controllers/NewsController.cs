@@ -15,7 +15,7 @@ namespace K9.WebApplication.Controllers
 		
 		public override ActionResult Index()
 		{
-			return View(Repository.List().Where(n => n.LanguageCode == Thread.CurrentThread.CurrentUICulture.IetfLanguageTag).ToList());
+			return View(Repository.List().Where(n => n.LanguageCode == Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName).ToList());
 		}
 		
 	}

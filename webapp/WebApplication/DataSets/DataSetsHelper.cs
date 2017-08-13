@@ -1,11 +1,9 @@
 ﻿
 using System;
-using System.Activities.Expressions;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
-using K9.DataAccess.Enums;
 using K9.DataAccess.Extensions;
 using K9.DataAccess.Respositories;
 using K9.SharedLibrary.Models;
@@ -67,7 +65,7 @@ namespace K9.WebApplication.DataSets
 			return new SelectList(GetDataSet<T>(refresh), "Id", "Name", selectedId);
 		}
 
-		public SelectList GetSelectListFromEnum<T>(Enum selectedId, bool refresh = false)
+		public SelectList GetSelectListFromEnum<T>(int selectedId, bool refresh = false)
 		{
 			return new SelectList(GetDataSetFromEnum<T>(refresh), "Id", "Name", selectedId);
 		}

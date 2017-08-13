@@ -2,4 +2,4 @@
 @using K9.WebApplication.Extensions
 @model ELanguage
 
-@Html.BootstrapDropdownFor(model => model, this.GetDropdownData().GetSelectListFromEnum<ELanguage>(Model, true))
+@Html.BootstrapDropdownFor(model => model, this.GetDropdownData().GetSelectListFromEnum<ELanguage>(Convert.ToInt32(Model), true))

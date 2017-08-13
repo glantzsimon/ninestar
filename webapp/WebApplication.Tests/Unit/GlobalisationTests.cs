@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Threading;
 using K9.SharedLibrary.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -16,7 +17,11 @@ namespace K9.WebApplication.Tests.Unit
 			Assert.AreEqual("French", cultureInfo.GetLocaleLanguage());
 		}
 
-		
+		[TestMethod]
+		public void LanguageCode_ShouldBeTwoLetters()
+		{
+			Assert.AreEqual("en", Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName);
+		}
 	}
 
 }

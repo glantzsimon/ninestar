@@ -1,4 +1,4 @@
-﻿form:not(.navbar-form) .btn {
+﻿form:not(.navbar-form):not(.dropdown-toggle) .btn:not(.dropdown-toggle) {
 	margin-top: 6px;
 }
 

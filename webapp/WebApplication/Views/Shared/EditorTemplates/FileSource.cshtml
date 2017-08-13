@@ -44,7 +44,7 @@
 <div class="input-group">
 	<label class="input-group-btn">
 		<span class="btn btn-primary btn-file">
-			@Dictionary.Browse&hellip; @Html.TextBoxFor(model => model.PostedFile, new { @class = "file-upload", type = "file", style = "display: none;",  multiple = "multiple" })
+			@Dictionary.Browse&hellip; @Html.TextBoxFor(model => model.PostedFile, new { @class = "file-upload", type = "file", style = "display: none;",  multiple = "multiple", accept = Model.GetAcceptedFileExtensionsList() })
 		</span>
 	</label>
 	<input type="text" class="form-control file-label" readonly />

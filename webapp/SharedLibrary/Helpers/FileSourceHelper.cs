@@ -54,7 +54,7 @@ namespace K9.SharedLibrary.Helpers
 			}
 			UpdateUploadedFiles(fileSource);
 			SavePostedFiles(fileSource);
-			
+
 		}
 
 		private void SavePostedFiles(FileSource fileSource)
@@ -63,7 +63,10 @@ namespace K9.SharedLibrary.Helpers
 			{
 				if (httpPostedFileBase != null)
 				{
-					_postedFileHelper.SavePostedFileToRelativePath(httpPostedFileBase, fileSource.PathToFiles);
+					if (fileSource.GetAcceptedFileExtensions().Contains(httpPostedFileBase.FileName.GetFileExtension()))
+					{
+						_postedFileHelper.SavePostedFileToRelativePath(httpPostedFileBase, fileSource.PathToFiles);
+					}
 				}
 			}
 		}

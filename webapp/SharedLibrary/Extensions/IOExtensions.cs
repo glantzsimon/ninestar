@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 
 namespace K9.SharedLibrary.Extensions
 {
@@ -28,6 +29,11 @@ namespace K9.SharedLibrary.Extensions
 				length = length / 1024;
 			}
 			return String.Format("{0:0.0##} {1}", length, sizes[order]);
+		}
+
+		public static string GetFileExtension(this string fileName)
+		{
+			return string.Format(".{[0}", fileName.Split('.').Last());
 		}
 	}
 }

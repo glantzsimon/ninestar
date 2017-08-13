@@ -40,22 +40,25 @@ namespace K9.SharedLibrary.Helpers
 
 		public void SaveFilesToDisk(FileSource fileSource, bool createDirectory = false)
 		{
-			if (!Directory.Exists(fileSource.PathToFiles))
+			if (!Directory.Exists(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileSource.PathToFiles)))
 			{
 				if (createDirectory)
 				{
 					CreateDirectory(fileSource);
 				}
 			}
-			SavePostedFiles(fileSource);
 			UpdateUploadedFiles(fileSource);
+			SavePostedFiles(fileSource);
 		}
 
 		private void SavePostedFiles(FileSource fileSource)
 		{
 			foreach (var httpPostedFileBase in fileSource.PostedFile)
 			{
-				_postedFileHelper.SavePostedFileToRelativePath(httpPostedFileBase, fileSource.PathToFiles);
+				if (httpPostedFileBase != null)
+				{
+					_postedFileHelper.SavePostedFileToRelativePath(httpPostedFileBase, fileSource.PathToFiles);
+				}
 			}
 		}
 

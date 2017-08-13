@@ -13,6 +13,16 @@ namespace K9.SharedLibrary.Models
 		public List<HttpPostedFileBase> PostedFile { get; set; }
 		public List<IAssetInfo> UploadedFiles { get; set; }
 
+		public int UploadedFileCount
+		{
+			get { return UploadedFiles.Count; }
+		}
+
+		public FileSource()
+		{
+			UploadedFiles = new List<IAssetInfo>();
+		}
+
 		public List<string> GetAcceptedFileExtensions()
 		{
 			switch (Filter)

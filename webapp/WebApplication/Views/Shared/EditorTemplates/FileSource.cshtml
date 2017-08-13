@@ -1,8 +1,10 @@
 ﻿@using K9.SharedLibrary.Extensions
 @model K9.SharedLibrary.Models.FileSource
 @{
-	var displayStyle = Model.UploadedFiles != null && Model.UploadedFiles.Any() ? string.Empty : "display: none;";
+	var displayStyle = Model.UploadedFiles.Any() ? string.Empty : "display: none;";
 }
+
+@Html.HiddenFor(model => model.UploadedFileCount, new { @class = "uploaded-filed-count"})
 
 <div class="upload-file-preview container" style="@displayStyle">
 	@if (Model.UploadedFiles != null)

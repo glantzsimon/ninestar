@@ -5,8 +5,7 @@ function fileUploader(config)
     function deleteFilePreview(index)
     {
         var preview = $("div.file-preview-container[data-file-index=" + index + "]");
-        preview.fadeOut(function() {
-
+        preview.fadeOut(50, function() {
             preview.remove();
         });
     }
@@ -23,11 +22,12 @@ function fileUploader(config)
     function loadFile(f, fileSrc, index, total)
     {
         var image = new Image;
+        var displayIndex = $(".uploaded-file-count").val() + index;
         image.onload = function ()
         {
             var fileContainerDiv = $(document.createElement("DIV"));
             fileContainerDiv.attr("class", "file-preview-container col-lg-3 col-md-4 col-sm-6 col-xs-12");
-            fileContainerDiv.Attr("data-file-index", index);
+            fileContainerDiv.attr("data-file-index", displayIndex);
 
             var fileThumbnailContainerDiv = $(document.createElement("DIV"));
             fileThumbnailContainerDiv.attr("class", "file-thumbnail-container");
@@ -46,7 +46,7 @@ function fileUploader(config)
             imageInfo.attr("class", "image-info");
             imageInfo.html("<p>" + f.name + "</p>" +
 											   "<samp>(" + $.fn.formatBytes(f.size) + ")</samp>" +
-											   '<button type="button" class="file-preview-delete btn btn-xs btn-default" title="' + config.deleteText + '" data-file-index="' + index + '"><i class="glyphicon glyphicon-trash text-danger"></i></button>');
+											   '<button type="button" class="file-preview-delete btn btn-xs btn-default" title="' + config.deleteText + '" data-file-index="' + displayIndex + '"><i class="glyphicon glyphicon-trash text-danger"></i></button>');
 
             fileContainer.append(img);
             fileThumbnailContainerDiv.append(fileContainer, imageInfo);
@@ -111,8 +111,8 @@ function fileUploader(config)
 
     function init()
     {
-        $("input.file-upload").change(function ()
-        {
+        $("input.file-upload").change(function () {
+            filesContainer.show();
             loadFiles(this);
         });
         initFileInputs();

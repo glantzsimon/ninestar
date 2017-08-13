@@ -713,7 +713,7 @@ namespace K9.WebApplication.Controllers
 		{
 			foreach (var fileSourcePropertyInfo in item.GetFileSourceProperties())
 			{
-				var fileSource = this.GetProperty(fileSourcePropertyInfo) as FileSource;
+				var fileSource = item.GetProperty(fileSourcePropertyInfo) as FileSource;
 				if (fileSource != null)
 				{
 					FileSourceHelper.SaveFilesToDisk(fileSource, true);

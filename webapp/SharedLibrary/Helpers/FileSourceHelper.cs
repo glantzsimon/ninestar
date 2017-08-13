@@ -32,18 +32,20 @@ namespace K9.SharedLibrary.Helpers
 		public void LoadFiles(FileSource fileSource, bool throwErrorIfDirectoryNotFound = true)
 		{
 			var pathOnDisk = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileSource.PathToFiles.ToPathOnDisk());
-			if (!Directory.Exists(pathOnDisk) && throwErrorIfDirectoryNotFound)
+			if (Directory.Exists(pathOnDisk))
+			{
+				try
+				{
+					fileSource.UploadedFiles = ContentHelper.GetFiles(fileSource.PathToFiles);
+				}
+				catch (Exception ex)
+				{
+					throw new Exception("An error occurred whilst trying to load the files.", ex);
+				}	
+			}
+			else if (throwErrorIfDirectoryNotFound)
 			{
 				throw new DirectoryNotFoundException(string.Format("The directory {0} does not exist.", pathOnDisk));
-			}
-
-			try
-			{
-				fileSource.UploadedFiles = ContentHelper.GetFiles(fileSource.PathToFiles);
-			}
-			catch (Exception ex)
-			{
-				throw new Exception("An error occurred whilst trying to load the files.", ex);
 			}
 		}
 

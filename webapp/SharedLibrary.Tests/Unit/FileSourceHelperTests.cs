@@ -36,17 +36,10 @@ namespace K9.SharedLibrary.Tests.Unit
 		{
 			var helper = new FileSourceHelper(_postedFileHelper.Object);
 
-			try
+			helper.LoadFiles(new FileSource
 			{
-				helper.LoadFiles(new FileSource
-				{
-					PathToFiles = "nonexistant/path"
-				}, false);
-			}
-			catch (Exception ex)
-			{
-				Assert.IsTrue(ex.Message.Contains("An error occurred whilst trying to load the files"));
-			}
+				PathToFiles = "nonexistant/path"
+			}, false);
 		}
 
 	}

@@ -44,7 +44,7 @@ function fileUploader(config) {
 
     function displayFile(input, file, type, data) {
         var filesContainer = getFilesContainer(input);
-    
+
         var fileContainerDiv = $(document.createElement("DIV"));
         fileContainerDiv.attr("class", "file-preview-container col-lg-3 col-md-4 col-sm-6 col-xs-12 file-preview-new");
 
@@ -75,7 +75,7 @@ function fileUploader(config) {
 
         fileContainer.append(img);
         fileThumbnailContainerDiv.append(fileContainer, docInfo);
-        
+
         fileContainerDiv.append(fileThumbnailContainerDiv);
         filesContainer.append(fileContainerDiv);
 
@@ -84,15 +84,15 @@ function fileUploader(config) {
 
     function loadFile(input, f, fileSrc, index) {
         var uploadedFileWithSameName = getUploadedFileWithSameName(input, f.name);
-        if(uploadedFileWithSameName) {
+        if (uploadedFileWithSameName) {
             var fileId = uploadedFileWithSameName.attr("data-file-id");
             deleteUploadedFile(input, fileId);
             deleteFilePreview(input, fileId);
         }
 
-        if ($.fn.isImage(f.name)) {
+        if ($.fn.isImage(f.name) || f.type.indexOf("image") >= 0) {
             var image = new Image;
-            image.onload = function() {
+            image.onload = function () {
                 displayFile(input, f, "image", image);
             };
             image.src = fileSrc;

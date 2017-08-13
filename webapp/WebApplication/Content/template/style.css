@@ -579,6 +579,7 @@ img.img-responsive {
 .news-item-title {
 	margin-bottom: 8px;
 	border-bottom: 1px solid #d9d9d9;
+	padding-bottom: 4px;
 }
 .news-item-title  p {
 	color: black;

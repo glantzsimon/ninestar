@@ -42,7 +42,7 @@
 		};
 
 		$.fn.getFileExtension = function(filename) {
-			return filename.split('.').pop();
+			return '.' + filename.split('.').pop();
 		};
 
 		$.fn.isImage = function(filename) {

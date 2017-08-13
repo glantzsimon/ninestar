@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Threading;
+using System.Web.Mvc;
 using K9.DataAccess.Models;
 using K9.WebApplication.UnitsOfWork;
 
@@ -13,7 +15,7 @@ namespace K9.WebApplication.Controllers
 		
 		public override ActionResult Index()
 		{
-			return View(Repository.List());
+			return View(Repository.List().Where(n => n.LanguageCode == Thread.CurrentThread.CurrentUICulture.IetfLanguageTag).ToList());
 		}
 		
 	}

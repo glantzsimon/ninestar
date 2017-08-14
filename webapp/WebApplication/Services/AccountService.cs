@@ -240,7 +240,7 @@ namespace K9.WebApplication.Services
 			{
 				if (WebSecurity.IsConfirmed(user.Username))
 				{
-					_logger.Error(string.Format("Account already activated for user '{0}'."), user.Username);
+					_logger.Error("Account already activated for user '{0}'.", user.Username);
 					result.Result = EActivateAccountResult.AlreadyActivated;
 					return result;
 				}
@@ -251,7 +251,7 @@ namespace K9.WebApplication.Services
 				}
 				if (!WebSecurity.ConfirmAccount(user.Username, token))
 				{
-					_logger.Error(string.Format("ActivateAccount failed as user '{0}' was not found."), user.Username);
+					_logger.Error("ActivateAccount failed as user '{0}' was not found.", user.Username);
 					result.Result = EActivateAccountResult.Fail;
 					return result;
 				}

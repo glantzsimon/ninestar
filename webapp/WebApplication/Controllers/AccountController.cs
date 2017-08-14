@@ -237,7 +237,7 @@ namespace K9.WebApplication.Controllers
 
 		public ActionResult ResetPassword(string username, string token)
 		{
-			if (_accountService.ConfirmUserFromToken(username, token))
+			if (!_accountService.ConfirmUserFromToken(username, token))
 			{
 				return RedirectToAction("ResetPasswordFailed");
 			}

@@ -64,7 +64,7 @@ namespace K9.WebApplication.Controllers
 			{
 				switch (_accountService.Login(model.UserName, model.Password, model.RememberMe))
 				{
-					case ELoginResult.LogInSuccess:
+					case ELoginResult.Success:
 						if (TempData["ReturnUrl"] != null)
 						{
 							return Redirect(TempData["ReturnUrl"].ToString());
@@ -337,7 +337,8 @@ namespace K9.WebApplication.Controllers
 			switch (result.Result)
 			{
 				case EActivateAccountResult.Success:
-					return RedirectToAction("AccountActivated", "Account", new { userName });
+					var user = _repository.Find(userId);
+					return RedirectToAction("AccountActivated", "Account", new { userName = user.Username });
 
 				case EActivateAccountResult.AlreadyActivated:
 					return RedirectToAction("AccountAlreadyActivated", "Account");

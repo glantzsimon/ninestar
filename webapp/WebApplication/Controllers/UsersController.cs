@@ -26,10 +26,10 @@ namespace K9.WebApplication.Controllers
 			RecordCreated += UsersController_RecordCreated;
 			RecordBeforeCreate += UsersController_RecordBeforeCreate;
 			RecordBeforeDelete += UsersController_RecordBeforeDelete;
-			RecordUpdated += UsersController_RecordUpdated;
+			RecordBeforeUpdated += UsersController_RecordBeforeUpdated;
 		}
 
-		void UsersController_RecordUpdated(object sender, CrudEventArgs e)
+		void UsersController_RecordBeforeUpdated(object sender, CrudEventArgs e)
 		{
 			var user = e.Item as User;
 			var original = ControllerPackage.Repository.Find(user.Id);

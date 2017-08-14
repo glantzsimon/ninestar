@@ -26,6 +26,14 @@ namespace K9.WebApplication.Controllers
 			RecordCreated += UsersController_RecordCreated;
 			RecordBeforeCreate += UsersController_RecordBeforeCreate;
 			RecordBeforeDelete += UsersController_RecordBeforeDelete;
+			RecordUpdated += UsersController_RecordUpdated;
+		}
+
+		void UsersController_RecordUpdated(object sender, CrudEventArgs e)
+		{
+			var user = e.Item as User;
+			var original = ControllerPackage.Repository.Find(user.Id);
+			WebSecurity.ChangePassword(user.Username, original.Password, user.Password);
 		}
 
 		void UsersController_RecordBeforeDelete(object sender, CrudEventArgs e)

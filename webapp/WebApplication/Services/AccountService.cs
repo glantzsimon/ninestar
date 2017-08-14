@@ -268,6 +268,13 @@ namespace K9.WebApplication.Services
 			WebSecurity.Logout();
 		}
 
+		public string GetAccountActivationToken(int userId)
+		{
+			string sql = string.Format("SELECT ConfirmationToken FROM webpages_Membership " +
+									   "WHERE UserId = {0}", userId);
+			return _userRepository.CustomQuery<string>(sql).FirstOrDefault();
+		}
+
 		private string GetActivationLink(UserAccount.RegisterModel model, string token)
 		{
 			return _urlHelper.AsboluteAction("ActivateAccount", "Account", new { userName = model.UserName, token });
@@ -359,13 +366,6 @@ namespace K9.WebApplication.Services
 
 			_mailer.SendEmail(Dictionary.PasswordResetTitle, emailContent, model.EmailAddress, name);
 		}
-
-		public string GetAccountActivationToken(int userId)
-		{
-			string sql = string.Format("SELECT ConfirmationToken FROM webpages_Membership " +
-									   "WHERE UserId = {0}", userId);
-			return _userRepository.CustomQuery<string>(sql).FirstOrDefault();
-		}
-
+		
 	}
 }

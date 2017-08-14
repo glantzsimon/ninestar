@@ -576,7 +576,7 @@ namespace K9.WebApplication.Controllers
 				return HttpNotFound();
 			}
 
-			if (parent.IsSystemStandard)
+			if (parent.IsSystemStandard && !Roles.CurrentUserIsInRoles(RoleNames.Administrators))
 			{
 				return HttpForbidden();
 			}

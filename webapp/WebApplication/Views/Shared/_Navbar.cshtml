@@ -57,6 +57,13 @@
 									{
 										<li class="@ViewContext.GetActiveClass("Index", "NewsItems") sub-item"><a href="@Url.Action("Index", "NewsItems")">@Dictionary.Edit @Dictionary.NewsItems</a></li>
 									}
+									@if (roles.CurrentUserIsInRoles(RoleNames.Administrators))
+									{
+										<li class="@ViewContext.GetActiveClass("Index", "Users") sub-item"><a href="@Url.Action("Index", "Users")">@Dictionary.Edit @Dictionary.User</a></li>
+										<li class="@ViewContext.GetActiveClass("Index", "Roles") sub-item"><a href="@Url.Action("Index", "Roles")">@Dictionary.Edit @Dictionary.Role</a></li>
+										<li class="@ViewContext.GetActiveClass("Index", "UserRoles") sub-item"><a href="@Url.Action("Index", "UserRoles")">@Dictionary.Edit @Dictionary.UserRoles</a></li>
+										<li class="@ViewContext.GetActiveClass("Index", "RolePermissions") sub-item"><a href="@Url.Action("Index", "RolePermissions")">@Dictionary.Edit @Dictionary.Role @Dictionary.PermissionLabel</a></li>
+									}
 								</ul>
 							</li>
 						}
@@ -66,7 +73,7 @@
 			</nav>
 		</div>
 		@if (!string.IsNullOrEmpty(ViewBag.MainHeading))
-		{
+  {
 			<div class="main-heading page-subtitle">
 				<h3 class="text-white">@ViewBag.MainHeading</h3>
 			</div>	

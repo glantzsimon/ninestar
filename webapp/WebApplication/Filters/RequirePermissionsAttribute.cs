@@ -70,7 +70,7 @@ namespace K9.WebApplication.Filters
 		private bool CheckPermission(IRoles roles, string permissionName)
 		{
 			var permissions = roles.GetPermissionsForCurrentUser().Select(r => r.Name).ToList();
-			if (!WebSecurity.IsAuthenticated || !permissions.Contains(permissionName) && !roles.CurrentUserIsInRoles(RoleNames.Administrators))
+			if ((!WebSecurity.IsAuthenticated || !permissions.Contains(permissionName)) && !roles.CurrentUserIsInRoles(RoleNames.Administrators))
 			{
 				return false;
 			}
@@ -80,7 +80,7 @@ namespace K9.WebApplication.Filters
 		private bool CheckRole(IRoles roles, string roleName)
 		{
 			var userRoles = roles.GetRolesForCurrentUser().Select(r => r.Name).ToList();
-			if (!WebSecurity.IsAuthenticated || !userRoles.Contains(roleName) && !roles.CurrentUserIsInRoles(RoleNames.Administrators))
+			if ((!WebSecurity.IsAuthenticated || !userRoles.Contains(roleName)) && !roles.CurrentUserIsInRoles(RoleNames.Administrators))
 			{
 				return false;
 			}

@@ -145,7 +145,7 @@
     <value>Cette adresse email existe déjà.</value>
   </data>
   <data name="FieldIsRequired" xml:space="preserve">
-    <value>Ce champ est obligatoire.</value>
+    <value>Ce champ est requis.</value>
   </data>
   <data name="FirstNameLabel" xml:space="preserve">
     <value>Prénom</value>

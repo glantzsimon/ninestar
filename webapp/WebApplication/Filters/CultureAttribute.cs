@@ -10,9 +10,6 @@ namespace K9.WebApplication.Filters
 		
 		public override void OnActionExecuting(ActionExecutingContext filterContext)
 		{
-			const string defaultLanguageCode = "en-GB";
-			var languageCode = "";
-
 			if (
 				filterContext.RequestContext != null && 
 				filterContext.RequestContext.HttpContext != null &&
@@ -20,19 +17,19 @@ namespace K9.WebApplication.Filters
 			{
 				try
 				{
-					languageCode = filterContext.RequestContext.HttpContext.Session["languageCode"].ToString();	
+					var languageCode = filterContext.RequestContext.HttpContext.Session["languageCode"].ToString();
+					if (!string.IsNullOrEmpty(languageCode))
+					{
+						var culture = CultureInfo.GetCultureInfo(languageCode);
+						Thread.CurrentThread.CurrentCulture = culture;
+						Thread.CurrentThread.CurrentUICulture = culture;
+					}
 				}
 				catch (Exception)
 				{
 				}
 			}
 			
-			languageCode = string.IsNullOrEmpty(languageCode) ? defaultLanguageCode : languageCode;
-
-			var culture = CultureInfo.GetCultureInfo(languageCode);
-			Thread.CurrentThread.CurrentCulture = culture;
-			Thread.CurrentThread.CurrentUICulture = culture;
-
 			base.OnActionExecuting(filterContext);
 		}
 	}

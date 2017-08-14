@@ -43,6 +43,11 @@ namespace K9.SharedLibrary.Extensions
 			return ex.GetFullErrorMessage().Contains("Cannot insert duplicate key row in object");
 		}
 
+		public static bool IsDeleteConflictError(this Exception ex)
+		{
+			return ex.GetFullErrorMessage().ToLower().Contains("delete statement conflicted with the reference constraint");
+		}
+
 		public static string GetDuplicateIndexErrorPropertyName(this Exception ex)
 		{
 			if (IsDuplicateIndexError(ex))

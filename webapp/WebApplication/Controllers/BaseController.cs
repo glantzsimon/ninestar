@@ -240,7 +240,7 @@ namespace K9.WebApplication.Controllers
 			}
 			catch (Exception ex)
 			{
-				Logger.Error(ex.Message);
+				Logger.Error(ex.GetFullErrorMessage);
 				Logger.Info(AjaxHelper.GetQuery(true));
 				return Content(string.Empty, "application/json");
 			}
@@ -429,7 +429,7 @@ namespace K9.WebApplication.Controllers
 				}
 				catch (Exception ex)
 				{
-					Logger.Error(ex.Message);
+					Logger.Error(ex.GetFullErrorMessage);
 					ModelState.AddErrorMessageFromException<T>(ex, item);
 
 					LoadUploadedFiles(item);
@@ -539,7 +539,7 @@ namespace K9.WebApplication.Controllers
 				}
 				catch (Exception ex)
 				{
-					Logger.Error(ex.Message);
+					Logger.Error(ex.GetFullErrorMessage());
 					ModelState.AddErrorMessageFromException(ex, item);
 
 					if (RecordDeleteError != null)
@@ -623,7 +623,7 @@ namespace K9.WebApplication.Controllers
 			}
 			catch (Exception ex)
 			{
-				Logger.Error(ex.Message);
+				Logger.Error(ex.GetFullErrorMessage);
 				ModelState.AddModelError("", ex.Message);
 			}
 

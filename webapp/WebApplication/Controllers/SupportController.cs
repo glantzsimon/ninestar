@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 using K9.Globalisation;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
@@ -48,7 +49,7 @@ namespace K9.WebApplication.Controllers
 			}
 			catch (Exception ex)
 			{
-				_logger.Error(ex.Message);
+				_logger.Error(ex.GetFullErrorMessage());
 				return View("FriendlyError");
 			}
 

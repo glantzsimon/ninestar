@@ -724,4 +724,16 @@
   <data name="FilesSelected" xml:space="preserve">
     <value>fichiers selectionnés</value>
   </data>
+  <data name="DeleteConflictError" xml:space="preserve">
+    <value>Cet enregistrement ne peut pas être supprimé car sa clé externe existe dans une autre table</value>
+  </data>
+  <data name="Permissions" xml:space="preserve">
+    <value>Permissions</value>
+  </data>
+  <data name="Roles" xml:space="preserve">
+    <value>Rôles</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Utilisateurs</value>
+  </data>
 </root>

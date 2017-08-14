@@ -125,7 +125,11 @@ namespace K9.WebApplication.Services
 			var result = new ServiceResult();
 			try
 			{
-				if (!WebSecurity.ChangePassword(WebSecurity.CurrentUserName, model.OldPassword, model.NewPassword))
+				if (WebSecurity.ChangePassword(WebSecurity.CurrentUserName, model.OldPassword, model.NewPassword))
+				{
+					result.IsSuccess = true;	
+				}
+				else
 				{
 					result.Errors.Add(new ServiceError
 					{
@@ -136,7 +140,7 @@ namespace K9.WebApplication.Services
 			}
 			catch (Exception ex)
 			{
-				_logger.Error(ex.Message);
+				_logger.Error(ex.GetFullErrorMessage());
 				result.Errors.Add(new ServiceError
 				{
 					FieldName = "",
@@ -163,7 +167,7 @@ namespace K9.WebApplication.Services
 				}
 				catch (Exception ex)
 				{
-					_logger.Error(ex.Message);
+					_logger.Error(ex.GetFullErrorMessage());
 				}
 			}
 
@@ -189,7 +193,7 @@ namespace K9.WebApplication.Services
 			}
 			catch (Exception ex)
 			{
-				_logger.Error(ex.Message);
+				_logger.Error(ex.GetFullErrorMessage());
 				result.Errors.Add(new ServiceError
 				{
 					FieldName = "",
@@ -204,7 +208,7 @@ namespace K9.WebApplication.Services
 			var user = _userRepository.Find(u => u.Id == userId).FirstOrDefault();
 			if (user != null)
 			{
-				return ActivateAccount(user.Username, token);
+				return ActivateAccount(user, token);
 			}
 			return new ActivateAccountResult
 			{
@@ -217,7 +221,7 @@ namespace K9.WebApplication.Services
 			var user = _userRepository.Find(u => u.Username == username).FirstOrDefault();
 			if (user != null)
 			{
-				return ActivateAccount(user.Username, token);
+				return ActivateAccount(user, token);
 			}
 			return new ActivateAccountResult
 			{

@@ -59,10 +59,10 @@
 									}
 									@if (roles.CurrentUserIsInRoles(RoleNames.Administrators))
 									{
-										<li class="@ViewContext.GetActiveClass("Index", "Users") sub-item"><a href="@Url.Action("Index", "Users")">@Dictionary.Edit @Dictionary.User</a></li>
-										<li class="@ViewContext.GetActiveClass("Index", "Roles") sub-item"><a href="@Url.Action("Index", "Roles")">@Dictionary.Edit @Dictionary.Role</a></li>
+										<li class="@ViewContext.GetActiveClass("Index", "Users") sub-item"><a href="@Url.Action("Index", "Users")">@Dictionary.Edit @Dictionary.Users</a></li>
+										<li class="@ViewContext.GetActiveClass("Index", "Roles") sub-item"><a href="@Url.Action("Index", "Roles")">@Dictionary.Edit @Dictionary.Roles</a></li>
 										<li class="@ViewContext.GetActiveClass("Index", "UserRoles") sub-item"><a href="@Url.Action("Index", "UserRoles")">@Dictionary.Edit @Dictionary.UserRoles</a></li>
-										<li class="@ViewContext.GetActiveClass("Index", "RolePermissions") sub-item"><a href="@Url.Action("Index", "RolePermissions")">@Dictionary.Edit @Dictionary.Role @Dictionary.PermissionLabel</a></li>
+										<li class="@ViewContext.GetActiveClass("Index", "RolePermissions") sub-item"><a href="@Url.Action("Index", "RolePermissions")">@Dictionary.Edit @Dictionary.Role @Dictionary.Permissions</a></li>
 									}
 								</ul>
 							</li>

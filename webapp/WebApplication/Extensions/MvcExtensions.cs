@@ -32,6 +32,10 @@ namespace K9.WebApplication.Extensions
 					columnInfo.GetDisplayName(),
 					item.GetProperty(duplicateIndexErrorPropertyName)));
 			}
+			else if (ex.IsDeleteConflictError())
+			{
+				modelState.AddModelError("", Dictionary.DeleteConflictError);
+			}
 			else
 			{
 				modelState.AddModelError("", Dictionary.FriendlyErrorMessage);

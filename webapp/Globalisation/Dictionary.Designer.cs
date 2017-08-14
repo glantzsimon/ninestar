@@ -568,6 +568,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This record cannot be deleted as its foreign key exists in other tables..
+        /// </summary>
+        public static string DeleteConflictError {
+            get {
+                return ResourceManager.GetString("DeleteConflictError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Description.
         /// </summary>
         public static string DescriptionLabel {
@@ -1462,6 +1471,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Permissions.
+        /// </summary>
+        public static string Permissions {
+            get {
+                return ResourceManager.GetString("Permissions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Personal Information.
         /// </summary>
         public static string PersonalInformation {
@@ -1593,6 +1611,15 @@ namespace K9.Globalisation {
         public static string RoleLabel {
             get {
                 return ResourceManager.GetString("RoleLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Roles.
+        /// </summary>
+        public static string Roles {
+            get {
+                return ResourceManager.GetString("Roles", resourceCulture);
             }
         }
         
@@ -1902,6 +1929,15 @@ namespace K9.Globalisation {
         public static string UserRoles {
             get {
                 return ResourceManager.GetString("UserRoles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Users.
+        /// </summary>
+        public static string Users {
+            get {
+                return ResourceManager.GetString("Users", resourceCulture);
             }
         }
         

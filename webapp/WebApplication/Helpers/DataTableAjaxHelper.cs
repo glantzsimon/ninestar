@@ -129,7 +129,7 @@ namespace K9.WebApplication.Helpers
 				}
 				catch (Exception ex)
 				{
-					_logger.Error(ex.Message);
+					_logger.Error(ex.GetFullErrorMessage());
 					throw new Exception("Invalid order by column index");
 				}
 			}

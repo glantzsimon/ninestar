@@ -724,4 +724,16 @@
   <data name="FilesSelected" xml:space="preserve">
     <value>files selected</value>
   </data>
+  <data name="DeleteConflictError" xml:space="preserve">
+    <value>This record cannot be deleted as its foreign key exists in other tables.</value>
+  </data>
+  <data name="Permissions" xml:space="preserve">
+    <value>Permissions</value>
+  </data>
+  <data name="Roles" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Users</value>
+  </data>
 </root>

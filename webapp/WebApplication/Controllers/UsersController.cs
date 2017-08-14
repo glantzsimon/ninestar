@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Configuration;
+using System.Linq;
 using System.Web.Mvc;
 using K9.DataAccess.Config;
 using K9.DataAccess.Models;
@@ -24,16 +25,7 @@ namespace K9.WebApplication.Controllers
 			_dataConfig = dataConfig;
 			_messageRepository = messageRepository;
 			RecordCreated += UsersController_RecordCreated;
-			RecordBeforeCreate += UsersController_RecordBeforeCreate;
 			RecordBeforeDelete += UsersController_RecordBeforeDelete;
-			RecordBeforeUpdated += UsersController_RecordBeforeUpdated;
-		}
-
-		void UsersController_RecordBeforeUpdated(object sender, CrudEventArgs e)
-		{
-			var user = e.Item as User;
-			var original = ControllerPackage.Repository.Find(user.Id);
-			WebSecurity.ChangePassword(user.Username, original.Password, user.Password);
 		}
 
 		void UsersController_RecordBeforeDelete(object sender, CrudEventArgs e)
@@ -42,16 +34,10 @@ namespace K9.WebApplication.Controllers
 			DeleteLinkedRecords(user);
 		}
 
-		void UsersController_RecordBeforeCreate(object sender, CrudEventArgs e)
-		{
-			var user = e.Item as User;
-			user.Password = _dataConfig.Value.DefaultUserPassword;
-		}
-
 		void UsersController_RecordCreated(object sender, CrudEventArgs e)
 		{
 			var user = e.Item as User;
-			WebSecurity.CreateAccount(user.Username, user.Password, !user.AccountActivated);
+			WebSecurity.CreateAccount(user.Username, _dataConfig.Value.DefaultUserPassword, !user.AccountActivated);
 		}
 
 		private void DeleteLinkedRecords(User user)

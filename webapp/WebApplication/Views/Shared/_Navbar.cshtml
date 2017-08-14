@@ -19,6 +19,7 @@
 				{
 					<li class="@ViewContext.GetActiveClass("MyAccount", "Account")"><a href="@Url.Action("MyAccount", "Account")"><span class="glyphicon glyphicon-user"></span> @Dictionary.MyAccountTitle</a></li>
 				}
+				@Html.Partial("Controls/_LanguageSelector")
 			</ul>
 		</div>
 		<div class="clearfix">

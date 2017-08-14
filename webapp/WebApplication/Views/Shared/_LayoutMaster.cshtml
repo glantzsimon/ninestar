@@ -29,7 +29,7 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 	@if (CultureInfo.CurrentUICulture.GetLocaleName() != "en-us")
 	{
-		<script type="text/javascript" src=@string.Format("https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/locale/{0}.js", CultureInfo.CurrentUICulture.GetLocaleName().ToLower())></script>
+		<script type="text/javascript" src=@string.Format("https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/locale/{0}.js", CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower())></script>
 	}
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

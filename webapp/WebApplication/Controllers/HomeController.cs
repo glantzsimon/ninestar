@@ -16,6 +16,12 @@ namespace K9.WebApplication.Controllers
 		{
 			return View();
 		}
+
+		public ActionResult SetLanguage(string languageCode)
+		{
+			Session["languageCode"] = languageCode;
+			return RedirectToAction("Index");
+		}
 		
 		public override string GetObjectName()
 		{

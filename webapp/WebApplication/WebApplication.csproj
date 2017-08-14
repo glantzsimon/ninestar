@@ -181,6 +181,7 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\RolePermissionsController.cs" />
     <Compile Include="Enums\CarouselEnums.cs" />
+    <Compile Include="Enums\EActivateAccountResult.cs" />
     <Compile Include="Exceptions\LimitByUserIdException.cs" />
     <Compile Include="Exceptions\InvalidColumnNameException.cs" />
     <Compile Include="Filters\CultureAttribute.cs" />
@@ -239,7 +240,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ActivateAccountResult.cs" />
+    <Compile Include="Models\ServiceError.cs" />
     <Compile Include="Models\Crumb.cs" />
+    <Compile Include="Models\ServiceResult.cs" />
     <Compile Include="Models\ViewMessage.cs" />
     <Compile Include="Options\BackgroundImageSwitcherOptions.cs" />
     <Compile Include="Options\AlertOptions.cs" />
@@ -253,6 +257,9 @@
     <Compile Include="Options\ImageSwitcherOptionsBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\MultiSelectItem.cs" />
+    <Compile Include="Services\AccountService.cs" />
+    <Compile Include="Enums\ELoginResult.cs" />
+    <Compile Include="Services\IAccountService.cs" />
     <Compile Include="UnitsOfWork\ControllerPackage.cs" />
     <Compile Include="UnitsOfWork\IControllerPackage.cs" />
     <Compile Include="ViewModels\ContactUsViewModel.cs" />
@@ -676,7 +683,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\news\upload\" />
-    <Folder Include="Services\" />
     <Folder Include="Video\" />
   </ItemGroup>
   <ItemGroup>

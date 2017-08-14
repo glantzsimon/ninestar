@@ -1,19 +1,16 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
-using System.Web.Security;
 using K9.DataAccess.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Authentication;
-using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.Enums;
-using K9.WebApplication.Exceptions;
 using K9.WebApplication.Filters;
-using K9.WebApplication.Models;
 using K9.WebApplication.Options;
+using K9.WebApplication.Services;
 using NLog;
 using WebMatrix.WebData;
 
@@ -27,10 +24,11 @@ namespace K9.WebApplication.Controllers
 		private readonly WebsiteConfiguration _websiteConfig;
 		private readonly IDataSetsHelper _dataSetsHelper;
 		private readonly IRoles _roles;
+		private readonly IAccountService _accountService;
 
 		#region Constructors
 
-		public AccountController(IRepository<User> repository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles)
+		public AccountController(IRepository<User> repository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService)
 			: base(logger, dataSetsHelper, roles)
 		{
 			_repository = repository;
@@ -39,6 +37,7 @@ namespace K9.WebApplication.Controllers
 			_websiteConfig = websiteConfig.Value;
 			_dataSetsHelper = dataSetsHelper;
 			_roles = roles;
+			_accountService = accountService;
 		}
 
 		#endregion
@@ -63,19 +62,22 @@ namespace K9.WebApplication.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				if (WebSecurity.Login(model.UserName, model.Password, model.RememberMe))
+				switch (_accountService.Login(model.UserName, model.Password, model.RememberMe))
 				{
-					if (TempData["ReturnUrl"] != null)
-					{
-						return Redirect(TempData["ReturnUrl"].ToString());
-					}
-					return RedirectToAction("Index", "Home");
+					case ELoginResult.LogInSuccess:
+						if (TempData["ReturnUrl"] != null)
+						{
+							return Redirect(TempData["ReturnUrl"].ToString());
+						}
+						return RedirectToAction("Index", "Home");
+
+					case ELoginResult.AccountLocked:
+						return RedirectToAction("AccountLocked");
+
+					default:
+						ModelState.AddModelError("", Dictionary.UsernamePasswordIncorrectError);
+						break;
 				}
-				if (WebSecurity.IsAccountLockedOut(model.UserName, 10, TimeSpan.FromDays(1)))
-				{
-					return RedirectToAction("AccountLocked");
-				}
-				ModelState.AddModelError("", Dictionary.UsernamePasswordIncorrectError);
 			}
 			else
 			{
@@ -93,7 +95,7 @@ namespace K9.WebApplication.Controllers
 		[Authorize]
 		public ActionResult LogOff()
 		{
-			WebSecurity.Logout();
+			_accountService.Logout();
 			return RedirectToAction("Index", "Home");
 		}
 
@@ -108,50 +110,16 @@ namespace K9.WebApplication.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				if (_repository.Exists(u => u.Username == model.UserName))
+				var result = _accountService.Register(model);
+
+				if (result.IsSuccess)
 				{
-					ModelState.AddModelError("UserName", Dictionary.UsernameIsUnavailableError);
-				}
-				else if (_repository.Exists(u => u.EmailAddress == model.EmailAddress))
-				{
-					ModelState.AddModelError("EmailAddress", Dictionary.EmailIsUnavailableError);
+					return RedirectToAction("AccountCreated", "Account");
 				}
 
-				if (model.Password != model.ConfirmPassword)
+				foreach (var registrationError in result.Errors)
 				{
-					ModelState.AddModelError("ConfirmPassword", Dictionary.PasswordMatchError);
-				}
-
-				if (ModelState.IsValid)
-				{
-					try
-					{
-						var token = WebSecurity.CreateUserAndAccount(model.UserName, model.Password,
-							new
-							{
-								model.EmailAddress,
-								model.FirstName,
-								model.LastName,
-								model.PhoneNumber,
-								model.BirthDate,
-								CreatedBy = SystemUser.System,
-								CreatedOn = DateTime.Now,
-								LastUpdatedBy = SystemUser.System,
-								LastUpdatedOn = DateTime.Now
-							}, true);
-
-						SendActivationemail(model, token);
-
-						return RedirectToAction("AccountCreated", "Account", new { userName = model.UserName });
-					}
-					catch (MembershipCreateUserException e)
-					{
-						ModelState.AddModelError("", ErrorCodeToString(e.StatusCode));
-					}
-					catch (Exception ex)
-					{
-						ModelState.AddModelError("", ex.Message);
-					}
+					ModelState.AddModelError(registrationError.FieldName, registrationError.ErrorMessage);
 				}
 			}
 
@@ -177,18 +145,16 @@ namespace K9.WebApplication.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				try
+				var result = _accountService.UpdatePassword(model);
+
+				if (result.IsSuccess)
 				{
-					if (WebSecurity.ChangePassword(User.Identity.Name, model.OldPassword, model.NewPassword))
-					{
-						return RedirectToAction("UpdatePasswordSuccess");
-					}
-					ModelState.AddModelError("", Dictionary.CurrentPasswordCorrectNewInvalidError);
+					return RedirectToAction("UpdatePasswordSuccess", "Account");
 				}
-				catch (Exception ex)
+
+				foreach (var registrationError in result.Errors)
 				{
-					_logger.Error(ex.Message);
-					ModelState.AddModelError("", Dictionary.UpdatePaswordError);
+					ModelState.AddModelError(registrationError.FieldName, registrationError.ErrorMessage);
 				}
 			}
 
@@ -256,44 +222,28 @@ namespace K9.WebApplication.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				var user = _repository.Find(u => u.EmailAddress == model.EmailAddress).FirstOrDefault();
-				if (user == null)
+				var result = _accountService.PasswordResetRequest(model);
+				if (result.IsSuccess)
 				{
-					return RedirectToAction("ResetPasswordFailed");
+					return RedirectToAction("PasswordResetEmailSent", "Account", new { userName = model.UserName, result.Data });
 				}
 
-				var token = string.Empty;
-				try
-				{
-					model.UserName = user.Username;
-					token = WebSecurity.GeneratePasswordResetToken(user.Username);
-					SendPasswordResetEmail(model, token);
-				}
-				catch (Exception ex)
-				{
-					_logger.Error(ex.Message);
-					return RedirectToAction("ResetPasswordFailed");
-				}
-
-				return RedirectToAction("PasswordResetEmailSent", "Account", new { userName = model.UserName, token });
+				return RedirectToAction("ResetPasswordFailed");
 			}
 
 			return View(model);
 		}
 
-		public ActionResult ResetPassword(string userName, string token)
+		public ActionResult ResetPassword(string username, string token)
 		{
-			var userId = WebSecurity.GetUserIdFromPasswordResetToken(token);
-			var confirmUserId = WebSecurity.GetUserId(userName);
-
-			if (!Equals(userId, confirmUserId))
+			if (_accountService.ConfirmUserFromToken(username, token))
 			{
 				return RedirectToAction("ResetPasswordFailed");
 			}
 
 			var model = new UserAccount.ResetPasswordModel
 			{
-				UserName = userName,
+				UserName = username,
 				Token = token
 			};
 
@@ -311,17 +261,15 @@ namespace K9.WebApplication.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				try
+				var result = _accountService.ResetPassword(model);
+				if (result.IsSuccess)
 				{
-					WebSecurity.ResetPassword(model.Token, model.NewPassword);
-					WebSecurity.Login(model.UserName, model.NewPassword);
-
 					return RedirectToAction("ResetPasswordSuccess");
 				}
-				catch (Exception ex)
+
+				foreach (var registrationError in result.Errors)
 				{
-					_logger.Error(ex.Message);
-					ModelState.AddModelError("", Dictionary.PasswordResetFailError);
+					ModelState.AddModelError(registrationError.FieldName, registrationError.ErrorMessage);
 				}
 			}
 
@@ -332,39 +280,6 @@ namespace K9.WebApplication.Controllers
 		public ActionResult ResetPasswordSuccess()
 		{
 			return View();
-		}
-
-		private string GetPasswordResetLink(UserAccount.PasswordResetRequestModel model, string token)
-		{
-			return Url.AsboluteAction("ResetPassword", "Account", new { userName = model.UserName, token });
-		}
-
-		private void SendPasswordResetEmail(UserAccount.PasswordResetRequestModel model, string token)
-		{
-			var resetPasswordLink = GetPasswordResetLink(model, token);
-			var imageUrl = Url.AbsoluteContent(_websiteConfig.CompanyLogoUrl);
-			var user = _repository.Find(u => u.Username == model.UserName).FirstOrDefault();
-
-			if (user == null)
-			{
-				_logger.Error("SendPasswordResetEmail failed as no user was found. PasswordResetRequestModel: {0}", model);
-				throw new NullReferenceException("User cannot be null");
-			}
-
-			var firstName = user.FirstName;
-			var name = user.Name;
-
-			var emailContent = TemplateProcessor.PopulateTemplate(Dictionary.PasswordResetEmail, new
-			{
-				Title = Dictionary.Welcome,
-				FirstName = firstName,
-				Company = _websiteConfig.CompanyName,
-				ResetPasswordLink = resetPasswordLink,
-				ImageUrl = imageUrl,
-				From = Dictionary.ClientServices
-			});
-
-			_mailer.SendEmail(Dictionary.PasswordResetTitle, emailContent, model.EmailAddress, name);
 		}
 
 		#endregion
@@ -399,56 +314,37 @@ namespace K9.WebApplication.Controllers
 		[AllowAnonymous]
 		public ActionResult ActivateAccount(string userName, string token)
 		{
-			if (WebSecurity.IsConfirmed(userName))
-			{
-				_logger.Error(string.Format("Account already activated for user '{0}'."), userName);
-				return RedirectToAction("AccountAlreadyActivated", "Account");
-			}
+			var result = _accountService.ActivateAccount(userName, token);
 
-			if (!WebSecurity.ConfirmAccount(userName, token))
+			switch (result.Result)
 			{
-				_logger.Error(string.Format("ActivateAccount failed as user '{0}' was not found."), userName);
-				return RedirectToAction("AccountActivationFailed", "Account");
-			}
+				case EActivateAccountResult.Success:
+					return RedirectToAction("AccountActivated", "Account", new { userName });
 
-			return RedirectToAction("AccountActivated", "Account", new { userName });
+				case EActivateAccountResult.AlreadyActivated:
+					return RedirectToAction("AccountAlreadyActivated", "Account");
+
+				default:
+					return RedirectToAction("AccountActivationFailed", "Account");
+			}
 		}
 
 		[RequirePermissions(Permission = Permissions.Edit)]
 		public ActionResult ActivateUserAccount(int userId)
 		{
-			var user = _repository.Find(u => u.Id == userId).FirstOrDefault();
-			if (user == null)
+			var result = _accountService.ActivateAccount(userId);
+
+			switch (result.Result)
 			{
-				_logger.Error("ActivateAccount failed as no user was found.");
-				return RedirectToAction("AccountActivationFailed", "Account");
+				case EActivateAccountResult.Success:
+					return RedirectToAction("AccountActivated", "Account", new { userName });
+
+				case EActivateAccountResult.AlreadyActivated:
+					return RedirectToAction("AccountAlreadyActivated", "Account");
+
+				default:
+					return RedirectToAction("AccountActivationFailed", "Account");
 			}
-
-			var token = GetAccountActivationToken(user.Id);
-			return ActivateAccount(user.Username, token);
-		}
-
-		private string GetActivationLink(UserAccount.RegisterModel model, string token)
-		{
-			return Url.AsboluteAction("ActivateAccount", "Account", new { userName = model.UserName, token });
-		}
-
-		private void SendActivationemail(UserAccount.RegisterModel model, string token)
-		{
-			var activationLink = GetActivationLink(model, token);
-			var imageUrl = Url.AbsoluteContent(_websiteConfig.CompanyLogoUrl);
-
-			var emailContent = TemplateProcessor.PopulateTemplate(Dictionary.WelcomeEmail, new
-			{
-				Title = Dictionary.Welcome,
-				FirstName = model.FirstName,
-				Company = _websiteConfig.CompanyName,
-				ActivationLink = activationLink,
-				ImageUrl = imageUrl,
-				From = Dictionary.ClientServices
-			});
-
-			_mailer.SendEmail(Dictionary.AccountActivationTitle, emailContent, model.EmailAddress, model.GetFullName());
 		}
 
 		#endregion
@@ -458,66 +354,10 @@ namespace K9.WebApplication.Controllers
 
 		public override string GetObjectName()
 		{
-			return typeof (User).Name;
-		}
-
-		public enum ManageMessageId
-		{
-			ChangePasswordSuccess,
-			SetPasswordSuccess
-		}
-
-		private static string GetPasswordChangedMessage(ManageMessageId? messageId)
-		{
-			return messageId == ManageMessageId.ChangePasswordSuccess ? Dictionary.PasswordHasChangedConfirmation
-				: messageId == ManageMessageId.SetPasswordSuccess ? Dictionary.PasswordSetConfirmation
-				: "";
-		}
-
-		private static string ErrorCodeToString(MembershipCreateStatus createStatus)
-		{
-			switch (createStatus)
-			{
-				case MembershipCreateStatus.DuplicateUserName:
-					return Dictionary.UsernameExistsError;
-
-				case MembershipCreateStatus.DuplicateEmail:
-					return Dictionary.UserNameEmailExistsError;
-
-				case MembershipCreateStatus.InvalidPassword:
-					return Dictionary.InvalidPasswordEnteredError;
-
-				case MembershipCreateStatus.InvalidEmail:
-					return Dictionary.InvalidEmailError;
-
-				case MembershipCreateStatus.InvalidAnswer:
-					return Dictionary.InvalidPasswordRetreivalError;
-
-				case MembershipCreateStatus.InvalidQuestion:
-					return Dictionary.InvalidRetrievalQuestionError;
-
-				case MembershipCreateStatus.InvalidUserName:
-					return Dictionary.InvalidUsernameError;
-
-				case MembershipCreateStatus.ProviderError:
-					return Dictionary.ProviderError;
-
-				case MembershipCreateStatus.UserRejected:
-					return Dictionary.UserRejectedError;
-
-				default:
-					return Dictionary.DefaultAuthError;
-			}
-		}
-
-		private string GetAccountActivationToken(int userId)
-		{
-			string sql = string.Format("SELECT ConfirmationToken FROM webpages_Membership " +
-									   "WHERE UserId = {0}", userId);
-			return _repository.CustomQuery<string>(sql).FirstOrDefault();
+			return typeof(User).Name;
 		}
 
 		#endregion
-		
+
 	}
 }

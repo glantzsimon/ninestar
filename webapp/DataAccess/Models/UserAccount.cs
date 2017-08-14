@@ -1,7 +1,6 @@
 ﻿
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using DataAnnotationsExtensions;
 using K9.Globalisation;
 

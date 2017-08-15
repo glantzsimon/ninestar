@@ -266,6 +266,7 @@
     <Compile Include="ViewModels\MultiSelectViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\k9\scroller.css" />
     <Content Include="Content\k9\fileUpload.css" />
     <Content Include="Content\ninestar\botf.css" />
     <Content Include="Content\ninestar\classes.css" />
@@ -663,6 +664,7 @@
     <Content Include="Scripts\k9\fadePageIn.js" />
     <Content Include="Scripts\library\easing.js" />
     <Content Include="Scripts\library\jarallax.js" />
+    <Content Include="Scripts\library\scrollText.js" />
     <Content Include="Scripts\library\lsb.js" />
     <Content Include="Scripts\library\move-top.js" />
     <Content Include="Scripts\library\owl.carousel.js" />
@@ -850,6 +852,8 @@
     <Content Include="Views\Shared\EditorTemplates\Html.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Html.cshtml" />
     <Content Include="Views\Shared\Controls\_LanguageSelector.cshtml" />
+    <Content Include="Views\Shared\_FooterNewsScroller.cshtml" />
+    <Content Include="Views\News\_NewsSummary.cshtml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutColumns.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />

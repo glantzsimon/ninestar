@@ -1,0 +1,10 @@
+﻿@model List<NewsItem>
+<h4>@Dictionary.News</h4>
+<div class="scroller-container">
+	<ul>
+		@foreach (var item in Model)
+		{
+			<li>@item.PublishedOn.ToShortDateString() - @item.Subject</li>
+		}
+	</ul>
+</div>

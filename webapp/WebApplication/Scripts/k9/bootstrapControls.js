@@ -19,6 +19,14 @@ function bootstrapControls(config)
         });
     }
 
+    function initTextScroller() {
+        $(".scroller-container").scrollText({
+            "direction" : "down",
+            "loop" : true,
+            "duration" : 3000
+        });
+    }
+
     function initDateTimeValidation()
     {
         $.validator.methods.date = function (value, element)
@@ -43,6 +51,7 @@ function bootstrapControls(config)
         initBootstrapSelect();
         initDateTimeValidation();
         initToolTips();
+        initTextScroller();
     };
 
     return {

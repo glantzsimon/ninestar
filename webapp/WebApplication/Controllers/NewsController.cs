@@ -22,6 +22,12 @@ namespace K9.WebApplication.Controllers
 			return View(_newsRepository.List().Where(n => n.LanguageCode == Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName).ToList());
 		}
 
+		public ActionResult NewsSummary()
+		{
+			return PartialView("_NewsSummary", _newsRepository.GetQuery("SELECT TOP 10 * FROM [NewsItem] ORDER BY [PublishedOn]")
+				.Where(n => n.LanguageCode == Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName).ToList());
+		}
+
 		public override string GetObjectName()
 		{
 			return typeof(NewsItem).Name;

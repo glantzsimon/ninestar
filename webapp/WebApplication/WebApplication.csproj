@@ -184,6 +184,7 @@
     <Compile Include="Enums\EActivateAccountResult.cs" />
     <Compile Include="Exceptions\LimitByUserIdException.cs" />
     <Compile Include="Exceptions\InvalidColumnNameException.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Filters\CultureAttribute.cs" />
     <Compile Include="Filters\RequirePermissionsAttribute.cs" />
     <Compile Include="Constants\Bootstrap.cs" />

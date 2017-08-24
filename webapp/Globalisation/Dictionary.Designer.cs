@@ -532,6 +532,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Day.
+        /// </summary>
+        public static string Day {
+            get {
+                return ResourceManager.GetString("Day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Days.
+        /// </summary>
+        public static string Days {
+            get {
+                return ResourceManager.GetString("Days", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to An unknown error occurred. Please verify your entry and try again. If the problem persists, please contact support..
         /// </summary>
         public static string DefaultAuthError {
@@ -802,6 +820,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hour.
+        /// </summary>
+        public static string Hour {
+            get {
+                return ResourceManager.GetString("Hour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hours.
+        /// </summary>
+        public static string Hours {
+            get {
+                return ResourceManager.GetString("Hours", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Iboga.
         /// </summary>
         public static string Iboga {
@@ -868,6 +904,15 @@ namespace K9.Globalisation {
         public static string ImageLabel {
             get {
                 return ResourceManager.GetString("ImageLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In {0} {1}.
+        /// </summary>
+        public static string InTimespan {
+            get {
+                return ResourceManager.GetString("InTimespan", resourceCulture);
             }
         }
         
@@ -940,6 +985,15 @@ namespace K9.Globalisation {
         public static string IsUnsubscribedLabel {
             get {
                 return ResourceManager.GetString("IsUnsubscribedLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Just now.
+        /// </summary>
+        public static string JustNow {
+            get {
+                return ResourceManager.GetString("JustNow", resourceCulture);
             }
         }
         
@@ -1110,6 +1164,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Minute.
+        /// </summary>
+        public static string Minute {
+            get {
+                return ResourceManager.GetString("Minute", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minutes.
+        /// </summary>
+        public static string Minutes {
+            get {
+                return ResourceManager.GetString("Minutes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to These are our aims in relation to this plant considered as sacred by the Gabonese people.
         /// </summary>
         public static string mission_statement_and_aims_title1 {
@@ -1147,6 +1219,24 @@ namespace K9.Globalisation {
         public static string mission_statement_and_aims2 {
             get {
                 return ResourceManager.GetString("mission_statement_and_aims2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Month.
+        /// </summary>
+        public static string Month {
+            get {
+                return ResourceManager.GetString("Month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Months.
+        /// </summary>
+        public static string Months {
+            get {
+                return ResourceManager.GetString("Months", resourceCulture);
             }
         }
         
@@ -1633,6 +1723,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Second.
+        /// </summary>
+        public static string Second {
+            get {
+                return ResourceManager.GetString("Second", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Seconds.
+        /// </summary>
+        public static string Seconds {
+            get {
+                return ResourceManager.GetString("Seconds", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to From.
         /// </summary>
         public static string SentByUserLabel {
@@ -1758,6 +1866,33 @@ namespace K9.Globalisation {
         public static string ThreeLetterCountryCodeLabel {
             get {
                 return ResourceManager.GetString("ThreeLetterCountryCodeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} {1} ago.
+        /// </summary>
+        public static string TimespanAgo {
+            get {
+                return ResourceManager.GetString("TimespanAgo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Today.
+        /// </summary>
+        public static string Today {
+            get {
+                return ResourceManager.GetString("Today", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tomorrow.
+        /// </summary>
+        public static string Tomorrow {
+            get {
+                return ResourceManager.GetString("Tomorrow", resourceCulture);
             }
         }
         
@@ -1942,6 +2077,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Week.
+        /// </summary>
+        public static string Week {
+            get {
+                return ResourceManager.GetString("Week", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weeks.
+        /// </summary>
+        public static string Weeks {
+            get {
+                return ResourceManager.GetString("Weeks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Welcome.
         /// </summary>
         public static string Welcome {
@@ -1999,6 +2152,24 @@ namespace K9.Globalisation {
         public static string yann_title {
             get {
                 return ResourceManager.GetString("yann_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Year.
+        /// </summary>
+        public static string Year {
+            get {
+                return ResourceManager.GetString("Year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Years.
+        /// </summary>
+        public static string Years {
+            get {
+                return ResourceManager.GetString("Years", resourceCulture);
             }
         }
         

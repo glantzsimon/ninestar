@@ -2,7 +2,7 @@
 using K9.WebApplication.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace K9.WebApplication.Tests.Unit
+namespace K9.WebApplication.Tests.Unit.Extensions
 {
 	[TestClass]
 	public class ExtensionTests

@@ -736,4 +736,61 @@
   <data name="Users" xml:space="preserve">
     <value>Utilisateurs</value>
   </data>
+  <data name="Day" xml:space="preserve">
+    <value>Jour</value>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>Jours</value>
+  </data>
+  <data name="Hour" xml:space="preserve">
+    <value>Heure</value>
+  </data>
+  <data name="Hours" xml:space="preserve">
+    <value>Heures</value>
+  </data>
+  <data name="InTimespan" xml:space="preserve">
+    <value>Dans {0} {1}</value>
+  </data>
+  <data name="JustNow" xml:space="preserve">
+    <value>A l'instant</value>
+  </data>
+  <data name="Minute" xml:space="preserve">
+    <value>Minute</value>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>Minutes</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>Mois</value>
+  </data>
+  <data name="Months" xml:space="preserve">
+    <value>Mois</value>
+  </data>
+  <data name="Second" xml:space="preserve">
+    <value>Seconde</value>
+  </data>
+  <data name="Seconds" xml:space="preserve">
+    <value>Secondes</value>
+  </data>
+  <data name="TimespanAgo" xml:space="preserve">
+    <value>Il y a {0} {1}</value>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>Aujourd'hui</value>
+  </data>
+  <data name="Tomorrow" xml:space="preserve">
+    <value>Demain</value>
+  </data>
+  <data name="Week" xml:space="preserve">
+    <value>Semaine</value>
+  </data>
+  <data name="Weeks" xml:space="preserve">
+    <value>Semaines</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>An</value>
+  </data>
+  <data name="Years" xml:space="preserve">
+    <value>Ans</value>
+  </data>
 </root>

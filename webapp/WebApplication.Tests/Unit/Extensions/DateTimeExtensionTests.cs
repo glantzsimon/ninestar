@@ -13,8 +13,11 @@ namespace K9.WebApplication.Tests.Unit.Extensions
 		private DateTime _justNow = DateTime.Now.Subtract(TimeSpan.FromSeconds(59));
 		private DateTime _minuteAgo = DateTime.Now.Subtract(TimeSpan.FromSeconds(74));
 		private DateTime _2MinutesAgo = DateTime.Now.Subtract(TimeSpan.FromSeconds(120));
-		private DateTime _59MinutesAgo = DateTime.Now.Subtract(TimeSpan.FromMinutes(59).Add(TimeSpan.FromSeconds(59)));
+		private DateTime _59MinutesAgo = DateTime.Now.Subtract(TimeSpan.FromMinutes(59).Add(TimeSpan.FromSeconds(57)));
 		private DateTime _hourAgo = DateTime.Now.Subtract(TimeSpan.FromHours(1));
+		private DateTime _hourAgo59 = DateTime.Now.Subtract(TimeSpan.FromHours(1).Add(TimeSpan.FromMinutes(59)));
+		private DateTime _twoHoursAgo = DateTime.Now.Subtract(TimeSpan.FromHours(2));
+		private DateTime _twoHoursAgo59 = DateTime.Now.Subtract(TimeSpan.FromHours(2).Add(TimeSpan.FromMinutes(59)));
 		private DateTime _today = DateTime.Today;
 		private DateTime _tomorrow = DateTime.Today.AddDays(1);
 		private DateTime _days2 = DateTime.Today.AddDays(2);
@@ -33,6 +36,9 @@ namespace K9.WebApplication.Tests.Unit.Extensions
 			Assert.AreEqual("2 minutes ago", _2MinutesAgo.ToHumanReadableString());
 			Assert.AreEqual("59 minutes ago", _59MinutesAgo.ToHumanReadableString());
 			Assert.AreEqual("1 hour ago", _hourAgo.ToHumanReadableString());
+			Assert.AreEqual("1 hour ago", _hourAgo59.ToHumanReadableString());
+			Assert.AreEqual("2 hours ago", _twoHoursAgo.ToHumanReadableString());
+			Assert.AreEqual("2 hours ago", _twoHoursAgo59.ToHumanReadableString());
 			//Assert.AreEqual("Today", _today.ToHumanReadableString());
 			//Assert.AreEqual("Tomorrow", _tomorrow.ToHumanReadableString());
 			//Assert.AreEqual("In 2 days", _days2.ToHumanReadableString());
@@ -53,6 +59,9 @@ namespace K9.WebApplication.Tests.Unit.Extensions
 			Assert.AreEqual("Il y a 2 minutes", _2MinutesAgo.ToHumanReadableString());
 			Assert.AreEqual("Il y a 59 minutes", _59MinutesAgo.ToHumanReadableString());
 			Assert.AreEqual("Il y a 1 heure", _hourAgo.ToHumanReadableString());
+			Assert.AreEqual("Il y a 1 heure", _hourAgo59.ToHumanReadableString());
+			Assert.AreEqual("Il y a 2 heures", _twoHoursAgo.ToHumanReadableString());
+			Assert.AreEqual("Il y a 2 heures", _twoHoursAgo59.ToHumanReadableString());
 			//Assert.AreEqual("Aujourd'hui", _today.ToHumanReadableString());
 			//Assert.AreEqual("Demain", _tomorrow.ToHumanReadableString());
 			//Assert.AreEqual("Dans 2 jours", _tomorrow.ToHumanReadableString());

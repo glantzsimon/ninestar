@@ -793,4 +793,7 @@
   <data name="Years" xml:space="preserve">
     <value>Ans</value>
   </data>
+  <data name="Yesterday" xml:space="preserve">
+    <value>Hier</value>
+  </data>
 </root>

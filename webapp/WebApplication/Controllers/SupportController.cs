@@ -52,8 +52,6 @@ namespace K9.WebApplication.Controllers
 				_logger.Error(ex.GetFullErrorMessage());
 				return View("FriendlyError");
 			}
-
-			return View();
 		}
 
 		public ActionResult ContactUsSuccess()

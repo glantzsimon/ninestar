@@ -43,6 +43,14 @@ namespace K9.WebApplication.Extensions
 		    {
 		        return string.Format(Dictionary.TimespanAgo, 1, Dictionary.Week.ToLower());
 		    }
+		    if ((int)elapsed.TotalDays < 14)
+		    {
+		        return string.Format(Dictionary.TimespanAgo, (int)elapsed.TotalDays, Dictionary.Days.ToLower());
+		    }
+		    if ((int)elapsed.TotalDays == 14)
+		    {
+		        return string.Format(Dictionary.TimespanAgo, 2, Dictionary.Weeks.ToLower());
+		    }
             return value.ToLongLocalDateString();
 		}
 

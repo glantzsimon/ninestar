@@ -25,6 +25,9 @@ namespace K9.WebApplication.Tests.Unit.Extensions
 		private DateTime _2DaysAgo23 = DateTime.Now.Subtract(TimeSpan.FromHours(48).Add(TimeSpan.FromHours(23)));
 		private DateTime _6DaysAgo23 = DateTime.Now.Subtract(TimeSpan.FromDays(6).Add(TimeSpan.FromHours(23)).Subtract(TimeSpan.FromMinutes(59)));
 	    private DateTime _1WeekAgo = DateTime.Now.Subtract(TimeSpan.FromDays(7));
+	    private DateTime _8DaysAgo = DateTime.Now.Subtract(TimeSpan.FromDays(8));
+	    private DateTime _13DaysAgo = DateTime.Now.Subtract(TimeSpan.FromDays(13).Add(TimeSpan.FromHours(23)));
+	    private DateTime _2WeeksAgo = DateTime.Now.Subtract(TimeSpan.FromDays(14));
         private DateTime _today = DateTime.Today;
 		private DateTime _tomorrow = DateTime.Today.AddDays(1);
 		private DateTime _days2 = DateTime.Today.AddDays(2);
@@ -53,6 +56,9 @@ namespace K9.WebApplication.Tests.Unit.Extensions
 			Assert.AreEqual("2 days ago", _2DaysAgo23.ToHumanReadableString());
 			Assert.AreEqual("6 days ago", _6DaysAgo23.ToHumanReadableString());
 		    Assert.AreEqual("1 week ago", _1WeekAgo.ToHumanReadableString());
+		    Assert.AreEqual("8 days ago", _8DaysAgo.ToHumanReadableString());
+		    Assert.AreEqual("13 days ago", _13DaysAgo.ToHumanReadableString());
+		    Assert.AreEqual("2 weeks ago", _2WeeksAgo.ToHumanReadableString());
             //Assert.AreEqual("Today", _today.ToHumanReadableString());
             //Assert.AreEqual("Tomorrow", _tomorrow.ToHumanReadableString());
             //Assert.AreEqual("In 2 days", _days2.ToHumanReadableString());
@@ -83,6 +89,9 @@ namespace K9.WebApplication.Tests.Unit.Extensions
 			Assert.AreEqual("Il y a 2 jours", _2DaysAgo23.ToHumanReadableString());
 			Assert.AreEqual("Il y a 6 jours", _6DaysAgo23.ToHumanReadableString());
 		    Assert.AreEqual("Il y a 1 semaine", _1WeekAgo.ToHumanReadableString());
+		    Assert.AreEqual("Il y a 8 jours", _8DaysAgo.ToHumanReadableString());
+		    Assert.AreEqual("Il y a 13 jours", _13DaysAgo.ToHumanReadableString());
+		    Assert.AreEqual("Il y a 2 semaines", _2WeeksAgo.ToHumanReadableString());
             //Assert.AreEqual("Aujourd'hui", _today.ToHumanReadableString());
             //Assert.AreEqual("Demain", _tomorrow.ToHumanReadableString());
             //Assert.AreEqual("Dans 2 jours", _tomorrow.ToHumanReadableString());

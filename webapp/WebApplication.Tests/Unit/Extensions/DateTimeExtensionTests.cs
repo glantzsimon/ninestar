@@ -20,11 +20,12 @@ namespace K9.WebApplication.Tests.Unit.Extensions
 		private DateTime _twoHoursAgo59 = DateTime.Now.Subtract(TimeSpan.FromHours(2).Add(TimeSpan.FromMinutes(59)));
 		private DateTime _23HoursAgo = DateTime.Now.Subtract(TimeSpan.FromHours(23).Add(TimeSpan.FromMinutes(59)));
 		private DateTime _yesterday = DateTime.Now.Subtract(TimeSpan.FromHours(24));
-		private DateTime _yesterday23 = DateTime.Now.Subtract(TimeSpan.FromHours(24).Subtract(TimeSpan.FromHours(23)));
-		private DateTime _2DaysAgo = DateTime.Now.Subtract(TimeSpan.FromHours(24));
-		private DateTime _2DaysAgo23 = DateTime.Now.Subtract(TimeSpan.FromHours(24).Subtract(TimeSpan.FromHours(23)));
-		private DateTime _6DaysAgo23 = DateTime.Now.Subtract(TimeSpan.FromDays(6).Subtract(TimeSpan.FromHours(23)).Subtract(TimeSpan.FromMinutes(59)));
-		private DateTime _today = DateTime.Today;
+		private DateTime _yesterday23 = DateTime.Now.Subtract(TimeSpan.FromHours(24).Add(TimeSpan.FromHours(23)));
+		private DateTime _2DaysAgo = DateTime.Now.Subtract(TimeSpan.FromHours(48));
+		private DateTime _2DaysAgo23 = DateTime.Now.Subtract(TimeSpan.FromHours(48).Add(TimeSpan.FromHours(23)));
+		private DateTime _6DaysAgo23 = DateTime.Now.Subtract(TimeSpan.FromDays(6).Add(TimeSpan.FromHours(23)).Subtract(TimeSpan.FromMinutes(59)));
+	    private DateTime _1WeekAgo = DateTime.Now.Subtract(TimeSpan.FromDays(7));
+        private DateTime _today = DateTime.Today;
 		private DateTime _tomorrow = DateTime.Today.AddDays(1);
 		private DateTime _days2 = DateTime.Today.AddDays(2);
 		private DateTime _days6 = DateTime.Today.AddDays(6);
@@ -51,15 +52,16 @@ namespace K9.WebApplication.Tests.Unit.Extensions
 			Assert.AreEqual("2 days ago", _2DaysAgo.ToHumanReadableString());
 			Assert.AreEqual("2 days ago", _2DaysAgo23.ToHumanReadableString());
 			Assert.AreEqual("6 days ago", _6DaysAgo23.ToHumanReadableString());
-			//Assert.AreEqual("Today", _today.ToHumanReadableString());
-			//Assert.AreEqual("Tomorrow", _tomorrow.ToHumanReadableString());
-			//Assert.AreEqual("In 2 days", _days2.ToHumanReadableString());
-			//Assert.AreEqual("In 6 days", _days6.ToHumanReadableString());
-			//Assert.AreEqual("In 1 week", _week.ToHumanReadableString());
-			//Assert.AreEqual("In 1 week and 1 day", _week1Day.ToHumanReadableString());
-			//Assert.AreEqual("In 1 week and 6 days", _week6Days.ToHumanReadableString());
-			//Assert.AreEqual("In 2 weeks", _2Weeks.ToHumanReadableString());
-		}
+		    Assert.AreEqual("1 week ago", _1WeekAgo.ToHumanReadableString());
+            //Assert.AreEqual("Today", _today.ToHumanReadableString());
+            //Assert.AreEqual("Tomorrow", _tomorrow.ToHumanReadableString());
+            //Assert.AreEqual("In 2 days", _days2.ToHumanReadableString());
+            //Assert.AreEqual("In 6 days", _days6.ToHumanReadableString());
+            //Assert.AreEqual("In 1 week", _week.ToHumanReadableString());
+            //Assert.AreEqual("In 1 week and 1 day", _week1Day.ToHumanReadableString());
+            //Assert.AreEqual("In 1 week and 6 days", _week6Days.ToHumanReadableString());
+            //Assert.AreEqual("In 2 weeks", _2Weeks.ToHumanReadableString());
+        }
 
 		[TestMethod]
 		public void ToHumanReadableString_ShouldDisplayCorrectValueInFrench()
@@ -80,15 +82,16 @@ namespace K9.WebApplication.Tests.Unit.Extensions
 			Assert.AreEqual("Il y a 2 jours", _2DaysAgo.ToHumanReadableString());
 			Assert.AreEqual("Il y a 2 jours", _2DaysAgo23.ToHumanReadableString());
 			Assert.AreEqual("Il y a 6 jours", _6DaysAgo23.ToHumanReadableString());
-			//Assert.AreEqual("Aujourd'hui", _today.ToHumanReadableString());
-			//Assert.AreEqual("Demain", _tomorrow.ToHumanReadableString());
-			//Assert.AreEqual("Dans 2 jours", _tomorrow.ToHumanReadableString());
-			//Assert.AreEqual("Dans 6 jours", _tomorrow.ToHumanReadableString());
-			//Assert.AreEqual("Dans 1 semaine", _week.ToHumanReadableString());
-			//Assert.AreEqual("Dans 1 semaine et un jour", _week1Day.ToHumanReadableString());
-			//Assert.AreEqual("Dans 1 semaine et 6 jours", _week6Days.ToHumanReadableString());
-			//Assert.AreEqual("Dans 2 semaines", _2Weeks.ToHumanReadableString());
-		}
+		    Assert.AreEqual("Il y a 1 semaine", _1WeekAgo.ToHumanReadableString());
+            //Assert.AreEqual("Aujourd'hui", _today.ToHumanReadableString());
+            //Assert.AreEqual("Demain", _tomorrow.ToHumanReadableString());
+            //Assert.AreEqual("Dans 2 jours", _tomorrow.ToHumanReadableString());
+            //Assert.AreEqual("Dans 6 jours", _tomorrow.ToHumanReadableString());
+            //Assert.AreEqual("Dans 1 semaine", _week.ToHumanReadableString());
+            //Assert.AreEqual("Dans 1 semaine et un jour", _week1Day.ToHumanReadableString());
+            //Assert.AreEqual("Dans 1 semaine et 6 jours", _week6Days.ToHumanReadableString());
+            //Assert.AreEqual("Dans 2 semaines", _2Weeks.ToHumanReadableString());
+        }
 
 	}
 }

@@ -35,7 +35,15 @@ namespace K9.WebApplication.Extensions
 			{
 				return Dictionary.Yesterday;
 			}
-			return value.ToLongLocalDateString();
+		    if ((int)elapsed.TotalDays < 7)
+		    {
+		        return string.Format(Dictionary.TimespanAgo, (int)elapsed.TotalDays, Dictionary.Days.ToLower());
+            }
+		    if ((int)elapsed.TotalDays == 7)
+		    {
+		        return string.Format(Dictionary.TimespanAgo, 1, Dictionary.Week.ToLower());
+		    }
+            return value.ToLongLocalDateString();
 		}
 
 	}

@@ -6,7 +6,6 @@ using System.Reflection;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Script.Serialization;
-using DotNetOpenAuth.Messaging;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Exceptions;
@@ -17,8 +16,8 @@ namespace K9.WebApplication.Options
 {
 	public class DataTableOptions<T> : IDataTableOptions where T : IObjectBase
 	{
-		private HashSet<PropertyInfo> _columns;
-		private HashSet<DataTableColumnInfo> _columnInfos;
+		private List<PropertyInfo> _columns;
+		private List<DataTableColumnInfo> _columnInfos;
 
 		public string Action { get; set; }
 		public string Controller { get; set; }
@@ -83,10 +82,10 @@ namespace K9.WebApplication.Options
 				var orderedColumns = VisibleColumns.Select(visibleColumn => allColumns.FirstOrDefault(c => c.Name == visibleColumn)).ToList();
 				orderedColumns.AddRange(allColumns.Where(c => !c.IsVirtual() && !orderedColumns.Contains(c)));
 
-				_columns = new HashSet<PropertyInfo>();
+				_columns = new List<PropertyInfo>();
 				_columns.AddRange(orderedColumns);
 			}
-			return _columns.ToList();
+		    return _columns;
 		}
 
 		public MvcHtmlString GetColumnsJson()
@@ -119,7 +118,7 @@ namespace K9.WebApplication.Options
 		{
 			if (_columnInfos == null)
 			{
-				_columnInfos = new HashSet<DataTableColumnInfo>();
+				_columnInfos = new List<DataTableColumnInfo>();
 
 				var keyColumns = GetKeyColumns();
 				var columnsInfos = GetColumns().Select((c, index) =>
@@ -137,7 +136,7 @@ namespace K9.WebApplication.Options
 
 				_columnInfos.AddRange(columnsInfos);
 			}
-			return _columnInfos.ToList();
+			return _columnInfos;
 		}
 
 		public RouteValueDictionary GetFilterRouteValues()

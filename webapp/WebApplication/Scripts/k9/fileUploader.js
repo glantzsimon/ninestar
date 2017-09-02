@@ -70,7 +70,7 @@ function fileUploader(config) {
             }
             img.attr("src", data.src);
         } else {
-            img.attr("src", "/Images/ui/document.jpg");
+            img.attr("src", "~/Images/ui/document.jpg");
         }
 
         fileContainer.append(img);

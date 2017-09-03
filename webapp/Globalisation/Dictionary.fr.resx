@@ -796,4 +796,10 @@
   <data name="Yesterday" xml:space="preserve">
     <value>Hier</value>
   </data>
+  <data name="Shortly" xml:space="preserve">
+    <value>Tout de suite</value>
+  </data>
+  <data name="TimespanFuture" xml:space="preserve">
+    <value>Dans {0} {1}</value>
+  </data>
 </root>

@@ -1768,6 +1768,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Shortly.
+        /// </summary>
+        public static string Shortly {
+            get {
+                return ResourceManager.GetString("Shortly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Simon Glantz is practitoner of holistic nutrition, musician and software developer.&lt;/h5&gt;
         ///&lt;p&gt;
         ///	Simon suffered with severe neurological dysfunction from an early age and continued to struggle well into his adult life. Simon used the principles of person-centered nutrition and supplementation,
@@ -1875,6 +1884,15 @@ namespace K9.Globalisation {
         public static string TimespanAgo {
             get {
                 return ResourceManager.GetString("TimespanAgo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In {0} {1}.
+        /// </summary>
+        public static string TimespanFuture {
+            get {
+                return ResourceManager.GetString("TimespanFuture", resourceCulture);
             }
         }
         

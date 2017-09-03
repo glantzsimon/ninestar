@@ -1,4 +1,5 @@
 ﻿@using K9.WebApplication.Config
+@using K9.WebApplication.Extensions
 @model List<NewsItem>
 @{
 	ViewBag.Title = Dictionary.Home;
@@ -28,7 +29,7 @@
 				</div>
 				<div class="col-md-7">
 					<div class="news-item-title">
-						<p><strong>@Dictionary.PublishedOnLabel</strong>: @newsItem.PublishedOn.ToLongDateString()</p>
+						<p><strong>@Dictionary.PublishedOnLabel</strong>: @newsItem.PublishedOn.ToHumanReadableString()</p>
 						<p><strong>@Dictionary.PublishedByLabel</strong>: @newsItem.PublishedBy</p>
 					</div>
 					<h5>

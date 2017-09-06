@@ -206,7 +206,7 @@ namespace K9.WebApplication.Controllers
 		}
 
 		#endregion
-
+        
 
 		#region CRUD
 
@@ -241,7 +241,7 @@ namespace K9.WebApplication.Controllers
 
             return View(itemToCreate);
 		}
-
+        
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		[Authorize]
@@ -291,7 +291,8 @@ namespace K9.WebApplication.Controllers
 			return View(item);
 		}
 
-		[Authorize]
+	    [Route("{id:int}/edit")]
+        [Authorize]
 		[RequirePermissions(Permission = Permissions.Edit)]
 		[OutputCache(NoStore = true, Duration = 0)]
 		public virtual ActionResult Edit(int id = 0)
@@ -484,10 +485,11 @@ namespace K9.WebApplication.Controllers
 		}
 
 		#endregion
-
+        
 
 		#region CRUD Multiple
 
+        [Route("")]
 		[Authorize]
 		[RequirePermissions(Permission = Permissions.Edit)]
 		public ActionResult EditMultiple<T2, T3>(T2 parent)

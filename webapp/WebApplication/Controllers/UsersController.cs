@@ -1,5 +1,4 @@
-﻿using System.Configuration;
-using System.Linq;
+﻿using System.Linq;
 using System.Web.Mvc;
 using K9.DataAccess.Config;
 using K9.DataAccess.Models;

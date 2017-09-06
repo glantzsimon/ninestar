@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Reflection;
 using System.Threading;
 using System.Web.Mvc;
-using K9.DataAccess.Extensions;
 using K9.DataAccess.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Authentication;
@@ -26,7 +24,6 @@ using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
 {
-
 	public abstract class BaseController : Controller, IBaseController
 	{
 		private readonly ILogger _logger;
@@ -51,13 +48,13 @@ namespace K9.WebApplication.Controllers
 
 	public abstract class BaseController<T> : Controller, IBaseController where T : class, IObjectBase
 	{
-		
-		#region Events
+        
+        #region Events
 
-		/// <summary>
-		/// Event fires before the record is passed to the Create view
-		/// </summary>
-		public event EventHandler<CrudEventArgs> RecordBeforeCreate;
+        /// <summary>
+        /// Event fires before the record is passed to the Create view
+        /// </summary>
+        public event EventHandler<CrudEventArgs> RecordBeforeCreate;
 		/// <summary>
 		/// Event fires when the record is posted and before the record is saved to the repository
 		/// </summary>
@@ -146,6 +143,7 @@ namespace K9.WebApplication.Controllers
 
 		[RequirePermissions(Permission = Permissions.View)]
 		[OutputCache(NoStore = true, Duration = 0)]
+        [Route()]
 		public virtual ActionResult Details(int id = 0)
 		{
 			T item = Repository.Find(id);

@@ -488,11 +488,10 @@ namespace K9.WebApplication.Controllers
         
 
 		#region CRUD Multiple
-
-        [Route("")]
-		[Authorize]
+        
+        [Authorize]
 		[RequirePermissions(Permission = Permissions.Edit)]
-		public ActionResult EditMultiple<T2, T3>(T2 parent)
+		protected ActionResult EditMultiple<T2, T3>(T2 parent)
 			where T2 : class, IObjectBase
 			where T3 : class, IObjectBase
 		{
@@ -500,7 +499,7 @@ namespace K9.WebApplication.Controllers
 			{
 				return HttpNotFound();
 			}
-
+            
 			if (parent.IsSystemStandard && !Roles.CurrentUserIsInRoles(RoleNames.Administrators))
 			{
 				return HttpForbidden();
@@ -523,7 +522,7 @@ namespace K9.WebApplication.Controllers
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		[RequirePermissions(Permission = Permissions.Edit)]
-		public ActionResult EditMultiple<T2, T3>(MultiSelectViewModel model)
+		protected ActionResult EditMultiple<T2, T3>(MultiSelectViewModel model)
 			where T2 : class, IObjectBase
 			where T3 : class, IObjectBase
 		{

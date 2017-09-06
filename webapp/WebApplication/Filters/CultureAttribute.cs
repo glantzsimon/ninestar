@@ -11,9 +11,7 @@ namespace K9.WebApplication.Filters
 		public override void OnActionExecuting(ActionExecutingContext filterContext)
 		{
 			if (
-				filterContext.RequestContext != null && 
-				filterContext.RequestContext.HttpContext != null &&
-				filterContext.RequestContext.HttpContext.Session != null)
+				filterContext.RequestContext != null)
 			{
 				try
 				{

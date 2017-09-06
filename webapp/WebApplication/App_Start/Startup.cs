@@ -32,20 +32,20 @@ namespace K9.WebApplication
 			builder.RegisterSource(new ViewRegistrationSource());
 			builder.RegisterFilterProvider();
 
-			builder.RegisterType<Db>().As<DbContext>().InstancePerHttpRequest();
+			builder.RegisterType<Db>().As<DbContext>().InstancePerRequest();
 			builder.Register(c => LogManager.GetCurrentClassLogger()).As<ILogger>().SingleInstance();
-			builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IRepository<>)).InstancePerHttpRequest();
-			builder.RegisterGeneric(typeof(DataTableAjaxHelper<>)).As(typeof(IDataTableAjaxHelper<>)).InstancePerHttpRequest();
+			builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IRepository<>)).InstancePerRequest();
+			builder.RegisterGeneric(typeof(DataTableAjaxHelper<>)).As(typeof(IDataTableAjaxHelper<>)).InstancePerRequest();
 			builder.RegisterType<ColumnsConfig>().As<IColumnsConfig>().SingleInstance();
-			builder.RegisterType<DataSetsHelper>().As<IDataSetsHelper>().InstancePerHttpRequest();
+			builder.RegisterType<DataSetsHelper>().As<IDataSetsHelper>().InstancePerRequest();
 			builder.RegisterType<DataSets.DataSets>().As<IDataSets>().SingleInstance();
-			builder.RegisterType<Users>().As<IUsers>().InstancePerHttpRequest();
-			builder.RegisterType<Roles>().As<IRoles>().InstancePerHttpRequest();
-			builder.RegisterType<Mailer>().As<IMailer>().InstancePerHttpRequest();
-			builder.RegisterType<PostedFileHelper>().As<IPostedFileHelper>().InstancePerHttpRequest();
-			builder.RegisterType<FileSourceHelper>().As<IFileSourceHelper>().InstancePerHttpRequest();
-			builder.RegisterGeneric(typeof(ControllerPackage<>)).As(typeof(IControllerPackage<>)).InstancePerHttpRequest();
-			builder.RegisterType<AccountService>().As<IAccountService>().InstancePerHttpRequest();
+			builder.RegisterType<Users>().As<IUsers>().InstancePerRequest();
+			builder.RegisterType<Roles>().As<IRoles>().InstancePerRequest();
+			builder.RegisterType<Mailer>().As<IMailer>().InstancePerRequest();
+			builder.RegisterType<PostedFileHelper>().As<IPostedFileHelper>().InstancePerRequest();
+			builder.RegisterType<FileSourceHelper>().As<IFileSourceHelper>().InstancePerRequest();
+			builder.RegisterGeneric(typeof(ControllerPackage<>)).As(typeof(IControllerPackage<>)).InstancePerRequest();
+			builder.RegisterType<AccountService>().As<IAccountService>().InstancePerRequest();
 
 			RegisterConfiguration(builder);
 

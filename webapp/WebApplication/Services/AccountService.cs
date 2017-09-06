@@ -88,7 +88,9 @@ namespace K9.WebApplication.Services
 							model.LastName,
 							model.PhoneNumber,
 							model.BirthDate,
-							CreatedBy = SystemUser.System,
+                            IsUnsubscribed = false,
+						    IsSystemStandard = false,
+                            CreatedBy = SystemUser.System,
 							CreatedOn = DateTime.Now,
 							LastUpdatedBy = SystemUser.System,
 							LastUpdatedOn = DateTime.Now

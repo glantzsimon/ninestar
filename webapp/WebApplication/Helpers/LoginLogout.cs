@@ -22,7 +22,7 @@ namespace K9.WebApplication.Helpers
 
 				var anchor = new TagBuilder(Tags.Anchor);
 				anchor.MergeAttribute(Attributes.Href, html.GeturlHeler().Action("LogOff", "Account"));
-				anchor.InnerHtml = string.Format("{0} {1}", icon, Dictionary.LogOut);
+				anchor.InnerHtml = $"{icon} {Dictionary.LogOut}";
 
 				var li = new TagBuilder(Tags.Li) { InnerHtml = anchor.ToString() };
 				li.MergeAttribute(Attributes.Class, html.ViewContext.GetActiveClass("LogOff", "Account"));
@@ -35,7 +35,7 @@ namespace K9.WebApplication.Helpers
 
 				var anchor = new TagBuilder(Tags.Anchor);
 				anchor.MergeAttribute(Attributes.Href, html.GeturlHeler().Action("Login", "Account"));
-				anchor.InnerHtml = string.Format("{0} {1}", icon, Dictionary.LogIn);
+				anchor.InnerHtml = $"{icon} {Dictionary.LogIn}";
 
 				var li = new TagBuilder(Tags.Li) { InnerHtml = anchor.ToString() };
 				li.MergeAttribute(Attributes.Class, html.ViewContext.GetActiveClass("Login", "Account"));

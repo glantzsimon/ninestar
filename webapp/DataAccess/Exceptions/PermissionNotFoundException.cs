@@ -6,7 +6,7 @@ namespace K9.DataAccess.Exceptions
 	{
 
 		public PermissionNotFoundException(string permissionName)
-			: base(string.Format("The Permission '{0}' was not found.", permissionName)) { }
+			: base($"The Permission '{permissionName}' was not found.") { }
 
 	}
 }

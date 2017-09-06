@@ -17,7 +17,7 @@ namespace K9.WebApplication.Options
 					return string.Empty;
 
 				default:
-					return string.Format("{0}.png", AlertType.ToString().ToLower());
+					return $"{AlertType.ToString().ToLower()}.png";
 			}
 		}
 	}

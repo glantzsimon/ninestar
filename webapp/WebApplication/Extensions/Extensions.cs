@@ -14,7 +14,7 @@ namespace K9.WebApplication.Extensions
 
 		public static string GetTableName(this Type type)
 		{
-			return string.Format("{0}Table", type.Name);
+			return $"{type.Name}Table";
 		}
 
 		public static string GetDataTableType(this PropertyInfo property)
@@ -76,13 +76,13 @@ namespace K9.WebApplication.Extensions
 		public static string GetPluralName(this Type type)
 		{
 			var namettribute = type.GetAttribute<NameAttribute>();
-			return namettribute == null ? string.Format("{0}s", type.Name) : namettribute.GetPluralName();
+			return namettribute == null ? $"{type.Name}s" : namettribute.GetPluralName();
 		}
 
 		public static string GetListName(this Type type)
 		{
 			var namettribute = type.GetAttribute<NameAttribute>();
-			return namettribute == null ? string.Format("{0}s", type.Name) : namettribute.GetListName();
+			return namettribute == null ? $"{type.Name}s" : namettribute.GetListName();
 		}
 
 	}

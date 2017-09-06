@@ -61,20 +61,10 @@ namespace K9.WebApplication.Helpers
 
 		public string GetQuery(bool selectAllColumns = false, int? limitByUserId = null)
 		{
-			return string.Format("WITH RESULTS AS " +
-								 "(SELECT {0}, ROW_NUMBER() OVER " +
-								 "(ORDER BY {1} {2}) AS RowNum " +
-								 "FROM {3} " +
-								 "{4}) " +
-								 "SELECT * FROM RESULTS " +
-								 "WHERE RowNum BETWEEN {5} AND {6}",
-								 GetSelectColumns(selectAllColumns),
-								 OrderByColumnName,
-								 OrderByDirection,
-								 GetFrom(),
-								 GetWhereClause(false, limitByUserId),
-								 Start,
-								 PageEnd);
+			return "WITH RESULTS AS " + $"(SELECT {GetSelectColumns(selectAllColumns)}, ROW_NUMBER() OVER " +
+			       $"(ORDER BY {OrderByColumnName} {OrderByDirection}) AS RowNum " + $"FROM {GetFrom()} " +
+			       $"{GetWhereClause(false, limitByUserId)}) " + "SELECT * FROM RESULTS " +
+			       $"WHERE RowNum BETWEEN {Start} AND {PageEnd}";
 		}
 
 		public int Draw => _draw;
@@ -185,10 +175,10 @@ namespace K9.WebApplication.Helpers
 
 				if (linkedTable != null)
 				{
-					return string.Format("[{0}].[{1}]", linkedTable.LinkedTableAlias, linkedTable.LinkedTableColumnName);
+					return $"[{linkedTable.LinkedTableAlias}].[{linkedTable.LinkedTableColumnName}]";
 				}
 
-				return string.Format("[{0}].[{1}]", parentType.Name, columnName);
+				return $"[{parentType.Name}].[{columnName}]";
 			}
 
 			return string.Empty;
@@ -226,7 +216,7 @@ namespace K9.WebApplication.Helpers
 			var foreignKeyColumns = GetLinkedTableInfos();
 			return foreignKeyColumns.Any()
 				? GetFromWithJoins()
-				: string.Format("[{0}]", typeof(T).Name);
+				: $"[{typeof(T).Name}]";
 		}
 
 		private string GetFromWithJoins()
@@ -261,7 +251,7 @@ namespace K9.WebApplication.Helpers
 
 					while (_linkedTableInfos.Exists(t => t.LinkedTableAlias == alias))
 					{
-						alias = string.Format("{0}{1}", tableName, i);
+						alias = $"{tableName}{i}";
 						i++;
 					}
 
@@ -271,7 +261,8 @@ namespace K9.WebApplication.Helpers
 						LinkedTableAlias = alias,
 						LinkedTableColumnName = linkedColumnAttribute.LinkedColumnName,
 						ColumnName = value.Value.Name,
-						ForeignKey = string.IsNullOrEmpty(linkedColumnAttribute.ForeignKey) ? string.Format("{0}Id", linkedColumnAttribute.LinkedTableName) : linkedColumnAttribute.ForeignKey
+						ForeignKey = string.IsNullOrEmpty(linkedColumnAttribute.ForeignKey) ? $"{linkedColumnAttribute.LinkedTableName}Id"
+						    : linkedColumnAttribute.ForeignKey
 					});
 				}
 			}
@@ -301,7 +292,7 @@ namespace K9.WebApplication.Helpers
 		/// <returns></returns>
 		private string GetLikeSearchValue()
 		{
-			return IsRegexSearch ? string.Format("%[{0}]%", SearchValue) : string.Format("%{0}%", SearchValue);
+			return IsRegexSearch ? $"%[{SearchValue}]%" : $"%{SearchValue}%";
 		}
 
 		private string GetValueFromQueryString(string key)
@@ -440,7 +431,7 @@ namespace K9.WebApplication.Helpers
 		/// <returns></returns>
 		public string GetLikeSearchValue()
 		{
-			return IsRegexSearch ? string.Format("%[{0}]%", SearchValue) : string.Format("%{0}%", SearchValue);
+			return IsRegexSearch ? $"%[{SearchValue}]%" : $"%{SearchValue}%";
 		}
 	}
 }

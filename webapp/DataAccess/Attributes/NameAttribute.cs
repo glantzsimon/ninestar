@@ -18,12 +18,12 @@ namespace K9.DataAccess.Attributes
 
 		public string GetPluralName()
 		{
-			return string.IsNullOrEmpty(PluralName) ? String.Format("{0}s", GetName()) : ResourceType.GetValueFromResource(PluralName);
+			return string.IsNullOrEmpty(PluralName) ? $"{GetName()}s" : ResourceType.GetValueFromResource(PluralName);
 		}
 
 		public string GetListName()
 		{
-			return string.IsNullOrEmpty(ListName) ? String.Format("{0}s", Name) : ListName;
+			return string.IsNullOrEmpty(ListName) ? $"{Name}s" : ListName;
 		}
 	}
 }

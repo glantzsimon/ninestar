@@ -17,7 +17,7 @@ namespace K9.WebApplication.ViewModels
 
 		public string GetSubTitle()
 		{
-			return string.Format("{0}: {1}", ParentTypeName, ParentDescription);
+			return $"{ParentTypeName}: {ParentDescription}";
 		}
 
 		public static MultiSelectViewModel Create<T, T2, T3>(T2 parent, List<T> items) 

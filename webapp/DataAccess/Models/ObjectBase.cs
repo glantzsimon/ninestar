@@ -97,22 +97,22 @@ namespace K9.DataAccess.Models
 
 		private string GetCreatePermissionName()
 		{
-			return string.Format("Create{0}", GetType().Name);
+			return $"Create{GetType().Name}";
 		}
 
 		private string GetEditPermissionName()
 		{
-			return string.Format("Edit{0}", GetType().Name);
+			return $"Edit{GetType().Name}";
 		}
 
 		private string GetDeletePermissionName()
 		{
-			return string.Format("Delete{0}", GetType().Name);
+			return $"Delete{GetType().Name}";
 		}
 
 		private string GetViewPermissionName()
 		{
-			return string.Format("View{0}", GetType().Name);
+			return $"View{GetType().Name}";
 		}
 
 		public string GetLocalisedDescription()

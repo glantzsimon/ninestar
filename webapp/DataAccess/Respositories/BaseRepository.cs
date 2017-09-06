@@ -41,7 +41,7 @@ namespace K9.DataAccess.Respositories
 
 		public List<ListItem> ItemList()
 		{
-			return _db.GetQuery<ListItem>(string.Format("SELECT [Id], [Name] FROM [{0}] ORDER BY [Name]", typeof(T).Name));
+			return _db.GetQuery<ListItem>($"SELECT [Id], [Name] FROM [{typeof(T).Name}] ORDER BY [Name]");
 		}
 
 		public List<TModel> CustomQuery<TModel>(string sql) where TModel : class
@@ -132,10 +132,7 @@ namespace K9.DataAccess.Respositories
 		public List<T> GetBy<T2>(int id)
 			where T2 : class, IObjectBase
 		{
-			return _db.GetQuery<T>(string.Format("SELECT * FROM [{0}] WHERE [{1}] = {2}",
-				typeof(T2).Name,
-				typeof(T).GetForeignKeyName(),
-				id));
+			return _db.GetQuery<T>($"SELECT * FROM [{typeof(T2).Name}] WHERE [{typeof(T).GetForeignKeyName()}] = {id}");
 		}
 
 		/// <summary>

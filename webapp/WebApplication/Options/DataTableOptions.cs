@@ -31,7 +31,7 @@ namespace K9.WebApplication.Options
 		public bool AllowDelete { get; set; }
 		public bool AllowView { get; set; }
 
-		public string TableId => string.Format("{0}Table", typeof(T).Name);
+		public string TableId => $"{typeof(T).Name}Table";
 
 	    public DataTableOptions()
 		{
@@ -108,7 +108,7 @@ namespace K9.WebApplication.Options
 
 		public string GetButtonRenderFunction()
 		{
-			return string.Format("renderButtons{0}", TableId);
+			return $"renderButtons{TableId}";
 		}
 
 		public List<DataTableColumnInfo> GetColumnInfos()

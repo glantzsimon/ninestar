@@ -40,7 +40,7 @@ namespace K9.WebApplication.Filters
 
 			if (!string.IsNullOrEmpty(Permission))
 			{
-				var fullyQualifiedPermissionName = string.Format("{0}{1}", Permission, controller.GetObjectName());
+				var fullyQualifiedPermissionName = $"{Permission}{controller.GetObjectName()}";
 				if (!CheckPermission(roles, fullyQualifiedPermissionName))
 				{
 					HttpForbidden(filterContext);

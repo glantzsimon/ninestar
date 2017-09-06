@@ -12,7 +12,8 @@ namespace K9.WebApplication.Helpers
 
 		public static MvcHtmlString BootstrapDropdownFor<TModel, TProperty>(this HtmlHelper<TModel> html, Expression<Func<TModel, TProperty>> expression, SelectList selectList, bool liveSearch = false)
 		{
-			return html.DropDownListFor(expression, selectList, null, new { @class = string.Format("{0} {1}", Bootstrap.Classes.SelectList, Bootstrap.Classes.FormControl), title = Dictionary.PleaseSelect, data_live_search = liveSearch });
+			return html.DropDownListFor(expression, selectList, null, new { @class =
+			    $"{Bootstrap.Classes.SelectList} {Bootstrap.Classes.FormControl}", title = Dictionary.PleaseSelect, data_live_search = liveSearch });
 		}
 
 	}

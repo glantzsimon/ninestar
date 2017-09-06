@@ -20,7 +20,7 @@ namespace K9.DataAccess.Helpers
 
 		public IUser GetUser(string username)
 		{
-			var user = _repository.GetQuery(string.Format("SELECT TOP 1 * FROM [User] WHERE [Username] = '{0}'", username)).FirstOrDefault();
+			var user = _repository.GetQuery($"SELECT TOP 1 * FROM [User] WHERE [Username] = '{username}'").FirstOrDefault();
 			if (user == null)
 			{
 				throw new UserNotFoundException(username);

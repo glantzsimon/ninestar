@@ -55,8 +55,8 @@ namespace K9.WebApplication.Options
 			{
 				var firstImage = Images.FirstOrDefault();
 				return SizeMode == ImageSwitcherSizeMode.Auto && firstImage != null
-					? string.Format("{0}px", firstImage.ImageInfo.Width)
-					: "";
+					? $"{firstImage.ImageInfo.Width}px"
+				    : "";
 			}
 		}
 

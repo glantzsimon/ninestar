@@ -140,7 +140,7 @@ namespace K9.WebApplication.Controllers
 		public virtual ActionResult Index()
 		{
 			SetTitle();
-			ViewBag.Subtitle = string.Format("{0}{1}", typeof(T).GetPluralName(), GetStatelessFilterTitle()); ;
+			ViewBag.Subtitle = $"{typeof(T).GetPluralName()}{GetStatelessFilterTitle()}"; ;
 			return View("Index");
 		}
 
@@ -227,7 +227,7 @@ namespace K9.WebApplication.Controllers
 			var statelessFilter = this.GetStatelessFilter();
 
 			SetTitle();
-			ViewBag.SubTitle = string.Format("{0} {1}{2}", Dictionary.CreateNew, typeof(T).GetName(), GetStatelessFilterTitle());
+			ViewBag.SubTitle = $"{Dictionary.CreateNew} {typeof(T).GetName()}{GetStatelessFilterTitle()}";
 
 			if (statelessFilter.IsSet())
 			{
@@ -236,15 +236,12 @@ namespace K9.WebApplication.Controllers
 
 			AddControllerBreadcrumb();
 
-			if (RecordBeforeCreate != null)
-			{
-				RecordBeforeCreate(this, new CrudEventArgs
-				{
-					Item = itemToCreate
-				});
-			}
+            RecordBeforeCreate?.Invoke(this, new CrudEventArgs
+            {
+                Item = itemToCreate
+            });
 
-			return View(itemToCreate);
+            return View(itemToCreate);
 		}
 
 		[HttpPost]
@@ -258,27 +255,21 @@ namespace K9.WebApplication.Controllers
 			{
 				try
 				{
-					if (RecordBeforeCreated != null)
-					{
-						RecordBeforeCreated(this, new CrudEventArgs
-						{
-							Item = item
-						});
-					}
+                    RecordBeforeCreated?.Invoke(this, new CrudEventArgs
+                    {
+                        Item = item
+                    });
 
-					Repository.Create(item);
+                    Repository.Create(item);
 
 					SavePostedFiles(item);
 
-					if (RecordCreated != null)
-					{
-						RecordCreated(this, new CrudEventArgs
-						{
-							Item = item
-						});
-					}
+                    RecordCreated?.Invoke(this, new CrudEventArgs
+                    {
+                        Item = item
+                    });
 
-					return RedirectToAction("Index", this.GetFilterRouteValueDictionary());
+                    return RedirectToAction("Index", this.GetFilterRouteValueDictionary());
 				}
 				catch (Exception ex)
 				{
@@ -287,18 +278,15 @@ namespace K9.WebApplication.Controllers
 
 					LoadUploadedFiles(item);
 
-					if (RecordCreateError != null)
-					{
-						RecordCreateError(this, new CrudEventArgs
-						{
-							Item = item
-						});
-					}
-				}
+                    RecordCreateError?.Invoke(this, new CrudEventArgs
+                    {
+                        Item = item
+                    });
+                }
 			}
 
 			SetTitle();
-			ViewBag.SubTitle = string.Format("{0} {1}{2}", Dictionary.CreateNew, typeof(T).GetName(), GetStatelessFilterTitle());
+			ViewBag.SubTitle = $"{Dictionary.CreateNew} {typeof(T).GetName()}{GetStatelessFilterTitle()}";
 
 			AddControllerBreadcrumb();
 
@@ -327,21 +315,18 @@ namespace K9.WebApplication.Controllers
 			}
 
 			SetTitle();
-			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Edit, typeof(T).GetName());
+			ViewBag.SubTitle = $"{Dictionary.Edit} {typeof(T).GetName()}";
 
 			AddControllerBreadcrumb();
 
 			LoadUploadedFiles(item);
 
-			if (RecordBeforeUpdate != null)
-			{
-				RecordBeforeUpdate(this, new CrudEventArgs
-				{
-					Item = item
-				});
-			}
+            RecordBeforeUpdate?.Invoke(this, new CrudEventArgs
+            {
+                Item = item
+            });
 
-			return View(item);
+            return View(item);
 		}
 
 		[HttpPost]
@@ -368,25 +353,19 @@ namespace K9.WebApplication.Controllers
 
 					SavePostedFiles(item);
 
-					if (RecordBeforeUpdated != null)
-					{
-						RecordBeforeUpdated(this, new CrudEventArgs
-						{
-							Item = item
-						});
-					}
+                    RecordBeforeUpdated?.Invoke(this, new CrudEventArgs
+                    {
+                        Item = item
+                    });
 
-					Repository.Update(item);
+                    Repository.Update(item);
 
-					if (RecordUpdated != null)
-					{
-						RecordUpdated(this, new CrudEventArgs
-						{
-							Item = item
-						});
-					}
+                    RecordUpdated?.Invoke(this, new CrudEventArgs
+                    {
+                        Item = item
+                    });
 
-					return RedirectToAction("Index", this.GetFilterRouteValueDictionary());
+                    return RedirectToAction("Index", this.GetFilterRouteValueDictionary());
 				}
 				catch (Exception ex)
 				{
@@ -395,18 +374,15 @@ namespace K9.WebApplication.Controllers
 
 					LoadUploadedFiles(item);
 
-					if (RecordUpdateError != null)
-					{
-						RecordUpdateError(this, new CrudEventArgs
-						{
-							Item = item
-						});
-					}
-				}
+                    RecordUpdateError?.Invoke(this, new CrudEventArgs
+                    {
+                        Item = item
+                    });
+                }
 			}
 
 			SetTitle();
-			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Edit, typeof(T).GetName());
+			ViewBag.SubTitle = $"{Dictionary.Edit} {typeof(T).GetName()}";
 
 			AddControllerBreadcrumb();
 
@@ -435,19 +411,16 @@ namespace K9.WebApplication.Controllers
 			}
 
 			SetTitle();
-			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Delete, typeof(T).GetName());
+			ViewBag.SubTitle = $"{Dictionary.Delete} {typeof(T).GetName()}";
 
 			AddControllerBreadcrumb();
 
-			if (RecordBeforeDelete != null)
-			{
-				RecordBeforeDelete(this, new CrudEventArgs
-				{
-					Item = item
-				});
-			}
+            RecordBeforeDelete?.Invoke(this, new CrudEventArgs
+            {
+                Item = item
+            });
 
-			return View(item);
+            return View(item);
 		}
 
 		[HttpPost, ActionName("Delete")]
@@ -478,43 +451,34 @@ namespace K9.WebApplication.Controllers
 
 				try
 				{
-					if (RecordBeforeDeleted != null)
-					{
-						RecordBeforeDeleted(this, new CrudEventArgs
-						{
-							Item = item
-						});
-					}
+                    RecordBeforeDeleted?.Invoke(this, new CrudEventArgs
+                    {
+                        Item = item
+                    });
 
-					Repository.Delete(id);
+                    Repository.Delete(id);
 
-					if (RecordDeleted != null)
-					{
-						RecordDeleted(this, new CrudEventArgs
-						{
-							Item = item
-						});
-					}
+                    RecordDeleted?.Invoke(this, new CrudEventArgs
+                    {
+                        Item = item
+                    });
 
-					return RedirectToAction("Index", this.GetFilterRouteValueDictionary());
+                    return RedirectToAction("Index", this.GetFilterRouteValueDictionary());
 				}
 				catch (Exception ex)
 				{
 					Logger.Error(ex.GetFullErrorMessage());
 					ModelState.AddErrorMessageFromException(ex, item);
 
-					if (RecordDeleteError != null)
-					{
-						RecordDeleteError(this, new CrudEventArgs
-						{
-							Item = item
-						});
-					}
-				}
+                    RecordDeleteError?.Invoke(this, new CrudEventArgs
+                    {
+                        Item = item
+                    });
+                }
 			}
 
 			SetTitle();
-			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Delete, typeof(T).GetName());
+			ViewBag.SubTitle = $"{Dictionary.Delete} {typeof(T).GetName()}";
 
 			AddControllerBreadcrumb();
 
@@ -548,7 +512,7 @@ namespace K9.WebApplication.Controllers
 			}
 
 			SetTitle();
-			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Edit, typeof(T).GetPluralName());
+			ViewBag.SubTitle = $"{Dictionary.Edit} {typeof(T).GetPluralName()}";
 
 			AddControllerBreadcrumb();
 
@@ -564,7 +528,7 @@ namespace K9.WebApplication.Controllers
 			where T3 : class, IObjectBase
 		{
 			SetTitle();
-			ViewBag.SubTitle = string.Format("{0} {1}", Dictionary.Edit, typeof(UserRole).GetPluralName());
+			ViewBag.SubTitle = $"{Dictionary.Edit} {typeof(UserRole).GetPluralName()}";
 
 			try
 			{
@@ -621,7 +585,7 @@ namespace K9.WebApplication.Controllers
 			if (statelessFilter.IsSet())
 			{
 				var tableName = typeof(T).GetLinkedForeignTableName(statelessFilter.Key);
-				return string.Format(" {0} {1}", Dictionary.For.ToLower(), Repository.GetName(tableName, statelessFilter.Id));
+				return $" {Dictionary.For.ToLower()} {Repository.GetName(tableName, statelessFilter.Id)}";
 			}
 			return string.Empty;
 		}
@@ -638,7 +602,7 @@ namespace K9.WebApplication.Controllers
 
 		private string GetLimitByUserWhereClause()
 		{
-			return LimitByUser() ? string.Format(" WHERE [UserId] = {0}", WebSecurity.CurrentUserId) : string.Empty;
+			return LimitByUser() ? $" WHERE [UserId] = {WebSecurity.CurrentUserId}" : string.Empty;
 		}
 
 		private bool CheckLimitByUser(IObjectBase item)

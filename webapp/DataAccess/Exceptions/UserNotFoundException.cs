@@ -6,7 +6,7 @@ namespace K9.DataAccess.Exceptions
 	{
 
 		public UserNotFoundException(string username)
-			: base(string.Format("The user '{0}' was not found.", username)) { }
+			: base($"The user '{username}' was not found.") { }
 
 	}
 }

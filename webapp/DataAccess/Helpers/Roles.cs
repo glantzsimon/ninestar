@@ -34,7 +34,7 @@ namespace K9.DataAccess.Helpers
 			var user = _users.GetUser(username);
 			var roles =
 				_roleRepository.GetQuery(
-					string.Format("SELECT * FROM [Role] WHERE [Id] IN (SELECT [RoleId] FROM [UserRole] WHERE [Userid] = {0})", user.Id))
+				        $"SELECT * FROM [Role] WHERE [Id] IN (SELECT [RoleId] FROM [UserRole] WHERE [Userid] = {user.Id})")
 					.ToList();
 			var list = new List<IRole>();
 			list.AddRange(roles);
@@ -46,8 +46,7 @@ namespace K9.DataAccess.Helpers
 			var user = _users.GetUser(username);
 			var permissions =
 				_permissionRepository.GetQuery(
-					string.Format(
-						"SELECT * FROM [Permission] WHERE [Id] IN (SELECT [PermissionId] FROM [RolePermission] JOIN [UserRole] ON [UserRole].[RoleId] = [RolePermission].[RoleId] AND [UserRole].[Userid] = {0})", user.Id))
+				        $"SELECT * FROM [Permission] WHERE [Id] IN (SELECT [PermissionId] FROM [RolePermission] JOIN [UserRole] ON [UserRole].[RoleId] = [RolePermission].[RoleId] AND [UserRole].[Userid] = {user.Id})")
 					.ToList();
 			var list = new List<IPermission>();
 			list.AddRange(permissions);
@@ -56,7 +55,7 @@ namespace K9.DataAccess.Helpers
 
 		public IRole GetRole(string roleName)
 		{
-			var role = _roleRepository.GetQuery(string.Format("SELECT TOP 1 * FROM [Role] WHERE [Name] = '{0}'", roleName)).FirstOrDefault();
+			var role = _roleRepository.GetQuery($"SELECT TOP 1 * FROM [Role] WHERE [Name] = '{roleName}'").FirstOrDefault();
 			if (role == null)
 			{
 				throw new RoleNotFoundException(roleName);
@@ -71,7 +70,7 @@ namespace K9.DataAccess.Helpers
 
 		public bool CurrentUserHasPermissions<T>(params string[] permissionNames) where T : IObjectBase
 		{
-			var fullyQualifiedPermissionNames = permissionNames.Select(permissionName => string.Format("{0}{1}", permissionName, typeof(T).Name));
+			var fullyQualifiedPermissionNames = permissionNames.Select(permissionName => $"{permissionName}{typeof(T).Name}");
 			return WebSecurity.IsAuthenticated && UserHasPermissions(WebSecurity.CurrentUserName, fullyQualifiedPermissionNames.ToArray());
 		}
 
@@ -87,7 +86,8 @@ namespace K9.DataAccess.Helpers
 
 		public IPermission GetPermission(string permissionName)
 		{
-			var permission = _permissionRepository.GetQuery(string.Format("SELECT TOP 1 * FROM [Permission] WHERE [Name] = '{0}'", permissionName)).FirstOrDefault();
+			var permission = _permissionRepository.GetQuery(
+			    $"SELECT TOP 1 * FROM [Permission] WHERE [Name] = '{permissionName}'").FirstOrDefault();
 			if (permission == null)
 			{
 				throw new PermissionNotFoundException(permissionName);
@@ -110,14 +110,14 @@ namespace K9.DataAccess.Helpers
 			var permission = GetPermission(permissionName);
 			var roles =
 				_roleRepository.GetQuery(
-					string.Format("SELECT * FROM [Role] WHERE [Name] = '{0}' AND [Id] IN (SELECT [RoleId] FROM [RolePermission] WHERE [PermissionId] = {1})", roleName, permission.Id))
+				        $"SELECT * FROM [Role] WHERE [Name] = '{roleName}' AND [Id] IN (SELECT [RoleId] FROM [RolePermission] WHERE [PermissionId] = {permission.Id})")
 					.ToList();
 			return roles.Any();
 		}
 
 		public void CreateRole(string roleName, bool isSystemStandard = false)
 		{
-			if (!_roleRepository.Exists(string.Format("SELECT * FROM [Role] WHERE Name = '{0}'", roleName)))
+			if (!_roleRepository.Exists($"SELECT * FROM [Role] WHERE Name = '{roleName}'"))
 			{
 				_roleRepository.Create(new Role
 				{
@@ -129,7 +129,7 @@ namespace K9.DataAccess.Helpers
 
 		public void CreatePermission(string permissionName, bool isSystemStandard = false)
 		{
-			if (!_permissionRepository.Exists(string.Format("SELECT * FROM [Permission] WHERE Name = '{0}'", permissionName)))
+			if (!_permissionRepository.Exists($"SELECT * FROM [Permission] WHERE Name = '{permissionName}'"))
 			{
 				_permissionRepository.Create(new Permission
 				{

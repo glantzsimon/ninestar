@@ -6,7 +6,7 @@ namespace K9.DataAccess.Exceptions
 	{
 
 		public RoleNotFoundException(string roleName)
-			: base(string.Format("The Role '{0}' was not found.", roleName)) { }
+			: base($"The Role '{roleName}' was not found.") { }
 
 	}
 }

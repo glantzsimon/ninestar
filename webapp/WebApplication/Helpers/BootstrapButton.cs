@@ -17,17 +17,20 @@ namespace K9.WebApplication.Helpers
 
 		public static MvcHtmlString BootstrapBackToListButton(this HtmlHelper html)
 		{
-			return MvcHtmlString.Create(string.Format("<a class=\"btn btn-info\" href=\"{0}\"><i class='fa fa-angle-left'></i> {1}</a>", html.GeturlHeler().Action("Index", html.GetStatelessFilter().GetFilterRouteValues()), Dictionary.BackToList));
+			return MvcHtmlString.Create(
+			    $"<a class=\"btn btn-info\" href=\"{html.GeturlHeler().Action("Index", html.GetStatelessFilter().GetFilterRouteValues())}\"><i class='fa fa-angle-left'></i> {Dictionary.BackToList}</a>");
 		}
 
 		public static MvcHtmlString BootstrapLinkToDeleteButton(this HtmlHelper html, int id)
 		{
-			return MvcHtmlString.Create(string.Format("<a class=\"btn btn-danger\" href=\"{0}\"><i class='fa fa-trash'></i> {1}</a>", html.GeturlHeler().Action("Delete", GetFilterRouteValueDictionaryWithId(html, id)), Dictionary.Delete));
+			return MvcHtmlString.Create(
+			    $"<a class=\"btn btn-danger\" href=\"{html.GeturlHeler().Action("Delete", GetFilterRouteValueDictionaryWithId(html, id))}\"><i class='fa fa-trash'></i> {Dictionary.Delete}</a>");
 		}
 
 		public static MvcHtmlString BootstrapLinkToEditButton(this HtmlHelper html, int id)
 		{
-			return MvcHtmlString.Create(string.Format("<a class=\"btn btn-primary\" href=\"{0}\"><i class='fa fa-pencil'></i> {1}</a>", html.GeturlHeler().Action("Edit", GetFilterRouteValueDictionaryWithId(html, id)), Dictionary.Edit));
+			return MvcHtmlString.Create(
+			    $"<a class=\"btn btn-primary\" href=\"{html.GeturlHeler().Action("Edit", GetFilterRouteValueDictionaryWithId(html, id))}\"><i class='fa fa-pencil'></i> {Dictionary.Edit}</a>");
 		}
 
 		/// <summary>
@@ -41,15 +44,16 @@ namespace K9.WebApplication.Helpers
 		/// <returns></returns>
 		public static MvcHtmlString BootstrapLinkToCollectionButton(this HtmlHelper html, string linkText, string actionName, string controllerName, RouteValueDictionary routeValues)
 		{
-			return MvcHtmlString.Create(string.Format("<a class=\"btn btn-info\" href=\"{0}\"><i class='fa fa-link'></i> {1}</a>", html.GeturlHeler().Action(actionName, controllerName, routeValues), linkText));
+			return MvcHtmlString.Create(
+			    $"<a class=\"btn btn-info\" href=\"{html.GeturlHeler().Action(actionName, controllerName, routeValues)}\"><i class='fa fa-link'></i> {linkText}</a>");
 		}
 
 		public static MvcHtmlString BootstrapActionLinkButton(this HtmlHelper html, string linkText, string actionName, string controllerName, object routeValues = null, string iconCssClass = "", params EButtonClass[] buttonClasses)
 		{
 			var buttonCssClass = GetButtonClass(EButtonType.Button, buttonClasses);
 			var isIconRightAligned = buttonClasses.Contains(EButtonClass.IconRight);
-			var leftAlignedText = isIconRightAligned ? string.Format("{0} ", linkText) : string.Empty;
-			var rightAlignedText = !isIconRightAligned ? string.Format(" {0}", linkText) : string.Empty;
+			var leftAlignedText = isIconRightAligned ? $"{linkText} " : string.Empty;
+			var rightAlignedText = !isIconRightAligned ? $" {linkText}" : string.Empty;
 
 			if (!string.IsNullOrEmpty(iconCssClass))
 			{
@@ -65,28 +69,29 @@ namespace K9.WebApplication.Helpers
 
 		public static MvcHtmlString BootstrapCreateNewButton(this HtmlHelper html)
 		{
-			return MvcHtmlString.Create(string.Format("<a class=\"btn btn-primary\" href=\"{0}\"><i class='fa fa-plus-circle'></i> {1}</a>", html.GeturlHeler().Action("Create", html.GetStatelessFilter().GetFilterRouteValues()), Dictionary.CreateNew));
+			return MvcHtmlString.Create(
+			    $"<a class=\"btn btn-primary\" href=\"{html.GeturlHeler().Action("Create", html.GetStatelessFilter().GetFilterRouteValues())}\"><i class='fa fa-plus-circle'></i> {Dictionary.CreateNew}</a>");
 		}
 
 		public static MvcHtmlString BootstrapButton(this HtmlHelper html, string value, EButtonType buttonType = EButtonType.Submit, string iconCssClass = "", params EButtonClass[] buttonClasses)
 		{
 			var button = new TagBuilder(Tags.Button);
 			var isRightAlignedCaret = buttonClasses.Contains(EButtonClass.IconRight);
-			var leftAlignedText = isRightAlignedCaret ? string.Format("{0} ", value) : string.Empty;
-			var rightAlignedText = !isRightAlignedCaret ? string.Format(" {0}", value) : string.Empty;
+			var leftAlignedText = isRightAlignedCaret ? $"{value} " : string.Empty;
+			var rightAlignedText = !isRightAlignedCaret ? $" {value}" : string.Empty;
 
 			button.MergeAttribute(Attributes.Type, buttonType.ToString());
 			button.MergeAttribute(Attributes.Class, GetButtonClass(buttonType, buttonClasses));
-			button.MergeAttribute(Attributes.DataLoadingText, string.Format("<i class='fa fa-circle-o-notch fa-spin'></i> {0}", value));
+			button.MergeAttribute(Attributes.DataLoadingText, $"<i class='fa fa-circle-o-notch fa-spin'></i> {value}");
 
 			switch (buttonType)
 			{
 				case EButtonType.Delete:
-					button.InnerHtml = string.Format("{0}<i class='fa fa-trash'></i>{1}", leftAlignedText, rightAlignedText);
+					button.InnerHtml = $"{leftAlignedText}<i class='fa fa-trash'></i>{rightAlignedText}";
 					break;
 
 				case EButtonType.Edit:
-					button.InnerHtml = string.Format("{0}<i class='fa fa-pencil'></i>{1}", leftAlignedText, rightAlignedText);
+					button.InnerHtml = $"{leftAlignedText}<i class='fa fa-pencil'></i>{rightAlignedText}";
 					break;
 
 				default:
@@ -96,7 +101,7 @@ namespace K9.WebApplication.Helpers
 					}
 					else
 					{
-						button.InnerHtml = string.Format("{0}<i class='fa {1}'></i>{2}", leftAlignedText, iconCssClass, rightAlignedText);
+						button.InnerHtml = $"{leftAlignedText}<i class='fa {iconCssClass}'></i>{rightAlignedText}";
 					}
 					break;
 			}
@@ -129,7 +134,7 @@ namespace K9.WebApplication.Helpers
 						? Bootstrap.Classes.ButtonPrimary
 						: GetButtonClasses(buttonClasses)
 							.Select(_ => _.ToCssClass())
-							.Aggregate((a, b) => string.Format("{0} {1}", a, b).Trim());
+							.Aggregate((a, b) => $"{a} {b}".Trim());
 			}
 		}
 

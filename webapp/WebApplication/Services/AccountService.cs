@@ -270,8 +270,7 @@ namespace K9.WebApplication.Services
 
 		public string GetAccountActivationToken(int userId)
 		{
-			string sql = string.Format("SELECT ConfirmationToken FROM webpages_Membership " +
-									   "WHERE UserId = {0}", userId);
+			string sql = "SELECT ConfirmationToken FROM webpages_Membership " + $"WHERE UserId = {userId}";
 			return _userRepository.CustomQuery<string>(sql).FirstOrDefault();
 		}
 

@@ -10,12 +10,9 @@ namespace K9.WebApplication.DataSets
 	{
 		private readonly IDictionary<Type, List<ListItem>> _collection;
 
-		public IDictionary<Type, List<ListItem>> Collection
-		{
-			get { return _collection; }
-		}
+		public IDictionary<Type, List<ListItem>> Collection => _collection;
 
-		public DataSets()
+	    public DataSets()
 		{
 			_collection = new Dictionary<Type, List<ListItem>>();
 		}

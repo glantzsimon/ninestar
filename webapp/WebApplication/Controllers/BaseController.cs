@@ -33,25 +33,13 @@ namespace K9.WebApplication.Controllers
 		private readonly IDataSetsHelper _dataSetsHelper;
 		private readonly IRoles _roles;
 
-		public IDataSetsHelper DropdownDataSets
-		{
-			get { return _dataSetsHelper; }
-		}
+		public IDataSetsHelper DropdownDataSets => _dataSetsHelper;
 
-		public IRoles Roles
-		{
-			get { return _roles; }
-		}
+	    public IRoles Roles => _roles;
 
-		public ILogger Logger
-		{
-			get
-			{
-				return _logger;
-			}
-		}
+	    public ILogger Logger => _logger;
 
-		public abstract string GetObjectName();
+	    public abstract string GetObjectName();
 
 		public BaseController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles)
 		{
@@ -106,46 +94,19 @@ namespace K9.WebApplication.Controllers
 
 		public IControllerPackage<T> ControllerPackage { get; set; }
 
-		public IRepository<T> Repository
-		{
-			get { return ControllerPackage.Repository; }
-		}
+		public IRepository<T> Repository => ControllerPackage.Repository;
 
-		public IDataSetsHelper DropdownDataSets
-		{
-			get { return ControllerPackage.DataSetsHelper; }
-		}
+	    public IDataSetsHelper DropdownDataSets => ControllerPackage.DataSetsHelper;
 
-		public IRoles Roles
-		{
-			get { return ControllerPackage.Roles; }
-		}
+	    public IRoles Roles => ControllerPackage.Roles;
 
-		public ILogger Logger
-		{
-			get
-			{
-				return ControllerPackage.Logger;
-			}
-		}
+	    public ILogger Logger => ControllerPackage.Logger;
 
-		public IDataTableAjaxHelper<T> AjaxHelper
-		{
-			get
-			{
-				return ControllerPackage.AjaxHelper;
-			}
-		}
+	    public IDataTableAjaxHelper<T> AjaxHelper => ControllerPackage.AjaxHelper;
 
-		public IFileSourceHelper FileSourceHelper
-		{
-			get
-			{
-				return ControllerPackage.FileSourceHelper;
-			}
-		}
+	    public IFileSourceHelper FileSourceHelper => ControllerPackage.FileSourceHelper;
 
-		#endregion
+	    #endregion
 
 
 		#region EventHandlers

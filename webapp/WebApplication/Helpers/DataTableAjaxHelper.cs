@@ -77,49 +77,25 @@ namespace K9.WebApplication.Helpers
 								 PageEnd);
 		}
 
-		public int Draw
-		{
-			get { return _draw; }
-		}
+		public int Draw => _draw;
 
-		public int Start
-		{
-			get { return _start; }
-		}
+	    public int Start => _start;
 
-		public int Length
-		{
-			get { return _length == 0 ? DefaultTotalRows : _length; }
-		}
+	    public int Length => _length == 0 ? DefaultTotalRows : _length;
 
-		public int PageEnd
-		{
-			get { return _start + _length; }
-		}
+	    public int PageEnd => _start + _length;
 
-		public string SearchValue
-		{
-			get { return _searchValue; }
-		}
+	    public string SearchValue => _searchValue;
 
-		public IStatelessFilter StatelessFilter { get; set; }
+	    public IStatelessFilter StatelessFilter { get; set; }
 
-		public bool IsRegexSearch
-		{
-			get { return _isRegexSearch; }
-		}
+		public bool IsRegexSearch => _isRegexSearch;
 
-		public List<IDataTableColumnInfo> ColumnInfos
-		{
-			get { return _columnInfos; }
-		}
+	    public List<IDataTableColumnInfo> ColumnInfos => _columnInfos;
 
-		public int OrderByColumnIndex
-		{
-			get { return _orderByColumnIndex; }
-		}
+	    public int OrderByColumnIndex => _orderByColumnIndex;
 
-		public string OrderByColumnName
+	    public string OrderByColumnName
 		{
 			get
 			{
@@ -135,12 +111,9 @@ namespace K9.WebApplication.Helpers
 			}
 		}
 
-		public string OrderByDirection
-		{
-			get { return _orderByDirection; }
-		}
+		public string OrderByDirection => _orderByDirection;
 
-		public string GetWhereClause(bool ignoreChildTables = false, int? limitByUserId = null)
+	    public string GetWhereClause(bool ignoreChildTables = false, int? limitByUserId = null)
 		{
 			var sb = new StringBuilder();
 			var parentType = typeof(T);
@@ -423,32 +396,17 @@ namespace K9.WebApplication.Helpers
 			_index = index;
 		}
 
-		public int Index
-		{
-			get { return _index; }
-		}
+		public int Index => _index;
 
-		public string Data
-		{
-			get { return _data; }
-		}
+	    public string Data => _data;
 
-		public string Name
-		{
-			get { return _name; }
-		}
+	    public string Name => _name;
 
-		public string SearchValue
-		{
-			get { return _searchValue; }
-		}
+	    public string SearchValue => _searchValue;
 
-		public bool IsRegexSearch
-		{
-			get { return _isSearchRegex; }
-		}
+	    public bool IsRegexSearch => _isSearchRegex;
 
-		public bool IsDatabound { get; set; }
+	    public bool IsDatabound { get; set; }
 
 		public string Renderer { get; set; }
 

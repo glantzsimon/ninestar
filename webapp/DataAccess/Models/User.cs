@@ -2,7 +2,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using DataAnnotationsExtensions;
 using K9.DataAccess.Attributes;
 using K9.Globalisation;
 using K9.SharedLibrary.Models;
@@ -34,7 +33,7 @@ namespace K9.DataAccess.Models
 
 		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 		[DataType(DataType.EmailAddress, ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.InvalidEmailAddress)]
-		[Email(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.InvalidEmailAddress)]
+		[EmailAddress(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.InvalidEmailAddress)]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EmailAddressLabel)]
 		[StringLength(255)]
 		public string EmailAddress { get; set; }
@@ -57,15 +56,9 @@ namespace K9.DataAccess.Models
 		public bool AccountActivated { get; set; }
 
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AccountActivated)]
-		public bool IsActivated
-		{
-			get
-			{
-				return !string.IsNullOrEmpty(Username) && WebSecurity.Initialized && WebSecurity.IsConfirmed(Username);
-			}
-		}
-		
-		public override void UpdateName()
+		public bool IsActivated => !string.IsNullOrEmpty(Username) && WebSecurity.Initialized && WebSecurity.IsConfirmed(Username);
+
+	    public override void UpdateName()
 		{
 			Name = string.Format("{0} {1}", FirstName, LastName);
 		}

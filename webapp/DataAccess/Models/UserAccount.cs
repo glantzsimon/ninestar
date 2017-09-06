@@ -1,7 +1,7 @@
 ﻿
 using System;
 using System.ComponentModel.DataAnnotations;
-using DataAnnotationsExtensions;
+using Foolproof;
 using K9.Globalisation;
 
 namespace K9.DataAccess.Models
@@ -71,7 +71,7 @@ namespace K9.DataAccess.Models
 			public string LastName { get; set; }
 
 			[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
-			[Email(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.InvalidEmailAddress)]
+			[EmailAddress(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.InvalidEmailAddress)]
 			[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EmailAddressLabel)]
 			public string EmailAddress { get; set; }
 
@@ -96,7 +96,7 @@ namespace K9.DataAccess.Models
 			public string UserName { get; set; }
 
 			[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
-			[Email(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.InvalidEmailAddress)]
+			[EmailAddress(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.InvalidEmailAddress)]
 			[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EmailAddressLabel)]
 			public string EmailAddress { get; set; }
 		}

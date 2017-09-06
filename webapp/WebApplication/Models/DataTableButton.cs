@@ -10,12 +10,9 @@ namespace K9.WebApplication.Models
 		public string IconCssClass { get; set; }
 		public EButtonType ButtonType { get; set; }
 
-		public string ButtonCssClass
-		{
-			get { return GetButtonCssClass(); }
-		}
+		public string ButtonCssClass => GetButtonCssClass();
 
-		private string GetButtonCssClass()
+	    private string GetButtonCssClass()
 		{
 			switch (ButtonType)
 			{

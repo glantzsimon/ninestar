@@ -23,15 +23,9 @@ namespace K9.WebApplication.Options
 			_crumbs = new List<Crumb>();
 		}
 
-		public List<Crumb> Crumbs
-		{
-			get
-			{
-				return GetCrumbs();
-			}
-		}
+		public List<Crumb> Crumbs => GetCrumbs();
 
-		private List<Crumb> GetCrumbs()
+	    private List<Crumb> GetCrumbs()
 		{
 			var crumbs = new List<Crumb>();
 

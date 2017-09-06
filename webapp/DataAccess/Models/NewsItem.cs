@@ -47,14 +47,8 @@ namespace K9.DataAccess.Models
 		public FileSource ImageFileSource { get; set; }
 
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LanguageLabel)]
-		public string LanguageName
-		{
-			get { return Language.GetLocalisedLanguageName(); }
-		}
+		public string LanguageName => Language.GetLocalisedLanguageName();
 
-		public string LanguageCode
-		{
-			get { return Language.GetLanguageCode(); }
-		}
+	    public string LanguageCode => Language.GetLanguageCode();
 	}
 }

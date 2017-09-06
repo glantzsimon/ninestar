@@ -6,12 +6,11 @@ using K9.DataAccess.Attributes;
 using K9.Globalisation;
 using K9.SharedLibrary.Attributes;
 using K9.SharedLibrary.Models;
-using WebMatrix.WebData;
 
 namespace K9.DataAccess.Models
 {
 
-	public enum EMessageDirection
+    public enum EMessageDirection
 	{
 		Inbound,
 		Outbound

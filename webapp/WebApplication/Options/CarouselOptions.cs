@@ -28,34 +28,19 @@ namespace K9.WebApplication.Options
 			LoadImages();
 		}
 
-		public string Id
-		{
-			get { return _id.ToString(); }
-		}
+		public string Id => _id.ToString();
 
-		public string PathToImages
-		{
-			get { return _pathToImages; }
-		}
+	    public string PathToImages => _pathToImages;
 
-		public List<AssetInfo> Images
-		{
-			get { return _images; }
-		}
+	    public List<AssetInfo> Images => _images;
 
-		public List<AssetInfo> FullSizeImages
-		{
-			get { return _fullSizeImages; }
-		}
+	    public List<AssetInfo> FullSizeImages => _fullSizeImages;
 
-		public EImageSizing ImageSizing { get; set; }
+	    public EImageSizing ImageSizing { get; set; }
 		
-		public int ImageWidth
-		{
-			get { return _imageWidth; }
-		}
+		public int ImageWidth => _imageWidth;
 
-		public AssetInfo GetFullSizeImage(string imageName)
+	    public AssetInfo GetFullSizeImage(string imageName)
 		{
 			var fullSizeImage = _fullSizeImages.FirstOrDefault(i => i.FileName == imageName);
 			return fullSizeImage ?? _images.FirstOrDefault(i => i.FileName == imageName);

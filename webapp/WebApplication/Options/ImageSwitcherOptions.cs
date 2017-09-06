@@ -47,12 +47,9 @@ namespace K9.WebApplication.Options
 			PauseOnHover = false;
 		}
 
-		public string RoundCornersStyle
-		{
-			get { return RoundCorners ? "border-radius: 8px;" : ""; }
-		}
+		public string RoundCornersStyle => RoundCorners ? "border-radius: 8px;" : "";
 
-		public string MaxWidthStyle
+	    public string MaxWidthStyle
 		{
 			get
 			{
@@ -63,9 +60,6 @@ namespace K9.WebApplication.Options
 			}
 		}
 
-		public string Random
-		{
-			get { return (TransitionOrder == ImageSwitcherTransitionOrder.Random).ToString().ToLower(); }
-		}
+		public string Random => (TransitionOrder == ImageSwitcherTransitionOrder.Random).ToString().ToLower();
 	}
 }

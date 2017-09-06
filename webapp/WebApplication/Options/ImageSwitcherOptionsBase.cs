@@ -27,17 +27,11 @@ namespace K9.WebApplication.Options
 			Interval = 8000;
 		}
 
-		public string PathToImages
-		{
-			get { return _pathToImages; }
-		}
+		public string PathToImages => _pathToImages;
 
-		public List<AssetInfo> Images
-		{
-			get { return _images; }
-		}
+	    public List<AssetInfo> Images => _images;
 
-		[DefaultValue(ImageSwitcherTransitionOrder.Sequence)]
+	    [DefaultValue(ImageSwitcherTransitionOrder.Sequence)]
 		public ImageSwitcherTransitionOrder TransitionOrder { get; set; }
 
 		[DefaultValue(true)]

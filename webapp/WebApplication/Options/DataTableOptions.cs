@@ -31,12 +31,9 @@ namespace K9.WebApplication.Options
 		public bool AllowDelete { get; set; }
 		public bool AllowView { get; set; }
 
-		public string TableId
-		{
-			get { return string.Format("{0}Table", typeof(T).Name); }
-		}
+		public string TableId => string.Format("{0}Table", typeof(T).Name);
 
-		public DataTableOptions()
+	    public DataTableOptions()
 		{
 			VisibleColumns = new List<string>();
 			CustomButtons = new List<IButton>();

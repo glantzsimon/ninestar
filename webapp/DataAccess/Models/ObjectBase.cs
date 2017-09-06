@@ -33,11 +33,8 @@ namespace K9.DataAccess.Models
 		[Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int Id
 		{
-			get
-			{
-				return _id;
-			}
-			set
+			get => _id;
+		    set
 			{
 				if (_id != value)
 				{
@@ -59,47 +56,17 @@ namespace K9.DataAccess.Models
 		public bool IsSelected { get; set; }
 
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DescriptionLabel)]
-		public string Description
-		{
-			get
-			{
-				return GetLocalisedDescription();
-			}
-		}
+		public string Description => GetLocalisedDescription();
 
-		public string CreatePermissionName
-		{
-			get
-			{
-				return GetCreatePermissionName();
-			}
-		}
+	    public string CreatePermissionName => GetCreatePermissionName();
 
-		public string EditPermissionName
-		{
-			get
-			{
-				return GetEditPermissionName();
-			}
-		}
+	    public string EditPermissionName => GetEditPermissionName();
 
-		public string DeletePermissionName
-		{
-			get
-			{
-				return GetDeletePermissionName();
-			}
-		}
+	    public string DeletePermissionName => GetDeletePermissionName();
 
-		public string ViewPermissionName
-		{
-			get
-			{
-				return GetViewPermissionName();
-			}
-		}
+	    public string ViewPermissionName => GetViewPermissionName();
 
-		#endregion
+	    #endregion
 
 
 		#region Audit Fields
@@ -154,7 +121,7 @@ namespace K9.DataAccess.Models
 			{
 				return typeof(Dictionary).GetValueFromResource(Name);
 			}
-			catch (Exception e)
+			catch (Exception)
 			{
 			}
 

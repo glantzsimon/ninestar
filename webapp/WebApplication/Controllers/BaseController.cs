@@ -295,7 +295,7 @@ namespace K9.WebApplication.Controllers
         [System.Web.Mvc.Authorize]
         [RequirePermissions(Permission = Permissions.Edit)]
         [OutputCache(NoStore = true, Duration = 0)]
-        public virtual ActionResult Edit([FromUri] int id = 0)
+        public virtual ActionResult Edit(int id = 0)
         {
             var item = Repository.Find(id);
             if (item == null)

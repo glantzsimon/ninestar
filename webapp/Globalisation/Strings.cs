@@ -87,7 +87,7 @@ namespace K9.Globalisation
 		public class LanguageCodes
 		{
 			public const string Fr = "fr";
-			public const string En = "en";
+			public const string En = "en-GB";
 		}
 
 	}

@@ -34,8 +34,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     @if (localeName != "en-us")
     {
-        var culture = localeName == "en-gb" ? "en-gb" : localeName;
-        <script type="text/javascript" src=@string.Format("https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/locale/{0}.js", languageName)></script>
+        var culture = localeName == "en-gb" ? "en-gb" : languageName;
+        <script type="text/javascript" src=@string.Format("https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/locale/{0}.js", culture)></script>
     }
     @if (languageName != "en")
     {

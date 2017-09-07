@@ -1,18 +1,16 @@
 language: csharp
 solution: webapp/ninestar.sln
 install:
-  - nuget restore solution-name.sln
+  - nuget restore webapp/ninestar.sln
   - nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
 script:
-  - xbuild /p:Configuration=Release solution-name.sln
-  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./MyProject.Tests/bin/Release/MyProject.Tests.dll
-deploy:
-  # deploy develop to the staging environment
-  - provider: script
-    script: scripts/deploy.sh staging
-    on:
-      branch: develop
-  # deploy master to production
-  - provider: script
-    script: scripts/deploy.sh production
-    on:
+  - xbuild /p:Configuration=Release webapp/ninestar.sln
+  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe webapp/webapplication.Tests/bin/Release/MyProject.Tests.dll
+  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe webapp/DataAccess.Tests/bin/Release/MyProject.Tests.dll
+  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe webapp/SharedLibrary.Tests/bin/Release/MyProject.Tests.dll
+env:
+  global:
+    - "FTP_USER=user"
+    - "FTP_PASSWORD=password"
+after_success:
+    "curl --ftp-create-dirs -T uploadfilename -u $FTP_USER:$FTP_PASSWORD ftp://sitename.com/directory/myfile"

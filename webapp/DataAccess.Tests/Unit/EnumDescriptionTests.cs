@@ -11,7 +11,7 @@ namespace K9.DataAccess.Tests.Unit
 	public class EnumDescriptionTests
 	{
 
-		[TestMethod]
+		[Fact]
 		public void ELanguage_GetLanguageDescription_ShouldReturnCorrectLanguage()
 		{
 			var english = ELanguage.English.GetLocalisedLanguageName();

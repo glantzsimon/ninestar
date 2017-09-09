@@ -1,0 +1,5 @@
+﻿@using K9.WebApplication.Extensions
+@using K9.WebApplication.Helpers
+@model bool?
+<label>@Html.GetDisplayNameFor(model => model)</label>
+<div>@(Model.HasValue ? Model.Value.ToYesNo() :string.Empty)</div>

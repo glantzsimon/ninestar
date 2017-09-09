@@ -1,0 +1,14 @@
+﻿.menu-bar
+{
+	height: 60px;
+	border-top: 1px solid #333333;
+	border-bottom: 1px solid #333333;
+	background-color: #555555;
+	color: white;
+}
+
+.menu-bar h3
+{
+	display: inline-block;
+	margin-top: 13px;
+}

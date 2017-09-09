@@ -1,12 +1,11 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Xunit;
 
 namespace K9.DataAccess.Tests.Unit
 {
 	
-	[TestClass]
 	public class RepositoryTests
 	{
-		[TestMethod]
+		[Fact]
 		public void Test()
 		{
 			

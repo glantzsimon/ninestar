@@ -1,0 +1,5 @@
+﻿@using K9.DataAccess.Enums
+@using K9.WebApplication.Extensions
+@model ELanguage
+
+@Html.BootstrapDropdownFor(model => model, this.GetDropdownData().GetSelectListFromEnum<ELanguage>(Convert.ToInt32(Model), true))

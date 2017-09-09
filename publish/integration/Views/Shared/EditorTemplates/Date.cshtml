@@ -1,0 +1,7 @@
+﻿@model Object
+<div class="input-group date dateonly">
+	@Html.TextBoxFor(model => model, ViewData["viewDataDictionary"] as IDictionary<string, object>)
+	<span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+</div>

@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = Dictionary.AccountActivationTitle;
+	Layout = "../Shared/_LayoutForm.cshtml";
+}
+
+@Html.Failure(Dictionary.AccountActivationFailed)
+<div class="text-center">
+	@Html.ActionLink(Dictionary.PleaseContactSupport, "ContactUs", "Support")
+</div>

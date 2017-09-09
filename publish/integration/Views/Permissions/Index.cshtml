@@ -1,0 +1,11 @@
+﻿@model Permission
+@{
+	Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
+}
+@Html.BootstrapTable(new DataTableOptions<Permission>
+{
+	VisibleColumns = new List<string>
+	{
+		"Description"
+	}
+})

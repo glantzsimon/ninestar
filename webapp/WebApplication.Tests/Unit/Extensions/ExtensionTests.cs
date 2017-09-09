@@ -1,17 +1,16 @@
 ﻿using K9.WebApplication.Controllers;
 using K9.WebApplication.Extensions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace K9.WebApplication.Tests.Unit.Extensions
 {
-	[TestClass]
 	public class ExtensionTests
 	{
 		
-		[TestMethod]
+		[Fact]
 		public void GetControllerName_ShouldReturnNameOfController_ForUseInRouting()
 		{
-			Assert.AreEqual("Messages", typeof(MessagesController).GetControllerName());
+			Assert.Equal("Messages", typeof(MessagesController).GetControllerName());
 		}
 		
 	}

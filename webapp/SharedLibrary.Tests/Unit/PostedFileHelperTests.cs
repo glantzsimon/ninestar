@@ -3,16 +3,15 @@ using System.IO;
 using System.Web;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using Xunit;
 
 namespace K9.SharedLibrary.Tests.Unit
 {
-	[TestClass]
 	public class PostedFileHelperTests
 	{
 
-		[TestMethod]
+		[Fact]
 		public void SavePostedFileToRelativePath_ShouldSaveFileToDisk_AndReturnFileName()
 		{
 			var helper = new PostedFileHelper();
@@ -28,11 +27,11 @@ namespace K9.SharedLibrary.Tests.Unit
 			var expectedPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, imagesNewsUploadPath, fileName).ToPathOnDisk();
 			var result = helper.SavePostedFileToRelativePath(postedFile.Object, imagesNewsUploadPath);
 
-			Assert.AreEqual(expectedPath, result);
-			Assert.AreEqual(result, postedFilePath);
+			Assert.Equal(expectedPath, result);
+			Assert.Equal(result, postedFilePath);
 		}
 
-		[TestMethod]
+		[Fact]
 		public void SavePostedFileToRelativePath_ShouldThrowError_IfPostedFileIsNull()
 		{
 			var helper = new PostedFileHelper();
@@ -43,11 +42,11 @@ namespace K9.SharedLibrary.Tests.Unit
 			}
 			catch (Exception ex)
 			{
-				Assert.IsInstanceOfType(ex, typeof(NullReferenceException));
-			}
+			    Assert.IsType<NullReferenceException>(ex);
+            }
 		}
 
-		[TestMethod]
+		[Fact]
 		public void SavePostedFileToDisk_ShouldThrowError_IfPostedFileIsNull()
 		{
 			var helper = new PostedFileHelper();
@@ -58,7 +57,7 @@ namespace K9.SharedLibrary.Tests.Unit
 			}
 			catch (Exception ex)
 			{
-				Assert.IsInstanceOfType(ex, typeof(NullReferenceException));
+				Assert.IsType<NullReferenceException>(ex);
 			}
 		}
 

@@ -9,8 +9,9 @@ script:
   - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe webapp/DataAccess.Tests/bin/Release/MyProject.Tests.dll
   - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe webapp/SharedLibrary.Tests/bin/Release/MyProject.Tests.dll
 env:
-  global:
-    - "FTP_USER=user"
-    - "FTP_PASSWORD=password"
+  matrix:
+    - secure: 
+    - "FTP_USER=KKKK"
+    - "FTP_PASSWORD=^^^^^"
 after_success:
-    "curl --ftp-create-dirs -T uploadfilename -u $FTP_USER:$FTP_PASSWORD ftp://sitename.com/directory/myfile"
+    gulp deploy --user $FTP_USER --password $FTP_PASSWORD

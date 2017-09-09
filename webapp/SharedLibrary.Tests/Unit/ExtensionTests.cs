@@ -2,14 +2,13 @@
 using System.Web.Mvc;
 using K9.DataAccess.Models;
 using K9.SharedLibrary.Extensions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace K9.SharedLibrary.Tests.Unit
 {
-	[TestClass]
 	public class ExtensionTests
 	{
-		[TestMethod]
+		[Fact]
 		public void ViewDataDictionary_AddCssClass_ShouldAddCssClassesWithSpace()
 		{
 			var viewDataDictionary = new ViewDataDictionary(new { });
@@ -17,10 +16,10 @@ namespace K9.SharedLibrary.Tests.Unit
 			viewDataDictionary.MergeAttribute("class", "test2");
 			viewDataDictionary.MergeAttribute("class", "test3");
 
-			Assert.AreEqual("test2 test3", viewDataDictionary["class"]);
+			Assert.Equal("test2 test3", viewDataDictionary["class"]);
 		}
 
-		[TestMethod]
+		[Fact]
 		public void DelimitedString_ShouldReturnCorrectString()
 		{
 			var delimitedString = new List<string>
@@ -37,14 +36,14 @@ namespace K9.SharedLibrary.Tests.Unit
 				"Meow"
 			}.ToDelimitedString(" |");
 
-			Assert.AreEqual("Wolf, Back, Meow", delimitedString);
-			Assert.AreEqual("Wolf | Back | Meow", delimitedStringCustom);
+			Assert.Equal("Wolf, Back, Meow", delimitedString);
+			Assert.Equal("Wolf | Back | Meow", delimitedStringCustom);
 		}
 
-		[TestMethod]
+		[Fact]
 		public void ImplementsIUserData_ShouldReturnTrue()
 		{
-			Assert.IsTrue(typeof(Message).ImplementsIUserData());
+			Assert.True(typeof(Message).ImplementsIUserData());
 		}
 
 	}

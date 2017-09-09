@@ -1,0 +1,99 @@
+﻿@{
+	ViewBag.Title = Dictionary.Iboga;
+	Layout = "../Shared/_LayoutMaster.cshtml";
+}
+
+<div class="banner-forest3 main-banner">
+	@Html.Partial("_Navbar")
+</div>
+<div class="main-section">
+	<div class="container">
+		<div>
+			<div class="col-md-5">
+				<div class="picture-frame picture-frame-300">
+					<div>
+						@Html.Carousel(new CarouselOptions("Images/iboga/1", "", 70)
+						{
+							ImageSizing = EImageSizing.Vertical
+						})
+					</div>
+				</div>
+			</div>
+			<div class="col-md-7">
+				<h5>
+					@MvcHtmlString.Create(Dictionary.iboga_title1)
+				</h5>
+				<article>
+					<p>
+						@MvcHtmlString.Create(Dictionary.iboga_text1)
+					</p>
+				</article>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<br/>
+		<div class="desktop-only">
+			<div class="col-md-7">
+				<article>
+					<p>
+						@MvcHtmlString.Create(Dictionary.iboga_text2)
+					</p>
+					<br/>
+					<h5>
+						@MvcHtmlString.Create(Dictionary.iboga_title2)
+					</h5>
+				</article>
+			</div>
+			<div class="col-md-5">
+				<div class="picture-frame picture-frame-300">
+					<div>
+						@Html.Carousel(new CarouselOptions("Images/iboga/2")
+						{
+							ImageSizing = EImageSizing.Vertical
+						})
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<div class="device-only">
+			<div class="col-md-5">
+				<div class="picture-frame picture-frame-300">
+					<div>
+						@Html.Carousel(new CarouselOptions("Images/iboga/2")
+						{
+							ImageSizing = EImageSizing.Vertical
+						})
+					</div>
+				</div>
+			</div>
+			<div class="col-md-7">
+				<article>
+					<p>
+						@MvcHtmlString.Create(Dictionary.iboga_text2)
+					</p>
+					<br/>
+					<h5>
+						@MvcHtmlString.Create(Dictionary.iboga_title2)
+					</h5>
+				</article>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<div class="jarallax background-forest3 our-mission main-section">
+	<div class="container">
+		<div class="main-heading">
+			<h3 class="text-white">@Dictionary.OnTheBrinkOfExtinctionTitle</h3>
+		</div>
+		<div class="">
+			<div class="well well-lg">
+				<div class="embed-responsive embed-responsive-16by9">
+					<iframe src="https://player.vimeo.com/video/161684888" frameborder="0"></iframe>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>

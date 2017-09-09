@@ -35,6 +35,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -784,24 +785,24 @@
     <Content Include="Views\Shared\DisplayTemplates\Role.cshtml" />
     <Content Include="Views\Shared\_PopupAlert.cshtml" />
     <Content Include="Views\Shared\_BreadCrumbs.cshtml" />
-    <None Include="Config\appsettings.json" />
+    <Content Include="Config\appsettings.json" />
     <Content Include="Views\AboutUs\Index.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\AboutUs\Team.cshtml" />
     <Content Include="Views\Archive\Index.cshtml" />
     <Content Include="Views\Iboga\Index.cshtml" />
     <Content Include="Views\Shared\Controls\_Carousel.cshtml" />
-    <None Include="Content\fonts\fontawesome-webfont.eot" />
-    <None Include="Content\fonts\fontawesome-webfont.svg" />
-    <None Include="Content\fonts\fontawesome-webfont.ttf" />
-    <None Include="Content\fonts\fontawesome-webfont.woff" />
-    <None Include="Content\fonts\fontawesome-webfont.woff2" />
-    <None Include="Content\fonts\FontAwesome.otf" />
-    <None Include="Content\fonts\glyphicons-halflings-regular.eot" />
-    <None Include="Content\fonts\glyphicons-halflings-regular.svg" />
-    <None Include="Content\fonts\glyphicons-halflings-regular.ttf" />
-    <None Include="Content\fonts\glyphicons-halflings-regular.woff" />
-    <None Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Views\Shared\EditorTemplates\Text.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Text.cshtml" />
     <Content Include="Views\Shared\_LayoutMaster.cshtml" />
@@ -809,7 +810,7 @@
     <Content Include="Views\Shared\_Navbar.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutFormMaster.cshtml" />
-    <None Include="Images\home\animated-waterfalls.webp" />
+    <Content Include="Images\home\animated-waterfalls.webp" />
     <Content Include="Views\AboutUs\HelpUs.cshtml" />
     <Content Include="Views\NewsItems\_DisplayFields.cshtml" />
     <Content Include="Views\NewsItems\_EditFields.cshtml" />
@@ -830,7 +831,8 @@
     <Content Include="Views\Shared\_FooterNewsScroller.cshtml" />
     <Content Include="Views\News\_NewsSummary.cshtml" />
     <None Include="packages.config" />
-    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\Integration Local.pubxml" />
+    <None Include="Properties\PublishProfiles\Integration.pubxml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutColumns.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />
@@ -853,6 +855,18 @@
     <Content Include="Views\Shared\k9\_LayoutFormWide.cshtml" />
     <Content Include="Views\Shared\k9\_LayoutMaster.cshtml" />
     <Content Include="Views\Shared\k9\_Footer.cshtml" />
+    <None Include="Web.Integration.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Production.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Staging.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Test.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -860,6 +874,48 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Integration|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Production|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />

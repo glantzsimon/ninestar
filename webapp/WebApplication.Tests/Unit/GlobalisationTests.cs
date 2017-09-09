@@ -1,26 +1,27 @@
 ﻿using System.Globalization;
 using System.Threading;
 using K9.SharedLibrary.Extensions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace K9.WebApplication.Tests.Unit
 {
-	[TestClass]
 	public class GlobalisationTests
 	{
 
-		[TestMethod]
+		[Fact]
 		public void GetLocaleLanguage_ReturnsCorrectLanguageName()
 		{
 			var cultureInfo = new CultureInfo("fr-fr");
 
-			Assert.AreEqual("French", cultureInfo.GetLocaleLanguage());
+			Assert.Equal("French", cultureInfo.GetLocaleLanguage());
 		}
 
-		[TestMethod]
+		[Fact]
 		public void LanguageCode_ShouldBeTwoLetters()
 		{
-			Assert.AreEqual("en", Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName);
+		    var cultureInfo = new CultureInfo("en-gb");
+
+            Assert.Equal("en", cultureInfo.TwoLetterISOLanguageName);
 		}
 	}
 

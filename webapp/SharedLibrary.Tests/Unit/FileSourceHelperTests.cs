@@ -2,19 +2,18 @@
 using System.IO;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using NLog;
+using Xunit;
 
 namespace K9.SharedLibrary.Tests.Unit
 {
-	[TestClass]
 	public class FileSourceHelperTests
 	{
 		
 		Mock<IPostedFileHelper> _postedFileHelper = new Mock<IPostedFileHelper>();
 
-		[TestMethod]
+		[Fact]
 		public void LoadFiles_ShouldThrowAnError_WhenPathDoesnotExist()
 		{
 			var helper = new FileSourceHelper(_postedFileHelper.Object, new Mock<ILogger>().Object);
@@ -28,11 +27,11 @@ namespace K9.SharedLibrary.Tests.Unit
 			}
 			catch (Exception ex)
 			{
-				Assert.IsInstanceOfType(ex, typeof(DirectoryNotFoundException));
+				Assert.IsType<DirectoryNotFoundException>(ex);
 			}
 		}
 
-		[TestMethod]
+		[Fact]
 		public void LoadFiles_ShouldThrowAnError_WhenPathDoesnotExistAndTryingToLoadFiles()
 		{
 			var helper = new FileSourceHelper(_postedFileHelper.Object, new Mock<ILogger>().Object);

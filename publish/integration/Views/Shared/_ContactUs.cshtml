@@ -1,0 +1,15 @@
+﻿@model K9.WebApplication.ViewModels.ContactUsViewModel
+
+@using (Html.BeginForm("ContactUs", "Support"))
+{
+	using (Html.BeginBootstrapForm())
+	{
+		@Html.BootstrapEditorFor(m => m.Name)
+		@Html.BootstrapEditorFor(m => m.EmailAddress)
+		@Html.BootstrapEditorFor(m => m.Subject)
+		@Html.BootstrapEditorFor(m => m.Body)
+		
+		<hr/>
+		@Html.BootstrapButton(Dictionary.Submit, EButtonType.Submit, "fa-envelope")
+	}
+}

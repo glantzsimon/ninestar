@@ -1,0 +1,33 @@
+﻿@using K9.WebApplication.Config
+<div class="footer main-section">
+	<div class="container">
+		<div class="agile-footer-grids">
+			<div class="col-md-4 agile-footer-grid">
+				<h4>@WebsiteConfiguration.Instance.CompanyName</h4>
+				<p>
+					@Dictionary.CompanyBlurbFooter
+				</p>
+			</div>
+			<div class="col-md-4 agile-footer-grid">
+				@Html.Action("NewsSummary", "News")
+			</div>
+			<div class="col-md-4 agile-footer-grid">
+				<h4>Navigation</h4>
+				<ul>
+					<li class="text"><a href="@Url.Action("OurMission", "AboutUs")"> @Dictionary.OurMission</a></li>
+					<li class="text"><a href="@Url.Action("Index", "Iboga")"> @Dictionary.Iboga</a></li>
+					<li class="text"><a href="@Url.Action("Team", "AboutUs")"> @Dictionary.OurTeam</a></li>
+					<li class="text"><a href="@Url.Action("Index", "News")"> @Dictionary.News</a></li>
+					<li class="text"><a href="@Url.Action("Index", "Archive")"> @Dictionary.Archive</a></li>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<div class="footer-copyright">
+	<div class="container">
+		<p>@Dictionary.CompanyLegalDescription</p>
+		<p>@Dictionary.AgreeToTerms &copy; @DateTime.Now.Year - @WebsiteConfiguration.Instance.CompanyName. @Dictionary.AllRightsReserved.</p>
+	</div>
+</div>

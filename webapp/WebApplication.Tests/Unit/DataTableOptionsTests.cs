@@ -5,15 +5,14 @@ using K9.DataAccess.Config;
 using K9.DataAccess.Models;
 using K9.WebApplication.Exceptions;
 using K9.WebApplication.Options;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace K9.WebApplication.Tests.Unit
 {
-	[TestClass]
 	public class DataTableOptionsTests
 	{
 
-		[TestMethod]
+		[Fact]
 		public void GetColumns_ShouldReturnAllColumns()
 		{
 			var options = new DataTableOptions<Country>
@@ -23,11 +22,11 @@ namespace K9.WebApplication.Tests.Unit
 
 			var propertyInfos = options.GetColumns();
 
-			Assert.AreEqual(6, propertyInfos.Count);
-			Assert.AreEqual("TwoLetterCountryCode", propertyInfos.First().Name);
+			Assert.Equal(6, propertyInfos.Count);
+			Assert.Equal("TwoLetterCountryCode", propertyInfos.First().Name);
 		}
 
-		[TestMethod]
+		[Fact]
 		public void GetColumns_ShouldOrderColumns_WhenVisibleColumnsIsSet_AndOrderByThem()
 		{
 			var options = new DataTableOptions<Country>
@@ -43,13 +42,13 @@ namespace K9.WebApplication.Tests.Unit
 
 			var propertyInfos = options.GetColumns();
 
-			Assert.AreEqual(6, propertyInfos.Count);
-			Assert.AreEqual("ThreeLetterCountryCode", propertyInfos.First().Name);
-			Assert.AreEqual("Id", propertyInfos[1].Name);
-			Assert.AreEqual("TwoLetterCountryCode", propertyInfos[2].Name);
+			Assert.Equal(6, propertyInfos.Count);
+			Assert.Equal("ThreeLetterCountryCode", propertyInfos.First().Name);
+			Assert.Equal("Id", propertyInfos[1].Name);
+			Assert.Equal("TwoLetterCountryCode", propertyInfos[2].Name);
 		}
 
-		[TestMethod]
+		[Fact]
 		public void GetColumns_ShouldThrowError_ForInvalidColumn()
 		{
 			var options = new DataTableOptions<Country>
@@ -69,7 +68,7 @@ namespace K9.WebApplication.Tests.Unit
 			}
 			catch (Exception ex)
 			{
-				Assert.IsTrue(ex.GetType() == typeof(InvalidColumnNameException));
+				Assert.True(ex.GetType() == typeof(InvalidColumnNameException));
 			}
 		}
 

@@ -1,0 +1,184 @@
+﻿@{
+	ViewBag.Title = Dictionary.Home;
+}
+<div class="banner-forest1 main-banner">
+	@Html.Partial("_Navbar")
+</div>
+<div class="main-section">
+	<div class="container">
+		<div>
+			<div class="col-md-5">
+				<div class="picture-frame">
+					<div>
+						<img src="~/Images/home/wood1.jpg" alt="" />
+					</div>
+				</div>
+			</div>
+			<div class="col-md-7">
+				<h5>@Dictionary.blessings_of_the_forest_intro</h5>
+				<article>
+					@MvcHtmlString.Create(Dictionary.blessings_of_the_forest)
+				</article>
+			</div>
+			<div class="clearfix">
+			</div>
+		</div>
+	</div>
+</div>
+<div class="jarallax background-forest1 our-mission main-section">
+	<div class="container">
+		<div class="main-heading">
+			<h3 class="text-white">@Dictionary.OurMissionTitle</h3>
+		</div>
+		<div class="">
+			<div class="col-md-6">
+				<div>
+					<h4>@Dictionary.mission_statement_and_aims_title1</h4>
+				</div>
+				@MvcHtmlString.Create(Dictionary.mission_statement_and_aims1)
+			</div>
+			<div class="col-md-6">
+				<div>
+					<h4>@Dictionary.mission_statement_and_aims_title2</h4>
+				</div>
+				@MvcHtmlString.Create(Dictionary.mission_statement_and_aims2)
+			</div>
+			<div class="clearfix">
+			</div>
+		</div>
+		<div class="text-center">
+			@Html.BootstrapActionLinkButton(Dictionary.SupportUs, "OurMission", "AboutUs", null, "fa-thumbs-o-up", EButtonClass.Large)
+		</div>
+	</div>
+</div>
+<div class="team main-section">
+	<div class="container">
+		<div class="main-heading">
+			<h3>@Dictionary.OurPartners</h3>
+		</div>
+		<div>
+			<div class="col-md-4 col-sm-6">
+				<div class="ih-item circle effect10 bottom_to_top">
+					<div class="img">
+						<img src="~/Images/partners/global-ibogaine.jpg" alt="GITA">
+					</div>
+					<div class="info">
+						<h3>
+							Ibogaine Aliance</h3>
+						<div class="circle-icons">
+							<ul>
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<div class="ih-item circle effect10 bottom_to_top">
+					<div class="img">
+						<img src="~/Images/partners/plant-consciousness.jpg" alt="Plant Consciousness">
+					</div>
+					<div class="info">
+						<h3>
+							Plant Consciousness</h3>
+						<div class="circle-icons">
+							<ul>
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<div class="ih-item circle effect10 bottom_to_top">
+					<div class="img">
+						<img src="~/Images/partners/iceers.jpg" alt="Iceers">
+					</div>
+					<div class="info">
+						<h3>
+							Iceers</h3>
+						<div class="circle-icons">
+							<ul>
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<div class="ih-item circle effect10 bottom_to_top">
+					<div class="img">
+						<img src="~/Images/partners/ebando.jpg" alt="Ebando">
+					</div>
+					<div class="info">
+						<h3>
+							Ebando</h3>
+						<div class="circle-icons">
+							<ul>
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<div class="ih-item circle effect10 bottom_to_top">
+					<div class="img">
+						<img src="~/Images/partners/parc-gabon.jpg" alt="Parcs Gabon">
+					</div>
+					<div class="info">
+						<h3>
+							Parcs Gabon</h3>
+						<div class="circle-icons">
+							<ul>
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<div class="ih-item circle effect10 bottom_to_top">
+					<div class="img">
+						<img src="~/Images/partners/bokaye.jpg" alt="Laurent Sazy">
+					</div>
+					<div class="info">
+						<h3>
+							Laurent Sazy</h3>
+						<div class="circle-icons">
+							<ul>
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix">
+			</div>
+		</div>
+	</div>
+</div>
+<div class="jarallax background-waterfall">
+	<div class="fog-overlay main-section">
+		<div class="main-heading">
+			<h3 class="text-white">@Dictionary.GetInTouchTitle</h3>
+		</div>
+		<div class="container-fluid">
+			<div class="page shadow alphaBackground roundCorners small-form">
+				@Html.Partial("_ContactUs")
+			</div>
+		</div>
+	</div>
+</div>

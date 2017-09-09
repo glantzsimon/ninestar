@@ -1,0 +1,17 @@
+﻿@model Enrollment
+@{
+	Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+@using (Html.BeginForm())
+{
+	using (Html.BeginBootstrapForm())
+	{
+	@Html.HiddenFor(model => model.Id)
+	@Html.Partial("_DisplayFields")
+	@Html.AuditFieldsForModel(Model)
+	
+	<hr />
+	@Html.BootstrapBackToListButton()
+	@Html.CrudButtonsForModel(Model)
+	}
+}

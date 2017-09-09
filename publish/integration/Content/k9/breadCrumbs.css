@@ -1,0 +1,19 @@
+﻿ol.breadcrumb
+{
+	display: inline-block;
+	margin-top: 7px;
+	font-size: 18px;
+	background: rgb(255, 255, 255);
+	background: rgba(255, 255, 255, 0);
+	filter: alpha(opacity=0);
+}
+
+ol.breadcrumb li, ol.breadcrumb li a
+{
+	color: white;
+}
+
+ol.breadcrumb li.active {
+	font-weight: bold;
+	color: white;
+}

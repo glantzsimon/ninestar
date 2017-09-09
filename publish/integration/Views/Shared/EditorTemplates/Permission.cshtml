@@ -1,0 +1,6 @@
+﻿@using K9.WebApplication.Extensions
+@model int?
+@{
+}
+
+@Html.BootstrapDropdownFor(model => model, this.GetDropdownData().GetSelectList<Permission>(Model, true))

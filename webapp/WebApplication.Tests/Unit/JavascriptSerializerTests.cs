@@ -1,14 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Web.Script.Serialization;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace K9.WebApplication.Tests.Unit
 {
-	[TestClass]
 	public class JavascriptSerializerTests
 	{
 
-		[TestMethod]
+		[Fact]
 		public void OutputOfJavascriptSerializer_ShouldBeArrayOfString()
 		{
 			var strings = new List<string>
@@ -20,7 +19,7 @@ namespace K9.WebApplication.Tests.Unit
 
 			var jsArray = new JavaScriptSerializer().Serialize(strings.ToArray());
 
-			Assert.AreEqual("[\"one\",\"two\",\"three\"]", jsArray);
+			Assert.Equal("[\"one\",\"two\",\"three\"]", jsArray);
 		}
 
 	}

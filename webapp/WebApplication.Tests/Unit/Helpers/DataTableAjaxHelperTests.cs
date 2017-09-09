@@ -8,17 +8,16 @@ using K9.DataAccess.Models;
 using K9.SharedLibrary.Extensions;
 using K9.WebApplication.Exceptions;
 using K9.WebApplication.Helpers;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using NLog;
+using Xunit;
 
 namespace K9.WebApplication.Tests.Unit.Helpers
 {
-	[TestClass]
 	public class DataTableAjaxHelperTests
 	{
 
-		[TestMethod]
+		[Fact]
 		public void ShouldMap_DataTableQueryString_ToDataTableAjaxOptions()
 		{
 			var querystring = new NameValueCollection
@@ -47,21 +46,21 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 			var helper = new DataTableAjaxHelper<Country>(new Mock<ILogger>().Object, new ColumnsConfig());
 			helper.LoadQueryString(querystring);
 
-			Assert.AreEqual(1, helper.Draw);
-			Assert.AreEqual(0, helper.Start);
-			Assert.AreEqual(10, helper.Length);
-			Assert.AreEqual("search", helper.SearchValue);
-			Assert.IsTrue(helper.IsRegexSearch);
-			Assert.AreEqual(1, helper.OrderByColumnIndex);
-			Assert.AreEqual("ASC", helper.OrderByDirection);
-			Assert.AreEqual(3, helper.ColumnInfos.Count);
+			Assert.Equal(1, helper.Draw);
+			Assert.Equal(0, helper.Start);
+			Assert.Equal(10, helper.Length);
+			Assert.Equal("search", helper.SearchValue);
+			Assert.True(helper.IsRegexSearch);
+			Assert.Equal(1, helper.OrderByColumnIndex);
+			Assert.Equal("ASC", helper.OrderByDirection);
+			Assert.Equal(3, helper.ColumnInfos.Count);
 
 			var firstColumnInfo = helper.ColumnInfos.First();
-			Assert.AreEqual("TwoLetterCountryCode", firstColumnInfo.Data);
-			Assert.AreEqual("Two Letter Country Code", firstColumnInfo.Name);
-			Assert.AreEqual("gb", firstColumnInfo.SearchValue);
-			Assert.IsTrue(firstColumnInfo.IsRegexSearch);
-			Assert.AreEqual("WITH RESULTS AS " +
+			Assert.Equal("TwoLetterCountryCode", firstColumnInfo.Data);
+			Assert.Equal("Two Letter Country Code", firstColumnInfo.Name);
+			Assert.Equal("gb", firstColumnInfo.SearchValue);
+			Assert.True(firstColumnInfo.IsRegexSearch);
+			Assert.Equal("WITH RESULTS AS " +
 							"(SELECT [Country].[TwoLetterCountryCode], [Country].[ThreeLetterCountryCode], ROW_NUMBER() OVER " +
 							"(ORDER BY [Country].[ThreeLetterCountryCode] ASC) AS RowNum " +
 							"FROM [Country] " +
@@ -71,7 +70,7 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 							"WHERE RowNum BETWEEN 0 AND 10", helper.GetQuery());
 		}
 
-		[TestMethod]
+		[Fact]
 		public void DataTableAjaxHelper_ShouldReturnTheCorrectSqlQuery()
 		{
 			var querystring = new NameValueCollection
@@ -100,7 +99,7 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 			var helper = new DataTableAjaxHelper<Country>(new Mock<ILogger>().Object, new ColumnsConfig());
 			helper.LoadQueryString(querystring);
 
-			Assert.AreEqual("WITH RESULTS AS " +
+			Assert.Equal("WITH RESULTS AS " +
 							"(SELECT [Country].[TwoLetterCountryCode], [Country].[ThreeLetterCountryCode], ROW_NUMBER() OVER " +
 							"(ORDER BY [Country].[ThreeLetterCountryCode] DESC) AS RowNum " +
 							"FROM [Country] " +
@@ -110,7 +109,7 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 							"WHERE RowNum BETWEEN 40 AND 60", helper.GetQuery());
 		}
 
-		[TestMethod]
+		[Fact]
 		public void ShouldMap_DataTableQueryString_ToDataTableAjaxOptions_WithNoWhereClause()
 		{
 			var querystring = new NameValueCollection
@@ -131,7 +130,7 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 			var helper = new DataTableAjaxHelper<Country>(new Mock<ILogger>().Object, new ColumnsConfig());
 			helper.LoadQueryString(querystring);
 
-			Assert.AreEqual("WITH RESULTS AS " +
+			Assert.Equal("WITH RESULTS AS " +
 							"(SELECT [Country].[TwoLetterCountryCode], ROW_NUMBER() OVER " +
 							"(ORDER BY [Country].[TwoLetterCountryCode] ASC) AS RowNum " +
 							"FROM [Country] ) " +
@@ -139,7 +138,7 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 							"WHERE RowNum BETWEEN 0 AND 10", helper.GetQuery());
 		}
 
-		[TestMethod]
+		[Fact]
 		public void ShouldMap_DataTableQueryString_ToDataTableAjaxOptions_AndReturnAllColumns()
 		{
 			var querystring = new NameValueCollection
@@ -160,7 +159,7 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 			var helper = new DataTableAjaxHelper<Country>(new Mock<ILogger>().Object, new ColumnsConfig());
 			helper.LoadQueryString(querystring);
 
-			Assert.AreEqual("WITH RESULTS AS " +
+			Assert.Equal("WITH RESULTS AS " +
 							"(SELECT [Country].*, ROW_NUMBER() OVER " +
 							"(ORDER BY [Country].[TwoLetterCountryCode] ASC) AS RowNum " +
 							"FROM [Country] ) " +
@@ -168,18 +167,18 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 							"WHERE RowNum BETWEEN 0 AND 10", helper.GetQuery(true));
 		}
 
-		[TestMethod]
+		[Fact]
 		public void ShouldDetect_VirtualICollection_Properties()
 		{
 			var enrollmentsName = "Enrollments";
 			var propertyInfo = typeof(Student).GetProperties().First(p => p.Name == enrollmentsName);
 
-			Assert.AreEqual(enrollmentsName, propertyInfo.Name);
-			Assert.IsTrue(propertyInfo.GetGetMethod().IsVirtual);
-			Assert.IsTrue(propertyInfo.PropertyType.IsGenericType && propertyInfo.PropertyType.GetGenericTypeDefinition() == typeof(ICollection<>));
+			Assert.Equal(enrollmentsName, propertyInfo.Name);
+			Assert.True(propertyInfo.GetGetMethod().IsVirtual);
+			Assert.True(propertyInfo.PropertyType.IsGenericType && propertyInfo.PropertyType.GetGenericTypeDefinition() == typeof(ICollection<>));
 		}
 
-		[TestMethod]
+		[Fact]
 		public void GetAllProperties_IncludingInherited_FromModel()
 		{
 			var columnsConfig = new ColumnsConfig();
@@ -187,18 +186,18 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 						.Where(p => !p.IsVirtual() && !columnsConfig.ColumnsToIgnore.Contains(p.Name))
 						.ToList();
 
-			Assert.IsTrue(columns.Select(c => c.Name).Contains("StudentId"));
+			Assert.True(columns.Select(c => c.Name).Contains("StudentId"));
 		}
 
-		[TestMethod]
+		[Fact]
 		public void GetPropertiesAndAttributesWithAttribute_ShouldReturnAllForeignKeyAttributes_AndProperties()
 		{
 			var dictionary = typeof(Enrollment).GetPropertiesAndAttributesWithAttribute<ForeignKeyAttribute>();
 
-			Assert.AreEqual(2, dictionary.Count);
+			Assert.Equal(2, dictionary.Count);
 		}
 
-		[TestMethod]
+		[Fact]
 		public void GetQuery_ShouldReturnSQL_IncludingLinkedTables()
 		{
 			var querystring = new NameValueCollection
@@ -217,7 +216,7 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 			var helper = new DataTableAjaxHelper<Enrollment>(new Mock<ILogger>().Object, new ColumnsConfig());
 			helper.LoadQueryString(querystring);
 
-			Assert.AreEqual("WITH RESULTS AS " +
+			Assert.Equal("WITH RESULTS AS " +
 							"(SELECT [Enrollment].*, " +
 							"[Student].[Name] AS [StudentName], " +
 							"[Course].[Name] AS [CourseName], " +
@@ -230,15 +229,15 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 							"WHERE RowNum BETWEEN 0 AND 10", helper.GetQuery(true));
 		}
 
-		[TestMethod]
+		[Fact]
 		public void EnsureNameProperty_IsIncludedInProperties()
 		{
 			var props = typeof(Country).GetProperties();
 
-			Assert.AreEqual(1, props.Count(p => p.Name == "Name"));
+			Assert.Equal(1, props.Count(p => p.Name == "Name"));
 		}
 
-		[TestMethod]
+		[Fact]
 		public void ShouldThrowError_WhenTryingToPassUserId_AndNoUserIdColumnFound()
 		{
 			var querystring = new NameValueCollection
@@ -263,11 +262,11 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 			}
 			catch (Exception ex)
 			{
-				Assert.IsTrue(ex.GetType() == typeof(InvalidColumnNameException));
+				Assert.True(ex.GetType() == typeof(InvalidColumnNameException));
 			}
 		}
 
-		[TestMethod]
+		[Fact]
 		public void WhereClause_ShouldIncludeUserIdFilter()
 		{
 			var querystring = new NameValueCollection
@@ -286,7 +285,7 @@ namespace K9.WebApplication.Tests.Unit.Helpers
 			var helper = new DataTableAjaxHelper<Message>(new Mock<ILogger>().Object, new ColumnsConfig());
 			helper.LoadQueryString(querystring);
 
-			Assert.AreEqual("WITH RESULTS AS " +
+			Assert.Equal("WITH RESULTS AS " +
 			                "(SELECT [Message].*, " +
 			                "[User].[Name] AS [SentToUserName], " +
 			                "[User1].[Name] AS [SentByUserName], " +

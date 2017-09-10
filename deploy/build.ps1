@@ -1,4 +1,5 @@
 param([String]$publishPassword='')
+param([String]$msBuildPath='C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin')
 
 $appName = "ninestar"
 $publishDir = "publish"
@@ -74,7 +75,7 @@ function _Build() {
   pushd $appDir
   ProcessErrors
   
-  Msbuild "/p:Configuration=Debug"
+  $msBuildPath\msbuild.exe "/p:Configuration=Debug"
   ProcessErrors
   popd
 }
@@ -88,7 +89,7 @@ function _Publish() {
   _CreateDirectory $publishDir
   ProcessErrors
   
-  Msbuild $projectPath /p:DeployOnBuild=true /p:PublishProfile=Integration /p:AllowUntrustedCertificate=true /p:Password=$publishPassword
+  $msBuildPath\msbuild.exe $projectPath /p:DeployOnBuild=true /p:PublishProfile=Integration /p:AllowUntrustedCertificate=true /p:Password=$publishPassword
   ProcessErrors
   popd
 }
@@ -96,6 +97,7 @@ function _Publish() {
 function Main {
   Try {
     _Clean
+	#_NugetRestore
     _Build
 	_Test
 	_Publish

@@ -6,7 +6,7 @@ $appDir = "webapp"
 $projectPath = "WebApplication\WebApplication.csproj"
 $webTestFile = "webapp\WebApplication.Tests\bin\Debug\K9.WebApplication.Tests.dll"
 $dataTestFile = "webapp\DataAccess.Tests\bin\Debug\K9.DataAccess.Tests.dll"
-
+	
 function ProcessErrors(){
   if($? -eq $false)
   {
@@ -96,7 +96,6 @@ function _Publish() {
 function Main {
   Try {
     _Clean
-    _NugetRestore    
     _Build
 	_Test
 	_Publish

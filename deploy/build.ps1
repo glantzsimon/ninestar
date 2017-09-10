@@ -1,5 +1,4 @@
 param([String]$publishPassword='')
-param([String]$msBuildPath='C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin')
 
 $appName = "ninestar"
 $publishDir = "publish"
@@ -28,20 +27,6 @@ function _CreateDirectory($dir) {
   If (-Not (Test-Path $dir)) {
     New-Item -ItemType Directory -Path $dir
   }
-}
-
-function _Clean() {
-  echo "Cleaning old content"
-
-  If (Test-Path $publishDir) {
-	pushd $publishDir
-	ProcessErrors
-	
-    _DeleteFile "$appName.zip"
-	ProcessErrors
-  }
-  
-  popd
 }
 
 function _NugetRestore() {
@@ -96,8 +81,6 @@ function _Publish() {
 
 function Main {
   Try {
-    _Clean
-	#_NugetRestore
     _Build
 	_Test
 	_Publish

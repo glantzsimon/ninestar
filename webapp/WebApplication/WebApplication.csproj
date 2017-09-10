@@ -833,8 +833,8 @@
     <Content Include="Views\Shared\_FooterNewsScroller.cshtml" />
     <Content Include="Views\News\_NewsSummary.cshtml" />
     <None Include="packages.config" />
-    <None Include="Properties\PublishProfiles\Integration Local.pubxml" />
     <None Include="Properties\PublishProfiles\Integration.pubxml" />
+    <None Include="Properties\PublishProfiles\IntegrationLocal.pubxml" />
     <None Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutColumns.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />

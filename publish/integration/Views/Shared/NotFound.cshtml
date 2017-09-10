@@ -1,9 +1,0 @@
-﻿@{
-	ViewBag.Title = Dictionary.Oops;
-	Layout = "~/Views/Shared/_LayoutForm.cshtml";
-}
-@Html.Alert(EAlertType.NotFound, Dictionary.NotFoundTitle)
-<div class="text-center">
-	<p>@Dictionary.NotFoundError</p>
-	@Html.ActionLink(Dictionary.GoBackHome, "Index", "Home")
-</div>

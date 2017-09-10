@@ -1,5 +1,0 @@
-﻿@model Object
-@{
-	var dictionary = ViewData["viewDataDictionary"] as IDictionary<string, object>;
-}
-@Html.TextAreaFor(model => model, 5, 20, dictionary)

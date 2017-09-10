@@ -1,6 +1,7 @@
 $appName = "ninestar"
 $publishDir = "publish"
 $appDir = "webapp"
+$projectPath = "WebApplication\WebApplication.csproj"
 $webTestFile = "webapp\WebApplication.Tests\bin\Debug\K9.WebApplication.Tests.dll"
 $dataTestFile = "webapp\DataAccess.Tests\bin\Debug\K9.DataAccess.Tests.dll"
 
@@ -24,6 +25,8 @@ function _Clean() {
   echo "Cleaning old content"
 
   pushd $publishDir
+  ProcessErrors
+  
   _DeleteFile "$appName.zip"
   ProcessErrors
   popd
@@ -34,6 +37,7 @@ function _NugetRestore() {
 
   pushd $appDir
   ProcessErrors
+  
   nuget restore
   ProcessErrors
   popd
@@ -47,6 +51,7 @@ function _Test() {
   
   "packages\xunit.runner.console.2.2.0\tools\xunit.console.exe " + $webTestFile
   ProcessErrors
+  
   "packages\xunit.runner.console.2.2.0\tools\xunit.console.exe " + $dataTestFile
   ProcessErrors
   popd
@@ -57,6 +62,7 @@ function _Build() {
   
   pushd $appDir
   ProcessErrors
+  
   Msbuild "/p:Configuration=Debug"
   ProcessErrors
   popd
@@ -67,7 +73,7 @@ function _Publish() {
   
   pushd $appDir
   ProcessErrors
-  Msbuild "/p:Configuration=Integration;DeployOnBuild=true;PublishProfile=IntegrationLocal"
+  Msbuild $projectPath /p:DeployOnBuild=true /p:PublishProfile=IntegrationLocal
   ProcessErrors
   popd
 }

@@ -1,3 +1,5 @@
+param([String]$publishPassword='')
+
 $appName = "ninestar"
 $publishDir = "publish"
 $appDir = "webapp"
@@ -21,14 +23,23 @@ function _DeleteFile($fileName) {
   }
 }
 
+function _CreateDirectory($dir) {
+  If (-Not (Test-Path $dir)) {
+    New-Item -ItemType Directory -Path $dir
+  }
+}
+
 function _Clean() {
   echo "Cleaning old content"
 
-  pushd $publishDir
-  ProcessErrors
+  If (Test-Path $publishDir) {
+	pushd $publishDir
+	ProcessErrors
+	
+    _DeleteFile "$appName.zip"
+	ProcessErrors
+  }
   
-  _DeleteFile "$appName.zip"
-  ProcessErrors
   popd
 }
 
@@ -73,7 +84,11 @@ function _Publish() {
   
   pushd $appDir
   ProcessErrors
-  Msbuild $projectPath /p:DeployOnBuild=true /p:PublishProfile=IntegrationLocal
+  
+  _CreateDirectory $publishDir
+  ProcessErrors
+  
+  Msbuild $projectPath /p:DeployOnBuild=true /p:PublishProfile=Integration /p:AllowUntrustedCertificate=true /p:Password=$publishPassword
   ProcessErrors
   popd
 }

@@ -75,7 +75,7 @@ function _Build() {
   pushd $appDir
   ProcessErrors
   
-  $msBuildPath\msbuild.exe "/p:Configuration=Debug"
+  Msbuild /p:Configuration=Debug
   ProcessErrors
   popd
 }

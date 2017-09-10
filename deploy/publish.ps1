@@ -1,5 +1,4 @@
-param([String]$env='')
-param([String]$publishPassword='')
+param([String]$publishPassword='', [String]$env='')
 
 $publishDir = "publish"
 $appDir = "webapp"

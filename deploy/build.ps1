@@ -1,7 +1,8 @@
 $appName = "ninestar"
 $publishDir = "publish"
-$appDir = "../webapp"
-$testDir = "../webapp/WebApplication.Tests"
+$appDir = "webapp"
+$webTestFile = "webapp\WebApplication.Tests\bin\Debug\K9.WebApplication.Tests.dll"
+$dataTestFile = "webapp\DataAccess.Tests\bin\Debug\K9.DataAccess.Tests.dll"
 
 function ProcessErrors(){
   if($? -eq $false)
@@ -22,45 +23,62 @@ function _DeleteFile($fileName) {
 function _Clean() {
   echo "Cleaning old content"
 
+  pushd $publishDir
   _DeleteFile "$appName.zip"
+  ProcessErrors
+  popd
 }
 
-function NugetRestore() {
+function _NugetRestore() {
   echo "Running nuget restore"
 
   pushd $appDir
+  ProcessErrors
   nuget restore
   ProcessErrors
+  popd
 }
 
-function _DotnetTest() {
+function _Test() {
   echo "Running dotnet test"
-  pushd $testDir
+  
+  pushd $appDir  
   ProcessErrors
-
-  dotnet test
+  
+  "packages\xunit.runner.console.2.2.0\tools\xunit.console.exe " + $webTestFile
   ProcessErrors
-
+  "packages\xunit.runner.console.2.2.0\tools\xunit.console.exe " + $dataTestFile
+  ProcessErrors
   popd
 }
 
 function _Build() {
   echo "Building App"
-  pushd $appPath
+  
+  pushd $appDir
   ProcessErrors
-
-  Msbuild -p Configuration=Release -p DeployOnBuild=true -p PublishProfile=IntegrationLocal
+  Msbuild "/p:Configuration=Debug"
   ProcessErrors
+  popd
+}
 
+function _Publish() {
+  echo "Publishing App"
+  
+  pushd $appDir
+  ProcessErrors
+  Msbuild "/p:Configuration=Integration;DeployOnBuild=true;PublishProfile=IntegrationLocal"
+  ProcessErrors
   popd
 }
 
 function Main {
   Try {
     _Clean
-    _NugetRestore
-    _Test
+    _NugetRestore    
     _Build
+	_Test
+	_Publish
   }
   Catch {
     Write-Error $_.Exception

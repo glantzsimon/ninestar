@@ -802,4 +802,10 @@
   <data name="TimespanFuture" xml:space="preserve">
     <value>Dans {0} {1}</value>
   </data>
+  <data name="Ki" xml:space="preserve">
+    <value>Ki</value>
+  </data>
+  <data name="Star" xml:space="preserve">
+    <value>Star</value>
+  </data>
 </root>

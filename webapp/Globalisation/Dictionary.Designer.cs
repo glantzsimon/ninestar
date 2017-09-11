@@ -1007,6 +1007,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ki.
+        /// </summary>
+        public static string Ki {
+            get {
+                return ResourceManager.GetString("Ki", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
         public static string LanguageLabel {
@@ -1798,6 +1807,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Star.
+        /// </summary>
+        public static string Star {
+            get {
+                return ResourceManager.GetString("Star", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Subject.
         /// </summary>
         public static string SubjectLabel {
@@ -1825,25 +1843,30 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
-        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; &gt;
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
         ///
         ///&lt;head&gt;
-        ///    &lt;title&gt;Puppydog Software&lt;/title&gt;
+        ///    &lt;title&gt;{Title}&lt;/title&gt;
         ///&lt;/head&gt;
         ///
         ///&lt;style type=&quot;text/css&quot;&gt;
-        ///    .text
-        ///    {{
-        ///        font-family: lucida grande, Segoe UI, arial, verdana, lucida sans unicode, tahoma, sans-serif; 
+        ///    html
+        ///    {
+        ///        margin: 0;
+        ///        padding: 0;
+        ///        font-family: &quot;Segoe UI&quot; , Verdana, Helvetica, Sans-Serif;
+        ///        font-size: 100%;
+        ///        text-rendering: optimizeLegibility !important;
+        ///        -webkit-font-smoothing: antialiased !important;
         ///        margin: 0; 
-        ///        font-size: 10pt; 
-        ///        color: #333399;
-        ///        padding-bottom: 12px;
-        ///    }}
-        ///    .title
-        ///    {{
-        ///    [rest of string was truncated]&quot;;.
+        ///        color: #333;
+        ///    }
+        ///&lt;/style&gt;
+        ///
+        ///&lt;body&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;Dear {FirstName},&lt;/p&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;Thank  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SupportQuery {
             get {

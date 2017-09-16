@@ -1,0 +1,1 @@
+Invoke-Sqlcmd -InputFile "C:\Users\Administrator\Documents\SQL Server Management Studio\ninestarprod_backup.sql"

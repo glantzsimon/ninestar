@@ -1,5 +1,4 @@
 ﻿using K9.Base.DataAccessLayer.Database;
-using K9.DataAccessLayer.Database.Seeds;
 
 namespace K9.DataAccessLayer.Database
 {
@@ -8,8 +7,6 @@ namespace K9.DataAccessLayer.Database
         protected override void Seed(LocalDb db)
 		{
             base.Seed(db);
-
-		    PermissionsSeeder.Seed(db);
         }
 	}
 }

@@ -96,7 +96,7 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                model.Description = Dictionary.DonationToBOTF;
+                model.Description = Dictionary.DonationToNineStar;
                 _stripeService.Charge(model);
                 _donationService.CreateDonation(new Donation
                 {

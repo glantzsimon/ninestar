@@ -1,7 +1,6 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
 using K9.Base.DataAccessLayer.Config;
-using K9.Base.DataAccessLayer.Database;
 using K9.Base.DataAccessLayer.Helpers;
 using K9.Base.DataAccessLayer.Respositories;
 using K9.Base.WebApplication.Config;
@@ -10,16 +9,17 @@ using K9.Base.WebApplication.Helpers;
 using K9.Base.WebApplication.Security;
 using K9.Base.WebApplication.Services;
 using K9.Base.WebApplication.UnitsOfWork;
+using K9.DataAccessLayer.Database;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Config;
 using K9.WebApplication.Services;
 using NLog;
 using System;
+using System.Configuration;
 using System.Data.Entity;
 using System.IO;
 using System.Web.Mvc;
-using K9.DataAccessLayer.Database;
-using System.Configuration;
 
 namespace K9.WebApplication
 {

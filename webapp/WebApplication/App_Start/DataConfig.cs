@@ -2,6 +2,7 @@
 using K9.Base.DataAccessLayer.Database;
 using K9.DataAccessLayer.Database;
 using System.Data.Entity.Migrations;
+using K9.DataAccessLayer.Database.Seeds;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication
@@ -25,6 +26,7 @@ namespace K9.WebApplication
         public static void InitialiseUsersAndRoles()
         {
             UsersAndRolesInitialiser.Seed();
+            PermissionsSeeder.Seed(new LocalDb());
         }
     }
 }

@@ -19,16 +19,6 @@ body {
     background: #fff;
 }
 
-.banner-default {
-    background: url(../../Images/background/slides/creek_bg.jpg) no-repeat 0px 0px;
-    background-size: cover;
-}
-
-.banner-forest4 {
-    background: url(../../Images/background/slides/forest4.jpg) no-repeat 0px 0px;
-    background-size: cover;
-}
-
 .background-slides {
     -webkit-transition: background 0.5s linear;
     -moz-transition: background 0.5s linear;
@@ -36,73 +26,17 @@ body {
     transition: background 0.5s linear;
 }
 
-.background-forest1 {
-    background: url(../../Images/background/slides/forest1d.jpg) no-repeat 0 0;
-    background-size: cover;
-}
-
-.background-forest3 {
-    background: url(../../Images/background/slides/gabon_forest3.jpg) no-repeat 0 0;
-    background-size: cover;
-}
-
-.background-elephant {
-    background: url(../../Images/background/etats-lieux/gabon-elephant.jpg) no-repeat 0 0;
-    background-size: cover;
-}
-
-.background-ivory {
-    background: url(../../Images/background/etats-lieux/ivory.jpg) no-repeat 0 0;
-    background-size: cover;
-}
-
-.background-wildlife {
-    background: url(../../Images/background/etats-lieux/gabon-wildlife1.jpg) no-repeat 0 0;
-    background-size: cover;
-}
-
-.background-poaching1 {
-    background: url(../../Images/background/etats-lieux/poaching1.jpg) no-repeat 0 0;
-    background-size: cover;
-}
-
-.background-poaching2 {
-    background: url(../../Images/background/etats-lieux/poaching2.jpg) no-repeat 0 0;
-    background-size: cover;
-}
-
-.background-poaching4 {
-    background: url(../../Images/background/etats-lieux/poaching4.jpg) no-repeat 0 0;
-    background-size: cover;
-}
-
-.background-forest4 {
-    background: url(../../Images/background/slides/forest4.jpg) no-repeat 0 0;
-    background-size: cover;
-}
-
-.background-waterfall {
-    background: url(../../Images/home/animated-waterfalls.webp) no-repeat 0 0;
-    background-size: cover;
-}
-
-.background-bwiti {
-    background: url(../../Images/home/bwiti-bg.jpg) no-repeat 0 0;
-    background-size: cover;
-}
-
-.background-hand {
-    background: url(../../Images/home/hand.jpg) no-repeat 0 0;
-    background-size: cover;
-}
-
-.background-projects {
-    background: url(../../Images/projects/projects_bg.jpg) no-repeat 0 0;
+.background-stars{
+    background: url(../../Images/background/stars.jpg) no-repeat 0 0;
     background-size: cover;
 }
 
 .main-section {
     padding: 4em 0 4em 0;
+}
+
+.page .main-section {
+    padding: 2em 0 2em 0;
 }
 
     .main-section ul {

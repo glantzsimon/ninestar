@@ -234,7 +234,7 @@ ul.admin-menu ul.dropdown-menu {
 
     #main-menu-container.menu-main {
         height: 180px;
-        background-color: rgba(50,50,50,0.3);
+        background-color: rgba(50,50,50,0.4);
     }
 
     #main-menu-container.menu-small {
@@ -263,19 +263,19 @@ ul.admin-menu ul.dropdown-menu {
     }
 
 #main-menu-spacer {
-    height: 200px;
+    height: 220px;
 }
 
 div.main-logo {
     height: 176px;
     width: 176px;
-    background-image: url(/Images/company/botf_med.png);
+    background-image: url(/Images/company/logo.png);
     background-repeat: no-repeat;
 }
 
 div.small-logo {
     height: 88px;
     width: 88px;
-    background-image: url(/Images/company/botf_logo_default_small_inv.png);
+    background-image: url(/Images/company/logo-small.png);
     background-repeat: no-repeat;
 }

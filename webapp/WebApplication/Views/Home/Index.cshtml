@@ -1,11 +1,7 @@
 ﻿@{
     ViewBag.Title = Dictionary.Home;
+    ViewBag.Jarallax = "jarallax";
+    Layout = "../Shared/_LayoutForm.cshtml";
 }
-<div id="main-banner" class="banner-default main-menu">
-    @Html.Partial("_Navbar")
-</div>
-@Html.Partial("_Botf")
-@Html.Partial("_EtatsLieux")
-@Html.Partial("_Context")
-@Html.Partial("_Partners")
-@Html.Partial("_Contact")
+
+@Html.Partial("_Calculator")

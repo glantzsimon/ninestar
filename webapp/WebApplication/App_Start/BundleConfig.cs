@@ -39,6 +39,7 @@ namespace K9.WebApplication
                 "~/Content/template/style.991.css",
                 "~/Content/template/style.760.css",
                 "~/Content/template/style.736.css",
+                "~/Content/template/style.610.css",
                 "~/Content/template/style.525.css",
                 "~/Content/template/style.480.css",
                 "~/Content/template/style.414.css",

@@ -24,6 +24,10 @@
                     {
                         <li class="@ViewContext.GetActiveClass("Index", "ArchiveCategories") sub-item"><a href="@Url.Action("Index", "ArchiveCategories")">@Dictionary.ArchiveCategories</a></li>
                     }
+                    @if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<Donation>(Permissions.Create, Permissions.Edit, Permissions.Delete))
+                    {
+                        <li class="@ViewContext.GetActiveClass("Index", "Donations") sub-item"><a href="@Url.Action("Index", "Donations")">@K9.Globalisation.Dictionary.Donations</a></li>
+                    }
                     @if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<NewsItem>(Permissions.Create, Permissions.Edit, Permissions.Delete))
                     {
                         <li class="@ViewContext.GetActiveClass("Index", "NewsItems") sub-item"><a href="@Url.Action("Index", "NewsItems")">@Dictionary.NewsItems</a></li>
@@ -40,11 +44,12 @@
             </ul>
         }
         <ul class="site-controls">
-            <li class="@ViewContext.GetActiveClass("Index", "Shop")"><a href="@Url.Action("Index", "Shop")"><span class="glyphicon glyphicon-shopping-cart"></span> @K9.Globalisation.Dictionary.Shop</a></li>
+            <li class="@ViewContext.GetActiveClass("DonateStart", "Support")"><a href="@Url.Action("DonateStart", "Support")"><span class="glyphicon glyphicon-euro"></span><span class="site-controls-text"> @K9.Globalisation.Dictionary.Donate</span></a></li>
+            <li class="@ViewContext.GetActiveClass("Index", "Shop")"><a href="@Url.Action("Index", "Shop")"><span class="glyphicon glyphicon-shopping-cart"></span><span class="site-controls-text"> @K9.Globalisation.Dictionary.Shop</span></a></li>
             @Html.LoginLogout()
             @if (WebSecurity.IsAuthenticated)
             {
-                <li class="@ViewContext.GetActiveClass("MyAccount", "Account")"><a href="@Url.Action("MyAccount", "Account")"><span class="glyphicon glyphicon-user"></span> @Dictionary.MyAccountTitle</a></li>
+                <li class="@ViewContext.GetActiveClass("MyAccount", "Account")"><a href="@Url.Action("MyAccount", "Account")"><span class="glyphicon glyphicon-user"></span><span class="site-controls-text"> @Dictionary.MyAccountTitle</span></a></li>
             }
             @Html.Partial("Controls/_LanguageSelector")
         </ul>

@@ -1,4 +1,5 @@
-﻿@model User
+﻿@using K9.Base.WebApplication.Helpers
+@model User
 @{
 	Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
@@ -7,6 +8,7 @@
 	using (Html.BeginBootstrapForm())
 	{
 		@Html.HiddenFor(model => model.Id)
+	    @Html.HiddenFor(model => model.IsDeleted)
 		@Html.Partial("_EditFields")
 		<hr/>
 		@Html.BootstrapButton(Dictionary.Update)

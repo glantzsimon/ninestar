@@ -1,6 +1,6 @@
-﻿@using K9.WebApplication.Extensions
+﻿@using K9.Base.WebApplication.Extensions
 @model int?
 @{
 }
 
-@Html.BootstrapDropdownFor(model => model, this.GetDropdownData().GetSelectList<User>(Model, true))
+@Html.BootstrapDropdownFor(model => model, this.GetDropdownData().GetSelectList<User>(Model, true, "FullName"))

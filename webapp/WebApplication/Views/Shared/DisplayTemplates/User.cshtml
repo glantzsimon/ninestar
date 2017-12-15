@@ -1,6 +1,6 @@
-﻿@using K9.WebApplication.Extensions
+﻿@using K9.Base.WebApplication.Extensions
 @model int?
 @{
-	var value = this.GetDropdownData().GetName<User>(Model, true);
+    var value = this.GetDropdownData().GetName<User>(Model, true, "FullName");
 }
 <div>@value</div>

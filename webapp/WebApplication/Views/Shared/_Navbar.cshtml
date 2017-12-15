@@ -1,82 +1,84 @@
-﻿@using K9.SharedLibrary.Authentication
-@using K9.WebApplication.Extensions
-@{
-	var roles = this.GetRoles();
-}
-<div class="header">
-	<div class="container">
-		<div class="header-left">
-			<div class="page-title">
-				<h1>
-					<a href="~/">9 <span class="no-wrap">@Dictionary.Star @Dictionary.Ki</span></a>
-				</h1>
-			</div>
-		</div>
-		<div class="header-right">
-			<ul class="nav navbar-nav navbar-right navbar-login">
-				@Html.LoginLogout()
-				@if (WebSecurity.IsAuthenticated)
-				{
-					<li class="@ViewContext.GetActiveClass("MyAccount", "Account")"><a href="@Url.Action("MyAccount", "Account")"><span class="glyphicon glyphicon-user"></span> @Dictionary.MyAccountTitle</a></li>
-				}
-				@Html.Partial("Controls/_LanguageSelector")
-			</ul>
-		</div>
-		<div class="clearfix">
-		</div>
-	</div>
-</div>
-<div class="header-bottom">
-	<div class="container">
-		<div class="top-nav">
-			<nav class="navbar navbar-default">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-				</div>
-				<div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li class="@ViewContext.GetActiveClass("Index", "Home")"><a href="@Url.Action("Index", "Home")"> @Dictionary.OurMission</a></li>
-						<li class="@ViewContext.GetActiveClass("Index", "Iboga")"><a href="@Url.Action("Index", "Iboga")"> @Dictionary.Iboga</a></li>
-						<li class="@ViewContext.GetActiveClass("Team", "AboutUs")"><a href="@Url.Action("Team", "AboutUs")"> @Dictionary.OurTeam</a></li>
-						<li class="@ViewContext.GetActiveClass("Index", "News")"><a href="@Url.Action("Index", "News")"> @Dictionary.News</a></li>
-						<li class="@ViewContext.GetActiveClass("Index", "Archive")"><a href="@Url.Action("Index", "Archive")"> @Dictionary.Archive</a></li>
+﻿@using K9.Base.WebApplication.Extensions
+@using K9.Base.WebApplication.Helpers
+@using K9.SharedLibrary.Authentication
 
-						@if (roles.CurrentUserIsInRoles(RoleNames.Administrators) ||
-						     roles.CurrentUserHasPermissions<NewsItem>(Permissions.Create, Permissions.Edit, Permissions.Delete))
-						{
-							<li class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" href="#">@Dictionary.Admin
-									<span class="caret"></span></a>
-								<ul class="dropdown-menu nav navbar-nav">
-									@if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<NewsItem>(Permissions.Create, Permissions.Edit, Permissions.Delete))
-									{
-										<li class="@ViewContext.GetActiveClass("Index", "NewsItems") sub-item"><a href="@Url.Action("Index", "NewsItems")">@Dictionary.Edit @Dictionary.NewsItems</a></li>
-									}
-									@if (roles.CurrentUserIsInRoles(RoleNames.Administrators))
-									{
-										<li class="@ViewContext.GetActiveClass("Index", "Users") sub-item"><a href="@Url.Action("Index", "Users")">@Dictionary.Edit @Dictionary.Users</a></li>
-										<li class="@ViewContext.GetActiveClass("Index", "Roles") sub-item"><a href="@Url.Action("Index", "Roles")">@Dictionary.Edit @Dictionary.Roles</a></li>
-										<li class="@ViewContext.GetActiveClass("Index", "UserRoles") sub-item"><a href="@Url.Action("Index", "UserRoles")">@Dictionary.Edit @Dictionary.UserRoles</a></li>
-										<li class="@ViewContext.GetActiveClass("Index", "RolePermissions") sub-item"><a href="@Url.Action("Index", "RolePermissions")">@Dictionary.Edit @Dictionary.Role @Dictionary.Permissions</a></li>
-									}
-								</ul>
-							</li>
-						}
-					</ul>
-					<div class="clearfix"> </div>
-				</div>
-			</nav>
-		</div>
-		@if (!string.IsNullOrEmpty(ViewBag.MainHeading))
-  {
-			<div class="main-heading page-subtitle">
-				<h3 class="text-white">@ViewBag.MainHeading</h3>
-			</div>	
-		}
-	</div>
+@{
+    var roles = this.GetRoles();
+}
+<div id="account-header">
+    <div id="account-controls">
+        @if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<NewsItem>(Permissions.Create, Permissions.Edit, Permissions.Delete))
+        {
+            <ul class="admin-menu ">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        @Dictionary.Admin
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu nav navbar-nav">
+                    @if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<ArchiveItem>(Permissions.Create, Permissions.Edit, Permissions.Delete))
+                    {
+                        <li class="@ViewContext.GetActiveClass("Index", "ArchiveItems") sub-item"><a href="@Url.Action("Index", "ArchiveItems")">@Dictionary.ArchiveItems</a></li>
+                    }
+                    @if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<ArchiveCategory>(Permissions.Create, Permissions.Edit, Permissions.Delete))
+                    {
+                        <li class="@ViewContext.GetActiveClass("Index", "ArchiveCategories") sub-item"><a href="@Url.Action("Index", "ArchiveCategories")">@Dictionary.ArchiveCategories</a></li>
+                    }
+                    @if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<NewsItem>(Permissions.Create, Permissions.Edit, Permissions.Delete))
+                    {
+                        <li class="@ViewContext.GetActiveClass("Index", "NewsItems") sub-item"><a href="@Url.Action("Index", "NewsItems")">@Dictionary.NewsItems</a></li>
+                    }
+                    @if (roles.CurrentUserIsInRoles(RoleNames.Administrators))
+                    {
+                        <li class="@ViewContext.GetActiveClass("Index", "Roles") sub-item"><a href="@Url.Action("Index", "Roles")">@Dictionary.Roles</a></li>
+                        <li class="@ViewContext.GetActiveClass("Index", "RolePermissions") sub-item"><a href="@Url.Action("Index", "RolePermissions")">@Dictionary.Role @Dictionary.Permissions</a></li>
+                        <li class="@ViewContext.GetActiveClass("Index", "Users") sub-item"><a href="@Url.Action("Index", "Users")">@Dictionary.Users</a></li>
+                        <li class="@ViewContext.GetActiveClass("Index", "UserRoles") sub-item"><a href="@Url.Action("Index", "UserRoles")">@Dictionary.UserRoles</a></li>
+                    }
+                    </ul>
+                </li>
+            </ul>
+        }
+        <ul class="site-controls">
+            <li class="@ViewContext.GetActiveClass("Index", "Shop")"><a href="@Url.Action("Index", "Shop")"><span class="glyphicon glyphicon-shopping-cart"></span> @K9.Globalisation.Dictionary.Shop</a></li>
+            @Html.LoginLogout()
+            @if (WebSecurity.IsAuthenticated)
+            {
+                <li class="@ViewContext.GetActiveClass("MyAccount", "Account")"><a href="@Url.Action("MyAccount", "Account")"><span class="glyphicon glyphicon-user"></span> @Dictionary.MyAccountTitle</a></li>
+            }
+            @Html.Partial("Controls/_LanguageSelector")
+        </ul>
+    </div>
+</div>
+<div id="main-logo-container" class="menu-main">
+    <a class="@ViewContext.GetActiveClass("Index", "Home")" href="@Url.Action("Index", "Home")"><div class="main-logo default-logo"></div></a>
+</div>
+<div id="main-menu-container" class="menu-main">
+    <div class="container">
+        <div class="top-nav">
+            <nav class="navbar navbar-default">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse menu-main" id="bs-navbar-collapse-1">
+                    <ul id="main-navbar" class="nav navbar-nav">
+                        <li class="@ViewContext.GetActiveClass("Index", "Projects")"><a href="@Url.Action("Index", "Projects")"> @K9.Globalisation.Dictionary.Projects</a></li>
+                        <li class="@ViewContext.GetActiveClass("Index", "News")"><a href="@Url.Action("Index", "News")"> @Dictionary.News</a></li>
+                        <li class="@ViewContext.GetActiveClass("Index", "Home")"><a class="device-only" href="@Url.Action("Index", "Home")"> <span class="device-only">@Dictionary.Home</span></a></li>
+                        <li class="@ViewContext.GetActiveClass("Team", "AboutUs")"><a href="@Url.Action("Team", "AboutUs")"> @Dictionary.OurTeam</a></li>
+                        <li class="@ViewContext.GetActiveClass("Index", "Archive")"><a href="@Url.Action("Index", "Archive")"> @Dictionary.Archive</a></li>
+                    </ul>
+                    <div class="clearfix"> </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<div id="main-menu-spacer">
+    &nbsp;
 </div>

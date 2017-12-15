@@ -6,10 +6,7 @@
 	.agile-footer-grid:nth-child(3), .agile-footer-grid:nth-child(4) {
 		margin: 0;
 	}
-	ul.dropdown-menu {
-		min-width: 100%;
-	}
-
+    
 	.team {
 		padding: 4em 0;
 	}

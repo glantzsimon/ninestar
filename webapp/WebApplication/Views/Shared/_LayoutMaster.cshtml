@@ -1,10 +1,12 @@
 ﻿@using System.Globalization
+@using K9.Base.WebApplication.Config
 @using K9.SharedLibrary.Extensions
-@using K9.WebApplication.Config
 
 @{
     var localeName = CultureInfo.CurrentUICulture.GetLocaleName().ToLower();
+    var metaLocaleName = CultureInfo.CurrentUICulture.GetMetaLocaleName();
     var languageName = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower();
+    var title = Html.Raw(String.Format("{0} &raquo; {1} &raquo; {2}", ViewBag.Title, WebsiteConfiguration.Instance.CompanyName, K9.Globalisation.Dictionary.CompanyShortDescription));
 }
 
 <!DOCTYPE html>
@@ -12,25 +14,66 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="keywords" content="@WebsiteConfiguration.Instance.CompanyName @Dictionary.Keywords" />
-    <title>@ViewBag.Title - @WebsiteConfiguration.Instance.CompanyName</title>
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="keywords" content="@WebsiteConfiguration.Instance.CompanyName @K9.Globalisation.Dictionary.Keywords" />
+    <title>@title</title>
+    <meta name="description" content="@K9.Globalisation.Dictionary.CompanyDescription" />
+    <meta name="robots" content="noodp" />
+    <link rel="canonical" href="/" />
+    <meta property="og:locale" content="@metaLocaleName)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@title" />
+    <meta property="og:description" content="@K9.Globalisation.Dictionary.CompanyDescription" />
+    <meta property="og:url" content="/" />
+    <meta property="og:site_name" content="@WebsiteConfiguration.Instance.CompanyName" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="@K9.Globalisation.Dictionary.CompanyDescription" />
+    <meta name="twitter:title" content="@title" />
+    <meta name="google-site-verification" content="" />
+
+    <link href="~/Images/icons/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="57x57" href="~/Images/icons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="~/Images/icons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="~/Images/icons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="~/Images/icons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="~/Images/icons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="~/Images/icons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="~/Images/icons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="~/Images/icons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="~/Images/icons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="~/Images/icons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="~/Images/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="~/Images/icons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="~/Images/icons/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="~/Images/icons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="manifest" href="~/Images/icons/manifest.json">
+    <link rel="mask-icon" href="~/Images/icons/safari-pinned-tab.svg" color="#464444">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="~/Images/icons/mstile-144x144.png">
+
+    <link rel="dns-prefetch" href="//cdn.bootcss.com" />
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//ajax.googleapis.com" />
+    <link rel="dns-prefetch" href="//ajax.aspnetcdn.com" />
+    <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com" />
+    <link rel="dns-prefetch" href="//cdn.datatables.net" />
+    <link rel="dns-prefetch" href="//unpkg.com" />
 
     @Styles.Render("~/Content/lib")
     @Styles.Render("~/Content/tpl")
-    @Styles.Render("~/Content/controls")
-    @Styles.Render("~/Content/botf")
+    @Styles.Render("~/Content/k9")
+    @Styles.Render("~/Content/site")
 
     <link rel="stylesheet" href="https://cdn.bootcss.com/stroll.js/1.0/css/stroll.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/v/bs/jszip-3.1.3/pdfmake-0.1.27/dt-1.10.15/b-1.3.1/b-colvis-1.3.1/b-html5-1.3.1/b-print-1.3.1/cr-1.3.3/r-2.1.1/se-1.2.2/datatables.min.css" />
-    <link href="//fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     @if (localeName != "en-us")
     {
@@ -39,7 +82,7 @@
     }
     @if (languageName != "en")
     {
-        <script type="text/javascript" src=@string.Format("http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/localization/messages_{0}.js", languageName)></script>
+        <script type="text/javascript" src=@string.Format("https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/localization/messages_{0}.js", languageName)></script>
     }
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -47,13 +90,16 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs/jszip-3.1.3/pdfmake-0.1.27/dt-1.10.15/b-1.3.1/b-colvis-1.3.1/b-html5-1.3.1/b-print-1.3.1/cr-1.3.3/r-2.1.1/se-1.2.2/datatables.min.js"></script>
     <script type="text/javascript" src="https://cdn.bootcss.com/stroll.js/0.0/js/stroll.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <![endif]-->
 </head>
 <body>
-    <div id="pageFadeInOverlay"></div>
+    <div id="pageFadeInOverlay">
+        <img class="cropped" src="/Images/shared/blessings_loader.gif" />
+    </div>
     <div id="pageSpinner"></div>
     <div id="pageOverlay"></div>
     @RenderBody()

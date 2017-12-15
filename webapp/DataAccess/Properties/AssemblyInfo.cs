@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("dataaccesslayer")]
+[assembly: AssemblyTitle("Data Access Layer")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Home")]
-[assembly: AssemblyProduct("dataaccesslayer")]
-[assembly: AssemblyCopyright("Copyright © Home 2017")]
+[assembly: AssemblyCompany("Glantz Software Consulting LTD")]
+[assembly: AssemblyProduct("Data Access Layer")]
+[assembly: AssemblyCopyright("Copyright © Glantz Software Consulting LTD 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

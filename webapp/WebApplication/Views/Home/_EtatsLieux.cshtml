@@ -1,0 +1,37 @@
+﻿<div id="etats-lieux-container" class="background-slides background-elephant main-section etats-lieux">
+    <div class="container scrollFadeIn">
+        <div class="main-heading">
+            <h3 class="text-white">@K9.Globalisation.Dictionary.etats_des_lieux_title</h3>
+        </div>
+        <div class="container">
+            <div>
+                <div class="col-md-6">
+                    <div>
+                        <h4>@K9.Globalisation.Dictionary.etats_des_lieux_iboga_title</h4>
+                    </div>
+                    @MvcHtmlString.Create(K9.Globalisation.Dictionary.etats_des_lieux_iboga)
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <h4>@K9.Globalisation.Dictionary.etats_des_lieux_forest_title</h4>
+                    </div>
+                    @MvcHtmlString.Create(K9.Globalisation.Dictionary.etats_des_lieux_forest)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script language="javascript">
+    $(function() {
+        backgroundImageSwitcher().init("#etats-lieux-container",
+            [
+                "Images/background/etats-lieux/poaching1.jpg",
+                "Images/background/etats-lieux/gabon-wildlife1.jpg",
+                "Images/background/etats-lieux/ivory.jpg",
+                "Images/background/etats-lieux/poaching2.jpg",
+                "Images/background/etats-lieux/poaching4.jpg",
+                "Images/background/etats-lieux/gabon-elephant.jpg"
+            ]);
+    });
+</script>

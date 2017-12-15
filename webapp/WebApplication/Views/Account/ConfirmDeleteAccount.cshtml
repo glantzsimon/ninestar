@@ -1,0 +1,15 @@
+﻿@model K9.WebApplication.Models.ConfirmDeleteAccountModel
+@{
+    ViewBag.Title = Dictionary.MyAccountTitle;
+    ViewBag.SubTitle = Dictionary.MyAccountDeleteAccount;
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+@using (Html.BeginForm("DeleteAccount", "Account"))
+{
+    using (Html.BeginBootstrapForm())
+    {
+        <h3>@Dictionary.MyAccountDeleteConfirm</h3>
+        @Html.HiddenFor(model => model.UserId)
+        @Html.BootstrapButton(Dictionary.DeleteMyAccount, EButtonType.Delete)
+    }
+}

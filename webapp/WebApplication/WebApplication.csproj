@@ -17,7 +17,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44314</IISExpressSSLPort>
+    <IISExpressSSLPort>44308</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -36,6 +36,8 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <LangVersion>default</LangVersion>
+    <IncludeSetACLProviderOnDestination>False</IncludeSetACLProviderOnDestination>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -46,58 +48,128 @@
     <WarningLevel>4</WarningLevel>
     <DebugSymbols>true</DebugSymbols>
     <Prefer32Bit>false</Prefer32Bit>
+    <IncludeSetACLProviderOnDestination>False</IncludeSetACLProviderOnDestination>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.28\lib\net461\Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Autofac, Version=4.6.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\packages\Autofac.4.6.1\lib\net45\Autofac.dll</HintPath>
+    <Reference Include="Autofac, Version=4.2.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.30\lib\net461\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+      <HintPath>..\packages\Autofac.Mvc5.4.0.0\lib\net451\Autofac.Integration.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="Castle.Core, Version=4.1.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\packages\Castle.Core.4.1.1\lib\net45\Castle.Core.dll</HintPath>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.30\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DataAnnotationsExtensions, Version=5.0.1.16, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.30\lib\net461\DataAnnotationsExtensions.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.28\lib\net461\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.28\lib\net461\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.30\lib\net461\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="K9.Base.DataAccessLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.30\lib\net461\K9.Base.DataAccessLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="K9.Base.Globalisation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.28\lib\net461\K9.Base.Globalisation.dll</HintPath>
+    </Reference>
+    <Reference Include="K9.Base.WebApplication, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.30\lib\net461\K9.Base.WebApplication.dll</HintPath>
     </Reference>
     <Reference Include="K9.SharedLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.16.0.0\lib\net461\K9.SharedLibrary.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.28\lib\net461\K9.SharedLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.28\lib\net461\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="Moq, Version=4.7.99.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
-      <HintPath>..\packages\Moq.4.7.99\lib\net45\Moq.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\packages\NLog.4.4.12\lib\net45\NLog.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.28\lib\net461\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Stripe.net, Version=11.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stripe.net.11.9.0\lib\net45\Stripe.net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Activities" />
+    <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\K9.Base.DataAccessLayer.2.0.0.28\lib\net461\System.AppContext.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Specialized, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\K9.Base.DataAccessLayer.2.0.0.28\lib\net461\System.Collections.Specialized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\K9.Base.DataAccessLayer.2.0.0.28\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.Primitives, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\K9.Base.DataAccessLayer.2.0.0.28\lib\net461\System.ComponentModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.TypeConverter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\K9.Base.DataAccessLayer.2.0.0.28\lib\net461\System.ComponentModel.TypeConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\K9.Base.DataAccessLayer.2.0.0.28\lib\net461\System.Console.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Diagnostics.TraceSource, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\K9.Base.DataAccessLayer.2.0.0.28\lib\net461\System.Diagnostics.TraceSource.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\K9.Base.DataAccessLayer.2.0.0.28\lib\net461\System.Globalization.Calendars.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.30\lib\net461\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\K9.Base.DataAccessLayer.2.0.0.28\lib\net461\System.IO.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\K9.Base.DataAccessLayer.2.0.0.28\lib\net461\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\K9.Base.DataAccessLayer.2.0.0.28\lib\net461\System.Net.Sockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Reflection.TypeExtensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\K9.Base.DataAccessLayer.2.0.0.28\lib\net461\System.Reflection.TypeExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\K9.Base.DataAccessLayer.2.0.0.28\lib\net461\System.Runtime.Serialization.Formatters.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Primitives, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\K9.Base.DataAccessLayer.2.0.0.28\lib\net461\System.Runtime.Serialization.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.30\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.30\lib\net461\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.30\lib\net461\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.30\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
     <Reference Include="System.Transactions" />
-    <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Web.Extensions" />
@@ -106,30 +178,26 @@
     </Reference>
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Bin\System.Web.Http.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.28\lib\net461\System.Web.Helpers.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.28\lib\net461\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.28\lib\net461\System.Web.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.28\lib\net461\System.Web.WebPages.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.28\lib\net461\System.Web.WebPages.Deployment.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.28\lib\net461\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -137,13 +205,13 @@
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.28\lib\net461\WebGrease.dll</HintPath>
     </Reference>
     <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.3.2.3\lib\net45\WebMatrix.Data.dll</HintPath>
     </Reference>
     <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.3.2.3\lib\net45\WebMatrix.WebData.dll</HintPath>
+      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.30\lib\net461\WebMatrix.WebData.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -153,114 +221,56 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Config\OAuthConfiguration.cs" />
-    <Compile Include="Config\WebsiteConfiguration.cs" />
+    <Compile Include="Config\StripeConfiguration.cs" />
+    <Compile Include="Constants\ViewDataConstants.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
+    <Compile Include="Controllers\AccountControllerAjax.cs" />
+    <Compile Include="Controllers\DonationsController.cs" />
+    <Compile Include="Controllers\ShopController.cs" />
+    <Compile Include="Controllers\ProjectsController.cs" />
+    <Compile Include="Controllers\ArchiveCategoriesController.cs" />
     <Compile Include="Controllers\ArchiveController.cs" />
+    <Compile Include="Controllers\ArchiveItemsController.cs" />
     <Compile Include="Controllers\NewsItemsController.cs" />
-    <Compile Include="Controllers\IbogaController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\RolePermissionsController.cs" />
-    <Compile Include="Enums\CarouselEnums.cs" />
-    <Compile Include="Enums\EActivateAccountResult.cs" />
-    <Compile Include="Exceptions\LimitByUserIdException.cs" />
-    <Compile Include="Exceptions\InvalidColumnNameException.cs" />
-    <Compile Include="Extensions\DateTimeExtensions.cs" />
-    <Compile Include="Filters\CultureAttribute.cs" />
-    <Compile Include="Filters\RequirePermissionsAttribute.cs" />
-    <Compile Include="Constants\Bootstrap.cs" />
-    <Compile Include="Constants\StringConstants.cs" />
-    <Compile Include="Constants\DateTimeConstants.cs" />
-    <Compile Include="Constants\Html\Attributes.cs" />
-    <Compile Include="Constants\Html\Types.cs" />
-    <Compile Include="Constants\Html\Tags.cs" />
-    <Compile Include="Constants\SiteConstants.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\SupportController.cs" />
     <Compile Include="Controllers\PermissionsController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\UserRolesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
-    <Compile Include="Controllers\EnrollmentsController.cs" />
     <Compile Include="Controllers\CountriesController.cs" />
-    <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DataSets\DataSets.cs" />
-    <Compile Include="DataSets\DataSetsHelper.cs" />
-    <Compile Include="Enums\BootstrapEnums.cs" />
-    <Compile Include="Enums\EAlertType.cs" />
-    <Compile Include="Enums\ImageSwitcherEnums.cs" />
-    <Compile Include="EventArgs\CrudEventArgs.cs" />
-    <Compile Include="Extensions\FormatExtensions.cs" />
-    <Compile Include="Extensions\Extensions.cs" />
-    <Compile Include="Extensions\MvcExtensions.cs" />
-    <Compile Include="Helpers\BootstrapValidationSummary.cs" />
-    <Compile Include="Helpers\BootstrapEditorFor.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Helpers\BootstrapForm.cs" />
-    <Compile Include="Helpers\BootstrapButton.cs" />
-    <Compile Include="Helpers\BootstrapTable.cs" />
-    <Compile Include="Helpers\AuditFieldsForModel.cs" />
-    <Compile Include="Helpers\BootstrapDropdownFor.cs" />
-    <Compile Include="Helpers\Alert.cs" />
-    <Compile Include="Helpers\BreadCrumbs.cs" />
-    <Compile Include="Helpers\Carousel.cs" />
-    <Compile Include="Helpers\PopupAlert.cs" />
-    <Compile Include="Helpers\CrudButtonsForModel.cs" />
-    <Compile Include="Helpers\IDataTableAjaxHelper.cs" />
-    <Compile Include="Helpers\DataTableAjaxHelper.cs" />
-    <Compile Include="Helpers\Fail.cs" />
-    <Compile Include="Helpers\Success.cs" />
-    <Compile Include="Helpers\LoginLogout.cs" />
-    <Compile Include="Helpers\SubTitle.cs" />
-    <Compile Include="Helpers\HtmlHelpers.cs" />
-    <Compile Include="Helpers\ImageLoader.cs" />
-    <Compile Include="Helpers\ImageSwitcher.cs" />
-    <Compile Include="Helpers\TagCloser.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ActivateAccountResult.cs" />
-    <Compile Include="Models\ServiceError.cs" />
-    <Compile Include="Models\Crumb.cs" />
-    <Compile Include="Models\ServiceResult.cs" />
-    <Compile Include="Models\ViewMessage.cs" />
-    <Compile Include="Options\BackgroundImageSwitcherOptions.cs" />
-    <Compile Include="Options\AlertOptions.cs" />
-    <Compile Include="Models\DataTableButton.cs" />
-    <Compile Include="Options\BreadCrumbsOptions.cs" />
-    <Compile Include="Options\CarouselOptions.cs" />
-    <Compile Include="Options\DataTableOptions.cs" />
-    <Compile Include="Options\EditorOptions.cs" />
-    <Compile Include="Options\IDataTableOptions.cs" />
-    <Compile Include="Options\ImageSwitcherOptions.cs" />
-    <Compile Include="Options\ImageSwitcherOptionsBase.cs" />
+    <Compile Include="Helpers\Separator.cs" />
+    <Compile Include="Models\StripeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Models\MultiSelectItem.cs" />
-    <Compile Include="Services\AccountService.cs" />
-    <Compile Include="Enums\ELoginResult.cs" />
-    <Compile Include="Services\IAccountService.cs" />
-    <Compile Include="UnitsOfWork\ControllerPackage.cs" />
-    <Compile Include="UnitsOfWork\IControllerPackage.cs" />
-    <Compile Include="ViewModels\ContactUsViewModel.cs" />
-    <Compile Include="ViewModels\MultiSelectViewModel.cs" />
+    <Compile Include="Services\DonationService.cs" />
+    <Compile Include="Services\IDonationService.cs" />
+    <Compile Include="Services\IShopService.cs" />
+    <Compile Include="Services\IStripeService.cs" />
+    <Compile Include="Services\ShopService.cs" />
+    <Compile Include="Services\StripeService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Config\.gitattributes" />
     <Content Include="Content\k9\scroller.css" />
     <Content Include="Content\k9\fileUpload.css" />
-    <Content Include="Content\ninestar\botf.css" />
-    <Content Include="Content\ninestar\classes.css" />
-    <Content Include="Content\ninestar\desktop.css" />
-    <Content Include="Content\ninestar\elements.css" />
-    <Content Include="Content\ninestar\mobile.css" />
-    <Content Include="Content\ninestar\shared.css" />
-    <Content Include="Content\ninestar\tablet.css" />
-    <Content Include="Content\ninestar\validation.css" />
     <Content Include="Content\fontawesome\font-awesome.css" />
+    <Content Include="Content\site\classes.css" />
+    <Content Include="Content\site\desktop.css" />
+    <Content Include="Content\site\elements.css" />
+    <Content Include="Content\site\mobile.css" />
+    <Content Include="Content\site\sections\shop.css" />
+    <Content Include="Content\site\sections\archive.css" />
+    <Content Include="Content\site\shared.css" />
+    <Content Include="Content\site\tablet.css" />
+    <Content Include="Content\site\validation.css" />
     <Content Include="Content\template\style.1200.css" />
     <Content Include="Content\template\style.610.css" />
     <Content Include="Content\template\style.525.css" />
@@ -284,36 +294,61 @@
     <Content Include="Content\bootstrap\bootstrap-theme.css" />
     <Content Include="Content\bootstrap\bootstrap.css" />
     <Content Include="Content\bootstrap\bootstrapValidator.css" />
-    <Content Include="Content\botf\botf.css" />
-    <Content Include="Content\botf\desktop.css" />
-    <Content Include="Content\botf\shared.css" />
     <Content Include="Content\k9\fadeIn.css" />
     <Content Include="Content\_botfColors.txt" />
-    <Content Include="Content\k9\breadCrumbs.css" />
-    <Content Include="Content\k9\menubar.css" />
     <Content Include="Content\k9\navbar.css" />
     <Content Include="Content\k9\tables.css" />
-    <Content Include="Content\botf\tablet.css" />
     <Content Include="Content\k9\pageSpinner.css" />
     <Content Include="Content\_colors.txt" />
-    <Content Include="Content\botf\validation.css" />
-    <Content Include="Content\botf\mobile.css" />
-    <Content Include="Content\botf\elements.css" />
-    <Content Include="Content\k9\imagePreloader.css" />
-    <Content Include="Content\k9\responsiveslides.css" />
     <Content Include="Global.asax" />
-    <Content Include="Content\botf\classes.css" />
-    <Content Include="Images\background\oldslides\1leaves_background.jpg" />
-    <Content Include="Images\background\oldslides\blueswirl.jpg" />
-    <Content Include="Images\background\oldslides\squares_background.jpg" />
+    <Content Include="Images\archive\upload\ArchiveItem\2\sample.mkv" />
+    <Content Include="Images\archive\upload\ArchiveItem\2\sample.mov" />
+    <Content Include="Images\archive\upload\ArchiveItem\2\sample.mp4" />
+    <Content Include="Images\archive\upload\ArchiveItem\2\sample.mpg" />
+    <Content Include="Images\archive\upload\ArchiveItem\2\sample.swf" />
+    <Content Include="Images\archive\upload\ArchiveItem\2\sample.wmv" />
+    <Content Include="Images\archive\upload\ArchiveItem\3\animated.gif" />
+    <Content Include="Images\archive\upload\ArchiveItem\3\progressive.jpg" />
+    <Content Include="Images\archive\upload\ArchiveItem\3\sample.gif" />
+    <Content Include="Images\archive\upload\ArchiveItem\3\sample.jpg" />
+    <Content Include="Images\archive\upload\ArchiveItem\3\sample.png" />
+    <Content Include="Images\archive\upload\ArchiveItem\3\sample.tiff" />
+    <Content Include="Images\archive\upload\ArchiveItem\4\audio4.mp3" />
+    <Content Include="Images\archive\upload\ArchiveItem\4\Autumn %281%29.wma" />
+    <Content Include="Images\archive\upload\ArchiveItem\4\Autumn.wma" />
+    <Content Include="Images\archive\upload\ArchiveItem\4\sample.aac" />
+    <Content Include="Images\archive\upload\ArchiveItem\4\sample.ac3" />
+    <Content Include="Images\archive\upload\ArchiveItem\4\sample.aiff" />
+    <Content Include="Images\archive\upload\ArchiveItem\4\sample.au" />
+    <Content Include="Images\archive\upload\ArchiveItem\4\sample.flac" />
+    <Content Include="Images\archive\upload\ArchiveItem\4\sample.m4a" />
+    <Content Include="Images\archive\upload\ArchiveItem\4\sample.mid" />
+    <Content Include="Images\archive\upload\ArchiveItem\4\sample.mka" />
+    <Content Include="Images\archive\upload\ArchiveItem\4\sample.mp3" />
+    <Content Include="Images\archive\upload\ArchiveItem\4\sample.wav" />
+    <Content Include="Images\archive\upload\ArchiveItem\4\sample.wma" />
+    <Content Include="Images\archive\upload\ArchiveItem\6\botf 2.txt" />
+    <Content Include="Images\archive\upload\ArchiveItem\6\todo.txt" />
+    <Content Include="Images\background\etats-lieux\gabon-wildlife1.jpg" />
+    <Content Include="Images\background\etats-lieux\ivory.jpg" />
+    <Content Include="Images\background\etats-lieux\poaching1.jpg" />
+    <Content Include="Images\background\etats-lieux\poaching2.jpg" />
+    <Content Include="Images\background\etats-lieux\poaching4.jpg" />
+    <Content Include="Images\background\slides\creek_bg.jpg" />
+    <Content Include="Images\background\slides\jungle-bg.jpg" />
     <Content Include="Images\background\slides\bwiti1.jpg" />
     <Content Include="Images\background\slides\forest1d.jpg" />
+    <Content Include="Images\background\slides\forest2.jpg" />
     <Content Include="Images\background\slides\forest3d.jpg" />
     <Content Include="Images\background\slides\forest4.jpg" />
+    <Content Include="Images\background\etats-lieux\gabon-elephant.jpg" />
+    <Content Include="Images\background\slides\gabon_forest3.jpg" />
+    <Content Include="Images\company\botf_logo_default_small_inv.png" />
+    <Content Include="Images\company\botf_logo_med.png" />
     <Content Include="Images\company\botf_med.png" />
+    <Content Include="Images\company\botf_logo_small_inverted.png" />
+    <Content Include="Images\company\botf_new_med.png" />
     <Content Include="Images\company\botf_small.png" />
-    <Content Include="Images\background\oldslides\bwiti3.jpg" />
-    <Content Include="Images\background\slides\forest2.jpg" />
     <Content Include="Images\flags\ad.png" />
     <Content Include="Images\flags\ae.png" />
     <Content Include="Images\flags\af.png" />
@@ -561,7 +596,21 @@
     <Content Include="Images\flags\za.png" />
     <Content Include="Images\flags\zm.png" />
     <Content Include="Images\flags\zw.png" />
-    <Content Include="Images\home\bwiti1.jpg" />
+    <Content Include="Images\home\bwiti-bg.jpg" />
+    <Content Include="Images\home\context2\aims1.jpg" />
+    <Content Include="Images\home\context2\iboga2.jpg" />
+    <Content Include="Images\home\context2\wood1.jpg" />
+    <Content Include="Images\home\context3\0024-2686_01.jpg" />
+    <Content Include="Images\home\context3\9446-600.png" />
+    <Content Include="Images\home\context3\GMA3554_Iboga_Full.jpg" />
+    <Content Include="Images\home\context3\ibogene.jpg" />
+    <Content Include="Images\home\etat-forest.jpg" />
+    <Content Include="Images\home\etat-lieux2.jpg" />
+    <Content Include="Images\home\gabon-map.jpg" />
+    <Content Include="Images\home\hand.jpg" />
+    <Content Include="Images\home\home1.jpg" />
+    <Content Include="Images\home\iboga.jpg" />
+    <Content Include="Images\home\iboga2.jpg" />
     <Content Include="Images\home\smokefog-dark.png" />
     <Content Include="Images\home\wood1.jpg" />
     <Content Include="Images\home\slides\aims1.jpg" />
@@ -576,6 +625,7 @@
     <Content Include="Images\iboga\1\aims1.jpg" />
     <Content Include="Images\iboga\1\aims2.jpg" />
     <Content Include="Images\iboga\1\aims3.jpg" />
+    <Content Include="Images\icons\favicon.ico" />
     <Content Include="Images\latest\full-size\image1.jpg" />
     <Content Include="Images\latest\full-size\image10.jpg" />
     <Content Include="Images\latest\full-size\image11.jpg" />
@@ -601,11 +651,15 @@
     <Content Include="Images\latest\image8.jpg" />
     <Content Include="Images\latest\image9.jpg" />
     <Content Include="Images\partners\bokaye.jpg" />
+    <Content Include="Images\partners\gabon-ministere.jpg" />
     <Content Include="Images\partners\global-ibogaine.jpg" />
     <Content Include="Images\partners\iceers.jpg" />
     <Content Include="Images\partners\ebando.jpg" />
     <Content Include="Images\partners\parc-gabon.jpg" />
     <Content Include="Images\partners\plant-consciousness.jpg" />
+    <Content Include="Images\projects\projects_bg.jpg" />
+    <Content Include="Images\shared\blessings_loader.gif" />
+    <Content Include="Images\shared\botf_logo_animated.gif" />
     <Content Include="Images\team\david.jpg" />
     <Content Include="Images\team\laurent.jpg" />
     <Content Include="Images\team\simon.jpg" />
@@ -631,7 +685,9 @@
     <Content Include="Images\template\t1.jpg" />
     <Content Include="Images\template\t2.jpg" />
     <Content Include="Images\template\t3.jpg" />
+    <Content Include="Images\ui\audio.png" />
     <Content Include="Images\ui\document.jpg" />
+    <Content Include="Images\ui\fade-out.png" />
     <Content Include="Images\ui\fail.png" />
     <Content Include="Images\ui\notfound.png" />
     <Content Include="Images\ui\locked.png" />
@@ -639,21 +695,27 @@
     <Content Include="Images\ui\facebook_sm.png" />
     <Content Include="Images\ui\google_sm.png" />
     <Content Include="Images\ui\unauthorized.png" />
+    <Content Include="Images\ui\video.png" />
     <Content Include="Images\ui\warning.png" />
+    <Content Include="Scripts\ajax\ajaxcontroller.js" />
     <Content Include="Scripts\imageSwitcher\backgroundSwitcher.js" />
     <Content Include="Scripts\imageSwitcher\responsiveslides.js" />
     <Content Include="Scripts\k9\buttonBehaviours.js" />
     <Content Include="Scripts\k9\bootstrapControls.js" />
     <Content Include="Scripts\k9\fileUploader.js" />
     <Content Include="Scripts\k9\fadePageIn.js" />
+    <Content Include="Scripts\k9\backgroundImageSwitcher.js" />
+    <Content Include="Scripts\k9\revealText.js" />
+    <Content Include="Scripts\k9\navbar.js" />
     <Content Include="Scripts\library\easing.js" />
     <Content Include="Scripts\library\jarallax.js" />
-    <Content Include="Scripts\library\scrollText.js" />
     <Content Include="Scripts\library\lsb.js" />
     <Content Include="Scripts\library\move-top.js" />
     <Content Include="Scripts\library\owl.carousel.js" />
     <Content Include="Scripts\library\SmoothScroll.min.js" />
+    <Content Include="Scripts\library\vticker-min.js" />
     <Content Include="Scripts\template\scroller.js" />
+    <Content Include="Views\AboutUs\Team.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -663,26 +725,24 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\news\upload\" />
-    <Folder Include="Video\" />
+    <Folder Include="Upload\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{20948D36-2ABE-4429-B175-AF781A5F6CB3}</Project>
-      <Name>DataAccess</Name>
+    <ProjectReference Include="..\DataAccess\DataAccessLayer.csproj">
+      <Project>{20948d36-2abe-4429-b175-af781a5f6cb3}</Project>
+      <Name>DataAccessLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\Globalisation\Globalisation.csproj">
-      <Project>{37795DC6-45C9-458C-A3A5-48DA6534C35C}</Project>
+      <Project>{37795dc6-45c9-458c-a3a5-48da6534c35c}</Project>
       <Name>Globalisation</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\k9\_Navbar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_LayoutFormWide.cshtml" />
@@ -718,7 +778,6 @@
     <Content Include="Views\Shared\Controls\_DataTablesJs.cshtml" />
     <Content Include="Views\Countries\Index.cshtml" />
     <Content Include="Nlog.config" />
-    <Content Include="Views\Enrollments\Index.cshtml" />
     <Content Include="Views\Countries\Edit.cshtml" />
     <Content Include="Views\Countries\Details.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Boolean.cshtml" />
@@ -731,14 +790,8 @@
     <Content Include="Views\Shared\DisplayTemplates\MultiLineText.cshtml" />
     <Content Include="Views\Countries\Delete.cshtml" />
     <Content Include="Views\Countries\Create.cshtml" />
-    <Content Include="Views\Enrollments\Create.cshtml" />
-    <Content Include="Views\Enrollments\Edit.cshtml" />
-    <Content Include="Views\Enrollments\Delete.cshtml" />
-    <Content Include="Views\Enrollments\Details.cshtml" />
     <Content Include="Views\Countries\_EditFields.cshtml" />
     <Content Include="Views\Countries\_DisplayFields.cshtml" />
-    <Content Include="Views\Enrollments\_EditFields.cshtml" />
-    <Content Include="Views\Enrollments\_DisplayFields.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Student.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Course.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Student.cshtml" />
@@ -787,9 +840,7 @@
     <Content Include="Views\Shared\_PopupAlert.cshtml" />
     <Content Include="Views\Shared\_BreadCrumbs.cshtml" />
     <Content Include="Config\appsettings.json" />
-    <Content Include="Views\AboutUs\Index.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
-    <Content Include="Views\AboutUs\Team.cshtml" />
     <Content Include="Views\Archive\Index.cshtml" />
     <Content Include="Views\Iboga\Index.cshtml" />
     <Content Include="Views\Shared\Controls\_Carousel.cshtml" />
@@ -812,7 +863,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutFormMaster.cshtml" />
     <Content Include="Images\home\animated-waterfalls.webp" />
-    <Content Include="Views\AboutUs\HelpUs.cshtml" />
     <Content Include="Views\NewsItems\_DisplayFields.cshtml" />
     <Content Include="Views\NewsItems\_EditFields.cshtml" />
     <Content Include="Views\NewsItems\Create.cshtml" />
@@ -831,6 +881,22 @@
     <Content Include="Views\Shared\Controls\_LanguageSelector.cshtml" />
     <Content Include="Views\Shared\_FooterNewsScroller.cshtml" />
     <Content Include="Views\News\_NewsSummary.cshtml" />
+    <Content Include="Images\archive\upload\ArchiveItem\1\Copy-Angela Thomas Facilities and property management  CV 081117  V2 %281%29.doc" />
+    <Content Include="Images\archive\upload\ArchiveItem\1\Copy-Angela Thomas Facilities and property management  CV 081117  V2.pdf" />
+    <Content Include="Images\archive\upload\ArchiveItem\1\Dadaabc teaching profile.docx" />
+    <Content Include="Images\archive\upload\ArchiveItem\1\Healing-Portal-Conditions-Sub-Conditions-Map.docx" />
+    <Content Include="Images\archive\upload\ArchiveItem\2\sample.webm" />
+    <Content Include="Images\archive\upload\ArchiveItem\3\sample.webp" />
+    <Content Include="Images\archive\upload\ArchiveItem\4\sample.amr" />
+    <Content Include="Images\archive\upload\ArchiveItem\4\sample.ogg" />
+    <Content Include="Images\archive\upload\ArchiveItem\4\sample.ra" />
+    <Content Include="Images\archive\upload\ArchiveItem\4\sample.voc" />
+    <Content Include="Images\archive\upload\ArchiveItem\5\Copy-Angela Thomas Facilities and property management  CV 081117  V2 %281%29.doc" />
+    <Content Include="Images\archive\upload\ArchiveItem\5\Dadaabc teaching profile.docx" />
+    <Content Include="Images\archive\upload\ArchiveItem\5\Healing-Portal-Conditions-Sub-Conditions-Map.docx" />
+    <Content Include="Images\archive\upload\ArchiveItem\6\debug.log" />
+    <Content Include="Images\archive\upload\ArchiveItem\6\wiwi.docx" />
+    <Content Include="Images\background\slides\Thumbs.db" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\Integration.pubxml" />
     <None Include="Properties\PublishProfiles\IntegrationLocal.pubxml" />
@@ -839,26 +905,58 @@
     <None Include="Properties\PublishProfiles\Test.pubxml" />
     <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutColumns.cshtml" />
-    <Content Include="Views\Students\Create.cshtml" />
-    <Content Include="Views\Students\Index.cshtml" />
-    <Content Include="Views\Students\Delete.cshtml" />
-    <Content Include="Views\Students\Details.cshtml" />
-    <Content Include="Views\Students\Edit.cshtml" />
-    <Content Include="Views\Students\_EditFields.cshtml" />
-    <Content Include="Views\Students\_DisplayFields.cshtml" />
     <Content Include="Views\Shared\Scripts\Default.cshtml" />
     <Content Include="Views\Support\ContactUs.cshtml" />
     <Content Include="Views\UserRoles\Index.cshtml" />
     <Content Include="Views\Shared\_MenuBar.cshtml" />
     <Content Include="Views\Shared\_ContactUs.cshtml" />
     <Content Include="Views\Support\ContactUsSuccess.cshtml" />
-    <Content Include="Views\Shared\k9\_LayoutColumns.cshtml" />
-    <Content Include="Views\Shared\k9\_Layout.cshtml" />
-    <Content Include="Views\Shared\k9\_LayoutFormMaster.cshtml" />
-    <Content Include="Views\Shared\k9\_LayoutFormSmall.cshtml" />
-    <Content Include="Views\Shared\k9\_LayoutFormWide.cshtml" />
-    <Content Include="Views\Shared\k9\_LayoutMaster.cshtml" />
-    <Content Include="Views\Shared\k9\_Footer.cshtml" />
+    <Content Include="Views\ArchiveCategories\Create.cshtml" />
+    <Content Include="Views\ArchiveCategories\Delete.cshtml" />
+    <Content Include="Views\ArchiveCategories\Details.cshtml" />
+    <Content Include="Views\ArchiveCategories\Edit.cshtml" />
+    <Content Include="Views\ArchiveCategories\Index.cshtml" />
+    <Content Include="Views\ArchiveCategories\_DisplayFields.cshtml" />
+    <Content Include="Views\ArchiveCategories\_EditFields.cshtml" />
+    <Content Include="Views\ArchiveItems\Create.cshtml" />
+    <Content Include="Views\ArchiveItems\Delete.cshtml" />
+    <Content Include="Views\ArchiveItems\Details.cshtml" />
+    <Content Include="Views\ArchiveItems\Edit.cshtml" />
+    <Content Include="Views\ArchiveItems\Index.cshtml" />
+    <Content Include="Views\ArchiveItems\_DisplayFields.cshtml" />
+    <Content Include="Views\ArchiveItems\_EditFields.cshtml" />
+    <Content Include="Views\Account\ConfirmDeleteAccount.cshtml" />
+    <Content Include="Views\Account\DeleteAccountFailed.cshtml" />
+    <Content Include="Views\Account\DeleteAccountSuccess.cshtml" />
+    <Content Include="Views\Archive\_ArchiveItem.cshtml" />
+    <Content Include="Views\Archive\_ArchiveMenu.cshtml" />
+    <Content Include="Views\Shared\_FileSource.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ArchiveCategory.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ArchiveCategory.cshtml" />
+    <Content Include="Views\Shared\_UploadedFilesDisplay.cshtml" />
+    <Content Include="Views\Home\_Botf.cshtml" />
+    <Content Include="Views\Home\_Mission.cshtml" />
+    <Content Include="Views\Home\_Context.cshtml" />
+    <Content Include="Views\Home\_Partners.cshtml" />
+    <Content Include="Views\Home\_Contact.cshtml" />
+    <Content Include="Views\Home\_EtatsLieux.cshtml" />
+    <Content Include="Views\Projects\Index.cshtml" />
+    <Content Include="Views\Projects\_Projects.cshtml" />
+    <Content Include="Views\Shared\_EmbeddedVideo.cshtml" />
+    <Content Include="Views\Shared\_Separator.cshtml" />
+    <Content Include="Views\Shop\Index.cshtml" />
+    <Content Include="Views\Donations\Create.cshtml" />
+    <Content Include="Views\Donations\Delete.cshtml" />
+    <Content Include="Views\Donations\Details.cshtml" />
+    <Content Include="Views\Donations\Edit.cshtml" />
+    <Content Include="Views\Donations\Index.cshtml" />
+    <Content Include="Views\Donations\_DisplayFields.cshtml" />
+    <Content Include="Views\Donations\_EditFields.cshtml" />
+    <Content Include="Views\Support\Donate.cshtml" />
+    <Content Include="Views\Support\DonateStart.cshtml" />
+    <Content Include="Views\Support\DonationSuccess.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Currency.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Currency.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -888,6 +986,7 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <IncludeSetACLProviderOnDestination>False</IncludeSetACLProviderOnDestination>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -898,6 +997,7 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <IncludeSetACLProviderOnDestination>False</IncludeSetACLProviderOnDestination>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -909,6 +1009,7 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <IncludeSetACLProviderOnDestination>False</IncludeSetACLProviderOnDestination>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Production|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -920,6 +1021,7 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <IncludeSetACLProviderOnDestination>False</IncludeSetACLProviderOnDestination>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
@@ -935,7 +1037,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>2625</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:2627/</IISUrl>
+          <IISUrl>https://localhost:44408/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -946,12 +1048,6 @@
     </VisualStudio>
   </ProjectExtensions>
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

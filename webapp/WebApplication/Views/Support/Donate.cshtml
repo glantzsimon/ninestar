@@ -1,0 +1,34 @@
+﻿@using K9.Base.WebApplication.Config
+@using K9.SharedLibrary.Extensions
+@model K9.WebApplication.Models.StripeModel
+@{
+    ViewBag.Title = K9.Globalisation.Dictionary.Donate;
+    ViewBag.SubTitle = K9.Globalisation.Dictionary.MakeDonation;
+    ViewBag.BackgroundClass = "background-poaching1";
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+
+@using (Html.BeginForm("DonateProcess", "Support", FormMethod.Post))
+{
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.BootstrapDisplayFor(model => model.AmountToDonate)
+        @Html.HiddenFor(model => model.DonationAmount)
+        <hr/>
+
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="@Model.PublishableKey"
+                data-amount="@Model.DonationAmountInCents"
+                data-name="@WebsiteConfiguration.Instance.CompanyName"
+                data-description="@K9.Globalisation.Dictionary.DonationTo @WebsiteConfiguration.Instance.CompanyName"
+                data-billing-address="true"
+                data-image="@Url.AbsoluteContent("Images/company/botf_med.png")"
+                data-locale="@Model.Locale"
+                data-zip-code="false"
+                data-currency="@Model.LocalisedCurrencyThreeLetters">
+        </script>
+
+        <hr/>
+        @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.ChangeAmount, "DonateStart", "Support", null, "fa-chevron-left")
+    }
+}

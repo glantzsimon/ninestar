@@ -1,9 +1,10 @@
-﻿@{
+﻿@using K9.Base.WebApplication.Helpers
+@{
 	ViewBag.Title = Dictionary.Iboga;
 	Layout = "../Shared/_LayoutMaster.cshtml";
 }
 
-<div class="banner-forest3 main-banner">
+<div id="main-banner" class="banner-default main-menu">
 	@Html.Partial("_Navbar")
 </div>
 <div class="main-section">
@@ -21,11 +22,11 @@
 			</div>
 			<div class="col-md-7">
 				<h5>
-					@MvcHtmlString.Create(Dictionary.iboga_title1)
+					@MvcHtmlString.Create(K9.Globalisation.Dictionary.iboga_title1)
 				</h5>
 				<article>
 					<p>
-						@MvcHtmlString.Create(Dictionary.iboga_text1)
+						@MvcHtmlString.Create(K9.Globalisation.Dictionary.iboga_text1)
 					</p>
 				</article>
 			</div>
@@ -36,11 +37,11 @@
 			<div class="col-md-7">
 				<article>
 					<p>
-						@MvcHtmlString.Create(Dictionary.iboga_text2)
+						@MvcHtmlString.Create(K9.Globalisation.Dictionary.iboga_text2)
 					</p>
 					<br/>
 					<h5>
-						@MvcHtmlString.Create(Dictionary.iboga_title2)
+						@MvcHtmlString.Create(K9.Globalisation.Dictionary.iboga_title2)
 					</h5>
 				</article>
 			</div>
@@ -70,11 +71,11 @@
 			<div class="col-md-7">
 				<article>
 					<p>
-						@MvcHtmlString.Create(Dictionary.iboga_text2)
+						@MvcHtmlString.Create(K9.Globalisation.Dictionary.iboga_text2)
 					</p>
 					<br/>
 					<h5>
-						@MvcHtmlString.Create(Dictionary.iboga_title2)
+						@MvcHtmlString.Create(K9.Globalisation.Dictionary.iboga_title2)
 					</h5>
 				</article>
 			</div>

@@ -1,52 +1,46 @@
-﻿using System;
-using System.Linq;
-using System.Web.Mvc;
-using K9.DataAccess.Models;
-using K9.Globalisation;
+﻿using K9.Base.DataAccessLayer.Models;
+using K9.Base.Globalisation;
+using K9.Base.WebApplication.Config;
+using K9.Base.WebApplication.Controllers;
+using K9.Base.WebApplication.Enums;
+using K9.Base.WebApplication.Extensions;
+using K9.Base.WebApplication.Filters;
+using K9.Base.WebApplication.Models;
+using K9.Base.WebApplication.Options;
+using K9.Base.WebApplication.Services;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
-using K9.WebApplication.Config;
-using K9.WebApplication.Enums;
-using K9.WebApplication.Filters;
-using K9.WebApplication.Options;
-using K9.WebApplication.Services;
 using NLog;
+using System;
+using System.Linq;
+using System.Web.Mvc;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
 {
-	public class AccountController : BaseController
+    public partial class AccountController : BaseController
 	{
 		private readonly IRepository<User> _repository;
 		private readonly ILogger _logger;
-		private readonly IMailer _mailer;
-		private readonly WebsiteConfiguration _websiteConfig;
-		private readonly IDataSetsHelper _dataSetsHelper;
-		private readonly IRoles _roles;
-		private readonly IAccountService _accountService;
+	    private readonly IAccountService _accountService;
+	    private readonly IAuthentication _authentication;
+	    private readonly IFacebookService _facebookService;
 
-		#region Constructors
-
-		public AccountController(IRepository<User> repository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService)
-			: base(logger, dataSetsHelper, roles)
+	    public AccountController(IRepository<User> repository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService)
+			: base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
 		{
 			_repository = repository;
 			_logger = logger;
-			_mailer = mailer;
-			_websiteConfig = websiteConfig.Value;
-			_dataSetsHelper = dataSetsHelper;
-			_roles = roles;
-			_accountService = accountService;
+		    _accountService = accountService;
+		    _authentication = authentication;
+		    _facebookService = facebookService;
 		}
 
-		#endregion
-
-
-		#region Membership
-
-		public ActionResult Login(string returnUrl)
+        #region Membership
+        
+        public ActionResult Login(string returnUrl)
 		{
 			if (WebSecurity.IsAuthenticated)
 			{
@@ -63,7 +57,7 @@ namespace K9.WebApplication.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				switch (_accountService.Login(model.UserName, model.Password, model.RememberMe))
+                switch (_accountService.Login(model.UserName, model.Password, model.RememberMe))
 				{
 					case ELoginResult.Success:
 						if (TempData["ReturnUrl"] != null)
@@ -75,7 +69,11 @@ namespace K9.WebApplication.Controllers
 					case ELoginResult.AccountLocked:
 						return RedirectToAction("AccountLocked");
 
-					default:
+				    case ELoginResult.AccountNotActivated:
+				        ModelState.AddModelError("", Dictionary.AccountNotActivatedError);
+				        break;
+
+                    default:
 						ModelState.AddModelError("", Dictionary.UsernamePasswordIncorrectError);
 						break;
 				}
@@ -88,7 +86,52 @@ namespace K9.WebApplication.Controllers
 			return View(model);
 		}
 
-		public ActionResult AccountLocked()
+	    public ActionResult Facebook()
+	    {
+	        return Redirect(_facebookService.GetLoginUrl().AbsoluteUri);
+	    }
+
+	    public ActionResult FacebookCallback(string code)
+	    {
+	        ServiceResult result = null;
+	        result = _facebookService.Authenticate(code);
+	        if (result.IsSuccess)
+	        {
+	            var user = result.Data as User;
+	            var regResult = _accountService.RegisterOrLoginAuth(new UserAccount.RegisterModel
+	            {
+	                UserName = user.Username,
+	                FirstName = user.FirstName,
+	                LastName = user.LastName,
+	                BirthDate = user.BirthDate,
+	                EmailAddress = user.EmailAddress
+	            });
+
+	            if (regResult.IsSuccess)
+	            {
+	                return RedirectToAction("Index", "Home");
+	            }
+	            result.Errors.AddRange(regResult.Errors);
+	        }
+
+	        foreach (var registrationError in result.Errors)
+	        {
+	            if (registrationError.Exception != null && registrationError.Exception.IsDuplicateIndexError())
+	            {
+	                var duplicateUser = registrationError.Data.MapTo<User>();
+	                var serviceError = registrationError.Exception.GetServiceErrorFromException(duplicateUser);
+	                ModelState.AddModelError("", serviceError.ErrorMessage);
+	            }
+	            else
+	            {
+	                ModelState.AddModelError(registrationError.FieldName, registrationError.ErrorMessage);
+	            }
+	        }
+
+	        return View("Login", new UserAccount.LoginModel());
+        }
+
+        public ActionResult AccountLocked()
 		{
 			return View();
 		}
@@ -118,11 +161,20 @@ namespace K9.WebApplication.Controllers
 					return RedirectToAction("AccountCreated", "Account");
 				}
 
-				foreach (var registrationError in result.Errors)
-				{
-					ModelState.AddModelError(registrationError.FieldName, registrationError.ErrorMessage);
-				}
-			}
+			    foreach (var registrationError in result.Errors)
+			    {
+			        if (registrationError.Exception != null && registrationError.Exception.IsDuplicateIndexError())
+			        {
+			            var user = registrationError.Data.MapTo<User>();
+			            var serviceError = registrationError.Exception.GetServiceErrorFromException(user);
+			            ModelState.AddModelError("", serviceError.ErrorMessage);
+			        }
+			        else
+			        {
+			            ModelState.AddModelError(registrationError.FieldName, registrationError.ErrorMessage);
+			        }
+			    }
+            }
 
 			return View(model);
 		}
@@ -169,7 +221,14 @@ namespace K9.WebApplication.Controllers
 			return View(user);
 		}
 
-		[Authorize]
+	    [Authorize]
+	    [HttpGet]
+	    public ActionResult UpdateAccount()
+	    {
+	        return RedirectToAction("MyAccount");
+	    }
+
+        [Authorize]
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public ActionResult UpdateAccount(User model)
@@ -197,12 +256,52 @@ namespace K9.WebApplication.Controllers
 			return View("MyAccount", model);
 		}
 
-		#endregion
+	    [Authorize]
+	    [HttpPost]
+	    [ValidateAntiForgeryToken]
+	    public ActionResult DeleteAccount(ConfirmDeleteAccountModel model)
+	    {
+	        try
+	        {
+	            if (_accountService.DeleteAccount(model.UserId).IsSuccess)
+	            {
+	                return RedirectToAction("DeleteAccountSuccess");
+	            }
+	        }
+	        catch (Exception ex)
+	        {
+	            _logger.Error(ex.GetFullErrorMessage());
+	        }
+
+	        return RedirectToAction("DeleteAccountFailed");
+        }
+
+	    public ActionResult ConfirmDeleteAccount(int id)
+	    {
+	        var user = _repository.Find(id);    
+	        if (user == null || user.Username != _authentication.CurrentUserName)
+	        {
+	            return HttpNotFound();
+            }
+	        return View(new ConfirmDeleteAccountModel{UserId = id});
+	    }
+
+        public ActionResult DeleteAccountSuccess()
+	    {
+	        return View();
+	    }
+
+	    public ActionResult DeleteAccountFailed()
+	    {
+	        return View();
+	    }
+
+        #endregion
 
 
-		#region Password Reset
+        #region Password Reset
 
-		public ActionResult PasswordResetEmailSent()
+        public ActionResult PasswordResetEmailSent()
 		{
 			return View();
 		}

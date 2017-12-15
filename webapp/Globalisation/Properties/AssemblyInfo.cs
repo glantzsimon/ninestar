@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Globalisation")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Home")]
+[assembly: AssemblyCompany("Glantz Software Consulting LTD")]
 [assembly: AssemblyProduct("Globalisation")]
-[assembly: AssemblyCopyright("Copyright © Home 2017")]
+[assembly: AssemblyCopyright("Copyright © Glantz Software Consulting LTD 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

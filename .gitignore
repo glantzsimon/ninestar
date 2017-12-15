@@ -1,10 +1,11 @@
+bin
+obj
 *.tmp
 *.user
 *.dll
 *.suo
-.vs
-bin
-obj
 packages
 logs
+.vs
+upload
 publish

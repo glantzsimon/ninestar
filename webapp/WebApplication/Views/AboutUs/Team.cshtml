@@ -1,129 +1,124 @@
 ﻿@{
-	ViewBag.Title = Dictionary.Home;
+    ViewBag.Title = Dictionary.Home;
 }
 
-<div class="banner-forest4 main-banner">
-	@Html.Partial("_Navbar")
+<div id="main-banner" class="banner-default main-menu">
+    @Html.Partial("_Navbar")
 </div>
-<div class="team agileits main-section">
-	<div class="team-agileinfo">
-		<div class="container">  
-			<div class="main-heading">
-				<h3>@Dictionary.OurTeam</h3>
-			</div>
-			<div>
-				<div class="col-md-3 col-xs-6 team-grids">
-					<div class="team-agileimg">
-						<img class="img-responsive" src="~/Images/team/yann.jpg" alt="">
-						<div class="captn">
-							<div class="captn-top">
-								<h4 class="display-article" data-team-member="yann">Yann Guignon</h4>
-								<p>@MvcHtmlString.Create(Dictionary.yann_title)</p>
-							</div>
-							<div class="social-w3lsicon agileinfo-social-grids">
-								<ul>
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fa fa-rss"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-xs-6 team-grids">
-					<div class="team-agileimg">
-						<img class="img-responsive" src="~/Images/team/david.jpg" alt="">
-						<div class="captn">
-							<div class="captn-top">
-								<h4 class="display-article" data-team-member="david">David Nassim</h4>
-								<p>@MvcHtmlString.Create(Dictionary.david_title)</p>
-							</div>
-							<div class="social-w3lsicon agileinfo-social-grids">
-								<ul>
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fa fa-rss"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-xs-6 team-grids">
-					<div class="team-agileimg">
-						<img class="img-responsive" src="~/Images/team/laurent.jpg" alt="">
-						<div class="captn">
-							<div class="captn-top">
-								<h4 class="display-article" data-team-member="laurent">Laurent Sazy</h4>
-								<p>@MvcHtmlString.Create(Dictionary.laurent_title)</p>
-							</div>
-							<div class="social-w3lsicon agileinfo-social-grids">
-								<ul>
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fa fa-rss"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-xs-6 team-grids">
-					<div class="team-agileimg">
-						<img class="img-responsive" src="~/Images/team/simon.jpg" alt="">
-						<div class="captn">
-							<div class="captn-top">
-								<h4 class="display-article" data-team-member="simon">Simon Glantz</h4>
-								<p>@MvcHtmlString.Create(Dictionary.simon_title)</p>
-							</div>
-							<div class="social-w3lsicon agileinfo-social-grids">
-								<ul>
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fa fa-rss"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<div class="container">
-				<div class="sub-section display-none" id="yann">
-					<article>
-						@MvcHtmlString.Create(Dictionary.yann_text)
-					</article>
-				</div>
-				<div class="sub-section display-none" id="david">
-					<article>
-						@MvcHtmlString.Create(Dictionary.david_text)
-					</article>
-				</div>
-				<div class="sub-section display-none" id="laurent">
-					<article>
-						@MvcHtmlString.Create(Dictionary.laurent_text)
-					</article>
-				</div>
-				<div class="sub-section display-none" id="simon">
-					<article>
-						@MvcHtmlString.Create(Dictionary.simon_text)
-					</article>
-				</div>
-			</div>
-		</div>
-	</div>
+<div class="team main-section">
+    <div class="container">
+        <div class="main-heading">
+            <h3>@Dictionary.OurTeam</h3>
+        </div>
+        <div>
+            <div class="col-md-3 col-xs-6 team-grids">
+                <div class="team-agileimg">
+                    <img class="img-responsive" src="~/Images/team/yann.jpg" alt="">
+                    <div class="captn">
+                        <div class="captn-top">
+                            <h4 class="display-article" data-team-member="yann">Yann Guignon</h4>
+                            <p>@MvcHtmlString.Create(K9.Globalisation.Dictionary.yann_title)</p>
+                        </div>
+                        <div class="social-w3lsicon agileinfo-social-grids">
+                            <ul>
+                                <li><a target="_blank" href="https://www.facebook.com/yguignon"><i class="fa fa-facebook"></i></a></li>
+                                <li><a target="_blank" href="mailto:yguignon@yahoo.fr"><i class="fa fa-envelope-o"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-6 team-grids">
+                <div class="team-agileimg">
+                    <img class="img-responsive" src="~/Images/team/david.jpg" alt="">
+                    <div class="captn">
+                        <div class="captn-top">
+                            <h4 class="display-article" data-team-member="david">David Nassim</h4>
+                            <p>@MvcHtmlString.Create(K9.Globalisation.Dictionary.david_title)</p>
+                        </div>
+                        <div class="social-w3lsicon agileinfo-social-grids">
+                            <ul>
+                                <li><a target="_blank" href="https://www.facebook.com/david.nassim.56"><i class="fa fa-facebook"></i></a></li>
+                                <li><a target="_blank" href="mailto:david.nassim@yahoo.co.uk"><i class="fa fa-envelope-o"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-6 team-grids">
+                <div class="team-agileimg">
+                    <img class="img-responsive" src="~/Images/team/laurent.jpg" alt="">
+                    <div class="captn">
+                        <div class="captn-top">
+                            <h4 class="display-article" data-team-member="laurent">Laurent Sazy</h4>
+                            <p>@MvcHtmlString.Create(K9.Globalisation.Dictionary.laurent_title)</p>
+                        </div>
+                        <div class="social-w3lsicon agileinfo-social-grids">
+                            <ul>
+                                <li><a target="_blank" href="https://www.facebook.com/BlurbBooks"><i class="fa fa-facebook"></i></a></li>
+                                <li><a target="_blank" href="https://www.twitter.com/blurbbooks"><i class="fa fa-twitter"></i></a></li>
+                                <li><a target="_blank" href="https://www.linkedin.com/company/blurb"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-6 team-grids">
+                <div class="team-agileimg">
+                    <img class="img-responsive" src="~/Images/team/simon.jpg" alt="">
+                    <div class="captn">
+                        <div class="captn-top">
+                            <h4 class="display-article" data-team-member="simon">Simon Glantz</h4>
+                            <p>@MvcHtmlString.Create(K9.Globalisation.Dictionary.simon_title)</p>
+                        </div>
+                        <div class="social-w3lsicon agileinfo-social-grids">
+                            <ul>
+                                <li><a target="_blank" href="https://www.facebook.com/peaceful.drwyd"><i class="fa fa-facebook"></i></a></li>
+                                <li><a target="_blank" href="mailto:simon@vibranthealthnow.co.uk"><i class="fa fa-envelope-o"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="container">
+            <div class="sub-section display-none" id="yann">
+                <article>
+                    @MvcHtmlString.Create(K9.Globalisation.Dictionary.yann_text)
+                </article>
+            </div>
+            <div class="sub-section display-none" id="david">
+                <article>
+                    @MvcHtmlString.Create(K9.Globalisation.Dictionary.david_text)
+                </article>
+            </div>
+            <div class="sub-section display-none" id="laurent">
+                <article>
+                    @MvcHtmlString.Create(K9.Globalisation.Dictionary.laurent_text)
+                </article>
+            </div>
+            <div class="sub-section display-none" id="simon">
+                <article>
+                    @MvcHtmlString.Create(K9.Globalisation.Dictionary.simon_text)
+                </article>
+            </div>
+        </div>
+    </div>
 </div>
 
 @section scripts {
-	<script language="javascript">
-		$(function() {
-			$("h4.display-article").click(function() {
-				$("div.sub-section").hide();
-				var teamMember = $(this).attr("data-team-member");
-				var article = $("div#" + teamMember);
-				article.fadeIn();
-				$("html, body").animate({
-					scrollTop: article.offset().top
-				}, 1000);
-			});
-		})
-	</script>
+    <script language="javascript">
+        $(function () {
+            $("h4.display-article").click(function () {
+                $("div.sub-section").hide();
+                var teamMember = $(this).attr("data-team-member");
+                var article = $("div#" + teamMember);
+                article.fadeIn();
+                $("html, body").animate({
+                    scrollTop: article.offset().top - 200
+                }, 1000);
+            });
+        })
+    </script>
 }

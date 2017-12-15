@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = K9.Globalisation.Dictionary.Shop;
+}
+<div id="main-banner" class="banner-default main-menu">
+    @Html.Partial("_Navbar")
+</div>
+
+<div id="myShop" class="text-center">
+    <div class="shop-loading-div">&nbsp;</div>
+</div>
+
+<script>
+    var spread_shop_config = {
+        shopName: "blessingsoftheforest",
+        locale: "@ViewData[K9.WebApplication.Constants.ViewDataConstants.Locale]",
+        prefix: "@ViewData[K9.WebApplication.Constants.ViewDataConstants.ShopPrefix]",
+        baseId: "myShop"
+    };
+</script>
+
+<script type="text/javascript"
+        src="//shop.spreadshirt.co.uk/shopfiles/shopclient/shopclient.nocache.js">
+</script>

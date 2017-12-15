@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using K9.Base.DataAccessLayer.Models;
 
-namespace K9.DataAccess.Models
+namespace K9.DataAccessLayer.Models
 {
 	public class Course : ObjectBase
 	{

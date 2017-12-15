@@ -1,0 +1,22 @@
+﻿@model K9.WebApplication.Models.StripeModel
+@{
+    ViewBag.Title = K9.Globalisation.Dictionary.Donate;
+    ViewBag.SubTitle = K9.Globalisation.Dictionary.MakeDonation;
+    ViewBag.BackgroundClass = "background-poaching1";
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+
+@using (Html.BeginForm("Donate", "Support", FormMethod.Post))
+{
+    using (Html.BeginBootstrapForm())
+    {
+        <p>
+            @K9.Globalisation.Dictionary.DonationBlurb
+        </p>
+        <hr/>
+
+        @Html.BootstrapEditorFor(model => model.DonationAmount)
+        <hr/>
+        @Html.BootstrapButton(Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
+    }
+}

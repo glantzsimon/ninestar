@@ -1,0 +1,16 @@
+﻿@using K9.Base.WebApplication.Helpers
+@model ArchiveItem
+@{
+	Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
+}
+@Html.BootstrapTable(new DataTableOptions<ArchiveItem>
+{
+	VisibleColumns = new List<string>
+	{
+		"PublishedOn",
+		"PublishedBy",
+		"LanguageName",
+	    "Category",
+		"Title"
+	}
+})

@@ -1,14 +1,39 @@
-﻿@{
-	ViewBag.Title = Dictionary.Archive;
+﻿@using K9.WebApplication.Helpers
+@model K9.Base.WebApplication.ViewModels.ArchiveViewModel
+@{
+    ViewBag.Title = Dictionary.Archive;
 }
 
-<div class="banner-forest3 main-banner">
-	@Html.Partial("_Navbar")
+<div id="main-banner" class="banner-default main-menu">
+    @Html.Partial("_Navbar")
 </div>
 <div class="main-section">
-	<div class="container">
-		<div class="main-heading">
-			<h3>@Dictionary.Archive</h3>
-		</div>
-	</div>
+    <div class="container">
+        <div class="main-heading">
+            <h3>@Dictionary.Archive</h3>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <div class="col-md-3">
+                @Html.Partial("_ArchiveMenu")
+            </div>
+            <div class="col-md-9">
+                <div>
+                    @if (Model.SelectedArchive != null)
+                    {
+                        foreach (var item in Model.SelectedArchive.Items)
+                        {
+                            <div class="list-item-container">
+                                @Html.Partial("_ArchiveItem", item)
+                            </div>
+                            @Html.Separator()
+                        }
+                    }
+                </div>
+            </div>
+            <div class="clearfix">
+            </div>
+        </div>
+    </div>
 </div>

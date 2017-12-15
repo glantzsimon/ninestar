@@ -1,0 +1,10 @@
+﻿@using System.Globalization
+@model Object
+@{
+    var currencySymbol = new RegionInfo(System.Threading.Thread.CurrentThread.CurrentUICulture.LCID).CurrencySymbol;
+}    
+
+<div class="input-group">
+    <span class="input-group-addon">@currencySymbol</span>
+    @Html.TextBoxFor(model => model, ViewData["viewDataDictionary"] as IDictionary<string, object>)
+</div>

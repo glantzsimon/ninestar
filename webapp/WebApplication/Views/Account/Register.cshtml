@@ -1,4 +1,5 @@
-﻿@model UserAccount.RegisterModel
+﻿@using K9.Base.WebApplication.Helpers
+@model UserAccount.RegisterModel
 
 @{
 	ViewBag.Title = @Dictionary.Registration;
@@ -25,3 +26,31 @@
 	
 	}
 }
+
+<script language="javascript">
+
+    $("#UserName").change(function() {
+        var username = $(this).val();
+        ajaxcontroller().get("@Url.Action("IsUserNameAvailable")", { username }).done(
+            function(result) {
+                if (result.success && result.data) {
+                    $.fn.displayValidationWarningFor("UserName", "@Dictionary.UsernameIsUnavailableError");
+                } else {
+                    $.fn.hideValidationWarningFor("UserName");
+                }
+            });
+    });
+
+    $("#EmailAddress").change(function() {
+        var emailAddress = $(this).val();
+        ajaxcontroller().get("@Url.Action("IsEmailAddressAvailable")", { emailAddress }).done(
+            function(result) {
+                if (result.success && result.data) {
+                    $.fn.displayValidationWarningFor("EmailAddress", "@Dictionary.EmailIsUnavailableError");
+                } else {
+                    $.fn.hideValidationWarningFor("EmailAddress");
+                }
+            });
+    });
+
+</script>

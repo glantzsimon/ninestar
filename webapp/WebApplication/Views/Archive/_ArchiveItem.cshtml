@@ -1,0 +1,20 @@
+﻿@using K9.Base.WebApplication.ViewModels
+@model ArchiveItem
+    
+<div>
+    <div class="news-item-title">
+        <p><strong>@Dictionary.PublishedOnLabel</strong>: @Model.PublishedOn.ToLongDateString()</p>
+        <p><strong>@Dictionary.PublishedByLabel</strong>: @Model.PublishedBy</p>
+    </div>
+    <h5>
+        @MvcHtmlString.Create(Model.Title.ToUpper())
+    </h5>
+    <article>
+        <p>
+            @MvcHtmlString.Create(Model.DescriptionText)
+        </p>
+    </article>
+    <div>
+        @Html.Partial("_UploadedFilesDisplay", new FileSourceViewModel(Model.FileSource))    
+    </div>
+</div>

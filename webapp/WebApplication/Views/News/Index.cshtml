@@ -1,48 +1,69 @@
-﻿@model List<NewsItem>
+﻿@using K9.WebApplication.Helpers
+@model List<NewsItem>
 @{
-	ViewBag.Title = Dictionary.Home;
+    ViewBag.Title = Dictionary.Home;
+    var index = 0;
 }
 
-<div class="banner-forest1 main-banner">
-	@Html.Partial("_Navbar")
+<div id="main-banner" class="banner-default main-menu">
+    @Html.Partial("_Navbar")
 </div>
 
 <div class="main-section">
-	<div class="container">
-		<div class="main-heading">
-			<h3>@Dictionary.News</h3>
-		</div>
-		@foreach (var newsItem in Model)
-		{
-			<div>
-				<div class="col-md-5">
-					<div class="picture-frame picture-frame-300">
-						<div>
-							@Html.Carousel(new CarouselOptions(newsItem.ImageFileSource.PathToFiles, "", 70)
-							{
-								ImageSizing = EImageSizing.Vertical
-							})
-						</div>
-					</div>
-				</div>
-				<div class="col-md-7">
-					<div class="news-item-title">
-						<p><strong>@Dictionary.PublishedOnLabel</strong>: @newsItem.PublishedOn.ToLongDateString()</p>
-						<p><strong>@Dictionary.PublishedByLabel</strong>: @newsItem.PublishedBy</p>
-					</div>
-					<h5>
-						@MvcHtmlString.Create(newsItem.Subject)
-					</h5>
-					<article>
-						<p>
-							@MvcHtmlString.Create(newsItem.Body)
-						</p>
-					</article>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<br/>			
-		}
-		<div class="clearfix"></div>
-	</div>
+    <div class="container">
+        <div class="main-heading">
+            <h3>@Dictionary.News</h3>
+        </div>
+    </div>
+    <div>
+        @foreach (var newsItem in Model)
+        {
+            <div class="list-item-container container scrollFadeUp">
+                <div class="col-md-5">
+                    @if (!string.IsNullOrEmpty(newsItem.VideoUrl))
+                    {
+                        @Html.Partial("_EmbeddedVideo", newsItem.VideoUrl)
+                    }
+                    else
+                    {
+                        <div class="picture-frame picture-frame-300">
+                            <div>
+                                @Html.Carousel(new CarouselOptions(newsItem.ImageFileSource.PathToFiles, "", 70)
+                           {
+                               ImageSizing = EImageSizing.Vertical
+                           })
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="col-md-7" id="@newsItem.Id">
+                    <div class="news-item-title">
+                        <p><strong>@Dictionary.PublishedOnLabel</strong>: @newsItem.PublishedOn.ToLongDateString()</p>
+                        <p><strong>@Dictionary.PublishedByLabel</strong>: @newsItem.PublishedBy</p>
+                    </div>
+                    <h5>
+                        @MvcHtmlString.Create(newsItem.Subject)
+                    </h5>
+                    <article>
+                        <p>
+                            @MvcHtmlString.Create(newsItem.Body)
+                        </p>
+                    </article>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            @Html.Separator()
+        }
+    </div>
 </div>
+
+@section scripts {
+    <script language="javascript">
+        $(function () {
+            var article = $("div#@ViewData[K9.WebApplication.Constants.ViewDataConstants.SelectedId]");
+            $("html, body").animate({
+                scrollTop: article.offset().top - 300
+            }, 1000);
+        })
+    </script>
+}

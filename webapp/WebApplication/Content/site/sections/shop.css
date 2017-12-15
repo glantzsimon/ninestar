@@ -1,0 +1,23 @@
+﻿#header-html {
+    display: none;
+}
+
+footer.sprd-footer, section.sprd-footer {
+    max-width: 100% !important;
+}
+
+.sprd-product-filter, .SprdHeader, .SprdMain {
+    max-width: 100% !important;
+}
+
+#myShop {
+    min-height: 600px;
+}
+
+    #myShop div.shop-loading-div {
+        width: 100%;
+        min-height: 600px;
+        background-image: url(/Images/shared/blessings_loader.gif);
+        background-position: center;
+        background-repeat: no-repeat;
+    }

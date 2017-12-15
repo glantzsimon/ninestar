@@ -1,8 +1,0 @@
-﻿@media print
-{
-	div#imagePreloader, div#imagePreloader img
-	{
-		visibility: hidden;
-		display: none;
-	}
-}

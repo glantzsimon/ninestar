@@ -117,507 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AccountNotActivatedError" xml:space="preserve">
-    <value>Votre compte n'a pas encore été activé. Vérifiez votre adresse email. Vous allez recevoir un email de validation.</value>
-  </data>
-  <data name="ConfirmNewPasswordLabel" xml:space="preserve">
-    <value>Confirmer Nouveau Mot de Passe</value>
-  </data>
-  <data name="ConfirmPasswordLabel" xml:space="preserve">
-    <value>Confirmer Mot de Passe</value>
-  </data>
-  <data name="CreatedByLabel" xml:space="preserve">
-    <value>Crée Par</value>
-  </data>
-  <data name="CreatedOnLabel" xml:space="preserve">
-    <value>Crée Le</value>
-  </data>
-  <data name="CurrentPasswordCorrectNewInvalidError" xml:space="preserve">
-    <value>Le mot de passe actuel est incorrect ou le nouveau mot de passe est invalide.</value>
-  </data>
-  <data name="CurrentPasswordLabel" xml:space="preserve">
-    <value>Mot de Passe Actuel</value>
-  </data>
-  <data name="EmailAddressLabel" xml:space="preserve">
-    <value>Adresse Email</value>
-  </data>
-  <data name="EmailIsUnavailableError" xml:space="preserve">
-    <value>Cette adresse email existe déjà.</value>
-  </data>
-  <data name="FieldIsRequired" xml:space="preserve">
-    <value>Ce champ est requis.</value>
-  </data>
-  <data name="FirstNameLabel" xml:space="preserve">
-    <value>Prénom</value>
-  </data>
-  <data name="FriendlyErrorMessage" xml:space="preserve">
-    <value>Une erreur s'est produite. Veuillez réessayer plus tard.</value>
-  </data>
-  <data name="InvalidEmailAddress" xml:space="preserve">
-    <value>Veuillez saisir une adresse email valide.</value>
-  </data>
-  <data name="LastNameLabel" xml:space="preserve">
-    <value>Nom de Famille</value>
-  </data>
-  <data name="LastUpdatedByLabel" xml:space="preserve">
-    <value>Modifié Par </value>
-  </data>
-  <data name="LastUpdatedOnLabel" xml:space="preserve">
-    <value>Modifié Le</value>
-  </data>
-  <data name="NameLabel" xml:space="preserve">
-    <value>Nom</value>
-  </data>
-  <data name="NewPasswordLabel" xml:space="preserve">
-    <value>Nouveau Mot de Passe</value>
-  </data>
-  <data name="NewPasswordMatchError" xml:space="preserve">
-    <value>Le nouveau mot de passe de confirmation ne correspond pas.</value>
-  </data>
-  <data name="NineStarKiTitle" xml:space="preserve">
-    <value>Nine Star Ki</value>
-  </data>
-  <data name="PasswordLabel" xml:space="preserve">
-    <value>Mot de Passe</value>
-  </data>
-  <data name="PasswordMatchError" xml:space="preserve">
-    <value>Le mot de passe de confirmation de correspond pas.</value>
-  </data>
-  <data name="PasswordMinLengthError" xml:space="preserve">
-    <value>Le {0} doit contenir au moins {2} caractères</value>
-  </data>
-  <data name="PasswordResetEmailSent" xml:space="preserve">
-    <value>Nous vous avons envoyé un email pour réinitialiser votre mot de passe.</value>
-  </data>
-  <data name="PasswordResetFailError" xml:space="preserve">
-    <value>Il n'a pas été possible de réinitialiser votre mot de passe.</value>
-  </data>
-  <data name="PhoneNumberLabel" xml:space="preserve">
-    <value>Numéro de Téléphone</value>
-  </data>
-  <data name="RememberMe" xml:space="preserve">
-    <value>Se souvenir de moi ?</value>
-  </data>
-  <data name="UsernameIsUnavailableError" xml:space="preserve">
-    <value>Cet identifiant n'est pas disponible.</value>
-  </data>
-  <data name="UserNameLabel" xml:space="preserve">
-    <value>Identifiant</value>
-  </data>
-  <data name="UsernamePasswordIncorrectError" xml:space="preserve">
-    <value>Identifiant ou mot de passe invalide.</value>
-  </data>
-  <data name="AccountActivationFailed" xml:space="preserve">
-    <value>Il n'a pas été possible d'activer votre compte.</value>
-  </data>
-  <data name="AccountActivationTitle" xml:space="preserve">
-    <value>Activation de Compte</value>
-  </data>
-  <data name="AccountAlreadyActivated" xml:space="preserve">
-    <value>Votre compte a déjà été activé.</value>
-  </data>
-  <data name="AccountCreatedSuccessfully" xml:space="preserve">
-    <value>Votre compte a été créé avec succès.</value>
-  </data>
-  <data name="ChangePassword" xml:space="preserve">
-    <value>Actualiser Mot de Passe</value>
-  </data>
-  <data name="ClientServices" xml:space="preserve">
-    <value>Service Clients</value>
-  </data>
-  <data name="DefaultAuthError" xml:space="preserve">
-    <value>Une erreur inconnue s'est produite. Si le problème persiste, veuillez contacter le support.</value>
-  </data>
-  <data name="InvalidEmailError" xml:space="preserve">
-    <value>L'adresse email est invalide. Merci d'essayer de nouveau.</value>
-  </data>
-  <data name="InvalidPasswordEnteredError" xml:space="preserve">
-    <value>Le mot de passe est incorrecte.</value>
-  </data>
-  <data name="InvalidPasswordRetreivalError" xml:space="preserve">
-    <value>La réponse à la question de récuperation de mot de passe est incorrecte. Merci d'essayer de nouveau.</value>
-  </data>
-  <data name="InvalidRetrievalQuestionError" xml:space="preserve">
-    <value>La question de récuperation de mot de passe est incorrecte. Merci d'essayer de nouveau.</value>
-  </data>
-  <data name="InvalidUsernameError" xml:space="preserve">
-    <value>L'identifiant que vous avez saisi est invalide. Veuillez essayer de nouveau.</value>
-  </data>
-  <data name="PasswordHasChangedConfirmation" xml:space="preserve">
-    <value>Votre mot de passe a été actualisé.</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="PasswordResetEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>templates\fr\passwordresetemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="PasswordResetTitle" xml:space="preserve">
-    <value>Réinitialiser Mot de Passe</value>
-  </data>
-  <data name="PasswordSetConfirmation" xml:space="preserve">
-    <value>Votre mot de masse a été actualisé.</value>
-  </data>
-  <data name="ProviderError" xml:space="preserve">
-    <value>Le service d'authentification a renvoyé une erreur. Merci d'essayer de nouveau.</value>
-  </data>
-  <data name="Register" xml:space="preserve">
-    <value>S'inscrire</value>
-  </data>
   <data name="SupportQuery" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>templates\fr\supportquery.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="UserNameEmailExistsError" xml:space="preserve">
-    <value>Cette adresse email existe déjà. Merci d'en choisir un autre.</value>
-  </data>
-  <data name="UsernameExistsError" xml:space="preserve">
-    <value>Cet identifiant existe déjà. Merci d'en choisir un autre.</value>
-  </data>
-  <data name="UserRejectedError" xml:space="preserve">
-    <value>Il n'a pas été possible de créer votre compte. Merci d'essayer de nouveau.</value>
-  </data>
-  <data name="Welcome" xml:space="preserve">
-    <value>Bievenue</value>
   </data>
   <data name="WelcomeEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>templates\fr\welcomeemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="ForgottenPasswordQuestion" xml:space="preserve">
-    <value>Vous avez oublié votre mot de passe?</value>
-  </data>
-  <data name="IfNoAccount" xml:space="preserve">
-    <value>Si vous n'avez pas de compte</value>
-  </data>
-  <data name="LogIn" xml:space="preserve">
-    <value>Connexion</value>
-  </data>
-  <data name="ResetPassword" xml:space="preserve">
-    <value>Réinitialiser votre mot de passe</value>
-  </data>
-  <data name="LogIntoYourExternalAccount" xml:space="preserve">
-    <value>Se connecter avec votre compte {0}.</value>
-  </data>
-  <data name="LogInWithOtherService" xml:space="preserve">
-    <value>Se connecter avec un autre service.</value>
-  </data>
-  <data name="AgreeToTerms" xml:space="preserve">
-    <value>L'utilisation de ce site constitue une acceptation des conditions d'utilisation, les politiques en matière de confidentialité et de cookies.</value>
-  </data>
-  <data name="AllRightsReserved" xml:space="preserve">
-    <value>Tous Droits Réservés</value>
-  </data>
-  <data name="Error" xml:space="preserve">
-    <value>Erreur</value>
-  </data>
-  <data name="Home" xml:space="preserve">
-    <value>Accueil</value>
-  </data>
-  <data name="LoginFailure" xml:space="preserve">
-    <value>Connexion Echouée</value>
-  </data>
-  <data name="UnsuccessfulLoginServiceError" xml:space="preserve">
-    <value>Echec de connexion avec le service.</value>
-  </data>
-  <data name="LogOut" xml:space="preserve">
-    <value>Déconnexion</value>
-  </data>
-  <data name="PersonalInformation" xml:space="preserve">
-    <value>Informations Personnelles</value>
-  </data>
-  <data name="Registration" xml:space="preserve">
-    <value>Inscription</value>
-  </data>
-  <data name="CheckAccountActivationEmail" xml:space="preserve">
-    <value>Nous vous avons envoyé un email pour activer votre compte.</value>
-  </data>
-  <data name="AssociateAccount" xml:space="preserve">
-    <value>Associer votre compte {0}.</value>
-  </data>
-  <data name="LogIntoYourAccount" xml:space="preserve">
-    <value>Veuillez vous connecter.</value>
-  </data>
-  <data name="PasswordResetConfirmation" xml:space="preserve">
-    <value>Votre mot de passe a été actualisé.</value>
-  </data>
-  <data name="UpdatePaswordError" xml:space="preserve">
-    <value>Il n'a pas été possible d'actualiser votre mot de passe.</value>
-  </data>
-  <data name="MyAccountTitle" xml:space="preserve">
-    <value>Mon Compte</value>
-  </data>
-  <data name="Update" xml:space="preserve">
-    <value>Actualiser</value>
-  </data>
-  <data name="BirthDateLabel" xml:space="preserve">
-    <value>Date de Naissance</value>
-  </data>
-  <data name="ThreeLetterCountryCodeLabel" xml:space="preserve">
-    <value>Code Pays à Trois Lettres</value>
-  </data>
-  <data name="TwoLetterCountryCodeLabel" xml:space="preserve">
-    <value>Code Pays à Deux Lettres</value>
-  </data>
-  <data name="DateFormat" xml:space="preserve">
-    <value>dd/MM/yyyy</value>
-  </data>
-  <data name="Edit" xml:space="preserve">
-    <value>Modifier</value>
-  </data>
-  <data name="Details" xml:space="preserve">
-    <value>Détails</value>
-  </data>
-  <data name="Delete" xml:space="preserve">
-    <value>Supprimer</value>
-  </data>
-  <data name="BackToList" xml:space="preserve">
-    <value>Retourner à La Liste</value>
-  </data>
-  <data name="No" xml:space="preserve">
-    <value>Non</value>
-  </data>
-  <data name="Yes" xml:space="preserve">
-    <value>Oui</value>
-  </data>
-  <data name="DeleteConfirm" xml:space="preserve">
-    <value>Etes-vous sûr de vouloir supprimer cet enregistrement?</value>
-  </data>
-  <data name="CreateNew" xml:space="preserve">
-    <value>Créer Nouveau</value>
-  </data>
-  <data name="Create" xml:space="preserve">
-    <value>Créer</value>
-  </data>
-  <data name="Country" xml:space="preserve">
-    <value>Pays</value>
-  </data>
-  <data name="Countries" xml:space="preserve">
-    <value>Pays</value>
-  </data>
-  <data name="CountryDefiniteArticle" xml:space="preserve">
-    <value>Le</value>
-  </data>
-  <data name="CountryIndefiniteArticle" xml:space="preserve">
-    <value>Un</value>
-  </data>
-  <data name="DuplicateIndexError" xml:space="preserve">
-    <value>{0} {1} avec {2} {3} '{4}' existe déjà.</value>
-  </data>
-  <data name="FeminieDefiniteArticle" xml:space="preserve">
-    <value>La</value>
-  </data>
-  <data name="FeminineIndefiniteArticle" xml:space="preserve">
-    <value>Une</value>
-  </data>
-  <data name="MasculineDefiniteArticle" xml:space="preserve">
-    <value>Le</value>
-  </data>
-  <data name="MasculineIndefiniteArticle" xml:space="preserve">
-    <value>Un</value>
-  </data>
-  <data name="AdditionalInformation" xml:space="preserve">
-    <value>Informations Supplémentaires</value>
-  </data>
-  <data name="PleaseSelect" xml:space="preserve">
-    <value>Veuillez choisir une des options suivantes:</value>
-  </data>
-  <data name="AuditInformation" xml:space="preserve">
-    <value>Informations d'Audit</value>
-  </data>
-  <data name="DateLongFormat" xml:space="preserve">
-    <value>dd MMMM yyyy</value>
-  </data>
-  <data name="For" xml:space="preserve">
-    <value>Pour</value>
-  </data>
-  <data name="Enrollment" xml:space="preserve">
-    <value>Inscription</value>
-  </data>
-  <data name="DefiniteArticleWithApostrophe" xml:space="preserve">
-    <value>L'</value>
-  </data>
-  <data name="OfPreposition" xml:space="preserve">
-    <value>De </value>
-  </data>
-  <data name="OfPrepositionWithApostrophe" xml:space="preserve">
-    <value>D'</value>
-  </data>
-  <data name="DetailsText" xml:space="preserve">
-    <value>Détails {1}{0}</value>
-  </data>
-  <data name="Oops" xml:space="preserve">
-    <value>Mince !</value>
-  </data>
-  <data name="InvalidDate" xml:space="preserve">
-    <value>Veuillez saisir une date valide.</value>
-  </data>
-  <data name="AccountLockedError" xml:space="preserve">
-    <value>Votre compte a été verouillé</value>
-  </data>
-  <data name="AccountLockedErrorDetails" xml:space="preserve">
-    <value>Le nombre de tentatives de connexion échouées a dépassé le maximum permis.</value>
-  </data>
-  <data name="Search" xml:space="preserve">
-    <value>Recherche</value>
-  </data>
-  <data name="AccountActivated" xml:space="preserve">
-    <value>Compte Activé</value>
-  </data>
-  <data name="AccountLockedTitle" xml:space="preserve">
-    <value>Compte Verouillé</value>
-  </data>
-  <data name="AccountActivatedSuccessfully" xml:space="preserve">
-    <value>Votre compte a été activé avec succès.</value>
-  </data>
-  <data name="PleaseContactSupport" xml:space="preserve">
-    <value>Merci de contacter le support.</value>
-  </data>
-  <data name="ContactUsTitle" xml:space="preserve">
-    <value>Contacter Nous</value>
-  </data>
-  <data name="Submit" xml:space="preserve">
-    <value>Envoi</value>
-  </data>
-  <data name="RoleLabel" xml:space="preserve">
-    <value>Rôle</value>
-  </data>
-  <data name="PermissionLabel" xml:space="preserve">
-    <value>Permission</value>
-  </data>
-  <data name="UnauthorizedError" xml:space="preserve">
-    <value>Vous n'avez pas la permission d'accéder à cette page.</value>
-  </data>
-  <data name="SystemStandard" xml:space="preserve">
-    <value>Défault du Système</value>
-  </data>
-  <data name="Role" xml:space="preserve">
-    <value>Rôle</value>
-  </data>
-  <data name="NotFoundError" xml:space="preserve">
-    <value>La resource demandée n'a pas été trouvée. Ellle a pu être supprimée, renomée ou n'est pas disponible pour le moment.</value>
-  </data>
-  <data name="ContactSupport" xml:space="preserve">
-    <value>Contacter le support</value>
-  </data>
-  <data name="GoBackHome" xml:space="preserve">
-    <value>Retourner à la page d'accueil</value>
-  </data>
-  <data name="NotFoundTitle" xml:space="preserve">
-    <value>Il manque quelque chose</value>
-  </data>
-  <data name="UserRole" xml:space="preserve">
-    <value>Rôle d'Utilisateur</value>
-  </data>
-  <data name="UserRoles" xml:space="preserve">
-    <value>Rôles d'Utilisateur</value>
-  </data>
-  <data name="UpdateYourDetails" xml:space="preserve">
-    <value>Mettre à Jour Vos Coordonées</value>
-  </data>
-  <data name="EmailValidFor" xml:space="preserve">
-    <value>Cet email sera valable pendant 24 heures.</value>
-  </data>
-  <data name="LogInVerb" xml:space="preserve">
-    <value>Se Connecter</value>
-  </data>
-  <data name="Administrator" xml:space="preserve">
-    <value>Administrateur</value>
-  </data>
-  <data name="DescriptionLabel" xml:space="preserve">
-    <value>Description</value>
-  </data>
-  <data name="PowerUser" xml:space="preserve">
-    <value>Utilisateur Puissant</value>
-  </data>
-  <data name="User" xml:space="preserve">
-    <value>Utilisateur</value>
-  </data>
-  <data name="Message" xml:space="preserve">
-    <value>Message</value>
-  </data>
-  <data name="SentByUserLabel" xml:space="preserve">
-    <value>De</value>
-  </data>
-  <data name="SentToUserLabel" xml:space="preserve">
-    <value>Envoyé A</value>
-  </data>
-  <data name="SentOnLabel" xml:space="preserve">
-    <value>Envoyé Le</value>
-  </data>
-  <data name="BodyLabel" xml:space="preserve">
-    <value>Corps</value>
-  </data>
-  <data name="MessageDirectionLabel" xml:space="preserve">
-    <value>Direction du Message</value>
-  </data>
-  <data name="SubjectLabel" xml:space="preserve">
-    <value>Objet</value>
-  </data>
-  <data name="AccountUpdatedSuccess" xml:space="preserve">
-    <value>Vos coordonées ont été mises à jour avec succès.</value>
-  </data>
-  <data name="Success" xml:space="preserve">
-    <value>Succès</value>
-  </data>
-  <data name="IsUnsubscribedLabel" xml:space="preserve">
-    <value>Exclure de Toute Liste d'Infusion</value>
-  </data>
-  <data name="ActivateAccount" xml:space="preserve">
-    <value>Activer Compte</value>
-  </data>
-  <data name="AboutUs" xml:space="preserve">
-    <value>A Propos de Nous</value>
-  </data>
-  <data name="Archive" xml:space="preserve">
-    <value>Archive</value>
-  </data>
-  <data name="HelpUs" xml:space="preserve">
-    <value>Aider Nous</value>
-  </data>
-  <data name="News" xml:space="preserve">
-    <value>Nouvelles</value>
-  </data>
-  <data name="OurMission" xml:space="preserve">
-    <value>Notre Engagement</value>
-  </data>
-  <data name="Iboga" xml:space="preserve">
-    <value>Iboga</value>
-  </data>
-  <data name="CompanyLegalDescription" xml:space="preserve">
-    <value>Blessings Of The Forest est une Compagnie des intérêts communautaires, une entreprise sociale immatriculée en Angleterre en octobre de 2015 en tant que société limitée par actions (société numéro 9816364).</value>
-  </data>
-  <data name="blessings_of_the_forest" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\fr\blessings-of-the-forest.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="OnTheBrinkOfExtinctionTitle" xml:space="preserve">
-    <value>Au Bord De L'Extinction</value>
-  </data>
-  <data name="Next" xml:space="preserve">
-    <value>Suivant</value>
-  </data>
-  <data name="Previous" xml:space="preserve">
-    <value>Précédant</value>
-  </data>
-  <data name="OurLatestPicturesTitle" xml:space="preserve">
-    <value>Nos Dernières Images</value>
-  </data>
-  <data name="GetInTouchTitle" xml:space="preserve">
-    <value>Envoyez-nous un mail!</value>
-  </data>
-  <data name="SupportUs" xml:space="preserve">
-    <value>Soutenez-Nous!</value>
-  </data>
-  <data name="ContactSupportSuccess" xml:space="preserve">
-    <value>Votre message a été bien reçu. Merci !</value>
-  </data>
-  <data name="OurPartners" xml:space="preserve">
-    <value>Nos Partenaires</value>
-  </data>
   <data name="Keywords" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>text\fr\keywords.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="Blessings" xml:space="preserve">
-    <value>Bénédictions</value>
-  </data>
-  <data name="OfTheForest" xml:space="preserve">
-    <value>De La Forêt</value>
   </data>
   <data name="blessings_of_the_forest_intro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\blessings-of-the-forest-intro.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -633,9 +144,6 @@
   </data>
   <data name="mission_statement_and_aims_title2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\mission-statement-and-aims-title2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="OurTeam" xml:space="preserve">
-    <value>Notre Equipe</value>
   </data>
   <data name="david_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\david-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -658,9 +166,6 @@
   <data name="laurent_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\laurent-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="OurMissionTitle" xml:space="preserve">
-    <value>Notre Enoncé &amp; Objectifs Mission</value>
-  </data>
   <data name="simon_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\simon-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -673,139 +178,127 @@
   <data name="yann_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\yann-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="botf_context1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\botf_context1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="botf_context2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\botf_context2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="botf_context3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\botf_context3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="botf_context_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\botf_context_title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="blessings_of_the_forest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\blessings-of-the-forest.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="etats_des_lieux_forest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\etats-des-lieux-forest.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="etats_des_lieux_forest_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\etats-des-lieux-forest-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="etats_des_lieux_iboga" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\etats-des-lieux-iboga.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="etats_des_lieux_iboga_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\etats-des-lieux-iboga-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="etats_des_lieux_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\etats-des-lieux-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="projects_long_term" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\projects-long-term.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="projects_long_term_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\projects-long-term-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="projects_short_term" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\projects-short-term.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="projects_short_term_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\projects-short-term-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="AmountDonatedLabel" xml:space="preserve">
+    <value>Montant Donné</value>
+  </data>
+  <data name="AmountToDonateLabel" xml:space="preserve">
+    <value>Vous voulez donner:</value>
+  </data>
+  <data name="ChangeAmount" xml:space="preserve">
+    <value>Changer le Montant</value>
+  </data>
   <data name="CompanyBlurbFooter" xml:space="preserve">
-    <value>Notre organisation est dédiée à la conservation, l’étude et le partage des connaissances au sujet de l’herboristerie traditionnelle gabonaise et des traditions des peuples du Gabon pour le bénéfice de toute l’humanité.</value>
+    <value>NineStar has been created to share knowledge about the ancient wisdom of nine star ki astrology to help people gain a better understanding of themselves and of their loved ones, as well as the many cycles that affect their daily lives.</value>
   </data>
-  <data name="NewsItem" xml:space="preserve">
-    <value>Nouvelle</value>
+  <data name="CompanyDescription" xml:space="preserve">
+    <value>NineStar is an ancient system of astrology, largely uknown in the west, but slowly regaining popularity. It is deeper and more extensive than the zodiac and can offer some quite astonishing insights into our nature and the many cyles that influence our lives.</value>
   </data>
-  <data name="PublishedOnLabel" xml:space="preserve">
-    <value>Publié Le</value>
+  <data name="CompanyLegalDescription" xml:space="preserve">
+    <value />
   </data>
-  <data name="English" xml:space="preserve">
-    <value>Anglais</value>
+  <data name="CompanyShortDescription" xml:space="preserve">
+    <value>Website created to share knowledge about the anceitn widsom of nine star ki.</value>
   </data>
-  <data name="French" xml:space="preserve">
-    <value>Français</value>
+  <data name="CurrencyLabel" xml:space="preserve">
+    <value>Devise</value>
   </data>
-  <data name="LanguageLabel" xml:space="preserve">
-    <value>Langue</value>
+  <data name="CustomerEmailLabel" xml:space="preserve">
+    <value>Adresse Email du Client</value>
   </data>
-  <data name="ImageLabel" xml:space="preserve">
-    <value>Image</value>
+  <data name="CustomerLabel" xml:space="preserve">
+    <value>Client</value>
   </data>
-  <data name="PublishedByLabel" xml:space="preserve">
-    <value>Publié Par</value>
+  <data name="Donate" xml:space="preserve">
+    <value>Faire Un Don</value>
   </data>
-  <data name="Admin" xml:space="preserve">
-    <value>Admin</value>
+  <data name="DonatedOnLabel" xml:space="preserve">
+    <value>Donné Le</value>
   </data>
-  <data name="NewsItems" xml:space="preserve">
-    <value>Nouvelles</value>
+  <data name="Donation" xml:space="preserve">
+    <value>Don</value>
   </data>
-  <data name="Download" xml:space="preserve">
-    <value>Télécharger</value>
+  <data name="DonationAmountLabel" xml:space="preserve">
+    <value>Combien voulez-vous donner ?</value>
   </data>
-  <data name="Upload" xml:space="preserve">
-    <value>Télécharger</value>
+  <data name="DonationBlurb" xml:space="preserve">
+    <value>Votre don à NineStar nous aidera considérablement à continuer de vous pourvoir ce service. Nous sommes très reconnaissants de votre soutien.</value>
   </data>
-  <data name="UploadImage" xml:space="preserve">
-    <value>Télécharger Photo</value>
+  <data name="Donations" xml:space="preserve">
+    <value>Dons</value>
   </data>
-  <data name="Browse" xml:space="preserve">
-    <value>Parcourir</value>
+  <data name="DonationSuccessful" xml:space="preserve">
+    <value>Nous avons bien reçu votre don. Merci !</value>
   </data>
-  <data name="UploadFiles" xml:space="preserve">
-    <value>Télécharger Fichiers</value>
+  <data name="DonationSuccessfulTitle" xml:space="preserve">
+    <value>Réception de Don</value>
   </data>
-  <data name="UploadImages" xml:space="preserve">
-    <value>Télécharger Photos</value>
+  <data name="DonationTo" xml:space="preserve">
+    <value>Don à</value>
   </data>
-  <data name="FilesSelected" xml:space="preserve">
-    <value>fichiers selectionnés</value>
+  <data name="DonationToNineStar" xml:space="preserve">
+    <value>Don A NineStar</value>
   </data>
-  <data name="DeleteConflictError" xml:space="preserve">
-    <value>Cet enregistrement ne peut pas être supprimé car sa clé externe existe dans une autre table</value>
+  <data name="Loading" xml:space="preserve">
+    <value>Chargement...</value>
   </data>
-  <data name="Permissions" xml:space="preserve">
-    <value>Permissions</value>
+  <data name="MainTitleLeft" xml:space="preserve">
+    <value>Nine</value>
   </data>
-  <data name="Roles" xml:space="preserve">
-    <value>Rôles</value>
-  </data>
-  <data name="Users" xml:space="preserve">
-    <value>Utilisateurs</value>
-  </data>
-  <data name="Day" xml:space="preserve">
-    <value>Jour</value>
-  </data>
-  <data name="Days" xml:space="preserve">
-    <value>Jours</value>
-  </data>
-  <data name="Hour" xml:space="preserve">
-    <value>Heure</value>
-  </data>
-  <data name="Hours" xml:space="preserve">
-    <value>Heures</value>
-  </data>
-  <data name="InTimespan" xml:space="preserve">
-    <value>Dans {0} {1}</value>
-  </data>
-  <data name="JustNow" xml:space="preserve">
-    <value>A l'instant</value>
-  </data>
-  <data name="Minute" xml:space="preserve">
-    <value>Minute</value>
-  </data>
-  <data name="Minutes" xml:space="preserve">
-    <value>Minutes</value>
-  </data>
-  <data name="Month" xml:space="preserve">
-    <value>Mois</value>
-  </data>
-  <data name="Months" xml:space="preserve">
-    <value>Mois</value>
-  </data>
-  <data name="Second" xml:space="preserve">
-    <value>Seconde</value>
-  </data>
-  <data name="Seconds" xml:space="preserve">
-    <value>Secondes</value>
-  </data>
-  <data name="TimespanAgo" xml:space="preserve">
-    <value>Il y a {0} {1}</value>
-  </data>
-  <data name="Today" xml:space="preserve">
-    <value>Aujourd'hui</value>
-  </data>
-  <data name="Tomorrow" xml:space="preserve">
-    <value>Demain</value>
-  </data>
-  <data name="Week" xml:space="preserve">
-    <value>Semaine</value>
-  </data>
-  <data name="Weeks" xml:space="preserve">
-    <value>Semaines</value>
-  </data>
-  <data name="Year" xml:space="preserve">
-    <value>An</value>
-  </data>
-  <data name="Years" xml:space="preserve">
-    <value>Ans</value>
-  </data>
-  <data name="Yesterday" xml:space="preserve">
-    <value>Hier</value>
-  </data>
-  <data name="Shortly" xml:space="preserve">
-    <value>Tout de suite</value>
-  </data>
-  <data name="TimespanFuture" xml:space="preserve">
-    <value>Dans {0} {1}</value>
-  </data>
-  <data name="Ki" xml:space="preserve">
-    <value>Ki</value>
-  </data>
-  <data name="Star" xml:space="preserve">
+  <data name="MainTitleRight" xml:space="preserve">
     <value>Star</value>
+  </data>
+  <data name="MakeDonation" xml:space="preserve">
+    <value>Faire un Don</value>
+  </data>
+  <data name="OnTheBrinkOfExtinctionTitle" xml:space="preserve">
+    <value>Au Bord De L'Extinction</value>
+  </data>
+  <data name="Projects" xml:space="preserve">
+    <value>Projets</value>
+  </data>
+  <data name="Shop" xml:space="preserve">
+    <value>Boutique</value>
   </data>
 </root>

@@ -1,11 +1,10 @@
 param([String]$publishPassword='')
 
-$appName = "ninestar"
 $publishDir = "publish"
 $appDir = "webapp"
-$projectPath = "WebApplication\WebApplication.csproj"
-$webTestFile = "webapp\WebApplication.Tests\bin\Debug\K9.WebApplication.Tests.dll"
-$dataTestFile = "webapp\DataAccess.Tests\bin\Debug\K9.DataAccess.Tests.dll"
+$projectPath = ".\WebApplication\WebApplication.csproj"
+$webTestFile = ".\WebApplication.Tests\bin\Debug\K9.WebApplication.Tests.dll"
+$dataTestFile = ".\DataAccess.Tests\bin\Debug\K9.DataAccessLayer.Tests.dll"
 	
 function ProcessErrors(){
   if($? -eq $false)
@@ -41,15 +40,17 @@ function _NugetRestore() {
 }
 
 function _Test() {
-  echo "Running dotnet test"
+  echo "Preparing to run tests"
   
   pushd $appDir  
   ProcessErrors
   
-  "packages\xunit.runner.console.2.2.0\tools\xunit.console.exe " + $webTestFile
+  echo "Running web application tests"
+  .\packages\xunit.runner.console.2.2.0\tools\xunit.console.exe $webTestFile
   ProcessErrors
   
-  "packages\xunit.runner.console.2.2.0\tools\xunit.console.exe " + $dataTestFile
+  echo "Running data access layer tests"
+  .\packages\xunit.runner.console.2.2.0\tools\xunit.console.exe $dataTestFile
   ProcessErrors
   popd
 }
@@ -71,9 +72,11 @@ function _Publish() {
   pushd $appDir
   ProcessErrors
   
+  echo "Creating publish dir"
   _CreateDirectory $publishDir
   ProcessErrors
   
+  echo "Building project"  
   Msbuild $projectPath /p:DeployOnBuild=true /p:PublishProfile=Integration /p:AllowUntrustedCertificate=true /p:Password=$publishPassword
   ProcessErrors
   popd

@@ -1,12 +1,12 @@
 @media(max-width:384px){
-	.header-left {
+	/*.header-left {
 		float: none;
 		text-align: center;
 	}
 	.header-right {
 		float: none;
 		text-align: center;
-	}
+	}*/
 	.tabs .nav-tabs li a {
 		padding: 1.5em;
 	}

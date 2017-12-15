@@ -1,10 +1,10 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using K9.Globalisation;
+using K9.Base.DataAccessLayer.Models;
+using K9.Base.Globalisation;
 
-namespace K9.DataAccess.Models
+namespace K9.DataAccessLayer.Models
 {
 	public class Student : ObjectBase
 	{

@@ -1,0 +1,15 @@
+﻿@using K9.Base.WebApplication.Helpers
+@model ArchiveCategory
+@{
+	Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+@using (Html.BeginForm())
+{
+	using (Html.BeginBootstrapForm())
+	{
+		@Html.Partial("_EditFields")
+		<hr/>
+		@Html.BootstrapButton(Dictionary.Create)
+		@Html.BootstrapBackToListButton()
+	}
+}

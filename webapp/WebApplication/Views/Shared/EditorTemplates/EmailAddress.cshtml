@@ -2,6 +2,6 @@
 @model Object
 @{
 	var dictionary = ViewData["viewDataDictionary"] as IDictionary<string, object>;
-	dictionary.MergeAttribute(K9.WebApplication.Constants.Html.Attributes.Type, K9.WebApplication.Constants.Html.Types.Email);
+	dictionary.MergeAttribute(K9.Base.WebApplication.Constants.Html.Attributes.Type, K9.Base.WebApplication.Constants.Html.Types.Email);
 }
 @Html.TextBoxFor(model => model, dictionary)

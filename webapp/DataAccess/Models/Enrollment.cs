@@ -1,11 +1,11 @@
-﻿
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using K9.DataAccess.Attributes;
-using K9.Globalisation;
+using K9.Base.DataAccessLayer.Attributes;
+using K9.Base.DataAccessLayer.Models;
+using K9.Base.Globalisation;
 using K9.SharedLibrary.Attributes;
 
-namespace K9.DataAccess.Models
+namespace K9.DataAccessLayer.Models
 {
 
 	public enum Grade

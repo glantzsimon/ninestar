@@ -1,4 +1,5 @@
 ﻿@using System.Globalization
+@using K9.SharedLibrary.Extensions
 @using K9.SharedLibrary.Helpers
 <script type="text/javascript">
 
@@ -45,23 +46,92 @@
 
 		$.fn.isImage = function(filename) {
 			return @(MvcHtmlString.Create(Json.Encode(HelperMethods.GetImageFileExtensions().ToArray()))).indexOf($.fn.getFileExtension(filename)) >= 0;
-		};
+        };
 
+	    $.fn.isVideo = function(filename) {
+	        return @(MvcHtmlString.Create(Json.Encode(HelperMethods.GetVideoFileExtensions().ToArray()))).indexOf($.fn.getFileExtension(filename)) >= 0;
+        };
+
+	    $.fn.isAudio = function(filename) {
+	        return @(MvcHtmlString.Create(Json.Encode(HelperMethods.GetAudioFileExtensions().ToArray()))).indexOf($.fn.getFileExtension(filename)) >= 0;
+        };
+
+	    $.fn.getFileNameWithoutExtension = function(fileName) {
+	        return fileName.substring(0, fileName.lastIndexOf("."));
+	    };
+
+        $.fn.getShortFileName = function(fileName) {
+            var nameWithoutExt = $.fn.getFileNameWithoutExtension(fileName);
+            var nameLength = nameWithoutExt.length;
+            var maxLength = 15;
+            return nameWithoutExt.substring(0, nameLength < maxLength ? nameLength : maxLength) + '....' + $.fn.getFileExtension(fileName);
+        }
+
+	    $.fn.setAcceptedFileExtensions = function(fileInput, type) {
+	        var accepted;
+	        switch (type) {
+            case "@MvcHtmlString.Create(Dictionary.Videos)":
+	            accepted = "@HelperMethods.GetVideoFileExtensions().ToDelimitedString()";
+                break;
+
+            case "@MvcHtmlString.Create(Dictionary.Audio)":
+	            accepted = "@HelperMethods.GetAudioFileExtensions().ToDelimitedString()";
+                break;
+
+            case "@MvcHtmlString.Create(Dictionary.Photos)":
+	            accepted = "@HelperMethods.GetImageFileExtensions().ToDelimitedString()";
+	            break;
+
+	        default:
+	            accepted = "*";
+	            break;
+	        }
+	        fileInput.attr("accept", accepted);
+        };
+
+	    $.fn.scrollToTopOf = function(el) {
+	        var offset = el.offset();
+	        $("html, body").animate({
+	            scrollTop: offset.top
+	        }, 40);
+        };
+
+	    $.fn.displayValidationWarningFor = function(field, validationMessage) {
+	        var validationSpan = $("span[data-valmsg-for='" + field + "']");
+	        validationSpan.html("<span for='" + field + "' generated='true'>" + validationMessage + ".</span>");
+	        validationSpan.removeClass("field-validation-valid");
+	        validationSpan.addClass("field-validation-error warning");
+        };
+
+	    $.fn.hideValidationWarningFor = function(field) {
+	        var validationSpan = $("span[data-valmsg-for='" + field + "']");
+            validationSpan.removeClass("warning");
+	    };
+        
 		bootstrapControls({
 			language: "@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower()",
-			dateFormat: "@CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern.ToUpper()"
+            dateFormat: "@CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern.ToUpper()"
 		}).init();
 
 		buttonBehaviours().init();
 
-		fadePageIn().init();
+		fadePageIn({
+		    isFirstLoad: @SessionHelper.GetBoolValue("SessionConstants.IsFirstLoad").ToString().ToLower()
+		}).init();
 
 		scroller().init();
 
 		fileUploader({
-			deleteText: "@Dictionary.Delete",
-			filesSelectedText: "@Dictionary.FilesSelected"
-		}).init();
+			deleteText: "@MvcHtmlString.Create(Dictionary.Delete)",
+			filesSelectedText: "@MvcHtmlString.Create(Dictionary.FilesSelected)"
+        }).init();
+
+        navbar().init();
+
+	    revealText({
+            moreText: "@Dictionary.More",
+            lessText: "@Dictionary.Less"
+	    }).init();
 	});
 
 </script>

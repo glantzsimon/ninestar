@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using System.Configuration;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -21,7 +22,9 @@ namespace K9.WebApplication
 			DataConfig.InitialiseDatabase();
 			AuthConfig.InitialiseWebSecurity();
 			DataConfig.InitialiseUsersAndRoles();
-		}
+
+		    Stripe.StripeConfiguration.SetApiKey(ConfigurationManager.AppSettings["SecretKey"]);
+        }
 		
 	}
 }

@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace K9.DataAccess.Tests.Unit
+namespace K9.DataAccessLayer.Tests.Unit
 {
 	
 	public class RepositoryTests
@@ -8,8 +8,6 @@ namespace K9.DataAccess.Tests.Unit
 		[Fact]
 		public void Test()
 		{
-			
-
 		}
 	}
 }

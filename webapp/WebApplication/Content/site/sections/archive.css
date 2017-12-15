@@ -1,0 +1,23 @@
+﻿.document-container {
+    width: 100%;
+    border-bottom: 1px solid #eeeeee;
+    padding-top: 8px;
+    padding: 8px;
+}
+
+.document-container a {
+    color: black !important;
+    font-size: 0.9em !important;
+}
+
+.document-container a i {
+    margin-right: 8px;
+}
+
+audio, video {
+    width: 100%;
+}
+
+.media-title {
+    margin-bottom: 2px !important;
+}

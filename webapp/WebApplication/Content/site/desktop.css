@@ -1,0 +1,16 @@
+﻿@media only screen and (min-width: 1025px) {
+
+    .alphaBackground {
+        background: rgb(255, 255, 255);
+        background: rgba(255, 255, 255, 0.9);
+        filter: alpha(opacity=90);
+    }
+
+    .padding-left-desktop-2 {
+        padding-left: 2px;
+    }
+
+    .padding-left-desktop-1 {
+        padding-left: 1px;
+    }
+}

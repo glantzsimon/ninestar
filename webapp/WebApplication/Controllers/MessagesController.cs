@@ -1,12 +1,14 @@
-﻿using System.Web.Mvc;
-using K9.DataAccess.Models;
+﻿using K9.Base.DataAccessLayer.Models;
+using K9.Base.WebApplication.Controllers;
+using K9.Base.WebApplication.EventArgs;
+using K9.Base.WebApplication.UnitsOfWork;
 using K9.SharedLibrary.Attributes;
-using K9.WebApplication.UnitsOfWork;
+using System.Web.Mvc;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
 {
-	[Authorize]
+    [Authorize]
 	[LimitByUserId]
 	public class MessagesController : BaseController<Message>
 	{
@@ -17,7 +19,7 @@ namespace K9.WebApplication.Controllers
 			RecordBeforeCreate += MessagesController_RecordBeforeCreate;
 		}
 
-		void MessagesController_RecordBeforeCreate(object sender, EventArgs.CrudEventArgs e)
+		void MessagesController_RecordBeforeCreate(object sender, CrudEventArgs e)
 		{
 			var message = e.Item as Message;
 			message.SentByUserId = WebSecurity.IsAuthenticated ? WebSecurity.CurrentUserId : 0;

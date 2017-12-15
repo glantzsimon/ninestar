@@ -1,0 +1,10 @@
+﻿@model K9.Base.WebApplication.ViewModels.ArchiveViewModel
+<div id="archive-menu-container">
+    <div id="archive-menu" class="list-group">
+        @foreach (var item in Model.ArchiveCategories)
+        {
+            var selected = item.ArchiveCategory.Id == Model.SelectedArchiveCategoryId ? "active" : "";
+            <a href="@Url.Action("Index", "Archive", new { categoryId = item.ArchiveCategory.Id })" class="list-group-item archive-menu-item @selected" data-category-id="@item.ArchiveCategory.Id">@item.ArchiveCategory.Description <span class="badge">@item.Items.Count</span></a>
+        }
+    </div>
+</div>

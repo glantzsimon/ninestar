@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication", "WebApplic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication.Tests", "WebApplication.Tests\WebApplication.Tests.csproj", "{D97496B7-28DB-405E-9819-5A57EA8EF4D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{20948D36-2ABE-4429-B175-AF781A5F6CB3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccess\DataAccessLayer.csproj", "{20948D36-2ABE-4429-B175-AF781A5F6CB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.Tests", "DataAccess.Tests\DataAccess.Tests.csproj", "{1D9FE8D3-9E9B-45CB-9527-D4171D8A5F35}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer.Tests", "DataAccess.Tests\DataAccessLayer.Tests.csproj", "{1D9FE8D3-9E9B-45CB-9527-D4171D8A5F35}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{72731317-282B-4F7D-8B1F-8CF8CD00D32D}"
 	ProjectSection(SolutionItems) = preProject

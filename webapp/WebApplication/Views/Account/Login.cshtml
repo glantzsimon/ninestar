@@ -1,4 +1,5 @@
-﻿@model UserAccount.LoginModel
+﻿@using K9.Base.WebApplication.Helpers
+@model UserAccount.LoginModel
 @{
 	ViewBag.Title = Dictionary.LogIn;
 	Layout = "~/Views/Shared/_LayoutFormSmall.cshtml";
@@ -13,6 +14,7 @@
 		<span>@Html.ActionLink(Dictionary.ResetPassword, "PasswordResetRequest") | @Html.ActionLink(Dictionary.Register, "Register")</span>
 		@Html.BootstrapEditorFor(model => model.RememberMe)
 		<hr/>
-		@Html.BootstrapButton(Dictionary.LogInVerb)
+		@Html.BootstrapButton(Dictionary.LogInVerb) 
+        @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.SignInWithFacebook, "Facebook", "Account", null, "fa-facebook")
 	}
 }

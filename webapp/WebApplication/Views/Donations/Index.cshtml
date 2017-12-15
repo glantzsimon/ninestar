@@ -1,0 +1,20 @@
+﻿@using K9.Base.WebApplication.Controllers
+@using K9.Base.WebApplication.Helpers
+@using K9.SharedLibrary.Authentication
+@model Donation
+@{
+	Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
+}
+@Html.BootstrapTable(new DataTableOptions<Donation>
+{
+    AllowCreate = false,
+    AllowEdit = false,
+    AllowDelete = ((BaseController<Donation>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
+    VisibleColumns = new List<string>
+    {
+        "DonatedOn",
+        "DonationAmount",
+        "Currency",
+        "Customer"
+    }
+})

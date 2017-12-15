@@ -127,74 +127,23 @@
   <data name="WelcomeEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>templates\en-gb\welcomeemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="blessings_of_the_forest" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\blessings-of-the-forest.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="Keywords" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>text\en-gb\keywords.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="blessings_of_the_forest_intro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\blessings-of-the-forest-intro.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="mission_statement_and_aims1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\mission-statement-and-aims1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="mission_statement_and_aims2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\mission-statement-and-aims2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="mission_statement_and_aims_title1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\mission-statement-and-aims-title1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="mission_statement_and_aims_title2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\mission-statement-and-aims-title2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="david_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\david-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="david_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\david-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="iboga_text1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\iboga-text1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="iboga_text2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\iboga-text2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="iboga_title1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\iboga-title1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="iboga_title2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\iboga-title2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="laurent_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\laurent-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="laurent_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\laurent-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="simon_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\simon-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="yann_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\yann-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="yann_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\yann-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="Blessings" xml:space="preserve">
     <value>Blessings</value>
   </data>
   <data name="CompanyBlurbFooter" xml:space="preserve">
-    <value>NineStar has been created to share knowledge about the ancient wisdom of nine star ki astrology to help people gain a better understanding of themselves and of their loved ones, as well as the many cycles that affect their daily lives.</value>
+    <value>NineStar has been created to share knowledge about the ancient wisdom of nine star ki astrology to help people gain a better understanding of themselves and of their loved ones, as well as the many cycles that affect their lives.</value>
   </data>
   <data name="CompanyDescription" xml:space="preserve">
-    <value>NineStar is an ancient system of astrology, largely uknown in the west, but slowly regaining popularity. It is deeper and more extensive than the zodiac and can offer some quite astonishing insights into our nature and the many cyles that influence our lives.</value>
+    <value>Nine star ki is an ancient system of astrology, largely uknown in the west, but slowly regaining popularity. It is deeper and more extensive than the zodiac and can offer some quite astonishing insights into our nature and the many cyles that influence our lives.</value>
   </data>
   <data name="CompanyLegalDescription" xml:space="preserve">
     <value />
   </data>
   <data name="CompanyShortDescription" xml:space="preserve">
-    <value>Website created to share knowledge about the anceitn widsom of nine star ki.</value>
+    <value>Website created to share knowledge about the ancient widsom of nine star ki astrology.</value>
   </data>
   <data name="MainTitleLeft" xml:space="preserve">
     <value>Nine</value>
@@ -205,50 +154,8 @@
   <data name="OnTheBrinkOfExtinctionTitle" xml:space="preserve">
     <value>On The Brink Of Extinction</value>
   </data>
-  <data name="botf_context1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\botf_context1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="botf_context2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\botf_context2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="botf_context3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\botf_context3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="botf_context_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\botf_context_title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="etats_des_lieux_forest" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\etats-des-lieux-forest.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="etats_des_lieux_forest_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\etats-des-lieux-forest-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="etats_des_lieux_iboga" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\etats-des-lieux-iboga.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="etats_des_lieux_iboga_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\etats-des-lieux-iboga-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="etats_des_lieux_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\etats-des-lieux-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="Projects" xml:space="preserve">
     <value>Projects</value>
-  </data>
-  <data name="projects_long_term" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\projects-long-term.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="projects_long_term_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\projects-long-term-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="projects_short_term" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\projects-short-term.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="projects_short_term_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\projects-short-term-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="simon_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\simon-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="Shop" xml:space="preserve">
     <value>Shop</value>
@@ -310,7 +217,40 @@
   <data name="DonationReceivedEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>templates\en-gb\donationreceivedemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="DonationReceivedEmail1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>templates\en-gb\donationreceivedemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="Calculate" xml:space="preserve">
+    <value>Calculate</value>
+  </data>
+  <data name="CalculateYourNineStarKi" xml:space="preserve">
+    <value>Calculate Your Nine Star Ki Energy</value>
+  </data>
+  <data name="DateOfBirthLabel" xml:space="preserve">
+    <value>Date Of Birth</value>
+  </data>
+  <data name="Female" xml:space="preserve">
+    <value>Female</value>
+  </data>
+  <data name="GenderLabel" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="Hermaphrodite" xml:space="preserve">
+    <value>Hermaphrodite</value>
+  </data>
+  <data name="Male" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="nine_star_intro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\nine-star-intro.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="nine_star_ki_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>text\en-gb\nine-star-ki-title.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="TransFemale" xml:space="preserve">
+    <value>Trans Female</value>
+  </data>
+  <data name="TransMale" xml:space="preserve">
+    <value>Trans Male</value>
   </data>
 </root>

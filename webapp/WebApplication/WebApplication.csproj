@@ -247,11 +247,15 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Separator.cs" />
+    <Compile Include="Models\NineStarKiEnergy.cs" />
+    <Compile Include="Models\NineStarKiModel.cs" />
+    <Compile Include="Models\PersonModel.cs" />
     <Compile Include="Models\StripeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DonationService.cs" />
     <Compile Include="Services\IDonationService.cs" />
     <Compile Include="Services\IShopService.cs" />
+    <Compile Include="Services\INineStarKiService.cs" />
     <Compile Include="Services\IStripeService.cs" />
     <Compile Include="Services\ShopService.cs" />
     <Compile Include="Services\StripeService.cs" />
@@ -937,6 +941,7 @@
     <Content Include="Views\Support\DonationSuccess.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Currency.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Currency.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Gender.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

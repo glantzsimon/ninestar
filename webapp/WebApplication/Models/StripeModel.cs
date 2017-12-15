@@ -1,5 +1,5 @@
-﻿using System;
-using K9.Globalisation;
+﻿using K9.Globalisation;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Threading;
@@ -10,7 +10,7 @@ namespace K9.WebApplication.Models
     {
         public string PublishableKey { get; set; }
 
-        [Required]
+        [Required(ErrorMessageResourceType = typeof(K9.Base.Globalisation.Dictionary), ErrorMessageResourceName = K9.Base.Globalisation.Strings.ErrorMessages.FieldIsRequired)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DonationAmountLabel)]
         [DataType(DataType.Currency)]
         public double DonationAmount { get; set; }

@@ -2,7 +2,9 @@
 using K9.Base.WebApplication.Controllers;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Models;
 using NLog;
+using System;
 using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
@@ -17,8 +19,16 @@ namespace K9.WebApplication.Controllers
 
 		public ActionResult Index()
 		{
-		    return View();
+		    return View(new NineStarModel
+		    {
+		        DateOfBirth = new DateTime(1980, 1, 1)
+		    });
 		}
+
+	    public ActionResult CalculateNineStarKi(NineStarModel model)
+	    {
+	        return View("Index");
+	    }
 
 		public ActionResult SetLanguage(string languageCode, string cultureCode)
 		{

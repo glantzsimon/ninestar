@@ -62,68 +62,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Articles\en-gb\blessings-of-the-forest.htm" />
-    <Content Include="Articles\en-gb\blessings-of-the-forest-intro.htm" />
-    <Content Include="Articles\en-gb\botf_context1.htm" />
-    <Content Include="Articles\en-gb\botf_context2.htm" />
-    <Content Include="Articles\en-gb\botf_context3.htm" />
-    <Content Include="Articles\en-gb\botf_context_title.htm" />
-    <Content Include="Articles\en-gb\etats-des-lieux-forest.htm" />
-    <Content Include="Articles\en-gb\etats-des-lieux-iboga-title.htm" />
-    <Content Include="Articles\en-gb\etats-des-lieux-iboga.htm" />
-    <Content Include="Articles\en-gb\etats-des-lieux-title.htm" />
-    <Content Include="Articles\en-gb\projects-long-term-title.htm" />
-    <Content Include="Articles\en-gb\projects-long-term.htm" />
-    <Content Include="Articles\en-gb\projects-short-term-title.htm" />
-    <Content Include="Articles\en-gb\projects-short-term.htm" />
-    <Content Include="Articles\en-gb\simon-text.htm" />
-    <Content Include="Articles\en-gb\laurent-text.htm" />
-    <Content Include="Articles\en-gb\david-text.htm" />
-    <Content Include="Articles\en-gb\yann-text.htm" />
-    <Content Include="Articles\en-gb\simon-title.htm" />
-    <Content Include="Articles\en-gb\laurent-title.htm" />
-    <Content Include="Articles\en-gb\david-title.htm" />
-    <Content Include="Articles\en-gb\yann-title.htm" />
-    <Content Include="Articles\en-gb\iboga-title2.htm" />
-    <Content Include="Articles\en-gb\iboga-text2.htm" />
-    <Content Include="Articles\en-gb\iboga-text1.htm" />
-    <Content Include="Articles\en-gb\iboga-title1.htm" />
-    <Content Include="Articles\en-gb\mission-statement-and-aims-title1.htm" />
-    <Content Include="Articles\en-gb\mission-statement-and-aims-title2.htm" />
-    <Content Include="Articles\en-gb\mission-statement-and-aims1.htm" />
-    <Content Include="Articles\en-gb\mission-statement-and-aims2.htm" />
-    <Content Include="Articles\fr\botf_context3.htm" />
-    <Content Include="Articles\fr\botf_context2.htm" />
-    <Content Include="Articles\fr\botf_context1.htm" />
-    <Content Include="Articles\en-gb\etats-des-lieux-forest-title.htm" />
-    <Content Include="Articles\fr\etats-des-lieux-forest-title.htm" />
-    <Content Include="Articles\fr\etats-des-lieux-forest.htm" />
-    <Content Include="Articles\fr\projects-long-term.htm" />
-    <Content Include="Articles\fr\projects-long-term-title.htm" />
-    <Content Include="Articles\fr\projects-short-term.htm" />
-    <Content Include="Articles\fr\projects-short-term-title.htm" />
-    <Content Include="Articles\fr\etats-des-lieux-iboga.htm" />
-    <Content Include="Articles\fr\etats-des-lieux-iboga-title.htm" />
-    <Content Include="Articles\fr\etats-des-lieux-title.htm" />
-    <Content Include="Articles\fr\botf_context_title.htm" />
-    <Content Include="Articles\fr\david-text.htm" />
-    <Content Include="Articles\fr\david-title.htm" />
-    <Content Include="Articles\fr\iboga-text1.htm" />
-    <Content Include="Articles\fr\iboga-text2.htm" />
-    <Content Include="Articles\fr\iboga-title1.htm" />
-    <Content Include="Articles\fr\iboga-title2.htm" />
-    <Content Include="Articles\fr\laurent-text.htm" />
-    <Content Include="Articles\fr\laurent-title.htm" />
-    <Content Include="Articles\fr\mission-statement-and-aims1.htm" />
-    <Content Include="Articles\fr\mission-statement-and-aims-title2.htm" />
-    <Content Include="Articles\fr\mission-statement-and-aims-title1.htm" />
-    <Content Include="Articles\fr\mission-statement-and-aims2.htm" />
-    <Content Include="Articles\fr\blessings-of-the-forest.htm" />
-    <Content Include="Articles\fr\blessings-of-the-forest-intro.htm" />
-    <Content Include="Articles\fr\simon-text.htm" />
-    <Content Include="Articles\fr\simon-title.htm" />
-    <Content Include="Articles\fr\yann-text.htm" />
-    <Content Include="Articles\fr\yann-title.htm" />
+    <Content Include="Articles\en-gb\nine-star-intro.htm" />
+    <Content Include="Articles\fr\nine-star-intro.htm" />
     <Content Include="Templates\en-gb\DonationReceivedEmail.htm" />
     <Content Include="Templates\en-gb\PasswordResetEmail.htm" />
     <Content Include="Templates\en-gb\SupportQuery.htm" />
@@ -132,12 +72,15 @@
     <Content Include="Templates\fr\PasswordResetEmail.htm" />
     <Content Include="Templates\fr\SupportQuery.htm" />
     <Content Include="Templates\fr\WelcomeEmail.htm" />
+    <Content Include="Text\en-gb\nine-star-ki-title.txt" />
     <Content Include="Text\en-gb\Keywords.txt" />
     <Content Include="Text\fr\Keywords.txt" />
+    <Content Include="Text\fr\nine-star-ki-title.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

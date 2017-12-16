@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using Microsoft.Ajax.Utilities;
 
 namespace K9.WebApplication.Models
@@ -33,6 +34,7 @@ namespace K9.WebApplication.Models
         {
             MainEnergy = GetMainEnergy();
             CharacterEnergy = GetCharacterEnergy();
+            RisingEnergy = GetRisingEnergy();
         }
 
         private bool IsYin(EGender gender)
@@ -51,10 +53,8 @@ namespace K9.WebApplication.Models
             var day = PersonModel.DateOfBirth.Day;
             var year = PersonModel.DateOfBirth.Year;
 
-            year = (month == 2 && day <= 3) || month == 1 ? year + 1 : year;
+            year = (month == 2 && day <= 3) || month == 1 ? year - 1 : year;
             var energyNumber = 3 - ((year - 1979) % 9);
-            energyNumber = energyNumber < 1 ? (9 + energyNumber) : energyNumber;
-
             return ProcessEnergy(energyNumber);
         }
 
@@ -96,7 +96,7 @@ namespace K9.WebApplication.Models
                     month = day >= 8 ? month : month - 1;
                     break;
             }
-            
+
             switch (MainEnergy.Energy)
             {
                 case ENineStarEnergy.Thunder:
@@ -163,16 +163,28 @@ namespace K9.WebApplication.Models
             return ProcessEnergy(energyNumber);
         }
 
+        private NineStarKiEnergy GetRisingEnergy()
+        {
+            return ProcessEnergy(5 - (CharacterEnergy.EnergyNumber - MainEnergy.EnergyNumber));
+        }
+
         private NineStarKiEnergy ProcessEnergy(int energyNumber)
         {
-            energyNumber = energyNumber < 1 ? (9 + energyNumber) : energyNumber;
+            if (energyNumber < 1)
+            {
+                energyNumber = 9 + energyNumber;
+            }
+            else if (energyNumber > 9)
+            {
+                energyNumber = energyNumber - 9;
+            }
 
             if (IsYin(PersonModel.Gender))
             {
                 energyNumber = InvertEnergy(energyNumber);
             }
 
-            return new NineStarKiEnergy((ENineStarEnergy) energyNumber);
+            return new NineStarKiEnergy((ENineStarEnergy)energyNumber);
         }
 
         private int InvertEnergy(int energyNumber)

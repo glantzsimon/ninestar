@@ -124,6 +124,8 @@ namespace K9.WebApplication.Models
 
         public ENineStarEnergy Energy { get; }
 
+        public int EnergyNumber => (int) Energy;
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.YinYangLabel)]
         public ENineStarKiYinYang YinYang => MetaData.YinYang;
 

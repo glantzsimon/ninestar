@@ -106,8 +106,15 @@
 	    $.fn.hideValidationWarningFor = function(field) {
 	        var validationSpan = $("span[data-valmsg-for='" + field + "']");
             validationSpan.removeClass("warning");
-	    };
-        
+        };
+
+        $.fn.preloadImages =  function (imageArray) {
+            for (var i = 0; i < imageArray.length; i++) {
+                var img = new Image();
+                img.src = imageArray[i];
+            }
+        }
+
 		bootstrapControls({
 			language: "@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower()",
             dateFormat: "@CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern.ToUpper()"
@@ -131,6 +138,12 @@
 	    revealText({
             moreText: "@Dictionary.More",
             lessText: "@Dictionary.Less"
+        }).init();
+
+        imagePreloader({
+            imageArray: [
+                "/Images/shared/ninestar-spinner.gif"
+            ]
 	    }).init();
 	});
 

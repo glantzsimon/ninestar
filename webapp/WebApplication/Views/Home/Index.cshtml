@@ -5,4 +5,11 @@
     Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
 
-@Html.Partial("_Calculator")
+<div class="container">
+    <div class="col-md-4">
+        @Html.Partial("_Calculator")
+    </div>
+    <div class="col-md-8">
+        @Html.Partial("_Results")
+        <div class="clearfix"> </div>
+    </div>

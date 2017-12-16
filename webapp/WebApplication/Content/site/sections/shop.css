@@ -17,7 +17,7 @@ footer.sprd-footer, section.sprd-footer {
     #myShop div.shop-loading-div {
         width: 100%;
         min-height: 600px;
-        background-image: url(/Images/shared/blessings_loader.gif);
+        background-image: url(/Images/shared/ninestar-spinner.gif);
         background-position: center;
         background-repeat: no-repeat;
     }

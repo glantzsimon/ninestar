@@ -26,8 +26,7 @@ namespace K9.WebApplication.Controllers
             };
             return View(new NineStarKiViewModel
             {
-                PersonModel = personModel,
-                NineStarKiModel = new NineStarKiModel(personModel)
+                PersonModel = personModel
             });
         }
 

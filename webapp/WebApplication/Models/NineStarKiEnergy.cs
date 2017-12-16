@@ -82,7 +82,7 @@ namespace K9.WebApplication.Models
         NorthEast
     }
 
-    public enum ENineStarKiGender
+    public enum ENineStarKiYinYang
     {
         [EnumDescription(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.Unspecified)]
         Unspecified,
@@ -95,38 +95,39 @@ namespace K9.WebApplication.Models
     public enum ENineStarEnergy
     {
         Unspecified,
-        [NineStarEnumMetaData(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.Water, Colour = ENineStarKiColour.White, Element = ENineStarKiElenement.Water, Direction = ENineStarKiDirection.North, FamilyMember = ENineStarKiFamilyMember.MiddleSon, Gender = ENineStarKiGender.Yang)]
+        [NineStarEnumMetaData(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.Water, Colour = ENineStarKiColour.White, Element = ENineStarKiElenement.Water, Direction = ENineStarKiDirection.North, FamilyMember = ENineStarKiFamilyMember.MiddleSon, YinYang = ENineStarKiYinYang.Yang)]
         Water,
-        [NineStarEnumMetaData(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.Soil, Colour = ENineStarKiColour.Black, Element = ENineStarKiElenement.Earth, Direction = ENineStarKiDirection.SouthWest, FamilyMember = ENineStarKiFamilyMember.Mother, Gender = ENineStarKiGender.Yin)]
+        [NineStarEnumMetaData(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.Soil, Colour = ENineStarKiColour.Black, Element = ENineStarKiElenement.Earth, Direction = ENineStarKiDirection.SouthWest, FamilyMember = ENineStarKiFamilyMember.Mother, YinYang = ENineStarKiYinYang.Yin)]
         Soil,
-        [NineStarEnumMetaData(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.Thunder, Colour = ENineStarKiColour.BrightGreen, Element = ENineStarKiElenement.Wood, Direction = ENineStarKiDirection.East, FamilyMember = ENineStarKiFamilyMember.EldestSon, Gender = ENineStarKiGender.Yang)]
+        [NineStarEnumMetaData(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.Thunder, Colour = ENineStarKiColour.BrightGreen, Element = ENineStarKiElenement.Wood, Direction = ENineStarKiDirection.East, FamilyMember = ENineStarKiFamilyMember.EldestSon, YinYang = ENineStarKiYinYang.Yang)]
         Thunder,
-        [NineStarEnumMetaData(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.Wind, Colour = ENineStarKiColour.Green, Element = ENineStarKiElenement.Wood, Direction = ENineStarKiDirection.SouthEast, FamilyMember = ENineStarKiFamilyMember.EldestDaughter, Gender = ENineStarKiGender.Yin)]
+        [NineStarEnumMetaData(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.Wind, Colour = ENineStarKiColour.Green, Element = ENineStarKiElenement.Wood, Direction = ENineStarKiDirection.SouthEast, FamilyMember = ENineStarKiFamilyMember.EldestDaughter, YinYang = ENineStarKiYinYang.Yin)]
         Wind,
-        [NineStarEnumMetaData(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.CoreEarth, Colour = ENineStarKiColour.Yellow, Element = ENineStarKiElenement.Earth, Direction = ENineStarKiDirection.Centre, FamilyMember = ENineStarKiFamilyMember.SeventhChild, Gender = ENineStarKiGender.Unspecified)]
+        [NineStarEnumMetaData(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.CoreEarth, Colour = ENineStarKiColour.Yellow, Element = ENineStarKiElenement.Earth, Direction = ENineStarKiDirection.Centre, FamilyMember = ENineStarKiFamilyMember.SeventhChild, YinYang = ENineStarKiYinYang.Unspecified)]
         CoreEarth,
-        [NineStarEnumMetaData(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.Heaven, Colour = ENineStarKiColour.White, Element = ENineStarKiElenement.Metal, Direction = ENineStarKiDirection.NorthWest, FamilyMember = ENineStarKiFamilyMember.Father, Gender = ENineStarKiGender.Unspecified)]
+        [NineStarEnumMetaData(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.Heaven, Colour = ENineStarKiColour.White, Element = ENineStarKiElenement.Metal, Direction = ENineStarKiDirection.NorthWest, FamilyMember = ENineStarKiFamilyMember.Father, YinYang = ENineStarKiYinYang.Unspecified)]
         Heaven,
-        [NineStarEnumMetaData(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.Lake, Colour = ENineStarKiColour.Red, Element = ENineStarKiElenement.Metal, Direction = ENineStarKiDirection.West, FamilyMember = ENineStarKiFamilyMember.YoungestDaughter, Gender = ENineStarKiGender.Yin)]
+        [NineStarEnumMetaData(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.Lake, Colour = ENineStarKiColour.Red, Element = ENineStarKiElenement.Metal, Direction = ENineStarKiDirection.West, FamilyMember = ENineStarKiFamilyMember.YoungestDaughter, YinYang = ENineStarKiYinYang.Yin)]
         Lake,
-        [NineStarEnumMetaData(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.Mountain, Colour = ENineStarKiColour.White, Element = ENineStarKiElenement.Earth, Direction = ENineStarKiDirection.NorthEast, FamilyMember = ENineStarKiFamilyMember.YoungestSon, Gender = ENineStarKiGender.Yang)]
+        [NineStarEnumMetaData(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.Mountain, Colour = ENineStarKiColour.White, Element = ENineStarKiElenement.Earth, Direction = ENineStarKiDirection.NorthEast, FamilyMember = ENineStarKiFamilyMember.YoungestSon, YinYang = ENineStarKiYinYang.Yang)]
         Mountain,
-        [NineStarEnumMetaData(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.Fire, Colour = ENineStarKiColour.Purple, Element = ENineStarKiElenement.Fire, Direction = ENineStarKiDirection.South, FamilyMember = ENineStarKiFamilyMember.MiddleDaughter, Gender = ENineStarKiGender.Yin)]
+        [NineStarEnumMetaData(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.Fire, Colour = ENineStarKiColour.Purple, Element = ENineStarKiElenement.Fire, Direction = ENineStarKiDirection.South, FamilyMember = ENineStarKiFamilyMember.MiddleDaughter, YinYang = ENineStarKiYinYang.Yin)]
         Fire
     }
 
     public class NineStarKiEnergy
     {
-        public ENineStarEnergy Energy { get; set; }
+        public NineStarKiEnergy(ENineStarEnergy energy)
+        {
+            Energy = energy;
+        }
 
-        public int EnergyNumber => (int)Energy;
+        public ENineStarEnergy Energy { get; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GenderLabel)]
-        public ENineStarKiGender NineStarKiGender { get; set; }
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.YinYangLabel)]
+        public ENineStarKiYinYang YinYang => MetaData.YinYang;
 
-        public NineStarEnumMetaDataAttribute MetaData => NineStarKiGender.GetAttribute<NineStarEnumMetaDataAttribute>();
-
-        public string YinYang => MetaData.GetGender();
+        public NineStarEnumMetaDataAttribute MetaData => Energy.GetAttribute<NineStarEnumMetaDataAttribute>();
 
         public string FamilyMember => MetaData.GetFamilyMember();
 

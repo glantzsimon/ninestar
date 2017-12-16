@@ -1,7 +1,7 @@
-﻿using System;
-using K9.Base.DataAccessLayer.Attributes;
+﻿using K9.Base.DataAccessLayer.Attributes;
 using K9.SharedLibrary.Extensions;
 using K9.WebApplication.Models;
+using System;
 
 namespace K9.WebApplication.Attributes
 {
@@ -12,7 +12,7 @@ namespace K9.WebApplication.Attributes
         public ENineStarKiElenement Element { get; set; }
         public ENineStarKiColour Colour { get; set; }
         public ENineStarKiDirection Direction { get; set; }
-        public ENineStarKiGender Gender { get; set; }
+        public ENineStarKiYinYang YinYang { get; set; }
         public Type ResourceType { get; set; }
         public string Name { get; set; }
 
@@ -21,9 +21,9 @@ namespace K9.WebApplication.Attributes
             return ResourceType.GetValueFromResource(Name);
         }
 
-        public string GetGender()
+        public string GetYinYang()
         {
-            var attr = Gender.GetAttribute<EnumDescriptionAttribute>();
+            var attr = YinYang.GetAttribute<EnumDescriptionAttribute>();
             return attr.GetDescription();
         }
 

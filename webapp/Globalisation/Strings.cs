@@ -16,6 +16,7 @@
             public const string MainEnergyLabel = "MainEnergyLabel";
             public const string CharacterEnergyLabel = "CharacterEnergyLabel";
             public const string RisingEnergyLabel = "RisingEnergyLabel";
+            public const string YinYangLabel = "YinYangLabel";
         }
 
         public static class Names

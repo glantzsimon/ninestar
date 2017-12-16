@@ -922,6 +922,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Yin / Yang.
+        /// </summary>
+        public static string YinYangLabel {
+            get {
+                return ResourceManager.GetString("YinYangLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Youngest Daughter.
         /// </summary>
         public static string YoungestDaughter {

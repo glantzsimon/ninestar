@@ -376,6 +376,9 @@
   <data name="Yin" xml:space="preserve">
     <value>Yin</value>
   </data>
+  <data name="YinYangLabel" xml:space="preserve">
+    <value>Yin / Yang</value>
+  </data>
   <data name="YoungestDaughter" xml:space="preserve">
     <value>Youngest Daughter</value>
   </data>

@@ -4,6 +4,6 @@ namespace K9.WebApplication.Services
 {
     public interface INineStarKiService
     {
-        NineStarKiModel Calculate(PersonModel model);
+        
     }
 }

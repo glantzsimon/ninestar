@@ -20,13 +20,14 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult Index()
         {
+            var personModel = new PersonModel
+            {
+                DateOfBirth = new DateTime(1980, 1, 1)
+            };
             return View(new NineStarKiViewModel
             {
-                PersonModel = new PersonModel
-                {
-                    DateOfBirth = new DateTime(1980, 1, 1)
-                },
-                NineStarKiModel = new NineStarKiModel()
+                PersonModel = personModel,
+                NineStarKiModel = new NineStarKiModel(personModel)
             });
         }
 

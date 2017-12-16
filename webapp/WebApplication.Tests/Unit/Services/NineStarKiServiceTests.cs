@@ -27,5 +27,17 @@ namespace K9.WebApplication.Tests.Unit.Services
             });
             Assert.Equal(energy, ninestar.MainEnergy.Energy);
         }
+
+        [Fact]
+        public void YearEnergyBeforeFeb4_HappyPath()
+        {
+            var service = new NineStarKiService();
+            var ninestar = service.Calculate(new PersonModel
+            {
+                DateOfBirth = new DateTime(1979, 2, 3),
+                Gender = EGender.Male
+            });
+            Assert.Equal(ENineStarEnergy.Soil, ninestar.MainEnergy.Energy);
+        }
     }
 }

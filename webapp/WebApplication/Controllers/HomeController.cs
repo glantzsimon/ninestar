@@ -6,40 +6,47 @@ using K9.WebApplication.Models;
 using NLog;
 using System;
 using System.Web.Mvc;
+using K9.WebApplication.ViewModels;
 
 namespace K9.WebApplication.Controllers
 {
     public class HomeController : BaseController
-	{
+    {
 
-		public HomeController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper)
-			: base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
-		{
-		}
+        public HomeController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper)
+            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
+        {
+        }
 
-		public ActionResult Index()
-		{
-		    return View(new NineStarModel
-		    {
-		        DateOfBirth = new DateTime(1980, 1, 1)
-		    });
-		}
+        public ActionResult Index()
+        {
+            return View(new NineStarKiViewModel
+            {
+                PersonModel = new PersonModel
+                {
+                    DateOfBirth = new DateTime(1980, 1, 1)
+                },
+                NineStarKiModel = new NineStarKiModel()
+            });
+        }
 
-	    public ActionResult CalculateNineStarKi(NineStarModel model)
-	    {
-	        return View("Index");
-	    }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CalculateNineStarKi(NineStarKiViewModel model)
+        {
+            return View("Index");
+        }
 
-		public ActionResult SetLanguage(string languageCode, string cultureCode)
-		{
-			Session[SessionConstants.LanguageCode] = languageCode;
-		    Session[SessionConstants.CultureCode] = cultureCode;
-		    return Redirect(Request.UrlReferrer?.ToString());
-		}
-        
-		public override string GetObjectName()
-		{
-			return string.Empty;
-		}
-	}
+        public ActionResult SetLanguage(string languageCode, string cultureCode)
+        {
+            Session[SessionConstants.LanguageCode] = languageCode;
+            Session[SessionConstants.CultureCode] = cultureCode;
+            return Redirect(Request.UrlReferrer?.ToString());
+        }
+
+        public override string GetObjectName()
+        {
+            return string.Empty;
+        }
+    }
 }

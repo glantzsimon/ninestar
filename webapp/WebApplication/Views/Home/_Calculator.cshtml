@@ -1,11 +1,11 @@
-﻿@model K9.WebApplication.Models.NineStarModel
+﻿@model K9.WebApplication.ViewModels.NineStarKiViewModel
 
 @using (Html.BeginForm("CalculateNineStarKi", "Home"))
 {
     using (Html.BeginBootstrapForm())
     {
-        @Html.BootstrapEditorFor(model => model.DateOfBirth)
-        @Html.BootstrapEditorFor(model => model.Gender)
+        @Html.BootstrapEditorFor(model => model.PersonModel.DateOfBirth)
+        @Html.BootstrapEditorFor(model => model.PersonModel.Gender)
 
         <hr/>
         @Html.BootstrapButton(K9.Globalisation.Dictionary.Calculate)

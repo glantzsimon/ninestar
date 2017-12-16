@@ -221,6 +221,7 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Attributes\NineStarEnumMetaDataAttribute.cs" />
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\ViewDataConstants.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
@@ -257,8 +258,10 @@
     <Compile Include="Services\IShopService.cs" />
     <Compile Include="Services\INineStarKiService.cs" />
     <Compile Include="Services\IStripeService.cs" />
+    <Compile Include="Services\NineStarKiService.cs" />
     <Compile Include="Services\ShopService.cs" />
     <Compile Include="Services\StripeService.cs" />
+    <Compile Include="ViewModels\NineStarKiViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Config\.gitattributes" />

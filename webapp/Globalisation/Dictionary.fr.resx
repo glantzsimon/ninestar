@@ -214,26 +214,86 @@
   <data name="DonationReceivedEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>templates\fr\donationreceivedemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="Black" xml:space="preserve">
+    <value>Noir</value>
+  </data>
+  <data name="BrightGreen" xml:space="preserve">
+    <value>Vert Clair</value>
+  </data>
   <data name="Calculate" xml:space="preserve">
     <value>Calculer</value>
   </data>
   <data name="CalculateYourNineStarKi" xml:space="preserve">
     <value>Calculer Votre Energie du Qi des Neuf Etoiles</value>
   </data>
+  <data name="Centre" xml:space="preserve">
+    <value>Centre</value>
+  </data>
+  <data name="CharacterEnergyLabel" xml:space="preserve">
+    <value>Energie Emotive</value>
+  </data>
+  <data name="CoreEarth" xml:space="preserve">
+    <value>Terre Centrale</value>
+  </data>
   <data name="DateOfBirthLabel" xml:space="preserve">
     <value>Date de Naissance</value>
+  </data>
+  <data name="Earth" xml:space="preserve">
+    <value>Terre</value>
+  </data>
+  <data name="East" xml:space="preserve">
+    <value>Est</value>
+  </data>
+  <data name="EldestDaughter" xml:space="preserve">
+    <value>Fille Aîné</value>
+  </data>
+  <data name="EldestSon" xml:space="preserve">
+    <value>Fils Aîné</value>
+  </data>
+  <data name="Father" xml:space="preserve">
+    <value>Père</value>
   </data>
   <data name="Female" xml:space="preserve">
     <value>Femme</value>
   </data>
+  <data name="Fire" xml:space="preserve">
+    <value>Feu</value>
+  </data>
   <data name="GenderLabel" xml:space="preserve">
     <value>Homme ou Femme</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Vert</value>
+  </data>
+  <data name="Heaven" xml:space="preserve">
+    <value>Ciel</value>
   </data>
   <data name="Hermaphrodite" xml:space="preserve">
     <value>Hermaphrodite</value>
   </data>
+  <data name="Lake" xml:space="preserve">
+    <value>Lac</value>
+  </data>
+  <data name="MainEnergyLabel" xml:space="preserve">
+    <value>Energie Principale</value>
+  </data>
   <data name="Male" xml:space="preserve">
     <value>Homme</value>
+  </data>
+  <data name="Metal" xml:space="preserve">
+    <value>Métal</value>
+  </data>
+  <data name="MiddleDaughter" xml:space="preserve">
+    <value>Deuxième Fille</value>
+  </data>
+  <data name="MiddleSon" xml:space="preserve">
+    <value>Deuxième Fils</value>
+  </data>
+  <data name="Mother" xml:space="preserve">
+    <value>Mère</value>
+  </data>
+  <data name="Mountain" xml:space="preserve">
+    <value>Montagne</value>
   </data>
   <data name="nine_star_intro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\nine-star-intro.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -241,13 +301,82 @@
   <data name="nine_star_ki_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>text\fr\nine-star-ki-title.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="North" xml:space="preserve">
+    <value>Nord</value>
+  </data>
+  <data name="NorthEast" xml:space="preserve">
+    <value>Nord-Est</value>
+  </data>
+  <data name="NorthWest" xml:space="preserve">
+    <value>Nord-Ouest</value>
+  </data>
   <data name="Other" xml:space="preserve">
     <value>Autre</value>
+  </data>
+  <data name="Purple" xml:space="preserve">
+    <value>Violet</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Rouge</value>
+  </data>
+  <data name="RisingEnergyLabel" xml:space="preserve">
+    <value>Energie Ascendant</value>
+  </data>
+  <data name="SeventhChild" xml:space="preserve">
+    <value>Septième Enfant</value>
+  </data>
+  <data name="Soil" xml:space="preserve">
+    <value>Terre</value>
+  </data>
+  <data name="South" xml:space="preserve">
+    <value>Sud</value>
+  </data>
+  <data name="SouthEast" xml:space="preserve">
+    <value>Sud-Est</value>
+  </data>
+  <data name="SouthWest" xml:space="preserve">
+    <value>Sud-Ouest</value>
+  </data>
+  <data name="Thunder" xml:space="preserve">
+    <value>Tonnerre</value>
   </data>
   <data name="TransFemale" xml:space="preserve">
     <value>Femme Trans</value>
   </data>
   <data name="TransMale" xml:space="preserve">
     <value>Homme Trans</value>
+  </data>
+  <data name="Unspecified" xml:space="preserve">
+    <value>Unspecified</value>
+  </data>
+  <data name="Water" xml:space="preserve">
+    <value>Eau</value>
+  </data>
+  <data name="West" xml:space="preserve">
+    <value>Ouest</value>
+  </data>
+  <data name="White" xml:space="preserve">
+    <value>Blanc</value>
+  </data>
+  <data name="Wind" xml:space="preserve">
+    <value>Vent</value>
+  </data>
+  <data name="Wood" xml:space="preserve">
+    <value>Bois</value>
+  </data>
+  <data name="Yang" xml:space="preserve">
+    <value>Yang</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Jaune</value>
+  </data>
+  <data name="Yin" xml:space="preserve">
+    <value>Yin</value>
+  </data>
+  <data name="YoungestDaughter" xml:space="preserve">
+    <value>Fille Cadette</value>
+  </data>
+  <data name="YoungestSon" xml:space="preserve">
+    <value>Fils Cadet</value>
   </data>
 </root>

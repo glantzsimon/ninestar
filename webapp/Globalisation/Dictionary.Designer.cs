@@ -79,11 +79,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Black.
+        /// </summary>
+        public static string Black {
+            get {
+                return ResourceManager.GetString("Black", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Blessings.
         /// </summary>
         public static string Blessings {
             get {
                 return ResourceManager.GetString("Blessings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bright Green.
+        /// </summary>
+        public static string BrightGreen {
+            get {
+                return ResourceManager.GetString("BrightGreen", resourceCulture);
             }
         }
         
@@ -106,11 +124,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Centre.
+        /// </summary>
+        public static string Centre {
+            get {
+                return ResourceManager.GetString("Centre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change Amount.
         /// </summary>
         public static string ChangeAmount {
             get {
                 return ResourceManager.GetString("ChangeAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Character / Emotional Energy.
+        /// </summary>
+        public static string CharacterEnergyLabel {
+            get {
+                return ResourceManager.GetString("CharacterEnergyLabel", resourceCulture);
             }
         }
         
@@ -147,6 +183,15 @@ namespace K9.Globalisation {
         public static string CompanyShortDescription {
             get {
                 return ResourceManager.GetString("CompanyShortDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CoreEarth.
+        /// </summary>
+        public static string CoreEarth {
+            get {
+                return ResourceManager.GetString("CoreEarth", resourceCulture);
             }
         }
         
@@ -309,6 +354,51 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Earth.
+        /// </summary>
+        public static string Earth {
+            get {
+                return ResourceManager.GetString("Earth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to East.
+        /// </summary>
+        public static string East {
+            get {
+                return ResourceManager.GetString("East", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Eldest Daughter.
+        /// </summary>
+        public static string EldestDaughter {
+            get {
+                return ResourceManager.GetString("EldestDaughter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Eldest Son.
+        /// </summary>
+        public static string EldestSon {
+            get {
+                return ResourceManager.GetString("EldestSon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Father.
+        /// </summary>
+        public static string Father {
+            get {
+                return ResourceManager.GetString("Father", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Female.
         /// </summary>
         public static string Female {
@@ -318,11 +408,38 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fire.
+        /// </summary>
+        public static string Fire {
+            get {
+                return ResourceManager.GetString("Fire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gender.
         /// </summary>
         public static string GenderLabel {
             get {
                 return ResourceManager.GetString("GenderLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Green.
+        /// </summary>
+        public static string Green {
+            get {
+                return ResourceManager.GetString("Green", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heaven.
+        /// </summary>
+        public static string Heaven {
+            get {
+                return ResourceManager.GetString("Heaven", resourceCulture);
             }
         }
         
@@ -345,11 +462,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lake.
+        /// </summary>
+        public static string Lake {
+            get {
+                return ResourceManager.GetString("Lake", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Loading....
         /// </summary>
         public static string Loading {
             get {
                 return ResourceManager.GetString("Loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main Energy.
+        /// </summary>
+        public static string MainEnergyLabel {
+            get {
+                return ResourceManager.GetString("MainEnergyLabel", resourceCulture);
             }
         }
         
@@ -390,6 +525,51 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Metal.
+        /// </summary>
+        public static string Metal {
+            get {
+                return ResourceManager.GetString("Metal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Middle Daughter.
+        /// </summary>
+        public static string MiddleDaughter {
+            get {
+                return ResourceManager.GetString("MiddleDaughter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Middle Son.
+        /// </summary>
+        public static string MiddleSon {
+            get {
+                return ResourceManager.GetString("MiddleSon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mother.
+        /// </summary>
+        public static string Mother {
+            get {
+                return ResourceManager.GetString("Mother", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mountain.
+        /// </summary>
+        public static string Mountain {
+            get {
+                return ResourceManager.GetString("Mountain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
         public static string nine_star_intro {
@@ -404,6 +584,33 @@ namespace K9.Globalisation {
         public static string nine_star_ki_title {
             get {
                 return ResourceManager.GetString("nine_star_ki_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to North.
+        /// </summary>
+        public static string North {
+            get {
+                return ResourceManager.GetString("North", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Northeast.
+        /// </summary>
+        public static string NorthEast {
+            get {
+                return ResourceManager.GetString("NorthEast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Northwest.
+        /// </summary>
+        public static string NorthWest {
+            get {
+                return ResourceManager.GetString("NorthWest", resourceCulture);
             }
         }
         
@@ -467,11 +674,83 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Purple.
+        /// </summary>
+        public static string Purple {
+            get {
+                return ResourceManager.GetString("Purple", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Red.
+        /// </summary>
+        public static string Red {
+            get {
+                return ResourceManager.GetString("Red", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rising Energy.
+        /// </summary>
+        public static string RisingEnergyLabel {
+            get {
+                return ResourceManager.GetString("RisingEnergyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Seventh Child.
+        /// </summary>
+        public static string SeventhChild {
+            get {
+                return ResourceManager.GetString("SeventhChild", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Shop.
         /// </summary>
         public static string Shop {
             get {
                 return ResourceManager.GetString("Shop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Soil.
+        /// </summary>
+        public static string Soil {
+            get {
+                return ResourceManager.GetString("Soil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to South.
+        /// </summary>
+        public static string South {
+            get {
+                return ResourceManager.GetString("South", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Southeast.
+        /// </summary>
+        public static string SouthEast {
+            get {
+                return ResourceManager.GetString("SouthEast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Southwest.
+        /// </summary>
+        public static string SouthWest {
+            get {
+                return ResourceManager.GetString("SouthWest", resourceCulture);
             }
         }
         
@@ -503,6 +782,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thunder.
+        /// </summary>
+        public static string Thunder {
+            get {
+                return ResourceManager.GetString("Thunder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Trans Female.
         /// </summary>
         public static string TransFemale {
@@ -517,6 +805,24 @@ namespace K9.Globalisation {
         public static string TransMale {
             get {
                 return ResourceManager.GetString("TransMale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unspecified.
+        /// </summary>
+        public static string Unspecified {
+            get {
+                return ResourceManager.GetString("Unspecified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Water.
+        /// </summary>
+        public static string Water {
+            get {
+                return ResourceManager.GetString("Water", resourceCulture);
             }
         }
         
@@ -549,6 +855,87 @@ namespace K9.Globalisation {
         public static string WelcomeEmail {
             get {
                 return ResourceManager.GetString("WelcomeEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to West.
+        /// </summary>
+        public static string West {
+            get {
+                return ResourceManager.GetString("West", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to White.
+        /// </summary>
+        public static string White {
+            get {
+                return ResourceManager.GetString("White", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wins.
+        /// </summary>
+        public static string Wind {
+            get {
+                return ResourceManager.GetString("Wind", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wood.
+        /// </summary>
+        public static string Wood {
+            get {
+                return ResourceManager.GetString("Wood", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yang.
+        /// </summary>
+        public static string Yang {
+            get {
+                return ResourceManager.GetString("Yang", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yellow.
+        /// </summary>
+        public static string Yellow {
+            get {
+                return ResourceManager.GetString("Yellow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yin.
+        /// </summary>
+        public static string Yin {
+            get {
+                return ResourceManager.GetString("Yin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Youngest Daughter.
+        /// </summary>
+        public static string YoungestDaughter {
+            get {
+                return ResourceManager.GetString("YoungestDaughter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Youngest Son.
+        /// </summary>
+        public static string YoungestSon {
+            get {
+                return ResourceManager.GetString("YoungestSon", resourceCulture);
             }
         }
     }

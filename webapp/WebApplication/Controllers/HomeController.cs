@@ -27,9 +27,10 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult Index()
         {
+            var dateOfBirth = new DateTime(DateTime.Now.Year - (24), DateTime.Now.Month, DateTime.Now.Day);
             var personModel = new PersonModel
             {
-                DateOfBirth = new DateTime(1980, 1, 1)
+                DateOfBirth = dateOfBirth
             };
             return View(new NineStarKiViewModel
             {
@@ -46,9 +47,9 @@ namespace K9.WebApplication.Controllers
             {
                 var ninestar = new NineStarKiModel(model.PersonModel);
                 model.NineStarKiModel = ninestar;
-                model.MainEnergyInfo = _energyRepository.Find(e => e.EnergyType == EEnergyType.MainEnergy & e.Energy == ninestar.MainEnergy.Energy).FirstOrDefault();
-                model.CharacterEnergyInfo = _energyRepository.Find(e =>e.EnergyType == EEnergyType.MainEnergy & e.Energy == ninestar.MainEnergy.Energy).FirstOrDefault();
-                model.RisingEnergyInfo = _energyRepository.Find(e => e.EnergyType == EEnergyType.MainEnergy & e.Energy == ninestar.MainEnergy.Energy).FirstOrDefault();
+                model.MainEnergyInfo = _energyRepository.Find(e => e.EnergyType == EEnergyType.MainEnergy & e.Energy == ninestar.MainEnergy.Energy).FirstOrDefault() ?? new EnergyInfo();
+                model.CharacterEnergyInfo = _energyRepository.Find(e =>e.EnergyType == EEnergyType.MainEnergy & e.Energy == ninestar.MainEnergy.Energy).FirstOrDefault() ?? new EnergyInfo();
+                model.RisingEnergyInfo = _energyRepository.Find(e => e.EnergyType == EEnergyType.MainEnergy & e.Energy == ninestar.MainEnergy.Energy).FirstOrDefault() ?? new EnergyInfo();
             }
             return View("Index", model);
         }

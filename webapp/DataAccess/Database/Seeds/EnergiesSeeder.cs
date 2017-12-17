@@ -1,15 +1,15 @@
 ﻿using K9.Base.DataAccessLayer.Extensions;
 using K9.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Models;
+using K9.Globalisation;
 using System.Collections.Generic;
 using System.Data.Entity;
-using K9.Globalisation;
 
 namespace K9.DataAccessLayer.Database.Seeds
 {
     public static class EnergiesSeeder
 	{
-		public static void SeedEnergies(DbContext context)
+		public static void Seed(DbContext context)
 		{
 			{
 				var energies = new List<EnergyInfo>

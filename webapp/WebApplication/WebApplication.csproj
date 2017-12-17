@@ -599,6 +599,7 @@
     <Content Include="Images\ninestar\trigrams\trigram-thunder-square.png" />
     <Content Include="Images\ninestar\trigrams\trigram-water-square.png" />
     <Content Include="Images\ninestar\trigrams\trigram-wind-square.png" />
+    <Content Include="Images\ninestar\yinyang\unspecified.png" />
     <Content Include="Images\ninestar\yinyang\yang.png" />
     <Content Include="Images\ninestar\yinyang\yin.png" />
     <Content Include="Images\shared\ninestar-spinner.gif" />

@@ -4,6 +4,8 @@ using K9.Base.DataAccessLayer.Models;
 using K9.DataAccessLayer.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
+using K9.DataAccessLayer.Attributes;
+using K9.SharedLibrary.Extensions;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -21,8 +23,8 @@ namespace K9.DataAccessLayer.Models
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.EnergyLabel)]
 	    public EEnergyType EnergyType { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.EnergyLabel)]
-	    public string EnergyName => Energy.GetLocalisedLanguageName();
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.EnergyLabel)]
+	    public string EnergyName => MetaData.GetDescription();
 
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.EnergyTypeLabel)]
 	    public string EnergyTypeName => EnergyType.GetLocalisedLanguageName();
@@ -72,5 +74,7 @@ namespace K9.DataAccessLayer.Models
 	    public string Examples { get; set; }
 
         public NineStarKiEnergy NineStarKiEnergy => new NineStarKiEnergy(Energy);
-	}
+
+	    private NineStarEnumMetaDataAttribute MetaData => Energy.GetAttribute<NineStarEnumMetaDataAttribute>();
+    }
 }

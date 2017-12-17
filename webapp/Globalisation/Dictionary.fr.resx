@@ -445,6 +445,9 @@
   <data name="mountain_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\mountain-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="None" xml:space="preserve">
+    <value>Aucun</value>
+  </data>
   <data name="OccupationsLabel" xml:space="preserve">
     <value>Métiers</value>
   </data>

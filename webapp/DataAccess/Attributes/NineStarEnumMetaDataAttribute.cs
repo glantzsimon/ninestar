@@ -51,6 +51,11 @@ namespace K9.DataAccessLayer.Attributes
             var attr = Direction.GetAttribute<EnumDescriptionAttribute>();
             return attr.GetDescription();
         }
+
+        public string GetTrigram()
+        {
+            return ResourceType.GetValueFromResource(TrigramName);
+        }
     }
 
 }

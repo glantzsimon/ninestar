@@ -96,6 +96,7 @@ namespace K9.DataAccessLayer.Models
 
     public enum ENineStarEnergy
     {
+        [NineStarEnumMetaData(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.Unspecified)]
         Unspecified,
         [NineStarEnumMetaData(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.Water, Colour = ENineStarKiColour.White, Element = ENineStarKiElenement.Water, Direction = ENineStarKiDirection.North, FamilyMember = ENineStarKiFamilyMember.MiddleSon, YinYang = ENineStarKiYinYang.Yang, TrigramName = "K'An")]
         Water,
@@ -105,7 +106,7 @@ namespace K9.DataAccessLayer.Models
         Thunder,
         [NineStarEnumMetaData(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.Wind, Colour = ENineStarKiColour.Green, Element = ENineStarKiElenement.Wood, Direction = ENineStarKiDirection.SouthEast, FamilyMember = ENineStarKiFamilyMember.EldestDaughter, YinYang = ENineStarKiYinYang.Yin, TrigramName = "Sun")]
         Wind,
-        [NineStarEnumMetaData(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.CoreEarth, Colour = ENineStarKiColour.Yellow, Element = ENineStarKiElenement.Earth, Direction = ENineStarKiDirection.Centre, FamilyMember = ENineStarKiFamilyMember.SeventhChild, YinYang = ENineStarKiYinYang.Unspecified, TrigramName = "")]
+        [NineStarEnumMetaData(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.CoreEarth, Colour = ENineStarKiColour.Yellow, Element = ENineStarKiElenement.Earth, Direction = ENineStarKiDirection.Centre, FamilyMember = ENineStarKiFamilyMember.SeventhChild, YinYang = ENineStarKiYinYang.Unspecified, TrigramName = "None")]
         CoreEarth,
         [NineStarEnumMetaData(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.Heaven, Colour = ENineStarKiColour.White, Element = ENineStarKiElenement.Metal, Direction = ENineStarKiDirection.NorthWest, FamilyMember = ENineStarKiFamilyMember.Father, YinYang = ENineStarKiYinYang.Unspecified, TrigramName = "Ch'ien")]
         Heaven,
@@ -148,7 +149,7 @@ namespace K9.DataAccessLayer.Models
         public string FamilyMember => MetaData.GetFamilyMember();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.FamilyMemberLabel)]
-        public string Trigram => MetaData.TrigramName;
+        public string Trigram => MetaData.GetTrigram();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.FamilyMemberLabel)]
         public string Element => MetaData.GetElement();

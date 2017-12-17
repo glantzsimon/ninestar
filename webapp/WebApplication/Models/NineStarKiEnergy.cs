@@ -134,6 +134,9 @@ namespace K9.WebApplication.Models
         /// </summary>
         public EGender Gender { get; set; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.EnergyLabel)]
+        public string EnergyName => MetaData.GetDescription();
+
         public int EnergyNumber => (int)Energy;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.YinYangLabel)]
@@ -159,7 +162,7 @@ namespace K9.WebApplication.Models
             {
                 return NineStarKiModel.IsYin(Gender) ? ENineStarKiYinYang.Yin : ENineStarKiYinYang.Yang;
             }
-            else if (Energy == ENineStarEnergy.CoreEarth && RelatedEnergy != ENineStarEnergy.Unspecified)
+            if (Energy == ENineStarEnergy.CoreEarth && RelatedEnergy != ENineStarEnergy.Unspecified)
             {
                 return RelatedMetaData.YinYang;
             }

@@ -397,4 +397,7 @@
   <data name="Colour" xml:space="preserve">
     <value>Couleur</value>
   </data>
+  <data name="Energy" xml:space="preserve">
+    <value>Energie</value>
+  </data>
 </root>

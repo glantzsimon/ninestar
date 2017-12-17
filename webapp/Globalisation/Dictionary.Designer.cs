@@ -196,7 +196,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CoreEarth.
+        ///   Looks up a localized string similar to Core Earth.
         /// </summary>
         public static string CoreEarth {
             get {
@@ -404,6 +404,15 @@ namespace K9.Globalisation {
         public static string Element {
             get {
                 return ResourceManager.GetString("Element", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Energy.
+        /// </summary>
+        public static string Energy {
+            get {
+                return ResourceManager.GetString("Energy", resourceCulture);
             }
         }
         

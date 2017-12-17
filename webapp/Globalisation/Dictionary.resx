@@ -236,7 +236,7 @@
     <value>Character / Emotional Energy</value>
   </data>
   <data name="CoreEarth" xml:space="preserve">
-    <value>CoreEarth</value>
+    <value>Core Earth</value>
   </data>
   <data name="DateOfBirthLabel" xml:space="preserve">
     <value>Date Of Birth</value>
@@ -399,5 +399,8 @@
   </data>
   <data name="Colour" xml:space="preserve">
     <value>Colour</value>
+  </data>
+  <data name="Energy" xml:space="preserve">
+    <value>Energy</value>
   </data>
 </root>

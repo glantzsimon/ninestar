@@ -20,6 +20,7 @@
             public const string FamilyMemberLabel = "FamilyMember";
             public const string ElementLabel = "Element";
             public const string ColourLabel = "Colour";
+            public const string EnergyLabel = "Energy";
         }
 
         public static class Names

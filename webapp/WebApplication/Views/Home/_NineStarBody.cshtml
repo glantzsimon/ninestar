@@ -4,14 +4,12 @@
 {
     <div class="container margin-0 padding-0 width-100 clear-both ninestar-header-container">
         <article>
-            <h3><strong>@Model.EnergyName</strong>
-            </h3>
             <div>
-                <h4>@Html.DisplayFor(m => Model.Trigram)</h4>
+                <h4>@Html.LabelFor(m => Model.Trigram)</h4>
                 @Model.Trigram
                 <hr/>
-                <h4>@Html.DisplayFor(m => Model.EnergyDescription)</h4>
-                @Model.Description
+                <h4>@Html.LabelFor(m => Model.EnergyDescription)</h4>
+                @MvcHtmlString.Create(Model.EnergyDescription)
             </div>
         </article>
     </div>

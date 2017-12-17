@@ -589,7 +589,7 @@
     <Content Include="Images\ninestar\energies\soil.png" />
     <Content Include="Images\ninestar\energies\thunder.png" />
     <Content Include="Images\ninestar\energies\water.png" />
-    <Content Include="Images\ninestar\energies\wind.jpg" />
+    <Content Include="Images\ninestar\energies\wind.png" />
     <Content Include="Images\ninestar\trigrams\trigram-coreearth-square.png" />
     <Content Include="Images\ninestar\trigrams\trigram-fire-square.png" />
     <Content Include="Images\ninestar\trigrams\trigram-heaven-square.png" />

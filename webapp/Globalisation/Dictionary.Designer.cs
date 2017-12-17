@@ -1234,7 +1234,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wins.
+        ///   Looks up a localized string similar to Wind.
         /// </summary>
         public static string Wind {
             get {

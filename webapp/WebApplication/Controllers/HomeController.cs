@@ -48,8 +48,8 @@ namespace K9.WebApplication.Controllers
                 var ninestar = new NineStarKiModel(model.PersonModel);
                 model.NineStarKiModel = ninestar;
                 model.MainEnergyInfo = _energyRepository.Find(e => e.EnergyType == EEnergyType.MainEnergy & e.Energy == ninestar.MainEnergy.Energy).FirstOrDefault() ?? new EnergyInfo();
-                model.CharacterEnergyInfo = _energyRepository.Find(e =>e.EnergyType == EEnergyType.MainEnergy & e.Energy == ninestar.MainEnergy.Energy).FirstOrDefault() ?? new EnergyInfo();
-                model.RisingEnergyInfo = _energyRepository.Find(e => e.EnergyType == EEnergyType.MainEnergy & e.Energy == ninestar.MainEnergy.Energy).FirstOrDefault() ?? new EnergyInfo();
+                model.CharacterEnergyInfo = _energyRepository.Find(e =>e.EnergyType == EEnergyType.CharacterEnergy & e.Energy == ninestar.CharacterEnergy.Energy).FirstOrDefault() ?? new EnergyInfo();
+                model.RisingEnergyInfo = _energyRepository.Find(e => e.EnergyType == EEnergyType.RisingEnergy & e.Energy == ninestar.RisingEnergy.Energy).FirstOrDefault() ?? new EnergyInfo();
             }
             return View("Index", model);
         }

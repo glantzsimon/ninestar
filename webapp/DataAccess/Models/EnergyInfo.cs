@@ -3,6 +3,7 @@ using K9.Base.DataAccessLayer.Extensions;
 using K9.Base.DataAccessLayer.Models;
 using K9.DataAccessLayer.Enums;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -26,40 +27,47 @@ namespace K9.DataAccessLayer.Models
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.EnergyTypeLabel)]
 	    public string EnergyTypeName => EnergyType.GetLocalisedLanguageName();
 
-	    [StringLength(int.MaxValue)]
-	    [DataType(DataType.MultilineText)]
+        [AllowHtml]
+	    [DataType(DataType.Html)]
+        [StringLength(int.MaxValue)]
         [Required(ErrorMessageResourceType = typeof(K9.Base.Globalisation.Dictionary), ErrorMessageResourceName = K9.Base.Globalisation.Strings.ErrorMessages.FieldIsRequired)]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TrigramLabel)]
         public string Trigram { get; set; }
 
-	    [StringLength(int.MaxValue)]
-	    [DataType(DataType.MultilineText)]
-        [Required(ErrorMessageResourceType = typeof(K9.Base.Globalisation.Dictionary), ErrorMessageResourceName = K9.Base.Globalisation.Strings.ErrorMessages.FieldIsRequired)]
+	    [AllowHtml]
+	    [DataType(DataType.Html)]
+        [StringLength(int.MaxValue)]
+	    [Required(ErrorMessageResourceType = typeof(K9.Base.Globalisation.Dictionary), ErrorMessageResourceName = K9.Base.Globalisation.Strings.ErrorMessages.FieldIsRequired)]
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.EnergyDescriptionLabel)]
 	    public string EnergyDescription { get; set; }
 
-	    [StringLength(int.MaxValue)]
-	    [DataType(DataType.MultilineText)]
+	    [AllowHtml]
+	    [DataType(DataType.Html)]
+        [StringLength(int.MaxValue)]
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ChildhoodLabel)]
 	    public string Childhood { get; set; }
 
+	    [AllowHtml]
+	    [DataType(DataType.Html)]
         [StringLength(int.MaxValue)]
-	    [DataType(DataType.MultilineText)]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.EnergyDescriptionLabel)]
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.EnergyDescriptionLabel)]
 	    public string Health { get; set; }
 
-	    [StringLength(int.MaxValue)]
-	    [DataType(DataType.MultilineText)]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.EnergyDescriptionLabel)]
+	    [AllowHtml]
+	    [DataType(DataType.Html)]
+        [StringLength(int.MaxValue)]
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.EnergyDescriptionLabel)]
 	    public string Occupations { get; set; }
 
+	    [AllowHtml]
+	    [DataType(DataType.Html)]
         [StringLength(int.MaxValue)]
-        [DataType(DataType.MultilineText)]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PersonalDevelopemntLabel)]
         public string PersonalDevelopemnt { get; set; }
 
-	    [StringLength(int.MaxValue)]
-	    [DataType(DataType.MultilineText)]
+	    [AllowHtml]
+	    [DataType(DataType.Html)]
+        [StringLength(int.MaxValue)]
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ExamplesLabel)]
 	    public string Examples { get; set; }
 

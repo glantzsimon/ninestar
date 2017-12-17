@@ -223,6 +223,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string coreearth_description {
+            get {
+                return ResourceManager.GetString("coreearth_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string coreearth_trigram {
+            get {
+                return ResourceManager.GetString("coreearth_trigram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Currency.
         /// </summary>
         public static string CurrencyLabel {
@@ -498,6 +516,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string fire_description {
+            get {
+                return ResourceManager.GetString("fire_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string fire_trigram {
+            get {
+                return ResourceManager.GetString("fire_trigram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gender.
         /// </summary>
         public static string GenderLabel {
@@ -534,6 +570,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string heaven_description {
+            get {
+                return ResourceManager.GetString("heaven_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string heaven_trigram {
+            get {
+                return ResourceManager.GetString("heaven_trigram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hermaphrodite.
         /// </summary>
         public static string Hermaphrodite {
@@ -557,6 +611,24 @@ namespace K9.Globalisation {
         public static string Lake {
             get {
                 return ResourceManager.GetString("Lake", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string lake_description {
+            get {
+                return ResourceManager.GetString("lake_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string lake_trigram {
+            get {
+                return ResourceManager.GetString("lake_trigram", resourceCulture);
             }
         }
         
@@ -665,6 +737,24 @@ namespace K9.Globalisation {
         public static string Mountain {
             get {
                 return ResourceManager.GetString("Mountain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string mountain_description {
+            get {
+                return ResourceManager.GetString("mountain_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string mountain_trigram {
+            get {
+                return ResourceManager.GetString("mountain_trigram", resourceCulture);
             }
         }
         
@@ -836,6 +926,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string soil_description {
+            get {
+                return ResourceManager.GetString("soil_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string soil_trigram {
+            get {
+                return ResourceManager.GetString("soil_trigram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to South.
         /// </summary>
         public static string South {
@@ -899,6 +1007,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string thunder_description {
+            get {
+                return ResourceManager.GetString("thunder_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string thunder_trigram {
+            get {
+                return ResourceManager.GetString("thunder_trigram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Trans Female.
         /// </summary>
         public static string TransFemale {
@@ -949,6 +1075,28 @@ namespace K9.Globalisation {
         public static string Water {
             get {
                 return ResourceManager.GetString("Water", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. They can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///
+        ///Many famous explorers were water energies.
+        ///.
+        /// </summary>
+        public static string water_description {
+            get {
+                return ResourceManager.GetString("water_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to One yang line encapsulated by two yin lines. Hidden strength and depth within. symbolic of winter&apos;s apparent dormancy on the surface, whilst beneath major change is taking place..
+        /// </summary>
+        public static string water_trigram {
+            get {
+                return ResourceManager.GetString("water_trigram", resourceCulture);
             }
         }
         
@@ -1008,6 +1156,24 @@ namespace K9.Globalisation {
         public static string Wind {
             get {
                 return ResourceManager.GetString("Wind", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string wind_description {
+            get {
+                return ResourceManager.GetString("wind_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string wind_trigram {
+            get {
+                return ResourceManager.GetString("wind_trigram", resourceCulture);
             }
         }
         

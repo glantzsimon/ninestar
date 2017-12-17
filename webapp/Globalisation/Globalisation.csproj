@@ -63,6 +63,42 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Articles\en-gb\coreearth-trigram.txt" />
+    <Content Include="Articles\en-gb\fire-description.txt" />
+    <Content Include="Articles\en-gb\heaven-description.txt" />
+    <Content Include="Articles\en-gb\lake-description.txt" />
+    <Content Include="Articles\en-gb\mountain-description.txt" />
+    <Content Include="Articles\en-gb\soil-description.txt" />
+    <Content Include="Articles\en-gb\soil-trigram.txt" />
+    <Content Include="Articles\en-gb\thunder-description.txt" />
+    <Content Include="Articles\en-gb\thunder-trigram.txt" />
+    <Content Include="Articles\en-gb\water-description.txt" />
+    <Content Include="Articles\en-gb\coreearth-description.txt" />
+    <Content Include="Articles\en-gb\wind-description.txt" />
+    <Content Include="Articles\en-gb\wind-trigram.txt" />
+    <Content Include="Articles\en-gb\heaven-trigram.txt" />
+    <Content Include="Articles\en-gb\lake-trigram.txt" />
+    <Content Include="Articles\en-gb\mountain-trigram.txt" />
+    <Content Include="Articles\en-gb\fire-trigram.txt" />
+    <Content Include="Articles\en-gb\water-trigram.txt" />
+    <Content Include="Articles\fr\coreearth-description.txt" />
+    <Content Include="Articles\fr\coreearth-trigram.txt" />
+    <Content Include="Articles\fr\fire-description.txt" />
+    <Content Include="Articles\fr\fire-trigram.txt" />
+    <Content Include="Articles\fr\heaven-description.txt" />
+    <Content Include="Articles\fr\heaven-trigram.txt" />
+    <Content Include="Articles\fr\lake-description.txt" />
+    <Content Include="Articles\fr\lake-trigram.txt" />
+    <Content Include="Articles\fr\mountain-description.txt" />
+    <Content Include="Articles\fr\mountain-trigram.txt" />
+    <Content Include="Articles\fr\soil-description.txt" />
+    <Content Include="Articles\fr\soil-trigram.txt" />
+    <Content Include="Articles\fr\thunder-description.txt" />
+    <Content Include="Articles\fr\thunder-trigram.txt" />
+    <Content Include="Articles\fr\water-description.txt" />
+    <Content Include="Articles\fr\water-trigram.txt" />
+    <Content Include="Articles\fr\wind-description.txt" />
+    <Content Include="Articles\fr\wind-trigram.txt" />
     <Content Include="Templates\en-gb\DonationReceivedEmail.htm" />
     <Content Include="Templates\en-gb\PasswordResetEmail.htm" />
     <Content Include="Templates\en-gb\SupportQuery.htm" />
@@ -79,10 +115,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Articles\en-gb\" />
-    <Folder Include="Articles\fr\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

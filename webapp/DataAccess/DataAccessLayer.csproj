@@ -153,7 +153,7 @@
     <Compile Include="Database\DatabaseInitialiser.cs" />
     <Compile Include="Database\Db.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
-    <Compile Include="Database\Seeds\SchoolSeeder.cs" />
+    <Compile Include="Database\Seeds\EnergiesSeeder.cs" />
     <Compile Include="Enums\EEnergyType.cs" />
     <Compile Include="Enums\EGender.cs" />
     <Compile Include="Extensions\Extensions.cs" />

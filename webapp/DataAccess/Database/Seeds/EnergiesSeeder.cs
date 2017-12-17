@@ -1,9 +1,9 @@
 ﻿using K9.Base.DataAccessLayer.Extensions;
+using K9.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Models;
-using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using K9.DataAccessLayer.Enums;
+using K9.Globalisation;
 
 namespace K9.DataAccessLayer.Database.Seeds
 {
@@ -18,7 +18,7 @@ namespace K9.DataAccessLayer.Database.Seeds
 					{
 					    EnergyType = EEnergyType.MainEnergy,
                         Energy = ENineStarEnergy.Water,
-                        Trigram = ""
+                        Trigram = Dictionary.water_trigram
 					},
 					//new EnergyInfo {FirstMidName = "Meredith", LastName = "Alonso", EnrollmentDate = DateTime.Parse("2002-09-01")},
 				};

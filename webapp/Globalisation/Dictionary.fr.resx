@@ -400,4 +400,7 @@
   <data name="Energy" xml:space="preserve">
     <value>Energie</value>
   </data>
+  <data name="BetaWarning" xml:space="preserve">
+    <value>Ce site est en cours de développement. Nous rajoutons régulièrement de nouvelles fonctionalités. Vos commentaires sont les bienvenus. Veuillez visite la page support si vous voulez nous contacter.</value>
+  </data>
 </root>

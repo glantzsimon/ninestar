@@ -223,6 +223,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Attributes\NineStarEnumMetaDataAttribute.cs" />
     <Compile Include="Config\StripeConfiguration.cs" />
+    <Compile Include="Constants\SessionConstants.cs" />
     <Compile Include="Constants\ViewDataConstants.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
     <Compile Include="Controllers\AccountControllerAjax.cs" />
@@ -247,6 +248,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\SessionHelpers.cs" />
     <Compile Include="Helpers\Separator.cs" />
     <Compile Include="Models\NineStarKiEnergy.cs" />
     <Compile Include="Models\NineStarKiModel.cs" />
@@ -887,6 +889,7 @@
     <Content Include="Views\Home\_FamilyMember.cshtml" />
     <Content Include="Views\Home\_Colour.cshtml" />
     <Content Include="Views\Home\_EnergySummary.cshtml" />
+    <Content Include="Views\Shared\_BetaPopup.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

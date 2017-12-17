@@ -403,4 +403,7 @@
   <data name="Energy" xml:space="preserve">
     <value>Energy</value>
   </data>
+  <data name="BetaWarning" xml:space="preserve">
+    <value>This site is under development and new features are being added continuously. Your feedback is welcome. Please visit the support page to get in touch.</value>
+  </data>
 </root>

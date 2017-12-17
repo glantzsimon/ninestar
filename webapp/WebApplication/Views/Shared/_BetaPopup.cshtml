@@ -1,0 +1,15 @@
+﻿@using K9.SharedLibrary.Constants
+@if (SessionHelper.GetBoolValue(K9.WebApplication.Constants.SessionConstants.BetaWarningHide) != true)
+{
+    <div id="beta-alert" class="alert alert-info alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <i class="fa fa-info-circle"></i> @K9.Globalisation.Dictionary.BetaWarning
+    </div>
+
+    <script type="text/javascript">
+        window.setTimeout(function () {
+            $("#beta-alert").fadeOut();
+            localStorage.setItem("w");
+        }, 10000);
+    </script>
+}

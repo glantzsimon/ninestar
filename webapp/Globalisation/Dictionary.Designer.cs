@@ -79,6 +79,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This site is under development and new features are being added continuously. Your feedback is welcome. Please visit the support page to get in touch..
+        /// </summary>
+        public static string BetaWarning {
+            get {
+                return ResourceManager.GetString("BetaWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Black.
         /// </summary>
         public static string Black {

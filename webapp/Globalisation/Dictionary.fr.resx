@@ -382,4 +382,10 @@
   <data name="YoungestSon" xml:space="preserve">
     <value>Fils Cadet</value>
   </data>
+  <data name="MainEnergy" xml:space="preserve">
+    <value>Enérgie Principale</value>
+  </data>
+  <data name="Trigram" xml:space="preserve">
+    <value>Trigramme</value>
+  </data>
 </root>

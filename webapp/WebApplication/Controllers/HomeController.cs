@@ -30,11 +30,16 @@ namespace K9.WebApplication.Controllers
             });
         }
 
+        [Route("calculate")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CalculateNineStarKi(NineStarKiViewModel model)
         {
-            return View("Index");
+            if (model.PersonModel != null)
+            {
+                model.NineStarKiModel = new NineStarKiModel(model.PersonModel);
+            }
+            return View("Index", model);
         }
 
         public ActionResult SetLanguage(string languageCode, string cultureCode)

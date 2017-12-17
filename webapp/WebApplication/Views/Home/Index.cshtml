@@ -1,15 +1,18 @@
-﻿@{
+﻿@model K9.WebApplication.ViewModels.NineStarKiViewModel
+
+@{
     ViewBag.Title = Dictionary.Home;
     ViewBag.SubTitle = K9.Globalisation.Dictionary.CalculateYourNineStarKi;
     ViewBag.Jarallax = "jarallax";
-    Layout = "../Shared/_LayoutFormSmall.cshtml";
+    Layout = "../Shared/_LayoutForm.cshtml";
 }
 
-<div class="container">
-    <div class="col-md-4">
+<div class="container margin-0 padding-0 width-100">
+    <div class="col-md-4 padding-0">
         @Html.Partial("_Calculator")
     </div>
-    <div class="col-md-8">
-        @Html.Partial("_Results")
-        <div class="clearfix"> </div>
+    <div class="col-md-8 padding-0 padding-left-20-desktop">
+        @Html.Partial("_ResultsSummary", Model.NineStarKiModel)
     </div>
+    
+</div>

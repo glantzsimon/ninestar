@@ -385,4 +385,10 @@
   <data name="YoungestSon" xml:space="preserve">
     <value>Youngest Son</value>
   </data>
+  <data name="MainEnergy" xml:space="preserve">
+    <value>Main Energy</value>
+  </data>
+  <data name="Trigram" xml:space="preserve">
+    <value>Trigram</value>
+  </data>
 </root>

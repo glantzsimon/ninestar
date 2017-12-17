@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
-using Microsoft.Ajax.Utilities;
 
 namespace K9.WebApplication.Models
 {
@@ -26,7 +23,6 @@ namespace K9.WebApplication.Models
         public NineStarKiEnergy CharacterEnergy { get; set; }
 
         [UIHint("Energy")]
-        [Required(ErrorMessageResourceType = typeof(K9.Base.Globalisation.Dictionary), ErrorMessageResourceName = K9.Base.Globalisation.Strings.ErrorMessages.FieldIsRequired)]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.RisingEnergyLabel)]
         public NineStarKiEnergy RisingEnergy { get; set; }
 

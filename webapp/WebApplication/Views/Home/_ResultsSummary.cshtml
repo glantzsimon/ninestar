@@ -1,0 +1,10 @@
+﻿@model K9.WebApplication.Models.NineStarKiModel
+
+@if (Model != null)
+{
+    <div class="ninestar-summmary container padding-0">
+        @Html.DisplayFor(m => Model.MainEnergy.Energy)
+        @Html.DisplayFor(m => Model.CharacterEnergy.Energy)
+        @Html.DisplayFor(m => Model.RisingEnergy.Energy)
+    </div>
+}

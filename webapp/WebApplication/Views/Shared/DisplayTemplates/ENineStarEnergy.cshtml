@@ -1,0 +1,8 @@
+﻿@using K9.WebApplication.Models
+@model K9.WebApplication.Models.ENineStarEnergy
+ @{
+     var ninestarClass = "";
+ }
+<div class="col-md-4 col-sm-4 col-xs-4 padding-0">
+    <img alt="@Model.ToString().ToLower()" class="auto-size" src="/Images/ninestar/energies/@(Model.ToString().ToLower()).png"/>
+</div>

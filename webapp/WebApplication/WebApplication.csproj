@@ -265,6 +265,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Config\.gitattributes" />
+    <Content Include="Content\fonts\alex-brush-v8-latin-regular.svg" />
     <Content Include="Content\k9\scroller.css" />
     <Content Include="Content\k9\fileUpload.css" />
     <Content Include="Content\fontawesome\font-awesome.css" />
@@ -272,6 +273,7 @@
     <Content Include="Content\site\desktop.css" />
     <Content Include="Content\site\elements.css" />
     <Content Include="Content\site\mobile.css" />
+    <Content Include="Content\site\sections\ninestar.css" />
     <Content Include="Content\site\sections\shop.css" />
     <Content Include="Content\site\sections\archive.css" />
     <Content Include="Content\site\shared.css" />
@@ -307,34 +309,6 @@
     <Content Include="Content\k9\pageSpinner.css" />
     <Content Include="Content\_colors.txt" />
     <Content Include="Global.asax" />
-    <Content Include="Images\archive\upload\ArchiveItem\2\sample.mkv" />
-    <Content Include="Images\archive\upload\ArchiveItem\2\sample.mov" />
-    <Content Include="Images\archive\upload\ArchiveItem\2\sample.mp4" />
-    <Content Include="Images\archive\upload\ArchiveItem\2\sample.mpg" />
-    <Content Include="Images\archive\upload\ArchiveItem\2\sample.swf" />
-    <Content Include="Images\archive\upload\ArchiveItem\2\sample.wmv" />
-    <Content Include="Images\archive\upload\ArchiveItem\3\animated.gif" />
-    <Content Include="Images\archive\upload\ArchiveItem\3\progressive.jpg" />
-    <Content Include="Images\archive\upload\ArchiveItem\3\sample.gif" />
-    <Content Include="Images\archive\upload\ArchiveItem\3\sample.jpg" />
-    <Content Include="Images\archive\upload\ArchiveItem\3\sample.png" />
-    <Content Include="Images\archive\upload\ArchiveItem\3\sample.tiff" />
-    <Content Include="Images\archive\upload\ArchiveItem\4\audio4.mp3" />
-    <Content Include="Images\archive\upload\ArchiveItem\4\Autumn %281%29.wma" />
-    <Content Include="Images\archive\upload\ArchiveItem\4\Autumn.wma" />
-    <Content Include="Images\archive\upload\ArchiveItem\4\sample.aac" />
-    <Content Include="Images\archive\upload\ArchiveItem\4\sample.ac3" />
-    <Content Include="Images\archive\upload\ArchiveItem\4\sample.aiff" />
-    <Content Include="Images\archive\upload\ArchiveItem\4\sample.au" />
-    <Content Include="Images\archive\upload\ArchiveItem\4\sample.flac" />
-    <Content Include="Images\archive\upload\ArchiveItem\4\sample.m4a" />
-    <Content Include="Images\archive\upload\ArchiveItem\4\sample.mid" />
-    <Content Include="Images\archive\upload\ArchiveItem\4\sample.mka" />
-    <Content Include="Images\archive\upload\ArchiveItem\4\sample.mp3" />
-    <Content Include="Images\archive\upload\ArchiveItem\4\sample.wav" />
-    <Content Include="Images\archive\upload\ArchiveItem\4\sample.wma" />
-    <Content Include="Images\archive\upload\ArchiveItem\6\botf 2.txt" />
-    <Content Include="Images\archive\upload\ArchiveItem\6\todo.txt" />
     <Content Include="Images\background\stars.jpg" />
     <Content Include="Images\company\logo-small.png" />
     <Content Include="Images\company\logo.png" />
@@ -585,16 +559,6 @@
     <Content Include="Images\flags\za.png" />
     <Content Include="Images\flags\zm.png" />
     <Content Include="Images\flags\zw.png" />
-    <Content Include="Images\home\context2\aims1.jpg" />
-    <Content Include="Images\home\context2\iboga2.jpg" />
-    <Content Include="Images\home\context2\wood1.jpg" />
-    <Content Include="Images\home\context3\0024-2686_01.jpg" />
-    <Content Include="Images\home\context3\9446-600.png" />
-    <Content Include="Images\home\context3\GMA3554_Iboga_Full.jpg" />
-    <Content Include="Images\home\context3\ibogene.jpg" />
-    <Content Include="Images\home\slides\aims1.jpg" />
-    <Content Include="Images\home\slides\aims2.jpg" />
-    <Content Include="Images\home\slides\aims3.jpg" />
     <Content Include="Images\icons\android-chrome-192x192.png" />
     <Content Include="Images\icons\apple-touch-icon-114x114.png" />
     <Content Include="Images\icons\apple-touch-icon-120x120.png" />
@@ -611,6 +575,23 @@
     <Content Include="Images\icons\favicon-96x96.png" />
     <Content Include="Images\icons\favicon.ico" />
     <Content Include="Images\icons\safari-pinned-tab.svg" />
+    <Content Include="Images\ninestar\energies\coreearth.png" />
+    <Content Include="Images\ninestar\energies\fire.png" />
+    <Content Include="Images\ninestar\energies\heaven.png" />
+    <Content Include="Images\ninestar\energies\lake.png" />
+    <Content Include="Images\ninestar\energies\mountain.png" />
+    <Content Include="Images\ninestar\energies\soil.png" />
+    <Content Include="Images\ninestar\energies\thunder.png" />
+    <Content Include="Images\ninestar\energies\water.png" />
+    <Content Include="Images\ninestar\energies\wind.jpg" />
+    <Content Include="Images\ninestar\trigrams\trigram-fire.jpg" />
+    <Content Include="Images\ninestar\trigrams\trigram-heaven.jpg" />
+    <Content Include="Images\ninestar\trigrams\trigram-lake.jpg" />
+    <Content Include="Images\ninestar\trigrams\trigram-mountain.jpg" />
+    <Content Include="Images\ninestar\trigrams\trigram-soil.jpg" />
+    <Content Include="Images\ninestar\trigrams\trigram-thunder.jpg" />
+    <Content Include="Images\ninestar\trigrams\trigram-water.jpg" />
+    <Content Include="Images\ninestar\trigrams\trigram-wind.jpg" />
     <Content Include="Images\shared\ninestar-spinner.gif" />
     <Content Include="Images\template\1.jpg" />
     <Content Include="Images\template\2.jpg" />
@@ -681,6 +662,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\archive\upload\ArchiveItem\" />
+    <Folder Include="Images\home\slides\" />
     <Folder Include="Upload\" />
   </ItemGroup>
   <ItemGroup>
@@ -810,7 +793,6 @@
     <Content Include="Views\Shared\_Navbar.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutFormMaster.cshtml" />
-    <Content Include="Images\home\animated-waterfalls.webp" />
     <Content Include="Views\NewsItems\_DisplayFields.cshtml" />
     <Content Include="Views\NewsItems\_EditFields.cshtml" />
     <Content Include="Views\NewsItems\Create.cshtml" />
@@ -829,22 +811,11 @@
     <Content Include="Views\Shared\Controls\_LanguageSelector.cshtml" />
     <Content Include="Views\Shared\_FooterNewsScroller.cshtml" />
     <Content Include="Views\News\_NewsSummary.cshtml" />
-    <Content Include="Images\archive\upload\ArchiveItem\1\Copy-Angela Thomas Facilities and property management  CV 081117  V2 %281%29.doc" />
-    <Content Include="Images\archive\upload\ArchiveItem\1\Copy-Angela Thomas Facilities and property management  CV 081117  V2.pdf" />
-    <Content Include="Images\archive\upload\ArchiveItem\1\Dadaabc teaching profile.docx" />
-    <Content Include="Images\archive\upload\ArchiveItem\1\Healing-Portal-Conditions-Sub-Conditions-Map.docx" />
-    <Content Include="Images\archive\upload\ArchiveItem\2\sample.webm" />
-    <Content Include="Images\archive\upload\ArchiveItem\3\sample.webp" />
-    <Content Include="Images\archive\upload\ArchiveItem\4\sample.amr" />
-    <Content Include="Images\archive\upload\ArchiveItem\4\sample.ogg" />
-    <Content Include="Images\archive\upload\ArchiveItem\4\sample.ra" />
-    <Content Include="Images\archive\upload\ArchiveItem\4\sample.voc" />
-    <Content Include="Images\archive\upload\ArchiveItem\5\Copy-Angela Thomas Facilities and property management  CV 081117  V2 %281%29.doc" />
-    <Content Include="Images\archive\upload\ArchiveItem\5\Dadaabc teaching profile.docx" />
-    <Content Include="Images\archive\upload\ArchiveItem\5\Healing-Portal-Conditions-Sub-Conditions-Map.docx" />
-    <Content Include="Images\archive\upload\ArchiveItem\6\debug.log" />
-    <Content Include="Images\archive\upload\ArchiveItem\6\wiwi.docx" />
     <Content Include="Images\icons\manifest.json" />
+    <Content Include="Content\fonts\alex-brush-v8-latin-regular.eot" />
+    <Content Include="Content\fonts\alex-brush-v8-latin-regular.ttf" />
+    <Content Include="Content\fonts\alex-brush-v8-latin-regular.woff" />
+    <Content Include="Content\fonts\alex-brush-v8-latin-regular.woff2" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\Integration.pubxml" />
     <None Include="Properties\PublishProfiles\IntegrationLocal.pubxml" />
@@ -900,6 +871,9 @@
     <Content Include="Views\Shared\EditorTemplates\Currency.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Gender.cshtml" />
     <Content Include="Views\Home\_Results.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Energy.cshtml" />
+    <Content Include="Views\Home\_ResultsSummary.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ENineStarEnergy.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

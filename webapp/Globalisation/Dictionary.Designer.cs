@@ -482,6 +482,15 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to Main Energy.
         /// </summary>
+        public static string MainEnergy {
+            get {
+                return ResourceManager.GetString("MainEnergy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main Energy.
+        /// </summary>
         public static string MainEnergyLabel {
             get {
                 return ResourceManager.GetString("MainEnergyLabel", resourceCulture);
@@ -805,6 +814,15 @@ namespace K9.Globalisation {
         public static string TransMale {
             get {
                 return ResourceManager.GetString("TransMale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trigram.
+        /// </summary>
+        public static string Trigram {
+            get {
+                return ResourceManager.GetString("Trigram", resourceCulture);
             }
         }
         

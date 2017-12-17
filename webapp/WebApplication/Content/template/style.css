@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'Alex Brush';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/alex-brush-v8-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Alex Brush Regular'), local('AlexBrush-Regular'),
+         url('../fonts/alex-brush-v8-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/alex-brush-v8-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/alex-brush-v8-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/alex-brush-v8-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/alex-brush-v8-latin-regular.svg#AlexBrush') format('svg'); /* Legacy iOS */
+}
+
 body a, h4 {
     transition: 0.5s all;
     -webkit-transition: 0.5s all;

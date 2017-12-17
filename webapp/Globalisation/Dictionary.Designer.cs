@@ -1052,7 +1052,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Trigram.
+        ///   Looks up a localized string similar to Trigram Interpretation.
         /// </summary>
         public static string TrigramLabel {
             get {
@@ -1080,10 +1080,12 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. They can be adventurous and vivacious, or quiet, reflective and withdrawn.
-        ///
-        ///Many famous explorers were water energies.
-        ///.
+        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_description {
             get {

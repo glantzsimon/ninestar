@@ -71,5 +71,6 @@ namespace K9.DataAccessLayer.Models
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ExamplesLabel)]
 	    public string Examples { get; set; }
 
-    }
+        public NineStarKiEnergy NineStarKiEnergy => new NineStarKiEnergy(Energy);
+	}
 }

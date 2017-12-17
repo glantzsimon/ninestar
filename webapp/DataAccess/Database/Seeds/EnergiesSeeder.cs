@@ -24,10 +24,15 @@ namespace K9.DataAccessLayer.Database.Seeds
 				};
 			    energies.ForEach(e =>
 				{
-					if (!context.Exists<EnergyInfo>(en => en.EnergyType == e.EnergyType && en.Energy == e.Energy))
-					{
-						context.Set<EnergyInfo>().Add(e);
-					}
+				    if (!context.Exists<EnergyInfo>(en => en.EnergyType == e.EnergyType && en.Energy == e.Energy))
+				    {
+				        context.Set<EnergyInfo>().Add(e);
+				    }
+				    else
+				    {
+                        context.Set<EnergyInfo>().Attach(e);
+				        context.Entry(e).State = EntityState.Modified;
+                    }
 				});
 				context.SaveChanges();
 			}

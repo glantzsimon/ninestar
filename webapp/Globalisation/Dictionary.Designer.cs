@@ -160,6 +160,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Chen.
+        /// </summary>
+        public static string Chen {
+            get {
+                return ResourceManager.GetString("Chen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ch&apos;ien.
+        /// </summary>
+        public static string Chien {
+            get {
+                return ResourceManager.GetString("Chien", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Childhood.
         /// </summary>
         public static string ChildhoodLabel {
@@ -597,11 +615,38 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to K&apos;An.
+        /// </summary>
+        public static string Kan {
+            get {
+                return ResourceManager.GetString("Kan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ken.
+        /// </summary>
+        public static string Ken {
+            get {
+                return ResourceManager.GetString("Ken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nine star ki astrology horoscope love relationships.
         /// </summary>
         public static string Keywords {
             get {
                 return ResourceManager.GetString("Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to K&apos;Un.
+        /// </summary>
+        public static string Kun {
+            get {
+                return ResourceManager.GetString("Kun", resourceCulture);
             }
         }
         
@@ -629,6 +674,15 @@ namespace K9.Globalisation {
         public static string lake_trigram {
             get {
                 return ResourceManager.GetString("lake_trigram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Li.
+        /// </summary>
+        public static string Li {
+            get {
+                return ResourceManager.GetString("Li", resourceCulture);
             }
         }
         
@@ -980,6 +1034,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sun.
+        /// </summary>
+        public static string Sun {
+            get {
+                return ResourceManager.GetString("Sun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
         ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; &gt;
         ///
@@ -1066,6 +1129,15 @@ namespace K9.Globalisation {
         public static string TrigramLabel {
             get {
                 return ResourceManager.GetString("TrigramLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tui.
+        /// </summary>
+        public static string Tui {
+            get {
+                return ResourceManager.GetString("Tui", resourceCulture);
             }
         }
         

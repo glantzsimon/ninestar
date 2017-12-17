@@ -400,6 +400,12 @@
   <data name="BetaWarning" xml:space="preserve">
     <value>Ce site est en cours de développement. Nous rajoutons régulièrement de nouvelles fonctionalités. Vos commentaires sont les bienvenus. Veuillez visite la page support si vous voulez nous contacter.</value>
   </data>
+  <data name="Chen" xml:space="preserve">
+    <value>Chen</value>
+  </data>
+  <data name="Chien" xml:space="preserve">
+    <value>Ch'ien</value>
+  </data>
   <data name="ChildhoodLabel" xml:space="preserve">
     <value>Enfance</value>
   </data>
@@ -433,11 +439,23 @@
   <data name="heaven_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\heaven-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="Kan" xml:space="preserve">
+    <value>K'An</value>
+  </data>
+  <data name="Ken" xml:space="preserve">
+    <value>Ken</value>
+  </data>
+  <data name="Kun" xml:space="preserve">
+    <value>K'Un</value>
+  </data>
   <data name="lake_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\lake-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="lake_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\lake-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Li" xml:space="preserve">
+    <value>Li</value>
   </data>
   <data name="mountain_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\mountain-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -460,6 +478,9 @@
   <data name="soil_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\soil-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="Sun" xml:space="preserve">
+    <value>Sun</value>
+  </data>
   <data name="thunder_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\thunder-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -468,6 +489,9 @@
   </data>
   <data name="TrigramLabel" xml:space="preserve">
     <value>Interprétation de Trigramme</value>
+  </data>
+  <data name="Tui" xml:space="preserve">
+    <value>Tui</value>
   </data>
   <data name="water_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\water-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

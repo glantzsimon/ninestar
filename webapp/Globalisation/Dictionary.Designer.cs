@@ -151,6 +151,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Colour.
+        /// </summary>
+        public static string Colour {
+            get {
+                return ResourceManager.GetString("Colour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to NineStar has been created to share knowledge about the ancient wisdom of nine star ki astrology to help people gain a better understanding of themselves and of their loved ones, as well as the many cycles that affect their lives..
         /// </summary>
         public static string CompanyBlurbFooter {
@@ -386,6 +395,24 @@ namespace K9.Globalisation {
         public static string EldestSon {
             get {
                 return ResourceManager.GetString("EldestSon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Element.
+        /// </summary>
+        public static string Element {
+            get {
+                return ResourceManager.GetString("Element", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Family Member.
+        /// </summary>
+        public static string FamilyMember {
+            get {
+                return ResourceManager.GetString("FamilyMember", resourceCulture);
             }
         }
         

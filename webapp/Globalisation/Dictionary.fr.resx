@@ -388,4 +388,13 @@
   <data name="Trigram" xml:space="preserve">
     <value>Trigramme</value>
   </data>
+  <data name="Element" xml:space="preserve">
+    <value>Elément</value>
+  </data>
+  <data name="FamilyMember" xml:space="preserve">
+    <value>Membre de Famille</value>
+  </data>
+  <data name="Colour" xml:space="preserve">
+    <value>Couleur</value>
+  </data>
 </root>

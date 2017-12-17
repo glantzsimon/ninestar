@@ -124,20 +124,47 @@ namespace K9.WebApplication.Models
 
         public ENineStarEnergy Energy { get; }
 
-        public int EnergyNumber => (int) Energy;
+        /// <summary>
+        /// Used to determine YinYang of 5 energies
+        /// </summary>
+        public ENineStarEnergy RelatedEnergy { get; set; }
+
+        /// <summary>
+        /// Used to determine YinYang of 5.5.5 energies
+        /// </summary>
+        public EGender Gender { get; set; }
+
+        public int EnergyNumber => (int)Energy;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.YinYangLabel)]
-        public ENineStarKiYinYang YinYang => MetaData.YinYang;
+        public ENineStarKiYinYang YinYang => GetYinYang();
 
-        public NineStarEnumMetaDataAttribute MetaData => Energy.GetAttribute<NineStarEnumMetaDataAttribute>();
-
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.FamilyMemberLabel)]
         public string FamilyMember => MetaData.GetFamilyMember();
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.FamilyMemberLabel)]
         public string Element => MetaData.GetElement();
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ColourLabel)] 
         public string Colour => MetaData.GetColour();
 
         public string Direction => MetaData.GetDirection();
+
+        private NineStarEnumMetaDataAttribute MetaData => Energy.GetAttribute<NineStarEnumMetaDataAttribute>();
+        private NineStarEnumMetaDataAttribute RelatedMetaData => RelatedEnergy.GetAttribute<NineStarEnumMetaDataAttribute>();
+
+        private ENineStarKiYinYang GetYinYang()
+        {
+            if (Energy == ENineStarEnergy.CoreEarth && RelatedEnergy == ENineStarEnergy.CoreEarth)
+            {
+                return NineStarKiModel.IsYin(Gender) ? ENineStarKiYinYang.Yin : ENineStarKiYinYang.Yang;
+            }
+            else if (Energy == ENineStarEnergy.CoreEarth && RelatedEnergy != ENineStarEnergy.Unspecified)
+            {
+                return RelatedMetaData.YinYang;
+            }
+            return MetaData.YinYang;
+        }
 
     }
 }

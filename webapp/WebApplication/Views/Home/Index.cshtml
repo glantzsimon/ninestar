@@ -1,4 +1,5 @@
-﻿@model K9.WebApplication.ViewModels.NineStarKiViewModel
+﻿@using K9.WebApplication.Helpers
+@model K9.WebApplication.ViewModels.NineStarKiViewModel
 
 @{
     ViewBag.Title = Dictionary.Home;
@@ -8,11 +9,30 @@
 }
 
 <div class="container margin-0 padding-0 width-100">
-    <div class="col-md-4 padding-0">
+    <div class="col-md-4 col-sm-4 padding-0">
         @Html.Partial("_Calculator")
     </div>
-    <div class="col-md-8 padding-0 padding-left-20-desktop">
-        @Html.Partial("_ResultsSummary", Model.NineStarKiModel)
+    <div class="col-md-8 col-sm-8 padding-0 padding-left-20-desktop">
+        @if (Model.NineStarKiModel != null)
+        {
+            @Html.Partial("_EnergySummary", Model.NineStarKiModel)
+        }
     </div>
-    
 </div>
+
+@if (Model.NineStarKiModel != null)
+{
+    <div class="ninestar-summmary container padding-0">
+        <h2>@K9.Globalisation.Dictionary.MainEnergy</h2>
+        <hr />
+        @Html.Partial("_NineStarHeader", Model.NineStarKiModel.MainEnergy)
+
+        <h2>@K9.Globalisation.Dictionary.CharacterEnergyLabel</h2>
+        <hr />
+        @Html.Partial("_NineStarHeader", Model.NineStarKiModel.CharacterEnergy)
+
+        <h2>@K9.Globalisation.Dictionary.RisingEnergyLabel</h2>
+        <hr />
+        @Html.Partial("_NineStarHeader", Model.NineStarKiModel.RisingEnergy)
+    </div>
+}

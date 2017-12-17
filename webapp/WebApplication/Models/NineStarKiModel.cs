@@ -14,15 +14,12 @@ namespace K9.WebApplication.Models
 
         public PersonModel PersonModel { get; }
 
-        [UIHint("Energy")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.MainEnergyLabel)]
         public NineStarKiEnergy MainEnergy { get; set; }
 
-        [UIHint("Energy")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CharacterEnergyLabel)]
         public NineStarKiEnergy CharacterEnergy { get; set; }
 
-        [UIHint("Energy")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.RisingEnergyLabel)]
         public NineStarKiEnergy RisingEnergy { get; set; }
 
@@ -31,9 +28,12 @@ namespace K9.WebApplication.Models
             MainEnergy = GetMainEnergy();
             CharacterEnergy = GetCharacterEnergy();
             RisingEnergy = GetRisingEnergy();
+
+            MainEnergy.RelatedEnergy = CharacterEnergy.Energy;
+            MainEnergy.Gender = PersonModel.Gender;
         }
 
-        private bool IsYin(EGender gender)
+        public static bool IsYin(EGender gender)
         {
             return new List<EGender>
             {

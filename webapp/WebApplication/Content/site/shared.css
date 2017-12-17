@@ -194,3 +194,7 @@
     height: auto;
     width: auto\9;
 }
+
+.clear-both {
+    clear: both;
+}

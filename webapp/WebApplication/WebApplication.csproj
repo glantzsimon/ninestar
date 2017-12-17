@@ -575,6 +575,11 @@
     <Content Include="Images\icons\favicon-96x96.png" />
     <Content Include="Images\icons\favicon.ico" />
     <Content Include="Images\icons\safari-pinned-tab.svg" />
+    <Content Include="Images\ninestar\elements\earth.png" />
+    <Content Include="Images\ninestar\elements\fire.png" />
+    <Content Include="Images\ninestar\elements\metal.png" />
+    <Content Include="Images\ninestar\elements\water.png" />
+    <Content Include="Images\ninestar\elements\wood.png" />
     <Content Include="Images\ninestar\energies\coreearth.png" />
     <Content Include="Images\ninestar\energies\fire.png" />
     <Content Include="Images\ninestar\energies\heaven.png" />
@@ -584,14 +589,16 @@
     <Content Include="Images\ninestar\energies\thunder.png" />
     <Content Include="Images\ninestar\energies\water.png" />
     <Content Include="Images\ninestar\energies\wind.jpg" />
-    <Content Include="Images\ninestar\trigrams\trigram-fire.jpg" />
-    <Content Include="Images\ninestar\trigrams\trigram-heaven.jpg" />
-    <Content Include="Images\ninestar\trigrams\trigram-lake.jpg" />
-    <Content Include="Images\ninestar\trigrams\trigram-mountain.jpg" />
-    <Content Include="Images\ninestar\trigrams\trigram-soil.jpg" />
-    <Content Include="Images\ninestar\trigrams\trigram-thunder.jpg" />
-    <Content Include="Images\ninestar\trigrams\trigram-water.jpg" />
-    <Content Include="Images\ninestar\trigrams\trigram-wind.jpg" />
+    <Content Include="Images\ninestar\trigrams\trigram-fire-square.png" />
+    <Content Include="Images\ninestar\trigrams\trigram-heaven-square.png" />
+    <Content Include="Images\ninestar\trigrams\trigram-lake-square.png" />
+    <Content Include="Images\ninestar\trigrams\trigram-mountain-square.png" />
+    <Content Include="Images\ninestar\trigrams\trigram-soil-square.png" />
+    <Content Include="Images\ninestar\trigrams\trigram-thunder-square.png" />
+    <Content Include="Images\ninestar\trigrams\trigram-water-square.png" />
+    <Content Include="Images\ninestar\trigrams\trigram-wind-square.png" />
+    <Content Include="Images\ninestar\yinyang\yang.png" />
+    <Content Include="Images\ninestar\yinyang\yin.png" />
     <Content Include="Images\shared\ninestar-spinner.gif" />
     <Content Include="Images\template\1.jpg" />
     <Content Include="Images\template\2.jpg" />
@@ -816,6 +823,7 @@
     <Content Include="Content\fonts\alex-brush-v8-latin-regular.ttf" />
     <Content Include="Content\fonts\alex-brush-v8-latin-regular.woff" />
     <Content Include="Content\fonts\alex-brush-v8-latin-regular.woff2" />
+    <Content Include="Images\ninestar\elements\_YinYang.cshtml" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\Integration.pubxml" />
     <None Include="Properties\PublishProfiles\IntegrationLocal.pubxml" />
@@ -870,10 +878,14 @@
     <Content Include="Views\Shared\DisplayTemplates\Currency.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Currency.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Gender.cshtml" />
-    <Content Include="Views\Home\_Results.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\Energy.cshtml" />
-    <Content Include="Views\Home\_ResultsSummary.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\ENineStarEnergy.cshtml" />
+    <Content Include="Views\Home\_NineStarHeader.cshtml" />
+    <Content Include="Views\Home\_Energy.cshtml" />
+    <Content Include="Views\Home\_Trigram.cshtml" />
+    <Content Include="Views\Home\_YinYang.cshtml" />
+    <Content Include="Views\Home\_Element.cshtml" />
+    <Content Include="Views\Home\_FamilyMember.cshtml" />
+    <Content Include="Views\Home\_Colour.cshtml" />
+    <Content Include="Views\Home\_EnergySummary.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

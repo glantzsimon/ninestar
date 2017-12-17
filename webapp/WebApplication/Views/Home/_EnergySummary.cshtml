@@ -1,0 +1,13 @@
+﻿@model K9.WebApplication.Models.NineStarKiModel
+ 
+<div id="energy-summary-container">
+    <div class="col-md-4 col-sm-4">
+        @Html.Partial("_Energy", Model.MainEnergy)
+    </div>
+    <div class="col-md-4 col-sm-4">
+        @Html.Partial("_Energy", Model.CharacterEnergy)        
+    </div>
+    <div class="col-md-4 col-sm-4">
+        @Html.Partial("_Energy", Model.RisingEnergy)
+    </div>
+</div>

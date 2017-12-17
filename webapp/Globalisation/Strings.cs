@@ -17,6 +17,9 @@
             public const string CharacterEnergyLabel = "CharacterEnergyLabel";
             public const string RisingEnergyLabel = "RisingEnergyLabel";
             public const string YinYangLabel = "YinYangLabel";
+            public const string FamilyMemberLabel = "FamilyMember";
+            public const string ElementLabel = "Element";
+            public const string ColourLabel = "Colour";
         }
 
         public static class Names

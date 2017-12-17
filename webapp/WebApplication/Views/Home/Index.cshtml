@@ -1,5 +1,4 @@
-﻿@using K9.WebApplication.Helpers
-@model K9.WebApplication.ViewModels.NineStarKiViewModel
+﻿@model K9.WebApplication.ViewModels.NineStarKiViewModel
 
 @{
     ViewBag.Title = Dictionary.Home;
@@ -28,13 +27,16 @@
         <h2>@K9.Globalisation.Dictionary.MainEnergy</h2>
         <hr />
         @Html.Partial("_NineStarHeader", Model.NineStarKiModel.MainEnergy)
+        @Html.Partial("_NineStarBody", Model.NineStarKiModel.MainEnergy)
 
         <h2>@K9.Globalisation.Dictionary.CharacterEnergyLabel</h2>
         <hr />
         @Html.Partial("_NineStarHeader", Model.NineStarKiModel.CharacterEnergy)
+        @Html.Partial("_NineStarBody", Model.NineStarKiModel.MainEnergy)
 
         <h2>@K9.Globalisation.Dictionary.RisingEnergyLabel</h2>
         <hr />
         @Html.Partial("_NineStarHeader", Model.NineStarKiModel.RisingEnergy)
+        @Html.Partial("_NineStarBody", Model.NineStarKiModel.MainEnergy)
     </div>
 }

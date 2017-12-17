@@ -298,9 +298,6 @@
   <data name="Mountain" xml:space="preserve">
     <value>Mountain</value>
   </data>
-  <data name="nine_star_intro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\nine-star-intro.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="nine_star_ki_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>text\en-gb\nine-star-ki-title.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -405,5 +402,29 @@
   </data>
   <data name="BetaWarning" xml:space="preserve">
     <value>This site is under development and new features are being added continuously. Your feedback is welcome. Please visit the support page to get in touch.</value>
+  </data>
+  <data name="ChildhoodLabel" xml:space="preserve">
+    <value>Childhood</value>
+  </data>
+  <data name="EnergyDescriptionLabel" xml:space="preserve">
+    <value>Energy Description</value>
+  </data>
+  <data name="EnergyTypeLabel" xml:space="preserve">
+    <value>Enerty Type</value>
+  </data>
+  <data name="ExamplesLabel" xml:space="preserve">
+    <value>Examples</value>
+  </data>
+  <data name="HealthLabel" xml:space="preserve">
+    <value>Health</value>
+  </data>
+  <data name="OccupationsLabel" xml:space="preserve">
+    <value>Occupations</value>
+  </data>
+  <data name="PersonalDevelopemntLabel" xml:space="preserve">
+    <value>Personal Development</value>
+  </data>
+  <data name="TrigramLabel" xml:space="preserve">
+    <value>Trigram</value>
   </data>
 </root>

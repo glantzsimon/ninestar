@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using K9.DataAccessLayer.Enums;
+using K9.DataAccessLayer.Extensions;
+using K9.DataAccessLayer.Models;
 
 namespace K9.WebApplication.Models
 {
@@ -32,17 +35,7 @@ namespace K9.WebApplication.Models
             MainEnergy.RelatedEnergy = CharacterEnergy.Energy;
             MainEnergy.Gender = PersonModel.Gender;
         }
-
-        public static bool IsYin(EGender gender)
-        {
-            return new List<EGender>
-            {
-                EGender.Female,
-                EGender.TransFemale,
-                EGender.Hermaphrodite
-            }.Contains(gender);
-        }
-
+        
         private NineStarKiEnergy GetMainEnergy()
         {
             var month = PersonModel.DateOfBirth.Month;
@@ -175,7 +168,7 @@ namespace K9.WebApplication.Models
                 energyNumber = energyNumber - 9;
             }
 
-            if (IsYin(PersonModel.Gender))
+            if (PersonModel.Gender.IsYin())
             {
                 energyNumber = InvertEnergy(energyNumber);
             }

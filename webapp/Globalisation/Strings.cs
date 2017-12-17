@@ -21,6 +21,14 @@
             public const string ElementLabel = "Element";
             public const string ColourLabel = "Colour";
             public const string EnergyLabel = "Energy";
+            public const string TrigramLabel = "TrigramLabel";
+            public const string EnergyTypeLabel = "EnergyTypeLabel";
+            public const string EnergyDescriptionLabel = "EnergyDescriptionLabel";
+            public const string HealthLabel = "HealthLabel";
+            public const string OccupationsLabel = "OccupationsLabel";
+            public const string PersonalDevelopemntLabel = "PersonalDevelopemntLabel";
+            public const string ExamplesLabel = "ExamplesLabel";
+            public const string ChildhoodLabel = "ChildhoodLabel";
         }
 
         public static class Names
@@ -73,6 +81,10 @@
             public const string Yellow = "Yellow";
             public const string Red = "Red";
             public const string Purple = "Purple";
+            public const string MainEnergy = "MainEnergyLabel";
+            public const string CharacterEnergy = "CharacterEnergyLabel";
+            public const string RisingEnergy = "RisingEnergyLabel";
+
         }
     }
 }

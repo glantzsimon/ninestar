@@ -254,6 +254,10 @@
     <Folder Include="Unit\Helpers\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccessLayer.csproj">
+      <Project>{20948D36-2ABE-4429-B175-AF781A5F6CB3}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WebApplication\WebApplication.csproj">
       <Project>{52A9C4A6-64FE-4068-A40E-A24D1DC5AB56}</Project>
       <Name>WebApplication</Name>

@@ -3,7 +3,7 @@ using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Extensions;
 using System;
 
-namespace K9.WebApplication.Attributes
+namespace K9.DataAccessLayer.Attributes
 {
     [AttributeUsage(AttributeTargets.Field)]
     public class NineStarEnumMetaDataAttribute : Attribute
@@ -14,6 +14,7 @@ namespace K9.WebApplication.Attributes
         public ENineStarKiDirection Direction { get; set; }
         public ENineStarKiYinYang YinYang { get; set; }
         public Type ResourceType { get; set; }
+        public string TrigramName { get; set; }
         public string Name { get; set; }
 
         public string GetDescription()

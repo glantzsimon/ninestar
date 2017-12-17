@@ -59,11 +59,10 @@
     <EmbeddedResource Include="Dictionary.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Dictionary.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Articles\en-gb\nine-star-intro.htm" />
-    <Content Include="Articles\fr\nine-star-intro.htm" />
     <Content Include="Templates\en-gb\DonationReceivedEmail.htm" />
     <Content Include="Templates\en-gb\PasswordResetEmail.htm" />
     <Content Include="Templates\en-gb\SupportQuery.htm" />
@@ -80,7 +79,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Articles\en-gb\" />
+    <Folder Include="Articles\fr\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

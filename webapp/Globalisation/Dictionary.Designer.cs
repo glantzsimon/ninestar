@@ -160,6 +160,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Childhood.
+        /// </summary>
+        public static string ChildhoodLabel {
+            get {
+                return ResourceManager.GetString("ChildhoodLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Colour.
         /// </summary>
         public static string Colour {
@@ -426,6 +435,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Energy Description.
+        /// </summary>
+        public static string EnergyDescriptionLabel {
+            get {
+                return ResourceManager.GetString("EnergyDescriptionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enerty Type.
+        /// </summary>
+        public static string EnergyTypeLabel {
+            get {
+                return ResourceManager.GetString("EnergyTypeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Examples.
+        /// </summary>
+        public static string ExamplesLabel {
+            get {
+                return ResourceManager.GetString("ExamplesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Family Member.
         /// </summary>
         public static string FamilyMember {
@@ -476,6 +512,15 @@ namespace K9.Globalisation {
         public static string Green {
             get {
                 return ResourceManager.GetString("Green", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Health.
+        /// </summary>
+        public static string HealthLabel {
+            get {
+                return ResourceManager.GetString("HealthLabel", resourceCulture);
             }
         }
         
@@ -624,15 +669,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        public static string nine_star_intro {
-            get {
-                return ResourceManager.GetString("nine_star_intro", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Nine star Ki.
         /// </summary>
         public static string nine_star_ki_title {
@@ -665,6 +701,15 @@ namespace K9.Globalisation {
         public static string NorthWest {
             get {
                 return ResourceManager.GetString("NorthWest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Occupations.
+        /// </summary>
+        public static string OccupationsLabel {
+            get {
+                return ResourceManager.GetString("OccupationsLabel", resourceCulture);
             }
         }
         
@@ -715,6 +760,15 @@ namespace K9.Globalisation {
         public static string PasswordResetEmail {
             get {
                 return ResourceManager.GetString("PasswordResetEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personal Development.
+        /// </summary>
+        public static string PersonalDevelopemntLabel {
+            get {
+                return ResourceManager.GetString("PersonalDevelopemntLabel", resourceCulture);
             }
         }
         
@@ -868,6 +922,15 @@ namespace K9.Globalisation {
         public static string Trigram {
             get {
                 return ResourceManager.GetString("Trigram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trigram.
+        /// </summary>
+        public static string TrigramLabel {
+            get {
+                return ResourceManager.GetString("TrigramLabel", resourceCulture);
             }
         }
         

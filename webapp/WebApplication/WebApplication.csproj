@@ -250,7 +250,6 @@
     </Compile>
     <Compile Include="Helpers\SessionHelpers.cs" />
     <Compile Include="Helpers\Separator.cs" />
-    <Compile Include="Models\NineStarKiEnergy.cs" />
     <Compile Include="Models\NineStarKiModel.cs" />
     <Compile Include="Models\PersonModel.cs" />
     <Compile Include="Models\StripeModel.cs" />
@@ -734,7 +733,6 @@
     <Content Include="Views\Countries\Create.cshtml" />
     <Content Include="Views\Countries\_EditFields.cshtml" />
     <Content Include="Views\Countries\_DisplayFields.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Student.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Course.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Student.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Course.cshtml" />
@@ -890,6 +888,9 @@
     <Content Include="Views\Home\_Colour.cshtml" />
     <Content Include="Views\Home\_EnergySummary.cshtml" />
     <Content Include="Views\Shared\_BetaPopup.cshtml" />
+    <Content Include="Views\Home\_NineStarBody.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Energy.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EnergyType.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,4 +1,6 @@
-﻿using K9.WebApplication.Models;
+﻿using K9.DataAccessLayer.Enums;
+using K9.DataAccessLayer.Models;
+using K9.WebApplication.Models;
 using System;
 using System.Diagnostics;
 using Xunit;
@@ -59,7 +61,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                 DateOfBirth = new DateTime(1979, 2, 3),
                 Gender = EGender.Male
             });
-            Assert.Equal(ENineStarEnergy.Soil, ninestar.MainEnergy.Energy);
+            Assert.Equal(ENineStarEnergy.Wind, ninestar.MainEnergy.Energy);
         }
 
         [Theory]

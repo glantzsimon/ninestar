@@ -1,4 +1,5 @@
-﻿using K9.WebApplication.Models;
+﻿using K9.DataAccessLayer.Models;
+using K9.WebApplication.Models;
 
 namespace K9.WebApplication.ViewModels
 {
@@ -6,5 +7,8 @@ namespace K9.WebApplication.ViewModels
     {
         public PersonModel PersonModel { get; set; }
         public NineStarKiModel NineStarKiModel { get; set; }
+        public EnergyInfo MainEnergyInfo { get; set; }
+        public EnergyInfo CharacterEnergyInfo { get; set; }
+        public EnergyInfo RisingEnergyInfo { get; set; }
     }
 }

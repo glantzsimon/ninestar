@@ -6,17 +6,22 @@ using K9.WebApplication.Models;
 using K9.WebApplication.ViewModels;
 using NLog;
 using System;
+using System.Linq;
 using System.Web.Mvc;
 using K9.Base.WebApplication.Helpers;
+using K9.DataAccessLayer.Enums;
+using K9.DataAccessLayer.Models;
 
 namespace K9.WebApplication.Controllers
 {
     public class HomeController : BaseController
     {
+        private readonly IRepository<EnergyInfo> _energyRepository;
 
-        public HomeController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper)
+        public HomeController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IRepository<EnergyInfo> energyRepository)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
         {
+            _energyRepository = energyRepository;
             SetBetaWarningSessionVariable();
         }
 
@@ -39,7 +44,11 @@ namespace K9.WebApplication.Controllers
         {
             if (model.PersonModel != null)
             {
-                model.NineStarKiModel = new NineStarKiModel(model.PersonModel);
+                var ninestar = new NineStarKiModel(model.PersonModel);
+                model.NineStarKiModel = ninestar;
+                model.MainEnergyInfo = _energyRepository.Find(e => e.EnergyType == EEnergyType.MainEnergy & e.Energy == ninestar.MainEnergy.Energy).FirstOrDefault();
+                model.CharacterEnergyInfo = _energyRepository.Find(e =>e.EnergyType == EEnergyType.MainEnergy & e.Energy == ninestar.MainEnergy.Energy).FirstOrDefault();
+                model.RisingEnergyInfo = _energyRepository.Find(e => e.EnergyType == EEnergyType.MainEnergy & e.Energy == ninestar.MainEnergy.Energy).FirstOrDefault();
             }
             return View("Index", model);
         }

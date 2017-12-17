@@ -27,16 +27,19 @@
         <h2>@K9.Globalisation.Dictionary.MainEnergy</h2>
         <hr />
         @Html.Partial("_NineStarHeader", Model.NineStarKiModel.MainEnergy)
-        @Html.Partial("_NineStarBody", Model.NineStarKiModel.MainEnergy)
+        <hr />
+        @Html.Partial("_NineStarBody", Model.MainEnergyInfo)
 
         <h2>@K9.Globalisation.Dictionary.CharacterEnergyLabel</h2>
         <hr />
         @Html.Partial("_NineStarHeader", Model.NineStarKiModel.CharacterEnergy)
-        @Html.Partial("_NineStarBody", Model.NineStarKiModel.MainEnergy)
+        <hr />
+        @Html.Partial("_NineStarBody", Model.CharacterEnergyInfo)
 
         <h2>@K9.Globalisation.Dictionary.RisingEnergyLabel</h2>
         <hr />
         @Html.Partial("_NineStarHeader", Model.NineStarKiModel.RisingEnergy)
-        @Html.Partial("_NineStarBody", Model.NineStarKiModel.MainEnergy)
+        <hr />
+        @Html.Partial("_NineStarBody", Model.RisingEnergyInfo)
     </div>
 }

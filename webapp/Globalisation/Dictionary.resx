@@ -403,8 +403,11 @@
   <data name="BetaWarning" xml:space="preserve">
     <value>This site is under development and new features are being added continuously. Your feedback is welcome. Please visit the support page to get in touch.</value>
   </data>
+  <data name="AboutNineStarKi" xml:space="preserve">
+    <value>About Nine Star Ki</value>
+  </data>
   <data name="AdditionalInformation" xml:space="preserve">
-    <value>Additional Information</value>
+    <value>Further Reading</value>
   </data>
   <data name="Chen" xml:space="preserve">
     <value>Chen</value>
@@ -447,9 +450,6 @@
   </data>
   <data name="heaven_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\heaven-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="History" xml:space="preserve">
-    <value>History</value>
   </data>
   <data name="Kan" xml:space="preserve">
     <value>K'An</value>
@@ -501,6 +501,9 @@
   </data>
   <data name="Sun" xml:space="preserve">
     <value>Sun</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>Support</value>
   </data>
   <data name="thunder_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\thunder-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

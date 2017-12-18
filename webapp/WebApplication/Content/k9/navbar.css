@@ -61,12 +61,11 @@ ul.nav.navbar-nav:not(.dropdown-menu) {
 
     .top-nav ul li a {
         color: #ffffff;
-        font-size: 1.2em;
-        font-weight: 400 !important;
+        font-size: 1.1em;
+        font-weight: 300 !important;
         margin: 0;
         text-decoration: none;
         padding: 1em;
-        font-weight: 300;
         letter-spacing: 1px;
         text-transform: uppercase;
     }

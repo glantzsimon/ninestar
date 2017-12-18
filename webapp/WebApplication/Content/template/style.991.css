@@ -62,7 +62,7 @@
 
     #main-menu-container.menu-main, #main-menu-container.menu-small {
         height: 52px !important;
-        background-color: rgba(10, 10, 10, 0.85);
+        background-color: rgba(10, 10, 10, 0);
     }
 
     ul#main-navbar {

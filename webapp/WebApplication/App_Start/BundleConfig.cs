@@ -25,10 +25,10 @@ namespace K9.WebApplication
                 "~/Content/k9/pageSpinner.css",
                 "~/Content/k9/fileUpload.css",
                 "~/Content/k9/scroller.css",
-                "~/Content/k9/tables.css",
-                "~/Content/k9/navbar.css"));
+                "~/Content/k9/tables.css"));
 
             bundles.Add(new StyleBundle("~/Content/tpl").Include(
+                "~/Content/k9/navbar.css",
                 "~/Content/template/lsb.css",
                 "~/Content/template/owl.carousel.css",
                 "~/Content/template/owl.theme.css",

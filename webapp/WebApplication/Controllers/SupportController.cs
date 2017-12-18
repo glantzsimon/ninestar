@@ -36,9 +36,9 @@ namespace K9.WebApplication.Controllers
         }
 
         [HttpGet]
-        public ActionResult ContactUs()
+        public ActionResult Index()
         {
-            return View();
+            return View("ContactUs");
         }
 
         [HttpPost]

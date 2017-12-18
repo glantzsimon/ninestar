@@ -61,7 +61,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Additional Information.
+        ///   Looks up a localized string similar to About Nine Star Ki.
+        /// </summary>
+        public static string AboutNineStarKi {
+            get {
+                return ResourceManager.GetString("AboutNineStarKi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Further Reading.
         /// </summary>
         public static string AdditionalInformation {
             get {
@@ -633,15 +642,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to History.
-        /// </summary>
-        public static string History {
-            get {
-                return ResourceManager.GetString("History", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to K&apos;An.
         /// </summary>
         public static string Kan {
@@ -1093,6 +1093,15 @@ namespace K9.Globalisation {
         public static string Sun {
             get {
                 return ResourceManager.GetString("Sun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Support.
+        /// </summary>
+        public static string Support {
+            get {
+                return ResourceManager.GetString("Support", resourceCulture);
             }
         }
         

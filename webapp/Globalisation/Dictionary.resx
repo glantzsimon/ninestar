@@ -403,6 +403,9 @@
   <data name="BetaWarning" xml:space="preserve">
     <value>This site is under development and new features are being added continuously. Your feedback is welcome. Please visit the support page to get in touch.</value>
   </data>
+  <data name="AdditionalInformation" xml:space="preserve">
+    <value>Additional Information</value>
+  </data>
   <data name="Chen" xml:space="preserve">
     <value>Chen</value>
   </data>
@@ -411,6 +414,9 @@
   </data>
   <data name="ChildhoodLabel" xml:space="preserve">
     <value>Childhood</value>
+  </data>
+  <data name="ComingSoon" xml:space="preserve">
+    <value>Coming Soon...</value>
   </data>
   <data name="coreearth_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\coreearth-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -442,6 +448,9 @@
   <data name="heaven_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\heaven-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="History" xml:space="preserve">
+    <value>History</value>
+  </data>
   <data name="Kan" xml:space="preserve">
     <value>K'An</value>
   </data>
@@ -466,6 +475,9 @@
   <data name="mountain_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\mountain-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="NineStarKiTitle" xml:space="preserve">
+    <value>9 Star Ki</value>
+  </data>
   <data name="None" xml:space="preserve">
     <value>None</value>
   </data>
@@ -474,6 +486,12 @@
   </data>
   <data name="PersonalDevelopemntLabel" xml:space="preserve">
     <value>Personal Development</value>
+  </data>
+  <data name="Predictions" xml:space="preserve">
+    <value>Predictions</value>
+  </data>
+  <data name="Relationships" xml:space="preserve">
+    <value>Relationships</value>
   </data>
   <data name="soil_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\soil-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

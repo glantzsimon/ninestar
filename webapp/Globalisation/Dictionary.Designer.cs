@@ -61,6 +61,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Additional Information.
+        /// </summary>
+        public static string AdditionalInformation {
+            get {
+                return ResourceManager.GetString("AdditionalInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Amount Donated.
         /// </summary>
         public static string AmountDonatedLabel {
@@ -192,6 +201,15 @@ namespace K9.Globalisation {
         public static string Colour {
             get {
                 return ResourceManager.GetString("Colour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Coming Soon....
+        /// </summary>
+        public static string ComingSoon {
+            get {
+                return ResourceManager.GetString("ComingSoon", resourceCulture);
             }
         }
         
@@ -615,6 +633,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to History.
+        /// </summary>
+        public static string History {
+            get {
+                return ResourceManager.GetString("History", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to K&apos;An.
         /// </summary>
         public static string Kan {
@@ -822,6 +849,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 9 Star Ki.
+        /// </summary>
+        public static string NineStarKiTitle {
+            get {
+                return ResourceManager.GetString("NineStarKiTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to None.
         /// </summary>
         public static string None {
@@ -926,6 +962,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Predictions.
+        /// </summary>
+        public static string Predictions {
+            get {
+                return ResourceManager.GetString("Predictions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Projects.
         /// </summary>
         public static string Projects {
@@ -949,6 +994,15 @@ namespace K9.Globalisation {
         public static string Red {
             get {
                 return ResourceManager.GetString("Red", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Relationships.
+        /// </summary>
+        public static string Relationships {
+            get {
+                return ResourceManager.GetString("Relationships", resourceCulture);
             }
         }
         

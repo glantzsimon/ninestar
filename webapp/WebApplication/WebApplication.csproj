@@ -225,13 +225,12 @@
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
     <Compile Include="Constants\ViewDataConstants.cs" />
-    <Compile Include="Controllers\AboutUsController.cs" />
     <Compile Include="Controllers\AccountControllerAjax.cs" />
     <Compile Include="Controllers\DonationsController.cs" />
-    <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Controllers\ArchiveCategoriesController.cs" />
     <Compile Include="Controllers\ArchiveController.cs" />
     <Compile Include="Controllers\ArchiveItemsController.cs" />
+    <Compile Include="Controllers\NineStarKiController.cs" />
     <Compile Include="Controllers\NewsItemsController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
@@ -655,7 +654,6 @@
     <Content Include="Scripts\library\SmoothScroll.min.js" />
     <Content Include="Scripts\library\vticker-min.js" />
     <Content Include="Scripts\template\scroller.js" />
-    <Content Include="Views\AboutUs\Team.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -826,6 +824,7 @@
     <Content Include="Content\fonts\alex-brush-v8-latin-regular.woff" />
     <Content Include="Content\fonts\alex-brush-v8-latin-regular.woff2" />
     <Content Include="Images\ninestar\elements\_YinYang.cshtml" />
+    <Content Include="Index.cshtml" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\Integration.pubxml" />
     <None Include="Properties\PublishProfiles\IntegrationLocal.pubxml" />
@@ -866,7 +865,6 @@
     <Content Include="Views\Home\_Calculator.cshtml" />
     <Content Include="Views\Shared\_EmbeddedVideo.cshtml" />
     <Content Include="Views\Shared\_Separator.cshtml" />
-    <Content Include="Views\Shop\Index.cshtml" />
     <Content Include="Views\Donations\Create.cshtml" />
     <Content Include="Views\Donations\Delete.cshtml" />
     <Content Include="Views\Donations\Details.cshtml" />
@@ -892,6 +890,10 @@
     <Content Include="Views\Home\_NineStarBody.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Energy.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\EnergyType.cshtml" />
+    <Content Include="Views\NineStarKi\Index.cshtml" />
+    <Content Include="Views\NineStarKi\Predictions.cshtml" />
+    <Content Include="Views\NineStarKi\Relationships.cshtml" />
+    <Content Include="Views\NineStarKi\Information.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

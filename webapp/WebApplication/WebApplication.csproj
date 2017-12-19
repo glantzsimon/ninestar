@@ -894,6 +894,7 @@
     <Content Include="Views\NineStarKi\Predictions.cshtml" />
     <Content Include="Views\NineStarKi\Relationships.cshtml" />
     <Content Include="Views\NineStarKi\Information.cshtml" />
+    <Content Include="Views\Home\_EnergyTitle.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

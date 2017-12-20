@@ -18,21 +18,23 @@ namespace K9.WebApplication
                 "~/Content/site/desktop.css",
                 "~/Content/site/tablet.css",
                 "~/Content/site/mobile.css",
+                "~/Content/site/tables.css",
+                "~/Content/site/navbar.css",
                 "~/Content/site/sections/*.css"));
 
             bundles.Add(new StyleBundle("~/Content/k9").Include(
                 "~/Content/k9/fadeIn.css",
                 "~/Content/k9/pageSpinner.css",
                 "~/Content/k9/fileUpload.css",
-                "~/Content/k9/scroller.css",
-                "~/Content/k9/tables.css"));
+                "~/Content/k9/scroller.css"));
 
             bundles.Add(new StyleBundle("~/Content/tpl").Include(
-                "~/Content/k9/navbar.css",
                 "~/Content/template/lsb.css",
                 "~/Content/template/owl.carousel.css",
                 "~/Content/template/owl.theme.css",
-                "~/Content/template/style.css",
+                "~/Content/template/style.css"));
+
+            bundles.Add(new StyleBundle("~/Content/responsive").Include(
                 "~/Content/template/style.1200.css",
                 "~/Content/template/style.1080.css",
                 "~/Content/template/style.1024.css",

@@ -7,25 +7,22 @@
     <div class="container margin-0 padding-0 width-100 clear-both ninestar-header-container">
         <article>
             <div>
+                @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.EnergyDescription), Model.EnergyDescription, true)
+
                 @if (Model.EnergyType == EEnergyType.MainEnergy)
                 {
                     @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Trigram), Model.Trigram)
-                }
 
-                @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.EnergyDescription), Model.EnergyDescription)
-
-                @if (Model.EnergyType == EEnergyType.CharacterEnergy)
-                {
-                    @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Childhood), Model.Childhood)
-                }
-
-                @if (Model.EnergyType == EEnergyType.RisingEnergy)
-                {
                     @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Health), Model.Health)
 
                     @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Occupations), Model.Occupations)
 
                     @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.PersonalDevelopemnt), Model.PersonalDevelopemnt)
+                }
+
+                @if (Model.EnergyType == EEnergyType.CharacterEnergy)
+                {
+                    @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Childhood), Model.Childhood)
                 }
             </div>
         </article>

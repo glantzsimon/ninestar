@@ -757,3 +757,13 @@ article, p {
 div.text-center > h3 {
     font-size: 1.2em;
 }
+
+a.collapsible-panel-link {
+    font-weight: bold;
+    text-decoration: none !important;
+    transition: none;
+}
+
+a.collapsible-panel-link:hover {
+    text-decoration: underline !important;
+}

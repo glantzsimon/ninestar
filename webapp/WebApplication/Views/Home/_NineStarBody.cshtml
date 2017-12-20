@@ -10,25 +10,20 @@
                 @if (Model.EnergyType == EEnergyType.MainEnergy)
                 {
                     @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Trigram), Model.Trigram)
-                    <hr />
                 }
 
                 @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.EnergyDescription), Model.EnergyDescription)
-                <hr />
 
                 @if (Model.EnergyType == EEnergyType.CharacterEnergy)
                 {
                     @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Childhood), Model.Childhood)
-                    <hr />
                 }
 
-                @if (Model.EnergyType == EEnergyType.MainEnergy)
+                @if (Model.EnergyType == EEnergyType.RisingEnergy)
                 {
                     @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Health), Model.Health)
-                    <hr />
 
                     @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Occupations), Model.Occupations)
-                    <hr />
 
                     @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.PersonalDevelopemnt), Model.PersonalDevelopemnt)
                 }

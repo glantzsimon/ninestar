@@ -1,15 +1,37 @@
-﻿@model EnergyInfo
+﻿@using K9.DataAccessLayer.Enums
+@using K9.WebApplication.Helpers
+@model EnergyInfo
 
 @if (Model != null)
 {
     <div class="container margin-0 padding-0 width-100 clear-both ninestar-header-container">
         <article>
             <div>
-                <h4>@Html.LabelFor(m => Model.Trigram)</h4>
-                @Model.Trigram
-                <hr/>
-                <h4>@Html.LabelFor(m => Model.EnergyDescription)</h4>
-                @MvcHtmlString.Create(Model.EnergyDescription)
+                @if (Model.EnergyType == EEnergyType.MainEnergy)
+                {
+                    @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Trigram), Model.Trigram)
+                    <hr />
+                }
+
+                @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.EnergyDescription), Model.EnergyDescription)
+                <hr />
+
+                @if (Model.EnergyType == EEnergyType.CharacterEnergy)
+                {
+                    @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Childhood), Model.Childhood)
+                    <hr />
+                }
+
+                @if (Model.EnergyType == EEnergyType.MainEnergy)
+                {
+                    @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Health), Model.Health)
+                    <hr />
+
+                    @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Occupations), Model.Occupations)
+                    <hr />
+
+                    @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.PersonalDevelopemnt), Model.PersonalDevelopemnt)
+                }
             </div>
         </article>
     </div>

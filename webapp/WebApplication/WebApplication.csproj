@@ -250,11 +250,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\CollapsiblePanel.cs" />
     <Compile Include="Helpers\SessionHelpers.cs" />
     <Compile Include="Helpers\Separator.cs" />
     <Compile Include="Models\NineStarKiModel.cs" />
     <Compile Include="Models\PersonModel.cs" />
     <Compile Include="Models\StripeModel.cs" />
+    <Compile Include="Options\CollapsiblePanelOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DonationService.cs" />
     <Compile Include="Services\IDonationService.cs" />
@@ -899,6 +901,7 @@
     <Content Include="Views\NineStarKi\Relationships.cshtml" />
     <Content Include="Views\NineStarKi\Information.cshtml" />
     <Content Include="Views\Home\_EnergyTitle.cshtml" />
+    <Content Include="Views\Shared\_CollapsiblePanel.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

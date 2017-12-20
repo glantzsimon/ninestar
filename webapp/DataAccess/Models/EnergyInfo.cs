@@ -4,6 +4,8 @@ using K9.Base.DataAccessLayer.Models;
 using K9.DataAccessLayer.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
+using K9.Base.DataAccessLayer.Enums;
+using K9.Base.Globalisation;
 using K9.DataAccessLayer.Attributes;
 using K9.SharedLibrary.Extensions;
 
@@ -52,13 +54,13 @@ namespace K9.DataAccessLayer.Models
 	    [AllowHtml]
 	    [DataType(DataType.Html)]
         [StringLength(int.MaxValue)]
-	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.EnergyDescriptionLabel)]
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.HealthLabel)]
 	    public string Health { get; set; }
 
 	    [AllowHtml]
 	    [DataType(DataType.Html)]
         [StringLength(int.MaxValue)]
-	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.EnergyDescriptionLabel)]
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.OccupationsLabel)]
 	    public string Occupations { get; set; }
 
 	    [AllowHtml]
@@ -72,6 +74,14 @@ namespace K9.DataAccessLayer.Models
         [StringLength(int.MaxValue)]
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ExamplesLabel)]
 	    public string Examples { get; set; }
+
+	    [UIHint("Language")]
+	    [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LanguageLabel)]
+	    [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+	    public ELanguage Language { get; set; }
+
+	    [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LanguageLabel)]
+	    public string LanguageName => Language.GetLocalisedLanguageName();
 
         public NineStarKiEnergy NineStarKiEnergy => new NineStarKiEnergy(Energy);
 

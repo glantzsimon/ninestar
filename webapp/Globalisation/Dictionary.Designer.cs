@@ -279,6 +279,15 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to Nine star Ki.
         /// </summary>
+        public static string coreearth_health {
+            get {
+                return ResourceManager.GetString("coreearth_health", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
         public static string coreearth_trigram {
             get {
                 return ResourceManager.GetString("coreearth_trigram", resourceCulture);
@@ -572,6 +581,15 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to Nine star Ki.
         /// </summary>
+        public static string fire_health {
+            get {
+                return ResourceManager.GetString("fire_health", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
         public static string fire_trigram {
             get {
                 return ResourceManager.GetString("fire_trigram", resourceCulture);
@@ -620,6 +638,15 @@ namespace K9.Globalisation {
         public static string heaven_description {
             get {
                 return ResourceManager.GetString("heaven_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string heaven_health {
+            get {
+                return ResourceManager.GetString("heaven_health", resourceCulture);
             }
         }
         
@@ -692,6 +719,15 @@ namespace K9.Globalisation {
         public static string lake_description {
             get {
                 return ResourceManager.GetString("lake_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string lake_health {
+            get {
+                return ResourceManager.GetString("lake_health", resourceCulture);
             }
         }
         
@@ -827,6 +863,15 @@ namespace K9.Globalisation {
         public static string mountain_description {
             get {
                 return ResourceManager.GetString("mountain_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string mountain_health {
+            get {
+                return ResourceManager.GetString("mountain_health", resourceCulture);
             }
         }
         
@@ -1043,7 +1088,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Soil energies are maternal and caring in nature and are happiest when they are serving and supporting others.
+        ///    They are not natural born leaders, but work diligently and tirelessly to get the job done. 
+        ///    Number two soil energies are probably the most reliable of all the energies.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Soil energies are generally patient, resilient and calm, although they may be prone to worry and anxiety, especially with regards to others. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Soil energies are generally very sociabl [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_description {
             get {
@@ -1052,7 +1106,50 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Being sensitive by nature, soil energies do not typically have a strong constitution. In Traditional Chinese Medicine, the earth element governs the spleen, pancreas and stomach and
+        ///    there for the lymphatic and immune systems. Soil energies must take extra care to look after these organs with a healthy balanced diet which does not contain excessive carbohydrate.
+        ///    It is also advisable to engage in activities which are calming, such as meditation and yoga, in order to avoid excessive anxiety  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_health {
+            get {
+                return ResourceManager.GetString("soil_health", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Owing to their supportive, caring nature, many soil energies make excellent nurses, carers, social workers as well as teachers and various types of assistants.
+        ///    Their strong connection with the land also makes soil energies excellent at careers in agriculture or horticulture.
+        ///    On the other hand, any job involving group work would also be well suited to number two soil energies.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string soil_occupations {
+            get {
+                return ResourceManager.GetString("soil_occupations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Number two soils are so focussed on supporting and helping others than they may not take enough time out for themselves. 
+        ///    As such, they may be prone to getting a bit worn out. They should be encouraged to get a healthy balance between work and play and sometimes put themselves first.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is also very important for soil energies not to stagnate. Frequent walks and exercise are very good for this reason.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string soil_personal_development {
+            get {
+                return ResourceManager.GetString("soil_personal_development", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Three yin lines, representing the consistent nature of earth as well as the receptive qualities of the mother, who wishes to nurture and serve. 
+        ///    She requires support from the family to do this. There are no yang lines and as such, yang must be provided by the other signs.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string soil_trigram {
             get {
@@ -1153,6 +1250,15 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to Nine star Ki.
         /// </summary>
+        public static string thunder_health {
+            get {
+                return ResourceManager.GetString("thunder_health", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
         public static string thunder_trigram {
             get {
                 return ResourceManager.GetString("thunder_trigram", resourceCulture);
@@ -1238,6 +1344,46 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_health {
+            get {
+                return ResourceManager.GetString("water_health", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Water energies are sensitive and deep thinkers, and as such, many of them are drawn to poetry, writing, composition, philosophy and some become therapists and healers.
+        ///    On the other hand, their natural ability to find a well thought-out and balanced argument means they can make excellent lawyers.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string water_occupations {
+            get {
+                return ResourceManager.GetString("water_occupations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Water energies&apos; very independen nature coupled with their difficulty to express what they feel deep within them can lead to isolation if they are not careful. 
+        ///    It is important for water energies to socialise and communicate. In so doing, others will also benefit from their extraordinary intuition and insight.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string water_personal_development {
+            get {
+                return ResourceManager.GetString("water_personal_development", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to One yang line encapsulated by two yin lines. Hidden strength and depth within. symbolic of winter&apos;s apparent dormancy on the surface, whilst beneath major change is taking place..
         /// </summary>
         public static string water_trigram {
@@ -1311,6 +1457,23 @@ namespace K9.Globalisation {
         public static string wind_description {
             get {
                 return ResourceManager.GetString("wind_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Water energies are most likely to suffer health problems related to the kidneys, bladder, reproductive system and adrenal glands, all of which are governed by the element water in Traditional Chinese Medicine.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is important for people of this sign to keep warm and take plenty of rest. Alcohol, caffeine, sugar, late nights and stress are particularly depleting for water energies.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is also especially important to avoid cold, damp living environments.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string wind_health {
+            get {
+                return ResourceManager.GetString("wind_health", resourceCulture);
             }
         }
         

@@ -54,6 +54,17 @@ namespace K9.DataAccessLayer.Database.Seeds
                         Health = Dictionary.thunder_health,
                         Occupations = Dictionary.thunder_occupations,
                         PersonalDevelopemnt = Dictionary.thunder_personal_development
+                    },
+                    new EnergyInfo
+                    {
+                        Language = language,
+                        EnergyType = EEnergyType.MainEnergy,
+                        Energy = ENineStarEnergy.Wind,
+                        Trigram = Dictionary.wind_trigram,
+                        EnergyDescription = Dictionary.wind_description,
+                        Health = Dictionary.wind_health,
+                        Occupations = Dictionary.thunder_occupations,
+                        PersonalDevelopemnt = Dictionary.thunder_personal_development
                     }
 
                 };

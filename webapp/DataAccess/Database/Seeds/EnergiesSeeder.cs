@@ -42,7 +42,18 @@ namespace K9.DataAccessLayer.Database.Seeds
                         EnergyDescription = Dictionary.soil_description,
                         Health = Dictionary.soil_health,
                         Occupations = Dictionary.soil_occupations,
-                        PersonalDevelopemnt = Dictionary.water_personal_development
+                        PersonalDevelopemnt = Dictionary.soil_personal_development
+                    },
+                    new EnergyInfo
+                    {
+                        Language = language,
+                        EnergyType = EEnergyType.MainEnergy,
+                        Energy = ENineStarEnergy.Thunder,
+                        Trigram = Dictionary.thunder_trigram,
+                        EnergyDescription = Dictionary.thunder_description,
+                        Health = Dictionary.thunder_health,
+                        Occupations = Dictionary.thunder_occupations,
+                        PersonalDevelopemnt = Dictionary.thunder_personal_development
                     }
 
                 };

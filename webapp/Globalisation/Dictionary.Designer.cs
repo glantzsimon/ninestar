@@ -1239,7 +1239,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Thunder energies embody the power of spring and have plenty of vitality and energy. They are more about doing than being and like to take action and initiate.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Thunder energies are generally very positive and joyful, and their optimism and abundant energy as well as their ability to take strong action makes them great pioneers in any field they turn their attention to. 
+        ///    However, in their constant pursuit of new pastures, they may not stick around long enough to figure out the de [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_description {
             get {
@@ -1248,7 +1253,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The wood element governs the liver and gallbladder. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is advisable for thunder energies to avoid eating two to three hours before sleep as well as overeating.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is also wise to avoid too many late nights, as this is the time when the liver repairs itself the most.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Eating an abundance of green leafy vegetables is especially important for thunder energies, 
+        ///    as well as citrus fruits such as lemons, limes and grapefruits and apple cider vinegar, w [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_health {
             get {
@@ -1257,7 +1273,40 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Thunder energies have tremendous potential for planning and seeing the road ahead, without getting bogged down in details. They are often able to find elegant solutions to the
+        ///    most complex problems, providing a clear vision of what needs to be done. For this reason, they may excel in computing, science, research as well as in business intelligence and consulting, to name a few.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Thunder energies can also make energetic performers, artists and speakers and breaking ground in thes [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_occupations {
+            get {
+                return ResourceManager.GetString("thunder_occupations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Thunder energies benefit greatly from taking time to reflect and take stock. They should also endeavour to see projects through to completion.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Socially, thunder energies derive a lot of benefit from focussing more on listening to others. In addition, it is good to remember that the positive and energetic nature of
+        ///    thunder may be overbearing and intimitading to some.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is important for thunder energies to build up their energy reserves with sufficient sleep, res [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_personal_development {
+            get {
+                return ResourceManager.GetString("thunder_personal_development", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    A strong yang, base line opening up into two yin lines. This represents growth and action and the awakening of dawn and spring as well as action and spontaneity.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string thunder_trigram {
             get {
@@ -1345,12 +1394,14 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///    Water energies are most likely to suffer health problems related to the kidneys, bladder, reproductive system and adrenal glands, all of which are governed by the element water in Traditional Chinese Medicine.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///    It is important for people of this sign to keep warm and take plenty of rest. Alcohol, caffeine, sugar, late nights and stress are particularly depleting for water energies.
         ///&lt;/p&gt;
-        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;
+        ///    It is also especially important to avoid cold, damp living environments.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string water_health {
             get {

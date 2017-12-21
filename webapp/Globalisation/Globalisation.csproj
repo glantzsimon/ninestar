@@ -80,6 +80,8 @@
     <Content Include="Articles\en-gb\soil-trigram.htm" />
     <Content Include="Articles\en-gb\thunder-health.htm" />
     <Content Include="Articles\en-gb\thunder-description.htm" />
+    <Content Include="Articles\en-gb\thunder-occupations.htm" />
+    <Content Include="Articles\en-gb\thunder-personal-development.htm" />
     <Content Include="Articles\en-gb\thunder-trigram.htm" />
     <Content Include="Articles\en-gb\water-health.htm" />
     <Content Include="Articles\en-gb\water-description.htm" />
@@ -116,6 +118,8 @@
     <Content Include="Articles\fr\soil-trigram.htm" />
     <Content Include="Articles\fr\thunder-description.htm" />
     <Content Include="Articles\fr\thunder-health.htm" />
+    <Content Include="Articles\fr\thunder-occupations.htm" />
+    <Content Include="Articles\fr\thunder-personal-development.htm" />
     <Content Include="Articles\fr\thunder-trigram.htm" />
     <Content Include="Articles\fr\water-description.htm" />
     <Content Include="Articles\fr\water-health.htm" />

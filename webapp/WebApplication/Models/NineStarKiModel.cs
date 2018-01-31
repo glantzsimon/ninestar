@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using K9.DataAccessLayer.Enums;
-using K9.DataAccessLayer.Extensions;
+﻿using K9.DataAccessLayer.Extensions;
 using K9.DataAccessLayer.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace K9.WebApplication.Models
 {
@@ -154,10 +152,10 @@ namespace K9.WebApplication.Models
 
         private NineStarKiEnergy GetRisingEnergy()
         {
-            return ProcessEnergy(5 - (CharacterEnergy.EnergyNumber - MainEnergy.EnergyNumber));
+            return ProcessEnergy(5 - (CharacterEnergy.EnergyNumber - MainEnergy.EnergyNumber), false);
         }
 
-        private NineStarKiEnergy ProcessEnergy(int energyNumber)
+        private NineStarKiEnergy ProcessEnergy(int energyNumber, bool invertIfYin = true)
         {
             if (energyNumber < 1)
             {
@@ -168,7 +166,7 @@ namespace K9.WebApplication.Models
                 energyNumber = energyNumber - 9;
             }
 
-            if (PersonModel.Gender.IsYin())
+            if (invertIfYin && PersonModel.Gender.IsYin())
             {
                 energyNumber = InvertEnergy(energyNumber);
             }

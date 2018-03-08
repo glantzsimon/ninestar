@@ -13,10 +13,12 @@
         <p>
             @K9.Globalisation.Dictionary.DonationBlurb
         </p>
-        <hr/>
+        <hr />
 
         @Html.BootstrapEditorFor(model => model.DonationAmount)
-        <hr/>
-        @Html.BootstrapButton(Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
+        <hr />
+        <div class="text-right">
+            @Html.BootstrapButton(Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
+        </div>
     }
 }

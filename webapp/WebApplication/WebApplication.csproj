@@ -279,6 +279,7 @@
     <Content Include="Content\site\desktop.css" />
     <Content Include="Content\site\elements.css" />
     <Content Include="Content\site\mobile.css" />
+    <Content Include="Content\site\sections\donate.css" />
     <Content Include="Content\site\sections\ninestar.css" />
     <Content Include="Content\site\sections\shop.css" />
     <Content Include="Content\site\sections\archive.css" />
@@ -608,6 +609,7 @@
     <Content Include="Images\ninestar\yinyang\yang.png" />
     <Content Include="Images\ninestar\yinyang\yin.png" />
     <Content Include="Images\shared\ninestar-spinner.gif" />
+    <Content Include="Images\shared\powered-by-stripe.png" />
     <Content Include="Images\template\1.jpg" />
     <Content Include="Images\template\2.jpg" />
     <Content Include="Images\template\3.jpg" />
@@ -980,9 +982,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>2625</DevelopmentServerPort>
+          <DevelopmentServerPort>2626</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44387/</IISUrl>
+          <IISUrl>https://localhost:44389/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

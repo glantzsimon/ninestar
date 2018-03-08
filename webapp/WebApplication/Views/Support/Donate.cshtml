@@ -14,7 +14,7 @@
     {
         @Html.BootstrapDisplayFor(model => model.AmountToDonate)
         @Html.HiddenFor(model => model.DonationAmount)
-        <hr/>
+        <hr />
 
         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                 data-key="@Model.PublishableKey"
@@ -22,13 +22,28 @@
                 data-name="@WebsiteConfiguration.Instance.CompanyName"
                 data-description="@K9.Globalisation.Dictionary.DonationTo @WebsiteConfiguration.Instance.CompanyName"
                 data-billing-address="true"
-                data-image="@Url.AbsoluteContent("Images/company/botf_med.png")"
+                data-image="@Url.AbsoluteContent("Images/company/logo-small.png")"
                 data-locale="@Model.Locale"
                 data-zip-code="false"
                 data-currency="@Model.LocalisedCurrencyThreeLetters">
         </script>
 
-        <hr/>
+        <hr />
         @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.ChangeAmount, "DonateStart", "Support", null, "fa-chevron-left")
     }
+    <div class="alert alert-success security-info">
+        <h4><i class="fa fa-lock"></i> &nbsp;<strong>Security</strong></h4>
+        <p style="margin-top: 15px;">
+            This website is powered by <a href="https://stripe.com/gb/payments" target="_blank"><strong>Stripe</strong></a>. Unlike PayPal, your credit or debit card data is
+            <strong>never sent to our servers</strong>; it is sent <strong>directly to Stripe</strong>.
+            <strong>We do not handle any sensitive data whatsoever</strong>, which makes any transactions through this website
+            <strong><a target="_blank" href="http://www.theukcardsassociation.org.uk/security/what_is_PCI%20DSS.asp">PCI compliant</a></strong>. Stripe automatically stores your cards in its vault, as does PayPal.
+        </p>
+        <p>
+            This website is <strong>encrypted using <a target="_blank" href="https://www.globalsign.com/en/ssl-information-center/what-is-ssl">SSL</a></strong>, which is the same technology used by Internet banking.
+        </p>
+    </div>
+    <div class="powered-by-stripe">
+        &nbsp;
+    </div>
 }

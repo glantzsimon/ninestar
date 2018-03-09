@@ -225,6 +225,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Attributes\NineStarEnumMetaDataAttribute.cs" />
+    <Compile Include="Config\GoogleConfiguration.cs" />
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
     <Compile Include="Constants\ViewDataConstants.cs" />
@@ -904,6 +905,7 @@
     <Content Include="Views\NineStarKi\Information.cshtml" />
     <Content Include="Views\Home\_EnergyTitle.cshtml" />
     <Content Include="Views\Shared\_CollapsiblePanel.cshtml" />
+    <Content Include="Views\Shared\_GoogleAnalytics.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -961,7 +963,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Production|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;PRODUCTION</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>

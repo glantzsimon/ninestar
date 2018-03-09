@@ -60,11 +60,66 @@ namespace K9.DataAccessLayer.Database.Seeds
                         Language = language,
                         EnergyType = EEnergyType.MainEnergy,
                         Energy = ENineStarEnergy.Wind,
-                        Trigram = Dictionary.wind_trigram,
+                        Trigram = Dictionary.coreearth_trigram,
                         EnergyDescription = Dictionary.wind_description,
                         Health = Dictionary.wind_health,
-                        Occupations = Dictionary.thunder_occupations,
-                        PersonalDevelopemnt = Dictionary.thunder_personal_development
+                        Occupations = Dictionary.wind_occupations,
+                        PersonalDevelopemnt = Dictionary.wind_personal_development
+                    },
+                    new EnergyInfo
+                    {
+                        Language = language,
+                        EnergyType = EEnergyType.MainEnergy,
+                        Energy = ENineStarEnergy.CoreEarth,
+                        Trigram = Dictionary.coreearth_trigram,
+                        EnergyDescription = Dictionary.coreearth_description,
+                        Health = Dictionary.coreearth_health,
+                        Occupations = Dictionary.coreearth_occupations,
+                        PersonalDevelopemnt = Dictionary.coreearth_personal_development
+                    },
+                    new EnergyInfo
+                    {
+                        Language = language,
+                        EnergyType = EEnergyType.MainEnergy,
+                        Energy = ENineStarEnergy.Heaven,
+                        Trigram = Dictionary.heaven_trigram,
+                        EnergyDescription = Dictionary.heaven_description,
+                        Health = Dictionary.heaven_health,
+                        Occupations = Dictionary.heaven_occupations,
+                        PersonalDevelopemnt = Dictionary.heaven_personal_development
+                    },
+                    new EnergyInfo
+                    {
+                        Language = language,
+                        EnergyType = EEnergyType.MainEnergy,
+                        Energy = ENineStarEnergy.Lake,
+                        Trigram = Dictionary.lake_trigram,
+                        EnergyDescription = Dictionary.lake_description,
+                        Health = Dictionary.lake_health,
+                        Occupations = Dictionary.lake_occupations,
+                        PersonalDevelopemnt = Dictionary.lake_personal_development
+                    },
+                    new EnergyInfo
+                    {
+                        Language = language,
+                        EnergyType = EEnergyType.MainEnergy,
+                        Energy = ENineStarEnergy.Mountain,
+                        Trigram = Dictionary.mountain_trigram,
+                        EnergyDescription = Dictionary.mountain_description,
+                        Health = Dictionary.mountain_health,
+                        Occupations = Dictionary.mountain_occupations,
+                        PersonalDevelopemnt = Dictionary.mountain_personal_development
+                    },
+                    new EnergyInfo
+                    {
+                        Language = language,
+                        EnergyType = EEnergyType.MainEnergy,
+                        Energy = ENineStarEnergy.Fire,
+                        Trigram = Dictionary.fire_trigram,
+                        EnergyDescription = Dictionary.fire_description,
+                        Health = Dictionary.fire_health,
+                        Occupations = Dictionary.fire_occupations,
+                        PersonalDevelopemnt = Dictionary.fire_personal_development
                     }
 
                 };

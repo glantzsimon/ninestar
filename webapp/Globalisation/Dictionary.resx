@@ -574,4 +574,40 @@
   <data name="thunder_personal_development" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\thunder-personal-development.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="coreearth_occupations" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\coreearth-occupations.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="coreearth_personal_development" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\coreearth-personal-development.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_occupations" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\fire-occupations.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_personal_development" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\fire-personal-development.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_occupations" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\heaven-occupations.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_personal_development" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\heaven-personal-development.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_occupations" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\lake-occupations.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_personal_development" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\lake-personal-development.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_occupations" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\mountain-occupations.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_personal_development" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\mountain-personal-development.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wind_occupations" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\wind-occupations.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wind_personal_development" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\wind-personal-development.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

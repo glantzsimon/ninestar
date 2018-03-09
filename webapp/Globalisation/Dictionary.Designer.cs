@@ -288,6 +288,24 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to Nine star Ki.
         /// </summary>
+        public static string coreearth_occupations {
+            get {
+                return ResourceManager.GetString("coreearth_occupations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string coreearth_personal_development {
+            get {
+                return ResourceManager.GetString("coreearth_personal_development", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
         public static string coreearth_trigram {
             get {
                 return ResourceManager.GetString("coreearth_trigram", resourceCulture);
@@ -590,6 +608,24 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to Nine star Ki.
         /// </summary>
+        public static string fire_occupations {
+            get {
+                return ResourceManager.GetString("fire_occupations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string fire_personal_development {
+            get {
+                return ResourceManager.GetString("fire_personal_development", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
         public static string fire_trigram {
             get {
                 return ResourceManager.GetString("fire_trigram", resourceCulture);
@@ -647,6 +683,24 @@ namespace K9.Globalisation {
         public static string heaven_health {
             get {
                 return ResourceManager.GetString("heaven_health", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string heaven_occupations {
+            get {
+                return ResourceManager.GetString("heaven_occupations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string heaven_personal_development {
+            get {
+                return ResourceManager.GetString("heaven_personal_development", resourceCulture);
             }
         }
         
@@ -728,6 +782,24 @@ namespace K9.Globalisation {
         public static string lake_health {
             get {
                 return ResourceManager.GetString("lake_health", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string lake_occupations {
+            get {
+                return ResourceManager.GetString("lake_occupations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string lake_personal_development {
+            get {
+                return ResourceManager.GetString("lake_personal_development", resourceCulture);
             }
         }
         
@@ -872,6 +944,24 @@ namespace K9.Globalisation {
         public static string mountain_health {
             get {
                 return ResourceManager.GetString("mountain_health", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string mountain_occupations {
+            get {
+                return ResourceManager.GetString("mountain_occupations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine star Ki.
+        /// </summary>
+        public static string mountain_personal_development {
+            get {
+                return ResourceManager.GetString("mountain_personal_development", resourceCulture);
             }
         }
         
@@ -1203,25 +1293,30 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
-        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; &gt;
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
         ///
         ///&lt;head&gt;
-        ///    &lt;title&gt;Puppydog Software&lt;/title&gt;
+        ///    &lt;title&gt;{Title}&lt;/title&gt;
         ///&lt;/head&gt;
         ///
         ///&lt;style type=&quot;text/css&quot;&gt;
-        ///    .text
-        ///    {{
-        ///        font-family: lucida grande, Segoe UI, arial, verdana, lucida sans unicode, tahoma, sans-serif; 
+        ///    html
+        ///    {
+        ///        margin: 0;
+        ///        padding: 0;
+        ///        font-family: &quot;Segoe UI&quot; , Verdana, Helvetica, Sans-Serif;
+        ///        font-size: 100%;
+        ///        text-rendering: optimizeLegibility !important;
+        ///        -webkit-font-smoothing: antialiased !important;
         ///        margin: 0; 
-        ///        font-size: 10pt; 
-        ///        color: #333399;
-        ///        padding-bottom: 12px;
-        ///    }}
-        ///    .title
-        ///    {{
-        ///    [rest of string was truncated]&quot;;.
+        ///        color: #333;
+        ///    }
+        ///&lt;/style&gt;
+        ///
+        ///&lt;body&gt;
+        ///&lt;p class=&quot;text&quot;&gt;Dear {FirstName},&lt;/p&gt;
+        ///&lt;p class=&quot;text&quot;&gt;Thank you for  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SupportQuery {
             get {
@@ -1503,7 +1598,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Like the wind, four wind energies can express anything from stillness to a raging tornado. This energy is one of the most changeable and indeed emotional of the nine energies.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Like thunder energies, also of the element wood, wind energies can be impulsive at times. However, they typically have a gentler, steadier nature than three wood energies.
+        ///    Similarly, they are generally a lot more reliable and thoughtful than three energies. They are practical and possess much common sense [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_description {
             get {
@@ -1513,14 +1613,14 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Water energies are most likely to suffer health problems related to the kidneys, bladder, reproductive system and adrenal glands, all of which are governed by the element water in Traditional Chinese Medicine.
+        ///    Like the other wood element, Thunder, Wind energies need to take good care of the liver and gall bladder. Unlike Thunder energies who,
+        ///    being yang, are more prone to liver imbalances, yin Wind energies are more likely to experience issues with the yin gall bladder.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    It is important for people of this sign to keep warm and take plenty of rest. Alcohol, caffeine, sugar, late nights and stress are particularly depleting for water energies.
+        ///    It is imporrtant for Wind energies to eat slowly and when relaxed and without distraction. Also, it is better to not eat when not hungry.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    It is also especially important to avoid cold, damp living environments.
-        ///&lt;/p&gt;.
+        ///    It is best to avoid cold foods and fluids, as this impairs dige [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_health {
             get {
@@ -1529,7 +1629,38 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    4 Wood energies are excellent planners and organisers and often do extremely well at activities and jobs that require such skills.
+        ///    On the other hand, being naturally adaptable and sensitive to others, they can also do very well at public relations. 
+        ///    Wind energies would also suit broadcasting, television or cinema where they could exploit their sensitivity to the arts.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string wind_occupations {
+            get {
+                return ResourceManager.GetString("wind_occupations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Being exceptionally sensitive to and easily influenced by others, it is very useful for Wind energies to develop a greater sense of
+        ///    their own tastes and opinions, so that they can become more resilient and assertive, if need be.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Being open and often highly empathic, Wind energies may have a tendency to talk too openly about others&apos; private affairs. It is advisable to
+        ///    be very prudent in this regard.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string wind_personal_development {
+            get {
+                return ResourceManager.GetString("wind_personal_development", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Two upper yang lines denote steadiness and consistency, beneath which lies a gentler, more sensitive yin nature.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string wind_trigram {
             get {

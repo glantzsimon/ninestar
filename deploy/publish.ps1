@@ -18,7 +18,7 @@ function _CreateDirectory($dir) {
 }
 
 function _Publish() {
-  echo "Publishing App"
+  echo "Publishing Application"
   
   pushd $appDir
   ProcessErrors
@@ -26,7 +26,7 @@ function _Publish() {
   _CreateDirectory $publishDir
   ProcessErrors
   
-  Msbuild $projectPath /p:DeployOnBuild=true /p:PublishProfile=$env /p:AllowUntrustedCertificate=true /p:Password=$publishPassword
+  Msbuild $projectPath /p:DeployOnBuild=true /p:PublishProfile=$env /p:Configuration=$env /p:AllowUntrustedCertificate=true /p:Password=$publishPassword
   ProcessErrors
   popd
 }

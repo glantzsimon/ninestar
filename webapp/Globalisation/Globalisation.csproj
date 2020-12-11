@@ -74,11 +74,6 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dictionary.fr.Designer.cs">
-      <DependentUpon>Dictionary.fr.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="Dictionary.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -88,10 +83,6 @@
     <Compile Include="Strings.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Dictionary.fr.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Dictionary.fr.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Dictionary.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Dictionary.Designer.cs</LastGenOutput>
@@ -103,6 +94,8 @@
     <Content Include="Articles\en-gb\coreearth-occupations.htm" />
     <Content Include="Articles\en-gb\coreearth-health.htm" />
     <Content Include="Articles\en-gb\coreearth-trigram.htm" />
+    <Content Include="Articles\en-gb\three-modalities.htm" />
+    <Content Include="Articles\en-gb\personal-chart.htm" />
     <Content Include="Articles\en-gb\fire-health.htm" />
     <Content Include="Articles\en-gb\fire-description.htm" />
     <Content Include="Articles\en-gb\lake-occupations.htm" />
@@ -119,6 +112,11 @@
     <Content Include="Articles\en-gb\lake-description.htm" />
     <Content Include="Articles\en-gb\mountain-health.htm" />
     <Content Include="Articles\en-gb\mountain-description.htm" />
+    <Content Include="Articles\en-gb\cycles.htm" />
+    <Content Include="Articles\en-gb\five-elements.htm" />
+    <Content Include="Articles\en-gb\nine-energies.htm" />
+    <Content Include="Articles\en-gb\yinyang.htm" />
+    <Content Include="Articles\en-gb\origins.htm" />
     <Content Include="Articles\en-gb\soil-health.htm" />
     <Content Include="Articles\en-gb\soil-description.htm" />
     <Content Include="Articles\en-gb\soil-personal-development.htm" />
@@ -144,51 +142,6 @@
     <Content Include="Articles\en-gb\mountain-trigram.htm" />
     <Content Include="Articles\en-gb\fire-trigram.htm" />
     <Content Include="Articles\en-gb\water-trigram.htm" />
-    <Content Include="Articles\fr\coreearth-description.htm" />
-    <Content Include="Articles\fr\coreearth-health.htm" />
-    <Content Include="Articles\fr\coreearth-occupations.htm" />
-    <Content Include="Articles\fr\coreearth-personal-development.htm" />
-    <Content Include="Articles\fr\coreearth-trigram.htm" />
-    <Content Include="Articles\fr\fire-description.htm" />
-    <Content Include="Articles\fr\fire-health.htm" />
-    <Content Include="Articles\fr\fire-occupations.htm" />
-    <Content Include="Articles\fr\fire-personal-development.htm" />
-    <Content Include="Articles\fr\fire-trigram.htm" />
-    <Content Include="Articles\fr\heaven-description.htm" />
-    <Content Include="Articles\fr\heaven-health.htm" />
-    <Content Include="Articles\fr\heaven-occupations.htm" />
-    <Content Include="Articles\fr\heaven-personal-development.htm" />
-    <Content Include="Articles\fr\heaven-trigram.htm" />
-    <Content Include="Articles\fr\lake-description.htm" />
-    <Content Include="Articles\fr\lake-health.htm" />
-    <Content Include="Articles\fr\lake-occupations.htm" />
-    <Content Include="Articles\fr\lake-personal-development.htm" />
-    <Content Include="Articles\fr\lake-trigram.htm" />
-    <Content Include="Articles\fr\mountain-description.htm" />
-    <Content Include="Articles\fr\mountain-health.htm" />
-    <Content Include="Articles\fr\mountain-occupations.htm" />
-    <Content Include="Articles\fr\mountain-personal-development.htm" />
-    <Content Include="Articles\fr\mountain-trigram.htm" />
-    <Content Include="Articles\fr\soil-description.htm" />
-    <Content Include="Articles\fr\soil-health.htm" />
-    <Content Include="Articles\fr\soil-occupations.htm" />
-    <Content Include="Articles\fr\soil-personal-development.htm" />
-    <Content Include="Articles\fr\soil-trigram.htm" />
-    <Content Include="Articles\fr\thunder-description.htm" />
-    <Content Include="Articles\fr\thunder-health.htm" />
-    <Content Include="Articles\fr\thunder-occupations.htm" />
-    <Content Include="Articles\fr\thunder-personal-development.htm" />
-    <Content Include="Articles\fr\thunder-trigram.htm" />
-    <Content Include="Articles\fr\water-description.htm" />
-    <Content Include="Articles\fr\water-health.htm" />
-    <Content Include="Articles\fr\water-occupations.htm" />
-    <Content Include="Articles\fr\water-personal-development.htm" />
-    <Content Include="Articles\fr\water-trigram.htm" />
-    <Content Include="Articles\fr\wind-description.htm" />
-    <Content Include="Articles\fr\wind-health.htm" />
-    <Content Include="Articles\fr\wind-occupations.htm" />
-    <Content Include="Articles\fr\wind-personal-development.htm" />
-    <Content Include="Articles\fr\wind-trigram.htm" />
     <Content Include="Templates\en-gb\DonationReceivedEmail.htm" />
     <Content Include="Templates\en-gb\PasswordResetEmail.htm" />
     <Content Include="Templates\en-gb\SupportQuery.htm" />

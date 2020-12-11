@@ -16,29 +16,29 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu nav navbar-nav">
-                    @if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<ArchiveItem>(Permissions.Create, Permissions.Edit, Permissions.Delete))
-                    {
-                        <li class="@ViewContext.GetActiveClass("Index", "ArchiveItems") sub-item"><a href="@Url.Action("Index", "ArchiveItems")">@Dictionary.ArchiveItems</a></li>
-                    }
-                    @if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<ArchiveCategory>(Permissions.Create, Permissions.Edit, Permissions.Delete))
-                    {
-                        <li class="@ViewContext.GetActiveClass("Index", "ArchiveCategories") sub-item"><a href="@Url.Action("Index", "ArchiveCategories")">@Dictionary.ArchiveCategories</a></li>
-                    }
-                    @if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<Donation>(Permissions.Create, Permissions.Edit, Permissions.Delete))
-                    {
-                        <li class="@ViewContext.GetActiveClass("Index", "Donations") sub-item"><a href="@Url.Action("Index", "Donations")">@K9.Globalisation.Dictionary.Donations</a></li>
-                    }
-                    @if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<NewsItem>(Permissions.Create, Permissions.Edit, Permissions.Delete))
-                    {
-                        <li class="@ViewContext.GetActiveClass("Index", "NewsItems") sub-item"><a href="@Url.Action("Index", "NewsItems")">@Dictionary.NewsItems</a></li>
-                    }
-                    @if (roles.CurrentUserIsInRoles(RoleNames.Administrators))
-                    {
-                        <li class="@ViewContext.GetActiveClass("Index", "Roles") sub-item"><a href="@Url.Action("Index", "Roles")">@Dictionary.Roles</a></li>
-                        <li class="@ViewContext.GetActiveClass("Index", "RolePermissions") sub-item"><a href="@Url.Action("Index", "RolePermissions")">@Dictionary.Role @Dictionary.Permissions</a></li>
-                        <li class="@ViewContext.GetActiveClass("Index", "Users") sub-item"><a href="@Url.Action("Index", "Users")">@Dictionary.Users</a></li>
-                        <li class="@ViewContext.GetActiveClass("Index", "UserRoles") sub-item"><a href="@Url.Action("Index", "UserRoles")">@Dictionary.UserRoles</a></li>
-                    }
+                        @if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<ArchiveItem>(Permissions.Create, Permissions.Edit, Permissions.Delete))
+                        {
+                            <li class="@ViewContext.GetActiveClass("Index", "ArchiveItems") sub-item"><a href="@Url.Action("Index", "ArchiveItems")">@Dictionary.ArchiveItems</a></li>
+                        }
+                        @if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<ArchiveCategory>(Permissions.Create, Permissions.Edit, Permissions.Delete))
+                        {
+                            <li class="@ViewContext.GetActiveClass("Index", "ArchiveCategories") sub-item"><a href="@Url.Action("Index", "ArchiveCategories")">@Dictionary.ArchiveCategories</a></li>
+                        }
+                        @if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<Donation>(Permissions.Create, Permissions.Edit, Permissions.Delete))
+                        {
+                            <li class="@ViewContext.GetActiveClass("Index", "Donations") sub-item"><a href="@Url.Action("Index", "Donations")">@K9.Globalisation.Dictionary.Donations</a></li>
+                        }
+                        @if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<NewsItem>(Permissions.Create, Permissions.Edit, Permissions.Delete))
+                        {
+                            <li class="@ViewContext.GetActiveClass("Index", "NewsItems") sub-item"><a href="@Url.Action("Index", "NewsItems")">@Dictionary.NewsItems</a></li>
+                        }
+                        @if (roles.CurrentUserIsInRoles(RoleNames.Administrators))
+                        {
+                            <li class="@ViewContext.GetActiveClass("Index", "Roles") sub-item"><a href="@Url.Action("Index", "Roles")">@Dictionary.Roles</a></li>
+                            <li class="@ViewContext.GetActiveClass("Index", "RolePermissions") sub-item"><a href="@Url.Action("Index", "RolePermissions")">@Dictionary.Role @Dictionary.Permissions</a></li>
+                            <li class="@ViewContext.GetActiveClass("Index", "Users") sub-item"><a href="@Url.Action("Index", "Users")">@Dictionary.Users</a></li>
+                            <li class="@ViewContext.GetActiveClass("Index", "UserRoles") sub-item"><a href="@Url.Action("Index", "UserRoles")">@Dictionary.UserRoles</a></li>
+                        }
                     </ul>
                 </li>
             </ul>
@@ -50,6 +50,7 @@
             {
                 <li class="@ViewContext.GetActiveClass("MyAccount", "Account")"><a title="@Dictionary.MyAccountTitle" href="@Url.Action("MyAccount", "Account")"><span class="glyphicon glyphicon-user"></span><span class="site-controls-text"> @Dictionary.MyAccountTitle</span></a></li>
             }
+            <li class="@ViewContext.GetActiveClass("Index", "Support")"><a title="@K9.Globalisation.Dictionary.Support" href="@Url.Action("Index", "Support")"><span class="glyphicon glyphicon-question-sign"></span><span class="site-controls-text"> @K9.Globalisation.Dictionary.Support</span></a></li>
             @*@Html.Partial("Controls/_LanguageSelector")*@
         </ul>
     </div>
@@ -71,11 +72,11 @@
                 </div>
                 <div class="collapse navbar-collapse menu-main" id="bs-navbar-collapse-1">
                     <ul id="main-navbar" class="nav navbar-nav">
-                        <li class="@ViewContext.GetActiveClass("Index", "NineStarKi")"><a href="@Url.Action("Index", "NineStarKi")"> @K9.Globalisation.Dictionary.NineStarKiTitle</a></li>
-                        <li class="@ViewContext.GetActiveClass("Predictions", "NineStarKi")"><a href="@Url.Action("Predictions", "NineStarKi")"> @K9.Globalisation.Dictionary.Predictions</a></li>
+                        <li class="@ViewContext.GetActiveClass("Index", "NineStar")"><a href="@Url.Action("Index", "NineStar")"> @K9.Globalisation.Dictionary.Calculator</a></li>
+                        <li class="@ViewContext.GetActiveClass("Relationships", "NineStar")"><a href="@Url.Action("Relationships", "NineStar")"> @K9.Globalisation.Dictionary.Relationships</a></li>
                         <li class="@ViewContext.GetActiveClass("Index", "Home")"><a class="device-only" href="@Url.Action("Index", "Home")"> <span class="device-only">@Dictionary.Home</span></a></li>
-                        <li class="@ViewContext.GetActiveClass("Relationships", "NineStarKi")"><a href="@Url.Action("Relationships", "NineStarKi")"> @K9.Globalisation.Dictionary.Relationships</a></li>
-                        <li class="@ViewContext.GetActiveClass("Index", "Support")"><a href="@Url.Action("Index", "Support")"> @K9.Globalisation.Dictionary.Support</a></li>
+                        <li class="@ViewContext.GetActiveClass("Predictions", "NineStar")"><a href="@Url.Action("Predictions", "NineStar")"> @K9.Globalisation.Dictionary.Predictions</a></li>
+                        <li class="@ViewContext.GetActiveClass("About", "Home")"><a href="@Url.Action("About", "Home")"> @K9.Globalisation.Dictionary.AboutNineStarKi</a></li>
                     </ul>
                     <div class="clearfix"> </div>
                 </div>

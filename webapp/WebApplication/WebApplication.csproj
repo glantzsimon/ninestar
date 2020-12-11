@@ -236,7 +236,7 @@
     <Compile Include="Controllers\ArchiveCategoriesController.cs" />
     <Compile Include="Controllers\ArchiveController.cs" />
     <Compile Include="Controllers\ArchiveItemsController.cs" />
-    <Compile Include="Controllers\NineStarKiController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewsItemsController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
@@ -249,16 +249,17 @@
     <Compile Include="Controllers\UserRolesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\CountriesController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NineStarController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\CollapsiblePanel.cs" />
+    <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Helpers\SessionHelpers.cs" />
     <Compile Include="Helpers\Separator.cs" />
     <Compile Include="Models\NineStarKiModel.cs" />
     <Compile Include="Models\PersonModel.cs" />
     <Compile Include="Models\StripeModel.cs" />
+    <Compile Include="Options\PanelOptions.cs" />
     <Compile Include="Options\CollapsiblePanelOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DonationService.cs" />
@@ -579,12 +580,16 @@
     <Content Include="Images\icons\apple-touch-icon-60x60.png" />
     <Content Include="Images\icons\apple-touch-icon-72x72.png" />
     <Content Include="Images\icons\apple-touch-icon-76x76.png" />
+    <Content Include="Images\icons\facebook-app-icon-1024x1024.png" />
     <Content Include="Images\icons\favicon-16x16.png" />
     <Content Include="Images\icons\favicon-194x194.png" />
     <Content Include="Images\icons\favicon-32x32.png" />
     <Content Include="Images\icons\favicon-96x96.png" />
     <Content Include="Images\icons\favicon.ico" />
+    <Content Include="Images\icons\logo-small.png" />
+    <Content Include="Images\icons\logo.png" />
     <Content Include="Images\icons\safari-pinned-tab.svg" />
+    <Content Include="Images\ninestar\elements\cycle.png" />
     <Content Include="Images\ninestar\elements\earth.png" />
     <Content Include="Images\ninestar\elements\fire.png" />
     <Content Include="Images\ninestar\elements\metal.png" />
@@ -809,7 +814,7 @@
     <Content Include="Views\Shared\_LayoutMaster.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_Navbar.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\NineStar\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutFormMaster.cshtml" />
     <Content Include="Views\NewsItems\_DisplayFields.cshtml" />
     <Content Include="Views\NewsItems\_EditFields.cshtml" />
@@ -834,7 +839,6 @@
     <Content Include="Content\fonts\alex-brush-v8-latin-regular.ttf" />
     <Content Include="Content\fonts\alex-brush-v8-latin-regular.woff" />
     <Content Include="Content\fonts\alex-brush-v8-latin-regular.woff2" />
-    <Content Include="Images\ninestar\elements\_YinYang.cshtml" />
     <Content Include="Index.cshtml" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\Integration.pubxml" />
@@ -873,7 +877,7 @@
     <Content Include="Views\Shared\DisplayTemplates\ArchiveCategory.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\ArchiveCategory.cshtml" />
     <Content Include="Views\Shared\_UploadedFilesDisplay.cshtml" />
-    <Content Include="Views\Home\_Calculator.cshtml" />
+    <Content Include="Views\NineStar\_Calculator.cshtml" />
     <Content Include="Views\Shared\_EmbeddedVideo.cshtml" />
     <Content Include="Views\Shared\_Separator.cshtml" />
     <Content Include="Views\Donations\Create.cshtml" />
@@ -889,25 +893,27 @@
     <Content Include="Views\Shared\DisplayTemplates\Currency.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Currency.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Gender.cshtml" />
-    <Content Include="Views\Home\_NineStarHeader.cshtml" />
-    <Content Include="Views\Home\_Energy.cshtml" />
-    <Content Include="Views\Home\_Trigram.cshtml" />
-    <Content Include="Views\Home\_YinYang.cshtml" />
-    <Content Include="Views\Home\_Element.cshtml" />
-    <Content Include="Views\Home\_FamilyMember.cshtml" />
-    <Content Include="Views\Home\_Colour.cshtml" />
-    <Content Include="Views\Home\_EnergySummary.cshtml" />
+    <Content Include="Views\NineStar\_NineStarHeader.cshtml" />
+    <Content Include="Views\NineStar\_Energy.cshtml" />
+    <Content Include="Views\NineStar\_Trigram.cshtml" />
+    <Content Include="Views\NineStar\_YinYang.cshtml" />
+    <Content Include="Views\NineStar\_Element.cshtml" />
+    <Content Include="Views\NineStar\_FamilyMember.cshtml" />
+    <Content Include="Views\NineStar\_Colour.cshtml" />
+    <Content Include="Views\NineStar\_EnergySummary.cshtml" />
     <Content Include="Views\Shared\_BetaPopup.cshtml" />
-    <Content Include="Views\Home\_NineStarBody.cshtml" />
+    <Content Include="Views\NineStar\_NineStarBody.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Energy.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\EnergyType.cshtml" />
-    <Content Include="Views\NineStarKi\Index.cshtml" />
-    <Content Include="Views\NineStarKi\Predictions.cshtml" />
-    <Content Include="Views\NineStarKi\Relationships.cshtml" />
-    <Content Include="Views\NineStarKi\Information.cshtml" />
-    <Content Include="Views\Home\_EnergyTitle.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\NineStar\Predictions.cshtml" />
+    <Content Include="Views\NineStar\Relationships.cshtml" />
+    <Content Include="Views\NineStar\_EnergyTitle.cshtml" />
     <Content Include="Views\Shared\_CollapsiblePanel.cshtml" />
     <Content Include="Views\Shared\_GoogleAnalytics.cshtml" />
+    <Content Include="Views\Shared\_SEO.cshtml" />
+    <Content Include="Views\NineStar\_Modality.cshtml" />
+    <Content Include="Views\Shared\_Panel.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

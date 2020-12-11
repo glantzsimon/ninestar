@@ -61,7 +61,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About Nine Star Ki.
+        ///   Looks up a localized string similar to About 9 Star Ki.
         /// </summary>
         public static string AboutNineStarKi {
             get {
@@ -142,11 +142,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Calculate Your Nine Star Ki Energy.
+        ///   Looks up a localized string similar to Calculate Your 9 Star Ki Energy.
         /// </summary>
         public static string CalculateYourNineStarKi {
             get {
                 return ResourceManager.GetString("CalculateYourNineStarKi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Calculator.
+        /// </summary>
+        public static string Calculator {
+            get {
+                return ResourceManager.GetString("Calculator", resourceCulture);
             }
         }
         
@@ -165,15 +174,6 @@ namespace K9.Globalisation {
         public static string ChangeAmount {
             get {
                 return ResourceManager.GetString("ChangeAmount", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Character / Emotional Energy.
-        /// </summary>
-        public static string CharacterEnergyLabel {
-            get {
-                return ResourceManager.GetString("CharacterEnergyLabel", resourceCulture);
             }
         }
         
@@ -232,7 +232,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star ki is an ancient system of astrology, largely uknown in the west, but slowly regaining popularity. It is deeper and more extensive than the zodiac and can offer some quite astonishing insights into our nature and the many cyles that influence our lives..
+        ///   Looks up a localized string similar to Nine Star Ki is an ancient system of astrology, largely uknown in the west, but slowly regaining popularity. It is deeper and more extensive than the zodiac and can offer some quite astonishing insights into our nature and the many cyles that influence our lives..
         /// </summary>
         public static string CompanyDescription {
             get {
@@ -250,7 +250,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Website created to share knowledge about the ancient widsom of nine star ki astrology..
+        ///   Looks up a localized string similar to Website created to share knowledge about the ancient widsom of Nine Star Ki astrology..
         /// </summary>
         public static string CompanyShortDescription {
             get {
@@ -268,7 +268,13 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Core Earth energies are at the centre of the system and this is often reflected in life, as they are often at the centre of
+        ///    everything they do, in the personal life and at work. Indeed, Core Earth energies may even feel left out if this is not so.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    In their private life, Core Earth energies tend to be outspoken and often take the lead, with others coming to them for guidance
+        ///    and support. Whilst this can be fulfilling, these energies must be cautious not to allow themselves  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_description {
             get {
@@ -277,7 +283,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Generally speaking, Core Earth energies have the constitution of an ox and are incredibly resilient. However, for this reason, it is also very important for
+        ///    people under this star to exercise and push themselves, so that they do not stagnate and seize up.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Being prone to ups and downs can mean that 5 Earth Energies can go through phases of being active/inactive, slim/overweight. These fluctuations are often brought
+        ///    about by the many emotional events in their lives.
+        ///&lt;/p&gt;
+        ///&lt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_health {
             get {
@@ -286,7 +300,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Core Earth energies are brilliant at bringing people together. For this reason, they can make great diplomats and political leaders. 
+        ///    In addition, they are often comfortable with authority and control. Some Core Earth energies have become famous military leaders due to 
+        ///    their ambitious and dominant nature. 5 Earth energies can also make exceptional entrepreneurs, for example Richard Branson and Simon Cowl. 
+        ///    On the other hand, their down-to-earth nature also means that they can also m [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_occupations {
             get {
@@ -295,7 +313,13 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Core Earth energies are often drawn to the centre of whatever they do and whilst this can be very stimulating, it can also become very draining and
+        ///    caution must be taken not to burn out. It is important for them to pace themselves and take time out to reflect and recharge.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Finding an activity to keep themselves centred and grounded such as T&apos;ai Chi, Qi Gong, meditation or yoga can be extremely beneficial.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string coreearth_personal_development {
             get {
@@ -304,7 +328,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Being at the centre of the 9 energies, 5 Soil energies have no trigram of their own. Rather, they are the axis 
+        ///    around which the other energies revolve. As such, this sign draws its nature from each of the other energies. 
+        ///    However, it is also said that this energy is somewhat between 2 Soil and 8 Mountain energies, the other Earth energies in the system.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string coreearth_trigram {
             get {
@@ -336,6 +364,19 @@ namespace K9.Globalisation {
         public static string CustomerLabel {
             get {
                 return ResourceManager.GetString("CustomerLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Nine Star Ki astrology is based on the universal cycles of light and dark and the transformations between the various stages. This is similar to the seasonal changes we see throughout the year or even throughout each day and night. There are many different cycles of differing lengths, all of which fit into one another like the layers of an onion. Some of the cycles are very long.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    In order to understand one&apos;s energetic make-up and potential, it is sufficient to observe the nine year  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string cycles {
+            get {
+                return ResourceManager.GetString("cycles", resourceCulture);
             }
         }
         
@@ -516,6 +557,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Emotional Energy / Inner Child.
+        /// </summary>
+        public static string EmotionalEnergyLabel {
+            get {
+                return ResourceManager.GetString("EmotionalEnergyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Energy.
         /// </summary>
         public static string Energy {
@@ -588,7 +638,13 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Fire energies are bestowed with great enlightenment and clarity and can often steer a path through troubled waters. They are often highly inspirational individuals who are
+        ///    often drawn to situations which require their brilliant capacity for bringing about change.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Of all nine energies, 9 Fires are the most adept at and comfortable with communication, especially with regards to emotional and personal experiences. This quality coupled with a
+        ///    warm and passionate nature can mak [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_description {
             get {
@@ -597,7 +653,13 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    In Chinese medicine, the element Fire controls the function of the heart and small intestine and therefore these energies must guard against circulatory disorders. It is also advisable to avoid 
+        ///    overly hot, spicy or salty foods.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is important for Fire energies to get plenty of rest and to take extra care to calm their minds and nervous system.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string fire_health {
             get {
@@ -606,7 +668,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Fire energies are well suited to jobs which are centred around communication and relationship building, or in careers in which they can express themselves as fully as possible, be it creatively, emotionally or artistically.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string fire_occupations {
             get {
@@ -615,7 +679,8 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Fire is the energy of illumination and clarity. It is also the energy of the midday sun. As such, fire energies can often see the bigger picture as they have a clear vantage point, like the sun shining down from above. Their insights and perspective are very valuable to others who might not be able to see things as clearly. That being said, a fire needs to be rooted in the hearth and needs plenty of fuel. Therefore, it&apos;s important that fire energies learn to ground themselves and develop their more [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_personal_development {
             get {
@@ -624,11 +689,41 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Two yang lines encapsulating an inner yin lines. This represents the vanity and brilliance of fire, with a softer inner nature,
+        ///    which can manifest as a quietly self-critical and doubting quality. Just as fire needs a constant supply of material to burn, 
+        ///    Fire energies require the acknowledgement and support of others in order to reach their full expression and potential. 
+        ///&lt;/p&gt;.
         /// </summary>
         public static string fire_trigram {
             get {
                 return ResourceManager.GetString("fire_trigram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Each of the nine energies are associated with one of the five elements: water, wood, fire, earth and metal. Each of the elements is associated with a specific stage in the development from birth to death, or in the cycle of light and dark.
+        ///&lt;/p&gt;
+        ///&lt;div class=&quot;row&quot;&gt;
+        ///    &lt;div class=&quot;col-md-6&quot;&gt;Element&lt;/div&gt;&lt;div class=&quot;col-md-6&quot;&gt;Stage&lt;/div&gt;
+        ///&lt;/div&gt;
+        ///&lt;div class=&quot;row&quot;&gt;
+        ///    &lt;div class=&quot;col-md-6&quot;&gt;Water&lt;/div&gt;&lt;div class=&quot;col-md-6&quot;&gt;Winter, Night, Death / Rebirth&lt;/div&gt;
+        ///    &lt;div class=&quot;col-md-6&quot;&gt;Wood&lt;/div&gt;&lt;di [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string five_elements {
+            get {
+                return ResourceManager.GetString("five_elements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flexible.
+        /// </summary>
+        public static string Flexible {
+            get {
+                return ResourceManager.GetString("Flexible", resourceCulture);
             }
         }
         
@@ -669,7 +764,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Heaven energies are natural leaders and are comfortable in positions of authority, whether it be in
+        ///    politics and the military, fashion or the arts.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    In addition, their strong, consistent nature means that many 6 Metal energies have broken new ground in their field and paved the way
+        ///    for future generations.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Heaven energies can be very moral and noble, with a strong sense of what is right and wrong, which they are not afraid to communicate to others.
+        ///    They  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_description {
             get {
@@ -678,7 +783,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The organ governed by yang Metal is the lungs and care must be taken to look after this organ. Therefore, it is especially important
+        ///    to avoid smoking. It is also beneficial to engage in a healthy amount of exercise to improve cardiovascular fitness.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The lungs are the seat of grief and it is very important for Heaven energies to frequently &quot;get things off their chest&quot; so that the lung
+        ///    meridian does not become blocked and stressed.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    In Chinese medicine the lun [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_health {
             get {
@@ -687,7 +801,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Heaven energies make excellent leaders and often excel in roles where they can use this skill to its fullest,
+        ///    whether it be in business, politics, the armed forces or even teachers. Many head teachers are Heaven energies.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Their great sense of justice also makes 6 Metal energies great lawyers and arbitrators. In addition, these energies
+        ///    often thrive under pressure and therefore prefer challenging careers.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string heaven_occupations {
             get {
@@ -696,7 +817,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Being the full expression of yang, it is advisable to work on bringing out a gentler, more flexible nature.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is important for Heaven energies find time to let their hair down and to even spoil themselves from time to time (something they seldom do!)
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Heaven energies&apos; natural leadership can at times make them less sensitive to others needs and they must take care not to become overbearing. It is a good idea 
+        ///    for them to develop their listening skills.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string heaven_personal_development {
             get {
@@ -705,7 +835,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    In this trigram, three yang lines can be seen, representing the full force of Heaven energy. This brings consistency, strength and boldness.
+        ///    These energies are direct, straightforward and clear in their views and intentions. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    As there is no yin in this energy, it may become imbalanced
+        ///    and it is important that it receives yin from others.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string heaven_trigram {
             get {
@@ -719,6 +856,15 @@ namespace K9.Globalisation {
         public static string Hermaphrodite {
             get {
                 return ResourceManager.GetString("Hermaphrodite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Instigative.
+        /// </summary>
+        public static string Instigative {
+            get {
+                return ResourceManager.GetString("Instigative", resourceCulture);
             }
         }
         
@@ -741,7 +887,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star ki astrology horoscope love relationships.
+        ///   Looks up a localized string similar to 9 star ki Nine star ki astrology horoscope love relationships feng shuey I Ching Human Design dating.
         /// </summary>
         public static string Keywords {
             get {
@@ -768,7 +914,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The season associated with this energy is late autumn, when the harvest is in and people are enjoying the fruits of their labours, celebrating and having fun.
+        ///    For this reason, 7 Metal energies have a propensity for being pleasure seekers and more than any of the other energies enjoy spending money on fashion, entertainment and socialising
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Lake energies are often great hosts and unlike their yang Metal counterparts are often highly receptive to others and very good listeners. Th [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_description {
             get {
@@ -777,7 +928,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The Metal element controls the function of the large intestine and therefore it is important for 7 Metal energies not to overeat or eat too quickly.
+        ///    Eating late at night is also ill advised. In addition, the regular consumption of fermented foods is highly beneficial as it provides beneficial bacteria
+        ///    which can keep the colon healthy.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string lake_health {
             get {
@@ -786,7 +941,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Seven energies are often very good with money and therefore make great accountants, stock controllers and financial advisers. Their eloquence and personal skills 
+        ///    would make them good teachers, lecturers or counsellors. 
+        ///    Being natural leaders, Lake energies are comfortable in managerial positions but equally, these energies can excel in the arts, television or fashion.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string lake_occupations {
             get {
@@ -795,7 +954,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Lake energies benefit from developing their generosity both financially and emotionally.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Being naturally fun loving can sometimes result in over-indulgence, which can lead to stagnation and lethargy. For this reason,
+        ///    Lake energies sometimes find it hard to finish tasks and should make every effort to persevere and see things through.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Do not forget to exercise! Inactivity can lead to stagnation, which is especially detrimental to the health of the colon and lungs [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_personal_development {
             get {
@@ -804,7 +971,13 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The two bottoms lines of this trigram are yang, representing strength and consistency, with a softer, yin line on the surface, which
+        ///    gives rise to the imagery of a reflective lake.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    These individuals’ fun-loving and outgoing nature conceals a deep inner security.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string lake_trigram {
             get {
@@ -840,7 +1013,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Main Energy.
+        ///   Looks up a localized string similar to Main Energy / Adult Persona.
         /// </summary>
         public static string MainEnergyLabel {
             get {
@@ -912,6 +1085,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Modality.
+        /// </summary>
+        public static string ModalityLabel {
+            get {
+                return ResourceManager.GetString("ModalityLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mother.
         /// </summary>
         public static string Mother {
@@ -930,7 +1112,13 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Being the youngest son, Mountain energies benefit from the combined experiences of the older siblings. In addition, these energies often accumulate wealth from an
+        ///    early age, through their own hard work or sometimes an inheritance. Success in achieving material wealth, however, is more a product of Mountain energies&apos; singlemindedness, than
+        ///    it is their creative talent or charm.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This is the more yang of the Earth energies and people under this star often move slowly and stead [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_description {
             get {
@@ -939,7 +1127,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Being highly contemplative can mean that 8 Earth Energies have a tendency to be hypochondriacs as they are overly aware of bodily aches and pains.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Their strength and solidity need to be challenged by movement and exercise and they need to be cautious about becoming overweight.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    As with other Earth energies, attention needs to be paid to the pancreas, which is more prone to imbalances in these individuals. For this reason, refined sugars are
+        ///    especially problematic [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_health {
             get {
@@ -948,7 +1144,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Being hard working, reliable and able to deliver, Mountain energies are very well suited to service-related occupations, such as a shopkeeper, accountant, or a doctor or nurse.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Mountains have a great sense of justice and may also be suited to law enforcement, human rights or other similar professions.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string mountain_occupations {
             get {
@@ -957,7 +1158,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    8 Earth energies must be cautious not to let their sense of justice turn into self-righteous
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    These individuals should try to develop their natural capacity for argument in a healthy and creative way, such as through a debating
+        ///    society, for example.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is advisable for Mountain energies to try to remain flexible and to guard against stagnation. A combination of vigorous exercise and yoga or Pilates 
+        ///    may be ideal.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string mountain_personal_development {
             get {
@@ -966,11 +1177,27 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    This trigram indicates a strong, immovable exterior with a cooler, more withdrawn centre. This trigram represents a quiet,
+        ///    reflective energy. Some interpretations of the &lt;span style=&quot;font-style: italic&quot;&gt;I Ching&lt;/span&gt; call this trigram &apos;Contemplation&apos;.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string mountain_trigram {
             get {
                 return ResourceManager.GetString("mountain_trigram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;
+        ///    &lt;img title=&quot;Yang&quot; alt=&quot;Yang&quot; class=&quot;auto-size center-block&quot; src=&quot;/Images/ninestar/yinyang/Yang.png&quot;&gt;
+        ///&lt;/div&gt;
+        ///&lt;p&gt;
+        ///    Many ancient civilisations had a more in depth understanding of the cosmic male and female energies that underpin our reality. There are many different terms used to describe these cosmic energies, such as Shakti / Shiva in Sanskrit or yin and yang in the Chinese tradition, but they are essentially understood to be on the one hand feminine, dark, passive energy and on the other m [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string nine_energies {
+            get {
+                return ResourceManager.GetString("nine_energies", resourceCulture);
             }
         }
         
@@ -1047,6 +1274,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;Nine Star Ki (pronounced &apos;key&apos;, which is the Japanese word for subtle energy or life-force) is possibly the oldest system of astrology in the world today. Originating in China, it is closely related to the 4000 year-old Book of Changes - the &apos;I Ching&apos; - whose principles are the foundations of Feng Shui, traditional Chinese medicine and acupuncture.&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Nine Star Ki is a simple system offering profound insights into ourselves and our relationships with others.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string origins {
+            get {
+                return ResourceManager.GetString("origins", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Other.
         /// </summary>
         public static string Other {
@@ -1084,6 +1323,22 @@ namespace K9.Globalisation {
         public static string PasswordResetEmail {
             get {
                 return ResourceManager.GetString("PasswordResetEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The Nine Star Ki personal chart is comprised of three numbers, each from 1 to 9, resulting in 81 unique character profiles, spanning nine years.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    &lt;strong&gt;First Number - Main Energy / Adult Persona&lt;/strong&gt;
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The first number is determined by the year we were born and corresponds to our intrinsic nature; the way we fundamentally view and make sense of the world. It is the energy fo our adult self and only becomes relevant after the age of 18. Before that, this is determi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string personal_chart {
+            get {
+                return ResourceManager.GetString("personal_chart", resourceCulture);
             }
         }
         
@@ -1138,15 +1393,6 @@ namespace K9.Globalisation {
         public static string Relationships {
             get {
                 return ResourceManager.GetString("Relationships", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Rising Energy.
-        /// </summary>
-        public static string RisingEnergyLabel {
-            get {
-                return ResourceManager.GetString("RisingEnergyLabel", resourceCulture);
             }
         }
         
@@ -1275,6 +1521,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Static.
+        /// </summary>
+        public static string Static {
+            get {
+                return ResourceManager.GetString("Static", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sun.
         /// </summary>
         public static string Sun {
@@ -1321,6 +1576,28 @@ namespace K9.Globalisation {
         public static string SupportQuery {
             get {
                 return ResourceManager.GetString("SupportQuery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Surface Energy / External Persona.
+        /// </summary>
+        public static string SurfaceEnergyLabel {
+            get {
+                return ResourceManager.GetString("SurfaceEnergyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Nine Star Ki astrology is based on the universal cycles of light and dark and the transformations between the various stages. This is similar to the seasonal changes we see throughout the year or even throughout each day and night. There are many different cycles of differing lengths, all of which fit into one another like the layers of an onion. Some of the cycles are very long.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    In order to understand one&apos;s energetic make-up and potential, it is sufficient to observe the nine year  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string three_modalities {
+            get {
+                return ResourceManager.GetString("three_modalities", resourceCulture);
             }
         }
         
@@ -1613,14 +1890,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like the other wood element, Thunder, Wind energies need to take good care of the liver and gall bladder. Unlike Thunder energies who,
-        ///    being yang, are more prone to liver imbalances, yin Wind energies are more likely to experience issues with the yin gall bladder.
+        ///    Like the other Wood element, Thunder, Wind energies need to take good care of the liver and gall bladder. Unlike Thunder energies who, being yang, are more prone to liver imbalances, yin Wind energies are more likely to experience issues with the yin gall bladder.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    It is imporrtant for Wind energies to eat slowly and when relaxed and without distraction. Also, it is better to not eat when not hungry.
+        ///    It is important for Wind energies to eat slowly and when relaxed and without distraction. Also, it is better to not eat when not hungry.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    It is best to avoid cold foods and fluids, as this impairs dige [rest of string was truncated]&quot;;.
+        ///    It is best to avoid cold foods and fluids, as this impairs digestion. [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_health {
             get {
@@ -1701,6 +1977,19 @@ namespace K9.Globalisation {
         public static string Yin {
             get {
                 return ResourceManager.GetString("Yin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;
+        ///    &lt;img title=&quot;Yang&quot; alt=&quot;Yang&quot; class=&quot;auto-size center-block&quot; src=&quot;/Images/ninestar/yinyang/Yang.png&quot;&gt;
+        ///&lt;/div&gt;
+        ///&lt;p&gt;
+        ///    Many ancient civilisations had a more in depth understanding of the cosmic male and female energies that underpin our reality. There are many different terms used to describe these cosmic energies, such as Shakti / Shiva in Sanskrit or yin and yang in the Chinese tradition, but they are essentially understood to be on the one hand feminine, dark, passive energy and on the other m [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string yinyang {
+            get {
+                return ResourceManager.GetString("yinyang", resourceCulture);
             }
         }
         

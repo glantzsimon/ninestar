@@ -6,9 +6,7 @@
     var localeName = CultureInfo.CurrentUICulture.GetLocaleName().ToLower();
     var metaLocaleName = CultureInfo.CurrentUICulture.GetMetaLocaleName();
     var languageName = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower();
-    var title = Html.Raw(String.Format("{0} &raquo; {1} &raquo; {2}", ViewBag.Title, WebsiteConfiguration.Instance.CompanyName, K9.Globalisation.Dictionary.CompanyShortDescription));
-}
-
+    var title = Html.Raw(String.Format("{0} &raquo; {1} &raquo; {2}", ViewBag.Title, WebsiteConfiguration.Instance.CompanyName, K9.Globalisation.Dictionary.Keywords));}
 <!DOCTYPE html>
 <html>
 <head>
@@ -110,6 +108,7 @@
     <div id="pageSpinner"></div>
     <div id="pageOverlay"></div>
     @RenderBody()
+    @Html.Partial("_SEO")
     @Html.Partial("_Footer")
     @Scripts.Render("~/Scripts/js")
     @Scripts.Render("~/Scripts/lib")

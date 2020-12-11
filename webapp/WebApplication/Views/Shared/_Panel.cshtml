@@ -1,0 +1,12 @@
+﻿@model K9.WebApplication.Options.PanelOptions
+@{
+    var id = Guid.NewGuid();
+}
+<div class="panel panel-default">
+    <div class="panel-heading"><h4 class="margin-0"><strong>@Model.Title</strong></h4></div>
+    @if (!string.IsNullOrEmpty(Model.ImageSrc))
+    {
+    <img title="@Model.Title" alt="@Model.Title" class="auto-size center-block" src="@Model.ImageSrc">
+    }
+    <div class="panel-body">@MvcHtmlString.Create(Model.Body)</div>
+</div>

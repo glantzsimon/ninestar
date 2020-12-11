@@ -94,6 +94,18 @@ namespace K9.DataAccessLayer.Models
         Yang
     }
 
+    public enum ENineStarKiModality
+    {
+        [EnumDescription(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.Unspecified)]
+        Unspecified,
+        [EnumDescription(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.Flexible)]
+        Flexible,
+        [EnumDescription(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.Static)]
+        Static,
+        [EnumDescription(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.Instigative)]
+        Instigative
+    }
+
     public enum ENineStarEnergy
     {
         [NineStarEnumMetaData(ResourceType = typeof(K9.Globalisation.Dictionary), Name = Strings.Names.Unspecified)]
@@ -157,6 +169,9 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ColourLabel)]
         public string Colour => MetaData.GetColour();
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ModalityLabel)]
+        public ENineStarKiModality Modality => GetModality();
+
         public string Direction => MetaData.GetDirection();
 
         private NineStarEnumMetaDataAttribute MetaData => Energy.GetAttribute<NineStarEnumMetaDataAttribute>();
@@ -173,6 +188,29 @@ namespace K9.DataAccessLayer.Models
                 return RelatedMetaData.YinYang;
             }
             return MetaData.YinYang;
+        }
+
+        private ENineStarKiModality GetModality()
+        {
+            switch (Energy)
+            {
+                case ENineStarEnergy.Water:
+                case ENineStarEnergy.Wind:
+                case ENineStarEnergy.Lake:
+                    return ENineStarKiModality.Flexible;
+
+                case ENineStarEnergy.Soil:
+                case ENineStarEnergy.CoreEarth:
+                case ENineStarEnergy.Mountain:
+                    return ENineStarKiModality.Static;
+
+                case ENineStarEnergy.Thunder:
+                case ENineStarEnergy.Heaven:
+                case ENineStarEnergy.Fire:
+                    return ENineStarKiModality.Instigative;
+            }
+
+            return ENineStarKiModality.Unspecified;
         }
 
     }

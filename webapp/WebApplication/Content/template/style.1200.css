@@ -5,4 +5,10 @@
 	.captn-top p {
 		font-size: 0.8em;
 	}
+    div.main-logo {
+        height: 88px;
+        width: 88px;
+        background-size: contain;
+        background-image: url(/Images/company/logo-small.png);
+    }
 }

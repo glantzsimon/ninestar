@@ -195,6 +195,10 @@
     <Compile Include="Enums\EEnergyType.cs" />
     <Compile Include="Enums\EGender.cs" />
     <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="Migrations\202007211011153_July2020.cs" />
+    <Compile Include="Migrations\202007211011153_July2020.Designer.cs">
+      <DependentUpon>202007211011153_July2020.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\EnergyInfo.cs" />
     <Compile Include="Models\Donation.cs" />
@@ -216,6 +220,11 @@
       <Project>{37795dc6-45c9-458c-a3a5-48da6534c35c}</Project>
       <Name>Globalisation</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202007211011153_July2020.resx">
+      <DependentUpon>202007211011153_July2020.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

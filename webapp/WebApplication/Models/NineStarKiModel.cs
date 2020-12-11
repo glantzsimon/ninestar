@@ -1,4 +1,5 @@
-﻿using K9.DataAccessLayer.Extensions;
+﻿using System;
+using K9.DataAccessLayer.Extensions;
 using K9.DataAccessLayer.Models;
 using System.ComponentModel.DataAnnotations;
 
@@ -18,38 +19,50 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.MainEnergyLabel)]
         public NineStarKiEnergy MainEnergy { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CharacterEnergyLabel)]
-        public NineStarKiEnergy CharacterEnergy { get; set; }
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.EmotionalEnergyLabel)]
+        public NineStarKiEnergy EmotionalEnergy { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.RisingEnergyLabel)]
-        public NineStarKiEnergy RisingEnergy { get; set; }
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SurfaceEnergyLabel)]
+        public NineStarKiEnergy SurfaceEnergy { get; set; }
+
+        /// <summary>
+        /// Determines the nine star ki energy of the current year
+        /// </summary>
+        public ENineStarEnergy LifeCycleYearEnergy { get; set; }
+
+        /// <summary>
+        /// Determines the nine star ki energy of the current month
+        /// </summary>
+        public ENineStarEnergy LifeCycleMonthEnergy { get; set; }
 
         private void Init()
         {
-            MainEnergy = GetMainEnergy();
-            CharacterEnergy = GetCharacterEnergy();
-            RisingEnergy = GetRisingEnergy();
+            MainEnergy = GetMainEnergy(PersonModel.DateOfBirth);
+            EmotionalEnergy = GetEmotionalEnergy(PersonModel.DateOfBirth, MainEnergy.Energy);
+            SurfaceEnergy = GetSurfaceEnergy();
+            LifeCycleYearEnergy = GetLifeCycleYearEnergy();
+            LifeCycleMonthEnergy = GetLifeCycleMonthEnergy();
 
-            MainEnergy.RelatedEnergy = CharacterEnergy.Energy;
+            MainEnergy.RelatedEnergy = EmotionalEnergy.Energy;
             MainEnergy.Gender = PersonModel.Gender;
         }
         
-        private NineStarKiEnergy GetMainEnergy()
+        private NineStarKiEnergy GetMainEnergy(DateTime date)
         {
-            var month = PersonModel.DateOfBirth.Month;
-            var day = PersonModel.DateOfBirth.Day;
-            var year = PersonModel.DateOfBirth.Year;
+            var month = date.Month;
+            var day = date.Day;
+            var year = date.Year;
 
             year = (month == 2 && day <= 3) || month == 1 ? year - 1 : year;
             var energyNumber = 3 - ((year - 1979) % 9);
             return ProcessEnergy(energyNumber);
         }
 
-        private NineStarKiEnergy GetCharacterEnergy()
+        private NineStarKiEnergy GetEmotionalEnergy(DateTime date, ENineStarEnergy energy, bool invertIfYin = true)
         {
             var energyNumber = 0;
-            var month = PersonModel.DateOfBirth.Month;
-            var day = PersonModel.DateOfBirth.Day;
+            var month = date.Month;
+            var day = date.Day;
 
             switch (month)
             {
@@ -84,7 +97,7 @@ namespace K9.WebApplication.Models
                     break;
             }
 
-            switch (MainEnergy.Energy)
+            switch (energy)
             {
                 case ENineStarEnergy.Thunder:
                 case ENineStarEnergy.Heaven:
@@ -147,15 +160,46 @@ namespace K9.WebApplication.Models
                     break;
             }
 
-            return ProcessEnergy(energyNumber);
+            return ProcessEnergy(energyNumber, invertIfYin);
         }
 
-        private NineStarKiEnergy GetRisingEnergy()
+        private NineStarKiEnergy GetSurfaceEnergy()
         {
-            return ProcessEnergy(5 - (CharacterEnergy.EnergyNumber - MainEnergy.EnergyNumber), false);
+            return ProcessEnergy(5 - (EmotionalEnergy.EnergyNumber - MainEnergy.EnergyNumber), false);
+        }
+        
+        private ENineStarEnergy GetLifeCycleYearEnergy()
+        {
+            var todayYearEnergy = (int)GetMainEnergy(DateTime.Now).Energy;
+            var personalYearEnergy = (int)MainEnergy.Energy;
+            var offset = todayYearEnergy - personalYearEnergy;
+            var lifeCycleYearEnergy = LoopEnergyNumber(5 + offset);
+
+            return (ENineStarEnergy) lifeCycleYearEnergy;
+        }
+
+        private ENineStarEnergy GetLifeCycleMonthEnergy()
+        {
+            var yearEnergy = GetLifeCycleYearEnergy();
+            return GetEmotionalEnergy(DateTime.Now, yearEnergy, false).Energy;
         }
 
         private NineStarKiEnergy ProcessEnergy(int energyNumber, bool invertIfYin = true)
+        {
+            energyNumber = LoopEnergyNumber(energyNumber);
+            if (invertIfYin && PersonModel.Gender.IsYin())
+            {
+                energyNumber = InvertEnergy(energyNumber);
+            }
+            return new NineStarKiEnergy((ENineStarEnergy)energyNumber);
+        }
+
+        /// <summary>
+        /// Takes care of numbers < 1 or over 9 and loops them back into the nine star key energy numbers
+        /// </summary>
+        /// <param name="energyNumber"></param>
+        /// <returns></returns>
+        private static int LoopEnergyNumber(int energyNumber)
         {
             if (energyNumber < 1)
             {
@@ -165,13 +209,31 @@ namespace K9.WebApplication.Models
             {
                 energyNumber = energyNumber - 9;
             }
+            return energyNumber;
+        }
+
+        private ENineStarEnergy ProcessYearEnergy(int energyNumber, int yearNumber, bool invertIfYin = true)
+        {
+            var year = (energyNumber - yearNumber) % 9;
 
             if (invertIfYin && PersonModel.Gender.IsYin())
             {
                 energyNumber = InvertEnergy(energyNumber);
             }
 
-            return new NineStarKiEnergy((ENineStarEnergy)energyNumber);
+            return (ENineStarEnergy)energyNumber;
+        }
+
+        private ENineStarEnergy ProcessMonthEnergy(int energyNumber, int yearNumber, int monthNumber, bool invertIfYin = true)
+        {
+            var year = ProcessYearEnergy(energyNumber, yearNumber, invertIfYin);
+            
+            if (invertIfYin && PersonModel.Gender.IsYin())
+            {
+                energyNumber = InvertEnergy(energyNumber);
+            }
+
+            return (ENineStarEnergy)energyNumber;
         }
 
         private int InvertEnergy(int energyNumber)

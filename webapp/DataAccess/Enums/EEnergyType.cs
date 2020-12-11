@@ -6,9 +6,9 @@ namespace K9.DataAccessLayer.Enums
     {
         [EnumDescription(ResourceType = typeof(K9.Globalisation.Dictionary), Name = K9.Globalisation.Strings.Names.MainEnergy)]
         MainEnergy,
-        [EnumDescription(ResourceType = typeof(K9.Globalisation.Dictionary), Name = K9.Globalisation.Strings.Names.CharacterEnergy)]
-        CharacterEnergy,
-        [EnumDescription(ResourceType = typeof(K9.Globalisation.Dictionary), Name = K9.Globalisation.Strings.Names.RisingEnergy)]
-        RisingEnergy,
+        [EnumDescription(ResourceType = typeof(K9.Globalisation.Dictionary), Name = K9.Globalisation.Strings.Names.EmotionalEnergy)]
+        EmotionalEnergy,
+        [EnumDescription(ResourceType = typeof(K9.Globalisation.Dictionary), Name = K9.Globalisation.Strings.Names.SurfaceEnergy)]
+        SurfaceEnergy,
     }
 }

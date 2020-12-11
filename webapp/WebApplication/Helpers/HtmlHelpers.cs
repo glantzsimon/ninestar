@@ -22,5 +22,20 @@ namespace K9.WebApplication.Helpers
                 Footer = footer
 	        });
 	    }
+
+	    public static MvcHtmlString Panel(this HtmlHelper html, PanelOptions options)
+	    {
+	        return html.Partial("_Panel", options);
+	    }
+
+	    public static MvcHtmlString Panel(this HtmlHelper html, string title, string body, string imageSrc = "")
+	    {
+	        return html.Partial("_Panel", new PanelOptions
+	        {
+	            Title = title,
+	            Body = body,
+                ImageSrc = imageSrc
+	        });
+	    }
     }
 }

@@ -137,13 +137,13 @@
     <value>NineStar has been created to share knowledge about the ancient wisdom of nine star ki astrology to help people gain a better understanding of themselves and of their loved ones, as well as the many cycles that affect their lives.</value>
   </data>
   <data name="CompanyDescription" xml:space="preserve">
-    <value>Nine star ki is an ancient system of astrology, largely uknown in the west, but slowly regaining popularity. It is deeper and more extensive than the zodiac and can offer some quite astonishing insights into our nature and the many cyles that influence our lives.</value>
+    <value>Nine Star Ki is an ancient system of astrology, largely uknown in the west, but slowly regaining popularity. It is deeper and more extensive than the zodiac and can offer some quite astonishing insights into our nature and the many cyles that influence our lives.</value>
   </data>
   <data name="CompanyLegalDescription" xml:space="preserve">
     <value />
   </data>
   <data name="CompanyShortDescription" xml:space="preserve">
-    <value>Website created to share knowledge about the ancient widsom of nine star ki astrology.</value>
+    <value>Website created to share knowledge about the ancient widsom of Nine Star Ki astrology.</value>
   </data>
   <data name="MainTitleLeft" xml:space="preserve">
     <value>Nine</value>
@@ -227,13 +227,13 @@
     <value>Calculate</value>
   </data>
   <data name="CalculateYourNineStarKi" xml:space="preserve">
-    <value>Calculate Your Nine Star Ki Energy</value>
+    <value>Calculate Your 9 Star Ki Energy</value>
   </data>
   <data name="Centre" xml:space="preserve">
     <value>Centre</value>
   </data>
-  <data name="CharacterEnergyLabel" xml:space="preserve">
-    <value>Character / Emotional Energy</value>
+  <data name="EmotionalEnergyLabel" xml:space="preserve">
+    <value>Emotional Energy / Inner Child</value>
   </data>
   <data name="CoreEarth" xml:space="preserve">
     <value>Core Earth</value>
@@ -278,7 +278,7 @@
     <value>Lake</value>
   </data>
   <data name="MainEnergyLabel" xml:space="preserve">
-    <value>Main Energy</value>
+    <value>Main Energy / Adult Persona</value>
   </data>
   <data name="Male" xml:space="preserve">
     <value>Male</value>
@@ -319,8 +319,8 @@
   <data name="Red" xml:space="preserve">
     <value>Red</value>
   </data>
-  <data name="RisingEnergyLabel" xml:space="preserve">
-    <value>Rising Energy</value>
+  <data name="SurfaceEnergyLabel" xml:space="preserve">
+    <value>Surface Energy / External Persona</value>
   </data>
   <data name="SeventhChild" xml:space="preserve">
     <value>Seventh Child</value>
@@ -404,7 +404,7 @@
     <value>This site is under development and new features are being added continuously. Your feedback is welcome. Please visit the support page to get in touch.</value>
   </data>
   <data name="AboutNineStarKi" xml:space="preserve">
-    <value>About Nine Star Ki</value>
+    <value>About 9 Star Ki</value>
   </data>
   <data name="AdditionalInformation" xml:space="preserve">
     <value>Further Reading</value>
@@ -609,5 +609,41 @@
   </data>
   <data name="wind_personal_development" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\wind-personal-development.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="origins" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\origins.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Flexible" xml:space="preserve">
+    <value>Flexible</value>
+  </data>
+  <data name="Instigative" xml:space="preserve">
+    <value>Instigative</value>
+  </data>
+  <data name="Static" xml:space="preserve">
+    <value>Static</value>
+  </data>
+  <data name="ModalityLabel" xml:space="preserve">
+    <value>Modality</value>
+  </data>
+  <data name="cycles" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\cycles.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="five_elements" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\five-elements.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="personal_chart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\personal-chart.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="yinyang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\yinyang.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="three_modalities" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\three-modalities.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Calculator" xml:space="preserve">
+    <value>Calculator</value>
+  </data>
+  <data name="nine_energies" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\nine-energies.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

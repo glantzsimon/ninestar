@@ -1,8 +1,9 @@
-﻿@model K9.WebApplication.ViewModels.NineStarKiViewModel
+﻿@using K9.WebApplication.Helpers
+@model K9.WebApplication.ViewModels.NineStarKiViewModel
 
 @{
-    ViewBag.Title = Dictionary.Home;
-    ViewBag.SubTitle = K9.Globalisation.Dictionary.CalculateYourNineStarKi;
+    ViewBag.Title = K9.Globalisation.Dictionary.nine_star_ki_title;
+    ViewBag.SubTitle = K9.Globalisation.Dictionary.AboutNineStarKi;
     ViewBag.Jarallax = "jarallax";
     Layout = "../Shared/_LayoutForm.cshtml";
 }
@@ -10,36 +11,21 @@
 @Html.Partial("_BetaPopup")
 
 <div class="container margin-0 padding-0 width-100">
-    <div class="col-md-4 col-sm-4 padding-0">
-        @Html.Partial("_Calculator")
-    </div>
-    <div class="col-md-8 col-sm-8 padding-0 padding-left-20-desktop">
-        @if (Model.NineStarKiModel != null)
-        {
-            @Html.Partial("_EnergySummary", Model.NineStarKiModel)
-        }
-    </div>
+    <article>
+        @Html.Panel("Origins", K9.Globalisation.Dictionary.origins)
+
+        @Html.Panel("Cycles of Light and Dark", K9.Globalisation.Dictionary.cycles, "/Images/ninestar/elements/Wood.png")
+
+        @Html.Panel("Yin and Yang", K9.Globalisation.Dictionary.yinyang)
+
+        @Html.Panel("The Three Modalities", K9.Globalisation.Dictionary.three_modalities)
+
+        @Html.Panel("The Five Elements", K9.Globalisation.Dictionary.five_elements)
+
+        @Html.Panel("9 Star Ki Personal Chart", K9.Globalisation.Dictionary.personal_chart)
+
+        @Html.Panel("The Nine Energies", K9.Globalisation.Dictionary.personal_chart)
+
+    </article>
 </div>
 
-@if (Model.NineStarKiModel != null)
-{
-    <div class="ninestar-summmary container padding-0">
-        <h2>@K9.Globalisation.Dictionary.MainEnergy</h2>
-        <hr />
-        @Html.Partial("_NineStarHeader", Model.NineStarKiModel.MainEnergy)
-        <hr />
-        @Html.Partial("_NineStarBody", Model.MainEnergyInfo)
-
-        <h2>@K9.Globalisation.Dictionary.CharacterEnergyLabel</h2>
-        <hr />
-        @Html.Partial("_NineStarHeader", Model.NineStarKiModel.CharacterEnergy)
-        <hr />
-        @Html.Partial("_NineStarBody", Model.CharacterEnergyInfo)
-
-        <h2>@K9.Globalisation.Dictionary.RisingEnergyLabel</h2>
-        <hr />
-        @Html.Partial("_NineStarHeader", Model.NineStarKiModel.RisingEnergy)
-        <hr />
-        @Html.Partial("_NineStarBody", Model.RisingEnergyInfo)
-    </div>
-}

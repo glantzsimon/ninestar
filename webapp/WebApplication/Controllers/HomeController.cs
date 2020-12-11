@@ -1,16 +1,10 @@
-﻿using K9.Base.WebApplication.Constants;
-using K9.Base.WebApplication.Controllers;
+﻿using K9.Base.WebApplication.Controllers;
+using K9.Base.WebApplication.Helpers;
+using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
-using K9.WebApplication.Models;
-using K9.WebApplication.ViewModels;
 using NLog;
-using System;
-using System.Linq;
 using System.Web.Mvc;
-using K9.Base.WebApplication.Helpers;
-using K9.DataAccessLayer.Enums;
-using K9.DataAccessLayer.Models;
 
 namespace K9.WebApplication.Controllers
 {
@@ -27,49 +21,15 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult Index()
         {
-            var dateOfBirth = new DateTime(DateTime.Now.Year - (24), DateTime.Now.Month, DateTime.Now.Day);
-            var personModel = new PersonModel
-            {
-                DateOfBirth = dateOfBirth
-            };
-            return View(new NineStarKiViewModel
-            {
-                PersonModel = personModel
-            });
+            return View();
         }
 
-        [Route("calculate")]
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult CalculateNineStarKi(NineStarKiViewModel model)
+        [Route("about")]
+        public ActionResult About()
         {
-            if (model.PersonModel != null)
-            {
-                var ninestar = new NineStarKiModel(model.PersonModel);
-                model.NineStarKiModel = ninestar;
-                model.MainEnergyInfo = _energyRepository.Find(e => e.EnergyType == EEnergyType.MainEnergy && e.Energy == ninestar.MainEnergy.Energy).FirstOrDefault() ?? new EnergyInfo
-                {
-                    EnergyType = EEnergyType.MainEnergy
-                };
-                model.CharacterEnergyInfo = _energyRepository.Find(e => e.EnergyType == EEnergyType.CharacterEnergy && e.Energy == ninestar.CharacterEnergy.Energy).FirstOrDefault() ?? new EnergyInfo
-                {
-                    EnergyType = EEnergyType.CharacterEnergy
-                };
-                model.RisingEnergyInfo = _energyRepository.Find(e => e.EnergyType == EEnergyType.RisingEnergy && e.Energy == ninestar.RisingEnergy.Energy).FirstOrDefault() ?? new EnergyInfo
-                {
-                    EnergyType = EEnergyType.RisingEnergy
-                };
-            }
-            return View("Index", model);
+            return View("Index");
         }
-
-        public ActionResult SetLanguage(string languageCode, string cultureCode)
-        {
-            Session[SessionConstants.LanguageCode] = languageCode;
-            Session[SessionConstants.CultureCode] = cultureCode;
-            return Redirect(Request.UrlReferrer?.ToString());
-        }
-
+        
         public override string GetObjectName()
         {
             return string.Empty;
@@ -78,7 +38,7 @@ namespace K9.WebApplication.Controllers
         private static void SetBetaWarningSessionVariable()
         {
             var numberOfDisplays = Helpers.SessionHelper.GetIntValue(Constants.SessionConstants.BetaWarningDisplay);
-            if (numberOfDisplays < 3)
+            if (numberOfDisplays < 1)
             {
                 numberOfDisplays++;
                 SessionHelper.SetValue(Constants.SessionConstants.BetaWarningDisplay, numberOfDisplays);

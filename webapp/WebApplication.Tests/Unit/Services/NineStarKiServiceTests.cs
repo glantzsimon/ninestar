@@ -120,9 +120,9 @@ namespace K9.WebApplication.Tests.Unit.Services
             Assert.Equal(year2Energy, ninestar2.MainEnergy.Energy);
             Assert.Equal(year3Energy, ninestar3.MainEnergy.Energy);
 
-            Assert.Equal(monthEnergy, ninestar.CharacterEnergy.Energy);
-            Assert.Equal(monthEnergy, ninestar2.CharacterEnergy.Energy);
-            Assert.Equal(monthEnergy, ninestar3.CharacterEnergy.Energy);
+            Assert.Equal(monthEnergy, ninestar.EmotionalEnergy.Energy);
+            Assert.Equal(monthEnergy, ninestar2.EmotionalEnergy.Energy);
+            Assert.Equal(monthEnergy, ninestar3.EmotionalEnergy.Energy);
         }
 
         [Theory]
@@ -181,9 +181,9 @@ namespace K9.WebApplication.Tests.Unit.Services
             Assert.Equal(year2Energy, ninestar2.MainEnergy.Energy);
             Assert.Equal(year3Energy, ninestar3.MainEnergy.Energy);
 
-            Assert.Equal(monthEnergy, ninestar.CharacterEnergy.Energy);
-            Assert.Equal(monthEnergy, ninestar2.CharacterEnergy.Energy);
-            Assert.Equal(monthEnergy, ninestar3.CharacterEnergy.Energy);
+            Assert.Equal(monthEnergy, ninestar.EmotionalEnergy.Energy);
+            Assert.Equal(monthEnergy, ninestar2.EmotionalEnergy.Energy);
+            Assert.Equal(monthEnergy, ninestar3.EmotionalEnergy.Energy);
         }
 
         [Theory]
@@ -201,7 +201,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         [InlineData(1986, 12, 7, ENineStarEnergy.CoreEarth, ENineStarEnergy.Water, ENineStarEnergy.Fire, EGender.Male)]
         [InlineData(1987, 2, 4, ENineStarEnergy.Wind, ENineStarEnergy.Mountain, ENineStarEnergy.Water, EGender.Male)]
         [InlineData(1988, 3, 6, ENineStarEnergy.Thunder, ENineStarEnergy.Wind, ENineStarEnergy.Wind, EGender.Male)]
-        public void RisingEnergy_HappyPath(int year, int month, int day, ENineStarEnergy yearEnergy, ENineStarEnergy monthEnergy, ENineStarEnergy risingEnergy, EGender gender)
+        public void SurfaceEnergy_HappyPath(int year, int month, int day, ENineStarEnergy yearEnergy, ENineStarEnergy monthEnergy, ENineStarEnergy surfaceEnergy, EGender gender)
         {
             var ninestar = new NineStarKiModel(new PersonModel
             {
@@ -210,8 +210,8 @@ namespace K9.WebApplication.Tests.Unit.Services
             });
 
             Assert.Equal(yearEnergy, ninestar.MainEnergy.Energy);
-            Assert.Equal(monthEnergy, ninestar.CharacterEnergy.Energy);
-            Assert.Equal(risingEnergy, ninestar.RisingEnergy.Energy);
+            Assert.Equal(monthEnergy, ninestar.EmotionalEnergy.Energy);
+            Assert.Equal(surfaceEnergy, ninestar.SurfaceEnergy.Energy);
         }
 
         [Fact]
@@ -229,7 +229,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                         Gender = EGender.Male,
                         DateOfBirth = dob
                     });
-                    Debug.WriteLine($"{energy.MainEnergy.EnergyNumber} - {energy.CharacterEnergy.EnergyNumber} - {energy.RisingEnergy.EnergyNumber}");
+                    Debug.WriteLine($"{energy.MainEnergy.EnergyNumber} - {energy.EmotionalEnergy.EnergyNumber} - {energy.SurfaceEnergy.EnergyNumber}");
                     dobMonth++;
                 }
                 dobYear++;

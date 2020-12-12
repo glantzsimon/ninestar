@@ -650,6 +650,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;The Fire element represents the full expression and expansion of energy within the cycle. It moves upwards and expands outwards. It is associated with high summer and the midday sun and is hot and dry. Fire is connected with our fame and outward appearance.&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Fire energies tend to be very expressive, passionate, warm and sociable. They tend to have great clarity and can often steer a path through troubled waters. They can often be highly inspirational individuals who use their passion, great  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fire_element {
+            get {
+                return ResourceManager.GetString("fire_element", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    In Chinese medicine, the element Fire controls the function of the heart and small intestine and therefore these energies must guard against circulatory disorders. It is also advisable to avoid 
         ///    overly hot, spicy or salty foods.
@@ -1706,7 +1717,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The tree element governs the liver and gallbladder. 
+        ///    The Tree element governs the liver and gallbladder. 
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    It is advisable for thunder energies to avoid eating two to three hours before sleep as well as overeating.

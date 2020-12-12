@@ -223,7 +223,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine Star Ki is an ancient system of astrology, largely uknown in the west, but slowly regaining popularity. It is deeper and more extensive than the zodiac and can offer some quite astonishing insights into our nature and the many cyles that influence our lives..
+        ///   Looks up a localized string similar to 9 Star Ki is an ancient system of astrology, largely uknown in the west, but slowly regaining popularity. It is deeper and more extensive than the zodiac and can offer some quite astonishing insights into our nature and the many cyles that influence our lives..
         /// </summary>
         public static string CompanyDescription {
             get {
@@ -241,7 +241,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Website created to share knowledge about the ancient widsom of Nine Star Ki astrology..
+        ///   Looks up a localized string similar to Website created to share knowledge about the ancient widsom of 9 Star Ki astrology..
         /// </summary>
         public static string CompanyShortDescription {
             get {
@@ -694,14 +694,14 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Each of the nine energies are associated with one of the five elements: water, wood, fire, earth and metal. Each of the elements is associated with a specific stage in the development from birth to death, or in the cycle of light and dark.
+        ///    Each of the nine energies are associated with one of the five elements: water, wood, fire, earth and metal. Each of the elements is associated with a season, a time of day, as well as a stage in the development from birth to death. A more accurate and helpful description is the &apos;five transformations&apos;, as in essence, each element represents a transformation from one &apos;state&apos; of energy to the next.
         ///&lt;/p&gt;
-        ///&lt;div class=&quot;row&quot;&gt;
-        ///    &lt;div class=&quot;col-md-6&quot;&gt;Element&lt;/div&gt;&lt;div class=&quot;col-md-6&quot;&gt;Stage&lt;/div&gt;
-        ///&lt;/div&gt;
-        ///&lt;div class=&quot;row&quot;&gt;
-        ///    &lt;div class=&quot;col-md-6&quot;&gt;Water&lt;/div&gt;&lt;div class=&quot;col-md-6&quot;&gt;Winter, Night, Death / Rebirth&lt;/div&gt;
-        ///    &lt;div class=&quot;col-md-6&quot;&gt;Wood&lt;/div&gt;&lt;di [rest of string was truncated]&quot;;.
+        ///
+        ///&lt;div class=&quot;table-responsive&quot;&gt;
+        ///    &lt;table class=&quot;table&quot;&gt;
+        ///        &lt;thead&gt;
+        ///            &lt;tr&gt;
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string five_elements {
             get {
@@ -995,7 +995,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Learn Nine Star Ki.
+        ///   Looks up a localized string similar to Learn 9 Star Ki.
         /// </summary>
         public static string LearnNineStarKiTitle {
             get {
@@ -1112,7 +1112,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to More About 9 Nine Star Ki.
+        ///   Looks up a localized string similar to More About 9 Star Ki.
         /// </summary>
         public static string MoreAboutNineStarKiTitle {
             get {
@@ -1301,10 +1301,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;9 Star Ki (pronounced &apos;key&apos;, which is the Japanese word for subtle energy or life-force) is possibly the oldest system of astrology in the world today. Originating in China, it is closely related to the 4000 year-old Book of Changes - the &apos;I Ching&apos; - whose principles are the foundations of Feng Shui, traditional Chinese medicine and acupuncture.&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    9 Star Ki is a simple system offering profound insights into ourselves and our relationships with others.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;p&gt;9 Star Ki (pronounced &apos;key&apos;, which is the Japanese word for subtle energy or life-force) is possibly the oldest system of astrology in the world today. Originating in China, it is closely related to the 4000 year-old Book of Changes - the &apos;I Ching&apos; - whose principles are the foundations of Feng Shui, traditional Chinese medicine and acupuncture.&lt;/p&gt;.
         /// </summary>
         public static string origins {
             get {
@@ -1853,13 +1850,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Welcome to NineStar! Whether you are new to 9 Star Ki or even new to astrology as a whole, you&apos;ve come to a great resource to find detailed and accurate information on this ancient and fascinating system of astrology. 
+        ///    Greetings and thank you for visiting NineStar. Whether you are new to 9 Star Ki or even new to astrology as a whole, you&apos;ve come to a great resource to find detailed and accurate information on this ancient and fascinating system of astrology. 
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    9 Star Ki is possibly the oldest system of astrology in the world today. It is closely related to the 4000 year-old Chinese &apos;Book of Changes&apos; (the &apos;I Ching&apos;), whose principles are the foundations of Feng Shui, traditional Chinese medicine and acupuncture.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        /// [rest of string was truncated]&quot;;.
+        ///    9 Star Ki is possibly the oldest system of astrology in the world today. It is closely related to the 4000 year-old Chinese &apos;Book of Changes&apos; (the &apos;I Ching&apos;), whose principles are the foundations of Feng Shui, traditional Chinese medicine and [rest of string was truncated]&quot;;.
         /// </summary>
         public static string welcome {
             get {
@@ -2042,11 +2036,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div&gt;
-        ///    &lt;img title=&quot;Yang&quot; alt=&quot;Yang&quot; class=&quot;auto-size center-block&quot; src=&quot;/Images/ninestar/yinyang/Yang.png&quot;&gt;
-        ///&lt;/div&gt;
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Many ancient civilisations had a more in depth understanding of the cosmic male and female energies that underpin our reality. There are many different terms used to describe these cosmic energies, such as Shakti / Shiva in Sanskrit or yin and yang in the Chinese tradition, but they are essentially understood to be on the one hand feminine, dark, passive energy and on the other masculine light, active energy.
+        ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Many ancient civilisations had a more in depth understanding of the cosmic male and female energies that underpin our reality. There are many different terms used to describe these cosmic energies, such as Shakti / Shiva in Sanskrit or yin and yang in the Chinese tradition, but they are essentially understood to be on the one hand feminine, dark, passive energy and on the other m [rest of string was truncated]&quot;;.
+        ///    In 9 Star Ki, it is believed that the yang energy of the universe is chann [rest of string was truncated]&quot;;.
         /// </summary>
         public static string yinyang {
             get {

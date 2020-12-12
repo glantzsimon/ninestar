@@ -1,5 +1,5 @@
 ﻿@using K9.WebApplication.Options
-@model K9.WebApplication.Options.PanelOptions
+@model PanelOptions
 @{
     var id = Guid.NewGuid();
     var hasImage = !string.IsNullOrEmpty(Model.ImageSrc);
@@ -7,7 +7,7 @@
     var panelBodyClass = hasImage ? "panel-body-image" : "";
 }
 <div class="panel panel-default">
-    <div class="panel-heading"><h4 class="margin-0">@Model.Title</h4></div>
+    <div class="panel-heading"><h4 class="margin-0"><strong>@Model.Title</strong></h4></div>
     
     @if (hasImage)
     {

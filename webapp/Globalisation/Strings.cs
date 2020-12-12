@@ -72,7 +72,7 @@
             public const string YoungestDaughter = "YoungestDaughter";
             public const string YoungestSon = "YoungestSon";
             public const string MiddleDaughter = "MiddleDaughter";
-            public const string Wood = "Wood";
+            public const string Tree = "Tree";
             public const string Metal = "Metal";
             public const string Earth = "Earth";
             public const string White = "White";

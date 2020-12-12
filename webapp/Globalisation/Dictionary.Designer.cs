@@ -700,7 +700,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Each of the nine energies are associated with one of the five elements: water, wood, fire, earth and metal. Each of the elements is associated with a season, a time of day, as well as a stage in the development from birth to death. A more accurate and helpful description is the &apos;five transformations&apos;, as in essence, each element represents a transformation from one &apos;state&apos; of energy to the next.
+        ///    Each of the nine energies are associated with one of the five elements: Water, Tree, Fire, Earth and Metal. Each of the elements is associated with a season, a time of day, as well as a stage in the development from birth to death. A more accurate and helpful description is the &apos;five transformations&apos;, as in essence, each element represents a transformation from one &apos;state&apos; of energy to the next.
         ///&lt;/p&gt;
         ///
         ///&lt;div class=&quot;table-responsive&quot;&gt;
@@ -1706,7 +1706,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The wood element governs the liver and gallbladder. 
+        ///    The tree element governs the liver and gallbladder. 
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    It is advisable for thunder energies to avoid eating two to three hours before sleep as well as overeating.
@@ -1781,6 +1781,15 @@ namespace K9.Globalisation {
         public static string TransMale {
             get {
                 return ResourceManager.GetString("TransMale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tree.
+        /// </summary>
+        public static string Tree {
+            get {
+                return ResourceManager.GetString("Tree", resourceCulture);
             }
         }
         
@@ -1978,10 +1987,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like the wind, four wind energies can express anything from stillness to a raging tornado. This energy is one of the most changeable and indeed emotional of the nine energies.
+        ///    Like the wind, four Wind energies can express anything from stillness to a raging tornado. This energy is one of the most changeable and indeed emotional of the nine energies.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Like thunder energies, also of the element wood, wind energies can be impulsive at times. However, they typically have a gentler, steadier nature than three wood energies.
+        ///    Like thunder energies, also of the element Tree, Wind energies can be impulsive at times. However, they typically have a gentler, steadier nature than three Tree energies.
         ///    Similarly, they are generally a lot more reliable and thoughtful than three energies. They are practical and possess much common sense [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_description {
@@ -1992,7 +2001,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like the other Wood element, Thunder, Wind energies need to take good care of the liver and gall bladder. Unlike Thunder energies who, being yang, are more prone to liver imbalances, yin Wind energies are more likely to experience issues with the yin gall bladder.
+        ///    Like the other Tree element, Thunder, Wind energies need to take good care of the liver and gall bladder. Unlike Thunder energies who, being yang, are more prone to liver imbalances, yin Wind energies are more likely to experience issues with the yin gall bladder.
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    It is important for Wind energies to eat slowly and when relaxed and without distraction. Also, it is better to not eat when not hungry.
@@ -2008,7 +2017,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    4 Wood energies are excellent planners and organisers and often do extremely well at activities and jobs that require such skills.
+        ///    4 Tree energies are excellent planners and organisers and often do extremely well at activities and jobs that require such skills.
         ///    On the other hand, being naturally adaptable and sensitive to others, they can also do very well at public relations. 
         ///    Wind energies would also suit broadcasting, television or cinema where they could exploit their sensitivity to the arts.
         ///&lt;/p&gt;.
@@ -2043,15 +2052,6 @@ namespace K9.Globalisation {
         public static string wind_trigram {
             get {
                 return ResourceManager.GetString("wind_trigram", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Wood.
-        /// </summary>
-        public static string Wood {
-            get {
-                return ResourceManager.GetString("Wood", resourceCulture);
             }
         }
         

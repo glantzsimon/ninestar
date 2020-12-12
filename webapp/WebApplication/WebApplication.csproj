@@ -601,7 +601,7 @@
     <Content Include="Images\ninestar\elements\fire.png" />
     <Content Include="Images\ninestar\elements\metal.png" />
     <Content Include="Images\ninestar\elements\water.png" />
-    <Content Include="Images\ninestar\elements\wood.png" />
+    <Content Include="Images\ninestar\elements\tree.png" />
     <Content Include="Images\ninestar\energies\coreearth.png" />
     <Content Include="Images\ninestar\energies\fire.png" />
     <Content Include="Images\ninestar\energies\heaven.png" />

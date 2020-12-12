@@ -361,8 +361,8 @@
   <data name="Wind" xml:space="preserve">
     <value>Wind</value>
   </data>
-  <data name="Wood" xml:space="preserve">
-    <value>Wood</value>
+  <data name="Tree" xml:space="preserve">
+    <value>Tree</value>
   </data>
   <data name="Yang" xml:space="preserve">
     <value>Yang</value>

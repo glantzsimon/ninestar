@@ -25,6 +25,7 @@ namespace K9.WebApplication.Controllers
             SetBetaWarningSessionVariable();
         }
 
+        [Route("calculate")]
         public ActionResult Index()
         {
             var dateOfBirth = new DateTime(DateTime.Now.Year - (24), DateTime.Now.Month, DateTime.Now.Day);

@@ -1,6 +1,7 @@
 ﻿@using K9.Base.WebApplication.Extensions
 @using K9.Base.WebApplication.Helpers
 @using K9.SharedLibrary.Authentication
+@using K9.WebApplication.Helpers
 
 @{
     var roles = this.GetRoles();
@@ -78,16 +79,16 @@
                         <li class="@ViewContext.GetActiveClass("Predictions", "NineStar")"><a href="@Url.Action("Predictions", "NineStar")"> @K9.Globalisation.Dictionary.Predictions</a></li>
                         <li class="@ViewContext.GetActiveClass("About", "Home")">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label"> @K9.Globalisation.Dictionary.Learn</span> <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span> @K9.Globalisation.Dictionary.Learn</span> <span class="caret"></span></a>
                             <ul class="dropdown-menu nav navbar-nav">
                                 <li class="@ViewContext.GetActiveClass("About", "Home")"><a href="@Url.Action("About", "Home")"> @K9.Globalisation.Dictionary.AboutNineStarKi</a></li>
-                                <li class="@ViewContext.GetActiveClass("About", "Home")#origins"><a href="@Url.Action("About", "Home")"> @K9.Globalisation.Dictionary.OriginsTitle</a></li>
-                                <li class="@ViewContext.GetActiveClass("About", "Home")#cycles"><a href="@Url.Action("About", "Home")"> @K9.Globalisation.Dictionary.CyclesTitle</a></li>
-                                <li class="@ViewContext.GetActiveClass("About", "Home")#yinyang"><a href="@Url.Action("About", "Home")"> @K9.Globalisation.Dictionary.YinAndYang</a></li>
-                                <li class="@ViewContext.GetActiveClass("About", "Home")#modalities"><a href="@Url.Action("About", "Home")"> @K9.Globalisation.Dictionary.ThreeModalitiesTitle</a></li>
-                                <li class="@ViewContext.GetActiveClass("About", "Home")#elements"><a href="@Url.Action("About", "Home")"> @K9.Globalisation.Dictionary.FiveElementsTitle</a></li>
-                                <li class="@ViewContext.GetActiveClass("About", "Home")#chart"><a href="@Url.Action("About", "Home")"> @K9.Globalisation.Dictionary.PersonalProfileTitle</a></li>
-                                <li class="@ViewContext.GetActiveClass("About", "Home")#energies"><a href="@Url.Action("About", "Home")"> @K9.Globalisation.Dictionary.NineEnergiesTitle</a></li>
+                                <li class="@ViewContext.GetActiveClass("About", "Home")"><a href="@Url.ActionWithBookmark("About", "Home", "origins")"> @K9.Globalisation.Dictionary.OriginsTitle</a></li>
+                                <li class="@ViewContext.GetActiveClass("About", "Home")"><a href="@Url.ActionWithBookmark("About", "Home", "cycles")"> @K9.Globalisation.Dictionary.CyclesTitle</a></li>
+                                <li class="@ViewContext.GetActiveClass("About", "Home")"><a href="@Url.ActionWithBookmark("About", "Home", "yinyang")"> @K9.Globalisation.Dictionary.YinAndYang</a></li>
+                                <li class="@ViewContext.GetActiveClass("About", "Home")"><a href="@Url.ActionWithBookmark("About", "Home", "modalities")"> @K9.Globalisation.Dictionary.ThreeModalitiesTitle</a></li>
+                                <li class="@ViewContext.GetActiveClass("About", "Home")"><a href="@Url.ActionWithBookmark("About", "Home", "elements")"> @K9.Globalisation.Dictionary.FiveElementsTitle</a></li>
+                                <li class="@ViewContext.GetActiveClass("About", "Home")"><a href="@Url.ActionWithBookmark("About", "Home", "chart")"> @K9.Globalisation.Dictionary.PersonalProfileTitle</a></li>
+                                <li class="@ViewContext.GetActiveClass("About", "Home")"><a href="@Url.ActionWithBookmark("About", "Home", "energies")"> @K9.Globalisation.Dictionary.NineEnergiesTitle</a></li>
                             </ul>
                         </li>
                     </ul>

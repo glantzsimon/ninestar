@@ -6,6 +6,13 @@ namespace K9.WebApplication.Helpers
 {
     public static partial class HtmlHelpers
     {
+        public static string ActionWithBookmark(this UrlHelper helper, string actionName, string controllerName, string bookmark)
+        {
+            return helper.RequestContext.RouteData.Values["action"].ToString().ToLower() == actionName.ToLower() &&
+                   helper.RequestContext.RouteData.Values["controller"].ToString().ToLower() == controllerName.ToLower() 
+                ? $"#{bookmark}"
+                : $"{helper.Action(actionName, controllerName)}#{bookmark}";
+        }
 
         public static MvcHtmlString CollapsiblePanel(this HtmlHelper html, CollapsiblePanelOptions options)
         {

@@ -6,8 +6,10 @@
     var imageSizeClass = Model.ImageSize == EPanelImageSize.Medium ? "image-panel-medium" : "";
     var panelBodyClass = hasImage ? "panel-body-image" : "";
 }
+@*Bookmark*@
+<div id="@Model.Id" style="position: relative; top: -180px;"></div>
 <div class="panel panel-default">
-    <div id="@Model.Id" class="panel-heading"><h4 class="margin-0"><strong>@Model.Title</strong></h4></div>
+    <div class="panel-heading"><h4 class="margin-0"><strong>@Model.Title</strong></h4></div>
     
     @if (hasImage)
     {

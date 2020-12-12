@@ -1,0 +1,19 @@
+﻿@using K9.WebApplication.Options
+@model K9.WebApplication.Options.PanelOptions
+@{
+    var id = Guid.NewGuid();
+    var hasImage = !string.IsNullOrEmpty(Model.ImageSrc);
+    var imageSizeClass = Model.ImageSize == EPanelImageSize.Medium ? "image-panel-medium" : "";
+    var panelBodyClass = hasImage ? "panel-body-image" : "";
+}
+<div class="panel panel-default">
+    <div class="panel-heading"><h4 class="margin-0">@Model.Title</h4></div>
+    
+    @if (hasImage)
+    {
+        <div class="panel-image-container">
+            <div class="image-panel img-rounded @imageSizeClass" style="background-image: url('@Model.ImageSrc'); @Model.ImageLayoutCss;"></div>
+        </div>
+    }
+    <div class="panel-body @panelBodyClass">@MvcHtmlString.Create(Model.Body)</div>
+</div>

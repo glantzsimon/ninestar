@@ -1,0 +1,8 @@
+﻿@using K9.WebApplication.Options
+@model PanelOptions
+@{
+    var id = Guid.NewGuid();
+    var imageSizeClass = Model.ImageSize == EPanelImageSize.Medium ? "image-panel-medium" : "";
+}
+
+<div class="image-panel img-rounded @imageSizeClass" style="background-image: url('@Model.ImageSrc'); @Model.ImageLayoutCss;"></div>

@@ -27,7 +27,7 @@ namespace K9.WebApplication.Controllers
         [Route("about")]
         public ActionResult About()
         {
-            return View("Index");
+            return View();
         }
         
         public override string GetObjectName()

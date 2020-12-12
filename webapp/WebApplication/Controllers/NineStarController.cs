@@ -63,11 +63,13 @@ namespace K9.WebApplication.Controllers
             return View("Index", model);
         }
 
+        [Route("relationships")]
         public ActionResult Relationships()
         {
             return View();
         }
 
+        [Route("predications")]
         public ActionResult Predictions()
         {
             return View();

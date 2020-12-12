@@ -23,10 +23,7 @@ namespace K9.WebApplication
                 "~/Content/site/sections/*.css"));
 
             bundles.Add(new StyleBundle("~/Content/k9").Include(
-                "~/Content/k9/fadeIn.css",
-                "~/Content/k9/pageSpinner.css",
-                "~/Content/k9/fileUpload.css",
-                "~/Content/k9/scroller.css"));
+                "~/Content/k9/*.css"));
 
             bundles.Add(new StyleBundle("~/Content/tpl").Include(
                 "~/Content/template/lsb.css",

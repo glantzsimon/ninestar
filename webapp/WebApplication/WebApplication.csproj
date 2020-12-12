@@ -230,6 +230,7 @@
     <Compile Include="Config\GoogleConfiguration.cs" />
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
+    <Compile Include="Helpers\ViewBagHelper.cs" />
     <Compile Include="Constants\ViewDataConstants.cs" />
     <Compile Include="Controllers\AccountControllerAjax.cs" />
     <Compile Include="Controllers\DonationsController.cs" />
@@ -276,6 +277,7 @@
     <Content Include="App_Readme\Elmah.txt" />
     <Content Include="Config\.gitattributes" />
     <Content Include="Content\fonts\alex-brush-v8-latin-regular.svg" />
+    <Content Include="Content\k9\panel.css" />
     <Content Include="Content\k9\scroller.css" />
     <Content Include="Content\k9\fileUpload.css" />
     <Content Include="Content\fontawesome\font-awesome.css" />
@@ -321,6 +323,7 @@
     <Content Include="Content\_colors.txt" />
     <Content Include="Global.asax" />
     <Content Include="Images\background\stars.jpg" />
+    <Content Include="Images\company\logo-med.png" />
     <Content Include="Images\company\logo-small.png" />
     <Content Include="Images\company\logo.png" />
     <Content Include="Images\flags\ad.png" />
@@ -570,6 +573,8 @@
     <Content Include="Images\flags\za.png" />
     <Content Include="Images\flags\zm.png" />
     <Content Include="Images\flags\zw.png" />
+    <Content Include="Images\home\light-dark.jpg" />
+    <Content Include="Images\home\ninestar-home-bg.jpg" />
     <Content Include="Images\icons\android-chrome-192x192.png" />
     <Content Include="Images\icons\apple-touch-icon-114x114.png" />
     <Content Include="Images\icons\apple-touch-icon-120x120.png" />
@@ -687,7 +692,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\archive\upload\ArchiveItem\" />
-    <Folder Include="Images\home\slides\" />
     <Folder Include="Upload\" />
   </ItemGroup>
   <ItemGroup>
@@ -909,11 +913,13 @@
     <Content Include="Views\NineStar\Predictions.cshtml" />
     <Content Include="Views\NineStar\Relationships.cshtml" />
     <Content Include="Views\NineStar\_EnergyTitle.cshtml" />
-    <Content Include="Views\Shared\_CollapsiblePanel.cshtml" />
+    <Content Include="Views\Shared\Controls\_CollapsiblePanel.cshtml" />
     <Content Include="Views\Shared\_GoogleAnalytics.cshtml" />
     <Content Include="Views\Shared\_SEO.cshtml" />
     <Content Include="Views\NineStar\_Modality.cshtml" />
-    <Content Include="Views\Shared\_Panel.cshtml" />
+    <Content Include="Views\Shared\Controls\_Panel.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Shared\Controls\_ImagePanel.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

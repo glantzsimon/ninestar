@@ -115,6 +115,7 @@
     <Content Include="Articles\en-gb\cycles.htm" />
     <Content Include="Articles\en-gb\five-elements.htm" />
     <Content Include="Articles\en-gb\nine-energies.htm" />
+    <Content Include="Articles\en-gb\welcome.htm" />
     <Content Include="Articles\en-gb\yinyang.htm" />
     <Content Include="Articles\en-gb\origins.htm" />
     <Content Include="Articles\en-gb\soil-health.htm" />

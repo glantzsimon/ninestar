@@ -2,30 +2,25 @@
 @model K9.WebApplication.ViewModels.NineStarKiViewModel
 
 @{
-    ViewBag.Title = K9.Globalisation.Dictionary.nine_star_ki_title;
-    ViewBag.SubTitle = K9.Globalisation.Dictionary.AboutNineStarKi;
-    ViewBag.Jarallax = "jarallax";
+    ViewBag.Title = K9.Globalisation.Dictionary.NineStarKiTitle;
+    ViewBag.SubTitle = K9.Globalisation.Dictionary.WelcomeTitle;
+    ViewBag.Background = ViewBagHelper.EViewBackground.Jarallax;
     Layout = "../Shared/_LayoutForm.cshtml";
 }
 
 @Html.Partial("_BetaPopup")
 
-<div class="container margin-0 padding-0 width-100">
+<div class="container main-content">
+    @Html.ImagePanel("Welcome", "/Images/home/ninestar-home-bg.jpg")
+
     <article>
-        @Html.Panel("Origins", K9.Globalisation.Dictionary.origins)
-
-        @Html.Panel("Cycles of Light and Dark", K9.Globalisation.Dictionary.cycles, "/Images/ninestar/elements/Wood.png")
-
-        @Html.Panel("Yin and Yang", K9.Globalisation.Dictionary.yinyang)
-
-        @Html.Panel("The Three Modalities", K9.Globalisation.Dictionary.three_modalities)
-
-        @Html.Panel("The Five Elements", K9.Globalisation.Dictionary.five_elements)
-
-        @Html.Panel("9 Star Ki Personal Chart", K9.Globalisation.Dictionary.personal_chart)
-
-        @Html.Panel("The Nine Energies", K9.Globalisation.Dictionary.personal_chart)
-
+        @MvcHtmlString.Create(K9.Globalisation.Dictionary.welcome)
     </article>
+
+    <br />
+
+    @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.PersonalProfileCalculator, "Index", "NineStar")
+
+    @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.LearnMoreAboutNineStarKi, "About", "Home", null, null, EButtonClass.Info)
 </div>
 

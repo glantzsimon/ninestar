@@ -3,13 +3,13 @@
 @{
     ViewBag.Title = Dictionary.Home;
     ViewBag.SubTitle = K9.Globalisation.Dictionary.CalculateYourNineStarKi;
-    ViewBag.Jarallax = "jarallax";
+    ViewBag.Background = ViewBagHelper.EViewBackground.Jarallax;
     Layout = "../Shared/_LayoutForm.cshtml";
 }
 
 @Html.Partial("_BetaPopup")
 
-<div class="container margin-0 padding-0 width-100">
+<div class="container main-content">
     <h2 class="text-center">@K9.Globalisation.Dictionary.ComingSoon</h2>
 </div>
 

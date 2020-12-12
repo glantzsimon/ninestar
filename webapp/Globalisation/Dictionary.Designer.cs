@@ -142,15 +142,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Calculate Your 9 Star Ki Energy.
-        /// </summary>
-        public static string CalculateYourNineStarKi {
-            get {
-                return ResourceManager.GetString("CalculateYourNineStarKi", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Calculator.
         /// </summary>
         public static string Calculator {
@@ -369,10 +360,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Nine Star Ki astrology is based on the universal cycles of light and dark and the transformations between the various stages. This is similar to the seasonal changes we see throughout the year or even throughout each day and night. There are many different cycles of differing lengths, all of which fit into one another like the layers of an onion. Some of the cycles are very long.
+        ///    9 Star Ki astrology is based on the universal cycles of light and dark and the transformations between the various stages. This is similar to the seasonal changes we see throughout the year or even throughout each day and night. There are many different cycles of differing lengths, all of which fit into one another like the layers of an onion. Some of the cycles are very long.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    In order to understand one&apos;s energetic make-up and potential, it is sufficient to observe the nine year  [rest of string was truncated]&quot;;.
+        ///    In order to understand one&apos;s energetic make-up and potential, it is sufficient to observe the nine year cyc [rest of string was truncated]&quot;;.
         /// </summary>
         public static string cycles {
             get {
@@ -986,6 +977,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Learn.
+        /// </summary>
+        public static string Learn {
+            get {
+                return ResourceManager.GetString("Learn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Learn more about 9 Star Ki.
+        /// </summary>
+        public static string LearnMoreAboutNineStarKi {
+            get {
+                return ResourceManager.GetString("LearnMoreAboutNineStarKi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Learn Nine Star Ki.
+        /// </summary>
+        public static string LearnNineStarKiTitle {
+            get {
+                return ResourceManager.GetString("LearnNineStarKiTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Li.
         /// </summary>
         public static string Li {
@@ -1090,6 +1108,15 @@ namespace K9.Globalisation {
         public static string ModalityLabel {
             get {
                 return ResourceManager.GetString("ModalityLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to More About 9 Nine Star Ki.
+        /// </summary>
+        public static string MoreAboutNineStarKiTitle {
+            get {
+                return ResourceManager.GetString("MoreAboutNineStarKiTitle", resourceCulture);
             }
         }
         
@@ -1274,9 +1301,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;Nine Star Ki (pronounced &apos;key&apos;, which is the Japanese word for subtle energy or life-force) is possibly the oldest system of astrology in the world today. Originating in China, it is closely related to the 4000 year-old Book of Changes - the &apos;I Ching&apos; - whose principles are the foundations of Feng Shui, traditional Chinese medicine and acupuncture.&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;p&gt;9 Star Ki (pronounced &apos;key&apos;, which is the Japanese word for subtle energy or life-force) is possibly the oldest system of astrology in the world today. Originating in China, it is closely related to the 4000 year-old Book of Changes - the &apos;I Ching&apos; - whose principles are the foundations of Feng Shui, traditional Chinese medicine and acupuncture.&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Nine Star Ki is a simple system offering profound insights into ourselves and our relationships with others.
+        ///    9 Star Ki is a simple system offering profound insights into ourselves and our relationships with others.
         ///&lt;/p&gt;.
         /// </summary>
         public static string origins {
@@ -1328,13 +1355,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The Nine Star Ki personal chart is comprised of three numbers, each from 1 to 9, resulting in 81 unique character profiles, spanning nine years.
+        ///    The 9 Star Ki personal chart is comprised of three numbers, each from 1 to 9, resulting in 81 unique character profiles, spanning nine years.
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    &lt;strong&gt;First Number - Main Energy / Adult Persona&lt;/strong&gt;
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    The first number is determined by the year we were born and corresponds to our intrinsic nature; the way we fundamentally view and make sense of the world. It is the energy fo our adult self and only becomes relevant after the age of 18. Before that, this is determi [rest of string was truncated]&quot;;.
+        ///    The first number is determined by the year we were born and corresponds to our intrinsic nature; the way we fundamentally view and make sense of the world. It is the energy fo our adult self and only becomes relevant after the age of 18. Before that, this is determined [rest of string was truncated]&quot;;.
         /// </summary>
         public static string personal_chart {
             get {
@@ -1348,6 +1375,15 @@ namespace K9.Globalisation {
         public static string PersonalDevelopemntLabel {
             get {
                 return ResourceManager.GetString("PersonalDevelopemntLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personal Profile Calculator.
+        /// </summary>
+        public static string PersonalProfileCalculator {
+            get {
+                return ResourceManager.GetString("PersonalProfileCalculator", resourceCulture);
             }
         }
         
@@ -1590,10 +1626,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Nine Star Ki astrology is based on the universal cycles of light and dark and the transformations between the various stages. This is similar to the seasonal changes we see throughout the year or even throughout each day and night. There are many different cycles of differing lengths, all of which fit into one another like the layers of an onion. Some of the cycles are very long.
+        ///    9 Star Ki astrology is based on the universal cycles of light and dark and the transformations between the various stages. This is similar to the seasonal changes we see throughout the year or even throughout each day and night. There are many different cycles of differing lengths, all of which fit into one another like the layers of an onion. Some of the cycles are very long.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    In order to understand one&apos;s energetic make-up and potential, it is sufficient to observe the nine year  [rest of string was truncated]&quot;;.
+        ///    In order to understand one&apos;s energetic make-up and potential, it is sufficient to observe the nine year cyc [rest of string was truncated]&quot;;.
         /// </summary>
         public static string three_modalities {
             get {
@@ -1816,6 +1852,22 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Welcome to NineStar! Whether you are new to 9 Star Ki or even new to astrology as a whole, you&apos;ve come to a great resource to find detailed and accurate information on this ancient and fascinating system of astrology. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    9 Star Ki is possibly the oldest system of astrology in the world today. It is closely related to the 4000 year-old Chinese &apos;Book of Changes&apos; (the &apos;I Ching&apos;), whose principles are the foundations of Feng Shui, traditional Chinese medicine and acupuncture.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string welcome {
+            get {
+                return ResourceManager.GetString("welcome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
         ///&lt;html lang=&quot;en&quot;&gt;
         ///
@@ -1844,6 +1896,15 @@ namespace K9.Globalisation {
         public static string WelcomeEmail {
             get {
                 return ResourceManager.GetString("WelcomeEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome to NineStar!.
+        /// </summary>
+        public static string WelcomeTitle {
+            get {
+                return ResourceManager.GetString("WelcomeTitle", resourceCulture);
             }
         }
         

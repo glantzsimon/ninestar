@@ -697,4 +697,10 @@
   <data name="fire_element" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\fire-element.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="MetalElement" xml:space="preserve">
+    <value>Metal Element</value>
+  </data>
+  <data name="metal_element" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\metal-element.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

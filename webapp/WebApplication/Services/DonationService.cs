@@ -1,12 +1,12 @@
-﻿using K9.DataAccessLayer.Models;
+﻿using K9.Base.WebApplication.Config;
+using K9.DataAccessLayer.Models;
+using K9.SharedLibrary.Extensions;
+using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using NLog;
 using System;
 using System.Web;
 using System.Web.Mvc;
-using K9.Base.WebApplication.Config;
-using K9.SharedLibrary.Extensions;
-using K9.SharedLibrary.Helpers;
 
 namespace K9.WebApplication.Services
 {
@@ -39,7 +39,7 @@ namespace K9.WebApplication.Services
                     donation.CustomerEmail,
                     Amount = donation.DonationAmount,
                     donation.Currency,
-                    LinkToSummary = _urlHelper.AsboluteAction("Index", "Donations"),
+                    LinkToSummary = _urlHelper.AbsoluteAction("Index", "Donations"),
                     Company = _config.CompanyName,
                     ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl)
                 }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);

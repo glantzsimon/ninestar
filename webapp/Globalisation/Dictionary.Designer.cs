@@ -519,7 +519,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The Earth element is stage that follows the Fire element. One could say that it is made up of the ashes from the fire. In Traditional Chinese medicine the Earth element is associated with later summer or afternoon. However, the Earth element also represents the transition between all of the other stages. As such, it contains the compost from the breaking down of plant matter during the autumn (Metal element), moisture from the Water element (winter) and the roots of trees and plants (Wood element o [rest of string was truncated]&quot;;.
+        ///    The Earth element represents the stage that follows the Fire element. One could say that it is made up of the ashes from the fire. In Traditional Chinese medicine the Earth element is associated with later summer or afternoon. However, the Earth element also represents the transition between all of the other stages. As such, it contains the compost from the breaking down of plant matter during the autumn (Metal element), moisture from the Water element (winter) and the roots of trees and plants (Wo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string earth_element {
             get {
@@ -1140,6 +1140,28 @@ namespace K9.Globalisation {
         public static string Metal {
             get {
                 return ResourceManager.GetString("Metal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The Metal element is associated with Autumn and late afternoon or evening. It is a stage when the light is fading and the energy is moving downwards and inwards, condensing and consolidating. It is also the time of the harvest, when we begin to gather the fruits of our labour and go indoors to reflect on the past season or day.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Metal people tend to be thoughtful and observant, paying careful attention to detail. They typically have an objective and balanced way at looking at things. [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string metal_element {
+            get {
+                return ResourceManager.GetString("metal_element", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Metal Element.
+        /// </summary>
+        public static string MetalElement {
+            get {
+                return ResourceManager.GetString("MetalElement", resourceCulture);
             }
         }
         

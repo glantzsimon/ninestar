@@ -21,7 +21,7 @@
                         {
                             <li class="@ViewContext.GetActiveClass("Index", "ArchiveItems") sub-item"><a href="@Url.Action("Index", "ArchiveItems")">@Dictionary.ArchiveItems</a></li>
                         }
-                        @if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<ArchiveCategory>(Permissions.Create, Permissions.Edit, Permissions.Delete))
+                        @if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<ArchiveItemCategory>(Permissions.Create, Permissions.Edit, Permissions.Delete))
                         {
                             <li class="@ViewContext.GetActiveClass("Index", "ArchiveCategories") sub-item"><a href="@Url.Action("Index", "ArchiveCategories")">@Dictionary.ArchiveCategories</a></li>
                         }

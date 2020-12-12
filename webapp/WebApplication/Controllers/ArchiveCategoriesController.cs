@@ -6,9 +6,9 @@ using System.Web.Mvc;
 namespace K9.WebApplication.Controllers
 {
     [Authorize]
-	public class ArchiveCategoriesController : BaseController<ArchiveCategory>
+	public class ArchiveCategoriesController : BaseController<ArchiveItemCategory>
 	{
-		public ArchiveCategoriesController(IControllerPackage<ArchiveCategory> controllerPackage) : base(controllerPackage)
+		public ArchiveCategoriesController(IControllerPackage<ArchiveItemCategory> controllerPackage) : base(controllerPackage)
 		{
 		}
 	}

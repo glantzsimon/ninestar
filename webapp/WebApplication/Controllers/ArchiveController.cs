@@ -13,10 +13,10 @@ namespace K9.WebApplication.Controllers
 {
     public class ArchiveController : BaseController
     {
-        private readonly IRepository<ArchiveCategory> _archiveCategoryRepo;
+        private readonly IRepository<ArchiveItemCategory> _archiveCategoryRepo;
         private readonly IRepository<ArchiveItem> _archiveItemRepo;
 
-        public ArchiveController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IRepository<ArchiveCategory> archiveCategoryRepo, IRepository<ArchiveItem> archiveItemRepo, IFileSourceHelper fileSourceHelper)
+        public ArchiveController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IRepository<ArchiveItemCategory> archiveCategoryRepo, IRepository<ArchiveItem> archiveItemRepo, IFileSourceHelper fileSourceHelper)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
         {
             _archiveCategoryRepo = archiveCategoryRepo;
@@ -33,7 +33,7 @@ namespace K9.WebApplication.Controllers
             var archiveModel = new ArchiveViewModel
             {
                 CategoryId = categoryId ?? 0,
-                ArchiveCategories = _archiveCategoryRepo.List()
+                ArchiveItemCategories = _archiveCategoryRepo.List()
                     .OrderBy(_ => _.Name)
                     .Select(a =>
                     {
@@ -41,15 +41,15 @@ namespace K9.WebApplication.Controllers
                         var archiveItemsPerCategoryByLanguage = archiveItems.Where(item =>
                             item.LanguageCode.Equals(string.Empty) ||
                             item.LanguageCode == SessionHelper.GetStringValue(SessionConstants.LanguageCode)).ToList();
-                        return new ArchiveCategoryViewModel
+                        return new ArchiveByItemCategoryViewModel()
                         {
-                            ArchiveCategory = a,
+                            ArchiveItemCategory = a,
                             Items = archiveItemsPerCategoryByLanguage
                         };
                     }).ToList(),
-                SelectedArchive = categoryId > 0 ? new ArchiveCategoryViewModel
+                SelectedArchive = categoryId > 0 ? new ArchiveByItemCategoryViewModel
                 {
-                    ArchiveCategory = archiveCategories.FirstOrDefault(_ => _.Id == categoryId),
+                    ArchiveItemCategory = archiveCategories.FirstOrDefault(_ => _.Id == categoryId),
                     Items = archiveItemsByLanguage
                 } : null
             };

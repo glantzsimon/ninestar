@@ -685,6 +685,15 @@
   <data name="YinAndYang" xml:space="preserve">
     <value>Yin and Yang</value>
   </data>
+  <data name="EarthElement" xml:space="preserve">
+    <value>Earth Element</value>
+  </data>
+  <data name="earth_element" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\earth-element.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="FireElement" xml:space="preserve">
+    <value>Fire Element</value>
+  </data>
   <data name="fire_element" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\fire-element.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>

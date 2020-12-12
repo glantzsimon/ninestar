@@ -518,6 +518,25 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The Earth element is stage that follows the Fire element. One could say that it is made up of the ashes from the fire. In Traditional Chinese medicine the Earth element is associated with later summer or afternoon. However, the Earth element also represents the transition between all of the other stages. As such, it contains the compost from the breaking down of plant matter during the autumn (Metal element), moisture from the Water element (winter) and the roots of trees and plants (Wood element o [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string earth_element {
+            get {
+                return ResourceManager.GetString("earth_element", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Earth Element.
+        /// </summary>
+        public static string EarthElement {
+            get {
+                return ResourceManager.GetString("EarthElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to East.
         /// </summary>
         public static string East {
@@ -650,9 +669,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;The Fire element represents the full expression and expansion of energy within the cycle. It moves upwards and expands outwards. It is associated with high summer and the midday sun and is hot and dry. Fire is connected with our fame and outward appearance.&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;p&gt;The Fire element represents the full expression and expansion of energy within the cycle. It moves upwards and expands outwards. It is associated with high summer and the midday sun and is hot and dry.&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Fire energies tend to be very expressive, passionate, warm and sociable. They tend to have great clarity and can often steer a path through troubled waters. They can often be highly inspirational individuals who use their passion, great  [rest of string was truncated]&quot;;.
+        ///    The Fire element is connected with our fame and outward appearance.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Fire energies tend to be very expressive, passionate, warm and sociable and can be highly inspirational individuals. They tend to have great clarity and can often steer a path through troubled waters.
+        ///&lt;/p&gt;
+        ///&lt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_element {
             get {
@@ -706,6 +730,15 @@ namespace K9.Globalisation {
         public static string fire_trigram {
             get {
                 return ResourceManager.GetString("fire_trigram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fire Element.
+        /// </summary>
+        public static string FireElement {
+            get {
+                return ResourceManager.GetString("FireElement", resourceCulture);
             }
         }
         

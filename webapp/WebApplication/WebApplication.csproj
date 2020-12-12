@@ -322,6 +322,7 @@
     <Content Include="Content\k9\pageSpinner.css" />
     <Content Include="Content\_colors.txt" />
     <Content Include="Global.asax" />
+    <Content Include="Images\about\light-dark.jpg" />
     <Content Include="Images\background\stars.jpg" />
     <Content Include="Images\company\logo-med.png" />
     <Content Include="Images\company\logo-small.png" />
@@ -573,7 +574,6 @@
     <Content Include="Images\flags\za.png" />
     <Content Include="Images\flags\zm.png" />
     <Content Include="Images\flags\zw.png" />
-    <Content Include="Images\home\light-dark.jpg" />
     <Content Include="Images\home\ninestar-home-bg.jpg" />
     <Content Include="Images\icons\android-chrome-192x192.png" />
     <Content Include="Images\icons\apple-touch-icon-114x114.png" />
@@ -594,6 +594,8 @@
     <Content Include="Images\icons\logo-small.png" />
     <Content Include="Images\icons\logo.png" />
     <Content Include="Images\icons\safari-pinned-tab.svg" />
+    <Content Include="Images\ninestar\elements\cycle-five.png" />
+    <Content Include="Images\ninestar\elements\cycle-four.png" />
     <Content Include="Images\ninestar\elements\cycle.png" />
     <Content Include="Images\ninestar\elements\earth.png" />
     <Content Include="Images\ninestar\elements\fire.png" />
@@ -621,6 +623,7 @@
     <Content Include="Images\ninestar\yinyang\unspecified.png" />
     <Content Include="Images\ninestar\yinyang\yang.png" />
     <Content Include="Images\ninestar\yinyang\yin.png" />
+    <Content Include="Images\ninestar\yinyang\yinyang-large.png" />
     <Content Include="Images\shared\ninestar-spinner.gif" />
     <Content Include="Images\shared\powered-by-stripe.png" />
     <Content Include="Images\template\1.jpg" />

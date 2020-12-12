@@ -1,4 +1,8 @@
 @media (max-width:991px) {
+    html, body {
+        font-size: 100%;
+    }
+
     .desktop-only {
         display: none;
     }
@@ -88,7 +92,7 @@
         padding-left: 0 !important;
     }
 
-    .menu-main .container {
+    .menu-main .container, .menu-small .container {
         width: auto !important;
     }
 }

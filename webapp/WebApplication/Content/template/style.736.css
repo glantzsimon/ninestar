@@ -10,6 +10,7 @@
 
     .navbar-default .navbar-toggle {
         border-color: #fff;
+        background-color: #000020;
     }
 
         .navbar-default .navbar-toggle .icon-bar {
@@ -37,13 +38,9 @@
     .team {
         padding: 3.5em 0;
     }
-
-    ul.nav.navbar-nav:not(.dropdown-menu) {
-        background-color: rgba(80, 80, 80, 0.8) !important;
-    }
-
+    
     ul.main-navbar .open ul.dropdown-menu {
-        background-color: rgba(250, 250, 250, 0.4);
+        background-color: rgba(0, 0, 0, 0.6);
         border-radius: 5px;
         border-top-left-radius: 0;
         border-top-right-radius: 0;

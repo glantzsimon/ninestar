@@ -80,8 +80,14 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label"> @K9.Globalisation.Dictionary.Learn</span> <span class="caret"></span></a>
                             <ul class="dropdown-menu nav navbar-nav">
-                                <li><a href="#">Service A</a></li>
-                                <li><a href="#">Service B</a></li>
+                                <li class="@ViewContext.GetActiveClass("About", "Home")"><a href="@Url.Action("About", "Home")"> @K9.Globalisation.Dictionary.AboutNineStarKi</a></li>
+                                <li class="@ViewContext.GetActiveClass("About", "Home")#origins"><a href="@Url.Action("About", "Home")"> @K9.Globalisation.Dictionary.OriginsTitle</a></li>
+                                <li class="@ViewContext.GetActiveClass("About", "Home")#cycles"><a href="@Url.Action("About", "Home")"> @K9.Globalisation.Dictionary.CyclesTitle</a></li>
+                                <li class="@ViewContext.GetActiveClass("About", "Home")#yinyang"><a href="@Url.Action("About", "Home")"> @K9.Globalisation.Dictionary.YinAndYang</a></li>
+                                <li class="@ViewContext.GetActiveClass("About", "Home")#modalities"><a href="@Url.Action("About", "Home")"> @K9.Globalisation.Dictionary.ThreeModalitiesTitle</a></li>
+                                <li class="@ViewContext.GetActiveClass("About", "Home")#elements"><a href="@Url.Action("About", "Home")"> @K9.Globalisation.Dictionary.FiveElementsTitle</a></li>
+                                <li class="@ViewContext.GetActiveClass("About", "Home")#chart"><a href="@Url.Action("About", "Home")"> @K9.Globalisation.Dictionary.PersonalProfileTitle</a></li>
+                                <li class="@ViewContext.GetActiveClass("About", "Home")#energies"><a href="@Url.Action("About", "Home")"> @K9.Globalisation.Dictionary.NineEnergiesTitle</a></li>
                             </ul>
                         </li>
                     </ul>

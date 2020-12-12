@@ -42,6 +42,15 @@
         height: 54px;
     }
 
+    .navbar-default .navbar-toggle {
+        border-color: #fff;
+        background-color: #000020;
+    }
+
+        .navbar-default .navbar-toggle:hover {
+            background-color: #FF9800;
+        }
+
     #bs-navbar-collapse-1 {
         overflow-y: visible;
     }
@@ -96,40 +105,45 @@
         width: auto !important;
     }
 
-    ul.main-navbar li.open a {
-        color: white !important;
+    ul.main-navbar {
+        background-color: rgba(0, 0, 0, 0.6) !important;
+        border-radius: 5px;
     }
 
-    ul.main-navbar .open ul.dropdown-menu li {
-        height: 50px;
-    }
-
-    ul.main-navbar .open ul.dropdown-menu > li > a {
-        width: 100%;
-        text-align: center;
-        padding-left: 0;
-        padding-right: 0;
-        padding-top: 12px;
-    }
-
-    ul.main-navbar .open ul.dropdown-menu > li:hover {
-        background-color: rgba(0, 0, 0, 0.4);
-        color: #FF9800 !important;
-    }
-
-        ul.main-navbar .open ul.dropdown-menu > li:hover > a, ul.main-navbar ul.dropdown-menu > li:focus > a {
-            background-color: rgba(0, 0, 0, 0.4);
-            color: #FF9800 !important;
-            font-weight: bold !important;
-            -webkit-transition: none;
-            -o-transition: none;
-            transition: none;
+        ul.main-navbar li.open a {
+            color: white !important;
         }
 
-    ul.main-navbar .open ul.dropdown-menu > li.active > a {
-        color: #FF9800 !important;
-        font-weight: 600;
-    }
+        ul.main-navbar .open ul.dropdown-menu li {
+            height: 50px;
+        }
+
+        ul.main-navbar .open ul.dropdown-menu > li > a {
+            width: 100%;
+            text-align: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 13px;
+        }
+
+        ul.main-navbar .open ul.dropdown-menu > li:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #FF9800 !important;
+        }
+
+            ul.main-navbar .open ul.dropdown-menu > li:hover > a, ul.main-navbar ul.dropdown-menu > li:focus > a {
+                background-color: rgba(0, 0, 0, 0.8);
+                color: #FF9800 !important;
+                font-weight: bold !important;
+                -webkit-transition: none;
+                -o-transition: none;
+                transition: none;
+            }
+
+        ul.main-navbar .open ul.dropdown-menu > li.active > a {
+            color: #FF9800 !important;
+            font-weight: 600;
+        }
 
     .navbar-collapse {
         -webkit-box-shadow: none;

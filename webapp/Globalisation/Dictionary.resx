@@ -664,4 +664,25 @@
   <data name="LearnNineStarKiTitle" xml:space="preserve">
     <value>Learn 9 Star Ki</value>
   </data>
+  <data name="CyclesTitle" xml:space="preserve">
+    <value>Universal Cycles</value>
+  </data>
+  <data name="FiveElementsTitle" xml:space="preserve">
+    <value>The 5 Elements</value>
+  </data>
+  <data name="NineEnergiesTitle" xml:space="preserve">
+    <value>The 9 Energies</value>
+  </data>
+  <data name="OriginsTitle" xml:space="preserve">
+    <value>Origins</value>
+  </data>
+  <data name="PersonalProfileTitle" xml:space="preserve">
+    <value>Personal Profiles</value>
+  </data>
+  <data name="ThreeModalitiesTitle" xml:space="preserve">
+    <value>The 3 Modalities</value>
+  </data>
+  <data name="YinAndYang" xml:space="preserve">
+    <value>Yin and Yang</value>
+  </data>
 </root>

@@ -360,14 +360,20 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    9 Star Ki astrology is based on the universal cycles of light and dark and the transformations between the various stages. This is similar to the seasonal changes we see throughout the year or even throughout each day and night. There are many different cycles of differing lengths, all of which fit into one another like the layers of an onion. Some of the cycles are very long.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    In order to understand one&apos;s energetic make-up and potential, it is sufficient to observe the nine year cyc [rest of string was truncated]&quot;;.
+        ///    9 Star Ki astrology is based on the universal cycles of light and dark and the transformations between the various stages. These cosmic, eternally spiralling throughout time and space, underpin our entire reality in this cosmos and give rise to the very experience of being &quot;alive&quot;. This is because, in order for us to be able to experience anything at all, it is necessary to have contrast. Contrast is created from duality, which is created from the coexistence of opposing forces or &quot;energies&quot;. For e [rest of string was truncated]&quot;;.
         /// </summary>
         public static string cycles {
             get {
                 return ResourceManager.GetString("cycles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Universal Cycles.
+        /// </summary>
+        public static string CyclesTitle {
+            get {
+                return ResourceManager.GetString("CyclesTitle", resourceCulture);
             }
         }
         
@@ -706,6 +712,15 @@ namespace K9.Globalisation {
         public static string five_elements {
             get {
                 return ResourceManager.GetString("five_elements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The 5 Elements.
+        /// </summary>
+        public static string FiveElementsTitle {
+            get {
+                return ResourceManager.GetString("FiveElementsTitle", resourceCulture);
             }
         }
         
@@ -1216,11 +1231,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div&gt;
-        ///    &lt;img title=&quot;Yang&quot; alt=&quot;Yang&quot; class=&quot;auto-size center-block&quot; src=&quot;/Images/ninestar/yinyang/Yang.png&quot;&gt;
-        ///&lt;/div&gt;
-        ///&lt;p&gt;
-        ///    Many ancient civilisations had a more in depth understanding of the cosmic male and female energies that underpin our reality. There are many different terms used to describe these cosmic energies, such as Shakti / Shiva in Sanskrit or yin and yang in the Chinese tradition, but they are essentially understood to be on the one hand feminine, dark, passive energy and on the other m [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string nine_energies {
             get {
@@ -1234,6 +1245,15 @@ namespace K9.Globalisation {
         public static string nine_star_ki_title {
             get {
                 return ResourceManager.GetString("nine_star_ki_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The 9 Energies.
+        /// </summary>
+        public static string NineEnergiesTitle {
+            get {
+                return ResourceManager.GetString("NineEnergiesTitle", resourceCulture);
             }
         }
         
@@ -1310,6 +1330,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Origins.
+        /// </summary>
+        public static string OriginsTitle {
+            get {
+                return ResourceManager.GetString("OriginsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Other.
         /// </summary>
         public static string Other {
@@ -1381,6 +1410,15 @@ namespace K9.Globalisation {
         public static string PersonalProfileCalculator {
             get {
                 return ResourceManager.GetString("PersonalProfileCalculator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personal Profiles.
+        /// </summary>
+        public static string PersonalProfileTitle {
+            get {
+                return ResourceManager.GetString("PersonalProfileTitle", resourceCulture);
             }
         }
         
@@ -1631,6 +1669,15 @@ namespace K9.Globalisation {
         public static string three_modalities {
             get {
                 return ResourceManager.GetString("three_modalities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The 3 Modalities.
+        /// </summary>
+        public static string ThreeModalitiesTitle {
+            get {
+                return ResourceManager.GetString("ThreeModalitiesTitle", resourceCulture);
             }
         }
         
@@ -2032,6 +2079,15 @@ namespace K9.Globalisation {
         public static string Yin {
             get {
                 return ResourceManager.GetString("Yin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yin and Yang.
+        /// </summary>
+        public static string YinAndYang {
+            get {
+                return ResourceManager.GetString("YinAndYang", resourceCulture);
             }
         }
         

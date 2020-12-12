@@ -267,14 +267,15 @@ ul.main-navbar li.open a {
 }
 
 ul.main-navbar .open ul.dropdown-menu {
-    background-color: rgba(250, 250, 250, 0.4);
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 5px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+    font-size: 0.7em;
 }
 
     ul.main-navbar .open ul.dropdown-menu li:hover {
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: rgba(0, 0, 0, 0.8);
     }
 
     ul.main-navbar .open ul.dropdown-menu li:last-child:hover {

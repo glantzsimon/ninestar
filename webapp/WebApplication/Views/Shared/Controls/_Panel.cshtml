@@ -7,7 +7,7 @@
     var panelBodyClass = hasImage ? "panel-body-image" : "";
 }
 <div class="panel panel-default">
-    <div class="panel-heading"><h4 class="margin-0"><strong>@Model.Title</strong></h4></div>
+    <div id="@Model.Id" class="panel-heading"><h4 class="margin-0"><strong>@Model.Title</strong></h4></div>
     
     @if (hasImage)
     {

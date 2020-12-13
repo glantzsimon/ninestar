@@ -39,7 +39,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         [InlineData(1982, ENineStarKiEnergy.Heaven, EGender.Female)]
         [InlineData(1983, ENineStarKiEnergy.Lake, EGender.Female)]
         [InlineData(1984, ENineStarKiEnergy.Mountain, EGender.Female)]
-        [InlineData(1985, ENineStarKiEnergy.Fire, EGender.Hermaphrodite)]
+        [InlineData(1985, ENineStarKiEnergy.Fire, EGender.Other)]
         [InlineData(1986, ENineStarKiEnergy.Water, EGender.Female)]
         [InlineData(1987, ENineStarKiEnergy.Soil, EGender.Female)]
         public void YearEnergyFemale_HappyPath(int year, ENineStarKiEnergy energy, EGender gender)
@@ -211,6 +211,23 @@ namespace K9.WebApplication.Tests.Unit.Services
             Assert.Equal(yearEnergy, ninestar.MainEnergy.Energy);
             Assert.Equal(monthEnergy, ninestar.EmotionalEnergy.Energy);
             Assert.Equal(surfaceEnergy, ninestar.SurfaceEnergy.Energy);
+        }
+
+        [Theory]
+        [InlineData(1979, 16, 6, 2020, 12, 14, EGender.Male, ENineStarKiEnergy.Mountain, ENineStarKiEnergy.Lake)]
+        public void LifeCycle_HappyPath(int birthYear, int birthMonth, int birthDay, int year, int month, int day, EGender gender, ENineStarKiEnergy yearlyCycleEnergy, ENineStarKiEnergy monthlyCycleEnergy)
+        {
+            var ninestar = new NineStarKiModel(new PersonModel
+            {
+                DateOfBirth = new DateTime(birthYear, birthMonth, birthDay),
+                Gender = gender
+            })
+            {
+                Today = new DateTime(year, month, day)
+            };
+
+            Assert.Equal(yearlyCycleEnergy, ninestar.LifeCycleYearEnergy);
+            Assert.Equal(monthlyCycleEnergy, ninestar.LifeCycleMonthEnergy);
         }
 
         [Fact]

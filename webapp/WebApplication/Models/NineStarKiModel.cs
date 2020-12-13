@@ -10,11 +10,13 @@ namespace K9.WebApplication.Models
         public NineStarKiModel()
         {
             PersonModel = new PersonModel();
+            Today = DateTime.Now;
         }
 
         public NineStarKiModel(PersonModel personModel)
         {
             PersonModel = personModel;
+            Today = DateTime.Now;
 
             MainEnergy = GetMainEnergy(PersonModel.DateOfBirth);
             EmotionalEnergy = GetEmotionalEnergy(PersonModel.DateOfBirth, MainEnergy.Energy);
@@ -35,6 +37,11 @@ namespace K9.WebApplication.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SurfaceEnergyLabel)]
         public NineStarKiEnergy SurfaceEnergy { get; }
+
+        /// <summary>
+        /// For testing purposes only
+        /// </summary>
+        public DateTime Today { get; set; }
 
         /// <summary>
         /// Determines the nine star ki energy of the current year
@@ -173,7 +180,7 @@ namespace K9.WebApplication.Models
 
         private ENineStarKiEnergy GetLifeCycleYearEnergy()
         {
-            var todayYearEnergy = (int)GetMainEnergy(DateTime.Now).Energy;
+            var todayYearEnergy = (int)GetMainEnergy(Today).Energy;
             var personalYearEnergy = (int)MainEnergy.Energy;
             var offset = todayYearEnergy - personalYearEnergy;
             var lifeCycleYearEnergy = LoopEnergyNumber(5 + offset);
@@ -184,7 +191,7 @@ namespace K9.WebApplication.Models
         private ENineStarKiEnergy GetLifeCycleMonthEnergy()
         {
             var yearEnergy = GetLifeCycleYearEnergy();
-            return GetEmotionalEnergy(DateTime.Now, yearEnergy, false).Energy;
+            return GetEmotionalEnergy(Today, yearEnergy, false).Energy;
         }
 
         private NineStarKiEnergy ProcessEnergy(int energyNumber, bool invertIfYin = true, ENineStarKiEnergyType type = ENineStarKiEnergyType.MainEnergy)

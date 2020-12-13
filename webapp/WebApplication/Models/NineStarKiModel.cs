@@ -49,7 +49,7 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.OccupationsLabel)]
         public string Occupations { get; set; }
 
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.OccupationsLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PersonalDevelopemntLabel)]
         public string PersonalDevelopemnt { get; set; }
 
         /// <summary>

@@ -1,4 +1,5 @@
-﻿using K9.Base.DataAccessLayer.Attributes;
+﻿using System;
+using K9.Base.DataAccessLayer.Attributes;
 using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
 using K9.WebApplication.Attributes;
@@ -185,6 +186,9 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TrigramLabel)]
         public string Trigram => MetaData.GetTrigram();
 
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TrigramLabel)]
+        public string TrigramDescription => GetTrigramDescription();
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ElementLabel)]
         public string Element => MetaData.GetElement();
 
@@ -239,6 +243,33 @@ namespace K9.WebApplication.Models
             }
 
             return ENineStarKiModality.Unspecified;
+        }
+
+        private string GetTrigramDescription()
+        {
+            switch (Energy)
+            {
+                case ENineStarKiEnergy.Water:
+                    return Dictionary.water_trigram;
+                case ENineStarKiEnergy.Wind:
+                    return Dictionary.wind_trigram;
+                case ENineStarKiEnergy.Lake:
+                    return Dictionary.lake_trigram;
+                case ENineStarKiEnergy.Soil:
+                    return Dictionary.soil_trigram;
+                case ENineStarKiEnergy.CoreEarth:
+                    return Dictionary.coreearth_trigram;
+                case ENineStarKiEnergy.Mountain:
+                    return Dictionary.mountain_trigram;
+                case ENineStarKiEnergy.Thunder:
+                    return Dictionary.thunder_trigram;
+                case ENineStarKiEnergy.Heaven:
+                    return Dictionary.heaven_trigram;
+                case ENineStarKiEnergy.Fire:
+                    return Dictionary.fire_trigram;
+            }
+
+            return String.Empty;
         }
 
     }

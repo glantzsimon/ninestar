@@ -1,11 +1,26 @@
 ﻿@using K9.Base.WebApplication.Config
+@model string
 
-<div class="seo">
+<div class="@Model">
     @for (int i = 0; i < 9; i++)
     {
-        <h1>@K9.Globalisation.Dictionary.Keywords</h1>
-        <div>@K9.Globalisation.Dictionary.origins</div>
-        <h2>@K9.Globalisation.Dictionary.Keywords</h2>
-        <h3>@K9.Globalisation.Dictionary.Keywords</h3>
+        <h1>
+            @K9.Globalisation.Dictionary.Keywords
+            @ViewBag.Keywords
+        </h1>
+        <div>
+            @K9.Globalisation.Dictionary.origins
+        </div>
+        <h2>
+            @K9.Globalisation.Dictionary.Keywords
+            @ViewBag.Keywords
+        </h2>
+        <h3>
+            @K9.Globalisation.Dictionary.Keywords
+            @ViewBag.Keywords
+        </h3>
+        <h4>
+            @ViewBag.Keywords
+        </h4>
     }
 </div>

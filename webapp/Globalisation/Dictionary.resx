@@ -136,8 +136,8 @@
   <data name="CompanyBlurbFooter" xml:space="preserve">
     <value>NineStar has been created to share knowledge about the ancient wisdom of nine star ki astrology to help people gain a better understanding of themselves and of their loved ones, as well as the many cycles that affect their lives.</value>
   </data>
-  <data name="CompanyDescription" xml:space="preserve">
-    <value>9 Star Ki is an ancient system of astrology, largely uknown in the west, but slowly regaining popularity. It is deeper and more extensive than the zodiac and can offer some quite astonishing insights into our nature and the many cyles that influence our lives.</value>
+  <data name="NineStarMetaDescriptionMain" xml:space="preserve">
+    <value>9 Star Ki is an ancient system of astrology, largely uknown in the west, but slowly regaining popularity. It is simpler yet deeper and more intuitive than the zodiac and can offer some quite astonishing insights into our nature and the many cyles that influence our lives.</value>
   </data>
   <data name="CompanyLegalDescription" xml:space="preserve">
     <value />
@@ -487,11 +487,11 @@
   <data name="PersonalDevelopemntLabel" xml:space="preserve">
     <value>Personal Development</value>
   </data>
-  <data name="Predictions" xml:space="preserve">
-    <value>Predictions</value>
+  <data name="PredictionsTitle" xml:space="preserve">
+    <value>9 Star Ki Yearly and Monthly Predictions</value>
   </data>
-  <data name="Relationships" xml:space="preserve">
-    <value>Relationships</value>
+  <data name="RelationshipsTitle" xml:space="preserve">
+    <value>9 Star Ki Relationships</value>
   </data>
   <data name="soil_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\soil-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -655,14 +655,14 @@
   <data name="MoreAboutNineStarKiTitle" xml:space="preserve">
     <value>More About 9 Star Ki</value>
   </data>
-  <data name="WelcomeTitle" xml:space="preserve">
+  <data name="WelcomeSubTitle" xml:space="preserve">
     <value>Welcome to NineStar!</value>
   </data>
   <data name="LearnMoreAboutNineStarKi" xml:space="preserve">
-    <value>Learn more about 9 Star Ki</value>
+    <value>Learn more about 9 Star Ki Astrology</value>
   </data>
   <data name="LearnNineStarKiTitle" xml:space="preserve">
-    <value>Learn 9 Star Ki</value>
+    <value>Learn 9 Star Ki Astrology</value>
   </data>
   <data name="CyclesTitle" xml:space="preserve">
     <value>Universal Cycles</value>
@@ -702,5 +702,26 @@
   </data>
   <data name="metal_element" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\metal-element.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="NineStarKiCalculatorMetaDescription" xml:space="preserve">
+    <value>Use this simple calculator to determine your 9 Star Ki personal profile. Our calculator is more accurate than many others as it uses a little known but important additional factor when determining your chart.</value>
+  </data>
+  <data name="NineStarKiCalculatorKeywords" xml:space="preserve">
+    <value>Nine star ki calculator 9 star ki calculator calculate your nine star ki 9 star ki personal profile astrology reading</value>
+  </data>
+  <data name="NineStarKiCalculatorTitle" xml:space="preserve">
+    <value>Nine Star Ki Calculator - Calculate Your Personal Profile</value>
+  </data>
+  <data name="PredictionsKeywords" xml:space="preserve">
+    <value>9 Star Ki astrology predictions yearly predictions monthly predictions life planner life cycles</value>
+  </data>
+  <data name="PredictionsMetaDescription" xml:space="preserve">
+    <value>Each person's life moves throug cycles of nine years, as well as nine months. These cycles are similar in nature to the seasons. Understanding where we are in a given cycle is tremendously helpful and can greatly assist us in taking appropriate action that is timely and in sync with the natural rhythms governing our lives.</value>
+  </data>
+  <data name="RelationshipsKeywords" xml:space="preserve">
+    <value>Love romance friendship compatibility perfect match dating relationsihps love of your life</value>
+  </data>
+  <data name="RelationshipsMetaDescription" xml:space="preserve">
+    <value>9 Star Ki is a remarkable tool to help us to understand our relationships, both romantic and other. 9 Star Ki offers profound insights into the subtle forces that shape our interactions with others, helping to bring greater harmony and understanding and to avoid blame, resentment and anger.</value>
   </data>
 </root>

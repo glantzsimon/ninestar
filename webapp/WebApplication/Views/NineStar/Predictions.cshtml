@@ -2,8 +2,11 @@
 @model K9.WebApplication.ViewModels.NineStarKiViewModel
 
 @{
-    ViewBag.Title = K9.Globalisation.Dictionary.nine_star_ki_title;
-    ViewBag.SubTitle = K9.Globalisation.Dictionary.Predictions;
+    ViewBag.Title = K9.Globalisation.Dictionary.PredictionsTitle;
+    ViewBag.SubTitle = K9.Globalisation.Dictionary.PredictionsTitle;
+    ViewBag.Keywords = K9.Globalisation.Dictionary.PredictionsKeywords;
+    ViewBag.MetaDescription = K9.Globalisation.Dictionary.PredictionsMetaDescription;
+
     ViewBag.Background = ViewBagHelper.EViewBackground.Jarallax;
     Layout = "../Shared/_LayoutForm.cshtml";
 }

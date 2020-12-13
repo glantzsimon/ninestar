@@ -223,15 +223,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9 Star Ki is an ancient system of astrology, largely uknown in the west, but slowly regaining popularity. It is deeper and more extensive than the zodiac and can offer some quite astonishing insights into our nature and the many cyles that influence our lives..
-        /// </summary>
-        public static string CompanyDescription {
-            get {
-                return ResourceManager.GetString("CompanyDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
         public static string CompanyLegalDescription {
@@ -937,7 +928,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9 star ki Nine star ki astrology horoscope love relationships feng shuey I Ching Human Design dating.
+        ///   Looks up a localized string similar to 9 Star Ki Astrology Nine Star Ki Astrology Horoscope Relationships Love Feng Shui I Ching Human Design Dating Reading Free Chart.
         /// </summary>
         public static string Keywords {
             get {
@@ -1045,7 +1036,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Learn more about 9 Star Ki.
+        ///   Looks up a localized string similar to Learn more about 9 Star Ki Astrology.
         /// </summary>
         public static string LearnMoreAboutNineStarKi {
             get {
@@ -1054,7 +1045,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Learn 9 Star Ki.
+        ///   Looks up a localized string similar to Learn 9 Star Ki Astrology.
         /// </summary>
         public static string LearnNineStarKiTitle {
             get {
@@ -1145,10 +1136,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The Metal element is associated with Autumn and late afternoon or evening. It is a stage when the light is fading and the energy is moving downwards and inwards, condensing and consolidating. It is also the time of the harvest, when we begin to gather the fruits of our labour and go indoors to reflect on the past season or day.
+        ///    The Metal element is associated with Autumn and late afternoon or evening. It is a stage when the light is fading and the energy is moving downwards and inwards, condensing and consolidating. Autumn is also the time of the harvest, when we begin to gather the fruits of our labour and go indoors to reflect on the past season or day.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Metal people tend to be thoughtful and observant, paying careful attention to detail. They typically have an objective and balanced way at looking at things. [rest of string was truncated]&quot;;.
+        ///    Similarly, Metal energies are very good at digesting, consolidating and reflecting upon information. They have a wide lens and tend to stay abreast of cu [rest of string was truncated]&quot;;.
         /// </summary>
         public static string metal_element {
             get {
@@ -1324,11 +1315,47 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nine star ki calculator 9 star ki calculator calculate your nine star ki 9 star ki personal profile astrology reading.
+        /// </summary>
+        public static string NineStarKiCalculatorKeywords {
+            get {
+                return ResourceManager.GetString("NineStarKiCalculatorKeywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use this simple calculator to determine your 9 Star Ki personal profile. Our calculator is more accurate than many others as it uses a little known but important additional factor when determining your chart..
+        /// </summary>
+        public static string NineStarKiCalculatorMetaDescription {
+            get {
+                return ResourceManager.GetString("NineStarKiCalculatorMetaDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine Star Ki Calculator - Calculate Your Personal Profile.
+        /// </summary>
+        public static string NineStarKiCalculatorTitle {
+            get {
+                return ResourceManager.GetString("NineStarKiCalculatorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 9 Star Ki.
         /// </summary>
         public static string NineStarKiTitle {
             get {
                 return ResourceManager.GetString("NineStarKiTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 9 Star Ki is an ancient system of astrology, largely uknown in the west, but slowly regaining popularity. It is simpler yet deeper and more intuitive than the zodiac and can offer some quite astonishing insights into our nature and the many cyles that influence our lives..
+        /// </summary>
+        public static string NineStarMetaDescriptionMain {
+            get {
+                return ResourceManager.GetString("NineStarMetaDescriptionMain", resourceCulture);
             }
         }
         
@@ -1489,11 +1516,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Predictions.
+        ///   Looks up a localized string similar to 9 Star Ki astrology predictions yearly predictions monthly predictions life planner life cycles.
         /// </summary>
-        public static string Predictions {
+        public static string PredictionsKeywords {
             get {
-                return ResourceManager.GetString("Predictions", resourceCulture);
+                return ResourceManager.GetString("PredictionsKeywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Each person&apos;s life moves throug cycles of nine years, as well as nine months. These cycles are similar in nature to the seasons. Understanding where we are in a given cycle is tremendously helpful and can greatly assist us in taking appropriate action that is timely and in sync with the natural rhythms governing our lives..
+        /// </summary>
+        public static string PredictionsMetaDescription {
+            get {
+                return ResourceManager.GetString("PredictionsMetaDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 9 Star Ki Yearly and Monthly Predictions.
+        /// </summary>
+        public static string PredictionsTitle {
+            get {
+                return ResourceManager.GetString("PredictionsTitle", resourceCulture);
             }
         }
         
@@ -1525,11 +1570,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Relationships.
+        ///   Looks up a localized string similar to Love romance friendship compatibility perfect match dating relationsihps love of your life.
         /// </summary>
-        public static string Relationships {
+        public static string RelationshipsKeywords {
             get {
-                return ResourceManager.GetString("Relationships", resourceCulture);
+                return ResourceManager.GetString("RelationshipsKeywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 9 Star Ki is a remarkable tool to help us to understand our relationships, both romantic and other. 9 Star Ki offers profound insights into the subtle forces that shape our interactions with others, helping to bring greater harmony and understanding and to avoid blame, resentment and anger..
+        /// </summary>
+        public static string RelationshipsMetaDescription {
+            get {
+                return ResourceManager.GetString("RelationshipsMetaDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 9 Star Ki Relationships.
+        /// </summary>
+        public static string RelationshipsTitle {
+            get {
+                return ResourceManager.GetString("RelationshipsTitle", resourceCulture);
             }
         }
         
@@ -2018,9 +2081,9 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to Welcome to NineStar!.
         /// </summary>
-        public static string WelcomeTitle {
+        public static string WelcomeSubTitle {
             get {
-                return ResourceManager.GetString("WelcomeTitle", resourceCulture);
+                return ResourceManager.GetString("WelcomeSubTitle", resourceCulture);
             }
         }
         

@@ -2,8 +2,11 @@
 @model K9.WebApplication.ViewModels.NineStarKiViewModel
 
 @{
-    ViewBag.Title = Dictionary.Home;
+    ViewBag.Title = K9.Globalisation.Dictionary.NineStarKiCalculatorTitle;
     ViewBag.SubTitle = K9.Globalisation.Dictionary.PersonalProfileCalculator;
+    ViewBag.Keywords = K9.Globalisation.Dictionary.NineStarKiCalculatorKeywords;
+    ViewBag.MetaDescription = K9.Globalisation.Dictionary.NineStarKiCalculatorMetaDescription;
+
     ViewBag.Background = ViewBagHelper.EViewBackground.Jarallax;
     Layout = "../Shared/_LayoutForm.cshtml";
 }

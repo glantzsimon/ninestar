@@ -6,25 +6,30 @@
     var localeName = CultureInfo.CurrentUICulture.GetLocaleName().ToLower();
     var metaLocaleName = CultureInfo.CurrentUICulture.GetMetaLocaleName();
     var languageName = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower();
-    var title = Html.Raw(String.Format("{0} &raquo; {1} &raquo; {2}", ViewBag.Title, @K9.Globalisation.Dictionary.NineStarKiTitle, K9.Globalisation.Dictionary.Keywords));}
+    var pageKeywords = ViewBag.Keywords ?? K9.Globalisation.Dictionary.Keywords;
+    var keywords = K9.Globalisation.Dictionary.NineStarKiTitle + " " + pageKeywords;
+    var title = Html.Raw(String.Format("{0} &raquo; {1} &raquo; {2}", ViewBag.Title, K9.Globalisation.Dictionary.NineStarKiTitle, keywords));
+    var description = ViewBag.MetaDescription ?? K9.Globalisation.Dictionary.NineStarMetaDescriptionMain;
+}
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="keywords" content="@K9.Globalisation.Dictionary.Keywords" />
+    <meta name="keywords" content="@keywords" />
     <title>@title</title>
-    <meta name="description" content="@K9.Globalisation.Dictionary.CompanyDescription" />
+    <meta name="description" content="@description" />
     <meta name="robots" content="noodp" />
     <link rel="canonical" href="/" />
     <meta property="og:locale" content="@metaLocaleName)" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="@title" />
-    <meta property="og:description" content="@K9.Globalisation.Dictionary.CompanyDescription" />
+    <meta property="og:description" content="@description" />
     <meta property="og:url" content="/" />
     <meta property="og:site_name" content="@K9.Globalisation.Dictionary.NineStarKiTitle" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:description" content="@K9.Globalisation.Dictionary.CompanyDescription" />
+    <meta name="twitter:description" content="@description" />
     <meta name="twitter:title" content="@title" />
     <meta name="google-site-verification" content="" />
 
@@ -96,19 +101,20 @@
     <![endif]-->
 
     @{
-    #if PRODUCTION
-        Html.RenderPartial("_GoogleAnalytics");
-    #endif
+#if PRODUCTION
+Html.RenderPartial("_GoogleAnalytics");
+#endif
     }
 </head>
 <body>
+    @Html.Partial("_SEO", "seoheader")
     <div id="pageFadeInOverlay">
         <img class="cropped" src="/Images/shared/ninestar-spinner.gif" />
     </div>
     <div id="pageSpinner"></div>
     <div id="pageOverlay"></div>
     @RenderBody()
-    @Html.Partial("_SEO")
+    @Html.Partial("_SEO", "seofooter")
     @Html.Partial("_Footer")
     @Scripts.Render("~/Scripts/js")
     @Scripts.Render("~/Scripts/lib")

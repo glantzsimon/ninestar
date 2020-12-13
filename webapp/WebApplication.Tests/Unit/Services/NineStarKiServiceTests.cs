@@ -214,7 +214,12 @@ namespace K9.WebApplication.Tests.Unit.Services
         }
 
         [Theory]
-        [InlineData(1979, 16, 6, 2020, 12, 14, EGender.Male, ENineStarKiEnergy.Mountain, ENineStarKiEnergy.Lake)]
+        [InlineData(1979, 6, 16, 2020, 12, 14, EGender.Male, ENineStarKiEnergy.Water, ENineStarKiEnergy.Lake)]
+        [InlineData(1979, 6, 16, 2020, 12, 14, EGender.Female, ENineStarKiEnergy.CoreEarth, ENineStarKiEnergy.CoreEarth)]
+        [InlineData(1980, 6, 16, 2020, 12, 14, EGender.Male, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Wind)]
+        [InlineData(1978, 6, 16, 2020, 12, 14, EGender.Male, ENineStarKiEnergy.Soil, ENineStarKiEnergy.Water)]
+        [InlineData(1978, 6, 16, 2020, 12, 14, EGender.Female, ENineStarKiEnergy.Wind, ENineStarKiEnergy.Mountain)]
+        [InlineData(1980, 6, 16, 2020, 12, 14, EGender.Female, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Soil)]
         public void LifeCycle_HappyPath(int birthYear, int birthMonth, int birthDay, int year, int month, int day, EGender gender, ENineStarKiEnergy yearlyCycleEnergy, ENineStarKiEnergy monthlyCycleEnergy)
         {
             var ninestar = new NineStarKiModel(new PersonModel

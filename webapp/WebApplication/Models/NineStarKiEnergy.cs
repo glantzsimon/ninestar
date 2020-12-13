@@ -168,6 +168,8 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyLabel)]
         public string EnergyName => MetaData.GetDescription();
 
+        public string FullEnergyName => $"{YinYang} {EnergyName}";
+
         public int EnergyNumber => (int)Energy;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.YinYangLabel)]
@@ -176,14 +178,16 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyMemberLabel)]
         public string FamilyMember => MetaData.GetFamilyMember();
 
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyMemberLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TrigramLabel)]
         public string Trigram => MetaData.GetTrigram();
 
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyMemberLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ElementLabel)]
         public string Element => MetaData.GetElement();
 
+        public string ElementTitle => $"{Element} {Dictionary.Element}";
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ElementLabel)]
-        public string ElementDescription => MetaData.GetElement();
+        public string ElementDescription => MetaData.GetElementDescription();
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ColourLabel)]
         public string Colour => MetaData.GetColour();

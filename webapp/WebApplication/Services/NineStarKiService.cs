@@ -56,6 +56,39 @@ namespace K9.WebApplication.Services
                             return Dictionary._196;
                     }
 
+                    break;
+
+                case ENineStarKiEnergy.Soil:
+                    switch (model.EmotionalEnergy.Energy)
+                    {
+                        case ENineStarKiEnergy.Water:
+                            return Dictionary._115;
+
+                        case ENineStarKiEnergy.Soil:
+                            return Dictionary._225;
+
+                        case ENineStarKiEnergy.Thunder:
+                            return Dictionary._133;
+
+                        case ENineStarKiEnergy.Wind:
+                            return Dictionary._142;
+
+                        case ENineStarKiEnergy.CoreEarth:
+                            return Dictionary._151;
+
+                        case ENineStarKiEnergy.Heaven:
+                            return Dictionary._169;
+
+                        case ENineStarKiEnergy.Lake:
+                            return Dictionary._178;
+
+                        case ENineStarKiEnergy.Mountain:
+                            return Dictionary._187;
+
+                        case ENineStarKiEnergy.Fire:
+                            return Dictionary._196;
+                    }
+
                     return string.Empty;
             }
 

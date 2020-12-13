@@ -1,5 +1,5 @@
 ﻿@model K9.WebApplication.Models.NineStarKiModel
- 
+
 <div id="energy-summary-container">
     <div class="col-md-4 col-sm-4">
         @Html.Partial("_EnergyTitle", Model.MainEnergy)
@@ -10,8 +10,17 @@
     <div class="col-md-4 col-sm-4">
         @Html.Partial("_EnergyTitle", Model.SurfaceEnergy)
     </div>
+    <br />
     <div class="col-md-12">
         <article>
+            <br />
+            <p>
+                <strong>@K9.Globalisation.Dictionary.MainEnergy</strong>: @Model.MainEnergy.YinYang @Model.MainEnergy.Element
+            </p>
+            <p>
+                <strong>@K9.Globalisation.Dictionary.EmotionalEnergyLabel</strong>: @Model.EmotionalEnergy.YinYang @Model.EmotionalEnergy.Element
+            </p>
+
             @MvcHtmlString.Create(Model.Summary)
         </article>
     </div>

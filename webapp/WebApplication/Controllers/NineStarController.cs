@@ -30,7 +30,7 @@ namespace K9.WebApplication.Controllers
             {
                 DateOfBirth = dateOfBirth
             };
-            return View(new NineStarKiModel(personModel));
+            return View(_nineStarKiService.CalculateNineStarKi(personModel));
         }
 
         [Route("calculate")]

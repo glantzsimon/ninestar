@@ -10,8 +10,7 @@ namespace K9.WebApplication.Extensions
             return new List<EGender>
             {
                 EGender.Female,
-                EGender.TransFemale,
-                EGender.Hermaphrodite
+                EGender.TransFemale
             }.Contains(gender);
         }
     }

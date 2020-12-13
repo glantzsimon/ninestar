@@ -7,6 +7,11 @@ namespace K9.WebApplication.Models
 
     public class NineStarKiModel
     {
+        public NineStarKiModel()
+        {
+            PersonModel = new PersonModel();
+        }
+
         public NineStarKiModel(PersonModel personModel)
         {
             PersonModel = personModel;

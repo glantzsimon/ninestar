@@ -1570,6 +1570,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Relationships.
+        /// </summary>
+        public static string Relationships {
+            get {
+                return ResourceManager.GetString("Relationships", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Love romance friendship compatibility perfect match dating relationsihps love of your life.
         /// </summary>
         public static string RelationshipsKeywords {
@@ -1979,6 +1988,19 @@ namespace K9.Globalisation {
         public static string water_description {
             get {
                 return ResourceManager.GetString("water_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The Water element is associated with winter and the night. It is the darkest stage of the cycle when things move into dormancy and stillness. It is a time of deep rest and regeneration as well as time for reflection and dreaming. The Water element is the result of the breakdown of all of the energy from the previous cycle. It represents pure potential
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Many people dislike the winter season, as the weather is often harsh, cold and dark. However, the importance of this stage in the cyc [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_element {
+            get {
+                return ResourceManager.GetString("water_element", resourceCulture);
             }
         }
         

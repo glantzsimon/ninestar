@@ -718,6 +718,9 @@
   <data name="PredictionsMetaDescription" xml:space="preserve">
     <value>Each person's life moves throug cycles of nine years, as well as nine months. These cycles are similar in nature to the seasons. Understanding where we are in a given cycle is tremendously helpful and can greatly assist us in taking appropriate action that is timely and in sync with the natural rhythms governing our lives.</value>
   </data>
+  <data name="Relationships" xml:space="preserve">
+    <value>Relationships</value>
+  </data>
   <data name="RelationshipsKeywords" xml:space="preserve">
     <value>Love romance friendship compatibility perfect match dating relationsihps love of your life</value>
   </data>
@@ -726,5 +729,8 @@
   </data>
   <data name="WaterElement" xml:space="preserve">
     <value>Water Element</value>
+  </data>
+  <data name="water_element" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\water-element.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

@@ -11,11 +11,11 @@ using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-    public class NineStarController : BaseController
+    public class NineStarKiController : BaseController
     {
         private readonly INineStarKiService _nineStarKiService;
 
-        public NineStarController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService)
+        public NineStarKiController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
         {
             _nineStarKiService = nineStarKiService;
@@ -30,7 +30,7 @@ namespace K9.WebApplication.Controllers
             {
                 DateOfBirth = dateOfBirth
             };
-            return View(_nineStarKiService.CalculateNineStarKi(personModel));
+            return View(new NineStarKiModel(personModel));
         }
 
         [Route("calculate")]

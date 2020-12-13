@@ -44,7 +44,7 @@ namespace K9.WebApplication.Controllers
 		{
 			if (WebSecurity.IsAuthenticated)
 			{
-				return RedirectToAction("Index", "NineStar");
+				return RedirectToAction("Index", "NineStarKi");
 			}
 
 			TempData["ReturnUrl"] = returnUrl;
@@ -64,7 +64,7 @@ namespace K9.WebApplication.Controllers
 						{
 							return Redirect(TempData["ReturnUrl"].ToString());
 						}
-						return RedirectToAction("Index", "NineStar");
+						return RedirectToAction("Index", "NineStarKi");
 
 					case ELoginResult.AccountLocked:
 						return RedirectToAction("AccountLocked");
@@ -109,7 +109,7 @@ namespace K9.WebApplication.Controllers
 
 	            if (regResult.IsSuccess)
 	            {
-	                return RedirectToAction("Index", "NineStar");
+	                return RedirectToAction("Index", "NineStarKi");
 	            }
 	            result.Errors.AddRange(regResult.Errors);
 	        }
@@ -140,7 +140,7 @@ namespace K9.WebApplication.Controllers
 		public ActionResult LogOff()
 		{
 			_accountService.Logout();
-			return RedirectToAction("Index", "NineStar");
+			return RedirectToAction("Index", "NineStarKi");
 		}
 
 		public ActionResult Register()
@@ -310,7 +310,7 @@ namespace K9.WebApplication.Controllers
 		{
 			if (WebSecurity.IsAuthenticated)
 			{
-				return RedirectToAction("Index", "NineStar");
+				return RedirectToAction("Index", "NineStarKi");
 			}
 
 			return View();

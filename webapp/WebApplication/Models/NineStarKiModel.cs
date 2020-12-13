@@ -1,4 +1,5 @@
-﻿using K9.WebApplication.Enums;
+﻿using K9.Globalisation;
+using K9.WebApplication.Enums;
 using K9.WebApplication.Extensions;
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -30,14 +31,23 @@ namespace K9.WebApplication.Models
 
         public PersonModel PersonModel { get; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.MainEnergyLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MainEnergyLabel)]
         public NineStarKiEnergy MainEnergy { get; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.EmotionalEnergyLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EmotionalEnergyLabel)]
         public NineStarKiEnergy EmotionalEnergy { get; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SurfaceEnergyLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SurfaceEnergyLabel)]
         public NineStarKiEnergy SurfaceEnergy { get; }
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HealthLabel)]
+        public string Health { get; set; }
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.OccupationsLabel)]
+        public string Occupations { get; set; }
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.OccupationsLabel)]
+        public string PersonalDevelopemnt { get; set; }
 
         /// <summary>
         /// For testing purposes only
@@ -53,6 +63,8 @@ namespace K9.WebApplication.Models
         /// Determines the nine star ki energy of the current month
         /// </summary>
         public ENineStarKiEnergy LifeCycleMonthEnergy { get; }
+
+        public bool IsProcessed { get; set; } = false;
 
         private NineStarKiEnergy GetMainEnergy(DateTime date, EGender gender)
         {

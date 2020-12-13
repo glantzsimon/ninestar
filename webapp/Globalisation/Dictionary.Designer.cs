@@ -61,6 +61,123 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Core Earth energies are at the centre of the system and this is often reflected in life, as they are often at the centre of
+        ///    everything they do, in the personal life and at work. Indeed, Core Earth energies may even feel left out if this is not so.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    In their private life, Core Earth energies tend to be outspoken and often take the lead, with others coming to them for guidance
+        ///    and support. Whilst this can be fulfilling, these energies must be cautious not to allow themselves  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _115 {
+            get {
+                return ResourceManager.GetString("_115", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    On the surface, you may appear quite quiet and brooding. You are generally reliable and helpful. You can also be very influential and persuasive when inspired by something and have a strong desire to support that which you consider fair and just. You have great inner reserves for adventure and exploration. You are a deep, philosophical thinker. You may feel the need to retreat into solitude at times.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _124 {
+            get {
+                return ResourceManager.GetString("_124", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You have great potential for patience and diplomacy. You also have a flexible and easy-going nature. Those who get to know you will discover that your character can be extremely expressive, even explosive. You are not afraid of hard work. You are outgoing and bring great energy and spontaneity to all that you do. Your enthusiasm is probably expressed best vocally in laughter, noise and conversation.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _133 {
+            get {
+                return ResourceManager.GetString("_133", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    On the surface, people tend to find you tactful and sensitive. You are quite helpful and supportive towards others and are reliable and fastidious in your work. Those who get to know you better may find you quite emotional. At times, you can be rather impulsive and unpredictable, changing your mind like the wind. You can also be quite stubborn about certain things. You have a deep and brooding quality and sometimes feel the need to retreat to solitude. You can also be very adventurous.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _142 {
+            get {
+                return ResourceManager.GetString("_142", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    On the surface, you may appear withdrwan and quiet and may be a little cautious or indecisive in your actions. However, as people get closer to you, they will quickly discover a much bolder side to your character. In relationships you can be strong willed, assertive and even a little stubborn at times. You have an enormous capacity for overcoming difficulties in your life and bounce back quickly. You are sensitive, empathetic and a deep thinker.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string _151 {
+            get {
+                return ResourceManager.GetString("_151", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    On the surface you may appear passionate and flamboyant or even impulsive and ostentatious at times. In relationships, you tend to be direct, clear and straight to the point in your communication. You have healthy boundaries and may even be a little overbearing at times. However, you are also naturally empathetic and sensitive to others. You are a perfectionist and take pride in what you do. You are likekly to be very sensitive to criticism and take it to heart. You crave your own space at times an [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _169 {
+            get {
+                return ResourceManager.GetString("_169", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You have great reserves of strength and energy, but these will not always be obvious to those who don&apos;t know you. Challenges and difficulties reappear throughout your life; however, your resilience helps you to learn from these and move on. People close to you will discover that you have a deep inner security. You can be quietly reflective and thoughtful but also have a fun, playful and charming side. You tend to make people feel at ease in your company and are naturally empathetic. You are a deep  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _178 {
+            get {
+                return ResourceManager.GetString("_178", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    On the surface you appear fun, independent and easy-going. However, those close to you will know that you need time for yourself and time to retreat. You can be uncommunicative and withdrawn at times. You have enormous hidden strengths. Your essential nature is sensitive and empathetic. You are a deep thinker and can be quite philosphical.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _187 {
+            get {
+                return ResourceManager.GetString("_187", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You have a good potential for leadership. You come across as sincere, organised and straightforward in your approach to life. People close to you will find you have a warm, affectionate and inspiring nature. You can also be spontaneous. You may, at times, be self-centred and vain. You have a great spirit of adventure and a deep brooding quality to your nature. You have great reserves of strength.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _196 {
+            get {
+                return ResourceManager.GetString("_196", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Core Earth energies are at the centre of the system and this is often reflected in life, as they are often at the centre of
+        ///    everything they do, in the personal life and at work. Indeed, Core Earth energies may even feel left out if this is not so.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    In their private life, Core Earth energies tend to be outspoken and often take the lead, with others coming to them for guidance
+        ///    and support. Whilst this can be fulfilling, these energies must be cautious not to allow themselves  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _225 {
+            get {
+                return ResourceManager.GetString("_225", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About 9 Star Ki.
         /// </summary>
         public static string AboutNineStarKi {

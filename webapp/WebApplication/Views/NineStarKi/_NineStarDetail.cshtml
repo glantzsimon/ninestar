@@ -1,0 +1,24 @@
+﻿@using K9.WebApplication.Helpers
+@using K9.WebApplication.Models
+@model NineStarKiModel
+
+@if (Model != null)
+{
+    <div class="container main-content clear-both ninestar-header-container">
+        <article>
+            <div>
+                @Html.CollapsiblePanel(K9.Globalisation.Dictionary.EnergyDescriptionLabel, Model.MainEnergy.EnergyDescription, true)
+
+                @Html.CollapsiblePanel(K9.Globalisation.Dictionary.Element, Model.MainEnergy.ElementDescription)
+
+                @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.MainEnergy.Trigram), Model.MainEnergy.Trigram)
+
+                @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Health), Model.Health)
+
+                @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Occupations), Model.Occupations)
+
+                @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.PersonalDevelopemnt), Model.PersonalDevelopemnt)
+            </div>
+        </article>
+    </div>
+}

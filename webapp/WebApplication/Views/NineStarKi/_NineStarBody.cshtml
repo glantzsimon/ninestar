@@ -1,0 +1,14 @@
+﻿@using K9.WebApplication.Helpers
+@using K9.WebApplication.Models
+@model NineStarKiEnergy
+
+    @if (Model != null)
+    {
+        <div class="container main-content clear-both ninestar-header-container">
+            <article>
+                <div>
+                    @Html.CollapsiblePanel(K9.Globalisation.Dictionary.EnergyDescriptionLabel, Model.EnergyDescription, true)
+                </div>
+            </article>
+        </div>
+    }

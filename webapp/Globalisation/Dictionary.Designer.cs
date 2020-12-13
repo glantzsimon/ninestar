@@ -164,12 +164,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Core Earth energies are at the centre of the system and this is often reflected in life, as they are often at the centre of
-        ///    everything they do, in the personal life and at work. Indeed, Core Earth energies may even feel left out if this is not so.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    In their private life, Core Earth energies tend to be outspoken and often take the lead, with others coming to them for guidance
-        ///    and support. Whilst this can be fulfilling, these energies must be cautious not to allow themselves  [rest of string was truncated]&quot;;.
+        ///    You are essentially helpful, supportive, caring and diplomatic. You feel a great sense of fulfilment when you are serving others.
+        ///    You need to feel involved and appreciated, whether out in the world, at the work place or closer to home, within the local community and within the family.
+        ///
+        ///    You may have a tendancy to become overly fastidious in your work.
+        ///
+        ///    Care should be taken not to become overly opinionated or obsessed with detail.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string _225 {
             get {
@@ -1591,7 +1592,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star ki calculator 9 star ki calculator calculate your nine star ki 9 star ki personal profile astrology reading.
+        ///   Looks up a localized string similar to 9 star ki calculator nine star ki calculator calculate your nine star ki 9 star ki personal profile astrology reading.
         /// </summary>
         public static string NineStarKiCalculatorKeywords {
             get {
@@ -1609,7 +1610,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine Star Ki Calculator - Calculate Your Personal Profile.
+        ///   Looks up a localized string similar to 9 Star Ki Calculator - Calculate Your Personal Profile.
         /// </summary>
         public static string NineStarKiCalculatorTitle {
             get {

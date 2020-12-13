@@ -168,12 +168,16 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyLabel)]
         public string EnergyName => MetaData.GetDescription();
 
-        public string FullEnergyName => $"{YinYang} {EnergyName}";
+        public string FullEnergyName => $"{YinYangName} {EnergyName}".Trim();
+
+        public string FullEnergyNameWithFamilyMember => $"{YinYangName} {EnergyName} - {FamilyMember}".Trim();
 
         public int EnergyNumber => (int)Energy;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.YinYangLabel)]
         public ENineStarKiYinYang YinYang => GetYinYang();
+
+        public string YinYangName => YinYang == ENineStarKiYinYang.Unspecified ? string.Empty : YinYang.ToString();
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyMemberLabel)]
         public string FamilyMember => MetaData.GetFamilyMember();

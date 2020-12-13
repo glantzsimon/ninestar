@@ -169,9 +169,9 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyLabel)]
         public string EnergyName => MetaData.GetDescription();
 
-        public string FullEnergyName => $"{YinYangName} {EnergyName}".Trim();
+        public string FullEnergyName => $"{EnergyNumber} {EnergyName} /  {ElementWithYingYang}".Trim();
 
-        public string FullEnergyNameWithFamilyMember => $"{YinYangName} {EnergyName} - {FamilyMember}".Trim();
+        public string FullEnergyNameWithFamilyMember => $"{FullEnergyName} / {FamilyMember}".Trim();
 
         public int EnergyNumber => (int)Energy;
 
@@ -191,6 +191,8 @@ namespace K9.WebApplication.Models
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ElementLabel)]
         public string Element => MetaData.GetElement();
+
+        public string ElementWithYingYang => $"{YinYangName} {Element}".Trim();
 
         public string ElementTitle => $"{Element} {Dictionary.Element}";
 

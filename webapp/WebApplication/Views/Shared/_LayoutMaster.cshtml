@@ -107,14 +107,13 @@ Html.RenderPartial("_GoogleAnalytics");
     }
 </head>
 <body>
-    @Html.Partial("_SEO", "seoheader")
     <div id="pageFadeInOverlay">
         <img class="cropped" src="/Images/shared/ninestar-spinner.gif" />
     </div>
     <div id="pageSpinner"></div>
     <div id="pageOverlay"></div>
     @RenderBody()
-    @Html.Partial("_SEO", "seofooter")
+    @Html.Partial("_SEO")
     @Html.Partial("_Footer")
     @Scripts.Render("~/Scripts/js")
     @Scripts.Render("~/Scripts/lib")

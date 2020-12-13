@@ -195,7 +195,7 @@ namespace K9.WebApplication.Models
         }
 
         /// <summary>
-        /// Takes care of numbers < 1 or over 9 and loops them back into the nine star key energy numbers
+        /// Takes care of numbers less than 1 or over 9 and loops them back into the nine star key energy numbers
         /// </summary>
         /// <param name="energyNumber"></param>
         /// <returns></returns>

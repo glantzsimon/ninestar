@@ -99,6 +99,16 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Summaries\en-gb\225.htm" />
+    <Content Include="Summaries\en-gb\196.htm" />
+    <Content Include="Summaries\en-gb\115.htm" />
+    <Content Include="Summaries\en-gb\124.htm" />
+    <Content Include="Summaries\en-gb\133.htm" />
+    <Content Include="Summaries\en-gb\151.htm" />
+    <Content Include="Summaries\en-gb\169.htm" />
+    <Content Include="Summaries\en-gb\142.htm" />
+    <Content Include="Summaries\en-gb\187.htm" />
+    <Content Include="Summaries\en-gb\178.htm" />
     <Content Include="Articles\en-gb\coreearth-personal-development.htm" />
     <Content Include="Articles\en-gb\coreearth-occupations.htm" />
     <Content Include="Articles\en-gb\coreearth-health.htm" />
@@ -161,14 +171,8 @@
     <Content Include="Templates\en-gb\PasswordResetEmail.htm" />
     <Content Include="Templates\en-gb\SupportQuery.htm" />
     <Content Include="Templates\en-gb\WelcomeEmail.htm" />
-    <Content Include="Templates\fr\DonationReceivedEmail.htm" />
-    <Content Include="Templates\fr\PasswordResetEmail.htm" />
-    <Content Include="Templates\fr\SupportQuery.htm" />
-    <Content Include="Templates\fr\WelcomeEmail.htm" />
     <Content Include="Text\en-gb\nine-star-ki-title.txt" />
     <Content Include="Text\en-gb\Keywords.txt" />
-    <Content Include="Text\fr\Keywords.txt" />
-    <Content Include="Text\fr\nine-star-ki-title.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

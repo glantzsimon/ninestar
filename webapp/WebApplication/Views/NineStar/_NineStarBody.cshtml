@@ -1,16 +1,18 @@
 ﻿@using K9.DataAccessLayer.Enums
 @using K9.WebApplication.Helpers
-@model EnergyInfo
+@model NineStarKiPersonalProfile
 
 @if (Model != null)
 {
     <div class="container main-content clear-both ninestar-header-container">
         <article>
             <div>
-                @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.EnergyDescription), Model.EnergyDescription, true)
+                @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.MainEnergyDescription), Model.MainEnergyDescription, true)
 
                 @if (Model.EnergyType == EEnergyType.MainEnergy)
                 {
+                    @Html.CollapsiblePanel(K9.Globalisation.Dictionary.Element, Model.NineStarKiEnergy.ElementDescription)
+
                     @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Trigram), Model.Trigram)
 
                     @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Health), Model.Health)
@@ -22,7 +24,7 @@
 
                 @if (Model.EnergyType == EEnergyType.EmotionalEnergy)
                 {
-                    @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Childhood), Model.Childhood)
+                    @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.EmotionalEnergyDescription), Model.EmotionalEnergyDescription)
                 }
             </div>
         </article>

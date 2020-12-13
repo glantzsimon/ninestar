@@ -40,6 +40,25 @@ namespace K9.DataAccessLayer.Attributes
             return attr.GetDescription();
         }
 
+        public string GetElementDescription()
+        {
+            switch (Element)
+            {
+                case ENineStarKiElenement.Earth:
+                    return Globalisation.Dictionary.earth_element;
+                case ENineStarKiElenement.Fire:
+                    return Globalisation.Dictionary.fire_element;
+                case ENineStarKiElenement.Metal:
+                    return Globalisation.Dictionary.metal_element;
+                case ENineStarKiElenement.Tree:
+                    return Globalisation.Dictionary.tree_element;
+                case ENineStarKiElenement.Water:
+                    return Globalisation.Dictionary.water_element;
+                default:
+                    return string.Empty;
+            }
+        }
+
         public string GetColour()
         {
             var attr = Colour.GetAttribute<EnumDescriptionAttribute>();

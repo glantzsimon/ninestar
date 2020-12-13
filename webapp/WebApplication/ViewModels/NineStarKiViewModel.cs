@@ -7,8 +7,8 @@ namespace K9.WebApplication.ViewModels
     {
         public PersonModel PersonModel { get; set; }
         public NineStarKiModel NineStarKiModel { get; set; }
-        public EnergyInfo MainEnergyInfo { get; set; }
-        public EnergyInfo EmotionalEnergyInfo { get; set; }
-        public EnergyInfo SurfaceEnergyInfo { get; set; }
+        public NineStarKiPersonalProfile MainEnergyInfo { get; set; }
+        public NineStarKiPersonalProfile EmotionalEnergyInfo { get; set; }
+        public NineStarKiPersonalProfile SurfaceEnergyInfo { get; set; }
     }
 }

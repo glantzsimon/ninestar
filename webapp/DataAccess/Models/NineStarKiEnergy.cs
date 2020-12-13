@@ -166,6 +166,9 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.FamilyMemberLabel)]
         public string Element => MetaData.GetElement();
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ElementLabel)]
+        public string ElementDescription => MetaData.GetElement();
+        
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ColourLabel)]
         public string Colour => MetaData.GetColour();
 

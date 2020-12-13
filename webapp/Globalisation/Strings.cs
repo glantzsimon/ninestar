@@ -20,6 +20,8 @@
             public const string ModalityLabel = "ModalityLabel";
             public const string FamilyMemberLabel = "FamilyMember";
             public const string ElementLabel = "Element";
+            public const string ElementDescriptionLabel = "ElementDescriptionLabel";
+            public const string SummaryLabel = "SummaryLabel";
             public const string ColourLabel = "Colour";
             public const string EnergyLabel = "Energy";
             public const string TrigramLabel = "TrigramLabel";
@@ -29,7 +31,6 @@
             public const string OccupationsLabel = "OccupationsLabel";
             public const string PersonalDevelopemntLabel = "PersonalDevelopemntLabel";
             public const string ExamplesLabel = "ExamplesLabel";
-            public const string ChildhoodLabel = "ChildhoodLabel";
         }
 
         public static class Names

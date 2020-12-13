@@ -706,6 +706,9 @@
   <data name="NineStarKiCalculatorMetaDescription" xml:space="preserve">
     <value>Use this simple calculator to determine your 9 Star Ki personal profile. Our calculator is more accurate than many others as it uses a little known but important additional factor when determining your chart.</value>
   </data>
+  <data name="ElementDescriptionLabel" xml:space="preserve">
+    <value>Element Description</value>
+  </data>
   <data name="NineStarKiCalculatorKeywords" xml:space="preserve">
     <value>Nine star ki calculator 9 star ki calculator calculate your nine star ki 9 star ki personal profile astrology reading</value>
   </data>
@@ -729,6 +732,9 @@
   </data>
   <data name="RelationshipsMetaDescription" xml:space="preserve">
     <value>9 Star Ki is a remarkable tool to help us to understand our relationships, both romantic and other. 9 Star Ki offers profound insights into the subtle forces that shape our interactions with others, helping to bring greater harmony and understanding and to avoid blame, resentment and anger.</value>
+  </data>
+  <data name="SummaryLabel" xml:space="preserve">
+    <value>Summary</value>
   </data>
   <data name="TreeElement" xml:space="preserve">
     <value>Tree Element</value>

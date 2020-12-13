@@ -10,9 +10,9 @@ namespace K9.WebApplication.Controllers
 {
     public class HomeController : BaseController
     {
-        private readonly IRepository<EnergyInfo> _energyRepository;
+        private readonly IRepository<NineStarKiPersonalProfile> _energyRepository;
 
-        public HomeController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IRepository<EnergyInfo> energyRepository)
+        public HomeController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IRepository<NineStarKiPersonalProfile> energyRepository)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
         {
             _energyRepository = energyRepository;

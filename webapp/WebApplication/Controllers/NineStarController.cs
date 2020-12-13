@@ -1,27 +1,25 @@
 ﻿using K9.Base.WebApplication.Constants;
 using K9.Base.WebApplication.Controllers;
+using K9.Base.WebApplication.Helpers;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Models;
+using K9.WebApplication.Services;
 using K9.WebApplication.ViewModels;
 using NLog;
 using System;
-using System.Linq;
 using System.Web.Mvc;
-using K9.Base.WebApplication.Helpers;
-using K9.DataAccessLayer.Enums;
-using K9.DataAccessLayer.Models;
 
 namespace K9.WebApplication.Controllers
 {
     public class NineStarController : BaseController
     {
-        private readonly IRepository<EnergyInfo> _energyRepository;
+        private readonly INineStarKiService _nineStarKiService;
 
-        public NineStarController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IRepository<EnergyInfo> energyRepository)
+        public NineStarController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
         {
-            _energyRepository = energyRepository;
+            _nineStarKiService = nineStarKiService;
             SetBetaWarningSessionVariable();
         }
 
@@ -46,20 +44,7 @@ namespace K9.WebApplication.Controllers
         {
             if (model.PersonModel != null)
             {
-                var ninestar = new NineStarKiModel(model.PersonModel);
-                model.NineStarKiModel = ninestar;
-                model.MainEnergyInfo = _energyRepository.Find(e => e.EnergyType == EEnergyType.MainEnergy && e.Energy == ninestar.MainEnergy.Energy).FirstOrDefault() ?? new EnergyInfo
-                {
-                    EnergyType = EEnergyType.MainEnergy
-                };
-                model.EmotionalEnergyInfo = _energyRepository.Find(e => e.EnergyType == EEnergyType.EmotionalEnergy && e.Energy == ninestar.EmotionalEnergy.Energy).FirstOrDefault() ?? new EnergyInfo
-                {
-                    EnergyType = EEnergyType.EmotionalEnergy
-                };
-                model.SurfaceEnergyInfo = _energyRepository.Find(e => e.EnergyType == EEnergyType.SurfaceEnergy && e.Energy == ninestar.SurfaceEnergy.Energy).FirstOrDefault() ?? new EnergyInfo
-                {
-                    EnergyType = EEnergyType.SurfaceEnergy
-                };
+                model = _nineStarKiService.CalculateNineStarKi(model.PersonModel);
             }
             return View("Index", model);
         }

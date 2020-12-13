@@ -230,12 +230,17 @@
     <Compile Include="Migrations\202012121417460_20201212_2117.Designer.cs">
       <DependentUpon>202012121417460_20201212_2117.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Course.cs" />
-    <Compile Include="Models\EnergyInfo.cs" />
+    <Compile Include="Migrations\202012131750303_DbUpdate.cs" />
+    <Compile Include="Migrations\202012131750303_DbUpdate.Designer.cs">
+      <DependentUpon>202012131750303_DbUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012131759232_DbUpdate1.cs" />
+    <Compile Include="Migrations\202012131759232_DbUpdate1.Designer.cs">
+      <DependentUpon>202012131759232_DbUpdate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NineStarKiPersonalProfile.cs" />
     <Compile Include="Models\Donation.cs" />
-    <Compile Include="Models\Enrollment.cs" />
     <Compile Include="Models\NineStarKiEnergy.cs" />
-    <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -258,6 +263,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012121417460_20201212_2117.resx">
       <DependentUpon>202012121417460_20201212_2117.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012131750303_DbUpdate.resx">
+      <DependentUpon>202012131750303_DbUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012131759232_DbUpdate1.resx">
+      <DependentUpon>202012131759232_DbUpdate1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

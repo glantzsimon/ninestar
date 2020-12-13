@@ -564,6 +564,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Element Description.
+        /// </summary>
+        public static string ElementDescriptionLabel {
+            get {
+                return ResourceManager.GetString("ElementDescriptionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Emotional Energy / Inner Child.
         /// </summary>
         public static string EmotionalEnergyLabel {
@@ -1748,6 +1757,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Summary.
+        /// </summary>
+        public static string SummaryLabel {
+            get {
+                return ResourceManager.GetString("SummaryLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sun.
         /// </summary>
         public static string Sun {
@@ -1945,7 +1963,7 @@ namespace K9.Globalisation {
         ///    The Tree element is associated with the spring and embodies the power of growth and new beginnings. Tree people have plenty of vitality and energy and are typically optimistic and forward-looking.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Whilst Metal energies are good at digesting and consolidating everything that has already been created, Tree energies are much more focussed on generating new ideas and solutions. There is often a pioneering quality to Tree people. And whilst they are excellent at getting things started, i [rest of string was truncated]&quot;;.
+        ///    Whilst Metal energies like to digest and consolidate that which is already manifest, Tree energies are much more focussed on generating new ideas and solutions. The trajectory of their thinking often resembles an actual tree, moving upwards and outwards, forever branching off into new dire [rest of string was truncated]&quot;;.
         /// </summary>
         public static string tree_element {
             get {
@@ -2100,10 +2118,10 @@ namespace K9.Globalisation {
         ///    Greetings and thank you for visiting NineStar. Whether you are new to 9 Star Ki or even new to astrology as a whole, you&apos;ve come to a great resource to find detailed and accurate information on this ancient and fascinating system of astrology. 
         ///&lt;/p&gt;
         ///&lt;h4&gt;
-        ///    Ancient Wisdom
+        ///    &lt;strong&gt;Ancient wisdom for our modern era&lt;/strong&gt;
         ///&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    9 Star Ki is possibly the oldest system of astrology in the world today. It is closely related to the 4000 year-old Chinese &apos;Book of Changes&apos; (the &apos;I Ching&apos;), whose principles are the foundations of Feng Shui, [rest of string was truncated]&quot;;.
+        ///    9 Star Ki is possibly the oldest system of astrology in the world today. It is closely related to the 4000 year-old Chinese &apos;Book of Changes&apos; (the &apos;I Ching&apos;), whose principl [rest of string was truncated]&quot;;.
         /// </summary>
         public static string welcome {
             get {

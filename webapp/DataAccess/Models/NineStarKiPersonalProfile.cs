@@ -3,6 +3,7 @@ using K9.Base.DataAccessLayer.Extensions;
 using K9.Base.DataAccessLayer.Models;
 using K9.DataAccessLayer.Enums;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Web.Mvc;
 using K9.Base.DataAccessLayer.Enums;
 using K9.Base.Globalisation;
@@ -13,7 +14,7 @@ namespace K9.DataAccessLayer.Models
 {
     [AutoGenerateName]
     [Name(ResourceType = typeof(K9.Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Donations, PluralName = Globalisation.Strings.Names.Donations, Name = Globalisation.Strings.Names.Donation)]
-    public class EnergyInfo : ObjectBase
+    public class NineStarKiPersonalProfile : ObjectBase
 	{
         [UIHint("Energy")]
         [Required(ErrorMessageResourceType = typeof(K9.Base.Globalisation.Dictionary), ErrorMessageResourceName = K9.Base.Globalisation.Strings.ErrorMessages.FieldIsRequired)]
@@ -43,13 +44,19 @@ namespace K9.DataAccessLayer.Models
         [StringLength(int.MaxValue)]
 	    [Required(ErrorMessageResourceType = typeof(K9.Base.Globalisation.Dictionary), ErrorMessageResourceName = K9.Base.Globalisation.Strings.ErrorMessages.FieldIsRequired)]
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.EnergyDescriptionLabel)]
-	    public string EnergyDescription { get; set; }
-
+	    public string MainEnergyDescription { get; set; }
+        
 	    [AllowHtml]
 	    [DataType(DataType.Html)]
         [StringLength(int.MaxValue)]
-	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ChildhoodLabel)]
-	    public string Childhood { get; set; }
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.EmotionalEnergyLabel)]
+	    public string EmotionalEnergyDescription { get; set; }
+
+	    [AllowHtml]
+	    [DataType(DataType.Html)]
+	    [StringLength(int.MaxValue)]
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SurfaceEnergyLabel)]
+	    public string SurfaceEnergyDescription { get; set; }
 
 	    [AllowHtml]
 	    [DataType(DataType.Html)]
@@ -82,6 +89,12 @@ namespace K9.DataAccessLayer.Models
 
 	    [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LanguageLabel)]
 	    public string LanguageName => Language.GetLocalisedLanguageName();
+
+	    [NotMapped]
+	    [DataType(DataType.Html)]
+	    [StringLength(int.MaxValue)]
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SummaryLabel)]
+	    public string Summary { get; set; }
 
         public NineStarKiEnergy NineStarKiEnergy => new NineStarKiEnergy(Energy);
 

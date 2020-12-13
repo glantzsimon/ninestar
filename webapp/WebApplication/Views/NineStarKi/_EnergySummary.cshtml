@@ -15,10 +15,13 @@
         <article>
             <br />
             <p>
-                <strong>@K9.Globalisation.Dictionary.MainEnergy</strong>: @Model.MainEnergy.FullEnergyNameWithFamilyMember
+                <strong>@K9.Globalisation.Dictionary.MainEnergyLabel</strong>: @Model.MainEnergy.FullEnergyNameWithFamilyMember
             </p>
             <p>
-                <strong>@K9.Globalisation.Dictionary.EmotionalEnergyLabel</strong>: @Model.EmotionalEnergy.ElementWithYingYang
+                <strong>@K9.Globalisation.Dictionary.EmotionalEnergyLabel</strong>: @Model.EmotionalEnergy.FullEnergyName
+            </p>
+            <p>
+                <strong>@K9.Globalisation.Dictionary.SurfaceEnergyLabel</strong>: @Model.SurfaceEnergy.FullEnergyName
             </p>
 
             @MvcHtmlString.Create(Model.Summary)

@@ -169,7 +169,7 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyLabel)]
         public string EnergyName => MetaData.GetDescription();
 
-        public string FullEnergyName => $"{EnergyNumber} {EnergyName} /  {ElementWithYingYang}".Trim();
+        public string FullEnergyName => $"{EnergyNumber} {EnergyName} / {ElementWithYingYang}".Trim();
 
         public string FullEnergyNameWithFamilyMember => $"{FullEnergyName} / {FamilyMember}".Trim();
 

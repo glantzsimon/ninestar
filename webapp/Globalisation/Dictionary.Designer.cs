@@ -928,7 +928,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine Star Ki Astrology Horoscope Relationships Love Feng Shui I Ching Dating Free Chart Romance Perfect Match Human Design.
+        ///   Looks up a localized string similar to Astrology Horoscope Nine Star Ki Relationships Love Feng Shui I Ching Dating Free Chart Romance Perfect Match Human Design.
         /// </summary>
         public static string Keywords {
             get {
@@ -1937,6 +1937,29 @@ namespace K9.Globalisation {
         public static string Tree {
             get {
                 return ResourceManager.GetString("Tree", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Thunder energies embody the power of spring and have plenty of vitality and energy. They are more about doing than being and like to take action and initiate.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Thunder energies are generally very positive and joyful, and their optimism and abundant energy as well as their ability to take strong action makes them great pioneers in any field they turn their attention to. 
+        ///    However, in their constant pursuit of new pastures, they may not stick around long enough to figure out the de [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string tree_element {
+            get {
+                return ResourceManager.GetString("tree_element", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tree Element.
+        /// </summary>
+        public static string TreeElement {
+            get {
+                return ResourceManager.GetString("TreeElement", resourceCulture);
             }
         }
         

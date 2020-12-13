@@ -730,6 +730,12 @@
   <data name="RelationshipsMetaDescription" xml:space="preserve">
     <value>9 Star Ki is a remarkable tool to help us to understand our relationships, both romantic and other. 9 Star Ki offers profound insights into the subtle forces that shape our interactions with others, helping to bring greater harmony and understanding and to avoid blame, resentment and anger.</value>
   </data>
+  <data name="TreeElement" xml:space="preserve">
+    <value>Tree Element</value>
+  </data>
+  <data name="tree_element" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\tree-element.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="WaterElement" xml:space="preserve">
     <value>Water Element</value>
   </data>

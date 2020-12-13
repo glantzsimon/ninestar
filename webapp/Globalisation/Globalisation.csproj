@@ -103,6 +103,7 @@
     <Content Include="Articles\en-gb\coreearth-occupations.htm" />
     <Content Include="Articles\en-gb\coreearth-health.htm" />
     <Content Include="Articles\en-gb\coreearth-trigram.htm" />
+    <Content Include="Articles\en-gb\tree-element.htm" />
     <Content Include="Articles\en-gb\water-element.htm" />
     <Content Include="Articles\en-gb\metal-element.htm" />
     <Content Include="Articles\en-gb\fire-element.htm" />

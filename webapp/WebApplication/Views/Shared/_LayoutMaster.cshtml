@@ -112,8 +112,9 @@ Html.RenderPartial("_GoogleAnalytics");
     </div>
     <div id="pageSpinner"></div>
     <div id="pageOverlay"></div>
+    @Html.Partial("_SEO", "header")
     @RenderBody()
-    @Html.Partial("_SEO")
+    @Html.Partial("_SEO", "footer")
     @Html.Partial("_Footer")
     @Scripts.Render("~/Scripts/js")
     @Scripts.Render("~/Scripts/lib")

@@ -1942,11 +1942,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Thunder energies embody the power of spring and have plenty of vitality and energy. They are more about doing than being and like to take action and initiate.
+        ///    The Tree element is associated with the spring and embodies the power of growth and new beginnings. Tree people have plenty of vitality and energy and are typically optimistic and forward-looking.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Thunder energies are generally very positive and joyful, and their optimism and abundant energy as well as their ability to take strong action makes them great pioneers in any field they turn their attention to. 
-        ///    However, in their constant pursuit of new pastures, they may not stick around long enough to figure out the de [rest of string was truncated]&quot;;.
+        ///    Whilst Metal energies are good at digesting and consolidating everything that has already been created, Tree energies are much more focussed on generating new ideas and solutions. There is often a pioneering quality to Tree people. And whilst they are excellent at getting things started, i [rest of string was truncated]&quot;;.
         /// </summary>
         public static string tree_element {
             get {
@@ -2100,8 +2099,11 @@ namespace K9.Globalisation {
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Greetings and thank you for visiting NineStar. Whether you are new to 9 Star Ki or even new to astrology as a whole, you&apos;ve come to a great resource to find detailed and accurate information on this ancient and fascinating system of astrology. 
         ///&lt;/p&gt;
+        ///&lt;h4&gt;
+        ///    Ancient Wisdom
+        ///&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    9 Star Ki is possibly the oldest system of astrology in the world today. It is closely related to the 4000 year-old Chinese &apos;Book of Changes&apos; (the &apos;I Ching&apos;), whose principles are the foundations of Feng Shui, traditional Chinese medicine and [rest of string was truncated]&quot;;.
+        ///    9 Star Ki is possibly the oldest system of astrology in the world today. It is closely related to the 4000 year-old Chinese &apos;Book of Changes&apos; (the &apos;I Ching&apos;), whose principles are the foundations of Feng Shui, [rest of string was truncated]&quot;;.
         /// </summary>
         public static string welcome {
             get {

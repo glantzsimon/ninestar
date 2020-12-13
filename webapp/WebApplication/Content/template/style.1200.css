@@ -9,6 +9,6 @@
         height: 120px;
         width: 120px;
         background-size: contain;
-        background-image: url(/Images/company/logo-med.png);
+        background-image: url(../../Images/company/logo-med.png);
     }
 }

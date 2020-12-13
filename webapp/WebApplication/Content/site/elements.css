@@ -1,5 +1,6 @@
 ﻿article h4 {
     margin-top: 32px;
+    margin-bottom: 15px;
 }
 
 form:not(.navbar-form):not(.dropdown-toggle) .btn:not(.dropdown-toggle) {

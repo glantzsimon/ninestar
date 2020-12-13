@@ -2,7 +2,7 @@
 using K9.Base.Globalisation;
 using System;
 using System.ComponentModel.DataAnnotations;
-using K9.DataAccessLayer.Enums;
+using K9.WebApplication.Enums;
 
 namespace K9.WebApplication.Models
 {

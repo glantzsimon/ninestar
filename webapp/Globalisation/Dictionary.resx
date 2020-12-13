@@ -748,4 +748,58 @@
   <data name="water_element" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\water-element.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="coreearth_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\coreearth-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\fire-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\heaven-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\lake-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\mountain-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="soil_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\soil-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="thunder_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\thunder-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\water-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wind_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\wind-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="coreearth_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\coreearth-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\fire-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\heaven-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\lake-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\mountain-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="soil_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\soil-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="thunder_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\thunder-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\water-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wind_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\wind-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

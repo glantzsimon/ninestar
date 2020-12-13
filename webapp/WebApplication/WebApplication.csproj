@@ -263,6 +263,8 @@
     <Compile Include="Config\GoogleConfiguration.cs" />
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
+    <Compile Include="Enums\EGender.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Helpers\ViewBagHelper.cs" />
     <Compile Include="Constants\ViewDataConstants.cs" />
     <Compile Include="Controllers\AccountControllerAjax.cs" />
@@ -290,6 +292,7 @@
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Helpers\SessionHelpers.cs" />
     <Compile Include="Helpers\Separator.cs" />
+    <Compile Include="Models\NineStarKiEnergy.cs" />
     <Compile Include="Models\NineStarKiModel.cs" />
     <Compile Include="Models\PersonModel.cs" />
     <Compile Include="Models\StripeModel.cs" />
@@ -304,7 +307,6 @@
     <Compile Include="Services\NineStarKiService.cs" />
     <Compile Include="Services\ShopService.cs" />
     <Compile Include="Services\StripeService.cs" />
-    <Compile Include="ViewModels\NineStarKiViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Readme\Elmah.txt" />
@@ -730,6 +732,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Images\archive\upload\ArchiveItem\" />
     <Folder Include="Upload\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccessLayer.csproj">

@@ -1,0 +1,473 @@
+﻿using K9.Base.DataAccessLayer.Attributes;
+using K9.Globalisation;
+using K9.SharedLibrary.Extensions;
+using K9.WebApplication.Attributes;
+using K9.WebApplication.Enums;
+using K9.WebApplication.Extensions;
+using System.ComponentModel.DataAnnotations;
+
+namespace K9.WebApplication.Models
+{
+    public enum ENineStarKiColour
+    {
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.White)]
+        White,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Black)]
+        Black,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.BrightGreen)]
+        BrightGreen,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Green)]
+        Green,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Yellow)]
+        Yellow,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Red)]
+        Red,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Purple)]
+        Purple
+    }
+
+    public enum ENineStarKiElenement
+    {
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Water)]
+        Water,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Earth)]
+        Earth,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Tree)]
+        Tree,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Metal)]
+        Metal,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Fire)]
+        Fire
+    }
+
+    public enum ENineStarKiFamilyMember
+    {
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.MiddleSon)]
+        MiddleSon,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Mother)]
+        Mother,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.EldestSon)]
+        EldestSon,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.EldestDaughter)]
+        EldestDaughter,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.SeventhChild)]
+        SeventhChild,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Father)]
+        Father,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.YoungestDaughter)]
+        YoungestDaughter,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.YoungestSon)]
+        YoungestSon,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.MiddleDaughter)]
+        MiddleDaughter
+    }
+
+    public enum ENineStarKiDirection
+    {
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Unspecified)]
+        Centre,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.North)]
+        North,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.NorthWest)]
+        NorthWest,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.West)]
+        West,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.SouthWest)]
+        SouthWest,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.South)]
+        South,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.SouthEast)]
+        SouthEast,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.East)]
+        East,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.NorthEast)]
+        NorthEast
+    }
+
+    public enum ENineStarKiYinYang
+    {
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Unspecified)]
+        Unspecified,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Yin)]
+        Yin,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Yang)]
+        Yang
+    }
+
+    public enum ENineStarKiModality
+    {
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Unspecified)]
+        Unspecified,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Flexible)]
+        Flexible,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Static)]
+        Static,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Instigative)]
+        Instigative
+    }
+
+    public enum ENineStarKiEnergyType
+    {
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.MainEnergy)]
+        MainEnergy,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.EmotionalEnergy)]
+        EmotionalEnergy,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.SurfaceEnergy)]
+        SurfaceEnergy,
+    }
+
+    public enum ENineStarKiEnergy
+    {
+        [NineStarEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Unspecified)]
+        Unspecified,
+        [NineStarEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Water, Colour = ENineStarKiColour.White, Element = ENineStarKiElenement.Water, Direction = ENineStarKiDirection.North, FamilyMember = ENineStarKiFamilyMember.MiddleSon, YinYang = ENineStarKiYinYang.Yang, TrigramName = "Kan")]
+        Water,
+        [NineStarEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Soil, Colour = ENineStarKiColour.Black, Element = ENineStarKiElenement.Earth, Direction = ENineStarKiDirection.SouthWest, FamilyMember = ENineStarKiFamilyMember.Mother, YinYang = ENineStarKiYinYang.Yin, TrigramName = "Kun")]
+        Soil,
+        [NineStarEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Thunder, Colour = ENineStarKiColour.BrightGreen, Element = ENineStarKiElenement.Tree, Direction = ENineStarKiDirection.East, FamilyMember = ENineStarKiFamilyMember.EldestSon, YinYang = ENineStarKiYinYang.Yang, TrigramName = "Chen")]
+        Thunder,
+        [NineStarEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Wind, Colour = ENineStarKiColour.Green, Element = ENineStarKiElenement.Tree, Direction = ENineStarKiDirection.SouthEast, FamilyMember = ENineStarKiFamilyMember.EldestDaughter, YinYang = ENineStarKiYinYang.Yin, TrigramName = "Sun")]
+        Wind,
+        [NineStarEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.CoreEarth, Colour = ENineStarKiColour.Yellow, Element = ENineStarKiElenement.Earth, Direction = ENineStarKiDirection.Centre, FamilyMember = ENineStarKiFamilyMember.SeventhChild, YinYang = ENineStarKiYinYang.Unspecified, TrigramName = "None")]
+        CoreEarth,
+        [NineStarEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Heaven, Colour = ENineStarKiColour.White, Element = ENineStarKiElenement.Metal, Direction = ENineStarKiDirection.NorthWest, FamilyMember = ENineStarKiFamilyMember.Father, YinYang = ENineStarKiYinYang.Unspecified, TrigramName = "Chien")]
+        Heaven,
+        [NineStarEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Lake, Colour = ENineStarKiColour.Red, Element = ENineStarKiElenement.Metal, Direction = ENineStarKiDirection.West, FamilyMember = ENineStarKiFamilyMember.YoungestDaughter, YinYang = ENineStarKiYinYang.Yin, TrigramName = "Tui")]
+        Lake,
+        [NineStarEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Mountain, Colour = ENineStarKiColour.White, Element = ENineStarKiElenement.Earth, Direction = ENineStarKiDirection.NorthEast, FamilyMember = ENineStarKiFamilyMember.YoungestSon, YinYang = ENineStarKiYinYang.Yang, TrigramName = "Ken")]
+        Mountain,
+        [NineStarEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Fire, Colour = ENineStarKiColour.Purple, Element = ENineStarKiElenement.Fire, Direction = ENineStarKiDirection.South, FamilyMember = ENineStarKiFamilyMember.MiddleDaughter, YinYang = ENineStarKiYinYang.Yin, TrigramName = "Li")]
+        Fire
+    }
+
+    public class NineStarKiEnergy
+    {
+        public NineStarKiEnergy(ENineStarKiEnergy energy, ENineStarKiEnergyType type)
+        {
+            Energy = energy;
+            EnergyType = type;
+        }
+
+        public ENineStarKiEnergy Energy { get; }
+
+        /// <summary>
+        /// Used to determine YinYang of 5 energies
+        /// </summary>
+        public ENineStarKiEnergy RelatedEnergy { get; set; }
+
+        /// <summary>
+        /// Used to determine YinYang of 5.5.5 energies
+        /// </summary>
+        public EGender Gender { get; set; }
+
+        public ENineStarKiEnergyType EnergyType { get; }
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyLabel)]
+        public string EnergyName => MetaData.GetDescription();
+
+        public int EnergyNumber => (int)Energy;
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyDescriptionLabel)]
+        public string EnergyDescription => GetEnergyDescription();
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.YinYangLabel)]
+        public ENineStarKiYinYang YinYang => GetYinYang();
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyMemberLabel)]
+        public string FamilyMember => MetaData.GetFamilyMember();
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyMemberLabel)]
+        public string Trigram => MetaData.GetTrigram();
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyMemberLabel)]
+        public string Element => MetaData.GetElement();
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ElementLabel)]
+        public string ElementDescription => MetaData.GetElement();
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ColourLabel)]
+        public string Colour => MetaData.GetColour();
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ModalityLabel)]
+        public ENineStarKiModality Modality => GetModality();
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HealthLabel)]
+        public string Health => GetHealth();
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.OccupationsLabel)]
+        public string Occupations => GetOccupations();
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.OccupationsLabel)]
+        public string PersonalDevelopemnt => GetPersonalDevelopemnt();
+
+        public string Direction => MetaData.GetDirection();
+
+        private NineStarEnumMetaDataAttribute MetaData => Energy.GetAttribute<NineStarEnumMetaDataAttribute>();
+
+        private NineStarEnumMetaDataAttribute RelatedMetaData => RelatedEnergy.GetAttribute<NineStarEnumMetaDataAttribute>();
+
+        private ENineStarKiYinYang GetYinYang()
+        {
+            if (Energy == ENineStarKiEnergy.CoreEarth && RelatedEnergy == ENineStarKiEnergy.CoreEarth)
+            {
+                return Gender.IsYin() ? ENineStarKiYinYang.Yin : ENineStarKiYinYang.Yang;
+            }
+            if (Energy == ENineStarKiEnergy.CoreEarth && RelatedEnergy != ENineStarKiEnergy.Unspecified)
+            {
+                return RelatedMetaData.YinYang;
+            }
+            return MetaData.YinYang;
+        }
+
+        private ENineStarKiModality GetModality()
+        {
+            switch (Energy)
+            {
+                case ENineStarKiEnergy.Water:
+                case ENineStarKiEnergy.Wind:
+                case ENineStarKiEnergy.Lake:
+                    return ENineStarKiModality.Flexible;
+
+                case ENineStarKiEnergy.Soil:
+                case ENineStarKiEnergy.CoreEarth:
+                case ENineStarKiEnergy.Mountain:
+                    return ENineStarKiModality.Static;
+
+                case ENineStarKiEnergy.Thunder:
+                case ENineStarKiEnergy.Heaven:
+                case ENineStarKiEnergy.Fire:
+                    return ENineStarKiModality.Instigative;
+            }
+
+            return ENineStarKiModality.Unspecified;
+        }
+
+        private string GetEnergyDescription()
+        {
+            switch (EnergyType)
+            {
+                case ENineStarKiEnergyType.MainEnergy:
+                    return GetMainEnergyDescription();
+
+                case ENineStarKiEnergyType.EmotionalEnergy:
+                    return GetEmotionalEnergyDescription();
+
+                case ENineStarKiEnergyType.SurfaceEnergy:
+                    return GetSurfaceEnergyDescription();
+            }
+
+            return string.Empty;
+        }
+
+        private string GetMainEnergyDescription()
+        {
+            switch (Energy)
+            {
+                case ENineStarKiEnergy.Water:
+                    return Dictionary.water_description;
+
+                case ENineStarKiEnergy.Soil:
+                    return Dictionary.soil_description;
+
+                case ENineStarKiEnergy.Thunder:
+                    return Dictionary.thunder_description;
+
+                case ENineStarKiEnergy.Wind:
+                    return Dictionary.wind_description;
+
+                case ENineStarKiEnergy.CoreEarth:
+                    return Dictionary.coreearth_description;
+
+                case ENineStarKiEnergy.Heaven:
+                    return Dictionary.heaven_description;
+
+                case ENineStarKiEnergy.Lake:
+                    return Dictionary.lake_description;
+
+                case ENineStarKiEnergy.Mountain:
+                    return Dictionary.mountain_description;
+
+                case ENineStarKiEnergy.Fire:
+                    return Dictionary.fire_description;
+            }
+
+            return string.Empty;
+        }
+
+        private string GetEmotionalEnergyDescription()
+        {
+            switch (Energy)
+            {
+                case ENineStarKiEnergy.Water:
+                    return Dictionary.water_emotional_description;
+
+                case ENineStarKiEnergy.Soil:
+                    return Dictionary.soil_emotional_description;
+
+                case ENineStarKiEnergy.Thunder:
+                    return Dictionary.thunder_emotional_description;
+
+                case ENineStarKiEnergy.Wind:
+                    return Dictionary.wind_emotional_description;
+
+                case ENineStarKiEnergy.CoreEarth:
+                    return Dictionary.coreearth_emotional_description;
+
+                case ENineStarKiEnergy.Heaven:
+                    return Dictionary.heaven_emotional_description;
+
+                case ENineStarKiEnergy.Lake:
+                    return Dictionary.lake_emotional_description;
+
+                case ENineStarKiEnergy.Mountain:
+                    return Dictionary.mountain_emotional_description;
+
+                case ENineStarKiEnergy.Fire:
+                    return Dictionary.fire_emotional_description;
+            }
+
+            return string.Empty;
+        }
+
+        private string GetSurfaceEnergyDescription()
+        {
+            switch (Energy)
+            {
+                case ENineStarKiEnergy.Water:
+                    return Dictionary.water_surface_description;
+
+                case ENineStarKiEnergy.Soil:
+                    return Dictionary.soil_surface_description;
+
+                case ENineStarKiEnergy.Thunder:
+                    return Dictionary.thunder_surface_description;
+
+                case ENineStarKiEnergy.Wind:
+                    return Dictionary.wind_surface_description;
+
+                case ENineStarKiEnergy.CoreEarth:
+                    return Dictionary.coreearth_surface_description;
+
+                case ENineStarKiEnergy.Heaven:
+                    return Dictionary.heaven_surface_description;
+
+                case ENineStarKiEnergy.Lake:
+                    return Dictionary.lake_surface_description;
+
+                case ENineStarKiEnergy.Mountain:
+                    return Dictionary.mountain_surface_description;
+
+                case ENineStarKiEnergy.Fire:
+                    return Dictionary.fire_surface_description;
+            }
+
+            return string.Empty;
+        }
+
+        private string GetHealth()
+        {
+            switch (Energy)
+            {
+                case ENineStarKiEnergy.Water:
+                    return Dictionary.water_health;
+
+                case ENineStarKiEnergy.Soil:
+                    return Dictionary.soil_health;
+
+                case ENineStarKiEnergy.Thunder:
+                    return Dictionary.thunder_health;
+
+                case ENineStarKiEnergy.Wind:
+                    return Dictionary.wind_health;
+
+                case ENineStarKiEnergy.CoreEarth:
+                    return Dictionary.coreearth_health;
+
+                case ENineStarKiEnergy.Heaven:
+                    return Dictionary.heaven_health;
+
+                case ENineStarKiEnergy.Lake:
+                    return Dictionary.lake_health;
+
+                case ENineStarKiEnergy.Mountain:
+                    return Dictionary.mountain_health;
+
+                case ENineStarKiEnergy.Fire:
+                    return Dictionary.fire_health;
+            }
+
+            return string.Empty;
+        }
+
+        private string GetOccupations()
+        {
+            switch (Energy)
+            {
+                case ENineStarKiEnergy.Water:
+                    return Dictionary.water_occupations;
+
+                case ENineStarKiEnergy.Soil:
+                    return Dictionary.soil_occupations;
+
+                case ENineStarKiEnergy.Thunder:
+                    return Dictionary.thunder_occupations;
+
+                case ENineStarKiEnergy.Wind:
+                    return Dictionary.wind_occupations;
+
+                case ENineStarKiEnergy.CoreEarth:
+                    return Dictionary.coreearth_occupations;
+
+                case ENineStarKiEnergy.Heaven:
+                    return Dictionary.heaven_occupations;
+
+                case ENineStarKiEnergy.Lake:
+                    return Dictionary.lake_occupations;
+
+                case ENineStarKiEnergy.Mountain:
+                    return Dictionary.mountain_occupations;
+
+                case ENineStarKiEnergy.Fire:
+                    return Dictionary.fire_occupations;
+            }
+
+            return string.Empty;
+        }
+
+        private string GetPersonalDevelopemnt()
+        {
+            switch (Energy)
+            {
+                case ENineStarKiEnergy.Water:
+                    return Dictionary.water_personal_development;
+
+                case ENineStarKiEnergy.Soil:
+                    return Dictionary.soil_personal_development;
+
+                case ENineStarKiEnergy.Thunder:
+                    return Dictionary.thunder_personal_development;
+
+                case ENineStarKiEnergy.Wind:
+                    return Dictionary.wind_personal_development;
+
+                case ENineStarKiEnergy.CoreEarth:
+                    return Dictionary.coreearth_personal_development;
+
+                case ENineStarKiEnergy.Heaven:
+                    return Dictionary.heaven_personal_development;
+
+                case ENineStarKiEnergy.Lake:
+                    return Dictionary.lake_personal_development;
+
+                case ENineStarKiEnergy.Mountain:
+                    return Dictionary.mountain_personal_development;
+
+                case ENineStarKiEnergy.Fire:
+                    return Dictionary.fire_personal_development;
+            }
+
+            return string.Empty;
+        }
+
+    }
+}

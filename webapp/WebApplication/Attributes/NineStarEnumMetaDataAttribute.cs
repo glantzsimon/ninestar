@@ -1,6 +1,6 @@
 ﻿using K9.Base.DataAccessLayer.Attributes;
-using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Extensions;
+using K9.WebApplication.Models;
 using System;
 
 namespace K9.WebApplication.Attributes
@@ -14,6 +14,7 @@ namespace K9.WebApplication.Attributes
         public ENineStarKiDirection Direction { get; set; }
         public ENineStarKiYinYang YinYang { get; set; }
         public Type ResourceType { get; set; }
+        public string TrigramName { get; set; }
         public string Name { get; set; }
 
         public string GetDescription()
@@ -39,6 +40,25 @@ namespace K9.WebApplication.Attributes
             return attr.GetDescription();
         }
 
+        public string GetElementDescription()
+        {
+            switch (Element)
+            {
+                case ENineStarKiElenement.Earth:
+                    return Globalisation.Dictionary.earth_element;
+                case ENineStarKiElenement.Fire:
+                    return Globalisation.Dictionary.fire_element;
+                case ENineStarKiElenement.Metal:
+                    return Globalisation.Dictionary.metal_element;
+                case ENineStarKiElenement.Tree:
+                    return Globalisation.Dictionary.tree_element;
+                case ENineStarKiElenement.Water:
+                    return Globalisation.Dictionary.water_element;
+                default:
+                    return string.Empty;
+            }
+        }
+
         public string GetColour()
         {
             var attr = Colour.GetAttribute<EnumDescriptionAttribute>();
@@ -49,6 +69,11 @@ namespace K9.WebApplication.Attributes
         {
             var attr = Direction.GetAttribute<EnumDescriptionAttribute>();
             return attr.GetDescription();
+        }
+
+        public string GetTrigram()
+        {
+            return ResourceType.GetValueFromResource(TrigramName);
         }
     }
 

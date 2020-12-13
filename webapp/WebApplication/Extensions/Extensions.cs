@@ -1,7 +1,7 @@
-﻿using K9.DataAccessLayer.Enums;
+﻿using K9.WebApplication.Enums;
 using System.Collections.Generic;
 
-namespace K9.DataAccessLayer.Extensions
+namespace K9.WebApplication.Extensions
 {
     public static class Extensions
     {

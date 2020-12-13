@@ -99,6 +99,24 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Articles\en-gb\coreearth-surface-description.htm" />
+    <Content Include="Articles\en-gb\fire-surface-description.htm" />
+    <Content Include="Articles\en-gb\fire-emotional-description.htm" />
+    <Content Include="Articles\en-gb\heaven-surface-description.htm" />
+    <Content Include="Articles\en-gb\lake-surface-description.htm" />
+    <Content Include="Articles\en-gb\mountain-surface-description.htm" />
+    <Content Include="Articles\en-gb\mountain-emotional-description.htm" />
+    <Content Include="Articles\en-gb\lake-emotional-description.htm" />
+    <Content Include="Articles\en-gb\heaven-emotional-description.htm" />
+    <Content Include="Articles\en-gb\coreearth-emotional-description.htm" />
+    <Content Include="Articles\en-gb\soil-surface-description.htm" />
+    <Content Include="Articles\en-gb\thunder-surface-description.htm" />
+    <Content Include="Articles\en-gb\water-surface-description.htm" />
+    <Content Include="Articles\en-gb\wind-surface-description.htm" />
+    <Content Include="Articles\en-gb\wind-emotional-description.htm" />
+    <Content Include="Articles\en-gb\thunder-emotional-description.htm" />
+    <Content Include="Articles\en-gb\soil-emotional-description.htm" />
+    <Content Include="Articles\en-gb\water-emotional-description.htm" />
     <Content Include="Summaries\en-gb\225.htm" />
     <Content Include="Summaries\en-gb\196.htm" />
     <Content Include="Summaries\en-gb\115.htm" />

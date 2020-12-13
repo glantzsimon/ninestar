@@ -1,5 +1,4 @@
-﻿using K9.DataAccessLayer.Enums;
-using K9.DataAccessLayer.Models;
+﻿using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
 using System;
 using System.Diagnostics;
@@ -14,16 +13,16 @@ namespace K9.WebApplication.Tests.Unit.Services
         }
 
         [Theory]
-        [InlineData(1979, ENineStarEnergy.Thunder, EGender.Male)]
-        [InlineData(1980, ENineStarEnergy.Soil, EGender.Male)]
-        [InlineData(1981, ENineStarEnergy.Water, EGender.Male)]
-        [InlineData(1982, ENineStarEnergy.Fire, EGender.Male)]
-        [InlineData(1983, ENineStarEnergy.Mountain, EGender.Male)]
-        [InlineData(1984, ENineStarEnergy.Lake, EGender.Male)]
-        [InlineData(1985, ENineStarEnergy.Heaven, EGender.Male)]
-        [InlineData(1986, ENineStarEnergy.CoreEarth, EGender.Male)]
-        [InlineData(1987, ENineStarEnergy.Wind, EGender.Male)]
-        public void YearEnergy_HappyPath(int year, ENineStarEnergy energy, EGender gender)
+        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male)]
+        [InlineData(1980, ENineStarKiEnergy.Soil, EGender.Male)]
+        [InlineData(1981, ENineStarKiEnergy.Water, EGender.Male)]
+        [InlineData(1982, ENineStarKiEnergy.Fire, EGender.Male)]
+        [InlineData(1983, ENineStarKiEnergy.Mountain, EGender.Male)]
+        [InlineData(1984, ENineStarKiEnergy.Lake, EGender.Male)]
+        [InlineData(1985, ENineStarKiEnergy.Heaven, EGender.Male)]
+        [InlineData(1986, ENineStarKiEnergy.CoreEarth, EGender.Male)]
+        [InlineData(1987, ENineStarKiEnergy.Wind, EGender.Male)]
+        public void YearEnergy_HappyPath(int year, ENineStarKiEnergy energy, EGender gender)
         {
             var ninestar = new NineStarKiModel(new PersonModel
             {
@@ -34,16 +33,16 @@ namespace K9.WebApplication.Tests.Unit.Services
         }
 
         [Theory]
-        [InlineData(1979, ENineStarEnergy.Thunder, EGender.Female)]
-        [InlineData(1980, ENineStarEnergy.Wind, EGender.Female)]
-        [InlineData(1981, ENineStarEnergy.CoreEarth, EGender.TransFemale)]
-        [InlineData(1982, ENineStarEnergy.Heaven, EGender.Female)]
-        [InlineData(1983, ENineStarEnergy.Lake, EGender.Female)]
-        [InlineData(1984, ENineStarEnergy.Mountain, EGender.Female)]
-        [InlineData(1985, ENineStarEnergy.Fire, EGender.Hermaphrodite)]
-        [InlineData(1986, ENineStarEnergy.Water, EGender.Female)]
-        [InlineData(1987, ENineStarEnergy.Soil, EGender.Female)]
-        public void YearEnergyFemale_HappyPath(int year, ENineStarEnergy energy, EGender gender)
+        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Female)]
+        [InlineData(1980, ENineStarKiEnergy.Wind, EGender.Female)]
+        [InlineData(1981, ENineStarKiEnergy.CoreEarth, EGender.TransFemale)]
+        [InlineData(1982, ENineStarKiEnergy.Heaven, EGender.Female)]
+        [InlineData(1983, ENineStarKiEnergy.Lake, EGender.Female)]
+        [InlineData(1984, ENineStarKiEnergy.Mountain, EGender.Female)]
+        [InlineData(1985, ENineStarKiEnergy.Fire, EGender.Hermaphrodite)]
+        [InlineData(1986, ENineStarKiEnergy.Water, EGender.Female)]
+        [InlineData(1987, ENineStarKiEnergy.Soil, EGender.Female)]
+        public void YearEnergyFemale_HappyPath(int year, ENineStarKiEnergy energy, EGender gender)
         {
             var ninestar = new NineStarKiModel(new PersonModel
             {
@@ -61,37 +60,37 @@ namespace K9.WebApplication.Tests.Unit.Services
                 DateOfBirth = new DateTime(1979, 2, 3),
                 Gender = EGender.Male
             });
-            Assert.Equal(ENineStarEnergy.Wind, ninestar.MainEnergy.Energy);
+            Assert.Equal(ENineStarKiEnergy.Wind, ninestar.MainEnergy.Energy);
         }
 
         [Theory]
-        [InlineData(1979, 1976, 1973, 2, 4, ENineStarEnergy.Thunder, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, ENineStarEnergy.CoreEarth, EGender.Male)]
-        [InlineData(1979, 1976, 1973, 3, 6, ENineStarEnergy.Thunder, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, ENineStarEnergy.Wind, EGender.Male)]
-        [InlineData(1979, 1976, 1973, 4, 5, ENineStarEnergy.Thunder, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, ENineStarEnergy.Thunder, EGender.Male)]
-        [InlineData(1979, 1976, 1973, 5, 5, ENineStarEnergy.Thunder, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, ENineStarEnergy.Soil, EGender.Male)]
-        [InlineData(1979, 1976, 1973, 6, 6, ENineStarEnergy.Thunder, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, ENineStarEnergy.Water, EGender.Male)]
-        [InlineData(1979, 1976, 1973, 7, 7, ENineStarEnergy.Thunder, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, ENineStarEnergy.Fire, EGender.Male)]
-        [InlineData(1979, 1976, 1973, 8, 7, ENineStarEnergy.Thunder, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, ENineStarEnergy.Mountain, EGender.Male)]
-        [InlineData(1979, 1976, 1973, 9, 8, ENineStarEnergy.Thunder, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, ENineStarEnergy.Lake, EGender.Male)]
-        [InlineData(1979, 1976, 1973, 10, 8, ENineStarEnergy.Thunder, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, EGender.Male)]
-        [InlineData(1979, 1976, 1973, 11, 7, ENineStarEnergy.Thunder, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, ENineStarEnergy.CoreEarth, EGender.Male)]
-        [InlineData(1979, 1976, 1973, 12, 7, ENineStarEnergy.Thunder, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, ENineStarEnergy.Wind, EGender.Male)]
-        [InlineData(1980, 1977, 1974, 1, 5, ENineStarEnergy.Thunder, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, ENineStarEnergy.Thunder, EGender.Male)]
-        [InlineData(1980, 1977, 1974, 2, 3, ENineStarEnergy.Thunder, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, ENineStarEnergy.Thunder, EGender.Male)]
-        [InlineData(1979, 1976, 1973, 2, 3, ENineStarEnergy.Wind, ENineStarEnergy.Lake, ENineStarEnergy.Water, ENineStarEnergy.Heaven, EGender.Male)]
-        [InlineData(1979, 1976, 1973, 3, 5, ENineStarEnergy.Thunder, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, ENineStarEnergy.CoreEarth, EGender.Male)]
-        [InlineData(1979, 1976, 1973, 4, 4, ENineStarEnergy.Thunder, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, ENineStarEnergy.Wind, EGender.Male)]
-        [InlineData(1979, 1976, 1973, 5, 4, ENineStarEnergy.Thunder, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, ENineStarEnergy.Thunder, EGender.Male)]
-        [InlineData(1979, 1976, 1973, 6, 5, ENineStarEnergy.Thunder, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, ENineStarEnergy.Soil, EGender.Male)]
-        [InlineData(1979, 1976, 1973, 7, 6, ENineStarEnergy.Thunder, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, ENineStarEnergy.Water, EGender.Male)]
-        [InlineData(1979, 1976, 1973, 8, 6, ENineStarEnergy.Thunder, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, ENineStarEnergy.Fire, EGender.Male)]
-        [InlineData(1979, 1976, 1973, 9, 7, ENineStarEnergy.Thunder, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, ENineStarEnergy.Mountain, EGender.Male)]
-        [InlineData(1979, 1976, 1973, 10, 7, ENineStarEnergy.Thunder, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, ENineStarEnergy.Lake, EGender.Male)]
-        [InlineData(1979, 1976, 1973, 11, 6, ENineStarEnergy.Thunder, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, EGender.Male)]
-        [InlineData(1979, 1976, 1973, 12, 6, ENineStarEnergy.Thunder, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, ENineStarEnergy.CoreEarth, EGender.Male)]
-        [InlineData(1980, 1977, 1974, 1, 4, ENineStarEnergy.Thunder, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, ENineStarEnergy.Wind, EGender.Male)]
-        [InlineData(1980, 1977, 1974, 2, 3, ENineStarEnergy.Thunder, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, ENineStarEnergy.Thunder, EGender.Male)]
-        public void MonthEnergy_HappyPath(int year, int year2, int year3, int month, int day, ENineStarEnergy year1Energy, ENineStarEnergy year2Energy, ENineStarEnergy year3Energy, ENineStarEnergy monthEnergy, EGender gender)
+        [InlineData(1979, 1976, 1973, 2, 4, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.CoreEarth, EGender.Male)]
+        [InlineData(1979, 1976, 1973, 3, 6, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Wind, EGender.Male)]
+        [InlineData(1979, 1976, 1973, 4, 5, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Thunder, EGender.Male)]
+        [InlineData(1979, 1976, 1973, 5, 5, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Soil, EGender.Male)]
+        [InlineData(1979, 1976, 1973, 6, 6, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Water, EGender.Male)]
+        [InlineData(1979, 1976, 1973, 7, 7, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Fire, EGender.Male)]
+        [InlineData(1979, 1976, 1973, 8, 7, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Mountain, EGender.Male)]
+        [InlineData(1979, 1976, 1973, 9, 8, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Lake, EGender.Male)]
+        [InlineData(1979, 1976, 1973, 10, 8, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, EGender.Male)]
+        [InlineData(1979, 1976, 1973, 11, 7, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.CoreEarth, EGender.Male)]
+        [InlineData(1979, 1976, 1973, 12, 7, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Wind, EGender.Male)]
+        [InlineData(1980, 1977, 1974, 1, 5, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Thunder, EGender.Male)]
+        [InlineData(1980, 1977, 1974, 2, 3, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Thunder, EGender.Male)]
+        [InlineData(1979, 1976, 1973, 2, 3, ENineStarKiEnergy.Wind, ENineStarKiEnergy.Lake, ENineStarKiEnergy.Water, ENineStarKiEnergy.Heaven, EGender.Male)]
+        [InlineData(1979, 1976, 1973, 3, 5, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.CoreEarth, EGender.Male)]
+        [InlineData(1979, 1976, 1973, 4, 4, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Wind, EGender.Male)]
+        [InlineData(1979, 1976, 1973, 5, 4, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Thunder, EGender.Male)]
+        [InlineData(1979, 1976, 1973, 6, 5, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Soil, EGender.Male)]
+        [InlineData(1979, 1976, 1973, 7, 6, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Water, EGender.Male)]
+        [InlineData(1979, 1976, 1973, 8, 6, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Fire, EGender.Male)]
+        [InlineData(1979, 1976, 1973, 9, 7, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Mountain, EGender.Male)]
+        [InlineData(1979, 1976, 1973, 10, 7, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Lake, EGender.Male)]
+        [InlineData(1979, 1976, 1973, 11, 6, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, EGender.Male)]
+        [InlineData(1979, 1976, 1973, 12, 6, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.CoreEarth, EGender.Male)]
+        [InlineData(1980, 1977, 1974, 1, 4, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Wind, EGender.Male)]
+        [InlineData(1980, 1977, 1974, 2, 3, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Thunder, EGender.Male)]
+        public void MonthEnergy_HappyPath(int year, int year2, int year3, int month, int day, ENineStarKiEnergy year1Energy, ENineStarKiEnergy year2Energy, ENineStarKiEnergy year3Energy, ENineStarKiEnergy monthEnergy, EGender gender)
         {
             var ninestar = new NineStarKiModel(new PersonModel
             {
@@ -126,33 +125,33 @@ namespace K9.WebApplication.Tests.Unit.Services
         }
 
         [Theory]
-        [InlineData(1979, 1976, 1973, 2, 4, ENineStarEnergy.Thunder, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, ENineStarEnergy.Water, EGender.Female)]
-        [InlineData(1979, 1976, 1973, 3, 6, ENineStarEnergy.Thunder, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, ENineStarEnergy.Soil, EGender.Female)]
-        [InlineData(1979, 1976, 1973, 4, 5, ENineStarEnergy.Thunder, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, ENineStarEnergy.Thunder, EGender.Female)]
-        [InlineData(1979, 1976, 1973, 5, 5, ENineStarEnergy.Thunder, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, ENineStarEnergy.Wind, EGender.Female)]
-        [InlineData(1979, 1976, 1973, 6, 6, ENineStarEnergy.Thunder, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, ENineStarEnergy.CoreEarth, EGender.Female)]
-        [InlineData(1979, 1976, 1973, 7, 7, ENineStarEnergy.Thunder, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, ENineStarEnergy.Heaven, EGender.Female)]
-        [InlineData(1979, 1976, 1973, 8, 7, ENineStarEnergy.Thunder, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, ENineStarEnergy.Lake, EGender.Female)]
-        [InlineData(1979, 1976, 1973, 9, 8, ENineStarEnergy.Thunder, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, ENineStarEnergy.Mountain, EGender.Female)]
-        [InlineData(1979, 1976, 1973, 10, 8, ENineStarEnergy.Thunder, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, EGender.Female)]
-        [InlineData(1979, 1976, 1973, 11, 7, ENineStarEnergy.Thunder, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, ENineStarEnergy.Water, EGender.Female)]
-        [InlineData(1979, 1976, 1973, 12, 7, ENineStarEnergy.Thunder, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, ENineStarEnergy.Soil, EGender.Female)]
-        [InlineData(1980, 1977, 1974, 1, 5, ENineStarEnergy.Thunder, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, ENineStarEnergy.Thunder, EGender.Female)]
-        [InlineData(1980, 1977, 1974, 2, 3, ENineStarEnergy.Thunder, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, ENineStarEnergy.Thunder, EGender.Female)]
-        [InlineData(1979, 1976, 1973, 2, 3, ENineStarEnergy.Soil, ENineStarEnergy.Mountain, ENineStarEnergy.CoreEarth, ENineStarEnergy.Heaven, EGender.Female)]
-        [InlineData(1979, 1976, 1973, 3, 5, ENineStarEnergy.Thunder, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, ENineStarEnergy.Water, EGender.Female)]
-        [InlineData(1979, 1976, 1973, 4, 4, ENineStarEnergy.Thunder, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, ENineStarEnergy.Soil, EGender.Female)]
-        [InlineData(1979, 1976, 1973, 5, 4, ENineStarEnergy.Thunder, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, ENineStarEnergy.Thunder, EGender.Female)]
-        [InlineData(1979, 1976, 1973, 6, 5, ENineStarEnergy.Thunder, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, ENineStarEnergy.Wind, EGender.Female)]
-        [InlineData(1979, 1976, 1973, 7, 6, ENineStarEnergy.Thunder, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, ENineStarEnergy.CoreEarth, EGender.Female)]
-        [InlineData(1979, 1976, 1973, 8, 6, ENineStarEnergy.Thunder, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, ENineStarEnergy.Heaven, EGender.Female)]
-        [InlineData(1979, 1976, 1973, 9, 7, ENineStarEnergy.Thunder, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, ENineStarEnergy.Lake, EGender.Female)]
-        [InlineData(1979, 1976, 1973, 10, 7, ENineStarEnergy.Thunder, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, ENineStarEnergy.Mountain, EGender.Female)]
-        [InlineData(1979, 1976, 1973, 11, 6, ENineStarEnergy.Thunder, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, ENineStarEnergy.Fire, EGender.Female)]
-        [InlineData(1979, 1976, 1973, 12, 6, ENineStarEnergy.Thunder, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, ENineStarEnergy.Water, EGender.Female)]
-        [InlineData(1980, 1977, 1974, 1, 4, ENineStarEnergy.Thunder, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, ENineStarEnergy.Soil, EGender.Female)]
-        [InlineData(1980, 1977, 1974, 2, 3, ENineStarEnergy.Thunder, ENineStarEnergy.Fire, ENineStarEnergy.Heaven, ENineStarEnergy.Thunder, EGender.Female)]
-        public void MonthEnergy_Yin_HappyPath(int year, int year2, int year3, int month, int day, ENineStarEnergy year1Energy, ENineStarEnergy year2Energy, ENineStarEnergy year3Energy, ENineStarEnergy monthEnergy, EGender gender)
+        [InlineData(1979, 1976, 1973, 2, 4, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Water, EGender.Female)]
+        [InlineData(1979, 1976, 1973, 3, 6, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Soil, EGender.Female)]
+        [InlineData(1979, 1976, 1973, 4, 5, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Thunder, EGender.Female)]
+        [InlineData(1979, 1976, 1973, 5, 5, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Wind, EGender.Female)]
+        [InlineData(1979, 1976, 1973, 6, 6, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.CoreEarth, EGender.Female)]
+        [InlineData(1979, 1976, 1973, 7, 7, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Heaven, EGender.Female)]
+        [InlineData(1979, 1976, 1973, 8, 7, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Lake, EGender.Female)]
+        [InlineData(1979, 1976, 1973, 9, 8, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Mountain, EGender.Female)]
+        [InlineData(1979, 1976, 1973, 10, 8, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, EGender.Female)]
+        [InlineData(1979, 1976, 1973, 11, 7, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Water, EGender.Female)]
+        [InlineData(1979, 1976, 1973, 12, 7, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Soil, EGender.Female)]
+        [InlineData(1980, 1977, 1974, 1, 5, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Thunder, EGender.Female)]
+        [InlineData(1980, 1977, 1974, 2, 3, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Thunder, EGender.Female)]
+        [InlineData(1979, 1976, 1973, 2, 3, ENineStarKiEnergy.Soil, ENineStarKiEnergy.Mountain, ENineStarKiEnergy.CoreEarth, ENineStarKiEnergy.Heaven, EGender.Female)]
+        [InlineData(1979, 1976, 1973, 3, 5, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Water, EGender.Female)]
+        [InlineData(1979, 1976, 1973, 4, 4, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Soil, EGender.Female)]
+        [InlineData(1979, 1976, 1973, 5, 4, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Thunder, EGender.Female)]
+        [InlineData(1979, 1976, 1973, 6, 5, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Wind, EGender.Female)]
+        [InlineData(1979, 1976, 1973, 7, 6, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.CoreEarth, EGender.Female)]
+        [InlineData(1979, 1976, 1973, 8, 6, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Heaven, EGender.Female)]
+        [InlineData(1979, 1976, 1973, 9, 7, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Lake, EGender.Female)]
+        [InlineData(1979, 1976, 1973, 10, 7, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Mountain, EGender.Female)]
+        [InlineData(1979, 1976, 1973, 11, 6, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, EGender.Female)]
+        [InlineData(1979, 1976, 1973, 12, 6, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Water, EGender.Female)]
+        [InlineData(1980, 1977, 1974, 1, 4, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Soil, EGender.Female)]
+        [InlineData(1980, 1977, 1974, 2, 3, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Thunder, EGender.Female)]
+        public void MonthEnergy_Yin_HappyPath(int year, int year2, int year3, int month, int day, ENineStarKiEnergy year1Energy, ENineStarKiEnergy year2Energy, ENineStarKiEnergy year3Energy, ENineStarKiEnergy monthEnergy, EGender gender)
         {
             var ninestar = new NineStarKiModel(new PersonModel
             {
@@ -187,21 +186,21 @@ namespace K9.WebApplication.Tests.Unit.Services
         }
 
         [Theory]
-        [InlineData(1979, 2, 4, ENineStarEnergy.Thunder, ENineStarEnergy.CoreEarth, ENineStarEnergy.Thunder, EGender.Male)]
-        [InlineData(1976, 3, 6, ENineStarEnergy.Heaven, ENineStarEnergy.Wind, ENineStarEnergy.Lake, EGender.Male)]
-        [InlineData(1973, 4, 5, ENineStarEnergy.Fire, ENineStarEnergy.Thunder, ENineStarEnergy.Soil, EGender.Male)]
-        [InlineData(1979, 5, 5, ENineStarEnergy.Thunder, ENineStarEnergy.Soil, ENineStarEnergy.Heaven, EGender.Male)]
-        [InlineData(1976, 6, 6, ENineStarEnergy.Heaven, ENineStarEnergy.Water, ENineStarEnergy.Water, EGender.Male)]
-        [InlineData(1980, 7, 7, ENineStarEnergy.Soil, ENineStarEnergy.Heaven, ENineStarEnergy.Water, EGender.Male)]
-        [InlineData(1981, 8, 7, ENineStarEnergy.Water, ENineStarEnergy.Soil, ENineStarEnergy.Wind, EGender.Male)]
-        [InlineData(1982, 9, 8, ENineStarEnergy.Fire, ENineStarEnergy.Lake, ENineStarEnergy.Lake, EGender.Male)]
-        [InlineData(1983, 10, 8, ENineStarEnergy.Mountain, ENineStarEnergy.Thunder, ENineStarEnergy.Water, EGender.Male)]
-        [InlineData(1984, 11, 7, ENineStarEnergy.Lake, ENineStarEnergy.Mountain, ENineStarEnergy.Wind, EGender.Male)]
-        [InlineData(1985, 3, 5, ENineStarEnergy.Heaven, ENineStarEnergy.CoreEarth, ENineStarEnergy.Heaven, EGender.Male)]
-        [InlineData(1986, 12, 7, ENineStarEnergy.CoreEarth, ENineStarEnergy.Water, ENineStarEnergy.Fire, EGender.Male)]
-        [InlineData(1987, 2, 4, ENineStarEnergy.Wind, ENineStarEnergy.Mountain, ENineStarEnergy.Water, EGender.Male)]
-        [InlineData(1988, 3, 6, ENineStarEnergy.Thunder, ENineStarEnergy.Wind, ENineStarEnergy.Wind, EGender.Male)]
-        public void SurfaceEnergy_HappyPath(int year, int month, int day, ENineStarEnergy yearEnergy, ENineStarEnergy monthEnergy, ENineStarEnergy surfaceEnergy, EGender gender)
+        [InlineData(1979, 2, 4, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.CoreEarth, ENineStarKiEnergy.Thunder, EGender.Male)]
+        [InlineData(1976, 3, 6, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Wind, ENineStarKiEnergy.Lake, EGender.Male)]
+        [InlineData(1973, 4, 5, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Soil, EGender.Male)]
+        [InlineData(1979, 5, 5, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Soil, ENineStarKiEnergy.Heaven, EGender.Male)]
+        [InlineData(1976, 6, 6, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Water, ENineStarKiEnergy.Water, EGender.Male)]
+        [InlineData(1980, 7, 7, ENineStarKiEnergy.Soil, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Water, EGender.Male)]
+        [InlineData(1981, 8, 7, ENineStarKiEnergy.Water, ENineStarKiEnergy.Soil, ENineStarKiEnergy.Wind, EGender.Male)]
+        [InlineData(1982, 9, 8, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Lake, ENineStarKiEnergy.Lake, EGender.Male)]
+        [InlineData(1983, 10, 8, ENineStarKiEnergy.Mountain, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Water, EGender.Male)]
+        [InlineData(1984, 11, 7, ENineStarKiEnergy.Lake, ENineStarKiEnergy.Mountain, ENineStarKiEnergy.Wind, EGender.Male)]
+        [InlineData(1985, 3, 5, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.CoreEarth, ENineStarKiEnergy.Heaven, EGender.Male)]
+        [InlineData(1986, 12, 7, ENineStarKiEnergy.CoreEarth, ENineStarKiEnergy.Water, ENineStarKiEnergy.Fire, EGender.Male)]
+        [InlineData(1987, 2, 4, ENineStarKiEnergy.Wind, ENineStarKiEnergy.Mountain, ENineStarKiEnergy.Water, EGender.Male)]
+        [InlineData(1988, 3, 6, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Wind, ENineStarKiEnergy.Wind, EGender.Male)]
+        public void SurfaceEnergy_HappyPath(int year, int month, int day, ENineStarKiEnergy yearEnergy, ENineStarKiEnergy monthEnergy, ENineStarKiEnergy surfaceEnergy, EGender gender)
         {
             var ninestar = new NineStarKiModel(new PersonModel
             {

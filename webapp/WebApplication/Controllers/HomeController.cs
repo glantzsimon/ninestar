@@ -1,6 +1,5 @@
 ﻿using K9.Base.WebApplication.Controllers;
 using K9.Base.WebApplication.Helpers;
-using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using NLog;
@@ -10,12 +9,10 @@ namespace K9.WebApplication.Controllers
 {
     public class HomeController : BaseController
     {
-        private readonly IRepository<NineStarKiPersonalProfile> _energyRepository;
-
-        public HomeController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IRepository<NineStarKiPersonalProfile> energyRepository)
+        
+        public HomeController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
         {
-            _energyRepository = energyRepository;
             SetBetaWarningSessionVariable();
         }
 

@@ -214,14 +214,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attributes\NineStarEnumMetaDataAttribute.cs" />
     <Compile Include="Database\DatabaseInitialiser.cs" />
     <Compile Include="Database\Db.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
-    <Compile Include="Database\Seeds\EnergiesSeeder.cs" />
-    <Compile Include="Enums\EEnergyType.cs" />
-    <Compile Include="Enums\EGender.cs" />
-    <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Migrations\202007211011153_July2020.cs" />
     <Compile Include="Migrations\202007211011153_July2020.Designer.cs">
       <DependentUpon>202007211011153_July2020.cs</DependentUpon>
@@ -238,9 +233,11 @@
     <Compile Include="Migrations\202012131759232_DbUpdate1.Designer.cs">
       <DependentUpon>202012131759232_DbUpdate1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\NineStarKiPersonalProfile.cs" />
+    <Compile Include="Migrations\202012132059496_CleanUp.cs" />
+    <Compile Include="Migrations\202012132059496_CleanUp.Designer.cs">
+      <DependentUpon>202012132059496_CleanUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Donation.cs" />
-    <Compile Include="Models\NineStarKiEnergy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -248,6 +245,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Attributes\" />
+    <Folder Include="Enums\" />
     <Folder Include="Exceptions\" />
     <Folder Include="Helpers\" />
   </ItemGroup>
@@ -269,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012131759232_DbUpdate1.resx">
       <DependentUpon>202012131759232_DbUpdate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012132059496_CleanUp.resx">
+      <DependentUpon>202012132059496_CleanUp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

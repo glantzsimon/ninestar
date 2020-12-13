@@ -5,7 +5,6 @@ using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Models;
 using K9.WebApplication.Services;
-using K9.WebApplication.ViewModels;
 using NLog;
 using System;
 using System.Web.Mvc;
@@ -31,16 +30,13 @@ namespace K9.WebApplication.Controllers
             {
                 DateOfBirth = dateOfBirth
             };
-            return View(new NineStarKiViewModel
-            {
-                PersonModel = personModel
-            });
+            return View(new NineStarKiModel(personModel));
         }
 
         [Route("calculate")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CalculateNineStarKi(NineStarKiViewModel model)
+        public ActionResult CalculateNineStarKi(NineStarKiModel model)
         {
             if (model.PersonModel != null)
             {

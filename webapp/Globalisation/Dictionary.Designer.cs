@@ -266,6 +266,21 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string coreearth_emotional_description {
+            get {
+                return ResourceManager.GetString("coreearth_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Generally speaking, Core Earth energies have the constitution of an ox and are incredibly resilient. However, for this reason, it is also very important for
         ///    people under this star to exercise and push themselves, so that they do not stagnate and seize up.
         ///&lt;/p&gt;
@@ -306,6 +321,21 @@ namespace K9.Globalisation {
         public static string coreearth_personal_development {
             get {
                 return ResourceManager.GetString("coreearth_personal_development", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string coreearth_surface_description {
+            get {
+                return ResourceManager.GetString("coreearth_surface_description", resourceCulture);
             }
         }
         
@@ -686,6 +716,21 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fire_emotional_description {
+            get {
+                return ResourceManager.GetString("fire_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    In Chinese medicine, the element Fire controls the function of the heart and small intestine and therefore these energies must guard against circulatory disorders. It is also advisable to avoid 
         ///    overly hot, spicy or salty foods.
         ///&lt;/p&gt;
@@ -717,6 +762,21 @@ namespace K9.Globalisation {
         public static string fire_personal_development {
             get {
                 return ResourceManager.GetString("fire_personal_development", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fire_surface_description {
+            get {
+                return ResourceManager.GetString("fire_surface_description", resourceCulture);
             }
         }
         
@@ -834,6 +894,21 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_emotional_description {
+            get {
+                return ResourceManager.GetString("heaven_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    The organ governed by yang Metal is the lungs and care must be taken to look after this organ. Therefore, it is especially important
         ///    to avoid smoking. It is also beneficial to engage in a healthy amount of exercise to improve cardiovascular fitness.
         ///&lt;/p&gt;
@@ -881,6 +956,21 @@ namespace K9.Globalisation {
         public static string heaven_personal_development {
             get {
                 return ResourceManager.GetString("heaven_personal_development", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_surface_description {
+            get {
+                return ResourceManager.GetString("heaven_surface_description", resourceCulture);
             }
         }
         
@@ -979,6 +1069,21 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string lake_emotional_description {
+            get {
+                return ResourceManager.GetString("lake_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    The Metal element controls the function of the large intestine and therefore it is important for 7 Metal energies not to overeat or eat too quickly.
         ///    Eating late at night is also ill advised. In addition, the regular consumption of fermented foods is highly beneficial as it provides beneficial bacteria
         ///    which can keep the colon healthy.
@@ -1017,6 +1122,21 @@ namespace K9.Globalisation {
         public static string lake_personal_development {
             get {
                 return ResourceManager.GetString("lake_personal_development", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string lake_surface_description {
+            get {
+                return ResourceManager.GetString("lake_surface_description", resourceCulture);
             }
         }
         
@@ -1236,6 +1356,21 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_emotional_description {
+            get {
+                return ResourceManager.GetString("mountain_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Being highly contemplative can mean that 8 Earth Energies have a tendency to be hypochondriacs as they are overly aware of bodily aches and pains.
         ///&lt;/p&gt;
         ///&lt;p&gt;
@@ -1281,6 +1416,21 @@ namespace K9.Globalisation {
         public static string mountain_personal_development {
             get {
                 return ResourceManager.GetString("mountain_personal_development", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_surface_description {
+            get {
+                return ResourceManager.GetString("mountain_surface_description", resourceCulture);
             }
         }
         
@@ -1670,6 +1820,21 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_emotional_description {
+            get {
+                return ResourceManager.GetString("soil_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Being sensitive by nature, soil energies do not typically have a strong constitution. In Traditional Chinese Medicine, the earth element governs the spleen, pancreas and stomach and
         ///    there for the lymphatic and immune systems. Soil energies must take extra care to look after these organs with a healthy balanced diet which does not contain excessive carbohydrate.
         ///    It is also advisable to engage in activities which are calming, such as meditation and yoga, in order to avoid excessive anxiety  [rest of string was truncated]&quot;;.
@@ -1705,6 +1870,21 @@ namespace K9.Globalisation {
         public static string soil_personal_development {
             get {
                 return ResourceManager.GetString("soil_personal_development", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_surface_description {
+            get {
+                return ResourceManager.GetString("soil_surface_description", resourceCulture);
             }
         }
         
@@ -1871,6 +2051,21 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_emotional_description {
+            get {
+                return ResourceManager.GetString("thunder_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    The Tree element governs the liver and gallbladder. 
         ///&lt;/p&gt;
         ///&lt;p&gt;
@@ -1922,6 +2117,21 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_surface_description {
+            get {
+                return ResourceManager.GetString("thunder_surface_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    A strong yang, base line opening up into two yin lines. This represents growth and action and the awakening of dawn and spring as well as action and spontaneity.
         ///&lt;/p&gt;.
         /// </summary>
@@ -1960,10 +2170,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The Tree element is associated with the spring and embodies the power of growth and new beginnings. Tree people have plenty of vitality and energy and are typically optimistic and forward-looking.
+        ///    The Tree element is associated with the dawn or spring and embodies the power of growth and new beginnings. Tree people have plenty of vitality and energy and are typically optimistic and forward-looking.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Whilst Metal energies like to digest and consolidate that which is already manifest, Tree energies are much more focussed on generating new ideas and solutions. The trajectory of their thinking often resembles an actual tree, moving upwards and outwards, forever branching off into new dire [rest of string was truncated]&quot;;.
+        ///    Whilst Metal energies like to digest and consolidate that which is already manifest, Tree energies are much more focussed on generating new ideas and solutions. The trajectory of their thinking often resembles an actual tree, moving upwards and outwards, forever branching off into  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string tree_element {
             get {
@@ -2055,6 +2265,21 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_emotional_description {
+            get {
+                return ResourceManager.GetString("water_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Water energies are most likely to suffer health problems related to the kidneys, bladder, reproductive system and adrenal glands, all of which are governed by the element water in Traditional Chinese Medicine.
         ///&lt;/p&gt;
         ///&lt;p&gt;
@@ -2096,6 +2321,21 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_surface_description {
+            get {
+                return ResourceManager.GetString("water_surface_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to One yang line encapsulated by two yin lines. Hidden strength and depth within. symbolic of winter&apos;s apparent dormancy on the surface, whilst beneath major change is taking place..
         /// </summary>
         public static string water_trigram {
@@ -2114,14 +2354,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Greetings and thank you for visiting NineStar. Whether you are new to 9 Star Ki or even new to astrology as a whole, you&apos;ve come to a great resource to find detailed and accurate information on this ancient and fascinating system of astrology. 
-        ///&lt;/p&gt;
-        ///&lt;h4&gt;
-        ///    &lt;strong&gt;Ancient wisdom for our modern era&lt;/strong&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;
+        ///    &lt;strong&gt;9 Star Ki Astrology - Ancient wisdom for the modern era&lt;/strong&gt;
         ///&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    9 Star Ki is possibly the oldest system of astrology in the world today. It is closely related to the 4000 year-old Chinese &apos;Book of Changes&apos; (the &apos;I Ching&apos;), whose principl [rest of string was truncated]&quot;;.
+        ///    Greetings and thank you for visiting NineStar. Whether you are new to 9 Star Ki or even new to astrology as a whole, you&apos;ve come to a great resource to find detailed and accurate information on this ancient and fascinating system of astrology. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    9 Star Ki is possibly the oldest system of astrology in the world today. It is closely related to the 4000 year-old Chinese &apos;Book of Changes&apos; (the &apos;I C [rest of string was truncated]&quot;;.
         /// </summary>
         public static string welcome {
             get {
@@ -2213,6 +2453,21 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_emotional_description {
+            get {
+                return ResourceManager.GetString("wind_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Like the other Tree element, Thunder, Wind energies need to take good care of the liver and gall bladder. Unlike Thunder energies who, being yang, are more prone to liver imbalances, yin Wind energies are more likely to experience issues with the yin gall bladder.
         ///&lt;/p&gt;
         ///&lt;p&gt;
@@ -2253,6 +2508,21 @@ namespace K9.Globalisation {
         public static string wind_personal_development {
             get {
                 return ResourceManager.GetString("wind_personal_development", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_surface_description {
+            get {
+                return ResourceManager.GetString("wind_surface_description", resourceCulture);
             }
         }
         

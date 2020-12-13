@@ -1,6 +1,6 @@
 ﻿using K9.Base.DataAccessLayer.Attributes;
 
-namespace K9.DataAccessLayer.Enums
+namespace K9.WebApplication.Enums
 {
     public enum EGender
     {

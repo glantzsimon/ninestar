@@ -18,7 +18,7 @@
         @Html.Partial("_Calculator")
     </div>
     <div class="col-md-8 col-sm-8 padding-0 padding-left-20-desktop">
-        @if (Model != null)
+        @if (Model != null && Model.IsProcessed)
         {
             @Html.Partial("_EnergySummary", Model)
         }

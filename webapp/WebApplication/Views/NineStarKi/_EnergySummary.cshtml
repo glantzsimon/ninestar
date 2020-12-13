@@ -10,4 +10,9 @@
     <div class="col-md-4 col-sm-4">
         @Html.Partial("_EnergyTitle", Model.SurfaceEnergy)
     </div>
+    <div class="col-md-12">
+        <article>
+            @MvcHtmlString.Create(Model.Summary)
+        </article>
+    </div>
 </div>

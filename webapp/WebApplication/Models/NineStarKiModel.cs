@@ -40,6 +40,9 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SurfaceEnergyLabel)]
         public NineStarKiEnergy SurfaceEnergy { get; }
 
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SummaryLabel)]
+        public string Summary { get; set; }
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HealthLabel)]
         public string Health { get; set; }
 

@@ -15,9 +15,51 @@ namespace K9.WebApplication.Services
             model.Health = GetHealth(model.MainEnergy.Energy);
             model.Occupations = GetOccupations(model.MainEnergy.Energy);
             model.PersonalDevelopemnt = GetPersonalDevelopemnt(model.MainEnergy.Energy);
+            model.Summary = GetSummary(model);
             model.IsProcessed = true;
 
             return model;
+        }
+
+        private string GetSummary(NineStarKiModel model)
+        {
+            switch (model.MainEnergy.Energy)
+            {
+                case ENineStarKiEnergy.Water:
+                    switch (model.EmotionalEnergy.Energy)
+                    {
+                        case ENineStarKiEnergy.Water:
+                            return Dictionary._115;
+
+                        case ENineStarKiEnergy.Soil:
+                            return Dictionary._124;
+
+                        case ENineStarKiEnergy.Thunder:
+                            return Dictionary._133;
+
+                        case ENineStarKiEnergy.Wind:
+                            return Dictionary._142;
+
+                        case ENineStarKiEnergy.CoreEarth:
+                            return Dictionary._151;
+
+                        case ENineStarKiEnergy.Heaven:
+                            return Dictionary._169;
+
+                        case ENineStarKiEnergy.Lake:
+                            return Dictionary._178;
+
+                        case ENineStarKiEnergy.Mountain:
+                            return Dictionary._187;
+
+                        case ENineStarKiEnergy.Fire:
+                            return Dictionary._196;
+                    }
+
+                    return string.Empty;
+            }
+
+            return string.Empty;
         }
 
         private string GetMainEnergyDescription(ENineStarKiEnergy energy)

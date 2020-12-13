@@ -1516,6 +1516,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Predictions.
+        /// </summary>
+        public static string Predictions {
+            get {
+                return ResourceManager.GetString("Predictions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 9 Star Ki astrology predictions yearly predictions monthly predictions life planner life cycles.
         /// </summary>
         public static string PredictionsKeywords {

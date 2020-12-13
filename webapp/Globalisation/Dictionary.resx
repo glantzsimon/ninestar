@@ -712,6 +712,9 @@
   <data name="NineStarKiCalculatorTitle" xml:space="preserve">
     <value>Nine Star Ki Calculator - Calculate Your Personal Profile</value>
   </data>
+  <data name="Predictions" xml:space="preserve">
+    <value>Predictions</value>
+  </data>
   <data name="PredictionsKeywords" xml:space="preserve">
     <value>9 Star Ki astrology predictions yearly predictions monthly predictions life planner life cycles</value>
   </data>

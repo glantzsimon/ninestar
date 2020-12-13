@@ -928,7 +928,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9 Star Ki Astrology Nine Star Ki Astrology Horoscope Relationships Love Feng Shui I Ching Human Design Dating Reading Free Chart.
+        ///   Looks up a localized string similar to Nine Star Ki Astrology Horoscope Relationships Love Feng Shui I Ching Dating Free Chart Romance Perfect Match Human Design.
         /// </summary>
         public static string Keywords {
             get {
@@ -2030,6 +2030,15 @@ namespace K9.Globalisation {
         public static string water_trigram {
             get {
                 return ResourceManager.GetString("water_trigram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Water Element.
+        /// </summary>
+        public static string WaterElement {
+            get {
+                return ResourceManager.GetString("WaterElement", resourceCulture);
             }
         }
         

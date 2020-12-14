@@ -170,6 +170,8 @@ namespace K9.WebApplication.Models
         public string EnergyName => MetaData.GetDescription();
 
         public string FullEnergyName => GetFullEnergyName();
+        
+        public string FullEnergyDetailsTitle => $"{FullEnergyName} - Details";
 
         public int EnergyNumber => (int)Energy;
 

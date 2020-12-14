@@ -791,3 +791,16 @@ a.collapsible-panel-link {
     a.collapsible-panel-link:hover {
         text-decoration: underline !important;
     }
+
+.nav-tabs > li > a {
+    border-right: 1px solid #eeeeee;
+}
+
+.nav-pills > li > a, .nav-tabs > li > a {
+    background-color: #d9d9d9;
+}
+
+.nav-pills > li.active > a, .nav-tabs > li.active > a {
+    background-color: #337ab7;
+    color: white;
+}

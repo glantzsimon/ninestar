@@ -6,8 +6,7 @@
     ViewBag.SubTitle = K9.Globalisation.Dictionary.PersonalProfileCalculator;
     ViewBag.Keywords = K9.Globalisation.Dictionary.NineStarKiCalculatorKeywords;
     ViewBag.MetaDescription = K9.Globalisation.Dictionary.NineStarKiCalculatorMetaDescription;
-
-    ViewBag.Background = ViewBagHelper.EViewBackground.Jarallax;
+    
     Layout = "../Shared/_LayoutForm.cshtml";
 }
 
@@ -20,30 +19,12 @@
     <div class="col-md-9 col-sm-9 padding-0 padding-left-20-desktop">
         @if (Model != null && Model.IsProcessed)
         {
-            @Html.Partial("_EnergySummary", Model)
+            @Html.Partial("_ProfileSummary", Model)
         }
     </div>
 </div>
 
 @if (Model != null && Model.IsProcessed)
 {
-    <div class="ninestar-summmary container padding-0">
-        <h2>@K9.Globalisation.Dictionary.MainEnergyLabel</h2>
-        <hr/>
-        @Html.Partial("_NineStarHeader", Model.MainEnergy)
-        <hr/>
-        @Html.Partial("_NineStarDetail", Model)
-
-        <h2>@K9.Globalisation.Dictionary.EmotionalEnergyLabel</h2>
-        <hr/>
-        @Html.Partial("_NineStarHeader", Model.EmotionalEnergy)
-        <hr/>
-        @Html.Partial("_NineStarBody", Model.EmotionalEnergy)
-
-        <h2>@K9.Globalisation.Dictionary.SurfaceEnergyLabel</h2>
-        <hr/>
-        @Html.Partial("_NineStarHeader", Model.SurfaceEnergy)
-        <hr/>
-        @Html.Partial("_NineStarBody", Model.SurfaceEnergy)
-    </div>
+    @Html.Partial("_ProfileDetails", Model)
 }

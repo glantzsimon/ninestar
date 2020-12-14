@@ -323,7 +323,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You possess tremendous energy, strength and vitality to take on tasks. You are not afraid of hard work and often break new ground in your career. Outwardly you may appear indecisive, quiet and even shy, withdrawn and cautious. You can be prone to procrastination. However, once you feel at ease with people, you may well reveal a witty, playful and fun-loving side. There is a deep reflective nature within you. You can be very creative and verbally expressive when inspired.
+        ///    
         ///&lt;/p&gt;.
         /// </summary>
         public static string _362 {
@@ -379,6 +379,15 @@ namespace K9.Globalisation {
         public static string AdditionalInformation {
             get {
                 return ResourceManager.GetString("AdditionalInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adult Persona.
+        /// </summary>
+        public static string AdultPersona {
+            get {
+                return ResourceManager.GetString("AdultPersona", resourceCulture);
             }
         }
         
@@ -961,6 +970,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to External Persona.
+        /// </summary>
+        public static string ExternalPersona {
+            get {
+                return ResourceManager.GetString("ExternalPersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Family Member.
         /// </summary>
         public static string FamilyMember {
@@ -1313,6 +1331,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inner Child.
+        /// </summary>
+        public static string InnerChild {
+            get {
+                return ResourceManager.GetString("InnerChild", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Instigative.
         /// </summary>
         public static string Instigative {
@@ -1340,7 +1367,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Astrology Horoscope Nine Star Ki Relationships Love Feng Shui I Ching Dating Free Chart Romance Perfect Match Human Design.
+        ///   Looks up a localized string similar to Astrology Horoscope Relationships Nine Star Ki Love Feng Shui I Ching Dating Free Chart Romance Perfect Match Human Design.
         /// </summary>
         public static string Keywords {
             get {
@@ -2002,6 +2029,15 @@ namespace K9.Globalisation {
         public static string PersonalProfileCalculator {
             get {
                 return ResourceManager.GetString("PersonalProfileCalculator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personal Profile Details.
+        /// </summary>
+        public static string PersonalProfileDetails {
+            get {
+                return ResourceManager.GetString("PersonalProfileDetails", resourceCulture);
             }
         }
         

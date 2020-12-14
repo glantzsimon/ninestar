@@ -9,7 +9,7 @@
             <div>
                 @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Overview), Model.Overview, true)
                     
-                @Html.CollapsiblePanel(Model.MainEnergy.FullEnergyName, Model.MainEnergy.EnergyDescription)
+                @Html.CollapsiblePanel(Model.MainEnergy.FullEnergyDetailsTitle, Model.MainEnergy.EnergyDescription)
 
                 @Html.CollapsiblePanel(Model.MainEnergy.ElementTitle, Model.MainEnergy.ElementDescription)
 

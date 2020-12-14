@@ -186,6 +186,8 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TrigramLabel)]
         public string Trigram => MetaData.GetTrigram();
 
+        public string TrigramName => MetaData.TrigramName;
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TrigramLabel)]
         public string TrigramDescription => GetTrigramDescription();
 

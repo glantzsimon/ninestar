@@ -169,8 +169,8 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyLabel)]
         public string EnergyName => MetaData.GetDescription();
 
-        public string FullEnergyName => $"{EnergyNumber} {EnergyName} / {ElementWithYingYang}".Trim();
-        
+        public string FullEnergyName => GetFullEnergyName();
+
         public int EnergyNumber => (int)Energy;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.YinYangLabel)]
@@ -202,8 +202,15 @@ namespace K9.WebApplication.Models
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ModalityLabel)]
         public ENineStarKiModality Modality => GetModality();
-        
+
         public string Direction => MetaData.GetDirection();
+
+        private string GetFullEnergyName()
+        {
+            return EnergyName == Element 
+                ? $"{EnergyNumber} {EnergyName}".Trim() 
+                : $"{EnergyNumber} {EnergyName} / {ElementWithYingYang}".Trim();
+        }
 
         private NineStarEnumMetaDataAttribute MetaData => Energy.GetAttribute<NineStarEnumMetaDataAttribute>();
 
@@ -271,6 +278,5 @@ namespace K9.WebApplication.Models
 
             return String.Empty;
         }
-
     }
 }

@@ -191,13 +191,64 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You are essentially helpful, supportive, caring and diplomatic. You feel a great sense of fulfilment when you are serving others.
-        ///    You need to feel involved and appreciated, whether out in the world, at the work place or closer to home, within the local community and within the family.
-        ///
-        ///    You may have a tendancy to become overly fastidious in your work.
-        ///
-        ///    Care should be taken not to become overly opinionated or obsessed with detail.
+        ///    On the surface you may appear quiet, gentle and diplomatic. You are generally dependable, helpful and consistent. However, those close to you will discover that you can also be very expressive and at times even explosive. You can be fastidious and extremely detail oriented.
         ///&lt;/p&gt;.
+        /// </summary>
+        public static string _234 {
+            get {
+                return ResourceManager.GetString("_234", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Outwardly you are very energetic and full of enthusiasm. You are very expressive – often verbally – and spontaneous in your actions. Deep down you are trusting and open but you may be prone to ups and downs and may often need the support of others. Whilst you can act impulsively, your essential nature is consistent, helpful and supportive.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _243 {
+            get {
+                return ResourceManager.GetString("_243", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You often appear diplomatic, tactful and even reserved. You are essentially helpful and, but your deeper nature is much bolder and, at times, demanding. When challenged, your strong will and assertive nature are expressed. You have a powerful ability to bounce back from difficulties in your life.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _252 {
+            get {
+                return ResourceManager.GetString("_252", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    On the surface, you may appear shy, cautious and indecisive. On the other hand, you may appear very sociable, bubbly and excitable.
+        ///    You have a very determined character that sees the world logically and clearly. With those you know well you tend to be direct and outspoken. You are a perfectionist and dislike criticism. You tend to be very reliable and prudent and you enjoy helping others. You have a knack for diplomacy and have great potential for leadership.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _261 {
+            get {
+                return ResourceManager.GetString("_261", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Outwardly you can appear flamboyant or even ostentatious at times. You can also be impulsive. You likely have a deep intuition and are very capable of &apos;illuminating&apos; those around you when they cannot see clearly. People close to you most likely find you entertaining and enjoy your wit. You have a playful, fun-loving nature and are typically flexible and easygoing. You have a deep sense of inner security. Your fundamental nature is grounded, caring and supportive, dedicated to the service of others. [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _279 {
+            get {
+                return ResourceManager.GetString("_279", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    In friendships and in business relationships you are reliable and keep your word. You are consistent, supportive and helpful. You can be fussy and even fanatical about detail. You can at times become withdrawn and uncommunicative. However, your quiter nature can change very quickly if you are provoked in any way. You are quite capable of delivering strong, compelling arguments when necessary. Overall, this is a very strong, reliable combination of the 9 energies.
+        ///&lt;/p&gt;
+        ///.
         /// </summary>
         public static string _288 {
             get {
@@ -214,6 +265,102 @@ namespace K9.Globalisation {
         public static string _297 {
             get {
                 return ResourceManager.GetString("_297", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You have a lot of energy and vitality and are not afraid to take on plenty of hard work and commitments. You have hidden depths of emotion but these are typically on expressed to those close to you. You are empathetic, sensitive and flexible, happy taking each day as it comes. Outwardly you can appear sociable and charming and make others feel at ease by listening to them and acknowledging them. Some would describe you as easy-going, with an independent nature. On the other hand, you can also be sh [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _317 {
+            get {
+                return ResourceManager.GetString("_317", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You are hard-working with lots of vitality for new projects and ideas. You are creative and spontaneous and your ideas may be well ahead of the game and not always understood by others, which can be frustrating. In relationships you are supportive and helpful and often act as a peacemaker during fallouts amongst friends and family members. You are well organised and detail-oriented, but some may find this excessive. You are honest and frank in your communication, sometimes unerringly so. Some peopl [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _326 {
+            get {
+                return ResourceManager.GetString("_326", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You like to take the lead, both at home and at work. It is important for you to feel involved. You are diligent with plenty of vitality and energy for the projects you are involved in. Those close to you may find you emotionally explosive at times. You are extremely spontaneous. However, this sometimes leads to your being changeable and unpredictable, especially when under pressure.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _335 {
+            get {
+                return ResourceManager.GetString("_335", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You tend to be very optimistic and seem to have a limitless supply of energy, enthusiasm and spontaneity. You are hardworking and others find you helpful and dependable. You may also appear quiet and gentle at times. Your are essentially very emotional and may appear over-enthusiastic at times and even impulsive. Conversely you can be stubborn and inflexible. You may be overly trusting of others and should seek the advice of trusted friends, family or colleagues before making important decisions.
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _344 {
+            get {
+                return ResourceManager.GetString("_344", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You have a very strong will and assertive, even agressive nature at times. You have an incredible ability to overcome difficulties in your life. You are spontaneous, enthusiastic and energetic and others may find it difficult to keep up with you. You can be very expressive, often speaking your mind before thinking through the consequences. You can also be bold and demanding. Many people born into this sign are precocious as children.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _353 {
+            get {
+                return ResourceManager.GetString("_353", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You possess tremendous energy, strength and vitality to take on tasks. You are not afraid of hard work and often break new ground in your career. Outwardly you may appear indecisive, quiet and even shy, withdrawn and cautious. You can be prone to procrastination. However, once you feel at ease with people, you may well reveal a witty, playful and fun-loving side. There is a deep reflective nature within you. You can be very creative and verbally expressive when inspired.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _362 {
+            get {
+                return ResourceManager.GetString("_362", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You possess tremendous energy, strength and vitality to take on tasks. You are not afraid of hard work and often break new ground in your career. Outwardly you may appear indecisive, quiet and even shy, withdrawn and cautious. You can be prone to procrastination. However, once you feel at ease with people, you may well reveal a witty, playful and fun-loving side. There is a deep reflective nature within you. You can be very creative and verbally expressive when inspired.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _371 {
+            get {
+                return ResourceManager.GetString("_371", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You are extremely spontaneous with an enormous capacity to take on hard work. Your optimistic, energetic nature can be an inspiration to those around you. You can appear ostentatious or flamboyant and are not afraid to show off. However, you can also be impulsive and single-minded when you get a bee in your bonnet. Those who know you more intimately may find that you become uncommunicative, at times, needing to retreat into your cave to reflect. You have a deep sense of inner security. When provoke [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _389 {
+            get {
+                return ResourceManager.GetString("_389", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    On the surface you may appear quiet and reserved. You have enormous inner strength and learn from the difficulties you encounter throughout life.
+        ///    You tend to go about your business in a quiet way. You have enormous strength and frequently learn in life through dealing with difficulties. You can be extremely spontaneous or impulsive when provoked. Those who get to know you will discover that you can be quite lively, optimistic and affectionate. You may also be a little vein and self-centred. Yo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _398 {
+            get {
+                return ResourceManager.GetString("_398", resourceCulture);
             }
         }
         

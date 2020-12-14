@@ -829,9 +829,6 @@
   <data name="_196" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>summaries\en-gb\196.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="_225" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>summaries\en-gb\225.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="EmotionalEnergyShortLabel" xml:space="preserve">
     <value>Inner Child</value>
   </data>
@@ -853,10 +850,55 @@
   <data name="_216" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>summaries\en-gb\_216.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="_225" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_225.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_234" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_234.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_243" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_243.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_252" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_252.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_261" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_261.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_279" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_279.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="_288" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>summaries\en-gb\_288.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_297" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>summaries\en-gb\_297.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_317" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_317.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_326" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_326.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_335" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_335.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_344" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_344.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_353" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_353.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_362" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_362.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_371" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_371.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_389" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_389.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_398" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_398.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

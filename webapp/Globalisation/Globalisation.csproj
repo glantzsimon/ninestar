@@ -99,6 +99,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Articles\en-gb\fire-overview.htm" />
+    <Content Include="Articles\en-gb\mountain-overview.htm" />
+    <Content Include="Articles\en-gb\lake-overview.htm" />
+    <Content Include="Articles\en-gb\heaven-overview.htm" />
     <Content Include="Articles\en-gb\coreearth-surface-description.htm" />
     <Content Include="Articles\en-gb\fire-surface-description.htm" />
     <Content Include="Articles\en-gb\fire-emotional-description.htm" />
@@ -110,8 +114,11 @@
     <Content Include="Articles\en-gb\heaven-emotional-description.htm" />
     <Content Include="Articles\en-gb\coreearth-emotional-description.htm" />
     <Content Include="Articles\en-gb\soil-surface-description.htm" />
+    <Content Include="Articles\en-gb\coreearth-overview.htm" />
+    <Content Include="Articles\en-gb\wind-overview.htm" />
     <Content Include="Articles\en-gb\thunder-surface-description.htm" />
     <Content Include="Articles\en-gb\soil-overview.htm" />
+    <Content Include="Articles\en-gb\thunder-overview.htm" />
     <Content Include="Articles\en-gb\water-overview.htm" />
     <Content Include="Articles\en-gb\water-surface-description.htm" />
     <Content Include="Articles\en-gb\wind-surface-description.htm" />

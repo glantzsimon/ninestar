@@ -30,28 +30,28 @@ namespace K9.WebApplication.Services
                     return Dictionary.water_overview;
 
                 case ENineStarKiEnergy.Soil:
-                    return Dictionary._124;
+                    return Dictionary.soil_overview;
 
                 case ENineStarKiEnergy.Thunder:
-                    return Dictionary._133;
+                    return Dictionary.thunder_overview;
 
                 case ENineStarKiEnergy.Wind:
-                    return Dictionary._142;
+                    return Dictionary.wind_overview;
 
                 case ENineStarKiEnergy.CoreEarth:
-                    return Dictionary._151;
+                    return Dictionary.coreearth_overview;
 
                 case ENineStarKiEnergy.Heaven:
-                    return Dictionary._169;
+                    return Dictionary.heaven_overview;
 
                 case ENineStarKiEnergy.Lake:
-                    return Dictionary._178;
+                    return Dictionary.lake_overview;
 
                 case ENineStarKiEnergy.Mountain:
-                    return Dictionary._187;
+                    return Dictionary.mountain_overview;
 
                 case ENineStarKiEnergy.Fire:
-                    return Dictionary._196;
+                    return Dictionary.fire_overview;
             }
 
             return string.Empty;

@@ -633,6 +633,17 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    A strong yang, base line opening up into two yin lines. This represents growth and action and the awakening of dawn and spring as well as action and spontaneity.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string coreearth_overview {
+            get {
+                return ResourceManager.GetString("coreearth_overview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Core Earth energies are often drawn to the centre of whatever they do and whilst this can be very stimulating, it can also become very draining and
         ///    caution must be taken not to burn out. It is important for them to pace themselves and take time out to reflect and recharge.
         ///&lt;/p&gt;
@@ -1097,6 +1108,17 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    A strong yang, base line opening up into two yin lines. This represents growth and action and the awakening of dawn and spring as well as action and spontaneity.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string fire_overview {
+            get {
+                return ResourceManager.GetString("fire_overview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Fire is the energy of illumination and clarity. It is also the energy of the midday sun. As such, fire energies can often see the bigger picture as they have a clear vantage point, like the sun shining down from above. Their insights and perspective are very valuable to others who might not be able to see things as clearly. That being said, a fire needs to be rooted in the hearth and needs plenty of fuel. Therefore, it&apos;s important that fire energies learn to ground themselves and develop their more [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_personal_development {
@@ -1283,6 +1305,17 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    A strong yang, base line opening up into two yin lines. This represents growth and action and the awakening of dawn and spring as well as action and spontaneity.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string heaven_overview {
+            get {
+                return ResourceManager.GetString("heaven_overview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Being the full expression of yang, it is advisable to work on bringing out a gentler, more flexible nature.
         ///&lt;/p&gt;
         ///&lt;p&gt;
@@ -1454,6 +1487,17 @@ namespace K9.Globalisation {
         public static string lake_occupations {
             get {
                 return ResourceManager.GetString("lake_occupations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    A strong yang, base line opening up into two yin lines. This represents growth and action and the awakening of dawn and spring as well as action and spontaneity.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string lake_overview {
+            get {
+                return ResourceManager.GetString("lake_overview", resourceCulture);
             }
         }
         
@@ -1764,6 +1808,17 @@ namespace K9.Globalisation {
         public static string mountain_occupations {
             get {
                 return ResourceManager.GetString("mountain_occupations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    A strong yang, base line opening up into two yin lines. This represents growth and action and the awakening of dawn and spring as well as action and spontaneity.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string mountain_overview {
+            get {
+                return ResourceManager.GetString("mountain_overview", resourceCulture);
             }
         }
         
@@ -2244,6 +2299,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
+        ///    &lt;table class=&quot;table&quot;&gt;
+        ///        &lt;thead&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;th&gt;In Balance / Potential&lt;/th&gt;
+        ///                &lt;th&gt;Out of Balance&lt;/th&gt;
+        ///            &lt;/tr&gt;
+        ///        &lt;/thead&gt;
+        ///        &lt;tbody&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Sensitive&lt;/td&gt;
+        ///                &lt;td&gt;Hypersensitive&lt;/td&gt;
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Curious&lt;/td&gt;
+        ///                &lt;td&gt;Disinterested&lt;/td&gt;
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Diplomatic&lt; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_overview {
+            get {
+                return ResourceManager.GetString("soil_overview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Number two soils are so focussed on supporting and helping others than they may not take enough time out for themselves. 
         ///    As such, they may be prone to getting a bit worn out. They should be encouraged to get a healthy balance between work and play and sometimes put themselves first.
@@ -2489,6 +2571,17 @@ namespace K9.Globalisation {
         public static string thunder_occupations {
             get {
                 return ResourceManager.GetString("thunder_occupations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    A strong yang, base line opening up into two yin lines. This represents growth and action and the awakening of dawn and spring as well as action and spontaneity.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string thunder_overview {
+            get {
+                return ResourceManager.GetString("thunder_overview", resourceCulture);
             }
         }
         
@@ -2914,6 +3007,17 @@ namespace K9.Globalisation {
         public static string wind_occupations {
             get {
                 return ResourceManager.GetString("wind_occupations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    A strong yang, base line opening up into two yin lines. This represents growth and action and the awakening of dawn and spring as well as action and spontaneity.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string wind_overview {
+            get {
+                return ResourceManager.GetString("wind_overview", resourceCulture);
             }
         }
         

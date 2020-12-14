@@ -365,9 +365,28 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You tend to come across as gentle and helpful. You are trusting of others and can bring your influence to bear on situations in which you are involved. You are generally consistent and reliable. You tend to keep your word. Those clsoe to you will also know another side of you which emerges especially when stressed or emotional, which is bold, assertive and even demanding. You have an enormous capacity to bounce back from difficulties through your strong will and determination.
-        ///
+        ///    On the surface, you often appear quiet and inwardly strong – the strong, silent type. You learn steadily through your mistakes and generally keep yourself to yourself. However, when provoked, you can deliver a strong and compelling argument. People close to you may find you cautious and philosophical at times. You are generally easy-going. You have a steady, consistent nature with plenty of common sense. You are generally quite trusting of others and have the potential be quite influential and gent [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _418 {
+            get {
+                return ResourceManager.GetString("_418", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You are independent enjoy time and space for reflection. Your appear charming and laid-back and know how to make others feel at ease. In challenging situations, you tend to seek a win/win situation. You are typically supportive and helpful as well as tactful in your approach. There may be a tendany to get overly bogged-down with detail. Your fundamental nature is steady, consistent and trusting. You can also be very influential and persuasive.
         ///&lt;/p&gt;.
+        /// </summary>
+        public static string _427 {
+            get {
+                return ResourceManager.GetString("_427", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You appear to others to have a very direct and straightforward way of expression. You can be well organised, detail-minded and elegant in your presentation. Sometimes you are stubborn and overbearing. Although your principal quality is a steady, consistent, trusting nature, under pressure the explosive nature of Thunder will appear. With your back against the wall you will not hold back from free expression or sheer determination through hard work. If you do get into trouble you are very adept at t [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _436 {
             get {
@@ -415,6 +434,27 @@ namespace K9.Globalisation {
         public static string _481 {
             get {
                 return ResourceManager.GetString("_481", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    There is a lot of fire in your cahrt and this gives you the potential to be extremely influential. You can be exceptionally intuitive and have enormous capacity to shed light on situations. You can also be rather flamboyant and even ostentatious. You are spontaneous and lively but you need to guard against being overly impulsive. You may, at times, be self-centred. Your fundamental nature is steady, consistent and thoughtful.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _499 {
+            get {
+                return ResourceManager.GetString("_499", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Outwardly you may appear shy, cautious or indecisive at times. Conversely, at other times you may appear bubbly, sociable and outgoing. People close to you will find that you retreat into your cave from time to time, especially when upset or stressed. You can be single-minded in what you do, which can lead to obstinacy and fanaticism. You may also be liable to procrastination. You can be persuasive and tend to be trusting of others. Overall you have a steady, consistent nature with plenty of common [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _528 {
+            get {
+                return ResourceManager.GetString("_528", resourceCulture);
             }
         }
         

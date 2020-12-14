@@ -164,10 +164,10 @@ namespace K9.WebApplication.Services
                     switch (model.EmotionalEnergy.Energy)
                     {
                         case ENineStarKiEnergy.Water:
-                            return Dictionary._317;
+                            return Dictionary._418;
 
                         case ENineStarKiEnergy.Soil:
-                            return Dictionary._326;
+                            return Dictionary._427;
 
                         case ENineStarKiEnergy.Thunder:
                             return Dictionary._436;
@@ -188,7 +188,40 @@ namespace K9.WebApplication.Services
                             return Dictionary._481;
 
                         case ENineStarKiEnergy.Fire:
-                            return Dictionary._398;
+                            return Dictionary._499;
+                    }
+
+                    return string.Empty;
+
+                case ENineStarKiEnergy.CoreEarth:
+                    switch (model.EmotionalEnergy.Energy)
+                    {
+                        case ENineStarKiEnergy.Water:
+                            return Dictionary._418;
+
+                        case ENineStarKiEnergy.Soil:
+                            return Dictionary._528;
+
+                        case ENineStarKiEnergy.Thunder:
+                            return Dictionary._436;
+
+                        case ENineStarKiEnergy.Wind:
+                            return Dictionary._344;
+
+                        case ENineStarKiEnergy.CoreEarth:
+                            return Dictionary._454;
+
+                        case ENineStarKiEnergy.Heaven:
+                            return Dictionary._463;
+
+                        case ENineStarKiEnergy.Lake:
+                            return Dictionary._472;
+
+                        case ENineStarKiEnergy.Mountain:
+                            return Dictionary._481;
+
+                        case ENineStarKiEnergy.Fire:
+                            return Dictionary._499;
                     }
 
                     return string.Empty;

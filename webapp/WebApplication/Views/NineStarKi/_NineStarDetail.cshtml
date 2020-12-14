@@ -7,7 +7,9 @@
     <div class="container main-content clear-both ninestar-header-container">
         <article>
             <div>
-                @Html.CollapsiblePanel(Model.MainEnergy.FullEnergyName, Model.MainEnergy.EnergyDescription, true)
+                @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Overview), Model.Overview, true)
+                    
+                @Html.CollapsiblePanel(Model.MainEnergy.FullEnergyName, Model.MainEnergy.EnergyDescription)
 
                 @Html.CollapsiblePanel(Model.MainEnergy.ElementTitle, Model.MainEnergy.ElementDescription)
 

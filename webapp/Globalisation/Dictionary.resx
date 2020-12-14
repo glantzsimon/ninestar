@@ -832,4 +832,19 @@
   <data name="_225" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>summaries\en-gb\225.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="EmotionalEnergyShortLabel" xml:space="preserve">
+    <value>Inner Child</value>
+  </data>
+  <data name="MainEnergyShortLabel" xml:space="preserve">
+    <value>Adult Persona</value>
+  </data>
+  <data name="OverviewLabel" xml:space="preserve">
+    <value>Overview</value>
+  </data>
+  <data name="SurfaceEnergyShortLabel" xml:space="preserve">
+    <value>External Persona</value>
+  </data>
+  <data name="water_strengths_weaknesses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\water-strengths-weaknesses.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

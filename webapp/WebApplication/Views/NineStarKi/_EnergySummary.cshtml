@@ -11,19 +11,34 @@
         @Html.Partial("_EnergyTitle", Model.SurfaceEnergy)
     </div>
     <br />
+    <div class="col-md-4 col-sm-4">
+        <p class="text-center margin-bottom-0">
+            <strong>@K9.Globalisation.Dictionary.MainEnergyShortLabel</strong>
+        </p>
+        <p class="text-center">
+            @Model.MainEnergy.FullEnergyName
+        </p>
+    </div>
+    <div class="col-md-4 col-sm-4">
+        <p class="text-center margin-bottom-0">
+            <strong>@K9.Globalisation.Dictionary.EmotionalEnergyShortLabel</strong>
+        </p>
+        <p class="text-center">
+            @Model.EmotionalEnergy.FullEnergyName
+        </p>
+    </div>
+    <div class="col-md-4 col-sm-4">
+        <p class="text-center margin-bottom-0">
+            <strong>@K9.Globalisation.Dictionary.SurfaceEnergyShortLabel</strong>
+        </p>
+        <p class="text-center">
+            @Model.SurfaceEnergy.FullEnergyName
+        </p>
+    </div>
+    <br />
     <div class="col-md-12">
         <article>
-            <br />
-            <p>
-                <strong>@K9.Globalisation.Dictionary.MainEnergyLabel</strong>: @Model.MainEnergy.FullEnergyNameWithFamilyMember
-            </p>
-            <p>
-                <strong>@K9.Globalisation.Dictionary.EmotionalEnergyLabel</strong>: @Model.EmotionalEnergy.FullEnergyName
-            </p>
-            <p>
-                <strong>@K9.Globalisation.Dictionary.SurfaceEnergyLabel</strong>: @Model.SurfaceEnergy.FullEnergyName
-            </p>
-
+            <h4>@K9.Globalisation.Dictionary.SummaryLabel</h4>
             @MvcHtmlString.Create(Model.Summary)
         </article>
     </div>

@@ -730,6 +730,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inner Child.
+        /// </summary>
+        public static string EmotionalEnergyShortLabel {
+            get {
+                return ResourceManager.GetString("EmotionalEnergyShortLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Energy.
         /// </summary>
         public static string Energy {
@@ -1337,6 +1346,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Adult Persona.
+        /// </summary>
+        public static string MainEnergyShortLabel {
+            get {
+                return ResourceManager.GetString("MainEnergyShortLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nine.
         /// </summary>
         public static string MainTitleLeft {
@@ -1714,6 +1732,15 @@ namespace K9.Globalisation {
         public static string Other {
             get {
                 return ResourceManager.GetString("Other", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overview.
+        /// </summary>
+        public static string OverviewLabel {
+            get {
+                return ResourceManager.GetString("OverviewLabel", resourceCulture);
             }
         }
         
@@ -2123,6 +2150,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to External Persona.
+        /// </summary>
+        public static string SurfaceEnergyShortLabel {
+            get {
+                return ResourceManager.GetString("SurfaceEnergyShortLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    9 Star Ki astrology is based on the universal cycles of light and dark and the transformations between the various stages. This is similar to the seasonal changes we see throughout the year or even throughout each day and night. There are many different cycles of differing lengths, all of which fit into one another like the layers of an onion. Some of the cycles are very long.
         ///&lt;/p&gt;
@@ -2435,6 +2471,37 @@ namespace K9.Globalisation {
         public static string water_personal_development {
             get {
                 return ResourceManager.GetString("water_personal_development", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Overview&lt;/h4&gt;
+        ///
+        ///&lt;br /&gt;
+        ///
+        ///&lt;div class=&quot;table-responsive&quot;&gt;
+        ///    &lt;table class=&quot;table&quot;&gt;
+        ///        &lt;thead&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;th&gt;In Balance / Potential&lt;/th&gt;
+        ///                &lt;th&gt;Out of Balance&lt;/th&gt;
+        ///            &lt;/tr&gt;
+        ///        &lt;/thead&gt;
+        ///        &lt;tbody&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Sensitive&lt;/td&gt;
+        ///                &lt;td&gt;Hypersensitive&lt;/td&gt;
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Curious&lt;/td&gt;
+        ///                &lt;td&gt;Disinterested&lt;/td&gt;
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt;
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_strengths_weaknesses {
+            get {
+                return ResourceManager.GetString("water_strengths_weaknesses", resourceCulture);
             }
         }
         

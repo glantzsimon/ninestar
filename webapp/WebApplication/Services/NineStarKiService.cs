@@ -16,9 +16,45 @@ namespace K9.WebApplication.Services
             model.Occupations = GetOccupations(model.MainEnergy.Energy);
             model.PersonalDevelopemnt = GetPersonalDevelopemnt(model.MainEnergy.Energy);
             model.Summary = GetSummary(model);
+            model.Overview = GetStrengthsAndWeaknesses(model.MainEnergy.Energy);
             model.IsProcessed = true;
 
             return model;
+        }
+
+        private string GetStrengthsAndWeaknesses(ENineStarKiEnergy energy)
+        {
+            switch (energy)
+            {
+                case ENineStarKiEnergy.Water:
+                    return Dictionary.water_strengths_weaknesses;
+
+                case ENineStarKiEnergy.Soil:
+                    return Dictionary._124;
+
+                case ENineStarKiEnergy.Thunder:
+                    return Dictionary._133;
+
+                case ENineStarKiEnergy.Wind:
+                    return Dictionary._142;
+
+                case ENineStarKiEnergy.CoreEarth:
+                    return Dictionary._151;
+
+                case ENineStarKiEnergy.Heaven:
+                    return Dictionary._169;
+
+                case ENineStarKiEnergy.Lake:
+                    return Dictionary._178;
+
+                case ENineStarKiEnergy.Mountain:
+                    return Dictionary._187;
+
+                case ENineStarKiEnergy.Fire:
+                    return Dictionary._196;
+            }
+
+            return string.Empty;
         }
 
         private string GetSummary(NineStarKiModel model)

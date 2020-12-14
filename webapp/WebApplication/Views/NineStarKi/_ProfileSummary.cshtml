@@ -1,4 +1,5 @@
-﻿@model K9.WebApplication.Models.NineStarKiModel
+﻿@using K9.WebApplication.Helpers
+@model K9.WebApplication.Models.NineStarKiModel
 
 @using (Html.BeginBootstrapForm())
 {
@@ -36,10 +37,9 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 margin-top-15">
                 <article>
-                    <h4 class="margin-top-15">@K9.Globalisation.Dictionary.SummaryLabel</h4>
-                    @MvcHtmlString.Create(Model.Summary)
+                    @Html.Panel(K9.Globalisation.Dictionary.SummaryLabel, Model.Summary)
                 </article>
             </div>
         </div>

@@ -10,7 +10,7 @@
                 <a class="collapsible-panel-link" data-panel-id="@Model.Id" data-toggle="collapse" href="#@id">@Model.Title <i class="fa @Model.CaretCssClass"></i></a>
             </h4>
         </div>
-        <div id="@id" data-panelbody-id="@Model.Id" class="panel-collapse collapse @Model.ExpadedCssClass">
+        <div id="@id" data-panel-id="@Model.Id" class="panel-collapse collapse @Model.ExpadedCssClass">
             <div class="panel-body">@MvcHtmlString.Create(Model.Body)</div>
             @if (!string.IsNullOrEmpty(Model.Footer))
             {

@@ -365,8 +365,31 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    On the surface you appear reserved and are tactful and diplomatic. You tend to keep your word and are punctual and reliable. You may have a tendancy to get caught up in the minutiae. With those you know more intimately, such as family and friends, you can reveal are witty and entertaining side. Your fundamental nature is steady and consistent. You are generally trusting of those around you and can be quite influential and persuasive when you feel strongly about something.
+        ///    You tend to come across as gentle and helpful. You are trusting of others and can bring your influence to bear on situations in which you are involved. You are generally consistent and reliable. You tend to keep your word. Those clsoe to you will also know another side of you which emerges especially when stressed or emotional, which is bold, assertive and even demanding. You have an enormous capacity to bounce back from difficulties through your strong will and determination.
+        ///
         ///&lt;/p&gt;.
+        /// </summary>
+        public static string _436 {
+            get {
+                return ResourceManager.GetString("_436", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You tend to come across as gentle and helpful. You are trusting of others and can bring your influence to bear on situations in which you are involved. You are generally consistent and reliable. You tend to keep your word. Those clsoe to you will also know another side of you which emerges especially when stressed or emotional, which is bold, assertive and even demanding. You have an enormous capacity to bounce back from difficulties through your strong will and determination.
+        ///
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _454 {
+            get {
+                return ResourceManager.GetString("_454", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You are outgoing with quite a strong character and can be very verbally expressive. You are often very spontaneous and full of enthusiasm for life. Those close to you, however, may well know a different side to your character, which is more serious and reserved. You have a quiet determination and tend to think logically. You are a perfectionist and do not take criticism well. You tend to trust others easily and are genrally consistent and steady in what you do. You can be quite influential and pers [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _463 {
             get {

@@ -330,6 +330,7 @@
     <Content Include="Content\template\style.1200.css" />
     <Content Include="Content\template\style.610.css" />
     <Content Include="Content\template\style.525.css" />
+    <Content Include="Content\template\style.768.css" />
     <Content Include="Content\template\style.760.css" />
     <Content Include="Content\template\style.1024.css" />
     <Content Include="Content\template\style.991.css" />

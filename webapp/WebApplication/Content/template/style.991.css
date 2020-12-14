@@ -96,11 +96,7 @@
     .picture-frame {
         width: 100% !important;
     }
-
-    .padding-left-20-desktop {
-        padding-left: 0 !important;
-    }
-
+    
     .menu-main .container, .menu-small .container {
         width: auto !important;
     }

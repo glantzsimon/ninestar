@@ -170,13 +170,13 @@ namespace K9.WebApplication.Services
                             return Dictionary._326;
 
                         case ENineStarKiEnergy.Thunder:
-                            return Dictionary._335;
+                            return Dictionary._436;
 
                         case ENineStarKiEnergy.Wind:
                             return Dictionary._344;
 
                         case ENineStarKiEnergy.CoreEarth:
-                            return Dictionary._353;
+                            return Dictionary._454;
 
                         case ENineStarKiEnergy.Heaven:
                             return Dictionary._463;

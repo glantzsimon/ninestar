@@ -1,28 +1,31 @@
 ﻿@model K9.WebApplication.Models.NineStarKiModel
 
-<h4 class="margin-top-20">@K9.Globalisation.Dictionary.PersonalProfileDetails</h4>
-<div class="ninestar-summmary container padding-0 margin-top-15">
-    <ul class="nav nav-pills nav-justified">
-        <li class="active"><a data-toggle="tab" href="#adult">@K9.Globalisation.Dictionary.AdultPersona</a></li>
-        <li><a data-toggle="tab" href="#emotional">@K9.Globalisation.Dictionary.InnerChild</a></li>
-        <li><a data-toggle="tab" href="#surface">@K9.Globalisation.Dictionary.ExternalPersona</a></li>
-    </ul>
+@using (Html.BeginBootstrapForm())
+{
+    <h4 class="margin-top-20">@K9.Globalisation.Dictionary.PersonalProfileDetails</h4>
+    <div class="ninestar-summmary container padding-0 margin-top-15">
+        <ul class="nav nav-pills nav-justified">
+            <li class="active"><a data-toggle="tab" href="#adult">@K9.Globalisation.Dictionary.AdultPersona</a></li>
+            <li><a data-toggle="tab" href="#emotional">@K9.Globalisation.Dictionary.InnerChild</a></li>
+            <li><a data-toggle="tab" href="#surface">@K9.Globalisation.Dictionary.ExternalPersona</a></li>
+        </ul>
 
-    <div class="tab-content">
-        <div id="adult" class="tab-pane fade in active">
-            @Html.Partial("_NineStarHeader", Model.MainEnergy)
-            <hr />
-            @Html.Partial("_NineStarDetail", Model)
-        </div>
-        <div id="emotional" class="tab-pane fade">
-            @Html.Partial("_NineStarHeader", Model.EmotionalEnergy)
-            <hr />
-            @Html.Partial("_NineStarBody", Model.EmotionalEnergy)
-        </div>
-        <div id="surface" class="tab-pane fade">
-            @Html.Partial("_NineStarHeader", Model.SurfaceEnergy)
-            <hr />
-            @Html.Partial("_NineStarBody", Model.SurfaceEnergy)
+        <div class="tab-content">
+            <div id="adult" class="tab-pane fade in active">
+                @Html.Partial("_NineStarHeader", Model.MainEnergy)
+                <hr />
+                @Html.Partial("_NineStarDetail", Model)
+            </div>
+            <div id="emotional" class="tab-pane fade">
+                @Html.Partial("_NineStarHeader", Model.EmotionalEnergy)
+                <hr />
+                @Html.Partial("_NineStarBody", Model.EmotionalEnergy)
+            </div>
+            <div id="surface" class="tab-pane fade">
+                @Html.Partial("_NineStarHeader", Model.SurfaceEnergy)
+                <hr />
+                @Html.Partial("_NineStarBody", Model.SurfaceEnergy)
+            </div>
         </div>
     </div>
-</div>
+}

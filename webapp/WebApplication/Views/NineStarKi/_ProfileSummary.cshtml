@@ -2,7 +2,7 @@
 
 <div id="energy-summary-container">
     <div class="row">
-        <div class="col-md-4 col-sm-4">
+        <div class="col-md-4 col-sm-4 margin-bottom-15">
             @Html.Partial("_EnergyTitle", Model.MainEnergy)
 
             <p class="text-center margin-bottom-0">
@@ -12,7 +12,7 @@
                 @Model.MainEnergy.FullEnergyName
             </p>
         </div>
-        <div class="col-md-4 col-sm-4">
+        <div class="col-md-4 col-sm-4 margin-bottom-15">
             @Html.Partial("_EnergyTitle", Model.EmotionalEnergy)
 
             <p class="text-center margin-bottom-0">
@@ -22,7 +22,7 @@
                 @Model.EmotionalEnergy.FullEnergyName
             </p>
         </div>
-        <div class="col-md-4 col-sm-4">
+        <div class="col-md-4 col-sm-4 margin-bottom-15">
             @Html.Partial("_EnergyTitle", Model.SurfaceEnergy)
 
             <p class="text-center margin-bottom-0">

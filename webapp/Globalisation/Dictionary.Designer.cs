@@ -323,8 +323,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    
-        ///&lt;/p&gt;.
+        ///    On the surface, you may appear reserved and tend to be tactful in the way you communicate. You are eager to make helpful suggestions or to lend a hand. At times you may seem fussy over the little details. When under pressure or to those who know you more intimately, another side of your character is revealed. You can be perfectionistic, proud and single-minded. Sometimes the way you communicate can be extremely frank and to-the-point. You tend not to take criticism well. You are not afraid of hard  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _362 {
             get {
@@ -361,6 +360,16 @@ namespace K9.Globalisation {
         public static string _398 {
             get {
                 return ResourceManager.GetString("_398", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Outwardly you may appear shy, cautious or indecisive at times. Conversely, at other times you may appear bubbly, sociable and outgoing. People close to you will find that you retreat into your cave from time to time, especially when upset or stressed. You can be single-minded in what you do, which can lead to obstinacy and fanaticism. You may also be liable to procrastination. You can be persuasive and tend to be trusting of others. Overall you have a steady, consistent nature with plenty of common [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _481 {
+            get {
+                return ResourceManager.GetString("_481", resourceCulture);
             }
         }
         

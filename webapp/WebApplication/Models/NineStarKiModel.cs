@@ -43,7 +43,7 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SummaryLabel)]
         public string Summary { get; set; }
 
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StrengthsWeaknessesLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.OverviewLabel)]
         public string Overview { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HealthLabel)]

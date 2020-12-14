@@ -111,13 +111,16 @@
     <Content Include="Articles\en-gb\coreearth-emotional-description.htm" />
     <Content Include="Articles\en-gb\soil-surface-description.htm" />
     <Content Include="Articles\en-gb\thunder-surface-description.htm" />
-    <Content Include="Articles\en-gb\water-strengths-weaknesses.htm" />
+    <Content Include="Articles\en-gb\soil-overview.htm" />
+    <Content Include="Articles\en-gb\water-overview.htm" />
     <Content Include="Articles\en-gb\water-surface-description.htm" />
     <Content Include="Articles\en-gb\wind-surface-description.htm" />
     <Content Include="Articles\en-gb\wind-emotional-description.htm" />
     <Content Include="Articles\en-gb\thunder-emotional-description.htm" />
     <Content Include="Articles\en-gb\soil-emotional-description.htm" />
     <Content Include="Articles\en-gb\water-emotional-description.htm" />
+    <Content Include="Summaries\en-gb\_288.htm" />
+    <Content Include="Summaries\en-gb\_297.htm" />
     <Content Include="Summaries\en-gb\_216.htm" />
     <Content Include="Summaries\en-gb\225.htm" />
     <Content Include="Summaries\en-gb\196.htm" />

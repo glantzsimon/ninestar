@@ -164,6 +164,17 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Outwardly, you appear sincere, straightforward, logical and well organised. You take great care in your work and your approach to life. You have a strong desire to support and help others and you can be tactful, sensitive and diplomatic when under pressure. However, those close to you may find you cautious at times, with a tendancy to procrastinate. You may also be shy or undisciplined at times. Conversely, you also have the potential to be fun and sociable.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _216 {
+            get {
+                return ResourceManager.GetString("_216", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    You are essentially helpful, supportive, caring and diplomatic. You feel a great sense of fulfilment when you are serving others.
         ///    You need to feel involved and appreciated, whether out in the world, at the work place or closer to home, within the local community and within the family.
         ///
@@ -175,6 +186,34 @@ namespace K9.Globalisation {
         public static string _225 {
             get {
                 return ResourceManager.GetString("_225", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You are essentially helpful, supportive, caring and diplomatic. You feel a great sense of fulfilment when you are serving others.
+        ///    You need to feel involved and appreciated, whether out in the world, at the work place or closer to home, within the local community and within the family.
+        ///
+        ///    You may have a tendancy to become overly fastidious in your work.
+        ///
+        ///    Care should be taken not to become overly opinionated or obsessed with detail.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _288 {
+            get {
+                return ResourceManager.GetString("_288", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    On the surface you can appear charming, easy-going and affectionate. However, those who know you more intimately are likely to see spontaneous outbursts of lively behaviour. You can also be impulsive and even a little self-centred, at times. However, you can equally be very fun-loving.
+        ///    You are essentilly consistent, helpful and supportive, with a strong independent side. Above all, you can be an inspiration to those around you.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _297 {
+            get {
+                return ResourceManager.GetString("_297", resourceCulture);
             }
         }
         
@@ -1458,6 +1497,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to More Details.
+        /// </summary>
+        public static string MoreDetails {
+            get {
+                return ResourceManager.GetString("MoreDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mother.
         /// </summary>
         public static string Mother {
@@ -2391,12 +2439,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///    Water people can often appear as quiet, brooding and contemplative, like a deep lake or ocean. On the other hand, just like a bubbling mountain stream, Water people may also be lively and vivacious with a natural exploratory nature. Indeed, many famous explorers were born under this sign.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///    Water needs a container, just as the river needs the river banks or the ocean needs the shore. Without this structure, Water energies may become too dispersed and chaotic.
         ///&lt;/p&gt;
-        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;
+        ///    Water is  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_description {
             get {
@@ -2463,23 +2512,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Water energies&apos; very independen nature coupled with their difficulty to express what they feel deep within them can lead to isolation if they are not careful. 
-        ///    It is important for water energies to socialise and communicate. In so doing, others will also benefit from their extraordinary intuition and insight.
-        ///&lt;/p&gt;.
-        /// </summary>
-        public static string water_personal_development {
-            get {
-                return ResourceManager.GetString("water_personal_development", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Overview&lt;/h4&gt;
-        ///
-        ///&lt;br /&gt;
-        ///
-        ///&lt;div class=&quot;table-responsive&quot;&gt;
+        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
         ///    &lt;table class=&quot;table&quot;&gt;
         ///        &lt;thead&gt;
         ///            &lt;tr&gt;
@@ -2497,11 +2530,23 @@ namespace K9.Globalisation {
         ///                &lt;td&gt;Disinterested&lt;/td&gt;
         ///            &lt;/tr&gt;
         ///            &lt;tr&gt;
-        /// [rest of string was truncated]&quot;;.
+        ///                &lt;td&gt;Diplomatic&lt; [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string water_strengths_weaknesses {
+        public static string water_overview {
             get {
-                return ResourceManager.GetString("water_strengths_weaknesses", resourceCulture);
+                return ResourceManager.GetString("water_overview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Water energies&apos; very independen nature coupled with their difficulty to express what they feel deep within them can lead to isolation if they are not careful. 
+        ///    It is important for water energies to socialise and communicate. In so doing, others will also benefit from their extraordinary intuition and insight.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string water_personal_development {
+            get {
+                return ResourceManager.GetString("water_personal_development", resourceCulture);
             }
         }
         

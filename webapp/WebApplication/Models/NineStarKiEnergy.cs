@@ -170,9 +170,7 @@ namespace K9.WebApplication.Models
         public string EnergyName => MetaData.GetDescription();
 
         public string FullEnergyName => $"{EnergyNumber} {EnergyName} / {ElementWithYingYang}".Trim();
-
-        public string FullEnergyNameWithFamilyMember => $"{FullEnergyName} / {FamilyMember}".Trim();
-
+        
         public int EnergyNumber => (int)Energy;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.YinYangLabel)]

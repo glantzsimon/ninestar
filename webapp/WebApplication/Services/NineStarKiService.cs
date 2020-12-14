@@ -16,18 +16,18 @@ namespace K9.WebApplication.Services
             model.Occupations = GetOccupations(model.MainEnergy.Energy);
             model.PersonalDevelopemnt = GetPersonalDevelopemnt(model.MainEnergy.Energy);
             model.Summary = GetSummary(model);
-            model.Overview = GetStrengthsAndWeaknesses(model.MainEnergy.Energy);
+            model.Overview = GetOverview(model.MainEnergy.Energy);
             model.IsProcessed = true;
 
             return model;
         }
 
-        private string GetStrengthsAndWeaknesses(ENineStarKiEnergy energy)
+        private string GetOverview(ENineStarKiEnergy energy)
         {
             switch (energy)
             {
                 case ENineStarKiEnergy.Water:
-                    return Dictionary.water_strengths_weaknesses;
+                    return Dictionary.water_overview;
 
                 case ENineStarKiEnergy.Soil:
                     return Dictionary._124;
@@ -98,7 +98,7 @@ namespace K9.WebApplication.Services
                     switch (model.EmotionalEnergy.Energy)
                     {
                         case ENineStarKiEnergy.Water:
-                            return Dictionary._115;
+                            return Dictionary._216;
 
                         case ENineStarKiEnergy.Soil:
                             return Dictionary._225;
@@ -122,7 +122,7 @@ namespace K9.WebApplication.Services
                             return Dictionary._187;
 
                         case ENineStarKiEnergy.Fire:
-                            return Dictionary._196;
+                            return Dictionary._297;
                     }
 
                     return string.Empty;

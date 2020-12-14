@@ -365,6 +365,28 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    On the surface you appear reserved and are tactful and diplomatic. You tend to keep your word and are punctual and reliable. You may have a tendancy to get caught up in the minutiae. With those you know more intimately, such as family and friends, you can reveal are witty and entertaining side. Your fundamental nature is steady and consistent. You are generally trusting of those around you and can be quite influential and persuasive when you feel strongly about something.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _463 {
+            get {
+                return ResourceManager.GetString("_463", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    On the surface you appear reserved and are tactful and diplomatic. You tend to keep your word and are punctual and reliable. You may have a tendancy to get caught up in the minutiae. With those you know more intimately, such as family and friends, you can reveal are witty and entertaining side. Your fundamental nature is steady and consistent. You are generally trusting of those around you and can be quite influential and persuasive when you feel strongly about something.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _472 {
+            get {
+                return ResourceManager.GetString("_472", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Outwardly you may appear shy, cautious or indecisive at times. Conversely, at other times you may appear bubbly, sociable and outgoing. People close to you will find that you retreat into your cave from time to time, especially when upset or stressed. You can be single-minded in what you do, which can lead to obstinacy and fanaticism. You may also be liable to procrastination. You can be persuasive and tend to be trusting of others. Overall you have a steady, consistent nature with plenty of common [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _481 {

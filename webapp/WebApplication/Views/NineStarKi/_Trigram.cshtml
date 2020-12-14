@@ -3,7 +3,7 @@
 <div class="ninestar-summary-container">
     <h3>@K9.Globalisation.Dictionary.Trigram</h3>
     <p>@Model.Trigram</p>
-    <a href="#@Model.TrigramName">
+    <a href="#@Model.TrigramUIName">
         <img title="@Model.Trigram Trigram" alt="@Model.Trigram Trigram" class="auto-size center-block" src="~/Images/ninestar/trigrams/trigram-@(Model.Energy)-square.png" />
     </a>
 </div>
@@ -11,12 +11,12 @@
 <script type="text/javascript">
 
     function expandTrigram() {
-        $("[data-panel-id='@Model.TrigramName']").removeClass("collapsed");
-        $("[data-panelbody-Id='@Model.TrigramName']").addClass("in");
+        $("[data-panel-id='@Model.TrigramUIName']").removeClass("collapsed");
+        $("[data-panelbody-Id='@Model.TrigramUIName']").addClass("in");
     }
 
     $(function () {
-        $("#@Model.TrigramName").click(function () {
+        $("#@Model.TrigramUIName").click(function () {
             expandTrigram();
         });
 

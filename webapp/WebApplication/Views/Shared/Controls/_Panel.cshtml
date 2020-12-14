@@ -1,7 +1,6 @@
 ﻿@using K9.WebApplication.Options
 @model PanelOptions
 @{
-    var id = Guid.NewGuid();
     var hasImage = !string.IsNullOrEmpty(Model.ImageSrc);
     var imageSizeClass = Model.ImageSize == EPanelImageSize.Medium ? "image-panel-medium" : "";
     var panelBodyClass = hasImage ? "panel-body-image" : "";

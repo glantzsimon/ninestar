@@ -8,6 +8,8 @@
             <article>
                 <div>
                     @Html.CollapsiblePanel(Model.FullEnergyDetailsTitle, Model.EnergyDescription, true)
+
+                    @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Trigram), Model.TrigramDescription, false, "", Model.Trigram)
                 </div>
             </article>
         </div>

@@ -1,4 +1,6 @@
-﻿namespace K9.WebApplication.Options
+﻿using System;
+
+namespace K9.WebApplication.Options
 {
     public enum EPanelImageSize
     {
@@ -14,7 +16,7 @@
     
     public class PanelOptions
     {
-        public string Id { get; set; }
+        public string Id { get; set; } = Guid.NewGuid().ToString();
         public string Title { get; set; }
         public string Body { get; set; }
         public string ImageSrc { get; set; }

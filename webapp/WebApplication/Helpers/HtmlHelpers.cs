@@ -19,10 +19,11 @@ namespace K9.WebApplication.Helpers
             return html.Partial("Controls/_CollapsiblePanel", options);
         }
 
-        public static MvcHtmlString CollapsiblePanel(this HtmlHelper html, string title, string body, bool expanded = false, string footer = "")
+        public static MvcHtmlString CollapsiblePanel(this HtmlHelper html, string title, string body, bool expanded = false, string footer = "", string id = "")
         {
             return html.Partial("Controls/_CollapsiblePanel", new CollapsiblePanelOptions
             {
+                Id = id,
                 Title = title,
                 Body = body,
                 Expaded = expanded,

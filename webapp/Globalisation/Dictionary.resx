@@ -961,7 +961,13 @@
   <data name="_499" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>summaries\en-gb\_499.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="_519" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_519.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="_528" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>summaries\en-gb\_528.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_591" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_591.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

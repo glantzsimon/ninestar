@@ -175,13 +175,12 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You are essentially helpful, supportive, caring and diplomatic. You feel a great sense of fulfilment when you are serving others.
+        ///    Your chart is entirely made up of Earth element. This gives you great consistency. You are essentially helpful, supportive, caring and diplomatic. You feel a great sense of fulfilment when you are serving others.
         ///    You need to feel involved and appreciated, whether out in the world, at the work place or closer to home, within the local community and within the family.
         ///
         ///    You may have a tendancy to become overly fastidious in your work.
         ///
-        ///    Care should be taken not to become overly opinionated or obsessed with detail.
-        ///&lt;/p&gt;.
+        ///    Care should be taken not to become overly opinion [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _225 {
             get {
@@ -246,9 +245,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    In friendships and in business relationships you are reliable and keep your word. You are consistent, supportive and helpful. You can be fussy and even fanatical about detail. You can at times become withdrawn and uncommunicative. However, your quiter nature can change very quickly if you are provoked in any way. You are quite capable of delivering strong, compelling arguments when necessary. Overall, this is a very strong, reliable combination of the 9 energies.
-        ///&lt;/p&gt;
-        ///.
+        ///    Your chart is entirely made up of Earth element, which gives you great strength and consistency. In friendships and in business relationships you are reliable and keep your word. You are consistent, supportive and helpful. You can be fussy and even fanatical about detail. You can at times become withdrawn and uncommunicative. However, your quiter nature can change very quickly if you are provoked in any way. You are quite capable of delivering strong, compelling arguments when necessary. Overall, t [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _288 {
             get {
@@ -450,11 +447,45 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Outwardly you may appear shy, cautious or indecisive at times. Conversely, at other times you may appear bubbly, sociable and outgoing. People close to you will find that you retreat into your cave from time to time, especially when upset or stressed. You can be single-minded in what you do, which can lead to obstinacy and fanaticism. You may also be liable to procrastination. You can be persuasive and tend to be trusting of others. Overall you have a steady, consistent nature with plenty of common [rest of string was truncated]&quot;;.
+        ///    On the surface, you may appear impulsive or ostentatious. People are often drawn to your warm, charismatic nature, although you can, at times, be  ostentatious and showy. You tend to be quite intuitive and clear-sighted.
+        ///
+        ///    Those close to you may sometimes find you cautious and philosophical or even withdrawn. You tend to have a broad perspective and can often see all sides of an issue. You may sometimes be a little secretive and do not share your immediate plans and schemes with others.
+        ///
+        ///    [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _519 {
+            get {
+                return ResourceManager.GetString("_519", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your chart is entirely made up of Earth element, which gives you great strength and consistency.
+        ///
+        ///    On the surface you may appear quite quiet and withdrawn. You may need to retreat to your cave from time to time. However, you can deliver a powerful argument when provoked.
+        ///
+        ///    You tend to be very supportive and caring towards others, especially those close to you. You are diplomatic and straightforward. You can sometimes be overly fastidious in the way you work.
+        ///
+        ///    You are very strong-wil [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _528 {
             get {
                 return ResourceManager.GetString("_528", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    On the surface, you may appear impulsive or ostentatious. People are often drawn to your warm, charismatic nature, although you can, at times, be  ostentatious and showy. You tend to be quite intuitive and clear-sighted.
+        ///
+        ///    Those close to you may sometimes find you cautious and philosophical or even withdrawn. You tend to have a broad perspective and can often see all sides of an issue. You may sometimes be a little secretive and do not share your immediate plans and schemes with others.
+        ///
+        ///    [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _591 {
+            get {
+                return ResourceManager.GetString("_591", resourceCulture);
             }
         }
         

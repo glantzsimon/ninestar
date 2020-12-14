@@ -16,7 +16,7 @@ namespace K9.WebApplication.Options
     
     public class PanelOptions
     {
-        public string Id { get; set; } = Guid.NewGuid().ToString();
+        public string Id { get; set; }
         public string Title { get; set; }
         public string Body { get; set; }
         public string ImageSrc { get; set; }

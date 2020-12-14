@@ -7,3 +7,19 @@
         <img title="@Model.Trigram Trigram" alt="@Model.Trigram Trigram" class="auto-size center-block" src="~/Images/ninestar/trigrams/trigram-@(Model.Energy)-square.png" />
     </a>
 </div>
+
+<script type="text/javascript">
+
+    function expandTrigram() {
+        $("[data-panel-id='@Model.TrigramName']").removeClass("collapsed");
+        $("[data-panelbody-Id='@Model.TrigramName']").addClass("in");
+    }
+
+    $(function () {
+        $("#@Model.TrigramName").click(function () {
+            expandTrigram();
+        });
+
+    });
+
+</script>

@@ -203,22 +203,55 @@ namespace K9.WebApplication.Services
                             return Dictionary._528;
 
                         case ENineStarKiEnergy.Thunder:
-                            return Dictionary._436;
+                            return Dictionary._537;
 
                         case ENineStarKiEnergy.Wind:
-                            return Dictionary._344;
+                            return Dictionary._546;
 
                         case ENineStarKiEnergy.CoreEarth:
-                            return Dictionary._454;
+                            return Dictionary._555;
 
                         case ENineStarKiEnergy.Heaven:
-                            return Dictionary._463;
+                            return Dictionary._564;
 
                         case ENineStarKiEnergy.Lake:
-                            return Dictionary._472;
+                            return Dictionary._573;
 
                         case ENineStarKiEnergy.Mountain:
-                            return Dictionary._481;
+                            return Dictionary._582;
+
+                        case ENineStarKiEnergy.Fire:
+                            return Dictionary._591;
+                    }
+
+                    return string.Empty;
+
+                case ENineStarKiEnergy.Heaven:
+                    switch (model.EmotionalEnergy.Energy)
+                    {
+                        case ENineStarKiEnergy.Water:
+                            return Dictionary._519;
+
+                        case ENineStarKiEnergy.Soil:
+                            return Dictionary._528;
+
+                        case ENineStarKiEnergy.Thunder:
+                            return Dictionary._537;
+
+                        case ENineStarKiEnergy.Wind:
+                            return Dictionary._647;
+
+                        case ENineStarKiEnergy.CoreEarth:
+                            return Dictionary._656;
+
+                        case ENineStarKiEnergy.Heaven:
+                            return Dictionary._564;
+
+                        case ENineStarKiEnergy.Lake:
+                            return Dictionary._573;
+
+                        case ENineStarKiEnergy.Mountain:
+                            return Dictionary._582;
 
                         case ENineStarKiEnergy.Fire:
                             return Dictionary._591;

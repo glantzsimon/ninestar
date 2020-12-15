@@ -132,6 +132,14 @@
     <Content Include="Summaries\en-gb\_288.htm" />
     <Content Include="Summaries\en-gb\_279.htm" />
     <Content Include="Summaries\en-gb\_252.htm" />
+    <Content Include="Summaries\en-gb\_537.htm" />
+    <Content Include="Summaries\en-gb\_555.htm" />
+    <Content Include="Summaries\en-gb\_546.htm" />
+    <Content Include="Summaries\en-gb\_564.htm" />
+    <Content Include="Summaries\en-gb\_573.htm" />
+    <Content Include="Summaries\en-gb\_582.htm" />
+    <Content Include="Summaries\en-gb\_647.htm" />
+    <Content Include="Summaries\en-gb\_656.htm" />
     <Content Include="Summaries\en-gb\_591.htm" />
     <Content Include="Summaries\en-gb\_519.htm" />
     <Content Include="Summaries\en-gb\_528.htm" />
@@ -226,6 +234,7 @@
     <Content Include="Templates\en-gb\PasswordResetEmail.htm" />
     <Content Include="Templates\en-gb\SupportQuery.htm" />
     <Content Include="Templates\en-gb\WelcomeEmail.htm" />
+    <Content Include="Text\en-gb\RelationshipsMetaDescription.htm" />
     <Content Include="Text\en-gb\nine-star-ki-title.txt" />
     <Content Include="Text\en-gb\Keywords.txt" />
   </ItemGroup>

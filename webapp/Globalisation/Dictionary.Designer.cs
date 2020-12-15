@@ -467,7 +467,7 @@ namespace K9.Globalisation {
         ///
         ///    You tend to be very supportive and caring towards others, especially those close to you. You are diplomatic and straightforward. You can sometimes be overly fastidious in the way you work.
         ///
-        ///    You are very strong-wil [rest of string was truncated]&quot;;.
+        ///    Others naturally gravit [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _528 {
             get {
@@ -477,15 +477,142 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    On the surface, you may appear impulsive or ostentatious. People are often drawn to your warm, charismatic nature, although you can, at times, be  ostentatious and showy. You tend to be quite intuitive and clear-sighted.
+        ///    Outwardly you have a fun, charming and easy-going nature. You are also quite independent and not afraid of hard work.
         ///
-        ///    Those close to you may sometimes find you cautious and philosophical or even withdrawn. You tend to have a broad perspective and can often see all sides of an issue. You may sometimes be a little secretive and do not share your immediate plans and schemes with others.
+        ///    Under pressure you can be extremely expressive, especially verbally, and potentially explosive.
         ///
-        ///    [rest of string was truncated]&quot;;.
+        ///    You like to be involved and at the centre of activities, whether with family, community or at work.
+        ///
+        ///    You have incredible powers of self-preservation and the resilience to overcome challenges in your life.
+        ///
+        ///    You can be ambitious and materialistic.
+        ///
+        ///    Others nat [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _537 {
+            get {
+                return ResourceManager.GetString("_537", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The first impression you often give is that of sincerity and honesty. You tend to be pretty logical and organised in how you go about your business. 
+        ///    
+        ///    Your deeper nature is softer, emotional and sensitive. You may often rely on the support of others. You can be changeable, especially when under pressure. You can also be stubborn and impulsive. 
+        ///    
+        ///    You have a great ability to influence others. However, you can also be easily influenced. 
+        ///    
+        ///    You have an enormous capacity to  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _546 {
+            get {
+                return ResourceManager.GetString("_546", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your entire chart is made up of Earth element, giving you a strong, consistent nature.
+        ///
+        ///    You are right at the centre of the 9 Star Ki system. Triple 5 expresses the beginning and the end of a cycle.
+        ///    
+        ///    You are naturally quite bold and assertive and can, at times, border on the demanding side.
+        ///
+        ///    You possess immense determination and are great at initiating new projects.   
+        ///    
+        ///    You have a tremendous ability to bounce back from life&apos;s challenges and may experience many ups and [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _555 {
+            get {
+                return ResourceManager.GetString("_555", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    On the surface, you can appear gentle, quiet and unassuming. You tend to be trusting of others and are generally dependable and helpful.
+        ///
+        ///    Your deeper nature, which is revealed to those close to you, or when under pressure, is more reserved. You have a quiet determination and even be proud and inflexible. You are quietly self-critical and do not take criticism from others well. You can be quite the perfectionist.
+        ///
+        ///    Others naturally gravitate towards you for support, advice and inspiration [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _564 {
+            get {
+                return ResourceManager.GetString("_564", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You often appear outwardly very energetic, spontaneous and expressive, especially verbally.
+        ///
+        ///    You have a deep deep sense of inner security that is revealed to those who know you more intimately. You are generally quite laid back.
+        ///
+        ///    You are sensitive, thoughtful and quietly reflective and observant. You can be quite fun-loving, entertaining, witty and charming.
+        ///
+        ///    Others naturally gravitate towards you for support, advice and inspiration. However, care must be taken not to overgive and [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _573 {
+            get {
+                return ResourceManager.GetString("_573", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your entire chart is made up of Earth element, giving you a strong, consistent nature.
+        ///
+        ///    On the surface, you may seem reserved, although also friendly and helpful. You tend to be diplomatic in your dealings with others, although you may get rather fussy about the small details.
+        ///
+        ///    To those who know you well, you may, at times, appear appear withdrawn and uncommunicative, especially when stressed or upset. You sometimes retreat to your cave. However, you can deliver a powerful argument when [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _582 {
+            get {
+                return ResourceManager.GetString("_582", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    On first impression, you may at times appear shy, cautious or indecisive. However, this is not your deeper nature.
+        ///
+        ///    Those close to you would describe you as spontaneous and even a little impulsive. You often inspire those around you with your warm, affectionate and lively nature. You are very intuitive and it is very hard to pull the wool over your eyes.
+        ///
+        ///    Others naturally gravitate towards you for support, advice and inspiration. However, care must be taken not to overgive and exhaust y [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _591 {
             get {
                 return ResourceManager.GetString("_591", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    All 6 Metal people have a potential for leadership. You have a direct and moral nature which you can express boldly. Superficially you may appear charming, easy-going, fun and independent. Underneath, however, you can be changeable and emotional, with character swings from stubbornness to impulsiveness. You are trusting, and many trust you. In your childhood it was important for you to have enormous support.
+        ///
+        ///    
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _647 {
+            get {
+                return ResourceManager.GetString("_647", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Outwardly you appear organised, logical and straightforward in your dealings. You can be extremely direct in your communication and are not afraid to voice your opinions.
+        ///
+        ///    You have rather refined and elegant taste, which you express in the clothes you wear and the articles you buy for your home.
+        ///
+        ///    You can be highly moral and even and care should be taken not to be overly harsh and judgmental.
+        ///
+        ///    You have a bold, consistent and naturally authoritative nature with enormous potential fo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _656 {
+            get {
+                return ResourceManager.GetString("_656", resourceCulture);
             }
         }
         
@@ -513,6 +640,15 @@ namespace K9.Globalisation {
         public static string AdultPersona {
             get {
                 return ResourceManager.GetString("AdultPersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Advisor.
+        /// </summary>
+        public static string Advisor {
+            get {
+                return ResourceManager.GetString("Advisor", resourceCulture);
             }
         }
         
@@ -648,6 +784,15 @@ namespace K9.Globalisation {
         public static string ComingSoon {
             get {
                 return ResourceManager.GetString("ComingSoon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Communicator.
+        /// </summary>
+        public static string Communicator {
+            get {
+                return ResourceManager.GetString("Communicator", resourceCulture);
             }
         }
         
@@ -853,6 +998,24 @@ namespace K9.Globalisation {
         public static string DateOfBirthLabel {
             get {
                 return ResourceManager.GetString("DateOfBirthLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Descriptive Name.
+        /// </summary>
+        public static string DescriptiveNameLabel {
+            get {
+                return ResourceManager.GetString("DescriptiveNameLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Diplomat.
+        /// </summary>
+        public static string Diplomat {
+            get {
+                return ResourceManager.GetString("Diplomat", resourceCulture);
             }
         }
         
@@ -1489,6 +1652,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Influencer.
+        /// </summary>
+        public static string Influencer {
+            get {
+                return ResourceManager.GetString("Influencer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Inner Child.
         /// </summary>
         public static string InnerChild {
@@ -1661,6 +1833,15 @@ namespace K9.Globalisation {
         public static string lake_trigram {
             get {
                 return ResourceManager.GetString("lake_trigram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Leader.
+        /// </summary>
+        public static string Leader {
+            get {
+                return ResourceManager.GetString("Leader", resourceCulture);
             }
         }
         
@@ -2093,6 +2274,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nurturer.
+        /// </summary>
+        public static string Nurturer {
+            get {
+                return ResourceManager.GetString("Nurturer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Occupations.
         /// </summary>
         public static string OccupationsLabel {
@@ -2231,6 +2421,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pioneer.
+        /// </summary>
+        public static string Pioneer {
+            get {
+                return ResourceManager.GetString("Pioneer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pragmatist.
+        /// </summary>
+        public static string Pragmatist {
+            get {
+                return ResourceManager.GetString("Pragmatist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Predictions.
         /// </summary>
         public static string Predictions {
@@ -2312,7 +2520,26 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9 Star Ki is a remarkable tool to help us to understand our relationships, both romantic and other. 9 Star Ki offers profound insights into the subtle forces that shape our interactions with others, helping to bring greater harmony and understanding and to avoid blame, resentment and anger..
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    9 Star Ki is a remarkable tool to help us to understand our relationships, both romantic and other. 
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    9 Star Ki offers profound insights into the subtle forces that shape our interactions with others,
+        ///    helping to bring greater harmony and understanding and to avoid blame, resentment and anger.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;h3&gt;
+        ///    Why do my boyfriend and I fall out so much?
+        ///&lt;/h3&gt;
+        ///
+        ///&lt;h3&gt;
+        ///    Why do my girlfiend and I fall out so much?
+        ///&lt;/h3&gt;
+        ///
+        ///&lt;h3&gt;
+        ///	Why do my boyfriend and I argue so much?
+        ///&lt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string RelationshipsMetaDescription {
             get {

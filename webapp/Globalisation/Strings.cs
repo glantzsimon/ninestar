@@ -25,6 +25,7 @@
             public const string OverviewLabel = "OverviewLabel";
             public const string ColourLabel = "Colour";
             public const string EnergyLabel = "Energy";
+            public const string DescriptiveNameLabel = "DescriptiveNameLabel";
             public const string TrigramLabel = "TrigramLabel";
             public const string EnergyTypeLabel = "EnergyTypeLabel";
             public const string EnergyDescriptionLabel = "EnergyDescriptionLabel";
@@ -90,6 +91,16 @@
             public const string Static = "Static";
             public const string Instigative = "Instigative";
             public const string Flexible = "Flexible";
+
+            public const string Diplomat = "Diplomat";
+            public const string Nurturer = "Nurturer";
+            public const string Pioneer = "Pioneer";
+            public const string Influencer = "Influencer";
+            public const string Hub = "Hub";
+            public const string Leader = "Leader";
+            public const string Advisor = "Advisor";
+            public const string Pragmatist = "Pragmatist";
+            public const string Communicator = "Communicator";
         }
     }
 }

@@ -13,6 +13,7 @@ namespace K9.WebApplication.Attributes
         public ENineStarKiColour Colour { get; set; }
         public ENineStarKiDirection Direction { get; set; }
         public ENineStarKiYinYang YinYang { get; set; }
+        public ENineStarKiDescriptiveName DescriptiveName { get; set; }
         public Type ResourceType { get; set; }
         public string TrigramName { get; set; }
         public string Name { get; set; }
@@ -20,6 +21,12 @@ namespace K9.WebApplication.Attributes
         public string GetDescription()
         {
             return ResourceType.GetValueFromResource(Name);
+        }
+
+        public string GetDescriptiveTitle()
+        {
+            var attr = DescriptiveName.GetAttribute<EnumDescriptionAttribute>();
+            return attr.GetDescription();
         }
 
         public string GetYinYang()

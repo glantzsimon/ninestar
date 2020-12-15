@@ -2195,6 +2195,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hub.
+        /// </summary>
+        public static string Hub {
+            get {
+                return ResourceManager.GetString("Hub", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Influencer.
         /// </summary>
         public static string Influencer {

@@ -3,7 +3,7 @@
 	Layout = "~/Views/Shared/_LayoutForm.cshtml";
 }
 @Html.Alert(EAlertType.NotFound, Dictionary.NotFoundTitle)
-<div class="text-center">
+<div class="text-center margin-bottom-10">
 	<p>@Dictionary.NotFoundError</p>
     @Html.ActionLink(Dictionary.GoBackHome, "Index", "NineStarKi")
 </div>

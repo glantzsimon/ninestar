@@ -196,7 +196,7 @@ namespace K9.WebApplication.Models
 
         public string FullEnergyName => GetFullEnergyName();
         
-        public string FullEnergyDetailsTitle => $"{FullEnergyName} - {DescriptiveTitle}";
+        public string FullEnergyDetailsTitle => GetFullEnergyDetailsTitle();
 
         public int EnergyNumber => (int)Energy;
 
@@ -233,6 +233,13 @@ namespace K9.WebApplication.Models
         public ENineStarKiModality Modality => GetModality();
 
         public string Direction => MetaData.GetDirection();
+
+        private string GetFullEnergyDetailsTitle()
+        {
+            return EnergyType == ENineStarKiEnergyType.MainEnergy
+                ? $"{FullEnergyName} - {DescriptiveTitle}"
+                : FullEnergyName;
+        }
 
         private string GetFullEnergyName()
         {

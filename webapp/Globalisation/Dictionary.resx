@@ -1042,4 +1042,31 @@
   <data name="_692" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>summaries\en-gb\_692.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="_712" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_712.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_721" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_721.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_739" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_739.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_748" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_748.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_757" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_757.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_766" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_766.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_775" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_775.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_784" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_784.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_793" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_793.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

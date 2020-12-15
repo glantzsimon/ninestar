@@ -672,14 +672,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The first impression you often give to people is someone who is gentle, quiet and helpful. 
-        ///    
-        ///    You keep your word and are dependable. 
-        ///    
-        ///    Those who know you more intimately are aware of a deep inner security laid back nature. You can be quietly reflective at times, but also have a great sense of humour and a witty, playful and fun-loving side.
+        ///    You have great potential for leadership, which comes naturally to you.
         ///
-        ///    You have great potential to to lead and direct others.
-        ///&lt;/p&gt;.
+        ///    There is a lot of determination and boldness to your character, whilst at the same time you can be very logical and diligent in your actions. You need to feel involved, whether at work, at home or out in the community.
+        ///
+        ///    You are quietly self-critical and highly perfectionistic. it is important for you to do things properly or not at all. You don&apos;t take criticism well.
+        ///    
+        ///    You like to take the lead need to be t [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _665 {
             get {
@@ -736,6 +735,156 @@ namespace K9.Globalisation {
         public static string _692 {
             get {
                 return ResourceManager.GetString("_692", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You have a helpful and diplomatic nature and have a great capacity to make those around you feel listened to and acknowledged.
+        ///
+        ///    You can be very laid-back, fun-loving, witty and charming. You make a great host. 
+        ///    
+        ///    However, you are, at times, rather quite withdrawn, cautious and philosophical, especially when under pressure.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _712 {
+            get {
+                return ResourceManager.GetString("_712", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Outwardly, you are energetic, spontaneous and full of enthusiasm. 
+        ///    
+        ///    You have lots of bright ideas and can be quite pioneering in your field. You are certainly not afraid of hard work.
+        ///    
+        ///    You can be inspiring to those around you. Those who know you more intimately would likely describe you as warm, passionate and lively.
+        ///    
+        ///    You like to feel acknowledged and appreciated. 
+        ///    
+        ///    You have a natural capacity to express yourself through writing or speaking and enjoy sharing [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _721 {
+            get {
+                return ResourceManager.GetString("_721", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Outwardly you appear warm, passionate and charismatic. You have great clarity and can be an inspiration to those around you, helping to shed light on issues that arise.
+        ///
+        ///    Your deeper nature is quite expressive and can even be explosive when under pressure or provoked. You are determined and hard-working with plenty of bright, original ideas. You can be especially persuasive when inspired.
+        ///
+        ///    Many benefit from your accumulated life experience, which you are good at sharing with your articul [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _739 {
+            get {
+                return ResourceManager.GetString("_739", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You may be a bit of a loner and could appear quiet or withdrawn at times. However, when provoked, you are not afraid to express your opinion and can deliver a strong and well thought-out argument.
+        ///
+        ///    You are at ease sharing your ideas, both publically and privately.
+        ///
+        ///    You are independent and have a quiet, deep determination. You can also be quite stubborn at times.
+        ///
+        ///    Your deeper character is essentially trusting and open. You can also bring out this quality in others. 
+        ///    
+        ///    You  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _748 {
+            get {
+                return ResourceManager.GetString("_748", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Outwardly you appear fun, easy-going and charming. You are naturally independent and your strength of character enables you to overcome difficulties, especially as you get older. You tend to deal with pressure well.
+        ///
+        ///    Those who know you more deeply may find you demanding at times, even aggressively so. You are strong-willed and can be very assertive when you want.
+        ///    
+        ///    You are a great listener make others feel at ease. You give good, objective advice.
+        ///
+        ///    You are naturally eloquent an [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _757 {
+            get {
+                return ResourceManager.GetString("_757", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You are naturally charming and stylish nature and have a gift for speaking.  Your manner tends to be direct and you are detail-oriented and a critical thnker.
+        ///
+        ///    You tend to have a straightforward, logical approach to life, with lots of common sense. Your sincerity and charm are persuasive to others.
+        ///
+        ///    Your deeper nature is likely to be more reserved and careful.
+        ///    
+        ///    You may also be highly intuitive and emotionally sensitive.
+        ///    
+        ///    You can be quietly self-critical and do not ta [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _766 {
+            get {
+                return ResourceManager.GetString("_766", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You generally appear witty, charming and humorous and have a deep sense of inner security, which allows you to take on challenges without fear.
+        ///    
+        ///    You are a great listener and making people feel at ease.
+        ///
+        ///    You tend to be easy-going and flexible. However, you may often feel the need to be in control.
+        ///
+        ///    You can, at times, have a commanding nature and like to be acknowledged your gifts and contributions.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _775 {
+            get {
+                return ResourceManager.GetString("_775", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    On the surface you may appear quiet and gentle. You have a helpful and trusting nature. You are stylish, independent and charming.
+        ///
+        ///    Others can benefit greatly from your accumulated wealth of experience.
+        ///
+        ///    You are a very good listener and give good, objective advice. You are also a very good and persuasive speaker. You are dependable and keep your word.
+        ///    
+        ///    Your inner nature can sometimes be withdrawn uncommunicative, especially when under pressure or upset. You can be tenacious, e [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _784 {
+            get {
+                return ResourceManager.GetString("_784", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Outwardly, you are energetic, spontaneous and full of enthusiasm. 
+        ///    
+        ///    You have lots of bright ideas and can be quite pioneering in your field. You are certainly not afraid of hard work.
+        ///    
+        ///    You can be inspiring to those around you. Those who know you more intimately would likely describe you as warm, passionate and lively.
+        ///    
+        ///    You like to feel acknowledged and appreciated. 
+        ///    
+        ///    You have a natural capacity to express yourself through writing or speaking and enjoy sharing [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _793 {
+            get {
+                return ResourceManager.GetString("_793", resourceCulture);
             }
         }
         

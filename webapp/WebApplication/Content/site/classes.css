@@ -192,6 +192,8 @@ a#toTop:hover {
 
 .hidden-date-field {
     opacity: 0;
+    height: 0;
+    position: absolute;
 }
 
 .seo {

@@ -811,10 +811,13 @@ namespace K9.Globalisation {
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    You have a helpful and diplomatic nature and have a great capacity to make those around you feel listened to and acknowledged.
         ///
-        ///    You can be very laid-back, fun-loving, witty and charming. You make a great host. 
-        ///    
-        ///    However, you are, at times, rather quite withdrawn, cautious and philosophical, especially when under pressure.
-        ///&lt;/p&gt;.
+        ///    You can be very laid-back, fun-loving, witty and charming. You make a great host.
+        ///
+        ///    You are stylish and appreciate the finer things in life. You may well appear younger than your biological age.
+        ///
+        ///    You know how to relax and enjoy putting your feel up. Care must be taken not to become lazy, however.
+        ///
+        ///    However, you are, at times, rather quite withdrawn, c [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _712 {
             get {
@@ -830,7 +833,8 @@ namespace K9.Globalisation {
         ///
         ///    Those who know you well would describe you as supportive, helpful and tactful. You sensitive to others&apos; needs and have a deep sense of justice. You may, at times, be overly fastidious and detail-obsessed.
         ///
-        ///    However, your essential nature is steady, laid-back and charming, with a natural gift for making those a [rest of string was truncated]&quot;;.
+        ///    You know how to relax and enjoy putting your feel up. Care must be taken not to become lazy, however.
+        ///        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _721 {
             get {
@@ -844,7 +848,7 @@ namespace K9.Globalisation {
         ///
         ///    Your deeper nature is quite expressive and can even be explosive when under pressure or provoked. You are determined and hard-working with plenty of bright, original ideas. You can be especially persuasive when inspired.
         ///
-        ///    Many benefit from your accumulated life experience, which you are good at sharing with your articul [rest of string was truncated]&quot;;.
+        ///    You are stylish and appreciate the finer things in life. You may well appear younger than your biol [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _739 {
             get {
@@ -860,9 +864,9 @@ namespace K9.Globalisation {
         ///
         ///    You are independent and have a quiet, deep determination. You can also be quite stubborn at times.
         ///
-        ///    Your deeper character is essentially trusting and open. You can also bring out this quality in others. 
-        ///    
-        ///    You  [rest of string was truncated]&quot;;.
+        ///    Your deeper character is essentially trusting and open. You can also bring out this quality in others.
+        ///
+        ///    You know  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _748 {
             get {
@@ -875,10 +879,10 @@ namespace K9.Globalisation {
         ///    Outwardly you appear fun, easy-going and charming. You are naturally independent and your strength of character enables you to overcome difficulties, especially as you get older. You tend to deal with pressure well.
         ///
         ///    Those who know you more deeply may find you demanding at times, even aggressively so. You are strong-willed and can be very assertive when you want.
-        ///    
+        ///
         ///    You are a great listener make others feel at ease. You give good, objective advice.
         ///
-        ///    You are naturally eloquent an [rest of string was truncated]&quot;;.
+        ///    You know how to relax and enjoy p [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _757 {
             get {
@@ -893,10 +897,10 @@ namespace K9.Globalisation {
         ///    You tend to have a straightforward, logical approach to life, with lots of common sense. Your sincerity and charm are persuasive to others.
         ///
         ///    Your deeper nature is likely to be more reserved and careful.
-        ///    
+        ///
         ///    You may also be highly intuitive and emotionally sensitive.
-        ///    
-        ///    You can be quietly self-critical and do not ta [rest of string was truncated]&quot;;.
+        ///
+        ///    You can be quietly self-critical and do not take criti [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _766 {
             get {
@@ -907,13 +911,14 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    You generally appear witty, charming and humorous and have a deep sense of inner security, which allows you to take on challenges without fear.
-        ///    
+        ///
         ///    You are a great listener and making people feel at ease.
         ///
         ///    You tend to be easy-going and flexible. However, you may often feel the need to be in control.
         ///
-        ///    You can, at times, have a commanding nature and like to be acknowledged your gifts and contributions.
-        ///&lt;/p&gt;.
+        ///    You are stylish and appreciate the finer things in life. You may well appear younger than your biological age.
+        ///
+        ///    You know how to relax and enjoy putting your feel up. Care must be t [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _775 {
             get {
@@ -928,8 +933,10 @@ namespace K9.Globalisation {
         ///    Others can benefit greatly from your accumulated wealth of experience.
         ///
         ///    You are a very good listener and give good, objective advice. You are also a very good and persuasive speaker. You are dependable and keep your word.
+        ///
+        ///    You are stylish and appreciate the finer things in life. You may well appear younger than your biological age.
         ///    
-        ///    Your inner nature can sometimes be withdrawn uncommunicative, especially when under pressure or upset. You can be tenacious, e [rest of string was truncated]&quot;;.
+        ///    You know [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _784 {
             get {
@@ -939,15 +946,15 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Outwardly, you are energetic, spontaneous and full of enthusiasm. 
-        ///    
+        ///    Outwardly, you are energetic, spontaneous and full of enthusiasm.
+        ///
         ///    You have lots of bright ideas and can be quite pioneering in your field. You are certainly not afraid of hard work.
-        ///    
+        ///
         ///    You can be inspiring to those around you. Those who know you more intimately would likely describe you as warm, passionate and lively.
-        ///    
-        ///    You like to feel acknowledged and appreciated. 
-        ///    
-        ///    You have a natural capacity to express yourself through writing or speaking and enjoy sharing [rest of string was truncated]&quot;;.
+        ///
+        ///    You like to feel acknowledged and appreciated.
+        ///
+        ///    You are stylish and appreciate the finer things in life. You may well appear younger than your biological age.        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _793 {
             get {
@@ -995,15 +1002,93 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Your chart is made entirely of Earth element, giving you a strong, consistent nature.
+        ///    Outwardly you may appear firy, flamboyant and even ostentatious.
         ///
-        ///    You are supportive and highly dependable with a strong sense of justice.
+        ///    You can also be impulsive and changeable.
         ///
-        ///    You like to be a the centre of your family, work or community and tend to take the lead in things you get involved in.
+        ///    However, you are very resilient with a tremendous capacity for bouncing back from life&apos;s challenges.
         ///
-        ///    There are times when you may appear withdrawn and uncommunicative. However, this can change quite abruptly when you need to express your opinion.
+        ///    You have a strong sense of justice which can inspire strong, determined action.
         ///
-        ///    You are quietly single-minded and determined in wha [rest of string was truncated]&quot;;.
+        ///    Others can benefit deeply from your intuition and clarity. However, you also need support from those around you.
+        ///    
+        ///    You are naturally influential and persuasive.
+        ///
+        ///    You prefer [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _831 {
+            get {
+                return ResourceManager.GetString("_831", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Outwardly you may appear firy, flamboyant and even ostentatious.
+        ///
+        ///    You can also be impulsive and changeable.
+        ///
+        ///    However, you are very resilient with a tremendous capacity for bouncing back from life&apos;s challenges.
+        ///
+        ///    You have a strong sense of justice which can inspire strong, determined action.
+        ///
+        ///    Others can benefit deeply from your intuition and clarity. However, you also need support from those around you.
+        ///    
+        ///    You are naturally influential and persuasive.
+        ///
+        ///    You prefer [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _849 {
+            get {
+                return ResourceManager.GetString("_849", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Outwardly you can appear withdrawn or uncommunicative. However, when provoked you can be very expressive and are not afraid to voice your opinion.
+        ///    
+        ///    Your deeper nature can be bold, assertive and even demanding at times.
+        ///    
+        ///    You have a tremendous potential for overcoming difficulties in our life and bounce back quickly. This is especially true as you get older.
+        ///    
+        ///    Care should be taken not to be overly controlling and domineering. 
+        ///    
+        ///    You prefer to learn from your own  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _858 {
+            get {
+                return ResourceManager.GetString("_858", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    On the surface you often appear easy-going, flexible and fun. You can be charming, and have the potential to make
+        ///    others feel at ease.
+        ///
+        ///    You have quite a direct, bold character. You are very clear in what you believe in and are frank and to-the-point when you express your opinions. 
+        ///    You can be a perfectionist and take great pride in what you do. You fiercely dislike criticism.
+        ///
+        ///    You go about your work with great skill, prudence and common sense. You are not afraid of hard work.        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _867 {
+            get {
+                return ResourceManager.GetString("_867", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    On the surface, you appear straightforward, organised and logical. You are not afraid of expressing your opinion and are direct and frank.
+        ///
+        ///    You have a natural style and elegance and may well appreciate the arts.
+        ///
+        ///    Friends and family would probably describe you as flexible, easy-going, entertaining and witty. You are naturally charming and have the skill of making those around you feel at ease.
+        ///
+        ///    However, you can also be determined and single-minded.
+        ///
+        ///    You have a keen sense of w [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _876 {
             get {

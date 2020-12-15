@@ -302,16 +302,16 @@ namespace K9.WebApplication.Services
                             return Dictionary._822;
 
                         case ENineStarKiEnergy.Thunder:
-                            return Dictionary._739;
+                            return Dictionary._831;
 
                         case ENineStarKiEnergy.Wind:
-                            return Dictionary._748;
+                            return Dictionary._849;
 
                         case ENineStarKiEnergy.CoreEarth:
-                            return Dictionary._757;
+                            return Dictionary._858;
 
                         case ENineStarKiEnergy.Heaven:
-                            return Dictionary._766;
+                            return Dictionary._867;
 
                         case ENineStarKiEnergy.Lake:
                             return Dictionary._876;

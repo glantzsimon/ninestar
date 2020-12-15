@@ -1021,10 +1021,19 @@
   <data name="_656" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>summaries\en-gb\_656.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="_611" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_611.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="_629" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>summaries\en-gb\_629.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_638" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>summaries\en-gb\_638.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_683" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_683.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_692" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_692.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

@@ -589,15 +589,30 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You may appear outwardly reserved or quiet. You sometimes feel the need to retreat to your cave.
-        ///
-        ///    However, when provoked, you can deliver a powerful argument.
-        ///
-        ///    Your deeper nature, which is revealed under pressure or to those who know you more intimately, is strong, energetic, persistent and hard-working. You can be very expressive and potentially explosive under duress.
-        ///
-        ///    Your fundamental nature is bold and moral and you express your opinions clearly and dirctly. 
+        ///    You have great potential to influence and direct others through your ideas or style.
         ///    
-        ///    You ha [rest of string was truncated]&quot;;.
+        ///    The presence of Water in your chart can lead to two quite different personalities. On the one hand you may appear sociable, extroverted and bubbly. On the other hand you may appear quiet, withdrawn, shy or even cautious. You may be prone to procrastination, especially when lacking direction.
+        ///    
+        ///    You have great tact and diplomacy which you use within your immediate circle of friends and family.
+        ///   [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _611 {
+            get {
+                return ResourceManager.GetString("_611", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    At times, you may appear flamboyant and showy. You can also be rather impulsive in your actions. 
+        ///    
+        ///    However, your deeper nature makes you a natural diplomat and you can express yourself with great tact. 
+        ///    
+        ///    You have a strong desire to support and help others. You can, at times, be overly fastidious and detail-obsessed.
+        ///
+        ///    Your fundamental nature is bold and moral and you express your opinions clearly and dirctly.
+        ///    
+        ///    You have exceptional leadership potential and can be a [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _629 {
             get {
@@ -652,6 +667,44 @@ namespace K9.Globalisation {
         public static string _656 {
             get {
                 return ResourceManager.GetString("_656", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    People generally find you tactful, helpful and reliable.
+        ///
+        ///    You have the potential to be quite bold and courageous and can be very persistent when inspired. You believe that things ought to be done properly or not at all.
+        ///
+        ///    Under pressure, you can be impulsive, unpredictable and firy.
+        ///
+        ///    You are lively, affectionate and passionate. You may also be self-centred at times. 
+        ///    
+        ///    You can be a real inspiration to those around you and have great leadership potential.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _683 {
+            get {
+                return ResourceManager.GetString("_683", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    People generally find you tactful, helpful and reliable.
+        ///
+        ///    You have the potential to be quite bold and courageous and can be very persistent when inspired. You believe that things ought to be done properly or not at all.
+        ///
+        ///    Under pressure, you can be impulsive, unpredictable and firy.
+        ///
+        ///    You are lively, affectionate and passionate. You may also be self-centred at times. 
+        ///    
+        ///    You can be a real inspiration to those around you and have great leadership potential.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _692 {
+            get {
+                return ResourceManager.GetString("_692", resourceCulture);
             }
         }
         

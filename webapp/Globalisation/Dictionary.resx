@@ -1030,6 +1030,12 @@
   <data name="_638" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>summaries\en-gb\_638.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="_665" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_665.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_674" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_674.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="_683" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>summaries\en-gb\_683.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>

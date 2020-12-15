@@ -138,7 +138,10 @@
     <Content Include="Summaries\en-gb\_564.htm" />
     <Content Include="Summaries\en-gb\_573.htm" />
     <Content Include="Summaries\en-gb\_582.htm" />
+    <Content Include="Summaries\en-gb\_.htm" />
+    <Content Include="Summaries\en-gb\_665.htm" />
     <Content Include="Summaries\en-gb\_683.htm" />
+    <Content Include="Summaries\en-gb\_674.htm" />
     <Content Include="Summaries\en-gb\_692.htm" />
     <Content Include="Summaries\en-gb\_611.htm" />
     <Content Include="Summaries\en-gb\_629.htm" />

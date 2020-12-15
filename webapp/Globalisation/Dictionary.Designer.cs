@@ -672,16 +672,47 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    People generally find you tactful, helpful and reliable.
-        ///
-        ///    You have the potential to be quite bold and courageous and can be very persistent when inspired. You believe that things ought to be done properly or not at all.
-        ///
-        ///    Under pressure, you can be impulsive, unpredictable and firy.
-        ///
-        ///    You are lively, affectionate and passionate. You may also be self-centred at times. 
+        ///    The first impression you often give to people is someone who is gentle, quiet and helpful. 
         ///    
-        ///    You can be a real inspiration to those around you and have great leadership potential.
+        ///    You keep your word and are dependable. 
+        ///    
+        ///    Those who know you more intimately are aware of a deep inner security laid back nature. You can be quietly reflective at times, but also have a great sense of humour and a witty, playful and fun-loving side.
+        ///
+        ///    You have great potential to to lead and direct others.
         ///&lt;/p&gt;.
+        /// </summary>
+        public static string _665 {
+            get {
+                return ResourceManager.GetString("_665", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The first impression you often give to people is someone who is gentle, quiet and helpful. 
+        ///    
+        ///    You keep your word and are dependable. 
+        ///    
+        ///    Those who know you more intimately are aware of a deep inner security laid back nature. You can be quietly reflective at times, but also have a great sense of humour and a witty, playful and fun-loving side.
+        ///
+        ///    You have great potential to to lead and direct others.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _674 {
+            get {
+                return ResourceManager.GetString("_674", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    On the surface you often appear energetic, enthusiastic and spontaneous. You can be very expressive, especially verbally.
+        ///
+        ///    Sometimes you can be withdrawn, uncommunicative and deeply private. Those who know you well will appreciate your need to retreat into your cave from time to time, especially when under pressure or uspet. However, when provoked, you can deliver a powerful argument.
+        ///
+        ///    You can be very moral and noble and are direct and to-the-point in your communication. 
+        ///
+        ///    You hav [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _683 {
             get {

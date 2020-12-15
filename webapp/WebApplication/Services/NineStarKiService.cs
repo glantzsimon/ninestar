@@ -245,10 +245,10 @@ namespace K9.WebApplication.Services
                             return Dictionary._656;
 
                         case ENineStarKiEnergy.Heaven:
-                            return Dictionary._564;
+                            return Dictionary._665;
 
                         case ENineStarKiEnergy.Lake:
-                            return Dictionary._573;
+                            return Dictionary._674;
 
                         case ENineStarKiEnergy.Mountain:
                             return Dictionary._683;

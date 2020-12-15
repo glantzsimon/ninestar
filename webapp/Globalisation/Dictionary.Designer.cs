@@ -589,10 +589,49 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    All 6 Metal people have a potential for leadership. You have a direct and moral nature which you can express boldly. Superficially you may appear charming, easy-going, fun and independent. Underneath, however, you can be changeable and emotional, with character swings from stubbornness to impulsiveness. You are trusting, and many trust you. In your childhood it was important for you to have enormous support.
+        ///    You may appear outwardly reserved or quiet. You sometimes feel the need to retreat to your cave.
         ///
+        ///    However, when provoked, you can deliver a powerful argument.
+        ///
+        ///    Your deeper nature, which is revealed under pressure or to those who know you more intimately, is strong, energetic, persistent and hard-working. You can be very expressive and potentially explosive under duress.
+        ///
+        ///    Your fundamental nature is bold and moral and you express your opinions clearly and dirctly. 
         ///    
-        ///&lt;/p&gt;.
+        ///    You ha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _629 {
+            get {
+                return ResourceManager.GetString("_629", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You may appear outwardly reserved or quiet. You sometimes feel the need to retreat to your cave.
+        ///
+        ///    However, when provoked, you can deliver a powerful argument.
+        ///
+        ///    Your deeper nature, which is revealed under pressure or to those who know you more intimately, is strong, energetic, persistent and hard-working. You can be very expressive and potentially explosive under duress.
+        ///
+        ///    Your fundamental nature is bold and moral and you express your opinions clearly and dirctly. 
+        ///    
+        ///    You ha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _638 {
+            get {
+                return ResourceManager.GetString("_638", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Outwardly, you often appear easy-going, fun and independent. You are charming and know how to make people feel at ease.
+        ///
+        ///    When under pressure and with those you know more intimately, you sometimes reveal a more changeable and emotional side. You sometimes have mood swings and can be stubborn and impulsive.
+        ///
+        ///    You are quite trusting. Equally, many trust you and you can be persuasive when you want to be.
+        ///
+        ///    You have a direct, bold and moral nature and have an enormous potential for leade [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _647 {
             get {

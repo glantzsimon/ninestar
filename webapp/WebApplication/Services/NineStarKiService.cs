@@ -233,10 +233,10 @@ namespace K9.WebApplication.Services
                             return Dictionary._519;
 
                         case ENineStarKiEnergy.Soil:
-                            return Dictionary._528;
+                            return Dictionary._629;
 
                         case ENineStarKiEnergy.Thunder:
-                            return Dictionary._537;
+                            return Dictionary._638;
 
                         case ENineStarKiEnergy.Wind:
                             return Dictionary._647;

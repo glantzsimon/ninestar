@@ -164,8 +164,15 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Outwardly, you appear sincere, straightforward, logical and well organised. You take great care in your work and your approach to life. You have a strong desire to support and help others and you can be tactful, sensitive and diplomatic when under pressure. However, those close to you may find you cautious at times, with a tendancy to procrastinate. You may also be shy or undisciplined at times. Conversely, you also have the potential to be fun and sociable.
-        ///&lt;/p&gt;.
+        ///    Outwardly, you appear sincere, straightforward, logical and well organised. You take great care in your work and your approach to life.
+        ///
+        ///    You have a strong desire to support and help others and you can be tactful, sensitive and diplomatic when under pressure.
+        ///
+        ///    However, those close to you may find you cautious at times, with a tendancy to procrastinate.
+        ///
+        ///    You may also be shy or undisciplined at times. Conversely, you also have the potential to be fun and sociable.
+        ///
+        ///    You prefer t [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _216 {
             get {
@@ -176,11 +183,12 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Your chart is entirely made up of Earth element. This gives you great consistency. You are essentially helpful, supportive, caring and diplomatic. You feel a great sense of fulfilment when you are serving others.
+        ///
         ///    You need to feel involved and appreciated, whether out in the world, at the work place or closer to home, within the local community and within the family.
         ///
         ///    You may have a tendancy to become overly fastidious in your work.
         ///
-        ///    Care should be taken not to become overly opinion [rest of string was truncated]&quot;;.
+        ///    Care should be taken not to become overly opini [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _225 {
             get {
@@ -190,7 +198,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    On the surface you may appear quiet, gentle and diplomatic. You are generally dependable, helpful and consistent. However, those close to you will discover that you can also be very expressive and at times even explosive. You can be fastidious and extremely detail oriented.
+        ///    On the surface you may appear quiet, gentle and diplomatic.
+        ///
+        ///    You are generally dependable, helpful and consistent.
+        ///
+        ///    Those close to you will discover that you can also be very expressive and at times even explosive. You can be fastidious and extremely detail oriented.
+        ///
+        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by others.
         ///&lt;/p&gt;.
         /// </summary>
         public static string _234 {
@@ -201,7 +215,15 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Outwardly you are very energetic and full of enthusiasm. You are very expressive – often verbally – and spontaneous in your actions. Deep down you are trusting and open but you may be prone to ups and downs and may often need the support of others. Whilst you can act impulsively, your essential nature is consistent, helpful and supportive.
+        ///    Outwardly you are very energetic and full of enthusiasm.
+        ///
+        ///    You are very expressive – often verbally – and spontaneous in your actions.
+        ///
+        ///    Deep down you are trusting and open but you may be prone to ups and downs and may often need the support of others.
+        ///
+        ///    Whilst you can act impulsively, your essential nature is consistent, helpful and supportive.
+        ///
+        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by others.
         ///&lt;/p&gt;.
         /// </summary>
         public static string _243 {
@@ -212,7 +234,15 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You often appear diplomatic, tactful and even reserved. You are essentially helpful and, but your deeper nature is much bolder and, at times, demanding. When challenged, your strong will and assertive nature are expressed. You have a powerful ability to bounce back from difficulties in your life.
+        ///    You often appear diplomatic, tactful and even reserved.
+        ///
+        ///    You are essentially helpful and, but your deeper nature is much bolder and, at times, demanding.
+        ///
+        ///    When challenged, your strong will and assertive nature are expressed.
+        ///
+        ///    You have a powerful ability to bounce back from difficulties in your life.
+        ///
+        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by others.
         ///&lt;/p&gt;.
         /// </summary>
         public static string _252 {
@@ -223,9 +253,18 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    On the surface, you may appear shy, cautious and indecisive. On the other hand, you may appear very sociable, bubbly and excitable.
-        ///    You have a very determined character that sees the world logically and clearly. With those you know well you tend to be direct and outspoken. You are a perfectionist and dislike criticism. You tend to be very reliable and prudent and you enjoy helping others. You have a knack for diplomacy and have great potential for leadership.
-        ///&lt;/p&gt;.
+        ///    On the surface, you may appear shy, cautious and indecisive.
+        ///
+        ///    On the other hand, you may appear very sociable, bubbly and excitable.
+        ///
+        ///
+        ///    You have a very determined character that sees the world logically and clearly.
+        ///
+        ///    With those you know well you tend to be direct and outspoken.
+        ///
+        ///    You are a perfectionist and dislike criticism. You prefer to learn from your own mistakes and may feel threatened by advice given by others.
+        ///
+        ///    You tend to be very reliable and prudent and you en [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _261 {
             get {
@@ -235,7 +274,19 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Outwardly you can appear flamboyant or even ostentatious at times. You can also be impulsive. You likely have a deep intuition and are very capable of &apos;illuminating&apos; those around you when they cannot see clearly. People close to you most likely find you entertaining and enjoy your wit. You have a playful, fun-loving nature and are typically flexible and easygoing. You have a deep sense of inner security. Your fundamental nature is grounded, caring and supportive, dedicated to the service of others. [rest of string was truncated]&quot;;.
+        ///    Outwardly you can appear flamboyant or even ostentatious at times.
+        ///
+        ///    You can also be impulsive.
+        ///
+        ///    You likely have a deep intuition and are very capable of illuminating those around you when they cannot see clearly.
+        ///
+        ///    People close to you most likely find you entertaining and enjoy your wit.
+        ///
+        ///    You have a playful, fun-loving nature and are typically flexible and easygoing.
+        ///
+        ///    You have a deep sense of inner security.
+        ///
+        ///    Your fundamental nature is grounded, caring and support [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _279 {
             get {
@@ -245,7 +296,17 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Your chart is entirely made up of Earth element, which gives you great strength and consistency. In friendships and in business relationships you are reliable and keep your word. You are consistent, supportive and helpful. You can be fussy and even fanatical about detail. You can at times become withdrawn and uncommunicative. However, your quiter nature can change very quickly if you are provoked in any way. You are quite capable of delivering strong, compelling arguments when necessary. Overall, t [rest of string was truncated]&quot;;.
+        ///    Your chart is entirely made up of Earth element, which gives you great strength and consistency.
+        ///
+        ///    In friendships and in business relationships you are reliable and keep your word.
+        ///
+        ///    You are consistent, supportive and helpful.
+        ///
+        ///    You can be fussy and even fanatical about detail. You can at times become withdrawn and uncommunicative.
+        ///
+        ///    However, your quiter nature can change very quickly if you are provoked in any way.
+        ///
+        ///    You are quite capable of delivering strong, compelling a [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _288 {
             get {
@@ -255,9 +316,17 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    On the surface you can appear charming, easy-going and affectionate. However, those who know you more intimately are likely to see spontaneous outbursts of lively behaviour. You can also be impulsive and even a little self-centred, at times. However, you can equally be very fun-loving.
-        ///    You are essentilly consistent, helpful and supportive, with a strong independent side. Above all, you can be an inspiration to those around you.
-        ///&lt;/p&gt;.
+        ///    On the surface you can appear charming, easy-going and affectionate.
+        ///
+        ///    However, those who know you more intimately are likely to see spontaneous outbursts of lively behaviour.
+        ///
+        ///    You can also be impulsive and even a little self-centred, at times.
+        ///
+        ///    However, you can equally be very fun-loving.
+        ///
+        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by others.
+        ///
+        ///    You are essentilly consistent, helpful and supportive, with a strong independent side.  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _297 {
             get {
@@ -497,13 +566,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The first impression you often give is that of sincerity and honesty. You tend to be pretty logical and organised in how you go about your business. 
-        ///    
-        ///    Your deeper nature is softer, emotional and sensitive. You may often rely on the support of others. You can be changeable, especially when under pressure. You can also be stubborn and impulsive. 
-        ///    
-        ///    You have a great ability to influence others. However, you can also be easily influenced. 
-        ///    
-        ///    You have an enormous capacity to  [rest of string was truncated]&quot;;.
+        ///    The first impression you often give is that of sincerity and honesty. You tend to be pretty logical and organised in how you go about your business.
+        ///
+        ///    Your deeper nature is softer, emotional and sensitive. You may often rely on the support of others. You can be changeable, especially when under pressure. You can also be stubborn and impulsive.
+        ///
+        ///    You have a great ability to influence others. However, you can also be easily influenced.
+        ///
+        ///    You have an enormous capacity to overcome diffic [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _546 {
             get {
@@ -516,12 +585,12 @@ namespace K9.Globalisation {
         ///    Your entire chart is made up of Earth element, giving you a strong, consistent nature.
         ///
         ///    You are right at the centre of the 9 Star Ki system. Triple 5 expresses the beginning and the end of a cycle.
-        ///    
+        ///
         ///    You are naturally quite bold and assertive and can, at times, border on the demanding side.
         ///
-        ///    You possess immense determination and are great at initiating new projects.   
-        ///    
-        ///    You have a tremendous ability to bounce back from life&apos;s challenges and may experience many ups and [rest of string was truncated]&quot;;.
+        ///    You possess immense determination and are great at initiating new projects.
+        ///
+        ///    You have a tremendous ability to bounce back from life&apos;s challenges and may experience many ups and downs in y [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _555 {
             get {
@@ -755,15 +824,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Outwardly, you are energetic, spontaneous and full of enthusiasm. 
-        ///    
-        ///    You have lots of bright ideas and can be quite pioneering in your field. You are certainly not afraid of hard work.
-        ///    
-        ///    You can be inspiring to those around you. Those who know you more intimately would likely describe you as warm, passionate and lively.
-        ///    
-        ///    You like to feel acknowledged and appreciated. 
-        ///    
-        ///    You have a natural capacity to express yourself through writing or speaking and enjoy sharing [rest of string was truncated]&quot;;.
+        ///    On first impression you may appear shy or cautious and are most at ease with close friends or family.
+        ///
+        ///    You have a deep reflective nature but can be prone to procrastination.
+        ///
+        ///    Those who know you well would describe you as supportive, helpful and tactful. You sensitive to others&apos; needs and have a deep sense of justice. You may, at times, be overly fastidious and detail-obsessed.
+        ///
+        ///    However, your essential nature is steady, laid-back and charming, with a natural gift for making those a [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _721 {
             get {
@@ -885,6 +952,42 @@ namespace K9.Globalisation {
         public static string _793 {
             get {
                 return ResourceManager.GetString("_793", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your chart is made up entirely of the Earth element, which gives you a strong, consistent nature.
+        ///
+        ///    You have a strong sense of what is right and wrong and are helpful and supportive in towards those around you.
+        ///
+        ///    You and have a natural flair for diplomacy.
+        ///
+        ///    Outwardly you may appear rather reserved. You can be single-minded and determined when motivated and are not afraid of hard work. 
+        ///    
+        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by o [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _813 {
+            get {
+                return ResourceManager.GetString("_813", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your chart is made up entirely of the Earth element, which gives you a strong, consistent nature.
+        ///
+        ///    You have a strong sense of what is right and wrong and are helpful and supportive in towards those around you.
+        ///
+        ///    You and have a natural flair for diplomacy.
+        ///
+        ///    Outwardly you may appear rather reserved. You can be single-minded and determined when motivated and are not afraid of hard work. 
+        ///    
+        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by o [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _822 {
+            get {
+                return ResourceManager.GetString("_822", resourceCulture);
             }
         }
         

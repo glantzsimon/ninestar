@@ -1069,4 +1069,10 @@
   <data name="_793" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>summaries\en-gb\_793.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="_813" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_813.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_822" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_822.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

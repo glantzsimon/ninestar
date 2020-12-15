@@ -1002,19 +1002,15 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Outwardly you may appear firy, flamboyant and even ostentatious.
-        ///
-        ///    You can also be impulsive and changeable.
-        ///
-        ///    However, you are very resilient with a tremendous capacity for bouncing back from life&apos;s challenges.
-        ///
-        ///    You have a strong sense of justice which can inspire strong, determined action.
-        ///
-        ///    Others can benefit deeply from your intuition and clarity. However, you also need support from those around you.
+        ///    On the surface you can appear shy, quiet and cautious. 
         ///    
-        ///    You are naturally influential and persuasive.
+        ///    You can be indecisive and hesitant. However, you also possess great strength and willpower along with a tremendous ability to overcome life&apos;s challenges.
         ///
-        ///    You prefer [rest of string was truncated]&quot;;.
+        ///    You can be single-minded when committed to a cause and are certainly not afraid of hard work.
+        ///    
+        ///    Under pressure you can be very expressive to the point of explosiveness.
+        ///
+        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by othe [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _831 {
             get {
@@ -1128,6 +1124,38 @@ namespace K9.Globalisation {
         public static string _894 {
             get {
                 return ResourceManager.GetString("_894", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The powerful presence of Fire element in your chart gives you great clarity and brilliance with the potential for genius. 
+        ///    
+        ///    You are a natural visionary and your ideas and clear-sightedness are immensely helpful to those around you. 
+        ///    
+        ///    You are deeply intuitive and sensitive. However, this sensitivity means you often need the acknowledgement and appreciation of those around you. Otherwise you may begin to feel insecure.
+        ///    
+        ///    Sometimes you are impulsive and can fly off the han [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _941 {
+            get {
+                return ResourceManager.GetString("_941", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The powerful presence of Fire element in your chart gives you great clarity and brilliance with the potential for genius. 
+        ///    
+        ///    You are a natural visionary and your ideas and clear-sightedness are immensely helpful to those around you. 
+        ///    
+        ///    You are deeply intuitive and sensitive. However, this sensitivity means you often need the acknowledgement and appreciation of those around you. Otherwise you may begin to feel insecure.
+        ///    
+        ///    Sometimes you are impulsive and can fly off the han [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _959 {
+            get {
+                return ResourceManager.GetString("_959", resourceCulture);
             }
         }
         

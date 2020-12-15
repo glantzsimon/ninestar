@@ -80,11 +80,15 @@
 }
 
 .margin-bottom-15 {
-    margin-bottom: 15px;
+    margin-bottom: 15px !important;
+}
+
+.margin-bottom-20 {
+    margin-bottom: 20px !important;
 }
 
 .margin-bottom-30 {
-    margin-bottom: 30px;
+    margin-bottom: 30px !important;
 }
 
 .margin-0 {

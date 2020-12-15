@@ -196,7 +196,7 @@ namespace K9.WebApplication.Models
 
         public string FullEnergyName => GetFullEnergyName();
         
-        public string FullEnergyDetailsTitle => $"{FullEnergyName} - Details";
+        public string FullEnergyDetailsTitle => $"{FullEnergyName} - {DescriptiveTitle}";
 
         public int EnergyNumber => (int)Energy;
 
@@ -236,7 +236,7 @@ namespace K9.WebApplication.Models
 
         private string GetFullEnergyName()
         {
-            return EnergyName == Element 
+            return EnergyNumber == 5 
                 ? $"{EnergyNumber} {EnergyName}".Trim() 
                 : $"{EnergyNumber} {EnergyName} / {ElementWithYingYang}".Trim();
         }

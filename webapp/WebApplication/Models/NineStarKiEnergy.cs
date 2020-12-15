@@ -192,7 +192,7 @@ namespace K9.WebApplication.Models
         public string EnergyName => MetaData.GetDescription();
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyLabel)]
-        public string DescriptiveName => $"The {MetaData.GetDescriptiveTitle()}";
+        public string DescriptiveTitle => $"The {MetaData.GetDescriptiveTitle()}";
 
         public string FullEnergyName => GetFullEnergyName();
         

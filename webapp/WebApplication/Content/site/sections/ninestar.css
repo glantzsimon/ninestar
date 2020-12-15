@@ -17,6 +17,7 @@
 
     .ninestar-summary-container p {
         text-align: center !important;
+        margin-bottom: 10px;
     }
 
 .ninestar-summmary {
@@ -27,3 +28,4 @@
 }
 
 @media (max-width:480px) {
+}

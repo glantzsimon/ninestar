@@ -957,15 +957,17 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Your chart is made up entirely of the Earth element, which gives you a strong, consistent nature.
+        ///    You have a deep, reflective quality to your character and may appear shy or reserved to the outside world.
         ///
-        ///    You have a strong sense of what is right and wrong and are helpful and supportive in towards those around you.
+        ///    You are strong-willed and single-minded with plenty of enthusiasm.
         ///
-        ///    You and have a natural flair for diplomacy.
+        ///    You are not afraid of hard work and can often be quite pioneering in your field.
         ///
-        ///    Outwardly you may appear rather reserved. You can be single-minded and determined when motivated and are not afraid of hard work. 
-        ///    
-        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by o [rest of string was truncated]&quot;;.
+        ///    You have a strong sense of of fair play and justice.
+        ///
+        ///    Those close to you will likely find you cautious and rather philosophical at times.
+        ///
+        ///    You prefer to learn from your own mistakes and may feel threatened by advice [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _813 {
             get {
@@ -988,6 +990,59 @@ namespace K9.Globalisation {
         public static string _822 {
             get {
                 return ResourceManager.GetString("_822", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your chart is made entirely of Earth element, giving you a strong, consistent nature.
+        ///
+        ///    You are supportive and highly dependable with a strong sense of justice.
+        ///
+        ///    You like to be a the centre of your family, work or community and tend to take the lead in things you get involved in.
+        ///
+        ///    There are times when you may appear withdrawn and uncommunicative. However, this can change quite abruptly when you need to express your opinion.
+        ///
+        ///    You are quietly single-minded and determined in wha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _876 {
+            get {
+                return ResourceManager.GetString("_876", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your chart is made entirely of Earth element, giving you a strong, consistent nature.
+        ///
+        ///    You are supportive and highly dependable with a strong sense of justice.
+        ///
+        ///    You like to be a the centre of your family, work or community and tend to take the lead in things you get involved in.
+        ///
+        ///    There are times when you may appear withdrawn and uncommunicative. However, this can change quite abruptly when you need to express your opinion.
+        ///
+        ///    You are quietly single-minded and determined in wha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _885 {
+            get {
+                return ResourceManager.GetString("_885", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You may appear helpful, gentle and quiet. However, when provoked you can be firy, stubborn and self-centred.
+        ///
+        ///    You are reliable and keep your word. You have great reserves of hidden strength and can be extremely determined and single-minded.
+        ///    
+        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by others.
+        ///    
+        ///    Your strength and energy can be an inspiration to those around you, but care should be taken not to be overly impulsive.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _894 {
+            get {
+                return ResourceManager.GetString("_894", resourceCulture);
             }
         }
         

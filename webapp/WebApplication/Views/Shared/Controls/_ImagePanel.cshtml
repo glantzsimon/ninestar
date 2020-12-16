@@ -2,7 +2,8 @@
 @model PanelOptions
 @{
     var id = Guid.NewGuid();
-    var imageSizeClass = Model.ImageSize == EPanelImageSize.Medium ? "image-panel-medium" : "";
+    var imageSizeClass = Model.ImageSize == EPanelImageSize.Medium ? "image-panel-medium" : 
+        Model.ImageSize == EPanelImageSize.Small ? "image-panel-small" : "";
 }
 
 <div class="image-panel img-rounded @imageSizeClass" style="background-image: url('@Model.ImageSrc'); @Model.ImageLayoutCss;"></div>

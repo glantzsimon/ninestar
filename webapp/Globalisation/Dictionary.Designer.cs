@@ -336,7 +336,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You have a lot of energy and vitality and are not afraid to take on plenty of hard work and commitments. You have hidden depths of emotion but these are typically on expressed to those close to you. You are empathetic, sensitive and flexible, happy taking each day as it comes. Outwardly you can appear sociable and charming and make others feel at ease by listening to them and acknowledging them. Some would describe you as easy-going, with an independent nature. On the other hand, you can also be sh [rest of string was truncated]&quot;;.
+        ///    You have a lot of energy and vitality and are not afraid to take on plenty of hard work and commitments. You have hidden depths of emotion but these are typically only expressed to those close to you.
+        ///
+        ///    You are empathetic, sensitive and flexible and you tend to take each day as it comes.
+        ///
+        ///    You have a spontaneous and unpredictable quality to your character and may dislike making long-term plans and commitments.
+        ///
+        ///    Outwardly you tend to appear quite sociable, laid-back and charming. You [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _317 {
             get {
@@ -2203,11 +2209,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    In Chinese medicine, the element Fire controls the function of the heart and small intestine and therefore these energies must guard against circulatory disorders. It is also advisable to avoid 
-        ///    overly hot, spicy or salty foods.
+        ///    9 Fire children do much better when they are supported by parents and caregivers who can teach them consideration for others, patience, how to plan ahead and to see tasks through to completion.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    It is important for Fire energies to get plenty of rest and to take extra care to calm their minds and nervous system.
+        ///    Without adequate discipline, 9 Fire children can become spoilt, conceited and vain.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Fire needs to be contained, and since this character energy can be extremely impulsive, it&apos;s important that parents and caregivers introduce order and boundaries early on in life.
         ///&lt;/p&gt;.
         /// </summary>
         public static string fire_child {
@@ -2249,12 +2257,18 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///    9 Fire characters are some of the brightest and liveliest of all the nine characters. 
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///    They tend to wear their heart on their sleeve and can be exceptionally warm and affectionate.
         ///&lt;/p&gt;
-        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;
+        ///    9 Fire characters have a bubbly personality with lots of charisma and often possess great clarity and intuition, whch can help to shine light on situations.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Sometimes 9 Fire characters can tend towards being proud and vain and they may have a self-centred streak.
+        ///&lt;/p&gt;
+        ///&lt;p&gt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_emotional_description {
             get {
@@ -2609,6 +2623,15 @@ namespace K9.Globalisation {
         public static string heaven_trigram {
             get {
                 return ResourceManager.GetString("heaven_trigram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Here.
+        /// </summary>
+        public static string Here {
+            get {
+                return ResourceManager.GetString("Here", resourceCulture);
             }
         }
         
@@ -3186,14 +3209,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    8 Mountain children These children are best supported by their parents when they bring out their innate strengths through intellectual argument. 
-        ///    
-        ///    They need to participate in debate and discussion on a whole range of issues at home and at school. 
-        ///    
-        ///    Number 8 children are harmed by over-indulgence. 
-        ///    
-        ///    As the Youngest Son in I Ching symbolism they need to be encouraged to exert self-discipline    
-        ///&lt;/p&gt;.
+        ///    8 Mountain children also need structure and routine and should be encouraged develop self-discipline early on in their lives.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is highly beneficial to encourage 8 Mountain children to develop their innate strengths through intellectual argument, such as debate and discussion on a wide range of topics.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///   8 Mountain children are harmed by over-indulgence and hypocritical behaviour on the part of parents or teachers. They require consistency and clear direction from adul [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_child {
             get {

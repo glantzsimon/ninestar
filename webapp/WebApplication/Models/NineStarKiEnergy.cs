@@ -199,6 +199,8 @@ namespace K9.WebApplication.Models
 
         public string FullEnergyName => GetFullEnergyName();
 
+        public string EnergyDescriptiveNameAndNumber => $"{EnergyNumber} {EnergyName}";
+
         public string FullEnergyDetailsTitle => GetFullEnergyDetailsTitle();
 
         public int EnergyNumber => (int)Energy;

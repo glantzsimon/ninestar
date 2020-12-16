@@ -1288,7 +1288,28 @@
   <data name="News" xml:space="preserve">
     <value>News</value>
   </data>
+  <data name="_445" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_445.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_914" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_914.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_923" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_923.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="_932" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>summaries\en-gb\_932.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_968" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_968.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_977" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_977.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_986" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_986.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="_995" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>summaries\en-gb\_995.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

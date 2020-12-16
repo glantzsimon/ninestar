@@ -173,7 +173,7 @@ namespace K9.WebApplication.Services
                             return Dictionary._436;
 
                         case ENineStarKiEnergy.Wind:
-                            return Dictionary._344;
+                            return Dictionary._445;
 
                         case ENineStarKiEnergy.CoreEarth:
                             return Dictionary._454;
@@ -329,13 +329,13 @@ namespace K9.WebApplication.Services
                     switch (model.EmotionalEnergy.Energy)
                     {
                         case ENineStarKiEnergy.Water:
-                            return Dictionary._813;
+                            return Dictionary._914;
 
                         case ENineStarKiEnergy.Soil:
-                            return Dictionary._822;
+                            return Dictionary._923;
 
                         case ENineStarKiEnergy.Thunder:
-                            return Dictionary._831;
+                            return Dictionary._932;
 
                         case ENineStarKiEnergy.Wind:
                             return Dictionary._941;
@@ -344,16 +344,16 @@ namespace K9.WebApplication.Services
                             return Dictionary._959;
 
                         case ENineStarKiEnergy.Heaven:
-                            return Dictionary._867;
+                            return Dictionary._968;
 
                         case ENineStarKiEnergy.Lake:
-                            return Dictionary._876;
+                            return Dictionary._977;
 
                         case ENineStarKiEnergy.Mountain:
-                            return Dictionary._885;
+                            return Dictionary._986;
 
                         case ENineStarKiEnergy.Fire:
-                            return Dictionary._894;
+                            return Dictionary._995;
                     }
 
                     return string.Empty;

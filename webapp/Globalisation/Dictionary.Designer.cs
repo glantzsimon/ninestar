@@ -462,6 +462,17 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string _445 {
+            get {
+                return ResourceManager.GetString("_445", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    You tend to come across as gentle and helpful. You are trusting of others and can bring your influence to bear on situations in which you are involved. You are generally consistent and reliable. You tend to keep your word. Those clsoe to you will also know another side of you which emerges especially when stressed or emotional, which is bold, assertive and even demanding. You have an enormous capacity to bounce back from difficulties through your strong will and determination.
         ///
         ///&lt;/p&gt;.
@@ -1129,15 +1140,45 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Outwardly you may sometimes appear quiet or withdrawn. You can be cautious and sometimes prone to procrastination.
+        ///    You have quite a charming and kind nature and are capable of influencing others with your ideas.
         ///
-        ///    However, your deeper nature is emotional, sensitive and trusting. You can be quite influential and persuasive and equally easily influenced by others.
-        ///    
-        ///    You may have a stubborn streak and can be impulsive at times.
+        ///    You have an adaptable nature and are generally trusting and open.
         ///
-        ///    Your Fire nature can give you tremendous clarity, sensitivity and intuition can are capable of inspiring those around you.
-        ///    
-        ///    It is important  [rest of string was truncated]&quot;;.
+        ///    Those who know you well will sometimes find you cautious when under pressure, when you can withdraw and isolate yourself.
+        ///
+        ///    You are driven by your principal Fire element, which bestows you with great sensitivity, intuition and brilliance. You can be spontaneous, lively, bubbly and warm-hearted and are capable of inspiri [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _914 {
+            get {
+                return ResourceManager.GetString("_914", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Outwardly you appear very energetic and enthusiastic and can be quite spontaneous. You have lots of bright, new ideas and are not afraid to express yourself. You are also not afraid of hard work.
+        ///
+        ///    Your deeper nature is helpful, supportive and trusting. You can be tactful and diplomatic.
+        ///
+        ///    Your fundamental nature is Fire, which gives you great strength, brilliance, clarity and sensitivity. You may well have strokes of genius, at times and can inspire others.
+        ///
+        ///    You need acknowledgemen [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _923 {
+            get {
+                return ResourceManager.GetString("_923", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    On the surface you can appear reserved. You are often tactful and diplomatic in your dealins with others.
+        ///
+        ///    You can also be fastidious and fussy over the details.
+        ///
+        ///    You are hard-working and can be be extremely expressive and even explosive when under pressure or provoked.
+        ///
+        ///    You are driven by your principal Fire element, which bestows you with great sensitivity, intuition and brilliance. You can be spontaneous, lively, bubbly and warm-hearted and are capable of inspiring those around  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _932 {
             get {
@@ -1150,12 +1191,12 @@ namespace K9.Globalisation {
         ///    Outwardly you may sometimes appear quiet or withdrawn. You can be cautious and sometimes prone to procrastination.
         ///
         ///    However, your deeper nature is emotional, sensitive and trusting. You can be quite influential and persuasive and equally easily influenced by others.
-        ///    
+        ///
         ///    You may have a stubborn streak and can be impulsive at times.
         ///
         ///    Your Fire nature can give you tremendous clarity, sensitivity and intuition can are capable of inspiring those around you.
-        ///    
-        ///    It is important  [rest of string was truncated]&quot;;.
+        ///
+        ///    It is important for you  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _941 {
             get {
@@ -1176,6 +1217,66 @@ namespace K9.Globalisation {
         public static string _959 {
             get {
                 return ResourceManager.GetString("_959", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You have great potential for leadership and are especially concerned with justice and fairness. You are not afraid to express your opinion and can be quite frank and straight-to-the-point. Your sincere manner can a little overbearing at times. 
+        ///    
+        ///    At times you can be withdrawn and feel the need to retreat to your cave. You tend to have quite strong opinions and can express a powerful argument when provoked or challenged. 
+        ///    
+        ///    You are driven by your principal Fire element, which besto [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _968 {
+            get {
+                return ResourceManager.GetString("_968", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Outwardly, you can be very charismatic, entertaining and witty, and have the potential for a great sense of humour. 
+        ///    
+        ///    You have a deep inner sense of security and are generally very easy-going.
+        ///
+        ///    You are not afraid to speak your mind and others benefit from your accumulated wisdom and experiences.
+        ///
+        ///    You are driven by your principal Fire element, which bestows you with great sensitivity, intuition and brilliance. You can be spontaneous and lively at times, inspiring those around y [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _977 {
+            get {
+                return ResourceManager.GetString("_977", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You have great potential for leadership and are especially concerned with justice and fairness. You are not afraid to express your opinion and can be quite frank and straight-to-the-point. Your sincere manner can a little overbearing at times. 
+        ///    
+        ///    At times you can be withdrawn and feel the need to retreat to your cave. You tend to have quite strong opinions and can express a powerful argument when provoked or challenged. 
+        ///    
+        ///    You are driven by your principal Fire element, which besto [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _986 {
+            get {
+                return ResourceManager.GetString("_986", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You like to feel involved, whether in family, work or community matters.
+        ///
+        ///    However, be careful not to be overly controlling or domineering.
+        ///    
+        ///    You are driven by your principal Fire element, which bestows you with great sensitivity, intuition and brilliance. You can be spontaneous, lively, bubbly and warm-hearted and are capable of inspiring those around you. You also have great leadership potential. However, be careful not to be overly impulsive.
+        ///
+        ///    It is important for you to get r [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string _995 {
+            get {
+                return ResourceManager.GetString("_995", resourceCulture);
             }
         }
         

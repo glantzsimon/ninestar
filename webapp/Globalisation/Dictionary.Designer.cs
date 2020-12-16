@@ -1139,6 +1139,24 @@ namespace K9.Globalisation {
         ///    
         ///    It is important  [rest of string was truncated]&quot;;.
         /// </summary>
+        public static string _932 {
+            get {
+                return ResourceManager.GetString("_932", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Outwardly you may sometimes appear quiet or withdrawn. You can be cautious and sometimes prone to procrastination.
+        ///
+        ///    However, your deeper nature is emotional, sensitive and trusting. You can be quite influential and persuasive and equally easily influenced by others.
+        ///    
+        ///    You may have a stubborn streak and can be impulsive at times.
+        ///
+        ///    Your Fire nature can give you tremendous clarity, sensitivity and intuition can are capable of inspiring those around you.
+        ///    
+        ///    It is important  [rest of string was truncated]&quot;;.
+        /// </summary>
         public static string _941 {
             get {
                 return ResourceManager.GetString("_941", resourceCulture);
@@ -3320,21 +3338,21 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///	&lt;strong&gt;
-        ///		This is the privacy notice of Glantz Software Consulting Limited. In this document, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot; refer to Glantz Software Consulting Limited.
-        ///		We are company number 9762805 registered in The United Kingdom.
-        ///	&lt;/strong&gt;
+        ///    &lt;strong&gt;
+        ///        This is the privacy notice of Glantz Software Consulting Limited. In this document, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot; refer to Glantz Software Consulting Limited.
+        ///        We are company number 9762805 registered in The United Kingdom.
+        ///    &lt;/strong&gt;
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
-        ///	&lt;strong&gt;
-        ///		Our registered office is at: SG House, 6 St Cross Road, Winchester, Hampshire, SO23 9HX.
-        ///	&lt;/strong&gt;
+        ///    &lt;strong&gt;
+        ///        Our registered office is at: SG House, 6 St Cross Road, Winchester, Hampshire, SO23 9HX.
+        ///    &lt;/strong&gt;
         ///&lt;/p&gt;
         ///
         ///&lt;h4&gt;Introduction&lt;/h4&gt;
         ///&lt;p&gt;
-        ///	This privacy notice aims to inform you about how we collect and process any information that we col [rest of string was truncated]&quot;;.
+        ///    This privacy notice aims to inform you about how we collect and pr [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PrivacyPolicy {
             get {

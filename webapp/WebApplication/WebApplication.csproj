@@ -314,6 +314,7 @@
     <Content Include="Content\site\desktop.css" />
     <Content Include="Content\site\elements.css" />
     <Content Include="Content\site\mobile.css" />
+    <Content Include="Content\site\sections\privacypolicy.css" />
     <Content Include="Content\site\sections\cookies.css" />
     <Content Include="Content\site\sections\donate.css" />
     <Content Include="Content\site\sections\membership.css" />

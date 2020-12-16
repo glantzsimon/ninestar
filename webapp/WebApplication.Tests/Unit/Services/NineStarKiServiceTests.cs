@@ -119,9 +119,9 @@ namespace K9.WebApplication.Tests.Unit.Services
             Assert.Equal(year2Energy, ninestar2.MainEnergy.Energy);
             Assert.Equal(year3Energy, ninestar3.MainEnergy.Energy);
 
-            Assert.Equal(monthEnergy, ninestar.EmotionalEnergy.Energy);
-            Assert.Equal(monthEnergy, ninestar2.EmotionalEnergy.Energy);
-            Assert.Equal(monthEnergy, ninestar3.EmotionalEnergy.Energy);
+            Assert.Equal(monthEnergy, ninestar.CharacterEnergy.Energy);
+            Assert.Equal(monthEnergy, ninestar2.CharacterEnergy.Energy);
+            Assert.Equal(monthEnergy, ninestar3.CharacterEnergy.Energy);
         }
 
         [Theory]
@@ -180,9 +180,9 @@ namespace K9.WebApplication.Tests.Unit.Services
             Assert.Equal(year2Energy, ninestar2.MainEnergy.Energy);
             Assert.Equal(year3Energy, ninestar3.MainEnergy.Energy);
 
-            Assert.Equal(monthEnergy, ninestar.EmotionalEnergy.Energy);
-            Assert.Equal(monthEnergy, ninestar2.EmotionalEnergy.Energy);
-            Assert.Equal(monthEnergy, ninestar3.EmotionalEnergy.Energy);
+            Assert.Equal(monthEnergy, ninestar.CharacterEnergy.Energy);
+            Assert.Equal(monthEnergy, ninestar2.CharacterEnergy.Energy);
+            Assert.Equal(monthEnergy, ninestar3.CharacterEnergy.Energy);
         }
 
         [Theory]
@@ -209,7 +209,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             });
 
             Assert.Equal(yearEnergy, ninestar.MainEnergy.Energy);
-            Assert.Equal(monthEnergy, ninestar.EmotionalEnergy.Energy);
+            Assert.Equal(monthEnergy, ninestar.CharacterEnergy.Energy);
             Assert.Equal(surfaceEnergy, ninestar.SurfaceEnergy.Energy);
         }
 
@@ -250,7 +250,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                         Gender = EGender.Male,
                         DateOfBirth = dob
                     });
-                    Debug.WriteLine($"{energy.MainEnergy.EnergyNumber} - {energy.EmotionalEnergy.EnergyNumber} - {energy.SurfaceEnergy.EnergyNumber}");
+                    Debug.WriteLine($"{energy.MainEnergy.EnergyNumber} - {energy.CharacterEnergy.EnergyNumber} - {energy.SurfaceEnergy.EnergyNumber}");
                     dobMonth++;
                 }
                 dobYear++;

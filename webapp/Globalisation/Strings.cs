@@ -16,7 +16,7 @@
             public const string GenderLabel = "GenderLabel";
             public const string DateOfBirthLabel = "DateOfBirthLabel";
             public const string MainEnergyLabel = "MainEnergyLabel";
-            public const string EmotionalEnergyLabel = "EmotionalEnergyLabel";
+            public const string CharacterEnergyLabel = "CharacterEnergyLabel";
             public const string CharacterLabel = "CharacterLabel";
             public const string SurfaceEnergyLabel = "SurfaceEnergyLabel";
             public const string YinYangLabel = "YinYangLabel";
@@ -111,7 +111,7 @@
             public const string Red = "Red";
             public const string Purple = "Purple";
             public const string MainEnergy = "MainEnergyLabel";
-            public const string EmotionalEnergy = "EmotionalEnergyLabel";
+            public const string CharacterEnergy = "CharacterEnergyLabel";
             public const string SurfaceEnergy = "SurfaceEnergyLabel";
             public const string Static = "Static";
             public const string Dynamic = "Dynamic";

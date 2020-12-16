@@ -9,7 +9,7 @@
             <div>
                 @Html.CollapsiblePanel(Model.FullEnergyDetailsTitle, Model.EnergyDescription, true)
 
-                @if (Model.EnergyType == ENineStarKiEnergyType.EmotionalEnergy)
+                @if (Model.EnergyType == ENineStarKiEnergyType.CharacterEnergy)
                 {
                     @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.ChildDescription), Model.ChildDescription, true)
                 }

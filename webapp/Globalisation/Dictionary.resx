@@ -232,8 +232,8 @@
   <data name="Centre" xml:space="preserve">
     <value>Centre</value>
   </data>
-  <data name="EmotionalEnergyLabel" xml:space="preserve">
-    <value>Emotional Character / Inner Child</value>
+  <data name="CharacterEnergyLabel" xml:space="preserve">
+    <value>Deeper Character</value>
   </data>
   <data name="CoreEarth" xml:space="preserve">
     <value>Core Earth</value>
@@ -278,7 +278,7 @@
     <value>Lake</value>
   </data>
   <data name="MainEnergyLabel" xml:space="preserve">
-    <value>Main Energy / Adult Persona</value>
+    <value>Fundamental Nature</value>
   </data>
   <data name="Male" xml:space="preserve">
     <value>Male</value>
@@ -383,7 +383,7 @@
     <value>Youngest Son</value>
   </data>
   <data name="MainEnergy" xml:space="preserve">
-    <value>Main Energy</value>
+    <value>Fundamental Nature</value>
   </data>
   <data name="Trigram" xml:space="preserve">
     <value>Trigram</value>
@@ -797,13 +797,13 @@
     <value>articles\en-gb\wind-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="AdultPersona" xml:space="preserve">
-    <value>Adult Persona</value>
+    <value>Adult Nature</value>
   </data>
   <data name="coreearth_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\coreearth-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="EmotionalEnergyShortLabel" xml:space="preserve">
-    <value>Emotional Character</value>
+  <data name="CharacterEnergyShortLabel" xml:space="preserve">
+    <value>Deeper Character</value>
   </data>
   <data name="ExternalPersona" xml:space="preserve">
     <value>External Persona</value>
@@ -814,14 +814,14 @@
   <data name="heaven_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\heaven-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="InnerChild" xml:space="preserve">
-    <value>Inner Child</value>
+  <data name="MainChildLabel" xml:space="preserve">
+    <value>Fundamental Nature</value>
   </data>
   <data name="lake_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\lake-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="MainEnergyShortLabel" xml:space="preserve">
-    <value>Adult Persona</value>
+    <value>Fundamental Nature</value>
   </data>
   <data name="MoreDetails" xml:space="preserve">
     <value>More Details</value>
@@ -1371,5 +1371,8 @@
   </data>
   <data name="ModalityDescriptionLabel" xml:space="preserve">
     <value>Modality Description</value>
+  </data>
+  <data name="NotInEffectUntilEighteen" xml:space="preserve">
+    <value>Does not come into effect until the age of 18</value>
   </data>
 </root>

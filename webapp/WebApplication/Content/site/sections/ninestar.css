@@ -24,8 +24,24 @@
     width: 100%;
 }
 
-@media (max-width:580px) {
+.child-profile .adult-profile {
+    opacity: 0.3;
+    filter: grayscale(100%);
 }
+
+.profile-warning {
+    margin-top: 15px;
+    color: #a94442;
+}
+
+    .profile-warning img {
+        width: 16px;
+        height: 16px;
+        margin-bottom: 4px;
+    }
+
+    @media (max-width:580px) {
+    }
 
 @media (max-width:480px) {
 }

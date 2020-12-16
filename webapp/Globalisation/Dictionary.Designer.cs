@@ -852,8 +852,7 @@ namespace K9.Globalisation {
         ///    Those who know you well would describe you as supportive, helpful and tactful. You sensitive to others&apos; needs and have a deep sense of justice. You may, at times, be overly fastidious and detail-obsessed.
         ///
         ///    You know how to relax and enjoy putting your feel up. Care must be taken not to become lazy, however.
-        ///
-        /// [rest of string was truncated]&quot;;.
+        ///        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _721 {
             get {
@@ -973,8 +972,7 @@ namespace K9.Globalisation {
         ///
         ///    You like to feel acknowledged and appreciated.
         ///
-        ///    You are stylish and appreciate the finer things in life. You may well appear younger than your biological age.
-        /// [rest of string was truncated]&quot;;.
+        ///    You are stylish and appreciate the finer things in life. You may well appear younger than your biological age.        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _793 {
             get {
@@ -1086,8 +1084,7 @@ namespace K9.Globalisation {
         ///    You have quite a direct, bold character. You are very clear in what you believe in and are frank and to-the-point when you express your opinions. 
         ///    You can be a perfectionist and take great pride in what you do. You fiercely dislike criticism.
         ///
-        ///    You go about your work with great skill, prudence and common sense. You are not afraid of hard work.
-        /// [rest of string was truncated]&quot;;.
+        ///    You go about your work with great skill, prudence and common sense. You are not afraid of hard work.        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _867 {
             get {
@@ -1309,7 +1306,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Adult Persona.
+        ///   Looks up a localized string similar to Adult Nature.
         /// </summary>
         public static string AdultPersona {
             get {
@@ -1472,11 +1469,29 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Please note that the &apos;Character Energy&apos; or &apos;Emotional Energy&apos; alone does not give a very detailed description of a person. It is important to also take into account the &apos;Main Energy&apos; or &apos;Adult Persona&quot;, as well as the &apos;Surface Energy&apos;. However, it does give a useful overview of their deeper character. The Character Energy also has quite a significant influence on intimate relationships, where the more emotional aspects of ourselves tend to be revealed. There is more information on that in the &lt;a hr [rest of string was truncated]&quot;;.
+        ///    Please note that the &apos;Deeper Character&apos; Energy alone does not give a very detailed description of a person. It is important to also take into account the &apos;Fundamental Adult Nature&apos;, as well as the &apos;Surface Energy&apos;. However, it does give a useful overview of their deeper character. The Character Energy also has quite a significant influence on intimate relationships, where the more emotional aspects of ourselves tend to be revealed. There is more information on that in the &lt;a href=&quot;{RelationshipsUrl [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_energies_short_description {
             get {
                 return ResourceManager.GetString("character_energies_short_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deeper Character.
+        /// </summary>
+        public static string CharacterEnergyLabel {
+            get {
+                return ResourceManager.GetString("CharacterEnergyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deeper Character.
+        /// </summary>
+        public static string CharacterEnergyShortLabel {
+            get {
+                return ResourceManager.GetString("CharacterEnergyShortLabel", resourceCulture);
             }
         }
         
@@ -1617,14 +1632,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Generally speaking, Core Earth energies have the constitution of an ox and are incredibly resilient. However, for this reason, it is also very important for
-        ///    people under this star to exercise and push themselves, so that they do not stagnate and seize up.
+        ///    Like other Earth children, it is especially important for 5 Earth children to have a stable family and school life.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Being prone to ups and downs can mean that 5 Earth Energies can go through phases of being active/inactive, slim/overweight. These fluctuations are often brought
-        ///    about by the many emotional events in their lives.
+        ///    5 Earth is at the centre of 9 Star Ki and this can sometimes make it hard for these children to navigate a clear path. Without appropriate guidance, they may looe their way and even succumb to undesirable influences.
         ///&lt;/p&gt;
-        ///&lt; [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;
+        ///    5 Earth characters are naturally nurturing and supportive and children with this character number display these qualities early on in thei [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_child {
             get {
@@ -1649,12 +1663,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///    5 Earth characters are born with natural leadership potential and often have a bold and assertive nature. They can be demanding at times, to the point of aggressiveness.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///    5 is at the centre of the 9 Star Ki system and this gives 5 soil characters a great capacity to influence those around them.
         ///&lt;/p&gt;
-        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;
+        ///    5 Earth characters are very and extremely persevering. They can also express different extremes. On the one  hand, they can be creative and ambitious, whilst on the other, they [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_emotional_description {
             get {
@@ -1999,15 +2014,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Dynamic&lt;/h4&gt;
-        ///&lt;p&gt;
-        ///    Energies 3 Tree, 6 Metal and 9 Fire are &apos;Dynamic&apos;. This is similar to the Cardinal Modality of the Zodiac.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Energies {thunder}, {heaven} and {fire} are &apos;Dynamic&apos;. This is similar to the Cardinal Modality of the Zodiac.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Dynamic types, as the name suggests, tend to be proactive and action-oriented. They are not afraid to make the first move and tend to act as a kind of &apos;spark&apos; or ignition to get things started.
+        ///    Dynamic Energies, as the name suggests, tend to be proactive and action-oriented. They are not afraid to make the first move and tend to act as a kind of &apos;spark&apos; or ignition to get things started.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Dynamic types tend to be quite communicative and verbally expressive. They also have more of an emotional and reactive quality to them, especially when  [rest of string was truncated]&quot;;.
+        ///    Dynamic Energies tend to be quite communicative and verbally expressive. They also have more of a reactive quality to them, especially when either provoked in some [rest of string was truncated]&quot;;.
         /// </summary>
         public static string dynamic_modality {
             get {
@@ -2094,24 +2108,6 @@ namespace K9.Globalisation {
         public static string EmailAddressLabel {
             get {
                 return ResourceManager.GetString("EmailAddressLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Emotional Character / Inner Child.
-        /// </summary>
-        public static string EmotionalEnergyLabel {
-            get {
-                return ResourceManager.GetString("EmotionalEnergyLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Emotional Character.
-        /// </summary>
-        public static string EmotionalEnergyShortLabel {
-            get {
-                return ResourceManager.GetString("EmotionalEnergyShortLabel", resourceCulture);
             }
         }
         
@@ -2403,15 +2399,13 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Flexible&lt;/h4&gt;
-        ///&lt;p&gt;
-        ///    Energies 1 Water, 4 Tree and 7 Metal are &apos;flexible&apos;. They are generally easy-going and have a gentle, &apos;go with the flow&apos; kind of attitude to life. They are generally happy to adapt to those around them. 
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Energies {water}, {wind} and {lake} are &apos;flexible&apos;. They are generally easy-going and have a gentle, &apos;go with the flow&apos; kind of attitude to life. They are generally happy to adapt to those around them.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Flexible types are good at seeing things from different perspectives and tend to be understanding, compassionate and patient with others.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    People in this group also have quite a rational, logical way of processing information. However, there is a mo [rest of string was truncated]&quot;;.
+        ///    Flexible Energies are good at seeing things from different perspectives and angles, which leas them to be quite compassionate and patient with others.
+        ///
+        ///    They are good at seeing the bigger picture and often have have quite a balanced and rational way of seeing the world. Their hig [rest of string was truncated]&quot;;.
         /// </summary>
         public static string flexible_modality {
             get {
@@ -2457,15 +2451,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The organ governed by yang Metal is the lungs and care must be taken to look after this organ. Therefore, it is especially important
-        ///    to avoid smoking. It is also beneficial to engage in a healthy amount of exercise to improve cardiovascular fitness.
+        ///    6 Heaven children need good moral guidance. They have a natural ability to pick up on what is right and need parents and teachers that lead by example.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    The lungs are the seat of grief and it is very important for Heaven energies to frequently &quot;get things off their chest&quot; so that the lung
-        ///    meridian does not become blocked and stressed.
+        ///    It is important for 6 Heaven children not to become overly rigid and opinionated. They should be encouraged to enter into debate and to be more flexible in their standpoint, allowing for differences of opinion.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    In Chinese medicine the lun [rest of string was truncated]&quot;;.
+        ///    6 Heaven children are exceptionally sensitive to criticism. They are naturally hypersensitive, proud and str [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_child {
             get {
@@ -2494,12 +2486,12 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///    6 Heaven characters tend to have a very direct, down-to-earth and uncompromising nature.
+        ///
+        ///    They tend to have very clear opinions about what is fair and ethical and what is not and can be quite opinionated and inflexible in their views. They are certainly not afraid to express their opinion and can be quite sharp and blunt in the way they communicate at times.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        ///    The 6 Heaven character as tremendous leadership potential and others are easily influenced by their actions and opinions [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_emotional_description {
             get {
@@ -2648,15 +2640,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Inner Child.
-        /// </summary>
-        public static string InnerChild {
-            get {
-                return ResourceManager.GetString("InnerChild", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to K&apos;An.
         /// </summary>
         public static string Kan {
@@ -2703,10 +2686,12 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The Metal element controls the function of the large intestine and therefore it is important for 7 Metal energies not to overeat or eat too quickly.
-        ///    Eating late at night is also ill advised. In addition, the regular consumption of fermented foods is highly beneficial as it provides beneficial bacteria
-        ///    which can keep the colon healthy.
-        ///&lt;/p&gt;.
+        ///    7 Lake children are naturally fun-loving and it is very important for them to have plenty of social interaction. 7 Lake children&apos;s naturally gregarious and outgoing character could easily be damanged if they spend too much time alone in their formative years and could lead to their being withdrawn, aloof and introverted later on in life.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    7 Lake children are quite independent and free-spirited and this should be encouraged by allowing them greater freedom.
+        ///
+        ///    However, care must b [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_child {
             get {
@@ -2730,12 +2715,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
-        ///&lt;/p&gt;
+        ///    7 Lake characters are generally very easy-going and adaptable. Many express themselves with great diplomacy and they often have a great capacity to listen to others and to make them feel understood and validated, thanks to their patient and compassionate nature.
         ///&lt;p&gt;
-        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        ///    7 Lake characters typically make great hoses, owing to their charming, laid-back nature. They are usually very expressive and entertaining, with a great sense of humour. They are often extremely witty, and of all the nine characte [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_emotional_description {
             get {
@@ -2930,7 +2912,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Main Energy.
+        ///   Looks up a localized string similar to Fundamental Nature.
+        /// </summary>
+        public static string MainChildLabel {
+            get {
+                return ResourceManager.GetString("MainChildLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fundamental Nature.
         /// </summary>
         public static string MainEnergy {
             get {
@@ -2939,7 +2930,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Main Energy / Adult Persona.
+        ///   Looks up a localized string similar to Fundamental Nature.
         /// </summary>
         public static string MainEnergyLabel {
             get {
@@ -2948,7 +2939,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Adult Persona.
+        ///   Looks up a localized string similar to Fundamental Nature.
         /// </summary>
         public static string MainEnergyShortLabel {
             get {
@@ -3103,7 +3094,8 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    The nine Energies in the 9 Star Ki system, as well as being grouped by Yin or Yang and by the five elements, can also be split into three groups, called the &apos;Modalities&apos;. This is very similar to the Modalities described in the Zodiac. It is another simple yet useful &apos;map&apos; that can be used to understand people&apos;s fundamental nature.
-        ///&lt;/p&gt;.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;You may find it interesting to know that the 9 Star Ki Modalities overlap to a large extent with the Modalities of the Zodiac. The same astral bodies are at pla [rest of string was truncated]&quot;;.
         /// </summary>
         public static string modalities_description {
             get {
@@ -3194,14 +3186,14 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Being highly contemplative can mean that 8 Earth Energies have a tendency to be hypochondriacs as they are overly aware of bodily aches and pains.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Their strength and solidity need to be challenged by movement and exercise and they need to be cautious about becoming overweight.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    As with other Earth energies, attention needs to be paid to the pancreas, which is more prone to imbalances in these individuals. For this reason, refined sugars are
-        ///    especially problematic [rest of string was truncated]&quot;;.
+        ///    8 Mountain children These children are best supported by their parents when they bring out their innate strengths through intellectual argument. 
+        ///    
+        ///    They need to participate in debate and discussion on a whole range of issues at home and at school. 
+        ///    
+        ///    Number 8 children are harmed by over-indulgence. 
+        ///    
+        ///    As the Youngest Son in I Ching symbolism they need to be encouraged to exert self-discipline    
+        ///&lt;/p&gt;.
         /// </summary>
         public static string mountain_child {
             get {
@@ -3226,12 +3218,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///    8 Mountain characters are by far the most private of all of the energies. They value their own space and can be verbally very uncommunicative. Some 8 Mountain characters may find other channels for self expression, such as music, art or through their work.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        ///    The Mountain is a good description of this character, with its hard exterior protecting a much softer underbelly, which is usually only revealed once people get to know them better. Many friends and family turn to 8 Mountain chara [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_emotional_description {
             get {
@@ -3496,6 +3486,15 @@ namespace K9.Globalisation {
         public static string NorthWest {
             get {
                 return ResourceManager.GetString("NorthWest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Does not come into effect until the age of 18.
+        /// </summary>
+        public static string NotInEffectUntilEighteen {
+            get {
+                return ResourceManager.GetString("NotInEffectUntilEighteen", resourceCulture);
             }
         }
         
@@ -3945,9 +3944,15 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Being sensitive by nature, soil energies do not typically have a strong constitution. In Traditional Chinese Medicine, the earth element governs the spleen, pancreas and stomach and
-        ///    there for the lymphatic and immune systems. Soil energies must take extra care to look after these organs with a healthy balanced diet which does not contain excessive carbohydrate.
-        ///    It is also advisable to engage in activities which are calming, such as meditation and yoga, in order to avoid excessive anxiety  [rest of string was truncated]&quot;;.
+        ///    2 Soil children need a lot of consistency from their parents, teachers. Promises should be kept and a steady routine put in place.
+        ///
+        ///    Their character can be damaged if their caregivers frequently break their promises or fail to observe the moral standards they set.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    2 Soil children tend to have a very diplomatic nature, even at an early age. They may often adopt the role of peacemaker when siblings and friends fall out.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    These children have a strong sense of justic [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_child {
             get {
@@ -4145,15 +4150,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Static&lt;/h4&gt;
-        ///&lt;p&gt;
-        ///    Energies 2 Earth, 5 Earth and 8 Earth are &apos;static&apos;. As you can see, they are all of the Earth elements. Earth is by nature steady, solid and reliable.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Energies {soil}, {coreearth} and {mountain} are &apos;static&apos;. As you can see, they are all of the Earth elements. Earth is by nature steady, solid and reliable.
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    Static Energies like to plan ahead and tend to have longer-term goals, which they are good at sticking to. They are pragmatic and can be single-minded when they set their mind on something.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Static people thend to process information slowly and steadily, weighing up the pros and cons. They accumulate kn [rest of string was truncated]&quot;;.
+        ///    Static people thend to process information slowly and steadily, weighing up the pros and cons. They accumulate knowledge gra [rest of string was truncated]&quot;;.
         /// </summary>
         public static string static_modality {
             get {
@@ -4384,17 +4388,15 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The Tree element governs the liver and gallbladder. 
+        ///    It is vital to allow 3 Thunder child to explore his or her talents and interests to the full. 
+        ///    
+        ///    Encourage them to pursue their interests and do any practice necessary.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    It is advisable for thunder energies to avoid eating two to three hours before sleep as well as overeating.
+        ///    3 Thunder children are exceptionally curious. It is important not to discourage them in any way and, whilst their endless questions can be become tiring, try your best not to ignore them, as this can be detrimental to their development.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    It is also wise to avoid too many late nights, as this is the time when the liver repairs itself the most.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Eating an abundance of green leafy vegetables is especially important for thunder energies, 
-        ///    as well as citrus fruits such as lemons, limes and grapefruits and apple cider vinegar, w [rest of string was truncated]&quot;;.
+        ///    3 Thunder children are quite sociable and it&apos;s not uncom [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_child {
             get {
@@ -4418,12 +4420,16 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///    3 Thunder has the full force of spring in its nature, or the dawn.
+        ///
+        ///    3 Thunder characters are forward-thinking and enjoy initiating new projects and
+        ///    discussing new concepts.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///    3 Thunder characters tend to be very lively and energetic. They can also be very verbally expressive and some of the quieter energies may find them a overly talkative at times.
         ///&lt;/p&gt;
-        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;
+        ///    Whilst 3 Thunder characters are full of bright new ideas, they tend to lose interest quickly and may not stick [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_emotional_description {
             get {
@@ -4914,13 +4920,11 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like the other Tree element, Thunder, Wind energies need to take good care of the liver and gall bladder. Unlike Thunder energies who, being yang, are more prone to liver imbalances, yin Wind energies are more likely to experience issues with the yin gall bladder.
+        ///    4 Tree children have tremendous creative potential and can be quite pioneering in the areas that most interest them.
+        ///    It&apos;s important that they get lots of encouragement and appreciation from parents and teachers as well as plenty of inspiration, space and time to explore their talents freely.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    It is important for Wind energies to eat slowly and when relaxed and without distraction. Also, it is better to not eat when not hungry.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    It is best to avoid cold foods and fluids, as this impairs digestion. [rest of string was truncated]&quot;;.
+        ///    If they show early signs of talent in a given field, do not dismiss it. Anything that acts to suppress their creativity and dreams in any way could be extremely damaging to 4 Tree children. [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_child {
             get {
@@ -4930,11 +4934,11 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like the wind, four Wind energies can express anything from stillness to a raging tornado. This energy is one of the most changeable and indeed emotional of the nine energies.
+        ///    Like the wind, 4 Wind energies can express anything from stillness to a raging tornado. This energy is one of the most changeable and indeed emotional of the nine energies.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Like thunder energies, also of the element Tree, Wind energies can be impulsive at times. However, they typically have a gentler, steadier nature than three Tree energies.
-        ///    Similarly, they are generally a lot more reliable and thoughtful than three energies. They are practical and possess much common sense [rest of string was truncated]&quot;;.
+        ///    Like Thunder energies, also of the element Tree, Wind energies can be impulsive at times. However, they typically have a gentler, steadier nature than three Tree energies.
+        ///    Similarly, they are generally a lot more reliable and thoughtful than three energies. They are practical and possess much common sense as [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_description {
             get {
@@ -4944,12 +4948,16 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///    The 4 Wind character is exceptionally adaptable. However, they do require quite a bit of support from others.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///   4 Wind is also called &apos;Wind&apos; and this is quite an apt description, as these characters can be extremely changeable, scatty and unpredictable at times, especially when under stress.
         ///&lt;/p&gt;
-        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;
+        ///    4 Winds have a sensitive and emotional nature, which makes them prone to mood swings at times. They are very open and expressive but gentler than the 3 Tree character.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_emotional_description {
             get {

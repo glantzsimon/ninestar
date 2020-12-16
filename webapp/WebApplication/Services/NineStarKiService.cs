@@ -23,7 +23,7 @@ namespace K9.WebApplication.Services
             var model = new NineStarKiModel(personModel);
 
             model.MainEnergy.EnergyDescription = GetMainEnergyDescription(model.MainEnergy.Energy);
-            model.EmotionalEnergy.EnergyDescription = GetEmotionalEnergyDescription(model.EmotionalEnergy.Energy);
+            model.CharacterEnergy.EnergyDescription = GetCharacterEnergyDescription(model.CharacterEnergy.Energy);
             model.SurfaceEnergy.EnergyDescription = GetSurfaceEnergyDescription(model.SurfaceEnergy.Energy);
             model.Health = GetHealth(model.MainEnergy.Energy);
             model.Occupations = GetOccupations(model.MainEnergy.Energy);
@@ -48,7 +48,7 @@ namespace K9.WebApplication.Services
                 CalculateNineStarKi(new DateTime(1984, 3, 3)),
                 CalculateNineStarKi(new DateTime(1974, 3, 3)),
                 CalculateNineStarKi(new DateTime(1973, 3, 3)),
-            };  
+            };
             var characterEnergies = new List<NineStarKiModel>
             {
                 CalculateNineStarKi(new DateTime(1980, 2, 10)),
@@ -120,304 +120,339 @@ namespace K9.WebApplication.Services
 
         private string GetSummary(NineStarKiModel model)
         {
-            switch (model.MainEnergy.Energy)
+            if (!model.PersonModel.IsAdult())
             {
-                case ENineStarKiEnergy.Water:
-                    switch (model.EmotionalEnergy.Energy)
-                    {
-                        case ENineStarKiEnergy.Water:
-                            return Dictionary._115;
+                switch (model.CharacterEnergy.Energy)
+                {
+                    case ENineStarKiEnergy.Water:
+                        return Dictionary.water_child;
 
-                        case ENineStarKiEnergy.Soil:
-                            return Dictionary._124;
+                    case ENineStarKiEnergy.Soil:
+                        return Dictionary.soil_child;
 
-                        case ENineStarKiEnergy.Thunder:
-                            return Dictionary._133;
+                    case ENineStarKiEnergy.Thunder:
+                        return Dictionary.thunder_child;
 
-                        case ENineStarKiEnergy.Wind:
-                            return Dictionary._142;
+                    case ENineStarKiEnergy.Wind:
+                        return Dictionary.wind_child;
 
-                        case ENineStarKiEnergy.CoreEarth:
-                            return Dictionary._151;
+                    case ENineStarKiEnergy.CoreEarth:
+                        return Dictionary.coreearth_child;
 
-                        case ENineStarKiEnergy.Heaven:
-                            return Dictionary._169;
+                    case ENineStarKiEnergy.Heaven:
+                        return Dictionary.heaven_child;
 
-                        case ENineStarKiEnergy.Lake:
-                            return Dictionary._178;
+                    case ENineStarKiEnergy.Lake:
+                        return Dictionary.lake_child;
 
-                        case ENineStarKiEnergy.Mountain:
-                            return Dictionary._187;
+                    case ENineStarKiEnergy.Mountain:
+                        return Dictionary.mountain_child;
 
-                        case ENineStarKiEnergy.Fire:
-                            return Dictionary._196;
-                    }
+                    case ENineStarKiEnergy.Fire:
+                        return Dictionary.fire_child;
+                }
+            }
+            else
+            {
+                switch (model.MainEnergy.Energy)
+                {
+                    case ENineStarKiEnergy.Water:
+                        switch (model.CharacterEnergy.Energy)
+                        {
+                            case ENineStarKiEnergy.Water:
+                                return Dictionary._115;
 
-                    break;
+                            case ENineStarKiEnergy.Soil:
+                                return Dictionary._124;
 
-                case ENineStarKiEnergy.Soil:
-                    switch (model.EmotionalEnergy.Energy)
-                    {
-                        case ENineStarKiEnergy.Water:
-                            return Dictionary._216;
+                            case ENineStarKiEnergy.Thunder:
+                                return Dictionary._133;
 
-                        case ENineStarKiEnergy.Soil:
-                            return Dictionary._225;
+                            case ENineStarKiEnergy.Wind:
+                                return Dictionary._142;
 
-                        case ENineStarKiEnergy.Thunder:
-                            return Dictionary._234;
+                            case ENineStarKiEnergy.CoreEarth:
+                                return Dictionary._151;
 
-                        case ENineStarKiEnergy.Wind:
-                            return Dictionary._243;
+                            case ENineStarKiEnergy.Heaven:
+                                return Dictionary._169;
 
-                        case ENineStarKiEnergy.CoreEarth:
-                            return Dictionary._252;
+                            case ENineStarKiEnergy.Lake:
+                                return Dictionary._178;
 
-                        case ENineStarKiEnergy.Heaven:
-                            return Dictionary._261;
+                            case ENineStarKiEnergy.Mountain:
+                                return Dictionary._187;
 
-                        case ENineStarKiEnergy.Lake:
-                            return Dictionary._279;
+                            case ENineStarKiEnergy.Fire:
+                                return Dictionary._196;
+                        }
 
-                        case ENineStarKiEnergy.Mountain:
-                            return Dictionary._288;
+                        break;
 
-                        case ENineStarKiEnergy.Fire:
-                            return Dictionary._297;
-                    }
+                    case ENineStarKiEnergy.Soil:
+                        switch (model.CharacterEnergy.Energy)
+                        {
+                            case ENineStarKiEnergy.Water:
+                                return Dictionary._216;
 
-                    break;
+                            case ENineStarKiEnergy.Soil:
+                                return Dictionary._225;
 
-                case ENineStarKiEnergy.Thunder:
-                    switch (model.EmotionalEnergy.Energy)
-                    {
-                        case ENineStarKiEnergy.Water:
-                            return Dictionary._317;
+                            case ENineStarKiEnergy.Thunder:
+                                return Dictionary._234;
 
-                        case ENineStarKiEnergy.Soil:
-                            return Dictionary._326;
+                            case ENineStarKiEnergy.Wind:
+                                return Dictionary._243;
 
-                        case ENineStarKiEnergy.Thunder:
-                            return Dictionary._335;
+                            case ENineStarKiEnergy.CoreEarth:
+                                return Dictionary._252;
 
-                        case ENineStarKiEnergy.Wind:
-                            return Dictionary._344;
+                            case ENineStarKiEnergy.Heaven:
+                                return Dictionary._261;
 
-                        case ENineStarKiEnergy.CoreEarth:
-                            return Dictionary._353;
+                            case ENineStarKiEnergy.Lake:
+                                return Dictionary._279;
 
-                        case ENineStarKiEnergy.Heaven:
-                            return Dictionary._362;
+                            case ENineStarKiEnergy.Mountain:
+                                return Dictionary._288;
 
-                        case ENineStarKiEnergy.Lake:
-                            return Dictionary._371;
+                            case ENineStarKiEnergy.Fire:
+                                return Dictionary._297;
+                        }
 
-                        case ENineStarKiEnergy.Mountain:
-                            return Dictionary._389;
+                        break;
 
-                        case ENineStarKiEnergy.Fire:
-                            return Dictionary._398;
-                    }
+                    case ENineStarKiEnergy.Thunder:
+                        switch (model.CharacterEnergy.Energy)
+                        {
+                            case ENineStarKiEnergy.Water:
+                                return Dictionary._317;
 
-                    break;
+                            case ENineStarKiEnergy.Soil:
+                                return Dictionary._326;
 
-                case ENineStarKiEnergy.Wind:
-                    switch (model.EmotionalEnergy.Energy)
-                    {
-                        case ENineStarKiEnergy.Water:
-                            return Dictionary._418;
+                            case ENineStarKiEnergy.Thunder:
+                                return Dictionary._335;
 
-                        case ENineStarKiEnergy.Soil:
-                            return Dictionary._427;
+                            case ENineStarKiEnergy.Wind:
+                                return Dictionary._344;
 
-                        case ENineStarKiEnergy.Thunder:
-                            return Dictionary._436;
+                            case ENineStarKiEnergy.CoreEarth:
+                                return Dictionary._353;
 
-                        case ENineStarKiEnergy.Wind:
-                            return Dictionary._445;
+                            case ENineStarKiEnergy.Heaven:
+                                return Dictionary._362;
 
-                        case ENineStarKiEnergy.CoreEarth:
-                            return Dictionary._454;
+                            case ENineStarKiEnergy.Lake:
+                                return Dictionary._371;
 
-                        case ENineStarKiEnergy.Heaven:
-                            return Dictionary._463;
+                            case ENineStarKiEnergy.Mountain:
+                                return Dictionary._389;
 
-                        case ENineStarKiEnergy.Lake:
-                            return Dictionary._472;
+                            case ENineStarKiEnergy.Fire:
+                                return Dictionary._398;
+                        }
 
-                        case ENineStarKiEnergy.Mountain:
-                            return Dictionary._481;
+                        break;
 
-                        case ENineStarKiEnergy.Fire:
-                            return Dictionary._499;
-                    }
+                    case ENineStarKiEnergy.Wind:
+                        switch (model.CharacterEnergy.Energy)
+                        {
+                            case ENineStarKiEnergy.Water:
+                                return Dictionary._418;
 
-                    return string.Empty;
+                            case ENineStarKiEnergy.Soil:
+                                return Dictionary._427;
 
-                case ENineStarKiEnergy.CoreEarth:
-                    switch (model.EmotionalEnergy.Energy)
-                    {
-                        case ENineStarKiEnergy.Water:
-                            return Dictionary._519;
+                            case ENineStarKiEnergy.Thunder:
+                                return Dictionary._436;
 
-                        case ENineStarKiEnergy.Soil:
-                            return Dictionary._528;
+                            case ENineStarKiEnergy.Wind:
+                                return Dictionary._445;
 
-                        case ENineStarKiEnergy.Thunder:
-                            return Dictionary._537;
+                            case ENineStarKiEnergy.CoreEarth:
+                                return Dictionary._454;
 
-                        case ENineStarKiEnergy.Wind:
-                            return Dictionary._546;
+                            case ENineStarKiEnergy.Heaven:
+                                return Dictionary._463;
 
-                        case ENineStarKiEnergy.CoreEarth:
-                            return Dictionary._555;
+                            case ENineStarKiEnergy.Lake:
+                                return Dictionary._472;
 
-                        case ENineStarKiEnergy.Heaven:
-                            return Dictionary._564;
+                            case ENineStarKiEnergy.Mountain:
+                                return Dictionary._481;
 
-                        case ENineStarKiEnergy.Lake:
-                            return Dictionary._573;
+                            case ENineStarKiEnergy.Fire:
+                                return Dictionary._499;
+                        }
 
-                        case ENineStarKiEnergy.Mountain:
-                            return Dictionary._582;
+                        return string.Empty;
 
-                        case ENineStarKiEnergy.Fire:
-                            return Dictionary._591;
-                    }
+                    case ENineStarKiEnergy.CoreEarth:
+                        switch (model.CharacterEnergy.Energy)
+                        {
+                            case ENineStarKiEnergy.Water:
+                                return Dictionary._519;
 
-                    return string.Empty;
+                            case ENineStarKiEnergy.Soil:
+                                return Dictionary._528;
 
-                case ENineStarKiEnergy.Heaven:
-                    switch (model.EmotionalEnergy.Energy)
-                    {
-                        case ENineStarKiEnergy.Water:
-                            return Dictionary._611;
+                            case ENineStarKiEnergy.Thunder:
+                                return Dictionary._537;
 
-                        case ENineStarKiEnergy.Soil:
-                            return Dictionary._629;
+                            case ENineStarKiEnergy.Wind:
+                                return Dictionary._546;
 
-                        case ENineStarKiEnergy.Thunder:
-                            return Dictionary._638;
+                            case ENineStarKiEnergy.CoreEarth:
+                                return Dictionary._555;
 
-                        case ENineStarKiEnergy.Wind:
-                            return Dictionary._647;
+                            case ENineStarKiEnergy.Heaven:
+                                return Dictionary._564;
 
-                        case ENineStarKiEnergy.CoreEarth:
-                            return Dictionary._656;
+                            case ENineStarKiEnergy.Lake:
+                                return Dictionary._573;
 
-                        case ENineStarKiEnergy.Heaven:
-                            return Dictionary._665;
+                            case ENineStarKiEnergy.Mountain:
+                                return Dictionary._582;
 
-                        case ENineStarKiEnergy.Lake:
-                            return Dictionary._674;
+                            case ENineStarKiEnergy.Fire:
+                                return Dictionary._591;
+                        }
 
-                        case ENineStarKiEnergy.Mountain:
-                            return Dictionary._683;
+                        return string.Empty;
 
-                        case ENineStarKiEnergy.Fire:
-                            return Dictionary._692;
-                    }
+                    case ENineStarKiEnergy.Heaven:
+                        switch (model.CharacterEnergy.Energy)
+                        {
+                            case ENineStarKiEnergy.Water:
+                                return Dictionary._611;
 
-                    return string.Empty;
+                            case ENineStarKiEnergy.Soil:
+                                return Dictionary._629;
 
-                case ENineStarKiEnergy.Lake:
-                    switch (model.EmotionalEnergy.Energy)
-                    {
-                        case ENineStarKiEnergy.Water:
-                            return Dictionary._712;
+                            case ENineStarKiEnergy.Thunder:
+                                return Dictionary._638;
 
-                        case ENineStarKiEnergy.Soil:
-                            return Dictionary._721;
+                            case ENineStarKiEnergy.Wind:
+                                return Dictionary._647;
 
-                        case ENineStarKiEnergy.Thunder:
-                            return Dictionary._739;
+                            case ENineStarKiEnergy.CoreEarth:
+                                return Dictionary._656;
 
-                        case ENineStarKiEnergy.Wind:
-                            return Dictionary._748;
+                            case ENineStarKiEnergy.Heaven:
+                                return Dictionary._665;
 
-                        case ENineStarKiEnergy.CoreEarth:
-                            return Dictionary._757;
+                            case ENineStarKiEnergy.Lake:
+                                return Dictionary._674;
 
-                        case ENineStarKiEnergy.Heaven:
-                            return Dictionary._766;
+                            case ENineStarKiEnergy.Mountain:
+                                return Dictionary._683;
 
-                        case ENineStarKiEnergy.Lake:
-                            return Dictionary._775;
+                            case ENineStarKiEnergy.Fire:
+                                return Dictionary._692;
+                        }
 
-                        case ENineStarKiEnergy.Mountain:
-                            return Dictionary._784;
+                        return string.Empty;
 
-                        case ENineStarKiEnergy.Fire:
-                            return Dictionary._793;
-                    }
+                    case ENineStarKiEnergy.Lake:
+                        switch (model.CharacterEnergy.Energy)
+                        {
+                            case ENineStarKiEnergy.Water:
+                                return Dictionary._712;
 
-                    return string.Empty;
+                            case ENineStarKiEnergy.Soil:
+                                return Dictionary._721;
 
-                case ENineStarKiEnergy.Mountain:
-                    switch (model.EmotionalEnergy.Energy)
-                    {
-                        case ENineStarKiEnergy.Water:
-                            return Dictionary._813;
+                            case ENineStarKiEnergy.Thunder:
+                                return Dictionary._739;
 
-                        case ENineStarKiEnergy.Soil:
-                            return Dictionary._822;
+                            case ENineStarKiEnergy.Wind:
+                                return Dictionary._748;
 
-                        case ENineStarKiEnergy.Thunder:
-                            return Dictionary._831;
+                            case ENineStarKiEnergy.CoreEarth:
+                                return Dictionary._757;
 
-                        case ENineStarKiEnergy.Wind:
-                            return Dictionary._849;
+                            case ENineStarKiEnergy.Heaven:
+                                return Dictionary._766;
 
-                        case ENineStarKiEnergy.CoreEarth:
-                            return Dictionary._858;
+                            case ENineStarKiEnergy.Lake:
+                                return Dictionary._775;
 
-                        case ENineStarKiEnergy.Heaven:
-                            return Dictionary._867;
+                            case ENineStarKiEnergy.Mountain:
+                                return Dictionary._784;
 
-                        case ENineStarKiEnergy.Lake:
-                            return Dictionary._876;
+                            case ENineStarKiEnergy.Fire:
+                                return Dictionary._793;
+                        }
 
-                        case ENineStarKiEnergy.Mountain:
-                            return Dictionary._885;
+                        return string.Empty;
 
-                        case ENineStarKiEnergy.Fire:
-                            return Dictionary._894;
-                    }
+                    case ENineStarKiEnergy.Mountain:
+                        switch (model.CharacterEnergy.Energy)
+                        {
+                            case ENineStarKiEnergy.Water:
+                                return Dictionary._813;
 
-                    return string.Empty;
+                            case ENineStarKiEnergy.Soil:
+                                return Dictionary._822;
 
-                case ENineStarKiEnergy.Fire:
-                    switch (model.EmotionalEnergy.Energy)
-                    {
-                        case ENineStarKiEnergy.Water:
-                            return Dictionary._914;
+                            case ENineStarKiEnergy.Thunder:
+                                return Dictionary._831;
 
-                        case ENineStarKiEnergy.Soil:
-                            return Dictionary._923;
+                            case ENineStarKiEnergy.Wind:
+                                return Dictionary._849;
 
-                        case ENineStarKiEnergy.Thunder:
-                            return Dictionary._932;
+                            case ENineStarKiEnergy.CoreEarth:
+                                return Dictionary._858;
 
-                        case ENineStarKiEnergy.Wind:
-                            return Dictionary._941;
+                            case ENineStarKiEnergy.Heaven:
+                                return Dictionary._867;
 
-                        case ENineStarKiEnergy.CoreEarth:
-                            return Dictionary._959;
+                            case ENineStarKiEnergy.Lake:
+                                return Dictionary._876;
 
-                        case ENineStarKiEnergy.Heaven:
-                            return Dictionary._968;
+                            case ENineStarKiEnergy.Mountain:
+                                return Dictionary._885;
 
-                        case ENineStarKiEnergy.Lake:
-                            return Dictionary._977;
+                            case ENineStarKiEnergy.Fire:
+                                return Dictionary._894;
+                        }
 
-                        case ENineStarKiEnergy.Mountain:
-                            return Dictionary._986;
+                        return string.Empty;
 
-                        case ENineStarKiEnergy.Fire:
-                            return Dictionary._995;
-                    }
+                    case ENineStarKiEnergy.Fire:
+                        switch (model.CharacterEnergy.Energy)
+                        {
+                            case ENineStarKiEnergy.Water:
+                                return Dictionary._914;
 
-                    return string.Empty;
+                            case ENineStarKiEnergy.Soil:
+                                return Dictionary._923;
+
+                            case ENineStarKiEnergy.Thunder:
+                                return Dictionary._932;
+
+                            case ENineStarKiEnergy.Wind:
+                                return Dictionary._941;
+
+                            case ENineStarKiEnergy.CoreEarth:
+                                return Dictionary._959;
+
+                            case ENineStarKiEnergy.Heaven:
+                                return Dictionary._968;
+
+                            case ENineStarKiEnergy.Lake:
+                                return Dictionary._977;
+
+                            case ENineStarKiEnergy.Mountain:
+                                return Dictionary._986;
+
+                            case ENineStarKiEnergy.Fire:
+                                return Dictionary._995;
+                        }
+
+                        return string.Empty;
+                }
             }
 
             return string.Empty;
@@ -458,7 +493,7 @@ namespace K9.WebApplication.Services
             return string.Empty;
         }
 
-        private string GetEmotionalEnergyDescription(ENineStarKiEnergy energy)
+        private string GetCharacterEnergyDescription(ENineStarKiEnergy energy)
         {
             switch (energy)
             {
@@ -632,6 +667,6 @@ namespace K9.WebApplication.Services
 
             return string.Empty;
         }
-       
+
     }
 }

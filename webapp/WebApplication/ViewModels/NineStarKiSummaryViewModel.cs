@@ -19,7 +19,7 @@ namespace K9.WebApplication.ViewModels
             List<NineStarKiEnergy> staticEnergies,
             List<NineStarKiEnergy> flexibleEnergies)
         {
-            CharacterEnergies = characterEnergies.Select(e => e.EmotionalEnergy).ToList();
+            CharacterEnergies = characterEnergies.Select(e => e.CharacterEnergy).ToList();
             MainEnergies = mainEnergies.Select(e => e.MainEnergy).ToList();
             DynamicEnergies = new NineStarKiModalitySummaryViewModel(ENineStarKiModality.Dynamic, dynamicEnergies);
             StaticEnergies = new NineStarKiModalitySummaryViewModel(ENineStarKiModality.Static, staticEnergies); ;

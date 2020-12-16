@@ -21,12 +21,12 @@ namespace K9.WebApplication.Models
             Today = DateTime.Now;
 
             MainEnergy = GetMainEnergy(PersonModel.DateOfBirth, PersonModel.Gender);
-            EmotionalEnergy = GetEmotionalEnergy(PersonModel.DateOfBirth, MainEnergy.Energy, personModel.Gender);
+            CharacterEnergy = GetCharacterEnergy(PersonModel.DateOfBirth, MainEnergy.Energy, personModel.Gender);
             SurfaceEnergy = GetSurfaceEnergy();
             LifeCycleYearEnergy = GetLifeCycleYearEnergy();
             LifeCycleMonthEnergy = GetLifeCycleMonthEnergy();
 
-            MainEnergy.RelatedEnergy = EmotionalEnergy.Energy;
+            MainEnergy.RelatedEnergy = CharacterEnergy.Energy;
         }
 
         public PersonModel PersonModel { get; }
@@ -34,8 +34,8 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MainEnergyLabel)]
         public NineStarKiEnergy MainEnergy { get; }
 
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EmotionalEnergyLabel)]
-        public NineStarKiEnergy EmotionalEnergy { get; }
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CharacterEnergyLabel)]
+        public NineStarKiEnergy CharacterEnergy { get; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SurfaceEnergyLabel)]
         public NineStarKiEnergy SurfaceEnergy { get; }
@@ -48,7 +48,7 @@ namespace K9.WebApplication.Models
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HealthLabel)]
         public string Health { get; set; }
-        
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.OccupationsLabel)]
         public string Occupations { get; set; }
 
@@ -71,7 +71,7 @@ namespace K9.WebApplication.Models
         public ENineStarKiEnergy LifeCycleMonthEnergy { get; }
 
         public bool IsProcessed { get; set; } = false;
-    
+        
         private NineStarKiEnergy GetMainEnergy(DateTime date, EGender gender)
         {
             var month = date.Month;
@@ -87,7 +87,7 @@ namespace K9.WebApplication.Models
             return nineStarKiEnergy;
         }
 
-        private NineStarKiEnergy GetEmotionalEnergy(DateTime date, ENineStarKiEnergy energy, EGender gender)
+        private NineStarKiEnergy GetCharacterEnergy(DateTime date, ENineStarKiEnergy energy, EGender gender)
         {
             var energyNumber = 0;
             var month = date.Month;
@@ -189,12 +189,12 @@ namespace K9.WebApplication.Models
                     break;
             }
 
-            return ProcessEnergy(energyNumber, gender, ENineStarKiEnergyType.EmotionalEnergy);
+            return ProcessEnergy(energyNumber, gender, ENineStarKiEnergyType.CharacterEnergy);
         }
 
         private NineStarKiEnergy GetSurfaceEnergy()
         {
-            return ProcessEnergy(5 - (EmotionalEnergy.EnergyNumber - MainEnergy.EnergyNumber), EGender.Male, ENineStarKiEnergyType.SurfaceEnergy);
+            return ProcessEnergy(5 - (CharacterEnergy.EnergyNumber - MainEnergy.EnergyNumber), EGender.Male, ENineStarKiEnergyType.SurfaceEnergy);
         }
 
         private ENineStarKiEnergy GetLifeCycleYearEnergy()
@@ -210,7 +210,7 @@ namespace K9.WebApplication.Models
         private ENineStarKiEnergy GetLifeCycleMonthEnergy()
         {
             var yearEnergy = GetLifeCycleYearEnergy();
-            return GetEmotionalEnergy(Today, yearEnergy, MainEnergy.Gender).Energy;
+            return GetCharacterEnergy(Today, yearEnergy, MainEnergy.Gender).Energy;
         }
 
         private NineStarKiEnergy ProcessEnergy(int energyNumber, EGender gender, ENineStarKiEnergyType type = ENineStarKiEnergyType.MainEnergy)
@@ -221,7 +221,7 @@ namespace K9.WebApplication.Models
                 energyNumber = InvertEnergy(energyNumber);
             }
 
-            return new NineStarKiEnergy((ENineStarKiEnergy)energyNumber, type);
+            return new NineStarKiEnergy((ENineStarKiEnergy)energyNumber, type, PersonModel.IsAdult());
         }
 
         /// <summary>
@@ -274,6 +274,5 @@ namespace K9.WebApplication.Models
                     return energyNumber;
             }
         }
-
     }
 }

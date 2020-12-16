@@ -133,8 +133,8 @@ namespace K9.WebApplication.Models
     {
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.MainEnergy)]
         MainEnergy,
-        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.EmotionalEnergy)]
-        EmotionalEnergy,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.CharacterEnergy)]
+        CharacterEnergy,
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.SurfaceEnergy)]
         SurfaceEnergy,
     }
@@ -165,10 +165,11 @@ namespace K9.WebApplication.Models
 
     public class NineStarKiEnergy
     {
-        public NineStarKiEnergy(ENineStarKiEnergy energy, ENineStarKiEnergyType type)
+        public NineStarKiEnergy(ENineStarKiEnergy energy, ENineStarKiEnergyType type, bool isAdult = true)
         {
             Energy = energy;
             EnergyType = type;
+            IsAdult = isAdult;
         }
 
         public ENineStarKiEnergy Energy { get; }
@@ -183,13 +184,15 @@ namespace K9.WebApplication.Models
         /// </summary>
         public EGender Gender { get; set; }
 
+        public bool IsAdult { get; set; }
+
         public ENineStarKiEnergyType EnergyType { get; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyDescriptionLabel)]
         public string EnergyDescription { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ChildLabel)]
-        public string ChildDescription => EnergyType == ENineStarKiEnergyType.EmotionalEnergy ? GetChild() : string.Empty;
+        public string ChildDescription => EnergyType == ENineStarKiEnergyType.CharacterEnergy ? GetChildDescription() : string.Empty;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyLabel)]
         public string EnergyName => MetaData.GetDescription();
@@ -202,7 +205,7 @@ namespace K9.WebApplication.Models
         public string EnergyDescriptiveNameAndNumber => $"{EnergyNumber} {EnergyName}";
 
         public string FullEnergyDetailsTitle => GetFullEnergyDetailsTitle();
-
+        
         public int EnergyNumber => (int)Energy;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.YinYangLabel)]
@@ -246,6 +249,10 @@ namespace K9.WebApplication.Models
 
         public string Direction => MetaData.GetDirection();
 
+        public string AdultEnergyLabel => GetAdultEnergyLabel();
+
+        public string CharacteEnergyLabel => GetCharacterEnergyLabel();
+        
         private string GetFullEnergyDetailsTitle()
         {
             return EnergyType == ENineStarKiEnergyType.MainEnergy
@@ -307,7 +314,7 @@ namespace K9.WebApplication.Models
             return ENineStarKiModality.Unspecified;
         }
 
-        private string GetChild()
+        private string GetChildDescription()
         {
             switch (Energy)
             {
@@ -369,7 +376,7 @@ namespace K9.WebApplication.Models
             return string.Empty;
         }
 
-        public string GetModalityDescription()
+        private string GetModalityDescription()
         {
             switch (Modality)
             {
@@ -383,6 +390,16 @@ namespace K9.WebApplication.Models
                 default:
                     return string.Empty;
             }
+        }
+
+        private string GetAdultEnergyLabel()
+        {
+            return IsAdult ? Dictionary.MainEnergyLabel : Dictionary.AdultPersona;
+        }
+
+        private string GetCharacterEnergyLabel()
+        {
+            return IsAdult ? Dictionary.CharacterEnergyLabel : Dictionary.MainChildLabel;
         }
     }
 }

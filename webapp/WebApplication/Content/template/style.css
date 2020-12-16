@@ -817,3 +817,7 @@ a.collapsible-panel-link {
 .panel-default:last-of-type {
     margin-bottom: 0;
 }
+
+.panel-body {
+    padding-top: 20px;
+}

@@ -1,0 +1,23 @@
+﻿@using System.Web.Mvc.Html
+@model NewsItem
+@{
+    ViewBag.Title = K9.Globalisation.Dictionary.News;
+}
+
+@Html.Partial("_SponsorIbogaBanner")
+<div id="main-banner" class="banner-default main-menu">
+    @Html.Partial("_Navbar")
+</div>
+
+<div class="main-section">
+    <div class="container">
+        <div class="main-heading">
+            <h4 class="text-black" style="font-size: 1.5em; margin-top: 20px;">@Model.Subject</h4>
+        </div>
+    </div>
+    @Html.Partial("_NewsItem", Model)
+
+    <div class="text-center">
+        @Html.BootstrapActionLinkButton(Dictionary.BackToList, "Index", "News", null, "fa-chevron-left", EButtonClass.Large)
+    </div>
+</div>

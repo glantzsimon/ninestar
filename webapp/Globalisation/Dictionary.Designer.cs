@@ -1198,7 +1198,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to While using this site, you agree to have read and accepted our terms of use, cookie and &lt;a target=&quot;_blank&quot; href=&quot;{privacypolicyurl}&quot;&gt;privacy policy&lt;/a&gt;.
+        ///   Looks up a localized string similar to Whilst using this site, you agree to have read and accepted our &lt;a target=&quot;_blank&quot; href=&quot;{privacypolicyurl}&quot;&gt;terms of use, cookie and privacy policy&lt;/a&gt;.
         /// </summary>
         public static string AgreeToTerms {
             get {
@@ -2656,6 +2656,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Multimedia.
+        /// </summary>
+        public static string MediaTheque {
+            get {
+                return ResourceManager.GetString("MediaTheque", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;div&gt;&lt;strong&gt;Your membership will also help to fund:&lt;/strong&gt;&lt;/div&gt;
         ///&lt;br /&gt;
         ///&lt;ul&gt;
@@ -2941,6 +2950,15 @@ namespace K9.Globalisation {
         public static string mountain_trigram {
             get {
                 return ResourceManager.GetString("mountain_trigram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to News.
+        /// </summary>
+        public static string News {
+            get {
+                return ResourceManager.GetString("News", resourceCulture);
             }
         }
         

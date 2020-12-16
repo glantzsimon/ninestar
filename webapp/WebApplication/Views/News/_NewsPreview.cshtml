@@ -1,0 +1,54 @@
+﻿@using System.Web.Mvc.Html
+@using K9.Base.DataAccessLayer.Enums
+@using K9.Base.WebApplication.ViewModels
+@using K9.WebApplication.Extensions
+@model NewsItem
+
+<div class="list-item-container container scrollFadeUp">
+    <div class="col-md-5 padding-top-6">
+        @if (Model.Type == ENewsItemType.Article)
+        {
+            @Html.Partial("_ImageFilesDisplay", new FileSourceViewModel(Model.ImageFileSource))
+        }
+        else if (Model.Type == ENewsItemType.Video)
+        {
+            if (!string.IsNullOrEmpty(Model.Url))
+            {
+                @Html.Partial("_EmbeddedVideo", Model.Url)
+            }
+            else
+            {
+                @Html.Partial("_VideoFilesDisplay", new FileSourceViewModel(Model.VideoFileSource))
+            }
+        }
+        else if (Model.Type == ENewsItemType.Link)
+        {
+            @Html.Partial("_LinkPreview", new LinkViewModel
+            {
+                Url = Model.Url,
+                ImageUrl = Model.ImageUrl,
+                CssClasses = Model.AdditionalCssClasses
+            })
+        }
+    </div>
+    <div class="col-md-7" id="@Model.Id">
+        <div class="news-item-title">
+            <p><strong>@Dictionary.PublishedOnLabel</strong>: @Model.PublishedOn.ToLongDateString()</p>
+            <p><strong>@Dictionary.PublishedByLabel</strong>: @Model.PublishedBy</p>
+            <p><strong>@Dictionary.LanguageLabel</strong>: @Model.LanguageName</p>
+            @if (Model.Type == ENewsItemType.Link)
+            {
+                <p><strong>@Dictionary.Source</strong>: <a target="_blank" href="@Model.Url">@Model.Url</a></p>
+            }
+        </div>
+        <h5>
+            <a href="@Url.Action("Details", new {subject = Model.SeoFriendlyId ?? Model.Subject.ToSeoFriendlyString()})">@MvcHtmlString.Create(Model.Subject)</a>
+        </h5>
+        <article>
+            <p>
+                @MvcHtmlString.Create(Model.Body)
+            </p>
+        </article>
+    </div>
+    <div class="clearfix"> </div>
+</div>

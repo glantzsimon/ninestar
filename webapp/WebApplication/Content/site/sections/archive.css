@@ -34,6 +34,6 @@ audio, video {
     background-position-y: top;
 }
 
-.link-image-preview.valign-bottom {
-    background-position-y: bottom;
-}
+    .link-image-preview.valign-bottom {
+        background-position-y: bottom;
+    }

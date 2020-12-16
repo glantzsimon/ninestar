@@ -1282,4 +1282,10 @@
   <data name="YourCurrentMembership" xml:space="preserve">
     <value>Your Current Subscription</value>
   </data>
+  <data name="MediaTheque" xml:space="preserve">
+    <value>Multimedia</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>News</value>
+  </data>
 </root>

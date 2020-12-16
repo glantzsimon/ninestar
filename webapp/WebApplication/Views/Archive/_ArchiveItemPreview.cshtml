@@ -1,4 +1,5 @@
 ﻿@using K9.Base.WebApplication.ViewModels
+@using K9.WebApplication.Extensions
 @model ArchiveItem
 
 <div class="archive-content-item scrollFadeUp">
@@ -14,6 +15,9 @@
             }
         </div>
     }
+    <h5>
+        <a href="@Url.Action("Details", new {title = Model.SeoFriendlyId ?? Model.Title.ToSeoFriendlyString()})">@MvcHtmlString.Create(Model.Title.ToUpper())</a>
+    </h5>
     <article>
         <p>
             @MvcHtmlString.Create(Model.DescriptionText)

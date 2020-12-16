@@ -18,6 +18,7 @@ using System.Linq;
 using System.Web.Mvc;
 using K9.WebApplication.Models;
 using K9.WebApplication.Services;
+using K9.WebApplication.ViewModels;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers

@@ -1,7 +1,7 @@
 ﻿using K9.Base.DataAccessLayer.Models;
 using K9.DataAccessLayer.Models;
 
-namespace K9.WebApplication.Models
+namespace K9.WebApplication.ViewModels
 {
     public class MyAccountViewModel
     {

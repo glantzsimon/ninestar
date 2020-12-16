@@ -1,16 +1,14 @@
 ﻿@using K9.WebApplication.Helpers
 @model K9.Base.WebApplication.ViewModels.ArchiveViewModel
 @{
-    ViewBag.Title = Dictionary.Archive;
+    ViewBag.Title = K9.Globalisation.Dictionary.MediaTheque;
+    Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
 }
 
-<div id="main-banner" class="banner-default main-menu">
-    @Html.Partial("_Navbar")
-</div>
 <div class="main-section">
     <div class="container">
         <div class="main-heading">
-            <h3>@Dictionary.Archive</h3>
+            <h3>@K9.Globalisation.Dictionary.MediaTheque</h3>
         </div>
     </div>
     <div class="container">
@@ -25,7 +23,7 @@
                         foreach (var item in Model.SelectedArchive.Items)
                         {
                             <div class="list-item-container">
-                                @Html.Partial("_ArchiveItem", item)
+                                @Html.Partial("_ArchiveItemPreview", item)
                             </div>
                             @Html.Separator()
                         }

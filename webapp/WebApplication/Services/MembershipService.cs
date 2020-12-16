@@ -4,6 +4,7 @@ using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.Models;
 using K9.WebApplication.Services.Stripe;
+using K9.WebApplication.ViewModels;
 using NLog;
 using System;
 using System.Collections.Generic;

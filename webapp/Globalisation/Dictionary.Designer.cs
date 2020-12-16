@@ -1484,6 +1484,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Whilst using this site, you agree to have read and accepted our &lt;a target=&quot;_blank&quot; href=&quot;{privacypolicyurl}&quot;&gt;terms of use, cookie and privacy policy&lt;/a&gt;.
+        /// </summary>
+        public static string CharacterEnergyDescription {
+            get {
+                return ResourceManager.GetString("CharacterEnergyDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Deeper Character.
         /// </summary>
         public static string CharacterEnergyLabel {
@@ -2953,6 +2962,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Whilst using this site, you agree to have read and accepted our &lt;a target=&quot;_blank&quot; href=&quot;{privacypolicyurl}&quot;&gt;terms of use, cookie and privacy policy&lt;/a&gt;.
+        /// </summary>
+        public static string MainEnergyDescription {
+            get {
+                return ResourceManager.GetString("MainEnergyDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fundamental Nature.
         /// </summary>
         public static string MainEnergyLabel {
@@ -4315,6 +4333,15 @@ namespace K9.Globalisation {
         public static string SupportQuery {
             get {
                 return ResourceManager.GetString("SupportQuery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Whilst using this site, you agree to have read and accepted our &lt;a target=&quot;_blank&quot; href=&quot;{privacypolicyurl}&quot;&gt;terms of use, cookie and privacy policy&lt;/a&gt;.
+        /// </summary>
+        public static string SurfaceEnergyDescription {
+            get {
+                return ResourceManager.GetString("SurfaceEnergyDescription", resourceCulture);
             }
         }
         

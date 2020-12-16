@@ -1,4 +1,5 @@
-﻿@model K9.WebApplication.Models.NineStarKiModel
+﻿@using K9.WebApplication.Helpers
+@model K9.WebApplication.Models.NineStarKiModel
 
 @{
     var adultActiveClass = Model.PersonModel.IsAdult() ? "in active" : "disabled";
@@ -25,16 +26,24 @@
 
         <div class="tab-content">
             <div id="adult" class="tab-pane fade @adultActiveClass">
+                @Html.Panel(Dictionary.DescriptionLabel, K9.Globalisation.Dictionary.MainEnergyDescription)
+
                 @Html.Partial("_NineStarHeader", Model.MainEnergy)
                 <hr />
                 @Html.Partial("_NineStarDetail", Model)
             </div>
+            
             <div id="emotional" class="tab-pane fade @childActiveClass">
+                @Html.Panel(Dictionary.DescriptionLabel, K9.Globalisation.Dictionary.CharacterEnergyDescription)
+
                 @Html.Partial("_NineStarHeader", Model.CharacterEnergy)
                 <hr />
                 @Html.Partial("_NineStarBody", Model.CharacterEnergy)
             </div>
+            
             <div id="surface" class="tab-pane fade">
+                @Html.Panel(Dictionary.DescriptionLabel, K9.Globalisation.Dictionary.SurfaceEnergyDescription)
+
                 @Html.Partial("_NineStarHeader", Model.SurfaceEnergy)
                 <hr />
                 @Html.Partial("_NineStarBody", Model.SurfaceEnergy)

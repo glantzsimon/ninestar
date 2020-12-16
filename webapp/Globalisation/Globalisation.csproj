@@ -284,6 +284,9 @@
     <Content Include="Templates\en-gb\PasswordResetEmail.htm" />
     <Content Include="Templates\en-gb\SupportQuery.htm" />
     <Content Include="Templates\en-gb\WelcomeEmail.htm" />
+    <Content Include="Text\en-gb\SurfaceEnergyDescription.htm" />
+    <Content Include="Text\en-gb\CharacterEnergyDescription.htm" />
+    <Content Include="Text\en-gb\MainEnergyDescription.htm" />
     <Content Include="Text\en-gb\cookies-blurb.txt" />
     <Content Include="Text\en-gb\AgreeToTerms.htm" />
     <Content Include="Text\en-gb\PrivacyPolicy.htm" />

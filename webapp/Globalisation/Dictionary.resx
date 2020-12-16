@@ -1378,4 +1378,13 @@
   <data name="Here" xml:space="preserve">
     <value>Here</value>
   </data>
+  <data name="CharacterEnergyDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>text\en-gb\characterenergydescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="MainEnergyDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>text\en-gb\mainenergydescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SurfaceEnergyDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>text\en-gb\surfaceenergydescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

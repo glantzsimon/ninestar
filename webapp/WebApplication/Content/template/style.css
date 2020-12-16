@@ -821,3 +821,8 @@ a.collapsible-panel-link {
 .panel-body {
     padding-top: 20px;
 }
+
+.tab-pane .panel {
+    margin-top: 20px;
+    margin-bottom: 0;
+}

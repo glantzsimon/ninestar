@@ -10,11 +10,11 @@
             <div>
                 @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Overview), Model.Overview, true)
 
-                @Html.CollapsiblePanel(Model.MainEnergy.FullEnergyDetailsTitle, Model.MainEnergy.EnergyDescription)
+                @Html.CollapsiblePanel(Model.MainEnergy.FullEnergyDetailsTitle, Model.MainEnergy.EnergyDescription, false, "", "", $"Images/ninestar/energies/{Model.MainEnergy.EnergyName}.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
 
-                @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.MainEnergy.ElementTitle), Model.MainEnergy.ElementDescription)
+                @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.MainEnergy.ElementTitle), Model.MainEnergy.ElementDescription, false, "", "", $"Images/ninestar/elements/{Model.MainEnergy.Element}.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
 
-                @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.MainEnergy.ModalityName), Model.MainEnergy.ModalityDescription)
+                @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.MainEnergy.ModalityName), Model.MainEnergy.ModalityDescription, false, "", "", $"Images/ninestar/modalities/{Model.MainEnergy.ModalityName}.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
 
                 @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Health), Model.Health)
 

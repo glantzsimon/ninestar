@@ -46,11 +46,11 @@ function _Test() {
   ProcessErrors
   
   echo "Running web application tests"
-  .\packages\xunit.runner.console.2.3.1\tools\xunit.console.exe $webTestFile
+  .\packages\xunit.runner.console.2.3.1\tools\net452\xunit.console.exe $webTestFile
   ProcessErrors
   
   echo "Running data access layer tests"
-  .\packages\xunit.runner.console.2.3.1\tools\xunit.console.exe $dataTestFile
+  .\packages\xunit.runner.console.2.3.1\tools\net452\xunit.console.exe $dataTestFile
   ProcessErrors
   popd
 }

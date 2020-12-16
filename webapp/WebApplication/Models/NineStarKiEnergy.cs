@@ -246,9 +246,16 @@ namespace K9.WebApplication.Models
 
         private string GetFullEnergyName()
         {
-            return EnergyNumber == 5
-                ? $"{EnergyNumber} {EnergyName}".Trim()
-                : $"{EnergyNumber} {EnergyName} / {ElementWithYingYang}".Trim();
+            switch (EnergyNumber)
+            {
+                case 1:
+                case 5:
+                case 9:
+                    return $"{EnergyNumber} {EnergyName} / {ElementWithYingYang}".Trim();
+
+                default:
+                    return $"{EnergyNumber} {EnergyName}".Trim();
+            }
         }
 
         private NineStarEnumMetaDataAttribute MetaData => Energy.GetAttribute<NineStarEnumMetaDataAttribute>();

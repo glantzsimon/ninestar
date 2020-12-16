@@ -233,7 +233,7 @@
     <value>Centre</value>
   </data>
   <data name="EmotionalEnergyLabel" xml:space="preserve">
-    <value>Emotional Energy / Inner Child</value>
+    <value>Emotional Character / Inner Child</value>
   </data>
   <data name="CoreEarth" xml:space="preserve">
     <value>Core Earth</value>
@@ -806,7 +806,7 @@
     <value>articles\en-gb\coreearth-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="EmotionalEnergyShortLabel" xml:space="preserve">
-    <value>Inner Child</value>
+    <value>Emotional Character</value>
   </data>
   <data name="ExternalPersona" xml:space="preserve">
     <value>External Persona</value>
@@ -1314,6 +1314,9 @@
   </data>
   <data name="_995" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>summaries\en-gb\_995.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="CharacterLabel" xml:space="preserve">
+    <value>Character</value>
   </data>
   <data name="coreearth_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\coreearth-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

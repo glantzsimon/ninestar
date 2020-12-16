@@ -1,10 +1,23 @@
-﻿using K9.Globalisation;
+﻿using System;
+using System.Collections.Generic;
+using K9.Globalisation;
+using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
+using K9.WebApplication.ViewModels;
 
 namespace K9.WebApplication.Services
 {
     public class NineStarKiService : INineStarKiService
     {
+        public NineStarKiModel CalculateNineStarKi(DateTime dateOfBirth, EGender gender = EGender.Male)
+        {
+            return CalculateNineStarKi(new PersonModel
+            {
+                DateOfBirth = dateOfBirth,
+                Gender = gender
+            });
+        }
+
         public NineStarKiModel CalculateNineStarKi(PersonModel personModel)
         {
             var model = new NineStarKiModel(personModel);
@@ -20,6 +33,22 @@ namespace K9.WebApplication.Services
             model.IsProcessed = true;
 
             return model;
+        }
+
+        public NineStarKiSummaryViewModel GetNineStarKiSummaryViewModel()
+        {
+            return new NineStarKiSummaryViewModel(new List<NineStarKiModel>
+            {
+                CalculateNineStarKi(new DateTime(1981, 3, 3)),
+                CalculateNineStarKi(new DateTime(1980, 3, 3)),
+                CalculateNineStarKi(new DateTime(1979, 3, 3)),
+                CalculateNineStarKi(new DateTime(1978, 3, 3)),
+                CalculateNineStarKi(new DateTime(1977, 3, 3)),
+                CalculateNineStarKi(new DateTime(1976, 3, 3)),
+                CalculateNineStarKi(new DateTime(1984, 3, 3)),
+                CalculateNineStarKi(new DateTime(1974, 3, 3)),
+                CalculateNineStarKi(new DateTime(1973, 3, 3)),
+            });
         }
 
         private string GetOverview(ENineStarKiEnergy energy)

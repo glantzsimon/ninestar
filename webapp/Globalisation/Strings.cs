@@ -17,6 +17,7 @@
             public const string DateOfBirthLabel = "DateOfBirthLabel";
             public const string MainEnergyLabel = "MainEnergyLabel";
             public const string EmotionalEnergyLabel = "EmotionalEnergyLabel";
+            public const string CharacterLabel = "CharacterLabel";
             public const string SurfaceEnergyLabel = "SurfaceEnergyLabel";
             public const string YinYangLabel = "YinYangLabel";
             public const string ModalityLabel = "ModalityLabel";

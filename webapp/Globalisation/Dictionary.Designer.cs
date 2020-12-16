@@ -1468,6 +1468,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Character.
+        /// </summary>
+        public static string CharacterLabel {
+            get {
+                return ResourceManager.GetString("CharacterLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Chen.
         /// </summary>
         public static string Chen {
@@ -2050,7 +2059,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Emotional Energy / Inner Child.
+        ///   Looks up a localized string similar to Emotional Character / Inner Child.
         /// </summary>
         public static string EmotionalEnergyLabel {
             get {
@@ -2059,7 +2068,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Inner Child.
+        ///   Looks up a localized string similar to Emotional Character.
         /// </summary>
         public static string EmotionalEnergyShortLabel {
             get {
@@ -4594,12 +4603,15 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///    You may appear rather shy, reserved and aloof at times and tend to keep your thoughts and emotions to yourself.
+        ///
+        ///    However, sometimes the Water character can be expressed as the exact opposite, appearing quite sociable, vivacious and bubbly.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///    You can be incredibly charming, charismatic and deeply alluring. There is a somewhat mysterious quality to the Water character.
         ///&lt;/p&gt;
-        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;
+        ///    You tend to go with the flow and may struggle to assert yourself in stressful situations, opting  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_emotional_description {
             get {

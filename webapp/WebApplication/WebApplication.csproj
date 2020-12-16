@@ -276,6 +276,7 @@
     <Compile Include="ViewModels\ArchiveItemViewModel.cs" />
     <Compile Include="Models\MembershipModel.cs" />
     <Compile Include="ViewModels\MembershipViewModel.cs" />
+    <Compile Include="ViewModels\NineStarKiSummaryViewModel.cs" />
     <Compile Include="ViewModels\MyAccountViewModel.cs" />
     <Compile Include="Models\NineStarKiEnergy.cs" />
     <Compile Include="Models\NineStarKiModel.cs" />
@@ -1016,6 +1017,7 @@
     <Content Include="Views\News\_News.cshtml" />
     <Content Include="Views\News\_NewsItem.cshtml" />
     <Content Include="Views\News\_NewsPreview.cshtml" />
+    <Content Include="Views\Home\_NineEnergiesOverview.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

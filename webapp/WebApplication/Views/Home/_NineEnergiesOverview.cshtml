@@ -1,0 +1,10 @@
+﻿@using K9.WebApplication.ViewModels
+@model NineStarKiSummaryViewModel
+
+@foreach (var energy in Model.Energies)
+{
+    <h4>@energy.MainEnergy.FullEnergyDetailsTitle</h4>
+    <div>
+        @MvcHtmlString.Create(energy.MainEnergy.EnergyDescription)
+    </div>
+}

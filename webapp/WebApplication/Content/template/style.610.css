@@ -33,28 +33,4 @@
     .site-controls-text {
         display: none !important;
     }
-
-    .page {
-        padding: 10px !important;
-    }
-
-    .container-fluid {
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-
-    .page h2 {
-        width: 100%;
-        text-align: center;
-        margin-top: 15px;
-    }
-
-    .page .well {
-        padding: 12px !important;
-    }
-
-    .panel-body div {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
 }

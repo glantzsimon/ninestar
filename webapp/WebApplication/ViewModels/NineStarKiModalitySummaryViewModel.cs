@@ -1,5 +1,6 @@
 ﻿using K9.WebApplication.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace K9.WebApplication.ViewModels
 {
@@ -7,7 +8,7 @@ namespace K9.WebApplication.ViewModels
     {
         public ENineStarKiModality Modality { get; set; }
         public List<NineStarKiEnergy> ModalityEnergies { get; set; }
-        public string Body => GetBody();
+        public string Body => ModalityEnergies.FirstOrDefault()?.ModalityDescription;
         public string Title => $"{Modality} {Globalisation.Dictionary.ModalityLabel}";
         public string ModalityName => Modality.ToString();
 
@@ -15,23 +16,6 @@ namespace K9.WebApplication.ViewModels
         {
             Modality = modality;
             ModalityEnergies = energies;
-        }
-
-        private string GetBody()
-        {
-            switch (Modality)
-            {
-                    case ENineStarKiModality.Dynamic:
-                        return Globalisation.Dictionary.dynamic_modality;
-
-                case ENineStarKiModality.Static:
-                    return Globalisation.Dictionary.static_modality;
-
-                case ENineStarKiModality.Flexible:
-                    return Globalisation.Dictionary.flexible_modality;
-            }
-
-            return string.Empty;
         }
     }
 }

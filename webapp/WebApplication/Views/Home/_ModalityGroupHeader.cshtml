@@ -1,6 +1,4 @@
-﻿@using K9.SharedLibrary.Helpers
-@using K9.WebApplication.Helpers
-@using K9.WebApplication.Models
+﻿@using K9.WebApplication.Helpers
 @using K9.WebApplication.Options
 @model K9.WebApplication.ViewModels.NineStarKiModalitySummaryViewModel
 
@@ -17,20 +15,9 @@
         </div>
         <div class="col-sm-12">
             <article>
-                @MvcHtmlString.Create(TemplateProcessor.PopulateTemplate(Model.Body,
-                    new
-                    {
-                        water = Model.ModalityEnergies.FirstOrDefault(e => e.Energy == ENineStarKiEnergy.Water)?.EnergyDescriptiveNameAndNumber,
-                        soil = Model.ModalityEnergies.FirstOrDefault(e => e.Energy == ENineStarKiEnergy.Soil)?.EnergyDescriptiveNameAndNumber,
-                        thunder = Model.ModalityEnergies.FirstOrDefault(e => e.Energy == ENineStarKiEnergy.Thunder)?.EnergyDescriptiveNameAndNumber,
-                        wind = Model.ModalityEnergies.FirstOrDefault(e => e.Energy == ENineStarKiEnergy.Wind)?.EnergyDescriptiveNameAndNumber,
-                        coreearth = Model.ModalityEnergies.FirstOrDefault(e => e.Energy == ENineStarKiEnergy.CoreEarth)?.EnergyDescriptiveNameAndNumber,
-                        heaven = Model.ModalityEnergies.FirstOrDefault(e => e.Energy == ENineStarKiEnergy.Heaven)?.EnergyDescriptiveNameAndNumber,
-                        lake = Model.ModalityEnergies.FirstOrDefault(e => e.Energy == ENineStarKiEnergy.Lake)?.EnergyDescriptiveNameAndNumber,
-                        mountain = Model.ModalityEnergies.FirstOrDefault(e => e.Energy == ENineStarKiEnergy.Mountain)?.EnergyDescriptiveNameAndNumber,
-                        fire = Model.ModalityEnergies.FirstOrDefault(e => e.Energy == ENineStarKiEnergy.Fire)?.EnergyDescriptiveNameAndNumber,
-                    }
-                    ))
+                @Model.ModalityName
+
+                @MvcHtmlString.Create(Model.Body)
             </article>
         </div>
     </div>

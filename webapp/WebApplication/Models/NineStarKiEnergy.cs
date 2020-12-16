@@ -125,8 +125,8 @@ namespace K9.WebApplication.Models
         Flexible,
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Static)]
         Static,
-        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Instigative)]
-        Instigative
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Dynamic)]
+        Dynamic
     }
 
     public enum ENineStarKiEnergyType
@@ -292,7 +292,7 @@ namespace K9.WebApplication.Models
                 case ENineStarKiEnergy.Thunder:
                 case ENineStarKiEnergy.Heaven:
                 case ENineStarKiEnergy.Fire:
-                    return ENineStarKiModality.Instigative;
+                    return ENineStarKiModality.Dynamic;
             }
 
             return ENineStarKiModality.Unspecified;

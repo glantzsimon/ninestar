@@ -1987,6 +1987,32 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dynamic.
+        /// </summary>
+        public static string Dynamic {
+            get {
+                return ResourceManager.GetString("Dynamic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Dynamic&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Energies 3 Tree, 6 Metal and 9 Fire are &apos;Dynamic&apos;. This is similar to the Cardinal Modality of the Zodiac.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Dynamic types, as the name suggests, tend to be proactive and action-oriented. They are not afraid to make the first move and love to get things started.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Dynamic types tend to be quite communicative and verbally expressive. They also have more of an emotional and reactive quality to them, especially when either provoked in some way or when pass [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string dynamic_modality {
+            get {
+                return ResourceManager.GetString("dynamic_modality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Earth.
         /// </summary>
         public static string Earth {
@@ -2374,6 +2400,23 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Flexible&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Energies 1 Water, 4 Tree and 7 Metal are &apos;flexible&apos;. They are generally easy-going and have a gentle, &apos;go with the flow&apos; kind of attitude to life. They are generally happy to adapt to those around them. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Flexible types are good at seeing things from different perspectives and tend to be understanding, compassionate and patient with others.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    People in this group also have quite a rational, logical way of processing information. However, there is a mo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string flexible_modality {
+            get {
+                return ResourceManager.GetString("flexible_modality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gender.
         /// </summary>
         public static string GenderLabel {
@@ -2607,15 +2650,6 @@ namespace K9.Globalisation {
         public static string InnerChild {
             get {
                 return ResourceManager.GetString("InnerChild", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Instigative.
-        /// </summary>
-        public static string Instigative {
-            get {
-                return ResourceManager.GetString("Instigative", resourceCulture);
             }
         }
         
@@ -3060,6 +3094,17 @@ namespace K9.Globalisation {
         public static string MiddleSon {
             get {
                 return ResourceManager.GetString("MiddleSon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The nine Energies in the 9 Star Ki system, as well as being grouped by Yin or Yang and by the five elements, can also be split into three groups, called the &apos;Modalities&apos;. This is very similar to the Modalities described in the Zodiac. It is another simple yet useful &apos;map&apos; that can be used to understand people&apos;s fundamental nature.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string modalities_description {
+            get {
+                return ResourceManager.GetString("modalities_description", resourceCulture);
             }
         }
         
@@ -4088,6 +4133,23 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Static&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Energies 2 Earth, 5 Earth and 8 Earth are &apos;static&apos;. As you can see, they are all of the Earth elements. Earth is by nature steady, solid and reliable.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Static Energies like to plan ahead and tend to have longer-term goals, which they are good at sticking to. They are pragmatic and can be single-minded when they set their mind on something.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///Static people thend to process information slowly and steadily and accumulate knowledge over time. They tend to be ra [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string static_modality {
+            get {
+                return ResourceManager.GetString("static_modality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Status.
         /// </summary>
         public static string StatusLabel {
@@ -4287,19 +4349,6 @@ namespace K9.Globalisation {
         public static string ThankyouForDonationEmailTitle {
             get {
                 return ResourceManager.GetString("ThankyouForDonationEmailTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    9 Star Ki astrology is based on the universal cycles of light and dark and the transformations between the various stages. This is similar to the seasonal changes we see throughout the year or even throughout each day and night. There are many different cycles of differing lengths, all of which fit into one another like the layers of an onion. Some of the cycles are very long.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    In order to understand one&apos;s energetic make-up and potential, it is sufficient to observe the nine year cyc [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string three_modalities {
-            get {
-                return ResourceManager.GetString("three_modalities", resourceCulture);
             }
         }
         

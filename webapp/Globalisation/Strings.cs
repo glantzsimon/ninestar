@@ -113,7 +113,7 @@
             public const string EmotionalEnergy = "EmotionalEnergyLabel";
             public const string SurfaceEnergy = "SurfaceEnergyLabel";
             public const string Static = "Static";
-            public const string Instigative = "Instigative";
+            public const string Dynamic = "Dynamic";
             public const string Flexible = "Flexible";
 
             public const string Diplomat = "Diplomat";

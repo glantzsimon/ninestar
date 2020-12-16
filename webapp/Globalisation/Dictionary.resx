@@ -616,8 +616,8 @@
   <data name="Flexible" xml:space="preserve">
     <value>Flexible</value>
   </data>
-  <data name="Instigative" xml:space="preserve">
-    <value>Instigative</value>
+  <data name="Dynamic" xml:space="preserve">
+    <value>Dynamic</value>
   </data>
   <data name="Static" xml:space="preserve">
     <value>Static</value>
@@ -636,9 +636,6 @@
   </data>
   <data name="yinyang" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\yinyang.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="three_modalities" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\three-modalities.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="Calculator" xml:space="preserve">
     <value>Calculator</value>
@@ -1348,8 +1345,17 @@
   <data name="character_energies_short_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\character-energies.short-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="dynamic_modality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\dynamic-modality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="flexible_modality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\flexible-modality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="main_energies_short_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\main-energies.short-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="modalities_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\modalities-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="NineCharacterEnergiesTitle" xml:space="preserve">
     <value>The 9 Character Energies</value>
@@ -1359,5 +1365,8 @@
   </data>
   <data name="ProfileCalculator" xml:space="preserve">
     <value>Profile Calculator</value>
+  </data>
+  <data name="static_modality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\static-modality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

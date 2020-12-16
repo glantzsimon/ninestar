@@ -102,9 +102,13 @@
     <Content Include="Articles\en-gb\coreearth-child.htm" />
     <Content Include="Articles\en-gb\fire-child.htm" />
     <Content Include="Articles\en-gb\fire-overview.htm" />
+    <Content Include="Articles\en-gb\dynamic-modality.htm" />
+    <Content Include="Articles\en-gb\modalities-description.htm" />
+    <Content Include="Articles\en-gb\static-modality.htm" />
     <Content Include="Articles\en-gb\heaven-child.htm" />
     <Content Include="Articles\en-gb\lake-child.htm" />
     <Content Include="Articles\en-gb\character-energies.short-description.htm" />
+    <Content Include="Articles\en-gb\flexible-modality.htm" />
     <Content Include="Articles\en-gb\mountain-child.htm" />
     <Content Include="Articles\en-gb\mountain-overview.htm" />
     <Content Include="Articles\en-gb\lake-overview.htm" />
@@ -227,7 +231,6 @@
     <Content Include="Articles\en-gb\metal-element.htm" />
     <Content Include="Articles\en-gb\fire-element.htm" />
     <Content Include="Articles\en-gb\earth-element.htm" />
-    <Content Include="Articles\en-gb\three-modalities.htm" />
     <Content Include="Articles\en-gb\personal-chart.htm" />
     <Content Include="Articles\en-gb\fire-health.htm" />
     <Content Include="Articles\en-gb\fire-description.htm" />

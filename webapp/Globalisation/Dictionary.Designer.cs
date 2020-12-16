@@ -168,7 +168,7 @@ namespace K9.Globalisation {
         ///
         ///    You have a strong desire to support and help others and you can be tactful, sensitive and diplomatic when under pressure.
         ///
-        ///    However, those close to you may find you cautious at times, with a tendancy to procrastinate.
+        ///    However, those close to you may find you cautious at times, with a tendency to procrastinate.
         ///
         ///    You may also be shy or undisciplined at times. Conversely, you also have the potential to be fun and sociable.
         ///
@@ -186,7 +186,7 @@ namespace K9.Globalisation {
         ///
         ///    You need to feel involved and appreciated, whether out in the world, at the work place or closer to home, within the local community and within the family.
         ///
-        ///    You may have a tendancy to become overly fastidious in your work.
+        ///    You may have a tendency to become overly fastidious in your work.
         ///
         ///    Care should be taken not to become overly opini [rest of string was truncated]&quot;;.
         /// </summary>
@@ -502,7 +502,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    On the surface you appear reserved and are tactful and diplomatic. You tend to keep your word and are punctual and reliable. You may have a tendancy to get caught up in the minutiae. With those you know more intimately, such as family and friends, you can reveal are witty and entertaining side. Your fundamental nature is steady and consistent. You are generally trusting of those around you and can be quite influential and persuasive when you feel strongly about something.
+        ///    On the surface you appear reserved and are tactful and diplomatic. You tend to keep your word and are punctual and reliable. You may have a tendency to get caught up in the minutiae. With those you know more intimately, such as family and friends, you can reveal are witty and entertaining side. Your fundamental nature is steady and consistent. You are generally trusting of those around you and can be quite influential and persuasive when you feel strongly about something.
         ///&lt;/p&gt;.
         /// </summary>
         public static string _472 {
@@ -852,7 +852,8 @@ namespace K9.Globalisation {
         ///    Those who know you well would describe you as supportive, helpful and tactful. You sensitive to others&apos; needs and have a deep sense of justice. You may, at times, be overly fastidious and detail-obsessed.
         ///
         ///    You know how to relax and enjoy putting your feel up. Care must be taken not to become lazy, however.
-        ///        /// [rest of string was truncated]&quot;;.
+        ///
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _721 {
             get {
@@ -972,7 +973,8 @@ namespace K9.Globalisation {
         ///
         ///    You like to feel acknowledged and appreciated.
         ///
-        ///    You are stylish and appreciate the finer things in life. You may well appear younger than your biological age.        /// [rest of string was truncated]&quot;;.
+        ///    You are stylish and appreciate the finer things in life. You may well appear younger than your biological age.
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _793 {
             get {
@@ -1084,7 +1086,8 @@ namespace K9.Globalisation {
         ///    You have quite a direct, bold character. You are very clear in what you believe in and are frank and to-the-point when you express your opinions. 
         ///    You can be a perfectionist and take great pride in what you do. You fiercely dislike criticism.
         ///
-        ///    You go about your work with great skill, prudence and common sense. You are not afraid of hard work.        /// [rest of string was truncated]&quot;;.
+        ///    You go about your work with great skill, prudence and common sense. You are not afraid of hard work.
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _867 {
             get {

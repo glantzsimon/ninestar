@@ -17,20 +17,20 @@
 }
 
 <div class="energies-summary">
-    <p>
-        @if (energyType == ENineStarKiEnergyType.EmotionalEnergy)
-        {
-            @MvcHtmlString.Create(characterEnergyText)
-        }
-        else
-        {
-            @MvcHtmlString.Create(mainEnergyText)
-        }
-    </p>
-
-    @foreach (var energy in Model)
+    @if (energyType == ENineStarKiEnergyType.EmotionalEnergy)
     {
-        @Html.CollapsiblePanel(energy.FullEnergyDetailsTitle, energy.EnergyDescription, false, "", "", $"Images/ninestar/energies/{energy.Energy}.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+        @MvcHtmlString.Create(characterEnergyText)
+    }
+    else
+    {
+        @MvcHtmlString.Create(mainEnergyText)
+    }
+
+    @if (Model != null && Model.Any())
+    {
+        foreach (var energy in Model)
+        {
+            @Html.CollapsiblePanel(energy.FullEnergyDetailsTitle, energy.EnergyDescription, false, "", "", $"Images/ninestar/energies/{energy.Energy}.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+        }
     }
 </div>
-    

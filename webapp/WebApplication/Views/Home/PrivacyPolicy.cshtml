@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = K9.Globalisation.Dictionary.PrivacyPolicyTitle;
     ViewBag.SubTitle = K9.Globalisation.Dictionary.PrivacyPolicyTitle;
-    
+
     Layout = "../Shared/_LayoutForm.cshtml";
 }
 
@@ -9,7 +9,10 @@
 
 <div class="container main-content">
     <article>
-        @MvcHtmlString.Create(K9.Globalisation.Dictionary.PrivacyPolicy)
+        @using (Html.BeginBootstrapForm())
+        {
+            @MvcHtmlString.Create(K9.Globalisation.Dictionary.PrivacyPolicy)
+        }
     </article>
 </div>
 

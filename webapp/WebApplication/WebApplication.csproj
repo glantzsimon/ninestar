@@ -668,6 +668,9 @@
     <Content Include="Images\ninestar\energies\thunder.png" />
     <Content Include="Images\ninestar\energies\water.png" />
     <Content Include="Images\ninestar\energies\wind.png" />
+    <Content Include="Images\ninestar\modalities\dynamic.png" />
+    <Content Include="Images\ninestar\modalities\flexible.png" />
+    <Content Include="Images\ninestar\modalities\static.png" />
     <Content Include="Images\ninestar\trigrams\trigram-coreearth-square.png" />
     <Content Include="Images\ninestar\trigrams\trigram-fire-square.png" />
     <Content Include="Images\ninestar\trigrams\trigram-heaven-square.png" />
@@ -980,7 +983,6 @@
     <Content Include="Views\Shared\Controls\_CollapsiblePanel.cshtml" />
     <Content Include="Views\Shared\_GoogleAnalytics.cshtml" />
     <Content Include="Views\Shared\_SEO.cshtml" />
-    <Content Include="Views\NineStarKi\_Modality.cshtml" />
     <Content Include="Views\Shared\Controls\_Panel.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Shared\Controls\_ImagePanel.cshtml" />
@@ -1032,6 +1034,7 @@
     <Content Include="Views\News\_NewsItem.cshtml" />
     <Content Include="Views\News\_NewsPreview.cshtml" />
     <Content Include="Views\Home\_NineEnergiesOverview.cshtml" />
+    <Content Include="Views\NineStarKi\_Modality.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

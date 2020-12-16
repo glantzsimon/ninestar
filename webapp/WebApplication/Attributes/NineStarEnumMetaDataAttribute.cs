@@ -82,6 +82,7 @@ namespace K9.WebApplication.Attributes
         {
             return ResourceType.GetValueFromResource(TrigramName);
         }
+        
     }
 
 }

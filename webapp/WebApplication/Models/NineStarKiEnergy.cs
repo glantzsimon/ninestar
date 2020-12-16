@@ -224,6 +224,7 @@ namespace K9.WebApplication.Models
 
         public string ElementWithYingYang => $"{YinYangName} {Element}".Trim();
 
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ElementLabel)]
         public string ElementTitle => $"{Element} {Dictionary.Element}";
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ElementLabel)]
@@ -234,6 +235,12 @@ namespace K9.WebApplication.Models
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ModalityLabel)]
         public ENineStarKiModality Modality => GetModality();
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ModalityLabel)]
+        public string ModalityName => Modality.ToString();
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ModalityDescriptionLabel)]
+        public string ModalityDescription => MetaData.GetElementDescription();
 
         public string Direction => MetaData.GetDirection();
 
@@ -357,7 +364,23 @@ namespace K9.WebApplication.Models
                     return Dictionary.fire_trigram;
             }
 
-            return String.Empty;
+            return string.Empty;
+        }
+
+        public string GetModalityDescription()
+        {
+            switch (Modality)
+            {
+                case ENineStarKiModality.Dynamic:
+                    return Dictionary.dynamic_modality;
+                case ENineStarKiModality.Flexible:
+                    return Dictionary.flexible_modality;
+                case ENineStarKiModality.Static:
+                    return Dictionary.static_modality;
+
+                default:
+                    return string.Empty;
+            }
         }
     }
 }

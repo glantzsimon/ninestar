@@ -2001,10 +2001,10 @@ namespace K9.Globalisation {
         ///    Energies 3 Tree, 6 Metal and 9 Fire are &apos;Dynamic&apos;. This is similar to the Cardinal Modality of the Zodiac.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Dynamic types, as the name suggests, tend to be proactive and action-oriented. They are not afraid to make the first move and love to get things started.
+        ///    Dynamic types, as the name suggests, tend to be proactive and action-oriented. They are not afraid to make the first move and tend to act as a kind of &apos;spark&apos; or ignition to get things started.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Dynamic types tend to be quite communicative and verbally expressive. They also have more of an emotional and reactive quality to them, especially when either provoked in some way or when pass [rest of string was truncated]&quot;;.
+        ///    Dynamic types tend to be quite communicative and verbally expressive. They also have more of an emotional and reactive quality to them, especially when  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string dynamic_modality {
             get {
@@ -3109,6 +3109,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Modality Description.
+        /// </summary>
+        public static string ModalityDescriptionLabel {
+            get {
+                return ResourceManager.GetString("ModalityDescriptionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Modality.
         /// </summary>
         public static string ModalityLabel {
@@ -4141,7 +4150,7 @@ namespace K9.Globalisation {
         ///    Static Energies like to plan ahead and tend to have longer-term goals, which they are good at sticking to. They are pragmatic and can be single-minded when they set their mind on something.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///Static people thend to process information slowly and steadily and accumulate knowledge over time. They tend to be ra [rest of string was truncated]&quot;;.
+        ///    Static people thend to process information slowly and steadily, weighing up the pros and cons. They accumulate kn [rest of string was truncated]&quot;;.
         /// </summary>
         public static string static_modality {
             get {

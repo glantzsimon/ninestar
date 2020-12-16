@@ -21,6 +21,7 @@
             public const string SurfaceEnergyLabel = "SurfaceEnergyLabel";
             public const string YinYangLabel = "YinYangLabel";
             public const string ModalityLabel = "ModalityLabel";
+            public const string ModalityDescriptionLabel = "ModalityDescriptionLabel";
             public const string FamilyMemberLabel = "FamilyMember";
             public const string ElementLabel = "Element";
             public const string ElementDescriptionLabel = "ElementDescriptionLabel";

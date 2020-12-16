@@ -12,7 +12,7 @@
         Cover,
         Contain
     }
-    
+
     public class PanelOptions
     {
         public string Id { get; set; }
@@ -22,8 +22,8 @@
         public EPanelImageSize ImageSize { get; set; }
         public EPanelImageLayout ImageLayout { get; set; }
 
-        public string ImageLayoutCss => ImageLayout == EPanelImageLayout.Cover
-            ? "background-size: cover"
-            : "background-size: contain";
+        public string ImageLayoutCss => ImageLayout == EPanelImageLayout.Contain
+            ? "background-size: contain"
+            : "background-size: cover";
     }
 }

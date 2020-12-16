@@ -1,5 +1,6 @@
 ﻿@using K9.WebApplication.Helpers
 @using K9.WebApplication.Models
+@using K9.WebApplication.Options
 @model NineStarKiEnergy
 
 @if (Model != null)
@@ -14,7 +15,7 @@
                     @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.ChildDescription), Model.ChildDescription, true)
                 }
 
-                @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Trigram), Model.TrigramDescription, false, "", Model.TrigramUIName, $"Images/ninestar/trigrams/trigram-{Model.Energy}-square.png") 
+                @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Trigram), Model.TrigramDescription, false, "", Model.TrigramUIName, $"Images/ninestar/trigrams/trigram-{Model.Energy}-square.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
             </div>
         </article>
     </div>

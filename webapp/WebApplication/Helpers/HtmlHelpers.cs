@@ -18,8 +18,8 @@ namespace K9.WebApplication.Helpers
         {
             return html.Partial("Controls/_CollapsiblePanel", options);
         }
-
-        public static MvcHtmlString CollapsiblePanel(this HtmlHelper html, string title, string body, bool expanded = false, string footer = "", string id = "")
+        
+        public static MvcHtmlString CollapsiblePanel(this HtmlHelper html, string title, string body, bool expanded = false, string footer = "", string id = "", string imageSrc = "", EPanelImageSize imageSize = EPanelImageSize.Default, EPanelImageLayout imageLayout = EPanelImageLayout.Cover)
         {
             return html.Partial("Controls/_CollapsiblePanel", new CollapsiblePanelOptions
             {
@@ -27,7 +27,10 @@ namespace K9.WebApplication.Helpers
                 Title = title,
                 Body = body,
                 Expaded = expanded,
-                Footer = footer
+                Footer = footer,
+                ImageSrc = imageSrc,
+                ImageLayout = imageLayout,
+                ImageSize = imageSize
             });
         }
 

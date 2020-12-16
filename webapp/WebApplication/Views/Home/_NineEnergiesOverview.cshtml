@@ -1,10 +1,12 @@
-﻿@using K9.WebApplication.ViewModels
-@model NineStarKiSummaryViewModel
+﻿@model NineStarKiSummaryViewModel
+@using K9.WebApplication.Helpers
+@using K9.WebApplication.Options
+@using K9.WebApplication.ViewModels
 
-@foreach (var energy in Model.Energies)
-{
-    <h4>@energy.MainEnergy.FullEnergyDetailsTitle</h4>
-    <div>
-        @MvcHtmlString.Create(energy.MainEnergy.EnergyDescription)
-    </div>
-}
+<div class="energies-summary">
+    @foreach (var energy in Model.Energies)
+    {
+        @Html.CollapsiblePanel(energy.MainEnergy.FullEnergyDetailsTitle, energy.MainEnergy.EnergyDescription, false, "", "", $"Images/ninestar/energies/{energy.MainEnergy.Energy}.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+    }
+</div>
+    

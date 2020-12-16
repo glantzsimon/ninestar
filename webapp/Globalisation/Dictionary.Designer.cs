@@ -4603,15 +4603,15 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You may appear rather shy, reserved and aloof at times and tend to keep your thoughts and emotions to yourself.
+        ///    Water characters may appear rather shy, reserved and aloof at times and tend to keep their thoughts and emotions to themselves.
         ///
         ///    However, sometimes the Water character can be expressed as the exact opposite, appearing quite sociable, vivacious and bubbly.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    You can be incredibly charming, charismatic and deeply alluring. There is a somewhat mysterious quality to the Water character.
+        ///    Water characters can be incredibly charming, charismatic and deeply alluring. Some would say there is a somewhat mysterious quality to them.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    You tend to go with the flow and may struggle to assert yourself in stressful situations, opting  [rest of string was truncated]&quot;;.
+        ///    Those with Water as their middle number tend to go with the flow and [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_emotional_description {
             get {

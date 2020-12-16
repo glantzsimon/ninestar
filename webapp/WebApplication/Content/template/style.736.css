@@ -86,4 +86,9 @@
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
+
+    h4.panel-title {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
 }

@@ -13,8 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer.Tests", "Da
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{72731317-282B-4F7D-8B1F-8CF8CD00D32D}"
 	ProjectSection(SolutionItems) = preProject
+		..\deploy\build.ps1 = ..\deploy\build.ps1
+		..\deploy\decrypt.ps1 = ..\deploy\decrypt.ps1
 		Local.testsettings = Local.testsettings
 		NineStar.vsmdi = NineStar.vsmdi
+		..\deploy\publish.ps1 = ..\deploy\publish.ps1
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
 EndProject

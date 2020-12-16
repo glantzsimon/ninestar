@@ -12,7 +12,6 @@ namespace K9.WebApplication.Services
             model.MainEnergy.EnergyDescription = GetMainEnergyDescription(model.MainEnergy.Energy);
             model.EmotionalEnergy.EnergyDescription = GetEmotionalEnergyDescription(model.EmotionalEnergy.Energy);
             model.SurfaceEnergy.EnergyDescription = GetSurfaceEnergyDescription(model.SurfaceEnergy.Energy);
-            model.Child = GetChild(model.EmotionalEnergy.Energy);
             model.Health = GetHealth(model.MainEnergy.Energy);
             model.Occupations = GetOccupations(model.MainEnergy.Energy);
             model.PersonalDevelopemnt = GetPersonalDevelopemnt(model.MainEnergy.Energy);
@@ -572,40 +571,6 @@ namespace K9.WebApplication.Services
 
             return string.Empty;
         }
-
-        private string GetChild(ENineStarKiEnergy energy)
-        {
-            switch (energy)
-            {
-                case ENineStarKiEnergy.Water:
-                    return Dictionary.water_child;
-
-                case ENineStarKiEnergy.Soil:
-                    return Dictionary.soil_child;
-
-                case ENineStarKiEnergy.Thunder:
-                    return Dictionary.thunder_child;
-
-                case ENineStarKiEnergy.Wind:
-                    return Dictionary.wind_child;
-
-                case ENineStarKiEnergy.CoreEarth:
-                    return Dictionary.coreearth_child;
-
-                case ENineStarKiEnergy.Heaven:
-                    return Dictionary.heaven_child;
-
-                case ENineStarKiEnergy.Lake:
-                    return Dictionary.lake_child;
-
-                case ENineStarKiEnergy.Mountain:
-                    return Dictionary.mountain_child;
-
-                case ENineStarKiEnergy.Fire:
-                    return Dictionary.fire_child;
-            }
-
-            return string.Empty;
-        }
+       
     }
 }

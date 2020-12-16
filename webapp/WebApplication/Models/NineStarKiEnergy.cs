@@ -188,6 +188,9 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyDescriptionLabel)]
         public string EnergyDescription { get; set; }
 
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ChildLabel)]
+        public string ChildDescription => EnergyType == ENineStarKiEnergyType.EmotionalEnergy ? GetChild() : string.Empty;
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyLabel)]
         public string EnergyName => MetaData.GetDescription();
 
@@ -195,7 +198,7 @@ namespace K9.WebApplication.Models
         public string DescriptiveTitle => $"The {MetaData.GetDescriptiveTitle()}";
 
         public string FullEnergyName => GetFullEnergyName();
-        
+
         public string FullEnergyDetailsTitle => GetFullEnergyDetailsTitle();
 
         public int EnergyNumber => (int)Energy;
@@ -243,8 +246,8 @@ namespace K9.WebApplication.Models
 
         private string GetFullEnergyName()
         {
-            return EnergyNumber == 5 
-                ? $"{EnergyNumber} {EnergyName}".Trim() 
+            return EnergyNumber == 5
+                ? $"{EnergyNumber} {EnergyName}".Trim()
                 : $"{EnergyNumber} {EnergyName} / {ElementWithYingYang}".Trim();
         }
 
@@ -286,6 +289,41 @@ namespace K9.WebApplication.Models
             }
 
             return ENineStarKiModality.Unspecified;
+        }
+
+        private string GetChild()
+        {
+            switch (Energy)
+            {
+                case ENineStarKiEnergy.Water:
+                    return Dictionary.water_child;
+
+                case ENineStarKiEnergy.Soil:
+                    return Dictionary.soil_child;
+
+                case ENineStarKiEnergy.Thunder:
+                    return Dictionary.thunder_child;
+
+                case ENineStarKiEnergy.Wind:
+                    return Dictionary.wind_child;
+
+                case ENineStarKiEnergy.CoreEarth:
+                    return Dictionary.coreearth_child;
+
+                case ENineStarKiEnergy.Heaven:
+                    return Dictionary.heaven_child;
+
+                case ENineStarKiEnergy.Lake:
+                    return Dictionary.lake_child;
+
+                case ENineStarKiEnergy.Mountain:
+                    return Dictionary.mountain_child;
+
+                case ENineStarKiEnergy.Fire:
+                    return Dictionary.fire_child;
+            }
+
+            return string.Empty;
         }
 
         private string GetTrigramDescription()

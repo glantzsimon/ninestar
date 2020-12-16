@@ -48,10 +48,7 @@ namespace K9.WebApplication.Models
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HealthLabel)]
         public string Health { get; set; }
-
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ChildLabel)]
-        public string Child { get; set; }
-
+        
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.OccupationsLabel)]
         public string Occupations { get; set; }
 

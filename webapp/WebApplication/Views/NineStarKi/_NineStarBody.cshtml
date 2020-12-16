@@ -2,15 +2,20 @@
 @using K9.WebApplication.Models
 @model NineStarKiEnergy
 
-    @if (Model != null)
-    {
-        <div class="container main-content clear-both ninestar-header-container">
-            <article>
-                <div>
-                    @Html.CollapsiblePanel(Model.FullEnergyDetailsTitle, Model.EnergyDescription, true)
+@if (Model != null)
+{
+    <div class="container main-content clear-both ninestar-header-container">
+        <article>
+            <div>
+                @Html.CollapsiblePanel(Model.FullEnergyDetailsTitle, Model.EnergyDescription, true)
 
-                    @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Trigram), Model.TrigramDescription, false, "", Model.TrigramUIName)
-                </div>
-            </article>
-        </div>
-    }
+                @if (Model.EnergyType == ENineStarKiEnergyType.EmotionalEnergy)
+                {
+                    @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.ChildDescription), Model.ChildDescription, true)
+                }
+
+                @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Trigram), Model.TrigramDescription, false, "", Model.TrigramUIName)
+            </div>
+        </article>
+    </div>
+}

@@ -1288,6 +1288,9 @@
   <data name="News" xml:space="preserve">
     <value>News</value>
   </data>
+  <data name="ChildLabel" xml:space="preserve">
+    <value>Child</value>
+  </data>
   <data name="_445" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>summaries\en-gb\_445.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -1311,5 +1314,32 @@
   </data>
   <data name="_995" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>summaries\en-gb\_995.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="coreearth_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\coreearth-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\fire-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\heaven-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\lake-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\mountain-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="soil_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\soil-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="thunder_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\thunder-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\water-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wind_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\wind-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

@@ -32,6 +32,7 @@
             public const string EnergyTypeLabel = "EnergyTypeLabel";
             public const string EnergyDescriptionLabel = "EnergyDescriptionLabel";
             public const string HealthLabel = "HealthLabel";
+            public const string ChildLabel = "ChildLabel";
             public const string OccupationsLabel = "OccupationsLabel";
             public const string PersonalDevelopemntLabel = "PersonalDevelopemntLabel";
             public const string ExamplesLabel = "ExamplesLabel";

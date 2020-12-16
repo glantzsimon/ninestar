@@ -462,8 +462,15 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    
-        ///&lt;/p&gt;.
+        ///    You like to feel involved in situations at work or at home and are most comfortable when you take the lead.
+        ///
+        ///    However, you should take care not to become too controlling obsessive.
+        ///
+        ///    You are generally trusting of others and can bring your influence to bear the on situations in which you are involved.
+        ///
+        ///    You generally have a steady, consistent nature. You are trusting and have a lot of common sense.
+        ///
+        ///    You must avoid being too stubborn or too impulsive. Don&apos;t be afraid to ask for s [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _445 {
             get {
@@ -1222,11 +1229,11 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You have great potential for leadership and are especially concerned with justice and fairness. You are not afraid to express your opinion and can be quite frank and straight-to-the-point. Your sincere manner can a little overbearing at times. 
-        ///    
-        ///    At times you can be withdrawn and feel the need to retreat to your cave. You tend to have quite strong opinions and can express a powerful argument when provoked or challenged. 
-        ///    
-        ///    You are driven by your principal Fire element, which besto [rest of string was truncated]&quot;;.
+        ///    You can appear quiet and determined on the surface. You tend to have quite strong opinions can become argumentative when provoked or challenged.
+        ///
+        ///    You tend to be clear and precise with a strong perfectionist streak. You do not take criticism well.
+        ///
+        ///    You have great potential for leadership and are especially concerned with justice and fairness. You are not afraid to express your opinion and can be quite frank and straight-to-the-point. Your sincere manner can a little overbearing at times. [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _968 {
             get {
@@ -1488,6 +1495,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Child.
+        /// </summary>
+        public static string ChildLabel {
+            get {
+                return ResourceManager.GetString("ChildLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Colour.
         /// </summary>
         public static string Colour {
@@ -1579,6 +1595,23 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Generally speaking, Core Earth energies have the constitution of an ox and are incredibly resilient. However, for this reason, it is also very important for
+        ///    people under this star to exercise and push themselves, so that they do not stagnate and seize up.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Being prone to ups and downs can mean that 5 Earth Energies can go through phases of being active/inactive, slim/overweight. These fluctuations are often brought
+        ///    about by the many emotional events in their lives.
+        ///&lt;/p&gt;
+        ///&lt; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string coreearth_child {
+            get {
+                return ResourceManager.GetString("coreearth_child", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Core Earth energies are at the centre of the system and this is often reflected in life, as they are often at the centre of
         ///    everything they do, in the personal life and at work. Indeed, Core Earth energies may even feel left out if this is not so.
         ///&lt;/p&gt;
@@ -1638,9 +1671,26 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    A strong yang, base line opening up into two yin lines. This represents growth and action and the awakening of dawn and spring as well as action and spontaneity.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
+        ///    &lt;table class=&quot;table&quot;&gt;
+        ///        &lt;thead&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;th&gt;In Balance / Potential&lt;/th&gt;
+        ///            &lt;th&gt;Out of Balance&lt;/th&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;/thead&gt;
+        ///        &lt;tbody&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Confident&lt;/td&gt;
+        ///                &lt;td&gt;Bossy&lt;/td&gt;
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Lively&lt;/td&gt;
+        ///                &lt;td&gt;Moody&lt;/td&gt;
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Resourceful&lt;/td&gt;
+        ///                &lt;td&gt;Thrifty [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_overview {
             get {
@@ -2109,6 +2159,21 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    In Chinese medicine, the element Fire controls the function of the heart and small intestine and therefore these energies must guard against circulatory disorders. It is also advisable to avoid 
+        ///    overly hot, spicy or salty foods.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is important for Fire energies to get plenty of rest and to take extra care to calm their minds and nervous system.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string fire_child {
+            get {
+                return ResourceManager.GetString("fire_child", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Fire energies are bestowed with great enlightenment and clarity and can often steer a path through troubled waters. They are often highly inspirational individuals who are
         ///    often drawn to situations which require their brilliant capacity for bringing about change.
         ///&lt;/p&gt;
@@ -2180,9 +2245,26 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    A strong yang, base line opening up into two yin lines. This represents growth and action and the awakening of dawn and spring as well as action and spontaneity.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
+        ///    &lt;table class=&quot;table&quot;&gt;
+        ///        &lt;thead&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;th&gt;In Balance / Potential&lt;/th&gt;
+        ///                &lt;th&gt;Out of Balance&lt;/th&gt;
+        ///            &lt;/tr&gt;
+        ///        &lt;/thead&gt;
+        ///        &lt;tbody&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Clear&lt;/td&gt;
+        ///                &lt;td&gt;Whimsical&lt;/td&gt;
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Radiant&lt;/td&gt;
+        ///                &lt;td&gt;Vain&lt;/td&gt;
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Passionate&lt;/td&gt;
+        ///             [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_overview {
             get {
@@ -2310,6 +2392,24 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The organ governed by yang Metal is the lungs and care must be taken to look after this organ. Therefore, it is especially important
+        ///    to avoid smoking. It is also beneficial to engage in a healthy amount of exercise to improve cardiovascular fitness.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The lungs are the seat of grief and it is very important for Heaven energies to frequently &quot;get things off their chest&quot; so that the lung
+        ///    meridian does not become blocked and stressed.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    In Chinese medicine the lun [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_child {
+            get {
+                return ResourceManager.GetString("heaven_child", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Heaven energies are natural leaders and are comfortable in positions of authority, whether it be in
         ///    politics and the military, fashion or the arts.
         ///&lt;/p&gt;
@@ -2377,9 +2477,28 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    A strong yang, base line opening up into two yin lines. This represents growth and action and the awakening of dawn and spring as well as action and spontaneity.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
+        ///    &lt;table class=&quot;table&quot;&gt;
+        ///        &lt;thead&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;th&gt;In Balance / Potential&lt;/th&gt;
+        ///            &lt;th&gt;Out of Balance&lt;/th&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;/thead&gt;
+        ///        &lt;tbody&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td&gt;Leader&lt;/td&gt;
+        ///            &lt;td&gt;Bossy&lt;/td&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td&gt;Responsible&lt;/td&gt;
+        ///            &lt;td&gt;Controlling&lt;/td&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td&gt;Action-oriented&lt;/td&gt;
+        ///            &lt;td&gt;Reckless&lt;/td&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_overview {
             get {
@@ -2528,6 +2647,19 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The Metal element controls the function of the large intestine and therefore it is important for 7 Metal energies not to overeat or eat too quickly.
+        ///    Eating late at night is also ill advised. In addition, the regular consumption of fermented foods is highly beneficial as it provides beneficial bacteria
+        ///    which can keep the colon healthy.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string lake_child {
+            get {
+                return ResourceManager.GetString("lake_child", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    The season associated with this energy is late autumn, when the harvest is in and people are enjoying the fruits of their labours, celebrating and having fun.
         ///    For this reason, 7 Metal energies have a propensity for being pleasure seekers and more than any of the other energies enjoy spending money on fashion, entertainment and socialising
         ///&lt;/p&gt;
@@ -2582,9 +2714,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    A strong yang, base line opening up into two yin lines. This represents growth and action and the awakening of dawn and spring as well as action and spontaneity.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
+        ///    &lt;table class=&quot;table&quot;&gt;
+        ///        &lt;thead&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;th&gt;In Balance / Potential&lt;/th&gt;
+        ///            &lt;th&gt;Out of Balance&lt;/th&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;/thead&gt;
+        ///        &lt;tbody&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td&gt;Easy-going&lt;/td&gt;
+        ///            &lt;td&gt;Spoilt&lt;/td&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td&gt;Charismatic&lt;/td&gt;
+        ///            &lt;td&gt;Wasteful&lt;/td&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td&gt;Wise&lt;/td&gt;
+        ///            &lt;td&gt;Shallow&lt;/td&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;tr&gt;
+        ///      [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_overview {
             get {
@@ -2956,6 +3108,23 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Being highly contemplative can mean that 8 Earth Energies have a tendency to be hypochondriacs as they are overly aware of bodily aches and pains.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Their strength and solidity need to be challenged by movement and exercise and they need to be cautious about becoming overweight.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    As with other Earth energies, attention needs to be paid to the pancreas, which is more prone to imbalances in these individuals. For this reason, refined sugars are
+        ///    especially problematic [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_child {
+            get {
+                return ResourceManager.GetString("mountain_child", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Being the youngest son, Mountain energies benefit from the combined experiences of the older siblings. In addition, these energies often accumulate wealth from an
         ///    early age, through their own hard work or sometimes an inheritance. Success in achieving material wealth, however, is more a product of Mountain energies&apos; singlemindedness, than
         ///    it is their creative talent or charm.
@@ -3016,9 +3185,28 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    A strong yang, base line opening up into two yin lines. This represents growth and action and the awakening of dawn and spring as well as action and spontaneity.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
+        ///    &lt;table class=&quot;table&quot;&gt;
+        ///        &lt;thead&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;th&gt;In Balance / Potential&lt;/th&gt;
+        ///            &lt;th&gt;Out of Balance&lt;/th&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;/thead&gt;
+        ///        &lt;tbody&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td&gt;Composed&lt;/td&gt;
+        ///            &lt;td&gt;Reserved&lt;/td&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td&gt;Focussed&lt;/td&gt;
+        ///            &lt;td&gt;Overly serious&lt;/td&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td&gt;Pragmatic&lt;/td&gt;
+        ///            &lt;td&gt;Impassive&lt;/td&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_overview {
             get {
@@ -3319,7 +3507,7 @@ namespace K9.Globalisation {
         ///    &lt;strong&gt;First Number - Main Energy / Adult Persona&lt;/strong&gt;
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    The first number is determined by the year we were born and corresponds to our intrinsic nature; the way we fundamentally view and make sense of the world. It is the energy fo our adult self and only becomes relevant after the age of 18. Before that, this is determined [rest of string was truncated]&quot;;.
+        ///    The first number is determined by the year we were born and corresponds to our fundamental nature; the way we essentially view and make sense of the world. It is the energy most strongly associated with our adult selves and only becomes relevant after the age of 18. Be [rest of string was truncated]&quot;;.
         /// </summary>
         public static string personal_chart {
             get {
@@ -3644,6 +3832,18 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Being sensitive by nature, soil energies do not typically have a strong constitution. In Traditional Chinese Medicine, the earth element governs the spleen, pancreas and stomach and
+        ///    there for the lymphatic and immune systems. Soil energies must take extra care to look after these organs with a healthy balanced diet which does not contain excessive carbohydrate.
+        ///    It is also advisable to engage in activities which are calming, such as meditation and yoga, in order to avoid excessive anxiety  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_child {
+            get {
+                return ResourceManager.GetString("soil_child", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Soil energies are maternal and caring in nature and are happiest when they are serving and supporting others.
         ///    They are not natural born leaders, but work diligently and tirelessly to get the job done. 
         ///    Number two soil energies are probably the most reliable of all the energies.
@@ -3711,15 +3911,16 @@ namespace K9.Globalisation {
         ///        &lt;/thead&gt;
         ///        &lt;tbody&gt;
         ///            &lt;tr&gt;
-        ///                &lt;td&gt;Sensitive&lt;/td&gt;
-        ///                &lt;td&gt;Hypersensitive&lt;/td&gt;
+        ///                &lt;td&gt;Supportive&lt;/td&gt;
+        ///                &lt;td&gt;Stubborn&lt;/td&gt;
         ///            &lt;/tr&gt;
         ///            &lt;tr&gt;
-        ///                &lt;td&gt;Curious&lt;/td&gt;
-        ///                &lt;td&gt;Disinterested&lt;/td&gt;
+        ///                &lt;td&gt;Social&lt;/td&gt;
+        ///                &lt;td&gt;Cynical&lt;/td&gt;
         ///            &lt;/tr&gt;
         ///            &lt;tr&gt;
-        ///                &lt;td&gt;Diplomatic&lt; [rest of string was truncated]&quot;;.
+        ///                &lt;td&gt;Tactful&lt;/td&gt;
+        ///          [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_overview {
             get {
@@ -4063,6 +4264,26 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The Tree element governs the liver and gallbladder. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is advisable for thunder energies to avoid eating two to three hours before sleep as well as overeating.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is also wise to avoid too many late nights, as this is the time when the liver repairs itself the most.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Eating an abundance of green leafy vegetables is especially important for thunder energies, 
+        ///    as well as citrus fruits such as lemons, limes and grapefruits and apple cider vinegar, w [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_child {
+            get {
+                return ResourceManager.GetString("thunder_child", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Thunder energies embody the power of spring and have plenty of vitality and energy. They are more about doing than being and like to take action and initiate.
         ///&lt;/p&gt;
         ///&lt;p&gt;
@@ -4125,9 +4346,26 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    A strong yang, base line opening up into two yin lines. This represents growth and action and the awakening of dawn and spring as well as action and spontaneity.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
+        ///    &lt;table class=&quot;table&quot;&gt;
+        ///        &lt;thead&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;th&gt;In Balance / Potential&lt;/th&gt;
+        ///            &lt;th&gt;Out of Balance&lt;/th&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;/thead&gt;
+        ///        &lt;tbody&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Pioneering&lt;/td&gt;
+        ///                &lt;td&gt;Unrealistic&lt;/td&gt;
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Proactive&lt;/td&gt;
+        ///                &lt;td&gt;Chaotic&lt;/td&gt;
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Strong&lt;/td&gt;
+        ///                &lt;td&gt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_overview {
             get {
@@ -4305,6 +4543,23 @@ namespace K9.Globalisation {
         public static string Water {
             get {
                 return ResourceManager.GetString("Water", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Water energies are most likely to suffer health problems related to the kidneys, bladder, reproductive system and adrenal glands, all of which are governed by the element water in Traditional Chinese Medicine.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is important for people of this sign to keep warm and take plenty of rest. Alcohol, caffeine, sugar, late nights and stress are particularly depleting for water energies.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is also especially important to avoid cold, damp living environments.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string water_child {
+            get {
+                return ResourceManager.GetString("water_child", resourceCulture);
             }
         }
         
@@ -4540,6 +4795,22 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Like the other Tree element, Thunder, Wind energies need to take good care of the liver and gall bladder. Unlike Thunder energies who, being yang, are more prone to liver imbalances, yin Wind energies are more likely to experience issues with the yin gall bladder.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is important for Wind energies to eat slowly and when relaxed and without distraction. Also, it is better to not eat when not hungry.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is best to avoid cold foods and fluids, as this impairs digestion. [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_child {
+            get {
+                return ResourceManager.GetString("wind_child", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Like the wind, four Wind energies can express anything from stillness to a raging tornado. This energy is one of the most changeable and indeed emotional of the nine energies.
         ///&lt;/p&gt;
         ///&lt;p&gt;
@@ -4597,9 +4868,26 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    A strong yang, base line opening up into two yin lines. This represents growth and action and the awakening of dawn and spring as well as action and spontaneity.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
+        ///    &lt;table class=&quot;table&quot;&gt;
+        ///        &lt;thead&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;th&gt;In Balance / Potential&lt;/th&gt;
+        ///            &lt;th&gt;Out of Balance&lt;/th&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;/thead&gt;
+        ///        &lt;tbody&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Influential&lt;/td&gt;
+        ///                &lt;td&gt;Single-minded&lt;/td&gt;
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Penetrating&lt;/td&gt;
+        ///                &lt;td&gt;Unrealistic&lt;/td&gt;
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Visionary&lt;/td&gt;
+        ///         [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_overview {
             get {

@@ -99,7 +99,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Articles\en-gb\coreearth-child.htm" />
+    <Content Include="Articles\en-gb\fire-child.htm" />
     <Content Include="Articles\en-gb\fire-overview.htm" />
+    <Content Include="Articles\en-gb\heaven-child.htm" />
+    <Content Include="Articles\en-gb\lake-child.htm" />
+    <Content Include="Articles\en-gb\mountain-child.htm" />
     <Content Include="Articles\en-gb\mountain-overview.htm" />
     <Content Include="Articles\en-gb\lake-overview.htm" />
     <Content Include="Articles\en-gb\heaven-overview.htm" />
@@ -113,8 +118,12 @@
     <Content Include="Articles\en-gb\lake-emotional-description.htm" />
     <Content Include="Articles\en-gb\heaven-emotional-description.htm" />
     <Content Include="Articles\en-gb\coreearth-emotional-description.htm" />
+    <Content Include="Articles\en-gb\soil-child.htm" />
     <Content Include="Articles\en-gb\soil-surface-description.htm" />
     <Content Include="Articles\en-gb\coreearth-overview.htm" />
+    <Content Include="Articles\en-gb\thunder-child.htm" />
+    <Content Include="Articles\en-gb\water-child.htm" />
+    <Content Include="Articles\en-gb\wind-child.htm" />
     <Content Include="Articles\en-gb\wind-overview.htm" />
     <Content Include="Articles\en-gb\thunder-surface-description.htm" />
     <Content Include="Articles\en-gb\soil-overview.htm" />

@@ -171,6 +171,10 @@
     width: 100% !important;
 }
 
+.border-top-0 {
+    border-top: 0 !important;
+}
+
 .bold {
 	font-weight: bold;
 }

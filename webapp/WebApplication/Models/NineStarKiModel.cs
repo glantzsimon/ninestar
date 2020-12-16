@@ -71,7 +71,7 @@ namespace K9.WebApplication.Models
         public ENineStarKiEnergy LifeCycleMonthEnergy { get; }
 
         public bool IsProcessed { get; set; } = false;
-
+    
         private NineStarKiEnergy GetMainEnergy(DateTime date, EGender gender)
         {
             var month = date.Month;

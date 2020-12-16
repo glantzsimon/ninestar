@@ -19,5 +19,19 @@ namespace K9.WebApplication.Models
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LanguageLabel)]
         public string GenderName => Gender.GetLocalisedLanguageName();
+
+        public int YearsOld => GetYearsOld();
+
+        public bool IsAdult() => YearsOld >= 18;
+
+        private int GetYearsOld()
+        {
+            if (DateOfBirth == null)
+            {
+                return 0;
+            }
+
+            return (DateTime.Now.Year - DateOfBirth.Year) - (DateTime.Now.DayOfYear < DateOfBirth.DayOfYear ? 1 : 0);
+        }
     }
 }

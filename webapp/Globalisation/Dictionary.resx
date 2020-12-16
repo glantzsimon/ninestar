@@ -1357,4 +1357,7 @@
   <data name="NineMainEnergiesTitle" xml:space="preserve">
     <value>The 9 Main Energies</value>
   </data>
+  <data name="ProfileCalculator" xml:space="preserve">
+    <value>Profile Calculator</value>
+  </data>
 </root>

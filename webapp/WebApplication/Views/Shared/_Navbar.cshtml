@@ -73,7 +73,8 @@
                 </div>
                 <div class="collapse navbar-collapse menu-main" id="bs-navbar-collapse-1">
                     <ul class="nav navbar-nav main-navbar">
-                        <li class="@ViewContext.GetActiveClass("Index", "NineStarKi")"><a href="@Url.Action("Index", "NineStarKi")"> @K9.Globalisation.Dictionary.Calculator</a></li>
+                        <li class="desktop-only @ViewContext.GetActiveClass("Index", "NineStarKi")"><a href="@Url.Action("Index", "NineStarKi")"> @K9.Globalisation.Dictionary.ProfileCalculator} </a></li>
+                        <li class="device-only @ViewContext.GetActiveClass("Index", "NineStarKi")"><a href="@Url.Action("Index", "NineStarKi")"> @K9.Globalisation.Dictionary.Calculator} </a></li>
                         <li class="@ViewContext.GetActiveClass("Relationships", "NineStarKi")"><a href="@Url.Action("Relationships", "NineStarKi")"> @K9.Globalisation.Dictionary.Relationships</a></li>
                         <li class="@ViewContext.GetActiveClass("Index", "Home")"><a class="device-only" href="@Url.Action("Index", "Home")"> <span class="device-only">@Dictionary.Home</span></a></li>
                         <li class="@ViewContext.GetActiveClass("Predictions", "NineStarKi")"><a href="@Url.Action("Predictions", "NineStarKi")"> @K9.Globalisation.Dictionary.Predictions</a></li>

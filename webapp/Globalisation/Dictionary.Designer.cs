@@ -1469,7 +1469,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Please note that the &apos;Character Energy&apos; or &apos;Emotional Energy&apos; alone does not give a very detailed description of a person. It is important to also take into account the &apos;Main Energy&apos; or &apos;Adult Persona&quot;, as well as the &apos;Surface Energy&apos;. However, it does give a useful overview of their deeper character. The Character Energy also has quite a significant influence on intimate relationships, where the emotional  that is likely to exist between two people. There is more information on that in the &lt;a href [rest of string was truncated]&quot;;.
+        ///    Please note that the &apos;Character Energy&apos; or &apos;Emotional Energy&apos; alone does not give a very detailed description of a person. It is important to also take into account the &apos;Main Energy&apos; or &apos;Adult Persona&quot;, as well as the &apos;Surface Energy&apos;. However, it does give a useful overview of their deeper character. The Character Energy also has quite a significant influence on intimate relationships, where the more emotional aspects of ourselves tend to be revealed. There is more information on that in the &lt;a hr [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_energies_short_description {
             get {
@@ -3702,6 +3702,15 @@ namespace K9.Globalisation {
         public static string PrivacyPolicyTitle {
             get {
                 return ResourceManager.GetString("PrivacyPolicyTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profile Calculator.
+        /// </summary>
+        public static string ProfileCalculator {
+            get {
+                return ResourceManager.GetString("ProfileCalculator", resourceCulture);
             }
         }
         

@@ -1,6 +1,7 @@
 ﻿using K9.Base.WebApplication.Config;
 using K9.Base.WebApplication.Controllers;
 using K9.Base.WebApplication.ViewModels;
+using K9.DataAccessLayer.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
@@ -8,10 +9,10 @@ using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.Models;
 using K9.WebApplication.Services;
+using K9.WebApplication.Services.Stripe;
 using NLog;
 using System;
 using System.Web.Mvc;
-using K9.DataAccessLayer.Models;
 
 namespace K9.WebApplication.Controllers
 {

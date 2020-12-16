@@ -1,0 +1,46 @@
+﻿@using System.Web.Mvc.Html
+@using K9.WebApplication.Helpers
+@model K9.WebApplication.Models.MembershipViewModel
+
+@{
+    ViewBag.Title = K9.Globalisation.Dictionary.MembershipLabel;
+    ViewBag.SubTitle = K9.Globalisation.Dictionary.MembershipLabel;
+    //ViewBag.Background = ViewBagHelper.EViewBackground.Jarallax;
+    Layout = "../Shared/_LayoutForm.cshtml";
+}
+
+@Html.Partial("_BetaPopup")
+
+<div class="container main-content">
+    <div class="text-center">
+        @foreach (var membershipModel in Model.Memberships)
+        {
+            <div class="col-md-3 col-sm-12">
+                @Html.Partial("_MembershipOption", membershipModel)
+            </div>
+        }
+    </div>
+    <div class="col-md-12 col-sm-12">
+        <div style="height: 20px;">&nbsp;</div>
+        @Html.Separator()
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <div style="height: 7px;">&nbsp;</div>
+        <div class="membership-description">
+            @MvcHtmlString.Create(K9.Globalisation.Dictionary.standard_membership_description)
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <div style="height: 7px;">&nbsp;</div>
+        <div class="membership-description">
+            @MvcHtmlString.Create(K9.Globalisation.Dictionary.platinum_membership_description)
+        </div>
+    </div>
+    <div class="col-md-12 col-sm-12">
+        <div style="height: 7px;">&nbsp;</div>
+        <hr />
+        <div class="membership-description">
+            @MvcHtmlString.Create(K9.Globalisation.Dictionary.membership_additional_information)
+        </div>
+    </div>
+</div>

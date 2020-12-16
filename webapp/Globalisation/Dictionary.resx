@@ -1090,6 +1090,12 @@
   <data name="_894" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>summaries\en-gb\_894.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="CookiesTitle" xml:space="preserve">
+    <value>Use of Cookies</value>
+  </data>
+  <data name="cookies_blurb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>text\en-gb\cookies-blurb.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="Hub" xml:space="preserve">
     <value>Hub</value>
   </data>
@@ -1104,5 +1110,176 @@
   </data>
   <data name="_959" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>summaries\en-gb\_959.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="StatusLabel" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="AutoRenewLabel" xml:space="preserve">
+    <value>Auto Renewal</value>
+  </data>
+  <data name="DonationThankYouEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>templates\en-gb\donationthankyouemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EndsOnLabel" xml:space="preserve">
+    <value>Ends On</value>
+  </data>
+  <data name="MembershipOptions" xml:space="preserve">
+    <value>Membership Options</value>
+  </data>
+  <data name="NotRegisteredYet" xml:space="preserve">
+    <value>Not yet signed up?</value>
+  </data>
+  <data name="StartsOnLabel" xml:space="preserve">
+    <value>Starts On</value>
+  </data>
+  <data name="SubscriptionCostLabel" xml:space="preserve">
+    <value>Subsription Cost</value>
+  </data>
+  <data name="Switch" xml:space="preserve">
+    <value>Switch</value>
+  </data>
+  <data name="SwitchMembershipErrorAlreadySubscribed" xml:space="preserve">
+    <value>You cannot switch memberships as you are already subscribed to the selected one.</value>
+  </data>
+  <data name="SwitchMembershipErrorNotSubscribed" xml:space="preserve">
+    <value>You cannot switch memberships as you are not currently subscribed to any.</value>
+  </data>
+  <data name="SwitchSuccessful" xml:space="preserve">
+    <value>Your successfully updated your subscription. Thank you!</value>
+  </data>
+  <data name="SwitchSuccessfulTitle" xml:space="preserve">
+    <value>Subscription Updated</value>
+  </data>
+  <data name="ThankyouForDonationEmailTitle" xml:space="preserve">
+    <value>Thank you for your donation</value>
+  </data>
+  <data name="TotalLabel" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="EmailAddressLabel" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+  <data name="MembershipOption" xml:space="preserve">
+    <value>Membership Option</value>
+  </data>
+  <data name="PurchaseMembershipErrorAlreadySubscribed" xml:space="preserve">
+    <value>You cannot purchase the selected membership as you are already subscribed.</value>
+  </data>
+  <data name="PurchaseMembershipErrorAlreadySubscribedToAnother" xml:space="preserve">
+    <value>You cannot purchase the selected membership as you have an existing subscription.</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="SelectedPurchaseText" xml:space="preserve">
+    <value>You have selected the following Membership option</value>
+  </data>
+  <data name="SubscriptionDiscountLabel" xml:space="preserve">
+    <value>Subscription Discount</value>
+  </data>
+  <data name="UpgradeMembership" xml:space="preserve">
+    <value>Upgrade Membership</value>
+  </data>
+  <data name="AgreeToTerms" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>text\en-gb\agreetoterms.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="AnnualPlatinumMembership" xml:space="preserve">
+    <value>Annual Platinum Membership</value>
+  </data>
+  <data name="AnnualStandardMembership" xml:space="preserve">
+    <value>Annual Standard Membership</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="ChangeMembership" xml:space="preserve">
+    <value>Change Membership</value>
+  </data>
+  <data name="CompanyLabel" xml:space="preserve">
+    <value>Company Name</value>
+  </data>
+  <data name="DuplicateContactError" xml:space="preserve">
+    <value>Sorry, a contact with that email address already exists.</value>
+  </data>
+  <data name="MailChimpImport" xml:space="preserve">
+    <value>MailChimp Contact Import</value>
+  </data>
+  <data name="MailChimpImportSuccess" xml:space="preserve">
+    <value>Your contacts were successfully imported into MailChimp</value>
+  </data>
+  <data name="MembershipLabel" xml:space="preserve">
+    <value>Membership</value>
+  </data>
+  <data name="MembershipRunsUntil" xml:space="preserve">
+    <value>Your current membership runs until</value>
+  </data>
+  <data name="membership_additional_information" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>text\en-gb\membership-additional-information.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Monthly" xml:space="preserve">
+    <value>Monthly</value>
+  </data>
+  <data name="MonthlyPlatinumMembership" xml:space="preserve">
+    <value>Monthly Platinum Membership</value>
+  </data>
+  <data name="MonthlyStandardMembership" xml:space="preserve">
+    <value>Monthly Standard Membership</value>
+  </data>
+  <data name="NineStar" xml:space="preserve">
+    <value>NineStar</value>
+  </data>
+  <data name="NoChargeUntilText" xml:space="preserve">
+    <value>You will not be charged for this change in plan until</value>
+  </data>
+  <data name="PlatinumMembership" xml:space="preserve">
+    <value>Platinum Membership</value>
+  </data>
+  <data name="platinum_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>text\en-gb\platinum-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PrivacyPolicy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>text\en-gb\privacypolicy.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PrivacyPolicyTitle" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="SignUp" xml:space="preserve">
+    <value>Sign Up</value>
+  </data>
+  <data name="SignUpSuccessTitle" xml:space="preserve">
+    <value>Thank you for signing up to our newsletter!</value>
+  </data>
+  <data name="SignUpToNewsLetter" xml:space="preserve">
+    <value>Sign up to our newsletter</value>
+  </data>
+  <data name="standard_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>text\en-gb\standard-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="StripeCustomerIdLabel" xml:space="preserve">
+    <value>Stripe Customer Id</value>
+  </data>
+  <data name="Subscribed" xml:space="preserve">
+    <value>Subscribed</value>
+  </data>
+  <data name="SubscribeNow" xml:space="preserve">
+    <value>Join Now</value>
+  </data>
+  <data name="SubscriptionDetailsLabel" xml:space="preserve">
+    <value>Subscription Details</value>
+  </data>
+  <data name="SubscriptionSuccessful" xml:space="preserve">
+    <value>Subscription Successful</value>
+  </data>
+  <data name="Upgrade" xml:space="preserve">
+    <value>Upgrade</value>
+  </data>
+  <data name="ValidUntil" xml:space="preserve">
+    <value>Valid until:</value>
+  </data>
+  <data name="YouAreSignedUp" xml:space="preserve">
+    <value>Your subscription was successful. Thank you!</value>
+  </data>
+  <data name="YourCurrentMembership" xml:space="preserve">
+    <value>Your Current Subscription</value>
   </data>
 </root>

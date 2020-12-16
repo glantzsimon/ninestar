@@ -1,0 +1,10 @@
+﻿@model K9.Base.WebApplication.ViewModels.FileSourceViewModel
+
+<div class="well">
+    @foreach (var document in Model.Documents)
+    {
+        <div class="document-container">
+            <a target="_blank" href="@document.AssetInfo.Src"><i class="@document.AssetInfo.FontAweSomeFileTypeClass"></i> @document.FileName</a>
+        </div>
+    }
+</div>

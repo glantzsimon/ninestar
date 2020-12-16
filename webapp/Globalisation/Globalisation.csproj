@@ -257,13 +257,20 @@
     <Content Include="Articles\en-gb\mountain-trigram.htm" />
     <Content Include="Articles\en-gb\fire-trigram.htm" />
     <Content Include="Articles\en-gb\water-trigram.htm" />
+    <Content Include="Templates\en-gb\DonationThankYouEmail.htm" />
     <Content Include="Templates\en-gb\DonationReceivedEmail.htm" />
     <Content Include="Templates\en-gb\PasswordResetEmail.htm" />
     <Content Include="Templates\en-gb\SupportQuery.htm" />
     <Content Include="Templates\en-gb\WelcomeEmail.htm" />
+    <Content Include="Text\en-gb\cookies-blurb.txt" />
+    <Content Include="Text\en-gb\AgreeToTerms.htm" />
+    <Content Include="Text\en-gb\PrivacyPolicy.htm" />
+    <Content Include="Text\en-gb\membership-additional-information.htm" />
+    <Content Include="Text\en-gb\platinum-membership-description.htm" />
     <Content Include="Text\en-gb\RelationshipsMetaDescription.htm" />
     <Content Include="Text\en-gb\nine-star-ki-title.txt" />
     <Content Include="Text\en-gb\Keywords.txt" />
+    <Content Include="Text\en-gb\standard-membership-description.htm" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

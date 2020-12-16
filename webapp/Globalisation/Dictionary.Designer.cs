@@ -1129,13 +1129,15 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The powerful presence of Fire element in your chart gives you great clarity and brilliance with the potential for genius. 
+        ///    Outwardly you may sometimes appear quiet or withdrawn. You can be cautious and sometimes prone to procrastination.
+        ///
+        ///    However, your deeper nature is emotional, sensitive and trusting. You can be quite influential and persuasive and equally easily influenced by others.
         ///    
-        ///    You are a natural visionary and your ideas and clear-sightedness are immensely helpful to those around you. 
+        ///    You may have a stubborn streak and can be impulsive at times.
+        ///
+        ///    Your Fire nature can give you tremendous clarity, sensitivity and intuition can are capable of inspiring those around you.
         ///    
-        ///    You are deeply intuitive and sensitive. However, this sensitivity means you often need the acknowledgement and appreciation of those around you. Otherwise you may begin to feel insecure.
-        ///    
-        ///    Sometimes you are impulsive and can fly off the han [rest of string was truncated]&quot;;.
+        ///    It is important  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _941 {
             get {
@@ -1196,6 +1198,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to While using this site, you agree to have read and accepted our terms of use, cookie and &lt;a target=&quot;_blank&quot; href=&quot;{privacypolicyurl}&quot;&gt;privacy policy&lt;/a&gt;.
+        /// </summary>
+        public static string AgreeToTerms {
+            get {
+                return ResourceManager.GetString("AgreeToTerms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Amount Donated.
         /// </summary>
         public static string AmountDonatedLabel {
@@ -1210,6 +1221,42 @@ namespace K9.Globalisation {
         public static string AmountToDonateLabel {
             get {
                 return ResourceManager.GetString("AmountToDonateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Annual Platinum Membership.
+        /// </summary>
+        public static string AnnualPlatinumMembership {
+            get {
+                return ResourceManager.GetString("AnnualPlatinumMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Annual Standard Membership.
+        /// </summary>
+        public static string AnnualStandardMembership {
+            get {
+                return ResourceManager.GetString("AnnualStandardMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto Renewal.
+        /// </summary>
+        public static string AutoRenewLabel {
+            get {
+                return ResourceManager.GetString("AutoRenewLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        public static string Back {
+            get {
+                return ResourceManager.GetString("Back", resourceCulture);
             }
         }
         
@@ -1286,6 +1333,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change Membership.
+        /// </summary>
+        public static string ChangeMembership {
+            get {
+                return ResourceManager.GetString("ChangeMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Chen.
         /// </summary>
         public static string Chen {
@@ -1349,6 +1405,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Company Name.
+        /// </summary>
+        public static string CompanyLabel {
+            get {
+                return ResourceManager.GetString("CompanyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
         public static string CompanyLegalDescription {
@@ -1363,6 +1428,24 @@ namespace K9.Globalisation {
         public static string CompanyShortDescription {
             get {
                 return ResourceManager.GetString("CompanyShortDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we&apos;ll assume that you are happy to receive all cookies from this website. If you would like to change your preferences you may do so by following the instructions &lt;a href=&quot;http://www.allaboutcookies.org/&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;..
+        /// </summary>
+        public static string cookies_blurb {
+            get {
+                return ResourceManager.GetString("cookies_blurb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use of Cookies.
+        /// </summary>
+        public static string CookiesTitle {
+            get {
+                return ResourceManager.GetString("CookiesTitle", resourceCulture);
             }
         }
         
@@ -1616,22 +1699,21 @@ namespace K9.Globalisation {
         ///&lt;/head&gt;
         ///
         ///&lt;style type=&quot;text/css&quot;&gt;
-        ///    html
-        ///    {
+        ///    html {
         ///        margin: 0;
         ///        padding: 0;
-        ///        font-family: &quot;Segoe UI&quot; , Verdana, Helvetica, Sans-Serif;
+        ///        font-family: &quot;Segoe UI&quot;, Verdana, Helvetica, Sans-Serif;
         ///        font-size: 100%;
         ///        text-rendering: optimizeLegibility !important;
         ///        -webkit-font-smoothing: antialiased !important;
-        ///        margin: 0; 
+        ///        margin: 0;
         ///        color: #333;
         ///    }
         ///&lt;/style&gt;
         ///
         ///&lt;body&gt;
-        ///&lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
-        ///&lt;p class=&quot;text&quot;&gt;We have received a do [rest of string was truncated]&quot;;.
+        ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;We have received a d [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DonationReceivedEmail {
             get {
@@ -1667,6 +1749,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;!doctype html&gt;
+        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;!-- NAME: 1:2:1 COLUMN --&gt;
+        ///    &lt;!--[if gte mso 15]&gt;
+        ///    &lt;xml&gt;
+        ///        &lt;o:OfficeDocumentSettings&gt;
+        ///        &lt;o:AllowPNG/&gt;
+        ///        &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
+        ///        &lt;/o:OfficeDocumentSettings&gt;
+        ///    &lt;/xml&gt;
+        ///    &lt;![endif]--&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
+        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string DonationThankYouEmail {
+            get {
+                return ResourceManager.GetString("DonationThankYouEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Donation To.
         /// </summary>
         public static string DonationTo {
@@ -1681,6 +1786,15 @@ namespace K9.Globalisation {
         public static string DonationToNineStar {
             get {
                 return ResourceManager.GetString("DonationToNineStar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sorry, a contact with that email address already exists..
+        /// </summary>
+        public static string DuplicateContactError {
+            get {
+                return ResourceManager.GetString("DuplicateContactError", resourceCulture);
             }
         }
         
@@ -1758,6 +1872,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email Address.
+        /// </summary>
+        public static string EmailAddressLabel {
+            get {
+                return ResourceManager.GetString("EmailAddressLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Emotional Energy / Inner Child.
         /// </summary>
         public static string EmotionalEnergyLabel {
@@ -1772,6 +1895,15 @@ namespace K9.Globalisation {
         public static string EmotionalEnergyShortLabel {
             get {
                 return ResourceManager.GetString("EmotionalEnergyShortLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ends On.
+        /// </summary>
+        public static string EndsOnLabel {
+            get {
+                return ResourceManager.GetString("EndsOnLabel", resourceCulture);
             }
         }
         
@@ -2443,6 +2575,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to MailChimp Contact Import.
+        /// </summary>
+        public static string MailChimpImport {
+            get {
+                return ResourceManager.GetString("MailChimpImport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your contacts were successfully imported into MailChimp.
+        /// </summary>
+        public static string MailChimpImportSuccess {
+            get {
+                return ResourceManager.GetString("MailChimpImportSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Main Energy.
         /// </summary>
         public static string MainEnergy {
@@ -2506,6 +2656,56 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;strong&gt;Your membership will also help to fund:&lt;/strong&gt;&lt;/div&gt;
+        ///&lt;br /&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; The tools necessary for the upkeep of the village plantations (wheelbarrow, brush cutters, machetes, axes, watering cans, etc.),&lt;/li&gt;
+        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; The living wages of the villagers maintaining the plantations (15 euros per week per person)&lt;/li&gt;
+        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Proper admin [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string membership_additional_information {
+            get {
+                return ResourceManager.GetString("membership_additional_information", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Membership.
+        /// </summary>
+        public static string MembershipLabel {
+            get {
+                return ResourceManager.GetString("MembershipLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Membership Option.
+        /// </summary>
+        public static string MembershipOption {
+            get {
+                return ResourceManager.GetString("MembershipOption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Membership Options.
+        /// </summary>
+        public static string MembershipOptions {
+            get {
+                return ResourceManager.GetString("MembershipOptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your current membership runs until.
+        /// </summary>
+        public static string MembershipRunsUntil {
+            get {
+                return ResourceManager.GetString("MembershipRunsUntil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Metal.
         /// </summary>
         public static string Metal {
@@ -2560,6 +2760,33 @@ namespace K9.Globalisation {
         public static string ModalityLabel {
             get {
                 return ResourceManager.GetString("ModalityLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monthly.
+        /// </summary>
+        public static string Monthly {
+            get {
+                return ResourceManager.GetString("Monthly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monthly Platinum Membership.
+        /// </summary>
+        public static string MonthlyPlatinumMembership {
+            get {
+                return ResourceManager.GetString("MonthlyPlatinumMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monthly Standard Membership.
+        /// </summary>
+        public static string MonthlyStandardMembership {
+            get {
+                return ResourceManager.GetString("MonthlyStandardMembership", resourceCulture);
             }
         }
         
@@ -2745,6 +2972,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to NineStar.
+        /// </summary>
+        public static string NineStar {
+            get {
+                return ResourceManager.GetString("NineStar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 9 star ki calculator nine star ki calculator calculate your nine star ki 9 star ki personal profile astrology reading.
         /// </summary>
         public static string NineStarKiCalculatorKeywords {
@@ -2790,6 +3026,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You will not be charged for this change in plan until.
+        /// </summary>
+        public static string NoChargeUntilText {
+            get {
+                return ResourceManager.GetString("NoChargeUntilText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to None.
         /// </summary>
         public static string None {
@@ -2822,6 +3067,15 @@ namespace K9.Globalisation {
         public static string NorthWest {
             get {
                 return ResourceManager.GetString("NorthWest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not yet signed up?.
+        /// </summary>
+        public static string NotRegisteredYet {
+            get {
+                return ResourceManager.GetString("NotRegisteredYet", resourceCulture);
             }
         }
         
@@ -2982,6 +3236,26 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;The &lt;strong&gt;Platinum Membership&lt;/strong&gt;, in addition to all the benefits of the &lt;strong&gt;Standard Membership&lt;/strong&gt;, also offers you access to a hotline to &lt;strong&gt;Yann Guignon&lt;/strong&gt;, one of the worlds leading epert on the Bwiti traditions and Gabonese culture.&lt;/div&gt;
+        ///&lt;br /&gt;
+        ///&lt;div&gt;With the &lt;strong&gt;Platinum Membership&lt;/strong&gt;, you will also be sponsoring two Iboga trees per month.&lt;/div&gt;.
+        /// </summary>
+        public static string platinum_membership_description {
+            get {
+                return ResourceManager.GetString("platinum_membership_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Platinum Membership.
+        /// </summary>
+        public static string PlatinumMembership {
+            get {
+                return ResourceManager.GetString("PlatinumMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pragmatist.
         /// </summary>
         public static string Pragmatist {
@@ -3027,11 +3301,62 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///	&lt;strong&gt;
+        ///		This is the privacy notice of Glantz Software Consulting Limited. In this document, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot; refer to Glantz Software Consulting Limited.
+        ///		We are company number 9762805 registered in The United Kingdom.
+        ///	&lt;/strong&gt;
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///	&lt;strong&gt;
+        ///		Our registered office is at: SG House, 6 St Cross Road, Winchester, Hampshire, SO23 9HX.
+        ///	&lt;/strong&gt;
+        ///&lt;/p&gt;
+        ///
+        ///&lt;h4&gt;Introduction&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///	This privacy notice aims to inform you about how we collect and process any information that we col [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string PrivacyPolicy {
+            get {
+                return ResourceManager.GetString("PrivacyPolicy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Privacy Policy.
+        /// </summary>
+        public static string PrivacyPolicyTitle {
+            get {
+                return ResourceManager.GetString("PrivacyPolicyTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Projects.
         /// </summary>
         public static string Projects {
             get {
                 return ResourceManager.GetString("Projects", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You cannot purchase the selected membership as you are already subscribed..
+        /// </summary>
+        public static string PurchaseMembershipErrorAlreadySubscribed {
+            get {
+                return ResourceManager.GetString("PurchaseMembershipErrorAlreadySubscribed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You cannot purchase the selected membership as you have an existing subscription..
+        /// </summary>
+        public static string PurchaseMembershipErrorAlreadySubscribedToAnother {
+            get {
+                return ResourceManager.GetString("PurchaseMembershipErrorAlreadySubscribedToAnother", resourceCulture);
             }
         }
         
@@ -3109,6 +3434,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select.
+        /// </summary>
+        public static string Select {
+            get {
+                return ResourceManager.GetString("Select", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have selected the following Membership option.
+        /// </summary>
+        public static string SelectedPurchaseText {
+            get {
+                return ResourceManager.GetString("SelectedPurchaseText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Seventh Child.
         /// </summary>
         public static string SeventhChild {
@@ -3123,6 +3466,33 @@ namespace K9.Globalisation {
         public static string Shop {
             get {
                 return ResourceManager.GetString("Shop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign Up.
+        /// </summary>
+        public static string SignUp {
+            get {
+                return ResourceManager.GetString("SignUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thank you for signing up to our newsletter!.
+        /// </summary>
+        public static string SignUpSuccessTitle {
+            get {
+                return ResourceManager.GetString("SignUpSuccessTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign up to our newsletter.
+        /// </summary>
+        public static string SignUpToNewsLetter {
+            get {
+                return ResourceManager.GetString("SignUpToNewsLetter", resourceCulture);
             }
         }
         
@@ -3290,11 +3660,105 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;The &lt;strong&gt;Standard Membership&lt;/strong&gt; grants you full access to Blessings of The Forest&apos;s extensive library.
+        ///    This is perhaps the world&apos;s most comprehensive collection of material concerning Bwiti and the medicinal properties of Iboga.
+        ///&lt;/div&gt;
+        ///&lt;br /&gt;
+        ///&lt;div&gt;With the &lt;strong&gt;Standard Membership&lt;/strong&gt;, you will also be sponsoring one Iboga tree per month.&lt;/div&gt;.
+        /// </summary>
+        public static string standard_membership_description {
+            get {
+                return ResourceManager.GetString("standard_membership_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Starts On.
+        /// </summary>
+        public static string StartsOnLabel {
+            get {
+                return ResourceManager.GetString("StartsOnLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Static.
         /// </summary>
         public static string Static {
             get {
                 return ResourceManager.GetString("Static", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string StatusLabel {
+            get {
+                return ResourceManager.GetString("StatusLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stripe Customer Id.
+        /// </summary>
+        public static string StripeCustomerIdLabel {
+            get {
+                return ResourceManager.GetString("StripeCustomerIdLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subscribed.
+        /// </summary>
+        public static string Subscribed {
+            get {
+                return ResourceManager.GetString("Subscribed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Join Now.
+        /// </summary>
+        public static string SubscribeNow {
+            get {
+                return ResourceManager.GetString("SubscribeNow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subsription Cost.
+        /// </summary>
+        public static string SubscriptionCostLabel {
+            get {
+                return ResourceManager.GetString("SubscriptionCostLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subscription Details.
+        /// </summary>
+        public static string SubscriptionDetailsLabel {
+            get {
+                return ResourceManager.GetString("SubscriptionDetailsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subscription Discount.
+        /// </summary>
+        public static string SubscriptionDiscountLabel {
+            get {
+                return ResourceManager.GetString("SubscriptionDiscountLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subscription Successful.
+        /// </summary>
+        public static string SubscriptionSuccessful {
+            get {
+                return ResourceManager.GetString("SubscriptionSuccessful", resourceCulture);
             }
         }
         
@@ -3372,6 +3836,60 @@ namespace K9.Globalisation {
         public static string SurfaceEnergyShortLabel {
             get {
                 return ResourceManager.GetString("SurfaceEnergyShortLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Switch.
+        /// </summary>
+        public static string Switch {
+            get {
+                return ResourceManager.GetString("Switch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You cannot switch memberships as you are already subscribed to the selected one..
+        /// </summary>
+        public static string SwitchMembershipErrorAlreadySubscribed {
+            get {
+                return ResourceManager.GetString("SwitchMembershipErrorAlreadySubscribed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You cannot switch memberships as you are not currently subscribed to any..
+        /// </summary>
+        public static string SwitchMembershipErrorNotSubscribed {
+            get {
+                return ResourceManager.GetString("SwitchMembershipErrorNotSubscribed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your successfully updated your subscription. Thank you!.
+        /// </summary>
+        public static string SwitchSuccessful {
+            get {
+                return ResourceManager.GetString("SwitchSuccessful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subscription Updated.
+        /// </summary>
+        public static string SwitchSuccessfulTitle {
+            get {
+                return ResourceManager.GetString("SwitchSuccessfulTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thank you for your donation.
+        /// </summary>
+        public static string ThankyouForDonationEmailTitle {
+            get {
+                return ResourceManager.GetString("ThankyouForDonationEmailTitle", resourceCulture);
             }
         }
         
@@ -3524,6 +4042,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Total.
+        /// </summary>
+        public static string TotalLabel {
+            get {
+                return ResourceManager.GetString("TotalLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Trans Female.
         /// </summary>
         public static string TransFemale {
@@ -3605,6 +4132,33 @@ namespace K9.Globalisation {
         public static string Unspecified {
             get {
                 return ResourceManager.GetString("Unspecified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upgrade.
+        /// </summary>
+        public static string Upgrade {
+            get {
+                return ResourceManager.GetString("Upgrade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upgrade Membership.
+        /// </summary>
+        public static string UpgradeMembership {
+            get {
+                return ResourceManager.GetString("UpgradeMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valid until:.
+        /// </summary>
+        public static string ValidUntil {
+            get {
+                return ResourceManager.GetString("ValidUntil", resourceCulture);
             }
         }
         
@@ -4017,6 +4571,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your subscription was successful. Thank you!.
+        /// </summary>
+        public static string YouAreSignedUp {
+            get {
+                return ResourceManager.GetString("YouAreSignedUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Youngest Daughter.
         /// </summary>
         public static string YoungestDaughter {
@@ -4031,6 +4594,15 @@ namespace K9.Globalisation {
         public static string YoungestSon {
             get {
                 return ResourceManager.GetString("YoungestSon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Current Subscription.
+        /// </summary>
+        public static string YourCurrentMembership {
+            get {
+                return ResourceManager.GetString("YourCurrentMembership", resourceCulture);
             }
         }
     }

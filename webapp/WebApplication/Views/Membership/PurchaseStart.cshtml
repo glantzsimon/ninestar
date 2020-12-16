@@ -1,0 +1,21 @@
+﻿@model K9.WebApplication.Models.MembershipModel
+@{
+    ViewBag.Title = K9.Globalisation.Dictionary.MembershipLabel;
+    ViewBag.SubTitle = K9.Globalisation.Dictionary.SignUp;
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+
+@using (Html.BeginForm("Purchase", "Membership", FormMethod.Post))
+{
+    <p style="margin-bottom: 25px;">@K9.Globalisation.Dictionary.SelectedPurchaseText</p>
+
+    @Html.Partial("_MembershipOption")
+
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.Hidden("Id", Model.MembershipOption.Id)
+        @Html.BootstrapButton(Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
+
+        <hr />
+    }
+}

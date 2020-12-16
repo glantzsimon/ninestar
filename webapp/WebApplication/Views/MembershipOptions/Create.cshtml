@@ -1,0 +1,15 @@
+﻿@using K9.Base.WebApplication.Helpers
+@model MembershipOption
+@{
+	Layout = "../Shared/_LayoutForm.cshtml";
+}
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+	using (Html.BeginBootstrapForm())
+	{
+		@Html.Partial("_EditFields")
+		<hr/>
+		@Html.BootstrapButton(Dictionary.Create)
+		@Html.BootstrapBackToListButton()
+	}
+}

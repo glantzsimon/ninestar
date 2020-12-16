@@ -5,7 +5,9 @@
         public static class Labels
         {
             public const string DonationAmountLabel = "DonationAmountLabel";
+            public const string CompanyLabel = "CompanyLabel";
             public const string AmountDonatedLabel = "AmountDonatedLabel";
+            public const string StatusLabel = "StatusLabel";
             public const string AmountToDonateLabel = "AmountToDonateLabel";
             public const string CustomerLabel = "CustomerLabel";
             public const string DonatedOnLabel = "DonatedOnLabel";
@@ -33,12 +35,32 @@
             public const string OccupationsLabel = "OccupationsLabel";
             public const string PersonalDevelopemntLabel = "PersonalDevelopemntLabel";
             public const string ExamplesLabel = "ExamplesLabel";
+            public const string StripeCustomerIdLabel = "StripeCustomerIdLabel";
+            public const string MembershipLabel = "MembershipLabel";
+            public const string SubscriptionCostLabel = "SubscriptionCostLabel";
+            public const string SubscriptionDiscountLabel = "SubscriptionDiscountLabel";
+            public const string SubscriptionDetailsLabel = "SubscriptionDetailsLabel";
+            public const string StartsOnLabel = "StartsOnLabel";
+            public const string EndsOnLabel = "EndsOnLabel";
+            public const string TotalLabel = "TotalLabel";
+            public const string AutoRenewLabel = "AutoRenewLabel";
+            public const string EmailAddressLabel = "EmailAddressLabel";
         }
 
         public static class Names
         {
+            public const string Contacts = "Contacts";
             public const string Donation = "Donation";
             public const string Donations = "Donations";
+            public const string MembershipOptions = "MembershipOptions";
+            public const string MembershipOption = "MembershipOption";
+            public const string Monthly = "Monthly";
+            public const string Annual = "Annual";
+            public const string MonthlyStandardMembership = "MonthlyStandardMembership";
+            public const string AnnualStandardMembership = "AnnualStandardMembership";
+            public const string MonthlyPlatinumMembership = "MonthlyPlatinumMembership";
+            public const string AnnualPlatinumMembership = "AnnualPlatinumMembership";
+            
             public const string Female = "Female";
             public const string Male = "Male";
             public const string TransFemale = "TransFemale";

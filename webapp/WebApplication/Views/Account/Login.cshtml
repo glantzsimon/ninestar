@@ -1,20 +1,22 @@
 ﻿@using K9.Base.WebApplication.Helpers
 @model UserAccount.LoginModel
 @{
-	ViewBag.Title = Dictionary.LogIn;
-	Layout = "~/Views/Shared/_LayoutFormSmall.cshtml";
+    ViewBag.Title = Dictionary.LogIn;
+    ViewBag.SubTitle = Dictionary.LogIn;
+    Layout = "~/Views/Shared/_LayoutFormSmall.cshtml";
 }
 
 @using (Html.BeginForm())
 {
-	using (Html.BeginBootstrapForm())
-	{
-		@Html.BootstrapEditorFor(model => model.UserName)
-		@Html.BootstrapEditorFor(model => model.Password)
-		<span>@Html.ActionLink(Dictionary.ResetPassword, "PasswordResetRequest") | @Html.ActionLink(Dictionary.Register, "Register")</span>
-		@Html.BootstrapEditorFor(model => model.RememberMe)
-		<hr/>
-		@Html.BootstrapButton(Dictionary.LogInVerb) 
-        @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.SignInWithFacebook, "Facebook", "Account", null, "fa-facebook")
-	}
+    <p>@K9.Globalisation.Dictionary.NotRegisteredYet Sign up @Html.ActionLink(K9.Globalisation.Dictionary.Here.ToLowerInvariant(), "Register")</p>
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.BootstrapEditorFor(model => model.UserName)
+        @Html.BootstrapEditorFor(model => model.Password)
+        <span>@Html.ActionLink(Dictionary.ResetPassword, "PasswordResetRequest")</span>
+        @Html.BootstrapEditorFor(model => model.RememberMe)
+        <hr />
+        @Html.BootstrapButton(Dictionary.LogInVerb)
+        @Html.BootstrapActionLinkButton(Dictionary.SignInWithFacebook, "Facebook", "Account", null, "fa-facebook")
+    }
 }

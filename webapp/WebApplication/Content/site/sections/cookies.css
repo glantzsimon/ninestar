@@ -1,0 +1,23 @@
+﻿#cookie-warning-container {
+    position: fixed;
+    z-index: 100000;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+#cookie-warning-container .alert {
+    border-radius: 0 !important;
+    margin: 0;
+}
+
+#cookie-warning-container a {
+    opacity: 0.8;
+    margin-top: -5px;
+}
+
+#cookie-warning-container span {
+    display: inline-block;
+    font-size: 12px;
+    margin-top: 5px;
+}

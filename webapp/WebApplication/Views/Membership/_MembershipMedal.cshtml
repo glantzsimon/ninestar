@@ -1,0 +1,8 @@
+﻿@using K9.Base.WebApplication.Helpers
+@model MembershipOption
+
+<div class="membership-medal @Model.CssClassName">
+    <div class="membership-medal-item membership-price">@Model.FormattedPrice</div>
+    <div class="membership-medal-item membership-element">@MvcHtmlString.Create(Model.MembershipMedalElementLocal.Replace(" ", "<br/>"))</div>
+    <div class="membership-medal-item membership-period">@Model.MembershipPeriodLocal</div>
+</div>

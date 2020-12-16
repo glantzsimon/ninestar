@@ -26,6 +26,12 @@ namespace K9.WebApplication.Controllers
         {
             return View();
         }
+
+        [Route("privacy-policy")]
+        public ActionResult PrivacyPolicy()
+        {
+            return View();
+        }
         
         public override string GetObjectName()
         {

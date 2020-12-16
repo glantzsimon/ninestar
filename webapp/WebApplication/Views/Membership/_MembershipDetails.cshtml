@@ -1,0 +1,27 @@
+﻿@using System.Web.Mvc.Html
+@model UserMembership
+
+@{
+    ViewBag.Title = K9.Globalisation.Dictionary.MembershipLabel;
+    var buttonText = Model.MembershipOption.IsUpgradable
+        ? K9.Globalisation.Dictionary.Upgrade
+        : K9.Globalisation.Dictionary.Switch;
+}
+
+<div class="shadow-light membership-option-container">
+    <div class="membership-option-title">
+        <h5><strong>@Model.MembershipOption.SubscriptionTypeNameLocal</strong></h5>
+    </div>
+    <div class="membership-option">
+        @Html.Partial("../Membership/_MembershipMedal", Model.MembershipOption)
+        @if (Model.MembershipOption.IsUpgradable)
+        {
+            <div class="membership-footer">
+                <div class="membership-selected-container">
+                    @Html.Partial("_Selected")
+                    @Html.Partial("../Membership/_MembershipValidUntil")
+                </div>
+            </div>
+        }
+    </div>
+</div>

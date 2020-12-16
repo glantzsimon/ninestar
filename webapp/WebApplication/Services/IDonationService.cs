@@ -5,5 +5,6 @@ namespace K9.WebApplication.Services
     public interface IDonationService
     {
         void CreateDonation(Donation donation);
+        int GetFundsReceivedToDate();
     }
 }

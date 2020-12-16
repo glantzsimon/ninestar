@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = K9.Globalisation.Dictionary.PrivacyPolicyTitle;
+    ViewBag.SubTitle = K9.Globalisation.Dictionary.PrivacyPolicyTitle;
+    
+    Layout = "../Shared/_LayoutForm.cshtml";
+}
+
+@Html.Partial("_BetaPopup")
+
+<div class="container main-content">
+    <article>
+        @MvcHtmlString.Create(K9.Globalisation.Dictionary.PrivacyPolicy)
+    </article>
+</div>
+

@@ -1,4 +1,13 @@
 ﻿@using K9.Base.WebApplication.Config
+@using K9.SharedLibrary.Helpers
+
+@{
+    var termsText = TemplateProcessor.PopulateTemplate(K9.Globalisation.Dictionary.AgreeToTerms, new
+    {
+        privacypolicyurl = Url.Action("PrivacyPolicy", "Home")
+    });
+}
+
 <div class="footer main-section">
 	<div class="container">
 		<div class="agile-footer-grids">
@@ -27,6 +36,7 @@
 </div>
 <div class="footer-copyright">
 	<div class="container">
-		<p>@K9.Globalisation.Dictionary.CompanyLegalDescription @Dictionary.AgreeToTerms &copy; @DateTime.Now.Year - @WebsiteConfiguration.Instance.CompanyName. @Dictionary.AllRightsReserved.</p>
+	    <p>@Html.Raw(termsText) </p>
+        <p>&copy; @WebsiteConfiguration.Instance.CompanyName @DateTime.Now.Year - @Dictionary.AllRightsReserved.</p>
 	</div>
 </div>

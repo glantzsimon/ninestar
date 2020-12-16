@@ -1,31 +1,44 @@
 ﻿@using K9.Base.WebApplication.Helpers
-@model User
+@model K9.WebApplication.Models.MyAccountViewModel
 @{
     ViewBag.Title = Dictionary.MyAccountTitle;
-    ViewBag.SubTitle = Dictionary.UpdateYourDetails;
+    ViewBag.SubTitle = Dictionary.MyAccountTitle;
     Layout = "~/Views/Shared/_LayoutFormSmall.cshtml";
 }
 
-@Html.PopupAlert()
+@Html.Partial("_AccountDetails", Model.User)
 
-@using (Html.BeginForm("UpdateAccount", "Account"))
-{
-    using (Html.BeginBootstrapForm())
-    {
-        @Html.HiddenFor(model => model.Id)
-        @Html.HiddenFor(model => model.Username)
-        @Html.HiddenFor(model => model.EmailAddress)
-        @Html.Hidden("Password", "th1515n0tmypa55w0rd")
-        @Html.BootstrapEditorFor(model => model.FirstName)
-        @Html.BootstrapEditorFor(model => model.LastName)
-        @Html.BootstrapEditorFor(model => model.PhoneNumber)
-        @Html.BootstrapEditorFor(model => model.BirthDate)
-        if (!Model.IsOAuth)
-        {
-            <span>@Html.ActionLink(Dictionary.ChangePassword, "UpdatePassword")</span>
-        }
-        <hr />
-        @Html.BootstrapButton(Dictionary.Update)
-        @Html.BootstrapActionLinkButton(Dictionary.DeleteMyAccount, "ConfirmDeleteAccount", "Account", new { id = Model.Id }, "", EButtonClass.Danger)
-    }
-}
+@*<ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#account">@Dictionary.UpdateYourDetails</a></li>
+        @*<li><a data-toggle="tab" href="#membership">@K9.Globalisation.Dictionary.MembershipLabel</a></li>
+    </ul>
+
+<div class="tab-content">
+    <div id="account" class="tab-pane fade in active">
+        @Html.Partial("_AccountDetails", Model.User)
+    </div>
+    <div id="membership" class="tab-pane fade padding-20">
+            @if (Model.Membership != null)
+            {
+                <div class="text-center margin-top-minus-15 padding-10">
+                    <h5>@K9.Globalisation.Dictionary.YourCurrentMembership</h5>
+                </div>
+                @Html.Partial("../Membership/_MembershipDetails", Model.Membership)
+                <div class="text-center">
+                    @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.MembershipOptions, "Index", "Membership")
+                </div>
+            }
+            else
+            {
+                <div class="support-us-option shadow-light shadow-hover">
+                    <a href="@Url.Action("Index", "Membership")">
+                        <h4>@MvcHtmlString.Create(K9.Globalisation.Dictionary.BecomeBenefactorTitle)</h4>
+                        <div class="support-item support-benefactor">
+                            &nbsp;
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+</div>*@
+

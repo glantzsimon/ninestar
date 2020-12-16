@@ -226,3 +226,7 @@
 .clear-both {
     clear: both;
 }
+
+.zoom-50 {
+    zoom: 50%;
+}

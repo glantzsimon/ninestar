@@ -1,0 +1,119 @@
+﻿.membership-option-container {
+    display: table;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 0;
+    text-align: center;
+    width: 150px;
+    height: 200px;
+    border-left: 1px solid #a7a7a7;
+    border-right: 1px solid #a7a7a7;
+    border-radius: 6px;
+    background-color: #fff;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+
+.membership-option-title {
+    padding: 6px;
+    background-color: #f6f6f6;
+    border-top: 1px solid #a7a7a7;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom: 1px solid #888888;
+}
+
+    .membership-option-title h5 {
+        font-size: 1em;
+        line-height: 1.5em;
+        margin: 0;
+    }
+
+.membership-footer {
+    padding: 12px 0;
+    font-size: 1em;
+    line-height: 1.5em;
+    border-top: 1px solid #a7a7a7;
+    border-bottom: 1px solid #a7a7a7;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    background-color: #f6f6f6;
+}
+
+.membership-option {
+    width: 200px;
+    position: relative;
+}
+
+.membership-medal {
+    width: 200px;
+    height: 200px;
+    background-position-y: bottom !important;
+    background-position-x: center !important;
+    background-size: contain !important;
+}
+
+.membership-medal-item {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: #e2e2e2;
+}
+
+.membership-price {
+    top: 52px;
+    font-size: 0.8em;
+}
+
+.membership-element {
+    top: 71px;
+    font-size: 1.1em;
+    line-height: 1.2em;
+    text-transform: uppercase;
+}
+
+.membership-period {
+    top: 133px;
+    font-size: 0.8em;
+    line-height: 1.2em;
+    text-transform: uppercase;
+}
+
+.membership-description {
+    font-size: 0.8em;
+    color: #333333;
+    margin-top: 5px;
+    text-align: left;
+    padding: 5px;
+}
+
+.membership-description ul li {
+    font-size: 1em;
+}
+
+.platinum {
+    background: url(../../../Images/membership/platinum-membership.jpg) no-repeat 0 0;
+}
+
+    .platinum .membership-element {
+        color: white;
+    }
+
+.standard {
+    background: url(../../../Images/membership/standard-membership.jpg) no-repeat 0 0;
+}
+
+.membership-selected {
+    border: 2px solid #ff4500;
+}
+
+.membership-selected-container {
+    padding: 0;
+}
+
+.membership-valid-until-container {
+    font-size: 0.8em !important;
+    margin-top: 5px;
+    padding: 0;
+}

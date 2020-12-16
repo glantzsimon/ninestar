@@ -1,0 +1,18 @@
+﻿@model Contact
+
+@{
+    ViewBag.SubTitle = K9.Globalisation.Dictionary.SignUpToNewsLetter;
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+
+@using (Html.BeginForm("SignUpToNewsLetter", "Contacts"))
+{
+	using (Html.BeginBootstrapForm())
+	{
+		@Html.BootstrapEditorFor(m => m.Name)
+		@Html.BootstrapEditorFor(m => m.EmailAddress)
+		
+		<hr/>
+		@Html.BootstrapButton(Dictionary.Submit, EButtonType.Submit, "fa-envelope")
+	}
+}

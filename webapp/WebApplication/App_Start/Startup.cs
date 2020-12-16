@@ -14,6 +14,7 @@ using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.Services;
+using K9.WebApplication.Services.Stripe;
 using NLog;
 using System;
 using System.Configuration;
@@ -56,6 +57,9 @@ namespace K9.WebApplication
             builder.RegisterType<StripeService>().As<IStripeService>().InstancePerRequest();
             builder.RegisterType<DonationService>().As<IDonationService>().InstancePerRequest();
             builder.RegisterType<NineStarKiService>().As<INineStarKiService>().InstancePerRequest();
+            builder.RegisterType<AccountMailerService>().As<IAccountMailerService>().InstancePerRequest();
+            builder.RegisterType<MembershipService>().As<IMembershipService>().InstancePerRequest();
+            builder.RegisterType<ContactService>().As<IContactService>().InstancePerRequest();
 
             RegisterConfiguration(builder);
 

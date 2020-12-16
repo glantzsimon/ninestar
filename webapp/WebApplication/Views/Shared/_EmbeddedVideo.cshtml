@@ -1,6 +1,4 @@
-﻿@using K9.Base.WebApplication.Extensions
-@model string
-@{
-    var embedUrl = Model.ToEmbeddableUrl();
-}
-<iframe width="100%" height="300" src="@embedUrl" frameborder="0" scrolling="no" allowfullscreen"></iframe>
+﻿@model string
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="@Model" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>

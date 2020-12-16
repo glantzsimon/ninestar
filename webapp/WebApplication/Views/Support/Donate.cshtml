@@ -19,10 +19,10 @@
         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                 data-key="@Model.PublishableKey"
                 data-amount="@Model.DonationAmountInCents"
-                data-name="@WebsiteConfiguration.Instance.CompanyName"
-                data-description="@K9.Globalisation.Dictionary.DonationTo @WebsiteConfiguration.Instance.CompanyName"
+                data-name="@K9.Globalisation.Dictionary.NineStar"
+                data-description="@K9.Globalisation.Dictionary.DonationToNineStar"
                 data-billing-address="true"
-                data-image="@Url.AbsoluteContent("Images/company/logo-small.png")"
+                data-image="@Url.AbsoluteContent("~/Images/icons/logo-small.png")"
                 data-locale="@Model.Locale"
                 data-zip-code="false"
                 data-currency="@Model.LocalisedCurrencyThreeLetters">

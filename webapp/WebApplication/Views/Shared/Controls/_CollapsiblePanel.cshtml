@@ -15,14 +15,14 @@
             </h4>
         </div>
         
-        @if (hasImage)
-        {
-            <div class="panel-image-container">
-                <div class="image-panel img-rounded @imageSizeClass" style="background-image: url('@Model.ImageSrc'); @Model.ImageLayoutCss;"></div>
-            </div>
-        }
-
         <div id="@id" data-panel-id="@Model.Id" class="panel-collapse collapse @Model.ExpadedCssClass">
+            @if (hasImage)
+            {
+                <div class="panel-image-container">
+                    <div class="image-panel img-rounded @imageSizeClass" style="background-image: url('@Model.ImageSrc'); @Model.ImageLayoutCss;"></div>
+                </div>
+            }
+
             <div class="panel-body @panelBodyClass">@MvcHtmlString.Create(Model.Body)</div>
 
             @if (!string.IsNullOrEmpty(Model.Footer))

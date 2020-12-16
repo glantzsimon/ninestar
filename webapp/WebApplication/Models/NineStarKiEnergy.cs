@@ -251,10 +251,10 @@ namespace K9.WebApplication.Models
                 case 1:
                 case 5:
                 case 9:
-                    return $"{EnergyNumber} {EnergyName} / {ElementWithYingYang}".Trim();
+                    return $"{EnergyNumber} {EnergyName}".Trim();
 
                 default:
-                    return $"{EnergyNumber} {EnergyName}".Trim();
+                    return $"{EnergyNumber} {EnergyName} / {ElementWithYingYang}".Trim();
             }
         }
 

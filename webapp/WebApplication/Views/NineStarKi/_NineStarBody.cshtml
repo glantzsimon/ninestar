@@ -14,7 +14,7 @@
                     @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.ChildDescription), Model.ChildDescription, true)
                 }
 
-                @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Trigram), Model.TrigramDescription, false, "", Model.TrigramUIName)
+                @Html.CollapsiblePanel(Html.GetDisplayNameFor(m => Model.Trigram), Model.TrigramDescription, false, "", Model.TrigramUIName, $"Images/ninestar/trigrams/trigram-{Model.Energy}-square.png")
             </div>
         </article>
     </div>

@@ -240,7 +240,7 @@ namespace K9.WebApplication.Models
         public string ModalityName => Modality.ToString();
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ModalityDescriptionLabel)]
-        public string ModalityDescription => MetaData.GetElementDescription();
+        public string ModalityDescription => GetModalityDescription();
 
         public string Direction => MetaData.GetDirection();
 

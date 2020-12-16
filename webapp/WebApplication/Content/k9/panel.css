@@ -11,6 +11,10 @@
     height: 300px;
 }
 
+.image-panel-small {
+    height: 100px;
+}
+
 .panel-image-container {
     padding: 15px;
 }

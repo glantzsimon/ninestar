@@ -1,10 +1,9 @@
-﻿using System;
-
-namespace K9.WebApplication.Options
+﻿namespace K9.WebApplication.Options
 {
     public enum EPanelImageSize
     {
         Default,
+        Small,
         Medium
     }
 

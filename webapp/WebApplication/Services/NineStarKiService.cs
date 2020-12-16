@@ -60,8 +60,27 @@ namespace K9.WebApplication.Services
                 CalculateNineStarKi(new DateTime(1980, 8, 10)),
                 CalculateNineStarKi(new DateTime(1980, 9, 10)),
                 CalculateNineStarKi(new DateTime(1980, 10, 10)),
-            };  
-            return new NineStarKiSummaryViewModel(mainEnergies, characterEnergies);
+            };
+            var dynamicEnergies = new List<NineStarKiEnergy>
+            {
+                new NineStarKiEnergy(ENineStarKiEnergy.Thunder, ENineStarKiEnergyType.MainEnergy),
+                new NineStarKiEnergy(ENineStarKiEnergy.Heaven, ENineStarKiEnergyType.MainEnergy),
+                new NineStarKiEnergy(ENineStarKiEnergy.Fire, ENineStarKiEnergyType.MainEnergy)
+            };
+            var staticEnergies = new List<NineStarKiEnergy>
+            {
+                new NineStarKiEnergy(ENineStarKiEnergy.Soil, ENineStarKiEnergyType.MainEnergy),
+                new NineStarKiEnergy(ENineStarKiEnergy.CoreEarth, ENineStarKiEnergyType.MainEnergy),
+                new NineStarKiEnergy(ENineStarKiEnergy.Mountain, ENineStarKiEnergyType.MainEnergy)
+            };
+            var flexibleEnergies = new List<NineStarKiEnergy>
+            {
+                new NineStarKiEnergy(ENineStarKiEnergy.Water, ENineStarKiEnergyType.MainEnergy),
+                new NineStarKiEnergy(ENineStarKiEnergy.Wind, ENineStarKiEnergyType.MainEnergy),
+                new NineStarKiEnergy(ENineStarKiEnergy.Lake, ENineStarKiEnergyType.MainEnergy)
+            };
+
+            return new NineStarKiSummaryViewModel(mainEnergies, characterEnergies, dynamicEnergies, staticEnergies, flexibleEnergies);
         }
 
         private string GetOverview(ENineStarKiEnergy energy)

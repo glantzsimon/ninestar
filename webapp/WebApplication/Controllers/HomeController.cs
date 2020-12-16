@@ -1,13 +1,10 @@
-﻿using System;
-using K9.Base.WebApplication.Controllers;
+﻿using K9.Base.WebApplication.Controllers;
 using K9.Base.WebApplication.Helpers;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Services;
 using NLog;
 using System.Web.Mvc;
-using K9.WebApplication.Models;
-using K9.WebApplication.Services;
-using K9.WebApplication.ViewModels;
 
 namespace K9.WebApplication.Controllers
 {

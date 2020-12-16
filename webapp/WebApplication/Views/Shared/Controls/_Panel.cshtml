@@ -2,7 +2,10 @@
 @model PanelOptions
 @{
     var hasImage = !string.IsNullOrEmpty(Model.ImageSrc);
-    var imageSizeClass = Model.ImageSize == EPanelImageSize.Medium ? "image-panel-medium" : "";
+    var imageSizeClass = Model.ImageSize == EPanelImageSize.Medium 
+        ? "image-panel-medium" 
+        : Model.ImageSize == EPanelImageSize.Small 
+                ? "image-panel-small" : "";
     var panelBodyClass = hasImage ? "panel-body-image" : "";
 }
 @*Bookmark*@

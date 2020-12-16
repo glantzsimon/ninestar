@@ -1,12 +1,36 @@
-﻿@model NineStarKiSummaryViewModel
+﻿@model List<K9.WebApplication.Models.NineStarKiEnergy>
+@using K9.SharedLibrary.Helpers
 @using K9.WebApplication.Helpers
+@using K9.WebApplication.Models
 @using K9.WebApplication.Options
-@using K9.WebApplication.ViewModels
+
+@{
+    var energyType = Model?.FirstOrDefault()?.EnergyType ?? ENineStarKiEnergyType.MainEnergy;
+    var mainEnergyText = TemplateProcessor.PopulateTemplate(K9.Globalisation.Dictionary.main_energies_short_description, new
+    {
+        RelationshipsUrl = Url.Action("Relationships", "NineStarKi")
+    });
+    var characterEnergyText = TemplateProcessor.PopulateTemplate(K9.Globalisation.Dictionary.character_energies_short_description, new
+    {
+        RelationshipsUrl = Url.Action("Relationships", "NineStarKi")
+    });
+}
 
 <div class="energies-summary">
-    @foreach (var energy in Model.Energies)
+    <p>
+        @if (energyType == ENineStarKiEnergyType.EmotionalEnergy)
+        {
+            @MvcHtmlString.Create(characterEnergyText)
+        }
+        else
+        {
+            @MvcHtmlString.Create(mainEnergyText)
+        }
+    </p>
+
+    @foreach (var energy in Model)
     {
-        @Html.CollapsiblePanel(energy.MainEnergy.FullEnergyDetailsTitle, energy.MainEnergy.EnergyDescription, false, "", "", $"Images/ninestar/energies/{energy.MainEnergy.Energy}.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+        @Html.CollapsiblePanel(energy.FullEnergyDetailsTitle, energy.EnergyDescription, false, "", "", $"Images/ninestar/energies/{energy.Energy}.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
     }
 </div>
     

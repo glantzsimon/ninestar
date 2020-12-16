@@ -37,7 +37,7 @@ namespace K9.WebApplication.Services
 
         public NineStarKiSummaryViewModel GetNineStarKiSummaryViewModel()
         {
-            return new NineStarKiSummaryViewModel(new List<NineStarKiModel>
+            var mainEnergies = new List<NineStarKiModel>
             {
                 CalculateNineStarKi(new DateTime(1981, 3, 3)),
                 CalculateNineStarKi(new DateTime(1980, 3, 3)),
@@ -48,7 +48,20 @@ namespace K9.WebApplication.Services
                 CalculateNineStarKi(new DateTime(1984, 3, 3)),
                 CalculateNineStarKi(new DateTime(1974, 3, 3)),
                 CalculateNineStarKi(new DateTime(1973, 3, 3)),
-            });
+            };  
+            var characterEnergies = new List<NineStarKiModel>
+            {
+                CalculateNineStarKi(new DateTime(1980, 2, 10)),
+                CalculateNineStarKi(new DateTime(1980, 3, 10)),
+                CalculateNineStarKi(new DateTime(1980, 4, 10)),
+                CalculateNineStarKi(new DateTime(1980, 5, 10)),
+                CalculateNineStarKi(new DateTime(1980, 6, 10)),
+                CalculateNineStarKi(new DateTime(1980, 7, 10)),
+                CalculateNineStarKi(new DateTime(1980, 8, 10)),
+                CalculateNineStarKi(new DateTime(1980, 9, 10)),
+                CalculateNineStarKi(new DateTime(1980, 10, 10)),
+            };  
+            return new NineStarKiSummaryViewModel(mainEnergies, characterEnergies);
         }
 
         private string GetOverview(ENineStarKiEnergy energy)

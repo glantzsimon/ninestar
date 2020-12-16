@@ -1345,4 +1345,16 @@
   <data name="wind_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\wind-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="character_energies_short_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\character-energies.short-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_energies_short_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\main-energies.short-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="NineCharacterEnergiesTitle" xml:space="preserve">
+    <value>The 9 Character Energies</value>
+  </data>
+  <data name="NineMainEnergiesTitle" xml:space="preserve">
+    <value>The 9 Main Energies</value>
+  </data>
 </root>

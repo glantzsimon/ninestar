@@ -104,6 +104,7 @@
     <Content Include="Articles\en-gb\fire-overview.htm" />
     <Content Include="Articles\en-gb\heaven-child.htm" />
     <Content Include="Articles\en-gb\lake-child.htm" />
+    <Content Include="Articles\en-gb\character-energies.short-description.htm" />
     <Content Include="Articles\en-gb\mountain-child.htm" />
     <Content Include="Articles\en-gb\mountain-overview.htm" />
     <Content Include="Articles\en-gb\lake-overview.htm" />
@@ -122,6 +123,7 @@
     <Content Include="Articles\en-gb\soil-surface-description.htm" />
     <Content Include="Articles\en-gb\coreearth-overview.htm" />
     <Content Include="Articles\en-gb\thunder-child.htm" />
+    <Content Include="Articles\en-gb\main-energies.short-description.htm" />
     <Content Include="Articles\en-gb\water-child.htm" />
     <Content Include="Articles\en-gb\wind-child.htm" />
     <Content Include="Articles\en-gb\wind-overview.htm" />

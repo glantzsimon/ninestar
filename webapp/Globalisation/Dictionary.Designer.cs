@@ -1468,6 +1468,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Please note that the &apos;Character Energy&apos; or &apos;Emotional Energy&apos; alone does not give a very detailed description of a person. It is important to also take into account the &apos;Main Energy&apos; or &apos;Adult Persona&quot;, as well as the &apos;Surface Energy&apos;. However, it does give a useful overview of their deeper character. The Character Energy also has quite a significant influence on intimate relationships, where the emotional  that is likely to exist between two people. There is more information on that in the &lt;a href [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string character_energies_short_description {
+            get {
+                return ResourceManager.GetString("character_energies_short_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Character.
         /// </summary>
         public static string CharacterLabel {
@@ -2873,6 +2883,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Please note that the &apos;Main Energy&apos; or &apos;Adult Persona&apos; alone does not give a very detailed description of a person. The &apos;Character Energy&apos;, as well as the &apos;Surface Energy&apos; play a significant role in shaping a person&apos;s character traits. However, the Main Energy does give a very useful overview. Also, of the three components of a personal profile , the Main Energy has the most significant influence on a person&apos;s nature and is especially useful when trying to determine the kind of dynamic that is likel [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_energies_short_description {
+            get {
+                return ResourceManager.GetString("main_energies_short_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Main Energy.
         /// </summary>
         public static string MainEnergy {
@@ -3297,11 +3317,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The 9 Character Energies.
+        /// </summary>
+        public static string NineCharacterEnergiesTitle {
+            get {
+                return ResourceManager.GetString("NineCharacterEnergiesTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The 9 Energies.
         /// </summary>
         public static string NineEnergiesTitle {
             get {
                 return ResourceManager.GetString("NineEnergiesTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The 9 Main Energies.
+        /// </summary>
+        public static string NineMainEnergiesTitle {
+            get {
+                return ResourceManager.GetString("NineMainEnergiesTitle", resourceCulture);
             }
         }
         
@@ -3871,12 +3909,15 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///    2 Soil characters tend to be stable, reliable and helpful people.
+        ///
+        ///    They are often quite dedicated to their families as well as to their work, where they like to get to get stuck in and actively participate in activities.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
+        ///    2 Soil characters are usually tactful and diplomatic. They are quite willing to put others&apos; needs first. In fact they get a deep sense of satisfaction from it.
         ///&lt;/p&gt;
-        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;
+        ///    2 Soil characters also need to be careful not to overgive. They should factor in ple [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_emotional_description {
             get {
@@ -4557,13 +4598,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Water energies are most likely to suffer health problems related to the kidneys, bladder, reproductive system and adrenal glands, all of which are governed by the element water in Traditional Chinese Medicine.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    It is important for people of this sign to keep warm and take plenty of rest. Alcohol, caffeine, sugar, late nights and stress are particularly depleting for water energies.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    It is also especially important to avoid cold, damp living environments.
+        ///    Water children, whilst they often have a naturally exploratory side, tend to be loners and need lots of encouragement to socialise and expand their horizons.
+        ///
+        ///    Parents ought to be careful not to be overly protective of Water children. This could cause them to further isolate from other children.
         ///&lt;/p&gt;.
         /// </summary>
         public static string water_child {

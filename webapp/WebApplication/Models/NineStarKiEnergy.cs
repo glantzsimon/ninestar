@@ -217,7 +217,7 @@ namespace K9.WebApplication.Models
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TrigramLabel)]
         public string Trigram => MetaData.GetTrigram();
-
+        
         public string TrigramUIName => $"{MetaData.TrigramName}{EnergyType}";
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TrigramLabel)]
@@ -242,6 +242,9 @@ namespace K9.WebApplication.Models
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ModalityLabel)]
         public string ModalityName => Modality.ToString();
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ModalityLabel)]
+        public string ModalityTitle => $"{ModalityName} {Dictionary.ModalityLabel}";
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ModalityDescriptionLabel)]
         public string ModalityDescription => MetaData.ModalityDeescription;

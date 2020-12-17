@@ -4165,6 +4165,31 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Stable.
+        /// </summary>
+        public static string Stable {
+            get {
+                return ResourceManager.GetString("Stable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Energies {soil}, {coreearth} and {mountain} are &apos;static&apos;. As you can see, they are all of the Earth elements. Earth is by nature steady, solid and reliable.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Static Energies like to plan ahead and tend to have longer-term goals, which they are good at sticking to. They are pragmatic and can be single-minded when they set their mind on something.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Static people thend to process information slowly and steadily, weighing up the pros and cons. They accumulate knowledge gra [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string stable_modality {
+            get {
+                return ResourceManager.GetString("stable_modality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;div&gt;The &lt;strong&gt;Standard Membership&lt;/strong&gt; grants you full access to Blessings of The Forest&apos;s extensive library.
         ///    This is perhaps the world&apos;s most comprehensive collection of material concerning Bwiti and the medicinal properties of Iboga.
         ///&lt;/div&gt;
@@ -4192,22 +4217,6 @@ namespace K9.Globalisation {
         public static string Static {
             get {
                 return ResourceManager.GetString("Static", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Energies {soil}, {coreearth} and {mountain} are &apos;static&apos;. As you can see, they are all of the Earth elements. Earth is by nature steady, solid and reliable.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Static Energies like to plan ahead and tend to have longer-term goals, which they are good at sticking to. They are pragmatic and can be single-minded when they set their mind on something.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Static people thend to process information slowly and steadily, weighing up the pros and cons. They accumulate knowledge gra [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string static_modality {
-            get {
-                return ResourceManager.GetString("static_modality", resourceCulture);
             }
         }
         

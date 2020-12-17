@@ -113,7 +113,7 @@
             public const string MainEnergy = "MainEnergyLabel";
             public const string CharacterEnergy = "CharacterEnergyLabel";
             public const string SurfaceEnergy = "SurfaceEnergyLabel";
-            public const string Static = "Static";
+            public const string Stable = "Stable";
             public const string Dynamic = "Dynamic";
             public const string Flexible = "Flexible";
 

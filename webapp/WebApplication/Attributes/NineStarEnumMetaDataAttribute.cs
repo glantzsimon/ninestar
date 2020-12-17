@@ -103,8 +103,8 @@ namespace K9.WebApplication.Attributes
                     modalityText = Dictionary.dynamic_modality;
                     break;
 
-                case ENineStarKiModality.Static:
-                    modalityText = Dictionary.static_modality;
+                case ENineStarKiModality.Stable:
+                    modalityText = Dictionary.stable_modality;
                     break;
 
                 case ENineStarKiModality.Flexible:

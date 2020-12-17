@@ -1,15 +1,13 @@
 ﻿@model string
 
 <div class="seo @Model">
-    @for (int i = 0; i < 9; i++)
+    @for (int i = 0; i < 3; i++)
     {
         <h1>
-            @K9.Globalisation.Dictionary.Keywords
-            @ViewBag.Keywords
+            @ViewBag.MetaDescription
         </h1>
         <div>
             @K9.Globalisation.Dictionary.origins
-            @ViewBag.MetaDescription
         </div>
         <h2>
             @K9.Globalisation.Dictionary.Keywords

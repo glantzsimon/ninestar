@@ -1,5 +1,4 @@
 ﻿@using System.Globalization
-@using K9.Base.WebApplication.Config
 @using K9.SharedLibrary.Extensions
 
 @{
@@ -7,8 +6,8 @@
     var metaLocaleName = CultureInfo.CurrentUICulture.GetMetaLocaleName();
     var languageName = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower();
     var pageKeywords = ViewBag.Keywords ?? K9.Globalisation.Dictionary.Keywords;
-    var keywords = K9.Globalisation.Dictionary.NineStarKiTitle + " " + pageKeywords;
-    var title = Html.Raw(String.Format("{0} &raquo; {1} &raquo; {2}", ViewBag.Title, K9.Globalisation.Dictionary.NineStarKiTitle, keywords));
+    var keywords = pageKeywords;
+    var title = Html.Raw(String.Format("{0} &raquo; {1} &raquo; {2}", ViewBag.Title, K9.Globalisation.Dictionary.NineStar, keywords));
     var description = ViewBag.MetaDescription ?? K9.Globalisation.Dictionary.NineStarMetaDescriptionMain;
 }
 

@@ -1635,14 +1635,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9 Star Ki is a remarkable tool to help us to understand our relationships, both romantic and other.  It offers profound insights into the subtle forces that shape our interactions with others, helping to bring greater harmony and understanding and to avoid blame, resentment and anger.
+        ///   Looks up a localized string similar to The 9 Star Ki Compatibility Checker is an amazing tool to help you understand your relationship dynamics whether it be in romance, friendships, work or within the family. This tool can shed much light on the dynamics between people and help you to harness the inherent benefits as well as helping to smoothe out challenges which are likekly to arise.
         ///
-        ///9 Star Ki astrology can help those who are looking for ways to:  
-        ///Keep the romance alive
-        ///Maintain a healthy relationship
-        ///
-        ///9 Star Ki may be the perfect tool for those asking questions like:
-        ///Why do my boyfriend and I fal [rest of string was truncated]&quot;;.
+        ///9 Star Ki can bring greater bring greater harmony and understanding to our relationships and to reduce or eliminate resentment and anger. It helps to take bla [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CompatibilityMetaDescription {
             get {
@@ -3922,14 +3917,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9 Star Ki is a remarkable tool to help us to understand our relationships, both romantic and other.  It offers profound insights into the subtle forces that shape our interactions with others, helping to bring greater harmony and understanding and to avoid blame, resentment and anger.
+        ///   Looks up a localized string similar to 9 Star Ki is a remarkable tool to help us to understand our relationships, both romantic and other. It offers profound insights into the subtle forces that shape our interactions with others, helping to bring greater harmony and understanding and to avoid blame, resentment and anger.
         ///
-        ///9 Star Ki astrology can help those who are looking for ways to:  
-        ///Keep the romance alive
-        ///Maintain a healthy relationship
+        ///9 Star Ki astrology can help those who are looking for ways to keep the romance alive or maintain a healthy relationship.
         ///
-        ///9 Star Ki may be the perfect tool for those asking questions like:
-        ///Why do my boyfriend and I fal [rest of string was truncated]&quot;;.
+        ///9 Star Ki may be the perfect tool for those asking questions like: 
+        ///Why do my boyfriend and I fall [rest of string was truncated]&quot;;.
         /// </summary>
         public static string RelationshipsMetaDescription {
             get {
@@ -3938,7 +3931,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9 Star Ki Relationships.
+        ///   Looks up a localized string similar to 9 Star Ki and Relationships.
         /// </summary>
         public static string RelationshipsTitle {
             get {
@@ -3974,7 +3967,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;9 Star Ki (pronounced &apos;key&apos;, which is the Japanese word for subtle energy or life-force) is possibly the oldest system of astrology in the world today. Originating in China, it is closely related to the 4000 year-old Book of Changes - the &apos;I Ching&apos; - whose principles are the foundations of Feng Shui, traditional Chinese medicine and acupuncture.&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    9 Star Ki can tell us some truly fascinating and also incredibly useful information about our sexuality and our relationships with others. In the &lt;a href=&quot;{AboutLink}&quot;&gt;{AboutTitle}&lt;/a&gt; section. 
+        ///&lt;/p&gt;.
         /// </summary>
         public static string sexuality {
             get {

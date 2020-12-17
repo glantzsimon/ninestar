@@ -17,7 +17,8 @@
     <article>
         @Html.Panel("Sexuality", TemplateProcessor.PopulateTemplate(Dictionary.sexuality, new
         {
-            AboutTitle = Dictionary.AboutNineStarKi
+            AboutTitle = Dictionary.AboutNineStarKi,
+            AboutLink = Url.ActionWithBookmark("About", "Home", "yinyang")
         }), "sexuality")
 
         @*@Html.Panel("Cycles of Light and Dark", K9.Globalisation.Dictionary.cycles, "cycles", "Images/about/light-dark.jpg", EPanelImageSize.Default, EPanelImageLayout.Contain)

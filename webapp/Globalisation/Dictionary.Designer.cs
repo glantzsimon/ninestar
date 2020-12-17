@@ -2689,7 +2689,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9 Star Ki Astrology, Predictions, Relationships, Compatibility in Love, Feng Shui, I Ching, Dating, Nine Star Ki
+        ///   Looks up a localized string similar to 9 Star Ki Astrology, Free Calculator, Predictions, Relationships, Compatibility, Love, Feng Shui, I Ching, Dating, Nine Star Ki
         ///
         ///Calculate your 9 Star Ki Personal Profile for free!
         ///
@@ -3447,7 +3447,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9 star ki calculator nine star ki calculator calculate your nine star ki 9 star ki personal profile astrology reading.
+        ///   Looks up a localized string similar to Free Personal Profile Calculator.
         /// </summary>
         public static string NineStarKiCalculatorKeywords {
             get {
@@ -4175,13 +4175,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Energies {soil}, {coreearth} and {mountain} are &apos;static&apos;. As you can see, they are all of the Earth elements. Earth is by nature steady, solid and reliable.
+        ///    Energies {soil}, {coreearth} and {mountain} are &apos;stable&apos;. As you can see, they are all of the Earth elements. Earth is by nature steady, solid and reliable.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Static Energies like to plan ahead and tend to have longer-term goals, which they are good at sticking to. They are pragmatic and can be single-minded when they set their mind on something.
+        ///    Stable Energies like to plan ahead and tend to have longer-term goals, which they are good at sticking to. They are pragmatic and can be single-minded when they set their mind on something.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Static people thend to process information slowly and steadily, weighing up the pros and cons. They accumulate knowledge gra [rest of string was truncated]&quot;;.
+        ///    Stable Energies thend to process information slowly and steadily, weighing up the pros and cons. They accumulate knowledge g [rest of string was truncated]&quot;;.
         /// </summary>
         public static string stable_modality {
             get {

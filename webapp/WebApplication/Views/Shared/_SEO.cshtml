@@ -10,18 +10,18 @@
     @for (int i = 0; i < 3; i++)
     {
         <h1>
-            @title
+            @ViewBag.Title
             @description
         </h1>
         <div>
             @Html.Raw(K9.Globalisation.Dictionary.origins)
+            @keywords
         </div>
         <h2>
-            @title
+            @ViewBag.SubTitle
             @keywords
         </h2>
         <h3>
-            @title
             @keywords
         </h3>
         <h4>

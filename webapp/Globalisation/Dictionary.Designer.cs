@@ -2689,7 +2689,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9 Star Ki Astrology, Free Calculator, Predictions, Relationships, Compatibility, Love, Feng Shui, I Ching, Dating, Nine Star Ki
+        ///   Looks up a localized string similar to 9 Star Ki Astrology Free Calculator Predictions Relationships Compatibility Love Feng Shui I Ching Dating Nine Star Ki
         ///
         ///Calculate your 9 Star Ki Personal Profile for free!
         ///
@@ -3402,7 +3402,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nine star Ki.
+        ///   Looks up a localized string similar to Nine Star Ki.
         /// </summary>
         public static string nine_star_ki_title {
             get {
@@ -3483,7 +3483,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9 Star Ki is an ancient system of astrology, largely uknown in the west, but slowly regaining popularity. It is simpler yet deeper and more intuitive than the zodiac and can offer some quite astonishing insights into our nature and the many cyles that influence our lives..
+        ///   Looks up a localized string similar to NineStar is the best online resource to learn all about 9 Star Ki Astrology. 9 Star Ki is an ancient system of astrology, largely uknown in the west, but slowly regaining popularity. It is simpler yet deeper and more intuitive than the zodiac and can offer some quite astonishing insights into our nature and the many cyles that influence our lives..
         /// </summary>
         public static string NineStarMetaDescriptionMain {
             get {
@@ -3881,26 +3881,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    9 Star Ki is a remarkable tool to help us to understand our relationships, both romantic and other. 
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to 9 Star Ki is a remarkable tool to help us to understand our relationships, both romantic and other.  It offers profound insights into the subtle forces that shape our interactions with others, helping to bring greater harmony and understanding and to avoid blame, resentment and anger.
         ///
-        ///&lt;p&gt;
-        ///    9 Star Ki offers profound insights into the subtle forces that shape our interactions with others,
-        ///    helping to bring greater harmony and understanding and to avoid blame, resentment and anger.
-        ///&lt;/p&gt;
-        ///
-        ///&lt;h3&gt;
-        ///    Why do my boyfriend and I fall out so much?
-        ///&lt;/h3&gt;
-        ///
-        ///&lt;h3&gt;
-        ///    Why do my girlfiend and I fall out so much?
-        ///&lt;/h3&gt;
-        ///
-        ///&lt;h3&gt;
-        ///	Why do my boyfriend and I argue so much?
-        ///&lt; [rest of string was truncated]&quot;;.
+        ///Relationship counselling relationship problems dating advice
+        ///Keep the romance alive
+        ///Maintain healthy relationship
+        ///Why do my boyfriend and I fall out so much?
+        ///Why do my girlfiend and I fall out so much?
+        ///Why do my boyfri [rest of string was truncated]&quot;;.
         /// </summary>
         public static string RelationshipsMetaDescription {
             get {

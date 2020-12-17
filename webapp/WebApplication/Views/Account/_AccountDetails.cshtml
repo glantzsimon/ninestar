@@ -17,10 +17,10 @@
         @Html.BootstrapEditorFor(model => model.BirthDate)
         if (!Model.IsOAuth)
         {
-            <span>@Html.ActionLink(Dictionary.ChangePassword, "UpdatePassword")</span>
+            <span>@Html.ActionLink(K9.Base.Globalisation.Dictionary.ChangePassword, "UpdatePassword")</span>
         }
         <hr />
-        @Html.BootstrapButton(Dictionary.Update)
-        @Html.BootstrapActionLinkButton(Dictionary.DeleteMyAccount, "ConfirmDeleteAccount", "Account", new { id = Model.Id }, "", EButtonClass.Danger)
+        @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Update)
+        @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.DeleteMyAccount, "ConfirmDeleteAccount", "Account", new { id = Model.Id }, "", EButtonClass.Danger)
     }
 }

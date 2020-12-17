@@ -6,17 +6,17 @@
     @if (!Model.IsHideMetaData)
     {
         <div class="news-item-title">
-            <p><strong>@Dictionary.PublishedOnLabel</strong>: @Model.PublishedOn.ToLongDateString()</p>
-            <p><strong>@Dictionary.PublishedByLabel</strong>: @Model.PublishedBy</p>
-            <p><strong>@Dictionary.LanguageLabel</strong>: @Model.LanguageName</p>
-            @if (Model.ArchiveItemType.GetLocalisedDescription() == Dictionary.Links)
+            <p><strong>@K9.Base.Globalisation.Dictionary.PublishedOnLabel</strong>: @Model.PublishedOn.ToLongDateString()</p>
+            <p><strong>@K9.Base.Globalisation.Dictionary.PublishedByLabel</strong>: @Model.PublishedBy</p>
+            <p><strong>@K9.Base.Globalisation.Dictionary.LanguageLabel</strong>: @Model.LanguageName</p>
+            @if (Model.ArchiveItemType.GetLocalisedDescription() == K9.Base.Globalisation.Dictionary.Links)
             {
-                <p><strong>@Dictionary.Source</strong>: <a target="_blank" href="@Model.Url">@Model.Url</a></p>
+                <p><strong>@K9.Base.Globalisation.Dictionary.Source</strong>: <a target="_blank" href="@Model.Url">@Model.Url</a></p>
             }
         </div>
     }
     <h5>
-        <a href="@Url.Action("Details", new {title = Model.SeoFriendlyId ?? Model.Title.ToSeoFriendlyString()})">@MvcHtmlString.Create(Model.Title.ToUpper())</a>
+        <a href="@Url.Action("Details", "ArchiveItems", new {title = Model.SeoFriendlyId ?? Model.Title.ToSeoFriendlyString()})">@MvcHtmlString.Create(Model.Title.ToUpper())</a>
     </h5>
     <article>
         <p>
@@ -26,7 +26,7 @@
     <div>
         @if (!string.IsNullOrEmpty(Model.Url))
         {
-            if (Model.ArchiveItemType.GetLocalisedDescription() == Dictionary.Links)
+            if (Model.ArchiveItemType.GetLocalisedDescription() == K9.Base.Globalisation.Dictionary.Links)
             {
                 <br />
                 @Html.Partial("_LinkPreview", new LinkViewModel
@@ -36,7 +36,7 @@
                     CssClasses = Model.AdditionalCssClasses
                 })
             }
-            else if (Model.ArchiveItemType.GetLocalisedDescription() == Dictionary.Videos)
+            else if (Model.ArchiveItemType.GetLocalisedDescription() == K9.Base.Globalisation.Dictionary.Videos)
             {
                 <br />
                 @Html.Partial("_EmbeddedVideo", Model.Url)

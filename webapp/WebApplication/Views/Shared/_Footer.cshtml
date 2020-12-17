@@ -2,7 +2,7 @@
 @using K9.SharedLibrary.Helpers
 
 @{
-    var termsText = TemplateProcessor.PopulateTemplate(K9.Globalisation.Dictionary.AgreeToTerms, new
+    var termsText = TemplateProcessor.PopulateTemplate(Dictionary.AgreeToTerms, new
     {
         privacypolicyurl = Url.Action("PrivacyPolicy", "Home")
     });
@@ -12,9 +12,9 @@
 	<div class="container">
 		<div class="agile-footer-grids">
 			<div class="col-md-4 agile-footer-grid">
-				<h4>@K9.Globalisation.Dictionary.NineStarKiTitle</h4>
+				<h4>@Dictionary.NineStarKiTitle</h4>
 				<p>
-					@K9.Globalisation.Dictionary.CompanyBlurbFooter
+				    @Dictionary.CompanyBlurbFooter
 				</p>
 			</div>
 			<div class="col-md-4 agile-footer-grid">
@@ -23,11 +23,11 @@
 			<div class="col-md-4 agile-footer-grid">
 				<h4>Navigation</h4>
 			    <ul>
-			        <li class="text"><a href="@Url.Action("Index", "NineStarKi")"> @K9.Globalisation.Dictionary.Calculator</a></li>
-			        <li class="text"><a href="@Url.Action("Index", "Relationships")"> @K9.Globalisation.Dictionary.Relationships</a></li>
-			        <li class="text"><a href="@Url.Action("Index", "Home")"> @Dictionary.Home</a></li>
-                    <li class="text"><a href="@Url.Action("Predictions", "NineStarKi")"> @K9.Globalisation.Dictionary.Predictions</a></li>
-			        <li class="text"><a href="@Url.Action("About", "Home")"> @K9.Globalisation.Dictionary.LearnNineStarKiTitle</a></li>
+			        <li class="text"><a href="@Url.Action("Index", "NineStarKi")"> @Dictionary.Calculator</a></li>
+			        <li class="text"><a href="@Url.Action("Index", "Relationships")"> @Dictionary.Relationships</a></li>
+			        <li class="text"><a href="@Url.Action("Index", "Home")"> @K9.Base.Globalisation.Dictionary.Home</a></li>
+                    <li class="text"><a href="@Url.Action("Index", "Predictions")"> @Dictionary.Predictions</a></li>
+			        <li class="text"><a href="@Url.Action("About", "Home")"> @Dictionary.LearnNineStarKiTitle</a></li>
 			    </ul>
 			</div>
 			<div class="clearfix"> </div>
@@ -37,6 +37,6 @@
 <div class="footer-copyright">
 	<div class="container">
 	    <p>@Html.Raw(termsText) </p>
-        <p>&copy; @WebsiteConfiguration.Instance.CompanyName @DateTime.Now.Year - @Dictionary.AllRightsReserved.</p>
+        <p>&copy; @WebsiteConfiguration.Instance.CompanyName @DateTime.Now.Year - @K9.Base.Globalisation.Dictionary.AllRightsReserved.</p>
 	</div>
 </div>

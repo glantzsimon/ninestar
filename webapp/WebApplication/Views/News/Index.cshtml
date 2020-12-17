@@ -1,16 +1,16 @@
 ﻿@using System.Web.Mvc.Html
 @model List<NewsItem>
 @{
-    ViewBag.Title = K9.Globalisation.Dictionary.News;
+    ViewBag.Title = Dictionary.News;
     Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
 }
 
 <div class="main-section">
     <div class="container">
         <div class="main-heading">
-            <h3>@K9.Globalisation.Dictionary.News</h3>
+            <h3>@Dictionary.News</h3>
             <div id="action-signup-button-container" class="text-center">
-                @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.SignUpToNewsLetter, "SignUpToNewsLetter", "Contacts", null, "fa-envelope", EButtonClass.Large)
+                @Html.BootstrapActionLinkButton(Dictionary.SignUpToNewsLetter, "SignUpToNewsLetter", "Contacts", null, "fa-envelope", EButtonClass.Large)
             </div>
         </div>
     </div>

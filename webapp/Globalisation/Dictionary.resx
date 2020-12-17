@@ -725,7 +725,7 @@
     <value>Relationships</value>
   </data>
   <data name="RelationshipsKeywords" xml:space="preserve">
-    <value>Love romance friendship compatibility perfect match dating relationsihps love of your life</value>
+    <value>9 Star Ki Understanding Relationships Love Romance Friendship Compatibility Work Relationships Team Building</value>
   </data>
   <data name="SummaryLabel" xml:space="preserve">
     <value>Summary</value>
@@ -1389,5 +1389,17 @@
   </data>
   <data name="stable_modality" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\stable-modality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="CompatibilityKeywords" xml:space="preserve">
+    <value>Compatibility Calculator Compatibility Checker Perfect Match Dating Love Romance Friendship Relationships Find The Love Your Life</value>
+  </data>
+  <data name="CompatibilityMetaDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>text\en-gb\compatibilitymetadescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="CompatibilityTitle" xml:space="preserve">
+    <value>Compatibility Calculator</value>
+  </data>
+  <data name="sexuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\sexuality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

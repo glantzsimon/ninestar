@@ -1,10 +1,11 @@
-﻿@using K9.WebApplication.Helpers
+﻿@using K9.SharedLibrary.Helpers
+@using K9.WebApplication.Helpers
 
 @{
-    ViewBag.Title = K9.Globalisation.Dictionary.RelationshipsTitle;
-    ViewBag.SubTitle = K9.Globalisation.Dictionary.RelationshipsTitle;
-    ViewBag.Keywords = K9.Globalisation.Dictionary.RelationshipsMetaDescription;
-    ViewBag.MetaDescription = K9.Globalisation.Dictionary.RelationshipsMetaDescription;
+    ViewBag.Title = Dictionary.RelationshipsTitle;
+    ViewBag.SubTitle = Dictionary.RelationshipsTitle;
+    ViewBag.Keywords = Dictionary.RelationshipsMetaDescription;
+    ViewBag.MetaDescription = Dictionary.RelationshipsMetaDescription;
 
     ViewBag.Background = ViewBagHelper.EViewBackground.Jarallax;
     Layout = "../Shared/_LayoutForm.cshtml";
@@ -13,5 +14,15 @@
 @Html.Partial("_BetaPopup")
 
 <div class="container main-content">
-    <h2 class="text-center">@K9.Globalisation.Dictionary.ComingSoon</h2>
+    <article>
+        @Html.Panel("Sexuality", TemplateProcessor.PopulateTemplate(Dictionary.sexuality, new
+        {
+            AboutTitle = Dictionary.AboutNineStarKi
+        }), "sexuality")
+
+        @*@Html.Panel("Cycles of Light and Dark", K9.Globalisation.Dictionary.cycles, "cycles", "Images/about/light-dark.jpg", EPanelImageSize.Default, EPanelImageLayout.Contain)
+
+        @Html.Panel("Yin and Yang", K9.Globalisation.Dictionary.yinyang, "yinyang", "Images/ninestar/yinyang/yinyang-large.png", EPanelImageSize.Default, EPanelImageLayout.Contain)*@
+    </article>
 </div>
+

@@ -1,6 +1,4 @@
-﻿@using K9.Base.WebApplication.Helpers
-@using K9.WebApplication.Helpers
-@model K9.WebApplication.Models.MembershipModel
+﻿@model K9.WebApplication.Models.MembershipModel
 
 <div class="shadow-light @Model.MembershipHoverCssClass membership-option-container @Model.MembershipDisplayCssClass">
     <div class="membership-option-title">
@@ -19,9 +17,9 @@
             {
                 var buttonText = Model.ActiveUserMembershipId > 0
                     ? Model.IsUpgrade
-                        ? K9.Globalisation.Dictionary.Upgrade
-                        : K9.Globalisation.Dictionary.Switch
-                    : K9.Globalisation.Dictionary.Select;
+                        ? Dictionary.Upgrade
+                        : Dictionary.Switch
+                    : Dictionary.Select;
                 @Html.BootstrapActionLinkButton(buttonText, Model.IsUpgrade ? "SwitchStart" : "PurchaseStart", "Membership", new { id = Model.MembershipOption.Id })
             }
         </div>

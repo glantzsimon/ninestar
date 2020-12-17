@@ -2,15 +2,15 @@
 @model K9.Base.WebApplication.ViewModels.FileSourceViewModel
 
 <div class="well">
-    @foreach (var group in Model.AudioFiles)
+    @foreach (var group in Model.VideoFiles)
     {
         <p class="media-title">@group.FileNameNoExtension.ToProperCase()</p>
-        <audio controls>
+        <video controls>
             @foreach (var item in group.Assets)
             {
-                <source src="@item.Src" type="audio/@item.ExtensionNoDot.ToLower()">
+                <source src="@item.Src" type="video/@item.ExtensionNoDot.ToLower()">
             }
-            <span>@K9.Base.Globalisation.Dictionary.AudioUnsupported</span>
-        </audio>
+            <span>@K9.Base.Globalisation.Dictionary.VideoUnsupported</span>
+        </video>
     }
 </div>

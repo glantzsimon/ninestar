@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-    public class NewsController : BaseController
+    public class NewsController : BaseNineStarKiController
 	{
 		private readonly IRepository<NewsItem> _newsRepository;
 

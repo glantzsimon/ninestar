@@ -1,13 +1,10 @@
 ﻿@using System.Web.Mvc.Html
 @model NewsItem
-@{
-    ViewBag.Title = K9.Globalisation.Dictionary.News;
-}
 
-@Html.Partial("_SponsorIbogaBanner")
-<div id="main-banner" class="banner-default main-menu">
-    @Html.Partial("_Navbar")
-</div>
+@{
+    ViewBag.Title = Dictionary.News;
+    Layout = "../Shared/_LayoutForm.cshtml";
+}
 
 <div class="main-section">
     <div class="container">
@@ -18,6 +15,6 @@
     @Html.Partial("_NewsItem", Model)
 
     <div class="text-center">
-        @Html.BootstrapActionLinkButton(Dictionary.BackToList, "Index", "News", null, "fa-chevron-left", EButtonClass.Large)
+        @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.BackToList, "Index", "News", null, "fa-chevron-left", EButtonClass.Large)
     </div>
 </div>

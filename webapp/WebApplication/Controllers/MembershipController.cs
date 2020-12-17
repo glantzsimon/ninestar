@@ -13,7 +13,7 @@ using System.Web.Mvc;
 namespace K9.WebApplication.Controllers
 {
     [Authorize]
-    public class MembershipController : BaseController
+    public class MembershipController : BaseNineStarKiController
     {
         private readonly ILogger _logger;
         private readonly IRepository<MembershipOption> _membershipOptionRepository;

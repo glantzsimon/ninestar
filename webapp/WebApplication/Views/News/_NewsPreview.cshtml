@@ -33,16 +33,16 @@
     </div>
     <div class="col-md-7" id="@Model.Id">
         <div class="news-item-title">
-            <p><strong>@Dictionary.PublishedOnLabel</strong>: @Model.PublishedOn.ToLongDateString()</p>
-            <p><strong>@Dictionary.PublishedByLabel</strong>: @Model.PublishedBy</p>
-            <p><strong>@Dictionary.LanguageLabel</strong>: @Model.LanguageName</p>
+            <p><strong>@K9.Base.Globalisation.Dictionary.PublishedOnLabel</strong>: @Model.PublishedOn.ToLongDateString()</p>
+            <p><strong>@K9.Base.Globalisation.Dictionary.PublishedByLabel</strong>: @Model.PublishedBy</p>
+            <p><strong>@K9.Base.Globalisation.Dictionary.LanguageLabel</strong>: @Model.LanguageName</p>
             @if (Model.Type == ENewsItemType.Link)
             {
-                <p><strong>@Dictionary.Source</strong>: <a target="_blank" href="@Model.Url">@Model.Url</a></p>
+                <p><strong>@K9.Base.Globalisation.Dictionary.Source</strong>: <a target="_blank" href="@Model.Url">@Model.Url</a></p>
             }
         </div>
         <h5>
-            <a href="@Url.Action("Details", new {subject = Model.SeoFriendlyId ?? Model.Subject.ToSeoFriendlyString()})">@MvcHtmlString.Create(Model.Subject)</a>
+            <a href="@Url.Action("Details", "NewsItems", new {subject = Model.SeoFriendlyId ?? Model.Subject.ToSeoFriendlyString()})">@MvcHtmlString.Create(Model.Subject)</a>
         </h5>
         <article>
             <p>

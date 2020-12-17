@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-    public class RelationshipsController : BaseController
+    public class RelationshipsController : BaseNineStarKiController
     {
         private readonly INineStarKiService _nineStarKiService;
 
@@ -27,7 +27,7 @@ namespace K9.WebApplication.Controllers
         {
             return View();
         }
-
+            
         [Route("relationships/calculate-compatibility")]
         public ActionResult Compatibility()
         {
@@ -50,14 +50,7 @@ namespace K9.WebApplication.Controllers
             }
             return View("Index", model);
         }
-
-        public ActionResult SetLanguage(string languageCode, string cultureCode)
-        {
-            Session[SessionConstants.LanguageCode] = languageCode;
-            Session[SessionConstants.CultureCode] = cultureCode;
-            return Redirect(Request.UrlReferrer?.ToString());
-        }
-
+        
         public override string GetObjectName()
         {
             return string.Empty;

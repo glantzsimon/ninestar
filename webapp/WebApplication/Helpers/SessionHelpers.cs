@@ -1,6 +1,6 @@
 ﻿namespace K9.WebApplication.Helpers
 {
-    public static partial class SessionHelper
+    public static class SessionHelper
     {
 
         public static int GetIntValue(string key)

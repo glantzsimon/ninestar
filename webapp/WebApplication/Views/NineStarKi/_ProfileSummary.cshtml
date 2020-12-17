@@ -24,7 +24,7 @@
                 @if (!Model.PersonModel.IsAdult())
                 {
                     <p class="profile-warning">
-                       <img src="~/Images/ui/warning.png"/> @K9.Globalisation.Dictionary.NotInEffectUntilEighteen
+                       <img src="~/Images/ui/warning.png"/> @Dictionary.NotInEffectUntilEighteen
                     </p>
                 }
             </div>
@@ -42,7 +42,7 @@
                 @Html.Partial("_EnergyTitle", Model.SurfaceEnergy)
 
                 <p class="text-center margin-bottom-0">
-                    <strong>@K9.Globalisation.Dictionary.SurfaceEnergyShortLabel</strong>
+                    <strong>@Dictionary.SurfaceEnergyShortLabel</strong>
                 </p>
                 <p class="text-center">
                     @Model.SurfaceEnergy.FullEnergyName
@@ -52,7 +52,7 @@
         <div class="row">
             <div class="col-md-12 margin-top-15 padding-left-0 padding-right-0">
                 <article>
-                    @Html.Panel(K9.Globalisation.Dictionary.SummaryLabel, Model.Summary)
+                    @Html.Panel(Dictionary.SummaryLabel, Model.Summary)
                 </article>
             </div>
         </div>

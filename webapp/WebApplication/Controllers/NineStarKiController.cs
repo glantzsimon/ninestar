@@ -1,7 +1,4 @@
-﻿using K9.Base.WebApplication.Constants;
-using K9.Base.WebApplication.Controllers;
-using K9.Base.WebApplication.Helpers;
-using K9.SharedLibrary.Helpers;
+﻿using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Models;
 using K9.WebApplication.Services;
@@ -11,7 +8,7 @@ using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-    public class NineStarKiController : BaseController
+    public class NineStarKiController : BaseNineStarKiController
     {
         private readonly INineStarKiService _nineStarKiService;
 
@@ -19,7 +16,6 @@ namespace K9.WebApplication.Controllers
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
         {
             _nineStarKiService = nineStarKiService;
-            SetBetaWarningSessionVariable();
         }
 
         [Route("calculate")]
@@ -45,36 +41,9 @@ namespace K9.WebApplication.Controllers
             return View("Index", model);
         }
       
-        [Route("predications")]
-        public ActionResult Predictions()
-        {
-            return View();
-        }
-
-        public ActionResult SetLanguage(string languageCode, string cultureCode)
-        {
-            Session[SessionConstants.LanguageCode] = languageCode;
-            Session[SessionConstants.CultureCode] = cultureCode;
-            return Redirect(Request.UrlReferrer?.ToString());
-        }
-
         public override string GetObjectName()
         {
             return string.Empty;
-        }
-
-        private static void SetBetaWarningSessionVariable()
-        {
-            var numberOfDisplays = Helpers.SessionHelper.GetIntValue(Constants.SessionConstants.BetaWarningDisplay);
-            if (numberOfDisplays < 1)
-            {
-                numberOfDisplays++;
-                SessionHelper.SetValue(Constants.SessionConstants.BetaWarningDisplay, numberOfDisplays);
-            }
-            else
-            {
-                SessionHelper.SetValue(Constants.SessionConstants.BetaWarningHide, true);
-            }
         }
     }
 }

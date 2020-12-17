@@ -11,10 +11,10 @@
 	    @Html.HiddenFor(model => model.IsDeleted)
 		@Html.Partial("_EditFields")
 		<hr/>
-		@Html.BootstrapButton(Dictionary.Update)
+		@Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Update)
 		if (!WebSecurity.IsConfirmed(Model.Username))
 		{
-			@Html.BootstrapActionLinkButton(Dictionary.ActivateAccount, "ActivateUserAccount", "Account", new { userId = Model.Id })
+			@Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.ActivateAccount, "ActivateUserAccount", "Account", new { userId = Model.Id })
 		}
 		@Html.BootstrapBackToListButton()
 	}

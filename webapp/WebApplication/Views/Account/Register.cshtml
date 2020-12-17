@@ -2,8 +2,8 @@
 @model UserAccount.RegisterModel
 
 @{
-	ViewBag.Title = @Dictionary.Registration;
-	ViewBag.SubTitle = @Dictionary.Register;
+	ViewBag.Title = K9.Base.Globalisation.Dictionary.Registration;
+	ViewBag.SubTitle = K9.Base.Globalisation.Dictionary.Register;
 	Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
 
@@ -22,7 +22,7 @@
 		@Html.BootstrapEditorFor(model => model.PhoneNumber)
 		@Html.BootstrapEditorFor(model => model.BirthDate)
 		<hr/>
-		@Html.BootstrapButton(Dictionary.Register)
+		@Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Register)
 	
 	}
 }
@@ -34,7 +34,7 @@
         ajaxcontroller().get("@Url.Action("IsUserNameAvailable")", { username }).done(
             function(result) {
                 if (result.success && result.data) {
-                    $.fn.displayValidationWarningFor("UserName", "@Dictionary.UsernameIsUnavailableError");
+                    $.fn.displayValidationWarningFor("UserName", "@K9.Base.Globalisation.Dictionary.UsernameIsUnavailableError");
                 } else {
                     $.fn.hideValidationWarningFor("UserName");
                 }
@@ -46,7 +46,7 @@
         ajaxcontroller().get("@Url.Action("IsEmailAddressAvailable")", { emailAddress }).done(
             function(result) {
                 if (result.success && result.data) {
-                    $.fn.displayValidationWarningFor("EmailAddress", "@Dictionary.EmailIsUnavailableError");
+                    $.fn.displayValidationWarningFor("EmailAddress", "@K9.Base.Globalisation.Dictionary.EmailIsUnavailableError");
                 } else {
                     $.fn.hideValidationWarningFor("EmailAddress");
                 }

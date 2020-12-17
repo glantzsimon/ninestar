@@ -23,7 +23,7 @@ using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
 {
-    public partial class AccountController : BaseController
+    public partial class AccountController : BaseNineStarKiController
     {
         private readonly IRepository<User> _repository;
         private readonly ILogger _logger;

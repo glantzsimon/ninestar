@@ -1,13 +1,12 @@
 ﻿@using System.Globalization
 @using K9.SharedLibrary.Extensions
-
 @{
     var localeName = CultureInfo.CurrentUICulture.GetLocaleName().ToLower();
     var metaLocaleName = CultureInfo.CurrentUICulture.GetMetaLocaleName();
     var languageName = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower();
-    var keywords = ViewBag.Keywords ?? K9.Globalisation.Dictionary.Keywords;
-    var title = Html.Raw($"{ViewBag.Title ?? K9.Globalisation.Dictionary.NineStarKiTitle} &raquo; {keywords}");
-    var description = ViewBag.MetaDescription ?? K9.Globalisation.Dictionary.NineStarMetaDescriptionMain;
+    var keywords = ViewBag.Keywords ?? Dictionary.Keywords;
+    var title = Html.Raw($"{ViewBag.Title ?? Dictionary.NineStarKiTitle} &raquo; {keywords}");
+    var description = ViewBag.MetaDescription ?? Dictionary.NineStarMetaDescriptionMain;
 }
 
 <!DOCTYPE html>
@@ -25,7 +24,7 @@
     <meta property="og:title" content="@title" />
     <meta property="og:description" content="@description" />
     <meta property="og:url" content="/" />
-    <meta property="og:site_name" content="@K9.Globalisation.Dictionary.NineStarKiTitle" />
+    <meta property="og:site_name" content="@Dictionary.NineStarKiTitle" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:description" content="@description" />
     <meta name="twitter:title" content="@title" />

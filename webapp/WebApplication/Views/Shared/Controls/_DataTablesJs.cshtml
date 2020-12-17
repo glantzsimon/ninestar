@@ -8,23 +8,23 @@
 		var buttons = "";
 		var join = '@Model.GetQueryStringJoiner()';
 		if (@Model.AllowView.ToString().ToLower()) {
-			buttons += '<a href="@Url.Action("Details", Model.GetFilterRouteValues())' + join + 'id=' + data.Id + '" class="btn btn-info">@Dictionary.Details</a>';
+			buttons += '<a href="@Url.Action("Details", Model.GetFilterRouteValues())' + join + 'id=' + data.Id + '" class="btn btn-info">@K9.Base.Globalisation.Dictionary.Details</a>';
 		}
 		if (@Model.AllowEdit.ToString().ToLower() && !data.IsSystemStandard) {
-			buttons += '<a href="@Url.Action("Edit", Model.GetFilterRouteValues())' + join + 'id=' +data.Id + '" class="btn btn-primary"><i class="fa fa-pencil"></i> @Dictionary.Edit</a>';
+			buttons += '<a href="@Url.Action("Edit", Model.GetFilterRouteValues())' + join + 'id=' +data.Id + '" class="btn btn-primary"><i class="fa fa-pencil"></i> @K9.Base.Globalisation.Dictionary.Edit</a>';
 		}
 		if (@Model.AllowDelete.ToString().ToLower() && !data.IsSystemStandard) {
-			buttons += '<a href="@Url.Action("Delete", Model.GetFilterRouteValues())' + join + 'id=' + data.Id + '" class="btn btn-danger"><i class="fa fa-trash"></i> @Dictionary.Delete</a>';
+			buttons += '<a href="@Url.Action("Delete", Model.GetFilterRouteValues())' + join + 'id=' + data.Id + '" class="btn btn-danger"><i class="fa fa-trash"></i> @K9.Base.Globalisation.Dictionary.Delete</a>';
 		}
 		@foreach (var button in Model.CustomButtons)
 		{
 			@:buttons += '<a href="@Url.Action(button.Action, Model.GetFilterRouteValues())' + join + 'id=' + data.Id + '" class="btn @button.ButtonCssClass"><i class="@button.IconCssClass"></i> @button.Text</a>';
 		}
-		return buttons == "" ? null : buttons;
+		return buttons === "" ? null : buttons;
 	};
 
 	function renderYesNo(data, type, row) {
-		return data ? '@Dictionary.Yes' : '@Dictionary.No';
+		return data ? '@K9.Base.Globalisation.Dictionary.Yes' : '@K9.Base.Globalisation.Dictionary.No';
 	}
 
 	function getColumnDefs() {
@@ -66,7 +66,7 @@
 			"colReorder": true,
 			"autoWidth": false,
 			"language": {
-                "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/@string.Format("{0}.json", CultureInfo.CurrentUICulture.GetLocaleLanguage())"
+                "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/@($"{CultureInfo.CurrentUICulture.GetLocaleLanguage()}.json")"
             }
 		});
 	});

@@ -1,16 +1,16 @@
 ﻿    @model K9.WebApplication.Models.MembershipModel
 @{
-    ViewBag.Title = K9.Globalisation.Dictionary.MembershipOptions;
+    ViewBag.Title = Dictionary.MembershipOptions;
     Layout = "../Shared/_LayoutFormSmall.cshtml";
 
     var buttonText = Model.IsUpgrade
-            ? K9.Globalisation.Dictionary.Upgrade
-            : K9.Globalisation.Dictionary.Switch;
+            ? Dictionary.Upgrade
+            : Dictionary.Switch;
 }
 
 @using (Html.BeginForm("SwitchScheduleProcess", "Membership", FormMethod.Post))
 {
-    <p style="margin-bottom: 25px;">@K9.Globalisation.Dictionary.SelectedPurchaseText</p>
+    <p style="margin-bottom: 25px;">@Dictionary.SelectedPurchaseText</p>
 
     @Html.Partial("_MembershipOption")
 

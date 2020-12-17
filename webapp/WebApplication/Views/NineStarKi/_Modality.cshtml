@@ -2,9 +2,9 @@
 @model K9.WebApplication.Models.NineStarKiEnergy
 
 <div class="ninestar-summary-container">
-    <h3 class="margin-bottom-0 padding-bottom-0">@K9.Globalisation.Dictionary.ModalityLabel</h3>
+    <h3 class="margin-bottom-0 padding-bottom-0">@Dictionary.ModalityLabel</h3>
     <p>@Model.ModalityName</p>
     <a target="_blank" href="@Url.ActionWithBookmark("About", "Home", Model.ModalityName.ToLower())">
-        <img title="@Model.ModalityName @K9.Globalisation.Dictionary.ModalityLabel" alt="@Model.ModalityName @K9.Globalisation.Dictionary.ModalityLabel" class="auto-size center-block" src="~/Images/ninestar/modalities/@(Model.ModalityName).png" />
+        <img title="@Model.ModalityName @Dictionary.ModalityLabel" alt="@Model.ModalityName @Dictionary.ModalityLabel" class="auto-size center-block" src="~/Images/ninestar/modalities/@(Model.ModalityName).png" />
     </a>
 </div>

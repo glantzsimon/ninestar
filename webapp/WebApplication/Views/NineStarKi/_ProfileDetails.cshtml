@@ -8,7 +8,7 @@
 
 @using (Html.BeginBootstrapForm())
 {
-    <h4 class="margin-top-0 margin-bottom-10">@K9.Globalisation.Dictionary.PersonalProfileDetails</h4>
+    <h4 class="margin-top-0 margin-bottom-10">@Dictionary.PersonalProfileDetails</h4>
     <div class="ninestar-summmary container padding-0 margin-top-15">
         <ul class="nav nav-pills nav-justified">
             @if (Model.PersonModel.IsAdult())
@@ -21,12 +21,12 @@
                 <li class="active"><a data-toggle="tab" href="#emotional">@Model.CharacterEnergy.CharacteEnergyLabel</a></li>
             }
             
-            <li><a data-toggle="tab" href="#surface">@K9.Globalisation.Dictionary.ExternalPersona</a></li>
+            <li><a data-toggle="tab" href="#surface">@Dictionary.ExternalPersona</a></li>
         </ul>
 
         <div class="tab-content">
             <div id="adult" class="tab-pane fade @adultActiveClass">
-                @Html.Panel(Dictionary.DescriptionLabel, K9.Globalisation.Dictionary.MainEnergyDescription)
+                @Html.Panel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.MainEnergyDescription)
 
                 @Html.Partial("_NineStarHeader", Model.MainEnergy)
                 <hr />
@@ -34,7 +34,7 @@
             </div>
             
             <div id="emotional" class="tab-pane fade @childActiveClass">
-                @Html.Panel(Dictionary.DescriptionLabel, K9.Globalisation.Dictionary.CharacterEnergyDescription)
+                @Html.Panel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.CharacterEnergyDescription)
 
                 @Html.Partial("_NineStarHeader", Model.CharacterEnergy)
                 <hr />
@@ -42,7 +42,7 @@
             </div>
             
             <div id="surface" class="tab-pane fade">
-                @Html.Panel(Dictionary.DescriptionLabel, K9.Globalisation.Dictionary.SurfaceEnergyDescription)
+                @Html.Panel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.SurfaceEnergyDescription)
 
                 @Html.Partial("_NineStarHeader", Model.SurfaceEnergy)
                 <hr />

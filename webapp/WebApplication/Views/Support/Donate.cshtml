@@ -1,9 +1,8 @@
-﻿@using K9.Base.WebApplication.Config
-@using K9.SharedLibrary.Extensions
+﻿@using K9.SharedLibrary.Extensions
 @model K9.WebApplication.Models.StripeModel
 @{
-    ViewBag.Title = K9.Globalisation.Dictionary.Donate;
-    ViewBag.SubTitle = K9.Globalisation.Dictionary.MakeDonation;
+    ViewBag.Title = Dictionary.Donate;
+    ViewBag.SubTitle = Dictionary.MakeDonation;
     ViewBag.BackgroundClass = "background-poaching1";
     Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
@@ -19,8 +18,8 @@
         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                 data-key="@Model.PublishableKey"
                 data-amount="@Model.DonationAmountInCents"
-                data-name="@K9.Globalisation.Dictionary.NineStar"
-                data-description="@K9.Globalisation.Dictionary.DonationToNineStar"
+                data-name="@Dictionary.NineStar"
+                data-description="@Dictionary.DonationToNineStar"
                 data-billing-address="true"
                 data-image="@Url.AbsoluteContent("~/Images/icons/logo-small.png")"
                 data-locale="@Model.Locale"
@@ -29,7 +28,7 @@
         </script>
 
         <hr />
-        @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.ChangeAmount, "DonateStart", "Support", null, "fa-chevron-left")
+        @Html.BootstrapActionLinkButton(Dictionary.ChangeAmount, "DonateStart", "Support", null, "fa-chevron-left")
     }
     <div class="alert alert-success security-info">
         <h4><i class="fa fa-lock"></i> &nbsp;<strong>Security</strong></h4>

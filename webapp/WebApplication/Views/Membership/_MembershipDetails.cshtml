@@ -1,11 +1,10 @@
-﻿@using System.Web.Mvc.Html
-@model UserMembership
+﻿@model UserMembership
 
 @{
-    ViewBag.Title = K9.Globalisation.Dictionary.MembershipLabel;
+    ViewBag.Title = Dictionary.MembershipLabel;
     var buttonText = Model.MembershipOption.IsUpgradable
-        ? K9.Globalisation.Dictionary.Upgrade
-        : K9.Globalisation.Dictionary.Switch;
+        ? Dictionary.Upgrade
+        : Dictionary.Switch;
 }
 
 <div class="shadow-light membership-option-container">

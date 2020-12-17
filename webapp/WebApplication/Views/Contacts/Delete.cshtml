@@ -7,12 +7,12 @@
 {
 	using (Html.BeginBootstrapForm())
 	{
-		<h3>@Dictionary.DeleteConfirm</h3>
+		<h3>@K9.Base.Globalisation.Dictionary.DeleteConfirm</h3>
 		
 		@Html.HiddenFor(model => model.Id)
 		@Html.Partial("_DisplayFields")
 		<hr/>
-		@Html.BootstrapButton(Dictionary.Delete, EButtonType.Delete)
+		@Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Delete, EButtonType.Delete)
 		@Html.BootstrapBackToListButton()
 	}
 }

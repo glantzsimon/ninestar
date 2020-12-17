@@ -3,8 +3,8 @@
 @model K9.WebApplication.ViewModels.MembershipViewModel
 
 @{
-    ViewBag.Title = K9.Globalisation.Dictionary.MembershipLabel;
-    ViewBag.SubTitle = K9.Globalisation.Dictionary.MembershipLabel;
+    ViewBag.Title = Dictionary.MembershipLabel;
+    ViewBag.SubTitle = Dictionary.MembershipLabel;
     Layout = "../Shared/_LayoutForm.cshtml";
 }
 
@@ -26,20 +26,20 @@
     <div class="col-md-6 col-sm-12">
         <div style="height: 7px;">&nbsp;</div>
         <div class="membership-description">
-            @MvcHtmlString.Create(K9.Globalisation.Dictionary.standard_membership_description)
+            @MvcHtmlString.Create(Dictionary.standard_membership_description)
         </div>
     </div>
     <div class="col-md-6 col-sm-12">
         <div style="height: 7px;">&nbsp;</div>
         <div class="membership-description">
-            @MvcHtmlString.Create(K9.Globalisation.Dictionary.platinum_membership_description)
+            @MvcHtmlString.Create(Dictionary.platinum_membership_description)
         </div>
     </div>
     <div class="col-md-12 col-sm-12">
         <div style="height: 7px;">&nbsp;</div>
         <hr />
         <div class="membership-description">
-            @MvcHtmlString.Create(K9.Globalisation.Dictionary.membership_additional_information)
+            @MvcHtmlString.Create(Dictionary.membership_additional_information)
         </div>
     </div>
 </div>

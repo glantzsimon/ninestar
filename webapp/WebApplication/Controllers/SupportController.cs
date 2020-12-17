@@ -16,7 +16,7 @@ using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-    public class SupportController : BaseController
+    public class SupportController : BaseNineStarKiController
     {
         private readonly ILogger _logger;
         private readonly IMailer _mailer;

@@ -6,33 +6,23 @@ using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-    public class HomeController : BaseNineStarKiController
+    public class PredictionsController : BaseNineStarKiController
     {
         private readonly INineStarKiService _nineStarKiService;
 
-        public HomeController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService)
+        public PredictionsController (ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
         {
             _nineStarKiService = nineStarKiService;
         }
 
+        [Route("predictions")]
         public ActionResult Index()
         {
             return View();
         }
-
-        [Route("about")]
-        public ActionResult About()
-        {
-            return View(_nineStarKiService.GetNineStarKiSummaryViewModel());
-        }
-
-        [Route("privacy-policy")]
-        public ActionResult PrivacyPolicy()
-        {
-            return View();
-        }
-
+            
+       
         public override string GetObjectName()
         {
             return string.Empty;

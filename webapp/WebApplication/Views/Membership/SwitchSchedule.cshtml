@@ -1,14 +1,12 @@
-﻿@using K9.Base.WebApplication.Config
-@using K9.SharedLibrary.Extensions
-@model K9.WebApplication.Models.MembershipModel
+﻿@model K9.WebApplication.Models.MembershipModel
 @{
-    ViewBag.Title = K9.Globalisation.Dictionary.MembershipOptions;
+    ViewBag.Title = Dictionary.MembershipOptions;
     ViewBag.BackgroundClass = "background-poaching1";
     Layout = "../Shared/_LayoutFormSmall.cshtml";
 
     var buttonText = Model.IsUpgrade
-        ? K9.Globalisation.Dictionary.Upgrade
-        : K9.Globalisation.Dictionary.Switch;
+        ? Dictionary.Upgrade
+        : Dictionary.Switch;
 }
 
 @using (Html.BeginForm("SwitchScheduleProcess", "Membership", FormMethod.Post))
@@ -18,14 +16,14 @@
         @Html.HiddenFor(model => model.MembershipOption.Id)
         @Html.BootstrapDisplayFor(model => model.MembershipOption.Name)
 
-        <p>@K9.Globalisation.Dictionary.MembershipRunsUntil @Model.ActiveUserMembership.EndsOn.ToLongDateString()</p>
+        <p>@Dictionary.MembershipRunsUntil @Model.ActiveUserMembership.EndsOn.ToLongDateString()</p>
 
-        <p>@K9.Globalisation.Dictionary.NoChargeUntilText @Model.NewMembership.StartsOn.ToLongDateString()</p>
+        <p>@Dictionary.NoChargeUntilText @Model.NewMembership.StartsOn.ToLongDateString()</p>
 
         @Html.BootstrapButton(buttonText, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
 
         <hr />
 
-        @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.Back, "SwitchStart", "Membership", new { id = Model.MembershipOption.Id }, "fa-chevron-left")
+        @Html.BootstrapActionLinkButton(Dictionary.Back, "SwitchStart", "Membership", new { id = Model.MembershipOption.Id }, "fa-chevron-left")
     }
 }

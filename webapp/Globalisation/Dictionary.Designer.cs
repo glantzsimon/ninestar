@@ -802,9 +802,9 @@ namespace K9.Globalisation {
         ///
         ///    Sometimes you can be withdrawn, uncommunicative and deeply private. Those who know you well will appreciate your need to retreat into your cave from time to time, especially when under pressure or uspet. However, when provoked, you can deliver a powerful argument.
         ///
-        ///    You can be very moral and noble and are direct and to-the-point in your communication. 
+        ///    You can be very moral and noble and are direct and to-the-point in your communication.
         ///
-        ///    You hav [rest of string was truncated]&quot;;.
+        ///    You have [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _683 {
             get {
@@ -1485,8 +1485,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    This describes your deeper nature, which is typically only revealed as people get to know you better. It&apos;s also the energy that most influences you when you are stressed or emotional. Your deeper character energy also plays a significant role in your romantic relationships and close friendships. It&apos;s also connected to your inner child, as it is the energy that you primarily embody and express for the first 18 years of your life.
-        ///&lt;/p&gt;.
+        ///    This describes your deeper nature, which is typically only revealed as people get to know you better. It&apos;s also the Energy that most influences you when you are stressed or emotional. Your deeper character Energy also plays a significant role in your romantic relationships and close friendships.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This Energy is also connected to your inner child, as it is the Energy that you primarily embody and express for the first 18 years of your life.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It could also be said that y [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CharacterEnergyDescription {
             get {
@@ -1617,6 +1622,40 @@ namespace K9.Globalisation {
         public static string CompanyShortDescription {
             get {
                 return ResourceManager.GetString("CompanyShortDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compatibility Calculator Compatibility Checker Perfect Match Dating Love Romance Friendship Relationships Find The Love Your Life.
+        /// </summary>
+        public static string CompatibilityKeywords {
+            get {
+                return ResourceManager.GetString("CompatibilityKeywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 9 Star Ki is a remarkable tool to help us to understand our relationships, both romantic and other.  It offers profound insights into the subtle forces that shape our interactions with others, helping to bring greater harmony and understanding and to avoid blame, resentment and anger.
+        ///
+        ///9 Star Ki astrology can help those who are looking for ways to:  
+        ///Keep the romance alive
+        ///Maintain a healthy relationship
+        ///
+        ///9 Star Ki may be the perfect tool for those asking questions like:
+        ///Why do my boyfriend and I fal [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string CompatibilityMetaDescription {
+            get {
+                return ResourceManager.GetString("CompatibilityMetaDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compatibility Calculator.
+        /// </summary>
+        public static string CompatibilityTitle {
+            get {
+                return ResourceManager.GetString("CompatibilityTitle", resourceCulture);
             }
         }
         
@@ -1787,7 +1826,7 @@ namespace K9.Globalisation {
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Being at the centre of the 9 energies, 5 Soil energies have no trigram of their own. Rather, they are the axis 
         ///    around which the other energies revolve. As such, this sign draws its nature from each of the other energies. 
-        ///    However, it is also said that this energy is somewhat between 2 Soil and 8 Mountain energies, the other Earth energies in the system.
+        ///    However, it is also said that this Energy is somewhat between 2 Soil and 8 Mountain energies, the other Earth energies in the system.
         ///&lt;/p&gt;.
         /// </summary>
         public static string coreearth_trigram {
@@ -2227,7 +2266,7 @@ namespace K9.Globalisation {
         ///    Without adequate discipline, 9 Fire children can become spoilt, conceited and vain.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Fire needs to be contained, and since this character energy can be extremely impulsive, it&apos;s important that parents and caregivers introduce order and boundaries early on in life.
+        ///    Fire needs to be contained, and since this character Energy can be extremely impulsive, it&apos;s important that parents and caregivers introduce order and boundaries early on in life.
         ///&lt;/p&gt;.
         /// </summary>
         public static string fire_child {
@@ -2344,7 +2383,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Fire is the energy of illumination and clarity. It is also the energy of the midday sun. As such, fire energies can often see the bigger picture as they have a clear vantage point, like the sun shining down from above. Their insights and perspective are very valuable to others who might not be able to see things as clearly. That being said, a fire needs to be rooted in the hearth and needs plenty of fuel. Therefore, it&apos;s important that fire energies learn to ground themselves and develop their more [rest of string was truncated]&quot;;.
+        ///    Fire is the energy of illumination and clarity. It is also the energy associated with the midday sun. As such, fire energies can often see the bigger picture as they have a clear vantage point, like the sun shining down from above. Their insights and perspective are very valuable to others who might not be able to see things as clearly. That being said, a fire needs to be rooted in the hearth and needs plenty of fuel. Therefore, it&apos;s important that fire energies learn to ground themselves and devel [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_personal_development {
             get {
@@ -2620,11 +2659,11 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    In this trigram, three yang lines can be seen, representing the full force of Heaven energy. This brings consistency, strength and boldness.
-        ///    These energies are direct, straightforward and clear in their views and intentions. 
+        ///    In this trigram, three yang lines can be seen, representing the full force of Heaven Energy. This brings consistency, strength and boldness.
+        ///    These energies are direct, straightforward and clear in their views and intentions.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    As there is no yin in this energy, it may become imbalanced
+        ///    As there is no yin in this Energy, it may become imbalanced
         ///    and it is important that it receives yin from others.
         ///&lt;/p&gt;.
         /// </summary>
@@ -2736,7 +2775,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The season associated with this energy is late autumn, when the harvest is in and people are enjoying the fruits of their labours, celebrating and having fun.
+        ///    The season associated with this Energy is late autumn, when the harvest is in and people are enjoying the fruits of their labours, celebrating and having fun.
         ///    For this reason, 7 Metal energies have a propensity for being pleasure seekers and more than any of the other energies enjoy spending money on fashion, entertainment and socialising
         ///&lt;/p&gt;
         ///&lt;p&gt;
@@ -2968,8 +3007,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    This describes your fundamental adult nature, which typically starts to be expressed at around 18 years, after two nine year cycles. It is the energy that has the greatest impact on the way you think, process information and make sense of the world around you. It also has a profound influence on your interactions with others.
-        ///&lt;/p&gt;.
+        ///    This describes your fundamental adult nature, which typically starts to be expressed at around 18 years, after two nine year cycles. It is the Energy that has the greatest impact on the way you think, process information and make sense of the world around you. It also has a profound influence on your interactions with others. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is also this primary Energy that has the most influence over your physical body and the way subtle energy moves through your energy meridians and organs. S [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MainEnergyDescription {
             get {
@@ -3657,7 +3698,7 @@ namespace K9.Globalisation {
         ///    &lt;strong&gt;First Number - Main Energy / Adult Persona&lt;/strong&gt;
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    The first number is determined by the year we were born and corresponds to our fundamental nature; the way we essentially view and make sense of the world. It is the energy most strongly associated with our adult selves and only becomes relevant after the age of 18. Be [rest of string was truncated]&quot;;.
+        ///    The first number is determined by the year we were born and corresponds to our fundamental nature; the way we essentially view and make sense of the world. It is the Energy most strongly associated with our adult selves and only becomes relevant after the age of 18. Be [rest of string was truncated]&quot;;.
         /// </summary>
         public static string personal_chart {
             get {
@@ -3872,7 +3913,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Love romance friendship compatibility perfect match dating relationsihps love of your life.
+        ///   Looks up a localized string similar to 9 Star Ki Understanding Relationships Love Romance Friendship Compatibility Work Relationships Team Building.
         /// </summary>
         public static string RelationshipsKeywords {
             get {
@@ -3929,6 +3970,15 @@ namespace K9.Globalisation {
         public static string SeventhChild {
             get {
                 return ResourceManager.GetString("SeventhChild", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;9 Star Ki (pronounced &apos;key&apos;, which is the Japanese word for subtle energy or life-force) is possibly the oldest system of astrology in the world today. Originating in China, it is closely related to the 4000 year-old Book of Changes - the &apos;I Ching&apos; - whose principles are the foundations of Feng Shui, traditional Chinese medicine and acupuncture.&lt;/p&gt;.
+        /// </summary>
+        public static string sexuality {
+            get {
+                return ResourceManager.GetString("sexuality", resourceCulture);
             }
         }
         
@@ -4341,7 +4391,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    In some ways, this energy is similar to the Rising Sign in the Western Zodiac system. It describes how you appear to others, especially on first impression. It influences how you interact with others out in the world and your outward behaviours and mannerisms.
+        ///    In some ways, this Energy is similar to the Rising Sign in the Western Zodiac system. It describes how you appear to others, especially on first impression. It influences how you interact with others out in the world and your outward behaviours and mannerisms. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This Energy also influences how you think. It could be said that it exerts its primary influence over the &apos;mental body&apos;.
         ///&lt;/p&gt;.
         /// </summary>
         public static string SurfaceEnergyDescription {
@@ -4982,7 +5035,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like the wind, 4 Wind energies can express anything from stillness to a raging tornado. This energy is one of the most changeable and indeed emotional of the nine energies.
+        ///    Like the wind, 4 Wind energies can express anything from stillness to a raging tornado. This Energy is one of the most changeable and indeed emotional of the nine energies.
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    Like Thunder energies, also of the element Tree, Wind energies can be impulsive at times. However, they typically have a gentler, steadier nature than three Tree energies.

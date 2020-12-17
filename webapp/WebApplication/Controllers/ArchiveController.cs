@@ -11,7 +11,7 @@ using K9.Base.WebApplication.ViewModels;
 
 namespace K9.WebApplication.Controllers
 {
-    public class ArchiveController : BaseController
+    public class ArchiveController : BaseNineStarKiController
     {
         private readonly IRepository<ArchiveItemCategory> _archiveCategoryRepo;
         private readonly IRepository<ArchiveItem> _archiveItemRepo;

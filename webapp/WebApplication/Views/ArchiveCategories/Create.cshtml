@@ -1,5 +1,5 @@
 ﻿@using K9.Base.WebApplication.Helpers
-@model ArchiveCategory
+@model ArchiveItemCategory
 @{
 	Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
@@ -9,7 +9,7 @@
 	{
 		@Html.Partial("_EditFields")
 		<hr/>
-		@Html.BootstrapButton(Dictionary.Create)
+		@Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Create)
 		@Html.BootstrapBackToListButton()
 	}
 }

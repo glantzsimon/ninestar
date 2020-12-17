@@ -27,11 +27,11 @@
                         }
                         else if (assetInfo.IsVideo())
                         {
-                            <img src="~/Images/ui/video.jpg">
+                            <img src="~/Images/ui/video.png">
                         }
                         else if (assetInfo.IsAudio())
                         {
-                            <img src="~/Images/ui/audio.jpg">
+                            <img src="~/Images/ui/audio.png">
                         }
                         else
                         {
@@ -43,7 +43,7 @@
                         <samp>(@assetInfo.FileInfo.GetFileSize())</samp>
                         @if (!Model.IsReadOnly)
                         {
-                            <button type="button" class="file-preview-delete btn btn-xs btn-default" title="@Dictionary.Delete" data-file-id="@fileId" data-file-name="@assetInfo.FileName">
+                            <button type="button" class="file-preview-delete btn btn-xs btn-default" title="@K9.Base.Globalisation.Dictionary.Delete" data-file-id="@fileId" data-file-name="@assetInfo.FileName">
                                 <i class="glyphicon glyphicon-trash text-danger"></i>
                             </button>
                         }

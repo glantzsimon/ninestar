@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-    public class ErrorController : BaseController
+    public class ErrorController : BaseNineStarKiController
 	{
 
 	    public ErrorController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper)

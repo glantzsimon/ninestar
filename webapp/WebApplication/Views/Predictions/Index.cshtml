@@ -1,0 +1,17 @@
+﻿@using K9.WebApplication.Helpers
+
+@{
+    ViewBag.Title = Dictionary.PredictionsTitle;
+    ViewBag.SubTitle = Dictionary.PredictionsTitle;
+    ViewBag.Keywords = Dictionary.PredictionsKeywords;
+    ViewBag.MetaDescription = Dictionary.PredictionsMetaDescription;
+
+    ViewBag.Background = ViewBagHelper.EViewBackground.Jarallax;
+    Layout = "../Shared/_LayoutForm.cshtml";
+}
+
+@Html.Partial("_BetaPopup")
+
+<div class="container main-content">
+    <h4 class="text-center">@Dictionary.ComingSoon</h4>
+</div>

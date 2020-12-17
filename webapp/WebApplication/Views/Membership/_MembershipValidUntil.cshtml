@@ -1,9 +1,6 @@
-﻿@using System.Web.Mvc.Html
-@using K9.Base.WebApplication.Extensions
-@using K9.Base.WebApplication.Helpers
-@using K9.WebApplication.Helpers
+﻿@using K9.Base.WebApplication.Extensions
 @model UserMembership
 
 <div class="membership-valid-until-container">
-    @K9.Globalisation.Dictionary.ValidUntil @Model.EndsOn.ToLongLocalDateString()
+    @Dictionary.ValidUntil @Model.EndsOn.ToLongLocalDateString()
 </div>

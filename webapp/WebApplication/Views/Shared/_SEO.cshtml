@@ -1,8 +1,8 @@
 ﻿@model string
 
 @{
-    var description = ViewBag.MetaDescription ?? K9.Globalisation.Dictionary.NineStarMetaDescriptionMain;
-    var keywords = ViewBag.Keywords ?? K9.Globalisation.Dictionary.Keywords;
+    var description = ViewBag.MetaDescription ?? Dictionary.NineStarMetaDescriptionMain;
+    var keywords = ViewBag.Keywords ?? Dictionary.Keywords;
     var title = Html.Raw($"{ViewBag.Title} &raquo; &raquo; {keywords}");
 }
 
@@ -14,7 +14,7 @@
             @description
         </h1>
         <div>
-            @Html.Raw(K9.Globalisation.Dictionary.origins)
+            @Html.Raw(Dictionary.origins)
             @keywords
         </div>
         <h2>

@@ -254,9 +254,11 @@
     <Compile Include="Config\MailChimpConfiguration.cs" />
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
+    <Compile Include="Controllers\BaseNineStarKiController.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\MembershipController.cs" />
     <Compile Include="Controllers\MembershipOptionsController.cs" />
+    <Compile Include="Controllers\PredictionsController.cs" />
     <Compile Include="Controllers\RelationshipsController.cs" />
     <Compile Include="Enums\EGender.cs" />
     <Compile Include="Extensions\Extensions.cs" />
@@ -979,7 +981,6 @@
     <Content Include="Views\Shared\EditorTemplates\Energy.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\EnergyType.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\NineStarKi\Predictions.cshtml" />
     <Content Include="Views\Relationships\Index.cshtml" />
     <Content Include="Views\NineStarKi\_EnergyTitle.cshtml" />
     <Content Include="Views\Shared\Controls\_CollapsiblePanel.cshtml" />
@@ -1040,6 +1041,9 @@
     <Content Include="Views\Home\_ModalityGroupHeader.cshtml" />
     <Content Include="Views\Home\_ModalityDetails.cshtml" />
     <Content Include="Views\Relationships\Compatibility.cshtml" />
+    <Content Include="Views\Predictions\Index.cshtml" />
+    <Content Include="Views\Relationships\_Calculator.cshtml" />
+    <Content Include="Views\Shared\_VideoFilesDisplay.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,8 +1,7 @@
 ﻿@using K9.WebApplication.Helpers
-
 @{
-    ViewBag.Title = Dictionary.Home;
-    ViewBag.SubTitle = K9.Globalisation.Dictionary.WelcomeSubTitle;
+    ViewBag.Title = K9.Base.Globalisation.Dictionary.Home;
+    ViewBag.SubTitle = Dictionary.WelcomeSubTitle;
     ViewBag.Background = ViewBagHelper.EViewBackground.Jarallax;
     Layout = "../Shared/_LayoutForm.cshtml";
 }
@@ -13,12 +12,12 @@
     @Html.ImagePanel("Welcome", "Images/home/ninestar-home-bg.jpg")
 
     <article>
-        @MvcHtmlString.Create(K9.Globalisation.Dictionary.welcome)
+        @MvcHtmlString.Create(Dictionary.welcome)
     </article>
 
     <br/>
 
-    @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.PersonalProfileCalculator, "Index", "NineStarKi")
+    @Html.BootstrapActionLinkButton(Dictionary.PersonalProfileCalculator, "Index", "NineStarKi")
 
-    @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.LearnMoreAboutNineStarKi, "About", "Home", null, null, EButtonClass.Info)
+    @Html.BootstrapActionLinkButton(Dictionary.LearnMoreAboutNineStarKi, "About", "Home", null, null, EButtonClass.Info)
 </div>

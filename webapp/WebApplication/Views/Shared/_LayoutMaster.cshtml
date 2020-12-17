@@ -6,7 +6,7 @@
     var metaLocaleName = CultureInfo.CurrentUICulture.GetMetaLocaleName();
     var languageName = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower();
     var keywords = ViewBag.Keywords ?? K9.Globalisation.Dictionary.Keywords;
-    var title = Html.Raw($"{ViewBag.Title} &raquo; {K9.Globalisation.Dictionary.NineStar} &raquo; {keywords}");
+    var title = Html.Raw($"{ViewBag.Title} &raquo; {keywords}");
     var description = ViewBag.MetaDescription ?? K9.Globalisation.Dictionary.NineStarMetaDescriptionMain;
 }
 

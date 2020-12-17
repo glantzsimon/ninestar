@@ -11,19 +11,25 @@ using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-    public class NineStarKiController : BaseController
+    public class RelationshipsController : BaseController
     {
         private readonly INineStarKiService _nineStarKiService;
 
-        public NineStarKiController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService)
+        public RelationshipsController (ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
         {
             _nineStarKiService = nineStarKiService;
             SetBetaWarningSessionVariable();
         }
 
-        [Route("calculate")]
+        [Route("relationships")]
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        [Route("relationships/calculate-compatibility")]
+        public ActionResult Compatibility()
         {
             var dateOfBirth = new DateTime(DateTime.Now.Year - (24), DateTime.Now.Month, DateTime.Now.Day);
             var personModel = new PersonModel
@@ -33,22 +39,16 @@ namespace K9.WebApplication.Controllers
             return View(new NineStarKiModel(personModel));
         }
 
-        [Route("calculate")]
+        [Route("relationships/calculate-compatibility")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CalculateNineStarKi(NineStarKiModel model)
+        public ActionResult Compatibility(NineStarKiModel model)
         {
             if (model.PersonModel != null)
             {
                 model = _nineStarKiService.CalculateNineStarKi(model.PersonModel);
             }
             return View("Index", model);
-        }
-      
-        [Route("predications")]
-        public ActionResult Predictions()
-        {
-            return View();
         }
 
         public ActionResult SetLanguage(string languageCode, string cultureCode)

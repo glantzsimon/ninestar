@@ -257,6 +257,7 @@
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\MembershipController.cs" />
     <Compile Include="Controllers\MembershipOptionsController.cs" />
+    <Compile Include="Controllers\RelationshipsController.cs" />
     <Compile Include="Enums\EGender.cs" />
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Helpers\ViewBagHelper.cs" />
@@ -979,7 +980,7 @@
     <Content Include="Views\Shared\EditorTemplates\EnergyType.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\NineStarKi\Predictions.cshtml" />
-    <Content Include="Views\NineStarKi\Relationships.cshtml" />
+    <Content Include="Views\Relationships\Index.cshtml" />
     <Content Include="Views\NineStarKi\_EnergyTitle.cshtml" />
     <Content Include="Views\Shared\Controls\_CollapsiblePanel.cshtml" />
     <Content Include="Views\Shared\_GoogleAnalytics.cshtml" />
@@ -1038,6 +1039,7 @@
     <Content Include="Views\NineStarKi\_Modality.cshtml" />
     <Content Include="Views\Home\_ModalityGroupHeader.cshtml" />
     <Content Include="Views\Home\_ModalityDetails.cshtml" />
+    <Content Include="Views\Relationships\Compatibility.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

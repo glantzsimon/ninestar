@@ -3447,7 +3447,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Free Personal Profile Calculator.
+        ///   Looks up a localized string similar to Free Reading - Detailed Personal Chart.
         /// </summary>
         public static string NineStarKiCalculatorKeywords {
             get {

@@ -3447,7 +3447,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Free Reading - Detailed Personal Chart.
+        ///   Looks up a localized string similar to Free Reading Detailed Personal Chart 9 Star Ki Personal Profile Calculator.
         /// </summary>
         public static string NineStarKiCalculatorKeywords {
             get {
@@ -3456,7 +3456,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use this simple calculator to determine your 9 Star Ki personal profile. Our calculator is more accurate than many others as it uses a little known but important additional factor when determining your chart..
+        ///   Looks up a localized string similar to Use this simple but powerful calculator to determine your or a loved one&apos;s 9 Star Ki personal profile. Our calculator is one of the most accurate and detailed calculators available, as it uses a little known but important additional factor when determining a person&apos;s chart. Try it now for free!.
         /// </summary>
         public static string NineStarKiCalculatorMetaDescription {
             get {
@@ -3465,7 +3465,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9 Star Ki Calculator - Calculate Your Personal Profile.
+        ///   Looks up a localized string similar to 9 Star Ki Personal Profile Calculator.
         /// </summary>
         public static string NineStarKiCalculatorTitle {
             get {
@@ -3758,7 +3758,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Each person&apos;s life moves throug cycles of nine years, as well as nine months. These cycles are similar in nature to the seasons. Understanding where we are in a given cycle is tremendously helpful and can greatly assist us in taking appropriate action that is timely and in sync with the natural rhythms governing our lives..
+        ///   Looks up a localized string similar to 9 Star Ki astrology is an excellent tool for understanding the subtle energies and their cycles, whcih govern our lives. Each person&apos;s life moves throug predictable cycles of nine years, as well as nine months. These cycles are similar in nature to the seasons. Understanding where we are in a given cycle is tremendously helpful and can greatly assist us in taking appropriate action that is timely and in sync with the natural rhythms governing our lives..
         /// </summary>
         public static string PredictionsMetaDescription {
             get {
@@ -3883,12 +3883,12 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to 9 Star Ki is a remarkable tool to help us to understand our relationships, both romantic and other.  It offers profound insights into the subtle forces that shape our interactions with others, helping to bring greater harmony and understanding and to avoid blame, resentment and anger.
         ///
-        ///Relationship counselling relationship problems dating advice
+        ///9 Star Ki astrology can help those who are looking for ways to:  
         ///Keep the romance alive
-        ///Maintain healthy relationship
-        ///Why do my boyfriend and I fall out so much?
-        ///Why do my girlfiend and I fall out so much?
-        ///Why do my boyfri [rest of string was truncated]&quot;;.
+        ///Maintain a healthy relationship
+        ///
+        ///9 Star Ki may be the perfect tool for those asking questions like:
+        ///Why do my boyfriend and I fal [rest of string was truncated]&quot;;.
         /// </summary>
         public static string RelationshipsMetaDescription {
             get {

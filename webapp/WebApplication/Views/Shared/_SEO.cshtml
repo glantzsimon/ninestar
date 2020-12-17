@@ -1,24 +1,32 @@
 ﻿@model string
 
+@{
+    var description = ViewBag.MetaDescription ?? K9.Globalisation.Dictionary.NineStarMetaDescriptionMain;
+    var keywords = ViewBag.Keywords ?? K9.Globalisation.Dictionary.Keywords;
+    var title = Html.Raw($"{ViewBag.Title} &raquo; {K9.Globalisation.Dictionary.NineStar} &raquo; {keywords}");
+}
+
 <div class="seo @Model">
     @for (int i = 0; i < 3; i++)
     {
         <h1>
-            @ViewBag.MetaDescription
+            @title
+            @description
         </h1>
         <div>
-            @K9.Globalisation.Dictionary.origins
+            @Html.Raw(K9.Globalisation.Dictionary.origins)
         </div>
         <h2>
-            @K9.Globalisation.Dictionary.Keywords
-            @ViewBag.Keywords
+            @title
+            @keywords
         </h2>
         <h3>
-            @K9.Globalisation.Dictionary.Keywords
-            @ViewBag.Keywords
+            @title
+            @keywords
         </h3>
         <h4>
-            @ViewBag.Keywords
+            @title
+            @keywords
         </h4>
     }
 </div>

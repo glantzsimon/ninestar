@@ -1484,7 +1484,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Whilst using this site, you agree to have read and accepted our &lt;a target=&quot;_blank&quot; href=&quot;{privacypolicyurl}&quot;&gt;terms of use, cookie and privacy policy&lt;/a&gt;.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    This describes your deeper nature, which is typically only revealed as people get to know you better. It&apos;s also the energy that most influences you when you are stressed or emotional. Your deeper character energy also plays a significant role in your romantic relationships and close friendships. It&apos;s also connected to your inner child, as it is the energy that you primarily embody and express for the first 18 years of your life.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string CharacterEnergyDescription {
             get {
@@ -1583,7 +1585,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to NineStar has been created to share knowledge about the ancient wisdom of nine star ki astrology to help people gain a better understanding of themselves and of their loved ones, as well as the many cycles that affect their lives..
+        ///   Looks up a localized string similar to NineStar has been created to share the knowledge about 9 Star Ki astrology. This ancient system and the incredible wisdom within it can really help people to gain a better understanding of themselves and of their loved ones. It also helps us to understand and leverage the power of the many cycles that affect our lives..
         /// </summary>
         public static string CompanyBlurbFooter {
             get {
@@ -1767,12 +1769,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///    You come across as commanding and possibly a little domineering at times. 
+        ///    
+        ///    It is very important for you to feel involved and at the centre of what you do. 
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        ///    When the number 5 is situated at the third position, it enhanes the first and second numbers, which are always the same, giving rise to a particularly strong expression of that element.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string coreearth_surface_description {
             get {
@@ -2351,12 +2354,12 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        ///    You may appear rather showy and ostentatious at times. You are naturally gregarious and sociable and love to be the centre of attention.
+        ///
+        ///    You also have a deeper intuitive nature that shines through and others benefit greatly from your insights and wisdom.
+        ///
+        ///    Watch out for being overly impulsive!
+        ///&lt;/p&gt;.
         /// </summary>
         public static string fire_surface_description {
             get {
@@ -2606,12 +2609,8 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        ///    You are straightforward and sincere in your expression. At times you can be rather blunt and a little overbearing. However, you are basically careful, prudent and well organised. Your actions are clear, precise and well thought-out.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string heaven_surface_description {
             get {
@@ -2690,7 +2689,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Astrology Horoscope Relationships Nine Star Ki Love Feng Shui I Ching Dating Free Chart Romance Perfect Match Human Design.
+        ///   Looks up a localized string similar to 9 Star Ki Astrology, Predictions, Relationships, Compatibility in Love, Feng Shui, I Ching, Dating, Nine Star Ki
+        ///
+        ///Calculate your 9 Star Ki Personal Profile for free!
+        ///
+        ///Find your perfect match! .
         /// </summary>
         public static string Keywords {
             get {
@@ -2833,12 +2836,14 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        ///    You come across as fun-loving and laid-back, with a great sense of humour.
+        ///    
+        ///    You enjoy your independence and have a calm, relaxed demeanour that makes others feel at ease.
+        ///    
+        ///    You are a good listener and others willingly come to you to share stories and benefit from your wise and thoughtful reflections. 
+        ///    
+        ///    Your sincerity, wit, charm and sense of humour make a strong impression on others.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string lake_surface_description {
             get {
@@ -2962,7 +2967,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Whilst using this site, you agree to have read and accepted our &lt;a target=&quot;_blank&quot; href=&quot;{privacypolicyurl}&quot;&gt;terms of use, cookie and privacy policy&lt;/a&gt;.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    This describes your fundamental adult nature, which typically starts to be expressed at around 18 years, after two nine year cycles. It is the energy that has the greatest impact on the way you think, process information and make sense of the world around you. It also has a profound influence on your interactions with others.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string MainEnergyDescription {
             get {
@@ -3351,12 +3358,12 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        ///    You tend to find your own, often unorthodox ways of doing things and are a bit of a loner.
+        ///    
+        ///    Outwardly you appear calm, which may even make you seem shy. However, you are not afraid to express your opinion and can deliver a strong argument when necessar. 
+        ///    
+        ///    You are tenacious and have great persistence in the face of great challenges.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string mountain_surface_description {
             get {
@@ -4106,12 +4113,11 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
+        ///    You mau well appear reserved. You are reliable, steady and tend to keep your word. You can also be quite detail-minded and potentially overly fussy.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        ///    You are diplomatic and helpful towards others.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string soil_surface_description {
             get {
@@ -4337,7 +4343,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Whilst using this site, you agree to have read and accepted our &lt;a target=&quot;_blank&quot; href=&quot;{privacypolicyurl}&quot;&gt;terms of use, cookie and privacy policy&lt;/a&gt;.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    In some ways, this energy is similar to the Rising Sign in the Western Zodiac system. It describes how you appear to others, especially on first impression. It influences how you interact with others out in the world and your outward behaviours and mannerisms.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string SurfaceEnergyDescription {
             get {
@@ -4567,12 +4575,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        ///    You are spontaneous and energetic. You have great optimism and are full of enthusiasm for the things that interest you. 
+        ///    
+        ///    You are probably quite dynamic, vivacious and even a little noisy and hectic at times. This could be distracting to those who prefer more stillness and quiet.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string thunder_surface_description {
             get {
@@ -4852,12 +4858,8 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        ///    On the one hand you may appear passionate, sociable and bubbly, like a mountain stream. On the other , you could give the impression of being shy, cautious, indecisive and prone to procrastination.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string water_surface_description {
             get {
@@ -5089,12 +5091,12 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like water, this energy can resemble a lively mountain stream or, conversely, a deep lake or ocean. Water energies can be adventurous and vivacious, or quiet, reflective and withdrawn.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Water energies benefit greatly from having a container to structure them, just as the river needs the river banks. Without this, they may tend towards chaos and lack of discipline.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;Water energies can be very sensitive, intuitive and philosophical. They are often very deep thinkers and can ha [rest of string was truncated]&quot;;.
+        ///    You have a quiet, dependable and gentle nature. You are helpful and thoughtful and keep your word.
+        ///    
+        ///    You are easily influenced by events and people around you. 
+        ///    
+        ///    Of all the nine energetic types, you are the most changeable in your expression.. like the wind!
+        ///&lt;/p&gt;.
         /// </summary>
         public static string wind_surface_description {
             get {

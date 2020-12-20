@@ -100,10 +100,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Articles\en-gb\coreearth-child.htm" />
+    <Content Include="Articles\en-gb\fire-sexuality.htm" />
+    <Content Include="Articles\en-gb\mountain-sexuality.htm" />
+    <Content Include="Articles\en-gb\lake-sexuality.htm" />
+    <Content Include="Articles\en-gb\heaven-sexuality.htm" />
     <Content Include="Articles\en-gb\fire-child.htm" />
     <Content Include="Articles\en-gb\fire-overview.htm" />
     <Content Include="Articles\en-gb\dynamic-modality.htm" />
     <Content Include="Articles\en-gb\modalities-description.htm" />
+    <Content Include="Articles\en-gb\coreearth-sexuality.htm" />
+    <Content Include="Articles\en-gb\wind-sexuality.htm" />
+    <Content Include="Articles\en-gb\thunder-sexuality.htm" />
+    <Content Include="Articles\en-gb\soil-sexuality.htm" />
+    <Content Include="Articles\en-gb\water-sexuality.htm" />
+    <Content Include="Articles\en-gb\sexuality-match-opposite.htm" />
+    <Content Include="Articles\en-gb\sexuality-opposite-match.htm" />
+    <Content Include="Articles\en-gb\sexuality-opposite-opposite.htm" />
     <Content Include="Articles\en-gb\sexuality.htm" />
     <Content Include="Articles\en-gb\stable-modality.htm" />
     <Content Include="Articles\en-gb\heaven-child.htm" />
@@ -142,6 +154,7 @@
     <Content Include="Articles\en-gb\thunder-emotional-description.htm" />
     <Content Include="Articles\en-gb\soil-emotional-description.htm" />
     <Content Include="Articles\en-gb\water-emotional-description.htm" />
+    <Content Include="Articles\en-gb\sexuality-match-match.htm" />
     <Content Include="Summaries\en-gb\_234.htm" />
     <Content Include="Summaries\en-gb\_243.htm" />
     <Content Include="Summaries\en-gb\_261.htm" />

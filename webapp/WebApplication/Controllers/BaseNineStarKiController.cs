@@ -1,19 +1,24 @@
-﻿using System.Web.Mvc;
-using K9.Base.WebApplication.Constants;
+﻿using K9.Base.WebApplication.Constants;
 using K9.Base.WebApplication.Controllers;
 using K9.Base.WebApplication.Helpers;
+using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Services;
 using NLog;
+using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
     public class BaseNineStarKiController : BaseController
     {
+        private readonly IMembershipService _membershipService;
+
         public BaseNineStarKiController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles,
-            IAuthentication authentication, IFileSourceHelper fileSourceHelper)
+            IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
         {
+            _membershipService = membershipService;
             SetBetaWarningSessionVariable();
         }
 
@@ -22,6 +27,16 @@ namespace K9.WebApplication.Controllers
             Session[SessionConstants.LanguageCode] = languageCode;
             Session[SessionConstants.CultureCode] = cultureCode;
             return Redirect(Request.UrlReferrer?.ToString());
+        }
+
+        public UserMembership GetActiveUserMembership()
+        {
+            if (Authentication.IsAuthenticated)
+            {
+                return _membershipService.GetActiveUserMembership(Authentication.CurrentUserId);
+            }
+
+            return null;
         }
 
         public override string GetObjectName()

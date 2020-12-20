@@ -1,11 +1,7 @@
-﻿using K9.Base.WebApplication.Controllers;
-using K9.DataAccessLayer.Models;
-using K9.SharedLibrary.Helpers;
+﻿using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
-using K9.WebApplication.Config;
 using K9.WebApplication.Models;
 using K9.WebApplication.Services;
-using K9.WebApplication.Services.Stripe;
 using NLog;
 using System;
 using System.Web.Mvc;
@@ -15,24 +11,12 @@ namespace K9.WebApplication.Controllers
     [Authorize]
     public class MembershipController : BaseNineStarKiController
     {
-        private readonly ILogger _logger;
-        private readonly IRepository<MembershipOption> _membershipOptionRepository;
-        private readonly IRepository<UserMembership> _userMembershipRepository;
-        private readonly IStripeService _stripeService;
-        private readonly IContactService _contactService;
         private readonly IMembershipService _membershipService;
-        private readonly StripeConfiguration _stripeConfig;
 
-        public MembershipController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IOptions<StripeConfiguration> stripeConfig, IStripeService stripeService, IContactService contactService, IMembershipService membershipService)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
+        public MembershipController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService)
+            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
-            _logger = logger;
-            _membershipOptionRepository = membershipOptionRepository;
-            _userMembershipRepository = userMembershipRepository;
-            _stripeService = stripeService;
-            _contactService = contactService;
             _membershipService = membershipService;
-            _stripeConfig = stripeConfig.Value;
         }
 
         public ActionResult Index()

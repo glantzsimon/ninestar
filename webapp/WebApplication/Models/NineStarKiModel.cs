@@ -1,4 +1,5 @@
-﻿using K9.Globalisation;
+﻿using K9.DataAccessLayer.Enums;
+using K9.Globalisation;
 using K9.WebApplication.Enums;
 using K9.WebApplication.Extensions;
 using System;
@@ -61,17 +62,29 @@ namespace K9.WebApplication.Models
         public DateTime Today { get; set; }
 
         /// <summary>
-        /// Determines the nine star ki energy of the current year
+        /// Determines the 9 Star Ki energy of the current year
         /// </summary>
         public ENineStarKiEnergy LifeCycleYearEnergy { get; }
 
         /// <summary>
-        /// Determines the nine star ki energy of the current month
+        /// Determines the 9 Star Ki energy of the current month
         /// </summary>
         public ENineStarKiEnergy LifeCycleMonthEnergy { get; }
 
+        public EReadingType ReadingType { get; set; }
+
+        public ESexualityRelationType SexualityRelationType => GetSexualityRelationType();
+
+        public string EnergySexualityLabel => $"{MainEnergy.EnergyName} {Dictionary.SexualityLabel}";
+
+        public string SexualityRelationTypeLabel => "Sexuality relative to Gender and Personal Profile";
+
+        public string SexualityRelationTypeDetails => GetSexualityGenderDescription();
+
+        public string MainEnergySexualityDetails => GetMainEnergySexualityDetails();
+
         public bool IsProcessed { get; set; } = false;
-        
+
         private NineStarKiEnergy GetMainEnergy(DateTime date, EGender gender)
         {
             var month = date.Month;
@@ -273,6 +286,122 @@ namespace K9.WebApplication.Models
                 default:
                     return energyNumber;
             }
+        }
+
+        private ESexualityRelationType GetSexualityRelationType()
+        {
+            if (PersonModel != null && MainEnergy != null && CharacterEnergy != null)
+            {
+                if (PersonModel.Gender.IsYin())
+                {
+                    if (MainEnergy.YinYang == ENineStarKiYinYang.Yin &&
+                        CharacterEnergy.YinYang == ENineStarKiYinYang.Yin)
+                    {
+                        return ESexualityRelationType.MatchMatch;
+                    }
+
+                    if (MainEnergy.YinYang == ENineStarKiYinYang.Yang &&
+                        CharacterEnergy.YinYang == ENineStarKiYinYang.Yang)
+                    {
+                        return ESexualityRelationType.OppositeOpposite;
+                    }
+
+                    if (MainEnergy.YinYang == ENineStarKiYinYang.Yin &&
+                        CharacterEnergy.YinYang == ENineStarKiYinYang.Yang)
+                    {
+                        return ESexualityRelationType.MatchOpposite;
+                    }
+
+                    if (MainEnergy.YinYang == ENineStarKiYinYang.Yang &&
+                        CharacterEnergy.YinYang == ENineStarKiYinYang.Yin)
+                    {
+                        return ESexualityRelationType.OppositeMatch;
+                    }
+                }
+                else
+                {
+                    if (MainEnergy.YinYang == ENineStarKiYinYang.Yin &&
+                        CharacterEnergy.YinYang == ENineStarKiYinYang.Yin)
+                    {
+                        return ESexualityRelationType.OppositeOpposite;
+                    }
+
+                    if (MainEnergy.YinYang == ENineStarKiYinYang.Yang &&
+                        CharacterEnergy.YinYang == ENineStarKiYinYang.Yang)
+                    {
+                        return ESexualityRelationType.MatchMatch;
+                    }
+
+                    if (MainEnergy.YinYang == ENineStarKiYinYang.Yin &&
+                        CharacterEnergy.YinYang == ENineStarKiYinYang.Yang)
+                    {
+                        return ESexualityRelationType.OppositeMatch;
+                    }
+
+                    if (MainEnergy.YinYang == ENineStarKiYinYang.Yang &&
+                        CharacterEnergy.YinYang == ENineStarKiYinYang.Yin)
+                    {
+                        return ESexualityRelationType.MatchOpposite;
+                    }
+                }
+            }
+
+            return ESexualityRelationType.Unspecified;
+        }
+
+        private string GetSexualityGenderDescription()
+        {
+            switch (SexualityRelationType)
+            {
+                case ESexualityRelationType.MatchMatch:
+                    return Dictionary.sexuality_match_match;
+
+                case ESexualityRelationType.MatchOpposite:
+                    return Dictionary.sexuality_match_opposite;
+
+                case ESexualityRelationType.OppositeMatch:
+                    return Dictionary.sexuality_opposite_match;
+
+                case ESexualityRelationType.OppositeOpposite:
+                    return Dictionary.sexuality_opposite_opposite;
+            }
+
+            return string.Empty;
+        }
+
+        private string GetMainEnergySexualityDetails()
+        {
+            switch (MainEnergy.Energy)
+            {
+                case ENineStarKiEnergy.Water:
+                    return Dictionary.water_sexuality;
+
+                case ENineStarKiEnergy.Soil:
+                    return Dictionary.soil_sexuality;
+
+                case ENineStarKiEnergy.Thunder:
+                    return Dictionary.thunder_sexuality;
+
+                case ENineStarKiEnergy.Wind:
+                    return Dictionary.wind_sexuality;
+
+                case ENineStarKiEnergy.CoreEarth:
+                    return Dictionary.coreearth_sexuality;
+
+                case ENineStarKiEnergy.Heaven:
+                    return Dictionary.heaven_sexuality;
+
+                case ENineStarKiEnergy.Lake:
+                    return Dictionary.lake_sexuality;
+
+                case ENineStarKiEnergy.Mountain:
+                    return Dictionary.mountain_sexuality;
+
+                case ENineStarKiEnergy.Fire:
+                    return Dictionary.fire_sexuality;
+            }
+
+            return string.Empty;
         }
     }
 }

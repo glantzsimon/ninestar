@@ -4,18 +4,22 @@ using K9.WebApplication.Models;
 using K9.WebApplication.Services;
 using NLog;
 using System;
+using System.Text;
 using System.Web.Mvc;
+using K9.DataAccessLayer.Enums;
 
 namespace K9.WebApplication.Controllers
 {
     public class NineStarKiController : BaseNineStarKiController
     {
         private readonly INineStarKiService _nineStarKiService;
+        private readonly IMembershipService _membershipService;
 
-        public NineStarKiController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
+        public NineStarKiController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService)
+            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _nineStarKiService = nineStarKiService;
+            _membershipService = membershipService;
         }
 
         [Route("calculate")]
@@ -40,7 +44,32 @@ namespace K9.WebApplication.Controllers
             }
             return View("Index", model);
         }
-      
+
+        [Route("all-enegies")]
+        public ContentResult GetAllEnergies()
+        {
+            var sb = new StringBuilder();
+            for (var i = 1; i <= 9; i++)
+            {
+                var maleModel = _nineStarKiService.CalculateNineStarKi(new PersonModel
+                {
+                    DateOfBirth = new DateTime(1979, i, 15),
+                    Gender = EGender.Male
+                });
+
+                var femaleModel = _nineStarKiService.CalculateNineStarKi(new PersonModel
+                {
+                    DateOfBirth = new DateTime(1979, i, 15),
+                    Gender = EGender.Female
+                });
+
+                sb.Append($"<p>{maleModel.MainEnergy.EnergyNumber} {maleModel.CharacterEnergy.EnergyNumber} {maleModel.SurfaceEnergy.EnergyNumber} -- ");
+                sb.Append($"-- {femaleModel.MainEnergy.EnergyNumber} {maleModel.CharacterEnergy.EnergyNumber} {maleModel.SurfaceEnergy.EnergyNumber}</p>");
+            }
+
+            return new ContentResult { Content = sb.ToString() };
+        }
+
         public override string GetObjectName()
         {
             return string.Empty;

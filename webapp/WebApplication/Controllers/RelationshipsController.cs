@@ -1,6 +1,4 @@
-﻿using K9.Base.WebApplication.Constants;
-using K9.Base.WebApplication.Controllers;
-using K9.Base.WebApplication.Helpers;
+﻿using K9.Base.WebApplication.Helpers;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Models;
@@ -15,8 +13,8 @@ namespace K9.WebApplication.Controllers
     {
         private readonly INineStarKiService _nineStarKiService;
 
-        public RelationshipsController (ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
+        public RelationshipsController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService)
+            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _nineStarKiService = nineStarKiService;
             SetBetaWarningSessionVariable();
@@ -27,7 +25,7 @@ namespace K9.WebApplication.Controllers
         {
             return View();
         }
-            
+
         [Route("relationships/calculate-compatibility")]
         public ActionResult Compatibility()
         {
@@ -50,12 +48,12 @@ namespace K9.WebApplication.Controllers
             }
             return View("Index", model);
         }
-        
+
         public override string GetObjectName()
         {
             return string.Empty;
         }
-
+        
         private static void SetBetaWarningSessionVariable()
         {
             var numberOfDisplays = Helpers.SessionHelper.GetIntValue(Constants.SessionConstants.BetaWarningDisplay);

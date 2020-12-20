@@ -260,7 +260,8 @@
     <Compile Include="Controllers\MembershipOptionsController.cs" />
     <Compile Include="Controllers\PredictionsController.cs" />
     <Compile Include="Controllers\RelationshipsController.cs" />
-    <Compile Include="Enums\EGender.cs" />
+    <Compile Include="Enums\EReadingType.cs" />
+    <Compile Include="Enums\ESexualityType.cs" />
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Helpers\ViewBagHelper.cs" />
     <Compile Include="Constants\ViewDataConstants.cs" />

@@ -10,8 +10,8 @@ namespace K9.WebApplication.Controllers
     {
         private readonly INineStarKiService _nineStarKiService;
 
-        public HomeController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
+        public HomeController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService)
+            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _nineStarKiService = nineStarKiService;
         }

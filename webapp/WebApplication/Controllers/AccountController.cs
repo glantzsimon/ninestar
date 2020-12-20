@@ -33,7 +33,7 @@ namespace K9.WebApplication.Controllers
         private readonly IMembershipService _membershipService;
 
         public AccountController(IRepository<User> repository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
+            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _repository = repository;
             _logger = logger;

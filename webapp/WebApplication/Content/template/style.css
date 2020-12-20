@@ -19,12 +19,13 @@ body a, h4 {
 }
 
 html, body {
-    font-size: 95%;
+    font-size: 100%;
     font-family: 'Montserrat', sans-serif;
 }
 
 body {
     background: #FFFFFF;
+    color: #151515;
 }
 
 .banner-plain {
@@ -90,7 +91,6 @@ body {
 .main-section p {
     margin: 1em 0 0 0;
     font-size: .9em;
-    color: #564c4;
     line-height: 1.7em;
 }
 
@@ -821,6 +821,10 @@ a.collapsible-panel-link {
 .panel-body {
     padding-top: 20px;
 }
+
+    .panel-body h5:first-child {
+        margin-top: 0 !important;
+    }
 
 .tab-pane .panel {
     margin-top: 20px;

@@ -1,8 +1,8 @@
 ﻿using K9.Base.DataAccessLayer.Extensions;
 using K9.Base.Globalisation;
+using K9.DataAccessLayer.Enums;
 using System;
 using System.ComponentModel.DataAnnotations;
-using K9.WebApplication.Enums;
 
 namespace K9.WebApplication.Models
 {
@@ -26,11 +26,6 @@ namespace K9.WebApplication.Models
 
         private int GetYearsOld()
         {
-            if (DateOfBirth == null)
-            {
-                return 0;
-            }
-
             return (DateTime.Now.Year - DateOfBirth.Year) - (DateTime.Now.DayOfYear < DateOfBirth.DayOfYear ? 1 : 0);
         }
     }

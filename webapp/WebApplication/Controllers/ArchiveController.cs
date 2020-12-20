@@ -1,13 +1,13 @@
 ﻿using K9.Base.DataAccessLayer.Models;
 using K9.Base.WebApplication.Constants;
-using K9.Base.WebApplication.Controllers;
 using K9.Base.WebApplication.Helpers;
+using K9.Base.WebApplication.ViewModels;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Services;
 using NLog;
 using System.Linq;
 using System.Web.Mvc;
-using K9.Base.WebApplication.ViewModels;
 
 namespace K9.WebApplication.Controllers
 {
@@ -16,8 +16,8 @@ namespace K9.WebApplication.Controllers
         private readonly IRepository<ArchiveItemCategory> _archiveCategoryRepo;
         private readonly IRepository<ArchiveItem> _archiveItemRepo;
 
-        public ArchiveController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IRepository<ArchiveItemCategory> archiveCategoryRepo, IRepository<ArchiveItem> archiveItemRepo, IFileSourceHelper fileSourceHelper)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
+        public ArchiveController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IRepository<ArchiveItemCategory> archiveCategoryRepo, IRepository<ArchiveItem> archiveItemRepo, IFileSourceHelper fileSourceHelper, IMembershipService membershipService)
+            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _archiveCategoryRepo = archiveCategoryRepo;
             _archiveItemRepo = archiveItemRepo;

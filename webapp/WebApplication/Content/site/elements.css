@@ -1,10 +1,18 @@
 ﻿article h4 {
     margin-top: 32px;
     margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 120%;
+    color: #444;
 }
 
-form:not(.navbar-form):not(.dropdown-toggle) .btn:not(.dropdown-toggle) {
-    /*margin-top: 6px;*/
+article h5 {
+    margin-top: 32px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 110%;
+    line-height: 1.5em;
+    color: #444;
 }
 
 form div.well h3 {

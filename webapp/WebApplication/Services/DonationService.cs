@@ -35,7 +35,7 @@ namespace K9.WebApplication.Services
             try
             {
                 _donationRepository.Create(donation);
-                SendEmailToBotf(donation);
+                SendEmailToNineStar(donation);
                 SendEmailToCustomer(donation);
             }
             catch (Exception ex)
@@ -54,7 +54,7 @@ namespace K9.WebApplication.Services
             return _donationRepository.Find(d => d.Status == "succeeded").ToList();
         }
 
-        private void SendEmailToBotf(Donation donation)
+        private void SendEmailToNineStar(Donation donation)
         {
             var template = Dictionary.DonationReceivedEmail;
             var title = "We have received a donation!";

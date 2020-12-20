@@ -1,7 +1,7 @@
-﻿using K9.WebApplication.Enums;
+﻿using K9.DataAccessLayer.Enums;
 using K9.WebApplication.Models;
-using System;
 using K9.WebApplication.ViewModels;
+using System;
 
 namespace K9.WebApplication.Services
 {

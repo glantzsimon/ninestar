@@ -1,9 +1,12 @@
-﻿@using K9.WebApplication.Helpers
+﻿@using K9.WebApplication.Enums
+@using K9.WebApplication.Extensions
+@using K9.WebApplication.Helpers
 @model K9.WebApplication.Models.NineStarKiModel
 
 @{
     var adultActiveClass = Model.PersonModel.IsAdult() ? "in active" : "disabled";
     var childActiveClass = Model.PersonModel.IsAdult() ? "" : "in active";
+    var activeUserMembership = this.GetActiveUserMembership();
 }
 
 @using (Html.BeginBootstrapForm())
@@ -20,7 +23,7 @@
             {
                 <li class="active"><a data-toggle="tab" href="#emotional">@Model.CharacterEnergy.CharacteEnergyLabel</a></li>
             }
-            
+
             <li><a data-toggle="tab" href="#surface">@Dictionary.ExternalPersona</a></li>
         </ul>
 
@@ -32,7 +35,7 @@
                 <hr />
                 @Html.Partial("_NineStarDetail", Model)
             </div>
-            
+
             <div id="emotional" class="tab-pane fade @childActiveClass">
                 @Html.Panel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.CharacterEnergyDescription)
 
@@ -40,7 +43,7 @@
                 <hr />
                 @Html.Partial("_NineStarBody", Model.CharacterEnergy)
             </div>
-            
+
             <div id="surface" class="tab-pane fade">
                 @Html.Panel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.SurfaceEnergyDescription)
 
@@ -48,6 +51,21 @@
                 <hr />
                 @Html.Partial("_NineStarBody", Model.SurfaceEnergy)
             </div>
+
+            @if (WebSecurity.IsAuthenticated && activeUserMembership != null && Model.ReadingType == EReadingType.Complete)
+            {
+                <div id="sexuality" class="tab-pane fade">
+                    @Html.Panel(Model.EnergySexualityLabel, Model.MainEnergySexualityDetails)
+
+                    @Html.Panel(Model.SexualityRelationTypeLabel, Model.SexualityRelationTypeDetails)
+                </div>
+            }
+            else
+            {
+                <div id="sexuality" class="tab-pane fade">
+                    @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "NineStarKi")
+                </div>
+            }
         </div>
     </div>
 }

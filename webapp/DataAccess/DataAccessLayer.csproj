@@ -206,7 +206,9 @@
   <ItemGroup>
     <Compile Include="Database\DatabaseInitialiser.cs" />
     <Compile Include="Database\Db.cs" />
+    <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
+    <Compile Include="Enums\EGender.cs" />
     <Compile Include="Migrations\202007211011153_July2020.cs" />
     <Compile Include="Migrations\202007211011153_July2020.Designer.cs">
       <DependentUpon>202007211011153_July2020.cs</DependentUpon>
@@ -231,8 +233,14 @@
     <Compile Include="Migrations\202012160145333_DbUpdate2.Designer.cs">
       <DependentUpon>202012160145333_DbUpdate2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012181520116_AddMemberships.cs" />
+    <Compile Include="Migrations\202012181520116_AddMemberships.Designer.cs">
+      <DependentUpon>202012181520116_AddMemberships.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\MembershipOption.cs" />
+    <Compile Include="Models\UserCompatibilityReading.cs" />
+    <Compile Include="Models\UserProfileReading.cs" />
     <Compile Include="Models\UserMembership.cs" />
     <Compile Include="Models\Donation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -243,7 +251,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Attributes\" />
-    <Folder Include="Enums\" />
     <Folder Include="Exceptions\" />
     <Folder Include="Helpers\" />
   </ItemGroup>
@@ -271,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012160145333_DbUpdate2.resx">
       <DependentUpon>202012160145333_DbUpdate2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012181520116_AddMemberships.resx">
+      <DependentUpon>202012181520116_AddMemberships.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

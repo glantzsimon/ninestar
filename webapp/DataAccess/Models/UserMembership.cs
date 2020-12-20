@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
@@ -37,13 +38,24 @@ namespace K9.DataAccessLayer.Models
         public bool IsAutoRenew { get; set; }
 
         public virtual User User { get; set; }
+
         public virtual MembershipOption MembershipOption { get; set; }
+
+        public virtual ICollection<UserProfileReading> ProfileReadings { get; set; }
+
+        public virtual ICollection<UserRelationshipCompatibilityReading> RelationshipCompatibilityReadings { get; set; }
 
         [LinkedColumn(LinkedTableName = "User", LinkedColumnName = "Username")]
         public string UserName { get; set; }
 
         [LinkedColumn(LinkedTableName = "MembershipOption", LinkedColumnName = "Description")]
         public string MembershipOptionName { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfProfileReadingsLeft)]
+        public int NumberOfProfileReadingsLeft => MembershipOption.MaxNumberOfProfileReadings - ProfileReadings.Count;
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfRelationshipCompatibilityReadingsLeft)]
+        public int NumberOfRelationshipCompatibilityReadingsLeft => MembershipOption.MaxNumberOfCompatibilityReadings - RelationshipCompatibilityReadings.Count;
 
         public bool IsActive => DateTime.Today.IsBetween(StartsOn.Date, EndsOn.Date);
 
@@ -52,7 +64,7 @@ namespace K9.DataAccessLayer.Models
         public double CostOfRemainingActiveSubscription => GetCostOfRemainingActiveSubscription();
 
         private double GetCostOfRemainingActiveSubscription()
-        {   
+        {
             var timeRemaining = EndsOn.Subtract(DateTime.Today);
             var percentageRemaining = (double)timeRemaining.Ticks / (double)Duration.Ticks;
             return MembershipOption.Price * percentageRemaining;

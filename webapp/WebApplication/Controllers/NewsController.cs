@@ -1,9 +1,9 @@
 ﻿using K9.Base.DataAccessLayer.Models;
-using K9.Base.WebApplication.Controllers;
 using K9.Base.WebApplication.Helpers;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Constants;
+using K9.WebApplication.Services;
 using NLog;
 using System.Linq;
 using System.Threading;
@@ -15,8 +15,8 @@ namespace K9.WebApplication.Controllers
 	{
 		private readonly IRepository<NewsItem> _newsRepository;
 
-		public NewsController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IRepository<NewsItem> newsRepository, IAuthentication authentication, IFileSourceHelper fileSourceHelper)
-			: base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
+		public NewsController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IRepository<NewsItem> newsRepository, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService)
+			: base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
 		{
 			_newsRepository = newsRepository;
 		}

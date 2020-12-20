@@ -48,6 +48,10 @@
             public const string TotalLabel = "TotalLabel";
             public const string AutoRenewLabel = "AutoRenewLabel";
             public const string EmailAddressLabel = "EmailAddressLabel";
+            public const string MaxNumberOfProfileReadingsLabel = "MaxNumberOfProfileReadingsLabel";
+            public const string MaxNumberOfCompatibilityReadingsLabel = "MaxNumberOfCompatibilityReadingsLabel";
+            public const string NumberOfProfileReadingsLeft = "NumberOfProfileReadingsLeft";
+            public const string NumberOfRelationshipCompatibilityReadingsLeft = "NumberOfRelationshipCompatibilityReadingsLeft";
         }
 
         public static class Names
@@ -56,19 +60,27 @@
             public const string Donation = "Donation";
             public const string Donations = "Donations";
             public const string MembershipOptions = "MembershipOptions";
+            public const string ProfileReadings = "ProfileReadings";
             public const string MembershipOption = "MembershipOption";
+            public const string ProfileReading = "ProfileReading";
+            public const string CompatibilityReading = "CompatibilityReading";
+            public const string CompatibilityReadings = "CompatibilityReadings ";
             public const string Monthly = "Monthly";
             public const string Annual = "Annual";
             public const string MonthlyStandardMembership = "MonthlyStandardMembership";
             public const string AnnualStandardMembership = "AnnualStandardMembership";
             public const string MonthlyPlatinumMembership = "MonthlyPlatinumMembership";
             public const string AnnualPlatinumMembership = "AnnualPlatinumMembership";
-            
+
             public const string Female = "Female";
             public const string Male = "Male";
             public const string TransFemale = "TransFemale";
             public const string TransMale = "TransMale";
             public const string Hermaphrodite = "Hermaphrodite";
+            public const string MatchMatch = "MatchMatch";
+            public const string OppositeOpposite = "OppositeOpposite";
+            public const string MatchOpposite = "MatchOpposite";
+            public const string OppositeMatch = "OppositeMatch";
             public const string Other = "Other";
             public const string Water = "Water";
             public const string Soil = "Soil";
@@ -80,6 +92,8 @@
             public const string Mountain = "Mountain";
             public const string Fire = "Fire";
             public const string Unspecified = "Unspecified";
+            public const string Free = "Free";
+            public const string Complete = "Complete";
             public const string Yin = "Yin";
             public const string Yang = "Yang";
             public const string North = "North";

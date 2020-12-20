@@ -1646,11 +1646,38 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Relationship Compatibility Reading.
+        /// </summary>
+        public static string CompatibilityReading {
+            get {
+                return ResourceManager.GetString("CompatibilityReading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Relationship Compatibility Readings.
+        /// </summary>
+        public static string CompatibilityReadings {
+            get {
+                return ResourceManager.GetString("CompatibilityReadings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Compatibility Calculator.
         /// </summary>
         public static string CompatibilityTitle {
             get {
                 return ResourceManager.GetString("CompatibilityTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Complete.
+        /// </summary>
+        public static string Complete {
+            get {
+                return ResourceManager.GetString("Complete", resourceCulture);
             }
         }
         
@@ -1763,8 +1790,8 @@ namespace K9.Globalisation {
         ///    &lt;table class=&quot;table&quot;&gt;
         ///        &lt;thead&gt;
         ///        &lt;tr&gt;
-        ///            &lt;th&gt;In Balance / Potential&lt;/th&gt;
-        ///            &lt;th&gt;Out of Balance&lt;/th&gt;
+        ///            &lt;th&gt;When in balance, there is a potential to be:&lt;/th&gt;
+        ///            &lt;th&gt;When out of balance, there is a potential to be:&lt;/th&gt;
         ///        &lt;/tr&gt;
         ///        &lt;/thead&gt;
         ///        &lt;tbody&gt;
@@ -1777,8 +1804,7 @@ namespace K9.Globalisation {
         ///                &lt;td&gt;Moody&lt;/td&gt;
         ///            &lt;/tr&gt;
         ///            &lt;tr&gt;
-        ///                &lt;td&gt;Resourceful&lt;/td&gt;
-        ///                &lt;td&gt;Thrifty [rest of string was truncated]&quot;;.
+        ///          [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_overview {
             get {
@@ -1798,6 +1824,15 @@ namespace K9.Globalisation {
         public static string coreearth_personal_development {
             get {
                 return ResourceManager.GetString("coreearth_personal_development", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string coreearth_sexuality {
+            get {
+                return ResourceManager.GetString("coreearth_sexuality", resourceCulture);
             }
         }
         
@@ -2353,8 +2388,8 @@ namespace K9.Globalisation {
         ///    &lt;table class=&quot;table&quot;&gt;
         ///        &lt;thead&gt;
         ///            &lt;tr&gt;
-        ///                &lt;th&gt;In Balance / Potential&lt;/th&gt;
-        ///                &lt;th&gt;Out of Balance&lt;/th&gt;
+        ///                &lt;th&gt;When in balance, there is a potential to be:&lt;/th&gt;
+        ///                &lt;th&gt;When out of balance, there is a potential to be:&lt;/th&gt;
         ///            &lt;/tr&gt;
         ///        &lt;/thead&gt;
         ///        &lt;tbody&gt;
@@ -2366,9 +2401,7 @@ namespace K9.Globalisation {
         ///                &lt;td&gt;Radiant&lt;/td&gt;
         ///                &lt;td&gt;Vain&lt;/td&gt;
         ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Passionate&lt;/td&gt;
-        ///             [rest of string was truncated]&quot;;.
+        ///            [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_overview {
             get {
@@ -2383,6 +2416,15 @@ namespace K9.Globalisation {
         public static string fire_personal_development {
             get {
                 return ResourceManager.GetString("fire_personal_development", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string fire_sexuality {
+            get {
+                return ResourceManager.GetString("fire_sexuality", resourceCulture);
             }
         }
         
@@ -2403,7 +2445,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Two yang lines encapsulating an inner yin lines. This represents the vanity and brilliance of fire, with a softer inner nature,
+        ///    Two Yang lines encapsulating an inner Yin lines. This represents the vanity and brilliance of fire, with a softer inner nature,
         ///    which can manifest as a quietly self-critical and doubting quality. Just as fire needs a constant supply of material to burn, 
         ///    Fire energies require the acknowledgement and support of others in order to reach their full expression and potential. 
         ///&lt;/p&gt;.
@@ -2470,6 +2512,15 @@ namespace K9.Globalisation {
         public static string flexible_modality {
             get {
                 return ResourceManager.GetString("flexible_modality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Free.
+        /// </summary>
+        public static string Free {
+            get {
+                return ResourceManager.GetString("Free", resourceCulture);
             }
         }
         
@@ -2561,7 +2612,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The organ governed by yang Metal is the lungs and care must be taken to look after this organ. Therefore, it is especially important
+        ///    The organ governed by Yang Metal is the lungs and care must be taken to look after this organ. Therefore, it is especially important
         ///    to avoid smoking. It is also beneficial to engage in a healthy amount of exercise to improve cardiovascular fitness.
         ///&lt;/p&gt;
         ///&lt;p&gt;
@@ -2598,8 +2649,8 @@ namespace K9.Globalisation {
         ///    &lt;table class=&quot;table&quot;&gt;
         ///        &lt;thead&gt;
         ///        &lt;tr&gt;
-        ///            &lt;th&gt;In Balance / Potential&lt;/th&gt;
-        ///            &lt;th&gt;Out of Balance&lt;/th&gt;
+        ///            &lt;th&gt;When in balance, there is a potential to be:&lt;/th&gt;
+        ///            &lt;th&gt;When out of balance, there is a potential to be:&lt;/th&gt;
         ///        &lt;/tr&gt;
         ///        &lt;/thead&gt;
         ///        &lt;tbody&gt;
@@ -2612,10 +2663,7 @@ namespace K9.Globalisation {
         ///            &lt;td&gt;Controlling&lt;/td&gt;
         ///        &lt;/tr&gt;
         ///        &lt;tr&gt;
-        ///            &lt;td&gt;Action-oriented&lt;/td&gt;
-        ///            &lt;td&gt;Reckless&lt;/td&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt; [rest of string was truncated]&quot;;.
+        ///            &lt;td&gt;Action-oriented&lt;/td&gt;        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_overview {
             get {
@@ -2625,7 +2673,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Being the full expression of yang, it is advisable to work on bringing out a gentler, more flexible nature.
+        ///    Being the full expression of Yang, it is advisable to work on bringing out a gentler, more flexible nature.
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    It is important for Heaven energies find time to let their hair down and to even spoil themselves from time to time (something they seldom do!)
@@ -2642,6 +2690,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string heaven_sexuality {
+            get {
+                return ResourceManager.GetString("heaven_sexuality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    You are straightforward and sincere in your expression. At times you can be rather blunt and a little overbearing. However, you are basically careful, prudent and well organised. Your actions are clear, precise and well thought-out.
         ///&lt;/p&gt;.
@@ -2654,12 +2711,12 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    In this trigram, three yang lines can be seen, representing the full force of Heaven Energy. This brings consistency, strength and boldness.
+        ///    In this trigram, three Yang lines can be seen, representing the full force of Heaven Energy. This brings consistency, strength and boldness.
         ///    These energies are direct, straightforward and clear in their views and intentions.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    As there is no yin in this Energy, it may become imbalanced
-        ///    and it is important that it receives yin from others.
+        ///    As there is no Yin in this Energy, it may become imbalanced
+        ///    and it is important that it receives Yin from others.
         ///&lt;/p&gt;.
         /// </summary>
         public static string heaven_trigram {
@@ -2770,11 +2827,11 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The season associated with this Energy is late autumn, when the harvest is in and people are enjoying the fruits of their labours, celebrating and having fun.
+        ///    The season associated with this Energy is late autumn, when the harvest is in and people are enjoYing the fruits of their labours, celebrating and having fun.
         ///    For this reason, 7 Metal energies have a propensity for being pleasure seekers and more than any of the other energies enjoy spending money on fashion, entertainment and socialising
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Lake energies are often great hosts and unlike their yang Metal counterparts are often highly receptive to others and very good listeners. Th [rest of string was truncated]&quot;;.
+        ///    Lake energies are often great hosts and unlike their Yang Metal counterparts are often highly receptive to others and very good listeners. Th [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_description {
             get {
@@ -2825,8 +2882,8 @@ namespace K9.Globalisation {
         ///    &lt;table class=&quot;table&quot;&gt;
         ///        &lt;thead&gt;
         ///        &lt;tr&gt;
-        ///            &lt;th&gt;In Balance / Potential&lt;/th&gt;
-        ///            &lt;th&gt;Out of Balance&lt;/th&gt;
+        ///            &lt;th&gt;When in balance, there is a potential to be:&lt;/th&gt;
+        ///            &lt;th&gt;When out of balance, there is a potential to be:&lt;/th&gt;
         ///        &lt;/tr&gt;
         ///        &lt;/thead&gt;
         ///        &lt;tbody&gt;
@@ -2840,10 +2897,7 @@ namespace K9.Globalisation {
         ///        &lt;/tr&gt;
         ///        &lt;tr&gt;
         ///            &lt;td&gt;Wise&lt;/td&gt;
-        ///            &lt;td&gt;Shallow&lt;/td&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt;tr&gt;
-        ///      [rest of string was truncated]&quot;;.
+        ///         [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_overview {
             get {
@@ -2869,6 +2923,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string lake_sexuality {
+            get {
+                return ResourceManager.GetString("lake_sexuality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    You come across as fun-loving and laid-back, with a great sense of humour.
         ///    
@@ -2887,7 +2950,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The two bottoms lines of this trigram are yang, representing strength and consistency, with a softer, yin line on the surface, which
+        ///    The two bottoms lines of this trigram are Yang, representing strength and consistency, with a softer, Yin line on the surface, which
         ///    gives rise to the imagery of a reflective lake.
         ///&lt;/p&gt;
         ///&lt;p&gt;
@@ -2974,7 +3037,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Please note that the &apos;Main Energy&apos; or &apos;Adult Persona&apos; alone does not give a very detailed description of a person. The &apos;Character Energy&apos;, as well as the &apos;Surface Energy&apos; play a significant role in shaping a person&apos;s character traits. However, the Main Energy does give a very useful overview. Also, of the three components of a personal profile , the Main Energy has the most significant influence on a person&apos;s nature and is especially useful when trying to determine the kind of dynamic that is likel [rest of string was truncated]&quot;;.
+        ///    Please note that the &apos;Main Energy&apos; or &apos;Adult Persona&apos; alone does not give a very detailed description of a person. The &apos;Character Energy&apos;, as well as the &apos;Surface Energy&apos; play a significant role in shaping a person&apos;s character traits. However, the Main Energy does give a very useful overview. Also, of the three components of a personal profile , the Main Energy has the most significant influence on a person&apos;s nature and is especially useful when trYing to determine the kind of dynamic that is likel [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_energies_short_description {
             get {
@@ -3064,6 +3127,24 @@ namespace K9.Globalisation {
         public static string Male {
             get {
                 return ResourceManager.GetString("Male", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of Relationship Compatibility Readings per month.
+        /// </summary>
+        public static string MaxNumberOfCompatibilityReadingsLabel {
+            get {
+                return ResourceManager.GetString("MaxNumberOfCompatibilityReadingsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of Profile Readings per month.
+        /// </summary>
+        public static string MaxNumberOfProfileReadingsLabel {
+            get {
+                return ResourceManager.GetString("MaxNumberOfProfileReadingsLabel", resourceCulture);
             }
         }
         
@@ -3291,7 +3372,7 @@ namespace K9.Globalisation {
         ///    it is their creative talent or charm.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This is the more yang of the Earth energies and people under this star often move slowly and stead [rest of string was truncated]&quot;;.
+        ///    This is the more Yang of the Earth energies and people under this star often move slowly and stead [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_description {
             get {
@@ -3348,8 +3429,8 @@ namespace K9.Globalisation {
         ///    &lt;table class=&quot;table&quot;&gt;
         ///        &lt;thead&gt;
         ///        &lt;tr&gt;
-        ///            &lt;th&gt;In Balance / Potential&lt;/th&gt;
-        ///            &lt;th&gt;Out of Balance&lt;/th&gt;
+        ///            &lt;th&gt;When in balance, there is a potential to be:&lt;/th&gt;
+        ///            &lt;th&gt;When out of balance, there is a potential to be:&lt;/th&gt;
         ///        &lt;/tr&gt;
         ///        &lt;/thead&gt;
         ///        &lt;tbody&gt;
@@ -3363,9 +3444,7 @@ namespace K9.Globalisation {
         ///        &lt;/tr&gt;
         ///        &lt;tr&gt;
         ///            &lt;td&gt;Pragmatic&lt;/td&gt;
-        ///            &lt;td&gt;Impassive&lt;/td&gt;
-        ///        &lt;/tr&gt;
-        ///        &lt; [rest of string was truncated]&quot;;.
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_overview {
             get {
@@ -3389,6 +3468,15 @@ namespace K9.Globalisation {
         public static string mountain_personal_development {
             get {
                 return ResourceManager.GetString("mountain_personal_development", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string mountain_sexuality {
+            get {
+                return ResourceManager.GetString("mountain_sexuality", resourceCulture);
             }
         }
         
@@ -3591,6 +3679,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Number of Profile Readings Left.
+        /// </summary>
+        public static string NumberOfProfileReadingsLeft {
+            get {
+                return ResourceManager.GetString("NumberOfProfileReadingsLeft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Numbe of Relationship Compatibility Readings Left.
+        /// </summary>
+        public static string NumberOfRelationshipCompatibilityReadingsLeft {
+            get {
+                return ResourceManager.GetString("NumberOfRelationshipCompatibilityReadingsLeft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nurturer.
         /// </summary>
         public static string Nurturer {
@@ -3645,7 +3751,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Overview.
+        ///   Looks up a localized string similar to Overview of Fundamental Nature.
         /// </summary>
         public static string OverviewLabel {
             get {
@@ -3690,10 +3796,10 @@ namespace K9.Globalisation {
         ///    The 9 Star Ki personal chart is comprised of three numbers, each from 1 to 9, resulting in 81 unique character profiles, spanning nine years.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    &lt;strong&gt;First Number - Main Energy / Adult Persona&lt;/strong&gt;
+        ///    &lt;strong&gt;First Number - Fundamental Energy / Adult Persona&lt;/strong&gt;
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    The first number is determined by the year we were born and corresponds to our fundamental nature; the way we essentially view and make sense of the world. It is the Energy most strongly associated with our adult selves and only becomes relevant after the age of 18. Be [rest of string was truncated]&quot;;.
+        ///    The first number is determined by the year we were born and corresponds to our fundamental nature; the way we essentially view and make sense of the world. It is the Energy most strongly associated with our adult selves and only becomes relevant after the age of [rest of string was truncated]&quot;;.
         /// </summary>
         public static string personal_chart {
             get {
@@ -3747,9 +3853,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div&gt;The &lt;strong&gt;Platinum Membership&lt;/strong&gt;, in addition to all the benefits of the &lt;strong&gt;Standard Membership&lt;/strong&gt;, also offers you access to a hotline to &lt;strong&gt;Yann Guignon&lt;/strong&gt;, one of the worlds leading epert on the Bwiti traditions and Gabonese culture.&lt;/div&gt;
-        ///&lt;br /&gt;
-        ///&lt;div&gt;With the &lt;strong&gt;Platinum Membership&lt;/strong&gt;, you will also be sponsoring two Iboga trees per month.&lt;/div&gt;.
+        ///   Looks up a localized string similar to &lt;div&gt;
+        ///    With the &lt;strong&gt;Platinum Membership&lt;/strong&gt;, you get:
+        ///    &lt;p&gt;
+        ///        Unlimited detailed Personal Profile readings.
+        ///    &lt;/p&gt;
+        ///    &lt;p&gt;
+        ///        Unlimited detailed Relationship Compatibility readings.
+        ///    &lt;/p&gt;
+        ///&lt;/div&gt;.
         /// </summary>
         public static string platinum_membership_description {
             get {
@@ -3850,6 +3962,24 @@ namespace K9.Globalisation {
         public static string ProfileCalculator {
             get {
                 return ResourceManager.GetString("ProfileCalculator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profile Reading.
+        /// </summary>
+        public static string ProfileReading {
+            get {
+                return ResourceManager.GetString("ProfileReading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profile Readings.
+        /// </summary>
+        public static string ProfileReadings {
+            get {
+                return ResourceManager.GetString("ProfileReadings", resourceCulture);
             }
         }
         
@@ -3968,12 +4098,66 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    9 Star Ki can tell us some truly fascinating and also incredibly useful information about our sexuality and our relationships with others. In the &lt;a href=&quot;{AboutLink}&quot;&gt;{AboutTitle}&lt;/a&gt; section. 
-        ///&lt;/p&gt;.
+        ///    9 Star Ki can tell us some truly fascinating and also incredibly useful information about our sexuality and our relationships with others. In the &lt;a target=&quot;_blank&quot; href=&quot;{AboutLink}&quot;&gt;{AboutTitle}&lt;/a&gt; section we discuss the concept of the Great Principle of &apos;Yin and Yang&apos;.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;h4&gt;Yin and Yang and its relationship to gender roles&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    For millenia, society has tended to have quite fixed gender roles and associations which have not necessarily reflected people&apos;s true nature.
+        ///    In t [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality {
             get {
                 return ResourceManager.GetString("sexuality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    This can be a powerful combination for establishing a confident understanding and expression of your own sexuality. Having both your deeper and surface nature in line with your gender makes you fully at ease with who you are. Being ‘all male’ or ‘all female’ can give you all the traditionally understood traits of your gender. For a man this may mean presenting yourself as macho man, strong and sexually confident. For a woman you could appear sensual and very feminine. In the same way that the trigr [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string sexuality_match_match {
+            get {
+                return ResourceManager.GetString("sexuality_match_match", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    This combination gives you a very even keel in understanding your own sexuality, and a clear insight into members of either sex. Your surface nature is opposite to your gender, so when members of the opposite sex encounter this in their immediate dealings with you they will feel very comfortable and unthreatened. Your deep understanding of the opposite sex, which is borne out by your character number being the same as theirs, can put you into a great position of trust or confidence. You have the ca [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string sexuality_match_opposite {
+            get {
+                return ResourceManager.GetString("sexuality_match_opposite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    During your adolescence, when your character number was the driving force of your personality, it would have been in line with your gender. Therefore at that age you may have been very confident with the opposite sex, finding them non-threatening and being totally at ease with them. But as you approached the age of 18 and began to move into the influence of your principal number you may have come to misunderstand or mistrust the opposite sex. When you are an adult your gender appears on the surface [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string sexuality_opposite_match {
+            get {
+                return ResourceManager.GetString("sexuality_opposite_match", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    This combination can be a challenge, as you lack your own gender in either your principal or character number. On a deeper level this can leave you insecure in your sexuality, which, rather than make you lose any interest in sex, tends to have the opposite effect – you can become almost obsessed with it. This obsession can give you tremendous libido, but the lack of gender in your principal and character numbers may lead to dissatisfaction with sex itself. Any obsession with sex can manifest in a n [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string sexuality_opposite_opposite {
+            get {
+                return ResourceManager.GetString("sexuality_opposite_opposite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sexuality.
+        /// </summary>
+        public static string SexualityLabel {
+            get {
+                return ResourceManager.GetString("SexualityLabel", resourceCulture);
             }
         }
         
@@ -4106,8 +4290,8 @@ namespace K9.Globalisation {
         ///    &lt;table class=&quot;table&quot;&gt;
         ///        &lt;thead&gt;
         ///            &lt;tr&gt;
-        ///                &lt;th&gt;In Balance / Potential&lt;/th&gt;
-        ///                &lt;th&gt;Out of Balance&lt;/th&gt;
+        ///                &lt;th&gt;When in balance, there is a potential to be:&lt;/th&gt;
+        ///                &lt;th&gt;When out of balance, there is a potential to be:&lt;/th&gt;
         ///            &lt;/tr&gt;
         ///        &lt;/thead&gt;
         ///        &lt;tbody&gt;
@@ -4119,9 +4303,7 @@ namespace K9.Globalisation {
         ///                &lt;td&gt;Social&lt;/td&gt;
         ///                &lt;td&gt;Cynical&lt;/td&gt;
         ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Tactful&lt;/td&gt;
-        ///          [rest of string was truncated]&quot;;.
+        ///      [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_overview {
             get {
@@ -4145,6 +4327,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string soil_sexuality {
+            get {
+                return ResourceManager.GetString("soil_sexuality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    You mau well appear reserved. You are reliable, steady and tend to keep your word. You can also be quite detail-minded and potentially overly fussy.
         ///&lt;/p&gt;
@@ -4160,8 +4351,8 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Three yin lines, representing the consistent nature of earth as well as the receptive qualities of the mother, who wishes to nurture and serve. 
-        ///    She requires support from the family to do this. There are no yang lines and as such, yang must be provided by the other signs.
+        ///    Three Yin lines, representing the consistent nature of earth as well as the receptive qualities of the mother, who wishes to nurture and serve. 
+        ///    She requires support from the family to do this. There are no Yang lines and as such, Yang must be provided by the other signs.
         ///&lt;/p&gt;.
         /// </summary>
         public static string soil_trigram {
@@ -4223,11 +4414,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div&gt;The &lt;strong&gt;Standard Membership&lt;/strong&gt; grants you full access to Blessings of The Forest&apos;s extensive library.
-        ///    This is perhaps the world&apos;s most comprehensive collection of material concerning Bwiti and the medicinal properties of Iboga.
-        ///&lt;/div&gt;
-        ///&lt;br /&gt;
-        ///&lt;div&gt;With the &lt;strong&gt;Standard Membership&lt;/strong&gt;, you will also be sponsoring one Iboga tree per month.&lt;/div&gt;.
+        ///   Looks up a localized string similar to &lt;div&gt;
+        ///    With the &lt;strong&gt;Standard Membership&lt;/strong&gt;, you get:
+        ///    &lt;p&gt;
+        ///        50 detailed Personal Profile readings a month.
+        ///    &lt;/p&gt;
+        ///    &lt;p&gt;
+        ///        20 detailed Relationship Compatibility readings a month.
+        ///    &lt;/p&gt;
+        ///&lt;/div&gt;.
         /// </summary>
         public static string standard_membership_description {
             get {
@@ -4578,8 +4773,8 @@ namespace K9.Globalisation {
         ///    &lt;table class=&quot;table&quot;&gt;
         ///        &lt;thead&gt;
         ///        &lt;tr&gt;
-        ///            &lt;th&gt;In Balance / Potential&lt;/th&gt;
-        ///            &lt;th&gt;Out of Balance&lt;/th&gt;
+        ///            &lt;th&gt;When in balance, there is a potential to be:&lt;/th&gt;
+        ///            &lt;th&gt;When out of balance, there is a potential to be:&lt;/th&gt;
         ///        &lt;/tr&gt;
         ///        &lt;/thead&gt;
         ///        &lt;tbody&gt;
@@ -4591,9 +4786,7 @@ namespace K9.Globalisation {
         ///                &lt;td&gt;Proactive&lt;/td&gt;
         ///                &lt;td&gt;Chaotic&lt;/td&gt;
         ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Strong&lt;/td&gt;
-        ///                &lt;td&gt; [rest of string was truncated]&quot;;.
+        ///            &lt;tr [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_overview {
             get {
@@ -4619,6 +4812,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string thunder_sexuality {
+            get {
+                return ResourceManager.GetString("thunder_sexuality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    You are spontaneous and energetic. You have great optimism and are full of enthusiasm for the things that interest you. 
         ///    
@@ -4633,7 +4835,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    A strong yang, base line opening up into two yin lines. This represents growth and action and the awakening of dawn and spring as well as action and spontaneity.
+        ///    A strong Yang, base line opening up into two Yin lines. This represents growth and action and the awakening of dawn and spring as well as action and spontaneity.
         ///&lt;/p&gt;.
         /// </summary>
         public static string thunder_trigram {
@@ -4755,6 +4957,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Upgrade your membership now, to access more details and features..
+        /// </summary>
+        public static string UpgradeMembershipText {
+            get {
+                return ResourceManager.GetString("UpgradeMembershipText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Valid until:.
         /// </summary>
         public static string ValidUntil {
@@ -4867,8 +5078,8 @@ namespace K9.Globalisation {
         ///    &lt;table class=&quot;table&quot;&gt;
         ///        &lt;thead&gt;
         ///            &lt;tr&gt;
-        ///                &lt;th&gt;In Balance / Potential&lt;/th&gt;
-        ///                &lt;th&gt;Out of Balance&lt;/th&gt;
+        ///                &lt;th&gt;When in balance, there is a potential to be:&lt;/th&gt;
+        ///                &lt;th&gt;When out of balance, there is a potential to be:&lt;/th&gt;
         ///            &lt;/tr&gt;
         ///        &lt;/thead&gt;
         ///        &lt;tbody&gt;
@@ -4879,9 +5090,7 @@ namespace K9.Globalisation {
         ///            &lt;tr&gt;
         ///                &lt;td&gt;Curious&lt;/td&gt;
         ///                &lt;td&gt;Disinterested&lt;/td&gt;
-        ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Diplomatic&lt; [rest of string was truncated]&quot;;.
+        ///             [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_overview {
             get {
@@ -4902,6 +5111,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string water_sexuality {
+            get {
+                return ResourceManager.GetString("water_sexuality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    On the one hand you may appear passionate, sociable and bubbly, like a mountain stream. On the other , you could give the impression of being shy, cautious, indecisive and prone to procrastination.
         ///&lt;/p&gt;.
@@ -4913,7 +5131,8 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to One yang line encapsulated by two yin lines. Hidden strength and depth within. symbolic of winter&apos;s apparent dormancy on the surface, whilst beneath major change is taking place..
+        ///   Looks up a localized string similar to One Yang line encapsulated by two Yin lines. Hidden strength and depth within. symbolic of winter&apos;s apparent dormancy on the surface, whilst beneath major change is taking place.
+        ///.
         /// </summary>
         public static string water_trigram {
             get {
@@ -5063,7 +5282,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like the other Tree element, Thunder, Wind energies need to take good care of the liver and gall bladder. Unlike Thunder energies who, being yang, are more prone to liver imbalances, yin Wind energies are more likely to experience issues with the yin gall bladder.
+        ///    Like the other Tree element, Thunder, Wind energies need to take good care of the liver and gall bladder. Unlike Thunder energies who, being Yang, are more prone to liver imbalances, Yin Wind energies are more likely to experience issues with the Yin gall bladder.
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    It is important for Wind energies to eat slowly and when relaxed and without distraction. Also, it is better to not eat when not hungry.
@@ -5095,8 +5314,8 @@ namespace K9.Globalisation {
         ///    &lt;table class=&quot;table&quot;&gt;
         ///        &lt;thead&gt;
         ///        &lt;tr&gt;
-        ///            &lt;th&gt;In Balance / Potential&lt;/th&gt;
-        ///            &lt;th&gt;Out of Balance&lt;/th&gt;
+        ///            &lt;th&gt;When in balance, there is a potential to be:&lt;/th&gt;
+        ///            &lt;th&gt;When out of balance, there is a potential to be:&lt;/th&gt;
         ///        &lt;/tr&gt;
         ///        &lt;/thead&gt;
         ///        &lt;tbody&gt;
@@ -5108,9 +5327,7 @@ namespace K9.Globalisation {
         ///                &lt;td&gt;Penetrating&lt;/td&gt;
         ///                &lt;td&gt;Unrealistic&lt;/td&gt;
         ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Visionary&lt;/td&gt;
-        ///         [rest of string was truncated]&quot;;.
+        ///       [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_overview {
             get {
@@ -5135,6 +5352,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string wind_sexuality {
+            get {
+                return ResourceManager.GetString("wind_sexuality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    You have a quiet, dependable and gentle nature. You are helpful and thoughtful and keep your word.
         ///    
@@ -5151,7 +5377,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Two upper yang lines denote steadiness and consistency, beneath which lies a gentler, more sensitive yin nature.
+        ///    Two upper Yang lines denote steadiness and consistency, beneath which lies a gentler, more sensitive Yin nature.
         ///&lt;/p&gt;.
         /// </summary>
         public static string wind_trigram {
@@ -5198,10 +5424,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Many ancient civilisations had a more in depth understanding of the cosmic male and female energies that underpin our reality. There are many different terms used to describe these cosmic energies, such as Shakti / Shiva in Sanskrit or yin and yang in the Chinese tradition, but they are essentially understood to be on the one hand feminine, dark, passive energy and on the other masculine light, active energy.
+        ///    Many ancient civilisations had a more in depth understanding of the cosmic male and female energies that underpin our reality. There are many different terms used to describe these cosmic energies, such as Shakti / Shiva in Sanskrit or Yin and Yang, as described in the &apos;Great Principle&apos; in the Chinese tradition. However, they are all essentially understood to be on the one hand feminine, dark, passive energy and on the other masculine light, active energy.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    In 9 Star Ki, it is believed that the yang energy of the universe is chann [rest of string was truncated]&quot;;.
+        ///    In 9 Star Ki, it is believ [rest of string was truncated]&quot;;.
         /// </summary>
         public static string yinyang {
             get {

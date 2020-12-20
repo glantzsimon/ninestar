@@ -8,12 +8,9 @@ namespace K9.WebApplication.Controllers
 {
     public class PredictionsController : BaseNineStarKiController
     {
-        private readonly INineStarKiService _nineStarKiService;
-
-        public PredictionsController (ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
+        public PredictionsController (ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService)
+            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
-            _nineStarKiService = nineStarKiService;
         }
 
         [Route("predictions")]

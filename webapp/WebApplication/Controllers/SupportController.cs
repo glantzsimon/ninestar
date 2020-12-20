@@ -1,5 +1,4 @@
 ﻿using K9.Base.WebApplication.Config;
-using K9.Base.WebApplication.Controllers;
 using K9.Base.WebApplication.ViewModels;
 using K9.DataAccessLayer.Models;
 using K9.Globalisation;
@@ -25,8 +24,8 @@ namespace K9.WebApplication.Controllers
         private readonly StripeConfiguration _stripeConfig;
         private readonly WebsiteConfiguration _config;
 
-        public SupportController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IMailer mailer, IOptions<WebsiteConfiguration> config, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IStripeService stripeService, IOptions<StripeConfiguration> stripeConfig, IDonationService donationService)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
+        public SupportController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IMailer mailer, IOptions<WebsiteConfiguration> config, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IStripeService stripeService, IOptions<StripeConfiguration> stripeConfig, IDonationService donationService, IMembershipService membershipService)
+            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _logger = logger;
             _mailer = mailer;

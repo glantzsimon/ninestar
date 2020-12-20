@@ -830,7 +830,7 @@
     <value>articles\en-gb\mountain-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="OverviewLabel" xml:space="preserve">
-    <value>Overview</value>
+    <value>Overview of Fundamental Nature</value>
   </data>
   <data name="PersonalProfileDetails" xml:space="preserve">
     <value>Personal Profile Details</value>
@@ -1401,5 +1401,80 @@
   </data>
   <data name="sexuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\sexuality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="coreearth_sexuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\coreearth-sexuality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_sexuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\fire-sexuality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_sexuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\heaven-sexuality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_sexuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\lake-sexuality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_sexuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\mountain-sexuality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="sexuality_match_match" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\sexuality-match-match.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="sexuality_match_opposite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\sexuality-match-opposite.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="sexuality_opposite_match" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\sexuality-opposite-match.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="sexuality_opposite_opposite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\sexuality-opposite-opposite.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="soil_sexuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\soil-sexuality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="thunder_sexuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\thunder-sexuality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_sexuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\water-sexuality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wind_sexuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\wind-sexuality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SexualityLabel" xml:space="preserve">
+    <value>Sexuality</value>
+  </data>
+  <data name="ProfileReading" xml:space="preserve">
+    <value>Profile Reading</value>
+  </data>
+  <data name="ProfileReadings" xml:space="preserve">
+    <value>Profile Readings</value>
+  </data>
+  <data name="CompatibilityReading" xml:space="preserve">
+    <value>Relationship Compatibility Reading</value>
+  </data>
+  <data name="CompatibilityReadings" xml:space="preserve">
+    <value>Relationship Compatibility Readings</value>
+  </data>
+  <data name="Complete" xml:space="preserve">
+    <value>Complete</value>
+  </data>
+  <data name="Free" xml:space="preserve">
+    <value>Free</value>
+  </data>
+  <data name="MaxNumberOfCompatibilityReadingsLabel" xml:space="preserve">
+    <value>Number of Relationship Compatibility Readings per month</value>
+  </data>
+  <data name="MaxNumberOfProfileReadingsLabel" xml:space="preserve">
+    <value>Number of Profile Readings per month</value>
+  </data>
+  <data name="NumberOfProfileReadingsLeft" xml:space="preserve">
+    <value>Number of Profile Readings Left</value>
+  </data>
+  <data name="NumberOfRelationshipCompatibilityReadingsLeft" xml:space="preserve">
+    <value>Numbe of Relationship Compatibility Readings Left</value>
+  </data>
+  <data name="UpgradeMembershipText" xml:space="preserve">
+    <value>Upgrade your membership now, to access more details and features.</value>
   </data>
 </root>

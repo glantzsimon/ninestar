@@ -1,15 +1,11 @@
-﻿using K9.WebApplication.Models;
-using System;
+﻿using System;
+using K9.WebApplication.Models;
 using Xunit;
 
-namespace K9.WebApplication.Tests.Unit.Services
+namespace K9.WebApplication.Tests.Unit.Mdels
 {
     public class PersonModelTests
     {
-        public PersonModelTests()
-        {
-        }
-
         [Theory]
         [InlineData(1979, 6, 16, 41)]
         public void GetYearsOld_HappyPath(int year, int month, int day, int age)

@@ -1,6 +1,10 @@
-﻿using System.Web.Mvc;
-using System.Web.Mvc.Html;
+﻿using K9.SharedLibrary.Extensions;
 using K9.WebApplication.Options;
+using System;
+using System.Linq.Expressions;
+using System.Web.Mvc;
+using System.Web.Mvc.Html;
+using K9.Base.WebApplication.Helpers;
 
 namespace K9.WebApplication.Helpers
 {
@@ -66,6 +70,11 @@ namespace K9.WebApplication.Helpers
                 ImageSize = imageSize,
                 ImageLayout = imageLayout
             });
+        }
+
+        public static string GetEnergySpecificDisplayNameFor<TModel, TProperty>(this HtmlHelper<TModel> html, Expression<Func<TModel, TProperty>> expression, string energyName)
+        {
+            return $"{energyName} {html.GetDisplayNameFor(expression)}";
         }
     }
 }

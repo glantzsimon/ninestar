@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.DataAccessLayer.Extensions;
 using K9.Base.DataAccessLayer.Models;
@@ -16,6 +17,8 @@ namespace K9.DataAccessLayer.Models
     [DefaultPermissions(Role = RoleNames.PowerUsers)]
     public class MembershipOption : ObjectBase
     {
+        public const int Unlimited = int.MaxValue;
+
         public enum ESubscriptionType
         {
             [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.MonthlyStandardMembership)]
@@ -47,6 +50,14 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Currency)]
         public double Price { get; set; }
 
+        [Required]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MaxNumberOfProfileReadingsLabel)]
+        public int MaxNumberOfProfileReadings { get; set; }
+
+        [Required]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MaxNumberOfCompatibilityReadingsLabel)]
+        public int MaxNumberOfCompatibilityReadings { get; set; }
+   
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubscriptionCostLabel)]
         public string FormattedPrice => Price.ToString("C0", Thread.CurrentThread.CurrentUICulture);
 

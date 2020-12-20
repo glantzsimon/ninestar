@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using K9.Base.WebApplication.Helpers;
+using K9.SharedLibrary.Helpers;
 
 namespace K9.WebApplication.Helpers
 {
@@ -13,7 +14,7 @@ namespace K9.WebApplication.Helpers
         public static string ActionWithBookmark(this UrlHelper helper, string actionName, string controllerName, string bookmark)
         {
             return helper.RequestContext.RouteData.Values["action"].ToString().ToLower() == actionName.ToLower() &&
-                   helper.RequestContext.RouteData.Values["controller"].ToString().ToLower() == controllerName.ToLower() 
+                   helper.RequestContext.RouteData.Values["controller"].ToString().ToLower() == controllerName.ToLower()
                 ? $"#{bookmark}"
                 : $"{helper.Action(actionName, controllerName)}#{bookmark}";
         }
@@ -22,7 +23,7 @@ namespace K9.WebApplication.Helpers
         {
             return html.Partial("Controls/_CollapsiblePanel", options);
         }
-        
+
         public static MvcHtmlString CollapsiblePanel(this HtmlHelper html, string title, string body, bool expanded = false, string footer = "", string id = "", string imageSrc = "", EPanelImageSize imageSize = EPanelImageSize.Default, EPanelImageLayout imageLayout = EPanelImageLayout.Cover)
         {
             return html.Partial("Controls/_CollapsiblePanel", new CollapsiblePanelOptions
@@ -74,7 +75,14 @@ namespace K9.WebApplication.Helpers
 
         public static string GetEnergySpecificDisplayNameFor<TModel, TProperty>(this HtmlHelper<TModel> html, Expression<Func<TModel, TProperty>> expression, string energyName)
         {
-            return $"{energyName} {html.GetDisplayNameFor(expression)}";
+            var label = html.GetDisplayNameFor(expression);
+            if (label.Contains("{"))
+            {
+                return TemplateProcessor.PopulateTemplate(label,
+                    energyName);
+            }
+            
+                return $"{energyName} {label}";
         }
     }
 }

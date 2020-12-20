@@ -1,11 +1,10 @@
-﻿using K9.SharedLibrary.Extensions;
+﻿using K9.Base.WebApplication.Helpers;
+using K9.SharedLibrary.Helpers;
 using K9.WebApplication.Options;
 using System;
 using System.Linq.Expressions;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
-using K9.Base.WebApplication.Helpers;
-using K9.SharedLibrary.Helpers;
 
 namespace K9.WebApplication.Helpers
 {
@@ -75,14 +74,7 @@ namespace K9.WebApplication.Helpers
 
         public static string GetEnergySpecificDisplayNameFor<TModel, TProperty>(this HtmlHelper<TModel> html, Expression<Func<TModel, TProperty>> expression, string energyName)
         {
-            var label = html.GetDisplayNameFor(expression);
-            if (label.Contains("{"))
-            {
-                return TemplateProcessor.PopulateTemplate(label,
-                    energyName);
-            }
-            
-                return $"{energyName} {label}";
+            return $"{energyName} {html.GetDisplayNameFor(expression)}";
         }
     }
 }

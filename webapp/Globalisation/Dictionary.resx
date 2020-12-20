@@ -829,9 +829,6 @@
   <data name="mountain_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\mountain-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="OverviewLabel" xml:space="preserve">
-    <value>Overview of {energyName} Fundamental Nature</value>
-  </data>
   <data name="PersonalProfileDetails" xml:space="preserve">
     <value>Personal Profile Details</value>
   </data>
@@ -1476,5 +1473,8 @@
   </data>
   <data name="UpgradeMembershipText" xml:space="preserve">
     <value>Upgrade your membership now, to access more details and features.</value>
+  </data>
+  <data name="OverviewLabel" xml:space="preserve">
+    <value>Overview</value>
   </data>
 </root>

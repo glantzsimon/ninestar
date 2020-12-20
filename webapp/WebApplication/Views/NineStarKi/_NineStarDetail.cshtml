@@ -8,7 +8,7 @@
     <div class="container main-content clear-both ninestar-header-container">
         <article>
             <div>
-                @Html.CollapsiblePanel(Html.GetEnergySpecificDisplayNameFor(m => Model.Overview, Model.MainEnergy.EnergyNameAndNumber), Model.Overview, true)
+                @Html.CollapsiblePanel(Model.OverviewLabel, Model.Overview, true)
 
                 @Html.CollapsiblePanel(Model.MainEnergy.FullEnergyDetailsTitle, Model.MainEnergy.EnergyDescription, false, "", "", $"Images/ninestar/energies/{Model.MainEnergy.Energy}.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
 

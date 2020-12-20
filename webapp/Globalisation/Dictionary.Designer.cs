@@ -3768,7 +3768,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Overview of {energyName} Fundamental Nature.
+        ///   Looks up a localized string similar to Overview.
         /// </summary>
         public static string OverviewLabel {
             get {

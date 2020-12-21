@@ -1,7 +1,6 @@
 ﻿using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
 using K9.Base.WebApplication.Config;
-using K9.Base.WebApplication.Controllers;
 using K9.Base.WebApplication.Enums;
 using K9.Base.WebApplication.Extensions;
 using K9.Base.WebApplication.Filters;
@@ -12,13 +11,13 @@ using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Services;
+using K9.WebApplication.ViewModels;
 using NLog;
 using System;
 using System.Linq;
 using System.Web.Mvc;
-using K9.WebApplication.Models;
-using K9.WebApplication.Services;
-using K9.WebApplication.ViewModels;
+using K9.Base.DataAccessLayer.Enums;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
@@ -153,7 +152,10 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult Register()
         {
-            return View();
+            return View(new UserAccount.RegisterModel
+            {
+                Gender = EGender.Female
+            });
         }
 
         [HttpPost]

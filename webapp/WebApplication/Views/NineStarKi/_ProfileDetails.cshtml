@@ -1,4 +1,6 @@
-﻿@using K9.WebApplication.Enums
+﻿@using K9.Base.WebApplication.Extensions
+@using K9.SharedLibrary.Authentication
+@using K9.WebApplication.Enums
 @using K9.WebApplication.Extensions
 @using K9.WebApplication.Helpers
 @model K9.WebApplication.Models.NineStarKiModel
@@ -58,23 +60,31 @@
 
                 @if (WebSecurity.IsAuthenticated)
                 {
-                    if (activeUserMembership == null)
+                    if (this.GetRoles().CurrentUserIsInRoles(RoleNames.Administrators))
+                    {
+                        if (activeUserMembership == null)
+                        {
+                            <br />
+                            @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "NineStarKi")
+                        }
+                        if (activeUserMembership != null && Model.ReadingType == EReadingType.Complete)
+                        {
+                            @Html.Panel(Model.EnergySexualityLabel, Model.MainEnergySexualityDetails)
+
+                            @Html.Panel(Model.SexualityRelationTypeLabel, Model.SexualityRelationTypeDetails)
+                        }
+                    }
+                    else
                     {
                         <br />
-                        @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "NineStarKi")
+                        <h4 class="text-center">@Dictionary.ComingSoon</h4>
                     }
-                    if (activeUserMembership != null && Model.ReadingType == EReadingType.Complete)
+                }
+                @*else
                     {
-                        @Html.Panel(Model.EnergySexualityLabel, Model.MainEnergySexualityDetails)
-
-                        @Html.Panel(Model.SexualityRelationTypeLabel, Model.SexualityRelationTypeDetails)
-                    }
-                }
-                else
-                {
-                    <br />
-                    @Html.BootstrapActionLinkButton(Dictionary.LogIntoYourAccountToView, "Login", "Account")
-                }
+                        <br />
+                        @Html.BootstrapActionLinkButton(Dictionary.LogIntoYourAccountToView, "Login", "Account")
+                    }*@
             </div>
 
         </div>

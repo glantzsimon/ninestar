@@ -6,7 +6,7 @@
 }
 <div id="account-header">
     <div id="account-controls">
-        @if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<NewsItem>(Permissions.Create, Permissions.Edit, Permissions.Delete))
+        @if (roles.CurrentUserIsInRoles(RoleNames.Administrators))
         {
             <ul class="admin-menu ">
                 <li class="dropdown">
@@ -27,7 +27,7 @@
                         {
                             <li class="@ViewContext.GetActiveClass("Index", "Donations") sub-item"><a href="@Url.Action("Index", "Donations")">@Dictionary.Donations</a></li>
                         }
-                        @if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<NewsItem>(Permissions.Create, Permissions.Edit, Permissions.Delete))
+                        @if (roles.CurrentUserIsInRoles(RoleNames.Administrators))
                         {
                             <li class="@ViewContext.GetActiveClass("Index", "NewsItems") sub-item"><a href="@Url.Action("Index", "NewsItems")">@K9.Base.Globalisation.Dictionary.NewsItems</a></li>
                         }

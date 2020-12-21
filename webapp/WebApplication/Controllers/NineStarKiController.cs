@@ -1,13 +1,13 @@
-﻿using K9.SharedLibrary.Helpers;
+﻿using K9.Base.DataAccessLayer.Enums;
+using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
 using K9.WebApplication.Services;
 using NLog;
 using System;
 using System.Text;
 using System.Web.Mvc;
-using K9.DataAccessLayer.Enums;
-using K9.WebApplication.Helpers;
 
 namespace K9.WebApplication.Controllers
 {

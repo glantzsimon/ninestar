@@ -1,12 +1,12 @@
-﻿using K9.DataAccessLayer.Enums;
+﻿using K9.Base.DataAccessLayer.Enums;
 using K9.Globalisation;
+using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
 using K9.WebApplication.ViewModels;
 using System;
 using System.Collections.Generic;
-using K9.SharedLibrary.Authentication;
 
 namespace K9.WebApplication.Services
 {

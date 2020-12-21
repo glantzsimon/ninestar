@@ -1,4 +1,4 @@
-﻿using K9.DataAccessLayer.Enums;
+﻿using K9.Base.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Models;
 using K9.WebApplication.Controllers;
 using System;
@@ -15,7 +15,6 @@ namespace K9.WebApplication.Extensions
             return new List<EGender>
             {
                 EGender.Female,
-                EGender.TransFemale,
                 EGender.Other,
             }.Contains(gender);
         }

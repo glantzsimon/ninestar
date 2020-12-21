@@ -1,4 +1,4 @@
-﻿using K9.DataAccessLayer.Enums;
+﻿using K9.Base.DataAccessLayer.Enums;
 using K9.WebApplication.Models;
 using System;
 using System.Diagnostics;
@@ -35,7 +35,6 @@ namespace K9.WebApplication.Tests.Unit.Services
         [Theory]
         [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Female)]
         [InlineData(1980, ENineStarKiEnergy.Wind, EGender.Female)]
-        [InlineData(1981, ENineStarKiEnergy.CoreEarth, EGender.TransFemale)]
         [InlineData(1982, ENineStarKiEnergy.Heaven, EGender.Female)]
         [InlineData(1983, ENineStarKiEnergy.Lake, EGender.Female)]
         [InlineData(1984, ENineStarKiEnergy.Mountain, EGender.Female)]

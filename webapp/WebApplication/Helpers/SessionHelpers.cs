@@ -1,7 +1,7 @@
-﻿using K9.WebApplication.Models;
+﻿using K9.Base.DataAccessLayer.Enums;
+using K9.WebApplication.Models;
 using System;
 using System.Globalization;
-using K9.DataAccessLayer.Enums;
 
 namespace K9.WebApplication.Helpers
 {

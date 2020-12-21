@@ -1,6 +1,6 @@
-﻿using K9.Base.DataAccessLayer.Extensions;
+﻿using K9.Base.DataAccessLayer.Enums;
+using K9.Base.DataAccessLayer.Extensions;
 using K9.Base.Globalisation;
-using K9.DataAccessLayer.Enums;
 using System;
 using System.ComponentModel.DataAnnotations;
 

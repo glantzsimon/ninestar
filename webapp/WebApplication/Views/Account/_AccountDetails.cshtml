@@ -15,6 +15,7 @@
         @Html.BootstrapEditorFor(model => model.LastName)
         @Html.BootstrapEditorFor(model => model.PhoneNumber)
         @Html.BootstrapEditorFor(model => model.BirthDate)
+        @Html.BootstrapEditorFor(model => model.Gender)
         if (!Model.IsOAuth)
         {
             <span>@Html.ActionLink(K9.Base.Globalisation.Dictionary.ChangePassword, "UpdatePassword")</span>

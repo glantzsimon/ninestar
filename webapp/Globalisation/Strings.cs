@@ -52,10 +52,13 @@
             public const string MaxNumberOfCompatibilityReadingsLabel = "MaxNumberOfCompatibilityReadingsLabel";
             public const string NumberOfProfileReadingsLeft = "NumberOfProfileReadingsLeft";
             public const string NumberOfRelationshipCompatibilityReadingsLeft = "NumberOfRelationshipCompatibilityReadingsLeft";
+            public const string UserDataLabel = "UserData";
         }
 
         public static class Names
         {
+            public const string UserData = "UserData";
+            public const string UserDatas = "UserDatas";
             public const string Contacts = "Contacts";
             public const string Donation = "Donation";
             public const string Donations = "Donations";

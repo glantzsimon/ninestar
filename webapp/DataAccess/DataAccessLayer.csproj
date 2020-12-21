@@ -237,6 +237,7 @@
     <Compile Include="Migrations\202012181520116_AddMemberships.Designer.cs">
       <DependentUpon>202012181520116_AddMemberships.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserData.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\MembershipOption.cs" />
     <Compile Include="Models\UserCompatibilityReading.cs" />

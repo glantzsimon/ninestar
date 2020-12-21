@@ -6,7 +6,7 @@
     var languageName = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower();
     var keywords = ViewBag.Keywords ?? Dictionary.Keywords;
     var title = Html.Raw($"{ViewBag.Title ?? Dictionary.NineStarKiTitle} &raquo; {keywords}");
-    var description = ViewBag.MetaDescription ?? Dictionary.NineStarMetaDescriptionMain;
+    var description = Html.Raw(ViewBag.MetaDescription ?? Dictionary.NineStarMetaDescriptionMain);
 }
 
 <!DOCTYPE html>

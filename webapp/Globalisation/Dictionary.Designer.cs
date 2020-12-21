@@ -1790,8 +1790,8 @@ namespace K9.Globalisation {
         ///    &lt;table class=&quot;table&quot;&gt;
         ///        &lt;thead&gt;
         ///        &lt;tr&gt;
-        ///            &lt;th&gt;When in balance, there is a potential to be:&lt;/th&gt;
-        ///            &lt;th&gt;When out of balance, there is a potential to be:&lt;/th&gt;
+        ///            &lt;th&gt;When in balance:&lt;/th&gt;
+        ///            &lt;th&gt;When out of balance:&lt;/th&gt;
         ///        &lt;/tr&gt;
         ///        &lt;/thead&gt;
         ///        &lt;tbody&gt;
@@ -1804,7 +1804,8 @@ namespace K9.Globalisation {
         ///                &lt;td&gt;Moody&lt;/td&gt;
         ///            &lt;/tr&gt;
         ///            &lt;tr&gt;
-        ///          [rest of string was truncated]&quot;;.
+        ///                &lt;td&gt;Resourceful&lt;/td&gt;
+        ///                &lt;td&gt;Thrifty [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_overview {
             get {
@@ -2397,8 +2398,8 @@ namespace K9.Globalisation {
         ///    &lt;table class=&quot;table&quot;&gt;
         ///        &lt;thead&gt;
         ///            &lt;tr&gt;
-        ///                &lt;th&gt;When in balance, there is a potential to be:&lt;/th&gt;
-        ///                &lt;th&gt;When out of balance, there is a potential to be:&lt;/th&gt;
+        ///                &lt;th&gt;When in balance:&lt;/th&gt;
+        ///                &lt;th&gt;When out of balance:&lt;/th&gt;
         ///            &lt;/tr&gt;
         ///        &lt;/thead&gt;
         ///        &lt;tbody&gt;
@@ -2410,7 +2411,9 @@ namespace K9.Globalisation {
         ///                &lt;td&gt;Radiant&lt;/td&gt;
         ///                &lt;td&gt;Vain&lt;/td&gt;
         ///            &lt;/tr&gt;
-        ///            [rest of string was truncated]&quot;;.
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Passionate&lt;/td&gt;
+        ///             [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_overview {
             get {
@@ -2653,8 +2656,8 @@ namespace K9.Globalisation {
         ///    &lt;table class=&quot;table&quot;&gt;
         ///        &lt;thead&gt;
         ///        &lt;tr&gt;
-        ///            &lt;th&gt;When in balance, there is a potential to be:&lt;/th&gt;
-        ///            &lt;th&gt;When out of balance, there is a potential to be:&lt;/th&gt;
+        ///            &lt;th&gt;When in balance:&lt;/th&gt;
+        ///            &lt;th&gt;When out of balance:&lt;/th&gt;
         ///        &lt;/tr&gt;
         ///        &lt;/thead&gt;
         ///        &lt;tbody&gt;
@@ -2667,7 +2670,10 @@ namespace K9.Globalisation {
         ///            &lt;td&gt;Controlling&lt;/td&gt;
         ///        &lt;/tr&gt;
         ///        &lt;tr&gt;
-        ///            &lt;td&gt;Action-oriented&lt;/td&gt;        /// [rest of string was truncated]&quot;;.
+        ///            &lt;td&gt;Action-oriented&lt;/td&gt;
+        ///            &lt;td&gt;Reckless&lt;/td&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_overview {
             get {
@@ -2886,8 +2892,8 @@ namespace K9.Globalisation {
         ///    &lt;table class=&quot;table&quot;&gt;
         ///        &lt;thead&gt;
         ///        &lt;tr&gt;
-        ///            &lt;th&gt;When in balance, there is a potential to be:&lt;/th&gt;
-        ///            &lt;th&gt;When out of balance, there is a potential to be:&lt;/th&gt;
+        ///            &lt;th&gt;When in balance:&lt;/th&gt;
+        ///            &lt;th&gt;When out of balance:&lt;/th&gt;
         ///        &lt;/tr&gt;
         ///        &lt;/thead&gt;
         ///        &lt;tbody&gt;
@@ -2901,7 +2907,10 @@ namespace K9.Globalisation {
         ///        &lt;/tr&gt;
         ///        &lt;tr&gt;
         ///            &lt;td&gt;Wise&lt;/td&gt;
-        ///         [rest of string was truncated]&quot;;.
+        ///            &lt;td&gt;Shallow&lt;/td&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;tr&gt;
+        ///      [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_overview {
             get {
@@ -3018,6 +3027,15 @@ namespace K9.Globalisation {
         public static string Loading {
             get {
                 return ResourceManager.GetString("Loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log into your account to view.
+        /// </summary>
+        public static string LogIntoYourAccountToView {
+            get {
+                return ResourceManager.GetString("LogIntoYourAccountToView", resourceCulture);
             }
         }
         
@@ -3441,8 +3459,8 @@ namespace K9.Globalisation {
         ///    &lt;table class=&quot;table&quot;&gt;
         ///        &lt;thead&gt;
         ///        &lt;tr&gt;
-        ///            &lt;th&gt;When in balance, there is a potential to be:&lt;/th&gt;
-        ///            &lt;th&gt;When out of balance, there is a potential to be:&lt;/th&gt;
+        ///            &lt;th&gt;When in balance:&lt;/th&gt;
+        ///            &lt;th&gt;When out of balance:&lt;/th&gt;
         ///        &lt;/tr&gt;
         ///        &lt;/thead&gt;
         ///        &lt;tbody&gt;
@@ -3456,7 +3474,9 @@ namespace K9.Globalisation {
         ///        &lt;/tr&gt;
         ///        &lt;tr&gt;
         ///            &lt;td&gt;Pragmatic&lt;/td&gt;
-        /// [rest of string was truncated]&quot;;.
+        ///            &lt;td&gt;Impassive&lt;/td&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_overview {
             get {
@@ -4131,6 +4151,17 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Our 9 Star Ki profile is intimately connected to our sense of sexual identity and affects how comfortable an individual is likely to feel with his or her sexuality as well as the way they relate sexually to others.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string sexuality_description {
+            get {
+                return ResourceManager.GetString("sexuality_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    This can be a powerful combination for establishing a confident understanding and expression of your own sexuality. Having both your deeper and surface nature in line with your gender makes you fully at ease with who you are. Being ‘all male’ or ‘all female’ can give you all the traditionally understood traits of your gender. For a man this may mean presenting yourself as macho man, strong and sexually confident. For a woman you could appear sensual and very feminine. In the same way that the trigr [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_match_match {
@@ -4304,8 +4335,8 @@ namespace K9.Globalisation {
         ///    &lt;table class=&quot;table&quot;&gt;
         ///        &lt;thead&gt;
         ///            &lt;tr&gt;
-        ///                &lt;th&gt;When in balance, there is a potential to be:&lt;/th&gt;
-        ///                &lt;th&gt;When out of balance, there is a potential to be:&lt;/th&gt;
+        ///                &lt;th&gt;When in balance:&lt;/th&gt;
+        ///                &lt;th&gt;When out of balance:&lt;/th&gt;
         ///            &lt;/tr&gt;
         ///        &lt;/thead&gt;
         ///        &lt;tbody&gt;
@@ -4317,7 +4348,9 @@ namespace K9.Globalisation {
         ///                &lt;td&gt;Social&lt;/td&gt;
         ///                &lt;td&gt;Cynical&lt;/td&gt;
         ///            &lt;/tr&gt;
-        ///      [rest of string was truncated]&quot;;.
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Tactful&lt;/td&gt;
+        ///          [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_overview {
             get {
@@ -4787,8 +4820,8 @@ namespace K9.Globalisation {
         ///    &lt;table class=&quot;table&quot;&gt;
         ///        &lt;thead&gt;
         ///        &lt;tr&gt;
-        ///            &lt;th&gt;When in balance, there is a potential to be:&lt;/th&gt;
-        ///            &lt;th&gt;When out of balance, there is a potential to be:&lt;/th&gt;
+        ///            &lt;th&gt;When in balance:&lt;/th&gt;
+        ///            &lt;th&gt;When out of balance:&lt;/th&gt;
         ///        &lt;/tr&gt;
         ///        &lt;/thead&gt;
         ///        &lt;tbody&gt;
@@ -4800,7 +4833,9 @@ namespace K9.Globalisation {
         ///                &lt;td&gt;Proactive&lt;/td&gt;
         ///                &lt;td&gt;Chaotic&lt;/td&gt;
         ///            &lt;/tr&gt;
-        ///            &lt;tr [rest of string was truncated]&quot;;.
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Strong&lt;/td&gt;
+        ///                &lt;td&gt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_overview {
             get {
@@ -4983,6 +5018,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to User Data.
+        /// </summary>
+        public static string UserData {
+            get {
+                return ResourceManager.GetString("UserData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Valid until:.
         /// </summary>
         public static string ValidUntil {
@@ -5092,8 +5136,8 @@ namespace K9.Globalisation {
         ///    &lt;table class=&quot;table&quot;&gt;
         ///        &lt;thead&gt;
         ///            &lt;tr&gt;
-        ///                &lt;th&gt;When in balance, there is a potential to be:&lt;/th&gt;
-        ///                &lt;th&gt;When out of balance, there is a potential to be:&lt;/th&gt;
+        ///                &lt;th&gt;When in balance:&lt;/th&gt;
+        ///                &lt;th&gt;When out of balance:&lt;/th&gt;
         ///            &lt;/tr&gt;
         ///        &lt;/thead&gt;
         ///        &lt;tbody&gt;
@@ -5104,7 +5148,9 @@ namespace K9.Globalisation {
         ///            &lt;tr&gt;
         ///                &lt;td&gt;Curious&lt;/td&gt;
         ///                &lt;td&gt;Disinterested&lt;/td&gt;
-        ///             [rest of string was truncated]&quot;;.
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Diplomatic&lt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_overview {
             get {
@@ -5327,8 +5373,8 @@ namespace K9.Globalisation {
         ///    &lt;table class=&quot;table&quot;&gt;
         ///        &lt;thead&gt;
         ///        &lt;tr&gt;
-        ///            &lt;th&gt;When in balance, there is a potential to be:&lt;/th&gt;
-        ///            &lt;th&gt;When out of balance, there is a potential to be:&lt;/th&gt;
+        ///            &lt;th&gt;When in balance:&lt;/th&gt;
+        ///            &lt;th&gt;When out of balance:&lt;/th&gt;
         ///        &lt;/tr&gt;
         ///        &lt;/thead&gt;
         ///        &lt;tbody&gt;
@@ -5340,7 +5386,9 @@ namespace K9.Globalisation {
         ///                &lt;td&gt;Penetrating&lt;/td&gt;
         ///                &lt;td&gt;Unrealistic&lt;/td&gt;
         ///            &lt;/tr&gt;
-        ///       [rest of string was truncated]&quot;;.
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Visionary&lt;/td&gt;
+        ///         [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_overview {
             get {

@@ -7,6 +7,7 @@ using System;
 using System.Text;
 using System.Web.Mvc;
 using K9.DataAccessLayer.Enums;
+using K9.WebApplication.Helpers;
 
 namespace K9.WebApplication.Controllers
 {
@@ -41,7 +42,25 @@ namespace K9.WebApplication.Controllers
             if (model.PersonModel != null)
             {
                 model = _nineStarKiService.CalculateNineStarKi(model.PersonModel);
+                SessionHelper.SetLastProfile(model.PersonModel);
             }
+            return View("Index", model);
+        }
+
+        [Route("calculate/profile")]
+        [Authorize]
+        public ActionResult RetrieveProfile()
+        {
+            var lastProfile = SessionHelper.GetLastProfile();
+            if (lastProfile == null)
+            {
+                return RedirectToAction("Index");
+            }
+            var model = _nineStarKiService.CalculateNineStarKi(new PersonModel
+            {
+                DateOfBirth = lastProfile.DateOfBirth,
+                Gender = lastProfile.Gender
+            });
             return View("Index", model);
         }
 

@@ -94,12 +94,13 @@
   <ItemGroup>
     <EmbeddedResource Include="Dictionary.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Dictionary.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Dictionary.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Articles\en-gb\coreearth-child.htm" />
+    <Content Include="Articles\en-gb\sexuality-description.htm" />
     <Content Include="Articles\en-gb\fire-sexuality.htm" />
     <Content Include="Articles\en-gb\mountain-sexuality.htm" />
     <Content Include="Articles\en-gb\lake-sexuality.htm" />
@@ -298,19 +299,19 @@
     <Content Include="Templates\en-gb\PasswordResetEmail.htm" />
     <Content Include="Templates\en-gb\SupportQuery.htm" />
     <Content Include="Templates\en-gb\WelcomeEmail.htm" />
-    <Content Include="Text\en-gb\CompatibilityMetaDescription.htm" />
-    <Content Include="Text\en-gb\SurfaceEnergyDescription.htm" />
-    <Content Include="Text\en-gb\CharacterEnergyDescription.htm" />
-    <Content Include="Text\en-gb\MainEnergyDescription.htm" />
+    <Content Include="Articles\en-gb\CompatibilityMetaDescription.htm" />
+    <Content Include="Articles\en-gb\SurfaceEnergyDescription.htm" />
+    <Content Include="Articles\en-gb\CharacterEnergyDescription.htm" />
+    <Content Include="Articles\en-gb\MainEnergyDescription.htm" />
     <Content Include="Text\en-gb\cookies-blurb.txt" />
-    <Content Include="Text\en-gb\AgreeToTerms.htm" />
-    <Content Include="Text\en-gb\PrivacyPolicy.htm" />
-    <Content Include="Text\en-gb\membership-additional-information.htm" />
-    <Content Include="Text\en-gb\platinum-membership-description.htm" />
-    <Content Include="Text\en-gb\RelationshipsMetaDescription.htm" />
+    <Content Include="Articles\en-gb\AgreeToTerms.htm" />
+    <Content Include="Articles\en-gb\PrivacyPolicy.htm" />
+    <Content Include="Articles\en-gb\membership-additional-information.htm" />
+    <Content Include="Articles\en-gb\platinum-membership-description.htm" />
+    <Content Include="Articles\en-gb\RelationshipsMetaDescription.htm" />
     <Content Include="Text\en-gb\nine-star-ki-title.txt" />
     <Content Include="Text\en-gb\Keywords.txt" />
-    <Content Include="Text\en-gb\standard-membership-description.htm" />
+    <Content Include="Articles\en-gb\standard-membership-description.htm" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

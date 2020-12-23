@@ -1,5 +1,4 @@
-﻿@using K9.WebApplication.Helpers
-@using K9.WebApplication.Models
+﻿@using K9.WebApplication.Models
 @model NineStarKiModel
 
 @if (Model != null)
@@ -11,13 +10,13 @@
 
     <div class="tab-content">
         <div id="straight" class="tab-pane fade">
-            @Model.SexualityRelationTypeDetails
+            @Model.SexualityRelationTypeDetailsStraight
         </div>
     </div>
 
     <div class="tab-content">
         <div id="gay" class="tab-pane fade">
-            @Model.SexualityRelationTypeDetails
+            @Model.SexualityRelationTypeDetailsGay
         </div>
     </div>
 }

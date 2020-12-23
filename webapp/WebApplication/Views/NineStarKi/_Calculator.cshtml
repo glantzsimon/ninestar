@@ -5,9 +5,11 @@
     using (Html.BeginBootstrapForm())
     {
         @Html.BootstrapEditorFor(model => model.PersonModel.DateOfBirth)
-        @Html.BootstrapEditorFor(model => model.PersonModel.Gender)
+        <div data-toggle="tooltip" title="@Dictionary.GenderSelectionTooltip">
+            @Html.BootstrapEditorFor(model => model.PersonModel.Gender)
+        </div>
 
-        <hr/>
+        <hr />
         @Html.BootstrapButton(Dictionary.Calculate)
     }
 }

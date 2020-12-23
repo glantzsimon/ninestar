@@ -4,6 +4,7 @@ using K9.WebApplication.Enums;
 using K9.WebApplication.Extensions;
 using System;
 using System.ComponentModel.DataAnnotations;
+using K9.SharedLibrary.Helpers;
 
 namespace K9.WebApplication.Models
 {
@@ -81,9 +82,13 @@ namespace K9.WebApplication.Models
 
         public string SexualityRelationTypeLabel => "Sexuality relative to Gender and Personal Profile";
 
-        public string SexualityRelationTypeDetails => GetSexualityGenderDescription();
+        public string SexualityRelationTypeDetailsStraight => GetSexualityGenderDescription();
+
+        public string SexualityRelationTypeDetailsGay => GetSexualityGenderDescription(true);
 
         public string MainEnergySexualityDetails => GetMainEnergySexualityDetails();
+
+        public string GayLabel => PersonModel?.Gender == EGender.Female ? Dictionary.Lesbian : Dictionary.Gay;
 
         public bool IsProcessed { get; set; } = false;
 
@@ -351,24 +356,56 @@ namespace K9.WebApplication.Models
             return ESexualityRelationType.Unspecified;
         }
 
-        private string GetSexualityGenderDescription()
+        private string GetSexualityGenderDescription(bool isGay = false)
         {
+            if (PersonModel.Gender == EGender.Other)
+            {
+                return Dictionary.sexuality_gender_other;
+            }
+
+            var text = string.Empty;
+            var potentialMatesText = isGay ? "potential mates" : "members of the opposite sex";
+            var sexualPartnersText = isGay ? "their sexual partners" : "members of the opposite sex";
+
             switch (SexualityRelationType)
             {
                 case ESexualityRelationType.MatchMatch:
-                    return Dictionary.sexuality_match_match;
+                    text = PersonModel.Gender == EGender.Male
+                        ? Dictionary.sexuality_match_match_male
+                        : Dictionary.sexuality_match_match_female;
+                    break;
 
                 case ESexualityRelationType.MatchOpposite:
-                    return Dictionary.sexuality_match_opposite;
+                    text = PersonModel.Gender == EGender.Male
+                        ? Dictionary.sexuality_match_opposite_male
+                        : Dictionary.sexuality_match_opposite_female;
+                    break;
 
                 case ESexualityRelationType.OppositeMatch:
-                    return Dictionary.sexuality_opposite_match;
+                    text = PersonModel.Gender == EGender.Male
+                        ? Dictionary.sexuality_opposite_match_male
+                        : Dictionary.sexuality_opposite_match_female;
+                    break;
 
                 case ESexualityRelationType.OppositeOpposite:
-                    return Dictionary.sexuality_opposite_opposite;
+                    text = PersonModel.Gender == EGender.Male
+                        ? Dictionary.sexuality_opposite_opposite_male
+                        : Dictionary.sexuality_opposite_opposite_female;
+                    break;
+
+                default:
+                    return string.Empty;
             }
 
-            return string.Empty;
+            // Apply sexuality specific vocabulary
+            text = TemplateProcessor.PopulateTemplate(text,
+                new
+                {
+                    PotentialMatesTest = potentialMatesText,
+                    SexualPartnersText = sexualPartnersText
+                });
+
+            return $"{text} {Dictionary.sexuality_gay_notes}";
         }
 
         private string GetMainEnergySexualityDetails()

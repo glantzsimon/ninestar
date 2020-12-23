@@ -2534,11 +2534,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gay.
+        /// </summary>
+        public static string Gay {
+            get {
+                return ResourceManager.GetString("Gay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gender.
         /// </summary>
         public static string GenderLabel {
             get {
                 return ResourceManager.GetString("GenderLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to For trans females, please choose &apos;Female&apos;. Likewise, for trans males, please choose &apos;Male&apos;. For those who do not strongly identify as either, choose &apos;Other&apos;.
+        /// </summary>
+        public static string GenderSelectionTooltip {
+            get {
+                return ResourceManager.GetString("GenderSelectionTooltip", resourceCulture);
             }
         }
         
@@ -3009,6 +3027,15 @@ namespace K9.Globalisation {
         public static string LearnNineStarKiTitle {
             get {
                 return ResourceManager.GetString("LearnNineStarKiTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lesbian.
+        /// </summary>
+        public static string Lesbian {
+            get {
+                return ResourceManager.GetString("Lesbian", resourceCulture);
             }
         }
         
@@ -3797,30 +3824,21 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
-        ///&lt;html lang=&quot;en&quot;&gt;
-        ///
+        ///   Looks up a localized string similar to &lt;!doctype html&gt;
+        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
         ///&lt;head&gt;
-        ///    &lt;title&gt;{Title}&lt;/title&gt;
-        ///&lt;/head&gt;
-        ///
-        ///&lt;style type=&quot;text/css&quot;&gt;
-        ///    html
-        ///    {
-        ///        margin: 0;
-        ///		padding: 0;
-        ///		font-family: &quot;Segoe UI&quot; , Verdana, Helvetica, Sans-Serif;
-        ///		font-size: 100%;
-        ///		text-rendering: optimizeLegibility !important;
-        ///		-webkit-font-smoothing: antialiased !important;
-        ///        margin: 0; 
-        ///        color: #333;
-        ///    }
-        ///&lt;/style&gt;
-        ///
-        ///&lt;body&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;Dear {FirstName},&lt;/p&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;Your password has been reset. Please [rest of string was truncated]&quot;;.
+        ///    &lt;!-- NAME: 1:2:1 COLUMN --&gt;
+        ///    &lt;!--[if gte mso 15]&gt;
+        ///    &lt;xml&gt;
+        ///        &lt;o:OfficeDocumentSettings&gt;
+        ///        &lt;o:AllowPNG/&gt;
+        ///        &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
+        ///        &lt;/o:OfficeDocumentSettings&gt;
+        ///    &lt;/xml&gt;
+        ///    &lt;![endif]--&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
+        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PasswordResetEmail {
             get {
@@ -4162,21 +4180,103 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    This can be a powerful combination for establishing a confident understanding and expression of your own sexuality. Having both your deeper and surface nature in line with your gender makes you fully at ease with who you are. Being ‘all male’ or ‘all female’ can give you all the traditionally understood traits of your gender. For a man this may mean presenting yourself as macho man, strong and sexually confident. For a woman you could appear sensual and very feminine. In the same way that the trigr [rest of string was truncated]&quot;;.
+        ///    Note: for gay people, much of the above may well depend on the exact combination of gender and sexual traits and their relationship to the stereotypical archetype associated with their biological gender. It is sometimes hard to predict; however, in many gay relationships one can still observe the Yin and Yang roles adopted by each partner.
+        ///&lt;/p&gt;.
         /// </summary>
-        public static string sexuality_match_match {
+        public static string sexuality_gay_notes {
             get {
-                return ResourceManager.GetString("sexuality_match_match", resourceCulture);
+                return ResourceManager.GetString("sexuality_gay_notes", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    This combination gives you a very even keel in understanding your own sexuality, and a clear insight into members of either sex. Your surface nature is opposite to your gender, so when members of the opposite sex encounter this in their immediate dealings with you they will feel very comfortable and unthreatened. Your deep understanding of the opposite sex, which is borne out by your character number being the same as theirs, can put you into a great position of trust or confidence. You have the ca [rest of string was truncated]&quot;;.
+        ///    Many people today are realising that they do not identify strongly with either gender. It is hard to accurately predict the kind of relationship such individuals might have with their sexuality solely based on their 9 Star Ki profile and is beyond the scope of this website.
+        ///&lt;/p&gt;.
         /// </summary>
-        public static string sexuality_match_opposite {
+        public static string sexuality_gender_other {
             get {
-                return ResourceManager.GetString("sexuality_match_opposite", resourceCulture);
+                return ResourceManager.GetString("sexuality_gender_other", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;
+        ///    Both Fundamental and Character Energies are Yin and therefore in line with gender
+        ///&lt;/h4&gt;
+        ///&lt;h5&gt;
+        ///    A powerful combination that tends to result in a confident expression and understanding of one&apos;s sexuality.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    As both the Character and Fundamental Energies are in line with gender, women with this combination tend to find it easier to be fully at ease with their sexuality.
+        ///
+        ///    This combination is essentially &quot;all female&quot; and can therefore give rise to all the traditionally accepte [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string sexuality_match_match_female {
+            get {
+                return ResourceManager.GetString("sexuality_match_match_female", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;
+        ///    Both Fundamental and Character Energies are Yang and therefore in line with gender
+        ///&lt;/h4&gt;
+        ///&lt;h5&gt;
+        ///    A powerful combination that tends to result in a confident expression and understanding of one&apos;s sexuality.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    As both the Character and Fundamental Energies are in line with gender, men with this combination tend to find it easier to be fully at ease with their sexuality.
+        ///
+        ///    This combination is essentially &quot;all male&quot; and can therefore give rise to all the traditionally accepted m [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string sexuality_match_match_male {
+            get {
+                return ResourceManager.GetString("sexuality_match_match_male", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;
+        ///    Fundamental Energy is Yin and in line with gender. Character Energy is Yang and opposite to gender
+        ///&lt;/h4&gt;
+        ///&lt;h5&gt;
+        ///    Quite a balanced combination
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This is quite a balanced combination that gives you a fairly even keel in understanding both your own sexuality and that of your sexual partners.
+        ///&lt;/p&gt;
+        ///&lt;h5&gt;
+        ///    Character Energy is opposite to gender, resulting in a good understanding of your sexual partners
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Your Character Energy is opposite to your gender, which likel [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string sexuality_match_opposite_female {
+            get {
+                return ResourceManager.GetString("sexuality_match_opposite_female", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;
+        ///    Fundamental Energy is Yang and in line with gender. Character Energy is Yin and opposite to gender
+        ///&lt;/h4&gt;
+        ///&lt;h5&gt;
+        ///    Quite a balanced combination
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This is quite a balanced combination that gives you a fairly even keel in understanding both your own sexuality and that of your sexual partners.
+        ///&lt;/p&gt;
+        ///&lt;h5&gt;
+        ///    Character Energy is opposite to gender, resulting in a good understanding of your sexual partners
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Your Character Energy is opposite to your gender, which likel [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string sexuality_match_opposite_male {
+            get {
+                return ResourceManager.GetString("sexuality_match_opposite_male", resourceCulture);
             }
         }
         
@@ -4184,19 +4284,63 @@ namespace K9.Globalisation {
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    During your adolescence, when your character number was the driving force of your personality, it would have been in line with your gender. Therefore at that age you may have been very confident with the opposite sex, finding them non-threatening and being totally at ease with them. But as you approached the age of 18 and began to move into the influence of your principal number you may have come to misunderstand or mistrust the opposite sex. When you are an adult your gender appears on the surface [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string sexuality_opposite_match {
+        public static string sexuality_opposite_match_female {
             get {
-                return ResourceManager.GetString("sexuality_opposite_match", resourceCulture);
+                return ResourceManager.GetString("sexuality_opposite_match_female", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    This combination can be a challenge, as you lack your own gender in either your principal or character number. On a deeper level this can leave you insecure in your sexuality, which, rather than make you lose any interest in sex, tends to have the opposite effect – you can become almost obsessed with it. This obsession can give you tremendous libido, but the lack of gender in your principal and character numbers may lead to dissatisfaction with sex itself. Any obsession with sex can manifest in a n [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h4&gt;
+        ///    Fundamental Energy is Yin and opposite to gender. Character Energy is Yang and in line with gender
+        ///&lt;/h4&gt;
+        ///&lt;h5&gt;
+        ///    Men with this combination are usually very confident in their sexuality during adolescence, but less so as they move into adulthood
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    During adolescence, the Character Energy is the driving force of one&apos;s personality and, in this instance, would have been in line with gender. Men with this combination are therefore typically very confident and at ease with sexual part [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string sexuality_opposite_opposite {
+        public static string sexuality_opposite_match_male {
             get {
-                return ResourceManager.GetString("sexuality_opposite_opposite", resourceCulture);
+                return ResourceManager.GetString("sexuality_opposite_match_male", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;
+        ///    Both Fundamental and Character energies are Yang and therefore opposite to gender
+        ///&lt;/h4&gt;
+        ///&lt;h5&gt;
+        ///    Quite a challenging combination for women who feel pressure to behave in a typically feminine and sensual way
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This combination can be quite challenging, especially for women whose culture or upbringing might may require them to be especially feminine and sensual, or even submissive and passive.
+        ///&lt;/p&gt;
+        ///&lt;h5&gt;
+        ///    This combination can result in some insecurity around sexuality, leading [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string sexuality_opposite_opposite_female {
+            get {
+                return ResourceManager.GetString("sexuality_opposite_opposite_female", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;
+        ///    Both Fundamental and Character energies are Yin and therefore opposite to gender
+        ///&lt;/h4&gt;
+        ///&lt;h5&gt;
+        ///    Quite a challenging combination for men who feel pressure to behave more like alpha males
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This combination can be quite challenging, especially for men whose culture or upbringing might put even more pressure on them to behave like alpha males, or whichever role model is most culturally and socially appropriate.
+        ///&lt;/p&gt;
+        ///&lt;h5&gt;
+        ///    This combination can result in some insecurity around s [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string sexuality_opposite_opposite_male {
+            get {
+                return ResourceManager.GetString("sexuality_opposite_opposite_male", resourceCulture);
             }
         }
         
@@ -4505,6 +4649,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Straight.
+        /// </summary>
+        public static string Straight {
+            get {
+                return ResourceManager.GetString("Straight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Stripe Customer Id.
         /// </summary>
         public static string StripeCustomerIdLabel {
@@ -4595,30 +4748,21 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
-        ///&lt;html lang=&quot;en&quot;&gt;
-        ///
+        ///   Looks up a localized string similar to &lt;!doctype html&gt;
+        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
         ///&lt;head&gt;
-        ///    &lt;title&gt;{Title}&lt;/title&gt;
-        ///&lt;/head&gt;
-        ///
-        ///&lt;style type=&quot;text/css&quot;&gt;
-        ///    html
-        ///    {
-        ///        margin: 0;
-        ///        padding: 0;
-        ///        font-family: &quot;Segoe UI&quot; , Verdana, Helvetica, Sans-Serif;
-        ///        font-size: 100%;
-        ///        text-rendering: optimizeLegibility !important;
-        ///        -webkit-font-smoothing: antialiased !important;
-        ///        margin: 0; 
-        ///        color: #333;
-        ///    }
-        ///&lt;/style&gt;
-        ///
-        ///&lt;body&gt;
-        ///&lt;p class=&quot;text&quot;&gt;Dear {FirstName},&lt;/p&gt;
-        ///&lt;p class=&quot;text&quot;&gt;Thank you for  [rest of string was truncated]&quot;;.
+        ///    &lt;!-- NAME: 1:2:1 COLUMN --&gt;
+        ///    &lt;!--[if gte mso 15]&gt;
+        ///    &lt;xml&gt;
+        ///        &lt;o:OfficeDocumentSettings&gt;
+        ///        &lt;o:AllowPNG/&gt;
+        ///        &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
+        ///        &lt;/o:OfficeDocumentSettings&gt;
+        ///    &lt;/xml&gt;
+        ///    &lt;![endif]--&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
+        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SupportQuery {
             get {
@@ -5229,30 +5373,21 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
-        ///&lt;html lang=&quot;en&quot;&gt;
-        ///
+        ///   Looks up a localized string similar to &lt;!doctype html&gt;
+        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
         ///&lt;head&gt;
-        ///    &lt;title&gt;{Title}&lt;/title&gt;
-        ///&lt;/head&gt;
-        ///
-        ///&lt;style type=&quot;text/css&quot;&gt;
-        ///    html
-        ///    {
-        ///        margin: 0;
-        ///		padding: 0;
-        ///		font-family: &quot;Segoe UI&quot; , Verdana, Helvetica, Sans-Serif;
-        ///		font-size: 100%;
-        ///		text-rendering: optimizeLegibility !important;
-        ///		-webkit-font-smoothing: antialiased !important;
-        ///        margin: 0; 
-        ///        color: #333;
-        ///    }
-        ///&lt;/style&gt;
-        ///
-        ///&lt;body&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;Dear {FirstName},&lt;/p&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;Thank you for registering with {Comp [rest of string was truncated]&quot;;.
+        ///    &lt;!-- NAME: 1:2:1 COLUMN --&gt;
+        ///    &lt;!--[if gte mso 15]&gt;
+        ///    &lt;xml&gt;
+        ///        &lt;o:OfficeDocumentSettings&gt;
+        ///        &lt;o:AllowPNG/&gt;
+        ///        &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
+        ///        &lt;/o:OfficeDocumentSettings&gt;
+        ///    &lt;/xml&gt;
+        ///    &lt;![endif]--&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
+        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string WelcomeEmail {
             get {

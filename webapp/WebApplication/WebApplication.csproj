@@ -110,7 +110,7 @@
       <HintPath>..\packages\Stripe.net.11.9.0\lib\net45\Stripe.net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-	<Reference Include="System.Core" />
+    <Reference Include="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
     <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.Base.DataAccessLayer.2.0.0.165\lib\net461\System.AppContext.dll</HintPath>
       <Private>True</Private>
@@ -1074,6 +1074,7 @@
     <Content Include="Views\Predictions\Index.cshtml" />
     <Content Include="Views\Relationships\_Calculator.cshtml" />
     <Content Include="Views\Shared\_VideoFilesDisplay.cshtml" />
+    <Content Include="Views\NineStarKi\_Sexuality.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

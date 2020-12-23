@@ -71,7 +71,7 @@
                         {
                             @Html.Panel(Model.EnergySexualityLabel, Model.MainEnergySexualityDetails)
 
-                            @Html.Panel(Model.SexualityRelationTypeLabel, Model.SexualityRelationTypeDetails)
+                            @Html.Panel(Model.SexualityRelationTypeLabel, Html.Partial("_Sexuality").ToString())
                         }
                     }
                     else
@@ -81,10 +81,10 @@
                     }
                 }
                 @*else
-                    {
-                        <br />
-                        @Html.BootstrapActionLinkButton(Dictionary.LogIntoYourAccountToView, "Login", "Account")
-                    }*@
+        {
+            <br />
+            @Html.BootstrapActionLinkButton(Dictionary.LogIntoYourAccountToView, "Login", "Account")
+        }*@
             </div>
 
         </div>

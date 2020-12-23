@@ -1384,9 +1384,6 @@
   <data name="mountain_sexuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\mountain-sexuality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="soil_sexuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\soil-sexuality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="thunder_sexuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\thunder-sexuality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -1430,7 +1427,7 @@
     <value>Numbe of Relationship Compatibility Readings Left</value>
   </data>
   <data name="UpgradeMembershipText" xml:space="preserve">
-    <value>Upgrade your membership now, to access more details and features.</value>
+    <value>Upgrade your membership now</value>
   </data>
   <data name="AgreeToTerms" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\agreetoterms.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -1513,7 +1510,16 @@
   <data name="sexuality_gay_notes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\sexuality-gay-notes.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="soil_sexuality_female" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\soil-sexuality-female.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="soil_sexuality_male" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\soil-sexuality-male.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="Straight" xml:space="preserve">
     <value>Straight</value>
+  </data>
+  <data name="UpgradeMembershipFullText" xml:space="preserve">
+    <value>Upgrade your membership now, to access more details and features.</value>
   </data>
 </root>

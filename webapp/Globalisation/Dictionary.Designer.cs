@@ -4244,13 +4244,13 @@ namespace K9.Globalisation {
         ///    Quite a balanced combination
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This is quite a balanced combination that gives you a fairly even keel in understanding both your own sexuality and that of your sexual partners.
+        ///    This is quite a balanced combination that gives women of this combination a fairly even keel in understanding both their own sexuality and that of {SexualPartnersText}.
         ///&lt;/p&gt;
         ///&lt;h5&gt;
-        ///    Character Energy is opposite to gender, resulting in a good understanding of your sexual partners
+        ///    Character Energy is opposite to gender, resulting in these men having a good understanding of {PotentialMatesText}
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Your Character Energy is opposite to your gender, which likel [rest of string was truncated]&quot;;.
+        ///    Character Energy is o [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_match_opposite_female {
             get {
@@ -4266,13 +4266,13 @@ namespace K9.Globalisation {
         ///    Quite a balanced combination
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This is quite a balanced combination that gives you a fairly even keel in understanding both your own sexuality and that of your sexual partners.
+        ///    This is quite a balanced combination that gives men a fairly even keel in understanding both their own sexuality and that of {SexualPartnersText}.
         ///&lt;/p&gt;
         ///&lt;h5&gt;
-        ///    Character Energy is opposite to gender, resulting in a good understanding of your sexual partners
+        ///    Character Energy is opposite to gender, resulting in a good understanding of {PotentialMatesText}
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Your Character Energy is opposite to your gender, which likel [rest of string was truncated]&quot;;.
+        ///    Character Energy is opposite to gender, which likely gives m [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_match_opposite_male {
             get {
@@ -4281,8 +4281,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    During your adolescence, when your character number was the driving force of your personality, it would have been in line with your gender. Therefore at that age you may have been very confident with the opposite sex, finding them non-threatening and being totally at ease with them. But as you approached the age of 18 and began to move into the influence of your principal number you may have come to misunderstand or mistrust the opposite sex. When you are an adult your gender appears on the surface [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h4&gt;
+        ///    Fundamental Energy is Yang and opposite to gender. Character Energy is Yin and in line with gender
+        ///&lt;/h4&gt;
+        ///&lt;h5&gt;
+        ///    Women with this combination are usually very confident in their sexuality during adolescence, but less so as they move into adulthood
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    During adolescence, the Character Energy is the driving force of one&apos;s personality and, in this instance, would have been in line with gender. Women with this combination are therefore typically very confident and at ease with {Sexual [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_opposite_match_female {
             get {
@@ -4298,7 +4304,7 @@ namespace K9.Globalisation {
         ///    Men with this combination are usually very confident in their sexuality during adolescence, but less so as they move into adulthood
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    During adolescence, the Character Energy is the driving force of one&apos;s personality and, in this instance, would have been in line with gender. Men with this combination are therefore typically very confident and at ease with sexual part [rest of string was truncated]&quot;;.
+        ///    During adolescence, the Character Energy is the driving force of one&apos;s personality and, in this instance, would have been in line with gender. Men with this combination are therefore typically very confident and at ease with {SexualPart [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_opposite_match_male {
             get {
@@ -4518,11 +4524,35 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    2 Soil women often embody the full expression of femininity
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    2 Soil Women often embody the full expression of femininity and sensuality. They also have a mothering nature, which natrually comes out in the relationship.
+        ///&lt;/p&gt;
+        ///&lt;h5&gt;
+        ///    2 Soil Energies may appear reserved, but make extremely supportie partners
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Although they may appear somewhat reserved sexually, 2 Soil Energies make extremely reliable and supportive partners and they tend to be loyal to their mates. [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string soil_sexuality {
+        public static string soil_sexuality_female {
             get {
-                return ResourceManager.GetString("soil_sexuality", resourceCulture);
+                return ResourceManager.GetString("soil_sexuality_female", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    2 Soil Men often have quite a mothering quality to them, which may be attractive to potential mates or not, depending on what they are looking for. Due to gender stereotypes that exist today, many men, especially straight men, feel uncomfortable expressing this role. Similarly, potential mates may unconsciously judge 2 Soil men as overly mothering and feminine, unaware that they are responding to these gender stereotypes to some extent.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    You will appear somewhat reserved sexually, 
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_sexuality_male {
+            get {
+                return ResourceManager.GetString("soil_sexuality_male", resourceCulture);
             }
         }
         
@@ -5155,6 +5185,15 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to Upgrade your membership now, to access more details and features..
         /// </summary>
+        public static string UpgradeMembershipFullText {
+            get {
+                return ResourceManager.GetString("UpgradeMembershipFullText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upgrade your membership now.
+        /// </summary>
         public static string UpgradeMembershipText {
             get {
                 return ResourceManager.GetString("UpgradeMembershipText", resourceCulture);
@@ -5315,7 +5354,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    1 Water Energies often have a profound sense of sexual energy
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Of all the nine numbers, 1 VVater Energies tend to have the most profound sense of sexual energy. This is partly due to the fact that, in Chinese medicine, Water controls the function of the reproductive system.
+        ///&lt;/p&gt;
+        ///&lt;h5&gt;
+        ///    Water can result in two very different outward expressions of sexual energy
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Just as water in the natural world can be either fresh and effervescent like that of a stream, or dee [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_sexuality {
             get {

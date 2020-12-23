@@ -116,9 +116,10 @@
     <Content Include="Articles\en-gb\sexuality-opposite-match-male.htm" />
     <Content Include="Articles\en-gb\sexuality-gay-notes.htm" />
     <Content Include="Articles\en-gb\sexuality-opposite-opposite-male.htm" />
+    <Content Include="Articles\en-gb\soil-sexuality-female.htm" />
     <Content Include="Articles\en-gb\wind-sexuality.htm" />
     <Content Include="Articles\en-gb\thunder-sexuality.htm" />
-    <Content Include="Articles\en-gb\soil-sexuality.htm" />
+    <Content Include="Articles\en-gb\soil-sexuality-male.htm" />
     <Content Include="Articles\en-gb\water-sexuality.htm" />
     <Content Include="Articles\en-gb\sexuality-match-opposite-female.htm" />
     <Content Include="Articles\en-gb\sexuality-opposite-match-female.htm" />

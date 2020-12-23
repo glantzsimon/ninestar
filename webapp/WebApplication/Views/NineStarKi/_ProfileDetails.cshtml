@@ -62,12 +62,15 @@
                 {
                     if (this.GetRoles().CurrentUserIsInRoles(RoleNames.Administrators))
                     {
-                        if (activeUserMembership == null)
+                        if (activeUserMembership == null || Model.ReadingType == EReadingType.Free)
                         {
                             <br />
+                            <h5>
+                                @Html.Raw(Dictionary.UpgradeMembershipFullText)
+                            </h5>
                             @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "NineStarKi")
                         }
-                        if (activeUserMembership != null && Model.ReadingType == EReadingType.Complete)
+                        if (Model.ReadingType == EReadingType.Complete)
                         {
                             @Html.Panel(Model.EnergySexualityLabel, Model.MainEnergySexualityDetails)
 

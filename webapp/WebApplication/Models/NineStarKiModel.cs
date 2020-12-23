@@ -416,7 +416,9 @@ namespace K9.WebApplication.Models
                     return Dictionary.water_sexuality;
 
                 case ENineStarKiEnergy.Soil:
-                    return Dictionary.soil_sexuality;
+                    return PersonModel.Gender == EGender.Female 
+                        ? Dictionary.soil_sexuality_female
+                        : Dictionary.soil_sexuality_male;
 
                 case ENineStarKiEnergy.Thunder:
                     return Dictionary.thunder_sexuality;

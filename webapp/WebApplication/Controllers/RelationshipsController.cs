@@ -44,7 +44,7 @@ namespace K9.WebApplication.Controllers
         {
             if (model.PersonModel != null)
             {
-                model = _nineStarKiService.CalculateNineStarKi(model.PersonModel);
+                model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel);
             }
             return View("Index", model);
         }

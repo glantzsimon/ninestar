@@ -7,8 +7,11 @@ namespace K9.WebApplication.Services
 {
     public interface INineStarKiService
     {
-        NineStarKiModel CalculateNineStarKi(DateTime dateOfBirth, EGender gender = EGender.Male);
-        NineStarKiModel CalculateNineStarKi(PersonModel personModel);
+        NineStarKiModel CalculateNineStarKiProfile(DateTime dateOfBirth, EGender gender = EGender.Male);
+        NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel);
         NineStarKiSummaryViewModel GetNineStarKiSummaryViewModel();
+        CompatibilityModel CalculateCompatibility(DateTime dateOfBirth1, EGender gender1, DateTime dateOfBirth2,
+            EGender gender2);
+        CompatibilityModel CalculateCompatibility(PersonModel personModel1, PersonModel personModel2);
     }
 }

@@ -1,5 +1,9 @@
 ﻿using K9.Base.DataAccessLayer.Enums;
+using K9.SharedLibrary.Models;
+using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
+using K9.WebApplication.Services;
+using Moq;
 using System;
 using System.Diagnostics;
 using Xunit;
@@ -254,6 +258,23 @@ namespace K9.WebApplication.Tests.Unit.Services
                 }
                 dobYear++;
             }
+        }
+
+        [Theory]
+        [InlineData(1979, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, EElementChemistryLevel.VeryHigh)]
+        public void Calculate_ChemistryLevel(int year1, int month1, int day1, EGender gender1, int year2, int month2, int day2, EGender gender2, EElementChemistryLevel chemistryLevel)
+        {
+            var nineStarKiService = new NineStarKiService(new Mock<IMembershipService>().Object, new Mock<IAuthentication>().Object, new Mock<IRoles>().Object);
+
+            Assert.Equal(chemistryLevel, nineStarKiService.CalculateCompatibility(new PersonModel
+            {
+                DateOfBirth = new DateTime(year1, month1, day1),
+                Gender = gender1
+            }, new PersonModel
+            {
+                DateOfBirth = new DateTime(year2, month2, day2),
+                Gender = gender2
+            }).ElementChemistryLevel);
         }
 
     }

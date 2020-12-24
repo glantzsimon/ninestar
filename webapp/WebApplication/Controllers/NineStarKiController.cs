@@ -42,7 +42,7 @@ namespace K9.WebApplication.Controllers
         {
             if (model.PersonModel != null)
             {
-                model = _nineStarKiService.CalculateNineStarKi(model.PersonModel);
+                model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel);
                 SessionHelper.SetLastProfile(model.PersonModel);
             }
             return View("Index", model);
@@ -57,7 +57,7 @@ namespace K9.WebApplication.Controllers
             {
                 return RedirectToAction("Index");
             }
-            var model = _nineStarKiService.CalculateNineStarKi(new PersonModel
+            var model = _nineStarKiService.CalculateNineStarKiProfile(new PersonModel
             {
                 DateOfBirth = lastProfile.DateOfBirth,
                 Gender = lastProfile.Gender
@@ -71,13 +71,13 @@ namespace K9.WebApplication.Controllers
             var sb = new StringBuilder();
             for (var i = 1; i <= 9; i++)
             {
-                var maleModel = _nineStarKiService.CalculateNineStarKi(new PersonModel
+                var maleModel = _nineStarKiService.CalculateNineStarKiProfile(new PersonModel
                 {
                     DateOfBirth = new DateTime(1979, i, 15),
                     Gender = EGender.Male
                 });
 
-                var femaleModel = _nineStarKiService.CalculateNineStarKi(new PersonModel
+                var femaleModel = _nineStarKiService.CalculateNineStarKiProfile(new PersonModel
                 {
                     DateOfBirth = new DateTime(1979, i, 15),
                     Gender = EGender.Female

@@ -23,16 +23,16 @@ namespace K9.WebApplication.Services
             _roles = roles;
         }
 
-        public NineStarKiModel CalculateNineStarKi(DateTime dateOfBirth, EGender gender = EGender.Male)
+        public NineStarKiModel CalculateNineStarKiProfile(DateTime dateOfBirth, EGender gender = EGender.Male)
         {
-            return CalculateNineStarKi(new PersonModel
+            return CalculateNineStarKiProfile(new PersonModel
             {
                 DateOfBirth = dateOfBirth,
                 Gender = gender
             });
         }
 
-        public NineStarKiModel CalculateNineStarKi(PersonModel personModel)
+        public NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel)
         {
             var model = new NineStarKiModel(personModel);
 
@@ -59,31 +59,54 @@ namespace K9.WebApplication.Services
             return model;
         }
 
+        public CompatibilityModel CalculateCompatibility(DateTime dateOfBirth1, EGender gender1, DateTime dateOfBirth2, EGender gender2)
+        {
+            return CalculateCompatibility(
+            new PersonModel
+            {
+                DateOfBirth = dateOfBirth1,
+                Gender = gender1
+            }, new PersonModel
+            {
+                DateOfBirth = dateOfBirth2,
+                Gender = gender2
+            });
+        }
+
+        public CompatibilityModel CalculateCompatibility(PersonModel personModel1, PersonModel personModel2)
+        {
+            var nineStarKiModel1 = CalculateNineStarKiProfile(personModel1);
+            var nineStarKiModel2 = CalculateNineStarKiProfile(personModel2);
+
+            var model = new CompatibilityModel(nineStarKiModel1, nineStarKiModel2);
+            return model;
+        }
+
         public NineStarKiSummaryViewModel GetNineStarKiSummaryViewModel()
         {
             var mainEnergies = new List<NineStarKiModel>
             {
-                CalculateNineStarKi(new DateTime(1981, 3, 3)),
-                CalculateNineStarKi(new DateTime(1980, 3, 3)),
-                CalculateNineStarKi(new DateTime(1979, 3, 3)),
-                CalculateNineStarKi(new DateTime(1978, 3, 3)),
-                CalculateNineStarKi(new DateTime(1977, 3, 3)),
-                CalculateNineStarKi(new DateTime(1976, 3, 3)),
-                CalculateNineStarKi(new DateTime(1984, 3, 3)),
-                CalculateNineStarKi(new DateTime(1974, 3, 3)),
-                CalculateNineStarKi(new DateTime(1973, 3, 3)),
+                CalculateNineStarKiProfile(new DateTime(1981, 3, 3)),
+                CalculateNineStarKiProfile(new DateTime(1980, 3, 3)),
+                CalculateNineStarKiProfile(new DateTime(1979, 3, 3)),
+                CalculateNineStarKiProfile(new DateTime(1978, 3, 3)),
+                CalculateNineStarKiProfile(new DateTime(1977, 3, 3)),
+                CalculateNineStarKiProfile(new DateTime(1976, 3, 3)),
+                CalculateNineStarKiProfile(new DateTime(1984, 3, 3)),
+                CalculateNineStarKiProfile(new DateTime(1974, 3, 3)),
+                CalculateNineStarKiProfile(new DateTime(1973, 3, 3)),
             };
             var characterEnergies = new List<NineStarKiModel>
             {
-                CalculateNineStarKi(new DateTime(1980, 2, 10)),
-                CalculateNineStarKi(new DateTime(1980, 3, 10)),
-                CalculateNineStarKi(new DateTime(1980, 4, 10)),
-                CalculateNineStarKi(new DateTime(1980, 5, 10)),
-                CalculateNineStarKi(new DateTime(1980, 6, 10)),
-                CalculateNineStarKi(new DateTime(1980, 7, 10)),
-                CalculateNineStarKi(new DateTime(1980, 8, 10)),
-                CalculateNineStarKi(new DateTime(1980, 9, 10)),
-                CalculateNineStarKi(new DateTime(1980, 10, 10)),
+                CalculateNineStarKiProfile(new DateTime(1980, 2, 10)),
+                CalculateNineStarKiProfile(new DateTime(1980, 3, 10)),
+                CalculateNineStarKiProfile(new DateTime(1980, 4, 10)),
+                CalculateNineStarKiProfile(new DateTime(1980, 5, 10)),
+                CalculateNineStarKiProfile(new DateTime(1980, 6, 10)),
+                CalculateNineStarKiProfile(new DateTime(1980, 7, 10)),
+                CalculateNineStarKiProfile(new DateTime(1980, 8, 10)),
+                CalculateNineStarKiProfile(new DateTime(1980, 9, 10)),
+                CalculateNineStarKiProfile(new DateTime(1980, 10, 10)),
             };
             var dynamicEnergies = new List<NineStarKiEnergy>
             {

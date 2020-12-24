@@ -416,12 +416,12 @@ namespace K9.WebApplication.Models
                     return Dictionary.water_sexuality;
 
                 case ENineStarKiEnergy.Soil:
-                    return PersonModel.Gender == EGender.Female 
+                    return PersonModel.Gender == EGender.Female
                         ? Dictionary.soil_sexuality_female
                         : Dictionary.soil_sexuality_male;
 
                 case ENineStarKiEnergy.Thunder:
-                    return PersonModel.Gender == EGender.Female 
+                    return PersonModel.Gender == EGender.Female
                         ? Dictionary.thunder_sexuality_female
                         : Dictionary.thunder_sexuality_male;
 
@@ -432,7 +432,9 @@ namespace K9.WebApplication.Models
                     return Dictionary.coreearth_sexuality;
 
                 case ENineStarKiEnergy.Heaven:
-                    return Dictionary.heaven_sexuality;
+                    return PersonModel.Gender == EGender.Female
+                        ? Dictionary.heaven_sexuality_female
+                        : Dictionary.heaven_sexuality_male;
 
                 case ENineStarKiEnergy.Lake:
                     return Dictionary.lake_sexuality;

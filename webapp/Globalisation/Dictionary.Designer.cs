@@ -1829,12 +1829,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Core Earth is at the centre of the 9 Star Ki system and, as as such, these Energies are typically quite comfortable and compatible with any of the other energies. This central position occupied by 5 Earths can either result in their having quite a lot of compassion and sensitivity to others or, conversely, it can also make them quite &quot;self-centred&quot;.
-        ///
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Core Earth Energies are compatible with any of the other energies. They can be sensitive and compassionate or, conversely, quite self-centred
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It is not uncommon for 5 Earth energies to take the lead in relationships and they can be quite controlling and domineering in some c [rest of string was truncated]&quot;;.
+        ///    Core Earth is at the centre of the 9 Star Ki system and, as as such, these Energies are typically quite comfortable and compatible with any of the other energies. This central position occupied by 5 Earths can either result in their having quite a lot of compassion and sensitivity to others or, conversely, it can also make them quite &quot;self-c [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_sexuality {
             get {
@@ -2437,7 +2436,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    9 Fires are typically passionate and warm in relationships
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    9 Fires are typically the most passionate of the 9 Energies and express themselves with great charisma and warmth in relationships. They wear their emotions on their sleeve and let thei partners know where they stand.
+        ///&lt;/p&gt;
+        ///&lt;h5&gt;
+        ///    Fire Energies often have quite a flamboyant nature, but they are not necessarily flirting with you
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The Fire element makes these Energies very attractive to others. However, t [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_sexuality {
             get {
@@ -2723,46 +2732,46 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    6 Metal women may appear overly dominant in relationships, especially in straight couples
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Having the full force of heaven/male/father/metal 
-        ///    as the principal driving force in your sexuality can 
-        ///    be an appealing and powerful quality for a man. 
-        ///    However, if you are a woman this may make you too 
-        ///    authoritative and dominant in the relationship. As 
-        ///    a 6 Metal you are renowned for your strength, bold- 
-        ///    ness and consistency, and have a great sense oftrust 
-        ///    in your partner. 
-        ///    Sex for a 6 Metal can be very straightforward, 
-        ///    almost conserva [rest of string was truncated]&quot;;.
+        ///    6 Metal women can be quite authoritative and dominant, which can cause problems in relationships.
+        ///&lt;/p&gt;
+        ///&lt;h5&gt;
+        ///    Heaven Energies are typically bold and consistent in relationships
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    With the full force of Yang, Heaven Energies are strong, bold and consistant. Similarly, they typically look for a partner whom they can trust.
+        ///&lt;/p&gt;
+        ///&lt;h5&gt;
+        ///    For Heaven Energies, sex may be on  [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string heaven_sexuality_men {
+        public static string heaven_sexuality_female {
             get {
-                return ResourceManager.GetString("heaven_sexuality_men", resourceCulture);
+                return ResourceManager.GetString("heaven_sexuality_female", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    6 Metal men are often the stereotypical alpha male
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Having the full force of heaven/male/father/metal 
-        ///    as the principal driving force in your sexuality can 
-        ///    be an appealing and powerful quality for a man. 
-        ///    However, if you are a woman this may make you too 
-        ///    authoritative and dominant in the relationship. As 
-        ///    a 6 Metal you are renowned for your strength, bold- 
-        ///    ness and consistency, and have a great sense oftrust 
-        ///    in your partner. 
-        ///    Sex for a 6 Metal can be very straightforward, 
-        ///    almost conserva [rest of string was truncated]&quot;;.
+        ///    6 Metal men are typically quite comfortable in their sexuality, as this energy is often the stereotypical expression of the alpha male.
+        ///&lt;/p&gt;
+        ///&lt;h5&gt;
+        ///    Heaven Energies are typically bold and consistent in relationships
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    With the full force of Yang, Heaven Energies are strong, bold and consistant. Similarly, they typically look for a partner whom they can trust.
+        ///&lt;/p&gt;
+        ///&lt;h5&gt;
+        ///    For Heaven Energies, sex may be on t [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string heaven_sexuality_women {
+        public static string heaven_sexuality_male {
             get {
-                return ResourceManager.GetString("heaven_sexuality_women", resourceCulture);
+                return ResourceManager.GetString("heaven_sexuality_male", resourceCulture);
             }
         }
         
@@ -2994,7 +3003,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    7 Metal Energies often have a deep inner security
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    7 Metal Energies often have a deep inner security, which often makes them very stable and mature partners.
+        ///&lt;/p&gt;
+        ///&lt;h5&gt;
+        ///    Lake Energies are typically laid-back and fun-loving and make very thoughtful, receptive partners
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Metal is the element associated with the autumn, which is a time of year when the harvest is in and we can put our feet up and enjoy the fruits of our labour. 7 Metals are often relaxed and fun-lo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_sexuality {
             get {
@@ -3571,7 +3590,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Mountains bring a strong, steady energy to their relationships
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Mountain Energies bring quite a strong energy to their sexual relationships and are stable and reliable partners. 
+        ///&lt;/p&gt;
+        ///&lt;h5&gt;
+        ///    Mountains are quite pensive and often retreat to their &quot;caves&quot;
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Mountains have a deep, pensive nature and their partners may find them rather shy or uncommunicative at times. Indeed, it is not uncommon for them to regularly retreat to their &quot;cave&quot;.
+        ///&lt;/p&gt;
+        ///&lt;h5&gt;
+        ///    8 Earth  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_sexuality {
             get {
@@ -5661,11 +5693,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    4 Tree Energies tend to be dynamic, expressive and unpredictable in relationships
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
         ///    The sexual nature of 4 Tree Energies combines the blossoming, dynamic force of spring with the more changeable quality of wind. This means that they are typically rather expressive, forthcoming and romantic, on the one hand, but can be extremely changeable and even fickle on the other.
         ///&lt;/p&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Wind Energies can be overly impulsive in their sexual / romantic encounters
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The deeply trusting nature of Wind Energies, combined with their spontaneity, can result in their being overly impulsive in sexual relationships. They may find themselves having many different sexual  [rest of string was truncated]&quot;;.
+        ///    The  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_sexuality {
             get {

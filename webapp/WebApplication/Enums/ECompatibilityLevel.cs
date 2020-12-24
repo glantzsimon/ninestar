@@ -6,7 +6,9 @@
         ExtremelyLow,
         VeryLow,
         Low,
+        LowToMedium,
         Medium,
+        MediumToHigh,
         High,
         VeryHigh,
         ExtremelyHigh

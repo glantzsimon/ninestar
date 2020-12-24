@@ -1,6 +1,7 @@
-﻿using System;
-using K9.WebApplication.Enums;
+﻿using K9.WebApplication.Enums;
 using K9.WebApplication.Extensions;
+using System;
+using System.Collections.Generic;
 
 namespace K9.WebApplication.Models
 {
@@ -81,8 +82,21 @@ namespace K9.WebApplication.Models
         {
             var isSameGender = energy1.YinYang == energy2.YinYang;
             var isSameModality = energy1.Modality == energy2.Modality;
-            var score = (isSameGender ? 1 : 0) + (isSameModality ? 1 : 0);
-            return value + score;
+            var transformationType = energy1.Energy.GetTransformationType(energy2.Energy);
+            var isOppositeElement = new List<ETransformationType>
+            {
+                ETransformationType.Challenges,
+                ETransformationType.IsChallenged
+            }.Contains(transformationType);
+
+            var score = invertCalculation ?
+                (!isSameGender ? 1 : (isOppositeElement ? 0 : -1)) + (!isSameModality ? 1 : 0) + (energy1.Energy == energy2.Energy ? -1 : 0)
+                : (isSameGender ? 1 : (isOppositeElement ? 0 : -1)) + (isSameModality ? 1 : 0) + (energy1.Energy == energy2.Energy ? 1 : 0);
+
+            var result = value + score;
+            result = (int)result < 1 ? ECompatibilityLevel.ExtremelyLow : result;
+            result = result > ECompatibilityLevel.ExtremelyHigh ? ECompatibilityLevel.ExtremelyHigh : result;
+            return result;
         }
     }
 }

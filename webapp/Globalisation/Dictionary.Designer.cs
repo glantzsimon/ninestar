@@ -3967,12 +3967,12 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div&gt;
-        ///    With the &lt;strong&gt;Platinum Membership&lt;/strong&gt;, you get:
+        ///    &lt;h4&gt;&lt;strong&gt;With the Platinum Membership you get:&lt;/strong&gt;&lt;/h4&gt;
         ///    &lt;p&gt;
-        ///        Unlimited detailed Personal Profile readings.
+        ///        &amp;#8226; Unlimited full Personal Profile readings.
         ///    &lt;/p&gt;
         ///    &lt;p&gt;
-        ///        Unlimited detailed Relationship Compatibility readings.
+        ///        &amp;#8226; Unlimited full Relationship Compatibility readings.
         ///    &lt;/p&gt;
         ///&lt;/div&gt;.
         /// </summary>
@@ -4695,12 +4695,12 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div&gt;
-        ///    With the &lt;strong&gt;Standard Membership&lt;/strong&gt;, you get:
+        ///    &lt;h4&gt;&lt;strong&gt;With the Standard Membership you get:&lt;/strong&gt;&lt;/h4&gt;
         ///    &lt;p&gt;
-        ///        50 detailed Personal Profile readings a month.
+        ///        &amp;#8226; {NumberOfProfileReadings} full Personal Profile readings a month.
         ///    &lt;/p&gt;
         ///    &lt;p&gt;
-        ///        20 detailed Relationship Compatibility readings a month.
+        ///        &amp;#8226; {NumberOfCompatibilityReadings} full Relationship Compatibility readings a month.
         ///    &lt;/p&gt;
         ///&lt;/div&gt;.
         /// </summary>

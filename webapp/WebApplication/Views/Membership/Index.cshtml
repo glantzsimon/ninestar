@@ -5,7 +5,7 @@
 
 @{
     ViewBag.Title = Dictionary.MembershipLabel;
-    ViewBag.SubTitle = Dictionary.MembershipLabel;
+    ViewBag.SubTitle = Dictionary.MembershipOptions;
     Layout = "../Shared/_LayoutForm.cshtml";
 }
 
@@ -21,12 +21,7 @@
                 </div>
             }
         </div>
-        <div class="col-md-12 col-sm-12">
-            <div style="height: 20px;">&nbsp;</div>
-            @Html.Separator()
-        </div>
         <div class="col-md-6 col-sm-12 padding-0">
-            <div style="height: 7px;">&nbsp;</div>
             <div class="membership-description">
                 @MvcHtmlString.Create(TemplateProcessor.PopulateTemplate(Dictionary.standard_membership_description,
                     new
@@ -37,7 +32,6 @@
             </div>
         </div>
         <div class="col-md-6 col-sm-12 padding-0">
-            <div style="height: 7px;">&nbsp;</div>
             <div class="membership-description">
                 @MvcHtmlString.Create(Dictionary.platinum_membership_description)
             </div>

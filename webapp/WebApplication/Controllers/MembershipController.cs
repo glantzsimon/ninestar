@@ -24,13 +24,13 @@ namespace K9.WebApplication.Controllers
             return View(_membershipService.GetMembershipViewModel());
         }
 
-        [Route("join")]
+        [Route("membership/signup")]
         public ActionResult PurchaseStart(int id)
         {
             return View(_membershipService.GetPurchaseMembershipModel(id));
         }
 
-        [Route("join/purchase")]
+        [Route("membership/signup")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Purchase(int id)
@@ -39,7 +39,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [HttpPost]
-        [Route("join/processing")]
+        [Route("membership/signup/processing")]
         [ValidateAntiForgeryToken]
         public ActionResult PurchaseProcess(StripeModel model)
         {
@@ -56,13 +56,13 @@ namespace K9.WebApplication.Controllers
             return View("Purchase", model);
         }
 
-        [Route("join/success")]
+        [Route("membership/signup/success")]
         public ActionResult PurchaseSuccess()
         {
             return View();
         }
 
-        [Route("switch")]
+        [Route("membership/switch")]
         public ActionResult SwitchStart(int id)
         {
             var switchMembershipModel = _membershipService.GetSwitchMembershipModel(id);
@@ -77,7 +77,7 @@ namespace K9.WebApplication.Controllers
             return View("SwitchPurchaseStart", switchMembershipModel);
         }
 
-        [Route("switch/purchase")]
+        [Route("membership/switch")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult SwitchPurchase(int id)
@@ -90,7 +90,7 @@ namespace K9.WebApplication.Controllers
             return View(_membershipService.GetPurchaseStripeModel(id));
         }
 
-        [Route("switch/schedule")]
+        [Route("membership/switch/schedule")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult SwitchSchedule(int id)
@@ -104,7 +104,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [HttpPost]
-        [Route("switch/processing")]
+        [Route("membership/switch/processing")]
         [ValidateAntiForgeryToken]
         public ActionResult SwitchPurchaseProcess(StripeModel model)
         {
@@ -122,7 +122,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [HttpPost]
-        [Route("switch/processing")]
+        [Route("membership/switch/processing")]
         [ValidateAntiForgeryToken]
         public ActionResult SwitchScheduleProcess(int id)
         {
@@ -136,10 +136,10 @@ namespace K9.WebApplication.Controllers
                 ModelState.AddModelError("", ex.Message);
             }
 
-            return View("SwitchFree", id);
+            return View("SwitchFree", _membershipService.GetSwitchMembershipModel(id));
         }
 
-        [Route("switch/success")]
+        [Route("membership/switch/success")]
         public ActionResult SwitchSuccess()
         {
             return View();

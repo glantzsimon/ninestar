@@ -4528,13 +4528,15 @@ namespace K9.Globalisation {
         ///    2 Soil women often embody the full expression of femininity
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    2 Soil Women often embody the full expression of femininity and sensuality. They also have a mothering nature, which natrually comes out in the relationship.
+        ///    2 Soil women often embody the full expression of femininity and sensuality. They are typically attracted to more Yang energies, who are willing to make the first move.
+        ///    
+        ///    They also have a mothering nature, which natrually comes out in relationships.
         ///&lt;/p&gt;
         ///&lt;h5&gt;
         ///    2 Soil Energies may appear reserved, but make extremely supportie partners
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Although they may appear somewhat reserved sexually, 2 Soil Energies make extremely reliable and supportive partners and they tend to be loyal to their mates. [rest of string was truncated]&quot;;.
+        ///    Although they may appear somewhat reserved sexually, 2 Soi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_sexuality_female {
             get {
@@ -4543,12 +4545,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    2 Soil Men often have quite a mothering quality to them, which may be attractive to potential mates or not, depending on what they are looking for. Due to gender stereotypes that exist today, many men, especially straight men, feel uncomfortable expressing this role. Similarly, potential mates may unconsciously judge 2 Soil men as overly mothering and feminine, unaware that they are responding to these gender stereotypes to some extent.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    2 Soil men are typically gentle and nurturing and relationships
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    You will appear somewhat reserved sexually, 
-        /// [rest of string was truncated]&quot;;.
+        ///    2 Soil men are gentle and nurturing and often have quite a mothering quality to them, which may be attractive to potential mates or not, depending on what they are looking for. Due to gender stereotypes that exist today, many men, especially straight men, feel uncomfortable expressing this role. Similarly, potential mates may subconsciously judge 2 Soil men as overly mothering and feminine, unaware that they may be re [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_sexuality_male {
             get {
@@ -5035,11 +5036,34 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    3 Tree Energies often have a high sex drive
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Representing the full force of spring, 3 Tree Energies often have the strongest libido of all 9 Energies. Indeed, sex is usually of great importance to them. 3 Tree women, as their Fundamental Energy is opposite to their gender, are often quite sexually active and even promiscuous. They sometimes even struggle with sex addition.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    3 Tree women, of all the 9 Energies, are perhaps the least likely to conform to gender stereot [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string thunder_sexuality {
+        public static string thunder_sexuality_female {
             get {
-                return ResourceManager.GetString("thunder_sexuality", resourceCulture);
+                return ResourceManager.GetString("thunder_sexuality_female", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    3 Tree Energies often have a high sex drive
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Representing the full force of spring, 3 Tree Energies often have the strongest libido of all 9 Energies. Indeed, sex is usually of great importance to them. However, 3 Tree men, owing to the fact that their Fundamental Energy is in line with their gender, typically express their high sex drive in relationship, but don&apos;t usually get into trouble with sex addiction.
+        ///&lt;/p&gt;
+        ///&lt;h5&gt;
+        ///    3 Tree men are typically strong and virile and their sex [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_sexuality_male {
+            get {
+                return ResourceManager.GetString("thunder_sexuality_male", resourceCulture);
             }
         }
         

@@ -261,13 +261,14 @@ namespace K9.WebApplication.Tests.Unit.Services
         }
 
         [Theory]
-        [InlineData(1981, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, EElementChemistryLevel.MediumToHigh)]
-        [InlineData(1980, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, EElementChemistryLevel.Medium)]
-        [InlineData(1979, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, EElementChemistryLevel.VeryHigh)]
-        [InlineData(1979, 6, 16, EGender.Male, 1983, 6, 21, EGender.Male, EElementChemistryLevel.High)]
-        [InlineData(1979, 6, 16, EGender.Male, 1978, 6, 21, EGender.Male, EElementChemistryLevel.Low)]
-        [InlineData(1979, 6, 16, EGender.Male, 1979, 6, 21, EGender.Male, EElementChemistryLevel.VeryLow)]
-        public void Calculate_ChemistryLevel(int year1, int month1, int day1, EGender gender1, int year2, int month2, int day2, EGender gender2, EElementChemistryLevel chemistryLevel)
+        [InlineData(1981, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityLevel.High)]
+        [InlineData(1980, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityLevel.Medium)]
+        [InlineData(1979, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityLevel.ExtremelyHigh)]
+        [InlineData(1979, 6, 16, EGender.Male, 1983, 6, 21, EGender.Male, ECompatibilityLevel.VeryHigh)]
+        [InlineData(1979, 6, 16, EGender.Male, 1985, 6, 21, EGender.Male, ECompatibilityLevel.High)]
+        [InlineData(1979, 6, 16, EGender.Male, 1978, 6, 21, EGender.Male, ECompatibilityLevel.Low)]
+        [InlineData(1979, 6, 16, EGender.Male, 1979, 6, 21, EGender.Male, ECompatibilityLevel.VeryLow)]
+        public void Calculate_ChemistryLevel(int year1, int month1, int day1, EGender gender1, int year2, int month2, int day2, EGender gender2, ECompatibilityLevel chemistryLevel)
         {
             var nineStarKiService = new NineStarKiService(new Mock<IMembershipService>().Object, new Mock<IAuthentication>().Object, new Mock<IRoles>().Object);
 

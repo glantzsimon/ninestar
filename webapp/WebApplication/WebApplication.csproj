@@ -36,7 +36,7 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
-    <LangVersion>default</LangVersion>
+    <LangVersion>latest</LangVersion>
     <IncludeSetACLProviderOnDestination>False</IncludeSetACLProviderOnDestination>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -289,9 +289,8 @@
     <Compile Include="Controllers\MembershipOptionsController.cs" />
     <Compile Include="Controllers\PredictionsController.cs" />
     <Compile Include="Controllers\RelationshipsController.cs" />
-    <Compile Include="Enums\EElementLearningPotential.cs" />
+    <Compile Include="Enums\ECompatibilityLevel.cs" />
     <Compile Include="Enums\EReadingType.cs" />
-    <Compile Include="Enums\EElementChemistryLevel.cs" />
     <Compile Include="Enums\ETransformationType.cs" />
     <Compile Include="Enums\ESexualityType.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />

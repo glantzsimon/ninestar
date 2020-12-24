@@ -1,4 +1,5 @@
-﻿using K9.WebApplication.Enums;
+﻿using System;
+using K9.WebApplication.Enums;
 using K9.WebApplication.Extensions;
 
 namespace K9.WebApplication.Models
@@ -23,76 +24,65 @@ namespace K9.WebApplication.Models
         public NineStarKiModel NineStarKiModel1 { get; }
         public NineStarKiModel NineStarKiModel2 { get; }
 
-        public EElementChemistryLevel MainElementChemistryLevel { get; }
-        public EElementLearningPotential MainElementLearningPotential { get; }
+        public ECompatibilityLevel MainElementChemistryLevel { get; }
+        public ECompatibilityLevel MainElementLearningPotential { get; }
 
-        private EElementChemistryLevel GetMainElementChemistryLevel()
+        private ECompatibilityLevel GetMainElementChemistryLevel()
         {
             return GetChemistryLevel(NineStarKiModel1.MainEnergy, NineStarKiModel2.MainEnergy);
         }
 
-        private EElementChemistryLevel GetChemistryLevel(NineStarKiEnergy energy1, NineStarKiEnergy energy2)
+        private ECompatibilityLevel GetChemistryLevel(NineStarKiEnergy energy1, NineStarKiEnergy energy2)
         {
             var transformationType = energy1.Energy.GetTransformationType(energy2.Energy);
-            var isSameGender = energy1.YinYang == energy2.YinYang;
-            var isSameModality = energy1.Modality == energy2.Modality;
 
             switch (transformationType)
             {
                 case ETransformationType.Challenges:
                 case ETransformationType.IsChallenged:
-                    if (isSameGender && isSameModality)
-                    {
-                        return EElementChemistryLevel.Extreme;
-                    }
-                    else if (isSameGender)
-                    {
-                        return EElementChemistryLevel.VeryHigh;
-                    }
-                    else if (isSameModality)
-                    {
-                        return EElementChemistryLevel.VeryHigh;
-                    }
-                    else
-                    {
-                        return EElementChemistryLevel.VeryHigh;
-                    }
+                    return ProcessGenderAndModality(ECompatibilityLevel.High, energy1, energy2, true);
 
                 case ETransformationType.IsSupported:
                 case ETransformationType.Supports:
-                    return isSameGender ? EElementChemistryLevel.Medium : EElementChemistryLevel.MediumToHigh;
+                    return ProcessGenderAndModality(ECompatibilityLevel.Medium, energy1, energy2, true);
 
                 case ETransformationType.Same:
-                    return isSameGender ? EElementChemistryLevel.VeryLow : EElementChemistryLevel.Low;
+                    return ProcessGenderAndModality(ECompatibilityLevel.Low, energy1, energy2, true);
             }
 
-            return EElementChemistryLevel.Unspecified;
+            return ECompatibilityLevel.Unspecified;
         }
 
-        private EElementLearningPotential GetMainElementLearningPotential()
+        private ECompatibilityLevel GetMainElementLearningPotential()
+        {
+            return GetElementLearningPotential(NineStarKiModel1.MainEnergy, NineStarKiModel2.MainEnergy);
+        }
+
+        private ECompatibilityLevel GetElementLearningPotential(NineStarKiEnergy energy1, NineStarKiEnergy energy2)
         {
             var transformationType = NineStarKiModel1.MainEnergy.Energy.GetTransformationType(NineStarKiModel2.MainEnergy.Energy);
-            var isSameGender = NineStarKiModel1.MainEnergy.YinYang == NineStarKiModel2.MainEnergy.YinYang;
 
             switch (transformationType)
             {
                 case ETransformationType.IsChallenged:
-                    return isSameGender ? EElementLearningPotential.High : EElementLearningPotential.VeryHigh;
-
                 case ETransformationType.Challenges:
-                    return isSameGender ? EElementLearningPotential.MediumToHigh : EElementLearningPotential.High;
-
                 case ETransformationType.Supports:
-                    return isSameGender ? EElementLearningPotential.Medium : EElementLearningPotential.MediumToHigh;
-
                 case ETransformationType.IsSupported:
-                    return isSameGender ? EElementLearningPotential.Low : EElementLearningPotential.Medium;
+                    return ProcessGenderAndModality(ECompatibilityLevel.High, energy1, energy2, true);
 
                 case ETransformationType.Same:
-                    return isSameGender ? EElementLearningPotential.VeryLow : EElementLearningPotential.Low;
+                    return ProcessGenderAndModality(ECompatibilityLevel.Low, energy1, energy2, true);
             }
 
-            return EElementLearningPotential.Unspecified;
+            return ECompatibilityLevel.Unspecified;
+        }
+
+        private ECompatibilityLevel ProcessGenderAndModality(ECompatibilityLevel value, NineStarKiEnergy energy1, NineStarKiEnergy energy2, bool invertCalculation = false)
+        {
+            var isSameGender = energy1.YinYang == energy2.YinYang;
+            var isSameModality = energy1.Modality == energy2.Modality;
+            var score = (isSameGender ? 1 : 0) + (isSameModality ? 1 : 0);
+            return value + score;
         }
     }
 }

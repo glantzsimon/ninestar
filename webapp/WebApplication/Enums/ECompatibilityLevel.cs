@@ -1,14 +1,14 @@
 ﻿namespace K9.WebApplication.Enums
 {
-    public enum EElementChemistryLevel
+    public enum ECompatibilityLevel
     {
         Unspecified,
+        ExtremelyLow,
         VeryLow,
         Low,
         Medium,
-        MediumToHigh,
         High,
         VeryHigh,
-        Extreme
+        ExtremelyHigh
     }
 }

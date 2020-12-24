@@ -1,6 +1,6 @@
 ﻿namespace K9.WebApplication.Enums
 {
-    public enum ECompatibilityLevel
+    public enum ECompatibilityScore
     {
         Unspecified,
         ExtremelyLow,

@@ -261,21 +261,21 @@ namespace K9.WebApplication.Tests.Unit.Services
         }
 
         [Theory]
-        [InlineData(1979, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityLevel.ExtremelyHigh)]
-        [InlineData(1981, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityLevel.MediumToHigh)]
-        [InlineData(1980, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityLevel.Medium)]
-        [InlineData(1979, 6, 16, EGender.Male, 1983, 6, 21, EGender.Male, ECompatibilityLevel.VeryHigh)]
-        [InlineData(1979, 6, 16, EGender.Male, 1985, 6, 21, EGender.Male, ECompatibilityLevel.High)]
-        [InlineData(1979, 6, 16, EGender.Male, 1978, 6, 21, EGender.Male, ECompatibilityLevel.Medium)]
-        [InlineData(1979, 6, 16, EGender.Male, 1979, 6, 21, EGender.Male, ECompatibilityLevel.ExtremelyLow)]
-        [InlineData(1979, 6, 16, EGender.Male, 1982, 6, 21, EGender.Male, ECompatibilityLevel.MediumToHigh)]
-        [InlineData(1979, 6, 16, EGender.Male, 1980, 6, 21, EGender.Male, ECompatibilityLevel.ExtremelyHigh)]
-        [InlineData(1982, 6, 16, EGender.Male, 1985, 6, 21, EGender.Male, ECompatibilityLevel.VeryHigh)]
-        public void Calculate_ChemistryLevel(int year1, int month1, int day1, EGender gender1, int year2, int month2, int day2, EGender gender2, ECompatibilityLevel chemistryLevel)
+        [InlineData(1979, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyHigh)]
+        [InlineData(1981, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.MediumToHigh)]
+        [InlineData(1980, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.Medium)]
+        [InlineData(1979, 6, 16, EGender.Male, 1983, 6, 21, EGender.Male, ECompatibilityScore.VeryHigh)]
+        [InlineData(1979, 6, 16, EGender.Male, 1985, 6, 21, EGender.Male, ECompatibilityScore.High)]
+        [InlineData(1979, 6, 16, EGender.Male, 1978, 6, 21, EGender.Male, ECompatibilityScore.Medium)]
+        [InlineData(1979, 6, 16, EGender.Male, 1979, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyLow)]
+        [InlineData(1979, 6, 16, EGender.Male, 1982, 6, 21, EGender.Male, ECompatibilityScore.MediumToHigh)]
+        [InlineData(1979, 6, 16, EGender.Male, 1980, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyHigh)]
+        [InlineData(1982, 6, 16, EGender.Male, 1985, 6, 21, EGender.Male, ECompatibilityScore.VeryHigh)]
+        public void Calculate_ChemistryLevel(int year1, int month1, int day1, EGender gender1, int year2, int month2, int day2, EGender gender2, ECompatibilityScore chemistryScore)
         {
             var nineStarKiService = new NineStarKiService(new Mock<IMembershipService>().Object, new Mock<IAuthentication>().Object, new Mock<IRoles>().Object);
 
-            Assert.Equal(chemistryLevel, nineStarKiService.CalculateCompatibility(new PersonModel
+            Assert.Equal(chemistryScore, nineStarKiService.CalculateCompatibility(new PersonModel
             {
                 DateOfBirth = new DateTime(year1, month1, day1),
                 Gender = gender1
@@ -283,7 +283,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             {
                 DateOfBirth = new DateTime(year2, month2, day2),
                 Gender = gender2
-            }).MainElementChemistryLevel);
+            }).FundamentalEnergyChemistryScore);
         }
 
     }

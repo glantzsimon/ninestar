@@ -289,7 +289,7 @@
     <Compile Include="Controllers\MembershipOptionsController.cs" />
     <Compile Include="Controllers\PredictionsController.cs" />
     <Compile Include="Controllers\RelationshipsController.cs" />
-    <Compile Include="Enums\ECompatibilityLevel.cs" />
+    <Compile Include="Enums\ECompatibilityScore.cs" />
     <Compile Include="Enums\EReadingType.cs" />
     <Compile Include="Enums\ETransformationType.cs" />
     <Compile Include="Enums\ESexualityType.cs" />

@@ -77,8 +77,8 @@ namespace K9.WebApplication.Services
         {
             var nineStarKiModel1 = CalculateNineStarKiProfile(personModel1);
             var nineStarKiModel2 = CalculateNineStarKiProfile(personModel2);
-
             var model = new CompatibilityModel(nineStarKiModel1, nineStarKiModel2);
+            
             return model;
         }
 

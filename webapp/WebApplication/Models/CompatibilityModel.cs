@@ -17,23 +17,46 @@ namespace K9.WebApplication.Models
             NineStarKiModel1 = nineStarKiModel1;
             NineStarKiModel2 = nineStarKiModel2;
             MainElementChemistryLevel = GetMainElementChemistryLevel();
+            MainElementLearningPotential = GetMainElementLearningPotential();
         }
 
         public NineStarKiModel NineStarKiModel1 { get; }
         public NineStarKiModel NineStarKiModel2 { get; }
 
         public EElementChemistryLevel MainElementChemistryLevel { get; }
+        public EElementLearningPotential MainElementLearningPotential { get; }
 
         private EElementChemistryLevel GetMainElementChemistryLevel()
         {
-            var transformationType = NineStarKiModel1.MainEnergy.Energy.GetTransformationType(NineStarKiModel2.MainEnergy.Energy);
-            var isSameGender = NineStarKiModel1.MainEnergy.YinYang == NineStarKiModel2.MainEnergy.YinYang;
+            return GetChemistryLevel(NineStarKiModel1.MainEnergy, NineStarKiModel2.MainEnergy);
+        }
+
+        private EElementChemistryLevel GetChemistryLevel(NineStarKiEnergy energy1, NineStarKiEnergy energy2)
+        {
+            var transformationType = energy1.Energy.GetTransformationType(energy2.Energy);
+            var isSameGender = energy1.YinYang == energy2.YinYang;
+            var isSameModality = energy1.Modality == energy2.Modality;
 
             switch (transformationType)
             {
                 case ETransformationType.Challenges:
                 case ETransformationType.IsChallenged:
-                    return isSameGender ? EElementChemistryLevel.High : EElementChemistryLevel.VeryHigh;
+                    if (isSameGender && isSameModality)
+                    {
+                        return EElementChemistryLevel.Extreme;
+                    }
+                    else if (isSameGender)
+                    {
+                        return EElementChemistryLevel.VeryHigh;
+                    }
+                    else if (isSameModality)
+                    {
+                        return EElementChemistryLevel.VeryHigh;
+                    }
+                    else
+                    {
+                        return EElementChemistryLevel.VeryHigh;
+                    }
 
                 case ETransformationType.IsSupported:
                 case ETransformationType.Supports:
@@ -44,6 +67,32 @@ namespace K9.WebApplication.Models
             }
 
             return EElementChemistryLevel.Unspecified;
+        }
+
+        private EElementLearningPotential GetMainElementLearningPotential()
+        {
+            var transformationType = NineStarKiModel1.MainEnergy.Energy.GetTransformationType(NineStarKiModel2.MainEnergy.Energy);
+            var isSameGender = NineStarKiModel1.MainEnergy.YinYang == NineStarKiModel2.MainEnergy.YinYang;
+
+            switch (transformationType)
+            {
+                case ETransformationType.IsChallenged:
+                    return isSameGender ? EElementLearningPotential.High : EElementLearningPotential.VeryHigh;
+
+                case ETransformationType.Challenges:
+                    return isSameGender ? EElementLearningPotential.MediumToHigh : EElementLearningPotential.High;
+
+                case ETransformationType.Supports:
+                    return isSameGender ? EElementLearningPotential.Medium : EElementLearningPotential.MediumToHigh;
+
+                case ETransformationType.IsSupported:
+                    return isSameGender ? EElementLearningPotential.Low : EElementLearningPotential.Medium;
+
+                case ETransformationType.Same:
+                    return isSameGender ? EElementLearningPotential.VeryLow : EElementLearningPotential.Low;
+            }
+
+            return EElementLearningPotential.Unspecified;
         }
     }
 }

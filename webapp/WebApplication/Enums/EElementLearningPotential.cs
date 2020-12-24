@@ -1,6 +1,6 @@
 ﻿namespace K9.WebApplication.Enums
 {
-    public enum EElementChemistryLevel
+    public enum EElementLearningPotential
     {
         Unspecified,
         VeryLow,
@@ -8,7 +8,6 @@
         Medium,
         MediumToHigh,
         High,
-        VeryHigh,
-        Extreme
+        VeryHigh
     }
 }

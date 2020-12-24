@@ -100,11 +100,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Articles\en-gb\coreearth-child.htm" />
+    <Content Include="Articles\en-gb\heaven-sexuality-women.htm" />
     <Content Include="Articles\en-gb\sexuality-description.htm" />
     <Content Include="Articles\en-gb\fire-sexuality.htm" />
     <Content Include="Articles\en-gb\mountain-sexuality.htm" />
     <Content Include="Articles\en-gb\lake-sexuality.htm" />
-    <Content Include="Articles\en-gb\heaven-sexuality.htm" />
+    <Content Include="Articles\en-gb\heaven-sexuality-men.htm" />
     <Content Include="Articles\en-gb\fire-child.htm" />
     <Content Include="Articles\en-gb\fire-overview.htm" />
     <Content Include="Articles\en-gb\dynamic-modality.htm" />

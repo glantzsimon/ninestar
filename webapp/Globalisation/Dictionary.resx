@@ -1375,9 +1375,6 @@
   <data name="fire_sexuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\fire-sexuality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="heaven_sexuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\heaven-sexuality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="lake_sexuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\lake-sexuality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -1500,6 +1497,12 @@
   </data>
   <data name="Gay" xml:space="preserve">
     <value>Gay</value>
+  </data>
+  <data name="heaven_sexuality_men" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\heaven-sexuality-men.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_sexuality_women" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\heaven-sexuality-women.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="Lesbian" xml:space="preserve">
     <value>Lesbian</value>

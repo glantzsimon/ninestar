@@ -1713,10 +1713,10 @@ namespace K9.Globalisation {
         ///    Like other Earth children, it is especially important for 5 Earth children to have a stable family and school life.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    5 Earth is at the centre of 9 Star Ki and this can sometimes make it hard for these children to navigate a clear path. Without appropriate guidance, they may looe their way and even succumb to undesirable influences.
+        ///    Core Earth is at the centre of 9 Star Ki and this can sometimes make it hard for these children to navigate a clear path. Without appropriate guidance, they may looe their way and even succumb to undesirable influences.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    5 Earth characters are naturally nurturing and supportive and children with this character number display these qualities early on in thei [rest of string was truncated]&quot;;.
+        ///    5 Earth characters are naturally nurturing and supportive and children with this character number display these qualities early on in t [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_child {
             get {
@@ -1747,7 +1747,7 @@ namespace K9.Globalisation {
         ///    5 is at the centre of the 9 Star Ki system and this gives 5 soil characters a &lt;strong&gt;great capacity to influence&lt;/strong&gt; those around them.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    5 Earth characters are &lt;strong&gt;extremely persevering&lt;/strong&gt;. They can also express different extremes. On  [rest of string was truncated]&quot;;.
+        ///    Core Earth characters are &lt;strong&gt;extremely persevering&lt;/strong&gt;. They can also express different extremes.  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_emotional_description {
             get {
@@ -1829,7 +1829,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Core Earth is at the centre of the 9 Star Ki system and, as as such, these Energies are typically quite comfortable and compatible with any of the other energies. This central position occupied by 5 Earths can either result in their having quite a lot of compassion and sensitivity to others or, conversely, it can also make them quite &quot;self-centred&quot;.
+        ///
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is not uncommon for 5 Earth energies to take the lead in relationships and they can be quite controlling and domineering in some c [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_sexuality {
             get {
@@ -1857,7 +1862,7 @@ namespace K9.Globalisation {
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Being at the centre of the 9 Energies, 5 Soil Energies have no trigram of their own. Rather, they are the axis 
         ///    around which the other Energies revolve. As such, this sign draws its nature from each of the other Energies. 
-        ///    However, it is also said that this Energy is somewhat between 2 Soil and 8 Mountain Energies, the other Earth Energies in the system.
+        ///    However, it is also said that this Energy is somewhat between Soil and Mountain Energies, the other Earth Energies in the system.
         ///&lt;/p&gt;.
         /// </summary>
         public static string coreearth_trigram {
@@ -2303,7 +2308,7 @@ namespace K9.Globalisation {
         ///    9 Fire children do much better when they are supported by parents and caregivers who can teach them consideration for others, patience, how to plan ahead and to see tasks through to completion.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Without adequate discipline, 9 Fire children can become spoilt, conceited and vain.
+        ///    Without adequate discipline, Fire children can become spoilt, conceited and vain.
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    Fire needs to be contained, and since this character Energy can be extremely impulsive, it&apos;s important that parents and caregivers introduce order and boundaries early on in life.
@@ -2350,7 +2355,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    9 Fire characters are some of the &lt;strong&gt;brightest and liveliest of all the nine characters&lt;/strong&gt;. 
+        ///    Fire characters are some of the &lt;strong&gt;brightest and liveliest of all the nine characters&lt;/strong&gt;. 
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    They tend to &lt;strong&gt;wear their heart on their sleeve&lt;/strong&gt; and can be exceptionally &lt;strong&gt;warm and affectionate&lt;/strong&gt;.
@@ -2359,7 +2364,7 @@ namespace K9.Globalisation {
         ///    9 Fire characters have a &lt;strong&gt;bubbly personality with lots of charisma&lt;/strong&gt; and often possess great &lt;strong&gt;clarity and intuition&lt;/strong&gt;, whch can help to &lt;strong&gt;shine light on situations&lt;/strong&gt;.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Sometimes 9 Fir [rest of string was truncated]&quot;;.
+        ///    Sometimes Fire ch [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_emotional_description {
             get {
@@ -2589,13 +2594,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    6 Heaven children need good moral guidance. They have a natural ability to pick up on what is right and need parents and teachers that lead by example.
+        ///    Heaven children need good moral guidance. They have a natural ability to pick up on what is right and need parents and teachers that lead by example.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    It is important for 6 Heaven children not to become overly rigid and opinionated. They should be encouraged to enter into debate and to be more flexible in their standpoint, allowing for differences of opinion.
+        ///    It is important for Heaven children not to become overly rigid and opinionated. They should be encouraged to enter into debate and to be more flexible in their standpoint, allowing for differences of opinion.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    6 Heaven children are exceptionally sensitive to criticism. They are naturally hypersensitive, proud and str [rest of string was truncated]&quot;;.
+        ///    6 Metal children are exceptionally sensitive to criticism. They are naturally hypersensitive, proud and strongly [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_child {
             get {
@@ -2622,12 +2627,12 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    6 Heaven characters tend to have a very &lt;strong&gt;direct, down-to-earth and uncompromising nature&lt;/strong&gt;.
+        ///    6 Metal characters tend to have a very &lt;strong&gt;direct, down-to-earth and uncompromising nature&lt;/strong&gt;.
         ///
         ///    They tend to have very &lt;strong&gt;clear opinions about what is fair and ethical&lt;/strong&gt; and what is not and can be quite &lt;strong&gt;opinionated and inflexible&lt;/strong&gt; in their views. They are certainly &lt;strong&gt;not afraid to express their opinion&lt;/strong&gt; and can be quite &lt;strong&gt;sharp and blunt&lt;/strong&gt; in the way they communicate at times.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    The 6 Heaven character as &lt;strong&gt;t [rest of string was truncated]&quot;;.
+        ///    The Heaven character as &lt;strong&gt;trem [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_emotional_description {
             get {
@@ -2718,11 +2723,46 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Having the full force of heaven/male/father/metal 
+        ///    as the principal driving force in your sexuality can 
+        ///    be an appealing and powerful quality for a man. 
+        ///    However, if you are a woman this may make you too 
+        ///    authoritative and dominant in the relationship. As 
+        ///    a 6 Metal you are renowned for your strength, bold- 
+        ///    ness and consistency, and have a great sense oftrust 
+        ///    in your partner. 
+        ///    Sex for a 6 Metal can be very straightforward, 
+        ///    almost conserva [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string heaven_sexuality {
+        public static string heaven_sexuality_men {
             get {
-                return ResourceManager.GetString("heaven_sexuality", resourceCulture);
+                return ResourceManager.GetString("heaven_sexuality_men", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Having the full force of heaven/male/father/metal 
+        ///    as the principal driving force in your sexuality can 
+        ///    be an appealing and powerful quality for a man. 
+        ///    However, if you are a woman this may make you too 
+        ///    authoritative and dominant in the relationship. As 
+        ///    a 6 Metal you are renowned for your strength, bold- 
+        ///    ness and consistency, and have a great sense oftrust 
+        ///    in your partner. 
+        ///    Sex for a 6 Metal can be very straightforward, 
+        ///    almost conserva [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_sexuality_women {
+            get {
+                return ResourceManager.GetString("heaven_sexuality_women", resourceCulture);
             }
         }
         
@@ -2840,12 +2880,12 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    7 Lake children are naturally fun-loving and it is very important for them to have plenty of social interaction. 7 Lake children&apos;s naturally gregarious and outgoing character could easily be damanged if they spend too much time alone in their formative years and could lead to their being withdrawn, aloof and introverted later on in life.
+        ///    7 Metal children are naturally fun-loving and it is very important for them to have plenty of social interaction. 7 Lake children&apos;s naturally gregarious and outgoing character could easily be damanged if they spend too much time alone in their formative years and could lead to their being withdrawn, aloof and introverted later on in life.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    7 Lake children are quite independent and free-spirited and this should be encouraged by allowing them greater freedom.
+        ///    Lake children are quite independent and free-spirited and this should be encouraged by allowing them greater freedom.
         ///
-        ///    However, care must b [rest of string was truncated]&quot;;.
+        ///    However, care must be [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_child {
             get {
@@ -2869,9 +2909,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///7 Lake characters are generally very &lt;strong&gt;easy-going and adaptable&lt;/strong&gt;. Many express themselves with great &lt;strong&gt;diplomacy&lt;/strong&gt; and they often have a &lt;strong&gt;great capacity to listen to others&lt;/strong&gt; and to make them feel understood and validated, thanks to their &lt;strong&gt;patient and compassionate&lt;/strong&gt; nature.
+        ///    7 Metal characters are generally very &lt;strong&gt;easy-going and adaptable&lt;/strong&gt;. Many express themselves with great &lt;strong&gt;diplomacy&lt;/strong&gt; and they often have a &lt;strong&gt;great capacity to listen to others&lt;/strong&gt; and to make them feel understood and validated, thanks to their &lt;strong&gt;patient and compassionate&lt;/strong&gt; nature.
         ///&lt;p&gt;
-        ///    7 Lake characters typically make &lt;strong&gt;great hosts&lt;/strong&gt;, owing to their &lt;strong&gt;charming, laid-back nature&lt;/strong&gt;. They are usually very &lt;strong&gt;expressive an [rest of string was truncated]&quot;;.
+        ///    Lake characters typically make &lt;strong&gt;great hosts&lt;/strong&gt;, owing to their &lt;strong&gt;charming, laid-back nature&lt;/strong&gt;. They are usually very &lt;strong&gt;expressive [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_emotional_description {
             get {
@@ -3409,13 +3449,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    8 Mountain children also need structure and routine and should be encouraged develop self-discipline early on in their lives.
+        ///    Mountain children also need structure and routine and should be encouraged develop self-discipline early on in their lives.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    It is highly beneficial to encourage 8 Mountain children to develop their innate strengths through intellectual argument, such as debate and discussion on a wide range of topics.
+        ///    It is highly beneficial to encourage Mountain children to develop their innate strengths through intellectual argument, such as debate and discussion on a wide range of topics.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///   8 Mountain children are harmed by over-indulgence and hypocritical behaviour on the part of parents or teachers. They require consistency and clear direction from adul [rest of string was truncated]&quot;;.
+        ///   8 Earth children are harmed by over-indulgence and hypocritical behaviour on the part of parents or teachers. They require consistency and clear direction from adults who  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_child {
             get {
@@ -3439,10 +3479,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    8 Mountain characters are by far the &lt;strong&gt;most private of all of the Energies&lt;/strong&gt;. They &lt;strong&gt;value their own space&lt;/strong&gt; and can be &lt;strong&gt;verbally very uncommunicative&lt;/strong&gt;. Some 8 Mountain characters may find other channels for self expression, such as music, art or through their work.
+        ///    8 Earth characters are by far the &lt;strong&gt;most private of all of the Energies&lt;/strong&gt;. They &lt;strong&gt;value their own space&lt;/strong&gt; and can be &lt;strong&gt;verbally very uncommunicative&lt;/strong&gt;. Some 8 Mountain characters may find other channels for self expression, such as music, art or through their work.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    The Mountain is a good description of this character, with its &lt;strong&gt;hard exterior protecting a much softer underbelly&lt;/strong&gt;, which is usually only revealed once people get t [rest of string was truncated]&quot;;.
+        ///    The Mountain is a good description of this character, with its &lt;strong&gt;hard exterior protecting a much softer underbelly&lt;/strong&gt;, which is usually only revealed once people get to k [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_emotional_description {
             get {
@@ -4406,15 +4446,15 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    2 Soil children need a lot of consistency from their parents, teachers. Promises should be kept and a steady routine put in place.
+        ///    2 Earth children need a lot of consistency from their parents, teachers. Promises should be kept and a steady routine put in place.
         ///
         ///    Their character can be damaged if their caregivers frequently break their promises or fail to observe the moral standards they set.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    2 Soil children tend to have a very diplomatic nature, even at an early age. They may often adopt the role of peacemaker when siblings and friends fall out.
+        ///    Soil children tend to have a very diplomatic nature, even at an early age. They may often adopt the role of peacemaker when siblings and friends fall out.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    These children have a strong sense of justic [rest of string was truncated]&quot;;.
+        ///    These children have a strong sense of justice [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_child {
             get {
@@ -4439,15 +4479,15 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    2 Soil characters tend to be &lt;strong&gt;stable, reliable and helpful&lt;/strong&gt; people.
+        ///    Soil characters tend to be &lt;strong&gt;stable, reliable and helpful&lt;/strong&gt; people.
         ///
         ///    They are often quite &lt;strong&gt;dedicated to their families as well as to their work&lt;/strong&gt;, where they like to get to get stuck in and actively participate in activities.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    2 Soil characters are usually &lt;strong&gt;tactful and diplomatic&lt;/strong&gt;. They are quite willing to put others&apos; needs first. In fact they get a deep sense of satisfaction from it.
+        ///    Soil characters are usually &lt;strong&gt;tactful and diplomatic&lt;/strong&gt;. They are quite willing to put others&apos; needs first. In fact they get a deep sense of satisfaction from it.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    2 Soil characters also need to be [rest of string was truncated]&quot;;.
+        ///    2 Earth characters also need to be ca [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_emotional_description {
             get {
@@ -4525,18 +4565,18 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    2 Soil women often embody the full expression of femininity
+        ///    Soil women often embody the full expression of femininity
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    2 Soil women often embody the full expression of femininity and sensuality. They are typically attracted to more Yang energies, who are willing to make the first move.
+        ///    Soil women often embody the full expression of femininity and sensuality. They are typically attracted to more Yang energies, who are willing to make the first move.
         ///    
         ///    They also have a mothering nature, which natrually comes out in relationships.
         ///&lt;/p&gt;
         ///&lt;h5&gt;
-        ///    2 Soil Energies may appear reserved, but make extremely supportie partners
+        ///    2 Earth Energies may appear reserved, but make extremely supportie partners
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Although they may appear somewhat reserved sexually, 2 Soi [rest of string was truncated]&quot;;.
+        ///    Although they may appear somewhat reserved sexually, Soil Ene [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_sexuality_female {
             get {
@@ -4546,10 +4586,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    2 Soil men are typically gentle and nurturing and relationships
+        ///    Soil men are typically gentle and nurturing and relationships
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    2 Soil men are gentle and nurturing and often have quite a mothering quality to them, which may be attractive to potential mates or not, depending on what they are looking for. Due to gender stereotypes that exist today, many men, especially straight men, feel uncomfortable expressing this role. Similarly, potential mates may subconsciously judge 2 Soil men as overly mothering and feminine, unaware that they may be re [rest of string was truncated]&quot;;.
+        ///    Soil men are gentle and nurturing and often have quite a mothering quality to them, which may be attractive to potential mates or not, depending on what they are looking for. Due to gender stereotypes that exist today, many men, especially straight men, feel uncomfortable expressing this role. Similarly, potential mates may subconsciously judge 2 Soil men as overly mothering and feminine, unaware that they may be respon [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_sexuality_male {
             get {
@@ -4907,15 +4947,15 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    It is vital to allow 3 Thunder child to explore his or her talents and interests to the full. 
+        ///    It is vital to allow the Thunder child to explore his or her talents and interests to the full. 
         ///    
         ///    Encourage them to pursue their interests and do any practice necessary.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    3 Thunder children are exceptionally curious. It is important not to discourage them in any way and, whilst their endless questions can be become tiring, try your best not to ignore them, as this can be detrimental to their development.
+        ///    Thunder children are exceptionally curious. It is important not to discourage them in any way and, whilst their endless questions can be become tiring, try your best not to ignore them, as this can be detrimental to their development.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    3 Thunder children are quite sociable and it&apos;s not uncom [rest of string was truncated]&quot;;.
+        ///    3 Tree children are quite sociable and it&apos;s not uncommon [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_child {
             get {
@@ -4939,16 +4979,16 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    3 Thunder has the full force of spring in its nature, or the dawn.
+        ///    The 3 Tree character has the full force of spring in its nature, or the dawn.
         ///
-        ///    3 Thunder characters are &lt;strong&gt;forward-thinking and enjoy initiating new projects&lt;/strong&gt; and
+        ///    Thunder characters are &lt;strong&gt;forward-thinking and enjoy initiating new projects&lt;/strong&gt; and
         ///    discussing new concepts.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    3 Thunder characters tend to be &lt;strong&gt;very lively and energetic&lt;/strong&gt;. They can also be very &lt;strong&gt;verbally expressive&lt;/strong&gt; and some of the quieter Energies may find them a &lt;strong&gt;overly talkative at times&lt;/strong&gt;.
+        ///    3 Tree characters tend to be &lt;strong&gt;very lively and energetic&lt;/strong&gt;. They can also be very &lt;strong&gt;verbally expressive&lt;/strong&gt; and some of the quieter Energies may find them a &lt;strong&gt;overly talkative at times&lt;/strong&gt;.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Whilst 3 Thunder characters are full of br [rest of string was truncated]&quot;;.
+        ///    Whilst Thunder characters are full o [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_emotional_description {
             get {
@@ -5520,10 +5560,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Like the wind, 4 Wind Energies can express anything from stillness to a tornado. This Energy is &lt;strong&gt;one of the most changeable and indeed emotional&lt;/strong&gt; of the nine Energies.
+        ///    Wind Energies, as the name suggests, can express anything from stillness to a tornado. This Energy is &lt;strong&gt;one of the most changeable and indeed emotional&lt;/strong&gt; of the nine Energies.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Like Thunder Energies, also of the element Tree, Wind Energies &lt;strong&gt;can be impulsive&lt;/strong&gt; at times. However, they typically have a &lt;strong&gt;gentler, steadier nature&lt;/strong&gt; than 3 Tree Energies. Similarly, they are generally a lot &lt;strong&gt;more reliable and thoughtful&lt;/strong&gt; than 3 Energies. The [rest of string was truncated]&quot;;.
+        ///    Like Thunder Energies, also of the element Tree, Wind Energies &lt;strong&gt;can be impulsive&lt;/strong&gt; at times. However, they typically have a &lt;strong&gt;gentler, steadier nature&lt;/strong&gt; than 3 Tree Energies. Similarly, they are generally a lot &lt;strong&gt;more reliable and thoughtful&lt;/strong&gt; than 3 Energie [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_description {
             get {
@@ -5533,13 +5573,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The 4 Wind character is &lt;strong&gt;exceptionally adaptable&lt;/strong&gt;. However, they do require quite a bit of support from others.
+        ///    The Wind character is &lt;strong&gt;exceptionally adaptable&lt;/strong&gt;. However, they do require quite a bit of support from others.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///   4 Wind is also called &apos;Wind&apos; and this is quite an apt description, as these characters can be &lt;strong&gt;extremely changeable, scatty and unpredictable at times&lt;/strong&gt;, especially when under stress.
+        ///   4 Tree is also called &apos;Wind&apos; and this is quite an apt description, as these characters can be &lt;strong&gt;extremely changeable, scatty and unpredictable at times&lt;/strong&gt;, especially when under stress.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    4 Winds have a &lt;strong&gt;sensitive and emotional nature&lt;/strong&gt;, which makes them prone to &lt;strong&gt;mood swings&lt;/strong&gt; at times. They are very &lt;str [rest of string was truncated]&quot;;.
+        ///    4 Trees have a &lt;strong&gt;sensitive and emotional nature&lt;/strong&gt;, which makes them prone to &lt;strong&gt;mood swings&lt;/strong&gt; at times. They are very &lt;stron [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_emotional_description {
             get {
@@ -5621,7 +5661,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The sexual nature of 4 Tree Energies combines the blossoming, dynamic force of spring with the more changeable quality of wind. This means that they are typically rather expressive, forthcoming and romantic, on the one hand, but can be extremely changeable and even fickle on the other.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The deeply trusting nature of Wind Energies, combined with their spontaneity, can result in their being overly impulsive in sexual relationships. They may find themselves having many different sexual  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_sexuality {
             get {

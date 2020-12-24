@@ -4711,6 +4711,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Standard Membership.
+        /// </summary>
+        public static string StandardMembership {
+            get {
+                return ResourceManager.GetString("StandardMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Starts On.
         /// </summary>
         public static string StartsOnLabel {

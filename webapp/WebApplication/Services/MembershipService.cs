@@ -59,7 +59,7 @@ namespace K9.WebApplication.Services
 
             return new MembershipViewModel
             {
-                Memberships = new List<MembershipModel>(membershipOptions.Select(membershipOption =>
+                MembershipModels = new List<MembershipModel>(membershipOptions.Select(membershipOption =>
                 {
                     var isSubscribed = activeUserMemberships.FirstOrDefault(_ =>
                                           _.UserId == userId & _.MembershipOptionId == membershipOption.Id) != null;

@@ -1525,4 +1525,7 @@
   <data name="UpgradeMembershipFullText" xml:space="preserve">
     <value>Upgrade your membership now, to access more details and features.</value>
   </data>
+  <data name="StandardMembership" xml:space="preserve">
+    <value>Standard Membership</value>
+  </data>
 </root>

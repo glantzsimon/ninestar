@@ -3269,20 +3269,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div&gt;&lt;strong&gt;Your membership will also help to fund:&lt;/strong&gt;&lt;/div&gt;
-        ///&lt;br /&gt;
-        ///&lt;ul&gt;
-        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; The tools necessary for the upkeep of the village plantations (wheelbarrow, brush cutters, machetes, axes, watering cans, etc.),&lt;/li&gt;
-        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; The living wages of the villagers maintaining the plantations (15 euros per week per person)&lt;/li&gt;
-        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Proper admin [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string membership_additional_information {
-            get {
-                return ResourceManager.GetString("membership_additional_information", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Membership.
         /// </summary>
         public static string MembershipLabel {

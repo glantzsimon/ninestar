@@ -316,7 +316,6 @@
     <Content Include="Text\en-gb\cookies-blurb.txt" />
     <Content Include="Articles\en-gb\AgreeToTerms.htm" />
     <Content Include="Articles\en-gb\PrivacyPolicy.htm" />
-    <Content Include="Articles\en-gb\membership-additional-information.htm" />
     <Content Include="Articles\en-gb\platinum-membership-description.htm" />
     <Content Include="Articles\en-gb\RelationshipsMetaDescription.htm" />
     <Content Include="Text\en-gb\nine-star-ki-title.txt" />

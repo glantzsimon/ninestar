@@ -70,7 +70,7 @@
                             </h5>
                             @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership")
                         }
-                        if (Model.ReadingType == EReadingType.Complete)
+                        else if (Model.ReadingType == EReadingType.Complete)
                         {
                             @Html.Panel(Model.EnergySexualityLabel, Model.MainEnergySexualityDetails)
 

@@ -1,24 +1,13 @@
-﻿using K9.Base.DataAccessLayer.Enums;
-using K9.DataAccessLayer.Models;
+﻿using K9.DataAccessLayer.Models;
 using K9.WebApplication.Controllers;
 using System;
-using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
 
 namespace K9.WebApplication.Extensions
 {
-    public static class Extensions
+    public static partial class Extensions
     {
-        public static bool IsYin(this EGender gender)
-        {
-            return new List<EGender>
-            {
-                EGender.Female,
-                EGender.Other,
-            }.Contains(gender);
-        }
-
         public static string ToSeoFriendlyString(this string value)
         {
             var regex = new Regex("[^a-zA-Z0-9 -]");

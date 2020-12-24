@@ -291,7 +291,9 @@
     <Compile Include="Controllers\RelationshipsController.cs" />
     <Compile Include="Enums\EReadingType.cs" />
     <Compile Include="Enums\EElementChemistryLevel.cs" />
+    <Compile Include="Enums\ETransformationType.cs" />
     <Compile Include="Enums\ESexualityType.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Helpers\ViewBagHelper.cs" />
     <Compile Include="Constants\ViewDataConstants.cs" />

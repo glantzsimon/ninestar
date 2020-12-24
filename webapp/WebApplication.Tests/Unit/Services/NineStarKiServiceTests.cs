@@ -261,7 +261,12 @@ namespace K9.WebApplication.Tests.Unit.Services
         }
 
         [Theory]
+        [InlineData(1981, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, EElementChemistryLevel.MediumToHigh)]
+        [InlineData(1980, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, EElementChemistryLevel.Medium)]
         [InlineData(1979, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, EElementChemistryLevel.VeryHigh)]
+        [InlineData(1979, 6, 16, EGender.Male, 1983, 6, 21, EGender.Male, EElementChemistryLevel.High)]
+        [InlineData(1979, 6, 16, EGender.Male, 1978, 6, 21, EGender.Male, EElementChemistryLevel.Low)]
+        [InlineData(1979, 6, 16, EGender.Male, 1979, 6, 21, EGender.Male, EElementChemistryLevel.VeryLow)]
         public void Calculate_ChemistryLevel(int year1, int month1, int day1, EGender gender1, int year2, int month2, int day2, EGender gender2, EElementChemistryLevel chemistryLevel)
         {
             var nineStarKiService = new NineStarKiService(new Mock<IMembershipService>().Object, new Mock<IAuthentication>().Object, new Mock<IRoles>().Object);
@@ -274,7 +279,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             {
                 DateOfBirth = new DateTime(year2, month2, day2),
                 Gender = gender2
-            }).ElementChemistryLevel);
+            }).MainElementChemistryLevel);
         }
 
     }

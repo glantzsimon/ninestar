@@ -5,7 +5,8 @@
         Unspecified,
         VeryLow,
         Low,
-        Moderate,
+        Medium,
+        MediumToHigh,
         High,
         VeryHigh
     }

@@ -12,6 +12,8 @@ namespace K9.WebApplication.Services
         MembershipViewModel GetMembershipViewModel(int? userId = null);
         MembershipModel GetSwitchMembershipModel(int membershipOptionId);
         MembershipModel GetPurchaseMembershipModel(int membershipOptionId);
+        MembershipModel GetSwitchMembershipModelBySubscriptionType(MembershipOption.ESubscriptionType subscriptionType);
+        MembershipModel GetPurchaseMembershipModelBySubscriptionType(MembershipOption.ESubscriptionType subscriptionType);
         StripeModel GetPurchaseStripeModel(int membershipOptionId);
         void ProcessPurchase(StripeModel model);
         /// <summary>

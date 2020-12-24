@@ -28,6 +28,7 @@ namespace K9.WebApplication.Models
 
         public NineStarKiModel NineStarKiModel1 { get; }
         public NineStarKiModel NineStarKiModel2 { get; }
+
         public ECompatibilityScore FundamentalEnergyChemistryScore { get; }
         public ECompatibilityScore FundamentalEnergyLearningPotentialScore { get; }
         public ECompatibilityScore FundamentalEnergyConflictPotentialScore { get; }

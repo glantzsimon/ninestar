@@ -6,6 +6,7 @@ using K9.WebApplication.Services;
 using NLog;
 using System;
 using System.Web.Mvc;
+using Microsoft.Ajax.Utilities;
 
 namespace K9.WebApplication.Controllers
 {
@@ -26,7 +27,7 @@ namespace K9.WebApplication.Controllers
             return View();
         }
 
-        [Route("relationships/calculate-compatibility")]
+        [Route("relationships/compatibility")]
         public ActionResult Compatibility()
         {
             var dateOfBirth = new DateTime(DateTime.Now.Year - (24), DateTime.Now.Month, DateTime.Now.Day);
@@ -34,17 +35,17 @@ namespace K9.WebApplication.Controllers
             {
                 DateOfBirth = dateOfBirth
             };
-            return View(new NineStarKiModel(personModel));
+            return View(new CompatibilityModel(new NineStarKiModel(personModel), new NineStarKiModel(personModel)));
         }
 
-        [Route("relationships/calculate-compatibility")]
+        [Route("relationships/compatibility")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Compatibility(NineStarKiModel model)
+        public ActionResult Compatibility(CompatibilityModel model)
         {
-            if (model.PersonModel != null)
+            if (model.NineStarKiModel1?.PersonModel != null && model.NineStarKiModel2?.PersonModel != null)
             {
-                model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel);
+                model = _nineStarKiService.CalculateCompatibility(model.NineStarKiModel1.PersonModel, model.NineStarKiModel2.PersonModel);
             }
             return View("Index", model);
         }
@@ -53,7 +54,7 @@ namespace K9.WebApplication.Controllers
         {
             return string.Empty;
         }
-        
+
         private static void SetBetaWarningSessionVariable()
         {
             var numberOfDisplays = Helpers.SessionHelper.GetIntValue(Constants.SessionConstants.BetaWarningDisplay);

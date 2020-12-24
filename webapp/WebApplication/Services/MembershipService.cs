@@ -193,6 +193,18 @@ namespace K9.WebApplication.Services
             };
         }
 
+        public MembershipModel GetSwitchMembershipModelBySubscriptionType(MembershipOption.ESubscriptionType subscriptionType)
+        {
+            var membershipOption = _membershipOptionRepository.Find(e => e.SubscriptionType == subscriptionType).FirstOrDefault();
+            return GetSwitchMembershipModel(membershipOption?.Id ?? 0);
+        }
+
+        public MembershipModel GetPurchaseMembershipModelBySubscriptionType(MembershipOption.ESubscriptionType subscriptionType)
+        {
+            var membershipOption = _membershipOptionRepository.Find(e => e.SubscriptionType == subscriptionType).FirstOrDefault();
+            return GetPurchaseMembershipModel(membershipOption?.Id ?? 0);
+        }
+
         public StripeModel GetPurchaseStripeModel(int membershipOptionId)
         {
             var membershipOption = _membershipOptionRepository.Find(membershipOptionId);

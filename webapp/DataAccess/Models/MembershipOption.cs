@@ -57,7 +57,7 @@ namespace K9.DataAccessLayer.Models
         [Required]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MaxNumberOfCompatibilityReadingsLabel)]
         public int MaxNumberOfCompatibilityReadings { get; set; }
-   
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubscriptionCostLabel)]
         public string FormattedPrice => Price.ToString("C0", Thread.CurrentThread.CurrentUICulture);
 
@@ -87,6 +87,8 @@ namespace K9.DataAccessLayer.Models
             new[] { ESubscriptionType.AnnualPlatinum, ESubscriptionType.AnnualStandard }.Contains(SubscriptionType);
 
         public bool IsUpgradable => SubscriptionType < ESubscriptionType.AnnualPlatinum;
+
+        public bool IsUnlimited => SubscriptionType == ESubscriptionType.AnnualPlatinum || SubscriptionType == ESubscriptionType.MonthlyPlatinum;
 
         public bool CanUpgradeFrom(MembershipOption membershipOption) => membershipOption != null && SubscriptionType > membershipOption?.SubscriptionType;
     }

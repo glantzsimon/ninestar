@@ -54,8 +54,17 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfProfileReadingsLeft)]
         public int NumberOfProfileReadingsLeft => MembershipOption.MaxNumberOfProfileReadings - ProfileReadings?.Count ?? 0;
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.NumberOfProfileReadingsLeft)]
+        public string NumberOfProfileReadingsLeftText => MembershipOption.IsUnlimited
+            ? Globalisation.Dictionary.Unlimited : NumberOfProfileReadingsLeft.ToString();
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfRelationshipCompatibilityReadingsLeft)]
         public int NumberOfRelationshipCompatibilityReadingsLeft => MembershipOption.MaxNumberOfCompatibilityReadings - RelationshipCompatibilityReadings?.Count ?? 0;
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfRelationshipCompatibilityReadingsLeft)]
+        public string NumberOfRelationshipCompatibilityReadingsLeftText => MembershipOption.IsUnlimited
+            ? Globalisation.Dictionary.Unlimited : NumberOfRelationshipCompatibilityReadingsLeft.ToString();
 
         public bool IsActive => DateTime.Today.IsBetween(StartsOn.Date, EndsOn.Date);
 

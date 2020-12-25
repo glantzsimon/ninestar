@@ -52,10 +52,10 @@ namespace K9.DataAccessLayer.Models
         public string MembershipOptionName { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfProfileReadingsLeft)]
-        public int NumberOfProfileReadingsLeft => MembershipOption.MaxNumberOfProfileReadings - ProfileReadings.Count;
+        public int NumberOfProfileReadingsLeft => MembershipOption.MaxNumberOfProfileReadings - ProfileReadings?.Count ?? 0;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfRelationshipCompatibilityReadingsLeft)]
-        public int NumberOfRelationshipCompatibilityReadingsLeft => MembershipOption.MaxNumberOfCompatibilityReadings - RelationshipCompatibilityReadings.Count;
+        public int NumberOfRelationshipCompatibilityReadingsLeft => MembershipOption.MaxNumberOfCompatibilityReadings - RelationshipCompatibilityReadings?.Count ?? 0;
 
         public bool IsActive => DateTime.Today.IsBetween(StartsOn.Date, EndsOn.Date);
 

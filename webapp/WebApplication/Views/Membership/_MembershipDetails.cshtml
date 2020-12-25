@@ -13,14 +13,11 @@
     </div>
     <div class="membership-option">
         @Html.Partial("../Membership/_MembershipMedal", Model.MembershipOption)
-        @if (Model.MembershipOption.IsUpgradable)
-        {
-            <div class="membership-footer">
-                <div class="membership-selected-container">
-                    @Html.Partial("_Selected")
-                    @Html.Partial("../Membership/_MembershipValidUntil")
-                </div>
+        <div class="membership-footer">
+            <div class="membership-selected-container">
+                @Html.Partial("_Selected")
+                @Html.Partial("../Membership/_MembershipFooter")
             </div>
-        }
+        </div>
     </div>
 </div>

@@ -1049,7 +1049,7 @@
     <Content Include="Views\Membership\_MembershipDetails.cshtml" />
     <Content Include="Views\Membership\_MembershipMedal.cshtml" />
     <Content Include="Views\Membership\_MembershipOption.cshtml" />
-    <Content Include="Views\Membership\_MembershipValidUntil.cshtml" />
+    <Content Include="Views\Membership\_MembershipFooter.cshtml" />
     <Content Include="Views\UserMemberships\Index.cshtml" />
     <Content Include="Views\Contacts\Create.cshtml" />
     <Content Include="Views\Contacts\Delete.cshtml" />

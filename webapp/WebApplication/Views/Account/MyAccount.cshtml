@@ -5,37 +5,39 @@
     Layout = "~/Views/Shared/_LayoutFormSmall.cshtml";
 }
 
-<ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#account">@Dictionary.UpdateYourDetails</a></li>
-    @if (Model.Membership != null)
-    {
-        <li><a data-toggle="tab" href="#membership">@Dictionary.YourCurrentMembership</a></li>
-    }
-</ul>
-
-<div class="tab-content">
-    <div id="account" class="tab-pane fade in active">
-        @Html.Partial("_AccountDetails", Model.User)
-    </div>
-    <div id="membership" class="tab-pane fade padding-20">
+@using (Html.BeginBootstrapForm())
+{
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#account">@Dictionary.UpdateYourDetails</a></li>
         @if (Model.Membership != null)
         {
-            @Html.Partial("../Membership/_MembershipDetails", Model.Membership)
-            <div class="text-center">
-                @if (Model.Membership.MembershipOption.IsUpgradable)
-                {
-                    @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership")
-                }
-            </div>
+            <li><a data-toggle="tab" href="#membership">@Dictionary.YourCurrentMembership</a></li>
         }
-        else
-        {
-            <div class="support-us-option shadow-light shadow-hover">
-                <a href="@Url.Action("Index", "Membership")">
-                    <h4>@MvcHtmlString.Create(Dictionary.UpgradeMembershipText)</h4>
-                </a>
-            </div>
-        }
+    </ul>
+    
+    <div class="tab-content">
+        <div id="account" class="tab-pane fade in active padding-top-20">
+            @Html.Partial("_AccountDetails", Model.User)
+        </div>
+        <div id="membership" class="tab-pane fade padding-20">
+            @if (Model.Membership != null)
+            {
+                @Html.Partial("../Membership/_MembershipDetails", Model.Membership)
+                <div class="text-center">
+                    @if (Model.Membership.MembershipOption.IsUpgradable)
+                    {
+                        @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership")
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="support-us-option shadow-light shadow-hover">
+                    <a href="@Url.Action("Index", "Membership")">
+                        <h4>@MvcHtmlString.Create(Dictionary.UpgradeMembershipText)</h4>
+                    </a>
+                </div>
+            }
+        </div>
     </div>
-</div>
-
+}

@@ -3796,7 +3796,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Number of Profile Readings Left.
+        ///   Looks up a localized string similar to Profile Readings Remaining.
         /// </summary>
         public static string NumberOfProfileReadingsLeft {
             get {
@@ -3805,7 +3805,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Numbe of Relationship Compatibility Readings Left.
+        ///   Looks up a localized string similar to Compatibility Readings Remaining.
         /// </summary>
         public static string NumberOfRelationshipCompatibilityReadingsLeft {
             get {

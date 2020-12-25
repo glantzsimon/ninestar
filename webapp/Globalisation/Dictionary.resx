@@ -1415,10 +1415,10 @@
     <value>Number of Profile Readings per month</value>
   </data>
   <data name="NumberOfProfileReadingsLeft" xml:space="preserve">
-    <value>Number of Profile Readings Left</value>
+    <value>Profile Readings Remaining</value>
   </data>
   <data name="NumberOfRelationshipCompatibilityReadingsLeft" xml:space="preserve">
-    <value>Numbe of Relationship Compatibility Readings Left</value>
+    <value>Compatibility Readings Remaining</value>
   </data>
   <data name="UpgradeMembershipText" xml:space="preserve">
     <value>Upgrade your subscription</value>

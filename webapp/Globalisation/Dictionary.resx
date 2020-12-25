@@ -1115,7 +1115,7 @@
     <value>Ends On</value>
   </data>
   <data name="MembershipOptions" xml:space="preserve">
-    <value>Membership Options</value>
+    <value>Subscription Packages</value>
   </data>
   <data name="NotRegisteredYet" xml:space="preserve">
     <value>Not yet signed up?</value>
@@ -1130,10 +1130,10 @@
     <value>Switch</value>
   </data>
   <data name="SwitchMembershipErrorAlreadySubscribed" xml:space="preserve">
-    <value>You cannot switch memberships as you are already subscribed to the selected one.</value>
+    <value>You are already signed up to the selected subscription.</value>
   </data>
   <data name="SwitchMembershipErrorNotSubscribed" xml:space="preserve">
-    <value>You cannot switch memberships as you are not currently subscribed to any.</value>
+    <value>You cannot switch subscriptions as you are not currently signed up.</value>
   </data>
   <data name="SwitchSuccessful" xml:space="preserve">
     <value>Your successfully updated your subscription. Thank you!</value>
@@ -1151,37 +1151,37 @@
     <value>Email Address</value>
   </data>
   <data name="MembershipOption" xml:space="preserve">
-    <value>Membership Option</value>
+    <value>Subscription Package</value>
   </data>
   <data name="PurchaseMembershipErrorAlreadySubscribed" xml:space="preserve">
-    <value>You cannot purchase the selected membership as you are already subscribed.</value>
+    <value>You are already signed up to the selected subscription.</value>
   </data>
   <data name="PurchaseMembershipErrorAlreadySubscribedToAnother" xml:space="preserve">
-    <value>You cannot purchase the selected membership as you have an existing subscription.</value>
+    <value>You cannot purchase the selected subscription as you have an existing one.</value>
   </data>
   <data name="Select" xml:space="preserve">
     <value>Select</value>
   </data>
   <data name="SelectedPurchaseText" xml:space="preserve">
-    <value>You have selected the following Membership option</value>
+    <value>You have selected the following subscription</value>
   </data>
   <data name="SubscriptionDiscountLabel" xml:space="preserve">
     <value>Subscription Discount</value>
   </data>
   <data name="UpgradeMembership" xml:space="preserve">
-    <value>Upgrade Membership</value>
+    <value>Upgrade Subscription</value>
   </data>
   <data name="AnnualPlatinumMembership" xml:space="preserve">
-    <value>Annual Platinum Membership</value>
+    <value>Annual Platinum Subscription</value>
   </data>
   <data name="AnnualStandardMembership" xml:space="preserve">
-    <value>Annual Standard Membership</value>
+    <value>Annual Standard Subscription</value>
   </data>
   <data name="Back" xml:space="preserve">
     <value>Back</value>
   </data>
   <data name="ChangeMembership" xml:space="preserve">
-    <value>Change Membership</value>
+    <value>Change Subscription</value>
   </data>
   <data name="CompanyLabel" xml:space="preserve">
     <value>Company Name</value>
@@ -1196,19 +1196,19 @@
     <value>Your contacts were successfully imported into MailChimp</value>
   </data>
   <data name="MembershipLabel" xml:space="preserve">
-    <value>Membership</value>
+    <value>Subscription</value>
   </data>
   <data name="MembershipRunsUntil" xml:space="preserve">
-    <value>Your current membership runs until</value>
+    <value>Your current subscription runs until</value>
   </data>
   <data name="Monthly" xml:space="preserve">
     <value>Monthly</value>
   </data>
   <data name="MonthlyPlatinumMembership" xml:space="preserve">
-    <value>Monthly Platinum Membership</value>
+    <value>Monthly Platinum Subscription</value>
   </data>
   <data name="MonthlyStandardMembership" xml:space="preserve">
-    <value>Monthly Standard Membership</value>
+    <value>Monthly Standard Subscription</value>
   </data>
   <data name="NineStar" xml:space="preserve">
     <value>NineStar</value>
@@ -1217,7 +1217,7 @@
     <value>You will not be charged for this change in plan until</value>
   </data>
   <data name="PlatinumMembership" xml:space="preserve">
-    <value>Platinum Membership</value>
+    <value>Platinum Subscription</value>
   </data>
   <data name="PrivacyPolicyTitle" xml:space="preserve">
     <value>Privacy Policy</value>
@@ -1421,7 +1421,7 @@
     <value>Numbe of Relationship Compatibility Readings Left</value>
   </data>
   <data name="UpgradeMembershipText" xml:space="preserve">
-    <value>Upgrade your membership now</value>
+    <value>Upgrade your subscription now</value>
   </data>
   <data name="AgreeToTerms" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\agreetoterms.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -1523,9 +1523,9 @@
     <value>articles\en-gb\thunder-sexuality-male.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="UpgradeMembershipFullText" xml:space="preserve">
-    <value>Upgrade your membership now, to access more details and features.</value>
+    <value>Upgrade your subscription now, to access more details and features.</value>
   </data>
   <data name="StandardMembership" xml:space="preserve">
-    <value>Standard Membership</value>
+    <value>Standard Subscription</value>
   </data>
 </root>

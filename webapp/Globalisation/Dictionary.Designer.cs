@@ -1357,7 +1357,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Annual Platinum Membership.
+        ///   Looks up a localized string similar to Annual Platinum Subscription.
         /// </summary>
         public static string AnnualPlatinumMembership {
             get {
@@ -1366,7 +1366,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Annual Standard Membership.
+        ///   Looks up a localized string similar to Annual Standard Subscription.
         /// </summary>
         public static string AnnualStandardMembership {
             get {
@@ -1465,7 +1465,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Change Membership.
+        ///   Looks up a localized string similar to Change Subscription.
         /// </summary>
         public static string ChangeMembership {
             get {
@@ -3269,7 +3269,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Membership.
+        ///   Looks up a localized string similar to Subscription.
         /// </summary>
         public static string MembershipLabel {
             get {
@@ -3278,7 +3278,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Membership Option.
+        ///   Looks up a localized string similar to Subscription Package.
         /// </summary>
         public static string MembershipOption {
             get {
@@ -3287,7 +3287,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Membership Options.
+        ///   Looks up a localized string similar to Subscription Packages.
         /// </summary>
         public static string MembershipOptions {
             get {
@@ -3296,7 +3296,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your current membership runs until.
+        ///   Looks up a localized string similar to Your current subscription runs until.
         /// </summary>
         public static string MembershipRunsUntil {
             get {
@@ -3399,7 +3399,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Monthly Platinum Membership.
+        ///   Looks up a localized string similar to Monthly Platinum Subscription.
         /// </summary>
         public static string MonthlyPlatinumMembership {
             get {
@@ -3408,7 +3408,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Monthly Standard Membership.
+        ///   Looks up a localized string similar to Monthly Standard Subscription.
         /// </summary>
         public static string MonthlyStandardMembership {
             get {
@@ -3967,7 +3967,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div&gt;
-        ///    &lt;h4&gt;&lt;strong&gt;With the Platinum Membership you get:&lt;/strong&gt;&lt;/h4&gt;
+        ///    &lt;h4&gt;&lt;strong&gt;With the Platinum Subscription you get:&lt;/strong&gt;&lt;/h4&gt;
         ///    &lt;p&gt;
         ///        &amp;#8226; Unlimited full Personal Profile readings.
         ///    &lt;/p&gt;
@@ -3983,7 +3983,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Platinum Membership.
+        ///   Looks up a localized string similar to Platinum Subscription.
         /// </summary>
         public static string PlatinumMembership {
             get {
@@ -4106,7 +4106,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You cannot purchase the selected membership as you are already subscribed..
+        ///   Looks up a localized string similar to You are already signed up to the selected subscription..
         /// </summary>
         public static string PurchaseMembershipErrorAlreadySubscribed {
             get {
@@ -4115,7 +4115,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You cannot purchase the selected membership as you have an existing subscription..
+        ///   Looks up a localized string similar to You cannot purchase the selected subscription as you have an existing one..
         /// </summary>
         public static string PurchaseMembershipErrorAlreadySubscribedToAnother {
             get {
@@ -4192,7 +4192,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You have selected the following Membership option.
+        ///   Looks up a localized string similar to You have selected the following subscription.
         /// </summary>
         public static string SelectedPurchaseText {
             get {
@@ -4695,7 +4695,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div&gt;
-        ///    &lt;h4&gt;&lt;strong&gt;With the Standard Membership you get:&lt;/strong&gt;&lt;/h4&gt;
+        ///    &lt;h4&gt;&lt;strong&gt;With the Standard Subscription you get:&lt;/strong&gt;&lt;/h4&gt;
         ///    &lt;p&gt;
         ///        &amp;#8226; {NumberOfProfileReadings} full Personal Profile readings a month.
         ///    &lt;/p&gt;
@@ -4711,7 +4711,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Standard Membership.
+        ///   Looks up a localized string similar to Standard Subscription.
         /// </summary>
         public static string StandardMembership {
             get {
@@ -4910,7 +4910,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You cannot switch memberships as you are already subscribed to the selected one..
+        ///   Looks up a localized string similar to You are already signed up to the selected subscription..
         /// </summary>
         public static string SwitchMembershipErrorAlreadySubscribed {
             get {
@@ -4919,7 +4919,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You cannot switch memberships as you are not currently subscribed to any..
+        ///   Looks up a localized string similar to You cannot switch subscriptions as you are not currently signed up..
         /// </summary>
         public static string SwitchMembershipErrorNotSubscribed {
             get {
@@ -5265,7 +5265,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upgrade Membership.
+        ///   Looks up a localized string similar to Upgrade Subscription.
         /// </summary>
         public static string UpgradeMembership {
             get {
@@ -5274,7 +5274,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upgrade your membership now, to access more details and features..
+        ///   Looks up a localized string similar to Upgrade your subscription now, to access more details and features..
         /// </summary>
         public static string UpgradeMembershipFullText {
             get {
@@ -5283,7 +5283,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upgrade your membership now.
+        ///   Looks up a localized string similar to Upgrade your subscription now.
         /// </summary>
         public static string UpgradeMembershipText {
             get {

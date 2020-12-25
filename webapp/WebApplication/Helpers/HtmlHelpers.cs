@@ -1,11 +1,9 @@
 ﻿using K9.Base.WebApplication.Helpers;
-using K9.SharedLibrary.Helpers;
 using K9.WebApplication.Options;
 using System;
 using System.Linq.Expressions;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
-using K9.SharedLibrary.Extensions;
 
 namespace K9.WebApplication.Helpers
 {
@@ -33,7 +31,7 @@ namespace K9.WebApplication.Helpers
                 Body = body,
                 Expaded = expanded,
                 Footer = footer,
-                ImageSrc = new UrlHelper(html.ViewContext.RequestContext).Content(imageSrc),
+                ImageSrc = string.IsNullOrEmpty(imageSrc) ? string.Empty : new UrlHelper(html.ViewContext.RequestContext).Content(imageSrc),
                 ImageLayout = imageLayout,
                 ImageSize = imageSize
             });
@@ -51,7 +49,7 @@ namespace K9.WebApplication.Helpers
                 Id = id,
                 Title = title,
                 Body = body,
-                ImageSrc = new UrlHelper(html.ViewContext.RequestContext).Content(imageSrc),
+                ImageSrc = string.IsNullOrEmpty(imageSrc) ? string.Empty : new UrlHelper(html.ViewContext.RequestContext).Content(imageSrc),
                 ImageSize = imageSize,
                 ImageLayout = imageLayout
             });
@@ -67,7 +65,7 @@ namespace K9.WebApplication.Helpers
             return html.Partial("Controls/_ImagePanel", new PanelOptions
             {
                 Title = title,
-                ImageSrc = new UrlHelper(html.ViewContext.RequestContext).Content(imageSrc),
+                ImageSrc = string.IsNullOrEmpty(imageSrc) ? string.Empty : new UrlHelper(html.ViewContext.RequestContext).Content(imageSrc),
                 ImageSize = imageSize,
                 ImageLayout = imageLayout
             });

@@ -1115,7 +1115,7 @@
     <value>Ends On</value>
   </data>
   <data name="MembershipOptions" xml:space="preserve">
-    <value>Subscription Packages</value>
+    <value>Subscriptions</value>
   </data>
   <data name="NotRegisteredYet" xml:space="preserve">
     <value>Not yet signed up?</value>
@@ -1151,7 +1151,7 @@
     <value>Email Address</value>
   </data>
   <data name="MembershipOption" xml:space="preserve">
-    <value>Subscription Package</value>
+    <value>Subscription</value>
   </data>
   <data name="PurchaseMembershipErrorAlreadySubscribed" xml:space="preserve">
     <value>You are already signed up to the selected subscription.</value>
@@ -1421,7 +1421,7 @@
     <value>Numbe of Relationship Compatibility Readings Left</value>
   </data>
   <data name="UpgradeMembershipText" xml:space="preserve">
-    <value>Upgrade your subscription now</value>
+    <value>Upgrade your subscription</value>
   </data>
   <data name="AgreeToTerms" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\agreetoterms.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -1527,5 +1527,11 @@
   </data>
   <data name="StandardMembership" xml:space="preserve">
     <value>Standard Subscription</value>
+  </data>
+  <data name="UpdateYourDetails" xml:space="preserve">
+    <value>Update Your Details</value>
+  </data>
+  <data name="YourSelectedSubscription" xml:space="preserve">
+    <value>Your Selected Subscription</value>
   </data>
 </root>

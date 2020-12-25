@@ -44,6 +44,18 @@
     box-shadow: 0 0 80px rgba(0, 0, 0, 1.2);
 }
 
+.shadow-light {
+    -webkit-box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-hover:hover {
+    -webkit-box-shadow: 0 0 64px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 64px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 64px rgba(0, 0, 0, 0.5);
+}
+
 .small-form {
     max-width: 600px;
 }

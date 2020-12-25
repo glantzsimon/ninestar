@@ -126,3 +126,23 @@
     margin-top: 5px;
     padding: 0;
 }
+
+.support-us-option {
+    display: table;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 150px;
+    height: 200px;
+    border: 1px solid #a7a7a7;
+    border-radius: 6px;
+    padding: 5px;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+
+.support-us-option h4 {
+    color: black;
+    height: 40px;
+}

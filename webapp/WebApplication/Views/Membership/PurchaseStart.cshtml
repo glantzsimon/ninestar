@@ -1,7 +1,7 @@
 ﻿@model K9.WebApplication.Models.MembershipModel
 @{
     ViewBag.Title = Dictionary.MembershipLabel;
-    ViewBag.SubTitle = Dictionary.MembershipLabel;
+    ViewBag.SubTitle = Dictionary.YourSelectedSubscription;
     Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
 
@@ -9,7 +9,7 @@
 {
     using (Html.BeginBootstrapForm())
     {
-        <p class="margin-bottom-30">@Dictionary.SelectedPurchaseText:</p>
+        <h4 class="margin-bottom-30"><strong>@Dictionary.SelectedPurchaseText:</strong></h4>
 
         @Html.Partial("_MembershipOption")
 

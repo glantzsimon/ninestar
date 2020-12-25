@@ -3278,7 +3278,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Subscription Package.
+        ///   Looks up a localized string similar to Subscription.
         /// </summary>
         public static string MembershipOption {
             get {
@@ -3287,7 +3287,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Subscription Packages.
+        ///   Looks up a localized string similar to Subscriptions.
         /// </summary>
         public static string MembershipOptions {
             get {
@@ -5256,6 +5256,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Update Your Details.
+        /// </summary>
+        public static string UpdateYourDetails {
+            get {
+                return ResourceManager.GetString("UpdateYourDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upgrade.
         /// </summary>
         public static string Upgrade {
@@ -5283,7 +5292,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upgrade your subscription now.
+        ///   Looks up a localized string similar to Upgrade your subscription.
         /// </summary>
         public static string UpgradeMembershipText {
             get {
@@ -5824,6 +5833,15 @@ namespace K9.Globalisation {
         public static string YourCurrentMembership {
             get {
                 return ResourceManager.GetString("YourCurrentMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Selected Subscription.
+        /// </summary>
+        public static string YourSelectedSubscription {
+            get {
+                return ResourceManager.GetString("YourSelectedSubscription", resourceCulture);
             }
         }
     }

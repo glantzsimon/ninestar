@@ -131,6 +131,14 @@
     padding: 0 !important;
 }
 
+.padding-10 {
+    padding: 10px !important;
+}
+
+.padding-20 {
+    padding: 20px !important;
+}
+
 .padding-left-0 {
     padding-left: 0 !important;
 }

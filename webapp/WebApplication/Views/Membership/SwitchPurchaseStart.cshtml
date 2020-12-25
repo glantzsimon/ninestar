@@ -1,6 +1,7 @@
 ﻿@model K9.WebApplication.Models.MembershipModel
 @{
-    ViewBag.Title = Dictionary.MembershipOptions;
+    ViewBag.Title = Dictionary.MembershipLabel;
+    ViewBag.SubTitle = Dictionary.YourSelectedSubscription;
     Layout = "../Shared/_LayoutFormSmall.cshtml";
 
     var buttonText = Model.IsUpgrade
@@ -10,16 +11,15 @@
 
 @using (Html.BeginForm("SwitchPurchase", "Membership", FormMethod.Post))
 {
-    <p style="margin-bottom: 25px;">@Dictionary.SelectedPurchaseText</p>
-
-    @Html.Partial("_MembershipOption")
-
     using (Html.BeginBootstrapForm())
     {
+        <h4 class="margin-bottom-30"><strong>@Dictionary.SelectedPurchaseText:</strong></h4>
+
+        @Html.Partial("_MembershipOption")
+
         @Html.Hidden("Id", Model.MembershipOption.Id)
 
-        @Html.BootstrapButton(buttonText, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
-
         <hr />
+        @Html.BootstrapButton(buttonText, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
     }
 }

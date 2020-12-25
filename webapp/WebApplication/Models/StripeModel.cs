@@ -10,7 +10,6 @@ namespace K9.WebApplication.Models
     {
         public string PublishableKey { get; set; }
         private const string AutoLocale = "auto";
-        private const int AmountPerTree = 30;
         public int MembershipOptionId { get; set; }
 
         [Required]

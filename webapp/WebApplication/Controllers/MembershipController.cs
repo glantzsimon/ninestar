@@ -1,5 +1,6 @@
 ﻿using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Config;
 using K9.WebApplication.Models;
 using K9.WebApplication.Services;
 using NLog;
@@ -12,11 +13,13 @@ namespace K9.WebApplication.Controllers
     public class MembershipController : BaseNineStarKiController
     {
         private readonly IMembershipService _membershipService;
+        private readonly StripeConfiguration _stripeConfig;
 
-        public MembershipController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService)
+        public MembershipController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IOptions<StripeConfiguration> stripeConfig)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _membershipService = membershipService;
+            _stripeConfig = stripeConfig.Value;
         }
 
         public ActionResult Index()
@@ -30,7 +33,7 @@ namespace K9.WebApplication.Controllers
             return View(_membershipService.GetPurchaseMembershipModel(id));
         }
 
-        [Route("membership/signup")]
+        [Route("membership/signup/review")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Purchase(int id)
@@ -45,6 +48,7 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
+                model.PublishableKey = _stripeConfig.PublishableKey;
                 _membershipService.ProcessPurchase(model);
                 return RedirectToAction("PurchaseSuccess");
             }
@@ -77,7 +81,7 @@ namespace K9.WebApplication.Controllers
             return View("SwitchPurchaseStart", switchMembershipModel);
         }
 
-        [Route("membership/switch")]
+        [Route("membership/switch/review")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult SwitchPurchase(int id)
@@ -110,6 +114,7 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
+                model.PublishableKey = _stripeConfig.PublishableKey;
                 _membershipService.ProcessPurchase(model);
                 return RedirectToAction("SwitchSuccess");
             }
@@ -122,7 +127,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [HttpPost]
-        [Route("membership/switch/processing")]
+        [Route("membership/switch/free/processing")]
         [ValidateAntiForgeryToken]
         public ActionResult SwitchScheduleProcess(int id)
         {

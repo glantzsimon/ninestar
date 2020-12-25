@@ -1983,7 +1983,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Making a donation to NineStar will make a big impact on our ability to continue to provide and develop this invaluable service. We are tremendously grateful for your support..
+        ///   Looks up a localized string similar to Making a donation to NineStar will make a big impact on our ability to continue to provide and develop this resource. We are tremendously grateful for your support..
         /// </summary>
         public static string DonationBlurb {
             get {

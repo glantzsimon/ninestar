@@ -1,4 +1,0 @@
-﻿deepGreen		#003333
-deepRed			#660033
-lightBrown		#BBA5A2
-

@@ -216,11 +216,11 @@ namespace K9.WebApplication.Services
 
             return new StripeModel
             {
-                PublishableKey = _stripeConfig.PublishableKey,
                 SubscriptionAmount = membershipOption.Price,
                 SubscriptionDiscount = GetCostOfRemainingActiveSubscription(),
                 Description = membershipOption.SubscriptionTypeNameLocal,
                 MembershipOptionId = membershipOptionId,
+                PublishableKey = _stripeConfig.PublishableKey,
                 LocalisedCurrencyThreeLetters = StripeModel.GetLocalisedCurrency()
             };
         }

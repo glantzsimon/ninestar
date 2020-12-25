@@ -69,27 +69,19 @@ namespace K9.WebApplication.Controllers
             return View();
         }
 
-        [Route("donate/start")]
+        [Route("donate")]
         public ActionResult DonateStart()
         {
-            return View(new StripeModel
-            {
-                DonationAmount = 10
-            });
+            return View(_donationService.GetDonationStripeModel());
         }
 
+        [Route("donate")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Donate(StripeModel model)
         {
             model.PublishableKey = _stripeConfig.PublishableKey;
             return View(model);
-        }
-
-        [Route("donate/success")]
-        public ActionResult DonationSuccess()
-        {
-            return View();
         }
 
         [HttpPost]
@@ -99,7 +91,6 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                model.Description = Dictionary.DonationToNineStar;
                 _stripeService.Charge(model);
                 _donationService.CreateDonation(new Donation
                 {
@@ -119,6 +110,12 @@ namespace K9.WebApplication.Controllers
             }
 
             return View("Donate", model);
+        }
+
+        [Route("donate/success")]
+        public ActionResult DonationSuccess()
+        {
+            return View();
         }
 
         public override string GetObjectName()

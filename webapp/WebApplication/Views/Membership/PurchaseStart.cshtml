@@ -7,15 +7,15 @@
 
 @using (Html.BeginForm("Purchase", "Membership", FormMethod.Post))
 {
-    <p style="margin-bottom: 25px;">@Dictionary.SelectedPurchaseText</p>
-
-    @Html.Partial("_MembershipOption")
-
     using (Html.BeginBootstrapForm())
     {
-        @Html.Hidden("Id", Model.MembershipOption.Id)
-        @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
+        <p class="margin-bottom-30">@Dictionary.SelectedPurchaseText:</p>
 
+        @Html.Partial("_MembershipOption")
+
+        @Html.Hidden("Id", Model.MembershipOption.Id)
+        
         <hr />
+        @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
     }
 }

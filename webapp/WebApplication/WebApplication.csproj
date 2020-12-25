@@ -402,7 +402,6 @@
     <Content Include="Content\bootstrap\bootstrap.css" />
     <Content Include="Content\bootstrap\bootstrapValidator.css" />
     <Content Include="Content\k9\fadeIn.css" />
-    <Content Include="Content\_botfColors.txt" />
     <Content Include="Content\site\navbar.css" />
     <Content Include="Content\site\tables.css" />
     <Content Include="Content\k9\pageSpinner.css" />

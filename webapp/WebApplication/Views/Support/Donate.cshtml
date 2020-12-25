@@ -13,6 +13,8 @@
     {
         @Html.BootstrapDisplayFor(model => model.AmountToDonate)
         @Html.HiddenFor(model => model.DonationAmount)
+        @Html.HiddenFor(model => model.LocalisedCurrencyThreeLetters)
+        @Html.HiddenFor(model => model.Description)
         <hr />
 
         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"

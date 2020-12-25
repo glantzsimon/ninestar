@@ -16,6 +16,10 @@
         <hr />
 
         @Html.BootstrapEditorFor(model => model.DonationAmount)
+        @Html.HiddenFor(model => model.Description)
+        @Html.HiddenFor(model => model.LocalisedCurrencyThreeLetters)
+        @Html.HiddenFor(model => model.PublishableKey)
+
         <hr />
         <div class="text-right">
             @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)

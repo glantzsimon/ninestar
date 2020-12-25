@@ -5,6 +5,7 @@ using System;
 using System.Linq.Expressions;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
+using K9.SharedLibrary.Extensions;
 
 namespace K9.WebApplication.Helpers
 {
@@ -32,7 +33,7 @@ namespace K9.WebApplication.Helpers
                 Body = body,
                 Expaded = expanded,
                 Footer = footer,
-                ImageSrc = imageSrc,
+                ImageSrc = new UrlHelper(html.ViewContext.RequestContext).Content(imageSrc),
                 ImageLayout = imageLayout,
                 ImageSize = imageSize
             });
@@ -50,7 +51,7 @@ namespace K9.WebApplication.Helpers
                 Id = id,
                 Title = title,
                 Body = body,
-                ImageSrc = imageSrc,
+                ImageSrc = new UrlHelper(html.ViewContext.RequestContext).Content(imageSrc),
                 ImageSize = imageSize,
                 ImageLayout = imageLayout
             });
@@ -66,7 +67,7 @@ namespace K9.WebApplication.Helpers
             return html.Partial("Controls/_ImagePanel", new PanelOptions
             {
                 Title = title,
-                ImageSrc = imageSrc,
+                ImageSrc = new UrlHelper(html.ViewContext.RequestContext).Content(imageSrc),
                 ImageSize = imageSize,
                 ImageLayout = imageLayout
             });

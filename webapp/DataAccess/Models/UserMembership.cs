@@ -37,6 +37,9 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AutoRenewLabel)]
         public bool IsAutoRenew { get; set; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DeactivatedLabel)]
+        public bool IsDeactivated { get; set; }
+
         public virtual User User { get; set; }
 
         public virtual MembershipOption MembershipOption { get; set; }
@@ -66,7 +69,7 @@ namespace K9.DataAccessLayer.Models
         public string NumberOfRelationshipCompatibilityReadingsLeftText => MembershipOption.IsUnlimited
             ? Globalisation.Dictionary.Unlimited : NumberOfRelationshipCompatibilityReadingsLeft.ToString();
 
-        public bool IsActive => DateTime.Today.IsBetween(StartsOn.Date, EndsOn.Date);
+        public bool IsActive => DateTime.Today.IsBetween(StartsOn.Date, EndsOn.Date) && !IsDeactivated;
 
         public TimeSpan Duration => EndsOn.Subtract(StartsOn);
 

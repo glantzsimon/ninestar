@@ -280,6 +280,10 @@
     <Compile Include="Migrations\202012212052366_GenderToUser.Designer.cs">
       <DependentUpon>202012212052366_GenderToUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012252346046_MembershipIsDeactivated.cs" />
+    <Compile Include="Migrations\202012252346046_MembershipIsDeactivated.Designer.cs">
+      <DependentUpon>202012252346046_MembershipIsDeactivated.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\MembershipOption.cs" />
     <Compile Include="Models\UserCompatibilityReading.cs" />
@@ -328,6 +332,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012212052366_GenderToUser.resx">
       <DependentUpon>202012212052366_GenderToUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012252346046_MembershipIsDeactivated.resx">
+      <DependentUpon>202012252346046_MembershipIsDeactivated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

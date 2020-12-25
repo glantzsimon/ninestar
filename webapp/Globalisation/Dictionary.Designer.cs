@@ -1929,6 +1929,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Deactivated.
+        /// </summary>
+        public static string DeactivatedLabel {
+            get {
+                return ResourceManager.GetString("DeactivatedLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Descriptive Name.
         /// </summary>
         public static string DescriptiveNameLabel {

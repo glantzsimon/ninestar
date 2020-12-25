@@ -61,12 +61,14 @@ namespace K9.WebApplication.Services
             {
                 MembershipModels = new List<MembershipModel>(membershipOptions.Select(membershipOption =>
                 {
-                    var isSubscribed = activeUserMemberships.FirstOrDefault(_ =>
-                                          _.UserId == userId & _.MembershipOptionId == membershipOption.Id) != null;
+                    var isSubscribed = activeUserMembership != null && activeUserMembership.MembershipOptionId == membershipOption.Id;
                     var isScheduledSwitch = scheduledMembership != null && membershipOption.SubscriptionType == scheduledMembership.MembershipOption.SubscriptionType;
+
+                    var isUpgradable = activeUserMembership == null || activeUserMembership.MembershipOption.CanUpgradeFrom(membershipOption);
+
                     return new MembershipModel(_authentication.CurrentUserId, membershipOption, activeUserMembership)
                     {
-                        IsSelectable = !isScheduledSwitch && !isSubscribed,
+                        IsSelectable = !isScheduledSwitch && !isSubscribed && isUpgradable,
                         IsSubscribed = isSubscribed
                     };
                 }))
@@ -299,6 +301,7 @@ namespace K9.WebApplication.Services
             foreach (var userMembership in userMemberships.Where(_ => _.MembershipOptionId != activeUserMembershipId))
             {
                 userMembership.EndsOn = activeUserMembership.StartsOn;
+                userMembership.IsDeactivated = true;
                 _userMembershipRepository.Update(userMembership);
             }
         }

@@ -47,6 +47,7 @@
             public const string EndsOnLabel = "EndsOnLabel";
             public const string TotalLabel = "TotalLabel";
             public const string AutoRenewLabel = "AutoRenewLabel";
+            public const string DeactivatedLabel = "DeactivatedLabel";
             public const string EmailAddressLabel = "EmailAddressLabel";
             public const string MaxNumberOfProfileReadingsLabel = "MaxNumberOfProfileReadingsLabel";
             public const string MaxNumberOfCompatibilityReadingsLabel = "MaxNumberOfCompatibilityReadingsLabel";

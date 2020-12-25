@@ -88,18 +88,18 @@
     padding: 5px;
 }
 
-.membership-description p {
-    margin-bottom: 5px;
-    font-size: 1.1em;
-}
+    .membership-description p {
+        margin-bottom: 5px;
+        font-size: 1.1em;
+    }
 
-.membership-description p:first-child {
-    margin-top: 15px;
-}
+        .membership-description p:first-child {
+            margin-top: 15px;
+        }
 
-.membership-description ul li {
-    font-size: 1em;
-}
+    .membership-description ul li {
+        font-size: 1em;
+    }
 
 .platinum {
     background: url(../../../Images/membership/platinum-membership.jpg) no-repeat 0 0;
@@ -142,7 +142,13 @@
     transition: all 0.5s ease-out;
 }
 
-.support-us-option h4 {
-    color: black;
-    height: 40px;
+    .support-us-option h4 {
+        color: black;
+        height: 40px;
+    }
+
+@media(max-width:513px) {
+    .nav-tabs li {
+        width: 100%;
+    }
 }

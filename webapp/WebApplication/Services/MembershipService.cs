@@ -81,6 +81,9 @@ namespace K9.WebApplication.Services
                 ? _userMembershipRepository.Find(_ => _.UserId == userId).ToList().Where(_ => _.IsActive || includeScheduled && _.EndsOn > DateTime.Today).Select(userMembership =>
                 {
                     userMembership.MembershipOption = membershipOptions.FirstOrDefault(m => m.Id == userMembership.MembershipOptionId);
+                    userMembership.ProfileReadings = _userProfileReadingsRepository.Find(e => e.UserId == userId).ToList();
+                    userMembership.RelationshipCompatibilityReadings = _userRelationshipCompatibilityReadingsRepository
+                        .Find(e => e.UserId == userId).ToList();
                     return userMembership;
                 }).ToList()
                 : new List<UserMembership>();

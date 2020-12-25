@@ -14,28 +14,28 @@
             <li><a data-toggle="tab" href="#membership">@Dictionary.YourCurrentMembership</a></li>
         }
     </ul>
-    
+
     <div class="tab-content">
         <div id="account" class="tab-pane fade in active padding-top-20">
             @Html.Partial("_AccountDetails", Model.User)
         </div>
-        <div id="membership" class="tab-pane fade padding-20">
+        <div id="membership" class="tab-pane fade padding-top-20 padding-bottom-0">
             @if (Model.Membership != null)
             {
                 @Html.Partial("../Membership/_MembershipDetails", Model.Membership)
-                <div class="text-center">
-                    @if (Model.Membership.MembershipOption.IsUpgradable)
-                    {
+                if (Model.Membership.MembershipOption.IsUpgradable)
+                {
+                    <hr />
+                    <div class="margin-top-20">
                         @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership")
-                    }
-                </div>
+                    </div>
+                }
             }
             else
             {
+                <hr />
                 <div class="support-us-option shadow-light shadow-hover">
-                    <a href="@Url.Action("Index", "Membership")">
-                        <h4>@MvcHtmlString.Create(Dictionary.UpgradeMembershipText)</h4>
-                    </a>
+                    @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership")
                 </div>
             }
         </div>

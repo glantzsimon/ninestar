@@ -114,6 +114,8 @@ namespace K9.WebApplication.Controllers
                     EmailAddress = user.EmailAddress
                 });
 
+                _membershipService.CreateFreeMembership(user.Id);
+
                 if (regResult.IsSuccess)
                 {
                     return RedirectToAction("Index", "Home");
@@ -154,7 +156,8 @@ namespace K9.WebApplication.Controllers
         {
             return View(new UserAccount.RegisterModel
             {
-                Gender = EGender.Female
+                Gender = EGender.Female,
+                BirthDate = DateTime.Today.AddYears(-30)
             });
         }
 
@@ -169,8 +172,6 @@ namespace K9.WebApplication.Controllers
                 if (result.IsSuccess)
                 {
                     var user = result.Data.MapTo<User>();
-                    _membershipService.CreateFreeMembership(user.Id);
-
                     return RedirectToAction("AccountCreated", "Account");
                 }
 
@@ -440,6 +441,7 @@ namespace K9.WebApplication.Controllers
             switch (result.Result)
             {
                 case EActivateAccountResult.Success:
+                    _membershipService.CreateFreeMembership(result.User.Id);
                     return RedirectToAction("AccountActivated", "Account", new { userName });
 
                 case EActivateAccountResult.AlreadyActivated:

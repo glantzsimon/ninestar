@@ -2,30 +2,34 @@
 @model UserAccount.RegisterModel
 
 @{
-	ViewBag.Title = K9.Base.Globalisation.Dictionary.Registration;
-	ViewBag.SubTitle = K9.Base.Globalisation.Dictionary.Register;
-	Layout = "../Shared/_LayoutFormSmall.cshtml";
+    ViewBag.Title = K9.Base.Globalisation.Dictionary.Registration;
+    ViewBag.SubTitle = K9.Base.Globalisation.Dictionary.Register;
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
 
 @using (Html.BeginForm())
 {
-	using (Html.BeginBootstrapForm())
-	{
-		@Html.BootstrapEditorFor(model => model.UserName)
-		@Html.BootstrapEditorFor(model => model.Password)
-		@Html.BootstrapEditorFor(model => model.ConfirmPassword)
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.BootstrapEditorFor(model => model.UserName)
+        @Html.BootstrapEditorFor(model => model.Password)
+        @Html.BootstrapEditorFor(model => model.ConfirmPassword)
 
-		<hr/>
-		@Html.BootstrapEditorFor(model => model.FirstName)
-		@Html.BootstrapEditorFor(model => model.LastName)
-		@Html.BootstrapEditorFor(model => model.EmailAddress)   
-		@Html.BootstrapEditorFor(model => model.PhoneNumber)
-		@Html.BootstrapEditorFor(model => model.BirthDate)
-		@Html.BootstrapEditorFor(model => model.Gender)
-		<hr/>
-		@Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Register)
-	
-	}
+        <hr />
+        <div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.FirstName)</div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.LastName)</div>
+        </div>
+        @Html.BootstrapEditorFor(model => model.EmailAddress)
+        <div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.BirthDate)</div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.Gender)</div>
+        </div>
+        @Html.BootstrapEditorFor(model => model.PhoneNumber)
+        <hr />
+        @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Register)
+
+    }
 }
 
 <script language="javascript">

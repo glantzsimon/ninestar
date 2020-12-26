@@ -355,10 +355,11 @@ namespace K9.WebApplication.Services
             try
             {
                 var membershipOption = _membershipOptionRepository.Find(e => e.SubscriptionType == MembershipOption.ESubscriptionType.Free).FirstOrDefault();
+
                 if (membershipOption == null)
                 {
-                    _logger.Error($"MembershipService => ProcessPurchase => No MembershipOption with Subscription Type {MembershipOption.ESubscriptionType.Free} was found.");
-                    throw new IndexOutOfRangeException("Invalid MembershipOption");
+                    _logger.Error($"MembershipService => CreateFreeMembership => MembershipOption with Subscription Type {MembershipOption.ESubscriptionType.Free} was not found.");
+                    return;
                 }
 
                 _userMembershipRepository.Create(new UserMembership

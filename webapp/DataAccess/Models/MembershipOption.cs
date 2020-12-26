@@ -64,15 +64,9 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubscriptionCostLabel)]
         public string FormattedPrice => Price.ToString("C0", CultureInfo.GetCultureInfo("en-US"));
 
-        public string CssClassName => SubscriptionType == ESubscriptionType.AnnualPlatinum ||
-                                      SubscriptionType == ESubscriptionType.MonthlyPlatinum
-            ? "platinum"
-            : "standard";
+        public string CssClassName => GetCssClassName();
 
-        public string MembershipMedalElement => SubscriptionType == ESubscriptionType.AnnualPlatinum ||
-                                              SubscriptionType == ESubscriptionType.MonthlyPlatinum
-            ? "PlatinumMembership"
-            : "StandardMembership";
+        public string MembershipMedalElement => GetMembershipMedalElement();
 
         public string MembershipMedalElementLocal => GetLocalisedPropertyValue(nameof(MembershipMedalElement));
 
@@ -107,6 +101,40 @@ namespace K9.DataAccessLayer.Models
                 return true;
             }
             return false;
+        }
+
+        private string GetCssClassName()
+        {
+            if (SubscriptionType == ESubscriptionType.AnnualPlatinum ||
+                SubscriptionType == ESubscriptionType.MonthlyPlatinum)
+            {
+                return "platinum";
+            }
+
+            if (SubscriptionType == ESubscriptionType.AnnualStandard ||
+                SubscriptionType == ESubscriptionType.MonthlyStandard)
+            {
+                return "standard";
+            }
+
+            return "free";
+        }
+
+        private string GetMembershipMedalElement()
+        {
+            if (SubscriptionType == ESubscriptionType.AnnualPlatinum ||
+                SubscriptionType == ESubscriptionType.MonthlyPlatinum)
+            {
+                return "PlatinumMembership";
+            }
+
+            if (SubscriptionType == ESubscriptionType.AnnualStandard ||
+                SubscriptionType == ESubscriptionType.MonthlyStandard)
+            {
+                return "StandardMembership";
+            }
+
+            return "FreeMembership";
         }
     }
 }

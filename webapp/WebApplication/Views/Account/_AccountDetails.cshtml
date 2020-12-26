@@ -9,11 +9,16 @@
     @Html.HiddenFor(model => model.Username)
     @Html.HiddenFor(model => model.EmailAddress)
     @Html.Hidden("Password", "th1515n0tmypa55w0rd")
-    @Html.BootstrapEditorFor(model => model.FirstName)
-    @Html.BootstrapEditorFor(model => model.LastName)
+
+    <div>
+        <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.FirstName)</div>
+        <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.LastName)</div>
+    </div>
+    <div>
+        <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.BirthDate)</div>
+        <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.Gender)</div>
+    </div>
     @Html.BootstrapEditorFor(model => model.PhoneNumber)
-    @Html.BootstrapEditorFor(model => model.BirthDate)
-    @Html.BootstrapEditorFor(model => model.Gender)
     if (!Model.IsOAuth)
     {
         <span>@Html.ActionLink(K9.Base.Globalisation.Dictionary.ChangePassword, "UpdatePassword")</span>

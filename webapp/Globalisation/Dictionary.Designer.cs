@@ -2660,6 +2660,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Free Membership.
+        /// </summary>
+        public static string FreeMembership {
+            get {
+                return ResourceManager.GetString("FreeMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gay.
         /// </summary>
         public static string Gay {

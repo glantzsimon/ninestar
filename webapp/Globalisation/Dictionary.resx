@@ -1606,4 +1606,7 @@
   <data name="TotalPriceLabel" xml:space="preserve">
     <value>Total Price</value>
   </data>
+  <data name="FreeMembership" xml:space="preserve">
+    <value>Free Membership</value>
+  </data>
 </root>

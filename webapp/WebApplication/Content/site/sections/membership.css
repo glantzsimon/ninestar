@@ -102,15 +102,23 @@
     }
 
 .platinum {
-    background: url(../../../Images/membership/platinum-membership.jpg) no-repeat 0 0;
+    background: url(../../../Images/membership/platinum-membership.png) no-repeat 0 0;
 }
 
     .platinum .membership-element {
         color: white;
     }
 
+.free {
+    background: url(../../../Images/membership/free-membership.png) no-repeat 0 0;
+}
+
+.free .membership-element {
+    color: white;
+}
+
 .standard {
-    background: url(../../../Images/membership/standard-membership.jpg) no-repeat 0 0;
+    background: url(../../../Images/membership/standard-membership.png) no-repeat 0 0;
 }
 
 .membership-selected {

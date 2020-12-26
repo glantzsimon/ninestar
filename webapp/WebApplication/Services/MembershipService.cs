@@ -259,6 +259,7 @@ namespace K9.WebApplication.Services
 
             return new StripeModel
             {
+                TotalNumberOfCreditsToPurchase = model.NumberOfCredits,
                 CreditsPurchaseAmount = model.TotalPrice,
                 Description = Dictionary.CreditsPurchaseDescription,
                 PublishableKey = _stripeConfig.PublishableKey,

@@ -73,7 +73,7 @@ namespace K9.WebApplication.Controllers
             return View(new PurchaseCreditsViewModel());
         }
 
-        [Route("membership/purchase-credits/review")]
+        [Route("membership/purchase-credits")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult PurchaseCredits(PurchaseCreditsViewModel model)
@@ -89,7 +89,7 @@ namespace K9.WebApplication.Controllers
             try
             {
                 model.PublishableKey = _stripeConfig.PublishableKey;
-                _membershipService.ProcessPurchase(model);
+                _membershipService.ProcessCreditsPurchase(model);
                 return RedirectToAction("PurchaseCreditsSuccess");
             }
             catch (Exception ex)

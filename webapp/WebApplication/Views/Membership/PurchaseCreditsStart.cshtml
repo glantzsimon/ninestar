@@ -10,11 +10,6 @@
     using (Html.BeginBootstrapForm())
     {
         <div class="credit-packs">
-            <div class="alert alert-info alert-dismissable">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <i class="fa fa-info-circle"></i> @Dictionary.CreditsDescriptionUI
-            </div>
-
             <h4 class="margin-bottom-20 margin-top-0"><strong>@Dictionary.EnterCreditsText:</strong></h4>
 
             <div class="row padding-0">
@@ -25,7 +20,7 @@
 
             <hr/>
 
-            <h4>@Dictionary.CreditPricingTitle</h4>
+            <p>@Dictionary.CreditsDescriptionUI:</p>
 
             <div class="credit-back-summary">
                 <div class="row margin-top-5">

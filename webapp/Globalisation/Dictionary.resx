@@ -1571,13 +1571,13 @@
     <value>templates\en-gb\creditpackpurchased.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="CreditPricingTitle" xml:space="preserve">
-    <value>You can save money by purchasing credit 'packs':</value>
+    <value>You can save money by purchasing Credit Packs</value>
   </data>
   <data name="CreditsPurchaseAmountLabel" xml:space="preserve">
     <value>The total cost of your credit pack is:</value>
   </data>
   <data name="CreditsPurchaseDescription" xml:space="preserve">
-    <value>9 Star Ki Profile Readings Credits Purchase</value>
+    <value>9 Star Ki Credit Package</value>
   </data>
   <data name="CreditsTotalAmountLabel" xml:space="preserve">
     <value>You would like to purchase the following number of credits:</value>

@@ -1920,7 +1920,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can save money by purchasing credit &apos;packs&apos;:.
+        ///   Looks up a localized string similar to You can save money by purchasing Credit Packs.
         /// </summary>
         public static string CreditPricingTitle {
             get {
@@ -1956,7 +1956,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9 Star Ki Profile Readings Credits Purchase.
+        ///   Looks up a localized string similar to 9 Star Ki Credit Package.
         /// </summary>
         public static string CreditsPurchaseDescription {
             get {

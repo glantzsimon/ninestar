@@ -18,6 +18,7 @@ namespace K9.WebApplication.Services
         StripeModel GetPurchaseStripeModel(int membershipOptionId);
         StripeModel GetPurchaseCreditsStripeModel(PurchaseCreditsViewModel model);
         void ProcessPurchase(StripeModel model);
+        void ProcessCreditsPurchase(StripeModel model);
         /// <summary>
         /// Switch memberships without processing payment (downgrade or scheduled switch)
         /// </summary>

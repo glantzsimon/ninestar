@@ -1,4 +1,5 @@
 ﻿using K9.Base.DataAccessLayer.Enums;
+using K9.Base.DataAccessLayer.Models;
 using K9.Base.WebApplication.Config;
 using K9.DataAccessLayer.Models;
 using K9.Globalisation;
@@ -27,6 +28,7 @@ namespace K9.WebApplication.Services
         private readonly IRepository<UserProfileReading> _userProfileReadingsRepository;
         private readonly IRepository<UserRelationshipCompatibilityReading> _userRelationshipCompatibilityReadingsRepository;
         private readonly IRepository<UserCreditPack> _userCreditPacksRepository;
+        private readonly IRepository<User> _usersRepository;
         private readonly StripeConfiguration _stripeConfig;
         private readonly IStripeService _stripeService;
         private readonly IContactService _contactService;
@@ -34,7 +36,7 @@ namespace K9.WebApplication.Services
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<UserProfileReading> userProfileReadingsRepository, IRepository<UserRelationshipCompatibilityReading> userRelationshipCompatibilityReadingsRepository, IRepository<UserCreditPack> userCreditPacksRepository, IOptions<StripeConfiguration> stripeConfig, IStripeService stripeService, IContactService contactService, IMailer mailer, IOptions<WebsiteConfiguration> config)
+        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<UserProfileReading> userProfileReadingsRepository, IRepository<UserRelationshipCompatibilityReading> userRelationshipCompatibilityReadingsRepository, IRepository<UserCreditPack> userCreditPacksRepository, IRepository<User> usersRepository, IOptions<StripeConfiguration> stripeConfig, IStripeService stripeService, IContactService contactService, IMailer mailer, IOptions<WebsiteConfiguration> config)
         {
             _logger = logger;
             _authentication = authentication;
@@ -43,6 +45,7 @@ namespace K9.WebApplication.Services
             _userProfileReadingsRepository = userProfileReadingsRepository;
             _userRelationshipCompatibilityReadingsRepository = userRelationshipCompatibilityReadingsRepository;
             _userCreditPacksRepository = userCreditPacksRepository;
+            _usersRepository = usersRepository;
             _stripeConfig = stripeConfig.Value;
             _stripeService = stripeService;
             _contactService = contactService;
@@ -285,7 +288,8 @@ namespace K9.WebApplication.Services
                     MembershipOptionId = model.MembershipOptionId,
                     StartsOn = DateTime.Today,
                     EndsOn = membershipOption.IsAnnual ? DateTime.Today.AddYears(1) : DateTime.Today.AddMonths(1),
-                    IsAutoRenew = true
+                    IsAutoRenew = true,
+                    User = _usersRepository.Find(_authentication.CurrentUserId)
                 };
                 _userMembershipRepository.Create(userMembership);
                 TerminateExistingMemberships(model.MembershipOptionId);
@@ -309,7 +313,8 @@ namespace K9.WebApplication.Services
                 {
                     UserId = _authentication.CurrentUserId,
                     NumberOfCredits = model.TotalNumberOfCreditsToPurchase,
-                    TotalPrice = model.CreditsPurchaseAmount
+                    TotalPrice = model.CreditsPurchaseAmount,
+                    User = _usersRepository.Find(_authentication.CurrentUserId)
                 };
                 _userCreditPacksRepository.Create(userCreditPack);
                 _contactService.CreateCustomer(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
@@ -526,4 +531,4 @@ namespace K9.WebApplication.Services
         }
 
     }
-}
+}F

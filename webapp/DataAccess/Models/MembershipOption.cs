@@ -70,10 +70,7 @@ namespace K9.DataAccessLayer.Models
 
         public string MembershipMedalElementLocal => GetLocalisedPropertyValue(nameof(MembershipMedalElement));
 
-        public string MembershipPeriod => SubscriptionType == ESubscriptionType.AnnualPlatinum ||
-                                                SubscriptionType == ESubscriptionType.AnnualStandard
-            ? "Annual"
-            : "Monthly";
+        public string MembershipPeriod => GetMembershipPeriod();
 
         public string MembershipPeriodLocal => GetLocalisedPropertyValue(nameof(MembershipPeriod));
 
@@ -135,6 +132,23 @@ namespace K9.DataAccessLayer.Models
             }
 
             return "FreeMembership";
+        }
+
+        private string GetMembershipPeriod()
+        {
+            if (SubscriptionType == ESubscriptionType.AnnualPlatinum ||
+                SubscriptionType == ESubscriptionType.AnnualStandard)
+            {
+                return "Annual";
+            }
+
+            if (SubscriptionType == ESubscriptionType.MonthlyPlatinum ||
+                SubscriptionType == ESubscriptionType.MonthlyStandard)
+            {
+                return "Monthly";
+            }
+
+            return "Lifetime";
         }
     }
 }

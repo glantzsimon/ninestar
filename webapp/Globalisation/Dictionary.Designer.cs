@@ -2660,7 +2660,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Free Membership.
+        ///   Looks up a localized string similar to &lt;div&gt;
+        ///    &lt;h4&gt;&lt;strong&gt;With the Standard Subscription you get:&lt;/strong&gt;&lt;/h4&gt;
+        ///    &lt;p&gt;
+        ///        &amp;#8226; {NumberOfProfileReadings} full Personal Profile readings a month.
+        ///    &lt;/p&gt;
+        ///    &lt;p&gt;
+        ///        &amp;#8226; {NumberOfCompatibilityReadings} full Relationship Compatibility readings a month.
+        ///    &lt;/p&gt;
+        ///&lt;/div&gt;.
+        /// </summary>
+        public static string free_membership_description {
+            get {
+                return ResourceManager.GetString("free_membership_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Free Subscription.
         /// </summary>
         public static string FreeMembership {
             get {

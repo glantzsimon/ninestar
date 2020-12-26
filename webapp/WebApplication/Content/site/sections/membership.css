@@ -58,7 +58,7 @@
     position: absolute;
     width: 100%;
     text-align: center;
-    color: #e2e2e2;
+    color: #fff;
 }
 
 .membership-price {
@@ -67,10 +67,11 @@
 }
 
 .membership-element {
-    top: 71px;
-    font-size: 1.1em;
-    line-height: 1.2em;
+    top: 72px;
+    font-size: 1em;
+    line-height: 1.4em;
     text-transform: uppercase;
+    color: white;
 }
 
 .membership-period {
@@ -105,16 +106,8 @@
     background: url(../../../Images/membership/platinum-membership.png) no-repeat 0 0;
 }
 
-    .platinum .membership-element {
-        color: white;
-    }
-
 .free {
     background: url(../../../Images/membership/free-membership.png) no-repeat 0 0;
-}
-
-.free .membership-element {
-    color: white;
 }
 
 .standard {

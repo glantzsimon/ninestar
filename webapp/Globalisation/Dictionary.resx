@@ -1607,6 +1607,9 @@
     <value>Total Price</value>
   </data>
   <data name="FreeMembership" xml:space="preserve">
-    <value>Free Membership</value>
+    <value>Free Subscription</value>
+  </data>
+  <data name="free_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\free-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

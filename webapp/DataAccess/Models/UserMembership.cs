@@ -71,7 +71,7 @@ namespace K9.DataAccessLayer.Models
 
         [NotMapped] 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfRelationshipCompatibilityReadingsLeft)]
-        public int NumberOfCredits { get; set; }
+        public int NumberOfCreditsLeft { get; set; }
 
         public bool IsActive => DateTime.Today.IsBetween(StartsOn.Date, EndsOn.Date) && !IsDeactivated;
 

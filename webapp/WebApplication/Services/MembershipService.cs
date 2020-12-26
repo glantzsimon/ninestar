@@ -87,12 +87,19 @@ namespace K9.WebApplication.Services
                     userMembership.ProfileReadings = _userProfileReadingsRepository.Find(e => e.UserId == userId).ToList();
                     userMembership.RelationshipCompatibilityReadings = _userRelationshipCompatibilityReadingsRepository
                         .Find(e => e.UserId == userId).ToList();
-                    userMembership.NumberOfCredits = _userCreditPacksRepository.Find(e => e.UserId == userId).Count();
+                    userMembership.NumberOfCreditsLeft = GetNumberOfCreditsLeft(userMembership);
 
                     return userMembership;
                 }).ToList()
                 : new List<UserMembership>();
             return userMemberships;
+        }
+
+        private int GetNumberOfCreditsLeft(UserMembership userMembership)
+        {
+            var usedCreditPackIds = userMembership.ProfileReadings.Select(p => p.UserCreditPackId).Concat(userMembership.RelationshipCompatibilityReadings.Select(p => p.UserCreditPackId)).ToList();
+            var unusedCreditPacks = _userCreditPacksRepository.Find(e => e.UserId == userMembership.UserId).Where(e => !usedCreditPackIds.Contains(e.Id));
+            return unusedCreditPacks.Count();
         }
 
         /// <summary>
@@ -133,7 +140,7 @@ namespace K9.WebApplication.Services
             {
                 return true;
             }
-            if (createIfNull && (activeUserMembership?.NumberOfProfileReadingsLeft > 0 || activeUserMembership?.NumberOfCredits > 0))
+            if (createIfNull && (activeUserMembership?.NumberOfProfileReadingsLeft > 0 || activeUserMembership?.NumberOfCreditsLeft > 0))
             {
                 CreateNewUserProfileReading(activeUserMembership, dateOfBirth, gender);
                 return true;
@@ -152,7 +159,7 @@ namespace K9.WebApplication.Services
             {
                 return true;
             }
-            if (createIfNull && (activeUserMembership?.NumberOfRelationshipCompatibilityReadingsLeft > 0 || activeUserMembership?.NumberOfCredits > 0))
+            if (createIfNull && (activeUserMembership?.NumberOfRelationshipCompatibilityReadingsLeft > 0 || activeUserMembership?.NumberOfCreditsLeft > 0))
             {
                 CreateNewUserRelationshipCompatibilityReading(activeUserMembership, firstDateOfBirth, firstGender, secondDateOfBirth, secondGender);
                 return true;
@@ -401,10 +408,10 @@ namespace K9.WebApplication.Services
             if (userMembership.NumberOfProfileReadingsLeft == 0)
             {
                 var userCredit = _userCreditPacksRepository.Find(e => e.UserId == userMembership.UserId).FirstOrDefault();
-                if (userMembership.NumberOfCredits == 0 || userCredit == null)
+                if (userMembership.NumberOfCreditsLeft == 0 || userCredit == null)
                 {
-                    _logger.Error($"MembershipService => CreateNewUserProfileReading => No User Credits were found for User {userMembership.UserId}.");
-                    throw new Exception("No User Credits were found");
+                    _logger.Error($"MembershipService => CreateNewUserProfileReading => Not enough Credits remaining for User {userMembership.UserId}.");
+                    throw new Exception("Not enough credits remaining");
                 }
 
                 userProfileReading.UserCreditPackId = userCredit.Id;
@@ -428,7 +435,7 @@ namespace K9.WebApplication.Services
             if (userMembership.NumberOfProfileReadingsLeft == 0)
             {
                 var userCredit = _userCreditPacksRepository.Find(e => e.UserId == userMembership.UserId).FirstOrDefault();
-                if (userMembership.NumberOfCredits == 0 || userCredit == null)
+                if (userMembership.NumberOfCreditsLeft == 0 || userCredit == null)
                 {
                     _logger.Error($"MembershipService => CreateNewUserProfileReading => No User Credits were found for User {userMembership.UserId}.");
                     throw new Exception("No User Credits were found");

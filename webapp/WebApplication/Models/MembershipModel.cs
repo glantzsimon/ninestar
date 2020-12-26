@@ -27,7 +27,8 @@ namespace K9.WebApplication.Models
 
         public int ActiveUserMembershipId => ActiveUserMembership?.Id ?? 0;
 
-        public bool IsUpgrade => ActiveUserMembership != null && MembershipOption.CanUpgradeFrom(ActiveUserMembership.MembershipOption);
+        public bool IsUpgrade => ActiveUserMembership != null &&
+                                 ActiveUserMembership.MembershipOption.CanUpgradeTo(MembershipOption);
 
         public bool IsScheduledSwitch => !IsUpgrade && IsSelectable && ActiveUserMembership != null && ActiveUserMembership.EndsOn > DateTime.Today;
 

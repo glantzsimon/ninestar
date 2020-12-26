@@ -90,6 +90,18 @@ namespace K9.DataAccessLayer.Models
 
         public bool IsUnlimited => SubscriptionType == ESubscriptionType.AnnualPlatinum || SubscriptionType == ESubscriptionType.MonthlyPlatinum;
 
-        public bool CanUpgradeFrom(MembershipOption membershipOption) => membershipOption == null || SubscriptionType <= membershipOption.SubscriptionType || (membershipOption.SubscriptionType != ESubscriptionType.AnnualStandard || SubscriptionType == ESubscriptionType.AnnualPlatinum);
+        public bool CanUpgradeTo(MembershipOption membershipOption)
+        {
+            if (SubscriptionType < membershipOption?.SubscriptionType)
+            {
+                if (SubscriptionType == ESubscriptionType.AnnualStandard &&
+                    membershipOption.SubscriptionType == ESubscriptionType.MonthlyPlatinum)
+                {
+                    return false;
+                }
+                return true;
+            }
+            return false;
+        }
     }
 }

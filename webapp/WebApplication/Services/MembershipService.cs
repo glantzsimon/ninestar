@@ -53,7 +53,6 @@ namespace K9.WebApplication.Services
         {
             userId = userId ?? _authentication.CurrentUserId;
             var membershipOptions = _membershipOptionRepository.List();
-            var activeUserMemberships = GetActiveUserMemberships(userId, true);
             var activeUserMembership = GetActiveUserMembership(userId);
             var scheduledMembership = GetScheduledSwitchUserMembership(userId);
 
@@ -64,7 +63,7 @@ namespace K9.WebApplication.Services
                     var isSubscribed = activeUserMembership != null && activeUserMembership.MembershipOptionId == membershipOption.Id;
                     var isScheduledSwitch = scheduledMembership != null && membershipOption.SubscriptionType == scheduledMembership.MembershipOption.SubscriptionType;
 
-                    var isUpgradable = activeUserMembership == null || activeUserMembership.MembershipOption.CanUpgradeFrom(membershipOption);
+                    var isUpgradable = (!isScheduledSwitch && !isSubscribed) && activeUserMembership.MembershipOption.CanUpgradeTo(membershipOption);
 
                     return new MembershipModel(_authentication.CurrentUserId, membershipOption, activeUserMembership)
                     {

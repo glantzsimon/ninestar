@@ -1528,8 +1528,26 @@
   <data name="StandardMembership" xml:space="preserve">
     <value>Standard Subscription</value>
   </data>
+  <data name="Credit" xml:space="preserve">
+    <value>Credit</value>
+  </data>
+  <data name="Credits" xml:space="preserve">
+    <value>Credits</value>
+  </data>
   <data name="DeactivatedLabel" xml:space="preserve">
     <value>Deactivated</value>
+  </data>
+  <data name="MembershipCreatedEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>templates\en-gb\membershipcreatedemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="NewMembershipThankYouEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>templates\en-gb\newmembershipthankyouemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="NumberOfCreditsLeft" xml:space="preserve">
+    <value>Number of Credits Remaining</value>
+  </data>
+  <data name="ThankyouForSubscriptionEmailTitle" xml:space="preserve">
+    <value>Thank you for signing up to the {SubscriptionType}</value>
   </data>
   <data name="Unavailable" xml:space="preserve">
     <value>Unavailable</value>

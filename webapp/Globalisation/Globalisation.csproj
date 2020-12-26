@@ -304,6 +304,8 @@
     <Content Include="Articles\en-gb\mountain-trigram.htm" />
     <Content Include="Articles\en-gb\fire-trigram.htm" />
     <Content Include="Articles\en-gb\water-trigram.htm" />
+    <Content Include="Templates\en-gb\NewMembershipThankYouEmail.htm" />
+    <Content Include="Templates\en-gb\MembershipCreatedEmail.htm" />
     <Content Include="Templates\en-gb\DonationThankYouEmail.htm" />
     <Content Include="Templates\en-gb\DonationReceivedEmail.htm" />
     <Content Include="Templates\en-gb\PasswordResetEmail.htm" />

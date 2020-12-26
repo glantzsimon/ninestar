@@ -289,6 +289,7 @@
     <Compile Include="Controllers\MembershipOptionsController.cs" />
     <Compile Include="Controllers\PredictionsController.cs" />
     <Compile Include="Controllers\RelationshipsController.cs" />
+    <Compile Include="Controllers\UserMemberships.cs" />
     <Compile Include="Enums\ECompatibilityScore.cs" />
     <Compile Include="Enums\EReadingType.cs" />
     <Compile Include="Enums\ETransformationType.cs" />
@@ -1050,7 +1051,6 @@
     <Content Include="Views\Membership\_MembershipMedal.cshtml" />
     <Content Include="Views\Membership\_MembershipOption.cshtml" />
     <Content Include="Views\Membership\_MembershipFooter.cshtml" />
-    <Content Include="Views\UserMemberships\Index.cshtml" />
     <Content Include="Views\Contacts\Create.cshtml" />
     <Content Include="Views\Contacts\Delete.cshtml" />
     <Content Include="Views\Contacts\Details.cshtml" />
@@ -1080,6 +1080,13 @@
     <Content Include="Views\NineStarKi\_Sexuality.cshtml" />
     <Content Include="Views\Membership\SwitchFree.cshtml" />
     <Content Include="Views\NineStarKi\_SexualityRelationType.cshtml" />
+    <Content Include="Views\UserMemberships\_DisplayFields.cshtml" />
+    <Content Include="Views\UserMemberships\_EditFields.cshtml" />
+    <Content Include="Views\UserMemberships\Create.cshtml" />
+    <Content Include="Views\UserMemberships\Delete.cshtml" />
+    <Content Include="Views\UserMemberships\Details.cshtml" />
+    <Content Include="Views\UserMemberships\Edit.cshtml" />
+    <Content Include="Views\UserMemberships\Index.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

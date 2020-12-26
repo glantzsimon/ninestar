@@ -47,7 +47,7 @@ namespace K9.WebApplication.Services
 
             if (_authentication.IsAuthenticated)
             {
-                if (_membershipService.GetProfileReading(_authentication.CurrentUserId, personModel.DateOfBirth,
+                if (_membershipService.IsCompleteProfileReading(_authentication.CurrentUserId, personModel.DateOfBirth,
                     personModel.Gender) || _roles.CurrentUserIsInRoles(RoleNames.Administrators))
                 {
                     model.ReadingType = EReadingType.Complete;

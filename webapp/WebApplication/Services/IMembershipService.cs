@@ -14,6 +14,7 @@ namespace K9.WebApplication.Services
         MembershipModel GetPurchaseMembershipModel(int membershipOptionId);
         MembershipModel GetSwitchMembershipModelBySubscriptionType(MembershipOption.ESubscriptionType subscriptionType);
         MembershipModel GetPurchaseMembershipModelBySubscriptionType(MembershipOption.ESubscriptionType subscriptionType);
+        void CreateFreeMembership(int userId);
         StripeModel GetPurchaseStripeModel(int membershipOptionId);
         void ProcessPurchase(StripeModel model);
         /// <summary>
@@ -24,7 +25,7 @@ namespace K9.WebApplication.Services
         List<UserMembership> GetActiveUserMemberships(int? userId = null, bool includeScheduled = false);
         UserMembership GetActiveUserMembership(int? userId = null);
         UserMembership GetScheduledSwitchUserMembership(int? userId = null);
-        bool GetProfileReading(int? userId, DateTime dateOfBirth, EGender gender, bool createIfNull = true);
-        bool GetRelationshipCompatibilityReading(int? userId, DateTime dateOfBirth, EGender gender, DateTime secondDateOfBirth, EGender secondGender, bool createIfNull = true);
+        bool IsCompleteProfileReading(int? userId, DateTime dateOfBirth, EGender gender, bool createIfNull = true);
+        bool IsCompleteRelationshipCompatibilityReading(int? userId, DateTime dateOfBirth, EGender gender, DateTime secondDateOfBirth, EGender secondGender, bool createIfNull = true);
     }
 }

@@ -1871,6 +1871,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Credit.
+        /// </summary>
+        public static string Credit {
+            get {
+                return ResourceManager.GetString("Credit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Credits.
+        /// </summary>
+        public static string Credits {
+            get {
+                return ResourceManager.GetString("Credits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Currency.
         /// </summary>
         public static string CurrencyLabel {
@@ -3278,6 +3296,37 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///
+        ///&lt;head&gt;
+        ///    &lt;title&gt;{Title}&lt;/title&gt;
+        ///&lt;/head&gt;
+        ///
+        ///&lt;style type=&quot;text/css&quot;&gt;
+        ///    html {
+        ///        margin: 0;
+        ///        padding: 0;
+        ///        font-family: &quot;Segoe UI&quot;, Verdana, Helvetica, Sans-Serif;
+        ///        font-size: 100%;
+        ///        text-rendering: optimizeLegibility !important;
+        ///        -webkit-font-smoothing: antialiased !important;
+        ///        margin: 0;
+        ///        color: #333;
+        ///    }
+        ///&lt;/style&gt;
+        ///
+        ///&lt;body&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;We have a new user s [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string MembershipCreatedEmail {
+            get {
+                return ResourceManager.GetString("MembershipCreatedEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Subscription.
         /// </summary>
         public static string MembershipLabel {
@@ -3634,6 +3683,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;!doctype html&gt;
+        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;!-- NAME: 1:2:1 COLUMN --&gt;
+        ///    &lt;!--[if gte mso 15]&gt;
+        ///    &lt;xml&gt;
+        ///        &lt;o:OfficeDocumentSettings&gt;
+        ///        &lt;o:AllowPNG/&gt;
+        ///        &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
+        ///        &lt;/o:OfficeDocumentSettings&gt;
+        ///    &lt;/xml&gt;
+        ///    &lt;![endif]--&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
+        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string NewMembershipThankYouEmail {
+            get {
+                return ResourceManager.GetString("NewMembershipThankYouEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to News.
         /// </summary>
         public static string News {
@@ -3801,6 +3873,15 @@ namespace K9.Globalisation {
         public static string NotRegisteredYet {
             get {
                 return ResourceManager.GetString("NotRegisteredYet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of Credits Remaining.
+        /// </summary>
+        public static string NumberOfCreditsLeft {
+            get {
+                return ResourceManager.GetString("NumberOfCreditsLeft", resourceCulture);
             }
         }
         
@@ -4960,6 +5041,15 @@ namespace K9.Globalisation {
         public static string ThankyouForDonationEmailTitle {
             get {
                 return ResourceManager.GetString("ThankyouForDonationEmailTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thank you for signing up to the {SubscriptionType}.
+        /// </summary>
+        public static string ThankyouForSubscriptionEmailTitle {
+            get {
+                return ResourceManager.GetString("ThankyouForSubscriptionEmailTitle", resourceCulture);
             }
         }
         

@@ -24,6 +24,9 @@ namespace K9.DataAccessLayer.Models
         [Required]
         [ForeignKey("UserMembership")]
         public int UserMembershipId { get; set; }
+
+        [ForeignKey("UserCredit")]
+        public int UserCreditId { get; set; }
         
         [Required]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DateOfBirthLabel)]
@@ -44,6 +47,8 @@ namespace K9.DataAccessLayer.Models
         public virtual User User { get; set; }
 
         public virtual UserMembership UserMembership { get; set; }
+
+        public virtual UserCredit UserCredit { get; set; }
 
         [LinkedColumn(LinkedTableName = "User", LinkedColumnName = "Username")]
         public string UserName { get; set; }

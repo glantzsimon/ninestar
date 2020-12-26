@@ -97,7 +97,6 @@ namespace K9.WebApplication.Services
                 donation.CustomerEmail,
                 Amount = donation.DonationAmount,
                 donation.Currency,
-                Company = _config.CompanyName,
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
                 DateTime.Now.Year
             }), donation.CustomerEmail, donation.Customer, _config.SupportEmailAddress, _config.CompanyName);

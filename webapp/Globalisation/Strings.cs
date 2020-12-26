@@ -53,6 +53,7 @@
             public const string MaxNumberOfCompatibilityReadingsLabel = "MaxNumberOfCompatibilityReadingsLabel";
             public const string NumberOfProfileReadingsLeft = "NumberOfProfileReadingsLeft";
             public const string NumberOfRelationshipCompatibilityReadingsLeft = "NumberOfRelationshipCompatibilityReadingsLeft";
+            public const string NumberOfCreditsLeft = "NumberOfCreditsLeft";
             public const string UserDataLabel = "UserData";
         }
 
@@ -68,9 +69,12 @@
             public const string MembershipOption = "MembershipOption";
             public const string ProfileReading = "ProfileReading";
             public const string CompatibilityReading = "CompatibilityReading";
-            public const string CompatibilityReadings = "CompatibilityReadings ";
+            public const string CompatibilityReadings = "CompatibilityReadings";
+            public const string Credit = "Credit";
+            public const string Credits = "Credits";
             public const string Monthly = "Monthly";
             public const string Annual = "Annual";
+            public const string FreeMembership = "FreeMembership";
             public const string MonthlyStandardMembership = "MonthlyStandardMembership";
             public const string AnnualStandardMembership = "AnnualStandardMembership";
             public const string MonthlyPlatinumMembership = "MonthlyPlatinumMembership";

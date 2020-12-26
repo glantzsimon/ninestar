@@ -26,6 +26,7 @@ namespace K9.WebApplication.Services
         private readonly IRepository<UserMembership> _userMembershipRepository;
         private readonly IRepository<UserProfileReading> _userProfileReadingsRepository;
         private readonly IRepository<UserRelationshipCompatibilityReading> _userRelationshipCompatibilityReadingsRepository;
+        private readonly IRepository<UserCredit> _userCreditsRepository;
         private readonly StripeConfiguration _stripeConfig;
         private readonly IStripeService _stripeService;
         private readonly IContactService _contactService;
@@ -33,7 +34,7 @@ namespace K9.WebApplication.Services
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<UserProfileReading> userProfileReadingsRepository, IRepository<UserRelationshipCompatibilityReading> userRelationshipCompatibilityReadingsRepository, IOptions<StripeConfiguration> stripeConfig, IStripeService stripeService, IContactService contactService, IMailer mailer, IOptions<WebsiteConfiguration> config)
+        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<UserProfileReading> userProfileReadingsRepository, IRepository<UserRelationshipCompatibilityReading> userRelationshipCompatibilityReadingsRepository, IRepository<UserCredit> userCreditsRepository, IOptions<StripeConfiguration> stripeConfig, IStripeService stripeService, IContactService contactService, IMailer mailer, IOptions<WebsiteConfiguration> config)
         {
             _logger = logger;
             _authentication = authentication;
@@ -41,6 +42,7 @@ namespace K9.WebApplication.Services
             _userMembershipRepository = userMembershipRepository;
             _userProfileReadingsRepository = userProfileReadingsRepository;
             _userRelationshipCompatibilityReadingsRepository = userRelationshipCompatibilityReadingsRepository;
+            _userCreditsRepository = userCreditsRepository;
             _stripeConfig = stripeConfig.Value;
             _stripeService = stripeService;
             _contactService = contactService;
@@ -85,6 +87,8 @@ namespace K9.WebApplication.Services
                     userMembership.ProfileReadings = _userProfileReadingsRepository.Find(e => e.UserId == userId).ToList();
                     userMembership.RelationshipCompatibilityReadings = _userRelationshipCompatibilityReadingsRepository
                         .Find(e => e.UserId == userId).ToList();
+                    userMembership.NumberOfCredits = _userCreditsRepository.Find(e => e.UserId == userId).Count();
+
                     return userMembership;
                 }).ToList()
                 : new List<UserMembership>();
@@ -113,23 +117,23 @@ namespace K9.WebApplication.Services
             return GetActiveUserMemberships(userId, true).FirstOrDefault(_ => _.StartsOn > activeUserMembership.EndsOn && _.IsAutoRenew);
         }
 
-        public bool GetProfileReading(int? userId, DateTime dateOfBirth, EGender gender, bool createIfNull = true)
+        public bool IsCompleteProfileReading(int? userId, DateTime dateOfBirth, EGender gender, bool createIfNull = true)
         {
             var activeUserMembership = GetActiveUserMembership(userId);
             if (activeUserMembership?.ProfileReadings?.Any(e => e.DateOfBirth == dateOfBirth && e.Gender == gender) == true)
             {
                 return true;
             }
-            if (createIfNull && activeUserMembership?.NumberOfProfileReadingsLeft > 0)
+            if (createIfNull && (activeUserMembership?.NumberOfProfileReadingsLeft > 0 || activeUserMembership?.NumberOfCredits > 0))
             {
-                CreateNewUserProfileReading(activeUserMembership.Id, dateOfBirth, gender);
+                CreateNewUserProfileReading(activeUserMembership, dateOfBirth, gender);
                 return true;
             }
 
             return false;
         }
 
-        public bool GetRelationshipCompatibilityReading(int? userId, DateTime firstDateOfBirth,
+        public bool IsCompleteRelationshipCompatibilityReading(int? userId, DateTime firstDateOfBirth,
             EGender firstGender, DateTime secondDateOfBirth, EGender secondGender, bool createIfNull = true)
         {
             var activeUserMembership = GetActiveUserMembership(userId);
@@ -139,9 +143,9 @@ namespace K9.WebApplication.Services
             {
                 return true;
             }
-            if (createIfNull && activeUserMembership?.NumberOfRelationshipCompatibilityReadingsLeft > 0)
+            if (createIfNull && (activeUserMembership?.NumberOfRelationshipCompatibilityReadingsLeft > 0 || activeUserMembership?.NumberOfCredits > 0))
             {
-                CreateNewUserRelationshipCompatibilityReading(activeUserMembership.Id, firstDateOfBirth, firstGender, secondDateOfBirth, secondGender);
+                CreateNewUserRelationshipCompatibilityReading(activeUserMembership, firstDateOfBirth, firstGender, secondDateOfBirth, secondGender);
                 return true;
             }
 
@@ -241,16 +245,19 @@ namespace K9.WebApplication.Services
                 }
 
                 var result = _stripeService.Charge(model);
-                _userMembershipRepository.Create(new UserMembership
+                var userMembership = new UserMembership
                 {
                     UserId = _authentication.CurrentUserId,
                     MembershipOptionId = model.MembershipOptionId,
                     StartsOn = DateTime.Today,
                     EndsOn = membershipOption.IsAnnual ? DateTime.Today.AddYears(1) : DateTime.Today.AddMonths(1),
                     IsAutoRenew = true
-                });
+                };
+                _userMembershipRepository.Create(userMembership);
                 TerminateExistingMemberships(model.MembershipOptionId);
                 _contactService.CreateCustomer(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
+                SendEmailToNineStar(userMembership);
+                SendEmailToCustomer(userMembership);
             }
             catch (Exception ex)
             {
@@ -287,6 +294,33 @@ namespace K9.WebApplication.Services
             }
         }
 
+        public void CreateFreeMembership(int userId)
+        {
+            try
+            {
+                var membershipOption = _membershipOptionRepository.Find(e => e.SubscriptionType == MembershipOption.ESubscriptionType.Free).FirstOrDefault();
+                if (membershipOption == null)
+                {
+                    _logger.Error($"MembershipService => ProcessPurchase => No MembershipOption with Subscription Type {MembershipOption.ESubscriptionType.Free} was found.");
+                    throw new IndexOutOfRangeException("Invalid MembershipOption");
+                }
+
+                _userMembershipRepository.Create(new UserMembership
+                {
+                    UserId = userId,
+                    MembershipOptionId = membershipOption.Id,
+                    StartsOn = DateTime.Today,
+                    EndsOn = DateTime.MaxValue,
+                    IsAutoRenew = true
+                });
+            }
+            catch (Exception ex)
+            {
+                _logger.Error($"MembershipService => CreateFreeMembership => failed: {ex.Message}");
+                throw ex;
+            }
+        }
+
         private void TerminateExistingMemberships(int activeUserMembershipId)
         {
             var userMemberships = GetActiveUserMemberships();
@@ -305,62 +339,92 @@ namespace K9.WebApplication.Services
             }
         }
 
-        private void CreateNewUserProfileReading(int userMembershipId, DateTime dateOfBirth, EGender gender)
+        private void CreateNewUserProfileReading(UserMembership userMembership, DateTime dateOfBirth, EGender gender)
         {
-            _userProfileReadingsRepository.Create(new UserProfileReading
+            var userProfileReading = new UserProfileReading
             {
                 DateOfBirth = dateOfBirth,
                 Gender = gender,
-                UserId = _authentication.CurrentUserId,
-                UserMembershipId = userMembershipId
-            });
+                UserId = userMembership.UserId,
+                UserMembershipId = userMembership.Id
+            };
+
+            if (userMembership.NumberOfProfileReadingsLeft == 0)
+            {
+                var userCredit = _userCreditsRepository.Find(e => e.UserId == userMembership.UserId).FirstOrDefault();
+                if (userMembership.NumberOfCredits == 0 || userCredit == null)
+                {
+                    _logger.Error($"MembershipService => CreateNewUserProfileReading => No User Credits were found for User {userMembership.UserId}.");
+                    throw new Exception("No User Credits were found");
+                }
+
+                userProfileReading.UserCreditId = userCredit.Id;
+            }
+
+            _userProfileReadingsRepository.Create(userProfileReading);
         }
 
-        private void CreateNewUserRelationshipCompatibilityReading(int userMembershipId, DateTime firstDateOfBirth, EGender firstGender, DateTime secondDateOfBirth, EGender secondGender)
+        private void CreateNewUserRelationshipCompatibilityReading(UserMembership userMembership, DateTime firstDateOfBirth, EGender firstGender, DateTime secondDateOfBirth, EGender secondGender)
         {
-            _userRelationshipCompatibilityReadingsRepository.Create(new UserRelationshipCompatibilityReading
+            var userRelationshipCompatibilityReading = new UserRelationshipCompatibilityReading
             {
                 FirstDateOfBirth = firstDateOfBirth,
                 FirstGender = firstGender,
                 SecondDateOfBirth = secondDateOfBirth,
                 SecondGender = secondGender,
                 UserId = _authentication.CurrentUserId,
-                UserMembershipId = userMembershipId
-            });
+                UserMembershipId = userMembership.Id
+            };
+
+            if (userMembership.NumberOfProfileReadingsLeft == 0)
+            {
+                var userCredit = _userCreditsRepository.Find(e => e.UserId == userMembership.UserId).FirstOrDefault();
+                if (userMembership.NumberOfCredits == 0 || userCredit == null)
+                {
+                    _logger.Error($"MembershipService => CreateNewUserProfileReading => No User Credits were found for User {userMembership.UserId}.");
+                    throw new Exception("No User Credits were found");
+                }
+
+                userRelationshipCompatibilityReading.UserCreditId = userCredit.Id;
+            }
+
+            _userRelationshipCompatibilityReadingsRepository.Create(userRelationshipCompatibilityReading);
         }
 
-        private void SendEmailToNineStar(Donation donation)
+        private void SendEmailToNineStar(UserMembership userMembership)
         {
-            var template = Dictionary.DonationReceivedEmail;
-            var title = "We have received a donation!";
+            var template = Dictionary.MembershipCreatedEmail;
+            var title = "We have received a new subscription!";
             _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
             {
                 Title = title,
-                donation.Customer,
-                donation.CustomerEmail,
-                Amount = donation.DonationAmount,
-                donation.Currency,
-                LinkToSummary = _urlHelper.AbsoluteAction("Index", "Donations"),
+                Customer = userMembership.User.FullName,
+                CustomerEmail = userMembership.User.EmailAddress,
+                SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal,
+                LinkToSummary = _urlHelper.AbsoluteAction("Index", "UserMemberships"),
                 Company = _config.CompanyName,
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl)
             }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
         }
 
-        private void SendEmailToCustomer(Donation donation)
+        private void SendEmailToCustomer(UserMembership userMembership)
         {
-            var template = Dictionary.DonationThankYouEmail;
-            var title = Dictionary.ThankyouForDonationEmailTitle;
+            var template = Dictionary.NewMembershipThankYouEmail;
+            var title = TemplateProcessor.PopulateTemplate(Dictionary.ThankyouForSubscriptionEmailTitle, new
+            {
+                SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal
+            });
             _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
             {
                 Title = title,
-                donation.CustomerName,
-                donation.CustomerEmail,
-                Amount = donation.DonationAmount,
-                donation.Currency,
-                Company = _config.CompanyName,
+                CustomerName = userMembership.User.FullName,
+                SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal,
+                EndsOn = userMembership.EndsOn.ToLongDateString(),
+                NumberOfProfileReadings = userMembership.MembershipOption.MaxNumberOfProfileReadings,
+                NumberOfCompatibilityReadings = userMembership.MembershipOption.MaxNumberOfCompatibilityReadings,
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
                 DateTime.Now.Year
-            }), donation.CustomerEmail, donation.Customer, _config.SupportEmailAddress, _config.CompanyName);
+            }), userMembership.User.EmailAddress, userMembership.User.FirstName, _config.SupportEmailAddress, _config.CompanyName);
         }
 
         private double GetCostOfRemainingActiveSubscription()

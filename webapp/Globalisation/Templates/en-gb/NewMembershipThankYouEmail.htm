@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>NineStar</title>
+    <title>{Title}</title>
 
     <style type="text/css">
 
@@ -592,17 +592,29 @@
                                                                 <span>
                                                                     <span style="font-size:12px">
                                                                         <span style="color: #000000">
-                                                                            Dear {FirstName},
+                                                                            Dear {CustomerName},
                                                                         </span>
                                                                         <br>
                                                                         <br>
                                                                         <span style="color: #000000">
-                                                                            Thank you for registering with {Company}. Please click on the link below to activate your account:
+                                                                            Thank you very much for signing up. Your subscription details are as follows.
                                                                         </span>
                                                                         <br />
                                                                         <br />
                                                                         <span style="color: #000000">
-                                                                            <a href="{ActivationLink}">{ActivationLink}</a>
+                                                                            <strong>Subscription Type:</strong>{SubscriptionType}
+                                                                        </span>
+                                                                        <br />
+                                                                        <span style="color: #000000">
+                                                                            <strong>Runs Until:</strong>{EndsOn}
+                                                                        </span>
+                                                                        <br />
+                                                                        <span style="color: #000000">
+                                                                            <strong>Profile Readings Included:</strong>{NumberOfProfileReadings}
+                                                                        </span>
+                                                                        <br />
+                                                                        <span style="color: #000000">
+                                                                            <strong>Compatibility Readings Included:</strong>{NumberOfCompatibilityReadings}
                                                                         </span>
                                                                         <br />
                                                                         <br />

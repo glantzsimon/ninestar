@@ -9,6 +9,7 @@ namespace K9.DataAccessLayer.Database.Seeds
     {
         public static void Seed(DbContext context)
         {
+            AddMembershipOption(context, "FreeMembership", "free_membership_description", MembershipOption.ESubscriptionType.MonthlyStandard, 0, 5, 2);
             AddMembershipOption(context, "MonthlyStandardMembership", "standard_membership_description", MembershipOption.ESubscriptionType.MonthlyStandard, 7, 50, 20);
             AddMembershipOption(context, "YearlyStandardMembership", "standard_membership_description", MembershipOption.ESubscriptionType.AnnualStandard, 57, 50, 20);
             AddMembershipOption(context, "MonthlyPlatinumMembership", "platinum_membership_description", MembershipOption.ESubscriptionType.MonthlyPlatinum, 17, MembershipOption.Unlimited, MembershipOption.Unlimited);

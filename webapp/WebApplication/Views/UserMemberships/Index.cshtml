@@ -1,28 +1,25 @@
-﻿@using K9.Base.WebApplication.Helpers
-@using K9.SharedLibrary.Models
-@using EButtonType = K9.SharedLibrary.Models.EButtonType
-@model User
+﻿@using K9.Base.WebApplication.Controllers
+@using K9.Base.WebApplication.Helpers
+@using K9.SharedLibrary.Authentication
+@model UserMembership
 @{
 	Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
 }
-@Html.BootstrapTable(new DataTableOptions<User>
+@Html.BootstrapTable(new DataTableOptions<UserMembership>
 {
-	VisibleColumns = new List<string>
-	{
-		"Username"
-	},
-	AllowCreate = false,
-	AllowDelete = false,
-	AllowView = false,
-	AllowEdit = false,
-	CustomButtons = new List<IButton>
-	{
-		new Button
-		{
-			Action = "EditUserMembershipsForUser",
-			Text = K9.Base.Globalisation.Dictionary.Edit,
-			ButtonType = EButtonType.Primary,
-			IconCssClass = "fa fa-pencil"
-		}
-	}
+    AllowCreate = false,
+    AllowEdit = false,
+    AllowDelete = ((BaseController<UserMembership>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
+    VisibleColumns = new List<string>
+    {
+        "IsActive",
+        "StartsOn",
+        "EndsOn",
+        "IsDeactivated",
+        "UserName",
+        "MembershipOptionName",
+        "NumberOfCredits",
+        "NumberOfProfileReadingsLeft",
+        "NumberOfRelationshipCompatibilityReadingsLeft",
+    }
 })

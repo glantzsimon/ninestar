@@ -1,4 +1,5 @@
-﻿using K9.Base.DataAccessLayer.Models;
+﻿using K9.Base.DataAccessLayer.Enums;
+using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
 using K9.Base.WebApplication.Config;
 using K9.Base.WebApplication.Enums;
@@ -17,7 +18,6 @@ using NLog;
 using System;
 using System.Linq;
 using System.Web.Mvc;
-using K9.Base.DataAccessLayer.Enums;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
@@ -168,6 +168,9 @@ namespace K9.WebApplication.Controllers
 
                 if (result.IsSuccess)
                 {
+                    var user = result.Data.MapTo<User>();
+                    _membershipService.CreateFreeMembership(user.Id);
+
                     return RedirectToAction("AccountCreated", "Account");
                 }
 

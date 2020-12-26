@@ -21,6 +21,8 @@ namespace K9.DataAccessLayer.Models
 
         public enum ESubscriptionType
         {
+            [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Free)]
+            Free = 0,
             [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.MonthlyStandardMembership)]
             MonthlyStandard = 1,
             [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.AnnualStandardMembership)]
@@ -79,6 +81,8 @@ namespace K9.DataAccessLayer.Models
             : "Monthly";
 
         public string MembershipPeriodLocal => GetLocalisedPropertyValue(nameof(MembershipPeriod));
+
+        public bool IsFree => SubscriptionType == ESubscriptionType.Free;
 
         public bool IsMonthly =>
             new[] { ESubscriptionType.MonthlyPlatinum, ESubscriptionType.MonthlyStandard }.Contains(SubscriptionType);

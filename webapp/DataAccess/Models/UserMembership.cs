@@ -69,6 +69,10 @@ namespace K9.DataAccessLayer.Models
         public string NumberOfRelationshipCompatibilityReadingsLeftText => MembershipOption.IsUnlimited
             ? Globalisation.Dictionary.Unlimited : NumberOfRelationshipCompatibilityReadingsLeft.ToString();
 
+        [NotMapped] 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfRelationshipCompatibilityReadingsLeft)]
+        public int NumberOfCredits { get; set; }
+
         public bool IsActive => DateTime.Today.IsBetween(StartsOn.Date, EndsOn.Date) && !IsDeactivated;
 
         public TimeSpan Duration => EndsOn.Subtract(StartsOn);

@@ -13,7 +13,7 @@ namespace K9.DataAccessLayer.Database
         
         string IMigrationMetadata.Id
         {
-            get { return "202012261615263_AddUserCredits"; }
+            get { return "202012261621485_AddUserCredits"; }
         }
         
         string IMigrationMetadata.Source

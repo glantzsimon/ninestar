@@ -26,7 +26,7 @@ namespace K9.DataAccessLayer.Models
         public int UserMembershipId { get; set; }
 
         [ForeignKey("UserCreditPack")]
-        public int UserCreditPackId { get; set; }
+        public int? UserCreditPackId { get; set; }
         
         [Required]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DateOfBirthLabel)]

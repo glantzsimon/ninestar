@@ -284,9 +284,9 @@
     <Compile Include="Migrations\202012252346046_MembershipIsDeactivated.Designer.cs">
       <DependentUpon>202012252346046_MembershipIsDeactivated.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202012261615263_AddUserCredits.cs" />
-    <Compile Include="Migrations\202012261615263_AddUserCredits.Designer.cs">
-      <DependentUpon>202012261615263_AddUserCredits.cs</DependentUpon>
+    <Compile Include="Migrations\202012261621485_AddUserCredits.cs" />
+    <Compile Include="Migrations\202012261621485_AddUserCredits.Designer.cs">
+      <DependentUpon>202012261621485_AddUserCredits.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\MembershipOption.cs" />
@@ -341,8 +341,8 @@
     <EmbeddedResource Include="Migrations\202012252346046_MembershipIsDeactivated.resx">
       <DependentUpon>202012252346046_MembershipIsDeactivated.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012261615263_AddUserCredits.resx">
-      <DependentUpon>202012261615263_AddUserCredits.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202012261621485_AddUserCredits.resx">
+      <DependentUpon>202012261621485_AddUserCredits.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

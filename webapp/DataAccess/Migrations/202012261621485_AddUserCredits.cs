@@ -28,8 +28,8 @@ namespace K9.DataAccessLayer.Database
                 .Index(t => t.UserId)
                 .Index(t => t.Name, unique: true);
             
-            AddColumn("dbo.UserProfileReading", "UserCreditPackId", c => c.Int(nullable: false));
-            AddColumn("dbo.UserRelationshipCompatibilityReading", "UserCreditPackId", c => c.Int(nullable: false));
+            AddColumn("dbo.UserProfileReading", "UserCreditPackId", c => c.Int());
+            AddColumn("dbo.UserRelationshipCompatibilityReading", "UserCreditPackId", c => c.Int());
             CreateIndex("dbo.UserProfileReading", "UserCreditPackId");
             CreateIndex("dbo.UserRelationshipCompatibilityReading", "UserCreditPackId");
             AddForeignKey("dbo.UserProfileReading", "UserCreditPackId", "dbo.UserCreditPack", "Id");

@@ -29,6 +29,8 @@ namespace K9.WebApplication.Models
             LifeCycleMonthEnergy = GetLifeCycleMonthEnergy();
 
             MainEnergy.RelatedEnergy = CharacterEnergy.Energy;
+            CharacterEnergy.RelatedEnergy = MainEnergy.Energy;
+            SurfaceEnergy.RelatedEnergy = MainEnergy.Energy;
         }
 
         public PersonModel PersonModel { get; }
@@ -401,11 +403,13 @@ namespace K9.WebApplication.Models
             text = TemplateProcessor.PopulateTemplate(text,
                 new
                 {
-                    PotentialMatesTest = potentialMatesText,
+                    PotentialMatesText = potentialMatesText,
                     SexualPartnersText = sexualPartnersText
                 });
 
-            return $"{text} {Dictionary.sexuality_gay_notes}";
+            var gayNotes = isGay ? Dictionary.sexuality_gay_notes : string.Empty;
+
+            return $"{text} {gayNotes}".Trim();
         }
 
         private string GetMainEnergySexualityDetails()

@@ -1093,6 +1093,10 @@
     <Content Include="Views\Membership\PurchaseCredits.cshtml" />
     <Content Include="Views\Membership\PurchaseCreditsStart.cshtml" />
     <Content Include="Views\Membership\PurchaseCreditsSuccess.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Url.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Url.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Int32.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

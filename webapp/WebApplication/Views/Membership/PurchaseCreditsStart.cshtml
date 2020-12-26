@@ -9,33 +9,49 @@
 {
     using (Html.BeginBootstrapForm())
     {
-        <h4 class="margin-bottom-30"><strong>@Dictionary.EnterCreditsText:</strong></h4>
+        <div class="credit-packs">
+            <div class="alert alert-info alert-dismissable">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <i class="fa fa-info-circle"></i> @Dictionary.CreditsDescriptionUI
+            </div>
 
-        @Html.BootstrapEditorFor(e => e.NumberOfCredits)
+            <h4 class="margin-bottom-30 margin-top-0"><strong>@Dictionary.EnterCreditsText:</strong></h4>
 
-        <h5>@Dictionary.CreditPricingTitle</h5>
-        <div class="row">
-            <div class="col-sm-5">@Dictionary.NumberOfCreditsLabel</div>
-            <div class="col-sm-5">@Dictionary.PricePerCredit</div>
-        </div>
-        <div class="row">
-            <div class="col-sm-5">< 10</div>
-            <div class="col-sm-5">@Html.BootstrapDisplayFor(e => e.PricePerCredit)</div>
-        </div>
-        <div class="row">
-            <div class="col-sm-5">10 - 19</div>
-            <div class="col-sm-5">@Html.BootstrapDisplayFor(e => e.PricePerCredits10)</div>
-        </div>
-        <div class="row">
-            <div class="col-sm-5">20 - 29</div>
-            <div class="col-sm-5">@Html.BootstrapDisplayFor(e => e.PricePerCredits20)</div>
-        </div>
-        <div class="row">
-            <div class="col-sm-5">30+</div>
-            <div class="col-sm-5">@Html.BootstrapDisplayFor(e => e.PricePerCredits30)</div>
-        </div>
+            <div class="row padding-0">
+                <div class="col-sm-6 padding-0">
+                    @Html.BootstrapEditorFor(e => e.NumberOfCredits)
+                </div>
+            </div>
 
-        <hr />
-        @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
+            <hr/>
+
+            <h4>@Dictionary.CreditPricingTitle</h4>
+
+            <div class="credit-back-summary">
+                <div class="row margin-top-5">
+                    <div class="col-sm-5"><h5>@Dictionary.NumberOfCreditsLabel</h5></div>
+                    <div class="col-sm-5"><h5>@Dictionary.PricePerCredit</h5></div>
+                </div>
+                <div class="row margin-bottom-10">
+                    <div class="col-sm-5">< 10</div>
+                    <div class="col-sm-5">@Html.Partial("DisplayTemplates/Currency", Model?.PricePerCredit)</div>
+                </div>
+                <div class="row margin-bottom-10">
+                    <div class="col-sm-5">10 - 19</div>
+                    <div class="col-sm-5">@Html.Partial("DisplayTemplates/Currency", Model?.PricePerCredits10)</div>
+                </div>
+                <div class="row margin-bottom-10">
+                    <div class="col-sm-5">20 - 29</div>
+                    <div class="col-sm-5">@Html.Partial("DisplayTemplates/Currency", Model?.PricePerCredits20)</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5">30+</div>
+                    <div class="col-sm-5">@Html.Partial("DisplayTemplates/Currency", Model?.PricePerCredits30)</div>
+                </div>
+            </div>
+
+            <hr/>
+            @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
+        </div>
     }
 }

@@ -1,4 +1,5 @@
-﻿@model Object
+﻿@using System.Globalization
+@model Object
 <div>
-    @String.Format("{0:c}", Model)
+    @(Model == null ? string.Empty : double.Parse(Model.ToString()).ToString("C", CultureInfo.GetCultureInfo("en-US")))
 </div>

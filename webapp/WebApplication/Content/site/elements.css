@@ -1,4 +1,12 @@
-﻿article h4 {
+﻿h4 {
+    line-height: 1.3em;
+}
+
+h5 {
+    line-height: 1.2em;
+}
+
+article h4 {
     margin-top: 32px;
     margin-bottom: 15px;
     font-weight: bold;

@@ -163,6 +163,21 @@
     font-size: 1.2em;
 }
 
+.credit-packs h5, .credit-packs h4 {
+    font-weight: bold;
+}
+
+.credit-packs .row {
+    padding: 0;
+}
+
+.credit-back-summary {
+    background: white;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #eeeeee;
+}
+
 @media(max-width:513px) {
     .nav-tabs li {
         width: 100%;

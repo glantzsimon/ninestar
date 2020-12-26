@@ -1,7 +1,7 @@
 ﻿@using System.Globalization
 @model Object
 @{
-    var currencySymbol = new RegionInfo(System.Threading.Thread.CurrentThread.CurrentUICulture.LCID).CurrencySymbol;
+    var currencySymbol = new RegionInfo(CultureInfo.GetCultureInfo("en-US").LCID).CurrencySymbol;
 }    
 
 <div class="input-group">

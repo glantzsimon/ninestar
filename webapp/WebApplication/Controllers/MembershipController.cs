@@ -70,7 +70,7 @@ namespace K9.WebApplication.Controllers
         [Route("membership/purchase-credits")]
         public ActionResult PurchaseCreditsStart()
         {
-            return View();
+            return View(new PurchaseCreditsViewModel());
         }
 
         [Route("membership/purchase-credits/review")]

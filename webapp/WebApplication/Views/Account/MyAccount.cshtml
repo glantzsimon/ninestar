@@ -28,15 +28,15 @@
                     <hr />
                     <div class="margin-top-20">
                         @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership")
+                        <div class="inline" data-toggle="tooltip" title="@Dictionary.CreditsDescriptionUI">@Html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership")</div>
                     </div>
                 }
             }
             else
             {
                 <hr />
-                <div class="support-us-option shadow-light shadow-hover">
-                    @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership")
-                </div>
+                @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership")
+                <div class="inline" data-toggle="tooltip" title="@Dictionary.CreditsDescriptionUI">@Html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership")</div>
             }
         </div>
     </div>

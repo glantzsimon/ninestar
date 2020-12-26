@@ -1,21 +1,21 @@
 ﻿.max-height-100 {
-	max-height: 100px;
+    max-height: 100px;
 }
 
 .max-height-200 {
-	max-height: 200px;
+    max-height: 200px;
 }
 
 .max-height-300 {
-	max-height: 300px;
+    max-height: 300px;
 }
 
 .max-height-400 {
-	max-height: 400px;
+    max-height: 400px;
 }
 
 .max-height-500 {
-	max-height: 500px;
+    max-height: 500px;
 }
 
 .max-width-200 {
@@ -24,35 +24,35 @@
 }
 
 .text-white {
-	color: white;
+    color: white;
 }
 
 .bg-black {
-	background: black;
+    background: black;
 }
 
 .bg-grey {
-	background: #888888;
+    background: #888888;
 }
 
 .bg-blue {
-	background: #337ab7;
+    background: #337ab7;
 }
 
 .bg-none {
-	background: none;
+    background: none;
 }
 
 .margin-top-0 {
-	margin-top: 0;
+    margin-top: 0;
 }
 
 .margin-top-5 {
-	margin-top: 5px;
+    margin-top: 5px;
 }
 
 .margin-top-10 {
-	margin-top: 10px;
+    margin-top: 10px;
 }
 
 .margin-top-15 {
@@ -92,7 +92,7 @@
 }
 
 .margin-0 {
-	margin: 0;
+    margin: 0;
 }
 
 .margin-left-0 {
@@ -152,7 +152,7 @@
 }
 
 .padding-left-2 {
-	padding-left: 2px;
+    padding-left: 2px;
 }
 
 .padding-left-20-desktop {
@@ -168,7 +168,7 @@
 }
 
 .padding-top-10 {
-	padding-top: 10px;
+    padding-top: 10px;
 }
 
 .padding-bottom-0 {
@@ -176,7 +176,7 @@
 }
 
 .padding-top-20 {
-	padding-top: 20px;
+    padding-top: 20px;
 }
 
 .padding-top-5 {
@@ -192,19 +192,27 @@
 }
 
 .bold {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 .bolder {
-	font-weight: bolder;
+    font-weight: bolder;
 }
 
 .display-none {
-	display: none;
+    display: none;
+}
+
+.inline-block {
+    display: inline-block !important;
+}
+
+.inline {
+    display: inline !important;
 }
 
 .no-wrap {
-	white-space: nowrap;
+    white-space: nowrap;
 }
 
 .center-300 {
@@ -212,7 +220,7 @@
     height: 300px;
     position: absolute;
     left: 50%;
-    top: 50%; 
+    top: 50%;
     margin-left: -150px;
     margin-top: -150px;
 }

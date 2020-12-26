@@ -1938,6 +1938,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Each credit give you access to either a complete Profile Reading or Compatibility Reading. You can also buy Credit Packs at a reduced price.
+        /// </summary>
+        public static string CreditsDescriptionUI {
+            get {
+                return ResourceManager.GetString("CreditsDescriptionUI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The total cost of your credit pack is:.
         /// </summary>
         public static string CreditsPurchaseAmountLabel {
@@ -2660,13 +2669,13 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div&gt;
-        ///    &lt;h4&gt;&lt;strong&gt;With the Standard Subscription you get:&lt;/strong&gt;&lt;/h4&gt;
+        ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
+        ///    &lt;h4&gt;&lt;strong&gt;Free Subscription:&lt;/strong&gt;&lt;/h4&gt;
         ///    &lt;p&gt;
-        ///        &amp;#8226; {NumberOfProfileReadings} full Personal Profile readings a month.
+        ///        &amp;#8226; {NumberOfProfileReadings} full Personal Profile readings.
         ///    &lt;/p&gt;
         ///    &lt;p&gt;
-        ///        &amp;#8226; {NumberOfCompatibilityReadings} full Relationship Compatibility readings a month.
+        ///        &amp;#8226; {NumberOfCompatibilityReadings} full Relationship Compatibility readings.
         ///    &lt;/p&gt;
         ///&lt;/div&gt;.
         /// </summary>
@@ -4199,8 +4208,8 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div&gt;
-        ///    &lt;h4&gt;&lt;strong&gt;With the Platinum Subscription you get:&lt;/strong&gt;&lt;/h4&gt;
+        ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
+        ///    &lt;h4&gt;&lt;strong&gt;Platinum Subscription:&lt;/strong&gt;&lt;/h4&gt;
         ///    &lt;p&gt;
         ///        &amp;#8226; Unlimited full Personal Profile readings.
         ///    &lt;/p&gt;
@@ -4954,8 +4963,8 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div&gt;
-        ///    &lt;h4&gt;&lt;strong&gt;With the Standard Subscription you get:&lt;/strong&gt;&lt;/h4&gt;
+        ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
+        ///    &lt;h4&gt;&lt;strong&gt;Standard Subscription:&lt;/strong&gt;&lt;/h4&gt;
         ///    &lt;p&gt;
         ///        &amp;#8226; {NumberOfProfileReadings} full Personal Profile readings a month.
         ///    &lt;/p&gt;

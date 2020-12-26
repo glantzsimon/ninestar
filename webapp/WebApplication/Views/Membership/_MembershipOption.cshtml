@@ -20,7 +20,13 @@
                         ? Dictionary.Upgrade
                         : Dictionary.Switch
                     : Dictionary.Select;
-                @Html.BootstrapActionLinkButton(buttonText, Model.IsUpgrade ? "SwitchStart" : "PurchaseStart", "Membership", new { id = Model.MembershipOption.Id })
+                <div style="padding-top: 1px;">
+                    @Html.BootstrapActionLinkButton(buttonText, Model.IsUpgrade ? "SwitchStart" : "PurchaseStart", "Membership", new { id = Model.MembershipOption.Id })
+                </div>
+            }
+            else
+            {
+                <p style="padding-top: 6px; padding-bottom: 5px;">@Dictionary.Unavailable</p>
             }
         </div>
     </div>

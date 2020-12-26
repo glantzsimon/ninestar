@@ -1531,6 +1531,9 @@
   <data name="DeactivatedLabel" xml:space="preserve">
     <value>Deactivated</value>
   </data>
+  <data name="Unavailable" xml:space="preserve">
+    <value>Unavailable</value>
+  </data>
   <data name="Unlimited" xml:space="preserve">
     <value>Unlimited</value>
   </data>

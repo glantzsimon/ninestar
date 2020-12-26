@@ -26,7 +26,7 @@ namespace K9.WebApplication.Services
         private readonly IRepository<UserMembership> _userMembershipRepository;
         private readonly IRepository<UserProfileReading> _userProfileReadingsRepository;
         private readonly IRepository<UserRelationshipCompatibilityReading> _userRelationshipCompatibilityReadingsRepository;
-        private readonly IRepository<UserCredit> _userCreditsRepository;
+        private readonly IRepository<UserCreditPack> _userCreditPacksRepository;
         private readonly StripeConfiguration _stripeConfig;
         private readonly IStripeService _stripeService;
         private readonly IContactService _contactService;
@@ -34,7 +34,7 @@ namespace K9.WebApplication.Services
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<UserProfileReading> userProfileReadingsRepository, IRepository<UserRelationshipCompatibilityReading> userRelationshipCompatibilityReadingsRepository, IRepository<UserCredit> userCreditsRepository, IOptions<StripeConfiguration> stripeConfig, IStripeService stripeService, IContactService contactService, IMailer mailer, IOptions<WebsiteConfiguration> config)
+        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<UserProfileReading> userProfileReadingsRepository, IRepository<UserRelationshipCompatibilityReading> userRelationshipCompatibilityReadingsRepository, IRepository<UserCreditPack> userCreditPacksRepository, IOptions<StripeConfiguration> stripeConfig, IStripeService stripeService, IContactService contactService, IMailer mailer, IOptions<WebsiteConfiguration> config)
         {
             _logger = logger;
             _authentication = authentication;
@@ -42,7 +42,7 @@ namespace K9.WebApplication.Services
             _userMembershipRepository = userMembershipRepository;
             _userProfileReadingsRepository = userProfileReadingsRepository;
             _userRelationshipCompatibilityReadingsRepository = userRelationshipCompatibilityReadingsRepository;
-            _userCreditsRepository = userCreditsRepository;
+            _userCreditPacksRepository = userCreditPacksRepository;
             _stripeConfig = stripeConfig.Value;
             _stripeService = stripeService;
             _contactService = contactService;
@@ -87,7 +87,7 @@ namespace K9.WebApplication.Services
                     userMembership.ProfileReadings = _userProfileReadingsRepository.Find(e => e.UserId == userId).ToList();
                     userMembership.RelationshipCompatibilityReadings = _userRelationshipCompatibilityReadingsRepository
                         .Find(e => e.UserId == userId).ToList();
-                    userMembership.NumberOfCredits = _userCreditsRepository.Find(e => e.UserId == userId).Count();
+                    userMembership.NumberOfCredits = _userCreditPacksRepository.Find(e => e.UserId == userId).Count();
 
                     return userMembership;
                 }).ToList()
@@ -102,8 +102,17 @@ namespace K9.WebApplication.Services
         /// <returns></returns>
         public UserMembership GetActiveUserMembership(int? userId = null)
         {
-            return GetActiveUserMemberships(userId).OrderByDescending(_ => _.MembershipOption.SubscriptionType)
+            var activeUserMembership = GetActiveUserMemberships(userId).OrderByDescending(_ => _.MembershipOption.SubscriptionType)
                 .FirstOrDefault();
+
+            if (activeUserMembership == null && userId.HasValue)
+            {
+                CreateFreeMembership(userId.Value);
+                activeUserMembership = GetActiveUserMemberships(userId).OrderByDescending(_ => _.MembershipOption.SubscriptionType)
+                    .FirstOrDefault();
+            }
+
+            return activeUserMembership;
         }
 
         /// <summary>
@@ -229,7 +238,24 @@ namespace K9.WebApplication.Services
                 Description = membershipOption.SubscriptionTypeNameLocal,
                 MembershipOptionId = membershipOptionId,
                 PublishableKey = _stripeConfig.PublishableKey,
-                LocalisedCurrencyThreeLetters = StripeModel.GetLocalisedCurrency()
+                LocalisedCurrencyThreeLetters = StripeModel.GetSystemCurrencyCode()
+            };
+        }
+
+        public StripeModel GetPurchaseCreditsStripeModel(PurchaseCreditsViewModel model)
+        {
+            if (model.NumberOfCredits == 0)
+            {
+                _logger.Error($"MembershipService => GetPurchaseCreditsStripeModel => No credits were selected.");
+                throw new IndexOutOfRangeException("Number of credits to purchase number be greater than zero.");
+            }
+
+            return new StripeModel
+            {
+                CreditsPurchaseAmount = model.TotalPrice,
+                Description = Dictionary.CreditsPurchaseDescription,
+                PublishableKey = _stripeConfig.PublishableKey,
+                LocalisedCurrencyThreeLetters = StripeModel.GetSystemCurrencyCode()
             };
         }
 
@@ -258,6 +284,29 @@ namespace K9.WebApplication.Services
                 _contactService.CreateCustomer(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
                 SendEmailToNineStar(userMembership);
                 SendEmailToCustomer(userMembership);
+            }
+            catch (Exception ex)
+            {
+                _logger.Error($"MembershipService => ProcessPurchase => Purchase failed: {ex.Message}");
+                throw ex;
+            }
+        }
+
+        public void ProcessCreditsPurchase(StripeModel model)
+        {
+            try
+            {
+                var result = _stripeService.Charge(model);
+                var userCreditPack = new UserCreditPack
+                {
+                    UserId = _authentication.CurrentUserId,
+                    NumberOfCredits = model.TotalNumberOfCreditsToPurchase,
+                    TotalPrice = model.CreditsPurchaseAmount
+                };
+                _userCreditPacksRepository.Create(userCreditPack);
+                _contactService.CreateCustomer(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
+                SendEmailToNineStar(userCreditPack);
+                SendEmailToCustomer(userCreditPack);
             }
             catch (Exception ex)
             {
@@ -351,14 +400,14 @@ namespace K9.WebApplication.Services
 
             if (userMembership.NumberOfProfileReadingsLeft == 0)
             {
-                var userCredit = _userCreditsRepository.Find(e => e.UserId == userMembership.UserId).FirstOrDefault();
+                var userCredit = _userCreditPacksRepository.Find(e => e.UserId == userMembership.UserId).FirstOrDefault();
                 if (userMembership.NumberOfCredits == 0 || userCredit == null)
                 {
                     _logger.Error($"MembershipService => CreateNewUserProfileReading => No User Credits were found for User {userMembership.UserId}.");
                     throw new Exception("No User Credits were found");
                 }
 
-                userProfileReading.UserCreditId = userCredit.Id;
+                userProfileReading.UserCreditPackId = userCredit.Id;
             }
 
             _userProfileReadingsRepository.Create(userProfileReading);
@@ -378,14 +427,14 @@ namespace K9.WebApplication.Services
 
             if (userMembership.NumberOfProfileReadingsLeft == 0)
             {
-                var userCredit = _userCreditsRepository.Find(e => e.UserId == userMembership.UserId).FirstOrDefault();
+                var userCredit = _userCreditPacksRepository.Find(e => e.UserId == userMembership.UserId).FirstOrDefault();
                 if (userMembership.NumberOfCredits == 0 || userCredit == null)
                 {
                     _logger.Error($"MembershipService => CreateNewUserProfileReading => No User Credits were found for User {userMembership.UserId}.");
                     throw new Exception("No User Credits were found");
                 }
 
-                userRelationshipCompatibilityReading.UserCreditId = userCredit.Id;
+                userRelationshipCompatibilityReading.UserCreditPackId = userCredit.Id;
             }
 
             _userRelationshipCompatibilityReadingsRepository.Create(userRelationshipCompatibilityReading);
@@ -401,6 +450,7 @@ namespace K9.WebApplication.Services
                 Customer = userMembership.User.FullName,
                 CustomerEmail = userMembership.User.EmailAddress,
                 SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal,
+                TotalPrice = userMembership.MembershipOption.FormattedPrice,
                 LinkToSummary = _urlHelper.AbsoluteAction("Index", "UserMemberships"),
                 Company = _config.CompanyName,
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl)
@@ -419,12 +469,45 @@ namespace K9.WebApplication.Services
                 Title = title,
                 CustomerName = userMembership.User.FullName,
                 SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal,
+                TotalPrice = userMembership.MembershipOption.FormattedPrice,
                 EndsOn = userMembership.EndsOn.ToLongDateString(),
                 NumberOfProfileReadings = userMembership.MembershipOption.MaxNumberOfProfileReadings,
                 NumberOfCompatibilityReadings = userMembership.MembershipOption.MaxNumberOfCompatibilityReadings,
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
                 DateTime.Now.Year
             }), userMembership.User.EmailAddress, userMembership.User.FirstName, _config.SupportEmailAddress, _config.CompanyName);
+        }
+
+        private void SendEmailToNineStar(UserCreditPack userCreditPack)
+        {
+            var template = Dictionary.CreditPackPurchased;
+            var title = "We have received a new credit pack purchase!";
+            _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
+            {
+                Title = title,
+                Customer = userCreditPack.User.FullName,
+                CustomerEmail = userCreditPack.User.EmailAddress,
+                userCreditPack.NumberOfCredits,
+                TotalPrice = userCreditPack.FormattedPrice,
+                LinkToCreditPacks = _urlHelper.AbsoluteAction("Index", "UserCreditPacks"),
+                Company = _config.CompanyName,
+                ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl)
+            }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
+        }
+
+        private void SendEmailToCustomer(UserCreditPack userCreditPack)
+        {
+            var template = Dictionary.NewCreditPackThankYouEmail;
+            var title = Dictionary.ThankyouForCreditPackPurchaseEmailTitle;
+            _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
+            {
+                Title = title,
+                CustomerName = userCreditPack.User.FullName,
+                NumberOfCreditsPurchased = userCreditPack.NumberOfCredits,
+                TotalPrice = userCreditPack.FormattedPrice,
+                ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
+                DateTime.Now.Year
+            }), userCreditPack.User.EmailAddress, userCreditPack.User.FirstName, _config.SupportEmailAddress, _config.CompanyName);
         }
 
         private double GetCostOfRemainingActiveSubscription()

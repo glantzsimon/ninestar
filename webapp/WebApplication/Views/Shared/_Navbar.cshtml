@@ -15,29 +15,13 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu nav navbar-nav">
-                        @if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<ArchiveItem>(Permissions.Create, Permissions.Edit, Permissions.Delete))
-                        {
-                            <li class="@ViewContext.GetActiveClass("Index", "ArchiveItems") sub-item"><a href="@Url.Action("Index", "ArchiveItems")">@K9.Base.Globalisation.Dictionary.ArchiveItems</a></li>
-                        }
-                        @if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<ArchiveItemCategory>(Permissions.Create, Permissions.Edit, Permissions.Delete))
-                        {
-                            <li class="@ViewContext.GetActiveClass("Index", "ArchiveCategories") sub-item"><a href="@Url.Action("Index", "ArchiveCategories")">@K9.Base.Globalisation.Dictionary.ArchiveCategories</a></li>
-                        }
-                        @if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<Donation>(Permissions.Create, Permissions.Edit, Permissions.Delete))
-                        {
-                            <li class="@ViewContext.GetActiveClass("Index", "Donations") sub-item"><a href="@Url.Action("Index", "Donations")">@Dictionary.Donations</a></li>
-                        }
-                        @if (roles.CurrentUserIsInRoles(RoleNames.Administrators))
-                        {
-                            <li class="@ViewContext.GetActiveClass("Index", "NewsItems") sub-item"><a href="@Url.Action("Index", "NewsItems")">@K9.Base.Globalisation.Dictionary.NewsItems</a></li>
-                        }
-                        @if (roles.CurrentUserIsInRoles(RoleNames.Administrators))
-                        {
-                            <li class="@ViewContext.GetActiveClass("Index", "Roles") sub-item"><a href="@Url.Action("Index", "Roles")">@K9.Base.Globalisation.Dictionary.Roles</a></li>
-                            <li class="@ViewContext.GetActiveClass("Index", "RolePermissions") sub-item"><a href="@Url.Action("Index", "RolePermissions")">@K9.Base.Globalisation.Dictionary.Role @K9.Base.Globalisation.Dictionary.Permissions</a></li>
-                            <li class="@ViewContext.GetActiveClass("Index", "Users") sub-item"><a href="@Url.Action("Index", "Users")">@K9.Base.Globalisation.Dictionary.Users</a></li>
-                            <li class="@ViewContext.GetActiveClass("Index", "UserRoles") sub-item"><a href="@Url.Action("Index", "UserRoles")">@K9.Base.Globalisation.Dictionary.UserRoles</a></li>
-                        }
+                        <li class="@ViewContext.GetActiveClass("Index", "Contacts") sub-item"><a href="@Url.Action("Index", "Contacts")">@Dictionary.Contacts</a></li>
+                        <li class="@ViewContext.GetActiveClass("Index", "UserMemberships") sub-item"><a href="@Url.Action("Index", "UserMemberships")">@Dictionary.UserMemberships</a></li>
+                        <li class="@ViewContext.GetActiveClass("Index", "Roles") sub-item"><a href="@Url.Action("Index", "Roles")">@K9.Base.Globalisation.Dictionary.Roles</a></li>
+                        <li class="@ViewContext.GetActiveClass("Index", "RolePermissions") sub-item"><a href="@Url.Action("Index", "RolePermissions")">@K9.Base.Globalisation.Dictionary.Role @K9.Base.Globalisation.Dictionary.Permissions</a></li>
+                        <li class="@ViewContext.GetActiveClass("Index", "Users") sub-item"><a href="@Url.Action("Index", "Users")">@K9.Base.Globalisation.Dictionary.Users</a></li>
+                        <li class="@ViewContext.GetActiveClass("Index", "UserRoles") sub-item"><a href="@Url.Action("Index", "UserRoles")">@K9.Base.Globalisation.Dictionary.UserRoles</a></li>
+                        <li class="@ViewContext.GetActiveClass("Index", "Donations") sub-item"><a href="@Url.Action("Index", "Donations")">@Dictionary.Donations</a></li>
                     </ul>
                 </li>
             </ul>

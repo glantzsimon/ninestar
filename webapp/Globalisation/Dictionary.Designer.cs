@@ -1682,6 +1682,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contacts.
+        /// </summary>
+        public static string Contacts {
+            get {
+                return ResourceManager.GetString("Contacts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we&apos;ll assume that you are happy to receive all cookies from this website. If you would like to change your preferences you may do so by following the instructions &lt;a href=&quot;http://www.allaboutcookies.org/&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;..
         /// </summary>
         public static string cookies_blurb {
@@ -1880,11 +1889,78 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///
+        ///&lt;head&gt;
+        ///    &lt;title&gt;{Title}&lt;/title&gt;
+        ///&lt;/head&gt;
+        ///
+        ///&lt;style type=&quot;text/css&quot;&gt;
+        ///    html {
+        ///        margin: 0;
+        ///        padding: 0;
+        ///        font-family: &quot;Segoe UI&quot;, Verdana, Helvetica, Sans-Serif;
+        ///        font-size: 100%;
+        ///        text-rendering: optimizeLegibility !important;
+        ///        -webkit-font-smoothing: antialiased !important;
+        ///        margin: 0;
+        ///        color: #333;
+        ///    }
+        ///&lt;/style&gt;
+        ///
+        ///&lt;body&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;We have a new user c [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string CreditPackPurchased {
+            get {
+                return ResourceManager.GetString("CreditPackPurchased", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can save money by purchasing credit &apos;packs&apos;:.
+        /// </summary>
+        public static string CreditPricingTitle {
+            get {
+                return ResourceManager.GetString("CreditPricingTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Credits.
         /// </summary>
         public static string Credits {
             get {
                 return ResourceManager.GetString("Credits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The total cost of your credit pack is:.
+        /// </summary>
+        public static string CreditsPurchaseAmountLabel {
+            get {
+                return ResourceManager.GetString("CreditsPurchaseAmountLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 9 Star Ki Profile Readings Credits Purchase.
+        /// </summary>
+        public static string CreditsPurchaseDescription {
+            get {
+                return ResourceManager.GetString("CreditsPurchaseDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You would like to purchase the following number of credits:.
+        /// </summary>
+        public static string CreditsTotalAmountLabel {
+            get {
+                return ResourceManager.GetString("CreditsTotalAmountLabel", resourceCulture);
             }
         }
         
@@ -2272,6 +2348,15 @@ namespace K9.Globalisation {
         public static string EnergyTypeLabel {
             get {
                 return ResourceManager.GetString("EnergyTypeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Plese enter how many credits you would like to purchase.
+        /// </summary>
+        public static string EnterCreditsText {
+            get {
+                return ResourceManager.GetString("EnterCreditsText", resourceCulture);
             }
         }
         
@@ -3699,6 +3784,29 @@ namespace K9.Globalisation {
         ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
         ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
         /// </summary>
+        public static string NewCreditPackThankYouEmail {
+            get {
+                return ResourceManager.GetString("NewCreditPackThankYouEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!doctype html&gt;
+        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;!-- NAME: 1:2:1 COLUMN --&gt;
+        ///    &lt;!--[if gte mso 15]&gt;
+        ///    &lt;xml&gt;
+        ///        &lt;o:OfficeDocumentSettings&gt;
+        ///        &lt;o:AllowPNG/&gt;
+        ///        &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
+        ///        &lt;/o:OfficeDocumentSettings&gt;
+        ///    &lt;/xml&gt;
+        ///    &lt;![endif]--&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
+        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
+        /// </summary>
         public static string NewMembershipThankYouEmail {
             get {
                 return ResourceManager.GetString("NewMembershipThankYouEmail", resourceCulture);
@@ -3873,6 +3981,15 @@ namespace K9.Globalisation {
         public static string NotRegisteredYet {
             get {
                 return ResourceManager.GetString("NotRegisteredYet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of Credits.
+        /// </summary>
+        public static string NumberOfCreditsLabel {
+            get {
+                return ResourceManager.GetString("NumberOfCreditsLabel", resourceCulture);
             }
         }
         
@@ -4127,6 +4244,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Price per Credit.
+        /// </summary>
+        public static string PricePerCredit {
+            get {
+                return ResourceManager.GetString("PricePerCredit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    &lt;strong&gt;
         ///        This is the privacy notice of Glantz Software Consulting Limited. In this document, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot; refer to Glantz Software Consulting Limited.
@@ -4192,6 +4318,24 @@ namespace K9.Globalisation {
         public static string Projects {
             get {
                 return ResourceManager.GetString("Projects", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purchase Credits.
+        /// </summary>
+        public static string PurchaseCredits {
+            get {
+                return ResourceManager.GetString("PurchaseCredits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You successfully purchased a credit pack. Thank you!.
+        /// </summary>
+        public static string PurchaseCreditsSuccessful {
+            get {
+                return ResourceManager.GetString("PurchaseCreditsSuccessful", resourceCulture);
             }
         }
         
@@ -5036,6 +5180,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thank you for purchasing a Credit Pack.
+        /// </summary>
+        public static string ThankyouForCreditPackPurchaseEmailTitle {
+            get {
+                return ResourceManager.GetString("ThankyouForCreditPackPurchaseEmailTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thank you for your donation.
         /// </summary>
         public static string ThankyouForDonationEmailTitle {
@@ -5267,6 +5420,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Total Price.
+        /// </summary>
+        public static string TotalPriceLabel {
+            get {
+                return ResourceManager.GetString("TotalPriceLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Trans Female.
         /// </summary>
         public static string TransFemale {
@@ -5423,6 +5585,15 @@ namespace K9.Globalisation {
         public static string UserData {
             get {
                 return ResourceManager.GetString("UserData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Subscriptions.
+        /// </summary>
+        public static string UserMemberships {
+            get {
+                return ResourceManager.GetString("UserMemberships", resourceCulture);
             }
         }
         

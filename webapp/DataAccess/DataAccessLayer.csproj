@@ -287,7 +287,7 @@
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\MembershipOption.cs" />
     <Compile Include="Models\UserCompatibilityReading.cs" />
-    <Compile Include="Models\UserCredit.cs" />
+    <Compile Include="Models\UserCreditPack.cs" />
     <Compile Include="Models\UserProfileReading.cs" />
     <Compile Include="Models\UserMembership.cs" />
     <Compile Include="Models\Donation.cs" />

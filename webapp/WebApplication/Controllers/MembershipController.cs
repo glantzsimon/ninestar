@@ -6,6 +6,7 @@ using K9.WebApplication.Services;
 using NLog;
 using System;
 using System.Web.Mvc;
+using K9.WebApplication.ViewModels;
 
 namespace K9.WebApplication.Controllers
 {
@@ -62,6 +63,45 @@ namespace K9.WebApplication.Controllers
 
         [Route("membership/signup/success")]
         public ActionResult PurchaseSuccess()
+        {
+            return View();
+        }
+
+        [Route("membership/purchase-credits")]
+        public ActionResult PurchaseCreditsStart()
+        {
+            return View();
+        }
+
+        [Route("membership/purchase-credits/review")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult PurchaseCredits(PurchaseCreditsViewModel model)
+        {
+            return View(_membershipService.GetPurchaseCreditsStripeModel(model));
+        }
+
+        [HttpPost]
+        [Route("membership/purchase-credits/processing")]
+        [ValidateAntiForgeryToken]
+        public ActionResult PurchaseCreditsProcess(StripeModel model)
+        {
+            try
+            {
+                model.PublishableKey = _stripeConfig.PublishableKey;
+                _membershipService.ProcessPurchase(model);
+                return RedirectToAction("PurchaseCreditsSuccess");
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+            }
+
+            return View("PurchaseCredits", model);
+        }
+
+        [Route("membership/purchase-credits/success")]
+        public ActionResult PurchaseCreditsSuccess()
         {
             return View();
         }

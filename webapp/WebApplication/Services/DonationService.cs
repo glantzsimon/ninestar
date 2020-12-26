@@ -39,7 +39,7 @@ namespace K9.WebApplication.Services
             return new StripeModel
             {
                 DonationAmount = 10,
-                LocalisedCurrencyThreeLetters = StripeModel.GetLocalisedCurrency(),
+                LocalisedCurrencyThreeLetters = StripeModel.GetSystemCurrencyCode(),
                 PublishableKey = _stripeConfig.PublishableKey,
                 Description = Dictionary.DonationToNineStar
             };

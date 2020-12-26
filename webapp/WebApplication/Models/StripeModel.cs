@@ -16,7 +16,14 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DonationAmountLabel)]
         [DataType(DataType.Currency)]
         public double DonationAmount { get; set; }
-        
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CreditsPurchaseAmountLabel)]
+        [DataType(DataType.Currency)]
+        public double CreditsPurchaseAmount { get; set; }
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CreditsTotalAmountLabel)]
+        public int TotalNumberOfCreditsToPurchase { get; set; }
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AmountToDonateLabel)]
         [DataType(DataType.Currency)]
         public double AmountToDonate => DonationAmount;
@@ -38,8 +45,27 @@ namespace K9.WebApplication.Models
 
         public double SubscriptionAmountInCents => SubscriptionNetAmount * 100;
 
-        public double AmountInCents => MembershipOptionId > 0 ? SubscriptionAmountInCents : DonationAmountInCents ;
-        
+        public double CreditsPurchaseAmountInCents => CreditsPurchaseAmount * 100;
+
+        public double AmountInCents => GetAmountInCents();
+
+        private double GetAmountInCents()
+        {
+            if (MembershipOptionId > 0)
+            {
+                return SubscriptionAmountInCents;
+            }
+            else if (DonationAmount > 0)
+            {
+                return DonationAmountInCents;
+            }
+            else if (CreditsPurchaseAmount > 0)
+            {
+                return CreditsPurchaseAmountInCents;
+            }
+            return 0;
+        }
+
         public string Locale => GetLocale();
 
         public string LocalisedCurrencyThreeLetters { get; set; }
@@ -57,16 +83,9 @@ namespace K9.WebApplication.Models
 
         public string StripeBillingName { get; set; }
 
-        public static string GetLocalisedCurrency()
+        public static string GetSystemCurrencyCode()
         {
-            try
-            {
-                return new RegionInfo(Thread.CurrentThread.CurrentUICulture.LCID).ISOCurrencySymbol;
-            }
-            catch (Exception e)
-            {
-                return "USD";
-            }
+            return "USD";
         }
 
         private static string GetLocale()

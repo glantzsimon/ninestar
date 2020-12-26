@@ -1561,4 +1561,49 @@
   <data name="YourSelectedSubscription" xml:space="preserve">
     <value>Your Selected Subscription</value>
   </data>
+  <data name="Contacts" xml:space="preserve">
+    <value>Contacts</value>
+  </data>
+  <data name="UserMemberships" xml:space="preserve">
+    <value>User Subscriptions</value>
+  </data>
+  <data name="CreditPackPurchased" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>templates\en-gb\creditpackpurchased.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="CreditPricingTitle" xml:space="preserve">
+    <value>You can save money by purchasing credit 'packs':</value>
+  </data>
+  <data name="CreditsPurchaseAmountLabel" xml:space="preserve">
+    <value>The total cost of your credit pack is:</value>
+  </data>
+  <data name="CreditsPurchaseDescription" xml:space="preserve">
+    <value>9 Star Ki Profile Readings Credits Purchase</value>
+  </data>
+  <data name="CreditsTotalAmountLabel" xml:space="preserve">
+    <value>You would like to purchase the following number of credits:</value>
+  </data>
+  <data name="EnterCreditsText" xml:space="preserve">
+    <value>Plese enter how many credits you would like to purchase</value>
+  </data>
+  <data name="NewCreditPackThankYouEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>templates\en-gb\newcreditpackthankyouemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="NumberOfCreditsLabel" xml:space="preserve">
+    <value>Number of Credits</value>
+  </data>
+  <data name="PricePerCredit" xml:space="preserve">
+    <value>Price per Credit</value>
+  </data>
+  <data name="PurchaseCredits" xml:space="preserve">
+    <value>Purchase Credits</value>
+  </data>
+  <data name="PurchaseCreditsSuccessful" xml:space="preserve">
+    <value>You successfully purchased a credit pack. Thank you!</value>
+  </data>
+  <data name="ThankyouForCreditPackPurchaseEmailTitle" xml:space="preserve">
+    <value>Thank you for purchasing a Credit Pack</value>
+  </data>
+  <data name="TotalPriceLabel" xml:space="preserve">
+    <value>Total Price</value>
+  </data>
 </root>

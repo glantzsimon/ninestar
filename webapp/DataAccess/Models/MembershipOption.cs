@@ -6,6 +6,7 @@ using K9.Base.DataAccessLayer.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Authentication;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using System.Linq;
 using System.Threading;
 
@@ -61,7 +62,7 @@ namespace K9.DataAccessLayer.Models
         public int MaxNumberOfCompatibilityReadings { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubscriptionCostLabel)]
-        public string FormattedPrice => Price.ToString("C0", Thread.CurrentThread.CurrentUICulture);
+        public string FormattedPrice => Price.ToString("C0", CultureInfo.GetCultureInfo("en-US"));
 
         public string CssClassName => SubscriptionType == ESubscriptionType.AnnualPlatinum ||
                                       SubscriptionType == ESubscriptionType.MonthlyPlatinum

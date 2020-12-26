@@ -16,6 +16,7 @@ namespace K9.WebApplication.Services
         MembershipModel GetPurchaseMembershipModelBySubscriptionType(MembershipOption.ESubscriptionType subscriptionType);
         void CreateFreeMembership(int userId);
         StripeModel GetPurchaseStripeModel(int membershipOptionId);
+        StripeModel GetPurchaseCreditsStripeModel(PurchaseCreditsViewModel model);
         void ProcessPurchase(StripeModel model);
         /// <summary>
         /// Switch memberships without processing payment (downgrade or scheduled switch)

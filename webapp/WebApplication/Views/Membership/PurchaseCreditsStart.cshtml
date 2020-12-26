@@ -1,0 +1,41 @@
+﻿@model K9.WebApplication.ViewModels.PurchaseCreditsViewModel
+@{
+    ViewBag.Title = Dictionary.PurchaseCredits;
+    ViewBag.SubTitle = Dictionary.PurchaseCredits;
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+
+@using (Html.BeginForm("PurchaseCredits", "Membership", FormMethod.Post))
+{
+    using (Html.BeginBootstrapForm())
+    {
+        <h4 class="margin-bottom-30"><strong>@Dictionary.EnterCreditsText:</strong></h4>
+
+        @Html.BootstrapEditorFor(e => e.NumberOfCredits)
+
+        <h5>@Dictionary.CreditPricingTitle</h5>
+        <div class="row">
+            <div class="col-sm-5">@Dictionary.NumberOfCreditsLabel</div>
+            <div class="col-sm-5">@Dictionary.PricePerCredit</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">< 10</div>
+            <div class="col-sm-5">@Html.BootstrapDisplayFor(e => e.PricePerCredit)</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">10 - 19</div>
+            <div class="col-sm-5">@Html.BootstrapDisplayFor(e => e.PricePerCredits10)</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">20 - 29</div>
+            <div class="col-sm-5">@Html.BootstrapDisplayFor(e => e.PricePerCredits20)</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">30+</div>
+            <div class="col-sm-5">@Html.BootstrapDisplayFor(e => e.PricePerCredits30)</div>
+        </div>
+
+        <hr />
+        @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
+    }
+}

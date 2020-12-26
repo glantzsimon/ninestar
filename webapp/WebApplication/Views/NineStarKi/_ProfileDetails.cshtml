@@ -72,9 +72,7 @@
                         }
                         else if (Model.ReadingType == EReadingType.Complete)
                         {
-                            @Html.Panel(Model.EnergySexualityLabel, Model.MainEnergySexualityDetails)
-
-                            @Html.Panel(Model.SexualityRelationTypeLabel, Html.Partial("_Sexuality").ToString())
+                            @Html.Partial("_Sexuality")
                         }
                     }
                     else

@@ -41,7 +41,7 @@ namespace K9.WebApplication.Models
         public ECompatibilityScore CharacterEnergyHarmonyScore { get; }
 
         public bool IsProcessed { get; set; }
-        
+
         public bool IsUpgradeRequired { get; set; }
 
         public ECompatibilityScore TotalEnergyChemistryScore =>
@@ -71,14 +71,14 @@ namespace K9.WebApplication.Models
             {
                 case ETransformationType.Challenges:
                 case ETransformationType.IsChallenged:
-                    return ProcessGenderAndModality(ECompatibilityScore.High, energy1, energy2, true);
+                    return ProcessScore(ECompatibilityScore.High, energy1, energy2, true);
 
                 case ETransformationType.IsSupported:
                 case ETransformationType.Supports:
-                    return ProcessGenderAndModality(ECompatibilityScore.Medium, energy1, energy2, true);
+                    return ProcessScore(ECompatibilityScore.Medium, energy1, energy2, true);
 
                 case ETransformationType.Same:
-                    return ProcessGenderAndModality(ECompatibilityScore.Low, energy1, energy2, true);
+                    return ProcessScore(ECompatibilityScore.Low, energy1, energy2, true);
             }
 
             return ECompatibilityScore.Unspecified;
@@ -104,10 +104,10 @@ namespace K9.WebApplication.Models
                 case ETransformationType.Challenges:
                 case ETransformationType.Supports:
                 case ETransformationType.IsSupported:
-                    return ProcessGenderAndModality(ECompatibilityScore.High, energy1, energy2, true);
+                    return ProcessScore(ECompatibilityScore.High, energy1, energy2, true);
 
                 case ETransformationType.Same:
-                    return ProcessGenderAndModality(ECompatibilityScore.Low, energy1, energy2, true);
+                    return ProcessScore(ECompatibilityScore.Low, energy1, energy2, true);
             }
 
             return ECompatibilityScore.Unspecified;
@@ -132,7 +132,7 @@ namespace K9.WebApplication.Models
         {
             return (ECompatibilityScore)10 - (int)GetCharacterEnergyConflictPotentialScore();
         }
-        
+
         private ECompatibilityScore GetEnergyConflictPotentialScore(NineStarKiEnergy energy1, NineStarKiEnergy energy2)
         {
             var transformationType = NineStarKiModel1.MainEnergy.Energy.GetTransformationType(NineStarKiModel2.MainEnergy.Energy);
@@ -141,18 +141,18 @@ namespace K9.WebApplication.Models
             {
                 case ETransformationType.IsChallenged:
                 case ETransformationType.Challenges:
-                    return ProcessGenderAndModality(ECompatibilityScore.High, energy1, energy2, true);
+                    return ProcessScore(ECompatibilityScore.High, energy1, energy2, true, true);
 
                 case ETransformationType.Supports:
                 case ETransformationType.IsSupported:
                 case ETransformationType.Same:
-                    return ProcessGenderAndModality(ECompatibilityScore.Low, energy1, energy2, true);
+                    return ProcessScore(ECompatibilityScore.Low, energy1, energy2, true, true);
             }
 
             return ECompatibilityScore.Unspecified;
         }
 
-        private ECompatibilityScore ProcessGenderAndModality(ECompatibilityScore value, NineStarKiEnergy energy1, NineStarKiEnergy energy2, bool invertCalculation = false)
+        private ECompatibilityScore ProcessScore(ECompatibilityScore value, NineStarKiEnergy energy1, NineStarKiEnergy energy2, bool invertCalculation = false, bool isIntuitive = false)
         {
             var isSameGender = energy1.YinYang == energy2.YinYang;
             var isSameModality = energy1.Modality == energy2.Modality;
@@ -168,15 +168,65 @@ namespace K9.WebApplication.Models
                 (!isSameGender ? 1 : (isOppositeElement ? 0 : -1)) + (!isSameModality && !isSameElement ? 1 : 0) + (energy1.Energy == energy2.Energy ? -1 : 0)
                 : (isSameGender ? 1 : (isOppositeElement ? -1 : 0)) + (isSameModality ? 1 : 0) + (energy1.Energy == energy2.Energy ? 1 : 0);
 
+            if (isIntuitive)
+            {
+                score = AdjustScoreIntuitively(energy1, energy2, invertCalculation, isSameElement, score);
+            }
+
             var result = value + score;
             result = (int)result < 1 ? ECompatibilityScore.ExtremelyLow : result;
             result = result > ECompatibilityScore.ExtremelyHigh ? ECompatibilityScore.ExtremelyHigh : result;
             return result;
         }
 
-        private ECompatibilityScore GetAverageScore(ECompatibilityScore score1, ECompatibilityScore score2)
+        private static int AdjustScoreIntuitively(NineStarKiEnergy energy1, NineStarKiEnergy energy2, bool invertCalculation, bool isSameElement,
+int score)
         {
-            var average = (int)Math.Round((double)score1 + (double)score2 / 2, MidpointRounding.AwayFromZero);
+            if (energy1.Energy == ENineStarKiEnergy.Water || energy2.Energy == ENineStarKiEnergy.Water)
+            {
+                if (invertCalculation)
+                {
+                    score -= 2;
+                }
+                else
+                {
+                    score += 2;
+                }
+            }
+
+            if (energy1.Energy == ENineStarKiEnergy.CoreEarth || energy2.Energy == ENineStarKiEnergy.CoreEarth ||
+                energy1.Energy == ENineStarKiEnergy.Fire || energy2.Energy == ENineStarKiEnergy.Fire)
+            {
+                if (invertCalculation)
+                {
+                    score -= 1;
+                }
+                else
+                {
+                    score += 1;
+                }
+            }
+
+            if (!isSameElement && (energy1.Energy == ENineStarKiEnergy.Thunder || energy2.Energy == ENineStarKiEnergy.Thunder ||
+                energy1.Energy == ENineStarKiEnergy.Heaven || energy2.Energy == ENineStarKiEnergy.Heaven))
+            {
+                if (invertCalculation)
+                {
+                    score += 1;
+                }
+                else
+                {
+                    score -= 1;
+                }
+            }
+            return score;
+        }
+
+        private ECompatibilityScore GetAverageScore(ECompatibilityScore fundamentalScore, ECompatibilityScore characterScore)
+        {
+            var firstScore = (double)fundamentalScore * 1;
+            var secondScore = (double)characterScore * 1;
+            var average = (int)Math.Round((firstScore + secondScore) / 2, MidpointRounding.AwayFromZero);
             return (ECompatibilityScore)Enum.Parse(typeof(ECompatibilityScore), average.ToString());
         }
     }

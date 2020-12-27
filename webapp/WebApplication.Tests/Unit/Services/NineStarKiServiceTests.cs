@@ -261,21 +261,25 @@ namespace K9.WebApplication.Tests.Unit.Services
         }
 
         [Theory]
-        [InlineData(1979, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyHigh)]
-        [InlineData(1981, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.MediumToHigh)]
-        [InlineData(1980, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.Medium)]
-        [InlineData(1979, 6, 16, EGender.Male, 1983, 6, 21, EGender.Male, ECompatibilityScore.VeryHigh)]
-        [InlineData(1979, 6, 16, EGender.Male, 1985, 6, 21, EGender.Male, ECompatibilityScore.High)]
-        [InlineData(1979, 6, 16, EGender.Male, 1978, 6, 21, EGender.Male, ECompatibilityScore.LowToMedium)]
-        [InlineData(1979, 6, 16, EGender.Male, 1979, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyLow)]
-        [InlineData(1979, 6, 16, EGender.Male, 1982, 6, 21, EGender.Male, ECompatibilityScore.MediumToHigh)]
-        [InlineData(1979, 6, 16, EGender.Male, 1980, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyHigh)]
-        [InlineData(1982, 6, 16, EGender.Male, 1985, 6, 21, EGender.Male, ECompatibilityScore.VeryHigh)]
-        public void Calculate_ChemistryLevel(int year1, int month1, int day1, EGender gender1, int year2, int month2, int day2, EGender gender2, ECompatibilityScore chemistryScore)
+        [InlineData(1979, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyHigh, ECompatibilityScore.ExtremelyHigh)]
+        [InlineData(1981, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.MediumToHigh, ECompatibilityScore.VeryLow)]
+        [InlineData(1980, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.Medium, ECompatibilityScore.Low)]
+        [InlineData(1979, 6, 16, EGender.Male, 1983, 6, 21, EGender.Male, ECompatibilityScore.VeryHigh, ECompatibilityScore.ExtremelyHigh)]
+        [InlineData(1979, 6, 16, EGender.Male, 1985, 6, 21, EGender.Male, ECompatibilityScore.High, ECompatibilityScore.VeryHigh)]
+        [InlineData(1979, 6, 16, EGender.Male, 1978, 6, 21, EGender.Male, ECompatibilityScore.LowToMedium, ECompatibilityScore.LowToMedium)]
+        [InlineData(1979, 6, 16, EGender.Male, 1979, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyLow, ECompatibilityScore.ExtremelyLow)]
+        [InlineData(1979, 6, 16, EGender.Male, 1982, 6, 21, EGender.Male, ECompatibilityScore.MediumToHigh, ECompatibilityScore.LowToMedium)]
+        [InlineData(1979, 6, 16, EGender.Male, 1980, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyHigh, ECompatibilityScore.ExtremelyHigh)]
+        [InlineData(1982, 6, 16, EGender.Male, 1985, 6, 21, EGender.Male, ECompatibilityScore.VeryHigh, ECompatibilityScore.VeryHigh)]
+        public void Calculate_ChemistryAndConflictLevel(int year1, int month1, int day1, EGender gender1, int year2, int month2, int day2, EGender gender2, ECompatibilityScore chemistryScore, ECompatibilityScore conflictScore)
         {
-            var nineStarKiService = new NineStarKiService(new Mock<IMembershipService>().Object, new Mock<IAuthentication>().Object, new Mock<IRoles>().Object);
+            var mockAuthentication = new Mock<IAuthentication>();
+            mockAuthentication.SetupGet(e => e.CurrentUserId).Returns(2);
+            mockAuthentication.SetupGet(e => e.IsAuthenticated).Returns(true);
 
-            Assert.Equal(chemistryScore, nineStarKiService.CalculateCompatibility(new PersonModel
+            var nineStarKiService = new NineStarKiService(new Mock<IMembershipService>().Object, mockAuthentication.Object, new Mock<IRoles>().Object);
+
+            var compatibility = nineStarKiService.CalculateCompatibility(new PersonModel
             {
                 DateOfBirth = new DateTime(year1, month1, day1),
                 Gender = gender1
@@ -283,7 +287,10 @@ namespace K9.WebApplication.Tests.Unit.Services
             {
                 DateOfBirth = new DateTime(year2, month2, day2),
                 Gender = gender2
-            }).FundamentalEnergyChemistryScore);
+            }); 
+
+            Assert.Equal(chemistryScore, compatibility.FundamentalEnergyChemistryScore);
+            Assert.Equal(conflictScore, compatibility.FundamentalEnergyConflictPotentialScore);
         }
 
     }

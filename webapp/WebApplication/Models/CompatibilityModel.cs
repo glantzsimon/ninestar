@@ -26,26 +26,38 @@ namespace K9.WebApplication.Models
             CharacterEnergyLearningPotentialScore = GetCharacterEnergyLearningPotentialScore();
             CharacterEnergyConflictPotentialScore = GetCharacterEnergyConflictPotentialScore();
             CharacterEnergyHarmonyScore = GetCharacterEnergyHarmonyScore();
+
+            FundamentalEnergyDetails = GetFundamentalEnergyDetails();
         }
 
         public NineStarKiModel NineStarKiModel1 { get; }
+
         public NineStarKiModel NineStarKiModel2 { get; }
 
         public ECompatibilityScore FundamentalEnergyChemistryScore { get; }
+
         public ECompatibilityScore FundamentalEnergyLearningPotentialScore { get; }
+
         public ECompatibilityScore FundamentalEnergyConflictPotentialScore { get; }
+
         public ECompatibilityScore FundamentalEnergyHarmonyScore { get; }
+
         public ECompatibilityScore CharacterEnergyChemistryScore { get; }
+
         public ECompatibilityScore CharacterEnergyLearningPotentialScore { get; }
+
         public ECompatibilityScore CharacterEnergyConflictPotentialScore { get; }
+
         public ECompatibilityScore CharacterEnergyHarmonyScore { get; }
+
+        public string FundamentalEnergyDetails { get; }
 
         public bool IsProcessed { get; set; }
 
         public bool IsUpgradeRequired { get; set; }
 
         public string FirstPersonName => NineStarKiModel1.PersonModel.Name ?? Globalisation.Dictionary.FirstPerson;
-        
+
         public string SecondPersonName => NineStarKiModel2.PersonModel.Name ?? Globalisation.Dictionary.SecondPerson;
 
         public ECompatibilityScore TotalEnergyChemistryScore =>
@@ -57,6 +69,73 @@ namespace K9.WebApplication.Models
 
         public ECompatibilityScore TotalHarmonyScore => GetAverageScore(FundamentalEnergyHarmonyScore, CharacterEnergyHarmonyScore);
 
+        private string GetFundamentalEnergyDetails()
+        {
+            switch (NineStarKiModel1.MainEnergy.Energy)
+            {
+                case ENineStarKiEnergy.Water:
+                    switch (NineStarKiModel2.MainEnergy.Energy)
+                    {
+                        case ENineStarKiEnergy.Water:
+                            //return K9.Globalisation.Dictionary.water_child
+
+                            break;
+
+                        case ENineStarKiEnergy.Soil:
+                            break;
+
+                        case ENineStarKiEnergy.Thunder:
+                            break;
+
+                        case ENineStarKiEnergy.Wind:
+                            break;
+
+                        case ENineStarKiEnergy.CoreEarth:
+                            break;
+
+                        case ENineStarKiEnergy.Heaven:
+                            break;
+
+                        case ENineStarKiEnergy.Lake:
+                            break;
+
+                        case ENineStarKiEnergy.Mountain:
+                            break;
+
+                        case ENineStarKiEnergy.Fire:
+                            break;
+                    }
+
+                    break;
+
+                case ENineStarKiEnergy.Soil:
+                    break;
+
+                case ENineStarKiEnergy.Thunder:
+                    break;
+
+                case ENineStarKiEnergy.Wind:
+                    break;
+
+                case ENineStarKiEnergy.CoreEarth:
+                    break;
+
+                case ENineStarKiEnergy.Heaven:
+                    break;
+
+                case ENineStarKiEnergy.Lake:
+                    break;
+
+                case ENineStarKiEnergy.Mountain:
+                    break;
+
+                case ENineStarKiEnergy.Fire:
+                    break;
+            }
+
+            return string.Empty;
+        }
+
         private ECompatibilityScore GetFundamentalElementChemistryScore()
         {
             return GetChemistryScore(NineStarKiModel1.MainEnergy, NineStarKiModel2.MainEnergy);
@@ -64,10 +143,10 @@ namespace K9.WebApplication.Models
 
         private ECompatibilityScore GetCharacterEnergyChemistryScore()
         {
-            return GetChemistryScore(NineStarKiModel1.CharacterEnergy, NineStarKiModel2.CharacterEnergy);
+            return GetChemistryScore(NineStarKiModel1.CharacterEnergy, NineStarKiModel2.CharacterEnergy, 1);
         }
 
-        private ECompatibilityScore GetChemistryScore(NineStarKiEnergy energy1, NineStarKiEnergy energy2)
+        private ECompatibilityScore GetChemistryScore(NineStarKiEnergy energy1, NineStarKiEnergy energy2, int genderScoreFactor = 0)
         {
             var transformationType = energy1.Energy.GetTransformationType(energy2.Energy);
 
@@ -75,14 +154,14 @@ namespace K9.WebApplication.Models
             {
                 case ETransformationType.Challenges:
                 case ETransformationType.IsChallenged:
-                    return ProcessScore(ECompatibilityScore.High, energy1, energy2, true);
+                    return ProcessScore(ECompatibilityScore.High, energy1, energy2, true, false, genderScoreFactor);
 
                 case ETransformationType.IsSupported:
                 case ETransformationType.Supports:
-                    return ProcessScore(ECompatibilityScore.Medium, energy1, energy2, true);
+                    return ProcessScore(ECompatibilityScore.Medium, energy1, energy2, true, false, genderScoreFactor);
 
                 case ETransformationType.Same:
-                    return ProcessScore(ECompatibilityScore.Low, energy1, energy2, true);
+                    return ProcessScore(ECompatibilityScore.Low, energy1, energy2, true, false, genderScoreFactor);
             }
 
             return ECompatibilityScore.Unspecified;
@@ -100,7 +179,7 @@ namespace K9.WebApplication.Models
 
         private ECompatibilityScore GetEnergyLearningPotentialScore(NineStarKiEnergy energy1, NineStarKiEnergy energy2)
         {
-            var transformationType = NineStarKiModel1.MainEnergy.Energy.GetTransformationType(NineStarKiModel2.MainEnergy.Energy);
+            var transformationType = energy1.Energy.GetTransformationType(energy2.Energy);
 
             switch (transformationType)
             {
@@ -139,7 +218,7 @@ namespace K9.WebApplication.Models
 
         private ECompatibilityScore GetEnergyConflictPotentialScore(NineStarKiEnergy energy1, NineStarKiEnergy energy2)
         {
-            var transformationType = NineStarKiModel1.MainEnergy.Energy.GetTransformationType(NineStarKiModel2.MainEnergy.Energy);
+            var transformationType = energy1.Energy.GetTransformationType(energy2.Energy);
 
             switch (transformationType)
             {
@@ -156,7 +235,7 @@ namespace K9.WebApplication.Models
             return ECompatibilityScore.Unspecified;
         }
 
-        private ECompatibilityScore ProcessScore(ECompatibilityScore value, NineStarKiEnergy energy1, NineStarKiEnergy energy2, bool invertCalculation = false, bool isIntuitive = false)
+        private ECompatibilityScore ProcessScore(ECompatibilityScore value, NineStarKiEnergy energy1, NineStarKiEnergy energy2, bool invertCalculation = false, bool isIntuitive = false, int genderScoreFactor = 0)
         {
             var isSameGender = energy1.YinYang == energy2.YinYang;
             var isSameModality = energy1.Modality == energy2.Modality;
@@ -169,8 +248,8 @@ namespace K9.WebApplication.Models
             }.Contains(transformationType);
 
             var score = invertCalculation ?
-                (!isSameGender ? 1 : (isOppositeElement ? 0 : -1)) + (!isSameModality && !isSameElement ? 1 : 0) + (energy1.Energy == energy2.Energy ? -1 : 0)
-                : (isSameGender ? 1 : (isOppositeElement ? -1 : 0)) + (isSameModality ? 1 : 0) + (energy1.Energy == energy2.Energy ? 1 : 0);
+                (!isSameGender ? 1 + genderScoreFactor : (isOppositeElement ? 0 : -1)) + (!isSameModality && !isSameElement ? 1 : 0) + (energy1.Energy == energy2.Energy ? -1 : 0)
+                : (isSameGender ? 1 + genderScoreFactor : (isOppositeElement ? -1 : 0)) + (isSameModality ? 1 : 0) + (energy1.Energy == energy2.Energy ? 1 : 0);
 
             if (isIntuitive)
             {

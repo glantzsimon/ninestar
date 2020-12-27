@@ -1660,4 +1660,7 @@
   <data name="SecondPerson" xml:space="preserve">
     <value>Second Person</value>
   </data>
+  <data name="water_water_main" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\water-water-main.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

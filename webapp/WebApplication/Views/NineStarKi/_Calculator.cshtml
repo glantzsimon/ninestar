@@ -5,7 +5,7 @@
     using (Html.BeginBootstrapForm())
     {
         @Html.BootstrapEditorFor(model => model.PersonModel.DateOfBirth)
-        <div data-toggle="tooltip" data-placement="bottom" title="@Dictionary.GenderSelectionTooltip">
+        <div data-toggle="tooltip" data-placement="top" title="@Dictionary.GenderSelectionTooltip">
             @Html.BootstrapEditorFor(model => model.PersonModel.Gender)
         </div>
 

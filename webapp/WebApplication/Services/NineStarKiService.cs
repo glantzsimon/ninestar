@@ -84,10 +84,12 @@ namespace K9.WebApplication.Services
             {
                 var nineStarKiModel1 = CalculateNineStarKiProfile(personModel1, true);
                 var nineStarKiModel2 = CalculateNineStarKiProfile(personModel2, true);
-                
-                var model = new CompatibilityModel(nineStarKiModel1, nineStarKiModel2);
-                model.IsProcessed = true;
-                model.IsUpgradeRequired = true;
+
+                var model = new CompatibilityModel(nineStarKiModel1, nineStarKiModel2)
+                {
+                    IsProcessed = true,
+                    IsUpgradeRequired = true
+                };
 
                 if (_membershipService.IsCompleteRelationshipCompatibilityReading(_authentication.CurrentUserId, personModel1.DateOfBirth,
                         personModel1.Gender, personModel2.DateOfBirth,

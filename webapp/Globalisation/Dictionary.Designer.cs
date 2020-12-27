@@ -5965,6 +5965,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    On the one hand you may appear passionate, sociable and bubbly, like a mountain stream. On the other , you could give the impression of being shy, cautious, indecisive and prone to procrastination.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string water_water_main {
+            get {
+                return ResourceManager.GetString("water_water_main", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Water Element.
         /// </summary>
         public static string WaterElement {

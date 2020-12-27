@@ -16,3 +16,8 @@
         }
     </div>
 </div>
+
+@if (Model != null && Model.IsProcessed && !Model.IsUpgradeRequired)
+{
+    @Html.Partial("_CompatibilityOverview")
+}

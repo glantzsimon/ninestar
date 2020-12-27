@@ -5,8 +5,7 @@
     var childClass = Model.PersonModel.IsAdult() ? "" : "child-profile";
 }
 
-@using (Html.BeginBootstrapForm())
-{
+<div class="well">
     <div id="energy-summary-container">
         <div class="row">
             <div class="col-md-4 col-sm-4 margin-bottom-15 @childClass">
@@ -60,4 +59,4 @@
             </div>
         }
     </div>
-}
+</div>

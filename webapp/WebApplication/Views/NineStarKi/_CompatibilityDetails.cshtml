@@ -2,45 +2,11 @@
 @model K9.WebApplication.Models.CompatibilityModel
 
 <div class="row">
-    <div class="col-md-3 col-sm-6">
+    <div class="col-sm-12">
         @if (Model != null && Model.IsProcessed)
         {
             <h4 class="text-center margin-top-0">@Dictionary.ChemistryScore</h4>
-            @Html.Partial("_CompatibilityGauge", new GaugeOptions
-            {
-                Value = (int)Model.TotalEnergyChemistryScore
-            })
-        }
-    </div>
-    <div class="col-md-3 col-sm-6">
-        @if (Model != null && Model.IsProcessed)
-        {
-            <h4 class="text-center margin-top-0">@Dictionary.LearningPotentialScore</h4>
-            @Html.Partial("_CompatibilityGauge", new GaugeOptions
-            {
-                Value = (int)Model.TotalEnergyLearningPotentialScore
-            })
-        }
-    </div>
-    <div class="col-md-3 col-sm-6">
-        @if (Model != null && Model.IsProcessed)
-        {
-            <h4 class="text-center margin-top-0">@Dictionary.ConflictScore</h4>
-            @Html.Partial("_CompatibilityGauge", new GaugeOptions
-            {
-                Value = (int)Model.TotalEnergyConflictPotentialScore,
-                IsInverted = true
-            })
-        }
-    </div>
-    <div class="col-md-3 col-sm-6">
-        @if (Model != null && Model.IsProcessed)
-        {
-            <h4 class="text-center margin-top-0">@Dictionary.HarmonyScore</h4>
-            @Html.Partial("_CompatibilityGauge", new GaugeOptions
-            {
-                Value = (int)Model.TotalHarmonyScore
-            })
+            
         }
     </div>
 </div>

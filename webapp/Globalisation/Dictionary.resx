@@ -1633,4 +1633,10 @@
   <data name="relationships_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\relationships-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="FirstPerson" xml:space="preserve">
+    <value>First Person</value>
+  </data>
+  <data name="SecondPerson" xml:space="preserve">
+    <value>Second Person</value>
+  </data>
 </root>

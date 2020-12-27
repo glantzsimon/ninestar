@@ -3,29 +3,39 @@
 
 @{
     ViewBag.Title = Dictionary.CompatibilityTitle;
-    ViewBag.SubTitle = Dictionary.CompatibilityTitle;
+    ViewBag.SubTitle = Dictionary.RelationshipCompatibilityCalculator;
     ViewBag.Keywords = Dictionary.CompatibilityKeywords;
     ViewBag.MetaDescription = Dictionary.CompatibilityMetaDescription;
 
     ViewBag.Background = ViewBagHelper.EViewBackground.Jarallax;
-    Layout = "../Shared/_LayoutForm.cshtml";
+    Layout = "../Shared/_LayoutFormMedium.cshtml";
 }
 
 @Html.Partial("_BetaPopup")
 
 <div class="container main-content margin-bottom-0">
-    <div class="col-sm-12 padding-0">
-        @Html.Partial("_Calculator")
-    </div>
-    <div class="col-sm-12 padding-0">
-        @if (Model != null && Model.IsProcessed)
-        {
-            @Html.Partial("_CompatibilitySummary", Model)
-        }
-    </div>
+    <article>
+        <div class="col-sm-12 padding-0">
+            @Html.Partial("_CompatibilityCalculator")
+        </div>
+        <div class="col-sm-12 padding-0">
+            @if (Model != null && Model.IsProcessed)
+            {
+                @Html.Partial("_CompatibilitySummary", Model)
+            }
+        </div>
+    </article>
 </div>
 
-@if (Model != null && Model.IsProcessed)
+@if (Model != null && Model.IsProcessed && !Model.IsUpgradeRequired)
 {
-    //@Html.Partial("_CompatibilityDetails", Model)
+    @Html.Partial("_CompatibilityDetails", Model)
+}
+
+@if (Model != null && Model.IsUpgradeRequired)
+{
+    <h4>
+        <strong>@Html.Raw(Dictionary.UpgradeMembershipFullText)</strong>
+    </h4>
+    @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership")
 }

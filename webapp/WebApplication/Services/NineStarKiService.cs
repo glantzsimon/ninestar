@@ -32,7 +32,7 @@ namespace K9.WebApplication.Services
             });
         }
 
-        public NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel)
+        public NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, bool isCompatibility = false)
         {
             var model = new NineStarKiModel(personModel);
 
@@ -47,7 +47,7 @@ namespace K9.WebApplication.Services
 
             if (_authentication.IsAuthenticated)
             {
-                if (_membershipService.IsCompleteProfileReading(_authentication.CurrentUserId, personModel.DateOfBirth,
+                if (isCompatibility || _membershipService.IsCompleteProfileReading(_authentication.CurrentUserId, personModel.DateOfBirth,
                     personModel.Gender) || _roles.CurrentUserIsInRoles(RoleNames.Administrators))
                 {
                     model.ReadingType = EReadingType.Complete;
@@ -75,11 +75,26 @@ namespace K9.WebApplication.Services
 
         public CompatibilityModel CalculateCompatibility(PersonModel personModel1, PersonModel personModel2)
         {
-            var nineStarKiModel1 = CalculateNineStarKiProfile(personModel1);
-            var nineStarKiModel2 = CalculateNineStarKiProfile(personModel2);
-            var model = new CompatibilityModel(nineStarKiModel1, nineStarKiModel2);
-            
-            return model;
+            if (_authentication.IsAuthenticated)
+            {
+                var nineStarKiModel1 = CalculateNineStarKiProfile(personModel1, true);
+                var nineStarKiModel2 = CalculateNineStarKiProfile(personModel2, true);
+                var model = new CompatibilityModel(nineStarKiModel1, nineStarKiModel2);
+
+                model.IsProcessed = true;
+                model.IsUpgradeRequired = true;
+
+                if (_membershipService.IsCompleteRelationshipCompatibilityReading(_authentication.CurrentUserId, personModel1.DateOfBirth,
+                        personModel1.Gender, personModel2.DateOfBirth,
+                        personModel2.Gender) || _roles.CurrentUserIsInRoles(RoleNames.Administrators))
+                {
+                    model.IsUpgradeRequired = false;
+                }
+
+                return model;
+            }
+
+            return null;
         }
 
         public NineStarKiSummaryViewModel GetNineStarKiSummaryViewModel()

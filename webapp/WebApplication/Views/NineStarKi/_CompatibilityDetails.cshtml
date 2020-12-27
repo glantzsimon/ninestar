@@ -1,0 +1,13 @@
+﻿@model K9.WebApplication.Models.CompatibilityModel
+
+@using (Html.BeginBootstrapForm())
+{
+    <div class="row">
+        <div class="col-md-4 padding-left-0 padding-right-5">
+            @if (Model != null && Model.IsProcessed)
+            {
+                @Html.Partial("_CompatibilityGauge", Model)
+            }
+        </div>
+    </div>
+}

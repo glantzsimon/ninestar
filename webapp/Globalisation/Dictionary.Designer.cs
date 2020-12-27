@@ -2631,6 +2631,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to First Person.
+        /// </summary>
+        public static string FirstPerson {
+            get {
+                return ResourceManager.GetString("FirstPerson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    Each of the 9 Energies is associated with 1 of the 5 elements: Water, Tree, Fire, Earth and Metal, which corresponds to a specific point in the cycle
         ///&lt;/h5&gt;
@@ -2651,10 +2660,10 @@ namespace K9.Globalisation {
         ///    Each of the 5 elements relates to the other elements in 3 distinct ways, called &quot;transformations&quot;. Traditional Chinese medicine use these same transformations to help make medical diagnoses, as well as to prescribe appropriate treatments to bring the body back into balance.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    There are 3 different types of transformation or relationship:
+        ///    &lt;strong&gt;There are 3 different types of transformation or relationship:&lt;/strong&gt;
         ///&lt;/p&gt;
         ///
-        ///&lt;h4&gt;Same Element Transforma [rest of string was truncated]&quot;;.
+        ///&lt;h5&gt;Same E [rest of string was truncated]&quot;;.
         /// </summary>
         public static string five_transformations {
             get {
@@ -4476,7 +4485,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    9 Star Ki is an immensely useful tool for understanding the underlying and often misunderstood dynamics that drive our relationships. Have you ever wondered why certain individuals just seem to rub you up the wrong way, or conversely, why you just can&apos;t seem to get through to certain types of people under certain circumstances? Many of us are aware that some relationships are naturally more harmonious and require less &quot;effort&quot; than others. However, understanding 9 Star Ki and the 5 transformations  [rest of string was truncated]&quot;;.
+        ///    9 Star Ki is an immensely &lt;strong&gt;useful tool for understanding the underlying and often misunderstood dynamics that drive our relationships&lt;/strong&gt;. Have you ever wondered why certain individuals just seem to rub you up the wrong way, or conversely, why you just can&apos;t seem to get through to certain types of people under certain circumstances? Many of us are aware that &lt;strong&gt;some relationships are naturally more harmonious&lt;/strong&gt; and require less &quot;effort&quot; than others. However, &lt;strong&gt;understa [rest of string was truncated]&quot;;.
         /// </summary>
         public static string relationships_description {
             get {
@@ -4517,6 +4526,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Second Person.
+        /// </summary>
+        public static string SecondPerson {
+            get {
+                return ResourceManager.GetString("SecondPerson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select.
         /// </summary>
         public static string Select {
@@ -4544,16 +4562,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;
         ///    9 Star Ki can tell us some truly fascinating information about our sexuality and our relationships
-        ///&lt;/h4&gt;
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    9 Star Ki can tell us some truly fascinating and also incredibly useful information about our sexuality and our relationships with others. In the &lt;a target=&quot;_blank&quot; href=&quot;{AboutLink}&quot;&gt;{AboutTitle}&lt;/a&gt; section we discuss the concept of the Great Principle of &apos;Yin and Yang&apos;.
+        ///    9 Star Ki can tell us some &lt;strong&gt;truly fascinating and also incredibly useful information about our sexuality and our relationships&lt;/strong&gt; with others. In the &lt;a target=&quot;_blank&quot; href=&quot;{AboutLink}&quot;&gt;{AboutTitle}&lt;/a&gt; section we discuss the concept of the Great Principle of &apos;Yin and Yang&apos;.
         ///&lt;/p&gt;
         ///
         ///&lt;h4&gt;Yin and Yang and its relationship to gender roles&lt;/h4&gt;
         ///&lt;h5&gt;
-        ///    For millenia society has tended t [rest of string was truncated]&quot;;.
+        ///    For millenia soc [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality {
             get {

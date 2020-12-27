@@ -63,17 +63,20 @@ namespace K9.WebApplication.Controllers
             return View("Index", model);
         }
 
+        [Authorize]
         [Route("relationships/compatibility")]
         public ActionResult Compatibility()
         {
             var dateOfBirth = new DateTime(DateTime.Now.Year - (24), DateTime.Now.Month, DateTime.Now.Day);
             var personModel = new PersonModel
             {
-                DateOfBirth = dateOfBirth
+                DateOfBirth = dateOfBirth,
+                Gender = EGender.Female
             };
             return View("Compatibility", new CompatibilityModel(new NineStarKiModel(personModel), new NineStarKiModel(personModel)));
         }
 
+        [Authorize]
         [Route("relationships/compatibility")]
         [HttpPost]
         [ValidateAntiForgeryToken]

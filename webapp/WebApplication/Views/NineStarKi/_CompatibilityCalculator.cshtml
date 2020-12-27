@@ -6,14 +6,16 @@
     {
         <div class="row">
             <div class="col-sm-6">
+                <h4 class="margin-top-0">@Dictionary.FirstPerson</h4>
                 @Html.BootstrapEditorFor(model => model.NineStarKiModel1.PersonModel.DateOfBirth)
-                <div data-toggle="tooltip" title="@Dictionary.GenderSelectionTooltip">
+                <div data-toggle="tooltip" data-placement="bottom" title="@Dictionary.GenderSelectionTooltip">
                     @Html.BootstrapEditorFor(model => model.NineStarKiModel1.PersonModel.Gender)
                 </div>
             </div>
             <div class="col-sm-6">
+                <h4 class="margin-top-0">@Dictionary.SecondPerson</h4>
                 @Html.BootstrapEditorFor(model => model.NineStarKiModel2.PersonModel.DateOfBirth)
-                <div data-toggle="tooltip" title="@Dictionary.GenderSelectionTooltip">
+                <div data-toggle="tooltip" data-placement="bottom" title="@Dictionary.GenderSelectionTooltip">
                     @Html.BootstrapEditorFor(model => model.NineStarKiModel2.PersonModel.Gender)
                 </div>
             </div>

@@ -325,6 +325,7 @@
     <Compile Include="Helpers\SessionHelpers.cs" />
     <Compile Include="Helpers\Separator.cs" />
     <Compile Include="Models\CompatibilityModel.cs" />
+    <Compile Include="Options\GaugeOptions.cs" />
     <Compile Include="ViewModels\ArchiveItemViewModel.cs" />
     <Compile Include="Models\MembershipModel.cs" />
     <Compile Include="ViewModels\PurchaseCreditsViewModel.cs" />
@@ -370,6 +371,7 @@
     <Content Include="Content\site\elements.css" />
     <Content Include="Content\site\mobile.css" />
     <Content Include="Content\site\sections\about.css" />
+    <Content Include="Content\site\sections\relationships.css" />
     <Content Include="Content\site\sections\privacypolicy.css" />
     <Content Include="Content\site\sections\cookies.css" />
     <Content Include="Content\site\sections\donate.css" />
@@ -778,6 +780,7 @@
     <Content Include="Scripts\k9\revealText.js" />
     <Content Include="Scripts\k9\navbar.js" />
     <Content Include="Scripts\library\easing.js" />
+    <Content Include="Scripts\library\gauge.js" />
     <Content Include="Scripts\library\jarallax.js" />
     <Content Include="Scripts\library\lsb.js" />
     <Content Include="Scripts\library\move-top.js" />

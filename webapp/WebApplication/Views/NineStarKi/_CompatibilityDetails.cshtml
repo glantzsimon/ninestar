@@ -1,12 +1,50 @@
-﻿@model K9.WebApplication.Models.CompatibilityModel
+﻿@using K9.WebApplication.Options
+@model K9.WebApplication.Models.CompatibilityModel
 
 @using (Html.BeginBootstrapForm())
 {
+    <h4>@Dictionary.CompatibilityOverview</h4>
+
     <div class="row">
-        <div class="col-md-4 padding-left-0 padding-right-5">
+        <div class="col-md-3 col-sm-6">
             @if (Model != null && Model.IsProcessed)
             {
-                @Html.Partial("_CompatibilityGauge", Model)
+                <h4 class="text-center margin-top-0">@Dictionary.ChemistryScore</h4>
+                @Html.Partial("_CompatibilityGauge", new GaugeOptions
+                {
+                    Value = (int)Model.TotalEnergyChemistryScore
+                })
+            }
+        </div>
+        <div class="col-md-3 col-sm-6">
+            @if (Model != null && Model.IsProcessed)
+            {
+                <h4 class="text-center margin-top-0">@Dictionary.LearningPotentialScore</h4>
+                @Html.Partial("_CompatibilityGauge", new GaugeOptions
+                {
+                    Value = (int)Model.TotalEnergyLearningPotentialScore
+                })
+            }
+        </div>
+        <div class="col-md-3 col-sm-6">
+            @if (Model != null && Model.IsProcessed)
+            {
+                <h4 class="text-center margin-top-0">@Dictionary.ConflictScore</h4>
+                @Html.Partial("_CompatibilityGauge", new GaugeOptions
+                {
+                    Value = (int)Model.TotalEnergyConflictPotentialScore,
+                    IsInverted = true
+                })
+            }
+        </div>
+        <div class="col-md-3 col-sm-6">
+            @if (Model != null && Model.IsProcessed)
+            {
+                <h4 class="text-center margin-top-0">@Dictionary.HarmonyScore</h4>
+                @Html.Partial("_CompatibilityGauge", new GaugeOptions
+                {
+                    Value = (int)Model.TotalHarmonyScore
+                })
             }
         </div>
     </div>

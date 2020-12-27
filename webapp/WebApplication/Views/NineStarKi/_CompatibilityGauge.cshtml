@@ -1,5 +1,7 @@
-﻿@model K9.WebApplication.Models.CompatibilityModel
+﻿@model K9.WebApplication.Options.GaugeOptions
 
-<div>
+@{
+    var id = @Guid.NewGuid().ToString();
+}
 
-</div>
+<canvas id="@id" class="gauge" data-value="@Model.Value" data-invert="@Model.IsInverted.ToString().ToLower()"></canvas>

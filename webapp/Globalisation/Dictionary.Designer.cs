@@ -1536,6 +1536,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Chemistry.
+        /// </summary>
+        public static string ChemistryScore {
+            get {
+                return ResourceManager.GetString("ChemistryScore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Chen.
         /// </summary>
         public static string Chen {
@@ -1664,6 +1673,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Compatibility Overview.
+        /// </summary>
+        public static string CompatibilityOverview {
+            get {
+                return ResourceManager.GetString("CompatibilityOverview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Relationship Compatibility Reading.
         /// </summary>
         public static string CompatibilityReading {
@@ -1696,6 +1714,15 @@ namespace K9.Globalisation {
         public static string Complete {
             get {
                 return ResourceManager.GetString("Complete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Conflict Likelihood.
+        /// </summary>
+        public static string ConflictScore {
+            get {
+                return ResourceManager.GetString("ConflictScore", resourceCulture);
             }
         }
         
@@ -2786,6 +2813,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Harmony.
+        /// </summary>
+        public static string HarmonyScore {
+            get {
+                return ResourceManager.GetString("HarmonyScore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Health.
         /// </summary>
         public static string HealthLabel {
@@ -3270,6 +3306,15 @@ namespace K9.Globalisation {
         public static string Learn {
             get {
                 return ResourceManager.GetString("Learn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Learning Potential.
+        /// </summary>
+        public static string LearningPotentialScore {
+            get {
+                return ResourceManager.GetString("LearningPotentialScore", resourceCulture);
             }
         }
         

@@ -21,9 +21,11 @@ namespace K9.WebApplication.Models
             FundamentalEnergyChemistryScore = GetFundamentalElementChemistryScore();
             FundamentalEnergyLearningPotentialScore = GetFundamentalEnergyLearningPotentialScore();
             FundamentalEnergyConflictPotentialScore = GetFundamentalEnergyConflictPotentialScore();
+            FundamentalEnergyHarmonyScore = GetFundamentalEnergyHarmonyScore();
             CharacterEnergyChemistryScore = GetCharacterEnergyChemistryScore();
             CharacterEnergyLearningPotentialScore = GetCharacterEnergyLearningPotentialScore();
             CharacterEnergyConflictPotentialScore = GetCharacterEnergyConflictPotentialScore();
+            CharacterEnergyHarmonyScore = GetCharacterEnergyHarmonyScore();
         }
 
         public NineStarKiModel NineStarKiModel1 { get; }
@@ -32,9 +34,11 @@ namespace K9.WebApplication.Models
         public ECompatibilityScore FundamentalEnergyChemistryScore { get; }
         public ECompatibilityScore FundamentalEnergyLearningPotentialScore { get; }
         public ECompatibilityScore FundamentalEnergyConflictPotentialScore { get; }
+        public ECompatibilityScore FundamentalEnergyHarmonyScore { get; }
         public ECompatibilityScore CharacterEnergyChemistryScore { get; }
         public ECompatibilityScore CharacterEnergyLearningPotentialScore { get; }
         public ECompatibilityScore CharacterEnergyConflictPotentialScore { get; }
+        public ECompatibilityScore CharacterEnergyHarmonyScore { get; }
 
         public bool IsProcessed { get; set; }
         
@@ -46,6 +50,8 @@ namespace K9.WebApplication.Models
         public ECompatibilityScore TotalEnergyLearningPotentialScore => GetAverageScore(FundamentalEnergyLearningPotentialScore, CharacterEnergyLearningPotentialScore);
 
         public ECompatibilityScore TotalEnergyConflictPotentialScore => GetAverageScore(FundamentalEnergyConflictPotentialScore, CharacterEnergyConflictPotentialScore);
+
+        public ECompatibilityScore TotalHarmonyScore => GetAverageScore(FundamentalEnergyHarmonyScore, CharacterEnergyHarmonyScore);
 
         private ECompatibilityScore GetFundamentalElementChemistryScore()
         {
@@ -117,6 +123,16 @@ namespace K9.WebApplication.Models
             return GetEnergyConflictPotentialScore(NineStarKiModel1.CharacterEnergy, NineStarKiModel2.CharacterEnergy);
         }
 
+        private ECompatibilityScore GetFundamentalEnergyHarmonyScore()
+        {
+            return (ECompatibilityScore)10 - (int)GetFundamentalEnergyConflictPotentialScore();
+        }
+
+        private ECompatibilityScore GetCharacterEnergyHarmonyScore()
+        {
+            return (ECompatibilityScore)10 - (int)GetCharacterEnergyConflictPotentialScore();
+        }
+        
         private ECompatibilityScore GetEnergyConflictPotentialScore(NineStarKiEnergy energy1, NineStarKiEnergy energy2)
         {
             var transformationType = NineStarKiModel1.MainEnergy.Energy.GetTransformationType(NineStarKiModel2.MainEnergy.Energy);

@@ -712,6 +712,9 @@
     <Content Include="Images\ninestar\modalities\dynamic.png" />
     <Content Include="Images\ninestar\modalities\flexible.png" />
     <Content Include="Images\ninestar\modalities\stable.png" />
+    <Content Include="Images\ninestar\transformations\transformation-challenging.png" />
+    <Content Include="Images\ninestar\transformations\transformation-same.png" />
+    <Content Include="Images\ninestar\transformations\transformation-supportive.png" />
     <Content Include="Images\ninestar\trigrams\trigram-coreearth-square.png" />
     <Content Include="Images\ninestar\trigrams\trigram-fire-square.png" />
     <Content Include="Images\ninestar\trigrams\trigram-heaven-square.png" />

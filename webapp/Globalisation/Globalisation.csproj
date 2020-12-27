@@ -101,7 +101,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Articles\en-gb\coreearth-child.htm" />
+    <Content Include="Articles\en-gb\five-transformations.htm" />
     <Content Include="Articles\en-gb\heaven-sexuality-female.htm" />
+    <Content Include="Articles\en-gb\relationships-description.htm" />
     <Content Include="Articles\en-gb\sexuality-description.htm" />
     <Content Include="Articles\en-gb\fire-sexuality.htm" />
     <Content Include="Articles\en-gb\mountain-sexuality.htm" />

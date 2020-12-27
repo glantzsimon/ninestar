@@ -1612,7 +1612,22 @@
   <data name="free_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\free-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="AboutRelationships" xml:space="preserve">
+    <value>About Relationships</value>
+  </data>
+  <data name="CompatibilityCalculator" xml:space="preserve">
+    <value>Compatibility Calculator</value>
+  </data>
   <data name="CreditsDescriptionUI" xml:space="preserve">
     <value>Each credit give you access to either a complete Profile Reading or Compatibility Reading. You can also buy Credit Packs at a reduced price</value>
+  </data>
+  <data name="five_transformations" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\five-transformations.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="RelationshipCompatibilityCalculator" xml:space="preserve">
+    <value>Relationship Compatibility Calculator</value>
+  </data>
+  <data name="relationships_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\relationships-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

@@ -26,7 +26,7 @@
 
         @Html.Partial("_ModalityDetails", Model.FlexibleEnergies)
 
-        @Html.Panel("The Five Elements / Transformations", Dictionary.five_elements, "elements")
+        @Html.Panel("The Five Elements", Dictionary.five_elements, "elements")
 
         @Html.Panel(Dictionary.FireElement, Dictionary.fire_element, "fire", "~/Images/ninestar/elements/fire.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
 
@@ -37,6 +37,8 @@
         @Html.Panel(Dictionary.WaterElement, Dictionary.water_element, "water", "~/Images/ninestar/elements/water.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
 
         @Html.Panel(Dictionary.TreeElement, Dictionary.tree_element, "tree", "~/Images/ninestar/elements/tree.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+
+        @Html.Panel("The Five Transformations", Dictionary.five_elements, "elements")
 
         @Html.Panel("9 Star Ki Personal Chart", Dictionary.personal_chart, "chart")
 

@@ -1303,6 +1303,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Relationships.
+        /// </summary>
+        public static string AboutRelationships {
+            get {
+                return ResourceManager.GetString("AboutRelationships", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Further Reading.
         /// </summary>
         public static string AdditionalInformation {
@@ -1622,6 +1631,15 @@ namespace K9.Globalisation {
         public static string CompanyShortDescription {
             get {
                 return ResourceManager.GetString("CompanyShortDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compatibility Calculator.
+        /// </summary>
+        public static string CompatibilityCalculator {
+            get {
+                return ResourceManager.GetString("CompatibilityCalculator", resourceCulture);
             }
         }
         
@@ -2622,6 +2640,27 @@ namespace K9.Globalisation {
         public static string five_elements {
             get {
                 return ResourceManager.GetString("five_elements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The 5 transformatios decribe the way in which each of the 5 elements interacts with the others
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Each of the 5 elements relates to the other elements in 3 distinct ways, called &quot;transformations&quot;. Traditional Chinese medicine use these same transformations to help make medical diagnoses, as well as to prescribe appropriate treatments to bring the body back into balance.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    There are 3 different types of transformation:
+        ///&lt;/p&gt;
+        ///
+        ///&lt;h5&gt;Same Transformation&lt;/h5&gt;
+        ///&lt;div&gt;
+        ///    &lt;i [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string five_transformations {
+            get {
+                return ResourceManager.GetString("five_transformations", resourceCulture);
             }
         }
         
@@ -4411,11 +4450,30 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Relationship Compatibility Calculator.
+        /// </summary>
+        public static string RelationshipCompatibilityCalculator {
+            get {
+                return ResourceManager.GetString("RelationshipCompatibilityCalculator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Relationships.
         /// </summary>
         public static string Relationships {
             get {
                 return ResourceManager.GetString("Relationships", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    9 Star Ki is an immensely useful tool for understanding the underlying and often misunderstood dynamics that drive our relationships. Have you ever wondered why certain individuals just seem to rub you up the wrong way, or conversely, why you just can&apos;t seem to get through to certain types of people under certain circumstances? Many of us are aware that some relationships are naturally more harmonious and require less &quot;effort&quot; than others. However, understanding 9 Star Ki and the 5 transformations  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string relationships_description {
+            get {
+                return ResourceManager.GetString("relationships_description", resourceCulture);
             }
         }
         
@@ -4479,14 +4537,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;
+        ///    9 Star Ki can tell us some truly fascinating information about our sexuality and our relationships
+        ///&lt;/h4&gt;
+        ///&lt;p&gt;
         ///    9 Star Ki can tell us some truly fascinating and also incredibly useful information about our sexuality and our relationships with others. In the &lt;a target=&quot;_blank&quot; href=&quot;{AboutLink}&quot;&gt;{AboutTitle}&lt;/a&gt; section we discuss the concept of the Great Principle of &apos;Yin and Yang&apos;.
         ///&lt;/p&gt;
         ///
         ///&lt;h4&gt;Yin and Yang and its relationship to gender roles&lt;/h4&gt;
-        ///&lt;p&gt;
-        ///    For millenia, society has tended to have quite fixed gender roles and associations which have not necessarily reflected people&apos;s true nature.
-        ///    In t [rest of string was truncated]&quot;;.
+        ///&lt;h5&gt;
+        ///    For millenia society has tended t [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality {
             get {

@@ -137,6 +137,7 @@ namespace K9.WebApplication.Models
             var isSameGender = energy1.YinYang == energy2.YinYang;
             var isSameModality = energy1.Modality == energy2.Modality;
             var transformationType = energy1.Energy.GetTransformationType(energy2.Energy);
+            var isSameElement = energy1.Element == energy2.Element;
             var isOppositeElement = new List<ETransformationType>
             {
                 ETransformationType.Challenges,
@@ -144,8 +145,8 @@ namespace K9.WebApplication.Models
             }.Contains(transformationType);
 
             var score = invertCalculation ?
-                (!isSameGender ? 1 : (isOppositeElement ? 0 : -1)) + (!isSameModality ? 1 : 0) + (energy1.Energy == energy2.Energy ? -1 : 0)
-                : (isSameGender ? 1 : (isOppositeElement ? 0 : -1)) + (isSameModality ? 1 : 0) + (energy1.Energy == energy2.Energy ? 1 : 0);
+                (!isSameGender ? 1 : (isOppositeElement ? 0 : -1)) + (!isSameModality && !isSameElement ? 1 : 0) + (energy1.Energy == energy2.Energy ? -1 : 0)
+                : (isSameGender ? 1 : (isOppositeElement ? -1 : 0)) + (isSameModality ? 1 : 0) + (energy1.Energy == energy2.Energy ? 1 : 0);
 
             var result = value + score;
             result = (int)result < 1 ? ECompatibilityScore.ExtremelyLow : result;

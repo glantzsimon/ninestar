@@ -100,9 +100,13 @@ namespace K9.WebApplication.Services
 
         private int GetNumberOfCreditsLeft(UserMembership userMembership)
         {
-            var usedCreditPackIds = userMembership.ProfileReadings.Select(p => p.UserCreditPackId).Concat(userMembership.RelationshipCompatibilityReadings.Select(p => p.UserCreditPackId)).ToList();
-            var unusedCreditPacks = _userCreditPacksRepository.Find(e => e.UserId == userMembership.UserId).Where(e => !usedCreditPackIds.Contains(e.Id));
-            return unusedCreditPacks.Count();
+            var creditPacks = _userCreditPacksRepository.Find(e => e.UserId == userMembership.UserId);
+            var creditPackIds = creditPacks.Select(c => c.Id);  
+            var numberOfUsedCredits =
+                _userProfileReadingsRepository.Find(e => creditPackIds.Contains(e.UserCreditPackId ?? 0)).Count() + 
+                _userRelationshipCompatibilityReadingsRepository.Find(e => creditPackIds.Contains(e.UserCreditPackId ?? 0)).Count();
+            var totalCredits = creditPacks.Sum(e => e.NumberOfCredits);
+            return totalCredits - numberOfUsedCredits;
         }
 
         /// <summary>
@@ -531,4 +535,4 @@ namespace K9.WebApplication.Services
         }
 
     }
-}F
+}

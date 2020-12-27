@@ -8,7 +8,7 @@
             <h4 class="text-center margin-top-0">@Dictionary.ChemistryScore</h4>
             @Html.Partial("_CompatibilityGauge", new GaugeOptions
             {
-                Value = (int)Model.TotalEnergyChemistryScore
+                Value = (int)Model.FundamentalEnergyChemistryScore //(int)Model.TotalEnergyChemistryScore
             })
         }
     </div>
@@ -17,9 +17,9 @@
         {
             <h4 class="text-center margin-top-0">@Dictionary.LearningPotentialScore</h4>
             @Html.Partial("_CompatibilityGauge", new GaugeOptions
-            {
-                Value = (int)Model.TotalEnergyLearningPotentialScore
-            })
+       {
+           Value = (int)Model.FundamentalEnergyLearningPotentialScore
+       })
         }
     </div>
     <div class="col-md-3 col-sm-6">
@@ -28,7 +28,7 @@
             <h4 class="text-center margin-top-0">@Dictionary.ConflictScore</h4>
             @Html.Partial("_CompatibilityGauge", new GaugeOptions
             {
-                Value = (int)Model.TotalEnergyConflictPotentialScore,
+                Value = (int)Model.FundamentalEnergyConflictPotentialScore,
                 IsInverted = true
             })
         }
@@ -39,7 +39,7 @@
             <h4 class="text-center margin-top-0">@Dictionary.HarmonyScore</h4>
             @Html.Partial("_CompatibilityGauge", new GaugeOptions
             {
-                Value = (int)Model.TotalHarmonyScore
+                Value = (int)Model.FundamentalEnergyHarmonyScore
             })
         }
     </div>

@@ -1779,19 +1779,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is a generally harmonious combination with good potential for friendship. However, the sexual chemistry may be lacking and conflict may arise if both parties wish to take the lead.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    5 Earth people typially like to be at the centre of everything they do and are very group-oriented. As both people are Core Earth Energies, on the one hand, they may be able to work well together and support one another; however, it can also go the other way and conflict could arise if both parties [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string coreearth_coreearth_main {
-            get {
-                return ResourceManager.GetString("coreearth_coreearth_main", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Core Earth Energies are at the centre of the system and this is often reflected in life, as they are &lt;strong&gt;often at the centre of
         ///        everything they do&lt;/strong&gt;, in the personal life and at work. Indeed, Core Earth Energies may even feel left out if this is not so.
@@ -2560,22 +2547,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is a very harmonious combination with great potential for friendship. The sexual chemistry may well be lacking, however.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Both people are Lake Energies and as such are naturally laid-back and enjoy many of the same kinds of activities and interests and are fun-loving. This is a recipe for a very enjoyable friendship!
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Both people have a great sense of optimism and are both great communicators and listeners. This typically results in an extremely civilised and ba [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string fire_fire_main {
-            get {
-                return ResourceManager.GetString("fire_fire_main", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    In Chinese medicine, the element Fire controls the function of the heart and small intestine and therefore these Energies must guard against circulatory disorders. It is also advisable to avoid 
         ///    overly hot, spicy or salty foods.
@@ -2944,22 +2915,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is a generally harmonious combination with good potential for friendship. However, the sexual chemistry may be lacking and conflict may arise from the fact that both parties like to to take the lead and be in control.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Both people are Heaven Energies and as such are naturally authoritative. This could go in two directions. On the one hand, if there is mutual respect, then a strong bond may be formed. Howver, it could equally lead to rivalry and friction.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Heaven [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string heaven_heaven_main {
-            get {
-                return ResourceManager.GetString("heaven_heaven_main", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Heaven Energies make excellent leaders and often excel in roles where they can use this skill to its fullest,
         ///    whether it be in business, politics, the armed forces or even teachers. Many head teachers are Heaven Energies.
@@ -3234,22 +3189,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is a very harmonious combination with great potential for friendship. The sexual chemistry may well be lacking, however.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Both people are Lake Energies and as such are naturally laid-back and enjoy many of the same kinds of activities and interests and are fun-loving. This is a recipe for a very enjoyable friendship!
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Both people have a great sense of optimism and are both great communicators and listeners. This typically results in an extremely civilised and ba [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string lake_lake_main {
-            get {
-                return ResourceManager.GetString("lake_lake_main", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    7 Metal Energies are often very good with money and therefore make great accountants, stock controllers and financial advisers. Their eloquence and personal skills 
         ///    would make them good teachers, lecturers or counsellors. 
@@ -3457,6 +3396,202 @@ namespace K9.Globalisation {
         public static string MailChimpImportSuccess {
             get {
                 return ResourceManager.GetString("MailChimpImportSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is a very harmonious combination with a potential for a very deep friendship. Howver, the sexual chemistry may be lacking.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Both people share the same Fundamental Energy &quot;Water&quot;. Water is perhaps the most intuitive and empathetic of the 9 Energies and so there is a potential for an extremely deep and intuitive connection between these two people. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Water Energy is naturally flexible, easy-going and generally non-confrontational, so this connection is likely to b [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_11 {
+            get {
+                return ResourceManager.GetString("main_11", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationships chemistry and for growth.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life. {Person2Proper}, on the other hand, is a Soil Energy and is more likely to be structured and d [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_12 {
+            get {
+                return ResourceManager.GetString("main_12", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is potentially quite an exciting and harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person1} supporting {Person2}. There is also potential for good relationships chemistry and for growth.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life. 
+        ///    
+        ///    {Person2Proper} is a Thunder Energy. Thunders often share the flexible, free-spirited and s [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_13 {
+            get {
+                return ResourceManager.GetString("main_13", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is potentially quite an exciting and harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person1} supporting {Person2}. There is also potential for good relationships chemistry and for growth.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life. 
+        ///    
+        ///    {Person2Proper} is a Wind Energy. Winds often share the flexible, free-spirited and spontan [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_14 {
+            get {
+                return ResourceManager.GetString("main_14", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is potentially quite an exciting and harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person1} supporting {Person2}. There is also potential for good relationships chemistry and for growth.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life. 
+        ///    
+        ///    {Person2Proper} is a Wind Energy. Winds often share the flexible, free-spirited and spontan [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_15 {
+            get {
+                return ResourceManager.GetString("main_15", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is a very harmonious combination with a great potential for a solid friendship. However, the sexual chemistry may be lacking.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Both people share the same Fundamental Energy &quot;Soil&quot;. Both people are stable, reliable, supportive types who are likely to have very similar values and priorities. This could very well result in a close friendship where both people feel understood, supported and that they can rely on one another.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    There is a great potential for collabora [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_22 {
+            get {
+                return ResourceManager.GetString("main_22", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is a fairly harmonious combination with a great potential for friendship. However, the sexual chemistry may be lacking.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Both people share the same Fundamental Energy &quot;Thunder&quot;. Thunder Energies typically really enjoy talking to and spending time with other Thunder Energies. One of the reasons for this is that they often find that other Thunders are the only people who can truly keep up! As the other Energies in the 9 Star Ki system sometimes find Thunder Energies a bit overwh [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_33 {
+            get {
+                return ResourceManager.GetString("main_33", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is a harmonious combination with a great potential for friendship. However, the sexual chemistry may be lacking.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Both people share the same Fundamental Energy &quot;Wind&quot;. Wind Energies often enjoy each other&apos;s company as they are quite talkative by nature, but are equally receptive and good listeners. This tends to create very enjoyable conversation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Both people are full of energy and spontaneity and are likely to enjoy lots of different activities together. Being [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_44 {
+            get {
+                return ResourceManager.GetString("main_44", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is a generally harmonious combination with good potential for friendship. However, the sexual chemistry may be lacking and conflict may arise if both parties wish to take the lead.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    5 Earth people typially like to be at the centre of everything they do and are very group-oriented. As both people are Core Earth Energies, on the one hand, they may be able to work well together and support one another; however, it can also go the other way and conflict could arise if both parties [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_55 {
+            get {
+                return ResourceManager.GetString("main_55", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is a generally harmonious combination with good potential for friendship. However, the sexual chemistry may be lacking and conflict may arise from the fact that both parties like to to take the lead and be in control.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Both people are Heaven Energies and as such are naturally authoritative. This could go in two directions. On the one hand, if there is mutual respect, then a strong bond may be formed. Howver, it could equally lead to rivalry and friction.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Heaven [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_66 {
+            get {
+                return ResourceManager.GetString("main_66", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is a very harmonious combination with great potential for friendship. The sexual chemistry may well be lacking, however.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Both people are Lake Energies and as such are naturally laid-back and enjoy many of the same kinds of activities and interests and are fun-loving. This is a recipe for a very enjoyable friendship!
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Both people have a great sense of optimism and are both great communicators and listeners. This typically results in an extremely civilised and ba [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_77 {
+            get {
+                return ResourceManager.GetString("main_77", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is a very harmonious combination with a great potential for a solid friendship. However, the sexual chemistry may be lacking.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Both people share the same Fundamental Energy &quot;Mountain&quot;. Both people are stable, steady and reliable who are likely to have very similar values and priorities. This could very well result in a close friendship where both people feel understood, supported and that they can rely on one another.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    There is a potential for lots of shared int [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_88 {
+            get {
+                return ResourceManager.GetString("main_88", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is a harmonious combination with great potential for friendship. The sexual chemistry may well be lacking, however.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    As both people are Fire Energies, they share many of the same qualities, such as the ability to inspire those around then with their great clarity, intuition and emotional intelligence. There is a strong potential for both people to get on very well and they would likely enjoy talking to one another and feel very comfortable in each other&apos;s company.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_99 {
+            get {
+                return ResourceManager.GetString("main_99", resourceCulture);
             }
         }
         
@@ -3857,22 +3992,6 @@ namespace K9.Globalisation {
         public static string mountain_health {
             get {
                 return ResourceManager.GetString("mountain_health", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is a very harmonious combination with a great potential for a solid friendship. However, the sexual chemistry may be lacking.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Both people share the same Fundamental Energy &quot;Mountain&quot;. Both people are stable, steady and reliable who are likely to have very similar values and priorities. This could very well result in a close friendship where both people feel understood, supported and that they can rely on one another.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    There is a potential for lots of shared int [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string mountain_mountain_main {
-            get {
-                return ResourceManager.GetString("mountain_mountain_main", resourceCulture);
             }
         }
         
@@ -5110,22 +5229,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is a very harmonious combination with a great potential for a solid friendship. However, the sexual chemistry may be lacking.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Both people share the same Fundamental Energy &quot;Soil&quot;. Both people are stable, reliable, supportive types who are likely to have very similar values and priorities. This could very well result in a close friendship where both people feel understood, supported and that they can rely on one another.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    There is a great potential for collabora [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string soil_soil_main {
-            get {
-                return ResourceManager.GetString("soil_soil_main", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    You mau well appear reserved. You are reliable, steady and tend to keep your word. You can also be quite detail-minded and potentially overly fussy.
         ///&lt;/p&gt;
@@ -5676,19 +5779,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is a fairly harmonious combination with a great potential for friendship. However, the sexual chemistry may be lacking.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Both people share the same Fundamental Energy &quot;Thunder&quot;. Thunder Energies typically really enjoy talking to and spending time with other Thunder Energies. One of the reasons for this is that they often find that other Thunders are the only people who can truly keep up! As the other Energies in the 9 Star Ki system sometimes find Thunder Energies a bit overwh [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string thunder_thunder_main {
-            get {
-                return ResourceManager.GetString("thunder_thunder_main", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    A strong Yang, base line opening up into two Yin lines. This represents growth and action and the awakening of dawn and spring as well as action and spontaneity.
         ///&lt;/p&gt;.
@@ -6071,22 +6161,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is a very harmonious combination with a potential for a very deep friendship. Howver, the sexual chemistry may be lacking.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Both people share the same Fundamental Energy &quot;Water&quot;. Water is perhaps the most intuitive and empathetic of the 9 Energies and so there is a potential for an extremely deep and intuitive connection between these two people. 
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Water Energy is naturally flexible, easy-going and generally non-confrontational, so this connection is likely to b [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string water_water_main {
-            get {
-                return ResourceManager.GetString("water_water_main", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Water Element.
         /// </summary>
         public static string WaterElement {
@@ -6332,22 +6406,6 @@ namespace K9.Globalisation {
         public static string wind_trigram {
             get {
                 return ResourceManager.GetString("wind_trigram", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is a harmonious combination with a great potential for friendship. However, the sexual chemistry may be lacking.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Both people share the same Fundamental Energy &quot;Wind&quot;. Wind Energies often enjoy each other&apos;s company as they are quite talkative by nature, but are equally receptive and good listeners. This tends to create very enjoyable conversation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Both people are full of energy and spontaneity and are likely to enjoy lots of different activities together. Being [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string wind_wind_main {
-            get {
-                return ResourceManager.GetString("wind_wind_main", resourceCulture);
             }
         }
         

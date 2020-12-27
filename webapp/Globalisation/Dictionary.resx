@@ -1642,14 +1642,8 @@
   <data name="ConflictScore" xml:space="preserve">
     <value>Conflict Likelihood</value>
   </data>
-  <data name="coreearth_coreearth_main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>compatibility\en-gb\coreearth-coreearth-main.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="Details" xml:space="preserve">
     <value>Details</value>
-  </data>
-  <data name="fire_fire_main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>compatibility\en-gb\fire-fire-main.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="FirstPerson" xml:space="preserve">
     <value>First Person</value>
@@ -1657,34 +1651,52 @@
   <data name="HarmonyScore" xml:space="preserve">
     <value>Harmony</value>
   </data>
-  <data name="heaven_heaven_main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>compatibility\en-gb\heaven-heaven-main.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="lake_lake_main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>compatibility\en-gb\lake-lake-main.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="LearningPotentialScore" xml:space="preserve">
     <value>Learning Potential</value>
   </data>
-  <data name="mountain_mountain_main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>compatibility\en-gb\mountain-mountain-main.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="main_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-11.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-12.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_13" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-13.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_14" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-14.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_15" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-15.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-22.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_33" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-33.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_44" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-44.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_55" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-55.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_66" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-66.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_77" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-77.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_88" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-88.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_99" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-99.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="Results" xml:space="preserve">
     <value>Results</value>
   </data>
   <data name="SecondPerson" xml:space="preserve">
     <value>Second Person</value>
-  </data>
-  <data name="soil_soil_main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>compatibility\en-gb\soil-soil-main.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="thunder_thunder_main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>compatibility\en-gb\thunder-thunder-main.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="water_water_main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>compatibility\en-gb\water-water-main.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="wind_wind_main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>compatibility\en-gb\wind-wind-main.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

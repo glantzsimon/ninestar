@@ -1,11 +1,10 @@
-﻿@using K9.WebApplication.Options
-@model K9.WebApplication.Models.CompatibilityModel
+﻿@model K9.WebApplication.Models.CompatibilityModel
 
 <div class="row">
     <div class="col-sm-12">
         @if (Model != null && Model.IsProcessed)
         {
-            <h4 class="text-center margin-top-0">@Dictionary.ChemistryScore</h4>
+            <h4 class="margin-top-0">@Dictionary.ChemistryScore</h4>
             
         }
     </div>

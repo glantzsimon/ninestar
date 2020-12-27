@@ -17,6 +17,9 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DateOfBirthLabel)]
         public DateTime DateOfBirth { get; set; }
 
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NameLabel)]
+        public string Name { get; set; }
+        
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LanguageLabel)]
         public string GenderName => Gender.GetLocalisedLanguageName();
 

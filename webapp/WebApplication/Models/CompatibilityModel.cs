@@ -44,6 +44,10 @@ namespace K9.WebApplication.Models
 
         public bool IsUpgradeRequired { get; set; }
 
+        public string FirstPersonName => NineStarKiModel1.PersonModel.Name ?? Globalisation.Dictionary.FirstPerson;
+        
+        public string SecondPersonName => NineStarKiModel2.PersonModel.Name ?? Globalisation.Dictionary.SecondPerson;
+
         public ECompatibilityScore TotalEnergyChemistryScore =>
             GetAverageScore(FundamentalEnergyChemistryScore, CharacterEnergyChemistryScore);
 

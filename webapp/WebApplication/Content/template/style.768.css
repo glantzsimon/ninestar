@@ -6,4 +6,12 @@
     .panel-body .table-responsive {
         width: auto !important;
     }
+
+    form .well div .col-sm-6:first-of-type, .well form div .col-sm-6:first-of-type {
+        padding: 0 !important;
+    }
+
+    form .well div .col-sm-6:last-of-type, .well form div .col-sm-6:last-of-type {
+        padding: 0;
+    }
 }

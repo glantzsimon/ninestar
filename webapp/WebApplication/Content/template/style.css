@@ -831,8 +831,9 @@ a.collapsible-panel-link {
     margin-bottom: 0;
 }
 
-form .well .col-sm-6, .well form .col-sm-6 {
-    padding: 0px;
+form .well .col-sm-6, .well form .col-sm-6,
+form .well .col-sm-12, .well form .col-sm-12 {
+    padding: 0;
 }
 
 form .well div .col-sm-6:first-of-type, .well form div .col-sm-6:first-of-type {

@@ -18,19 +18,20 @@
         <div class="col-sm-12 padding-0">
             @Html.Partial("_CompatibilityCalculator")
         </div>
-        <div class="col-sm-12 padding-0">
+        <div class="col-sm-12 padding-0 margin-top-0">
             @if (Model != null && Model.IsProcessed)
             {
-                @Html.Partial("_CompatibilitySummary", Model)
+                @Html.Panel(Dictionary.Results, Html.Partial("_CompatibilitySummary", Model).ToString())
+            }
+        </div>
+        <div class="col-sm-12 padding-0 margin-top-20">
+            @if (Model != null && Model.IsProcessed && !Model.IsUpgradeRequired)
+            {
+                @Html.Panel(Dictionary.Details, Html.Partial("_CompatibilityDetails", Model).ToString())
             }
         </div>
     </article>
 </div>
-
-@if (Model != null && Model.IsProcessed && !Model.IsUpgradeRequired)
-{
-    @Html.Partial("_CompatibilityDetails", Model)
-}
 
 @if (Model != null && Model.IsUpgradeRequired)
 {

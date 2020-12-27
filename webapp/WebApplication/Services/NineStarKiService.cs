@@ -54,6 +54,11 @@ namespace K9.WebApplication.Services
                 }
             }
 
+            if (isCompatibility)
+            {
+                model.IsShowSummary = false;
+            }
+
             model.IsProcessed = true;
 
             return model;

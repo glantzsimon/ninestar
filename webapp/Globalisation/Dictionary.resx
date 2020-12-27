@@ -1642,6 +1642,9 @@
   <data name="ConflictScore" xml:space="preserve">
     <value>Conflict Likelihood</value>
   </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
   <data name="FirstPerson" xml:space="preserve">
     <value>First Person</value>
   </data>
@@ -1650,6 +1653,9 @@
   </data>
   <data name="LearningPotentialScore" xml:space="preserve">
     <value>Learning Potential</value>
+  </data>
+  <data name="Results" xml:space="preserve">
+    <value>Results</value>
   </data>
   <data name="SecondPerson" xml:space="preserve">
     <value>Second Person</value>

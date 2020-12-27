@@ -17,14 +17,14 @@
                         <strong>@Model.MainEnergy.AdultEnergyLabel</strong>
                     </p>
                     <p class="text-center">
-                        @Model.MainEnergy.FullEnergyName
+                        @Model.MainEnergy.EnergyName
                     </p>
                 </div>
 
                 @if (!Model.PersonModel.IsAdult())
                 {
                     <p class="profile-warning">
-                       <img src="~/Images/ui/warning.png"/> @Dictionary.NotInEffectUntilEighteen
+                        <img src="~/Images/ui/warning.png" /> @Dictionary.NotInEffectUntilEighteen
                     </p>
                 }
             </div>
@@ -35,7 +35,7 @@
                     <strong>@Model.CharacterEnergy.CharacteEnergyLabel</strong>
                 </p>
                 <p class="text-center">
-                    @Model.CharacterEnergy.FullEnergyName
+                    @Model.CharacterEnergy.EnergyName
                 </p>
             </div>
             <div class="col-md-4 col-sm-4 margin-bottom-15">
@@ -45,16 +45,19 @@
                     <strong>@Dictionary.SurfaceEnergyShortLabel</strong>
                 </p>
                 <p class="text-center">
-                    @Model.SurfaceEnergy.FullEnergyName
+                    @Model.SurfaceEnergy.EnergyName
                 </p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12 margin-top-15 padding-left-0 padding-right-0">
-                <article>
-                    @Html.Panel(Dictionary.SummaryLabel, Model.Summary)
-                </article>
+        @if (Model.IsShowSummary)
+        {
+            <div class="row">
+                <div class="col-md-12 margin-top-15 padding-left-0 padding-right-0">
+                    <article>
+                        @Html.Panel(Dictionary.SummaryLabel, Model.Summary)
+                    </article>
+                </div>
             </div>
-        </div>
+        }
     </div>
 }

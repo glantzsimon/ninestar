@@ -169,6 +169,14 @@
     <Content Include="Articles\en-gb\soil-emotional-description.htm" />
     <Content Include="Articles\en-gb\water-emotional-description.htm" />
     <Content Include="Articles\en-gb\sexuality-match-match-female.htm" />
+    <Content Include="Compatibility\en-gb\fire-fire-main.htm" />
+    <Content Include="Compatibility\en-gb\mountain-mountain-main.htm" />
+    <Content Include="Compatibility\en-gb\lake-lake-main.htm" />
+    <Content Include="Compatibility\en-gb\heaven-heaven-main.htm" />
+    <Content Include="Compatibility\en-gb\coreearth-coreearth-main.htm" />
+    <Content Include="Compatibility\en-gb\wind-wind-main.htm" />
+    <Content Include="Compatibility\en-gb\thunder-thunder-main.htm" />
+    <Content Include="Compatibility\en-gb\soil-soil-main.htm" />
     <Content Include="Compatibility\en-gb\water-water-main.htm" />
     <Content Include="Summaries\en-gb\_234.htm" />
     <Content Include="Summaries\en-gb\_243.htm" />

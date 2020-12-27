@@ -1,4 +1,5 @@
-﻿using K9.WebApplication.Enums;
+﻿using K9.SharedLibrary.Helpers;
+using K9.WebApplication.Enums;
 using K9.WebApplication.Extensions;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,17 @@ namespace K9.WebApplication.Models
             CharacterEnergyConflictPotentialScore = GetCharacterEnergyConflictPotentialScore();
             CharacterEnergyHarmonyScore = GetCharacterEnergyHarmonyScore();
 
-            FundamentalEnergyDetails = GetFundamentalEnergyDetails();
+            FundamentalEnergyDetails = TemplateProcessor.PopulateTemplate(GetFundamentalEnergyDetails(), new
+            {
+                Person1 = FirstPersonName,
+                Person2 = SecondPersonName
+            });
+
+            CharacterEnergyDetails = TemplateProcessor.PopulateTemplate(GetCharacterEnergyDetails(), new
+            {
+                Person1 = FirstPersonName,
+                Person2 = SecondPersonName
+            });
         }
 
         public NineStarKiModel NineStarKiModel1 { get; }
@@ -51,6 +62,8 @@ namespace K9.WebApplication.Models
         public ECompatibilityScore CharacterEnergyHarmonyScore { get; }
 
         public string FundamentalEnergyDetails { get; }
+        
+        public string CharacterEnergyDetails { get; }
 
         public bool IsProcessed { get; set; }
 
@@ -77,9 +90,275 @@ namespace K9.WebApplication.Models
                     switch (NineStarKiModel2.MainEnergy.Energy)
                     {
                         case ENineStarKiEnergy.Water:
-                            //return K9.Globalisation.Dictionary.water_child
+                            return Globalisation.Dictionary.water_water_main;
 
+                        case ENineStarKiEnergy.Soil:
                             break;
+
+                        case ENineStarKiEnergy.Thunder:
+                            break;
+
+                        case ENineStarKiEnergy.Wind:
+                            break;
+
+                        case ENineStarKiEnergy.CoreEarth:
+                            break;
+
+                        case ENineStarKiEnergy.Heaven:
+                            break;
+
+                        case ENineStarKiEnergy.Lake:
+                            break;
+
+                        case ENineStarKiEnergy.Mountain:
+                            break;
+
+                        case ENineStarKiEnergy.Fire:
+                            break;
+                    }
+
+                    break;
+
+                case ENineStarKiEnergy.Soil:
+                    switch (NineStarKiModel2.MainEnergy.Energy)
+                    {
+                        case ENineStarKiEnergy.Water:
+                            break;
+
+                        case ENineStarKiEnergy.Soil:
+                            return Globalisation.Dictionary.soil_soil_main;
+
+                        case ENineStarKiEnergy.Thunder:
+                            break;
+
+                        case ENineStarKiEnergy.Wind:
+                            break;
+
+                        case ENineStarKiEnergy.CoreEarth:
+                            break;
+
+                        case ENineStarKiEnergy.Heaven:
+                            break;
+
+                        case ENineStarKiEnergy.Lake:
+                            break;
+
+                        case ENineStarKiEnergy.Mountain:
+                            break;
+
+                        case ENineStarKiEnergy.Fire:
+                            break;
+                    }
+                    break;
+
+                case ENineStarKiEnergy.Thunder:
+                    switch (NineStarKiModel2.MainEnergy.Energy)
+                    {
+                        case ENineStarKiEnergy.Water:
+                            break;
+
+                        case ENineStarKiEnergy.Soil:
+                            break;
+
+                        case ENineStarKiEnergy.Thunder:
+                            return Globalisation.Dictionary.thunder_thunder_main;
+
+                        case ENineStarKiEnergy.Wind:
+                            break;
+
+                        case ENineStarKiEnergy.CoreEarth:
+                            break;
+
+                        case ENineStarKiEnergy.Heaven:
+                            break;
+
+                        case ENineStarKiEnergy.Lake:
+                            break;
+
+                        case ENineStarKiEnergy.Mountain:
+                            break;
+
+                        case ENineStarKiEnergy.Fire:
+                            break;
+                    }
+                    break;
+
+                case ENineStarKiEnergy.Wind:
+                    switch (NineStarKiModel2.MainEnergy.Energy)
+                    {
+                        case ENineStarKiEnergy.Water:
+                            break;
+
+                        case ENineStarKiEnergy.Soil:
+                            break;
+
+                        case ENineStarKiEnergy.Thunder:
+                            break;
+
+                        case ENineStarKiEnergy.Wind:
+                            return Globalisation.Dictionary.wind_wind_main;
+
+                        case ENineStarKiEnergy.CoreEarth:
+                            break;
+
+                        case ENineStarKiEnergy.Heaven:
+                            break;
+
+                        case ENineStarKiEnergy.Lake:
+                            break;
+
+                        case ENineStarKiEnergy.Mountain:
+                            break;
+
+                        case ENineStarKiEnergy.Fire:
+                            break;
+                    }
+                    break;
+
+                case ENineStarKiEnergy.CoreEarth:
+                    switch (NineStarKiModel2.MainEnergy.Energy)
+                    {
+                        case ENineStarKiEnergy.Water:
+                            break;
+
+                        case ENineStarKiEnergy.Soil:
+                            break;
+
+                        case ENineStarKiEnergy.Thunder:
+                            break;
+
+                        case ENineStarKiEnergy.Wind:
+                            break;
+
+                        case ENineStarKiEnergy.CoreEarth:
+                            return Globalisation.Dictionary.coreearth_coreearth_main;
+
+                        case ENineStarKiEnergy.Heaven:
+                            break;
+
+                        case ENineStarKiEnergy.Lake:
+                            break;
+
+                        case ENineStarKiEnergy.Mountain:
+                            break;
+
+                        case ENineStarKiEnergy.Fire:
+                            break;
+                    }
+                    break;
+
+                case ENineStarKiEnergy.Heaven:
+                    switch (NineStarKiModel2.MainEnergy.Energy)
+                    {
+                        case ENineStarKiEnergy.Water:
+                            break;
+
+                        case ENineStarKiEnergy.Soil:
+                            break;
+
+                        case ENineStarKiEnergy.Thunder:
+                            break;
+
+                        case ENineStarKiEnergy.Wind:
+                            break;
+
+                        case ENineStarKiEnergy.CoreEarth:
+                            break;
+
+                        case ENineStarKiEnergy.Heaven:
+                            return Globalisation.Dictionary.heaven_heaven_main;
+
+                        case ENineStarKiEnergy.Lake:
+                            break;
+
+                        case ENineStarKiEnergy.Mountain:
+                            break;
+
+                        case ENineStarKiEnergy.Fire:
+                            break;
+                    }
+                    break;
+
+                case ENineStarKiEnergy.Lake:
+                    switch (NineStarKiModel2.MainEnergy.Energy)
+                    {
+                        case ENineStarKiEnergy.Water:
+                            break;
+
+                        case ENineStarKiEnergy.Soil:
+                            break;
+
+                        case ENineStarKiEnergy.Thunder:
+                            break;
+
+                        case ENineStarKiEnergy.Wind:
+                            break;
+
+                        case ENineStarKiEnergy.CoreEarth:
+                            break;
+
+                        case ENineStarKiEnergy.Heaven:
+                            break;
+
+                        case ENineStarKiEnergy.Lake:
+                            return Globalisation.Dictionary.lake_lake_main;
+
+                        case ENineStarKiEnergy.Mountain:
+                            break;
+
+                        case ENineStarKiEnergy.Fire:
+                            break;
+                    }
+                    break;
+
+                case ENineStarKiEnergy.Mountain:
+                    switch (NineStarKiModel2.MainEnergy.Energy)
+                    {
+                        case ENineStarKiEnergy.Water:
+                            break;
+
+                        case ENineStarKiEnergy.Soil:
+                            break;
+
+                        case ENineStarKiEnergy.Thunder:
+                            break;
+
+                        case ENineStarKiEnergy.Wind:
+                            break;
+
+                        case ENineStarKiEnergy.CoreEarth:
+                            break;
+
+                        case ENineStarKiEnergy.Heaven:
+                            break;
+
+                        case ENineStarKiEnergy.Lake:
+                            break;
+
+                        case ENineStarKiEnergy.Mountain:
+                            return Globalisation.Dictionary.mountain_mountain_main;
+
+                        case ENineStarKiEnergy.Fire:
+                            break;
+                    }
+                    break;
+
+                case ENineStarKiEnergy.Fire:
+                    break;
+            }
+
+            return string.Empty;
+        }
+
+        private string GetCharacterEnergyDetails()
+        {
+            switch (NineStarKiModel1.MainEnergy.Energy)
+            {
+                case ENineStarKiEnergy.Water:
+                    switch (NineStarKiModel2.MainEnergy.Energy)
+                    {
+                        case ENineStarKiEnergy.Water:
+                            return Globalisation.Dictionary.water_water_main;
 
                         case ENineStarKiEnergy.Soil:
                             break;

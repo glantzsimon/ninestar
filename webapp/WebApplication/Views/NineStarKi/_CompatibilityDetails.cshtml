@@ -4,8 +4,9 @@
     <div class="col-sm-12">
         @if (Model != null && Model.IsProcessed)
         {
-            
-            
+            <div>@Html.Raw(Model.FundamentalEnergyDetails)</div>
+
+            <div>@Html.Raw(Model.CharacterEnergyDetails)</div>
         }
     </div>
 </div>

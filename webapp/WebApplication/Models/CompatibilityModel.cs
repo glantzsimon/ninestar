@@ -344,6 +344,35 @@ namespace K9.WebApplication.Models
                     break;
 
                 case ENineStarKiEnergy.Fire:
+                    switch (NineStarKiModel2.MainEnergy.Energy)
+                    {
+                        case ENineStarKiEnergy.Water:
+                            break;
+
+                        case ENineStarKiEnergy.Soil:
+                            break;
+
+                        case ENineStarKiEnergy.Thunder:
+                            break;
+
+                        case ENineStarKiEnergy.Wind:
+                            break;
+
+                        case ENineStarKiEnergy.CoreEarth:
+                            break;
+
+                        case ENineStarKiEnergy.Heaven:
+                            break;
+
+                        case ENineStarKiEnergy.Lake:
+                            break;
+
+                        case ENineStarKiEnergy.Mountain:
+                            break;
+
+                        case ENineStarKiEnergy.Fire:
+                            return Globalisation.Dictionary.fire_fire_main;
+                    }
                     break;
             }
 

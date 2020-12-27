@@ -3,6 +3,7 @@ using K9.WebApplication.Enums;
 using K9.WebApplication.Extensions;
 using System;
 using System.Collections.Generic;
+using K9.SharedLibrary.Extensions;
 
 namespace K9.WebApplication.Models
 {
@@ -30,14 +31,18 @@ namespace K9.WebApplication.Models
 
             FundamentalEnergyDetails = TemplateProcessor.PopulateTemplate(GetFundamentalEnergyDetails(), new
             {
-                Person1 = FirstPersonName,
-                Person2 = SecondPersonName
+                Person1 = FirstFundamentalEnergyPersonName,
+                Person2 = SecondFundamentalEnergyPersonName,
+                Person1Proper = FirstFundamentalEnergyPersonName.ToProperCase(),
+                Person2Proper = SecondFundamentalEnergyPersonName.ToProperCase()
             });
 
             CharacterEnergyDetails = TemplateProcessor.PopulateTemplate(GetCharacterEnergyDetails(), new
             {
-                Person1 = FirstPersonName,
-                Person2 = SecondPersonName
+                Person1 = FirstCharacterEnergyPersonName,
+                Person2 = SecondCharacterEnergyPersonName,
+                Person1Proper = FirstCharacterEnergyPersonName.ToProperCase(),
+                Person2Proper = SecondCharacterEnergyPersonName.ToProperCase()
             });
         }
 
@@ -72,6 +77,26 @@ namespace K9.WebApplication.Models
         public string FirstPersonName => NineStarKiModel1.PersonModel.Name ?? Globalisation.Dictionary.FirstPerson;
 
         public string SecondPersonName => NineStarKiModel2.PersonModel.Name ?? Globalisation.Dictionary.SecondPerson;
+
+        public string FirstPersonNameWithArticle => NineStarKiModel1.PersonModel.Name ?? $"the {Globalisation.Dictionary.FirstPerson.ToLower()}";
+
+        public string SecondPersonNameWithArticle => NineStarKiModel2.PersonModel.Name ?? $"the {Globalisation.Dictionary.SecondPerson.ToLower()}";
+        
+        public string FirstFundamentalEnergyPersonName => NineStarKiModel1.MainEnergy.Energy <= NineStarKiModel2.MainEnergy.Energy
+            ? FirstPersonNameWithArticle
+            : SecondPersonNameWithArticle;
+
+        public string SecondFundamentalEnergyPersonName => NineStarKiModel1.MainEnergy.Energy <= NineStarKiModel2.MainEnergy.Energy
+            ? SecondPersonNameWithArticle
+            : FirstPersonNameWithArticle;
+
+        public string FirstCharacterEnergyPersonName => NineStarKiModel1.CharacterEnergy.Energy <= NineStarKiModel2.CharacterEnergy.Energy
+            ? FirstPersonNameWithArticle
+            : SecondPersonNameWithArticle;
+
+        public string SecondCharacterEnergyPersonName => NineStarKiModel1.CharacterEnergy.Energy <= NineStarKiModel2.CharacterEnergy.Energy
+            ? SecondPersonNameWithArticle
+            : FirstPersonNameWithArticle;
 
         public ECompatibilityScore TotalEnergyChemistryScore =>
             GetAverageScore(FundamentalEnergyChemistryScore, CharacterEnergyChemistryScore);

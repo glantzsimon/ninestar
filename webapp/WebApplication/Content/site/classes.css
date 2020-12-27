@@ -238,3 +238,8 @@ a#toTop:hover {
         width: 100%;
         height: 100%;
     }
+
+.table-left-nowrap table tr td:first-of-type {
+    text-wrap: none;
+    white-space: nowrap;
+}

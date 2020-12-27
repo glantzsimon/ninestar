@@ -1,12 +1,22 @@
-﻿@model K9.WebApplication.Models.NineStarKiModel
+﻿@model K9.WebApplication.Models.CompatibilityModel
 
 @using (Html.BeginForm("Compatibility", "Relationships"))
 {
     using (Html.BeginBootstrapForm())
     {
-        @Html.BootstrapEditorFor(model => model.PersonModel.DateOfBirth)
-        <div data-toggle="tooltip" title="@Dictionary.GenderSelectionTooltip">
-            @Html.BootstrapEditorFor(model => model.PersonModel.Gender)
+        <div class="row">
+            <div class="col-sm-6">
+                @Html.BootstrapEditorFor(model => model.NineStarKiModel1.PersonModel.DateOfBirth)
+                <div data-toggle="tooltip" title="@Dictionary.GenderSelectionTooltip">
+                    @Html.BootstrapEditorFor(model => model.NineStarKiModel1.PersonModel.Gender)
+                </div>
+            </div>
+            <div class="col-sm-6">
+                @Html.BootstrapEditorFor(model => model.NineStarKiModel2.PersonModel.DateOfBirth)
+                <div data-toggle="tooltip" title="@Dictionary.GenderSelectionTooltip">
+                    @Html.BootstrapEditorFor(model => model.NineStarKiModel2.PersonModel.Gender)
+                </div>
+            </div>
         </div>
 
         <hr />

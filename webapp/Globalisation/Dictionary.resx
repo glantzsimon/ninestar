@@ -1627,6 +1627,9 @@
   <data name="RelationshipCompatibilityCalculator" xml:space="preserve">
     <value>Relationship Compatibility Calculator</value>
   </data>
+  <data name="FiveTransformationsTitle" xml:space="preserve">
+    <value>The Five Transformations</value>
+  </data>
   <data name="relationships_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\relationships-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>

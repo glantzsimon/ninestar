@@ -2651,12 +2651,10 @@ namespace K9.Globalisation {
         ///    Each of the 5 elements relates to the other elements in 3 distinct ways, called &quot;transformations&quot;. Traditional Chinese medicine use these same transformations to help make medical diagnoses, as well as to prescribe appropriate treatments to bring the body back into balance.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    There are 3 different types of transformation:
+        ///    There are 3 different types of transformation or relationship:
         ///&lt;/p&gt;
         ///
-        ///&lt;h5&gt;Same Transformation&lt;/h5&gt;
-        ///&lt;div&gt;
-        ///    &lt;i [rest of string was truncated]&quot;;.
+        ///&lt;h4&gt;Same Element Transforma [rest of string was truncated]&quot;;.
         /// </summary>
         public static string five_transformations {
             get {
@@ -2670,6 +2668,15 @@ namespace K9.Globalisation {
         public static string FiveElementsTitle {
             get {
                 return ResourceManager.GetString("FiveElementsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Five Transformations.
+        /// </summary>
+        public static string FiveTransformationsTitle {
+            get {
+                return ResourceManager.GetString("FiveTransformationsTitle", resourceCulture);
             }
         }
         

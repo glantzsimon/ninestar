@@ -1,4 +1,5 @@
-﻿@using K9.WebApplication.Helpers
+﻿@model K9.WebApplication.Models.CompatibilityModel
+@using K9.WebApplication.Helpers
 
 @{
     ViewBag.Title = Dictionary.CompatibilityTitle;
@@ -13,18 +14,18 @@
 @Html.Partial("_BetaPopup")
 
 <div class="container main-content margin-bottom-0">
-    <div class="col-md-3 col-sm-3 padding-0">
+    <div class="col-sm-12 padding-0">
         @Html.Partial("_Calculator")
     </div>
-    <div class="col-md-9 col-sm-9 padding-left-20-desktop padding-right-0">
+    <div class="col-sm-12 padding-0">
         @if (Model != null && Model.IsProcessed)
         {
-            //@Html.Partial("_ProfileSummary", Model)
+            @Html.Partial("_CompatibilitySummary", Model)
         }
     </div>
 </div>
 
 @if (Model != null && Model.IsProcessed)
 {
-    //@Html.Partial("_ProfileDetails", Model)
+    //@Html.Partial("_CompatibilityDetails", Model)
 }

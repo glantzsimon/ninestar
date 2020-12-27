@@ -14,13 +14,11 @@ namespace K9.WebApplication.Controllers
     public class NineStarKiController : BaseNineStarKiController
     {
         private readonly INineStarKiService _nineStarKiService;
-        private readonly IMembershipService _membershipService;
 
         public NineStarKiController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _nineStarKiService = nineStarKiService;
-            _membershipService = membershipService;
         }
 
         [Route("calculate")]
@@ -63,6 +61,29 @@ namespace K9.WebApplication.Controllers
                 Gender = lastProfile.Gender
             });
             return View("Index", model);
+        }
+
+        [Route("relationships/compatibility")]
+        public ActionResult Compatibility()
+        {
+            var dateOfBirth = new DateTime(DateTime.Now.Year - (24), DateTime.Now.Month, DateTime.Now.Day);
+            var personModel = new PersonModel
+            {
+                DateOfBirth = dateOfBirth
+            };
+            return View("Compatibility", new CompatibilityModel(new NineStarKiModel(personModel), new NineStarKiModel(personModel)));
+        }
+
+        [Route("relationships/compatibility")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Compatibility(CompatibilityModel model)
+        {
+            if (model.NineStarKiModel1?.PersonModel != null && model.NineStarKiModel2?.PersonModel != null)
+            {
+                model = _nineStarKiService.CalculateCompatibility(model.NineStarKiModel1.PersonModel, model.NineStarKiModel2.PersonModel);
+            }
+            return View("Compatibility", model);
         }
 
         [Route("all-enegies")]

@@ -24,6 +24,8 @@ namespace K9.WebApplication.Models
             CharacterEnergyChemistryScore = GetCharacterEnergyChemistryScore();
             CharacterEnergyLearningPotentialScore = GetCharacterEnergyLearningPotentialScore();
             CharacterEnergyConflictPotentialScore = GetCharacterEnergyConflictPotentialScore();
+
+            IsProcessed = true;
         }
 
         public NineStarKiModel NineStarKiModel1 { get; }
@@ -35,6 +37,8 @@ namespace K9.WebApplication.Models
         public ECompatibilityScore CharacterEnergyChemistryScore { get; }
         public ECompatibilityScore CharacterEnergyLearningPotentialScore { get; }
         public ECompatibilityScore CharacterEnergyConflictPotentialScore { get; }
+
+        public bool IsProcessed { get; set; }
 
         public ECompatibilityScore TotalEnergyChemistryScore =>
             GetAverageScore(FundamentalEnergyChemistryScore, CharacterEnergyChemistryScore);

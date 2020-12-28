@@ -380,9 +380,16 @@
     <Content Include="Content\site\sections\ninestar.css" />
     <Content Include="Content\site\sections\shop.css" />
     <Content Include="Content\site\sections\archive.css" />
+    <Content Include="Content\site\shared-xs.css" />
+    <Content Include="Content\site\shared-sm.css" />
+    <Content Include="Content\site\shared-md.css" />
     <Content Include="Content\site\shared.css" />
     <Content Include="Content\site\tablet.css" />
     <Content Include="Content\site\validation.css" />
+    <Content Include="Content\template\style-lg.css" />
+    <Content Include="Content\template\style-md.css" />
+    <Content Include="Content\template\style-xs.css" />
+    <Content Include="Content\template\style-sm.css" />
     <Content Include="Content\template\style.1200.css" />
     <Content Include="Content\template\style.610.css" />
     <Content Include="Content\template\style.525.css" />

@@ -1,14 +1,14 @@
 ﻿@model K9.WebApplication.Models.CompatibilityModel
 
 <div class="row">
-    <div class="col-md-6 padding-left-0 padding-right-5">
+    <div class="col-md-6">
         @if (Model != null && Model.IsProcessed)
         {
             <h4 class="margin-top-0">@Model.FirstPersonName</h4>
             @Html.Partial("_ProfileSummary", Model.NineStarKiModel1)
         }
     </div>
-    <div class="col-md-6 padding-left-5 padding-right-0">
+    <div class="col-md-6">
         @if (Model != null && Model.IsProcessed)
         {
             <h4 class="margin-top-0">@Model.SecondPersonName</h4>

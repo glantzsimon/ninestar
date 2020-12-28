@@ -111,7 +111,12 @@ namespace K9.WebApplication.Models
 
         private ESexualChemistryScore GetTotalSexualChemistryScore(NineStarKiModel energy1, NineStarKiModel energy2)
         {
-            var MainTransformationType = energy1.MainEnergy.Energy.GetTransformationType(energy2.MainEnergy.Energy);
+            if (energy1.MainEnergy == null || energy2.MainEnergy == null)
+            {
+                return ESexualChemistryScore.Unspecified;
+            }
+
+            var mainTransformationType = energy1.MainEnergy.Energy.GetTransformationType(energy2.MainEnergy.Energy);
             var isMainSameGender = energy1.MainEnergy.YinYang == energy2.MainEnergy.YinYang;
             var isMainSameModality = energy1.MainEnergy.Modality == energy2.MainEnergy.Modality;
             var isMainSameElement = energy1.MainEnergy.Element == energy2.MainEnergy.Element;
@@ -119,9 +124,9 @@ namespace K9.WebApplication.Models
             {
                 ETransformationType.Challenges,
                 ETransformationType.IsChallenged
-            }.Contains(MainTransformationType);
+            }.Contains(mainTransformationType);
 
-            var CharacterTransformationType = energy1.CharacterEnergy.Energy.GetTransformationType(energy2.CharacterEnergy.Energy);
+            var characterTransformationType = energy1.CharacterEnergy.Energy.GetTransformationType(energy2.CharacterEnergy.Energy);
             var isCharacterSameGender = energy1.CharacterEnergy.YinYang == energy2.CharacterEnergy.YinYang;
             var isCharacterSameModality = energy1.CharacterEnergy.Modality == energy2.CharacterEnergy.Modality;
             var isCharacterSameElement = energy1.CharacterEnergy.Element == energy2.CharacterEnergy.Element;
@@ -129,7 +134,7 @@ namespace K9.WebApplication.Models
             {
                 ETransformationType.Challenges,
                 ETransformationType.IsChallenged
-            }.Contains(CharacterTransformationType);
+            }.Contains(characterTransformationType);
 
             ESexualChemistryScore score = 0;
 
@@ -616,12 +621,12 @@ namespace K9.WebApplication.Models
 
         private ECompatibilityScore GetFundamentalEnergyHarmonyScore()
         {
-            return (ECompatibilityScore)10 - (int)GetFundamentalEnergyConflictPotentialScore();
+            return ECompatibilityScore.ExtremelyHigh - (int)GetFundamentalEnergyConflictPotentialScore();
         }
 
         private ECompatibilityScore GetCharacterEnergyHarmonyScore()
         {
-            return (ECompatibilityScore)10 - (int)GetCharacterEnergyConflictPotentialScore();
+            return ECompatibilityScore.ExtremelyHigh - (int)GetCharacterEnergyConflictPotentialScore();
         }
 
         private ECompatibilityScore GetEnergyConflictPotentialScore(NineStarKiEnergy energy1, NineStarKiEnergy energy2)

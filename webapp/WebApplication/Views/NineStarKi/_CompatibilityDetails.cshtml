@@ -1,12 +1,8 @@
 ﻿@model K9.WebApplication.Models.CompatibilityModel
 
-<div class="row">
-    <div class="col-sm-12">
-        @if (Model != null && Model.IsProcessed)
-        {
-            <div>@Html.Raw(Model.FundamentalEnergyDetails)</div>
+@if (Model != null && Model.IsProcessed)
+{
+    <div>@Html.Raw(Model.FundamentalEnergyDetails)</div>
 
-            <div>@Html.Raw(Model.CharacterEnergyDetails)</div>
-        }
-    </div>
-</div>
+    <div>@Html.Raw(Model.CharacterEnergyDetails)</div>
+}

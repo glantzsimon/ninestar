@@ -79,10 +79,10 @@
     }
 
     .page .well {
-        padding: 12px !important;
+        padding: 15px !important;
     }
 
-    .panel-body p, .panel-body h4 {
+    .panel-body h4 {
         padding-left: 5px !important;
         padding-right: 5px !important;
     }

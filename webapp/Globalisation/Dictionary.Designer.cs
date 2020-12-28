@@ -3460,16 +3460,76 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially quite an exciting and harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person1} supporting {Person2}. There is also potential for good relationships chemistry and for growth.
+        ///    This is potentially quite a tricky combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} controlling {Person1}. There is also potential for very good relationships chemistry and for a lot of growth.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life. 
         ///    
-        ///    {Person2Proper} is a Wind Energy. Winds often share the flexible, free-spirited and spontan [rest of string was truncated]&quot;;.
+        ///    {Person2Proper} is a Core Earth Energy. 5 Earths generally have a bold and possibly agressive [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_15 {
             get {
                 return ResourceManager.GetString("main_15", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is potentially a very harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for reasonable sexual chemistry and for quite a bit of growth. Conflict is less likely in this combination.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life.
+        ///
+        ///    {Person2Proper} is a Heaven Energy. 6 Metals general [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_16 {
+            get {
+                return ResourceManager.GetString("main_16", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is potentially a very harmonious and exciting combination, as the Fundamental Energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for good sexual chemistry and for quite a bit of growth. Conflict is far less likely in this combination.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life.
+        ///
+        ///    {Person2Proper} is a Lake Energy and is l [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_17 {
+            get {
+                return ResourceManager.GetString("main_17", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is potentially a very challenging combination indeed. The Fundamental Energies are in a Challenging Transformation, with {Person2} controlling {Person1}. Whilst there is potential for good sexual chemistry and for quite a bit of growth, conflict and frustration are likely to be a big stumbling block in this combination.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life.
+        ///
+        ///    {Person2P [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_18 {
+            get {
+                return ResourceManager.GetString("main_18", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is potentially a very challenging combination indeed. The Fundamental Energies are in a Challenging Transformation, with {Person2} controlling {Person1}. Whilst there is potential for good sexual chemistry and for quite a bit of growth, conflict and frustration are likely to be a big stumbling block in this combination.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life.
+        ///
+        ///    {Person2P [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_19 {
+            get {
+                return ResourceManager.GetString("main_19", resourceCulture);
             }
         }
         

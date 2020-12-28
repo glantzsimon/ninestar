@@ -130,16 +130,16 @@ namespace K9.WebApplication.Models
                             return Globalisation.Dictionary.main_15;
 
                         case ENineStarKiEnergy.Heaven:
-                            break;
+                            return Globalisation.Dictionary.main_16;
 
                         case ENineStarKiEnergy.Lake:
-                            break;
+                            return Globalisation.Dictionary.main_17;
 
                         case ENineStarKiEnergy.Mountain:
-                            break;
+                            return Globalisation.Dictionary.main_18;
 
                         case ENineStarKiEnergy.Fire:
-                            break;
+                            return Globalisation.Dictionary.main_19;
                     }
 
                     break;

@@ -3520,12 +3520,12 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially a very challenging combination indeed. The Fundamental Energies are in a Challenging Transformation, with {Person2} controlling {Person1}. Whilst there is potential for good sexual chemistry and for quite a bit of growth, conflict and frustration are likely to be a big stumbling block in this combination.
+        ///    This is potentially a very challenging combination. The Fundamental Energies are in a Challenging Transformation, with {Person1} controlling {Person2}. Whilst there is potential for good sexual chemistry and for quite a bit of growth, conflict and frustration are likely to be a big stumbling block in this combination.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life.
         ///
-        ///    {Person2P [rest of string was truncated]&quot;;.
+        ///    {Person2Proper}  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_19 {
             get {
@@ -3546,6 +3546,22 @@ namespace K9.Globalisation {
         public static string main_22 {
             get {
                 return ResourceManager.GetString("main_22", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is a very harmonious combination with a great potential for a solid friendship. However, the sexual chemistry may be lacking.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Both people share the same Fundamental Energy &quot;Soil&quot;. Both people are stable, reliable, supportive types who are likely to have very similar values and priorities. This could very well result in a close friendship where both people feel understood, supported and that they can rely on one another.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    There is a great potential for collabora [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_23 {
+            get {
+                return ResourceManager.GetString("main_23", resourceCulture);
             }
         }
         

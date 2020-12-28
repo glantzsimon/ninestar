@@ -291,6 +291,7 @@
     <Compile Include="Controllers\RelationshipsController.cs" />
     <Compile Include="Controllers\UserCreditPacks.cs" />
     <Compile Include="Controllers\UserMemberships.cs" />
+    <Compile Include="Enums\ESexualChemistryScore.cs" />
     <Compile Include="Enums\ECompatibilityScore.cs" />
     <Compile Include="Enums\EReadingType.cs" />
     <Compile Include="Enums\ETransformationType.cs" />

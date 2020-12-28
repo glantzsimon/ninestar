@@ -4,4 +4,4 @@
     var id = @Guid.NewGuid().ToString();
 }
 
-<canvas id="@id" class="gauge" data-value="@Model.Value" data-invert="@Model.IsInverted.ToString().ToLower()"></canvas>
+<canvas id="@id" class="gauge" data-value="@Model.Value" data-max-value="@Model.MaxValue" data-invert="@Model.IsInverted.ToString().ToLower()"></canvas>

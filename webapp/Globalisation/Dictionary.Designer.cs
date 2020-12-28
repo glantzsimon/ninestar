@@ -1536,7 +1536,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chemistry.
+        ///   Looks up a localized string similar to Personal Chemistry.
         /// </summary>
         public static string ChemistryScore {
             get {
@@ -3551,17 +3551,27 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is a very harmonious combination with a great potential for a solid friendship. However, the sexual chemistry may be lacking.
+        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationships chemistry and for growth.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both people share the same Fundamental Energy &quot;Soil&quot;. Both people are stable, reliable, supportive types who are likely to have very similar values and priorities. This could very well result in a close friendship where both people feel understood, supported and that they can rely on one another.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    There is a great potential for collabora [rest of string was truncated]&quot;;.
+        ///    {Person2Proper} is a 3 Tree Energy and is likely to be very energetic, changeable and even impulsive and explosive at times. {Person1Proper}, on the other hand, is a Soil Energy and is more likely to be structured and disciplined. This  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_23 {
             get {
                 return ResourceManager.GetString("main_23", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationships chemistry and for growth.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person2Proper} is a 4 Tree Energy and is likely to be very energetic, changeable and even impulsive at times. {Person1Proper}, on the other hand, is a Soil Energy and is more likely to be structured and disciplined. This could be perce [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_24 {
+            get {
+                return ResourceManager.GetString("main_24", resourceCulture);
             }
         }
         
@@ -4893,6 +4903,15 @@ namespace K9.Globalisation {
         public static string SeventhChild {
             get {
                 return ResourceManager.GetString("SeventhChild", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sexual Chemistry.
+        /// </summary>
+        public static string SexualChemistry {
+            get {
+                return ResourceManager.GetString("SexualChemistry", resourceCulture);
             }
         }
         

@@ -67,7 +67,7 @@ namespace K9.WebApplication.Models
         public ECompatibilityScore CharacterEnergyHarmonyScore { get; }
 
         public string FundamentalEnergyDetails { get; }
-        
+
         public string CharacterEnergyDetails { get; }
 
         public bool IsProcessed { get; set; }
@@ -81,7 +81,7 @@ namespace K9.WebApplication.Models
         public string FirstPersonNameWithArticle => NineStarKiModel1.PersonModel.Name ?? $"the {Globalisation.Dictionary.FirstPerson.ToLower()}";
 
         public string SecondPersonNameWithArticle => NineStarKiModel2.PersonModel.Name ?? $"the {Globalisation.Dictionary.SecondPerson.ToLower()}";
-        
+
         public string FirstFundamentalEnergyPersonName => NineStarKiModel1.MainEnergy.Energy <= NineStarKiModel2.MainEnergy.Energy
             ? FirstPersonNameWithArticle
             : SecondPersonNameWithArticle;
@@ -98,6 +98,8 @@ namespace K9.WebApplication.Models
             ? SecondPersonNameWithArticle
             : FirstPersonNameWithArticle;
 
+        public ESexualChemistryScore TotalSexualChemistryScore => GetTotalSexualChemistryScore(NineStarKiModel1, NineStarKiModel2);
+
         public ECompatibilityScore TotalEnergyChemistryScore =>
             GetAverageScore(FundamentalEnergyChemistryScore, CharacterEnergyChemistryScore);
 
@@ -106,6 +108,79 @@ namespace K9.WebApplication.Models
         public ECompatibilityScore TotalEnergyConflictPotentialScore => GetAverageScore(FundamentalEnergyConflictPotentialScore, CharacterEnergyConflictPotentialScore);
 
         public ECompatibilityScore TotalHarmonyScore => GetAverageScore(FundamentalEnergyHarmonyScore, CharacterEnergyHarmonyScore);
+
+        private ESexualChemistryScore GetTotalSexualChemistryScore(NineStarKiModel energy1, NineStarKiModel energy2)
+        {
+            var MainTransformationType = energy1.MainEnergy.Energy.GetTransformationType(energy2.MainEnergy.Energy);
+            var isMainSameGender = energy1.MainEnergy.YinYang == energy2.MainEnergy.YinYang;
+            var isMainSameModality = energy1.MainEnergy.Modality == energy2.MainEnergy.Modality;
+            var isMainSameElement = energy1.MainEnergy.Element == energy2.MainEnergy.Element;
+            var isMainOppositeElement = new List<ETransformationType>
+            {
+                ETransformationType.Challenges,
+                ETransformationType.IsChallenged
+            }.Contains(MainTransformationType);
+
+            var CharacterTransformationType = energy1.CharacterEnergy.Energy.GetTransformationType(energy2.CharacterEnergy.Energy);
+            var isCharacterSameGender = energy1.CharacterEnergy.YinYang == energy2.CharacterEnergy.YinYang;
+            var isCharacterSameModality = energy1.CharacterEnergy.Modality == energy2.CharacterEnergy.Modality;
+            var isCharacterSameElement = energy1.CharacterEnergy.Element == energy2.CharacterEnergy.Element;
+            var isCharacterOppositeElement = new List<ETransformationType>
+            {
+                ETransformationType.Challenges,
+                ETransformationType.IsChallenged
+            }.Contains(CharacterTransformationType);
+
+            ESexualChemistryScore score = 0;
+
+            // Main
+            if (!isMainSameGender)
+            {
+                score += 3;
+            }
+
+            if (isMainOppositeElement)
+            {
+                score += 3;
+            }
+            else if(!isMainSameElement)
+            {
+                score += 2;
+            }
+
+            if (!isMainSameModality)
+            {
+                score += 1;
+            }
+
+            // Character
+            if (!isCharacterSameGender)
+            {
+                score += 4;
+            }
+
+            if (isCharacterOppositeElement)
+            {
+                score += 3;
+            }
+            else if(!isCharacterSameElement)
+            {
+                score += 2;
+            }
+
+            if (!isCharacterSameModality)
+            {
+                score += 1;
+            }
+
+            score = score < 0 
+                ? 0 :
+                score > ESexualChemistryScore.OffTheCharts ? 
+                    ESexualChemistryScore.OffTheCharts 
+                    : score;
+
+            return score;
+        }
 
         private string GetFundamentalEnergyDetails()
         {
@@ -157,7 +232,7 @@ namespace K9.WebApplication.Models
                             return Globalisation.Dictionary.main_23;
 
                         case ENineStarKiEnergy.Wind:
-                            break;
+                            return Globalisation.Dictionary.main_24;
 
                         case ENineStarKiEnergy.CoreEarth:
                             break;
@@ -215,7 +290,7 @@ namespace K9.WebApplication.Models
                             break;
 
                         case ENineStarKiEnergy.Soil:
-                            break;
+                            return Globalisation.Dictionary.main_24;
 
                         case ENineStarKiEnergy.Thunder:
                             break;

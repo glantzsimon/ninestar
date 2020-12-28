@@ -1634,7 +1634,7 @@
     <value>articles\en-gb\relationships-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ChemistryScore" xml:space="preserve">
-    <value>Chemistry</value>
+    <value>Personal Chemistry</value>
   </data>
   <data name="CompatibilityOverview" xml:space="preserve">
     <value>Compatibility Overview</value>
@@ -1687,6 +1687,9 @@
   <data name="main_23" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>compatibility\en-gb\main-23.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="main_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-24.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="main_33" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>compatibility\en-gb\main-33.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -1713,5 +1716,8 @@
   </data>
   <data name="SecondPerson" xml:space="preserve">
     <value>Second Person</value>
+  </data>
+  <data name="SexualChemistry" xml:space="preserve">
+    <value>Sexual Chemistry</value>
   </data>
 </root>

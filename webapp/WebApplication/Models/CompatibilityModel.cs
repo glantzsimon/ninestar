@@ -154,7 +154,7 @@ namespace K9.WebApplication.Models
                             return Globalisation.Dictionary.main_22;
 
                         case ENineStarKiEnergy.Thunder:
-                            break;
+                            return Globalisation.Dictionary.main_23;
 
                         case ENineStarKiEnergy.Wind:
                             break;
@@ -183,7 +183,7 @@ namespace K9.WebApplication.Models
                             break;
 
                         case ENineStarKiEnergy.Soil:
-                            break;
+                            return Globalisation.Dictionary.main_23;
 
                         case ENineStarKiEnergy.Thunder:
                             return Globalisation.Dictionary.main_33;

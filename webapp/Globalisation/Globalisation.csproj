@@ -176,7 +176,9 @@
     <Content Include="Compatibility\en-gb\main-15.htm" />
     <Content Include="Compatibility\en-gb\main-14.htm" />
     <Content Include="Compatibility\en-gb\main-13.htm" />
-    <Content Include="Compatibility\en-gb\main-26 - Copy.htm" />
+    <Content Include="Compatibility\en-gb\main-29.htm" />
+    <Content Include="Compatibility\en-gb\main-28.htm" />
+    <Content Include="Compatibility\en-gb\main-27.htm" />
     <Content Include="Compatibility\en-gb\main-26.htm" />
     <Content Include="Compatibility\en-gb\main-25.htm" />
     <Content Include="Compatibility\en-gb\main-24.htm" />
@@ -184,6 +186,10 @@
     <Content Include="Compatibility\en-gb\character-gender-opposite.htm" />
     <Content Include="Compatibility\en-gb\character-gender-same.htm" />
     <Content Include="Compatibility\en-gb\character-modality-different.htm" />
+    <Content Include="Compatibility\en-gb\main-37.htm" />
+    <Content Include="Compatibility\en-gb\main-36.htm" />
+    <Content Include="Compatibility\en-gb\main-35.htm" />
+    <Content Include="Compatibility\en-gb\main-34.htm" />
     <Content Include="Compatibility\en-gb\main-modality-different.htm" />
     <Content Include="Compatibility\en-gb\element-supportive.htm" />
     <Content Include="Compatibility\en-gb\element-same.htm" />

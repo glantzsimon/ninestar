@@ -3706,6 +3706,65 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is potentially a very harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for good sexual chemistry and for personal growth. Conflict is less likely in this combination. Soil and Heaven Energies represent the &quot;Mother&quot; and &quot;Father&quot; archetype, with the former being all Yin and the latter all Yang. This is a very strong combination.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a Soil  Energy and is most likel [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_26 {
+            get {
+                return ResourceManager.GetString("main_26", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is potentially a very harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for good sexual chemistry and for personal growth. Conflict is less likely in this combination.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a Soil  Energy and is most likely stable, reliable and supportive.
+        ///
+        ///    {Person2Proper} is a Lake Energy. Lakes generally have a laid-back nature and are supportive, pragmatic and reliable. Th [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_27 {
+            get {
+                return ResourceManager.GetString("main_27", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is a very harmonious combination with a great potential for a solid friendship. However, the sexual chemistry may be lacking.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Both people share the same Fundamental Element &quot;Earth&quot;. Both people are stable, reliable, supportive types who are likely to have very similar values and priorities. This could very well result in a close friendship where both people feel understood, supported and that they can rely on one another.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Mountain people can be quite solitary  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_28 {
+            get {
+                return ResourceManager.GetString("main_28", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is potentially a very harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for good sexual chemistry and for personal growth. Conflict is less likely in this combination.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a Soil Energy. Soil Energies are typically stable, reliable,  supportive and practical..
+        ///
+        ///    {Person2Proper} is a Fire Energy. Fires, on the other hand, are quite free-spirited and spontaneou [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_29 {
+            get {
+                return ResourceManager.GetString("main_29", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
         ///    This is a fairly harmonious combination with a great potential for friendship. However, the sexual chemistry may be lacking.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
@@ -3714,6 +3773,58 @@ namespace K9.Globalisation {
         public static string main_33 {
             get {
                 return ResourceManager.GetString("main_33", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is potentially quite an exciting and harmonious combination, as both Energies are Tree element There is great potential for friendship, however there is less likelihood of strong sexual chemistry.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Both people share the same Element &quot;Tree&quot;. Tree Energies typically really enjoy talking to and spending time with other Tree Energies. One of the reasons for this is that they often find that Trees are the only people who can truly keep up! The conversation between Tree Energies is  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_34 {
+            get {
+                return ResourceManager.GetString("main_34", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person1} overriding or controlling {Person2}. However, there is a potential for good relationships chemistry and for growth.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person11Proper} is a 3 Tree Energy and is likely to be very energetic, changeable and even impulsive and explosive at times. {Person1Proper}, on the other hand, is a Core Earth Energy and is more likely to be steady, pragmatic and sing [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_35 {
+            get {
+                return ResourceManager.GetString("main_35", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationships chemistry and for growth.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person11Proper} is a 3 Tree Energy and is likely to be very energetic, changeable and even impulsive and explosive at times. {Person1Proper}, on the other hand, is a Heaven Energy and is more reserved, pragmatic and single-minded. This [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_36 {
+            get {
+                return ResourceManager.GetString("main_36", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationships chemistry and for growth.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person11Proper} is a 3 Tree Energy and is likely to be very energetic, changeable and even impulsive and explosive at times. {Person1Proper}, on the other hand, is a Heaven Energy and is more reserved, pragmatic and single-minded. This [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_37 {
+            get {
+                return ResourceManager.GetString("main_37", resourceCulture);
             }
         }
         
@@ -5096,7 +5207,7 @@ namespace K9.Globalisation {
         ///    High
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It is likely for the sexual chemistry to be pretty strong between these two individuals. Many of the elements, energetic &quot;gender&quot; and modality are opposing one another, which typically results in quite a lot of magnetism and chemistry. At the same time, this combination is likely to bring a fair amount of disharmony and conflict. However, there are also a fair number of similarities and supportive elements, which increase the likelihood of harmony and healthy conflict resolut [rest of string was truncated]&quot;;.
+        ///    It is likely for the sexual chemistry to be pretty strong between these two individuals. Many of the elements, energetic &quot;gender&quot; (Yin / Yang) and modality are opposing one another, which typically results in quite a lot of magnetism and chemistry. At the same time, this combination is likely to bring a fair amount of disharmony and conflict. However, there are also a fair number of similarities and supportive elements, which increase the likelihood of harmony and healthy con [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexual_chemistry_high {
             get {
@@ -5109,7 +5220,7 @@ namespace K9.Globalisation {
         ///    Low
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It is unlikely for there the sexual chemistry to be very strong between these two individuals or, if there is chemistry, it could end up being fairly short-lived. However, there are exceptions to the rule. This is likely to be quite a harmonious combination, as the elements, energetic &quot;gender&quot; and modality are largely the same or in a supportive transformation. This typically results in relatievly low magnetism. However, there are some key differences between {Person1} and {Pe [rest of string was truncated]&quot;;.
+        ///    It is unlikely for there the sexual chemistry to be very strong between these two individuals or, if there is chemistry, it could end up being fairly short-lived. However, there are exceptions to the rule. This is likely to be quite a harmonious combination, as the elements, energetic &quot;gender&quot; (Yin / Yang) and modality are largely the same or in a supportive transformation. This typically results in relatievly low magnetism. However, there are some key differences between {Per [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexual_chemistry_low {
             get {
@@ -5162,7 +5273,7 @@ namespace K9.Globalisation {
         ///    Practically Nonexistent
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It is extremely unlikely for there to be any significant sexual chemistry between these two individuals or if there is, it is likely to be very short-lived. However, there are exceptions to the rule. This is an extremely harmonious combination in which the elements, energetic &quot;gender&quot; and modality are identical for both the Fundamental and Character Energies, resulting in very little magnetism. This type of connection is far more likely to be a deep and lon [rest of string was truncated]&quot;;.
+        ///    It is extremely unlikely for there to be any significant sexual chemistry between these two individuals or if there is, it is likely to be very short-lived. However, there are exceptions to the rule. This is an extremely harmonious combination in which the elements, energetic &quot;gender&quot; (Yin / Yang) and modality are identical for both the Fundamental and Character Energies, resulting in very little magnetism. This type of connection is far more likely to be a [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexual_chemistry_nonexistant {
             get {
@@ -5188,7 +5299,7 @@ namespace K9.Globalisation {
         ///    Very High
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It is likely for the sexual chemistry to be very strong between these two individuals. The elements, energetic &quot;gender&quot; and modality are largely opposing one another, which typically results in significant magnetism and chemistry. At the same time, this combination is likely to bring a significant risk of disharmony and conflict as well as difficlulty in resolving it. Generally speaking, this type of connection is extremely magnetic with great chemistry and, whilst it co [rest of string was truncated]&quot;;.
+        ///    It is likely for the sexual chemistry to be very strong between these two individuals. The elements, energetic &quot;gender&quot; (Yin / Yang) and modality are largely opposing one another, which typically results in significant magnetism and chemistry. At the same time, this combination is likely to bring a significant risk of disharmony and conflict as well as difficlulty in resolving it. Generally speaking, this type of connection is extremely magnetic with great chemistry and, [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexual_chemistry_veryhigh {
             get {
@@ -5201,7 +5312,7 @@ namespace K9.Globalisation {
         ///    Very Low
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It is highly unlikely for there to be any significant sexual chemistry between these two individuals or if there is, it is likely to be short-lived. However, there are exceptions to the rule. This is a very harmonious combination in which the elements, energetic &quot;gender&quot; and modality are almost the same for both the Fundamental and Character Energies, which results in little to any magnetism. This type of connection is far more likely to be a deep and long-lasting friends [rest of string was truncated]&quot;;.
+        ///    It is highly unlikely for there to be any significant sexual chemistry between these two individuals or if there is, it is likely to be short-lived. However, there are exceptions to the rule. This is a very harmonious combination in which the elements, energetic &quot;gender&quot; (Yin / Yang) and modality are almost the same for both the Fundamental and Character Energies, which results in little to any magnetism. This type of connection is far more likely to be a deep and long-la [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexual_chemistry_verylow {
             get {

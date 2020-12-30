@@ -382,7 +382,7 @@ namespace K9.WebApplication.Models
                     switch (NineStarKiModel2.MainEnergy.Energy)
                     {
                         case ENineStarKiEnergy.Water:
-                            break;
+                            return Globalisation.Dictionary.main_12;
 
                         case ENineStarKiEnergy.Soil:
                             return Globalisation.Dictionary.main_22;
@@ -397,16 +397,16 @@ namespace K9.WebApplication.Models
                             return Globalisation.Dictionary.main_25;
 
                         case ENineStarKiEnergy.Heaven:
-                            break;
+                            return Globalisation.Dictionary.main_26;
 
                         case ENineStarKiEnergy.Lake:
-                            break;
+                            return Globalisation.Dictionary.main_27;
 
                         case ENineStarKiEnergy.Mountain:
-                            break;
+                            return Globalisation.Dictionary.main_28;
 
                         case ENineStarKiEnergy.Fire:
-                            break;
+                            return Globalisation.Dictionary.main_29;
                     }
                     break;
 
@@ -414,7 +414,7 @@ namespace K9.WebApplication.Models
                     switch (NineStarKiModel2.MainEnergy.Energy)
                     {
                         case ENineStarKiEnergy.Water:
-                            break;
+                            return Globalisation.Dictionary.main_13;
 
                         case ENineStarKiEnergy.Soil:
                             return Globalisation.Dictionary.main_23;
@@ -423,16 +423,16 @@ namespace K9.WebApplication.Models
                             return Globalisation.Dictionary.main_33;
 
                         case ENineStarKiEnergy.Wind:
-                            break;
+                            return Globalisation.Dictionary.main_34;
 
                         case ENineStarKiEnergy.CoreEarth:
-                            break;
+                            return Globalisation.Dictionary.main_35;
 
                         case ENineStarKiEnergy.Heaven:
-                            break;
+                            return Globalisation.Dictionary.main_36;
 
                         case ENineStarKiEnergy.Lake:
-                            break;
+                            return Globalisation.Dictionary.main_37;
 
                         case ENineStarKiEnergy.Mountain:
                             break;
@@ -446,13 +446,13 @@ namespace K9.WebApplication.Models
                     switch (NineStarKiModel2.MainEnergy.Energy)
                     {
                         case ENineStarKiEnergy.Water:
-                            break;
+                            return Globalisation.Dictionary.main_14;
 
                         case ENineStarKiEnergy.Soil:
                             return Globalisation.Dictionary.main_24;
 
                         case ENineStarKiEnergy.Thunder:
-                            break;
+                            return Globalisation.Dictionary.main_34;
 
                         case ENineStarKiEnergy.Wind:
                             return Globalisation.Dictionary.main_44;
@@ -478,13 +478,13 @@ namespace K9.WebApplication.Models
                     switch (NineStarKiModel2.MainEnergy.Energy)
                     {
                         case ENineStarKiEnergy.Water:
-                            break;
+                            return Globalisation.Dictionary.main_15;
 
                         case ENineStarKiEnergy.Soil:
                             return Globalisation.Dictionary.main_25;
 
                         case ENineStarKiEnergy.Thunder:
-                            break;
+                            return Globalisation.Dictionary.main_35;
 
                         case ENineStarKiEnergy.Wind:
                             break;
@@ -510,13 +510,13 @@ namespace K9.WebApplication.Models
                     switch (NineStarKiModel2.MainEnergy.Energy)
                     {
                         case ENineStarKiEnergy.Water:
-                            break;
+                            return Globalisation.Dictionary.main_16;
 
                         case ENineStarKiEnergy.Soil:
-                            break;
+                            return Globalisation.Dictionary.main_26;
 
                         case ENineStarKiEnergy.Thunder:
-                            break;
+                            return Globalisation.Dictionary.main_36;
 
                         case ENineStarKiEnergy.Wind:
                             break;
@@ -542,13 +542,13 @@ namespace K9.WebApplication.Models
                     switch (NineStarKiModel2.MainEnergy.Energy)
                     {
                         case ENineStarKiEnergy.Water:
-                            break;
+                            return Globalisation.Dictionary.main_17;
 
                         case ENineStarKiEnergy.Soil:
-                            break;
+                            return Globalisation.Dictionary.main_27;
 
                         case ENineStarKiEnergy.Thunder:
-                            break;
+                            return Globalisation.Dictionary.main_37;
 
                         case ENineStarKiEnergy.Wind:
                             break;
@@ -574,10 +574,10 @@ namespace K9.WebApplication.Models
                     switch (NineStarKiModel2.MainEnergy.Energy)
                     {
                         case ENineStarKiEnergy.Water:
-                            break;
+                            return Globalisation.Dictionary.main_18;
 
                         case ENineStarKiEnergy.Soil:
-                            break;
+                            return Globalisation.Dictionary.main_28;
 
                         case ENineStarKiEnergy.Thunder:
                             break;
@@ -606,10 +606,10 @@ namespace K9.WebApplication.Models
                     switch (NineStarKiModel2.MainEnergy.Energy)
                     {
                         case ENineStarKiEnergy.Water:
-                            break;
+                            return Globalisation.Dictionary.main_19;
 
                         case ENineStarKiEnergy.Soil:
-                            break;
+                            return Globalisation.Dictionary.main_29;
 
                         case ENineStarKiEnergy.Thunder:
                             break;

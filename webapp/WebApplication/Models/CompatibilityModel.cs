@@ -49,13 +49,19 @@ namespace K9.WebApplication.Models
 
             SexualChemistryDetails = TemplateProcessor.PopulateTemplate(GetSexualChemistryDescription(), new
             {
-                Person1 = NineStarKiModel1.PersonModel.Name,
-                Person2 = NineStarKiModel2.PersonModel.Name,
-                Person1Proper = NineStarKiModel1.PersonModel.Name.ToProperCase(),
-                Person2Proper = NineStarKiModel2.PersonModel.Name.ToProperCase()
+                Person1 = NineStarKiModel1?.PersonModel?.Name,
+                Person2 = NineStarKiModel2?.PersonModel?.Name,
+                Person1Proper = NineStarKiModel1?.PersonModel?.Name?.ToProperCase(),
+                Person2Proper = NineStarKiModel2?.PersonModel?.Name?.ToProperCase()
             });
 
-            CompatibilitySummary = GetCompatibilitySummary();
+            CompatibilitySummary = TemplateProcessor.PopulateTemplate(GetCompatibilitySummary(), new
+            {
+                Person1 = NineStarKiModel1?.PersonModel?.Name,
+                Person2 = NineStarKiModel2?.PersonModel?.Name,
+                Person1Proper = NineStarKiModel1?.PersonModel?.Name?.ToProperCase(),
+                Person2Proper = NineStarKiModel2?.PersonModel?.Name?.ToProperCase()
+            });
         }
 
         public NineStarKiModel NineStarKiModel1 { get; }

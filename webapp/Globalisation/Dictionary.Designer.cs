@@ -6619,7 +6619,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Welcome to NineStar!.
+        ///   Looks up a localized string similar to Welcome to NineStar.
         /// </summary>
         public static string WelcomeSubTitle {
             get {

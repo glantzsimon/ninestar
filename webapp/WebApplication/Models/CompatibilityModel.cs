@@ -1,9 +1,10 @@
-﻿using K9.SharedLibrary.Helpers;
+﻿using K9.SharedLibrary.Extensions;
+using K9.SharedLibrary.Helpers;
 using K9.WebApplication.Enums;
 using K9.WebApplication.Extensions;
 using System;
 using System.Collections.Generic;
-using K9.SharedLibrary.Extensions;
+using System.Text;
 
 namespace K9.WebApplication.Models
 {
@@ -20,6 +21,7 @@ namespace K9.WebApplication.Models
         {
             NineStarKiModel1 = nineStarKiModel1;
             NineStarKiModel2 = nineStarKiModel2;
+            CompatibilityDetails = new CompatibilityDetailsModel(nineStarKiModel1, nineStarKiModel2);
             FundamentalEnergyChemistryScore = GetFundamentalElementChemistryScore();
             FundamentalEnergyLearningPotentialScore = GetFundamentalEnergyLearningPotentialScore();
             FundamentalEnergyConflictPotentialScore = GetFundamentalEnergyConflictPotentialScore();
@@ -29,7 +31,7 @@ namespace K9.WebApplication.Models
             CharacterEnergyConflictPotentialScore = GetCharacterEnergyConflictPotentialScore();
             CharacterEnergyHarmonyScore = GetCharacterEnergyHarmonyScore();
 
-            FundamentalEnergyDetails = TemplateProcessor.PopulateTemplate(GetFundamentalEnergyDetails(), new
+            FundamentalEnergiesCompatibility = TemplateProcessor.PopulateTemplate(GetFundamentalEnergiesCompatibilityDetails(), new
             {
                 Person1 = FirstFundamentalEnergyPersonName,
                 Person2 = SecondFundamentalEnergyPersonName,
@@ -37,13 +39,23 @@ namespace K9.WebApplication.Models
                 Person2Proper = SecondFundamentalEnergyPersonName.ToProperCase()
             });
 
-            CharacterEnergyDetails = TemplateProcessor.PopulateTemplate(GetCharacterEnergyDetails(), new
+            CharacterEnergiesCompatibility = TemplateProcessor.PopulateTemplate(GetCharacterEnergiesCompatibilityDetails(), new
             {
                 Person1 = FirstCharacterEnergyPersonName,
                 Person2 = SecondCharacterEnergyPersonName,
                 Person1Proper = FirstCharacterEnergyPersonName.ToProperCase(),
                 Person2Proper = SecondCharacterEnergyPersonName.ToProperCase()
             });
+
+            SexualChemistryDetails = TemplateProcessor.PopulateTemplate(GetSexualChemistryDescription(), new
+            {
+                Person1 = NineStarKiModel1.PersonModel.Name,
+                Person2 = NineStarKiModel2.PersonModel.Name,
+                Person1Proper = NineStarKiModel1.PersonModel.Name.ToProperCase(),
+                Person2Proper = NineStarKiModel2.PersonModel.Name.ToProperCase()
+            });
+
+            CompatibilitySummary = GetCompatibilitySummary();
         }
 
         public NineStarKiModel NineStarKiModel1 { get; }
@@ -66,13 +78,19 @@ namespace K9.WebApplication.Models
 
         public ECompatibilityScore CharacterEnergyHarmonyScore { get; }
 
-        public string FundamentalEnergyDetails { get; }
+        public string FundamentalEnergiesCompatibility { get; }
 
-        public string CharacterEnergyDetails { get; }
+        public string CharacterEnergiesCompatibility { get; }
+
+        public string CompatibilitySummary { get; }
+
+        public string SexualChemistryDetails { get; }
 
         public bool IsProcessed { get; set; }
 
         public bool IsUpgradeRequired { get; set; }
+
+        public CompatibilityDetailsModel CompatibilityDetails { get; set; }
 
         public string FirstPersonName => NineStarKiModel1.PersonModel.Name ?? Globalisation.Dictionary.FirstPerson;
 
@@ -116,78 +134,208 @@ namespace K9.WebApplication.Models
                 return ESexualChemistryScore.Unspecified;
             }
 
-            var mainTransformationType = energy1.MainEnergy.Energy.GetTransformationType(energy2.MainEnergy.Energy);
-            var isMainSameGender = energy1.MainEnergy.YinYang == energy2.MainEnergy.YinYang;
-            var isMainSameModality = energy1.MainEnergy.Modality == energy2.MainEnergy.Modality;
-            var isMainSameElement = energy1.MainEnergy.Element == energy2.MainEnergy.Element;
-            var isMainOppositeElement = new List<ETransformationType>
-            {
-                ETransformationType.Challenges,
-                ETransformationType.IsChallenged
-            }.Contains(mainTransformationType);
-
-            var characterTransformationType = energy1.CharacterEnergy.Energy.GetTransformationType(energy2.CharacterEnergy.Energy);
-            var isCharacterSameGender = energy1.CharacterEnergy.YinYang == energy2.CharacterEnergy.YinYang;
-            var isCharacterSameModality = energy1.CharacterEnergy.Modality == energy2.CharacterEnergy.Modality;
-            var isCharacterSameElement = energy1.CharacterEnergy.Element == energy2.CharacterEnergy.Element;
-            var isCharacterOppositeElement = new List<ETransformationType>
-            {
-                ETransformationType.Challenges,
-                ETransformationType.IsChallenged
-            }.Contains(characterTransformationType);
-
             ESexualChemistryScore score = 0;
 
             // Main
-            if (!isMainSameGender)
+            if (!CompatibilityDetails.IsFundamtenalGenderSame)
             {
                 score += 3;
             }
 
-            if (isMainOppositeElement)
+            if (CompatibilityDetails.IsFundamentalElementChallenging)
             {
                 score += 3;
             }
-            else if(!isMainSameElement)
+            else if (CompatibilityDetails.IsFundamentalElementSupportive)
             {
                 score += 2;
             }
 
-            if (!isMainSameModality)
+            if (!CompatibilityDetails.IsFundamentalModalitySame)
             {
                 score += 1;
             }
 
             // Character
-            if (!isCharacterSameGender)
+            if (!CompatibilityDetails.IsCharacterGenderSame)
             {
                 score += 4;
             }
 
-            if (isCharacterOppositeElement)
+            if (CompatibilityDetails.IsCharacterElementChallenging)
             {
                 score += 3;
             }
-            else if(!isCharacterSameElement)
+            else if (CompatibilityDetails.IsCharacterElementSupportive)
             {
                 score += 2;
             }
 
-            if (!isCharacterSameModality)
+            if (!CompatibilityDetails.IsCharacterModalitySame)
             {
                 score += 1;
             }
 
-            score = score < 0 
+            score = score < 0
                 ? 0 :
-                score > ESexualChemistryScore.OffTheCharts ? 
-                    ESexualChemistryScore.OffTheCharts 
+                score > ESexualChemistryScore.OffTheCharts ?
+                    ESexualChemistryScore.OffTheCharts
                     : score;
 
             return score;
         }
 
-        private string GetFundamentalEnergyDetails()
+        private string GetSexualChemistryDescription()
+        {
+            switch (TotalSexualChemistryScore)
+            {
+                case ESexualChemistryScore.NonExistant:
+                    return Globalisation.Dictionary.sexual_chemistry_nonexistant;
+
+                case ESexualChemistryScore.ExtremelyLow:
+                case ESexualChemistryScore.VeryVeryLow:
+                    return Globalisation.Dictionary.sexual_chemistry_verylow;
+
+                case ESexualChemistryScore.VeryLow:
+                case ESexualChemistryScore.Low:
+                    return Globalisation.Dictionary.sexual_chemistry_low;
+
+                case ESexualChemistryScore.MediumToLow:
+                case ESexualChemistryScore.LowerThanAverage:
+                    return Globalisation.Dictionary.sexual_chemistry_mediumlow;
+
+                case ESexualChemistryScore.Average:
+                    return Globalisation.Dictionary.sexual_chemistry_medium;
+
+                case ESexualChemistryScore.HigherThanAverage:
+                case ESexualChemistryScore.MediumToHigh:
+                    return Globalisation.Dictionary.sexual_chemistry_mediumhigh;
+
+                case ESexualChemistryScore.High:
+                case ESexualChemistryScore.VeryHigh:
+                    return Globalisation.Dictionary.sexual_chemistry_high;
+
+                case ESexualChemistryScore.VeryVeryHigh:
+                case ESexualChemistryScore.ExtremelyHigh:
+                    return Globalisation.Dictionary.sexual_chemistry_veryhigh;
+
+                case ESexualChemistryScore.OffTheCharts:
+                    return Globalisation.Dictionary.sexual_chemistry_off_the_charts;
+            }
+
+            return string.Empty;
+        }
+
+        private string GetCompatibilitySummary()
+        {
+            var sb = new StringBuilder();
+            var bothEnergiesText = "Fundamental and Character Energies";
+            var fundamentalEnergiesText = "Fundamental Energies";
+            var characterEnergiesText = "Character Energies";
+
+            // Fundamental
+            if (CompatibilityDetails.IsFundamentalElementSame && CompatibilityDetails.IsCharacterElementSame)
+            {
+                sb.AppendLine(TemplateProcessor.PopulateTemplate(Globalisation.Dictionary.element_same, new
+                {
+                    EnergiesDescription = bothEnergiesText
+                }));
+            }
+            else if (CompatibilityDetails.IsFundamentalElementSame)
+            {
+                sb.AppendLine(TemplateProcessor.PopulateTemplate(Globalisation.Dictionary.element_same, new
+                {
+                    EnergiesDescription = fundamentalEnergiesText
+                }));
+            }
+            if (CompatibilityDetails.IsFundamentalElementChallenging && CompatibilityDetails.IsCharacterElementChallenging)
+            {
+                sb.AppendLine(TemplateProcessor.PopulateTemplate(Globalisation.Dictionary.element_challenging, new
+                {
+                    EnergiesDescription = bothEnergiesText
+                }));
+            }
+            else if (CompatibilityDetails.IsFundamentalElementChallenging)
+            {
+                sb.AppendLine(TemplateProcessor.PopulateTemplate(Globalisation.Dictionary.element_challenging, new
+                {
+                    EnergiesDescription = fundamentalEnergiesText
+                }));
+            }
+            if (CompatibilityDetails.IsFundamentalElementSupportive && CompatibilityDetails.IsCharacterElementSupportive)
+            {
+                sb.AppendLine(TemplateProcessor.PopulateTemplate(Globalisation.Dictionary.element_supportive, new
+                {
+                    EnergiesDescription = bothEnergiesText
+                }));
+            }
+            else if (CompatibilityDetails.IsFundamentalElementSupportive)
+            {
+                sb.AppendLine(TemplateProcessor.PopulateTemplate(Globalisation.Dictionary.element_supportive, new
+                {
+                    EnergiesDescription = fundamentalEnergiesText
+                }));
+            }
+            if (CompatibilityDetails.IsFundamtenalGenderSame)
+            {
+                sb.AppendLine(Globalisation.Dictionary.main_gender_same);
+            }
+            else
+            {
+                sb.AppendLine(Globalisation.Dictionary.main_gender_opposite);
+            }
+            if (CompatibilityDetails.IsFundamentalModalitySame)
+            {
+                sb.AppendLine(Globalisation.Dictionary.main_modality_same);
+            }
+            else
+            {
+                sb.AppendLine(Globalisation.Dictionary.main_modality_different);
+            }
+
+            // Character
+            if (CompatibilityDetails.IsCharacterElementSame && !CompatibilityDetails.IsFundamentalElementSame)
+            {
+                sb.AppendLine(TemplateProcessor.PopulateTemplate(Globalisation.Dictionary.element_same, new
+                {
+                    EnergiesDescription = characterEnergiesText
+                }));
+            }
+            if (CompatibilityDetails.IsCharacterElementChallenging && !CompatibilityDetails.IsCharacterElementChallenging)
+            {
+                sb.AppendLine(TemplateProcessor.PopulateTemplate(Globalisation.Dictionary.element_challenging, new
+                {
+                    EnergiesDescription = characterEnergiesText
+                }));
+            }
+            if (CompatibilityDetails.IsCharacterElementSupportive && !CompatibilityDetails.IsCharacterElementSupportive)
+            {
+                sb.AppendLine(TemplateProcessor.PopulateTemplate(Globalisation.Dictionary.element_supportive, new
+                {
+                    EnergiesDescription = characterEnergiesText
+                }));
+            }
+            if (CompatibilityDetails.IsCharacterGenderSame)
+            {
+                sb.AppendLine(Globalisation.Dictionary.character_gender_same);
+            }
+            else
+            {
+                sb.AppendLine(Globalisation.Dictionary.character_gender_opposite);
+            }
+            if (CompatibilityDetails.IsCharacterModalitySame)
+            {
+                sb.AppendLine(Globalisation.Dictionary.character_modality_same);
+            }
+            else
+            {
+                sb.AppendLine(Globalisation.Dictionary.character_modality_different);
+            }
+
+            return sb.ToString();
+        }
+
+        private string GetFundamentalEnergiesCompatibilityDetails()
         {
             switch (NineStarKiModel1.MainEnergy.Energy)
             {
@@ -240,7 +388,7 @@ namespace K9.WebApplication.Models
                             return Globalisation.Dictionary.main_24;
 
                         case ENineStarKiEnergy.CoreEarth:
-                            break;
+                            return Globalisation.Dictionary.main_25;
 
                         case ENineStarKiEnergy.Heaven:
                             break;
@@ -327,7 +475,7 @@ namespace K9.WebApplication.Models
                             break;
 
                         case ENineStarKiEnergy.Soil:
-                            break;
+                            return Globalisation.Dictionary.main_25;
 
                         case ENineStarKiEnergy.Thunder:
                             break;
@@ -484,7 +632,7 @@ namespace K9.WebApplication.Models
             return string.Empty;
         }
 
-        private string GetCharacterEnergyDetails()
+        private string GetCharacterEnergiesCompatibilityDetails()
         {
             switch (NineStarKiModel1.MainEnergy.Energy)
             {
@@ -556,10 +704,10 @@ namespace K9.WebApplication.Models
 
         private ECompatibilityScore GetCharacterEnergyChemistryScore()
         {
-            return GetChemistryScore(NineStarKiModel1.CharacterEnergy, NineStarKiModel2.CharacterEnergy, 1);
+            return GetChemistryScore(NineStarKiModel1.CharacterEnergy, NineStarKiModel2.CharacterEnergy, 2);
         }
 
-        private ECompatibilityScore GetChemistryScore(NineStarKiEnergy energy1, NineStarKiEnergy energy2, int genderScoreFactor = 0)
+        private ECompatibilityScore GetChemistryScore(NineStarKiEnergy energy1, NineStarKiEnergy energy2, int genderScoreFactor = 1)
         {
             var transformationType = energy1.Energy.GetTransformationType(energy2.Energy);
 
@@ -637,22 +785,22 @@ namespace K9.WebApplication.Models
             {
                 case ETransformationType.IsChallenged:
                 case ETransformationType.Challenges:
-                    return ProcessScore(ECompatibilityScore.High, energy1, energy2, true, true);
+                    return ProcessScore(ECompatibilityScore.High, energy1, energy2, true, true, 0);
 
                 case ETransformationType.Supports:
                 case ETransformationType.IsSupported:
                 case ETransformationType.Same:
-                    return ProcessScore(ECompatibilityScore.Low, energy1, energy2, true, true);
+                    return ProcessScore(ECompatibilityScore.Low, energy1, energy2, true, true, 0);
             }
 
             return ECompatibilityScore.Unspecified;
         }
 
-        private ECompatibilityScore ProcessScore(ECompatibilityScore value, NineStarKiEnergy energy1, NineStarKiEnergy energy2, bool invertCalculation = false, bool isIntuitive = false, int genderScoreFactor = 0)
+        private ECompatibilityScore ProcessScore(ECompatibilityScore value, NineStarKiEnergy energy1, NineStarKiEnergy energy2, bool invertCalculation = false, bool isIntuitive = false, int genderScoreFactor = 1)
         {
+            var transformationType = energy1.Energy.GetTransformationType(energy2.Energy);
             var isSameGender = energy1.YinYang == energy2.YinYang;
             var isSameModality = energy1.Modality == energy2.Modality;
-            var transformationType = energy1.Energy.GetTransformationType(energy2.Energy);
             var isSameElement = energy1.Element == energy2.Element;
             var isOppositeElement = new List<ETransformationType>
             {
@@ -661,8 +809,8 @@ namespace K9.WebApplication.Models
             }.Contains(transformationType);
 
             var score = invertCalculation ?
-                (!isSameGender ? 1 + genderScoreFactor : (isOppositeElement ? 0 : -1)) + (!isSameModality && !isSameElement ? 1 : 0) + (energy1.Energy == energy2.Energy ? -1 : 0)
-                : (isSameGender ? 1 + genderScoreFactor : (isOppositeElement ? -1 : 0)) + (isSameModality ? 1 : 0) + (energy1.Energy == energy2.Energy ? 1 : 0);
+                (!isSameGender ? genderScoreFactor : (isOppositeElement ? 0 : -1)) + (!isSameModality && !isSameElement ? 1 : 0) + (energy1.Energy == energy2.Energy ? -1 : 0)
+                : (isSameGender ? genderScoreFactor : (isOppositeElement ? -1 : 0)) + (isSameModality ? 1 : 0) + (energy1.Energy == energy2.Energy ? 1 : 0);
 
             if (isIntuitive)
             {

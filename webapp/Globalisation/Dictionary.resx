@@ -1720,4 +1720,76 @@
   <data name="SexualChemistry" xml:space="preserve">
     <value>Sexual Chemistry</value>
   </data>
+  <data name="main_25" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-25.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="character_gender_opposite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\character-gender-opposite.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="character_gender_same" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\character-gender-same.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="character_modality_different" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\character-modality-different.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="character_modality_same" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\character-modality-same.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_gender_opposite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-gender-opposite.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_gender_same" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-gender-same.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_modality_different" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-modality-different.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_modality_same" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-modality-same.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="CharacterEnergiesCompatibility" xml:space="preserve">
+    <value>Character Energies Compatibility</value>
+  </data>
+  <data name="element_challenging" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\element-challenging.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="element_same" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\element-same.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="element_supportive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\element-supportive.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="FundamentalEnergiesCompatibility" xml:space="preserve">
+    <value>Fundamental Energies Compatibility</value>
+  </data>
+  <data name="SexualChemistryDetails" xml:space="preserve">
+    <value>Sexual Chemistry Details</value>
+  </data>
+  <data name="sexual_chemistry_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\sexual-chemistry-high.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="sexual_chemistry_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\sexual-chemistry-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="sexual_chemistry_medium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\sexual-chemistry-medium.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="sexual_chemistry_mediumhigh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\sexual-chemistry-mediumhigh.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="sexual_chemistry_mediumlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\sexual-chemistry-mediumlow.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="sexual_chemistry_nonexistant" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\sexual-chemistry-nonexistant.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="sexual_chemistry_off_the_charts" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\sexual-chemistry-off-the-charts.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="sexual_chemistry_veryhigh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\sexual-chemistry-veryhigh.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="sexual_chemistry_verylow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\sexual-chemistry-verylow.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

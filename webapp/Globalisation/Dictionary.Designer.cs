@@ -1493,6 +1493,71 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Character Energies - Opposite Gender
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper}&apos;s Character Energy&apos;s gender is opposite to {Person2}. This typically leads to much greater sexual compatibility and chemistry in romantic relationships. This combination also typically results in greater complementarity on an emotional level, but may result in some misunderstandings.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string character_gender_opposite {
+            get {
+                return ResourceManager.GetString("character_gender_opposite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Character Energies - Same Gender
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper}&apos;s Character Energy&apos;s gender is the same as {Person2}&apos;s. In romantic relationships, this typically leads to less sexual chemistry than with opposite Character Energy genders. However, if the Fundamental Energies have opposite gender and antagonistic elements, the chance of sexual chemistry is far greater. Having the same Character Energy gender can lead to greater mutual understanding on an emotional level.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string character_gender_same {
+            get {
+                return ResourceManager.GetString("character_gender_same", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Character Energies - Different Modality
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper}&apos;s Character Energy&apos;s modality is different from {Person2}&apos;s. This typically leads to greater complementarity between the couple on an emotional level, but also brings a slightly greater risk of misunderstanding.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string character_modality_different {
+            get {
+                return ResourceManager.GetString("character_modality_different", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Character Energies - Same Modality
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper}&apos;s Character Energy&apos;s modality is the same as {Person2}&apos;s. This typically leads to greater understanding between the couple on an emotional level, but there may be less chemistry between the couple.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string character_modality_same {
+            get {
+                return ResourceManager.GetString("character_modality_same", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Character Energies Compatibility.
+        /// </summary>
+        public static string CharacterEnergiesCompatibility {
+            get {
+                return ResourceManager.GetString("CharacterEnergiesCompatibility", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    This describes your deeper nature, which is typically only revealed as people get to know you better. It&apos;s also the Energy that most influences you when you are stressed or emotional. Your deeper character Energy also plays a significant role in your romantic relationships and close friendships.
         ///&lt;/p&gt;
@@ -2361,6 +2426,45 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    {EnergiesDescription} - Challenging Transformation
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This combination can be &lt;strong&gt;one of the most magnetic&lt;/strong&gt; and results in the most &lt;strong&gt;personal growth&lt;/strong&gt;. There is often a lot of &lt;strong&gt;natural chemistry between people with opposite elements&lt;/strong&gt;. It is also the combination that is &lt;strong&gt;most likely to lead to misunderstandings and conflict&lt;/strong&gt;. Sometimes this combination &lt;strong&gt;can lead to the element that is being challenged feeling thwarted and  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string element_challenging {
+            get {
+                return ResourceManager.GetString("element_challenging", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    {EnergiesDescription} - Same Transformation / Sibling Relationship
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The Fundamental Energies have the same element. This combination tends to lead to a &lt;strong&gt;strong &quot;sibling&quot; relationship&lt;/strong&gt; in which there is an &lt;strong&gt;effortless and profound understanding&lt;/strong&gt; between both parties. There is a great potential for &lt;strong&gt;mutual understanding&lt;/strong&gt;, &lt;strong&gt;compassion&lt;/strong&gt; and &lt;strong&gt;harmony&lt;/strong&gt; in the relationship as well as &lt;strong&gt;little antagonism or mi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string element_same {
+            get {
+                return ResourceManager.GetString("element_same", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    {EnergiesDescription} - Supportive Transformation / Parent Child Relationship
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The Fundamental Energies are in a Supportive Transformation, in which one Energy supports or nourishes the next. On the surface, it may appear that it is more of a one-way street. However, in reality, &lt;strong&gt;it does work both ways&lt;/strong&gt;, even if the bulk of the support flows from the parent to the child. This is typically a very &lt;strong&gt;stable relationship&lt;/strong&gt; and as the elements are not the sam [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string element_supportive {
+            get {
+                return ResourceManager.GetString("element_supportive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Element Description.
         /// </summary>
         public static string ElementDescriptionLabel {
@@ -2782,6 +2886,15 @@ namespace K9.Globalisation {
         public static string FreeMembership {
             get {
                 return ResourceManager.GetString("FreeMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fundamental Energies Compatibility.
+        /// </summary>
+        public static string FundamentalEnergiesCompatibility {
+            get {
+                return ResourceManager.GetString("FundamentalEnergiesCompatibility", resourceCulture);
             }
         }
         
@@ -3577,6 +3690,22 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is a very harmonious combination with a great potential for a solid friendship. However, the sexual chemistry may be lacking.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Both people share the same Fundamental Element &quot;Earth&quot;. Both people are stable, reliable, supportive types who are likely to have very similar values and priorities. This could very well result in a close friendship where both people feel understood, supported and that they can rely on one another.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    5 Earth people typially like to be at  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_25 {
+            get {
+                return ResourceManager.GetString("main_25", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
         ///    This is a fairly harmonious combination with a great potential for friendship. However, the sexual chemistry may be lacking.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
@@ -3691,6 +3820,62 @@ namespace K9.Globalisation {
         public static string main_energies_short_description {
             get {
                 return ResourceManager.GetString("main_energies_short_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Fundamental Energies - Opposite Gender
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper}&apos;s Fundamental Energy&apos;s gender is opposite to {Person2}. This typically leads to greater complementarity between the couple, but also brings a slightly greater risk of misunderstanding.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string main_gender_opposite {
+            get {
+                return ResourceManager.GetString("main_gender_opposite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Fundamental Energies - Same Gender
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper}&apos;s Fundamental Energy&apos;s gender is the same as {Person2}&apos;s. This typically leads to greater understanding between the couple, but also brings a slightly greater risk of conflict as they may clash at times.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string main_gender_same {
+            get {
+                return ResourceManager.GetString("main_gender_same", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Fundamental Energies - Different Modality
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper}&apos;s Fundamental Energy&apos;s modality is different from {Person2}&apos;s. This typically leads to greater complementarity between the couple, but also brings a slightly greater risk of misunderstanding.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string main_modality_different {
+            get {
+                return ResourceManager.GetString("main_modality_different", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Fundamental Energies - Same Modality
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper}&apos;s Fundamental Energy&apos;s modality is the same as {Person2}&apos;s. This typically leads to greater understanding between the couple, but also brings a slightly greater risk of conflict as they may clash at times.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string main_modality_same {
+            get {
+                return ResourceManager.GetString("main_modality_same", resourceCulture);
             }
         }
         
@@ -4907,11 +5092,138 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    High
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    It is likely for the sexual chemistry to be pretty strong between these two individuals. Many of the elements, energetic &quot;gender&quot; and modality are opposing one another, which typically results in quite a lot of magnetism and chemistry. At the same time, this combination is likely to bring a fair amount of disharmony and conflict. However, there are also a fair number of similarities and supportive elements, which increase the likelihood of harmony and healthy conflict resolut [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string sexual_chemistry_high {
+            get {
+                return ResourceManager.GetString("sexual_chemistry_high", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Low
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    It is unlikely for there the sexual chemistry to be very strong between these two individuals or, if there is chemistry, it could end up being fairly short-lived. However, there are exceptions to the rule. This is likely to be quite a harmonious combination, as the elements, energetic &quot;gender&quot; and modality are largely the same or in a supportive transformation. This typically results in relatievly low magnetism. However, there are some key differences between {Person1} and {Pe [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string sexual_chemistry_low {
+            get {
+                return ResourceManager.GetString("sexual_chemistry_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Average
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The sexual chemistry is likely to be moderate between these two individuals. There is a good balance of similarities and differences in both people&apos;s charts. This typically creates a healthy sexual connection in which there is passion and magnetism, but at the same time, there are enough similarities to create balance and harmony the potential for healthy conflict resolution.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string sexual_chemistry_medium {
+            get {
+                return ResourceManager.GetString("sexual_chemistry_medium", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Higher than Average
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The sexual chemistry is likely to be fairly strong between these two individuals with quite a bit of passion. There are a number of key differences between {Person1} and {Person2}&apos;s charts, which creates a fair amount of magnetism and chemistry. This also creates a higher than average risk of conflict. However, thanks to a reasonable balance of opposing and complementary forces, conflict resolution shouldn&apos;t be a hyge problem. This type of connection is well su [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string sexual_chemistry_mediumhigh {
+            get {
+                return ResourceManager.GetString("sexual_chemistry_mediumhigh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Lower than Average
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The sexual chemistry is unlikely to be very strong between these two individuals, but it probably isn&apos;t insignificant either. There could well be quite a bit of passion to begin with, however there is a risk that it could fizzle out if an effort isn&apos;t made to keep things alive and interesting. This has the potential to be quite a harmonious combination, but there are a few key differences, which give rise to some magnetism and chemsitry in the relationship, as w [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string sexual_chemistry_mediumlow {
+            get {
+                return ResourceManager.GetString("sexual_chemistry_mediumlow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Practically Nonexistent
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    It is extremely unlikely for there to be any significant sexual chemistry between these two individuals or if there is, it is likely to be very short-lived. However, there are exceptions to the rule. This is an extremely harmonious combination in which the elements, energetic &quot;gender&quot; and modality are identical for both the Fundamental and Character Energies, resulting in very little magnetism. This type of connection is far more likely to be a deep and lon [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string sexual_chemistry_nonexistant {
+            get {
+                return ResourceManager.GetString("sexual_chemistry_nonexistant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Off The Charts
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The sexuality chemistry between these two individuals is potentially off the charts. The forces and elements governing this combination are all opposing one another, both between the Fundamental and Character Energies, creating an extremely strong magnetic attraction. This can be a truly explosive combination, but it could be too hot to handle! There is a very high risk of conflict and misunderstanding. This combination usually results in a roller-coaster ride. Howe [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string sexual_chemistry_off_the_charts {
+            get {
+                return ResourceManager.GetString("sexual_chemistry_off_the_charts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Very High
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    It is likely for the sexual chemistry to be very strong between these two individuals. The elements, energetic &quot;gender&quot; and modality are largely opposing one another, which typically results in significant magnetism and chemistry. At the same time, this combination is likely to bring a significant risk of disharmony and conflict as well as difficlulty in resolving it. Generally speaking, this type of connection is extremely magnetic with great chemistry and, whilst it co [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string sexual_chemistry_veryhigh {
+            get {
+                return ResourceManager.GetString("sexual_chemistry_veryhigh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Very Low
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    It is highly unlikely for there to be any significant sexual chemistry between these two individuals or if there is, it is likely to be short-lived. However, there are exceptions to the rule. This is a very harmonious combination in which the elements, energetic &quot;gender&quot; and modality are almost the same for both the Fundamental and Character Energies, which results in little to any magnetism. This type of connection is far more likely to be a deep and long-lasting friends [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string sexual_chemistry_verylow {
+            get {
+                return ResourceManager.GetString("sexual_chemistry_verylow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sexual Chemistry.
         /// </summary>
         public static string SexualChemistry {
             get {
                 return ResourceManager.GetString("SexualChemistry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sexual Chemistry Details.
+        /// </summary>
+        public static string SexualChemistryDetails {
+            get {
+                return ResourceManager.GetString("SexualChemistryDetails", resourceCulture);
             }
         }
         

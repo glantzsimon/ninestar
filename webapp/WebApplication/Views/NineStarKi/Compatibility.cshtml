@@ -27,7 +27,7 @@
         <div class="col-sm-12 padding-0 margin-top-20 margin-bottom-20">
             @if (Model != null && Model.IsProcessed && !Model.IsUpgradeRequired)
             {
-                @Html.Panel(Dictionary.Details, Html.Partial("_CompatibilityDetails", Model).ToString())
+                @Html.Partial("_CompatibilityDetails")
             }
         </div>
     </article>

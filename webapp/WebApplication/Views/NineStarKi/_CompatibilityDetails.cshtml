@@ -1,8 +1,13 @@
-﻿@model K9.WebApplication.Models.CompatibilityModel
+﻿@using K9.WebApplication.Helpers
+@model K9.WebApplication.Models.CompatibilityModel
 
 @if (Model != null && Model.IsProcessed)
 {
-    <div>@Html.Raw(Model.FundamentalEnergyDetails)</div>
+    @Html.Panel(Dictionary.SummaryLabel, Model.CompatibilitySummary)
 
-    <div>@Html.Raw(Model.CharacterEnergyDetails)</div>
+    @Html.Panel(Dictionary.FundamentalEnergiesCompatibility, Model.FundamentalEnergiesCompatibility)
+
+    @Html.Panel(Dictionary.CharacterEnergiesCompatibility, Model.CharacterEnergiesCompatibility)
+    
+    @Html.Panel(Dictionary.SexualChemistryDetails, Model.SexualChemistryDetails)
 }

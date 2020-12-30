@@ -27,7 +27,7 @@ namespace K9.WebApplication.Services
         List<UserMembership> GetActiveUserMemberships(int? userId = null, bool includeScheduled = false);
         UserMembership GetActiveUserMembership(int? userId = null);
         UserMembership GetScheduledSwitchUserMembership(int? userId = null);
-        bool IsCompleteProfileReading(int? userId, DateTime dateOfBirth, EGender gender, bool createIfNull = true);
-        bool IsCompleteRelationshipCompatibilityReading(int? userId, DateTime dateOfBirth, EGender gender, DateTime secondDateOfBirth, EGender secondGender, bool createIfNull = true);
+        bool IsCompleteProfileReading(int? userId, DateTime dateOfBirth, EGender gender);
+        bool IsCompleteRelationshipCompatibilityReading(int? userId, DateTime dateOfBirth, EGender gender, DateTime secondDateOfBirth, EGender secondGender);
     }
 }

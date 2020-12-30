@@ -101,9 +101,9 @@ namespace K9.WebApplication.Services
         private int GetNumberOfCreditsLeft(UserMembership userMembership)
         {
             var creditPacks = _userCreditPacksRepository.Find(e => e.UserId == userMembership.UserId);
-            var creditPackIds = creditPacks.Select(c => c.Id);  
+            var creditPackIds = creditPacks.Select(c => c.Id);
             var numberOfUsedCredits =
-                _userProfileReadingsRepository.Find(e => creditPackIds.Contains(e.UserCreditPackId ?? 0)).Count() + 
+                _userProfileReadingsRepository.Find(e => creditPackIds.Contains(e.UserCreditPackId ?? 0)).Count() +
                 _userRelationshipCompatibilityReadingsRepository.Find(e => creditPackIds.Contains(e.UserCreditPackId ?? 0)).Count();
             var totalCredits = creditPacks.Sum(e => e.NumberOfCredits);
             return totalCredits - numberOfUsedCredits;
@@ -140,14 +140,14 @@ namespace K9.WebApplication.Services
             return GetActiveUserMemberships(userId, true).FirstOrDefault(_ => _.StartsOn > activeUserMembership.EndsOn && _.IsAutoRenew);
         }
 
-        public bool IsCompleteProfileReading(int? userId, DateTime dateOfBirth, EGender gender, bool createIfNull = true)
+        public bool IsCompleteProfileReading(int? userId, DateTime dateOfBirth, EGender gender)
         {
             var activeUserMembership = GetActiveUserMembership(userId);
             if (activeUserMembership?.ProfileReadings?.Any(e => e.DateOfBirth == dateOfBirth && e.Gender == gender) == true)
             {
                 return true;
             }
-            if (createIfNull && (activeUserMembership?.NumberOfProfileReadingsLeft > 0 || activeUserMembership?.NumberOfCreditsLeft > 0))
+            if (activeUserMembership?.NumberOfProfileReadingsLeft > 0 || activeUserMembership?.NumberOfCreditsLeft > 0)
             {
                 CreateNewUserProfileReading(activeUserMembership, dateOfBirth, gender);
                 return true;
@@ -157,7 +157,7 @@ namespace K9.WebApplication.Services
         }
 
         public bool IsCompleteRelationshipCompatibilityReading(int? userId, DateTime firstDateOfBirth,
-            EGender firstGender, DateTime secondDateOfBirth, EGender secondGender, bool createIfNull = true)
+            EGender firstGender, DateTime secondDateOfBirth, EGender secondGender)
         {
             var activeUserMembership = GetActiveUserMembership(userId);
             if (activeUserMembership?.RelationshipCompatibilityReadings?.Any(e =>
@@ -166,7 +166,7 @@ namespace K9.WebApplication.Services
             {
                 return true;
             }
-            if (createIfNull && (activeUserMembership?.NumberOfRelationshipCompatibilityReadingsLeft > 0 || activeUserMembership?.NumberOfCreditsLeft > 0))
+            if (activeUserMembership?.NumberOfRelationshipCompatibilityReadingsLeft > 0 || activeUserMembership?.NumberOfCreditsLeft > 0)
             {
                 CreateNewUserRelationshipCompatibilityReading(activeUserMembership, firstDateOfBirth, firstGender, secondDateOfBirth, secondGender);
                 return true;
@@ -443,7 +443,7 @@ namespace K9.WebApplication.Services
                 UserMembershipId = userMembership.Id
             };
 
-            if (userMembership.NumberOfProfileReadingsLeft == 0)
+            if (userMembership.NumberOfProfileReadingsLeft <= 0)
             {
                 var userCredit = _userCreditPacksRepository.Find(e => e.UserId == userMembership.UserId).FirstOrDefault();
                 if (userMembership.NumberOfCreditsLeft == 0 || userCredit == null)

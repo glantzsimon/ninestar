@@ -47,8 +47,8 @@ namespace K9.WebApplication.Services
 
             if (_authentication.IsAuthenticated)
             {
-                if (isCompatibility || _membershipService.IsCompleteProfileReading(_authentication.CurrentUserId, personModel.DateOfBirth,
-                    personModel.Gender) || _roles.CurrentUserIsInRoles(RoleNames.Administrators))
+                if (isCompatibility || _roles.CurrentUserIsInRoles(RoleNames.Administrators) || _membershipService.IsCompleteProfileReading(_authentication.CurrentUserId, personModel.DateOfBirth,
+                    personModel.Gender))
                 {
                     model.ReadingType = EReadingType.Complete;
                 }
@@ -91,9 +91,9 @@ namespace K9.WebApplication.Services
                     IsUpgradeRequired = true
                 };
 
-                if (_membershipService.IsCompleteRelationshipCompatibilityReading(_authentication.CurrentUserId, personModel1.DateOfBirth,
+                if ( _roles.CurrentUserIsInRoles(RoleNames.Administrators) || _membershipService.IsCompleteRelationshipCompatibilityReading(_authentication.CurrentUserId, personModel1.DateOfBirth,
                         personModel1.Gender, personModel2.DateOfBirth,
-                        personModel2.Gender) || _roles.CurrentUserIsInRoles(RoleNames.Administrators))
+                        personModel2.Gender))
                 {
                     model.IsUpgradeRequired = false;
                 }

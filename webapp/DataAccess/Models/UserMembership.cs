@@ -8,6 +8,7 @@ using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 using K9.SharedLibrary.Extensions;
 
 namespace K9.DataAccessLayer.Models
@@ -55,7 +56,7 @@ namespace K9.DataAccessLayer.Models
         public string MembershipOptionName { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfProfileReadingsLeft)]
-        public int NumberOfProfileReadingsLeft => MembershipOption.MaxNumberOfProfileReadings - ProfileReadings?.Count ?? 0;
+        public int NumberOfProfileReadingsLeft => MembershipOption.MaxNumberOfProfileReadings - ProfileReadings.Where(e => !e.UserCreditPackId.HasValue)?.Count() ?? 0;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.NumberOfProfileReadingsLeft)]
@@ -63,7 +64,7 @@ namespace K9.DataAccessLayer.Models
             ? Globalisation.Dictionary.Unlimited : NumberOfProfileReadingsLeft.ToString();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfRelationshipCompatibilityReadingsLeft)]
-        public int NumberOfRelationshipCompatibilityReadingsLeft => MembershipOption.MaxNumberOfCompatibilityReadings - RelationshipCompatibilityReadings?.Count ?? 0;
+        public int NumberOfRelationshipCompatibilityReadingsLeft => MembershipOption.MaxNumberOfCompatibilityReadings - RelationshipCompatibilityReadings.Where(e => !e.UserCreditPackId.HasValue)?.Count() ?? 0;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfRelationshipCompatibilityReadingsLeft)]
         public string NumberOfRelationshipCompatibilityReadingsLeftText => MembershipOption.IsUnlimited

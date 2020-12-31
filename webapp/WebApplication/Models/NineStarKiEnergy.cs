@@ -156,7 +156,7 @@ namespace K9.WebApplication.Models
         Heaven,
         [NineStarEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Lake, Colour = ENineStarKiColour.Red, Element = ENineStarKiElenement.Metal, Direction = ENineStarKiDirection.West, FamilyMember = ENineStarKiFamilyMember.YoungestDaughter, YinYang = ENineStarKiYinYang.Yin, TrigramName = "Tui", DescriptiveName = ENineStarKiDescriptiveName.Advisor, Modality = ENineStarKiModality.Flexible)]
         Lake,
-        [NineStarEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Mountain, Colour = ENineStarKiColour.White, Element = ENineStarKiElenement.Earth, Direction = ENineStarKiDirection.NorthEast, FamilyMember = ENineStarKiFamilyMember.YoungestSon, YinYang = ENineStarKiYinYang.Yang, TrigramName = "Ken", DescriptiveName = ENineStarKiDescriptiveName.Pragmatist, Modality =ENineStarKiModality.Stable)]
+        [NineStarEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Mountain, Colour = ENineStarKiColour.White, Element = ENineStarKiElenement.Earth, Direction = ENineStarKiDirection.NorthEast, FamilyMember = ENineStarKiFamilyMember.YoungestSon, YinYang = ENineStarKiYinYang.Yang, TrigramName = "Ken", DescriptiveName = ENineStarKiDescriptiveName.Pragmatist, Modality = ENineStarKiModality.Stable)]
         Mountain,
         [NineStarEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Fire, Colour = ENineStarKiColour.Purple, Element = ENineStarKiElenement.Fire, Direction = ENineStarKiDirection.South, FamilyMember = ENineStarKiFamilyMember.MiddleDaughter, YinYang = ENineStarKiYinYang.Yin, TrigramName = "Li", DescriptiveName = ENineStarKiDescriptiveName.Communicator, Modality = ENineStarKiModality.Dynamic)]
         Fire
@@ -201,10 +201,10 @@ namespace K9.WebApplication.Models
 
         public string FullEnergyName => GetFullEnergyName();
 
-        public string EnergyNameAndNumber => $"{EnergyNumber} {Element} / {EnergyName}";
+        public string EnergyNameAndNumber => GetEnergyNameAndNumber();
 
         public string FullEnergyDetailsTitle => GetFullEnergyDetailsTitle();
-        
+
         public int EnergyNumber => (int)Energy;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.YinYangLabel)]
@@ -217,7 +217,7 @@ namespace K9.WebApplication.Models
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TrigramLabel)]
         public string Trigram => MetaData.GetTrigram();
-        
+
         public string TrigramUIName => $"{MetaData.TrigramName}{EnergyType}";
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TrigramLabel)]
@@ -254,7 +254,24 @@ namespace K9.WebApplication.Models
         public string AdultEnergyLabel => GetAdultEnergyLabel();
 
         public string CharacteEnergyLabel => GetCharacterEnergyLabel();
-        
+
+        private string GetEnergyNameAndNumber()
+        {
+            switch (EnergyNumber)
+            {
+                case 1:
+                case 9:
+                    return $"{EnergyNumber} {EnergyName}";
+
+                case 5:
+                    return $"{EnergyNumber} {EnergyName}";
+
+                default:
+                    return $"{EnergyNumber} {Element} / {EnergyName}";
+            }
+
+        }
+
         private string GetFullEnergyDetailsTitle()
         {
             return EnergyType == ENineStarKiEnergyType.MainEnergy
@@ -292,7 +309,7 @@ namespace K9.WebApplication.Models
             }
             return MetaData.YinYang;
         }
-        
+
         private string GetChildDescription()
         {
             switch (Energy)

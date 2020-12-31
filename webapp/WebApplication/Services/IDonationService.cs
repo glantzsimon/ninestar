@@ -5,7 +5,7 @@ namespace K9.WebApplication.Services
 {
     public interface IDonationService
     {
-        void CreateDonation(Donation donation);
+        void CreateDonation(Donation donation, Contact contact);
         int GetFundsReceivedToDate();
         StripeModel GetDonationStripeModel();
     }

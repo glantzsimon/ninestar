@@ -18,7 +18,7 @@ namespace K9.WebApplication.Services
             _logger = logger;
         }
 
-        public void CreateCustomer(string stripeCustomerId, string fullName, string emailAddress)
+        public Contact GetOrCreateContact(string stripeCustomerId, string fullName, string emailAddress)
         {
             if (!string.IsNullOrEmpty(emailAddress))
             {
@@ -33,6 +33,7 @@ namespace K9.WebApplication.Services
                             FullName = string.IsNullOrEmpty(fullName) ? emailAddress : fullName,
                             EmailAddress = emailAddress
                         });
+                        return _contactsRepository.Find(e => e.StripeCustomerId == stripeCustomerId).FirstOrDefault();
                     }
                     else
                     {
@@ -53,6 +54,8 @@ namespace K9.WebApplication.Services
                         {
                             _contactsRepository.Update(existingCustomer);
                         }
+
+                        return existingCustomer;
                     }
                 }
                 catch (Exception e)
@@ -60,6 +63,11 @@ namespace K9.WebApplication.Services
                     _logger.Error($"ContactService => CreateCustomer => {e.Message}");
                     throw;
                 }
+            }
+            else
+            {
+                _logger.Error($"ContactService => CreateCustomer => Email Address is Empty");
+                return null;
             }
         }
 

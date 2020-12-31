@@ -1762,6 +1762,9 @@
   <data name="element_supportive" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>compatibility\en-gb\element-supportive.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="EmailThankYouTitle" xml:space="preserve">
+    <value>Thank you for your email</value>
+  </data>
   <data name="FundamentalEnergiesCompatibility" xml:space="preserve">
     <value>Fundamental Energies Compatibility</value>
   </data>

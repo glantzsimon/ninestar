@@ -105,7 +105,7 @@ namespace K9.WebApplication.Services
             var numberOfUsedCredits =
                 _userProfileReadingsRepository.Find(e => creditPackIds.Contains(e.UserCreditPackId ?? 0)).Count() +
                 _userRelationshipCompatibilityReadingsRepository.Find(e => creditPackIds.Contains(e.UserCreditPackId ?? 0)).Count();
-            var totalCredits = creditPacks.Sum(e => e.NumberOfCredits);
+            var totalCredits = creditPacks.Any() ? creditPacks.Sum(e => e.NumberOfCredits) : 0;
             return totalCredits - numberOfUsedCredits;
         }
 
@@ -297,9 +297,9 @@ namespace K9.WebApplication.Services
                 };
                 _userMembershipRepository.Create(userMembership);
                 TerminateExistingMemberships(model.MembershipOptionId);
-                _contactService.CreateCustomer(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
+                var contact = _contactService.GetOrCreateContact(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
                 SendEmailToNineStar(userMembership);
-                SendEmailToCustomer(userMembership);
+                SendEmailToCustomer(contact, userMembership);
             }
             catch (Exception ex)
             {
@@ -321,7 +321,7 @@ namespace K9.WebApplication.Services
                     User = _usersRepository.Find(_authentication.CurrentUserId)
                 };
                 _userCreditPacksRepository.Create(userCreditPack);
-                _contactService.CreateCustomer(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
+                _contactService.GetOrCreateContact(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
                 SendEmailToNineStar(userCreditPack);
                 SendEmailToCustomer(userCreditPack);
             }
@@ -475,25 +475,32 @@ namespace K9.WebApplication.Services
             }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
         }
 
-        private void SendEmailToCustomer(UserMembership userMembership)
+        private void SendEmailToCustomer(UserMembership userMembership, Contact contact)
         {
             var template = Dictionary.NewMembershipThankYouEmail;
             var title = TemplateProcessor.PopulateTemplate(Dictionary.ThankyouForSubscriptionEmailTitle, new
             {
                 SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal
             });
-            _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
+            if (contact != null && !contact.IsUnsubscribed)
             {
-                Title = title,
-                CustomerName = userMembership.User.FullName,
-                SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal,
-                TotalPrice = userMembership.MembershipOption.FormattedPrice,
-                EndsOn = userMembership.EndsOn.ToLongDateString(),
-                NumberOfProfileReadings = userMembership.MembershipOption.MaxNumberOfProfileReadings,
-                NumberOfCompatibilityReadings = userMembership.MembershipOption.MaxNumberOfCompatibilityReadings,
-                ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
-                DateTime.Now.Year
-            }), userMembership.User.EmailAddress, userMembership.User.FirstName, _config.SupportEmailAddress, _config.CompanyName);
+                _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
+                {
+                    Title = title,
+                    CustomerName = userMembership.User.FullName,
+                    SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal,
+                    TotalPrice = userMembership.MembershipOption.FormattedPrice,
+                    EndsOn = userMembership.EndsOn.ToLongDateString(),
+                    NumberOfProfileReadings = userMembership.MembershipOption.MaxNumberOfProfileReadings,
+                    NumberOfCompatibilityReadings =
+                        userMembership.MembershipOption.MaxNumberOfCompatibilityReadings,
+                    ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
+                    PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
+                    UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Contacts", new { id = contact.Id }),
+                    DateTime.Now.Year
+                }), userMembership.User.EmailAddress, userMembership.User.FirstName, _config.SupportEmailAddress,
+                    _config.CompanyName);
+            }
         }
 
         private void SendEmailToNineStar(UserCreditPack userCreditPack)
@@ -513,19 +520,25 @@ namespace K9.WebApplication.Services
             }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
         }
 
-        private void SendEmailToCustomer(UserCreditPack userCreditPack)
+        private void SendEmailToCustomer(UserCreditPack userCreditPack, Contact contact)
         {
             var template = Dictionary.NewCreditPackThankYouEmail;
             var title = Dictionary.ThankyouForCreditPackPurchaseEmailTitle;
-            _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
+            if (contact != null && !contact.IsUnsubscribed) P
             {
-                Title = title,
-                CustomerName = userCreditPack.User.FullName,
-                NumberOfCreditsPurchased = userCreditPack.NumberOfCredits,
-                TotalPrice = userCreditPack.FormattedPrice,
-                ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
-                DateTime.Now.Year
-            }), userCreditPack.User.EmailAddress, userCreditPack.User.FirstName, _config.SupportEmailAddress, _config.CompanyName);
+                _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
+                {
+                    Title = title,
+                    CustomerName = userCreditPack.User.FullName,
+                    NumberOfCreditsPurchased = userCreditPack.NumberOfCredits,
+                    TotalPrice = userCreditPack.FormattedPrice,
+                    ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
+                    PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
+                    UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Contacts", new { id = contact.Id }),
+                    DateTime.Now.Year
+                }), userCreditPack.User.EmailAddress, userCreditPack.User.FirstName, _config.SupportEmailAddress,
+                    _config.CompanyName);
+            }
         }
 
         private double GetCostOfRemainingActiveSubscription()

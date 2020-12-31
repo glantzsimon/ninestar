@@ -45,23 +45,26 @@ namespace K9.WebApplication.Services
             };
         }
 
-        public void CreateDonation(Donation donation)
+        public void CreateDonation(Donation donation, Contact contact)
         {
             try
             {
                 _donationRepository.Create(donation);
                 SendEmailToNineStar(donation);
-                SendEmailToCustomer(donation);
+                if (contact != null && !contact.IsUnsubscribed)
+                {
+                    SendEmailToCustomer(donation, contact);
+                }
             }
             catch (Exception ex)
             {
                 _logger.Error($"DonationService => CreateDonation => {ex.Message}");
             }
         }
-        
+
         public int GetFundsReceivedToDate()
         {
-            return GetSuccessfulDonations().Sum(d => (int) d.Amount);
+            return GetSuccessfulDonations().Sum(d => (int)d.Amount);
         }
 
         private List<Donation> GetSuccessfulDonations()
@@ -86,7 +89,7 @@ namespace K9.WebApplication.Services
             }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
         }
 
-        private void SendEmailToCustomer(Donation donation)
+        private void SendEmailToCustomer(Donation donation, Contact contact)
         {
             var template = Dictionary.DonationThankYouEmail;
             var title = Dictionary.ThankyouForDonationEmailTitle;
@@ -98,6 +101,8 @@ namespace K9.WebApplication.Services
                 Amount = donation.DonationAmount,
                 donation.Currency,
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
+                PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
+                UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Contacts", new { id = contact.Id }),
                 DateTime.Now.Year
             }), donation.CustomerEmail, donation.Customer, _config.SupportEmailAddress, _config.CompanyName);
         }

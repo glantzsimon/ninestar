@@ -2492,6 +2492,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thank you for your email.
+        /// </summary>
+        public static string EmailThankYouTitle {
+            get {
+                return ResourceManager.GetString("EmailThankYouTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ends On.
         /// </summary>
         public static string EndsOnLabel {
@@ -3762,9 +3771,9 @@ namespace K9.Globalisation {
         ///    This is potentially a very harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for good sexual chemistry and for personal growth. Conflict is less likely in this combination.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a Soil Energy. Soil Energies are typically stable, reliable,  supportive and practical..
+        ///    {Person1Proper} is a Soil Energy. Soil Energies are typically stable, reliable, supportive and practical.
         ///
-        ///    {Person2Proper} is a Fire Energy. Fires, on the other hand, are quite free-spirited and spontaneou [rest of string was truncated]&quot;;.
+        ///    {Person2Proper} is a Fire Energy. Fires, on the other hand, are quite free-spirited and spontaneous. [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_29 {
             get {
@@ -4006,9 +4015,9 @@ namespace K9.Globalisation {
         ///    This is potentially a very harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for good sexual chemistry and for personal growth. Conflict is less likely in this combination.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a Soil Energy. Soil Energies are typically stable, reliable,  supportive and practical..
+        ///    {Person1Proper} is a Core Earth Energy. Core Earth Energies are typically stable, reliable, supportive and practical.
         ///
-        ///    {Person2Proper} is a Fire Energy. Fires, on the other hand, are quite free-spirited and spontaneou [rest of string was truncated]&quot;;.
+        ///    {Person2Proper} is a Fire Energy. Fires, on the other hand, are quite free-spirited and  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_59 {
             get {
@@ -7072,7 +7081,7 @@ namespace K9.Globalisation {
         ///    
         ///    You are easily influenced by events and people around you. 
         ///    
-        ///    Of all the nine energetic types, you are the most changeable in your expression.. like the wind!
+        ///    Of all the nine energetic types, you are the most changeable in your expression,  like the wind!
         ///&lt;/p&gt;.
         /// </summary>
         public static string wind_surface_description {

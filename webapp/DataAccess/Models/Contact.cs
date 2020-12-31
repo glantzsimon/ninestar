@@ -4,6 +4,7 @@ using K9.Base.Globalisation;
 using K9.SharedLibrary.Attributes;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -45,6 +46,8 @@ namespace K9.DataAccessLayer.Models
         
 	    [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IsUnsubscribedLabel)]
         public bool IsUnsubscribed { get; set; }
+
+	    public string FirstName => Name.Split(' ').FirstOrDefault();
 
 	}
 }

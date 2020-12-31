@@ -435,10 +435,10 @@ namespace K9.WebApplication.Models
                             return Globalisation.Dictionary.main_37;
 
                         case ENineStarKiEnergy.Mountain:
-                            break;
+                            return Globalisation.Dictionary.main_38;
 
                         case ENineStarKiEnergy.Fire:
-                            break;
+                            return Globalisation.Dictionary.main_39;
                     }
                     break;
 
@@ -580,7 +580,7 @@ namespace K9.WebApplication.Models
                             return Globalisation.Dictionary.main_28;
 
                         case ENineStarKiEnergy.Thunder:
-                            break;
+                            return Globalisation.Dictionary.main_38;
 
                         case ENineStarKiEnergy.Wind:
                             break;
@@ -612,7 +612,7 @@ namespace K9.WebApplication.Models
                             return Globalisation.Dictionary.main_29;
 
                         case ENineStarKiEnergy.Thunder:
-                            break;
+                            return Globalisation.Dictionary.main_39;
 
                         case ENineStarKiEnergy.Wind:
                             break;

@@ -3914,11 +3914,24 @@ namespace K9.Globalisation {
         ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person1} overriding or controlling {Person2}. However, there is a potential for good relationships chemistry and for personal growth.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a 3 Tree Energy and is likely to be very energetic, changeable and even impulsive and explosive at times. {Person2Proper}, on the other hand, is a Mountain Energy and is more likely to be steady, pragmatic an [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} is a 4 Tree Energy and is likely to be quite lively, changeable and even impulsive at times. {Person2Proper}, on the other hand, is a Mountain Energy and is more likely to be steady, pragmatic and single-minded. [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_48 {
             get {
                 return ResourceManager.GetString("main_48", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is potentially a very harmonious and exciting combination. The Fundamental Energies are in a Supportive Transformation, with {Person1} supporting {Person2}. There is also potential for good sexual chemistry and for personal growth. Conflict is less likely in this combination, but not impossible.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Both 3 Tree and Fire Energies can be very energetic, changeable and even impulsive at times. This can either work very well, leading to an exciting, dynamic relationship with plenty o [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_49 {
+            get {
+                return ResourceManager.GetString("main_49", resourceCulture);
             }
         }
         

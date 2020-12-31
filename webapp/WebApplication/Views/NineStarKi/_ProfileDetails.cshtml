@@ -18,12 +18,12 @@
         <ul class="nav nav-pills nav-justified">
             @if (Model.PersonModel.IsAdult())
             {
-                <li class="active"><a data-toggle="tab" href="#adult">@Model.MainEnergy.AdultEnergyLabel</a></li>
-                <li><a data-toggle="tab" href="#emotional">@Model.CharacterEnergy.CharacteEnergyLabel</a></li>
+                <li class="active"><a data-toggle="tab" href="#fundamental">@Model.MainEnergy.AdultEnergyLabel</a></li>
+                <li><a data-toggle="tab" href="#character">@Model.CharacterEnergy.CharacteEnergyLabel</a></li>
             }
             else
             {
-                <li class="active"><a data-toggle="tab" href="#emotional">@Model.CharacterEnergy.CharacteEnergyLabel</a></li>
+                <li class="active"><a data-toggle="tab" href="#character">@Model.CharacterEnergy.CharacteEnergyLabel</a></li>
             }
 
             <li><a data-toggle="tab" href="#surface">@Dictionary.ExternalPersona</a></li>
@@ -31,7 +31,7 @@
         </ul>
 
         <div class="tab-content">
-            <div id="adult" class="tab-pane fade @adultActiveClass">
+            <div id="fundamental" class="tab-pane fade @adultActiveClass">
                 @Html.Panel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.MainEnergyDescription)
 
                 @Html.Partial("_NineStarHeader", Model.MainEnergy)
@@ -39,7 +39,7 @@
                 @Html.Partial("_NineStarDetail", Model)
             </div>
 
-            <div id="emotional" class="tab-pane fade @childActiveClass">
+            <div id="character" class="tab-pane fade @childActiveClass">
                 @Html.Panel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.CharacterEnergyDescription)
 
                 @Html.Partial("_NineStarHeader", Model.CharacterEnergy)

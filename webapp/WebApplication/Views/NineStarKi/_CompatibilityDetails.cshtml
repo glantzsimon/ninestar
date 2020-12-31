@@ -5,7 +5,7 @@
 {
     @Html.Panel(Dictionary.SummaryLabel, Model.CompatibilitySummary)
 
-    @using (Html.BeginBootstrapForm())
+    using (Html.BeginBootstrapForm())
     {
         <h4 class="margin-top-0 margin-bottom-10">@Dictionary.PersonalProfileDetails</h4>
         <div class="ninestar-summmary container padding-0 margin-top-15">

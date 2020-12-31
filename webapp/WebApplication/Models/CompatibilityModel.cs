@@ -36,7 +36,9 @@ namespace K9.WebApplication.Models
                 Person1 = FirstFundamentalEnergyPersonName,
                 Person2 = SecondFundamentalEnergyPersonName,
                 Person1Proper = FirstFundamentalEnergyPersonName.ToProperCase(),
-                Person2Proper = SecondFundamentalEnergyPersonName.ToProperCase()
+                Person2Proper = SecondFundamentalEnergyPersonName.ToProperCase(),
+                PossessivePronoun1 = FirstFundamentalEnergyGenderPossessivePronoun,
+                Gender2 = SecondFundamentalEnergyGenderPossessivePronoun
             });
 
             CharacterEnergiesCompatibility = TemplateProcessor.PopulateTemplate(GetCharacterEnergiesCompatibilityDetails(), new
@@ -44,7 +46,9 @@ namespace K9.WebApplication.Models
                 Person1 = FirstCharacterEnergyPersonName,
                 Person2 = SecondCharacterEnergyPersonName,
                 Person1Proper = FirstCharacterEnergyPersonName.ToProperCase(),
-                Person2Proper = SecondCharacterEnergyPersonName.ToProperCase()
+                Person2Proper = SecondCharacterEnergyPersonName.ToProperCase(),
+                Gender1 = FirstCharacterEnergyGenderPossessivePronoun,
+                Gender2 = SecondCharacterEnergyGenderPossessivePronoun
             });
 
             SexualChemistryDetails = TemplateProcessor.PopulateTemplate(GetSexualChemistryDescription(), new
@@ -52,7 +56,9 @@ namespace K9.WebApplication.Models
                 Person1 = NineStarKiModel1?.PersonModel?.Name,
                 Person2 = NineStarKiModel2?.PersonModel?.Name,
                 Person1Proper = NineStarKiModel1?.PersonModel?.Name?.ToProperCase(),
-                Person2Proper = NineStarKiModel2?.PersonModel?.Name?.ToProperCase()
+                Person2Proper = NineStarKiModel2?.PersonModel?.Name?.ToProperCase(),
+                Gender1 = NineStarKiModel1?.PersonModel?.GenderPossessivePronoun,
+                Gender2 = NineStarKiModel2?.PersonModel?.GenderPossessivePronoun
             });
 
             CompatibilitySummary = TemplateProcessor.PopulateTemplate(GetCompatibilitySummary(), new
@@ -60,7 +66,9 @@ namespace K9.WebApplication.Models
                 Person1 = NineStarKiModel1?.PersonModel?.Name,
                 Person2 = NineStarKiModel2?.PersonModel?.Name,
                 Person1Proper = NineStarKiModel1?.PersonModel?.Name?.ToProperCase(),
-                Person2Proper = NineStarKiModel2?.PersonModel?.Name?.ToProperCase()
+                Person2Proper = NineStarKiModel2?.PersonModel?.Name?.ToProperCase(),
+                Gender1 = NineStarKiModel1?.PersonModel?.GenderPossessivePronoun,
+                Gender2 = NineStarKiModel2?.PersonModel?.GenderPossessivePronoun
             });
         }
 
@@ -113,6 +121,22 @@ namespace K9.WebApplication.Models
         public string SecondFundamentalEnergyPersonName => NineStarKiModel1.MainEnergy.Energy <= NineStarKiModel2.MainEnergy.Energy
             ? SecondPersonNameWithArticle
             : FirstPersonNameWithArticle;
+
+        public string FirstFundamentalEnergyGenderPossessivePronoun => NineStarKiModel1.MainEnergy.Energy <= NineStarKiModel2.MainEnergy.Energy
+            ? NineStarKiModel1?.PersonModel?.GenderPossessivePronoun
+            : NineStarKiModel2?.PersonModel?.GenderPossessivePronoun;
+
+        public string SecondFundamentalEnergyGenderPossessivePronoun => NineStarKiModel1.MainEnergy.Energy <= NineStarKiModel2.MainEnergy.Energy
+            ? NineStarKiModel2?.PersonModel?.GenderPossessivePronoun
+            : NineStarKiModel1?.PersonModel?.GenderPossessivePronoun;
+
+        public string FirstCharacterEnergyGenderPossessivePronoun => NineStarKiModel1.CharacterEnergy.Energy <= NineStarKiModel2.CharacterEnergy.Energy
+            ? NineStarKiModel1?.PersonModel?.GenderPossessivePronoun
+            : NineStarKiModel2?.PersonModel?.GenderPossessivePronoun;
+
+        public string SecondCharacterEnergyGenderPossessivePronoun => NineStarKiModel1.CharacterEnergy.Energy <= NineStarKiModel2.CharacterEnergy.Energy
+            ? NineStarKiModel2?.PersonModel?.GenderPossessivePronoun
+            : NineStarKiModel1?.PersonModel?.GenderPossessivePronoun;
 
         public string FirstCharacterEnergyPersonName => NineStarKiModel1.CharacterEnergy.Energy <= NineStarKiModel2.CharacterEnergy.Energy
             ? FirstPersonNameWithArticle

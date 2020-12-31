@@ -23,6 +23,8 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LanguageLabel)]
         public string GenderName => Gender.GetLocalisedLanguageName();
 
+        public string GenderPossessivePronoun => Gender == EGender.Male ? "his" : "her";
+
         public int YearsOld => GetYearsOld();
 
         public bool IsAdult() => YearsOld >= 18;

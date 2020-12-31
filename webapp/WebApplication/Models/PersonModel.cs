@@ -25,6 +25,8 @@ namespace K9.WebApplication.Models
 
         public string GenderPossessivePronoun => Gender == EGender.Male ? "his" : "her";
 
+        public string GenderPronoun => Gender == EGender.Male ? "he" : "she";
+
         public int YearsOld => GetYearsOld();
 
         public bool IsAdult() => YearsOld >= 18;

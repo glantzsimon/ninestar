@@ -3530,10 +3530,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationships chemistry and for growth.
+        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationships chemistry and for personal growth.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life. {Person2Proper}, on the other hand, is a Soil Energy and is more likely to be structured and d [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life. {Person2Proper}, on the other hand, is a Soil Energy and is more likely to be structu [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_12 {
             get {
@@ -3543,12 +3543,12 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially quite an exciting and harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person1} supporting {Person2}. There is also potential for good relationships chemistry and for growth.
+        ///    This is potentially quite an exciting and harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person1} supporting {Person2}. There is also potential for good relationships chemistry and for personal growth.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life. 
         ///    
-        ///    {Person2Proper} is a Thunder Energy. Thunders often share the flexible, free-spirited and s [rest of string was truncated]&quot;;.
+        ///    {Person2Proper} is a Thunder Energy. Thunders often share the flexible, free-spiri [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_13 {
             get {
@@ -3558,12 +3558,12 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially quite an exciting and harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person1} supporting {Person2}. There is also potential for good relationships chemistry and for growth.
+        ///    This is potentially quite an exciting and harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person1} supporting {Person2}. There is also potential for good relationships chemistry and for personal growth.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life. 
         ///    
-        ///    {Person2Proper} is a Wind Energy. Winds often share the flexible, free-spirited and spontan [rest of string was truncated]&quot;;.
+        ///    {Person2Proper} is a Wind Energy. Winds often share the flexible, free-spirited an [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_14 {
             get {
@@ -3664,10 +3664,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationships chemistry and for growth.
+        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationships chemistry and for personal growth.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person2Proper} is a 3 Tree Energy and is likely to be very energetic, changeable and even impulsive and explosive at times. {Person1Proper}, on the other hand, is a Soil Energy and is more likely to be structured and disciplined. This  [rest of string was truncated]&quot;;.
+        ///    {Person2Proper} is a 3 Tree Energy and is likely to be very energetic, changeable and even impulsive and explosive at times. {Person1Proper}, on the other hand, is a Soil Energy and is more likely to be structured and disciplin [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_23 {
             get {
@@ -3677,10 +3677,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationships chemistry and for growth.
+        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationships chemistry and for personal growth.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person2Proper} is a 4 Tree Energy and is likely to be very energetic, changeable and even impulsive at times. {Person1Proper}, on the other hand, is a Soil Energy and is more likely to be structured and disciplined. This could be perce [rest of string was truncated]&quot;;.
+        ///    {Person2Proper} is a 4 Tree Energy and is likely to be very energetic, changeable and even impulsive at times. {Person1Proper}, on the other hand, is a Soil Energy and is more likely to be structured and disciplined. This could [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_24 {
             get {
@@ -3791,10 +3791,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person1} overriding or controlling {Person2}. However, there is a potential for good relationships chemistry and for growth.
+        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person1} overriding or controlling {Person2}. However, there is a potential for good relationships chemistry and for personal growth.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a 3 Tree Energy and is likely to be very energetic, changeable and even impulsive and explosive at times. {Person2Proper}, on the other hand, is a Core Earth Energy and is more likely to be steady, pragmatic and singl [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} is a 3 Tree Energy and is likely to be very energetic, changeable and even impulsive and explosive at times. {Person2Proper}, on the other hand, is a Core Earth Energy and is more likely to be steady, pragmatic  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_35 {
             get {
@@ -3804,10 +3804,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationships chemistry and for growth.
+        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationships chemistry and for personal growth.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a 3 Tree Energy and is likely to be very energetic, changeable and even impulsive and explosive at times. {Person2Proper}, on the other hand, is a Heaven Energy and is more reserved, pragmatic and single-minded. This  [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} is a 3 Tree Energy and is likely to be very energetic, changeable and even impulsive and explosive at times. {Person2Proper}, on the other hand, is a Heaven Energy and is more reserved, pragmatic and single-mind [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_36 {
             get {
@@ -3830,10 +3830,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person1} overriding or controlling {Person2}. However, there is a potential for good relationships chemistry and for growth.
+        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person1} overriding or controlling {Person2}. However, there is a potential for good relationships chemistry and for personal growth.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a 3 Tree Energy and is likely to be very energetic, changeable and even impulsive and explosive at times. {Person2Proper}, on the other hand, is a Mountain Energy and is more likely to be steady, pragmatic and single- [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} is a 3 Tree Energy and is likely to be very energetic, changeable and even impulsive and explosive at times. {Person2Proper}, on the other hand, is a Mountain Energy and is more likely to be steady, pragmatic an [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_38 {
             get {
@@ -3843,10 +3843,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person1} overriding or controlling {Person2}. However, there is a potential for good relationships chemistry and for growth.
+        ///    This is potentially a very harmonious and exciting combination. The Fundamental Energies are in a Supportive Transformation, with {Person1} supporting {Person2}. There is also potential for good sexual chemistry and for personal growth. Conflict is less likely in this combination, but not impossible.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a 3 Tree Energy and is likely to be very energetic, changeable and even impulsive and explosive at times. {Person2Proper}, on the other hand, is a Mountain Energy and is more likely to be steady, pragmatic and single- [rest of string was truncated]&quot;;.
+        ///    Both 3 Tree and Fire Energies can be very energetic, changeable and even impulsive at times. This can either work very well, leading to an exciting, dynamic relationship with plenty o [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_39 {
             get {
@@ -3867,6 +3867,45 @@ namespace K9.Globalisation {
         public static string main_44 {
             get {
                 return ResourceManager.GetString("main_44", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person1} overriding or controlling {Person2}. However, there is a potential for good relationships chemistry and for personal growth.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a 4 Tree Energy and is likely to be quite energetic, changeable and even impulsive at times. {Person2Proper}, on the other hand, is a Core Earth Energy and is more likely to be steady, pragmatic and single-mi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_45 {
+            get {
+                return ResourceManager.GetString("main_45", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationships chemistry and for personal growth.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a 4 Tree Energy and is likely to be very energetic, changeable and even impulsive and explosive at times. {Person2Proper}, on the other hand, is a Heaven Energy and is more reserved, pragmatic and single-mind [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_46 {
+            get {
+                return ResourceManager.GetString("main_46", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationships chemistry and for a lot of growth.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a 3 Tree Energy and is likely to be very energetic, changeable and even impulsive and explosive at times. {Person2Proper}, on the other hand, is a Lake Energy and is more pragmatic and rational. This could re [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_47 {
+            get {
+                return ResourceManager.GetString("main_47", resourceCulture);
             }
         }
         

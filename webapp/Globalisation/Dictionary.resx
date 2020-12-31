@@ -1792,6 +1792,15 @@
   <data name="main_39" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>compatibility\en-gb\main-39.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="main_45" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-45.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_46" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-46.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_47" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-47.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="SexualChemistryDetails" xml:space="preserve">
     <value>Sexual Chemistry Details</value>
   </data>

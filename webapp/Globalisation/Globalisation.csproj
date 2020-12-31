@@ -186,12 +186,14 @@
     <Content Include="Compatibility\en-gb\character-gender-opposite.htm" />
     <Content Include="Compatibility\en-gb\character-gender-same.htm" />
     <Content Include="Compatibility\en-gb\character-modality-different.htm" />
+    <Content Include="Compatibility\en-gb\main-46.htm" />
     <Content Include="Compatibility\en-gb\main-39.htm" />
     <Content Include="Compatibility\en-gb\main-38.htm" />
     <Content Include="Compatibility\en-gb\main-37.htm" />
     <Content Include="Compatibility\en-gb\main-36.htm" />
     <Content Include="Compatibility\en-gb\main-35.htm" />
     <Content Include="Compatibility\en-gb\main-34.htm" />
+    <Content Include="Compatibility\en-gb\main-45.htm" />
     <Content Include="Compatibility\en-gb\main-modality-different.htm" />
     <Content Include="Compatibility\en-gb\element-supportive.htm" />
     <Content Include="Compatibility\en-gb\element-same.htm" />

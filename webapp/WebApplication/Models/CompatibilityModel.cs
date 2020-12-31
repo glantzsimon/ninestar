@@ -458,13 +458,13 @@ namespace K9.WebApplication.Models
                             return Globalisation.Dictionary.main_44;
 
                         case ENineStarKiEnergy.CoreEarth:
-                            break;
+                            return Globalisation.Dictionary.main_45;
 
                         case ENineStarKiEnergy.Heaven:
-                            break;
+                            return Globalisation.Dictionary.main_46;
 
                         case ENineStarKiEnergy.Lake:
-                            break;
+                            return Globalisation.Dictionary.main_47;
 
                         case ENineStarKiEnergy.Mountain:
                             break;
@@ -487,7 +487,7 @@ namespace K9.WebApplication.Models
                             return Globalisation.Dictionary.main_35;
 
                         case ENineStarKiEnergy.Wind:
-                            break;
+                            return Globalisation.Dictionary.main_45;
 
                         case ENineStarKiEnergy.CoreEarth:
                             return Globalisation.Dictionary.main_55;
@@ -519,7 +519,7 @@ namespace K9.WebApplication.Models
                             return Globalisation.Dictionary.main_36;
 
                         case ENineStarKiEnergy.Wind:
-                            break;
+                            return Globalisation.Dictionary.main_46;
 
                         case ENineStarKiEnergy.CoreEarth:
                             break;
@@ -551,7 +551,7 @@ namespace K9.WebApplication.Models
                             return Globalisation.Dictionary.main_37;
 
                         case ENineStarKiEnergy.Wind:
-                            break;
+                            return Globalisation.Dictionary.main_47;
 
                         case ENineStarKiEnergy.CoreEarth:
                             break;

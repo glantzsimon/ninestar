@@ -103,10 +103,10 @@ namespace K9.WebApplication.Services
             var creditPacks = _userCreditPacksRepository.Find(e => e.UserId == userMembership.UserId);
             var creditPackIds = creditPacks.Select(c => c.Id);
             var numberOfUsedCredits =
-                _userProfileReadingsRepository.Find(e => creditPackIds.Contains(e.UserCreditPackId ?? 0)).Count() +
-                _userRelationshipCompatibilityReadingsRepository.Find(e => creditPackIds.Contains(e.UserCreditPackId ?? 0)).Count();
+                _userProfileReadingsRepository.Find(e => creditPackIds.Contains(e.UserCreditPackId ?? 0))?.Count() +
+                _userRelationshipCompatibilityReadingsRepository.Find(e => creditPackIds.Contains(e.UserCreditPackId ?? 0))?.Count();
             var totalCredits = creditPacks.Any() ? creditPacks.Sum(e => e.NumberOfCredits) : 0;
-            return totalCredits - numberOfUsedCredits;
+            return totalCredits - numberOfUsedCredits ?? 0;
         }
 
         /// <summary>

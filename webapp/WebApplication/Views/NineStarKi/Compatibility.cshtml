@@ -18,12 +18,12 @@
         <div class="col-sm-12 padding-0">
             @Html.Partial("_CompatibilityCalculator")
         </div>
-        <div class="col-sm-12 padding-0 margin-top-0">
-            @if (Model != null && Model.IsProcessed)
-            {
+        @if (Model != null && Model.IsProcessed)
+        {
+            <div class="col-sm-12 padding-0 margin-top-0">
                 @Html.Panel(Dictionary.Results, Html.Partial("_CompatibilitySummary", Model).ToString())
-            }
-        </div>
+            </div>
+        }
         @if (Model != null && Model.IsProcessed && !Model.IsUpgradeRequired)
         {
             <div class="col-sm-12 padding-0 margin-top-20 margin-bottom-20">

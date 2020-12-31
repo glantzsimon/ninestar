@@ -1718,6 +1718,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Compatibility Details.
+        /// </summary>
+        public static string CompatibilityDetails {
+            get {
+                return ResourceManager.GetString("CompatibilityDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Compatibility Calculator Compatibility Checker Perfect Match Dating Love Romance Friendship Relationships Find The Love Your Life.
         /// </summary>
         public static string CompatibilityKeywords {
@@ -3927,7 +3936,7 @@ namespace K9.Globalisation {
         ///    This is potentially a very harmonious and exciting combination. The Fundamental Energies are in a Supportive Transformation, with {Person1} supporting {Person2}. There is also potential for good sexual chemistry and for personal growth. Conflict is less likely in this combination, but not impossible.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both 3 Tree and Fire Energies can be very energetic, changeable and even impulsive at times. This can either work very well, leading to an exciting, dynamic relationship with plenty o [rest of string was truncated]&quot;;.
+        ///    Both 4 Tree and Fire Energies can be very energetic, changeable and even impulsive at times. This can either work very well, leading to an exciting, dynamic relationship with plenty o [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_49 {
             get {

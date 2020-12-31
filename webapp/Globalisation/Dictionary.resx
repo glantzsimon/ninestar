@@ -1750,6 +1750,9 @@
   <data name="CharacterEnergiesCompatibility" xml:space="preserve">
     <value>Character Energies Compatibility</value>
   </data>
+  <data name="CompatibilityDetails" xml:space="preserve">
+    <value>Compatibility Details</value>
+  </data>
   <data name="element_challenging" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>compatibility\en-gb\element-challenging.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>

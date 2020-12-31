@@ -467,7 +467,7 @@ namespace K9.WebApplication.Models
                             return Globalisation.Dictionary.main_47;
 
                         case ENineStarKiEnergy.Mountain:
-                            break;
+                            return Globalisation.Dictionary.main_48;
 
                         case ENineStarKiEnergy.Fire:
                             break;
@@ -583,7 +583,7 @@ namespace K9.WebApplication.Models
                             return Globalisation.Dictionary.main_38;
 
                         case ENineStarKiEnergy.Wind:
-                            break;
+                            return Globalisation.Dictionary.main_48;
 
                         case ENineStarKiEnergy.CoreEarth:
                             break;

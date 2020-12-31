@@ -1810,6 +1810,18 @@
   <data name="main_49" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>compatibility\en-gb\main-49.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="main_56" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-56.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_57" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-57.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_58" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-58.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_59" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-59.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="SexualChemistryDetails" xml:space="preserve">
     <value>Sexual Chemistry Details</value>
   </data>

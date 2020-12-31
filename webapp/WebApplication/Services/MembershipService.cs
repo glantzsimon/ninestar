@@ -299,7 +299,7 @@ namespace K9.WebApplication.Services
                 TerminateExistingMemberships(model.MembershipOptionId);
                 var contact = _contactService.GetOrCreateContact(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
                 SendEmailToNineStar(userMembership);
-                SendEmailToCustomer(contact, userMembership);
+                SendEmailToCustomer(userMembership, contact);
             }
             catch (Exception ex)
             {
@@ -321,9 +321,9 @@ namespace K9.WebApplication.Services
                     User = _usersRepository.Find(_authentication.CurrentUserId)
                 };
                 _userCreditPacksRepository.Create(userCreditPack);
-                _contactService.GetOrCreateContact(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
+                var contact = _contactService.GetOrCreateContact(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
                 SendEmailToNineStar(userCreditPack);
-                SendEmailToCustomer(userCreditPack);
+                SendEmailToCustomer(userCreditPack, contact);
             }
             catch (Exception ex)
             {
@@ -524,7 +524,7 @@ namespace K9.WebApplication.Services
         {
             var template = Dictionary.NewCreditPackThankYouEmail;
             var title = Dictionary.ThankyouForCreditPackPurchaseEmailTitle;
-            if (contact != null && !contact.IsUnsubscribed) P
+            if (contact != null && !contact.IsUnsubscribed)
             {
                 _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
                 {

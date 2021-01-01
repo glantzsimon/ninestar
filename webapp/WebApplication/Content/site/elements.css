@@ -1,4 +1,8 @@
-﻿h4 {
+﻿h4, h5 {
+    color: #227ab7 !important;
+}
+
+h4 {
     line-height: 1.3em;
 }
 

@@ -814,6 +814,10 @@ a.collapsible-panel-link {
     margin-bottom: 0;
 }
 
+.panel-heading h4, .panel-heading h5 {
+    color: black !important;
+}
+
 .panel-body {
     padding-top: 20px;
     padding-left: 20px;
@@ -824,7 +828,7 @@ a.collapsible-panel-link {
     .panel-body h5:first-child {
         margin-top: 0 !important;
     }
-    
+
 .tab-pane .panel {
     margin-top: 20px;
     margin-bottom: 0;

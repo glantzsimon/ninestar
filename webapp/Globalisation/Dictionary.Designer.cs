@@ -4043,6 +4043,22 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is a generally a very harmonious combination with good potential for friendship. However, the sexual chemistry may be less pronounced, due to both Energies being of the same element.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a Heaven Energies and is typically authoritative, straightforward and direct. {Person2Proper} is a Lake Energy and is generally far more laid-back and flexible and more able to accomodate the potentially bolder and more dominant nature of {Person2}.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Heaven Energ [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_67 {
+            get {
+                return ResourceManager.GetString("main_67", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
         ///    This is a very harmonious combination with great potential for friendship. The sexual chemistry may well be lacking, however.
         ///&lt;/h5&gt;
         ///&lt;p&gt;

@@ -300,8 +300,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Unit\Mdels\NineStarKiModelTests.cs" />
-    <Compile Include="Unit\Mdels\PersonModelTests.cs" />
+    <Compile Include="Unit\Models\NineStarKiModelTests.cs" />
+    <Compile Include="Unit\Models\PersonModelTests.cs" />
     <Compile Include="Unit\Services\NineStarKiServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>

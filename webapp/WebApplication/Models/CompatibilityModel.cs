@@ -592,7 +592,7 @@ namespace K9.WebApplication.Models
                             return Globalisation.Dictionary.main_66;
 
                         case ENineStarKiEnergy.Lake:
-                            break;
+                            return Globalisation.Dictionary.main_67;
 
                         case ENineStarKiEnergy.Mountain:
                             break;
@@ -621,7 +621,7 @@ namespace K9.WebApplication.Models
                             return Globalisation.Dictionary.main_57;
 
                         case ENineStarKiEnergy.Heaven:
-                            break;
+                            return Globalisation.Dictionary.main_67;
 
                         case ENineStarKiEnergy.Lake:
                             return Globalisation.Dictionary.main_77;

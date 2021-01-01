@@ -262,15 +262,15 @@ namespace K9.WebApplication.Tests.Unit.Services
 
         [Theory]
         [InlineData(1979, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyHigh, ECompatibilityScore.ExtremelyHigh)]
-        [InlineData(1981, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.MediumToHigh, ECompatibilityScore.VeryLow)]
+        [InlineData(1981, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.MediumToHigh, ECompatibilityScore.ExtremelyLow)]
         [InlineData(1980, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.Medium, ECompatibilityScore.Low)]
         [InlineData(1979, 6, 16, EGender.Male, 1983, 6, 21, EGender.Male, ECompatibilityScore.VeryHigh, ECompatibilityScore.ExtremelyHigh)]
         [InlineData(1979, 6, 16, EGender.Male, 1985, 6, 21, EGender.Male, ECompatibilityScore.High, ECompatibilityScore.VeryHigh)]
-        [InlineData(1979, 6, 16, EGender.Male, 1978, 6, 21, EGender.Male, ECompatibilityScore.LowToMedium, ECompatibilityScore.LowToMedium)]
+        [InlineData(1979, 6, 16, EGender.Male, 1978, 6, 21, EGender.Male, ECompatibilityScore.LowToMedium, ECompatibilityScore.Low)]
         [InlineData(1979, 6, 16, EGender.Male, 1979, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyLow, ECompatibilityScore.ExtremelyLow)]
-        [InlineData(1979, 6, 16, EGender.Male, 1982, 6, 21, EGender.Male, ECompatibilityScore.MediumToHigh, ECompatibilityScore.LowToMedium)]
+        [InlineData(1979, 6, 16, EGender.Male, 1982, 6, 21, EGender.Male, ECompatibilityScore.MediumToHigh, ECompatibilityScore.Low)]
         [InlineData(1979, 6, 16, EGender.Male, 1980, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyHigh, ECompatibilityScore.ExtremelyHigh)]
-        [InlineData(1982, 6, 16, EGender.Male, 1985, 6, 21, EGender.Male, ECompatibilityScore.VeryHigh, ECompatibilityScore.VeryHigh)]
+        [InlineData(1982, 6, 16, EGender.Male, 1985, 6, 21, EGender.Male, ECompatibilityScore.VeryHigh, ECompatibilityScore.High)]
         public void Calculate_ChemistryAndConflictLevel(int year1, int month1, int day1, EGender gender1, int year2, int month2, int day2, EGender gender2, ECompatibilityScore chemistryScore, ECompatibilityScore conflictScore)
         {
             var mockAuthentication = new Mock<IAuthentication>();

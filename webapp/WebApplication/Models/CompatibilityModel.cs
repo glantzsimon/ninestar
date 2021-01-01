@@ -65,10 +65,10 @@ namespace K9.WebApplication.Models
 
             SexualChemistryDetails = TemplateProcessor.PopulateTemplate(GetSexualChemistryDescription(), new
             {
-                Person1 = NineStarKiModel1?.PersonModel?.Name,
-                Person2 = NineStarKiModel2?.PersonModel?.Name,
-                Person1Proper = NineStarKiModel1?.PersonModel?.Name?.ToProperCase(),
-                Person2Proper = NineStarKiModel2?.PersonModel?.Name?.ToProperCase(),
+                Person1 = FirstPersonNameWithArticle,
+                Person2 = SecondPersonNameWithArticle,
+                Person1Proper = FirstPersonNameWithArticle.ToProperCase(),
+                Person2Proper = SecondPersonNameWithArticle.ToProperCase(),
                 Gender1PossessivePronoun = NineStarKiModel1?.PersonModel?.GenderPossessivePronoun,
                 Gender2PossessivePronoun = NineStarKiModel2?.PersonModel?.GenderPossessivePronoun,
                 Gender1Pronoun = NineStarKiModel1?.PersonModel?.GenderPronoun,
@@ -81,10 +81,10 @@ namespace K9.WebApplication.Models
 
             CompatibilitySummary = TemplateProcessor.PopulateTemplate(GetCompatibilitySummary(), new
             {
-                Person1 = NineStarKiModel1?.PersonModel?.Name,
-                Person2 = NineStarKiModel2?.PersonModel?.Name,
-                Person1Proper = NineStarKiModel1?.PersonModel?.Name?.ToProperCase(),
-                Person2Proper = NineStarKiModel2?.PersonModel?.Name?.ToProperCase(),
+                Person1 = FirstPersonNameWithArticle,
+                Person2 = SecondPersonNameWithArticle,
+                Person1Proper = FirstPersonNameWithArticle.ToProperCase(),
+                Person2Proper = SecondPersonNameWithArticle.ToProperCase(),
                 Gender1PossessivePronoun = NineStarKiModel1?.PersonModel?.GenderPossessivePronoun,
                 Gender2PossessivePronoun = NineStarKiModel2?.PersonModel?.GenderPossessivePronoun,
                 Gender1Pronoun = NineStarKiModel1?.PersonModel?.GenderPronoun,
@@ -133,7 +133,7 @@ namespace K9.WebApplication.Models
         public string FirstPersonName => NineStarKiModel1.PersonModel.Name ?? Globalisation.Dictionary.FirstPerson;
 
         public string SecondPersonName => NineStarKiModel2.PersonModel.Name ?? Globalisation.Dictionary.SecondPerson;
-
+        
         public string FirstPersonNameWithArticle => NineStarKiModel1.PersonModel.Name ?? $"the {Globalisation.Dictionary.FirstPerson.ToLower()}";
 
         public string SecondPersonNameWithArticle => NineStarKiModel2.PersonModel.Name ?? $"the {Globalisation.Dictionary.SecondPerson.ToLower()}";

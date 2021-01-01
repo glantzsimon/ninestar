@@ -204,17 +204,17 @@ namespace K9.WebApplication.Models
                 return ESexualChemistryScore.Unspecified;
             }
 
-            ESexualChemistryScore score = 0;
+            ESexualChemistryScore score = ESexualChemistryScore.NonExistant;
 
             // Main
             if (!CompatibilityDetails.IsFundamtenalGenderSame)
             {
-                score += 3;
+                score += 2;
             }
 
             if (CompatibilityDetails.IsFundamentalElementChallenging)
             {
-                score += 3;
+                score += 4;
             }
             else if (CompatibilityDetails.IsFundamentalElementSupportive)
             {

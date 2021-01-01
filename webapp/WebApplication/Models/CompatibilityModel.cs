@@ -259,6 +259,7 @@ namespace K9.WebApplication.Models
         {
             switch (TotalSexualChemistryScore)
             {
+                case ESexualChemistryScore.Unspecified:
                 case ESexualChemistryScore.NonExistant:
                     return Globalisation.Dictionary.sexual_chemistry_nonexistant;
 
@@ -710,7 +711,7 @@ namespace K9.WebApplication.Models
                     switch (NineStarKiModel2.MainEnergy.Energy)
                     {
                         case ENineStarKiEnergy.Water:
-                            return Globalisation.Dictionary.main_11;
+                            break;
 
                         case ENineStarKiEnergy.Soil:
                             break;
@@ -764,7 +765,7 @@ namespace K9.WebApplication.Models
                     break;
             }
 
-            return string.Empty;
+            return Globalisation.Dictionary.ComingSoon;
         }
 
         private ECompatibilityScore GetFundamentalElementChemistryScore()

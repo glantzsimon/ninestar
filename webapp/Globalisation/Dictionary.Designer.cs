@@ -3724,7 +3724,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially a very harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for good sexual chemistry and for personal growth. Conflict is less likely in this combination. Soil and Heaven Energies represent the &quot;Mother&quot; and &quot;Father&quot; archetype, with the former being all Yin and the latter all Yang. This is a very strong combination.
+        ///    This is potentially a very harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person1} supporting {Person2}. There is also potential for good sexual chemistry and for personal growth. Conflict is less likely in this combination. Soil and Heaven Energies represent the &quot;Mother&quot; and &quot;Father&quot; archetype, with the former being all Yin and the latter all Yang. This is a very strong combination.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    {Person1Proper} is a Soil  Energy and is most likel [rest of string was truncated]&quot;;.
@@ -4059,6 +4059,34 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is potentially quite a harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for reasonable sexual chemistry and for personal growth. Conflict is less likely, but still possible in this combination, as both parties can have quite a bold character.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a Mountain Energy and is most likely stable, reliable and supportive.
+        ///
+        ///    {Person2Proper} is a Heaven Energy. 6 Met [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_68 {
+            get {
+                return ResourceManager.GetString("main_68", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationship chemistry and for personal growth.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a Heaven Energy. 6 Metals generally have a bold, moral and assertive nature and like to take the lead. It&apos;s possible that {Person1}&apos;s bold, assertive nature could clash with {Person2}, bringing out {Gender2Pos [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_69 {
+            get {
+                return ResourceManager.GetString("main_69", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
         ///    This is a very harmonious combination with great potential for friendship. The sexual chemistry may well be lacking, however.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
@@ -4075,6 +4103,34 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is potentially quite a harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person1} supporting {Person2}. There is also potential for good personal growth. Conflict is typically not much of an issue.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person2Proper} is a Mountain Energy. Mountains are typically stable, reliable and supportive.
+        ///
+        ///    {Person1Proper} is a Lake. Lake Energies are also pretty stable and reliable and are generally laid-back and flexbible. This combination [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_78 {
+            get {
+                return ResourceManager.GetString("main_78", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationship chemistry and for personal growth.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a Lake Energy. 7 Metals generally have a laid-back, flexible and fun-loving nature. {Person2} is a Fire Enegy, and is likely more passionate, expressive and warm. These two Energies have quite different expres [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_79 {
+            get {
+                return ResourceManager.GetString("main_79", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
         ///    This is a very harmonious combination with a great potential for a solid friendship. However, the sexual chemistry may be lacking.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
@@ -4086,6 +4142,21 @@ namespace K9.Globalisation {
         public static string main_88 {
             get {
                 return ResourceManager.GetString("main_88", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is potentially a very harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for good sexual chemistry and for personal growth. Conflict is less likely in this combination.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a Core Earth Energy. Core Earth Energies are typically stable, reliable, supportive and practical.
+        ///
+        ///    {Person2Proper} is a Fire Energy. Fires, on the other hand, are quite free-spirited and  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_89 {
+            get {
+                return ResourceManager.GetString("main_89", resourceCulture);
             }
         }
         

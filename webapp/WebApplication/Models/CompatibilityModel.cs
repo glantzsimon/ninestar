@@ -596,10 +596,10 @@ namespace K9.WebApplication.Models
                             return Globalisation.Dictionary.main_67;
 
                         case ENineStarKiEnergy.Mountain:
-                            break;
+                            return Globalisation.Dictionary.main_68;
 
                         case ENineStarKiEnergy.Fire:
-                            break;
+                            return Globalisation.Dictionary.main_69;
                     }
                     break;
 
@@ -628,10 +628,10 @@ namespace K9.WebApplication.Models
                             return Globalisation.Dictionary.main_77;
 
                         case ENineStarKiEnergy.Mountain:
-                            break;
+                            return Globalisation.Dictionary.main_78;
 
                         case ENineStarKiEnergy.Fire:
-                            break;
+                            return Globalisation.Dictionary.main_79;
                     }
                     break;
 
@@ -654,16 +654,16 @@ namespace K9.WebApplication.Models
                             return Globalisation.Dictionary.main_58;
 
                         case ENineStarKiEnergy.Heaven:
-                            break;
+                            return Globalisation.Dictionary.main_68;
 
                         case ENineStarKiEnergy.Lake:
-                            break;
+                            return Globalisation.Dictionary.main_78;
 
                         case ENineStarKiEnergy.Mountain:
                             return Globalisation.Dictionary.main_88;
 
                         case ENineStarKiEnergy.Fire:
-                            break;
+                            return Globalisation.Dictionary.main_89;
                     }
                     break;
 
@@ -686,13 +686,13 @@ namespace K9.WebApplication.Models
                             return Globalisation.Dictionary.main_59;
 
                         case ENineStarKiEnergy.Heaven:
-                            break;
+                            return Globalisation.Dictionary.main_69;
 
                         case ENineStarKiEnergy.Lake:
-                            break;
+                            return Globalisation.Dictionary.main_79;
 
                         case ENineStarKiEnergy.Mountain:
-                            break;
+                            return Globalisation.Dictionary.main_89;
 
                         case ENineStarKiEnergy.Fire:
                             return Globalisation.Dictionary.main_99;
@@ -700,7 +700,7 @@ namespace K9.WebApplication.Models
                     break;
             }
 
-            return string.Empty;
+            return Globalisation.Dictionary.ComingSoon;
         }
 
         private string GetCharacterEnergiesCompatibilityDetails()

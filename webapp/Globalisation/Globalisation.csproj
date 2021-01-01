@@ -176,6 +176,7 @@
     <Content Include="Compatibility\en-gb\main-15.htm" />
     <Content Include="Compatibility\en-gb\main-14.htm" />
     <Content Include="Compatibility\en-gb\main-13.htm" />
+    <Content Include="Compatibility\en-gb\main-89.htm" />
     <Content Include="Compatibility\en-gb\main-59.htm" />
     <Content Include="Compatibility\en-gb\main-58.htm" />
     <Content Include="Compatibility\en-gb\main-57.htm" />
@@ -201,8 +202,11 @@
     <Content Include="Compatibility\en-gb\main-34.htm" />
     <Content Include="Compatibility\en-gb\main-45.htm" />
     <Content Include="Compatibility\en-gb\main-56.htm" />
+    <Content Include="Compatibility\en-gb\main-79.htm" />
+    <Content Include="Compatibility\en-gb\main-69.htm" />
     <Content Include="Compatibility\en-gb\main-68.htm" />
     <Content Include="Compatibility\en-gb\main-67.htm" />
+    <Content Include="Compatibility\en-gb\main-78.htm" />
     <Content Include="Compatibility\en-gb\main-modality-different.htm" />
     <Content Include="Compatibility\en-gb\element-supportive.htm" />
     <Content Include="Compatibility\en-gb\element-same.htm" />

@@ -293,7 +293,7 @@ namespace K9.WebApplication.Services
                 };
 
                 _userCreditPacksRepository.Create(userCreditPack);
-                userCreditPack.User = _usersRepository.Find(_authentication.CurrentUserId)
+                userCreditPack.User = _usersRepository.Find(_authentication.CurrentUserId);
 
                 var contact = _contactService.Find(paymentModel.ContactId);
 

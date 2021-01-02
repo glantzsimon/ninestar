@@ -13,7 +13,7 @@
 
         @Html.Partial("_MembershipOption")
 
-        @Html.Hidden("Id", Model.MembershipOption.Id)
+        @Html.HiddenFor(model => model.MembershipOption.Id)
         
         <hr />
         @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)

@@ -1,46 +1,18 @@
-﻿@using K9.SharedLibrary.Extensions
-@model K9.WebApplication.Models.StripeModel
+﻿@using K9.WebApplication.Options
+@model K9.WebApplication.Models.MembershipModel
 @{
     ViewBag.Title = Dictionary.MembershipOptions;
     Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
 
-@using (Html.BeginForm("SwitchPurchaseProcess", "Membership", FormMethod.Post))
-{
-    using (Html.BeginBootstrapForm())
-    {
-        @Html.BootstrapDisplayFor(model => model.Description)
-        if (Model.SubscriptionDiscount > 0)
-        {
-            @Html.BootstrapDisplayFor(model => model.SubscriptionAmount)
-            @Html.BootstrapDisplayFor(model => model.SubscriptionDiscount)
-            <hr />
-            @Html.BootstrapDisplayFor(model => model.SubscriptionNetAmount)
-        }
-        else
-        {
-            @Html.BootstrapDisplayFor(model => model.SubscriptionAmount)
-        }
-
-        @Html.HiddenFor(model => model.MembershipOptionId)
-        @Html.HiddenFor(model => model.LocalisedCurrencyThreeLetters)
-        @Html.HiddenFor(model => model.SubscriptionNetAmount)
-        @Html.HiddenFor(model => model.Description)
-        <hr />
-
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                data-key="@Model.PublishableKey"
-                data-amount="@Model.SubscriptionAmountInCents"
-                data-name="@Dictionary.NineStar"
-                data-description="@Model.Description"
-                data-billing-address="true"
-                data-image="@Url.AbsoluteContent("~/Images/icons/logo-small.png")"
-                data-locale="@Model.Locale"
-                data-zip-code="false"
-                data-currency="@Model.LocalisedCurrencyThreeLetters">
-        </script>
-
-        <hr />
-        @Html.BootstrapActionLinkButton(Dictionary.Back, "SwitchStart", "Membership", new { id = Model.MembershipOptionId }, "fa-chevron-left")
-    }
-}
+@Html.Partial("_PaymentsForm", new PaymentsOptions(
+    Model.MembershipOption.Id,
+    0,
+    Model.SubscriptionPrice,
+    Model.MembershipOption.Description,
+    "",
+    "PurchaseStart", "Membership",
+    Url.Action("PurchaseSuccess"),
+    Url.Action("Index", "Error"),
+    Url.Action("ProcessPurchase", "Membership", new { id = Model.MembershipOption.Id })
+))

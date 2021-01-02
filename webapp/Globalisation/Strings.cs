@@ -7,12 +7,14 @@
             public const string DonationAmountLabel = "DonationAmountLabel";
             public const string CompanyLabel = "CompanyLabel";
             public const string AmountDonatedLabel = "AmountDonatedLabel";
+            public const string AmountLabel = "AmountLabel";
             public const string NumberOfCreditsLabel = "NumberOfCreditsLabel";
             public const string CreditsPurchaseAmountLabel = "CreditsPurchaseAmountLabel";
             public const string TotalPriceLabel = "TotalPriceLabel";
             public const string CreditsTotalAmountLabel = "CreditsTotalAmountLabel";
             public const string StatusLabel = "StatusLabel";
             public const string AmountToDonateLabel = "AmountToDonateLabel";
+            public const string AmountToPayLabel = "AmountToPayLabel";
             public const string CustomerLabel = "CustomerLabel";
             public const string DonatedOnLabel = "DonatedOnLabel";
             public const string CurrencyLabel = "CurrencyLabel";
@@ -46,6 +48,7 @@
             public const string MembershipLabel = "MembershipLabel";
             public const string SubscriptionCostLabel = "SubscriptionCostLabel";
             public const string SubscriptionDiscountLabel = "SubscriptionDiscountLabel";
+            public const string SubscriptionDiscountedPriceLabel = "SubscriptionDiscountedPriceLabel";
             public const string SubscriptionDetailsLabel = "SubscriptionDetailsLabel";
             public const string StartsOnLabel = "StartsOnLabel";
             public const string EndsOnLabel = "EndsOnLabel";

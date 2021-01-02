@@ -7,6 +7,6 @@ namespace K9.WebApplication.Services
     {
         void CreateDonation(Donation donation, Contact contact);
         int GetFundsReceivedToDate();
-        StripeModel GetDonationStripeModel();
+        StripeModel GetDonationStripeModel(double amount, string successUrl, string cancelUrl);
     }
 }

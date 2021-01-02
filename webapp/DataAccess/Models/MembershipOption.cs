@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using K9.Base.DataAccessLayer.Attributes;
+﻿using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.DataAccessLayer.Extensions;
 using K9.Base.DataAccessLayer.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Authentication;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
 using System.Linq;
-using System.Threading;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -52,6 +50,11 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubscriptionCostLabel)]
         [DataType(DataType.Currency)]
         public double Price { get; set; }
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubscriptionCostLabel)]
+        [DataType(DataType.Currency)]
+        public double PriceIncludingDiscount { get; set; }
 
         [Required]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MaxNumberOfProfileReadingsLabel)]

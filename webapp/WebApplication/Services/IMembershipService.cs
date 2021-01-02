@@ -15,15 +15,15 @@ namespace K9.WebApplication.Services
         MembershipModel GetSwitchMembershipModelBySubscriptionType(MembershipOption.ESubscriptionType subscriptionType);
         MembershipModel GetPurchaseMembershipModelBySubscriptionType(MembershipOption.ESubscriptionType subscriptionType);
         void CreateFreeMembership(int userId);
-        StripeModel GetPurchaseStripeModel(int membershipOptionId);
-        StripeModel GetPurchaseCreditsStripeModel(PurchaseCreditsViewModel model);
-        void ProcessPurchase(StripeModel model);
-        void ProcessCreditsPurchase(StripeModel model);
+        void ProcessPurchase(PaymentModel paymentModel);
+        void ProcessCreditsPurchase(PaymentModel paymentModel);
+      
         /// <summary>
         /// Switch memberships without processing payment (downgrade or scheduled switch)
         /// </summary>
         /// <param name="membershipOptionId"></param>
         void ProcessSwitch(int membershipOptionId);
+       
         List<UserMembership> GetActiveUserMemberships(int? userId = null, bool includeScheduled = false);
         UserMembership GetActiveUserMembership(int? userId = null);
         UserMembership GetScheduledSwitchUserMembership(int? userId = null);

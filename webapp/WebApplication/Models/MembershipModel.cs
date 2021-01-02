@@ -10,6 +10,11 @@ namespace K9.WebApplication.Models
             MembershipOption = membershipOption;
             ActiveUserMembership = activeUserMembership;
             UserId = userId;
+
+            if (MembershipOption != null)
+            {
+                MembershipOption.PriceIncludingDiscount = MembershipOption.Price - (ActiveUserMembership?.CostOfRemainingActiveSubscription ?? 0);
+            }
         }
 
         public MembershipOption MembershipOption { get; }
@@ -19,8 +24,8 @@ namespace K9.WebApplication.Models
         public bool IsSelectable { get; set; }
         public bool IsSubscribed { get; set; }
 
-        public UserMembership NewMembership => GetNewMembership();
-
+        public double SubscriptionPrice => MembershipOption.PriceIncludingDiscount;
+            
         public string MembershipDisplayCssClass => IsSelected ? "membership-selected" : IsUpgrade ? "membership-upgrade" : "";
 
         public string MembershipHoverCssClass => IsSelected ? "" : "shadow-hover";
@@ -42,7 +47,7 @@ namespace K9.WebApplication.Models
         private UserMembership GetNewMembership()
         {
             if (IsExtendedSwitch)
-            {   
+            {
                 return new UserMembership
                 {
                     UserId = UserId,

@@ -6,16 +6,17 @@ using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
-using K9.WebApplication.Config;
 using K9.WebApplication.Models;
 using K9.WebApplication.Services.Stripe;
 using K9.WebApplication.ViewModels;
 using NLog;
+using Stripe;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using StripeConfiguration = K9.WebApplication.Config.StripeConfiguration;
 
 namespace K9.WebApplication.Services
 {
@@ -211,13 +212,13 @@ namespace K9.WebApplication.Services
                 throw new Exception(Dictionary.PurchaseMembershipErrorAlreadySubscribed);
             }
 
+            var membershipOption = _membershipOptionRepository.Find(membershipOptionId);
             var userMemberships = GetActiveUserMemberships();
-            if (userMemberships.Any())
+            if (userMemberships.Any(e => !e.MembershipOption.CanUpgradeTo(membershipOption)))
             {
                 throw new Exception(Dictionary.PurchaseMembershipErrorAlreadySubscribedToAnother);
             }
-
-            var membershipOption = _membershipOptionRepository.Find(membershipOptionId);
+            
             return new MembershipModel(_authentication.CurrentUserId, membershipOption)
             {
                 IsSelected = true
@@ -235,69 +236,34 @@ namespace K9.WebApplication.Services
             var membershipOption = _membershipOptionRepository.Find(e => e.SubscriptionType == subscriptionType).FirstOrDefault();
             return GetPurchaseMembershipModel(membershipOption?.Id ?? 0);
         }
-
-        public StripeModel GetPurchaseStripeModel(int membershipOptionId)
-        {
-            var membershipOption = _membershipOptionRepository.Find(membershipOptionId);
-            if (membershipOption == null)
-            {
-                _logger.Error($"MembershipService => GetPurchaseStripeModel => No MembershipOption with id {membershipOptionId} was found.");
-                throw new IndexOutOfRangeException();
-            }
-
-            return new StripeModel
-            {
-                SubscriptionAmount = membershipOption.Price,
-                SubscriptionDiscount = GetCostOfRemainingActiveSubscription(),
-                Description = membershipOption.SubscriptionTypeNameLocal,
-                MembershipOptionId = membershipOptionId,
-                PublishableKey = _stripeConfig.PublishableKey,
-                LocalisedCurrencyThreeLetters = StripeModel.GetSystemCurrencyCode()
-            };
-        }
-
-        public StripeModel GetPurchaseCreditsStripeModel(PurchaseCreditsViewModel model)
-        {
-            if (model.NumberOfCredits == 0)
-            {
-                _logger.Error($"MembershipService => GetPurchaseCreditsStripeModel => No credits were selected.");
-                throw new IndexOutOfRangeException("Number of credits to purchase number be greater than zero.");
-            }
-
-            return new StripeModel
-            {
-                TotalNumberOfCreditsToPurchase = model.NumberOfCredits,
-                CreditsPurchaseAmount = model.TotalPrice,
-                Description = Dictionary.CreditsPurchaseDescription,
-                PublishableKey = _stripeConfig.PublishableKey,
-                LocalisedCurrencyThreeLetters = StripeModel.GetSystemCurrencyCode()
-            };
-        }
-
-        public void ProcessPurchase(StripeModel model)
+        
+        public void ProcessPurchase(PaymentModel paymentModel)
         {
             try
             {
-                var membershipOption = _membershipOptionRepository.Find(model.MembershipOptionId);
+                var membershipOptionId = paymentModel.ItemId;
+                var membershipOption = _membershipOptionRepository.Find(membershipOptionId);
                 if (membershipOption == null)
                 {
-                    _logger.Error($"MembershipService => ProcessPurchase => No MembershipOption with id {model.MembershipOptionId} was found.");
+                    _logger.Error($"MembershipService => ProcessPurchase => No MembershipOption with id {membershipOptionId} was found.");
                     throw new IndexOutOfRangeException("Invalid MembershipOptionId");
                 }
 
-                var result = _stripeService.Charge(model);
                 var userMembership = new UserMembership
                 {
                     UserId = _authentication.CurrentUserId,
-                    MembershipOptionId = model.MembershipOptionId,
+                    MembershipOptionId = membershipOptionId,
                     StartsOn = DateTime.Today,
                     EndsOn = membershipOption.IsAnnual ? DateTime.Today.AddYears(1) : DateTime.Today.AddMonths(1),
                     IsAutoRenew = true,
                     User = _usersRepository.Find(_authentication.CurrentUserId)
                 };
                 _userMembershipRepository.Create(userMembership);
-                TerminateExistingMemberships(model.MembershipOptionId);
-                var contact = _contactService.GetOrCreateContact(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
+                
+                TerminateExistingMemberships(membershipOptionId);
+
+                var contact = _contactService.Find(paymentModel.ContactId);
+                
                 SendEmailToNineStar(userMembership);
                 SendEmailToCustomer(userMembership, contact);
             }
@@ -308,20 +274,27 @@ namespace K9.WebApplication.Services
             }
         }
 
-        public void ProcessCreditsPurchase(StripeModel model)
+        public void ProcessCreditsPurchase(PaymentModel paymentModel)
         {
             try
             {
-                var result = _stripeService.Charge(model);
+                var numberOfCredits = paymentModel.Quantity;
+                var creditsModel = new PurchaseCreditsViewModel
+                {
+                    NumberOfCredits = numberOfCredits
+                };
+
                 var userCreditPack = new UserCreditPack
                 {
                     UserId = _authentication.CurrentUserId,
-                    NumberOfCredits = model.TotalNumberOfCreditsToPurchase,
-                    TotalPrice = model.CreditsPurchaseAmount,
+                    NumberOfCredits = numberOfCredits,
+                    TotalPrice = creditsModel.TotalPrice,
                     User = _usersRepository.Find(_authentication.CurrentUserId)
                 };
                 _userCreditPacksRepository.Create(userCreditPack);
-                var contact = _contactService.GetOrCreateContact(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
+
+                var contact = _contactService.Find(paymentModel.ContactId);
+                
                 SendEmailToNineStar(userCreditPack);
                 SendEmailToCustomer(userCreditPack, contact);
             }
@@ -539,12 +512,6 @@ namespace K9.WebApplication.Services
                 }), userCreditPack.User.EmailAddress, userCreditPack.User.FirstName, _config.SupportEmailAddress,
                     _config.CompanyName);
             }
-        }
-
-        private double GetCostOfRemainingActiveSubscription()
-        {
-            var activeUserMembership = GetActiveUserMembership();
-            return activeUserMembership?.CostOfRemainingActiveSubscription ?? 0;
         }
 
     }

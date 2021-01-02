@@ -17,7 +17,7 @@
 
         <p>@Dictionary.MembershipRunsUntil @Model.ActiveUserMembership.EndsOn.ToLongDateString()</p>
 
-        <p>@Dictionary.NoChargeUntilText @Model.NewMembership.StartsOn.ToLongDateString()</p>
+        <p>@Dictionary.NoChargeUntilText @Model.ActiveUserMembership.EndsOn.AddDays(1).ToLongDateString()</p>
 
         @Html.BootstrapButton(buttonText, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
 

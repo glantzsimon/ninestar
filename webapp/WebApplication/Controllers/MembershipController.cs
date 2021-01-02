@@ -1,26 +1,25 @@
 ﻿using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
-using K9.WebApplication.Config;
 using K9.WebApplication.Models;
 using K9.WebApplication.Services;
+using K9.WebApplication.ViewModels;
 using NLog;
 using System;
 using System.Web.Mvc;
-using K9.WebApplication.ViewModels;
 
 namespace K9.WebApplication.Controllers
 {
     [Authorize]
     public class MembershipController : BaseNineStarKiController
     {
+        private readonly ILogger _logger;
         private readonly IMembershipService _membershipService;
-        private readonly StripeConfiguration _stripeConfig;
 
-        public MembershipController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IOptions<StripeConfiguration> stripeConfig)
+        public MembershipController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
+            _logger = logger;
             _membershipService = membershipService;
-            _stripeConfig = stripeConfig.Value;
         }
 
         public ActionResult Index()
@@ -29,40 +28,28 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("membership/signup")]
-        public ActionResult PurchaseStart(int id)
+        public ActionResult PurchaseStart(int membershipOptionId)
         {
-            return View(_membershipService.GetPurchaseMembershipModel(id));
-        }
-
-        [Route("membership/signup/review")]
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Purchase(int id)
-        {
-            return View(_membershipService.GetPurchaseStripeModel(id));
+            return View(_membershipService.GetPurchaseMembershipModel(membershipOptionId));
         }
 
         [HttpPost]
-        [Route("membership/signup/processing")]
-        [ValidateAntiForgeryToken]
-        public ActionResult PurchaseProcess(StripeModel model)
+        public ActionResult ProcessPurchase(PaymentModel paymentModel)
         {
             try
             {
-                model.PublishableKey = _stripeConfig.PublishableKey;
-                _membershipService.ProcessPurchase(model);
-                return RedirectToAction("PurchaseSuccess");
+                _membershipService.ProcessPurchase(paymentModel);
+                return Json(new { success = true });
             }
             catch (Exception ex)
             {
-                ModelState.AddModelError("", ex.Message);
+                _logger.Error($"MembershipController => ProcessPurchase => Error: {ex.Message}");
+                return Json(new { success = false, error = ex.Message });
             }
-
-            return View("Purchase", model);
         }
 
         [Route("membership/signup/success")]
-        public ActionResult PurchaseSuccess()
+        public ActionResult PurchaseSuccess(int membershipOptionId, string sessionId)
         {
             return View();
         }
@@ -78,38 +65,40 @@ namespace K9.WebApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult PurchaseCredits(PurchaseCreditsViewModel model)
         {
-            return View(_membershipService.GetPurchaseCreditsStripeModel(model));
+            return View(model);
+        }
+
+        [Route("membership/signup/cancel/success")]
+        public ActionResult PurchaseCancelSuccess()
+        {
+            return View();
         }
 
         [HttpPost]
-        [Route("membership/purchase-credits/processing")]
-        [ValidateAntiForgeryToken]
-        public ActionResult PurchaseCreditsProcess(StripeModel model)
+        public ActionResult ProcessPurchaseCredits(PaymentModel paymentModel)
         {
             try
             {
-                model.PublishableKey = _stripeConfig.PublishableKey;
-                _membershipService.ProcessCreditsPurchase(model);
-                return RedirectToAction("PurchaseCreditsSuccess");
+                _membershipService.ProcessPurchase(paymentModel);
+                return Json(new { success = true });
             }
             catch (Exception ex)
             {
-                ModelState.AddModelError("", ex.Message);
+                _logger.Error($"MembershipController => ProcessPurchase => Error: {ex.Message}");
+                return Json(new { success = false, error = ex.Message });
             }
-
-            return View("PurchaseCredits", model);
         }
 
         [Route("membership/purchase-credits/success")]
-        public ActionResult PurchaseCreditsSuccess()
+        public ActionResult PurchaseCreditsSuccess(int numberOfCredits, string sessionId)
         {
             return View();
         }
 
         [Route("membership/switch")]
-        public ActionResult SwitchStart(int id)
+        public ActionResult SwitchStart(int membershipOptionId)
         {
-            var switchMembershipModel = _membershipService.GetSwitchMembershipModel(id);
+            var switchMembershipModel = _membershipService.GetSwitchMembershipModel(membershipOptionId);
             ViewBag.SubTitle = switchMembershipModel.IsUpgrade
                 ? Globalisation.Dictionary.UpgradeMembership
                 : Globalisation.Dictionary.ChangeMembership;
@@ -124,22 +113,22 @@ namespace K9.WebApplication.Controllers
         [Route("membership/switch/review")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SwitchPurchase(int id)
+        public ActionResult SwitchPurchase(int membershipOptionId)
         {
-            var switchMembershipModel = _membershipService.GetSwitchMembershipModel(id);
+            var switchMembershipModel = _membershipService.GetSwitchMembershipModel(membershipOptionId);
             ViewBag.SubTitle = switchMembershipModel.IsUpgrade
                 ? Globalisation.Dictionary.UpgradeMembership
                 : Globalisation.Dictionary.ChangeMembership;
 
-            return View(_membershipService.GetPurchaseStripeModel(id));
+            return View(switchMembershipModel);
         }
 
         [Route("membership/switch/schedule")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SwitchSchedule(int id)
+        public ActionResult SwitchSchedule(int membershipOptionId)
         {
-            var switchMembershipModel = _membershipService.GetSwitchMembershipModel(id);
+            var switchMembershipModel = _membershipService.GetSwitchMembershipModel(membershipOptionId);
             ViewBag.SubTitle = switchMembershipModel.IsUpgrade
                 ? Globalisation.Dictionary.UpgradeMembership
                 : Globalisation.Dictionary.ChangeMembership;
@@ -150,11 +139,10 @@ namespace K9.WebApplication.Controllers
         [HttpPost]
         [Route("membership/switch/processing")]
         [ValidateAntiForgeryToken]
-        public ActionResult SwitchPurchaseProcess(StripeModel model)
+        public ActionResult SwitchPurchaseProcess(PaymentModel model)
         {
             try
             {
-                model.PublishableKey = _stripeConfig.PublishableKey;
                 _membershipService.ProcessPurchase(model);
                 return RedirectToAction("SwitchSuccess");
             }
@@ -163,17 +151,17 @@ namespace K9.WebApplication.Controllers
                 ModelState.AddModelError("", ex.Message);
             }
 
-            return View("SwitchPurchase", model);
+            return View("SwitchPurchase", _membershipService.GetSwitchMembershipModel(model.ItemId));
         }
 
         [HttpPost]
         [Route("membership/switch/free/processing")]
         [ValidateAntiForgeryToken]
-        public ActionResult SwitchScheduleProcess(int id)
+        public ActionResult SwitchScheduleProcess(int membershipOptionId)
         {
             try
             {
-                _membershipService.ProcessSwitch(id);
+                _membershipService.ProcessSwitch(membershipOptionId);
                 return RedirectToAction("SwitchSuccess");
             }
             catch (Exception ex)
@@ -181,7 +169,7 @@ namespace K9.WebApplication.Controllers
                 ModelState.AddModelError("", ex.Message);
             }
 
-            return View("SwitchFree", _membershipService.GetSwitchMembershipModel(id));
+            return View("SwitchFree", _membershipService.GetSwitchMembershipModel(membershipOptionId));
         }
 
         [Route("membership/switch/success")]

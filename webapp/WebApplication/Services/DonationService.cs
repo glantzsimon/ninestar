@@ -34,14 +34,15 @@ namespace K9.WebApplication.Services
             _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }
 
-        public StripeModel GetDonationStripeModel()
+        public StripeModel GetDonationStripeModel(double amount, string successUrl, string cancelUrl)
         {
             return new StripeModel
             {
-                DonationAmount = 10,
+                Amount = amount,
                 LocalisedCurrencyThreeLetters = StripeModel.GetSystemCurrencyCode(),
-                PublishableKey = _stripeConfig.PublishableKey,
-                Description = Dictionary.DonationToNineStar
+                Description = Dictionary.DonationToNineStar,
+                SuccessUrl = successUrl,
+                CancelUrl = cancelUrl
             };
         }
 

@@ -1,14 +1,15 @@
-﻿using K9.DataAccessLayer.Models;
-using K9.WebApplication.Models;
+﻿using K9.WebApplication.Models;
 using Stripe;
-using System.Collections.Generic;
+using Stripe.Checkout;
 
 namespace K9.WebApplication.Services.Stripe
 {
     public interface IStripeService
     {
-        StripeChargeResultModel Charge(StripeModel model);
-        List<StripeCharge> GetCharges();
-        List<Donation> GetDonations();
+        Session CreateSession(StripeModel model);
+        Customer GetCustomer(string sessionId);
+        PaymentIntent GetPaymentIntent(string sessionId);
+        PaymentIntent GetPaymentIntent(StripeModel model);
+        PaymentIntent GetPaymentIntentById(string id);
     }
 }

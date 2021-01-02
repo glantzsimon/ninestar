@@ -8,14 +8,20 @@ namespace K9.WebApplication.Controllers
 {
     public class ErrorController : BaseNineStarKiController
 	{
+	    private readonly ILogger _logger;
 
 	    public ErrorController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService)
 	        : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
 	    {
+	        _logger = logger;
 	    }
 
-        public ActionResult Index()
+        public ActionResult Index(string errorMessage = "")
         {
+            if (!string.IsNullOrEmpty(errorMessage))
+            {
+                _logger.Error(errorMessage);
+            }
         	return View("FriendlyError");
 		}
 

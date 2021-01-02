@@ -16,7 +16,7 @@
 
     using (Html.BeginBootstrapForm())
     {
-        @Html.Hidden("Id", Model.MembershipOption.Id)
+        @Html.Hidden("MembershipOptionId", Model.MembershipOption.Id)
         @Html.BootstrapButton(buttonText, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
 
         <hr />

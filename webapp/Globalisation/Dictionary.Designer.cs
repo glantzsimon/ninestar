@@ -1357,11 +1357,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Amount.
+        /// </summary>
+        public static string AmountLabel {
+            get {
+                return ResourceManager.GetString("AmountLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You would like to donate:.
         /// </summary>
         public static string AmountToDonateLabel {
             get {
                 return ResourceManager.GetString("AmountToDonateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amount to Pay.
+        /// </summary>
+        public static string AmountToPayLabel {
+            get {
+                return ResourceManager.GetString("AmountToPayLabel", resourceCulture);
             }
         }
         
@@ -1452,6 +1470,15 @@ namespace K9.Globalisation {
         public static string Calculator {
             get {
                 return ResourceManager.GetString("Calculator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Card Details.
+        /// </summary>
+        public static string CardDetails {
+            get {
+                return ResourceManager.GetString("CardDetails", resourceCulture);
             }
         }
         
@@ -1597,6 +1624,15 @@ namespace K9.Globalisation {
         public static string CharacterLabel {
             get {
                 return ResourceManager.GetString("CharacterLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Checkout.
+        /// </summary>
+        public static string Checkout {
+            get {
+                return ResourceManager.GetString("Checkout", resourceCulture);
             }
         }
         
@@ -2232,6 +2268,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Donation Cancelled.
+        /// </summary>
+        public static string DonationCancelled {
+            get {
+                return ResourceManager.GetString("DonationCancelled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your donation was successfully cancelled..
+        /// </summary>
+        public static string DonationCancelSuccessful {
+            get {
+                return ResourceManager.GetString("DonationCancelSuccessful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
         ///&lt;html lang=&quot;en&quot;&gt;
         ///
@@ -2533,6 +2587,15 @@ namespace K9.Globalisation {
         public static string EnergyTypeLabel {
             get {
                 return ResourceManager.GetString("EnergyTypeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter your card details.
+        /// </summary>
+        public static string EnterCardDetails {
+            get {
+                return ResourceManager.GetString("EnterCardDetails", resourceCulture);
             }
         }
         
@@ -3531,14 +3594,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;
         ///    This is a very harmonious combination with a potential for a very deep friendship. Howver, the sexual chemistry may be lacking.
+        ///&lt;/h4&gt;
+        ///&lt;h5&gt;
+        ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    Both people share the same Fundamental Energy &quot;Water&quot;. Water is perhaps the most intuitive and empathetic of the 9 Energies and so there is a potential for an extremely deep and intuitive connection between these two people. 
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Water Energy is naturally flexible, easy-going and generally non-confrontational, so this connection is likely to b [rest of string was truncated]&quot;;.
+        ///    Water Energy is naturally flexible, easy-going and generally non-confrontational, so th [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_11 {
             get {
@@ -3547,11 +3613,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;
         ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationship chemistry and for personal growth.
+        ///&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life. {Person2Proper}, on the other hand, is a Soil Energy and is more likely to be structur [rest of string was truncated]&quot;;.
+        ///    {Person1} can help {Person2} to loosen up and be less rigid; to flow more, like Water. This can be immensely helpful to Earth Energies, who sometimes need to be reminded to let their hair down and h [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_12 {
             get {
@@ -3560,13 +3630,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;
         ///    This is potentially quite an exciting and harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person1} supporting {Person2}. There is also potential for good relationship chemistry and for personal growth.
+        ///&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strenghts
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life. 
         ///    
-        ///    {Person2Proper} is a Thunder Energy. Thunders often share the flexible, free-spirit [rest of string was truncated]&quot;;.
+        ///    {Person2Proper} is a Thunder Energy. Thunders often s [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_13 {
             get {
@@ -4150,9 +4224,9 @@ namespace K9.Globalisation {
         ///    This is potentially a very harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for good sexual chemistry and for personal growth. Conflict is less likely in this combination.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a Core Earth Energy. Core Earth Energies are typically stable, reliable, supportive and practical.
+        ///    {Person1Proper} is a Mountain Energy. Mountain Energies are typically stable, reliable, supportive and practical.
         ///
-        ///    {Person2Proper} is a Fire Energy. Fires, on the other hand, are quite free-spirited and  [rest of string was truncated]&quot;;.
+        ///    {Person2Proper} is a Fire Energy. Fires, on the other hand, are quite free-spirited and spon [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_89 {
             get {
@@ -5025,6 +5099,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Or enter your payment details.
+        /// </summary>
+        public static string OrEnterYourCardDetails {
+            get {
+                return ResourceManager.GetString("OrEnterYourCardDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    Originating from China, this 4000-year-old system of astrology is possibly the oldest in the world
         ///&lt;/h5&gt;
@@ -5085,6 +5168,24 @@ namespace K9.Globalisation {
         public static string PasswordResetEmail {
             get {
                 return ResourceManager.GetString("PasswordResetEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payment Complete.
+        /// </summary>
+        public static string PaymentCompleted {
+            get {
+                return ResourceManager.GetString("PaymentCompleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pay Now.
+        /// </summary>
+        public static string PayNow {
+            get {
+                return ResourceManager.GetString("PayNow", resourceCulture);
             }
         }
         
@@ -5299,6 +5400,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Purchased Cancelled.
+        /// </summary>
+        public static string PurchaseCancelled {
+            get {
+                return ResourceManager.GetString("PurchaseCancelled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your purchase was successfully cancelled..
+        /// </summary>
+        public static string PurchaseCancelSuccessful {
+            get {
+                return ResourceManager.GetString("PurchaseCancelSuccessful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Purchase Credits.
         /// </summary>
         public static string PurchaseCredits {
@@ -5462,7 +5581,7 @@ namespace K9.Globalisation {
         ///    High
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Many of the elements, energetic &quot;gender&quot; (Yin / Yang) and modality are opposing one another, which typically results in quite a lot of magnetism and chemistry. Generally speaking, this type of connection is quite magnetic with good chemistry and could lead to an exciting romantic relationship with plenty of opportunity for personal growth.
+        ///    There are many energetic aspects of this relationships that are opposing one another, which typically results in quite a lot of magnetism and chemistry. Generally speaking, this type of connection is quite magnetic with good chemistry and could lead to an exciting romantic relationship with plenty of opportunity for personal growth.
         ///&lt;/p&gt;.
         /// </summary>
         public static string sexual_chemistry_high {
@@ -5476,7 +5595,7 @@ namespace K9.Globalisation {
         ///    Low
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It is unlikely for there the sexual chemistry to be very strong between these two individuals or, if there is chemistry, it could end up being fairly short-lived. However, there are exceptions to the rule. The elements, energetic &quot;gender&quot; (Yin / Yang) and modality are largely the same or in a supportive transformation. This typically results in relatievly low magnetism. However, there are some key differences between {Person1} and {Person2}, which increase the likelihood of ch [rest of string was truncated]&quot;;.
+        ///    It is unlikely for there the sexual chemistry to be very strong between these two individuals or, if there is chemistry, it could end up being fairly short-lived. However, there are exceptions to the rule. Many of the energetic aspects of this combination are the same. This typically results in relatievly low magnetism. However, there are some key differences between {Person1} and {Person2}, which increase the likelihood of chemistry. Generally speaking, this type of connectio [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexual_chemistry_low {
             get {
@@ -5531,7 +5650,7 @@ namespace K9.Globalisation {
         ///    Practically Nonexistent
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It is extremely unlikely for there to be any significant sexual chemistry between these two individuals or if there is, it is likely to be very short-lived. However, there are exceptions to the rule. The elements, energetic &quot;gender&quot; (Yin / Yang) and modality are identical for both the Fundamental and Character Energies, resulting in very little magnetism. This type of connection is far more likely to be a deep and long-lasting friendship.
+        ///    It is extremely unlikely for there to be any significant sexual chemistry between these two individuals or if there is, it is likely to be very short-lived. However, there are exceptions to the rule. Almost all of the energetic aspects of this relationship are identical for both the Fundamental and Character Energies, resulting in very little magnetism. This type of connection is far more likely to be a deep and long-lasting friendship.
         ///&lt;/p&gt;.
         /// </summary>
         public static string sexual_chemistry_nonexistant {
@@ -5559,7 +5678,7 @@ namespace K9.Globalisation {
         ///    Very High
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It is likely for the sexual chemistry to be very strong between these two individuals. The elements, energetic &quot;gender&quot; (Yin / Yang) and modality are largely opposing one another, which typically results in significant magnetism and chemistry. Whilst it could lead to a very exciting romantic relationship, it is also likely to result in a turbulent roller-coaster ride at times.
+        ///    It is likely for the sexual chemistry to be very strong between these two individuals. The various energetic elements of this combination are largely opposing one another, which typically results in significant magnetism and chemistry. Whilst it could lead to a very exciting romantic relationship, it is also likely to result in a turbulent roller-coaster ride at times.
         ///&lt;/p&gt;.
         /// </summary>
         public static string sexual_chemistry_veryhigh {
@@ -5573,7 +5692,8 @@ namespace K9.Globalisation {
         ///    Very Low
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It is highly unlikely for there to be any significant sexual chemistry between these two individuals or if there is, it is likely to be short-lived. This is a very harmonious combination in which the elements, energetic &quot;gender&quot; (Yin / Yang) and modality are almost the same for both the Fundamental and Character Energies, which results in little to any magnetism. This type of connection is far more likely to be a deep and long-lasting friendship; however, there are except [rest of string was truncated]&quot;;.
+        ///    It is highly unlikely for there to be any significant sexual chemistry between these two individuals or if there is, it is likely to be short-lived. This is a very harmonious combination in which many of the energetic elements are the same for both the Fundamental and Character Energies, which results in little to any magnetism. This type of connection is far more likely to be a deep and long-lasting friendship; however, there are exceptions to the rule.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string sexual_chemistry_verylow {
             get {
@@ -6189,6 +6309,15 @@ namespace K9.Globalisation {
         public static string SubscriptionDetailsLabel {
             get {
                 return ResourceManager.GetString("SubscriptionDetailsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subscription Discounted Price.
+        /// </summary>
+        public static string SubscriptionDiscountedPriceLabel {
+            get {
+                return ResourceManager.GetString("SubscriptionDiscountedPriceLabel", resourceCulture);
             }
         }
         

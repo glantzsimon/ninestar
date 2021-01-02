@@ -4,15 +4,18 @@
 
 .powered-by-stripe {
     width: 100%;
-    height: 80px;
-    background-image: url(../../../images/shared/powered-by-stripe.png);
+    height: 100px;
+    padding: 5px;
+    border-radius: 5px;
+    background-image: url(../../../images/shared/powered-by-stripe-cards.png);
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
     background-size: contain;
-    margin-bottom: 15px;
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 
 .security-info {
-    font-size: 0.9em;
+    font-size: 0.8em;
 }

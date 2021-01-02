@@ -1,86 +1,85 @@
-﻿using K9.DataAccessLayer.Models;
-using K9.SharedLibrary.Models;
+﻿using K9.SharedLibrary.Models;
 using K9.WebApplication.Models;
 using Stripe;
+using Stripe.Checkout;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace K9.WebApplication.Services.Stripe
 {
     public class StripeService : IStripeService
     {
-        private readonly Config.StripeConfiguration _stripeConfig;
-
         public StripeService(IOptions<Config.StripeConfiguration> stripeConfig)
         {
-            _stripeConfig = stripeConfig.Value;
+            var stripeConfig1 = stripeConfig.Value;
+            StripeConfiguration.ApiKey = stripeConfig1.SecretKey;
         }
 
-        public StripeChargeResultModel Charge(StripeModel model)
+        public Session CreateSession(StripeModel model)
         {
-            var customers = new StripeCustomerService();
-            var charges = new StripeChargeService();
-
-            var customer = customers.Create(new StripeCustomerCreateOptions
+            var options = new SessionCreateOptions
             {
-                Email = model.StripeEmail,
-                SourceToken = model.StripeToken,
-                Description = model.Description
-            });
-
-            // Do not charge for zero amount
-            var charge = model.AmountInCents > 0 ? charges.Create(new StripeChargeCreateOptions
-            {
-                Amount = (int)model.AmountInCents,
-                Description = model.Description,
-                Currency = model.LocalisedCurrencyThreeLetters,
-                CustomerId = customer.Id
-            }) : new StripeCharge();
-
-            return new StripeChargeResultModel(charge, customer);
-        }
-
-        public List<StripeCharge> GetCharges()
-        {
-            StripeConfiguration.SetApiKey(_stripeConfig.SecretKey);
-            var allCharges = new List<StripeCharge>();
-            var stripeCharges = new List<StripeCharge>();
-            var chargeService = new StripeChargeService();
-            var total = 0;
-            var noItemsReturned = false;
-
-            while (total == 0 && !noItemsReturned || stripeCharges.Any())
-            {
-                stripeCharges = chargeService.List(
-                    new StripeChargeListOptions()
-                    {
-                        Limit = 100,
-                        StartingAfter = allCharges.LastOrDefault()?.Id
-                    }
-                ).ToList();
-                allCharges.AddRange(stripeCharges);
-                total += allCharges.Count;
-                noItemsReturned = total == 0;
-            }
-
-            return allCharges.ToList();
-        }
-
-        public List<Donation> GetDonations()
-        {
-            var stripeCharges = GetCharges().ToList();
-            return stripeCharges.Select(c =>
-                new Donation
+                PaymentMethodTypes = new List<string>
                 {
-                    StripeId = c.Id,
-                    Customer = c.Customer?.Description ?? c.Source?.Card?.Name,
-                    Currency = c.Currency.ToUpper(),
-                    CustomerEmail = c.Customer?.Email,
-                    DonationDescription = c.Description + (c.Refunded ? " (refunded)" : ""),
-                    DonatedOn = c.Created,
-                    DonationAmount = (c.Amount / 100) * (c.Refunded ? -1 : 1),
-                    Status = c.Status
-                }).ToList();
+                    "card",
+                },
+                LineItems = new List<SessionLineItemOptions>
+                {
+                    new SessionLineItemOptions
+                    {
+                        PriceData = new SessionLineItemPriceDataOptions
+                        {
+                            UnitAmount = model.AmountAsLong,
+                            Currency = model.LocalisedCurrencyThreeLetters.ToLower(),
+                            ProductData = new SessionLineItemPriceDataProductDataOptions
+                            {
+                                Name = model.Description,
+                            },
+                        },
+                        Quantity = 1,
+                    },
+                },
+                Mode = "payment",
+                SuccessUrl = model.SuccessUrl,
+                CancelUrl = model.CancelUrl
+            };
+            var service = new SessionService();
+            return service.Create(options);
+        }
+
+        public Customer GetCustomer(string sessionId)
+        {
+            var sessionService = new SessionService();
+            Session session = sessionService.Get(sessionId);
+
+            var customerService = new CustomerService();
+            return customerService.Get(session.CustomerId);
+        }
+
+        public PaymentIntent GetPaymentIntent(string sessionId)
+        {
+            var sessionService = new SessionService();
+            Session session = sessionService.Get(sessionId);
+            
+            return session.PaymentIntent;
+        }
+
+        public PaymentIntent GetPaymentIntentById(string id)
+        {
+            var paymentIntentService = new PaymentIntentService();
+            return paymentIntentService.Get(id);
+        }
+
+        public PaymentIntent GetPaymentIntent(StripeModel model)
+        {
+            var options = new PaymentIntentCreateOptions
+            {
+                Amount = model.AmountAsLong,
+                Description = model.Description,
+                Currency = "usd",
+            };
+
+            var service = new PaymentIntentService();
+            return service.Create(options);
         }
     }
 }

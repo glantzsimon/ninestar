@@ -1747,11 +1747,20 @@
   <data name="main_modality_same" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>compatibility\en-gb\main-modality-same.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="AmountLabel" xml:space="preserve">
+    <value>Amount</value>
+  </data>
   <data name="CharacterEnergiesCompatibility" xml:space="preserve">
     <value>Character Energies Compatibility</value>
   </data>
   <data name="CompatibilityDetails" xml:space="preserve">
     <value>Compatibility Details</value>
+  </data>
+  <data name="DonationCancelled" xml:space="preserve">
+    <value>Donation Cancelled</value>
+  </data>
+  <data name="DonationCancelSuccessful" xml:space="preserve">
+    <value>Your donation was successfully cancelled.</value>
   </data>
   <data name="element_challenging" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>compatibility\en-gb\element-challenging.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -1843,6 +1852,15 @@
   <data name="main_89" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>compatibility\en-gb\main-89.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="PayNow" xml:space="preserve">
+    <value>Pay Now</value>
+  </data>
+  <data name="PurchaseCancelled" xml:space="preserve">
+    <value>Purchased Cancelled</value>
+  </data>
+  <data name="PurchaseCancelSuccessful" xml:space="preserve">
+    <value>Your purchase was successfully cancelled.</value>
+  </data>
   <data name="SexualChemistryDetails" xml:space="preserve">
     <value>Sexual Chemistry Details</value>
   </data>
@@ -1872,5 +1890,26 @@
   </data>
   <data name="sexual_chemistry_verylow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>compatibility\en-gb\sexual-chemistry-verylow.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SubscriptionDiscountedPriceLabel" xml:space="preserve">
+    <value>Subscription Discounted Price</value>
+  </data>
+  <data name="AmountToPayLabel" xml:space="preserve">
+    <value>Amount to Pay</value>
+  </data>
+  <data name="CardDetails" xml:space="preserve">
+    <value>Card Details</value>
+  </data>
+  <data name="Checkout" xml:space="preserve">
+    <value>Checkout</value>
+  </data>
+  <data name="EnterCardDetails" xml:space="preserve">
+    <value>Please enter your card details</value>
+  </data>
+  <data name="OrEnterYourCardDetails" xml:space="preserve">
+    <value>Or enter your payment details</value>
+  </data>
+  <data name="PaymentCompleted" xml:space="preserve">
+    <value>Payment Complete</value>
   </data>
 </root>

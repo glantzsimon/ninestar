@@ -113,8 +113,8 @@
     <Reference Include="ServiceStack.Text, Version=3.9.71.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ServiceStack.Text.3.9.71\lib\net35\ServiceStack.Text.dll</HintPath>
     </Reference>
-    <Reference Include="Stripe.net, Version=11.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Stripe.net.11.9.0\lib\net45\Stripe.net.dll</HintPath>
+    <Reference Include="Stripe.net, Version=39.31.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stripe.net.39.31.0\lib\net461\Stripe.net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
@@ -204,7 +204,11 @@
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.InteropServices" />
-    <Reference Include="System.Runtime.InteropServices.RuntimeInformation" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization.Formatters, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.Base.DataAccessLayer.2.0.0.165\lib\net461\System.Runtime.Serialization.Formatters.dll</HintPath>
       <Private>True</Private>
@@ -300,6 +304,7 @@
     <Compile Include="Controllers\MembershipOptionsController.cs" />
     <Compile Include="Controllers\PredictionsController.cs" />
     <Compile Include="Controllers\RelationshipsController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\UserCreditPacks.cs" />
     <Compile Include="Controllers\UserMemberships.cs" />
     <Compile Include="Enums\ESexualChemistryScore.cs" />
@@ -338,7 +343,9 @@
     <Compile Include="Helpers\Separator.cs" />
     <Compile Include="Models\CompatibilityDetailsModel.cs" />
     <Compile Include="Models\CompatibilityModel.cs" />
+    <Compile Include="Models\PaymentModel.cs" />
     <Compile Include="Options\GaugeOptions.cs" />
+    <Compile Include="Options\PaymentsOptions.cs" />
     <Compile Include="ViewModels\ArchiveItemViewModel.cs" />
     <Compile Include="Models\MembershipModel.cs" />
     <Compile Include="ViewModels\PurchaseCreditsViewModel.cs" />
@@ -349,7 +356,6 @@
     <Compile Include="Models\NineStarKiEnergy.cs" />
     <Compile Include="Models\NineStarKiModel.cs" />
     <Compile Include="Models\PersonModel.cs" />
-    <Compile Include="Models\StripeChargeResultModel.cs" />
     <Compile Include="Models\StripeModel.cs" />
     <Compile Include="Options\PanelOptions.cs" />
     <Compile Include="Options\CollapsiblePanelOptions.cs" />
@@ -387,10 +393,10 @@
     <Content Include="Content\site\sections\relationships.css" />
     <Content Include="Content\site\sections\privacypolicy.css" />
     <Content Include="Content\site\sections\cookies.css" />
-    <Content Include="Content\site\sections\donate.css" />
+    <Content Include="Content\site\sections\stripe.css" />
     <Content Include="Content\site\sections\membership.css" />
     <Content Include="Content\site\sections\ninestar.css" />
-    <Content Include="Content\site\sections\shop.css" />
+    <Content Include="Content\site\sections\payments.css" />
     <Content Include="Content\site\sections\archive.css" />
     <Content Include="Content\site\shared-xs.css" />
     <Content Include="Content\site\shared-sm.css" />
@@ -751,6 +757,7 @@
     <Content Include="Images\ninestar\yinyang\yin.png" />
     <Content Include="Images\ninestar\yinyang\yinyang-large.png" />
     <Content Include="Images\shared\ninestar-spinner.gif" />
+    <Content Include="Images\shared\powered-by-stripe-cards.png" />
     <Content Include="Images\shared\powered-by-stripe.png" />
     <Content Include="Images\template\1.jpg" />
     <Content Include="Images\template\2.jpg" />
@@ -797,6 +804,7 @@
     <Content Include="Scripts\k9\fileUploader.js" />
     <Content Include="Scripts\k9\fadePageIn.js" />
     <Content Include="Scripts\k9\backgroundImageSwitcher.js" />
+    <Content Include="Scripts\k9\payments.js" />
     <Content Include="Scripts\k9\revealText.js" />
     <Content Include="Scripts\k9\navbar.js" />
     <Content Include="Scripts\library\easing.js" />
@@ -1128,6 +1136,10 @@
     <Content Include="Views\Shared\_LayoutFormMedium.cshtml" />
     <Content Include="Views\NineStarKi\_CompatibilityGauge.cshtml" />
     <Content Include="Views\NineStarKi\_CompatibilityDetails.cshtml" />
+    <Content Include="Views\Support\DonationCancelSuccess.cshtml" />
+    <Content Include="Views\Shared\_StripeFooter.cshtml" />
+    <Content Include="Views\Membership\PurchaseCancelSuccess.cshtml" />
+    <Content Include="Views\Shared\_PaymentsForm.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

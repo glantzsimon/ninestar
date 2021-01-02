@@ -18,7 +18,7 @@ namespace K9.WebApplication.Services
             _logger = logger;
         }
 
-        public Contact GetOrCreateContact(string stripeCustomerId, string fullName, string emailAddress)
+        public Contact GetOrCreateContact(string stripeCustomerId, string fullName, string emailAddress, string phoneNumber = "")
         {
             if (!string.IsNullOrEmpty(emailAddress))
             {
@@ -31,32 +31,31 @@ namespace K9.WebApplication.Services
                         {
                             StripeCustomerId = stripeCustomerId,
                             FullName = string.IsNullOrEmpty(fullName) ? emailAddress : fullName,
-                            EmailAddress = emailAddress
+                            EmailAddress = emailAddress,
+                            PhoneNumber = phoneNumber
                         });
                         return _contactsRepository.Find(e => e.StripeCustomerId == stripeCustomerId).FirstOrDefault();
                     }
-                    else
+
+                    var isUpdated = false;
+                    if (existingCustomer.FullName != fullName)
                     {
-                        var isUpdated = false;
-                        if (existingCustomer.FullName != fullName)
-                        {
-                            existingCustomer.FullName = fullName;
-                            isUpdated = true;
-                        }
-
-                        if (existingCustomer.EmailAddress != emailAddress)
-                        {
-                            existingCustomer.EmailAddress = emailAddress;
-                            isUpdated = true;
-                        }
-
-                        if (isUpdated)
-                        {
-                            _contactsRepository.Update(existingCustomer);
-                        }
-
-                        return existingCustomer;
+                        existingCustomer.FullName = fullName;
+                        isUpdated = true;
                     }
+
+                    if (existingCustomer.EmailAddress != emailAddress)
+                    {
+                        existingCustomer.EmailAddress = emailAddress;
+                        isUpdated = true;
+                    }
+
+                    if (isUpdated)
+                    {
+                        _contactsRepository.Update(existingCustomer);
+                    }
+
+                    return existingCustomer;
                 }
                 catch (Exception e)
                 {
@@ -69,6 +68,11 @@ namespace K9.WebApplication.Services
                 _logger.Error($"ContactService => CreateCustomer => Email Address is Empty");
                 return null;
             }
+        }
+
+        public Contact Find(int id)
+        {
+            return _contactsRepository.Find(id);
         }
 
         public List<Contact> ListContacts()

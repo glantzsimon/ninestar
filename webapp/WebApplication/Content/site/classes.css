@@ -28,8 +28,8 @@
 
 .alphaBackground {
     background: rgb(255, 255, 255);
-    background: rgba(255, 255, 255, 0.8);
-    filter: alpha(opacity=80);
+    background: rgba(255, 255, 255, 0.9);
+    filter: alpha(opacity=90);
 }
 
 .shadow {
@@ -75,6 +75,7 @@
 .page-header {
     margin: 0;
     padding-bottom: 20px;
+    border-bottom: none;
 }
 
     .page-header h4,

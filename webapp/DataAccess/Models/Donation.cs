@@ -21,6 +21,7 @@ namespace K9.DataAccessLayer.Models
         public string CustomerName => Customer.Split(' ').FirstOrDefault();
 
         [Required]
+        [Range(1, Int32.MaxValue, ErrorMessage = "The value must be greater than zero.")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DonationAmountLabel)]
         [DataType(DataType.Currency)]
         public double DonationAmount { get; set; }

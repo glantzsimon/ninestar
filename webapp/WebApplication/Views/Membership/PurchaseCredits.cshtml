@@ -1,5 +1,4 @@
-﻿@using K9.SharedLibrary.Extensions
-@using K9.WebApplication.Options
+﻿@using K9.WebApplication.Options
 @model K9.WebApplication.ViewModels.PurchaseCreditsViewModel
 @{
     ViewBag.Title = Dictionary.PurchaseCredits;
@@ -16,5 +15,5 @@
     "PurchaseCreditsStart", "Membership",
     Url.Action("PurchaseCreditsSuccess"),
     Url.Action("Index", "Error"),
-    Url.Action("PurchaseCreditsStart", "Membership")
+    Url.Action("ProcessPurchaseCredits", "Membership")
 ))

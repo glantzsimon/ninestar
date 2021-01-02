@@ -1,10 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using DataAnnotationsExtensions;
 
 namespace K9.WebApplication.ViewModels
 {
     public class PurchaseCreditsViewModel
     {
         [Required]
+        [Min(1)]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfCreditsLabel)]
         public int NumberOfCredits { get; set; }
 

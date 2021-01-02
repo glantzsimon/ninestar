@@ -79,7 +79,7 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                _membershipService.ProcessPurchase(paymentModel);
+                _membershipService.ProcessCreditsPurchase(paymentModel);
                 return Json(new { success = true });
             }
             catch (Exception ex)

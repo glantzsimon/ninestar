@@ -1,12 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
-using DataAnnotationsExtensions;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace K9.WebApplication.ViewModels
 {
     public class PurchaseCreditsViewModel
     {
         [Required]
-        [Min(1)]
+        [Range(1, Int32.MaxValue, ErrorMessage = "The value must be greater than zero.")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfCreditsLabel)]
         public int NumberOfCredits { get; set; }
 

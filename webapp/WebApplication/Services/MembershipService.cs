@@ -257,9 +257,9 @@ namespace K9.WebApplication.Services
                     EndsOn = membershipOption.IsAnnual ? DateTime.Today.AddYears(1) : DateTime.Today.AddMonths(1),
                     IsAutoRenew = true
                 };
-
-                userMembership.User = _usersRepository.Find(_authentication.CurrentUserId);
+                
                 _userMembershipRepository.Create(userMembership);
+                userMembership.User = _usersRepository.Find(_authentication.CurrentUserId);
                 TerminateExistingMemberships(membershipOptionId);
 
                 var contact = _contactService.Find(paymentModel.ContactId);
@@ -270,7 +270,7 @@ namespace K9.WebApplication.Services
             catch (Exception ex)
             {
                 _logger.Error($"MembershipService => ProcessPurchase => Purchase failed: {ex.Message}");
-                SendEmailToNineStarAboutFailure(paymentModel, ex.Message);
+                SendEmailToNineStarAboutFailure(paymentModel, ex.GetFullErrorMessage());
                 throw ex;
             }
         }
@@ -303,7 +303,7 @@ namespace K9.WebApplication.Services
             catch (Exception ex)
             {
                 _logger.Error($"MembershipService => ProcessPurchase => Purchase failed: {ex.Message}");
-                SendEmailToNineStarAboutFailure(paymentModel, ex.Message);
+                SendEmailToNineStarAboutFailure(paymentModel, ex.GetFullErrorMessage());
                 throw ex;
             }
         }
@@ -519,8 +519,8 @@ namespace K9.WebApplication.Services
 
         private void SendEmailToNineStarAboutFailure(PaymentModel paymentModel, string errorMessage)
         {
-            var template = Dictionary.CreditPackPurchased;
-            var title = "We have received a new credit pack purchase!";
+            var template = Dictionary.PaymentError;
+            var title = "A customer made a successful payment, but an error occurred.";
             _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
             {
                 Title = title,

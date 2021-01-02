@@ -218,7 +218,7 @@ namespace K9.WebApplication.Services
             {
                 throw new Exception(Dictionary.PurchaseMembershipErrorAlreadySubscribedToAnother);
             }
-            
+
             return new MembershipModel(_authentication.CurrentUserId, membershipOption)
             {
                 IsSelected = true
@@ -236,7 +236,7 @@ namespace K9.WebApplication.Services
             var membershipOption = _membershipOptionRepository.Find(e => e.SubscriptionType == subscriptionType).FirstOrDefault();
             return GetPurchaseMembershipModel(membershipOption?.Id ?? 0);
         }
-        
+
         public void ProcessPurchase(PaymentModel paymentModel)
         {
             try
@@ -255,21 +255,22 @@ namespace K9.WebApplication.Services
                     MembershipOptionId = membershipOptionId,
                     StartsOn = DateTime.Today,
                     EndsOn = membershipOption.IsAnnual ? DateTime.Today.AddYears(1) : DateTime.Today.AddMonths(1),
-                    IsAutoRenew = true,
-                    User = _usersRepository.Find(_authentication.CurrentUserId)
+                    IsAutoRenew = true
                 };
+
+                userMembership.User = _usersRepository.Find(_authentication.CurrentUserId);
                 _userMembershipRepository.Create(userMembership);
-                
                 TerminateExistingMemberships(membershipOptionId);
 
                 var contact = _contactService.Find(paymentModel.ContactId);
-                
+
                 SendEmailToNineStar(userMembership);
                 SendEmailToCustomer(userMembership, contact);
             }
             catch (Exception ex)
             {
                 _logger.Error($"MembershipService => ProcessPurchase => Purchase failed: {ex.Message}");
+                SendEmailToNineStarAboutFailure(paymentModel, ex.Message);
                 throw ex;
             }
         }
@@ -288,19 +289,21 @@ namespace K9.WebApplication.Services
                 {
                     UserId = _authentication.CurrentUserId,
                     NumberOfCredits = numberOfCredits,
-                    TotalPrice = creditsModel.TotalPrice,
-                    User = _usersRepository.Find(_authentication.CurrentUserId)
+                    TotalPrice = creditsModel.TotalPrice
                 };
+
                 _userCreditPacksRepository.Create(userCreditPack);
+                userCreditPack.User = _usersRepository.Find(_authentication.CurrentUserId)
 
                 var contact = _contactService.Find(paymentModel.ContactId);
-                
+
                 SendEmailToNineStar(userCreditPack);
                 SendEmailToCustomer(userCreditPack, contact);
             }
             catch (Exception ex)
             {
                 _logger.Error($"MembershipService => ProcessPurchase => Purchase failed: {ex.Message}");
+                SendEmailToNineStarAboutFailure(paymentModel, ex.Message);
                 throw ex;
             }
         }
@@ -369,7 +372,7 @@ namespace K9.WebApplication.Services
             if (activeUserMembership == null)
             {
                 _logger.Error($"MembershipService => TerminateExistingMemberships => ActiveMembership cannot be determined or does not exist");
-                throw new Exception("Active membership not found");
+                return;
             }
             foreach (var userMembership in userMemberships.Where(_ => _.MembershipOptionId != activeUserMembershipId))
             {
@@ -512,6 +515,21 @@ namespace K9.WebApplication.Services
                 }), userCreditPack.User.EmailAddress, userCreditPack.User.FirstName, _config.SupportEmailAddress,
                     _config.CompanyName);
             }
+        }
+
+        private void SendEmailToNineStarAboutFailure(PaymentModel paymentModel, string errorMessage)
+        {
+            var template = Dictionary.CreditPackPurchased;
+            var title = "We have received a new credit pack purchase!";
+            _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
+            {
+                Title = title,
+                Customer = paymentModel.CustomerName,
+                CustomerEmail = paymentModel.CustomerEmailAddress,
+                ErrorMessage = errorMessage,
+                Company = _config.CompanyName,
+                ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl)
+            }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
         }
 
     }

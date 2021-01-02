@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>{Title}</title>
+    <title>Error</title>
 </head>
 
 <style type="text/css">
@@ -20,11 +20,8 @@
 
 <body>
     <p class="text">Dear Team,</p>
-    <p class="text">We have a new user subscription from {Customer} ({CustomerEmail}):</p>
-    <p class="text">Subscription Type: {SubscriptionType}</p>
-    <p class="text">Total Price: {TotalPrice}</p>
-    <p class="text">To see all user subscriptions, click <a href="{LinkToSummary}">here</a></p>
-    <p class="text">{FailedText}</p>
+    <p class="text">A successful payment went through for {Customer} ({CustomerEmail}). However, something went wrong. Here are the details:</p>
+    <p class="text">{ErrorMessage}</p>    
     <img alt="{Company}" src="{ImageUrl}" />
 </body>
 

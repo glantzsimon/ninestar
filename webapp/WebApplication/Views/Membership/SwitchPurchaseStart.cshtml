@@ -20,6 +20,7 @@
         @Html.Hidden("MembershipOptionId", Model.MembershipOption.Id)
 
         <hr />
+        @Html.BootstrapActionLinkButton(Dictionary.Back, "Index", "Membership", null, "fa-chevron-left")
         @Html.BootstrapButton(buttonText, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
     }
 }

@@ -5181,6 +5181,37 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///
+        ///&lt;head&gt;
+        ///    &lt;title&gt;{Title}&lt;/title&gt;
+        ///&lt;/head&gt;
+        ///
+        ///&lt;style type=&quot;text/css&quot;&gt;
+        ///    html {
+        ///        margin: 0;
+        ///        padding: 0;
+        ///        font-family: &quot;Segoe UI&quot;, Verdana, Helvetica, Sans-Serif;
+        ///        font-size: 100%;
+        ///        text-rendering: optimizeLegibility !important;
+        ///        -webkit-font-smoothing: antialiased !important;
+        ///        margin: 0;
+        ///        color: #333;
+        ///    }
+        ///&lt;/style&gt;
+        ///
+        ///&lt;body&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;We have a new user c [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string PaymentError {
+            get {
+                return ResourceManager.GetString("PaymentError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pay Now.
         /// </summary>
         public static string PayNow {

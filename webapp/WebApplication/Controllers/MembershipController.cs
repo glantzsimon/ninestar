@@ -49,7 +49,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("membership/signup/success")]
-        public ActionResult PurchaseSuccess(int membershipOptionId, string sessionId)
+        public ActionResult PurchaseSuccess()
         {
             return View();
         }
@@ -90,7 +90,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("membership/purchase-credits/success")]
-        public ActionResult PurchaseCreditsSuccess(int numberOfCredits, string sessionId)
+        public ActionResult PurchaseCreditsSuccess()
         {
             return View();
         }

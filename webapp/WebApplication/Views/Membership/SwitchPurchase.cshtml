@@ -14,5 +14,5 @@
     "PurchaseStart", "Membership",
     Url.Action("PurchaseSuccess"),
     Url.Action("Index", "Error"),
-    Url.Action("ProcessPurchase", "Membership", new { id = Model.MembershipOption.Id })
+    Url.Action("ProcessPurchase", "Membership", new { membershipOptionId = Model.MembershipOption.Id })
 ))

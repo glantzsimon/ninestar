@@ -1772,9 +1772,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The 9 Star Ki Compatibility Checker is an amazing tool to help you understand your relationship dynamics whether it be in romance, friendships, work or within the family. This tool can shed much light on the dynamics between people and help you to harness the inherent benefits as well as helping to smoothe out challenges which are likekly to arise.
+        ///   Looks up a localized string similar to The 9 Star Ki Compatibility Calculator is a powerful tool to help you understand your relationship dynamics whether it be in romance, friendships, work or within the family. This tool can shed much light on the dynamics between people and help you to harness the inherent benefits as well as helping to smoothe out challenges which are likekly to arise.
         ///
-        ///9 Star Ki can bring greater bring greater harmony and understanding to our relationships and to reduce or eliminate resentment and anger. It helps to take bla [rest of string was truncated]&quot;;.
+        ///9 Star Ki can bring greater bring greater harmony and understanding to our relationships and to reduce or eliminate resentment and anger. It helps to take  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CompatibilityMetaDescription {
             get {
@@ -5559,7 +5559,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9 Star Ki and Relationships.
+        ///   Looks up a localized string similar to 9 Star Ki Relationships.
         /// </summary>
         public static string RelationshipsTitle {
             get {

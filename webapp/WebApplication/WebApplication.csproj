@@ -375,6 +375,8 @@
     <Compile Include="Models\PaymentModel.cs" />
     <Compile Include="Options\GaugeOptions.cs" />
     <Compile Include="Options\PaymentsOptions.cs" />
+    <Compile Include="Services\UserService.cs" />
+    <Compile Include="Services\IUserService.cs" />
     <Compile Include="ViewModels\ArchiveItemViewModel.cs" />
     <Compile Include="Models\MembershipModel.cs" />
     <Compile Include="ViewModels\PurchaseCreditsViewModel.cs" />

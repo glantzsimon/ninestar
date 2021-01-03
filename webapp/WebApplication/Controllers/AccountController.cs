@@ -24,7 +24,7 @@ namespace K9.WebApplication.Controllers
 {
     public partial class AccountController : BaseNineStarKiController
     {
-        private readonly IRepository<User> _repository;
+        private readonly IRepository<User> _userRepository;
         private readonly ILogger _logger;
         private readonly IAccountService _accountService;
         private readonly IAuthentication _authentication;
@@ -32,10 +32,10 @@ namespace K9.WebApplication.Controllers
         private readonly IMembershipService _membershipService;
         private readonly IContactService _contactService;
 
-        public AccountController(IRepository<User> repository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IContactService contactService)
+        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IContactService contactService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
-            _repository = repository;
+            _userRepository = userRepository;
             _logger = logger;
             _accountService = accountService;
             _authentication = authentication;
@@ -102,8 +102,7 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult FacebookCallback(string code)
         {
-            ServiceResult result = null;
-            result = _facebookService.Authenticate(code);
+            var result = _facebookService.Authenticate(code);
             if (result.IsSuccess)
             {
                 var user = result.Data as User;
@@ -116,7 +115,12 @@ namespace K9.WebApplication.Controllers
                     EmailAddress = user.EmailAddress
                 });
 
-                _membershipService.CreateFreeMembership(user.Id);
+                user.Id = _userRepository.Find(e => e.Username == user.Username).FirstOrDefault()?.Id ?? 0;
+
+                if (user.Id > 0)
+                {
+                    _membershipService.CreateFreeMembership(user.Id);
+                }
 
                 if (regResult.IsSuccess)
                 {
@@ -233,7 +237,7 @@ namespace K9.WebApplication.Controllers
         [Authorize]
         public ActionResult MyAccount()
         {
-            var user = _repository.Find(u => u.Username == User.Identity.Name).FirstOrDefault();
+            var user = _userRepository.Find(u => u.Username == User.Identity.Name).FirstOrDefault();
             return View(new MyAccountViewModel
             {
                 User = user,
@@ -257,7 +261,7 @@ namespace K9.WebApplication.Controllers
             {
                 try
                 {
-                    _repository.Update(model);
+                    _userRepository.Update(model);
                     ViewBag.IsPopupAlert = true;
                     ViewBag.AlertOptions = new AlertOptions
                     {
@@ -302,7 +306,7 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult ConfirmDeleteAccount(int id)
         {
-            var user = _repository.Find(id);
+            var user = _userRepository.Find(id);
             if (user == null || user.Username != _authentication.CurrentUserName)
             {
                 return HttpNotFound();
@@ -462,7 +466,7 @@ namespace K9.WebApplication.Controllers
             switch (result.Result)
             {
                 case EActivateAccountResult.Success:
-                    var user = _repository.Find(userId);
+                    var user = _userRepository.Find(userId);
                     return RedirectToAction("AccountActivated", "Account", new { userName = user.Username });
 
                 case EActivateAccountResult.AlreadyActivated:

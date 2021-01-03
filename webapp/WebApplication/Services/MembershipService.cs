@@ -269,7 +269,7 @@ namespace K9.WebApplication.Services
             }
             catch (Exception ex)
             {
-                _logger.Error($"MembershipService => ProcessPurchase => Purchase failed: {ex.Message}");
+                _logger.Error($"MembershipService => ProcessPurchase => Purchase failed: {ex.GetFullErrorMessage()}");
                 SendEmailToNineStarAboutFailure(paymentModel, ex.GetFullErrorMessage());
                 throw ex;
             }
@@ -302,7 +302,7 @@ namespace K9.WebApplication.Services
             }
             catch (Exception ex)
             {
-                _logger.Error($"MembershipService => ProcessPurchase => Purchase failed: {ex.Message}");
+                _logger.Error($"MembershipService => ProcessPurchase => Purchase failed: {ex.GetFullErrorMessage()}");
                 SendEmailToNineStarAboutFailure(paymentModel, ex.GetFullErrorMessage());
                 throw ex;
             }
@@ -331,7 +331,7 @@ namespace K9.WebApplication.Services
             }
             catch (Exception ex)
             {
-                _logger.Error($"MembershipService => ProcessSwitch => Switch failed: {ex.Message}");
+                _logger.Error($"MembershipService => ProcessSwitch => Switch failed: {ex.GetFullErrorMessage()}");
                 throw ex;
             }
         }
@@ -359,7 +359,7 @@ namespace K9.WebApplication.Services
             }
             catch (Exception ex)
             {
-                _logger.Error($"MembershipService => CreateFreeMembership => failed: {ex.Message}");
+                _logger.Error($"MembershipService => CreateFreeMembership => failed: {ex.GetFullErrorMessage()}");
                 throw ex;
             }
         }

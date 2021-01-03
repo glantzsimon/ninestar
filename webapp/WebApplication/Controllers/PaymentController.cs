@@ -1,4 +1,5 @@
-﻿using K9.SharedLibrary.Helpers;
+﻿using K9.SharedLibrary.Extensions;
+using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Models;
 using K9.WebApplication.Services;
@@ -15,17 +16,17 @@ namespace K9.WebApplication.Controllers
         private readonly ILogger _logger;
         private readonly IStripeService _stripeService;
         private readonly IContactService _contactService;
+        private readonly IUserService _userService;
         private readonly StripeConfiguration _stripeConfig;
-        private readonly UrlHelper _urlHelper;
 
-        public PaymentsController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IStripeService stripeService, IOptions<StripeConfiguration> stripeConfig, IMembershipService membershipService, IContactService contactService)
+        public PaymentsController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IStripeService stripeService, IOptions<StripeConfiguration> stripeConfig, IMembershipService membershipService, IContactService contactService, IUserService userService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _logger = logger;
             _stripeService = stripeService;
             _contactService = contactService;
+            _userService = userService;
             _stripeConfig = stripeConfig.Value;
-            _urlHelper = new UrlHelper(System.Web.HttpContext.Current.Request.RequestContext);
         }
 
         [Route("payments/start")]
@@ -53,6 +54,7 @@ namespace K9.WebApplication.Controllers
             {
                 var result = _stripeService.GetPaymentIntentById(paymentIntentId);
                 var contact = _contactService.GetOrCreateContact("", fullName, emailAddress);
+                _userService.UpdateActiveUserEmailAddressIfFromFacebook(contact);
 
                 return Json(new
                 {
@@ -72,7 +74,7 @@ namespace K9.WebApplication.Controllers
             }
             catch (Exception ex)
             {
-                _logger.Error($"SupportController => DonationSuccess => Error: {ex.Message}");
+                _logger.Error($"SupportController => DonationSuccess => Error: {ex.GetFullErrorMessage()}");
                 return Json(new
                 {
                     success = false,

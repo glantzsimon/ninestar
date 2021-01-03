@@ -61,6 +61,7 @@ namespace K9.WebApplication
             builder.RegisterType<MembershipService>().As<IMembershipService>().InstancePerRequest();
             builder.RegisterType<ContactService>().As<IContactService>().InstancePerRequest();
             builder.RegisterType<MailChimpService>().As<IMailChimpService>().InstancePerRequest();
+            builder.RegisterType<UserService>().As<IUserService>().InstancePerRequest();
 
             RegisterConfiguration(builder);
 

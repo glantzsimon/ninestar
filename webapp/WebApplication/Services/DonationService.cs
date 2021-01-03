@@ -59,7 +59,7 @@ namespace K9.WebApplication.Services
             }
             catch (Exception ex)
             {
-                _logger.Error($"DonationService => CreateDonation => {ex.Message}");
+                _logger.Error($"DonationService => CreateDonation => {ex.GetFullErrorMessage()}");
             }
         }
 

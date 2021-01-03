@@ -119,7 +119,7 @@ namespace K9.WebApplication.Controllers
             }
             catch (Exception ex)
             {
-                _logger.Error($"SupportController => ProcessDonation => Error: {ex.Message}");
+                _logger.Error($"SupportController => ProcessDonation => Error: {ex.GetFullErrorMessage()}");
                 return Json(new { success = false, error = ex.Message });
             }
         }

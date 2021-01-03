@@ -6,6 +6,7 @@ using K9.WebApplication.ViewModels;
 using NLog;
 using System;
 using System.Web.Mvc;
+using K9.SharedLibrary.Extensions;
 
 namespace K9.WebApplication.Controllers
 {
@@ -43,7 +44,7 @@ namespace K9.WebApplication.Controllers
             }
             catch (Exception ex)
             {
-                _logger.Error($"MembershipController => ProcessPurchase => Error: {ex.Message}");
+                _logger.Error($"MembershipController => ProcessPurchase => Error: {ex.GetFullErrorMessage()}");
                 return Json(new { success = false, error = ex.Message });
             }
         }
@@ -84,7 +85,7 @@ namespace K9.WebApplication.Controllers
             }
             catch (Exception ex)
             {
-                _logger.Error($"MembershipController => ProcessPurchase => Error: {ex.Message}");
+                _logger.Error($"MembershipController => ProcessPurchase => Error: {ex.GetFullErrorMessage()}");
                 return Json(new { success = false, error = ex.Message });
             }
         }

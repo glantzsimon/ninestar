@@ -6,12 +6,12 @@ namespace K9.WebApplication.Controllers
 	{
 	    public JsonResult IsUserNameAvailable(string username)
 	    {
-	        return Json(_repository.Exists(u => u.Username == username), JsonRequestBehavior.AllowGet);
+	        return Json(_userRepository.Exists(u => u.Username == username), JsonRequestBehavior.AllowGet);
 	    }
 
 	    public JsonResult IsEmailAddressAvailable(string emailAddress)
 	    {
-	        return Json(_repository.Exists(u => u.EmailAddress == emailAddress), JsonRequestBehavior.AllowGet);
+	        return Json(_userRepository.Exists(u => u.EmailAddress == emailAddress), JsonRequestBehavior.AllowGet);
 	    }
     }
 }

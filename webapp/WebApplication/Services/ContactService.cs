@@ -4,6 +4,7 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using K9.SharedLibrary.Extensions;
 
 namespace K9.WebApplication.Services
 {
@@ -59,15 +60,13 @@ namespace K9.WebApplication.Services
                 }
                 catch (Exception e)
                 {
-                    _logger.Error($"ContactService => CreateCustomer => {e.Message}");
+                    _logger.Error($"ContactService => CreateCustomer => {e.GetFullErrorMessage()}");
                     throw;
                 }
             }
-            else
-            {
-                _logger.Error($"ContactService => CreateCustomer => Email Address is Empty");
-                return null;
-            }
+
+            _logger.Error($"ContactService => CreateCustomer => Email Address is Empty");
+            return null;
         }
 
         public Contact Find(int id)

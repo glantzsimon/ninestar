@@ -5,8 +5,9 @@
     var metaLocaleName = CultureInfo.CurrentUICulture.GetMetaLocaleName();
     var languageName = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower();
     var keywords = ViewBag.Keywords ?? Dictionary.Keywords;
-    var pageTitle = (ViewBag.Title ?? Dictionary.NineStar).Replace(Dictionary.NineStarKiTitle, string.Empty).Trim();
-    var title = Html.Raw($"{Dictionary.NineStarKiAstrology} &raquo; {pageTitle}");
+    var mainTitle = (ViewBag.Title ?? string.Empty).Replace(Dictionary.NineStarKiTitle, string.Empty).Trim();
+    var pageTitle = string.IsNullOrEmpty(mainTitle) ? Dictionary.NineStar : $"{mainTitle} &raquo; {Dictionary.NineStar}";
+    var title = Html.Raw($"{pageTitle} &raquo; {Dictionary.NineStarKiAstrology}");
     var description = Html.Raw(ViewBag.MetaDescription ?? Dictionary.NineStarMetaDescriptionMain);
 }
 

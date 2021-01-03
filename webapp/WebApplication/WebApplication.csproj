@@ -1166,6 +1166,8 @@
     <Content Include="Views\Shared\_StripeFooter.cshtml" />
     <Content Include="Views\Membership\PurchaseCancelSuccess.cshtml" />
     <Content Include="Views\Shared\_PaymentsForm.cshtml" />
+    <Content Include="Views\Account\UnsubscribeFailed.cshtml" />
+    <Content Include="Views\Account\UnsubscribeSuccess.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

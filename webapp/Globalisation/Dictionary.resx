@@ -1918,4 +1918,13 @@
   <data name="NineStarKiAstrology" xml:space="preserve">
     <value>9 Star Ki Astrology</value>
   </data>
+  <data name="UnsubscribeFailed" xml:space="preserve">
+    <value>There was a problem with your request.</value>
+  </data>
+  <data name="UnsubscribeSuccess" xml:space="preserve">
+    <value>You successfully unsubsribed from all lists</value>
+  </data>
+  <data name="UnsubscribeRequeset" xml:space="preserve">
+    <value>Unsubscibe Request</value>
+  </data>
 </root>

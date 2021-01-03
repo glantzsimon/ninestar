@@ -8,5 +8,6 @@ namespace K9.WebApplication.Services
         Contact GetOrCreateContact(string stripeCustomerId, string fullName, string emailAddress, string phoneNumber = "");
         Contact Find(int id);
         List<Contact> ListContacts();
+        bool Unsubscribe(string code);
     }
 }

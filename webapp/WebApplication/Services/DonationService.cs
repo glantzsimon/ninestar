@@ -103,7 +103,7 @@ namespace K9.WebApplication.Services
                 donation.Currency,
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
                 PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Contacts", new { id = contact.Id }),
+                UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Contacts", new { code = contact.Name }),
                 DateTime.Now.Year
             }), donation.CustomerEmail, donation.Customer, _config.SupportEmailAddress, _config.CompanyName);
         }

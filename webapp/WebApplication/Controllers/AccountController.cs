@@ -30,8 +30,9 @@ namespace K9.WebApplication.Controllers
         private readonly IAuthentication _authentication;
         private readonly IFacebookService _facebookService;
         private readonly IMembershipService _membershipService;
+        private readonly IContactService _contactService;
 
-        public AccountController(IRepository<User> repository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService)
+        public AccountController(IRepository<User> repository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IContactService contactService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _repository = repository;
@@ -40,6 +41,7 @@ namespace K9.WebApplication.Controllers
             _authentication = authentication;
             _facebookService = facebookService;
             _membershipService = membershipService;
+            _contactService = contactService;
 
             websiteConfig.Value.RegistrationEmailTemplateText = Globalisation.Dictionary.WelcomeEmail;
             websiteConfig.Value.PasswordResetEmailTemplateText = Globalisation.Dictionary.PasswordResetEmail;
@@ -469,6 +471,17 @@ namespace K9.WebApplication.Controllers
                 default:
                     return RedirectToAction("AccountActivationFailed", "Account");
             }
+        }
+
+        [Route("unsubscribe")]
+        public ActionResult Unsubscribe(string code)
+        {
+            if (_contactService.Unsubscribe(code))
+            {
+                return View("UnsubscribeSuccess");
+            }
+
+            return View("UnsubscribeFailed");
         }
 
         #endregion

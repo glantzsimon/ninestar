@@ -3298,7 +3298,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9 Star Ki Astrology Free Calculator Predictions Relationships Compatibility Love Feng Shui I Ching Dating Nine Star Ki.
+        ///   Looks up a localized string similar to 9 Star Ki Astrology Free Calculator Predictions Relationships Compatibility Nine Energies Feng Shui Astrology I Ching Love Dating Nine Star Ki.
         /// </summary>
         public static string Keywords {
             get {
@@ -3590,9 +3590,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This is a very harmonious combination with a potential for a very deep friendship. Howver, the sexual chemistry may be lacking.
-        ///&lt;/h4&gt;
+        ///&lt;/h5&gt;
+        ///
         ///&lt;h5&gt;
         ///    Strengths
         ///&lt;/h5&gt;
@@ -3600,7 +3601,7 @@ namespace K9.Globalisation {
         ///    Both people share the same Fundamental Energy &quot;Water&quot;. Water is perhaps the most intuitive and empathetic of the 9 Energies and so there is a potential for an extremely deep and intuitive connection between these two people. 
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Water Energy is naturally flexible, easy-going and generally non-confrontational, so th [rest of string was truncated]&quot;;.
+        ///    Water Energy is naturally flexible, easy-going and generally non-confron [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_11 {
             get {
@@ -3609,15 +3610,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationship chemistry and for personal growth.
-        ///&lt;/h4&gt;
+        ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;
-        ///    Strengths
+        ///    Challenges
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1} can help {Person2} to loosen up and be less rigid; to flow more, like Water. This can be immensely helpful to Earth Energies, who sometimes need to be reminded to let their hair down and h [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life. {Person2Proper}, on the other hand, is a S [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_12 {
             get {
@@ -3626,17 +3627,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This is potentially quite an exciting and harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person1} supporting {Person2}. There is also potential for good relationship chemistry and for personal growth.
-        ///&lt;/h4&gt;
+        ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;
-        ///    Strenghts
+        ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life. 
         ///    
-        ///    {Person2Proper} is a Thunder Energy. Thunders often s [rest of string was truncated]&quot;;.
+        ///    {Person2Proper} is a Thunder Energy. Thu [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_13 {
             get {
@@ -3645,13 +3646,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This is potentially quite an exciting and harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person1} supporting {Person2}. There is also potential for good relationship chemistry and for personal growth.
         ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life. 
-        ///    
-        ///    {Person2Proper} is a Wind Energy. Winds often share the flexible, free-spirited and [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life.
+        ///
+        ///    {Person2Proper} is a Wind Energy. Winds often [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_14 {
             get {
@@ -3660,13 +3665,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This is potentially quite a tricky combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} controlling {Person1}. There is also potential for very good relationship chemistry and for a lot of growth.
         ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Challenges
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life. 
-        ///    
-        ///    {Person2Proper} is a Core Earth Energy. 5 Earths generally have a bold and possibly agressive  [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life.
+        ///
+        ///    {Person2Proper} is a Core Earth Energy. 5 Earths genera [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_15 {
             get {
@@ -3675,13 +3684,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This is potentially a very harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for reasonable sexual chemistry and for quite a bit of growth. Conflict is less likely in this combination.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life.
         ///
-        ///    {Person2Proper} is a Heaven Energy. 6 Metals general [rest of string was truncated]&quot;;.
+        ///    {Person2P [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_16 {
             get {
@@ -3690,13 +3703,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This is potentially a very harmonious and exciting combination, as the Fundamental Energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for good sexual chemistry and for quite a bit of growth. Conflict is far less likely in this combination.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life.
         ///
-        ///    {Person2Proper} is a Lake Energy and is l [rest of string was truncated]&quot;;.
+        ///   [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_17 {
             get {
@@ -3705,13 +3722,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This is potentially a very challenging combination indeed. The Fundamental Energies are in a Challenging Transformation, with {Person2} controlling {Person1}. Whilst there is potential for good sexual chemistry and for quite a bit of growth, conflict and frustration are likely to be a big stumbling block in this combination.
         ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life.
         ///
-        ///    {Person2P [rest of string was truncated]&quot;;.
+        ///&lt;h5&gt;
+        ///    Challenges
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_18 {
             get {
@@ -3720,13 +3739,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This is potentially a very challenging combination. The Fundamental Energies are in a Challenging Transformation, with {Person1} controlling {Person2}. Whilst there is potential for good sexual chemistry and for quite a bit of growth, conflict and frustration are likely to be a big stumbling block in this combination.
         ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life.
         ///
-        ///    {Person2Proper}  [rest of string was truncated]&quot;;.
+        ///&lt;h5&gt;
+        ///    Challenges
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_19 {
             get {
@@ -3735,14 +3756,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This is a very harmonious combination with a great potential for a solid friendship. However, the sexual chemistry may be lacking.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    Both people share the same Fundamental Energy &quot;Soil&quot;. Both people are stable, reliable, supportive types who are likely to have very similar values and priorities. This could very well result in a close friendship where both people feel understood, supported and that they can rely on one another.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    There is a great potential for collabora [rest of string was truncated]&quot;;.
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_22 {
             get {
@@ -3751,11 +3776,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationship chemistry and for personal growth.
         ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Challenges
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person2Proper} is a 3 Tree Energy and is likely to be very energetic, changeable and even impulsive and explosive at times. {Person1Proper}, on the other hand, is a Soil Energy and is more likely to be structured and discipline [rest of string was truncated]&quot;;.
+        ///    {Person2Proper} is a 3 Tree Energy and is likely to be very energetic, changeable and even impulsive and explosive at times. {Person1Proper}, on the other hand, is a Soil Energy and is [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_23 {
             get {
@@ -6854,6 +6883,33 @@ namespace K9.Globalisation {
         public static string Unspecified {
             get {
                 return ResourceManager.GetString("Unspecified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There was a problem with your request..
+        /// </summary>
+        public static string UnsubscribeFailed {
+            get {
+                return ResourceManager.GetString("UnsubscribeFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unsubscibe Request.
+        /// </summary>
+        public static string UnsubscribeRequeset {
+            get {
+                return ResourceManager.GetString("UnsubscribeRequeset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You successfully unsubsribed from all lists.
+        /// </summary>
+        public static string UnsubscribeSuccess {
+            get {
+                return ResourceManager.GetString("UnsubscribeSuccess", resourceCulture);
             }
         }
         

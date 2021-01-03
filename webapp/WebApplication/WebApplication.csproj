@@ -90,6 +90,9 @@
     <Reference Include="K9.SharedLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.SharedLibrary.2.0.0.165\lib\net461\K9.SharedLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="MailChimp, Version=1.1.92.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailChimp.NET.1.1.92\lib\net40\MailChimp.dll</HintPath>
+    </Reference>
     <Reference Include="MailChimp.Net.V3, Version=1.8.0.0, Culture=neutral, PublicKeyToken=37d26d538413c581, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Bin\MailChimp.Net.V3.dll</HintPath>

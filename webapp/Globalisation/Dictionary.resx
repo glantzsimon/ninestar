@@ -707,7 +707,7 @@
     <value>Element Description</value>
   </data>
   <data name="NineStarKiCalculatorKeywords" xml:space="preserve">
-    <value>Free Reading Detailed Personal Chart 9 Star Ki Personal Profile Calculator</value>
+    <value>9 Star Ki Astrology Free Reading Detailed Personal Chart Personal Profile Calculator</value>
   </data>
   <data name="NineStarKiCalculatorTitle" xml:space="preserve">
     <value>9 Star Ki Personal Profile Calculator</value>
@@ -716,7 +716,7 @@
     <value>Predictions</value>
   </data>
   <data name="PredictionsKeywords" xml:space="preserve">
-    <value>9 Star Ki astrology predictions yearly predictions monthly predictions life planner life cycles</value>
+    <value>9 Star Ki Astrology Predictions yearly predictions monthly predictions life planner life cycles</value>
   </data>
   <data name="PredictionsMetaDescription" xml:space="preserve">
     <value>9 Star Ki astrology is an excellent tool for understanding the subtle energies and their cycles, whcih govern our lives. Each person's life moves throug predictable cycles of nine years, as well as nine months. These cycles are similar in nature to the seasons. Understanding where we are in a given cycle is tremendously helpful and can greatly assist us in taking appropriate action that is timely and in sync with the natural rhythms governing our lives.</value>
@@ -1914,5 +1914,8 @@
   </data>
   <data name="PaymentError" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>templates\en-gb\paymenterror.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="NineStarKiAstrology" xml:space="preserve">
+    <value>9 Star Ki Astrology</value>
   </data>
 </root>

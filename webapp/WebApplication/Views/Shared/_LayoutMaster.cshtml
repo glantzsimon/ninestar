@@ -5,7 +5,7 @@
     var metaLocaleName = CultureInfo.CurrentUICulture.GetMetaLocaleName();
     var languageName = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower();
     var keywords = ViewBag.Keywords ?? Dictionary.Keywords;
-    var title = Html.Raw($"{ViewBag.Title ?? Dictionary.NineStarKiTitle} &raquo; {Dictionary.NineStar} &raquo; {keywords}");
+    var title = Html.Raw($"{Dictionary.NineStarKiAstrology} &raquo; {ViewBag.Title ?? Dictionary.NineStarKiTitle} &raquo; {Dictionary.NineStar} &raquo; {keywords}");
     var description = Html.Raw(ViewBag.MetaDescription ?? Dictionary.NineStarMetaDescriptionMain);
 }
 
@@ -24,7 +24,7 @@
     <meta property="og:title" content="@title" />
     <meta property="og:description" content="@description" />
     <meta property="og:url" content="/" />
-    <meta property="og:site_name" content="@Dictionary.NineStarKiTitle" />
+    <meta property="og:site_name" content="@Dictionary.NineStar" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:description" content="@description" />
     <meta name="twitter:title" content="@title" />
@@ -112,7 +112,6 @@ Html.RenderPartial("_GoogleAnalytics");
     @Html.Partial("_SEO", "header")
     @Html.Partial("_CookieWarning")
     @RenderBody()
-    @Html.Partial("_SEO", "footer")
     @Html.Partial("_Footer")
     @Scripts.Render("~/Scripts/js")
     @Scripts.Render("~/Scripts/lib")

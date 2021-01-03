@@ -3,30 +3,20 @@
 @{
     var description = ViewBag.MetaDescription ?? Dictionary.NineStarMetaDescriptionMain;
     var keywords = ViewBag.Keywords ?? Dictionary.Keywords;
-    var title = Html.Raw($"{ViewBag.Title} &raquo; &raquo; {keywords}");
+    var title = Html.Raw($"{Dictionary.NineStarKiTitle} &raquo; {ViewBag.Title}");
 }
 
 <div class="seo @Model">
-    @for (int i = 0; i < 3; i++)
-    {
-        <h1>
-            @ViewBag.Title
-            @description
-        </h1>
-        <div>
-            @Html.Raw(Dictionary.origins)
-            @keywords
-        </div>
-        <h2>
-            @ViewBag.SubTitle
-            @keywords
-        </h2>
-        <h3>
-            @keywords
-        </h3>
-        <h4>
-            @title
-            @keywords
-        </h4>
-    }
+    <h1>
+        @title
+
+    </h1>
+    <div>
+        @description
+        @Html.Raw(Dictionary.origins)
+        @keywords
+    </div>
+    <h2>
+        @ViewBag.SubTitle
+    </h2>
 </div>

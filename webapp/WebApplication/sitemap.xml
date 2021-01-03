@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ninestarki.online/</loc>
+    <loc>https://9starki.org/</loc>
     <lastmod>2020-12-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1</priority>
   </url>
   <url>
-    <loc>https://ninestarki.online/calculate</loc>
+    <loc>https://9starki.org/calculate</loc>
     <lastmod>2020-12-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ninestarki.online/relationships</loc>
+    <loc>https://9starki.org/relationships</loc>
     <lastmod>2020-12-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ninestarki.online/predications</loc>
+    <loc>https://9starki.org/predications</loc>
     <lastmod>2020-12-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ninestarki.online/about</loc>
+    <loc>https://9starki.org/about</loc>
     <lastmod>2020-12-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>

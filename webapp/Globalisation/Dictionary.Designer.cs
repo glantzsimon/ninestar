@@ -3298,11 +3298,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9 Star Ki Astrology Free Calculator Predictions Relationships Compatibility Love Feng Shui I Ching Dating Nine Star Ki
-        ///
-        ///Calculate your 9 Star Ki Personal Profile for free!
-        ///
-        ///Find your perfect match! .
+        ///   Looks up a localized string similar to 9 Star Ki Astrology Free Calculator Predictions Relationships Compatibility Love Feng Shui I Ching Dating Nine Star Ki.
         /// </summary>
         public static string Keywords {
             get {
@@ -4928,7 +4924,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Free Reading Detailed Personal Chart 9 Star Ki Personal Profile Calculator.
+        ///   Looks up a localized string similar to 9 Star Ki Astrology.
+        /// </summary>
+        public static string NineStarKiAstrology {
+            get {
+                return ResourceManager.GetString("NineStarKiAstrology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 9 Star Ki Astrology Free Reading Detailed Personal Chart Personal Profile Calculator.
         /// </summary>
         public static string NineStarKiCalculatorKeywords {
             get {
@@ -5185,7 +5190,7 @@ namespace K9.Globalisation {
         ///&lt;html lang=&quot;en&quot;&gt;
         ///
         ///&lt;head&gt;
-        ///    &lt;title&gt;{Title}&lt;/title&gt;
+        ///    &lt;title&gt;Error&lt;/title&gt;
         ///&lt;/head&gt;
         ///
         ///&lt;style type=&quot;text/css&quot;&gt;
@@ -5203,7 +5208,7 @@ namespace K9.Globalisation {
         ///
         ///&lt;body&gt;
         ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;We have a new user c [rest of string was truncated]&quot;;.
+        ///    &lt;p class=&quot;text&quot;&gt;A successful payment w [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PaymentError {
             get {
@@ -5326,7 +5331,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9 Star Ki astrology predictions yearly predictions monthly predictions life planner life cycles.
+        ///   Looks up a localized string similar to 9 Star Ki Astrology Predictions yearly predictions monthly predictions life planner life cycles.
         /// </summary>
         public static string PredictionsKeywords {
             get {

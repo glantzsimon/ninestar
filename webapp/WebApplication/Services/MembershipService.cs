@@ -170,6 +170,10 @@ namespace K9.WebApplication.Services
             }
             
             var membershipOption = _membershipOptionRepository.Find(membershipOptionId);
+            if (!activeUserMembership.MembershipOption.CanUpgradeTo(membershipOption))
+            {
+                throw new Exception(Dictionary.CannotSwitchMembershipError);
+            }
 
             return new MembershipModel(_authentication.CurrentUserId, membershipOption, activeUserMembership)
             {

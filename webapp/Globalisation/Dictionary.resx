@@ -1927,4 +1927,7 @@
   <data name="UnsubscribeRequeset" xml:space="preserve">
     <value>Unsubscibe Request</value>
   </data>
+  <data name="CannotSwitchMembershipError" xml:space="preserve">
+    <value>Sorry, you cannot switch to the selected membership</value>
+  </data>
 </root>

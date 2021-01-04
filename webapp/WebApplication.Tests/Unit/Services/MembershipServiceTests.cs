@@ -360,7 +360,7 @@ namespace K9.WebApplication.Tests.Unit.Services
 
 
             var ex = Assert.Throws<Exception>(() => _Membershipservice.GetSwitchMembershipModel(_standardYearlyMembership.Id));
-            Assert.Equal(Globalisation.Dictionary.SwitchMembershipErrorAlreadySubscribed, ex.Message);
+            Assert.Equal(Globalisation.Dictionary.CannotSwitchMembershipError, ex.Message);
         }
 
         [Fact]
@@ -389,34 +389,6 @@ namespace K9.WebApplication.Tests.Unit.Services
             var result = _Membershipservice.GetSwitchMembershipModel(_standardYearlyMembership.Id);
             Assert.True(result.IsUpgrade);
         }
-
-        [Fact]
-        public void GetSwitchMembershipModel_IsNotUpgrade()
-        {
-            AuthenticateUser();
-
-            var startsOn = DateTime.Today.AddDays(-7);
-            var userMembershipModels = new List<UserMembership>
-            {
-                new UserMembership
-                {
-                    Id = 7,
-                    UserId = _userId,
-                    MembershipOptionId = _standardYearlyMembership.Id,
-                    MembershipOption = _standardYearlyMembership,
-                    StartsOn = startsOn,
-                    EndsOn = startsOn.AddMonths(1)
-                }
-            };
-
-            _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
-                .Returns(userMembershipModels.AsQueryable());
-
-
-            var result = _Membershipservice.GetSwitchMembershipModel(_standardMonthlyMembership.Id);
-            Assert.False(result.IsUpgrade);
-        }
-
         
         [Fact]
         public void GetPurchaseMembershipModel_ShouldThrowError_IfAlreadySubscribed()

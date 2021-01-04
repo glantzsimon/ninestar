@@ -1474,6 +1474,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sorry, you cannot switch to the selected membership.
+        /// </summary>
+        public static string CannotSwitchMembershipError {
+            get {
+                return ResourceManager.GetString("CannotSwitchMembershipError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Card Details.
         /// </summary>
         public static string CardDetails {
@@ -3793,11 +3802,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationship chemistry and for personal growth.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person2Proper} is a 4 Tree Energy and is likely to be very energetic, changeable and even impulsive at times. {Person1Proper}, on the other hand, is a Soil Energy and is more likely to be structured and disciplined. This could  [rest of string was truncated]&quot;;.
+        ///    {Person2Proper} is a 4 Tree Energy and is likely to be very energetic, changeable and even impulsive at times. {Person1Proper}, on the other hand, is a Soil Energy and is more likely to be structured and disciplined [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_24 {
             get {

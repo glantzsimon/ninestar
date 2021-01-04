@@ -4,8 +4,6 @@ using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
-using K9.WebApplication.Config;
-using K9.WebApplication.Models;
 using NLog;
 using System;
 using System.Collections.Generic;
@@ -21,31 +19,17 @@ namespace K9.WebApplication.Services
         private readonly ILogger _logger;
         private readonly IMailer _mailer;
         private readonly WebsiteConfiguration _config;
-        private readonly StripeConfiguration _stripeConfig;
         private readonly UrlHelper _urlHelper;
 
-        public DonationService(IRepository<Donation> donationRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> config, IOptions<StripeConfiguration> stripeConfig)
+        public DonationService(IRepository<Donation> donationRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> config)
         {
             _donationRepository = donationRepository;
             _logger = logger;
             _mailer = mailer;
             _config = config.Value;
-            _stripeConfig = stripeConfig.Value;
             _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }
-
-        public StripeModel GetDonationStripeModel(double amount, string successUrl, string cancelUrl)
-        {
-            return new StripeModel
-            {
-                Amount = amount,
-                LocalisedCurrencyThreeLetters = StripeModel.GetSystemCurrencyCode(),
-                Description = Dictionary.DonationToNineStar,
-                SuccessUrl = successUrl,
-                CancelUrl = cancelUrl
-            };
-        }
-
+        
         public void CreateDonation(Donation donation, Contact contact)
         {
             try
@@ -57,7 +41,7 @@ namespace K9.WebApplication.Services
                     SendEmailToCustomer(donation, contact);
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex)    
             {
                 _logger.Error($"DonationService => CreateDonation => {ex.GetFullErrorMessage()}");
             }

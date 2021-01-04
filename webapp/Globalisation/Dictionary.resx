@@ -1907,7 +1907,7 @@
     <value>Please enter your card details</value>
   </data>
   <data name="OrEnterYourCardDetails" xml:space="preserve">
-    <value>Or enter your payment details</value>
+    <value>Or enter your payment details below</value>
   </data>
   <data name="PaymentCompleted" xml:space="preserve">
     <value>Payment Complete</value>

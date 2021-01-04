@@ -68,7 +68,8 @@ namespace K9.WebApplication.Controllers
                         CustomerEmailAddress = emailAddress,
                         Amount = result.Amount > 0 ? (double)result.Amount / 100 : 0,
                         Description = result.Description,
-                        Currency = result.Currency?.ToUpper() ?? "ISD"
+                        Currency = result.Currency?.ToUpper() ?? "USD",
+                        Status = result.Status
                     }
                 });
             }

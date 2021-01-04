@@ -1,4 +1,4 @@
-﻿    @model K9.WebApplication.Models.MembershipModel
+﻿@model K9.WebApplication.Models.MembershipModel
 @{
     ViewBag.Title = Dictionary.MembershipOptions;
     Layout = "../Shared/_LayoutFormSmall.cshtml";
@@ -17,8 +17,8 @@
     using (Html.BeginBootstrapForm())
     {
         @Html.Hidden("MembershipOptionId", Model.MembershipOption.Id)
-        @Html.BootstrapButton(buttonText, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
 
         <hr />
+        @Html.BootstrapButton(buttonText, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
     }
 }

@@ -1,5 +1,4 @@
 ﻿using K9.DataAccessLayer.Models;
-using K9.WebApplication.Models;
 
 namespace K9.WebApplication.Services
 {
@@ -7,6 +6,5 @@ namespace K9.WebApplication.Services
     {
         void CreateDonation(Donation donation, Contact contact);
         int GetFundsReceivedToDate();
-        StripeModel GetDonationStripeModel(double amount, string successUrl, string cancelUrl);
     }
 }

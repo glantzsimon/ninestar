@@ -5133,7 +5133,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Or enter your payment details.
+        ///   Looks up a localized string similar to Or enter your payment details below.
         /// </summary>
         public static string OrEnterYourCardDetails {
             get {

@@ -58,7 +58,10 @@ namespace K9.WebApplication.Controllers
         [Route("membership/purchase-credits")]
         public ActionResult PurchaseCreditsStart()
         {
-            return View(new PurchaseCreditsViewModel());
+            return View(new PurchaseCreditsViewModel
+            {
+                NumberOfCredits = 10
+            });
         }
 
         [Route("membership/purchase-credits")]

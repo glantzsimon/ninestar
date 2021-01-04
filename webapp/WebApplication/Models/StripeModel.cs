@@ -9,7 +9,6 @@ namespace K9.WebApplication.Models
     {
         private const string AutoLocale = "auto";
 
-        public int MembershipOptionId { get; set; }
         public string SuccessUrl { get; set; }
         public string CancelUrl { get; set; }
 
@@ -17,11 +16,11 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AmountLabel)]
         [DataType(DataType.Currency)]
         public double Amount { get; set; }
-        
+
         public double AmountInCents => Amount * 100;
-        
+
         public long? AmountAsLong => GetAmountAsLong();
-        
+
         private long? GetAmountAsLong()
         {
             long.TryParse(AmountInCents.ToString(), out var value);
@@ -33,7 +32,7 @@ namespace K9.WebApplication.Models
         public string LocalisedCurrencyThreeLetters { get; set; }
 
         public string Description { get; set; }
-        
+
         public static string GetSystemCurrencyCode()
         {
             return "usd";

@@ -28,6 +28,12 @@ namespace K9.WebApplication.Options
         [DataType(DataType.Currency)]
         public double Amount { get; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalLabel)]
+        [DataType(DataType.Currency)]
+        public double Total => Amount;
+
+        public long AmountInCents => (long)(Amount * 100);
+
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NameLabel)]
         [StringLength(128)]

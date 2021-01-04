@@ -8,12 +8,27 @@
         <div class="sr-main">
             <form id="payment-form" class="sr-payment-form">
                 <div class="row">
-                    <div class="col-sm-6 padding-0">
-                        @Html.BootstrapDisplayFor(e => e.Amount)
-                    </div>
-                    <div class="col-sm-6 padding-0">
-                        @Html.BootstrapDisplayFor(e => e.Description)
-                    </div>
+                    @if (Model.Quantity > 0)
+                    {
+                        <div class="col-sm-6 padding-0">
+                            @Html.BootstrapDisplayFor(e => e.Description)
+                        </div>
+                        <div class="col-sm-3 padding-0">
+                            @Html.BootstrapDisplayFor(e => e.Quantity)
+                        </div>
+                        <div class="col-sm-3 padding-0">
+                            @Html.BootstrapDisplayFor(e => e.Total)
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-sm-6 padding-0">
+                            @Html.BootstrapDisplayFor(e => e.Description)
+                        </div>
+                        <div class="col-sm-6 padding-0">
+                            @Html.BootstrapDisplayFor(e => e.Amount)
+                        </div>
+                    }
                 </div>
 
                 <hr />
@@ -67,6 +82,7 @@
                 id: @Model.Id,
                 quantity: @Model.Quantity,
                 amount: @Model.Amount,
+                amountInCents: @Model.AmountInCents,
                 description: "@Model.Description"
                 }
             });

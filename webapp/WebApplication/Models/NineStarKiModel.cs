@@ -1,26 +1,28 @@
 ﻿using K9.Base.DataAccessLayer.Enums;
 using K9.Globalisation;
+using K9.SharedLibrary.Helpers;
 using K9.WebApplication.Enums;
 using K9.WebApplication.Extensions;
 using System;
 using System.ComponentModel.DataAnnotations;
-using K9.SharedLibrary.Helpers;
 
 namespace K9.WebApplication.Models
 {
 
     public class NineStarKiModel
     {
+        private const bool invertYearlyPredictionYearForYinEnergies = false;
+
         public NineStarKiModel()
         {
             PersonModel = new PersonModel();
-            Today = DateTime.Now;
         }
 
-        public NineStarKiModel(PersonModel personModel)
+        public NineStarKiModel(PersonModel personModel, DateTime? today = null)
         {
+            Today = today ?? DateTime.Today;
+
             PersonModel = personModel;
-            Today = DateTime.Now;
 
             MainEnergy = GetMainEnergy(PersonModel.DateOfBirth, PersonModel.Gender);
             CharacterEnergy = GetCharacterEnergy(PersonModel.DateOfBirth, MainEnergy.Energy, personModel.Gender);
@@ -62,7 +64,7 @@ namespace K9.WebApplication.Models
         /// <summary>
         /// For testing purposes only
         /// </summary>
-        public DateTime Today { get; set; }
+        public DateTime? Today { get; set; }
 
         public bool IsShowSummary { get; set; } = true;
 
@@ -223,18 +225,17 @@ namespace K9.WebApplication.Models
 
         private ENineStarKiEnergy GetLifeCycleYearEnergy()
         {
-            var todayYearEnergy = (int)GetMainEnergy(Today, EGender.Male).Energy;
-            var personalYearEnergy = (PersonModel.Gender.IsYin() ? InvertEnergy(MainEnergy.EnergyNumber) : MainEnergy.EnergyNumber);
+            var todayYearEnergy = (int)GetMainEnergy(Today ?? DateTime.Today, EGender.Male).Energy;
+            var personalYearEnergy = PersonModel.Gender.IsYin() ? InvertEnergy(MainEnergy.EnergyNumber) : MainEnergy.EnergyNumber;
             var offset = todayYearEnergy - personalYearEnergy;
             var lifeCycleYearEnergy = LoopEnergyNumber(5 - offset);
 
-            return (ENineStarKiEnergy)(PersonModel.Gender.IsYin() ? InvertEnergy(lifeCycleYearEnergy) : lifeCycleYearEnergy);
+            return (ENineStarKiEnergy)(PersonModel.Gender.IsYin() && invertYearlyPredictionYearForYinEnergies ? InvertEnergy(lifeCycleYearEnergy) : lifeCycleYearEnergy);
         }
 
         private ENineStarKiEnergy GetLifeCycleMonthEnergy()
         {
-            var yearEnergy = GetLifeCycleYearEnergy();
-            return GetCharacterEnergy(Today, yearEnergy, MainEnergy.Gender).Energy;
+            return GetCharacterEnergy(Today ?? DateTime.Today, GetLifeCycleYearEnergy(), PersonModel.Gender).Energy;
         }
 
         private NineStarKiEnergy ProcessEnergy(int energyNumber, EGender gender, ENineStarKiEnergyType type = ENineStarKiEnergyType.MainEnergy)

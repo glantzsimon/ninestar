@@ -30,6 +30,10 @@ namespace K9.WebApplication.Models
             CharacterEnergyLearningPotentialScore = GetCharacterEnergyLearningPotentialScore();
             CharacterEnergyConflictPotentialScore = GetCharacterEnergyConflictPotentialScore();
             CharacterEnergyHarmonyScore = GetCharacterEnergyHarmonyScore();
+            SurfaceEnergyChemistryScore = GetSurfaceEnergyChemistryScore();
+            SurfaceEnergyLearningPotentialScore = GetSurfaceEnergyLearningPotentialScore();
+            SurfaceEnergyConflictPotentialScore = GetSurfaceEnergyConflictPotentialScore();
+            SurfaceEnergyHarmonyScore = GetSurfaceEnergyHarmonyScore();
 
             FundamentalEnergiesCompatibility = TemplateProcessor.PopulateTemplate(GetFundamentalEnergiesCompatibilityDetails(), new
             {
@@ -116,6 +120,14 @@ namespace K9.WebApplication.Models
 
         public ECompatibilityScore CharacterEnergyHarmonyScore { get; }
 
+        public ECompatibilityScore SurfaceEnergyChemistryScore { get; }
+
+        public ECompatibilityScore SurfaceEnergyLearningPotentialScore { get; }
+
+        public ECompatibilityScore SurfaceEnergyConflictPotentialScore { get; }
+
+        public ECompatibilityScore SurfaceEnergyHarmonyScore { get; }
+
         public string FundamentalEnergiesCompatibility { get; }
 
         public string CharacterEnergiesCompatibility { get; }
@@ -133,7 +145,7 @@ namespace K9.WebApplication.Models
         public string FirstPersonName => NineStarKiModel1.PersonModel.Name ?? Globalisation.Dictionary.FirstPerson;
 
         public string SecondPersonName => NineStarKiModel2.PersonModel.Name ?? Globalisation.Dictionary.SecondPerson;
-        
+
         public string FirstPersonNameWithArticle => NineStarKiModel1.PersonModel.Name ?? $"the {Globalisation.Dictionary.FirstPerson.ToLower()}";
 
         public string SecondPersonNameWithArticle => NineStarKiModel2.PersonModel.Name ?? $"the {Globalisation.Dictionary.SecondPerson.ToLower()}";
@@ -189,13 +201,13 @@ namespace K9.WebApplication.Models
         public ESexualChemistryScore TotalSexualChemistryScore => GetTotalSexualChemistryScore(NineStarKiModel1, NineStarKiModel2);
 
         public ECompatibilityScore TotalEnergyChemistryScore =>
-            GetAverageScore(FundamentalEnergyChemistryScore, CharacterEnergyChemistryScore);
+            GetAverageScore(FundamentalEnergyChemistryScore, CharacterEnergyChemistryScore, SurfaceEnergyChemistryScore);
 
-        public ECompatibilityScore TotalEnergyLearningPotentialScore => GetAverageScore(FundamentalEnergyLearningPotentialScore, CharacterEnergyLearningPotentialScore);
+        public ECompatibilityScore TotalEnergyLearningPotentialScore => GetAverageScore(FundamentalEnergyLearningPotentialScore, CharacterEnergyLearningPotentialScore, SurfaceEnergyLearningPotentialScore);
 
-        public ECompatibilityScore TotalEnergyConflictPotentialScore => GetAverageScore(FundamentalEnergyConflictPotentialScore, CharacterEnergyConflictPotentialScore);
+        public ECompatibilityScore TotalEnergyConflictPotentialScore => GetAverageScore(FundamentalEnergyConflictPotentialScore, CharacterEnergyConflictPotentialScore, SurfaceEnergyConflictPotentialScore);
 
-        public ECompatibilityScore TotalHarmonyScore => GetAverageScore(FundamentalEnergyHarmonyScore, CharacterEnergyHarmonyScore);
+        public ECompatibilityScore TotalHarmonyScore => GetAverageScore(FundamentalEnergyHarmonyScore, CharacterEnergyHarmonyScore, SurfaceEnergyHarmonyScore);
 
         private ESexualChemistryScore GetTotalSexualChemistryScore(NineStarKiModel energy1, NineStarKiModel energy2)
         {
@@ -778,6 +790,11 @@ namespace K9.WebApplication.Models
             return GetChemistryScore(NineStarKiModel1.CharacterEnergy, NineStarKiModel2.CharacterEnergy, 2);
         }
 
+        private ECompatibilityScore GetSurfaceEnergyChemistryScore()
+        {
+            return GetChemistryScore(NineStarKiModel1.SurfaceEnergy, NineStarKiModel2.SurfaceEnergy);
+        }
+
         private ECompatibilityScore GetChemistryScore(NineStarKiEnergy energy1, NineStarKiEnergy energy2, int genderScoreFactor = 1)
         {
             var transformationType = energy1.Energy.GetTransformationType(energy2.Energy);
@@ -809,6 +826,11 @@ namespace K9.WebApplication.Models
             return GetEnergyLearningPotentialScore(NineStarKiModel1.CharacterEnergy, NineStarKiModel2.CharacterEnergy);
         }
 
+        private ECompatibilityScore GetSurfaceEnergyLearningPotentialScore()
+        {
+            return GetEnergyLearningPotentialScore(NineStarKiModel1.SurfaceEnergy, NineStarKiModel2.SurfaceEnergy);
+        }
+
         private ECompatibilityScore GetEnergyLearningPotentialScore(NineStarKiEnergy energy1, NineStarKiEnergy energy2)
         {
             var transformationType = energy1.Energy.GetTransformationType(energy2.Energy);
@@ -838,6 +860,11 @@ namespace K9.WebApplication.Models
             return GetEnergyConflictPotentialScore(NineStarKiModel1.CharacterEnergy, NineStarKiModel2.CharacterEnergy);
         }
 
+        private ECompatibilityScore GetSurfaceEnergyConflictPotentialScore()
+        {
+            return GetEnergyConflictPotentialScore(NineStarKiModel1.SurfaceEnergy, NineStarKiModel2.SurfaceEnergy);
+        }
+
         private ECompatibilityScore GetFundamentalEnergyHarmonyScore()
         {
             return ECompatibilityScore.ExtremelyHigh - (int)GetFundamentalEnergyConflictPotentialScore();
@@ -846,6 +873,11 @@ namespace K9.WebApplication.Models
         private ECompatibilityScore GetCharacterEnergyHarmonyScore()
         {
             return ECompatibilityScore.ExtremelyHigh - (int)GetCharacterEnergyConflictPotentialScore();
+        }
+
+        private ECompatibilityScore GetSurfaceEnergyHarmonyScore()
+        {
+            return ECompatibilityScore.ExtremelyHigh - (int)GetSurfaceEnergyConflictPotentialScore();
         }
 
         private ECompatibilityScore GetEnergyConflictPotentialScore(NineStarKiEnergy energy1, NineStarKiEnergy energy2)
@@ -937,11 +969,12 @@ int score)
             return score;
         }
 
-        private ECompatibilityScore GetAverageScore(ECompatibilityScore fundamentalScore, ECompatibilityScore characterScore)
+        private ECompatibilityScore GetAverageScore(ECompatibilityScore fundamentalScore, ECompatibilityScore characterScore, ECompatibilityScore surfaceScore)
         {
-            var firstScore = (double)fundamentalScore * 1;
-            var secondScore = (double)characterScore * 1;
-            var average = (int)Math.Round((firstScore + secondScore) / 2, MidpointRounding.AwayFromZero);
+            var firstScore = (double)fundamentalScore * 1.2;
+            var secondScore = (double)characterScore * 0.8;
+            var thirdScore = (double)characterScore * 0.4;
+            var average = (int)Math.Round((firstScore + secondScore + thirdScore) / 3, MidpointRounding.AwayFromZero);
             return (ECompatibilityScore)Enum.Parse(typeof(ECompatibilityScore), average.ToString());
         }
     }

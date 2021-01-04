@@ -218,21 +218,18 @@ namespace K9.WebApplication.Tests.Unit.Services
 
         [Theory]
         [InlineData(1979, 6, 16, 2020, 12, 14, EGender.Male, ENineStarKiEnergy.Water, ENineStarKiEnergy.Lake)]
-        [InlineData(1979, 6, 16, 2020, 12, 14, EGender.Female, ENineStarKiEnergy.CoreEarth, ENineStarKiEnergy.CoreEarth)]
+        [InlineData(1979, 6, 16, 2020, 12, 14, EGender.Female, ENineStarKiEnergy.Water, ENineStarKiEnergy.Mountain)]
         [InlineData(1980, 6, 16, 2020, 12, 14, EGender.Male, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Wind)]
         [InlineData(1978, 6, 16, 2020, 12, 14, EGender.Male, ENineStarKiEnergy.Soil, ENineStarKiEnergy.Water)]
-        [InlineData(1978, 6, 16, 2020, 12, 14, EGender.Female, ENineStarKiEnergy.Wind, ENineStarKiEnergy.Mountain)]
-        [InlineData(1980, 6, 16, 2020, 12, 14, EGender.Female, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Soil)]
+        [InlineData(1978, 6, 16, 2020, 12, 14, EGender.Female, ENineStarKiEnergy.Soil, ENineStarKiEnergy.CoreEarth)]
+        [InlineData(1980, 6, 16, 2020, 12, 14, EGender.Female, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Soil)]
         public void LifeCycle_HappyPath(int birthYear, int birthMonth, int birthDay, int year, int month, int day, EGender gender, ENineStarKiEnergy yearlyCycleEnergy, ENineStarKiEnergy monthlyCycleEnergy)
         {
             var ninestar = new NineStarKiModel(new PersonModel
             {
                 DateOfBirth = new DateTime(birthYear, birthMonth, birthDay),
                 Gender = gender
-            })
-            {
-                Today = new DateTime(year, month, day)
-            };
+            }, new DateTime(year, month, day));
 
             Assert.Equal(yearlyCycleEnergy, ninestar.LifeCycleYearEnergy);
             Assert.Equal(monthlyCycleEnergy, ninestar.LifeCycleMonthEnergy);

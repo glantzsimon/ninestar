@@ -971,10 +971,10 @@ int score)
 
         private ECompatibilityScore GetAverageScore(ECompatibilityScore fundamentalScore, ECompatibilityScore characterScore, ECompatibilityScore surfaceScore)
         {
-            var firstScore = (double)fundamentalScore * 1.2;
+            var firstScore = (double)fundamentalScore;
             var secondScore = (double)characterScore * 0.8;
-            var thirdScore = (double)characterScore * 0.4;
-            var average = (int)Math.Round((firstScore + secondScore + thirdScore) / 3, MidpointRounding.AwayFromZero);
+            var thirdScore = (double)characterScore * 0.2;
+            var average = (int)Math.Round((firstScore + secondScore + thirdScore) / 2, MidpointRounding.AwayFromZero);
             return (ECompatibilityScore)Enum.Parse(typeof(ECompatibilityScore), average.ToString());
         }
     }

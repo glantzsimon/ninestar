@@ -1109,8 +1109,6 @@
     <Content Include="Views\Membership\PurchaseSuccess.cshtml" />
     <Content Include="Views\Membership\SwitchPurchase.cshtml" />
     <Content Include="Views\Membership\SwitchPurchaseStart.cshtml" />
-    <Content Include="Views\Membership\SwitchSchedule.cshtml" />
-    <Content Include="Views\Membership\SwitchScheduleStart.cshtml" />
     <Content Include="Views\Membership\SwitchSuccess.cshtml" />
     <Content Include="Views\Membership\_MembershipDetails.cshtml" />
     <Content Include="Views\Membership\_MembershipMedal.cshtml" />
@@ -1143,7 +1141,6 @@
     <Content Include="Views\NineStarKi\_CompatibilityCalculator.cshtml" />
     <Content Include="Views\Shared\_VideoFilesDisplay.cshtml" />
     <Content Include="Views\NineStarKi\_Sexuality.cshtml" />
-    <Content Include="Views\Membership\SwitchFree.cshtml" />
     <Content Include="Views\NineStarKi\_SexualityRelationType.cshtml" />
     <Content Include="Views\UserMemberships\_DisplayFields.cshtml" />
     <Content Include="Views\UserMemberships\_EditFields.cshtml" />

@@ -1,4 +1,5 @@
-﻿using K9.Base.WebApplication.Config;
+﻿using K9.Base.DataAccessLayer.Models;
+using K9.Base.WebApplication.Config;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
@@ -12,7 +13,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
-using K9.Base.DataAccessLayer.Models;
 using Xunit;
 
 namespace K9.WebApplication.Tests.Unit.Services
@@ -112,8 +112,6 @@ namespace K9.WebApplication.Tests.Unit.Services
                 _userRelationshipCompatibilityReadingsRepository.Object,
                 _userCreditPackRepository.Object,
                 _usersRepository.Object,
-                _stripeConfig.Object,
-                _stripeService.Object,
                 _contactService.Object,
                 _mailer.Object,
                 _config.Object);
@@ -179,7 +177,6 @@ namespace K9.WebApplication.Tests.Unit.Services
             Assert.Equal(1, model.MembershipModels.Count(_ => _.IsUpgrade));
             Assert.Equal(1, model.MembershipModels.Count(_ => _.IsSubscribed));
             Assert.Equal(1, model.MembershipModels.Count(_ => _.IsSelectable));
-            Assert.Equal(1, model.MembershipModels.Count(_ => _.IsScheduledSwitch));
         }
 
         [Fact]
@@ -211,7 +208,6 @@ namespace K9.WebApplication.Tests.Unit.Services
             Assert.Equal(1, model.MembershipModels.Count(_ => _.IsUpgrade));
             Assert.Equal(1, model.MembershipModels.Count(_ => _.IsSubscribed));
             Assert.Equal(1, model.MembershipModels.Count(_ => _.IsSelectable));
-            Assert.Equal(0, model.MembershipModels.Count(_ => _.IsScheduledSwitch));
         }
 
         [Fact]
@@ -244,7 +240,6 @@ namespace K9.WebApplication.Tests.Unit.Services
             Assert.Equal(0, model.MembershipModels.Count(_ => _.IsUpgrade));
             Assert.Equal(1, model.MembershipModels.Count(_ => _.IsSubscribed));
             Assert.Equal(0, model.MembershipModels.Count(_ => _.IsSelectable));
-            Assert.Equal(0, model.MembershipModels.Count(_ => _.IsScheduledSwitch));
             Assert.Equal(7, model.MembershipModels.First().ActiveUserMembershipId);
         }
 
@@ -254,7 +249,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             AuthenticateUser();
 
             var startsOn = DateTime.Today.AddDays(-7);
-            var scheduledStartsOn = startsOn.AddMonths(1).AddDays(1);
+            var scheduledStartsOn = startsOn.AddMonths(1).AddDays(5);
             var scheduledUserMembership = new UserMembership
             {
                 Id = 8,
@@ -283,17 +278,14 @@ namespace K9.WebApplication.Tests.Unit.Services
                 .Returns(userMembershipModels.AsQueryable());
 
             var model = _Membershipservice.GetMembershipViewModel();
-            var scheduledmembershipResult = _Membershipservice.GetScheduledSwitchUserMembership();
-
+            
             Assert.Equal(1, _Membershipservice.GetActiveUserMemberships().Count);
             Assert.Equal(userMembershipModels.First(), _Membershipservice.GetActiveUserMembership());
             Assert.Equal(0, model.MembershipModels.Count(_ => _.IsSelected));
             Assert.Equal(1, model.MembershipModels.Count(_ => _.IsUpgrade));
             Assert.Equal(1, model.MembershipModels.Count(_ => _.IsSubscribed));
             Assert.Equal(1, model.MembershipModels.Count(_ => _.IsSelectable));
-            Assert.Equal(1, model.MembershipModels.Count(_ => _.IsScheduledSwitch));
             Assert.Equal(7, model.MembershipModels.First().ActiveUserMembershipId);
-            Assert.Equal(scheduledUserMembership, scheduledmembershipResult);
         }
 
         [Fact]

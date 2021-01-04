@@ -106,11 +106,7 @@ namespace K9.WebApplication.Controllers
             ViewBag.SubTitle = switchMembershipModel.IsUpgrade
                 ? Globalisation.Dictionary.UpgradeMembership
                 : Globalisation.Dictionary.ChangeMembership;
-
-            if (switchMembershipModel.IsScheduledSwitch)
-            {
-                return View("SwitchScheduleStart", switchMembershipModel);
-            }
+            
             return View("SwitchPurchaseStart", switchMembershipModel);
         }
 
@@ -126,20 +122,7 @@ namespace K9.WebApplication.Controllers
 
             return View(switchMembershipModel);
         }
-
-        [Route("membership/switch/schedule")]
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult SwitchSchedule(int membershipOptionId)
-        {
-            var switchMembershipModel = _membershipService.GetSwitchMembershipModel(membershipOptionId);
-            ViewBag.SubTitle = switchMembershipModel.IsUpgrade
-                ? Globalisation.Dictionary.UpgradeMembership
-                : Globalisation.Dictionary.ChangeMembership;
-
-            return View(switchMembershipModel);
-        }
-
+        
         [HttpPost]
         [Route("membership/switch/processing")]
         [ValidateAntiForgeryToken]
@@ -157,25 +140,7 @@ namespace K9.WebApplication.Controllers
 
             return View("SwitchPurchase", _membershipService.GetSwitchMembershipModel(model.ItemId));
         }
-
-        [HttpPost]
-        [Route("membership/switch/free/processing")]
-        [ValidateAntiForgeryToken]
-        public ActionResult SwitchScheduleProcess(int membershipOptionId)
-        {
-            try
-            {
-                _membershipService.ProcessSwitch(membershipOptionId);
-                return RedirectToAction("SwitchSuccess");
-            }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError("", ex.Message);
-            }
-
-            return View("SwitchFree", _membershipService.GetSwitchMembershipModel(membershipOptionId));
-        }
-
+        
         [Route("membership/switch/success")]
         public ActionResult SwitchSuccess()
         {

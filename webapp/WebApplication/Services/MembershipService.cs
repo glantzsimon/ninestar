@@ -7,16 +7,13 @@ using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Models;
-using K9.WebApplication.Services.Stripe;
 using K9.WebApplication.ViewModels;
 using NLog;
-using Stripe;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using StripeConfiguration = K9.WebApplication.Config.StripeConfiguration;
 
 namespace K9.WebApplication.Services
 {
@@ -30,14 +27,12 @@ namespace K9.WebApplication.Services
         private readonly IRepository<UserRelationshipCompatibilityReading> _userRelationshipCompatibilityReadingsRepository;
         private readonly IRepository<UserCreditPack> _userCreditPacksRepository;
         private readonly IRepository<User> _usersRepository;
-        private readonly StripeConfiguration _stripeConfig;
-        private readonly IStripeService _stripeService;
         private readonly IContactService _contactService;
         private readonly IMailer _mailer;
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<UserProfileReading> userProfileReadingsRepository, IRepository<UserRelationshipCompatibilityReading> userRelationshipCompatibilityReadingsRepository, IRepository<UserCreditPack> userCreditPacksRepository, IRepository<User> usersRepository, IOptions<StripeConfiguration> stripeConfig, IStripeService stripeService, IContactService contactService, IMailer mailer, IOptions<WebsiteConfiguration> config)
+        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<UserProfileReading> userProfileReadingsRepository, IRepository<UserRelationshipCompatibilityReading> userRelationshipCompatibilityReadingsRepository, IRepository<UserCreditPack> userCreditPacksRepository, IRepository<User> usersRepository, IContactService contactService, IMailer mailer, IOptions<WebsiteConfiguration> config)
         {
             _logger = logger;
             _authentication = authentication;
@@ -47,8 +42,6 @@ namespace K9.WebApplication.Services
             _userRelationshipCompatibilityReadingsRepository = userRelationshipCompatibilityReadingsRepository;
             _userCreditPacksRepository = userCreditPacksRepository;
             _usersRepository = usersRepository;
-            _stripeConfig = stripeConfig.Value;
-            _stripeService = stripeService;
             _contactService = contactService;
             _mailer = mailer;
             _config = config.Value;
@@ -60,20 +53,17 @@ namespace K9.WebApplication.Services
             userId = userId ?? _authentication.CurrentUserId;
             var membershipOptions = _membershipOptionRepository.List();
             var activeUserMembership = GetActiveUserMembership(userId);
-            var scheduledMembership = GetScheduledSwitchUserMembership(userId);
-
+            
             return new MembershipViewModel
             {
                 MembershipModels = new List<MembershipModel>(membershipOptions.Select(membershipOption =>
                 {
                     var isSubscribed = activeUserMembership != null && activeUserMembership.MembershipOptionId == membershipOption.Id;
-                    var isScheduledSwitch = scheduledMembership != null && membershipOption.SubscriptionType == scheduledMembership.MembershipOption.SubscriptionType;
-
                     var isUpgradable = activeUserMembership == null || activeUserMembership.MembershipOption.CanUpgradeTo(membershipOption);
 
                     return new MembershipModel(_authentication.CurrentUserId, membershipOption, activeUserMembership)
                     {
-                        IsSelectable = !isScheduledSwitch && !isSubscribed && isUpgradable,
+                        IsSelectable = !isSubscribed && isUpgradable,
                         IsSubscribed = isSubscribed
                     };
                 }))
@@ -129,18 +119,7 @@ namespace K9.WebApplication.Services
 
             return activeUserMembership;
         }
-
-        /// <summary>
-        /// A user can opt to downgrade at the end of the current subscription. This returns the membership option that will auto renew when the active membership expires
-        /// </summary>
-        /// <param name="userId"></param>
-        /// <returns></returns>
-        public UserMembership GetScheduledSwitchUserMembership(int? userId = null)
-        {
-            var activeUserMembership = GetActiveUserMembership(userId);
-            return GetActiveUserMemberships(userId, true).FirstOrDefault(_ => _.StartsOn > activeUserMembership.EndsOn && _.IsAutoRenew);
-        }
-
+        
         public bool IsCompleteProfileReading(int? userId, DateTime dateOfBirth, EGender gender)
         {
             var activeUserMembership = GetActiveUserMembership(userId);
@@ -189,13 +168,7 @@ namespace K9.WebApplication.Services
             {
                 throw new Exception(Dictionary.SwitchMembershipErrorAlreadySubscribed);
             }
-
-            var scheduledUserMembership = GetScheduledSwitchUserMembership();
-            if (scheduledUserMembership?.MembershipOptionId == membershipOptionId)
-            {
-                throw new Exception(Dictionary.SwitchMembershipErrorAlreadySubscribed);
-            }
-
+            
             var membershipOption = _membershipOptionRepository.Find(membershipOptionId);
 
             return new MembershipModel(_authentication.CurrentUserId, membershipOption, activeUserMembership)

@@ -32,7 +32,7 @@ namespace K9.WebApplication.Services
             });
         }
 
-        public NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, bool isCompatibility = false)
+        public NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, bool isCompatibility = false, bool isMyProfile = false)
         {
             var model = new NineStarKiModel(personModel);
 
@@ -47,7 +47,7 @@ namespace K9.WebApplication.Services
 
             if (_authentication.IsAuthenticated)
             {
-                if (isCompatibility || _roles.CurrentUserIsInRoles(RoleNames.Administrators) || _membershipService.IsCompleteProfileReading(_authentication.CurrentUserId, personModel.DateOfBirth,
+                if (isCompatibility || _roles.CurrentUserIsInRoles(RoleNames.Administrators) || isMyProfile || _membershipService.IsCompleteProfileReading(_authentication.CurrentUserId, personModel.DateOfBirth,
                     personModel.Gender))
                 {
                     model.ReadingType = EReadingType.Complete;
@@ -59,6 +59,7 @@ namespace K9.WebApplication.Services
                 model.IsShowSummary = false;
             }
 
+            model.IsMyProfile = isMyProfile;
             model.IsProcessed = true;
 
             return model;

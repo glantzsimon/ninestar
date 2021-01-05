@@ -1,0 +1,24 @@
+﻿@model K9.WebApplication.Models.NineStarKiModel
+
+@{
+    ViewBag.Title = Dictionary.MyPersonalProfile;
+    ViewBag.SubTitle = Dictionary.MyPersonalProfile;
+    
+    Layout = "../Shared/_LayoutForm.cshtml";    
+}
+
+@Html.Partial("_BetaPopup")
+
+<div class="container main-content margin-bottom-0">
+    <div class="col-sm-12 padding-left-0 padding-right-0">
+        @if (Model != null && Model.IsProcessed)
+        {
+            @Html.Partial("_ProfileSummary", Model)
+        }
+    </div>
+</div>
+
+@if (Model != null && Model.IsProcessed)
+{
+    @Html.Partial("_ProfileDetails", Model)
+}

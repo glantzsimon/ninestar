@@ -30,7 +30,7 @@
     {
         foreach (var energy in Model)
         {
-            @Html.CollapsiblePanel(energy.FullEnergyDetailsTitle, energy.EnergyDescription, false, "", "", $"Images/ninestar/energies/{energy.Energy}.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+            @Html.CollapsiblePanel(energy.EnergyTitle, energy.EnergyDescription, false, "", "", $"Images/ninestar/energies/{energy.Energy}.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
         }
     }
 </div>

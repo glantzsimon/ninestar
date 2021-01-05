@@ -199,11 +199,9 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyLabel)]
         public string DescriptiveTitle => $"The {MetaData.GetDescriptiveTitle()}";
 
-        public string FullEnergyName => GetFullEnergyName();
-
         public string EnergyNameAndNumber => GetEnergyNameAndNumber();
 
-        public string FullEnergyDetailsTitle => GetFullEnergyDetailsTitle();
+        public string EnergyTitle => GetEnergyTitle();
 
         public int EnergyNumber => (int)Energy;
 
@@ -261,8 +259,6 @@ namespace K9.WebApplication.Models
             {
                 case 1:
                 case 9:
-                    return $"{EnergyNumber} {EnergyName}";
-
                 case 5:
                     return $"{EnergyNumber} {EnergyName}";
 
@@ -272,27 +268,13 @@ namespace K9.WebApplication.Models
 
         }
 
-        private string GetFullEnergyDetailsTitle()
+        private string GetEnergyTitle()
         {
             return EnergyType == ENineStarKiEnergyType.MainEnergy
-                ? $"{FullEnergyName} - {DescriptiveTitle}"
-                : FullEnergyName;
+                ? $"{EnergyNameAndNumber} - {DescriptiveTitle}"
+                : EnergyNameAndNumber;
         }
-
-        private string GetFullEnergyName()
-        {
-            switch (EnergyNumber)
-            {
-                case 1:
-                case 5:
-                case 9:
-                    return $"{EnergyNumber} {EnergyName}".Trim();
-
-                default:
-                    return $"{EnergyNumber} {EnergyName} / {ElementWithYingYang}".Trim();
-            }
-        }
-
+        
         private NineStarEnumMetaDataAttribute MetaData => Energy.GetAttribute<NineStarEnumMetaDataAttribute>();
 
         private NineStarEnumMetaDataAttribute RelatedMetaData => RelatedEnergy.GetAttribute<NineStarEnumMetaDataAttribute>();

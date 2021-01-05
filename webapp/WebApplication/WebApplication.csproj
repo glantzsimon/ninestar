@@ -1167,6 +1167,7 @@
     <Content Include="Views\Shared\_PaymentsForm.cshtml" />
     <Content Include="Views\Account\UnsubscribeFailed.cshtml" />
     <Content Include="Views\Account\UnsubscribeSuccess.cshtml" />
+    <Content Include="Views\NineStarKi\MyProfile.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

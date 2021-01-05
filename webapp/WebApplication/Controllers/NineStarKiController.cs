@@ -1,4 +1,5 @@
 ﻿using K9.Base.DataAccessLayer.Enums;
+using K9.Base.DataAccessLayer.Models;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Helpers;
@@ -13,12 +14,16 @@ namespace K9.WebApplication.Controllers
 {
     public class NineStarKiController : BaseNineStarKiController
     {
+        private readonly IAuthentication _authentication;
         private readonly INineStarKiService _nineStarKiService;
+        private readonly IRepository<User> _usersRepository;
 
-        public NineStarKiController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService)
+        public NineStarKiController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService, IRepository<User> usersRepository)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
+            _authentication = authentication;
             _nineStarKiService = nineStarKiService;
+            _usersRepository = usersRepository;
         }
 
         [Route("calculate")]
@@ -44,6 +49,18 @@ namespace K9.WebApplication.Controllers
                 SessionHelper.SetLastProfile(model.PersonModel);
             }
             return View("Index", model);
+        }
+
+        [Authorize]
+        [Route("my-profile")]
+        public ActionResult MyProfile()
+        {
+            var myAccount = _usersRepository.Find(_authentication.CurrentUserId);
+            return View(_nineStarKiService.CalculateNineStarKiProfile(new PersonModel
+            {
+                DateOfBirth = myAccount.BirthDate,
+                Gender = myAccount.Gender
+            }, false, true));
         }
 
         [Route("calculate/profile")]
@@ -120,3 +137,4 @@ namespace K9.WebApplication.Controllers
         }
     }
 }
+

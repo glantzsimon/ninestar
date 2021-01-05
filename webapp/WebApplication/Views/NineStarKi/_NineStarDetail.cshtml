@@ -8,9 +8,9 @@
     <div class="container main-content clear-both ninestar-header-container">
         <article>
             <div>
-                @Html.CollapsiblePanel(Model.OverviewLabel, Model.Overview, true)
+                @Html.CollapsiblePanel(Model.MainEnergy.EnergyTitle, Model.MainEnergy.EnergyDescription, true, "", "", $"Images/ninestar/energies/{Model.MainEnergy.Energy}.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
 
-                @Html.CollapsiblePanel(Model.MainEnergy.FullEnergyDetailsTitle, Model.MainEnergy.EnergyDescription, false, "", "", $"Images/ninestar/energies/{Model.MainEnergy.Energy}.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                @Html.CollapsiblePanel(Model.OverviewLabel, Model.Overview)
 
                 @Html.CollapsiblePanel(Model.MainEnergy.ElementTitle, Model.MainEnergy.ElementDescription, false, "", "", $"Images/ninestar/elements/{Model.MainEnergy.Element}.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
 

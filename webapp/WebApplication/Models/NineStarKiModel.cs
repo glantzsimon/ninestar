@@ -82,7 +82,7 @@ namespace K9.WebApplication.Models
 
         public ESexualityRelationType SexualityRelationType => GetSexualityRelationType();
 
-        public string OverviewLabel => $"Overview of {MainEnergy.EnergyNameAndNumber} Fundamental Nature";
+        public string OverviewLabel => $"{MainEnergy.EnergyNameAndNumber} Overview";
 
         public string EnergySexualityLabel => $"{MainEnergy.EnergyName} {Dictionary.SexualityLabel}";
 
@@ -97,6 +97,8 @@ namespace K9.WebApplication.Models
         public string GayLabel => PersonModel?.Gender == EGender.Female ? Dictionary.Lesbian : Dictionary.Gay;
 
         public bool IsProcessed { get; set; } = false;
+        
+        public bool IsMyProfile { get; set; } = false;
 
         private NineStarKiEnergy GetMainEnergy(DateTime date, EGender gender)
         {

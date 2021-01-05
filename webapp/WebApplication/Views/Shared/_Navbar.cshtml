@@ -27,14 +27,14 @@
             </ul>
         }
         <ul class="site-controls">
+            <li class="@ViewContext.GetActiveClass("Index", "Support")"><a title="@Dictionary.Support" href="@Url.Action("Index", "Support")"><span class="glyphicon glyphicon-question-sign"></span><span class="site-controls-text"> @Dictionary.Support</span></a></li>
             <li class="@ViewContext.GetActiveClass("DonateStart", "Support")"><a title="@Dictionary.Donate" href="@Url.Action("DonateStart", "Support")"><span class="glyphicon glyphicon-euro"></span><span class="site-controls-text"> @Dictionary.Donate</span></a></li>
-            @Html.LoginLogout()
             @if (WebSecurity.IsAuthenticated)
             {
+                <li class="@ViewContext.GetActiveClass("MyProfile", "NineStarKi")"><a title="@Dictionary.MyPersonalProfile" href="@Url.Action("MyProfile", "NineStarKi")"><span class="site-controls-text"> @Dictionary.MyPersonalProfile</span></a></li>
                 <li class="@ViewContext.GetActiveClass("MyAccount", "Account")"><a title="@K9.Base.Globalisation.Dictionary.MyAccountTitle" href="@Url.Action("MyAccount", "Account")"><span class="glyphicon glyphicon-user"></span><span class="site-controls-text"> @K9.Base.Globalisation.Dictionary.MyAccountTitle</span></a></li>
             }
-            <li class="@ViewContext.GetActiveClass("Index", "Support")"><a title="@Dictionary.Support" href="@Url.Action("Index", "Support")"><span class="glyphicon glyphicon-question-sign"></span><span class="site-controls-text"> @Dictionary.Support</span></a></li>
-            @*@Html.Partial("Controls/_LanguageSelector")*@
+            @Html.LoginLogout()
         </ul>
     </div>
 </div>

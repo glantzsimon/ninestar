@@ -1530,10 +1530,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Character Energies - Opposite Gender
+        ///    Character Energies - Opposite Energetic Gender
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper}&apos;s Character Energy&apos;s gender is opposite to {Person2}. This typically leads to much greater sexual compatibility and chemistry in romantic relationships. This combination also typically results in greater complementarity on an emotional level, but may result in some misunderstandings.
+        ///    This typically leads to &lt;strong&gt;much greater sexual compatibility and chemistry&lt;/strong&gt; in romantic relationships. This combination also typically results in &lt;strong&gt;greater complementarity on an emotional level&lt;/strong&gt;, but may result in &lt;strong&gt;some misunderstandings&lt;/strong&gt;.
         ///&lt;/p&gt;.
         /// </summary>
         public static string character_gender_opposite {
@@ -1544,10 +1544,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Character Energies - Same Gender
+        ///    Character Energies - Same Enegetic Gender
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper}&apos;s Character Energy&apos;s gender is the same as {Person2}&apos;s. In romantic relationships, this typically leads to less sexual chemistry than with opposite Character Energy genders. However, if the Fundamental Energies have opposite gender and antagonistic elements, the chance of sexual chemistry is far greater. Having the same Character Energy gender can lead to greater mutual understanding on an emotional level.
+        ///    In romantic relationships, this typically leads to &lt;strong&gt;less sexual chemistry&lt;/strong&gt; than with opposite Character Energy genders. However, if the Fundamental Energies have opposite gender and antagonistic elements, the chance of sexual chemistry is far greater. Having the same Character Energy gender can lead to &lt;strong&gt;greater mutual understanding on an emotional level&lt;/strong&gt;.
         ///&lt;/p&gt;.
         /// </summary>
         public static string character_gender_same {
@@ -1561,7 +1561,7 @@ namespace K9.Globalisation {
         ///    Character Energies - Different Modality
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper}&apos;s Character Energy&apos;s modality is different from {Person2}&apos;s. This typically leads to greater complementarity between the couple on an emotional level, but also brings a slightly greater risk of misunderstanding.
+        ///    This typically leads to &lt;strong&gt;greater complementarity between the couple on an emotional level&lt;/strong&gt;, but also brings a &lt;strong&gt;slightly greater risk of misunderstanding&lt;/strong&gt;.
         ///&lt;/p&gt;.
         /// </summary>
         public static string character_modality_different {
@@ -1575,7 +1575,7 @@ namespace K9.Globalisation {
         ///    Character Energies - Same Modality
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper}&apos;s Character Energy&apos;s modality is the same as {Person2}&apos;s. This typically leads to greater understanding between the couple on an emotional level, but there may be less chemistry between the couple.
+        ///    This typically leads to &lt;strong&gt;greater understanding between the couple on an emotional level&lt;/strong&gt;, but there may be &lt;strong&gt;less chemistry&lt;/strong&gt; between the couple.
         ///&lt;/p&gt;.
         /// </summary>
         public static string character_modality_same {
@@ -3600,7 +3600,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This is a very harmonious combination with a potential for a very deep friendship. Howver, the sexual chemistry may be lacking.
+        ///    This has the potential to be a very harmonious combination. However, it might be better suited to friendship than romance.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;
@@ -3610,7 +3610,7 @@ namespace K9.Globalisation {
         ///    Both people share the same Fundamental Energy &quot;Water&quot;. Water is perhaps the most intuitive and empathetic of the 9 Energies and so there is a potential for an extremely deep and intuitive connection between these two people. 
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Water Energy is naturally flexible, easy-going and generally non-confron [rest of string was truncated]&quot;;.
+        ///    Water Energy is naturally flexible, easy-going and generally non-confrontatio [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_11 {
             get {
@@ -3627,7 +3627,7 @@ namespace K9.Globalisation {
         ///    Challenges
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life. {Person2Proper}, on the other hand, is a S [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Challenging Transformation, with {Person2} challenging or controlling {Person1}. This can increase the likelihood of conflict and misunderstandin [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_12 {
             get {
@@ -3637,16 +3637,17 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This is potentially quite an exciting and harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person1} supporting {Person2}. There is also potential for good relationship chemistry and for personal growth.
+        ///    This is potentially quite an exciting and harmonious combination. There is also potential for good relationship chemistry and for personal growth.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;
         ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life. 
-        ///    
-        ///    {Person2Proper} is a Thunder Energy. Thu [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Supportive Transformation, with {Person1} supporting {Person2}. This type of combination typically leads to greater harmony and mutual understanding.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independen [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_13 {
             get {
@@ -3656,16 +3657,17 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This is potentially quite an exciting and harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person1} supporting {Person2}. There is also potential for good relationship chemistry and for personal growth.
+        ///    This is potentially quite an exciting and harmonious combination. There is also potential for good relationship chemistry and for personal growth.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;
         ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life.
-        ///
-        ///    {Person2Proper} is a Wind Energy. Winds often [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Supportive Transformation, with {Person1} supporting {Person2}. This type of combination typically leads to greater harmony and mutual understanding.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independen [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_14 {
             get {
@@ -3682,9 +3684,7 @@ namespace K9.Globalisation {
         ///    Challenges
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life.
-        ///
-        ///    {Person2Proper} is a Core Earth Energy. 5 Earths genera [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Challenging Transformation, with {Person2} challenging or controlling {Person1}. This can increase the likelihood of conflict and misunderstandings. The challenging  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_15 {
             get {
@@ -3694,16 +3694,14 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This is potentially a very harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for reasonable sexual chemistry and for quite a bit of growth. Conflict is less likely in this combination.
+        ///    This is potentially a very harmonious and complementary combination, as the Fundamental Energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for reasonable sexual chemistry and for quite a bit of growth. Conflict is less likely in this combination.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;
         ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life.
-        ///
-        ///    {Person2P [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Supportive Transformation, with {Person2} supporting {Person1}. This type of combination typically le [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_16 {
             get {
@@ -3720,9 +3718,7 @@ namespace K9.Globalisation {
         ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind of attitude to life.
-        ///
-        ///   [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Supportive Transformation, with {Person2} supporting {Person1}. This type of combination typically leads to  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_17 {
             get {
@@ -3739,7 +3735,7 @@ namespace K9.Globalisation {
         ///    Challenges
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flo [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Challenging Transformation, with {Person2} challenging or controlling {Pers [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_18 {
             get {
@@ -3756,7 +3752,7 @@ namespace K9.Globalisation {
         ///    Challenges
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a 1 Water Energy and is likely to be quite free-spirited and independent with a go-with-the-flow kind  [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Challenging Transformation, with {Person1} challenging or controlling {Person2}. T [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_19 {
             get {
@@ -3766,7 +3762,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This is a very harmonious combination with a great potential for a solid friendship. However, the sexual chemistry may be lacking.
+        ///    This has the potential to be a very harmonious combination. However, it might be better suited to friendship than romance.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;
@@ -3776,7 +3772,7 @@ namespace K9.Globalisation {
         ///    Both people share the same Fundamental Energy &quot;Soil&quot;. Both people are stable, reliable, supportive types who are likely to have very similar values and priorities. This could very well result in a close friendship where both people feel understood, supported and that they can rely on one another.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///  [rest of string was truncated]&quot;;.
+        ///    There [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_22 {
             get {
@@ -3793,7 +3789,7 @@ namespace K9.Globalisation {
         ///    Challenges
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person2Proper} is a 3 Tree Energy and is likely to be very energetic, changeable and even impulsive and explosive at times. {Person1Proper}, on the other hand, is a Soil Energy and is [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Challenging Transformation, with {Person2} challenging or controlling {Person1}. This can increase the likelihood of conflict and misunderstandin [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_23 {
             get {
@@ -3805,8 +3801,12 @@ namespace K9.Globalisation {
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationship chemistry and for personal growth.
         ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Challenges
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person2Proper} is a 4 Tree Energy and is likely to be very energetic, changeable and even impulsive at times. {Person1Proper}, on the other hand, is a Soil Energy and is more likely to be structured and disciplined [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Challenging Transformation, with {Person2} challenging or controlling {Person1}. This can increase the likelihood of conflict and misunderstandin [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_24 {
             get {
@@ -3815,14 +3815,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is a very harmonious combination with a great potential for a solid friendship. However, the sexual chemistry may be lacking.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This has the potential to be a very harmonious combination. However, it might be better suited to friendship than romance.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    Both people share the same Fundamental Element &quot;Earth&quot;. Both people are stable, reliable, supportive types who are likely to have very similar values and priorities. This could very well result in a close friendship where both people feel understood, supported and that they can rely on one another.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    5 Earth people typially like to be at  [rest of string was truncated]&quot;;.
+        ///    5 E [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_25 {
             get {
@@ -3831,11 +3835,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially a very harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person1} supporting {Person2}. There is also potential for good sexual chemistry and for personal growth. Conflict is less likely in this combination. Soil and Heaven Energies represent the &quot;Mother&quot; and &quot;Father&quot; archetype, with the former being all Yin and the latter all Yang. This is a very strong combination.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is potentially a very harmonious and complementary combination. Soil and Heaven Energies represent the &quot;Mother&quot; and &quot;Father&quot; archetype, with the former being all Yin and the latter all Yang. This is a very strong combination.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a Soil  Energy and is most likel [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Supportive Transformation, with {Person1} supporting {Person2}. This type of combination typically leads to greater harmony and mutual understanding.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    {Perso [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_26 {
             get {
@@ -3844,13 +3855,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially a very harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for good sexual chemistry and for personal growth. Conflict is less likely in this combination.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is potentially a very harmonious and complementary combination with less likelihood of conflict and misunderstanding.
         ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} and {Person2} are in a Supportive Transformation, with {Person1} supporting {Person2}. This type of combination typically leads to greater harmony and mutual understanding.
+        ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    {Person1Proper} is a Soil  Energy and is most likely stable, reliable and supportive.
         ///
-        ///    {Person2Proper} is a Lake Energy. Lakes generally have a laid-back nature and are supportive, pragmatic and reliable. Th [rest of string was truncated]&quot;;.
+        ///    {Person2Proper} is a  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_27 {
             get {
@@ -3859,14 +3877,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is a very harmonious combination with a great potential for a solid friendship. However, the sexual chemistry may be lacking.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This has the potential to be a very harmonious combination. However, it might be better suited to friendship than romance.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    Both people share the same Fundamental Element &quot;Earth&quot;. Both people are stable, reliable, supportive types who are likely to have very similar values and priorities. This could very well result in a close friendship where both people feel understood, supported and that they can rely on one another.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Mountain people can be quite solitary  [rest of string was truncated]&quot;;.
+        ///    The [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_28 {
             get {
@@ -3875,13 +3897,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially a very harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for good sexual chemistry and for personal growth. Conflict is less likely in this combination.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is potentially a very harmonious and complementary combination with relatively little conflict and good mutual understanding.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a Soil Energy. Soil Energies are typically stable, reliable, supportive and practical.
-        ///
-        ///    {Person2Proper} is a Fire Energy. Fires, on the other hand, are quite free-spirited and spontaneous. [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Supportive Transformation, with {Person2} supporting {Person1}. This type of combination typically leads to greater harmony and mutual understanding.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a Soil Energy. Soil Energies are typically stable, reliable, supportive and practical.        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_29 {
             get {
@@ -3890,11 +3917,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is a fairly harmonious combination with a great potential for friendship. However, the sexual chemistry may be lacking.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is a fairly harmonious combination with a great potential for friendship and mutual understanding.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both people share the same Fundamental Energy &quot;Thunder&quot;. Thunder Energies typically really enjoy talking to and spending time with other Thunder Energies. One of the reasons for this is that they often find that other Thunders are the only people who can truly keep up! As the other Energies in the 9 Star Ki system sometimes find Thunder Energies a bit overwh [rest of string was truncated]&quot;;.
+        ///    Both people share the same Fundamental Energy &quot;Thunder&quot;. Thunder Energies typically really enjoy talking to and spending time with other Thunder Energies. One of the reasons for this is that they often find that other Thunders are the only people who can truly keep up! As the other Energies in the 9 Star Ki system sometimes find Thunder [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_33 {
             get {
@@ -3903,11 +3934,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially quite an exciting and harmonious combination, as both Energies are Tree element There is great potential for friendship; however, there is less likelihood of strong sexual chemistry.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is a fairly harmonious combination with a great potential for friendship and mutual understanding.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both people share the same Element &quot;Tree&quot;. Tree Energies typically really enjoy talking to and spending time with other Tree Energies. One of the reasons for this is that they often find that Trees are the only people who can truly keep up! The conversation between Tree Energies is [rest of string was truncated]&quot;;.
+        ///    Both people share the same Element &quot;Tree&quot;. Tree Energies typically really enjoy talking to and spending time with other Tree Energies. One of the reasons for this is that they often find that Trees are the only people who can truly keep up! The conversation between Tree Energies is often very dynamic, moving quickly from idea to idea. T [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_34 {
             get {
@@ -3916,11 +3951,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person1} overriding or controlling {Person2}. However, there is a potential for good relationship chemistry and for personal growth.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is potentially quite a challenging combination. However, there is a potential for good relationship chemistry and for personal growth.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Challenges
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a 3 Tree Energy and is likely to be very energetic, changeable and even impulsive and explosive at times. {Person2Proper}, on the other hand, is a Core Earth Energy and is more likely to be steady, pragmatic a [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Challenging Transformation, with {Person1} challenging or controlling {Person2}. This can increase the likelihood of conflict and misunderstandings. The challenging Energy ({Person1}) needs to take care not to dominate in the relationship.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    {Perso [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_35 {
             get {
@@ -3929,11 +3971,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationship chemistry and for personal growth.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is potentially quite a challenging combination. However, there is a potential for good relationship chemistry and for personal growth.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Challenges
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a 3 Tree Energy and is likely to be very energetic, changeable and even impulsive and explosive at times. {Person2Proper}, on the other hand, is a Heaven Energy and is more reserved, pragmatic and single-minde [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Challenging Transformation, with {Person2} challenging or controlling {Person1}. This can increase the likelihood of conflict and misunderstandings. The challenging Energy ({Person2}) needs to take care not to dominate in the relationship.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    {Perso [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_36 {
             get {
@@ -3942,11 +3991,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationship chemistry and for a lot of personal growth.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is potentially quite a challenging combination. However, there is a potential for good relationship chemistry and for a lot of personal growth.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Challenges
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a 3 Tree Energy and is likely to be very energetic, changeable and even impulsive and explosive at times. {Person2Proper}, on the other hand, is a Lake Energy and is more pragmatic and rational. This  [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Challenging Transformation, with {Person2} challenging or controlling {Person1}. This can increase the likelihood of conflict and misunderstandings. The challenging Energy ({Person2}) needs to take care not to dominate in the relationship.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_37 {
             get {
@@ -3955,11 +4011,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person1} overriding or controlling {Person2}. However, there is a potential for good relationship chemistry and for personal growth.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is potentially quite a challenging combination. However, there is a potential for good relationship chemistry and for personal growth.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Challenges
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a 3 Tree Energy and is likely to be very energetic, changeable and even impulsive and explosive at times. {Person2Proper}, on the other hand, is a Mountain Energy and is more likely to be steady, pragmatic and [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Challenging Transformation, with {Person1} challenging or controlling {Person2}. This can increase the likelihood of conflict and misunderstandings. The challenging Energy ({Person1}) needs to take care not to dominate in the relationship.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    {Perso [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_38 {
             get {
@@ -3968,11 +4031,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially a very harmonious and exciting combination. The Fundamental Energies are in a Supportive Transformation, with {Person1} supporting {Person2}. There is also potential for good sexual chemistry and for personal growth. Conflict is less likely in this combination, but not impossible.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is potentially a very harmonious and exciting combination. Conflict is less likely in this combination.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both 3 Tree and Fire Energies can be very energetic, changeable and even impulsive at times. This can either work very well, leading to an exciting, dynamic relationship with plenty o [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Supportive Transformation, with {Person1} supporting {Person2}. This type of combination typically leads to greater harmony and mutual understanding.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Both 3 Tree and Fire Energies can be very energetic, changeable and even impulsive at times. This can often lead to an exciting, [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_39 {
             get {
@@ -3981,14 +4051,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is a harmonious combination with a great potential for friendship. However, the sexual chemistry may be lacking.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is a fairly harmonious combination with a great potential for friendship and mutual understanding.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    Both people share the same Fundamental Energy &quot;Wind&quot;. Wind Energies often enjoy each other&apos;s company as they are quite talkative by nature, but are equally receptive and good listeners. This tends to create very enjoyable conversation.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Both people are full of energy and spontaneity and are likely to enjoy lots of different activities together. Being [rest of string was truncated]&quot;;.
+        ///    Both people are full of energy and spontaneity and are likely to enjoy lots of differe [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_44 {
             get {
@@ -3997,11 +4071,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person1} overriding or controlling {Person2}. However, there is a potential for good relationship chemistry and for personal growth.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is potentially quite a challenging combination. However, there is potential for good personal chemistry and growth.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Challenges
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a 4 Tree Energy and is likely to be quite energetic, changeable and even impulsive at times. {Person2Proper}, on the other hand, is a Core Earth Energy and is more likely to be steady, pragmatic and single-min [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Challenging Transformation, with {Person1} challenging or controlling {Person2}. This can increase the likelihood of conflict and misunderstandings. The challenging Energy ({Person1}) needs to take care not to dominate in the relationship.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a 4 Tr [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_45 {
             get {
@@ -4010,11 +4091,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationship chemistry and for personal growth.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is potentially quite a challenging combination. However, there is a potential for good relationship chemistry and for personal growth.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Challenges
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a 4 Tree Energy and is likely to be very energetic, changeable and even impulsive and explosive at times. {Person2Proper}, on the other hand, is a Heaven Energy and is more reserved, pragmatic and single-minde [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Challenging Transformation, with {Person2} challenging or controlling {Person1}. This can increase the likelihood of conflict and misunderstandings. The challenging Energy ({Person2}) needs to take care not to dominate in the relationship.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    {Perso [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_46 {
             get {
@@ -4023,11 +4111,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationship chemistry and for a lot of personal growth.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is potentially quite a challenging combination. However, there is a potential for good relationship chemistry and for a lot of personal growth.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Challenges
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a 4 Tree Energy and is likely to be lively, changeable and even impulsive at times. {Person2Proper}, on the other hand, is a 7 Metal Energy and is more pragmatic and rational. This could result in som [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Challenging Transformation, with {Person2} challenging or controlling {Person1}. This can increase the likelihood of conflict and misunderstandings. The challenging Energy ({Person2}) needs to take care not to dominate in the relationship.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_47 {
             get {
@@ -4036,11 +4131,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person1} overriding or controlling {Person2}. However, there is a potential for good relationship chemistry and for personal growth.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is potentially quite a challenging combination. However, there is a potential for good relationship chemistry and for personal growth.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Challenges
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a 4 Tree Energy and is likely to be quite lively, changeable and even impulsive at times. {Person2Proper}, on the other hand, is a Mountain Energy and is more likely to be steady, pragmatic and single-minded.  [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Challenging Transformation, with {Person1} challenging or controlling {Person2}. This can increase the likelihood of conflict and misunderstandings. The challenging Energy ({Person1}) needs to take care not to dominate in the relationship.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    {Perso [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_48 {
             get {
@@ -4049,11 +4151,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially a very harmonious and exciting combination. The Fundamental Energies are in a Supportive Transformation, with {Person1} supporting {Person2}. There is also potential for good sexual chemistry and for personal growth. Conflict is less likely in this combination, but not impossible.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is potentially a very harmonious and exciting combination with little conflict and plenty of room for growth.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both 4 Tree and Fire Energies can be very energetic, changeable and even impulsive at times. This can either work very well, leading to an exciting, dynamic relationship with plenty o [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Supportive Transformation, with {Person1} supporting {Person2}. This type of combination typically leads to greater harmony and mutual understanding.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Both 4 Tree and Fire Energies can be very energetic, changeable and even impulsive at times. This can either work very wel [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_49 {
             get {
@@ -4062,11 +4171,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is a generally harmonious combination with good potential for friendship. However, the sexual chemistry may be lacking and conflict may arise if both parties wish to take the lead.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is a generally harmonious combination with good potential for friendship. However, conflict may arise if both parties wish to take the lead.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    5 Earth people typially like to be at the centre of everything they do and are very group-oriented. As both people are Core Earth Energies, on the one hand, they may be able to work well together and support one another; however, it can also go the other way and conflict could arise if both parties [rest of string was truncated]&quot;;.
+        ///    There is a potential for great trust to be formed in this relationship. Both parties are typically reliable and supportive and when that goes both ways, great friendships are often the result.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    There is also a great potential for mutual understanding and compassion. This can be tr [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_55 {
             get {
@@ -4075,13 +4191,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially a very harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person1} supporting {Person2}. There is also potential for good sexual chemistry and for personal growth. There is not a high risk of conflict in this combination, but due to the bold nature of both Energies, some could arise from time to time.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is potentially quite a harmonious and complementary combination, however some conflict could arise if both parties wish to take the lead.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a Core Earth  Energy and is most likely stable, reliable and supportive.
-        ///
-        ///    {Person2Proper} is a [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Supportive Transformation, which typically results in little conflict and a much deeper sense of harmony and mutual respect.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Both 6 Metal Energies and Core Earths are quite grounded and reliable. In addition, both Energies usually have a strong [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_56 {
             get {
@@ -4090,11 +4211,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially a very harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person1} supporting {Person2}. There is also potential for good sexual chemistry and for personal growth. There is not a high risk of conflict in this combination.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is potentially a very harmonious and complementary combination. There isn&apos;t a high risk of conflict in this combination.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person2Proper} is a Lake Energy. 7 Metals generally have a laid-back nature and are happy to go with the flow. This can potentially work quite harmoniously with 5 Core Earth Energies, who typically l [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Supportive Transformation, with {Person1} supporting {Person2}. This type of combination typically leads to greater harmony and mutual understanding.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    {Person2Proper} is a Lake Energy. 7 Metals generally have a laid-back nature and are happy to go with the flow. [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_57 {
             get {
@@ -4103,14 +4231,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is a typically a very harmonious combination with a great potential for a solid friendship. However, the sexual chemistry may be lacking.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is a typically a very harmonious combination with a great potential for a solid friendship.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both people share the same Fundamental Element &quot;Earth&quot;. Both people are stable, reliable, supportive types who are likely to have very similar values and priorities. This could very well result in a close friendship where both people feel understood, supported and that they can rely on one another.
+        ///    {Person1Proper} and {Person2} are in a Supportive Transformation, with {Person1} supporting {Person2}. This type of combination typically leads to greater harmony and mutual understanding.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Mountain people can be qui [rest of string was truncated]&quot;;.
+        ///    Both people share the same Fundamental Element &quot;Earth&quot;. Both people are stable, reliable, supportive types who are likely to have very simil [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_58 {
             get {
@@ -4119,13 +4251,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially a very harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for good sexual chemistry and for personal growth. Conflict is less likely in this combination.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is potentially a very harmonious and complementary combination. Conflict is less likely in this combination.
         ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} and {Person2} are in a Supportive Transformation, with {Person2} supporting {Person1}. This type of combination typically leads to greater harmony and mutual understanding.
+        ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    {Person1Proper} is a Core Earth Energy. Core Earth Energies are typically stable, reliable, supportive and practical.
         ///
-        ///    {Person2Proper} is a Fire Energy. Fires, on the other hand, are quite free-spirited and  [rest of string was truncated]&quot;;.
+        ///   [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_59 {
             get {
@@ -4134,14 +4273,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is a generally harmonious combination with good potential for friendship. However, the sexual chemistry may be lacking and conflict may arise from the fact that both parties like to to take the lead and be in control.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is likely to be a fairly harmonious combination with good potential for friendship. However, conflict may arise from both parties wanting to take the lead.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both people are Heaven Energies and as such are naturally authoritative. This could go in two directions. On the one hand, if there is mutual respect, then a strong bond may be formed. Howver, it could equally lead to rivalry and friction.
+        ///    There is a potential for great trust to be formed in this relationship. Both parties are typically reliable, loyal, steady and pragmatic and are likely to appreciate these qualities in one another.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Heaven [rest of string was truncated]&quot;;.
+        ///    There is also a great potential for mutual understanding and compas [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_66 {
             get {
@@ -4150,14 +4293,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is a generally a very harmonious combination with good potential for friendship. However, the sexual chemistry may be less pronounced, due to both Energies being of the same element.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is a generally a very harmonious combination with good potential for friendship.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    {Person1Proper} is a Heaven Energies and is typically authoritative, straightforward and direct. {Person2Proper} is a Lake Energy and is generally far more laid-back and flexible and more able to accomodate the potentially bolder and more dominant nature of {Person2}.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Heaven Energ [rest of string was truncated]&quot;;.
+        ///    Heaven Energies are typically quite moral and noble. Lake Energies also [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_67 {
             get {
@@ -4166,13 +4313,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially quite a harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for reasonable sexual chemistry and for personal growth. Conflict is less likely, but still possible in this combination, as both parties can have quite a bold character.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;well&quot;&gt;
+        ///    This is potentially quite a harmonious combination; however both parties can have quite a bold character, increasing the risk of clashing.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a Mountain Energy and is most likely stable, reliable and supportive.
-        ///
-        ///    {Person2Proper} is a Heaven Energy. 6 Met [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Supportive Transformation, with {Person2} supporting {Person1}. This type of combination typically leads to greater harmony and mutual understanding.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a Mountain Energy and is most likely stable, reliable and supportive. These qua [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_68 {
             get {
@@ -4181,11 +4333,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationship chemistry and for personal growth.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is potentially quite a challenging combination. However, there is a potential for good relationship chemistry and for personal growth.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Challenges
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a Heaven Energy. 6 Metals generally have a bold, moral and assertive nature and like to take the lead. It&apos;s possible that {Person1}&apos;s bold, assertive nature could clash with {Person2}, bringing out {Gender2Pos [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Challenging Transformation, with {Person2} challenging or controlling {Person1}. This can increase the likelihood of conflict and misunderstandings. The challenging Energy ({Person2}) needs to take care not to dominate in the relationship.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    {Perso [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_69 {
             get {
@@ -4194,14 +4353,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is a very harmonious combination with great potential for friendship. The sexual chemistry may well be lacking, however.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This has the potential to be a very harmonious combination. However, it might be better suited to friendship than romance.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    Both people are Lake Energies and as such are naturally laid-back and enjoy many of the same kinds of activities and interests and are fun-loving. This is a recipe for a very enjoyable friendship!
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Both people have a great sense of optimism and are both great communicators and listeners. This typically results in an extremely civilised and ba [rest of string was truncated]&quot;;.
+        ///    Both people have a great sense of optimism and are both great communicators and listeners. This typically  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_77 {
             get {
@@ -4210,13 +4373,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially quite a harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person1} supporting {Person2}. There is also potential for good personal growth. Conflict is typically not much of an issue.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is potentially quite a harmonious combination. There is also potential for good personal growth. Conflict is typically not much of an issue.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person2Proper} is a Mountain Energy. Mountains are typically stable, reliable and supportive.
-        ///
-        ///    {Person1Proper} is a Lake. Lake Energies are also pretty stable and reliable and are generally laid-back and flexbible. This combination [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Supportive Transformation, with {Person2} supporting {Person1}. This type of combination typically leads to greater harmony and mutual understanding.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    {Person2Proper} is a Mountain Energy. Mountains are typically stable, reliable and supporti [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_78 {
             get {
@@ -4225,11 +4393,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially quite a challenging combination, as the Fundamental Energies are in a Challenging Transformation, with {Person2} overriding or controlling {Person1}. However, there is a potential for good relationship chemistry and for personal growth.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is potentially quite a challenging combination. However, there is a potential for good relationship chemistry and for personal growth.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Challenges
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a Lake Energy. 7 Metals generally have a laid-back, flexible and fun-loving nature. {Person2} is a Fire Enegy, and is likely more passionate, expressive and warm. These two Energies have quite different expres [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Challenging Transformation, with {Person2} challenging or controlling {Person1}. This can increase the likelihood of conflict and misunderstandings. The challenging Energy ({Person2}) needs to take care not to dominate in the relationship.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    {Perso [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_79 {
             get {
@@ -4238,14 +4413,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is a very harmonious combination with a great potential for a solid friendship. However, the sexual chemistry may be lacking.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This has the potential to be a very harmonious combination. However, it might be better suited to friendship than romance.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    Both people share the same Fundamental Energy &quot;Mountain&quot;. Both people are stable, steady and reliable who are likely to have very similar values and priorities. This could very well result in a close friendship where both people feel understood, supported and that they can rely on one another.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    There is a potential for lots of shared int [rest of string was truncated]&quot;;.
+        ///    There is [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_88 {
             get {
@@ -4254,13 +4433,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    This is potentially a very harmonious combination, as the Fundamental Energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for good sexual chemistry and for personal growth. Conflict is less likely in this combination.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This is potentially a very harmonious and complementary combination. There is potential for good chemistry and for personal growth. Conflict is less likely in this combination.
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} is a Mountain Energy. Mountain Energies are typically stable, reliable, supportive and practical.
-        ///
-        ///    {Person2Proper} is a Fire Energy. Fires, on the other hand, are quite free-spirited and spon [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Supportive Transformation, with {Person2} supporting {Person1}. This type of combination typically leads to greater harmony and mutual understanding.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    {Person1Proper} is a Mountain Energy. Mountain Energies are  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_89 {
             get {
@@ -4269,14 +4453,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This is a harmonious combination with great potential for friendship. The sexual chemistry may well be lacking, however.
         ///&lt;/h5&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    Strengths
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    As both people are Fire Energies, they share many of the same qualities, such as the ability to inspire those around then with their great clarity, intuition and emotional intelligence. There is a strong potential for both people to get on very well and they would likely enjoy talking to one another and feel very comfortable in each other&apos;s company.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        /// [rest of string was truncated]&quot;;.
+        ///    As both people are Fire Energies, they share many of the same qualities, such as the ability to inspire those around then with their great clarity, intuition and emotional intelligence. There is a strong potential for both people to get on very well and they would likely enjoy talking to one another and feel very comfor [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_99 {
             get {
@@ -4299,10 +4484,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Fundamental Energies - Opposite Gender
+        ///    Fundamental Energies - Opposite Energetic Gender
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper}&apos;s Fundamental Energy&apos;s gender is opposite to {Person2}. This typically leads to greater complementarity between the couple, but also brings a slightly greater risk of misunderstanding.
+        ///    This typically leads to &lt;strong&gt;greater complementarity between the couple&lt;/strong&gt;, but also brings a &lt;strong&gt;slightly greater risk of misunderstanding&lt;/strong&gt;.
         ///&lt;/p&gt;.
         /// </summary>
         public static string main_gender_opposite {
@@ -4313,10 +4498,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Fundamental Energies - Same Gender
+        ///    Fundamental Energies - Same Energetic Gender
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper}&apos;s Fundamental Energy&apos;s gender is the same as {Person2}&apos;s. This typically leads to greater understanding between the couple, but also brings a slightly greater risk of conflict as they may clash at times.
+        ///    This typically leads to &lt;strong&gt;greater understanding between the couple&lt;/strong&gt;, but also brings a &lt;strong&gt;slightly greater risk of conflict&lt;/strong&gt; as they may clash at times.
         ///&lt;/p&gt;.
         /// </summary>
         public static string main_gender_same {
@@ -4330,7 +4515,7 @@ namespace K9.Globalisation {
         ///    Fundamental Energies - Different Modality
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper}&apos;s Fundamental Energy&apos;s modality is different from {Person2}&apos;s. This typically leads to greater complementarity between the couple, but also brings a slightly greater risk of misunderstanding.
+        ///    This typically leads to &lt;strong&gt;greater complementarity between the couple&lt;/strong&gt;, but also brings a &lt;strong&gt;slightly greater risk of misunderstanding&lt;/strong&gt;.
         ///&lt;/p&gt;.
         /// </summary>
         public static string main_modality_different {
@@ -4344,7 +4529,7 @@ namespace K9.Globalisation {
         ///    Fundamental Energies - Same Modality
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper}&apos;s Fundamental Energy&apos;s modality is the same as {Person2}&apos;s. This typically leads to greater understanding between the couple, but also brings a slightly greater risk of conflict as they may clash at times.
+        ///    This typically leads to &lt;strong&gt;greater understanding between the couple&lt;/strong&gt;, but also brings a &lt;strong&gt;slightly greater risk of conflict&lt;/strong&gt; as they may clash at times.
         ///&lt;/p&gt;.
         /// </summary>
         public static string main_modality_same {
@@ -4849,6 +5034,15 @@ namespace K9.Globalisation {
         public static string mountain_trigram {
             get {
                 return ResourceManager.GetString("mountain_trigram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My Personal Profile.
+        /// </summary>
+        public static string MyPersonalProfile {
+            get {
+                return ResourceManager.GetString("MyPersonalProfile", resourceCulture);
             }
         }
         
@@ -5655,7 +5849,7 @@ namespace K9.Globalisation {
         ///    High
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    There are many energetic aspects of this relationships that are opposing one another, which typically results in quite a lot of magnetism and chemistry. Generally speaking, this type of connection is quite magnetic with good chemistry and could lead to an exciting romantic relationship with plenty of opportunity for personal growth.
+        ///    There are many energetic aspects of this relationships that are opposing one another, which typically results in quite a &lt;strong&gt;lot of magnetism and chemistry&lt;/strong&gt;. Generally speaking, this type of connection is could lead to an &lt;strong&gt;exciting romantic relationship with plenty of opportunity for personal growth&lt;/strong&gt;.
         ///&lt;/p&gt;.
         /// </summary>
         public static string sexual_chemistry_high {
@@ -5669,7 +5863,7 @@ namespace K9.Globalisation {
         ///    Low
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It is unlikely for there the sexual chemistry to be very strong between these two individuals or, if there is chemistry, it could end up being fairly short-lived. However, there are exceptions to the rule. Many of the energetic aspects of this combination are the same. This typically results in relatievly low magnetism. However, there are some key differences between {Person1} and {Person2}, which increase the likelihood of chemistry. Generally speaking, this type of connectio [rest of string was truncated]&quot;;.
+        ///    It is &lt;strong&gt;unlikely for there the sexual chemistry to be very strong&lt;/strong&gt; between these two individuals or, if there is chemistry, it could end up being fairly short-lived. However, there are exceptions to the rule. Many of the energetic aspects of this combination are the same. This typically results in &lt;strong&gt;relatievly low magnetism&lt;/strong&gt;. However, there are some key differences between {Person1} and {Person2}, which increase the likelihood of chemistry. Generall [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexual_chemistry_low {
             get {
@@ -5682,8 +5876,7 @@ namespace K9.Globalisation {
         ///    Average
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The sexual chemistry is likely to be moderate between these two individuals. There is a good balance of similarities and differences in both people&apos;s charts. This typically creates a healthy sexual connection in which there is passion and magnetism, but at the same time, there are enough similarities to create balance and harmony, which can make for a healthy and stable relationship.
-        ///&lt;/p&gt;.
+        ///    The sexual &lt;strong&gt;chemistry is likely to be moderate&lt;/strong&gt; between these two individuals. There is a &lt;strong&gt;good balance of similarities and differences&lt;/strong&gt; in both people&apos;s charts. This typically creates a &lt;strong&gt;healthy sexual connection&lt;/strong&gt; in which there is &lt;strong&gt;passion and magnetism&lt;/strong&gt;, but at the same time, there are enough similarities to create &lt;strong&gt;balance and harmony&lt;/strong&gt;, which can make for a &lt;strong&gt;healthy and stable relationshi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexual_chemistry_medium {
             get {
@@ -5696,7 +5889,7 @@ namespace K9.Globalisation {
         ///    Higher than Average
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The sexual chemistry is likely to be fairly strong between these two individuals with quite a bit of passion. There are a number of key differences between {Person1} and {Person2}&apos;s charts, which creates a fair amount of magnetism and chemistry. This type of connection is well suited to romance, however there is a higher than average risk of conflict.
+        ///    The sexual &lt;strong&gt;chemistry is likely to be fairly strong&lt;/strong&gt; between these two individuals with &lt;strong&gt;quite a bit of passion&lt;/strong&gt;. There are a number of key differences between {Person1} and {Person2}&apos;s charts, which creates a &lt;strong&gt;fair amount of magnetism and chemistry&lt;/strong&gt;. This type of connection is &lt;strong&gt;well suited to romance&lt;/strong&gt;, however there is a &lt;strong&gt;higher than average risk of conflict&lt;/strong&gt;.
         ///&lt;/p&gt;.
         /// </summary>
         public static string sexual_chemistry_mediumhigh {
@@ -5710,8 +5903,7 @@ namespace K9.Globalisation {
         ///    Lower than Average
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The sexual chemistry is unlikely to be very strong between these two individuals, but it probably isn&apos;t insignificant either. There could well be quite a bit of passion to begin with; however, there is a risk that it could fizzle out if an effort isn&apos;t made to keep things alive and interesting. Generally speaking, this type of connection is better suited to friendship, however, there are exceptions to the rule.
-        ///&lt;/p&gt;.
+        ///    The sexual &lt;strong&gt;chemistry is unlikely to be very strong&lt;/strong&gt; between these two individuals, but it probably isn&apos;t insignificant either. There could well be quite a &lt;strong&gt;bit of passion to begin with&lt;/strong&gt;; however, there is a risk that &lt;strong&gt;it could fizzle out if an effort isn&apos;t made to keep things alive&lt;/strong&gt; and interesting. Generally speaking, this type of connection is &lt;strong&gt;better suited to friendship&lt;/strong&gt;, however, there are excepti [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexual_chemistry_mediumlow {
             get {
@@ -5724,8 +5916,7 @@ namespace K9.Globalisation {
         ///    Practically Nonexistent
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It is extremely unlikely for there to be any significant sexual chemistry between these two individuals or if there is, it is likely to be very short-lived. However, there are exceptions to the rule. Almost all of the energetic aspects of this relationship are identical for both the Fundamental and Character Energies, resulting in very little magnetism. This type of connection is far more likely to be a deep and long-lasting friendship.
-        ///&lt;/p&gt;.
+        ///    It is &lt;strong&gt;extremely unlikely for there to be any significant sexual chemistry&lt;/strong&gt; between these two individuals or if there is, it is likely to be very short-lived. However, there are exceptions to the rule. Almost all of the energetic aspects of this relationship are identical for both the Fundamental and Character Energies, resulting in very little magnetism. This type of connection is far &lt;strong&gt;more likely to be a deep and long-lasting friends [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexual_chemistry_nonexistant {
             get {
@@ -5738,7 +5929,7 @@ namespace K9.Globalisation {
         ///    Off The Charts
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The sexuality chemistry between these two individuals is potentially off the charts. The forces and elements governing this combination are all opposing one another, both between the Fundamental and Character Energies, creating an extremely strong magnetic attraction. This can be a truly explosive combination, but it could be too hot to handle!
+        ///    The &lt;strong&gt;sexuality chemistry between these two individuals is potentially off the charts&lt;/strong&gt;. The forces and elements governing this combination are all opposing one another, both between the Fundamental and Character Energies, creating an &lt;strong&gt;extremely strong magnetic attraction&lt;/strong&gt;. This can be a truly &lt;strong&gt;explosive combination&lt;/strong&gt;, but it could be &lt;strong&gt;too hot to handle&lt;/strong&gt;!
         ///&lt;/p&gt;.
         /// </summary>
         public static string sexual_chemistry_off_the_charts {
@@ -5752,7 +5943,7 @@ namespace K9.Globalisation {
         ///    Very High
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It is likely for the sexual chemistry to be very strong between these two individuals. The various energetic elements of this combination are largely opposing one another, which typically results in significant magnetism and chemistry. Whilst it could lead to a very exciting romantic relationship, it is also likely to result in a turbulent roller-coaster ride at times.
+        ///    It is likely that the &lt;strong&gt;sexual chemistry is very strong&lt;/strong&gt; between these two individuals. The various energetic elements of this combination are largely opposing one another, which typically results in &lt;strong&gt;significant magnetism and chemistry&lt;/strong&gt;. Whilst it could lead to a &lt;strong&gt;very exciting romantic relationship&lt;/strong&gt;, it is also likely to result in a &lt;strong&gt;turbulent roller-coaster ride at times&lt;/strong&gt;.
         ///&lt;/p&gt;.
         /// </summary>
         public static string sexual_chemistry_veryhigh {
@@ -5766,8 +5957,7 @@ namespace K9.Globalisation {
         ///    Very Low
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It is highly unlikely for there to be any significant sexual chemistry between these two individuals or if there is, it is likely to be short-lived. This is a very harmonious combination in which many of the energetic elements are the same for both the Fundamental and Character Energies, which results in little to any magnetism. This type of connection is far more likely to be a deep and long-lasting friendship; however, there are exceptions to the rule.
-        ///&lt;/p&gt;.
+        ///    It is highly &lt;strong&gt;unlikely for there to be any significant sexual chemistry&lt;/strong&gt; between these two individuals or if there is, &lt;strong&gt;it is likely to be short-lived&lt;/strong&gt;. This has the &lt;strong&gt;potential to be a very harmonious combination&lt;/strong&gt; which many of the energetic elements are the same for both the Fundamental and Character Energies, which results in &lt;strong&gt;little to any magnetism&lt;/strong&gt;. This type of connection is far more likely to be a &lt;strong&gt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexual_chemistry_verylow {
             get {

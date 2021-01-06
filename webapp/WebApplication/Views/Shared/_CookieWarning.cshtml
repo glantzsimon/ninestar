@@ -2,8 +2,8 @@
 @if (CookieService.IsDisplayCookiesWarning())
 {
     <div id="cookie-warning-container">
-        <div class="alert alert-success alert-dismissable fade in">
-            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <strong>@Dictionary.CookiesTitle</strong>
+        <div class="alert alert-dismissable fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <h4>@Dictionary.CookiesTitle</h4>
             <span>@MvcHtmlString.Create(Dictionary.cookies_blurb)</span>
         </div>
     </div>

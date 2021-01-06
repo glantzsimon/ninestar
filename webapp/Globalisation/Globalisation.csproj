@@ -245,7 +245,9 @@
     <Content Include="Predictions\en-gb\Monthly\lake-month.htm" />
     <Content Include="Predictions\en-gb\Monthly\mountain-month.htm" />
     <Content Include="Predictions\en-gb\Monthly\fire-month.htm" />
+    <Content Include="Predictions\en-gb\Monthly\month-description.htm" />
     <Content Include="Predictions\en-gb\Yearly\soil-year.htm" />
+    <Content Include="Predictions\en-gb\Yearly\year-description.htm" />
     <Content Include="Predictions\en-gb\Yearly\wind-year.htm" />
     <Content Include="Predictions\en-gb\Yearly\thunder-year.htm" />
     <Content Include="Predictions\en-gb\Yearly\mountain-year.htm" />

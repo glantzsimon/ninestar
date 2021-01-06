@@ -1933,6 +1933,12 @@
   <data name="MyPersonalProfile" xml:space="preserve">
     <value>My Personal Profile</value>
   </data>
+  <data name="AboutMonthlyCycles" xml:space="preserve">
+    <value>About Monthly Cycles</value>
+  </data>
+  <data name="AboutYearlyCycles" xml:space="preserve">
+    <value>About Yearly Cycles</value>
+  </data>
   <data name="Blossoming" xml:space="preserve">
     <value>Blossoming / Steady Growth</value>
   </data>
@@ -1980,6 +1986,9 @@
   </data>
   <data name="MonthlyCycle" xml:space="preserve">
     <value>Monthly Cycle</value>
+  </data>
+  <data name="month_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\en-gb\monthly\month-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="mountain_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>predictions\en-gb\monthly\mountain-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -2037,5 +2046,14 @@
   </data>
   <data name="YearlyCycle" xml:space="preserve">
     <value>Yearly Cycle</value>
+  </data>
+  <data name="year_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\en-gb\yearly\year-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="CurrentMonthlyCycle" xml:space="preserve">
+    <value>Current Monthly Cycle</value>
+  </data>
+  <data name="CurrentYearlyCycle" xml:space="preserve">
+    <value>Current Yearly Cycle</value>
   </data>
 </root>

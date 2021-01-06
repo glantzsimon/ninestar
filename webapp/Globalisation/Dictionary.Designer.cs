@@ -1294,6 +1294,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Monthly Cycles.
+        /// </summary>
+        public static string AboutMonthlyCycles {
+            get {
+                return ResourceManager.GetString("AboutMonthlyCycles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About 9 Star Ki.
         /// </summary>
         public static string AboutNineStarKi {
@@ -1308,6 +1317,15 @@ namespace K9.Globalisation {
         public static string AboutRelationships {
             get {
                 return ResourceManager.GetString("AboutRelationships", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Yearly Cycles.
+        /// </summary>
+        public static string AboutYearlyCycles {
+            get {
+                return ResourceManager.GetString("AboutYearlyCycles", resourceCulture);
             }
         }
         
@@ -1911,13 +1929,10 @@ namespace K9.Globalisation {
         ///    The seedling is beginning to mature.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This is the year in which we come into the energy of &quot;adolescence&quot;; of defining who we are. It is a challenging time, often characterised by difficult choices, ups and downs and much uncertainty. It is not uncommon for many old, unresolved issues to resurface during this time.
+        ///    This is the year in which we come into the energy of &quot;adolescence&quot;; of experimenting with many different activities or ideas and defining who we are. It is a challenging and unpredictable time, often characterised by difficult choices, ups and downs and much uncertainty. It is not uncommon for many old, unresolved issues to resurface during this time.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Everyone is born in a 5 year and. Anything started during a 5 year will have a great impact on the following 8 years.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Stay centred and tru [rest of string was truncated]&quot;;.
+        ///    During this year we are right at the centre of the systema and a lot of energy [rest of string was truncated]&quot;;.
         /// </summary>
         public static string core_earth_year {
             get {
@@ -2196,6 +2211,24 @@ namespace K9.Globalisation {
         public static string CurrencyLabel {
             get {
                 return ResourceManager.GetString("CurrencyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current Monthly Cycle.
+        /// </summary>
+        public static string CurrentMonthlyCycle {
+            get {
+                return ResourceManager.GetString("CurrentMonthlyCycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current Yearly Cycle.
+        /// </summary>
+        public static string CurrentYearlyCycle {
+            get {
+                return ResourceManager.GetString("CurrentYearlyCycle", resourceCulture);
             }
         }
         
@@ -3397,10 +3430,7 @@ namespace K9.Globalisation {
         ///    This is the year we begin to see the fruits of our labour; the reward of all the effort put in during the previous years. It is a time when we feel confident with a strong sense of direction and purpose.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This is also a year when we begin to get much greater clarity and understanding. We feel bolder and better able to express our needs and set healthy boundaries with people.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Care must be taken not become overbearing  [rest of string was truncated]&quot;;.
+        ///    This is also a year when we begin to get much greater clarity and understanding. We feel bolder and better able to express our needs and set healthy boundaries with people. Care must be taken not become overbearing or intolerant of [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_year {
             get {
@@ -3685,7 +3715,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The harvest is in. It&apos;s time to put one&apos;s feet up
+        ///    The harvest is in. It&apos;s time to celebrate and put one&apos;s feet up
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This is the year to enjoy the harvest and celebrate our achievements. It&apos;s a time to relax and be grateful for the abundance we have created for ourselves.
@@ -3694,7 +3724,7 @@ namespace K9.Globalisation {
         ///    Many people find that money flows more easily to them during this time. It is also a great time for romance; however, care should be taken not to becoming overly focussed on intimate relationships or to become overly hedonistic.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This is also a gre [rest of string was truncated]&quot;;.
+        ///    This [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_year {
             get {
@@ -5015,6 +5045,19 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    In addition to the yearly cycles that each our lives move through, there are also monthly cycles. Each year has the energy of on of the nine Energies and influences our lives in powerful ways. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    People who are in touch with Nature and her cycles understand the seasonal changes that occur throughout the year. There is a time to sow and a time to harvest. There is a time for new growth, a time for celebration and a time for winding down and resting. Similarly, the nine-year cycles that [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string month_description {
+            get {
+                return ResourceManager.GetString("month_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Monthly.
         /// </summary>
         public static string Monthly {
@@ -5282,13 +5325,13 @@ namespace K9.Globalisation {
         ///    The harvest is over. Winter is nigh.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This is a time we tend to retreat into our &quot;cave&quot;. We often feel withdrawn, reserved and uncommunicative. It is a time for honest intropsection.
+        ///    This is a time we tend to retreat into our &quot;cave&quot;. We often feel withdrawn, reserved and uncommunicative. It is a time for honest intropsection. However, it can also be an uncomfortable time.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    It is possible to feel a bit bogged down and stuck during this time. We may also feel rather more rigid and stubborn, even pushy about certain things.
+        ///    It is possible to feel a bit bogged down and stuck during this year. We may also feel rather more rigid and stubborn; even pushy about certain things.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    During this year, there may be a strong sense of the &quot;calm before the storm&quot;, as during the following year we emerge int [rest of string was truncated]&quot;;.
+        ///    During this year, there may be a strong sense of the &quot;calm before the sto [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_year {
             get {
@@ -6732,7 +6775,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    The seed is starting to germinate and make its way up through the soil.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
@@ -6742,7 +6785,7 @@ namespace K9.Globalisation {
         ///    This is the time to start planning. It&apos;s also a great time for clearing out the old, in preparation for the new.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    It is common to feel cautious, reserved and hesitant during this year. We may feel worried about others. We need to be careful we don&apos;t get too bogged down with the details. It is a year of stead [rest of string was truncated]&quot;;.
+        ///    It is common to feel cautious, reserved and hesitant during this year. We may feel worried about others. We need to be careful we don&apos;t get too bogged down with the details. It is a  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_year {
             get {
@@ -7336,7 +7379,10 @@ namespace K9.Globalisation {
         ///    This year is the time to start new projects and endeavours. We are full of enthusiasm and have plenty of bright new ideas.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This is the time when we are feeling most creative, energetic, confident and expressive. However, with such a huge influx of spring energy comes a risk of feeling ungrounded and even frustrated and angry at times. It is wise not to rush anything [rest of string was truncated]&quot;;.
+        ///    This is the time when we are feeling most creative, energetic, confident and expressive. However, with such a huge influx of spring energy comes a risk of feeling ungrounded and even frustrated and angry at times.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is wise not  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_year {
             get {
@@ -7762,17 +7808,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    It&apos;s cold, dark and still. The seed is in the ground. 
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This year represents night and winter. It&apos;s cold, dark and still. The seed is still in the ground. 
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This is a time for hibernation, deep rest and reflection. A time for pondering what one wishes to create during the next 9 year cycle.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    During this year, it is common to feel withdrawn and uncommunicative. Others may appear to keep their distance and we may feel vulnerable and even fearful at times. 
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    This is not the time for starting new projects and endeavours. It is a time for dreaming. A time  [rest of string was truncated]&quot;;.
+        ///    During this year, it is common to feel withdrawn and uncommunicative. Others may appear to keep their distance and we may feel vulnerable, hypersensitive and even fearful at times. It&apos;s a bit like when we are asleep and w [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_year {
             get {
@@ -8091,6 +8134,19 @@ namespace K9.Globalisation {
         public static string Yang {
             get {
                 return ResourceManager.GetString("Yang", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Not only does each person have a 9 Star Ki profile, which is determined by their date of birth, but in addition, each of our lives passes through nine yearly cycles. Each year brings the energy of one of the nine Energies and influences our lives in powerful ways. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Another way to imagine it is that our lives go through seasonal changes, just like the spring, summer, autumn, winter; however, it is a nine-year cycle, rather than a yearly one. During the &quot;summer&quot; part of the cycle, we  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string year_description {
+            get {
+                return ResourceManager.GetString("year_description", resourceCulture);
             }
         }
         

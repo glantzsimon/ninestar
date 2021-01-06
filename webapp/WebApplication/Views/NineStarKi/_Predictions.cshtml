@@ -2,25 +2,25 @@
 @model K9.WebApplication.Models.NineStarKiModel
 
 <ul class="nav nav-pills nav-justified">
-    <li class="active"><a data-toggle="tab" href="#yearly">@Dictionary.YearlyCycle</a></li>
-    <li><a data-toggle="tab" href="#monthly">@Dictionary.MonthlyCycle</a></li>
+    <li class="active"><a data-toggle="tab" href="#yearly">@Dictionary.CurrentYearlyCycle</a></li>
+    <li><a data-toggle="tab" href="#monthly">@Dictionary.CurrentMonthlyCycle</a></li>
 </ul>
 
 <div class="tab-content">
     <div id="yearly" class="tab-pane fade in active">
-        @*@Html.Panel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.MainEnergyDescription)*@
+        @Html.CollapsiblePanel(Dictionary.AboutYearlyCycles, Dictionary.year_description)
 
         @Html.Partial("_PredictionsHeader", Model.LifeCycleYearEnergy)
 
-        @Html.Panel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Model.LifeCycleYearEnergy.CycleDescription)
+        @Html.Panel(Model.LifeCycleYearEnergy.CycleDescriptiveName, Model.LifeCycleYearEnergy.CycleDescription)
     </div>
 
     <div id="monthly" class="tab-pane fade">
-        @*@Html.Panel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.SurfaceEnergyDescription)*@
+        @Html.CollapsiblePanel(Dictionary.AboutMonthlyCycles, Dictionary.month_description)
 
         @Html.Partial("_PredictionsHeader", Model.LifeCycleMonthEnergy)
 
-        @Html.Panel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Model.LifeCycleMonthEnergy.CycleDescription)
+        @Html.Panel(Model.LifeCycleMonthEnergy.CycleDescriptiveName, Model.LifeCycleMonthEnergy.CycleDescription)
     </div>
 
 </div>

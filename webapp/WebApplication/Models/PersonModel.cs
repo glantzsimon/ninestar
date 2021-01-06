@@ -30,6 +30,8 @@ namespace K9.WebApplication.Models
         public int YearsOld => GetYearsOld();
 
         public bool IsAdult() => YearsOld >= 18;
+        
+        public bool IsSixteenOrOver() => YearsOld >= 16;
 
         private int GetYearsOld()
         {

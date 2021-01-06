@@ -26,7 +26,7 @@ namespace K9.WebApplication.Models
         Purple
     }
 
-    public enum ENineStarKiElenement
+    public enum ENineStarKiElement
     {
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Water)]
         Water,
@@ -82,6 +82,104 @@ namespace K9.WebApplication.Models
         Pragmatist,
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Communicator)]
         Communicator
+    }
+
+    public enum ENineStarKiCycleDescriptiveName
+    {
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Hibernation)]
+        Hibernation,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Planning)]
+        Planning,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Sprouting)]
+        Sprouting,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Blossoming)]
+        Blossoming,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Consolidating)]
+        Consolidating,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Ripening)]
+        Ripening,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Harvest)]
+        Harvest,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Revolution)]
+        Revolution,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Spotlight)]
+        Spotlight
+    }
+
+    public enum ENineStarKiCycle
+    {
+        Unspecified,
+        [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
+            Season = Strings.Names.Winter,
+            Element = ENineStarKiElement.Water,
+            DescriptiveName = ENineStarKiCycleDescriptiveName.Hibernation,
+            YearlyDescriptionName = Strings.Names.WaterYear,
+            MonthlyDescriptionName = Strings.Names.WaterMonth)]
+        Winter,
+
+        [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
+            Season = Strings.Names.WinterToSpring,
+            Element = ENineStarKiElement.Earth,
+            DescriptiveName = ENineStarKiCycleDescriptiveName.Planning,
+            YearlyDescriptionName = Strings.Names.SoilYear,
+            MonthlyDescriptionName = Strings.Names.SoilMonth)]
+        WinterToSpring,
+
+        [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
+            Season = Strings.Names.EarlySpring,
+            Element = ENineStarKiElement.Tree,
+            DescriptiveName = ENineStarKiCycleDescriptiveName.Sprouting,
+            YearlyDescriptionName = Strings.Names.ThunderYear,
+            MonthlyDescriptionName = Strings.Names.ThunderMonth)]
+        EarlySpring,
+
+        [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
+            Season = Strings.Names.LateSpring,
+            Element = ENineStarKiElement.Tree,
+            DescriptiveName = ENineStarKiCycleDescriptiveName.Blossoming,
+            YearlyDescriptionName = Strings.Names.WindYear,
+            MonthlyDescriptionName = Strings.Names.WindMonth)]
+        LateSpring,
+
+        [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
+            Season = Strings.Names.Center,
+            Element = ENineStarKiElement.Earth,
+            DescriptiveName = ENineStarKiCycleDescriptiveName.Consolidating,
+            YearlyDescriptionName = Strings.Names.CoreEarthYear,
+            MonthlyDescriptionName = Strings.Names.CoreEarthMonth)]
+        Centre,
+
+        [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
+            Season = Strings.Names.EarlyAutumn,
+            Element = ENineStarKiElement.Metal,
+            DescriptiveName = ENineStarKiCycleDescriptiveName.Ripening,
+            YearlyDescriptionName = Strings.Names.HeavenYear,
+            MonthlyDescriptionName = Strings.Names.HeavenMonth)]
+        EarlyAutumn,
+
+        [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
+            Season = Strings.Names.LateAutumn,
+            Element = ENineStarKiElement.Metal,
+            DescriptiveName = ENineStarKiCycleDescriptiveName.Harvest,
+            YearlyDescriptionName = Strings.Names.LakeYear,
+            MonthlyDescriptionName = Strings.Names.LakeMonth)]
+        LateAutumn,
+
+        [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
+            Season = Strings.Names.AutumnToWinter,
+            Element = ENineStarKiElement.Earth,
+            DescriptiveName = ENineStarKiCycleDescriptiveName.Revolution,
+            YearlyDescriptionName = Strings.Names.MountainYear,
+            MonthlyDescriptionName = Strings.Names.MountainMonth)]
+        AutumnToWinter,
+
+        [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
+            Season = Strings.Names.Summer,
+            Element = ENineStarKiElement.Fire,
+            DescriptiveName = ENineStarKiCycleDescriptiveName.Spotlight,
+            YearlyDescriptionName = Strings.Names.FireYear,
+            MonthlyDescriptionName = Strings.Names.FireMonth)]
+        Summer
     }
 
     public enum ENineStarKiDirection
@@ -140,25 +238,25 @@ namespace K9.WebApplication.Models
 
     public enum ENineStarKiEnergy
     {
-        [NineStarEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Unspecified)]
+        [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Unspecified)]
         Unspecified,
-        [NineStarEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Water, Colour = ENineStarKiColour.White, Element = ENineStarKiElenement.Water, Direction = ENineStarKiDirection.North, FamilyMember = ENineStarKiFamilyMember.MiddleSon, YinYang = ENineStarKiYinYang.Yang, TrigramName = "Kan", DescriptiveName = ENineStarKiDescriptiveName.Diplomat, Modality = ENineStarKiModality.Flexible)]
+        [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Water, Colour = ENineStarKiColour.White, Element = ENineStarKiElement.Water, Direction = ENineStarKiDirection.North, FamilyMember = ENineStarKiFamilyMember.MiddleSon, YinYang = ENineStarKiYinYang.Yang, TrigramName = "Kan", DescriptiveName = ENineStarKiDescriptiveName.Diplomat, Modality = ENineStarKiModality.Flexible, Cycle = ENineStarKiCycle.Winter)]
         Water,
-        [NineStarEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Soil, Colour = ENineStarKiColour.Black, Element = ENineStarKiElenement.Earth, Direction = ENineStarKiDirection.SouthWest, FamilyMember = ENineStarKiFamilyMember.Mother, YinYang = ENineStarKiYinYang.Yin, TrigramName = "Kun", DescriptiveName = ENineStarKiDescriptiveName.Nurturer, Modality = ENineStarKiModality.Stable)]
+        [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Soil, Colour = ENineStarKiColour.Black, Element = ENineStarKiElement.Earth, Direction = ENineStarKiDirection.SouthWest, FamilyMember = ENineStarKiFamilyMember.Mother, YinYang = ENineStarKiYinYang.Yin, TrigramName = "Kun", DescriptiveName = ENineStarKiDescriptiveName.Nurturer, Modality = ENineStarKiModality.Stable, Cycle = ENineStarKiCycle.WinterToSpring)]
         Soil,
-        [NineStarEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Thunder, Colour = ENineStarKiColour.BrightGreen, Element = ENineStarKiElenement.Tree, Direction = ENineStarKiDirection.East, FamilyMember = ENineStarKiFamilyMember.EldestSon, YinYang = ENineStarKiYinYang.Yang, TrigramName = "Chen", DescriptiveName = ENineStarKiDescriptiveName.Pioneer, Modality = ENineStarKiModality.Dynamic)]
+        [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Thunder, Colour = ENineStarKiColour.BrightGreen, Element = ENineStarKiElement.Tree, Direction = ENineStarKiDirection.East, FamilyMember = ENineStarKiFamilyMember.EldestSon, YinYang = ENineStarKiYinYang.Yang, TrigramName = "Chen", DescriptiveName = ENineStarKiDescriptiveName.Pioneer, Modality = ENineStarKiModality.Dynamic, Cycle = ENineStarKiCycle.EarlySpring)]
         Thunder,
-        [NineStarEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Wind, Colour = ENineStarKiColour.Green, Element = ENineStarKiElenement.Tree, Direction = ENineStarKiDirection.SouthEast, FamilyMember = ENineStarKiFamilyMember.EldestDaughter, YinYang = ENineStarKiYinYang.Yin, TrigramName = "Sun", DescriptiveName = ENineStarKiDescriptiveName.Influencer, Modality = ENineStarKiModality.Flexible)]
+        [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Wind, Colour = ENineStarKiColour.Green, Element = ENineStarKiElement.Tree, Direction = ENineStarKiDirection.SouthEast, FamilyMember = ENineStarKiFamilyMember.EldestDaughter, YinYang = ENineStarKiYinYang.Yin, TrigramName = "Sun", DescriptiveName = ENineStarKiDescriptiveName.Influencer, Modality = ENineStarKiModality.Flexible, Cycle = ENineStarKiCycle.LateSpring)]
         Wind,
-        [NineStarEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.CoreEarth, Colour = ENineStarKiColour.Yellow, Element = ENineStarKiElenement.Earth, Direction = ENineStarKiDirection.Centre, FamilyMember = ENineStarKiFamilyMember.SeventhChild, YinYang = ENineStarKiYinYang.Unspecified, TrigramName = "None", DescriptiveName = ENineStarKiDescriptiveName.Hub, Modality = ENineStarKiModality.Stable)]
+        [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.CoreEarth, Colour = ENineStarKiColour.Yellow, Element = ENineStarKiElement.Earth, Direction = ENineStarKiDirection.Centre, FamilyMember = ENineStarKiFamilyMember.SeventhChild, YinYang = ENineStarKiYinYang.Unspecified, TrigramName = "None", DescriptiveName = ENineStarKiDescriptiveName.Hub, Modality = ENineStarKiModality.Stable, Cycle = ENineStarKiCycle.Centre)]
         CoreEarth,
-        [NineStarEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Heaven, Colour = ENineStarKiColour.White, Element = ENineStarKiElenement.Metal, Direction = ENineStarKiDirection.NorthWest, FamilyMember = ENineStarKiFamilyMember.Father, YinYang = ENineStarKiYinYang.Yang, TrigramName = "Chien", DescriptiveName = ENineStarKiDescriptiveName.Leader, Modality = ENineStarKiModality.Dynamic)]
+        [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Heaven, Colour = ENineStarKiColour.White, Element = ENineStarKiElement.Metal, Direction = ENineStarKiDirection.NorthWest, FamilyMember = ENineStarKiFamilyMember.Father, YinYang = ENineStarKiYinYang.Yang, TrigramName = "Chien", DescriptiveName = ENineStarKiDescriptiveName.Leader, Modality = ENineStarKiModality.Dynamic, Cycle = ENineStarKiCycle.EarlyAutumn)]
         Heaven,
-        [NineStarEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Lake, Colour = ENineStarKiColour.Red, Element = ENineStarKiElenement.Metal, Direction = ENineStarKiDirection.West, FamilyMember = ENineStarKiFamilyMember.YoungestDaughter, YinYang = ENineStarKiYinYang.Yin, TrigramName = "Tui", DescriptiveName = ENineStarKiDescriptiveName.Advisor, Modality = ENineStarKiModality.Flexible)]
+        [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Lake, Colour = ENineStarKiColour.Red, Element = ENineStarKiElement.Metal, Direction = ENineStarKiDirection.West, FamilyMember = ENineStarKiFamilyMember.YoungestDaughter, YinYang = ENineStarKiYinYang.Yin, TrigramName = "Tui", DescriptiveName = ENineStarKiDescriptiveName.Advisor, Modality = ENineStarKiModality.Flexible, Cycle = ENineStarKiCycle.LateAutumn)]
         Lake,
-        [NineStarEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Mountain, Colour = ENineStarKiColour.White, Element = ENineStarKiElenement.Earth, Direction = ENineStarKiDirection.NorthEast, FamilyMember = ENineStarKiFamilyMember.YoungestSon, YinYang = ENineStarKiYinYang.Yang, TrigramName = "Ken", DescriptiveName = ENineStarKiDescriptiveName.Pragmatist, Modality = ENineStarKiModality.Stable)]
+        [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Mountain, Colour = ENineStarKiColour.White, Element = ENineStarKiElement.Earth, Direction = ENineStarKiDirection.NorthEast, FamilyMember = ENineStarKiFamilyMember.YoungestSon, YinYang = ENineStarKiYinYang.Yang, TrigramName = "Ken", DescriptiveName = ENineStarKiDescriptiveName.Pragmatist, Modality = ENineStarKiModality.Stable, Cycle = ENineStarKiCycle.AutumnToWinter)]
         Mountain,
-        [NineStarEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Fire, Colour = ENineStarKiColour.Purple, Element = ENineStarKiElenement.Fire, Direction = ENineStarKiDirection.South, FamilyMember = ENineStarKiFamilyMember.MiddleDaughter, YinYang = ENineStarKiYinYang.Yin, TrigramName = "Li", DescriptiveName = ENineStarKiDescriptiveName.Communicator, Modality = ENineStarKiModality.Dynamic)]
+        [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Fire, Colour = ENineStarKiColour.Purple, Element = ENineStarKiElement.Fire, Direction = ENineStarKiDirection.South, FamilyMember = ENineStarKiFamilyMember.MiddleDaughter, YinYang = ENineStarKiYinYang.Yin, TrigramName = "Li", DescriptiveName = ENineStarKiDescriptiveName.Communicator, Modality = ENineStarKiModality.Dynamic, Cycle = ENineStarKiCycle.Summer)]
         Fire
     }
 
@@ -253,6 +351,12 @@ namespace K9.WebApplication.Models
 
         public string CharacteEnergyLabel => GetCharacterEnergyLabel();
 
+        public string Season => CycleMetaData.Season;
+
+        public string CycleDescriptiveName => CycleMetaData.DescriptiveTitle;
+
+        public string CycleDescription => EnergyType == ENineStarKiEnergyType.MainEnergy ? CycleMetaData.YearlyDescription : CycleMetaData.MonthlyDescription;
+        
         private string GetEnergyNameAndNumber()
         {
             switch (EnergyNumber)
@@ -274,10 +378,12 @@ namespace K9.WebApplication.Models
                 ? $"{EnergyNameAndNumber} - {DescriptiveTitle}"
                 : EnergyNameAndNumber;
         }
-        
-        private NineStarEnumMetaDataAttribute MetaData => Energy.GetAttribute<NineStarEnumMetaDataAttribute>();
 
-        private NineStarEnumMetaDataAttribute RelatedMetaData => RelatedEnergy.GetAttribute<NineStarEnumMetaDataAttribute>();
+        private NineStarKiEnumMetaDataAttribute MetaData => Energy.GetAttribute<NineStarKiEnumMetaDataAttribute>();
+
+        private NineStarKiCycleEnumMetaDataAttribute CycleMetaData => MetaData.Cycle.GetAttribute<NineStarKiCycleEnumMetaDataAttribute>();
+
+        private NineStarKiEnumMetaDataAttribute RelatedMetaData => RelatedEnergy.GetAttribute<NineStarKiEnumMetaDataAttribute>();
 
         private ENineStarKiYinYang GetYinYang()
         {

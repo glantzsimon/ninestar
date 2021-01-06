@@ -1,0 +1,26 @@
+﻿@using K9.WebApplication.Helpers
+@model K9.WebApplication.Models.NineStarKiModel
+
+<ul class="nav nav-pills nav-justified">
+    <li class="active"><a data-toggle="tab" href="#yearly">@Dictionary.YearlyCycle</a></li>
+    <li><a data-toggle="tab" href="#monthly">@Dictionary.MonthlyCycle</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="yearly" class="tab-pane fade in active">
+        @*@Html.Panel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.MainEnergyDescription)*@
+
+        @Html.Partial("_PredictionsHeader", Model.LifeCycleYearEnergy)
+
+        @Html.Panel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Model.LifeCycleYearEnergy.CycleDescription)
+    </div>
+
+    <div id="monthly" class="tab-pane fade">
+        @*@Html.Panel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.SurfaceEnergyDescription)*@
+
+        @Html.Partial("_PredictionsHeader", Model.LifeCycleMonthEnergy)
+
+        @Html.Panel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Model.LifeCycleMonthEnergy.CycleDescription)
+    </div>
+
+</div>

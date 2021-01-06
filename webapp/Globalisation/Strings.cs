@@ -155,6 +155,46 @@
             public const string Advisor = "Advisor";
             public const string Pragmatist = "Pragmatist";
             public const string Communicator = "Communicator";
+
+            public const string Winter = "Winter";
+            public const string WinterToSpring = "WinterToSpring";
+            public const string EarlySpring = "EarlySpring";
+            public const string LateSpring = "LateSpring";
+            public const string Centre = "Centre";
+            public const string EarlyAutumn = "EarlyAutumn";
+            public const string LateAutumn = "LateAutumn";
+            public const string AutumnToWinter = "AutumnToWinter";
+            public const string Summer = "Summer";
+
+            public const string Hibernation = "Hibernation";
+            public const string Planning = "Planning";
+            public const string Sprouting = "Sprouting";
+            public const string Blossoming = "Blossoming";
+            public const string Consolidating = "Consolidating";
+            public const string Ripening = "Ripening";
+            public const string Harvest = "Harvest";
+            public const string Revolution = "Revolution";
+            public const string Spotlight = "Spotlight";
+
+            public const string WaterYear = "water_year";
+            public const string SoilYear = "soil_year";
+            public const string ThunderYear = "thunder_year";
+            public const string WindYear = "wind_year";
+            public const string CoreEarthYear = "core_earth_year";
+            public const string HeavenYear = "heaven_year";
+            public const string LakeYear = "lake_year";
+            public const string MountainYear = "mountain_year";
+            public const string FireYear = "fire_year";
+
+            public const string WaterMonth = "water_month";
+            public const string SoilMonth = "soil_month";
+            public const string ThunderMonth = "thunder_month";
+            public const string WindMonth = "wind_month";
+            public const string CoreEarthMonth = "core_earth_month";
+            public const string HeavenMonth = "heaven_month";
+            public const string LakeMonth = "lake_month";
+            public const string MountainMonth = "mountain_month";
+            public const string FireMonth = "fire_month";
         }
     }
 }

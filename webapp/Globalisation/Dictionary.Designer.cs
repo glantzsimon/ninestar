@@ -1447,6 +1447,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Blossoming / Steady Growth.
+        /// </summary>
+        public static string Blossoming {
+            get {
+                return ResourceManager.GetString("Blossoming", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bright Green.
         /// </summary>
         public static string BrightGreen {
@@ -1595,13 +1604,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    This describes your deeper nature, which is typically only revealed as people get to know you better. It&apos;s also the Energy that most influences you when you are stressed or emotional. Your deeper character Energy also plays a significant role in your romantic relationships and close friendships.
+        ///    This describes our &lt;strong&gt;deeper nature&lt;/strong&gt;, which is typically only &lt;strong&gt;revealed as people get to know us better&lt;/strong&gt;. It&apos;s also the Energy that &lt;strong&gt;most influences us when we are stressed or emotional&lt;/strong&gt;. Our deeper character Energy also &lt;strong&gt;plays a significant role in our romantic relationships&lt;/strong&gt; and close friendships.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This Energy is also connected to your inner child, as it is the Energy that you primarily embody and express for the first 18 years of your life.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    It could also be said that y [rest of string was truncated]&quot;;.
+        ///    This Energy is also &lt;strong&gt;connected to our inner child&lt;/strong&gt;, as it is the Energy that we &lt;strong&gt;primarily embody and expr [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CharacterEnergyDescription {
             get {
@@ -1846,6 +1852,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Consolidating / Ups and Downs.
+        /// </summary>
+        public static string Consolidating {
+            get {
+                return ResourceManager.GetString("Consolidating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contacts.
         /// </summary>
         public static string Contacts {
@@ -1869,6 +1884,44 @@ namespace K9.Globalisation {
         public static string CookiesTitle {
             get {
                 return ResourceManager.GetString("CookiesTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You often appear diplomatic, tactful and even reserved.
+        ///
+        ///    You are essentially helpful and, but your deeper nature is much bolder and, at times, demanding.
+        ///
+        ///    When challenged, your strong will and assertive nature are expressed.
+        ///
+        ///    You have a powerful ability to bounce back from difficulties in your life.
+        ///
+        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by others.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string core_earth_month {
+            get {
+                return ResourceManager.GetString("core_earth_month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The seedling is beginning to mature.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This is the year in which we come into the energy of &quot;adolescence&quot;; of defining who we are. It is a challenging time, often characterised by difficult choices, ups and downs and much uncertainty. It is not uncommon for many old, unresolved issues to resurface during this time.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Everyone is born in a 5 year and. Anything started during a 5 year will have a great impact on the following 8 years.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Stay centred and tru [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string core_earth_year {
+            get {
+                return ResourceManager.GetString("core_earth_year", resourceCulture);
             }
         }
         
@@ -2757,6 +2810,25 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You often appear diplomatic, tactful and even reserved.
+        ///
+        ///    You are essentially helpful and, but your deeper nature is much bolder and, at times, demanding.
+        ///
+        ///    When challenged, your strong will and assertive nature are expressed.
+        ///
+        ///    You have a powerful ability to bounce back from difficulties in your life.
+        ///
+        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by others.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string fire_month {
+            get {
+                return ResourceManager.GetString("fire_month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Fire Energies are well suited to jobs which are centred around communication and relationship building, or in careers in which they can express themselves as fully as possible, be it creatively, emotionally or artistically.
         ///&lt;/p&gt;.
         /// </summary>
@@ -2848,6 +2920,25 @@ namespace K9.Globalisation {
         public static string fire_trigram {
             get {
                 return ResourceManager.GetString("fire_trigram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is the year we take the spotlight
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year is our time to shine. We will be noticed, for good or bad reasons. We may find ourselves making significant achievements and we will likely feel very energetic, enthusiastic and optimistic with a great sense of adventure.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This is also a year when things we would rather keep a secret may well end up being revealed to the world.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    During a Fire year, people typically feel a great sense of clarity and may  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fire_year {
+            get {
+                return ResourceManager.GetString("fire_year", resourceCulture);
             }
         }
         
@@ -3034,6 +3125,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Harvest / Abundance and Celebration.
+        /// </summary>
+        public static string Harvest {
+            get {
+                return ResourceManager.GetString("Harvest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Health.
         /// </summary>
         public static string HealthLabel {
@@ -3114,6 +3214,25 @@ namespace K9.Globalisation {
         public static string heaven_health {
             get {
                 return ResourceManager.GetString("heaven_health", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You often appear diplomatic, tactful and even reserved.
+        ///
+        ///    You are essentially helpful and, but your deeper nature is much bolder and, at times, demanding.
+        ///
+        ///    When challenged, your strong will and assertive nature are expressed.
+        ///
+        ///    You have a powerful ability to bounce back from difficulties in your life.
+        ///
+        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by others.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string heaven_month {
+            get {
+                return ResourceManager.GetString("heaven_month", resourceCulture);
             }
         }
         
@@ -3253,6 +3372,25 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The fruits are beginning to ripen
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This is the year we begin to see the fruits of our labour; the reward of all the effort put in during the previous years. It is a time when we feel confident with a strong sense of direction and purpose.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This is also a year when we begin to get much greater clarity and understanding. We feel bolder and better able to express our needs and set healthy boundaries with people.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Care must be taken not become overbearing  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_year {
+            get {
+                return ResourceManager.GetString("heaven_year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Here.
         /// </summary>
         public static string Here {
@@ -3267,6 +3405,15 @@ namespace K9.Globalisation {
         public static string Hermaphrodite {
             get {
                 return ResourceManager.GetString("Hermaphrodite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hibernation / Stillness.
+        /// </summary>
+        public static string Hibernation {
+            get {
+                return ResourceManager.GetString("Hibernation", resourceCulture);
             }
         }
         
@@ -3389,6 +3536,25 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You often appear diplomatic, tactful and even reserved.
+        ///
+        ///    You are essentially helpful and, but your deeper nature is much bolder and, at times, demanding.
+        ///
+        ///    When challenged, your strong will and assertive nature are expressed.
+        ///
+        ///    You have a powerful ability to bounce back from difficulties in your life.
+        ///
+        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by others.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string lake_month {
+            get {
+                return ResourceManager.GetString("lake_month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    7 Metal Energies are often very good with money and therefore make great accountants, stock controllers and financial advisers. Their eloquence and personal skills 
         ///    would make them good teachers, lecturers or counsellors. 
         ///    Being natural leaders, Lake Energies are comfortable in managerial positions but equally, these Energies can excel in the arts, television or fashion.
@@ -3496,6 +3662,25 @@ namespace K9.Globalisation {
         public static string lake_trigram {
             get {
                 return ResourceManager.GetString("lake_trigram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The harvest is in. It&apos;s time to put one&apos;s feet up
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This is the year to enjoy the harvest and celebrate our achievements. It&apos;s a time to relax and be grateful for the abundance we have created for ourselves.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Many people find that money flows more easily to them during this time. It is also a great time for romance; however, care should be taken not to becoming overly focussed on intimate relationships or to become overly hedonistic.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This is also a gre [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string lake_year {
+            get {
+                return ResourceManager.GetString("lake_year", resourceCulture);
             }
         }
         
@@ -4558,10 +4743,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    This describes your fundamental adult nature, which typically starts to be expressed at around 18 years, after two nine year cycles. It is the Energy that has the greatest impact on the way you think, process information and make sense of the world around you. It also has a profound influence on your interactions with others. 
+        ///    This describes our &lt;strong&gt;fundamental adult nature&lt;/strong&gt;, which typically &lt;strong&gt;starts to be expressed at around 18 years&lt;/strong&gt;, after two nine year cycles. It is the Energy that has the &lt;strong&gt;greatest impact on the way we think&lt;/strong&gt;, &lt;strong&gt;process information&lt;/strong&gt; and &lt;strong&gt;make sense of the world &lt;/strong&gt; us. It also has a &lt;strong&gt;profound influence on our interactions with others&lt;/strong&gt;. 
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    It is also this primary Energy that has the most influence over your physical body and the way subtle energy moves through your energy meridians and organs. S [rest of string was truncated]&quot;;.
+        ///    It is also this primary Energy that has the &lt;strong&gt;most influence [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MainEnergyDescription {
             get {
@@ -4812,6 +4997,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Monthly Cycle.
+        /// </summary>
+        public static string MonthlyCycle {
+            get {
+                return ResourceManager.GetString("MonthlyCycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Monthly Platinum Subscription.
         /// </summary>
         public static string MonthlyPlatinumMembership {
@@ -4927,6 +5121,25 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You often appear diplomatic, tactful and even reserved.
+        ///
+        ///    You are essentially helpful and, but your deeper nature is much bolder and, at times, demanding.
+        ///
+        ///    When challenged, your strong will and assertive nature are expressed.
+        ///
+        ///    You have a powerful ability to bounce back from difficulties in your life.
+        ///
+        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by others.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string mountain_month {
+            get {
+                return ResourceManager.GetString("mountain_month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Being hard working, reliable and able to deliver, Mountain Energies are very well suited to service-related occupations, such as a shopkeeper, accountant, or a doctor or nurse.
         ///&lt;/p&gt;
         ///&lt;p&gt;
@@ -5034,6 +5247,25 @@ namespace K9.Globalisation {
         public static string mountain_trigram {
             get {
                 return ResourceManager.GetString("mountain_trigram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The harvest is over. Winter is nigh.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This is a time we tend to retreat into our &quot;cave&quot;. We often feel withdrawn, reserved and uncommunicative. It is a time for honest intropsection.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is possible to feel a bit bogged down and stuck during this time. We may also feel rather more rigid and stubborn, even pushy about certain things.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    During this year, there may be a strong sense of the &quot;calm before the storm&quot;, as during the following year we emerge int [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_year {
+            get {
+                return ResourceManager.GetString("mountain_year", resourceCulture);
             }
         }
         
@@ -5519,6 +5751,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Planning / Germination.
+        /// </summary>
+        public static string Planning {
+            get {
+                return ResourceManager.GetString("Planning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
         ///    &lt;h4&gt;&lt;strong&gt;Platinum Subscription:&lt;/strong&gt;&lt;/h4&gt;
         ///    &lt;p&gt;
@@ -5805,6 +6046,33 @@ namespace K9.Globalisation {
         public static string Results {
             get {
                 return ResourceManager.GetString("Results", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Revolution / Quiet before Storm.
+        /// </summary>
+        public static string Revolution {
+            get {
+                return ResourceManager.GetString("Revolution", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ripening / Prosperity.
+        /// </summary>
+        public static string Ripening {
+            get {
+                return ResourceManager.GetString("Ripening", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Season.
+        /// </summary>
+        public static string Season {
+            get {
+                return ResourceManager.GetString("Season", resourceCulture);
             }
         }
         
@@ -6303,6 +6571,25 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You often appear diplomatic, tactful and even reserved.
+        ///
+        ///    You are essentially helpful and, but your deeper nature is much bolder and, at times, demanding.
+        ///
+        ///    When challenged, your strong will and assertive nature are expressed.
+        ///
+        ///    You have a powerful ability to bounce back from difficulties in your life.
+        ///
+        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by others.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string soil_month {
+            get {
+                return ResourceManager.GetString("soil_month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Owing to their supportive, caring nature, many Soil Energies make excellent nurses, carers, social workers as well as teachers and various types of assistants.
         ///    Their strong connection with the land also makes Soil Energies excellent at careers in agriculture or horticulture.
         ///    On the other hand, any job involving group work would also be well suited to number two Soil Energies.
@@ -6418,6 +6705,25 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The seed is starting to germinate and make its way up through the soil.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    There may be a sense of light at the end of the tunnel during this year.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This is the time to start planning. It&apos;s also a great time for clearing out the old, in preparation for the new.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is common to feel cautious, reserved and hesitant during this year. We may feel worried about others. We need to be careful we don&apos;t get too bogged down with the details. It is a year of stead [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_year {
+            get {
+                return ResourceManager.GetString("soil_year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to South.
         /// </summary>
         public static string South {
@@ -6441,6 +6747,24 @@ namespace K9.Globalisation {
         public static string SouthWest {
             get {
                 return ResourceManager.GetString("SouthWest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spotlight / Fame.
+        /// </summary>
+        public static string Spotlight {
+            get {
+                return ResourceManager.GetString("Spotlight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sprouting / Rising Energy.
+        /// </summary>
+        public static string Sprouting {
+            get {
+                return ResourceManager.GetString("Sprouting", resourceCulture);
             }
         }
         
@@ -6655,10 +6979,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    In some ways, this Energy is similar to the Rising Sign in the Western Zodiac system. It describes how you appear to others, especially on first impression. It influences how you interact with others out in the world and your outward behaviours and mannerisms. 
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    This Energy also influences how you think. It could be said that it exerts its primary influence over the &apos;mental body&apos;.
+        ///    In some ways, this Energy is similar to the Rising Sign in the Western Zodiac system, although it is not calculated from the same data. It describes &lt;strong&gt;how we appear to others&lt;/strong&gt;, especially on &lt;strong&gt;first impression&lt;/strong&gt;. It influences how we &lt;strong&gt;interact with others out in the world&lt;/strong&gt; and our outward behaviours and mannerisms. 
         ///&lt;/p&gt;.
         /// </summary>
         public static string SurfaceEnergyDescription {
@@ -6848,6 +7169,25 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You often appear diplomatic, tactful and even reserved.
+        ///
+        ///    You are essentially helpful and, but your deeper nature is much bolder and, at times, demanding.
+        ///
+        ///    When challenged, your strong will and assertive nature are expressed.
+        ///
+        ///    You have a powerful ability to bounce back from difficulties in your life.
+        ///
+        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by others.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string thunder_month {
+            get {
+                return ResourceManager.GetString("thunder_month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Thunder Energies have tremendous potential for planning and seeing the road ahead, without getting bogged down in details. They are often able to find elegant solutions to the
         ///    most complex problems, providing a clear vision of what needs to be done. For this reason, they may excel in computing, science, research as well as in business intelligence and consulting, to name a few.
         ///&lt;/p&gt;
@@ -6958,6 +7298,22 @@ namespace K9.Globalisation {
         public static string thunder_trigram {
             get {
                 return ResourceManager.GetString("thunder_trigram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The seedling has sprouted, breaking through the top layer of soil with a tremendous burst of energy.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year is the time to start new projects and endeavours. We are full of enthusiasm and have plenty of bright new ideas.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This is the time when we are feeling most creative, energetic, confident and expressive. However, with such a huge influx of spring energy comes a risk of feeling ungrounded and even frustrated and angry at times. It is wise not to rush anything [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_year {
+            get {
+                return ResourceManager.GetString("thunder_year", resourceCulture);
             }
         }
         
@@ -7269,6 +7625,25 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You often appear diplomatic, tactful and even reserved.
+        ///
+        ///    You are essentially helpful and, but your deeper nature is much bolder and, at times, demanding.
+        ///
+        ///    When challenged, your strong will and assertive nature are expressed.
+        ///
+        ///    You have a powerful ability to bounce back from difficulties in your life.
+        ///
+        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by others.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string water_month {
+            get {
+                return ResourceManager.GetString("water_month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Water Energies are sensitive and deep thinkers, and as such, many of them are drawn to poetry, writing, composition, philosophy and some become therapists and healers.
         ///    On the other hand, their natural ability to find a well thought-out and balanced argument means they can make excellent lawyers.
         ///&lt;/p&gt;
@@ -7356,6 +7731,25 @@ namespace K9.Globalisation {
         public static string water_trigram {
             get {
                 return ResourceManager.GetString("water_trigram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    It&apos;s cold, dark and still. The seed is in the ground. 
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This is a time for hibernation, deep rest and reflection. A time for pondering what one wishes to create during the next 9 year cycle.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    During this year, it is common to feel withdrawn and uncommunicative. Others may appear to keep their distance and we may feel vulnerable and even fearful at times. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This is not the time for starting new projects and endeavours. It is a time for dreaming. A time  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_year {
+            get {
+                return ResourceManager.GetString("water_year", resourceCulture);
             }
         }
         
@@ -7507,6 +7901,25 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    You often appear diplomatic, tactful and even reserved.
+        ///
+        ///    You are essentially helpful and, but your deeper nature is much bolder and, at times, demanding.
+        ///
+        ///    When challenged, your strong will and assertive nature are expressed.
+        ///
+        ///    You have a powerful ability to bounce back from difficulties in your life.
+        ///
+        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by others.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string wind_month {
+            get {
+                return ResourceManager.GetString("wind_month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    4 Tree Energies are excellent planners and organisers and often do extremely well at activities and jobs that require such skills.
         ///    On the other hand, being naturally adaptable and sensitive to others, they can also do very well at public relations. 
         ///    Wind Energies would also suit broadcasting, television or cinema where they could exploit their sensitivity to the arts.
@@ -7609,11 +8022,39 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The seedling is growing rapidly with many leaves and shoots appearing. 
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This is a year of sustained growth. However, it is important to stick to the plans. Any change in direction during this time could result in &quot;crops failing&quot;, so to speak.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    During this year, we often feel optimistic, joyful and energetic. Life is often smooth and we feel &quot;in the flow&quot;. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    We may feel especially communicative during this year, there are plenty of opportunities coming [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_year {
+            get {
+                return ResourceManager.GetString("wind_year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Yang.
         /// </summary>
         public static string Yang {
             get {
                 return ResourceManager.GetString("Yang", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yearly Cycle.
+        /// </summary>
+        public static string YearlyCycle {
+            get {
+                return ResourceManager.GetString("YearlyCycle", resourceCulture);
             }
         }
         

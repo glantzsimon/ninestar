@@ -11,73 +11,91 @@
 
 @using (Html.BeginBootstrapForm())
 {
-    <h4 class="margin-top-0 margin-bottom-10">@Dictionary.PersonalProfileDetails</h4>
-    <div class="ninestar-summmary container padding-0 margin-top-15">
-        <ul class="nav nav-pills nav-justified">
-            @if (Model.PersonModel.IsAdult())
-            {
-                <li class="active"><a data-toggle="tab" href="#fundamental">@Model.MainEnergy.AdultEnergyLabel</a></li>
-                <li><a data-toggle="tab" href="#character">@Model.CharacterEnergy.CharacteEnergyLabel</a></li>
-            }
-            else
-            {
-                <li class="active"><a data-toggle="tab" href="#character">@Model.CharacterEnergy.CharacteEnergyLabel</a></li>
-            }
+    <article>
+        <div class="ninestar-summmary container padding-0 margin-top-15">
+            <ul class="nav nav-pills nav-justified">
+                <li class="active"><a data-toggle="tab" href="#personal-profile">@Dictionary.PersonalProfileDetails</a></li>
+                <li><a data-toggle="tab" href="#sexuality">@Dictionary.SexualityLabel</a></li>
+                <li><a data-toggle="tab" href="#predictions">@Dictionary.Predictions</a></li>
+            </ul>
 
-            <li><a data-toggle="tab" href="#surface">@Dictionary.ExternalPersona</a></li>
-            <li><a data-toggle="tab" href="#sexuality">@Dictionary.SexualityLabel</a></li>
-        </ul>
+            <div class="tab-content">
+                <div id="personal-profile" class="tab-pane fade in active">
+                    <ul class="nav nav-pills nav-justified margin-top-20">
+                        @if (Model.PersonModel.IsAdult())
+                        {
+                            <li class="active"><a data-toggle="tab" href="#fundamental">@Model.MainEnergy.AdultEnergyLabel</a></li>
+                            <li><a data-toggle="tab" href="#character">@Model.CharacterEnergy.CharacteEnergyLabel</a></li>
+                        }
+                        else
+                        {
+                            <li class="active"><a data-toggle="tab" href="#character">@Model.CharacterEnergy.CharacteEnergyLabel</a></li>
+                        }
 
-        <div class="tab-content">
-            <div id="fundamental" class="tab-pane fade @adultActiveClass">
-                @Html.Panel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.MainEnergyDescription)
+                        <li><a data-toggle="tab" href="#surface">@Dictionary.ExternalPersona</a></li>
+                    </ul>
 
-                @Html.Partial("_NineStarHeader", Model.MainEnergy)
-                <hr />
-                @Html.Partial("_NineStarDetail", Model)
-            </div>
+                    <div class="tab-content">
+                        <div id="fundamental" class="tab-pane fade @adultActiveClass">
+                            @Html.Panel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.MainEnergyDescription)
 
-            <div id="character" class="tab-pane fade @childActiveClass">
-                @Html.Panel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.CharacterEnergyDescription)
+                            @Html.Partial("_NineStarHeader", Model.MainEnergy)
+                            <hr />
+                            @Html.Partial("_NineStarDetail", Model)
+                        </div>
 
-                @Html.Partial("_NineStarHeader", Model.CharacterEnergy)
-                <hr />
-                @Html.Partial("_NineStarBody", Model.CharacterEnergy)
-            </div>
+                        <div id="character" class="tab-pane fade @childActiveClass">
+                            @Html.Panel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.CharacterEnergyDescription)
 
-            <div id="surface" class="tab-pane fade">
-                @Html.Panel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.SurfaceEnergyDescription)
+                            @Html.Partial("_NineStarHeader", Model.CharacterEnergy)
+                            <hr />
+                            @Html.Partial("_NineStarBody", Model.CharacterEnergy)
+                        </div>
 
-                @Html.Partial("_NineStarHeader", Model.SurfaceEnergy)
-                <hr />
-                @Html.Partial("_NineStarBody", Model.SurfaceEnergy)
-            </div>
+                        <div id="surface" class="tab-pane fade">
+                            @Html.Panel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.SurfaceEnergyDescription)
 
-            <div id="sexuality" class="tab-pane fade">
-                @Html.Panel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.sexuality_description)
+                            @Html.Partial("_NineStarHeader", Model.SurfaceEnergy)
+                            <hr />
+                            @Html.Partial("_NineStarBody", Model.SurfaceEnergy)
+                        </div>
+                    </div>
+                </div>
 
-                @if (WebSecurity.IsAuthenticated)
+                @if (Model.PersonModel.IsSixteenOrOver())
                 {
-                    if (activeUserMembership == null || Model.ReadingType == EReadingType.Free)
-                    {
-                        <br />
-                        <h4>
-                            <strong>@Html.Raw(Dictionary.UpgradeMembershipFullText)</strong>
-                        </h4>
-                        @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership")
-                    }
-                    else if (Model.ReadingType == EReadingType.Complete)
-                    {
-                        @Html.Partial("_Sexuality")
-                    }
+                    <div id="sexuality" class="tab-pane fade">
+                        @Html.Panel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.sexuality_description)
+
+                        @if (WebSecurity.IsAuthenticated)
+                        {
+                            if (activeUserMembership == null || Model.ReadingType == EReadingType.Free)
+                            {
+                                <br />
+                                <h4>
+                                    <strong>@Html.Raw(Dictionary.UpgradeMembershipFullText)</strong>
+                                </h4>
+                                @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership")
+                            }
+                            else if (Model.ReadingType == EReadingType.Complete)
+                            {
+                                @Html.Partial("_Sexuality")
+                            }
+                        }
+                        else
+                        {
+                            <br />
+                            @Html.BootstrapActionLinkButton(Dictionary.LogIntoYourAccountToView, "Login", "Account")
+                        }
+                    </div>
                 }
-                else
-                {
-                    <br />
-                    @Html.BootstrapActionLinkButton(Dictionary.LogIntoYourAccountToView, "Login", "Account")
-                }
+
+                <div id="predictions" class="tab-pane fade margin-top-20">
+                    @Html.Partial("_Predictions")
+                </div>
+
             </div>
 
         </div>
-    </div>
+    </article>
 }

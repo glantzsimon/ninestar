@@ -8,15 +8,16 @@ using System;
 namespace K9.WebApplication.Attributes
 {
     [AttributeUsage(AttributeTargets.Field)]
-    public class NineStarEnumMetaDataAttribute : Attribute
+    public class NineStarKiEnumMetaDataAttribute : Attribute
     {
         public ENineStarKiFamilyMember FamilyMember { get; set; }
-        public ENineStarKiElenement Element { get; set; }
+        public ENineStarKiElement Element { get; set; }
         public ENineStarKiColour Colour { get; set; }
         public ENineStarKiDirection Direction { get; set; }
         public ENineStarKiYinYang YinYang { get; set; }
         public ENineStarKiDescriptiveName DescriptiveName { get; set; }
         public ENineStarKiModality Modality { get; set; }
+        public ENineStarKiCycle Cycle { get; set; }
         public Type ResourceType { get; set; }
         public string TrigramName { get; set; }
         public string Name { get; set; }
@@ -56,15 +57,15 @@ namespace K9.WebApplication.Attributes
         {
             switch (Element)
             {
-                case ENineStarKiElenement.Earth:
+                case ENineStarKiElement.Earth:
                     return Dictionary.earth_element;
-                case ENineStarKiElenement.Fire:
+                case ENineStarKiElement.Fire:
                     return Dictionary.fire_element;
-                case ENineStarKiElenement.Metal:
+                case ENineStarKiElement.Metal:
                     return Dictionary.metal_element;
-                case ENineStarKiElenement.Tree:
+                case ENineStarKiElement.Tree:
                     return Dictionary.tree_element;
-                case ENineStarKiElenement.Water:
+                case ENineStarKiElement.Water:
                     return Dictionary.water_element;
                 default:
                     return string.Empty;
@@ -90,7 +91,7 @@ namespace K9.WebApplication.Attributes
 
         private string GetEnergytNumberAndName(ENineStarKiEnergy energy)
         {
-            return $"{(int)energy} {energy.GetAttribute<NineStarEnumMetaDataAttribute>().Name}";
+            return $"{(int)energy} {energy.GetAttribute<NineStarKiEnumMetaDataAttribute>().Name}";
         }
 
         private string GetModalityDescription()

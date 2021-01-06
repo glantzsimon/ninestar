@@ -71,12 +71,12 @@ namespace K9.WebApplication.Models
         /// <summary>
         /// Determines the 9 Star Ki energy of the current year
         /// </summary>
-        public ENineStarKiEnergy LifeCycleYearEnergy { get; }
+        public NineStarKiEnergy LifeCycleYearEnergy { get; }
 
         /// <summary>
         /// Determines the 9 Star Ki energy of the current month
         /// </summary>
-        public ENineStarKiEnergy LifeCycleMonthEnergy { get; }
+        public NineStarKiEnergy LifeCycleMonthEnergy { get; }
 
         public EReadingType ReadingType { get; set; }
 
@@ -225,19 +225,21 @@ namespace K9.WebApplication.Models
             return ProcessEnergy(5 - (CharacterEnergy.EnergyNumber - MainEnergy.EnergyNumber), EGender.Male, ENineStarKiEnergyType.SurfaceEnergy);
         }
 
-        private ENineStarKiEnergy GetLifeCycleYearEnergy()
+        private NineStarKiEnergy GetLifeCycleYearEnergy()
         {
             var todayYearEnergy = (int)GetMainEnergy(Today ?? DateTime.Today, EGender.Male).Energy;
             var personalYearEnergy = PersonModel.Gender.IsYin() ? InvertEnergy(MainEnergy.EnergyNumber) : MainEnergy.EnergyNumber;
             var offset = todayYearEnergy - personalYearEnergy;
             var lifeCycleYearEnergy = LoopEnergyNumber(5 - offset);
 
-            return (ENineStarKiEnergy)(PersonModel.Gender.IsYin() && invertYearlyPredictionYearForYinEnergies ? InvertEnergy(lifeCycleYearEnergy) : lifeCycleYearEnergy);
+            var energy = (ENineStarKiEnergy)(PersonModel.Gender.IsYin() && invertYearlyPredictionYearForYinEnergies ? InvertEnergy(lifeCycleYearEnergy) : lifeCycleYearEnergy);
+
+            return new NineStarKiEnergy(energy,ENineStarKiEnergyType.MainEnergy, PersonModel.IsAdult());
         }
 
-        private ENineStarKiEnergy GetLifeCycleMonthEnergy()
+        private NineStarKiEnergy GetLifeCycleMonthEnergy()
         {
-            return GetCharacterEnergy(Today ?? DateTime.Today, GetLifeCycleYearEnergy(), PersonModel.Gender).Energy;
+            return GetCharacterEnergy(Today ?? DateTime.Today, GetLifeCycleYearEnergy().Energy, PersonModel.Gender);
         }
 
         private NineStarKiEnergy ProcessEnergy(int energyNumber, EGender gender, ENineStarKiEnergyType type = ENineStarKiEnergyType.MainEnergy)

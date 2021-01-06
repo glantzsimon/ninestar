@@ -322,7 +322,8 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Attributes\NineStarEnumMetaDataAttribute.cs" />
+    <Compile Include="Attributes\NineStarKiCycleEnumMetaDataAttribute.cs" />
+    <Compile Include="Attributes\NineStarKiEnumMetaDataAttribute.cs" />
     <Compile Include="Config\GoogleConfiguration.cs" />
     <Compile Include="Config\MailChimpConfiguration.cs" />
     <Compile Include="Config\StripeConfiguration.cs" />
@@ -1168,6 +1169,9 @@
     <Content Include="Views\Account\UnsubscribeFailed.cshtml" />
     <Content Include="Views\Account\UnsubscribeSuccess.cshtml" />
     <Content Include="Views\NineStarKi\MyProfile.cshtml" />
+    <Content Include="Views\NineStarKi\_PredictionsHeader.cshtml" />
+    <Content Include="Views\NineStarKi\_Season.cshtml" />
+    <Content Include="Views\NineStarKi\_Predictions.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

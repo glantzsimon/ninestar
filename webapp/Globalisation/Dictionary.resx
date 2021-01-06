@@ -1933,4 +1933,94 @@
   <data name="MyPersonalProfile" xml:space="preserve">
     <value>My Personal Profile</value>
   </data>
+  <data name="Blossoming" xml:space="preserve">
+    <value>Blossoming / Steady Growth</value>
+  </data>
+  <data name="Consolidating" xml:space="preserve">
+    <value>Consolidating / Ups and Downs</value>
+  </data>
+  <data name="core_earth_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\en-gb\monthly\core-earth-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="core_earth_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\en-gb\yearly\core-earth-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\en-gb\monthly\fire-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\en-gb\yearly\fire-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Harvest" xml:space="preserve">
+    <value>Harvest / Abundance and Celebration</value>
+  </data>
+  <data name="heaven_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\en-gb\monthly\heaven-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\en-gb\yearly\heaven-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Hibernation" xml:space="preserve">
+    <value>Hibernation / Stillness</value>
+  </data>
+  <data name="lake_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\en-gb\monthly\lake-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\en-gb\yearly\lake-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="MonthlyCycle" xml:space="preserve">
+    <value>Monthly Cycle</value>
+  </data>
+  <data name="mountain_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\en-gb\monthly\mountain-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\en-gb\yearly\mountain-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Planning" xml:space="preserve">
+    <value>Planning / Germination</value>
+  </data>
+  <data name="Revolution" xml:space="preserve">
+    <value>Revolution / Quiet before Storm</value>
+  </data>
+  <data name="Ripening" xml:space="preserve">
+    <value>Ripening / Prosperity</value>
+  </data>
+  <data name="Season" xml:space="preserve">
+    <value>Season</value>
+  </data>
+  <data name="soil_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\en-gb\monthly\soil-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="soil_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\en-gb\yearly\soil-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Spotlight" xml:space="preserve">
+    <value>Spotlight / Fame</value>
+  </data>
+  <data name="Sprouting" xml:space="preserve">
+    <value>Sprouting / Rising Energy</value>
+  </data>
+  <data name="thunder_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\en-gb\monthly\thunder-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="thunder_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\en-gb\yearly\thunder-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\en-gb\monthly\water-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\en-gb\yearly\water-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wind_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\en-gb\monthly\wind-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wind_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\en-gb\yearly\wind-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="YearlyCycle" xml:space="preserve">
+    <value>Yearly Cycle</value>
+  </data>
 </root>

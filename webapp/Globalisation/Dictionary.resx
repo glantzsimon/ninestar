@@ -1945,6 +1945,12 @@
   <data name="core_earth_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>predictions\en-gb\yearly\core-earth-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="EarlyAutumn" xml:space="preserve">
+    <value>Early Autumn</value>
+  </data>
+  <data name="EarlySpring" xml:space="preserve">
+    <value>Early Spring</value>
+  </data>
   <data name="fire_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>predictions\en-gb\monthly\fire-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -1968,6 +1974,9 @@
   </data>
   <data name="lake_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>predictions\en-gb\yearly\lake-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="LateSpring" xml:space="preserve">
+    <value>Late Spring</value>
   </data>
   <data name="MonthlyCycle" xml:space="preserve">
     <value>Monthly Cycle</value>
@@ -2019,6 +2028,12 @@
   </data>
   <data name="wind_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>predictions\en-gb\yearly\wind-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Winter" xml:space="preserve">
+    <value>Winter</value>
+  </data>
+  <data name="WinterToSpring" xml:space="preserve">
+    <value>Between Winter and Spring</value>
   </data>
   <data name="YearlyCycle" xml:space="preserve">
     <value>Yearly Cycle</value>

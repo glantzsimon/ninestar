@@ -160,7 +160,7 @@
             public const string WinterToSpring = "WinterToSpring";
             public const string EarlySpring = "EarlySpring";
             public const string LateSpring = "LateSpring";
-            public const string Centre = "Centre";
+            public const string Centre = "";
             public const string EarlyAutumn = "EarlyAutumn";
             public const string LateAutumn = "LateAutumn";
             public const string AutumnToWinter = "AutumnToWinter";

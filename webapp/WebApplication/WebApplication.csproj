@@ -772,6 +772,14 @@
     <Content Include="Images\ninestar\modalities\dynamic.png" />
     <Content Include="Images\ninestar\modalities\flexible.png" />
     <Content Include="Images\ninestar\modalities\stable.png" />
+    <Content Include="Images\ninestar\seasons\centre.png" />
+    <Content Include="Images\ninestar\seasons\earlyautumn.png" />
+    <Content Include="Images\ninestar\seasons\earlywinter.png" />
+    <Content Include="Images\ninestar\seasons\lateautumn.png" />
+    <Content Include="Images\ninestar\seasons\latespring.png" />
+    <Content Include="Images\ninestar\seasons\summer.png" />
+    <Content Include="Images\ninestar\seasons\wintertospring.png" />
+    <Content Include="Images\ninestar\seasons\winter.png" />
     <Content Include="Images\ninestar\transformations\transformation-challenging.png" />
     <Content Include="Images\ninestar\transformations\transformation-same.png" />
     <Content Include="Images\ninestar\transformations\transformation-supportive.png" />

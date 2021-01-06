@@ -351,7 +351,7 @@ namespace K9.WebApplication.Models
 
         public string CharacteEnergyLabel => GetCharacterEnergyLabel();
 
-        public string Season => CycleMetaData.Season;
+        public string Season => CycleMetaData.SeasonDescription;
 
         public string CycleDescriptiveName => CycleMetaData.DescriptiveTitle;
 

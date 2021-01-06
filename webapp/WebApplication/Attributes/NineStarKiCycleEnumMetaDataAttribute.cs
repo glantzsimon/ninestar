@@ -18,19 +18,14 @@ namespace K9.WebApplication.Attributes
         public string DescriptiveTitle => GetDescriptiveTitle();
         public string YearlyDescription => GetYearlyDescription();
         public string MonthlyDescription => GetMonthlyDescription();
+        public string SeasonDescription => GetSeason();
         
         public string GetDescriptiveTitle()
         {
             var attr = DescriptiveName.GetAttribute<EnumDescriptionAttribute>();
             return attr.GetDescription();
         }
-        
-        public string GetElement()
-        {
-            var attr = Element.GetAttribute<EnumDescriptionAttribute>();
-            return attr.GetDescription();
-        }
-
+       
         public string GetSeason()
         {
             return ResourceType.GetValueFromResource(Season);

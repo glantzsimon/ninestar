@@ -2484,6 +2484,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Early Autumn.
+        /// </summary>
+        public static string EarlyAutumn {
+            get {
+                return ResourceManager.GetString("EarlyAutumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Early Spring.
+        /// </summary>
+        public static string EarlySpring {
+            get {
+                return ResourceManager.GetString("EarlySpring", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Earth.
         /// </summary>
         public static string Earth {
@@ -3681,6 +3699,15 @@ namespace K9.Globalisation {
         public static string lake_year {
             get {
                 return ResourceManager.GetString("lake_year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Late Spring.
+        /// </summary>
+        public static string LateSpring {
+            get {
+                return ResourceManager.GetString("LateSpring", resourceCulture);
             }
         }
         
@@ -8037,6 +8064,24 @@ namespace K9.Globalisation {
         public static string wind_year {
             get {
                 return ResourceManager.GetString("wind_year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Winter.
+        /// </summary>
+        public static string Winter {
+            get {
+                return ResourceManager.GetString("Winter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Between Winter and Spring.
+        /// </summary>
+        public static string WinterToSpring {
+            get {
+                return ResourceManager.GetString("WinterToSpring", resourceCulture);
             }
         }
         

@@ -6779,13 +6779,10 @@ namespace K9.Globalisation {
         ///    The seed is starting to germinate and make its way up through the soil.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    There may be a sense of light at the end of the tunnel during this year.
+        ///    This year represents the transition from winter to spring. There may be a sense of light at the end of the tunnel.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This is the time to start planning. It&apos;s also a great time for clearing out the old, in preparation for the new.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    It is common to feel cautious, reserved and hesitant during this year. We may feel worried about others. We need to be careful we don&apos;t get too bogged down with the details. It is a  [rest of string was truncated]&quot;;.
+        ///    Socially and financially this is a time of slow or little growth. Rather, this is the perfect time to start planning and figuring out the details of what we have been dreaming about in the previous year; to get everything in order ready for the arrival of spring and a  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_year {
             get {
@@ -7003,6 +7000,15 @@ namespace K9.Globalisation {
         public static string SummaryLabel {
             get {
                 return ResourceManager.GetString("SummaryLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Summer.
+        /// </summary>
+        public static string Summer {
+            get {
+                return ResourceManager.GetString("Summer", resourceCulture);
             }
         }
         
@@ -7376,13 +7382,13 @@ namespace K9.Globalisation {
         ///    The seedling has sprouted, breaking through the top layer of soil with a tremendous burst of energy.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This year is the time to start new projects and endeavours. We are full of enthusiasm and have plenty of bright new ideas.
+        ///    This year represents early spring or dawn and therefore new growth, development as well as new opportunities. There is a sense of rising energy.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This is the time when we are feeling most creative, energetic, confident and expressive. However, with such a huge influx of spring energy comes a risk of feeling ungrounded and even frustrated and angry at times.
+        ///    It is the time to put our plans into action and begin working on our projects and endeavours. We are full of enthusiasm and have plenty of bright new ideas. It is also a great time to travel.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    It is wise not  [rest of string was truncated]&quot;;.
+        ///    Having the full [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_year {
             get {
@@ -8093,16 +8099,16 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The seedling is growing rapidly with many leaves and shoots appearing. 
+        ///    The seedling is growing rapidly with many leaves and shoots appearing.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This is a year of sustained growth. However, it is important to stick to the plans. Any change in direction during this time could result in &quot;crops failing&quot;, so to speak.
+        ///    This year represents mid morning or late spring. It is a time of sustained growth, following on from the rapid burst of the previous year. 
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    During this year, we often feel optimistic, joyful and energetic. Life is often smooth and we feel &quot;in the flow&quot;. 
+        ///    However, this is also potentially a changeable and unpredictable time. It is important to stick to the plans. Any change in direction during this time could result in &quot;crops failing&quot;, so to speak.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    We may feel especially communicative during this year, there are plenty of opportunities coming [rest of string was truncated]&quot;;.
+        ///    During this year, we often feel optimistic, j [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_year {
             get {

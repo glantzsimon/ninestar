@@ -2963,13 +2963,13 @@ namespace K9.Globalisation {
         ///    This is the year we take the spotlight
         ///&lt;/h5&gt;
         ///&lt;p&gt;
+        ///    This year represents the full force of summer or the midday sun. It brings illumination, heat and clarity.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
         ///    This year is our time to shine. We will be noticed, for good or bad reasons. We may find ourselves making significant achievements and we will likely feel very energetic, enthusiastic and optimistic with a great sense of adventure.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This is also a year when things we would rather keep a secret may well end up being revealed to the world.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    During a Fire year, people typically feel a great sense of clarity and may  [rest of string was truncated]&quot;;.
+        ///    This is also a year when things we would rather keep a secret may well end  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_year {
             get {
@@ -3689,13 +3689,10 @@ namespace K9.Globalisation {
         ///    The harvest is in. It&apos;s time to celebrate and put one&apos;s feet up
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This is the year to enjoy the harvest and celebrate our achievements. It&apos;s a time to relax and be grateful for the abundance we have created for ourselves.
+        ///    This year represents late autumn or evening. It is the time to enjoy the harvest and to celebrate our achievements; a time to relax and be grateful for the abundance we have created for ourselves. It is also a time to reflect on the previous cycle.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Many people find that money flows more easily to them during this time. It is also a great time for romance; however, care should be taken not to becoming overly focussed on intimate relationships or to become overly hedonistic.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    This [rest of string was truncated]&quot;;.
+        ///    This is perhaps the smoothest and most enjoyable House to occupy. It is a great time to become more sociable and broaden our horizons. We often feel more at [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_year {
             get {
@@ -5046,7 +5043,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MonthlyCycles.
+        ///   Looks up a localized string similar to Monthly Cycles.
         /// </summary>
         public static string MonthlyCycles {
             get {
@@ -5296,13 +5293,10 @@ namespace K9.Globalisation {
         ///    The harvest is over. Winter is nigh.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This is a time we tend to retreat into our &quot;cave&quot;. We often feel withdrawn, reserved and uncommunicative. It is a time for honest intropsection. However, it can also be an uncomfortable time.
+        ///    This year represents the transition from evening to night or autumn to winter. It is a time when Nature returns to stillness. We go indoors to shelter from the outside.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    It is possible to feel a bit bogged down and stuck during this year. We may also feel rather more rigid and stubborn; even pushy about certain things.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    During this year, there may be a strong sense of the &quot;calm before the sto [rest of string was truncated]&quot;;.
+        ///    This is a time we tend to retreat into our &quot;cave&quot;. We often feel withdrawn, reserved and uncommunicative. It is a time for deep, honest intropsection.  However, we need to be mindful that we don&apos;t become too withdrawn, as this could be upsetting to those who are  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_year {
             get {

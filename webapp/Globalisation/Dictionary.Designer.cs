@@ -1906,17 +1906,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You often appear diplomatic, tactful and even reserved.
-        ///
-        ///    You are essentially helpful and, but your deeper nature is much bolder and, at times, demanding.
-        ///
-        ///    When challenged, your strong will and assertive nature are expressed.
-        ///
-        ///    You have a powerful ability to bounce back from difficulties in your life.
-        ///
-        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by others.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Coming soon...
+        ///&lt;/h5&gt;.
         /// </summary>
         public static string core_earth_month {
             get {
@@ -1929,10 +1921,10 @@ namespace K9.Globalisation {
         ///    The seedling is beginning to mature.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This is the year in which we come into the energy of &quot;adolescence&quot;; of experimenting with many different activities or ideas and defining who we are. It is a challenging and unpredictable time, often characterised by difficult choices, ups and downs and much uncertainty. It is not uncommon for many old, unresolved issues to resurface during this time.
+        ///    Everyone is born in a 5 year and returns to it at the age of nine, 18, 27, 36, 45, 54, etc. This is the centre of the 9 Star Ki cycle and represents the beginning and end of a cycle. Anything started during a 5 year will have a great impact on the following 8 years and so should be considered carefully.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    During this year we are right at the centre of the systema and a lot of energy [rest of string was truncated]&quot;;.
+        ///    As the stars are positioned exactly as they were during the year of our birth, we can experience a kind of &quot;rebirth&quot; during thi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string core_earth_year {
             get {
@@ -2860,17 +2852,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You often appear diplomatic, tactful and even reserved.
-        ///
-        ///    You are essentially helpful and, but your deeper nature is much bolder and, at times, demanding.
-        ///
-        ///    When challenged, your strong will and assertive nature are expressed.
-        ///
-        ///    You have a powerful ability to bounce back from difficulties in your life.
-        ///
-        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by others.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Coming soon...
+        ///&lt;/h5&gt;.
         /// </summary>
         public static string fire_month {
             get {
@@ -3269,17 +3253,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You often appear diplomatic, tactful and even reserved.
-        ///
-        ///    You are essentially helpful and, but your deeper nature is much bolder and, at times, demanding.
-        ///
-        ///    When challenged, your strong will and assertive nature are expressed.
-        ///
-        ///    You have a powerful ability to bounce back from difficulties in your life.
-        ///
-        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by others.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Coming soon...
+        ///&lt;/h5&gt;.
         /// </summary>
         public static string heaven_month {
             get {
@@ -3427,10 +3403,13 @@ namespace K9.Globalisation {
         ///    The fruits are beginning to ripen
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This is the year we begin to see the fruits of our labour; the reward of all the effort put in during the previous years. It is a time when we feel confident with a strong sense of direction and purpose.
+        ///    This year represents early autumn or evening. It is where we begin to see the fruits of our labour; the reward of all the effort put in during the previous years.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This is also a year when we begin to get much greater clarity and understanding. We feel bolder and better able to express our needs and set healthy boundaries with people. Care must be taken not become overbearing or intolerant of [rest of string was truncated]&quot;;.
+        ///    This year is associated with the full force of Yang and we often feel confident with a strong sense of direction and purpose.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    We may well find that our skills and talents are more noticed by others and that we are rewarded for our efforts, perhaps with a p [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_year {
             get {
@@ -3583,17 +3562,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You often appear diplomatic, tactful and even reserved.
-        ///
-        ///    You are essentially helpful and, but your deeper nature is much bolder and, at times, demanding.
-        ///
-        ///    When challenged, your strong will and assertive nature are expressed.
-        ///
-        ///    You have a powerful ability to bounce back from difficulties in your life.
-        ///
-        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by others.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Coming soon...
+        ///&lt;/h5&gt;.
         /// </summary>
         public static string lake_month {
             get {
@@ -5045,11 +5016,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    In addition to the yearly cycles that each our lives move through, there are also monthly cycles. Each year has the energy of on of the nine Energies and influences our lives in powerful ways. 
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    People who are in touch with Nature and her cycles understand the seasonal changes that occur throughout the year. There is a time to sow and a time to harvest. There is a time for new growth, a time for celebration and a time for winding down and resting. Similarly, the nine-year cycles that [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    &lt;!--In addition to the yearly cycles that each our lives move through, there are also monthly cycles--&gt;
+        ///    Coming soon...
+        ///&lt;/h5&gt;.
         /// </summary>
         public static string month_description {
             get {
@@ -5072,6 +5042,15 @@ namespace K9.Globalisation {
         public static string MonthlyCycle {
             get {
                 return ResourceManager.GetString("MonthlyCycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MonthlyCycles.
+        /// </summary>
+        public static string MonthlyCycles {
+            get {
+                return ResourceManager.GetString("MonthlyCycles", resourceCulture);
             }
         }
         
@@ -5190,17 +5169,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You often appear diplomatic, tactful and even reserved.
-        ///
-        ///    You are essentially helpful and, but your deeper nature is much bolder and, at times, demanding.
-        ///
-        ///    When challenged, your strong will and assertive nature are expressed.
-        ///
-        ///    You have a powerful ability to bounce back from difficulties in your life.
-        ///
-        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by others.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Coming soon...
+        ///&lt;/h5&gt;.
         /// </summary>
         public static string mountain_month {
             get {
@@ -6640,17 +6611,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You often appear diplomatic, tactful and even reserved.
-        ///
-        ///    You are essentially helpful and, but your deeper nature is much bolder and, at times, demanding.
-        ///
-        ///    When challenged, your strong will and assertive nature are expressed.
-        ///
-        ///    You have a powerful ability to bounce back from difficulties in your life.
-        ///
-        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by others.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Coming soon...
+        ///&lt;/h5&gt;.
         /// </summary>
         public static string soil_month {
             get {
@@ -7244,17 +7207,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You often appear diplomatic, tactful and even reserved.
-        ///
-        ///    You are essentially helpful and, but your deeper nature is much bolder and, at times, demanding.
-        ///
-        ///    When challenged, your strong will and assertive nature are expressed.
-        ///
-        ///    You have a powerful ability to bounce back from difficulties in your life.
-        ///
-        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by others.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Coming soon...
+        ///&lt;/h5&gt;.
         /// </summary>
         public static string thunder_month {
             get {
@@ -7703,17 +7658,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You often appear diplomatic, tactful and even reserved.
-        ///
-        ///    You are essentially helpful and, but your deeper nature is much bolder and, at times, demanding.
-        ///
-        ///    When challenged, your strong will and assertive nature are expressed.
-        ///
-        ///    You have a powerful ability to bounce back from difficulties in your life.
-        ///
-        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by others.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Coming soon...
+        ///&lt;/h5&gt;.
         /// </summary>
         public static string water_month {
             get {
@@ -7976,17 +7923,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You often appear diplomatic, tactful and even reserved.
-        ///
-        ///    You are essentially helpful and, but your deeper nature is much bolder and, at times, demanding.
-        ///
-        ///    When challenged, your strong will and assertive nature are expressed.
-        ///
-        ///    You have a powerful ability to bounce back from difficulties in your life.
-        ///
-        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by others.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    Coming soon...
+        ///&lt;/h5&gt;.
         /// </summary>
         public static string wind_month {
             get {
@@ -8105,10 +8044,7 @@ namespace K9.Globalisation {
         ///    This year represents mid morning or late spring. It is a time of sustained growth, following on from the rapid burst of the previous year. 
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    However, this is also potentially a changeable and unpredictable time. It is important to stick to the plans. Any change in direction during this time could result in &quot;crops failing&quot;, so to speak.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    During this year, we often feel optimistic, j [rest of string was truncated]&quot;;.
+        ///    However, this is also potentially a changeable and unpredictable time. It can be tempting to change direction or move away from what we have been working on so far. It is important to stick to the plans. A farmer wouldn&apos;t pull up his or her crops mid-spring  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_year {
             get {
@@ -8144,11 +8080,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Not only does each person have a 9 Star Ki profile, which is determined by their date of birth, but in addition, each of our lives passes through nine yearly cycles. Each year brings the energy of one of the nine Energies and influences our lives in powerful ways. 
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Our lives pass through nine-year cycles, with each year representing one of the nine Energies of the 9 Star Ki system.
+        ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Another way to imagine it is that our lives go through seasonal changes, just like the spring, summer, autumn, winter; however, it is a nine-year cycle, rather than a yearly one. During the &quot;summer&quot; part of the cycle, we  [rest of string was truncated]&quot;;.
+        ///    Not only does each person have a 9 Star Ki profile, which is determined by their date of birth, but in addition, each of our lives passes through nine-year cycles. Each year represents one of the nine Energies of the 9 Star Ki system and influences our lives in powerful ways. 
+        ///&lt;/p&gt;
+        ///&lt;h5&gt;
+        ///    Thes nine-year cycles are seasonal in nature, with a spring, summer, au [rest of string was truncated]&quot;;.
         /// </summary>
         public static string year_description {
             get {
@@ -8162,6 +8101,15 @@ namespace K9.Globalisation {
         public static string YearlyCycle {
             get {
                 return ResourceManager.GetString("YearlyCycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yearly Cycles.
+        /// </summary>
+        public static string YearlyCycles {
+            get {
+                return ResourceManager.GetString("YearlyCycles", resourceCulture);
             }
         }
         

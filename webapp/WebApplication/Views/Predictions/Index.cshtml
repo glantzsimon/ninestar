@@ -13,5 +13,9 @@
 @Html.Partial("_BetaPopup")
 
 <div class="container main-content">
-    <h4 class="text-center">@Dictionary.ComingSoon</h4>
+    <article>
+        @Html.Panel(Dictionary.AboutYearlyCycles, Dictionary.year_description)
+
+        @Html.Panel(Dictionary.AboutMonthlyCycles, Dictionary.month_description)
+    </article>
 </div>

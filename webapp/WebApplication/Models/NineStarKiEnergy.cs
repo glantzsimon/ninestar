@@ -142,7 +142,7 @@ namespace K9.WebApplication.Models
         LateSpring,
 
         [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
-            Season = Strings.Names.Center,
+            Season = Strings.Names.Centre,
             Element = ENineStarKiElement.Earth,
             DescriptiveName = ENineStarKiCycleDescriptiveName.Consolidating,
             YearlyDescriptionName = Strings.Names.CoreEarthYear,

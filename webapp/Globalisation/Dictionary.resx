@@ -2042,7 +2042,7 @@
     <value>Winter</value>
   </data>
   <data name="WinterToSpring" xml:space="preserve">
-    <value>Between Winter and Spring</value>
+    <value>Late Winter</value>
   </data>
   <data name="YearlyCycle" xml:space="preserve">
     <value>Yearly Cycle</value>
@@ -2059,10 +2059,25 @@
   <data name="Summer" xml:space="preserve">
     <value>Summer</value>
   </data>
+  <data name="AutumnToWinter" xml:space="preserve">
+    <value>Early Winter</value>
+  </data>
+  <data name="LateAutumn" xml:space="preserve">
+    <value>Late Autumn</value>
+  </data>
   <data name="MonthlyCycles" xml:space="preserve">
     <value>Monthly Cycles</value>
   </data>
   <data name="YearlyCycles" xml:space="preserve">
     <value>Yearly Cycles</value>
+  </data>
+  <data name="MonthlyPlanner" xml:space="preserve">
+    <value>Monthly Planner</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="YearlyPlanner" xml:space="preserve">
+    <value>Yearly Planner</value>
   </data>
 </root>

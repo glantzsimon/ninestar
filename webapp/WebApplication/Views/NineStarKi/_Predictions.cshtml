@@ -3,6 +3,7 @@
 
 <ul class="nav nav-pills nav-justified">
     <li class="active"><a data-toggle="tab" href="#yearly">@Dictionary.CurrentYearlyCycle</a></li>
+    <li><a data-toggle="tab" href="#yearly-planner">@Dictionary.YearlyPlanner</a></li>
     <li><a data-toggle="tab" href="#monthly">@Dictionary.CurrentMonthlyCycle</a></li>
 </ul>
 
@@ -10,17 +11,21 @@
     <div id="yearly" class="tab-pane fade in active">
         @Html.CollapsiblePanel(Dictionary.AboutYearlyCycles, Dictionary.year_description)
 
-        @Html.Partial("_PredictionsHeader", Model.LifeCycleYearEnergy)
+        @Html.Partial("_PredictionsHeader", Model.YearlyCycleEnergy)
 
-        @Html.Panel(Model.LifeCycleYearEnergy.CycleDescriptiveName, Model.LifeCycleYearEnergy.CycleDescription)
+        @Html.Panel(Model.YearlyCycleEnergy.CycleDescriptiveName, Model.YearlyCycleEnergy.CycleDescription)
+    </div>
+
+    <div id="yearly-planner" class="tab-pane fade">
+        @Html.Partial("_YearlyPlanner")
     </div>
 
     <div id="monthly" class="tab-pane fade">
         @Html.CollapsiblePanel(Dictionary.AboutMonthlyCycles, Dictionary.month_description)
 
-        @Html.Partial("_PredictionsHeader", Model.LifeCycleMonthEnergy)
+        @Html.Partial("_PredictionsHeader", Model.MonthlyCycleEnergy)
 
-        @Html.Panel(Model.LifeCycleMonthEnergy.CycleDescriptiveName, Model.LifeCycleMonthEnergy.CycleDescription)
+        @Html.Panel(Model.MonthlyCycleEnergy.CycleDescriptiveName, Model.MonthlyCycleEnergy.CycleDescription)
     </div>
 
 </div>

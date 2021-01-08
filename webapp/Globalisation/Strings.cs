@@ -119,7 +119,6 @@
             public const string SouthEast = "SouthEast";
             public const string East = "East";
             public const string NorthEast = "NorthEast";
-            public const string Center = "Center";
             public const string MiddleSon = "MiddleSon";
             public const string Mother = "Mother";
             public const string EldestSon = "EldestSon";
@@ -160,7 +159,7 @@
             public const string WinterToSpring = "WinterToSpring";
             public const string EarlySpring = "EarlySpring";
             public const string LateSpring = "LateSpring";
-            public const string Centre = "";
+            public const string Centre = "Centre";
             public const string EarlyAutumn = "EarlyAutumn";
             public const string LateAutumn = "LateAutumn";
             public const string AutumnToWinter = "AutumnToWinter";

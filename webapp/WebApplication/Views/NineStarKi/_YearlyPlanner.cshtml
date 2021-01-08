@@ -1,0 +1,33 @@
+﻿@using K9.WebApplication.Helpers
+@model K9.WebApplication.Models.NineStarKiModel
+
+<div class="container main-content clear-both yearly-planner-container margin-top-5">
+    @foreach (var cycle in Model.GetYearlyPlanner())
+    {
+        var year = cycle.Item1;
+        var energy = cycle.Item2;
+
+        <div class="row">
+            <div class="col-xs-2">
+                @Html.Partial("_Year", year)
+            </div>
+            <div class="col-xs-2">
+                @Html.Partial("_Season", energy)
+            </div>
+            <div class="col-xs-2">
+                @Html.Partial("_Energy", energy)
+            </div>
+            <div class="col-xs-2">
+                @Html.Partial("_Element", energy)
+            </div>
+            <div class="col-xs-2">
+                <div class="ninestar-summary-container">
+                    <h3 class="margin-bottom-0 padding-bottom-0">@K9.Base.Globalisation.Dictionary.DescriptionLabel</h3>
+                    <p>
+                        @energy.CycleDescriptiveName
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+</div>

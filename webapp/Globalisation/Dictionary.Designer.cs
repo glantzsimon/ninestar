@@ -1429,6 +1429,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Early Winter.
+        /// </summary>
+        public static string AutumnToWinter {
+            get {
+                return ResourceManager.GetString("AutumnToWinter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string Back {
@@ -3701,6 +3710,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Late Autumn.
+        /// </summary>
+        public static string LateAutumn {
+            get {
+                return ResourceManager.GetString("LateAutumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Late Spring.
         /// </summary>
         public static string LateSpring {
@@ -5048,6 +5066,15 @@ namespace K9.Globalisation {
         public static string MonthlyCycles {
             get {
                 return ResourceManager.GetString("MonthlyCycles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monthly Planner.
+        /// </summary>
+        public static string MonthlyPlanner {
+            get {
+                return ResourceManager.GetString("MonthlyPlanner", resourceCulture);
             }
         }
         
@@ -8056,7 +8083,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Between Winter and Spring.
+        ///   Looks up a localized string similar to Late Winter.
         /// </summary>
         public static string WinterToSpring {
             get {
@@ -8074,6 +8101,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Year.
+        /// </summary>
+        public static string Year {
+            get {
+                return ResourceManager.GetString("Year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    Our lives pass through nine-year cycles, with each year representing one of the nine Energies of the 9 Star Ki system.
         ///&lt;/h5&gt;
@@ -8081,7 +8117,7 @@ namespace K9.Globalisation {
         ///    Not only does each person have a 9 Star Ki profile, which is determined by their date of birth, but in addition, each of our lives passes through nine-year cycles. Each year represents one of the nine Energies of the 9 Star Ki system and influences our lives in powerful ways. 
         ///&lt;/p&gt;
         ///&lt;h5&gt;
-        ///    Thes nine-year cycles are seasonal in nature, with a spring, summer, au [rest of string was truncated]&quot;;.
+        ///    These nine-year cycles are seasonal in nature, with a spring, summer, a [rest of string was truncated]&quot;;.
         /// </summary>
         public static string year_description {
             get {
@@ -8104,6 +8140,15 @@ namespace K9.Globalisation {
         public static string YearlyCycles {
             get {
                 return ResourceManager.GetString("YearlyCycles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yearly Planner.
+        /// </summary>
+        public static string YearlyPlanner {
+            get {
+                return ResourceManager.GetString("YearlyPlanner", resourceCulture);
             }
         }
         

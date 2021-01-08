@@ -28,7 +28,7 @@ namespace K9.WebApplication.Attributes
        
         public string GetSeason()
         {
-            return ResourceType.GetValueFromResource(Season);
+            return !string.IsNullOrEmpty(Season) ? ResourceType.GetValueFromResource(Season) : string.Empty;
         }
 
         public string GetYearlyDescription()

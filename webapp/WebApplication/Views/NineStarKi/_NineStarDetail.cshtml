@@ -5,7 +5,7 @@
 
 @if (Model != null)
 {
-    <div class="container main-content clear-both ninestar-header-container">
+    <div class="container main-content clear-both">
         <article>
             <div>
                 @Html.CollapsiblePanel(Model.MainEnergy.EnergyTitle, Model.MainEnergy.EnergyDescription, true, "", "", $"Images/ninestar/energies/{Model.MainEnergy.Energy}.png", EPanelImageSize.Default, EPanelImageLayout.Contain)

@@ -36,8 +36,21 @@
         margin-bottom: 4px;
     }
 
-    @media (max-width:580px) {
+.yearly-planner-container {
+    max-height: 400px;
+    overflow-y: scroll;
+    font-size: 0.8em;
+}
+
+    .yearly-planner-container .row {
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
     }
 
-@media (max-width:480px) {
+        .yearly-planner-container .row div img {
+            height: 30px;
+        }
+
+@media (max-width:576px) {
+    
 }

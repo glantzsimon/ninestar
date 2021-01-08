@@ -4,6 +4,7 @@ using K9.SharedLibrary.Helpers;
 using K9.WebApplication.Enums;
 using K9.WebApplication.Extensions;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace K9.WebApplication.Models
@@ -27,8 +28,8 @@ namespace K9.WebApplication.Models
             MainEnergy = GetMainEnergy(PersonModel.DateOfBirth, PersonModel.Gender);
             CharacterEnergy = GetCharacterEnergy(PersonModel.DateOfBirth, MainEnergy.Energy, personModel.Gender);
             SurfaceEnergy = GetSurfaceEnergy();
-            LifeCycleYearEnergy = GetLifeCycleYearEnergy();
-            LifeCycleMonthEnergy = GetLifeCycleMonthEnergy();
+            YearlyCycleEnergy = GetYearlyCycleEnergy();
+            MonthlyCycleEnergy = GetMonthlyCycleEnergy();
 
             MainEnergy.RelatedEnergy = CharacterEnergy.Energy;
             CharacterEnergy.RelatedEnergy = MainEnergy.Energy;
@@ -71,12 +72,12 @@ namespace K9.WebApplication.Models
         /// <summary>
         /// Determines the 9 Star Ki energy of the current year
         /// </summary>
-        public NineStarKiEnergy LifeCycleYearEnergy { get; }
+        public NineStarKiEnergy YearlyCycleEnergy { get; }
 
         /// <summary>
         /// Determines the 9 Star Ki energy of the current month
         /// </summary>
-        public NineStarKiEnergy LifeCycleMonthEnergy { get; }
+        public NineStarKiEnergy MonthlyCycleEnergy { get; }
 
         public EReadingType ReadingType { get; set; }
 
@@ -97,8 +98,25 @@ namespace K9.WebApplication.Models
         public string GayLabel => PersonModel?.Gender == EGender.Female ? Dictionary.Lesbian : Dictionary.Gay;
 
         public bool IsProcessed { get; set; } = false;
-        
+
         public bool IsMyProfile { get; set; } = false;
+
+        public List<Tuple<int, NineStarKiEnergy>> GetYearlyPlanner()
+        {
+            var cycles = new List<Tuple<int, NineStarKiEnergy>>();
+            var current = GetYearlyCycleEnergy();
+            var today = new DateTime(DateTime.Today.Year, 2, 5);
+
+            for (int i = -20; i <= 20; i++)
+            {
+                Today = today.AddYears(i);
+                cycles.Add(new Tuple<int, NineStarKiEnergy>(Today.Value.Year, GetYearlyCycleEnergy()));
+            }
+
+            Today = null;
+
+            return cycles;
+        }
 
         private NineStarKiEnergy GetMainEnergy(DateTime date, EGender gender)
         {
@@ -225,7 +243,7 @@ namespace K9.WebApplication.Models
             return ProcessEnergy(5 - (CharacterEnergy.EnergyNumber - MainEnergy.EnergyNumber), EGender.Male, ENineStarKiEnergyType.SurfaceEnergy);
         }
 
-        private NineStarKiEnergy GetLifeCycleYearEnergy()
+        private NineStarKiEnergy GetYearlyCycleEnergy()
         {
             var todayYearEnergy = (int)GetMainEnergy(Today ?? DateTime.Today, EGender.Male).Energy;
             var personalYearEnergy = PersonModel.Gender.IsYin() ? InvertEnergy(MainEnergy.EnergyNumber) : MainEnergy.EnergyNumber;
@@ -234,12 +252,12 @@ namespace K9.WebApplication.Models
 
             var energy = (ENineStarKiEnergy)(PersonModel.Gender.IsYin() && invertYearlyPredictionYearForYinEnergies ? InvertEnergy(lifeCycleYearEnergy) : lifeCycleYearEnergy);
 
-            return new NineStarKiEnergy(energy,ENineStarKiEnergyType.MainEnergy, PersonModel.IsAdult());
+            return new NineStarKiEnergy(energy, ENineStarKiEnergyType.MainEnergy, PersonModel.IsAdult());
         }
 
-        private NineStarKiEnergy GetLifeCycleMonthEnergy()
+        private NineStarKiEnergy GetMonthlyCycleEnergy()
         {
-            return GetCharacterEnergy(Today ?? DateTime.Today, GetLifeCycleYearEnergy().Energy, PersonModel.Gender);
+            return GetCharacterEnergy(Today ?? DateTime.Today, GetYearlyCycleEnergy().Energy, PersonModel.Gender);
         }
 
         private NineStarKiEnergy ProcessEnergy(int energyNumber, EGender gender, ENineStarKiEnergyType type = ENineStarKiEnergyType.MainEnergy)

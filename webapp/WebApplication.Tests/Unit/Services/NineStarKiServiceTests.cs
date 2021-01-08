@@ -231,8 +231,8 @@ namespace K9.WebApplication.Tests.Unit.Services
                 Gender = gender
             }, new DateTime(year, month, day));
 
-            Assert.Equal(yearlyCycleEnergy, ninestar.LifeCycleYearEnergy.Energy);
-            Assert.Equal(monthlyCycleEnergy, ninestar.LifeCycleMonthEnergy.Energy);
+            Assert.Equal(yearlyCycleEnergy, ninestar.YearlyCycleEnergy.Energy);
+            Assert.Equal(monthlyCycleEnergy, ninestar.MonthlyCycleEnergy.Energy);
         }
 
         [Fact]

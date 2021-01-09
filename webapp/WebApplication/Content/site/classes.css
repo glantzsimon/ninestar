@@ -203,9 +203,9 @@ a#toTop {
     transition: all 1.5s ease-out;
 }
 
-a#toTop:hover {
-    color: #ff9800;   
-}
+    a#toTop:hover {
+        color: #ff9800;
+    }
 
 .hidden-date-field {
     opacity: 0;
@@ -247,4 +247,9 @@ a#toTop:hover {
 .table-left-nowrap table tr td:first-of-type {
     text-wrap: none;
     white-space: nowrap;
+}
+
+.bookmark {
+    position: relative;
+    top: -180px;
 }

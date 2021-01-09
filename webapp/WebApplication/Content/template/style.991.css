@@ -53,6 +53,7 @@
 
     #bs-navbar-collapse-1 {
         overflow-y: visible;
+        font-size: 1em;
     }
 
         #bs-navbar-collapse-1.menu-small {
@@ -96,7 +97,7 @@
     .picture-frame {
         width: 100% !important;
     }
-    
+
     .menu-main .container, .menu-small .container {
         width: auto !important;
     }

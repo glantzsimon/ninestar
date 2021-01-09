@@ -44,13 +44,35 @@
 
     .yearly-planner-container .row {
         border-bottom: 1px solid #eee;
-        padding-bottom: 10px;
+        padding-bottom: 6px;
+        border-radius: 8px;
     }
 
-        .yearly-planner-container .row div img {
-            height: 30px;
+        .yearly-planner-container .row div {
+            text-align: left;
         }
 
+            .yearly-planner-container .row div img {
+                height: 36px;
+                margin-top: 20px;
+            }
+
+        .yearly-planner-container .row:hover {
+            background: #eeeeee;
+        }
+
+        .yearly-planner-container .row.active {
+            background: #333333;
+            color: white !important;
+        }
+
+            .yearly-planner-container .row.active h3 {
+                color: white !important;
+            }
+
+.cycles-summary h4:first-child, .cycles-summary .cycle-summary:first-of-type h3:first-child {
+    margin-top: 0;
+}
+
 @media (max-width:576px) {
-    
 }

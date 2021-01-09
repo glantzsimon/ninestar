@@ -5441,6 +5441,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Nine Monthly Cycles.
+        /// </summary>
+        public static string NineMonthlyCyclesTitle {
+            get {
+                return ResourceManager.GetString("NineMonthlyCyclesTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to NineStar.
         /// </summary>
         public static string NineStar {
@@ -5500,6 +5509,15 @@ namespace K9.Globalisation {
         public static string NineStarMetaDescriptionMain {
             get {
                 return ResourceManager.GetString("NineStarMetaDescriptionMain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Nine Yearly Cycles.
+        /// </summary>
+        public static string NineYearlyCyclesTitle {
+            get {
+                return ResourceManager.GetString("NineYearlyCyclesTitle", resourceCulture);
             }
         }
         

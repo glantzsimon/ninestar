@@ -242,8 +242,8 @@ ul.admin-menu ul.dropdown-menu {
     position: fixed;
     left: 0;
     width: 100%;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;

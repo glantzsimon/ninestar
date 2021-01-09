@@ -11,9 +11,7 @@
     <div id="yearly" class="tab-pane fade in active">
         @Html.CollapsiblePanel(Dictionary.AboutYearlyCycles, Dictionary.year_description)
 
-        @Html.Partial("_PredictionsHeader", Model.YearlyCycleEnergy)
-
-        @Html.Panel(Model.YearlyCycleEnergy.CycleDescriptiveName, Model.YearlyCycleEnergy.CycleDescription)
+        @Html.Partial("_Cycle", Model.YearlyCycleEnergy)
     </div>
 
     <div id="yearly-planner" class="tab-pane fade">
@@ -23,9 +21,25 @@
     <div id="monthly" class="tab-pane fade">
         @Html.CollapsiblePanel(Dictionary.AboutMonthlyCycles, Dictionary.month_description)
 
-        @Html.Partial("_PredictionsHeader", Model.MonthlyCycleEnergy)
-
-        @Html.Panel(Model.MonthlyCycleEnergy.CycleDescriptiveName, Model.MonthlyCycleEnergy.CycleDescription)
+        @Html.Partial("_Cycle", Model.MonthlyCycleEnergy)
     </div>
 
 </div>
+
+<script language="javascript">
+
+    function scrollCurrentYearIntoVew() {
+        setTimeout(function () {
+            var $cycle = $("div.current-year");
+            var $yearlyPlannerContainer = ".yearly-planner-container";
+
+            $($yearlyPlannerContainer).scrollTop($cycle.offset().top - $($yearlyPlannerContainer).offset().top);
+        }, 200);
+    }
+
+    $(function () {
+        $("a[href='#yearly-planner']").mouseup(function() {
+            scrollCurrentYearIntoVew();
+        });
+    });
+</script>

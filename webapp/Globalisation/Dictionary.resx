@@ -2074,6 +2074,12 @@
   <data name="MonthlyPlanner" xml:space="preserve">
     <value>Monthly Planner</value>
   </data>
+  <data name="NineMonthlyCyclesTitle" xml:space="preserve">
+    <value>The Nine Monthly Cycles</value>
+  </data>
+  <data name="NineYearlyCyclesTitle" xml:space="preserve">
+    <value>The Nine Yearly Cycles</value>
+  </data>
   <data name="Year" xml:space="preserve">
     <value>Year</value>
   </data>

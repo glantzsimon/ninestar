@@ -68,7 +68,17 @@
                         </li>
 
                         <li class="@ViewContext.GetActiveClass("Index", "Home")"><a class="device-only" href="@Url.Action("Index", "Home")"> <span class="device-only">@K9.Base.Globalisation.Dictionary.Home</span></a></li>
-                        <li class="@ViewContext.GetActiveClass("Index", "Predictions")"><a href="@Url.Action("Index", "Predictions")"> @Dictionary.Predictions</a></li>
+                        
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span> @Dictionary.Predictions</span> <span class="caret"></span></a>
+                            <ul class="dropdown-menu nav navbar-nav">
+                                <li><a href="@Url.ActionWithBookmark("Index", "Predictions", "yearly-cycles")"> @Dictionary.AboutYearlyCycles</a></li>
+                                <li><a href="@Url.ActionWithBookmark("Index", "Predictions", "nine-yearly-cycles")"> @Dictionary.NineYearlyCyclesTitle</a></li>
+                                <li><a href="@Url.ActionWithBookmark("Index", "Predictions", "monthly-cycles")"> @Dictionary.AboutMonthlyCycles</a></li>
+                                <li><a href="@Url.ActionWithBookmark("Index", "Predictions", "nine-monthly-cycles")"> @Dictionary.NineMonthlyCyclesTitle</a></li>
+                            </ul>
+                        </li>
+
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span> @Dictionary.Learn</span> <span class="caret"></span></a>
                             <ul class="dropdown-menu nav navbar-nav">

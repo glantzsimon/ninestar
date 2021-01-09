@@ -10,4 +10,8 @@
 	.team {
 		padding: 4em 0;
 	}
+
+    #bs-navbar-collapse-1 {
+        font-size: 0.8em;
+    }
 }

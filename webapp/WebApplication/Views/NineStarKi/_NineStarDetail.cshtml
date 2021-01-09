@@ -12,17 +12,17 @@
 
                 @Html.CollapsiblePanel(Model.OverviewLabel, Model.Overview)
 
-                @Html.CollapsiblePanel(Model.MainEnergy.ElementTitle, Model.MainEnergy.ElementDescription, false, "", "", $"Images/ninestar/elements/{Model.MainEnergy.Element}.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                @Html.CollapsiblePanel(Model.MainEnergy.ElementTitle, Model.MainEnergy.ElementDescription, true, "", "", $"Images/ninestar/elements/{Model.MainEnergy.Element}.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
 
-                @Html.CollapsiblePanel(Model.MainEnergy.ModalityTitle, Model.MainEnergy.ModalityDescription, false, "", "", $"Images/ninestar/modalities/{Model.MainEnergy.ModalityName}.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                @Html.CollapsiblePanel(Model.MainEnergy.ModalityTitle, Model.MainEnergy.ModalityDescription, true, "", "", $"Images/ninestar/modalities/{Model.MainEnergy.ModalityName}.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
 
-                @Html.CollapsiblePanel(Html.GetEnergySpecificDisplayNameFor(m => Model.Health, Model.MainEnergy.EnergyNameAndNumber), Model.Health)
+                @Html.CollapsiblePanel(Html.GetEnergySpecificDisplayNameFor(m => Model.Health, Model.MainEnergy.EnergyNameAndNumber), Model.Health, true)
 
-                @Html.CollapsiblePanel(Html.GetEnergySpecificDisplayNameFor(m => Model.Occupations, Model.MainEnergy.EnergyNameAndNumber), Model.Occupations)
+                @Html.CollapsiblePanel(Html.GetEnergySpecificDisplayNameFor(m => Model.Occupations, Model.MainEnergy.EnergyNameAndNumber), Model.Occupations, true)
 
-                @Html.CollapsiblePanel(Html.GetEnergySpecificDisplayNameFor(m => Model.PersonalDevelopemnt, Model.MainEnergy.EnergyNameAndNumber), Model.PersonalDevelopemnt)
+                @Html.CollapsiblePanel(Html.GetEnergySpecificDisplayNameFor(m => Model.PersonalDevelopemnt, Model.MainEnergy.EnergyNameAndNumber), Model.PersonalDevelopemnt, true)
 
-                @Html.CollapsiblePanel(Html.GetEnergySpecificDisplayNameFor(m => Model.MainEnergy.Trigram, Model.MainEnergy.EnergyNameAndNumber), Model.MainEnergy.TrigramDescription, false, "", Model.MainEnergy.TrigramUIName, $"Images/ninestar/trigrams/trigram-{Model.MainEnergy.Energy}-square.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                @Html.CollapsiblePanel(Html.GetEnergySpecificDisplayNameFor(m => Model.MainEnergy.Trigram, Model.MainEnergy.EnergyNameAndNumber), Model.MainEnergy.TrigramDescription, true, "", Model.MainEnergy.TrigramUIName, $"Images/ninestar/trigrams/trigram-{Model.MainEnergy.Energy}-square.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
             </div>
         </article>
     </div>

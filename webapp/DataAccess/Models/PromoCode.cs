@@ -30,10 +30,10 @@ namespace K9.DataAccessLayer.Models
         public MembershipOption.ESubscriptionType SubscriptionType { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SentOnLabel)]
-        public DateTime SentOn { get; set; }
+        public DateTime? SentOn { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.UsedOnLabel)]
-        public DateTime UsedOn { get; set; }
+        public DateTime? UsedOn { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.SubscriptionTypeLabel)]
         public string SubscriptionTypeName => SubscriptionType > 0 ? SubscriptionType.GetLocalisedLanguageName() : "";

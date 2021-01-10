@@ -23,7 +23,7 @@ namespace K9.DataAccessLayer.Models
         public int Credits { get; set; }
 
         [UIHint("SubscriptionType")]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.SubscriptionCostLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.SubscriptionTypeLabel)]
         public MembershipOption.ESubscriptionType SubscriptionType { get; set; }
 
         public string Details => GetDetails();

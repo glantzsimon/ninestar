@@ -181,7 +181,12 @@
 .upgrade-container {
     width: 100%;
     text-align: center;
+    margin-bottom: 15px;
 }
+
+    .upgrade-container h4 {
+        margin-top: 0;
+    }
 
 @media(max-width:513px) {
     .nav-tabs li {

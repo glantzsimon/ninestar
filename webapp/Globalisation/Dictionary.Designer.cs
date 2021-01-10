@@ -2678,6 +2678,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The promo code was sent successfully.
+        /// </summary>
+        public static string EmailPromoCodeSent {
+            get {
+                return ResourceManager.GetString("EmailPromoCodeSent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thank you for your email.
         /// </summary>
         public static string EmailThankYouTitle {

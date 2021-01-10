@@ -2119,6 +2119,9 @@
   <data name="UserPromoCodes" xml:space="preserve">
     <value>User Promo Codes</value>
   </data>
+  <data name="EmailPromoCodeSent" xml:space="preserve">
+    <value>The promo code was sent successfully</value>
+  </data>
   <data name="UsedOnLabel" xml:space="preserve">
     <value>Used On</value>
   </data>

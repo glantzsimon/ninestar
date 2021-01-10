@@ -1211,6 +1211,7 @@
     <Content Include="Views\Shared\DisplayTemplates\PromoCode.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\SubscriptionType.cshtml" />
     <Content Include="Views\Account\EmailPromoCode.cshtml" />
+    <Content Include="Views\Account\PromoCodeEmailSent.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

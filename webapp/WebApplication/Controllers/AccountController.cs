@@ -343,8 +343,22 @@ namespace K9.WebApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EmailPromoCode(EmailPromoCodeViewModel model)
         {
-            _userService.SendPromoCode(model);
-            return View(model);
+            try
+            {
+                _userService.SendPromoCode(model);
+            }
+            catch (Exception e)
+            {
+                _logger.Error($"AccountController => EmailPromocode => Error: {e.GetFullErrorMessage()}");
+                throw;
+            }
+
+            return RedirectToAction("PromoCodeEmailSent");
+        }
+
+        public ActionResult PromoCodeEmailSent()
+        {
+            return View();
         }
 
         public ActionResult ConfirmDeleteAccount(int id)

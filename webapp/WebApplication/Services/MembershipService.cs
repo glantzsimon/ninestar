@@ -449,7 +449,7 @@ namespace K9.WebApplication.Services
                         userMembership.MembershipOption.MaxNumberOfCompatibilityReadings,
                     ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
                     PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                    UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Contacts", new { id = contact.Id }),
+                    UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { id = contact.Id }),
                     DateTime.Now.Year
                 }), userMembership.User.EmailAddress, userMembership.User.FirstName, _config.SupportEmailAddress,
                     _config.CompanyName);
@@ -487,7 +487,7 @@ namespace K9.WebApplication.Services
                     TotalPrice = userCreditPack.FormattedPrice,
                     ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
                     PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                    UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Contacts", new { code = contact.Name }),
+                    UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact.Name }),
                     DateTime.Now.Year
                 }), userCreditPack.User.EmailAddress, userCreditPack.User.FirstName, _config.SupportEmailAddress,
                     _config.CompanyName);

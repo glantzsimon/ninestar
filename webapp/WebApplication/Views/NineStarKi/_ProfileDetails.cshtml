@@ -1,12 +1,10 @@
 ﻿@using K9.WebApplication.Enums
-@using K9.WebApplication.Extensions
 @using K9.WebApplication.Helpers
 @model K9.WebApplication.Models.NineStarKiModel
 
 @{
     var adultActiveClass = Model.PersonModel.IsAdult() ? "in active" : "disabled";
     var childActiveClass = Model.PersonModel.IsAdult() ? "" : "in active";
-    var activeUserMembership = this.GetActiveUserMembership();
 }
 
 @using (Html.BeginBootstrapForm())
@@ -15,7 +13,10 @@
         <div class="ninestar-summmary container padding-0 margin-top-15">
             <ul class="nav nav-pills nav-justified">
                 <li class="active"><a data-toggle="tab" href="#personal-profile">@Dictionary.PersonalProfileDetails</a></li>
-                <li><a data-toggle="tab" href="#sexuality">@Dictionary.SexualityLabel</a></li>
+                @if (Model.PersonModel.IsSixteenOrOver())
+                {
+                    <li><a data-toggle="tab" href="#sexuality">@Dictionary.SexualityLabel</a></li>
+                }
                 <li><a data-toggle="tab" href="#predictions">@Dictionary.Predictions</a></li>
             </ul>
 
@@ -92,3 +93,35 @@
         </div>
     </article>
 }
+
+<script language="javascript">
+
+    function scrollCurrentYearlyCycleIntoVew() {
+        setTimeout(function () {
+            $("a[href='#predictions']").tab("show");
+        }, 100);
+        setTimeout(function () {
+            $("#yearly")[0].scrollIntoView();
+        }, 200);
+    }
+
+    function scrollCurrentMonthlyCycleIntoVew() {
+        setTimeout(function () {
+            $("a[href='#predictions']").tab("show");
+        }, 100);
+        setTimeout(function () {
+            $("#monthly")[0].scrollIntoView();
+        }, 200);
+    }
+
+    $(function () {
+        $("a#current-yearly-cycle").mouseup(function (e) {
+            e.preventDefault();
+            scrollCurrentYearlyCycleIntoVew();
+        });
+        $("a#current-monthly-cycle").mouseup(function (e) {
+            e.preventDefault();
+            scrollCurrentMonthlyCycleIntoVew();
+        });
+    });
+</script>

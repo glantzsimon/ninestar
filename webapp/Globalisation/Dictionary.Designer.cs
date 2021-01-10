@@ -5567,7 +5567,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Does not come into effect until the age of 18.
+        ///   Looks up a localized string similar to From 18 years old.
         /// </summary>
         public static string NotInEffectUntilEighteen {
             get {

@@ -9,7 +9,7 @@ using System.Linq;
 namespace K9.DataAccessLayer.Models
 {
     [AutoGenerateName]
-    [Name(ResourceType = typeof(K9.Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Contacts, PluralName = Globalisation.Strings.Names.Contacts, Name = Globalisation.Strings.Names.Donation)]
+    [Name(ResourceType = typeof(K9.Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Contacts, PluralName = Globalisation.Strings.Names.Contacts, Name = Globalisation.Strings.Names.Contact)]
     public class Contact : ObjectBase
 	{
 	    [ForeignKey("User")]
@@ -28,6 +28,7 @@ namespace K9.DataAccessLayer.Models
         [StringLength(128)]
         public string FullName { get; set; }
         
+	    [Index(IsUnique = true)]
 	    [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 	    [DataType(DataType.EmailAddress, ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.InvalidEmailAddress)]
 	    [EmailAddress(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.InvalidEmailAddress)]

@@ -1888,6 +1888,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contact.
+        /// </summary>
+        public static string Contact {
+            get {
+                return ResourceManager.GetString("Contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contacts.
         /// </summary>
         public static string Contacts {
@@ -2656,6 +2665,15 @@ namespace K9.Globalisation {
         public static string EmailAddressLabel {
             get {
                 return ResourceManager.GetString("EmailAddressLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email Promo Code.
+        /// </summary>
+        public static string EmailPromoCode {
+            get {
+                return ResourceManager.GetString("EmailPromoCode", resourceCulture);
             }
         }
         
@@ -5989,6 +6007,47 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Promo Code.
+        /// </summary>
+        public static string PromoCode {
+            get {
+                return ResourceManager.GetString("PromoCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!doctype html&gt;
+        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;!-- NAME: 1:2:1 COLUMN --&gt;
+        ///    &lt;!--[if gte mso 15]&gt;
+        ///    &lt;xml&gt;
+        ///        &lt;o:OfficeDocumentSettings&gt;
+        ///        &lt;o:AllowPNG/&gt;
+        ///        &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
+        ///        &lt;/o:OfficeDocumentSettings&gt;
+        ///    &lt;/xml&gt;
+        ///    &lt;![endif]--&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
+        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string PromoCodeEmail {
+            get {
+                return ResourceManager.GetString("PromoCodeEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Promo Codes.
+        /// </summary>
+        public static string PromoCodes {
+            get {
+                return ResourceManager.GetString("PromoCodes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Purchased Cancelled.
         /// </summary>
         public static string PurchaseCancelled {
@@ -6198,6 +6257,15 @@ namespace K9.Globalisation {
         public static string SelectedPurchaseText {
             get {
                 return ResourceManager.GetString("SelectedPurchaseText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send.
+        /// </summary>
+        public static string Send {
+            get {
+                return ResourceManager.GetString("Send", resourceCulture);
             }
         }
         
@@ -7024,6 +7092,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Subscription Type.
+        /// </summary>
+        public static string SubscriptionTypeLabel {
+            get {
+                return ResourceManager.GetString("SubscriptionTypeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Summary.
         /// </summary>
         public static string SummaryLabel {
@@ -7628,6 +7705,15 @@ namespace K9.Globalisation {
         public static string UserMemberships {
             get {
                 return ResourceManager.GetString("UserMemberships", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Promo Codes.
+        /// </summary>
+        public static string UserPromoCodes {
+            get {
+                return ResourceManager.GetString("UserPromoCodes", resourceCulture);
             }
         }
         

@@ -330,12 +330,14 @@
     <Compile Include="Constants\SessionConstants.cs" />
     <Compile Include="Controllers\BaseNineStarKiController.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
+    <Compile Include="Controllers\PromoCodesController.cs" />
     <Compile Include="Controllers\MembershipController.cs" />
     <Compile Include="Controllers\MembershipOptionsController.cs" />
     <Compile Include="Controllers\PredictionsController.cs" />
     <Compile Include="Controllers\RelationshipsController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\UserCreditPacks.cs" />
+    <Compile Include="Controllers\UserPromoCodes.cs" />
     <Compile Include="Controllers\UserMemberships.cs" />
     <Compile Include="Enums\ESexualChemistryScore.cs" />
     <Compile Include="Enums\ECompatibilityScore.cs" />
@@ -378,6 +380,8 @@
     <Compile Include="Options\PaymentsOptions.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\IUserService.cs" />
+    <Compile Include="ViewModels\EmailPromoCodeViewModel.cs" />
+    <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\ArchiveItemViewModel.cs" />
     <Compile Include="Models\MembershipModel.cs" />
     <Compile Include="ViewModels\PurchaseCreditsViewModel.cs" />
@@ -1187,6 +1191,26 @@
     <Content Include="Views\Predictions\_YearlyCyclesOverview.cshtml" />
     <Content Include="Views\NineStarKi\_Cycle.cshtml" />
     <Content Include="Views\Membership\_RetrieveLast.cshtml" />
+    <Content Include="Views\PromoCodes\_DisplayFields.cshtml" />
+    <Content Include="Views\PromoCodes\_EditFields.cshtml" />
+    <Content Include="Views\PromoCodes\Create.cshtml" />
+    <Content Include="Views\PromoCodes\Delete.cshtml" />
+    <Content Include="Views\PromoCodes\Details.cshtml" />
+    <Content Include="Views\PromoCodes\Edit.cshtml" />
+    <Content Include="Views\PromoCodes\Index.cshtml" />
+    <Content Include="Views\UserPromoCodes\_DisplayFields.cshtml" />
+    <Content Include="Views\UserPromoCodes\_EditFields.cshtml" />
+    <Content Include="Views\UserPromoCodes\Create.cshtml" />
+    <Content Include="Views\UserPromoCodes\Delete.cshtml" />
+    <Content Include="Views\UserPromoCodes\Details.cshtml" />
+    <Content Include="Views\UserPromoCodes\Edit.cshtml" />
+    <Content Include="Views\UserPromoCodes\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\MembershipOption.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\MembershipOption.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\PromoCode.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\PromoCode.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SubscriptionType.cshtml" />
+    <Content Include="Views\Account\EmailPromoCode.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

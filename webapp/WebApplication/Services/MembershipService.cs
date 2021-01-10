@@ -440,7 +440,7 @@ namespace K9.WebApplication.Services
                 _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
                 {
                     Title = title,
-                    CustomerName = userMembership.User.FullName,
+                    CustomerName = userMembership.User.FirstName,
                     SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal,
                     TotalPrice = userMembership.MembershipOption.FormattedPrice,
                     EndsOn = userMembership.EndsOn.ToLongDateString(),
@@ -482,7 +482,7 @@ namespace K9.WebApplication.Services
                 _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
                 {
                     Title = title,
-                    CustomerName = userCreditPack.User.FullName,
+                    CustomerName = userCreditPack.User.FirstName,
                     NumberOfCreditsPurchased = userCreditPack.NumberOfCredits,
                     TotalPrice = userCreditPack.FormattedPrice,
                     ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),

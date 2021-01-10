@@ -32,6 +32,7 @@ namespace K9.DataAccessLayer.Models
             AnnualPlatinum = 11
         }
 
+        [UIHint("SubscriptionType")]
         [Required]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MembershipLabel)]
         public ESubscriptionType SubscriptionType { get; set; }

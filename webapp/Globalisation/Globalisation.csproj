@@ -394,6 +394,7 @@
     <Content Include="Articles\en-gb\mountain-trigram.htm" />
     <Content Include="Articles\en-gb\fire-trigram.htm" />
     <Content Include="Articles\en-gb\water-trigram.htm" />
+    <Content Include="Templates\en-gb\PromoCodeEmail.htm" />
     <Content Include="Templates\en-gb\PaymentError.htm" />
     <Content Include="Templates\en-gb\CreditPackPurchased.htm" />
     <Content Include="Templates\en-gb\NewCreditPackThankYouEmail.htm" />

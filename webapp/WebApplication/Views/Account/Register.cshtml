@@ -1,10 +1,9 @@
-﻿@using K9.Base.WebApplication.Helpers
-@using Dictionary = K9.Base.Globalisation.Dictionary
-@model UserAccount.RegisterModel
+﻿@using Dictionary = K9.Base.Globalisation.Dictionary
+@model K9.WebApplication.ViewModels.RegisterViewModel
 
 @{
-    ViewBag.Title = K9.Base.Globalisation.Dictionary.Registration;
-    ViewBag.SubTitle = K9.Base.Globalisation.Dictionary.Register;
+    ViewBag.Title = Dictionary.Registration;
+    ViewBag.SubTitle = Dictionary.Register;
     Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
 
@@ -12,23 +11,24 @@
 {
     using (Html.BeginBootstrapForm())
     {
-        @Html.BootstrapEditorFor(model => model.UserName)
-        @Html.BootstrapEditorFor(model => model.Password)
-        @Html.BootstrapEditorFor(model => model.ConfirmPassword)
+        @Html.BootstrapEditorFor(model => model.RegisterModel.UserName)
+        @Html.BootstrapEditorFor(model => model.RegisterModel.Password)
+        @Html.BootstrapEditorFor(model => model.RegisterModel.ConfirmPassword)
 
         <hr />
         <div>
-            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.FirstName)</div>
-            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.LastName)</div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.FirstName)</div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.LastName)</div>
         </div>
-        @Html.BootstrapEditorFor(model => model.EmailAddress)
+        @Html.BootstrapEditorFor(model => model.RegisterModel.EmailAddress)
         <div>
-            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.BirthDate)</div>
-            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.Gender)</div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.BirthDate)</div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.Gender)</div>
         </div>
-        @Html.BootstrapEditorFor(model => model.PhoneNumber)
+        @Html.BootstrapEditorFor(model => model.RegisterModel.PhoneNumber)
+        @Html.BootstrapEditorFor(model => model.PromoCode)
         <hr />
-        @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Register)
+        @Html.BootstrapButton(Dictionary.Register)
         @Html.BootstrapActionLinkButton(Dictionary.SignInWithFacebook, "Facebook", "Account", null, "fa-facebook")
     }
 }
@@ -40,7 +40,7 @@
         ajaxcontroller().get("@Url.Action("IsUserNameAvailable")", { username }).done(
             function(result) {
                 if (result.success && result.data) {
-                    $.fn.displayValidationWarningFor("UserName", "@K9.Base.Globalisation.Dictionary.UsernameIsUnavailableError");
+                    $.fn.displayValidationWarningFor("UserName", "@Dictionary.UsernameIsUnavailableError");
                 } else {
                     $.fn.hideValidationWarningFor("UserName");
                 }
@@ -52,7 +52,7 @@
         ajaxcontroller().get("@Url.Action("IsEmailAddressAvailable")", { emailAddress }).done(
             function(result) {
                 if (result.success && result.data) {
-                    $.fn.displayValidationWarningFor("EmailAddress", "@K9.Base.Globalisation.Dictionary.EmailIsUnavailableError");
+                    $.fn.displayValidationWarningFor("EmailAddress", "@Dictionary.EmailIsUnavailableError");
                 } else {
                     $.fn.hideValidationWarningFor("EmailAddress");
                 }

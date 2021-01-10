@@ -1,0 +1,29 @@
+﻿@using K9.Base.WebApplication.Helpers
+@using K9.SharedLibrary.Models
+@using EButtonType = K9.SharedLibrary.Models.EButtonType
+@model PromoCode
+@{
+    Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
+}
+@Html.BootstrapTable(new DataTableOptions<MembershipOption>
+{
+    VisibleColumns = new List<string>
+    {
+        "Code",
+        "SubscriptionType",
+        "Credits"
+    },
+    CustomButtons = new List<IButton>
+    {
+        new Button
+        {
+            Text = Dictionary.EmailPromoCode,
+            Controller = "Account",
+            Action = "EmailPromoCode",
+            ButtonType = EButtonType.Primary,
+            IconCssClass = "fa fa.envelope"
+
+        }
+    },
+
+})

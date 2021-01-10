@@ -2095,4 +2095,28 @@
   <data name="SexualityGenderRelationLabel" xml:space="preserve">
     <value>Sexuality and how it is influenced by the relationship between biological gender and the energetic gender of the Fundamental and Character Energies</value>
   </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="PromoCode" xml:space="preserve">
+    <value>Promo Code</value>
+  </data>
+  <data name="PromoCodes" xml:space="preserve">
+    <value>Promo Codes</value>
+  </data>
+  <data name="EmailPromoCode" xml:space="preserve">
+    <value>Email Promo Code</value>
+  </data>
+  <data name="PromoCodeEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>templates\en-gb\promocodeemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="SubscriptionTypeLabel" xml:space="preserve">
+    <value>Subscription Type</value>
+  </data>
+  <data name="UserPromoCodes" xml:space="preserve">
+    <value>User Promo Codes</value>
+  </data>
 </root>

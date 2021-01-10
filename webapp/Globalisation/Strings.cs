@@ -47,6 +47,7 @@
             public const string StripeCustomerIdLabel = "StripeCustomerIdLabel";
             public const string MembershipLabel = "MembershipLabel";
             public const string SubscriptionCostLabel = "SubscriptionCostLabel";
+            public const string SubscriptionTypeLabel = "SubscriptionTypeLabel";
             public const string SubscriptionDiscountLabel = "SubscriptionDiscountLabel";
             public const string SubscriptionDiscountedPriceLabel = "SubscriptionDiscountedPriceLabel";
             public const string SubscriptionDetailsLabel = "SubscriptionDetailsLabel";
@@ -69,7 +70,10 @@
             public const string UserData = "UserData";
             public const string UserDatas = "UserDatas";
             public const string Contacts = "Contacts";
+            public const string Contact = "Contact";
+            public const string PromoCodes = "PromoCodes";
             public const string Donation = "Donation";
+            public const string PromoCode = "PromoCode";
             public const string Donations = "Donations";
             public const string MembershipOptions = "MembershipOptions";
             public const string ProfileReadings = "ProfileReadings";

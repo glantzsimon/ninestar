@@ -1,13 +1,8 @@
 ﻿@using K9.Base.WebApplication.Helpers
-@using K9.SharedLibrary.Helpers
-@model Donation
-@Html.BootstrapDisplayFor(model => model.DonatedOn)
-@Html.BootstrapDisplayFor(model => model.DonationAmount, new EditorOptions
-{
-    CultureInfo = CurrencyTools.GetCultureInfoFromIso(Model.Currency)
-})
-@Html.BootstrapDisplayFor(model => model.Currency)
-@Html.BootstrapDisplayFor(model => model.Customer)
-@Html.BootstrapDisplayFor(model => model.CustomerEmail)
-@Html.BootstrapDisplayFor(model => model.DonationDescription)
-@Html.BootstrapDisplayFor(model => model.Status)
+@model UserMembership
+@Html.BootstrapEditorFor(model => model.StartsOn)
+@Html.BootstrapEditorFor(model => model.EndsOn)
+@Html.BootstrapEditorFor(model => model.IsAutoRenew)
+@Html.BootstrapEditorFor(model => model.IsDeactivated)
+@Html.BootstrapEditorFor(model => model.MembershipOptionId)
+@Html.BootstrapEditorFor(model => model.UserId)

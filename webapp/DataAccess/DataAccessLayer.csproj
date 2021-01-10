@@ -288,9 +288,15 @@
     <Compile Include="Migrations\202012261621485_AddUserCredits.Designer.cs">
       <DependentUpon>202012261621485_AddUserCredits.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101102148124_AddPromoCodes.cs" />
+    <Compile Include="Migrations\202101102148124_AddPromoCodes.Designer.cs">
+      <DependentUpon>202101102148124_AddPromoCodes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PromoCode.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\MembershipOption.cs" />
     <Compile Include="Models\UserCompatibilityReading.cs" />
+    <Compile Include="Models\UserPromoCode.cs" />
     <Compile Include="Models\UserCreditPack.cs" />
     <Compile Include="Models\UserProfileReading.cs" />
     <Compile Include="Models\UserMembership.cs" />
@@ -343,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012261621485_AddUserCredits.resx">
       <DependentUpon>202012261621485_AddUserCredits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101102148124_AddPromoCodes.resx">
+      <DependentUpon>202101102148124_AddPromoCodes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

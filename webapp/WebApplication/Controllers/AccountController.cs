@@ -8,6 +8,7 @@ using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.Models;
 using K9.Base.WebApplication.Options;
 using K9.Base.WebApplication.Services;
+using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
@@ -18,7 +19,6 @@ using NLog;
 using System;
 using System.Linq;
 using System.Web.Mvc;
-using K9.WebApplication.Helpers;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
@@ -32,8 +32,10 @@ namespace K9.WebApplication.Controllers
         private readonly IFacebookService _facebookService;
         private readonly IMembershipService _membershipService;
         private readonly IContactService _contactService;
+        private readonly IUserService _userService;
+        private readonly IRepository<PromoCode> _promoCodesRepository;
 
-        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IContactService contactService)
+        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IContactService contactService, IUserService userService, IRepository<PromoCode> promoCodesRepository)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _userRepository = userRepository;
@@ -43,6 +45,8 @@ namespace K9.WebApplication.Controllers
             _facebookService = facebookService;
             _membershipService = membershipService;
             _contactService = contactService;
+            _userService = userService;
+            _promoCodesRepository = promoCodesRepository;
 
             websiteConfig.Value.RegistrationEmailTemplateText = Globalisation.Dictionary.WelcomeEmail;
             websiteConfig.Value.PasswordResetEmailTemplateText = Globalisation.Dictionary.PasswordResetEmail;
@@ -164,26 +168,38 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public ActionResult Register()
+        public ActionResult Register(string promoCode = null)
         {
-            return View(new UserAccount.RegisterModel
+            var rand = new Random();
+            return View(new RegisterViewModel
             {
-                Gender = EGender.Female,
-                BirthDate = DateTime.Today.AddYears(-30)
+                RegisterModel = new UserAccount.RegisterModel
+                {
+                    Gender = EGender.Other + rand.Next(1, 2),
+                    BirthDate = DateTime.Today.AddYears(-27)
+                },
+                PromoCode = promoCode
             });
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(UserAccount.RegisterModel model)
+        public ActionResult Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var result = _accountService.Register(model);
+                var result = _accountService.Register(model.RegisterModel);
 
                 if (result.IsSuccess)
                 {
                     var user = result.Data.MapTo<User>();
+                    user.Id = _userRepository.Find(e => e.Username == user.Username).FirstOrDefault()?.Id ?? 0;
+
+                    if (user.Id > 0 && !string.IsNullOrEmpty(model.PromoCode))
+                    {
+                        _userService.CheckPromoCode(user.Id, model.PromoCode);
+                    }
+
                     return RedirectToAction("AccountCreated", "Account");
                 }
 
@@ -308,6 +324,26 @@ namespace K9.WebApplication.Controllers
             }
 
             return RedirectToAction("DeleteAccountFailed");
+        }
+
+        [Authorize]
+        public ActionResult EmailPromoCode(int id)
+        {
+            var promoCode = _promoCodesRepository.Find(id);
+            var model = new EmailPromoCodeViewModel
+            {
+                PromoCode = promoCode
+            };
+            return View(model);
+        }
+
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EmailPromoCode(EmailPromoCodeViewModel model)
+        {
+            _userService.SendPromoCode(model);
+            return View(model);
         }
 
         public ActionResult ConfirmDeleteAccount(int id)

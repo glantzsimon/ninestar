@@ -29,11 +29,12 @@ namespace K9.WebApplication.Controllers
         [Route("calculate")]
         public ActionResult Index()
         {
-            var dateOfBirth = new DateTime(DateTime.Now.Year - (24), DateTime.Now.Month, DateTime.Now.Day);
+            var rand = new Random();
+            var dateOfBirth = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day);
             var personModel = new PersonModel
             {
                 DateOfBirth = dateOfBirth,
-                Gender = EGender.Female
+                Gender = EGender.Other + rand.Next(1, 2)
             };
             return View(new NineStarKiModel(personModel));
         }

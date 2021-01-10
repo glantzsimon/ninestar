@@ -19,10 +19,12 @@ namespace K9.DataAccessLayer.Models
     [DefaultPermissions(Role = RoleNames.DefaultUsers)]
     public class UserMembership : ObjectBase, IUserData
     {
+        [UIHint("User")]
         [Required]
         [ForeignKey("User")]
         public int UserId { get; set; }
 
+        [UIHint("MembershipOption")]
         [Required]
         [ForeignKey("MembershipOption")]
         public int MembershipOptionId { get; set; }

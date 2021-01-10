@@ -76,7 +76,7 @@ namespace K9.WebApplication.Services
 
             _userPromoCodeRepository.Create(newUserPromo);
 
-            promoCode.UsedOn = DateTime.Today;
+            promoCode.UsedOn = DateTime.Now;
             _promoCodesRepository.Update(promoCode);
         }
         
@@ -99,7 +99,7 @@ namespace K9.WebApplication.Services
                 DateTime.Now.Year
             }), model.EmailAddress, model.Name, _config.SupportEmailAddress, _config.CompanyName);
 
-            model.PromoCode.SentOn = DateTime.Today;
+            model.PromoCode.SentOn = DateTime.Now;
             _promoCodesRepository.Update(model.PromoCode);
         }
     }

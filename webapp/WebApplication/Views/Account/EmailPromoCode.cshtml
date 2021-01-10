@@ -14,6 +14,8 @@
         @Html.HiddenFor(model => model.PromoCode.Id)
         @Html.HiddenFor(model => model.PromoCode.Code)
         @Html.HiddenFor(model => model.PromoCode.Credits)
+        @Html.HiddenFor(model => model.PromoCode.UsedOn)
+        @Html.HiddenFor(model => model.PromoCode.SentOn)
 
         @Html.BootstrapDisplayFor(model => model.PromoCode.SubscriptionType)
         <div class="row">

@@ -49,7 +49,7 @@
 
                             @Html.Partial("_NineStarHeader", Model.CharacterEnergy)
 
-                            @using (Html.BeginPaidContent(Model, () => Model.ReadingType == EReadingType.Complete))
+                            @using (Html.PaidContent(Model, () => Model.ReadingType == EReadingType.Complete))
                             {
                                 @Html.Partial("_NineStarBody", Model.CharacterEnergy)
                             }
@@ -60,7 +60,7 @@
 
                             @Html.Partial("_NineStarHeader", Model.SurfaceEnergy)
 
-                            @using (Html.BeginPaidContent(Model, () => Model.ReadingType == EReadingType.Complete))
+                            @using (Html.PaidContent(Model, () => Model.ReadingType == EReadingType.Complete))
                             {
                                 @Html.Partial("_NineStarBody", Model.SurfaceEnergy)
                             }
@@ -73,36 +73,15 @@
                     <div id="sexuality" class="tab-pane fade">
                         @Html.CollapsiblePanel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.sexuality_description, true)
 
-                        @using (Html.BeginPaidContent(Model, () => Model.ReadingType == EReadingType.Complete))
+                        @using (Html.PaidContent(Model, () => Model.ReadingType == EReadingType.Complete))
                         {
                             @Html.Partial("_Sexuality", Model)
                         }
-
-                        @*@if (WebSecurity.IsAuthenticated)
-                            {
-                                if (activeUserMembership == null || Model.ReadingType == EReadingType.Free)
-                                {
-                                    <br />
-                                    <h4>
-                                        <strong>@Html.Raw(Dictionary.UpgradeMembershipFullText)</strong>
-                                    </h4>
-                                    @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership")
-                                }
-                                else
-                                {
-                                    @Html.Partial("_Sexuality")
-                                }
-                            }
-                            else
-                            {
-                                <br />
-                                @Html.BootstrapActionLinkButton(Dictionary.LogIntoYourAccountToView, "Login", "Account")
-                            }*@
                     </div>
                 }
 
                 <div id="predictions" class="tab-pane fade margin-top-20">
-                    @using (Html.BeginPaidContent(Model, () => Model.ReadingType == EReadingType.Complete))
+                    @using (Html.PaidContent(Model, () => Model.ReadingType == EReadingType.Complete))
                     {
                         @Html.Partial("_Cycles")
                     }

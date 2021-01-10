@@ -82,7 +82,7 @@ namespace K9.WebApplication.Helpers
             return $"{energyName} {html.GetDisplayNameFor(expression)}";
         }
 
-        public static IDisposable BeginPaidContent<T>(this HtmlHelper html, T model, Func<bool> condition = null)
+        public static IDisposable PaidContent<T>(this HtmlHelper html, T model, Func<bool> condition = null)
         {
             var baseController = html.ViewContext.Controller as BaseNineStarKiController;
             var activeUserMembership = baseController?.GetActiveUserMembership();

@@ -27,7 +27,7 @@
         @if (Model != null && Model.IsProcessed)
         {
             <div class="col-sm-12 padding-0 margin-top-20">
-                @using (Html.BeginPaidContent(Model, () => !Model.IsUpgradeRequired))
+                @using (Html.PaidContent(Model, () => !Model.IsUpgradeRequired))
                 {
                     @Html.Partial("_CompatibilityDetails")
                 }
@@ -35,11 +35,3 @@
         }
     </article>
 </div>
-
-@*@if (Model != null && Model.IsUpgradeRequired)
-    {
-        <h4>
-            <strong>@Html.Raw(Dictionary.UpgradeMembershipFullText)</strong>
-        </h4>
-        @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership")
-    }*@

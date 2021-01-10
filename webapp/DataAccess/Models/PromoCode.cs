@@ -15,7 +15,7 @@ namespace K9.DataAccessLayer.Models
     public class PromoCode : ObjectBase
     {
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NameLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.CodeLabel)]
         [StringLength(10)]
         [MaxLength(10)]
         [MinLength(5)]

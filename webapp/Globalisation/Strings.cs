@@ -65,6 +65,7 @@
             public const string NumberOfCreditsLeft = "NumberOfCreditsLeft";
             public const string UserDataLabel = "UserData";
             public const string PromoCodeLabel = "PromoCode";
+            public const string CodeLabel = "Code";
         }
 
         public static class Names

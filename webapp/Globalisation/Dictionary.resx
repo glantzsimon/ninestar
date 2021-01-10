@@ -2128,6 +2128,9 @@
   <data name="UserPromoCode" xml:space="preserve">
     <value>User Promo Code</value>
   </data>
+  <data name="Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
   <data name="PromoCodeEmailTitle" xml:space="preserve">
     <value>You have received a promo code from NineStar</value>
   </data>

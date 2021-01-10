@@ -1,25 +1,19 @@
 ﻿@using K9.Base.WebApplication.Controllers
 @using K9.Base.WebApplication.Helpers
 @using K9.SharedLibrary.Authentication
-@model UserMembership
+@model UserPromoCode
 @{
 	Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
 }
-@Html.BootstrapTable(new DataTableOptions<UserMembership>
+@Html.BootstrapTable(new DataTableOptions<UserPromoCode>
 {
     AllowCreate = false,
     AllowEdit = false,
-    AllowDelete = ((BaseController<UserMembership>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
+    AllowDelete = ((BaseController<UserPromoCode>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
     VisibleColumns = new List<string>
     {
-        "IsActive",
-        "StartsOn",
-        "EndsOn",
-        "IsDeactivated",
+        "CreatedOn",
         "UserName",
-        "MembershipOptionName",
-        "NumberOfCredits",
-        "NumberOfProfileReadingsLeft",
-        "NumberOfRelationshipCompatibilityReadingsLeft",
+        "PromoCodeName"
     }
 })

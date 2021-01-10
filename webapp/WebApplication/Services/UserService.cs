@@ -83,7 +83,7 @@ namespace K9.WebApplication.Services
         public void SendPromoCode(EmailPromoCodeViewModel model)
         {
             var template = Dictionary.PromoCodeEmail;
-            var title = Dictionary.PromoCode;
+            var title = Dictionary.PromoCodeEmailTitle;
             var contact = _contactService.GetOrCreateContact("", model.Name, model.EmailAddress);
             
             _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new

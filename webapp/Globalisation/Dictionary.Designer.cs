@@ -6048,6 +6048,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You have received a promo code from NineStar.
+        /// </summary>
+        public static string PromoCodeEmailTitle {
+            get {
+                return ResourceManager.GetString("PromoCodeEmailTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Promo Codes.
         /// </summary>
         public static string PromoCodes {

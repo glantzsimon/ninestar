@@ -32,7 +32,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SentOnLabel)]
         public DateTime SentOn { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.SubscriptionTypeLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.UsedOnLabel)]
         public DateTime UsedOn { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.SubscriptionTypeLabel)]

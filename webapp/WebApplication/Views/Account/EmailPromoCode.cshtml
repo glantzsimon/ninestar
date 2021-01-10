@@ -17,10 +17,10 @@
         @Html.HiddenFor(model => model.PromoCode.UsedOn)
         @Html.HiddenFor(model => model.PromoCode.SentOn)
 
-        @Html.BootstrapDisplayFor(model => model.PromoCode.SubscriptionType)
+        @Html.BootstrapDisplayFor(model => model.PromoCode.Code)
         <div class="row">
             <div class="col-sm-6">
-                @Html.BootstrapDisplayFor(model => model.PromoCode.Code)
+                @Html.BootstrapDisplayFor(model => model.PromoCode.SubscriptionTypeName)
             </div>
             <div class="col-sm-6">
                 @Html.BootstrapDisplayFor(model => model.PromoCode.Credits)

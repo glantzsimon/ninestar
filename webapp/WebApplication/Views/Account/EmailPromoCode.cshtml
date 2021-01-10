@@ -27,6 +27,6 @@
         @Html.BootstrapEditorFor(model => model.Name)
         @Html.BootstrapEditorFor(model => model.EmailAddress)
         <hr />
-        @Html.BootstrapButton(K9.Globalisation.Dictionary.Send)
+        @Html.BootstrapButton(K9.Globalisation.Dictionary.Send, EButtonType.Submit, "fa fa-envelope")
     }
 }

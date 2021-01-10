@@ -76,13 +76,13 @@ namespace K9.WebApplication.Services
 
             _userPromoCodeRepository.Create(newUserPromo);
 
-            promoCode.UsedOn = DateTime.Now;
+            promoCode.UsedOn = DateTime.Today;
             _promoCodesRepository.Update(promoCode);
         }
         
         public void SendPromoCode(EmailPromoCodeViewModel model)
         {
-            var template = Dictionary.PromoCode;
+            var template = Dictionary.PromoCodeEmail;
             var title = Dictionary.PromoCode;
             var contact = _contactService.GetOrCreateContact("", model.Name, model.EmailAddress);
             
@@ -99,7 +99,7 @@ namespace K9.WebApplication.Services
                 DateTime.Now.Year
             }), model.EmailAddress, model.Name, _config.SupportEmailAddress, _config.CompanyName);
 
-            model.PromoCode.SentOn = DateTime.Now;
+            model.PromoCode.SentOn = DateTime.Today;
             _promoCodesRepository.Update(model.PromoCode);
         }
     }

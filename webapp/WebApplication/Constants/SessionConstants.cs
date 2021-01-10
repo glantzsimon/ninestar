@@ -1,5 +1,10 @@
 ﻿namespace K9.WebApplication.Constants
 {
+    public static class FormatConstants
+    {
+        public const string SessionDateTimeFormat = "yyyy-MM-dd";
+    }
+
     public static class SessionConstants
     {
         public const string BetaWarningDisplay = "BetaWarningDisplay";

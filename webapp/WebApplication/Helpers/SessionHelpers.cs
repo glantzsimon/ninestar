@@ -29,7 +29,7 @@ namespace K9.WebApplication.Helpers
 
         public static void SetLastProfile(NineStarKiModel model)
         {
-            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastProfileDateOfBirth, model.PersonModel.DateOfBirth.ToString(CultureInfo.InvariantCulture));
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastProfileDateOfBirth, model.PersonModel.DateOfBirth.ToString(Constants.FormatConstants.SessionDateTimeFormat));
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastProfileGender, model.PersonModel.Gender);
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastProfileName, model.PersonModel.Name);
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.IsRetrieveProfile, true);
@@ -63,15 +63,15 @@ namespace K9.WebApplication.Helpers
 
         public static void SetLastCompatibility(CompatibilityModel model)
         {
-            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastCompatibilityProfileDateOfBirth1, model.NineStarKiModel1.PersonModel.DateOfBirth.ToString(CultureInfo.InvariantCulture));
-            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastCompatibilityProfileDateOfBirth2, model.NineStarKiModel2.PersonModel.DateOfBirth.ToString(CultureInfo.InvariantCulture));
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastCompatibilityProfileDateOfBirth1, model.NineStarKiModel1.PersonModel.DateOfBirth.ToString(Constants.FormatConstants.SessionDateTimeFormat));
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastCompatibilityProfileDateOfBirth2, model.NineStarKiModel2.PersonModel.DateOfBirth.ToString(Constants.FormatConstants.SessionDateTimeFormat));
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastCompatibilityProfileGender1, model.NineStarKiModel1.PersonModel.Gender);
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastCompatibilityProfileGender2, model.NineStarKiModel2.PersonModel.Gender);
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastCompatibilityProfileName1, model.NineStarKiModel1.PersonModel.Name);
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastCompatibilityProfileName2, model.NineStarKiModel2.PersonModel.Name);
 
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.IsRetrieveCompatibility, true);
-            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.CompatibilityStoredOn, DateTime.Today);
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.CompatibilityStoredOn, DateTime.Today.ToString(Constants.FormatConstants.SessionDateTimeFormat));
         }
 
         public static void ClearLastCompatibility()

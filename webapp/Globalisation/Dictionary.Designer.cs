@@ -7691,6 +7691,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Used On.
+        /// </summary>
+        public static string UsedOnLabel {
+            get {
+                return ResourceManager.GetString("UsedOnLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User Data.
         /// </summary>
         public static string UserData {

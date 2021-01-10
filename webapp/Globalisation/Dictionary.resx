@@ -2119,4 +2119,7 @@
   <data name="UserPromoCodes" xml:space="preserve">
     <value>User Promo Codes</value>
   </data>
+  <data name="UsedOnLabel" xml:space="preserve">
+    <value>Used On</value>
+  </data>
 </root>

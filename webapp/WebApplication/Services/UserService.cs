@@ -73,7 +73,11 @@ namespace K9.WebApplication.Services
                 UserId = userId,
                 PromoCodeId = promoCode.Id
             };
+
             _userPromoCodeRepository.Create(newUserPromo);
+
+            promoCode.UsedOn = DateTime.Now;
+            _promoCodesRepository.Update(promoCode);
         }
 
         public void SendPromoCode(EmailPromoCodeViewModel model)
@@ -81,7 +85,7 @@ namespace K9.WebApplication.Services
             var template = Dictionary.PromoCode;
             var title = Dictionary.PromoCode;
             var contact = _contactService.GetOrCreateContact("", model.Name, model.EmailAddress);
-
+            
             _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
             {
                 Title = title,
@@ -94,6 +98,9 @@ namespace K9.WebApplication.Services
                 PromoDetails = model.PromoCode.Details,
                 DateTime.Now.Year
             }), model.EmailAddress, model.Name, _config.SupportEmailAddress, _config.CompanyName);
+
+            model.PromoCode.SentOn = DateTime.Now;
+            _promoCodesRepository.Update(model.PromoCode);
         }
     }
 }

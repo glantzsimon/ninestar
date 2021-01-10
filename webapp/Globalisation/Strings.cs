@@ -48,6 +48,7 @@
             public const string MembershipLabel = "MembershipLabel";
             public const string SubscriptionCostLabel = "SubscriptionCostLabel";
             public const string SubscriptionTypeLabel = "SubscriptionTypeLabel";
+            public const string UsedOnLabel = "UsedOnLabel";
             public const string SubscriptionDiscountLabel = "SubscriptionDiscountLabel";
             public const string SubscriptionDiscountedPriceLabel = "SubscriptionDiscountedPriceLabel";
             public const string SubscriptionDetailsLabel = "SubscriptionDetailsLabel";

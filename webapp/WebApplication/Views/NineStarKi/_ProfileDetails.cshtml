@@ -99,6 +99,7 @@
     function scrollCurrentYearlyCycleIntoVew() {
         setTimeout(function () {
             $("a[href='#predictions']").tab("show");
+            $("a[href='#predictions']")[0].scrollIntoView();
             setTimeout(function () {
                 $("a[href='#yearly']").tab("show");
                 setTimeout(function () {
@@ -111,6 +112,7 @@
     function scrollCurrentMonthlyCycleIntoVew() {
         setTimeout(function () {
             $("a[href='#predictions']").tab("show");
+            $("a[href='#predictions']")[0].scrollIntoView();
             setTimeout(function () {
                 $("a[href='#monthly']").tab("show");
                 setTimeout(function () {
@@ -121,11 +123,11 @@
     }
 
     $(function () {
-        $("a#current-yearly-cycle").mouseup(function (e) {
+        $("a#current-yearly-cycle").click(function (e) {
             e.preventDefault();
             scrollCurrentYearlyCycleIntoVew();
         });
-        $("a#current-monthly-cycle").mouseup(function (e) {
+        $("a#current-monthly-cycle").click(function (e) {
             e.preventDefault();
             scrollCurrentMonthlyCycleIntoVew();
         });

@@ -22,7 +22,7 @@
             }
         </div>
     </div>
-    <div class="row well margin-bottom-0">
+    <div class="row well">
         <div class="col-md-4 col-sm-12 padding-0">
             <div class="membership-description">
                 @MvcHtmlString.Create(TemplateProcessor.PopulateTemplate(Dictionary.free_membership_description,
@@ -47,6 +47,20 @@
             <div class="membership-description">
                 @MvcHtmlString.Create(Dictionary.platinum_membership_description)
             </div>
+        </div>
+    </div>
+    <div class="row well margin-bottom-0">
+        <div class="col-sm-12 padding-0">
+            <div class="membership-description">
+                <div class="membership-summary">
+                    <h4><strong>@Dictionary.PurchaseCredits:</strong></h4>
+                    <p>
+                        &#8226; @Dictionary.CreditsDescriptionUI
+                    </p>
+                </div>
+            </div>
+            <hr />
+            @Html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership")
         </div>
     </div>
 </div>

@@ -48,8 +48,8 @@
         border-radius: 8px;
     }
 
-        .yearly-planner-container .row div {
-            text-align: left;
+        .yearly-planner-container .row div .ninestar-summary-container p, .yearly-planner-container .row div .ninestar-summary-container h3 {
+            text-align: left !important;
         }
 
             .yearly-planner-container .row div img {
@@ -62,7 +62,7 @@
         }
 
         .yearly-planner-container .row.active {
-            background: #333333;
+            background: #337ab7;
             color: white !important;
         }
 

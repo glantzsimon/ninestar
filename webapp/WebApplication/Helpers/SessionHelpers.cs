@@ -31,6 +31,7 @@ namespace K9.WebApplication.Helpers
         {
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastProfileDateOfBirth, model.PersonModel.DateOfBirth.ToString(CultureInfo.InvariantCulture));
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastProfileGender, model.PersonModel.Gender);
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastProfileName, model.PersonModel.Name);
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.IsRetrieveProfile, true);
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.ProfileStoredOn, DateTime.Today);
         }
@@ -46,14 +47,15 @@ namespace K9.WebApplication.Helpers
             {
                 DateTime.TryParse(Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastProfileDateOfBirth), out var dateOfBirth);
                 Enum.TryParse<EGender>(Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastProfileGender), out var gender);
-
+                
                 if (remove)
                     ClearLastProfile();
 
                 return new PersonModel
                 {
                     DateOfBirth = dateOfBirth,
-                    Gender = gender
+                    Gender = gender,
+                    Name = Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastProfileName)
                 };
             }
             return null;
@@ -65,6 +67,8 @@ namespace K9.WebApplication.Helpers
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastCompatibilityProfileDateOfBirth2, model.NineStarKiModel2.PersonModel.DateOfBirth.ToString(CultureInfo.InvariantCulture));
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastCompatibilityProfileGender1, model.NineStarKiModel1.PersonModel.Gender);
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastCompatibilityProfileGender2, model.NineStarKiModel2.PersonModel.Gender);
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastCompatibilityProfileName1, model.NineStarKiModel1.PersonModel.Name);
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastCompatibilityProfileName2, model.NineStarKiModel2.PersonModel.Name);
 
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.IsRetrieveCompatibility, true);
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.CompatibilityStoredOn, DateTime.Today);
@@ -91,12 +95,14 @@ namespace K9.WebApplication.Helpers
                     new NineStarKiModel(new PersonModel
                     {
                         DateOfBirth = dateOfBirth1,
-                        Gender = gender1
+                        Gender = gender1,
+                        Name = Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastCompatibilityProfileName1)
                     }),
                     new NineStarKiModel(new PersonModel
                     {
                         DateOfBirth = dateOfBirth2,
-                        Gender = gender2
+                        Gender = gender2,
+                        Name = Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastCompatibilityProfileName2)
                     }));
             }
             return null;

@@ -41,9 +41,16 @@
                 </p>
             </div>
             <div class="col-md-4 col-sm-4 col-sm-offset-2 col-xs-offset-0 margin-bottom-15">
-                <a href="#" id="current-yearly-cycle">
+                @if (!Model.IsCompatibility)
+                {
+                    <a href="#" id="current-yearly-cycle">
+                        <img title="@Model.YearlyCycleEnergy.SeasonDescription" alt="@Model.YearlyCycleEnergy.SeasonDescription" class="auto-size center-block" src="~/Images/ninestar/seasons/@(Model.YearlyCycleEnergy.Season).png" />
+                    </a>
+                }
+                else
+                {
                     <img title="@Model.YearlyCycleEnergy.SeasonDescription" alt="@Model.YearlyCycleEnergy.SeasonDescription" class="auto-size center-block" src="~/Images/ninestar/seasons/@(Model.YearlyCycleEnergy.Season).png" />
-                </a>
+                }
 
                 <p class="text-center margin-bottom-0">
                     <strong>@Dictionary.CurrentYearlyCycle</strong>
@@ -53,9 +60,16 @@
                 </p>
             </div>
             <div class="col-md-4 col-sm-4 margin-bottom-15">
-                <a href="#" id="current-monthly-cycle">
+                @if (!Model.IsCompatibility)
+                {
+                    <a href="#" id="current-monthly-cycle">
+                        <img title="@Model.MonthlyCycleEnergy.SeasonDescription" alt="@Model.MonthlyCycleEnergy.SeasonDescription" class="auto-size center-block" src="~/Images/ninestar/seasons/@(Model.MonthlyCycleEnergy.Season).png" />
+                    </a>
+                }
+                else
+                {
                     <img title="@Model.MonthlyCycleEnergy.SeasonDescription" alt="@Model.MonthlyCycleEnergy.SeasonDescription" class="auto-size center-block" src="~/Images/ninestar/seasons/@(Model.MonthlyCycleEnergy.Season).png" />
-                </a>
+                }
 
                 <p class="text-center margin-bottom-0">
                     <strong>@Dictionary.CurrentMonthlyCycle</strong>

@@ -68,6 +68,8 @@ namespace K9.WebApplication.Models
         public DateTime? Today { get; set; }
 
         public bool IsShowSummary { get; set; } = true;
+        
+        public bool IsCompatibility { get; set; } = false;
 
         /// <summary>
         /// Determines the 9 Star Ki energy of the current year

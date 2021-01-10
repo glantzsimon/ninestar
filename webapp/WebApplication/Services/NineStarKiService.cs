@@ -62,6 +62,7 @@ namespace K9.WebApplication.Services
 
             model.IsMyProfile = isMyProfile;
             model.IsProcessed = true;
+            model.IsCompatibility = isCompatibility;
 
             return model;
         }

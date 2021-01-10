@@ -7,6 +7,7 @@ using K9.WebApplication.Models;
 using K9.WebApplication.ViewModels;
 using System;
 using System.Collections.Generic;
+using K9.WebApplication.Helpers;
 
 namespace K9.WebApplication.Services
 {
@@ -81,28 +82,28 @@ namespace K9.WebApplication.Services
 
         public CompatibilityModel CalculateCompatibility(PersonModel personModel1, PersonModel personModel2)
         {
+            var nineStarKiModel1 = CalculateNineStarKiProfile(personModel1, true);
+            var nineStarKiModel2 = CalculateNineStarKiProfile(personModel2, true);
+
+            var model = new CompatibilityModel(nineStarKiModel1, nineStarKiModel2)
+            {
+                IsProcessed = true,
+                IsUpgradeRequired = true
+            };
+
             if (_authentication.IsAuthenticated)
             {
-                var nineStarKiModel1 = CalculateNineStarKiProfile(personModel1, true);
-                var nineStarKiModel2 = CalculateNineStarKiProfile(personModel2, true);
-
-                var model = new CompatibilityModel(nineStarKiModel1, nineStarKiModel2)
-                {
-                    IsProcessed = true,
-                    IsUpgradeRequired = true
-                };
-
-                if ( _roles.CurrentUserIsInRoles(RoleNames.Administrators) || _membershipService.IsCompleteRelationshipCompatibilityReading(_authentication.CurrentUserId, personModel1.DateOfBirth,
+                if (_roles.CurrentUserIsInRoles(RoleNames.Administrators) ||
+                    _membershipService.IsCompleteRelationshipCompatibilityReading(_authentication.CurrentUserId,
+                        personModel1.DateOfBirth,
                         personModel1.Gender, personModel2.DateOfBirth,
                         personModel2.Gender))
                 {
                     model.IsUpgradeRequired = false;
                 }
-
-                return model;
             }
 
-            return null;
+            return model;
         }
 
         public NineStarKiSummaryViewModel GetNineStarKiSummaryViewModel()

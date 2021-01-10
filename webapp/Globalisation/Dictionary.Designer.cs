@@ -6130,6 +6130,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Retrieve saved Compatibility Score.
+        /// </summary>
+        public static string RetrieveLastCompatibility {
+            get {
+                return ResourceManager.GetString("RetrieveLastCompatibility", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Retrieve saved Personal Profile.
+        /// </summary>
+        public static string RetrieveLastProfile {
+            get {
+                return ResourceManager.GetString("RetrieveLastProfile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Revolution / Quiet before Storm.
         /// </summary>
         public static string Revolution {
@@ -6362,7 +6380,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Note: for gay people, much of the above may well depend on the exact combination of gender and sexual traits and their relationship to the stereotypical archetype associated with their biological gender. It is sometimes hard to predict; however, in many gay relationships one can still observe the Yin and Yang roles adopted by each partner.
+        ///    Note: for gay people, much of the above may well depend on the exact combination of gender and sexual traits and their relationship to the stereotypes associated with their biological gender. It is sometimes hard to predict; however, in many gay relationships one can still observe the Yin and Yang roles adopted by each partner.
         ///&lt;/p&gt;.
         /// </summary>
         public static string sexuality_gay_notes {
@@ -6529,6 +6547,15 @@ namespace K9.Globalisation {
         public static string sexuality_opposite_opposite_male {
             get {
                 return ResourceManager.GetString("sexuality_opposite_opposite_male", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sexuality and how it is influenced by the relationship between biological gender and the energetic gender of the Fundamental and Character Energies.
+        /// </summary>
+        public static string SexualityGenderRelationLabel {
+            get {
+                return ResourceManager.GetString("SexualityGenderRelationLabel", resourceCulture);
             }
         }
         
@@ -7569,7 +7596,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upgrade your subscription now, to access more details and features..
+        ///   Looks up a localized string similar to Please upgrade your subscription or purchase more credits to access more details and features..
         /// </summary>
         public static string UpgradeMembershipFullText {
             get {

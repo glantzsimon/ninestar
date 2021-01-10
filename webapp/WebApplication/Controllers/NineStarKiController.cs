@@ -46,7 +46,6 @@ namespace K9.WebApplication.Controllers
             if (model.PersonModel != null)
             {
                 model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel);
-                SessionHelper.SetLastProfile(model.PersonModel);
             }
             return View("Index", model);
         }
@@ -63,11 +62,29 @@ namespace K9.WebApplication.Controllers
             }, false, true));
         }
 
-        [Route("calculate/profile")]
+        [Route("retrieve-last")]
         [Authorize]
-        public ActionResult RetrieveProfile()
+        public ActionResult RetrieveLast()
         {
-            var lastProfile = SessionHelper.GetLastProfile();
+            var retrieveLast = TempData["RetrieveLast"].ToString();
+            switch (retrieveLast)
+            {
+                case "p":
+                    return RedirectToAction("RetrieveLastProfile");
+
+                case "c":
+                    return RedirectToAction("RetrieveLastCompatibility");
+
+                default:
+                    return RedirectToAction("Index");
+            }
+        }
+
+        [Route("last-profile")]
+        [Authorize]
+        public ActionResult RetrieveLastProfile(bool todayOnly = false)
+        {
+            var lastProfile = SessionHelper.GetLastProfile(todayOnly);
             if (lastProfile == null)
             {
                 return RedirectToAction("Index");
@@ -80,7 +97,19 @@ namespace K9.WebApplication.Controllers
             return View("Index", model);
         }
 
+        [Route("last-compatibility")]
         [Authorize]
+        public ActionResult RetrieveLastCompatibility(bool todayOnly = false)
+        {
+            var lastCompatibility = SessionHelper.GetLastCompatibility(todayOnly);
+            if (lastCompatibility == null)
+            {
+                return RedirectToAction("Compatibility");
+            }
+            var model = _nineStarKiService.CalculateCompatibility(lastCompatibility.NineStarKiModel1.PersonModel, lastCompatibility.NineStarKiModel2.PersonModel);
+            return View("Compatibility", model);
+        }
+
         [Route("relationships/compatibility")]
         public ActionResult Compatibility()
         {
@@ -93,7 +122,6 @@ namespace K9.WebApplication.Controllers
             return View("Compatibility", new CompatibilityModel(new NineStarKiModel(personModel), new NineStarKiModel(personModel)));
         }
 
-        [Authorize]
         [Route("relationships/compatibility")]
         [HttpPost]
         [ValidateAntiForgeryToken]

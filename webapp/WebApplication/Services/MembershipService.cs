@@ -396,7 +396,7 @@ namespace K9.WebApplication.Services
                 UserMembershipId = userMembership.Id
             };
 
-            if (userMembership.NumberOfProfileReadingsLeft <= 0)
+            if (userMembership.NumberOfRelationshipCompatibilityReadingsLeft <= 0)
             {
                 var userCredit = _userCreditPacksRepository.Find(e => e.UserId == userMembership.UserId).FirstOrDefault();
                 if (userMembership.NumberOfCreditsLeft == 0 || userCredit == null)

@@ -26,6 +26,10 @@ article h4 {
     color: #444;
 }
 
+article h4 a.collapsible-panel-link {
+    font-size: 120%;
+}
+
 article h5 {
     margin-top: 32px;
     margin-bottom: 15px;

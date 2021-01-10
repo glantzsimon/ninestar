@@ -3,7 +3,7 @@
 
 @if (Model != null && Model.IsProcessed)
 {
-    @Html.Panel(Dictionary.SummaryLabel, Model.CompatibilitySummary)
+    @Html.CollapsiblePanel(Dictionary.SummaryLabel, Model.CompatibilitySummary, true)
 
     using (Html.BeginBootstrapForm())
     {

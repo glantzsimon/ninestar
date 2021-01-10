@@ -1523,7 +1523,7 @@
     <value>articles\en-gb\thunder-sexuality-male.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="UpgradeMembershipFullText" xml:space="preserve">
-    <value>Upgrade your subscription now, to access more details and features.</value>
+    <value>Please upgrade your subscription or purchase more credits to access more details and features.</value>
   </data>
   <data name="StandardMembership" xml:space="preserve">
     <value>Standard Subscription</value>
@@ -2085,5 +2085,14 @@
   </data>
   <data name="YearlyPlanner" xml:space="preserve">
     <value>Yearly Planner</value>
+  </data>
+  <data name="RetrieveLastCompatibility" xml:space="preserve">
+    <value>Retrieve saved Compatibility Score</value>
+  </data>
+  <data name="RetrieveLastProfile" xml:space="preserve">
+    <value>Retrieve saved Personal Profile</value>
+  </data>
+  <data name="SexualityGenderRelationLabel" xml:space="preserve">
+    <value>Sexuality and how it is influenced by the relationship between biological gender and the energetic gender of the Fundamental and Character Energies</value>
   </data>
 </root>

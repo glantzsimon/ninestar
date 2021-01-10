@@ -18,6 +18,7 @@ using NLog;
 using System;
 using System.Linq;
 using System.Web.Mvc;
+using K9.WebApplication.Helpers;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
@@ -49,7 +50,7 @@ namespace K9.WebApplication.Controllers
 
         #region Membership
 
-        public ActionResult Login(string returnUrl)
+        public ActionResult Login(string returnUrl, string retrieveLast = null)
         {
             if (WebSecurity.IsAuthenticated)
             {
@@ -57,6 +58,7 @@ namespace K9.WebApplication.Controllers
             }
 
             TempData["ReturnUrl"] = returnUrl;
+            TempData["RetrieveLast"] = retrieveLast;
             return View(new UserAccount.LoginModel());
         }
 
@@ -72,6 +74,10 @@ namespace K9.WebApplication.Controllers
                         if (TempData["ReturnUrl"] != null)
                         {
                             return Redirect(TempData["ReturnUrl"].ToString());
+                        }
+                        if (TempData["RetrieveLast"] != null)
+                        {
+                            return RedirectToAction("RetrieveLast", "NineStarKi");
                         }
                         return RedirectToAction("Index", "Home");
 

@@ -1,0 +1,15 @@
+﻿@{
+    var lastCompatibility = K9.WebApplication.Helpers.SessionHelper.GetLastCompatibility(true);
+    var lastProfile = K9.WebApplication.Helpers.SessionHelper.GetLastProfile(true);
+}
+
+@if (lastCompatibility != null)
+{
+    <br />
+    @Html.ActionLink(Dictionary.RetrieveLastProfile, "RetrieveLastProfile", "NineStarKi")
+}
+@if (lastProfile != null)
+{
+    <br />
+    <p>@Html.ActionLink(Dictionary.RetrieveLastCompatibility, "RetrieveLastCompatibility", "NineStarKi")</p>
+}

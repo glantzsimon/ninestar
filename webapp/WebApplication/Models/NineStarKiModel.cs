@@ -86,9 +86,7 @@ namespace K9.WebApplication.Models
         public string OverviewLabel => $"{MainEnergy.EnergyNameAndNumber} Overview";
 
         public string EnergySexualityLabel => $"{MainEnergy.EnergyName} {Dictionary.SexualityLabel}";
-
-        public string SexualityRelationTypeLabel => "Sexuality relative to Gender and Personal Profile";
-
+        
         public string SexualityRelationTypeDetailsStraight => GetSexualityGenderDescription();
 
         public string SexualityRelationTypeDetailsGay => GetSexualityGenderDescription(true);

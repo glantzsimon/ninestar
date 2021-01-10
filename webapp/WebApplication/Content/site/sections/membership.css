@@ -178,6 +178,11 @@
     border: 1px solid #eeeeee;
 }
 
+.upgrade-container {
+    width: 100%;
+    text-align: center;
+}
+
 @media(max-width:513px) {
     .nav-tabs li {
         width: 100%;

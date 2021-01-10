@@ -7,9 +7,9 @@
     <div class="container main-content clear-both">
         <article>
             <div>
-                @Html.Panel(Model.EnergySexualityLabel, Model.MainEnergySexualityDetails)
+                @Html.CollapsiblePanel(Model.EnergySexualityLabel, Model.MainEnergySexualityDetails, true)
 
-                @Html.Panel(Model.SexualityRelationTypeLabel, Html.Partial("_SexualityRelationType").ToString())
+                @Html.CollapsiblePanel(Dictionary.SexualityGenderRelationLabel, Html.Partial("_SexualityRelationType").ToString(), true)
             </div>
         </article>
     </div>

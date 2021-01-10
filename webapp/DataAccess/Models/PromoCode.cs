@@ -15,7 +15,8 @@ namespace K9.DataAccessLayer.Models
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NameLabel)]
         [StringLength(10)]
-        [Range(10, 10)]
+        [MaxLength(10)]
+        [MinLength(5)]
         [Index(IsUnique = true)]
         public string Code { get; set; }
 
@@ -30,7 +31,7 @@ namespace K9.DataAccessLayer.Models
 
         public PromoCode()
         {
-            Code = $"9STAR{GetCode()}";
+            Code = $"9STAR{GetCode(5)}";
         }
 
         private string GetDetails()
@@ -72,12 +73,12 @@ namespace K9.DataAccessLayer.Models
             return sb.ToString();
         }
 
-        private string GetCode()
+        private string GetCode(int max)
         {
             var sb = new StringBuilder();
             var random = new Random();
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < max; i++)
             {
                 var number = random.Next(0, 26);
                 char letter = (char)('A' + number);

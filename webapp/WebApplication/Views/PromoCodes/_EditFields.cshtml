@@ -1,5 +1,6 @@
 ﻿@model PromoCode
 
+@Html.HiddenFor(model => model.Code)
 @Html.BootstrapDisplayFor(model => model.Code)
 @Html.BootstrapEditorFor(model => model.SubscriptionType)
 @Html.BootstrapEditorFor(model => model.Credits)

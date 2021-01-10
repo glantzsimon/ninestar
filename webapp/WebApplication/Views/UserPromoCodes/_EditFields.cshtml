@@ -1,5 +1,5 @@
 ﻿@using K9.Base.WebApplication.Helpers
-@using K9.SharedLibrary.Helpers
 @model UserPromoCode
-@Html.BootstrapDisplayFor(model => model.UserId)
-@Html.BootstrapDisplayFor(model => model.PromoCodeId)
+
+@Html.BootstrapEditorFor(model => model.UserId)
+@Html.BootstrapEditorFor(model => model.PromoCodeId)

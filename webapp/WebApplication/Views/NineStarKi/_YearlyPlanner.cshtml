@@ -10,15 +10,15 @@
 
         <a target="_blank" href="@Url.ActionWithBookmark("Index", "Predictions", $"{energy.EnergyName.ToLower()}-year")">
             <div class="row @activeClass">
-                <div class="col-xs-2">
+                <div class="col-xs-1">
                     @Html.Partial("_Year", year)
                 </div>
-                <div class="col-xs-1">
-                    <div class="ninestar-summary-container">
+                <div class="col-sm-2 col-xs-3">
+                    <div class="ninestar-summary-container margin-left-10-xs">
                         <img title="@energy.EnergyName" alt="@energy.EnergyName" class="auto-size center-block" src="~/Images/ninestar/energies/@(energy.Energy.ToString().ToLower()).png" />
                     </div>
                 </div>
-                <div class="col-xs-2">
+                <div class="col-xs-2 hidden-xs">
                     <div class="ninestar-summary-container">
                         <h3 class="margin-bottom-0 padding-bottom-0">@Dictionary.Energy</h3>
                         <p>@energy.EnergyName</p>

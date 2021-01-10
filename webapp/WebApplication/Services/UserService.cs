@@ -79,7 +79,7 @@ namespace K9.WebApplication.Services
             promoCode.UsedOn = DateTime.Now;
             _promoCodesRepository.Update(promoCode);
         }
-
+        
         public void SendPromoCode(EmailPromoCodeViewModel model)
         {
             var template = Dictionary.PromoCode;

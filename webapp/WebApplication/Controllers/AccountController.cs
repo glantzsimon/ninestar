@@ -326,6 +326,7 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("DeleteAccountFailed");
         }
 
+        [Route("promocodes/email")]
         [Authorize]
         public ActionResult EmailPromoCode(int id)
         {

@@ -14,16 +14,16 @@ namespace K9.WebApplication.ViewModels
         public int NumberOfCreditsToPurchase => NumberOfCredits;
 
         [DataType(DataType.Currency)]
-        public double PricePerCredit => 2;
+        public double PricePerCredit => 1;
 
         [DataType(DataType.Currency)]
-        public double PricePerCredits10 => 1.75;
+        public double PricePerCredits10 => 0.8;
 
         [DataType(DataType.Currency)]
-        public double PricePerCredits20 => 1.4;
+        public double PricePerCredits20 => 0.6;
 
         [DataType(DataType.Currency)]
-        public double PricePerCredits30 => 1;
+        public double PricePerCredits30 => 0.4;
 
         [DataType(DataType.Currency)]
         public double TotalPrice => GetTotalPrice();

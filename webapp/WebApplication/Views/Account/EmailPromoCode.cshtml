@@ -10,6 +10,11 @@
 {
     using (Html.BeginBootstrapForm())
     {
+        @Html.HiddenFor(model => model.PromoCode.SubscriptionType)
+        @Html.HiddenFor(model => model.PromoCode.Id)
+        @Html.HiddenFor(model => model.PromoCode.Code)
+        @Html.HiddenFor(model => model.PromoCode.Credits)
+
         @Html.BootstrapDisplayFor(model => model.PromoCode.SubscriptionType)
         <div class="row">
             <div class="col-sm-6">

@@ -4,5 +4,11 @@
 @Html.BootstrapDisplayFor(model => model.Code)
 @Html.BootstrapEditorFor(model => model.SubscriptionType)
 @Html.BootstrapEditorFor(model => model.Credits)
-@Html.BootstrapDisplayFor(model => model.SentOn)
-@Html.BootstrapDisplayFor(model => model.UsedOn)
+@if (Model.SentOn.HasValue)
+{
+    @Html.BootstrapDisplayFor(model => model.SentOn)
+}
+@if (Model.UsedOn.HasValue)
+{
+    @Html.BootstrapDisplayFor(model => model.UsedOn)
+}

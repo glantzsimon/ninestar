@@ -192,10 +192,9 @@ namespace K9.WebApplication.Controllers
 
                 if (result.IsSuccess)
                 {
-                    var user = result.Data.MapTo<User>();
-                    user.Id = _userRepository.Find(e => e.Username == user.Username).FirstOrDefault()?.Id ?? 0;
-
-                    if (user.Id > 0 && !string.IsNullOrEmpty(model.PromoCode))
+                    var user = _userRepository.Find(e => e.Username == model.RegisterModel.UserName).FirstOrDefault();
+                    
+                    if (user?.Id > 0 && !string.IsNullOrEmpty(model.PromoCode))
                     {
                         _userService.CheckPromoCode(user.Id, model.PromoCode);
                     }

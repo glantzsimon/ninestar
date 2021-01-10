@@ -827,6 +827,7 @@
     <Content Include="Images\ui\fail.png" />
     <Content Include="Images\ui\notfound.png" />
     <Content Include="Images\ui\locked.png" />
+    <Content Include="Images\ui\question-mark.jpg" />
     <Content Include="Images\ui\selected.png" />
     <Content Include="Images\ui\success.png" />
     <Content Include="Images\ui\facebook_sm.png" />

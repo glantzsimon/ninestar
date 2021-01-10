@@ -5877,18 +5877,35 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
-        ///    &lt;h4&gt;&lt;strong&gt;Platinum Subscription:&lt;/strong&gt;&lt;/h4&gt;
+        ///    &lt;h4&gt;&lt;strong&gt;Annual Platinum Subscription:&lt;/strong&gt;&lt;/h4&gt;
         ///    &lt;p&gt;
-        ///        &amp;#8226; Unlimited full Personal Profile readings.
+        ///        &amp;#8226; Unlimited full Personal Profile readings for a whole year.
         ///    &lt;/p&gt;
         ///    &lt;p&gt;
-        ///        &amp;#8226; Unlimited full Relationship Compatibility readings.
+        ///        &amp;#8226; Unlimited full Relationship Compatibility readings for a whole year.
         ///    &lt;/p&gt;
         ///&lt;/div&gt;.
         /// </summary>
-        public static string platinum_membership_description {
+        public static string platinum_annual_membership_description {
             get {
-                return ResourceManager.GetString("platinum_membership_description", resourceCulture);
+                return ResourceManager.GetString("platinum_annual_membership_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
+        ///    &lt;h4&gt;&lt;strong&gt;Monthly Platinum Subscription:&lt;/strong&gt;&lt;/h4&gt;
+        ///    &lt;p&gt;
+        ///        &amp;#8226; Unlimited full Personal Profile readings for a whole month.
+        ///    &lt;/p&gt;
+        ///    &lt;p&gt;
+        ///        &amp;#8226; Unlimited full Relationship Compatibility readings for a whole month.
+        ///    &lt;/p&gt;
+        ///&lt;/div&gt;.
+        /// </summary>
+        public static string platinum_monthly_membership_description {
+            get {
+                return ResourceManager.GetString("platinum_monthly_membership_description", resourceCulture);
             }
         }
         
@@ -6986,18 +7003,35 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
-        ///    &lt;h4&gt;&lt;strong&gt;Standard Subscription:&lt;/strong&gt;&lt;/h4&gt;
+        ///    &lt;h4&gt;&lt;strong&gt;Annual Standard Subscription:&lt;/strong&gt;&lt;/h4&gt;
         ///    &lt;p&gt;
-        ///        &amp;#8226; {NumberOfProfileReadings} full Personal Profile readings a month.
+        ///        &amp;#8226; {NumberOfProfileReadings} full Personal Profile readings a month for a whole year.
         ///    &lt;/p&gt;
         ///    &lt;p&gt;
-        ///        &amp;#8226; {NumberOfCompatibilityReadings} full Relationship Compatibility readings a month.
+        ///        &amp;#8226; {NumberOfCompatibilityReadings} full Relationship Compatibility readings a month for a whole year.
         ///    &lt;/p&gt;
         ///&lt;/div&gt;.
         /// </summary>
-        public static string standard_membership_description {
+        public static string standard_annual_membership_description {
             get {
-                return ResourceManager.GetString("standard_membership_description", resourceCulture);
+                return ResourceManager.GetString("standard_annual_membership_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
+        ///    &lt;h4&gt;&lt;strong&gt;Monthly Standard Subscription:&lt;/strong&gt;&lt;/h4&gt;
+        ///    &lt;p&gt;
+        ///        &amp;#8226; {NumberOfProfileReadings} full Personal Profile readings for a whole month.
+        ///    &lt;/p&gt;
+        ///    &lt;p&gt;
+        ///        &amp;#8226; {NumberOfCompatibilityReadings} full Relationship Compatibility readings for a whole month.
+        ///    &lt;/p&gt;
+        ///&lt;/div&gt;.
+        /// </summary>
+        public static string standard_monthly_membership_description {
+            get {
+                return ResourceManager.GetString("standard_monthly_membership_description", resourceCulture);
             }
         }
         

@@ -105,6 +105,7 @@
     <Content Include="Articles\en-gb\coreearth-child.htm" />
     <Content Include="Articles\en-gb\five-transformations.htm" />
     <Content Include="Articles\en-gb\heaven-sexuality-female.htm" />
+    <Content Include="Articles\en-gb\platinum-annual-membership-description.htm" />
     <Content Include="Articles\en-gb\relationships-description.htm" />
     <Content Include="Articles\en-gb\sexuality-description.htm" />
     <Content Include="Articles\en-gb\fire-sexuality.htm" />
@@ -124,6 +125,7 @@
     <Content Include="Articles\en-gb\sexuality-opposite-opposite-male.htm" />
     <Content Include="Articles\en-gb\soil-sexuality-female.htm" />
     <Content Include="Articles\en-gb\free-membership-description.htm" />
+    <Content Include="Articles\en-gb\standard-annual-membership-description.htm" />
     <Content Include="Articles\en-gb\thunder-sexuality-female.htm" />
     <Content Include="Articles\en-gb\wind-sexuality.htm" />
     <Content Include="Articles\en-gb\thunder-sexuality-male.htm" />
@@ -412,11 +414,11 @@
     <Content Include="Text\en-gb\cookies-blurb.txt" />
     <Content Include="Articles\en-gb\AgreeToTerms.htm" />
     <Content Include="Articles\en-gb\PrivacyPolicy.htm" />
-    <Content Include="Articles\en-gb\platinum-membership-description.htm" />
+    <Content Include="Articles\en-gb\platinum-monthly-membership-description.htm" />
     <Content Include="Articles\en-gb\RelationshipsMetaDescription.htm" />
     <Content Include="Text\en-gb\nine-star-ki-title.txt" />
     <Content Include="Text\en-gb\Keywords.txt" />
-    <Content Include="Articles\en-gb\standard-membership-description.htm" />
+    <Content Include="Articles\en-gb\standard-monthly-membership-description.htm" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

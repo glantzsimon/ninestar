@@ -1441,9 +1441,6 @@
   <data name="OverviewLabel" xml:space="preserve">
     <value>Overview</value>
   </data>
-  <data name="platinum_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\platinum-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="PrivacyPolicy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\privacypolicy.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -1452,9 +1449,6 @@
   </data>
   <data name="sexuality_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\sexuality-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="standard_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\standard-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="SurfaceEnergyDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\surfaceenergydescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -2131,7 +2125,19 @@
   <data name="Code" xml:space="preserve">
     <value>Code</value>
   </data>
+  <data name="platinum_annual_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\platinum-annual-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="platinum_monthly_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\platinum-monthly-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="PromoCodeEmailTitle" xml:space="preserve">
     <value>You have received a promo code from NineStar</value>
+  </data>
+  <data name="standard_annual_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\standard-annual-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="standard_monthly_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\standard-monthly-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

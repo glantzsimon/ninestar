@@ -40,14 +40,15 @@ namespace K9.WebApplication.Helpers
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.IsRetrieveProfile, false);
         }
 
-        public static PersonModel GetLastProfile(bool todayOnly = false)
+        public static PersonModel GetLastProfile(bool todayOnly = false, bool remove = true)
         {
             if (Base.WebApplication.Helpers.SessionHelper.GetBoolValue(Constants.SessionConstants.IsRetrieveProfile) && (!todayOnly || GetDateTimeValue(Constants.SessionConstants.ProfileStoredOn) == DateTime.Today))
             {
                 DateTime.TryParse(Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastProfileDateOfBirth), out var dateOfBirth);
                 Enum.TryParse<EGender>(Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastProfileGender), out var gender);
 
-                ClearLastProfile();
+                if (remove)
+                    ClearLastProfile();
 
                 return new PersonModel
                 {
@@ -74,7 +75,7 @@ namespace K9.WebApplication.Helpers
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.IsRetrieveCompatibility, false);
         }
 
-        public static CompatibilityModel GetLastCompatibility(bool todayOnly = false)
+        public static CompatibilityModel GetLastCompatibility(bool todayOnly = false, bool remove = true)
         {
             if (Base.WebApplication.Helpers.SessionHelper.GetBoolValue(Constants.SessionConstants.IsRetrieveCompatibility) && (!todayOnly || GetDateTimeValue(Constants.SessionConstants.CompatibilityStoredOn) == DateTime.Today))
             {
@@ -83,7 +84,8 @@ namespace K9.WebApplication.Helpers
                 Enum.TryParse<EGender>(Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastCompatibilityProfileGender1), out var gender1);
                 Enum.TryParse<EGender>(Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastCompatibilityProfileGender2), out var gender2);
 
-                ClearLastCompatibility();
+                if (remove)
+                    ClearLastCompatibility();
 
                 return new CompatibilityModel(
                     new NineStarKiModel(new PersonModel

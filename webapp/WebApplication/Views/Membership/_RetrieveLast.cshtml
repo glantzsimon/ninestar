@@ -1,6 +1,6 @@
 ﻿@{
-    var lastCompatibility = K9.WebApplication.Helpers.SessionHelper.GetLastCompatibility(true);
-    var lastProfile = K9.WebApplication.Helpers.SessionHelper.GetLastProfile(true);
+    var lastCompatibility = K9.WebApplication.Helpers.SessionHelper.GetLastCompatibility(true, false);
+    var lastProfile = K9.WebApplication.Helpers.SessionHelper.GetLastProfile(true, false);
 }
 
 @if (lastCompatibility != null)

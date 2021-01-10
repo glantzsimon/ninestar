@@ -6,6 +6,7 @@ using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using K9.SharedLibrary.Extensions;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -24,7 +25,7 @@ namespace K9.DataAccessLayer.Models
         [Required]
         [ForeignKey("User")]
         public int UserId { get; set; }
-        
+
         public virtual User User { get; set; }
 
         public virtual PromoCode PromoCode { get; set; }
@@ -34,5 +35,11 @@ namespace K9.DataAccessLayer.Models
 
         [LinkedColumn(LinkedTableName = "PromoCode", LinkedColumnName = "Code")]
         public string PromoCodeName { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.SubscriptionTypeLabel)]
+        public string SubscriptionTypeName => typeof(Globalisation.Dictionary).GetValueFromResource(PromoCode?.SubscriptionType.ToString());
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.NumberOfCreditsLabel)]
+        public int? Credits => PromoCode?.Credits;
     }
 }

@@ -3,7 +3,7 @@
 @using K9.SharedLibrary.Authentication
 @model UserPromoCode
 @{
-	Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
+    Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
 }
 @Html.BootstrapTable(new DataTableOptions<UserPromoCode>
 {
@@ -14,6 +14,8 @@
     {
         "CreatedOn",
         "UserName",
-        "PromoCodeName"
+        "PromoCodeName",
+        "SubscriptionTypeName",
+        "Credits"
     }
 })

@@ -64,6 +64,7 @@
             public const string NumberOfRelationshipCompatibilityReadingsLeft = "NumberOfRelationshipCompatibilityReadingsLeft";
             public const string NumberOfCreditsLeft = "NumberOfCreditsLeft";
             public const string UserDataLabel = "UserData";
+            public const string PromoCodeLabel = "PromoCode";
         }
 
         public static class Names
@@ -75,6 +76,8 @@
             public const string PromoCodes = "PromoCodes";
             public const string Donation = "Donation";
             public const string PromoCode = "PromoCode";
+            public const string UserPromoCode = "UserPromoCode";
+            public const string UserPromoCodes = "UserPromoCodes";
             public const string Donations = "Donations";
             public const string MembershipOptions = "MembershipOptions";
             public const string ProfileReadings = "ProfileReadings";

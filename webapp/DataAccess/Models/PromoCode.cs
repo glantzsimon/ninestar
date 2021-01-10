@@ -53,22 +53,18 @@ namespace K9.DataAccessLayer.Models
                 switch (SubscriptionType)
                 {
                     case MembershipOption.ESubscriptionType.MonthlyStandard:
-                        sb.Append($"<h4><strong>{Globalisation.Dictionary.MonthlyStandardMembership}</strong></h4>");
                         sb.Append(Globalisation.Dictionary.standard_membership_description);
                         break;
 
                     case MembershipOption.ESubscriptionType.MonthlyPlatinum:
-                        sb.Append($"<h4><strong>{Globalisation.Dictionary.MonthlyPlatinumMembership}</strong></h4>");
                         sb.Append(K9.Globalisation.Dictionary.platinum_membership_description);
                         break;
 
                     case MembershipOption.ESubscriptionType.AnnualStandard:
-                        sb.Append($"<h4><strong>{Globalisation.Dictionary.AnnualStandardMembership}</strong></h4>");
                         sb.Append(K9.Globalisation.Dictionary.standard_membership_description);
                         break;
 
                     case MembershipOption.ESubscriptionType.AnnualPlatinum:
-                        sb.Append($"<h4><strong>{Globalisation.Dictionary.AnnualPlatinumMembership}</strong></h4>");
                         sb.Append(K9.Globalisation.Dictionary.platinum_membership_description);
                         break;
 

@@ -12,8 +12,8 @@ namespace K9.DataAccessLayer.Models
 {
     [AutoGenerateName]
     [Grammar(ResourceType = typeof(Dictionary), DefiniteArticleName = Strings.Grammar.MasculineDefiniteArticle, IndefiniteArticleName = Strings.Grammar.MasculineIndefiniteArticle)]
-    [Name(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Credit, PluralName = Globalisation.Strings.Names.Credits)]
-    [DefaultPermissions(Role = RoleNames.DefaultUsers)]
+    [Name(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.UserPromoCode, PluralName = Globalisation.Strings.Names.UserPromoCodes)]
+    [DefaultPermissions(Role = RoleNames.Administrators)]
     public class UserPromoCode : ObjectBase, IUserData
     {
         [UIHint("PromoCode")]
@@ -30,9 +30,11 @@ namespace K9.DataAccessLayer.Models
 
         public virtual PromoCode PromoCode { get; set; }
 
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.UserNameLabel)]
         [LinkedColumn(LinkedTableName = "User", LinkedColumnName = "Username")]
         public string UserName { get; set; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.PromoCodeLabel)]
         [LinkedColumn(LinkedTableName = "PromoCode", LinkedColumnName = "Code")]
         public string PromoCodeName { get; set; }
 

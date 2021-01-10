@@ -1,6 +1,9 @@
 ﻿@using K9.Base.WebApplication.Controllers
 @using K9.Base.WebApplication.Helpers
+@using K9.SharedLibrary.Models
 @using K9.SharedLibrary.Authentication
+@using EButtonType = K9.SharedLibrary.Models.EButtonType
+
 @model UserPromoCode
 @{
     Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
@@ -12,10 +15,18 @@
     AllowDelete = ((BaseController<UserPromoCode>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
     VisibleColumns = new List<string>
     {
-        "CreatedOn",
         "UserName",
-        "PromoCodeName",
-        "SubscriptionTypeName",
-        "Credits"
+        "PromoCodeName"
+    },
+    CustomButtons = new List<IButton>
+    {
+        new Button
+        {
+            Text = Dictionary.PromoCode,
+            Controller = "PromoCodes",
+            Action = "Details",
+            ButtonType = EButtonType.Primary
+
+        }
     }
 })

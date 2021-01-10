@@ -5,11 +5,17 @@
 
 @if (lastCompatibility != null)
 {
-    <br />
-    @Html.ActionLink(Dictionary.RetrieveLastProfile, "RetrieveLastProfile", "NineStarKi")
+    <div class="text-center">
+        <p>
+            @Html.ActionLink(Dictionary.RetrieveLastCompatibility, "RetrieveLastCompatibility", "NineStarKi")
+        </p>
+    </div>
 }
 @if (lastProfile != null)
 {
-    <br />
-    <p>@Html.ActionLink(Dictionary.RetrieveLastCompatibility, "RetrieveLastCompatibility", "NineStarKi")</p>
+    <div class="text-center">
+        <p>
+            @Html.ActionLink(Dictionary.RetrieveLastProfile, "RetrieveLastProfile", "NineStarKi")
+        </p>
+    </div>
 }

@@ -100,7 +100,10 @@
         setTimeout(function () {
             $("a[href='#predictions']").tab("show");
             setTimeout(function () {
-                $("#yearly")[0].scrollIntoView();
+                $("a[href='#yearly']").tab("show");
+                setTimeout(function () {
+                    $("#yearly")[0].scrollIntoView();
+                }, 300);
             }, 300);
         }, 200);
     }
@@ -109,7 +112,10 @@
         setTimeout(function () {
             $("a[href='#predictions']").tab("show");
             setTimeout(function () {
-                $("#monthly")[0].scrollIntoView();
+                $("a[href='#monthly']").tab("show");
+                setTimeout(function () {
+                    $("#monthly")[0].scrollIntoView();
+                }, 300);
             }, 300);
         }, 200);
     }

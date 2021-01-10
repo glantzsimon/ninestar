@@ -5,6 +5,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
+using K9.SharedLibrary.Extensions;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -26,6 +27,9 @@ namespace K9.DataAccessLayer.Models
         [UIHint("SubscriptionType")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.SubscriptionTypeLabel)]
         public MembershipOption.ESubscriptionType SubscriptionType { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.SubscriptionTypeLabel)]
+        public string SubscriptionTypeName => typeof(Globalisation.Dictionary).GetValueFromResource(SubscriptionType.ToString());
 
         public string Details => GetDetails();
 

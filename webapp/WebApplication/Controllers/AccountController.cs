@@ -194,15 +194,12 @@ namespace K9.WebApplication.Controllers
                 if (result.IsSuccess)
                 {
                     var user = _userRepository.Find(e => e.Username == model.RegisterModel.UserName).FirstOrDefault();
-                    
+
                     if (user?.Id > 0 && !string.IsNullOrEmpty(model.PromoCode))
                     {
                         _userService.CheckPromoCode(user.Id, model.PromoCode);
 
-                        _membershipService.ProcessPurchase(new PaymentModel
-                        {
-                            ItemId = model.PromoCode.
-                        });
+                        _membershipService.ProcessPurchase(user.Id, model.PromoCode);
                     }
 
                     return RedirectToAction("AccountCreated", "Account");

@@ -216,33 +216,47 @@ namespace K9.WebApplication.Services
             return GetPurchaseMembershipModel(membershipOption?.Id ?? 0);
         }
 
-        public void ProcessPurchase(int userId, string code)
+        public void ProcessPurchaseWithPromoCode(int userId, string code)
         {
             var promoCode = _promoCodesRepository.Find(e => e.Code == code).FirstOrDefault();
+
+            if (promoCode == null)
+            {
+                _logger.Error($"MembershipService => ProcessPurchaseWithPromoCode => Invalid Promo Code");
+                throw new Exception("Invalid promo code");
+            }
+
             var subscription = _membershipOptionRepository.Find(e => e.SubscriptionType == promoCode.SubscriptionType).FirstOrDefault();
+
+            if (subscription == null)
+            {
+                _logger.Error($"MembershipService => ProcessPurchaseWithPromoCode => No subscription of type {promoCode.SubscriptionTypeName} found");
+                throw new Exception($"No subscription of type {promoCode.SubscriptionTypeName} found");
+            }
+
             var credits = promoCode.Credits;
             var user = _usersRepository.Find(userId);
             var contact = _contactService.Find(user.EmailAddress);
 
-            ProcessPurchase(new PaymentModel
+            ProcessPurchase(new PurchaseModel
             {
                 ItemId = subscription.Id,
                 ContactId = contact.Id
-            }, userId);
+            }, userId, promoCode);
 
-            ProcessCreditsPurchase(new PaymentModel
+            ProcessCreditsPurchase(new PurchaseModel
             {
                 ItemId = subscription.Id,
                 ContactId = contact.Id,
                 Quantity = credits
-            }, userId);
+            }, userId, promoCode);
         }
 
-        public void ProcessPurchase(PaymentModel paymentModel, int? userId = null)
+        public void ProcessPurchase(PurchaseModel purchaseModel, int? userId = null, PromoCode promoCode = null)
         {
             try
             {
-                var membershipOptionId = paymentModel.ItemId;
+                var membershipOptionId = purchaseModel.ItemId;
                 var membershipOption = _membershipOptionRepository.Find(membershipOptionId);
                 if (membershipOption == null)
                 {
@@ -263,24 +277,24 @@ namespace K9.WebApplication.Services
                 userMembership.User = _usersRepository.Find(userId ?? _authentication.CurrentUserId);
                 TerminateExistingMemberships(membershipOptionId);
 
-                var contact = _contactService.Find(paymentModel.ContactId);
+                var contact = _contactService.Find(purchaseModel.ContactId);
 
-                SendEmailToNineStar(userMembership);
-                SendEmailToCustomer(userMembership, contact);
+                SendEmailToNineStar(userMembership, promoCode);
+                SendEmailToCustomer(userMembership, contact, promoCode);
             }
             catch (Exception ex)
             {
                 _logger.Error($"MembershipService => ProcessPurchase => Purchase failed: {ex.GetFullErrorMessage()}");
-                SendEmailToNineStarAboutFailure(paymentModel, ex.GetFullErrorMessage());
+                SendEmailToNineStarAboutFailure(purchaseModel, ex.GetFullErrorMessage());
                 throw ex;
             }
         }
 
-        public void ProcessCreditsPurchase(PaymentModel paymentModel, int? userId = null)
+        public void ProcessCreditsPurchase(PurchaseModel purchaseModel, int? userId = null, PromoCode promoCode = null)
         {
             try
             {
-                var numberOfCredits = paymentModel.Quantity;
+                var numberOfCredits = purchaseModel.Quantity;
                 var creditsModel = new PurchaseCreditsViewModel
                 {
                     NumberOfCredits = numberOfCredits
@@ -290,21 +304,21 @@ namespace K9.WebApplication.Services
                 {
                     UserId = userId ?? _authentication.CurrentUserId,
                     NumberOfCredits = numberOfCredits,
-                    TotalPrice = creditsModel.TotalPrice
+                    TotalPrice = promoCode?.TotalPrice ?? creditsModel.TotalPrice
                 };
 
                 _userCreditPacksRepository.Create(userCreditPack);
                 userCreditPack.User = _usersRepository.Find(_authentication.CurrentUserId);
 
-                var contact = _contactService.Find(paymentModel.ContactId);
+                var contact = _contactService.Find(purchaseModel.ContactId);
 
-                SendEmailToNineStar(userCreditPack);
-                SendEmailToCustomer(userCreditPack, contact);
+                SendEmailToNineStar(userCreditPack, promoCode);
+                SendEmailToCustomer(userCreditPack, contact, promoCode);
             }
             catch (Exception ex)
             {
                 _logger.Error($"MembershipService => ProcessPurchase => Purchase failed: {ex.GetFullErrorMessage()}");
-                SendEmailToNineStarAboutFailure(paymentModel, ex.GetFullErrorMessage());
+                SendEmailToNineStarAboutFailure(purchaseModel, ex.GetFullErrorMessage());
                 throw ex;
             }
         }
@@ -435,7 +449,7 @@ namespace K9.WebApplication.Services
             _userRelationshipCompatibilityReadingsRepository.Create(userRelationshipCompatibilityReading);
         }
 
-        private void SendEmailToNineStar(UserMembership userMembership)
+        private void SendEmailToNineStar(UserMembership userMembership, PromoCode promoCode)
         {
             var template = Dictionary.MembershipCreatedEmail;
             var title = "We have received a new subscription!";
@@ -445,14 +459,14 @@ namespace K9.WebApplication.Services
                 Customer = userMembership.User.FullName,
                 CustomerEmail = userMembership.User.EmailAddress,
                 SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal,
-                TotalPrice = userMembership.MembershipOption.FormattedPrice,
+                TotalPrice = promoCode?.FormattedPrice ?? userMembership.MembershipOption.FormattedPrice,
                 LinkToSummary = _urlHelper.AbsoluteAction("Index", "UserMemberships"),
                 Company = _config.CompanyName,
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl)
             }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
         }
 
-        private void SendEmailToCustomer(UserMembership userMembership, Contact contact)
+        private void SendEmailToCustomer(UserMembership userMembership, Contact contact, PromoCode promoCode = null)
         {
             var template = Dictionary.NewMembershipThankYouEmail;
             var title = TemplateProcessor.PopulateTemplate(Dictionary.ThankyouForSubscriptionEmailTitle, new
@@ -466,7 +480,7 @@ namespace K9.WebApplication.Services
                     Title = title,
                     CustomerName = userMembership.User.FirstName,
                     SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal,
-                    TotalPrice = userMembership.MembershipOption.FormattedPrice,
+                    TotalPrice = promoCode.FormattedPrice ?? userMembership.MembershipOption.FormattedPrice,
                     EndsOn = userMembership.EndsOn.ToLongDateString(),
                     NumberOfProfileReadings = userMembership.MembershipOption.MaxNumberOfProfileReadings,
                     NumberOfCompatibilityReadings =
@@ -480,7 +494,7 @@ namespace K9.WebApplication.Services
             }
         }
 
-        private void SendEmailToNineStar(UserCreditPack userCreditPack)
+        private void SendEmailToNineStar(UserCreditPack userCreditPack, PromoCode promoCode)
         {
             var template = Dictionary.CreditPackPurchased;
             var title = "We have received a new credit pack purchase!";
@@ -490,14 +504,14 @@ namespace K9.WebApplication.Services
                 Customer = userCreditPack.User.FullName,
                 CustomerEmail = userCreditPack.User.EmailAddress,
                 userCreditPack.NumberOfCredits,
-                TotalPrice = userCreditPack.FormattedPrice,
+                TotalPrice = promoCode?.FormattedPrice ?? userCreditPack.FormattedPrice,
                 LinkToCreditPacks = _urlHelper.AbsoluteAction("Index", "UserCreditPacks"),
                 Company = _config.CompanyName,
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl)
             }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
         }
 
-        private void SendEmailToCustomer(UserCreditPack userCreditPack, Contact contact)
+        private void SendEmailToCustomer(UserCreditPack userCreditPack, Contact contact, PromoCode promoCode = null)
         {
             var template = Dictionary.NewCreditPackThankYouEmail;
             var title = Dictionary.ThankyouForCreditPackPurchaseEmailTitle;
@@ -508,7 +522,7 @@ namespace K9.WebApplication.Services
                     Title = title,
                     CustomerName = userCreditPack.User.FirstName,
                     NumberOfCreditsPurchased = userCreditPack.NumberOfCredits,
-                    TotalPrice = userCreditPack.FormattedPrice,
+                    TotalPrice = promoCode?.FormattedPrice ?? userCreditPack.FormattedPrice,
                     ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
                     PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
                     UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact.Name }),
@@ -518,15 +532,15 @@ namespace K9.WebApplication.Services
             }
         }
 
-        private void SendEmailToNineStarAboutFailure(PaymentModel paymentModel, string errorMessage)
+        private void SendEmailToNineStarAboutFailure(PurchaseModel purchaseModel, string errorMessage)
         {
             var template = Dictionary.PaymentError;
             var title = "A customer made a successful payment, but an error occurred.";
             _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
             {
                 Title = title,
-                Customer = paymentModel.CustomerName,
-                CustomerEmail = paymentModel.CustomerEmailAddress,
+                Customer = purchaseModel.CustomerName,
+                CustomerEmail = purchaseModel.CustomerEmailAddress,
                 ErrorMessage = errorMessage,
                 Company = _config.CompanyName,
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl)

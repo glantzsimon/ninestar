@@ -99,20 +99,20 @@ namespace K9.WebApplication.Controllers
         }
 
         [HttpPost]
-        public ActionResult ProcessDonation(PaymentModel paymentModel)
+        public ActionResult ProcessDonation(PurchaseModel purchaseModel)
         {
             try
             {
-                var contact = _contactService.Find(paymentModel.ContactId);
+                var contact = _contactService.Find(purchaseModel.ContactId);
 
                 _donationService.CreateDonation(new Donation
                 {
-                    Currency = paymentModel.Currency,
-                    Customer = paymentModel.CustomerName,
-                    CustomerEmail = paymentModel.CustomerEmailAddress,
-                    DonationDescription = paymentModel.Description,
+                    Currency = purchaseModel.Currency,
+                    Customer = purchaseModel.CustomerName,
+                    CustomerEmail = purchaseModel.CustomerEmailAddress,
+                    DonationDescription = purchaseModel.Description,
                     DonatedOn = DateTime.Now,
-                    DonationAmount = paymentModel.Amount
+                    DonationAmount = purchaseModel.Amount
                 }, contact);
 
                 return Json(new { success = true });

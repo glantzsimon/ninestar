@@ -36,11 +36,11 @@ namespace K9.WebApplication.Controllers
         }
 
         [HttpPost]
-        public ActionResult ProcessPurchase(PaymentModel paymentModel)
+        public ActionResult ProcessPurchase(PurchaseModel purchaseModel)
         {
             try
             {
-                _membershipService.ProcessPurchase(paymentModel);
+                _membershipService.ProcessPurchase(purchaseModel);
                 return Json(new { success = true });
             }
             catch (Exception ex)
@@ -80,11 +80,11 @@ namespace K9.WebApplication.Controllers
         }
 
         [HttpPost]
-        public ActionResult ProcessPurchaseCredits(PaymentModel paymentModel)
+        public ActionResult ProcessPurchaseCredits(PurchaseModel purchaseModel)
         {
             try
             {
-                _membershipService.ProcessCreditsPurchase(paymentModel);
+                _membershipService.ProcessCreditsPurchase(purchaseModel);
                 return Json(new { success = true });
             }
             catch (Exception ex)
@@ -127,7 +127,7 @@ namespace K9.WebApplication.Controllers
         [HttpPost]
         [Route("membership/switch/processing")]
         [ValidateAntiForgeryToken]
-        public ActionResult SwitchPurchaseProcess(PaymentModel model)
+        public ActionResult SwitchPurchaseProcess(PurchaseModel model)
         {
             try
             {

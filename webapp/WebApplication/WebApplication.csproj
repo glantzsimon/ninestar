@@ -375,7 +375,7 @@
     <Compile Include="Helpers\Separator.cs" />
     <Compile Include="Models\CompatibilityDetailsModel.cs" />
     <Compile Include="Models\CompatibilityModel.cs" />
-    <Compile Include="Models\PaymentModel.cs" />
+    <Compile Include="Models\PurchaseModel.cs" />
     <Compile Include="Options\GaugeOptions.cs" />
     <Compile Include="Options\PaymentsOptions.cs" />
     <Compile Include="Services\UserService.cs" />

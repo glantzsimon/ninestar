@@ -1,12 +1,12 @@
 ﻿using K9.Base.DataAccessLayer.Attributes;
+using K9.Base.DataAccessLayer.Extensions;
 using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Globalization;
 using System.Text;
-using K9.Base.DataAccessLayer.Extensions;
-using K9.SharedLibrary.Extensions;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -34,6 +34,13 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.UsedOnLabel)]
         public DateTime? UsedOn { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
+        [DataType(DataType.Currency)]
+        public double TotalPrice { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
+        public string FormattedPrice => TotalPrice == 0 ? Globalisation.Dictionary.Free : TotalPrice.ToString("C0", CultureInfo.GetCultureInfo("en-US"));
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.SubscriptionTypeLabel)]
         public string SubscriptionTypeName => SubscriptionType > 0 ? SubscriptionType.GetLocalisedLanguageName() : "";

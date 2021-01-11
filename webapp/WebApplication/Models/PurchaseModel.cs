@@ -1,6 +1,6 @@
 ﻿namespace K9.WebApplication.Models
 {
-    public class PaymentModel
+    public class PurchaseModel
     {
         public int ItemId { get; set; }
         public int Quantity { get; set; }

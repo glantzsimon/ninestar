@@ -199,7 +199,7 @@ namespace K9.WebApplication.Controllers
                     {
                         _userService.CheckPromoCode(user.Id, model.PromoCode);
 
-                        _membershipService.ProcessPurchase(user.Id, model.PromoCode);
+                        _membershipService.ProcessPurchaseWithPromoCode(user.Id, model.PromoCode);
                     }
 
                     return RedirectToAction("AccountCreated", "Account");

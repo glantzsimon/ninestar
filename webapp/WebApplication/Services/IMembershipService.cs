@@ -15,9 +15,9 @@ namespace K9.WebApplication.Services
         MembershipModel GetSwitchMembershipModelBySubscriptionType(MembershipOption.ESubscriptionType subscriptionType);
         MembershipModel GetPurchaseMembershipModelBySubscriptionType(MembershipOption.ESubscriptionType subscriptionType);
         void CreateFreeMembership(int userId);
-        void ProcessPurchase(int userId, string code);
-        void ProcessPurchase(PaymentModel paymentModel, int? userId = null);
-        void ProcessCreditsPurchase(PaymentModel paymentModel, int? userId = null);
+        void ProcessPurchaseWithPromoCode(int userId, string code);
+        void ProcessPurchase(PurchaseModel purchaseModel, int? userId = null, PromoCode promoCode = null);
+        void ProcessCreditsPurchase(PurchaseModel purchaseModel, int? userId = null, PromoCode promoCode = null);
       
         /// <summary>
         /// Switch memberships without processing payment (downgrade or scheduled switch)

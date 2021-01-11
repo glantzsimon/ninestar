@@ -59,7 +59,7 @@ namespace K9.WebApplication.Controllers
                 return Json(new
                 {
                     success = true,
-                    paymentModel = new PaymentModel
+                    purchaseModel = new PurchaseModel
                     {
                         ItemId = id,
                         Quantity = quantity,
@@ -75,7 +75,7 @@ namespace K9.WebApplication.Controllers
             }
             catch (Exception ex)
             {
-                _logger.Error($"SupportController => DonationSuccess => Error: {ex.GetFullErrorMessage()}");
+                _logger.Error($"PaymentController => ProcessPayment => Error: {ex.GetFullErrorMessage()}");
                 return Json(new
                 {
                     success = false,

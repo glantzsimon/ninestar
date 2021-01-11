@@ -236,7 +236,7 @@ namespace K9.WebApplication.Services
 
             var credits = promoCode.Credits;
             var user = _usersRepository.Find(userId);
-            var contact = _contactService.Find(user.EmailAddress);
+            var contact = _contactService.GetOrCreateContact("", user.Name, user.EmailAddress, user.PhoneNumber);
 
             ProcessPurchase(new PurchaseModel
             {

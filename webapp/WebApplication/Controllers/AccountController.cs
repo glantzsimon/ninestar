@@ -187,6 +187,11 @@ namespace K9.WebApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(RegisterViewModel model)
         {
+            if (_authentication.IsAuthenticated)
+            {
+                _authentication.Logout();
+            }
+
             if (ModelState.IsValid)
             {
                 var result = _accountService.Register(model.RegisterModel);

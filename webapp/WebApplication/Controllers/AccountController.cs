@@ -19,6 +19,7 @@ using NLog;
 using System;
 using System.Linq;
 using System.Web.Mvc;
+using K9.WebApplication.Models;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
@@ -197,6 +198,11 @@ namespace K9.WebApplication.Controllers
                     if (user?.Id > 0 && !string.IsNullOrEmpty(model.PromoCode))
                     {
                         _userService.CheckPromoCode(user.Id, model.PromoCode);
+
+                        _membershipService.ProcessPurchase(new PaymentModel
+                        {
+                            ItemId = model.PromoCode.
+                        });
                     }
 
                     return RedirectToAction("AccountCreated", "Account");

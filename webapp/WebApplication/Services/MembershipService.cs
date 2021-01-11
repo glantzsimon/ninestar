@@ -29,10 +29,11 @@ namespace K9.WebApplication.Services
         private readonly IRepository<User> _usersRepository;
         private readonly IContactService _contactService;
         private readonly IMailer _mailer;
+        private readonly IRepository<PromoCode> _promoCodesRepository;
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<UserProfileReading> userProfileReadingsRepository, IRepository<UserRelationshipCompatibilityReading> userRelationshipCompatibilityReadingsRepository, IRepository<UserCreditPack> userCreditPacksRepository, IRepository<User> usersRepository, IContactService contactService, IMailer mailer, IOptions<WebsiteConfiguration> config)
+        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<UserProfileReading> userProfileReadingsRepository, IRepository<UserRelationshipCompatibilityReading> userRelationshipCompatibilityReadingsRepository, IRepository<UserCreditPack> userCreditPacksRepository, IRepository<User> usersRepository, IContactService contactService, IMailer mailer, IOptions<WebsiteConfiguration> config, IRepository<PromoCode> promoCodesRepository)
         {
             _logger = logger;
             _authentication = authentication;
@@ -44,6 +45,7 @@ namespace K9.WebApplication.Services
             _usersRepository = usersRepository;
             _contactService = contactService;
             _mailer = mailer;
+            _promoCodesRepository = promoCodesRepository;
             _config = config.Value;
             _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }
@@ -53,7 +55,7 @@ namespace K9.WebApplication.Services
             userId = userId ?? _authentication.CurrentUserId;
             var membershipOptions = _membershipOptionRepository.List();
             var activeUserMembership = GetActiveUserMembership(userId);
-            
+
             return new MembershipViewModel
             {
                 MembershipModels = new List<MembershipModel>(membershipOptions.Select(membershipOption =>
@@ -119,7 +121,7 @@ namespace K9.WebApplication.Services
 
             return activeUserMembership;
         }
-        
+
         public bool IsCompleteProfileReading(int? userId, DateTime dateOfBirth, EGender gender)
         {
             var activeUserMembership = GetActiveUserMembership(userId);
@@ -168,7 +170,7 @@ namespace K9.WebApplication.Services
             {
                 throw new Exception(Dictionary.SwitchMembershipErrorAlreadySubscribed);
             }
-            
+
             var membershipOption = _membershipOptionRepository.Find(membershipOptionId);
             if (!activeUserMembership.MembershipOption.CanUpgradeTo(membershipOption))
             {
@@ -214,7 +216,29 @@ namespace K9.WebApplication.Services
             return GetPurchaseMembershipModel(membershipOption?.Id ?? 0);
         }
 
-        public void ProcessPurchase(PaymentModel paymentModel)
+        public void ProcessPurchase(int userId, string code)
+        {
+            var promoCode = _promoCodesRepository.Find(e => e.Code == code).FirstOrDefault();
+            var subscription = _membershipOptionRepository.Find(e => e.SubscriptionType == promoCode.SubscriptionType).FirstOrDefault();
+            var credits = promoCode.Credits;
+            var user = _usersRepository.Find(userId);
+            var contact = _contactService.Find(user.EmailAddress);
+
+            ProcessPurchase(new PaymentModel
+            {
+                ItemId = subscription.Id,
+                ContactId = contact.Id
+            }, userId);
+
+            ProcessCreditsPurchase(new PaymentModel
+            {
+                ItemId = subscription.Id,
+                ContactId = contact.Id,
+                Quantity = credits
+            }, userId);
+        }
+
+        public void ProcessPurchase(PaymentModel paymentModel, int? userId = null)
         {
             try
             {
@@ -228,15 +252,15 @@ namespace K9.WebApplication.Services
 
                 var userMembership = new UserMembership
                 {
-                    UserId = _authentication.CurrentUserId,
+                    UserId = userId ?? _authentication.CurrentUserId,
                     MembershipOptionId = membershipOptionId,
                     StartsOn = DateTime.Today,
                     EndsOn = membershipOption.IsAnnual ? DateTime.Today.AddYears(1) : DateTime.Today.AddMonths(1),
                     IsAutoRenew = true
                 };
-                
+
                 _userMembershipRepository.Create(userMembership);
-                userMembership.User = _usersRepository.Find(_authentication.CurrentUserId);
+                userMembership.User = _usersRepository.Find(userId ?? _authentication.CurrentUserId);
                 TerminateExistingMemberships(membershipOptionId);
 
                 var contact = _contactService.Find(paymentModel.ContactId);
@@ -252,7 +276,7 @@ namespace K9.WebApplication.Services
             }
         }
 
-        public void ProcessCreditsPurchase(PaymentModel paymentModel)
+        public void ProcessCreditsPurchase(PaymentModel paymentModel, int? userId = null)
         {
             try
             {
@@ -264,7 +288,7 @@ namespace K9.WebApplication.Services
 
                 var userCreditPack = new UserCreditPack
                 {
-                    UserId = _authentication.CurrentUserId,
+                    UserId = userId ?? _authentication.CurrentUserId,
                     NumberOfCredits = numberOfCredits,
                     TotalPrice = creditsModel.TotalPrice
                 };

@@ -74,6 +74,11 @@ namespace K9.WebApplication.Services
             return _contactsRepository.Find(id);
         }
 
+        public Contact Find(string emailAddress)
+        {
+            return _contactsRepository.Find(e => e.EmailAddress == emailAddress).FirstOrDefault();
+        }
+
         public List<Contact> ListContacts()
         {
             return _contactsRepository.List().OrderBy(e => e.FullName).ToList();

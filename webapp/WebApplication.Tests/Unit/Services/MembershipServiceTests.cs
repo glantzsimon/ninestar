@@ -114,7 +114,8 @@ namespace K9.WebApplication.Tests.Unit.Services
                 _usersRepository.Object,
                 _contactService.Object,
                 _mailer.Object,
-                _config.Object);
+                _config.Object,
+                new Mock<IRepository<PromoCode>>().Object);
         }
 
         [Fact]

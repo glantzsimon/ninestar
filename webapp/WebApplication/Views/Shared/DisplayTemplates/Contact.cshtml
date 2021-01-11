@@ -1,0 +1,6 @@
+﻿@using K9.Base.WebApplication.Extensions
+@model int?
+@{
+    var value = this.GetDropdownData().GetName<Contact>(Model, true, "FullName");
+}
+<div>@value</div>

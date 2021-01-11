@@ -248,6 +248,7 @@
     <Compile Include="Database\Db.cs" />
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
+    <Compile Include="Enums\EConsultationDuration.cs" />
     <Compile Include="Migrations\202007211011153_July2020.cs" />
     <Compile Include="Migrations\202007211011153_July2020.Designer.cs">
       <DependentUpon>202007211011153_July2020.cs</DependentUpon>
@@ -304,10 +305,12 @@
     <Compile Include="Migrations\202101111639061_AddPriceToPromoCode.Designer.cs">
       <DependentUpon>202101111639061_AddPriceToPromoCode.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Consultation.cs" />
     <Compile Include="Models\PromoCode.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\MembershipOption.cs" />
     <Compile Include="Models\UserCompatibilityReading.cs" />
+    <Compile Include="Models\UserConsultation.cs" />
     <Compile Include="Models\UserPromoCode.cs" />
     <Compile Include="Models\UserCreditPack.cs" />
     <Compile Include="Models\UserProfileReading.cs" />
@@ -321,7 +324,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Attributes\" />
-    <Folder Include="Enums\" />
     <Folder Include="Exceptions\" />
     <Folder Include="Helpers\" />
   </ItemGroup>

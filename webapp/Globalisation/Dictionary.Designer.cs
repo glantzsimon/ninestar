@@ -1330,6 +1330,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Additional Comments.
+        /// </summary>
+        public static string AdditionalComments {
+            get {
+                return ResourceManager.GetString("AdditionalComments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Further Reading.
         /// </summary>
         public static string AdditionalInformation {
@@ -1479,6 +1488,49 @@ namespace K9.Globalisation {
         public static string Blossoming {
             get {
                 return ResourceManager.GetString("Blossoming", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;article&gt;
+        ///    &lt;h5 class=&quot;margin-top-0&quot;&gt;
+        ///        Explore your personal chart and your relationships in greater depth and detail with a one-to-one 9 Star Ki consultation.
+        ///    &lt;/h5&gt;
+        ///    &lt;p&gt;
+        ///        9 Star Ki is a great tool to help elucidate some of the subtle yet fundamental energetic forces that influence the dynamics of our relationships and can help to reduce feelings of frustration as well as removing or reducing blame and judgment.
+        ///    &lt;/p&gt;
+        ///&lt;/article&gt;.
+        /// </summary>
+        public static string book_consultation_blurb {
+            get {
+                return ResourceManager.GetString("book_consultation_blurb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Book a Consultation.
+        /// </summary>
+        public static string BookAConsultation {
+            get {
+                return ResourceManager.GetString("BookAConsultation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thank you. Your consultation has been booked..
+        /// </summary>
+        public static string BookAConsultationSuccess {
+            get {
+                return ResourceManager.GetString("BookAConsultationSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We will be in touch shortly to arrange a convenient time to talk..
+        /// </summary>
+        public static string BookAConsultationSuccessMessage {
+            get {
+                return ResourceManager.GetString("BookAConsultationSuccessMessage", resourceCulture);
             }
         }
         
@@ -1893,6 +1945,96 @@ namespace K9.Globalisation {
         public static string Consolidating {
             get {
                 return ResourceManager.GetString("Consolidating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Consultation.
+        /// </summary>
+        public static string Consultation {
+            get {
+                return ResourceManager.GetString("Consultation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///
+        ///&lt;head&gt;
+        ///    &lt;title&gt;{Title}&lt;/title&gt;
+        ///&lt;/head&gt;
+        ///
+        ///&lt;style type=&quot;text/css&quot;&gt;
+        ///    html {
+        ///        margin: 0;
+        ///        padding: 0;
+        ///        font-family: &quot;Segoe UI&quot;, Verdana, Helvetica, Sans-Serif;
+        ///        font-size: 100%;
+        ///        text-rendering: optimizeLegibility !important;
+        ///        -webkit-font-smoothing: antialiased !important;
+        ///        margin: 0;
+        ///        color: #333;
+        ///    }
+        ///&lt;/style&gt;
+        ///
+        ///&lt;body&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;We have received a n [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ConsultationBookedEmail {
+            get {
+                return ResourceManager.GetString("ConsultationBookedEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!doctype html&gt;
+        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;!-- NAME: 1:2:1 COLUMN --&gt;
+        ///    &lt;!--[if gte mso 15]&gt;
+        ///    &lt;xml&gt;
+        ///        &lt;o:OfficeDocumentSettings&gt;
+        ///        &lt;o:AllowPNG/&gt;
+        ///        &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
+        ///        &lt;/o:OfficeDocumentSettings&gt;
+        ///    &lt;/xml&gt;
+        ///    &lt;![endif]--&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
+        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ConsultationBookedThankYouEmail {
+            get {
+                return ResourceManager.GetString("ConsultationBookedThankYouEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Duration (hours).
+        /// </summary>
+        public static string ConsultationDurationDescription {
+            get {
+                return ResourceManager.GetString("ConsultationDurationDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Consultation Duration.
+        /// </summary>
+        public static string ConsultationDurationLabel {
+            get {
+                return ResourceManager.GetString("ConsultationDurationLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Consultations.
+        /// </summary>
+        public static string Consultations {
+            get {
+                return ResourceManager.GetString("Consultations", resourceCulture);
             }
         }
         
@@ -2508,6 +2650,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Duration.
+        /// </summary>
+        public static string Duration {
+            get {
+                return ResourceManager.GetString("Duration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dynamic.
         /// </summary>
         public static string Dynamic {
@@ -2674,6 +2825,15 @@ namespace K9.Globalisation {
         public static string EmailAddressLabel {
             get {
                 return ResourceManager.GetString("EmailAddressLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email Customer.
+        /// </summary>
+        public static string EmailCustomer {
+            get {
+                return ResourceManager.GetString("EmailCustomer", resourceCulture);
             }
         }
         
@@ -5067,10 +5227,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    &lt;!--In addition to the yearly cycles that each our lives move through, there are also monthly cycles--&gt;
-        ///    Coming soon...
-        ///&lt;/h5&gt;.
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Our lives also move through monthly cycles. The Energy associated with the month affects us on a more immediate and emotional level.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    In addition to the yearly cycles that each our lives move through, there are also smaller, monthly cycles. The energy of the yearly cycle is always felt and is the overarching influence on the direction of our lives. However, the effect of the monthly cycle is more immediate and felt on an emotional level. For example, we could be in a 1 Water year,  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string month_description {
             get {
@@ -5531,6 +5692,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 9 Star Ki Consultation.
+        /// </summary>
+        public static string NineStarKiConsultation {
+            get {
+                return ResourceManager.GetString("NineStarKiConsultation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 9 Star Ki.
         /// </summary>
         public static string NineStarKiTitle {
@@ -5671,6 +5841,15 @@ namespace K9.Globalisation {
         public static string OccupationsLabel {
             get {
                 return ResourceManager.GetString("OccupationsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to One Hour.
+        /// </summary>
+        public static string OneHour {
+            get {
+                return ResourceManager.GetString("OneHour", resourceCulture);
             }
         }
         
@@ -7198,6 +7377,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Got a question?
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Please let us know if there is anything we can help with. Feel free to ask us anything about 9 Star Ki that might not be clear to you. Additionally, if you are interested, you can &lt;a target=&quot;_blank&quot; href=&quot;{BookConsultationLink}&quot;&gt;book a consultation&lt;/a&gt; for a more in-depth look at your chart and your relationships.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string support_blurb {
+            get {
+                return ResourceManager.GetString("support_blurb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;!doctype html&gt;
         ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
         ///&lt;head&gt;
@@ -7291,6 +7484,15 @@ namespace K9.Globalisation {
         public static string SwitchSuccessfulTitle {
             get {
                 return ResourceManager.GetString("SwitchSuccessfulTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thank you for booking a 9 Star Ki consultation.
+        /// </summary>
+        public static string ThankyouForBookingConsultationEmailTitle {
+            get {
+                return ResourceManager.GetString("ThankyouForBookingConsultationEmailTitle", resourceCulture);
             }
         }
         
@@ -7653,6 +7855,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Two Hours.
+        /// </summary>
+        public static string TwoHours {
+            get {
+                return ResourceManager.GetString("TwoHours", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unavailable.
         /// </summary>
         public static string Unavailable {
@@ -7757,6 +7968,15 @@ namespace K9.Globalisation {
         public static string UsedOnLabel {
             get {
                 return ResourceManager.GetString("UsedOnLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Consultations.
+        /// </summary>
+        public static string UserConsultations {
+            get {
+                return ResourceManager.GetString("UserConsultations", resourceCulture);
             }
         }
         

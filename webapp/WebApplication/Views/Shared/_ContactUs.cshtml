@@ -1,15 +1,27 @@
-﻿@model K9.Base.WebApplication.ViewModels.ContactUsViewModel
+﻿@using K9.SharedLibrary.Extensions
+@using K9.SharedLibrary.Helpers
+@model K9.Base.WebApplication.ViewModels.ContactUsViewModel
+
+@{
+    var blurb = TemplateProcessor.PopulateTemplate(Dictionary.support_blurb, new
+    {
+        BookConsultationLink = Url.AbsoluteAction("BookConsultation", "Support")
+    });
+}
 
 @using (Html.BeginForm("ContactUs", "Support"))
 {
-	using (Html.BeginBootstrapForm())
-	{
-		@Html.BootstrapEditorFor(m => m.Name)
-		@Html.BootstrapEditorFor(m => m.EmailAddress)
-		@Html.BootstrapEditorFor(m => m.Subject)
-		@Html.BootstrapEditorFor(m => m.Body)
-		
-		<hr/>
-		@Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Submit, EButtonType.Submit, "fa-envelope")
-	}
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.Raw(blurb)
+        <hr />
+
+        @Html.BootstrapEditorFor(m => m.Name)
+        @Html.BootstrapEditorFor(m => m.EmailAddress)
+        @Html.BootstrapEditorFor(m => m.Subject)
+        @Html.BootstrapEditorFor(m => m.Body)
+
+        <hr />
+        @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Submit, EButtonType.Submit, "fa-envelope")
+    }
 }

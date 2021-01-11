@@ -9,7 +9,7 @@
 @Html.BootstrapTable(new DataTableOptions<Contact>
 {
     AllowCreate = false,
-    AllowEdit = false,
+    AllowEdit = true,
     AllowDelete = ((BaseController<Contact>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
     VisibleColumns = new List<string>
     {

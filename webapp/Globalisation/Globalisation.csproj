@@ -102,10 +102,18 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="General\en-gb\AgreeToTerms.htm" />
+    <Content Include="General\en-gb\platinum-annual-membership-description.htm" />
+    <Content Include="General\en-gb\platinum-monthly-membership-description.htm" />
+    <Content Include="General\en-gb\PrivacyPolicy.htm" />
+    <Content Include="General\en-gb\standard-annual-membership-description.htm" />
+    <Content Include="General\en-gb\standard-monthly-membership-description.htm" />
+    <Content Include="General\en-gb\book-consultation-blurb.htm" />
+    <Content Include="General\en-gb\support-blurb.htm" />
+    <Content Include="General\en-gb\welcome.htm" />
     <Content Include="Articles\en-gb\coreearth-child.htm" />
     <Content Include="Articles\en-gb\five-transformations.htm" />
     <Content Include="Articles\en-gb\heaven-sexuality-female.htm" />
-    <Content Include="Articles\en-gb\platinum-annual-membership-description.htm" />
     <Content Include="Articles\en-gb\relationships-description.htm" />
     <Content Include="Articles\en-gb\sexuality-description.htm" />
     <Content Include="Articles\en-gb\fire-sexuality.htm" />
@@ -125,7 +133,6 @@
     <Content Include="Articles\en-gb\sexuality-opposite-opposite-male.htm" />
     <Content Include="Articles\en-gb\soil-sexuality-female.htm" />
     <Content Include="Articles\en-gb\free-membership-description.htm" />
-    <Content Include="Articles\en-gb\standard-annual-membership-description.htm" />
     <Content Include="Articles\en-gb\thunder-sexuality-female.htm" />
     <Content Include="Articles\en-gb\wind-sexuality.htm" />
     <Content Include="Articles\en-gb\thunder-sexuality-male.htm" />
@@ -368,7 +375,6 @@
     <Content Include="Articles\en-gb\cycles.htm" />
     <Content Include="Articles\en-gb\five-elements.htm" />
     <Content Include="Articles\en-gb\nine-energies.htm" />
-    <Content Include="Articles\en-gb\welcome.htm" />
     <Content Include="Articles\en-gb\yinyang.htm" />
     <Content Include="Articles\en-gb\origins.htm" />
     <Content Include="Articles\en-gb\soil-health.htm" />
@@ -396,6 +402,8 @@
     <Content Include="Articles\en-gb\mountain-trigram.htm" />
     <Content Include="Articles\en-gb\fire-trigram.htm" />
     <Content Include="Articles\en-gb\water-trigram.htm" />
+    <Content Include="Templates\en-gb\ConsultationBookedEmail.htm" />
+    <Content Include="Templates\en-gb\ConsultationBookedThankYouEmail.htm" />
     <Content Include="Templates\en-gb\PromoCodeEmail.htm" />
     <Content Include="Templates\en-gb\PaymentError.htm" />
     <Content Include="Templates\en-gb\CreditPackPurchased.htm" />
@@ -412,13 +420,9 @@
     <Content Include="Articles\en-gb\CharacterEnergyDescription.htm" />
     <Content Include="Articles\en-gb\MainEnergyDescription.htm" />
     <Content Include="Text\en-gb\cookies-blurb.txt" />
-    <Content Include="Articles\en-gb\AgreeToTerms.htm" />
-    <Content Include="Articles\en-gb\PrivacyPolicy.htm" />
-    <Content Include="Articles\en-gb\platinum-monthly-membership-description.htm" />
     <Content Include="Articles\en-gb\RelationshipsMetaDescription.htm" />
     <Content Include="Text\en-gb\nine-star-ki-title.txt" />
     <Content Include="Text\en-gb\Keywords.txt" />
-    <Content Include="Articles\en-gb\standard-monthly-membership-description.htm" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

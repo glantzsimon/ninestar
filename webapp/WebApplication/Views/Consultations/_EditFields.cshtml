@@ -1,0 +1,10 @@
+﻿@model Consultation
+
+@Html.HiddenFor(e => e.ContactId)
+
+@Html.BootstrapDisplayFor(model => model.CreatedOn)
+@Html.BootstrapDisplayFor(model => model.ContactName)
+@Html.BootstrapDisplayFor(model => model.DurationDescription)
+@Html.BootstrapDisplayFor(model => model.FormattedPrice)
+
+@Html.BootstrapEditorFor(model => model.ConsultationDuration)

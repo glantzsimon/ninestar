@@ -16,10 +16,12 @@
             @MvcHtmlString.Create(Dictionary.welcome)
         </article>
 
-        <br/>
+        <br />
 
         @Html.BootstrapActionLinkButton(Dictionary.PersonalProfileCalculator, "Index", "NineStarKi")
 
         @Html.BootstrapActionLinkButton(Dictionary.LearnMoreAboutNineStarKi, "About", "Home", null, null, EButtonClass.Info)
+
+        @Html.BootstrapActionLinkButton(Dictionary.BookAConsultation, "BookConsultationStart", "Consultations", null, null, EButtonClass.Success)
     </div>
 </div>

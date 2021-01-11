@@ -16,6 +16,9 @@
             public const string AmountToDonateLabel = "AmountToDonateLabel";
             public const string AmountToPayLabel = "AmountToPayLabel";
             public const string CustomerLabel = "CustomerLabel";
+            public const string AdditionalCommentsLabel = "AdditionalComments";
+            public const string ConsultationDurationLabel = "ConsultationDurationLabel";
+            public const string DurationLabel = "Duration";
             public const string DonatedOnLabel = "DonatedOnLabel";
             public const string CurrencyLabel = "CurrencyLabel";
             public const string CustomerEmailLabel = "CustomerEmailLabel";
@@ -80,6 +83,8 @@
             public const string UserPromoCode = "UserPromoCode";
             public const string UserPromoCodes = "UserPromoCodes";
             public const string Donations = "Donations";
+            public const string Consultation = "Consultation";
+            public const string Consultations = "Consultations";
             public const string MembershipOptions = "MembershipOptions";
             public const string ProfileReadings = "ProfileReadings";
             public const string MembershipOption = "MembershipOption";
@@ -95,6 +100,8 @@
             public const string AnnualStandardMembership = "AnnualStandardMembership";
             public const string MonthlyPlatinumMembership = "MonthlyPlatinumMembership";
             public const string AnnualPlatinumMembership = "AnnualPlatinumMembership";
+            public const string OneHour = "OneHour";
+            public const string TwoHours = "TwoHours";
 
             public const string Female = "Female";
             public const string Male = "Male";

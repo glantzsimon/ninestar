@@ -20,7 +20,6 @@ namespace K9.WebApplication.Controllers
         private readonly IMailer _mailer;
         private readonly IDonationService _donationService;
         private readonly IContactService _contactService;
-        private readonly StripeConfiguration _stripeConfig;
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
@@ -31,7 +30,6 @@ namespace K9.WebApplication.Controllers
             _mailer = mailer;
             _donationService = donationService;
             _contactService = contactService;
-            _stripeConfig = stripeConfig.Value;
             _config = config.Value;
             _urlHelper = new UrlHelper(System.Web.HttpContext.Current.Request.RequestContext);
         }
@@ -72,7 +70,7 @@ namespace K9.WebApplication.Controllers
         {
             return View();
         }
-
+        
         [Route("donate")]
         public ActionResult DonateStart()
         {
@@ -88,14 +86,7 @@ namespace K9.WebApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Donate(Donation donation)
         {
-            ViewBag.PublishableKey = _stripeConfig.PublishableKey;
             return View(donation);
-        }
-
-        [Route("donate/success")]
-        public ActionResult DonationSuccess(string sessionId)
-        {
-            return View();
         }
 
         [HttpPost]
@@ -122,6 +113,12 @@ namespace K9.WebApplication.Controllers
                 _logger.Error($"SupportController => ProcessDonation => Error: {ex.GetFullErrorMessage()}");
                 return Json(new { success = false, error = ex.Message });
             }
+        }
+
+        [Route("donate/success")]
+        public ActionResult DonationSuccess(string sessionId)
+        {
+            return View();
         }
 
         [Route("donate/cancel/success")]

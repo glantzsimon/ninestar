@@ -643,9 +643,6 @@
   <data name="nine_energies" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\nine-energies.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="welcome" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\welcome.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="Learn" xml:space="preserve">
     <value>Learn</value>
   </data>
@@ -1423,9 +1420,6 @@
   <data name="UpgradeMembershipText" xml:space="preserve">
     <value>Upgrade your subscription</value>
   </data>
-  <data name="AgreeToTerms" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\agreetoterms.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="CharacterEnergyDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\characterenergydescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -1440,9 +1434,6 @@
   </data>
   <data name="OverviewLabel" xml:space="preserve">
     <value>Overview</value>
-  </data>
-  <data name="PrivacyPolicy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\privacypolicy.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="RelationshipsMetaDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\relationshipsmetadescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -2125,19 +2116,85 @@
   <data name="Code" xml:space="preserve">
     <value>Code</value>
   </data>
-  <data name="platinum_annual_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\platinum-annual-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="platinum_monthly_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\platinum-monthly-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="PromoCodeEmailTitle" xml:space="preserve">
     <value>You have received a promo code from NineStar</value>
   </data>
+  <data name="AgreeToTerms" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>general\en-gb\agreetoterms.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="platinum_annual_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>general\en-gb\platinum-annual-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="platinum_monthly_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>general\en-gb\platinum-monthly-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PrivacyPolicy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>general\en-gb\privacypolicy.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="standard_annual_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\standard-annual-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>general\en-gb\standard-annual-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="standard_monthly_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\standard-monthly-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>general\en-gb\standard-monthly-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="support_blurb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>general\en-gb\support-blurb.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="welcome" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>general\en-gb\welcome.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="AdditionalComments" xml:space="preserve">
+    <value>Additional Comments</value>
+  </data>
+  <data name="BookAConsultation" xml:space="preserve">
+    <value>Book a Consultation</value>
+  </data>
+  <data name="BookAConsultationSuccessMessage" xml:space="preserve">
+    <value>We will be in touch shortly to arrange a convenient time to talk.</value>
+  </data>
+  <data name="book_consultation_blurb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>general\en-gb\book-consultation-blurb.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Consultation" xml:space="preserve">
+    <value>Consultation</value>
+  </data>
+  <data name="ConsultationBookedEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>templates\en-gb\consultationbookedemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ConsultationBookedThankYouEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>templates\en-gb\consultationbookedthankyouemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ConsultationDurationDescription" xml:space="preserve">
+    <value>Duration (hours)</value>
+  </data>
+  <data name="ConsultationDurationLabel" xml:space="preserve">
+    <value>Consultation Duration</value>
+  </data>
+  <data name="Consultations" xml:space="preserve">
+    <value>Consultations</value>
+  </data>
+  <data name="Duration" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="EmailCustomer" xml:space="preserve">
+    <value>Email Customer</value>
+  </data>
+  <data name="NineStarKiConsultation" xml:space="preserve">
+    <value>9 Star Ki Consultation</value>
+  </data>
+  <data name="OneHour" xml:space="preserve">
+    <value>One Hour</value>
+  </data>
+  <data name="ThankyouForBookingConsultationEmailTitle" xml:space="preserve">
+    <value>Thank you for booking a 9 Star Ki consultation</value>
+  </data>
+  <data name="TwoHours" xml:space="preserve">
+    <value>Two Hours</value>
+  </data>
+  <data name="UserConsultations" xml:space="preserve">
+    <value>User Consultations</value>
+  </data>
+  <data name="BookAConsultationSuccess" xml:space="preserve">
+    <value>Thank you. Your consultation has been booked.</value>
   </data>
 </root>

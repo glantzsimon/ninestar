@@ -1,0 +1,20 @@
+﻿@model Consultation
+@{
+    ViewBag.Title = Dictionary.BookAConsultation;
+    ViewBag.SubTitle = Dictionary.BookAConsultation;
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+
+@using (Html.BeginForm("BookConsultation", "Consultation", FormMethod.Post))
+{
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.Raw(Dictionary.book_consultation_blurb)
+        <hr />
+
+        @Html.BootstrapEditorFor(m => m.ConsultationDuration)
+        
+        <hr />
+        @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
+    }
+}

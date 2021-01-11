@@ -7,8 +7,8 @@
 }
 @Html.BootstrapTable(new DataTableOptions<UserMembership>
 {
-    AllowCreate = false,
-    AllowEdit = false,
+    AllowCreate = true,
+    AllowEdit = true,
     AllowDelete = ((BaseController<UserMembership>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
     VisibleColumns = new List<string>
     {

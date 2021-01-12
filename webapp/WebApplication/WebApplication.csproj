@@ -326,6 +326,7 @@
     <Compile Include="Attributes\NineStarKiEnumMetaDataAttribute.cs" />
     <Compile Include="Config\GoogleConfiguration.cs" />
     <Compile Include="Config\MailChimpConfiguration.cs" />
+    <Compile Include="Config\ColumnsConfig.cs" />
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
     <Compile Include="Controllers\BaseNineStarKiController.cs" />

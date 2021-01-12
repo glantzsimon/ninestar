@@ -25,6 +25,5 @@ namespace K9.WebApplication
 
 		    Stripe.StripeConfiguration.SetApiKey(ConfigurationManager.AppSettings["SecretKey"]);
         }
-		
 	}
 }

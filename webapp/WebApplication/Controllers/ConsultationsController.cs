@@ -14,6 +14,7 @@ namespace K9.WebApplication.Controllers
         public ConsultationsController(IControllerPackage<Consultation> controllerPackage)
             : base(controllerPackage)
         {
+
         }
     }
 }

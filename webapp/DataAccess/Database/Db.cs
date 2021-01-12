@@ -11,5 +11,7 @@ namespace K9.DataAccessLayer.Database
 	    public DbSet<UserMembership> UserMemberships { get; set; }
 	    public DbSet<PromoCode> PromoCodes { get; set; }
 	    public DbSet<UserPromoCode> UserPromoCodes { get; set; }
+	    public DbSet<Consultation> Consultations { get; set; }
+	    public DbSet<UserConsultation> UserConsultations { get; set; }
     }
 }

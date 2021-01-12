@@ -305,6 +305,10 @@
     <Compile Include="Migrations\202101111639061_AddPriceToPromoCode.Designer.cs">
       <DependentUpon>202101111639061_AddPriceToPromoCode.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101120128227_AddConsultations.cs" />
+    <Compile Include="Migrations\202101120128227_AddConsultations.Designer.cs">
+      <DependentUpon>202101120128227_AddConsultations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Consultation.cs" />
     <Compile Include="Models\PromoCode.cs" />
     <Compile Include="Models\Contact.cs" />
@@ -375,6 +379,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101111639061_AddPriceToPromoCode.resx">
       <DependentUpon>202101111639061_AddPriceToPromoCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101120128227_AddConsultations.resx">
+      <DependentUpon>202101120128227_AddConsultations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

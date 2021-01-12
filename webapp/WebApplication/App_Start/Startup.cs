@@ -41,7 +41,7 @@ namespace K9.WebApplication
             builder.Register(c => LogManager.GetCurrentClassLogger()).As<ILogger>().SingleInstance();
             builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IRepository<>)).InstancePerRequest();
             builder.RegisterGeneric(typeof(DataTableAjaxHelper<>)).As(typeof(IDataTableAjaxHelper<>)).InstancePerRequest();
-            builder.RegisterType<ColumnsConfig>().As<IColumnsConfig>().SingleInstance();
+            builder.RegisterType<Config.ColumnsConfig>().As<IColumnsConfig>().InstancePerRequest();
             builder.RegisterType<DataSetsHelper>().As<IDataSetsHelper>().InstancePerRequest();
             builder.RegisterType<DataSets>().As<IDataSets>().SingleInstance();
             builder.RegisterType<Users>().As<IUsers>().InstancePerRequest();
@@ -72,7 +72,7 @@ namespace K9.WebApplication
 
         public static void RegisterStaticTypes()
         {
-            HtmlHelpers.SetIgnoreColumns(new ColumnsConfig());
+            HtmlHelpers.SetIgnoreColumns(new Config.ColumnsConfig());
         }
 
         public static void RegisterConfiguration(ContainerBuilder builder)

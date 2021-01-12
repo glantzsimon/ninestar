@@ -5,6 +5,8 @@
     Layout = "../Shared/_LayoutForm.cshtml";
 }
 
-@Html.Success(Dictionary.YouAreSignedUp + " <i class='fa fa-smile-o'></i>", Html.ActionLink(K9.Base.Globalisation.Dictionary.MyAccountTitle, "MyAccount", "Account"))
+<div class="margin-bottom-10">
+    @Html.Success(Dictionary.YouAreSignedUp + " <i class='fa fa-smile-o'></i>", Html.ActionLink(K9.Base.Globalisation.Dictionary.MyAccountTitle, "MyAccount", "Account"))
 
-@Html.Partial("_RetrieveLast")
+    @Html.Partial("_RetrieveLast")
+</div>

@@ -43,13 +43,19 @@ namespace K9.WebApplication.Models
         public bool IsFundamentalElementSame { get; }
         public bool IsFundamentalElementSupportive { get; }
         public bool IsFundamentalElementChallenging { get; }
+        
         public bool IsCharacterGenderSame { get; }
         public bool IsCharacterModalitySame { get; }
         public bool IsCharacterElementSame { get; }
         public bool IsCharacterElementSupportive { get; }
         public bool IsCharacterElementChallenging { get; }
 
-        
+        //public bool IsFundamentalToCharacterElementSame { get; }
+        //public bool IsFundamentalToCharacterElementSupportive { get; }
+        //public bool IsFundamentalToCharacterElementChallenging { get; }
+        //public bool IsCharacterToElementSame { get; }
+        //public bool IsFundamentalToCharacterElementSupportive { get; }
+        //public bool IsFundamentalToCharacterElementChallenging { get; }
 
        
     }

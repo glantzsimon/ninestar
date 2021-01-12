@@ -28,6 +28,7 @@ namespace K9.DataAccessLayer.Models
         
         public virtual Contact Contact { get; set; }
 
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ContactLabel)]
         [LinkedColumn(LinkedTableName = "Contact", LinkedColumnName = "FullName")]
         public string ContactName { get; set; }
 

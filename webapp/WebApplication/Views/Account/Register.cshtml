@@ -16,22 +16,29 @@
         @Html.BootstrapEditorFor(model => model.RegisterModel.ConfirmPassword)
 
         <hr />
-        <div>
+        <div class="row">
             <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.FirstName)</div>
             <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.LastName)</div>
         </div>
         @Html.BootstrapEditorFor(model => model.RegisterModel.EmailAddress)
-        <div>
+        <div class="row">
             <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.BirthDate)</div>
             <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.Gender)</div>
         </div>
         @Html.BootstrapEditorFor(model => model.RegisterModel.PhoneNumber)
         @Html.BootstrapEditorFor(model => model.PromoCode)
         <hr />
-        @Html.BootstrapButton(Dictionary.Register)
-        @Html.BootstrapActionLinkButton(Dictionary.SignInWithFacebook, "Facebook", "Account", null, "fa-facebook")
+        <div id="recaptcha-container">
+        </div>
+        <hr />
+        <div id="recaptcha-buttons-container">
+            @Html.BootstrapButton(Dictionary.Register)
+            @Html.BootstrapActionLinkButton(Dictionary.SignInWithFacebook, "Facebook", "Account", null, "fa-facebook")
+        </div>
     }
 }
+
+@Html.Partial("_Recaptcha")
 
 <script language="javascript">
 

@@ -20,16 +20,20 @@ namespace K9.WebApplication.Controllers
         private readonly IMailer _mailer;
         private readonly IDonationService _donationService;
         private readonly IContactService _contactService;
+        private readonly IRecaptchaService _recaptchaService;
+        private readonly RecaptchaConfiguration _recaptchaConfig;
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public SupportController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IMailer mailer, IOptions<WebsiteConfiguration> config, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IOptions<StripeConfiguration> stripeConfig, IDonationService donationService, IMembershipService membershipService, IContactService contactService)
+        public SupportController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IMailer mailer, IOptions<WebsiteConfiguration> config, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IOptions<StripeConfiguration> stripeConfig, IDonationService donationService, IMembershipService membershipService, IContactService contactService, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _logger = logger;
             _mailer = mailer;
             _donationService = donationService;
             _contactService = contactService;
+            _recaptchaService = recaptchaService;
+            _recaptchaConfig = recaptchaConfig.Value;
             _config = config.Value;
             _urlHelper = new UrlHelper(System.Web.HttpContext.Current.Request.RequestContext);
         }
@@ -37,6 +41,7 @@ namespace K9.WebApplication.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            ViewBag.RecaptchaSiteKey = _recaptchaConfig.RecaptchaSiteKey;
             return View("ContactUs");
         }
 
@@ -44,6 +49,15 @@ namespace K9.WebApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult ContactUs(ContactUsViewModel model)
         {
+            var encodedResponse = Request.Form[RecaptchaResult.ResponseFormVariable];
+            var isCaptchaValid = _recaptchaService.Validate(encodedResponse);
+
+            if (!isCaptchaValid)
+            {
+                ModelState.AddModelError("", Dictionary.InvalidRecaptcha);
+                return View("ContactUs", model);
+            }
+
             try
             {
                 _mailer.SendEmail(

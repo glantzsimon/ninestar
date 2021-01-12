@@ -3,25 +3,23 @@
 
 @if (Model != null && Model.IsProcessed)
 {
-    @Html.CollapsiblePanel(Dictionary.SummaryLabel, Model.CompatibilitySummary, true)
-
     using (Html.BeginBootstrapForm())
     {
         <h4 class="margin-top-0 margin-bottom-10">@Dictionary.CompatibilityDetails</h4>
         <div class="ninestar-summmary container padding-0 margin-top-15 margin-bottom-0">
             <ul class="nav nav-pills nav-justified">
-                <li class="active"><a data-toggle="tab" href="#fundamental">@Dictionary.FundamentalEnergiesCompatibility</a></li>
-                <li><a data-toggle="tab" href="#character">@Dictionary.CharacterEnergiesCompatibility</a></li>
+                <li class="active"><a data-toggle="tab" href="#overall">@Dictionary.OverallCompatibility</a></li>
+                <li><a data-toggle="tab" href="#fundamental">@Dictionary.FundamentalEnergiesCompatibility</a></li>
                 <li><a data-toggle="tab" href="#sexuality">@Dictionary.SexualChemistryDetails</a></li>
             </ul>
 
             <div class="tab-content">
                 <div id="fundamental" class="tab-pane fade in active">
-                    @Html.Panel(Dictionary.FundamentalEnergiesCompatibility, Model.FundamentalEnergiesCompatibility)
+                    @Html.Panel(Dictionary.SummaryLabel, Model.CompatibilitySummary)
                 </div>
 
-                <div id="character" class="tab-pane fade">
-                    @Html.Panel(Dictionary.CharacterEnergiesCompatibility, Model.CharacterEnergiesCompatibility)
+                <div id="overall" class="tab-pane fade">
+                    @Html.Panel(Dictionary.FundamentalEnergiesCompatibility, Model.FundamentalEnergiesCompatibility)
                 </div>
 
                 <div id="sexuality" class="tab-pane fade">

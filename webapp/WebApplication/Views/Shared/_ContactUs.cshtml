@@ -22,6 +22,11 @@
         @Html.BootstrapEditorFor(m => m.Body)
 
         <hr />
-        @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Submit, EButtonType.Submit, "fa-envelope")
+        <div id="recaptcha-container">
+        </div>
+        <hr />
+        <div id="recaptcha-buttons-container">
+            @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Submit, EButtonType.Submit, "fa-envelope")
+        </div>
     }
 }

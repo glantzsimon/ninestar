@@ -29,12 +29,11 @@ namespace K9.WebApplication.Controllers
         [Route("calculate")]
         public ActionResult Index()
         {
-            var rand = new Random();
             var dateOfBirth = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day);
             var personModel = new PersonModel
             {
                 DateOfBirth = dateOfBirth,
-                Gender = EGender.Other + rand.Next(1, 2)
+                Gender = Methods.GetRandomGender()
             };
             return View(new NineStarKiModel(personModel));
         }
@@ -114,13 +113,19 @@ namespace K9.WebApplication.Controllers
         [Route("relationships/compatibility")]
         public ActionResult Compatibility()
         {
-            var dateOfBirth = new DateTime(DateTime.Now.Year - (24), DateTime.Now.Month, DateTime.Now.Day);
-            var personModel = new PersonModel
+            var dateOfBirth1 = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day);
+            var dateOfBirth2 = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day).AddMonths(2);
+            var personModel1 = new PersonModel
             {
-                DateOfBirth = dateOfBirth,
-                Gender = EGender.Female
+                DateOfBirth = dateOfBirth1,
+                Gender = Methods.GetRandomGender()
             };
-            return View("Compatibility", new CompatibilityModel(new NineStarKiModel(personModel), new NineStarKiModel(personModel)));
+            var personModel2 = new PersonModel
+            {
+                DateOfBirth = dateOfBirth2,
+                Gender = Methods.GetRandomGender()
+            };
+            return View("Compatibility", new CompatibilityModel(new NineStarKiModel(personModel1), new NineStarKiModel(personModel2)));
         }
 
         [Route("relationships/compatibility")]

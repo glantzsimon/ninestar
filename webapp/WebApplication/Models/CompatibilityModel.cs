@@ -50,23 +50,7 @@ namespace K9.WebApplication.Models
                 Gender1PronounProper = FirstFundamentalEnergyGenderPronoun.ToProperCase(),
                 Gender2PronounProper = SecondFundamentalEnergyGenderPronoun.ToProperCase()
             });
-
-            CharacterEnergiesCompatibility = TemplateProcessor.PopulateTemplate(GetCharacterEnergiesCompatibilityDetails(), new
-            {
-                Person1 = FirstCharacterEnergyPersonName,
-                Person2 = SecondCharacterEnergyPersonName,
-                Person1Proper = FirstCharacterEnergyPersonName.ToProperCase(),
-                Person2Proper = SecondCharacterEnergyPersonName.ToProperCase(),
-                Gender1PossessivePronoun = FirstCharacterEnergyGenderPossessivePronoun,
-                Gender2PossessivePronoun = SecondCharacterEnergyGenderPossessivePronoun,
-                Gender1Pronoun = FirstFundamentalEnergyGenderPronoun,
-                Gender2Pronoun = SecondFundamentalEnergyGenderPronoun,
-                Gender1PossessivePronounProper = FirstCharacterEnergyGenderPossessivePronoun.ToProperCase(),
-                Gender2PossessivePronounProper = SecondCharacterEnergyGenderPossessivePronoun.ToProperCase(),
-                Gender1PronounProper = FirstFundamentalEnergyGenderPronoun.ToProperCase(),
-                Gender2PronounProper = SecondFundamentalEnergyGenderPronoun.ToProperCase()
-            });
-
+            
             SexualChemistryDetails = TemplateProcessor.PopulateTemplate(GetSexualChemistryDescription(), new
             {
                 Person1 = FirstPersonNameWithArticle,
@@ -129,9 +113,7 @@ namespace K9.WebApplication.Models
         public ECompatibilityScore SurfaceEnergyHarmonyScore { get; }
 
         public string FundamentalEnergiesCompatibility { get; }
-
-        public string CharacterEnergiesCompatibility { get; }
-
+        
         public string CompatibilitySummary { get; }
 
         public string SexualChemistryDetails { get; }
@@ -714,72 +696,7 @@ namespace K9.WebApplication.Models
 
             return Globalisation.Dictionary.ComingSoon;
         }
-
-        private string GetCharacterEnergiesCompatibilityDetails()
-        {
-            switch (NineStarKiModel1.MainEnergy.Energy)
-            {
-                case ENineStarKiEnergy.Water:
-                    switch (NineStarKiModel2.MainEnergy.Energy)
-                    {
-                        case ENineStarKiEnergy.Water:
-                            break;
-
-                        case ENineStarKiEnergy.Soil:
-                            break;
-
-                        case ENineStarKiEnergy.Thunder:
-                            break;
-
-                        case ENineStarKiEnergy.Wind:
-                            break;
-
-                        case ENineStarKiEnergy.CoreEarth:
-                            break;
-
-                        case ENineStarKiEnergy.Heaven:
-                            break;
-
-                        case ENineStarKiEnergy.Lake:
-                            break;
-
-                        case ENineStarKiEnergy.Mountain:
-                            break;
-
-                        case ENineStarKiEnergy.Fire:
-                            break;
-                    }
-
-                    break;
-
-                case ENineStarKiEnergy.Soil:
-                    break;
-
-                case ENineStarKiEnergy.Thunder:
-                    break;
-
-                case ENineStarKiEnergy.Wind:
-                    break;
-
-                case ENineStarKiEnergy.CoreEarth:
-                    break;
-
-                case ENineStarKiEnergy.Heaven:
-                    break;
-
-                case ENineStarKiEnergy.Lake:
-                    break;
-
-                case ENineStarKiEnergy.Mountain:
-                    break;
-
-                case ENineStarKiEnergy.Fire:
-                    break;
-            }
-
-            return Globalisation.Dictionary.ComingSoon;
-        }
-
+        
         private ECompatibilityScore GetFundamentalElementChemistryScore()
         {
             return GetChemistryScore(NineStarKiModel1.MainEnergy, NineStarKiModel2.MainEnergy);

@@ -3724,6 +3724,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid reCAPTCHA response.
+        /// </summary>
+        public static string InvalidRecaptcha {
+            get {
+                return ResourceManager.GetString("InvalidRecaptcha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to K&apos;An.
         /// </summary>
         public static string Kan {
@@ -5973,6 +5982,15 @@ namespace K9.Globalisation {
         public static string Other {
             get {
                 return ResourceManager.GetString("Other", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overall Compatibility.
+        /// </summary>
+        public static string OverallCompatibility {
+            get {
+                return ResourceManager.GetString("OverallCompatibility", resourceCulture);
             }
         }
         

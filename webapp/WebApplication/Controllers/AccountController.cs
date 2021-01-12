@@ -1,5 +1,4 @@
-﻿using K9.Base.DataAccessLayer.Enums;
-using K9.Base.DataAccessLayer.Models;
+﻿using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
 using K9.Base.WebApplication.Config;
 using K9.Base.WebApplication.Enums;
@@ -13,13 +12,15 @@ using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Config;
+using K9.WebApplication.Helpers;
+using K9.WebApplication.Models;
 using K9.WebApplication.Services;
 using K9.WebApplication.ViewModels;
 using NLog;
 using System;
 using System.Linq;
 using System.Web.Mvc;
-using K9.WebApplication.Models;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
@@ -35,8 +36,10 @@ namespace K9.WebApplication.Controllers
         private readonly IContactService _contactService;
         private readonly IUserService _userService;
         private readonly IRepository<PromoCode> _promoCodesRepository;
+        private readonly IRecaptchaService _recaptchaService;
+        private readonly RecaptchaConfiguration _recaptchaConfig;
 
-        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IContactService contactService, IUserService userService, IRepository<PromoCode> promoCodesRepository)
+        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IContactService contactService, IUserService userService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _userRepository = userRepository;
@@ -48,6 +51,8 @@ namespace K9.WebApplication.Controllers
             _contactService = contactService;
             _userService = userService;
             _promoCodesRepository = promoCodesRepository;
+            _recaptchaService = recaptchaService;
+            _recaptchaConfig = recaptchaConfig.Value;
 
             websiteConfig.Value.RegistrationEmailTemplateText = Globalisation.Dictionary.WelcomeEmail;
             websiteConfig.Value.PasswordResetEmailTemplateText = Globalisation.Dictionary.PasswordResetEmail;
@@ -171,12 +176,12 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult Register(string promoCode = null)
         {
-            var rand = new Random();
+            ViewBag.RecaptchaSiteKey = _recaptchaConfig.RecaptchaSiteKey;
             return View(new RegisterViewModel
             {
                 RegisterModel = new UserAccount.RegisterModel
                 {
-                    Gender = EGender.Other + rand.Next(1, 2),
+                    Gender = Methods.GetRandomGender(),
                     BirthDate = DateTime.Today.AddYears(-27)
                 },
                 PromoCode = promoCode
@@ -187,6 +192,17 @@ namespace K9.WebApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(RegisterViewModel model)
         {
+            ViewBag.RecaptchaSiteKey = _recaptchaConfig.RecaptchaSiteKey;
+
+            var encodedResponse = Request.Form[RecaptchaResult.ResponseFormVariable];
+            var isCaptchaValid = _recaptchaService.Validate(encodedResponse);
+
+            if (!isCaptchaValid)
+            {
+                ModelState.AddModelError("", Globalisation.Dictionary.InvalidRecaptcha);
+                return View(model);
+            }
+
             if (_authentication.IsAuthenticated)
             {
                 _authentication.Logout();

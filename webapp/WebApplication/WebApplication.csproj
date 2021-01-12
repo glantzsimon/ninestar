@@ -327,6 +327,7 @@
     <Compile Include="Config\GoogleConfiguration.cs" />
     <Compile Include="Config\MailChimpConfiguration.cs" />
     <Compile Include="Config\ColumnsConfig.cs" />
+    <Compile Include="Config\RecaptchaConfiguration.cs" />
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
     <Compile Include="Controllers\BaseNineStarKiController.cs" />
@@ -350,6 +351,7 @@
     <Compile Include="Enums\ESexualityType.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="Helpers\General.cs" />
     <Compile Include="Helpers\ViewBagHelper.cs" />
     <Compile Include="Constants\ViewDataConstants.cs" />
     <Compile Include="Controllers\AccountControllerAjax.cs" />
@@ -379,11 +381,14 @@
     <Compile Include="Helpers\Separator.cs" />
     <Compile Include="Models\CompatibilityDetailsModel.cs" />
     <Compile Include="Models\CompatibilityModel.cs" />
+    <Compile Include="Models\Recaptcha.cs" />
     <Compile Include="Models\PurchaseModel.cs" />
     <Compile Include="Options\GaugeOptions.cs" />
     <Compile Include="Options\PaymentsOptions.cs" />
     <Compile Include="Services\ConsultationService.cs" />
     <Compile Include="Services\IConsultationService.cs" />
+    <Compile Include="Services\IRecaptchaService.cs" />
+    <Compile Include="Services\RecaptchaService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\IUserService.cs" />
     <Compile Include="ViewModels\EmailPromoCodeViewModel.cs" />
@@ -1232,6 +1237,7 @@
     <Content Include="Views\Consultations\Details.cshtml" />
     <Content Include="Views\Consultations\Edit.cshtml" />
     <Content Include="Views\Consultations\Index.cshtml" />
+    <Content Include="Views\Shared\_Recaptcha.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

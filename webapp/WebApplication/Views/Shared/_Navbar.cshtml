@@ -17,7 +17,7 @@
                     <ul class="dropdown-menu nav navbar-nav">
                         <li class="@ViewContext.GetActiveClass("Index", "Contacts") sub-item"><a href="@Url.Action("Index", "Contacts")">@Dictionary.Contacts</a></li>
                         <li class="@ViewContext.GetActiveClass("Index", "PromoCodes") sub-item"><a href="@Url.Action("Index", "PromoCodes")">@Dictionary.PromoCodes</a></li>
-                        <li class="@ViewContext.GetActiveClass("Index", "Consultations") sub-item"><a href="@Url.Action("Index", "Consultation")">@Dictionary.Consultations</a></li>
+                        <li class="@ViewContext.GetActiveClass("Index", "Consultations") sub-item"><a href="@Url.Action("Index", "Consultations")">@Dictionary.Consultations</a></li>
                         <li class="@ViewContext.GetActiveClass("Index", "UserPromoCodes") sub-item"><a href="@Url.Action("Index", "UserPromoCodes")">@Dictionary.UserPromoCodes</a></li>
                         <li class="@ViewContext.GetActiveClass("Index", "UserMemberships") sub-item"><a href="@Url.Action("Index", "UserMemberships")">@Dictionary.UserMemberships</a></li>
                         <li class="@ViewContext.GetActiveClass("Index", "UserConsultations") sub-item"><a href="@Url.Action("Index", "UserConsultations")">@Dictionary.UserConsultations</a></li>
@@ -31,7 +31,7 @@
             </ul>
         }
         <ul class="site-controls">
-            <li class="@ViewContext.GetActiveClass("BookConsultationStart", "Consultations")"><a title="@Dictionary.BookAConsultation" href="@Url.Action("BookConsultationStart", "Consultation")"><span class="glyphicon glyphicon-earphone"></span><span class="site-controls-text"> @Dictionary.BookAConsultation</span></a></li>
+            <li class="@ViewContext.GetActiveClass("BookConsultationStart", "Consultation")"><a title="@Dictionary.BookAConsultation" href="@Url.Action("BookConsultationStart", "Consultation")"><span class="glyphicon glyphicon-earphone"></span><span class="site-controls-text"> @Dictionary.BookAConsultation</span></a></li>
             <li class="@ViewContext.GetActiveClass("Index", "Support")"><a title="@Dictionary.Support" href="@Url.Action("Index", "Support")"><span class="glyphicon glyphicon-question-sign"></span><span class="site-controls-text"> @Dictionary.Support</span></a></li>
             <li class="@ViewContext.GetActiveClass("DonateStart", "Support")"><a title="@Dictionary.Donate" href="@Url.Action("DonateStart", "Support")"><span class="glyphicon glyphicon-usd"></span><span class="site-controls-text"> @Dictionary.Donate</span></a></li>
             @if (WebSecurity.IsAuthenticated)

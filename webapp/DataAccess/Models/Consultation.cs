@@ -15,6 +15,8 @@ namespace K9.DataAccessLayer.Models
     [Name(ResourceType = typeof(Dictionary), ListName = Strings.Names.Consultations, PluralName = Strings.Names.Consultations, Name = Strings.Names.Consultation)]
     public class Consultation : ObjectBase
     {
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ContactLabel)]
         [UIHint("Contact")]
         [Required]
         [ForeignKey("Contact")]

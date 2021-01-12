@@ -21,6 +21,7 @@
             public const string ConsultationDurationLabel = "ConsultationDurationLabel";
             public const string DurationLabel = "Duration";
             public const string DonatedOnLabel = "DonatedOnLabel";
+            public const string CompletedOnLabel = "CompletedOnLabel";
             public const string CurrencyLabel = "CurrencyLabel";
             public const string CustomerEmailLabel = "CustomerEmailLabel";
             public const string GenderLabel = "GenderLabel";

@@ -14,6 +14,10 @@
 	margin-right: 6px;
 }
 
+form .pull-right .btn {
+    margin-right: 0;
+}
+
 .bootstraptable tbody tr:hover
 {
 	background: #337ab7 !important;

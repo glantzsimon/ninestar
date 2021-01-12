@@ -27,7 +27,10 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary),
             Name = Strings.Labels.ConsultationDurationLabel)]
         public EConsultationDuration ConsultationDuration { get; set; } = EConsultationDuration.OneHour;
-        
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CompletedOnLabel)]
+        public DateTime? CompletedOn { get; set; }
+
         public virtual Contact Contact { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ContactLabel)]
@@ -38,7 +41,7 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Currency)]
         public double Price => GetPrice();
 
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubscriptionCostLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TotalPriceLabel)]
         public string FormattedPrice => Price.ToString("C0", CultureInfo.GetCultureInfo("en-US"));
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DurationLabel)]

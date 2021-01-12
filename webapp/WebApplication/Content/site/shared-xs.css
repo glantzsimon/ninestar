@@ -139,4 +139,8 @@
     .padding-bottom-0-xs {
         padding-bottom: 0 !important;
     }
+
+    .float-none-xs {
+        float: none !important;
+    }
 }

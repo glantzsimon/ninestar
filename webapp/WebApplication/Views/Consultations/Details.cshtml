@@ -1,7 +1,14 @@
 ﻿@using K9.Base.WebApplication.Helpers
+@using K9.SharedLibrary.Helpers
 @model Consultation
 @{
     Layout = "../Shared/_LayoutFormSmall.cshtml";
+    var body = TemplateProcessor.PopulateTemplate(Dictionary.consultation_email, new
+    {
+        Model.Contact.FirstName,
+        Duration = Model.DurationDescription.ToLower(),
+        LineFeed = "%0D%0A"
+    });
 }
 @using (Html.BeginForm())
 {
@@ -9,11 +16,12 @@
     {
         @Html.HiddenFor(model => model.Id)
         @Html.Partial("_DisplayFields")
-        <a href="mailto:@Model.Contact.EmailAddress">@Html.BootstrapButton(Dictionary.EmailCustomer, EButtonType.Button, "fa fa-enveloper", EButtonClass.Info)</a>
         @Html.AuditFieldsForModel(Model)
 
         <hr />
         @Html.BootstrapBackToListButton()
         @Html.CrudButtonsForModel(Model)
+        <a class="pull-right float-none-sm" href="mailto:@(Model.Contact.EmailAddress)?subject=@(Dictionary.NineStarKiConsultation)&body=@body">@Html.BootstrapButton(Dictionary.EmailCustomer, EButtonType.Button, "fa fa-envelope", EButtonClass.Success)</a>
+
     }
 }

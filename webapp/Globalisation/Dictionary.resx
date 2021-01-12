@@ -2200,4 +2200,10 @@
   <data name="ContactLabel" xml:space="preserve">
     <value>Contact</value>
   </data>
+  <data name="CompletedOnLabel" xml:space="preserve">
+    <value>Completed On</value>
+  </data>
+  <data name="consultation_email" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>general\en-gb\consultation-email.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

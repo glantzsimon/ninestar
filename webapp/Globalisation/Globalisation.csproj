@@ -110,6 +110,7 @@
     <Content Include="General\en-gb\standard-monthly-membership-description.htm" />
     <Content Include="General\en-gb\book-consultation-blurb.htm" />
     <Content Include="General\en-gb\support-blurb.htm" />
+    <Content Include="General\en-gb\consultation-email.htm" />
     <Content Include="General\en-gb\welcome.htm" />
     <Content Include="Articles\en-gb\coreearth-child.htm" />
     <Content Include="Articles\en-gb\five-transformations.htm" />

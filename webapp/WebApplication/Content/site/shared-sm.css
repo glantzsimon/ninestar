@@ -143,4 +143,8 @@
     .padding-bottom-0-sm {
         padding-bottom: 0 !important;
     }
+
+    .float-none-sm {
+        float: none !important;
+    }
 }

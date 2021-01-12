@@ -1931,6 +1931,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Completed On.
+        /// </summary>
+        public static string CompletedOnLabel {
+            get {
+                return ResourceManager.GetString("CompletedOnLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Conflict Likelihood.
         /// </summary>
         public static string ConflictScore {
@@ -1954,6 +1963,28 @@ namespace K9.Globalisation {
         public static string Consultation {
             get {
                 return ResourceManager.GetString("Consultation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dear {FirstName},
+        ///
+        ///&lt;br /&gt;
+        ///&lt;br /&gt;
+        ///You recently booked a 9 Star Ki consultation for {Duration}. Please let me know what time would be convenient to arrange a call.
+        ///&lt;br /&gt;
+        ///&lt;br /&gt;
+        ///I look forward to speaking with you very soon.
+        ///&lt;br /&gt;
+        ///&lt;br /&gt;
+        ///Very best wishes,
+        ///&lt;br /&gt;
+        ///&lt;br /&gt;
+        ///Simon.
+        /// </summary>
+        public static string consultation_email {
+            get {
+                return ResourceManager.GetString("consultation_email", resourceCulture);
             }
         }
         

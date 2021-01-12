@@ -1191,7 +1191,7 @@
     <Content Include="Views\NineStarKi\_Cycles.cshtml" />
     <Content Include="Views\NineStarKi\_YearlyPlanner.cshtml" />
     <Content Include="Views\NineStarKi\_Year.cshtml" />
-    <Content Include="Views\Predictions\_YearlyCyclesOverview.cshtml" />
+    <Content Include="Views\Predictions\_CyclesOverview.cshtml" />
     <Content Include="Views\NineStarKi\_Cycle.cshtml" />
     <Content Include="Views\Membership\_RetrieveLast.cshtml" />
     <Content Include="Views\PromoCodes\_DisplayFields.cshtml" />

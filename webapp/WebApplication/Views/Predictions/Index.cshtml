@@ -17,11 +17,11 @@
     <article>
         @Html.Panel(Dictionary.YearlyCycles, Dictionary.year_description, "yearly-cycles")
 
-        @Html.Panel(Dictionary.NineYearlyCyclesTitle, Html.Partial("_YearlyCyclesOverview", Model.MainEnergies).ToString(), "nine-yearly-cycles")
+        @Html.Panel(Dictionary.NineYearlyCyclesTitle, Html.Partial("_CyclesOverview", Model.MainEnergies).ToString(), "nine-yearly-cycles")
 
         @Html.Panel(Dictionary.MonthlyCycles, Dictionary.month_description, "monthly-cycles")
 
-        @Html.Panel(Dictionary.NineMonthlyCyclesTitle, $"<h4>{Dictionary.ComingSoon}</h4>", "nine-monthly-cycles")
+        @Html.Panel(Dictionary.NineMonthlyCyclesTitle, Html.Partial("_CyclesOverview", Model.CharacterEnergies).ToString(), "nine-monthly-cycles")
     </article>
 
     <br />

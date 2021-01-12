@@ -50,12 +50,12 @@ namespace K9.WebApplication.Models
         public bool IsCharacterElementSupportive { get; }
         public bool IsCharacterElementChallenging { get; }
 
-        //public bool IsFundamentalToCharacterElementSame { get; }
-        //public bool IsFundamentalToCharacterElementSupportive { get; }
-        //public bool IsFundamentalToCharacterElementChallenging { get; }
-        //public bool IsCharacterToElementSame { get; }
-        //public bool IsFundamentalToCharacterElementSupportive { get; }
-        //public bool IsFundamentalToCharacterElementChallenging { get; }
+            //public bool IsFundamentalToCharacterElementSame { get; }
+            //public bool IsFundamentalToCharacterElementSupportive { get; }
+            //public bool IsFundamentalToCharacterElementChallenging { get; }
+            //public bool IsCharacterToElementSame { get; }
+            //public bool IsFundamentalToCharacterElementSupportive { get; }
+            //public bool IsFundamentalToCharacterElementChallenging { get; }
 
        
     }

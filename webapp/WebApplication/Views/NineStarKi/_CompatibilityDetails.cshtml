@@ -14,11 +14,11 @@
             </ul>
 
             <div class="tab-content">
-                <div id="overall" class="tab-pane fade">
+                <div id="overall" class="tab-pane fade in active">
                     @Html.Panel(Dictionary.SummaryLabel, Model.CompatibilitySummary)
                 </div>
 
-                <div id="fundamental" class="tab-pane fade in active">
+                <div id="fundamental" class="tab-pane fade">
                     @Html.Panel(Dictionary.FundamentalEnergiesCompatibility, Model.FundamentalEnergiesCompatibility)
                 </div>
 

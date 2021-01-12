@@ -1969,17 +1969,17 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to Dear {FirstName},
         ///
-        ///&lt;br /&gt;
-        ///&lt;br /&gt;
+        ///{LineFeed}
+        ///{LineFeed}
         ///You recently booked a 9 Star Ki consultation for {Duration}. Please let me know what time would be convenient to arrange a call.
-        ///&lt;br /&gt;
-        ///&lt;br /&gt;
+        ///{LineFeed}
+        ///{LineFeed}
         ///I look forward to speaking with you very soon.
-        ///&lt;br /&gt;
-        ///&lt;br /&gt;
+        ///{LineFeed}
+        ///{LineFeed}
         ///Very best wishes,
-        ///&lt;br /&gt;
-        ///&lt;br /&gt;
+        ///{LineFeed}
+        ///{LineFeed}
         ///Simon.
         /// </summary>
         public static string consultation_email {
@@ -2116,8 +2116,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    Coming soon...
-        ///&lt;/h5&gt;.
+        ///    This month is associated with the energy of adolescence and also rebirth
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Core Earth months are associated with the energy of adolescence and we can often feel like one during this time. It is an unpredictale time and there may well be ups and downs and feelings of uncertainty.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    There may well be many different opportunities to explore and it may be difficult to decide what to do or where to go. It is important for us to try to stay grounded and centred. [rest of string was truncated]&quot;;.
         /// </summary>
         public static string core_earth_month {
             get {
@@ -3098,8 +3103,14 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    Coming soon...
-        ///&lt;/h5&gt;.
+        ///    This month represents midday or high summer
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    During quieter years, such as 1, 2 and 8, a Fire month can be a much welcomed change, bringing much more vibrant energy and light.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    During this month, we often feel more sociable, enthusiastic and adventurous. Communication comes much more naturally to us and it is a good time to speak up about things we may have not found the words to express in previous months.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string fire_month {
             get {
@@ -3499,8 +3510,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    Coming soon...
-        ///&lt;/h5&gt;.
+        ///    This month is associated with early autumn or evening
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    During a Heaven month, we often begin to feel more confident, clear with a sense of purpose. Our will is typically stronger during this time and we have a natural sense of being right. We need to be careful not to become overbearing or inflexible.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is also advisable to pay extra attention to the way we communicate verbally during this time, as we may hurt people if we are too bold or direct in our [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_month {
             get {
@@ -3808,8 +3824,17 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    Coming soon...
-        ///&lt;/h5&gt;.
+        ///    This month represents late evening or autumn
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    7 Metal is associated with the harvest and this is a month for us to relax and unwind, as well as to socialise and have fun.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    We often feel more carefree and adventurous during a 7 month, with a sense of quiet, inner confidence.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This can also be a very good time to spend some quiet time alone to reflect.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string lake_month {
             get {
@@ -4036,7 +4061,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Log into your account to view.
+        ///   Looks up a localized string similar to Log into your account to view more details.
         /// </summary>
         public static string LogIntoYourAccountToView {
             get {
@@ -5431,8 +5456,16 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    Coming soon...
-        ///&lt;/h5&gt;.
+        ///    This month represents early winter or nightfall
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    During a Mountain month, we often have a sense of uncertainty and may feel the need to retreat into our cave. We are more withdrawn and uncommunicative than usual. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This can be a time of change and it is important not to be too impulsive.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It can be very hepful for us to make an extra effort to connect with others during this time, so as not to become overly isolated. We should seek the sup [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_month {
             get {
@@ -7009,8 +7042,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    Coming soon...
-        ///&lt;/h5&gt;.
+        ///    This month represents late winter and is a time of planning and slow movement
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    During a Soil month, we often still feel the stillness and stagnation of winter, however there is a sense of light at the end of the tunnel and an urge to start planning and moving.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Socialising can be somewhat challenging suring a Soil month as our energy is typically still fairly reserved and introverted. This is a great time for slowing down, making plans and sorting out al [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_month {
             get {
@@ -7654,8 +7692,14 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    Coming soon...
-        ///&lt;/h5&gt;.
+        ///    This month represents early spring or the dawn.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    During a Tree month, we usually feel a surge of energy and vitality. We typically feel creative, enthusiastic and spontaneous with a deep sense of optimism and fun.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This is a great time to get moving on projects and putting plans into action. It can also be a great time to socialise and have fun.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string thunder_month {
             get {
@@ -8150,8 +8194,16 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    Coming soon...
-        ///&lt;/h5&gt;.
+        ///    This month represents night and winter. We can often feel introverted and withdrawn
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    During a Water month, we often feel quite quiet, cautious, introverted and even vulnerable at times.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    We may also find it more challenging to communicate with others during this month. This may lead to feelings of isolation and being left out.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This is a time when we are more likely to find ourselves in states of deep reflection and introspection. It is an [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_month {
             get {
@@ -8415,8 +8467,14 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    Coming soon...
-        ///&lt;/h5&gt;.
+        ///    This month represents mid morning or mid to late spring
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    During a Wind month, we feel the energy of spring, which bring us joy, enthusiasm and optimism.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It&apos;s important for us not to overdo it during a Wind month, both in terms of getting carried away with thigns we&apos;re involved in as well as being careful not to exhaust ourselves. It&apos;s important to rest and to remain grounded.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string wind_month {
             get {
@@ -8532,10 +8590,10 @@ namespace K9.Globalisation {
         ///    The seedling is growing rapidly with many leaves and shoots appearing.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This year represents mid morning or late spring. It is a time of sustained growth, following on from the rapid burst of the previous year. 
+        ///    This year represents mid morning or mid to late spring. It is a time of sustained growth, following on from the rapid burst of the previous year. 
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    However, this is also potentially a changeable and unpredictable time. It can be tempting to change direction or move away from what we have been working on so far. It is important to stick to the plans. A farmer wouldn&apos;t pull up his or her crops mid-spring  [rest of string was truncated]&quot;;.
+        ///    However, this is also potentially a changeable and unpredictable time. It can be tempting to change direction or move away from what we have been working on so far. It is important to stick to the plans. A farmer wouldn&apos;t pull up his or her crops mid- [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_year {
             get {

@@ -1427,7 +1427,7 @@
     <value>articles\en-gb\compatibilitymetadescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="LogIntoYourAccountToView" xml:space="preserve">
-    <value>Log into your account to view</value>
+    <value>Log into your account to view more details</value>
   </data>
   <data name="MainEnergyDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\mainenergydescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

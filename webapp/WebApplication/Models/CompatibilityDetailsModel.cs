@@ -298,10 +298,10 @@ namespace K9.WebApplication.Models
                 var verb = item.Item6;
                 var transformationType1 = item.Item7.Item1;
                 var transformationType2 = item.Item7.Item2;
-                var person1 = item.Item7.Item3;
-                var person2 = item.Item7.Item4;
-                var person1Proper = person1.Name.ToProperCase();
-                var person2Proper = person2.Name.ToProperCase();
+                var person1 = item.Item7.Item3.Name;
+                var person2 = item.Item7.Item4.Name;
+                var person1Proper = person1.ToProperCase();
+                var person2Proper = person2.ToProperCase();
 
                 if (transformationType == transformationType1)
                 {

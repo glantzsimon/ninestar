@@ -43,6 +43,8 @@ namespace K9.WebApplication.Models
 
             FundamentalElementsCompatibilityDetails = GetElementCompatibilityDetails(_nineStarKiModel1.MainEnergy, _nineStarKiModel2.MainEnergy);
 
+            FundamentalElementsCompatibilityDetailsTitle = GetFundamentalElementsCompatibilityTitle();
+
             CharacterElementsCompatibilityDetails = GetElementCompatibilityDetails(_nineStarKiModel1.CharacterEnergy, _nineStarKiModel2.CharacterEnergy);
 
             AllOtherElementsCompatibility = GetElementsCompatibility();
@@ -67,6 +69,7 @@ namespace K9.WebApplication.Models
         public string FundamentalElementsTransformationDetails { get; }
         public string CharacterElementsTransformationDetails { get; }
         public string FundamentalElementsCompatibilityDetails { get; }
+        public string FundamentalElementsCompatibilityDetailsTitle { get; }
         public string CharacterElementsCompatibilityDetails { get; }
 
         public string AllOtherElementsCompatibility { get; }
@@ -449,7 +452,7 @@ namespace K9.WebApplication.Models
             return items;
         }
 
-        private string GetElementsCompatibility()
+        private string GetFundamentalElementsCompatibilityTitle()
         {
             var sb = new StringBuilder();
 
@@ -464,9 +467,19 @@ namespace K9.WebApplication.Models
                     _nineStarKiModel1.PersonModel,
                     _nineStarKiModel2.PersonModel);
 
-            sb.AppendLine(GetSupportiveCompatibilityDetails(mainDetails.Item1, mainDetails.Item2, mainDetails.Item3, mainDetails.Item4, mainDetails.Item5, mainDetails.Item6, mainDetails.Item7, true));
-            sb.AppendLine(GetSameCompatibilityDetails(mainDetails.Item1, mainDetails.Item2, mainDetails.Item3, mainDetails.Item4, mainDetails.Item5, mainDetails.Item6, mainDetails.Item7, true));
-            sb.AppendLine(GetChallengingCompatibilityDetails(mainDetails.Item1, mainDetails.Item2, mainDetails.Item3, mainDetails.Item4, mainDetails.Item5, mainDetails.Item6, mainDetails.Item7, true));
+            sb.AppendLine(GetSupportiveCompatibilityDetails(mainDetails.Item1, mainDetails.Item2, mainDetails.Item3,
+                mainDetails.Item4, mainDetails.Item5, mainDetails.Item6, mainDetails.Item7, true));
+            sb.AppendLine(GetSameCompatibilityDetails(mainDetails.Item1, mainDetails.Item2, mainDetails.Item3,
+                mainDetails.Item4, mainDetails.Item5, mainDetails.Item6, mainDetails.Item7, true));
+            sb.AppendLine(GetChallengingCompatibilityDetails(mainDetails.Item1, mainDetails.Item2, mainDetails.Item3,
+                mainDetails.Item4, mainDetails.Item5, mainDetails.Item6, mainDetails.Item7, true));
+
+            return sb.ToString();
+        }
+
+        private string GetElementsCompatibility()
+        {
+            var sb = new StringBuilder();
 
             foreach (var item in GetAllOtherElements())
             {

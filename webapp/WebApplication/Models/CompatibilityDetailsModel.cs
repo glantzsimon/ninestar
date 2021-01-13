@@ -300,8 +300,8 @@ namespace K9.WebApplication.Models
                 var transformationType2 = item.Item7.Item2;
                 var person1 = item.Item7.Item3.Name;
                 var person2 = item.Item7.Item4.Name;
-                var person1Proper = person1.ToProperCase();
-                var person2Proper = person2.ToProperCase();
+                var person1Proper = person1?.ToProperCase();
+                var person2Proper = person2?.ToProperCase();
 
                 if (transformationType == transformationType1)
                 {

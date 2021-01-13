@@ -300,12 +300,12 @@ namespace K9.WebApplication.Models
                 if (transformationType == transformationType1)
                 {
                     sb.AppendLine(
-                        $"<h5>{{Person1Proper}}'s {type1} element '{energy1.ElementName}' {verb} {{Person2}}'s {type2} element '{energy2.ElementName}'</h5>.");
+                        $"<h5>{{Person1Proper}}'s {type1} element '{energy1.ElementName}' {verb} {{Person2}}'s {type2} element '{energy2.ElementName}'</h5>");
                 }
                 else if (transformationType == transformationType2)
                 {
                     sb.AppendLine(
-                        $"<h5>{{Person2Proper}}'s {type2} element '{energy2.ElementName}' {verb} {{Person1}}'s {type1} element '{energy1.ElementName}'</h5>.");
+                        $"<h5>{{Person2Proper}}'s {type2} element '{energy2.ElementName}' {verb} {{Person1}}'s {type1} element '{energy1.ElementName}'</h5>");
                 }
 
                 if (sb.Length > 0)

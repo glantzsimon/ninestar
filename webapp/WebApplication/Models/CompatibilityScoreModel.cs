@@ -98,12 +98,9 @@ namespace K9.WebApplication.Models
         public ECompatibilityScore OverallScore => GetAverageScore(new List<ECompatibilityScore>
         {
             HarmonyScore,
-            ECompatibilityScore.ExtremelyHigh - (int)ConflictScore,
             SupportScore,
             MutualUnderstandingScore,
-            ComplementarityScore,
-            SparkScore,
-            LearningPotentialScore
+            ComplementarityScore
         });
 
         private ECompatibilityScore GetAverageScore(List<ECompatibilityScore> scores)

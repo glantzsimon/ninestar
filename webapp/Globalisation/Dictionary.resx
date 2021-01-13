@@ -2293,4 +2293,7 @@
   <data name="SparkScore" xml:space="preserve">
     <value>Spark</value>
   </data>
+  <data name="OverallScore" xml:space="preserve">
+    <value>Overall Compatibility Score</value>
+  </data>
 </root>

@@ -2832,7 +2832,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Both people share the same Earth element and are stable, reliable, supportive types who are likely to have very similar values and priorities. This could very well result in a close friendship where both people feel understood, supported and that they can rely on one another..
+        ///   Looks up a localized string similar to Both people have Earth element in their charts. Earth typically brings qualities of stability, strength and reliability. It is likely that both people are supportive and caring and may share very similar values and priorities. This could very well result in a close friendship where both people feel understood and that they can count on each other..
         /// </summary>
         public static string earth_earth {
             get {
@@ -3166,7 +3166,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to As both people are Fire Energies, they share many of the same qualities, such as the ability to inspire those around then with their great clarity, intuition and emotional intelligence. There is a strong potential for both people to get on very well and they would likely enjoy talking to one another and feel very comfortable in each other&apos;s company..
+        ///   Looks up a localized string similar to As both people have Fire element in their charts and probably share many of the same qualities, such as the ability to inspire those around then with their great clarity, intuition and emotional intelligence. There is a good potential for both people to get on very well and they would likely enjoy talking to one another and feel very comfortable in each other&apos;s company..
         /// </summary>
         public static string fire_fire {
             get {
@@ -5403,7 +5403,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Both people are Metal Energies and are typically reliable, steady and pragmatic. Metal people are typically straightforward and direct in their communication, and are likely to appreciate these qualities in one another, leading to a deep sense of trust..
+        ///   Looks up a localized string similar to Both people share the Metal element. The presence of Metal typically makes people fairly straightforward and direct in the way communicate and interact with people. These shared qualities are likely to appreciated in one another, leading to greater trust and mutual understanding..
         /// </summary>
         public static string metal_metal {
             get {
@@ -6199,6 +6199,15 @@ namespace K9.Globalisation {
         public static string OverallCompatibility {
             get {
                 return ResourceManager.GetString("OverallCompatibility", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overall Compatibility Score.
+        /// </summary>
+        public static string OverallScore {
+            get {
+                return ResourceManager.GetString("OverallScore", resourceCulture);
             }
         }
         
@@ -8161,7 +8170,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Both people share the same Tree element and are typically energetic, optimistic and spontaneous. They are likely to enjoy interesting and dynamic conversation and to support each other&apos;s natural creative and exploratory nature..
+        ///   Looks up a localized string similar to Both people have the Tree element in their charts. The presence of Tree element typically gives people an energetic, optimistic and spontaneous quality. These two are likely to enjoy interesting and dynamic conversation and to support each other&apos;s natural creative and exploratory nature..
         /// </summary>
         public static string tree_tree {
             get {
@@ -8589,7 +8598,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Both people share the same &quot;Water&quot; element. Water is perhaps the most intuitive and empathetic of the 9 Energies and so there is a potential for an extremely deep and intuitive connection between two people who share the Water element..
+        ///   Looks up a localized string similar to Both people have the Water element in their chart. Water is perhaps the most intuitive and empathetic of the 9 Energies and so there is a potential for an deep and intuitive connection between two people who share the Water element..
         /// </summary>
         public static string water_water {
             get {

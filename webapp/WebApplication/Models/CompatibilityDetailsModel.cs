@@ -362,8 +362,8 @@ namespace K9.WebApplication.Models
                 type1Name,
                 type2Name,
                 "challenges",
-                ETransformationType.IsChallenged,
-                ETransformationType.Challenges)));
+                ETransformationType.Challenges,
+                ETransformationType.IsChallenged)));
 
             return sb.ToString();
         }

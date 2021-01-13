@@ -14,7 +14,7 @@ namespace K9.WebApplication.Models
         private readonly NineStarKiModel _nineStarKiModel2;
 
         public ElementCompatibility(NineStarKiModel nineStarKiModel1, NineStarKiModel nineStarKiModel2,
-            CompatibilityScoreModel score, object pronouns)
+            CompatibilityScoreModel score)
         {
             _nineStarKiModel1 = nineStarKiModel1;
             _nineStarKiModel2 = nineStarKiModel2;
@@ -46,7 +46,7 @@ namespace K9.WebApplication.Models
 
             CharacterElementsCompatibilityDetails = GetElementCompatibilityDetails(_nineStarKiModel1.CharacterEnergy, _nineStarKiModel2.CharacterEnergy);
 
-            AllOtherElementsCompatibility = GetElementsCompatibility(pronouns);
+            AllOtherElementsCompatibility = GetElementsCompatibility();
 
             CalculateScore();
         }
@@ -262,27 +262,29 @@ namespace K9.WebApplication.Models
         }
 
         private Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, string,
-            Tuple<ETransformationType, ETransformationType>> GetTransformationDetailItem(
+            Tuple<ETransformationType, ETransformationType, PersonModel, PersonModel>> GetTransformationDetailItem(
             ETransformationType transformationType, NineStarKiEnergy energy1, NineStarKiEnergy energy2,
             string type1Name, string type2Name, string verb, ETransformationType comparisonTransformationType1,
-            ETransformationType comparisonTransformationType2)
+            ETransformationType comparisonTransformationType2, PersonModel person1, PersonModel person2)
         {
-            return new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, string, Tuple<ETransformationType, ETransformationType>>(
+            return new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, string, Tuple<ETransformationType, ETransformationType, PersonModel, PersonModel>>(
                 transformationType,
                 energy1,
                 energy2,
                 type1Name,
                 type2Name,
                 verb,
-                new Tuple<ETransformationType, ETransformationType>(
+                new Tuple<ETransformationType, ETransformationType, PersonModel, PersonModel>(
                     comparisonTransformationType1,
-                    comparisonTransformationType2)
+                    comparisonTransformationType2,
+                    person1,
+                    person2)
             );
         }
 
         private string GetTransformationDetails(
             params Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, string,
-                Tuple<ETransformationType, ETransformationType>>[] transformationTypes)
+                Tuple<ETransformationType, ETransformationType, PersonModel, PersonModel>>[] transformationTypes)
         {
             var sb = new StringBuilder();
 
@@ -296,16 +298,20 @@ namespace K9.WebApplication.Models
                 var verb = item.Item6;
                 var transformationType1 = item.Item7.Item1;
                 var transformationType2 = item.Item7.Item2;
+                var person1 = item.Item7.Item3;
+                var person2 = item.Item7.Item4;
+                var person1Proper = person1.Name.ToProperCase();
+                var person2Proper = person2.Name.ToProperCase();
 
                 if (transformationType == transformationType1)
                 {
                     sb.AppendLine(
-                        $"<h5>{{Person1Proper}}'s {type1} element ({energy1.ElementName}) {verb} {{Person2}}'s {type2} element ({energy2.ElementName})</h5>");
+                        $"<h5>{person1Proper}'s {type1} element ({energy1.ElementName}) {verb} {person2}'s {type2} element ({energy2.ElementName})</h5>");
                 }
                 else if (transformationType == transformationType2)
                 {
                     sb.AppendLine(
-                        $"<h5>{{Person2Proper}}'s {type2} element ({energy2.ElementName}) {verb} {{Person1}}'s {type1} element ({energy1.ElementName})</h5>");
+                        $"<h5>{person2Proper}'s {type2} element ({energy2.ElementName}) {verb} {person1}'s {type1} element ({energy1.ElementName})</h5>");
                 }
 
                 if (sb.Length > 0)
@@ -317,7 +323,7 @@ namespace K9.WebApplication.Models
             return sb.ToString();
         }
 
-        private string GetSupportiveCompatibilityDetails(ETransformationType transformationType, NineStarKiEnergy energy1, NineStarKiEnergy energy2, string type1Name, string type2Name)
+        private string GetSupportiveCompatibilityDetails(ETransformationType transformationType, NineStarKiEnergy energy1, NineStarKiEnergy energy2, string type1Name, string type2Name, PersonModel person1, PersonModel person2)
         {
             var sb = new StringBuilder();
 
@@ -329,12 +335,14 @@ namespace K9.WebApplication.Models
                 type2Name,
                 "supports",
                 ETransformationType.Supports,
-                ETransformationType.IsSupported)));
+                ETransformationType.IsSupported,
+                person1,
+                person2)));
 
             return sb.ToString();
         }
 
-        private string GetSameCompatibilityDetails(ETransformationType transformationType, NineStarKiEnergy energy1, NineStarKiEnergy energy2, string type1Name, string type2Name)
+        private string GetSameCompatibilityDetails(ETransformationType transformationType, NineStarKiEnergy energy1, NineStarKiEnergy energy2, string type1Name, string type2Name, PersonModel person1, PersonModel person2)
         {
             var sb = new StringBuilder();
 
@@ -346,12 +354,14 @@ namespace K9.WebApplication.Models
                 type2Name,
                 "is the same as",
                 ETransformationType.Same,
-                ETransformationType.Same)));
+                ETransformationType.Same,
+                person1,
+                person2)));
 
             return sb.ToString();
         }
 
-        private string GetChallengingCompatibilityDetails(ETransformationType transformationType, NineStarKiEnergy energy1, NineStarKiEnergy energy2, string type1Name, string type2Name)
+        private string GetChallengingCompatibilityDetails(ETransformationType transformationType, NineStarKiEnergy energy1, NineStarKiEnergy energy2, string type1Name, string type2Name, PersonModel person1, PersonModel person2)
         {
             var sb = new StringBuilder();
 
@@ -363,61 +373,75 @@ namespace K9.WebApplication.Models
                 type2Name,
                 "challenges",
                 ETransformationType.Challenges,
-                ETransformationType.IsChallenged)));
+                ETransformationType.IsChallenged,
+                person1,
+                person2)));
 
             return sb.ToString();
         }
 
-        private List<Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string>> GetAllOtherElements()
+        private List<Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel, PersonModel>> GetAllOtherElements()
         {
-            var items = new List<Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string>>();
+            var items = new List<Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel, PersonModel>>();
 
-            items.Add(new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string>
+            items.Add(new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel, PersonModel>
             (FundamentalEnergy1ToCharacterEnergy2TransformationType,
                 _nineStarKiModel1.MainEnergy,
                 _nineStarKiModel2.CharacterEnergy,
                 "Fundamental",
-                "Character"));
+                "Character",
+                _nineStarKiModel1.PersonModel,
+                _nineStarKiModel2.PersonModel));
 
-            items.Add(new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string>
+            items.Add(new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel, PersonModel>
             (FundamentalEnergy2ToCharacterEnergy1TransformationType,
                 _nineStarKiModel2.MainEnergy,
                 _nineStarKiModel1.CharacterEnergy,
                 "Fundamental",
-                "Character"));
+                "Character",
+                _nineStarKiModel1.PersonModel,
+                _nineStarKiModel2.PersonModel));
 
-            items.Add(new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string>(
+            items.Add(new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel, PersonModel>(
                 FundamentalEnergy1ToSurfaceEnergy2TransformationType,
                 _nineStarKiModel1.MainEnergy,
                 _nineStarKiModel2.SurfaceEnergy,
                 "Fundamental",
-                "Surface"));
+                "Surface",
+                _nineStarKiModel1.PersonModel,
+                _nineStarKiModel2.PersonModel));
 
-            items.Add(new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string>(
+            items.Add(new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel, PersonModel>(
                 FundamentalEnergy2ToSurfaceEnergy1TransformationType,
                 _nineStarKiModel2.MainEnergy,
                 _nineStarKiModel1.SurfaceEnergy,
                 "Fundamental",
-                "Surface"));
+                "Surface",
+                _nineStarKiModel1.PersonModel,
+                _nineStarKiModel2.PersonModel));
 
-            items.Add(new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string>(
+            items.Add(new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel, PersonModel>(
                 CharacterEnergy1ToSurfaceEnergy2TransformationType,
                 _nineStarKiModel1.CharacterEnergy,
                 _nineStarKiModel2.SurfaceEnergy,
                 "Character",
-                "Surface"));
+                "Surface",
+                _nineStarKiModel1.PersonModel,
+                _nineStarKiModel2.PersonModel));
 
-            items.Add(new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string>(
+            items.Add(new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel, PersonModel>(
                 CharacterEnergy2ToSurfaceEnergy1TransformationType,
                 _nineStarKiModel2.CharacterEnergy,
                 _nineStarKiModel1.SurfaceEnergy,
                 "Character",
-                "Surface"));
+                "Surface",
+                _nineStarKiModel1.PersonModel,
+                _nineStarKiModel2.PersonModel));
 
             return items;
         }
 
-        private string GetElementsCompatibility(object pronouns)
+        private string GetElementsCompatibility()
         {
             var sb = new StringBuilder();
 
@@ -425,20 +449,20 @@ namespace K9.WebApplication.Models
             {
                 if (Score.HarmonyScore > Score.ConflictScore)
                 {
-                   sb.AppendLine(GetSupportiveCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5));
-                   sb.AppendLine(GetSameCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5));
-                   sb.AppendLine(GetChallengingCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5));
+                   sb.AppendLine(GetSupportiveCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
+                   sb.AppendLine(GetSameCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
+                   sb.AppendLine(GetChallengingCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
 
                 }
                 else
                 {
-                    sb.AppendLine(GetChallengingCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5));
-                    sb.AppendLine(GetSameCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5));
-                    sb.AppendLine(GetSupportiveCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5));
+                    sb.AppendLine(GetChallengingCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
+                    sb.AppendLine(GetSameCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
+                    sb.AppendLine(GetSupportiveCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
                 }
             }
 
-            return TemplateProcessor.PopulateTemplate(sb.ToString(), pronouns);
+            return sb.ToString();
         }
 
         private bool IsSupportive(ETransformationType transformationType)
@@ -704,27 +728,9 @@ namespace K9.WebApplication.Models
             {
                 return;
             }
-
-            Pronouns = new
-            {
-                Person1 = compatibilityModel.FirstPersonNameWithArticle,
-                Person2 = compatibilityModel.SecondPersonNameWithArticle,
-                Person1Proper = compatibilityModel.FirstPersonNameWithArticle.ToProperCase(),
-                Person2Proper = compatibilityModel.SecondPersonNameWithArticle.ToProperCase(),
-                Gender1PossessivePronoun = compatibilityModel.NineStarKiModel1?.PersonModel?.GenderPossessivePronoun,
-                Gender2PossessivePronoun = compatibilityModel.NineStarKiModel2?.PersonModel?.GenderPossessivePronoun,
-                Gender1Pronoun = compatibilityModel.NineStarKiModel1?.PersonModel?.GenderPronoun,
-                Gender2Pronoun = compatibilityModel.NineStarKiModel2?.PersonModel?.GenderPronoun,
-                Gender1PossessivePronounProper =
-                compatibilityModel.NineStarKiModel1?.PersonModel?.GenderPossessivePronoun.ToProperCase(),
-                Gender2PossessivePronounProper =
-                compatibilityModel.NineStarKiModel2?.PersonModel?.GenderPossessivePronoun.ToProperCase(),
-                Gender1PronounProper = compatibilityModel.NineStarKiModel1?.PersonModel?.GenderPronoun.ToProperCase(),
-                Gender2PronounProper = compatibilityModel.NineStarKiModel2?.PersonModel?.GenderPronoun.ToProperCase()
-            };
-
+            
             Score = new CompatibilityScoreModel();
-            ElementCompatibility = new ElementCompatibility(compatibilityModel.NineStarKiModel1, compatibilityModel.NineStarKiModel2, Score, Pronouns);
+            ElementCompatibility = new ElementCompatibility(compatibilityModel.NineStarKiModel1, compatibilityModel.NineStarKiModel2, Score);
             GenderCompatibility = new GenderCompatibility(compatibilityModel.NineStarKiModel1, compatibilityModel.NineStarKiModel2, Score);
             ModalityCompatibility = new ModalityCompatibility(compatibilityModel.NineStarKiModel1, compatibilityModel.NineStarKiModel2, Score);
         }

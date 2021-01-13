@@ -100,9 +100,9 @@ namespace K9.WebApplication.Models
             HarmonyScore,
             SupportScore,
             MutualUnderstandingScore,
+            (int)ECompatibilityScore.ExtremelyHigh - ConflictScore,
             ComplementarityScore,
-            SparkScore,
-            LearningPotentialScore
+            (ECompatibilityScore)SexualChemistryScore
         });
 
         private ECompatibilityScore GetAverageScore(List<ECompatibilityScore> scores)

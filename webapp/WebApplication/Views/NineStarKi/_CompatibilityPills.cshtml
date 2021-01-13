@@ -15,7 +15,7 @@
 
             <div class="tab-content">
                 <div id="overall" class="tab-pane fade in active">
-                    @Html.Panel(Dictionary.SummaryLabel, Model.CompatibilitySummary)
+                    @Html.Panel(Dictionary.OverallCompatibility, Html.Partial("_CompatibilityOverall").ToString())
                 </div>
 
                 <div id="fundamental" class="tab-pane fade">

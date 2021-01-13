@@ -379,6 +379,7 @@
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Helpers\SessionHelpers.cs" />
     <Compile Include="Helpers\Separator.cs" />
+    <Compile Include="Models\CompatibilityScoreModel.cs" />
     <Compile Include="Models\CompatibilityDetailsModel.cs" />
     <Compile Include="Models\CompatibilityModel.cs" />
     <Compile Include="Models\Recaptcha.cs" />
@@ -1179,11 +1180,11 @@
     <Content Include="Views\Shared\EditorTemplates\Url.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Url.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Int32.cshtml" />
-    <Content Include="Views\NineStarKi\_CompatibilitySummary.cshtml" />
     <Content Include="Views\NineStarKi\_CompatibilityOverview.cshtml" />
+    <Content Include="Views\NineStarKi\_CompatibilityGauges.cshtml" />
     <Content Include="Views\Shared\_LayoutFormMedium.cshtml" />
     <Content Include="Views\NineStarKi\_CompatibilityGauge.cshtml" />
-    <Content Include="Views\NineStarKi\_CompatibilityDetails.cshtml" />
+    <Content Include="Views\NineStarKi\_CompatibilityPills.cshtml" />
     <Content Include="Views\Support\DonationCancelSuccess.cshtml" />
     <Content Include="Views\Shared\_StripeFooter.cshtml" />
     <Content Include="Views\Membership\PurchaseCancelSuccess.cshtml" />
@@ -1238,6 +1239,9 @@
     <Content Include="Views\Consultations\Edit.cshtml" />
     <Content Include="Views\Consultations\Index.cshtml" />
     <Content Include="Views\Shared\_Recaptcha.cshtml" />
+    <Content Include="Views\NineStarKi\_CompatibilityOverall.cshtml" />
+    <Content Include="Views\Shared\_FiveTransformations.cshtml" />
+    <Content Include="Views\NineStarKi\_CompatibilityElements.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

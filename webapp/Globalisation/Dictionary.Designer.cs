@@ -1375,6 +1375,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All Elements.
+        /// </summary>
+        public static string AllElements {
+            get {
+                return ResourceManager.GetString("AllElements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Amount Donated.
         /// </summary>
         public static string AmountDonatedLabel {
@@ -1607,6 +1616,52 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Challenging Transformation
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This combination result in a lot of &lt;strong&gt;natural chemistry and magnetism&lt;/strong&gt; between people, but it also increases the &lt;strong&gt;risk of conflict and emotional misunderstandings&lt;/strong&gt;. This can be offset if the other Energies, especially the Fundamental Energies are in a Supportive Transformation or Sibling relationship.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string character_element_challenging {
+            get {
+                return ResourceManager.GetString("character_element_challenging", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Same Element - Sibling Relationship
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The Character Energies have the same element. There is a potential for a &lt;strong&gt;deep emotional connection&lt;/strong&gt; as well as a very good &lt;strong&gt;mutual understanding on an emotional level&lt;/strong&gt;. This can help to create more harmony in the relationship, especially if the fundamental Energies are antagonistic.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    In romantic relationships, sharing the same Character Energy element can lead to less chemistry or spark. However, if  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string character_element_same {
+            get {
+                return ResourceManager.GetString("character_element_same", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Supportive Transformation - Parent Child Relationship
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The Character Energies are in a Supportive Transformation, in which one Energy supports or nourishes the next. This typically creates a &lt;strong&gt;strong emotional connection and mutual understanding&lt;/strong&gt;.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    In romantic relationships, when the Character Energies in a Supportive Transformation, it typically improves the chances of chemistry and also relationship harmony. However, the Transformation of the Fundamen [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string character_element_supportive {
+            get {
+                return ResourceManager.GetString("character_element_supportive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Please note that the &apos;Deeper Character&apos; Energy alone does not give a very detailed description of a person. It is important to also take into account the &apos;Fundamental Adult Nature&apos;, as well as the &apos;Surface Energy&apos;. However, it does give a useful overview of their deeper character. The Character Energy also has quite a significant influence on intimate relationships, where the more emotional aspects of ourselves tend to be revealed. There is more information on that in the &lt;a href=&quot;{RelationshipsUrl [rest of string was truncated]&quot;;.
         /// </summary>
@@ -1669,6 +1724,15 @@ namespace K9.Globalisation {
         public static string character_modality_same {
             get {
                 return ResourceManager.GetString("character_modality_same", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Character Elements.
+        /// </summary>
+        public static string CharacterElements {
+            get {
+                return ResourceManager.GetString("CharacterElements", resourceCulture);
             }
         }
         
@@ -1918,6 +1982,15 @@ namespace K9.Globalisation {
         public static string CompatibilityTitle {
             get {
                 return ResourceManager.GetString("CompatibilityTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Complementarity.
+        /// </summary>
+        public static string ComplementarityScore {
+            get {
+                return ResourceManager.GetString("ComplementarityScore", resourceCulture);
             }
         }
         
@@ -2759,6 +2832,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Both people share the same Earth element and are stable, reliable, supportive types who are likely to have very similar values and priorities. This could very well result in a close friendship where both people feel understood, supported and that they can rely on one another..
+        /// </summary>
+        public static string earth_earth {
+            get {
+                return ResourceManager.GetString("earth_earth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    The Earth element is associated with late summer or afternoon. It also represents the transition between stages.
         ///&lt;/h5&gt;
@@ -2768,6 +2850,24 @@ namespace K9.Globalisation {
         public static string earth_element {
             get {
                 return ResourceManager.GetString("earth_element", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The steady, stable and reliable quality of Earth is extremely beneficial and supportive for Metal elements. Metal people are also quite reliable and steady by nature and may struggle a little with the more impulsive and dynaic Tree and Fire elements. Additionally, Metal people can, at time, be quite sharp in the way they communicate. Earth people are typically far more receptive and less impacted by Metal&apos;s communication style, resulting in good communication and understanding betwen these elements.
+        /// </summary>
+        public static string earth_metal {
+            get {
+                return ResourceManager.GetString("earth_metal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Water people, with their deep, flowing, exploratory nature, can sometimes become undisciplined, chaotic and too thinly spread. Without a container, they can lack direction and purpose. Earth people can be of great importance in helping to provide some structure and support to Water Energies. However, too much Earth element can be overly restrictive and rigid, thwarting Water&apos;s natural flexible, exploratory nature..
+        /// </summary>
+        public static string earth_water {
+            get {
+                return ResourceManager.GetString("earth_water", resourceCulture);
             }
         }
         
@@ -2817,50 +2917,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    {EnergiesDescription} - Challenging Transformation
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    This combination can be &lt;strong&gt;one of the most magnetic&lt;/strong&gt; and results in the most &lt;strong&gt;personal growth&lt;/strong&gt;. There is often a lot of &lt;strong&gt;natural chemistry between people with opposite elements&lt;/strong&gt;. It is also the combination that is &lt;strong&gt;most likely to lead to misunderstandings and conflict&lt;/strong&gt;. Sometimes this combination &lt;strong&gt;can lead to the element that is being challenged feeling thwarted and  [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string element_challenging {
-            get {
-                return ResourceManager.GetString("element_challenging", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    {EnergiesDescription} - Same Transformation / Sibling Relationship
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    The Fundamental Energies have the same element. This combination tends to lead to a &lt;strong&gt;strong &quot;sibling&quot; relationship&lt;/strong&gt; in which there is an &lt;strong&gt;effortless and profound understanding&lt;/strong&gt; between both parties. There is a great potential for &lt;strong&gt;mutual understanding&lt;/strong&gt;, &lt;strong&gt;compassion&lt;/strong&gt; and &lt;strong&gt;harmony&lt;/strong&gt; in the relationship as well as &lt;strong&gt;little antagonism or mi [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string element_same {
-            get {
-                return ResourceManager.GetString("element_same", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    {EnergiesDescription} - Supportive Transformation / Parent Child Relationship
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    The Fundamental Energies are in a Supportive Transformation, in which one Energy supports or nourishes the next. On the surface, it may appear that it is more of a one-way street. However, in reality, &lt;strong&gt;it does work both ways&lt;/strong&gt;, even if the bulk of the support flows from the parent to the child. This is typically a very &lt;strong&gt;stable relationship&lt;/strong&gt; and as the elements are not the sam [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string element_supportive {
-            get {
-                return ResourceManager.GetString("element_supportive", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Element Description.
         /// </summary>
         public static string ElementDescriptionLabel {
             get {
                 return ResourceManager.GetString("ElementDescriptionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Elements Compatibility Analysis.
+        /// </summary>
+        public static string ElementsCompatibilityAnalysis {
+            get {
+                return ResourceManager.GetString("ElementsCompatibilityAnalysis", resourceCulture);
             }
         }
         
@@ -3049,6 +3119,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fire element provides illumination, clarity, warmth and inspiration to Earth elements, supporting them in their endeavours. Earth people are not the most receptive to advice, especially from Tree people (from whom advice may seem like a threat). However, the warm, passionate, inspiring and gently elucidating quality of Fire tends to be much appreciated by those who are Earth element.
+        /// </summary>
+        public static string fire_earth {
+            get {
+                return ResourceManager.GetString("fire_earth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    Fire element is the point of fullest expansion, associated with high summer and the midday sun
         ///&lt;/h5&gt;
@@ -3087,6 +3166,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to As both people are Fire Energies, they share many of the same qualities, such as the ability to inspire those around then with their great clarity, intuition and emotional intelligence. There is a strong potential for both people to get on very well and they would likely enjoy talking to one another and feel very comfortable in each other&apos;s company..
+        /// </summary>
+        public static string fire_fire {
+            get {
+                return ResourceManager.GetString("fire_fire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    In Chinese medicine, the element Fire controls the function of the heart and small intestine and therefore these Energies must guard against circulatory disorders. It is also advisable to avoid 
         ///    overly hot, spicy or salty foods.
@@ -3098,6 +3186,15 @@ namespace K9.Globalisation {
         public static string fire_health {
             get {
                 return ResourceManager.GetString("fire_health", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Metal people tend to be pragmatic, critical and clear and generally have a broad perspective and lots of common sense. However, they can also become overly rigid and stuck in one particular point of view. Fire Energies, who benefit from the perspective of the midday sun, often have a clearer, more balanced perspective than Metal Energies, as well as a warm, dynamic quality to them which is particularly good at gently melting and softening the rigidity of Metal people..
+        /// </summary>
+        public static string fire_metal {
+            get {
+                return ResourceManager.GetString("fire_metal", resourceCulture);
             }
         }
         
@@ -3362,7 +3459,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fundamental Energies Compatibility.
+        ///   Looks up a localized string similar to Fundamental Elements.
+        /// </summary>
+        public static string FundamentalElements {
+            get {
+                return ResourceManager.GetString("FundamentalElements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fundamental Energies Detailed Compatibility.
         /// </summary>
         public static string FundamentalEnergiesCompatibility {
             get {
@@ -4012,6 +4118,15 @@ namespace K9.Globalisation {
         public static string Learn {
             get {
                 return ResourceManager.GetString("Learn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Learning Potential.
+        /// </summary>
+        public static string LearningPotential {
+            get {
+                return ResourceManager.GetString("LearningPotential", resourceCulture);
             }
         }
         
@@ -4969,6 +5084,54 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Challenging Transformation
+        ///&lt;/h5&gt;
+        ///&lt;div&gt;
+        ///    &lt;img title=&quot;Challenging Transformation&quot; alt=&quot;Challenging Transformation&quot; class=&quot;auto-size center-block&quot; src=&quot;Images/ninestar/transformations/transformation-challenging.png&quot; /&gt;
+        ///&lt;/div&gt;
+        ///&lt;p&gt;
+        ///    This combination can be &lt;strong&gt;one of the most magnetic&lt;/strong&gt; and results in the most &lt;strong&gt;personal growth&lt;/strong&gt;. There is often a lot of &lt;strong&gt;natural chemistry between people with opposite elements&lt;/strong&gt;. It is also the combination that is &lt;stro [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_element_challenging {
+            get {
+                return ResourceManager.GetString("main_element_challenging", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Same Element - Sibling Relationship
+        ///&lt;/h5&gt;
+        ///&lt;div&gt;
+        ///    &lt;img title=&quot;Sibling Relationship&quot; alt=&quot;Sibling Relationship&quot; class=&quot;auto-size center-block&quot; src=&quot;Images/ninestar/transformations/transformation-same.png&quot; /&gt;
+        ///&lt;/div&gt;
+        ///&lt;p&gt;
+        ///    The Fundamental Energies have the same element. This combination tends to lead to a &lt;strong&gt;strong &quot;sibling&quot; relationship&lt;/strong&gt; in which there is an &lt;strong&gt;effortless and profound understanding&lt;/strong&gt; between both parties. There is a great potential for &lt;strong&gt;mutu [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_element_same {
+            get {
+                return ResourceManager.GetString("main_element_same", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Supportive Transformation - Parent Child Relationship
+        ///&lt;/h5&gt;
+        ///&lt;div&gt;
+        ///    &lt;img title=&quot;Supportive Transformation&quot; alt=&quot;Supportive Transformation&quot; class=&quot;auto-size center-block&quot; src=&quot;Images/ninestar/transformations/transformation-supportive.png&quot; /&gt;
+        ///&lt;/div&gt;
+        ///&lt;p&gt;
+        ///    The Fundamental Energies are in a Supportive Transformation, in which one Energy supports or nourishes the next. On the surface, it may appear that it is more of a one-way street. However, in reality, &lt;strong&gt;it does work both ways&lt;/stron [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_element_supportive {
+            get {
+                return ResourceManager.GetString("main_element_supportive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
         ///    The Fundamental Energy description alone is not very granular and only describes one aspect of the chart.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
@@ -5236,6 +5399,33 @@ namespace K9.Globalisation {
         public static string metal_element {
             get {
                 return ResourceManager.GetString("metal_element", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Both people are Metal Energies and are typically reliable, steady and pragmatic. Metal people are typically straightforward and direct in their communication, and are likely to appreciate these qualities in one another, leading to a deep sense of trust..
+        /// </summary>
+        public static string metal_metal {
+            get {
+                return ResourceManager.GetString("metal_metal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tree people are highly creative, forward-thinking individuals and can be quite pioneering. However, many of their ideas require a great deal of refinement before they are of use. Metal people, with their broad perspective, common sense and critical eye are especially good at seeing the potential pitfalls in the ideas brought forward by Tree people. When this interaction works in a balanced way, the results can be spectacular (one might think of a beautifully pruned tree). However, when exposed to too much o [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string metal_tree {
+            get {
+                return ResourceManager.GetString("metal_tree", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Metal people bring great clarity to the Water element, which can, at times, get a little lost in deep waters and lose direction. Just as a knife cannot cut water, Water people typically do not feel cut by the generally more sharp quality that Metal people express. To the contrary, many Water people find the sharpness and directness extremely helpful and clarifying..
+        /// </summary>
+        public static string metal_water {
+            get {
+                return ResourceManager.GetString("metal_water", resourceCulture);
             }
         }
         
@@ -5607,6 +5797,24 @@ namespace K9.Globalisation {
         public static string mountain_year {
             get {
                 return ResourceManager.GetString("mountain_year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mutual Support.
+        /// </summary>
+        public static string MutualSupport {
+            get {
+                return ResourceManager.GetString("MutualSupport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mutual Understanding.
+        /// </summary>
+        public static string MutualUnderstanding {
+            get {
+                return ResourceManager.GetString("MutualUnderstanding", resourceCulture);
             }
         }
         
@@ -6723,7 +6931,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sexual Chemistry Details.
+        ///   Looks up a localized string similar to Sexual Chemistry.
         /// </summary>
         public static string SexualChemistryDetails {
             get {
@@ -7234,6 +7442,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Spark.
+        /// </summary>
+        public static string SparkScore {
+            get {
+                return ResourceManager.GetString("SparkScore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Spotlight / Fame.
         /// </summary>
         public static string Spotlight {
@@ -7473,12 +7690,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Got a question?
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Please let us know if there is anything we can help with. Feel free to ask us anything about 9 Star Ki that might not be clear to you. Additionally, if you are interested, you can &lt;a target=&quot;_blank&quot; href=&quot;{BookConsultationLink}&quot;&gt;book a consultation&lt;/a&gt; for a more in-depth look at your chart and your relationships.
-        ///&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;article&gt;
+        ///    &lt;h4 class=&quot;margin-top-0&quot;&gt;
+        ///        Got a question?
+        ///    &lt;/h4&gt;
+        ///    &lt;p&gt;
+        ///        Please let us know if there is anything we can help with. Feel free to ask us anything about 9 Star Ki that might not be clear to you.
+        ///    &lt;/p&gt;
+        ///    &lt;p&gt;
+        ///        Additionally, if you are interested, you can &lt;a target=&quot;_blank&quot; href=&quot;{BookConsultationLink}&quot;&gt;book a consultation&lt;/a&gt; for a more in-depth look at your chart and your relationships.
+        ///    &lt;/p&gt;
+        ///&lt;/article&gt;.
         /// </summary>
         public static string support_blurb {
             get {
@@ -7905,6 +8127,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tree people love change and are constantly creating new solutions and ideas, which they pursue with passion. This can be extremely disruptive to Earth people, who tend to dislike change not instigated by others. Earth people can feel pushed by Tree people. One can easily invisage a vigorous young sappling breaking up the Earth in the spring time, as it begins its growth upwards. However, when out of balance, Earth people tend to get a bit stuck and stagnate and so the fresh, enthusiastic input of the Tree e [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string tree_earth {
+            get {
+                return ResourceManager.GetString("tree_earth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    Tree element is associated with the dawn or spring. It represents growth and new beginnings
         ///&lt;/h5&gt;
@@ -7917,6 +8148,24 @@ namespace K9.Globalisation {
         public static string tree_element {
             get {
                 return ResourceManager.GetString("tree_element", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Tree element nourishes the Fire by providing constant fuel to burn. For example, Tree people are often naturally complimentary and express their appreciation for others. This helps to boost the somewhat delicate confidence of Fire Energies, so that they can continue to burn brightly and inspire those around them..
+        /// </summary>
+        public static string tree_fire {
+            get {
+                return ResourceManager.GetString("tree_fire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Both people share the same Tree element and are typically energetic, optimistic and spontaneous. They are likely to enjoy interesting and dynamic conversation and to support each other&apos;s natural creative and exploratory nature..
+        /// </summary>
+        public static string tree_tree {
+            get {
+                return ResourceManager.GetString("tree_tree", resourceCulture);
             }
         }
         
@@ -8194,6 +8443,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Water element runs deep and loves to explore the emotional world, flowing endlessly from one vantage point to the next. Fire people, on the other hand, are more comfortable with the perspective of the midday sun, where everything is illuminated and in plain view. What can therefore happen, is that Fire people can feel rather &apos;lost&apos; in the world of Water people. They don&apos;t have much common ground and it can result in their flame going out. Water people also typically react to Fire&apos;s clearly defined opini [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_fire {
+            get {
+                return ResourceManager.GetString("water_fire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Water Energies are most likely to suffer health problems related to the kidneys, bladder, reproductive system and adrenal glands, all of which are governed by the element water in Traditional Chinese Medicine.
         ///&lt;/p&gt;
@@ -8312,12 +8570,30 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Water element nourishes the Tree element, helping it to grow; to develop its creativity and natural exploratory and pioneering nature. For example, Water people tend to show a natural fascination in the ideas of Tree people. Also, being flexible, they can keep up wiht the fast and dynamic pace of Trees, encouraging them and even providing additional ideas and inspiration..
+        /// </summary>
+        public static string water_tree {
+            get {
+                return ResourceManager.GetString("water_tree", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to One Yang line encapsulated by two Yin lines. Hidden strength and depth within. symbolic of winter&apos;s apparent dormancy on the surface, whilst beneath major change is taking place.
         ///.
         /// </summary>
         public static string water_trigram {
             get {
                 return ResourceManager.GetString("water_trigram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Both people share the same &quot;Water&quot; element. Water is perhaps the most intuitive and empathetic of the 9 Energies and so there is a potential for an extremely deep and intuitive connection between two people who share the Water element..
+        /// </summary>
+        public static string water_water {
+            get {
+                return ResourceManager.GetString("water_water", resourceCulture);
             }
         }
         

@@ -3,8 +3,8 @@
 
 <div class="ninestar-summary-container">
     <h3 class="margin-bottom-0 padding-bottom-0">@Dictionary.Element</h3>
-    <p>@Model.Element</p>
-    <a target="_blank" href="@Url.ActionWithBookmark("About", "Home", Model.Element.ToLower())">
-        <img title="@Model.Element @Dictionary.Element" alt="@Model.Element @Dictionary.Element" class="auto-size center-block" src="~/Images/ninestar/elements/@(Model.Element).png" />
+    <p>@Model.ElementName</p>
+    <a target="_blank" href="@Url.ActionWithBookmark("About", "Home", Model.ElementName.ToLower())">
+        <img title="@Model.ElementName @Dictionary.Element" alt="@Model.ElementName @Dictionary.Element" class="auto-size center-block" src="~/Images/ninestar/elements/@(Model.ElementName).png" />
     </a>
 </div>

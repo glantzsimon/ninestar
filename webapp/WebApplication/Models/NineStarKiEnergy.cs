@@ -320,12 +320,15 @@ namespace K9.WebApplication.Models
         public string TrigramDescription => GetTrigramDescription();
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ElementLabel)]
-        public string Element => MetaData.GetElement();
-
-        public string ElementWithYingYang => $"{YinYangName} {Element}".Trim();
+        public string ElementName => MetaData.GetElement();
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ElementLabel)]
-        public string ElementTitle => $"{Element} {Dictionary.Element}";
+        public ENineStarKiElement Element => MetaData.Element;
+
+        public string ElementWithYingYang => $"{YinYangName} {ElementName}".Trim();
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ElementLabel)]
+        public string ElementTitle => $"{ElementName} {Dictionary.Element}";
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ElementLabel)]
         public string ElementDescription => MetaData.GetElementDescription();
@@ -369,7 +372,7 @@ namespace K9.WebApplication.Models
                     return $"{EnergyNumber} {EnergyName}";
 
                 default:
-                    return $"{EnergyNumber} {Element} / {EnergyName}";
+                    return $"{EnergyNumber} {ElementName} / {EnergyName}";
             }
 
         }

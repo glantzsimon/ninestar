@@ -1,0 +1,97 @@
+﻿@using K9.WebApplication.Enums
+@using K9.WebApplication.Options
+@model K9.WebApplication.Models.CompatibilityModel
+
+<div class="row margin-top-20">
+    <div class="col-sm-4 col-xs-12">
+        @if (Model != null && Model.IsProcessed)
+        {
+            <h4 class="text-center margin-top-0">@Dictionary.HarmonyScore</h4>
+            @Html.Partial("_CompatibilityGauge", new GaugeOptions
+            {
+                Value = (int)Model.CompatibilityDetails.Score.HarmonyScore,
+                IsSecret = Model.IsUpgradeRequired
+            })
+        }
+    </div>
+    <div class="col-sm-4 col-xs-12">
+        @if (Model != null && Model.IsProcessed)
+        {
+            <h4 class="text-center margin-top-0">@Dictionary.ComplementarityScore</h4>
+            @Html.Partial("_CompatibilityGauge", new GaugeOptions
+            {
+                Value = (int) Model.CompatibilityDetails.Score.ComplementarityScore,
+                IsSecret = Model.IsUpgradeRequired
+            })
+        }
+    </div>
+    <div class="col-sm-4 col-xs-12">
+        @if (Model != null && Model.IsProcessed)
+        {
+            <h4 class="text-center margin-top-0">@Dictionary.SexualChemistry</h4>
+            @Html.Partial("_CompatibilityGauge", new GaugeOptions
+            {
+                Value = (int) Model.CompatibilityDetails.Score.SexualChemistryScore,
+                MaxValue = (int) ESexualChemistryScore.OffTheCharts,
+                IsSecret = Model.IsUpgradeRequired
+            })
+        }
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4 col-xs-12">
+        @if (Model != null && Model.IsProcessed)
+        {
+            <h4 class="text-center margin-top-0">@Dictionary.SparkScore</h4>
+            @Html.Partial("_CompatibilityGauge", new GaugeOptions
+            {
+                Value = (int) Model.CompatibilityDetails.Score.SparkScore,
+                IsSecret = Model.IsUpgradeRequired
+            })
+        }
+    </div>
+    <div class="col-sm-4 col-xs-12">
+        @if (Model != null && Model.IsProcessed)
+        {
+            <h4 class="text-center margin-top-0">@Dictionary.ConflictScore</h4>
+            @Html.Partial("_CompatibilityGauge", new GaugeOptions
+            {
+                Value = (int) Model.CompatibilityDetails.Score.ConflictScore,
+                IsInverted = true
+            })
+        }
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+        @if (Model != null && Model.IsProcessed)
+        {
+            <h4 class="text-center margin-top-0">@Dictionary.LearningPotentialScore</h4>
+            @Html.Partial("_CompatibilityGauge", new GaugeOptions
+            {
+                Value = (int) Model.CompatibilityDetails.Score.LearningPotentialScore
+            })
+        }
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+        @if (Model != null && Model.IsProcessed)
+        {
+            <h4 class="text-center margin-top-0">@Dictionary.MutualUnderstanding</h4>
+            @Html.Partial("_CompatibilityGauge", new GaugeOptions
+            {
+                Value = (int) Model.CompatibilityDetails.Score.MutualUnderstandingScore,
+                IsInverted = true
+            })
+        }
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            @if (Model != null && Model.IsProcessed)
+            {
+                <h4 class="text-center margin-top-0">@Dictionary.MutualSupport</h4>
+                @Html.Partial("_CompatibilityGauge", new GaugeOptions
+                {
+                    Value = (int) Model.CompatibilityDetails.Score.SupportScore
+                })
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+﻿@model K9.WebApplication.Models.CompatibilityModel
+
+<div class="row">
+    <div class="col-xs-12">
+        <h4>@Dictionary.FundamentalElements</h4>
+
+        @Html.Raw(Model.CompatibilityDetails.ElementCompatibility.FundamentalElementsTransformationDetails)
+
+        <p>
+            @Html.Raw(Model.CompatibilityDetails.ElementCompatibility.FundamentalElementsCompatibilityDetails)
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <h4>@Dictionary.CharacterElements</h4>
+
+        @Html.Raw(Model.CompatibilityDetails.ElementCompatibility.CharacterElementsTransformationDetails)
+
+        <p>
+            @Html.Raw(Model.CompatibilityDetails.ElementCompatibility.CharacterElementsCompatibilityDetails)
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <h4>@Dictionary.AllElements</h4>
+
+        @Html.Raw(Model.CompatibilityDetails.ElementCompatibility.AllOtherElementsCompatibility)
+    </div>
+</div>

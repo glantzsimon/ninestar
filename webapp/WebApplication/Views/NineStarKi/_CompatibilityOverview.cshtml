@@ -1,61 +1,23 @@
-﻿@using K9.WebApplication.Enums
-@using K9.WebApplication.Options
-@model K9.WebApplication.Models.CompatibilityModel
+﻿@model K9.WebApplication.Models.CompatibilityModel
 
-<div class="row margin-top-20">
-    <div class="col-sm-4 col-xs-12">
+<div class="row">
+    <div class="col-md-6">
         @if (Model != null && Model.IsProcessed)
         {
-            <h4 class="text-center margin-top-0">@Dictionary.SexualChemistry</h4>
-            @Html.Partial("_CompatibilityGauge", new GaugeOptions
-           {
-               Value = (int) Model.TotalSexualChemistryScore,
-               MaxValue = (int) ESexualChemistryScore.OffTheCharts,
-               IsSecret = Model.IsUpgradeRequired
-           })
+            <h4 class="margin-top-0">@Model.FirstPersonName</h4>
+            @Html.Partial("_ProfileSummary", Model.NineStarKiModel1)
         }
     </div>
-    <div class="col-sm-4 col-xs-12">
+    <div class="col-md-6">
         @if (Model != null && Model.IsProcessed)
         {
-            <h4 class="text-center margin-top-0">@Dictionary.ChemistryScore</h4>
-            @Html.Partial("_CompatibilityGauge", new GaugeOptions
-            {
-                Value = (int) Model.TotalEnergyChemistryScore,
-                IsSecret = Model.IsUpgradeRequired
-            })
-        }
-    </div>
-    <div class="col-sm-4 col-xs-12">
-        @if (Model != null && Model.IsProcessed)
-        {
-            <h4 class="text-center margin-top-0">@Dictionary.HarmonyScore</h4>
-            @Html.Partial("_CompatibilityGauge", new GaugeOptions
-            {
-               Value = (int) Model.TotalHarmonyScore,
-               IsSecret = Model.IsUpgradeRequired
-            })
-        }
-    </div>
-    <div class="col-sm-4 col-sm-offset-2 col-xs-12 col-xs-offset-0">
-        @if (Model != null && Model.IsProcessed)
-        {
-            <h4 class="text-center margin-top-0">@Dictionary.ConflictScore</h4>
-            @Html.Partial("_CompatibilityGauge", new GaugeOptions
-            {
-                Value = (int) Model.TotalEnergyConflictPotentialScore,
-                IsInverted = true
-            })
-        }
-    </div>
-    <div class="col-md-4 col-sm-4 col-xs-12">
-        @if (Model != null && Model.IsProcessed)
-        {
-            <h4 class="text-center margin-top-0">@Dictionary.LearningPotentialScore</h4>
-            @Html.Partial("_CompatibilityGauge", new GaugeOptions
-            {
-                Value = (int) Model.TotalEnergyLearningPotentialScore
-            })
+            <h4 class="margin-top-0">@Model.SecondPersonName</h4>
+            @Html.Partial("_ProfileSummary", Model.NineStarKiModel2)
         }
     </div>
 </div>
+
+@if (Model != null && Model.IsProcessed)
+{
+    @Html.Partial("_CompatibilityGauges")
+}

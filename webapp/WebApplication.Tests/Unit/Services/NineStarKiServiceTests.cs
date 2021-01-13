@@ -286,8 +286,8 @@ namespace K9.WebApplication.Tests.Unit.Services
                 Gender = gender2
             }); 
 
-            Assert.Equal(chemistryScore, compatibility.FundamentalEnergyChemistryScore);
-            Assert.Equal(conflictScore, compatibility.FundamentalEnergyConflictPotentialScore);
+            Assert.Equal(chemistryScore, compatibility.CompatibilityDetails.Score.SparkScore);
+            Assert.Equal(conflictScore, compatibility.CompatibilityDetails.Score.ConflictScore);
         }
 
     }

@@ -21,7 +21,7 @@
         @if (Model != null && Model.IsProcessed)
         {
             <div class="col-sm-12 padding-0 margin-top-0">
-                @Html.Panel(Dictionary.Results, Html.Partial("_CompatibilitySummary", Model).ToString())
+                @Html.Panel(Dictionary.Results, Html.Partial("_CompatibilityOverview", Model).ToString())
             </div>
         }
         @if (Model != null && Model.IsProcessed)
@@ -29,7 +29,7 @@
             <div class="col-sm-12 padding-0 margin-top-5">
                 @using (Html.PaidContent(Model, () => !Model.IsUpgradeRequired))
                 {
-                    @Html.Partial("_CompatibilityDetails")
+                    @Html.Partial("_CompatibilityPills")
                 }
             </div>
         }

@@ -1708,30 +1708,6 @@
   <data name="main_25" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>compatibility\en-gb\main-25.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="character_gender_opposite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>compatibility\en-gb\character-gender-opposite.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="character_gender_same" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>compatibility\en-gb\character-gender-same.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="character_modality_different" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>compatibility\en-gb\character-modality-different.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="character_modality_same" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>compatibility\en-gb\character-modality-same.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="main_gender_opposite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>compatibility\en-gb\main-gender-opposite.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="main_gender_same" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>compatibility\en-gb\main-gender-same.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="main_modality_different" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>compatibility\en-gb\main-modality-different.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="main_modality_same" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>compatibility\en-gb\main-modality-same.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="AmountLabel" xml:space="preserve">
     <value>Amount</value>
   </data>
@@ -1747,20 +1723,11 @@
   <data name="DonationCancelSuccessful" xml:space="preserve">
     <value>Your donation was successfully cancelled.</value>
   </data>
-  <data name="element_challenging" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>compatibility\en-gb\element-challenging.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="element_same" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>compatibility\en-gb\element-same.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="element_supportive" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>compatibility\en-gb\element-supportive.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="EmailThankYouTitle" xml:space="preserve">
     <value>Thank you for your email</value>
   </data>
   <data name="FundamentalEnergiesCompatibility" xml:space="preserve">
-    <value>Fundamental Energies Compatibility</value>
+    <value>Fundamental Energies Detailed Compatibility</value>
   </data>
   <data name="main_26" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>compatibility\en-gb\main-26.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -1847,7 +1814,7 @@
     <value>Your purchase was successfully cancelled.</value>
   </data>
   <data name="SexualChemistryDetails" xml:space="preserve">
-    <value>Sexual Chemistry Details</value>
+    <value>Sexual Chemistry</value>
   </data>
   <data name="sexual_chemistry_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>compatibility\en-gb\sexual-chemistry-high.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -1930,56 +1897,23 @@
   <data name="Consolidating" xml:space="preserve">
     <value>Consolidating / Ups and Downs</value>
   </data>
-  <data name="core_earth_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\en-gb\monthly\core-earth-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="core_earth_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\en-gb\yearly\core-earth-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="EarlyAutumn" xml:space="preserve">
     <value>Early Autumn</value>
   </data>
   <data name="EarlySpring" xml:space="preserve">
     <value>Early Spring</value>
   </data>
-  <data name="fire_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\en-gb\monthly\fire-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="fire_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\en-gb\yearly\fire-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="Harvest" xml:space="preserve">
     <value>Harvest / Abundance and Celebration</value>
   </data>
-  <data name="heaven_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\en-gb\monthly\heaven-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="heaven_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\en-gb\yearly\heaven-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="Hibernation" xml:space="preserve">
     <value>Hibernation / Stillness</value>
-  </data>
-  <data name="lake_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\en-gb\monthly\lake-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="lake_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\en-gb\yearly\lake-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="LateSpring" xml:space="preserve">
     <value>Late Spring</value>
   </data>
   <data name="MonthlyCycle" xml:space="preserve">
     <value>Monthly Cycle</value>
-  </data>
-  <data name="month_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\en-gb\monthly\month-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="mountain_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\en-gb\monthly\mountain-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="mountain_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\en-gb\yearly\mountain-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="Planning" xml:space="preserve">
     <value>Planning / Germination</value>
@@ -1993,35 +1927,11 @@
   <data name="Season" xml:space="preserve">
     <value>Season</value>
   </data>
-  <data name="soil_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\en-gb\monthly\soil-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="soil_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\en-gb\yearly\soil-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="Spotlight" xml:space="preserve">
     <value>Spotlight / Fame</value>
   </data>
   <data name="Sprouting" xml:space="preserve">
     <value>Sprouting / Rising Energy</value>
-  </data>
-  <data name="thunder_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\en-gb\monthly\thunder-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="thunder_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\en-gb\yearly\thunder-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="water_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\en-gb\monthly\water-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="water_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\en-gb\yearly\water-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="wind_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\en-gb\monthly\wind-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="wind_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\en-gb\yearly\wind-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="Winter" xml:space="preserve">
     <value>Winter</value>
@@ -2031,9 +1941,6 @@
   </data>
   <data name="YearlyCycle" xml:space="preserve">
     <value>Yearly Cycle</value>
-  </data>
-  <data name="year_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\en-gb\yearly\year-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="CurrentMonthlyCycle" xml:space="preserve">
     <value>Current Monthly Cycle</value>
@@ -2211,5 +2118,179 @@
   </data>
   <data name="OverallCompatibility" xml:space="preserve">
     <value>Overall Compatibility</value>
+  </data>
+  <data name="character_gender_opposite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\character-gender-opposite.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="character_gender_same" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\character-gender-same.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="character_modality_different" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\character-modality-different.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="character_modality_same" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\character-modality-same.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="core_earth_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\monthly\en-gb\core-earth-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="core_earth_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\yearly\en-gb\core-earth-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="earth_metal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>transformations\en-gb\earth-metal.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="earth_water" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>transformations\en-gb\earth-water.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ElementsCompatibilityAnalysis" xml:space="preserve">
+    <value>Elements Compatibility Analysis</value>
+  </data>
+  <data name="fire_earth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>transformations\en-gb\fire-earth.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_metal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>transformations\en-gb\fire-metal.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\monthly\en-gb\fire-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\yearly\en-gb\fire-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="FundamentalElements" xml:space="preserve">
+    <value>Fundamental Elements</value>
+  </data>
+  <data name="heaven_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\monthly\en-gb\heaven-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\yearly\en-gb\heaven-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\monthly\en-gb\lake-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\yearly\en-gb\lake-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_element_challenging" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-element-challenging.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_element_same" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-element-same.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_element_supportive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-element-supportive.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_gender_opposite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-gender-opposite.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_gender_same" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-gender-same.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_modality_different" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-modality-different.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_modality_same" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-modality-same.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="metal_tree" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>transformations\en-gb\metal-tree.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="metal_water" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>transformations\en-gb\metal-water.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="month_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\monthly\en-gb\month-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\monthly\en-gb\mountain-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\yearly\en-gb\mountain-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="soil_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\monthly\en-gb\soil-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="soil_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\yearly\en-gb\soil-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="thunder_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\monthly\en-gb\thunder-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="thunder_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\yearly\en-gb\thunder-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="tree_earth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>transformations\en-gb\tree-earth.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="tree_fire" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>transformations\en-gb\tree-fire.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_fire" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>transformations\en-gb\water-fire.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\monthly\en-gb\water-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_tree" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>transformations\en-gb\water-tree.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\yearly\en-gb\water-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wind_month" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\monthly\en-gb\wind-month.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wind_year" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\yearly\en-gb\wind-year.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="year_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\yearly\en-gb\year-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="AllElements" xml:space="preserve">
+    <value>All Elements</value>
+  </data>
+  <data name="CharacterElements" xml:space="preserve">
+    <value>Character Elements</value>
+  </data>
+  <data name="character_element_challenging" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\character-element-challenging.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="character_element_same" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\character-element-same.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="character_element_supportive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\character-element-supportive.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ComplementarityScore" xml:space="preserve">
+    <value>Complementarity</value>
+  </data>
+  <data name="earth_earth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>transformations\en-gb\earth-earth.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_fire" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>transformations\en-gb\fire-fire.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="metal_metal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>transformations\en-gb\metal-metal.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="tree_tree" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>transformations\en-gb\tree-tree.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_water" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>transformations\en-gb\water-water.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="LearningPotential" xml:space="preserve">
+    <value>Learning Potential</value>
+  </data>
+  <data name="MutualSupport" xml:space="preserve">
+    <value>Mutual Support</value>
+  </data>
+  <data name="MutualUnderstanding" xml:space="preserve">
+    <value>Mutual Understanding</value>
+  </data>
+  <data name="SparkScore" xml:space="preserve">
+    <value>Spark</value>
   </data>
 </root>

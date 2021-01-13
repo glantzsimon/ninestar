@@ -19,7 +19,7 @@
        CompatibilityLink = Url.Action("Compatibility", "NineStarKi"),
    }), "relationships")
 
-        @Html.Panel("The 5 Transformations", Dictionary.five_transformations, "transformations")
+        @Html.Panel("The 5 Transformations", Html.Partial("_FiveTransformations").ToString(), "transformations")
 
         @Html.Panel("9 Star Ki and Sexuality", TemplateProcessor.PopulateTemplate(Dictionary.sexuality, new
         {

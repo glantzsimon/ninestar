@@ -382,61 +382,65 @@ namespace K9.WebApplication.Models
 
         private List<Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel, PersonModel>> GetAllOtherElements()
         {
-            var items = new List<Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel, PersonModel>>();
-
-            items.Add(new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel, PersonModel>
-            (FundamentalEnergy1ToCharacterEnergy2TransformationType,
-                _nineStarKiModel1.MainEnergy,
-                _nineStarKiModel2.CharacterEnergy,
-                "Fundamental",
-                "Character",
-                _nineStarKiModel1.PersonModel,
-                _nineStarKiModel2.PersonModel));
-
-            items.Add(new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel, PersonModel>
-            (FundamentalEnergy2ToCharacterEnergy1TransformationType,
-                _nineStarKiModel2.MainEnergy,
-                _nineStarKiModel1.CharacterEnergy,
-                "Fundamental",
-                "Character",
-                _nineStarKiModel1.PersonModel,
-                _nineStarKiModel2.PersonModel));
-
-            items.Add(new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel, PersonModel>(
-                FundamentalEnergy1ToSurfaceEnergy2TransformationType,
-                _nineStarKiModel1.MainEnergy,
-                _nineStarKiModel2.SurfaceEnergy,
-                "Fundamental",
-                "Surface",
-                _nineStarKiModel1.PersonModel,
-                _nineStarKiModel2.PersonModel));
-
-            items.Add(new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel, PersonModel>(
-                FundamentalEnergy2ToSurfaceEnergy1TransformationType,
-                _nineStarKiModel2.MainEnergy,
-                _nineStarKiModel1.SurfaceEnergy,
-                "Fundamental",
-                "Surface",
-                _nineStarKiModel1.PersonModel,
-                _nineStarKiModel2.PersonModel));
-
-            items.Add(new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel, PersonModel>(
-                CharacterEnergy1ToSurfaceEnergy2TransformationType,
-                _nineStarKiModel1.CharacterEnergy,
-                _nineStarKiModel2.SurfaceEnergy,
-                "Character",
-                "Surface",
-                _nineStarKiModel1.PersonModel,
-                _nineStarKiModel2.PersonModel));
-
-            items.Add(new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel, PersonModel>(
-                CharacterEnergy2ToSurfaceEnergy1TransformationType,
-                _nineStarKiModel2.CharacterEnergy,
-                _nineStarKiModel1.SurfaceEnergy,
-                "Character",
-                "Surface",
-                _nineStarKiModel1.PersonModel,
-                _nineStarKiModel2.PersonModel));
+            var items =
+                new List<Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel,
+                    PersonModel>>
+                {
+                    new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel,
+                        PersonModel>
+                    (FundamentalEnergy1ToCharacterEnergy2TransformationType,
+                        _nineStarKiModel1.MainEnergy,
+                        _nineStarKiModel2.CharacterEnergy,
+                        "Fundamental",
+                        "Character",
+                        _nineStarKiModel1.PersonModel,
+                        _nineStarKiModel2.PersonModel),
+                    new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel,
+                        PersonModel>
+                    (FundamentalEnergy2ToCharacterEnergy1TransformationType,
+                        _nineStarKiModel2.MainEnergy,
+                        _nineStarKiModel1.CharacterEnergy,
+                        "Fundamental",
+                        "Character",
+                        _nineStarKiModel2.PersonModel,
+                        _nineStarKiModel1.PersonModel),
+                    new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel,
+                        PersonModel>(
+                        FundamentalEnergy1ToSurfaceEnergy2TransformationType,
+                        _nineStarKiModel1.MainEnergy,
+                        _nineStarKiModel2.SurfaceEnergy,
+                        "Fundamental",
+                        "Surface",
+                        _nineStarKiModel1.PersonModel,
+                        _nineStarKiModel2.PersonModel),
+                    new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel,
+                        PersonModel>(
+                        FundamentalEnergy2ToSurfaceEnergy1TransformationType,
+                        _nineStarKiModel2.MainEnergy,
+                        _nineStarKiModel1.SurfaceEnergy,
+                        "Fundamental",
+                        "Surface",
+                        _nineStarKiModel2.PersonModel,
+                        _nineStarKiModel1.PersonModel),
+                    new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel,
+                        PersonModel>(
+                        CharacterEnergy1ToSurfaceEnergy2TransformationType,
+                        _nineStarKiModel1.CharacterEnergy,
+                        _nineStarKiModel2.SurfaceEnergy,
+                        "Character",
+                        "Surface",
+                        _nineStarKiModel1.PersonModel,
+                        _nineStarKiModel2.PersonModel),
+                    new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel,
+                        PersonModel>(
+                        CharacterEnergy2ToSurfaceEnergy1TransformationType,
+                        _nineStarKiModel2.CharacterEnergy,
+                        _nineStarKiModel1.SurfaceEnergy,
+                        "Character",
+                        "Surface",
+                        _nineStarKiModel2.PersonModel,
+                        _nineStarKiModel1.PersonModel)
+                };
 
             return items;
         }
@@ -449,9 +453,9 @@ namespace K9.WebApplication.Models
             {
                 if (Score.HarmonyScore > Score.ConflictScore)
                 {
-                   sb.AppendLine(GetSupportiveCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
-                   sb.AppendLine(GetSameCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
-                   sb.AppendLine(GetChallengingCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
+                    sb.AppendLine(GetSupportiveCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
+                    sb.AppendLine(GetSameCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
+                    sb.AppendLine(GetChallengingCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
 
                 }
                 else
@@ -489,7 +493,7 @@ namespace K9.WebApplication.Models
                     Score.AddConflictScore(ECompatibilityScore.ExtremelyLow, 6);
                     Score.AddSupportScore(ECompatibilityScore.LowToMedium, 6);
                     Score.AddMutualUnderstandingScore(ECompatibilityScore.ExtremelyHigh, 6);
-                    
+
                     Score.AddComplementarityScore(FundamentalEnergiesAreSameEnergy ? ECompatibilityScore.ExtremelyLow : ECompatibilityScore.Low, 6);
                     Score.AddSexualChemistryScore(FundamentalEnergiesAreSameEnergy ? ESexualChemistryScore.NonExistant : ESexualChemistryScore.Low, 20);
                     Score.AddSparkScore(FundamentalEnergiesAreSameEnergy ? ECompatibilityScore.ExtremelyLow : ECompatibilityScore.Low, 20);
@@ -530,7 +534,7 @@ namespace K9.WebApplication.Models
                 AddCrossReferencedScore(FundamentalEnergy1ToCharacterEnergy2TransformationType, 3);
                 AddCrossReferencedScore(FundamentalEnergy2ToCharacterEnergy1TransformationType, 3);
             }
-            
+
             if (!(_nineStarKiModel1.MainEnergy.Energy == _nineStarKiModel2.MainEnergy.Energy &&
                   _nineStarKiModel1.SurfaceEnergy.Energy == _nineStarKiModel2.SurfaceEnergy.Energy))
             {
@@ -546,7 +550,7 @@ namespace K9.WebApplication.Models
             }
         }
 
-        private void AddScore(ETransformationType transformationType, bool sameEnergy,  int factor = 1, int sparkFactor = 0)
+        private void AddScore(ETransformationType transformationType, bool sameEnergy, int factor = 1, int sparkFactor = 0)
         {
             switch (transformationType)
             {
@@ -555,7 +559,7 @@ namespace K9.WebApplication.Models
                     Score.AddConflictScore(ECompatibilityScore.ExtremelyLow, factor);
                     Score.AddSupportScore(ECompatibilityScore.Medium, factor);
                     Score.AddMutualUnderstandingScore(ECompatibilityScore.ExtremelyHigh, factor);
-                    
+
                     Score.AddComplementarityScore(sameEnergy ? ECompatibilityScore.ExtremelyLow : ECompatibilityScore.Low, factor);
                     Score.AddSexualChemistryScore(sameEnergy ? ESexualChemistryScore.NonExistant : ESexualChemistryScore.Low, factor + sparkFactor);
                     Score.AddSparkScore(sameEnergy ? ECompatibilityScore.ExtremelyLow : ECompatibilityScore.Low, factor + sparkFactor);
@@ -728,7 +732,7 @@ namespace K9.WebApplication.Models
             {
                 return;
             }
-            
+
             Score = new CompatibilityScoreModel();
             ElementCompatibility = new ElementCompatibility(compatibilityModel.NineStarKiModel1, compatibilityModel.NineStarKiModel2, Score);
             GenderCompatibility = new GenderCompatibility(compatibilityModel.NineStarKiModel1, compatibilityModel.NineStarKiModel2, Score);

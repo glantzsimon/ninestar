@@ -1727,7 +1727,7 @@
     <value>Thank you for your email</value>
   </data>
   <data name="FundamentalEnergiesCompatibility" xml:space="preserve">
-    <value>Fundamental Energies Detailed Compatibility</value>
+    <value>Fundamental Energies Details</value>
   </data>
   <data name="main_26" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>compatibility\en-gb\main-26.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

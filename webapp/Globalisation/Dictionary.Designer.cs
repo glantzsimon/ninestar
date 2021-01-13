@@ -3468,7 +3468,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fundamental Energies Detailed Compatibility.
+        ///   Looks up a localized string similar to Fundamental Energies Details.
         /// </summary>
         public static string FundamentalEnergiesCompatibility {
             get {
@@ -5087,10 +5087,10 @@ namespace K9.Globalisation {
         ///    Challenging Transformation
         ///&lt;/h5&gt;
         ///&lt;div&gt;
-        ///    &lt;img title=&quot;Challenging Transformation&quot; alt=&quot;Challenging Transformation&quot; class=&quot;auto-size center-block&quot; src=&quot;Images/ninestar/transformations/transformation-challenging.png&quot; /&gt;
+        ///    &lt;img title=&quot;Challenging Transformation&quot; alt=&quot;Challenging Transformation&quot; class=&quot;auto-size center-block&quot; src=&quot;../Images/ninestar/transformations/transformation-challenging.png&quot; /&gt;
         ///&lt;/div&gt;
         ///&lt;p&gt;
-        ///    This combination can be &lt;strong&gt;one of the most magnetic&lt;/strong&gt; and results in the most &lt;strong&gt;personal growth&lt;/strong&gt;. There is often a lot of &lt;strong&gt;natural chemistry between people with opposite elements&lt;/strong&gt;. It is also the combination that is &lt;stro [rest of string was truncated]&quot;;.
+        ///    This combination can be &lt;strong&gt;one of the most magnetic&lt;/strong&gt; and results in the most &lt;strong&gt;personal growth&lt;/strong&gt;. There is often a lot of &lt;strong&gt;natural chemistry between people with opposite elements&lt;/strong&gt;. It is also the combination that is &lt;s [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_element_challenging {
             get {
@@ -5103,10 +5103,10 @@ namespace K9.Globalisation {
         ///    Same Element - Sibling Relationship
         ///&lt;/h5&gt;
         ///&lt;div&gt;
-        ///    &lt;img title=&quot;Sibling Relationship&quot; alt=&quot;Sibling Relationship&quot; class=&quot;auto-size center-block&quot; src=&quot;Images/ninestar/transformations/transformation-same.png&quot; /&gt;
+        ///    &lt;img title=&quot;Sibling Relationship&quot; alt=&quot;Sibling Relationship&quot; class=&quot;auto-size center-block&quot; src=&quot;../Images/ninestar/transformations/transformation-same.png&quot; /&gt;
         ///&lt;/div&gt;
         ///&lt;p&gt;
-        ///    The Fundamental Energies have the same element. This combination tends to lead to a &lt;strong&gt;strong &quot;sibling&quot; relationship&lt;/strong&gt; in which there is an &lt;strong&gt;effortless and profound understanding&lt;/strong&gt; between both parties. There is a great potential for &lt;strong&gt;mutu [rest of string was truncated]&quot;;.
+        ///    The Fundamental Energies have the same element. This combination tends to lead to a &lt;strong&gt;strong &quot;sibling&quot; relationship&lt;/strong&gt; in which there is an &lt;strong&gt;effortless and profound understanding&lt;/strong&gt; between both parties. There is a great potential for &lt;strong&gt;m [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_element_same {
             get {
@@ -5119,10 +5119,10 @@ namespace K9.Globalisation {
         ///    Supportive Transformation - Parent Child Relationship
         ///&lt;/h5&gt;
         ///&lt;div&gt;
-        ///    &lt;img title=&quot;Supportive Transformation&quot; alt=&quot;Supportive Transformation&quot; class=&quot;auto-size center-block&quot; src=&quot;Images/ninestar/transformations/transformation-supportive.png&quot; /&gt;
+        ///    &lt;img title=&quot;Supportive Transformation&quot; alt=&quot;Supportive Transformation&quot; class=&quot;auto-size center-block&quot; src=&quot;../Images/ninestar/transformations/transformation-supportive.png&quot; /&gt;
         ///&lt;/div&gt;
         ///&lt;p&gt;
-        ///    The Fundamental Energies are in a Supportive Transformation, in which one Energy supports or nourishes the next. On the surface, it may appear that it is more of a one-way street. However, in reality, &lt;strong&gt;it does work both ways&lt;/stron [rest of string was truncated]&quot;;.
+        ///    The Fundamental Energies are in a Supportive Transformation, in which one Energy supports or nourishes the next. On the surface, it may appear that it is more of a one-way street. However, in reality, &lt;strong&gt;it does work both ways&lt;/st [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_element_supportive {
             get {

@@ -533,9 +533,9 @@ namespace K9.WebApplication.Models
                     Score.AddSupportScore(ECompatibilityScore.Medium, factor);
                     Score.AddMutualUnderstandingScore(ECompatibilityScore.ExtremelyHigh, factor);
                     
-                    Score.AddComplementarityScore(FundamentalEnergiesAreSameEnergy ? ECompatibilityScore.ExtremelyLow : ECompatibilityScore.Low, 6);
-                    Score.AddSexualChemistryScore(sameEnergy ? ESexualChemistryScore.NonExistant : ESexualChemistryScore.Low, 10);
-                    Score.AddSparkScore(sameEnergy ? ECompatibilityScore.ExtremelyLow : ECompatibilityScore.Low, 10);
+                    Score.AddComplementarityScore(sameEnergy ? ECompatibilityScore.ExtremelyLow : ECompatibilityScore.Low, 6);
+                    Score.AddSexualChemistryScore(sameEnergy ? ESexualChemistryScore.NonExistant : ESexualChemistryScore.Low, 6);
+                    Score.AddSparkScore(sameEnergy ? ECompatibilityScore.ExtremelyLow : ECompatibilityScore.Low, 6);
                     Score.AddLearningPotentialScore(sameEnergy ? ECompatibilityScore.VeryLow : ECompatibilityScore.Low, 6);
                     break;
 

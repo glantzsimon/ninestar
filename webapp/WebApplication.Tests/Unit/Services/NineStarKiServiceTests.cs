@@ -257,69 +257,69 @@ namespace K9.WebApplication.Tests.Unit.Services
             }
         }
 
-        [Theory]
-        [InlineData(1979, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyHigh)]
-        [InlineData(1981, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.MediumToHigh)]
-        [InlineData(1980, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.Medium)]
-        [InlineData(1979, 6, 16, EGender.Male, 1983, 6, 21, EGender.Male, ECompatibilityScore.VeryHigh)]
-        [InlineData(1979, 6, 16, EGender.Male, 1985, 6, 21, EGender.Male, ECompatibilityScore.High)]
-        [InlineData(1979, 6, 16, EGender.Male, 1978, 6, 21, EGender.Male, ECompatibilityScore.LowToMedium)]
-        [InlineData(1979, 6, 16, EGender.Male, 1979, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyLow)]
-        [InlineData(1979, 6, 16, EGender.Male, 1982, 6, 21, EGender.Male, ECompatibilityScore.MediumToHigh)]
-        [InlineData(1979, 6, 16, EGender.Male, 1980, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyHigh)]
-        [InlineData(1982, 6, 16, EGender.Male, 1985, 6, 21, EGender.Male, ECompatibilityScore.VeryHigh)]
-        public void Calculate_ChemistryLevel(int year1, int month1, int day1, EGender gender1, int year2, int month2, int day2, EGender gender2, ECompatibilityScore chemistryScore)
-        {
-            var mockAuthentication = new Mock<IAuthentication>();
-            mockAuthentication.SetupGet(e => e.CurrentUserId).Returns(2);
-            mockAuthentication.SetupGet(e => e.IsAuthenticated).Returns(true);
+        //[Theory]
+        //[InlineData(1979, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyHigh)]
+        //[InlineData(1981, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.MediumToHigh)]
+        //[InlineData(1980, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.Medium)]
+        //[InlineData(1979, 6, 16, EGender.Male, 1983, 6, 21, EGender.Male, ECompatibilityScore.VeryHigh)]
+        //[InlineData(1979, 6, 16, EGender.Male, 1985, 6, 21, EGender.Male, ECompatibilityScore.High)]
+        //[InlineData(1979, 6, 16, EGender.Male, 1978, 6, 21, EGender.Male, ECompatibilityScore.LowToMedium)]
+        //[InlineData(1979, 6, 16, EGender.Male, 1979, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyLow)]
+        //[InlineData(1979, 6, 16, EGender.Male, 1982, 6, 21, EGender.Male, ECompatibilityScore.MediumToHigh)]
+        //[InlineData(1979, 6, 16, EGender.Male, 1980, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyHigh)]
+        //[InlineData(1982, 6, 16, EGender.Male, 1985, 6, 21, EGender.Male, ECompatibilityScore.VeryHigh)]
+        //public void Calculate_ChemistryLevel(int year1, int month1, int day1, EGender gender1, int year2, int month2, int day2, EGender gender2, ECompatibilityScore chemistryScore)
+        //{
+        //    var mockAuthentication = new Mock<IAuthentication>();
+        //    mockAuthentication.SetupGet(e => e.CurrentUserId).Returns(2);
+        //    mockAuthentication.SetupGet(e => e.IsAuthenticated).Returns(true);
 
-            var nineStarKiService = new NineStarKiService(new Mock<IMembershipService>().Object, mockAuthentication.Object, new Mock<IRoles>().Object);
+        //    var nineStarKiService = new NineStarKiService(new Mock<IMembershipService>().Object, mockAuthentication.Object, new Mock<IRoles>().Object);
 
-            var compatibility = nineStarKiService.CalculateCompatibility(new PersonModel
-            {
-                DateOfBirth = new DateTime(year1, month1, day1),
-                Gender = gender1
-            }, new PersonModel
-            {
-                DateOfBirth = new DateTime(year2, month2, day2),
-                Gender = gender2
-            }); 
+        //    var compatibility = nineStarKiService.CalculateCompatibility(new PersonModel
+        //    {
+        //        DateOfBirth = new DateTime(year1, month1, day1),
+        //        Gender = gender1
+        //    }, new PersonModel
+        //    {
+        //        DateOfBirth = new DateTime(year2, month2, day2),
+        //        Gender = gender2
+        //    }); 
             
-            Assert.Equal(chemistryScore, compatibility.CompatibilityDetails.Score.SparkScore);
-        }
+        //    Assert.Equal(chemistryScore, compatibility.CompatibilityDetails.Score.SparkScore);
+        //}
 
-        [Theory]
-        [InlineData(1979, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyHigh)]
-        [InlineData(1981, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyLow)]
-        [InlineData(1980, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.Low)]
-        [InlineData(1979, 6, 16, EGender.Male, 1983, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyHigh)]
-        [InlineData(1979, 6, 16, EGender.Male, 1985, 6, 21, EGender.Male, ECompatibilityScore.VeryHigh)]
-        [InlineData(1979, 6, 16, EGender.Male, 1978, 6, 21, EGender.Male, ECompatibilityScore.Low)]
-        [InlineData(1979, 6, 16, EGender.Male, 1979, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyLow)]
-        [InlineData(1979, 6, 16, EGender.Male, 1982, 6, 21, EGender.Male, ECompatibilityScore.Low)]
-        [InlineData(1979, 6, 16, EGender.Male, 1980, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyHigh)]
-        [InlineData(1982, 6, 16, EGender.Male, 1985, 6, 21, EGender.Male, ECompatibilityScore.High)]
-        public void Calculate_ConflictLevel(int year1, int month1, int day1, EGender gender1, int year2, int month2, int day2, EGender gender2, ECompatibilityScore conflictScore)
-        {
-            var mockAuthentication = new Mock<IAuthentication>();
-            mockAuthentication.SetupGet(e => e.CurrentUserId).Returns(2);
-            mockAuthentication.SetupGet(e => e.IsAuthenticated).Returns(true);
+        //[Theory]
+        //[InlineData(1979, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyHigh)]
+        //[InlineData(1981, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyLow)]
+        //[InlineData(1980, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.Low)]
+        //[InlineData(1979, 6, 16, EGender.Male, 1983, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyHigh)]
+        //[InlineData(1979, 6, 16, EGender.Male, 1985, 6, 21, EGender.Male, ECompatibilityScore.VeryHigh)]
+        //[InlineData(1979, 6, 16, EGender.Male, 1978, 6, 21, EGender.Male, ECompatibilityScore.Low)]
+        //[InlineData(1979, 6, 16, EGender.Male, 1979, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyLow)]
+        //[InlineData(1979, 6, 16, EGender.Male, 1982, 6, 21, EGender.Male, ECompatibilityScore.Low)]
+        //[InlineData(1979, 6, 16, EGender.Male, 1980, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyHigh)]
+        //[InlineData(1982, 6, 16, EGender.Male, 1985, 6, 21, EGender.Male, ECompatibilityScore.High)]
+        //public void Calculate_ConflictLevel(int year1, int month1, int day1, EGender gender1, int year2, int month2, int day2, EGender gender2, ECompatibilityScore conflictScore)
+        //{
+        //    var mockAuthentication = new Mock<IAuthentication>();
+        //    mockAuthentication.SetupGet(e => e.CurrentUserId).Returns(2);
+        //    mockAuthentication.SetupGet(e => e.IsAuthenticated).Returns(true);
 
-            var nineStarKiService = new NineStarKiService(new Mock<IMembershipService>().Object, mockAuthentication.Object, new Mock<IRoles>().Object);
+        //    var nineStarKiService = new NineStarKiService(new Mock<IMembershipService>().Object, mockAuthentication.Object, new Mock<IRoles>().Object);
 
-            var compatibility = nineStarKiService.CalculateCompatibility(new PersonModel
-            {
-                DateOfBirth = new DateTime(year1, month1, day1),
-                Gender = gender1
-            }, new PersonModel
-            {
-                DateOfBirth = new DateTime(year2, month2, day2),
-                Gender = gender2
-            }); 
+        //    var compatibility = nineStarKiService.CalculateCompatibility(new PersonModel
+        //    {
+        //        DateOfBirth = new DateTime(year1, month1, day1),
+        //        Gender = gender1
+        //    }, new PersonModel
+        //    {
+        //        DateOfBirth = new DateTime(year2, month2, day2),
+        //        Gender = gender2
+        //    }); 
 
-            Assert.Equal(conflictScore, compatibility.CompatibilityDetails.Score.ConflictScore);
-        }
+        //    Assert.Equal(conflictScore, compatibility.CompatibilityDetails.Score.ConflictScore);
+        //}
 
     }
 }

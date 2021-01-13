@@ -4,13 +4,16 @@
     var id = @Guid.NewGuid().ToString();
 }
 
-@if (Model.IsSecret)
-{
-    <div class="gauge-question">
-        <canvas id="@id" class="gauge secret-gauge" data-value="0" data-max-value="@Model.MaxValue"></canvas>
-    </div>
-}
-else
-{
-    <canvas id="@id" class="gauge" data-value="@Model.Value" data-max-value="@Model.MaxValue" data-invert="@Model.IsInverted.ToString().ToLower()"></canvas>
-}
+<div class="gauge-container">
+    <h4 class="text-center margin-top-0 margin-bottom-0">@Model.Title</h4>
+    @if (Model.IsSecret)
+    {
+        <div class="gauge-question">
+            <canvas id="@id" class="gauge secret-gauge" data-value="0" data-max-value="@Model.MaxValue"></canvas>
+        </div>
+    }
+    else
+    {
+        <canvas id="@id" class="gauge" data-value="@Model.Value" data-max-value="@Model.MaxValue" data-invert="@Model.IsInverted.ToString().ToLower()"></canvas>
+    }
+</div>

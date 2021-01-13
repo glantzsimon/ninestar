@@ -467,8 +467,8 @@ namespace K9.WebApplication.Models
                     Score.AddMutualUnderstandingScore(ECompatibilityScore.ExtremelyHigh, 6);
                     
                     Score.AddComplementarityScore(FundamentalEnergiesAreSameEnergy ? ECompatibilityScore.ExtremelyLow : ECompatibilityScore.Low, 6);
-                    Score.AddSexualChemistryScore(FundamentalEnergiesAreSameEnergy ? ESexualChemistryScore.NonExistant : ESexualChemistryScore.Low, 10);
-                    Score.AddSparkScore(FundamentalEnergiesAreSameEnergy ? ECompatibilityScore.ExtremelyLow : ECompatibilityScore.Low, 10);
+                    Score.AddSexualChemistryScore(FundamentalEnergiesAreSameEnergy ? ESexualChemistryScore.NonExistant : ESexualChemistryScore.Low, 20);
+                    Score.AddSparkScore(FundamentalEnergiesAreSameEnergy ? ECompatibilityScore.ExtremelyLow : ECompatibilityScore.Low, 20);
                     Score.AddLearningPotentialScore(FundamentalEnergiesAreSameEnergy ? ECompatibilityScore.VeryLow : ECompatibilityScore.Low, 6);
                     break;
 
@@ -491,28 +491,27 @@ namespace K9.WebApplication.Models
                     Score.AddSupportScore(ECompatibilityScore.MediumToHigh, 6);
                     Score.AddMutualUnderstandingScore(ECompatibilityScore.VeryLow, 6);
                     Score.AddComplementarityScore(ECompatibilityScore.High, 6);
-                    Score.AddSexualChemistryScore(ESexualChemistryScore.OffTheCharts, 10);
-                    Score.AddSparkScore(ECompatibilityScore.ExtremelyHigh, 10);
+                    Score.AddSexualChemistryScore(ESexualChemistryScore.OffTheCharts, 20);
+                    Score.AddSparkScore(ECompatibilityScore.ExtremelyHigh, 20);
                     Score.AddLearningPotentialScore(ECompatibilityScore.ExtremelyHigh, 6);
                     break;
             }
 
-            AddScore(CharacterEnergiesTransformationType, CharacterEnergiesAreSameEnergy, 5);
-            AddScore(SurfaceEnergiesTransformationType, SurfaceEnergiesAreSameEnergy, 3);
+            AddScore(CharacterEnergiesTransformationType, CharacterEnergiesAreSameEnergy, 4, 5);
+            AddScore(SurfaceEnergiesTransformationType, SurfaceEnergiesAreSameEnergy, 2);
 
             if (!(_nineStarKiModel1.MainEnergy.Energy == _nineStarKiModel2.MainEnergy.Energy &&
                   _nineStarKiModel1.CharacterEnergy.Energy == _nineStarKiModel2.CharacterEnergy.Energy))
             {
-                AddCrossReferencedScore(FundamentalEnergy1ToCharacterEnergy2TransformationType, 4);
-                AddCrossReferencedScore(FundamentalEnergy2ToCharacterEnergy1TransformationType, 4);
+                AddCrossReferencedScore(FundamentalEnergy1ToCharacterEnergy2TransformationType, 3);
+                AddCrossReferencedScore(FundamentalEnergy2ToCharacterEnergy1TransformationType, 3);
             }
-            
             
             if (!(_nineStarKiModel1.MainEnergy.Energy == _nineStarKiModel2.MainEnergy.Energy &&
                   _nineStarKiModel1.SurfaceEnergy.Energy == _nineStarKiModel2.SurfaceEnergy.Energy))
             {
-                AddCrossReferencedScore(FundamentalEnergy1ToSurfaceEnergy2TransformationType, 2);
-                AddCrossReferencedScore(FundamentalEnergy2ToSurfaceEnergy1TransformationType, 2);
+                AddCrossReferencedScore(FundamentalEnergy1ToSurfaceEnergy2TransformationType, 1);
+                AddCrossReferencedScore(FundamentalEnergy2ToSurfaceEnergy1TransformationType, 1);
             }
 
             if (!(_nineStarKiModel1.CharacterEnergy.Energy == _nineStarKiModel2.CharacterEnergy.Energy &&
@@ -523,7 +522,7 @@ namespace K9.WebApplication.Models
             }
         }
 
-        private void AddScore(ETransformationType transformationType, bool sameEnergy,  int factor = 1)
+        private void AddScore(ETransformationType transformationType, bool sameEnergy,  int factor = 1, int sparkFactor = 0)
         {
             switch (transformationType)
             {
@@ -533,10 +532,10 @@ namespace K9.WebApplication.Models
                     Score.AddSupportScore(ECompatibilityScore.Medium, factor);
                     Score.AddMutualUnderstandingScore(ECompatibilityScore.ExtremelyHigh, factor);
                     
-                    Score.AddComplementarityScore(sameEnergy ? ECompatibilityScore.ExtremelyLow : ECompatibilityScore.Low, 6);
-                    Score.AddSexualChemistryScore(sameEnergy ? ESexualChemistryScore.NonExistant : ESexualChemistryScore.Low, 6);
-                    Score.AddSparkScore(sameEnergy ? ECompatibilityScore.ExtremelyLow : ECompatibilityScore.Low, 6);
-                    Score.AddLearningPotentialScore(sameEnergy ? ECompatibilityScore.VeryLow : ECompatibilityScore.Low, 6);
+                    Score.AddComplementarityScore(sameEnergy ? ECompatibilityScore.ExtremelyLow : ECompatibilityScore.Low, factor);
+                    Score.AddSexualChemistryScore(sameEnergy ? ESexualChemistryScore.NonExistant : ESexualChemistryScore.Low, factor + sparkFactor);
+                    Score.AddSparkScore(sameEnergy ? ECompatibilityScore.ExtremelyLow : ECompatibilityScore.Low, factor + sparkFactor);
+                    Score.AddLearningPotentialScore(sameEnergy ? ECompatibilityScore.VeryLow : ECompatibilityScore.Low, factor);
                     break;
 
                 case ETransformationType.Supports:
@@ -558,8 +557,8 @@ namespace K9.WebApplication.Models
                     Score.AddSupportScore(ECompatibilityScore.MediumToHigh, factor);
                     Score.AddMutualUnderstandingScore(ECompatibilityScore.VeryLow, factor);
                     Score.AddComplementarityScore(ECompatibilityScore.High, factor);
-                    Score.AddSexualChemistryScore(ESexualChemistryScore.OffTheCharts, factor);
-                    Score.AddSparkScore(ECompatibilityScore.ExtremelyHigh, factor);
+                    Score.AddSexualChemistryScore(ESexualChemistryScore.OffTheCharts, factor + sparkFactor);
+                    Score.AddSparkScore(ECompatibilityScore.ExtremelyHigh, factor + sparkFactor);
                     Score.AddLearningPotentialScore(ECompatibilityScore.ExtremelyHigh, factor);
                     break;
             }

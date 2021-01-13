@@ -1,31 +1,19 @@
 ﻿@model K9.WebApplication.Models.CompatibilityModel
 
-<div class="row">
-    <div class="col-xs-12">
-        <h4>@Dictionary.FundamentalElements</h4>
+<h4>@Dictionary.FundamentalElements</h4>
 
-        @Html.Raw(Model.CompatibilityDetails.ElementCompatibility.FundamentalElementsTransformationDetails)
+@Html.Raw(Model.CompatibilityDetails.ElementCompatibility.FundamentalElementsTransformationDetails)
 
-        <p>
-            @Html.Raw(Model.CompatibilityDetails.ElementCompatibility.FundamentalElementsCompatibilityDetails)
-        </p>
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-12 margin-top-20">
-        <h4 style="margin-top: 20px !important;">@Dictionary.CharacterElements</h4>
+<p>
+    @Html.Raw(Model.CompatibilityDetails.ElementCompatibility.FundamentalElementsCompatibilityDetails)
+</p>
 
-        @Html.Raw(Model.CompatibilityDetails.ElementCompatibility.CharacterElementsTransformationDetails)
+<h4 style="margin-top: 40px !important;">@Dictionary.CharacterElements</h4>
+@Html.Raw(Model.CompatibilityDetails.ElementCompatibility.CharacterElementsTransformationDetails)
 
-        <p>
-            @Html.Raw(Model.CompatibilityDetails.ElementCompatibility.CharacterElementsCompatibilityDetails)
-        </p>
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-12 margin-top-20">
-        <h4 style="margin-top: 20px !important;">@Dictionary.AllElements</h4>
+<p>
+    @Html.Raw(Model.CompatibilityDetails.ElementCompatibility.CharacterElementsCompatibilityDetails)
+</p>
 
-        @Html.Raw(Model.CompatibilityDetails.ElementCompatibility.AllOtherElementsCompatibility)
-    </div>
-</div>
+<h4 style="margin-top: 40px !important;">@Dictionary.AllElements</h4>
+@Html.Raw(Model.CompatibilityDetails.ElementCompatibility.AllOtherElementsCompatibility)

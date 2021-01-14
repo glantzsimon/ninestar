@@ -27,8 +27,8 @@
                 {
                     <hr />
                     <div class="margin-top-15">
-                        @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership")
-                        <div class="inline" data-toggle="tooltip" title="@Dictionary.CreditsDescriptionUI">@Html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership")</div>
+                        @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership", null, "fa-level-up-alt")
+                        <div class="inline" data-toggle="tooltip" title="@Dictionary.CreditsDescriptionUI">@Html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership", null, "fa-money-bill-alt")</div>
                     </div>
                 }
             }
@@ -36,7 +36,7 @@
             {
                 <hr />
                 @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership")
-                <div class="inline" data-toggle="tooltip" title="@Dictionary.CreditsDescriptionUI">@Html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership")</div>
+                <div class="inline" data-toggle="tooltip" title="@Dictionary.CreditsDescriptionUI">@Html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership", null, "fa-money-bill-alt")</div>
             }
         </div>
     </div>

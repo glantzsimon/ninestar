@@ -14,28 +14,18 @@
 <div class="container main-content">
     <div class="row">
         <div class="text-center">
-            @foreach (var membershipModel in Model.MembershipModels)
+            @foreach (var membershipModel in Model.MembershipModels.Where(e => e.IsPayable))
             {
-                <div class="col-md-3 col-sm-12 padding-0">
+                <div class="col-md-3 col-sm-6 padding-0">
                     @Html.Partial("_MembershipOption", membershipModel)
                 </div>
             }
         </div>
     </div>
     <div class="row well">
-        <div class="col-md-4 col-sm-12 padding-0">
+        <div class="col-md-6 col-sm-12 padding-0">
             <div class="membership-description">
-                @MvcHtmlString.Create(TemplateProcessor.PopulateTemplate(Dictionary.free_membership_description,
-                    new
-                    {
-                        NumberOfProfileReadings = Model.FreeMaxNumberOfProfileReadings,
-                        NumberOfCompatibilityReadings = Model.FreeMaxNumberOfCompatibilityReadings
-                    }))
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-12 padding-0">
-            <div class="membership-description">
-                @MvcHtmlString.Create(TemplateProcessor.PopulateTemplate(Dictionary.standard_membership_description,
+                @MvcHtmlString.Create(TemplateProcessor.PopulateTemplate(Dictionary.standard_monthly_membership_description,
                     new
                     {
                         NumberOfProfileReadings = Model.MonthlyMaxNumberOfProfileReadings,
@@ -43,9 +33,26 @@
                     }))
             </div>
         </div>
-        <div class="col-md-4 col-sm-12 padding-0">
+        <div class="col-md-6 col-sm-12 padding-0">
             <div class="membership-description">
-                @MvcHtmlString.Create(Dictionary.platinum_membership_description)
+                @MvcHtmlString.Create(TemplateProcessor.PopulateTemplate(Dictionary.standard_annual_membership_description,
+                    new
+                    {
+                        NumberOfProfileReadings = Model.MonthlyMaxNumberOfProfileReadings,
+                        NumberOfCompatibilityReadings = Model.MonthlyMaxNumberOfCompatibilityReadings
+                    }))
+            </div>
+        </div>
+    </div>
+    <div class="row well">
+        <div class="col-md-6 col-sm-12 padding-0">
+            <div class="membership-description">
+                @MvcHtmlString.Create(Dictionary.platinum_monthly_membership_description)
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12 padding-0">
+            <div class="membership-description">
+                @MvcHtmlString.Create(Dictionary.platinum_annual_membership_description)
             </div>
         </div>
     </div>
@@ -60,7 +67,9 @@
                 </div>
             </div>
             <hr />
-            @Html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership")
+            @Html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership", null, "fa-money-bill-alt")
         </div>
     </div>
+    <hr />
+    @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.MyAccountTitle, "MyAccount", "Account", null, "fa-user-circle")
 </div>

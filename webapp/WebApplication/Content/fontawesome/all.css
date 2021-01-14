@@ -3936,6 +3936,10 @@ readers do not read off random characters that represent icons */
     content: "\f14b";
 }
 
+.fa-pencil:before {
+    content: "\f303";
+}
+
 .fa-pencil-alt:before {
     content: "\f303";
 }
@@ -5421,7 +5425,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-trash:before {
-    content: "\f1f8";
+    content: "\f2ed";
 }
 
 .fa-trash-alt:before {

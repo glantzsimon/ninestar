@@ -1,15 +1,15 @@
 ﻿@using K9.Base.WebApplication.Helpers
 @model PromoCode
 @{
-	Layout = "../Shared/_LayoutFormSmall.cshtml";
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
 @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-	using (Html.BeginBootstrapForm())
-	{
-		@Html.Partial("_EditFields")
-		<hr/>
-		@Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Create)
-		@Html.BootstrapBackToListButton()
-	}
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.Partial("_EditFields")
+        <hr />
+        @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Create, EButtonType.Submit, "fa-save")
+        @Html.BootstrapBackToListButton()
+    }
 }

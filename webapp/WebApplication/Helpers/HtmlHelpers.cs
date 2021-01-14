@@ -116,8 +116,8 @@ namespace K9.WebApplication.Helpers
                     html.ViewContext.Writer.WriteLine(
                         $"<h4><strong>{Dictionary.UpgradeMembershipFullText}</strong></h4>");
                     html.ViewContext.Writer.WriteLine(html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText,
-                        "Index", "Membership", null, "", EButtonClass.Large));
-                    html.ViewContext.Writer.WriteLine($"<div class=\"inline\" data-toggle=\"tooltip\" title=\"{Dictionary.CreditsDescriptionUI}\">{html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership", null, "", EButtonClass.Large, EButtonClass.Info)}</div>");
+                        "Index", "Membership", null, "fa-level-up-alt", EButtonClass.Large));
+                    html.ViewContext.Writer.WriteLine($"<div class=\"inline\" data-toggle=\"tooltip\" title=\"{Dictionary.CreditsDescriptionUI}\">{html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership", null, "fa-money-bill-alt", EButtonClass.Large, EButtonClass.Info)}</div>");
                 }
             }
             else

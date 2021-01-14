@@ -833,3 +833,11 @@ a.collapsible-panel-link {
     margin-top: 20px;
     margin-bottom: 0;
 }
+
+#account-controls a .fa {
+    margin-right: 0;
+}
+
+button .fa, a .fa {
+    margin-right: 2px;
+}

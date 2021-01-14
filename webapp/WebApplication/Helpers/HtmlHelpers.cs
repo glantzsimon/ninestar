@@ -122,7 +122,7 @@ namespace K9.WebApplication.Helpers
             }
             else
             {
-                html.ViewContext.Writer.WriteLine(html.BootstrapActionLinkButton(Dictionary.LogIntoYourAccountToView, "Login", "Account", new { retrieveLast }, "", EButtonClass.Large));
+                html.ViewContext.Writer.WriteLine(html.BootstrapActionLinkButton(Dictionary.LogIntoYourAccountToView, "Login", "Account", new { retrieveLast }, "fa-sign-in", EButtonClass.Large));
             }
             html.ViewContext.Writer.WriteLine(centerDiv.ToString(TagRenderMode.EndTag));
 

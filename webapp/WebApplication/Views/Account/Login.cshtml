@@ -8,9 +8,10 @@
 
 @using (Html.BeginForm())
 {
-    <p>@K9.Globalisation.Dictionary.NotRegisteredYet Sign up @Html.ActionLink(K9.Globalisation.Dictionary.Here.ToLowerInvariant(), "Register")</p>
     using (Html.BeginBootstrapForm())
     {
+        <p>@K9.Globalisation.Dictionary.NotRegisteredYet Sign up @Html.ActionLink(K9.Globalisation.Dictionary.Here.ToLowerInvariant(), "Register")</p>
+        <hr />
         @Html.BootstrapEditorFor(model => model.UserName)
         @Html.BootstrapEditorFor(model => model.Password)
         <span>@Html.ActionLink(Dictionary.ResetPassword, "PasswordResetRequest")</span>

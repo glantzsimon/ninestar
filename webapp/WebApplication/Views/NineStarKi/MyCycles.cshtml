@@ -1,8 +1,8 @@
 ﻿@model K9.WebApplication.Models.NineStarKiModel
 
 @{
-    ViewBag.Title = Dictionary.MyPersonalProfile;
-    ViewBag.SubTitle = Dictionary.MyPersonalProfile;
+    ViewBag.Title = Dictionary.MyYearlyAndMonthlyCycles;
+    ViewBag.SubTitle = Dictionary.MyYearlyAndMonthlyCycles;
 
     Layout = "../Shared/_LayoutForm.cshtml";
 }
@@ -13,14 +13,16 @@
     <div class="col-sm-12 padding-left-0 padding-right-0">
         @if (Model != null && Model.IsProcessed)
         {
-            @Html.Partial("_ProfileSummary", Model)
+            @Html.Partial("_CyclesSummary", Model)
         }
     </div>
 </div>
 
-@if (Model != null && Model.IsProcessed)
-{
-    @Html.Partial("_ProfilePills", Model)
-}
+<div class="well">
+    @if (Model != null && Model.IsProcessed)
+    {
+        @Html.Partial("_Cycles", Model)
+    }
+</div>
 
 @Html.Partial("_CyclesJs")

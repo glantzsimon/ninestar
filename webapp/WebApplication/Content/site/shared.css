@@ -184,7 +184,11 @@
 }
 
 .padding-top-20 {
-    padding-top: 20px;
+    padding-top: 20px !important;
+}
+
+.padding-top-30 {
+    padding-top: 30px !important;
 }
 
 .padding-top-5 {

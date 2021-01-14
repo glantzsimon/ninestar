@@ -94,42 +94,4 @@
     </article>
 }
 
-<script language="javascript">
-
-    function scrollCurrentYearlyCycleIntoVew() {
-        setTimeout(function () {
-            $("a[href='#predictions']").tab("show");
-            $("a[href='#predictions']")[0].scrollIntoView();
-            setTimeout(function () {
-                $("a[href='#yearly']").tab("show");
-                setTimeout(function () {
-                    $("#yearly")[0].scrollIntoView();
-                }, 300);
-            }, 300);
-        }, 200);
-    }
-
-    function scrollCurrentMonthlyCycleIntoVew() {
-        setTimeout(function () {
-            $("a[href='#predictions']").tab("show");
-            $("a[href='#predictions']")[0].scrollIntoView();
-            setTimeout(function () {
-                $("a[href='#monthly']").tab("show");
-                setTimeout(function () {
-                    $("#monthly")[0].scrollIntoView();
-                }, 300);
-            }, 300);
-        }, 200);
-    }
-
-    $(function () {
-        $("a#current-yearly-cycle").click(function (e) {
-            e.preventDefault();
-            scrollCurrentYearlyCycleIntoVew();
-        });
-        $("a#current-monthly-cycle").click(function (e) {
-            e.preventDefault();
-            scrollCurrentMonthlyCycleIntoVew();
-        });
-    });
-</script>
+@Html.Partial("_CyclesJs")

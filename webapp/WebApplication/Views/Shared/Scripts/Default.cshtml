@@ -90,10 +90,10 @@
 	        fileInput.attr("accept", accepted);
         };
 
-	    $.fn.scrollToTopOf = function(el) {
-	        var offset = el.offset();
+	    $.fn.scrollToTopOf = function(el, adjustment) {
+	        var offset = $(el).offset();
 	        $("html, body").animate({
-	            scrollTop: offset.top
+	            scrollTop: offset.top + (adjustment || 0)
 	        }, 40);
         };
 

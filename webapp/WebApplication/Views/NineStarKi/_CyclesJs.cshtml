@@ -1,0 +1,38 @@
+﻿<script language="javascript">
+
+    function scrollCurrentYearIntoVew() {
+        setTimeout(function () {
+            var $cycle = $("div.current-year");
+            var $yearlyPlannerContainer = ".yearly-planner-container";
+
+            $($yearlyPlannerContainer).scrollTop($cycle.offset().top - $($yearlyPlannerContainer).offset().top);
+        }, 200);
+    }
+
+    function scrollCyclesIntoVew(tab) {
+        setTimeout(function () {
+            $.fn.scrollToTopOf(tab, -200);
+        }, 200);
+    }
+
+    $(function () {
+        $("a[href='#yearly-planner']").click(function() {
+            scrollCurrentYearIntoVew();
+        });
+
+        $("#current-yearly-cycle").click(function () {
+            scrollCyclesIntoVew("#yearly");
+
+            $(".nav-pills a[href='#predictions']").tab("show");
+            $(".nav-pills a[href='#yearly']").tab("show");
+        });
+
+        $("#current-monthly-cycle").click(function () {
+            scrollCyclesIntoVew("#monthly");
+
+            $(".nav-pills a[href='#predictions']").tab("show");
+            $(".nav-pills a[href='#monthly']").tab("show");
+        });
+    });
+
+</script>

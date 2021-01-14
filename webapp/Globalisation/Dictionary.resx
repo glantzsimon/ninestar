@@ -2293,7 +2293,19 @@
   <data name="SparkScore" xml:space="preserve">
     <value>Spark</value>
   </data>
+  <data name="Cycle" xml:space="preserve">
+    <value>Cycle</value>
+  </data>
+  <data name="MonthlyCycleEnergy" xml:space="preserve">
+    <value>Monthly Cycle Energy</value>
+  </data>
+  <data name="MyYearlyAndMonthlyCycles" xml:space="preserve">
+    <value>My Yearly and Monthly Cycles</value>
+  </data>
   <data name="OverallScore" xml:space="preserve">
     <value>Overall Compatibility Score</value>
+  </data>
+  <data name="YearlyCycleEnergy" xml:space="preserve">
+    <value>Yearly Cycle Energy</value>
   </data>
 </root>

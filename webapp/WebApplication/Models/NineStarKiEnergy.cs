@@ -233,7 +233,17 @@ namespace K9.WebApplication.Models
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.CharacterEnergy)]
         CharacterEnergy,
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.SurfaceEnergy)]
-        SurfaceEnergy,
+        SurfaceEnergy
+    }
+
+    public enum ENineStarKiEnergyCycleType
+    {
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Unspecified)]
+        Unspecified,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.YearlyCycleEnergy)]
+        YearlyCycleEnergy,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.MonthlyCycleEnergy)]
+        MonthlyCycleEnergy,
     }
 
     public enum ENineStarKiEnergy
@@ -262,11 +272,12 @@ namespace K9.WebApplication.Models
 
     public class NineStarKiEnergy
     {
-        public NineStarKiEnergy(ENineStarKiEnergy energy, ENineStarKiEnergyType type, bool isAdult = true)
+        public NineStarKiEnergy(ENineStarKiEnergy energy, ENineStarKiEnergyType type, bool isAdult = true, ENineStarKiEnergyCycleType energyCycleType = ENineStarKiEnergyCycleType.Unspecified)
         {
             Energy = energy;
             EnergyType = type;
             IsAdult = isAdult;
+            EnergyCycleType = energyCycleType;
         }
 
         public ENineStarKiEnergy Energy { get; }
@@ -284,6 +295,8 @@ namespace K9.WebApplication.Models
         public bool IsAdult { get; set; }
 
         public ENineStarKiEnergyType EnergyType { get; }
+
+        public ENineStarKiEnergyCycleType EnergyCycleType { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyDescriptionLabel)]
         public string EnergyDescription { get; set; }
@@ -361,7 +374,7 @@ namespace K9.WebApplication.Models
         public string CycleDescriptiveName => CycleMetaData.DescriptiveTitle;
 
         public string CycleDescription => EnergyType == ENineStarKiEnergyType.MainEnergy ? CycleMetaData.YearlyDescription : CycleMetaData.MonthlyDescription;
-        
+
         private string GetEnergyNameAndNumber()
         {
             switch (EnergyNumber)

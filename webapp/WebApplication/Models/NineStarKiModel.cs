@@ -251,12 +251,14 @@ namespace K9.WebApplication.Models
 
             var energy = (ENineStarKiEnergy)(PersonModel.Gender.IsYin() && invertYearlyPredictionYearForYinEnergies ? InvertEnergy(lifeCycleYearEnergy) : lifeCycleYearEnergy);
 
-            return new NineStarKiEnergy(energy, ENineStarKiEnergyType.MainEnergy, PersonModel.IsAdult());
+            return new NineStarKiEnergy(energy, ENineStarKiEnergyType.MainEnergy, PersonModel.IsAdult(), ENineStarKiEnergyCycleType.YearlyCycleEnergy);
         }
 
         private NineStarKiEnergy GetMonthlyCycleEnergy()
         {
-            return GetCharacterEnergy(Today ?? DateTime.Today, GetYearlyCycleEnergy().Energy, PersonModel.Gender);
+            var monthlyEnergy = GetCharacterEnergy(Today ?? DateTime.Today, GetYearlyCycleEnergy().Energy, PersonModel.Gender);
+            monthlyEnergy.EnergyCycleType = ENineStarKiEnergyCycleType.MonthlyCycleEnergy;
+            return monthlyEnergy;
         }
 
         private NineStarKiEnergy ProcessEnergy(int energyNumber, EGender gender, ENineStarKiEnergyType type = ENineStarKiEnergyType.MainEnergy)

@@ -25,21 +25,3 @@
     </div>
 
 </div>
-
-<script language="javascript">
-
-    function scrollCurrentYearIntoVew() {
-        setTimeout(function () {
-            var $cycle = $("div.current-year");
-            var $yearlyPlannerContainer = ".yearly-planner-container";
-
-            $($yearlyPlannerContainer).scrollTop($cycle.offset().top - $($yearlyPlannerContainer).offset().top);
-        }, 200);
-    }
-
-    $(function () {
-        $("a[href='#yearly-planner']").click(function() {
-            scrollCurrentYearIntoVew();
-        });
-    });
-</script>

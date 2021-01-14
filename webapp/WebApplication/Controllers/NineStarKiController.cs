@@ -62,6 +62,18 @@ namespace K9.WebApplication.Controllers
             }, false, true));
         }
 
+        [Authorize]
+        [Route("my-profile/cycles")]
+        public ActionResult MyCycles()
+        {
+            var myAccount = _usersRepository.Find(_authentication.CurrentUserId);
+            return View(_nineStarKiService.CalculateNineStarKiProfile(new PersonModel
+            {
+                DateOfBirth = myAccount.BirthDate,
+                Gender = myAccount.Gender
+            }, false, true));
+        }
+
         [Route("retrieve-last")]
         [Authorize]
         public ActionResult RetrieveLast()

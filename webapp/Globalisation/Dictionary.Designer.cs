@@ -2530,6 +2530,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cycle.
+        /// </summary>
+        public static string Cycle {
+            get {
+                return ResourceManager.GetString("Cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    9 Star Ki astrology is based on cycles of light and dark and the various stages the cycles move through. It is the contrast between light and dark which gives rise to the &apos;experience&apos; of being alive
         ///&lt;/h5&gt;
@@ -5522,6 +5531,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Monthly Cycle Energy.
+        /// </summary>
+        public static string MonthlyCycleEnergy {
+            get {
+                return ResourceManager.GetString("MonthlyCycleEnergy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Monthly Cycles.
         /// </summary>
         public static string MonthlyCycles {
@@ -5824,6 +5842,15 @@ namespace K9.Globalisation {
         public static string MyPersonalProfile {
             get {
                 return ResourceManager.GetString("MyPersonalProfile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My Yearly and Monthly Cycles.
+        /// </summary>
+        public static string MyYearlyAndMonthlyCycles {
+            get {
+                return ResourceManager.GetString("MyYearlyAndMonthlyCycles", resourceCulture);
             }
         }
         
@@ -8962,6 +8989,15 @@ namespace K9.Globalisation {
         public static string YearlyCycle {
             get {
                 return ResourceManager.GetString("YearlyCycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yearly Cycle Energy.
+        /// </summary>
+        public static string YearlyCycleEnergy {
+            get {
+                return ResourceManager.GetString("YearlyCycleEnergy", resourceCulture);
             }
         }
         

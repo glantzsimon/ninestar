@@ -7,13 +7,14 @@
         font-weight: bold;
         display: block;
         text-align: center;
-        height: 20px;
+        min-height: 20px;
         margin-bottom: 10px;
     }
 
     .ninestar-summary-container p {
         text-align: center !important;
         margin-bottom: 10px;
+        color: black !important;
     }
 
 .ninestar-summmary {

@@ -11,34 +11,13 @@
             <div class="col-sm-4 margin-bottom-15 @childClass">
                 <div class="adult-profile">
                     @Html.Partial("_EnergyTitle", Model.MainEnergy)
-
-                    <p class="text-center margin-bottom-0">
-                        <strong>@Model.MainEnergy.AdultEnergyLabel</strong>
-                    </p>
-                    <p class="text-center">
-                        @Model.MainEnergy.EnergyName
-                    </p>
                 </div>
             </div>
             <div class="col-sm-4 margin-bottom-15">
                 @Html.Partial("_EnergyTitle", Model.CharacterEnergy)
-
-                <p class="text-center margin-bottom-0">
-                    <strong>@Model.CharacterEnergy.CharacteEnergyLabel</strong>
-                </p>
-                <p class="text-center">
-                    @Model.CharacterEnergy.EnergyName
-                </p>
             </div>
             <div class="col-sm-4 margin-bottom-15">
                 @Html.Partial("_EnergyTitle", Model.SurfaceEnergy)
-
-                <p class="text-center margin-bottom-0">
-                    <strong>@Dictionary.SurfaceEnergyShortLabel</strong>
-                </p>
-                <p class="text-center">
-                    @Model.SurfaceEnergy.EnergyName
-                </p>
             </div>
         </div>
         <div class="row">
@@ -46,39 +25,25 @@
                 @if (!Model.IsCompatibility)
                 {
                     <a href="#" id="current-yearly-cycle">
-                        <img title="@Model.YearlyCycleEnergy.SeasonDescription" alt="@Model.YearlyCycleEnergy.SeasonDescription" class="auto-size center-block" src="~/Images/ninestar/seasons/@(Model.YearlyCycleEnergy.Season).png" />
+                        @Html.Partial("_CycleTitle", Model.YearlyCycleEnergy)
                     </a>
                 }
                 else
                 {
-                    <img title="@Model.YearlyCycleEnergy.SeasonDescription" alt="@Model.YearlyCycleEnergy.SeasonDescription" class="auto-size center-block" src="~/Images/ninestar/seasons/@(Model.YearlyCycleEnergy.Season).png" />
+                    @Html.Partial("_CycleTitle", Model.YearlyCycleEnergy)
                 }
-
-                <p class="text-center margin-bottom-0">
-                    <strong>@Dictionary.CurrentYearlyCycle</strong>
-                </p>
-                <p class="text-center">
-                    @Model.YearlyCycleEnergy.CycleDescriptiveName
-                </p>
             </div>
             <div class="col-md-4 col-sm-4 margin-bottom-15">
                 @if (!Model.IsCompatibility)
                 {
                     <a href="#" id="current-monthly-cycle">
-                        <img title="@Model.MonthlyCycleEnergy.SeasonDescription" alt="@Model.MonthlyCycleEnergy.SeasonDescription" class="auto-size center-block" src="~/Images/ninestar/seasons/@(Model.MonthlyCycleEnergy.Season).png" />
+                        @Html.Partial("_CycleTitle", Model.MonthlyCycleEnergy)
                     </a>
                 }
                 else
                 {
-                    <img title="@Model.MonthlyCycleEnergy.SeasonDescription" alt="@Model.MonthlyCycleEnergy.SeasonDescription" class="auto-size center-block" src="~/Images/ninestar/seasons/@(Model.MonthlyCycleEnergy.Season).png" />
+                    @Html.Partial("_CycleTitle", Model.MonthlyCycleEnergy)
                 }
-
-                <p class="text-center margin-bottom-0">
-                    <strong>@Dictionary.CurrentMonthlyCycle</strong>
-                </p>
-                <p class="text-center">
-                    @Model.MonthlyCycleEnergy.CycleDescriptiveName
-                </p>
             </div>
         </div>
     </div>

@@ -104,7 +104,7 @@ namespace K9.WebApplication.Models
         public List<Tuple<int, NineStarKiEnergy>> GetYearlyPlanner()
         {
             var cycles = new List<Tuple<int, NineStarKiEnergy>>();
-            var today = new DateTime(DateTime.Today.Year, 2, 5);
+            var today = new DateTime(DateTime.Today.Year, 2, 15);
 
             for (int i = -20; i <= 20; i++)
             {

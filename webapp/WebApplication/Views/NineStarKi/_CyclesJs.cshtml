@@ -12,7 +12,7 @@
     function scrollCurrentMonthIntoVew() {
         setTimeout(function () {
             var $cycle = $("div.current-month");
-            var $yearlyPlannerContainer = ".yearly-planner-container";
+            var $monthlyPlannerContainer = ".monthly-planner-container";
 
             $($yearlyPlannerContainer).scrollTop($cycle.offset().top - $($yearlyPlannerContainer).offset().top);
         }, 200);

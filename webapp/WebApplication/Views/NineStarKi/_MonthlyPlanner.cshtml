@@ -1,7 +1,7 @@
 ﻿@using K9.SharedLibrary.Extensions
 @model K9.WebApplication.Models.NineStarKiModel
 
-<div class="container main-content clear-both yearly-planner-container margin-top-5">
+<div class="container main-content clear-both monthly-planner-container margin-top-5">
     @foreach (var cycle in Model.GetMonthlyPlanner())
     {
         var year = cycle.Item1;

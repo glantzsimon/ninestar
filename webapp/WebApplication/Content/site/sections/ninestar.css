@@ -37,37 +37,46 @@
         margin-bottom: 4px;
     }
 
-.yearly-planner-container {
+.yearly-planner-container,
+.monthly-planner-container {
     max-height: 400px;
     overflow-y: scroll;
     font-size: 0.8em;
 }
 
-    .yearly-planner-container .row {
+    .yearly-planner-container .row,
+    .monthly-planner-container .row {
         border-bottom: 1px solid #eee;
         padding-bottom: 6px;
         border-radius: 8px;
     }
 
-        .yearly-planner-container .row div .ninestar-summary-container p, .yearly-planner-container .row div .ninestar-summary-container h3 {
+        .yearly-planner-container .row div .ninestar-summary-container p,
+        .yearly-planner-container .row div .ninestar-summary-container h3,
+        .monthly-planner-container .row div .ninestar-summary-container p,
+        .monthly-planner-container .row div .ninestar-summary-container h3 {
             text-align: left !important;
         }
 
-            .yearly-planner-container .row div img {
-                height: 36px;
-                margin-top: 20px;
-            }
+        .yearly-planner-container .row div img,
+        .monthly-planner-container .row div img {
+            height: 36px;
+            margin-top: 20px;
+        }
 
-        .yearly-planner-container .row:hover {
+        .yearly-planner-container .row:hover,
+        .monthly-planner-container .row:hover {
             background: #eeeeee;
         }
 
-        .yearly-planner-container .row.active {
+        .yearly-planner-container .row.active,
+        .monthly-planner-container .row.active {
             background: #337ab7;
             color: white !important;
         }
 
-            .yearly-planner-container .row.active h3 {
+            .yearly-planner-container .row.active h3,
+            .monthly-planner-container .row.active h3 {
                 color: white !important;
             }
 

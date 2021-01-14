@@ -93,3 +93,36 @@
         </div>
     </article>
 }
+
+<script language="javascript">
+
+    function scrollProfile(tab) {
+        setTimeout(function () {
+            $.fn.scrollToTopOf(tab, -230);
+        }, 200);
+    }
+
+    $(function () {
+        $("#fundamental-energy").click(function () {
+            scrollProfile("#fundamental");
+
+            $(".nav-pills a[href='#personal-profile']").tab("show");
+            $(".nav-pills a[href='#fundamental']").tab("show");
+        });
+
+        $("#character-energy").click(function () {
+            scrollProfile("#character");
+
+            $(".nav-pills a[href='#personal-profile']").tab("show");
+            $(".nav-pills a[href='#character']").tab("show");
+        });
+
+        $("#surface-energy").click(function () {
+            scrollProfile("#surface");
+
+            $(".nav-pills a[href='#personal-profile']").tab("show");
+            $(".nav-pills a[href='#surface']").tab("show");
+        });
+    });
+
+</script>

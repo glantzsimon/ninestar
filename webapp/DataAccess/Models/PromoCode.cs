@@ -57,7 +57,6 @@ namespace K9.DataAccessLayer.Models
             var sb = new StringBuilder();
             if (SubscriptionType > MembershipOption.ESubscriptionType.Free)
             {
-                sb.Append("<br />");
                 switch (SubscriptionType)
                 {
                     case MembershipOption.ESubscriptionType.MonthlyStandard:
@@ -81,7 +80,6 @@ namespace K9.DataAccessLayer.Models
 
             if (Credits > 0)
             {
-                sb.Append("<br />");
                 sb.Append($"<h4><strong>{Globalisation.Dictionary.Credits}:</strong></h4>");
                 sb.Append($"<p>{Credits}</p>");
             }

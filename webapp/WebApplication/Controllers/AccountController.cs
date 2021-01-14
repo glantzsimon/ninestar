@@ -178,6 +178,11 @@ namespace K9.WebApplication.Controllers
         {
             ViewBag.RecaptchaSiteKey = _recaptchaConfig.RecaptchaSiteKey;
 
+            if (WebSecurity.IsAuthenticated)
+            {
+                WebSecurity.Logout();
+            }
+
             if (promoCode != null)
             {
                 try

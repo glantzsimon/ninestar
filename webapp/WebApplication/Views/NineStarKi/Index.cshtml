@@ -5,8 +5,8 @@
     ViewBag.SubTitle = Dictionary.PersonalProfileCalculator;
     ViewBag.Keywords = Dictionary.NineStarKiCalculatorKeywords;
     ViewBag.MetaDescription = Dictionary.NineStarKiCalculatorMetaDescription;
-    
-    Layout = "../Shared/_LayoutForm.cshtml";    
+
+    Layout = "../Shared/_LayoutForm.cshtml";
 }
 
 @Html.Partial("_BetaPopup")
@@ -27,3 +27,5 @@
 {
     @Html.Partial("_ProfilePills", Model)
 }
+
+@Html.Partial("_CyclesJs")

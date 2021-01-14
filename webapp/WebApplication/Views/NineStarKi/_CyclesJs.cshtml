@@ -9,6 +9,15 @@
         }, 200);
     }
 
+    function scrollCurrentMonthIntoVew() {
+        setTimeout(function () {
+            var $cycle = $("div.current-month");
+            var $yearlyPlannerContainer = ".yearly-planner-container";
+
+            $($yearlyPlannerContainer).scrollTop($cycle.offset().top - $($yearlyPlannerContainer).offset().top);
+        }, 200);
+    }
+
     function scrollCyclesIntoVew(tab) {
         setTimeout(function () {
             $.fn.scrollToTopOf(tab, -200);
@@ -18,6 +27,7 @@
     $(function () {
         $("a[href='#yearly-planner']").click(function() {
             scrollCurrentYearIntoVew();
+            scrollCurrentMonthIntoVew();
         });
 
         $("#current-yearly-cycle").click(function () {

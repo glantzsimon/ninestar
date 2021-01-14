@@ -68,7 +68,7 @@ namespace K9.WebApplication.Models
         public DateTime? Today { get; set; }
 
         public bool IsShowSummary { get; set; } = true;
-        
+
         public bool IsCompatibility { get; set; } = false;
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace K9.WebApplication.Models
         public string OverviewLabel => $"{MainEnergy.EnergyNameAndNumber} Overview";
 
         public string EnergySexualityLabel => $"{MainEnergy.EnergyName} {Dictionary.SexualityLabel}";
-        
+
         public string SexualityRelationTypeDetailsStraight => GetSexualityGenderDescription();
 
         public string SexualityRelationTypeDetailsGay => GetSexualityGenderDescription(true);
@@ -110,6 +110,25 @@ namespace K9.WebApplication.Models
             {
                 Today = today.AddYears(i);
                 cycles.Add(new Tuple<int, NineStarKiEnergy>(Today.Value.Year, GetYearlyCycleEnergy()));
+            }
+
+            Today = null;
+
+            return cycles;
+        }
+
+        public List<Tuple<int, int, string, NineStarKiEnergy>> GetMonthlyPlanner()
+        {
+            var cycles = new List<Tuple<int, int, string, NineStarKiEnergy>>();
+            var today = new DateTime(DateTime.Today.Year, 2, 5);
+
+            for (int i = -1; i <= 10; i++)
+            {
+                for (int j = 0; j < 12; j++)
+                {
+                    Today = today.AddYears(i).AddMonths(j);
+                    cycles.Add(new Tuple<int, int, string, NineStarKiEnergy>(Today.Value.Year, Today.Value.Month, Today.Value.ToString("MMMM"), GetMonthlyCycleEnergy()));
+                }
             }
 
             Today = null;

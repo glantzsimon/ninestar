@@ -5500,6 +5500,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Month.
+        /// </summary>
+        public static string Month {
+            get {
+                return ResourceManager.GetString("Month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    Our lives also move through monthly cycles. The Energy associated with the month affects us on a more immediate and emotional level.
         ///&lt;/h5&gt;

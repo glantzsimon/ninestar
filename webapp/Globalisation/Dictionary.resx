@@ -2296,6 +2296,9 @@
   <data name="Cycle" xml:space="preserve">
     <value>Cycle</value>
   </data>
+  <data name="Month" xml:space="preserve">
+    <value>Month</value>
+  </data>
   <data name="MonthlyCycleEnergy" xml:space="preserve">
     <value>Monthly Cycle Energy</value>
   </data>

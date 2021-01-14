@@ -1246,6 +1246,8 @@
     <Content Include="Views\NineStarKi\_CyclesSummary.cshtml" />
     <Content Include="Views\NineStarKi\_CyclesJs.cshtml" />
     <Content Include="Views\NineStarKi\_CycleTitle.cshtml" />
+    <Content Include="Views\NineStarKi\_MonthlyPlanner.cshtml" />
+    <Content Include="Views\NineStarKi\_Month.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

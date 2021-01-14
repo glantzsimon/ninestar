@@ -5144,7 +5144,7 @@ namespace K9.Globalisation {
         ///    The Fundamental Energy description alone is not very granular and only describes one aspect of the chart.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Please note that the &apos;Fundamental Energy&apos; or &apos;Adult Persona&apos; alone does not give a very granular description of a person. The &apos;Character Energy&apos;, as well as the &apos;Surface Energy&apos; play a significant role in shaping a person&apos;s character traits. However, the Fundamental Energy does give a very useful overview. Also, of the three components of a personal profile , the Fundamental E [rest of string was truncated]&quot;;.
+        ///    Please note that the &apos;Fundamental Energy&apos; or &apos;Adult Persona&apos; alone does not give a very granular description of a person. The &apos;Character Energy&apos;, as well as the &apos;Surface Energy&apos; play a significant role in shaping a person&apos;s character traits. However, the Fundamental Energy does give a very useful overview. Also, of the three components of a personal chart, the Fundamental Ener [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_energies_short_description {
             get {
@@ -6402,7 +6402,7 @@ namespace K9.Globalisation {
         ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
         ///    &lt;h4&gt;&lt;strong&gt;Annual Platinum Subscription:&lt;/strong&gt;&lt;/h4&gt;
         ///    &lt;p&gt;
-        ///        &amp;#8226; Unlimited full Personal Profile readings for a whole year.
+        ///        &amp;#8226; Unlimited full Personal Chart readings for a whole year.
         ///    &lt;/p&gt;
         ///    &lt;p&gt;
         ///        &amp;#8226; Unlimited full Relationship Compatibility readings for a whole year.
@@ -6419,7 +6419,7 @@ namespace K9.Globalisation {
         ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
         ///    &lt;h4&gt;&lt;strong&gt;Monthly Platinum Subscription:&lt;/strong&gt;&lt;/h4&gt;
         ///    &lt;p&gt;
-        ///        &amp;#8226; Unlimited full Personal Profile readings for a whole month.
+        ///        &amp;#8226; Unlimited full Personal Chart readings for a whole month.
         ///    &lt;/p&gt;
         ///    &lt;p&gt;
         ///        &amp;#8226; Unlimited full Relationship Compatibility readings for a whole month.
@@ -6602,6 +6602,24 @@ namespace K9.Globalisation {
         public static string PromoCodeEmailTitle {
             get {
                 return ResourceManager.GetString("PromoCodeEmailTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Promo code is already in use.
+        /// </summary>
+        public static string PromoCodeInUse {
+            get {
+                return ResourceManager.GetString("PromoCodeInUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your account was created but the promo code could not be used. Please contact support..
+        /// </summary>
+        public static string PromoCodeNotUsed {
+            get {
+                return ResourceManager.GetString("PromoCodeNotUsed", resourceCulture);
             }
         }
         
@@ -7004,7 +7022,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Our 9 Star Ki profile is intimately connected to our sense of sexual identity and affects how comfortable an individual is likely to feel with his or her sexuality as well as the way they relate sexually to others.
+        ///    Our 9 Star Ki chart is intimately connected to our sense of sexual identity and affects how comfortable an individual is likely to feel with his or her sexuality as well as the way they relate sexually to others.
         ///&lt;/p&gt;.
         /// </summary>
         public static string sexuality_description {
@@ -7026,7 +7044,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Many people today are realising that they do not identify strongly with either gender. It is hard to accurately predict the kind of relationship such individuals might have with their sexuality solely based on their 9 Star Ki profile and is beyond the scope of this website.
+        ///    Many people today are realising that they do not identify strongly with either gender. It is hard to accurately predict the kind of relationship such individuals might have with their sexuality solely based on their 9 Star Ki chart and is beyond the scope of this website.
         ///&lt;/p&gt;.
         /// </summary>
         public static string sexuality_gender_other {
@@ -7542,7 +7560,7 @@ namespace K9.Globalisation {
         ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
         ///    &lt;h4&gt;&lt;strong&gt;Annual Standard Subscription:&lt;/strong&gt;&lt;/h4&gt;
         ///    &lt;p&gt;
-        ///        &amp;#8226; {NumberOfProfileReadings} full Personal Profile readings a month for a whole year.
+        ///        &amp;#8226; {NumberOfProfileReadings} full Personal Chart readings a month for a whole year.
         ///    &lt;/p&gt;
         ///    &lt;p&gt;
         ///        &amp;#8226; {NumberOfCompatibilityReadings} full Relationship Compatibility readings a month for a whole year.
@@ -7559,7 +7577,7 @@ namespace K9.Globalisation {
         ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
         ///    &lt;h4&gt;&lt;strong&gt;Monthly Standard Subscription:&lt;/strong&gt;&lt;/h4&gt;
         ///    &lt;p&gt;
-        ///        &amp;#8226; {NumberOfProfileReadings} full Personal Profile readings for a whole month.
+        ///        &amp;#8226; {NumberOfProfileReadings} full Personal Chart readings for a whole month.
         ///    &lt;/p&gt;
         ///    &lt;p&gt;
         ///        &amp;#8226; {NumberOfCompatibilityReadings} full Relationship Compatibility readings for a whole month.

@@ -177,6 +177,22 @@ namespace K9.WebApplication.Controllers
         public ActionResult Register(string promoCode = null)
         {
             ViewBag.RecaptchaSiteKey = _recaptchaConfig.RecaptchaSiteKey;
+
+            if (promoCode != null)
+            {
+                try
+                {
+                    if (_userService.CheckIfPromoCodeIsUsed(promoCode))
+                    {
+                        ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
+                    };
+                }
+                catch (Exception e)
+                {
+                    ModelState.AddModelError("PromoCode", e.Message);
+                }
+            }
+
             return View(new RegisterViewModel
             {
                 RegisterModel = new UserAccount.RegisterModel
@@ -216,11 +232,26 @@ namespace K9.WebApplication.Controllers
                 {
                     var user = _userRepository.Find(e => e.Username == model.RegisterModel.UserName).FirstOrDefault();
 
-                    if (user?.Id > 0 && !string.IsNullOrEmpty(model.PromoCode))
+                    if (!string.IsNullOrEmpty(model.PromoCode))
                     {
-                        _userService.CheckPromoCode(user.Id, model.PromoCode);
+                        if (user?.Id > 0)
+                        {
+                            try
+                            {
+                                _userService.UsePromoCode(user.Id, model.PromoCode);
+                            }
+                            catch (Exception e)
+                            {
+                                ModelState.AddModelError("PromoCode", e.Message);
+                            }
 
-                        _membershipService.ProcessPurchaseWithPromoCode(user.Id, model.PromoCode);
+                            _membershipService.ProcessPurchaseWithPromoCode(user.Id, model.PromoCode);
+                        }
+                        else
+                        {
+                            _logger.Error("AccountController => Register => Promo code used but UserId is 0");
+                            return RedirectToAction("AccountCreated", "Account", new { additionalError = Globalisation.Dictionary.PromoCodeNotUsed });
+                        }   
                     }
 
                     return RedirectToAction("AccountCreated", "Account");
@@ -497,8 +528,9 @@ namespace K9.WebApplication.Controllers
         #region Account Activation
 
         [AllowAnonymous]
-        public ActionResult AccountCreated(string userName)
+        public ActionResult AccountCreated(string userName, string additionalError = "")
         {
+            ViewBag.AdditionalError = additionalError;
             return View();
         }
 

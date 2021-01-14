@@ -437,6 +437,7 @@
     <Content Include="Content\k9\scroller.css" />
     <Content Include="Content\k9\fileUpload.css" />
     <Content Include="Content\fontawesome\font-awesome.css" />
+    <Content Include="Content\k9\stroll.css" />
     <Content Include="Content\site\classes.css" />
     <Content Include="Content\site\desktop.css" />
     <Content Include="Content\site\elements.css" />
@@ -876,6 +877,7 @@
     <Content Include="Scripts\library\move-top.js" />
     <Content Include="Scripts\library\owl.carousel.js" />
     <Content Include="Scripts\library\SmoothScroll.min.js" />
+    <Content Include="Scripts\library\stroll.js" />
     <Content Include="Scripts\library\vticker-min.js" />
     <Content Include="Scripts\template\scroller.js" />
     <Content Include="sitemap.xml" />

@@ -6,7 +6,8 @@ namespace K9.WebApplication.Services
     public interface IUserService
     {
         void UpdateActiveUserEmailAddressIfFromFacebook(Contact contact);
-        void CheckPromoCode(int userId, string code);
+        bool CheckIfPromoCodeIsUsed(string code);
+        void UsePromoCode(int userId, string code);
         void SendPromoCode(EmailPromoCodeViewModel model);
     }
 }

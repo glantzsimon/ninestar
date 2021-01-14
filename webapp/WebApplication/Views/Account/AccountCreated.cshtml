@@ -2,8 +2,16 @@
 @{
     ViewBag.Title = K9.Base.Globalisation.Dictionary.Registration;
     Layout = "../Shared/_LayoutForm.cshtml";
+
+    string additionalError = ViewBag.AdditionalError?.ToString();
 }
 
 <div class="margin-bottom-10">
     @Html.Success(K9.Base.Globalisation.Dictionary.AccountCreatedSuccessfully, K9.Base.Globalisation.Dictionary.CheckAccountActivationEmail)
+
+    @if (string.IsNullOrEmpty(additionalError))
+    {
+        <hr />
+        @Html.Alert(EAlertType.Warning, additionalError)
+    }
 </div>

@@ -53,7 +53,7 @@ namespace K9.WebApplication.Services
             }
         }
 
-        public void CheckPromoCode(int userId, string code)
+        public bool CheckIfPromoCodeIsUsed(string code)
         {
             var promoCode = _promoCodesRepository.Find(e => e.Code == code).FirstOrDefault();
             if (promoCode == null)
@@ -61,7 +61,25 @@ namespace K9.WebApplication.Services
                 throw new Exception("Invalid promo code");
             }
 
-            var userPromoCode = _userPromoCodeRepository.Find(e => e.UserId == userId && e.PromoCodeId == promoCode.Id)
+            var userPromoCode = _userPromoCodeRepository.Find(e => e.PromoCodeId == promoCode.Id)
+                .FirstOrDefault();
+            if (userPromoCode != null)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public void UsePromoCode(int userId, string code)
+        {
+            var promoCode = _promoCodesRepository.Find(e => e.Code == code).FirstOrDefault();
+            if (promoCode == null)
+            {
+                throw new Exception("Invalid promo code");
+            }
+
+            var userPromoCode = _userPromoCodeRepository.Find(e => e.PromoCodeId == promoCode.Id)
                 .FirstOrDefault();
             if (userPromoCode != null)
             {
@@ -79,13 +97,13 @@ namespace K9.WebApplication.Services
             promoCode.UsedOn = DateTime.Now;
             _promoCodesRepository.Update(promoCode);
         }
-        
+
         public void SendPromoCode(EmailPromoCodeViewModel model)
         {
             var template = Dictionary.PromoCodeEmail;
             var title = Dictionary.PromoCodeEmailTitle;
             var contact = _contactService.GetOrCreateContact("", model.Name, model.EmailAddress);
-            
+
             _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
             {
                 Title = title,

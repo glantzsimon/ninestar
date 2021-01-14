@@ -1,21 +1,27 @@
 ﻿<script language="javascript">
 
     function scrollCurrentYearIntoVew() {
-        setTimeout(function () {
-            var $cycle = $("div.current-year");
-            var $yearlyPlannerContainer = ".yearly-planner-container";
+        if ($("#YearScrollStatus").val() !== true) {
+            setTimeout(function () {
+                var $cycle = $("div.current-year");
+                var $yearlyPlannerContainer = ".yearly-planner-container";
 
-            $($yearlyPlannerContainer).scrollTop($cycle.offset().top - $($yearlyPlannerContainer).offset().top);
-        }, 200);
+                $($yearlyPlannerContainer).scrollTop($cycle.offset().top - $($yearlyPlannerContainer).offset().top);
+                $("#YearScrollStatus").val(true);
+            }, 200);
+        }
     }
 
     function scrollCurrentMonthIntoVew() {
-        setTimeout(function () {
-            var $cycle = $("div.current-month");
-            var $monthlyPlannerContainer = ".monthly-planner-container";
+        if ($("#MonthScrollStatus").val() !== true) {
+            setTimeout(function () {
+                var $cycle = $("div.current-month");
+                var $monthlyPlannerContainer = ".monthly-planner-container";
 
-            $($monthlyPlannerContainer).scrollTop($cycle.offset().top - $($monthlyPlannerContainer).offset().top);
-        }, 200);
+                $($monthlyPlannerContainer).scrollTop($cycle.offset().top - $($monthlyPlannerContainer).offset().top);
+                $("#MonthScrollStatus").val(true);
+            }, 200);
+        }
     }
 
     function scrollCyclesIntoVew(tab) {
@@ -25,11 +31,11 @@
     }
 
     $(function () {
-        $("a[href='#yearly-planner']").click(function() {
+        $("a[href='#yearly-planner']").click(function () {
             scrollCurrentYearIntoVew();
         });
-        
-        $("a[href='#monthly-planner']").click(function() {
+
+        $("a[href='#monthly-planner']").click(function () {
             scrollCurrentMonthIntoVew();
         });
 

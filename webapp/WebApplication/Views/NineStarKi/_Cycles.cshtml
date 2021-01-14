@@ -22,10 +22,12 @@
     </div>
 
     <div id="yearly-planner" class="tab-pane fade">
+        @Html.Hidden("YearScrollStatus", false)
         @Html.Partial("_YearlyPlanner")
     </div>
 
     <div id="monthly-planner" class="tab-pane fade">
+        @Html.Hidden("MonthScrollStatus", false)
         @Html.Partial("_MonthlyPlanner")
     </div>
 </div>

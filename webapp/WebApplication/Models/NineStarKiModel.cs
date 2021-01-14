@@ -120,13 +120,14 @@ namespace K9.WebApplication.Models
         public List<Tuple<int, int, string, NineStarKiEnergy>> GetMonthlyPlanner()
         {
             var cycles = new List<Tuple<int, int, string, NineStarKiEnergy>>();
-            var today = new DateTime(DateTime.Today.Year, 2, 5);
+            var today = new DateTime(DateTime.Today.Year, 2, 15);
 
             for (int i = -1; i <= 10; i++)
             {
                 for (int j = 0; j < 12; j++)
                 {
-                    Today = today.AddYears(i).AddMonths(j);
+                    var year = today.AddYears(i).Year;
+                    Today = new DateTime(year, j + 1, 15);
                     cycles.Add(new Tuple<int, int, string, NineStarKiEnergy>(Today.Value.Year, Today.Value.Month, Today.Value.ToString("MMMM"), GetMonthlyCycleEnergy()));
                 }
             }

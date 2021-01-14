@@ -6,12 +6,14 @@
     {
         var year = cycle.Item1;
         var energy = cycle.Item2;
-        var activeClass = year == DateTime.Today.Year ? "active current-year" : string.Empty;
+        var isAfterChineseNewYear = DateTime.Today.Month >= 3 || DateTime.Today.Month == 2 && DateTime.Today.Day >= 4;
+        var isCurrentYear = isAfterChineseNewYear ? year == DateTime.Today.Year : year == DateTime.Today.Year - 1;
+        var activeClass = isCurrentYear ? "active current-year" : string.Empty;
 
         <a target="_blank" href="@Url.ActionWithBookmark("Index", "Predictions", $"{energy.EnergyName.ToLower()}-year")">
             <div class="row @activeClass">
-                <div class="col-xs-1">
-                    @Html.Partial("_Year", year)
+                <div class="col-xs-2">
+                    @Html.Partial("_Year", $"{year} - {year + 1}")
                 </div>
                 <div class="col-sm-2 col-xs-3">
                     <div class="ninestar-summary-container margin-left-10-xs">
@@ -30,7 +32,7 @@
                         <p>@energy.SeasonDescription</p>
                     </div>
                 </div>
-                <div class="col-xs-4">
+                <div class="col-xs-3">
                     <div class="ninestar-summary-container">
                         <h3 class="margin-bottom-0 padding-bottom-0">@K9.Base.Globalisation.Dictionary.DescriptionLabel</h3>
                         <p>

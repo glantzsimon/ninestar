@@ -13,7 +13,7 @@
         <a target="_blank" href="@Url.ActionWithBookmark("Index", "Predictions", $"{energy.EnergyName.ToLower()}-month")">
             <div class="row @activeClass">
                 <div class="col-xs-1">
-                    @Html.Partial("_Year", year)
+                    @Html.Partial("_Year", year.ToString())
                 </div>
                 <div class="col-xs-1">
                     @Html.Partial("_Month", monthName)

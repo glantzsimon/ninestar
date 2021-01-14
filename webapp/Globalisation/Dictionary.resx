@@ -227,7 +227,7 @@
     <value>Calculate</value>
   </data>
   <data name="PersonalProfileCalculator" xml:space="preserve">
-    <value>Personal Profile Calculator</value>
+    <value>Personal Chart Calculator</value>
   </data>
   <data name="Centre" xml:space="preserve">
     <value>Centre</value>
@@ -671,7 +671,7 @@
     <value>Origins</value>
   </data>
   <data name="PersonalProfileTitle" xml:space="preserve">
-    <value>Personal Profiles</value>
+    <value>Personal Chart</value>
   </data>
   <data name="ThreeModalitiesTitle" xml:space="preserve">
     <value>The 3 Modalities</value>
@@ -698,7 +698,7 @@
     <value>articles\en-gb\metal-element.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="NineStarKiCalculatorMetaDescription" xml:space="preserve">
-    <value>Use this simple but powerful calculator to determine your or a loved one's 9 Star Ki personal profile. Our calculator is one of the most accurate and detailed calculators available, as it uses a little known but important additional factor when determining a person's chart. Try it now for free!</value>
+    <value>Use this simple but powerful calculator to determine your or a loved one's 9 Star Ki personal chart. Our calculator is one of the most accurate and detailed calculators available, as it uses a little known but important factor when determining a person's chart. Try it now for free!</value>
   </data>
   <data name="ElementDescriptionLabel" xml:space="preserve">
     <value>Element Description</value>
@@ -707,7 +707,7 @@
     <value>9 Star Ki Astrology Free Reading Detailed Personal Chart Personal Profile Calculator</value>
   </data>
   <data name="NineStarKiCalculatorTitle" xml:space="preserve">
-    <value>9 Star Ki Personal Profile Calculator</value>
+    <value>9 Star Ki Personal Chart Calculator</value>
   </data>
   <data name="Predictions" xml:space="preserve">
     <value>Predictions</value>
@@ -827,7 +827,7 @@
     <value>articles\en-gb\mountain-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="PersonalProfileDetails" xml:space="preserve">
-    <value>Personal Profile Details</value>
+    <value>Personal Chart Details</value>
   </data>
   <data name="soil_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\soil-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -1340,7 +1340,7 @@
     <value>The 9 Main Energies</value>
   </data>
   <data name="ProfileCalculator" xml:space="preserve">
-    <value>Profile Calculator</value>
+    <value>Chart Calculator</value>
   </data>
   <data name="ModalityDescriptionLabel" xml:space="preserve">
     <value>Modality Description</value>
@@ -1388,10 +1388,10 @@
     <value>Sexuality</value>
   </data>
   <data name="ProfileReading" xml:space="preserve">
-    <value>Profile Reading</value>
+    <value>Chart Reading</value>
   </data>
   <data name="ProfileReadings" xml:space="preserve">
-    <value>Profile Readings</value>
+    <value>Chart Readings</value>
   </data>
   <data name="CompatibilityReading" xml:space="preserve">
     <value>Relationship Compatibility Reading</value>
@@ -1409,10 +1409,10 @@
     <value>Number of Relationship Compatibility Readings per month</value>
   </data>
   <data name="MaxNumberOfProfileReadingsLabel" xml:space="preserve">
-    <value>Number of Profile Readings per month</value>
+    <value>Number of Chart Readings per month</value>
   </data>
   <data name="NumberOfProfileReadingsLeft" xml:space="preserve">
-    <value>Profile Readings Remaining</value>
+    <value>Chart Readings Remaining</value>
   </data>
   <data name="NumberOfRelationshipCompatibilityReadingsLeft" xml:space="preserve">
     <value>Compatibility Readings Remaining</value>
@@ -1604,7 +1604,7 @@
     <value>Compatibility Calculator</value>
   </data>
   <data name="CreditsDescriptionUI" xml:space="preserve">
-    <value>Each credit give you access to either a complete Profile Reading or Compatibility Reading. You can also buy Credit Packs at a reduced price</value>
+    <value>Each credit give you access to either a complete Chart Reading or Compatibility Reading. You can also buy Credit Packs at a reduced price</value>
   </data>
   <data name="five_transformations" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\five-transformations.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -1883,7 +1883,7 @@
     <value>Sorry, you cannot switch to the selected membership</value>
   </data>
   <data name="MyPersonalProfile" xml:space="preserve">
-    <value>My Personal Profile</value>
+    <value>My Personal Chart</value>
   </data>
   <data name="AboutMonthlyCycles" xml:space="preserve">
     <value>About Monthly Cycles</value>
@@ -1982,7 +1982,7 @@
     <value>Retrieve saved Compatibility Score</value>
   </data>
   <data name="RetrieveLastProfile" xml:space="preserve">
-    <value>Retrieve saved Personal Profile</value>
+    <value>Retrieve saved Personal Chart</value>
   </data>
   <data name="SexualityGenderRelationLabel" xml:space="preserve">
     <value>Sexuality and how it is influenced by the relationship between biological gender and the energetic gender of the Fundamental and Character Energies</value>

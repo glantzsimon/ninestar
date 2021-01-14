@@ -428,7 +428,11 @@
   <ItemGroup>
     <Content Include="App_Readme\Elmah.txt" />
     <Content Include="Config\.gitattributes" />
+    <Content Include="Content\fontawesome\all.css" />
     <Content Include="Content\fonts\alex-brush-v8-latin-regular.svg" />
+    <Content Include="Content\fonts\fa-brands-400.svg" />
+    <Content Include="Content\fonts\fa-regular-400.svg" />
+    <Content Include="Content\fonts\fa-solid-900.svg" />
     <Content Include="Content\k9\panel.css" />
     <Content Include="Content\k9\scroller.css" />
     <Content Include="Content\k9\fileUpload.css" />
@@ -1043,6 +1047,18 @@
     <Content Include="Content\fonts\alex-brush-v8-latin-regular.ttf" />
     <Content Include="Content\fonts\alex-brush-v8-latin-regular.woff" />
     <Content Include="Content\fonts\alex-brush-v8-latin-regular.woff2" />
+    <Content Include="Content\fonts\fa-brands-400.eot" />
+    <Content Include="Content\fonts\fa-brands-400.ttf" />
+    <Content Include="Content\fonts\fa-brands-400.woff" />
+    <Content Include="Content\fonts\fa-brands-400.woff2" />
+    <Content Include="Content\fonts\fa-regular-400.eot" />
+    <Content Include="Content\fonts\fa-regular-400.ttf" />
+    <Content Include="Content\fonts\fa-regular-400.woff" />
+    <Content Include="Content\fonts\fa-regular-400.woff2" />
+    <Content Include="Content\fonts\fa-solid-900.eot" />
+    <Content Include="Content\fonts\fa-solid-900.ttf" />
+    <Content Include="Content\fonts\fa-solid-900.woff" />
+    <Content Include="Content\fonts\fa-solid-900.woff2" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\Integration.pubxml" />
     <None Include="Properties\PublishProfiles\IntegrationLocal.pubxml" />

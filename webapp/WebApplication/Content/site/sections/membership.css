@@ -185,6 +185,10 @@
     padding-top: 15px;
 }
 
+.upgrade-container h4 {
+    margin-top: 0 !important;
+}
+
 @media(max-width:513px) {
     .nav-tabs li {
         width: 100%;

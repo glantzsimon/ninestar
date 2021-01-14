@@ -2449,7 +2449,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Each credit give you access to either a complete Profile Reading or Compatibility Reading. You can also buy Credit Packs at a reduced price.
+        ///   Looks up a localized string similar to Each credit give you access to either a complete Chart Reading or Compatibility Reading. You can also buy Credit Packs at a reduced price.
         /// </summary>
         public static string CreditsDescriptionUI {
             get {
@@ -5303,7 +5303,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Number of Profile Readings per month.
+        ///   Looks up a localized string similar to Number of Chart Readings per month.
         /// </summary>
         public static string MaxNumberOfProfileReadingsLabel {
             get {
@@ -5846,7 +5846,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to My Personal Profile.
+        ///   Looks up a localized string similar to My Personal Chart.
         /// </summary>
         public static string MyPersonalProfile {
             get {
@@ -6000,7 +6000,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use this simple but powerful calculator to determine your or a loved one&apos;s 9 Star Ki personal profile. Our calculator is one of the most accurate and detailed calculators available, as it uses a little known but important additional factor when determining a person&apos;s chart. Try it now for free!.
+        ///   Looks up a localized string similar to Use this simple but powerful calculator to determine your or a loved one&apos;s 9 Star Ki personal chart. Our calculator is one of the most accurate and detailed calculators available, as it uses a little known but important factor when determining a person&apos;s chart. Try it now for free!.
         /// </summary>
         public static string NineStarKiCalculatorMetaDescription {
             get {
@@ -6009,7 +6009,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9 Star Ki Personal Profile Calculator.
+        ///   Looks up a localized string similar to 9 Star Ki Personal Chart Calculator.
         /// </summary>
         public static string NineStarKiCalculatorTitle {
             get {
@@ -6135,7 +6135,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Profile Readings Remaining.
+        ///   Looks up a localized string similar to Chart Readings Remaining.
         /// </summary>
         public static string NumberOfProfileReadingsLeft {
             get {
@@ -6354,7 +6354,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Personal Profile Calculator.
+        ///   Looks up a localized string similar to Personal Chart Calculator.
         /// </summary>
         public static string PersonalProfileCalculator {
             get {
@@ -6363,7 +6363,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Personal Profile Details.
+        ///   Looks up a localized string similar to Personal Chart Details.
         /// </summary>
         public static string PersonalProfileDetails {
             get {
@@ -6372,7 +6372,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Personal Profiles.
+        ///   Looks up a localized string similar to Personal Chart.
         /// </summary>
         public static string PersonalProfileTitle {
             get {
@@ -6529,7 +6529,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Profile Calculator.
+        ///   Looks up a localized string similar to Chart Calculator.
         /// </summary>
         public static string ProfileCalculator {
             get {
@@ -6538,7 +6538,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Profile Reading.
+        ///   Looks up a localized string similar to Chart Reading.
         /// </summary>
         public static string ProfileReading {
             get {
@@ -6547,7 +6547,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Profile Readings.
+        ///   Looks up a localized string similar to Chart Readings.
         /// </summary>
         public static string ProfileReadings {
             get {
@@ -6765,7 +6765,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Retrieve saved Personal Profile.
+        ///   Looks up a localized string similar to Retrieve saved Personal Chart.
         /// </summary>
         public static string RetrieveLastProfile {
             get {

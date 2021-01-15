@@ -301,8 +301,8 @@ namespace K9.WebApplication.Models
                 var verb = item.Item6;
                 var transformationType1 = item.Item7.Item1;
                 var transformationType2 = item.Item7.Item2;
-                var person1 = item.Item7.Item3.Name;
-                var person2 = item.Item7.Item4.Name;
+                var person1 = item.Item7.Item3.Name ?? $"the {Globalisation.Dictionary.FirstPerson.ToLower()}";
+                var person2 = item.Item7.Item4.Name ?? $"the {Globalisation.Dictionary.SecondPerson.ToLower()}";
                 var person1Proper = person1?.ToProperCase();
                 var person2Proper = person2?.ToProperCase();
                 var titleOnly = item.Item7.Item5;

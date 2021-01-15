@@ -1384,6 +1384,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All Elements Breakdown.
+        /// </summary>
+        public static string AllElementsBreakdown {
+            get {
+                return ResourceManager.GetString("AllElementsBreakdown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Amount Donated.
         /// </summary>
         public static string AmountDonatedLabel {

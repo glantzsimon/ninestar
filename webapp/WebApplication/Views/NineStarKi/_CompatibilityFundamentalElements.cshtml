@@ -1,0 +1,10 @@
+﻿@model K9.WebApplication.Models.CompatibilityModel
+
+<h4>@Dictionary.FundamentalElements</h4>
+
+@Html.Raw(Model.CompatibilityDetails.ElementCompatibility.FundamentalElementsTransformationDetails)
+
+<p>
+    @Html.Raw(Model.CompatibilityDetails.ElementCompatibility.FundamentalElementsCompatibilityDetails)
+</p>
+

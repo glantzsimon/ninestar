@@ -17,6 +17,9 @@ namespace K9.WebApplication.Models
             SexualChemistryScores = new List<ESexualChemistryScore>();
             SparkScores = new List<ECompatibilityScore>();
             LearningPotentialScores = new List<ECompatibilityScore>();
+            SupportiveScores = new List<ECompatibilityScore>();
+            SameScores = new List<ECompatibilityScore>();
+            ChallengingScores = new List<ECompatibilityScore>();
         }
 
         private List<ECompatibilityScore> HarmonyScores { get; }
@@ -27,6 +30,25 @@ namespace K9.WebApplication.Models
         private List<ESexualChemistryScore> SexualChemistryScores { get; }
         private List<ECompatibilityScore> SparkScores { get; }
         private List<ECompatibilityScore> LearningPotentialScores { get; }
+
+        private List<ECompatibilityScore> SupportiveScores { get; }
+        private List<ECompatibilityScore> SameScores { get; }
+        private List<ECompatibilityScore> ChallengingScores { get; }
+
+        public void AddSupportiveScore(ECompatibilityScore score, int factor = 1)
+        {
+            AddScore(SupportiveScores, score, factor);
+        }
+
+        public void AddSameScore(ECompatibilityScore score, int factor = 1)
+        {
+            AddScore(SameScores, score, factor);
+        }
+
+        public void AddChallengingScore(ECompatibilityScore score, int factor = 1)
+        {
+            AddScore(ChallengingScores, score, factor);
+        }
 
         public void AddHarmonyScore(ECompatibilityScore score, int factor = 1)
         {
@@ -79,6 +101,15 @@ namespace K9.WebApplication.Models
             }
         }
 
+        public ECompatibilityScore SupportiveScore => GetAverageScore(SupportiveScores);
+        public double SupportiveScoreAsPercentage => GetAverageScoreAsPercentage(SupportiveScores);
+        
+        public ECompatibilityScore SameScore => GetAverageScore(SameScores);
+        public double SameScoreAsPercentage => GetAverageScoreAsPercentage(SameScores);
+        
+        public ECompatibilityScore ChallengingScore => GetAverageScore(ChallengingScores);
+        public double ChallengingAsPercentage => GetAverageScoreAsPercentage(ChallengingScores);
+        
         public ECompatibilityScore HarmonyScore => GetAverageScore(HarmonyScores);
 
         public ECompatibilityScore ConflictScore => GetAverageScore(ConflictScores);
@@ -113,6 +144,17 @@ namespace K9.WebApplication.Models
             }
 
             return ECompatibilityScore.Unspecified;
+        }
+
+        private double GetAverageScoreAsPercentage(List<ECompatibilityScore> scores)
+        {
+            if (scores.Any())
+            {
+                var average = Math.Round(scores.Average(e => (int)e), MidpointRounding.AwayFromZero);
+                return (average / (int)ECompatibilityScore.ExtremelyHigh) * 100;
+            }
+
+            return 0;
         }
     }
 

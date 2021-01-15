@@ -2293,6 +2293,9 @@
   <data name="SparkScore" xml:space="preserve">
     <value>Spark</value>
   </data>
+  <data name="AllElementsBreakdown" xml:space="preserve">
+    <value>All Elements Breakdown</value>
+  </data>
   <data name="ChallengingElements" xml:space="preserve">
     <value>Challenging Elements</value>
   </data>

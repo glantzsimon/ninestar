@@ -396,6 +396,24 @@ namespace K9.WebApplication.Models
                 {
                     new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel,
                         PersonModel>
+                    (FundamentalEnergiesTransformationType,
+                        _nineStarKiModel1.MainEnergy,
+                        _nineStarKiModel2.MainEnergy,
+                        "Fundamental",
+                        "Fundamental",
+                        _nineStarKiModel1.PersonModel,
+                        _nineStarKiModel2.PersonModel),
+                    new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel,
+                        PersonModel>
+                    (CharacterEnergiesTransformationType,
+                        _nineStarKiModel1.CharacterEnergy,
+                        _nineStarKiModel2.CharacterEnergy,
+                        "Character",
+                        "Character",
+                        _nineStarKiModel1.PersonModel,
+                        _nineStarKiModel2.PersonModel),
+                    new Tuple<ETransformationType, NineStarKiEnergy, NineStarKiEnergy, string, string, PersonModel,
+                        PersonModel>
                     (FundamentalEnergy1ToCharacterEnergy2TransformationType,
                         _nineStarKiModel1.MainEnergy,
                         _nineStarKiModel2.CharacterEnergy,
@@ -492,7 +510,7 @@ namespace K9.WebApplication.Models
 
             if (supportiveItems.Any())
             {
-                sbSupport.AppendLine($"<h4 style=\"margin-top: 40px;\">{Globalisation.Dictionary.SupportiveElements}</h4>");
+                sbSupport.AppendLine($"<h4 style=\"margin-top: 40px;\">{Globalisation.Dictionary.SupportiveElements} ({Score.SupportiveScoreAsPercentage}%)</h4>");
                 foreach (var item in supportiveItems)
                 {
                     sbSupport.AppendLine(GetSupportiveCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
@@ -501,7 +519,7 @@ namespace K9.WebApplication.Models
 
             if (sameItems.Any())
             {
-                sbSame.AppendLine($"<h4 style=\"margin-top: 40px;\">{Globalisation.Dictionary.SiblingElements}</h4>");
+                sbSame.AppendLine($"<h4 style=\"margin-top: 40px;\">{Globalisation.Dictionary.SiblingElements} ({Score.SameScoreAsPercentage}%)</h4>");
                 foreach (var item in sameItems)
                 {
                     sbSame.AppendLine(GetSameCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
@@ -510,7 +528,7 @@ namespace K9.WebApplication.Models
 
             if (challengingItems.Any())
             {
-                sbChallenge.AppendLine($"<h4 style=\"margin-top: 40px;\">{Globalisation.Dictionary.ChallengingElements}</h4>");
+                sbChallenge.AppendLine($"<h4 style=\"margin-top: 40px;\">{Globalisation.Dictionary.ChallengingElements} ({Score.ChallengingAsPercentage}%)</h4>");
                 foreach (var item in challengingItems)
                 {
                     sbChallenge.AppendLine(GetChallengingCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
@@ -553,6 +571,8 @@ namespace K9.WebApplication.Models
             switch (FundamentalEnergiesTransformationType)
             {
                 case ETransformationType.Same:
+                    Score.AddSameScore(ECompatibilityScore.ExtremelyHigh, 6);
+                    
                     Score.AddHarmonyScore(ECompatibilityScore.ExtremelyHigh, 6);
                     Score.AddConflictScore(ECompatibilityScore.ExtremelyLow, 6);
                     Score.AddSupportScore(ECompatibilityScore.LowToMedium, 6);
@@ -566,6 +586,8 @@ namespace K9.WebApplication.Models
 
                 case ETransformationType.Supports:
                 case ETransformationType.IsSupported:
+                    Score.AddSupportiveScore(ECompatibilityScore.ExtremelyHigh, 6);
+
                     Score.AddHarmonyScore(ECompatibilityScore.VeryHigh, 6);
                     Score.AddConflictScore(ECompatibilityScore.VeryLow, 6);
                     Score.AddSupportScore(ECompatibilityScore.ExtremelyHigh, 6);
@@ -578,6 +600,8 @@ namespace K9.WebApplication.Models
 
                 case ETransformationType.Challenges:
                 case ETransformationType.IsChallenged:
+                    Score.AddChallengingScore(ECompatibilityScore.ExtremelyHigh, 6);
+
                     Score.AddHarmonyScore(ECompatibilityScore.ExtremelyLow, 8);
                     Score.AddConflictScore(ECompatibilityScore.ExtremelyHigh, 6);
                     Score.AddSupportScore(ECompatibilityScore.MediumToHigh, 6);
@@ -619,6 +643,8 @@ namespace K9.WebApplication.Models
             switch (transformationType)
             {
                 case ETransformationType.Same:
+                    Score.AddSameScore(ECompatibilityScore.ExtremelyHigh, factor);
+
                     Score.AddHarmonyScore(ECompatibilityScore.ExtremelyHigh, factor);
                     Score.AddConflictScore(ECompatibilityScore.ExtremelyLow, factor);
                     Score.AddSupportScore(ECompatibilityScore.Medium, factor);
@@ -632,6 +658,8 @@ namespace K9.WebApplication.Models
 
                 case ETransformationType.Supports:
                 case ETransformationType.IsSupported:
+                    Score.AddSupportiveScore(ECompatibilityScore.ExtremelyHigh, factor);
+
                     Score.AddHarmonyScore(ECompatibilityScore.VeryHigh, factor);
                     Score.AddConflictScore(ECompatibilityScore.VeryLow, factor);
                     Score.AddSupportScore(ECompatibilityScore.ExtremelyHigh, factor);
@@ -644,6 +672,8 @@ namespace K9.WebApplication.Models
 
                 case ETransformationType.Challenges:
                 case ETransformationType.IsChallenged:
+                    Score.AddChallengingScore(ECompatibilityScore.ExtremelyHigh, factor);
+
                     Score.AddHarmonyScore(ECompatibilityScore.ExtremelyLow, factor);
                     Score.AddConflictScore(ECompatibilityScore.ExtremelyHigh, factor);
                     Score.AddSupportScore(ECompatibilityScore.MediumToHigh, factor);
@@ -661,6 +691,8 @@ namespace K9.WebApplication.Models
             switch (transformationType)
             {
                 case ETransformationType.Same:
+                    Score.AddSameScore(ECompatibilityScore.ExtremelyHigh, factor);
+
                     Score.AddHarmonyScore(ECompatibilityScore.High, factor);
                     Score.AddConflictScore(ECompatibilityScore.Low, factor);
                     Score.AddSupportScore(ECompatibilityScore.High, factor);
@@ -671,6 +703,8 @@ namespace K9.WebApplication.Models
 
                 case ETransformationType.Supports:
                 case ETransformationType.IsSupported:
+                    Score.AddSupportiveScore(ECompatibilityScore.ExtremelyHigh, factor);
+
                     Score.AddHarmonyScore(ECompatibilityScore.High, factor);
                     Score.AddConflictScore(ECompatibilityScore.Low, factor);
                     Score.AddSupportScore(ECompatibilityScore.High, factor);
@@ -681,6 +715,8 @@ namespace K9.WebApplication.Models
 
                 case ETransformationType.Challenges:
                 case ETransformationType.IsChallenged:
+                    Score.AddChallengingScore(ECompatibilityScore.ExtremelyHigh, factor);
+
                     Score.AddHarmonyScore(ECompatibilityScore.Low, factor);
                     Score.AddConflictScore(ECompatibilityScore.High, factor);
                     Score.AddSupportScore(ECompatibilityScore.MediumToHigh, factor);

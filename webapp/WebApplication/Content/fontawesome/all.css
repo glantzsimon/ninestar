@@ -2012,10 +2012,6 @@ readers do not read off random characters that represent icons */
     content: "\f09a";
 }
 
-.fa-facebook:before {
-    content: "\f39e";
-}
-
 .fa-facebook-f:before {
     content: "\f39e";
 }

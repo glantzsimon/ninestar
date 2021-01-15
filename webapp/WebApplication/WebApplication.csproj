@@ -429,6 +429,7 @@
     <Content Include="App_Readme\Elmah.txt" />
     <Content Include="Config\.gitattributes" />
     <Content Include="Content\fontawesome\all.css" />
+    <Content Include="Content\fontawesome\font-awesome-original.css" />
     <Content Include="Content\fonts\alex-brush-v8-latin-regular.svg" />
     <Content Include="Content\fonts\fa-brands-400.svg" />
     <Content Include="Content\fonts\fa-regular-400.svg" />
@@ -436,7 +437,7 @@
     <Content Include="Content\k9\panel.css" />
     <Content Include="Content\k9\scroller.css" />
     <Content Include="Content\k9\fileUpload.css" />
-    <Content Include="Content\fontawesome\font-awesome.css" />
+    <Content Include="Content\fontawesome\font-awesome-legacy.css" />
     <Content Include="Content\k9\stroll.css" />
     <Content Include="Content\site\classes.css" />
     <Content Include="Content\site\desktop.css" />

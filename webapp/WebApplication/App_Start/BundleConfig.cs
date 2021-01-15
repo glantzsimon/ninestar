@@ -8,6 +8,7 @@ namespace K9.WebApplication
         {
             bundles.Add(new StyleBundle("~/Content/lib").Include(
                 "~/Content/fontawesome/all.css",
+                "~/Content/fontawesome/font-awesome-legacy.css",
                 "~/Content/bootstrap/*.css"));
 
             bundles.Add(new StyleBundle("~/Content/site").Include(

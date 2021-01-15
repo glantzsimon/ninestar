@@ -250,6 +250,7 @@
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
     <Compile Include="Enums\EConsultationDuration.cs" />
+    <Compile Include="Helpers\Methods.cs" />
     <Compile Include="Migrations\202007211011153_July2020.cs" />
     <Compile Include="Migrations\202007211011153_July2020.Designer.cs">
       <DependentUpon>202007211011153_July2020.cs</DependentUpon>
@@ -334,7 +335,6 @@
   <ItemGroup>
     <Folder Include="Attributes\" />
     <Folder Include="Exceptions\" />
-    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Globalisation\Globalisation.csproj">

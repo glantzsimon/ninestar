@@ -4,6 +4,7 @@
     {
         public static class Labels
         {
+            public const string NumberToCreateLabel = "NumberToCreateLabel";
             public const string DonationAmountLabel = "DonationAmountLabel";
             public const string CompanyLabel = "CompanyLabel";
             public const string ContactLabel = "ContactLabel";

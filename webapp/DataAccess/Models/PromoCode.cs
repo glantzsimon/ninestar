@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
 using System.Text;
+using K9.DataAccessLayer.Helpers;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -24,6 +25,10 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.NumberOfCreditsLabel)]
         public int Credits { get; set; }
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.NumberToCreateLabel)]
+        public int NumberToCreate { get; set; }
 
         [UIHint("SubscriptionType")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.SubscriptionTypeLabel)]
@@ -90,11 +95,10 @@ namespace K9.DataAccessLayer.Models
         private string GetCode(int max)
         {
             var sb = new StringBuilder();
-            var random = new Random();
-
+            
             for (int i = 0; i < max; i++)
             {
-                var number = random.Next(0, 26);
+                var number = Methods.RandomGenerator.Next(0, 26);
                 char letter = (char)('A' + number);
                 sb.Append(letter);
             }

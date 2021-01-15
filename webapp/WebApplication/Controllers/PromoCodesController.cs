@@ -14,5 +14,27 @@ namespace K9.WebApplication.Controllers
         {
         }
 
+        public ActionResult CreateMultiple()
+        {
+            return View(new PromoCode());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateMultiple(PromoCode promoCode)
+        {
+            for (int i = 0; i < promoCode.NumberToCreate; i++)
+            {
+                var newPromoCode = new PromoCode
+                {
+                    SubscriptionType = promoCode.SubscriptionType,
+                    Credits = promoCode.Credits
+                };
+
+                Repository.Create(newPromoCode);
+            }
+
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -15,8 +15,9 @@
     AllowDelete = ((BaseController<UserPromoCode>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
     VisibleColumns = new List<string>
     {
-        "UserName",
-        "PromoCodeName"
+        "CreatedOn",
+        "UserId",
+        "PromoCodeId"
     },
     CustomButtons = new List<IButton>
     {

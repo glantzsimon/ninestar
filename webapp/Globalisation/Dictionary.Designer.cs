@@ -2391,6 +2391,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create Multiple.
+        /// </summary>
+        public static string CreateMultiple {
+            get {
+                return ResourceManager.GetString("CreateMultiple", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Credit.
         /// </summary>
         public static string Credit {
@@ -6149,6 +6158,15 @@ namespace K9.Globalisation {
         public static string NumberOfRelationshipCompatibilityReadingsLeft {
             get {
                 return ResourceManager.GetString("NumberOfRelationshipCompatibilityReadingsLeft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of items to create.
+        /// </summary>
+        public static string NumberToCreateLabel {
+            get {
+                return ResourceManager.GetString("NumberToCreateLabel", resourceCulture);
             }
         }
         

@@ -2293,6 +2293,9 @@
   <data name="SparkScore" xml:space="preserve">
     <value>Spark</value>
   </data>
+  <data name="CreateMultiple" xml:space="preserve">
+    <value>Create Multiple</value>
+  </data>
   <data name="Cycle" xml:space="preserve">
     <value>Cycle</value>
   </data>
@@ -2304,6 +2307,9 @@
   </data>
   <data name="MyYearlyAndMonthlyCycles" xml:space="preserve">
     <value>My Yearly and Monthly Cycles</value>
+  </data>
+  <data name="NumberToCreateLabel" xml:space="preserve">
+    <value>Number of items to create</value>
   </data>
   <data name="OverallScore" xml:space="preserve">
     <value>Overall Compatibility Score</value>

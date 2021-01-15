@@ -47,10 +47,10 @@ namespace K9.WebApplication.Models
             FundamentalElementsCompatibilityDetailsTitle = GetFundamentalElementsCompatibilityTitle();
 
             CharacterElementsCompatibilityDetails = GetElementCompatibilityDetails(_nineStarKiModel1.CharacterEnergy, _nineStarKiModel2.CharacterEnergy);
+            
+            CalculateScore();
 
             AllOtherElementsCompatibility = GetElementsCompatibility();
-
-            CalculateScore();
         }
 
         public CompatibilityScoreModel Score { get; }
@@ -510,7 +510,7 @@ namespace K9.WebApplication.Models
 
             if (supportiveItems.Any())
             {
-                sbSupport.AppendLine($"<h4 style=\"margin-top: 40px;\">{Globalisation.Dictionary.SupportiveElements} ({Score.SupportiveScoreAsPercentage}%)</h4>");
+                sbSupport.AppendLine($"<h4>{Globalisation.Dictionary.SupportiveElements} ({Score.SupportiveScoreAsPercentage.ToString("0")}%)</h4>");
                 foreach (var item in supportiveItems)
                 {
                     sbSupport.AppendLine(GetSupportiveCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
@@ -519,7 +519,7 @@ namespace K9.WebApplication.Models
 
             if (sameItems.Any())
             {
-                sbSame.AppendLine($"<h4 style=\"margin-top: 40px;\">{Globalisation.Dictionary.SiblingElements} ({Score.SameScoreAsPercentage}%)</h4>");
+                sbSame.AppendLine($"<h4>{Globalisation.Dictionary.SiblingElements} ({Score.SameScoreAsPercentage.ToString("0")}%)</h4>");
                 foreach (var item in sameItems)
                 {
                     sbSame.AppendLine(GetSameCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
@@ -528,7 +528,7 @@ namespace K9.WebApplication.Models
 
             if (challengingItems.Any())
             {
-                sbChallenge.AppendLine($"<h4 style=\"margin-top: 40px;\">{Globalisation.Dictionary.ChallengingElements} ({Score.ChallengingAsPercentage}%)</h4>");
+                sbChallenge.AppendLine($"<h4>{Globalisation.Dictionary.ChallengingElements} ({Score.ChallengingAsPercentage.ToString("0")}%)</h4>");
                 foreach (var item in challengingItems)
                 {
                     sbChallenge.AppendLine(GetChallengingCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
@@ -571,45 +571,51 @@ namespace K9.WebApplication.Models
             switch (FundamentalEnergiesTransformationType)
             {
                 case ETransformationType.Same:
-                    Score.AddSameScore(ECompatibilityScore.ExtremelyHigh, 6);
+                    Score.AddSameScore(ECompatibilityScore.ExtremelyHigh, 9);
+                    Score.AddSupportiveScore(ECompatibilityScore.ExtremelyLow, 9);
+                    Score.AddChallengingScore(ECompatibilityScore.ExtremelyLow, 9);
                     
-                    Score.AddHarmonyScore(ECompatibilityScore.ExtremelyHigh, 6);
-                    Score.AddConflictScore(ECompatibilityScore.ExtremelyLow, 6);
-                    Score.AddSupportScore(ECompatibilityScore.LowToMedium, 6);
-                    Score.AddMutualUnderstandingScore(ECompatibilityScore.ExtremelyHigh, 6);
+                    Score.AddHarmonyScore(ECompatibilityScore.ExtremelyHigh, 9);
+                    Score.AddConflictScore(ECompatibilityScore.ExtremelyLow, 9);
+                    Score.AddSupportScore(ECompatibilityScore.LowToMedium, 9);
+                    Score.AddMutualUnderstandingScore(ECompatibilityScore.ExtremelyHigh, 9);
 
-                    Score.AddComplementarityScore(FundamentalEnergiesAreSameEnergy ? ECompatibilityScore.ExtremelyLow : ECompatibilityScore.Low, 6);
+                    Score.AddComplementarityScore(FundamentalEnergiesAreSameEnergy ? ECompatibilityScore.ExtremelyLow : ECompatibilityScore.Low, 9);
                     Score.AddSexualChemistryScore(FundamentalEnergiesAreSameEnergy ? ESexualChemistryScore.NonExistant : ESexualChemistryScore.Low, 20);
                     Score.AddSparkScore(FundamentalEnergiesAreSameEnergy ? ECompatibilityScore.ExtremelyLow : ECompatibilityScore.Low, 20);
-                    Score.AddLearningPotentialScore(FundamentalEnergiesAreSameEnergy ? ECompatibilityScore.VeryLow : ECompatibilityScore.Low, 6);
+                    Score.AddLearningPotentialScore(FundamentalEnergiesAreSameEnergy ? ECompatibilityScore.VeryLow : ECompatibilityScore.Low, 9);
                     break;
 
                 case ETransformationType.Supports:
                 case ETransformationType.IsSupported:
-                    Score.AddSupportiveScore(ECompatibilityScore.ExtremelyHigh, 6);
+                    Score.AddSupportiveScore(ECompatibilityScore.ExtremelyHigh, 9);
+                    Score.AddSameScore(ECompatibilityScore.ExtremelyLow, 9);
+                    Score.AddChallengingScore(ECompatibilityScore.ExtremelyLow, 9);
 
-                    Score.AddHarmonyScore(ECompatibilityScore.VeryHigh, 6);
-                    Score.AddConflictScore(ECompatibilityScore.VeryLow, 6);
-                    Score.AddSupportScore(ECompatibilityScore.ExtremelyHigh, 6);
-                    Score.AddMutualUnderstandingScore(ECompatibilityScore.High, 6);
-                    Score.AddComplementarityScore(ECompatibilityScore.ExtremelyHigh, 6);
-                    Score.AddSexualChemistryScore(ESexualChemistryScore.MediumToHigh, 6);
-                    Score.AddSparkScore(ECompatibilityScore.MediumToHigh, 6);
-                    Score.AddLearningPotentialScore(ECompatibilityScore.MediumToHigh, 6);
+                    Score.AddHarmonyScore(ECompatibilityScore.VeryHigh, 9);
+                    Score.AddConflictScore(ECompatibilityScore.VeryLow, 9);
+                    Score.AddSupportScore(ECompatibilityScore.ExtremelyHigh, 9);
+                    Score.AddMutualUnderstandingScore(ECompatibilityScore.High, 9);
+                    Score.AddComplementarityScore(ECompatibilityScore.ExtremelyHigh, 9);
+                    Score.AddSexualChemistryScore(ESexualChemistryScore.MediumToHigh, 9);
+                    Score.AddSparkScore(ECompatibilityScore.MediumToHigh, 9);
+                    Score.AddLearningPotentialScore(ECompatibilityScore.MediumToHigh, 9);
                     break;
 
                 case ETransformationType.Challenges:
                 case ETransformationType.IsChallenged:
-                    Score.AddChallengingScore(ECompatibilityScore.ExtremelyHigh, 6);
+                    Score.AddSupportiveScore(ECompatibilityScore.ExtremelyLow, 9);
+                    Score.AddSameScore(ECompatibilityScore.ExtremelyLow, 9);
+                    Score.AddChallengingScore(ECompatibilityScore.ExtremelyHigh, 9);
 
-                    Score.AddHarmonyScore(ECompatibilityScore.ExtremelyLow, 8);
-                    Score.AddConflictScore(ECompatibilityScore.ExtremelyHigh, 6);
-                    Score.AddSupportScore(ECompatibilityScore.MediumToHigh, 6);
-                    Score.AddMutualUnderstandingScore(ECompatibilityScore.VeryLow, 6);
-                    Score.AddComplementarityScore(ECompatibilityScore.High, 6);
+                    Score.AddHarmonyScore(ECompatibilityScore.ExtremelyLow, 12);
+                    Score.AddConflictScore(ECompatibilityScore.ExtremelyHigh, 9);
+                    Score.AddSupportScore(ECompatibilityScore.MediumToHigh, 9);
+                    Score.AddMutualUnderstandingScore(ECompatibilityScore.VeryLow, 9);
+                    Score.AddComplementarityScore(ECompatibilityScore.High, 9);
                     Score.AddSexualChemistryScore(ESexualChemistryScore.OffTheCharts, 20);
                     Score.AddSparkScore(ECompatibilityScore.ExtremelyHigh, 20);
-                    Score.AddLearningPotentialScore(ECompatibilityScore.ExtremelyHigh, 6);
+                    Score.AddLearningPotentialScore(ECompatibilityScore.ExtremelyHigh, 9);
                     break;
             }
 
@@ -636,6 +642,8 @@ namespace K9.WebApplication.Models
                 AddCrossReferencedScore(CharacterEnergy1ToSurfaceEnergy2TransformationType);
                 AddCrossReferencedScore(CharacterEnergy2ToSurfaceEnergy1TransformationType);
             }
+
+            Score.CalculateAverages();
         }
 
         private void AddScore(ETransformationType transformationType, bool sameEnergy, int factor = 1, int sparkFactor = 0)
@@ -644,6 +652,8 @@ namespace K9.WebApplication.Models
             {
                 case ETransformationType.Same:
                     Score.AddSameScore(ECompatibilityScore.ExtremelyHigh, factor);
+                    Score.AddSupportiveScore(ECompatibilityScore.ExtremelyLow, factor);
+                    Score.AddChallengingScore(ECompatibilityScore.ExtremelyLow, factor);
 
                     Score.AddHarmonyScore(ECompatibilityScore.ExtremelyHigh, factor);
                     Score.AddConflictScore(ECompatibilityScore.ExtremelyLow, factor);
@@ -659,6 +669,8 @@ namespace K9.WebApplication.Models
                 case ETransformationType.Supports:
                 case ETransformationType.IsSupported:
                     Score.AddSupportiveScore(ECompatibilityScore.ExtremelyHigh, factor);
+                    Score.AddSameScore(ECompatibilityScore.ExtremelyLow, factor);
+                    Score.AddChallengingScore(ECompatibilityScore.ExtremelyLow, factor);
 
                     Score.AddHarmonyScore(ECompatibilityScore.VeryHigh, factor);
                     Score.AddConflictScore(ECompatibilityScore.VeryLow, factor);
@@ -673,7 +685,9 @@ namespace K9.WebApplication.Models
                 case ETransformationType.Challenges:
                 case ETransformationType.IsChallenged:
                     Score.AddChallengingScore(ECompatibilityScore.ExtremelyHigh, factor);
-
+                    Score.AddSupportiveScore(ECompatibilityScore.ExtremelyLow, factor);
+                    Score.AddSameScore(ECompatibilityScore.ExtremelyLow, factor);
+                    
                     Score.AddHarmonyScore(ECompatibilityScore.ExtremelyLow, factor);
                     Score.AddConflictScore(ECompatibilityScore.ExtremelyHigh, factor);
                     Score.AddSupportScore(ECompatibilityScore.MediumToHigh, factor);
@@ -692,6 +706,8 @@ namespace K9.WebApplication.Models
             {
                 case ETransformationType.Same:
                     Score.AddSameScore(ECompatibilityScore.ExtremelyHigh, factor);
+                    Score.AddSupportiveScore(ECompatibilityScore.ExtremelyLow, factor);
+                    Score.AddChallengingScore(ECompatibilityScore.ExtremelyLow, factor);
 
                     Score.AddHarmonyScore(ECompatibilityScore.High, factor);
                     Score.AddConflictScore(ECompatibilityScore.Low, factor);
@@ -704,6 +720,8 @@ namespace K9.WebApplication.Models
                 case ETransformationType.Supports:
                 case ETransformationType.IsSupported:
                     Score.AddSupportiveScore(ECompatibilityScore.ExtremelyHigh, factor);
+                    Score.AddSameScore(ECompatibilityScore.ExtremelyLow, factor);
+                    Score.AddChallengingScore(ECompatibilityScore.ExtremelyLow, factor);
 
                     Score.AddHarmonyScore(ECompatibilityScore.High, factor);
                     Score.AddConflictScore(ECompatibilityScore.Low, factor);
@@ -716,7 +734,9 @@ namespace K9.WebApplication.Models
                 case ETransformationType.Challenges:
                 case ETransformationType.IsChallenged:
                     Score.AddChallengingScore(ECompatibilityScore.ExtremelyHigh, factor);
-
+                    Score.AddSupportiveScore(ECompatibilityScore.ExtremelyLow, factor);
+                    Score.AddSameScore(ECompatibilityScore.ExtremelyLow, factor);
+                    
                     Score.AddHarmonyScore(ECompatibilityScore.Low, factor);
                     Score.AddConflictScore(ECompatibilityScore.High, factor);
                     Score.AddSupportScore(ECompatibilityScore.MediumToHigh, factor);

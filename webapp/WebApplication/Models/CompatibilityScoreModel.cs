@@ -22,6 +22,28 @@ namespace K9.WebApplication.Models
             ChallengingScores = new List<ECompatibilityScore>();
         }
 
+        public double SupportiveScoreAsPercentage { get; set; }
+        public double SameScoreAsPercentage { get; set; }
+        public double ChallengingAsPercentage { get; set; }
+
+        public ECompatibilityScore HarmonyScore { get; set; }
+
+        public ECompatibilityScore ConflictScore { get; set; }
+
+        public ECompatibilityScore SupportScore { get; set; }
+
+        public ECompatibilityScore MutualUnderstandingScore { get; set; }
+
+        public ECompatibilityScore ComplementarityScore { get; set; }
+
+        public ESexualChemistryScore SexualChemistryScore { get; set; }
+
+        public ECompatibilityScore SparkScore { get; set; }
+
+        public ECompatibilityScore LearningPotentialScore { get; set; }
+
+        public ECompatibilityScore OverallScore { get; set; }
+
         private List<ECompatibilityScore> HarmonyScores { get; }
         private List<ECompatibilityScore> ConflictScores { get; }
         private List<ECompatibilityScore> SupportScores { get; }
@@ -93,6 +115,29 @@ namespace K9.WebApplication.Models
             }
         }
 
+        public void CalculateAverages()
+        {
+            GetAverageScoreAsPercentage();
+
+            HarmonyScore = GetAverageScore(HarmonyScores);
+            ConflictScore = GetAverageScore(ConflictScores);
+            SupportScore = GetAverageScore(SupportScores);
+            MutualUnderstandingScore = GetAverageScore(MutualUnderstandingScores);
+            ComplementarityScore = GetAverageScore(ComplementarityScores);
+            SexualChemistryScore = (ESexualChemistryScore)Math.Round(SexualChemistryScores.Average(e => (int)e), MidpointRounding.AwayFromZero);
+            SparkScore = GetAverageScore(SparkScores);
+            LearningPotentialScore = GetAverageScore(LearningPotentialScores);
+            OverallScore = GetAverageScore(new List<ECompatibilityScore>
+            {
+                HarmonyScore,
+                SupportScore,
+                MutualUnderstandingScore,
+                (int)ECompatibilityScore.ExtremelyHigh - ConflictScore,
+                ComplementarityScore,
+                (ECompatibilityScore)SexualChemistryScore
+            });
+        }
+
         private void AddScore(List<ECompatibilityScore> scores, ECompatibilityScore score, int factor = 1)
         {
             for (int i = 0; i < factor; i++)
@@ -100,41 +145,6 @@ namespace K9.WebApplication.Models
                 scores.Add(score);
             }
         }
-
-        public ECompatibilityScore SupportiveScore => GetAverageScore(SupportiveScores);
-        public double SupportiveScoreAsPercentage => GetAverageScoreAsPercentage(SupportiveScores);
-        
-        public ECompatibilityScore SameScore => GetAverageScore(SameScores);
-        public double SameScoreAsPercentage => GetAverageScoreAsPercentage(SameScores);
-        
-        public ECompatibilityScore ChallengingScore => GetAverageScore(ChallengingScores);
-        public double ChallengingAsPercentage => GetAverageScoreAsPercentage(ChallengingScores);
-        
-        public ECompatibilityScore HarmonyScore => GetAverageScore(HarmonyScores);
-
-        public ECompatibilityScore ConflictScore => GetAverageScore(ConflictScores);
-
-        public ECompatibilityScore SupportScore => GetAverageScore(SupportScores);
-
-        public ECompatibilityScore MutualUnderstandingScore => GetAverageScore(MutualUnderstandingScores);
-
-        public ECompatibilityScore ComplementarityScore => GetAverageScore(ComplementarityScores);
-
-        public ESexualChemistryScore SexualChemistryScore => (ESexualChemistryScore)Math.Round(SexualChemistryScores.Average(e => (int)e), MidpointRounding.AwayFromZero);
-
-        public ECompatibilityScore SparkScore => GetAverageScore(SparkScores);
-
-        public ECompatibilityScore LearningPotentialScore => GetAverageScore(LearningPotentialScores);
-
-        public ECompatibilityScore OverallScore => GetAverageScore(new List<ECompatibilityScore>
-        {
-            HarmonyScore,
-            SupportScore,
-            MutualUnderstandingScore,
-            (int)ECompatibilityScore.ExtremelyHigh - ConflictScore,
-            ComplementarityScore,
-            (ECompatibilityScore)SexualChemistryScore
-        });
 
         private ECompatibilityScore GetAverageScore(List<ECompatibilityScore> scores)
         {
@@ -146,15 +156,18 @@ namespace K9.WebApplication.Models
             return ECompatibilityScore.Unspecified;
         }
 
-        private double GetAverageScoreAsPercentage(List<ECompatibilityScore> scores)
+        private void GetAverageScoreAsPercentage()
         {
-            if (scores.Any())
-            {
-                var average = Math.Round(scores.Average(e => (int)e), MidpointRounding.AwayFromZero);
-                return (average / (int)ECompatibilityScore.ExtremelyHigh) * 100;
-            }
+            var supportiveSum = SupportiveScores.Sum(e => (double)e);
+            var sameSum = SameScores.Sum(e => (double)e);
+            var challengingSum = ChallengingScores.Sum(e => (double)e);
 
-            return 0;
+            var total = supportiveSum + sameSum +
+                        challengingSum;
+
+            SupportiveScoreAsPercentage = supportiveSum / total * 100;
+            SameScoreAsPercentage = sameSum / total * 100;
+            ChallengingAsPercentage = challengingSum / total * 100;
         }
     }
 

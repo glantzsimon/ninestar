@@ -6,6 +6,14 @@
     margin-top: 10px;
 }
 
+.gauge-secret-container {
+    margin: 15px
+}
+
+.gauge-secret-container h4 {
+    margin-bottom: 10px !important;
+}
+
 .gauge {
     width: 100%;
     height: auto;

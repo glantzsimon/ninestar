@@ -2,9 +2,10 @@
 
 @{
     var id = @Guid.NewGuid().ToString();
+    var secretClass = Model.IsSecret ? "gauge-secret-container" : "";
 }
 
-<div class="gauge-container">
+<div class="gauge-container @secretClass">
     <h4 class="text-center margin-top-0 margin-bottom-0">@Model.Title</h4>
     @if (Model.IsSecret)
     {

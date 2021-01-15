@@ -3,6 +3,7 @@ using K9.WebApplication.Enums;
 using K9.WebApplication.Extensions;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace K9.WebApplication.Models
@@ -480,22 +481,53 @@ namespace K9.WebApplication.Models
         private string GetElementsCompatibility()
         {
             var sb = new StringBuilder();
+            var sbSupport = new StringBuilder();
+            var sbChallenge = new StringBuilder();
+            var sbSame = new StringBuilder();
 
-            foreach (var item in GetAllOtherElements())
+            var allOtherElements = GetAllOtherElements();
+            var challengingItems = allOtherElements.Where(e => e.Item1 == ETransformationType.Challenges || e.Item1 == ETransformationType.IsChallenged);
+            var supportiveItems = allOtherElements.Where(e => e.Item1 == ETransformationType.Supports || e.Item1 == ETransformationType.IsSupported);
+            var sameItems = allOtherElements.Where(e => e.Item1 == ETransformationType.Same);
+
+            if (supportiveItems.Any())
             {
-                if (Score.HarmonyScore > Score.ConflictScore)
+                sbSupport.AppendLine($"<h4 style=\"margin-top: 40px;\">{Globalisation.Dictionary.SupportiveElements}</h4>");
+                foreach (var item in supportiveItems)
                 {
-                    sb.AppendLine(GetSupportiveCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
-                    sb.AppendLine(GetSameCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
-                    sb.AppendLine(GetChallengingCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
+                    sbSupport.AppendLine(GetSupportiveCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
+                }
+            }
 
-                }
-                else
+            if (sameItems.Any())
+            {
+                sbSame.AppendLine($"<h4 style=\"margin-top: 40px;\">{Globalisation.Dictionary.SiblingElements}</h4>");
+                foreach (var item in sameItems)
                 {
-                    sb.AppendLine(GetChallengingCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
-                    sb.AppendLine(GetSameCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
-                    sb.AppendLine(GetSupportiveCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
+                    sbSame.AppendLine(GetSameCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
                 }
+            }
+
+            if (challengingItems.Any())
+            {
+                sbChallenge.AppendLine($"<h4 style=\"margin-top: 40px;\">{Globalisation.Dictionary.ChallengingElements}</h4>");
+                foreach (var item in challengingItems)
+                {
+                    sbChallenge.AppendLine(GetChallengingCompatibilityDetails(item.Item1, item.Item2, item.Item3, item.Item4, item.Item5, item.Item6, item.Item7));
+                }
+            }
+
+            if (Score.HarmonyScore > Score.ConflictScore)
+            {
+                sb.Append(sbSupport);
+                sb.Append(sbSame);
+                sb.Append(sbChallenge);
+            }
+            else
+            {
+                sb.Append(sbChallenge);
+                sb.Append(sbSame);
+                sb.Append(sbSupport);
             }
 
             return sb.ToString();

@@ -2293,6 +2293,9 @@
   <data name="SparkScore" xml:space="preserve">
     <value>Spark</value>
   </data>
+  <data name="ChallengingElements" xml:space="preserve">
+    <value>Challenging Elements</value>
+  </data>
   <data name="CreateMultiple" xml:space="preserve">
     <value>Create Multiple</value>
   </data>
@@ -2319,6 +2322,12 @@
   </data>
   <data name="PromoCodeNotUsed" xml:space="preserve">
     <value>Your account was created but the promo code could not be used. Please contact support.</value>
+  </data>
+  <data name="SiblingElements" xml:space="preserve">
+    <value>Sibling Elements</value>
+  </data>
+  <data name="SupportiveElements" xml:space="preserve">
+    <value>Supportive Elements</value>
   </data>
   <data name="YearlyCycleEnergy" xml:space="preserve">
     <value>Yearly Cycle Energy</value>

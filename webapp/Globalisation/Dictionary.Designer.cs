@@ -1598,6 +1598,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Challenging Elements.
+        /// </summary>
+        public static string ChallengingElements {
+            get {
+                return ResourceManager.GetString("ChallengingElements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change Amount.
         /// </summary>
         public static string ChangeAmount {
@@ -7249,6 +7258,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sibling Elements.
+        /// </summary>
+        public static string SiblingElements {
+            get {
+                return ResourceManager.GetString("SiblingElements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sign Up.
         /// </summary>
         public static string SignUp {
@@ -7786,6 +7804,15 @@ namespace K9.Globalisation {
         public static string support_blurb {
             get {
                 return ResourceManager.GetString("support_blurb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Supportive Elements.
+        /// </summary>
+        public static string SupportiveElements {
+            get {
+                return ResourceManager.GetString("SupportiveElements", resourceCulture);
             }
         }
         

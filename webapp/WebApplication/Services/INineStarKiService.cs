@@ -9,6 +9,7 @@ namespace K9.WebApplication.Services
     {
         NineStarKiModel CalculateNineStarKiProfile(DateTime dateOfBirth, EGender gender = EGender.Male);
         NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, bool isCompatibility = false, bool isMyProfile = false);
+        NineStarKiModel RetrieveNineStarKiProfile(int userProfileId);
         NineStarKiSummaryViewModel GetNineStarKiSummaryViewModel();
         CompatibilityModel CalculateCompatibility(DateTime dateOfBirth1, EGender gender1, DateTime dateOfBirth2,
             EGender gender2);

@@ -315,6 +315,10 @@
     <Compile Include="Migrations\202101120755239_AddConsultationCompletedOn.Designer.cs">
       <DependentUpon>202101120755239_AddConsultationCompletedOn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101162058510_AddNameToProfileReadings.cs" />
+    <Compile Include="Migrations\202101162058510_AddNameToProfileReadings.Designer.cs">
+      <DependentUpon>202101162058510_AddNameToProfileReadings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Consultation.cs" />
     <Compile Include="Models\PromoCode.cs" />
     <Compile Include="Models\Contact.cs" />
@@ -390,6 +394,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101120755239_AddConsultationCompletedOn.resx">
       <DependentUpon>202101120755239_AddConsultationCompletedOn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101162058510_AddNameToProfileReadings.resx">
+      <DependentUpon>202101162058510_AddNameToProfileReadings.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

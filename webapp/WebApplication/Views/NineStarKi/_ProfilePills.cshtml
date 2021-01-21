@@ -54,6 +54,12 @@
                             {
                                 @Html.Partial("_NineStarBody", Model.CharacterEnergy)
                             }
+
+                            @Html.BootstrapActionLinkButton(Dictionary.CompatibilityCalculator, "Compatibility", "NineStarKi", null, "fa fa-yin-yang", EButtonClass.Large)
+
+                            @Html.BootstrapActionLinkButton(Dictionary.BookAConsultation, "BookConsultationStart", "Consultations", null, "fa-phone-alt", EButtonClass.Success, EButtonClass.Large)
+
+                            @Html.BootstrapActionLinkButton(Dictionary.LearnMoreAboutNineStarKi, "About", "Home", null, "fa-graduation-cap", EButtonClass.Info, EButtonClass.Large)
                         </div>
 
                         <div id="surface" class="tab-pane fade">
@@ -65,6 +71,12 @@
                             {
                                 @Html.Partial("_NineStarBody", Model.SurfaceEnergy)
                             }
+
+                            @Html.BootstrapActionLinkButton(Dictionary.CompatibilityCalculator, "Compatibility", "NineStarKi", null, "fa fa-yin-yang", EButtonClass.Large)
+
+                            @Html.BootstrapActionLinkButton(Dictionary.BookAConsultation, "BookConsultationStart", "Consultations", null, "fa-phone-alt", EButtonClass.Success, EButtonClass.Large)
+
+                            @Html.BootstrapActionLinkButton(Dictionary.LearnMoreAboutNineStarKi, "About", "Home", null, "fa-graduation-cap", EButtonClass.Info, EButtonClass.Large)
                         </div>
                     </div>
                 </div>

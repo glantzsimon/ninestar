@@ -4176,7 +4176,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Learn more about 9 Star Ki Astrology.
+        ///   Looks up a localized string similar to Learn about 9 Star Ki.
         /// </summary>
         public static string LearnMoreAboutNineStarKi {
             get {
@@ -5882,6 +5882,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to My Saved Charts.
+        /// </summary>
+        public static string MySavedCharts {
+            get {
+                return ResourceManager.GetString("MySavedCharts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to My Yearly and Monthly Cycles.
         /// </summary>
         public static string MyYearlyAndMonthlyCycles {
@@ -6842,6 +6851,15 @@ namespace K9.Globalisation {
         public static string Ripening {
             get {
                 return ResourceManager.GetString("Ripening", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saved Charts.
+        /// </summary>
+        public static string SavedCharts {
+            get {
+                return ResourceManager.GetString("SavedCharts", resourceCulture);
             }
         }
         
@@ -8490,6 +8508,15 @@ namespace K9.Globalisation {
         public static string ValidUntil {
             get {
                 return ResourceManager.GetString("ValidUntil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View.
+        /// </summary>
+        public static string View {
+            get {
+                return ResourceManager.GetString("View", resourceCulture);
             }
         }
         

@@ -1,7 +1,7 @@
 ﻿@media (min-width:993px) {
 
-    .btn:not(:first-of-type) {
-        margin-left: 2px;
+    .btn:not(:last-of-type) {
+        margin-right: 2px;
     }
 
     form .well .col-sm-6, .well form .col-sm-6,

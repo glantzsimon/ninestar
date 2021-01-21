@@ -841,3 +841,7 @@ a.collapsible-panel-link {
 button .fa, a .fa {
     margin-right: 2px;
 }
+
+.btn {
+    margin-top: 5px;
+}

@@ -4,71 +4,78 @@
 
 <script type="text/javascript">
 
-	function @Model.GetButtonRenderFunction() (data) {
-		var buttons = "";
-		var join = '@Model.GetQueryStringJoiner()';
-		if (@Model.AllowView.ToString().ToLower()) {
-			buttons += '<a href="@Url.Action("Details", Model.GetFilterRouteValues())' + join + 'id=' + data.Id + '" class="btn btn-info">@K9.Base.Globalisation.Dictionary.Details</a>';
-		}
-		if (@Model.AllowEdit.ToString().ToLower() && !data.IsSystemStandard) {
-			buttons += '<a href="@Url.Action("Edit", Model.GetFilterRouteValues())' + join + 'id=' +data.Id + '" class="btn btn-primary"><i class="fa fa-pencil"></i> @K9.Base.Globalisation.Dictionary.Edit</a>';
-		}
-		if (@Model.AllowDelete.ToString().ToLower() && !data.IsSystemStandard) {
-			buttons += '<a href="@Url.Action("Delete", Model.GetFilterRouteValues())' + join + 'id=' + data.Id + '" class="btn btn-danger"><i class="fa fa-trash"></i> @K9.Base.Globalisation.Dictionary.Delete</a>';
-		}
-		@foreach (var button in Model.CustomButtons)
+    function @Model.GetButtonRenderFunction() (data) {
+        var buttons = "";
+        var join = '@Model.GetQueryStringJoiner()';
+        if (@Model.AllowView.ToString().ToLower()) {
+            buttons += '<a href="@Url.Action("Details", Model.GetFilterRouteValues())' + join + 'id=' + data.Id + '" class="btn btn-info">@K9.Base.Globalisation.Dictionary.Details</a>';
+        }
+        if (@Model.AllowEdit.ToString().ToLower() && !data.IsSystemStandard) {
+            buttons += '<a href="@Url.Action("Edit", Model.GetFilterRouteValues())' + join + 'id=' +data.Id + '" class="btn btn-primary"><i class="fa fa-pencil"></i> @K9.Base.Globalisation.Dictionary.Edit</a>';
+        }
+        if (@Model.AllowDelete.ToString().ToLower() && !data.IsSystemStandard) {
+            buttons += '<a href="@Url.Action("Delete", Model.GetFilterRouteValues())' + join + 'id=' + data.Id + '" class="btn btn-danger"><i class="fa fa-trash"></i> @K9.Base.Globalisation.Dictionary.Delete</a>';
+        }
+        @foreach (var button in Model.CustomButtons)
 		{
 			@:buttons += '<a href="@Url.Action(button.Action, Model.GetFilterRouteValues())' + join + 'id=' + data.Id + '" class="btn @button.ButtonCssClass"><i class="@button.IconCssClass"></i> @button.Text</a>';
 		}
-		return buttons === "" ? null : buttons;
-	};
+        return buttons === "" ? null : buttons;
+    };
 
-	function renderYesNo(data, type, row) {
-		return data ? '@K9.Base.Globalisation.Dictionary.Yes' : '@K9.Base.Globalisation.Dictionary.No';
-	}
+    function renderYesNo(value, type, row) {
+        return value ? '@K9.Base.Globalisation.Dictionary.Yes' : '@K9.Base.Globalisation.Dictionary.No';
+    }
 
-	function getColumnDefs() {
-		var columnDefs = @Model.GetColumnDefsJson();
+    function getColumnDefs() {
+        var columnDefs = @Model.GetColumnDefsJson();
 
-		$(columnDefs).each(function() {
-			var c = this;
-			if (c.dataType === 'system.boolean') {
-				c.render = renderYesNo;
-			}
-		});
+        $(columnDefs).each(function() {
+            var c = this;
+            if (c.dataType === 'system.boolean') {
+                c.render = renderYesNo;
+            }
 
-		if (@Model.AllowCrud().ToString().ToLower()) {
-			columnDefs.push({
-				data: null,
-				targets: [@Model.GetColumnInfos().Count],
-				render: @Model.GetButtonRenderFunction()
-			});
-		}
-		return columnDefs;
-	}
+            if (customColumnDefs !== null) {
+                var customColumnDef = customColumnDefs.find(cdef => cdef.dataType === c.dataType);
+                if (customColumnDef && customColumnDef.render) {
+                    c.render = customColumnDef.render;
+                }
+            }
+        });
 
-	$(function() {
-		var table = @Model.TableId = $("table#@Model.TableId");
-		table.on("xhr.dt", function(e, settings, json, xhr) {
-			var initTableButtons = function() {
-				buttonBehaviours().displayPageSpinnerOnLinkClick();
-			}
-			window.setTimeout(initTableButtons, 200);
-		});
-		table.DataTable({
-			"ajax": table.attr("data-url"),
-			"columns": @Model.GetColumnsJson(),
-			"columnDefs": getColumnDefs(),
-			"processing": true,
-			"serverSide": true,
-			"stateSave": true,
-			"responsive": true,
-			"colReorder": true,
-			"autoWidth": false,
-			"language": {
+        if (@Model.AllowCrud().ToString().ToLower()) {
+            columnDefs.push({
+                data: null,
+                targets: [@Model.GetColumnInfos().Count],
+                render: @Model.GetButtonRenderFunction()
+            });
+        }
+        return columnDefs;
+    }
+
+    $(function() {
+        var dataTable = $("table#@Model.TableId");
+        dataTable.on("xhr.dt", function(e, settings, json, xhr) {
+            var initTableButtons = function() {
+                buttonBehaviours().displayPageSpinnerOnLinkClick();
+            }
+            window.setTimeout(initTableButtons, 200);
+        });
+        dataTable.DataTable({
+            "ajax": dataTable.attr("data-url"),
+            "columns": @Model.GetColumnsJson(),
+            "columnDefs": getColumnDefs(),
+            "processing": true,
+            "serverSide": true,
+            "stateSave": true,
+            "responsive": true,
+            "colReorder": true,
+            "autoWidth": false,
+            "language": {
                 "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/@($"{CultureInfo.CurrentUICulture.GetLocaleLanguage()}.json")"
             }
-		});
-	});
+        });
+    });
 
 </script>

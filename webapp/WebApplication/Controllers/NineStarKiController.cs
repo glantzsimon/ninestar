@@ -51,29 +51,38 @@ namespace K9.WebApplication.Controllers
         }
 
         [Authorize]
-        [Route("my-profile")]
+        [Route("saved-charts/view")]
+        public ActionResult ViewProfile(int id)
+        {
+            return View("Index", _nineStarKiService.RetrieveNineStarKiProfile(id));
+        }
+
+        [Authorize]
+        [Route("my-chart")]
         public ActionResult MyProfile()
         {
             var myAccount = _usersRepository.Find(_authentication.CurrentUserId);
             return View(_nineStarKiService.CalculateNineStarKiProfile(new PersonModel
             {
+                Name = myAccount.FullName,
                 DateOfBirth = myAccount.BirthDate,
                 Gender = myAccount.Gender
             }, false, true));
         }
 
         [Authorize]
-        [Route("my-profile/cycles")]
+        [Route("my-chart/cycles")]
         public ActionResult MyCycles()
         {
             var myAccount = _usersRepository.Find(_authentication.CurrentUserId);
             return View(_nineStarKiService.CalculateNineStarKiProfile(new PersonModel
             {
+                Name = myAccount.FullName,
                 DateOfBirth = myAccount.BirthDate,
                 Gender = myAccount.Gender
             }, false, true));
         }
-
+        
         [Route("retrieve-last")]
         [Authorize]
         public ActionResult RetrieveLast()
@@ -103,6 +112,7 @@ namespace K9.WebApplication.Controllers
             }
             var model = _nineStarKiService.CalculateNineStarKiProfile(new PersonModel
             {
+                Name = lastProfile.Name,
                 DateOfBirth = lastProfile.DateOfBirth,
                 Gender = lastProfile.Gender
             });

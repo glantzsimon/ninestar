@@ -24,6 +24,13 @@
 
                 @Html.CollapsiblePanel(Html.GetEnergySpecificDisplayNameFor(m => Model.MainEnergy.Trigram, Model.MainEnergy.EnergyNameAndNumber), Model.MainEnergy.TrigramDescription, true, "", Model.MainEnergy.TrigramUIName, $"Images/ninestar/trigrams/trigram-{Model.MainEnergy.Energy}-square.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
             </div>
+            <div>
+                @Html.BootstrapActionLinkButton(Dictionary.CompatibilityCalculator, "Compatibility", "NineStarKi", null, "fa fa-yin-yang", EButtonClass.Large)
+
+                @Html.BootstrapActionLinkButton(Dictionary.BookAConsultation, "BookConsultationStart", "Consultations", null, "fa-phone-alt", EButtonClass.Success, EButtonClass.Large)
+
+                @Html.BootstrapActionLinkButton(Dictionary.LearnMoreAboutNineStarKi, "About", "Home", null, "fa-graduation-cap", EButtonClass.Info, EButtonClass.Large)
+            </div>
         </article>
     </div>
 }

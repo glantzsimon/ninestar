@@ -27,7 +27,13 @@ namespace K9.DataAccessLayer.Models
 
         [ForeignKey("UserCreditPack")]
         public int? UserCreditPackId { get; set; }
-        
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NameLabel)]
+        public string FirstName { get; set; }
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NameLabel)]
+        public string SecondName { get; set; }
+
         [Required]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DateOfBirthLabel)]
         public DateTime FirstDateOfBirth { get; set; }

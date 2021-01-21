@@ -122,35 +122,34 @@ namespace K9.WebApplication.Services
             return activeUserMembership;
         }
 
-        public bool IsCompleteProfileReading(int? userId, DateTime dateOfBirth, EGender gender)
+        public bool IsCompleteProfileReading(int? userId, PersonModel personModel)
         {
             var activeUserMembership = GetActiveUserMembership(userId);
-            if (activeUserMembership?.ProfileReadings?.Any(e => e.DateOfBirth == dateOfBirth && e.Gender == gender) == true)
+            if (activeUserMembership?.ProfileReadings?.Any(e => e.DateOfBirth == personModel.DateOfBirth && e.Gender == personModel.Gender && e.FullName == personModel.Name) == true)
             {
                 return true;
             }
             if (activeUserMembership?.NumberOfProfileReadingsLeft > 0 || activeUserMembership?.NumberOfCreditsLeft > 0)
             {
-                CreateNewUserProfileReading(activeUserMembership, dateOfBirth, gender);
+                CreateNewUserProfileReading(activeUserMembership, personModel.Name, personModel.DateOfBirth, personModel.Gender);
                 return true;
             }
 
             return false;
         }
 
-        public bool IsCompleteRelationshipCompatibilityReading(int? userId, DateTime firstDateOfBirth,
-            EGender firstGender, DateTime secondDateOfBirth, EGender secondGender)
+        public bool IsCompleteRelationshipCompatibilityReading(int? userId, PersonModel personModel1, PersonModel personModel2)
         {
             var activeUserMembership = GetActiveUserMembership(userId);
             if (activeUserMembership?.RelationshipCompatibilityReadings?.Any(e =>
-                    e.FirstDateOfBirth == firstDateOfBirth && e.FirstGender == firstGender &&
-                    e.SecondDateOfBirth == secondDateOfBirth && e.SecondGender == secondGender) == true)
+                    e.FirstName == personModel1.Name && e.FirstDateOfBirth == personModel1.DateOfBirth && e.FirstGender == personModel1.Gender &&
+                    e.SecondName == personModel2.Name && e.SecondDateOfBirth == personModel2.DateOfBirth && e.SecondGender == personModel2.Gender) == true)
             {
                 return true;
             }
             if (activeUserMembership?.NumberOfRelationshipCompatibilityReadingsLeft > 0 || activeUserMembership?.NumberOfCreditsLeft > 0)
             {
-                CreateNewUserRelationshipCompatibilityReading(activeUserMembership, firstDateOfBirth, firstGender, secondDateOfBirth, secondGender);
+                CreateNewUserRelationshipCompatibilityReading(activeUserMembership, personModel1, personModel2);
                 return true;
             }
 
@@ -397,10 +396,11 @@ namespace K9.WebApplication.Services
             }
         }
 
-        private void CreateNewUserProfileReading(UserMembership userMembership, DateTime dateOfBirth, EGender gender)
+        private void CreateNewUserProfileReading(UserMembership userMembership, string name, DateTime dateOfBirth, EGender gender)
         {
             var userProfileReading = new UserProfileReading
             {
+                FullName = name,
                 DateOfBirth = dateOfBirth,
                 Gender = gender,
                 UserId = userMembership.UserId,
@@ -422,14 +422,16 @@ namespace K9.WebApplication.Services
             _userProfileReadingsRepository.Create(userProfileReading);
         }
 
-        private void CreateNewUserRelationshipCompatibilityReading(UserMembership userMembership, DateTime firstDateOfBirth, EGender firstGender, DateTime secondDateOfBirth, EGender secondGender)
+        private void CreateNewUserRelationshipCompatibilityReading(UserMembership userMembership, PersonModel personModel1, PersonModel personModel2)
         {
             var userRelationshipCompatibilityReading = new UserRelationshipCompatibilityReading
             {
-                FirstDateOfBirth = firstDateOfBirth,
-                FirstGender = firstGender,
-                SecondDateOfBirth = secondDateOfBirth,
-                SecondGender = secondGender,
+                FirstName = personModel1.Name,
+                FirstDateOfBirth = personModel1.DateOfBirth,
+                FirstGender = personModel1.Gender,
+                SecondName = personModel2.Name,
+                SecondDateOfBirth = personModel2.DateOfBirth,
+                SecondGender = personModel2.Gender,
                 UserId = _authentication.CurrentUserId,
                 UserMembershipId = userMembership.Id
             };

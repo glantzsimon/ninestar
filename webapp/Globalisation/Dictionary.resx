@@ -653,7 +653,7 @@
     <value>Welcome to NineStar</value>
   </data>
   <data name="LearnMoreAboutNineStarKi" xml:space="preserve">
-    <value>Learn more about 9 Star Ki Astrology</value>
+    <value>Learn about 9 Star Ki</value>
   </data>
   <data name="LearnNineStarKiTitle" xml:space="preserve">
     <value>Learn 9 Star Ki Astrology</value>
@@ -2334,5 +2334,14 @@
   </data>
   <data name="YearlyCycleEnergy" xml:space="preserve">
     <value>Yearly Cycle Energy</value>
+  </data>
+  <data name="MySavedCharts" xml:space="preserve">
+    <value>My Saved Charts</value>
+  </data>
+  <data name="SavedCharts" xml:space="preserve">
+    <value>Saved Charts</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>View</value>
   </data>
 </root>

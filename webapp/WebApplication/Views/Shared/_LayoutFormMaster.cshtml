@@ -20,10 +20,15 @@
     </div>
 </div>
 
+@section headerscripts {
+    @RenderSection("headerscripts", false)
+}
+
 @section scripts {
     <script type="text/javascript">
         $(function () {
             bootstrapControls().selectFirstFormInput();
         });
     </script>
+    @RenderSection("scripts", false)
 }

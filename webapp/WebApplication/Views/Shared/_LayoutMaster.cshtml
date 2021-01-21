@@ -104,6 +104,9 @@
 Html.RenderPartial("_GoogleAnalytics");
 #endif
     }
+    <script type="text/javascript">
+        var customColumnDefs = null;
+    </script>
 </head>
 <body>
     <div id="pageFadeInOverlay">
@@ -113,6 +116,7 @@ Html.RenderPartial("_GoogleAnalytics");
     <div id="pageOverlay"></div>
     @Html.Partial("_SEO", "header")
     @Html.Partial("_CookieWarning")
+    @RenderSection("headerscripts", false)
     @RenderBody()
     @Html.Partial("_Footer")
     @Scripts.Render("~/Scripts/js")

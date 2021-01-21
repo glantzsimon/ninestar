@@ -342,6 +342,7 @@
     <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\UserCreditPacksController.cs" />
     <Compile Include="Controllers\UserConsultationsController.cs" />
+    <Compile Include="Controllers\UserRelationshipCompatibilityReadingsController.cs" />
     <Compile Include="Controllers\UserProfileReadingsController.cs" />
     <Compile Include="Controllers\UserPromoCodesController.cs" />
     <Compile Include="Controllers\UserMembershipsController.cs" />
@@ -1259,7 +1260,6 @@
     <Content Include="Views\Consultations\Edit.cshtml" />
     <Content Include="Views\Consultations\Index.cshtml" />
     <Content Include="Views\Shared\_Recaptcha.cshtml" />
-    <Content Include="Views\NineStarKi\_CompatibilityOverall.cshtml" />
     <Content Include="Views\Shared\_FiveTransformations.cshtml" />
     <Content Include="Views\NineStarKi\_CompatibilityElementsBreakdown.cshtml" />
     <Content Include="Views\NineStarKi\MyCycles.cshtml" />
@@ -1273,6 +1273,7 @@
     <Content Include="Views\NineStarKi\_CompatibilityFundamentalElements.cshtml" />
     <Content Include="Views\NineStarKi\_CompatibilityCharacterElements.cshtml" />
     <Content Include="Views\UserProfileReadings\Index.cshtml" />
+    <Content Include="Views\UserRelationshipCompatibilityReadings\Index.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

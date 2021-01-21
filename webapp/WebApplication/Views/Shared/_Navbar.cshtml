@@ -82,6 +82,7 @@
                                 <li class="@ViewContext.GetActiveClass("Index", "Relationships")"><a href="@Url.ActionWithBookmark("Index", "Relationships", "relationships")"> @Dictionary.AboutRelationships</a></li>
                                 <li><a href="@Url.ActionWithBookmark("Index", "Relationships", "transformations")"> @Dictionary.FiveTransformationsTitle</a></li>
                                 <li><a href="@Url.ActionWithBookmark("Index", "Relationships", "sexuality")"> @Dictionary.SexualityLabel</a></li>
+                                <li class="@ViewContext.GetActiveClass("MySavedReadings", "UserRelationshipCompatibilityReadings")"><a href="@Url.Action("MySavedReadings", "UserRelationshipCompatibilityReadings")"> @Dictionary.SavedCompatibilityReadings</a></li>
                             </ul>
                         </li>
 

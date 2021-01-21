@@ -14,5 +14,6 @@ namespace K9.WebApplication.Services
         CompatibilityModel CalculateCompatibility(DateTime dateOfBirth1, EGender gender1, DateTime dateOfBirth2,
             EGender gender2);
         CompatibilityModel CalculateCompatibility(PersonModel personModel1, PersonModel personModel2);
+        CompatibilityModel RetrieveCompatibility(int userRelationshipCompatibilityId);
     }
 }

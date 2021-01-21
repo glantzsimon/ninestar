@@ -18,13 +18,15 @@ namespace K9.WebApplication.Services
         private readonly IAuthentication _authentication;
         private readonly IRoles _roles;
         private readonly IRepository<UserProfileReading> _userProfileReadingsRepository;
+        private readonly IRepository<UserRelationshipCompatibilityReading> _userRelationshipCompatibilityReadingRepository;
 
-        public NineStarKiService(IMembershipService membershipService, IAuthentication authentication, IRoles roles, IRepository<UserProfileReading> userProfileReadingsRepository)
+        public NineStarKiService(IMembershipService membershipService, IAuthentication authentication, IRoles roles, IRepository<UserProfileReading> userProfileReadingsRepository, IRepository<UserRelationshipCompatibilityReading> userRelationshipCompatibilityReadingRepository)
         {
             _membershipService = membershipService;
             _authentication = authentication;
             _roles = roles;
             _userProfileReadingsRepository = userProfileReadingsRepository;
+            _userRelationshipCompatibilityReadingRepository = userRelationshipCompatibilityReadingRepository;
         }
 
         public NineStarKiModel CalculateNineStarKiProfile(DateTime dateOfBirth, EGender gender = EGender.Male)
@@ -117,7 +119,24 @@ namespace K9.WebApplication.Services
 
             return model;
         }
-        
+
+        public CompatibilityModel RetrieveCompatibility(int userRelationshipCompatibilityId)
+        {
+            var reading = _userRelationshipCompatibilityReadingRepository.Find(userRelationshipCompatibilityId);
+            return CalculateCompatibility(new PersonModel
+                {
+                    Name = reading.FirstName,
+                    DateOfBirth = reading.FirstDateOfBirth,
+                    Gender = reading.FirstGender
+                },
+                new PersonModel
+                {
+                    Name = reading.SecondName,
+                    DateOfBirth = reading.SecondDateOfBirth,
+                    Gender = reading.SecondGender
+                });
+        }
+
         public NineStarKiSummaryViewModel GetNineStarKiSummaryViewModel()
         {
             var mainEnergies = new List<NineStarKiModel>

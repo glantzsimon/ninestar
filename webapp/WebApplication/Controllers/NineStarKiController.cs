@@ -82,7 +82,7 @@ namespace K9.WebApplication.Controllers
                 Gender = myAccount.Gender
             }, false, true));
         }
-        
+
         [Route("retrieve-last")]
         [Authorize]
         public ActionResult RetrieveLast()
@@ -132,7 +132,14 @@ namespace K9.WebApplication.Controllers
             return View("Compatibility", model);
         }
 
-        [Route("relationships/compatibility")]
+        [Authorize]
+        [Route("compatibility/saved-readings/view")]
+        public ActionResult ViewCompatibility(int id)
+        {
+            return View("Compatibility", _nineStarKiService.RetrieveCompatibility(id));
+        }
+
+        [Route("compatibility")]
         public ActionResult Compatibility()
         {
             var dateOfBirth1 = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day);
@@ -150,7 +157,7 @@ namespace K9.WebApplication.Controllers
             return View("Compatibility", new CompatibilityModel(new NineStarKiModel(personModel1), new NineStarKiModel(personModel2)));
         }
 
-        [Route("relationships/compatibility")]
+        [Route("compatibility")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Compatibility(CompatibilityModel model)

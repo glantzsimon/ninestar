@@ -47,7 +47,7 @@ namespace K9.WebApplication.Models
             FundamentalElementsCompatibilityDetailsTitle = GetFundamentalElementsCompatibilityTitle();
 
             CharacterElementsCompatibilityDetails = GetElementCompatibilityDetails(_nineStarKiModel1.CharacterEnergy, _nineStarKiModel2.CharacterEnergy);
-            
+
             CalculateScore();
 
             AllOtherElementsCompatibility = GetElementsCompatibility();
@@ -574,7 +574,7 @@ namespace K9.WebApplication.Models
                     Score.AddSameScore(ECompatibilityScore.ExtremelyHigh, 9);
                     Score.AddSupportiveScore(ECompatibilityScore.ExtremelyLow, 9);
                     Score.AddChallengingScore(ECompatibilityScore.ExtremelyLow, 9);
-                    
+
                     Score.AddHarmonyScore(ECompatibilityScore.ExtremelyHigh, 9);
                     Score.AddConflictScore(ECompatibilityScore.ExtremelyLow, 9);
                     Score.AddSupportScore(ECompatibilityScore.LowToMedium, 9);
@@ -687,7 +687,7 @@ namespace K9.WebApplication.Models
                     Score.AddChallengingScore(ECompatibilityScore.ExtremelyHigh, factor);
                     Score.AddSupportiveScore(ECompatibilityScore.ExtremelyLow, factor);
                     Score.AddSameScore(ECompatibilityScore.ExtremelyLow, factor);
-                    
+
                     Score.AddHarmonyScore(ECompatibilityScore.ExtremelyLow, factor);
                     Score.AddConflictScore(ECompatibilityScore.ExtremelyHigh, factor);
                     Score.AddSupportScore(ECompatibilityScore.MediumToHigh, factor);
@@ -736,7 +736,7 @@ namespace K9.WebApplication.Models
                     Score.AddChallengingScore(ECompatibilityScore.ExtremelyHigh, factor);
                     Score.AddSupportiveScore(ECompatibilityScore.ExtremelyLow, factor);
                     Score.AddSameScore(ECompatibilityScore.ExtremelyLow, factor);
-                    
+
                     Score.AddHarmonyScore(ECompatibilityScore.Low, factor);
                     Score.AddConflictScore(ECompatibilityScore.High, factor);
                     Score.AddSupportScore(ECompatibilityScore.MediumToHigh, factor);
@@ -765,34 +765,45 @@ namespace K9.WebApplication.Models
 
         private void CalculateScore()
         {
-            if (IsFundamtenalGenderSame)
+            if (IsFundamtenalGenderSame && IsCharacterGenderSame)
             {
-                Score.AddConflictScore(ECompatibilityScore.MediumToHigh);
-                Score.AddComplementarityScore(ECompatibilityScore.Low);
-                Score.AddSexualChemistryScore(ESexualChemistryScore.Low);
-                Score.AddSparkScore(ECompatibilityScore.Low);
+                Score.AddComplementarityScore(ECompatibilityScore.VeryLow, 10);
+                Score.AddSexualChemistryScore(ESexualChemistryScore.VeryLow, 10);
+                Score.AddSparkScore(ECompatibilityScore.VeryLow, 10);
+            }
+            else if (!IsFundamtenalGenderSame && !IsCharacterGenderSame)
+            {
+                Score.AddComplementarityScore(ECompatibilityScore.VeryHigh, 10);
+                Score.AddSexualChemistryScore(ESexualChemistryScore.OffTheCharts, 10);
+                Score.AddSparkScore(ECompatibilityScore.VeryHigh, 10);
             }
             else
             {
-                Score.AddConflictScore(ECompatibilityScore.LowToMedium);
-                Score.AddComplementarityScore(ECompatibilityScore.High);
-                Score.AddSexualChemistryScore(ESexualChemistryScore.OffTheCharts);
-                Score.AddSparkScore(ECompatibilityScore.VeryHigh);
-                Score.AddLearningPotentialScore(ECompatibilityScore.High);
-            }
+                if (!IsFundamtenalGenderSame)
+                {
+                    Score.AddComplementarityScore(ECompatibilityScore.VeryHigh, 5);
+                    Score.AddSexualChemistryScore(ESexualChemistryScore.OffTheCharts, 5);
+                    Score.AddSparkScore(ECompatibilityScore.VeryHigh, 5);
+                }
+                else
+                {
+                    Score.AddComplementarityScore(ECompatibilityScore.VeryLow, 5);
+                    Score.AddSexualChemistryScore(ESexualChemistryScore.VeryLow, 5);
+                    Score.AddSparkScore(ECompatibilityScore.VeryLow, 5);
+                }
 
-            if (IsCharacterGenderSame)
-            {
-                Score.AddComplementarityScore(ECompatibilityScore.Low);
-                Score.AddSexualChemistryScore(ESexualChemistryScore.Low, 2);
-                Score.AddSparkScore(ECompatibilityScore.Low, 2);
-            }
-            else
-            {
-                Score.AddComplementarityScore(ECompatibilityScore.High);
-                Score.AddSexualChemistryScore(ESexualChemistryScore.OffTheCharts, 3);
-                Score.AddSparkScore(ECompatibilityScore.VeryHigh, 2);
-                Score.AddLearningPotentialScore(ECompatibilityScore.High);
+                if (IsCharacterGenderSame)
+                {
+                    Score.AddComplementarityScore(ECompatibilityScore.VeryHigh, 5);
+                    Score.AddSexualChemistryScore(ESexualChemistryScore.OffTheCharts, 5);
+                    Score.AddSparkScore(ECompatibilityScore.VeryHigh, 5);
+                }
+                else
+                {
+                    Score.AddComplementarityScore(ECompatibilityScore.VeryLow, 5);
+                    Score.AddSexualChemistryScore(ESexualChemistryScore.VeryLow, 5);
+                    Score.AddSparkScore(ECompatibilityScore.VeryLow, 5);
+                }
             }
         }
     }
@@ -844,7 +855,6 @@ namespace K9.WebApplication.Models
         public GenderCompatibility GenderCompatibility { get; }
         public ModalityCompatibility ModalityCompatibility { get; }
         public CompatibilityScoreModel Score { get; }
-        public object Pronouns { get; }
 
         public CompatibilityDetailsModel(CompatibilityModel compatibilityModel)
         {

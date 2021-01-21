@@ -5891,6 +5891,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to My Saved Compatibility Readings.
+        /// </summary>
+        public static string MySavedCompatibilityReadings {
+            get {
+                return ResourceManager.GetString("MySavedCompatibilityReadings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to My Yearly and Monthly Cycles.
         /// </summary>
         public static string MyYearlyAndMonthlyCycles {
@@ -6860,6 +6869,15 @@ namespace K9.Globalisation {
         public static string SavedCharts {
             get {
                 return ResourceManager.GetString("SavedCharts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saved Compatibility Readings.
+        /// </summary>
+        public static string SavedCompatibilityReadings {
+            get {
+                return ResourceManager.GetString("SavedCompatibilityReadings", resourceCulture);
             }
         }
         

@@ -2344,4 +2344,10 @@
   <data name="View" xml:space="preserve">
     <value>View</value>
   </data>
+  <data name="MySavedCompatibilityReadings" xml:space="preserve">
+    <value>My Saved Compatibility Readings</value>
+  </data>
+  <data name="SavedCompatibilityReadings" xml:space="preserve">
+    <value>Saved Compatibility Readings</value>
+  </data>
 </root>

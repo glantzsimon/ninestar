@@ -51,7 +51,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Authorize]
-        [Route("saved-charts/view")]
+        [Route("view-saved-chart")]
         public ActionResult ViewProfile(int id)
         {
             return View("Index", _nineStarKiService.RetrieveNineStarKiProfile(id));
@@ -133,7 +133,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Authorize]
-        [Route("compatibility/saved-readings/view")]
+        [Route("view-saved-compatibility")]
         public ActionResult ViewCompatibility(int id)
         {
             return View("Compatibility", _nineStarKiService.RetrieveCompatibility(id));

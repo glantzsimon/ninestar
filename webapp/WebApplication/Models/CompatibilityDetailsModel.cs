@@ -642,8 +642,6 @@ namespace K9.WebApplication.Models
                 AddCrossReferencedScore(CharacterEnergy1ToSurfaceEnergy2TransformationType);
                 AddCrossReferencedScore(CharacterEnergy2ToSurfaceEnergy1TransformationType);
             }
-
-            Score.CalculateAverages();
         }
 
         private void AddScore(ETransformationType transformationType, bool sameEnergy, int factor = 1, int sparkFactor = 0)
@@ -768,7 +766,7 @@ namespace K9.WebApplication.Models
             if (IsFundamtenalGenderSame && IsCharacterGenderSame)
             {
                 Score.AddComplementarityScore(ECompatibilityScore.VeryLow, 10);
-                Score.AddSexualChemistryScore(ESexualChemistryScore.VeryLow, 10);
+                Score.AddSexualChemistryScore(ESexualChemistryScore.NonExistant, 10);
                 Score.AddSparkScore(ECompatibilityScore.VeryLow, 10);
             }
             else if (!IsFundamtenalGenderSame && !IsCharacterGenderSame)
@@ -867,6 +865,8 @@ namespace K9.WebApplication.Models
             ElementCompatibility = new ElementCompatibility(compatibilityModel.NineStarKiModel1, compatibilityModel.NineStarKiModel2, Score);
             GenderCompatibility = new GenderCompatibility(compatibilityModel.NineStarKiModel1, compatibilityModel.NineStarKiModel2, Score);
             ModalityCompatibility = new ModalityCompatibility(compatibilityModel.NineStarKiModel1, compatibilityModel.NineStarKiModel2, Score);
+
+            Score.CalculateAverages();
         }
     }
 }

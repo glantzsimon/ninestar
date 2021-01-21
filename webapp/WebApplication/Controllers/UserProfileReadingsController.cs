@@ -21,7 +21,7 @@ namespace K9.WebApplication.Controllers
             return View("Index");
         }
 
-        [Route("saved-charts/view")]
+        [Route("my-saved-charts/view")]
         public ActionResult ViewProfile(int id)
         {
             return RedirectToAction("ViewProfile", "NineStarKi", new {id});

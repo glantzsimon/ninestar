@@ -1,28 +1,17 @@
-﻿@using K9.WebApplication.Helpers
-@model K9.WebApplication.Models.NineStarKiModel
+﻿@model K9.WebApplication.Models.NineStarKiModel
 
 <div class="well padding-top-30">
     <div id="energy-summary-container">
         <div class="row">
             <div class="col-sm-4 col-sm-offset-2 margin-bottom-15">
-                <img title="@Model.YearlyCycleEnergy.SeasonDescription" alt="@Model.YearlyCycleEnergy.SeasonDescription" class="auto-size center-block" src="~/Images/ninestar/seasons/@(Model.YearlyCycleEnergy.Season).png" />
-
-                <p class="text-center margin-bottom-0">
-                    <strong>@Dictionary.CurrentYearlyCycle</strong>
-                </p>
-                <p class="text-center">
-                    @Model.YearlyCycleEnergy.CycleDescriptiveName
-                </p>
+                <a href="#" id="current-yearly-cycle">
+                    @Html.Partial("_CycleTitle", Model.YearlyCycleEnergy)
+                </a>
             </div>
             <div class="col-md-4 col-sm-4 margin-bottom-15">
-                <img title="@Model.MonthlyCycleEnergy.SeasonDescription" alt="@Model.MonthlyCycleEnergy.SeasonDescription" class="auto-size center-block" src="~/Images/ninestar/seasons/@(Model.MonthlyCycleEnergy.Season).png" />
-
-                <p class="text-center margin-bottom-0">
-                    <strong>@Dictionary.CurrentMonthlyCycle</strong>
-                </p>
-                <p class="text-center">
-                    @Model.MonthlyCycleEnergy.CycleDescriptiveName
-                </p>
+                <a href="#" id="current-monthly-cycle">
+                    @Html.Partial("_CycleTitle", Model.MonthlyCycleEnergy)
+                </a>
             </div>
         </div>
     </div>

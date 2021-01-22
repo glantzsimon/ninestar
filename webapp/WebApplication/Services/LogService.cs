@@ -12,6 +12,7 @@ namespace K9.WebApplication.Services
     {
         private const string withResultsAs = "WITH RESULTS AS";
         private const string dataTablesDef = "&draw=";
+        private const string dataTablesDef2 = "\"draw\":";
         private const string cleanUpText1 = "K9.WebApplication.Startup+<>c";
         private const string cleanUpText2 = "K9.WebApplication.Startup";
         private const string separator = "=>";
@@ -27,7 +28,8 @@ namespace K9.WebApplication.Services
                 foreach (var line in lines)
                 {
                     if (line.Contains(withResultsAs) ||
-                        line.Contains(dataTablesDef))
+                        line.Contains(dataTablesDef) ||
+                        line.Contains(dataTablesDef2))
                     {
                         continue;
                     }
@@ -104,12 +106,12 @@ namespace K9.WebApplication.Services
 
         private string GetClassName(string[] pieces)
         {
-            return pieces.First().Split(' ').LastOrDefault();
+            return pieces.First().Trim().Split(' ').LastOrDefault();
         }
 
         private string GetMethodName(string[] pieces)
         {
-            return pieces[1].Split(' ').FirstOrDefault();
+            return pieces[1].Trim().Split(' ').FirstOrDefault();
         }
 
         private string CleanLine(string line)

@@ -334,6 +334,7 @@
     <Compile Include="Controllers\ConsultationsController.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\ConsultationController.cs" />
+    <Compile Include="Controllers\LogController.cs" />
     <Compile Include="Controllers\PromoCodesController.cs" />
     <Compile Include="Controllers\MembershipController.cs" />
     <Compile Include="Controllers\MembershipOptionsController.cs" />
@@ -386,11 +387,14 @@
     <Compile Include="Models\CompatibilityModel.cs" />
     <Compile Include="Models\Recaptcha.cs" />
     <Compile Include="Models\PurchaseModel.cs" />
+    <Compile Include="Models\LogItem.cs" />
     <Compile Include="Options\GaugeOptions.cs" />
     <Compile Include="Options\PaymentsOptions.cs" />
     <Compile Include="Services\ConsultationService.cs" />
     <Compile Include="Services\IConsultationService.cs" />
+    <Compile Include="Services\ILogService.cs" />
     <Compile Include="Services\IRecaptchaService.cs" />
+    <Compile Include="Services\LogService.cs" />
     <Compile Include="Services\RecaptchaService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\IUserService.cs" />
@@ -1275,6 +1279,7 @@
     <Content Include="Views\UserProfileReadings\Index.cshtml" />
     <Content Include="Views\UserRelationshipCompatibilityReadings\Index.cshtml" />
     <Content Include="Views\Shared\_GlobalJs.cshtml" />
+    <Content Include="Views\Log\Index.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

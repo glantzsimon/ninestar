@@ -1,12 +1,13 @@
 ﻿using System.Configuration;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
 namespace K9.WebApplication
 {
-	public class MvcApplication : HttpApplication
+    public class MvcApplication : HttpApplication
 	{
 		protected void Application_Start()
 		{
@@ -22,6 +23,8 @@ namespace K9.WebApplication
 			DataConfig.InitialiseDatabase();
 			AuthConfig.InitialiseWebSecurity();
 			DataConfig.InitialiseUsersAndRoles();
+
+		    AntiForgeryConfig.SuppressIdentityHeuristicChecks = true;
 
 		    Stripe.StripeConfiguration.SetApiKey(ConfigurationManager.AppSettings["SecretKey"]);
         }

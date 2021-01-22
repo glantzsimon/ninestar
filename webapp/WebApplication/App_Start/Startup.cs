@@ -64,6 +64,7 @@ namespace K9.WebApplication
             builder.RegisterType<MailChimpService>().As<IMailChimpService>().InstancePerRequest();
             builder.RegisterType<UserService>().As<IUserService>().InstancePerRequest();
             builder.RegisterType<RecaptchaService>().As<IRecaptchaService>().InstancePerRequest();
+            builder.RegisterType<LogService>().As<ILogService>().InstancePerRequest();
 
             RegisterConfiguration(builder);
 

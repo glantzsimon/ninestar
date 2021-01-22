@@ -55,15 +55,15 @@
     }
 
     $(function() {
-        var dataTable = $("table#@Model.TableId");
-        dataTable.on("xhr.dt", function(e, settings, json, xhr) {
+        var table = $("table#@Model.TableId");
+        table.on("xhr.dt", function(e, settings, json, xhr) {
             var initTableButtons = function() {
                 buttonBehaviours().displayPageSpinnerOnLinkClick();
             }
             window.setTimeout(initTableButtons, 200);
         });
-        dataTable.DataTable({
-            "ajax": dataTable.attr("data-url"),
+        dataTable = table.DataTable({
+            "ajax": table.attr("data-url"),
             "columns": @Model.GetColumnsJson(),
             "columnDefs": getColumnDefs(),
             "processing": true,
@@ -74,7 +74,8 @@
             "autoWidth": false,
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/@($"{CultureInfo.CurrentUICulture.GetLocaleLanguage()}.json")"
-            }
+            },
+            "order": customOrder || []
         });
     });
 

@@ -104,9 +104,8 @@
 Html.RenderPartial("_GoogleAnalytics");
 #endif
     }
-    <script type="text/javascript">
-        var customColumnDefs = null;
-    </script>
+    
+    @Html.Partial("_GlobalJs")
 </head>
 <body>
     <div id="pageFadeInOverlay">

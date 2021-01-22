@@ -5,6 +5,13 @@
 @{
 	Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
 }
+
+<script language="javascript">
+    $(function () {
+        customOrder = [[0, "desc"]];
+    });
+</script>
+
 @Html.BootstrapTable(new DataTableOptions<UserConsultation>
 {
     AllowCreate = false,
@@ -15,6 +22,6 @@
         "CreatedOn",
         "UserName",
         "DurationDescription",
-        "FormattedPrice"",
+        "FormattedPrice",
     }
 })

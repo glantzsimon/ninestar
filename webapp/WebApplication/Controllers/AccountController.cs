@@ -1,5 +1,4 @@
-﻿using K9.Base.DataAccessLayer.Enums;
-using K9.Base.DataAccessLayer.Models;
+﻿using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
 using K9.Base.WebApplication.Config;
 using K9.Base.WebApplication.Enums;
@@ -141,7 +140,7 @@ namespace K9.WebApplication.Controllers
 
                 if (regResult.IsSuccess)
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("RegisterPromoCode", "Account");
                 }
                 result.Errors.AddRange(regResult.Errors);
             }
@@ -161,6 +160,49 @@ namespace K9.WebApplication.Controllers
             }
 
             return View("Login", new UserAccount.LoginModel());
+        }
+
+        [Authorize]
+        public ActionResult RegisterPromoCode(string username)
+        {
+            return View(new RegisterPromoCodeModel
+            {
+                Username = username
+            });
+        }
+
+        [HttpPost]
+        [Authorize]
+        public ActionResult RegisterPromoCode(RegisterPromoCodeModel model)
+        {
+            try
+            {
+                if (_userService.CheckIfPromoCodeIsUsed(model.PromoCode))
+                {
+                    ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
+                    return View(model);
+                };
+                
+                var user = _userRepository.Find(e => e.Username == model.Username).First();
+
+                try
+                {  
+                    _userService.UsePromoCode(user.Id, model.PromoCode);
+                }
+                catch (Exception e)
+                {
+                    ModelState.AddModelError("PromoCode", e.Message);
+                }
+
+                _membershipService.ProcessPurchaseWithPromoCode(user.Id, model.PromoCode);
+
+                return RedirectToAction("Index", "Home");
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PromoCode", e.Message);
+                return View(model);
+            }
         }
 
         public ActionResult AccountLocked()
@@ -257,7 +299,7 @@ namespace K9.WebApplication.Controllers
                         {
                             _logger.Error("AccountController => Register => Promo code used but UserId is 0");
                             return RedirectToAction("AccountCreated", "Account", new { additionalError = Globalisation.Dictionary.PromoCodeNotUsed });
-                        }   
+                        }
                     }
 
                     return RedirectToAction("AccountCreated", "Account");

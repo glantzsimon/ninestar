@@ -17,8 +17,8 @@
         @Html.Panel("Cycles of Light and Dark", Dictionary.cycles, "cycles", "~/Images/about/light-dark.jpg", EPanelImageSize.Default, EPanelImageLayout.Contain)
 
         @Html.Panel("Yin and Yang", Dictionary.yinyang, "yinyang", "~/Images/ninestar/yinyang/yinyang-large.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
-
-        @Html.Panel("The Three Modalities", Dictionary.modalities_description, "modalities")
+        
+        @Html.Panel("The Three Modalities", Html.Partial("_Modalities").ToString(), "modalities")
 
         @Html.Partial("_ModalityDetails", Model.DynamicEnergies)
 
@@ -26,7 +26,7 @@
 
         @Html.Partial("_ModalityDetails", Model.FlexibleEnergies)
 
-        @Html.Panel("The Five Elements", Dictionary.five_elements, "elements")
+        @Html.Panel("The Five Elements", Html.Partial("_FiveElements").ToString(), "elements")
 
         @Html.Panel(Dictionary.FireElement, Dictionary.fire_element, "fire", "~/Images/ninestar/elements/fire.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
 
@@ -38,13 +38,13 @@
 
         @Html.Panel(Dictionary.TreeElement, Dictionary.tree_element, "tree", "~/Images/ninestar/elements/tree.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
 
-        @Html.Panel("The Five Transformations", Html.Partial("_FiveTransformations").ToString(), "transformations")
-
-        @Html.Panel("9 Star Ki Personal Chart", Dictionary.personal_chart, "chart")
+        @Html.Panel("The Five Transformations", Html.Partial("../NineStarKi/_FiveTransformations").ToString(), "transformations")
 
         @Html.Panel("The Nine Main Energies", Html.Partial("_NineEnergiesOverview", Model.MainEnergies).ToString(), "energies")
 
         @Html.Panel("The Nine Character Energies", Html.Partial("_NineEnergiesOverview", Model.CharacterEnergies).ToString(), "characters")
+        
+        @Html.Panel("9 Star Ki Personal Chart", Dictionary.personal_chart, "chart")
     </article>
 </div>
 

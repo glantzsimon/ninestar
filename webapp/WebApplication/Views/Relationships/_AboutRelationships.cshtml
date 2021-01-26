@@ -1,0 +1,7 @@
+﻿@using K9.SharedLibrary.Helpers
+@Html.Raw(TemplateProcessor.PopulateTemplate(Dictionary.relationships_description, new
+{
+    CompatibilityLink = Url.Action("Compatibility", "NineStarKi"),
+}))
+
+@Html.BootstrapActionLinkButton(Dictionary.RelationshipCompatibilityCalculator, "Compatibility", "NineStarKi", null, "fa fa-yin-yang", EButtonClass.Large)

@@ -83,7 +83,10 @@
                                 <li class="@ViewContext.GetActiveClass("Index", "Relationships")"><a href="@Url.ActionWithBookmark("Index", "Relationships", "relationships")"> @Dictionary.AboutRelationships</a></li>
                                 <li><a href="@Url.ActionWithBookmark("Index", "Relationships", "transformations")"> @Dictionary.FiveTransformationsTitle</a></li>
                                 <li><a href="@Url.ActionWithBookmark("Index", "Relationships", "sexuality")"> @Dictionary.SexualityLabel</a></li>
-                                <li class="@ViewContext.GetActiveClass("MySavedReadings", "UserRelationshipCompatibilityReadings")"><a href="@Url.Action("MySavedReadings", "UserRelationshipCompatibilityReadings")"> @Dictionary.SavedCompatibilityReadings</a></li>
+                                @if (WebSecurity.IsAuthenticated)
+                                {
+                                    <li class="@ViewContext.GetActiveClass("MySavedReadings", "UserRelationshipCompatibilityReadings")"><a href="@Url.Action("MySavedReadings", "UserRelationshipCompatibilityReadings")"> @Dictionary.SavedCompatibilityReadings</a></li>
+                                }
                             </ul>
                         </li>
 
@@ -118,9 +121,9 @@
                                 <li class="device-only"><a href="@Url.ActionWithBookmark("About", "Home", "water")"> @Dictionary.WaterElement</a></li>
                                 <li class="device-only"><a href="@Url.ActionWithBookmark("About", "Home", "tree")"> @Dictionary.TreeElement</a></li>
                                 <li><a href="@Url.ActionWithBookmark("About", "Home", "transformations")"> @Dictionary.FiveTransformationsTitle</a></li>
-                                <li><a href="@Url.ActionWithBookmark("About", "Home", "chart")"> @Dictionary.PersonalProfileTitle</a></li>
                                 <li><a href="@Url.ActionWithBookmark("About", "Home", "energies")"> @Dictionary.NineMainEnergiesTitle</a></li>
                                 <li><a href="@Url.ActionWithBookmark("About", "Home", "energies")"> @Dictionary.NineCharacterEnergiesTitle</a></li>
+                                <li><a href="@Url.ActionWithBookmark("About", "Home", "chart")"> @Dictionary.PersonalProfileTitle</a></li>
                             </ul>
                         </li>
                     </ul>

@@ -1,19 +1,11 @@
-﻿@using K9.WebApplication.Helpers
-@using K9.WebApplication.Models
-@model NineStarKiModel
-
-@if (Model != null)
+﻿@using K9.SharedLibrary.Helpers
+@using K9.WebApplication.Helpers
+@using (Html.PaidContent())
 {
-    <div class="container main-content clear-both">
-        <article>
-            <div>
-                @Html.CollapsiblePanel(Model.EnergySexualityLabel, Model.MainEnergySexualityDetails, true)
-
-                @Html.CollapsiblePanel(Dictionary.SexualityGenderRelationLabel, Html.Partial("_SexualityRelationType").ToString(), true)
-            </div>
-        </article>
-    </div>
-
-
-
+    @Html.Raw(TemplateProcessor.PopulateTemplate(Dictionary.sexuality, new
+    {
+        AboutTitle = Dictionary.AboutNineStarKi,
+        AboutLink = Url.ActionWithBookmark("About", "Home", "yinyang"),
+        ChartLink = Url.ActionWithBookmark("About", "Home", "chart"),
+    }))
 }

@@ -385,6 +385,7 @@
     <Compile Include="Models\CompatibilityScoreModel.cs" />
     <Compile Include="Models\CompatibilityDetailsModel.cs" />
     <Compile Include="Models\CompatibilityModel.cs" />
+    <Compile Include="Models\RegisterPromoCodeModel.cs" />
     <Compile Include="Models\Recaptcha.cs" />
     <Compile Include="Models\PurchaseModel.cs" />
     <Compile Include="Models\LogItem.cs" />
@@ -1119,7 +1120,7 @@
     <Content Include="Views\Shared\DisplayTemplates\Currency.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Currency.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Gender.cshtml" />
-    <Content Include="Views\NineStarKi\_NineStarHeader.cshtml" />
+    <Content Include="Views\NineStarKi\_ProfileHeader.cshtml" />
     <Content Include="Views\NineStarKi\_Energy.cshtml" />
     <Content Include="Views\NineStarKi\_Trigram.cshtml" />
     <Content Include="Views\NineStarKi\_YinYang.cshtml" />
@@ -1128,7 +1129,7 @@
     <Content Include="Views\NineStarKi\_Colour.cshtml" />
     <Content Include="Views\NineStarKi\_ProfileSummary.cshtml" />
     <Content Include="Views\Shared\_BetaPopup.cshtml" />
-    <Content Include="Views\NineStarKi\_NineStarBody.cshtml" />
+    <Content Include="Views\NineStarKi\_ProfileBody.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Energy.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\EnergyType.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -1140,7 +1141,7 @@
     <Content Include="Views\Shared\Controls\_Panel.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Shared\Controls\_ImagePanel.cshtml" />
-    <Content Include="Views\NineStarKi\_NineStarDetail.cshtml" />
+    <Content Include="Views\NineStarKi\_ProfileMainEnergyDetails.cshtml" />
     <Content Include="Views\NineStarKi\_ProfilePills.cshtml" />
     <Content Include="Views\Shared\_AudioFilesDisplay.cshtml" />
     <Content Include="Views\Shared\_CookieWarning.cshtml" />
@@ -1192,8 +1193,8 @@
     <Content Include="Views\Predictions\Index.cshtml" />
     <Content Include="Views\NineStarKi\_CompatibilityCalculator.cshtml" />
     <Content Include="Views\Shared\_VideoFilesDisplay.cshtml" />
-    <Content Include="Views\NineStarKi\_Sexuality.cshtml" />
-    <Content Include="Views\NineStarKi\_SexualityRelationType.cshtml" />
+    <Content Include="Views\NineStarKi\_ProfileSexuality.cshtml" />
+    <Content Include="Views\NineStarKi\_ProfileSexualityRelationType.cshtml" />
     <Content Include="Views\UserMemberships\_DisplayFields.cshtml" />
     <Content Include="Views\UserMemberships\Delete.cshtml" />
     <Content Include="Views\UserMemberships\Details.cshtml" />
@@ -1264,7 +1265,7 @@
     <Content Include="Views\Consultations\Edit.cshtml" />
     <Content Include="Views\Consultations\Index.cshtml" />
     <Content Include="Views\Shared\_Recaptcha.cshtml" />
-    <Content Include="Views\Shared\_FiveTransformations.cshtml" />
+    <Content Include="Views\NineStarKi\_FiveTransformations.cshtml" />
     <Content Include="Views\NineStarKi\_CompatibilityElementsBreakdown.cshtml" />
     <Content Include="Views\NineStarKi\MyCycles.cshtml" />
     <Content Include="Views\NineStarKi\_CyclesSummary.cshtml" />
@@ -1280,6 +1281,12 @@
     <Content Include="Views\UserRelationshipCompatibilityReadings\Index.cshtml" />
     <Content Include="Views\Shared\_GlobalJs.cshtml" />
     <Content Include="Views\Log\Index.cshtml" />
+    <Content Include="Views\Account\RegisterPromoCode.cshtml" />
+    <Content Include="Views\NineStarKi\_Sexuality.cshtml" />
+    <Content Include="Views\Home\_Modalities.cshtml" />
+    <Content Include="Views\Home\_FiveElements.cshtml" />
+    <Content Include="Views\NineStarKi\AboutProfile.cshtml" />
+    <Content Include="Views\Relationships\_AboutRelationships.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

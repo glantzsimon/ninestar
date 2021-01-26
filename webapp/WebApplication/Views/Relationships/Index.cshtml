@@ -14,23 +14,11 @@
 
 <div class="container main-content">
     <article>
-        @Html.Panel("9 Star Ki and Relationships", TemplateProcessor.PopulateTemplate(Dictionary.relationships_description, new
-   {
-       CompatibilityLink = Url.Action("Compatibility", "NineStarKi"),
-   }), "relationships")
+        @Html.Panel("9 Star Ki and Relationships", Html.Partial("_AboutRelationships").ToString(), "relationships")
 
-        @Html.Panel("The 5 Transformations", Html.Partial("_FiveTransformations").ToString(), "transformations")
+        @Html.Panel("The 5 Transformations", Html.Partial("../NineStarKi/_FiveTransformations").ToString(), "transformations")
 
-        @Html.Panel("9 Star Ki and Sexuality", TemplateProcessor.PopulateTemplate(Dictionary.sexuality, new
-        {
-            AboutTitle = Dictionary.AboutNineStarKi,
-            AboutLink = Url.ActionWithBookmark("About", "Home", "yinyang"),
-            ChartLink = Url.ActionWithBookmark("About", "Home", "chart"),
-        }), "sexuality")
+        @Html.Panel("9 Star Ki and Sexuality", Html.Partial("../NineStarKi/_Sexuality").ToString(), "sexuality")
     </article>
-
-    <br />
-
-    @Html.BootstrapActionLinkButton(Dictionary.RelationshipCompatibilityCalculator, "Compatibility", "NineStarKi", null, "fa fa-yin-yang")
 </div>
 

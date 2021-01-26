@@ -40,19 +40,19 @@
                         <div id="fundamental" class="tab-pane fade @adultActiveClass">
                             @Html.CollapsiblePanel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.MainEnergyDescription, true)
 
-                            @Html.Partial("_NineStarHeader", Model.MainEnergy)
+                            @Html.Partial("_ProfileHeader", Model.MainEnergy)
 
-                            @Html.Partial("_NineStarDetail", Model)
+                            @Html.Partial("_ProfileMainEnergyDetails", Model)
                         </div>
 
                         <div id="character" class="tab-pane fade @childActiveClass">
                             @Html.CollapsiblePanel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.CharacterEnergyDescription, true)
 
-                            @Html.Partial("_NineStarHeader", Model.CharacterEnergy)
+                            @Html.Partial("_ProfileHeader", Model.CharacterEnergy)
 
                             @using (Html.PaidContent(Model, () => Model.ReadingType == EReadingType.Complete))
                             {
-                                @Html.Partial("_NineStarBody", Model.CharacterEnergy)
+                                @Html.Partial("_ProfileBody", Model.CharacterEnergy)
                             }
 
                             @Html.BootstrapActionLinkButton(Dictionary.CompatibilityCalculator, "Compatibility", "NineStarKi", null, "fa fa-yin-yang", EButtonClass.Large)
@@ -65,11 +65,11 @@
                         <div id="surface" class="tab-pane fade">
                             @Html.CollapsiblePanel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.SurfaceEnergyDescription, true)
 
-                            @Html.Partial("_NineStarHeader", Model.SurfaceEnergy)
+                            @Html.Partial("_ProfileHeader", Model.SurfaceEnergy)
 
                             @using (Html.PaidContent(Model, () => Model.ReadingType == EReadingType.Complete))
                             {
-                                @Html.Partial("_NineStarBody", Model.SurfaceEnergy)
+                                @Html.Partial("_ProfileBody", Model.SurfaceEnergy)
                             }
 
                             @Html.BootstrapActionLinkButton(Dictionary.CompatibilityCalculator, "Compatibility", "NineStarKi", null, "fa fa-yin-yang", EButtonClass.Large)
@@ -88,7 +88,7 @@
 
                         @using (Html.PaidContent(Model, () => Model.ReadingType == EReadingType.Complete))
                         {
-                            @Html.Partial("_Sexuality", Model)
+                            @Html.Partial("_ProfileSexuality", Model)
                         }
                     </div>
                 }

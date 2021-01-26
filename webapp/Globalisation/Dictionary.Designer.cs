@@ -1312,6 +1312,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 9 Star Ki Chart.
+        /// </summary>
+        public static string AboutProfile {
+            get {
+                return ResourceManager.GetString("AboutProfile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About Relationships.
         /// </summary>
         public static string AboutRelationships {
@@ -2570,7 +2579,7 @@ namespace K9.Globalisation {
         ///    9 Star Ki astrology is based on cycles of light and dark and the various stages the cycles move through. It is the contrast between light and dark which gives rise to the &apos;experience&apos; of being alive
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    9 Star Ki astrology is based on the universal cycles of light and dark and the transformations between the various stages. These cosmic, eternally spiralling throughout time and space, underpin our entire reality in this cosmos and give rise to the very experience of being &quot;alive&quot;. Thi [rest of string was truncated]&quot;;.
+        ///    9 Star Ki astrology is based on the universal cycles of light and dark and the various transformations between the stages between them. These cosmic cycles, eternally spiralling throughout time and space, underpin our entire reality in this cosmos and give rise to the very experience o [rest of string was truncated]&quot;;.
         /// </summary>
         public static string cycles {
             get {
@@ -6768,6 +6777,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Register Promo Code.
+        /// </summary>
+        public static string RegisterPromoCode {
+            get {
+                return ResourceManager.GetString("RegisterPromoCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Relationship Compatibility Calculator.
         /// </summary>
         public static string RelationshipCompatibilityCalculator {
@@ -7344,6 +7362,15 @@ namespace K9.Globalisation {
         public static string SignUpToNewsLetter {
             get {
                 return ResourceManager.GetString("SignUpToNewsLetter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Skip.
+        /// </summary>
+        public static string Skip {
+            get {
+                return ResourceManager.GetString("Skip", resourceCulture);
             }
         }
         

@@ -216,8 +216,8 @@ a#toTop {
 .seo {
     font-size: 0.3em;
     position: fixed;
-    left: -150px;
-    top: -200px;
+    left: -15000px;
+    top: -20000px;
     width: 1px;
     height: 2px;
 }

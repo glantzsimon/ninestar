@@ -1,0 +1,21 @@
+﻿@using Dictionary = K9.Base.Globalisation.Dictionary
+@model K9.WebApplication.Models.RegisterPromoCodeModel
+
+@{
+    ViewBag.Title = Dictionary.Registration;
+    ViewBag.SubTitle = Dictionary.Register;
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.HiddenFor(model => model.Username)
+        @Html.BootstrapEditorFor(model => model.PromoCode)
+
+        @Html.BootstrapButton(K9.Globalisation.Dictionary.RegisterPromoCode)
+        @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.Skip, "Index", "Home", null, "fa-angle-right")
+    }
+}
+

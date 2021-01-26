@@ -1,4 +1,5 @@
-﻿@model K9.WebApplication.Models.NineStarKiModel
+﻿@using K9.WebApplication.Helpers
+@model K9.WebApplication.Models.NineStarKiModel
 
 @{
     ViewBag.Title = Dictionary.NineStarKiCalculatorTitle;
@@ -19,6 +20,14 @@
         @if (Model != null && Model.IsProcessed)
         {
             @Html.Partial("_ProfileSummary", Model)
+        }
+        else
+        {
+            <article>
+                <div class="margin-bottom-20">
+                    @Html.Panel("9 Star Ki Personal Chart", Dictionary.personal_chart, "chart")
+                </div>
+            </article>
         }
     </div>
 </div>

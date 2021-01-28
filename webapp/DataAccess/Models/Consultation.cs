@@ -55,12 +55,12 @@ namespace K9.DataAccessLayer.Models
         {
             if (ConsultationDuration == EConsultationDuration.OneHour)
             {
-                return 40;
+                return 17;
             }
 
             if (ConsultationDuration == EConsultationDuration.TwoHours)
             {
-                return 60;
+                return 27;
             }
 
             return 0;

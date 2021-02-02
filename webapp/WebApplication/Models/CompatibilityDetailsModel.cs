@@ -574,7 +574,7 @@ namespace K9.WebApplication.Models
             {
                 case ETransformationType.Same:
                     Score.AddSameScore(ECompatibilityScore.ExtremelyHigh, 9);
-                    
+
                     Score.AddHarmonyScore(ECompatibilityScore.ExtremelyHigh, 9);
                     Score.AddConflictScore(ECompatibilityScore.ExtremelyLow, 9);
                     Score.AddSupportScore(ECompatibilityScore.LowToMedium, 9);
@@ -589,7 +589,7 @@ namespace K9.WebApplication.Models
                 case ETransformationType.Supports:
                 case ETransformationType.IsSupported:
                     Score.AddSupportiveScore(ECompatibilityScore.ExtremelyHigh, 9);
-                    
+
                     Score.AddHarmonyScore(ECompatibilityScore.VeryHigh, 9);
                     Score.AddConflictScore(ECompatibilityScore.VeryLow, 9);
                     Score.AddSupportScore(ECompatibilityScore.ExtremelyHigh, 9);
@@ -646,7 +646,7 @@ namespace K9.WebApplication.Models
             {
                 case ETransformationType.Same:
                     Score.AddSameScore(ECompatibilityScore.ExtremelyHigh, factor);
-                    
+
                     Score.AddHarmonyScore(ECompatibilityScore.ExtremelyHigh, factor);
                     Score.AddConflictScore(ECompatibilityScore.ExtremelyLow, factor);
                     Score.AddSupportScore(ECompatibilityScore.Medium, factor);
@@ -661,7 +661,7 @@ namespace K9.WebApplication.Models
                 case ETransformationType.Supports:
                 case ETransformationType.IsSupported:
                     Score.AddSupportiveScore(ECompatibilityScore.ExtremelyHigh, factor);
-                  
+
                     Score.AddHarmonyScore(ECompatibilityScore.VeryHigh, factor);
                     Score.AddConflictScore(ECompatibilityScore.VeryLow, factor);
                     Score.AddSupportScore(ECompatibilityScore.ExtremelyHigh, factor);
@@ -675,7 +675,7 @@ namespace K9.WebApplication.Models
                 case ETransformationType.Challenges:
                 case ETransformationType.IsChallenged:
                     Score.AddChallengingScore(ECompatibilityScore.ExtremelyHigh, factor);
-                    
+
                     Score.AddHarmonyScore(ECompatibilityScore.ExtremelyLow, factor);
                     Score.AddConflictScore(ECompatibilityScore.ExtremelyHigh, factor);
                     Score.AddSupportScore(ECompatibilityScore.MediumToHigh, factor);
@@ -694,7 +694,7 @@ namespace K9.WebApplication.Models
             {
                 case ETransformationType.Same:
                     Score.AddSameScore(ECompatibilityScore.ExtremelyHigh, factor);
-                   
+
                     Score.AddHarmonyScore(ECompatibilityScore.High, factor);
                     Score.AddConflictScore(ECompatibilityScore.Low, factor);
                     Score.AddSupportScore(ECompatibilityScore.High, factor);
@@ -706,7 +706,7 @@ namespace K9.WebApplication.Models
                 case ETransformationType.Supports:
                 case ETransformationType.IsSupported:
                     Score.AddSupportiveScore(ECompatibilityScore.ExtremelyHigh, factor);
-                  
+
                     Score.AddHarmonyScore(ECompatibilityScore.High, factor);
                     Score.AddConflictScore(ECompatibilityScore.Low, factor);
                     Score.AddSupportScore(ECompatibilityScore.High, factor);
@@ -718,7 +718,7 @@ namespace K9.WebApplication.Models
                 case ETransformationType.Challenges:
                 case ETransformationType.IsChallenged:
                     Score.AddChallengingScore(ECompatibilityScore.ExtremelyHigh, factor);
-                 
+
                     Score.AddHarmonyScore(ECompatibilityScore.Low, factor);
                     Score.AddConflictScore(ECompatibilityScore.High, factor);
                     Score.AddSupportScore(ECompatibilityScore.MediumToHigh, factor);
@@ -732,8 +732,13 @@ namespace K9.WebApplication.Models
 
     public class GenderCompatibility
     {
+        private readonly NineStarKiModel _nineStarKiModel1;
+        private readonly NineStarKiModel _nineStarKiModel2;
+
         public GenderCompatibility(NineStarKiModel nineStarKiModel1, NineStarKiModel nineStarKiModel2, CompatibilityScoreModel score)
         {
+            _nineStarKiModel1 = nineStarKiModel1;
+            _nineStarKiModel2 = nineStarKiModel2;
             Score = score;
             IsFundamtenalGenderSame = nineStarKiModel1.MainEnergy.YinYang == nineStarKiModel2.MainEnergy.YinYang;
             IsCharacterGenderSame = nineStarKiModel1.CharacterEnergy.YinYang == nineStarKiModel2.CharacterEnergy.YinYang;
@@ -744,6 +749,12 @@ namespace K9.WebApplication.Models
         public CompatibilityScoreModel Score { get; }
         public bool IsFundamtenalGenderSame { get; set; }
         public bool IsCharacterGenderSame { get; set; }
+        
+        public bool IsBothGenderSame => IsFundamtenalGenderSame && IsCharacterGenderSame;
+
+        public ENineStarKiYinYang FundamentalGenderSameYinYang => IsFundamtenalGenderSame ? _nineStarKiModel1.MainEnergy.YinYang : ENineStarKiYinYang.Unspecified;
+
+        public ENineStarKiYinYang CharacterGenderSameYinYang => IsCharacterGenderSame ? _nineStarKiModel1.CharacterEnergy.YinYang : ENineStarKiYinYang.Unspecified;
 
         private void CalculateScore()
         {

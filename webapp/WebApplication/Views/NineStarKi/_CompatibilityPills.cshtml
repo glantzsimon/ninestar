@@ -1,4 +1,5 @@
-﻿@using K9.WebApplication.Helpers
+﻿@using K9.SharedLibrary.Helpers
+@using K9.WebApplication.Helpers
 @model K9.WebApplication.Models.CompatibilityModel
 
 @if (Model != null && Model.IsProcessed)
@@ -18,6 +19,12 @@
                     @Html.Panel(Dictionary.FundamentalElements, Html.Partial("_CompatibilityFundamentalElements").ToString())
                     @Html.Panel(Dictionary.CharacterElements, Html.Partial("_CompatibilityCharacterElements").ToString())
                     @Html.Panel(Dictionary.AllElementsBreakdown, Html.Partial("_CompatibilityElementsBreakdown").ToString())
+                    @Html.Panel(Dictionary.YinAndYang, TemplateProcessor.PopulateTemplate(Html.Partial("_CompatibilityYinYang").ToString(), new
+                    {
+                        SameTransformationLink = Url.ActionWithBookmark("About", "Home", "same-transformation"),
+                        SupportiveTransformationLink = Url.ActionWithBookmark("About", "Home", "supportive-transformation"),
+                        ChallengingTransformationLink = Url.ActionWithBookmark("About", "Home", "challenging-transformation")
+                    }))
                 </div>
 
                 <div id="fundamental" class="tab-pane fade">

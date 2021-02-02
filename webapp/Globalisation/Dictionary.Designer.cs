@@ -1562,6 +1562,32 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Both Fundamental and Character Energies are Yang
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Both the Fundamental and Character Energies are Yang. This could lead to increased conflict as Yang Energies tend to be more confrontational than Yin Energies. On the other hand, as both Energies are Yang, it is likely that they will understand each other quite well, especially if the Elements are either in a &lt;a target=&quot;_blank&quot; href=&quot;{SameTransformation}&quot;&gt;Sibling Transformation&lt;/a&gt; or a &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransforma [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string both_gender_same_yang {
+            get {
+                return ResourceManager.GetString("both_gender_same_yang", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Both Fundamental and Character Energies are Yin
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Both the Fundamental and Character Energies are Yin. In the absence of Yang, there could be a breakdown in communication and the relationship could become stagnant. On the other hand, as both Energies are Yin, it is likely that they will understand each other quite well, especially if the Elements are either in a &lt;a target=&quot;_blank&quot; href=&quot;{SameTransformation}&quot;&gt;Sibling Transformation&lt;/a&gt; or a &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransfo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string both_gender_same_yin {
+            get {
+                return ResourceManager.GetString("both_gender_same_yin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bright Green.
         /// </summary>
         public static string BrightGreen {
@@ -1644,11 +1670,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Challenging Transformation
+        ///    Character Elements are in a &lt;a target=&quot;_blank&quot; href=&quot;{ChallengingTransformationLink}&quot;&gt;Challenging Transformation&lt;/a&gt;
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This combination result in a lot of &lt;strong&gt;natural chemistry and magnetism&lt;/strong&gt; between people, but it also increases the &lt;strong&gt;risk of conflict and emotional misunderstandings&lt;/strong&gt;. This can be offset if the other Energies, especially the Fundamental Energies are in a Supportive Transformation or Sibling relationship.
-        ///&lt;/p&gt;.
+        ///    This combination typically results in a lot of &lt;strong&gt;natural chemistry and magnetism&lt;/strong&gt; between people, but it also increases the &lt;strong&gt;risk of conflict and emotional misunderstandings&lt;/strong&gt;. This can be offset if the other Energies, especially the Fundamental Energies are in a &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransformationLink}&quot;&gt;Supportive Transfor [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_element_challenging {
             get {
@@ -1658,13 +1683,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Same Element - Sibling Relationship
+        ///    Same Element - &lt;a target=&quot;_blank&quot; href=&quot;{SameTransformationLink}&quot;&gt;Sibling Relationship&lt;/a&gt;
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    The Character Energies have the same element. There is a potential for a &lt;strong&gt;deep emotional connection&lt;/strong&gt; as well as a very good &lt;strong&gt;mutual understanding on an emotional level&lt;/strong&gt;. This can help to create more harmony in the relationship, especially if the fundamental Energies are antagonistic.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    In romantic relationships, sharing the same Character Energy element can lead to less chemistry or spark. However, if  [rest of string was truncated]&quot;;.
+        ///    In romantic relationships, sharing the same Character Energy el [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_element_same {
             get {
@@ -1674,13 +1699,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Supportive Transformation - Parent Child Relationship
+        ///    &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransformationLink}&quot;&gt;Supportive Transformation&lt;/a&gt; - Parent Child Relationship
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The Character Energies are in a Supportive Transformation, in which one Energy supports or nourishes the next. This typically creates a &lt;strong&gt;strong emotional connection and mutual understanding&lt;/strong&gt;.
+        ///    The Character Energies are in a &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransformationLink}&quot;&gt;Supportive Transformation&lt;/a&gt;, in which one Energy supports or nourishes the next. This typically creates a &lt;strong&gt;strong emotional connection and mutual understanding&lt;/strong&gt;.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    In romantic relationships, when the Character Energies in a Supportive Transformation, it typically improves the chances of chemistry and also relationship harmony. However, the Transformation of the Fundamen [rest of string was truncated]&quot;;.
+        ///    In romantic relationships, when the Character Energies in a &lt;a target=&quot;_blank&quot; href=&quot;{ [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_element_supportive {
             get {
@@ -1714,15 +1739,33 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Character Energies - Same Enegetic Gender
+        ///    Character Energies - Both Yang
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    In romantic relationships, this typically leads to &lt;strong&gt;less sexual chemistry&lt;/strong&gt; than with opposite Character Energy genders. However, if the Fundamental Energies have opposite gender and antagonistic elements, the chance of sexual chemistry is far greater. Having the same Character Energy gender can lead to &lt;strong&gt;greater mutual understanding on an emotional level&lt;/strong&gt;.
-        ///&lt;/p&gt;.
+        ///    In romantic relationships, this typically leads to &lt;strong&gt;less chemistry&lt;/strong&gt; than with a Yin / Yang combination. Yang Energies tend to be more engaging and in the absence of Yin, this can lead to a lack of magnetism. Essentially there isn&apos;t enough mystery to maintain the magic. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    However, if the Fundamental Energies are in a Yin / Yang combination and / or in a &lt;a target=&quot;_blank&quot; href=&quot;{ChallengingTransformationLink}&quot;&gt;Challenging [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string character_gender_same {
+        public static string character_gender_same_yang {
             get {
-                return ResourceManager.GetString("character_gender_same", resourceCulture);
+                return ResourceManager.GetString("character_gender_same_yang", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Character Energies - Both Yin
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    In romantic relationships, this typically leads to &lt;strong&gt;less chemistry&lt;/strong&gt; than with a Yin / Yang combination. Yin Energies tend to be more receptive and less engaging. In the absence of Yang, the relationship could start to stagnate. There could also be a build up of resentment due to lack of communication.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    However, if the Fundamental Energies are in a Yin / Yang combination and / or in a &lt;a target=&quot;_blank&quot; href=&quot;{ChallengingT [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string character_gender_same_yin {
+            get {
+                return ResourceManager.GetString("character_gender_same_yin", resourceCulture);
             }
         }
         
@@ -3133,6 +3176,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to How compatible are you?.
+        /// </summary>
+        public static string FindOutHowCompatibleYouAre {
+            get {
+                return ResourceManager.GetString("FindOutHowCompatibleYouAre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fire.
         /// </summary>
         public static string Fire {
@@ -3426,7 +3478,7 @@ namespace K9.Globalisation {
         ///    &lt;strong&gt;There are 3 different types of transformation or relationship:&lt;/strong&gt;
         ///&lt;/p&gt;
         ///
-        ///&lt;h5&gt;Same E [rest of string was truncated]&quot;;.
+        ///&lt;div id=&quot;s [rest of string was truncated]&quot;;.
         /// </summary>
         public static string five_transformations {
             get {
@@ -4361,14 +4413,14 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This is potentially a very harmonious and complementary combination, as the Fundamental Energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for reasonable sexual chemistry and for quite a bit of growth. Conflict is less likely in this combination.
+        ///    This is potentially a very harmonious and complementary combination, as the Fundamental Energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for reasonable chemistry and for quite a bit of growth. Conflict is less likely in this combination.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;
         ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} and {Person2} are in a Supportive Transformation, with {Person2} supporting {Person1}. This type of combination typically le [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Supportive Transformation, with {Person2} supporting {Person1}. This type of combination typically leads to  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_16 {
             get {
@@ -4378,14 +4430,14 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This is potentially a very harmonious and exciting combination, as the Fundamental Energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for good sexual chemistry and for quite a bit of growth. Conflict is far less likely in this combination.
+        ///    This is potentially a very harmonious and exciting combination, as the Fundamental Energies are in a Supportive Transformation, with {Person2} supporting {Person1}. There is also potential for good chemistry and for quite a bit of growth. Conflict is far less likely in this combination.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;
         ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} and {Person2} are in a Supportive Transformation, with {Person2} supporting {Person1}. This type of combination typically leads to  [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Supportive Transformation, with {Person2} supporting {Person1}. This type of combination typically leads to greater [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_17 {
             get {
@@ -4395,14 +4447,14 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This is potentially a very challenging combination indeed. The Fundamental Energies are in a Challenging Transformation, with {Person2} controlling {Person1}. Whilst there is potential for good sexual chemistry and for quite a bit of growth, conflict and frustration are likely to be a big stumbling block in this combination.
+        ///    This is potentially a very challenging combination indeed. The Fundamental Energies are in a Challenging Transformation, with {Person2} controlling {Person1}. Whilst there is potential for good chemistry and for quite a bit of growth, conflict and frustration are likely to be a big stumbling block in this combination.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;
         ///    Challenges
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} and {Person2} are in a Challenging Transformation, with {Person2} challenging or controlling {Pers [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Challenging Transformation, with {Person2} challenging or controlling {Person1}. T [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_18 {
             get {
@@ -4412,14 +4464,14 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This is potentially a very challenging combination. The Fundamental Energies are in a Challenging Transformation, with {Person1} controlling {Person2}. Whilst there is potential for good sexual chemistry and for quite a bit of growth, conflict and frustration are likely to be a big stumbling block in this combination.
+        ///    This is potentially a very challenging combination. The Fundamental Energies are in a Challenging Transformation, with {Person1} controlling {Person2}. Whilst there is potential for good chemistry and for quite a bit of growth, conflict and frustration are likely to be a big stumbling block in this combination.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;
         ///    Challenges
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    {Person1Proper} and {Person2} are in a Challenging Transformation, with {Person1} challenging or controlling {Person2}. T [rest of string was truncated]&quot;;.
+        ///    {Person1Proper} and {Person2} are in a Challenging Transformation, with {Person1} challenging or controlling {Person2}. This can [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_19 {
             get {
@@ -5121,14 +5173,14 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    This is a harmonious combination with great potential for friendship. The sexual chemistry may well be lacking, however.
+        ///    This is a harmonious combination with great potential for friendship. The chemistry may well be lacking, however.
         ///&lt;/h5&gt;
         ///
         ///&lt;h5&gt;
         ///    Strengths
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    As both people are Fire Energies, they share many of the same qualities, such as the ability to inspire those around then with their great clarity, intuition and emotional intelligence. There is a strong potential for both people to get on very well and they would likely enjoy talking to one another and feel very comfor [rest of string was truncated]&quot;;.
+        ///    As both people are Fire Energies, they share many of the same qualities, such as the ability to inspire those around then with their great clarity, intuition and emotional intelligence. There is a strong potential for both people to get on very well and they would likely enjoy talking to one another and feel very comfortable i [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_99 {
             get {
@@ -5202,7 +5254,7 @@ namespace K9.Globalisation {
         ///    Fundamental Energies - Opposite Energetic Gender
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This typically leads to &lt;strong&gt;greater complementarity between the couple&lt;/strong&gt;, but also brings a &lt;strong&gt;slightly greater risk of misunderstanding&lt;/strong&gt;.
+        ///    Th Fundamental Energies consist of one Yin and one Yang Energy. This typically leads to &lt;strong&gt;greater complementarity&lt;/strong&gt; and can lead to greater harmony. However, this combination also carries a &lt;strong&gt;slightly greater risk of misunderstanding&lt;/strong&gt;, especially if the elements are in a &lt;a target=&quot;_blank&quot; href=&quot;{ChallengingTransformationLink}&quot;&gt;Challenging Transformation&lt;/a&gt;.
         ///&lt;/p&gt;.
         /// </summary>
         public static string main_gender_opposite {
@@ -5213,15 +5265,33 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Fundamental Energies - Same Energetic Gender
+        ///    Fundamental Energies - Both Yang
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This typically leads to &lt;strong&gt;greater understanding between the couple&lt;/strong&gt;, but also brings a &lt;strong&gt;slightly greater risk of conflict&lt;/strong&gt; as they may clash at times.
-        ///&lt;/p&gt;.
+        ///    This typically leads to &lt;strong&gt;greater understanding between the couple&lt;/strong&gt;, but also brings a &lt;strong&gt;slightly greater risk of conflict&lt;/strong&gt; as two Yang Energies may clash at times.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Sometimes in a Yang / Yang combination, there isn&apos;t enough mystery to maintain the magic and so the chemistry can start to fizzle out. This is less of an issue if the Character Energies are in a Yin / Yang combination or if either the Fundamen [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string main_gender_same {
+        public static string main_gender_same_yang {
             get {
-                return ResourceManager.GetString("main_gender_same", resourceCulture);
+                return ResourceManager.GetString("main_gender_same_yang", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Fundamental Energies - Both Yin
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This typically leads to &lt;strong&gt;greater understanding between the couple&lt;/strong&gt;, but also brings a &lt;strong&gt;slightly greater risk of stagnation&lt;/strong&gt; or &lt;strong&gt;hidden resentments&lt;/strong&gt;.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Sometimes in a Yin / Yin combination, there isn&apos;t enough engagement to maintain a strong connection and so the relationship can start to fizzle out. This is less of an issue if the Character Energies are in a Yin / Yang combination or if eithe [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string main_gender_same_yin {
+            get {
+                return ResourceManager.GetString("main_gender_same_yin", resourceCulture);
             }
         }
         

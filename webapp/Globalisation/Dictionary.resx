@@ -2122,9 +2122,6 @@
   <data name="character_gender_opposite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>compatibility\en-gb\character-gender-opposite.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="character_gender_same" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>compatibility\en-gb\character-gender-same.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="character_modality_different" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>compatibility\en-gb\character-modality-different.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -2184,9 +2181,6 @@
   </data>
   <data name="main_gender_opposite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>compatibility\en-gb\main-gender-opposite.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="main_gender_same" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>compatibility\en-gb\main-gender-same.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="main_modality_different" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>compatibility\en-gb\main-modality-different.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -2361,5 +2355,26 @@
   </data>
   <data name="Skip" xml:space="preserve">
     <value>Skip</value>
+  </data>
+  <data name="character_gender_same_yang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\character-gender-same-yang.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="character_gender_same_yin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\character-gender-same-yin.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_gender_same_yang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-gender-same-yang.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="main_gender_same_yin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\main-gender-same-yin.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="both_gender_same_yang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\both-gender-same-yang.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="both_gender_same_yin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>compatibility\en-gb\both-gender-same-yin.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="FindOutHowCompatibleYouAre" xml:space="preserve">
+    <value>How compatible are you?</value>
   </data>
 </root>

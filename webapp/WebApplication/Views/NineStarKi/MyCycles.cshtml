@@ -4,25 +4,26 @@
     ViewBag.Title = Dictionary.MyYearlyAndMonthlyCycles;
     ViewBag.SubTitle = Dictionary.MyYearlyAndMonthlyCycles;
 
-    Layout = "../Shared/_LayoutForm.cshtml";
+    Layout = "../Shared/_LayoutFormMedium.cshtml";
 }
 
 @Html.Partial("_BetaPopup")
 
 <div class="container main-content margin-bottom-0">
-    <div class="col-sm-12 padding-left-0 padding-right-0">
-        @if (Model != null && Model.IsProcessed)
-        {
-            @Html.Partial("_CyclesSummary", Model)
-        }
-    </div>
-</div>
-
-<div class="well">
-    @if (Model != null && Model.IsProcessed)
-    {
-        @Html.Partial("_Cycles", Model)
-    }
+    <article>
+        <div class="col-sm-12 padding-left-0 padding-right-0">
+            @if (Model != null && Model.IsProcessed)
+            {
+                @Html.Partial("_CyclesSummary", Model)
+            }
+        </div>
+        <div class="well">
+            @if (Model != null && Model.IsProcessed)
+            {
+                @Html.Partial("_Cycles", Model)
+            }
+        </div>
+    </article>
 </div>
 
 @Html.Partial("_CyclesJs")

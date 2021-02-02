@@ -3,7 +3,7 @@
     ViewBag.Title = K9.Base.Globalisation.Dictionary.Home;
     ViewBag.SubTitle = Dictionary.WelcomeSubTitle;
     ViewBag.Background = ViewBagHelper.EViewBackground.Jarallax;
-    Layout = "../Shared/_LayoutForm.cshtml";
+    Layout = "../Shared/_LayoutFormMedium.cshtml";
 }
 
 @Html.Partial("_BetaPopup")
@@ -20,7 +20,7 @@
 
         @Html.BootstrapActionLinkButton(Dictionary.PersonalProfileCalculator, "Index", "NineStarKi", null, "fa-yin-yang", EButtonClass.Large)
 
-        @Html.BootstrapActionLinkButton(Dictionary.LearnMoreAboutNineStarKi, "About", "Home", null, "fa-graduation-cap", EButtonClass.Info, EButtonClass.Large)
+        @Html.BootstrapActionLinkButton(Dictionary.FindOutHowCompatibleYouAre, "Compatibility", "NineStarKi", null, "fa-heart", EButtonClass.Info, EButtonClass.Large)
 
         @Html.BootstrapActionLinkButton(Dictionary.BookAConsultation, "BookConsultationStart", "Consultations", null, "fa-phone-alt", EButtonClass.Success, EButtonClass.Large)
     </div>

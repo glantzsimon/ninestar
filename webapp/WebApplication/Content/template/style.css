@@ -811,6 +811,7 @@ a.collapsible-panel-link {
 
     .well h4:first-of-type {
         font-weight: bold;
+        font-size: 1.5em;
     }
 
 .panel-default:last-of-type {
@@ -819,6 +820,10 @@ a.collapsible-panel-link {
 
 .panel-heading h4, .panel-heading h5 {
     color: black !important;
+}
+
+.panel-heading h4 {
+    font-size: 1.6em !important;
 }
 
 .panel-body {

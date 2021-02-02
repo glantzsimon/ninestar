@@ -83,7 +83,7 @@ namespace K9.WebApplication.Helpers
             return $"{energyName} {html.GetDisplayNameFor(expression)}";
         }
 
-        public static IDisposable PaidContent(this HtmlHelper html, MembershipOption.ESubscriptionType subscriptionType = MembershipOption.ESubscriptionType.MonthlyStandard,  bool silent = false)
+        public static IDisposable PaidContent(this HtmlHelper html, MembershipOption.ESubscriptionType subscriptionType = MembershipOption.ESubscriptionType.MonthlyStandard, bool silent = false)
         {
             var baseController = html.ViewContext.Controller as BaseNineStarKiController;
             var activeUserMembership = baseController?.GetActiveUserMembership();
@@ -119,7 +119,7 @@ namespace K9.WebApplication.Helpers
                 }
             }
 
-            if (!silent)
+            if (!silent && !showContent)
             {
                 var centerDiv = new TagBuilder(Tags.Div);
                 centerDiv.MergeAttribute(Base.WebApplication.Constants.Html.Attributes.Class,
@@ -127,16 +127,13 @@ namespace K9.WebApplication.Helpers
                 html.ViewContext.Writer.WriteLine(centerDiv.ToString(TagRenderMode.StartTag));
                 if (WebSecurity.IsAuthenticated)
                 {
-                    if (!showContent)
-                    {
-                        html.ViewContext.Writer.WriteLine(
-                            $"<h4><strong>{Dictionary.UpgradeMembershipFullText}</strong></h4>");
-                        html.ViewContext.Writer.WriteLine(html.BootstrapActionLinkButton(
-                            Dictionary.UpgradeMembershipText,
-                            "Index", "Membership", null, "fa-level-up-alt", EButtonClass.Large));
-                        html.ViewContext.Writer.WriteLine(
-                            $"<div class=\"inline\" data-toggle=\"tooltip\" title=\"{Dictionary.CreditsDescriptionUI}\">{html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership", null, "fa-money-bill-alt", EButtonClass.Large, EButtonClass.Info)}</div>");
-                    }
+                    html.ViewContext.Writer.WriteLine(
+                        $"<h4><strong>{Dictionary.UpgradeMembershipFullText}</strong></h4>");
+                    html.ViewContext.Writer.WriteLine(html.BootstrapActionLinkButton(
+                        Dictionary.UpgradeMembershipText,
+                        "Index", "Membership", null, "fa-level-up-alt", EButtonClass.Large));
+                    html.ViewContext.Writer.WriteLine(
+                        $"<div class=\"inline\" data-toggle=\"tooltip\" title=\"{Dictionary.CreditsDescriptionUI}\">{html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership", null, "fa-money-bill-alt", EButtonClass.Large, EButtonClass.Info)}</div>");
                 }
                 else
                 {

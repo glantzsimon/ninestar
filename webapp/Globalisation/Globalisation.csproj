@@ -102,8 +102,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Compatibility\en-gb\both-gender-same-yin.htm" />
     <Content Include="Compatibility\en-gb\character-gender-opposite.htm" />
-    <Content Include="Compatibility\en-gb\character-gender-same.htm" />
+    <Content Include="Compatibility\en-gb\both-gender-same-yang.htm" />
+    <Content Include="Compatibility\en-gb\character-gender-same-yang.htm" />
+    <Content Include="Compatibility\en-gb\character-gender-same-yin.htm" />
     <Content Include="Compatibility\en-gb\character-modality-different.htm" />
     <Content Include="Compatibility\en-gb\character-modality-same.htm" />
     <Content Include="Compatibility\en-gb\character-element-challenging.htm" />
@@ -113,7 +116,8 @@
     <Content Include="Compatibility\en-gb\character-element-supportive.htm" />
     <Content Include="Compatibility\en-gb\main-element-supportive.htm" />
     <Content Include="Compatibility\en-gb\main-gender-opposite.htm" />
-    <Content Include="Compatibility\en-gb\main-gender-same.htm" />
+    <Content Include="Compatibility\en-gb\main-gender-same-yang.htm" />
+    <Content Include="Compatibility\en-gb\main-gender-same-yin.htm" />
     <Content Include="Compatibility\en-gb\main-modality-different.htm" />
     <Content Include="Compatibility\en-gb\main-modality-same.htm" />
     <Content Include="Predictions\Monthly\en-gb\core-earth-month.htm" />

@@ -1,4 +1,5 @@
-﻿using K9.Base.DataAccessLayer.Models;
+﻿using K9.Base.DataAccessLayer.Enums;
+using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
 using K9.Base.WebApplication.Config;
 using K9.Base.WebApplication.Enums;
@@ -122,6 +123,7 @@ namespace K9.WebApplication.Controllers
             if (result.IsSuccess)
             {
                 var user = result.Data as User;
+                var isNewUser = !_userRepository.Find(e => e.Username == user.Username).Any();
                 var regResult = _accountService.RegisterOrLoginAuth(new UserAccount.RegisterModel
                 {
                     UserName = user.Username,
@@ -138,10 +140,11 @@ namespace K9.WebApplication.Controllers
                     _membershipService.CreateFreeMembership(user.Id);
                 }
 
-                if (regResult.IsSuccess)
+                if (regResult.IsSuccess && isNewUser)
                 {
-                    return RedirectToAction("RegisterPromoCode", "Account");
+                    return RedirectToAction("FacebookPostRegsiter", "Account", new { username = user.Username });
                 }
+
                 result.Errors.AddRange(regResult.Errors);
             }
 
@@ -163,44 +166,80 @@ namespace K9.WebApplication.Controllers
         }
 
         [Authorize]
-        public ActionResult RegisterPromoCode(string username)
+        public ActionResult FacebookPostRegsiter(string username)
         {
-            return View(new RegisterPromoCodeModel
+            var user = _userRepository.Find(e => e.Username == username).FirstOrDefault();
+
+            return View(new RegisterViewModel
             {
-                Username = username
+                RegisterModel = new UserAccount.RegisterModel
+                {
+                    UserName = username,
+                    BirthDate = user?.BirthDate ?? DateTime.Today.AddYears(-30),
+                    FirstName = user?.FirstName,
+                    LastName = user?.LastName,
+                    EmailAddress = user?.EmailAddress,
+                    PhoneNumber = user?.PhoneNumber,
+                    Gender = user?.Gender ?? EGender.Other
+                }
             });
         }
 
         [HttpPost]
         [Authorize]
-        public ActionResult RegisterPromoCode(RegisterPromoCodeModel model)
+        public ActionResult FacebookPostRegsiter(RegisterViewModel model)
         {
             try
             {
-                if (_userService.CheckIfPromoCodeIsUsed(model.PromoCode))
-                {
-                    ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
-                    return View(model);
-                };
-                
-                var user = _userRepository.Find(e => e.Username == model.Username).First();
+                var user = _userRepository.Find(e => e.Username == model.RegisterModel.UserName).First();
 
-                try
-                {  
-                    _userService.UsePromoCode(user.Id, model.PromoCode);
-                }
-                catch (Exception e)
+                if (!string.IsNullOrEmpty(model.PromoCode))
                 {
-                    ModelState.AddModelError("PromoCode", e.Message);
+                    if (_userService.CheckIfPromoCodeIsUsed(model.PromoCode))
+                    {
+                        ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
+                        return View(model);
+                    }
+
+                    try
+                    {
+                        _userService.UsePromoCode(user.Id, model.PromoCode);
+                        _membershipService.ProcessPurchaseWithPromoCode(user.Id, model.PromoCode);
+                    }
+                    catch (Exception e)
+                    {
+                        ModelState.AddModelError("PromoCode", e.Message);
+                    }
                 }
 
-                _membershipService.ProcessPurchaseWithPromoCode(user.Id, model.PromoCode);
+                // Update user information
+                user.FirstName = model.RegisterModel.FirstName;
+                user.LastName = model.RegisterModel.LastName;
+                user.BirthDate = model.RegisterModel.BirthDate;
+                user.Gender = model.RegisterModel.Gender;
+                user.EmailAddress = model.RegisterModel.EmailAddress;
+                user.PhoneNumber = model.RegisterModel.PhoneNumber;
+
+                _userRepository.Update(user);
+
+                // Redirect to previous profile or compatibility reading if set
+                var lastCompatibility = SessionHelper.GetLastCompatibility(true, false);
+                var lastProfile = SessionHelper.GetLastProfile(true, false);
+
+                if (lastCompatibility != null)
+                {
+                    return RedirectToAction("RetrieveLastCompatibility", "NineStarKi");
+                }
+                if (lastProfile != null)
+                {
+                    return RedirectToAction("RetrieveLastProfile", "NineStarKi");
+                }
 
                 return RedirectToAction("Index", "Home");
             }
             catch (Exception e)
             {
-                ModelState.AddModelError("PromoCode", e.Message);
+                ModelState.AddModelError("", e.Message);
                 return View(model);
             }
         }

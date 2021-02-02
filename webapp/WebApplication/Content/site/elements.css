@@ -22,19 +22,15 @@ article h4 {
     margin-top: 32px;
     margin-bottom: 15px;
     font-weight: bold;
-    font-size: 120%;
+    font-size: 1.5em;
     color: #444;
-}
-
-article h4 a.collapsible-panel-link {
-    font-size: 120%;
 }
 
 article h5 {
     margin-top: 32px;
     margin-bottom: 15px;
     font-weight: bold;
-    font-size: 110%;
+    font-size: 1.2em;
     line-height: 1.5em;
     color: #444;
 }

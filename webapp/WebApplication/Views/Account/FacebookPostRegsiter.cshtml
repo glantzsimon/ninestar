@@ -39,7 +39,7 @@
         <hr />
         @Html.BootstrapEditorFor(model => model.PromoCode)
 
-        @Html.BootstrapButton(Dictionary.Submit)
+        @Html.BootstrapButton(Dictionary.Submit, EButtonType.Submit, "", EButtonClass.Large)
         @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.Skip, "Index", "Home", null, "fa-angle-right")
     }
 }

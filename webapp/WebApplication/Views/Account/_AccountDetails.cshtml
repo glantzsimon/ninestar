@@ -28,7 +28,7 @@
         }
 
         <hr/>
-        @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Update, EButtonType.Submit, "fa-save")
-        @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.DeleteMyAccount, "ConfirmDeleteAccount", "Account", new {id = Model.Id}, "fa-trash-alt", EButtonClass.Danger)
+        @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Update, EButtonType.Submit, "fa-save", EButtonClass.Large)
+        @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.DeleteMyAccount, "ConfirmDeleteAccount", "Account", new {id = Model.Id}, "fa-trash-alt", EButtonClass.Danger, EButtonClass.Large)
     }
 }

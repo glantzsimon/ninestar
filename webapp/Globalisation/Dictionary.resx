@@ -1985,7 +1985,7 @@
     <value>Retrieve saved Personal Chart</value>
   </data>
   <data name="SexualityGenderRelationLabel" xml:space="preserve">
-    <value>Sexuality and how it is influenced by the relationship between biological gender and the energetic gender of the Fundamental and Character Energies</value>
+    <value>Sexuality, biological gender and Yin and Yang</value>
   </data>
   <data name="Contact" xml:space="preserve">
     <value>Contact</value>
@@ -2376,5 +2376,8 @@
   </data>
   <data name="FindOutHowCompatibleYouAre" xml:space="preserve">
     <value>How compatible are you?</value>
+  </data>
+  <data name="PersonalChart" xml:space="preserve">
+    <value>Personal Chart</value>
   </data>
 </root>

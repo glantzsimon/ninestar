@@ -13,4 +13,8 @@
     form .well div .col-sm-12, .well form div .col-sm-12 {
         padding: 0;
     }
+
+    .ninestar-summary-container h3 {
+        font-size: 1.2em !important;
+    }
 }

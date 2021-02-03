@@ -1725,7 +1725,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Character Energies - Opposite Energetic Gender
+        ///    Character Energies - Yin / Yang
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This typically leads to &lt;strong&gt;much greater sexual compatibility and chemistry&lt;/strong&gt; in romantic relationships. This combination also typically results in &lt;strong&gt;greater complementarity on an emotional level&lt;/strong&gt;, but may result in &lt;strong&gt;some misunderstandings&lt;/strong&gt;.
@@ -3474,11 +3474,10 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    Each of the 5 elements relates to the other elements in 3 distinct ways, called &quot;transformations&quot;. Traditional Chinese medicine use these same transformations to help make medical diagnoses, as well as to prescribe appropriate treatments to bring the body back into balance.
         ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    &lt;strong&gt;There are 3 different types of transformation or relationship:&lt;/strong&gt;
-        ///&lt;/p&gt;
         ///
-        ///&lt;div id=&quot;s [rest of string was truncated]&quot;;.
+        ///&lt;h4&gt;There are 3 different types of transformation or relationship:&lt;/h4&gt;
+        ///
+        ///&lt;div id=&quot;same-transformation&quot; s [rest of string was truncated]&quot;;.
         /// </summary>
         public static string five_transformations {
             get {
@@ -5251,7 +5250,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Fundamental Energies - Opposite Energetic Gender
+        ///    Fundamental Energies - Yin / Yang
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    Th Fundamental Energies consist of one Yin and one Yang Energy. This typically leads to &lt;strong&gt;greater complementarity&lt;/strong&gt; and can lead to greater harmony. However, this combination also carries a &lt;strong&gt;slightly greater risk of misunderstanding&lt;/strong&gt;, especially if the elements are in a &lt;a target=&quot;_blank&quot; href=&quot;{ChallengingTransformationLink}&quot;&gt;Challenging Transformation&lt;/a&gt;.
@@ -6487,6 +6486,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Personal Chart.
+        /// </summary>
+        public static string PersonalChart {
+            get {
+                return ResourceManager.GetString("PersonalChart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Personal Development.
         /// </summary>
         public static string PersonalDevelopemntLabel {
@@ -7373,7 +7381,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sexuality and how it is influenced by the relationship between biological gender and the energetic gender of the Fundamental and Character Energies.
+        ///   Looks up a localized string similar to Sexuality, biological gender and Yin and Yang.
         /// </summary>
         public static string SexualityGenderRelationLabel {
             get {

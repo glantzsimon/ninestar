@@ -1,6 +1,23 @@
 ﻿.ninestar-summary-container {
     width: 100%;
+    padding: 1px;
+    padding-bottom: 10px;
+    border-radius: 6px;
 }
+
+    .ninestar-summary-container a {
+        -webkit-transition: all 0.35s ease-in-out;
+        -moz-transition: all 0.35s ease-in-out;
+        -o-transition: all 0.35s ease-in-out;
+        transition: all 0.35s ease-in-out;
+    }
+
+    .ninestar-summary-container:hover {
+        background-color: white !important;
+        -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    }
 
     .ninestar-summary-container h3 {
         font-size: 1.1em;
@@ -16,6 +33,10 @@
         margin-bottom: 10px;
         color: black !important;
     }
+
+#energy-summary-container a {
+    text-decoration: none !important;
+}
 
 .ninestar-summmary {
     width: 100%;

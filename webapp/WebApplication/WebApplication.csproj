@@ -458,6 +458,7 @@
     <Content Include="Content\site\sections\ninestar.css" />
     <Content Include="Content\site\sections\payments.css" />
     <Content Include="Content\site\sections\archive.css" />
+    <Content Include="Content\site\pills.css" />
     <Content Include="Content\site\shared-xs.css" />
     <Content Include="Content\site\shared-sm.css" />
     <Content Include="Content\site\shared-md.css" />
@@ -800,6 +801,8 @@
     <Content Include="Images\ninestar\modalities\dynamic.png" />
     <Content Include="Images\ninestar\modalities\flexible.png" />
     <Content Include="Images\ninestar\modalities\stable.png" />
+    <Content Include="Images\ui\predictions.png" />
+    <Content Include="Images\ui\sexuality.png" />
     <Content Include="Images\ninestar\seasons\centre.png" />
     <Content Include="Images\ninestar\seasons\earlyspring.png" />
     <Content Include="Images\ninestar\seasons\earlyautumn.png" />

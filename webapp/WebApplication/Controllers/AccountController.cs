@@ -140,9 +140,14 @@ namespace K9.WebApplication.Controllers
                     _membershipService.CreateFreeMembership(user.Id);
                 }
 
-                if (regResult.IsSuccess && isNewUser)
+                if (regResult.IsSuccess)
                 {
-                    return RedirectToAction("FacebookPostRegsiter", "Account", new { username = user.Username });
+                    if (isNewUser)
+                    {
+                        return RedirectToAction("FacebookPostRegsiter", "Account", new { username = user.Username });
+                    }
+
+                    return ProcessSavedResults();
                 }
 
                 result.Errors.AddRange(regResult.Errors);
@@ -222,26 +227,31 @@ namespace K9.WebApplication.Controllers
 
                 _userRepository.Update(user);
 
-                // Redirect to previous profile or compatibility reading if set
-                var lastCompatibility = SessionHelper.GetLastCompatibility(true, false);
-                var lastProfile = SessionHelper.GetLastProfile(true, false);
-
-                if (lastCompatibility != null)
-                {
-                    return RedirectToAction("RetrieveLastCompatibility", "NineStarKi");
-                }
-                if (lastProfile != null)
-                {
-                    return RedirectToAction("RetrieveLastProfile", "NineStarKi");
-                }
-
-                return RedirectToAction("Index", "Home");
+                return ProcessSavedResults();
             }
             catch (Exception e)
             {
                 ModelState.AddModelError("", e.Message);
                 return View(model);
             }
+        }
+
+        public ActionResult ProcessSavedResults()
+        {
+            // Redirect to previous profile or compatibility reading if set
+            var lastCompatibility = SessionHelper.GetLastCompatibility(true, false);
+            var lastProfile = SessionHelper.GetLastProfile(true, false);
+
+            if (lastCompatibility != null)
+            {
+                return RedirectToAction("RetrieveLastCompatibility", "NineStarKi");
+            }
+            if (lastProfile != null)
+            {
+                return RedirectToAction("RetrieveLastProfile", "NineStarKi");
+            }
+
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult AccountLocked()

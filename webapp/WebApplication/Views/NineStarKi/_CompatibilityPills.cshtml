@@ -11,7 +11,10 @@
             <ul class="nav nav-pills nav-justified">
                 <li class="active"><a data-toggle="tab" href="#overall">@Dictionary.OverallCompatibility</a></li>
                 <li><a data-toggle="tab" href="#fundamental">@Dictionary.FundamentalEnergiesCompatibility</a></li>
-                <li><a data-toggle="tab" href="#sexuality">@Dictionary.SexualChemistryDetails</a></li>
+                @if (!Model.IsHideSexualChemistry)
+                {
+                    <li><a data-toggle="tab" href="#sexuality">@Dictionary.SexualChemistryDetails</a></li>
+                }
             </ul>
 
             <div class="tab-content">
@@ -31,9 +34,11 @@
                     @Html.Panel(Dictionary.FundamentalEnergiesCompatibility, Model.FundamentalEnergiesCompatibility)
                 </div>
 
-                <div id="sexuality" class="tab-pane fade">
-                    @Html.Panel(Dictionary.SexualChemistryDetails, Model.SexualChemistryDetails)
-                </div>
+                @if (!Model.IsHideSexualChemistry)
+                    <div id="sexuality" class="tab-pane fade">
+                        @Html.Panel(Dictionary.SexualChemistryDetails, Model.SexualChemistryDetails)
+                    </div>
+                }
             </div>
         </div>
     }

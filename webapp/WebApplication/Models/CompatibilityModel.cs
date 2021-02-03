@@ -4,7 +4,9 @@ using K9.WebApplication.Enums;
 using K9.WebApplication.Extensions;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
+using K9.Globalisation;
 
 namespace K9.WebApplication.Models
 {
@@ -63,11 +65,12 @@ namespace K9.WebApplication.Models
         
         public string FundamentalEnergiesCompatibility { get; }
         
-        public string OverallCompatibility { get; }
-
         public string SexualChemistryDetails { get; }
 
         public bool IsProcessed { get; set; }
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DoNotDisplaySexualityLabel)]
+        public bool IsHideSexualChemistry { get; set; }
 
         public bool IsUpgradeRequired { get; set; }
         

@@ -2847,6 +2847,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do not display sexual chemistry.
+        /// </summary>
+        public static string DoNotDisplaySexualityLabel {
+            get {
+                return ResourceManager.GetString("DoNotDisplaySexualityLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sorry, a contact with that email address already exists..
         /// </summary>
         public static string DuplicateContactError {

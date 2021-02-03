@@ -17,6 +17,10 @@ ul.image-pill {
             color: #337ab7 !important;
         }
 
+        ul.image-pill li:not(:last-child) a {
+            margin-right: 1px;
+        }
+
         ul.image-pill li.active a {
             background-color: white !important;
             -webkit-box-shadow: 0 0 34px rgba(0, 0, 0, 0.5);

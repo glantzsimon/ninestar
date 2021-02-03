@@ -35,6 +35,7 @@
                 </div>
 
                 @if (!Model.IsHideSexualChemistry)
+                {
                     <div id="sexuality" class="tab-pane fade">
                         @Html.Panel(Dictionary.SexualChemistryDetails, Model.SexualChemistryDetails)
                     </div>

@@ -49,7 +49,9 @@ namespace K9.DataAccessLayer.Models
         [Required]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GenderLabel)]
         public EGender SecondGender { get; set; }
-        
+
+        public bool IsHideSexuality { get; set; }
+
         public virtual User User { get; set; }
 
         public virtual UserMembership UserMembership { get; set; }

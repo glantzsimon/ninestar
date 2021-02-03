@@ -47,7 +47,7 @@ namespace K9.WebApplication.Helpers
             {
                 DateTime.TryParse(Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastProfileDateOfBirth), out var dateOfBirth);
                 Enum.TryParse<EGender>(Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastProfileGender), out var gender);
-                
+
                 if (remove)
                     ClearLastProfile();
 
@@ -69,6 +69,7 @@ namespace K9.WebApplication.Helpers
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastCompatibilityProfileGender2, model.NineStarKiModel2.PersonModel.Gender);
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastCompatibilityProfileName1, model.NineStarKiModel1.PersonModel.Name);
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastCompatibilityProfileName2, model.NineStarKiModel2.PersonModel.Name);
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastCompatibilityHideSexuality, model.IsHideSexualChemistry);
 
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.IsRetrieveCompatibility, true);
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.CompatibilityStoredOn, DateTime.Today.ToString(Constants.FormatConstants.SessionDateTimeFormat));
@@ -87,6 +88,7 @@ namespace K9.WebApplication.Helpers
                 DateTime.TryParse(Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastCompatibilityProfileDateOfBirth2), out var dateOfBirth2);
                 Enum.TryParse<EGender>(Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastCompatibilityProfileGender1), out var gender1);
                 Enum.TryParse<EGender>(Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastCompatibilityProfileGender2), out var gender2);
+                var hideSexuality = Base.WebApplication.Helpers.SessionHelper.GetBoolValue(Constants.SessionConstants.LastCompatibilityHideSexuality);
 
                 if (remove)
                     ClearLastCompatibility();
@@ -103,7 +105,10 @@ namespace K9.WebApplication.Helpers
                         DateOfBirth = dateOfBirth2,
                         Gender = gender2,
                         Name = Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastCompatibilityProfileName2)
-                    }));
+                    }))
+                {
+                    IsHideSexualChemistry = hideSexuality
+                };
             }
             return null;
         }

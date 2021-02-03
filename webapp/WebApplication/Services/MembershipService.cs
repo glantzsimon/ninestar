@@ -138,7 +138,7 @@ namespace K9.WebApplication.Services
             return false;
         }
 
-        public bool IsCompleteRelationshipCompatibilityReading(int? userId, PersonModel personModel1, PersonModel personModel2)
+        public bool IsCompleteRelationshipCompatibilityReading(int? userId, PersonModel personModel1, PersonModel personModel2, bool isHideSexuality)
         {
             var activeUserMembership = GetActiveUserMembership(userId);
             if (activeUserMembership?.RelationshipCompatibilityReadings?.Any(e =>
@@ -149,7 +149,7 @@ namespace K9.WebApplication.Services
             }
             if (activeUserMembership?.NumberOfRelationshipCompatibilityReadingsLeft > 0 || activeUserMembership?.NumberOfCreditsLeft > 0)
             {
-                CreateNewUserRelationshipCompatibilityReading(activeUserMembership, personModel1, personModel2);
+                CreateNewUserRelationshipCompatibilityReading(activeUserMembership, personModel1, personModel2, isHideSexuality);
                 return true;
             }
 
@@ -422,7 +422,7 @@ namespace K9.WebApplication.Services
             _userProfileReadingsRepository.Create(userProfileReading);
         }
 
-        private void CreateNewUserRelationshipCompatibilityReading(UserMembership userMembership, PersonModel personModel1, PersonModel personModel2)
+        private void CreateNewUserRelationshipCompatibilityReading(UserMembership userMembership, PersonModel personModel1, PersonModel personModel2, bool isHideSexuality)
         {
             var userRelationshipCompatibilityReading = new UserRelationshipCompatibilityReading
             {
@@ -433,7 +433,8 @@ namespace K9.WebApplication.Services
                 SecondDateOfBirth = personModel2.DateOfBirth,
                 SecondGender = personModel2.Gender,
                 UserId = _authentication.CurrentUserId,
-                UserMembershipId = userMembership.Id
+                UserMembershipId = userMembership.Id,
+                IsHideSexuality = isHideSexuality
             };
 
             if (userMembership.NumberOfRelationshipCompatibilityReadingsLeft <= 0)

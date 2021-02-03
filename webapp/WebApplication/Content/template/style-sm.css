@@ -17,4 +17,12 @@
     .ninestar-summary-container h3 {
         font-size: 1.2em !important;
     }
+
+    .btn {
+        margin-top: 5px;
+    }
+
+    .btn-group .btn {
+        margin-top: 0 !important;
+    }
 }

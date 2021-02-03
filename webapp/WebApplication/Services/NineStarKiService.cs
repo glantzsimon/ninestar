@@ -93,10 +93,10 @@ namespace K9.WebApplication.Services
             {
                 DateOfBirth = dateOfBirth2,
                 Gender = gender2
-            });
+            }, false);
         }
 
-        public CompatibilityModel CalculateCompatibility(PersonModel personModel1, PersonModel personModel2)
+        public CompatibilityModel CalculateCompatibility(PersonModel personModel1, PersonModel personModel2, bool isHideSexuality)
         {
             var nineStarKiModel1 = CalculateNineStarKiProfile(personModel1, true);
             var nineStarKiModel2 = CalculateNineStarKiProfile(personModel2, true);
@@ -104,14 +104,15 @@ namespace K9.WebApplication.Services
             var model = new CompatibilityModel(nineStarKiModel1, nineStarKiModel2)
             {
                 IsProcessed = true,
-                IsUpgradeRequired = true
+                IsUpgradeRequired = true,
+                IsHideSexualChemistry = isHideSexuality
             };
 
             if (_authentication.IsAuthenticated)
             {
                 if (_roles.CurrentUserIsInRoles(RoleNames.Administrators) ||
                     _membershipService.IsCompleteRelationshipCompatibilityReading(_authentication.CurrentUserId,
-                        personModel1, personModel2))
+                        personModel1, personModel2, isHideSexuality))
                 {
                     model.IsUpgradeRequired = false;
                 }
@@ -124,17 +125,18 @@ namespace K9.WebApplication.Services
         {
             var reading = _userRelationshipCompatibilityReadingRepository.Find(userRelationshipCompatibilityId);
             return CalculateCompatibility(new PersonModel
-                {
-                    Name = reading.FirstName,
-                    DateOfBirth = reading.FirstDateOfBirth,
-                    Gender = reading.FirstGender
-                },
+            {
+                Name = reading.FirstName,
+                DateOfBirth = reading.FirstDateOfBirth,
+                Gender = reading.FirstGender
+            },
                 new PersonModel
                 {
                     Name = reading.SecondName,
                     DateOfBirth = reading.SecondDateOfBirth,
                     Gender = reading.SecondGender
-                });
+                },
+                reading.IsHideSexuality);
         }
 
         public NineStarKiSummaryViewModel GetNineStarKiSummaryViewModel()

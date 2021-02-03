@@ -21,6 +21,7 @@
         public const string LastCompatibilityProfileName1 = "LastCompatibilityProfileName1";
         public const string LastCompatibilityProfileGender2 = "LastCompatibilityProfileGender2";
         public const string LastCompatibilityProfileName2 = "LastCompatibilityProfileName2";
+        public const string LastCompatibilityHideSexuality = "LastCompatibilityHideSexuality";
         public const string IsRetrieveCompatibility = "IsRetrieveCompatibility";
         public const string CompatibilityStoredOn = "CompatibilityStoredOn";
     }

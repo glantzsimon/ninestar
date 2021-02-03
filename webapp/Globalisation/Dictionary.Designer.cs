@@ -3935,6 +3935,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to In Depth Analysis.
+        /// </summary>
+        public static string InDepthAnalysis {
+            get {
+                return ResourceManager.GetString("InDepthAnalysis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Influencer.
         /// </summary>
         public static string Influencer {

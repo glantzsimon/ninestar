@@ -2380,6 +2380,9 @@
   <data name="FindOutHowCompatibleYouAre" xml:space="preserve">
     <value>How compatible are you?</value>
   </data>
+  <data name="InDepthAnalysis" xml:space="preserve">
+    <value>In Depth Analysis</value>
+  </data>
   <data name="PersonalChart" xml:space="preserve">
     <value>Personal Chart</value>
   </data>

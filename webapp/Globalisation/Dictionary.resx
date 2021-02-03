@@ -2386,4 +2386,7 @@
   <data name="PersonalChart" xml:space="preserve">
     <value>Personal Chart</value>
   </data>
+  <data name="CyclesSubTitle" xml:space="preserve">
+    <value>Cycles</value>
+  </data>
 </root>

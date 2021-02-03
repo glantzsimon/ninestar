@@ -26,7 +26,7 @@
                         : "fa-random"
                     : Dictionary.Select;
                 <div style="padding-top: 1px;">
-                    @Html.BootstrapActionLinkButton(buttonText, Model.IsUpgrade ? "SwitchStart" : "PurchaseStart", "Membership", new { membershipOptionId = Model.MembershipOption.Id }, iconClass)
+                    @Html.BootstrapActionLinkButton(buttonText, Model.IsUpgrade ? "SwitchStart" : "PurchaseStart", "Membership", new { membershipOptionId = Model.MembershipOption.Id }, iconClass, EButtonClass.Large)
                 </div>
             }
             else

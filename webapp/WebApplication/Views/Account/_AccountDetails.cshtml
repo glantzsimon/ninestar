@@ -24,7 +24,7 @@
 
         if (!Model.IsOAuth)
         {
-            <span>@Html.ActionLink(K9.Base.Globalisation.Dictionary.ChangePassword, "UpdatePassword")</span>
+            @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.ChangePassword, "UpdatePassword", "AccountController", null, "", EButtonClass.Large)
         }
 
         <hr/>

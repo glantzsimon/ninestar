@@ -142,6 +142,7 @@ namespace K9.WebApplication.Controllers
 
                 if (regResult.IsSuccess)
                 {
+                    isNewUser = true;
                     if (isNewUser)
                     {
                         return RedirectToAction("FacebookPostRegsiter", "Account", new { username = user.Username });

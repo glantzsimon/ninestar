@@ -1728,7 +1728,7 @@ namespace K9.Globalisation {
         ///    Character Energies - Yin / Yang
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    This typically leads to &lt;strong&gt;much greater sexual compatibility and chemistry&lt;/strong&gt; in romantic relationships. This combination also typically results in &lt;strong&gt;greater complementarity on an emotional level&lt;/strong&gt;, but may result in &lt;strong&gt;some misunderstandings&lt;/strong&gt;.
+        ///    This combination typically leads to &lt;strong&gt;much greater compatibility and chemistry&lt;/strong&gt; in romantic relationships. This combination also typically results in &lt;strong&gt;greater complementarity on an emotional level&lt;/strong&gt;, but may result in &lt;strong&gt;some misunderstandings&lt;/strong&gt;.
         ///&lt;/p&gt;.
         /// </summary>
         public static string character_gender_opposite {
@@ -2627,6 +2627,15 @@ namespace K9.Globalisation {
         public static string cycles {
             get {
                 return ResourceManager.GetString("cycles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cycles.
+        /// </summary>
+        public static string CyclesSubTitle {
+            get {
+                return ResourceManager.GetString("CyclesSubTitle", resourceCulture);
             }
         }
         
@@ -5049,7 +5058,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5 class=&quot;well&quot;&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This is potentially quite a harmonious combination; however both parties can have quite a bold character, increasing the risk of clashing.
         ///&lt;/h5&gt;
         ///

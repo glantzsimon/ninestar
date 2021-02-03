@@ -1,4 +1,8 @@
-﻿ul.image-pill {
+﻿.nav-tabs a, .nav-pills a {
+    font-size: 1.2em !important;
+}
+
+ul.image-pill {
     margin-bottom: 30px;
 }
 

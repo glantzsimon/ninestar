@@ -2389,4 +2389,7 @@
   <data name="CyclesSubTitle" xml:space="preserve">
     <value>Cycles</value>
   </data>
+  <data name="RedeemPromoCode" xml:space="preserve">
+    <value>Redeem PromoCode</value>
+  </data>
 </root>

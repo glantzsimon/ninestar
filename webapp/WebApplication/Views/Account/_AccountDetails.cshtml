@@ -1,5 +1,5 @@
 ﻿@using K9.Base.WebApplication.Helpers
-@model User
+@model K9.WebApplication.ViewModels.MyAccountViewModel
 
 @Html.PopupAlert()
 
@@ -7,28 +7,32 @@
 {
     using (Html.BeginBootstrapForm())
     {
-        @Html.HiddenFor(model => model.Id)
-        @Html.HiddenFor(model => model.Username)
-        @Html.HiddenFor(model => model.EmailAddress)
-        @Html.Hidden("Password", "th1515n0tmypa55w0rd")
+        @Html.HiddenFor(model => model.User.Id)
+        @Html.HiddenFor(model => model.User.Username)
+        @Html.HiddenFor(model => model.User.EmailAddress)
+        @Html.Hidden("User.Password", "th1515n0tmypa55w0rd")
 
         <div>
-            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.FirstName)</div>
-            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.LastName)</div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.User.FirstName)</div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.User.LastName)</div>
         </div>
         <div>
-            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.BirthDate)</div>
-            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.Gender)</div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.User.BirthDate)</div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.User.Gender)</div>
         </div>
-        @Html.BootstrapEditorFor(model => model.PhoneNumber)
+        @Html.BootstrapEditorFor(model => model.User.PhoneNumber)
 
-        if (!Model.IsOAuth)
+        <hr />
+        @Html.BootstrapEditorFor(model => model.PromoCode)
+        
+        <hr />
+        @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Update, EButtonType.Submit, "fa-save", EButtonClass.Large)
+        @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.DeleteMyAccount, "ConfirmDeleteAccount", "Account", new { id = Model.User.Id }, "fa-trash-alt", EButtonClass.Danger, EButtonClass.Large)
+        <hr />
+
+        if (!Model.User.IsOAuth)
         {
             @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.ChangePassword, "UpdatePassword", "AccountController", null, "", EButtonClass.Large)
         }
-
-        <hr/>
-        @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Update, EButtonType.Submit, "fa-save", EButtonClass.Large)
-        @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.DeleteMyAccount, "ConfirmDeleteAccount", "Account", new {id = Model.Id}, "fa-trash-alt", EButtonClass.Danger, EButtonClass.Large)
     }
 }

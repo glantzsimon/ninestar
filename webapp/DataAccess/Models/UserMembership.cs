@@ -54,6 +54,7 @@ namespace K9.DataAccessLayer.Models
         [LinkedColumn(LinkedTableName = "User", LinkedColumnName = "Username")]
         public string UserName { get; set; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubscriptionTypeLabel)]
         [LinkedColumn(LinkedTableName = "MembershipOption", LinkedColumnName = "Description")]
         public string MembershipOptionName { get; set; }
 

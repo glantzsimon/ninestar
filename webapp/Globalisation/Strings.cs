@@ -77,6 +77,7 @@
 
         public static class Names
         {
+            public const string RedeemPromoCode = "RedeemPromoCode";
             public const string UserData = "UserData";
             public const string UserDatas = "UserDatas";
             public const string Contacts = "Contacts";

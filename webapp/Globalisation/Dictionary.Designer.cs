@@ -6882,6 +6882,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Redeem PromoCode.
+        /// </summary>
+        public static string RedeemPromoCode {
+            get {
+                return ResourceManager.GetString("RedeemPromoCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register Promo Code.
         /// </summary>
         public static string RegisterPromoCode {

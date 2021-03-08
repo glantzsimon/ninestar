@@ -428,13 +428,34 @@ namespace K9.WebApplication.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult UpdateAccount(User model)
+        public ActionResult UpdateAccount(MyAccountViewModel model)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _userRepository.Update(model);
+                    if (!string.IsNullOrEmpty(model.PromoCode))
+                    {
+                        try
+                        {
+                            if (_userService.CheckIfPromoCodeIsUsed(model.PromoCode))
+                            {
+                                ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
+                            }
+                            else
+                            {
+                                _userService.UsePromoCode(model.User.Id, model.PromoCode);
+                                _membershipService.ProcessPurchaseWithPromoCode(model.User.Id, model.PromoCode);
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            ModelState.AddModelError("PromoCode", e.Message);
+                        }
+                    }
+
+                    _userRepository.Update(model.User);
+
                     ViewBag.IsPopupAlert = true;
                     ViewBag.AlertOptions = new AlertOptions
                     {
@@ -452,8 +473,9 @@ namespace K9.WebApplication.Controllers
 
             return View("MyAccount", new MyAccountViewModel
             {
-                User = model,
-                Membership = _membershipService.GetActiveUserMembership(model.Id)
+                User = model.User,
+                PromoCode = model.PromoCode,
+                Membership = _membershipService.GetActiveUserMembership(model.User.Id)
             });
         }
 

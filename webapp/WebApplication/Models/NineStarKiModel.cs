@@ -12,7 +12,7 @@ namespace K9.WebApplication.Models
 
     public class NineStarKiModel
     {
-        private const bool invertYearlyPredictionYearForYinEnergies = false;
+        private const bool invertCycleYinEnergies = true;
 
         public NineStarKiModel()
         {
@@ -269,7 +269,7 @@ namespace K9.WebApplication.Models
             var offset = todayYearEnergy - personalYearEnergy;
             var lifeCycleYearEnergy = LoopEnergyNumber(5 - offset);
 
-            var energy = (ENineStarKiEnergy)(PersonModel.Gender.IsYin() && invertYearlyPredictionYearForYinEnergies ? InvertEnergy(lifeCycleYearEnergy) : lifeCycleYearEnergy);
+            var energy = (ENineStarKiEnergy)(PersonModel.Gender.IsYin() && invertCycleYinEnergies ? InvertEnergy(lifeCycleYearEnergy) : lifeCycleYearEnergy);
 
             return new NineStarKiEnergy(energy, ENineStarKiEnergyType.MainEnergy, PersonModel.IsAdult(), ENineStarKiEnergyCycleType.YearlyCycleEnergy);
         }

@@ -89,7 +89,9 @@
             public const string UserPromoCodes = "UserPromoCodes";
             public const string Donations = "Donations";
             public const string Consultation = "Consultation";
+            public const string UserConsultation = "UserConsultation";
             public const string Consultations = "Consultations";
+            public const string UserConsultations = "UserConsultations";
             public const string MembershipOptions = "MembershipOptions";
             public const string ProfileReadings = "ProfileReadings";
             public const string MembershipOption = "MembershipOption";

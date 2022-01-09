@@ -12,7 +12,7 @@ namespace K9.DataAccessLayer.Models
 {
     [AutoGenerateName]
     [Grammar(ResourceType = typeof(Dictionary), DefiniteArticleName = Strings.Grammar.MasculineDefiniteArticle, IndefiniteArticleName = Strings.Grammar.MasculineIndefiniteArticle)]
-    [Name(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Consultation, PluralName = Globalisation.Strings.Names.Consultations)]
+    [Name(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.UserConsultation, PluralName = Globalisation.Strings.Names.UserConsultations)]
     [DefaultPermissions(Role = RoleNames.DefaultUsers)]
     public class UserConsultation : ObjectBase, IUserData
     {

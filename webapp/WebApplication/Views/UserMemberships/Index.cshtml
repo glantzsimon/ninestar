@@ -12,11 +12,11 @@
     AllowDelete = ((BaseController<UserMembership>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
     VisibleColumns = new List<string>
     {
-        "IsActive",
+        "UserName",
+        //"IsActive",
         "StartsOn",
         "EndsOn",
-        "IsDeactivated",
-        "UserName",
+        //"IsDeactivated",
         "MembershipOptionName"
     }
 })

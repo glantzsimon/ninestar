@@ -33,6 +33,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         private readonly Mock<IOptions<StripeConfiguration>> _stripeConfig = new Mock<IOptions<StripeConfiguration>>();
         private readonly Mock<IStripeService> _stripeService = new Mock<IStripeService>();
         private readonly Mock<IContactService> _contactService = new Mock<IContactService>();
+        private readonly Mock<IUserService> _userService = new Mock<IUserService>();
         private MembershipService _Membershipservice;
 
         private readonly int _userId = 1;
@@ -116,7 +117,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                 _mailer.Object,
                 _config.Object,
                 new Mock<IRepository<PromoCode>>().Object,
-                new Mock<UserService>().Object);
+                _userService.Object);
         }
 
         [Fact]

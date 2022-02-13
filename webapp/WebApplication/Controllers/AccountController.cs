@@ -419,6 +419,17 @@ namespace K9.WebApplication.Controllers
         }
 
         [Authorize]
+        public ActionResult ViewAccount(int userId)
+        {
+            var user = _userRepository.Find(u => u.Id == userId).FirstOrDefault();
+            return View("MyAccount", new MyAccountViewModel
+            {
+                User = user,
+                Membership = _membershipService.GetActiveUserMembership(user?.Id)
+            });
+        }
+
+        [Authorize]
         [HttpGet]
         public ActionResult UpdateAccount()
         {

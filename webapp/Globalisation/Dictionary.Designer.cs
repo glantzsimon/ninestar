@@ -1456,6 +1456,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Assign Credits.
+        /// </summary>
+        public static string AssignCredits {
+            get {
+                return ResourceManager.GetString("AssignCredits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assign Subscription.
+        /// </summary>
+        public static string AssignMembership {
+            get {
+                return ResourceManager.GetString("AssignMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assign Promo Code.
+        /// </summary>
+        public static string AssignPromoCode {
+            get {
+                return ResourceManager.GetString("AssignPromoCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Auto Renewal.
         /// </summary>
         public static string AutoRenewLabel {
@@ -1615,7 +1642,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sorry, you cannot switch to the selected membership.
+        ///   Looks up a localized string similar to Sorry, you cannot switch to the selected subscription.
         /// </summary>
         public static string CannotSwitchMembershipError {
             get {
@@ -2528,6 +2555,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Credits Assigned Successfully.
+        /// </summary>
+        public static string CreditsAssignedSuccess {
+            get {
+                return ResourceManager.GetString("CreditsAssignedSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Each credit give you access to either a complete Chart Reading or Compatibility Reading. You can also buy Credit Packs at a reduced price.
         /// </summary>
         public static string CreditsDescriptionUI {
@@ -3136,6 +3172,24 @@ namespace K9.Globalisation {
         public static string EnterCreditsText {
             get {
                 return ResourceManager.GetString("EnterCreditsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter the number of credits to assign.
+        /// </summary>
+        public static string EnterCreditsToAssignText {
+            get {
+                return ResourceManager.GetString("EnterCreditsToAssignText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter Promo Code.
+        /// </summary>
+        public static string EnterPromoCode {
+            get {
+                return ResourceManager.GetString("EnterPromoCode", resourceCulture);
             }
         }
         
@@ -5462,6 +5516,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Subscription Assigned Successfully.
+        /// </summary>
+        public static string MembershipAssignedSuccess {
+            get {
+                return ResourceManager.GetString("MembershipAssignedSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
         ///&lt;html lang=&quot;en&quot;&gt;
         ///
@@ -6751,6 +6814,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Promo Code Assigned Successfully.
+        /// </summary>
+        public static string PromoCodeAssignedSuccess {
+            get {
+                return ResourceManager.GetString("PromoCodeAssignedSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;!doctype html&gt;
         ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
         ///&lt;head&gt;
@@ -7055,6 +7127,24 @@ namespace K9.Globalisation {
         public static string SelectedPurchaseText {
             get {
                 return ResourceManager.GetString("SelectedPurchaseText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select the subscription you wish to assign to the user.
+        /// </summary>
+        public static string SelectMembershipText {
+            get {
+                return ResourceManager.GetString("SelectMembershipText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Subscription.
+        /// </summary>
+        public static string SelectMembershipTitle {
+            get {
+                return ResourceManager.GetString("SelectMembershipTitle", resourceCulture);
             }
         }
         

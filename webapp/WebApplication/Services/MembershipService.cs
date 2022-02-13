@@ -30,10 +30,11 @@ namespace K9.WebApplication.Services
         private readonly IContactService _contactService;
         private readonly IMailer _mailer;
         private readonly IRepository<PromoCode> _promoCodesRepository;
+        private readonly IUserService _userService;
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<UserProfileReading> userProfileReadingsRepository, IRepository<UserRelationshipCompatibilityReading> userRelationshipCompatibilityReadingsRepository, IRepository<UserCreditPack> userCreditPacksRepository, IRepository<User> usersRepository, IContactService contactService, IMailer mailer, IOptions<WebsiteConfiguration> config, IRepository<PromoCode> promoCodesRepository)
+        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<UserProfileReading> userProfileReadingsRepository, IRepository<UserRelationshipCompatibilityReading> userRelationshipCompatibilityReadingsRepository, IRepository<UserCreditPack> userCreditPacksRepository, IRepository<User> usersRepository, IContactService contactService, IMailer mailer, IOptions<WebsiteConfiguration> config, IRepository<PromoCode> promoCodesRepository, IUserService userService)
         {
             _logger = logger;
             _authentication = authentication;
@@ -46,6 +47,7 @@ namespace K9.WebApplication.Services
             _contactService = contactService;
             _mailer = mailer;
             _promoCodesRepository = promoCodesRepository;
+            _userService = userService;
             _config = config.Value;
             _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }
@@ -249,6 +251,8 @@ namespace K9.WebApplication.Services
                 ContactId = contact.Id,
                 Quantity = credits
             }, userId, promoCode);
+
+            _userService.UsePromoCode(user.Id, code);
         }
 
         public void ProcessPurchase(PurchaseModel purchaseModel, int? userId = null, PromoCode promoCode = null)
@@ -256,6 +260,12 @@ namespace K9.WebApplication.Services
             try
             {
                 var membershipOptionId = purchaseModel.ItemId;
+
+                if (membershipOptionId <= 0)
+                {
+                    return;
+                }
+
                 var membershipOption = _membershipOptionRepository.Find(membershipOptionId);
                 if (membershipOption == null)
                 {
@@ -289,11 +299,48 @@ namespace K9.WebApplication.Services
             }
         }
 
+        public void AssignMembershipToUser(int membershipOptionId, int? userId = null, PromoCode promoCode = null)
+        {
+            try
+            {
+                var membershipOption = _membershipOptionRepository.Find(membershipOptionId);
+                if (membershipOption == null)
+                {
+                    _logger.Error($"MembershipService => AssignMembershipToUser => No MembershipOption with id {membershipOptionId} was found.");
+                    throw new IndexOutOfRangeException("Invalid MembershipOptionId");
+                }
+
+                var userMembership = new UserMembership
+                {
+                    UserId = userId ?? _authentication.CurrentUserId,
+                    MembershipOptionId = membershipOptionId,
+                    StartsOn = DateTime.Today,
+                    EndsOn = membershipOption.IsAnnual ? DateTime.Today.AddYears(1) : DateTime.Today.AddMonths(1),
+                    IsAutoRenew = true
+                };
+
+                _userMembershipRepository.Create(userMembership);
+                userMembership.User = _usersRepository.Find(userId ?? _authentication.CurrentUserId);
+                TerminateExistingMemberships(membershipOptionId);
+            }
+            catch (Exception ex)
+            {
+                _logger.Error($"MembershipService => AssignMembershipToUser => Assign Membership failed: {ex.GetFullErrorMessage()}");
+                throw ex;
+            }
+        }
+
         public void ProcessCreditsPurchase(PurchaseModel purchaseModel, int? userId = null, PromoCode promoCode = null)
         {
             try
             {
                 var numberOfCredits = purchaseModel.Quantity;
+
+                if (numberOfCredits <= 0)
+                {
+                    return;
+                }
+
                 var creditsModel = new PurchaseCreditsViewModel
                 {
                     NumberOfCredits = numberOfCredits
@@ -318,6 +365,26 @@ namespace K9.WebApplication.Services
             {
                 _logger.Error($"MembershipService => ProcessPurchase => Purchase failed: {ex.GetFullErrorMessage()}");
                 SendEmailToNineStarAboutFailure(purchaseModel, ex.GetFullErrorMessage());
+                throw ex;
+            }
+        }
+
+        public void AssignCreditsToUser(int numberOfCredits, int? userId = null)
+        {
+            try
+            {
+                var userCreditPack = new UserCreditPack
+                {
+                    UserId = userId ?? _authentication.CurrentUserId,
+                    NumberOfCredits = numberOfCredits
+                };
+
+                _userCreditPacksRepository.Create(userCreditPack);
+                userCreditPack.User = _usersRepository.Find(_authentication.CurrentUserId);
+            }
+            catch (Exception ex)
+            {
+                _logger.Error($"MembershipService => AssignCreditsToUser => AssignCreditsToUser failed: {ex.GetFullErrorMessage()}");
                 throw ex;
             }
         }
@@ -465,7 +532,8 @@ namespace K9.WebApplication.Services
                 TotalPrice = promoCode?.FormattedPrice ?? userMembership.MembershipOption.FormattedPrice,
                 LinkToSummary = _urlHelper.AbsoluteAction("Index", "UserMemberships"),
                 Company = _config.CompanyName,
-                ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl)
+                ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
+                FailedText = ""
             }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
         }
 

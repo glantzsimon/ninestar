@@ -15,7 +15,9 @@ namespace K9.WebApplication.Services
         void CreateFreeMembership(int userId);
         void ProcessPurchaseWithPromoCode(int userId, string code);
         void ProcessPurchase(PurchaseModel purchaseModel, int? userId = null, PromoCode promoCode = null);
+        void AssignMembershipToUser(int membershipOptionId, int? userId = null, PromoCode promoCode = null);
         void ProcessCreditsPurchase(PurchaseModel purchaseModel, int? userId = null, PromoCode promoCode = null);
+        void AssignCreditsToUser(int numberOfCredits, int? userId = null);
 
         /// <summary>
         /// Switch memberships without processing payment (downgrade or scheduled switch)

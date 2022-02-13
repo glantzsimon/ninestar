@@ -21,9 +21,9 @@ namespace K9.WebApplication.ViewModels
             MonthlyMembershipModel?.MembershipOption?.MaxNumberOfCompatibilityReadings ?? 20;
 
         public int FreeMaxNumberOfProfileReadings =>
-            FreeMembershipModel?.MembershipOption?.MaxNumberOfProfileReadings ?? 5;
+            FreeMembershipModel?.MembershipOption?.MaxNumberOfProfileReadings ?? 3;
 
         public int FreeMaxNumberOfCompatibilityReadings =>
-            FreeMembershipModel?.MembershipOption?.MaxNumberOfCompatibilityReadings ?? 2;
+            FreeMembershipModel?.MembershipOption?.MaxNumberOfCompatibilityReadings ?? 0;
     }
 }

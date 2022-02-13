@@ -1,0 +1,10 @@
+﻿@using K9.Base.WebApplication.Helpers
+@{
+    ViewBag.Title = Dictionary.MembershipLabel;
+    ViewBag.SubTitle = Dictionary.MembershipAssignedSuccess;
+    Layout = "../Shared/_LayoutForm.cshtml";
+}
+
+<div class="margin-bottom-10">
+    @Html.Success(Dictionary.MembershipAssignedSuccess + " <i class='fa fa-smile-o'></i>", Html.ActionLink(K9.Base.Globalisation.Dictionary.Users, "Index", "Users"))
+</div>

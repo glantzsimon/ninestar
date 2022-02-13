@@ -1880,7 +1880,7 @@
     <value>Unsubscibe Request</value>
   </data>
   <data name="CannotSwitchMembershipError" xml:space="preserve">
-    <value>Sorry, you cannot switch to the selected membership</value>
+    <value>Sorry, you cannot switch to the selected subscription</value>
   </data>
   <data name="MyPersonalProfile" xml:space="preserve">
     <value>My Personal Chart</value>
@@ -2391,5 +2391,35 @@
   </data>
   <data name="RedeemPromoCode" xml:space="preserve">
     <value>Redeem PromoCode</value>
+  </data>
+  <data name="CreditsAssignedSuccess" xml:space="preserve">
+    <value>Credits Assigned Successfully</value>
+  </data>
+  <data name="MembershipAssignedSuccess" xml:space="preserve">
+    <value>Subscription Assigned Successfully</value>
+  </data>
+  <data name="SelectMembershipTitle" xml:space="preserve">
+    <value>Select Subscription</value>
+  </data>
+  <data name="AssignCredits" xml:space="preserve">
+    <value>Assign Credits</value>
+  </data>
+  <data name="AssignMembership" xml:space="preserve">
+    <value>Assign Subscription</value>
+  </data>
+  <data name="AssignPromoCode" xml:space="preserve">
+    <value>Assign Promo Code</value>
+  </data>
+  <data name="EnterCreditsToAssignText" xml:space="preserve">
+    <value>Please enter the number of credits to assign</value>
+  </data>
+  <data name="EnterPromoCode" xml:space="preserve">
+    <value>Enter Promo Code</value>
+  </data>
+  <data name="PromoCodeAssignedSuccess" xml:space="preserve">
+    <value>Promo Code Assigned Successfully</value>
+  </data>
+  <data name="SelectMembershipText" xml:space="preserve">
+    <value>Select the subscription you wish to assign to the user</value>
   </data>
 </root>

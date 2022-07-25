@@ -2019,10 +2019,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The compatiblity reading tool is predicts the probability of harmony versus disharmony between two individuals based on their elemental make-up. However, there are a great number of factors that ultimately contribute to relationship dynamics. It is possible for there to be great harmony between two individuals who are elemental polar opposites, just as it is possible for two people whose elements promise great compatibility to clash monumentally. 
+        ///    The compatiblity reading tool predicts the probability of harmony versus disharmony between two individuals based on their elemental make-up. However, there are a great number of factors that ultimately contribute to relationship dynamics. It is possible for there to be great harmony between two individuals who are elemental polar opposites, just as it is possible for two people whose elements promise great compatibility to clash monumentally. 
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    The amount of personal development  [rest of string was truncated]&quot;;.
+        ///    The amount of personal development wor [rest of string was truncated]&quot;;.
         /// </summary>
         public static string compatibility_subtitle {
             get {
@@ -3280,7 +3280,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Get your free love compatibility reading.
+        ///   Looks up a localized string similar to Find out how compatible you are.
         /// </summary>
         public static string FindOutHowCompatibleYouAre {
             get {

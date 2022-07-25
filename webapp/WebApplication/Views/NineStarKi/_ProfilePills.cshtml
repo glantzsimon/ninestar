@@ -70,11 +70,11 @@
                                 @Html.Partial("_ProfileBody", Model.CharacterEnergy)
                             }
 
-                            @Html.BootstrapActionLinkButton(Dictionary.CompatibilityCalculator, "Compatibility", "NineStarKi", null, "fa fa-yin-yang", EButtonClass.Large)
-
-                            @Html.BootstrapActionLinkButton(Dictionary.BookAConsultation, "BookConsultationStart", "Consultation", null, "fa-phone-alt", EButtonClass.Success, EButtonClass.Large)
+                            @Html.BootstrapActionLinkButton(Dictionary.FindOutHowCompatibleYouAre, "Compatibility", "NineStarKi", null, "fa fa-yin-yang", EButtonClass.Large)
 
                             @Html.BootstrapActionLinkButton(Dictionary.LearnMoreAboutNineStarKi, "About", "Home", null, "fa-graduation-cap", EButtonClass.Info, EButtonClass.Large)
+
+                            @Html.BootstrapActionLinkButton(Dictionary.BookAConsultation, "BookConsultationStart", "Consultation", null, "fa-phone-alt", EButtonClass.Success, EButtonClass.Large)
                         </div>
 
                         <div id="surface" class="tab-pane fade">
@@ -87,11 +87,11 @@
                                 @Html.Partial("_ProfileBody", Model.SurfaceEnergy)
                             }
 
-                            @Html.BootstrapActionLinkButton(Dictionary.CompatibilityCalculator, "Compatibility", "NineStarKi", null, "fa fa-yin-yang", EButtonClass.Large)
-
-                            @Html.BootstrapActionLinkButton(Dictionary.BookAConsultation, "BookConsultationStart", "Consultation", null, "fa-phone-alt", EButtonClass.Success, EButtonClass.Large)
+                            @Html.BootstrapActionLinkButton(Dictionary.FindOutHowCompatibleYouAre, "Compatibility", "NineStarKi", null, "fa fa-yin-yang", EButtonClass.Large)
 
                             @Html.BootstrapActionLinkButton(Dictionary.LearnMoreAboutNineStarKi, "About", "Home", null, "fa-graduation-cap", EButtonClass.Info, EButtonClass.Large)
+
+                            @Html.BootstrapActionLinkButton(Dictionary.BookAConsultation, "BookConsultationStart", "Consultation", null, "fa-phone-alt", EButtonClass.Success, EButtonClass.Large)
                         </div>
                     </div>
                 </div>
@@ -108,12 +108,14 @@
                     </div>
                 }
 
-                <div id="predictions" class="tab-pane fade margin-top-20">
-                    @using (Html.PaidContent(Model, () => Model.ReadingType == EReadingType.Complete))
-                    {
-                        @Html.Partial("_Cycles")
-                    }
-                </div>
+                    <div id="predictions" class="tab-pane fade margin-top-20">
+                        @Html.CollapsiblePanel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.cycles_description, true)
+
+                        @using (Html.PaidContent(Model, () => Model.ReadingType == EReadingType.Complete))
+                        {
+                            @Html.Partial("_Cycles")
+                        }
+                    </div>
 
             </div>
 

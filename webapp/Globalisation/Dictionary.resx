@@ -2378,7 +2378,7 @@
     <value>Do not display sexual chemistry</value>
   </data>
   <data name="FindOutHowCompatibleYouAre" xml:space="preserve">
-    <value>How compatible are you?</value>
+    <value>Get your free love compatibility reading</value>
   </data>
   <data name="InDepthAnalysis" xml:space="preserve">
     <value>In Depth Analysis</value>
@@ -2421,5 +2421,17 @@
   </data>
   <data name="SelectMembershipText" xml:space="preserve">
     <value>Select the subscription you wish to assign to the user</value>
+  </data>
+  <data name="ClickOnTheNumbersBelowForMoreDetails" xml:space="preserve">
+    <value>Click on any of the numbers below for more details</value>
+  </data>
+  <data name="compatibility_subtitle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\compatibility-subtitle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="cycles_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\cycles-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="welcome2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>general\en-gb\welcome2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

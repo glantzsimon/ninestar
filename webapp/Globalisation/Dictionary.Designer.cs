@@ -1937,6 +1937,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Click on any of the numbers below for more details.
+        /// </summary>
+        public static string ClickOnTheNumbersBelowForMoreDetails {
+            get {
+                return ResourceManager.GetString("ClickOnTheNumbersBelowForMoreDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Code.
         /// </summary>
         public static string Code {
@@ -2005,6 +2014,19 @@ namespace K9.Globalisation {
         public static string CompanyShortDescription {
             get {
                 return ResourceManager.GetString("CompanyShortDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The compatiblity reading tool is predicts the probability of harmony versus disharmony between two individuals based on their elemental make-up. However, there are a great number of factors that ultimately contribute to relationship dynamics. It is possible for there to be great harmony between two individuals who are elemental polar opposites, just as it is possible for two people whose elements promise great compatibility to clash monumentally. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The amount of personal development  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string compatibility_subtitle {
+            get {
+                return ResourceManager.GetString("compatibility_subtitle", resourceCulture);
             }
         }
         
@@ -2667,6 +2689,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    &lt;strong&gt;9 Star Ki astrology is based on the universal cycles of light and dark&lt;/strong&gt; and the various transformations between the stages between them. These cosmic cycles, eternally spiralling throughout time and space, underpin our entire reality in this cosmos and give rise to the very experience of being &quot;alive&quot;. Examples of these light and dark cycles we all know are the daily solar cycle, the monthly lunar cycle and the yearly seasonal cycle. However, there are many more cycles we have forgo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string cycles_description {
+            get {
+                return ResourceManager.GetString("cycles_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cycles.
         /// </summary>
         public static string CyclesSubTitle {
@@ -3248,7 +3280,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to How compatible are you?.
+        ///   Looks up a localized string similar to Get your free love compatibility reading.
         /// </summary>
         public static string FindOutHowCompatibleYouAre {
             get {
@@ -9032,14 +9064,31 @@ namespace K9.Globalisation {
         ///    Greetings and thank you for visiting NineStar. Whether you are new to 9 Star Ki or even new to astrology as a whole, you&apos;ve come to a great resource to find detailed and accurate information on this ancient and fascinating system of astrology. 
         ///&lt;/p&gt;
         ///&lt;h5&gt;
-        ///    Possibly the oldest system of astrology in the world, related to the I Ching
+        ///    9 Star Ki is one of the oldest systems of astrology in the world. It is based on the I Ching - The Book of Changes.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    9 Star Ki is possibly the oldest system of astrology in the world today.  [rest of string was truncated]&quot;;.
+        ///    9 Star Ki is possibly the oldest s [rest of string was truncated]&quot;;.
         /// </summary>
         public static string welcome {
             get {
                 return ResourceManager.GetString("welcome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;margin-top-0-md&quot;&gt;
+        ///    Profound insights into ourselves and our relationships
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    9 Star Ki is a simple system offering &lt;strong&gt;profound insights into ourselves and our relationships with others&lt;/strong&gt;. It is an exceptional tool to help resolve conflict in a way that minimises blame and maximises understanding and compassion. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    We hope you enjoy finding out more about this fascinating system. Please do not hesitate to get in touch if you have any queries.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string welcome2 {
+            get {
+                return ResourceManager.GetString("welcome2", resourceCulture);
             }
         }
         

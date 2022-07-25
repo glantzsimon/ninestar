@@ -102,6 +102,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Articles\en-gb\compatibility-subtitle.htm" />
+    <Content Include="Articles\en-gb\cycles-description.htm" />
     <Content Include="Compatibility\en-gb\both-gender-same-yin.htm" />
     <Content Include="Compatibility\en-gb\character-gender-opposite.htm" />
     <Content Include="Compatibility\en-gb\both-gender-same-yang.htm" />
@@ -120,6 +122,7 @@
     <Content Include="Compatibility\en-gb\main-gender-same-yin.htm" />
     <Content Include="Compatibility\en-gb\main-modality-different.htm" />
     <Content Include="Compatibility\en-gb\main-modality-same.htm" />
+    <Content Include="General\en-gb\welcome2.htm" />
     <Content Include="Predictions\Monthly\en-gb\core-earth-month.htm" />
     <Content Include="Predictions\Monthly\en-gb\fire-month.htm" />
     <Content Include="Predictions\Monthly\en-gb\heaven-month.htm" />

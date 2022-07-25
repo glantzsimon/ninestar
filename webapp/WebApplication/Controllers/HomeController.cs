@@ -1,8 +1,11 @@
-﻿using K9.SharedLibrary.Helpers;
+﻿using System;
+using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Services;
 using NLog;
 using System.Web.Mvc;
+using K9.WebApplication.Helpers;
+using K9.WebApplication.Models;
 
 namespace K9.WebApplication.Controllers
 {
@@ -24,7 +27,14 @@ namespace K9.WebApplication.Controllers
             {
                 return RedirectToAction("MyProfile", "NineStarKi");
             }
-            return View();
+
+            var dateOfBirth = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day);
+            var personModel = new PersonModel
+            {
+                DateOfBirth = dateOfBirth,
+                Gender = Methods.GetRandomGender()
+            };
+            return View(new NineStarKiModel(personModel));
         }
 
         [Route("about")]

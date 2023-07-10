@@ -54,6 +54,26 @@
                 }
             </div>
         </div>
+        <div class="row">
+            <div class="col-sm-3 margin-bottom-15">
+                <div class="adult-profile">
+                    <a href="#" id="intellectual-biorhythm">
+                        @Html.Partial("_Biorhythm", Model.MainEnergy)
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4 margin-bottom-15">
+                <a href="#" id="character-energy">
+                    @Html.Partial("_EnergyTitle", Model.CharacterEnergy)
+                </a>
+            </div>
+            <div class="col-sm-4 margin-bottom-15">
+                <a href="#" id="surface-energy">
+                    @Html.Partial("_EnergyTitle", Model.SurfaceEnergy)
+                </a>
+            </div>
+        </div>
+
     </div>
     @if (Model.IsShowSummary)
     {

@@ -73,6 +73,7 @@
             public const string UserDataLabel = "UserData";
             public const string PromoCodeLabel = "PromoCode";
             public const string CodeLabel = "Code";
+            public const string BiorhythmsLabel = "BiorhythmsLabel";
         }
 
         public static class Names

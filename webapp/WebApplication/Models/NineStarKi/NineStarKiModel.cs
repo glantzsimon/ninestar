@@ -62,6 +62,9 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PersonalDevelopemntLabel)]
         public string PersonalDevelopemnt { get; set; }
 
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BiorhythmsLabel)]
+        public BioRhythmsModel Biorhythms { get; set; }
+
         /// <summary>
         /// For testing purposes only
         /// </summary>

@@ -13,12 +13,14 @@ namespace K9.WebApplication.Controllers
     {
         private readonly IAuthentication _authentication;
         private readonly INineStarKiService _nineStarKiService;
+        private readonly IBiorhythmsService _biorhythmsService;
 
-        public HomeController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService)
+        public HomeController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService, IBiorhythmsService biorhythmsService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _authentication = authentication;
             _nineStarKiService = nineStarKiService;
+            _biorhythmsService = biorhythmsService;
         }
 
         public ActionResult Index()
@@ -34,7 +36,11 @@ namespace K9.WebApplication.Controllers
                 DateOfBirth = dateOfBirth,
                 Gender = Methods.GetRandomGender()
             };
-            return View(new NineStarKiModel(personModel));
+            
+            var nineStarKiModel = new NineStarKiModel(personModel);
+            nineStarKiModel.Biorhythms = _biorhythmsService.Calculate(personModel, DateTime.Today);
+
+            return View(nineStarKiModel);
         }
 
         [Route("about")]

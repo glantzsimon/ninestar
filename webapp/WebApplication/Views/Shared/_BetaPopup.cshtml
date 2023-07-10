@@ -1,4 +1,4 @@
-﻿@if (SessionHelper.GetBoolValue(K9.WebApplication.Constants.SessionConstants.BetaWarningHide) != true)
+﻿@*@if (SessionHelper.GetBoolValue(K9.WebApplication.Constants.SessionConstants.BetaWarningHide) != true)
 {
     <div id="beta-alert" class="alert alert-info alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -10,4 +10,4 @@
             $("#beta-alert").fadeOut();
         }, 10000);
     </script>
-}
+}*@

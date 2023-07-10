@@ -1519,6 +1519,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Biorhythms.
+        /// </summary>
+        public static string BiorhythmsLabel {
+            get {
+                return ResourceManager.GetString("BiorhythmsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Black.
         /// </summary>
         public static string Black {

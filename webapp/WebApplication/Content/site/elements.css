@@ -50,3 +50,8 @@ hr {
 .footer h3, .footer h4, .footer h5 {
     color: #8a8a8a !important;
 }
+
+.sinusgraph {
+    width: 100%;
+    border: 1px solid #eeeeee;
+}

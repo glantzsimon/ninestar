@@ -1519,6 +1519,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Biorhythm.
+        /// </summary>
+        public static string Biorhythm {
+            get {
+                return ResourceManager.GetString("Biorhythm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Biorhythms.
         /// </summary>
         public static string BiorhythmsLabel {
@@ -3163,6 +3172,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Emotional Biorhythms.
+        /// </summary>
+        public static string EmotionalBiorhythms {
+            get {
+                return ResourceManager.GetString("EmotionalBiorhythms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ends On.
         /// </summary>
         public static string EndsOnLabel {
@@ -4053,6 +4071,15 @@ namespace K9.Globalisation {
         public static string Influencer {
             get {
                 return ResourceManager.GetString("Influencer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Intellectual Biorhythms.
+        /// </summary>
+        public static string IntellectualBiorhythms {
+            get {
+                return ResourceManager.GetString("IntellectualBiorhythms", resourceCulture);
             }
         }
         
@@ -6662,6 +6689,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Physical Biorhythms.
+        /// </summary>
+        public static string PhysicalBiorhythms {
+            get {
+                return ResourceManager.GetString("PhysicalBiorhythms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pioneer.
         /// </summary>
         public static string Pioneer {
@@ -7872,6 +7908,15 @@ namespace K9.Globalisation {
         public static string SparkScore {
             get {
                 return ResourceManager.GetString("SparkScore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spiritual Biorhythms.
+        /// </summary>
+        public static string SpiritualBiorhytms {
+            get {
+                return ResourceManager.GetString("SpiritualBiorhytms", resourceCulture);
             }
         }
         

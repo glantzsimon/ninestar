@@ -6,7 +6,14 @@
 }
 
 <div class="gauge-container @secretClass">
-    <h4 class="text-center margin-top-0 margin-bottom-0">@Model.Title</h4>
+    @if (Model.IsSummary)
+    {
+        <h3 class="text-center margin-bottom-0 padding-bottom-0" style="font-size: 0.95em;">@Model.Title</h3>
+    }
+    else
+    {
+        <h4 class="text-center margin-top-0 margin-bottom-0">@Model.Title</h4>
+    }
     @if (Model.IsSecret)
     {
         <div class="gauge-question">
@@ -18,3 +25,11 @@
         <canvas id="@id" class="gauge" data-value="@Model.Value" data-max-value="@Model.MaxValue" data-invert="@Model.IsInverted.ToString().ToLower()"></canvas>
     }
 </div>
+
+<script type="text/javascript">
+
+    $(function () {
+        
+    });
+
+</script>

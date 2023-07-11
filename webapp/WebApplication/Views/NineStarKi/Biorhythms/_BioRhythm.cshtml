@@ -1,0 +1,12 @@
+﻿@using K9.WebApplication.Models
+@using K9.WebApplication.Options
+@model BioRhythmResult
+
+<div class="ninestar-summary-container">
+    @Html.Partial("_Gauge", new BiorhythmGaugeOptions
+    {
+        Title = Model.BioRhythm.Name,
+        Value = (int)Model.Value,
+        IsSecret = Model.IsUpgradeRequired
+    })
+</div>

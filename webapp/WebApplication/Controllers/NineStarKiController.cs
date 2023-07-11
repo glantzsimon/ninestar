@@ -17,13 +17,15 @@ namespace K9.WebApplication.Controllers
         private readonly IAuthentication _authentication;
         private readonly INineStarKiService _nineStarKiService;
         private readonly IRepository<User> _usersRepository;
+        private readonly IBiorhythmsService _biorhythmsService;
 
-        public NineStarKiController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService, IRepository<User> usersRepository)
+        public NineStarKiController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService, IRepository<User> usersRepository, IBiorhythmsService biorhythmsService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _authentication = authentication;
             _nineStarKiService = nineStarKiService;
             _usersRepository = usersRepository;
+            _biorhythmsService = biorhythmsService;
         }
 
         [Route("calculate")]
@@ -47,6 +49,9 @@ namespace K9.WebApplication.Controllers
             {
                 model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel);
             }
+
+            model.Biorhythms = _biorhythmsService.Calculate(model.PersonModel, DateTime.Today);
+
             return View("Index", model);
         }
 
@@ -62,12 +67,17 @@ namespace K9.WebApplication.Controllers
         public ActionResult MyProfile()
         {
             var myAccount = _usersRepository.Find(_authentication.CurrentUserId);
-            return View(_nineStarKiService.CalculateNineStarKiProfile(new PersonModel
+            var personModel = new PersonModel
             {
                 Name = myAccount.FullName,
                 DateOfBirth = myAccount.BirthDate,
                 Gender = myAccount.Gender
-            }, false, true));
+            };
+            var nineStarKiProfile = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, true);
+
+            nineStarKiProfile.Biorhythms = _biorhythmsService.Calculate(personModel, DateTime.Today);
+
+            return View(nineStarKiProfile);
         }
 
         [Authorize]
@@ -110,12 +120,15 @@ namespace K9.WebApplication.Controllers
             {
                 return RedirectToAction("Index");
             }
-            var model = _nineStarKiService.CalculateNineStarKiProfile(new PersonModel
+
+            var personModel = new PersonModel
             {
                 Name = lastProfile.Name,
                 DateOfBirth = lastProfile.DateOfBirth,
                 Gender = lastProfile.Gender
-            });
+            };
+            var model = _nineStarKiService.CalculateNineStarKiProfile(personModel);
+            model.Biorhythms = _biorhythmsService.Calculate(personModel, DateTime.Today);
             return View("Index", model);
         }
 

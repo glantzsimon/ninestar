@@ -1,0 +1,109 @@
+﻿@using ServiceStack.Text
+@model K9.WebApplication.Models.BioRhythmsModel
+
+@{
+    var id = @Guid.NewGuid().ToString();
+}
+
+@*<h3 class="text-center margin-bottom-0 padding-bottom-0" style="font-size: 0.95em; font-weight: bold;">@Dictionary.BiorhythmsLabel</h3>*@
+
+<div class="gauge-container">
+    @*<canvas id="@id" class="sinusgraph" width="900" height="500"></canvas>*@
+    <div id="@id" class="sinusgraph" width="900" height="500"></div>
+</div>
+
+<script type="text/javascript">
+
+    $(function() {
+
+        function getSeriesData(rawData) {
+            var data = [], i;
+            for (i = 0; i < rawData.length; i += 1) {
+                data.push({
+                    x: new Date(rawData[i].Item1),
+                    y: rawData[i].Item2
+                });
+            }
+            return data;
+        }
+
+        function loadCharts() {
+            Highcharts.chart("@id",
+                {
+                    chart: {
+                        type: "spline",
+                        animation: Highcharts.svg,
+                        marginRight: 10,
+                        events: {
+                            load: function() {
+                                var series = this.series;
+                            }
+                        }
+                    },
+
+                    time: {
+                        useUTC: false
+                    },
+
+                    title: {
+                        text: "@Dictionary.BiorhythmsLabel"
+                    },
+
+                    xAxis: {
+                        type: "datetime",
+                        tickPixelInterval: 150
+                    },
+
+                    yAxis: {
+                        title: {
+                            text: "Value"
+                        },
+                        plotLines: [
+                            {
+                                value: 0,
+                                width: 1,
+                                color: "#808080"
+                            }
+                        ]
+                    },
+
+                    tooltip: {
+                        headerFormat: "<b>{series.name}</b><br/>",
+                        pointFormat: "<b>Date: </b>{point.x:.date}<br/>" +
+                                     "<b>Value: </b>{point.y:.2f}"
+                    },
+
+                    legend: {
+                        enabled: true
+                    },
+
+                    exporting: {
+                        enabled: true
+                    },
+
+                    series: [
+                        {
+                            name: "@($"{Model.IntellectualBiorhythmResult.BioRhythm.Name} {Dictionary.BiorhythmsLabel}")",
+                            data: getSeriesData(@(Html.Raw(Model.IntellectualBiorhythmResult.RangeValues.ToJson())))
+                        },
+                        {
+                            name: "@($"{Model.SpiritualBiorhythmResult.BioRhythm.Name} {Dictionary.BiorhythmsLabel}")",
+                            data: getSeriesData(@(Html.Raw(Model.SpiritualBiorhythmResult.RangeValues.ToJson())))
+                        },
+                        {
+                            name: "@($"{Model.EmotionalBiorhythmResult.BioRhythm.Name} {Dictionary.BiorhythmsLabel}")",
+                            data: getSeriesData(@(Html.Raw(Model.EmotionalBiorhythmResult.RangeValues.ToJson())))
+                        },
+                        {
+                            name: "@($"{Model.PhysicalBiorhythmResult.BioRhythm.Name} {Dictionary.BiorhythmsLabel}")",
+                            data: getSeriesData(@(Html.Raw(Model.PhysicalBiorhythmResult.RangeValues.ToJson())))
+                        }
+                    ]
+                });
+        }
+
+        loadCharts();
+
+    });
+
+</script>

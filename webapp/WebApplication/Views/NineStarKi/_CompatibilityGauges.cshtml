@@ -10,7 +10,7 @@
     <div class="@colOffset col-sm-4 col-xs-12">
         @if (Model != null && Model.IsProcessed)
         {
-            @Html.Partial("_CompatibilityGauge", new GaugeOptions
+            @Html.Partial("_Gauge", new GaugeOptions
             {
                 Title = Dictionary.HarmonyScore,
                 Value = (int)Model.CompatibilityDetails.Score.HarmonyScore,
@@ -21,7 +21,7 @@
     <div class="col-sm-4 col-xs-12">
         @if (Model != null && Model.IsProcessed)
         {
-            @Html.Partial("_CompatibilityGauge", new GaugeOptions
+            @Html.Partial("_Gauge", new GaugeOptions
             {
                 Title = Dictionary.ComplementarityScore,
                 Value = (int) Model.CompatibilityDetails.Score.ComplementarityScore,
@@ -34,7 +34,7 @@
         <div class="col-sm-4 col-xs-12">
             @if (Model != null && Model.IsProcessed)
             {
-                @Html.Partial("_CompatibilityGauge", new GaugeOptions
+                @Html.Partial("_Gauge", new GaugeOptions
                 {
                     Title = Dictionary.SexualChemistry,
                     Value = (int) Model.CompatibilityDetails.Score.SexualChemistryScore,
@@ -49,7 +49,7 @@
     <div class="col-sm-4 col-xs-12">
         @if (Model != null && Model.IsProcessed)
         {
-            @Html.Partial("_CompatibilityGauge", new GaugeOptions
+            @Html.Partial("_Gauge", new GaugeOptions
             {
                 Title = Dictionary.SparkScore,
                 Value = (int) Model.CompatibilityDetails.Score.SparkScore,
@@ -60,7 +60,7 @@
     <div class="col-sm-4 col-xs-12">
         @if (Model != null && Model.IsProcessed)
         {
-            @Html.Partial("_CompatibilityGauge", new GaugeOptions
+            @Html.Partial("_Gauge", new GaugeOptions
             {
                 Title = Dictionary.ConflictScore,
                 Value = (int) Model.CompatibilityDetails.Score.ConflictScore,
@@ -71,7 +71,7 @@
     <div class="col-md-4 col-sm-4 col-xs-12">
         @if (Model != null && Model.IsProcessed)
         {
-            @Html.Partial("_CompatibilityGauge", new GaugeOptions
+            @Html.Partial("_Gauge", new GaugeOptions
             {
                 Title = Dictionary.LearningPotentialScore,
                 Value = (int) Model.CompatibilityDetails.Score.LearningPotentialScore
@@ -83,7 +83,7 @@
     <div class="col-sm-4 col-sm-offset-2 col-xs-12 col-xs-offset-0">
         @if (Model != null && Model.IsProcessed)
         {
-            @Html.Partial("_CompatibilityGauge", new GaugeOptions
+            @Html.Partial("_Gauge", new GaugeOptions
             {
                 Title = Dictionary.MutualUnderstanding,
                 Value = (int) Model.CompatibilityDetails.Score.MutualUnderstandingScore,
@@ -94,7 +94,7 @@
     <div class="col-md-4 col-sm-4 col-xs-12">
         @if (Model != null && Model.IsProcessed)
         {
-            @Html.Partial("_CompatibilityGauge", new GaugeOptions
+            @Html.Partial("_Gauge", new GaugeOptions
             {
                 Title = Dictionary.MutualSupport,
                 Value = (int) Model.CompatibilityDetails.Score.SupportScore

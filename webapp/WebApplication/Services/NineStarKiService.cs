@@ -38,9 +38,9 @@ namespace K9.WebApplication.Services
             });
         }
 
-        public NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, bool isCompatibility = false, bool isMyProfile = false)
+        public NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, bool isCompatibility = false, bool isMyProfile = false, DateTime? today = null)
         {
-            var model = new NineStarKiModel(personModel);
+            var model = new NineStarKiModel(personModel, today);
 
             model.MainEnergy.EnergyDescription = GetMainEnergyDescription(model.MainEnergy.Energy);
             model.CharacterEnergy.EnergyDescription = GetCharacterEnergyDescription(model.CharacterEnergy.Energy);

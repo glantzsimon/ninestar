@@ -10,17 +10,17 @@ namespace K9.WebApplication.Models
             PersonModel = new PersonModel();
         }
 
-        public BioRhythmsModel(PersonModel personModel, DateTime? date = null)
+        public BioRhythmsModel(PersonModel personModel, DateTime? selectedDate = null)
         {
-            date = date ?? DateTime.Today;
+            selectedDate = selectedDate ?? DateTime.Today;
 
-            Date = date;
+            SelectedDate = selectedDate;
             PersonModel = personModel;
-            NineStarKiModel = new NineStarKiModel(personModel, date);
-            DaysElapsedSinceBirth = GetDaysElapsedSinceBirth(date.Value);
+            NineStarKiModel = new NineStarKiModel(personModel, selectedDate);
+            DaysElapsedSinceBirth = GetDaysElapsedSinceBirth(selectedDate.Value);
         }
 
-        public DateTime? Date { get; }
+        public DateTime? SelectedDate { get; }
 
         public PersonModel PersonModel { get; }
 

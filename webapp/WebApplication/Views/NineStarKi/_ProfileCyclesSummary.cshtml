@@ -1,0 +1,35 @@
+﻿@using K9.WebApplication.Enums
+@using K9.WebApplication.Helpers
+@model K9.WebApplication.Models.NineStarKiModel
+
+@{
+    var childClass = Model.PersonModel.IsAdult() ? "" : "child-profile";
+}
+
+<div class="well">
+    <div id="energy-summary-container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6 col-xs-12">
+                @using (Html.BeginForm("CalculateNineStarKi", "NineStarKi"))
+                {
+                    using (Html.BeginBootstrapForm())
+                    {
+                        @Html.BootstrapEditorFor(model => model.SelectedDate)
+
+                        @Html.HiddenFor(model => model.PersonModel.Name)
+                        @Html.HiddenFor(model => model.PersonModel.DateOfBirth)
+                        @Html.HiddenFor(model => model.PersonModel.Gender)
+
+                        <hr />
+                        <div class="text-center">
+                            @Html.BootstrapButton(Dictionary.DisplaySelectedDate, EButtonType.Submit, "", EButtonClass.Large)
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+
+        @Html.Panel(Dictionary.PersonalCycles, Html.Partial("_PersonalCycles").ToString())
+        @Html.Panel(Dictionary.BiorhythmsLabel, Html.Partial("_PersonalBiorhythms").ToString())
+    </div>
+</div>

@@ -43,14 +43,14 @@ namespace K9.WebApplication.Controllers
         [Route("calculate")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CalculateNineStarKi(NineStarKiModel model)
+        public ActionResult CalculateNineStarKi(NineStarKiModel model, DateTime? selectedDate = null)
         {
-            if (model.PersonModel != null)
+            if (model.PersonModel != null || selectedDate != DateTime.Today)
             {
-                model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel);
+                model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false, selectedDate ?? DateTime.Today);
             }
 
-            model.Biorhythms = _biorhythmsService.Calculate(model.PersonModel, DateTime.Today);
+            model.Biorhythms = _biorhythmsService.Calculate(model.PersonModel, selectedDate ?? DateTime.Today);
 
             return View("Index", model);
         }

@@ -39,6 +39,7 @@
             public const string ElementLabel = "Element";
             public const string ElementDescriptionLabel = "ElementDescriptionLabel";
             public const string SummaryLabel = "SummaryLabel";
+            public const string SelectedDateLabel = "SelectedDateLabel";
             public const string OverviewLabel = "OverviewLabel";
             public const string ColourLabel = "Colour";
             public const string EnergyLabel = "Energy";

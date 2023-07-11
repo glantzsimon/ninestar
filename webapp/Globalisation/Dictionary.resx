@@ -2434,22 +2434,43 @@
   <data name="welcome2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>general\en-gb\welcome2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="AboutYearlyAndMonthlyCycles" xml:space="preserve">
+    <value>About Yearly &amp; Monthly Cycles</value>
+  </data>
   <data name="Biorhythm" xml:space="preserve">
     <value>Biorhythm</value>
+  </data>
+  <data name="biorhythms" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\biorhythms.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="BiorhythmsLabel" xml:space="preserve">
     <value>Biorhythms</value>
   </data>
-  <data name="EmotionalBiorhythms" xml:space="preserve">
-    <value>Emotional Biorhythms</value>
+  <data name="DisplaySelectedDate" xml:space="preserve">
+    <value>Display Selected Date</value>
   </data>
-  <data name="IntellectualBiorhythms" xml:space="preserve">
-    <value>Intellectual Biorhythms</value>
+  <data name="EmotionalBiorhythm" xml:space="preserve">
+    <value>Emotional Biorhythm</value>
   </data>
-  <data name="PhysicalBiorhythms" xml:space="preserve">
-    <value>Physical Biorhythms</value>
+  <data name="IntellectualBiorhythm" xml:space="preserve">
+    <value>Intellectual Biorhythm</value>
   </data>
-  <data name="SpiritualBiorhytms" xml:space="preserve">
-    <value>Spiritual Biorhythms</value>
+  <data name="PersonalCycles" xml:space="preserve">
+    <value>Personal Cycles</value>
+  </data>
+  <data name="PhysicalBiorhythm" xml:space="preserve">
+    <value>Physical Biorhythm</value>
+  </data>
+  <data name="SelectedDateLabel" xml:space="preserve">
+    <value>Selected Date</value>
+  </data>
+  <data name="SpiritualBiorhytm" xml:space="preserve">
+    <value>Spiritual Biorhythm</value>
+  </data>
+  <data name="WhatAreBiorhythms" xml:space="preserve">
+    <value>About Biorhythms</value>
+  </data>
+  <data name="YearlyAndMonthlyCycles" xml:space="preserve">
+    <value>Yearly &amp; Monthly Cycles</value>
   </data>
 </root>

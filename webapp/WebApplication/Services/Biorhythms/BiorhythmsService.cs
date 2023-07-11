@@ -58,7 +58,7 @@ namespace K9.WebApplication.Services
             {
                 var factor = -(period / 2) + i;
                 var dayInterval = GetDayInterval(biorhythm, bioRhythmsModel.DaysElapsedSinceBirth + factor);
-                list.Add(new Tuple<string, double>((bioRhythmsModel.Date?.AddDays(factor).ToString(Constants.FormatConstants.SessionDateTimeFormat)), CalculateValue(biorhythm, dayInterval)));
+                list.Add(new Tuple<string, double>((bioRhythmsModel.SelectedDate?.AddDays(factor).ToString(Constants.FormatConstants.SessionDateTimeFormat)), CalculateValue(biorhythm, dayInterval)));
             }
 
             return list;

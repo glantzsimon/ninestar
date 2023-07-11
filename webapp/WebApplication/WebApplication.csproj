@@ -1312,6 +1312,11 @@
     <Content Include="Views\Users\AssignPromoCodeSuccess.cshtml" />
     <Content Include="Views\NineStarKi\Biorhythms\_BioRhythm.cshtml" />
     <Content Include="Views\NineStarKi\Biorhythms\_BioRhythms.cshtml" />
+    <Content Include="Views\NineStarKi\_PersonalChart.cshtml" />
+    <Content Include="Views\NineStarKi\_PersonalCycles.cshtml" />
+    <Content Include="Views\NineStarKi\_PersonalBiorhythms.cshtml" />
+    <Content Include="Views\NineStarKi\_ProfileCyclesSummary.cshtml" />
+    <Content Include="Views\NineStarKi\_ProfileCyclesContainer.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

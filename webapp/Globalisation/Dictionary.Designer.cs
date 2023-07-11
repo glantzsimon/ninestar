@@ -1330,6 +1330,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Yearly &amp; Monthly Cycles.
+        /// </summary>
+        public static string AboutYearlyAndMonthlyCycles {
+            get {
+                return ResourceManager.GetString("AboutYearlyAndMonthlyCycles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About Yearly Cycles.
         /// </summary>
         public static string AboutYearlyCycles {
@@ -1524,6 +1533,19 @@ namespace K9.Globalisation {
         public static string Biorhythm {
             get {
                 return ResourceManager.GetString("Biorhythm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Biorhythms are biological rhythms of a fixed duration that influence our energy levels in multiple ways.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    There are many different biorhythms of different durations, each one influencing a particular faculty. For example, there are intellectual, emotional, physical, spiritual and many other, more subtle biorhythms. 9 Star Ki influeces us in similar ways. When you combine the information of biorhythms with 9 Star Ki cycles, you begin to get a very detailed picture about what is goin [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string biorhythms {
+            get {
+                return ResourceManager.GetString("biorhythms", resourceCulture);
             }
         }
         
@@ -2698,7 +2720,10 @@ namespace K9.Globalisation {
         ///    9 Star Ki astrology is based on cycles of light and dark and the various stages the cycles move through. It is the contrast between light and dark which gives rise to the &apos;experience&apos; of being alive
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    9 Star Ki astrology is based on the universal cycles of light and dark and the various transformations between the stages between them. These cosmic cycles, eternally spiralling throughout time and space, underpin our entire reality in this cosmos and give rise to the very experience o [rest of string was truncated]&quot;;.
+        ///    These cosmic cycles, eternally spiralling throughout time and space, underpin all of our experienced reality in the cosmos. Indeed, it is these cycles that give rise to the very experience of being &quot;alive&quot;.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    In order for us to be able to experience anything at all, it is [rest of string was truncated]&quot;;.
         /// </summary>
         public static string cycles {
             get {
@@ -2776,6 +2801,15 @@ namespace K9.Globalisation {
         public static string Diplomat {
             get {
                 return ResourceManager.GetString("Diplomat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display Selected Date.
+        /// </summary>
+        public static string DisplaySelectedDate {
+            get {
+                return ResourceManager.GetString("DisplaySelectedDate", resourceCulture);
             }
         }
         
@@ -3172,11 +3206,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Emotional Biorhythms.
+        ///   Looks up a localized string similar to Emotional Biorhythm.
         /// </summary>
-        public static string EmotionalBiorhythms {
+        public static string EmotionalBiorhythm {
             get {
-                return ResourceManager.GetString("EmotionalBiorhythms", resourceCulture);
+                return ResourceManager.GetString("EmotionalBiorhythm", resourceCulture);
             }
         }
         
@@ -4075,11 +4109,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Intellectual Biorhythms.
+        ///   Looks up a localized string similar to Intellectual Biorhythm.
         /// </summary>
-        public static string IntellectualBiorhythms {
+        public static string IntellectualBiorhythm {
             get {
-                return ResourceManager.GetString("IntellectualBiorhythms", resourceCulture);
+                return ResourceManager.GetString("IntellectualBiorhythm", resourceCulture);
             }
         }
         
@@ -6653,6 +6687,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Personal Cycles.
+        /// </summary>
+        public static string PersonalCycles {
+            get {
+                return ResourceManager.GetString("PersonalCycles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Personal Development.
         /// </summary>
         public static string PersonalDevelopemntLabel {
@@ -6689,11 +6732,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Physical Biorhythms.
+        ///   Looks up a localized string similar to Physical Biorhythm.
         /// </summary>
-        public static string PhysicalBiorhythms {
+        public static string PhysicalBiorhythm {
             get {
-                return ResourceManager.GetString("PhysicalBiorhythms", resourceCulture);
+                return ResourceManager.GetString("PhysicalBiorhythm", resourceCulture);
             }
         }
         
@@ -7195,6 +7238,15 @@ namespace K9.Globalisation {
         public static string Select {
             get {
                 return ResourceManager.GetString("Select", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selected Date.
+        /// </summary>
+        public static string SelectedDateLabel {
+            get {
+                return ResourceManager.GetString("SelectedDateLabel", resourceCulture);
             }
         }
         
@@ -7912,11 +7964,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Spiritual Biorhythms.
+        ///   Looks up a localized string similar to Spiritual Biorhythm.
         /// </summary>
-        public static string SpiritualBiorhytms {
+        public static string SpiritualBiorhytm {
             get {
-                return ResourceManager.GetString("SpiritualBiorhytms", resourceCulture);
+                return ResourceManager.GetString("SpiritualBiorhytm", resourceCulture);
             }
         }
         
@@ -9188,6 +9240,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Biorhythms.
+        /// </summary>
+        public static string WhatAreBiorhythms {
+            get {
+                return ResourceManager.GetString("WhatAreBiorhythms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to White.
         /// </summary>
         public static string White {
@@ -9449,6 +9510,15 @@ namespace K9.Globalisation {
         public static string year_description {
             get {
                 return ResourceManager.GetString("year_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yearly &amp; Monthly Cycles.
+        /// </summary>
+        public static string YearlyAndMonthlyCycles {
+            get {
+                return ResourceManager.GetString("YearlyAndMonthlyCycles", resourceCulture);
             }
         }
         

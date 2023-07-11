@@ -5,10 +5,7 @@
     var id = @Guid.NewGuid().ToString();
 }
 
-@*<h3 class="text-center margin-bottom-0 padding-bottom-0" style="font-size: 0.95em; font-weight: bold;">@Dictionary.BiorhythmsLabel</h3>*@
-
 <div class="gauge-container">
-    @*<canvas id="@id" class="sinusgraph" width="900" height="500"></canvas>*@
     <div id="@id" class="sinusgraph" width="900" height="500"></div>
 </div>
 
@@ -16,14 +13,75 @@
 
     $(function() {
 
+        function getDataValueDescription(value) {
+            if (value < 10) {
+                return "Extremely Low";
+            }
+            if (value < 20) {
+                return "Very Low";
+            }
+            if (value < 40) {
+                return "Low";
+            }
+            if (value <= 60) {
+                return "Unpredictable (prone to fluctuations)";
+            }
+            if (value < 80) {
+                return "High";
+            }
+            if (value < 90) {
+                return "Very High";
+            }
+            if (value <= 100) {
+                return "Excellent";
+            }
+        }
+
         function getSeriesData(rawData) {
             var data = [], i;
             for (i = 0; i < rawData.length; i += 1) {
-                data.push({
-                    x: new Date(rawData[i].Item1),
-                    y: rawData[i].Item2,
-                    z: new Date(rawData[i].Item1).toDateString()
-                });
+                let date = new Date(rawData[i].Item1);
+                let value = rawData[i].Item2;
+                let selectedDate = new Date("@((Model.SelectedDate ?? DateTime.Today).ToString(K9.WebApplication.Constants.FormatConstants.SessionDateTimeFormat))");
+
+                if (date.getDate() === selectedDate.getDate()) {
+                    data.push({
+                        marker: {
+                            enabled: true,
+                            states: {
+                                hover: {
+                                    enabled: true
+                                } ,
+                                states: {
+                                    select: true
+                                }
+                            }
+                        },
+                        x: date,
+                        y: value,
+                        date: date.toDateString(),
+                        description: getDataValueDescription(value)
+                    });
+                } else {
+                    data.push({
+                        marker: {
+                            lineWidth: 2,
+                            enabled: false,
+                            states: {
+                                hover: {
+                                    enabled: true
+                                },
+                                states: {
+                                    select: false
+                                }
+                            }
+                        },
+                        x: date,
+                        y: value,
+                        date: date.toDateString(),
+                        description: getDataValueDescription(value)
+                    });
+                }
             }
             return data;
         }
@@ -47,7 +105,8 @@
 
                     xAxis: {
                         type: "datetime",
-                        tickPixelInterval: 4
+                        tickPixelInterval: 4,
+                        gridLineWidth: 1
                     },
 
                     yAxis: {
@@ -61,13 +120,16 @@
                                 color: "#808080"
                             }
                         ],
-                        max: 100
+                        max: 100,
+                        gridLineWidth: 1
                     },
 
                     tooltip: {
                         headerFormat: "<strong style='color: {series.color}'>{series.name}</strong><br/><br/>",
-                        pointFormat: "<strong>Date: </strong>{point.z}<br/>" +
-                                     "<strong>Value: </strong>{point.y:.2f}"
+                        pointFormat: "<strong>Date: </strong>{point.date}<br/>" +
+                                     "<strong>Value: </strong>{point.y:.2f}<br/>" +
+                                     "<strong>Description: </strong>{point.description}",
+                        crosshairs: true
                     },
 
                     legend: {

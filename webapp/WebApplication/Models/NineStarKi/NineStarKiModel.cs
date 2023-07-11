@@ -17,11 +17,12 @@ namespace K9.WebApplication.Models
         public NineStarKiModel()
         {
             PersonModel = new PersonModel();
+            Biorhythms = new BioRhythmsModel();
         }
 
-        public NineStarKiModel(PersonModel personModel, DateTime? today = null)
+        public NineStarKiModel(PersonModel personModel, DateTime? selectedDate = null)
         {
-            Today = today ?? DateTime.Today;
+            SelectedDate = selectedDate ?? DateTime.Today;
 
             PersonModel = personModel;
 
@@ -64,11 +65,9 @@ namespace K9.WebApplication.Models
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BiorhythmsLabel)]
         public BioRhythmsModel Biorhythms { get; set; }
-
-        /// <summary>
-        /// For testing purposes only
-        /// </summary>
-        public DateTime? Today { get; set; }
+        
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SummaryLabel)]
+        public DateTime? SelectedDate { get; set; }
 
         public bool IsShowSummary { get; set; } = true;
 
@@ -111,11 +110,11 @@ namespace K9.WebApplication.Models
 
             for (int i = -20; i <= 20; i++)
             {
-                Today = today.AddYears(i);
-                cycles.Add(new Tuple<int, NineStarKiEnergy>(Today.Value.Year, GetYearlyCycleEnergy()));
+                SelectedDate = today.AddYears(i);
+                cycles.Add(new Tuple<int, NineStarKiEnergy>(SelectedDate.Value.Year, GetYearlyCycleEnergy()));
             }
 
-            Today = null;
+            SelectedDate = null;
 
             return cycles;
         }
@@ -130,12 +129,12 @@ namespace K9.WebApplication.Models
                 for (int j = 0; j < 12; j++)
                 {
                     var year = today.AddYears(i).Year;
-                    Today = new DateTime(year, j + 1, 15);
-                    cycles.Add(new Tuple<int, int, string, NineStarKiEnergy>(Today.Value.Year, Today.Value.Month, Today.Value.ToString("MMMM"), GetMonthlyCycleEnergy()));
+                    SelectedDate = new DateTime(year, j + 1, 15);
+                    cycles.Add(new Tuple<int, int, string, NineStarKiEnergy>(SelectedDate.Value.Year, SelectedDate.Value.Month, SelectedDate.Value.ToString("MMMM"), GetMonthlyCycleEnergy()));
                 }
             }
 
-            Today = null;
+            SelectedDate = null;
 
             return cycles;
         }
@@ -267,7 +266,7 @@ namespace K9.WebApplication.Models
 
         private NineStarKiEnergy GetYearlyCycleEnergy()
         {
-            var todayYearEnergy = (int)GetMainEnergy(Today ?? DateTime.Today, EGender.Male).Energy;
+            var todayYearEnergy = (int)GetMainEnergy(SelectedDate ?? DateTime.Today, EGender.Male).Energy;
             var personalYearEnergy = PersonModel.Gender.IsYin() ? InvertEnergy(MainEnergy.EnergyNumber) : MainEnergy.EnergyNumber;
             var offset = todayYearEnergy - personalYearEnergy;
             var lifeCycleYearEnergy = LoopEnergyNumber(5 - offset);
@@ -279,7 +278,7 @@ namespace K9.WebApplication.Models
 
         private NineStarKiEnergy GetMonthlyCycleEnergy()
         {
-            var monthlyEnergy = GetCharacterEnergy(Today ?? DateTime.Today, GetYearlyCycleEnergy().Energy, PersonModel.Gender);
+            var monthlyEnergy = GetCharacterEnergy(SelectedDate ?? DateTime.Today, GetYearlyCycleEnergy().Energy, PersonModel.Gender);
             monthlyEnergy.EnergyCycleType = ENineStarKiEnergyCycleType.MonthlyCycleEnergy;
             return monthlyEnergy;
         }

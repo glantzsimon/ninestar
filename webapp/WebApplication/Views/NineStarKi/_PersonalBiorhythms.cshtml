@@ -1,0 +1,59 @@
+﻿@using K9.WebApplication.Enums
+@using K9.WebApplication.Helpers
+@using K9.WebApplication.Options
+@model K9.WebApplication.Models.NineStarKiModel
+
+<div class="row">
+    <div class="col-md-3 col-xs-12">
+        @if (Model != null)
+        {
+            @Html.Partial("_Gauge", new BiorhythmGaugeOptions
+            {
+                Title = Dictionary.IntellectualBiorhythm,
+                Value = (int) Model.Biorhythms.IntellectualBiorhythmResult.Value
+            })
+        }
+    </div>
+    <div class="col-md-3 col-xs-12">
+        @if (Model != null)
+        {
+            @Html.Partial("_Gauge", new BiorhythmGaugeOptions
+            {
+                Title = Dictionary.EmotionalBiorhythm,
+                Value = (int) Model.Biorhythms.EmotionalBiorhythmResult.Value
+            })
+        }
+    </div>
+    <div class="col-md-3 col-xs-12">
+        @if (Model != null)
+        {
+            @Html.Partial("_Gauge", new BiorhythmGaugeOptions
+            {
+                Title = Dictionary.PhysicalBiorhythm,
+                Value = (int) Model.Biorhythms.PhysicalBiorhythmResult.Value
+            })
+        }
+    </div>
+    <div class="col-md-3 col-xs-12">
+        @if (Model != null)
+        {
+            @Html.Partial("_Gauge", new BiorhythmGaugeOptions
+            {
+                Title = Dictionary.SpiritualBiorhytm,
+                Value = (int) Model.Biorhythms.SpiritualBiorhythmResult.Value
+            })
+        }
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 margin-bottom-15">
+        @Html.Partial("Biorhythms/_BioRhythms", Model.Biorhythms)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 margin-top-15 padding-left-0 padding-right-0">
+        <article>
+            @Html.CollapsiblePanel(Dictionary.WhatAreBiorhythms, Dictionary.biorhythms)
+        </article>
+    </div>
+</div>

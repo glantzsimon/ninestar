@@ -21,7 +21,8 @@
             for (i = 0; i < rawData.length; i += 1) {
                 data.push({
                     x: new Date(rawData[i].Item1),
-                    y: rawData[i].Item2
+                    y: rawData[i].Item2,
+                    z: new Date(rawData[i].Item1).toDateString()
                 });
             }
             return data;
@@ -33,12 +34,7 @@
                     chart: {
                         type: "spline",
                         animation: Highcharts.svg,
-                        marginRight: 10,
-                        events: {
-                            load: function() {
-                                var series = this.series;
-                            }
-                        }
+                        marginRight: 10
                     },
 
                     time: {
@@ -51,7 +47,7 @@
 
                     xAxis: {
                         type: "datetime",
-                        tickPixelInterval: 150
+                        tickPixelInterval: 4
                     },
 
                     yAxis: {
@@ -64,13 +60,14 @@
                                 width: 1,
                                 color: "#808080"
                             }
-                        ]
+                        ],
+                        max: 100
                     },
 
                     tooltip: {
-                        headerFormat: "<b>{series.name}</b><br/>",
-                        pointFormat: "<b>Date: </b>{point.x:.date}<br/>" +
-                                     "<b>Value: </b>{point.y:.2f}"
+                        headerFormat: "<strong style='color: {series.color}'>{series.name}</strong><br/><br/>",
+                        pointFormat: "<strong>Date: </strong>{point.z}<br/>" +
+                                     "<strong>Value: </strong>{point.y:.2f}"
                     },
 
                     legend: {
@@ -83,19 +80,19 @@
 
                     series: [
                         {
-                            name: "@($"{Model.IntellectualBiorhythmResult.BioRhythm.Name} {Dictionary.BiorhythmsLabel}")",
+                            name: "@($"{Model.IntellectualBiorhythmResult.BioRhythm.Name} {Dictionary.Biorhythm}")",
                             data: getSeriesData(@(Html.Raw(Model.IntellectualBiorhythmResult.RangeValues.ToJson())))
                         },
                         {
-                            name: "@($"{Model.SpiritualBiorhythmResult.BioRhythm.Name} {Dictionary.BiorhythmsLabel}")",
+                            name: "@($"{Model.SpiritualBiorhythmResult.BioRhythm.Name} {Dictionary.Biorhythm}")",
                             data: getSeriesData(@(Html.Raw(Model.SpiritualBiorhythmResult.RangeValues.ToJson())))
                         },
                         {
-                            name: "@($"{Model.EmotionalBiorhythmResult.BioRhythm.Name} {Dictionary.BiorhythmsLabel}")",
+                            name: "@($"{Model.EmotionalBiorhythmResult.BioRhythm.Name} {Dictionary.Biorhythm}")",
                             data: getSeriesData(@(Html.Raw(Model.EmotionalBiorhythmResult.RangeValues.ToJson())))
                         },
                         {
-                            name: "@($"{Model.PhysicalBiorhythmResult.BioRhythm.Name} {Dictionary.BiorhythmsLabel}")",
+                            name: "@($"{Model.PhysicalBiorhythmResult.BioRhythm.Name} {Dictionary.Biorhythm}")",
                             data: getSeriesData(@(Html.Raw(Model.PhysicalBiorhythmResult.RangeValues.ToJson())))
                         }
                     ]

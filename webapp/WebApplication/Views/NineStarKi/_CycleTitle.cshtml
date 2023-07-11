@@ -2,8 +2,8 @@
 @model NineStarKiEnergy
 
 @{
-    var label = Model.EnergyCycleType == ENineStarKiEnergyCycleType.YearlyCycleEnergy ? Dictionary.CurrentYearlyCycle
-        : Model.EnergyCycleType == ENineStarKiEnergyCycleType.MonthlyCycleEnergy ? Dictionary.CurrentMonthlyCycle
+    var label = Model.EnergyCycleType == ENineStarKiEnergyCycleType.YearlyCycleEnergy ? Dictionary.YearlyCycle
+        : Model.EnergyCycleType == ENineStarKiEnergyCycleType.MonthlyCycleEnergy ? Dictionary.MonthlyCycle
                 : string.Empty;
 }
 

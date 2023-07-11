@@ -2447,7 +2447,7 @@
     <value>Biorhythms</value>
   </data>
   <data name="DisplaySelectedDate" xml:space="preserve">
-    <value>Display Selected Date</value>
+    <value>View Cycles For Selected Date</value>
   </data>
   <data name="EmotionalBiorhythm" xml:space="preserve">
     <value>Emotional Biorhythm</value>

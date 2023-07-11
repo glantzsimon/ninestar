@@ -4,6 +4,10 @@
 
 <div class="row">
     <div class="text-center">
+        @if (Model.SelectedDate != DateTime.Today)
+        {
+            <h4>Displaying values for @(Model.SelectedDate?.ToShortDateString())</h4>
+        }
         <h5>@Dictionary.ClickOnTheNumbersBelowForMoreDetails</h5>
     </div>
     <div class="col-sm-4 col-sm-offset-2 margin-bottom-15">

@@ -66,7 +66,7 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BiorhythmsLabel)]
         public BioRhythmsModel Biorhythms { get; set; }
         
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SummaryLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SelectedDateLabel)]
         public DateTime? SelectedDate { get; set; }
 
         public bool IsShowSummary { get; set; } = true;

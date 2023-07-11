@@ -7,53 +7,11 @@
 {
     <div class="row">
         <div class="col-md-12">
-            <h4 class="text-center">Displaying values for @(Model.SelectedDate?.ToShortDateString())</h4>
+            <h4 class="text-center">Displaying values for @(Model.SelectedDate?.ToLongDateString())</h4>
         </div>
     </div>
 }
 
-<div class="row">
-    <div class="col-md-3 col-xs-12">
-        @if (Model != null)
-        {
-            @Html.Partial("_Gauge", new BiorhythmGaugeOptions
-            {
-                Title = Dictionary.IntellectualBiorhythm,
-                Value = (int) Model.Biorhythms.IntellectualBiorhythmResult.Value
-            })
-        }
-    </div>
-    <div class="col-md-3 col-xs-12">
-        @if (Model != null)
-        {
-            @Html.Partial("_Gauge", new BiorhythmGaugeOptions
-            {
-                Title = Dictionary.EmotionalBiorhythm,
-                Value = (int) Model.Biorhythms.EmotionalBiorhythmResult.Value
-            })
-        }
-    </div>
-    <div class="col-md-3 col-xs-12">
-        @if (Model != null)
-        {
-            @Html.Partial("_Gauge", new BiorhythmGaugeOptions
-            {
-                Title = Dictionary.PhysicalBiorhythm,
-                Value = (int) Model.Biorhythms.PhysicalBiorhythmResult.Value
-            })
-        }
-    </div>
-    <div class="col-md-3 col-xs-12">
-        @if (Model != null)
-        {
-            @Html.Partial("_Gauge", new BiorhythmGaugeOptions
-            {
-                Title = Dictionary.SpiritualBiorhytm,
-                Value = (int) Model.Biorhythms.SpiritualBiorhythmResult.Value
-            })
-        }
-    </div>
-</div>
 <div class="row">
     <div class="col-sm-12 margin-bottom-15">
         @Html.Partial("Biorhythms/_BioRhythms", Model.Biorhythms)

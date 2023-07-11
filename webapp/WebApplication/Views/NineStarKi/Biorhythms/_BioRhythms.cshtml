@@ -6,7 +6,7 @@
 }
 
 <div class="gauge-container">
-    <div id="@id" class="sinusgraph" width="900" height="500"></div>
+    <div id="@id" class="sinusgraph" width="896" height="500"></div>
 </div>
 
 <script type="text/javascript">
@@ -103,10 +103,18 @@
                         text: "@Dictionary.BiorhythmsLabel"
                     },
 
+                    plotOptions: {
+                        column: {
+                            pointPlacement: "between"
+                        }
+                    },
+
                     xAxis: {
                         type: "datetime",
-                        tickPixelInterval: 4,
-                        gridLineWidth: 1
+                        tickPixelInterval: 32,
+                        gridLineWidth: 1,
+                        startOnTick: true,
+                        endOnTick: true
                     },
 
                     yAxis: {
@@ -126,9 +134,9 @@
 
                     tooltip: {
                         headerFormat: "<strong style='color: {series.color}'>{series.name}</strong><br/><br/>",
-                        pointFormat: "<strong>Date: </strong>{point.date}<br/>" +
-                                     "<strong>Value: </strong>{point.y:.2f}<br/>" +
-                                     "<strong>Description: </strong>{point.description}",
+                        pointFormat: "<p style='padding: 4px; display: block;'><strong>Date: </strong>{point.date}</p><br/>" +
+                                     "<p style='padding: 4px; display: block;'><strong>Value: </strong>{point.y:.2f}</p><br/>" +
+                                     "<p style='padding: 4px; display: block;'><strong>Description: </strong>{point.description}</p>",
                         crosshairs: true
                     },
 

@@ -1,0 +1,139 @@
+﻿@using ServiceStack.Text
+@model K9.WebApplication.Options.GaugeOptions
+
+@{
+    var id = @Guid.NewGuid().ToString();
+}
+
+<div class="gauge-container">
+    <div id="@id" class="highgauge" width="300" height="300"></div>
+</div>
+
+<script type="text/javascript">
+
+    $(function() {
+
+        function getDataValueDescription(value) {
+            if (value < 10) {
+                return "Extremely Low";
+            }
+            if (value < 20) {
+                return "Very Low";
+            }
+            if (value < 40) {
+                return "Low";
+            }
+            if (value <= 60) {
+                return "Unpredictable (prone to fluctuations)";
+            }
+            if (value < 80) {
+                return "High";
+            }
+            if (value < 90) {
+                return "Very High";
+            }
+            if (value <= 100) {
+                return "Excellent";
+            }
+        }
+        
+        function loadCharts() {
+            var gaugeOptions = {
+                chart: {
+                    type: "solidgauge"
+                },
+
+                title: null,
+
+                pane: {
+                    center: ["50%", "85%"],
+                    size: "140%",
+                    startAngle: -90,
+                    endAngle: 90,
+                    background: {
+                        backgroundColor:
+                            Highcharts.defaultOptions.legend.backgroundColor || "#EEE",
+                        innerRadius: "60%",
+                        outerRadius: "100%",
+                        shape: "arc"
+                    }
+                },
+
+                exporting: {
+                    enabled: true
+                },
+
+                tooltip: {
+                    enabled: true
+                },
+
+                // the value axis
+                yAxis: {
+                    stops: [
+                        [10, "red"], 
+                        [20, "orange"], 
+                        [40, "darkorange"],
+                        [60, "yellow"],
+                        [80, "green"],
+                        [90, "blue"],
+                        [100, "lightblue"]
+                    ],
+                    lineWidth: 0,
+                    tickWidth: 0,
+                    minorTickInterval: null,
+                    tickAmount: 2,
+                    title: {
+                        y: -70
+                    },
+                    labels: {
+                        y: 16
+                    }
+                },
+
+                plotOptions: {
+                    solidgauge: {
+                        dataLabels: {
+                            y: 5,
+                            borderWidth: 0,
+                            useHTML: true
+                        }
+                    }
+                }
+            };
+
+            // The speed gauge
+            var chartSpeed = Highcharts.chart("@id", Highcharts.merge(gaugeOptions, {
+                yAxis: {
+                    min: 0,
+                    max: @Model.MaxValue,
+                    title: {
+                        text: "@Model.Title"
+                    }
+                },
+
+                credits: {
+                    enabled: false
+                },
+
+                series: [{
+                    name: "Value",
+                    data: [@Model.Value],
+                    dataLabels: {
+                        format:
+                            '<div style="text-align:center">' +
+                            '<span style="font-size:25px">{y}%</span><br/>' +
+                            '</div>'
+                    },
+                    tooltip: {
+                        valueSuffix: ' %'
+                    }
+                }]
+
+            }));
+        }
+
+        loadCharts();
+
+    });
+
+</script>

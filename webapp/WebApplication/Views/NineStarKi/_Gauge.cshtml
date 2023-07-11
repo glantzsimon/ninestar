@@ -17,13 +17,18 @@
     @if (Model.IsSecret)
     {
         <div class="gauge-question">
-            <canvas id="@id" class="gauge secret-gauge" data-value="0" data-max-value="@Model.MaxValue"></canvas>
+            <canvas id="@id" class="gauge secret-gauge" data-value="0" data-max-value="@Model.MaxValue">
+
+            </canvas>
         </div>
     }
     else
     {
-        <canvas id="@id" class="gauge" data-value="@Model.Value" data-max-value="@Model.MaxValue" data-invert="@Model.IsInverted.ToString().ToLower()"></canvas>
+        <canvas id="@id" class="gauge" data-value="@Model.Value" data-max-value="@Model.MaxValue" data-invert="@Model.IsInverted.ToString().ToLower()" >
+
+        </canvas>
     }
+
 </div>
 
 <script type="text/javascript">

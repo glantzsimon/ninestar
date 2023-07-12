@@ -50,7 +50,7 @@ namespace K9.WebApplication.Controllers
                 model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false, selectedDate ?? DateTime.Today);
             }
 
-            model.Biorhythms = _biorhythmsService.Calculate(model.PersonModel, selectedDate ?? DateTime.Today);
+            model.Biorhythms = _biorhythmsService.Calculate(model, selectedDate ?? DateTime.Today);
 
             return View("Index", model);
         }
@@ -75,7 +75,7 @@ namespace K9.WebApplication.Controllers
             };
             var nineStarKiProfile = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, true);
 
-            nineStarKiProfile.Biorhythms = _biorhythmsService.Calculate(personModel, DateTime.Today);
+            nineStarKiProfile.Biorhythms = _biorhythmsService.Calculate(nineStarKiProfile, DateTime.Today);
 
             return View(nineStarKiProfile);
         }
@@ -128,7 +128,7 @@ namespace K9.WebApplication.Controllers
                 Gender = lastProfile.Gender
             };
             var model = _nineStarKiService.CalculateNineStarKiProfile(personModel);
-            model.Biorhythms = _biorhythmsService.Calculate(personModel, DateTime.Today);
+            model.Biorhythms = _biorhythmsService.Calculate(model, DateTime.Today);
             return View("Index", model);
         }
 

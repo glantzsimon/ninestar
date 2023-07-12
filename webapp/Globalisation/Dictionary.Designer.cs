@@ -6315,6 +6315,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 9 Star Ki Biorhythms.
+        /// </summary>
+        public static string NineStarKiBiorhythmsLabel {
+            get {
+                return ResourceManager.GetString("NineStarKiBiorhythmsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 9 Star Ki Astrology Free Reading Detailed Personal Chart Personal Profile Calculator.
         /// </summary>
         public static string NineStarKiCalculatorKeywords {

@@ -347,6 +347,7 @@
     <Compile Include="Controllers\UserProfileReadingsController.cs" />
     <Compile Include="Controllers\UserPromoCodesController.cs" />
     <Compile Include="Controllers\UserMembershipsController.cs" />
+    <Compile Include="Enums\EBiorhythmFactor.cs" />
     <Compile Include="Enums\ESexualChemistryScore.cs" />
     <Compile Include="Enums\ECompatibilityScore.cs" />
     <Compile Include="Enums\EReadingType.cs" />
@@ -354,6 +355,7 @@
     <Compile Include="Enums\ESexualityType.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="Helpers\ArrayHelper.cs" />
     <Compile Include="Helpers\General.cs" />
     <Compile Include="Helpers\ViewBagHelper.cs" />
     <Compile Include="Constants\ViewDataConstants.cs" />
@@ -393,6 +395,8 @@
     <Compile Include="Models\NineStarKi\CompatibilityDetailsModel.cs" />
     <Compile Include="Models\NineStarKi\CompatibilityModel.cs" />
     <Compile Include="Models\Biorhythms\BioRhythmsModel.cs" />
+    <Compile Include="Models\NineStarKi\NineStarKiBiorhythmFactors.cs" />
+    <Compile Include="Models\NineStarKi\NineStarKiBiorhythmsModel.cs" />
     <Compile Include="Models\Recaptcha.cs" />
     <Compile Include="Models\PurchaseModel.cs" />
     <Compile Include="Models\LogItem.cs" />

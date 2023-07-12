@@ -5,6 +5,6 @@ namespace K9.WebApplication.Services
 {
     public interface IBiorhythmsService
     {
-        BioRhythmsModel Calculate(PersonModel personModel, DateTime date);
+        BioRhythmsModel Calculate(NineStarKiModel nineStarKiModel, DateTime date);
     }
 }

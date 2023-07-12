@@ -2455,6 +2455,9 @@
   <data name="IntellectualBiorhythm" xml:space="preserve">
     <value>Intellectual Biorhythm</value>
   </data>
+  <data name="NineStarKiBiorhythmsLabel" xml:space="preserve">
+    <value>9 Star Ki Biorhythms</value>
+  </data>
   <data name="PersonalCycles" xml:space="preserve">
     <value>Personal Cycles</value>
   </data>

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Enums;
 
 namespace K9.WebApplication.Services
 {
@@ -19,37 +20,52 @@ namespace K9.WebApplication.Services
             _authentication = authentication;
         }
 
-        public BioRhythmsModel Calculate(PersonModel personModel, DateTime date)
+        public BioRhythmsModel Calculate(NineStarKiModel nineStarKiModel, DateTime date)
         {
-            var model = new BioRhythmsModel(personModel, date);
+            var biorhythmsModel = new BioRhythmsModel(nineStarKiModel, date);
+            var nineStarBiorhythmsModel = new BioRhythmsModel(nineStarKiModel, date);
+            var nineStarKiBiorhythmsModel = new NineStarKiBiorhythmsModel(nineStarKiModel);
 
-            model.IntellectualBiorhythmResult = GetBioRhythmResult(new IntellectualBiorhythm(), model);
-            model.EmotionalBiorhythmResult = GetBioRhythmResult(new EmotionalBiorhythm(), model);
-            model.PhysicalBiorhythmResult = GetBioRhythmResult(new PhysicalBiorhythm(), model);
-            model.SpiritualBiorhythmResult = GetBioRhythmResult(new SpiritualBiorhythm(), model);
+            biorhythmsModel.IntellectualBiorhythmResult = GetBioRhythmResult(new IntellectualBiorhythm(), biorhythmsModel);
+            biorhythmsModel.EmotionalBiorhythmResult = GetBioRhythmResult(new EmotionalBiorhythm(), biorhythmsModel);
+            biorhythmsModel.PhysicalBiorhythmResult = GetBioRhythmResult(new PhysicalBiorhythm(), biorhythmsModel);
+            biorhythmsModel.SpiritualBiorhythmResult = GetBioRhythmResult(new SpiritualBiorhythm(), biorhythmsModel);
 
-            var isUpgradeRequired = !(_roles.CurrentUserIsInRoles(RoleNames.Administrators) || _membershipService.IsCompleteProfileReading(_authentication.CurrentUserId, personModel));
+            nineStarBiorhythmsModel.IntellectualBiorhythmResult = GetBioRhythmResult(new IntellectualBiorhythm(), nineStarBiorhythmsModel, nineStarKiBiorhythmsModel.IntellectualFactor, nineStarKiBiorhythmsModel.StabilityFactor);
+            nineStarBiorhythmsModel.EmotionalBiorhythmResult = GetBioRhythmResult(new EmotionalBiorhythm(), nineStarBiorhythmsModel,
+                nineStarKiBiorhythmsModel.EmotionalFactor, nineStarKiBiorhythmsModel.StabilityFactor);
+            nineStarBiorhythmsModel.PhysicalBiorhythmResult = GetBioRhythmResult(new PhysicalBiorhythm(), nineStarBiorhythmsModel,
+                nineStarKiBiorhythmsModel.PhysicalFactor, nineStarKiBiorhythmsModel.StabilityFactor);
+            nineStarBiorhythmsModel.SpiritualBiorhythmResult = GetBioRhythmResult(new SpiritualBiorhythm(), nineStarBiorhythmsModel,
+                nineStarKiBiorhythmsModel.SpiritualFactor, nineStarKiBiorhythmsModel.StabilityFactor);
 
-            model.IntellectualBiorhythmResult.IsUpgradeRequired = isUpgradeRequired;
-            model.EmotionalBiorhythmResult.IsUpgradeRequired = isUpgradeRequired;
-            model.SpiritualBiorhythmResult.IsUpgradeRequired = isUpgradeRequired;
+            nineStarKiModel.Biorhythms = biorhythmsModel;
+            nineStarKiModel.NineStarKiBiorhythms = nineStarBiorhythmsModel;
+            
+            var isUpgradeRequired = !(_roles.CurrentUserIsInRoles(RoleNames.Administrators) || _membershipService.IsCompleteProfileReading(_authentication.CurrentUserId, nineStarKiModel.PersonModel));
 
-            return model;
+            biorhythmsModel.IntellectualBiorhythmResult.IsUpgradeRequired = isUpgradeRequired;
+            biorhythmsModel.EmotionalBiorhythmResult.IsUpgradeRequired = isUpgradeRequired;
+            biorhythmsModel.SpiritualBiorhythmResult.IsUpgradeRequired = isUpgradeRequired;
+
+            return biorhythmsModel;
         }
 
-        private BioRhythmResult GetBioRhythmResult(BiorhythmBase biorhythm, BioRhythmsModel biorhythmsModel)
+        private BioRhythmResult GetBioRhythmResult(BiorhythmBase biorhythm, BioRhythmsModel biorhythmsModel, double nineStarKiFactor = 0, double stabilityFactor = 0)
         {
             var dayInterval = GetDayInterval(biorhythm, biorhythmsModel.DaysElapsedSinceBirth);
-            return new BioRhythmResult
+            
+            var result = new BioRhythmResult
             {
                 BioRhythm = biorhythm,
                 DayInterval = dayInterval,
-                Value = CalculateValue(biorhythm, dayInterval),
-                RangeValues = CalculateCosineRangeValues(biorhythm, biorhythmsModel)
+                Value = CalculateValue(biorhythm, dayInterval, nineStarKiFactor, stabilityFactor),
+                RangeValues = CalculateCosineRangeValues(biorhythm, biorhythmsModel, 4, nineStarKiFactor, stabilityFactor)
             };
+            return result;
         }
 
-        private List<Tuple<string, double>> CalculateCosineRangeValues(IBioRhythm biorhythm, BioRhythmsModel bioRhythmsModel, int numberOfWeeks = 4)
+        private List<Tuple<string, double>> CalculateCosineRangeValues(IBioRhythm biorhythm, BioRhythmsModel bioRhythmsModel, int numberOfWeeks = 4, double nineStarKiFactor = 0, double stabilityFactor = 0)
         {
             var period = numberOfWeeks * 7;
             var list = new List<Tuple<string, double>>();
@@ -58,17 +74,49 @@ namespace K9.WebApplication.Services
             {
                 var factor = (-(period / 2) + i + 2);
                 var dayInterval = GetDayInterval(biorhythm, bioRhythmsModel.DaysElapsedSinceBirth + factor);
-                list.Add(new Tuple<string, double>((bioRhythmsModel.SelectedDate?.AddDays(factor).ToString(Constants.FormatConstants.SessionDateTimeFormat)), CalculateValue(biorhythm, dayInterval)));
+                list.Add(new Tuple<string, double>((bioRhythmsModel.SelectedDate?.AddDays(factor).ToString(Constants.FormatConstants.SessionDateTimeFormat)), CalculateValue(biorhythm, dayInterval, nineStarKiFactor, stabilityFactor)));
             }
 
             return list;
         }
 
-        private double CalculateValue(IBioRhythm bioRhythm, int dayInterval)
+        private double CalculateValue(IBioRhythm bioRhythm, int dayInterval, double nineStarKiFactor = 0, double nineStarKiStabilityFactor = 0)
         {
-            return 50 + (50 * Math.Sin((2 * Math.PI * dayInterval) / bioRhythm.CycleLength));
-        }
+            double range = 50;
+            double phase = 0;
 
+            if (nineStarKiFactor > 0)
+            {
+                double factor = nineStarKiFactor > 1 ? 1 - (nineStarKiFactor - 1) : nineStarKiFactor;
+                double stabilityFactor = 1 - (nineStarKiStabilityFactor - 0.7);
+                double combinedFactor = (factor * stabilityFactor);
+
+                double nineStarKiPhase = nineStarKiFactor == 1 || nineStarKiFactor < 1 ? 0 : 100 - (100 * factor);
+                double stabilityPhase = (100 - (100 * stabilityFactor)) / 2;
+                double combinedPhase = (stabilityPhase * nineStarKiPhase);
+                
+                range = 50 * combinedFactor;
+
+                // Reduce towards bottom
+                if (factor < 1)
+                {
+                    phase = combinedPhase;
+                }
+                // Reduce towards top
+                else if (factor > 1)
+                {
+                    phase = (100 - 100 * combinedFactor);
+                }
+                // Centre
+                else
+                {
+                    phase = (100 - 100 * combinedFactor) / 2;
+                }
+            }
+
+            return phase + range + (range * Math.Sin((2 * Math.PI * dayInterval) / bioRhythm.CycleLength));
+        }
+        
         private int GetDayInterval(IBioRhythm bioRhythm, int daysElapsedSinceBirth)
         {
             return Math.Abs(daysElapsedSinceBirth % bioRhythm.CycleLength);

@@ -17,9 +17,9 @@ namespace K9.WebApplication.Models
 
     public class NineStarKiBiorhythmsModel
     {
-        private const int MainEnergyWeight = 3;
-        private const int EmotionalEnergyWeight = 2;
-        private const int SurfaceEnergyWeight = 1;
+        private const int MainEnergyWeight = 5;
+        private const int EmotionalEnergyWeight = 3;
+        private const int SurfaceEnergyWeight = 2;
         private const int YearlyCycleWeight = 12;
         private const int MonthlyCycleWeight = 8;
 

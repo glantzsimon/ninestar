@@ -15,6 +15,8 @@ namespace K9.DataAccessLayer.Database.Seeds
     {
         public static void Seed(DbContext context)
         {
+            return;
+
             var roles = new Roles(
                 context,
                 new BaseRepository<Role>(context),
@@ -28,6 +30,8 @@ namespace K9.DataAccessLayer.Database.Seeds
 
         private static void SeedPermissions(Roles roles)
         {
+            return;
+
             foreach (var item in typeof(PermissionsSeeder).Assembly.GetTypes().Where(t => t.IsClass && !t.IsAbstract && t.IsSubclassOf(typeof(ObjectBase))))
             {
                 var instance = Activator.CreateInstance(item) as IPermissable;

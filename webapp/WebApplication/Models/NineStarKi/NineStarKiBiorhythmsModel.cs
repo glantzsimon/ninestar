@@ -212,11 +212,11 @@ namespace K9.WebApplication.Models
                     break;
 
                 case ENineStarKiEnergy.Soil:
-                    factors.EmotionalFactor = 0.8;
+                    factors.EmotionalFactor = 0.9;
                     factors.IntellectualFactor = 0.8;
-                    factors.PhysicalFactor = 0.8;
+                    factors.PhysicalFactor = 1;
                     factors.SpiritualFactor = 0.8;
-                    factors.StabilityFactor = 1.3;
+                    factors.StabilityFactor = 1.2;
                     break;
 
                 case ENineStarKiEnergy.Thunder:

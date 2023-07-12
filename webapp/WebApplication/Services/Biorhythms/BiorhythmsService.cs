@@ -87,13 +87,14 @@ namespace K9.WebApplication.Services
 
             if (nineStarKiFactor > 0)
             {
-                double factor = nineStarKiFactor > 1 ? 1 - (nineStarKiFactor - 1) : nineStarKiFactor;
+                double factor = nineStarKiFactor > 1 ? 1.3 - (nineStarKiFactor - 1) : nineStarKiFactor;
                 double stabilityFactor = 1 - (nineStarKiStabilityFactor - 0.7);
                 double combinedFactor = (factor * stabilityFactor);
 
-                double nineStarKiPhase = nineStarKiFactor == 1 || nineStarKiFactor < 1 ? 0 : 100 - (100 * factor);
+                double nineStarKiPhase = nineStarKiFactor == 1 ? 0 : nineStarKiFactor < 1 ? -(100 - (100 * factor)) : 100 - (100 * factor);
                 double stabilityPhase = (100 - (100 * stabilityFactor)) / 2;
-                double combinedPhase = (stabilityPhase * nineStarKiPhase);
+                double combinedPhase = (stabilityPhase + nineStarKiPhase) / 2;
+                combinedPhase = combinedPhase < 0 ? 0 : combinedPhase;
                 
                 range = 50 * combinedFactor;
 

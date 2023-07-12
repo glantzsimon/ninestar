@@ -116,9 +116,16 @@ namespace K9.WebApplication.Services
 
             if (activeUserMembership == null && userId.HasValue)
             {
-                CreateFreeMembership(userId.Value);
-                activeUserMembership = GetActiveUserMemberships(userId).OrderByDescending(_ => _.MembershipOption.SubscriptionType)
-                    .FirstOrDefault();
+                try
+                {
+                    CreateFreeMembership(userId.Value);
+                    activeUserMembership = GetActiveUserMemberships(userId).OrderByDescending(_ => _.MembershipOption.SubscriptionType)
+                        .FirstOrDefault();
+                }
+                catch (Exception e)
+                {
+                    _logger.Error($"MembershipService => GetActiveUserMembership => {e.GetFullErrorMessage()}");
+                }
             }
 
             return activeUserMembership;

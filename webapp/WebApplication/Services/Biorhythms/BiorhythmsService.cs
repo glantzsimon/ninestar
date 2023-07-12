@@ -42,12 +42,6 @@ namespace K9.WebApplication.Services
             nineStarKiModel.Biorhythms = biorhythmsModel;
             nineStarKiModel.NineStarKiBiorhythms = nineStarBiorhythmsModel;
             
-            var isUpgradeRequired = !(_roles.CurrentUserIsInRoles(RoleNames.Administrators) || _membershipService.IsCompleteProfileReading(_authentication.CurrentUserId, nineStarKiModel.PersonModel));
-
-            biorhythmsModel.IntellectualBiorhythmResult.IsUpgradeRequired = isUpgradeRequired;
-            biorhythmsModel.EmotionalBiorhythmResult.IsUpgradeRequired = isUpgradeRequired;
-            biorhythmsModel.SpiritualBiorhythmResult.IsUpgradeRequired = isUpgradeRequired;
-
             return biorhythmsModel;
         }
 

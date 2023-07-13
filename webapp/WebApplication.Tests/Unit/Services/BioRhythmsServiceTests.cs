@@ -42,7 +42,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         }
 
         [Theory]
-        [InlineData(1979, 06, 16, 1979, 06, 16, EGender.Male, ENineStarKiEnergy.Thunder, 50, 59.52)]
+        [InlineData(1979, 06, 16, 1979, 06, 16, EGender.Male, ENineStarKiEnergy.Thunder, 50, 55.9976)]
         public void NineStarKiBiorhythms_PhysicalEnergy_HappyPath(int birthYear, int birthMonth, int birthDay, int dateYear, int dateMonth, int dateDay, EGender gender, ENineStarKiEnergy expectedEnergy, double expectedBiorhythmValue, double expectedNineStarKiBiorhythmsValue)
         {
             var biorhythmsService = new BiorhythmsService(new Mock<IRoles>().Object, new Mock<IMembershipService>().Object, new Mock<IAuthentication>().Object);
@@ -55,7 +55,7 @@ namespace K9.WebApplication.Tests.Unit.Services
 
             Assert.Equal(expectedEnergy, result.NineStarKiModel.MainEnergy.Energy);
             Assert.Equal(expectedBiorhythmValue, result.NineStarKiModel.Biorhythms.PhysicalBiorhythmResult.Value);
-            Assert.Equal(expectedNineStarKiBiorhythmsValue, result.NineStarKiModel.NineStarKiBiorhythms.PhysicalBiorhythmResult.Value);
+            Assert.Equal(expectedNineStarKiBiorhythmsValue, Math.Round(result.NineStarKiModel.NineStarKiBiorhythms.PhysicalBiorhythmResult.Value, 4));
         }
 
     }

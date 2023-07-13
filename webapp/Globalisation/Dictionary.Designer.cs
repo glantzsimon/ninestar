@@ -9258,7 +9258,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About Biorhythms.
+        ///   Looks up a localized string similar to About 9 Star Ki Biorhythms.
         /// </summary>
         public static string WhatAreBiorhythms {
             get {

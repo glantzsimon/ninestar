@@ -28,7 +28,7 @@ namespace K9.WebApplication.Models
             PersonModel = personModel;
 
             MainEnergy = GetMainEnergy(PersonModel.DateOfBirth, PersonModel.Gender);
-            CharacterEnergy = GetCharacterEnergy(PersonModel.DateOfBirth, MainEnergy.Energy, personModel.Gender);
+            CharacterEnergy = GetCharacterEnergy(PersonModel.DateOfBirth, personModel.Gender);
             SurfaceEnergy = GetSurfaceEnergy();
             YearlyCycleEnergy = GetYearlyCycleEnergy();
             MonthlyCycleEnergy = GetMonthlyCycleEnergy();
@@ -72,12 +72,12 @@ namespace K9.WebApplication.Models
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BiorhythmsLabel)]
         public BioRhythmsModel NineStarKiBiorhythms { get; set; }
-        
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SelectedDateLabel)]
         public DateTime? SelectedDate { get; set; }
 
         public bool IsScrollToCyclesOverview { get; set; }
-        
+
         public string ActiveCycleTabId { get; set; }
 
         public bool IsShowSummary { get; set; } = true;
@@ -165,9 +165,8 @@ namespace K9.WebApplication.Models
             return nineStarKiEnergy;
         }
 
-        private NineStarKiEnergy GetCharacterEnergy(DateTime date, ENineStarKiEnergy energy, EGender gender)
+        private int GetMonth(DateTime date)
         {
-            var energyNumber = 0;
             var month = date.Month;
             var day = date.Day;
 
@@ -204,7 +203,68 @@ namespace K9.WebApplication.Models
                     break;
             }
 
-            switch (energy)
+            return month;
+        }
+
+        private int GetMonthStartDay(int month)
+        {
+            switch (month)
+            {
+                case 2:
+                    return 4;
+
+                case 3:
+                case 6:
+                    return 6;
+
+                case 4:
+                case 5:
+                case 1:
+                    return 5;
+
+                case 7:
+                case 8:
+                case 11:
+                case 12:
+                    return 7;
+
+                case 9:
+                case 10:
+                    return 8;
+            }
+
+            throw new ArgumentOutOfRangeException();
+        }
+
+        public NineStarKiDates GetMonthlyPeriod(DateTime date, EGender gender)
+        {
+            var month = GetMonth(date);
+            var yearlyEnergy = GetMainEnergy(date, gender);
+            var energyNumber = GetEnergyNumberFromYearlyEnergy(yearlyEnergy.Energy, month);
+            var monthlyEnergy = ProcessEnergy(energyNumber, gender, ENineStarKiEnergyType.CharacterEnergy);
+
+            var startDate = new DateTime(date.Year, month, GetMonthStartDay(month));
+            var nextMonthDate = startDate.AddMonths(1);
+            nextMonthDate = new DateTime(nextMonthDate.Year, nextMonthDate.Month, 15);
+
+            var nextMonth = GetMonth(nextMonthDate);
+            var nextMonthStartDay = GetMonthStartDay(nextMonth);
+            var endDate = new DateTime(nextMonthDate.Year, nextMonthDate.Month, nextMonthStartDay - 1);
+
+            return new NineStarKiDates
+            {
+                YearlyEnergy = yearlyEnergy.Energy,
+                MonthlyEnergy = monthlyEnergy.Energy,
+                MonthlyPeriodStartsOn = startDate,
+                MonthlyPeriodEndsOn = endDate
+            };
+        }
+
+        private int GetEnergyNumberFromYearlyEnergy(ENineStarKiEnergy yearlyEnergy, int month)
+        {
+            var energyNumber = 0;
+
+            switch (yearlyEnergy)
             {
                 case ENineStarKiEnergy.Thunder:
                 case ENineStarKiEnergy.Heaven:
@@ -267,6 +327,15 @@ namespace K9.WebApplication.Models
                     break;
             }
 
+            return energyNumber;
+        }
+
+        private NineStarKiEnergy GetCharacterEnergy(DateTime date, EGender gender = EGender.Male)
+        {
+            var month = GetMonth(date);
+            var yearlyEnergy = GetMainEnergy(date, gender).Energy;
+            var energyNumber = GetEnergyNumberFromYearlyEnergy(yearlyEnergy, month);
+
             return ProcessEnergy(energyNumber, gender, ENineStarKiEnergyType.CharacterEnergy);
         }
 
@@ -289,7 +358,10 @@ namespace K9.WebApplication.Models
 
         private NineStarKiEnergy GetMonthlyCycleEnergy()
         {
-            var monthlyEnergy = GetCharacterEnergy(SelectedDate ?? DateTime.Today, GetYearlyCycleEnergy().Energy, PersonModel.Gender);
+            var month = GetMonth(SelectedDate.Value);
+            var yearlyCycleEnergy = GetYearlyCycleEnergy().Energy;
+            var energyNumber = GetEnergyNumberFromYearlyEnergy(yearlyCycleEnergy, month);
+            var monthlyEnergy = ProcessEnergy(energyNumber, PersonModel.Gender, ENineStarKiEnergyType.CharacterEnergy);
             monthlyEnergy.EnergyCycleType = ENineStarKiEnergyCycleType.MonthlyCycleEnergy;
             return monthlyEnergy;
         }

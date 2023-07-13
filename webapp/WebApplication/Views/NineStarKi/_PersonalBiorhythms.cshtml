@@ -3,14 +3,11 @@
 @using K9.WebApplication.Options
 @model K9.WebApplication.Models.NineStarKiModel
 
-@if (Model.SelectedDate != DateTime.Today)
-{
-    <div class="row">
-        <div class="col-md-12">
-            <h4 class="text-center">Displaying values for @(Model.SelectedDate?.ToLongDateString())</h4>
-        </div>
+<div class="row">
+    <div class="col-md-12">
+        @Html.Partial("_SelectedDateAndPeriodTitle")
     </div>
-}
+</div>
 
 <div class="row">
     <div class="col-md-3 col-sm-6 margin-bottom-0 padding-left-0 padding-right-0 text-center">

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Enums;
+using Microsoft.Ajax.Utilities;
 
 namespace K9.WebApplication.Services
 {
@@ -25,7 +26,7 @@ namespace K9.WebApplication.Services
             var biorhythmsModel = new BioRhythmsModel(nineStarKiModel, date);
             var nineStarBiorhythmsModel = new BioRhythmsModel(nineStarKiModel, date);
             var nineStarKiBiorhythmsModel = new NineStarKiBiorhythmsModel(nineStarKiModel);
-
+            
             biorhythmsModel.IntellectualBiorhythmResult = GetBioRhythmResult(new IntellectualBiorhythm(), biorhythmsModel);
             biorhythmsModel.EmotionalBiorhythmResult = GetBioRhythmResult(new EmotionalBiorhythm(), biorhythmsModel);
             biorhythmsModel.PhysicalBiorhythmResult = GetBioRhythmResult(new PhysicalBiorhythm(), biorhythmsModel);
@@ -54,20 +55,26 @@ namespace K9.WebApplication.Services
                 BioRhythm = biorhythm,
                 DayInterval = dayInterval,
                 Value = CalculateValue(biorhythm, dayInterval, nineStarKiFactor, stabilityFactor),
-                RangeValues = CalculateCosineRangeValues(biorhythm, biorhythmsModel, 4, nineStarKiFactor, stabilityFactor)
+                RangeValues = CalculateCosineRangeValues(biorhythm, biorhythmsModel, nineStarKiFactor, stabilityFactor)
             };
             return result;
         }
 
-        private List<Tuple<string, double>> CalculateCosineRangeValues(IBioRhythm biorhythm, BioRhythmsModel bioRhythmsModel, int numberOfWeeks = 4, double nineStarKiFactor = 0, double stabilityFactor = 0)
+        private List<Tuple<string, double>> CalculateCosineRangeValues(IBioRhythm biorhythm, BioRhythmsModel bioRhythmsModel, double nineStarKiFactor = 0, double stabilityFactor = 0)
         {
-            var period = numberOfWeeks * 7;
+            var nineStarMonthlyPeriod =
+                bioRhythmsModel.NineStarKiModel.GetMonthlyPeriod(bioRhythmsModel.SelectedDate.Value,
+                    bioRhythmsModel.PersonModel.Gender);
+            var period = nineStarMonthlyPeriod.GetTotalDaysInMonthlyPeriod();
+            var daysSinceBeginningOfPeriod =
+                (int)bioRhythmsModel.SelectedDate.Value.Subtract(nineStarMonthlyPeriod.MonthlyPeriodStartsOn).TotalDays;
             var list = new List<Tuple<string, double>>();
-
+            
             for (int i = 0; i < period; i++)
             {
-                var factor = (-(period / 2) + i + 2);
+                var factor = i - daysSinceBeginningOfPeriod;
                 var dayInterval = GetDayInterval(biorhythm, bioRhythmsModel.DaysElapsedSinceBirth + factor);
+
                 list.Add(new Tuple<string, double>((bioRhythmsModel.SelectedDate?.AddDays(factor).ToString(Constants.FormatConstants.SessionDateTimeFormat)), CalculateValue(biorhythm, dayInterval, nineStarKiFactor, stabilityFactor)));
             }
 

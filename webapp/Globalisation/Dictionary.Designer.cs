@@ -2805,7 +2805,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to View Cycles &amp;Biorhythms For Selected Date.
+        ///   Looks up a localized string similar to View Cycles &amp; Biorhythms For Selected Date.
         /// </summary>
         public static string DisplaySelectedDate {
             get {

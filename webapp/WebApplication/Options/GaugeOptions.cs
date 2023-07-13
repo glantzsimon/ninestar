@@ -10,5 +10,7 @@ namespace K9.WebApplication.Options
         public bool IsInverted { get; set; }
         public bool IsSecret { get; set; }
         public bool IsSummary { get; set; }
+        public string BackgroundColor { get; set; }
+        public string StrokeColor { get; set; }
     }
 }

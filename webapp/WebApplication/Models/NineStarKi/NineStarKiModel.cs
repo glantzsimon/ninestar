@@ -76,6 +76,10 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SelectedDateLabel)]
         public DateTime? SelectedDate { get; set; }
 
+        public bool IsScrollToCyclesOverview { get; set; }
+        
+        public string ActiveCycleTabId { get; set; }
+
         public bool IsShowSummary { get; set; } = true;
 
         public bool IsCompatibility { get; set; } = false;

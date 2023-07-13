@@ -16,5 +16,7 @@
         /// Gets the period of the sinusoidal biorhythm.
         /// </summary>
         public abstract int CycleLength { get; }
+
+        public string FullName => $"{Name} {Globalisation.Dictionary.Biorhythm}";
     }
 }

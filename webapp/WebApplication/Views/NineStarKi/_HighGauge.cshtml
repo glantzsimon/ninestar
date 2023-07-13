@@ -6,134 +6,36 @@
 }
 
 <div class="gauge-container">
-    <div id="@id" class="highgauge" width="300" height="300"></div>
+    <canvas id="@id" data-type="radial-gauge"
+            data-value="@Model.Value"
+            data-max="@Model.MaxValue"
+            data-width="200"
+            data-height="200"
+            data-bar-width="20"
+            data-bar-shadow="1"
+            data-color-bar-progress="@Model.StrokeColor"
+            data-color-bar="@Model.BackgroundColor"
+            data-border-shadow-width="0"
+            data-border-inner-width="0"
+            data-border-outer-width="0"
+            data-border-middle-width="0"
+            data-highlights="false"
+            data-value-box-stroke="0"
+            data-color-value-box-shadow="0"
+            data-value-box-border-radius="0"
+            data-value-text-shadow="0"
+            data-color-value-box-background="transparent"
+            data-needle="true"
+            data-needle-type="line"
+            data-needle-width="1"
+            data-needle-circle-size="5"
+            data-needle-circle-inner="false"
+            data-color-needle-circle-outer="@Model.StrokeColor"
+            data-color-needle-circle-outer-end="#aae"
+            data-value-format="0"
+            data-value-box="false"
+            data-glow="true"
+            data-title="@Model.Title"
+    ></canvas>
 </div>
 
-<script type="text/javascript">
-
-    $(function() {
-
-        function getDataValueDescription(value) {
-            if (value < 10) {
-                return "Extremely Low";
-            }
-            if (value < 20) {
-                return "Very Low";
-            }
-            if (value < 40) {
-                return "Low";
-            }
-            if (value <= 60) {
-                return "Unpredictable (prone to fluctuations)";
-            }
-            if (value < 80) {
-                return "High";
-            }
-            if (value < 90) {
-                return "Very High";
-            }
-            if (value <= 100) {
-                return "Excellent";
-            }
-        }
-        
-        function loadCharts() {
-            var gaugeOptions = {
-                chart: {
-                    type: "solidgauge"
-                },
-
-                title: null,
-
-                pane: {
-                    center: ["50%", "85%"],
-                    size: "140%",
-                    startAngle: -90,
-                    endAngle: 90,
-                    background: {
-                        backgroundColor:
-                            Highcharts.defaultOptions.legend.backgroundColor || "#EEE",
-                        innerRadius: "60%",
-                        outerRadius: "100%",
-                        shape: "arc"
-                    }
-                },
-
-                exporting: {
-                    enabled: true
-                },
-
-                tooltip: {
-                    enabled: true
-                },
-
-                // the value axis
-                yAxis: {
-                    stops: [
-                        [10, "red"], 
-                        [20, "orange"], 
-                        [40, "darkorange"],
-                        [60, "yellow"],
-                        [80, "green"],
-                        [90, "blue"],
-                        [100, "lightblue"]
-                    ],
-                    lineWidth: 0,
-                    tickWidth: 0,
-                    minorTickInterval: null,
-                    tickAmount: 2,
-                    title: {
-                        y: -70
-                    },
-                    labels: {
-                        y: 16
-                    }
-                },
-
-                plotOptions: {
-                    solidgauge: {
-                        dataLabels: {
-                            y: 5,
-                            borderWidth: 0,
-                            useHTML: true
-                        }
-                    }
-                }
-            };
-
-            // The speed gauge
-            var chartSpeed = Highcharts.chart("@id", Highcharts.merge(gaugeOptions, {
-                yAxis: {
-                    min: 0,
-                    max: @Model.MaxValue,
-                    title: {
-                        text: "@Model.Title"
-                    }
-                },
-
-                credits: {
-                    enabled: false
-                },
-
-                series: [{
-                    name: "Value",
-                    data: [@Model.Value],
-                    dataLabels: {
-                        format:
-                            '<div style="text-align:center">' +
-                            '<span style="font-size:25px">{y}%</span><br/>' +
-                            '</div>'
-                    },
-                    tooltip: {
-                        valueSuffix: ' %'
-                    }
-                }]
-
-            }));
-        }
-
-        loadCharts();
-
-    });
-
-</script>

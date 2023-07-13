@@ -41,14 +41,14 @@ namespace K9.WebApplication.Services
 
             nineStarKiModel.Biorhythms = biorhythmsModel;
             nineStarKiModel.NineStarKiBiorhythms = nineStarBiorhythmsModel;
-            
+
             return biorhythmsModel;
         }
 
         private BioRhythmResult GetBioRhythmResult(BiorhythmBase biorhythm, BioRhythmsModel biorhythmsModel, double nineStarKiFactor = 0, double stabilityFactor = 0)
         {
             var dayInterval = GetDayInterval(biorhythm, biorhythmsModel.DaysElapsedSinceBirth);
-            
+
             var result = new BioRhythmResult
             {
                 BioRhythm = biorhythm,
@@ -81,37 +81,37 @@ namespace K9.WebApplication.Services
 
             if (nineStarKiFactor > 0)
             {
-                double factor = nineStarKiFactor > 1 ? 1.3 - (nineStarKiFactor - 1) : nineStarKiFactor;
+                double factor = nineStarKiFactor > 1 ? 1 - (nineStarKiFactor - 1) : nineStarKiFactor == 1 ? 1 : 1 - (1 - nineStarKiFactor);
                 double stabilityFactor = 1 - (nineStarKiStabilityFactor - 0.7);
                 double combinedFactor = (factor * stabilityFactor);
 
-                double nineStarKiPhase = nineStarKiFactor == 1 ? 0 : nineStarKiFactor < 1 ? -(100 - (100 * factor)) : 100 - (100 * factor);
+                double stabilityOffsetFactor = 3.3333333;
+                double stabilityOffset = (1 - factor) * stabilityOffsetFactor;
+
+                double nineStarKiPhase = nineStarKiFactor <= 1 ? 0 : 100 - (100 * factor);
                 double stabilityPhase = (100 - (100 * stabilityFactor)) / 2;
-                double combinedPhase = (stabilityPhase + nineStarKiPhase) / 2;
-                combinedPhase = combinedPhase < 0 ? 0 : combinedPhase;
-                
+               
                 range = 50 * combinedFactor;
 
-                // Reduce towards bottom
-                if (factor < 1)
+                if (nineStarKiFactor < 1)
                 {
-                    phase = combinedPhase;
+                    phase = stabilityPhase * stabilityOffset;
                 }
-                // Reduce towards top
-                else if (factor > 1)
+                else if (nineStarKiFactor > 1)
                 {
-                    phase = (100 - 100 * combinedFactor);
+                    phase = nineStarKiPhase + (stabilityPhase * stabilityOffset);
                 }
-                // Centre
                 else
                 {
-                    phase = (100 - 100 * combinedFactor) / 2;
+                    phase = stabilityPhase;
                 }
+                
             }
 
-            return phase + range + (range * Math.Sin((2 * Math.PI * dayInterval) / bioRhythm.CycleLength));
+            var value = phase + range + (range * Math.Sin((2 * Math.PI * dayInterval) / bioRhythm.CycleLength));
+            return value;
         }
-        
+
         private int GetDayInterval(IBioRhythm bioRhythm, int daysElapsedSinceBirth)
         {
             return Math.Abs(daysElapsedSinceBirth % bioRhythm.CycleLength);

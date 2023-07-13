@@ -1,14 +1,20 @@
-﻿@using K9.WebApplication.Enums
+﻿@using K9.SharedLibrary.Extensions
+@using K9.WebApplication.Enums
 @using K9.WebApplication.Helpers
-@model K9.WebApplication.Models.NineStarKiModel
+@using K9.WebApplication.Models
+@model NineStarKiModel
 
-<ul class="nav nav-pills nav-justified margin-top-0">
+@{
+    var IsScrollToCyclesOverviewName = nameof(Model.IsScrollToCyclesOverview);
+}
+
+<ul id="cycle-pills" class="nav nav-pills nav-justified margin-top-0">
     <li class="active"><a data-toggle="tab" href="#ninestarki-cycles">@Dictionary.YearlyAndMonthlyCycles</a></li>
     <li><a data-toggle="tab" href="#biorhythms">@Dictionary.BiorhythmsLabel</a></li>
 </ul>
 
 <div class="row margin-top-20 margin-bottom-0">
-    <div class="col-md-offset-2 col-md-8">
+    <div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-md-10 padding-left-0 padding-right-0">
         @using (Html.BeginForm("CalculateNineStarKi", "NineStarKi"))
         {
             using (Html.BeginBootstrapForm())
@@ -18,6 +24,9 @@
                 @Html.HiddenFor(model => model.PersonModel.Name)
                 @Html.HiddenFor(model => model.PersonModel.DateOfBirth)
                 @Html.HiddenFor(model => model.PersonModel.Gender)
+                @Html.HiddenFor(model => model.ActiveCycleTabId)
+                
+                <input type="hidden" value="True" id="@IsScrollToCyclesOverviewName" name="@IsScrollToCyclesOverviewName" />
 
                 <hr />
                 <div class="text-center">
@@ -47,16 +56,15 @@
     }
 
     $(function () {
-        $("#ninestarki-cycles").click(function () {
-            scrollProfile("#ninestarki-cycles");
+        if ("@Model.IsScrollToCyclesOverview" === "True") {
+            scrollProfile("#cycle-pills");
 
-            $(".nav-pills a[href='#ninestarki-cycles']").tab("show");
-        });
+            $(".nav-pills a[href='@(Model.ActiveCycleTabId)']").tab("show");
+        }
 
-        $("#biorhythms").click(function () {
-            scrollProfile("#biorhythms");
-
-            $(".nav-pills a[href='#biorhythms']").tab("show");
+        $('#cycle-pills a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            var target = $(e.target).attr("href");
+            $("#ActiveCycleTabId").val(target);
         });
     });
 

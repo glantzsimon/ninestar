@@ -13,6 +13,19 @@ namespace K9.WebApplication.Models
                 list.Add(factor);
             }
         }
+
+        public static void AddStabilityFactor(this List<double> list, double factor, int weight, double influence)
+        {
+            double difference = factor > 0.7 ? factor - 0.7 : 0;
+            double modification = (difference * influence);
+
+            factor -= modification;
+
+            for (int i = 0; i < weight; i++)
+            {
+                list.Add(factor);
+            }
+        }
     }
 
     public class NineStarKiBiorhythmsModel
@@ -20,8 +33,10 @@ namespace K9.WebApplication.Models
         private const int MainEnergyWeight = 5;
         private const int EmotionalEnergyWeight = 3;
         private const int SurfaceEnergyWeight = 2;
-        private const int YearlyCycleWeight = 11;
-        private const int MonthlyCycleWeight = 8;
+        private const int YearlyCycleWeight = 8;
+        private const int MonthlyCycleWeight = 5;
+
+        private const double StabilityInfluence = 0.66;
 
         public double StabilityFactor { get; set; }
         public double IntellectualFactor { get; set; }
@@ -58,11 +73,11 @@ namespace K9.WebApplication.Models
             var yearlyCycleFactors = GetCycleFactors(NineStarKiModel.YearlyCycleEnergy.Energy);
             var monthlyCycleFactors = GetCycleFactors(NineStarKiModel.MonthlyCycleEnergy.Energy);
 
-            factors.AddFactor(mainEnergyFactors.StabilityFactor, MainEnergyWeight);
-            factors.AddFactor(emotionalEnergyFactors.StabilityFactor, EmotionalEnergyWeight);
-            factors.AddFactor(surfaceEnergyFactors.StabilityFactor, SurfaceEnergyWeight);
-            factors.AddFactor(yearlyCycleFactors.StabilityFactor, YearlyCycleWeight);
-            factors.AddFactor(monthlyCycleFactors.StabilityFactor, MonthlyCycleWeight);
+            factors.AddStabilityFactor(mainEnergyFactors.StabilityFactor, MainEnergyWeight, StabilityInfluence);
+            factors.AddStabilityFactor(emotionalEnergyFactors.StabilityFactor, EmotionalEnergyWeight, StabilityInfluence);
+            factors.AddStabilityFactor(surfaceEnergyFactors.StabilityFactor, SurfaceEnergyWeight, StabilityInfluence);
+            factors.AddStabilityFactor(yearlyCycleFactors.StabilityFactor, YearlyCycleWeight, StabilityInfluence);
+            factors.AddStabilityFactor(monthlyCycleFactors.StabilityFactor, MonthlyCycleWeight, StabilityInfluence);
 
             return factors;
         }

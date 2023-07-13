@@ -9541,7 +9541,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Personal Cycles &amp; Biorhythms Overview.
+        ///   Looks up a localized string similar to Cycles &amp; Biorhythms Overview.
         /// </summary>
         public static string YearlyAndMonthlyCyclesOverview {
             get {

@@ -14,4 +14,8 @@
     form .well div .col-sm-6:last-of-type, .well form div .col-sm-6:last-of-type {
         padding: 0;
     }
+
+    .panel-body .nav-pills > li + li {
+        margin-left: 0 !important;
+    }
 }

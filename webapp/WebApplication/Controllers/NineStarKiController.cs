@@ -43,14 +43,21 @@ namespace K9.WebApplication.Controllers
         [Route("calculate")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CalculateNineStarKi(NineStarKiModel model, DateTime? selectedDate = null)
+        public ActionResult CalculateNineStarKi(NineStarKiModel model)
         {
-            if (model.PersonModel != null || selectedDate != DateTime.Today)
+            if (model.PersonModel != null || model.SelectedDate != DateTime.Today)
             {
-                model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false, selectedDate ?? DateTime.Today);
+                var selectedDate = model.SelectedDate ?? DateTime.Today;
+                var isScrollToCyclesOverview = model.IsScrollToCyclesOverview;
+                var activeTabId = model.ActiveCycleTabId;
+
+                model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false, selectedDate);
+                model.SelectedDate = selectedDate;
+                model.IsScrollToCyclesOverview = isScrollToCyclesOverview;
+                model.ActiveCycleTabId = activeTabId;
             }
 
-            model.Biorhythms = _biorhythmsService.Calculate(model, selectedDate ?? DateTime.Today);
+            model.Biorhythms = _biorhythmsService.Calculate(model, model.SelectedDate ?? DateTime.Today);
 
             return View("Index", model);
         }

@@ -13,7 +13,14 @@
 
     $(function() {
 
-        function getDataValueDescription(value) {
+        function getDataValueDescription(value, max, min) {
+            var range = max - min;
+            var tength = (range / 10);
+
+            if (value >= (tength * 4) + min && value < (tength * 6) + min) {
+                return "Unpredictable (prone to fluctuations)";
+            }
+
             if (value < 10) {
                 return "Extremely Low";
             }
@@ -23,8 +30,8 @@
             if (value < 40) {
                 return "Low";
             }
-            if (value <= 60) {
-                return "Unpredictable (prone to fluctuations)";
+            if (value < 60) {
+                return "Moderate";
             }
             if (value < 80) {
                 return "High";
@@ -37,7 +44,7 @@
             }
         }
 
-        function getSeriesData(rawData) {
+        function getSeriesData(rawData, max, min) {
             var data = [], i;
             for (i = 0; i < rawData.length; i += 1) {
                 let date = new Date(rawData[i].Item1);
@@ -60,7 +67,7 @@
                         x: date,
                         y: value,
                         date: date.toDateString(),
-                        description: getDataValueDescription(value)
+                        description: getDataValueDescription(value, max, min)
                     });
                 } else {
                     data.push({
@@ -79,7 +86,7 @@
                         x: date,
                         y: value,
                         date: date.toDateString(),
-                        description: getDataValueDescription(value)
+                        description: getDataValueDescription(value, max, min)
                     });
                 }
             }
@@ -129,6 +136,7 @@
                             }
                         ],
                         max: 100,
+                        min: 0,
                         gridLineWidth: 1
                     },
 
@@ -151,19 +159,20 @@
                     series: [
                         {
                             name: "@($"{Model.IntellectualBiorhythmResult.BioRhythm.Name} {Dictionary.Biorhythm}")",
-                            data: getSeriesData(@(Html.Raw(Model.IntellectualBiorhythmResult.RangeValues.ToJson())))
+                            data: getSeriesData(@(Html.Raw(Model.IntellectualBiorhythmResult.RangeValues.ToJson())), @(Model.IntellectualBiorhythmResult.GetMaxValue()), @(Model.IntellectualBiorhythmResult.GetMinValue()))
                         },
                         {
                             name: "@($"{Model.SpiritualBiorhythmResult.BioRhythm.Name} {Dictionary.Biorhythm}")",
-                            data: getSeriesData(@(Html.Raw(Model.SpiritualBiorhythmResult.RangeValues.ToJson())))
+                            data: getSeriesData(@(Html.Raw(Model.SpiritualBiorhythmResult.RangeValues.ToJson())), @(Model.SpiritualBiorhythmResult.GetMaxValue()), @(Model.SpiritualBiorhythmResult.GetMinValue()))
+
                         },
                         {
                             name: "@($"{Model.EmotionalBiorhythmResult.BioRhythm.Name} {Dictionary.Biorhythm}")",
-                            data: getSeriesData(@(Html.Raw(Model.EmotionalBiorhythmResult.RangeValues.ToJson())))
+                            data: getSeriesData(@(Html.Raw(Model.EmotionalBiorhythmResult.RangeValues.ToJson())), @(Model.EmotionalBiorhythmResult.GetMaxValue()), @(Model.EmotionalBiorhythmResult.GetMinValue()))
                         },
                         {
                             name: "@($"{Model.PhysicalBiorhythmResult.BioRhythm.Name} {Dictionary.Biorhythm}")",
-                            data: getSeriesData(@(Html.Raw(Model.PhysicalBiorhythmResult.RangeValues.ToJson())))
+                            data: getSeriesData(@(Html.Raw(Model.PhysicalBiorhythmResult.RangeValues.ToJson())), @(Model.PhysicalBiorhythmResult.GetMaxValue()), @(Model.PhysicalBiorhythmResult.GetMinValue()))
                         }
                     ]
                 });

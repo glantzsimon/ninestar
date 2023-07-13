@@ -1,0 +1,63 @@
+﻿@using K9.WebApplication.Enums
+@using K9.WebApplication.Helpers
+@model K9.WebApplication.Models.NineStarKiModel
+
+<ul class="nav nav-pills nav-justified margin-top-0">
+    <li class="active"><a data-toggle="tab" href="#ninestarki-cycles">@Dictionary.YearlyAndMonthlyCycles</a></li>
+    <li><a data-toggle="tab" href="#biorhythms">@Dictionary.BiorhythmsLabel</a></li>
+</ul>
+
+<div class="row margin-top-20 margin-bottom-0">
+    <div class="col-md-offset-2 col-md-8">
+        @using (Html.BeginForm("CalculateNineStarKi", "NineStarKi"))
+        {
+            using (Html.BeginBootstrapForm())
+            {
+                @Html.BootstrapEditorFor(model => model.SelectedDate)
+
+                @Html.HiddenFor(model => model.PersonModel.Name)
+                @Html.HiddenFor(model => model.PersonModel.DateOfBirth)
+                @Html.HiddenFor(model => model.PersonModel.Gender)
+
+                <hr />
+                <div class="text-center">
+                    @Html.BootstrapButton(Dictionary.DisplaySelectedDate, EButtonType.Submit, "", EButtonClass.Large)
+                </div>
+            }
+        }
+    </div>
+</div>
+
+<div class="tab-content">
+    <div id="ninestarki-cycles" class="tab-pane fade in active">
+        @Html.Panel(Dictionary.YearlyAndMonthlyCycles, Html.Partial("_PersonalCycles").ToString())
+    </div>
+
+    <div id="biorhythms" class="tab-pane fade">
+        @Html.Panel(Dictionary.BiorhythmsLabel, Html.Partial("_PersonalBiorhythms").ToString())
+    </div>
+</div>
+
+<script language="javascript">
+
+    function scrollProfile(tab) {
+        setTimeout(function () {
+            $.fn.scrollToTopOf(tab, -230);
+        }, 200);
+    }
+
+    $(function () {
+        $("#ninestarki-cycles").click(function () {
+            scrollProfile("#ninestarki-cycles");
+
+            $(".nav-pills a[href='#ninestarki-cycles']").tab("show");
+        });
+
+        $("#biorhythms").click(function () {
+            scrollProfile("#biorhythms");
+
+            $(".nav-pills a[href='#biorhythms']").tab("show");
+        });
+    });
+
+</script>

@@ -6696,6 +6696,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Personal Chart Overview.
+        /// </summary>
+        public static string PersonalChartOverview {
+            get {
+                return ResourceManager.GetString("PersonalChartOverview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Personal Cycles.
         /// </summary>
         public static string PersonalCycles {
@@ -9528,6 +9537,15 @@ namespace K9.Globalisation {
         public static string YearlyAndMonthlyCycles {
             get {
                 return ResourceManager.GetString("YearlyAndMonthlyCycles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personal Cycles &amp; Biorhythms Overview.
+        /// </summary>
+        public static string YearlyAndMonthlyCyclesOverview {
+            get {
+                return ResourceManager.GetString("YearlyAndMonthlyCyclesOverview", resourceCulture);
             }
         }
         

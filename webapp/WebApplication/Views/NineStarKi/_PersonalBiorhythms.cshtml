@@ -12,18 +12,13 @@
     </div>
 }
 
-@*<div class="row">
-    <div class="col-sm-12 margin-bottom-15">
-        @Html.Partial("Biorhythms/_BioRhythms", Model.Biorhythms)
-    </div>
-</div>*@
 <div class="row">
-    <div class="col-sm-12 margin-bottom-15">
+    <div class="col-sm-12 margin-bottom-0 padding-left-0 padding-right-0">
         @Html.Partial("Biorhythms/_BioRhythms", Model.NineStarKiBiorhythms)
     </div>
 </div>
 <div class="row">
-    <div class="col-md-12 margin-top-15 padding-left-0 padding-right-0">
+    <div class="col-md-12 margin-top-0 margin-bottom-0 padding-left-0 padding-right-0">
         <article>
             @Html.CollapsiblePanel(Dictionary.WhatAreBiorhythms, Dictionary.biorhythms)
         </article>

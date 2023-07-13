@@ -20,7 +20,7 @@ namespace K9.WebApplication.Models
         private const int MainEnergyWeight = 5;
         private const int EmotionalEnergyWeight = 3;
         private const int SurfaceEnergyWeight = 2;
-        private const int YearlyCycleWeight = 12;
+        private const int YearlyCycleWeight = 11;
         private const int MonthlyCycleWeight = 8;
 
         public double StabilityFactor { get; set; }

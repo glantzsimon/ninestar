@@ -2476,4 +2476,10 @@
   <data name="YearlyAndMonthlyCycles" xml:space="preserve">
     <value>Yearly &amp; Monthly Cycles</value>
   </data>
+  <data name="PersonalChartOverview" xml:space="preserve">
+    <value>Personal Chart Overview</value>
+  </data>
+  <data name="YearlyAndMonthlyCyclesOverview" xml:space="preserve">
+    <value>Personal Cycles &amp; Biorhythms Overview</value>
+  </data>
 </root>

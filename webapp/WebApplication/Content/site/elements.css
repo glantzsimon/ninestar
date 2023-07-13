@@ -60,3 +60,7 @@ hr {
     width: 100%;
     border: 1px solid #eeeeee;
 }
+
+#ninestarki-cycles .panel-default, #biorhythms .panel-default {
+    margin-top: 0;
+}

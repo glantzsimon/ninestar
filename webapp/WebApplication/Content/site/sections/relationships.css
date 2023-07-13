@@ -6,6 +6,12 @@
     margin-top: 10px;
 }
 
+.biorhythms-container {
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+}
+
 .gauge-secret-container {
     margin: 15px
 }

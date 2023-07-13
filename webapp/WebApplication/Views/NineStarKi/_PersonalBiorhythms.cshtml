@@ -3,63 +3,75 @@
 @using K9.WebApplication.Options
 @model K9.WebApplication.Models.NineStarKiModel
 
-<div class="row">
-    <div class="col-md-12">
-        @Html.Partial("_SelectedDateAndPeriodTitle")
+@using (Html.PaidContent(Model, () => Model.ReadingType == EReadingType.Complete))
+{
+    <div class="row">
+        <div class="col-md-12">
+            @Html.Partial("_SelectedDateAndPeriodTitle")
+        </div>
     </div>
-</div>
 
-<div class="row">
-    <div class="col-md-3 col-sm-6 margin-bottom-0 padding-left-0 padding-right-0 text-center">
-        @Html.Partial("_HighGauge", new GaugeOptions
-        {
-            MaxValue = 100,
-            Value = (int)Model.NineStarKiBiorhythms.IntellectualBiorhythmResult.Value,
-            Title = Model.NineStarKiBiorhythms.IntellectualBiorhythmResult.BioRhythm.Name,
-            BackgroundColor = "rgba(44, 175, 254, 0.33)",
-            StrokeColor = "rgba(44, 175, 254, 1)"
-        })
+    <div class="row">
+        <div class="col-md-3 col-sm-6 margin-bottom-0 padding-left-0 padding-right-0 text-center">
+            @Html.Partial("_HighGauge", new GaugeOptions
+            {
+                MaxValue = 100,
+                Value = (int) Model.NineStarKiBiorhythms.IntellectualBiorhythmResult.Value,
+                Title = Model.NineStarKiBiorhythms.IntellectualBiorhythmResult.BioRhythm.Name,
+                BackgroundColor = "rgba(44, 175, 254, 0.33)",
+                StrokeColor = "rgba(44, 175, 254, 1)"
+            })
+        </div>
+        <div class="col-md-3 col-sm-6 margin-bottom-0 padding-left-0 padding-right-0 text-center">
+            @Html.Partial("_HighGauge", new GaugeOptions
+            {
+                MaxValue = 100,
+                Value = (int) Model.NineStarKiBiorhythms.EmotionalBiorhythmResult.Value,
+                Title = Model.NineStarKiBiorhythms.EmotionalBiorhythmResult.BioRhythm.Name,
+                BackgroundColor = "rgba(0, 226, 114, 0.33)",
+                StrokeColor = "rgba(0, 226, 114, 1)"
+            })
+        </div>
+        <div class="col-md-3 col-sm-6 margin-bottom-0 padding-left-0 padding-right-0 text-center">
+            @Html.Partial("_HighGauge", new GaugeOptions
+            {
+                MaxValue = 100,
+                Value = (int) Model.NineStarKiBiorhythms.PhysicalBiorhythmResult.Value,
+                Title = Model.NineStarKiBiorhythms.PhysicalBiorhythmResult.BioRhythm.Name,
+                BackgroundColor = "rgba(254, 106, 53, 0.33)",
+                StrokeColor = "rgba(254, 106, 53, 1)"
+            })
+        </div>
+        <div class="col-md-3 col-sm-6 margin-bottom-0 padding-left-0 padding-right-0 text-center">
+            @Html.Partial("_HighGauge", new GaugeOptions
+            {
+                MaxValue = 100,
+                Value = (int) Model.NineStarKiBiorhythms.SpiritualBiorhythmResult.Value,
+                Title = Model.NineStarKiBiorhythms.SpiritualBiorhythmResult.BioRhythm.Name,
+                BackgroundColor = "rgba(84, 79, 197, 0.33)",
+                StrokeColor = "rgba(84, 79, 197)"
+            })
+        </div>
     </div>
-    <div class="col-md-3 col-sm-6 margin-bottom-0 padding-left-0 padding-right-0 text-center">
-        @Html.Partial("_HighGauge", new GaugeOptions
-        {
-            MaxValue = 100,
-            Value = (int)Model.NineStarKiBiorhythms.EmotionalBiorhythmResult.Value,
-            Title = Model.NineStarKiBiorhythms.EmotionalBiorhythmResult.BioRhythm.Name,
-            BackgroundColor = "rgba(0, 226, 114, 0.33)",
-            StrokeColor = "rgba(0, 226, 114, 1)"
-        })
+    <div class="row">
+        <div class="col-sm-12 margin-bottom-0 padding-left-0 padding-right-0">
+            @Html.Partial("Biorhythms/_BioRhythms", Model.NineStarKiBiorhythms)
+        </div>
     </div>
-    <div class="col-md-3 col-sm-6 margin-bottom-0 padding-left-0 padding-right-0 text-center">
-        @Html.Partial("_HighGauge", new GaugeOptions
-        {
-            MaxValue = 100,
-            Value = (int)Model.NineStarKiBiorhythms.PhysicalBiorhythmResult.Value,
-            Title = Model.NineStarKiBiorhythms.PhysicalBiorhythmResult.BioRhythm.Name,
-            BackgroundColor = "rgba(254, 106, 53, 0.33)",
-            StrokeColor = "rgba(254, 106, 53, 1)"
-        })
-    </div>
-    <div class="col-md-3 col-sm-6 margin-bottom-0 padding-left-0 padding-right-0 text-center">
-        @Html.Partial("_HighGauge", new GaugeOptions
-        {
-            MaxValue = 100,
-            Value = (int)Model.NineStarKiBiorhythms.SpiritualBiorhythmResult.Value,
-            Title = Model.NineStarKiBiorhythms.SpiritualBiorhythmResult.BioRhythm.Name,
-            BackgroundColor = "rgba(84, 79, 197, 0.33)",
-            StrokeColor = "rgba(84, 79, 197)"
-        })
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm-12 margin-bottom-0 padding-left-0 padding-right-0">
-        @Html.Partial("Biorhythms/_BioRhythms", Model.NineStarKiBiorhythms)
-    </div>
-</div>
+}
 <div class="row">
     <div class="col-md-12 margin-top-20 margin-bottom-0 padding-left-0 padding-right-0">
         <article>
             @Html.CollapsiblePanel(Dictionary.WhatAreBiorhythms, Dictionary.biorhythms)
         </article>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 margin-top-20 margin-bottom-0 padding-left-0 padding-right-0">
+        @Html.BootstrapActionLinkButton(Dictionary.FindOutHowCompatibleYouAre, "Compatibility", "NineStarKi", null, "fa fa-yin-yang", EButtonClass.Large)
+
+        @Html.BootstrapActionLinkButton(Dictionary.LearnMoreAboutNineStarKi, "About", "Home", null, "fa-graduation-cap", EButtonClass.Info, EButtonClass.Large)
+
+        @Html.BootstrapActionLinkButton(Dictionary.BookAConsultation, "BookConsultationStart", "Consultation", null, "fa-phone-alt", EButtonClass.Success, EButtonClass.Large)
     </div>
 </div>

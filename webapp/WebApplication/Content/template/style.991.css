@@ -1,12 +1,17 @@
 @media (max-width:991px) {
-    html, body {
-        font-size: 100%;
+    .mobile-only {
+        display: block !important;
     }
 
     .desktop-only {
         display: none;
     }
 
+
+    html, body {
+        font-size: 100%;
+    }
+    
     .agile-footer-grid {
         width: 100%;
         margin: 0 0 2em 0 !important;

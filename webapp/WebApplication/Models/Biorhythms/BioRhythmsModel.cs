@@ -33,6 +33,12 @@ namespace K9.WebApplication.Models
 
         public List<BioRhythmResult> BiorhythmResults { get; set; }
 
+        public BioRhythmResult GetAverageResult() =>
+            BiorhythmResults.FirstOrDefault(e => e.BioRhythm.Biorhythm == EBiorhythm.Average);
+
+        public List<BioRhythmResult> GetResultsWithoutAverage() =>
+            BiorhythmResults.Where(e => e.BioRhythm.Biorhythm != EBiorhythm.Average).ToList();
+
         public BioRhythmResult GetResultByType(EBiorhythm biorhythm) =>
             BiorhythmResults?.FirstOrDefault(e => e.BioRhythm.Biorhythm == biorhythm);
 

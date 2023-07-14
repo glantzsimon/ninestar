@@ -11,64 +11,83 @@
         </div>
     </div>
 
-    <div class="row">
-        
-        @foreach (var biorhythm in Model.BiorhythmResultSet.NineStarKiBioRhythms.BiorhythmResults)
-        {
-            <div class="col-md-3 col-sm-6 margin-bottom-0 padding-left-0 padding-right-0 text-center">
+    <div class="mobile-only">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-4 col-md-3 col-sm-4 margin-bottom-0 padding-left-0 padding-right-0 text-center">
+                @{
+                    var average = Model.BiorhythmResultSet.NineStarKiBioRhythms.GetAverageResult();
+                }
                 @Html.Partial("_HighGauge", new GaugeOptions
                 {
                     MaxValue = 100,
-                    Value = (int)biorhythm.Value,
-                    Title = biorhythm.BioRhythm.Name,
-                    BackgroundColor = $"rgb({biorhythm.BioRhythm.Color}, 0.33)",
-                    StrokeColor = $"rgb({biorhythm.BioRhythm.Color})",
-                    Units = $"{biorhythm.GetBiorhythmTrendHtmlString()}",
+                    Value = (int) average.Value,
+                    Title = average.BioRhythm.Name,
+                    BackgroundColor = $"rgb({average.BioRhythm.Color}, 0.33)",
+                    StrokeColor = $"rgb({average.BioRhythm.Color})",
+                    Units = $"{average.GetBiorhythmTrendHtmlString()}",
                 })
             </div>
-        }
+        </div>
 
-        @*<div class="col-md-3 col-sm-6 margin-bottom-0 padding-left-0 padding-right-0 text-center">
-            @Html.Partial("_HighGauge", new GaugeOptions
-            {
-                MaxValue = 100,
-                Value = (int) Model.NineStarKiBiorhythms.IntellectualBiorhythmResult.Value,
-                Title = Model.NineStarKiBiorhythms.IntellectualBiorhythmResult.BioRhythm.Name,
-                BackgroundColor = "rgba(44, 175, 254, 0.33)",
-                StrokeColor = "rgba(44, 175, 254, 1)"
-            })
+        <div class="not-mobile-small">
+            <div class="row">
+                @foreach (var biorhythm in Model.BiorhythmResultSet.NineStarKiBioRhythms.GetResultsWithoutAverage())
+                {
+                    <div class="col-xs-6 col-sm-6 col-md-3 col-sm-4 margin-bottom-0 padding-left-0 padding-right-0 text-center">
+                        @Html.Partial("_HighGauge", new GaugeOptions
+                        {
+                            MaxValue = 100,
+                            Value = (int) biorhythm.Value,
+                            Title = biorhythm.BioRhythm.Name,
+                            BackgroundColor = $"rgb({biorhythm.BioRhythm.Color}, 0.33)",
+                            StrokeColor = $"rgb({biorhythm.BioRhythm.Color})",
+                            Units = $"{biorhythm.GetBiorhythmTrendHtmlString()}",
+                        })
+                    </div>
+                }
+            </div>
         </div>
-        <div class="col-md-3 col-sm-6 margin-bottom-0 padding-left-0 padding-right-0 text-center">
-            @Html.Partial("_HighGauge", new GaugeOptions
-            {
-                MaxValue = 100,
-                Value = (int) Model.NineStarKiBiorhythms.EmotionalBiorhythmResult.Value,
-                Title = Model.NineStarKiBiorhythms.EmotionalBiorhythmResult.BioRhythm.Name,
-                BackgroundColor = "rgba(0, 226, 114, 0.33)",
-                StrokeColor = "rgba(0, 226, 114, 1)"
-            })
+
+        <div class="mobile-small">
+            <div class="row">
+                @foreach (var biorhythm in Model.BiorhythmResultSet.NineStarKiBioRhythms.GetResultsWithoutAverage())
+                {
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-sm-4 margin-bottom-0 padding-left-0 padding-right-0 text-center">
+                        @Html.Partial("_HighGauge", new GaugeOptions
+                        {
+                            MaxValue = 100,
+                            Value = (int) biorhythm.Value,
+                            Title = biorhythm.BioRhythm.Name,
+                            BackgroundColor = $"rgb({biorhythm.BioRhythm.Color}, 0.33)",
+                            StrokeColor = $"rgb({biorhythm.BioRhythm.Color})",
+                            Units = $"{biorhythm.GetBiorhythmTrendHtmlString()}",
+                        })
+                    </div>
+                }
+            </div>
         </div>
-        <div class="col-md-3 col-sm-6 margin-bottom-0 padding-left-0 padding-right-0 text-center">
-            @Html.Partial("_HighGauge", new GaugeOptions
-            {
-                MaxValue = 100,
-                Value = (int) Model.NineStarKiBiorhythms.PhysicalBiorhythmResult.Value,
-                Title = Model.NineStarKiBiorhythms.PhysicalBiorhythmResult.BioRhythm.Name,
-                BackgroundColor = "rgba(254, 106, 53, 0.33)",
-                StrokeColor = "rgba(254, 106, 53, 1)"
-            })
-        </div>
-        <div class="col-md-3 col-sm-6 margin-bottom-0 padding-left-0 padding-right-0 text-center">
-            @Html.Partial("_HighGauge", new GaugeOptions
-            {
-                MaxValue = 100,
-                Value = (int) Model.NineStarKiBiorhythms.SpiritualBiorhythmResult.Value,
-                Title = Model.NineStarKiBiorhythms.SpiritualBiorhythmResult.BioRhythm.Name,
-                BackgroundColor = "rgba(84, 79, 197, 0.33)",
-                StrokeColor = "rgba(84, 79, 197)"
-            })
-        </div>*@
     </div>
+
+    <div class="desktop-only">
+        <div class="row">
+
+            @foreach (var biorhythm in Model.BiorhythmResultSet.NineStarKiBioRhythms.BiorhythmResults)
+            {
+                <div class="col-md-3 col-sm-4 margin-bottom-0 padding-left-0 padding-right-0 text-center">
+                    @Html.Partial("_HighGauge", new GaugeOptions
+                    {
+                        MaxValue = 100,
+                        Value = (int) biorhythm.Value,
+                        Title = biorhythm.BioRhythm.Name,
+                        BackgroundColor = $"rgb({biorhythm.BioRhythm.Color}, 0.33)",
+                        StrokeColor = $"rgb({biorhythm.BioRhythm.Color})",
+                        Units = $"{biorhythm.GetBiorhythmTrendHtmlString()}",
+                    })
+                </div>
+            }
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-sm-12 margin-bottom-0 padding-left-0 padding-right-0">
             @Html.Partial("Biorhythms/_BioRhythms", Model.BiorhythmResultSet.NineStarKiBioRhythms)

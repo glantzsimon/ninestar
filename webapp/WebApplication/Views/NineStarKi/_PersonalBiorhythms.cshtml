@@ -29,42 +29,21 @@
             </div>
         </div>
 
-        <div class="not-mobile-small">
-            <div class="row">
-                @foreach (var biorhythm in Model.BiorhythmResultSet.NineStarKiBioRhythms.GetResultsWithoutAverage())
-                {
-                    <div class="col-xs-6 col-sm-6 col-md-3 col-sm-4 margin-bottom-0 padding-left-0 padding-right-0 text-center">
-                        @Html.Partial("_HighGauge", new GaugeOptions
-                        {
-                            MaxValue = 100,
-                            Value = (int) biorhythm.Value,
-                            Title = biorhythm.BioRhythm.Name,
-                            BackgroundColor = $"rgb({biorhythm.BioRhythm.Color}, 0.33)",
-                            StrokeColor = $"rgb({biorhythm.BioRhythm.Color})",
-                            Units = $"{biorhythm.GetBiorhythmTrendHtmlString()}",
-                        })
-                    </div>
-                }
-            </div>
-        </div>
-
-        <div class="mobile-small">
-            <div class="row">
-                @foreach (var biorhythm in Model.BiorhythmResultSet.NineStarKiBioRhythms.GetResultsWithoutAverage())
-                {
-                    <div class="col-xs-12 col-sm-6 col-md-3 col-sm-4 margin-bottom-0 padding-left-0 padding-right-0 text-center">
-                        @Html.Partial("_HighGauge", new GaugeOptions
-                        {
-                            MaxValue = 100,
-                            Value = (int) biorhythm.Value,
-                            Title = biorhythm.BioRhythm.Name,
-                            BackgroundColor = $"rgb({biorhythm.BioRhythm.Color}, 0.33)",
-                            StrokeColor = $"rgb({biorhythm.BioRhythm.Color})",
-                            Units = $"{biorhythm.GetBiorhythmTrendHtmlString()}",
-                        })
-                    </div>
-                }
-            </div>
+        <div class="row">
+            @foreach (var biorhythm in Model.BiorhythmResultSet.NineStarKiBioRhythms.GetResultsWithoutAverage())
+            {
+                <div class="col-xs-12 col-sm-6 col-md-3 col-sm-4 margin-bottom-0 padding-left-0 padding-right-0 text-center">
+                    @Html.Partial("_HighGauge", new GaugeOptions
+                    {
+                        MaxValue = 100,
+                        Value = (int) biorhythm.Value,
+                        Title = biorhythm.BioRhythm.Name,
+                        BackgroundColor = $"rgb({biorhythm.BioRhythm.Color}, 0.33)",
+                        StrokeColor = $"rgb({biorhythm.BioRhythm.Color})",
+                        Units = $"{biorhythm.GetBiorhythmTrendHtmlString()}",
+                    })
+                </div>
+            }
         </div>
     </div>
 

@@ -1,13 +1,5 @@
 @media (max-width:525px) {
-
-    .not-mobile-small {
-        display: none;
-    }
-
-    .mobile-small {
-        display: block;
-    }
-
+    
     .captn-top h4 {
         font-size: 1.2em;
     }

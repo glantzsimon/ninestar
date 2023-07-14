@@ -63,7 +63,7 @@ namespace K9.WebApplication.Services
                 var date = firstResult.RangeValues[i].Item1;
                 var dateValue = firstResult.RangeValues[i].Item3;
                 averageRangeValues.Add(new Tuple<string, double, DateTime>(date,
-                    results.Select(e => e.RangeValues[i].Item2).Average(), dateValue));
+                    results.Where(e => e.BioRhythm.Biorhythm != EBiorhythm.Creative).Select(e => e.RangeValues[i].Item2).Average(), dateValue));
             }
 
             results.Insert(0, new BioRhythmResult

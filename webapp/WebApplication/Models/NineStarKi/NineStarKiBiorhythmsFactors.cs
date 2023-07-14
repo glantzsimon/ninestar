@@ -132,7 +132,7 @@ namespace K9.WebApplication.Models
             factors.Add(new BiorhythmFactor(EBiorhythm.Intellectual, 1.2, ENineStarKiEnergy.Water));
             factors.Add(new BiorhythmFactor(EBiorhythm.Physical, 0.9, ENineStarKiEnergy.Water));
             factors.Add(new BiorhythmFactor(EBiorhythm.Spiritual, 1.2, ENineStarKiEnergy.Water));
-            factors.Add(new BiorhythmFactor(EBiorhythm.Aesthetic, 1, ENineStarKiEnergy.Water));
+            factors.Add(new BiorhythmFactor(EBiorhythm.Creative, 1, ENineStarKiEnergy.Water));
             factors.Add(new BiorhythmFactor(EBiorhythm.Intuitive, 1.3, ENineStarKiEnergy.Water));
             factors.Add(new BiorhythmFactor(EBiorhythm.Stability, 1, ENineStarKiEnergy.Water));
 
@@ -140,7 +140,7 @@ namespace K9.WebApplication.Models
             factors.Add(new BiorhythmFactor(EBiorhythm.Intellectual, 0.7, ENineStarKiEnergy.Soil));
             factors.Add(new BiorhythmFactor(EBiorhythm.Physical, 1.1, ENineStarKiEnergy.Soil));
             factors.Add(new BiorhythmFactor(EBiorhythm.Spiritual, 0.7, ENineStarKiEnergy.Soil));
-            factors.Add(new BiorhythmFactor(EBiorhythm.Aesthetic, 0.8, ENineStarKiEnergy.Soil));
+            factors.Add(new BiorhythmFactor(EBiorhythm.Creative, 0.8, ENineStarKiEnergy.Soil));
             factors.Add(new BiorhythmFactor(EBiorhythm.Intuitive, 1, ENineStarKiEnergy.Soil));
             factors.Add(new BiorhythmFactor(EBiorhythm.Stability, 1.2, ENineStarKiEnergy.Soil));
 
@@ -148,7 +148,7 @@ namespace K9.WebApplication.Models
             factors.Add(new BiorhythmFactor(EBiorhythm.Intellectual, 1.1, ENineStarKiEnergy.Thunder));
             factors.Add(new BiorhythmFactor(EBiorhythm.Physical, 1.3, ENineStarKiEnergy.Thunder));
             factors.Add(new BiorhythmFactor(EBiorhythm.Spiritual, 1.3, ENineStarKiEnergy.Thunder));
-            factors.Add(new BiorhythmFactor(EBiorhythm.Aesthetic, 1.3, ENineStarKiEnergy.Thunder));
+            factors.Add(new BiorhythmFactor(EBiorhythm.Creative, 1.3, ENineStarKiEnergy.Thunder));
             factors.Add(new BiorhythmFactor(EBiorhythm.Intuitive, 0.9, ENineStarKiEnergy.Thunder));
             factors.Add(new BiorhythmFactor(EBiorhythm.Stability, 0.7, ENineStarKiEnergy.Thunder));
 
@@ -156,7 +156,7 @@ namespace K9.WebApplication.Models
             factors.Add(new BiorhythmFactor(EBiorhythm.Intellectual, 1.2, ENineStarKiEnergy.Wind));
             factors.Add(new BiorhythmFactor(EBiorhythm.Physical, 0.8, ENineStarKiEnergy.Wind));
             factors.Add(new BiorhythmFactor(EBiorhythm.Spiritual, 1, ENineStarKiEnergy.Wind));
-            factors.Add(new BiorhythmFactor(EBiorhythm.Aesthetic, 1.2, ENineStarKiEnergy.Wind));
+            factors.Add(new BiorhythmFactor(EBiorhythm.Creative, 1.2, ENineStarKiEnergy.Wind));
             factors.Add(new BiorhythmFactor(EBiorhythm.Intuitive, 0.8, ENineStarKiEnergy.Wind));
             factors.Add(new BiorhythmFactor(EBiorhythm.Stability, 0.7, ENineStarKiEnergy.Wind));
 
@@ -164,7 +164,7 @@ namespace K9.WebApplication.Models
             factors.Add(new BiorhythmFactor(EBiorhythm.Intellectual, 1, ENineStarKiEnergy.CoreEarth));
             factors.Add(new BiorhythmFactor(EBiorhythm.Physical, 1.3, ENineStarKiEnergy.CoreEarth));
             factors.Add(new BiorhythmFactor(EBiorhythm.Spiritual, 0.9, ENineStarKiEnergy.CoreEarth));
-            factors.Add(new BiorhythmFactor(EBiorhythm.Aesthetic, 1, ENineStarKiEnergy.CoreEarth));
+            factors.Add(new BiorhythmFactor(EBiorhythm.Creative, 1, ENineStarKiEnergy.CoreEarth));
             factors.Add(new BiorhythmFactor(EBiorhythm.Intuitive, 1, ENineStarKiEnergy.CoreEarth));
             factors.Add(new BiorhythmFactor(EBiorhythm.Stability, 1, ENineStarKiEnergy.CoreEarth));
 
@@ -172,7 +172,7 @@ namespace K9.WebApplication.Models
             factors.Add(new BiorhythmFactor(EBiorhythm.Intellectual, 1.2, ENineStarKiEnergy.Heaven));
             factors.Add(new BiorhythmFactor(EBiorhythm.Physical, 1, ENineStarKiEnergy.Heaven));
             factors.Add(new BiorhythmFactor(EBiorhythm.Spiritual, 1.1, ENineStarKiEnergy.Heaven));
-            factors.Add(new BiorhythmFactor(EBiorhythm.Aesthetic, 1.1, ENineStarKiEnergy.Heaven));
+            factors.Add(new BiorhythmFactor(EBiorhythm.Creative, 1.1, ENineStarKiEnergy.Heaven));
             factors.Add(new BiorhythmFactor(EBiorhythm.Intuitive, 1, ENineStarKiEnergy.Heaven));
             factors.Add(new BiorhythmFactor(EBiorhythm.Stability, 1.2, ENineStarKiEnergy.Heaven));
 
@@ -180,7 +180,7 @@ namespace K9.WebApplication.Models
             factors.Add(new BiorhythmFactor(EBiorhythm.Intellectual, 1.3, ENineStarKiEnergy.Lake));
             factors.Add(new BiorhythmFactor(EBiorhythm.Physical, 1.1, ENineStarKiEnergy.Lake));
             factors.Add(new BiorhythmFactor(EBiorhythm.Spiritual, 0.8, ENineStarKiEnergy.Lake));
-            factors.Add(new BiorhythmFactor(EBiorhythm.Aesthetic, 1.2, ENineStarKiEnergy.Lake));
+            factors.Add(new BiorhythmFactor(EBiorhythm.Creative, 1.2, ENineStarKiEnergy.Lake));
             factors.Add(new BiorhythmFactor(EBiorhythm.Intuitive, 0.9, ENineStarKiEnergy.Lake));
             factors.Add(new BiorhythmFactor(EBiorhythm.Stability, 1.2, ENineStarKiEnergy.Lake));
 
@@ -188,7 +188,7 @@ namespace K9.WebApplication.Models
             factors.Add(new BiorhythmFactor(EBiorhythm.Intellectual, 1.2, ENineStarKiEnergy.Mountain));
             factors.Add(new BiorhythmFactor(EBiorhythm.Physical, 1.3, ENineStarKiEnergy.Mountain));
             factors.Add(new BiorhythmFactor(EBiorhythm.Spiritual, 1.2, ENineStarKiEnergy.Mountain));
-            factors.Add(new BiorhythmFactor(EBiorhythm.Aesthetic, 0.8, ENineStarKiEnergy.Mountain));
+            factors.Add(new BiorhythmFactor(EBiorhythm.Creative, 0.8, ENineStarKiEnergy.Mountain));
             factors.Add(new BiorhythmFactor(EBiorhythm.Intuitive, 0.7, ENineStarKiEnergy.Mountain));
             factors.Add(new BiorhythmFactor(EBiorhythm.Stability, 1.3, ENineStarKiEnergy.Mountain));
 
@@ -196,7 +196,7 @@ namespace K9.WebApplication.Models
             factors.Add(new BiorhythmFactor(EBiorhythm.Intellectual, 0.9, ENineStarKiEnergy.Fire));
             factors.Add(new BiorhythmFactor(EBiorhythm.Physical, 0.9, ENineStarKiEnergy.Fire));
             factors.Add(new BiorhythmFactor(EBiorhythm.Spiritual, 1.1, ENineStarKiEnergy.Fire));
-            factors.Add(new BiorhythmFactor(EBiorhythm.Aesthetic, 1.3, ENineStarKiEnergy.Fire));
+            factors.Add(new BiorhythmFactor(EBiorhythm.Creative, 1.3, ENineStarKiEnergy.Fire));
             factors.Add(new BiorhythmFactor(EBiorhythm.Intuitive, 1.1, ENineStarKiEnergy.Fire));
             factors.Add(new BiorhythmFactor(EBiorhythm.Stability, 0.9, ENineStarKiEnergy.Fire));
 
@@ -211,7 +211,7 @@ namespace K9.WebApplication.Models
             factors.Add(new BiorhythmFactor(EBiorhythm.Intellectual, 0.7, ENineStarKiEnergy.Water));
             factors.Add(new BiorhythmFactor(EBiorhythm.Physical, 0.7, ENineStarKiEnergy.Water));
             factors.Add(new BiorhythmFactor(EBiorhythm.Spiritual, 1.3, ENineStarKiEnergy.Water));
-            factors.Add(new BiorhythmFactor(EBiorhythm.Aesthetic, 0.8, ENineStarKiEnergy.Water));
+            factors.Add(new BiorhythmFactor(EBiorhythm.Creative, 0.8, ENineStarKiEnergy.Water));
             factors.Add(new BiorhythmFactor(EBiorhythm.Intuitive, 1.3, ENineStarKiEnergy.Water));
             factors.Add(new BiorhythmFactor(EBiorhythm.Stability, 1, ENineStarKiEnergy.Water));
 
@@ -219,7 +219,7 @@ namespace K9.WebApplication.Models
             factors.Add(new BiorhythmFactor(EBiorhythm.Intellectual, 0.8, ENineStarKiEnergy.Soil));
             factors.Add(new BiorhythmFactor(EBiorhythm.Physical, 1, ENineStarKiEnergy.Soil));
             factors.Add(new BiorhythmFactor(EBiorhythm.Spiritual, 0.8, ENineStarKiEnergy.Soil));
-            factors.Add(new BiorhythmFactor(EBiorhythm.Aesthetic, 0.8, ENineStarKiEnergy.Soil));
+            factors.Add(new BiorhythmFactor(EBiorhythm.Creative, 0.8, ENineStarKiEnergy.Soil));
             factors.Add(new BiorhythmFactor(EBiorhythm.Intuitive, 1, ENineStarKiEnergy.Soil));
             factors.Add(new BiorhythmFactor(EBiorhythm.Stability, 1.2, ENineStarKiEnergy.Soil));
 
@@ -227,7 +227,7 @@ namespace K9.WebApplication.Models
             factors.Add(new BiorhythmFactor(EBiorhythm.Intellectual, 1.2, ENineStarKiEnergy.Thunder));
             factors.Add(new BiorhythmFactor(EBiorhythm.Physical, 1.3, ENineStarKiEnergy.Thunder));
             factors.Add(new BiorhythmFactor(EBiorhythm.Spiritual, 1.3, ENineStarKiEnergy.Thunder));
-            factors.Add(new BiorhythmFactor(EBiorhythm.Aesthetic, 1.3, ENineStarKiEnergy.Thunder));
+            factors.Add(new BiorhythmFactor(EBiorhythm.Creative, 1.3, ENineStarKiEnergy.Thunder));
             factors.Add(new BiorhythmFactor(EBiorhythm.Intuitive, 0.7, ENineStarKiEnergy.Thunder));
             factors.Add(new BiorhythmFactor(EBiorhythm.Stability, 0.8, ENineStarKiEnergy.Thunder));
 
@@ -235,7 +235,7 @@ namespace K9.WebApplication.Models
             factors.Add(new BiorhythmFactor(EBiorhythm.Intellectual, 1.3, ENineStarKiEnergy.Wind));
             factors.Add(new BiorhythmFactor(EBiorhythm.Physical, 1.1, ENineStarKiEnergy.Wind));
             factors.Add(new BiorhythmFactor(EBiorhythm.Spiritual, 1, ENineStarKiEnergy.Wind));
-            factors.Add(new BiorhythmFactor(EBiorhythm.Aesthetic, 1.2, ENineStarKiEnergy.Wind));
+            factors.Add(new BiorhythmFactor(EBiorhythm.Creative, 1.2, ENineStarKiEnergy.Wind));
             factors.Add(new BiorhythmFactor(EBiorhythm.Intuitive, 0.9, ENineStarKiEnergy.Wind));
             factors.Add(new BiorhythmFactor(EBiorhythm.Stability, 0.8, ENineStarKiEnergy.Wind));
 
@@ -243,7 +243,7 @@ namespace K9.WebApplication.Models
             factors.Add(new BiorhythmFactor(EBiorhythm.Intellectual, 1, ENineStarKiEnergy.CoreEarth));
             factors.Add(new BiorhythmFactor(EBiorhythm.Physical, 1.3, ENineStarKiEnergy.CoreEarth));
             factors.Add(new BiorhythmFactor(EBiorhythm.Spiritual, 1, ENineStarKiEnergy.CoreEarth));
-            factors.Add(new BiorhythmFactor(EBiorhythm.Aesthetic, 1, ENineStarKiEnergy.CoreEarth));
+            factors.Add(new BiorhythmFactor(EBiorhythm.Creative, 1, ENineStarKiEnergy.CoreEarth));
             factors.Add(new BiorhythmFactor(EBiorhythm.Intuitive, 1, ENineStarKiEnergy.CoreEarth));
             factors.Add(new BiorhythmFactor(EBiorhythm.Stability, 0.7, ENineStarKiEnergy.CoreEarth));
 
@@ -251,7 +251,7 @@ namespace K9.WebApplication.Models
             factors.Add(new BiorhythmFactor(EBiorhythm.Intellectual, 1.2, ENineStarKiEnergy.Heaven));
             factors.Add(new BiorhythmFactor(EBiorhythm.Physical, 1.2, ENineStarKiEnergy.Heaven));
             factors.Add(new BiorhythmFactor(EBiorhythm.Spiritual, 1.3, ENineStarKiEnergy.Heaven));
-            factors.Add(new BiorhythmFactor(EBiorhythm.Aesthetic, 1, ENineStarKiEnergy.Heaven));
+            factors.Add(new BiorhythmFactor(EBiorhythm.Creative, 1, ENineStarKiEnergy.Heaven));
             factors.Add(new BiorhythmFactor(EBiorhythm.Intuitive, 1, ENineStarKiEnergy.Heaven));
             factors.Add(new BiorhythmFactor(EBiorhythm.Stability, 1.2, ENineStarKiEnergy.Heaven));
 
@@ -259,7 +259,7 @@ namespace K9.WebApplication.Models
             factors.Add(new BiorhythmFactor(EBiorhythm.Intellectual, 1.3, ENineStarKiEnergy.Lake));
             factors.Add(new BiorhythmFactor(EBiorhythm.Physical, 1.1, ENineStarKiEnergy.Lake));
             factors.Add(new BiorhythmFactor(EBiorhythm.Spiritual, 1.2, ENineStarKiEnergy.Lake));
-            factors.Add(new BiorhythmFactor(EBiorhythm.Aesthetic, 1.3, ENineStarKiEnergy.Lake));
+            factors.Add(new BiorhythmFactor(EBiorhythm.Creative, 1.3, ENineStarKiEnergy.Lake));
             factors.Add(new BiorhythmFactor(EBiorhythm.Intuitive, 0.8, ENineStarKiEnergy.Lake));
             factors.Add(new BiorhythmFactor(EBiorhythm.Stability, 1.2, ENineStarKiEnergy.Lake));
 
@@ -267,7 +267,7 @@ namespace K9.WebApplication.Models
             factors.Add(new BiorhythmFactor(EBiorhythm.Intellectual, 0.9, ENineStarKiEnergy.Mountain));
             factors.Add(new BiorhythmFactor(EBiorhythm.Physical, 1.2, ENineStarKiEnergy.Mountain));
             factors.Add(new BiorhythmFactor(EBiorhythm.Spiritual, 1.3, ENineStarKiEnergy.Mountain));
-            factors.Add(new BiorhythmFactor(EBiorhythm.Aesthetic, 0.8, ENineStarKiEnergy.Mountain));
+            factors.Add(new BiorhythmFactor(EBiorhythm.Creative, 0.8, ENineStarKiEnergy.Mountain));
             factors.Add(new BiorhythmFactor(EBiorhythm.Intuitive, 0.9, ENineStarKiEnergy.Mountain));
             factors.Add(new BiorhythmFactor(EBiorhythm.Stability, 1.3, ENineStarKiEnergy.Mountain));
 
@@ -275,7 +275,7 @@ namespace K9.WebApplication.Models
             factors.Add(new BiorhythmFactor(EBiorhythm.Intellectual, 1, ENineStarKiEnergy.Fire));
             factors.Add(new BiorhythmFactor(EBiorhythm.Physical, 1.2, ENineStarKiEnergy.Fire));
             factors.Add(new BiorhythmFactor(EBiorhythm.Spiritual, 1, ENineStarKiEnergy.Fire));
-            factors.Add(new BiorhythmFactor(EBiorhythm.Aesthetic, 1.3, ENineStarKiEnergy.Fire));
+            factors.Add(new BiorhythmFactor(EBiorhythm.Creative, 1.3, ENineStarKiEnergy.Fire));
             factors.Add(new BiorhythmFactor(EBiorhythm.Intuitive, 0.9, ENineStarKiEnergy.Fire));
             factors.Add(new BiorhythmFactor(EBiorhythm.Stability, 1.1, ENineStarKiEnergy.Fire));
 

@@ -8,7 +8,7 @@
         Emotional,
         Physical,
         Spiritual,
-        Aesthetic,
+        Creative,
         Intuitive,
         Average
     }

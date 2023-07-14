@@ -12,7 +12,22 @@
     </div>
 
     <div class="row">
-        <div class="col-md-3 col-sm-6 margin-bottom-0 padding-left-0 padding-right-0 text-center">
+        
+        @foreach (var biorhythm in Model.BiorhythmResultSet.NineStarKiBioRhythms.BiorhythmResults)
+        {
+            <div class="col-md-3 col-sm-6 margin-bottom-0 padding-left-0 padding-right-0 text-center">
+                @Html.Partial("_HighGauge", new GaugeOptions
+                {
+                    MaxValue = 100,
+                    Value = (int)biorhythm.Value,
+                    Title = biorhythm.BioRhythm.Name,
+                    BackgroundColor = $"rgb({biorhythm.BioRhythm.Color}, 0.33)",
+                    StrokeColor = $"rgb({biorhythm.BioRhythm.Color})"
+                })
+            </div>
+        }
+
+        @*<div class="col-md-3 col-sm-6 margin-bottom-0 padding-left-0 padding-right-0 text-center">
             @Html.Partial("_HighGauge", new GaugeOptions
             {
                 MaxValue = 100,
@@ -51,11 +66,11 @@
                 BackgroundColor = "rgba(84, 79, 197, 0.33)",
                 StrokeColor = "rgba(84, 79, 197)"
             })
-        </div>
+        </div>*@
     </div>
     <div class="row">
         <div class="col-sm-12 margin-bottom-0 padding-left-0 padding-right-0">
-            @Html.Partial("Biorhythms/_BioRhythms", Model.NineStarKiBiorhythms)
+            @Html.Partial("Biorhythms/_BioRhythms", Model.BiorhythmResultSet.NineStarKiBioRhythms)
         </div>
     </div>
 }

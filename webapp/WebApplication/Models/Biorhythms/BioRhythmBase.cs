@@ -1,12 +1,9 @@
-﻿namespace K9.WebApplication.Models
-{
-    public abstract class BiorhythmBase : IBioRhythm
-    {
-        /// <summary>
-        /// Values of the sinusoid with the amplitude of 1.
-        /// </summary>
-        private double[] values;
+﻿using K9.WebApplication.Enums;
 
+namespace K9.WebApplication.Models
+{
+    public abstract class BiorhythmBase : IBiorhythm
+    {
         /// <summary>
         /// Gets the name of the biorhythm.
         /// </summary>
@@ -16,6 +13,12 @@
         /// Gets the period of the sinusoidal biorhythm.
         /// </summary>
         public abstract int CycleLength { get; }
+
+        public abstract EBiorhythm Biorhythm { get; }
+        
+        public abstract string Color { get; }
+        
+        public abstract int Index { get; }
 
         public string FullName => $"{Name} {Globalisation.Dictionary.Biorhythm}";
     }

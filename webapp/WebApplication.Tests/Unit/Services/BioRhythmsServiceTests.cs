@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Linq;
 using K9.Base.DataAccessLayer.Enums;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Enums;
@@ -34,15 +35,19 @@ namespace K9.WebApplication.Tests.Unit.Services
                     DateOfBirth = new DateTime(birthYear, birthMonth, birthDay)
                 }), new DateTime(dateYear, dateMonth, dateDay));
 
-            Assert.Equal(expectedEnergy, result.NineStarKiModel.MainEnergy.Energy);
-            Assert.Equal(expectedDaysElapsedSinceBirth, result.DaysElapsedSinceBirth);
-            Assert.Equal(expectedDayInterval, result.IntellectualBiorhythmResult.DayInterval);
-            Assert.Equal(expectedIntellectualValue, Math.Round(result.IntellectualBiorhythmResult.Value, MidpointRounding.ToEven));
-            Assert.Equal(expectedEmotionalValue, Math.Round(result.EmotionalBiorhythmResult.Value, MidpointRounding.ToEven));
+            Assert.Equal(expectedEnergy, result.NineStarKiBioRhythms.NineStarKiModel.MainEnergy.Energy);
+            Assert.Equal(expectedDaysElapsedSinceBirth, result.NineStarKiBioRhythms.DaysElapsedSinceBirth);
+            
+            var intellectualResult = result.BioRhythms.GetResultByType(EBiorhythm.Intellectual);
+            var emotionalResult = result.BioRhythms.GetResultByType(EBiorhythm.Emotional);
+
+            Assert.Equal(expectedDayInterval, intellectualResult?.DayInterval);
+            Assert.Equal(expectedIntellectualValue, Math.Round(intellectualResult.Value, MidpointRounding.ToEven));
+            Assert.Equal(expectedEmotionalValue, Math.Round(emotionalResult.Value, MidpointRounding.ToEven));
         }
 
         [Theory]
-        [InlineData(1979, 06, 16, 1979, 06, 16, EGender.Male, ENineStarKiEnergy.Thunder, 50, 55.9976)]
+        [InlineData(1979, 06, 16, 1979, 06, 16, EGender.Male, ENineStarKiEnergy.Thunder, 50, 57.4391)]
         public void NineStarKiBiorhythms_PhysicalEnergy_HappyPath(int birthYear, int birthMonth, int birthDay, int dateYear, int dateMonth, int dateDay, EGender gender, ENineStarKiEnergy expectedEnergy, double expectedBiorhythmValue, double expectedNineStarKiBiorhythmsValue)
         {
             var biorhythmsService = new BiorhythmsService(new Mock<IRoles>().Object, new Mock<IMembershipService>().Object, new Mock<IAuthentication>().Object);
@@ -53,9 +58,12 @@ namespace K9.WebApplication.Tests.Unit.Services
                     DateOfBirth = new DateTime(birthYear, birthMonth, birthDay)
                 }), new DateTime(dateYear, dateMonth, dateDay));
 
-            Assert.Equal(expectedEnergy, result.NineStarKiModel.MainEnergy.Energy);
-            Assert.Equal(expectedBiorhythmValue, result.NineStarKiModel.Biorhythms.PhysicalBiorhythmResult.Value);
-            Assert.Equal(expectedNineStarKiBiorhythmsValue, Math.Round(result.NineStarKiModel.NineStarKiBiorhythms.PhysicalBiorhythmResult.Value, 4));
+            var physicalResult = result.BioRhythms.GetResultByType(EBiorhythm.Physical);
+            var nineStarPhysicalResult = result.NineStarKiBioRhythms.GetResultByType(EBiorhythm.Physical);
+
+            Assert.Equal(expectedEnergy, result.NineStarKiBioRhythms.NineStarKiModel.MainEnergy.Energy);
+            Assert.Equal(expectedBiorhythmValue, physicalResult.Value);
+            Assert.Equal(expectedNineStarKiBiorhythmsValue, Math.Round(nineStarPhysicalResult.Value, 4));
         }
 
     }

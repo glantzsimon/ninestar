@@ -1,10 +1,8 @@
-﻿using K9.WebApplication.Models;
+﻿using K9.SharedLibrary.Models;
+using K9.WebApplication.Models;
 using System;
 using System.Collections.Generic;
-using K9.SharedLibrary.Authentication;
-using K9.SharedLibrary.Models;
-using K9.WebApplication.Enums;
-using Microsoft.Ajax.Utilities;
+using System.Linq;
 
 namespace K9.WebApplication.Services
 {
@@ -21,29 +19,41 @@ namespace K9.WebApplication.Services
             _authentication = authentication;
         }
 
-        public BioRhythmsModel Calculate(NineStarKiModel nineStarKiModel, DateTime date)
+        public BioRhythmsResultSet Calculate(NineStarKiModel nineStarKiModel, DateTime date)
         {
             var biorhythmsModel = new BioRhythmsModel(nineStarKiModel, date);
             var nineStarBiorhythmsModel = new BioRhythmsModel(nineStarKiModel, date);
-            var nineStarKiBiorhythmsModel = new NineStarKiBiorhythmsModel(nineStarKiModel);
+            var nineStarKiBiorhythmsFactors = new NineStarKiBiorhythmsFactors(nineStarKiModel);
             
-            biorhythmsModel.IntellectualBiorhythmResult = GetBioRhythmResult(new IntellectualBiorhythm(), biorhythmsModel);
-            biorhythmsModel.EmotionalBiorhythmResult = GetBioRhythmResult(new EmotionalBiorhythm(), biorhythmsModel);
-            biorhythmsModel.PhysicalBiorhythmResult = GetBioRhythmResult(new PhysicalBiorhythm(), biorhythmsModel);
-            biorhythmsModel.SpiritualBiorhythmResult = GetBioRhythmResult(new SpiritualBiorhythm(), biorhythmsModel);
+            biorhythmsModel.BiorhythmResults = GetBioRhythmResults(biorhythmsModel);
+            nineStarBiorhythmsModel.BiorhythmResults = GetBioRhythmResults(nineStarBiorhythmsModel, nineStarKiBiorhythmsFactors);
+            
+            nineStarKiModel.BiorhythmResultSet.BioRhythms = biorhythmsModel;
+            nineStarKiModel.BiorhythmResultSet.NineStarKiBioRhythms = nineStarBiorhythmsModel;
 
-            nineStarBiorhythmsModel.IntellectualBiorhythmResult = GetBioRhythmResult(new IntellectualBiorhythm(), nineStarBiorhythmsModel, nineStarKiBiorhythmsModel.IntellectualFactor, nineStarKiBiorhythmsModel.StabilityFactor);
-            nineStarBiorhythmsModel.EmotionalBiorhythmResult = GetBioRhythmResult(new EmotionalBiorhythm(), nineStarBiorhythmsModel,
-                nineStarKiBiorhythmsModel.EmotionalFactor, nineStarKiBiorhythmsModel.StabilityFactor);
-            nineStarBiorhythmsModel.PhysicalBiorhythmResult = GetBioRhythmResult(new PhysicalBiorhythm(), nineStarBiorhythmsModel,
-                nineStarKiBiorhythmsModel.PhysicalFactor, nineStarKiBiorhythmsModel.StabilityFactor);
-            nineStarBiorhythmsModel.SpiritualBiorhythmResult = GetBioRhythmResult(new SpiritualBiorhythm(), nineStarBiorhythmsModel,
-                nineStarKiBiorhythmsModel.SpiritualFactor, nineStarKiBiorhythmsModel.StabilityFactor);
+            return nineStarKiModel.BiorhythmResultSet;
+        }
 
-            nineStarKiModel.Biorhythms = biorhythmsModel;
-            nineStarKiModel.NineStarKiBiorhythms = nineStarBiorhythmsModel;
+        private static List<BiorhythmBase> GetBiorhythms() => Helpers.Methods.GetClassesThatDeriveFrom<BiorhythmBase>().Select(e => (BiorhythmBase)Activator.CreateInstance(e)).OrderBy(e => e.Index).ToList();
 
-            return biorhythmsModel;
+        private List<BioRhythmResult> GetBioRhythmResults(BioRhythmsModel biorhythmsModel, NineStarKiBiorhythmsFactors factors = null)
+        {
+            var bioRhythms = GetBiorhythms();
+            var results = new List<BioRhythmResult>();
+            double nineStarKiFactor = 0;
+            double stabilityFactor = 0;
+
+            foreach (var biorhythm in bioRhythms)
+            {
+                if (factors != null)
+                {
+                    nineStarKiFactor = factors.GetFactor(biorhythm.Biorhythm);
+                    stabilityFactor = factors.StabilityFactor;
+                }
+                results.Add(GetBioRhythmResult(biorhythm, biorhythmsModel, nineStarKiFactor, stabilityFactor));
+            }
+
+            return results;
         }
 
         private BioRhythmResult GetBioRhythmResult(BiorhythmBase biorhythm, BioRhythmsModel biorhythmsModel, double nineStarKiFactor = 0, double stabilityFactor = 0)
@@ -60,7 +70,7 @@ namespace K9.WebApplication.Services
             return result;
         }
 
-        private List<Tuple<string, double>> CalculateCosineRangeValues(IBioRhythm biorhythm, BioRhythmsModel bioRhythmsModel, double nineStarKiFactor = 0, double stabilityFactor = 0)
+        private List<Tuple<string, double>> CalculateCosineRangeValues(IBiorhythm biorhythm, BioRhythmsModel bioRhythmsModel, double nineStarKiFactor = 0, double stabilityFactor = 0)
         {
             var nineStarMonthlyPeriod =
                 bioRhythmsModel.NineStarKiModel.GetMonthlyPeriod(bioRhythmsModel.SelectedDate.Value,
@@ -81,7 +91,7 @@ namespace K9.WebApplication.Services
             return list;
         }
 
-        private double CalculateValue(IBioRhythm bioRhythm, int dayInterval, double nineStarKiFactor = 0, double nineStarKiStabilityFactor = 0)
+        private double CalculateValue(IBiorhythm bioRhythm, int dayInterval, double nineStarKiFactor = 0, double nineStarKiStabilityFactor = 0)
         {
             double range = 50;
             double phase = 0;
@@ -119,7 +129,7 @@ namespace K9.WebApplication.Services
             return value;
         }
 
-        private int GetDayInterval(IBioRhythm bioRhythm, int daysElapsedSinceBirth)
+        private int GetDayInterval(IBiorhythm bioRhythm, int daysElapsedSinceBirth)
         {
             return Math.Abs(daysElapsedSinceBirth % bioRhythm.CycleLength);
         }

@@ -1,11 +1,14 @@
 ﻿namespace K9.WebApplication.Enums
 {
-    public enum EBiorhythmFactor
+    public enum EBiorhythm
     {
         Undefined,
+        Stability,
         Intellectual,
         Emotional,
         Physical,
-        Spiritual
+        Spiritual,
+        Aesthetic,
+        Intuitive
     }
 }

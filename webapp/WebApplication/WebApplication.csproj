@@ -347,7 +347,7 @@
     <Compile Include="Controllers\UserProfileReadingsController.cs" />
     <Compile Include="Controllers\UserPromoCodesController.cs" />
     <Compile Include="Controllers\UserMembershipsController.cs" />
-    <Compile Include="Enums\EBiorhythmFactor.cs" />
+    <Compile Include="Enums\EBiorhythm.cs" />
     <Compile Include="Enums\ESexualChemistryScore.cs" />
     <Compile Include="Enums\ECompatibilityScore.cs" />
     <Compile Include="Enums\EReadingType.cs" />
@@ -384,7 +384,11 @@
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Helpers\SessionHelpers.cs" />
     <Compile Include="Helpers\Separator.cs" />
+    <Compile Include="Models\Biorhythms\BiorhythmFactor.cs" />
     <Compile Include="Models\Biorhythms\BioRhythmResult.cs" />
+    <Compile Include="Models\Biorhythms\AestheticBiorhythm.cs" />
+    <Compile Include="Models\Biorhythms\BioRhythmsResultSet.cs" />
+    <Compile Include="Models\Biorhythms\IntuitiveBiorhythm.cs" />
     <Compile Include="Models\Biorhythms\SpiritualBiorhythm.cs" />
     <Compile Include="Models\Biorhythms\PhysicalBiorhythm.cs" />
     <Compile Include="Models\Biorhythms\EmotionalBiorhythm.cs" />
@@ -395,8 +399,7 @@
     <Compile Include="Models\NineStarKi\CompatibilityDetailsModel.cs" />
     <Compile Include="Models\NineStarKi\CompatibilityModel.cs" />
     <Compile Include="Models\Biorhythms\BioRhythmsModel.cs" />
-    <Compile Include="Models\NineStarKi\NineStarKiBiorhythmFactors.cs" />
-    <Compile Include="Models\NineStarKi\NineStarKiBiorhythmsModel.cs" />
+    <Compile Include="Models\NineStarKi\NineStarKiBiorhythmsFactors.cs" />
     <Compile Include="Models\NineStarKi\NineStarKiMonthlyDates.cs" />
     <Compile Include="Models\Recaptcha.cs" />
     <Compile Include="Models\PurchaseModel.cs" />

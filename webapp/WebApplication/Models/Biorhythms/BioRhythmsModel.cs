@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using K9.WebApplication.Enums;
 
 namespace K9.WebApplication.Models
 {
     public class BioRhythmsModel
     {
-
         public BioRhythmsModel()
         {
             PersonModel = new PersonModel();
@@ -18,6 +20,7 @@ namespace K9.WebApplication.Models
             PersonModel = nineStarKiModel.PersonModel;
             NineStarKiModel = nineStarKiModel;
             DaysElapsedSinceBirth = GetDaysElapsedSinceBirth(selectedDate.Value);
+            BiorhythmResults = new List<BioRhythmResult>();
         }
 
         public DateTime? SelectedDate { get; }
@@ -27,14 +30,11 @@ namespace K9.WebApplication.Models
         public NineStarKiModel NineStarKiModel { get; }
 
         public int DaysElapsedSinceBirth { get; }
-        
-        public BioRhythmResult IntellectualBiorhythmResult { get; set; }
 
-        public BioRhythmResult EmotionalBiorhythmResult { get; set; }
+        public List<BioRhythmResult> BiorhythmResults { get; set; }
 
-        public BioRhythmResult PhysicalBiorhythmResult { get; set; }
-
-        public BioRhythmResult SpiritualBiorhythmResult { get; set; }
+        public BioRhythmResult GetResultByType(EBiorhythm biorhythm) =>
+            BiorhythmResults?.FirstOrDefault(e => e.BioRhythm.Biorhythm == biorhythm);
 
         private int GetDaysElapsedSinceBirth(DateTime date)
         {

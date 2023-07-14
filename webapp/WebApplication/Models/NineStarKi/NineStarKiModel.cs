@@ -17,8 +17,7 @@ namespace K9.WebApplication.Models
         public NineStarKiModel()
         {
             PersonModel = new PersonModel();
-            Biorhythms = new BioRhythmsModel();
-            NineStarKiBiorhythms = new BioRhythmsModel();
+            BiorhythmResultSet = new BioRhythmsResultSet();
         }
 
         public NineStarKiModel(PersonModel personModel, DateTime? selectedDate = null)
@@ -37,8 +36,7 @@ namespace K9.WebApplication.Models
             CharacterEnergy.RelatedEnergy = MainEnergy.Energy;
             SurfaceEnergy.RelatedEnergy = MainEnergy.Energy;
 
-            Biorhythms = new BioRhythmsModel(this, selectedDate);
-            NineStarKiBiorhythms = new BioRhythmsModel(this, selectedDate);
+            BiorhythmResultSet = new BioRhythmsResultSet(this, selectedDate);
         }
 
         public PersonModel PersonModel { get; }
@@ -68,11 +66,8 @@ namespace K9.WebApplication.Models
         public string PersonalDevelopemnt { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BiorhythmsLabel)]
-        public BioRhythmsModel Biorhythms { get; set; }
-
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BiorhythmsLabel)]
-        public BioRhythmsModel NineStarKiBiorhythms { get; set; }
-
+        public BioRhythmsResultSet BiorhythmResultSet { get; set; }
+        
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SelectedDateLabel)]
         public DateTime? SelectedDate { get; set; }
 

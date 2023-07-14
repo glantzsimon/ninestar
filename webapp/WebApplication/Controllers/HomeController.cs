@@ -38,7 +38,7 @@ namespace K9.WebApplication.Controllers
             };
             
             var nineStarKiModel = new NineStarKiModel(personModel);
-            nineStarKiModel.Biorhythms = _biorhythmsService.Calculate(nineStarKiModel, DateTime.Today);
+            nineStarKiModel.BiorhythmResultSet = _biorhythmsService.Calculate(nineStarKiModel, DateTime.Today);
 
             return View(nineStarKiModel);
         }

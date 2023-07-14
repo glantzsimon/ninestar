@@ -143,8 +143,8 @@
                     tooltip: {
                         headerFormat: "<strong style='color: {series.color}'>{series.name}</strong><br/><br/>",
                         pointFormat: "<p style='padding: 4px; display: block;'><strong>Date: </strong>{point.date}</p><br/>" +
-                                     "<p style='padding: 4px; display: block;'><strong>Value: </strong>{point.y:.2f}</p><br/>" +
-                                     "<p style='padding: 4px; display: block;'><strong>Description: </strong>{point.description}</p>",
+                            "<p style='padding: 4px; display: block;'><strong>Value: </strong>{point.y:.2f}</p><br/>" +
+                            "<p style='padding: 4px; display: block;'><strong>Description: </strong>{point.description}</p>",
                         crosshairs: true
                     },
 
@@ -157,24 +157,16 @@
                     },
 
                     series: [
-                        {
-                            name: "@($"{Model.IntellectualBiorhythmResult.BioRhythm.Name} {Dictionary.Biorhythm}")",
-                            data: getSeriesData(@(Html.Raw(Model.IntellectualBiorhythmResult.RangeValues.ToJson())), @(Model.IntellectualBiorhythmResult.GetMaxValue()), @(Model.IntellectualBiorhythmResult.GetMinValue()))
-                        },
-                        {
-                            name: "@($"{Model.SpiritualBiorhythmResult.BioRhythm.Name} {Dictionary.Biorhythm}")",
-                            data: getSeriesData(@(Html.Raw(Model.SpiritualBiorhythmResult.RangeValues.ToJson())), @(Model.SpiritualBiorhythmResult.GetMaxValue()), @(Model.SpiritualBiorhythmResult.GetMinValue()))
 
-                        },
+                        @foreach (var biorhythm in Model.BiorhythmResults)
                         {
-                            name: "@($"{Model.EmotionalBiorhythmResult.BioRhythm.Name} {Dictionary.Biorhythm}")",
-                            data: getSeriesData(@(Html.Raw(Model.EmotionalBiorhythmResult.RangeValues.ToJson())), @(Model.EmotionalBiorhythmResult.GetMaxValue()), @(Model.EmotionalBiorhythmResult.GetMinValue()))
-                        },
-                        {
-                            name: "@($"{Model.PhysicalBiorhythmResult.BioRhythm.Name} {Dictionary.Biorhythm}")",
-                            data: getSeriesData(@(Html.Raw(Model.PhysicalBiorhythmResult.RangeValues.ToJson())), @(Model.PhysicalBiorhythmResult.GetMaxValue()), @(Model.PhysicalBiorhythmResult.GetMinValue()))
+                            @:{
+                                @:name: "@($"{biorhythm.BioRhythm.Name} {Dictionary.Biorhythm}")",
+                                @:data: getSeriesData(@(Html.Raw(biorhythm.RangeValues.ToJson())), @(biorhythm.GetMaxValue()), @(biorhythm.GetMinValue()))
+                            @:},
                         }
-                    ]
+
+                        ]
                 });
         }
 

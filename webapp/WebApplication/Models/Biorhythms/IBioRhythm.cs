@@ -1,8 +1,13 @@
-﻿namespace K9.WebApplication.Models
+﻿using K9.WebApplication.Enums;
+
+namespace K9.WebApplication.Models
 {
-    public interface IBioRhythm
+    public interface IBiorhythm
     {
         string Name { get; }
         int CycleLength { get; }
+        EBiorhythm Biorhythm { get; }
+        string Color { get; }
+        int Index { get; }
     }
 }

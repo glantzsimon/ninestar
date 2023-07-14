@@ -72,14 +72,17 @@
         padding-right: 7px;
     }
 
-    .page h2 {
+    .page h2, .page h4 {
         width: 100%;
-        text-align: center;
-        margin-top: 15px;
     }
 
     .page .well {
         padding: 15px !important;
+    }
+
+    .page .well-mobile {
+        padding: 0 !important;
+        margin-top: 10px !important;
     }
 
     .panel-body h4 {

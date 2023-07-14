@@ -6,8 +6,6 @@
     var childClass = Model.PersonModel.IsAdult() ? "" : "child-profile";
 }
 
-<div class="well">
-    <div id="energy-summary-container">
-        @Html.Panel(Dictionary.PersonalChartOverview, Html.Partial("_PersonalChart").ToString())
-    </div>
+<div id="energy-summary-container">
+    @Html.Panel(Dictionary.PersonalChartOverview, Html.Partial("_PersonalChart").ToString())
 </div>

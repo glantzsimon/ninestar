@@ -347,6 +347,7 @@
     <Compile Include="Controllers\UserProfileReadingsController.cs" />
     <Compile Include="Controllers\UserPromoCodesController.cs" />
     <Compile Include="Controllers\UserMembershipsController.cs" />
+    <Compile Include="Enums\EBiorhythmTrend.cs" />
     <Compile Include="Enums\EBiorhythm.cs" />
     <Compile Include="Enums\ESexualChemistryScore.cs" />
     <Compile Include="Enums\ECompatibilityScore.cs" />
@@ -387,7 +388,7 @@
     <Compile Include="Models\Biorhythms\AverageBiorhythm.cs" />
     <Compile Include="Models\Biorhythms\BiorhythmFactor.cs" />
     <Compile Include="Models\Biorhythms\BioRhythmResult.cs" />
-    <Compile Include="Models\Biorhythms\AestheticBiorhythm.cs" />
+    <Compile Include="Models\Biorhythms\CreativeBiorhythm.cs" />
     <Compile Include="Models\Biorhythms\BioRhythmsResultSet.cs" />
     <Compile Include="Models\Biorhythms\IntuitiveBiorhythm.cs" />
     <Compile Include="Models\Biorhythms\SpiritualBiorhythm.cs" />

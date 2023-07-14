@@ -22,7 +22,8 @@
                     Value = (int)biorhythm.Value,
                     Title = biorhythm.BioRhythm.Name,
                     BackgroundColor = $"rgb({biorhythm.BioRhythm.Color}, 0.33)",
-                    StrokeColor = $"rgb({biorhythm.BioRhythm.Color})"
+                    StrokeColor = $"rgb({biorhythm.BioRhythm.Color})",
+                    Units = $"{biorhythm.GetBiorhythmTrendHtmlString()}",
                 })
             </div>
         }

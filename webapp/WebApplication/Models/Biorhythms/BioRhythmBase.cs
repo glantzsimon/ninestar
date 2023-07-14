@@ -21,6 +21,8 @@ namespace K9.WebApplication.Models
         public abstract int Index { get; }
 
         public virtual int LineWidth => 2;
+        
+        public virtual bool LineShadow => false;
 
         public string FullName => $"{Name} {Globalisation.Dictionary.Biorhythm}";
     }

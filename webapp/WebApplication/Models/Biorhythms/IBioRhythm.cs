@@ -10,5 +10,6 @@ namespace K9.WebApplication.Models
         string Color { get; }
         int LineWidth { get; }
         int Index { get; }
+        bool LineShadow { get; }
     }
 }

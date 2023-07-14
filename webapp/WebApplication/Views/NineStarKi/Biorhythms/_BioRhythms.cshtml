@@ -165,7 +165,8 @@
                                 @:data: getSeriesData(@(Html.Raw(biorhythm.RangeValues.ToJson())), @(biorhythm.GetMaxValue()), @(biorhythm.GetMinValue())),
                                 @:color: "rgb(@($"{biorhythm.BioRhythm.Color}"))",
                                 @:lineWidth: "@($"{biorhythm.BioRhythm.LineWidth}")",
-                                @:shadow: @($"{biorhythm.BioRhythm.LineShadow.ToString().ToLower()}")
+                                @:shadow: @($"{biorhythm.BioRhythm.LineShadow.ToString().ToLower()}"),
+                                @:dashStyle: "@($"{biorhythm.BioRhythm.LineDashString}")"
                             @:},
                         }
 

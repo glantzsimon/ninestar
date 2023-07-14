@@ -11,5 +11,6 @@ namespace K9.WebApplication.Models
         int LineWidth { get; }
         int Index { get; }
         bool LineShadow { get; }
+        bool LineIsDashed { get; }
     }
 }

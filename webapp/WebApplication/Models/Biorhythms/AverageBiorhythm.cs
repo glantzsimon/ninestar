@@ -7,9 +7,10 @@ namespace K9.WebApplication.Models
         public override string Name => "Average";
         public override int CycleLength => 0;
         public override EBiorhythm Biorhythm { get; } = EBiorhythm.Average;
-        public override string Color => "192, 192, 192";
-        public override int LineWidth => 4;
-        public override int Index => 1;
-        public override bool LineShadow => true;
+        public override string Color => "88, 88, 88";
+        public override int LineWidth => 3;
+        public override int Index => 0;
+        public override bool LineShadow => false;
+        public override bool LineIsDashed => true;
     }
 }

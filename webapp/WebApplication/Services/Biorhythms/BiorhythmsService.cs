@@ -55,26 +55,24 @@ namespace K9.WebApplication.Services
             }
 
             var average = bioRhythms.Where(e => e.Biorhythm == EBiorhythm.Average).First();
+            var averageRangeValues = new List<Tuple<string, double, DateTime>>();
+            var firstResult = results.First();
+
+            for (int i = 0; i < firstResult.RangeValues.Count; i++)
             {
-                var averageRangeValues = new List<Tuple<string, double, DateTime>>();
-                var firstResult = results.First();
-
-                for (int i = 0; i < firstResult.RangeValues.Count; i++)
-                {
-                    var date = firstResult.RangeValues[i].Item1;
-                    var dateValue = firstResult.RangeValues[i].Item3;
-                    averageRangeValues.Add(new Tuple<string, double, DateTime>(date,
-                        results.Select(e => e.RangeValues[i].Item2).Average(), dateValue));
-                }
-
-                results.Add(new BioRhythmResult
-                {
-                    BioRhythm = average,
-                    Value = results.Average(e => e.Value),
-                    RangeValues = averageRangeValues,
-                    SelectedDate = biorhythmsModel.SelectedDate.Value
-                });
+                var date = firstResult.RangeValues[i].Item1;
+                var dateValue = firstResult.RangeValues[i].Item3;
+                averageRangeValues.Add(new Tuple<string, double, DateTime>(date,
+                    results.Select(e => e.RangeValues[i].Item2).Average(), dateValue));
             }
+
+            results.Insert(0, new BioRhythmResult
+            {
+                BioRhythm = average,
+                Value = results.Average(e => e.Value),
+                RangeValues = averageRangeValues,
+                SelectedDate = biorhythmsModel.SelectedDate.Value
+            });
 
             return results;
         }

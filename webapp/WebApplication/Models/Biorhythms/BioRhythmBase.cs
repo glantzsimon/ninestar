@@ -23,7 +23,11 @@ namespace K9.WebApplication.Models
         public virtual int LineWidth => 2;
         
         public virtual bool LineShadow => false;
+        
+        public virtual bool LineIsDashed => false;
 
+        public string LineDashString => LineIsDashed ? "dash" : string.Empty;
+        
         public string FullName => $"{Name} {Globalisation.Dictionary.Biorhythm}";
     }
 }

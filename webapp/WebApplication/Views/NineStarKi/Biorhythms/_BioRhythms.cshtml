@@ -162,7 +162,9 @@
                         {
                             @:{
                                 @:name: "@($"{biorhythm.BioRhythm.Name} {Dictionary.Biorhythm}")",
-                                @:data: getSeriesData(@(Html.Raw(biorhythm.RangeValues.ToJson())), @(biorhythm.GetMaxValue()), @(biorhythm.GetMinValue()))
+                                @:data: getSeriesData(@(Html.Raw(biorhythm.RangeValues.ToJson())), @(biorhythm.GetMaxValue()), @(biorhythm.GetMinValue())),
+                                @:color: "rgb(@($"{biorhythm.BioRhythm.Color}"))",
+                                @:lineWidth: "@($"{biorhythm.BioRhythm.LineWidth}")"
                             @:},
                         }
 

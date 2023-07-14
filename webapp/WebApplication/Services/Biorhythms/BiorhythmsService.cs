@@ -3,6 +3,7 @@ using K9.WebApplication.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using K9.WebApplication.Enums;
 
 namespace K9.WebApplication.Services
 {
@@ -24,10 +25,10 @@ namespace K9.WebApplication.Services
             var biorhythmsModel = new BioRhythmsModel(nineStarKiModel, date);
             var nineStarBiorhythmsModel = new BioRhythmsModel(nineStarKiModel, date);
             var nineStarKiBiorhythmsFactors = new NineStarKiBiorhythmsFactors(nineStarKiModel);
-            
+
             biorhythmsModel.BiorhythmResults = GetBioRhythmResults(biorhythmsModel);
             nineStarBiorhythmsModel.BiorhythmResults = GetBioRhythmResults(nineStarBiorhythmsModel, nineStarKiBiorhythmsFactors);
-            
+
             nineStarKiModel.BiorhythmResultSet.BioRhythms = biorhythmsModel;
             nineStarKiModel.BiorhythmResultSet.NineStarKiBioRhythms = nineStarBiorhythmsModel;
 
@@ -43,7 +44,7 @@ namespace K9.WebApplication.Services
             double nineStarKiFactor = 0;
             double stabilityFactor = 0;
 
-            foreach (var biorhythm in bioRhythms)
+            foreach (var biorhythm in bioRhythms.Where(e => e.Biorhythm != EBiorhythm.Average))
             {
                 if (factors != null)
                 {
@@ -51,6 +52,26 @@ namespace K9.WebApplication.Services
                     stabilityFactor = factors.StabilityFactor;
                 }
                 results.Add(GetBioRhythmResult(biorhythm, biorhythmsModel, nineStarKiFactor, stabilityFactor));
+            }
+
+            var average = bioRhythms.Where(e => e.Biorhythm == EBiorhythm.Average).First();
+            {
+                var averageRangeValues = new List<Tuple<string, double>>();
+                var firstResult = results.First();
+
+                for (int i = 0; i < firstResult.RangeValues.Count; i++)
+                {
+                    var date = firstResult.RangeValues[i].Item1;
+                    averageRangeValues.Add(new Tuple<string, double>(date,
+                        results.Select(e => e.RangeValues[i].Item2).Average()));
+                }
+
+                results.Add(new BioRhythmResult
+                {
+                    BioRhythm = average,
+                    Value = results.Average(e => e.Value),
+                    RangeValues = averageRangeValues
+                });
             }
 
             return results;
@@ -79,7 +100,7 @@ namespace K9.WebApplication.Services
             var daysSinceBeginningOfPeriod =
                 (int)bioRhythmsModel.SelectedDate.Value.Subtract(nineStarMonthlyPeriod.MonthlyPeriodStartsOn).TotalDays;
             var list = new List<Tuple<string, double>>();
-            
+
             for (int i = 0; i < period; i++)
             {
                 var factor = i - daysSinceBeginningOfPeriod;
@@ -107,7 +128,7 @@ namespace K9.WebApplication.Services
 
                 double nineStarKiPhase = nineStarKiFactor <= 1 ? 0 : 100 - (100 * factor);
                 double stabilityPhase = (100 - (100 * stabilityFactor)) / 2;
-               
+
                 range = 50 * combinedFactor;
 
                 if (nineStarKiFactor < 1)
@@ -122,7 +143,7 @@ namespace K9.WebApplication.Services
                 {
                     phase = stabilityPhase;
                 }
-                
+
             }
 
             var value = phase + range + (range * Math.Sin((2 * Math.PI * dayInterval) / bioRhythm.CycleLength));

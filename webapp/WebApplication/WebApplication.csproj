@@ -384,6 +384,7 @@
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Helpers\SessionHelpers.cs" />
     <Compile Include="Helpers\Separator.cs" />
+    <Compile Include="Models\Biorhythms\AverageBiorhythm.cs" />
     <Compile Include="Models\Biorhythms\BiorhythmFactor.cs" />
     <Compile Include="Models\Biorhythms\BioRhythmResult.cs" />
     <Compile Include="Models\Biorhythms\AestheticBiorhythm.cs" />

@@ -8,6 +8,7 @@ namespace K9.WebApplication.Models
         int CycleLength { get; }
         EBiorhythm Biorhythm { get; }
         string Color { get; }
+        int LineWidth { get; }
         int Index { get; }
     }
 }

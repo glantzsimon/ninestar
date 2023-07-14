@@ -9,6 +9,7 @@
         Physical,
         Spiritual,
         Aesthetic,
-        Intuitive
+        Intuitive,
+        Average
     }
 }

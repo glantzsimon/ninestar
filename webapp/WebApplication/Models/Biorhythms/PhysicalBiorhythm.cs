@@ -9,5 +9,6 @@ namespace K9.WebApplication.Models
         public override EBiorhythm Biorhythm { get; } = EBiorhythm.Physical;
         public override string Color => "255, 51, 51";
         public override int Index => 4;
+        public override int DisplayIndex => 3;
     }
 }

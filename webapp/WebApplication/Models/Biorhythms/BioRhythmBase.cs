@@ -19,6 +19,8 @@ namespace K9.WebApplication.Models
         public abstract string Color { get; }
         
         public abstract int Index { get; }
+        
+        public abstract int DisplayIndex { get; }
 
         public virtual int LineWidth => 2;
         

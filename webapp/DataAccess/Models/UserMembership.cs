@@ -15,7 +15,7 @@ namespace K9.DataAccessLayer.Models
 {
     [AutoGenerateName]
     [Grammar(ResourceType = typeof(Dictionary), DefiniteArticleName = Strings.Grammar.MasculineDefiniteArticle, IndefiniteArticleName = Strings.Grammar.MasculineIndefiniteArticle)]
-    [Name(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.MembershipOption, PluralName = Globalisation.Strings.Names.MembershipOptions)]
+    [Name(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.UserMembership, PluralName = Globalisation.Strings.Names.MembershipOptions, ListName = Globalisation.Strings.Names.UserMembershipsListName)]
     [DefaultPermissions(Role = RoleNames.DefaultUsers)]
     public class UserMembership : ObjectBase, IUserData
     {
@@ -55,34 +55,41 @@ namespace K9.DataAccessLayer.Models
         public string UserName { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubscriptionTypeLabel)]
-        [LinkedColumn(LinkedTableName = "MembershipOption", LinkedColumnName = "Description")]
+        [LinkedColumn(LinkedTableName = "MembershipOption", LinkedColumnName = "Name")]
         public string MembershipOptionName { get; set; }
 
+        [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfProfileReadingsLeft)]
-        public int NumberOfProfileReadingsLeft => MembershipOption.MaxNumberOfProfileReadings - ProfileReadings.Where(e => !e.UserCreditPackId.HasValue)?.Count() ?? 0;
+        public int NumberOfProfileReadingsLeft => MembershipOption?.MaxNumberOfProfileReadings - ProfileReadings?.Where(e => !e.UserCreditPackId.HasValue)?.Count() ?? 0;
 
+        [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.NumberOfProfileReadingsLeft)]
-        public string NumberOfProfileReadingsLeftText => MembershipOption.IsUnlimited
+        public string NumberOfProfileReadingsLeftText => MembershipOption?.IsUnlimited ?? false
             ? Globalisation.Dictionary.Unlimited : NumberOfProfileReadingsLeft.ToString();
 
+        [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfRelationshipCompatibilityReadingsLeft)]
-        public int NumberOfRelationshipCompatibilityReadingsLeft => MembershipOption.MaxNumberOfCompatibilityReadings - RelationshipCompatibilityReadings.Where(e => !e.UserCreditPackId.HasValue)?.Count() ?? 0;
+        public int NumberOfRelationshipCompatibilityReadingsLeft => MembershipOption?.MaxNumberOfCompatibilityReadings - RelationshipCompatibilityReadings?.Where(e => !e.UserCreditPackId.HasValue)?.Count() ?? 0;
 
+        [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfRelationshipCompatibilityReadingsLeft)]
-        public string NumberOfRelationshipCompatibilityReadingsLeftText => MembershipOption.IsUnlimited
+        public string NumberOfRelationshipCompatibilityReadingsLeftText => MembershipOption?.IsUnlimited ?? false
             ? Globalisation.Dictionary.Unlimited : NumberOfRelationshipCompatibilityReadingsLeft.ToString();
 
-        [NotMapped] 
+        [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfRelationshipCompatibilityReadingsLeft)]
         public int NumberOfCreditsLeft { get; set; }
 
+        [NotMapped]
         public bool IsActive => DateTime.Today.IsBetween(StartsOn.Date, EndsOn.Date) && !IsDeactivated;
 
+        [NotMapped]
         public TimeSpan Duration => EndsOn.Subtract(StartsOn);
 
+        [NotMapped]
         public double CostOfRemainingActiveSubscription => GetCostOfRemainingActiveSubscription();
-        
+
         private double GetCostOfRemainingActiveSubscription()
         {
             var timeRemaining = EndsOn.Subtract(DateTime.Today);

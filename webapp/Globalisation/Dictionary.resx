@@ -2482,4 +2482,10 @@
   <data name="YearlyAndMonthlyCyclesOverview" xml:space="preserve">
     <value>Cycles &amp; Biorhythms Overview</value>
   </data>
+  <data name="UserMembershipModelName" xml:space="preserve">
+    <value>UserMembership</value>
+  </data>
+  <data name="UserMembershipPluralModelName" xml:space="preserve">
+    <value>UserMemberships</value>
+  </data>
 </root>

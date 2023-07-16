@@ -1,6 +1,7 @@
 ﻿@using K9.Base.WebApplication.Controllers
 @using K9.Base.WebApplication.Helpers
 @using K9.SharedLibrary.Authentication
+@using K9.WebApplication.Config
 @model UserMembership
 @{
 	Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
@@ -10,13 +11,22 @@
     AllowCreate = true,
     AllowEdit = true,
     AllowDelete = ((BaseController<UserMembership>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
+    ColumnsConfig = new ColumnsConfig
+    {
+        ColumnsToIgnore =
+        {
+            "IsActive" , "NumberOfProfileReadingsLeft", "NumberOfProfileReadingsLeftText", "NumberOfRelationshipCompatibilityReadingsLeft",
+            "NumberOfRelationshipCompatibilityReadingsLeftText", "NumberOfCreditsLeft", "CostOfRemainingActiveSubscription"
+        }
+    },
     VisibleColumns = new List<string>
     {
         "UserName",
-        //"IsActive",
+        "IsActive",
         "StartsOn",
         "EndsOn",
-        //"IsDeactivated",
+        "IsDeactivated",
         "MembershipOptionName"
-    }
+    },
+    Controller = "UserMemberships"
 })

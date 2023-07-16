@@ -1538,10 +1538,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Biorhythms are biological rhythms of a fixed duration that influence our energy levels in multiple ways.
+        ///    Biorhythms are biological rhythms of different durations that influence our energy levels and functioning in multiple ways.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    There are many different biorhythms of different durations, each one influencing a particular faculty. For example, there are intellectual, emotional, physical, spiritual and many other, more subtle biorhythms. 9 Star Ki influeces us in similar ways. When you combine the information of biorhythms with 9 Star Ki cycles, you begin to get a very detailed picture about what is goin [rest of string was truncated]&quot;;.
+        ///    There are many different biorhythms of different lengths, each one influencing a particular faculty. For example, there are intellectual, emotional, physical, spiritual and many other, more subtle biorhythms. 9 Star Ki also influeces us cyclically, from short cycles, similar to biorhythms to longer, cosmic cycles. When you combine the information of biorhythm [rest of string was truncated]&quot;;.
         /// </summary>
         public static string biorhythms {
             get {
@@ -4145,7 +4145,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9 Star Ki Astrology Free Calculator Predictions Relationships Compatibility Nine Energies Feng Shui Astrology I Ching Love Dating Nine Star Ki.
+        ///   Looks up a localized string similar to 9 Star Ki Astrology Free Calculator Predictions Relationships Compatibility Biorhythms Gene Keys Human Design Nine Energies Feng Shui Astrology I Ching Love Dating Nine Star Ki Bio-Rhythms.
         /// </summary>
         public static string Keywords {
             get {
@@ -8886,6 +8886,24 @@ namespace K9.Globalisation {
         public static string UserData {
             get {
                 return ResourceManager.GetString("UserData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UserMembership.
+        /// </summary>
+        public static string UserMembershipModelName {
+            get {
+                return ResourceManager.GetString("UserMembershipModelName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UserMemberships.
+        /// </summary>
+        public static string UserMembershipPluralModelName {
+            get {
+                return ResourceManager.GetString("UserMembershipPluralModelName", resourceCulture);
             }
         }
         

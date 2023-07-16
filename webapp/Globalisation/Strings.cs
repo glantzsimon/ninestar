@@ -90,6 +90,9 @@
             public const string PromoCode = "PromoCode";
             public const string UserPromoCode = "UserPromoCode";
             public const string UserPromoCodes = "UserPromoCodes";
+            public const string UserMembership = "UserMembershipModelName";
+            public const string UserMemberships = "UserMemberships";
+            public const string UserMembershipsListName = "UserMemberships";
             public const string Donations = "Donations";
             public const string Consultation = "Consultation";
             public const string UserConsultation = "UserConsultation";

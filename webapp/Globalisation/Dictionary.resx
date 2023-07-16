@@ -2488,4 +2488,7 @@
   <data name="UserMembershipPluralModelName" xml:space="preserve">
     <value>UserMemberships</value>
   </data>
+  <data name="biorhythms_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\biorhythms-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

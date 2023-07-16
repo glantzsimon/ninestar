@@ -31,6 +31,8 @@ namespace K9.WebApplication.Models
 
         public int DaysElapsedSinceBirth { get; }
 
+        public string Summary { get; set; }
+
         public List<BioRhythmResult> BiorhythmResults { get; set; }
 
         public List<BioRhythmResult> GetBiorhythmResultsByDisplayIndex() => BiorhythmResults.OrderBy(e => e.BioRhythm.DisplayIndex).ToList();

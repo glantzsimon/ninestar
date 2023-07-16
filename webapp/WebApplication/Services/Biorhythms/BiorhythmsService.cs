@@ -3,6 +3,8 @@ using K9.WebApplication.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using K9.SharedLibrary.Helpers;
 using K9.WebApplication.Enums;
 
 namespace K9.WebApplication.Services
@@ -29,10 +31,51 @@ namespace K9.WebApplication.Services
             biorhythmsModel.BiorhythmResults = GetBioRhythmResults(biorhythmsModel);
             nineStarBiorhythmsModel.BiorhythmResults = GetBioRhythmResults(nineStarBiorhythmsModel, nineStarKiBiorhythmsFactors);
 
+            biorhythmsModel.Summary = GetSummary(biorhythmsModel);
+            biorhythmsModel.Summary = GetSummary(biorhythmsModel);
+
             nineStarKiModel.BiorhythmResultSet.BioRhythms = biorhythmsModel;
             nineStarKiModel.BiorhythmResultSet.NineStarKiBioRhythms = nineStarBiorhythmsModel;
 
             return nineStarKiModel.BiorhythmResultSet;
+        }
+
+        private string GetSummary(BioRhythmsModel biorhythmsModel)
+        {
+            var sb = new StringBuilder();
+
+            foreach (var biorhythm in biorhythmsModel.GetResultsWithoutAverage())
+            {
+                sb.Append(TemplateProcessor.PopulateTemplate(Globalisation.Dictionary.biorhythms_summary, new
+                {
+                    BiorhythmName = biorhythm.BioRhythm.FullName,
+                    BiorhythmSummary = GetSummaryBiorhythmSummary(biorhythm)
+                }));
+                sb.AppendLine("</br>");
+            }
+
+            var average = biorhythmsModel.GetAverageResult();
+
+            sb.Append(TemplateProcessor.PopulateTemplate(Globalisation.Dictionary.biorhythms_summary, new
+            {
+                BiorhythmName = average.BioRhythm.FullName,
+                BiorhythmSummary = GetSummaryBiorhythmSummary(average)
+            }));
+            sb.AppendLine("</br>");
+
+            return sb.ToString();
+        }
+
+        private string GetSummaryBiorhythmSummary(BioRhythmResult biorhythm)
+        {
+            switch (biorhythm.BioRhythm.Biorhythm)
+            {
+                case EBiorhythm.Intellectual:
+                    return "";
+
+            }
+
+            return string.Empty;
         }
 
         private static List<BiorhythmBase> GetBiorhythms() => Helpers.Methods.GetClassesThatDeriveFrom<BiorhythmBase>().Select(e => (BiorhythmBase)Activator.CreateInstance(e)).OrderBy(e => e.Index).ToList();
@@ -55,15 +98,13 @@ namespace K9.WebApplication.Services
             }
 
             var average = bioRhythms.Where(e => e.Biorhythm == EBiorhythm.Average).First();
-            var averageRangeValues = new List<Tuple<string, double, DateTime>>();
+            var averageRangeValues = new List<RangeValue>();
             var firstResult = results.First();
 
             for (int i = 0; i < firstResult.RangeValues.Count; i++)
             {
-                var date = firstResult.RangeValues[i].Item1;
-                var dateValue = firstResult.RangeValues[i].Item3;
-                averageRangeValues.Add(new Tuple<string, double, DateTime>(date,
-                    results.Where(e => e.BioRhythm.Biorhythm != EBiorhythm.Creative).Select(e => e.RangeValues[i].Item2).Average(), dateValue));
+                var date = firstResult.RangeValues[i].Date;
+                averageRangeValues.Add(new RangeValue(date, results.Where(e => e.BioRhythm.Biorhythm != EBiorhythm.Creative).Select(e => e.RangeValues[i].Value).Average()));
             }
 
             results.Insert(0, new BioRhythmResult
@@ -89,10 +130,11 @@ namespace K9.WebApplication.Services
                 Value = CalculateValue(biorhythm, dayInterval, nineStarKiFactor, stabilityFactor),
                 RangeValues = CalculateCosineRangeValues(biorhythm, biorhythmsModel, nineStarKiFactor, stabilityFactor)
             };
+            
             return result;
         }
 
-        private List<Tuple<string, double, DateTime>> CalculateCosineRangeValues(IBiorhythm biorhythm, BioRhythmsModel bioRhythmsModel, double nineStarKiFactor = 0, double stabilityFactor = 0)
+        private List<RangeValue> CalculateCosineRangeValues(IBiorhythm biorhythm, BioRhythmsModel bioRhythmsModel, double nineStarKiFactor = 0, double stabilityFactor = 0)
         {
             var nineStarMonthlyPeriod =
                 bioRhythmsModel.NineStarKiModel.GetMonthlyPeriod(bioRhythmsModel.SelectedDate.Value,
@@ -100,18 +142,19 @@ namespace K9.WebApplication.Services
             var period = nineStarMonthlyPeriod.GetTotalDaysInMonthlyPeriod();
             var daysSinceBeginningOfPeriod =
                 (int)bioRhythmsModel.SelectedDate.Value.Subtract(nineStarMonthlyPeriod.MonthlyPeriodStartsOn).TotalDays;
-            var list = new List<Tuple<string, double, DateTime>>();
+            var rangeValues = new List<RangeValue>();
 
             for (int i = 0; i < period; i++)
             {
                 var factor = i - daysSinceBeginningOfPeriod;
                 var dayInterval = GetDayInterval(biorhythm, bioRhythmsModel.DaysElapsedSinceBirth + factor);
-
                 var dateTime = bioRhythmsModel.SelectedDate?.AddDays(factor);
-                list.Add(new Tuple<string, double, DateTime>((dateTime?.ToString(Constants.FormatConstants.SessionDateTimeFormat)), CalculateValue(biorhythm, dayInterval, nineStarKiFactor, stabilityFactor), dateTime.Value));
+
+                rangeValues.Add(new RangeValue(dateTime,
+                    CalculateValue(biorhythm, dayInterval, nineStarKiFactor, stabilityFactor)));
             }
 
-            return list;
+            return rangeValues;
         }
 
         private double CalculateValue(IBiorhythm bioRhythm, int dayInterval, double nineStarKiFactor = 0, double nineStarKiStabilityFactor = 0)

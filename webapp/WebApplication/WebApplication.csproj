@@ -347,6 +347,7 @@
     <Compile Include="Controllers\UserProfileReadingsController.cs" />
     <Compile Include="Controllers\UserPromoCodesController.cs" />
     <Compile Include="Controllers\UserMembershipsController.cs" />
+    <Compile Include="Enums\EBiorhythmValue.cs" />
     <Compile Include="Enums\EBiorhythmTrend.cs" />
     <Compile Include="Enums\EBiorhythm.cs" />
     <Compile Include="Enums\ESexualChemistryScore.cs" />
@@ -386,6 +387,7 @@
     <Compile Include="Helpers\SessionHelpers.cs" />
     <Compile Include="Helpers\Separator.cs" />
     <Compile Include="Models\Biorhythms\AverageBiorhythm.cs" />
+    <Compile Include="Models\Biorhythms\RangeValue.cs" />
     <Compile Include="Models\Biorhythms\BiorhythmFactor.cs" />
     <Compile Include="Models\Biorhythms\BioRhythmResult.cs" />
     <Compile Include="Models\Biorhythms\CreativeBiorhythm.cs" />
@@ -1320,11 +1322,10 @@
     <Content Include="Views\Users\AssignMembershipStart.cshtml" />
     <Content Include="Views\Users\AssignPromoCodeStart.cshtml" />
     <Content Include="Views\Users\AssignPromoCodeSuccess.cshtml" />
-    <Content Include="Views\NineStarKi\Biorhythms\_BioRhythm.cshtml" />
     <Content Include="Views\NineStarKi\Biorhythms\_BioRhythms.cshtml" />
     <Content Include="Views\NineStarKi\_PersonalChart.cshtml" />
     <Content Include="Views\NineStarKi\_PersonalCycles.cshtml" />
-    <Content Include="Views\NineStarKi\_PersonalBiorhythms.cshtml" />
+    <Content Include="Views\NineStarKi\Biorhythms\_PersonalBiorhythms.cshtml" />
     <Content Include="Views\NineStarKi\_ProfileCyclesSummary.cshtml" />
     <Content Include="Views\NineStarKi\_ProfileCyclesContainer.cshtml" />
     <Content Include="Views\NineStarKi\_HighGauge.cshtml" />

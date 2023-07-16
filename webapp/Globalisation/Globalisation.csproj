@@ -105,6 +105,7 @@
     <Content Include="Articles\en-gb\compatibility-subtitle.htm" />
     <Content Include="Articles\en-gb\biorhythms.htm" />
     <Content Include="Articles\en-gb\cycles-description.htm" />
+    <Content Include="Biorhythms\en-gb\biorhythms-summary.htm" />
     <Content Include="Compatibility\en-gb\both-gender-same-yin.htm" />
     <Content Include="Compatibility\en-gb\character-gender-opposite.htm" />
     <Content Include="Compatibility\en-gb\both-gender-same-yang.htm" />

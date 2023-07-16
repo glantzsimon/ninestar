@@ -12,44 +12,13 @@
 <script type="text/javascript">
 
     $(function() {
-
-        function getDataValueDescription(value, max, min) {
-            var range = max - min;
-            var tength = (range / 10);
-
-            if (value >= (tength * 4) + min && value < (tength * 6) + min) {
-                return "Unpredictable (prone to fluctuations)";
-            }
-
-            if (value < 10) {
-                return "Extremely Low";
-            }
-            if (value < 20) {
-                return "Very Low";
-            }
-            if (value < 40) {
-                return "Low";
-            }
-            if (value < 60) {
-                return "Moderate";
-            }
-            if (value < 80) {
-                return "High";
-            }
-            if (value < 90) {
-                return "Very High";
-            }
-            if (value <= 100) {
-                return "Excellent";
-            }
-        }
-
-        function getSeriesData(rawData, max, min) {
+        function getSeriesData(rawData) {
             var data = [], i;
             for (i = 0; i < rawData.length; i += 1) {
-                let date = new Date(rawData[i].Item1);
-                let value = rawData[i].Item2;
+                let date = new Date(rawData[i].FormattedDate);
+                let value = rawData[i].Value;
                 let selectedDate = new Date("@((Model.SelectedDate ?? DateTime.Today).ToString(K9.WebApplication.Constants.FormatConstants.SessionDateTimeFormat))");
+                let levelDescription = rawData[i].LevelDescription;
 
                 if (date.getDate() === selectedDate.getDate()) {
                     data.push({
@@ -67,7 +36,7 @@
                         x: date,
                         y: value,
                         date: date.toDateString(),
-                        description: getDataValueDescription(value, max, min)
+                        description: levelDescription
                     });
                 } else {
                     data.push({
@@ -86,7 +55,7 @@
                         x: date,
                         y: value,
                         date: date.toDateString(),
-                        description: getDataValueDescription(value, max, min)
+                        description: levelDescription
                     });
                 }
             }
@@ -162,7 +131,7 @@
                         {
                             @:{
                                 @:name: "@($"{biorhythm.BioRhythm.Name} {Dictionary.Biorhythm}")",
-                                @:data: getSeriesData(@(Html.Raw(biorhythm.RangeValues.ToJson())), @(biorhythm.GetMaxValue()), @(biorhythm.GetMinValue())),
+                                @:data: getSeriesData(@(Html.Raw(biorhythm.RangeValues.ToJson()))),
                                 @:color: "rgb(@($"{biorhythm.BioRhythm.Color}"))",
                                 @:lineWidth: "@($"{biorhythm.BioRhythm.LineWidth}")",
                                 @:shadow: @($"{biorhythm.BioRhythm.LineShadow.ToString().ToLower()}"),

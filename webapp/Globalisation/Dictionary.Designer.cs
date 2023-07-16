@@ -1550,6 +1550,21 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    {BiorhythmName}
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    {BiorhythmSummary}
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string biorhythms_summary {
+            get {
+                return ResourceManager.GetString("biorhythms_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Biorhythms.
         /// </summary>
         public static string BiorhythmsLabel {

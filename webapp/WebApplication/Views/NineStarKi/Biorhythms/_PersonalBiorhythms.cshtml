@@ -13,23 +13,6 @@
 
     <div class="mobile-only">
         <div class="row">
-            <div class="col-sm-4 col-sm-offset-4 col-md-3 col-sm-4 margin-bottom-0 padding-left-0 padding-right-0 text-center">
-                @{
-                    var average = Model.BiorhythmResultSet.NineStarKiBioRhythms.GetAverageResult();
-                }
-                @Html.Partial("_HighGauge", new GaugeOptions
-                {
-                    MaxValue = 100,
-                    Value = (int) average.Value,
-                    Title = average.BioRhythm.Name,
-                    BackgroundColor = $"rgb({average.BioRhythm.Color}, 0.33)",
-                    StrokeColor = $"rgb({average.BioRhythm.Color})",
-                    Units = $"{average.GetBiorhythmTrendHtmlString()}",
-                })
-            </div>
-        </div>
-
-        <div class="row">
             @foreach (var biorhythm in Model.BiorhythmResultSet.NineStarKiBioRhythms.GetResultsWithoutAverage())
             {
                 <div class="col-xs-12 col-sm-6 col-md-3 col-sm-4 margin-bottom-0 padding-left-0 padding-right-0 text-center">
@@ -44,6 +27,22 @@
                     })
                 </div>
             }
+        </div>
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-4 col-md-3 col-sm-4 margin-bottom-0 padding-left-0 padding-right-0 text-center">
+                @{
+                    var average = Model.BiorhythmResultSet.NineStarKiBioRhythms.GetAverageResult();
+                }
+                @Html.Partial("_HighGauge", new GaugeOptions
+                {
+                    MaxValue = 100,
+                    Value = (int) average.Value,
+                    Title = average.BioRhythm.Name,
+                    BackgroundColor = $"rgb({average.BioRhythm.Color}, 0.33)",
+                    StrokeColor = $"rgb({average.BioRhythm.Color})",
+                    Units = $"{average.GetBiorhythmTrendHtmlString()}",
+                })
+            </div>
         </div>
     </div>
 

@@ -305,7 +305,7 @@ namespace K9.WebApplication.Services
             }
         }
 
-       
+
         private static List<BiorhythmBase> GetBiorhythms() => Helpers.Methods.GetClassesThatDeriveFrom<BiorhythmBase>().Select(e => (BiorhythmBase)Activator.CreateInstance(e)).OrderBy(e => e.Index).ToList();
 
         private List<BioRhythmResult> GetBioRhythmResults(BioRhythmsModel biorhythmsModel, NineStarKiBiorhythmsFactors factors = null)
@@ -326,21 +326,26 @@ namespace K9.WebApplication.Services
                 results.Add(GetBioRhythmResult(biorhythm, biorhythmsModel, nineStarKiFactor, stabilityFactor));
             }
 
+            // Add Average Result
             var average = bioRhythms.Where(e => e.Biorhythm == EBiorhythm.Average).First();
             var averageRangeValues = new List<RangeValue>();
             var averageLongRangeValues = new List<RangeValue>();
             var firstResult = results.First();
-            
+            var rhythmsToIgnore = new List<EBiorhythm>
+            {
+                EBiorhythm.Creative
+            };
+
             for (int i = 0; i < firstResult.RangeValues.Count; i++)
             {
                 var date = firstResult.RangeValues[i].Date;
-                averageRangeValues.Add(new RangeValue(date, results.Where(e => e.BioRhythm.Biorhythm != EBiorhythm.Creative).Select(e => e.RangeValues[i].Value).Average()));
+                averageRangeValues.Add(new RangeValue(date, results.Where(e => !rhythmsToIgnore.Contains(e.BioRhythm.Biorhythm)).Select(e => e.RangeValues[i].Value).Average()));
             }
-            
+
             for (int i = 0; i < firstResult.LongRangeValues.Count; i++)
             {
                 var date = firstResult.LongRangeValues[i].Date;
-                averageLongRangeValues.Add(new RangeValue(date, results.Where(e => e.BioRhythm.Biorhythm != EBiorhythm.Creative).Select(e => e.LongRangeValues[i].Value).Average()));
+                averageLongRangeValues.Add(new RangeValue(date, results.Where(e => !rhythmsToIgnore.Contains(e.BioRhythm.Biorhythm)).Select(e => e.LongRangeValues[i].Value).Average()));
             }
 
             results.Insert(0, new BioRhythmResult
@@ -368,11 +373,11 @@ namespace K9.WebApplication.Services
             };
 
             CalculateCosineRangeValues(result, biorhythm, biorhythmsModel, nineStarKiFactor, stabilityFactor);
-            
+
             return result;
         }
 
-        private void CalculateCosineRangeValues(BioRhythmResult result,IBiorhythm biorhythm, BioRhythmsModel bioRhythmsModel, double nineStarKiFactor = 0, double stabilityFactor = 0)
+        private void CalculateCosineRangeValues(BioRhythmResult result, IBiorhythm biorhythm, BioRhythmsModel bioRhythmsModel, double nineStarKiFactor = 0, double stabilityFactor = 0)
         {
             var nineStarMonthlyPeriod =
                 bioRhythmsModel.NineStarKiModel.GetMonthlyPeriod(bioRhythmsModel.SelectedDate.Value,
@@ -382,7 +387,7 @@ namespace K9.WebApplication.Services
                 (int)bioRhythmsModel.SelectedDate.Value.Subtract(nineStarMonthlyPeriod.MonthlyPeriodStartsOn).TotalDays;
             var rangeValues = new List<RangeValue>();
             var longRangeValues = new List<RangeValue>();
-           
+
             for (int i = 0; i < period; i++)
             {
                 var factor = i - daysSinceBeginningOfPeriod;

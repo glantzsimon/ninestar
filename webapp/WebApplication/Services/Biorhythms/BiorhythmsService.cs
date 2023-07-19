@@ -333,7 +333,8 @@ namespace K9.WebApplication.Services
             var firstResult = results.First();
             var rhythmsToIgnore = new List<EBiorhythm>
             {
-                EBiorhythm.Creative
+                EBiorhythm.Creative,
+                EBiorhythm.Spiritual,
             };
 
             for (int i = 0; i < firstResult.RangeValues.Count; i++)

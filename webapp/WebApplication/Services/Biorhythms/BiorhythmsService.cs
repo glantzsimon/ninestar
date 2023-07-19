@@ -71,7 +71,8 @@ namespace K9.WebApplication.Services
                 BiorhythmTrend = average.GetBiorhythmTrendDescription(),
                 BiorhythmNextMax = average.GetDaysUntilNextMaximumString(),
                 BiorhythmNextMin = average.GetDaysUntilNextMinimumString(),
-                BiorhythmNextCritical = average.GetDaysUntilNextCriticalString()
+                BiorhythmNextCritical = average.GetDaysUntilNextCriticalString(),
+                AverageClass = "display-none"
             }));
             sb.AppendLine("</br>");
 
@@ -263,6 +264,37 @@ namespace K9.WebApplication.Services
 
                         case EBiorhythmLevel.Excellent:
                             return Globalisation.Dictionary.creative_excellent;
+
+                        default:
+                            return string.Empty;
+                    }
+
+                case EBiorhythm.Average:
+                    switch (biorhythm.GetValueLevel(biorhythm.Value))
+                    {
+                        case EBiorhythmLevel.ExtremelyLow:
+                            return Globalisation.Dictionary.average_extremely_low;
+
+                        case EBiorhythmLevel.VeryLow:
+                            return Globalisation.Dictionary.average_very_low;
+
+                        case EBiorhythmLevel.Low:
+                            return Globalisation.Dictionary.average_low;
+
+                        case EBiorhythmLevel.Moderate:
+                            return Globalisation.Dictionary.average_moderate;
+
+                        case EBiorhythmLevel.Critical:
+                            return Globalisation.Dictionary.average_critical;
+
+                        case EBiorhythmLevel.High:
+                            return Globalisation.Dictionary.average_high;
+
+                        case EBiorhythmLevel.VeryHigh:
+                            return Globalisation.Dictionary.average_very_high;
+
+                        case EBiorhythmLevel.Excellent:
+                            return Globalisation.Dictionary.average_excellent;
 
                         default:
                             return string.Empty;

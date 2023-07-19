@@ -186,7 +186,7 @@ namespace K9.WebApplication.Models
             {
                 return EBiorhythmLevel.ExtremelyLow;
             }
-            if (value < 20)
+            if (value < 25)
             {
                 return EBiorhythmLevel.VeryLow;
             }
@@ -198,7 +198,7 @@ namespace K9.WebApplication.Models
             {
                 return EBiorhythmLevel.Moderate;
             }
-            if (value < 80)
+            if (value < 75)
             {
                 return EBiorhythmLevel.High;
             }

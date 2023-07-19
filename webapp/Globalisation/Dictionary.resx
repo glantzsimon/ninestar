@@ -2557,6 +2557,30 @@
   <data name="VeryLow" xml:space="preserve">
     <value>Very Low</value>
   </data>
+  <data name="average_critical" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\average\average-critical.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="average_excellent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\average\average-excellent.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="average_extremely_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\average\average-extremely-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="average_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\average\average-high.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="average_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\average\average-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="average_moderate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\average\average-moderate.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="average_very_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\average\average-very-high.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="average_very_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\average\average-very-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="creative_critical" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>biorhythms\en-gb\leveldescriptions\creative\creative-critical.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>

@@ -165,9 +165,12 @@ namespace K9.WebApplication.Models
             var range = max - min;
             var tength = (range / 10);
 
-            if (value >= (tength * 4) + min && value < (tength * 6) + min)
+            if (BioRhythm.Biorhythm != EBiorhythm.Average)
             {
-                return EBiorhythmLevel.Critical;
+                if (value >= (tength * 4) + min && value < (tength * 6) + min)
+                {
+                    return EBiorhythmLevel.Critical;
+                }
             }
 
             if (value < 10)

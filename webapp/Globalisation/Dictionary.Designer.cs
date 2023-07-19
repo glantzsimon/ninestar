@@ -1510,6 +1510,109 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your physical energy is currently in a critical period. This means that it is prone to fluctuations. You may be have plenty of energy one minute, only to find that the next you are feeling tired again. It is wise not to take on too much during this period and wait for your energy to stabilise.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string average_critical {
+            get {
+                return ResourceManager.GetString("average_critical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your physical energy is currently at the maximum point of the cycle. You have excellent reserves of physical energy and it is a great time to deal with more physically challenging tasks, if you have been unable to carty them out when your energy was lower. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Now is also an excellent time to enjoy vigorous exercise and to challenge yourself.. However, don&apos;t forget to find some alone time and to rest! It&apos;s always good to keep some energy for the lower points. This stabilises the cycle. [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string average_excellent {
+            get {
+                return ResourceManager.GetString("average_excellent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your physical energy is currently at the lowest point in the cycle. Make sure to take plenty of breaks and not to take on anything physically challenging during this period. You may feel tired at this time, especially if you have been very busy during the last cycle. Be gentle with yourself and take it easy and get plenty of rest.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Now is a great time to catch up on sleep, to eat nourishing food, meditate, go for gentle Nature walks, listen to some beuatiful music, get a massage, wat [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string average_extremely_low {
+            get {
+                return ResourceManager.GetString("average_extremely_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your physical energy is currently high. You have good reserves of physical energy. Now is a great time to exercise, go for a hike in Nature, catch up on unfinished tasks, etc. However, even when biorhtyhms are high, it&apos;s wise not to push it too hard. Rest is always important. 
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string average_high {
+            get {
+                return ResourceManager.GetString("average_high", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your physical energy is low for the current cycle. It can be very helpful to take plenty of breaks and not to take on anything too physically challenging during this period, especially if you are feeling tired. Be gentle with yourself and get plenty of rest.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Now is a great time to catch up on sleep, to eat nourishing food, meditate, go for gentle Nature walks, listen to some beuatiful music, get a massage, watch an inspiring movie, or whatever helps you to relax and unwind. Passive  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string average_low {
+            get {
+                return ResourceManager.GetString("average_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your physical energy is currently moderate. You have adequate reserves of physical energy, so you don&apos;t have to worry too much, but it would be better to take it a little easier than when you&apos;re on peak form. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is always advisable not to take on anything too intense unless it really cannot be avoided.    
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string average_moderate {
+            get {
+                return ResourceManager.GetString("average_moderate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your physical energy is currently very high. You have very good reserves of energy and is a good time to deal with more physically challenging tasks, if you have been unable to carry them out when your energy was lower. However, don&apos;t forget to find some time to unwind and recharge your batteries too!
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string average_very_high {
+            get {
+                return ResourceManager.GetString("average_very_high", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your physical energy is very low for the current cycle. It can be very helpful to take plenty of breaks and not to take on anything too physically challenging during this period. You may feel tired at this time, especially if you have been very busy during the last cycle. Be gentle with yourself and get plenty of rest.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Now is a great time to catch up on sleep, to eat nourishing food, meditate, go for gentle Nature walks, listen to some beuatiful music, get a massage, watch an inspir [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string average_very_low {
+            get {
+                return ResourceManager.GetString("average_very_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string Back {
@@ -1550,16 +1653,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    &lt;strong&gt;{BiorhythmName}&lt;/strong&gt;
+        ///   Looks up a localized string similar to &lt;h4 class=&quot;text-center bold&quot; style=&quot;font-size: 1.3em;&quot;&gt;
+        ///    {BiorhythmName}
         ///&lt;/h4&gt;
         ///&lt;div&gt;
-        ///    &lt;h5&gt;
+        ///    &lt;h4&gt;
         ///        &lt;strong&gt;{BiorhythmLevel}&lt;/strong&gt; -
-        ///        &lt;strong&gt;{BiorhythmTrend} {BiorhythmTrendHtml}&lt;/strong&gt; -
+        ///        &lt;strong&gt;{BiorhythmTrend} {BiorhythmTrendHtml}&lt;/strong&gt;
+        ///    &lt;/h4&gt;
+        ///    &lt;p&gt;
         ///        &lt;span&gt;Maximum in {BiorhythmNextMax} days. &lt;/span&gt;
         ///        &lt;span&gt;Minimum in {BiorhythmNextMin} days.&lt;/span&gt;
-        ///    &lt;/h5&gt;
+        ///    &lt;/p&gt;
         ///&lt;/div&gt;
         ///&lt;p&gt;
         ///    {BiorhythmSummary}

@@ -352,7 +352,7 @@ namespace K9.WebApplication.Services
             results.Insert(0, new BioRhythmResult
             {
                 BioRhythm = average,
-                Value = results.Average(e => e.Value),
+                Value = results.Where(e => !rhythmsToIgnore.Contains(e.BioRhythm.Biorhythm)).Average(e => e.Value),
                 RangeValues = averageRangeValues,
                 LongRangeValues = averageLongRangeValues,
                 SelectedDate = biorhythmsModel.SelectedDate.Value

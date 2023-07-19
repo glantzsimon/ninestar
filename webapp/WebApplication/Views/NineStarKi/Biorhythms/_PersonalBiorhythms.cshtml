@@ -71,6 +71,12 @@
             @Html.Partial("Biorhythms/_BioRhythms", Model.BiorhythmResultSet.NineStarKiBioRhythms)
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-sm-12 margin-bottom-0 padding-left-0 padding-right-0">
+            @Html.Panel(Dictionary.SummaryLabel, Model.BiorhythmResultSet.NineStarKiBioRhythms.Summary)
+        </div>
+    </div>
 }
 <div class="row">
     <div class="col-md-12 margin-top-20 margin-bottom-0 padding-left-0 padding-right-0">

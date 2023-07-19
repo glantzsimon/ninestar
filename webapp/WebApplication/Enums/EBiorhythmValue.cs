@@ -7,7 +7,7 @@
         VeryLow,
         Low,
         Moderate,
-        Unpredictable,
+        Critical,
         High,
         VeryHigh,
         Excellent

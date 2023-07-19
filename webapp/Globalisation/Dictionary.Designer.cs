@@ -1550,12 +1550,21 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    {BiorhythmName}
-        ///&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;
+        ///    &lt;strong&gt;{BiorhythmName}&lt;/strong&gt;
+        ///&lt;/h4&gt;
+        ///&lt;div&gt;
+        ///    &lt;h5&gt;
+        ///        &lt;strong&gt;{BiorhythmLevel}&lt;/strong&gt; -
+        ///        &lt;strong&gt;{BiorhythmTrend} {BiorhythmTrendHtml}&lt;/strong&gt; -
+        ///        &lt;span&gt;Maximum in {BiorhythmNextMax} days. &lt;/span&gt;
+        ///        &lt;span&gt;Minimum in {BiorhythmNextMin} days.&lt;/span&gt;
+        ///    &lt;/h5&gt;
+        ///&lt;/div&gt;
         ///&lt;p&gt;
         ///    {BiorhythmSummary}
         ///&lt;/p&gt;
+        ///
         ///.
         /// </summary>
         public static string biorhythms_summary {
@@ -2574,6 +2583,121 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your creative energy is currently in a critical period. This means that it is prone to fluctuations. However, if the inspiration is there, then follow it!
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string creative_critical {
+            get {
+                return ResourceManager.GetString("creative_critical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your creativity is currently at its peak.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Now is an excellent time to dedicate more time to your creative inspiration and pursuits.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string creative_excellent {
+            get {
+                return ResourceManager.GetString("creative_excellent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your creativity is currently at the lowest point in the cycle. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This is not to say that you should avoid engaging in creative work, but you may find that you are naturally more drawn to other, non-creative pursuits during this time.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string creative_extremely_low {
+            get {
+                return ResourceManager.GetString("creative_extremely_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your creativity is currently high.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Now is a good time to enjoy your creative inspiration and pursuits.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string creative_high {
+            get {
+                return ResourceManager.GetString("creative_high", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your creativity is currently low.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Creative inspiration may be lower than during higher points in the cycle and you may find that you are naturally more drawn to other, non-creative pursuits.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string creative_low {
+            get {
+                return ResourceManager.GetString("creative_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your creativity is currently moderate.
+        ///&lt;/p&gt;
+        ///
+        ///.
+        /// </summary>
+        public static string creative_moderate {
+            get {
+                return ResourceManager.GetString("creative_moderate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your creativity is currently very high.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Now is a great time to dedicate more time to your creative pursuits.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string creative_very_high {
+            get {
+                return ResourceManager.GetString("creative_very_high", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your creativity is currently very low.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This is not to say that you should avoid engaging in creative work, especially if you feel inspired.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string creative_very_low {
+            get {
+                return ResourceManager.GetString("creative_very_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Credit.
         /// </summary>
         public static string Credit {
@@ -3221,6 +3345,118 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your emotional capacity is currently in a critical period. This means that it is prone to fluctuations. You may be in a great mood one moment, only to find that the next you are feeling emotionally drained. It is wise not to take on too much during this period and wait for your energy to stabilise.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string emotional_critical {
+            get {
+                return ResourceManager.GetString("emotional_critical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your emotional capacity is at the maximum point of the cycle. You have excellent reserves of emotional energy and is the best time to deal with more emotionally challenging situations, if you have been unable to face them when your emotional energy was lower. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Now is an excellent time to reach out to loved ones who may need your emotional support. However, don&apos;t forget to find some alone time and to rest! It&apos;s always good to keep some energy for the lower points. This stabilises the [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string emotional_excellent {
+            get {
+                return ResourceManager.GetString("emotional_excellent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your emotional energy is currently at the lowest point in the cycle. It can be very helpful to take plenty of breaks and not to take on anything emotionally challenging during this period. You may feel vulnerable or hyper sensitive at this time or that you simply don&apos;t have a lot of emotional capacity. Be gentle with yourself.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Now is a great time to meditate, practise Asana, go for Nature walks, listen to some beuatiful music, get a massage, watch an inspiring movie, or whatever hel [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string emotional_extremely_low {
+            get {
+                return ResourceManager.GetString("emotional_extremely_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your emotional capacity is currently high. You have good reserves of emotional energy. Now is a great time to socialise and enjoy yourself. However, even when biorhtyhms are high, it&apos;s wise not to push it too hard. Rest is always important. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Now is a good time to reach out to loved ones who may need your emotional support.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string emotional_high {
+            get {
+                return ResourceManager.GetString("emotional_high", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your emotional capacity is currently low for this cycle. You still have some reserves of emotional energy, but it would be ideal to take it easier than when you&apos;re on peak form.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    You may, at times, feel a little vulnerable or sensitive or that you simply don&apos;t have a lot of emotional capacity. Be gentle with yourself and try not to take on anything too emotionally exhausting.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Now is a great time to meditate, practise Asana, go for Nature walks, listen to some beuatifu [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string emotional_low {
+            get {
+                return ResourceManager.GetString("emotional_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your emotional capacity is currently moderate. You have adequate reserves of emotional energy, so you don&apos;t have to worry too much, but it would be ideal to take it a little easier than when you&apos;re on peak form. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is always advisable not to take on anything highly stressful unless it really cannot be avoided.    
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string emotional_moderate {
+            get {
+                return ResourceManager.GetString("emotional_moderate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your emotional capacity is currently very high. You have very good reserves of emotional energy and is a good time to deal with more emotionally challenging situations, if you have been unable to face them when your emotional energy was lower.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Now is a great time to reach out to loved ones who may need your emotional support. However, don&apos;t forget to find some alone time and to rest!
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string emotional_very_high {
+            get {
+                return ResourceManager.GetString("emotional_very_high", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your emotional capacity is currently very low for this cycle. It can be very helpful to take plenty of rest and not to take on anything too emotionally challenging during this period. You may feel vulnerable or hyper sensitive at this time or that you simply don&apos;t have a lot of emotional capacity. Be gentle with yourself.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Now is a great time to meditate, practise Asana, go for Nature walks, listen to some beuatiful music, get a massage, watch an inspiring movie, or whatever helps yo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string emotional_very_low {
+            get {
+                return ResourceManager.GetString("emotional_very_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Emotional Biorhythm.
         /// </summary>
         public static string EmotionalBiorhythm {
@@ -3320,11 +3556,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Excellent.
+        /// </summary>
+        public static string Excellent {
+            get {
+                return ResourceManager.GetString("Excellent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to External Persona.
         /// </summary>
         public static string ExternalPersona {
             get {
                 return ResourceManager.GetString("ExternalPersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extremely Low.
+        /// </summary>
+        public static string ExtremelyLow {
+            get {
+                return ResourceManager.GetString("ExtremelyLow", resourceCulture);
             }
         }
         
@@ -4097,6 +4351,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to High.
+        /// </summary>
+        public static string High {
+            get {
+                return ResourceManager.GetString("High", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hub.
         /// </summary>
         public static string Hub {
@@ -4124,11 +4387,219 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your intellectual capacity is currently in a critical period. This means that it is prone to fluctuations. You may have excellent intellectual capacity, only to find that the next moment you are feeling mentally fatigued. It is wise not to take on too much during this period and wait for your energy to stabilise.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string intellectual_critical {
+            get {
+                return ResourceManager.GetString("intellectual_critical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your intellectual capacity is currently at the highest point of the cycle. You have excellent reserves of mental energy and can sustain hard work very easily. Still, don&apos;t forget to rest and catch your breath. It&apos;s always good to keep some energy for the lower points. This stabilises the cycle. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    You should have lots of energy, clarity and drive to tend to work and to to your responsibilities. It&apos;s also a great time to challenge yourself and learn new things and expand your perspecti [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string intellectual_excellent {
+            get {
+                return ResourceManager.GetString("intellectual_excellent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your intellectual capacity is currently at the lowest point in the cycle. This does not mean that you cannot carry out your tasks, work and attend to your responsibilities. However, it can be very helpful to take plenty of breaks and not to take on anything too challenging for the mind.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Now is a great time to meditate, practise Asana, go for Nature walks, listen to some beuatiful music, get a massage, watch an inspiring movie, or whatever helps you to relax and unwind. Passive activ [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string intellectual_extremely_low {
+            get {
+                return ResourceManager.GetString("intellectual_extremely_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your intellectual capacity is currently high. You have good reserves of mental energy, so you don&apos;t have to worry about working hard. However, even when biorhtyhms are high, it&apos;s wise not to push it too hard. Rest is always important. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    You should have good energy, clarity and motivation to tend to work and to to your responsibilities. It&apos;s also a great time to learn new things and expand your perspectives and awareness. However, don&apos;t forget to take a break from time to time. 
+        ///&lt;/p&gt; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string intellectual_high {
+            get {
+                return ResourceManager.GetString("intellectual_high", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your intellectual capacity is currently low for this cycle. You still have some reserves of mental energy, but it would be ideal to take it easier than when you&apos;re on peak form. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    You should have no problem tending to work and to to your responsibilities. However, it can be very helpful to take breaks and not to take on anything too mentally exhausting.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Now is a great time to meditate, practise Asana, go for Nature walks, listen to some beuatiful music, get a massage, [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string intellectual_low {
+            get {
+                return ResourceManager.GetString("intellectual_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your intellectual capacity is currently moderate. You have adequate reserves of mental energy, so you don&apos;t have to worry too much, but it would be ideal to take it a little easier than when you&apos;re on peak form. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    You should have no problem tending to work and to to your responsibilities. However, don&apos;t forget to take breaks from time to time. Now is not a time to challenge yourself to the max.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string intellectual_moderate {
+            get {
+                return ResourceManager.GetString("intellectual_moderate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your intellectual capacity is currently very high. You have very good reserves of mental energy and can sustain hard work easily. However, even when biorhtyhms are high, it&apos;s wise not to push it too hard. Rest is always important. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    You should have plenty of energy, clarity and motivation to tend to work and to to your responsibilities. It&apos;s also a great time to challenge yourself and learn new things and expand your perspectives and awareness. Don&apos;t forget to take a break from time  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string intellectual_very_high {
+            get {
+                return ResourceManager.GetString("intellectual_very_high", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your intellectual capacity is currently very low for this cycle. This does not mean that you cannot carry out your tasks, work and attend to your responsibilities. However, it can be very helpful to take plenty of breaks and not to take on anything too challenging for the mind.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Now is a great time to meditate, practise Asana, go for Nature walks, listen to some beuatiful music, get a massage, watch an inspiring movie, or whatever helps you to relax and unwind.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    If you [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string intellectual_very_low {
+            get {
+                return ResourceManager.GetString("intellectual_very_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Intellectual Biorhythm.
         /// </summary>
         public static string IntellectualBiorhythm {
             get {
                 return ResourceManager.GetString("IntellectualBiorhythm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your intuition is currently in a critical period. This means that it is prone to fluctuations. Be wary when you are faced with important decisions or delicate situations. Your intuition may not be as clear as it could be.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string intuitive_critical {
+            get {
+                return ResourceManager.GetString("intuitive_critical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your intuition is at the maximum point in the cycle. Now is an excellent time to use your intuitive capacity to help you make important decisions and make sense of situations in your life.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string intuitive_excellent {
+            get {
+                return ResourceManager.GetString("intuitive_excellent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your intuitive capacity is currently at the lowest point in the cycle. It is advised to rely much more on your logical and rational faculties at this time and to ask for the input of others if you are unsure about an important decision or situation.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string intuitive_extremely_low {
+            get {
+                return ResourceManager.GetString("intuitive_extremely_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your intuition is currently high. Now is a good time to use your intuitive capacity to help you make important decisions.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string intuitive_high {
+            get {
+                return ResourceManager.GetString("intuitive_high", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your intuitive capacity is currently low for this cycle. It is advised to balance your intuition with your logical and rational faculties at this time.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string intuitive_low {
+            get {
+                return ResourceManager.GetString("intuitive_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your intuitive capacity is currently moderate for this cycle. 
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string intuitive_moderate {
+            get {
+                return ResourceManager.GetString("intuitive_moderate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your intuition is currently very high. Now is a great time to use your intuitive capacity to help you make important decisions and make sense of situations in your life.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string intuitive_very_high {
+            get {
+                return ResourceManager.GetString("intuitive_very_high", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your intuitive capacity is currently very low for this cycle. It is advised to rely more on your logical and rational faculties at this time and to ask for the input of others if you are unsure about an important decision or situation.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string intuitive_very_low {
+            get {
+                return ResourceManager.GetString("intuitive_very_low", resourceCulture);
             }
         }
         
@@ -4493,6 +4964,15 @@ namespace K9.Globalisation {
         public static string LogIntoYourAccountToView {
             get {
                 return ResourceManager.GetString("LogIntoYourAccountToView", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Low.
+        /// </summary>
+        public static string Low {
+            get {
+                return ResourceManager.GetString("Low", resourceCulture);
             }
         }
         
@@ -5821,6 +6301,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Moderate.
+        /// </summary>
+        public static string Moderate {
+            get {
+                return ResourceManager.GetString("Moderate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Month.
         /// </summary>
         public static string Month {
@@ -6761,6 +7250,109 @@ namespace K9.Globalisation {
         public static string PersonalProfileTitle {
             get {
                 return ResourceManager.GetString("PersonalProfileTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your physical energy is currently in a critical period. This means that it is prone to fluctuations. You may be have plenty of energy one minute, only to find that the next you are feeling tired again. It is wise not to take on too much during this period and wait for your energy to stabilise.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string physical_critical {
+            get {
+                return ResourceManager.GetString("physical_critical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your physical energy is currently at the maximum point of the cycle. You have excellent reserves of physical energy and it is a great time to deal with more physically challenging tasks, if you have been unable to carty them out when your energy was lower. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Now is also an excellent time to enjoy vigorous exercise and to challenge yourself.. However, don&apos;t forget to find some alone time and to rest! It&apos;s always good to keep some energy for the lower points. This stabilises the cycle. [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string physical_excellent {
+            get {
+                return ResourceManager.GetString("physical_excellent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your physical energy is currently at the lowest point in the cycle. Make sure to take plenty of breaks and not to take on anything physically challenging during this period. You may feel tired at this time, especially if you have been very busy during the last cycle. Be gentle with yourself and take it easy and get plenty of rest.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Now is a great time to catch up on sleep, to eat nourishing food, meditate, go for gentle Nature walks, listen to some beuatiful music, get a massage, wat [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string physical_extremely_low {
+            get {
+                return ResourceManager.GetString("physical_extremely_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your physical energy is currently high. You have good reserves of physical energy. Now is a great time to exercise, go for a hike in Nature, catch up on unfinished tasks, etc. However, even when biorhtyhms are high, it&apos;s wise not to push it too hard. Rest is always important. 
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string physical_high {
+            get {
+                return ResourceManager.GetString("physical_high", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your physical energy is low for the current cycle. It can be very helpful to take plenty of breaks and not to take on anything too physically challenging during this period, especially if you are feeling tired. Be gentle with yourself and get plenty of rest.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Now is a great time to catch up on sleep, to eat nourishing food, meditate, go for gentle Nature walks, listen to some beuatiful music, get a massage, watch an inspiring movie, or whatever helps you to relax and unwind. Passive  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string physical_low {
+            get {
+                return ResourceManager.GetString("physical_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your physical energy is currently moderate. You have adequate reserves of physical energy, so you don&apos;t have to worry too much, but it would be better to take it a little easier than when you&apos;re on peak form. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is always advisable not to take on anything too intense unless it really cannot be avoided.    
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string physical_moderate {
+            get {
+                return ResourceManager.GetString("physical_moderate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your physical energy is currently very high. You have very good reserves of energy and is a good time to deal with more physically challenging tasks, if you have been unable to carry them out when your energy was lower. However, don&apos;t forget to find some time to unwind and recharge your batteries too!
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string physical_very_high {
+            get {
+                return ResourceManager.GetString("physical_very_high", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your physical energy is very low for the current cycle. It can be very helpful to take plenty of breaks and not to take on anything too physically challenging during this period. You may feel tired at this time, especially if you have been very busy during the last cycle. Be gentle with yourself and get plenty of rest.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Now is a great time to catch up on sleep, to eat nourishing food, meditate, go for gentle Nature walks, listen to some beuatiful music, get a massage, watch an inspir [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string physical_very_low {
+            get {
+                return ResourceManager.GetString("physical_very_low", resourceCulture);
             }
         }
         
@@ -7997,6 +8589,112 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your spiritual energy is currently in a critical period. This means that it is prone to fluctuations. You may be feeling very spiritualy aware one minute, only to find that the next you are feeling much more materially oriented the next. 
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string spiritual_critical {
+            get {
+                return ResourceManager.GetString("spiritual_critical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your spiritual energy is currently at the maximum point of the cycle. Now is is an excellent time to engage in your spiritual practice. Your psychic abilities are at their most active at this time.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Now is an excellent time to be more spiritually focused. You may find that you are much less interested in mundane, everyday affairs at this time.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string spiritual_excellent {
+            get {
+                return ResourceManager.GetString("spiritual_excellent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your spiritual energy is currently at the lowest point in the cycle. If you have a spiritual practice, it may be much harder to drop as deeply into it compared to higher points in the cycle. Your psychic abilities may also be less acute during this part of the cycle.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    You may find yourself naturally more focused on everyday, material affairs at this time. It&apos;s an ideal time to be more focused on them.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string spiritual_extremely_low {
+            get {
+                return ResourceManager.GetString("spiritual_extremely_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your spiritual energy is currently high. If you have a spiritual practice then you should have little difficulty engaging in it. You should have no difficulty accessing any psychic abilities at this time.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string spiritual_high {
+            get {
+                return ResourceManager.GetString("spiritual_high", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your spiritual energy is currently low for this cycle. If you have a spiritual practice, it may be a little harder to drop as deeply into it compared to higher points in the cycle. Your psychic abilities may also be less acute during this part of the cycle.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string spiritual_low {
+            get {
+                return ResourceManager.GetString("spiritual_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your spiritual energy is currently moderate. 
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string spiritual_moderate {
+            get {
+                return ResourceManager.GetString("spiritual_moderate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your spiritual energy is currently very high. Now is is a great time to engage in your spiritual practice.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Now is a great time to be more spiritually focused. You may find that you are less interested in mundane, everyday affairs at this time.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string spiritual_very_high {
+            get {
+                return ResourceManager.GetString("spiritual_very_high", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your spiritual energy is currently very low for the cycle. If you have a spiritual practice, it may be harder to drop as deeply into it compared to higher points in the cycle. Your psychic abilities may also be less acute during this part of the cycle.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    You may find yourself naturally more focused on everyday, material affairs at this time. It&apos;s an ideal time to be more focused on them.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string spiritual_very_low {
+            get {
+                return ResourceManager.GetString("spiritual_very_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Spiritual Biorhythm.
         /// </summary>
         public static string SpiritualBiorhytm {
@@ -8797,6 +9495,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unpredictable (prone to fluctuations).
+        /// </summary>
+        public static string Unpredictable {
+            get {
+                return ResourceManager.GetString("Unpredictable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unspecified.
         /// </summary>
         public static string Unspecified {
@@ -8955,6 +9662,24 @@ namespace K9.Globalisation {
         public static string ValidUntil {
             get {
                 return ResourceManager.GetString("ValidUntil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Very High.
+        /// </summary>
+        public static string VeryHigh {
+            get {
+                return ResourceManager.GetString("VeryHigh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Very Low.
+        /// </summary>
+        public static string VeryLow {
+            get {
+                return ResourceManager.GetString("VeryLow", resourceCulture);
             }
         }
         

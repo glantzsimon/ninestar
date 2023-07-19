@@ -2491,4 +2491,172 @@
   <data name="biorhythms_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>biorhythms\en-gb\biorhythms-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="emotional_excellent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\emotional\emotional-excellent.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="emotional_extremely_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\emotional\emotional-extremely-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="emotional_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\emotional\emotional-high.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="emotional_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\emotional\emotional-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="emotional_moderate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\emotional\emotional-moderate.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="emotional_very_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\emotional\emotional-very-high.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="emotional_very_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\emotional\emotional-very-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Excellent" xml:space="preserve">
+    <value>Excellent</value>
+  </data>
+  <data name="ExtremelyLow" xml:space="preserve">
+    <value>Extremely Low</value>
+  </data>
+  <data name="High" xml:space="preserve">
+    <value>High</value>
+  </data>
+  <data name="intellectual_excellent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\intellectual\intellectual-excellent.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="intellectual_extremely_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\intellectual\intellectual-extremely-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="intellectual_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\intellectual\intellectual-high.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="intellectual_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\intellectual\intellectual-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="intellectual_moderate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\intellectual\intellectual-moderate.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="intellectual_very_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\intellectual\intellectual-very-high.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="intellectual_very_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\intellectual\intellectual-very-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Low" xml:space="preserve">
+    <value>Low</value>
+  </data>
+  <data name="Moderate" xml:space="preserve">
+    <value>Moderate</value>
+  </data>
+  <data name="Unpredictable" xml:space="preserve">
+    <value>Unpredictable (prone to fluctuations)</value>
+  </data>
+  <data name="VeryHigh" xml:space="preserve">
+    <value>Very High</value>
+  </data>
+  <data name="VeryLow" xml:space="preserve">
+    <value>Very Low</value>
+  </data>
+  <data name="creative_critical" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\creative\creative-critical.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="creative_excellent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\creative\creative-excellent.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="creative_extremely_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\creative\creative-extremely-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="creative_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\creative\creative-high.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="creative_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\creative\creative-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="creative_moderate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\creative\creative-moderate.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="creative_very_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\creative\creative-very-high.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="creative_very_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\creative\creative-very-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="emotional_critical" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\emotional\emotional-critical.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="intellectual_critical" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\intellectual\intellectual-critical.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="intuitive_critical" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\intuitive\intuitive-critical.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="intuitive_excellent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\intuitive\intuitive-excellent.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="intuitive_extremely_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\intuitive\intuitive-extremely-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="intuitive_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\intuitive\intuitive-high.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="intuitive_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\intuitive\intuitive-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="intuitive_moderate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\intuitive\intuitive-moderate.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="intuitive_very_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\intuitive\intuitive-very-high.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="intuitive_very_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\intuitive\intuitive-very-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="physical_critical" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\physical\physical-critical.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="physical_excellent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\physical\physical-excellent.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="physical_extremely_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\physical\physical-extremely-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="physical_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\physical\physical-high.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="physical_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\physical\physical-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="physical_moderate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\physical\physical-moderate.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="physical_very_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\physical\physical-very-high.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="physical_very_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\physical\physical-very-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="spiritual_critical" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\spiritual\spiritual-critical.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="spiritual_excellent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\spiritual\spiritual-excellent.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="spiritual_extremely_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\spiritual\spiritual-extremely-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="spiritual_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\spiritual\spiritual-high.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="spiritual_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\spiritual\spiritual-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="spiritual_moderate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\spiritual\spiritual-moderate.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="spiritual_very_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\spiritual\spiritual-very-high.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="spiritual_very_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>biorhythms\en-gb\leveldescriptions\spiritual\spiritual-very-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

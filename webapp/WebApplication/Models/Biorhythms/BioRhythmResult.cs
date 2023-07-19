@@ -11,6 +11,7 @@ namespace K9.WebApplication.Models
         public DateTime SelectedDate { get; set; }
         public int DayInterval { get; set; }
         public double Value { get; set; }
+        public List<RangeValue> LongRangeValues { get; set; }
 
         private List<RangeValue> _rangeValues;
         public List<RangeValue> RangeValues
@@ -28,6 +29,17 @@ namespace K9.WebApplication.Models
 
         public double? GetMaxValue() => RangeValues?.Max(e => e.Value);
         public double? GetMinValue() => RangeValues?.Min(e => e.Value);
+        public double? GetLongMaxValue() => LongRangeValues?.Max(e => e.Value);
+        public double? GetLongMinValue() => LongRangeValues?.Min(e => e.Value);
+
+        public int GetDaysUntilNextMaximum() =>
+            (int)LongRangeValues?.FirstOrDefault(e => e.Value == GetLongMaxValue() && e.Date > SelectedDate).Date.Value.Subtract(SelectedDate).TotalDays;
+
+        public int GetDaysUntilNextMinimum() =>
+            (int)LongRangeValues?.FirstOrDefault(e => e.Value == GetLongMinValue() && e.Date > SelectedDate).Date.Value.Subtract(SelectedDate).TotalDays;
+
+        public int GetDaysUntilNextCritical() =>
+            (int)LongRangeValues?.FirstOrDefault(e => GetValueLevel(e.Value) == EBiorhythmLevel.Critical && e.Date > SelectedDate).Date.Value.Subtract(SelectedDate).TotalDays;
 
         public string GetBiorhythmTrendHtmlString()
         {
@@ -49,7 +61,27 @@ namespace K9.WebApplication.Models
             return "";
         }
 
-        public EBiorhythmTrend GetBiorhythmTrend()
+        public string GetBiorhythmTrendDescription()
+        {
+            switch (GetBiorhythmTrend())
+            {
+                case EBiorhythmTrend.Rising:
+                    return "Rising";
+
+                case EBiorhythmTrend.Falling:
+                    return "Falling";
+
+                case EBiorhythmTrend.Maximum:
+                    return "Maximum";
+
+                case EBiorhythmTrend.Minimum:
+                    return "Minimum";
+            }
+
+            return "";
+        }
+
+        public EBiorhythmTrend  GetBiorhythmTrend()
         {
             var selectedItem = RangeValues.FirstOrDefault(e => e.Date == SelectedDate);
             var previousItem = RangeValues.FirstOrDefault(e => e.Date == SelectedDate.AddDays(-1));
@@ -95,35 +127,35 @@ namespace K9.WebApplication.Models
             return EBiorhythmTrend.Undefined;
         }
 
-        public string GetDataValueLevelDescription(double value)
+        public string GetValueLevelDescription(double value)
         {
             switch (GetValueLevel(value))
             {
-                case EBiorhythmLevel.Unpredictable:
-                    return "Unpredictable (prone to fluctuations)";
+                case EBiorhythmLevel.Critical:
+                    return Globalisation.Dictionary.Unpredictable;
 
                 case EBiorhythmLevel.ExtremelyLow:
-                    return "Extremely Low";
+                    return Globalisation.Dictionary.ExtremelyLow;
 
                 case EBiorhythmLevel.VeryLow:
-                    return "Very Low";
+                    return Globalisation.Dictionary.VeryLow;
 
                 case EBiorhythmLevel.Low:
-                    return "Low";
+                    return Globalisation.Dictionary.Low;
 
                 case EBiorhythmLevel.Moderate:
-                    return "Moderate";
+                    return Globalisation.Dictionary.Moderate;
 
                 case EBiorhythmLevel.High:
-                    return "High";
+                    return Globalisation.Dictionary.High;
 
                 case EBiorhythmLevel.VeryHigh:
-                    return "Very High";
+                    return Globalisation.Dictionary.VeryHigh;
 
                 case EBiorhythmLevel.Excellent:
-                    return "Excellent";
+                    return Globalisation.Dictionary.Excellent;
             }
-            return string.Empty;
+            return Globalisation.Dictionary.Unavailable;
         }
 
         public EBiorhythmLevel GetValueLevel(double value)
@@ -135,7 +167,7 @@ namespace K9.WebApplication.Models
 
             if (value >= (tength * 4) + min && value < (tength * 6) + min)
             {
-                return EBiorhythmLevel.Unpredictable;
+                return EBiorhythmLevel.Critical;
             }
 
             if (value < 10)
@@ -174,7 +206,7 @@ namespace K9.WebApplication.Models
         {
             foreach (var value in _rangeValues)
             {
-                value.LevelDescription = GetDataValueLevelDescription(value.Value);
+                value.LevelDescription = GetValueLevelDescription(value.Value);
             }
         }
     }

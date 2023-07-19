@@ -32,14 +32,23 @@ namespace K9.WebApplication.Models
         public double? GetLongMaxValue() => LongRangeValues?.Max(e => e.Value);
         public double? GetLongMinValue() => LongRangeValues?.Min(e => e.Value);
 
-        public int GetDaysUntilNextMaximum() =>
-            (int)LongRangeValues?.FirstOrDefault(e => e.Value == GetLongMaxValue() && e.Date > SelectedDate).Date.Value.Subtract(SelectedDate).TotalDays;
+        public int GetDaysUntilNextMaximum() => (int)LongRangeValues?.FirstOrDefault(e => e.Value == GetLongMaxValue() && e.Date > SelectedDate).Date.Value.Subtract(SelectedDate).TotalDays;
 
-        public int GetDaysUntilNextMinimum() =>
-            (int)LongRangeValues?.FirstOrDefault(e => e.Value == GetLongMinValue() && e.Date > SelectedDate).Date.Value.Subtract(SelectedDate).TotalDays;
+        public int GetDaysUntilNextMinimum() => (int)LongRangeValues?.FirstOrDefault(e => e.Value == GetLongMinValue() && e.Date > SelectedDate).Date.Value.Subtract(SelectedDate).TotalDays;
 
-        public int GetDaysUntilNextCritical() =>
-            (int)LongRangeValues?.FirstOrDefault(e => GetValueLevel(e.Value) == EBiorhythmLevel.Critical && e.Date > SelectedDate).Date.Value.Subtract(SelectedDate).TotalDays;
+        public int GetDaysUntilNextCritical() => (int)LongRangeValues?.FirstOrDefault(e => GetValueLevel(e.Value) == EBiorhythmLevel.Critical && e.Date > SelectedDate).Date.Value.Subtract(SelectedDate).TotalDays;
+
+        public string GetDaysUntilNextMaximumString() => BioRhythm.Biorhythm == EBiorhythm.Average
+            ? "N/A"
+            : GetDaysUntilNextMaximum().ToString();
+
+        public string GetDaysUntilNextMinimumString() => BioRhythm.Biorhythm == EBiorhythm.Average 
+            ? "N/A" 
+            : GetDaysUntilNextMinimum().ToString();
+
+        public string GetDaysUntilNextCriticalString() => BioRhythm.Biorhythm == EBiorhythm.Average 
+            ? "N/A" 
+            : GetDaysUntilNextCritical().ToString();
 
         public string GetBiorhythmTrendHtmlString()
         {

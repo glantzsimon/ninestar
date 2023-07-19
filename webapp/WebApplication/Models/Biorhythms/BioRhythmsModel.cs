@@ -34,6 +34,8 @@ namespace K9.WebApplication.Models
         public string Summary { get; set; }
 
         public List<BioRhythmResult> BiorhythmResults { get; set; }
+        
+        public int MaxCycleLength { get; set; }
 
         public List<BioRhythmResult> GetBiorhythmResultsByDisplayIndex() => BiorhythmResults.OrderBy(e => e.BioRhythm.DisplayIndex).ToList();
 
@@ -45,7 +47,7 @@ namespace K9.WebApplication.Models
 
         public BioRhythmResult GetResultByType(EBiorhythm biorhythm) =>
             BiorhythmResults?.FirstOrDefault(e => e.BioRhythm.Biorhythm == biorhythm);
-
+        
         private int GetDaysElapsedSinceBirth(DateTime date)
         {
             return (int)date.Subtract(PersonModel.DateOfBirth).TotalDays;

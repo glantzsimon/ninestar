@@ -2549,7 +2549,7 @@
     <value>Moderate</value>
   </data>
   <data name="Unpredictable" xml:space="preserve">
-    <value>Unpredictable (prone to fluctuations)</value>
+    <value>Unpredictable</value>
   </data>
   <data name="VeryHigh" xml:space="preserve">
     <value>Very High</value>

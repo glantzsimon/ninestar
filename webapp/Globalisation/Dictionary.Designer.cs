@@ -1511,7 +1511,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Your physical energy is currently in a critical period. This means that it is prone to fluctuations. You may be have plenty of energy one minute, only to find that the next you are feeling tired again. It is wise not to take on too much during this period and wait for your energy to stabilise.
+        ///    N/A
         ///&lt;/p&gt;
         ///.
         /// </summary>
@@ -1523,10 +1523,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Your physical energy is currently at the maximum point of the cycle. You have excellent reserves of physical energy and it is a great time to deal with more physically challenging tasks, if you have been unable to carty them out when your energy was lower. 
+        ///    Overall, you are on top form. Now is an excellent time to go for it and enjoy life, whether it&apos;s work or play. Enjoy!
         ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Now is also an excellent time to enjoy vigorous exercise and to challenge yourself.. However, don&apos;t forget to find some alone time and to rest! It&apos;s always good to keep some energy for the lower points. This stabilises the cycle. [rest of string was truncated]&quot;;.
+        ///.
         /// </summary>
         public static string average_excellent {
             get {
@@ -1536,10 +1535,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Your physical energy is currently at the lowest point in the cycle. Make sure to take plenty of breaks and not to take on anything physically challenging during this period. You may feel tired at this time, especially if you have been very busy during the last cycle. Be gentle with yourself and take it easy and get plenty of rest.
+        ///    Overall, your energy levels are citically low. Now is a time to take it really easy and to listen to your body. Be gentle with yourself and make sure you get plenty of rest.
         ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Now is a great time to catch up on sleep, to eat nourishing food, meditate, go for gentle Nature walks, listen to some beuatiful music, get a massage, wat [rest of string was truncated]&quot;;.
+        ///.
         /// </summary>
         public static string average_extremely_low {
             get {
@@ -1549,7 +1547,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Your physical energy is currently high. You have good reserves of physical energy. Now is a great time to exercise, go for a hike in Nature, catch up on unfinished tasks, etc. However, even when biorhtyhms are high, it&apos;s wise not to push it too hard. Rest is always important. 
+        ///    Overall, your energy levels are high. Now is a good time to get out there and enjoy yourself or to challenge yourself at work.
         ///&lt;/p&gt;
         ///.
         /// </summary>
@@ -1561,10 +1559,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Your physical energy is low for the current cycle. It can be very helpful to take plenty of breaks and not to take on anything too physically challenging during this period, especially if you are feeling tired. Be gentle with yourself and get plenty of rest.
+        ///    Overall your energy levels are low. Now is not a good time to push hard. Take it easy and make sure you get plenty of rest.
         ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Now is a great time to catch up on sleep, to eat nourishing food, meditate, go for gentle Nature walks, listen to some beuatiful music, get a massage, watch an inspiring movie, or whatever helps you to relax and unwind. Passive  [rest of string was truncated]&quot;;.
+        ///.
         /// </summary>
         public static string average_low {
             get {
@@ -1574,10 +1571,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Your physical energy is currently moderate. You have adequate reserves of physical energy, so you don&apos;t have to worry too much, but it would be better to take it a little easier than when you&apos;re on peak form. 
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    It is always advisable not to take on anything too intense unless it really cannot be avoided.    
+        ///    Overall, your energy levels are average. You don&apos;t have to be too concerned about overdoing it, but don&apos;t push too hard and make sure you get enough rest.
         ///&lt;/p&gt;
         ///.
         /// </summary>
@@ -1589,7 +1583,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Your physical energy is currently very high. You have very good reserves of energy and is a good time to deal with more physically challenging tasks, if you have been unable to carry them out when your energy was lower. However, don&apos;t forget to find some time to unwind and recharge your batteries too!
+        ///    Overall, you are on great form. Now is a very good time get out there and enjoy life, whether it&apos;s work or play. Enjoy!
         ///&lt;/p&gt;
         ///.
         /// </summary>
@@ -1601,10 +1595,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Your physical energy is very low for the current cycle. It can be very helpful to take plenty of breaks and not to take on anything too physically challenging during this period. You may feel tired at this time, especially if you have been very busy during the last cycle. Be gentle with yourself and get plenty of rest.
+        ///    Overall your energy levels are very low. Now is a time to take it easy and to listen to your body. Be gentle with yourself and make sure you get plenty of rest.
         ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Now is a great time to catch up on sleep, to eat nourishing food, meditate, go for gentle Nature walks, listen to some beuatiful music, get a massage, watch an inspir [rest of string was truncated]&quot;;.
+        ///.
         /// </summary>
         public static string average_very_low {
             get {
@@ -1653,7 +1646,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4 class=&quot;text-center bold&quot; style=&quot;font-size: 1.3em;&quot;&gt;
+        ///   Looks up a localized string similar to &lt;h4 class=&quot;bold&quot; style=&quot;font-size: 1.3em;&quot;&gt;
         ///    {BiorhythmName}
         ///&lt;/h4&gt;
         ///&lt;div&gt;
@@ -9600,7 +9593,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unpredictable (prone to fluctuations).
+        ///   Looks up a localized string similar to Unpredictable.
         /// </summary>
         public static string Unpredictable {
             get {

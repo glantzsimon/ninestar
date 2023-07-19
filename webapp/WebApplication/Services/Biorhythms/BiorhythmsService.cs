@@ -53,9 +53,9 @@ namespace K9.WebApplication.Services
                     BiorhythmSummary = GetBiorhythmSummary(biorhythm),
                     BiorhythmTrendHtml = biorhythm.GetBiorhythmTrendHtmlString(),
                     BiorhythmTrend = biorhythm.GetBiorhythmTrendDescription(),
-                    BiorhythmNextMax = biorhythm.GetDaysUntilNextMaximum(),
-                    BiorhythmNextMin = biorhythm.GetDaysUntilNextMinimum(),
-                    BiorhythmNextCritical = biorhythm.GetDaysUntilNextCritical()
+                    BiorhythmNextMax = biorhythm.GetDaysUntilNextMaximumString(),
+                    BiorhythmNextMin = biorhythm.GetDaysUntilNextMinimumString(),
+                    BiorhythmNextCritical = biorhythm.GetDaysUntilNextCriticalString()
                 }));
                 sb.AppendLine("</br>");
             }
@@ -69,9 +69,9 @@ namespace K9.WebApplication.Services
                 BiorhythmSummary = GetBiorhythmSummary(average),
                 BiorhythmTrendHtml = average.GetBiorhythmTrendHtmlString(),
                 BiorhythmTrend = average.GetBiorhythmTrendDescription(),
-                BiorhythmNextMax = average.GetDaysUntilNextMaximum(),
-                BiorhythmNextMin = average.GetDaysUntilNextMinimum(),
-                BiorhythmNextCritical = average.GetDaysUntilNextCritical()
+                BiorhythmNextMax = average.GetDaysUntilNextMaximumString(),
+                BiorhythmNextMin = average.GetDaysUntilNextMinimumString(),
+                BiorhythmNextCritical = average.GetDaysUntilNextCriticalString()
             }));
             sb.AppendLine("</br>");
 
@@ -282,6 +282,7 @@ namespace K9.WebApplication.Services
             var results = new List<BioRhythmResult>();
             double nineStarKiFactor = 0;
             double stabilityFactor = 0;
+            biorhythmsModel.MaxCycleLength = bioRhythms.Max(e => e.CycleLength);
 
             foreach (var biorhythm in bioRhythms.Where(e => e.Biorhythm != EBiorhythm.Average))
             {
@@ -297,7 +298,7 @@ namespace K9.WebApplication.Services
             var averageRangeValues = new List<RangeValue>();
             var averageLongRangeValues = new List<RangeValue>();
             var firstResult = results.First();
-
+            
             for (int i = 0; i < firstResult.RangeValues.Count; i++)
             {
                 var date = firstResult.RangeValues[i].Date;
@@ -349,8 +350,7 @@ namespace K9.WebApplication.Services
                 (int)bioRhythmsModel.SelectedDate.Value.Subtract(nineStarMonthlyPeriod.MonthlyPeriodStartsOn).TotalDays;
             var rangeValues = new List<RangeValue>();
             var longRangeValues = new List<RangeValue>();
-            var maxCycleLength = bioRhythmsModel.BiorhythmResults.Max(e => e.BioRhythm.CycleLength);
-
+           
             for (int i = 0; i < period; i++)
             {
                 var factor = i - daysSinceBeginningOfPeriod;
@@ -362,7 +362,7 @@ namespace K9.WebApplication.Services
             }
             result.RangeValues = rangeValues;
 
-            for (int i = -(maxCycleLength * 3); i < (maxCycleLength * 6); i++)
+            for (int i = -(bioRhythmsModel.MaxCycleLength * 3); i < (bioRhythmsModel.MaxCycleLength * 6); i++)
             {
                 var dayInterval = GetDayInterval(biorhythm, bioRhythmsModel.DaysElapsedSinceBirth + i);
                 var dateTime = bioRhythmsModel.SelectedDate?.AddDays(i);

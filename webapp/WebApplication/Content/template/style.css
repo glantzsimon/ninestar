@@ -10,6 +10,12 @@
     url('../fonts/alex-brush-v8-latin-regular.svg#AlexBrush') format('svg'); /* Legacy iOS */
 }
 
+@font-face {
+    font-family: 'candara';
+    font-style: normal;
+    src: url('../fonts/candara.ttf') format('truetype');
+}
+
 body a, h4 {
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
@@ -20,7 +26,7 @@ body a, h4 {
 
 html, body {
     font-size: 100%;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Candara', 'Montserrat', sans-serif;
 }
 
 body {

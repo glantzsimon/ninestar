@@ -1012,6 +1012,12 @@
     <Content Include="Content\fonts\fa-solid-900.ttf" />
     <Content Include="Content\fonts\fa-solid-900.woff" />
     <Content Include="Content\fonts\fa-solid-900.woff2" />
+    <Content Include="Content\fonts\CANDARA.TTF" />
+    <Content Include="Content\fonts\CANDARAB.TTF" />
+    <Content Include="Content\fonts\CANDARAI.TTF" />
+    <Content Include="Content\fonts\CANDARAL.TTF" />
+    <Content Include="Content\fonts\CANDARALI.TTF" />
+    <Content Include="Content\fonts\CANDARAZ.TTF" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\Integration.pubxml" />
     <None Include="Properties\PublishProfiles\IntegrationLocal.pubxml" />

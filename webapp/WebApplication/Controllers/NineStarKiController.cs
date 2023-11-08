@@ -12,7 +12,7 @@ using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-    public class NineStarKiController : BaseNineStarKiController
+    public partial class NineStarKiController : BaseNineStarKiController
     {
         private readonly IAuthentication _authentication;
         private readonly INineStarKiService _nineStarKiService;

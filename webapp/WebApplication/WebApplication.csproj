@@ -250,6 +250,7 @@
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\ConsultationController.cs" />
     <Compile Include="Controllers\LogController.cs" />
+    <Compile Include="Controllers\NineStarKiControllerAjax.cs" />
     <Compile Include="Controllers\PromoCodesController.cs" />
     <Compile Include="Controllers\MembershipController.cs" />
     <Compile Include="Controllers\MembershipOptionsController.cs" />
@@ -340,6 +341,7 @@
     <Compile Include="ViewModels\AssignPromoCodeViewModel.cs" />
     <Compile Include="ViewModels\AssignMembershipViewModel.cs" />
     <Compile Include="ViewModels\EmailPromoCodeViewModel.cs" />
+    <Compile Include="ViewModels\NineStarKiAjaxModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\ArchiveItemViewModel.cs" />
     <Compile Include="Models\NineStarKi\MembershipModel.cs" />

@@ -1,7 +1,8 @@
-﻿using System;
+﻿using K9.WebApplication.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using K9.WebApplication.Enums;
+using System.Web.Script.Serialization;
 
 namespace K9.WebApplication.Models
 {
@@ -26,7 +27,8 @@ namespace K9.WebApplication.Models
         public DateTime? SelectedDate { get; }
 
         public PersonModel PersonModel { get; }
-
+        
+        [ScriptIgnore]
         public NineStarKiModel NineStarKiModel { get; }
 
         public int DaysElapsedSinceBirth { get; }

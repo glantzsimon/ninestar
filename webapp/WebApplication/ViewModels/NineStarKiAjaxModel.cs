@@ -9,5 +9,7 @@ namespace K9.WebApplication.ViewModels
         public ENineStarKiEnergy SurfaceEnergy { get; set; }
         public ENineStarKiEnergy YearlyCycleEnergy { get; set; }
         public ENineStarKiEnergy MonthlyCycleEnergy { get; set; }
+
+        public string HealthAdvice { get; set; }
     }
 }

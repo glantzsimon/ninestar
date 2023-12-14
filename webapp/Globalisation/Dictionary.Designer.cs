@@ -1511,7 +1511,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    N/A
+        ///    Overall, your energy levels are average. You don&apos;t have to be too concerned about overdoing it, but don&apos;t push too hard and make sure you get enough rest.
         ///&lt;/p&gt;
         ///.
         /// </summary>
@@ -1654,10 +1654,10 @@ namespace K9.Globalisation {
         ///        &lt;strong&gt;{BiorhythmLevel}&lt;/strong&gt; -
         ///        &lt;strong&gt;{BiorhythmTrend} {BiorhythmTrendHtml}&lt;/strong&gt;
         ///    &lt;/h4&gt;
-        ///    &lt;p&gt;
-        ///        &lt;span&gt;Maximum in {BiorhythmNextMax} days. &lt;/span&gt;
+        ///    &lt;h4 class=&quot;{AverageClass}&quot;&gt;
+        ///        &lt;span&gt;Maximum in {BiorhythmNextMax} days.&lt;/span&gt;
         ///        &lt;span&gt;Minimum in {BiorhythmNextMin} days.&lt;/span&gt;
-        ///    &lt;/p&gt;
+        ///    &lt;/h4&gt;
         ///&lt;/div&gt;
         ///&lt;p&gt;
         ///    {BiorhythmSummary}
@@ -3528,7 +3528,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Your emotional capacity is currently very high. You have very good reserves of emotional energy and is a good time to deal with more emotionally challenging situations, if you have been unable to face them when your emotional energy was lower.
+        ///    Your emotional capacity is currently very high. You have very good reserves of emotional energy and it is a good time to deal with more emotionally challenging situations, if you have been unable to face them when your emotional energy was lower.
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    Now is a great time to reach out to loved ones who may need your emotional support. However, don&apos;t forget to find some alone time and to rest!
@@ -6971,7 +6971,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to NineStar is the best online resource to learn all about 9 Star Ki Astrology. 9 Star Ki is an ancient system of astrology, largely uknown in the west, but slowly regaining popularity. It is simpler yet deeper and more intuitive than the zodiac and can offer some quite astonishing insights into our nature and the many cyles that influence our lives..
+        ///   Looks up a localized string similar to NineStar is the best online resource to learn all about 9 Star Ki Astrology. 9 Star Ki is an ancient system of astrology, largely unknown in the west, but slowly regaining popularity. It is simpler yet deeper and more intuitive than the zodiac and can offer some quite astonishing insights into our nature and the many cycles that influence our lives..
         /// </summary>
         public static string NineStarMetaDescriptionMain {
             get {

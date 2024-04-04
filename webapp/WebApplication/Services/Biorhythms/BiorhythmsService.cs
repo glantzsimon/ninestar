@@ -389,7 +389,7 @@ namespace K9.WebApplication.Services
             var rangeValues = new List<RangeValue>();
             var longRangeValues = new List<RangeValue>();
 
-            for (int i = 0; i < period; i++)
+            for (int i = 0; i <= period; i++)
             {
                 var factor = i - daysSinceBeginningOfPeriod;
                 var dayInterval = GetDayInterval(biorhythm, bioRhythmsModel.DaysElapsedSinceBirth + factor);

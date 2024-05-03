@@ -102,14 +102,11 @@
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <![endif]-->
-
-    @{
-#if PRODUCTION
-Html.RenderPartial("_GoogleAnalytics");
-#endif
-    }
+    
+    @Html.RenderPartial("_GoogleAnalytics");
 
     @Html.Partial("_GlobalJs")
+
 </head>
 <body>
     <div id="pageFadeInOverlay">

@@ -11,8 +11,6 @@ namespace K9.DataAccessLayer.Models
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Donations, PluralName = Globalisation.Strings.Names.Donations, Name = Globalisation.Strings.Names.Donation)]
     public class Donation : ObjectBase
     {
-        public string StripeId { get; set; }
-
         [Required]
         [StringLength(128)]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CustomerLabel)]
@@ -46,9 +44,6 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountToDonateLabel)]
         [DataType(DataType.Currency)]
         public double AmountToDonate => DonationAmount;
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.StatusLabel)]
-        public string Status { get; set; }
-
+        
     }
 }

@@ -17,7 +17,7 @@ namespace K9.WebApplication.Controllers
     public class SupportController : BaseNineStarKiController
     {
         private readonly ILogger _logger;
-        private readonly IMailer _mailer;
+        private readonly Helpers.IMailer _mailer;
         private readonly IDonationService _donationService;
         private readonly IContactService _contactService;
         private readonly IRecaptchaService _recaptchaService;
@@ -25,7 +25,7 @@ namespace K9.WebApplication.Controllers
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public SupportController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IMailer mailer, IOptions<WebsiteConfiguration> config, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IOptions<StripeConfiguration> stripeConfig, IDonationService donationService, IMembershipService membershipService, IContactService contactService, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService)
+        public SupportController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, Helpers.IMailer mailer, IOptions<WebsiteConfiguration> config, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IOptions<StripeConfiguration> stripeConfig, IDonationService donationService, IMembershipService membershipService, IContactService contactService, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _logger = logger;

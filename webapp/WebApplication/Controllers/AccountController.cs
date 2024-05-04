@@ -23,6 +23,7 @@ using System;
 using System.Linq;
 using System.Web.Mvc;
 using WebMatrix.WebData;
+using IMailer = K9.WebApplication.Helpers.IMailer;
 
 namespace K9.WebApplication.Controllers
 {

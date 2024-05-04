@@ -262,6 +262,10 @@
     <Compile Include="Migrations\202102030138393_AddHideSexuality.Designer.cs">
       <DependentUpon>202102030138393_AddHideSexuality.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202405040756040_UpdateDonations.cs" />
+    <Compile Include="Migrations\202405040756040_UpdateDonations.Designer.cs">
+      <DependentUpon>202405040756040_UpdateDonations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Consultation.cs" />
     <Compile Include="Models\PromoCode.cs" />
     <Compile Include="Models\Contact.cs" />
@@ -343,6 +347,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102030138393_AddHideSexuality.resx">
       <DependentUpon>202102030138393_AddHideSexuality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405040756040_UpdateDonations.resx">
+      <DependentUpon>202405040756040_UpdateDonations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -27,7 +27,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         private readonly Mock<IRepository<UserRelationshipCompatibilityReading>> _userRelationshipCompatibilityReadingsRepository = new Mock<IRepository<UserRelationshipCompatibilityReading>>();
         private readonly Mock<IRepository<UserCreditPack>> _userCreditPackRepository = new Mock<IRepository<UserCreditPack>>();
         private readonly Mock<ILogger> _logger = new Mock<ILogger>();
-        private readonly Mock<IMailer> _mailer = new Mock<IMailer>();
+        private readonly Mock<Helpers.IMailer> _mailer = new Mock<Helpers.IMailer>();
         private readonly Mock<IOptions<WebsiteConfiguration>> _config = new Mock<IOptions<WebsiteConfiguration>>();
         private readonly Mock<IAuthentication> _authentication = new Mock<IAuthentication>();
         private readonly Mock<IOptions<StripeConfiguration>> _stripeConfig = new Mock<IOptions<StripeConfiguration>>();

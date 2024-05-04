@@ -17,11 +17,11 @@ namespace K9.WebApplication.Services
     {
         private readonly IRepository<Donation> _donationRepository;
         private readonly ILogger _logger;
-        private readonly IMailer _mailer;
+        private readonly Helpers.IMailer _mailer;
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public DonationService(IRepository<Donation> donationRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> config)
+        public DonationService(IRepository<Donation> donationRepository, ILogger logger, Helpers.IMailer mailer, IOptions<WebsiteConfiguration> config)
         {
             _donationRepository = donationRepository;
             _logger = logger;
@@ -54,7 +54,7 @@ namespace K9.WebApplication.Services
 
         private List<Donation> GetSuccessfulDonations()
         {
-            return _donationRepository.Find(d => d.Status == "succeeded").ToList();
+            return _donationRepository.List();
         }
 
         private void SendEmailToNineStar(Donation donation)

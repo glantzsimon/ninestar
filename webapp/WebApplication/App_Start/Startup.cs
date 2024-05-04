@@ -46,7 +46,7 @@ namespace K9.WebApplication
             builder.RegisterType<DataSets>().As<IDataSets>().SingleInstance();
             builder.RegisterType<Users>().As<IUsers>().InstancePerRequest();
             builder.RegisterType<Roles>().As<IRoles>().InstancePerRequest();
-            builder.RegisterType<Helpers.Mailer>().As<Helpers.IMailer>().InstancePerRequest();
+            builder.RegisterType<Mailer>().As<IMailer>().InstancePerRequest();
             builder.RegisterType<Authentication>().As<IAuthentication>().InstancePerRequest();
             builder.RegisterType<PostedFileHelper>().As<IPostedFileHelper>().InstancePerRequest();
             builder.RegisterType<FileSourceHelper>().As<IFileSourceHelper>().InstancePerRequest();

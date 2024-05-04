@@ -66,7 +66,15 @@ namespace K9.WebApplication.Controllers
         [Route("view-saved-chart")]
         public ActionResult ViewProfile(int id)
         {
-            return View("Index", _nineStarKiService.RetrieveNineStarKiProfile(id));
+            try
+            {
+                var profile = _nineStarKiService.RetrieveNineStarKiProfile(id);
+                return View("Index", profile);
+            }
+            catch (UnauthorizedAccessException e)
+            {
+                return new HttpUnauthorizedResult();
+            }
         }
 
         [Authorize]

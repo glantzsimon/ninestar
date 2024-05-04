@@ -9,6 +9,7 @@ using K9.WebApplication.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using WebMatrix.WebData;
 
 namespace K9.WebApplication.Services
 {
@@ -73,7 +74,20 @@ namespace K9.WebApplication.Services
 
         public NineStarKiModel RetrieveNineStarKiProfile(int userProfileId)
         {
+            if (!_authentication.IsAuthenticated)
+            {
+                throw new UnauthorizedAccessException();
+            }
+
             var userProfile = _userProfileReadingsRepository.Find(userProfileId);
+            if (!_roles.CurrentUserIsInRoles(RoleNames.Administrators))
+            {
+                if (userProfile.UserId != WebSecurity.CurrentUserId)
+                {
+                    throw new UnauthorizedAccessException();
+                }
+            }
+
             return CalculateNineStarKiProfile(new PersonModel
             {
                 Name = userProfile.FullName,

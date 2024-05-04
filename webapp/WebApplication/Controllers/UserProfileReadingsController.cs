@@ -18,7 +18,7 @@ namespace K9.WebApplication.Controllers
         [Route("my-saved-charts")]
         public ActionResult MySavedProfiles()
         {
-            return View("Index");
+            return RedirectToAction("Index");
         }
 
         [Route("my-saved-charts/view")]

@@ -27,7 +27,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         private readonly Mock<IRepository<UserRelationshipCompatibilityReading>> _userRelationshipCompatibilityReadingsRepository = new Mock<IRepository<UserRelationshipCompatibilityReading>>();
         private readonly Mock<IRepository<UserCreditPack>> _userCreditPackRepository = new Mock<IRepository<UserCreditPack>>();
         private readonly Mock<ILogger> _logger = new Mock<ILogger>();
-        private readonly Mock<Helpers.IMailer> _mailer = new Mock<Helpers.IMailer>();
+        private readonly Mock<IMailer> _mailer = new Mock<IMailer>();
         private readonly Mock<IOptions<WebsiteConfiguration>> _config = new Mock<IOptions<WebsiteConfiguration>>();
         private readonly Mock<IAuthentication> _authentication = new Mock<IAuthentication>();
         private readonly Mock<IOptions<StripeConfiguration>> _stripeConfig = new Mock<IOptions<StripeConfiguration>>();
@@ -139,7 +139,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             };
 
             _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
-                .Returns(userMembershipModels.AsQueryable());
+                .Returns(userMembershipModels);
 
             var model = _Membershipservice.GetMembershipViewModel();
 
@@ -170,7 +170,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             };
 
             _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
-                .Returns(userMembershipModels.AsQueryable());
+                .Returns(userMembershipModels);
 
             var model = _Membershipservice.GetMembershipViewModel();
 
@@ -201,7 +201,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             };
 
             _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
-                .Returns(userMembershipModels.AsQueryable());
+                .Returns(userMembershipModels);
 
             var model = _Membershipservice.GetMembershipViewModel();
 
@@ -233,7 +233,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             };
 
             _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
-                .Returns(userMembershipModels.AsQueryable());
+                .Returns(userMembershipModels);
 
             var model = _Membershipservice.GetMembershipViewModel();
 
@@ -278,7 +278,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             };
 
             _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
-                .Returns(userMembershipModels.AsQueryable());
+                .Returns(userMembershipModels);
 
             var model = _Membershipservice.GetMembershipViewModel();
             
@@ -320,7 +320,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             };
 
             _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
-                .Returns(userMembershipModels.AsQueryable());
+                .Returns(userMembershipModels);
 
 
             var ex = Assert.Throws<Exception>(() => _Membershipservice.GetSwitchMembershipModel(_standardMonthlyMembership.Id));
@@ -359,7 +359,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             };
 
             _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
-                .Returns(userMembershipModels.AsQueryable());
+                .Returns(userMembershipModels);
 
 
             var ex = Assert.Throws<Exception>(() => _Membershipservice.GetSwitchMembershipModel(_standardYearlyMembership.Id));
@@ -386,7 +386,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             };
 
             _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
-                .Returns(userMembershipModels.AsQueryable());
+                .Returns(userMembershipModels);
 
 
             var result = _Membershipservice.GetSwitchMembershipModel(_standardYearlyMembership.Id);
@@ -413,7 +413,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             };
 
             _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
-                .Returns(userMembershipModels.AsQueryable());
+                .Returns(userMembershipModels);
 
             var ex = Assert.Throws<Exception>(() => _Membershipservice.GetPurchaseMembershipModel(_standardYearlyMembership.Id));
             Assert.Equal(Globalisation.Dictionary.PurchaseMembershipErrorAlreadySubscribed, ex.Message);
@@ -439,7 +439,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             };
 
             _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
-                .Returns(userMembershipModels.AsQueryable());
+                .Returns(userMembershipModels);
 
             var ex = Assert.Throws<Exception>(() => _Membershipservice.GetPurchaseMembershipModel(_platinumYearlyMembership.Id));
             Assert.Equal(Globalisation.Dictionary.PurchaseMembershipErrorAlreadySubscribedToAnother, ex.Message);

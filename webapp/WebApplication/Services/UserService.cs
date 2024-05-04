@@ -19,12 +19,12 @@ namespace K9.WebApplication.Services
         private readonly IRepository<PromoCode> _promoCodesRepository;
         private readonly IRepository<UserPromoCode> _userPromoCodeRepository;
         private readonly IAuthentication _authentication;
-        private readonly Helpers.IMailer _mailer;
+        private readonly IMailer _mailer;
         private readonly IContactService _contactService;
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public UserService(IRepository<User> usersRepository, IRepository<PromoCode> promoCodesRepository, IRepository<UserPromoCode> userPromoCodeRepository, IAuthentication authentication, Helpers.IMailer mailer, IOptions<WebsiteConfiguration> config, IContactService contactService)
+        public UserService(IRepository<User> usersRepository, IRepository<PromoCode> promoCodesRepository, IRepository<UserPromoCode> userPromoCodeRepository, IAuthentication authentication, IMailer mailer, IOptions<WebsiteConfiguration> config, IContactService contactService)
         {
             _usersRepository = usersRepository;
             _promoCodesRepository = promoCodesRepository;

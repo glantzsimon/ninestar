@@ -15,13 +15,13 @@ namespace K9.WebApplication.Services
     {
         private readonly IRepository<Consultation> _consultationRepository;
         private readonly ILogger _logger;
-        private readonly Helpers.IMailer _mailer;
+        private readonly IMailer _mailer;
         private readonly IAuthentication _authentication;
         private readonly IRepository<UserConsultation> _userConsultationRepository;
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public ConsultationService(IRepository<Consultation> consultationRepository, ILogger logger, Helpers.IMailer mailer, IOptions<WebsiteConfiguration> config, IAuthentication authentication, IRepository<UserConsultation> userConsultationRepository)
+        public ConsultationService(IRepository<Consultation> consultationRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> config, IAuthentication authentication, IRepository<UserConsultation> userConsultationRepository)
         {
             _consultationRepository = consultationRepository;
             _logger = logger;

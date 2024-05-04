@@ -78,19 +78,22 @@ namespace K9.WebApplication.Services
         {
             userId = userId ?? _authentication.CurrentUserId;
             var membershipOptions = _membershipOptionRepository.List();
-            var userMemberships = _authentication.IsAuthenticated
-                ? _userMembershipRepository.Find(_ => _.UserId == userId).ToList().Where(_ => _.IsActive || includeScheduled && _.EndsOn > DateTime.Today).Select(userMembership =>
+            var activeMemberships = _userMembershipRepository.Find(_ => _.UserId == userId).ToList()
+                .Where(_ => _.IsActive || includeScheduled && _.EndsOn > DateTime.Today);   
+            var userMemberships = activeMemberships.Select(userMembership =>
                 {
-                    userMembership.MembershipOption = membershipOptions.FirstOrDefault(m => m.Id == userMembership.MembershipOptionId);
-                    userMembership.ProfileReadings = _userProfileReadingsRepository.Find(e => e.UserId == userId).ToList();
+                    userMembership.MembershipOption =
+                        membershipOptions.FirstOrDefault(m => m.Id == userMembership.MembershipOptionId);
+                    userMembership.ProfileReadings =
+                        _userProfileReadingsRepository.Find(e => e.UserId == userId).ToList();
                     userMembership.RelationshipCompatibilityReadings = _userRelationshipCompatibilityReadingsRepository
                         .Find(e => e.UserId == userId).ToList();
                     userMembership.NumberOfCreditsLeft = GetNumberOfCreditsLeft(userMembership);
 
                     return userMembership;
-                }).ToList()
-                : new List<UserMembership>();
-            return userMemberships;
+                }).ToList();
+
+            return _authentication.IsAuthenticated ? userMemberships : new List<UserMembership>();
         }
 
         private int GetNumberOfCreditsLeft(UserMembership userMembership)

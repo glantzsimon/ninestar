@@ -1,4 +1,5 @@
-﻿using K9.Base.DataAccessLayer.Models;
+﻿using K9.Base.DataAccessLayer.Enums;
+using K9.Base.DataAccessLayer.Models;
 using K9.Base.WebApplication.Config;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Helpers;
@@ -80,6 +81,41 @@ namespace K9.WebApplication.Tests.Unit.Services
                 _platinumYearlyMembership
             };
 
+            var userProfileReadings = new List<UserProfileReading>
+            {
+                new UserProfileReading
+                {
+                    UserId = 2,
+                    DateOfBirth = new DateTime(1979, 6, 16),
+                    FullName = "Simon Glantz",
+                    Gender = EGender.Male
+                }
+            };
+
+            var compatibilityReadings = new List<UserRelationshipCompatibilityReading>
+            {
+                new UserRelationshipCompatibilityReading
+                {
+                    UserId = 2,
+                    FirstDateOfBirth = new DateTime(1979, 6, 16),
+                    SecondDateOfBirth = new DateTime(1984, 9, 07),
+                    FirstName = "Simon Glantz",
+                    SecondName = "Andrei Baby Kotik",
+                    FirstGender = EGender.Male,
+                    SecondGender = EGender.Male
+                }
+            };
+
+            var userCreditPacks = new List<UserCreditPack>
+            {
+                new UserCreditPack
+                {
+                    UserId = 2,
+                    NumberOfCredits = 11,
+                    TotalPrice = 33.3
+                }
+            };
+
             HttpContext.Current = new HttpContext(
                 new HttpRequest("", "http://tempuri.org", ""),
                 new HttpResponse(new StringWriter())
@@ -103,6 +139,15 @@ namespace K9.WebApplication.Tests.Unit.Services
             _membershipOptionRepository.Setup(_ => _.Find(_standardYearlyMembership.Id)).Returns(_standardYearlyMembership);
             _membershipOptionRepository.Setup(_ => _.Find(_platinumMonthlyMembership.Id)).Returns(_platinumMonthlyMembership);
             _membershipOptionRepository.Setup(_ => _.Find(_platinumYearlyMembership.Id)).Returns(_platinumYearlyMembership);
+
+            _userProfileReadingRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserProfileReading, bool>>>()))
+                .Returns(userProfileReadings);
+
+            _userRelationshipCompatibilityReadingsRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserRelationshipCompatibilityReading, bool>>>()))
+                .Returns(compatibilityReadings);
+
+            _userCreditPackRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserCreditPack, bool>>>()))
+                .Returns(userCreditPacks);
 
             _Membershipservice = new MembershipService(
                 _logger.Object,
@@ -280,6 +325,9 @@ namespace K9.WebApplication.Tests.Unit.Services
             _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
                 .Returns(userMembershipModels);
 
+            _userMembershipRepository.Setup(_ => _.List())
+                .Returns(userMembershipModels);
+
             var model = _Membershipservice.GetMembershipViewModel();
             
             Assert.Equal(1, _Membershipservice.GetActiveUserMemberships().Count);
@@ -295,6 +343,12 @@ namespace K9.WebApplication.Tests.Unit.Services
         public void GetSwitchMembershipModel_ShouldThrowError_NoSubscriptions()
         {
             AuthenticateUser();
+
+            var startsOn = DateTime.Today.AddDays(-7);
+            var userMembershipModels = new List<UserMembership>().ToList();
+
+            _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
+                .Returns(userMembershipModels);
 
             var ex = Assert.Throws<Exception>(() => _Membershipservice.GetSwitchMembershipModel(1));
             Assert.Equal(Globalisation.Dictionary.SwitchMembershipErrorNotSubscribed, ex.Message);

@@ -81,6 +81,7 @@ namespace K9.WebApplication.Services
             _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
             {
                 Title = title,
+                CustomerName = contact.FirstName,
                 donation.CustomerEmail,
                 Amount = donation.DonationAmount,
                 donation.Currency,

@@ -27,13 +27,12 @@ function _Publish() {
   _CreateDirectory $publishDir
   ProcessErrors
   
-  Msbuild $projectPath /p:DeployOnBuild=true /p:PublishProfile=$env /p:Configuration=$env /p:AllowUntrustedCertificate=true /p:Password
-  =$publishPassword
-  
-  Msbuild $mobileProjectPath /p:DeployOnBuild=true /p:PublishProfile=$env /p:Configuration=$env /p:AllowUntrustedCertificate=true /p:Password
-  =$publishPassword
-  
+  Msbuild $projectPath /p:DeployOnBuild=true /p:PublishProfile=$env /p:Configuration=$env /p:AllowUntrustedCertificate=true /p:Password =$publishPassword
   ProcessErrors
+  
+  Msbuild $mobileProjectPath /p:DeployOnBuild=true /p:PublishProfile=$env /p:Configuration=$env /p:AllowUntrustedCertificate=true /p:Password =$publishPassword  
+  ProcessErrors
+
   popd
 }
 

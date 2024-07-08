@@ -1,0 +1,52 @@
+﻿@model ImageSwitcherOptions
+@{
+	var autoPlay = Model.AutoPlay.ToString().ToLower();
+	var transitionDuration = Model.TransitionDuration.ToString().ToLower();
+	var interval = Model.Interval.ToString().ToLower();
+	var showPager = Model.ShowPager.ToString().ToLower();
+	var showNav = Model.ShowNav.ToString().ToLower();
+	var showRandom = Model.Random.ToString().ToLower();
+	var showPaws = Model.ShowPauseButton.ToString().ToLower();
+	var pawsOnHover = Model.PauseOnHover.ToString().ToLower();
+}
+
+<script>
+	$(function ($)
+	{
+
+		$(".rslides").responsiveSlides(
+		{
+			auto: @autoPlay,					// Boolean: Animate automatically, true or false
+			speed: @transitionDuration,			// Integer: Speed of the transition, in milliseconds
+			timeout: @interval,					// Integer: Time between slide transitions, in milliseconds
+			pager: @showPager,					// Boolean: Show pager, true or false
+			nav: @showNav,						// Boolean: Show navigation, true or false
+			random: @showRandom,				// Boolean: Randomize the order of the slides, true or false
+			pause: @pawsOnHover,				// Boolean: Pause on hover, true or false
+			pauseControls: @showPaws,			// Boolean: Pause when hovering controls, true or false
+			prevText: "@Model.PreviousText",	// String: Text for the "previous" button
+			nextText: "@Model.NextText",		// String: Text for the "next" button
+			maxwidth: "@Model.MaxWidthStyle",	// Integer: Max-width of the slideshow, in pixels
+			navContainer: "#navigator",			// Selector: Where controls should be appended to, default is after the 'ul'
+			manualControls: "",					// Selector: Declare custom pager navigation
+			namespace: "rslides",				// String: Change the default namespace used
+			
+			before: function(){},				// Function: Before callback
+			after: function(){}					// Function: After callback
+		});
+
+});
+
+</script>
+<ul class="rslides">
+@foreach (var image in Model.Images)
+ {
+	<li>
+		<img style="@Model.RoundCornersStyle" src="@image.Src" alt="">
+	</li>			
+ }
+</ul>
+@if (Model.ShowNav)
+{
+	<nav id="navigator" class="imageNavigator"></nav>
+}

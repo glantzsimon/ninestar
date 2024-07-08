@@ -1,0 +1,16 @@
+﻿@using K9.Base.WebApplication.Helpers
+@model Contact
+@{
+	Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+	using (Html.BeginBootstrapForm())
+	{
+		@Html.Partial("_EditFields")
+		<br/>
+		@Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Create, EButtonType.Submit, "fa-save")
+		@Html.BootstrapBackToListButton()
+	}
+}

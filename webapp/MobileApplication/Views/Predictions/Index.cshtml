@@ -1,0 +1,34 @@
+﻿@model K9.WebApplication.ViewModels.NineStarKiSummaryViewModel
+@using K9.WebApplication.Helpers
+
+@{
+    ViewBag.Title = Dictionary.PredictionsTitle;
+    ViewBag.SubTitle = Dictionary.PredictionsTitle;
+    ViewBag.Keywords = Dictionary.PredictionsKeywords;
+    ViewBag.MetaDescription = Dictionary.PredictionsMetaDescription;
+
+    ViewBag.Background = ViewBagHelper.EViewBackground.Jarallax;
+    Layout = "../Shared/_LayoutFormMedium.cshtml";
+}
+
+@Html.Partial("_BetaPopup")
+
+<div class="container main-content">
+    <article>
+        @Html.Panel(Dictionary.YearlyCycles, Dictionary.year_description, "yearly-cycles")
+
+        @Html.Panel(Dictionary.NineYearlyCyclesTitle, Html.Partial("_YearlyCyclesOverview", Model.MainEnergies).ToString(), "nine-yearly-cycles")
+
+        @Html.Panel(Dictionary.MonthlyCycles, Dictionary.month_description, "monthly-cycles")
+
+        @Html.Panel(Dictionary.NineMonthlyCyclesTitle, Html.Partial("_MonthlyCyclesOverview", Model.CharacterEnergies).ToString(), "nine-monthly-cycles")
+    </article>
+
+    <br />
+
+    @Html.BootstrapActionLinkButton(Dictionary.PersonalProfileCalculator, "Index", "NineStarKi", null, "fa fa-yin-yang", EButtonClass.Large)
+
+    @Html.BootstrapActionLinkButton(Dictionary.LearnMoreAboutNineStarKi, "About", "Home", null, "fa fa-graduation-cap", EButtonClass.Info, EButtonClass.Large)
+
+    @Html.BootstrapActionLinkButton(Dictionary.BookAConsultation, "BookConsultationStart", "Consultation", null, "fa fa-phone-alt", EButtonClass.Success, EButtonClass.Large)
+</div>

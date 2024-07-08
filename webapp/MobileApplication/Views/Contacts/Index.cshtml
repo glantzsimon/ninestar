@@ -1,0 +1,20 @@
+﻿@using K9.Base.WebApplication.Controllers
+@using K9.Base.WebApplication.Helpers
+@using K9.SharedLibrary.Authentication
+@model Contact
+@{
+    Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
+}
+
+@Html.BootstrapTable(new DataTableOptions<Contact>
+{
+    AllowCreate = false,
+    AllowEdit = true,
+    AllowDelete = ((BaseController<Contact>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
+    VisibleColumns = new List<string>
+    {
+        "FullName",
+        "EmailAddress",
+        "IsUnsubscribed"
+    }
+})

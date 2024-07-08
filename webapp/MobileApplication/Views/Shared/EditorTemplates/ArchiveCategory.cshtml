@@ -1,0 +1,4 @@
+﻿@using K9.Base.WebApplication.Extensions
+@model int?
+
+@Html.BootstrapDropdownFor(model => model, this.GetDropdownData().GetSelectList<ArchiveCategory>(Model, true))

@@ -1,0 +1,19 @@
+﻿@using K9.WebApplication.Options
+@model Donation
+@{
+    ViewBag.Title = Dictionary.Donate;
+    ViewBag.SubTitle = Dictionary.MakeDonation;
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+
+@Html.Partial("_PaymentsForm", new PaymentsOptions(
+        0,
+        0,
+        Model.Amount,
+        Model.DonationDescription,
+        "",
+        "DonateStart", "Support",
+        Url.Action("DonationSuccess"),
+        Url.Action("Index", "Error"),
+        Url.Action("ProcessDonation", "Support")
+))

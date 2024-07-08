@@ -1,0 +1,44 @@
+﻿@using K9.Base.WebApplication.Config
+@using K9.SharedLibrary.Helpers
+
+@{
+    var termsText = TemplateProcessor.PopulateTemplate(Dictionary.AgreeToTerms, new
+    {
+        privacypolicyurl = Url.Action("PrivacyPolicy", "Home")
+    });
+}
+
+<div class="footer main-section">
+	<div class="container">
+		<div class="agile-footer-grids">
+			<div class="col-md-4 agile-footer-grid">
+				<h4>@Dictionary.NineStar</h4>
+				<p>
+				    @Dictionary.CompanyBlurbFooter
+				</p>
+			</div>
+			<div class="col-md-4 agile-footer-grid">
+				@Html.Action("NewsSummary", "News")
+			</div>
+			<div class="col-md-4 agile-footer-grid">
+				<h4>Navigation</h4>
+			    <ul>
+			        <li class="text"><a href="@Url.Action("Index", "Home")"> @K9.Base.Globalisation.Dictionary.Home</a></li>
+			        <li class="text"><a href="@Url.Action("Index", "NineStarKi")"> @Dictionary.PersonalProfileCalculator</a></li>
+			        <li class="text"><a href="@Url.Action("Compatibility", "NineStarKi")"> @Dictionary.CompatibilityCalculator</a></li>
+			        <li class="text"><a href="@Url.Action("Index", "Relationships")"> @Dictionary.Relationships</a></li>
+			        <li class="text"><a href="@Url.Action("Index", "Predictions")"> @Dictionary.Predictions</a></li>
+			        <li class="text"><a href="@Url.Action("About", "Home")"> @Dictionary.LearnNineStarKiTitle</a></li>
+			    </ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<div class="footer-copyright">
+	<div class="container">
+	    <p>@Html.Raw(termsText) </p>
+	    <p>&copy; Glantz Software Consulting Limited @DateTime.Now.Year - @K9.Base.Globalisation.Dictionary.AllRightsReserved.</p>
+
+	</div>
+</div>

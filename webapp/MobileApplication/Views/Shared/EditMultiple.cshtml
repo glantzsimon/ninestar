@@ -1,0 +1,35 @@
+﻿@model K9.Base.WebApplication.ViewModels.MultiSelectViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+    var attributes = Model.IsSystemStandard ? new { disabled = "disabled" } : null;
+}
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.HiddenFor(model => Model.ParentId)
+        @Html.HiddenFor(model => Model.ParentTypeName)
+        @Html.HiddenFor(model => Model.ParentDescription)
+
+        <h3>@Model.GetSubTitle()</h3>
+
+        for (int i = 0; i < Model.Items.Count; i++)
+        {
+            @Html.HiddenFor(model => Model.Items[i].Id)
+            @Html.HiddenFor(model => Model.Items[i].ChildId)
+            @Html.HiddenFor(model => Model.Items[i].Description)
+            <div class="checkbox">
+                <label>@Html.CheckBoxFor(model => Model.Items[i].IsSelected, attributes)@Model.Items[i].Description</label>
+            </div>
+        }
+
+        <hr />
+        if (!Model.IsSystemStandard)
+        {
+            @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Update, EButtonType.Submit, "fa-save")
+        }
+        @Html.BootstrapBackToListButton()
+    }
+}

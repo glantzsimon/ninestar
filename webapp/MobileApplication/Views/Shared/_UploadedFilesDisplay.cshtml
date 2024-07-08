@@ -1,0 +1,64 @@
+﻿@using K9.SharedLibrary.Extensions
+@model K9.Base.WebApplication.ViewModels.FileSourceViewModel
+
+@if (Model.AudioFiles.Any())
+{
+    <br />
+    <div class="well margin-bottom-0">
+        @foreach (var group in Model.AudioFiles)
+        {
+            <p class="media-title">@group.FileNameNoExtension.ToProperCase()</p>
+            <audio controls>
+                @foreach (var item in group.Assets)
+                {
+                    <source src="@item.Src" type="audio/@item.ExtensionNoDot.ToLower()">
+                }
+                <span>@K9.Base.Globalisation.Dictionary.AudioUnsupported</span>
+            </audio>
+        }
+    </div>
+}
+
+@if (Model.VideoFiles.Any())
+{
+    <br />
+    <div class="well margin-bottom-0">
+        @foreach (var group in Model.VideoFiles)
+        {
+            <p class="media-title">@group.FileNameNoExtension.ToProperCase()</p>
+            <video controls>
+                @foreach (var item in group.Assets)
+                {
+                    <source src="@item.Src" type="video/@item.ExtensionNoDot.ToLower()">
+                }
+                <span>@K9.Base.Globalisation.Dictionary.VideoUnsupported</span>
+            </video>
+        }
+    </div>
+}
+
+@if (Model.Images.Any())
+{
+    <br />
+    <div class="picture-frame picture-frame-400">
+        <div>
+            @Html.Carousel(new CarouselOptions(Model.FileSource.PathToFiles, "", 70)
+            {
+                ImageSizing = EImageSizing.Vertical
+            })
+        </div>
+    </div>
+}
+
+@if (Model.Documents.Any())
+{
+    <br />
+    <div class="well margin-bottom-0">
+        @foreach (var document in Model.Documents)
+        {
+            <div class="document-container">
+                <a target="_blank" href="@document.AssetInfo.Src"><i class="@document.AssetInfo.FontAweSomeFileTypeClass"></i> @document.FileName</a>
+            </div>
+        }
+    </div>
+}

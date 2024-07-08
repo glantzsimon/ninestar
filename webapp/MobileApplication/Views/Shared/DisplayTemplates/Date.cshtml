@@ -1,0 +1,6 @@
+﻿@using K9.Base.WebApplication.Extensions
+@model DateTime?
+@{
+	var value = Model.HasValue ? Model.Value.ToLongLocalDateString() : "";
+}
+<div>@value</div>

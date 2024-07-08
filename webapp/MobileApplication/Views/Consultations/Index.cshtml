@@ -1,0 +1,14 @@
+﻿@using K9.Base.WebApplication.Helpers
+@model Consultation
+@{
+    Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
+}
+@Html.BootstrapTable(new DataTableOptions<Consultation>
+{
+    VisibleColumns = new List<string>
+    {
+        "CreatedOn",
+        "ContactName",
+        "ConsultationDuration"
+    }
+})

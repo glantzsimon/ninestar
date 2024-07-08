@@ -1,0 +1,10 @@
+﻿@model K9.Base.WebApplication.ViewModels.FileSourceViewModel
+
+<div class="picture-frame picture-frame-400">
+    <div>
+        @Html.Carousel(new CarouselOptions(Model.FileSource.PathToFiles, "", 70)
+        {
+            ImageSizing = EImageSizing.Vertical
+        })
+    </div>
+</div>

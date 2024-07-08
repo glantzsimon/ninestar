@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = Dictionary.PrivacyPolicyTitle;
+    ViewBag.SubTitle = Dictionary.PrivacyPolicyTitle;
+
+    Layout = "../Shared/_LayoutForm.cshtml";
+}
+
+@Html.Partial("_BetaPopup")
+
+<div class="container main-content privacy-policy">
+    <article>
+        @using (Html.BeginBootstrapForm())
+        {
+            @MvcHtmlString.Create(Dictionary.PrivacyPolicy)
+        }
+    </article>
+</div>
+

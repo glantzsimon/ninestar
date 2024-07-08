@@ -1,0 +1,30 @@
+﻿<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+</script>
+
+<script language="javascript">
+
+    function verifyCallback(response) {
+        if (response.length > 0) {
+            enableButtons(true);
+        }
+    }
+
+    function enableButtons(value) {
+        $("#recaptcha-buttons-container").find("a, button").each(function() {
+            $(this).prop("disabled", !value);
+        });
+    }
+
+    function onloadCallback () {
+        grecaptcha.render("recaptcha-container", {
+            "sitekey" : "@ViewBag.RecaptchaSiteKey",
+            "callback": verifyCallback
+        });
+    }
+
+    $(function() {
+        enableButtons(false);
+    });
+
+</script>

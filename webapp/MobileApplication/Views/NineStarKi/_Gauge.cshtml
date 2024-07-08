@@ -1,0 +1,33 @@
+﻿@model K9.WebApplication.Options.GaugeOptions
+
+@{
+    var id = @Guid.NewGuid().ToString();
+    var secretClass = Model.IsSecret ? "gauge-secret-container" : "";
+}
+
+<div class="gauge-container @secretClass">
+    @if (Model.IsSummary)
+    {
+        <h3 class="text-center margin-bottom-0 padding-bottom-0" style="font-size: 0.95em;">@Model.Title</h3>
+    }
+    else
+    {
+        <h4 class="text-center margin-top-0 margin-bottom-0">@Model.Title</h4>
+    }
+    @if (Model.IsSecret)
+    {
+        <div class="gauge-question">
+            <canvas id="@id" class="gauge secret-gauge" data-value="0" data-max-value="@Model.MaxValue">
+
+            </canvas>
+        </div>
+    }
+    else
+    {
+        <canvas id="@id" class="gauge" data-value="@Model.Value" data-max-value="@Model.MaxValue" data-invert="@Model.IsInverted.ToString().ToLower()" >
+
+        </canvas>
+    }
+
+</div>
+

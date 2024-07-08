@@ -1,0 +1,7 @@
+﻿@using K9.Base.WebApplication.Extensions
+@using K9.Base.WebApplication.Helpers
+@model int?
+@{
+}
+
+@Html.BootstrapDropdownFor(model => model, this.GetDropdownData().GetSelectList<Role>(Model, true))

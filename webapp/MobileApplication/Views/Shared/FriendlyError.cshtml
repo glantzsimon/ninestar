@@ -1,0 +1,8 @@
+﻿@{
+	ViewBag.Title = K9.Base.Globalisation.Dictionary.Oops;
+	Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+@Html.Alert(EAlertType.Fail, K9.Base.Globalisation.Dictionary.FriendlyErrorMessage)
+<div class="text-center margin-bottom-10">
+	@Html.ActionLink(K9.Base.Globalisation.Dictionary.ContactSupport, "ContactUs", "Support") | @Html.ActionLink(K9.Base.Globalisation.Dictionary.GoBackHome, "Index", "NineStarKi")
+</div>

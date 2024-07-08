@@ -1,0 +1,40 @@
+﻿@using K9.WebApplication.Enums
+@using K9.WebApplication.Helpers
+@model K9.WebApplication.Models.NineStarKiModel
+
+@{
+    var childClass = Model.PersonModel.IsAdult() ? "" : "child-profile";
+}
+
+<div class="row">
+    <div class="text-center">
+        <h5>@Dictionary.ClickOnTheNumbersBelowForMoreDetails</h5>
+    </div>
+    <div class="col-sm-4 margin-bottom-15 @childClass">
+        <div class="adult-profile">
+            <a href="#" id="fundamental-energy">
+                @Html.Partial("_EnergyTitle", Model.MainEnergy)
+            </a>
+        </div>
+    </div>
+    <div class="col-sm-4 margin-bottom-15">
+        <a href="#" id="character-energy">
+            @Html.Partial("_EnergyTitle", Model.CharacterEnergy)
+        </a>
+    </div>
+    <div class="col-sm-4 margin-bottom-15">
+        <a href="#" id="surface-energy">
+            @Html.Partial("_EnergyTitle", Model.SurfaceEnergy)
+        </a>
+    </div>
+</div>
+@if (Model.IsShowSummary)
+{
+    <div class="row">
+        <div class="col-md-12 margin-top-15 padding-left-0 padding-right-0">
+            <article>
+                @Html.Panel(Dictionary.SummaryLabel, Model.Summary)
+            </article>
+        </div>
+    </div>
+}

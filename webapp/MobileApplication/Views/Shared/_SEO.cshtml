@@ -1,0 +1,23 @@
+﻿@model string
+
+@{
+    var description = ViewBag.MetaDescription ?? Dictionary.NineStarMetaDescriptionMain;
+    var keywords = ViewBag.Keywords ?? Dictionary.Keywords;
+    var title = Html.Raw($"{Dictionary.NineStarKiTitle} &raquo; {ViewBag.Title}");
+}
+
+<!--@keywords-->
+
+<div class="seo @Model">
+    <h1>
+        @title
+    </h1>
+    <h2>
+        @ViewBag.SubTitle
+    </h2>
+    <div>
+        @description
+        @Html.Raw(Dictionary.origins)
+        @keywords
+    </div>
+</div>

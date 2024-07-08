@@ -1,0 +1,40 @@
+﻿@model K9.WebApplication.ViewModels.MyAccountViewModel
+@{
+    ViewBag.Title = K9.Base.Globalisation.Dictionary.MyAccountTitle;
+    ViewBag.SubTitle = K9.Base.Globalisation.Dictionary.MyAccountTitle;
+    Layout = "~/Views/Shared/_LayoutFormSmall.cshtml";
+}
+
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#account">@Dictionary.UpdateYourDetails</a></li>
+    @if (Model.Membership != null)
+    {
+        <li><a data-toggle="tab" href="#membership">@Dictionary.YourCurrentMembership</a></li>
+    }
+</ul>
+
+<div class="tab-content">
+    <div id="account" class="tab-pane fade in active padding-top-20">
+        @Html.Partial("_AccountDetails")
+    </div>
+    <div id="membership" class="tab-pane fade padding-top-20 padding-bottom-0">
+        @if (Model.Membership != null)
+        {
+            @Html.Partial("../Membership/_MembershipDetails", Model.Membership)
+            if (Model.Membership.MembershipOption.IsUpgradable)
+            {
+                <hr />
+                <div class="margin-top-15">
+                    @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership", null, "fa-level-up-alt", EButtonClass.Large)
+                    <div class="inline" data-toggle="tooltip" title="@Dictionary.CreditsDescriptionUI">@Html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership", null, "fa-money-bill-alt", EButtonClass.Large)</div>
+                </div>
+            }
+        }
+        else
+        {
+            <hr />
+            @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership", null, "", EButtonClass.Large)
+            <div class="inline" data-toggle="tooltip" title="@Dictionary.CreditsDescriptionUI">@Html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership", null, "fa-money-bill-alt", EButtonClass.Large)</div>
+        }
+    </div>
+</div>

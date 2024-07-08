@@ -1,0 +1,38 @@
+﻿@using K9.Base.WebApplication.Helpers
+@model K9.WebApplication.ViewModels.MyAccountViewModel
+
+@Html.PopupAlert()
+
+@using (Html.BeginForm("UpdateAccount", "Account"))
+{
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.HiddenFor(model => model.User.Id)
+        @Html.HiddenFor(model => model.User.Username)
+        @Html.HiddenFor(model => model.User.EmailAddress)
+        @Html.Hidden("User.Password", "th1515n0tmypa55w0rd")
+
+        <div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.User.FirstName)</div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.User.LastName)</div>
+        </div>
+        <div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.User.BirthDate)</div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.User.Gender)</div>
+        </div>
+        @Html.BootstrapEditorFor(model => model.User.PhoneNumber)
+
+        <hr />
+        @Html.BootstrapEditorFor(model => model.PromoCode)
+        
+        <hr />
+        @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Update, EButtonType.Submit, "fa-save", EButtonClass.Large)
+        @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.DeleteMyAccount, "ConfirmDeleteAccount", "Account", new { id = Model.User.Id }, "fa-trash-alt", EButtonClass.Danger, EButtonClass.Large)
+        <hr />
+
+        if (!Model.User.IsOAuth)
+        {
+            @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.ChangePassword, "UpdatePassword", "AccountController", null, "", EButtonClass.Large)
+        }
+    }
+}

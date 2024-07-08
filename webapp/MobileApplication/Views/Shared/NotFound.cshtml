@@ -1,0 +1,9 @@
+﻿@{
+	ViewBag.Title = K9.Base.Globalisation.Dictionary.Oops;
+	Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+@Html.Alert(EAlertType.NotFound, K9.Base.Globalisation.Dictionary.NotFoundTitle)
+<div class="text-center margin-bottom-10">
+	<p>@K9.Base.Globalisation.Dictionary.NotFoundError</p>
+    @Html.ActionLink(K9.Base.Globalisation.Dictionary.GoBackHome, "Index", "NineStarKi")
+</div>

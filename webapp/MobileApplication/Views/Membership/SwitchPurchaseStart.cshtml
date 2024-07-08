@@ -1,0 +1,26 @@
+﻿@model K9.WebApplication.Models.MembershipModel
+@{
+    ViewBag.Title = Dictionary.MembershipLabel;
+    ViewBag.SubTitle = Dictionary.YourSelectedSubscription;
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+
+    var buttonText = Model.IsUpgrade
+            ? Dictionary.Upgrade
+            : Dictionary.Switch;
+}
+
+@using (Html.BeginForm("SwitchPurchase", "Membership", FormMethod.Post))
+{
+    using (Html.BeginBootstrapForm())
+    {
+        <h4 class="margin-bottom-30"><strong>@Dictionary.SelectedPurchaseText:</strong></h4>
+
+        @Html.Partial("_MembershipOption")
+
+        @Html.Hidden("MembershipOptionId", Model.MembershipOption.Id)
+
+        <hr />
+        @Html.BootstrapActionLinkButton(Dictionary.Back, "Index", "Membership", null, "fa-chevron-left", EButtonClass.Large)
+        @Html.BootstrapButton(buttonText, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight, EButtonClass.Large)
+    }
+}

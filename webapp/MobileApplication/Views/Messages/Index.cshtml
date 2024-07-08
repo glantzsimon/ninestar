@@ -1,0 +1,17 @@
+﻿@using K9.Base.WebApplication.Options
+@model Message
+@{
+	Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
+}
+@Html.BootstrapTable(new DataTableOptions<Message>
+{
+	VisibleColumns = new List<string>
+	{
+		"MessageDirection",
+		"Subject",
+		"Body",
+		"SentByUserName",
+		"SentToUserName",
+		"SentOn"
+	}
+})

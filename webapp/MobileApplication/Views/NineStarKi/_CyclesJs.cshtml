@@ -1,0 +1,57 @@
+﻿<script language="javascript">
+
+    function scrollCurrentYearIntoVew() {
+        if ($("#YearScrollStatus").val() !== "true") {
+            setTimeout(function () {
+                var $cycle = $("div.current-year");
+                var $yearlyPlannerContainer = ".yearly-planner-container";
+
+                $($yearlyPlannerContainer).scrollTop($cycle.offset().top - $($yearlyPlannerContainer).offset().top);
+                $("#YearScrollStatus").val(true);
+            }, 200);
+        }
+    }
+
+    function scrollCurrentMonthIntoVew() {
+        if ($("#MonthScrollStatus").val() !== "true") {
+            setTimeout(function () {
+                var $cycle = $("div.current-month");
+                var $monthlyPlannerContainer = ".monthly-planner-container";
+
+                $($monthlyPlannerContainer).scrollTop($cycle.offset().top - $($monthlyPlannerContainer).offset().top);
+                $("#MonthScrollStatus").val(true);
+            }, 200);
+        }
+    }
+
+    function scrollCyclesIntoVew(tab) {
+        setTimeout(function () {
+            $.fn.scrollToTopOf(tab, -230);
+        }, 200);
+    }
+
+    $(function () {
+        $("a[href='#yearly-planner']").click(function () {
+            scrollCurrentYearIntoVew();
+        });
+
+        $("a[href='#monthly-planner']").click(function () {
+            scrollCurrentMonthIntoVew();
+        });
+
+        $("#current-yearly-cycle").click(function () {
+            scrollCyclesIntoVew("#yearly");
+
+            $(".nav-pills a[href='#predictions']").tab("show");
+            $(".nav-pills a[href='#yearly']").tab("show");
+        });
+
+        $("#current-monthly-cycle").click(function () {
+            scrollCyclesIntoVew("#monthly");
+
+            $(".nav-pills a[href='#predictions']").tab("show");
+            $(".nav-pills a[href='#monthly']").tab("show");
+        });
+    });
+
+</script>

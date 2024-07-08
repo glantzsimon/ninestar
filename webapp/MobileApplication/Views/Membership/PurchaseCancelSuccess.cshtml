@@ -1,0 +1,10 @@
+﻿@using K9.Base.WebApplication.Helpers
+@{
+    ViewBag.Title = Dictionary.MembershipOptions;
+    ViewBag.SubTitle = Dictionary.PurchaseCancelled;
+    Layout = "../Shared/_LayoutForm.cshtml";
+}
+
+<div class="margin-bottom-10">
+    @Html.Success(Dictionary.PurchaseCancelSuccessful + " <i class='fa fa-smile-o'></i>")
+</div>

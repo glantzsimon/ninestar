@@ -1,0 +1,20 @@
+﻿@using System.Web.Mvc.Html
+@model NewsItem
+
+@{
+    ViewBag.Title = Dictionary.News;
+    Layout = "../Shared/_LayoutForm.cshtml";
+}
+
+<div class="main-section">
+    <div class="container">
+        <div class="main-heading">
+            <h4 class="text-black" style="font-size: 1.5em; margin-top: 20px;">@Model.Subject</h4>
+        </div>
+    </div>
+    @Html.Partial("_NewsItem", Model)
+
+    <div class="text-center">
+        @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.BackToList, "Index", "News", null, "fa-chevron-left", EButtonClass.Large)
+    </div>
+</div>

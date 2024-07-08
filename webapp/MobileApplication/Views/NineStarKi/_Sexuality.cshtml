@@ -1,0 +1,11 @@
+﻿@using K9.SharedLibrary.Helpers
+@using K9.WebApplication.Helpers
+@using (Html.PaidContent())
+{
+    @Html.Raw(TemplateProcessor.PopulateTemplate(Dictionary.sexuality, new
+    {
+        AboutTitle = Dictionary.AboutNineStarKi,
+        AboutLink = Url.ActionWithBookmark("About", "Home", "yinyang"),
+        ChartLink = Url.ActionWithBookmark("About", "Home", "chart"),
+    }))
+}

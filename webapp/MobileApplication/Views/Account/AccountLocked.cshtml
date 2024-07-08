@@ -1,0 +1,10 @@
+﻿@model UserAccount.ResetPasswordModel
+@{
+	ViewBag.Title = K9.Base.Globalisation.Dictionary.AccountLockedTitle;
+	Layout = "../Shared/_LayoutForm.cshtml";
+}
+
+@Html.Alert(EAlertType.Locked, K9.Base.Globalisation.Dictionary.AccountLockedError, K9.Base.Globalisation.Dictionary.AccountLockedErrorDetails)
+<div class="text-center margin-bottom-10">
+	@Html.ActionLink(K9.Base.Globalisation.Dictionary.ResetPassword, "PasswordResetRequest")
+</div>

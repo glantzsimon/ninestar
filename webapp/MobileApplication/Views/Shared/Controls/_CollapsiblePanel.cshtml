@@ -1,0 +1,34 @@
+﻿@using K9.WebApplication.Options
+@model CollapsiblePanelOptions
+@{
+    var id = Guid.NewGuid();
+    var hasImage = !string.IsNullOrEmpty(Model.ImageSrc);
+    var imageSizeClass = Model.ImageSize == EPanelImageSize.Medium ? "image-panel-medium" : "";
+    var panelBodyClass = hasImage ? "panel-body-image" : "";
+}
+<div id="@Model.Id" style="position: relative; top: -180px;"></div>
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="collapsible-panel-link" data-panel-id="@Model.Id" data-toggle="collapse" href="#@id">@Model.Title <i class="fa @Model.CaretCssClass"></i></a>
+            </h4>
+        </div>
+        
+        <div id="@id" data-panel-id="@Model.Id" class="panel-collapse collapse @Model.ExpadedCssClass">
+            @if (hasImage)
+            {
+                <div class="panel-image-container">
+                    <div class="image-panel img-rounded @imageSizeClass" style="background-image: url('@Model.ImageSrc'); @Model.ImageLayoutCss;"></div>
+                </div>
+            }
+
+            <div class="panel-body @(hasImage ? "border-top-0" : "") @panelBodyClass">@MvcHtmlString.Create(Model.Body)</div>
+
+            @if (!string.IsNullOrEmpty(Model.Footer))
+            {
+                <div class="panel-footer">@MvcHtmlString.Create(Model.Footer)</div>
+            }
+        </div>
+    </div>
+</div>

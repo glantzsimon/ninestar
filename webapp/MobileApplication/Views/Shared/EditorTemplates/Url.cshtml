@@ -1,0 +1,7 @@
+﻿@model Object
+@{
+}
+<div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-link"></i></span>
+    @Html.TextBoxFor(model => model, ViewData["viewDataDictionary"] as IDictionary<string, object>)
+</div>

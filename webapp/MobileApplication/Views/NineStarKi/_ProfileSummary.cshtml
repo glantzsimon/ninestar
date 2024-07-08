@@ -1,0 +1,11 @@
+﻿@using K9.WebApplication.Enums
+@using K9.WebApplication.Helpers
+@model K9.WebApplication.Models.NineStarKiModel
+
+@{
+    var childClass = Model.PersonModel.IsAdult() ? "" : "child-profile";
+}
+
+<div id="energy-summary-container">
+    @Html.Panel(Dictionary.PersonalChartOverview, Html.Partial("_PersonalChart").ToString())
+</div>

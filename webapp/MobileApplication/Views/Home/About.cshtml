@@ -1,0 +1,50 @@
+﻿@using K9.WebApplication.Helpers
+@using K9.WebApplication.Options
+@model K9.WebApplication.ViewModels.NineStarKiSummaryViewModel
+
+@{
+    ViewBag.Title = Dictionary.LearnNineStarKiTitle;
+    ViewBag.SubTitle = Dictionary.LearnNineStarKiTitle;
+    Layout = "../Shared/_LayoutFormMedium.cshtml";
+}
+
+@Html.Partial("_BetaPopup")
+
+<div class="container main-content">
+    <article>
+        @Html.Panel("Origins", Dictionary.origins, "origins")
+
+        @Html.Panel("Cycles of Light and Dark", Dictionary.cycles, "cycles", "~/Images/about/light-dark.jpg", EPanelImageSize.Default, EPanelImageLayout.Contain)
+
+        @Html.Panel("Yin and Yang", Dictionary.yinyang, "yinyang", "~/Images/ninestar/yinyang/yinyang-large.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+        
+        @Html.Panel("The Three Modalities", Html.Partial("_Modalities").ToString(), "modalities")
+
+        @Html.Partial("_ModalityDetails", Model.DynamicEnergies)
+
+        @Html.Partial("_ModalityDetails", Model.StableEnergies)
+
+        @Html.Partial("_ModalityDetails", Model.FlexibleEnergies)
+
+        @Html.Panel("The Five Elements", Html.Partial("_FiveElements").ToString(), "elements")
+
+        @Html.Panel(Dictionary.FireElement, Dictionary.fire_element, "fire", "~/Images/ninestar/elements/fire.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+
+        @Html.Panel(Dictionary.EarthElement, Dictionary.earth_element, "earth", "~/Images/ninestar/elements/earth.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+
+        @Html.Panel(Dictionary.MetalElement, Dictionary.metal_element, "metal", "~/Images/ninestar/elements/metal.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+
+        @Html.Panel(Dictionary.WaterElement, Dictionary.water_element, "water", "~/Images/ninestar/elements/water.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+
+        @Html.Panel(Dictionary.TreeElement, Dictionary.tree_element, "tree", "~/Images/ninestar/elements/tree.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+
+        @Html.Panel("The Five Transformations", Html.Partial("../NineStarKi/_FiveTransformations").ToString(), "transformations")
+
+        @Html.Panel("The Nine Main Energies", Html.Partial("_NineEnergiesOverview", Model.MainEnergies).ToString(), "energies")
+
+        @Html.Panel("The Nine Character Energies", Html.Partial("_NineEnergiesOverview", Model.CharacterEnergies).ToString(), "characters")
+        
+        @Html.Panel("9 Star Ki Personal Chart", Dictionary.personal_chart, "chart")
+    </article>
+</div>
+

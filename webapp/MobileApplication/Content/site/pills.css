@@ -1,0 +1,47 @@
+﻿.nav-tabs a, .nav-pills a {
+    font-size: 1.2em !important;
+}
+
+ul.image-pill {
+    margin-bottom: 30px;
+}
+
+    ul.image-pill li {
+        height: 100%;
+    }
+
+        ul.image-pill li a {
+            background-color: transparent !important;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #337ab7 !important;
+        }
+
+        ul.image-pill li:not(:last-child) a {
+            margin-right: 1px;
+        }
+
+        ul.image-pill li.active a {
+            background-color: white !important;
+            -webkit-box-shadow: 0 0 34px rgba(0, 0, 0, 0.5);
+            -moz-box-shadow: 0 0 34px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 34px rgba(0, 0, 0, 0.5);
+        }
+
+        ul.image-pill li:not(.active) a:hover {
+            background-color: white !important;
+            -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+
+    ul.image-pill div.img-rounded {
+        min-height: 190px;
+        height: 100%;
+        width: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 10px 0;
+    }

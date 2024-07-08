@@ -1,0 +1,7 @@
+﻿@using K9.Base.WebApplication.Helpers
+@{
+	ViewBag.Title = K9.Base.Globalisation.Dictionary.Oops;
+	Layout = "~/Views/Shared/_LayoutForm.cshtml";
+	
+}
+@Html.Alert(EAlertType.Unauthorized, K9.Base.Globalisation.Dictionary.UnauthorizedError)

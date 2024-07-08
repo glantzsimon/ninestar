@@ -1,0 +1,36 @@
+@media (max-width:610px) {
+	.navbar-header {
+		text-align: center;
+	}
+	.navbar-toggle {
+		float: none;
+		margin-right: 0;
+	}
+	.navbar-default .navbar-toggle {
+		border-color: #fff;
+	}
+	.navbar-default .navbar-toggle .icon-bar {
+		background-color: #fff;
+	}
+	.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+		background-color: #ff9800;
+	}
+	.top-nav ul li {
+		display: block;
+		float: none;
+		width: 100%;
+	}
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+		border: none;
+		position: absolute;
+		width: 100%;
+		box-shadow: none;
+		z-index: 999;
+	}
+	.team {
+		padding: 3.5em 0;
+	}
+    .site-controls-text {
+        display: none !important;
+    }
+}

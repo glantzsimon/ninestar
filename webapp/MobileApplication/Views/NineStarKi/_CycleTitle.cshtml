@@ -1,0 +1,17 @@
+﻿@using K9.WebApplication.Models
+@model NineStarKiEnergy
+
+@{
+    var label = Model.EnergyCycleType == ENineStarKiEnergyCycleType.YearlyCycleEnergy ? Dictionary.YearlyCycle
+        : Model.EnergyCycleType == ENineStarKiEnergyCycleType.MonthlyCycleEnergy ? Dictionary.MonthlyCycle
+                : string.Empty;
+}
+
+<div class="ninestar-summary-container">
+    <h3 class="margin-bottom-0 padding-bottom-0" style="font-size: 0.95em;">@label</h3>
+    <p>@Model.EnergyName</p>
+    <img title="@Model.SeasonDescription" alt="@Model.SeasonDescription" class="auto-size center-block" src="~/Images/ninestar/energies/@(Model.Energy.ToString().ToLower()).png" />
+    <p class="text-center" style="font-size: 0.9em;">
+        @Model.CycleDescriptiveName
+    </p>
+</div>

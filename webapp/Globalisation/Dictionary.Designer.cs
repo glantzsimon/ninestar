@@ -5066,6 +5066,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Log In User.
+        /// </summary>
+        public static string LoginUser {
+            get {
+                return ResourceManager.GetString("LoginUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Low.
         /// </summary>
         public static string Low {
@@ -7146,7 +7155,7 @@ namespace K9.Globalisation {
         ///    Originating from China, this 4000-year-old system of astrology is possibly the oldest in the world
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    9 Star Ki (pronounced &apos;key&apos;, which is the Japanese word for subtle energy or life-force) is possibly the oldest system of astrology in the world today. Originating in China, it is closely related to the 4000 year-old Book of Changes - the &apos;I Ching&apos; - whose principles are the foundations of Feng Shui, traditional Chinese medicine and acupuncture.
+        ///    9 Star Ki (pronounced &apos;key&apos;, which is the Japanese word for subtle energy or life-force) is possibly the oldest system of astrology in the world today. Originating in China, it is closely related to the 4000-year-old Book of Changes - the &apos;I Ching&apos; - whose principles are the foundations of Feng Shui, traditional Chinese medicine and acupuncture.
         ///&lt;/p&gt;.
         /// </summary>
         public static string origins {
@@ -7294,6 +7303,15 @@ namespace K9.Globalisation {
         public static string PersonalChart {
             get {
                 return ResourceManager.GetString("PersonalChart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personal Chart Calculator.
+        /// </summary>
+        public static string PersonalChartCalculator {
+            get {
+                return ResourceManager.GetString("PersonalChartCalculator", resourceCulture);
             }
         }
         
@@ -7575,6 +7593,15 @@ namespace K9.Globalisation {
         public static string PricePerCredit {
             get {
                 return ResourceManager.GetString("PricePerCredit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pricing.
+        /// </summary>
+        public static string Pricing {
+            get {
+                return ResourceManager.GetString("Pricing", resourceCulture);
             }
         }
         

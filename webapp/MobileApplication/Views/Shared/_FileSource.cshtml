@@ -1,0 +1,54 @@
+﻿@using K9.SharedLibrary.Extensions
+@model K9.SharedLibrary.Models.FileSource
+@{
+    var displayStyle = Model.UploadedFiles.Any() ? "display: block;" : "display: none;";
+}
+
+@Html.HiddenFor(model => model.Filter)
+
+<div class="upload-file-preview container" style="@displayStyle">
+    @if (Model.UploadedFiles != null)
+    {
+        for (int i = 0; i < Model.UploadedFiles.Count; i++)
+        {
+            var fileId = Guid.NewGuid();
+            var assetInfo = Model.UploadedFiles[i].AssetInfo;
+            var imgClass = assetInfo.IsImage() && assetInfo.ImageInfo.IsPortrait() ? "portrait" : string.Empty;
+
+            @Html.HiddenFor(model => Model.UploadedFiles[i].FileName, new { @class = "uploaded-file", data_file_id = fileId })
+            @Html.HiddenFor(model => Model.UploadedFiles[i].IsDeleted, new { @class = "uploaded-file-deleted", data_file_id = fileId, data_file_name = Model.UploadedFiles[i].FileName })
+
+            <div class="file-preview-container col-lg-3 col-md-4 col-sm-6 col-xs-12" data-file-id="@fileId">
+                <div class="file-thumbnail-container">
+                    <div class="preview-thumbnail">
+                        @if (assetInfo.IsImage())
+                        {
+                            <img src="@assetInfo.Src" class="@imgClass">
+                        }
+                        else if (assetInfo.IsVideo())
+                        {
+                            <img src="~/Images/ui/video.png">
+                        }
+                        else if (assetInfo.IsAudio())
+                        {
+                            <img src="~/Images/ui/audio.png">
+                        }
+                        else
+                        {
+                            <img src="~/Images/ui/document.jpg">
+                        }
+                    </div>
+                    <div class="doc-info">
+                        <p>@assetInfo.ShortFileName</p>
+                        <samp>(@assetInfo.FileInfo.GetFileSize())</samp>
+                        @if (!Model.IsReadOnly)
+                        {
+                            <button type="button" class="file-preview-delete btn btn-xs btn-default" title="@K9.Base.Globalisation.Dictionary.Delete" data-file-id="@fileId" data-file-name="@assetInfo.FileName">
+                                <i class="glyphicon glyphicon-trash text-danger"></i>
+                            </button>
+                        }
+                    </div>
+                </div>
+            </div> }
+    }
+</div>

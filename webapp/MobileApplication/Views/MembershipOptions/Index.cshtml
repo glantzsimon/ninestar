@@ -1,0 +1,14 @@
+﻿@using K9.Base.WebApplication.Helpers
+@model MembershipOption
+@{
+	Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
+}
+@Html.BootstrapTable(new DataTableOptions<MembershipOption>
+{
+    VisibleColumns = new List<string>
+    {
+        "SubscriptionTypeNameLocal",
+        "SubscriptionDetailsLocal",
+        "FormattedPrice"
+    }
+})

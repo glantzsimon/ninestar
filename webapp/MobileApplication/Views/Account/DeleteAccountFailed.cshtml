@@ -1,0 +1,8 @@
+﻿@model UserAccount.ResetPasswordModel
+@{
+    ViewBag.Title = K9.Base.Globalisation.Dictionary.MyAccountTitle;
+    Layout = "../Shared/_LayoutForm.cshtml";
+}
+<div class="margin-bottom-10">
+    @Html.Failure(K9.Base.Globalisation.Dictionary.DeleteAccountFailed, Html.ActionLink(K9.Base.Globalisation.Dictionary.PleaseContactSupport, "ContactUs", "Support"))
+</div>

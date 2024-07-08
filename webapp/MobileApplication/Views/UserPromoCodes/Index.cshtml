@@ -1,0 +1,40 @@
+﻿@using K9.Base.WebApplication.Controllers
+@using K9.Base.WebApplication.Helpers
+@using K9.SharedLibrary.Models
+@using K9.SharedLibrary.Authentication
+@using EButtonType = K9.SharedLibrary.Models.EButtonType
+
+@model UserPromoCode
+@{
+    Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
+}
+
+<script language="javascript">
+    $(function () {
+        customOrder = [[0, "desc"]];
+    });
+</script>
+
+@Html.BootstrapTable(new DataTableOptions<UserPromoCode>
+{
+    AllowCreate = false,
+    AllowEdit = false,
+    AllowDelete = ((BaseController<UserPromoCode>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
+    VisibleColumns = new List<string>
+    {
+        "CreatedOn",
+        "UserId",
+        "PromoCodeId"
+    },
+    CustomButtons = new List<IButton>
+    {
+        new Button
+        {
+            Text = Dictionary.PromoCode,
+            Controller = "PromoCodes",
+            Action = "Details",
+            ButtonType = EButtonType.Primary
+
+        }
+    }
+})

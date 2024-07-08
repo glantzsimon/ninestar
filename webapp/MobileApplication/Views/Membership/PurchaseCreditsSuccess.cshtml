@@ -1,0 +1,12 @@
+﻿@using K9.Base.WebApplication.Helpers
+@{
+    ViewBag.Title = Dictionary.PurchaseCredits;
+    ViewBag.SubTitle = Dictionary.PurchaseCreditsSuccessful;
+    Layout = "../Shared/_LayoutForm.cshtml";
+}
+
+<div class="margin-bottom-10">
+    @Html.Success(Dictionary.YouAreSignedUp + " <i class='fa fa-smile-o'></i>", Html.ActionLink(K9.Base.Globalisation.Dictionary.MyAccountTitle, "MyAccount", "Account"))
+
+    @Html.Partial("_RetrieveLast")
+</div>

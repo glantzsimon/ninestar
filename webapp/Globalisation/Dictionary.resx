@@ -2683,4 +2683,13 @@
   <data name="spiritual_very_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>biorhythms\en-gb\leveldescriptions\spiritual\spiritual-very-low.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="PersonalChartCalculator" xml:space="preserve">
+    <value>Personal Chart Calculator</value>
+  </data>
+  <data name="Pricing" xml:space="preserve">
+    <value>Pricing</value>
+  </data>
+  <data name="LoginUser" xml:space="preserve">
+    <value>Log In User</value>
+  </data>
 </root>

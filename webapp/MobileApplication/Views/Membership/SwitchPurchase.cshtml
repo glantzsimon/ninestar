@@ -1,0 +1,18 @@
+﻿@using K9.WebApplication.Options
+@model K9.WebApplication.Models.MembershipModel
+@{
+    ViewBag.Title = Dictionary.MembershipOptions;
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+
+@Html.Partial("_PaymentsForm", new PaymentsOptions(
+    Model.MembershipOption.Id,
+    0,
+    Model.SubscriptionPrice,
+    Model.MembershipOption.Description,
+    "",
+    "PurchaseStart", "Membership",
+    Url.Action("PurchaseSuccess"),
+    Url.Action("Index", "Error"),
+    Url.Action("ProcessPurchase", "Membership")
+))

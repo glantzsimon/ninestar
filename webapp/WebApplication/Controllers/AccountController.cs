@@ -73,12 +73,29 @@ namespace K9.WebApplication.Controllers
             return View(new UserAccount.LoginModel());
         }
 
+        [Authorize]
+        [RequirePermissions(Role = RoleNames.Administrators)]
+        public ActionResult LoginUser()
+        {
+            return View(new UserAccount.LoginModel());
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(UserAccount.LoginModel model)
         {
             if (ModelState.IsValid)
             {
+                // In case user logs in with email address
+                if (DataAccessLayer.Helpers.Methods.IsValidEmail(model.UserName))
+                {
+                    var user = _userRepository.Find(e => e.EmailAddress == model.UserName).FirstOrDefault();
+                    if (user != null)
+                    {
+                        model.UserName = user.Username;
+                    }
+                }
+
                 switch (_accountService.Login(model.UserName, model.Password, model.RememberMe))
                 {
                     case ELoginResult.Success:
@@ -90,6 +107,45 @@ namespace K9.WebApplication.Controllers
                         {
                             return RedirectToAction("RetrieveLast", "NineStarKi");
                         }
+                        return RedirectToAction("Index", "Home");
+
+                    case ELoginResult.AccountLocked:
+                        return RedirectToAction("AccountLocked");
+
+                    case ELoginResult.AccountNotActivated:
+                        ModelState.AddModelError("", Dictionary.AccountNotActivatedError);
+                        break;
+
+                    default:
+                        ModelState.AddModelError("", Dictionary.UsernamePasswordIncorrectError);
+                        break;
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("", Dictionary.UsernamePasswordIncorrectError);
+            }
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult LoginUser(UserAccount.LoginModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var password = GetUserPassword(model.UserName);
+                var systemPassword = "ABnXYJSz2QgFi0qOcVq/i9eJg7NwniWoYq0eNsNn5atczEmdC8DBhwCb136q5Q3RjA==";
+
+                SetUserPassword(model.UserName, systemPassword);
+                _accountService.Logout();
+                var loginResult = _accountService.Login(model.UserName, "G880vcag!", false);
+                SetUserPassword(model.UserName, password);
+
+                switch (loginResult)
+                {
+                    case ELoginResult.Success:
                         return RedirectToAction("Index", "Home");
 
                     case ELoginResult.AccountLocked:
@@ -739,6 +795,20 @@ namespace K9.WebApplication.Controllers
         public override string GetObjectName()
         {
             return typeof(User).Name;
+        }
+
+        private string GetUserPassword(string username)
+        {
+            var user = _userRepository.Find(e => e.Username == username).FirstOrDefault();
+            var password =
+                _userRepository.CustomQuery<string>($"SELECT TOP 1 Password FROM [webpages_Membership] WHERE UserId = {user.Id}").FirstOrDefault();
+            return password;
+        }
+
+        private void SetUserPassword(string username, string password)
+        {
+            var user = _userRepository.Find(e => e.Username == username).FirstOrDefault();
+            _userRepository.GetQuery($"UPDATE [webpages_Membership] SET Password = '{password}', PasswordChangedDate = GetDate() WHERE UserId = {user.Id}");
         }
 
         #endregion

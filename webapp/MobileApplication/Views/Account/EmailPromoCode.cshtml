@@ -1,0 +1,34 @@
+﻿@using Dictionary = K9.Base.Globalisation.Dictionary
+@model K9.WebApplication.ViewModels.EmailPromoCodeViewModel
+@{
+    ViewBag.Title = K9.Globalisation.Dictionary.EmailPromoCode;
+    ViewBag.SubTitle = K9.Globalisation.Dictionary.EmailPromoCode;
+    Layout = "~/Views/Shared/_LayoutFormSmall.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.HiddenFor(model => model.PromoCode.SubscriptionType)
+        @Html.HiddenFor(model => model.PromoCode.Id)
+        @Html.HiddenFor(model => model.PromoCode.Code)
+        @Html.HiddenFor(model => model.PromoCode.Credits)
+        @Html.HiddenFor(model => model.PromoCode.UsedOn)
+        @Html.HiddenFor(model => model.PromoCode.SentOn)
+
+        @Html.BootstrapDisplayFor(model => model.PromoCode.Code)
+        <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                @Html.BootstrapDisplayFor(model => model.PromoCode.SubscriptionTypeName)
+            </div>
+            <div class="col-sm-5 col-xs-12 padding-left-0-sm">
+                @Html.BootstrapDisplayFor(model => model.PromoCode.Credits)
+            </div>
+        </div>
+        @Html.BootstrapEditorFor(model => model.Name)
+        @Html.BootstrapEditorFor(model => model.EmailAddress)
+        <hr />
+        @Html.BootstrapButton(K9.Globalisation.Dictionary.Send, EButtonType.Submit, "fa fa-envelope")
+    }
+}

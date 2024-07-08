@@ -1,0 +1,8 @@
+﻿@{
+    ViewBag.Title = K9.Base.Globalisation.Dictionary.AccountActivationTitle;
+    Layout = "../Shared/_LayoutForm.cshtml";
+}
+
+<div class="margin-bottom-10">
+    @Html.Success(K9.Base.Globalisation.Dictionary.AccountActivatedSuccessfully, Html.ActionLink(K9.Base.Globalisation.Dictionary.LogIntoYourAccount, "Login"))
+</div>

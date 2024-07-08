@@ -1,0 +1,69 @@
+﻿@using Dictionary = K9.Base.Globalisation.Dictionary
+@model K9.WebApplication.ViewModels.RegisterViewModel
+
+@{
+    ViewBag.Title = Dictionary.Registration;
+    ViewBag.SubTitle = Dictionary.Register;
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.BootstrapEditorFor(model => model.RegisterModel.UserName)
+        @Html.BootstrapEditorFor(model => model.RegisterModel.Password)
+        @Html.BootstrapEditorFor(model => model.RegisterModel.ConfirmPassword)
+
+        <hr />
+        <div class="row">
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.FirstName)</div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.LastName)</div>
+        </div>
+        @Html.BootstrapEditorFor(model => model.RegisterModel.EmailAddress)
+        <div class="row">
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.BirthDate)</div>
+            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.RegisterModel.Gender)</div>
+        </div>
+        @Html.BootstrapEditorFor(model => model.RegisterModel.PhoneNumber)
+        @Html.BootstrapEditorFor(model => model.PromoCode)
+        <hr />
+        <div id="recaptcha-container">
+        </div>
+        <hr />
+        <div id="recaptcha-buttons-container">
+            @Html.BootstrapButton(Dictionary.Register, EButtonType.Submit, "", EButtonClass.Large)
+            @Html.BootstrapActionLinkButton(Dictionary.SignInWithFacebook, "Facebook", "Account", null, "fao fa-facebook", EButtonClass.Large)
+        </div>
+    }
+}
+
+@Html.Partial("_Recaptcha")
+
+<script language="javascript">
+
+    $("#UserName").change(function() {
+        var username = $(this).val();
+        ajaxcontroller().get("@Url.Action("IsUserNameAvailable")", { username }).done(
+            function(result) {
+                if (result.success && result.data) {
+                    $.fn.displayValidationWarningFor("UserName", "@Dictionary.UsernameIsUnavailableError");
+                } else {
+                    $.fn.hideValidationWarningFor("UserName");
+                }
+            });
+    });
+
+    $("#EmailAddress").change(function() {
+        var emailAddress = $(this).val();
+        ajaxcontroller().get("@Url.Action("IsEmailAddressAvailable")", { emailAddress }).done(
+            function(result) {
+                if (result.success && result.data) {
+                    $.fn.displayValidationWarningFor("EmailAddress", "@Dictionary.EmailIsUnavailableError");
+                } else {
+                    $.fn.hideValidationWarningFor("EmailAddress");
+                }
+            });
+    });
+
+</script>

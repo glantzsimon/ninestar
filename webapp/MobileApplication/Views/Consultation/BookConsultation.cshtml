@@ -1,0 +1,20 @@
+﻿@using K9.WebApplication.Options
+@model Consultation
+@{
+    ViewBag.Title = Dictionary.BookAConsultation;
+    ViewBag.SubTitle = Dictionary.BookAConsultation;
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+
+
+@Html.Partial("_PaymentsForm", new PaymentsOptions(
+    0,
+    (int)Model.ConsultationDuration,
+    Model.Price,
+    Dictionary.NineStarKiConsultation,
+    Dictionary.ConsultationDurationDescription,
+    "BookConsultationStart", "Consultation",
+    Url.Action("BookConsultationSuccess"),
+    Url.Action("Index", "Error"),
+    Url.Action("ProcessConsultation", "Consultation")
+    ))

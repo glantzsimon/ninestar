@@ -1,0 +1,150 @@
+﻿@using ServiceStack.Text
+@model K9.WebApplication.Models.BioRhythmsModel
+
+@{
+    var id = @Guid.NewGuid().ToString();
+}
+
+<div class="gauge-container biorhythms-container">
+    <div id="@id" class="sinusgraph" width="896" height="500"></div>
+</div>
+
+<script type="text/javascript">
+
+    $(function() {
+        function getSeriesData(rawData) {
+            var data = [], i;
+            for (i = 0; i < rawData.length; i += 1) {
+                let date = new Date(rawData[i].FormattedDate);
+                let value = rawData[i].Value;
+                let selectedDate = new Date("@((Model.SelectedDate ?? DateTime.Today).ToString(K9.WebApplication.Constants.FormatConstants.SessionDateTimeFormat))");
+                let levelDescription = rawData[i].LevelDescription;
+
+                if (date.getDate() === selectedDate.getDate()) {
+                    data.push({
+                        marker: {
+                            enabled: true,
+                            states: {
+                                hover: {
+                                    enabled: true
+                                } ,
+                                states: {
+                                    select: true
+                                }
+                            }
+                        },
+                        x: date,
+                        y: value,
+                        date: date.toDateString(),
+                        description: levelDescription
+                    });
+                } else {
+                    data.push({
+                        marker: {
+                            lineWidth: 2,
+                            enabled: false,
+                            states: {
+                                hover: {
+                                    enabled: true
+                                },
+                                states: {
+                                    select: false
+                                }
+                            }
+                        },
+                        x: date,
+                        y: value,
+                        date: date.toDateString(),
+                        description: levelDescription
+                    });
+                }
+            }
+            return data;
+        }
+
+        function loadCharts() {
+            Highcharts.chart("@id",
+                {
+                    chart: {
+                        type: "spline",
+                        animation: Highcharts.svg,
+                        marginRight: 10
+                    },
+
+                    time: {
+                        useUTC: false
+                    },
+
+                    title: {
+                        text: "@(Dictionary.NineStarKiBiorhythmsLabel) for period @Model.NineStarKiModel.GetMonthlyPeriod(Model.SelectedDate.Value, Model.NineStarKiModel.PersonModel.Gender).GetPeriodTitle()"
+                    },
+
+                    plotOptions: {
+                        column: {
+                            pointPlacement: "between"
+                        }
+                    },
+
+                    xAxis: {
+                        type: "datetime",
+                        tickPixelInterval: 32,
+                        gridLineWidth: 1,
+                        startOnTick: true,
+                        endOnTick: true
+                    },
+
+                    yAxis: {
+                        title: {
+                            text: "Value"
+                        },
+                        plotLines: [
+                            {
+                                value: 0,
+                                width: 1,
+                                color: "#808080"
+                            }
+                        ],
+                        max: 100,
+                        min: 0,
+                        gridLineWidth: 1
+                    },
+
+                    tooltip: {
+                        headerFormat: "<strong style='color: {series.color}'>{series.name}</strong><br/><br/>",
+                        pointFormat: "<p style='padding: 4px; display: block;'><strong>Date: </strong>{point.date}</p><br/>" +
+                            "<p style='padding: 4px; display: block;'><strong>Value: </strong>{point.y:.2f}</p><br/>" +
+                            "<p style='padding: 4px; display: block;'><strong>Description: </strong>{point.description}</p>",
+                        crosshairs: true
+                    },
+
+                    legend: {
+                        enabled: true
+                    },
+
+                    exporting: {
+                        enabled: true
+                    },
+
+                    series: [
+
+                        @foreach (var biorhythm in Model.BiorhythmResults)
+                        {
+                            @:{
+                                @:name: "@($"{biorhythm.BioRhythm.Name} {Dictionary.Biorhythm}")",
+                                @:data: getSeriesData(@(Html.Raw(biorhythm.RangeValues.ToJson()))),
+                                @:color: "rgb(@($"{biorhythm.BioRhythm.Color}"))",
+                                @:lineWidth: "@($"{biorhythm.BioRhythm.LineWidth}")",
+                                @:shadow: @($"{biorhythm.BioRhythm.LineShadow.ToString().ToLower()}"),
+                                @:dashStyle: "@($"{biorhythm.BioRhythm.LineDashString}")"
+                            @:},
+                        }
+
+                        ]
+                });
+        }
+
+        loadCharts();
+
+    });
+
+</script>

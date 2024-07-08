@@ -1,0 +1,18 @@
+﻿@using Dictionary = K9.Base.Globalisation.Dictionary
+@model UserAccount.LoginModel
+@{
+    ViewBag.Title = Dictionary.LogIn;
+    ViewBag.SubTitle = Dictionary.LogIn;
+    Layout = "~/Views/Shared/_LayoutFormSmall.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.BootstrapEditorFor(model => model.UserName)
+        @Html.BootstrapEditorFor(model => model.Password)
+        <hr />
+        @Html.BootstrapButton(Dictionary.LogInVerb, EButtonType.Submit, "fa-sign-in", EButtonClass.Large)
+    }
+}

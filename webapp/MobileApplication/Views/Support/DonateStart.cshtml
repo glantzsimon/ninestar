@@ -1,0 +1,23 @@
+﻿@model Donation
+@{
+    ViewBag.Title = Dictionary.Donate;
+    ViewBag.SubTitle = Dictionary.MakeDonation;
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+
+@using (Html.BeginForm("Donate", "Support", FormMethod.Post))
+{
+    using (Html.BeginBootstrapForm())
+    {
+        <p>
+            @Dictionary.DonationBlurb
+        </p>
+        <hr />
+
+        @Html.BootstrapEditorFor(model => model.DonationAmount)
+        @Html.HiddenFor(model => model.DonationDescription)
+
+        <hr />
+        @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight, EButtonClass.Large)
+    }
+}

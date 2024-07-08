@@ -1,0 +1,59 @@
+﻿@using K9.Base.DataAccessLayer.Enums
+@using K9.Base.WebApplication.Controllers
+@using K9.SharedLibrary.Authentication
+@using K9.SharedLibrary.Models
+@using EButtonType = K9.SharedLibrary.Models.EButtonType
+@model UserRelationshipCompatibilityReading
+@{
+    ViewBag.Title = Dictionary.MySavedCompatibilityReadings;
+    ViewBag.SubTitle = Dictionary.MySavedCompatibilityReadings;
+
+    Layout = "../Shared/_LayoutForm.cshtml";
+}
+
+<script language="javascript">
+    $(function () {
+        customColumnDefs = [
+            {
+                dataType: "k9.base.dataaccesslayer.enums.egender", render: function (value, type, row) {
+                    return value === @((int)EGender.Male)
+                        ? "@EGender.Male.ToString()"
+                        : value === @((int)EGender.Female)
+                        ? "@EGender.Female.ToString()"
+                        : "@EGender.Other.ToString()";
+                }
+            }
+        ];
+
+        customOrder = [[0, "desc"]];
+    });
+</script>
+
+@Html.BootstrapTable(new DataTableOptions<UserRelationshipCompatibilityReading>
+{
+    AllowView = false,
+    AllowCreate = false,
+    AllowEdit = false,
+    AllowDelete = ((BaseController<UserRelationshipCompatibilityReading>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
+    Controller = "UserRelationshipCompatibilityReadings",
+    VisibleColumns = new List<string>
+    {
+        "CreatedOn",
+        "FirstName",
+        "FirstDateOfBirth",
+        "FirstGender",
+        "SecondName",
+        "SecondDateOfBirth",
+        "SecondGender"
+    },
+    CustomButtons = new List<IButton>
+    {
+        new Button
+        {
+            Text = Dictionary.View,
+            Controller = "UserRelationshipCompatibilityReadings",
+            Action = "ViewReading",
+            ButtonType = EButtonType.Primary
+        }
+    }
+})

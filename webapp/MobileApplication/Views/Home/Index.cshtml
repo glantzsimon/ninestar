@@ -1,0 +1,45 @@
+﻿@using K9.WebApplication.Helpers
+@model K9.WebApplication.Models.NineStarKiModel
+@{
+    ViewBag.Title = K9.Base.Globalisation.Dictionary.Home;
+    ViewBag.SubTitle = Dictionary.WelcomeSubTitle;
+    ViewBag.Background = ViewBagHelper.EViewBackground.Default;
+    Layout = "../Shared/_LayoutFormMedium.cshtml";
+}
+
+<style>
+    article h4 {
+        margin-top: 0;
+    }
+</style>
+
+@Html.Partial("_BetaPopup")
+
+<div class="container main-content">
+    <div class="well margin-bottom-0">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 padding-0">
+                <article>
+                    <h4>@Dictionary.PersonalProfileCalculator</h4>
+                    @Html.Partial("../NineStarKi/_Calculator")
+                </article>
+            </div>
+            <div class="col-md-8 col-sm-8 padding-left-20-desktop padding-right-0">
+                <article>
+                    @MvcHtmlString.Create(Dictionary.welcome)
+                </article>
+            </div>
+        </div>
+        <div class="row">
+            <article>
+                @MvcHtmlString.Create(Dictionary.welcome2)
+            </article>
+
+            <br />
+
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutHowCompatibleYouAre, "Compatibility", "NineStarKi", null, "fa-heart", EButtonClass.Info, EButtonClass.Large)
+
+            @Html.BootstrapActionLinkButton(Dictionary.BookAConsultation, "BookConsultationStart", "Consultation", null, "fa-phone-alt", EButtonClass.Success, EButtonClass.Large)
+        </div>
+    </div>
+</div>

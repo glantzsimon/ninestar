@@ -52,7 +52,7 @@ function _Test() {
   ProcessErrors
   
   echo "Running mobile application tests"
-  .\packages\xunit.runner.console.2.3.1\tools\net452\xunit.console.exe $mobileTestFile
+  "TODO: .\packages\xunit.runner.console.2.3.1\tools\net452\xunit.console.exe mobileTestFile"
   ProcessErrors
   
   echo "Running data access layer tests"

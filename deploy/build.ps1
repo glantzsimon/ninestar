@@ -3,7 +3,9 @@ param([String]$publishPassword='')
 $publishDir = "publish"
 $appDir = "webapp"
 $projectPath = ".\WebApplication\WebApplication.csproj"
+$mobileProjectPath = ".\MobileApplication\WebApplication.csproj"
 $webTestFile = ".\WebApplication.Tests\bin\Debug\K9.WebApplication.Tests.dll"
+$mobileTestFile = ".\MobileApplication.Tests\bin\Debug\K9.WebApplication.Tests.dll"
 $dataTestFile = ".\DataAccess.Tests\bin\Debug\K9.DataAccessLayer.Tests.dll"
 	
 function ProcessErrors(){
@@ -49,6 +51,10 @@ function _Test() {
   .\packages\xunit.runner.console.2.3.1\tools\net452\xunit.console.exe $webTestFile
   ProcessErrors
   
+  echo "Running mobile application tests"
+  .\packages\xunit.runner.console.2.3.1\tools\net452\xunit.console.exe $mobileTestFile
+  ProcessErrors
+  
   echo "Running data access layer tests"
   .\packages\xunit.runner.console.2.3.1\tools\net452\xunit.console.exe $dataTestFile
   ProcessErrors
@@ -78,6 +84,10 @@ function _Publish() {
   
   echo "Building project"  
   Msbuild $projectPath /p:DeployOnBuild=true /p:PublishProfile=Integration /p:AllowUntrustedCertificate=true /p:Password=$publishPassword
+  ProcessErrors
+  
+  echo "Building mobile project"  
+  Msbuild $mobileProjectPath /p:DeployOnBuild=true /p:PublishProfile=Integration /p:AllowUntrustedCertificate=true /p:Password=$publishPassword
   ProcessErrors
   popd
 }

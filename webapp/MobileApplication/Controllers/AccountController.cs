@@ -79,6 +79,8 @@ namespace K9.WebApplication.Controllers
         {
             if (ModelState.IsValid)
             {
+                throw new Exception("What an earth is going on here?");
+
                 switch (_accountService.Login(model.UserName, model.Password, model.RememberMe))
                 {
                     case ELoginResult.Success:

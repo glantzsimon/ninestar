@@ -1,4 +1,5 @@
 ﻿using K9.Base.WebApplication.Filters;
+using K9.WebApplication.Filters;
 using System.Web.Mvc;
 
 namespace K9.WebApplication
@@ -10,6 +11,7 @@ namespace K9.WebApplication
 			filters.Add(new HandleErrorAttribute());
 			filters.Add(new CultureAttribute());
 		    filters.Add(new ContentLoaderAttribute());
+		    filters.Add(new LogCustomExceptionFilter());
         }
 	}
 }

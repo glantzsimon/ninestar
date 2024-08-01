@@ -289,6 +289,7 @@
     <Compile Include="Enums\ESexualityType.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="Filters\LogCustomExceptionFilter.cs" />
     <Compile Include="Helpers\ArrayHelper.cs" />
     <Compile Include="Helpers\General.cs" />
     <Compile Include="Helpers\ViewBagHelper.cs" />

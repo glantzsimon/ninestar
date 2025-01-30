@@ -28,7 +28,7 @@ namespace K9.WebApplication.Controllers
             _biorhythmsService = biorhythmsService;
         }
 
-        [Route("calculate")]
+        [Route("calculate/personalchart")]
         public ActionResult Index()
         {
             var dateOfBirth = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day);
@@ -40,7 +40,7 @@ namespace K9.WebApplication.Controllers
             return View(new NineStarKiModel(personModel));
         }
 
-        [Route("calculate")]
+        [Route("calculate/personalchart")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CalculateNineStarKi(NineStarKiModel model)
@@ -63,7 +63,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Authorize]
-        [Route("view-saved-chart")]
+        [Route("view/savedchart")]
         public ActionResult ViewProfile(int id)
         {
             try
@@ -78,7 +78,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Authorize]
-        [Route("my-chart")]
+        [Route("view/mychart")]
         public ActionResult MyProfile()
         {
             var myAccount = _usersRepository.Find(_authentication.CurrentUserId);
@@ -96,7 +96,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Authorize]
-        [Route("my-chart/cycles")]
+        [Route("view/mycycles")]
         public ActionResult MyCycles()
         {
             var myAccount = _usersRepository.Find(_authentication.CurrentUserId);
@@ -108,7 +108,7 @@ namespace K9.WebApplication.Controllers
             }, false, true));
         }
 
-        [Route("retrieve-last")]
+        [Route("retrieve/profile")]
         [Authorize]
         public ActionResult RetrieveLast()
         {
@@ -126,7 +126,7 @@ namespace K9.WebApplication.Controllers
             }
         }
 
-        [Route("last-profile")]
+        [Route("view/chart")]
         [Authorize]
         public ActionResult RetrieveLastProfile(bool todayOnly = false)
         {
@@ -147,7 +147,7 @@ namespace K9.WebApplication.Controllers
             return View("Index", model);
         }
 
-        [Route("last-compatibility")]
+        [Route("retrieve/compatibility")]
         [Authorize]
         public ActionResult RetrieveLastCompatibility(bool todayOnly = false)
         {
@@ -161,7 +161,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Authorize]
-        [Route("view-saved-compatibility")]
+        [Route("view/compatibility")]
         public ActionResult ViewCompatibility(int id)
         {
             return View("Compatibility", _nineStarKiService.RetrieveCompatibility(id));
@@ -197,7 +197,7 @@ namespace K9.WebApplication.Controllers
             return View("Compatibility", model);
         }
 
-        [Route("all-enegies")]
+        [Route("list/allenegies")]
         public ContentResult GetAllEnergies()
         {
             var sb = new StringBuilder();

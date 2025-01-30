@@ -281,6 +281,10 @@
     <Compile Include="Migrations\202405040756040_UpdateDonations.Designer.cs">
       <DependentUpon>202405040756040_UpdateDonations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202501271259251_UpdateMembershipOptions.cs" />
+    <Compile Include="Migrations\202501271259251_UpdateMembershipOptions.Designer.cs">
+      <DependentUpon>202501271259251_UpdateMembershipOptions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Consultation.cs" />
     <Compile Include="Models\PromoCode.cs" />
     <Compile Include="Models\Contact.cs" />
@@ -365,6 +369,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202405040756040_UpdateDonations.resx">
       <DependentUpon>202405040756040_UpdateDonations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202501271259251_UpdateMembershipOptions.resx">
+      <DependentUpon>202501271259251_UpdateMembershipOptions.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

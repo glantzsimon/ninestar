@@ -18,19 +18,9 @@
 <div class="container main-content">
     <div class="well margin-bottom-0">
         <div class="row">
-            @Html.ImagePanel("Welcome", "~/Images/home/ninestar-home-bg.jpg")
-
-            <div class="col-md-4 col-sm-4 padding-0">
-                <article>
-                    <h4>@Dictionary.PersonalProfileCalculator</h4>
-                    @Html.Partial("../NineStarKi/_Calculator")
-                </article>
-            </div>
-            <div class="col-md-8 col-sm-8 padding-left-20-desktop padding-right-0">
-                <article>
-                    @MvcHtmlString.Create(Dictionary.welcome)
-                </article>
-            </div>
+            <article>
+                @MvcHtmlString.Create(Dictionary.welcome)
+            </article>
         </div>
         <div class="row">
             <article>
@@ -39,9 +29,11 @@
 
             <br />
 
-            @Html.BootstrapActionLinkButton(Dictionary.FindOutHowCompatibleYouAre, "Compatibility", "NineStarKi", null, "fa-heart", EButtonClass.Info, EButtonClass.Large)
+            @Html.BootstrapActionLinkButton(Dictionary.PersonalChartCalculator, "Index", "NineStarKi", null, "fa fa-yin-yang", EButtonClass.Primary, EButtonClass.Large)
 
-            @Html.BootstrapActionLinkButton(Dictionary.BookAConsultation, "BookConsultationStart", "Consultation", null, "fa-phone-alt", EButtonClass.Success, EButtonClass.Large)
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutHowCompatibleYouAre, "Compatibility", "NineStarKi", null, "fa fa-heart", EButtonClass.Info, EButtonClass.Large)
+
+            @Html.BootstrapActionLinkButton(Dictionary.BookAConsultation, "BookConsultationStart", "Consultation", null, "fa fa-phone-alt", EButtonClass.Success, EButtonClass.Large)
         </div>
     </div>
 </div>

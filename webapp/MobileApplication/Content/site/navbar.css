@@ -119,8 +119,16 @@ ul.nav.navbar-nav:not(.dropdown-menu) {
         #account-header ul > li {
             display: inline-block;
             height: 100%;
-            background: black;
+            background: #B180FF;
             color: white !important;
+            margin: 2px;
+            border-radius: 7px;
+            margin-right: 2px !important;
+            margin-top: 7px;
+            padding-left: 7px;
+            padding-right: 7px;
+            padding-top: 3px;
+            padding-bottom: 3px;
         }
 
             #account-header ul > li a {
@@ -128,8 +136,6 @@ ul.nav.navbar-nav:not(.dropdown-menu) {
                 color: white;
                 width: 100%;
                 height: 100%;
-                padding-top: 10px;
-                padding-left: 15px;
             }
 
         #account-header ul.site-controls > li:hover a, #account-header ul.main-navbar > li:hover a {
@@ -144,51 +150,47 @@ ul.nav.navbar-nav:not(.dropdown-menu) {
         }
 
 div#main-logo-container {
-    position: fixed;
-    width: 200px;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-    top: 40px;
+    width: 100%;
+    height: 100%;
     z-index: 9003;
     -webkit-transition: all 0.35s ease-in-out;
     -moz-transition: all 0.35s ease-in-out;
     -o-transition: all 0.35s ease-in-out;
     transition: all 0.35s ease-in-out;
+    margin-top: -21px;
 }
 
     div#main-logo-container.menu-main {
-        height: 180px;
+        height: 100%;
     }
 
     div#main-logo-container.menu-small {
-        height: 100px;
+        height: 100%;
+        margin-top: -12px;
     }
 
-    div#main-logo-container a div {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        margin-left: 4px;
-        margin-top: 2px;
-        -webkit-transform: translateX(-50%) translateY(-50%);
-        transform: translateX(-50%) translateY(-50%);
-        -webkit-transition: all 0.35s ease-in-out;
-        -moz-transition: all 0.35s ease-in-out;
-        -o-transition: all 0.35s ease-in-out;
-        transition: all 0.35s ease-in-out;
-        cursor: pointer;
-        display: block;
-        opacity: 0.8;
+    div#main-logo-container a {
+        padding: 0 !important;
     }
 
-        div#main-logo-container a div:hover {
-            opacity: 1;
+        div#main-logo-container a div {
+            -webkit-transition: all 0.35s ease-in-out;
+            -moz-transition: all 0.35s ease-in-out;
+            -o-transition: all 0.35s ease-in-out;
+            transition: all 0.35s ease-in-out;
+            cursor: pointer;
+            display: block;
+            opacity: 0.8;
+            padding: 7px;
         }
 
-    div#main-logo-container a.active div {
-        opacity: 1;
-    }
+            div#main-logo-container a div:hover {
+                opacity: 1;
+            }
+
+        div#main-logo-container a.active div {
+            opacity: 1;
+        }
 
 ul.admin-menu ul.dropdown-menu {
     margin-top: 40px;
@@ -221,6 +223,7 @@ ul.admin-menu ul.dropdown-menu {
     position: fixed;
     top: 40px;
     width: 100%;
+    background: rgba(0.3, 255, 255, 255);
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
@@ -229,13 +232,11 @@ ul.admin-menu ul.dropdown-menu {
 }
 
     #main-menu-container.menu-main {
-        height: 180px;
-        
+        height: 100px;
     }
 
     #main-menu-container.menu-small {
-        height: 100px;
-        
+        height: 72px;
     }
 
 #bs-navbar-collapse-1 {
@@ -251,11 +252,11 @@ ul.admin-menu ul.dropdown-menu {
 }
 
     #bs-navbar-collapse-1.menu-main {
-        top: 100px;
+        top: 65px;
     }
 
     #bs-navbar-collapse-1.menu-small {
-        top: 63px;
+        top: 40px;
     }
 
 ul.main-navbar li.open a {
@@ -282,13 +283,13 @@ ul.main-navbar .open ul.dropdown-menu {
         border-bottom-right-radius: 5px;
     }
 
-        ul.main-navbar .open ul.dropdown-menu li:hover a {
-            font-weight: 600;
-            color: #FF9800 !important;
-            -webkit-transition: none;
-            -o-transition: none;
-            transition: none;
-        }
+    ul.main-navbar .open ul.dropdown-menu li:hover a {
+        font-weight: 600;
+        color: #FF9800 !important;
+        -webkit-transition: none;
+        -o-transition: none;
+        transition: none;
+    }
 
     ul.main-navbar .open ul.dropdown-menu li.active > a {
         color: #FF9800 !important;
@@ -300,17 +301,20 @@ ul.main-navbar .open ul.dropdown-menu {
 }
 
 div.main-logo {
-    height: 176px;
-    width: 176px;
+    height: 91px;
+    width: 91px;
     background-image: url(../../Images/company/logo.png);
     background-repeat: no-repeat;
+    background-size: contain;
 }
 
 div.small-logo {
-    height: 88px;
-    width: 88px;
-    background-image: url(../../Images/company/logo-small.png);
+    height: 65px;
+    width: 65px;
+    margin-top: 15px;
+    background-image: url(../../Images/company/logo.png);
     background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .nav > li > a:hover, .nav > li > a {

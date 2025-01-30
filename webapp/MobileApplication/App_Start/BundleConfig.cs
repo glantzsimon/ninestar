@@ -25,6 +25,7 @@ namespace K9.WebApplication
                 "~/Content/site/mobile.css",
                 "~/Content/site/tables.css",
                 "~/Content/site/navbar.css",
+                "~/Content/site/9starkiastrology/*.css",
                 "~/Content/site/sections/*.css"));
 
             bundles.Add(new StyleBundle("~/Content/k9").Include(

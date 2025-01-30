@@ -26,10 +26,14 @@ namespace K9.DataAccessLayer.Models
             MonthlyStandard = 1,
             [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.AnnualStandardMembership)]
             AnnualStandard = 2,
+            [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.WeeklyPlatinumMembership)]
+            WeeklyPlatinum = 9,
             [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.MonthlyPlatinumMembership)]
             MonthlyPlatinum = 10,
             [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.AnnualPlatinumMembership)]
-            AnnualPlatinum = 11
+            AnnualPlatinum = 11,
+            [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.LifeTimePlatinumMembership)]
+            LifeTimePlatinum = 12
         }
 
         [UIHint("SubscriptionType")]
@@ -58,12 +62,12 @@ namespace K9.DataAccessLayer.Models
         public double PriceIncludingDiscount { get; set; }
 
         [Required]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MaxNumberOfProfileReadingsLabel)]
-        public int MaxNumberOfProfileReadings { get; set; }
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NumberOfProfileReadingsLabel)]
+        public int NumberOfProfileReadings { get; set; }
 
         [Required]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MaxNumberOfCompatibilityReadingsLabel)]
-        public int MaxNumberOfCompatibilityReadings { get; set; }
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NumberOfCompatibilityReadingsLabel)]
+        public int NumberOfCompatibilityReadings { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubscriptionCostLabel)]
         public string FormattedPrice => Price.ToString("C0", CultureInfo.GetCultureInfo("en-US"));
@@ -107,7 +111,9 @@ namespace K9.DataAccessLayer.Models
         private string GetCssClassName()
         {
             if (SubscriptionType == ESubscriptionType.AnnualPlatinum ||
-                SubscriptionType == ESubscriptionType.MonthlyPlatinum)
+                SubscriptionType == ESubscriptionType.MonthlyPlatinum ||
+                SubscriptionType == ESubscriptionType.WeeklyPlatinum ||
+                SubscriptionType == ESubscriptionType.LifeTimePlatinum)
             {
                 return "platinum";
             }
@@ -124,7 +130,9 @@ namespace K9.DataAccessLayer.Models
         private string GetMembershipMedalElement()
         {
             if (SubscriptionType == ESubscriptionType.AnnualPlatinum ||
-                SubscriptionType == ESubscriptionType.MonthlyPlatinum)
+                SubscriptionType == ESubscriptionType.MonthlyPlatinum ||
+                SubscriptionType == ESubscriptionType.WeeklyPlatinum ||
+                SubscriptionType == ESubscriptionType.LifeTimePlatinum)
             {
                 return "PlatinumMembership";
             }
@@ -143,13 +151,18 @@ namespace K9.DataAccessLayer.Models
             if (SubscriptionType == ESubscriptionType.AnnualPlatinum ||
                 SubscriptionType == ESubscriptionType.AnnualStandard)
             {
-                return "Annual";
+                return "Yearly";
             }
 
             if (SubscriptionType == ESubscriptionType.MonthlyPlatinum ||
                 SubscriptionType == ESubscriptionType.MonthlyStandard)
             {
                 return "Monthly";
+            }
+
+            if (SubscriptionType == ESubscriptionType.WeeklyPlatinum)
+            {
+                return "Weekly";
             }
 
             return "Lifetime";

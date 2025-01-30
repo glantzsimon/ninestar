@@ -36,12 +36,15 @@
             @Model.NumberOfRelationshipCompatibilityReadingsLeftText
         </div>
     </div>
-    <div class="padding-top-10">
-        <div class="col-sm-8 col-xs-12 padding-top-5">
-            <strong>@Dictionary.NumberOfCreditsLeft:</strong>
+    @if (Model.NumberOfCreditsLeft > 0)
+    {
+        <div class="padding-top-10">
+            <div class="col-sm-8 col-xs-12 padding-top-5">
+                <strong>@Dictionary.NumberOfCreditsLeft:</strong>
+            </div>
+            <div class="col-sm-4 col-xs-12 padding-top-5">
+                @Model.NumberOfCreditsLeft
+            </div>
         </div>
-        <div class="col-sm-4 col-xs-12 padding-top-5">
-            @Model.NumberOfCreditsLeft
-        </div>
-    </div>
+    }
 </div>

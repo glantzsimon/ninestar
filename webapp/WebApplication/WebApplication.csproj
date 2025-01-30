@@ -460,6 +460,7 @@
     <Content Include="Global.asax" />
     <Content Include="Images\about\light-dark.jpg" />
     <Content Include="Images\background\stars.jpg" />
+    <Content Include="Images\background\yin-yang.jpg" />
     <Content Include="Images\company\logo-med.png" />
     <Content Include="Images\company\logo-small.png" />
     <Content Include="Images\company\logo.png" />

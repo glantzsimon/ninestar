@@ -4,7 +4,10 @@
 {
     using (Html.BeginBootstrapForm())
     {
-        @Html.BootstrapEditorFor(model => model.PersonModel.Name)
+        @Html.BootstrapEditorFor(model => model.PersonModel.Name, new EditorOptions
+        {
+            Label = Dictionary.OptionalNameLabel
+        })
         @Html.BootstrapEditorFor(model => model.PersonModel.DateOfBirth)
         <div data-toggle="tooltip" data-placement="top" title="@Dictionary.GenderSelectionTooltip">
             @Html.BootstrapEditorFor(model => model.PersonModel.Gender)

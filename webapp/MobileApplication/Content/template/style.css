@@ -10,6 +10,8 @@
     url('../fonts/alex-brush-v8-latin-regular.svg#AlexBrush') format('svg'); /* Legacy iOS */
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 @font-face {
     font-family: 'candara';
     font-style: normal;
@@ -28,6 +30,12 @@
     src: url('../fonts/Sentient-VariableItalic.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    src: url('../fonts/inter.ttf') format('truetype');
+}
+
 body a, h4 {
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
@@ -38,7 +46,7 @@ body a, h4 {
 
 html, body {
     font-size: 100%;
-    font-family: 'sentient', 'Candara', 'Montserrat', sans-serif;
+    font-family: Inter, 'sentient', 'Candara', 'Montserrat', sans-serif;
 }
 
 body {

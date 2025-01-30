@@ -60,7 +60,7 @@ namespace K9.DataAccessLayer.Models
 
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfProfileReadingsLeft)]
-        public int NumberOfProfileReadingsLeft => MembershipOption?.MaxNumberOfProfileReadings - ProfileReadings?.Where(e => !e.UserCreditPackId.HasValue)?.Count() ?? 0;
+        public int NumberOfProfileReadingsLeft => MembershipOption?.NumberOfProfileReadings - ProfileReadings?.Where(e => !e.UserCreditPackId.HasValue)?.Count() ?? 0;
 
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary),
@@ -70,7 +70,7 @@ namespace K9.DataAccessLayer.Models
 
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfRelationshipCompatibilityReadingsLeft)]
-        public int NumberOfRelationshipCompatibilityReadingsLeft => MembershipOption?.MaxNumberOfCompatibilityReadings - RelationshipCompatibilityReadings?.Where(e => !e.UserCreditPackId.HasValue)?.Count() ?? 0;
+        public int NumberOfRelationshipCompatibilityReadingsLeft => MembershipOption?.NumberOfCompatibilityReadings - RelationshipCompatibilityReadings?.Where(e => !e.UserCreditPackId.HasValue)?.Count() ?? 0;
 
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfRelationshipCompatibilityReadingsLeft)]

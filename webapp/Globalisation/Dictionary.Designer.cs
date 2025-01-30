@@ -1615,6 +1615,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Back To My Account.
+        /// </summary>
+        public static string BackToMyAccountTitle {
+            get {
+                return ResourceManager.GetString("BackToMyAccountTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This site is under development and new features are being added continuously. Your feedback is welcome. Please visit the support page to get in touch..
         /// </summary>
         public static string BetaWarning {
@@ -1904,7 +1913,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Please note that the &apos;Deeper Character&apos; Energy alone does not give a very detailed description of a person. It is important to also take into account the &apos;Fundamental Adult Nature&apos;, as well as the &apos;Surface Energy&apos;. However, it does give a useful overview of their deeper character. The Character Energy also has quite a significant influence on intimate relationships, where the more emotional aspects of ourselves tend to be revealed. There is more information on that in the &lt;a href=&quot;{RelationshipsUrl [rest of string was truncated]&quot;;.
+        ///    Please note that the &apos;Emotional Energy&apos; alone does not give a very detailed description of a person. It is important to also take into account the &apos;Fundamental Adult Nature&apos;, as well as the &apos;Surface Energy&apos;. However, it does give a useful overview of their deeper character. The Character Energy also has quite a significant influence on intimate relationships, where the more emotional aspects of ourselves tend to be revealed. There is more information on that in the &lt;a href=&quot;{RelationshipsUrl}&quot;&gt;Rela [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_energies_short_description {
             get {
@@ -2006,10 +2015,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    This describes our &lt;strong&gt;deeper nature&lt;/strong&gt;, which is typically only &lt;strong&gt;revealed as people get to know us better&lt;/strong&gt;. It&apos;s also the Energy that &lt;strong&gt;most influences us when we are stressed or emotional&lt;/strong&gt;. Our deeper character Energy also &lt;strong&gt;plays a significant role in our romantic relationships&lt;/strong&gt; and close friendships.
+        ///    This describes our &lt;strong&gt;deeper, emotional nature&lt;/strong&gt;, which is typically only &lt;strong&gt;revealed as people get to know us better&lt;/strong&gt;. It&apos;s also the Energy that &lt;strong&gt;most influences us when we are stressed or emotional&lt;/strong&gt;. Our Emotional Energy also &lt;strong&gt;plays a significant role in our romantic relationships&lt;/strong&gt; and close friendships.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This Energy is also &lt;strong&gt;connected to our inner child&lt;/strong&gt;, as it is the Energy that we &lt;strong&gt;primarily embody and expr [rest of string was truncated]&quot;;.
+        ///    This Energy is also &lt;strong&gt;connected to our inner child&lt;/strong&gt;, as it is the Energy that we &lt;strong&gt;primarily embody and  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CharacterEnergyDescription {
             get {
@@ -2018,7 +2027,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deeper Character.
+        ///   Looks up a localized string similar to Emotional Energy.
         /// </summary>
         public static string CharacterEnergyLabel {
             get {
@@ -2027,7 +2036,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deeper Character.
+        ///   Looks up a localized string similar to Emotional Energy.
         /// </summary>
         public static string CharacterEnergyShortLabel {
             get {
@@ -2668,6 +2677,15 @@ namespace K9.Globalisation {
         public static string coreearth_trigram {
             get {
                 return ResourceManager.GetString("coreearth_trigram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Account.
+        /// </summary>
+        public static string CreateAccount {
+            get {
+                return ResourceManager.GetString("CreateAccount", resourceCulture);
             }
         }
         
@@ -3663,7 +3681,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to External Persona.
+        ///   Looks up a localized string similar to Mask Energy.
         /// </summary>
         public static string ExternalPersona {
             get {
@@ -5048,11 +5066,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lifetime Platinum Membership.
+        /// </summary>
+        public static string LifeTimePlatinumMembership {
+            get {
+                return ResourceManager.GetString("LifeTimePlatinumMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Loading....
         /// </summary>
         public static string Loading {
             get {
                 return ResourceManager.GetString("Loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log In.
+        /// </summary>
+        public static string LogIn {
+            get {
+                return ResourceManager.GetString("LogIn", resourceCulture);
             }
         }
         
@@ -6193,24 +6229,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Number of Relationship Compatibility Readings per month.
-        /// </summary>
-        public static string MaxNumberOfCompatibilityReadingsLabel {
-            get {
-                return ResourceManager.GetString("MaxNumberOfCompatibilityReadingsLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Number of Chart Readings per month.
-        /// </summary>
-        public static string MaxNumberOfProfileReadingsLabel {
-            get {
-                return ResourceManager.GetString("MaxNumberOfProfileReadingsLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Multimedia.
         /// </summary>
         public static string MediaTheque {
@@ -6260,7 +6278,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Subscription.
+        ///   Looks up a localized string similar to Membership.
         /// </summary>
         public static string MembershipLabel {
             get {
@@ -6269,7 +6287,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Subscription.
+        ///   Looks up a localized string similar to Membership.
         /// </summary>
         public static string MembershipOption {
             get {
@@ -6278,7 +6296,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Subscriptions.
+        ///   Looks up a localized string similar to Membership Options.
         /// </summary>
         public static string MembershipOptions {
             get {
@@ -7061,6 +7079,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Number of Relationship Compatibility Readings per month.
+        /// </summary>
+        public static string NumberOfCompatibilityReadingsLabel {
+            get {
+                return ResourceManager.GetString("NumberOfCompatibilityReadingsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Number of Credits.
         /// </summary>
         public static string NumberOfCreditsLabel {
@@ -7075,6 +7102,15 @@ namespace K9.Globalisation {
         public static string NumberOfCreditsLeft {
             get {
                 return ResourceManager.GetString("NumberOfCreditsLeft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of Chart Readings per month.
+        /// </summary>
+        public static string NumberOfProfileReadingsLabel {
+            get {
+                return ResourceManager.GetString("NumberOfProfileReadingsLabel", resourceCulture);
             }
         }
         
@@ -7138,6 +7174,15 @@ namespace K9.Globalisation {
         public static string OnTheBrinkOfExtinctionTitle {
             get {
                 return ResourceManager.GetString("OnTheBrinkOfExtinctionTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name (Optional).
+        /// </summary>
+        public static string OptionalNameLabel {
+            get {
+                return ResourceManager.GetString("OptionalNameLabel", resourceCulture);
             }
         }
         
@@ -7283,13 +7328,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The 9 Star Ki personal chart is comprised of three numbers, each from 1 to 9, resulting in 81 unique character profiles, spanning nine years.
+        ///    The 9 Star Ki personal chart is comprised of three numbers, each from 1 to 9. For example, 3.1.7. This results in a total of 81 unique profiles, spanning nine years.
         ///&lt;/p&gt;
         ///&lt;h5&gt;
-        ///    First Number - Fundamental Energy / Adult Persona
+        ///    First Number - Fundamental Energy
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The first number is &lt;strong&gt;determined by the year we were born&lt;/strong&gt; and corresponds to our &lt;strong&gt;fundamental nature&lt;/strong&gt;; the way we essentially view and make sense of the world. It is the Energy &lt;strong&gt;most strongly associated with our adult selves&lt;/strong&gt; and on [rest of string was truncated]&quot;;.
+        ///    The first number is &lt;strong&gt;determined by the year we were born&lt;/strong&gt; and corresponds to our &lt;strong&gt;fundamental nature&lt;/strong&gt;; the lens through which we view the world and the way we make sense of reality. It is also the Energy &lt;strong&gt;that holds the strongest in [rest of string was truncated]&quot;;.
         /// </summary>
         public static string personal_chart {
             get {
@@ -7503,10 +7548,10 @@ namespace K9.Globalisation {
         ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
         ///    &lt;h4&gt;&lt;strong&gt;Annual Platinum Subscription:&lt;/strong&gt;&lt;/h4&gt;
         ///    &lt;p&gt;
-        ///        &amp;#8226; Unlimited full Personal Chart readings for a whole year.
+        ///        &amp;#8226; Unlimited complete personal chart readings for a year.
         ///    &lt;/p&gt;
         ///    &lt;p&gt;
-        ///        &amp;#8226; Unlimited full Relationship Compatibility readings for a whole year.
+        ///        &amp;#8226; Unlimited relationship compatibility readings for a year.
         ///    &lt;/p&gt;
         ///&lt;/div&gt;.
         /// </summary>
@@ -7518,12 +7563,29 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
-        ///    &lt;h4&gt;&lt;strong&gt;Monthly Platinum Subscription:&lt;/strong&gt;&lt;/h4&gt;
+        ///    &lt;h4&gt;&lt;strong&gt;Lifetime Platinum Subscription:&lt;/strong&gt;&lt;/h4&gt;
         ///    &lt;p&gt;
-        ///        &amp;#8226; Unlimited full Personal Chart readings for a whole month.
+        ///        &amp;#8226; Unlimited complete personal chart readings forever.
         ///    &lt;/p&gt;
         ///    &lt;p&gt;
-        ///        &amp;#8226; Unlimited full Relationship Compatibility readings for a whole month.
+        ///        &amp;#8226; Unlimited relationship compatibility readings forever.
+        ///    &lt;/p&gt;
+        ///&lt;/div&gt;.
+        /// </summary>
+        public static string platinum_lifetime_membership_description {
+            get {
+                return ResourceManager.GetString("platinum_lifetime_membership_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
+        ///    &lt;h4&gt;&lt;strong&gt;Monthly Platinum Subscription:&lt;/strong&gt;&lt;/h4&gt;
+        ///    &lt;p&gt;
+        ///        &amp;#8226; Unlimited complete personal chart readings for a month.
+        ///    &lt;/p&gt;
+        ///    &lt;p&gt;
+        ///        &amp;#8226; Unlimited relationship compatibility readings for a month.
         ///    &lt;/p&gt;
         ///&lt;/div&gt;.
         /// </summary>
@@ -7534,7 +7596,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Platinum Subscription.
+        ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
+        ///    &lt;h4&gt;&lt;strong&gt;Weekly Platinum Subscription:&lt;/strong&gt;&lt;/h4&gt;
+        ///    &lt;p&gt;
+        ///        &amp;#8226; Unlimited complete personal chart readings for one week.
+        ///    &lt;/p&gt;
+        ///    &lt;p&gt;
+        ///        &amp;#8226; Unlimited relationship compatibility readings for one week.
+        ///    &lt;/p&gt;
+        ///&lt;/div&gt;.
+        /// </summary>
+        public static string platinum_weekly_membership_description {
+            get {
+                return ResourceManager.GetString("platinum_weekly_membership_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Platinum Membership.
         /// </summary>
         public static string PlatinumMembership {
             get {
@@ -9130,7 +9209,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Surface Energy / External Persona.
+        ///   Looks up a localized string similar to Mask Energy.
         /// </summary>
         public static string SurfaceEnergyLabel {
             get {
@@ -9139,7 +9218,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to External Persona.
+        ///   Looks up a localized string similar to Mask Energy.
         /// </summary>
         public static string SurfaceEnergyShortLabel {
             get {
@@ -10064,17 +10143,25 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Weekly Platinum Membership.
+        /// </summary>
+        public static string WeeklyPlatinumMembership {
+            get {
+                return ResourceManager.GetString("WeeklyPlatinumMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
         ///    9 Star Ki Astrology - Ancient wisdom for the modern era
         ///&lt;/h4&gt;
+        ///
         ///&lt;p&gt;
         ///    Greetings and thank you for visiting NineStar. Whether you are new to 9 Star Ki or even new to astrology as a whole, you&apos;ve come to a great resource to find detailed and accurate information on this ancient and fascinating system of astrology. 
         ///&lt;/p&gt;
-        ///&lt;h5&gt;
-        ///    9 Star Ki is one of the oldest systems of astrology in the world. It is based on the I Ching - The Book of Changes.
-        ///&lt;/h5&gt;
+        ///
         ///&lt;p&gt;
-        ///    9 Star Ki is possibly the oldest s [rest of string was truncated]&quot;;.
+        ///    &lt;strong&gt;9 Star Ki is possibly the oldest system of astrology in the world today. It is based off the 4000-year-old Chinese &apos;Book of Changes&apos; (the &apos;I Ching&apos;)&lt;/strong [rest of string was truncated]&quot;;.
         /// </summary>
         public static string welcome {
             get {
@@ -10083,10 +10170,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5 class=&quot;margin-top-0-md&quot;&gt;
-        ///    Profound insights into ourselves and our relationships
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    9 Star Ki is a simple system offering &lt;strong&gt;profound insights into ourselves and our relationships with others&lt;/strong&gt;. It is an exceptional tool to help resolve conflict in a way that minimises blame and maximises understanding and compassion. 
         ///&lt;/p&gt;
         ///&lt;p&gt;

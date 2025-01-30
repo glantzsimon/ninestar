@@ -180,6 +180,8 @@
     <Content Include="Compatibility\en-gb\main-gender-same-yin.htm" />
     <Content Include="Compatibility\en-gb\main-modality-different.htm" />
     <Content Include="Compatibility\en-gb\main-modality-same.htm" />
+    <Content Include="General\en-gb\platinum-lifetime-membership-description.htm" />
+    <Content Include="General\en-gb\platinum-weekly-membership-description.htm" />
     <Content Include="General\en-gb\welcome2.htm" />
     <Content Include="Predictions\Monthly\en-gb\core-earth-month.htm" />
     <Content Include="Predictions\Monthly\en-gb\fire-month.htm" />

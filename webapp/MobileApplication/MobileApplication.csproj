@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>K9.WebApplication</RootNamespace>
-    <AssemblyName>K9.WebApplication</AssemblyName>
+    <RootNamespace>K9.MobileApplication</RootNamespace>
+    <AssemblyName>K9.MobileApplication</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -292,6 +292,7 @@
     <Compile Include="Filters\LogCustomExceptionFilter.cs" />
     <Compile Include="Helpers\ArrayHelper.cs" />
     <Compile Include="Helpers\General.cs" />
+    <Compile Include="Helpers\LoginLogout.cs" />
     <Compile Include="Helpers\ViewBagHelper.cs" />
     <Compile Include="Constants\ViewDataConstants.cs" />
     <Compile Include="Controllers\AccountControllerAjax.cs" />
@@ -405,11 +406,11 @@
     <Content Include="Content\k9\fileUpload.css" />
     <Content Include="Content\fontawesome\font-awesome-legacy.css" />
     <Content Include="Content\k9\stroll.css" />
+    <Content Include="Content\site\9starkiastrology\classes.css" />
     <Content Include="Content\site\classes.css" />
     <Content Include="Content\site\desktop.css" />
     <Content Include="Content\site\elements.css" />
     <Content Include="Content\site\mobile.css" />
-    <Content Include="Content\site\sections\about.css" />
     <Content Include="Content\site\sections\relationships.css" />
     <Content Include="Content\site\sections\privacypolicy.css" />
     <Content Include="Content\site\sections\cookies.css" />
@@ -417,7 +418,6 @@
     <Content Include="Content\site\sections\membership.css" />
     <Content Include="Content\site\sections\ninestar.css" />
     <Content Include="Content\site\sections\payments.css" />
-    <Content Include="Content\site\sections\archive.css" />
     <Content Include="Content\site\pills.css" />
     <Content Include="Content\site\shared-xs.css" />
     <Content Include="Content\site\shared-sm.css" />
@@ -1049,6 +1049,7 @@
     <Content Include="Content\fonts\Sentient-Regular.otf" />
     <Content Include="Content\fonts\Sentient-Variable.ttf" />
     <Content Include="Content\fonts\Sentient-VariableItalic.ttf" />
+    <Content Include="Content\fonts\inter.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\Integration.pubxml" />
     <None Include="Properties\PublishProfiles\IntegrationLocal.pubxml" />
@@ -1283,6 +1284,7 @@
     <Content Include="Views\NineStarKi\_HighGauge.cshtml" />
     <Content Include="Views\NineStarKi\_CyclesPills.cshtml" />
     <Content Include="Views\NineStarKi\_SelectedDateAndPeriodTitle.cshtml" />
+    <Content Include="Views\Shared\_NavbarOriginal.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

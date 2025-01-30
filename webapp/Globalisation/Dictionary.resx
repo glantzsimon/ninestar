@@ -233,7 +233,7 @@
     <value>Centre</value>
   </data>
   <data name="CharacterEnergyLabel" xml:space="preserve">
-    <value>Deeper Character</value>
+    <value>Emotional Energy</value>
   </data>
   <data name="CoreEarth" xml:space="preserve">
     <value>Core Earth</value>
@@ -320,7 +320,7 @@
     <value>Red</value>
   </data>
   <data name="SurfaceEnergyLabel" xml:space="preserve">
-    <value>Surface Energy / External Persona</value>
+    <value>Mask Energy</value>
   </data>
   <data name="SeventhChild" xml:space="preserve">
     <value>Seventh Child</value>
@@ -800,10 +800,10 @@
     <value>articles\en-gb\coreearth-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="CharacterEnergyShortLabel" xml:space="preserve">
-    <value>Deeper Character</value>
+    <value>Emotional Energy</value>
   </data>
   <data name="ExternalPersona" xml:space="preserve">
-    <value>External Persona</value>
+    <value>Mask Energy</value>
   </data>
   <data name="fire_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\fire-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -833,7 +833,7 @@
     <value>articles\en-gb\soil-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="SurfaceEnergyShortLabel" xml:space="preserve">
-    <value>External Persona</value>
+    <value>Mask Energy</value>
   </data>
   <data name="thunder_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\thunder-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -1112,7 +1112,7 @@
     <value>Ends On</value>
   </data>
   <data name="MembershipOptions" xml:space="preserve">
-    <value>Subscriptions</value>
+    <value>Membership Options</value>
   </data>
   <data name="NotRegisteredYet" xml:space="preserve">
     <value>Not yet signed up?</value>
@@ -1148,7 +1148,7 @@
     <value>Email Address</value>
   </data>
   <data name="MembershipOption" xml:space="preserve">
-    <value>Subscription</value>
+    <value>Membership</value>
   </data>
   <data name="PurchaseMembershipErrorAlreadySubscribed" xml:space="preserve">
     <value>You are already signed up to the selected subscription.</value>
@@ -1193,7 +1193,7 @@
     <value>Your contacts were successfully imported into MailChimp</value>
   </data>
   <data name="MembershipLabel" xml:space="preserve">
-    <value>Subscription</value>
+    <value>Membership</value>
   </data>
   <data name="MembershipRunsUntil" xml:space="preserve">
     <value>Your current subscription runs until</value>
@@ -1214,7 +1214,7 @@
     <value>You will not be charged for this change in plan until</value>
   </data>
   <data name="PlatinumMembership" xml:space="preserve">
-    <value>Platinum Subscription</value>
+    <value>Platinum Membership</value>
   </data>
   <data name="PrivacyPolicyTitle" xml:space="preserve">
     <value>Privacy Policy</value>
@@ -1405,10 +1405,10 @@
   <data name="Free" xml:space="preserve">
     <value>Free</value>
   </data>
-  <data name="MaxNumberOfCompatibilityReadingsLabel" xml:space="preserve">
+  <data name="NumberOfCompatibilityReadingsLabel" xml:space="preserve">
     <value>Number of Relationship Compatibility Readings per month</value>
   </data>
-  <data name="MaxNumberOfProfileReadingsLabel" xml:space="preserve">
+  <data name="NumberOfProfileReadingsLabel" xml:space="preserve">
     <value>Number of Chart Readings per month</value>
   </data>
   <data name="NumberOfProfileReadingsLeft" xml:space="preserve">
@@ -2691,5 +2691,29 @@
   </data>
   <data name="LoginUser" xml:space="preserve">
     <value>Log In User</value>
+  </data>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>Create Account</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Log In</value>
+  </data>
+  <data name="OptionalNameLabel" xml:space="preserve">
+    <value>Name (Optional)</value>
+  </data>
+  <data name="platinum_lifetime_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>general\en-gb\platinum-lifetime-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="platinum_weekly_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>general\en-gb\platinum-weekly-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BackToMyAccountTitle" xml:space="preserve">
+    <value>Back To My Account</value>
+  </data>
+  <data name="LifeTimePlatinumMembership" xml:space="preserve">
+    <value>Lifetime Platinum Membership</value>
+  </data>
+  <data name="WeeklyPlatinumMembership" xml:space="preserve">
+    <value>Weekly Platinum Membership</value>
   </data>
 </root>

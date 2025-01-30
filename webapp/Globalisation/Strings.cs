@@ -4,6 +4,7 @@
     {
         public static class Labels
         {
+            public const string OptionalNameLabel = "OptionalNameLabel";
             public const string NumberToCreateLabel = "NumberToCreateLabel";
             public const string DonationAmountLabel = "DonationAmountLabel";
             public const string CompanyLabel = "CompanyLabel";
@@ -66,8 +67,8 @@
             public const string AutoRenewLabel = "AutoRenewLabel";
             public const string DeactivatedLabel = "DeactivatedLabel";
             public const string EmailAddressLabel = "EmailAddressLabel";
-            public const string MaxNumberOfProfileReadingsLabel = "MaxNumberOfProfileReadingsLabel";
-            public const string MaxNumberOfCompatibilityReadingsLabel = "MaxNumberOfCompatibilityReadingsLabel";
+            public const string NumberOfProfileReadingsLabel = "NumberOfProfileReadingsLabel";
+            public const string NumberOfCompatibilityReadingsLabel = "NumberOfCompatibilityReadingsLabel";
             public const string NumberOfProfileReadingsLeft = "NumberOfProfileReadingsLeft";
             public const string NumberOfRelationshipCompatibilityReadingsLeft = "NumberOfRelationshipCompatibilityReadingsLeft";
             public const string NumberOfCreditsLeft = "NumberOfCreditsLeft";
@@ -111,8 +112,10 @@
             public const string FreeMembership = "FreeMembership";
             public const string MonthlyStandardMembership = "MonthlyStandardMembership";
             public const string AnnualStandardMembership = "AnnualStandardMembership";
+            public const string WeeklyPlatinumMembership = "WeeklyPlatinumMembership";
             public const string MonthlyPlatinumMembership = "MonthlyPlatinumMembership";
             public const string AnnualPlatinumMembership = "AnnualPlatinumMembership";
+            public const string LifeTimePlatinumMembership = "LifeTimePlatinumMembership";
             public const string OneHour = "OneHour";
             public const string TwoHours = "TwoHours";
 

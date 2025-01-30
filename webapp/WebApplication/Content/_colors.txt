@@ -11,4 +11,8 @@ deepBlue		#000080
 blue			#337ab7
 midBlue			#337ab7
 successGreen	#22BB44
+dark-brown:		#331a00
+mid-brown:	    #663300;
+orange-brown:   #cc8800;
+button-focus:   #ccccb3
 

@@ -26,7 +26,8 @@
                 <hr />
                 <div class="margin-top-15">
                     @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership", null, "fa-level-up-alt", EButtonClass.Large)
-                    <div class="inline" data-toggle="tooltip" title="@Dictionary.CreditsDescriptionUI">@Html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership", null, "fa-money-bill-alt", EButtonClass.Large)</div>
+                    @*<div class="inline" data-toggle="tooltip" title="@Dictionary.CreditsDescriptionUI">@Html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership", null, "fa-money-bill-alt", EButtonClass.Large)</div>
+                    *@
                 </div>
             }
         }
@@ -34,7 +35,8 @@
         {
             <hr />
             @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership", null, "", EButtonClass.Large)
-            <div class="inline" data-toggle="tooltip" title="@Dictionary.CreditsDescriptionUI">@Html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership", null, "fa-money-bill-alt", EButtonClass.Large)</div>
+
+            @*<div class="inline" data-toggle="tooltip" title="@Dictionary.CreditsDescriptionUI">@Html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership", null, "fa-money-bill-alt", EButtonClass.Large)</div>*@
         }
     </div>
 </div>

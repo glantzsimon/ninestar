@@ -90,9 +90,14 @@
         margin-bottom: 10px;
     }
 
-.main-container {
-    min-height: 100%;
-}
+    .page-header h2 {
+        font-size: 44px;
+        color: #331a00;
+    }
+
+    .main-container {
+        min-height: 100%;
+    }
 
 .subtitle {
     display: block;

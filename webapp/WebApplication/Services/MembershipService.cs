@@ -55,12 +55,14 @@ namespace K9.WebApplication.Services
         public MembershipViewModel GetMembershipViewModel(int? userId = null)
         {
             userId = userId ?? _authentication.CurrentUserId;
-            var membershipOptions = _membershipOptionRepository.List();
+            var membershipOptions = _membershipOptionRepository.Find(e => !e.IsDeleted).ToList();
             var activeUserMembership = GetActiveUserMembership(userId);
 
             return new MembershipViewModel
             {
-                MembershipModels = new List<MembershipModel>(membershipOptions.Select(membershipOption =>
+                MembershipModels = new List<MembershipModel>(membershipOptions
+                    .Where(e => !e.IsDeleted).ToList()
+                    .Select(membershipOption =>
                 {
                     var isSubscribed = activeUserMembership != null && activeUserMembership.MembershipOptionId == membershipOption.Id;
                     var isUpgradable = activeUserMembership == null || activeUserMembership.MembershipOption.CanUpgradeTo(membershipOption);
@@ -79,7 +81,7 @@ namespace K9.WebApplication.Services
             userId = userId ?? _authentication.CurrentUserId;
             var membershipOptions = _membershipOptionRepository.List();
             var activeMemberships = _userMembershipRepository.Find(_ => _.UserId == userId).ToList()
-                .Where(_ => _.IsActive || includeScheduled && _.EndsOn > DateTime.Today);   
+                .Where(_ => _.IsActive || includeScheduled && _.EndsOn > DateTime.Today);
             var userMemberships = activeMemberships.Select(userMembership =>
                 {
                     userMembership.MembershipOption =
@@ -563,9 +565,8 @@ namespace K9.WebApplication.Services
                     SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal,
                     TotalPrice = promoCode.FormattedPrice ?? userMembership.MembershipOption.FormattedPrice,
                     EndsOn = userMembership.EndsOn.ToLongDateString(),
-                    NumberOfProfileReadings = userMembership.MembershipOption.MaxNumberOfProfileReadings,
-                    NumberOfCompatibilityReadings =
-                        userMembership.MembershipOption.MaxNumberOfCompatibilityReadings,
+                    userMembership.MembershipOption.NumberOfProfileReadings,
+                    userMembership.MembershipOption.NumberOfCompatibilityReadings,
                     ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
                     PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
                     UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { id = contact.Id }),

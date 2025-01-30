@@ -54,7 +54,7 @@ namespace K9.WebApplication.Services
 
             if (_authentication.IsAuthenticated)
             {
-                if (isCompatibility || _roles.CurrentUserIsInRoles(RoleNames.Administrators) || isMyProfile || _membershipService.IsCompleteProfileReading(_authentication.CurrentUserId, personModel))
+                if (isCompatibility || _roles.CurrentUserIsInRoles(RoleNames.Administrators) || _membershipService.IsCompleteProfileReading(_authentication.CurrentUserId, personModel))
                 {
                     model.ReadingType = EReadingType.Complete;
                 }

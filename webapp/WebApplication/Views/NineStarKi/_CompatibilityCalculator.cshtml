@@ -5,32 +5,31 @@
     using (Html.BeginBootstrapForm())
     {
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-12">
                 <h4 class="margin-top-0">@Dictionary.FirstPerson</h4>
                 <div class="col-sm-12">
                     @Html.BootstrapEditorFor(model => model.NineStarKiModel1.PersonModel.Name)
                 </div>
-                <div>
-                    <div class="col-sm-6">
-                        @Html.BootstrapEditorFor(model => model.NineStarKiModel1.PersonModel.DateOfBirth)
-                    </div>
-                    <div class="col-sm-6">
-                        <div data-toggle="tooltip" data-placement="top" title="@Dictionary.GenderSelectionTooltip">
-                            @Html.BootstrapEditorFor(model => model.NineStarKiModel1.PersonModel.Gender)
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <h4 class="margin-top-0">@Dictionary.SecondPerson</h4>
                 <div class="col-sm-12">
-                    @Html.BootstrapEditorFor(model => model.NineStarKiModel2.PersonModel.Name)
+                    @Html.BootstrapEditorFor(model => model.NineStarKiModel1.PersonModel.DateOfBirth)
                 </div>
-                <div>
-                    <div class="col-sm-6">
+                <div class="col-sm-12">
+                    <div data-toggle="tooltip" data-placement="top" title="@Dictionary.GenderSelectionTooltip">
+                        @Html.BootstrapEditorFor(model => model.NineStarKiModel1.PersonModel.Gender)
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h4 class="margin-top-0">@Dictionary.SecondPerson</h4>
+                    <div class="col-sm-12">
+                        @Html.BootstrapEditorFor(model => model.NineStarKiModel2.PersonModel.Name)
+                    </div>
+                    <div class="col-sm-12">
                         @Html.BootstrapEditorFor(model => model.NineStarKiModel2.PersonModel.DateOfBirth)
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                         <div data-toggle="tooltip" data-placement="top" title="@Dictionary.GenderSelectionTooltip">
                             @Html.BootstrapEditorFor(model => model.NineStarKiModel2.PersonModel.Gender)
                         </div>

@@ -91,6 +91,8 @@ namespace K9.WebApplication.Models
 
         public EReadingType ReadingType { get; set; }
 
+        public bool IsUpgradeRequired { get; set; }
+
         public ESexualityRelationType SexualityRelationType => GetSexualityRelationType();
 
         public string OverviewLabel => $"{MainEnergy.EnergyNameAndNumber} Overview";

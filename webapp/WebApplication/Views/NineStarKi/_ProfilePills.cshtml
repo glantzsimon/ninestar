@@ -68,11 +68,11 @@
 
                             @Html.Partial("_ProfileHeader", Model.CharacterEnergy)
 
-                            @using (Html.PaidContent(Model, () => Model.ReadingType == EReadingType.Complete))
+                            @using (Html.PaidContent(Model, () => !Model.IsUpgradeRequired))
                             {
                                 @Html.Partial("_ProfileBody", Model.CharacterEnergy)
                             }
-                            
+
                             <br />
 
                             @Html.BootstrapActionLinkButton(Dictionary.FindOutHowCompatibleYouAre, "Compatibility", "NineStarKi", null, "fa fa-heart", EButtonClass.Large)
@@ -87,7 +87,7 @@
 
                             @Html.Partial("_ProfileHeader", Model.SurfaceEnergy)
 
-                            @using (Html.PaidContent(Model, () => Model.ReadingType == EReadingType.Complete))
+                            @using (Html.PaidContent(Model, () => !Model.IsUpgradeRequired))
                             {
                                 @Html.Partial("_ProfileBody", Model.SurfaceEnergy)
                             }
@@ -105,20 +105,20 @@
 
                 @if (Model.PersonModel.IsSixteenOrOver())
                 {
-                    <div id="sexuality" class="tab-pane fade">
-                        @Html.CollapsiblePanel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.sexuality_description, true)
+                <div id="sexuality" class="tab-pane fade">
+                    @Html.CollapsiblePanel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.sexuality_description, true)
 
-                        @using (Html.PaidContent(Model, () => Model.ReadingType == EReadingType.Complete))
-                        {
-                            @Html.Partial("_ProfileSexuality", Model)
-                        }
-                    </div>
+                    @using (Html.PaidContent(Model, () => !Model.IsUpgradeRequired))
+                    {
+                        @Html.Partial("_ProfileSexuality", Model)
+                    }
+                </div>
                 }
 
                     <div id="predictions" class="tab-pane fade margin-top-20">
                         @Html.CollapsiblePanel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.cycles_description, true)
 
-                        @using (Html.PaidContent(Model, () => Model.ReadingType == EReadingType.Complete))
+                        @using (Html.PaidContent(Model, () => !Model.IsUpgradeRequired))
                         {
                             @Html.Partial("_Cycles")
                         }

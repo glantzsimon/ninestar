@@ -2,8 +2,7 @@
 @model K9.WebApplication.Models.NineStarKiModel
 @{
     ViewBag.Title = K9.Base.Globalisation.Dictionary.Home;
-    ViewBag.SubTitle = Dictionary.WelcomeSubTitle;
-    ViewBag.Background = ViewBagHelper.EViewBackground.Jarallax;
+    ViewBag.SubTitle = Dictionary.WelcomeSubTitle;    
     Layout = "../Shared/_LayoutFormMedium.cshtml";
 }
 
@@ -21,12 +20,7 @@
             <article>
                 @MvcHtmlString.Create(Dictionary.welcome)
             </article>
-        </div>
-        <div class="row">
-            <article>
-                @MvcHtmlString.Create(Dictionary.welcome2)
-            </article>
-
+       
             <br />
 
             @Html.BootstrapActionLinkButton(Dictionary.PersonalChartCalculator, "Index", "NineStarKi", null, "fa fa-yin-yang", EButtonClass.Primary, EButtonClass.Large)

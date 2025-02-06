@@ -1761,10 +1761,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Both Fundamental and Character Energies are Yang
+        ///    Both Fundamental and Emotional Energies are Yang
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both the Fundamental and Character Energies are Yang. This could lead to increased conflict as Yang Energies tend to be more confrontational than Yin Energies. On the other hand, as both Energies are Yang, it is likely that they will understand each other quite well, especially if the Elements are either in a &lt;a target=&quot;_blank&quot; href=&quot;{SameTransformation}&quot;&gt;Sibling Transformation&lt;/a&gt; or a &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransforma [rest of string was truncated]&quot;;.
+        ///    Both the Fundamental and Emotional Energies are Yang. This could lead to increased conflict as Yang Energies tend to be more confrontational than Yin Energies. On the other hand, as both Energies are Yang, it is likely that they will understand each other quite well, especially if the Elements are either in a &lt;a target=&quot;_blank&quot; href=&quot;{SameTransformation}&quot;&gt;Sibling Transformation&lt;/a&gt; or a &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransforma [rest of string was truncated]&quot;;.
         /// </summary>
         public static string both_gender_same_yang {
             get {
@@ -1774,10 +1774,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Both Fundamental and Character Energies are Yin
+        ///    Both Fundamental and Emotional Energies are Yin
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Both the Fundamental and Character Energies are Yin. In the absence of Yang, there could be a breakdown in communication and the relationship could become stagnant. On the other hand, as both Energies are Yin, it is likely that they will understand each other quite well, especially if the Elements are either in a &lt;a target=&quot;_blank&quot; href=&quot;{SameTransformation}&quot;&gt;Sibling Transformation&lt;/a&gt; or a &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransfo [rest of string was truncated]&quot;;.
+        ///    Both the Fundamental and Emotional Energies are Yin. In the absence of Yang, there could be a breakdown in communication and the relationship could become stagnant. On the other hand, as both Energies are Yin, it is likely that they will understand each other quite well, especially if the Elements are either in a &lt;a target=&quot;_blank&quot; href=&quot;{SameTransformation}&quot;&gt;Sibling Transformation&lt;/a&gt; or a &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransfo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string both_gender_same_yin {
             get {
@@ -1884,10 +1884,10 @@ namespace K9.Globalisation {
         ///    Same Element - &lt;a target=&quot;_blank&quot; href=&quot;{SameTransformationLink}&quot;&gt;Sibling Relationship&lt;/a&gt;
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The Character Energies have the same element. There is a potential for a &lt;strong&gt;deep emotional connection&lt;/strong&gt; as well as a very good &lt;strong&gt;mutual understanding on an emotional level&lt;/strong&gt;. This can help to create more harmony in the relationship, especially if the fundamental Energies are antagonistic.
+        ///    The Emotional Energies have the same element. There is a potential for a &lt;strong&gt;deep emotional connection&lt;/strong&gt; as well as a very good &lt;strong&gt;mutual understanding on an emotional level&lt;/strong&gt;. This can help to create more harmony in the relationship, especially if the fundamental Energies are antagonistic.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    In romantic relationships, sharing the same Character Energy el [rest of string was truncated]&quot;;.
+        ///    In romantic relationships, sharing the same Emotional Energy el [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_element_same {
             get {
@@ -1900,10 +1900,10 @@ namespace K9.Globalisation {
         ///    &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransformationLink}&quot;&gt;Supportive Transformation&lt;/a&gt; - Parent Child Relationship
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The Character Energies are in a &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransformationLink}&quot;&gt;Supportive Transformation&lt;/a&gt;, in which one Energy supports or nourishes the next. This typically creates a &lt;strong&gt;strong emotional connection and mutual understanding&lt;/strong&gt;.
+        ///    The Emotional Energies are in a &lt;a target=&quot;_blank&quot; href=&quot;{SupportiveTransformationLink}&quot;&gt;Supportive Transformation&lt;/a&gt;, in which one Energy supports or nourishes the next. This typically creates a &lt;strong&gt;strong emotional connection and mutual understanding&lt;/strong&gt;.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    In romantic relationships, when the Character Energies in a &lt;a target=&quot;_blank&quot; href=&quot;{ [rest of string was truncated]&quot;;.
+        ///    In romantic relationships, when the Emotional Energies in a &lt;a target=&quot;_blank&quot; href=&quot;{ [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_element_supportive {
             get {
@@ -1913,7 +1913,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Please note that the &apos;Emotional Energy&apos; alone does not give a very detailed description of a person. It is important to also take into account the &apos;Fundamental Adult Nature&apos;, as well as the &apos;Surface Energy&apos;. However, it does give a useful overview of their deeper character. The Character Energy also has quite a significant influence on intimate relationships, where the more emotional aspects of ourselves tend to be revealed. There is more information on that in the &lt;a href=&quot;{RelationshipsUrl}&quot;&gt;Rela [rest of string was truncated]&quot;;.
+        ///    Please note that the &apos;Emotional Energy&apos; alone does not give a very detailed description of a person. It is important to also take into account the &apos;Fundamental Adult Nature&apos;, as well as the &apos;Mirror Energy&apos;. However, it does give a useful overview of their deeper character. The Emotional Energy also has quite a significant influence on intimate relationships, where the more emotional aspects of ourselves tend to be revealed. There is more information on that in the &lt;a href=&quot;{RelationshipsUrl}&quot;&gt;Relat [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_energies_short_description {
             get {
@@ -1923,7 +1923,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Character Energies - Yin / Yang
+        ///    Emotional Energies - Yin / Yang
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This combination typically leads to &lt;strong&gt;much greater compatibility and chemistry&lt;/strong&gt; in romantic relationships. This combination also typically results in &lt;strong&gt;greater complementarity on an emotional level&lt;/strong&gt;, but may result in &lt;strong&gt;some misunderstandings&lt;/strong&gt;.
@@ -1937,7 +1937,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Character Energies - Both Yang
+        ///    Emotional Energies - Both Yang
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    In romantic relationships, this typically leads to &lt;strong&gt;less chemistry&lt;/strong&gt; than with a Yin / Yang combination. Yang Energies tend to be more engaging and in the absence of Yin, this can lead to a lack of magnetism. Essentially there isn&apos;t enough mystery to maintain the magic. 
@@ -1953,7 +1953,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Character Energies - Both Yin
+        ///    Emotional Energies - Both Yin
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    In romantic relationships, this typically leads to &lt;strong&gt;less chemistry&lt;/strong&gt; than with a Yin / Yang combination. Yin Energies tend to be more receptive and less engaging. In the absence of Yang, the relationship could start to stagnate. There could also be a build up of resentment due to lack of communication.
@@ -1969,7 +1969,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Character Energies - Different Modality
+        ///    Emotional Energies - Different Modality
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This typically leads to &lt;strong&gt;greater complementarity between the couple on an emotional level&lt;/strong&gt;, but also brings a &lt;strong&gt;slightly greater risk of misunderstanding&lt;/strong&gt;.
@@ -1983,7 +1983,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Character Energies - Same Modality
+        ///    Emotional Energies - Same Modality
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This typically leads to &lt;strong&gt;greater understanding between the couple on an emotional level&lt;/strong&gt;, but there may be &lt;strong&gt;less chemistry&lt;/strong&gt; between the couple.
@@ -2005,7 +2005,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Character Energies Compatibility.
+        ///   Looks up a localized string similar to Emotional Energies Compatibility.
         /// </summary>
         public static string CharacterEnergiesCompatibility {
             get {
@@ -2185,6 +2185,15 @@ namespace K9.Globalisation {
         public static string CompanyShortDescription {
             get {
                 return ResourceManager.GetString("CompanyShortDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compatibility.
+        /// </summary>
+        public static string Compatibility {
+            get {
+                return ResourceManager.GetString("Compatibility", resourceCulture);
             }
         }
         
@@ -3681,7 +3690,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mask Energy.
+        ///   Looks up a localized string similar to Mirror Energy.
         /// </summary>
         public static string ExternalPersona {
             get {
@@ -3751,7 +3760,7 @@ namespace K9.Globalisation {
         ///    Without adequate discipline, Fire children can become spoilt, conceited and vain.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Fire needs to be contained, and since this character Energy can be extremely impulsive, it&apos;s important that parents and caregivers introduce order and boundaries early on in life.
+        ///    Fire needs to be contained, and since this Emotional Energy can be extremely impulsive, it&apos;s important that parents and caregivers introduce order and boundaries early on in life.
         ///&lt;/p&gt;.
         /// </summary>
         public static string fire_child {
@@ -4089,7 +4098,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
-        ///    &lt;h4&gt;&lt;strong&gt;Free Subscription:&lt;/strong&gt;&lt;/h4&gt;
+        ///    &lt;h4&gt;&lt;strong&gt;Free Membership:&lt;/strong&gt;&lt;/h4&gt;
         ///    &lt;p&gt;
         ///        &amp;#8226; {NumberOfProfileReadings} full Personal Profile readings.
         ///    &lt;/p&gt;
@@ -6061,7 +6070,7 @@ namespace K9.Globalisation {
         ///    The Fundamental Energy description alone is not very granular and only describes one aspect of the chart.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Please note that the &apos;Fundamental Energy&apos; or &apos;Adult Persona&apos; alone does not give a very granular description of a person. The &apos;Character Energy&apos;, as well as the &apos;Surface Energy&apos; play a significant role in shaping a person&apos;s character traits. However, the Fundamental Energy does give a very useful overview. Also, of the three components of a personal chart, the Fundamental Ener [rest of string was truncated]&quot;;.
+        ///    Please note that the &apos;Fundamental Energy&apos; alone does not give a very granular description of a person. The &apos;Emotional Energy&apos;, as well as the &apos;Mirror Energy&apos; play a significant role in shaping a person&apos;s character traits. However, the Fundamental Energy does give a very useful overview. Also, of the three components of a personal chart, the Fundamental Energy has the most sign [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_energies_short_description {
             get {
@@ -6091,7 +6100,7 @@ namespace K9.Globalisation {
         ///    This typically leads to &lt;strong&gt;greater understanding between the couple&lt;/strong&gt;, but also brings a &lt;strong&gt;slightly greater risk of conflict&lt;/strong&gt; as two Yang Energies may clash at times.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Sometimes in a Yang / Yang combination, there isn&apos;t enough mystery to maintain the magic and so the chemistry can start to fizzle out. This is less of an issue if the Character Energies are in a Yin / Yang combination or if either the Fundamen [rest of string was truncated]&quot;;.
+        ///    Sometimes in a Yang / Yang combination, there isn&apos;t enough mystery to maintain the magic and so the chemistry can start to fizzle out. This is less of an issue if the Emotional Energies are in a Yin / Yang combination or if either the Fundamen [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_gender_same_yang {
             get {
@@ -6107,7 +6116,7 @@ namespace K9.Globalisation {
         ///    This typically leads to &lt;strong&gt;greater understanding between the couple&lt;/strong&gt;, but also brings a &lt;strong&gt;slightly greater risk of stagnation&lt;/strong&gt; or &lt;strong&gt;hidden resentments&lt;/strong&gt;.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Sometimes in a Yin / Yin combination, there isn&apos;t enough engagement to maintain a strong connection and so the relationship can start to fizzle out. This is less of an issue if the Character Energies are in a Yin / Yang combination or if eithe [rest of string was truncated]&quot;;.
+        ///    Sometimes in a Yin / Yin combination, there isn&apos;t enough engagement to maintain a strong connection and so the relationship can start to fizzle out. This is less of an issue if the Emotional Energies are in a Yin / Yang combination or if eithe [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_gender_same_yin {
             get {
@@ -6466,7 +6475,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Monthly Cycle.
+        ///   Looks up a localized string similar to Monthly Energy.
         /// </summary>
         public static string MonthlyCycle {
             get {
@@ -6475,7 +6484,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Monthly Cycle Energy.
+        ///   Looks up a localized string similar to Monthly Energy.
         /// </summary>
         public static string MonthlyCycleEnergy {
             get {
@@ -6484,7 +6493,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Monthly Cycles.
+        ///   Looks up a localized string similar to Monthly Predictions.
         /// </summary>
         public static string MonthlyCycles {
             get {
@@ -6890,7 +6899,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The 9 Character Energies.
+        ///   Looks up a localized string similar to The 9 Emotional Energies.
         /// </summary>
         public static string NineCharacterEnergiesTitle {
             get {
@@ -7546,7 +7555,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
-        ///    &lt;h4&gt;&lt;strong&gt;Annual Platinum Subscription:&lt;/strong&gt;&lt;/h4&gt;
+        ///    &lt;h4&gt;&lt;strong&gt;Annual Platinum Membership:&lt;/strong&gt;&lt;/h4&gt;
         ///    &lt;p&gt;
         ///        &amp;#8226; Unlimited complete personal chart readings for a year.
         ///    &lt;/p&gt;
@@ -7563,7 +7572,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
-        ///    &lt;h4&gt;&lt;strong&gt;Lifetime Platinum Subscription:&lt;/strong&gt;&lt;/h4&gt;
+        ///    &lt;h4&gt;&lt;strong&gt;Lifetime Platinum Membership:&lt;/strong&gt;&lt;/h4&gt;
         ///    &lt;p&gt;
         ///        &amp;#8226; Unlimited complete personal chart readings forever.
         ///    &lt;/p&gt;
@@ -7580,7 +7589,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
-        ///    &lt;h4&gt;&lt;strong&gt;Monthly Platinum Subscription:&lt;/strong&gt;&lt;/h4&gt;
+        ///    &lt;h4&gt;&lt;strong&gt;Monthly Platinum Membership:&lt;/strong&gt;&lt;/h4&gt;
         ///    &lt;p&gt;
         ///        &amp;#8226; Unlimited complete personal chart readings for a month.
         ///    &lt;/p&gt;
@@ -7597,7 +7606,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
-        ///    &lt;h4&gt;&lt;strong&gt;Weekly Platinum Subscription:&lt;/strong&gt;&lt;/h4&gt;
+        ///    &lt;h4&gt;&lt;strong&gt;Weekly Platinum Membership:&lt;/strong&gt;&lt;/h4&gt;
         ///    &lt;p&gt;
         ///        &amp;#8226; Unlimited complete personal chart readings for one week.
         ///    &lt;/p&gt;
@@ -8196,7 +8205,7 @@ namespace K9.Globalisation {
         ///    Practically Nonexistent
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It is &lt;strong&gt;extremely unlikely for there to be any significant sexual chemistry&lt;/strong&gt; between these two individuals or if there is, it is likely to be very short-lived. However, there are exceptions to the rule. Almost all of the energetic aspects of this relationship are identical for both the Fundamental and Character Energies, resulting in very little magnetism. This type of connection is far &lt;strong&gt;more likely to be a deep and long-lasting friends [rest of string was truncated]&quot;;.
+        ///    It is &lt;strong&gt;extremely unlikely for there to be any significant sexual chemistry&lt;/strong&gt; between these two individuals or if there is, it is likely to be very short-lived. However, there are exceptions to the rule. Almost all of the energetic aspects of this relationship are identical for both the Fundamental and Emotional Energies, resulting in very little magnetism. This type of connection is far &lt;strong&gt;more likely to be a deep and long-lasting friends [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexual_chemistry_nonexistant {
             get {
@@ -8209,7 +8218,7 @@ namespace K9.Globalisation {
         ///    Off The Charts
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The &lt;strong&gt;sexuality chemistry between these two individuals is potentially off the charts&lt;/strong&gt;. The forces and elements governing this combination are all opposing one another, both between the Fundamental and Character Energies, creating an &lt;strong&gt;extremely strong magnetic attraction&lt;/strong&gt;. This can be a truly &lt;strong&gt;explosive combination&lt;/strong&gt;, but it could be &lt;strong&gt;too hot to handle&lt;/strong&gt;!
+        ///    The &lt;strong&gt;sexuality chemistry between these two individuals is potentially off the charts&lt;/strong&gt;. The forces and elements governing this combination are all opposing one another, both between the Fundamental and Emotional Energies, creating an &lt;strong&gt;extremely strong magnetic attraction&lt;/strong&gt;. This can be a truly &lt;strong&gt;explosive combination&lt;/strong&gt;, but it could be &lt;strong&gt;too hot to handle&lt;/strong&gt;!
         ///&lt;/p&gt;.
         /// </summary>
         public static string sexual_chemistry_off_the_charts {
@@ -8237,7 +8246,7 @@ namespace K9.Globalisation {
         ///    Very Low
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    It is highly &lt;strong&gt;unlikely for there to be any significant sexual chemistry&lt;/strong&gt; between these two individuals or if there is, &lt;strong&gt;it is likely to be short-lived&lt;/strong&gt;. This has the &lt;strong&gt;potential to be a very harmonious combination&lt;/strong&gt; which many of the energetic elements are the same for both the Fundamental and Character Energies, which results in &lt;strong&gt;little to any magnetism&lt;/strong&gt;. This type of connection is far more likely to be a &lt;strong&gt; [rest of string was truncated]&quot;;.
+        ///    It is highly &lt;strong&gt;unlikely for there to be any significant sexual chemistry&lt;/strong&gt; between these two individuals or if there is, &lt;strong&gt;it is likely to be short-lived&lt;/strong&gt;. This has the &lt;strong&gt;potential to be a very harmonious combination&lt;/strong&gt; which many of the energetic elements are the same for both the Fundamental and Emotional Energies, which results in &lt;strong&gt;little to any magnetism&lt;/strong&gt;. This type of connection is far more likely to be a &lt;strong&gt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexual_chemistry_verylow {
             get {
@@ -8294,7 +8303,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Note: for gay people, much of the above may well depend on the exact combination of gender and sexual traits and their relationship to the stereotypes associated with their biological gender. It is sometimes hard to predict; however, in many gay relationships one can still observe the Yin and Yang roles adopted by each partner.
+        ///    Note: for LGBTQ+ people, much of the above may well depend on the exact combination of gender and sexual traits and their relationship to the stereotypes associated with their biological gender. It is sometimes hard to predict; however, in many non heteronormative relationships one can still observe the Yin and Yang roles adopted by each partner.
         ///&lt;/p&gt;.
         /// </summary>
         public static string sexuality_gay_notes {
@@ -8316,7 +8325,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Both Fundamental and Character Energies are Yin and therefore in line with gender
+        ///    Both Fundamental and Emotional Energies are Yin and therefore in line with gender
         ///&lt;/h4&gt;
         ///&lt;h5&gt;
         ///    A powerful combination that tends to result in a confident expression and understanding of one&apos;s sexuality.
@@ -8334,7 +8343,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Both Fundamental and Character Energies are Yang and therefore in line with gender
+        ///    Both Fundamental and Emotional Energies are Yang and therefore in line with gender
         ///&lt;/h4&gt;
         ///&lt;h5&gt;
         ///    A powerful combination that tends to result in a confident expression and understanding of one&apos;s sexuality.
@@ -8352,7 +8361,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Fundamental Energy is Yin and in line with gender. Character Energy is Yang and opposite to gender
+        ///    Fundamental Energy is Yin and in line with gender. Emotional Energy is Yang and opposite to gender
         ///&lt;/h4&gt;
         ///&lt;h5&gt;
         ///    Quite a balanced combination
@@ -8361,10 +8370,10 @@ namespace K9.Globalisation {
         ///    This is quite a balanced combination that gives women of this combination a fairly even keel in understanding both their own sexuality and that of {SexualPartnersText}.
         ///&lt;/p&gt;
         ///&lt;h5&gt;
-        ///    Character Energy is opposite to gender, resulting in these men having a good understanding of {PotentialMatesText}
+        ///    Emotional Energy is opposite to gender, resulting in these men having a good understanding of {PotentialMatesText}
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Character Energy is o [rest of string was truncated]&quot;;.
+        ///    Emotional Energy is o [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_match_opposite_female {
             get {
@@ -8374,7 +8383,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Fundamental Energy is Yang and in line with gender. Character Energy is Yin and opposite to gender
+        ///    Fundamental Energy is Yang and in line with gender. Emotional Energy is Yin and opposite to gender
         ///&lt;/h4&gt;
         ///&lt;h5&gt;
         ///    Quite a balanced combination
@@ -8383,10 +8392,10 @@ namespace K9.Globalisation {
         ///    This is quite a balanced combination that gives men a fairly even keel in understanding both their own sexuality and that of {SexualPartnersText}.
         ///&lt;/p&gt;
         ///&lt;h5&gt;
-        ///    Character Energy is opposite to gender, resulting in a good understanding of {PotentialMatesText}
+        ///    Emotional Energy is opposite to gender, resulting in a good understanding of {PotentialMatesText}
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Character Energy is opposite to gender, which likely gives m [rest of string was truncated]&quot;;.
+        ///    Emotional Energy is opposite to gender, which likely gives m [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_match_opposite_male {
             get {
@@ -8396,13 +8405,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Fundamental Energy is Yang and opposite to gender. Character Energy is Yin and in line with gender
+        ///    Fundamental Energy is Yang and opposite to gender. Emotional Energy is Yin and in line with gender
         ///&lt;/h4&gt;
         ///&lt;h5&gt;
         ///    Women with this combination are usually very confident in their sexuality during adolescence, but less so as they move into adulthood
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    During adolescence, the Character Energy is the driving force of one&apos;s personality and, in this instance, would have been in line with gender. Women with this combination are therefore typically very confident and at ease with {Sexual [rest of string was truncated]&quot;;.
+        ///    During adolescence, the Emotional Energy is the driving force of one&apos;s personality and, in this instance, would have been in line with gender. Women with this combination are therefore typically very confident and at ease with {Sexual [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_opposite_match_female {
             get {
@@ -8412,13 +8421,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Fundamental Energy is Yin and opposite to gender. Character Energy is Yang and in line with gender
+        ///    Fundamental Energy is Yin and opposite to gender. Emotional Energy is Yang and in line with gender
         ///&lt;/h4&gt;
         ///&lt;h5&gt;
         ///    Men with this combination are usually very confident in their sexuality during adolescence, but less so as they move into adulthood
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    During adolescence, the Character Energy is the driving force of one&apos;s personality and, in this instance, would have been in line with gender. Men with this combination are therefore typically very confident and at ease with {SexualPart [rest of string was truncated]&quot;;.
+        ///    During adolescence, the Emotional Energy is the driving force of one&apos;s personality and, in this instance, would have been in line with gender. Men with this combination are therefore typically very confident and at ease with {SexualPart [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_opposite_match_male {
             get {
@@ -8428,7 +8437,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Both Fundamental and Character energies are Yang and therefore opposite to gender
+        ///    Both Fundamental and Emotional Energies are Yang and therefore opposite to gender
         ///&lt;/h4&gt;
         ///&lt;h5&gt;
         ///    Quite a challenging combination for women who feel pressure to behave in a typically feminine and sensual way
@@ -8447,7 +8456,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Both Fundamental and Character energies are Yin and therefore opposite to gender
+        ///    Both Fundamental and Emotional Energies are Yin and therefore opposite to gender
         ///&lt;/h4&gt;
         ///&lt;h5&gt;
         ///    Quite a challenging combination for men who feel pressure to behave more like alpha males
@@ -8952,7 +8961,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
-        ///    &lt;h4&gt;&lt;strong&gt;Annual Standard Subscription:&lt;/strong&gt;&lt;/h4&gt;
+        ///    &lt;h4&gt;&lt;strong&gt;Annual Standard Membership:&lt;/strong&gt;&lt;/h4&gt;
         ///    &lt;p&gt;
         ///        &amp;#8226; {NumberOfProfileReadings} full Personal Chart readings a month for a whole year.
         ///    &lt;/p&gt;
@@ -8969,7 +8978,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
-        ///    &lt;h4&gt;&lt;strong&gt;Monthly Standard Subscription:&lt;/strong&gt;&lt;/h4&gt;
+        ///    &lt;h4&gt;&lt;strong&gt;Monthly Standard Membership:&lt;/strong&gt;&lt;/h4&gt;
         ///    &lt;p&gt;
         ///        &amp;#8226; {NumberOfProfileReadings} full Personal Chart readings for a whole month.
         ///    &lt;/p&gt;
@@ -9209,7 +9218,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mask Energy.
+        ///   Looks up a localized string similar to Mirror Energy.
         /// </summary>
         public static string SurfaceEnergyLabel {
             get {
@@ -9218,7 +9227,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mask Energy.
+        ///   Looks up a localized string similar to Mirror Energy.
         /// </summary>
         public static string SurfaceEnergyShortLabel {
             get {
@@ -9699,6 +9708,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unlock.
+        /// </summary>
+        public static string Unlock {
+            get {
+                return ResourceManager.GetString("Unlock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unpredictable.
         /// </summary>
         public static string Unpredictable {
@@ -10157,29 +10175,19 @@ namespace K9.Globalisation {
         ///&lt;/h4&gt;
         ///
         ///&lt;p&gt;
-        ///    Greetings and thank you for visiting NineStar. Whether you are new to 9 Star Ki or even new to astrology as a whole, you&apos;ve come to a great resource to find detailed and accurate information on this ancient and fascinating system of astrology. 
+        ///    Greetings and thank you for visiting NineStar. Whether you are new to 9 Star Ki or even new to astrology as a whole, you&apos;ve come to a great resource to find detailed and accurate information on this ancient and fascinating system of astrology.
         ///&lt;/p&gt;
         ///
+        ///&lt;h5&gt;
+        ///    Possibly the oldest system of astrology in the world
+        ///&lt;/h5&gt;
+        ///
         ///&lt;p&gt;
-        ///    &lt;strong&gt;9 Star Ki is possibly the oldest system of astrology in the world today. It is based off the 4000-year-old Chinese &apos;Book of Changes&apos; (the &apos;I Ching&apos;)&lt;/strong [rest of string was truncated]&quot;;.
+        ///    9 Star Ki is based off the 4000-year-old Chinese &apos;Book of Changes&apos; (the &apos;I Ching&apos;), whose pr [rest of string was truncated]&quot;;.
         /// </summary>
         public static string welcome {
             get {
                 return ResourceManager.GetString("welcome", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    9 Star Ki is a simple system offering &lt;strong&gt;profound insights into ourselves and our relationships with others&lt;/strong&gt;. It is an exceptional tool to help resolve conflict in a way that minimises blame and maximises understanding and compassion. 
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    We hope you enjoy finding out more about this fascinating system. Please do not hesitate to get in touch if you have any queries.
-        ///&lt;/p&gt;.
-        /// </summary>
-        public static string welcome2 {
-            get {
-                return ResourceManager.GetString("welcome2", resourceCulture);
             }
         }
         
@@ -10499,7 +10507,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Yearly &amp; Monthly Cycles.
+        ///   Looks up a localized string similar to Yearly &amp; Monthly Predictions.
         /// </summary>
         public static string YearlyAndMonthlyCycles {
             get {
@@ -10508,7 +10516,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cycles &amp; Biorhythms Overview.
+        ///   Looks up a localized string similar to Predictions &amp; Biorhythms Overview.
         /// </summary>
         public static string YearlyAndMonthlyCyclesOverview {
             get {
@@ -10517,7 +10525,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Yearly Cycle.
+        ///   Looks up a localized string similar to Yearly Energy.
         /// </summary>
         public static string YearlyCycle {
             get {
@@ -10526,7 +10534,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Yearly Cycle Energy.
+        ///   Looks up a localized string similar to Yearly Energy.
         /// </summary>
         public static string YearlyCycleEnergy {
             get {
@@ -10535,7 +10543,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Yearly Cycles.
+        ///   Looks up a localized string similar to Yearly Predictions.
         /// </summary>
         public static string YearlyCycles {
             get {

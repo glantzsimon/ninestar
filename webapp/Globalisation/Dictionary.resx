@@ -320,7 +320,7 @@
     <value>Red</value>
   </data>
   <data name="SurfaceEnergyLabel" xml:space="preserve">
-    <value>Mask Energy</value>
+    <value>Mirror Energy</value>
   </data>
   <data name="SeventhChild" xml:space="preserve">
     <value>Seventh Child</value>
@@ -803,7 +803,7 @@
     <value>Emotional Energy</value>
   </data>
   <data name="ExternalPersona" xml:space="preserve">
-    <value>Mask Energy</value>
+    <value>Mirror Energy</value>
   </data>
   <data name="fire_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\fire-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -833,7 +833,7 @@
     <value>articles\en-gb\soil-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="SurfaceEnergyShortLabel" xml:space="preserve">
-    <value>Mask Energy</value>
+    <value>Mirror Energy</value>
   </data>
   <data name="thunder_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\thunder-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -1334,7 +1334,7 @@
     <value>articles\en-gb\modalities-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="NineCharacterEnergiesTitle" xml:space="preserve">
-    <value>The 9 Character Energies</value>
+    <value>The 9 Emotional Energies</value>
   </data>
   <data name="NineMainEnergiesTitle" xml:space="preserve">
     <value>The 9 Main Energies</value>
@@ -1712,7 +1712,7 @@
     <value>Amount</value>
   </data>
   <data name="CharacterEnergiesCompatibility" xml:space="preserve">
-    <value>Character Energies Compatibility</value>
+    <value>Emotional Energies Compatibility</value>
   </data>
   <data name="CompatibilityDetails" xml:space="preserve">
     <value>Compatibility Details</value>
@@ -1913,7 +1913,7 @@
     <value>Late Spring</value>
   </data>
   <data name="MonthlyCycle" xml:space="preserve">
-    <value>Monthly Cycle</value>
+    <value>Monthly Energy</value>
   </data>
   <data name="Planning" xml:space="preserve">
     <value>Planning / Germination</value>
@@ -1940,7 +1940,7 @@
     <value>Late Winter</value>
   </data>
   <data name="YearlyCycle" xml:space="preserve">
-    <value>Yearly Cycle</value>
+    <value>Yearly Energy</value>
   </data>
   <data name="CurrentMonthlyCycle" xml:space="preserve">
     <value>Current Monthly Cycle</value>
@@ -1958,10 +1958,10 @@
     <value>Late Autumn</value>
   </data>
   <data name="MonthlyCycles" xml:space="preserve">
-    <value>Monthly Cycles</value>
+    <value>Monthly Predictions</value>
   </data>
   <data name="YearlyCycles" xml:space="preserve">
-    <value>Yearly Cycles</value>
+    <value>Yearly Predictions</value>
   </data>
   <data name="MonthlyPlanner" xml:space="preserve">
     <value>Monthly Planner</value>
@@ -2303,7 +2303,7 @@
     <value>Month</value>
   </data>
   <data name="MonthlyCycleEnergy" xml:space="preserve">
-    <value>Monthly Cycle Energy</value>
+    <value>Monthly Energy</value>
   </data>
   <data name="MyYearlyAndMonthlyCycles" xml:space="preserve">
     <value>My Yearly and Monthly Cycles</value>
@@ -2327,7 +2327,7 @@
     <value>Supportive Elements</value>
   </data>
   <data name="YearlyCycleEnergy" xml:space="preserve">
-    <value>Yearly Cycle Energy</value>
+    <value>Yearly Energy</value>
   </data>
   <data name="MySavedCharts" xml:space="preserve">
     <value>My Saved Charts</value>
@@ -2431,9 +2431,6 @@
   <data name="cycles_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\cycles-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="welcome2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>general\en-gb\welcome2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="AboutYearlyAndMonthlyCycles" xml:space="preserve">
     <value>About Yearly &amp; Monthly Cycles</value>
   </data>
@@ -2474,13 +2471,13 @@
     <value>About 9 Star Ki Biorhythms</value>
   </data>
   <data name="YearlyAndMonthlyCycles" xml:space="preserve">
-    <value>Yearly &amp; Monthly Cycles</value>
+    <value>Yearly &amp; Monthly Predictions</value>
   </data>
   <data name="PersonalChartOverview" xml:space="preserve">
     <value>Personal Chart Overview</value>
   </data>
   <data name="YearlyAndMonthlyCyclesOverview" xml:space="preserve">
-    <value>Cycles &amp; Biorhythms Overview</value>
+    <value>Predictions &amp; Biorhythms Overview</value>
   </data>
   <data name="UserMembershipModelName" xml:space="preserve">
     <value>UserMembership</value>
@@ -2713,7 +2710,13 @@
   <data name="LifeTimePlatinumMembership" xml:space="preserve">
     <value>Lifetime Platinum Membership</value>
   </data>
+  <data name="Unlock" xml:space="preserve">
+    <value>Unlock</value>
+  </data>
   <data name="WeeklyPlatinumMembership" xml:space="preserve">
     <value>Weekly Platinum Membership</value>
+  </data>
+  <data name="Compatibility" xml:space="preserve">
+    <value>Compatibility</value>
   </data>
 </root>

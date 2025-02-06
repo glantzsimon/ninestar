@@ -2,7 +2,7 @@
 @using K9.WebApplication.Helpers
 @model K9.WebApplication.Models.NineStarKiModel
 
-@using (Html.PaidContent(Model, () => Model.ReadingType == EReadingType.Complete))
+@using (Html.PaidContent(Model, () => !Model.IsUpgradeRequired))
 {
     <div class="row">
         <div class="text-center">

@@ -5,7 +5,8 @@
         public enum EViewBackground
         {
             Default,
-            Jarallax
+            Jarallax,
+            Fixed
         }
     }
 }

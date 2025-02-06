@@ -197,6 +197,36 @@ namespace K9.WebApplication.Controllers
             return View("Compatibility", model);
         }
 
+        [Route("predictions")]
+        public ActionResult Cycles()
+        {
+            var dateOfBirth = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day);
+            var personModel = new PersonModel
+            {
+                DateOfBirth = dateOfBirth,
+                Gender = Methods.GetRandomGender()
+            };
+            return View(new NineStarKiModel(personModel));
+        }
+
+        [Route("predictions")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CalculateCycles(NineStarKiModel model)
+        {
+            if (model.PersonModel != null || model.SelectedDate != DateTime.Today)
+            {
+                var selectedDate = model.SelectedDate ?? DateTime.Today;
+                
+                model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false, selectedDate);
+                model.SelectedDate = selectedDate;
+
+                return View(model);
+            }
+
+            return View(model);
+        }
+
         [Route("list/allenegies")]
         public ContentResult GetAllEnergies()
         {

@@ -14,7 +14,7 @@
     .top-nav ul li {
         display: inline-block;
         float: left;
-        width: 20%;
+        width: 25%;
     }
 
         .top-nav ul li:nth-child(6) {
@@ -170,7 +170,7 @@ div#main-logo-container {
         left: 50%;
         top: 50%;
         margin-left: 4px;
-        margin-top: 2px;
+        margin-top: -1px;
         -webkit-transform: translateX(-50%) translateY(-50%);
         transform: translateX(-50%) translateY(-50%);
         -webkit-transition: all 0.35s ease-in-out;
@@ -229,12 +229,12 @@ ul.admin-menu ul.dropdown-menu {
 }
 
     #main-menu-container.menu-main {
-        height: 180px;
+        height: 120px;
         background-color: rgba(22,22,22,0.7);
     }
 
     #main-menu-container.menu-small {
-        height: 100px;
+        height: 60px;
         background-color: rgba(10, 10, 10, 0.85);
     }
 
@@ -251,12 +251,16 @@ ul.admin-menu ul.dropdown-menu {
 }
 
     #bs-navbar-collapse-1.menu-main {
-        top: 100px;
+        top: 71px;
     }
 
     #bs-navbar-collapse-1.menu-small {
-        top: 63px;
+        top: 45px;
     }
+
+        #bs-navbar-collapse-1.menu-small ul li a {
+            font-size: 0.9em;
+        }
 
 ul.main-navbar li.open a {
     background: none !important;
@@ -283,13 +287,13 @@ ul.main-navbar .open ul.dropdown-menu {
         border-bottom-right-radius: 5px;
     }
 
-        ul.main-navbar .open ul.dropdown-menu li:hover a {
-            font-weight: 600;
-            color: #FF9800 !important;
-            -webkit-transition: none;
-            -o-transition: none;
-            transition: none;
-        }
+    ul.main-navbar .open ul.dropdown-menu li:hover a {
+        font-weight: 600;
+        color: #FF9800 !important;
+        -webkit-transition: none;
+        -o-transition: none;
+        transition: none;
+    }
 
     ul.main-navbar .open ul.dropdown-menu li.active > a {
         color: #FF9800 !important;
@@ -297,13 +301,13 @@ ul.main-navbar .open ul.dropdown-menu {
     }
 
 #main-menu-spacer {
-    height: 220px;
+    height: 122px;
 }
 
 div.main-logo {
-    height: 176px;
-    width: 176px;
-    background-image: url(../../Images/company/logo.png);
+    height: 174px;
+    width: 174px;
+    background-image: url(../../Images/company/logo-notext.png);
     background-repeat: no-repeat;
 }
 

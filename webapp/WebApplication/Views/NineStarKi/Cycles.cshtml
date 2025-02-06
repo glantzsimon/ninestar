@@ -1,0 +1,29 @@
+﻿@model K9.WebApplication.Models.NineStarKiModel
+
+@{
+    ViewBag.Title = Dictionary.YearlyAndMonthlyCycles;
+    ViewBag.SubTitle = Dictionary.YearlyAndMonthlyCycles;
+
+    Layout = "../Shared/_LayoutFormMedium.cshtml";
+}
+
+@Html.Partial("_BetaPopup")
+
+<div class="container main-content margin-bottom-0">
+    <article>
+        <div class="col-sm-12 padding-left-0 padding-right-0">
+            @if (Model != null && Model.IsProcessed)
+            {
+                @Html.Partial("_CyclesSummary", Model)
+            }
+        </div>
+        <div class="well">
+            @if (Model != null && Model.IsProcessed)
+            {
+                @Html.Partial("_Cycles", Model)
+            }
+        </div>
+    </article>
+</div>
+
+@Html.Partial("_CyclesJs")

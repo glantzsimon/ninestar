@@ -4,10 +4,19 @@
     var background = ViewBag.Background == ViewBagHelper.EViewBackground.Jarallax ? "background-stars jarallax" : "";
 }
 
-@if (ViewBag.Background != ViewBagHelper.EViewBackground.Jarallax)
+@if (ViewBag.Background == ViewBagHelper.EViewBackground.Fixed)
 {
     <div class="background-stars background-fixed">
         &nbsp;
+    </div>
+}
+else
+{
+    <div class="background-video">
+        <video autoplay muted loop>
+            <source src="~/Videos/Shared/stars-bg-high.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 }
 

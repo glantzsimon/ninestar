@@ -83,25 +83,25 @@ namespace K9.WebApplication.Helpers
             return $"{energyName} {html.GetDisplayNameFor(expression)}";
         }
 
-        public static IDisposable PaidContent(this HtmlHelper html, MembershipOption.ESubscriptionType subscriptionType = MembershipOption.ESubscriptionType.MonthlyStandard, bool silent = false)
+        public static IDisposable PaidContent(this HtmlHelper html, MembershipOption.ESubscriptionType subscriptionType = MembershipOption.ESubscriptionType.MonthlyStandard, bool silent = false, string displayHtml = "")
         {
             var baseController = html.ViewContext.Controller as BaseNineStarKiController;
             var activeUserMembership = baseController?.GetActiveUserMembership();
             return html.PaidContent<NineStarKiModel>(null,
-                () => activeUserMembership?.MembershipOption?.SubscriptionType >= subscriptionType, silent);
+                () => activeUserMembership?.MembershipOption?.SubscriptionType >= subscriptionType, silent, displayHtml);
         }
-
-        public static IDisposable PaidContent<T>(this HtmlHelper html, T model, Func<bool> condition = null, bool silent = false)
+        
+        public static IDisposable PaidContent<T>(this HtmlHelper html, T model, Func<bool?> condition = null, bool silent = false, string displayHtml = "")
         {
             var baseController = html.ViewContext.Controller as BaseNineStarKiController;
             var activeUserMembership = baseController?.GetActiveUserMembership();
-            var showContent = activeUserMembership != null && (condition?.Invoke() ?? true);
+            var isAuthorised = activeUserMembership != null && (condition?.Invoke().Value ?? true);
             var isProfile = typeof(T) == typeof(NineStarKiModel);
             var isCompatibility = typeof(T) == typeof(CompatibilityModel);
             var retrieveLast = isProfile ? "p" : isCompatibility ? "c" : "none";
 
             var div = new TagBuilder(Tags.Div);
-            if (!(WebSecurity.IsAuthenticated && showContent))
+            if (!(WebSecurity.IsAuthenticated && isAuthorised))
             {
                 div.MergeAttribute(Base.WebApplication.Constants.Html.Attributes.Style, "display: none !important;");
 
@@ -119,7 +119,7 @@ namespace K9.WebApplication.Helpers
                 }
             }
 
-            if (!silent && !showContent)
+            if (!silent && !isAuthorised)
             {
                 var centerDiv = new TagBuilder(Tags.Div);
                 centerDiv.MergeAttribute(Base.WebApplication.Constants.Html.Attributes.Class,
@@ -127,19 +127,16 @@ namespace K9.WebApplication.Helpers
                 html.ViewContext.Writer.WriteLine(centerDiv.ToString(TagRenderMode.StartTag));
                 if (WebSecurity.IsAuthenticated)
                 {
-                    html.ViewContext.Writer.WriteLine(
-                        $"<h4><strong>{Dictionary.UpgradeMembershipFullText}</strong></h4>");
-                    html.ViewContext.Writer.WriteLine(html.BootstrapActionLinkButton(
-                        Dictionary.UpgradeMembershipText,
-                        "Index", "Membership", null, "fa-level-up-alt", EButtonClass.Large));
-                    html.ViewContext.Writer.WriteLine(
-                        $"<div class=\"inline\" data-toggle=\"tooltip\" title=\"{Dictionary.CreditsDescriptionUI}\">{html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership", null, "fa-money-bill-alt", EButtonClass.Large, EButtonClass.Info)}</div>");
+                    html.ViewContext.Writer.Write(html.Partial("UpgradePrompt"));
                 }
                 else
                 {
-                    html.ViewContext.Writer.WriteLine(html.BootstrapActionLinkButton(
-                        Dictionary.LogIntoYourAccountToView, "Login", "Account", new { retrieveLast }, "fa-sign-in",
-                        EButtonClass.Large));
+                    html.ViewContext.Writer.Write(html.Partial("LoginPrompt", retrieveLast));
+                }
+
+                if (!string.IsNullOrEmpty(displayHtml))
+                {
+                    html.ViewContext.Writer.WriteLine(displayHtml);
                 }
 
                 html.ViewContext.Writer.WriteLine(centerDiv.ToString(TagRenderMode.EndTag));

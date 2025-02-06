@@ -1,4 +1,5 @@
 ﻿@model K9.WebApplication.Models.CompatibilityModel
+@using K9.WebApplication.Extensions
 @using K9.WebApplication.Helpers
 
 @{
@@ -12,33 +13,46 @@
 
 @Html.Partial("_BetaPopup")
 
-@using (Html.PaidContent(Model, () => !Model.IsUpgradeRequired))
-{
-
-    <div class="container main-content margin-bottom-0">
-        <div class="col-md-3 col-sm-3 padding-0">
-            @Html.Partial("_CompatibilityCalculator")
+<div class="container main-content margin-bottom-0">
+    <div class="row">
+        <div class="col-sm-12 padding-0">
+            @using (Html.PaidContent(Model, () => this.GetActiveUserMembership()?.IsAuthorisedToViewPaidContent()))
+            {
+                @Html.Partial("_CompatibilityCalculator")
+            }
         </div>
-        <div class="col-md-9 col-sm-9 padding-left-20-desktop padding-right-0 mobile panel-margin-top-20">
+    </div>
+    <div class="row">
+        <div class="col-sm-12 padding-0">
             @if (Model != null && Model.IsProcessed)
             {
-                @Html.Panel(Dictionary.Results, Html.Partial("_CompatibilityOverview", Model).ToString())
-
-                @Html.Partial("_CompatibilityPills")
+                @Html.Partial("_CompatibilityOverview", Model)
             }
             else
             {
                 <article>
                     <div class="margin-bottom-20">
                         @Html.Panel("9 Star Ki and Relationships", Html.Partial("../Relationships/_AboutRelationships").ToString(), "relationships")
+                        
+                        @using (Html.PaidContent(Model, () => this.GetActiveUserMembership()?.IsAuthorisedToViewPaidContent(), true))
+                        {
 
-                        @Html.Panel("The 5 Transformations", Html.Partial("../NineStarKi/_FiveTransformations").ToString(), "transformations")
+                            @Html.Panel("The 5 Transformations", Html.Partial("../NineStarKi/_FiveTransformations").ToString(), "transformations")
 
-                        @Html.Panel("9 Star Ki and Sexuality", Html.Partial("../NineStarKi/_Sexuality").ToString(), "sexuality")
+                            @Html.Panel("9 Star Ki and Sexuality", Html.Partial("../NineStarKi/_Sexuality").ToString(), "sexuality")
+                        }
                     </div>
                 </article>
             }
         </div>
     </div>
+    <div class="row">
+        <div class="col-sm-12 padding-0">
+            @if (Model != null && Model.IsProcessed)
+            {
+                @Html.Partial("_CompatibilityPills")
+            }
+        </div>
+    </div>
+</div>
 
-}

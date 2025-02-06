@@ -1,0 +1,37 @@
+﻿.testimonial-box {
+    display: table;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    text-align: center;
+}
+
+.testimonial-box img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.testimonial-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.testimonial-stars {
+    color: gold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.testimonial-text {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}

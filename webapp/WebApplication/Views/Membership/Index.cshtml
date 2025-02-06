@@ -12,9 +12,44 @@
 @Html.Partial("_BetaPopup")
 
 <div class="container main-content">
+    <div class="row well">
+        <article>
+            <div class="col-sm-12 padding-0">
+                <h4 class="margin-top-0">@Dictionary.WhyUpgrade</h4>
+                <p>@Dictionary.why_upgrade</p>
+            </div>
+            <div class="col-sm-12 padding-0">
+                <h4>@Dictionary.WhatDoIGet</h4>
+                <h5 class="margin-top-0">@Html.Raw(Dictionary.what_you_get)</h5>
+                <ul>
+                    <li>
+                        @Dictionary.PersonalChartReadings
+                    </li>
+                    <li>
+                        @Dictionary.CompatibilityReadings
+                    </li>
+                    <li>
+                        @Dictionary.YearlyAndMonthlyCycles
+                    </li>
+                    <li>
+                        @Dictionary.NineStarKiBiorhythmsLabel
+                    </li>
+                    <li>
+                        @Dictionary.KnowledgeBase
+                    </li>
+                    <li>
+                        @Dictionary.FreeConsultationOfferText
+                    </li>
+                </ul>
+            </div>
+        </article>
+    </div>
+    
+    <hr/>
+
     <div class="row">
         <div class="text-center">
-            @foreach (var membershipModel in Model.MembershipModels.Where(e => e.IsPayable))
+            @foreach (var membershipModel in Model.MembershipModels.Where(e => e.IsPayable).ToList())
             {
                 <div class="col-md-3 col-sm-6 padding-0">
                     @Html.Partial("_MembershipOption", membershipModel)
@@ -22,29 +57,31 @@
             }
         </div>
     </div>
-    <div class="row well">
-        <div class="col-md-6 col-sm-12 padding-0">
-            <div class="membership-description">
-                @MvcHtmlString.Create(Dictionary.platinum_weekly_membership_description)
+    
+    <hr />
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="text-center center-block">
+                @Html.Partial("_Testimonial", new K9.WebApplication.ViewModels.TestimonialViewModel
+                {
+                    Name = "Claire",
+                    Body = "I cannot recommend this highly enough. This is by far the best 9 star ki resource on the web. The other sites are so confusing. 9 star ki has changed my life! I love it! And Simon is an amazing astrologer and was so helpful on our call. I got so much clarity on so many important things. Thank you so much!"
+                })
             </div>
         </div>
-        <div class="col-md-6 col-sm-12 padding-0">
-            <div class="membership-description">
-                @MvcHtmlString.Create(Dictionary.platinum_monthly_membership_description)
+        <div class="col-sm-4">
+            <div class="text-center center-block">
+                @Html.Partial("_Testimonial", new K9.WebApplication.ViewModels.TestimonialViewModel
+                {
+                    Name = "Julie",
+                    Body = "This system makes so much sense. It's really helped me to understand my husband and my kids, as well as myself. It's not like the zodiac. I find it a lot more accurate and intuitive, although I do like both system. I also find the yearly and montly predictions really helpful - it helps me to not worry and to trust the process."
+                })
             </div>
         </div>
-        <div class="col-md-6 col-sm-12 padding-0">
-            <div class="membership-description">
-                @MvcHtmlString.Create(Dictionary.platinum_annual_membership_description)
-            </div>
-        </div>
-        <div class="col-md-6 col-sm-12 padding-0">
-            <div class="membership-description">
-                @MvcHtmlString.Create(Dictionary.platinum_lifetime_membership_description)
-            </div>
-        </div>
+        
     </div>
-   
+
     <hr />
     @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.BackToMyAccountTitle, "MyAccount", "Account", null, "fa-user-circle", EButtonClass.Large)
 </div>

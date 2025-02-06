@@ -1,0 +1,7 @@
+﻿@using K9.Base.WebApplication.Helpers
+
+@Html.Alert(EAlertType.Unauthorized, Dictionary.UpgradeMembershipFullText)
+
+@Html.BootstrapActionLinkButton(
+    Dictionary.UnlockAllFeatures,
+    "Index", "Membership", null, "fa-unlock", EButtonClass.Large)

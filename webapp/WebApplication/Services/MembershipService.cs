@@ -61,7 +61,8 @@ namespace K9.WebApplication.Services
             return new MembershipViewModel
             {
                 MembershipModels = new List<MembershipModel>(membershipOptions
-                    .Where(e => !e.IsDeleted).ToList()
+                    .Where(e => !e.IsDeleted)
+                    .OrderBy(e => e.SubscriptionType).ToList()
                     .Select(membershipOption =>
                 {
                     var isSubscribed = activeUserMembership != null && activeUserMembership.MembershipOptionId == membershipOption.Id;
@@ -143,7 +144,9 @@ namespace K9.WebApplication.Services
             {
                 return true;
             }
-            if (activeUserMembership?.NumberOfProfileReadingsLeft > 0 || activeUserMembership?.NumberOfCreditsLeft > 0)
+            if (activeUserMembership?.MembershipOption.SubscriptionType > MembershipOption.ESubscriptionType.Free ||
+                activeUserMembership?.NumberOfProfileReadingsLeft > 0 ||
+                activeUserMembership?.NumberOfCreditsLeft > 0)
             {
                 CreateNewUserProfileReading(activeUserMembership, personModel.Name, personModel.DateOfBirth, personModel.Gender);
                 return true;
@@ -161,7 +164,9 @@ namespace K9.WebApplication.Services
             {
                 return true;
             }
-            if (activeUserMembership?.NumberOfRelationshipCompatibilityReadingsLeft > 0 || activeUserMembership?.NumberOfCreditsLeft > 0)
+            if (activeUserMembership?.MembershipOption.SubscriptionType > MembershipOption.ESubscriptionType.Free ||
+                activeUserMembership?.NumberOfRelationshipCompatibilityReadingsLeft > 0 ||
+                activeUserMembership?.NumberOfCreditsLeft > 0)
             {
                 CreateNewUserRelationshipCompatibilityReading(activeUserMembership, personModel1, personModel2, isHideSexuality);
                 return true;

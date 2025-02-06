@@ -134,7 +134,7 @@ namespace K9.DataAccessLayer.Models
                 SubscriptionType == ESubscriptionType.WeeklyPlatinum ||
                 SubscriptionType == ESubscriptionType.LifeTimePlatinum)
             {
-                return "PlatinumMembership";
+                return "UnlimitedAccess";
             }
 
             if (SubscriptionType == ESubscriptionType.AnnualStandard ||

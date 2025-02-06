@@ -81,7 +81,6 @@ namespace K9.WebApplication.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Login(UserAccount.LoginModel model)
         {
             if (ModelState.IsValid)

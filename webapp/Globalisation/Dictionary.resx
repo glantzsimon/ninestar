@@ -1166,10 +1166,10 @@
     <value>Subscription Discount</value>
   </data>
   <data name="UpgradeMembership" xml:space="preserve">
-    <value>Upgrade Subscription</value>
+    <value>Upgrade Membership</value>
   </data>
   <data name="AnnualPlatinumMembership" xml:space="preserve">
-    <value>Annual Platinum Subscription</value>
+    <value>Yearly Membership</value>
   </data>
   <data name="AnnualStandardMembership" xml:space="preserve">
     <value>Annual Standard Subscription</value>
@@ -1202,7 +1202,7 @@
     <value>Monthly</value>
   </data>
   <data name="MonthlyPlatinumMembership" xml:space="preserve">
-    <value>Monthly Platinum Subscription</value>
+    <value>Monthly Membership</value>
   </data>
   <data name="MonthlyStandardMembership" xml:space="preserve">
     <value>Monthly Standard Subscription</value>
@@ -1418,7 +1418,7 @@
     <value>Compatibility Readings Remaining</value>
   </data>
   <data name="UpgradeMembershipText" xml:space="preserve">
-    <value>Upgrade your subscription</value>
+    <value>Upgrade your membership</value>
   </data>
   <data name="CharacterEnergyDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\characterenergydescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -1427,7 +1427,7 @@
     <value>articles\en-gb\compatibilitymetadescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="LogIntoYourAccountToView" xml:space="preserve">
-    <value>Log into your account to view more details</value>
+    <value>This content is available to members only. Please log into your account to view.</value>
   </data>
   <data name="MainEnergyDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\mainenergydescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -1508,7 +1508,7 @@
     <value>articles\en-gb\thunder-sexuality-male.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="UpgradeMembershipFullText" xml:space="preserve">
-    <value>Please upgrade your subscription or purchase more credits to access more details and features.</value>
+    <value>Please upgrade your membership to access this feature and much more.</value>
   </data>
   <data name="StandardMembership" xml:space="preserve">
     <value>Standard Subscription</value>
@@ -1550,7 +1550,7 @@
     <value>Contacts</value>
   </data>
   <data name="UserMemberships" xml:space="preserve">
-    <value>User Subscriptions</value>
+    <value>User Memberships</value>
   </data>
   <data name="CreditPackPurchased" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>templates\en-gb\creditpackpurchased.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -2708,15 +2708,51 @@
     <value>Back To My Account</value>
   </data>
   <data name="LifeTimePlatinumMembership" xml:space="preserve">
-    <value>Lifetime Platinum Membership</value>
+    <value>Lifetime Membership</value>
   </data>
   <data name="Unlock" xml:space="preserve">
     <value>Unlock</value>
   </data>
   <data name="WeeklyPlatinumMembership" xml:space="preserve">
-    <value>Weekly Platinum Membership</value>
+    <value>Weekly Membership</value>
   </data>
   <data name="Compatibility" xml:space="preserve">
     <value>Compatibility</value>
+  </data>
+  <data name="FreeConsultationOfferText" xml:space="preserve">
+    <value>60 minute personal consultation with our lead astrologer (only with yearly and lifetime memberships)</value>
+  </data>
+  <data name="KnowledgeBase" xml:space="preserve">
+    <value>Knowledge Base</value>
+  </data>
+  <data name="LoginRequired" xml:space="preserve">
+    <value>Login Required</value>
+  </data>
+  <data name="PersonalChartReadings" xml:space="preserve">
+    <value>Personal Chart Readings</value>
+  </data>
+  <data name="UnlimitedAccess" xml:space="preserve">
+    <value>Unlimited Access</value>
+  </data>
+  <data name="UnlockAllFeatures" xml:space="preserve">
+    <value>Unlock all features now!</value>
+  </data>
+  <data name="UpgradeRequired" xml:space="preserve">
+    <value>Upgrade Required</value>
+  </data>
+  <data name="ViewMembershipOptions" xml:space="preserve">
+    <value>View Membership Options</value>
+  </data>
+  <data name="WhatDoIGet" xml:space="preserve">
+    <value>What do I get?</value>
+  </data>
+  <data name="what_you_get" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>general\en-gb\what-you-get.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="WhyUpgrade" xml:space="preserve">
+    <value>Why upgrade?</value>
+  </data>
+  <data name="why_upgrade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>general\en-gb\why-upgrade.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

@@ -90,6 +90,9 @@ namespace K9.DataAccessLayer.Models
         [NotMapped]
         public double CostOfRemainingActiveSubscription => GetCostOfRemainingActiveSubscription();
 
+        public bool IsAuthorisedToViewPaidContent() =>
+            MembershipOption?.SubscriptionType > MembershipOption.ESubscriptionType.Free;
+
         private double GetCostOfRemainingActiveSubscription()
         {
             var timeRemaining = EndsOn.Subtract(DateTime.Today);

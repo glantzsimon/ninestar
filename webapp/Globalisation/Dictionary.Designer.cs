@@ -1447,7 +1447,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Annual Platinum Subscription.
+        ///   Looks up a localized string similar to Yearly Membership.
         /// </summary>
         public static string AnnualPlatinumMembership {
             get {
@@ -4114,6 +4114,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 60 minute personal consultation with our lead astrologer (only with yearly and lifetime memberships).
+        /// </summary>
+        public static string FreeConsultationOfferText {
+            get {
+                return ResourceManager.GetString("FreeConsultationOfferText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Free Subscription.
         /// </summary>
         public static string FreeMembership {
@@ -4765,6 +4774,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Knowledge Base.
+        /// </summary>
+        public static string KnowledgeBase {
+            get {
+                return ResourceManager.GetString("KnowledgeBase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to K&apos;Un.
         /// </summary>
         public static string Kun {
@@ -5075,7 +5093,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lifetime Platinum Membership.
+        ///   Looks up a localized string similar to Lifetime Membership.
         /// </summary>
         public static string LifeTimePlatinumMembership {
             get {
@@ -5102,7 +5120,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Log into your account to view more details.
+        ///   Looks up a localized string similar to Login Required.
+        /// </summary>
+        public static string LoginRequired {
+            get {
+                return ResourceManager.GetString("LoginRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This content is available to members only. Please log into your account to view..
         /// </summary>
         public static string LogIntoYourAccountToView {
             get {
@@ -6511,7 +6538,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Monthly Platinum Subscription.
+        ///   Looks up a localized string similar to Monthly Membership.
         /// </summary>
         public static string MonthlyPlatinumMembership {
             get {
@@ -7379,6 +7406,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Personal Chart Readings.
+        /// </summary>
+        public static string PersonalChartReadings {
+            get {
+                return ResourceManager.GetString("PersonalChartReadings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Personal Cycles.
         /// </summary>
         public static string PersonalCycles {
@@ -7949,7 +7985,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    9 Star Ki is an immensely &lt;strong&gt;useful tool for understanding the underlying and often misunderstood dynamics that drive our relationships&lt;/strong&gt;. Have you ever wondered why certain individuals just seem to rub you up the wrong way, or conversely, why you just can&apos;t seem to get through to certain types of people under certain circumstances? Many of us are aware that &lt;strong&gt;some relationships are naturally more harmonious&lt;/strong&gt; and require less &quot;effort&quot; than others. However, &lt;strong&gt;understa [rest of string was truncated]&quot;;.
+        ///    9 Star Ki is an immensely &lt;strong&gt;useful tool for understanding the underlying and often misunderstood dynamics that drive our relationships&lt;/strong&gt;. Have you ever wondered why certain individuals just seem to rub you up the wrong way, or conversely, why you just can&apos;t seem to get through to certain types of people under certain circumstances? 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Many of us are aware that &lt;strong&gt;some relationships are naturally more harmonious&lt;/strong&gt; and require less &quot;effort&quot; than others. However, [rest of string was truncated]&quot;;.
         /// </summary>
         public static string relationships_description {
             get {
@@ -9708,11 +9747,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unlimited Access.
+        /// </summary>
+        public static string UnlimitedAccess {
+            get {
+                return ResourceManager.GetString("UnlimitedAccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unlock.
         /// </summary>
         public static string Unlock {
             get {
                 return ResourceManager.GetString("Unlock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unlock all features now!.
+        /// </summary>
+        public static string UnlockAllFeatures {
+            get {
+                return ResourceManager.GetString("UnlockAllFeatures", resourceCulture);
             }
         }
         
@@ -9780,7 +9837,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upgrade Subscription.
+        ///   Looks up a localized string similar to Upgrade Membership.
         /// </summary>
         public static string UpgradeMembership {
             get {
@@ -9789,7 +9846,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please upgrade your subscription or purchase more credits to access more details and features..
+        ///   Looks up a localized string similar to Please upgrade your membership to access this feature and much more..
         /// </summary>
         public static string UpgradeMembershipFullText {
             get {
@@ -9798,11 +9855,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upgrade your subscription.
+        ///   Looks up a localized string similar to Upgrade your membership.
         /// </summary>
         public static string UpgradeMembershipText {
             get {
                 return ResourceManager.GetString("UpgradeMembershipText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upgrade Required.
+        /// </summary>
+        public static string UpgradeRequired {
+            get {
+                return ResourceManager.GetString("UpgradeRequired", resourceCulture);
             }
         }
         
@@ -9852,7 +9918,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User Subscriptions.
+        ///   Looks up a localized string similar to User Memberships.
         /// </summary>
         public static string UserMemberships {
             get {
@@ -9911,6 +9977,15 @@ namespace K9.Globalisation {
         public static string View {
             get {
                 return ResourceManager.GetString("View", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Membership Options.
+        /// </summary>
+        public static string ViewMembershipOptions {
+            get {
+                return ResourceManager.GetString("ViewMembershipOptions", resourceCulture);
             }
         }
         
@@ -10161,7 +10236,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Weekly Platinum Membership.
+        ///   Looks up a localized string similar to Weekly Membership.
         /// </summary>
         public static string WeeklyPlatinumMembership {
             get {
@@ -10233,6 +10308,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to When you upgrade, you will get &lt;strong&gt;unlimited access to&lt;/strong&gt;:.
+        /// </summary>
+        public static string what_you_get {
+            get {
+                return ResourceManager.GetString("what_you_get", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About 9 Star Ki Biorhythms.
         /// </summary>
         public static string WhatAreBiorhythms {
@@ -10242,11 +10326,38 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to What do I get?.
+        /// </summary>
+        public static string WhatDoIGet {
+            get {
+                return ResourceManager.GetString("WhatDoIGet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to White.
         /// </summary>
         public static string White {
             get {
                 return ResourceManager.GetString("White", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to By upgrading your membership, you will get full access to all features with no cap on the number of times you can use the various features available. 9 Star Ki is a powerful system that can bring you many benefits, from helping you understand yourself and others better, to helping you to plan your life in accordance with the stars and their movements, which brings greater harmony and success.
+        /// </summary>
+        public static string why_upgrade {
+            get {
+                return ResourceManager.GetString("why_upgrade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Why upgrade?.
+        /// </summary>
+        public static string WhyUpgrade {
+            get {
+                return ResourceManager.GetString("WhyUpgrade", resourceCulture);
             }
         }
         

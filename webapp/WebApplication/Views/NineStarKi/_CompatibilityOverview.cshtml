@@ -1,22 +1,16 @@
 ﻿@using K9.WebApplication.Helpers
 @model K9.WebApplication.Models.CompatibilityModel
 
-<div class="row">
-    <div class="col-md-6">
-        @if (Model != null && Model.IsProcessed)
-        {
-            <h4 class="margin-top-0">@Model.FirstPersonName</h4>
-            @Html.Partial("_ProfileSummary", Model.NineStarKiModel1)
-        }
-    </div>
-    <div class="col-md-6">
-        @if (Model != null && Model.IsProcessed)
-        {
-            <h4 class="margin-top-0">@Model.SecondPersonName</h4>
-            @Html.Partial("_ProfileSummary", Model.NineStarKiModel2)
-        }
-    </div>
-</div>
+@if (Model != null && Model.IsProcessed)
+{
+    @Html.Partial("_ProfileSummary", Model.NineStarKiModel1)
+
+    <br />
+
+    @Html.Partial("_ProfileSummary", Model.NineStarKiModel2)
+
+    <br />
+}
 
 @if (Model != null && Model.IsProcessed)
 {

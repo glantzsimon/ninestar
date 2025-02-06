@@ -2,7 +2,8 @@
 
 <div class="shadow-light @Model.MembershipHoverCssClass membership-option-container @Model.MembershipDisplayCssClass">
     <div class="membership-option-title">
-        <h5><strong>@Model.MembershipOption.SubscriptionTypeNameLocal</strong></h5>
+        <h5 class="margin-0">@Model.MembershipOption.SubscriptionTypeNameLocal</h5>
+        <p class="margin-0"><strong>@Model.MembershipOption.FormattedPrice</strong></p>
     </div>
     <div class="membership-option">
         @Html.Partial("_MembershipMedal", Model.MembershipOption)

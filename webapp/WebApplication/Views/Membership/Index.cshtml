@@ -48,14 +48,16 @@
     <hr/>
 
     <div class="row">
-        <div class="text-center">
-            @foreach (var membershipModel in Model.MembershipModels.Where(e => e.IsPayable).ToList())
-            {
-                <div class="col-md-3 col-sm-6 padding-0">
-                    @Html.Partial("_MembershipOption", membershipModel)
-                </div>
-            }
-        </div>
+        <article>
+            <div class="text-center">
+                @foreach (var membershipModel in Model.MembershipModels.Where(e => e.IsPayable).ToList())
+                {
+                    <div class="col-md-3 col-sm-6 padding-0">
+                        @Html.Partial("_MembershipOption", membershipModel)
+                    </div>
+                }
+            </div>
+        </article>
     </div>
     
     <hr />

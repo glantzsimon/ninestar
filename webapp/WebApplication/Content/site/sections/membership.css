@@ -87,6 +87,10 @@
     text-align: left;
 }
 
+.medal-footer {
+    font-size: 0.8em !important;
+}
+
     .membership-description:first-child {
         padding-right: 5px;
     }

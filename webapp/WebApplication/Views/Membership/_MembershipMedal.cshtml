@@ -3,6 +3,19 @@
 
 <div class="membership-medal @Model.CssClassName">
     <div class="membership-medal-item membership-price">@Model.FormattedPrice</div>
-    <div class="membership-medal-item membership-element">@MvcHtmlString.Create(Model.MembershipMedalElementLocal.Replace(" ", "<br/>"))</div>
-    <div class="membership-medal-item membership-period">@Model.MembershipPeriodLocal</div>
+    <div class="membership-medal-item membership-element">
+        <span>@Model.MembershipPeriodLocal</span>
+        <br/>
+        <span>@Dictionary.MembershipLabel</span>
+    </div>
+    <div class="membership-medal-item membership-period">
+        @if (Model.SubscriptionType > MembershipOption.ESubscriptionType.Free)
+        {
+            <span class="medal-footer">@Dictionary.UnlimitedAccess</span>
+        }
+        else
+        {
+            <span class="medal-footer">@Dictionary.Forever</span>
+        }
+    </div>
 </div>

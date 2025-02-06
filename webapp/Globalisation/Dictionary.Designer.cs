@@ -4088,6 +4088,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Forever.
+        /// </summary>
+        public static string Forever {
+            get {
+                return ResourceManager.GetString("Forever", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Free.
         /// </summary>
         public static string Free {
@@ -4123,7 +4132,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Free Subscription.
+        ///   Looks up a localized string similar to Free Membership.
         /// </summary>
         public static string FreeMembership {
             get {

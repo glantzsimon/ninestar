@@ -81,7 +81,7 @@ namespace K9.DataAccessLayer.Models
         public string MembershipPeriod => GetMembershipPeriod();
 
         public string MembershipPeriodLocal => GetLocalisedPropertyValue(nameof(MembershipPeriod));
-
+        
         public bool IsFree => SubscriptionType == ESubscriptionType.Free;
 
         public bool IsMonthly =>
@@ -134,7 +134,7 @@ namespace K9.DataAccessLayer.Models
                 SubscriptionType == ESubscriptionType.WeeklyPlatinum ||
                 SubscriptionType == ESubscriptionType.LifeTimePlatinum)
             {
-                return "UnlimitedAccess";
+                return "PlatinumMembership";
             }
 
             if (SubscriptionType == ESubscriptionType.AnnualStandard ||

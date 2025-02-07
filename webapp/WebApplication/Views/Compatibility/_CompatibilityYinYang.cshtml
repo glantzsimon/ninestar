@@ -1,0 +1,48 @@
+﻿@using K9.WebApplication.Models
+@model CompatibilityModel
+
+@if (Model.CompatibilityDetails.GenderCompatibility.IsBothGenderSame)
+{
+    if (Model.CompatibilityDetails.GenderCompatibility.FundamentalGenderSameYinYang == ENineStarKiYinYang.Yin)
+    {
+        @Html.Raw(Dictionary.both_gender_same_yin)
+    }
+    else
+    {
+        @Html.Raw(Dictionary.both_gender_same_yang)
+    }
+}
+else
+{
+    if (Model.CompatibilityDetails.GenderCompatibility.IsFundamtenalGenderSame)
+    {
+        if (Model.CompatibilityDetails.GenderCompatibility.FundamentalGenderSameYinYang == ENineStarKiYinYang.Yin)
+        {
+            @Html.Raw(Dictionary.main_gender_same_yin)
+        }
+        else
+        {
+            @Html.Raw(Dictionary.main_gender_same_yang)
+        }
+    }
+    else
+    {
+        @Html.Raw(Dictionary.main_gender_opposite)
+    }
+
+    if (Model.CompatibilityDetails.GenderCompatibility.IsCharacterGenderSame)
+    {
+        if (Model.CompatibilityDetails.GenderCompatibility.CharacterGenderSameYinYang == ENineStarKiYinYang.Yin)
+        {
+            @Html.Raw(Dictionary.character_gender_same_yin)
+        }
+        else
+        {
+            @Html.Raw(Dictionary.character_gender_same_yang)
+        }
+    }
+    else
+    {
+        @Html.Raw(Dictionary.character_gender_opposite)
+    }
+}

@@ -1,0 +1,19 @@
+﻿@using K9.WebApplication.Helpers
+@using K9.WebApplication.Models
+@model NineStarKiModel
+
+@if (Model != null)
+{
+    <div class="container main-content clear-both">
+        <article>
+            <div>
+                @Html.CollapsiblePanel(Model.EnergySexualityLabel, Model.MainEnergySexualityDetails, true)
+
+                @Html.CollapsiblePanel(Dictionary.SexualityGenderRelationLabel, Html.Partial("_ProfileSexualityRelationType").ToString(), true)
+            </div>
+        </article>
+    </div>
+
+
+
+}

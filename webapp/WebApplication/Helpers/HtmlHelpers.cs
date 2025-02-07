@@ -48,7 +48,7 @@ namespace K9.WebApplication.Helpers
         {
             return html.Partial("Controls/_Panel", options);
         }
-
+        
         public static MvcHtmlString Panel(this HtmlHelper html, string title, string body, string id = "", string imageSrc = "", EPanelImageSize imageSize = EPanelImageSize.Default, EPanelImageLayout imageLayout = EPanelImageLayout.Cover)
         {
             return html.Partial("Controls/_Panel", new PanelOptions
@@ -90,7 +90,7 @@ namespace K9.WebApplication.Helpers
             return html.PaidContent<NineStarKiModel>(null,
                 () => activeUserMembership?.MembershipOption?.SubscriptionType >= subscriptionType, silent, displayHtml);
         }
-        
+
         public static IDisposable PaidContent<T>(this HtmlHelper html, T model, Func<bool?> condition = null, bool silent = false, string displayHtml = "")
         {
             var baseController = html.ViewContext.Controller as BaseNineStarKiController;

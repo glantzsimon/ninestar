@@ -104,7 +104,7 @@ namespace K9.WebApplication.Controllers
                         }
                         if (TempData["RetrieveLast"] != null)
                         {
-                            return RedirectToAction("RetrieveLast", "NineStarKi");
+                            return RedirectToAction("RetrieveLast", "PersonalChart");
                         }
                         return RedirectToAction("Index", "Home");
 
@@ -299,11 +299,11 @@ namespace K9.WebApplication.Controllers
 
             if (lastCompatibility != null)
             {
-                return RedirectToAction("RetrieveLastCompatibility", "NineStarKi");
+                return RedirectToAction("RetrieveLastCompatibility", "PersonalChart");
             }
             if (lastProfile != null)
             {
-                return RedirectToAction("RetrieveLastProfile", "NineStarKi");
+                return RedirectToAction("RetrieveLastProfile", "PersonalChart");
             }
 
             return RedirectToAction("Index", "Home");

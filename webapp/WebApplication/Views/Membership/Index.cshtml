@@ -44,22 +44,24 @@
             </div>
         </article>
     </div>
-    
-    <hr/>
+
+    <hr />
 
     <div class="row">
         <article>
             <div class="text-center">
-                @foreach (var membershipModel in Model.MembershipModels.Where(e => e.IsPayable).ToList())
-                {
-                    <div class="col-md-3 col-sm-6 padding-0">
-                        @Html.Partial("_MembershipOption", membershipModel)
-                    </div>
-                }
+                <div class="col-sm-offset-1 col-sm-10">
+                    @foreach (var membershipModel in Model.MembershipModels.Where(e => e.IsPayable).ToList())
+                    {
+                        <div class="col-sm-4 padding-0">
+                            @Html.Partial("_MembershipOption", membershipModel)
+                        </div>
+                    }
+                </div>
             </div>
         </article>
     </div>
-    
+
     <hr />
 
     <div class="row">
@@ -81,7 +83,16 @@
                 })
             </div>
         </div>
-        
+        <div class="col-sm-4">
+            <div class="text-center center-block">
+                @Html.Partial("_Testimonial", new K9.WebApplication.ViewModels.TestimonialViewModel
+                {
+                    Name = "Emily",
+                    Body = "9 Star Ki is the best system of astrology IMHO. I use it pretty much every day and it has helped me SO MUCH over the last few years. It's quite a simple system, once you start to get familiar with it. I highly recommend getting a consultation with Simon. He's super knowledgeable about 9 star ki and can really help you to understand it more deeply and to get a lot of clarity. I also highly recommend you get the full membership - the tools and content are also really good. Highly recommended!"
+                })
+            </div>
+        </div>
+
     </div>
 
     <hr />

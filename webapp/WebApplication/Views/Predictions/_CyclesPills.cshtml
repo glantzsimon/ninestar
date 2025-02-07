@@ -1,0 +1,71 @@
+﻿@using K9.SharedLibrary.Extensions
+@using K9.WebApplication.Enums
+@using K9.WebApplication.Helpers
+@using K9.WebApplication.Models
+@model NineStarKiModel
+
+@{
+    var IsScrollToCyclesOverviewName = nameof(Model.IsScrollToCyclesOverview);
+}
+
+<ul id="cycle-pills" class="nav nav-pills nav-justified margin-top-0">
+    <li class="active"><a data-toggle="tab" href="#ninestarki-cycles">@Dictionary.YearlyAndMonthlyCycles</a></li>
+    <li><a data-toggle="tab" href="#biorhythms">@Dictionary.NineStarKiBiorhythmsLabel</a></li>
+</ul>
+
+<div class="row margin-top-20 margin-bottom-0">
+    <div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-md-10 padding-left-0 padding-right-0">
+        @using (Html.BeginForm("CalculateNineStarKi", "PersonalChart"))
+        {
+            using (Html.BeginBootstrapForm())
+            {
+                @Html.BootstrapEditorFor(model => model.SelectedDate)
+
+                @Html.HiddenFor(model => model.PersonModel.Name)
+                @Html.HiddenFor(model => model.PersonModel.DateOfBirth)
+                @Html.HiddenFor(model => model.PersonModel.Gender)
+                @Html.HiddenFor(model => model.ActiveCycleTabId)
+                
+                <input type="hidden" value="True" id="@IsScrollToCyclesOverviewName" name="@IsScrollToCyclesOverviewName" />
+
+                <hr />
+                <div class="text-center">
+                    @Html.BootstrapButton(Dictionary.DisplaySelectedDate, EButtonType.Submit, "", EButtonClass.Large)
+                </div>
+            }
+        }
+    </div>
+</div>
+
+<div class="tab-content">
+    <div id="ninestarki-cycles" class="tab-pane fade in active">
+        @Html.Panel(Dictionary.YearlyAndMonthlyCycles, Html.Partial("_PersonalCycles").ToString())
+    </div>
+
+    <div id="biorhythms" class="tab-pane fade">
+        @Html.Panel(Dictionary.NineStarKiBiorhythmsLabel, Html.Partial("Biorhythms/_PersonalBiorhythms").ToString())
+    </div>
+</div>
+
+<script language="javascript">
+
+    function scrollProfile(tab) {
+        setTimeout(function () {
+            $.fn.scrollToTopOf(tab, -230);
+        }, 200);
+    }
+
+    $(function () {
+        if ("@Model.IsScrollToCyclesOverview" === "True") {
+            scrollProfile("#cycle-pills");
+
+            $(".nav-pills a[href='@(Model.ActiveCycleTabId)']").tab("show");
+        }
+
+        $('#cycle-pills a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            var target = $(e.target).attr("href");
+            $("#ActiveCycleTabId").val(target);
+        });
+    });
+
+</script>

@@ -1,0 +1,7 @@
+﻿@using K9.WebApplication.Enums
+@using K9.WebApplication.Helpers
+@model K9.WebApplication.Models.NineStarKiModel
+
+<div id="energy-summary-container margin-top-20">
+    @Html.Panel(Dictionary.YearlyAndMonthlyCyclesOverview, @Html.Partial("_CyclesPills").ToString())
+</div>

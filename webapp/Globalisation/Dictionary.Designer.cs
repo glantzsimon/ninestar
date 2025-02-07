@@ -4512,6 +4512,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to If LGBTQ+.
+        /// </summary>
+        public static string IfLGBTQ {
+            get {
+                return ResourceManager.GetString("IfLGBTQ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If Straight.
+        /// </summary>
+        public static string IfStraight {
+            get {
+                return ResourceManager.GetString("IfStraight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to In Depth Analysis.
         /// </summary>
         public static string InDepthAnalysis {
@@ -5044,6 +5062,15 @@ namespace K9.Globalisation {
         public static string Learn {
             get {
                 return ResourceManager.GetString("Learn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Learn About Yearly &amp; Monthly Cycles.
+        /// </summary>
+        public static string LearnAboutYearlyAndMonthlyCycles {
+            get {
+                return ResourceManager.GetString("LearnAboutYearlyAndMonthlyCycles", resourceCulture);
             }
         }
         
@@ -6853,7 +6880,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to My Yearly and Monthly Cycles.
+        ///   Looks up a localized string similar to My Yearly and Monthly Predictions.
         /// </summary>
         public static string MyYearlyAndMonthlyCycles {
             get {
@@ -7373,13 +7400,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The 9 Star Ki personal chart is comprised of three numbers, each from 1 to 9. For example, 3.1.7. This results in a total of 81 unique profiles, spanning nine years.
+        ///    The 9 Star Ki personal chart is comprised of three numbers, each from 1 to 9. For example: &lt;strong&gt;&quot;3.1.7&quot;&lt;/strong&gt;. 
         ///&lt;/p&gt;
         ///&lt;h5&gt;
         ///    First Number - Fundamental Energy
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The first number is &lt;strong&gt;determined by the year we were born&lt;/strong&gt; and corresponds to our &lt;strong&gt;fundamental nature&lt;/strong&gt;; the lens through which we view the world and the way we make sense of reality. It is also the Energy &lt;strong&gt;that holds the strongest in [rest of string was truncated]&quot;;.
+        ///    The first number is &lt;strong&gt;determined by the year we were born&lt;/strong&gt; and corresponds to our &lt;strong&gt;fundamental nature&lt;/strong&gt;; the lens through which we view the world and the way we make sense of reality. It is also the Energy &lt;strong&gt;that holds the strongest influence as we reach adulthood&lt;/strong&gt;, round th [rest of string was truncated]&quot;;.
         /// </summary>
         public static string personal_chart {
             get {
@@ -7402,6 +7429,15 @@ namespace K9.Globalisation {
         public static string PersonalChartCalculator {
             get {
                 return ResourceManager.GetString("PersonalChartCalculator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personal Chart Details.
+        /// </summary>
+        public static string PersonalChartDetails {
+            get {
+                return ResourceManager.GetString("PersonalChartDetails", resourceCulture);
             }
         }
         

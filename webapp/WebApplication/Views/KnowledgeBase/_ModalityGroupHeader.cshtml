@@ -1,0 +1,22 @@
+﻿@using K9.WebApplication.Helpers
+@using K9.WebApplication.Options
+@model K9.WebApplication.ViewModels.NineStarKiModalitySummaryViewModel
+
+@if (Model != null && Model.ModalityEnergies.Any())
+{
+    <div class="row margin-bottom-0">
+        <div class="col-sm-6 col-sm-offset-3">
+            @foreach (var energy in Model.ModalityEnergies)
+            {
+                <div class="col-sm-4 modality-energy-container">
+                    @Html.ImagePanel(energy.EnergyNameAndNumber, $"~/Images/ninestar/energies/{energy.Energy.ToString().ToLower()}.png", EPanelImageSize.Small, EPanelImageLayout.Contain)
+                </div>
+            }
+        </div>
+        <div class="col-sm-12 padding-0">
+            <article>
+                @MvcHtmlString.Create(Model.Body)
+            </article>
+        </div>
+    </div>
+}

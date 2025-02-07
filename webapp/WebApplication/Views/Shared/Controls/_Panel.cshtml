@@ -11,8 +11,11 @@
 @*Bookmark*@
 <div id="@Model.Id" style="position: relative; top: -180px;"></div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h4 class="margin-0"><strong>@Model.Title</strong></h4></div>
-    
+    @if (!string.IsNullOrEmpty(Model.Title))
+    {
+        <div class="panel-heading"><h4 class="margin-0"><strong>@Model.Title</strong></h4></div>
+    }
+
     @if (hasImage)
     {
         <div class="panel-image-container">

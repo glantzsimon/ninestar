@@ -14,7 +14,7 @@
     .top-nav ul li {
         display: inline-block;
         float: left;
-        width: 25%;
+        width: 20%;
     }
 
         .top-nav ul li:nth-child(6) {
@@ -230,12 +230,12 @@ ul.admin-menu ul.dropdown-menu {
 
     #main-menu-container.menu-main {
         height: 120px;
-        background-color: rgba(22,22,22,0.7);
+        background-color: rgba(22,22,22,0.4);
     }
 
     #main-menu-container.menu-small {
         height: 60px;
-        background-color: rgba(10, 10, 10, 0.85);
+        background-color: rgba(10, 10, 10, 0.9);
     }
 
 #bs-navbar-collapse-1 {

@@ -24,7 +24,7 @@ namespace K9.WebApplication.Controllers
         [Route("my-saved-compatibility-readings/view")]
         public ActionResult ViewReading(int id)
         {
-            return RedirectToAction("ViewCompatibility", "NineStarKi", new { id });
+            return RedirectToAction("ViewCompatibility", "PersonalChart", new { id });
         }
     }
 }

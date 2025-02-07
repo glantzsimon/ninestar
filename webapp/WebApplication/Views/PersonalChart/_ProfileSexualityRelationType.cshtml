@@ -1,0 +1,19 @@
+﻿@using K9.WebApplication.Models
+@model NineStarKiModel
+
+@if (Model != null)
+{
+    <ul class="nav nav-pills nav-justified">
+        <li><a data-toggle="tab" href="#straight">@Dictionary.IfStraight</a></li>
+        <li><a data-toggle="tab" href="#gay">@Dictionary.IfLGBTQ</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="straight" class="tab-pane fade padding-top-20">
+            @Html.Raw(Model.SexualityRelationTypeDetailsStraight)
+        </div>
+        <div id="gay" class="tab-pane fade padding-top-20">
+            @Html.Raw(Model.SexualityRelationTypeDetailsGay)
+        </div>
+    </div>
+}

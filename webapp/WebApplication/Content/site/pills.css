@@ -3,7 +3,7 @@
 }
 
 ul.image-pill {
-    margin-bottom: 30px;
+    margin-bottom: 0;
 }
 
     ul.image-pill li {
@@ -23,9 +23,11 @@ ul.image-pill {
 
         ul.image-pill li.active a {
             background-color: white !important;
-            -webkit-box-shadow: 0 0 34px rgba(0, 0, 0, 0.5);
-            -moz-box-shadow: 0 0 34px rgba(0, 0, 0, 0.5);
-            box-shadow: 0 0 34px rgba(0, 0, 0, 0.5);
+            -webkit-box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.2); /* Top shadow */
+            -moz-box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.2); /* Top shadow */
+            box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.2); /* Top shadow */
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
         }
 
         ul.image-pill li:not(.active) a:hover {
@@ -36,12 +38,24 @@ ul.image-pill {
             z-index: 2;
         }
 
+        ul.image-pill li.active a:hover {
+            background-color: white !important;
+            z-index: 2;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+.nav > li > a:hover, .nav > li > a:focus {
+    border-radius: 10px;
+}
+
     ul.image-pill div.img-rounded {
-        min-height: 190px;
-        height: 100%;
-        width: 100%;
+        height: 60px;
+        width: 60px;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
         margin: 10px 0;
+        margin-left: auto;
+        margin-right: auto;
     }

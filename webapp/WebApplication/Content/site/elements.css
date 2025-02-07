@@ -1,5 +1,28 @@
-﻿h3, h4, h5 {
-    color: 331a00 !important;
+﻿body a, h4 {
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+
+html, body {
+    font-size: 104%;
+    font-family: 'Candara', 'Sorts Mill Goudy', 'Petrona', 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+body {
+    background: #FFFFFF;
+    color: #151515;
+}
+
+h3, h4 {
+    color: #0a4070 !important;
+}
+
+h5 {
+    color: #337ab7 !important;
 }
 
     h5.dark {
@@ -19,7 +42,6 @@ article h4 {
     margin-bottom: 15px;
     font-weight: bold;
     font-size: 1.5em;
-    color: #444;
 }
 
 article h5 {
@@ -28,7 +50,6 @@ article h5 {
     font-weight: bold;
     font-size: 1.2em;
     line-height: 1.5em;
-    color: #444;
 }
 
 form div.well h3 {
@@ -43,24 +64,6 @@ hr {
     border-color: #d9d9d9;
 }
 
-input {
-    font-size: 100% !important;
-}
-
 .footer h3, .footer h4, .footer h5 {
     color: #8a8a8a !important;
-}
-
-.sinusgraph {
-    width: 100%;
-    border: 1px solid #eeeeee;
-}
-
-.highgauge {
-    width: 100%;
-    border: 1px solid #eeeeee;
-}
-
-#ninestarki-cycles .panel-default, #biorhythms .panel-default {
-    margin-top: 0;
 }

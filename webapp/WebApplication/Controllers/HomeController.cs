@@ -25,11 +25,6 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult Index()
         {
-            if (_authentication.IsAuthenticated)
-            {
-                return RedirectToAction("MyProfile", "NineStarKi");
-            }
-
             var dateOfBirth = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day);
             var personModel = new PersonModel
             {

@@ -2306,7 +2306,7 @@
     <value>Monthly Energy</value>
   </data>
   <data name="MyYearlyAndMonthlyCycles" xml:space="preserve">
-    <value>My Yearly and Monthly Cycles</value>
+    <value>My Yearly and Monthly Predictions</value>
   </data>
   <data name="NumberToCreateLabel" xml:space="preserve">
     <value>Number of items to create</value>
@@ -2725,11 +2725,23 @@
   <data name="FreeConsultationOfferText" xml:space="preserve">
     <value>60 minute personal consultation with our lead astrologer (only with yearly and lifetime memberships)</value>
   </data>
+  <data name="IfLGBTQ" xml:space="preserve">
+    <value>If LGBTQ+</value>
+  </data>
+  <data name="IfStraight" xml:space="preserve">
+    <value>If Straight</value>
+  </data>
   <data name="KnowledgeBase" xml:space="preserve">
     <value>Knowledge Base</value>
   </data>
+  <data name="LearnAboutYearlyAndMonthlyCycles" xml:space="preserve">
+    <value>Learn About Yearly &amp; Monthly Cycles</value>
+  </data>
   <data name="LoginRequired" xml:space="preserve">
     <value>Login Required</value>
+  </data>
+  <data name="PersonalChartDetails" xml:space="preserve">
+    <value>Personal Chart Details</value>
   </data>
   <data name="PersonalChartReadings" xml:space="preserve">
     <value>Personal Chart Readings</value>

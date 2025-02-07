@@ -165,6 +165,11 @@ namespace K9.DataAccessLayer.Models
                 return "Weekly";
             }
 
+            if (SubscriptionType == ESubscriptionType.Free)
+            {
+                return "Free";
+            }
+
             return "Lifetime";
         }
     }

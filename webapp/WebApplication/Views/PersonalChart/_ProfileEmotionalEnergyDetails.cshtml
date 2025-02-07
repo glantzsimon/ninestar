@@ -42,7 +42,7 @@
                 </ul>
                 <div class="tab-content">
                     <div id="e-details" class="tab-pane fade in active">
-                        @Html.Panel("", Model.CharacterEnergy.EnergyDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                        @Html.Panel("", $"{Model.CharacterEnergy.EnergyDescription}{Model.CharacterEnergy.ChildDescription}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                     </div>
                     <div id="e-element" class="tab-pane fade">
                         @Html.Panel("", Model.CharacterEnergy.ElementDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)

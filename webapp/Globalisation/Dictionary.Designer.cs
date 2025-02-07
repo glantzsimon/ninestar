@@ -1831,6 +1831,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Career.
+        /// </summary>
+        public static string Career {
+            get {
+                return ResourceManager.GetString("Career", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Centre.
         /// </summary>
         public static string Centre {
@@ -4209,6 +4218,15 @@ namespace K9.Globalisation {
         public static string Harvest {
             get {
                 return ResourceManager.GetString("Harvest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Health.
+        /// </summary>
+        public static string Health {
+            get {
+                return ResourceManager.GetString("Health", resourceCulture);
             }
         }
         

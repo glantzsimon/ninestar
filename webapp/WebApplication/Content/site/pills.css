@@ -12,9 +12,9 @@ ul.image-pill {
 
         ul.image-pill li a {
             background-color: transparent !important;
-            font-size: 1.2em;
+            font-size: 0.95em !important;
             font-weight: bold;
-            color: #337ab7 !important;
+            color: #0a4070 !important;
         }
 
         ul.image-pill li:not(:last-child) a {

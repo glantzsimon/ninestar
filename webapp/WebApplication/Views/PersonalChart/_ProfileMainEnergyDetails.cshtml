@@ -11,7 +11,7 @@
                 <ul class="nav nav-tabs nav-justified image-pill">
                     <li class="active">
                         <a data-toggle="tab" href="#details">
-                            @Model.MainEnergy.EnergyTitle
+                            @Model.MainEnergy.DescriptiveTitle
                             <div class="img-rounded image-pill" style="background-image: url('@($"../Images/ninestar/energies/{Model.MainEnergy.Energy}.png")');"></div>
                         </a>
                     </li>
@@ -27,6 +27,18 @@
                             <div class="img-rounded image-pill" style="background-image: url('@($"../Images/ninestar/modalities/{Model.MainEnergy.ModalityName}.png")');"></div>
                         </a>
                     </li>
+                    <li>
+                        <a data-toggle="tab" href="#trigram">
+                            @Dictionary.Trigram
+                            <div class="img-rounded image-pill" style="background-image: url('@($"../Images/ninestar/trigrams/trigram-{Model.MainEnergy.Energy}-square.png")');"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="tab" href="#yinyang">
+                            @Model.MainEnergy.YinYangName
+                            <div class="img-rounded image-pill" style="background-image: url('@($"../Images/ninestar/yinyang/{Model.MainEnergy.YinYangName}.png")');"></div>
+                        </a>
+                    </li>
                 </ul>
                 <div class="tab-content">
                     <div id="details" class="tab-pane fade in active">
@@ -40,28 +52,15 @@
                     <div id="modality" class="tab-pane fade">
                         @Html.Panel("", Model.MainEnergy.ModalityDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                     </div>
+                    <div id="trigram" class="tab-pane fade">
+                        @Html.Panel("", Model.MainEnergy.TrigramDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                    </div>
+                    <div id="yinyang" class="tab-pane fade">
+                        @Html.Panel("", Dictionary.yinyang, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                    </div>
                 </div>
-
-                
-                @*
-                                 
-                @Html.CollapsiblePanel(Html.GetEnergySpecificDisplayNameFor(m => Model.Health, Model.MainEnergy.EnergyNameAndNumber), Model.Health)
-
-                @Html.CollapsiblePanel(Html.GetEnergySpecificDisplayNameFor(m => Model.Occupations, Model.MainEnergy.EnergyNameAndNumber), Model.Occupations)
-
-                @Html.CollapsiblePanel(Html.GetEnergySpecificDisplayNameFor(m => Model.PersonalDevelopemnt, Model.MainEnergy.EnergyNameAndNumber), Model.PersonalDevelopemnt)
-
-                @Html.CollapsiblePanel(Html.GetEnergySpecificDisplayNameFor(m => Model.MainEnergy.Trigram, Model.MainEnergy.EnergyNameAndNumber), Model.MainEnergy.TrigramDescription, false, "", Model.MainEnergy.TrigramUIName, $"Images/ninestar/trigrams/trigram-{Model.MainEnergy.Energy}-square.png", EPanelImageSize.Default, EPanelImageLayout.Contain)*@
             </div>
-            <div>
-                <br />
-
-                @Html.BootstrapActionLinkButton(Dictionary.FindOutHowCompatibleYouAre, "Compatibility", "NineStarKi", null, "fa fa-heart", EButtonClass.Large)
-
-                @Html.BootstrapActionLinkButton(Dictionary.LearnMoreAboutNineStarKi, "About", "Home", null, "fa-graduation-cap", EButtonClass.Info, EButtonClass.Large)
-
-                @Html.BootstrapActionLinkButton(Dictionary.BookAConsultation, "BookConsultationStart", "Consultation", null, "fa-phone-alt", EButtonClass.Success, EButtonClass.Large)
-            </div>
+            @Html.Partial("_ButtonsFooter")
         </article>
     </div>
 }

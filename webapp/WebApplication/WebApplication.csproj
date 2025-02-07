@@ -767,8 +767,10 @@
     <Content Include="Images\ninestar\modalities\dynamic.png" />
     <Content Include="Images\ninestar\modalities\flexible.png" />
     <Content Include="Images\ninestar\modalities\stable.png" />
+    <Content Include="Images\ui\career.png" />
     <Content Include="Images\ui\emotional-energy.png" />
     <Content Include="Images\ui\fundamental-nature.png" />
+    <Content Include="Images\ui\health.png" />
     <Content Include="Images\ui\mirror-energy.png" />
     <Content Include="Images\ui\predictions.png" />
     <Content Include="Images\ui\sexuality.png" />
@@ -1286,6 +1288,9 @@
     <Content Include="Views\Shared\UpgradePrompt.cshtml" />
     <Content Include="Views\Shared\LoginPrompt.cshtml" />
     <Content Include="Views\Membership\_Testimonial.cshtml" />
+    <Content Include="Views\PersonalChart\_ButtonsFooter.cshtml" />
+    <Content Include="Views\PersonalChart\_ProfileEmotionalEnergyDetails.cshtml" />
+    <Content Include="Views\PersonalChart\_ProfileMirrorEnergyDetails.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

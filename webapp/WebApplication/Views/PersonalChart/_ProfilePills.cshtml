@@ -1,5 +1,6 @@
 ﻿@using K9.WebApplication.Enums
 @using K9.WebApplication.Helpers
+@using K9.WebApplication.Options
 @model K9.WebApplication.Models.NineStarKiModel
 
 @{
@@ -52,6 +53,18 @@
                         </a>
                     </li>
                 }
+                <li>
+                    <a data-toggle="tab" href="#health">
+                        @Dictionary.Health
+                        <div class="img-rounded image-pill" style="background-image: url('../Images/ui/health.png');"></div>
+                    </a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#career">
+                        @Dictionary.Career
+                        <div class="img-rounded image-pill" style="background-image: url('../Images/ui/career.png');"></div>
+                    </a>
+                </li>
             </ul>
             <div class="tab-content">
                 <div id="fundamental" class="tab-pane fade @adultActiveClass">
@@ -62,54 +75,33 @@
                 </div>
 
                 <div id="character" class="tab-pane fade @childActiveClass">
-                    @Html.CollapsiblePanel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.CharacterEnergyDescription, true)
+                    @Html.Panel("", Dictionary.CharacterEnergyDescription)
 
-                    @Html.Partial("_ProfileHeader", Model.CharacterEnergy)
-
-                    @using (Html.PaidContent(Model, () => !Model.IsUpgradeRequired))
-                    {
-                        @Html.Partial("_ProfileBody", Model.CharacterEnergy)
-                    }
-
-                    <br />
-
-                    @Html.BootstrapActionLinkButton(Dictionary.FindOutHowCompatibleYouAre, "Compatibility", "NineStarKi", null, "fa fa-heart", EButtonClass.Large)
-
-                    @Html.BootstrapActionLinkButton(Dictionary.LearnMoreAboutNineStarKi, "About", "Home", null, "fa-graduation-cap", EButtonClass.Info, EButtonClass.Large)
-
-                    @Html.BootstrapActionLinkButton(Dictionary.BookAConsultation, "BookConsultationStart", "Consultation", null, "fa-phone-alt", EButtonClass.Success, EButtonClass.Large)
+                    @Html.Partial("_ProfileEmotionalEnergyDetails", Model)
                 </div>
 
                 <div id="surface" class="tab-pane fade">
-                    @Html.CollapsiblePanel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.SurfaceEnergyDescription, true)
+                    @Html.Panel("", Dictionary.SurfaceEnergyDescription)
 
-                    @Html.Partial("_ProfileHeader", Model.SurfaceEnergy)
-
-                    @using (Html.PaidContent(Model, () => !Model.IsUpgradeRequired))
-                    {
-                        @Html.Partial("_ProfileBody", Model.SurfaceEnergy)
-                    }
-
-                    <br />
-
-                    @Html.BootstrapActionLinkButton(Dictionary.FindOutHowCompatibleYouAre, "Compatibility", "NineStarKi", null, "fa fa-heart", EButtonClass.Large)
-
-                    @Html.BootstrapActionLinkButton(Dictionary.LearnMoreAboutNineStarKi, "About", "Home", null, "fa-graduation-cap", EButtonClass.Info, EButtonClass.Large)
-
-                    @Html.BootstrapActionLinkButton(Dictionary.BookAConsultation, "BookConsultationStart", "Consultation", null, "fa-phone-alt", EButtonClass.Success, EButtonClass.Large)
+                    @Html.Partial("_ProfileMirrorEnergyDetails", Model)
                 </div>
 
                 @if (Model.PersonModel.IsSixteenOrOver())
                 {
                     <div id="sexuality" class="tab-pane fade">
-                        @Html.CollapsiblePanel(K9.Base.Globalisation.Dictionary.DescriptionLabel, Dictionary.sexuality_description, true)
+                        @Html.Panel("", Dictionary.sexuality_description)
 
-                        @using (Html.PaidContent(Model, () => !Model.IsUpgradeRequired))
-                        {
-                            @Html.Partial("_ProfileSexuality", Model)
-                        }
+                        @Html.Partial("_ProfileSexuality", Model)
                     </div>
                 }
+
+                <div id="health" class="tab-pane fade">
+                    @Html.Panel("", Model.Health, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                </div>
+
+                <div id="career" class="tab-pane fade">
+                    @Html.Panel("", $"{Model.Occupations}{Model.PersonalDevelopemnt}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                </div>
             </div>
         </div>
     </div>

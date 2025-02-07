@@ -2719,11 +2719,17 @@
   <data name="Compatibility" xml:space="preserve">
     <value>Compatibility</value>
   </data>
+  <data name="Career" xml:space="preserve">
+    <value>Career</value>
+  </data>
   <data name="Forever" xml:space="preserve">
     <value>Forever</value>
   </data>
   <data name="FreeConsultationOfferText" xml:space="preserve">
     <value>60 minute personal consultation with our lead astrologer (only with yearly and lifetime memberships)</value>
+  </data>
+  <data name="Health" xml:space="preserve">
+    <value>Health</value>
   </data>
   <data name="IfLGBTQ" xml:space="preserve">
     <value>If LGBTQ+</value>

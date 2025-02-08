@@ -13,7 +13,8 @@
 
 <div class="container main-content">
     <article>
-        @using (Html.PaidContent(Model, () => this.GetActiveUserMembership()?.IsAuthorisedToViewPaidContent()))
+        @*@using (Html.PaidContent(Model, () => this.GetActiveUserMembership()?.IsAuthorisedToViewPaidContent()))*@
+        @using (Html.PaidContent(Model, () => true))
         {
 
             @Html.Panel("Origins", Dictionary.origins, "origins")
@@ -47,6 +48,14 @@
             @Html.Panel("The Nine Main Energies", Html.Partial("_NineEnergiesOverview", Model.MainEnergies).ToString(), "energies")
 
             @Html.Panel("The Nine Emotional Energies", Html.Partial("_NineEnergiesOverview", Model.CharacterEnergies).ToString(), "characters")
+
+            @Html.Panel(Dictionary.YearlyCycles, Dictionary.year_description, "yearly-cycles")
+
+            @Html.Panel(Dictionary.NineYearlyCyclesTitle, Html.Partial("_YearlyCyclesOverview", Model.MainEnergies).ToString(), "nine-yearly-cycles")
+
+            @Html.Panel(Dictionary.MonthlyCycles, Dictionary.month_description, "monthly-cycles")
+
+            @Html.Panel(Dictionary.NineMonthlyCyclesTitle, Html.Partial("_MonthlyCyclesOverview", Model.CharacterEnergies).ToString(), "nine-monthly-cycles")
 
             @Html.Panel("9 Star Ki Personal Chart", Dictionary.personal_chart, "chart")
 

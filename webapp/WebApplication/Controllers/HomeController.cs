@@ -1,11 +1,8 @@
-﻿using System;
-using K9.SharedLibrary.Helpers;
+﻿using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Services;
 using NLog;
 using System.Web.Mvc;
-using K9.WebApplication.Helpers;
-using K9.WebApplication.Models;
 
 namespace K9.WebApplication.Controllers
 {
@@ -25,25 +22,9 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult Index()
         {
-            var dateOfBirth = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day);
-            var personModel = new PersonModel
-            {
-                DateOfBirth = dateOfBirth,
-                Gender = Methods.GetRandomGender()
-            };
-            
-            var nineStarKiModel = new NineStarKiModel(personModel);
-            nineStarKiModel.BiorhythmResultSet = _biorhythmsService.Calculate(nineStarKiModel, DateTime.Today);
-
-            return View(nineStarKiModel);
+            return View();
         }
-
-        [Route("about")]
-        public ActionResult About()
-        {
-            return View(_nineStarKiService.GetNineStarKiSummaryViewModel());
-        }
-
+        
         [Route("privacy-policy")]
         public ActionResult PrivacyPolicy()
         {

@@ -5,13 +5,11 @@
 @if (Model != null)
 {
     <div class="container main-content clear-both">
-        <article>
-            <div>
-                @Html.CollapsiblePanel(Model.EnergySexualityLabel, Model.MainEnergySexualityDetails, true)
+        <div>
+            @Html.CollapsiblePanel(Model.EnergySexualityLabel, Model.MainEnergySexualityDetails, true)
 
-                @Html.CollapsiblePanel(Dictionary.SexualityGenderRelationLabel, Html.Partial("_ProfileSexualityRelationType").ToString(), true)
-            </div>
-        </article>
+            @Html.CollapsiblePanel(Dictionary.SexualityGenderRelationLabel, Html.Partial("_ProfileSexualityRelationType").ToString(), true)
+        </div>
     </div>
 
 

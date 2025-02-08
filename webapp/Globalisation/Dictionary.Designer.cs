@@ -2208,10 +2208,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The compatiblity reading tool predicts the probability of harmony versus disharmony between two individuals based on their elemental make-up. However, there are a great number of factors that ultimately contribute to relationship dynamics. It is possible for there to be great harmony between two individuals who are elemental polar opposites, just as it is possible for two people whose elements promise great compatibility to clash monumentally. 
+        ///    The compatiblity calculator predicts the probability of harmony versus disharmony between two individuals based on their elemental make-up. However, there are a great number of factors that ultimately contribute to relationship dynamics. It is possible for there to be great harmony between two individuals who are elemental polar opposites, just as it is possible for two people whose elements promise great compatibility to clash monumentally. 
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    The amount of personal development wor [rest of string was truncated]&quot;;.
+        ///    The amount of personal development work  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string compatibility_subtitle {
             get {
@@ -6601,6 +6601,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Monthly Prediction.
+        /// </summary>
+        public static string MonthlyPrediction {
+            get {
+                return ResourceManager.GetString("MonthlyPrediction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Monthly Standard Subscription.
         /// </summary>
         public static string MonthlyStandardMembership {
@@ -7748,6 +7757,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Predictions In Depth.
+        /// </summary>
+        public static string PredictionsDetails {
+            get {
+                return ResourceManager.GetString("PredictionsDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 9 Star Ki Astrology Predictions yearly predictions monthly predictions life planner life cycles.
         /// </summary>
         public static string PredictionsKeywords {
@@ -7762,6 +7780,15 @@ namespace K9.Globalisation {
         public static string PredictionsMetaDescription {
             get {
                 return ResourceManager.GetString("PredictionsMetaDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Predictions Overview.
+        /// </summary>
+        public static string PredictionsOverview {
+            get {
+                return ResourceManager.GetString("PredictionsOverview", resourceCulture);
             }
         }
         
@@ -9141,6 +9168,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Strengths &amp; Challenges.
+        /// </summary>
+        public static string StrengthsWeaknesses {
+            get {
+                return ResourceManager.GetString("StrengthsWeaknesses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Stripe Customer Id.
         /// </summary>
         public static string StripeCustomerIdLabel {
@@ -9909,7 +9945,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please upgrade your membership to access this feature and much more..
+        ///   Looks up a localized string similar to Please upgrade your membership to gain full access to this feature and much more..
         /// </summary>
         public static string UpgradeMembershipFullText {
             get {
@@ -10731,6 +10767,15 @@ namespace K9.Globalisation {
         public static string YearlyPlanner {
             get {
                 return ResourceManager.GetString("YearlyPlanner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yearly Prediction.
+        /// </summary>
+        public static string YearlyPrediction {
+            get {
+                return ResourceManager.GetString("YearlyPrediction", resourceCulture);
             }
         }
         

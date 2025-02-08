@@ -9,6 +9,7 @@ using NLog;
 using System;
 using System.Text;
 using System.Web.Mvc;
+using K9.WebApplication.ViewModels;
 
 namespace K9.WebApplication.Controllers
 {
@@ -37,18 +38,23 @@ namespace K9.WebApplication.Controllers
                 DateOfBirth = dateOfBirth,
                 Gender = Methods.GetRandomGender()
             };
-            return View(new NineStarKiModel(personModel));
+            return View(
+                new PredictionsViewModel
+                {
+                    NineStarKiModel = new NineStarKiModel(personModel),
+                    NineStarKiSummaryViewModel = _nineStarKiService.GetNineStarKiSummaryViewModel()
+                });
         }
 
         [Route("predictions")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CalculateCycles(NineStarKiModel model)
+        public ActionResult Index(NineStarKiModel model)
         {
             if (model.PersonModel != null || model.SelectedDate != DateTime.Today)
             {
                 var selectedDate = model.SelectedDate ?? DateTime.Today;
-                
+
                 model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false, selectedDate);
                 model.SelectedDate = selectedDate;
 

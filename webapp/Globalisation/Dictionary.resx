@@ -1508,7 +1508,7 @@
     <value>articles\en-gb\thunder-sexuality-male.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="UpgradeMembershipFullText" xml:space="preserve">
-    <value>Please upgrade your membership to access this feature and much more.</value>
+    <value>Please upgrade your membership to gain full access to this feature and much more.</value>
   </data>
   <data name="StandardMembership" xml:space="preserve">
     <value>Standard Subscription</value>
@@ -2746,11 +2746,23 @@
   <data name="LoginRequired" xml:space="preserve">
     <value>Login Required</value>
   </data>
+  <data name="MonthlyPrediction" xml:space="preserve">
+    <value>Monthly Prediction</value>
+  </data>
   <data name="PersonalChartDetails" xml:space="preserve">
     <value>Personal Chart Details</value>
   </data>
   <data name="PersonalChartReadings" xml:space="preserve">
     <value>Personal Chart Readings</value>
+  </data>
+  <data name="PredictionsDetails" xml:space="preserve">
+    <value>Predictions In Depth</value>
+  </data>
+  <data name="PredictionsOverview" xml:space="preserve">
+    <value>Predictions Overview</value>
+  </data>
+  <data name="StrengthsWeaknesses" xml:space="preserve">
+    <value>Strengths &amp; Challenges</value>
   </data>
   <data name="UnlimitedAccess" xml:space="preserve">
     <value>Unlimited Access</value>
@@ -2775,5 +2787,8 @@
   </data>
   <data name="why_upgrade" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>general\en-gb\why-upgrade.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="YearlyPrediction" xml:space="preserve">
+    <value>Yearly Prediction</value>
   </data>
 </root>

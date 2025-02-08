@@ -1,4 +1,5 @@
-﻿@model K9.WebApplication.Models.NineStarKiModel
+﻿@using K9.WebApplication.Helpers
+@model K9.WebApplication.Models.NineStarKiModel
 
 @{
     ViewBag.Title = Dictionary.MyPersonalProfile;
@@ -22,7 +23,9 @@
     <div class="col-md-12 col-sm-12 padding-0">
         @if (Model != null && Model.IsProcessed)
         {
-            @Html.Partial("_ProfileCyclesSummary", Model)
+            <div class="energy-summary-container margin-top-20">
+                @Html.Panel(Dictionary.YearlyAndMonthlyCyclesOverview, @Html.Partial("_CyclesPills").ToString())
+            </div>
         }
     </div>
 </div>

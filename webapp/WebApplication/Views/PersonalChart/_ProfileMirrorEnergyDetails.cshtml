@@ -6,23 +6,20 @@
 @if (Model != null)
 {
     <div class="container main-content clear-both">
-        <article>
-            <div>
-                <ul class="nav nav-tabs nav-justified image-pill">
-                    <li class="active">
-                        <a data-toggle="tab" href="#m-details">
-                            @Model.SurfaceEnergy.DescriptiveTitle
-                            <div class="img-rounded image-pill" style="background-image: url('@($"../Images/ninestar/energies/{Model.SurfaceEnergy.Energy}.png")');"></div>
-                        </a>
-                    </li>
-                </ul>
-                <div class="tab-content">
-                    <div id="m-details" class="tab-pane fade in active">
-                        @Html.Panel("", Model.SurfaceEnergy.EnergyDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
-                    </div>
+        <div>
+            <ul class="nav nav-tabs nav-justified image-pill">
+                <li class="active">
+                    <a data-toggle="tab" href="#m-details">
+                        @Model.SurfaceEnergy.DescriptiveTitle
+                        <div class="img-rounded image-pill" style="background-image: url('@($"../Images/ninestar/energies/{Model.SurfaceEnergy.Energy}.png")');"></div>
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div id="m-details" class="tab-pane fade in active">
+                    @Html.Panel("", Model.SurfaceEnergy.EnergyDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 </div>
             </div>
-            @Html.Partial("_ButtonsFooter")
-        </article>
+        </div>
     </div>
 }

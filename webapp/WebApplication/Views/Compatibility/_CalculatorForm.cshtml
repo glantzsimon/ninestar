@@ -1,11 +1,11 @@
 ﻿@model K9.WebApplication.Models.CompatibilityModel
 
-@using (Html.BeginForm("Compatibility", "PersonalChart"))
+@using (Html.BeginForm("Index", "Compatibility"))
 {
     using (Html.BeginBootstrapForm())
     {
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-6">
                 <h4 class="margin-top-0">@Dictionary.FirstPerson</h4>
                 <div class="col-sm-12">
                     @Html.BootstrapEditorFor(model => model.NineStarKiModel1.PersonModel.Name)
@@ -21,7 +21,7 @@
 
             </div>
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-6">
                     <h4 class="margin-top-0">@Dictionary.SecondPerson</h4>
                     <div class="col-sm-12">
                         @Html.BootstrapEditorFor(model => model.NineStarKiModel2.PersonModel.Name)

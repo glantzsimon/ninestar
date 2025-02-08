@@ -1,0 +1,19 @@
+﻿@model K9.WebApplication.Models.NineStarKiModel
+
+@using (Html.BeginForm("CalculateNineStarKi", "PersonalChart"))
+{
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.BootstrapEditorFor(model => model.SelectedDate)
+
+        @Html.HiddenFor(model => model.PersonModel.Name)
+        @Html.HiddenFor(model => model.PersonModel.DateOfBirth)
+        @Html.HiddenFor(model => model.PersonModel.Gender)
+        @Html.HiddenFor(model => model.ActiveCycleTabId)
+                    
+        <hr />
+        <div class="text-center">
+            @Html.BootstrapButton(Dictionary.DisplaySelectedDate, EButtonType.Submit, "", EButtonClass.Large)
+        </div>
+    }
+}

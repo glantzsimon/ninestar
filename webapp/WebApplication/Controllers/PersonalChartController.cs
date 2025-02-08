@@ -43,7 +43,7 @@ namespace K9.WebApplication.Controllers
         [Route("personalchart/calculate")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CalculateNineStarKi(NineStarKiModel model)
+        public ActionResult Index(NineStarKiModel model)
         {
             if (model.PersonModel != null || model.SelectedDate != DateTime.Today)
             {

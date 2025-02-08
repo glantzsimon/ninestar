@@ -26,28 +26,8 @@ namespace K9.WebApplication.Controllers
             _biorhythmsService = biorhythmsService;
         }
 
-        [Route("compatibility/retrieve")]
-        [Authorize]
-        public ActionResult RetrieveLastCompatibility(bool todayOnly = false)
-        {
-            var lastCompatibility = SessionHelper.GetLastCompatibility(todayOnly);
-            if (lastCompatibility == null)
-            {
-                return RedirectToAction("Compatibility");
-            }
-            var model = _nineStarKiService.CalculateCompatibility(lastCompatibility.NineStarKiModel1.PersonModel, lastCompatibility.NineStarKiModel2.PersonModel, lastCompatibility.IsHideSexualChemistry);
-            return View("Compatibility", model);
-        }
-
-        [Authorize]
-        [Route("compatibility/view")]
-        public ActionResult ViewCompatibility(int id)
-        {
-            return View("Compatibility", _nineStarKiService.RetrieveCompatibility(id));
-        }
-
         [Route("compatibility")]
-        public ActionResult Compatibility()
+        public ActionResult Index()
         {
             var dateOfBirth1 = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day);
             var dateOfBirth2 = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day).AddMonths(2);
@@ -61,21 +41,41 @@ namespace K9.WebApplication.Controllers
                 DateOfBirth = dateOfBirth2,
                 Gender = Methods.GetRandomGender()
             };
-            return View("Compatibility", new CompatibilityModel(new NineStarKiModel(personModel1), new NineStarKiModel(personModel2)));
+            return View(new CompatibilityModel(new NineStarKiModel(personModel1), new NineStarKiModel(personModel2)));
         }
 
         [Route("compatibility")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Compatibility(CompatibilityModel model)
+        public ActionResult Index(CompatibilityModel model)
         {
             if (model.NineStarKiModel1?.PersonModel != null && model.NineStarKiModel2?.PersonModel != null)
             {
                 model = _nineStarKiService.CalculateCompatibility(model.NineStarKiModel1.PersonModel, model.NineStarKiModel2.PersonModel, model.IsHideSexualChemistry);
             }
-            return View("Compatibility", model);
+            return View(model);
         }
-        
+
+        [Route("compatibility/retrieve")]
+        [Authorize]
+        public ActionResult RetrieveLastCompatibility(bool todayOnly = false)
+        {
+            var lastCompatibility = SessionHelper.GetLastCompatibility(todayOnly);
+            if (lastCompatibility == null)
+            {
+                return RedirectToAction("Compatibility");
+            }
+            var model = _nineStarKiService.CalculateCompatibility(lastCompatibility.NineStarKiModel1.PersonModel, lastCompatibility.NineStarKiModel2.PersonModel, lastCompatibility.IsHideSexualChemistry);
+            return View("Index", model);
+        }
+
+        [Authorize]
+        [Route("compatibility/view")]
+        public ActionResult ViewCompatibility(int id)
+        {
+            return View("Index", _nineStarKiService.RetrieveCompatibility(id));
+        }
+
         public override string GetObjectName()
         {
             return string.Empty;

@@ -9,6 +9,8 @@
     ViewBag.MetaDescription = Dictionary.CompatibilityMetaDescription;
 
     Layout = "../Shared/_LayoutFormMedium.cshtml";
+
+    var isAuth = this.GetActiveUserMembership()?.IsAuthorisedToViewPaidContent() ?? false;
 }
 
 @Html.Partial("_BetaPopup")
@@ -16,42 +18,35 @@
 <div class="container main-content margin-bottom-0">
     <div class="row">
         <div class="col-sm-12 padding-0">
-            @using (Html.PaidContent(Model, () => this.GetActiveUserMembership()?.IsAuthorisedToViewPaidContent()))
-            {
-                @Html.Partial("_CompatibilityCalculator")
-            }
+            @Html.Partial("_CalculatorForm")
         </div>
     </div>
     <div class="row">
         <div class="col-sm-12 padding-0">
-            @if (Model != null && Model.IsProcessed)
-            {
-                @Html.Partial("_CompatibilityOverview", Model)
-            }
-            else
-            {
-                <article>
+            <article>
+                @if (Model != null && Model.IsProcessed)
+                {
+                    @Html.Partial("_CompatibilityOverview", Model)
+
+                    @Html.Panel(Dictionary.CompatibilityDetails, Html.Partial("_CompatibilityPills").ToString())
+                }
+                else
+                {
                     <div class="margin-bottom-20">
                         @Html.Panel("9 Star Ki and Relationships", Html.Partial("../Relationships/_AboutRelationships").ToString(), "relationships")
-                        
+
                         @using (Html.PaidContent(Model, () => this.GetActiveUserMembership()?.IsAuthorisedToViewPaidContent(), true))
                         {
 
                             @Html.Panel("The 5 Transformations", Html.Partial("../NineStarKi/_FiveTransformations").ToString(), "transformations")
 
-                            @Html.Panel("9 Star Ki and Sexuality", Html.Partial("../NineStarKi/_Sexuality").ToString(), "sexuality")
+                            @Html.Panel("9 Star Ki and Sexuality", Html.Partial("../PersonalChart/_Sexuality").ToString(), "sexuality")
                         }
+
+                        @Html.Partial("_ButtonsFooter")
                     </div>
-                </article>
-            }
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12 padding-0">
-            @if (Model != null && Model.IsProcessed)
-            {
-                @Html.Partial("_CompatibilityPills")
-            }
+                }
+            </article>
         </div>
     </div>
 </div>

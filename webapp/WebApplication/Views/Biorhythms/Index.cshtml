@@ -1,5 +1,4 @@
 ﻿@model K9.WebApplication.ViewModels.PredictionsViewModel
-@using K9.WebApplication.Extensions
 @using K9.WebApplication.Helpers
 
 @{
@@ -9,9 +8,6 @@
     ViewBag.MetaDescription = Dictionary.PredictionsMetaDescription;
 
     Layout = "../Shared/_LayoutFormMedium.cshtml";
-
-    var isAuth = this.GetActiveUserMembership()?.IsAuthorisedToViewPaidContent() ?? false;
-    isAuth = true;
 }
 
 @Html.Partial("_BetaPopup")
@@ -35,14 +31,11 @@
                 <div class="margin-bottom-20">
                     @Html.Panel(Dictionary.YearlyCycles, Dictionary.year_description, "yearly-cycles")
 
+                    @Html.Panel(Dictionary.NineYearlyCyclesTitle, Html.Partial("_YearlyCyclesOverview", Model.NineStarKiSummaryViewModel.MainEnergies).ToString(), "nine-yearly-cycles")
+
                     @Html.Panel(Dictionary.MonthlyCycles, Dictionary.month_description, "monthly-cycles")
 
-                    @using (Html.PaidContent(Model, () => isAuth))
-                    {
-                        @Html.CollapsiblePanel(Dictionary.NineYearlyCyclesTitle, Html.Partial("_YearlyCyclesOverview", Model.NineStarKiSummaryViewModel.MainEnergies).ToString(), false, "", "nine-yearly-cycles")
-
-                        @Html.CollapsiblePanel(Dictionary.NineMonthlyCyclesTitle, Html.Partial("_MonthlyCyclesOverview", Model.NineStarKiSummaryViewModel.CharacterEnergies).ToString(), false, "", "nine-monthly-cycles")
-                    }
+                    @Html.Panel(Dictionary.NineMonthlyCyclesTitle, Html.Partial("_MonthlyCyclesOverview", Model.NineStarKiSummaryViewModel.CharacterEnergies).ToString(), "nine-monthly-cycles")
 
                     @Html.Partial("_ButtonsFooter")
                 </div>

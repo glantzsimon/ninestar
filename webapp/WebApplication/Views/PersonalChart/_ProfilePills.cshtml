@@ -1,4 +1,5 @@
 ﻿@using K9.WebApplication.Enums
+@using K9.WebApplication.Extensions
 @using K9.WebApplication.Helpers
 @using K9.WebApplication.Options
 @model K9.WebApplication.Models.NineStarKiModel
@@ -6,106 +7,134 @@
 @{
     var adultActiveClass = Model.PersonModel.IsAdult() ? "in active" : "disabled";
     var childActiveClass = Model.PersonModel.IsAdult() ? "" : "in active";
+    var isAuth = this.GetActiveUserMembership()?.IsAuthorisedToViewPaidContent() ?? false;
 }
 
-<article>
-    <div class="ninestar-summmary container padding-0">
-        <div id="personal-profile">
-            <ul class="nav nav-tabs nav-justified image-pill">
-                @if (Model.PersonModel.IsAdult())
-                {
-                    <li class="active">
-                        <a data-toggle="tab" href="#fundamental">
-                            @Model.MainEnergy.AdultEnergyLabel
-                            <div class="img-rounded image-pill" style="background-image: url('../Images/ui/fundamental-nature.png');"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a data-toggle="tab" href="#character">
-                            @Model.CharacterEnergy.CharacteEnergyLabel
-                            <div class="img-rounded image-pill" style="background-image: url('../Images/ui/emotional-energy.png');"></div>
-                        </a>
-                    </li>
-                }
-                else
-                {
-                    <li class="active">
-                        <a data-toggle="tab" href="#character">
-                            @Model.CharacterEnergy.CharacteEnergyLabel
-                            <div class="img-rounded image-pill" style="background-image: url('../Images/ui/emotional-energy.png');"></div>
-                        </a>
-                    </li>
-                }
-
-                <li>
-                    <a data-toggle="tab" href="#surface">
-                        @Dictionary.ExternalPersona
-                        <div class="img-rounded image-pill" style="background-image: url('../Images/ui/mirror-energy.png');"></div>
-                    </a>
-                </li>
-
-                @if (Model.PersonModel.IsSixteenOrOver())
-                {
-                    <li>
-                        <a data-toggle="tab" href="#sexuality">
-                            @Dictionary.SexualityLabel
-                            <div class="img-rounded image-pill" style="background-image: url('../Images/ui/sexuality.png');"></div>
-                        </a>
-                    </li>
-                }
-                <li>
-                    <a data-toggle="tab" href="#health">
-                        @Dictionary.Health
-                        <div class="img-rounded image-pill" style="background-image: url('../Images/ui/health.png');"></div>
+<div class="ninestar-summmary container padding-0">
+    <div id="personal-profile">
+        <ul class="nav nav-pills nav-justified image-pill">
+            @if (Model.PersonModel.IsAdult())
+            {
+                <li class="active">
+                    <a data-toggle="tab" href="#fundamental">
+                        @Model.MainEnergy.AdultEnergyLabel
+                        <div class="img-rounded image-pill" style="background-image: url('../Images/ui/fundamental-nature.png');"></div>
                     </a>
                 </li>
                 <li>
-                    <a data-toggle="tab" href="#career">
-                        @Dictionary.Career
-                        <div class="img-rounded image-pill" style="background-image: url('../Images/ui/career.png');"></div>
+                    <a data-toggle="tab" href="#character">
+                        @Model.CharacterEnergy.CharacteEnergyLabel
+                        <div class="img-rounded image-pill" style="background-image: url('../Images/ui/emotional-energy.png');"></div>
                     </a>
                 </li>
-            </ul>
-            <div class="tab-content">
-                <div id="fundamental" class="tab-pane fade @adultActiveClass">
-                    @Html.Panel("", Dictionary.MainEnergyDescription)
+            }
+            else
+            {
+                <li class="active">
+                    <a data-toggle="tab" href="#character">
+                        @Model.CharacterEnergy.CharacteEnergyLabel
+                        <div class="img-rounded image-pill" style="background-image: url('../Images/ui/emotional-energy.png');"></div>
+                    </a>
+                </li>
+            }
 
-                    <br />
+            <li>
+                <a data-toggle="tab" href="#surface">
+                    @Dictionary.ExternalPersona
+                    <div class="img-rounded image-pill" style="background-image: url('../Images/ui/mirror-energy.png');"></div>
+                </a>
+            </li>
+
+            @if (Model.PersonModel.IsSixteenOrOver())
+            {
+                <li>
+                    <a data-toggle="tab" href="#sexuality">
+                        @Dictionary.SexualityLabel
+                        <div class="img-rounded image-pill" style="background-image: url('../Images/ui/sexuality.png');"></div>
+                    </a>
+                </li>
+            }
+            <li>
+                <a data-toggle="tab" href="#health">
+                    @Dictionary.Health
+                    <div class="img-rounded image-pill" style="background-image: url('../Images/ui/health.png');"></div>
+                </a>
+            </li>
+            <li>
+                <a data-toggle="tab" href="#career">
+                    @Dictionary.Career
+                    <div class="img-rounded image-pill" style="background-image: url('../Images/ui/career.png');"></div>
+                </a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="fundamental" class="tab-pane fade @adultActiveClass">
+                @Html.Panel("", Dictionary.MainEnergyDescription)
+
+                <br />
+                @using (Html.PaidContent(Model, () => isAuth))
+                {
                     @Html.Partial("_ProfileMainEnergyDetails", Model)
-                </div>
+                }
+                @Html.Partial("_ButtonsFooter")
+            </div>
 
-                <div id="character" class="tab-pane fade @childActiveClass">
-                    @Html.Panel("", Dictionary.CharacterEnergyDescription)
+            <div id="character" class="tab-pane fade @childActiveClass">
+                @Html.Panel("", Dictionary.CharacterEnergyDescription)
 
-                    @Html.Partial("_ProfileEmotionalEnergyDetails", Model)
-                </div>
-
-                <div id="surface" class="tab-pane fade">
-                    @Html.Panel("", Dictionary.SurfaceEnergyDescription)
-
-                    @Html.Partial("_ProfileMirrorEnergyDetails", Model)
-                </div>
-
-                @if (Model.PersonModel.IsSixteenOrOver())
+                <br />
+                @using (Html.PaidContent(Model, () => isAuth))
                 {
-                    <div id="sexuality" class="tab-pane fade">
-                        @Html.Panel("", Dictionary.sexuality_description)
-
-                        @Html.Partial("_ProfileSexuality", Model)
-                    </div>
+                    @Html.Partial("_ProfileEmotionalEnergyDetails", Model)
                 }
 
-                <div id="health" class="tab-pane fade">
-                    @Html.Panel("", Model.Health, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
-                </div>
+                @Html.Partial("_ButtonsFooter")
+            </div>
 
-                <div id="career" class="tab-pane fade">
+            <div id="surface" class="tab-pane fade">
+                @Html.Panel("", Dictionary.SurfaceEnergyDescription)
+
+                <br />
+                @using (Html.PaidContent(Model, () => isAuth))
+                {
+                    @Html.Partial("_ProfileMirrorEnergyDetails", Model)
+                }
+                @Html.Partial("_ButtonsFooter")
+            </div>
+
+            @if (Model.PersonModel.IsSixteenOrOver())
+            {
+            <div id="sexuality" class="tab-pane fade">
+                @Html.Panel("", Dictionary.sexuality_description)
+
+                <br />
+                @using (Html.PaidContent(Model, () => isAuth))
+                {
+                    @Html.Partial("_ProfileSexuality", Model)
+                }
+                @Html.Partial("_ButtonsFooter")
+            </div>
+            }
+
+            <div id="health" class="tab-pane fade">
+                @using (Html.PaidContent(Model, () => isAuth))
+                {
+                    @Html.Panel("", Model.Health, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                }
+                @Html.Partial("_ButtonsFooter")
+            </div>
+
+            <div id="career" class="tab-pane fade">
+                @using (Html.PaidContent(Model, () => isAuth))
+                {
                     @Html.Panel("", $"{Model.Occupations}{Model.PersonalDevelopemnt}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
-                </div>
+                }
+                @Html.Partial("_ButtonsFooter")
             </div>
         </div>
     </div>
-</article>
+</div>
 
 <script language="javascript">
 

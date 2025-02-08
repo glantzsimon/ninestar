@@ -1,4 +1,5 @@
-﻿@using K9.WebApplication.Helpers
+﻿@using K9.WebApplication.Extensions
+@using K9.WebApplication.Helpers
 @model K9.WebApplication.Models.NineStarKiModel
 
 @{
@@ -14,18 +15,20 @@
 
 <div class="container main-content margin-bottom-0">
     <div class="col-md-3 col-sm-3 padding-0">
-        @Html.Partial("_Calculator")
+        @Html.Partial("_CalculatorForm")
     </div>
     <div class="col-md-9 col-sm-9 padding-left-20-desktop padding-right-0 mobile panel-margin-top-20">
         @if (Model != null && Model.IsProcessed)
         {
-            @Html.Partial("_ProfileSummary", Model)
+            @Html.Partial("_ProfileOverview", Model)
         }
         else
         {
             <article>
                 <div class="margin-bottom-20">
                     @Html.Panel("9 Star Ki Personal Chart", Dictionary.personal_chart, "chart")
+
+                    @Html.Partial("_ButtonsFooter")
                 </div>
             </article>
         }
@@ -35,5 +38,7 @@
 @if (Model != null && Model.IsProcessed)
 {
     <br />
-    @Html.Panel(Dictionary.PersonalChartDetails, Html.Partial("_ProfilePills", Model).ToString())
+    <article>
+        @Html.Panel(Dictionary.PersonalChartDetails, Html.Partial("_ProfilePills", Model).ToString())
+    </article>
 }

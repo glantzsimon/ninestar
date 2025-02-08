@@ -7,6 +7,6 @@
     var panelTitle = Model.IsCompatibility ? Model.PersonModel.Name : Dictionary.PersonalChartOverview;
 }
 
-<div id="energy-summary-container">
-    @Html.Panel(panelTitle, Html.Partial("_PersonalChart").ToString())
+<div class="energy-summary-container">
+    @Html.Panel(panelTitle, Html.Partial("../PersonalChart/_PersonalChart").ToString())
 </div>

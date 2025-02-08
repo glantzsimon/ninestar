@@ -6,61 +6,58 @@
 @if (Model != null)
 {
     <div class="container main-content clear-both">
-        <article>
-            <div>
-                <ul class="nav nav-tabs nav-justified image-pill">
-                    <li class="active">
-                        <a data-toggle="tab" href="#details">
-                            @Model.MainEnergy.DescriptiveTitle
-                            <div class="img-rounded image-pill" style="background-image: url('@($"../Images/ninestar/energies/{Model.MainEnergy.Energy}.png")');"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a data-toggle="tab" href="#element">
-                            @Model.MainEnergy.ElementTitle
-                            <div class="img-rounded image-pill" style="background-image: url('@($"../Images/ninestar/elements/{Model.MainEnergy.ElementName}.png")');"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a data-toggle="tab" href="#modality">
-                            @Model.MainEnergy.ModalityTitle
-                            <div class="img-rounded image-pill" style="background-image: url('@($"../Images/ninestar/modalities/{Model.MainEnergy.ModalityName}.png")');"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a data-toggle="tab" href="#trigram">
-                            @Dictionary.Trigram
-                            <div class="img-rounded image-pill" style="background-image: url('@($"../Images/ninestar/trigrams/trigram-{Model.MainEnergy.Energy}-square.png")');"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a data-toggle="tab" href="#yinyang">
-                            @Model.MainEnergy.YinYangName
-                            <div class="img-rounded image-pill" style="background-image: url('@($"../Images/ninestar/yinyang/{Model.MainEnergy.YinYangName}.png")');"></div>
-                        </a>
-                    </li>
-                </ul>
-                <div class="tab-content">
-                    <div id="details" class="tab-pane fade in active">
-                        @Html.Panel("", $"{Model.MainEnergy.EnergyDescription}" +
-                                        $"<h5>{Dictionary.OverviewLabel}</h5>" +
-                                        $"{Model.Overview}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
-                    </div>
-                    <div id="element" class="tab-pane fade">
-                        @Html.Panel("", Model.MainEnergy.ElementDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
-                    </div>
-                    <div id="modality" class="tab-pane fade">
-                        @Html.Panel("", Model.MainEnergy.ModalityDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
-                    </div>
-                    <div id="trigram" class="tab-pane fade">
-                        @Html.Panel("", Model.MainEnergy.TrigramDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
-                    </div>
-                    <div id="yinyang" class="tab-pane fade">
-                        @Html.Panel("", Dictionary.yinyang, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
-                    </div>
+        <div>
+            <ul class="nav nav-tabs nav-justified image-pill">
+                <li class="active">
+                    <a data-toggle="tab" href="#details">
+                        @Model.MainEnergy.DescriptiveTitle
+                        <div class="img-rounded image-pill" style="background-image: url('@($"../Images/ninestar/energies/{Model.MainEnergy.Energy}.png")');"></div>
+                    </a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#element">
+                        @Model.MainEnergy.ElementTitle
+                        <div class="img-rounded image-pill" style="background-image: url('@($"../Images/ninestar/elements/{Model.MainEnergy.ElementName}.png")');"></div>
+                    </a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#modality">
+                        @Model.MainEnergy.ModalityTitle
+                        <div class="img-rounded image-pill" style="background-image: url('@($"../Images/ninestar/modalities/{Model.MainEnergy.ModalityName}.png")');"></div>
+                    </a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#trigram">
+                        @Dictionary.Trigram
+                        <div class="img-rounded image-pill" style="background-image: url('@($"../Images/ninestar/trigrams/trigram-{Model.MainEnergy.Energy}-square.png")');"></div>
+                    </a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#yinyang">
+                        @Model.MainEnergy.YinYangName
+                        <div class="img-rounded image-pill" style="background-image: url('@($"../Images/ninestar/yinyang/{Model.MainEnergy.YinYangName}.png")');"></div>
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div id="details" class="tab-pane fade in active">
+                    @Html.Panel("", $"{Model.MainEnergy.EnergyDescription}" +
+                                    $"<h5>{Dictionary.OverviewLabel}</h5>" +
+                                    $"{Model.Overview}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                </div>
+                <div id="element" class="tab-pane fade">
+                    @Html.Panel("", Model.MainEnergy.ElementDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                </div>
+                <div id="modality" class="tab-pane fade">
+                    @Html.Panel("", Model.MainEnergy.ModalityDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                </div>
+                <div id="trigram" class="tab-pane fade">
+                    @Html.Panel("", Model.MainEnergy.TrigramDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                </div>
+                <div id="yinyang" class="tab-pane fade">
+                    @Html.Panel("", Dictionary.yinyang, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 </div>
             </div>
-            @Html.Partial("_ButtonsFooter")
-        </article>
+        </div>
     </div>
 }

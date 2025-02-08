@@ -104,6 +104,7 @@ namespace K9.WebApplication.Helpers
             if (!(WebSecurity.IsAuthenticated && isAuthorised))
             {
                 div.MergeAttribute(Base.WebApplication.Constants.Html.Attributes.Style, "display: none !important;");
+                div.MergeAttribute(Base.WebApplication.Constants.Html.Attributes.Class, "paywall-remove-element");
 
                 if (model != null)
                 {

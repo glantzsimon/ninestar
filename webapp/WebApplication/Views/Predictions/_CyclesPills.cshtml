@@ -1,71 +1,87 @@
 ﻿@using K9.SharedLibrary.Extensions
 @using K9.WebApplication.Enums
+@using K9.WebApplication.Extensions
 @using K9.WebApplication.Helpers
 @using K9.WebApplication.Models
 @model NineStarKiModel
 
 @{
-    var IsScrollToCyclesOverviewName = nameof(Model.IsScrollToCyclesOverview);
+    var isAuth = this.GetActiveUserMembership()?.IsAuthorisedToViewPaidContent() ?? false;
+    isAuth = true;
 }
 
-<ul id="cycle-pills" class="nav nav-pills nav-justified margin-top-0">
-    <li class="active"><a data-toggle="tab" href="#ninestarki-cycles">@Dictionary.YearlyAndMonthlyCycles</a></li>
-    <li><a data-toggle="tab" href="#biorhythms">@Dictionary.NineStarKiBiorhythmsLabel</a></li>
-</ul>
+<div class="ninestar-summmary container padding-0">
+    @Html.Partial("_DateSelector")
 
-<div class="row margin-top-20 margin-bottom-0">
-    <div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-md-10 padding-left-0 padding-right-0">
-        @using (Html.BeginForm("CalculateNineStarKi", "PersonalChart"))
-        {
-            using (Html.BeginBootstrapForm())
+    <ul class="nav nav-pills nav-justified image-pill">
+        <li class="active">
+            <a data-toggle="tab" href="#current-monthly-cycle">
+                @Dictionary.MonthlyPrediction
+                <div class="img-rounded image-pill" style="background-image: url('Images/ui/moon.png');"></div>
+            </a>
+        </li>
+
+        <li>
+            <a data-toggle="tab" href="#current-yearly-cycle">
+                @Dictionary.YearlyPrediction
+                <div class="img-rounded image-pill" style="background-image: url('Images/ui/sun.png');"></div>
+            </a>
+        </li>
+
+        <li>
+            <a data-toggle="tab" href="#monthly-planner">
+                @Dictionary.MonthlyPlanner
+                <div class="img-rounded image-pill" style="background-image: url('Images/ui/monthly-planner.png');"></div>
+            </a>
+        </li>
+
+        <li>
+            <a data-toggle="tab" href="#yearly-planner">
+                @Dictionary.YearlyPlanner
+                <div class="img-rounded image-pill" style="background-image: url('Images/ui/yearly-planner.png');"></div>
+            </a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="current-monthly-cycle" class="tab-pane fade in active">
+            @Html.Panel("", Dictionary.month_description)
+
+            @using (Html.PaidContent(Model, () => isAuth))
             {
-                @Html.BootstrapEditorFor(model => model.SelectedDate)
-
-                @Html.HiddenFor(model => model.PersonModel.Name)
-                @Html.HiddenFor(model => model.PersonModel.DateOfBirth)
-                @Html.HiddenFor(model => model.PersonModel.Gender)
-                @Html.HiddenFor(model => model.ActiveCycleTabId)
-                
-                <input type="hidden" value="True" id="@IsScrollToCyclesOverviewName" name="@IsScrollToCyclesOverviewName" />
-
-                <hr />
-                <div class="text-center">
-                    @Html.BootstrapButton(Dictionary.DisplaySelectedDate, EButtonType.Submit, "", EButtonClass.Large)
-                </div>
+                @Html.Partial("_Cycle", Model.MonthlyCycleEnergy)
             }
-        }
+
+            @Html.Partial("_ButtonsFooter")
+        </div>
+
+        <div id="current-yearly-cycle" class="tab-pane fade">
+            @Html.Panel("", Dictionary.year_description)
+
+            @using (Html.PaidContent(Model, () => isAuth))
+            {
+                @Html.Partial("_Cycle", Model.YearlyCycleEnergy)
+            }
+
+            @Html.Partial("_ButtonsFooter")
+        </div>
+
+        <div id="yearly-planner" class="tab-pane fade">
+            @using (Html.PaidContent(Model, () => isAuth))
+            {
+                @Html.Partial("_YearlyPlanner", Model)
+            }
+
+            @Html.Partial("_ButtonsFooter")
+        </div>
+
+        <div id="monthly-planner" class="tab-pane fade">
+            @using (Html.PaidContent(Model, () => isAuth))
+            {
+                @Html.Partial("_MonthlyPlanner", Model)
+            }
+
+            @Html.Partial("_ButtonsFooter")
+        </div>
     </div>
 </div>
-
-<div class="tab-content">
-    <div id="ninestarki-cycles" class="tab-pane fade in active">
-        @Html.Panel(Dictionary.YearlyAndMonthlyCycles, Html.Partial("_PersonalCycles").ToString())
-    </div>
-
-    <div id="biorhythms" class="tab-pane fade">
-        @Html.Panel(Dictionary.NineStarKiBiorhythmsLabel, Html.Partial("Biorhythms/_PersonalBiorhythms").ToString())
-    </div>
-</div>
-
-<script language="javascript">
-
-    function scrollProfile(tab) {
-        setTimeout(function () {
-            $.fn.scrollToTopOf(tab, -230);
-        }, 200);
-    }
-
-    $(function () {
-        if ("@Model.IsScrollToCyclesOverview" === "True") {
-            scrollProfile("#cycle-pills");
-
-            $(".nav-pills a[href='@(Model.ActiveCycleTabId)']").tab("show");
-        }
-
-        $('#cycle-pills a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-            var target = $(e.target).attr("href");
-            $("#ActiveCycleTabId").val(target);
-        });
-    });
-
-</script>

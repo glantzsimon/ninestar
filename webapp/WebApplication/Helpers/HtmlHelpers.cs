@@ -213,7 +213,6 @@ namespace K9.WebApplication.Helpers
                     writer.WriteLine(centerDiv.ToString(TagRenderMode.EndTag));
 
                     content = writer.ToString();
-                    content = "";
                 }
             }
 

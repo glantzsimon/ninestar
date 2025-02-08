@@ -4,6 +4,6 @@
 @Html.Raw(TemplateProcessor.PopulateTemplate(Dictionary.sexuality, new
 {
     AboutTitle = Dictionary.AboutNineStarKi,
-    AboutLink = Url.ActionWithBookmark("About", "Home", "yinyang"),
-    ChartLink = Url.ActionWithBookmark("About", "Home", "chart"),
+    AboutLink = Url.ActionWithBookmark("Index", "KnowledgeBase", "yinyang"),
+    ChartLink = Url.ActionWithBookmark("Index", "KnowledgeBase", "chart"),
 }))

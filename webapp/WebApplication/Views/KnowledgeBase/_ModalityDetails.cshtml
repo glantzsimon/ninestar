@@ -1,5 +1,12 @@
 ﻿@using K9.WebApplication.Helpers
 @using K9.WebApplication.Options
+@using K9.WebApplication.Extensions
+@using K9.WebApplication.Helpers
 @model K9.WebApplication.ViewModels.NineStarKiModalitySummaryViewModel
 
-@Html.Panel(Model.Title, Html.Partial("_ModalityGroupHeader").ToString(), Model.ModalityName.ToLower(), $"Images/ninestar/modalities/{Model.ModalityName.ToLower()}.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+@Html.Panel(Model.Title, 
+    Html.PayWallContent(Model, Html.Partial("_ModalityBody").ToString()).ToString(), 
+    Model.ModalityName.ToLower(), 
+    $"Images/ninestar/modalities/{Model.ModalityName.ToLower()}.png", 
+    EPanelImageSize.Default, 
+    EPanelImageLayout.Contain)

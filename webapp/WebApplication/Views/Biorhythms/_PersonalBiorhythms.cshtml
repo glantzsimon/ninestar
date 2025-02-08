@@ -3,7 +3,7 @@
 @using K9.WebApplication.Options
 @model K9.WebApplication.Models.NineStarKiModel
 
-@using (Html.PaidContent(Model, () => !Model.IsUpgradeRequired))
+@using (Html.PayWall(Model))
 {
     <div class="row">
         <div class="col-md-12">
@@ -87,10 +87,6 @@
 </div>
 <div class="row">
     <div class="col-md-12 margin-top-20 margin-bottom-0 padding-left-0 padding-right-0">
-        @Html.BootstrapActionLinkButton(Dictionary.FindOutHowCompatibleYouAre, "Compatibility", "NineStarKi", null, "fa fa-heart", EButtonClass.Large)
-
-        @Html.BootstrapActionLinkButton(Dictionary.LearnMoreAboutNineStarKi, "About", "Home", null, "fa-graduation-cap", EButtonClass.Info, EButtonClass.Large)
-
-        @Html.BootstrapActionLinkButton(Dictionary.BookAConsultation, "BookConsultationStart", "Consultation", null, "fa-phone-alt", EButtonClass.Success, EButtonClass.Large)
+        @Html.Partial("_ButtonsFooter")
     </div>
 </div>

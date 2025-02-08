@@ -1,7 +1,7 @@
 ﻿@using K9.WebApplication.Helpers
 @model K9.WebApplication.Models.NineStarKiEnergy
 
-<a target="_blank" href="@Url.ActionWithBookmark("About", "Home", Model.ElementName.ToLower())">
+<a target="_blank" href="@Url.ActionWithBookmark("Index", "KnowledgeBase", Model.ElementName.ToLower())">
     <div class="ninestar-summary-container">
         <h3 class="margin-bottom-0 padding-bottom-0">@Dictionary.Element</h3>
         <p>@Model.ElementName</p>

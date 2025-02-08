@@ -9,8 +9,6 @@
     ViewBag.MetaDescription = Dictionary.CompatibilityMetaDescription;
 
     Layout = "../Shared/_LayoutFormMedium.cshtml";
-
-    var isAuth = this.GetActiveUserMembership()?.IsAuthorisedToViewPaidContent() ?? false;
 }
 
 @Html.Partial("_BetaPopup")
@@ -35,7 +33,7 @@
                     <div class="margin-bottom-20">
                         @Html.Panel("9 Star Ki and Relationships", Html.Partial("../Relationships/_AboutRelationships").ToString(), "relationships")
 
-                        @using (Html.PaidContent(Model, () => this.GetActiveUserMembership()?.IsAuthorisedToViewPaidContent(), true))
+                        @using (Html.PayWall(Model, true))
                         {
 
                             @Html.Panel("The 5 Transformations", Html.Partial("../NineStarKi/_FiveTransformations").ToString(), "transformations")

@@ -19,13 +19,7 @@
                 @MvcHtmlString.Create(Dictionary.welcome)
             </article>
        
-            <br />
-
-            @Html.BootstrapActionLinkButton(Dictionary.PersonalChartCalculator, "Index", "NineStarKi", null, "fa fa-yin-yang", EButtonClass.Primary, EButtonClass.Large)
-
-            @Html.BootstrapActionLinkButton(Dictionary.FindOutHowCompatibleYouAre, "Compatibility", "NineStarKi", null, "fa fa-heart", EButtonClass.Info, EButtonClass.Large)
-
-            @Html.BootstrapActionLinkButton(Dictionary.BookAConsultation, "BookConsultationStart", "Consultation", null, "fa fa-phone-alt", EButtonClass.Success, EButtonClass.Large)
+            @Html.Partial("_ButtonsFooter")
         </div>
     </div>
 </div>

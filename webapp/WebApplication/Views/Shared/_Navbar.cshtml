@@ -49,7 +49,7 @@
 
             @if (isAuthenticated)
             {
-                <li class="@ViewContext.GetActiveClass("MyProfile", "NineStarKi")"><a title="@Dictionary.MyPersonalProfile" href="@Url.Action("MyProfile", "PersonalChart")"><i class="fa fa-yin-yang"></i><span class="site-controls-text"> @Dictionary.MyPersonalProfile</span></a></li>
+                <li class="@ViewContext.GetActiveClass("Index", "PersonalProfile")"><a title="@Dictionary.MyPersonalProfile" href="@Url.Action("MyProfile", "PersonalChart")"><i class="fa fa-yin-yang"></i><span class="site-controls-text"> @Dictionary.MyPersonalProfile</span></a></li>
                 <li class="@ViewContext.GetActiveClass("MyAccount", "Account")"><a title="@K9.Base.Globalisation.Dictionary.MyAccountTitle" href="@Url.Action("MyAccount", "Account")"><i class="fa fa-user-circle"></i><span class="site-controls-text"> @K9.Base.Globalisation.Dictionary.MyAccountTitle</span></a></li>
             }
             @Html.LoginLogout()

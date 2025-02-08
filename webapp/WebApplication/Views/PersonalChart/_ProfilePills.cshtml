@@ -7,7 +7,6 @@
 @{
     var adultActiveClass = Model.PersonModel.IsAdult() ? "in active" : "disabled";
     var childActiveClass = Model.PersonModel.IsAdult() ? "" : "in active";
-    var isAuth = this.GetActiveUserMembership()?.IsAuthorisedToViewPaidContent() ?? false;
 }
 
 <div class="ninestar-summmary container padding-0">
@@ -73,7 +72,7 @@
                 @Html.Panel("", Dictionary.MainEnergyDescription)
 
                 <br />
-                @using (Html.PaidContent(Model, () => isAuth))
+                @using (Html.PayWall(Model))
                 {
                     @Html.Partial("_ProfileMainEnergyDetails", Model)
                 }
@@ -84,7 +83,7 @@
                 @Html.Panel("", Dictionary.CharacterEnergyDescription)
 
                 <br />
-                @using (Html.PaidContent(Model, () => isAuth))
+                @using (Html.PayWall(Model))
                 {
                     @Html.Partial("_ProfileEmotionalEnergyDetails", Model)
                 }
@@ -96,7 +95,7 @@
                 @Html.Panel("", Dictionary.SurfaceEnergyDescription)
 
                 <br />
-                @using (Html.PaidContent(Model, () => isAuth))
+                @using (Html.PayWall(Model))
                 {
                     @Html.Partial("_ProfileMirrorEnergyDetails", Model)
                 }
@@ -109,7 +108,7 @@
                 @Html.Panel("", Dictionary.sexuality_description)
 
                 <br />
-                @using (Html.PaidContent(Model, () => isAuth))
+                @using (Html.PayWall(Model))
                 {
                     @Html.Partial("_ProfileSexuality", Model)
                 }
@@ -118,7 +117,7 @@
             }
 
             <div id="health" class="tab-pane fade">
-                @using (Html.PaidContent(Model, () => isAuth))
+                @using (Html.PayWall(Model))
                 {
                     @Html.Panel("", Model.Health, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 }
@@ -126,7 +125,7 @@
             </div>
 
             <div id="career" class="tab-pane fade">
-                @using (Html.PaidContent(Model, () => isAuth))
+                @using (Html.PayWall(Model))
                 {
                     @Html.Panel("", $"{Model.Occupations}{Model.PersonalDevelopemnt}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 }

@@ -5,10 +5,6 @@
 @using K9.WebApplication.Models
 @model NineStarKiModel
 
-@{
-    var isAuth = this.GetActiveUserMembership()?.IsAuthorisedToViewPaidContent() ?? false;
-    isAuth = true;
-}
 
 <div class="ninestar-summmary container padding-0">
     @Html.Partial("_DateSelector")
@@ -47,7 +43,7 @@
         <div id="current-monthly-cycle" class="tab-pane fade in active">
             @Html.Panel("", Dictionary.month_description)
 
-            @using (Html.PaidContent(Model, () => isAuth))
+            @using (Html.PayWall(Model))
             {
                 @Html.Partial("_Cycle", Model.MonthlyCycleEnergy)
             }
@@ -58,7 +54,7 @@
         <div id="current-yearly-cycle" class="tab-pane fade">
             @Html.Panel("", Dictionary.year_description)
 
-            @using (Html.PaidContent(Model, () => isAuth))
+            @using (Html.PayWall(Model))
             {
                 @Html.Partial("_Cycle", Model.YearlyCycleEnergy)
             }
@@ -67,7 +63,7 @@
         </div>
 
         <div id="yearly-planner" class="tab-pane fade">
-            @using (Html.PaidContent(Model, () => isAuth))
+            @using (Html.PayWall(Model))
             {
                 @Html.Partial("_YearlyPlanner", Model)
             }
@@ -76,7 +72,7 @@
         </div>
 
         <div id="monthly-planner" class="tab-pane fade">
-            @using (Html.PaidContent(Model, () => isAuth))
+            @using (Html.PayWall(Model))
             {
                 @Html.Partial("_MonthlyPlanner", Model)
             }

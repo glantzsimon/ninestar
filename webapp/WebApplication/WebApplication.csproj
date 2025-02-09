@@ -81,6 +81,9 @@
     <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.201\lib\net461\Facebook.dll</HintPath>
     </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.72.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.72\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="K9.Base.DataAccessLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.201\lib\net461\K9.Base.DataAccessLayer.dll</HintPath>
     </Reference>
@@ -235,6 +238,7 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\WebGrease.dll</HintPath>
@@ -286,11 +290,13 @@
     <Compile Include="Enums\ESexualChemistryScore.cs" />
     <Compile Include="Enums\ECompatibilityScore.cs" />
     <Compile Include="Enums\EReadingType.cs" />
+    <Compile Include="Enums\ESection.cs" />
     <Compile Include="Enums\ETransformationType.cs" />
     <Compile Include="Enums\ESexualityType.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Helpers\ArrayHelper.cs" />
+    <Compile Include="Helpers\HtmlContentTruncator.cs" />
     <Compile Include="Helpers\General.cs" />
     <Compile Include="Helpers\ViewBagHelper.cs" />
     <Compile Include="Constants\ViewDataConstants.cs" />
@@ -341,9 +347,11 @@
     <Compile Include="Models\Recaptcha.cs" />
     <Compile Include="Models\PurchaseModel.cs" />
     <Compile Include="Models\LogItem.cs" />
+    <Compile Include="Models\RetrieveLastModel.cs" />
     <Compile Include="Options\BiorhythmGaugeOptions.cs" />
     <Compile Include="Options\GaugeOptions.cs" />
     <Compile Include="ViewModels\PredictionsViewModel.cs" />
+    <Compile Include="ViewModels\PromptViewModel.cs" />
     <Compile Include="ViewModels\TestimonialViewModel.cs" />
     <Compile Include="Options\PaymentsOptions.cs" />
     <Compile Include="Services\ConsultationService.cs" />
@@ -1269,8 +1277,6 @@
     <Content Include="Views\Log\Index.cshtml" />
     <Content Include="Views\Account\FacebookPostRegsiter.cshtml" />
     <Content Include="Views\PersonalChart\_Sexuality.cshtml" />
-    <Content Include="Views\KnowledgeBase\_Modalities.cshtml" />
-    <Content Include="Views\KnowledgeBase\_FiveElements.cshtml" />
     <Content Include="Views\PersonalChart\AboutProfile.cshtml" />
     <Content Include="Views\Relationships\_AboutRelationships.cshtml" />
     <Content Include="Views\Compatibility\_CompatibilityYinYang.cshtml" />
@@ -1286,7 +1292,7 @@
     <Content Include="Views\Biorhythms\_PersonalBiorhythms.cshtml" />
     <Content Include="Views\Biorhythms\_HighGauge.cshtml" />
     <Content Include="Views\Predictions\_CyclesPills.cshtml" />
-    <Content Include="Views\PersonalChart\_SelectedDateAndPeriodTitle.cshtml" />
+    <Content Include="Views\Predictions\_SelectedDateAndPeriodTitle.cshtml" />
     <Content Include="Views\Account\LoginUser.cshtml" />
     <Content Include="Views\Shared\UpgradePrompt.cshtml" />
     <Content Include="Views\Shared\LoginPrompt.cshtml" />
@@ -1311,6 +1317,8 @@
     <Content Include="Views\KnowledgeBase\_MonthlyCyclesOverview.cshtml" />
     <Content Include="Views\KnowledgeBase\_YearlyCyclesOverview.cshtml" />
     <Content Include="Views\Home\_ButtonsFooter.cshtml" />
+    <Content Include="Views\Shared\UpgradePromptGentle.cshtml" />
+    <Content Include="Views\Shared\LoginPromptGentle.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -61,6 +61,19 @@ namespace K9.WebApplication.Controllers
 
             return View("Index", model);
         }
+
+        [Route("biorhythms/retrieve-last")]
+        [Authorize]
+        public ActionResult RetrieveLastBiorhythms(bool todayOnly = false)
+        {
+            var lastBiorhythms = SessionHelper.GetLastBiorhythm(todayOnly).PersonModel;
+            if (lastBiorhythms == null)
+            {
+                return RedirectToAction("Index");
+            }
+            var model = _nineStarKiService.CalculateNineStarKiProfile(lastBiorhythms.DateOfBirth, lastBiorhythms.Gender);
+            return View("Index", model);
+        }
         
         public override string GetObjectName()
         {

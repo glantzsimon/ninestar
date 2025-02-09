@@ -1,4 +1,5 @@
 ﻿@using K9.Base.WebApplication.Helpers
+@model string 
 
 @Html.Alert(EAlertType.Locked, Dictionary.UpgradeMembershipFullText)
 
@@ -6,4 +7,4 @@
 
 @Html.BootstrapActionLinkButton(
     Dictionary.UnlockAllFeatures,
-    "Index", "Membership", null, "fa-unlock", EButtonClass.Large)
+    "Index", "Membership", new { retrieveLast = Model }, "fa-unlock", EButtonClass.Large)

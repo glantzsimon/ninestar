@@ -72,7 +72,7 @@
                 @Html.Panel("", Dictionary.MainEnergyDescription)
 
                 <br />
-                @using (Html.PayWall(Model))
+                @using (Html.PayWall(ESection.Profile, Model))
                 {
                     @Html.Partial("_ProfileMainEnergyDetails", Model)
                 }
@@ -83,7 +83,7 @@
                 @Html.Panel("", Dictionary.CharacterEnergyDescription)
 
                 <br />
-                @using (Html.PayWall(Model))
+                @using (Html.PayWall(ESection.Profile, Model))
                 {
                     @Html.Partial("_ProfileEmotionalEnergyDetails", Model)
                 }
@@ -95,7 +95,7 @@
                 @Html.Panel("", Dictionary.SurfaceEnergyDescription)
 
                 <br />
-                @using (Html.PayWall(Model))
+                @using (Html.PayWall(ESection.Profile, Model))
                 {
                     @Html.Partial("_ProfileMirrorEnergyDetails", Model)
                 }
@@ -104,20 +104,20 @@
 
             @if (Model.PersonModel.IsSixteenOrOver())
             {
-            <div id="sexuality" class="tab-pane fade">
-                @Html.Panel("", Dictionary.sexuality_description)
+                <div id="sexuality" class="tab-pane fade">
+                    @Html.Panel("", Dictionary.sexuality_description)
 
-                <br />
-                @using (Html.PayWall(Model))
-                {
-                    @Html.Partial("_ProfileSexuality", Model)
-                }
-                @Html.Partial("_ButtonsFooter")
-            </div>
+                    <br />
+                    @using (Html.PayWall(ESection.Profile, Model))
+                    {
+                        @Html.Partial("_ProfileSexuality", Model)
+                    }
+                    @Html.Partial("_ButtonsFooter")
+                </div>
             }
 
             <div id="health" class="tab-pane fade">
-                @using (Html.PayWall(Model))
+                @using (Html.PayWall(ESection.Profile, Model))
                 {
                     @Html.Panel("", Model.Health, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 }
@@ -125,7 +125,7 @@
             </div>
 
             <div id="career" class="tab-pane fade">
-                @using (Html.PayWall(Model))
+                @using (Html.PayWall(ESection.Profile, Model))
                 {
                     @Html.Panel("", $"{Model.Occupations}{Model.PersonalDevelopemnt}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 }

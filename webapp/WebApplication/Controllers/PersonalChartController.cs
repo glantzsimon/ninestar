@@ -1,7 +1,9 @@
-﻿using K9.Base.DataAccessLayer.Enums;
+﻿using K9.Base.DataAccessLayer.Attributes;
+using K9.Base.DataAccessLayer.Enums;
 using K9.Base.DataAccessLayer.Models;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Enums;
 using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
 using K9.WebApplication.Services;
@@ -95,29 +97,40 @@ namespace K9.WebApplication.Controllers
             return View(nineStarKiProfile);
         }
 
-        [Route("personalchart/retrieve")]
+        [Route("retrieve-last")]
         [Authorize]
         public ActionResult RetrieveLast()
         {
             var retrieveLast = TempData["RetrieveLast"].ToString();
-            switch (retrieveLast)
+            Methods.TryGetEnumProperty<ESection>(retrieveLast, nameof(EnumDescriptionAttribute.CultureCode), out var section);
+
+            switch (section)
             {
-                case "p":
+                case ESection.Profile:
                     return RedirectToAction("RetrieveLastProfile");
 
-                case "c":
-                    return RedirectToAction("RetrieveLastCompatibility");
+                case ESection.Compatibility:
+                    return RedirectToAction("RetrieveLastCompatibility", "Compatibility");
+
+                case ESection.Predictions:
+                    return RedirectToAction("RetrieveLastPredictions", "Predictions");
+
+                case ESection.Biorhythms:
+                    return RedirectToAction("RetrieveLastBiorhythms", "Biorhythms");
+
+                case ESection.KnowledgeBase:
+                    return RedirectToAction("RetrieveLastKnowledgeBaseSection", "KnowledgeBase");
 
                 default:
                     return RedirectToAction("Index");
             }
         }
 
-        [Route("personalchart/retrievelast")]
+        [Route("personalchart/retrieve-last")]
         [Authorize]
         public ActionResult RetrieveLastProfile(bool todayOnly = false)
         {
-            var lastProfile = SessionHelper.GetLastProfile(todayOnly);
+            var lastProfile = SessionHelper.GetLastProfile(todayOnly).PersonModel;
             if (lastProfile == null)
             {
                 return RedirectToAction("Index");
@@ -133,7 +146,7 @@ namespace K9.WebApplication.Controllers
             model.BiorhythmResultSet = _biorhythmsService.Calculate(model, DateTime.Today);
             return View("Index", model);
         }
-        
+
         [Route("list/allenegies")]
         public ContentResult GetAllEnergies()
         {

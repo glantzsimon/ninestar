@@ -1,11 +1,9 @@
-﻿using System;
-using K9.SharedLibrary.Helpers;
+﻿using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Helpers;
 using K9.WebApplication.Services;
 using NLog;
 using System.Web.Mvc;
-using K9.WebApplication.Helpers;
-using K9.WebApplication.Models;
 
 namespace K9.WebApplication.Controllers
 {
@@ -27,6 +25,18 @@ namespace K9.WebApplication.Controllers
         public ActionResult Index()
         {
             return View(_nineStarKiService.GetNineStarKiSummaryViewModel());
+        }
+
+        [Route("learn/retrieve-last")]
+        [Authorize]
+        public ActionResult RetrieveLastKnowledgeBaseSection(bool todayOnly = false)
+        {
+            var lastKnowledgeBaseBookmark = SessionHelper.GetLastKnowledgeBase(todayOnly).Value;
+            if (lastKnowledgeBaseBookmark != null)
+            {
+                return Redirect(Url.Action("Index") + $"#{lastKnowledgeBaseBookmark}");
+            }
+            return RedirectToAction("Index");
         }
         
         public override string GetObjectName()

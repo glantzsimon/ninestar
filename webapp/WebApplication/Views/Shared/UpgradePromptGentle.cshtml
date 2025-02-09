@@ -1,0 +1,10 @@
+﻿@using K9.Base.WebApplication.Helpers
+@using K9.WebApplication.Helpers
+@model K9.WebApplication.ViewModels.PromptViewModel
+
+@HtmlContentTruncator.TruncateAndKeepFirstTwoParagraphs(Model.Content)
+
+<br />
+@Html.BootstrapActionLinkButton(
+    Dictionary.ContinueReading,
+    "Index", "Membership", new { retrieveLast = Model.RetrieveLast }, "", EButtonClass.Small)

@@ -20,8 +20,10 @@ using K9.WebApplication.Services;
 using K9.WebApplication.ViewModels;
 using NLog;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using K9.WebApplication.Enums;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
@@ -202,7 +204,7 @@ namespace K9.WebApplication.Controllers
                         return RedirectToAction("FacebookPostRegsiter", "Account", new { username = user.Username });
                     }
 
-                    return ProcessSavedResults();
+                    return RedirectToLastSaved();
                 }
 
                 result.Errors.AddRange(regResult.Errors);
@@ -282,7 +284,7 @@ namespace K9.WebApplication.Controllers
 
                 _userRepository.Update(user);
 
-                return ProcessSavedResults();
+                return RedirectToLastSaved();
             }
             catch (Exception e)
             {
@@ -291,23 +293,7 @@ namespace K9.WebApplication.Controllers
             }
         }
 
-        public ActionResult ProcessSavedResults()
-        {
-            // Redirect to previous profile or compatibility reading if set
-            var lastCompatibility = SessionHelper.GetLastCompatibility(true, false);
-            var lastProfile = SessionHelper.GetLastProfile(true, false);
-
-            if (lastCompatibility != null)
-            {
-                return RedirectToAction("RetrieveLastCompatibility", "PersonalChart");
-            }
-            if (lastProfile != null)
-            {
-                return RedirectToAction("RetrieveLastProfile", "PersonalChart");
-            }
-
-            return RedirectToAction("Index", "Home");
-        }
+        
 
         public ActionResult AccountLocked()
         {

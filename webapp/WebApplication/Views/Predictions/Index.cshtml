@@ -1,4 +1,5 @@
 ﻿@model K9.WebApplication.ViewModels.PredictionsViewModel
+@using K9.WebApplication.Enums
 @using K9.WebApplication.Extensions
 @using K9.WebApplication.Helpers
 
@@ -41,7 +42,7 @@
             <article>
                 @Html.Panel(Dictionary.MonthlyCycles, Dictionary.month_description, "monthly-cycles")
 
-                @using (Html.PayWall(Model))
+                @using (Html.PayWall(ESection.Predictions, Model))
                 {
                     @Html.CollapsiblePanel(Dictionary.NineYearlyCyclesTitle, Html.Partial("_YearlyCyclesOverview", Model.NineStarKiSummaryViewModel.MainEnergies).ToString(), false, "", "nine-yearly-cycles")
 

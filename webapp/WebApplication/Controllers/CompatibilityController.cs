@@ -56,14 +56,14 @@ namespace K9.WebApplication.Controllers
             return View(model);
         }
 
-        [Route("compatibility/retrieve")]
+        [Route("compatibility/retrieve-last")]
         [Authorize]
         public ActionResult RetrieveLastCompatibility(bool todayOnly = false)
         {
-            var lastCompatibility = SessionHelper.GetLastCompatibility(todayOnly);
+            var lastCompatibility = SessionHelper.GetLastCompatibility(todayOnly).CompatibilityModel;
             if (lastCompatibility == null)
             {
-                return RedirectToAction("Compatibility");
+                return RedirectToAction("Index");
             }
             var model = _nineStarKiService.CalculateCompatibility(lastCompatibility.NineStarKiModel1.PersonModel, lastCompatibility.NineStarKiModel2.PersonModel, lastCompatibility.IsHideSexualChemistry);
             return View("Index", model);

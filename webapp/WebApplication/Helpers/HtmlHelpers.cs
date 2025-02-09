@@ -11,6 +11,10 @@ using System.IO;
 using System.Linq.Expressions;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
+using K9.Base.DataAccessLayer.Attributes;
+using K9.SharedLibrary.Extensions;
+using K9.WebApplication.Enums;
+using K9.WebApplication.ViewModels;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Helpers
@@ -84,65 +88,52 @@ namespace K9.WebApplication.Helpers
             return $"{energyName} {html.GetDisplayNameFor(expression)}";
         }
 
-        public static IDisposable PayWall(this HtmlHelper html, MembershipOption.ESubscriptionType subscriptionType = MembershipOption.ESubscriptionType.MonthlyStandard, bool silent = false, string displayHtml = "")
+        public static IDisposable PayWall(this HtmlHelper html, ESection section, MembershipOption.ESubscriptionType subscriptionType = MembershipOption.ESubscriptionType.MonthlyStandard, bool silent = false, string displayHtml = "")
         {
             var baseController = html.ViewContext.Controller as BaseNineStarKiController;
             var activeUserMembership = baseController?.GetActiveUserMembership();
-            return html.PayWall<NineStarKiModel>(null,
+            return html.PayWall<NineStarKiModel>(section, null,
                 () => activeUserMembership?.MembershipOption?.SubscriptionType >= subscriptionType, silent, displayHtml);
         }
 
-        public static IDisposable PayWall(this HtmlHelper html, Func<bool?> condition, bool silent = false, string displayHtml = "")
+        public static IDisposable PayWall(this HtmlHelper html, ESection section, Func<bool?> condition, bool silent = false, string displayHtml = "")
         {
-            return html.PayWall<NineStarKiModel>(null, condition, silent, displayHtml);
+            return html.PayWall<NineStarKiModel>(section, null, condition, silent, displayHtml);
         }
 
-        public static IDisposable PayWall<T>(this HtmlHelper html, T model, bool silent = false,
+        public static IDisposable PayWall<T>(this HtmlHelper html, ESection section, T model, bool silent = false,
             string displayHtml = "")
         {
             var baseController = html.ViewContext.Controller as BaseNineStarKiController;
             var activeUserMembership = baseController?.GetActiveUserMembership();
-            return html.PayWall<NineStarKiModel>(null, () => activeUserMembership.IsAuthorisedToViewPaidContent(), silent, displayHtml);
+            return html.PayWall<NineStarKiModel>(section, null, () => activeUserMembership.IsAuthorisedToViewPaidContent(), silent, displayHtml);
         }
 
-        public static IDisposable PayWall<T>(this HtmlHelper html, T model, Func<bool?> condition, bool silent = false, string displayHtml = "")
+        public static IDisposable PayWall<T>(this HtmlHelper html, ESection section, T model, Func<bool?> condition, bool silent = false, string displayHtml = "")
         {
             var baseController = html.ViewContext.Controller as BaseNineStarKiController;
             var activeUserMembership = baseController?.GetActiveUserMembership();
             var isAuthorised = activeUserMembership != null && (condition?.Invoke().Value ?? true);
             var isProfile = typeof(T) == typeof(NineStarKiModel);
             var isCompatibility = typeof(T) == typeof(CompatibilityModel);
-            var retrieveLast = isProfile ? "p" : isCompatibility ? "c" : "none";
-
             var div = new TagBuilder(Tags.Div);
+
             if (!(WebSecurity.IsAuthenticated && isAuthorised))
             {
                 div.MergeAttribute(Base.WebApplication.Constants.Html.Attributes.Style, "display: none !important;");
                 div.MergeAttribute(Base.WebApplication.Constants.Html.Attributes.Class, "paywall-remove-element");
-
-                if (model != null)
-                {
-                    if (isProfile)
-                    {
-                        SessionHelper.SetLastProfile(model as NineStarKiModel);
-                    }
-
-                    if (isCompatibility)
-                    {
-                        SessionHelper.SetLastCompatibility(model as CompatibilityModel);
-                    }
-                }
             }
 
             if (!silent && !isAuthorised)
             {
+                var retrieveLast = GetSectionCode(section);
                 var centerDiv = new TagBuilder(Tags.Div);
                 centerDiv.MergeAttribute(Base.WebApplication.Constants.Html.Attributes.Class,
                     "upgrade-container center-block");
                 html.ViewContext.Writer.WriteLine(centerDiv.ToString(TagRenderMode.StartTag));
                 if (WebSecurity.IsAuthenticated)
                 {
-                    html.ViewContext.Writer.Write(html.Partial("UpgradePrompt"));
+                    html.ViewContext.Writer.Write(html.Partial("UpgradePrompt", retrieveLast));
                 }
                 else
                 {
@@ -161,53 +152,59 @@ namespace K9.WebApplication.Helpers
             return new TagCloser(html, Tags.Div);
         }
 
-        public static MvcHtmlString PayWallContent(this HtmlHelper html, string content)
+        public static MvcHtmlString PayWallContent(this HtmlHelper html, ESection section, string content, bool showPadlock = false)
         {
-            return html.PayWallContent<NineStarKiModel>(null, content);
+            return html.PayWallContent<NineStarKiModel>(section, null, content, showPadlock);
         }
 
-        public static MvcHtmlString PayWallContent<T>(this HtmlHelper html, T model, string content)
+        public static MvcHtmlString PayWallContent<T>(this HtmlHelper html, ESection section, T model, string content, bool showPadlock = false)
         {
             var baseController = html.ViewContext.Controller as BaseNineStarKiController;
             var activeUserMembership = baseController?.GetActiveUserMembership();
             var isAuthorised = activeUserMembership != null && activeUserMembership.IsAuthorisedToViewPaidContent();
-            var isProfile = typeof(T) == typeof(NineStarKiModel);
-            var isCompatibility = typeof(T) == typeof(CompatibilityModel);
-            var retrieveLast = isProfile ? "p" : isCompatibility ? "c" : "none";
 
-            var div = new TagBuilder(Tags.Div);
             if (!(WebSecurity.IsAuthenticated && isAuthorised))
             {
-                if (model != null)
-                {
-                    if (isProfile)
-                    {
-                        SessionHelper.SetLastProfile(model as NineStarKiModel);
-                    }
-
-                    if (isCompatibility)
-                    {
-                        SessionHelper.SetLastCompatibility(model as CompatibilityModel);
-                    }
-                }
+                SetLast(section, model);
             }
 
             if (!isAuthorised)
             {
                 using (StringWriter writer = new StringWriter())
                 {
+                    var retrieveLast = GetSectionCode(section);
                     var centerDiv = new TagBuilder(Tags.Div);
                     centerDiv.MergeAttribute(Base.WebApplication.Constants.Html.Attributes.Class,
                         "upgrade-container center-block");
                     writer.WriteLine(centerDiv.ToString(TagRenderMode.StartTag));
 
-                    if (WebSecurity.IsAuthenticated)
+                    if (showPadlock)
                     {
-                        writer.WriteLine(html.Partial("UpgradePrompt"));
+                        if (WebSecurity.IsAuthenticated)
+                        {
+                            writer.WriteLine(html.Partial("UpgradePrompt", retrieveLast));
+                        }
+                        else
+                        {
+                            writer.WriteLine(html.Partial("LoginPrompt", retrieveLast));
+                        }
                     }
                     else
                     {
-                        writer.WriteLine(html.Partial("LoginPrompt", retrieveLast));
+                        var viewModel = new PromptViewModel
+                        {
+                            Content = content,
+                            RetrieveLast = retrieveLast
+                        };
+
+                        if (WebSecurity.IsAuthenticated)
+                        {
+                            writer.WriteLine(html.Partial("UpgradePromptGentle", viewModel));
+                        }
+                        else
+                        {
+                            writer.WriteLine(html.Partial("LoginPromptGentle", viewModel));
+                        }
                     }
 
                     writer.WriteLine(centerDiv.ToString(TagRenderMode.EndTag));
@@ -217,6 +214,40 @@ namespace K9.WebApplication.Helpers
             }
 
             return new MvcHtmlString(content);
+        }
+
+        private static string GetSectionCode(ESection section)
+        {
+            return section.GetAttribute<EnumDescriptionAttribute>().CultureCode;
+        }
+
+        private static void SetLast(ESection section, object model)
+        {
+            if (model != null)
+            {
+                switch (section)
+                {
+                    case ESection.Profile:
+                        SessionHelper.SetLastProfile(model as NineStarKiModel);
+                        break;
+
+                    case ESection.Compatibility:
+                        SessionHelper.SetLastCompatibility(model as CompatibilityModel);
+                        break;
+
+                    case ESection.Predictions:
+                        SessionHelper.SetLastPrediction(model as NineStarKiModel);
+                        break;
+
+                    case ESection.Biorhythms:
+                        SessionHelper.SetLastBiorhythm(model as NineStarKiModel);
+                        break;
+
+                    case ESection.KnowledgeBase:
+                        SessionHelper.SetLastKnowledgeBase(model as string);
+                        break;
+                }
+            }
         }
     }
 }

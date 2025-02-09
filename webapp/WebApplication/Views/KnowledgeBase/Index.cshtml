@@ -1,4 +1,5 @@
-﻿@using K9.WebApplication.Extensions
+﻿@using K9.WebApplication.Enums
+@using K9.WebApplication.Extensions
 @using K9.WebApplication.Helpers
 @using K9.WebApplication.Options
 @model K9.WebApplication.ViewModels.NineStarKiSummaryViewModel
@@ -19,8 +20,9 @@
 
         @Html.Panel("Yin and Yang", Dictionary.yinyang, "yinyang", "~/Images/ninestar/yinyang/yinyang-large.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
 
-        @Html.Panel("The Three Modalities", Html.Partial("_Modalities").ToString()
-            , "modalities")
+        @Html.Panel("The Three Modalities",
+            Dictionary.modalities_description,
+            "modalities")
 
         @Html.Partial("_ModalityDetails", Model.DynamicEnergies)
 
@@ -28,38 +30,90 @@
 
         @Html.Partial("_ModalityDetails", Model.FlexibleEnergies)
 
-        @Html.Panel("The Five Elements", Html.Partial("_FiveElements").ToString(), "elements")
+        @Html.Panel(
+            "The Five Elements",
+            Dictionary.five_elements,
+            "elements")
 
-        @Html.Panel(Dictionary.FireElement, Dictionary.fire_element, "fire", "~/Images/ninestar/elements/fire.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+        @Html.Panel(
+            Dictionary.FireElement,
+            Html.PayWallContent(ESection.KnowledgeBase, "fire", Dictionary.fire_element).ToString(),
+            "fire",
+            "~/Images/ninestar/elements/fire.png",
+            EPanelImageSize.Default,
+            EPanelImageLayout.Contain)
 
-        @Html.Panel(Dictionary.EarthElement, Dictionary.earth_element, "earth", "~/Images/ninestar/elements/earth.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+        @Html.Panel(
+            Dictionary.EarthElement,
+            Html.PayWallContent(ESection.KnowledgeBase, "earth", Dictionary.earth_element).ToString(),
+            "earth",
+            "~/Images/ninestar/elements/earth.png",
+            EPanelImageSize.Default,
+            EPanelImageLayout.Contain)
 
-        @Html.Panel(Dictionary.MetalElement, Dictionary.metal_element, "metal", "~/Images/ninestar/elements/metal.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+        @Html.Panel(
+            Dictionary.MetalElement,
+            Html.PayWallContent(ESection.KnowledgeBase, "metal", Dictionary.metal_element).ToString(),
+            "metal",
+            "~/Images/ninestar/elements/metal.png",
+            EPanelImageSize.Default,
+            EPanelImageLayout.Contain)
 
-        @Html.Panel(Dictionary.WaterElement, Dictionary.water_element, "water", "~/Images/ninestar/elements/water.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+        @Html.Panel(
+            Dictionary.WaterElement,
+            Html.PayWallContent(ESection.KnowledgeBase, "water", Dictionary.water_element).ToString(),
+            "water",
+            "~/Images/ninestar/elements/water.png",
+            EPanelImageSize.Default,
+            EPanelImageLayout.Contain)
 
-        @Html.Panel(Dictionary.TreeElement, Dictionary.tree_element, "tree", "~/Images/ninestar/elements/tree.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+        @Html.Panel(Dictionary.TreeElement,
+            Html.PayWallContent(ESection.KnowledgeBase, "tree", Dictionary.tree_element).ToString(),
+            "tree",
+            "~/Images/ninestar/elements/tree.png",
+            EPanelImageSize.Default,
+            EPanelImageLayout.Contain)
 
-        @Html.Panel("The Nine Main Energies", Html.Partial("_NineEnergiesOverview", Model.MainEnergies).ToString(), "energies")
+        @Html.Panel("The Nine Main Energies",
+            Html.Partial("_NineEnergiesOverview", Model.MainEnergies).ToString(),"energies")
 
-        @Html.Panel("The Nine Emotional Energies", Html.Partial("_NineEnergiesOverview", Model.CharacterEnergies).ToString(), "characters")
+        @Html.Panel("The Nine Emotional Energies",
+            Html.Partial("_NineEnergiesOverview", Model.CharacterEnergies).ToString(), "characters")
 
-        @Html.Panel(Dictionary.YearlyCycles, Dictionary.year_description, "yearly-cycles")
+        @Html.Panel(
+            Dictionary.YearlyCycles,
+            Dictionary.year_description,
+            "yearly-cycles")
 
-        @Html.Panel(Dictionary.NineYearlyCyclesTitle, Html.Partial("_YearlyCyclesOverview", Model.MainEnergies).ToString(), "nine-yearly-cycles")
+        @Html.Panel(
+            Dictionary.NineYearlyCyclesTitle,
+            Html.Partial("_YearlyCyclesOverview", Model.MainEnergies).ToString(),
+            "nine-yearly-cycles")
 
-        @Html.Panel(Dictionary.MonthlyCycles, Dictionary.month_description, "monthly-cycles")
+        @Html.Panel(Dictionary.MonthlyCycles,
+            Dictionary.month_description,
+            "monthly-cycles")
 
-        @Html.Panel(Dictionary.NineMonthlyCyclesTitle, Html.Partial("_MonthlyCyclesOverview", Model.CharacterEnergies).ToString(), "nine-monthly-cycles")
+        @Html.Panel(Dictionary.NineMonthlyCyclesTitle,
+            Html.Partial("_MonthlyCyclesOverview", Model.CharacterEnergies).ToString(),
+            "nine-monthly-cycles")
 
-        @Html.Panel("9 Star Ki Personal Chart", Dictionary.personal_chart, "chart")
+        @Html.Panel("9 Star Ki Personal Chart",
+            Dictionary.personal_chart,
+            "chart")
 
-        @Html.Panel("9 Star Ki and Relationships", Html.Partial("../Relationships/_AboutRelationships").ToString(), "relationships")
+        @Html.Panel("9 Star Ki and Relationships",
+            Html.Partial("../Relationships/_AboutRelationships").ToString(),
+            "relationships")
 
-        @Html.Panel("The Five Transformations", Html.Partial("../NineStarKi/_FiveTransformations").ToString(), "transformations")
+        @Html.Panel("The Five Transformations",
+            Html.PayWallContent(ESection.KnowledgeBase, $"transformations", Html.Partial("../NineStarKi/_FiveTransformations").ToString()).ToString(),
+            "transformations")
 
-        @Html.Panel("9 Star Ki and Sexuality", Html.Partial("../PersonalChart/_Sexuality").ToString(), "sexuality")
-        
+        @Html.Panel("9 Star Ki and Sexuality",
+            Html.PayWallContent(ESection.KnowledgeBase, $"sexuality", Html.Partial("../PersonalChart/_Sexuality").ToString()).ToString(),
+            "sexuality")
+
         @Html.Partial("_ButtonsFooter")
     </article>
 </div>

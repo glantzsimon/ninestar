@@ -1,4 +1,5 @@
 ﻿@using K9.SharedLibrary.Helpers
+@using K9.WebApplication.Enums
 @using K9.WebApplication.Helpers
 @using K9.WebApplication.Models
 @using K9.WebApplication.Options
@@ -30,7 +31,14 @@
     {
         foreach (var energy in Model)
         {
-            @Html.CollapsiblePanel(energy.EnergyTitle, energy.EnergyDescription, true, "", "", $"Images/ninestar/energies/{energy.Energy}.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+            var id = $"{energyType}{energy.EnergyName}";
+            @Html.Panel(
+                energy.EnergyTitle,
+                Html.PayWallContent(ESection.KnowledgeBase, id, energy.EnergyDescription).ToString(),
+                id, $"Images/ninestar/energies/{energy.Energy}.png",
+                EPanelImageSize.Default,
+                EPanelImageLayout.Contain)
+            <br />
         }
     }
 </div>

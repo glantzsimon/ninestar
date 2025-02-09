@@ -1,7 +1,7 @@
 ﻿using K9.Base.DataAccessLayer.Enums;
+using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
 using System;
-using System.Globalization;
 
 namespace K9.WebApplication.Helpers
 {
@@ -33,7 +33,7 @@ namespace K9.WebApplication.Helpers
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastProfileGender, model.PersonModel.Gender);
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastProfileName, model.PersonModel.Name);
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.IsRetrieveProfile, true);
-            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.ProfileStoredOn, DateTime.Today);
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.ProfileStoredOn, DateTime.Now);
         }
 
         public static void ClearLastProfile()
@@ -41,9 +41,11 @@ namespace K9.WebApplication.Helpers
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.IsRetrieveProfile, false);
         }
 
-        public static PersonModel GetLastProfile(bool todayOnly = false, bool remove = true)
+        public static RetrieveLastModel GetLastProfile(bool todayOnly = false, bool remove = true)
         {
-            if (Base.WebApplication.Helpers.SessionHelper.GetBoolValue(Constants.SessionConstants.IsRetrieveProfile) && (!todayOnly || GetDateTimeValue(Constants.SessionConstants.ProfileStoredOn) == DateTime.Today))
+            var storedOn = GetDateTimeValue(Constants.SessionConstants.ProfileStoredOn);
+
+            if (Base.WebApplication.Helpers.SessionHelper.GetBoolValue(Constants.SessionConstants.IsRetrieveProfile) && (!todayOnly || storedOn?.Date == DateTime.Today))
             {
                 DateTime.TryParse(Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastProfileDateOfBirth), out var dateOfBirth);
                 Enum.TryParse<EGender>(Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastProfileGender), out var gender);
@@ -51,11 +53,136 @@ namespace K9.WebApplication.Helpers
                 if (remove)
                     ClearLastProfile();
 
-                return new PersonModel
+                var model = new PersonModel
                 {
                     DateOfBirth = dateOfBirth,
                     Gender = gender,
                     Name = Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastProfileName)
+                };
+
+                return new RetrieveLastModel
+                {
+                    Section = ESection.Profile,
+                    StoredOn = storedOn,
+                    PersonModel = model
+                };
+            }
+            return null;
+        }
+
+        public static void SetLastPrediction(NineStarKiModel model)
+        {
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastPredictionDateOfBirth, model.PersonModel.DateOfBirth.ToString(Constants.FormatConstants.SessionDateTimeFormat));
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastPredictionGender, model.PersonModel.Gender);
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastPredictionName, model.PersonModel.Name);
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.IsRetrievePrediction, true);
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.PredictionStoredOn, DateTime.Now);
+        }
+
+        public static void ClearLastPrediction()
+        {
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.IsRetrievePrediction, false);
+        }
+
+        public static RetrieveLastModel GetLastPrediction(bool todayOnly = false, bool remove = true)
+        {
+            var storedOn = GetDateTimeValue(Constants.SessionConstants.PredictionStoredOn);
+
+            if (Base.WebApplication.Helpers.SessionHelper.GetBoolValue(Constants.SessionConstants.IsRetrievePrediction) && (!todayOnly || storedOn?.Date == DateTime.Today))
+            {
+                DateTime.TryParse(Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastPredictionDateOfBirth), out var dateOfBirth);
+                Enum.TryParse<EGender>(Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastPredictionGender), out var gender);
+
+                if (remove)
+                    ClearLastPrediction();
+
+                var model = new PersonModel
+                {
+                    DateOfBirth = dateOfBirth,
+                    Gender = gender,
+                    Name = Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastPredictionName)
+                };
+
+                return new RetrieveLastModel
+                {
+                    Section = ESection.Predictions,
+                    StoredOn = storedOn,
+                    PersonModel = model
+                };
+            }
+            return null;
+        }
+
+        public static void SetLastBiorhythm(NineStarKiModel model)
+        {
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastBiorhythmDateOfBirth, model.PersonModel.DateOfBirth.ToString(Constants.FormatConstants.SessionDateTimeFormat));
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastBiorhythmGender, model.PersonModel.Gender);
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastBiorhythmName, model.PersonModel.Name);
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.IsRetrieveBiorhythm, true);
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.BiorhythmStoredOn, DateTime.Now);
+        }
+
+        public static void ClearLastBiorhythm()
+        {
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.IsRetrieveBiorhythm, false);
+        }
+
+        public static RetrieveLastModel GetLastBiorhythm(bool todayOnly = false, bool remove = true)
+        {
+            var storedOn = GetDateTimeValue(Constants.SessionConstants.BiorhythmStoredOn);
+
+            if (Base.WebApplication.Helpers.SessionHelper.GetBoolValue(Constants.SessionConstants.IsRetrieveBiorhythm) && (!todayOnly || storedOn?.Date == DateTime.Today))
+            {
+                DateTime.TryParse(Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastBiorhythmDateOfBirth), out var dateOfBirth);
+                Enum.TryParse<EGender>(Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastBiorhythmGender), out var gender);
+
+                if (remove)
+                    ClearLastBiorhythm();
+
+                var model = new PersonModel
+                {
+                    DateOfBirth = dateOfBirth,
+                    Gender = gender,
+                    Name = Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastBiorhythmName)
+                };
+
+                return new RetrieveLastModel
+                {
+                    Section = ESection.Biorhythms,
+                    StoredOn = storedOn,
+                    PersonModel = model
+                };
+            }
+            return null;
+        }
+
+        public static void SetLastKnowledgeBase(string value)
+        {
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastKnowledgeBase, value);
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.IsRetrieveKnowledgeBase, true);
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.KnowledgeBaseStoredOn, DateTime.Now);
+        }
+
+        public static void ClearLastKnowledgeBase()
+        {
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.IsRetrieveKnowledgeBase, false);
+        }
+
+        public static RetrieveLastModel GetLastKnowledgeBase(bool todayOnly = false, bool remove = true)
+        {
+            var storedOn = GetDateTimeValue(Constants.SessionConstants.KnowledgeBaseStoredOn);
+
+            if (Base.WebApplication.Helpers.SessionHelper.GetBoolValue(Constants.SessionConstants.IsRetrieveKnowledgeBase) && (!todayOnly || storedOn?.Date == DateTime.Today))
+            {
+                if (remove)
+                    ClearLastKnowledgeBase();
+
+                return new RetrieveLastModel
+                {
+                    Section = ESection.KnowledgeBase,
+                    StoredOn = storedOn,
+                    Value = Base.WebApplication.Helpers.SessionHelper.GetStringValue(
+                        Constants.SessionConstants.LastKnowledgeBase)
                 };
             }
             return null;
@@ -72,7 +199,7 @@ namespace K9.WebApplication.Helpers
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastCompatibilityHideSexuality, model.IsHideSexualChemistry);
 
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.IsRetrieveCompatibility, true);
-            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.CompatibilityStoredOn, DateTime.Today.ToString(Constants.FormatConstants.SessionDateTimeFormat));
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.CompatibilityStoredOn, DateTime.Now);
         }
 
         public static void ClearLastCompatibility()
@@ -80,9 +207,11 @@ namespace K9.WebApplication.Helpers
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.IsRetrieveCompatibility, false);
         }
 
-        public static CompatibilityModel GetLastCompatibility(bool todayOnly = false, bool remove = true)
+        public static RetrieveLastModel GetLastCompatibility(bool todayOnly = false, bool remove = true)
         {
-            if (Base.WebApplication.Helpers.SessionHelper.GetBoolValue(Constants.SessionConstants.IsRetrieveCompatibility) && (!todayOnly || GetDateTimeValue(Constants.SessionConstants.CompatibilityStoredOn) == DateTime.Today))
+            var storedOn = GetDateTimeValue(Constants.SessionConstants.CompatibilityStoredOn);
+
+            if (Base.WebApplication.Helpers.SessionHelper.GetBoolValue(Constants.SessionConstants.IsRetrieveCompatibility) && (!todayOnly || storedOn?.Date == DateTime.Today))
             {
                 DateTime.TryParse(Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastCompatibilityProfileDateOfBirth1), out var dateOfBirth1);
                 DateTime.TryParse(Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastCompatibilityProfileDateOfBirth2), out var dateOfBirth2);
@@ -93,7 +222,7 @@ namespace K9.WebApplication.Helpers
                 if (remove)
                     ClearLastCompatibility();
 
-                return new CompatibilityModel(
+                var model = new CompatibilityModel(
                     new NineStarKiModel(new PersonModel
                     {
                         DateOfBirth = dateOfBirth1,
@@ -108,6 +237,13 @@ namespace K9.WebApplication.Helpers
                     }))
                 {
                     IsHideSexualChemistry = hideSexuality
+                };
+
+                return new RetrieveLastModel
+                {
+                    Section = ESection.Compatibility,
+                    StoredOn = storedOn,
+                    CompatibilityModel = model
                 };
             }
             return null;

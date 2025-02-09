@@ -1,4 +1,5 @@
 ﻿@using K9.SharedLibrary.Helpers
+@using K9.WebApplication.Enums
 @using K9.WebApplication.Extensions
 @using K9.WebApplication.Helpers
 @model K9.WebApplication.Models.CompatibilityModel
@@ -33,7 +34,7 @@
 
         <div class="tab-content">
             <div id="strengthsandchallenges" class="tab-pane fade in active">
-                @using (Html.PayWall(Model))
+                @using (Html.PayWall(ESection.Compatibility,Model))
                 {
                     @Html.Panel(Dictionary.FundamentalEnergiesCompatibility, Model.FundamentalEnergiesCompatibility)
                 }
@@ -41,7 +42,7 @@
             </div>
 
             <div id="indepth" class="tab-pane fade">
-                @using (Html.PayWall(Model))
+                @using (Html.PayWall(ESection.Compatibility, Model))
                 {
                     @Html.Panel(Dictionary.FundamentalElements, Html.Partial("_CompatibilityFundamentalElements").ToString())
                     @Html.Panel(Dictionary.CharacterElements, Html.Partial("_CompatibilityCharacterElements").ToString())
@@ -59,7 +60,7 @@
             @if (!Model.IsHideSexualChemistry)
             {
                 <div id="sexuality" class="tab-pane fade">
-                    @using (Html.PayWall(Model))
+                    @using (Html.PayWall(ESection.Compatibility, Model))
                     {
                         @Html.Panel(Dictionary.SexualChemistryDetails, Model.SexualChemistryDetails)
                     }

@@ -15,6 +15,23 @@
         public const string LastProfileName = "LastProfileName";
         public const string IsRetrieveProfile = "IsRetrieveProfile";
         public const string ProfileStoredOn = "ProfileStoredOn";
+
+        public const string LastPredictionDateOfBirth = "LastPredictionDateOfBirth";
+        public const string LastPredictionGender = "LastPredictionGender";
+        public const string LastPredictionName = "LastPredictionName";
+        public const string IsRetrievePrediction = "IsRetrievePrediction";
+        public const string PredictionStoredOn = "PredictionStoredOn";
+
+        public const string LastBiorhythmDateOfBirth = "LastBiorhythmDateOfBirth";
+        public const string LastBiorhythmGender = "LastBiorhythmGender";
+        public const string LastBiorhythmName = "LastBiorhythmName";
+        public const string IsRetrieveBiorhythm = "IsRetrieveBiorhythm";
+        public const string BiorhythmStoredOn = "BiorhythmStoredOn";
+
+        public const string LastKnowledgeBase = "LastKnowledgeBase";
+        public const string IsRetrieveKnowledgeBase = "IsRetrieveKnowledgeBase";
+        public const string KnowledgeBaseStoredOn = "KnowledgeBaseStoredOn";
+
         public const string LastCompatibilityProfileDateOfBirth1 = "LastCompatibilityProfileDateOfBirth1";
         public const string LastCompatibilityProfileDateOfBirth2 = "LastCompatibilityProfileDateOfBirth2";
         public const string LastCompatibilityProfileGender1 = "LastCompatibilityProfileGender1";

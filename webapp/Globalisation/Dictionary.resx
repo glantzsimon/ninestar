@@ -2791,4 +2791,7 @@
   <data name="YearlyPrediction" xml:space="preserve">
     <value>Yearly Prediction</value>
   </data>
+  <data name="ContinueReading" xml:space="preserve">
+    <value>Continue reading...</value>
+  </data>
 </root>

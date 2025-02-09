@@ -2478,6 +2478,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Continue reading....
+        /// </summary>
+        public static string ContinueReading {
+            get {
+                return ResourceManager.GetString("ContinueReading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we&apos;ll assume that you are happy to receive all cookies from this website. If you would like to change your preferences you may do so by following the instructions &lt;a href=&quot;http://www.allaboutcookies.org/&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;..
         /// </summary>
         public static string cookies_blurb {

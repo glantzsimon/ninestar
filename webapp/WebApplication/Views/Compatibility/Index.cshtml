@@ -33,7 +33,7 @@
                     <div class="margin-bottom-20">
                         @Html.Panel("9 Star Ki and Relationships", Html.Partial("../Relationships/_AboutRelationships").ToString(), "relationships")
 
-                        @using (Html.PayWall(Model, true))
+                        @using (Html.PayWall(ESection.Compatibility, Model, true))
                         {
 
                             @Html.Panel("The 5 Transformations", Html.Partial("../NineStarKi/_FiveTransformations").ToString(), "transformations")

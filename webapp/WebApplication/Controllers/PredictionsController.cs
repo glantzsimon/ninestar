@@ -1,15 +1,13 @@
-﻿using K9.Base.DataAccessLayer.Enums;
-using K9.Base.DataAccessLayer.Models;
+﻿using K9.Base.DataAccessLayer.Models;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
 using K9.WebApplication.Services;
+using K9.WebApplication.ViewModels;
 using NLog;
 using System;
-using System.Text;
 using System.Web.Mvc;
-using K9.WebApplication.ViewModels;
 
 namespace K9.WebApplication.Controllers
 {
@@ -57,11 +55,14 @@ namespace K9.WebApplication.Controllers
 
                 model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false, selectedDate);
                 model.SelectedDate = selectedDate;
-
-                return View(model);
             }
 
-            return View(model);
+            return View(
+                new PredictionsViewModel
+                {
+                    NineStarKiModel = model,
+                    NineStarKiSummaryViewModel = _nineStarKiService.GetNineStarKiSummaryViewModel()
+                });
         }
 
         [Authorize]
@@ -75,6 +76,19 @@ namespace K9.WebApplication.Controllers
                 DateOfBirth = myAccount.BirthDate,
                 Gender = myAccount.Gender
             }, false, true));
+        }
+        
+        [Route("predictions/retrieve-last")]
+        [Authorize]
+        public ActionResult RetrieveLastPredictions(bool todayOnly = false)
+        {
+            var lastPredictions = SessionHelper.GetLastCompatibility(todayOnly).PersonModel;
+            if (lastPredictions == null)
+            {
+                return RedirectToAction("Index");
+            }
+            var model = _nineStarKiService.CalculateNineStarKiProfile(lastPredictions.DateOfBirth, lastPredictions.Gender);
+            return View("Index", model);
         }
 
         public override string GetObjectName()

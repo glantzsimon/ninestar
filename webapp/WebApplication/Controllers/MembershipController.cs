@@ -23,8 +23,9 @@ namespace K9.WebApplication.Controllers
             _membershipService = membershipService;
         }
 
-        public ActionResult Index()
+        public ActionResult Index(string retrieveLast = null)
         {
+            TempData["RetrieveLast"] = retrieveLast;
             return View(_membershipService.GetMembershipViewModel());
         }
 
@@ -52,6 +53,7 @@ namespace K9.WebApplication.Controllers
         [Route("membership/signup/success")]
         public ActionResult PurchaseSuccess()
         {
+
             return View();
         }
 

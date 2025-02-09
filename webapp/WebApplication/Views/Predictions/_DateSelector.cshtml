@@ -4,16 +4,20 @@
 {
     using (Html.BeginBootstrapForm())
     {
-        @Html.BootstrapEditorFor(model => model.SelectedDate)
-
         @Html.HiddenFor(model => model.PersonModel.Name)
         @Html.HiddenFor(model => model.PersonModel.DateOfBirth)
         @Html.HiddenFor(model => model.PersonModel.Gender)
         @Html.HiddenFor(model => model.ActiveCycleTabId)
-                    
-        <hr />
-        <div class="text-center">
-            @Html.BootstrapButton(Dictionary.DisplaySelectedDate, EButtonType.Submit, "", EButtonClass.Large)
+
+        <div class="row padding-0 margin-0">
+            <div class="col-sm-7">
+                @Html.BootstrapEditorFor(model => model.SelectedDate)
+            </div>
+            <div class="col-sm-5">
+                <div class="margin-top-30">
+                    @Html.BootstrapButton(Dictionary.ViewPredictionsForSelectedDate, EButtonType.Submit, "")
+                </div>
+            </div>
         </div>
     }
 }

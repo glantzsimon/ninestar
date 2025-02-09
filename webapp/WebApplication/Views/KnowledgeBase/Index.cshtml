@@ -14,13 +14,17 @@
 
 <div class="container main-content">
     <article>
-        @Html.Panel("Origins", Dictionary.origins, "origins")
+        @Html.Panel(Dictionary.Navigation, Html.Partial("_Navigation").ToString())
 
-        @Html.Panel("Cycles of Light and Dark", Dictionary.cycles, "cycles", "~/Images/about/light-dark.jpg", EPanelImageSize.Default, EPanelImageLayout.Contain)
+        <hr />
 
-        @Html.Panel("Yin and Yang", Dictionary.yinyang, "yinyang", "~/Images/ninestar/yinyang/yinyang-large.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+        @Html.Panel(Dictionary.OriginsTitle, Dictionary.origins, "origins")
 
-        @Html.Panel("The Three Modalities",
+        @Html.Panel(Dictionary.CyclesOfLightAndDark, Dictionary.cycles, "cycles", "~/Images/about/light-dark.jpg", EPanelImageSize.Default, EPanelImageLayout.Contain)
+
+        @Html.Panel(Dictionary.YinAndYang, Dictionary.yinyang, "yinyang", "~/Images/ninestar/yinyang/yinyang-large.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+
+        @Html.Panel(Dictionary.ThreeModalitiesTitle,
             Dictionary.modalities_description,
             "modalities")
 
@@ -31,7 +35,7 @@
         @Html.Partial("_ModalityDetails", Model.FlexibleEnergies)
 
         @Html.Panel(
-            "The Five Elements",
+            Dictionary.FiveElementsTitle,
             Dictionary.five_elements,
             "elements")
 
@@ -74,10 +78,10 @@
             EPanelImageSize.Default,
             EPanelImageLayout.Contain)
 
-        @Html.Panel("The Nine Main Energies",
-            Html.Partial("_NineEnergiesOverview", Model.MainEnergies).ToString(),"energies")
+        @Html.Panel(Dictionary.NineMainEnergiesTitle,
+            Html.Partial("_NineEnergiesOverview", Model.MainEnergies).ToString(), "energies")
 
-        @Html.Panel("The Nine Emotional Energies",
+        @Html.Panel(Dictionary.NineCharacterEnergiesTitle,
             Html.Partial("_NineEnergiesOverview", Model.CharacterEnergies).ToString(), "characters")
 
         @Html.Panel(
@@ -98,19 +102,19 @@
             Html.Partial("_MonthlyCyclesOverview", Model.CharacterEnergies).ToString(),
             "nine-monthly-cycles")
 
-        @Html.Panel("9 Star Ki Personal Chart",
+        @Html.Panel(Dictionary.PersonalChart,
             Dictionary.personal_chart,
             "chart")
 
-        @Html.Panel("9 Star Ki and Relationships",
+        @Html.Panel(Dictionary.RelationshipsTitle,
             Html.Partial("../Relationships/_AboutRelationships").ToString(),
             "relationships")
 
-        @Html.Panel("The Five Transformations",
+        @Html.Panel(Dictionary.FiveTransformationsTitle,
             Html.PayWallContent(ESection.KnowledgeBase, $"transformations", Html.Partial("../NineStarKi/_FiveTransformations").ToString()).ToString(),
             "transformations")
 
-        @Html.Panel("9 Star Ki and Sexuality",
+        @Html.Panel(Dictionary.SexualityTitle,
             Html.PayWallContent(ESection.KnowledgeBase, $"sexuality", Html.Partial("../PersonalChart/_Sexuality").ToString()).ToString(),
             "sexuality")
 

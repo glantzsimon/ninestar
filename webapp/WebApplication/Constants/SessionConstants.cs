@@ -3,7 +3,8 @@
     public static class FormatConstants
     {
         public const string SessionDateTimeFormat = "yyyy-MM-dd";
-        public const string dataTableDateTimeFormat = "yyyy-MM-dd HH:mm";
+        public const string DataTableDateTimeFormat = "yyyy-MM-dd HH:mm";
+        public const string PredictionsDisplayDateFormat = "MMMM yyyy";
     }
 
     public static class SessionConstants

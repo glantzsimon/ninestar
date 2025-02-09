@@ -1319,6 +1319,7 @@
     <Content Include="Views\Home\_ButtonsFooter.cshtml" />
     <Content Include="Views\Shared\UpgradePromptGentle.cshtml" />
     <Content Include="Views\Shared\LoginPromptGentle.cshtml" />
+    <Content Include="Views\KnowledgeBase\_Navigation.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

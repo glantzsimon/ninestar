@@ -3024,6 +3024,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cycles of Light and Dark.
+        /// </summary>
+        public static string CyclesOfLightAndDark {
+            get {
+                return ResourceManager.GetString("CyclesOfLightAndDark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cycles.
         /// </summary>
         public static string CyclesSubTitle {
@@ -4094,10 +4103,10 @@ namespace K9.Globalisation {
         ///    Flexible Energies are easy-going, patient and empathetic with a broad perspective and balanced view of the world. They are generally more introverted and sometimes unpredictable.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Energies {water}, {wind} and {lake} are &apos;flexible&apos;. They are generally easy-going and have a gentle, &apos;go with the flow&apos; kind of attitude to life. They are generally happy to adapt to those around them.
+        ///    Energies {water}, {wind} and {lake} are &apos;flexible&apos;. They are generally easy-going and have a gentle, &apos;go with the flow&apos; kind of attitude to life. They are generally happy to adapt to those around them. This modality is similar to the Mutable Modality of the Zodiac.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Flexible Energies are good at seeing things from different perspectives and angles, whic [rest of string was truncated]&quot;;.
+        ///    Flexible Energies are go [rest of string was truncated]&quot;;.
         /// </summary>
         public static string flexible_modality {
             get {
@@ -6925,6 +6934,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Navigation.
+        /// </summary>
+        public static string Navigation {
+            get {
+                return ResourceManager.GetString("Navigation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;!doctype html&gt;
         ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
         ///&lt;head&gt;
@@ -8630,6 +8648,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 9 Star Ki &amp; Sexuality.
+        /// </summary>
+        public static string SexualityTitle {
+            get {
+                return ResourceManager.GetString("SexualityTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Shop.
         /// </summary>
         public static string Shop {
@@ -9086,10 +9113,10 @@ namespace K9.Globalisation {
         ///    Stable Energies are steady and solid, generally process information more slowly. They are pragmatic and risk-averse. They like to plan ahead and dislike change instigated by others.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Energies {soil}, {coreearth} and {mountain} are &apos;stable&apos;. As you can see, they are all of the Earth elements. Earth is by nature steady, solid and reliable.
+        ///    Energies {soil}, {coreearth} and {mountain} are &apos;stable&apos;. As you can see, they are all of the Earth elements. Earth is by nature steady, solid and reliable. This modality is similar to the Fixed Modality of the Zodiac.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Stable Energies like to plan ahead and tend to have longer-term goals, which they are good at sticking to. They are pragmatic and  [rest of string was truncated]&quot;;.
+        ///    Stable Energies like to plan ahead and tend to have longer-term goal [rest of string was truncated]&quot;;.
         /// </summary>
         public static string stable_modality {
             get {
@@ -10094,6 +10121,15 @@ namespace K9.Globalisation {
         public static string ViewMembershipOptions {
             get {
                 return ResourceManager.GetString("ViewMembershipOptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Predictions for Selected Date.
+        /// </summary>
+        public static string ViewPredictionsForSelectedDate {
+            get {
+                return ResourceManager.GetString("ViewPredictionsForSelectedDate", resourceCulture);
             }
         }
         

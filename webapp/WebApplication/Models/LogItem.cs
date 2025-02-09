@@ -9,7 +9,7 @@ namespace K9.WebApplication.Models
         public DateTime LoggedOn { get; set; }
 
         [Display(Name = "Logged On")]
-        public string ErrorLoggedOn => LoggedOn.ToString(Constants.FormatConstants.dataTableDateTimeFormat);
+        public string ErrorLoggedOn => LoggedOn.ToString(Constants.FormatConstants.DataTableDateTimeFormat);
 
         [Display(Name = "Class")]
         public string ClassName { get; set; }

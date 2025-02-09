@@ -4,11 +4,18 @@
 
 <div class="row">
     <div class="text-center">
-        @Html.Partial("_SelectedDateAndPeriodTitle")
-        <h5>@Dictionary.ClickOnTheNumbersBelowForMoreDetails</h5>
+        @if (Model.SelectedDate != DateTime.Today)
+        {
+            @Html.Partial("_SelectedDateAndPeriodTitle")
+        }
+
+        @if (Model.ReadingType == EReadingType.Complete)
+        {
+            <h5>@Dictionary.ClickOnTheNumbersBelowForMoreDetails</h5>
+        }
     </div>
-    <div class="col-sm-4 col-sm-offset-2 margin-bottom-15">
-        @if (!Model.IsCompatibility && Model.ReadingType == EReadingType.Complete)
+    <div class="col-sm-4 col-sm-offset-2 margin-bottom-0">
+        @if (Model.ReadingType == EReadingType.Complete)
         {
             <a href="#" id="current-yearly-cycle">
                 @Html.Partial("_CycleTitle", Model.YearlyCycleEnergy)
@@ -19,8 +26,8 @@
             @Html.Partial("_CycleTitle", Model.YearlyCycleEnergy)
         }
     </div>
-    <div class="col-md-4 col-sm-4 margin-bottom-15">
-        @if (!Model.IsCompatibility && Model.ReadingType == EReadingType.Complete)
+    <div class="col-md-4 col-sm-4 margin-bottom-0">
+        @if (Model.ReadingType == EReadingType.Complete)
         {
             <a href="#" id="current-monthly-cycle">
                 @Html.Partial("_CycleTitle", Model.MonthlyCycleEnergy)

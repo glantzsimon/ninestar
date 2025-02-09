@@ -1,0 +1,58 @@
+﻿@using K9.SharedLibrary.Extensions
+@using K9.WebApplication.Enums
+@using K9.WebApplication.Extensions
+@using K9.WebApplication.Helpers
+@using K9.WebApplication.Models
+@model NineStarKiModel
+
+
+<div class="ninestar-summmary container padding-0">
+    <ul class="nav nav-pills nav-justified image-pill">
+        <li class="active">
+            <a data-toggle="tab" href="#overview">
+                @Dictionary.OverviewLabel
+                <div class="img-rounded image-pill" style="background-image: url('Images/ui/overview.png');"></div>
+            </a>
+        </li>
+
+        <li>
+            <a data-toggle="tab" href="#monthly-planner">
+                @Dictionary.MonthlyPlanner
+                <div class="img-rounded image-pill" style="background-image: url('Images/ui/monthly-planner.png');"></div>
+            </a>
+        </li>
+
+        <li>
+            <a data-toggle="tab" href="#in-depth-analysis">
+                @Dictionary.InDepthAnalysis
+                <div class="img-rounded image-pill" style="background-image: url('Images/ui/in-depth-analysis.png');"></div>
+            </a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="overview" class="tab-pane fade in active padding-top-10">
+            @Html.Partial("_BiorhythmsGauges")
+
+            @Html.Partial("_ButtonsFooter")
+        </div>
+
+        <div id="monthly-planner" class="tab-pane fade padding-top-10">
+            @using (Html.PayWall(ESection.Predictions, Model))
+            {
+                @Html.Partial("_BioRhythms", Model.BiorhythmResultSet.NineStarKiBioRhythms)
+            }
+
+            @Html.Partial("_ButtonsFooter")
+        </div>
+
+        <div id="in-depth-analysis" class="tab-pane fade padding-top-10">
+            @using (Html.PayWall(ESection.Predictions, Model))
+            {
+                @Html.Partial("_InDepthAnalysis", Model)
+            }
+
+            @Html.Partial("_ButtonsFooter")
+        </div>
+    </div>
+</div>

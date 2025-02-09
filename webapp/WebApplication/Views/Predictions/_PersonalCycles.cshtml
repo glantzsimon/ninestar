@@ -8,34 +8,11 @@
         {
             @Html.Partial("_SelectedDateAndPeriodTitle")
         }
-
-        @if (Model.ReadingType == EReadingType.Complete)
-        {
-            <h5>@Dictionary.ClickOnTheNumbersBelowForMoreDetails</h5>
-        }
     </div>
     <div class="col-sm-4 col-sm-offset-2 margin-bottom-0">
-        @if (Model.ReadingType == EReadingType.Complete)
-        {
-            <a href="#" id="current-yearly-cycle">
-                @Html.Partial("_CycleTitle", Model.YearlyCycleEnergy)
-            </a>
-        }
-        else
-        {
-            @Html.Partial("_CycleTitle", Model.YearlyCycleEnergy)
-        }
+        @Html.Partial("_CycleTitle", Model.YearlyCycleEnergy)
     </div>
     <div class="col-md-4 col-sm-4 margin-bottom-0">
-        @if (Model.ReadingType == EReadingType.Complete)
-        {
-            <a href="#" id="current-monthly-cycle">
-                @Html.Partial("_CycleTitle", Model.MonthlyCycleEnergy)
-            </a>
-        }
-        else
-        {
-            @Html.Partial("_CycleTitle", Model.MonthlyCycleEnergy)
-        }
+        @Html.Partial("_CycleTitle", Model.MonthlyCycleEnergy)
     </div>
 </div>

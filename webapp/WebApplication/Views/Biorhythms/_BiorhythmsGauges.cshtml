@@ -3,14 +3,8 @@
 @using K9.WebApplication.Options
 @model K9.WebApplication.Models.NineStarKiModel
 
-@using (Html.PayWall(ESection.Biorhythms,Model))
+@using (Html.PayWall(ESection.Biorhythms, Model))
 {
-    <div class="row">
-        <div class="col-md-12">
-            @Html.Partial("_SelectedDateAndPeriodTitle")
-        </div>
-    </div>
-
     <div class="mobile-only">
         <div class="row">
             @foreach (var biorhythm in Model.BiorhythmResultSet.NineStarKiBioRhythms.GetResultsWithoutAverage())
@@ -48,7 +42,6 @@
 
     <div class="desktop-only">
         <div class="row">
-
             @foreach (var biorhythm in Model.BiorhythmResultSet.NineStarKiBioRhythms.GetBiorhythmResultsByDisplayIndex())
             {
                 <div class="col-md-3 col-sm-4 margin-bottom-0 padding-left-0 padding-right-0 text-center">
@@ -65,28 +58,4 @@
             }
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-sm-12 margin-bottom-0 padding-left-0 padding-right-0">
-            @Html.Partial("Biorhythms/_BioRhythms", Model.BiorhythmResultSet.NineStarKiBioRhythms)
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-12 margin-bottom-0 padding-left-0 padding-right-0">
-            @Html.Panel(Dictionary.SummaryLabel, Model.BiorhythmResultSet.NineStarKiBioRhythms.Summary)
-        </div>
-    </div>
 }
-<div class="row">
-    <div class="col-md-12 margin-top-20 margin-bottom-0 padding-left-0 padding-right-0">
-        <article>
-            @Html.CollapsiblePanel(Dictionary.WhatAreBiorhythms, Dictionary.biorhythms)
-        </article>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-12 margin-top-20 margin-bottom-0 padding-left-0 padding-right-0">
-        @Html.Partial("_ButtonsFooter")
-    </div>
-</div>

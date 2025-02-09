@@ -2,10 +2,15 @@
 @model K9.WebApplication.Models.CompatibilityModel
 
 <div>
-    @Html.Partial("../PersonalChart/_ProfileSummary", Model.NineStarKiModel1)
-    <br />
-    @Html.Partial("../PersonalChart/_ProfileSummary", Model.NineStarKiModel2)
+    <h4 class="margin-top-0">@Model.FirstPersonName</h4>
+    @Html.Partial("../PersonalChart/_PersonalChart", Model.NineStarKiModel1)
 
+    <br />
+
+    <h4 class="margin-top-0">@Model.SecondPersonName</h4>
+    @Html.Partial("../PersonalChart/_PersonalChart", Model.NineStarKiModel2)
+
+    <br/>
     @Html.Partial("_CompatibilityGauges")
 </div>
 

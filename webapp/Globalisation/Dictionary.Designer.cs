@@ -1681,6 +1681,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Biorhythms Details.
+        /// </summary>
+        public static string BiorhythmsDetails {
+            get {
+                return ResourceManager.GetString("BiorhythmsDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Biorhythms.
         /// </summary>
         public static string BiorhythmsLabel {
@@ -2281,6 +2290,15 @@ namespace K9.Globalisation {
         public static string CompatibilityReadings {
             get {
                 return ResourceManager.GetString("CompatibilityReadings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compatibility Results.
+        /// </summary>
+        public static string CompatibilityResults {
+            get {
+                return ResourceManager.GetString("CompatibilityResults", resourceCulture);
             }
         }
         

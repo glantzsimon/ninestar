@@ -275,3 +275,11 @@ a#toTop {
     .navigation a:hover {
         background-color: #286090;
     }
+
+.inline-form {
+    display: inline-block;
+}
+
+    .inline-form form {
+        display: inline-block;
+    }

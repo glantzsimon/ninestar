@@ -40,7 +40,7 @@ namespace K9.WebApplication.Controllers
             return View(new NineStarKiModel(personModel));
         }
 
-        [Route("biorhythms/results")]
+        [Route("biorhythms")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Index(NineStarKiModel model)

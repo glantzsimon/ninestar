@@ -8,6 +8,13 @@
     <div id="compatibility-container">
         <ul class="nav nav-pills nav-justified image-pill">
             <li class="active">
+                <a data-toggle="tab" href="#overview">
+                    @Dictionary.OverviewLabel
+                    <div class="img-rounded image-pill" style="background-image: url('Images/ui/overview.png');"></div>
+                </a>
+            </li>
+
+            <li>
                 <a data-toggle="tab" href="#strengthsandchallenges">
                     @Dictionary.StrengthsWeaknesses
                     <div class="img-rounded image-pill" style="background-image: url('Images/ui/relationships-strengths-challenges.png');"></div>
@@ -33,8 +40,16 @@
         </ul>
 
         <div class="tab-content">
-            <div id="strengthsandchallenges" class="tab-pane fade in active">
-                @using (Html.PayWall(ESection.Compatibility,Model))
+            <div id="overview" class="tab-pane fade in active">
+                @using (Html.PayWall(ESection.Compatibility, Model))
+                {
+                    @Html.Partial("_CompatibilityOverview", Model)
+                }
+                @Html.Partial("_ButtonsFooter")
+            </div>
+
+            <div id="strengthsandchallenges" class="tab-pane fade">
+                @using (Html.PayWall(ESection.Compatibility, Model))
                 {
                     @Html.Panel(Dictionary.FundamentalEnergiesCompatibility, Model.FundamentalEnergiesCompatibility)
                 }

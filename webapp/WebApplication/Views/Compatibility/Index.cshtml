@@ -1,4 +1,5 @@
 ﻿@model K9.WebApplication.Models.CompatibilityModel
+@using K9.WebApplication.Enums
 @using K9.WebApplication.Extensions
 @using K9.WebApplication.Helpers
 
@@ -24,9 +25,9 @@
             <article>
                 @if (Model != null && Model.IsProcessed)
                 {
-                    @Html.Partial("_CompatibilityOverview", Model)
+                    @Html.Raw(Html.Panel(Dictionary.CompatibilityTitle, Dictionary.compatibility_subtitle).ToString())
 
-                    @Html.Panel(Dictionary.CompatibilityDetails, Html.Partial("_CompatibilityPills").ToString())
+                    @Html.Panel(Dictionary.CompatibilityResults, Html.Partial("_CompatibilityPills").ToString())
                 }
                 else
                 {

@@ -784,6 +784,7 @@
     <Content Include="Images\ui\mirror-energy.png" />
     <Content Include="Images\ui\monthly-planner.png" />
     <Content Include="Images\ui\moon.png" />
+    <Content Include="Images\ui\overview.png" />
     <Content Include="Images\ui\predictions.png" />
     <Content Include="Images\ui\relationships-strengths-challenges.png" />
     <Content Include="Images\ui\sexuality.png" />
@@ -1289,7 +1290,6 @@
     <Content Include="Views\Biorhythms\_BioRhythms.cshtml" />
     <Content Include="Views\PersonalChart\_PersonalChart.cshtml" />
     <Content Include="Views\Predictions\_PersonalCycles.cshtml" />
-    <Content Include="Views\Biorhythms\_PersonalBiorhythms.cshtml" />
     <Content Include="Views\Biorhythms\_HighGauge.cshtml" />
     <Content Include="Views\Predictions\_CyclesPills.cshtml" />
     <Content Include="Views\Predictions\_SelectedDateAndPeriodTitle.cshtml" />
@@ -1320,6 +1320,15 @@
     <Content Include="Views\Shared\UpgradePromptGentle.cshtml" />
     <Content Include="Views\Shared\LoginPromptGentle.cshtml" />
     <Content Include="Views\KnowledgeBase\_Navigation.cshtml" />
+    <Content Include="Views\Biorhythms\_CalculatorForm.cshtml" />
+    <Content Include="Views\Biorhythms\_DateSelector.cshtml" />
+    <Content Include="Views\Biorhythms\_SelectedDateAndPeriodTitle.cshtml" />
+    <Content Include="Views\Biorhythms\_BiorhythmsPills.cshtml" />
+    <Content Include="Views\Biorhythms\_BiorhythmsGauges.cshtml" />
+    <Content Include="Views\Biorhythms\_InDepthAnalysis.cshtml" />
+    <Content Include="Views\Shared\ActionLinkButtons\_PersonalProfileWithForm.cshtml" />
+    <Content Include="Views\Shared\ActionLinkButtons\_BiorhythmsWithForm.cshtml" />
+    <Content Include="Views\Shared\ActionLinkButtons\_PredictionsWithForm.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,12 +1,20 @@
-﻿<div>
+﻿@model K9.WebApplication.Models.NineStarKiModel
+
+<div>
     <br />
+    @if (Model != null && Model.IsProcessed)
+    {
+        @Html.Partial("ActionLinkButtons/_PredictionsWithForm")
+        @Html.Partial("ActionLinkButtons/_BiorhythmsWithForm")
+    }
+    else
+    {
+        @Html.Partial("ActionLinkButtons/_Predictions")
+        @Html.Partial("ActionLinkButtons/_Biorhythms")
+    }
 
     @Html.Partial("ActionLinkButtons/_Compatibility")
-
-    @Html.Partial("ActionLinkButtons/_Predictions")
-
-    @Html.Partial("ActionLinkButtons/_Biorhythms")
-
+    
     @Html.Partial("ActionLinkButtons/_KnowledgeBase")
 
     @Html.Partial("ActionLinkButtons/_BookConsultation")

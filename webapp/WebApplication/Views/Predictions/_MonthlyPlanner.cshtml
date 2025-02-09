@@ -10,7 +10,7 @@
         var energy = cycle.Item4;
         var activeClass = year == DateTime.Today.Year && month == DateTime.Today.Month ? "active current-month" : string.Empty;
 
-        <a target="_blank" href="@Url.ActionWithBookmark("Index", "Predictions", $"{energy.EnergyName.ToLower()}-month")">
+        <a target="_blank" href="@Url.ActionWithBookmark("Index", "KnowledgeBase", $"{energy.EnergyName.ToLower()}-month")">
             <div class="row @activeClass">
                 <div class="col-xs-1">
                     @Html.Partial("_Year", year.ToString())

@@ -2791,6 +2791,12 @@
   <data name="YearlyPrediction" xml:space="preserve">
     <value>Yearly Prediction</value>
   </data>
+  <data name="BiorhythmsDetails" xml:space="preserve">
+    <value>Biorhythms Details</value>
+  </data>
+  <data name="CompatibilityResults" xml:space="preserve">
+    <value>Compatibility Results</value>
+  </data>
   <data name="ContinueReading" xml:space="preserve">
     <value>Continue reading...</value>
   </data>

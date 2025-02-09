@@ -1,8 +1,6 @@
 ﻿@using K9.WebApplication.Helpers
 @model K9.WebApplication.Models.CompatibilityModel
 
-@Html.Raw(Html.Panel(Dictionary.CompatibilityTitle, Dictionary.compatibility_subtitle).ToString())
-
 @if (Model != null && Model.IsProcessed)
 {
     @Html.Panel(Dictionary.CompatibilityOverview, Html.Partial("_CompatibilityProfilesHeader", Model).ToString())

@@ -10,7 +10,7 @@
         var isCurrentYear = isAfterChineseNewYear ? year == DateTime.Today.Year : year == DateTime.Today.Year - 1;
         var activeClass = isCurrentYear ? "active current-year" : string.Empty;
 
-        <a target="_blank" href="@Url.ActionWithBookmark("Index", "Predictions", $"{energy.EnergyName.ToLower()}-year")">
+        <a target="_blank" href="@Url.ActionWithBookmark("Index", "KnowledgeBase", $"{energy.EnergyName.ToLower()}-year")">
             <div class="row @activeClass">
                 <div class="col-xs-2">
                     @Html.Partial("_Year", $"{year} - {year + 1}")

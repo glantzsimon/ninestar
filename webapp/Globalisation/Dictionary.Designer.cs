@@ -1456,7 +1456,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Annual Standard Subscription.
+        ///   Looks up a localized string similar to Annual Standard Membership.
         /// </summary>
         public static string AnnualStandardMembership {
             get {
@@ -1474,7 +1474,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Assign Subscription.
+        ///   Looks up a localized string similar to Assign Membership.
         /// </summary>
         public static string AssignMembership {
             get {
@@ -1813,7 +1813,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sorry, you cannot switch to the selected subscription.
+        ///   Looks up a localized string similar to Sorry, you cannot switch to the selected membership.
         /// </summary>
         public static string CannotSwitchMembershipError {
             get {
@@ -1867,7 +1867,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Change Subscription.
+        ///   Looks up a localized string similar to Change Membership.
         /// </summary>
         public static string ChangeMembership {
             get {
@@ -6346,7 +6346,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Subscription Assigned Successfully.
+        ///   Looks up a localized string similar to Membership Assigned Successfully.
         /// </summary>
         public static string MembershipAssignedSuccess {
             get {
@@ -6413,7 +6413,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your current subscription runs until.
+        ///   Looks up a localized string similar to Your current membership is valid until.
         /// </summary>
         public static string MembershipRunsUntil {
             get {
@@ -6628,7 +6628,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Monthly Standard Subscription.
+        ///   Looks up a localized string similar to Monthly Standard Membership.
         /// </summary>
         public static string MonthlyStandardMembership {
             get {
@@ -8029,7 +8029,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You are already signed up to the selected subscription..
+        ///   Looks up a localized string similar to You are already signed up to the selected membership.
         /// </summary>
         public static string PurchaseMembershipErrorAlreadySubscribed {
             get {
@@ -8038,7 +8038,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You cannot purchase the selected subscription as you have an existing one..
+        ///   Looks up a localized string similar to You cannot purchase the selected membership as you have an existing one..
         /// </summary>
         public static string PurchaseMembershipErrorAlreadySubscribedToAnother {
             get {
@@ -8245,7 +8245,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You have selected the following subscription.
+        ///   Looks up a localized string similar to You have selected the following membership.
         /// </summary>
         public static string SelectedPurchaseText {
             get {
@@ -8254,7 +8254,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select the subscription you wish to assign to the user.
+        ///   Looks up a localized string similar to Select the membership you wish to assign to the user.
         /// </summary>
         public static string SelectMembershipText {
             get {
@@ -8263,7 +8263,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select Subscription.
+        ///   Looks up a localized string similar to Select Membership.
         /// </summary>
         public static string SelectMembershipTitle {
             get {
@@ -9159,7 +9159,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Standard Subscription.
+        ///   Looks up a localized string similar to Standard Membership.
         /// </summary>
         public static string StandardMembership {
             get {
@@ -9240,7 +9240,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Subsription Cost.
+        ///   Looks up a localized string similar to Membership Cost.
         /// </summary>
         public static string SubscriptionCostLabel {
             get {
@@ -9249,7 +9249,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Subscription Details.
+        ///   Looks up a localized string similar to Membership Details.
         /// </summary>
         public static string SubscriptionDetailsLabel {
             get {
@@ -9258,7 +9258,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Subscription Discounted Price.
+        ///   Looks up a localized string similar to Membership Discounted Price.
         /// </summary>
         public static string SubscriptionDiscountedPriceLabel {
             get {
@@ -9267,7 +9267,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Subscription Discount.
+        ///   Looks up a localized string similar to Membership Discount.
         /// </summary>
         public static string SubscriptionDiscountLabel {
             get {
@@ -9276,7 +9276,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Subscription Successful.
+        ///   Looks up a localized string similar to Membership Successful.
         /// </summary>
         public static string SubscriptionSuccessful {
             get {
@@ -9285,7 +9285,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Subscription Type.
+        ///   Looks up a localized string similar to Membership Type.
         /// </summary>
         public static string SubscriptionTypeLabel {
             get {
@@ -9419,7 +9419,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You are already signed up to the selected subscription..
+        ///   Looks up a localized string similar to You are already signed up to the selected membership.
         /// </summary>
         public static string SwitchMembershipErrorAlreadySubscribed {
             get {
@@ -9428,7 +9428,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You cannot switch subscriptions as you are not currently signed up..
+        ///   Looks up a localized string similar to You cannot switch membership as you are not currently signed up..
         /// </summary>
         public static string SwitchMembershipErrorNotSubscribed {
             get {
@@ -9437,7 +9437,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your successfully updated your subscription. Thank you!.
+        ///   Looks up a localized string similar to Your successfully updated your membership Thank you!.
         /// </summary>
         public static string SwitchSuccessful {
             get {
@@ -9446,7 +9446,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Subscription Updated.
+        ///   Looks up a localized string similar to Membership Updated.
         /// </summary>
         public static string SwitchSuccessfulTitle {
             get {
@@ -10874,7 +10874,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your subscription was successful. Thank you!.
+        ///   Looks up a localized string similar to Your subscription was successful. Thank you and a warm welcome!.
         /// </summary>
         public static string YouAreSignedUp {
             get {
@@ -10901,7 +10901,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your Current Subscription.
+        ///   Looks up a localized string similar to Your Current Membership.
         /// </summary>
         public static string YourCurrentMembership {
             get {
@@ -10910,7 +10910,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your Selected Subscription.
+        ///   Looks up a localized string similar to Your Selected Membership.
         /// </summary>
         public static string YourSelectedSubscription {
             get {

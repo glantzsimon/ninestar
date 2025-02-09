@@ -34,39 +34,56 @@
                     }
                 </div>
 
-                <hr />
+                <div class="row">
+                    <hr />
 
-                <div id="payment-request-button">
+                    <div id="payment-request-button">
+                    </div>
+
+                    <hr id="enter-payment-details-separator" style="display: none;" />
+
+                    <p id="enter-payment-details" style="display: none;">@Dictionary.OrEnterYourCardDetails</p>
+
+                    @Html.BootstrapEditorFor(e => e.FullName)
+                    @Html.BootstrapEditorFor(e => e.EmailAddress)
+                    @Html.BootstrapEditorFor(e => e.PhoneNumber)
+
+                    <label class="margin-bottom-10">@Dictionary.CardDetails</label>
+                    <div class="sr-combo-inputs-row">
+                        <div class="sr-input sr-card-element" id="card-element"></div>
+                    </div>
+                    <div class="sr-field-error" id="card-errors" role="alert"></div>
+
+                    <hr />
+                    @Html.BootstrapActionLinkButton(Dictionary.Back, Model.BackUrlAction, Model.BackUrlController, null, "fa-chevron-left", EButtonClass.Large)
+                    <button class="btn btn-info btn-lg payment-button" id="submit">
+                        <div class="spinner hidden" id="spinner"></div>
+                        <i class="fa fa-money-bill-alt"></i>
+                        <span id="button-text">@Dictionary.PayNow</span><span id="order-amount"></span>
+                    </button>
+
                 </div>
-
-                <hr id="enter-payment-details-separator" style="display: none;" />
-                
-                <p id="enter-payment-details" style="display: none;">@Dictionary.OrEnterYourCardDetails</p>
-
-                @Html.BootstrapEditorFor(e => e.FullName)
-                @Html.BootstrapEditorFor(e => e.EmailAddress)
-                @Html.BootstrapEditorFor(e => e.PhoneNumber)
-                
-                <label class="margin-bottom-10">@Dictionary.CardDetails</label>
-                <div class="sr-combo-inputs-row">
-                    <div class="sr-input sr-card-element" id="card-element"></div>
-                </div>
-                <div class="sr-field-error" id="card-errors" role="alert"></div>
-
-                <hr />
-                @Html.BootstrapActionLinkButton(Dictionary.Back, Model.BackUrlAction, Model.BackUrlController, null, "fa-chevron-left", EButtonClass.Large)
-                <button class="btn btn-info btn-lg payment-button" id="submit">
-                    <div class="spinner hidden" id="spinner"></div>
-                    <i class="fa fa-money-bill-alt"></i>
-                    <span id="button-text">@Dictionary.PayNow</span><span id="order-amount"></span>
-                </button>
             </form>
-            <div class="sr-result hidden">
-                @Html.Success(Dictionary.PaymentCompleted + " <i class='fa fa-smile-o'></i>")
+
+            <div class="row">
+
+                <div class="sr-result hidden">
+                    @Html.Success(Dictionary.PaymentCompleted + " <i class='fa fa-smile-o'></i>")
+                </div>
+
+                <hr />
+                <div>
+                    @Html.Partial("_StripeFooter")
+                </div>
+
+                <hr />
+                <div class="col-sm-offset-2 col-sm-8 col-xs-12">
+                    <div class="powered-by-stripe">
+                        &nbsp;
+                    </div>
+                </div>
             </div>
-            <div class="powered-by-stripe">
-                &nbsp;
-            </div>
+
         </div>
     </div>
 }

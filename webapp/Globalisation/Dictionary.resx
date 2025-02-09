@@ -1121,22 +1121,22 @@
     <value>Starts On</value>
   </data>
   <data name="SubscriptionCostLabel" xml:space="preserve">
-    <value>Subsription Cost</value>
+    <value>Membership Cost</value>
   </data>
   <data name="Switch" xml:space="preserve">
     <value>Switch</value>
   </data>
   <data name="SwitchMembershipErrorAlreadySubscribed" xml:space="preserve">
-    <value>You are already signed up to the selected subscription.</value>
+    <value>You are already signed up to the selected membership</value>
   </data>
   <data name="SwitchMembershipErrorNotSubscribed" xml:space="preserve">
-    <value>You cannot switch subscriptions as you are not currently signed up.</value>
+    <value>You cannot switch membership as you are not currently signed up.</value>
   </data>
   <data name="SwitchSuccessful" xml:space="preserve">
-    <value>Your successfully updated your subscription. Thank you!</value>
+    <value>Your successfully updated your membership Thank you!</value>
   </data>
   <data name="SwitchSuccessfulTitle" xml:space="preserve">
-    <value>Subscription Updated</value>
+    <value>Membership Updated</value>
   </data>
   <data name="ThankyouForDonationEmailTitle" xml:space="preserve">
     <value>Thank you for your donation</value>
@@ -1151,19 +1151,19 @@
     <value>Membership</value>
   </data>
   <data name="PurchaseMembershipErrorAlreadySubscribed" xml:space="preserve">
-    <value>You are already signed up to the selected subscription.</value>
+    <value>You are already signed up to the selected membership</value>
   </data>
   <data name="PurchaseMembershipErrorAlreadySubscribedToAnother" xml:space="preserve">
-    <value>You cannot purchase the selected subscription as you have an existing one.</value>
+    <value>You cannot purchase the selected membership as you have an existing one.</value>
   </data>
   <data name="Select" xml:space="preserve">
     <value>Select</value>
   </data>
   <data name="SelectedPurchaseText" xml:space="preserve">
-    <value>You have selected the following subscription</value>
+    <value>You have selected the following membership</value>
   </data>
   <data name="SubscriptionDiscountLabel" xml:space="preserve">
-    <value>Subscription Discount</value>
+    <value>Membership Discount</value>
   </data>
   <data name="UpgradeMembership" xml:space="preserve">
     <value>Upgrade Membership</value>
@@ -1172,13 +1172,13 @@
     <value>Yearly Membership</value>
   </data>
   <data name="AnnualStandardMembership" xml:space="preserve">
-    <value>Annual Standard Subscription</value>
+    <value>Annual Standard Membership</value>
   </data>
   <data name="Back" xml:space="preserve">
     <value>Back</value>
   </data>
   <data name="ChangeMembership" xml:space="preserve">
-    <value>Change Subscription</value>
+    <value>Change Membership</value>
   </data>
   <data name="CompanyLabel" xml:space="preserve">
     <value>Company Name</value>
@@ -1196,7 +1196,7 @@
     <value>Membership</value>
   </data>
   <data name="MembershipRunsUntil" xml:space="preserve">
-    <value>Your current subscription runs until</value>
+    <value>Your current membership is valid until</value>
   </data>
   <data name="Monthly" xml:space="preserve">
     <value>Monthly</value>
@@ -1205,7 +1205,7 @@
     <value>Monthly Membership</value>
   </data>
   <data name="MonthlyStandardMembership" xml:space="preserve">
-    <value>Monthly Standard Subscription</value>
+    <value>Monthly Standard Membership</value>
   </data>
   <data name="NineStar" xml:space="preserve">
     <value>NineStar</value>
@@ -1238,10 +1238,10 @@
     <value>Join Now</value>
   </data>
   <data name="SubscriptionDetailsLabel" xml:space="preserve">
-    <value>Subscription Details</value>
+    <value>Membership Details</value>
   </data>
   <data name="SubscriptionSuccessful" xml:space="preserve">
-    <value>Subscription Successful</value>
+    <value>Membership Successful</value>
   </data>
   <data name="Upgrade" xml:space="preserve">
     <value>Upgrade</value>
@@ -1250,10 +1250,10 @@
     <value>Valid until:</value>
   </data>
   <data name="YouAreSignedUp" xml:space="preserve">
-    <value>Your subscription was successful. Thank you!</value>
+    <value>Your subscription was successful. Thank you and a warm welcome!</value>
   </data>
   <data name="YourCurrentMembership" xml:space="preserve">
-    <value>Your Current Subscription</value>
+    <value>Your Current Membership</value>
   </data>
   <data name="MediaTheque" xml:space="preserve">
     <value>Multimedia</value>
@@ -1511,7 +1511,7 @@
     <value>Please upgrade your membership to gain full access to this feature and much more.</value>
   </data>
   <data name="StandardMembership" xml:space="preserve">
-    <value>Standard Subscription</value>
+    <value>Standard Membership</value>
   </data>
   <data name="Credit" xml:space="preserve">
     <value>Credit</value>
@@ -1544,7 +1544,7 @@
     <value>Update Your Details</value>
   </data>
   <data name="YourSelectedSubscription" xml:space="preserve">
-    <value>Your Selected Subscription</value>
+    <value>Your Selected Membership</value>
   </data>
   <data name="Contacts" xml:space="preserve">
     <value>Contacts</value>
@@ -1844,7 +1844,7 @@
     <value>compatibility\en-gb\sexual-chemistry-verylow.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="SubscriptionDiscountedPriceLabel" xml:space="preserve">
-    <value>Subscription Discounted Price</value>
+    <value>Membership Discounted Price</value>
   </data>
   <data name="AmountToPayLabel" xml:space="preserve">
     <value>Amount to Pay</value>
@@ -1880,7 +1880,7 @@
     <value>Unsubscibe Request</value>
   </data>
   <data name="CannotSwitchMembershipError" xml:space="preserve">
-    <value>Sorry, you cannot switch to the selected subscription</value>
+    <value>Sorry, you cannot switch to the selected membership</value>
   </data>
   <data name="MyPersonalProfile" xml:space="preserve">
     <value>My Personal Chart</value>
@@ -2006,7 +2006,7 @@
     <value>Send</value>
   </data>
   <data name="SubscriptionTypeLabel" xml:space="preserve">
-    <value>Subscription Type</value>
+    <value>Membership Type</value>
   </data>
   <data name="UserPromoCodes" xml:space="preserve">
     <value>User Promo Codes</value>
@@ -2396,16 +2396,16 @@
     <value>Credits Assigned Successfully</value>
   </data>
   <data name="MembershipAssignedSuccess" xml:space="preserve">
-    <value>Subscription Assigned Successfully</value>
+    <value>Membership Assigned Successfully</value>
   </data>
   <data name="SelectMembershipTitle" xml:space="preserve">
-    <value>Select Subscription</value>
+    <value>Select Membership</value>
   </data>
   <data name="AssignCredits" xml:space="preserve">
     <value>Assign Credits</value>
   </data>
   <data name="AssignMembership" xml:space="preserve">
-    <value>Assign Subscription</value>
+    <value>Assign Membership</value>
   </data>
   <data name="AssignPromoCode" xml:space="preserve">
     <value>Assign Promo Code</value>
@@ -2420,7 +2420,7 @@
     <value>Promo Code Assigned Successfully</value>
   </data>
   <data name="SelectMembershipText" xml:space="preserve">
-    <value>Select the subscription you wish to assign to the user</value>
+    <value>Select the membership you wish to assign to the user</value>
   </data>
   <data name="ClickOnTheNumbersBelowForMoreDetails" xml:space="preserve">
     <value>Click on any of the numbers below for more details</value>

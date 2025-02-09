@@ -21,20 +21,28 @@
         @if (Model.Membership != null)
         {
             @Html.Partial("../Membership/_MembershipDetails", Model.Membership)
-            if (Model.Membership.MembershipOption.IsUpgradable)
+            if (Model.Membership.MembershipOption.IsFree)
             {
                 <hr />
                 <div class="margin-top-15">
                     @Html.BootstrapActionLinkButton(Dictionary.UnlockAllFeatures, "Index", "Membership", null, "fa-unlock", EButtonClass.Large)
                 </div>
             }
+            else
+            {
+                if (Model.Membership.MembershipOption.IsUpgradable)
+                {
+                    <hr />
+                    <div class="margin-top-15">
+                        @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership", null, "fa-unlock", EButtonClass.Large)
+                    </div>
+                }
+            }
         }
         else
         {
             <hr />
             @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership", null, "", EButtonClass.Large)
-
-            @*<div class="inline" data-toggle="tooltip" title="@Dictionary.CreditsDescriptionUI">@Html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership", null, "fa-money-bill-alt", EButtonClass.Large)</div>*@
         }
     </div>
 </div>

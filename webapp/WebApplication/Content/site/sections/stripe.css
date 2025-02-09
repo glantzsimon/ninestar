@@ -3,17 +3,18 @@
 }
 
 .powered-by-stripe {
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
-    height: 100px;
-    padding: 5px;
+    height: auto;
+    padding: 11px;
     border-radius: 5px;
     background-image: url(../../../images/shared/powered-by-stripe-cards.png);
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
     background-size: contain;
-    margin-top: 10px;
-    margin-bottom: 0;
+    margin-bottom: 10px;
 }
 
 .security-info {

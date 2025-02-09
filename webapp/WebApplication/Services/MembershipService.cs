@@ -274,6 +274,9 @@ namespace K9.WebApplication.Services
 
         public void ProcessPurchase(PurchaseModel purchaseModel, int? userId = null, PromoCode promoCode = null)
         {
+            UserMembership userMembership = null;
+            Contact contact = null;
+
             try
             {
                 var membershipOptionId = purchaseModel.ItemId;
@@ -290,7 +293,7 @@ namespace K9.WebApplication.Services
                     throw new IndexOutOfRangeException("Invalid MembershipOptionId");
                 }
 
-                var userMembership = new UserMembership
+                userMembership = new UserMembership
                 {
                     UserId = userId ?? _authentication.CurrentUserId,
                     MembershipOptionId = membershipOptionId,
@@ -303,16 +306,23 @@ namespace K9.WebApplication.Services
                 userMembership.User = _usersRepository.Find(userId ?? _authentication.CurrentUserId);
                 TerminateExistingMemberships(membershipOptionId);
 
-                var contact = _contactService.Find(purchaseModel.ContactId);
-
-                SendEmailToNineStar(userMembership, promoCode);
-                SendEmailToCustomer(userMembership, contact, promoCode);
+                contact = _contactService.Find(purchaseModel.ContactId);
             }
             catch (Exception ex)
             {
                 _logger.Error($"MembershipService => ProcessPurchase => Purchase failed: {ex.GetFullErrorMessage()}");
                 SendEmailToNineStarAboutFailure(purchaseModel, ex.GetFullErrorMessage());
                 throw ex;
+            }
+
+            try
+            {
+                SendEmailToNineStar(userMembership, promoCode);
+                SendEmailToCustomer(userMembership, contact, promoCode);
+            }
+            catch (Exception e)
+            {
+                _logger.Error($"MembershipService => ProcessPurchase => Send Emails failed: {e.GetFullErrorMessage()}");
             }
         }
 
@@ -408,6 +418,8 @@ namespace K9.WebApplication.Services
 
         public void ProcessSwitch(int membershipOptionId)
         {
+            PurchaseModel purchaseModel = null;
+
             try
             {
                 var membershipOption = _membershipOptionRepository.Find(membershipOptionId);
@@ -417,19 +429,40 @@ namespace K9.WebApplication.Services
                     throw new IndexOutOfRangeException("Invalid MembershipOptionId");
                 }
 
-                _userMembershipRepository.Create(new UserMembership
+                var userMembership = new UserMembership
                 {
                     UserId = _authentication.CurrentUserId,
                     MembershipOptionId = membershipOptionId,
                     StartsOn = DateTime.Today,
                     EndsOn = membershipOption.IsAnnual ? DateTime.Today.AddYears(1) : DateTime.Today.AddMonths(1),
                     IsAutoRenew = true
-                });
+                };
+                _userMembershipRepository.Create(userMembership);
+                var user = _usersRepository.Find(_authentication.CurrentUserId);
+                userMembership.User = user;
+
                 TerminateExistingMemberships(membershipOptionId);
+
+                var contact = _contactService.Find(user.EmailAddress);
+
+                purchaseModel = new PurchaseModel
+                {
+                    ItemId = membershipOptionId,
+                    ContactId = contact.Id,
+                    Quantity = 1,
+                    Amount = 1,
+                    Currency = "USD",
+                    CustomerEmailAddress = contact.EmailAddress,
+                    CustomerName = contact.FullName
+                };
+
+                SendEmailToNineStar(userMembership, null);
             }
             catch (Exception ex)
             {
                 _logger.Error($"MembershipService => ProcessSwitch => Switch failed: {ex.GetFullErrorMessage()}");
+
+                SendEmailToNineStarAboutFailure(purchaseModel, ex.GetFullErrorMessage());
                 throw ex;
             }
         }

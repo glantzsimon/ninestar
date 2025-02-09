@@ -46,14 +46,38 @@
     </div>
 
     <hr />
+    
+    @{
+        var memberships = Model.MembershipModels.Where(e => e.IsPayable).ToList();
+        var columnClass = "";
+        var containerColumnClass = "";
+
+        switch (memberships.Count)
+        {
+            case 1:
+                columnClass = "col-sm-12";
+                containerColumnClass = "col-sm-offset-3 col-sm-6";
+                break;
+
+            case 2:
+                columnClass = "col-sm-6";
+                containerColumnClass = "col-sm-offset-2 col-sm-8";
+                break;
+
+            case 3:
+                columnClass = "col-sm-4";
+                containerColumnClass = "col-sm-offset-1 col-sm-10";
+                break;
+        }
+    }
 
     <div class="row">
         <article>
             <div class="text-center">
-                <div class="col-sm-offset-1 col-sm-10">
-                    @foreach (var membershipModel in Model.MembershipModels.Where(e => e.IsPayable).ToList())
+                <div class="@containerColumnClass">
+                    @foreach (var membershipModel in memberships)
                     {
-                        <div class="col-sm-4 padding-0">
+                        <div class="@columnClass padding-0">
                             @Html.Partial("_MembershipOption", membershipModel)
                         </div>
                     }

@@ -6,22 +6,27 @@ namespace K9.DataAccessLayer.Tests.Unit
 
     public class ModelTests
 	{
-		[Fact]
+        [Fact]
 		public void MembershipOption_Upgrades()
 		{
             var monthlyStandard = new MembershipOption
             {
                 SubscriptionType = MembershipOption.ESubscriptionType.MonthlyStandard
             };
+            
+		    var annualStandard = new MembershipOption
+		    {
+		        SubscriptionType = MembershipOption.ESubscriptionType.AnnualStandard
+		    };
+
+		    var weeklyPlatinum = new MembershipOption
+		    {
+		        SubscriptionType = MembershipOption.ESubscriptionType.WeeklyPlatinum
+		    };
 
 		    var monthlyPlatinum = new MembershipOption
 		    {
 		        SubscriptionType = MembershipOption.ESubscriptionType.MonthlyPlatinum
-		    };
-
-		    var annualStandard = new MembershipOption
-		    {
-		        SubscriptionType = MembershipOption.ESubscriptionType.AnnualStandard
 		    };
 
 		    var annualPlatinum = new MembershipOption
@@ -29,10 +34,21 @@ namespace K9.DataAccessLayer.Tests.Unit
 		        SubscriptionType = MembershipOption.ESubscriptionType.AnnualPlatinum
 		    };
 
+		    var lifetimePlatinum = new MembershipOption
+		    {
+		        SubscriptionType = MembershipOption.ESubscriptionType.LifeTimePlatinum
+		    };
+
             Assert.True(monthlyStandard.CanUpgradeTo(annualStandard));
             Assert.True(monthlyStandard.CanUpgradeTo(monthlyPlatinum));
             Assert.True(monthlyStandard.CanUpgradeTo(annualPlatinum));
+            
+		    Assert.True(weeklyPlatinum.CanUpgradeTo(monthlyPlatinum));
+		    Assert.True(weeklyPlatinum.CanUpgradeTo(annualPlatinum));
+		    Assert.True(weeklyPlatinum.CanUpgradeTo(lifetimePlatinum));
+
             Assert.False(monthlyStandard.CanUpgradeTo(monthlyStandard));
+            Assert.False(weeklyPlatinum.CanUpgradeTo(monthlyStandard));
 
 		    Assert.True(monthlyPlatinum.CanUpgradeTo(annualPlatinum));
 		    Assert.False(monthlyPlatinum.CanUpgradeTo(monthlyStandard));
@@ -44,6 +60,7 @@ namespace K9.DataAccessLayer.Tests.Unit
 		    Assert.False(annualStandard.CanUpgradeTo(monthlyPlatinum));
 		    Assert.False(annualStandard.CanUpgradeTo(annualStandard));
 
+		    Assert.True(annualPlatinum.CanUpgradeTo(lifetimePlatinum));
 		    Assert.False(annualPlatinum.CanUpgradeTo(annualStandard));
 		    Assert.False(annualPlatinum.CanUpgradeTo(monthlyStandard));
 		    Assert.False(annualPlatinum.CanUpgradeTo(monthlyPlatinum));

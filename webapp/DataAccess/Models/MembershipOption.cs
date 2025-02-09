@@ -83,6 +83,8 @@ namespace K9.DataAccessLayer.Models
         public string MembershipPeriodLocal => GetLocalisedPropertyValue(nameof(MembershipPeriod));
         
         public bool IsFree => SubscriptionType == ESubscriptionType.Free;
+        
+        public bool IsForever => SubscriptionType == ESubscriptionType.LifeTimePlatinum;
 
         public bool IsMonthly =>
             new[] { ESubscriptionType.MonthlyPlatinum, ESubscriptionType.MonthlyStandard }.Contains(SubscriptionType);

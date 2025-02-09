@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using K9.Base.DataAccessLayer.Attributes;
+﻿using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
+using K9.Base.WebApplication.Extensions;
 using K9.SharedLibrary.Attributes;
 using K9.SharedLibrary.Authentication;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using K9.SharedLibrary.Extensions;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -36,6 +37,10 @@ namespace K9.DataAccessLayer.Models
         [Required]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.EndsOnLabel)]
         public DateTime EndsOn { get; set; }
+
+        public string ValidUntil => MembershipOption.IsForever
+                ? Globalisation.Dictionary.Forever
+                : EndsOn.ToLongLocalDateString();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AutoRenewLabel)]
         public bool IsAutoRenew { get; set; }
@@ -82,7 +87,7 @@ namespace K9.DataAccessLayer.Models
         public int NumberOfCreditsLeft { get; set; }
 
         [NotMapped]
-        public bool IsActive => DateTime.Today.IsBetween(StartsOn.Date, EndsOn.Date) && !IsDeactivated;
+        public bool IsActive => (DateTime.Today.IsBetween(StartsOn.Date, EndsOn.Date) || MembershipOption.SubscriptionType == MembershipOption.ESubscriptionType.LifeTimePlatinum) && !IsDeactivated;
 
         [NotMapped]
         public TimeSpan Duration => EndsOn.Subtract(StartsOn);
@@ -91,7 +96,7 @@ namespace K9.DataAccessLayer.Models
         public double CostOfRemainingActiveSubscription => GetCostOfRemainingActiveSubscription();
 
         public bool IsAuthorisedToViewPaidContent() =>
-            MembershipOption?.SubscriptionType > MembershipOption.ESubscriptionType.Free;
+            MembershipOption?.SubscriptionType > MembershipOption.ESubscriptionType.Free && IsActive;
 
         private double GetCostOfRemainingActiveSubscription()
         {

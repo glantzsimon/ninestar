@@ -135,6 +135,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             });
 
             _membershipOptionRepository.Setup(_ => _.List()).Returns(membershipOptions);
+            _membershipOptionRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<MembershipOption, bool>>>())).Returns(membershipOptions);
             _membershipOptionRepository.Setup(_ => _.Find(_standardMonthlyMembership.Id)).Returns(_standardMonthlyMembership);
             _membershipOptionRepository.Setup(_ => _.Find(_standardYearlyMembership.Id)).Returns(_standardYearlyMembership);
             _membershipOptionRepository.Setup(_ => _.Find(_platinumMonthlyMembership.Id)).Returns(_platinumMonthlyMembership);

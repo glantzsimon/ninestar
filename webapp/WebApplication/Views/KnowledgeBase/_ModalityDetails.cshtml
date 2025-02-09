@@ -6,7 +6,7 @@
 @model K9.WebApplication.ViewModels.NineStarKiModalitySummaryViewModel
 
 @Html.Panel(Model.Title,
-    Html.PayWallContent(ESection.KnowledgeBase, Model.ModalityName.ToLower(), Html.Partial("_ModalityBody").ToString()).ToString(),
+    Html.Partial("_ModalityBody").ToString(),
     Model.ModalityName.ToLower(),
     $"Images/ninestar/modalities/{Model.ModalityName.ToLower()}.png",
     EPanelImageSize.Default,

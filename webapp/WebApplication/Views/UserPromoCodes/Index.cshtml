@@ -3,6 +3,7 @@
 @using K9.SharedLibrary.Models
 @using K9.SharedLibrary.Authentication
 @using EButtonType = K9.SharedLibrary.Models.EButtonType
+@using SessionHelper = K9.WebApplication.Helpers.SessionHelper
 
 @model UserPromoCode
 @{
@@ -19,7 +20,7 @@
 {
     AllowCreate = false,
     AllowEdit = false,
-    AllowDelete = ((BaseController<UserPromoCode>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
+    AllowDelete = SessionHelper.CurrentUserIsAdmin(),
     VisibleColumns = new List<string>
     {
         "CreatedOn",

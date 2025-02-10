@@ -61,7 +61,7 @@ namespace K9.DataAccessLayer.Models
 
         public virtual Slot Slot { get; set; }
         
-        [UIHint("DateTime")]
+        [UIHint("DateTimeOffset")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EndsOnLabel)]
         public DateTimeOffset? EndsOn
         {
@@ -76,21 +76,44 @@ namespace K9.DataAccessLayer.Models
             }
         }
 
-        [UIHint("DateTime")]
+        [UIHint("DateTimeOffset")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StartsOnLabel)]
         public DateTimeOffset? ScheduledOnLocalTime => this.ToUserTimeZone(ScheduledOn);
         
-        [UIHint("DateTime")]
+        [UIHint("DateTimeOffset")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EndsOnLabel)]
         public DateTimeOffset? EndsOnLocalTime => this.ToUserTimeZone(EndsOn);
 
-        [UIHint("DateTime")]
+        [UIHint("DateTimeOffset")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StartsOnLabel)]
         public DateTimeOffset? ScheduledOnMyTime => this.ToMyTimeZone(ScheduledOn);
         
-        [UIHint("DateTime")]
+        [UIHint("DateTimeOffset")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EndsOnLabel)]
         public DateTimeOffset? EndsOnMyTime => this.ToMyTimeZone(EndsOn);
+
+        public string FormattedScheduledOnLocalDate => ScheduledOnLocalTime.HasValue
+            ? ScheduledOnLocalTime.Value.Date.ToString(Constants.FormatConstants.AppointmentDisplayDateFormat)
+            : "";
+
+        public string FormattedScheduledOnLocalDateTime => ScheduledOnLocalTime.HasValue
+            ? $"{ScheduledOnLocalTime.Value.ToString(Constants.FormatConstants.AppointmentDisplayDateFormat)} " +
+              $"{ScheduledOnLocalTime.Value.ToString(Constants.FormatConstants.AppointmentDisplayTimeFormat)} - " +
+              $"{EndsOnLocalTime.Value.ToString(Constants.FormatConstants.AppointmentDisplayTimeFormat)}"
+            : "";
+
+        public string FormattedScheduledOnLocalTime => ScheduledOnLocalTime.HasValue
+            ? ScheduledOnLocalTime.Value.ToString(Constants.FormatConstants.AppointmentDisplayTimeFormat)
+            : "";
+
+        public string FormattedEndsOnLocalDate => EndsOnLocalTime.HasValue
+            ? EndsOnLocalTime.Value.Date.ToString(Constants.FormatConstants.AppointmentDisplayDateFormat)
+            : "";
+
+        public string FormattedEndsOnLocalTime => EndsOnLocalTime.HasValue
+            ? EndsOnLocalTime.Value.ToString(Constants.FormatConstants.AppointmentDisplayTimeFormat)
+            : "";
+
 
         private double GetPrice()
         {

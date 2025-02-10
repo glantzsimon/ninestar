@@ -1335,6 +1335,7 @@
     <Content Include="Views\Shared\_WhatsApp.cshtml" />
     <Content Include="Views\Consultation\ViewAvailableSlots.cshtml" />
     <Content Include="Views\Consultation\ScheduleConsultationSuccess.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTimeOffset.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

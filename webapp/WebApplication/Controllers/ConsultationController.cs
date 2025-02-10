@@ -92,7 +92,7 @@ namespace K9.WebApplication.Controllers
 
             if (consultation.ScheduledOn.HasValue)
             {
-                RedirectToAction("MyAccount", "Account");
+                return RedirectToAction("MyAccount", "Account");
             }
 
             var freeSlots = _consultationService.GetAvailableSlots().Where(e =>

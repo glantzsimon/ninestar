@@ -24,7 +24,7 @@
 
         <hr />
         @Html.BootstrapEditorFor(model => model.PromoCode)
-        
+
         <hr />
         @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Update, EButtonType.Submit, "fa-save", EButtonClass.Large)
         @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.DeleteMyAccount, "ConfirmDeleteAccount", "Account", new { id = Model.User.Id }, "fa-trash-alt", EButtonClass.Danger, EButtonClass.Large)
@@ -34,5 +34,9 @@
         {
             @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.ChangePassword, "UpdatePassword", "Account", null, "", EButtonClass.Large)
         }
+
+        <span></span>
+
+        @Html.BootstrapActionLinkButton(Dictionary.MyPersonalProfile, "MyProfile", "PersonalChart", null, "fa fa-yin-yang", EButtonClass.Large)
     }
 }

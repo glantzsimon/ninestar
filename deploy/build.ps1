@@ -86,10 +86,10 @@ function _Publish() {
   Msbuild $projectPath /p:DeployOnBuild=true /p:PublishProfile=Integration /p:AllowUntrustedCertificate=true /p:Password=$publishPassword
   ProcessErrors
   
-  echo "Building mobile project"  
-  Msbuild $mobileProjectPath /p:DeployOnBuild=true /p:PublishProfile=Integration /p:AllowUntrustedCertificate=true /p:Password=$publishPassword
-  ProcessErrors
-  popd
+  # echo "Building mobile project"  
+  # Msbuild $mobileProjectPath /p:DeployOnBuild=true /p:PublishProfile=Integration /p:AllowUntrustedCertificate=true /p:Password=$publishPassword
+  # ProcessErrors
+  # popd
 }
 
 function Main {

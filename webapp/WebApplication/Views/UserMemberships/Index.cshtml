@@ -2,6 +2,7 @@
 @using K9.Base.WebApplication.Helpers
 @using K9.SharedLibrary.Authentication
 @using K9.WebApplication.Config
+@using SessionHelper = K9.WebApplication.Helpers.SessionHelper
 @model UserMembership
 @{
     Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
@@ -10,7 +11,7 @@
 {
     AllowCreate = true,
     AllowEdit = true,
-    AllowDelete = ((BaseController<UserMembership>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
+    AllowDelete = SessionHelper.CurrentUserIsAdmin(),
     ColumnsConfig = new ColumnsConfig
     {
         ColumnsToIgnore =

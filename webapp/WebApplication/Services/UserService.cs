@@ -151,11 +151,19 @@ namespace K9.WebApplication.Services
             {
                 try
                 {
-                    userConsultations = _userConsultationsRepository.Find(e => e.UserId == user.Id);
+                    if (SessionHelper.CurrentUserIsAdmin())
+                    {
+                        userConsultations = _userConsultationsRepository.List();
+                    }
+                    else
+                    {
+                        userConsultations = _userConsultationsRepository.Find(e => e.UserId == user.Id);
+                    }
 
                     foreach (var userConsultation in userConsultations)
                     {
                         userConsultation.Consultation = _consultationService.Find(userConsultation.ConsultationId);
+                        userConsultation.User = _usersRepository.Find(userConsultation.UserId);
                     }
                 }
                 catch (Exception e)

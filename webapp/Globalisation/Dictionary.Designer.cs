@@ -8390,6 +8390,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Schedule Appointment.
+        /// </summary>
+        public static string ScheduleAppointment {
+            get {
+                return ResourceManager.GetString("ScheduleAppointment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Schedule Consultation.
         /// </summary>
         public static string ScheduleConsultation {
@@ -10167,6 +10176,15 @@ namespace K9.Globalisation {
         public static string Unpredictable {
             get {
                 return ResourceManager.GetString("Unpredictable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unscheduled.
+        /// </summary>
+        public static string Unscheduled {
+            get {
+                return ResourceManager.GetString("Unscheduled", resourceCulture);
             }
         }
         

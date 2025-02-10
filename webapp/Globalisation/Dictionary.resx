@@ -2848,6 +2848,9 @@
   <data name="ScheduleAConsultationSuccess" xml:space="preserve">
     <value>Your {Duration} consultation has been successfully scheduled for {AppointmentDate} at {AppointmentTime}.</value>
   </data>
+  <data name="ScheduleAppointment" xml:space="preserve">
+    <value>Schedule Appointment</value>
+  </data>
   <data name="ScheduleConsultation" xml:space="preserve">
     <value>Schedule Consultation</value>
   </data>
@@ -2874,6 +2877,9 @@
   </data>
   <data name="Slots" xml:space="preserve">
     <value>Slots</value>
+  </data>
+  <data name="Unscheduled" xml:space="preserve">
+    <value>Unscheduled</value>
   </data>
   <data name="ViewAvailableSlots" xml:space="preserve">
     <value>View Available Slots</value>

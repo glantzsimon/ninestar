@@ -59,7 +59,7 @@ namespace K9.WebApplication.Helpers
                 }
             }
 
-            result = default;
+            result = default(TEnum);
             return false;
         }
     }

@@ -1,7 +1,9 @@
 ﻿@using K9.Base.WebApplication.Helpers
 @model string
 
-@Html.Alert(EAlertType.Unauthorized, Dictionary.LogIntoYourAccountToView)
+@Html.Alert(EAlertType.Locked, Dictionary.LogIntoYourAccountToView)
+
+<br />
 
 @Html.BootstrapActionLinkButton(
     Dictionary.LogIn,

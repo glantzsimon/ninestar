@@ -17,20 +17,13 @@ namespace K9.WebApplication.Services
         private readonly IMembershipService _membershipService;
         private readonly IAuthentication _authentication;
         private readonly IRoles _roles;
-        private readonly IRepository<UserProfileReading> _userProfileReadingsRepository;
 
-        private readonly IRepository<UserRelationshipCompatibilityReading>
-            _userRelationshipCompatibilityReadingRepository;
 
-        public NineStarKiService(IMembershipService membershipService, IAuthentication authentication, IRoles roles,
-            IRepository<UserProfileReading> userProfileReadingsRepository,
-            IRepository<UserRelationshipCompatibilityReading> userRelationshipCompatibilityReadingRepository)
+        public NineStarKiService(IMembershipService membershipService, IAuthentication authentication, IRoles roles)
         {
             _membershipService = membershipService;
             _authentication = authentication;
             _roles = roles;
-            _userProfileReadingsRepository = userProfileReadingsRepository;
-            _userRelationshipCompatibilityReadingRepository = userRelationshipCompatibilityReadingRepository;
         }
 
         public NineStarKiModel CalculateNineStarKiProfile(DateTime dateOfBirth, EGender gender = EGender.Male)
@@ -56,16 +49,6 @@ namespace K9.WebApplication.Services
             model.Summary = GetSummary(model);
             model.Overview = GetOverview(model.MainEnergy.Energy);
 
-            if (_authentication.IsAuthenticated)
-            {
-                if (isCompatibility || _roles.CurrentUserIsInRoles(RoleNames.Administrators) ||
-                    _membershipService.IsCompleteProfileReading(Current.UserId, personModel))
-                {
-                    model.ReadingType = EReadingType.Complete;
-                    model.IsUpgradeRequired = false;
-                }
-            }
-
             if (isCompatibility)
             {
                 model.IsShowSummary = false;
@@ -77,31 +60,7 @@ namespace K9.WebApplication.Services
 
             return model;
         }
-
-        public NineStarKiModel RetrieveNineStarKiProfile(int userProfileId)
-        {
-            if (!_authentication.IsAuthenticated)
-            {
-                throw new UnauthorizedAccessException();
-            }
-
-            var userProfile = _userProfileReadingsRepository.Find(userProfileId);
-            if (!_roles.CurrentUserIsInRoles(RoleNames.Administrators))
-            {
-                if (userProfile.UserId != Current.UserId)
-                {
-                    throw new UnauthorizedAccessException();
-                }
-            }
-
-            return CalculateNineStarKiProfile(new PersonModel
-            {
-                Name = userProfile.FullName,
-                DateOfBirth = userProfile.DateOfBirth,
-                Gender = userProfile.Gender
-            });
-        }
-
+        
         public CompatibilityModel CalculateCompatibility(DateTime dateOfBirth1, EGender gender1, DateTime dateOfBirth2,
             EGender gender2)
         {
@@ -126,19 +85,8 @@ namespace K9.WebApplication.Services
             var model = new CompatibilityModel(nineStarKiModel1, nineStarKiModel2)
             {
                 IsProcessed = true,
-                IsUpgradeRequired = true,
                 IsHideSexualChemistry = isHideSexuality
             };
-
-            if (_authentication.IsAuthenticated)
-            {
-                if (_roles.CurrentUserIsInRoles(RoleNames.Administrators) ||
-                    _membershipService.IsCompleteRelationshipCompatibilityReading(Current.UserId,
-                        personModel1, personModel2, isHideSexuality))
-                {
-                    model.IsUpgradeRequired = false;
-                }
-            }
 
             if (string.IsNullOrEmpty(nineStarKiModel1.PersonModel.Name))
             {
@@ -152,25 +100,7 @@ namespace K9.WebApplication.Services
 
             return model;
         }
-
-        public CompatibilityModel RetrieveCompatibility(int userRelationshipCompatibilityId)
-        {
-            var reading = _userRelationshipCompatibilityReadingRepository.Find(userRelationshipCompatibilityId);
-            return CalculateCompatibility(new PersonModel
-                {
-                    Name = reading.FirstName,
-                    DateOfBirth = reading.FirstDateOfBirth,
-                    Gender = reading.FirstGender
-                },
-                new PersonModel
-                {
-                    Name = reading.SecondName,
-                    DateOfBirth = reading.SecondDateOfBirth,
-                    Gender = reading.SecondGender
-                },
-                reading.IsHideSexuality);
-        }
-
+        
         public NineStarKiSummaryViewModel GetNineStarKiSummaryViewModel()
         {
             var mainEnergies = new List<NineStarKiModel>

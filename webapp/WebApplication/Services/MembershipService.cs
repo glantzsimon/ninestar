@@ -25,8 +25,6 @@ namespace K9.WebApplication.Services
         private readonly IAuthentication _authentication;
         private readonly IRepository<MembershipOption> _membershipOptionRepository;
         private readonly IRepository<UserMembership> _userMembershipRepository;
-        private readonly IRepository<UserProfileReading> _userProfileReadingsRepository;
-        private readonly IRepository<UserRelationshipCompatibilityReading> _userRelationshipCompatibilityReadingsRepository;
         private readonly IRepository<UserCreditPack> _userCreditPacksRepository;
         private readonly IRepository<User> _usersRepository;
         private readonly IContactService _contactService;
@@ -39,14 +37,12 @@ namespace K9.WebApplication.Services
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<UserProfileReading> userProfileReadingsRepository, IRepository<UserRelationshipCompatibilityReading> userRelationshipCompatibilityReadingsRepository, IRepository<UserCreditPack> userCreditPacksRepository, IRepository<User> usersRepository, IContactService contactService, IMailer mailer, IOptions<WebsiteConfiguration> config, IRepository<PromoCode> promoCodesRepository, IUserService userService, IRepository<Consultation> consultationsRepository, IRepository<UserConsultation> userConsultationsRepository, IConsultationService consultationService)
+        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<UserCreditPack> userCreditPacksRepository, IRepository<User> usersRepository, IContactService contactService, IMailer mailer, IOptions<WebsiteConfiguration> config, IRepository<PromoCode> promoCodesRepository, IUserService userService, IRepository<Consultation> consultationsRepository, IRepository<UserConsultation> userConsultationsRepository, IConsultationService consultationService)
         {
             _logger = logger;
             _authentication = authentication;
             _membershipOptionRepository = membershipOptionRepository;
             _userMembershipRepository = userMembershipRepository;
-            _userProfileReadingsRepository = userProfileReadingsRepository;
-            _userRelationshipCompatibilityReadingsRepository = userRelationshipCompatibilityReadingsRepository;
             _userCreditPacksRepository = userCreditPacksRepository;
             _usersRepository = usersRepository;
             _contactService = contactService;
@@ -95,29 +91,12 @@ namespace K9.WebApplication.Services
                 {
                     userMembership.MembershipOption =
                         membershipOptions.FirstOrDefault(m => m.Id == userMembership.MembershipOptionId);
-                    userMembership.ProfileReadings =
-                        _userProfileReadingsRepository.Find(e => e.UserId == userId).ToList();
-                    userMembership.RelationshipCompatibilityReadings = _userRelationshipCompatibilityReadingsRepository
-                        .Find(e => e.UserId == userId).ToList();
-                    userMembership.NumberOfCreditsLeft = GetNumberOfCreditsLeft(userMembership);
-
                     return userMembership;
                 }).ToList();
 
             return _authentication.IsAuthenticated ? userMemberships : new List<UserMembership>();
         }
-
-        private int GetNumberOfCreditsLeft(UserMembership userMembership)
-        {
-            var creditPacks = _userCreditPacksRepository.Find(e => e.UserId == userMembership.UserId);
-            var creditPackIds = creditPacks.Select(c => c.Id);
-            var numberOfUsedCredits =
-                _userProfileReadingsRepository.Find(e => creditPackIds.Contains(e.UserCreditPackId ?? 0))?.Count() +
-                _userRelationshipCompatibilityReadingsRepository.Find(e => creditPackIds.Contains(e.UserCreditPackId ?? 0))?.Count();
-            var totalCredits = creditPacks.Any() ? creditPacks.Sum(e => e.NumberOfCredits) : 0;
-            return totalCredits - numberOfUsedCredits ?? 0;
-        }
-
+        
         /// <summary>
         /// Sometimes user memberships can overlap, when upgrading for example. This returns the Active membership.
         /// </summary>
@@ -143,44 +122,6 @@ namespace K9.WebApplication.Services
             }
 
             return activeUserMembership;
-        }
-
-        public bool IsCompleteProfileReading(int? userId, PersonModel personModel)
-        {
-            var activeUserMembership = GetActiveUserMembership(userId);
-            if (activeUserMembership?.ProfileReadings?.Any(e => e.DateOfBirth == personModel.DateOfBirth && e.Gender == personModel.Gender && e.FullName == personModel.Name) == true)
-            {
-                return true;
-            }
-            if (activeUserMembership?.MembershipOption.SubscriptionType > MembershipOption.ESubscriptionType.Free ||
-                activeUserMembership?.NumberOfProfileReadingsLeft > 0 ||
-                activeUserMembership?.NumberOfCreditsLeft > 0)
-            {
-                CreateNewUserProfileReading(activeUserMembership, personModel.Name, personModel.DateOfBirth, personModel.Gender);
-                return true;
-            }
-
-            return false;
-        }
-
-        public bool IsCompleteRelationshipCompatibilityReading(int? userId, PersonModel personModel1, PersonModel personModel2, bool isHideSexuality)
-        {
-            var activeUserMembership = GetActiveUserMembership(userId);
-            if (activeUserMembership?.RelationshipCompatibilityReadings?.Any(e =>
-                    e.FirstName == personModel1.Name && e.FirstDateOfBirth == personModel1.DateOfBirth && e.FirstGender == personModel1.Gender &&
-                    e.SecondName == personModel2.Name && e.SecondDateOfBirth == personModel2.DateOfBirth && e.SecondGender == personModel2.Gender) == true)
-            {
-                return true;
-            }
-            if (activeUserMembership?.MembershipOption.SubscriptionType > MembershipOption.ESubscriptionType.Free ||
-                activeUserMembership?.NumberOfRelationshipCompatibilityReadingsLeft > 0 ||
-                activeUserMembership?.NumberOfCreditsLeft > 0)
-            {
-                CreateNewUserRelationshipCompatibilityReading(activeUserMembership, personModel1, personModel2, isHideSexuality);
-                return true;
-            }
-
-            return false;
         }
 
         public MembershipModel GetSwitchMembershipModel(int membershipOptionId)
@@ -530,62 +471,6 @@ namespace K9.WebApplication.Services
                 userMembership.IsDeactivated = true;
                 _userMembershipRepository.Update(userMembership);
             }
-        }
-
-        private void CreateNewUserProfileReading(UserMembership userMembership, string name, DateTime dateOfBirth, EGender gender)
-        {
-            var userProfileReading = new UserProfileReading
-            {
-                FullName = name,
-                DateOfBirth = dateOfBirth,
-                Gender = gender,
-                UserId = userMembership.UserId,
-                UserMembershipId = userMembership.Id
-            };
-
-            if (userMembership.NumberOfProfileReadingsLeft == 0)
-            {
-                var userCredit = _userCreditPacksRepository.Find(e => e.UserId == userMembership.UserId).FirstOrDefault();
-                if (userMembership.NumberOfCreditsLeft == 0 || userCredit == null)
-                {
-                    _logger.Error($"MembershipService => CreateNewUserProfileReading => Not enough Credits remaining for User {userMembership.UserId}.");
-                    throw new Exception("Not enough credits remaining");
-                }
-
-                userProfileReading.UserCreditPackId = userCredit.Id;
-            }
-
-            _userProfileReadingsRepository.Create(userProfileReading);
-        }
-
-        private void CreateNewUserRelationshipCompatibilityReading(UserMembership userMembership, PersonModel personModel1, PersonModel personModel2, bool isHideSexuality)
-        {
-            var userRelationshipCompatibilityReading = new UserRelationshipCompatibilityReading
-            {
-                FirstName = personModel1.Name,
-                FirstDateOfBirth = personModel1.DateOfBirth,
-                FirstGender = personModel1.Gender,
-                SecondName = personModel2.Name,
-                SecondDateOfBirth = personModel2.DateOfBirth,
-                SecondGender = personModel2.Gender,
-                UserId = Current.UserId,
-                UserMembershipId = userMembership.Id,
-                IsHideSexuality = isHideSexuality
-            };
-
-            if (userMembership.NumberOfRelationshipCompatibilityReadingsLeft <= 0)
-            {
-                var userCredit = _userCreditPacksRepository.Find(e => e.UserId == userMembership.UserId).FirstOrDefault();
-                if (userMembership.NumberOfCreditsLeft == 0 || userCredit == null)
-                {
-                    _logger.Error($"MembershipService => CreateNewUserProfileReading => No User Credits were found for User {userMembership.UserId}.");
-                    throw new Exception("No User Credits were found");
-                }
-
-                userRelationshipCompatibilityReading.UserCreditPackId = userCredit.Id;
-            }
-
-            _userRelationshipCompatibilityReadingsRepository.Create(userRelationshipCompatibilityReading);
         }
 
         private void CreateComplementaryUserConsultation(int userId)

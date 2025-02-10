@@ -51,41 +51,14 @@ namespace K9.DataAccessLayer.Models
         public virtual User User { get; set; }
 
         public virtual MembershipOption MembershipOption { get; set; }
-
-        public virtual ICollection<UserProfileReading> ProfileReadings { get; set; }
-
-        public virtual ICollection<UserRelationshipCompatibilityReading> RelationshipCompatibilityReadings { get; set; }
-
+        
         [LinkedColumn(LinkedTableName = "User", LinkedColumnName = "Username")]
         public string UserName { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubscriptionTypeLabel)]
         [LinkedColumn(LinkedTableName = "MembershipOption", LinkedColumnName = "Name")]
         public string MembershipOptionName { get; set; }
-
-        [NotMapped]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfProfileReadingsLeft)]
-        public int NumberOfProfileReadingsLeft => MembershipOption?.NumberOfProfileReadings - ProfileReadings?.Where(e => !e.UserCreditPackId.HasValue)?.Count() ?? 0;
-
-        [NotMapped]
-        [Display(ResourceType = typeof(Globalisation.Dictionary),
-            Name = Globalisation.Strings.Labels.NumberOfProfileReadingsLeft)]
-        public string NumberOfProfileReadingsLeftText => MembershipOption?.IsUnlimited ?? false
-            ? Globalisation.Dictionary.Unlimited : NumberOfProfileReadingsLeft.ToString();
-
-        [NotMapped]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfRelationshipCompatibilityReadingsLeft)]
-        public int NumberOfRelationshipCompatibilityReadingsLeft => MembershipOption?.NumberOfCompatibilityReadings - RelationshipCompatibilityReadings?.Where(e => !e.UserCreditPackId.HasValue)?.Count() ?? 0;
-
-        [NotMapped]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfRelationshipCompatibilityReadingsLeft)]
-        public string NumberOfRelationshipCompatibilityReadingsLeftText => MembershipOption?.IsUnlimited ?? false
-            ? Globalisation.Dictionary.Unlimited : NumberOfRelationshipCompatibilityReadingsLeft.ToString();
-
-        [NotMapped]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfRelationshipCompatibilityReadingsLeft)]
-        public int NumberOfCreditsLeft { get; set; }
-
+        
         [NotMapped]
         public bool IsActive => (DateTime.Today.IsBetween(StartsOn.Date, EndsOn.Date) || MembershipOption?.SubscriptionType == MembershipOption.ESubscriptionType.LifeTimePlatinum) && !IsDeactivated;
 

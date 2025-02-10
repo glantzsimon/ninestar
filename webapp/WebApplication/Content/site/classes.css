@@ -276,6 +276,26 @@ a#toTop {
         background-color: #286090;
     }
 
+.time-slots {
+    width: 100%;
+    text-align: center;
+}
+
+    .time-slots p {
+        margin: 0;
+        line-height: 1em;
+    }
+
+    .time-slots a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .time-slots h4 {
+        font-size: 1.2em;
+        margin: 0 !important;
+    }
+
 .inline-form {
     display: inline-block;
 }

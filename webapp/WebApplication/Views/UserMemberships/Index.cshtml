@@ -4,7 +4,7 @@
 @using K9.WebApplication.Config
 @model UserMembership
 @{
-	Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
+    Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
 }
 @Html.BootstrapTable(new DataTableOptions<UserMembership>
 {
@@ -15,8 +15,7 @@
     {
         ColumnsToIgnore =
         {
-            "IsActive" , "NumberOfProfileReadingsLeft", "NumberOfProfileReadingsLeftText", "NumberOfRelationshipCompatibilityReadingsLeft",
-            "NumberOfRelationshipCompatibilityReadingsLeftText", "NumberOfCreditsLeft", "CostOfRemainingActiveSubscription"
+            "IsActive" , "CostOfRemainingActiveSubscription"
         }
     },
     VisibleColumns = new List<string>

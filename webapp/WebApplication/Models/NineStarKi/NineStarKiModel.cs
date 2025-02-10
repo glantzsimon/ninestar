@@ -88,11 +88,7 @@ namespace K9.WebApplication.Models
         /// Determines the 9 Star Ki energy of the current month
         /// </summary>
         public NineStarKiEnergy MonthlyCycleEnergy { get; }
-
-        public EReadingType ReadingType { get; set; }
-
-        public bool IsUpgradeRequired { get; set; }
-
+        
         public ESexualityRelationType SexualityRelationType => GetSexualityRelationType();
 
         public string OverviewLabel => $"{MainEnergy.EnergyNameAndNumber} Overview";

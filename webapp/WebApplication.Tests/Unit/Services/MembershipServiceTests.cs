@@ -14,6 +14,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.SessionState;
+using K9.WebApplication.Helpers;
 using Xunit;
 
 namespace K9.WebApplication.Tests.Unit.Services
@@ -24,8 +26,6 @@ namespace K9.WebApplication.Tests.Unit.Services
         private readonly Mock<IRepository<User>> _usersRepository = new Mock<IRepository<User>>();
         private readonly Mock<IRepository<UserMembership>> _userMembershipRepository = new Mock<IRepository<UserMembership>>();
         private readonly Mock<IRepository<MembershipOption>> _membershipOptionRepository = new Mock<IRepository<MembershipOption>>();
-        private readonly Mock<IRepository<UserProfileReading>> _userProfileReadingRepository = new Mock<IRepository<UserProfileReading>>();
-        private readonly Mock<IRepository<UserRelationshipCompatibilityReading>> _userRelationshipCompatibilityReadingsRepository = new Mock<IRepository<UserRelationshipCompatibilityReading>>();
         private readonly Mock<IRepository<UserCreditPack>> _userCreditPackRepository = new Mock<IRepository<UserCreditPack>>();
         private readonly Mock<ILogger> _logger = new Mock<ILogger>();
         private readonly Mock<IMailer> _mailer = new Mock<IMailer>();
@@ -81,31 +81,6 @@ namespace K9.WebApplication.Tests.Unit.Services
                 _platinumYearlyMembership
             };
 
-            var userProfileReadings = new List<UserProfileReading>
-            {
-                new UserProfileReading
-                {
-                    UserId = 2,
-                    DateOfBirth = new DateTime(1979, 6, 16),
-                    FullName = "Simon Glantz",
-                    Gender = EGender.Male
-                }
-            };
-
-            var compatibilityReadings = new List<UserRelationshipCompatibilityReading>
-            {
-                new UserRelationshipCompatibilityReading
-                {
-                    UserId = 2,
-                    FirstDateOfBirth = new DateTime(1979, 6, 16),
-                    SecondDateOfBirth = new DateTime(1984, 9, 07),
-                    FirstName = "Simon Glantz",
-                    SecondName = "Andrei Baby Kotik",
-                    FirstGender = EGender.Male,
-                    SecondGender = EGender.Male
-                }
-            };
-
             var userCreditPacks = new List<UserCreditPack>
             {
                 new UserCreditPack
@@ -115,12 +90,9 @@ namespace K9.WebApplication.Tests.Unit.Services
                     TotalPrice = 33.3
                 }
             };
-
-            HttpContext.Current = new HttpContext(
-                new HttpRequest("", "http://tempuri.org", ""),
-                new HttpResponse(new StringWriter())
-            );
-
+            
+            HttpContext.Current = Helpers.Helpers.CreateHttpContextWithSession();
+            
             _config.SetupGet(_ => _.Value).Returns(new WebsiteConfiguration
             {
                 CompanyLogoUrl = "http://local",
@@ -140,23 +112,18 @@ namespace K9.WebApplication.Tests.Unit.Services
             _membershipOptionRepository.Setup(_ => _.Find(_standardYearlyMembership.Id)).Returns(_standardYearlyMembership);
             _membershipOptionRepository.Setup(_ => _.Find(_platinumMonthlyMembership.Id)).Returns(_platinumMonthlyMembership);
             _membershipOptionRepository.Setup(_ => _.Find(_platinumYearlyMembership.Id)).Returns(_platinumYearlyMembership);
-
-            _userProfileReadingRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserProfileReading, bool>>>()))
-                .Returns(userProfileReadings);
-
-            _userRelationshipCompatibilityReadingsRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserRelationshipCompatibilityReading, bool>>>()))
-                .Returns(compatibilityReadings);
-
+            
             _userCreditPackRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserCreditPack, bool>>>()))
                 .Returns(userCreditPacks);
+
+            SessionHelper.SetCurrentUserId(_userId);
+            SessionHelper.SetCurrentUserName("simon");
 
             _Membershipservice = new MembershipService(
                 _logger.Object,
                 _authentication.Object,
                 _membershipOptionRepository.Object,
                 _userMembershipRepository.Object,
-                _userProfileReadingRepository.Object,
-                _userRelationshipCompatibilityReadingsRepository.Object,
                 _userCreditPackRepository.Object,
                 _usersRepository.Object,
                 _contactService.Object,

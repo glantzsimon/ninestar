@@ -49,7 +49,7 @@
 
                         @Html.CollapsiblePanel(Dictionary.NineMonthlyCyclesTitle, Html.Partial("_MonthlyCyclesOverview", Model.NineStarKiSummaryViewModel.CharacterEnergies).ToString(), false, "", "nine-monthly-cycles")
                     }
-                    @Html.Partial("_ButtonsFooter")
+                    @Html.Partial("_ButtonsFooter", Model.NineStarKiModel)
                 }
             </article>
         </div>

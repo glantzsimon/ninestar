@@ -68,14 +68,7 @@ namespace K9.WebApplication.Controllers
             var model = _nineStarKiService.CalculateCompatibility(lastCompatibility.NineStarKiModel1.PersonModel, lastCompatibility.NineStarKiModel2.PersonModel, lastCompatibility.IsHideSexualChemistry);
             return View("Index", model);
         }
-
-        [Authorize]
-        [Route("compatibility/view")]
-        public ActionResult ViewCompatibility(int id)
-        {
-            return View("Index", _nineStarKiService.RetrieveCompatibility(id));
-        }
-
+        
         public override string GetObjectName()
         {
             return string.Empty;

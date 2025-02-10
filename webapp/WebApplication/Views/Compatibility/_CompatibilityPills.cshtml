@@ -41,10 +41,7 @@
 
         <div class="tab-content">
             <div id="overview" class="tab-pane fade in active">
-                @using (Html.PayWall(ESection.Compatibility, Model))
-                {
-                    @Html.Partial("_CompatibilityOverview", Model)
-                }
+                @Html.Partial("_CompatibilityOverview", Model)
                 @Html.Partial("_ButtonsFooter")
             </div>
 

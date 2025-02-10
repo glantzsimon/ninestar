@@ -130,7 +130,7 @@ namespace K9.WebApplication.Services
             var now = SystemClock.Instance.GetCurrentInstant();
             var offset = timeZone.GetUtcOffset(now).ToTimeSpan();
 
-            for (int weekNumber = 0; weekNumber < 8; weekNumber++)
+            for (int weekNumber = 0; weekNumber < 5; weekNumber++)
             {
                 for (int dayNumber = 0; dayNumber < 3; dayNumber++)
                 {
@@ -159,27 +159,19 @@ namespace K9.WebApplication.Services
                 StartsOn = startTime
             });
 
-            startTime = startTime.AddHours(2);
-
-            slots.Add(new Slot
-            {
-                ConsultationDuration = EConsultationDuration.TwoHours,
-                StartsOn = startTime
-            });
-
             startTime = startTime.AddHours(3);
 
             slots.Add(new Slot
             {
-                ConsultationDuration = EConsultationDuration.OneHour,
+                ConsultationDuration = EConsultationDuration.TwoHours,
                 StartsOn = startTime
             });
 
-            startTime = startTime.AddHours(2);
+            startTime = startTime.AddHours(5);
 
             slots.Add(new Slot
             {
-                ConsultationDuration = EConsultationDuration.TwoHours,
+                ConsultationDuration = EConsultationDuration.OneHour,
                 StartsOn = startTime
             });
         }

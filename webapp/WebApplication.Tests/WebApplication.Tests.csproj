@@ -203,6 +203,7 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
@@ -252,6 +253,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Unit\Helpers\FakeHttpSessionState.cs" />
     <Compile Include="Unit\Models\NineStarKiModelTests.cs" />
     <Compile Include="Unit\Models\PersonModelTests.cs" />
     <Compile Include="Unit\Services\MembershipServiceTests.cs" />
@@ -267,7 +269,6 @@
   <ItemGroup>
     <Folder Include="Unit\Controllers\" />
     <Folder Include="Unit\Extensions\" />
-    <Folder Include="Unit\Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccessLayer.csproj">

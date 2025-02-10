@@ -302,17 +302,19 @@
     <Compile Include="Migrations\202502100737030_SlotsAndTimeZones.Designer.cs">
       <DependentUpon>202502100737030_SlotsAndTimeZones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202502101108348_RemoveUserReadingTables.cs" />
+    <Compile Include="Migrations\202502101108348_RemoveUserReadingTables.Designer.cs">
+      <DependentUpon>202502101108348_RemoveUserReadingTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\TimeZoneBase.cs" />
     <Compile Include="Models\Slot.cs" />
     <Compile Include="Models\Consultation.cs" />
     <Compile Include="Models\PromoCode.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\MembershipOption.cs" />
-    <Compile Include="Models\UserCompatibilityReading.cs" />
     <Compile Include="Models\UserConsultation.cs" />
     <Compile Include="Models\UserPromoCode.cs" />
     <Compile Include="Models\UserCreditPack.cs" />
-    <Compile Include="Models\UserProfileReading.cs" />
     <Compile Include="Models\UserMembership.cs" />
     <Compile Include="Models\Donation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -400,6 +402,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202502100737030_SlotsAndTimeZones.resx">
       <DependentUpon>202502100737030_SlotsAndTimeZones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502101108348_RemoveUserReadingTables.resx">
+      <DependentUpon>202502101108348_RemoveUserReadingTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

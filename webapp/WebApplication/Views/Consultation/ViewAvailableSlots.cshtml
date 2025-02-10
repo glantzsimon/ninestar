@@ -9,22 +9,22 @@
 
 <div class="container main-content margin-bottom-0">
     <article>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="time-slots">
-                    @foreach (var slot in Model)
-                    {
-                        <a href="@Url.Action("SelectSlot", "Consultation")">
+        <div class="time-slots">
+            <div class="row">
+                @foreach (var slot in Model)
+                {
+                    <div class="col-sm-2">
+                        <a href="#">
                             <h4>@Dictionary.LocalTime</h4>
-                            <p>@slot.FormattedStartsOnLocalDate</p>
+                            <p class="bold">@slot.FormattedStartsOnLocalDate</p>
                             <p>@slot.FormattedStartsOnLocalTime : @slot.FormattedEndsOnLocalTime</p>
-                            <br />
+                            <hr />
                             <h4>@Dictionary.MyTime</h4>
-                            <p>@slot.FormattedStartsOnMyDate</p>
+                            <p class="bold">@slot.FormattedStartsOnMyDate</p>
                             <p>@slot.FormattedStartsOnMyTime : @slot.FormattedEndsOnMyTime</p>
                         </a>
-                    }
-                </div>
+                    </div>
+                }
             </div>
         </div>
     </article>

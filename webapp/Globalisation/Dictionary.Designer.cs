@@ -4666,6 +4666,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please message us if you need to reschedule your appointment..
+        /// </summary>
+        public static string IfYouNeedToChangeYourAppointment {
+            get {
+                return ResourceManager.GetString("IfYouNeedToChangeYourAppointment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to In Depth Analysis.
         /// </summary>
         public static string InDepthAnalysis {
@@ -7079,6 +7088,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you need to schedule a different time?.
+        /// </summary>
+        public static string NeedToScheduleADifferentTime {
+            get {
+                return ResourceManager.GetString("NeedToScheduleADifferentTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;!doctype html&gt;
         ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
         ///&lt;head&gt;
@@ -7902,7 +7920,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please select a suitable time slot for your {ConsultationDuration} consultation.
+        ///   Looks up a localized string similar to Please select a suitable time slot for your {ConsultationDuration} consultation. If none of the slots are suitable, please contact us to arrange a suitable time..
         /// </summary>
         public static string PleaseSelectATimeSlot {
             get {
@@ -8350,6 +8368,15 @@ namespace K9.Globalisation {
         public static string SavedCompatibilityReadings {
             get {
                 return ResourceManager.GetString("SavedCompatibilityReadings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your consultation has been successfully scheduled..
+        /// </summary>
+        public static string ScheduleAConsultationSuccess {
+            get {
+                return ResourceManager.GetString("ScheduleAConsultationSuccess", resourceCulture);
             }
         }
         

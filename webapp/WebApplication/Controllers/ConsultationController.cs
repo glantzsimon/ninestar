@@ -49,6 +49,34 @@ namespace K9.WebApplication.Controllers
             return View(consultation);
         }
 
+        [HttpPost]
+        public ActionResult ProcessConsultation(PurchaseModel purchaseModel)
+        {
+            try
+            {
+                var contact = _contactService.Find(purchaseModel.ContactId);
+
+                _consultationService.CreateConsultation(new Consultation
+                {
+                    ConsultationDuration = (EConsultationDuration)purchaseModel.Quantity,
+                    ContactId = purchaseModel.ContactId
+                }, contact);
+
+                return Json(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                _logger.Error($"SupportController => ProcessConsultation => Error: {ex.GetFullErrorMessage()}");
+                return Json(new { success = false, error = ex.Message });
+            }
+        }
+
+        [Route("consultation/booking-success")]
+        public ActionResult BookConsultationSuccess()
+        {
+            return View();
+        }
+
         [Route("consultation/schedule")]
         public ActionResult ScheduleConsultation(int consultationId)
         {
@@ -76,48 +104,24 @@ namespace K9.WebApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult SelectSlot(int consultationId, int slotId)
         {
-            var selectedSlot = _slotsRepository.Find(slotId);
+            var selectedSlot = _consultationService.FindSlot(slotId);
+            var consultation = _consultationService.Find(consultationId);
 
-            if (selectedSlot == null)
+            if (selectedSlot == null || consultation == null)
             {
                 return HttpNotFound();
             }
 
-            //model.Consultation.ScheduledOn = selectedSlot.StartsOn;
-            //model.Consultation.SlotId = selectedSlot.Id;
-            //_con
+            _consultationService.SelectSlot(consultationId, slotId);
 
-            selectedSlot.IsTaken = true;
-
-            return View();
+            return RedirectToAction("ScheduleConsultationSuccess", new { selectedSlotId = selectedSlot.Id });
         }
 
-        [HttpPost]
-        public ActionResult ProcessConsultation(PurchaseModel purchaseModel)
+        [Route("consultation/schedule-success")]
+        public ActionResult ScheduleConsultationSuccess(int selectedSlotId)
         {
-            try
-            {
-                var contact = _contactService.Find(purchaseModel.ContactId);
-
-                _consultationService.CreateConsultation(new Consultation
-                {
-                    ConsultationDuration = (EConsultationDuration)purchaseModel.Quantity,
-                    ContactId = purchaseModel.ContactId
-                }, contact);
-
-                return Json(new { success = true });
-            }
-            catch (Exception ex)
-            {
-                _logger.Error($"SupportController => ProcessConsultation => Error: {ex.GetFullErrorMessage()}");
-                return Json(new { success = false, error = ex.Message });
-            }
-        }
-
-        [Route("consultation/booking-success")]
-        public ActionResult BookConsultationSuccess()
-        {
-            return View();
+            var selectedSlot = _consultationService.FindSlot(selectedSlotId);
+            return View(selectedSlot);
         }
 
         [RequirePermissions(Role = RoleNames.Administrators)]

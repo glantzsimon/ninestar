@@ -1,0 +1,27 @@
+﻿@using K9.SharedLibrary.Helpers
+@model Slot
+
+@{
+    ViewBag.Title = Dictionary.BookAConsultation;
+    Layout = "../Shared/_LayoutForm.cshtml";
+}
+
+<article>
+    <div class="margin-bottom-10">
+        @Html.Success(
+            TemplateProcessor.PopulateTemplate(Dictionary.ScheduleAConsultationSuccess, new { AppointmentTime = Model.FormattedStartsOnLocalDateTime }),
+            Dictionary.IfYouNeedToChangeYourAppointment + " <i class='fa fa-smile-o'></i>")
+    </div>
+
+    <hr />
+
+    <div class="row">
+        <div class="col-md-12">
+            @Html.Partial("_WhatsApp", new K9.WebApplication.ViewModels.WhatsAppViewModel
+            {
+                Title = Dictionary.NeedToScheduleADifferentTime,
+                Message = Dictionary.WhatsAppScheduleAppointmentText
+            })
+        </div>
+    </div>
+</article>

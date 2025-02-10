@@ -24,13 +24,31 @@
                 <div class="time-slots">
                     @foreach (var slot in Model.AvailableSlots)
                     {
-                        <a href="@Url.Action("SelectSlot", "Consultation")">
-                            <p>@slot.FormattedStartsOnLocalDate</p>
+                        <a href="@Url.Action("SelectSlot", "Consultation",
+                                     new
+                                     {
+                                         consultationId = Model.Consultation.Id,
+                                         slotId = slot.Id
+                                     })">
+                            <p class="bold">@slot.FormattedStartsOnLocalDate</p>
                             <p>@slot.FormattedStartsOnLocalTime : @slot.FormattedEndsOnLocalTime</p>
                         </a>
                     }
                 </div>
             </div>
         </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-md-12">
+                @Html.Partial("_WhatsApp", new K9.WebApplication.ViewModels.WhatsAppViewModel
+                   {
+                       Title = Dictionary.NeedToScheduleADifferentTime,
+                       Message = Dictionary.WhatsAppScheduleAppointmentText
+                   })
+            </div>
+        </div>
+
     </article>
 </div>

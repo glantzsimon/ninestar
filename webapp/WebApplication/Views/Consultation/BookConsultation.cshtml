@@ -14,7 +14,7 @@
     Dictionary.NineStarKiConsultation,
     Dictionary.ConsultationDurationDescription,
     "BookConsultationStart", "Consultation",
-    Url.Action("BookConsultationSuccess"),
+    Url.Action("ScheduleConsultation", new { consultationId = Model.Id}),
     Url.Action("Index", "Error"),
     Url.Action("ProcessConsultation", "Consultation")
     ))

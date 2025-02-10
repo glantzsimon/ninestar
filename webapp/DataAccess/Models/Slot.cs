@@ -41,8 +41,14 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StartsOnLabel)]
         public DateTimeOffset? StartsOnLocalTime => this.ToUserTimeZone(StartsOn);
 
+        #region Local Time 
+
         public string FormattedStartsOnLocalDate => StartsOnLocalTime.HasValue
             ? StartsOnLocalTime.Value.Date.ToString(Constants.FormatConstants.AppointmentDisplayDateFormat)
+            : "";
+
+        public string FormattedStartsOnLocalDateTime => StartsOnLocalTime.HasValue
+            ? StartsOnLocalTime.Value.Date.ToString(Constants.FormatConstants.AppointmentDisplayDateTimeFormat)
             : "";
 
         public string FormattedStartsOnLocalTime => StartsOnLocalTime.HasValue
@@ -56,6 +62,10 @@ namespace K9.DataAccessLayer.Models
         public string FormattedEndsOnLocalTime => EndsOnLocalTime.HasValue
             ? EndsOnLocalTime.Value.ToString(Constants.FormatConstants.AppointmentDisplayTimeFormat)
             : "";
+
+        #endregion
+
+        #region My Time
 
         public string FormattedStartsOnMyDate => StartsOnMyTime.HasValue
             ? StartsOnMyTime.Value.Date.ToString(Constants.FormatConstants.AppointmentDisplayDateFormat)
@@ -72,6 +82,8 @@ namespace K9.DataAccessLayer.Models
         public string FormattedEndsOnMyTime => EndsOnMyTime.HasValue
             ? EndsOnMyTime.Value.ToString(Constants.FormatConstants.AppointmentDisplayTimeFormat)
             : "";
+
+        #endregion
 
         [UIHint("DateTime")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EndsOnLabel)]

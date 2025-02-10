@@ -2818,6 +2818,9 @@
   <data name="DoYouHaveAQuestion" xml:space="preserve">
     <value>Do you have a question?</value>
   </data>
+  <data name="IfYouNeedToChangeYourAppointment" xml:space="preserve">
+    <value>Please message us if you need to reschedule your appointment.</value>
+  </data>
   <data name="IsTakenLabel" xml:space="preserve">
     <value>Is Taken</value>
   </data>
@@ -2833,8 +2836,14 @@
   <data name="Navigation" xml:space="preserve">
     <value>Navigation</value>
   </data>
+  <data name="NeedToScheduleADifferentTime" xml:space="preserve">
+    <value>Do you need to schedule a different time?</value>
+  </data>
   <data name="PleaseSelectATimeSlot" xml:space="preserve">
-    <value>Please select a suitable time slot for your {ConsultationDuration} consultation</value>
+    <value>Please select a suitable time slot for your {ConsultationDuration} consultation. If none of the slots are suitable, please contact us to arrange a suitable time.</value>
+  </data>
+  <data name="ScheduleAConsultationSuccess" xml:space="preserve">
+    <value>Your consultation has been successfully scheduled.</value>
   </data>
   <data name="ScheduleConsultation" xml:space="preserve">
     <value>Schedule Consultation</value>

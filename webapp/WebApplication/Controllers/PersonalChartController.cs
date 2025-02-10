@@ -63,22 +63,7 @@ namespace K9.WebApplication.Controllers
 
             return View("Index", model);
         }
-
-        [Authorize]
-        [Route("personalchart/view")]
-        public ActionResult ViewProfile(int id)
-        {
-            try
-            {
-                var profile = _nineStarKiService.RetrieveNineStarKiProfile(id);
-                return View("Index", profile);
-            }
-            catch (UnauthorizedAccessException e)
-            {
-                return new HttpUnauthorizedResult();
-            }
-        }
-
+        
         [Authorize]
         [Route("personalchart/my-chart")]
         public ActionResult MyProfile()

@@ -24,9 +24,7 @@ namespace K9.WebApplication.Models
                 UpdateRangeValues();
             }
         }
-
-        public bool IsUpgradeRequired { get; set; }
-
+        
         public double? GetMaxValue() => RangeValues?.Max(e => e.Value);
         public double? GetMinValue() => RangeValues?.Min(e => e.Value);
         public double? GetLongMaxValue() => LongRangeValues?.Max(e => e.Value);

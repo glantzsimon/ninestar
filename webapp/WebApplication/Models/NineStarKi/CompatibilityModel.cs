@@ -71,8 +71,6 @@ namespace K9.WebApplication.Models
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DoNotDisplaySexualityLabel)]
         public bool IsHideSexualChemistry { get; set; }
-
-        public bool IsUpgradeRequired { get; set; }
         
         public CompatibilityDetailsModel CompatibilityDetails { get; set; }
 

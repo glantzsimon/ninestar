@@ -19,7 +19,7 @@ namespace K9.WebApplication.Services
             _logger = logger;
         }
 
-        public Contact GetOrCreateContact(string stripeCustomerId, string fullName, string emailAddress, string phoneNumber = "")
+        public Contact GetOrCreateContact(string stripeCustomerId, string fullName, string emailAddress, string phoneNumber = "", int? userId = null)
         {
             if (!string.IsNullOrEmpty(emailAddress))
             {
@@ -35,7 +35,7 @@ namespace K9.WebApplication.Services
                             EmailAddress = emailAddress,
                             PhoneNumber = phoneNumber
                         });
-                        return _contactsRepository.Find(e => e.StripeCustomerId == stripeCustomerId).FirstOrDefault();
+                        return _contactsRepository.Find(e => e.EmailAddress == emailAddress).FirstOrDefault();
                     }
 
                     var isUpdated = false;
@@ -48,6 +48,12 @@ namespace K9.WebApplication.Services
                     if (existingCustomer.EmailAddress != emailAddress)
                     {
                         existingCustomer.EmailAddress = emailAddress;
+                        isUpdated = true;
+                    }
+
+                    if (userId != null && existingCustomer.UserId != userId)
+                    {
+                        existingCustomer.UserId = userId;
                         isUpdated = true;
                     }
 

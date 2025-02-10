@@ -2,6 +2,7 @@
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
 using K9.WebApplication.Services;
 using K9.WebApplication.ViewModels;
@@ -16,12 +17,14 @@ namespace K9.WebApplication.Controllers
     {
         private readonly ILogger _logger;
         private readonly IMembershipService _membershipService;
+        private readonly IUserService _userService;
 
-        public MembershipController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository)
+        public MembershipController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, IUserService userService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
         {
             _logger = logger;
             _membershipService = membershipService;
+            _userService = userService;
         }
 
         public ActionResult Index(string retrieveLast = null)
@@ -54,54 +57,23 @@ namespace K9.WebApplication.Controllers
         [Route("membership/signup/success")]
         public ActionResult PurchaseSuccess()
         {
-
-            return View();
-        }
-
-        [Route("membership/purchase-credits")]
-        public ActionResult PurchaseCreditsStart()
-        {
-            return View(new PurchaseCreditsViewModel
+            var membership = _membershipService.GetActiveUserMembership(Current.UserId);
+            var consultations = _userService.GetPendingConsultations(Current.UserId);
+            var user = _userService.Find(Current.UserId);
+            return View(new MyAccountViewModel
             {
-                NumberOfCredits = 10
+                User = user,
+                Membership = _membershipService.GetActiveUserMembership(user?.Id),
+                Consultations = _userService.GetPendingConsultations(user.Id)
             });
         }
-
-        [Route("membership/purchase-credits")]
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult PurchaseCredits(PurchaseCreditsViewModel model)
-        {
-            return View(model);
-        }
-
+        
         [Route("membership/signup/cancel/success")]
         public ActionResult PurchaseCancelSuccess()
         {
             return View();
         }
-
-        [HttpPost]
-        public ActionResult ProcessPurchaseCredits(PurchaseModel purchaseModel)
-        {
-            try
-            {
-                _membershipService.ProcessCreditsPurchase(purchaseModel);
-                return Json(new { success = true });
-            }
-            catch (Exception ex)
-            {
-                _logger.Error($"MembershipController => ProcessPurchase => Error: {ex.GetFullErrorMessage()}");
-                return Json(new { success = false, error = ex.Message });
-            }
-        }
-
-        [Route("membership/purchase-credits/success")]
-        public ActionResult PurchaseCreditsSuccess()
-        {
-            return View();
-        }
-
+        
         [Route("membership/switch")]
         public ActionResult SwitchStart(int membershipOptionId)
         {

@@ -1,5 +1,4 @@
-﻿using K9.Base.DataAccessLayer.Enums;
-using K9.Base.DataAccessLayer.Models;
+﻿using K9.Base.DataAccessLayer.Models;
 using K9.Base.WebApplication.Config;
 using K9.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Models;
@@ -96,7 +95,7 @@ namespace K9.WebApplication.Services
 
             return _authentication.IsAuthenticated ? userMemberships : new List<UserMembership>();
         }
-        
+
         /// <summary>
         /// Sometimes user memberships can overlap, when upgrading for example. This returns the Active membership.
         /// </summary>
@@ -170,19 +169,7 @@ namespace K9.WebApplication.Services
                 IsSelected = true
             };
         }
-
-        public MembershipModel GetSwitchMembershipModelBySubscriptionType(MembershipOption.ESubscriptionType subscriptionType)
-        {
-            var membershipOption = _membershipOptionRepository.Find(e => e.SubscriptionType == subscriptionType).FirstOrDefault();
-            return GetSwitchMembershipModel(membershipOption?.Id ?? 0);
-        }
-
-        public MembershipModel GetPurchaseMembershipModelBySubscriptionType(MembershipOption.ESubscriptionType subscriptionType)
-        {
-            var membershipOption = _membershipOptionRepository.Find(e => e.SubscriptionType == subscriptionType).FirstOrDefault();
-            return GetPurchaseMembershipModel(membershipOption?.Id ?? 0);
-        }
-
+        
         public void ProcessPurchaseWithPromoCode(int userId, string code)
         {
             var promoCode = _promoCodesRepository.Find(e => e.Code == code).FirstOrDefault();
@@ -203,39 +190,26 @@ namespace K9.WebApplication.Services
 
             var credits = promoCode.Credits;
             var user = _usersRepository.Find(userId);
-            var contact = _contactService.GetOrCreateContact("", user.FullName, user.EmailAddress, user.PhoneNumber);
+            var contact = _contactService.GetOrCreateContact("", user.FullName, user.EmailAddress, user.PhoneNumber, user.Id);
 
             ProcessPurchase(new PurchaseModel
             {
                 ItemId = subscription.Id,
                 ContactId = contact.Id
-            }, userId, promoCode);
-
-            ProcessCreditsPurchase(new PurchaseModel
-            {
-                ItemId = subscription.Id,
-                ContactId = contact.Id,
-                Quantity = credits
-            }, userId, promoCode);
+            });
 
             _userService.UsePromoCode(user.Id, code);
         }
 
-        public void ProcessPurchase(PurchaseModel purchaseModel, int? userId = null, PromoCode promoCode = null)
+        public void ProcessPurchase(PurchaseModel purchaseModel)
         {
             UserMembership userMembership = null;
-            Contact contact = null;
-
+            
             try
             {
                 var membershipOptionId = purchaseModel.ItemId;
-
-                if (membershipOptionId <= 0)
-                {
-                    return;
-                }
-
                 var membershipOption = _membershipOptionRepository.Find(membershipOptionId);
+
                 if (membershipOption == null)
                 {
                     _logger.Error(
@@ -243,14 +217,9 @@ namespace K9.WebApplication.Services
                     throw new IndexOutOfRangeException("Invalid MembershipOptionId");
                 }
 
-                if (!userId.HasValue)
-                {
-                    userId = Current.UserId;
-                }
-
                 userMembership = new UserMembership
                 {
-                    UserId = userId.Value,
+                    UserId = Current.UserId,
                     MembershipOptionId = membershipOptionId,
                     StartsOn = DateTime.Today,
                     EndsOn = membershipOption.IsAnnual ? DateTime.Today.AddYears(1) : DateTime.Today.AddMonths(1),
@@ -258,15 +227,13 @@ namespace K9.WebApplication.Services
                 };
 
                 _userMembershipRepository.Create(userMembership);
-                userMembership.User = _usersRepository.Find(userId.Value);
+                userMembership.User = _usersRepository.Find(Current.UserId);
                 TerminateExistingMemberships(membershipOptionId);
 
                 if (membershipOption.SubscriptionType >= MembershipOption.ESubscriptionType.AnnualPlatinum)
                 {
-                    CreateComplementaryUserConsultation(userId.Value);
+                    CreateComplementaryUserConsultation(Current.UserId);
                 }
-
-                contact = _contactService.Find(purchaseModel.ContactId);
             }
             catch (Exception ex)
             {
@@ -277,8 +244,8 @@ namespace K9.WebApplication.Services
 
             try
             {
-                SendEmailToNineStar(userMembership, promoCode);
-                SendEmailToCustomer(userMembership, contact, promoCode);
+                SendEmailToNineStar(purchaseModel, userMembership);
+                SendEmailToCustomer(purchaseModel, userMembership);
             }
             catch (Exception e)
             {
@@ -316,66 +283,7 @@ namespace K9.WebApplication.Services
                 throw ex;
             }
         }
-
-        public void ProcessCreditsPurchase(PurchaseModel purchaseModel, int? userId = null, PromoCode promoCode = null)
-        {
-            try
-            {
-                var numberOfCredits = purchaseModel.Quantity;
-
-                if (numberOfCredits <= 0)
-                {
-                    return;
-                }
-
-                var creditsModel = new PurchaseCreditsViewModel
-                {
-                    NumberOfCredits = numberOfCredits
-                };
-
-                var userCreditPack = new UserCreditPack
-                {
-                    UserId = userId ?? Current.UserId,
-                    NumberOfCredits = numberOfCredits,
-                    TotalPrice = promoCode?.TotalPrice ?? creditsModel.TotalPrice
-                };
-
-                _userCreditPacksRepository.Create(userCreditPack);
-                userCreditPack.User = _usersRepository.Find(Current.UserId);
-
-                var contact = _contactService.Find(purchaseModel.ContactId);
-
-                SendEmailToNineStar(userCreditPack, promoCode);
-                SendEmailToCustomer(userCreditPack, contact, promoCode);
-            }
-            catch (Exception ex)
-            {
-                _logger.Error($"MembershipService => ProcessPurchase => Purchase failed: {ex.GetFullErrorMessage()}");
-                SendEmailToNineStarAboutFailure(purchaseModel, ex.GetFullErrorMessage());
-                throw ex;
-            }
-        }
-
-        public void AssignCreditsToUser(int numberOfCredits, int? userId = null)
-        {
-            try
-            {
-                var userCreditPack = new UserCreditPack
-                {
-                    UserId = userId ?? Current.UserId,
-                    NumberOfCredits = numberOfCredits
-                };
-
-                _userCreditPacksRepository.Create(userCreditPack);
-                userCreditPack.User = _usersRepository.Find(Current.UserId);
-            }
-            catch (Exception ex)
-            {
-                _logger.Error($"MembershipService => AssignCreditsToUser => AssignCreditsToUser failed: {ex.GetFullErrorMessage()}");
-                throw ex;
-            }
-        }
-
+        
         public void ProcessSwitch(int membershipOptionId)
         {
             PurchaseModel purchaseModel = null;
@@ -398,12 +306,12 @@ namespace K9.WebApplication.Services
                     IsAutoRenew = true
                 };
                 _userMembershipRepository.Create(userMembership);
-                var user = _usersRepository.Find(Current.UserId);
+                var user = _userService.Find(Current.UserId);
                 userMembership.User = user;
 
                 TerminateExistingMemberships(membershipOptionId);
 
-                var contact = _contactService.Find(user.EmailAddress);
+                var contact = _contactService.GetOrCreateContact("", user.FullName, user.EmailAddress, user.PhoneNumber, user.Id);
 
                 purchaseModel = new PurchaseModel
                 {
@@ -416,7 +324,8 @@ namespace K9.WebApplication.Services
                     CustomerName = contact.FullName
                 };
 
-                SendEmailToNineStar(userMembership, null);
+                SendEmailToNineStar(purchaseModel, userMembership);
+                SendEmailToCustomer(purchaseModel, userMembership);
             }
             catch (Exception ex)
             {
@@ -495,17 +404,17 @@ namespace K9.WebApplication.Services
             }
         }
 
-        private void SendEmailToNineStar(UserMembership userMembership, PromoCode promoCode)
+        private void SendEmailToNineStar(PurchaseModel purchaseModel, UserMembership userMembership)
         {
             var template = Dictionary.MembershipCreatedEmail;
             var title = "We have received a new subscription!";
             _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
             {
                 Title = title,
-                Customer = userMembership.User.FullName,
-                CustomerEmail = userMembership.User.EmailAddress,
+                Customer = purchaseModel.CustomerName,
+                CustomerEmail = purchaseModel.CustomerEmailAddress,
                 SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal,
-                TotalPrice = promoCode?.FormattedPrice ?? userMembership.MembershipOption.FormattedPrice,
+                TotalPrice = userMembership.MembershipOption.FormattedPrice,
                 LinkToSummary = _urlHelper.AbsoluteAction("Index", "UserMemberships"),
                 Company = _config.CompanyName,
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
@@ -513,8 +422,9 @@ namespace K9.WebApplication.Services
             }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
         }
 
-        private void SendEmailToCustomer(UserMembership userMembership, Contact contact, PromoCode promoCode = null)
+        private void SendEmailToCustomer(PurchaseModel purchaseModel, UserMembership userMembership)
         {
+            var contact = _contactService.Find(purchaseModel.CustomerEmailAddress);
             var template = Dictionary.NewMembershipThankYouEmail;
             var title = TemplateProcessor.PopulateTemplate(Dictionary.ThankyouForSubscriptionEmailTitle, new
             {
@@ -525,9 +435,9 @@ namespace K9.WebApplication.Services
                 _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
                 {
                     Title = title,
-                    CustomerName = userMembership.User.FirstName,
+                    CustomerName = contact.FirstName,
                     SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal,
-                    TotalPrice = promoCode.FormattedPrice ?? userMembership.MembershipOption.FormattedPrice,
+                    TotalPrice = userMembership.MembershipOption.FormattedPrice,
                     EndsOn = userMembership.EndsOn.ToLongDateString(),
                     userMembership.MembershipOption.NumberOfProfileReadings,
                     userMembership.MembershipOption.NumberOfCompatibilityReadings,
@@ -539,45 +449,7 @@ namespace K9.WebApplication.Services
                     _config.CompanyName);
             }
         }
-
-        private void SendEmailToNineStar(UserCreditPack userCreditPack, PromoCode promoCode)
-        {
-            var template = Dictionary.CreditPackPurchased;
-            var title = "We have received a new credit pack purchase!";
-            _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
-            {
-                Title = title,
-                Customer = userCreditPack.User.FullName,
-                CustomerEmail = userCreditPack.User.EmailAddress,
-                userCreditPack.NumberOfCredits,
-                TotalPrice = promoCode?.FormattedPrice ?? userCreditPack.FormattedPrice,
-                LinkToCreditPacks = _urlHelper.AbsoluteAction("Index", "UserCreditPacks"),
-                Company = _config.CompanyName,
-                ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl)
-            }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
-        }
-
-        private void SendEmailToCustomer(UserCreditPack userCreditPack, Contact contact, PromoCode promoCode = null)
-        {
-            var template = Dictionary.NewCreditPackThankYouEmail;
-            var title = Dictionary.ThankyouForCreditPackPurchaseEmailTitle;
-            if (contact != null && !contact.IsUnsubscribed)
-            {
-                _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
-                {
-                    Title = title,
-                    CustomerName = userCreditPack.User.FirstName,
-                    NumberOfCreditsPurchased = userCreditPack.NumberOfCredits,
-                    TotalPrice = promoCode?.FormattedPrice ?? userCreditPack.FormattedPrice,
-                    ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
-                    PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                    UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact.Name }),
-                    DateTime.Now.Year
-                }), userCreditPack.User.EmailAddress, userCreditPack.User.FirstName, _config.SupportEmailAddress,
-                    _config.CompanyName);
-            }
-        }
-
+        
         private void SendEmailToNineStarAboutFailure(PurchaseModel purchaseModel, string errorMessage)
         {
             var template = Dictionary.PaymentError;

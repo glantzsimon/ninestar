@@ -16,6 +16,7 @@ using K9.SharedLibrary.Authentication;
 
 namespace K9.WebApplication.Controllers
 {
+    [Authorize]
     public class ConsultationController : BaseNineStarKiController
     {
         private readonly ILogger _logger;
@@ -89,6 +90,11 @@ namespace K9.WebApplication.Controllers
                 return HttpNotFound();
             }
 
+            if (consultation.ScheduledOn.HasValue)
+            {
+                RedirectToAction("MyAccount", "Account");
+            }
+
             var freeSlots = _consultationService.GetAvailableSlots().Where(e =>
                             e.ConsultationDuration == consultation.ConsultationDuration).ToList();
 
@@ -100,8 +106,6 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("consultation/select-timeslot")]
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult SelectSlot(int consultationId, int slotId)
         {
             var selectedSlot = _consultationService.FindSlot(slotId);

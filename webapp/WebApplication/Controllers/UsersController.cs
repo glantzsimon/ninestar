@@ -56,39 +56,7 @@ namespace K9.WebApplication.Controllers
             WebSecurity.CreateAccount(user.Username, _dataConfig.Value.DefaultUserPassword);
             _roles.AddUserToRole(user.Username, RoleNames.DefaultUsers);
         }
-
-        [Route("users/assign-credits/start")]
-        public ActionResult AssignCreditsStart(int Id)
-        {
-            ViewBag.UserId = Id;
-            return View(new AssignCreditsViewModel
-            {
-                UserId = Id
-            });
-        }
-
-        [Route("users/assign-credits")]
-        [HttpPost]
-        public ActionResult AssignCredits(AssignCreditsViewModel model)
-        {
-            try
-            {
-                _membershipService.AssignCreditsToUser(model.NumberOfCredits, model.UserId);
-                return RedirectToAction("AssignCreditsSuccess");
-            }
-            catch (Exception ex)
-            {
-                Logger.Error($"UsersController => AssignCreditsToUser => Error: {ex.GetFullErrorMessage()}");
-                throw;
-            }
-        }
-
-        [Route("users/assign-credits/success")]
-        public ActionResult AssignCreditsSuccess()
-        {
-            return View();
-        }
-
+        
         [Route("users/assign-membership/start")]
         public ActionResult AssignMembershipStart(int Id)
         {

@@ -2,15 +2,21 @@
 @model Slot
 
 @{
-    ViewBag.Title = Dictionary.BookAConsultation;
+    ViewBag.Title = Dictionary.ScheduleConsultation;
+    ViewBag.SubTitle = Dictionary.ScheduleSuccess;
     Layout = "../Shared/_LayoutForm.cshtml";
 }
 
 <article>
     <div class="margin-bottom-10">
         @Html.Success(
-            TemplateProcessor.PopulateTemplate(Dictionary.ScheduleAConsultationSuccess, new { AppointmentTime = Model.FormattedStartsOnLocalDateTime }),
-            Dictionary.IfYouNeedToChangeYourAppointment + " <i class='fa fa-smile-o'></i>")
+            TemplateProcessor.PopulateTemplate(Dictionary.ScheduleAConsultationSuccess, new
+            {
+                AppointmentDate = Model.FormattedStartsOnLocalDate,
+                AppointmentTime = Model.FormattedStartsOnLocalTime,
+                Duration = Model.DurationDescription.ToLower()
+            }),
+            Dictionary.IfYouNeedToChangeYourAppointment)
     </div>
 
     <hr />

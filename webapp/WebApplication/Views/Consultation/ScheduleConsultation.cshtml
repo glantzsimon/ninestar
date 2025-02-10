@@ -9,30 +9,33 @@
 
 <div class="container main-content margin-bottom-0">
     <article>
-        <div class="row">
-            <div class="col-md-12">
-                <h4>
-                    @Html.Raw(TemplateProcessor.PopulateTemplate(Dictionary.PleaseSelectATimeSlot, new
-                    {
-                        ConsultationDuration = Model.Consultation.DurationDescription
-                    }))
-                </h4>
+        <div class="well">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h5 class="margin-0">
+                        @Html.Raw(TemplateProcessor.PopulateTemplate(Dictionary.PleaseSelectATimeSlot, new
+                        {
+                            ConsultationDuration = Model.Consultation.DurationDescription.ToLower()
+                        }))
+                    </h5>
+                    <hr />
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
+            <div class="row">
                 <div class="time-slots">
                     @foreach (var slot in Model.AvailableSlots)
                     {
-                        <a href="@Url.Action("SelectSlot", "Consultation",
-                                     new
-                                     {
-                                         consultationId = Model.Consultation.Id,
-                                         slotId = slot.Id
-                                     })">
-                            <p class="bold">@slot.FormattedStartsOnLocalDate</p>
-                            <p>@slot.FormattedStartsOnLocalTime : @slot.FormattedEndsOnLocalTime</p>
-                        </a>
+                        <div class="col-sm-6">
+                            <a href="@Url.Action("SelectSlot", "Consultation",
+                                         new
+                                         {
+                                             consultationId = Model.Consultation.Id,
+                                             slotId = slot.Id
+                                         })">
+                                <p class="bold">@slot.FormattedStartsOnLocalDate</p>
+                                <p>@slot.FormattedStartsOnLocalTime : @slot.FormattedEndsOnLocalTime</p>
+                            </a>
+                        </div>
                     }
                 </div>
             </div>
@@ -41,14 +44,14 @@
         <hr />
 
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 margin-0">
                 @Html.Partial("_WhatsApp", new K9.WebApplication.ViewModels.WhatsAppViewModel
-                   {
-                       Title = Dictionary.NeedToScheduleADifferentTime,
-                       Message = Dictionary.WhatsAppScheduleAppointmentText
-                   })
+                {
+                    Title = Dictionary.NeedToScheduleADifferentTime,
+                    Message = Dictionary.WhatsAppScheduleAppointmentText
+                })
             </div>
         </div>
-
-    </article>
 </div>
+    </article>
+    </div>

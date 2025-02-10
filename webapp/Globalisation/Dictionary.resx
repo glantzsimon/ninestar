@@ -2797,6 +2797,9 @@
   <data name="BiorhythmsDetails" xml:space="preserve">
     <value>Biorhythms Details</value>
   </data>
+  <data name="BookConsultationNowPrompt" xml:space="preserve">
+    <value>Are you ready to schedule your one-hour 9 Star Ki consultation with our lead astrologer?</value>
+  </data>
   <data name="CompatibilityResults" xml:space="preserve">
     <value>Compatibility Results</value>
   </data>
@@ -2840,10 +2843,10 @@
     <value>Do you need to schedule a different time?</value>
   </data>
   <data name="PleaseSelectATimeSlot" xml:space="preserve">
-    <value>Please select a suitable time slot for your {ConsultationDuration} consultation. If none of the slots are suitable, please contact us to arrange a suitable time.</value>
+    <value>Please select a suitable time slot for your {ConsultationDuration} consultation. If none of the slots are suitable, please contact us to arrange a suitable time (see button at the bottom of this page).</value>
   </data>
   <data name="ScheduleAConsultationSuccess" xml:space="preserve">
-    <value>Your consultation has been successfully scheduled.</value>
+    <value>Your {Duration} consultation has been successfully scheduled for {AppointmentDate} at {AppointmentTime}.</value>
   </data>
   <data name="ScheduleConsultation" xml:space="preserve">
     <value>Schedule Consultation</value>
@@ -2856,6 +2859,9 @@
   </data>
   <data name="ScheduledOnLocalLabel" xml:space="preserve">
     <value>Scheduled For (Local Time)</value>
+  </data>
+  <data name="ScheduleSuccess" xml:space="preserve">
+    <value>Consultation Scheduled Successfully</value>
   </data>
   <data name="ScheduleYourAppointment" xml:space="preserve">
     <value>Schedule Your Appointment</value>

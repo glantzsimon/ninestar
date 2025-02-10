@@ -5,6 +5,7 @@ using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Helpers;
 using K9.WebApplication.ViewModels;
 using NLog;
 using System;
@@ -12,8 +13,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using K9.WebApplication.Helpers;
-using WebMatrix.WebData;
 
 namespace K9.WebApplication.Services
 {
@@ -28,10 +27,11 @@ namespace K9.WebApplication.Services
         private readonly IRepository<UserConsultation> _userConsultationsRepository;
         private readonly IRepository<Consultation> _consultationsRepository;
         private readonly ILogger _logger;
+        private readonly IConsultationService _consultationService;
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public UserService(IRepository<User> usersRepository, IRepository<PromoCode> promoCodesRepository, IRepository<UserPromoCode> userPromoCodeRepository, IAuthentication authentication, IMailer mailer, IOptions<WebsiteConfiguration> config, IContactService contactService, IRepository<UserConsultation> userConsultationsRepository, IRepository<Consultation> consultationsRepository, ILogger logger)
+        public UserService(IRepository<User> usersRepository, IRepository<PromoCode> promoCodesRepository, IRepository<UserPromoCode> userPromoCodeRepository, IAuthentication authentication, IMailer mailer, IOptions<WebsiteConfiguration> config, IContactService contactService, IRepository<UserConsultation> userConsultationsRepository, IRepository<Consultation> consultationsRepository, ILogger logger, IConsultationService consultationService)
         {
             _usersRepository = usersRepository;
             _promoCodesRepository = promoCodesRepository;
@@ -42,6 +42,7 @@ namespace K9.WebApplication.Services
             _userConsultationsRepository = userConsultationsRepository;
             _consultationsRepository = consultationsRepository;
             _logger = logger;
+            _consultationService = consultationService;
             _config = config.Value;
             _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }
@@ -131,7 +132,17 @@ namespace K9.WebApplication.Services
             _promoCodesRepository.Update(model.PromoCode);
         }
 
-        public List<UserConsultation> GetConsultations(int? userId = null)
+        public User Find(int userId)
+        {
+            return _usersRepository.Find(userId);
+        }
+
+        public User Find(string username)
+        {
+            return _usersRepository.Find(username).FirstOrDefault();
+        }
+
+        public List<UserConsultation> GetPendingConsultations(int? userId = null)
         {
             var user = _usersRepository.Find(userId ?? Current.UserId);
             var userConsultations = new List<UserConsultation>();
@@ -144,7 +155,7 @@ namespace K9.WebApplication.Services
 
                     foreach (var userConsultation in userConsultations)
                     {
-                        userConsultation.Consultation = _consultationsRepository.Find(userConsultation.ConsultationId);
+                        userConsultation.Consultation = _consultationService.Find(userConsultation.ConsultationId);
                     }
                 }
                 catch (Exception e)
@@ -153,7 +164,7 @@ namespace K9.WebApplication.Services
                 }
             }
 
-            return userConsultations;
+            return userConsultations.Where(e => !e.Consultation.ScheduledOn.HasValue || e.Consultation.ScheduledOn >= DateTime.Today).ToList();
         }
     }
 }

@@ -1,12 +1,30 @@
 ﻿@using K9.Base.WebApplication.Helpers
+@model K9.WebApplication.ViewModels.MyAccountViewModel
+
 @{
     ViewBag.Title = Dictionary.MembershipOptions;
-    ViewBag.SubTitle = Dictionary.SubscriptionSuccessful;
+    ViewBag.SubTitle = Dictionary.MembershipAssignedSuccess + " <i class='fa fa-smile'></i>";
     Layout = "../Shared/_LayoutForm.cshtml";
 }
 
 <div class="margin-bottom-10">
-    @Html.Success(Dictionary.YouAreSignedUp + " <i class='fa fa-smile-o'></i>", Html.ActionLink(K9.Base.Globalisation.Dictionary.MyAccountTitle, "MyAccount", "Account"))
+    @Html.Success(Dictionary.YouAreSignedUp)
 
     @Html.Partial("_RetrieveLast")
+
+    <hr />
+
+    <article>
+
+        @if (Model.Consultations.Any())
+        {
+            <p><strong>@Dictionary.BookConsultationNowPrompt</strong></p>
+            @Html.Partial("../Account/_UserConsultations", Model.Consultations)
+        }
+
+        <hr />
+
+        @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.MyAccountTitle, "MyAccount", "Account", null, "fa fa-user-circle", EButtonClass.Large)
+
+    </article>
 </div>

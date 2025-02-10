@@ -1205,9 +1205,6 @@
     <Content Include="Views\UserMemberships\Delete.cshtml" />
     <Content Include="Views\UserMemberships\Details.cshtml" />
     <Content Include="Views\UserMemberships\Index.cshtml" />
-    <Content Include="Views\Membership\PurchaseCredits.cshtml" />
-    <Content Include="Views\Membership\PurchaseCreditsStart.cshtml" />
-    <Content Include="Views\Membership\PurchaseCreditsSuccess.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Url.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Url.cshtml" />
@@ -1287,8 +1284,6 @@
     <Content Include="Views\PersonalChart\AboutProfile.cshtml" />
     <Content Include="Views\Relationships\_AboutRelationships.cshtml" />
     <Content Include="Views\Compatibility\_CompatibilityYinYang.cshtml" />
-    <Content Include="Views\Users\AssignCreditsStart.cshtml" />
-    <Content Include="Views\Users\AssignCreditsSuccess.cshtml" />
     <Content Include="Views\Users\AssignMembershipSuccess.cshtml" />
     <Content Include="Views\Users\AssignMembershipStart.cshtml" />
     <Content Include="Views\Users\AssignPromoCodeStart.cshtml" />

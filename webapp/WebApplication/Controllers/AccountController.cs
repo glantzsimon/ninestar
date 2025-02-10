@@ -192,6 +192,7 @@ namespace K9.WebApplication.Controllers
 
                 if (user.Id > 0)
                 {
+                    _contactService.GetOrCreateContact("", user.FullName, user.EmailAddress, user.PhoneNumber, user.Id);
                     _membershipService.CreateFreeMembership(user.Id);
                 }
 
@@ -291,7 +292,7 @@ namespace K9.WebApplication.Controllers
             }
         }
 
-        
+
 
         public ActionResult AccountLocked()
         {
@@ -368,9 +369,11 @@ namespace K9.WebApplication.Controllers
                 {
                     var user = _userRepository.Find(e => e.Username == model.RegisterModel.UserName).FirstOrDefault();
 
-                    if (!string.IsNullOrEmpty(model.PromoCode))
+                    if (user?.Id > 0)
                     {
-                        if (user?.Id > 0)
+                        _contactService.GetOrCreateContact("", user.FullName, user.EmailAddress, user.PhoneNumber, user.Id);
+
+                        if (!string.IsNullOrEmpty(model.PromoCode))
                         {
                             try
                             {
@@ -453,7 +456,8 @@ namespace K9.WebApplication.Controllers
             return View(new MyAccountViewModel
             {
                 User = user,
-                Membership = _membershipService.GetActiveUserMembership(user?.Id)
+                Membership = _membershipService.GetActiveUserMembership(user?.Id),
+                Consultations = _userService.GetPendingConsultations(user.Id)
             });
         }
 
@@ -526,7 +530,7 @@ namespace K9.WebApplication.Controllers
                 User = model.User,
                 PromoCode = model.PromoCode,
                 Membership = _membershipService.GetActiveUserMembership(model.User.Id),
-                Consultations = _userService.GetConsultations(model.User.Id)
+                Consultations = _userService.GetPendingConsultations(model.User.Id)
             });
         }
 

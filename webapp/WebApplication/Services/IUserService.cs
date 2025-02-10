@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using K9.Base.DataAccessLayer.Models;
 using K9.DataAccessLayer.Models;
 using K9.WebApplication.ViewModels;
+using System.Collections.Generic;
 
 namespace K9.WebApplication.Services
 {
@@ -10,6 +11,8 @@ namespace K9.WebApplication.Services
         bool CheckIfPromoCodeIsUsed(string code);
         void UsePromoCode(int userId, string code);
         void SendPromoCode(EmailPromoCodeViewModel model);
-        List<UserConsultation> GetConsultations(int? userId = null);
+        User Find(int userId);
+        User Find(string username);
+        List<UserConsultation> GetPendingConsultations(int? userId = null);
     }
 }

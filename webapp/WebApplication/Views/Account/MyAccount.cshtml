@@ -50,9 +50,10 @@
             @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership", null, "", EButtonClass.Large)
         }
     </div>
+
     @if (Model.Consultations != null && Model.Consultations.Any())
     {
-        <div id="consultations" class="tab-pane fade in active padding-top-20">
+        <div id="consultations" class="tab-pane fade padding-top-20">
             @Html.Partial("_UserConsultations", Model.Consultations)
         </div>
     }

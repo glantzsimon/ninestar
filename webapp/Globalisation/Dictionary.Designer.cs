@@ -1779,6 +1779,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you ready to schedule your one-hour 9 Star Ki consultation with our lead astrologer?.
+        /// </summary>
+        public static string BookConsultationNowPrompt {
+            get {
+                return ResourceManager.GetString("BookConsultationNowPrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    Both Fundamental and Emotional Energies are Yang
         ///&lt;/h5&gt;
@@ -7920,7 +7929,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please select a suitable time slot for your {ConsultationDuration} consultation. If none of the slots are suitable, please contact us to arrange a suitable time..
+        ///   Looks up a localized string similar to Please select a suitable time slot for your {ConsultationDuration} consultation. If none of the slots are suitable, please contact us to arrange a suitable time (see button at the bottom of this page)..
         /// </summary>
         public static string PleaseSelectATimeSlot {
             get {
@@ -8372,7 +8381,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your consultation has been successfully scheduled..
+        ///   Looks up a localized string similar to Your {Duration} consultation has been successfully scheduled for {AppointmentDate} at {AppointmentTime}..
         /// </summary>
         public static string ScheduleAConsultationSuccess {
             get {
@@ -8413,6 +8422,15 @@ namespace K9.Globalisation {
         public static string ScheduledOnLocalLabel {
             get {
                 return ResourceManager.GetString("ScheduledOnLocalLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Consultation Scheduled Successfully.
+        /// </summary>
+        public static string ScheduleSuccess {
+            get {
+                return ResourceManager.GetString("ScheduleSuccess", resourceCulture);
             }
         }
         

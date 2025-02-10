@@ -284,6 +284,7 @@ a#toTop {
     .time-slots p {
         margin: 0;
         line-height: 1em;
+        font-size: 1.3em;
     }
 
     .time-slots a {
@@ -303,3 +304,10 @@ a#toTop {
     .inline-form form {
         display: inline-block;
     }
+
+li.divider {
+    height: 1px !important;
+    margin: 9px 0 !important;
+    overflow: hidden !important;
+    background-color: #a5a5a5 !important;
+}

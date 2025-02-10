@@ -48,7 +48,7 @@ namespace K9.DataAccessLayer.Models
             : "";
 
         public string FormattedStartsOnLocalDateTime => StartsOnLocalTime.HasValue
-            ? StartsOnLocalTime.Value.Date.ToString(Constants.FormatConstants.AppointmentDisplayDateTimeFormat)
+            ? StartsOnLocalTime.Value.ToString(Constants.FormatConstants.AppointmentDisplayDateTimeFormat)
             : "";
 
         public string FormattedStartsOnLocalTime => StartsOnLocalTime.HasValue

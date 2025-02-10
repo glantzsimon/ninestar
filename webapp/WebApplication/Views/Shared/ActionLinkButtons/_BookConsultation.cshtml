@@ -1,1 +1,3 @@
-﻿@Html.BootstrapActionLinkButton(Dictionary.BookAConsultation, "BookConsultationStart", "Consultation", null, "fab fa-whatsapp", EButtonClass.Success, EButtonClass.Large)
+﻿<a class="btn btn-success btn-lg" href="@Url.Action("BookConsultationStart", "Consultation")">
+    <i class="fab fa-whatsapp"></i> @Dictionary.BookAConsultation
+</a>

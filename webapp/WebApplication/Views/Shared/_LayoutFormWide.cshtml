@@ -28,7 +28,7 @@ else
                 @if (!string.IsNullOrEmpty(ViewBag.SubTitle))
                 {
                     <div class="page-header">
-                        <h2><strong>@ViewBag.SubTitle</strong></h2>
+                        <h2><strong>@Html.Raw(ViewBag.SubTitle)</strong></h2>
                     </div>
                 }
                 @RenderBody()

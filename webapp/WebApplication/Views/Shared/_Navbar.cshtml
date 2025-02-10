@@ -1,11 +1,16 @@
 ﻿@using K9.Base.WebApplication.Extensions
 @using K9.SharedLibrary.Authentication
+@using K9.WebApplication.Config
+@using K9.WebApplication.Enums
 @using K9.WebApplication.Extensions
 @using K9.WebApplication.Helpers
+@using K9.WebApplication.Models
 @{
     var roles = this.GetRoles();
     var isAuthenticated = WebSecurity.IsAuthenticated;
     var membership = isAuthenticated ? this.GetActiveUserMembership() : null;
+    var deviceType = new BrowserInfo(Request.Headers["User-Agent"]).DeviceType;
+    var whatsAppLink = (deviceType == EDeviceType.Desktop ? "https://web.whatsapp.com/send?phone=" : "https://wa.me/") + DefaultValuesConfiguration.Instance.WhatsAppSupportNumber;
 }
 <div id="account-header">
     <div id="account-controls">
@@ -31,6 +36,7 @@
                         <li class="@ViewContext.GetActiveClass("Index", "Users") sub-item"><a href="@Url.Action("Index", "Users")">@K9.Base.Globalisation.Dictionary.Users</a></li>
                         <li class="@ViewContext.GetActiveClass("Index", "UserRoles") sub-item"><a href="@Url.Action("Index", "UserRoles")">@K9.Base.Globalisation.Dictionary.UserRoles</a></li>
                         <li class="@ViewContext.GetActiveClass("LoginUser", "Account") sub-item"><a href="@Url.Action("LoginUser", "Account")">@K9.Globalisation.Dictionary.LoginUser</a></li>
+                        <li class="@ViewContext.GetActiveClass("CreateFreeSlots", "Consultations") sub-item"><a href="@Url.Action("CreateFreeSlots", "Consultations")">@Dictionary.CreateFreeSlots</a></li>
                     </ul>
                 </li>
             </ul>
@@ -49,6 +55,18 @@
 
             @if (isAuthenticated)
             {
+                if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsClientUser() && membership.MembershipOption.IsUnlimited)
+                {
+                    <li>
+                        <a class="whatsapp-button" target="_blank" title="@Dictionary.MessageUs" href="@(whatsAppLink)">
+                            <i class="fab fa-whatsapp"></i>
+                            <span class="site-controls-text">
+                                @Dictionary.MessageUs
+                            </span>
+                        </a>
+                    </li>
+                }
+
                 <li class="@ViewContext.GetActiveClass("Index", "PersonalProfile")"><a title="@Dictionary.MyPersonalProfile" href="@Url.Action("MyProfile", "PersonalChart")"><i class="fa fa-yin-yang"></i><span class="site-controls-text"> @Dictionary.MyPersonalProfile</span></a></li>
                 <li class="@ViewContext.GetActiveClass("MyAccount", "Account")"><a title="@K9.Base.Globalisation.Dictionary.MyAccountTitle" href="@Url.Action("MyAccount", "Account")"><i class="fa fa-user-circle"></i><span class="site-controls-text"> @K9.Base.Globalisation.Dictionary.MyAccountTitle</span></a></li>
             }

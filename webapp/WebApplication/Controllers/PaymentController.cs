@@ -1,4 +1,5 @@
-﻿using K9.SharedLibrary.Extensions;
+﻿using K9.Base.DataAccessLayer.Models;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Models;
@@ -19,8 +20,8 @@ namespace K9.WebApplication.Controllers
         private readonly IUserService _userService;
         private readonly StripeConfiguration _stripeConfig;
 
-        public PaymentsController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IStripeService stripeService, IOptions<StripeConfiguration> stripeConfig, IMembershipService membershipService, IContactService contactService, IUserService userService)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
+        public PaymentsController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IStripeService stripeService, IOptions<StripeConfiguration> stripeConfig, IMembershipService membershipService, IContactService contactService, IUserService userService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository)
+            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
         {
             _logger = logger;
             _stripeService = stripeService;

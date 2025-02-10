@@ -4,12 +4,11 @@ using K9.Globalisation;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Enums;
+using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
 using K9.WebApplication.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using WebMatrix.WebData;
 
 namespace K9.WebApplication.Services
 {
@@ -60,7 +59,7 @@ namespace K9.WebApplication.Services
             if (_authentication.IsAuthenticated)
             {
                 if (isCompatibility || _roles.CurrentUserIsInRoles(RoleNames.Administrators) ||
-                    _membershipService.IsCompleteProfileReading(_authentication.CurrentUserId, personModel))
+                    _membershipService.IsCompleteProfileReading(Current.UserId, personModel))
                 {
                     model.ReadingType = EReadingType.Complete;
                     model.IsUpgradeRequired = false;
@@ -89,7 +88,7 @@ namespace K9.WebApplication.Services
             var userProfile = _userProfileReadingsRepository.Find(userProfileId);
             if (!_roles.CurrentUserIsInRoles(RoleNames.Administrators))
             {
-                if (userProfile.UserId != WebSecurity.CurrentUserId)
+                if (userProfile.UserId != Current.UserId)
                 {
                     throw new UnauthorizedAccessException();
                 }
@@ -134,7 +133,7 @@ namespace K9.WebApplication.Services
             if (_authentication.IsAuthenticated)
             {
                 if (_roles.CurrentUserIsInRoles(RoleNames.Administrators) ||
-                    _membershipService.IsCompleteRelationshipCompatibilityReading(_authentication.CurrentUserId,
+                    _membershipService.IsCompleteRelationshipCompatibilityReading(Current.UserId,
                         personModel1, personModel2, isHideSexuality))
                 {
                     model.IsUpgradeRequired = false;

@@ -20,10 +20,8 @@ using K9.WebApplication.Services;
 using K9.WebApplication.ViewModels;
 using NLog;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using K9.WebApplication.Enums;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
@@ -42,8 +40,8 @@ namespace K9.WebApplication.Controllers
         private readonly IRecaptchaService _recaptchaService;
         private readonly RecaptchaConfiguration _recaptchaConfig;
 
-        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IContactService contactService, IUserService userService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
+        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IContactService contactService, IUserService userService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository)
+            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
         {
             _userRepository = userRepository;
             _logger = logger;
@@ -527,7 +525,8 @@ namespace K9.WebApplication.Controllers
             {
                 User = model.User,
                 PromoCode = model.PromoCode,
-                Membership = _membershipService.GetActiveUserMembership(model.User.Id)
+                Membership = _membershipService.GetActiveUserMembership(model.User.Id),
+                Consultations = _userService.GetConsultations(model.User.Id)
             });
         }
 
@@ -590,7 +589,7 @@ namespace K9.WebApplication.Controllers
         public ActionResult ConfirmDeleteAccount(int id)
         {
             var user = _userRepository.Find(id);
-            if (user == null || user.Username != _authentication.CurrentUserName)
+            if (user == null || user.Username != Current.UserName)
             {
                 return HttpNotFound();
             }

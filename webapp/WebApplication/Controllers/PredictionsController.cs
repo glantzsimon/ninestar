@@ -18,8 +18,8 @@ namespace K9.WebApplication.Controllers
         private readonly IRepository<User> _usersRepository;
         private readonly IBiorhythmsService _biorhythmsService;
 
-        public PredictionsController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService, IRepository<User> usersRepository, IBiorhythmsService biorhythmsService)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
+        public PredictionsController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService, IRepository<User> usersRepository, IBiorhythmsService biorhythmsService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository)
+            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
         {
             _authentication = authentication;
             _nineStarKiService = nineStarKiService;
@@ -69,7 +69,7 @@ namespace K9.WebApplication.Controllers
         [Route("predictions/my-predictions")]
         public ActionResult MyCycles()
         {
-            var myAccount = _usersRepository.Find(_authentication.CurrentUserId);
+            var myAccount = _usersRepository.Find(Current.UserId);
             return View(_nineStarKiService.CalculateNineStarKiProfile(new PersonModel
             {
                 Name = myAccount.FullName,

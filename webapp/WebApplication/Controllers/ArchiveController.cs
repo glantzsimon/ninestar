@@ -16,8 +16,8 @@ namespace K9.WebApplication.Controllers
         private readonly IRepository<ArchiveItemCategory> _archiveCategoryRepo;
         private readonly IRepository<ArchiveItem> _archiveItemRepo;
 
-        public ArchiveController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IRepository<ArchiveItemCategory> archiveCategoryRepo, IRepository<ArchiveItem> archiveItemRepo, IFileSourceHelper fileSourceHelper, IMembershipService membershipService)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
+        public ArchiveController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IRepository<ArchiveItemCategory> archiveCategoryRepo, IRepository<ArchiveItem> archiveItemRepo, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository)
+            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
         {
             _archiveCategoryRepo = archiveCategoryRepo;
             _archiveItemRepo = archiveItemRepo;

@@ -4,6 +4,7 @@ using K9.WebApplication.Helpers;
 using K9.WebApplication.Services;
 using NLog;
 using System.Web.Mvc;
+using K9.Base.DataAccessLayer.Models;
 
 namespace K9.WebApplication.Controllers
 {
@@ -13,8 +14,8 @@ namespace K9.WebApplication.Controllers
         private readonly INineStarKiService _nineStarKiService;
         private readonly IBiorhythmsService _biorhythmsService;
 
-        public KnowledgeBaseController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService, IBiorhythmsService biorhythmsService)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
+        public KnowledgeBaseController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService, IBiorhythmsService biorhythmsService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository)
+            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
         {
             _authentication = authentication;
             _nineStarKiService = nineStarKiService;

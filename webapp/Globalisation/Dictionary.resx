@@ -2791,25 +2791,88 @@
   <data name="YearlyPrediction" xml:space="preserve">
     <value>Yearly Prediction</value>
   </data>
+  <data name="AvailableSlots" xml:space="preserve">
+    <value>Available Slots</value>
+  </data>
   <data name="BiorhythmsDetails" xml:space="preserve">
     <value>Biorhythms Details</value>
   </data>
   <data name="CompatibilityResults" xml:space="preserve">
     <value>Compatibility Results</value>
   </data>
+  <data name="ConsultationScheduledEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>templates\en-gb\consultationscheduledemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ConsultationScheduledThankYouEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>templates\en-gb\consultationscheduledthankyouemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="ContinueReading" xml:space="preserve">
     <value>Continue reading...</value>
+  </data>
+  <data name="CreateFreeSlots" xml:space="preserve">
+    <value>Create Free Appointment Slots</value>
   </data>
   <data name="CyclesOfLightAndDark" xml:space="preserve">
     <value>Cycles of Light and Dark</value>
   </data>
+  <data name="DoYouHaveAQuestion" xml:space="preserve">
+    <value>Do you have a question?</value>
+  </data>
+  <data name="IsTakenLabel" xml:space="preserve">
+    <value>Is Taken</value>
+  </data>
+  <data name="LocalTime" xml:space="preserve">
+    <value>Local Time</value>
+  </data>
+  <data name="MessageUs" xml:space="preserve">
+    <value>Message Us!</value>
+  </data>
+  <data name="MyTime" xml:space="preserve">
+    <value>My Time</value>
+  </data>
   <data name="Navigation" xml:space="preserve">
     <value>Navigation</value>
+  </data>
+  <data name="PleaseSelectATimeSlot" xml:space="preserve">
+    <value>Please select a suitable time slot for your {ConsultationDuration} consultation</value>
+  </data>
+  <data name="ScheduleConsultation" xml:space="preserve">
+    <value>Schedule Consultation</value>
+  </data>
+  <data name="ScheduledOnClientLocalLabel" xml:space="preserve">
+    <value>Scheduled For (Client Local Time)</value>
+  </data>
+  <data name="ScheduledOnLabel" xml:space="preserve">
+    <value>Scheduled For</value>
+  </data>
+  <data name="ScheduledOnLocalLabel" xml:space="preserve">
+    <value>Scheduled For (Local Time)</value>
+  </data>
+  <data name="ScheduleYourAppointment" xml:space="preserve">
+    <value>Schedule Your Appointment</value>
   </data>
   <data name="SexualityTitle" xml:space="preserve">
     <value>9 Star Ki &amp; Sexuality</value>
   </data>
+  <data name="Slot" xml:space="preserve">
+    <value>Slot</value>
+  </data>
+  <data name="Slots" xml:space="preserve">
+    <value>Slots</value>
+  </data>
   <data name="ViewPredictionsForSelectedDate" xml:space="preserve">
     <value>View Predictions for Selected Date</value>
+  </data>
+  <data name="WhatsAppNineStarQueryText" xml:space="preserve">
+    <value>Hi. I have a query regarding 9 Star Ki.</value>
+  </data>
+  <data name="WhatsAppScheduleAppointmentText" xml:space="preserve">
+    <value>Hi. I've booked a consultation and would like to schedule a time to talk.</value>
+  </data>
+  <data name="YouMustSelectASlot" xml:space="preserve">
+    <value>You must select a slot</value>
+  </data>
+  <data name="YourConsultations" xml:space="preserve">
+    <value>Your Consultations</value>
   </data>
 </root>

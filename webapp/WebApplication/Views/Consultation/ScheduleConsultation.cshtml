@@ -1,0 +1,36 @@
+﻿@using K9.SharedLibrary.Helpers
+@using K9.WebApplication.Options
+@model K9.WebApplication.ViewModels.ScheduleConsultationViewModel
+@{
+    ViewBag.Title = Dictionary.ScheduleConsultation;
+    ViewBag.SubTitle = Dictionary.ScheduleConsultation;
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+
+<div class="container main-content margin-bottom-0">
+    <article>
+        <div class="row">
+            <div class="col-md-12">
+                <h4>
+                    @Html.Raw(TemplateProcessor.PopulateTemplate(Dictionary.PleaseSelectATimeSlot, new
+                    {
+                        ConsultationDuration = Model.Consultation.DurationDescription
+                    }))
+                </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="time-slots">
+                    @foreach (var slot in Model.AvailableSlots)
+                    {
+                        <a href="@Url.Action("SelectSlot", "Consultation")">
+                            <p>@slot.FormattedStartsOnLocalDate</p>
+                            <p>@slot.FormattedStartsOnLocalTime : @slot.FormattedEndsOnLocalTime</p>
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+    </article>
+</div>

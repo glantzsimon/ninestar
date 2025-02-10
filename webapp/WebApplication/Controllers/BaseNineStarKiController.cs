@@ -1,30 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using K9.Base.DataAccessLayer.Models;
 using K9.Base.WebApplication.Constants;
 using K9.Base.WebApplication.Controllers;
-using K9.Base.WebApplication.Helpers;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Enums;
+using K9.WebApplication.Helpers;
+using K9.WebApplication.Models;
 using K9.WebApplication.Services;
 using NLog;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
-using K9.WebApplication.Enums;
-using K9.WebApplication.Models;
+using SessionHelper = K9.Base.WebApplication.Helpers.SessionHelper;
 
 namespace K9.WebApplication.Controllers
 {
     public class BaseNineStarKiController : BaseController
     {
         private readonly IMembershipService _membershipService;
+        private readonly IRepository<Role> _rolesRepository;
+        private readonly IRepository<UserRole> _userRolesRepository;
 
         public BaseNineStarKiController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles,
-            IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService)
+            IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
         {
             _membershipService = membershipService;
+            _rolesRepository = rolesRepository;
+            _userRolesRepository = userRolesRepository;
             SetBetaWarningSessionVariable();
+            SetSessionRoles(Current.UserId);
+        }
+
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            base.OnActionExecuting(filterContext);
+        
+            ViewBag.DeviceType = GetDeviceType();
         }
 
         public ActionResult SetLanguage(string languageCode, string cultureCode)
@@ -86,6 +100,16 @@ namespace K9.WebApplication.Controllers
             }
 
             return RedirectToAction("Index", "Home");
+        }
+
+        public EDeviceType GetDeviceType()
+        {
+            return new BrowserInfo(Request.Headers["User-Agent"]).DeviceType;
+        }
+
+        public void SetSessionRoles(int userId)
+        {
+            Helpers.SessionHelper.SetCurrentUserRoles(_rolesRepository, _userRolesRepository, userId);
         }
 
         public override string GetObjectName()

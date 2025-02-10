@@ -1,4 +1,5 @@
-﻿using K9.SharedLibrary.Helpers;
+﻿using K9.Base.DataAccessLayer.Models;
+using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Services;
 using NLog;
@@ -12,8 +13,8 @@ namespace K9.WebApplication.Controllers
         private readonly INineStarKiService _nineStarKiService;
         private readonly IBiorhythmsService _biorhythmsService;
 
-        public HomeController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService, IBiorhythmsService biorhythmsService)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
+        public HomeController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService, IBiorhythmsService biorhythmsService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository)
+            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
         {
             _authentication = authentication;
             _nineStarKiService = nineStarKiService;

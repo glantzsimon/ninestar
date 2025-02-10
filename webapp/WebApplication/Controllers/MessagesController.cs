@@ -3,6 +3,7 @@ using K9.Base.WebApplication.Controllers;
 using K9.Base.WebApplication.EventArgs;
 using K9.Base.WebApplication.UnitsOfWork;
 using K9.SharedLibrary.Attributes;
+using K9.WebApplication.Helpers;
 using System.Web.Mvc;
 using WebMatrix.WebData;
 
@@ -22,7 +23,7 @@ namespace K9.WebApplication.Controllers
 		void MessagesController_RecordBeforeCreate(object sender, CrudEventArgs e)
 		{
 			var message = e.Item as Message;
-			message.SentByUserId = WebSecurity.IsAuthenticated ? WebSecurity.CurrentUserId : 0;
+			message.SentByUserId = WebSecurity.IsAuthenticated ? Current.UserId : 0;
 		}
 
 	}

@@ -13,8 +13,39 @@
         <hr />
 
         @Html.BootstrapEditorFor(m => m.ConsultationDuration)
-        
+
         <hr />
         @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight, EButtonClass.Large)
+
+        <hr />
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="text-center center-block">
+                    @Html.Partial("_Testimonial", new K9.WebApplication.ViewModels.TestimonialViewModel
+                    {
+                        Name = "Sarah",
+                        Body = "Simon is a fantastic astrologer and a bloody lovely human being. I highly recommend you book a session with him. You'll feel better for speaking to him. 9 star ki is really cool - it really works and really makes so much sense!"
+                    })
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="text-center center-block">
+                    @Html.Partial("_Testimonial", new K9.WebApplication.ViewModels.TestimonialViewModel
+                    {
+                        Name = "Andrew",
+                        Body = "My girlfriend recommended I book a session with Simon. I was quite skepitcal at first, tbh, but I have to say it really surprised me. 9 star ki is really accurate. Simon's a great guy and I can highly recommend you book a consultation with him. Cheers"
+                    })
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="text-center center-block">
+                    @Html.Partial("_Testimonial", new K9.WebApplication.ViewModels.TestimonialViewModel
+                    {
+                        Name = "Jess",
+                        Body = "Amazing! Just amazing! Simon helped me so much in our call. I cannot thank him enough. This system of astrology is really amazing. I am surprised it's not more widely used, like the Zodiac. I think it's more accurate in many ways. Thank you Simon for this great tool and also for all your help and support. Much love!"
+                    })
+                </div>
+            </div>
+        </div>
     }
 }

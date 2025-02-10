@@ -1510,6 +1510,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Available Slots.
+        /// </summary>
+        public static string AvailableSlots {
+            get {
+                return ResourceManager.GetString("AvailableSlots", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Overall, your energy levels are average. You don&apos;t have to be too concerned about overdoing it, but don&apos;t push too hard and make sure you get enough rest.
         ///&lt;/p&gt;
@@ -1728,12 +1737,13 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;article&gt;
         ///    &lt;h5 class=&quot;margin-top-0&quot;&gt;
-        ///        Explore your personal chart and your relationships in greater depth and detail with a one-to-one 9 Star Ki consultation.
+        ///        Explore your personal chart and your relationships in greater depth and detail with a one-to-one 9 Star Ki consultation with our lead astrologer.
         ///    &lt;/h5&gt;
         ///    &lt;p&gt;
-        ///        9 Star Ki is a great tool to help elucidate some of the subtle yet fundamental energetic forces that influence the dynamics of our relationships and can help to reduce feelings of frustration as well as removing or reducing blame and judgment.
+        ///        9 Star Ki is a truly great tool to help elucidate some of the subtle yet fundamental energetic forces that influence the dynamics of our lives and our relationships. It can help to reduce feelings of frustration as well as removing or reducing blame and judgment. 
         ///    &lt;/p&gt;
-        ///&lt;/article&gt;.
+        ///    &lt;p&gt;
+        ///   [rest of string was truncated]&quot;;.
         /// </summary>
         public static string book_consultation_blurb {
             get {
@@ -2469,6 +2479,60 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///
+        ///&lt;head&gt;
+        ///    &lt;title&gt;{Title}&lt;/title&gt;
+        ///&lt;/head&gt;
+        ///
+        ///&lt;style type=&quot;text/css&quot;&gt;
+        ///    html {
+        ///        margin: 0;
+        ///        padding: 0;
+        ///        font-family: &quot;Segoe UI&quot;, Verdana, Helvetica, Sans-Serif;
+        ///        font-size: 100%;
+        ///        text-rendering: optimizeLegibility !important;
+        ///        -webkit-font-smoothing: antialiased !important;
+        ///        margin: 0;
+        ///        color: #333;
+        ///    }
+        ///&lt;/style&gt;
+        ///
+        ///&lt;body&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;A consultation has b [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ConsultationScheduledEmail {
+            get {
+                return ResourceManager.GetString("ConsultationScheduledEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!doctype html&gt;
+        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;!-- NAME: 1:2:1 COLUMN --&gt;
+        ///    &lt;!--[if gte mso 15]&gt;
+        ///    &lt;xml&gt;
+        ///        &lt;o:OfficeDocumentSettings&gt;
+        ///        &lt;o:AllowPNG/&gt;
+        ///        &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
+        ///        &lt;/o:OfficeDocumentSettings&gt;
+        ///    &lt;/xml&gt;
+        ///    &lt;![endif]--&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
+        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ConsultationScheduledThankYouEmail {
+            get {
+                return ResourceManager.GetString("ConsultationScheduledThankYouEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact.
         /// </summary>
         public static string Contact {
@@ -2731,6 +2795,15 @@ namespace K9.Globalisation {
         public static string CreateAccount {
             get {
                 return ResourceManager.GetString("CreateAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Free Appointment Slots.
+        /// </summary>
+        public static string CreateFreeSlots {
+            get {
+                return ResourceManager.GetString("CreateFreeSlots", resourceCulture);
             }
         }
         
@@ -3290,6 +3363,15 @@ namespace K9.Globalisation {
         public static string DoNotDisplaySexualityLabel {
             get {
                 return ResourceManager.GetString("DoNotDisplaySexualityLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you have a question?.
+        /// </summary>
+        public static string DoYouHaveAQuestion {
+            get {
+                return ResourceManager.GetString("DoYouHaveAQuestion", resourceCulture);
             }
         }
         
@@ -4828,6 +4910,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Is Taken.
+        /// </summary>
+        public static string IsTakenLabel {
+            get {
+                return ResourceManager.GetString("IsTakenLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to K&apos;An.
         /// </summary>
         public static string Kan {
@@ -5197,6 +5288,15 @@ namespace K9.Globalisation {
         public static string Loading {
             get {
                 return ResourceManager.GetString("Loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Local Time.
+        /// </summary>
+        public static string LocalTime {
+            get {
+                return ResourceManager.GetString("LocalTime", resourceCulture);
             }
         }
         
@@ -6440,6 +6540,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Message Us!.
+        /// </summary>
+        public static string MessageUs {
+            get {
+                return ResourceManager.GetString("MessageUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Metal.
         /// </summary>
         public static string Metal {
@@ -6939,6 +7048,15 @@ namespace K9.Globalisation {
         public static string MySavedCompatibilityReadings {
             get {
                 return ResourceManager.GetString("MySavedCompatibilityReadings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My Time.
+        /// </summary>
+        public static string MyTime {
+            get {
+                return ResourceManager.GetString("MyTime", resourceCulture);
             }
         }
         
@@ -7784,6 +7902,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please select a suitable time slot for your {ConsultationDuration} consultation.
+        /// </summary>
+        public static string PleaseSelectATimeSlot {
+            get {
+                return ResourceManager.GetString("PleaseSelectATimeSlot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pragmatist.
         /// </summary>
         public static string Pragmatist {
@@ -8223,6 +8350,51 @@ namespace K9.Globalisation {
         public static string SavedCompatibilityReadings {
             get {
                 return ResourceManager.GetString("SavedCompatibilityReadings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Schedule Consultation.
+        /// </summary>
+        public static string ScheduleConsultation {
+            get {
+                return ResourceManager.GetString("ScheduleConsultation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scheduled For (Client Local Time).
+        /// </summary>
+        public static string ScheduledOnClientLocalLabel {
+            get {
+                return ResourceManager.GetString("ScheduledOnClientLocalLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scheduled For.
+        /// </summary>
+        public static string ScheduledOnLabel {
+            get {
+                return ResourceManager.GetString("ScheduledOnLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scheduled For (Local Time).
+        /// </summary>
+        public static string ScheduledOnLocalLabel {
+            get {
+                return ResourceManager.GetString("ScheduledOnLocalLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Schedule Your Appointment.
+        /// </summary>
+        public static string ScheduleYourAppointment {
+            get {
+                return ResourceManager.GetString("ScheduleYourAppointment", resourceCulture);
             }
         }
         
@@ -8725,6 +8897,24 @@ namespace K9.Globalisation {
         public static string Skip {
             get {
                 return ResourceManager.GetString("Skip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Slot.
+        /// </summary>
+        public static string Slot {
+            get {
+                return ResourceManager.GetString("Slot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Slots.
+        /// </summary>
+        public static string Slots {
+            get {
+                return ResourceManager.GetString("Slots", resourceCulture);
             }
         }
         
@@ -10497,6 +10687,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hi. I have a query regarding 9 Star Ki..
+        /// </summary>
+        public static string WhatsAppNineStarQueryText {
+            get {
+                return ResourceManager.GetString("WhatsAppNineStarQueryText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hi. I&apos;ve booked a consultation and would like to schedule a time to talk..
+        /// </summary>
+        public static string WhatsAppScheduleAppointmentText {
+            get {
+                return ResourceManager.GetString("WhatsAppScheduleAppointmentText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to White.
         /// </summary>
         public static string White {
@@ -10901,6 +11109,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You must select a slot.
+        /// </summary>
+        public static string YouMustSelectASlot {
+            get {
+                return ResourceManager.GetString("YouMustSelectASlot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Youngest Daughter.
         /// </summary>
         public static string YoungestDaughter {
@@ -10915,6 +11132,15 @@ namespace K9.Globalisation {
         public static string YoungestSon {
             get {
                 return ResourceManager.GetString("YoungestSon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Consultations.
+        /// </summary>
+        public static string YourConsultations {
+            get {
+                return ResourceManager.GetString("YourConsultations", resourceCulture);
             }
         }
         

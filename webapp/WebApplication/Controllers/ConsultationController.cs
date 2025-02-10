@@ -1,13 +1,17 @@
-﻿using K9.DataAccessLayer.Enums;
+﻿using K9.Base.DataAccessLayer.Models;
+using K9.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Models;
 using K9.WebApplication.Services;
+using K9.WebApplication.ViewModels;
 using NLog;
 using System;
+using System.Linq;
 using System.Web.Mvc;
+using K9.SharedLibrary.Authentication;
 
 namespace K9.WebApplication.Controllers
 {
@@ -16,30 +20,75 @@ namespace K9.WebApplication.Controllers
         private readonly ILogger _logger;
         private readonly IConsultationService _consultationService;
         private readonly IContactService _contactService;
+        private readonly IRepository<Slot> _slotsRepository;
 
-        public ConsultationController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService,  IConsultationService consultationService, IContactService contactService)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
+        public ConsultationController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IConsultationService consultationService, IContactService contactService, IRepository<Slot> slotsRepository, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository)
+            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
         {
             _logger = logger;
             _consultationService = consultationService;
             _contactService = contactService;
+            _slotsRepository = slotsRepository;
         }
-        
-        [Route("book-consultation")]
+
+        [Route("consultation/book")]
         public ActionResult BookConsultationStart()
         {
             return View(new Consultation
             {
                 ConsultationDuration = EConsultationDuration.OneHour
             });
-        }   
+        }
 
-        [Route("book-consultation")]
+        [Route("consultation/book")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult BookConsultation(Consultation consultation)
         {
             return View(consultation);
+        }
+
+        [Route("consultation/schedule")]
+        public ActionResult ScheduleConsultation(int consultationId)
+        {
+            var consultation = _consultationService.Find(consultationId);
+
+            if (consultation == null)
+            {
+                _logger.Error($"ConsultationController => ScheduleConsultation => Consultation Not Found => ConsultationId: {consultationId}");
+
+                return HttpNotFound();
+            }
+
+            var freeSlots = _consultationService.GetAvailableSlots().Where(e =>
+                            e.ConsultationDuration == consultation.ConsultationDuration).ToList();
+
+            return View(new ScheduleConsultationViewModel
+            {
+                Consultation = consultation,
+                AvailableSlots = freeSlots
+            });
+        }
+
+        [Route("consultation/select-timeslot")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SelectSlot(int consultationId, int slotId)
+        {
+            var selectedSlot = _slotsRepository.Find(slotId);
+
+            if (selectedSlot == null)
+            {
+                return HttpNotFound();
+            }
+
+            //model.Consultation.ScheduledOn = selectedSlot.StartsOn;
+            //model.Consultation.SlotId = selectedSlot.Id;
+            //_con
+
+            selectedSlot.IsTaken = true;
+
+            return View();
         }
 
         [HttpPost]
@@ -64,11 +113,21 @@ namespace K9.WebApplication.Controllers
             }
         }
 
+        [Route("consultation/booking-success")]
         public ActionResult BookConsultationSuccess()
         {
             return View();
         }
-        
+
+        [Authorize(Roles = RoleNames.Administrators)]
+        [Route("consultation/create-free-slots")]
+        public ActionResult CreateFreeSlots()
+        {
+            _consultationService.CreateFreeSlots();
+
+            return View("ViewAvailableSlots", _consultationService.GetAvailableSlots());
+        }
+
         public override string GetObjectName()
         {
             return string.Empty;
@@ -76,3 +135,4 @@ namespace K9.WebApplication.Controllers
 
     }
 }
+

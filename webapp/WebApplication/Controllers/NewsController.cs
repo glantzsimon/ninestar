@@ -15,8 +15,8 @@ namespace K9.WebApplication.Controllers
 	{
 		private readonly IRepository<NewsItem> _newsRepository;
 
-		public NewsController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IRepository<NewsItem> newsRepository, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService)
-			: base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
+		public NewsController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IRepository<NewsItem> newsRepository, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository)
+			: base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
 		{
 			_newsRepository = newsRepository;
 		}

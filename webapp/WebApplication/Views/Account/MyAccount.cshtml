@@ -11,6 +11,11 @@
     {
         <li><a data-toggle="tab" href="#membership">@Dictionary.YourCurrentMembership</a></li>
     }
+
+    @if (Model.Consultations.Any())
+    {
+        <li><a data-toggle="tab" href="#consultations">@Dictionary.YourConsultations</a></li>
+    }
 </ul>
 
 <div class="tab-content">
@@ -44,5 +49,8 @@
             <hr />
             @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership", null, "", EButtonClass.Large)
         }
+    </div>
+    <div id="consultations" class="tab-pane fade in active padding-top-20">
+        @Html.Partial("_UserConsultations")
     </div>
 </div>

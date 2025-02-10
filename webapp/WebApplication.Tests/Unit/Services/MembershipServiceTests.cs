@@ -163,7 +163,10 @@ namespace K9.WebApplication.Tests.Unit.Services
                 _mailer.Object,
                 _config.Object,
                 new Mock<IRepository<PromoCode>>().Object,
-                _userService.Object);
+                _userService.Object,
+                new Mock<IRepository<Consultation>>().Object,
+                new Mock<IRepository<UserConsultation>>().Object,
+                new Mock<IConsultationService>().Object);
         }
 
         [Fact]

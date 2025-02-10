@@ -4,7 +4,6 @@
     {
         public const string SessionDateTimeFormat = "yyyy-MM-dd";
         public const string DataTableDateTimeFormat = "yyyy-MM-dd HH:mm";
-        public const string PredictionsDisplayDateFormat = "MMMM yyyy";
     }
 
     public static class SessionConstants
@@ -42,5 +41,10 @@
         public const string LastCompatibilityHideSexuality = "LastCompatibilityHideSexuality";
         public const string IsRetrieveCompatibility = "IsRetrieveCompatibility";
         public const string CompatibilityStoredOn = "CompatibilityStoredOn";
+
+        public const string UserTimeZone = "UserTimeZone";
+
+        public const string CurrentUserId = "CurrentUserId";
+        public const string CurrentUserName = "CurrentUserName";
     }
 }

@@ -259,7 +259,7 @@ a#toTop {
     top: -180px;
 }
 
-.navigation a {
+.navigation a, .time-slots a {
     font-size: 0.9em;
     display: inline-block;
     padding: 7px;
@@ -272,7 +272,7 @@ a#toTop {
     text-decoration: none !important;
 }
 
-    .navigation a:hover {
+    .navigation a:hover, .time-slots a:hover {
         background-color: #286090;
     }
 

@@ -8,12 +8,13 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
+using K9.DataAccessLayer.Extensions;
 
 namespace K9.DataAccessLayer.Models
 {
     [AutoGenerateName]
     [Name(ResourceType = typeof(Dictionary), ListName = Strings.Names.Consultations, PluralName = Strings.Names.Consultations, Name = Strings.Names.Consultation)]
-    public class Consultation : ObjectBase
+    public class Consultation : TimeZoneBase
     {
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ContactLabel)]
@@ -21,7 +22,7 @@ namespace K9.DataAccessLayer.Models
         [Required]
         [ForeignKey("Contact")]
         public int ContactId { get; set; }
-        
+
         [UIHint("ConsultationDuration")]
         [Required]
         [Display(ResourceType = typeof(Dictionary),
@@ -30,6 +31,10 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CompletedOnLabel)]
         public DateTime? CompletedOn { get; set; }
+
+        [UIHint("DateTime")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ScheduledOnLabel)]
+        public DateTimeOffset? ScheduledOn { get; set; }
 
         public virtual Contact Contact { get; set; }
 
@@ -50,6 +55,42 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DurationLabel)]
         public string DurationDescription =>
             ConsultationDuration.GetAttribute<EnumDescriptionAttribute>().GetDescription();
+
+        [ForeignKey("Slot")]
+        public int? SlotId { get; set; }
+
+        public virtual Slot Slot { get; set; }
+        
+        [UIHint("DateTime")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EndsOnLabel)]
+        public DateTimeOffset? EndsOn
+        {
+            get
+            {
+                if (ScheduledOn.HasValue)
+                {
+                    return ScheduledOn.Value.Add(Duration);
+                }
+
+                return null;
+            }
+        }
+
+        [UIHint("DateTime")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StartsOnLabel)]
+        public DateTimeOffset? ScheduledOnLocalTime => this.ToUserTimeZone(ScheduledOn);
+        
+        [UIHint("DateTime")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EndsOnLabel)]
+        public DateTimeOffset? EndsOnLocalTime => this.ToUserTimeZone(EndsOn);
+
+        [UIHint("DateTime")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StartsOnLabel)]
+        public DateTimeOffset? ScheduledOnMyTime => this.ToMyTimeZone(ScheduledOn);
+        
+        [UIHint("DateTime")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EndsOnLabel)]
+        public DateTimeOffset? EndsOnMyTime => this.ToMyTimeZone(EndsOn);
 
         private double GetPrice()
         {

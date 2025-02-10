@@ -96,6 +96,10 @@ namespace K9.WebApplication
             var googleConfig = ConfigHelper.GetConfiguration<GoogleConfiguration>(json);
             builder.Register(c => googleConfig).SingleInstance();
             GoogleConfiguration.Instance = googleConfig.Value;
+
+            var defaultConfig = ConfigHelper.GetConfiguration<DefaultValuesConfiguration>(json);
+            builder.Register(c => defaultConfig).SingleInstance();
+            DefaultValuesConfiguration.Instance = defaultConfig.Value;
         }
     }
 }

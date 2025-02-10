@@ -1,12 +1,21 @@
 ﻿using K9.Base.DataAccessLayer.Enums;
+using K9.Base.DataAccessLayer.Models;
+using K9.SharedLibrary.Models;
 using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
 using System;
+using System.Linq;
 
 namespace K9.WebApplication.Helpers
 {
     public static class SessionHelper
     {
+        public static string GetStringValue(string key)
+        {
+            var value = Base.WebApplication.Helpers.SessionHelper.GetValue(key);
+            var stringValue = value?.ToString() ?? string.Empty;
+            return stringValue;
+        }
 
         public static int GetIntValue(string key)
         {
@@ -25,6 +34,59 @@ namespace K9.WebApplication.Helpers
                 return dateTimeValue;
             }
             return null;
+        }
+
+        public static bool GetBooleanValue(string key)
+        {
+            var value = Base.WebApplication.Helpers.SessionHelper.GetValue(key);
+            var stringValue = value?.ToString() ?? string.Empty;
+            if (bool.TryParse(stringValue, out var boolValue))
+            {
+                return boolValue;
+            }
+            return false;
+        }
+
+        public static void SetCurrentUserTimeZone(string value)
+        {
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.UserTimeZone, value);
+        }
+
+        public static string GetCurrentUserTimeZone()
+        {
+            var value = Base.WebApplication.Helpers.SessionHelper.GetValue(Constants.SessionConstants.UserTimeZone);
+            var stringValue = value?.ToString() ?? string.Empty;
+            return stringValue;
+        }
+
+        public static int GetCurrentUserId()
+        {
+            return GetIntValue(Constants.SessionConstants.CurrentUserId);
+        }
+
+        public static void SetCurrentUserId(int value)
+        {
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.CurrentUserId, value);
+        }
+
+        public static void CleaCurrentUserId()
+        {
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.CurrentUserId, 0);
+        }
+
+        public static string GetCurrentUserName()
+        {
+            return GetStringValue(Constants.SessionConstants.CurrentUserName);
+        }
+
+        public static void SetCurrentUserName(string value)
+        {
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.CurrentUserName, value);
+        }
+
+        public static void ClearCurrentUserName()
+        {
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.CurrentUserName, "");
         }
 
         public static void SetLastProfile(NineStarKiModel model)
@@ -249,5 +311,23 @@ namespace K9.WebApplication.Helpers
             return null;
         }
 
+        public static void SetCurrentUserRoles(IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, int userId)
+        {
+            var adminRole = rolesRepository.Find(e => e.Name == Constants.Constants.Administrator).First();
+            var powerUserRole = rolesRepository.Find(e => e.Name == Constants.Constants.ClientUser).First();
+            var clientRole = rolesRepository.Find(e => e.Name == Constants.Constants.ClientUser).First();
+
+            var isAdmin = userRolesRepository.Exists(e => e.UserId == userId && e.RoleId == adminRole.Id);
+            var isPower = userRolesRepository.Exists(e => e.UserId == userId && e.RoleId == powerUserRole.Id);
+            var isClient = userRolesRepository.Exists(e => e.UserId == userId && e.RoleId == clientRole.Id);
+
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.Constants.Administrator, isAdmin);
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.Constants.PowerUser, isPower);
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.Constants.ClientUser, isClient);
+        }
+
+        public static bool CurrentUserIsAdmin() => GetBooleanValue(Constants.Constants.Administrator);
+        public static bool CurrentUserIsPowertUser() => GetBooleanValue(Constants.Constants.PowerUser);
+        public static bool CurrentUserIsClientUser() => GetBooleanValue(Constants.Constants.ClientUser);
     }
 }

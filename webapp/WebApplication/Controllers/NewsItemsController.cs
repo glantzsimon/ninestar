@@ -4,6 +4,7 @@ using K9.Base.WebApplication.EventArgs;
 using K9.Base.WebApplication.UnitsOfWork;
 using System;
 using System.Web.Mvc;
+using K9.WebApplication.Helpers;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
@@ -21,7 +22,7 @@ namespace K9.WebApplication.Controllers
         void NewsItemsController_RecordBeforeCreate(object sender, CrudEventArgs e)
         {
             var newsItem = e.Item as NewsItem;
-            newsItem.PublishedBy = WebSecurity.IsAuthenticated ? WebSecurity.CurrentUserName : string.Empty;
+            newsItem.PublishedBy = WebSecurity.IsAuthenticated ? Current.UserName : string.Empty;
             newsItem.PublishedOn = DateTime.Now;
         }
 

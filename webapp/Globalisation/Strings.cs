@@ -25,6 +25,9 @@
             public const string DurationLabel = "Duration";
             public const string DonatedOnLabel = "DonatedOnLabel";
             public const string CompletedOnLabel = "CompletedOnLabel";
+            public const string ScheduledOnLabel = "ScheduledOnLabel";
+            public const string ScheduledOnLocalLabel = "ScheduledOnLocalLabel";
+            public const string ScheduledOnClientLocalLabel = "ScheduledOnClientLocalLabel";
             public const string CurrencyLabel = "CurrencyLabel";
             public const string CustomerEmailLabel = "CustomerEmailLabel";
             public const string GenderLabel = "GenderLabel";
@@ -63,6 +66,7 @@
             public const string SubscriptionDetailsLabel = "SubscriptionDetailsLabel";
             public const string StartsOnLabel = "StartsOnLabel";
             public const string EndsOnLabel = "EndsOnLabel";
+            public const string IsTakenLabel = "IsTakenLabel";
             public const string TotalLabel = "TotalLabel";
             public const string AutoRenewLabel = "AutoRenewLabel";
             public const string DeactivatedLabel = "DeactivatedLabel";
@@ -95,8 +99,10 @@
             public const string UserMemberships = "UserMemberships";
             public const string UserMembershipsListName = "UserMemberships";
             public const string Donations = "Donations";
+            public const string Slot = "Slot";
             public const string Consultation = "Consultation";
             public const string UserConsultation = "UserConsultation";
+            public const string Slots = "Slots";
             public const string Consultations = "Consultations";
             public const string UserConsultations = "UserConsultations";
             public const string MembershipOptions = "MembershipOptions";

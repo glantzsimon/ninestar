@@ -6,10 +6,14 @@ using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.ViewModels;
+using NLog;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using K9.WebApplication.Helpers;
+using WebMatrix.WebData;
 
 namespace K9.WebApplication.Services
 {
@@ -21,10 +25,13 @@ namespace K9.WebApplication.Services
         private readonly IAuthentication _authentication;
         private readonly IMailer _mailer;
         private readonly IContactService _contactService;
+        private readonly IRepository<UserConsultation> _userConsultationsRepository;
+        private readonly IRepository<Consultation> _consultationsRepository;
+        private readonly ILogger _logger;
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public UserService(IRepository<User> usersRepository, IRepository<PromoCode> promoCodesRepository, IRepository<UserPromoCode> userPromoCodeRepository, IAuthentication authentication, IMailer mailer, IOptions<WebsiteConfiguration> config, IContactService contactService)
+        public UserService(IRepository<User> usersRepository, IRepository<PromoCode> promoCodesRepository, IRepository<UserPromoCode> userPromoCodeRepository, IAuthentication authentication, IMailer mailer, IOptions<WebsiteConfiguration> config, IContactService contactService, IRepository<UserConsultation> userConsultationsRepository, IRepository<Consultation> consultationsRepository, ILogger logger)
         {
             _usersRepository = usersRepository;
             _promoCodesRepository = promoCodesRepository;
@@ -32,6 +39,9 @@ namespace K9.WebApplication.Services
             _authentication = authentication;
             _mailer = mailer;
             _contactService = contactService;
+            _userConsultationsRepository = userConsultationsRepository;
+            _consultationsRepository = consultationsRepository;
+            _logger = logger;
             _config = config.Value;
             _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }
@@ -40,7 +50,7 @@ namespace K9.WebApplication.Services
         {
             if (_authentication.IsAuthenticated)
             {
-                var activeUser = _usersRepository.Find(_authentication.CurrentUserId);
+                var activeUser = _usersRepository.Find(Current.UserId);
                 var defaultFacebookAddress = $"{activeUser.FirstName}.{activeUser.LastName}@facebook.com";
                 if (activeUser.IsOAuth && activeUser.EmailAddress == defaultFacebookAddress && activeUser.EmailAddress != contact.EmailAddress)
                 {
@@ -119,6 +129,31 @@ namespace K9.WebApplication.Services
 
             model.PromoCode.SentOn = DateTime.Now;
             _promoCodesRepository.Update(model.PromoCode);
+        }
+
+        public List<UserConsultation> GetConsultations(int? userId = null)
+        {
+            var user = _usersRepository.Find(userId ?? Current.UserId);
+            var userConsultations = new List<UserConsultation>();
+
+            if (user != null)
+            {
+                try
+                {
+                    userConsultations = _userConsultationsRepository.Find(e => e.UserId == user.Id);
+
+                    foreach (var userConsultation in userConsultations)
+                    {
+                        userConsultation.Consultation = _consultationsRepository.Find(userConsultation.ConsultationId);
+                    }
+                }
+                catch (Exception e)
+                {
+                    _logger.Error($"UserService => GetConsultations => {e.GetFullErrorMessage()}");
+                }
+            }
+
+            return userConsultations;
         }
     }
 }

@@ -199,11 +199,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\Constants.cs" />
     <Compile Include="Database\DatabaseInitialiser.cs" />
     <Compile Include="Database\Db.cs" />
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
     <Compile Include="Enums\EConsultationDuration.cs" />
+    <Compile Include="Extensions\ModelExtensions.cs" />
     <Compile Include="Helpers\Methods.cs" />
     <Compile Include="Migrations\202007211011153_July2020.cs" />
     <Compile Include="Migrations\202007211011153_July2020.Designer.cs">
@@ -285,6 +287,16 @@
     <Compile Include="Migrations\202501271259251_UpdateMembershipOptions.Designer.cs">
       <DependentUpon>202501271259251_UpdateMembershipOptions.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202502091456004_UpdateConsulation.cs" />
+    <Compile Include="Migrations\202502091456004_UpdateConsulation.Designer.cs">
+      <DependentUpon>202502091456004_UpdateConsulation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202502091521536_AddSlots.cs" />
+    <Compile Include="Migrations\202502091521536_AddSlots.Designer.cs">
+      <DependentUpon>202502091521536_AddSlots.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TimeZoneBase.cs" />
+    <Compile Include="Models\Slot.cs" />
     <Compile Include="Models\Consultation.cs" />
     <Compile Include="Models\PromoCode.cs" />
     <Compile Include="Models\Contact.cs" />
@@ -372,6 +384,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202501271259251_UpdateMembershipOptions.resx">
       <DependentUpon>202501271259251_UpdateMembershipOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502091456004_UpdateConsulation.resx">
+      <DependentUpon>202502091456004_UpdateConsulation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502091521536_AddSlots.resx">
+      <DependentUpon>202502091521536_AddSlots.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -21,8 +21,8 @@ namespace K9.WebApplication.Controllers
         private readonly IRepository<User> _usersRepository;
         private readonly IBiorhythmsService _biorhythmsService;
 
-        public PersonalChartController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService, IRepository<User> usersRepository, IBiorhythmsService biorhythmsService)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
+        public PersonalChartController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService, IRepository<User> usersRepository, IBiorhythmsService biorhythmsService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository)
+            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
         {
             _authentication = authentication;
             _nineStarKiService = nineStarKiService;
@@ -83,7 +83,7 @@ namespace K9.WebApplication.Controllers
         [Route("personalchart/my-chart")]
         public ActionResult MyProfile()
         {
-            var myAccount = _usersRepository.Find(_authentication.CurrentUserId);
+            var myAccount = _usersRepository.Find(Current.UserId);
             var personModel = new PersonModel
             {
                 Name = myAccount.FullName,
@@ -93,8 +93,9 @@ namespace K9.WebApplication.Controllers
             var nineStarKiProfile = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, true);
 
             nineStarKiProfile.BiorhythmResultSet = _biorhythmsService.Calculate(nineStarKiProfile, DateTime.Today);
+            nineStarKiProfile.IsMyProfile = true;
 
-            return View(nineStarKiProfile);
+            return View("Index", nineStarKiProfile);
         }
 
         [Route("retrieve-last")]

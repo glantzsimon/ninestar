@@ -46,7 +46,7 @@
     </div>
 
     <hr />
-    
+
     @{
         var memberships = Model.MembershipModels.Where(e => e.IsPayable).ToList();
         var columnClass = "";
@@ -86,8 +86,6 @@
         </article>
     </div>
 
-    <hr />
-
     <div class="row">
         <div class="col-sm-4">
             <div class="text-center center-block">
@@ -116,7 +114,24 @@
                 })
             </div>
         </div>
-
+        <div class="col-sm-4">
+            <div class="text-center center-block">
+                @Html.Partial("_Testimonial", new K9.WebApplication.ViewModels.TestimonialViewModel
+                {
+                    Name = "David",
+                    Body = "I love this website! It's really well organised and presented. I had been using 9 star ki for a while, but since getting access to this tool, I've been using it a lot more, as I can get the information I need really quickly. I especially love the compatibility tool and the yearly and montly predictions. Great job! Much gratitude to you."
+                })
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="text-center center-block">
+                @Html.Partial("_Testimonial", new K9.WebApplication.ViewModels.TestimonialViewModel
+                {
+                    Name = "Alice",
+                    Body = "I can't believe I hadn't come across this system before! It's really helped me so much, especially with understanding my boyfriend (and exes!!! lol). It also helps me to be more patient with my mum and my sister - I've had quite a lot of issues with them over the years, but now it all makes so much sense and I'm able to be the bigger person a lot more. Simon is a great astrologer! I highly recommend you book a session with him. Thank you!!!"
+                })
+            </div>
+        </div>
     </div>
 
     <hr />

@@ -263,7 +263,9 @@
     <Compile Include="Config\MailChimpConfiguration.cs" />
     <Compile Include="Config\ColumnsConfig.cs" />
     <Compile Include="Config\RecaptchaConfiguration.cs" />
+    <Compile Include="Config\DefaultValuesConfiguration.cs" />
     <Compile Include="Config\StripeConfiguration.cs" />
+    <Compile Include="Constants\Constants.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
     <Compile Include="Controllers\BaseNineStarKiController.cs" />
     <Compile Include="Controllers\ConsultationsController.cs" />
@@ -284,6 +286,7 @@
     <Compile Include="Controllers\UserProfileReadingsController.cs" />
     <Compile Include="Controllers\UserPromoCodesController.cs" />
     <Compile Include="Controllers\UserMembershipsController.cs" />
+    <Compile Include="Enums\EDeviceType.cs" />
     <Compile Include="Enums\EBiorhythmValue.cs" />
     <Compile Include="Enums\EBiorhythmTrend.cs" />
     <Compile Include="Enums\EBiorhythm.cs" />
@@ -295,6 +298,7 @@
     <Compile Include="Enums\ESexualityType.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="Helpers\Current.cs" />
     <Compile Include="Helpers\ArrayHelper.cs" />
     <Compile Include="Helpers\HtmlContentTruncator.cs" />
     <Compile Include="Helpers\General.cs" />
@@ -344,14 +348,17 @@
     <Compile Include="Models\Biorhythms\BioRhythmsModel.cs" />
     <Compile Include="Models\NineStarKi\NineStarKiBiorhythmsFactors.cs" />
     <Compile Include="Models\NineStarKi\NineStarKiMonthlyDates.cs" />
+    <Compile Include="Models\Browser.cs.cs" />
     <Compile Include="Models\Recaptcha.cs" />
     <Compile Include="Models\PurchaseModel.cs" />
     <Compile Include="Models\LogItem.cs" />
     <Compile Include="Models\RetrieveLastModel.cs" />
     <Compile Include="Options\BiorhythmGaugeOptions.cs" />
     <Compile Include="Options\GaugeOptions.cs" />
+    <Compile Include="ViewModels\WhatsAppViewModel.cs" />
     <Compile Include="ViewModels\PredictionsViewModel.cs" />
     <Compile Include="ViewModels\PromptViewModel.cs" />
+    <Compile Include="ViewModels\ScheduleConsultationViewModel.cs" />
     <Compile Include="ViewModels\TestimonialViewModel.cs" />
     <Compile Include="Options\PaymentsOptions.cs" />
     <Compile Include="Services\ConsultationService.cs" />
@@ -865,6 +872,7 @@
     <Content Include="Scripts\k9\fadePageIn.js" />
     <Content Include="Scripts\k9\backgroundImageSwitcher.js" />
     <Content Include="Scripts\k9\payments.js" />
+    <Content Include="Scripts\k9\userLocale.js" />
     <Content Include="Scripts\k9\payWall.js" />
     <Content Include="Scripts\k9\revealText.js" />
     <Content Include="Scripts\k9\navbar.js" />
@@ -1214,7 +1222,6 @@
     <Content Include="Views\Shared\_PaymentsForm.cshtml" />
     <Content Include="Views\Account\UnsubscribeFailed.cshtml" />
     <Content Include="Views\Account\UnsubscribeSuccess.cshtml" />
-    <Content Include="Views\PersonalChart\MyProfile.cshtml" />
     <Content Include="Views\Predictions\_CycleHeader.cshtml" />
     <Content Include="Views\NineStarKi\_Season.cshtml" />
     <Content Include="Views\Predictions\_YearlyPlanner.cshtml" />
@@ -1296,7 +1303,7 @@
     <Content Include="Views\Account\LoginUser.cshtml" />
     <Content Include="Views\Shared\UpgradePrompt.cshtml" />
     <Content Include="Views\Shared\LoginPrompt.cshtml" />
-    <Content Include="Views\Membership\_Testimonial.cshtml" />
+    <Content Include="Views\Shared\_Testimonial.cshtml" />
     <Content Include="Views\PersonalChart\_ButtonsFooter.cshtml" />
     <Content Include="Views\PersonalChart\_ProfileEmotionalEnergyDetails.cshtml" />
     <Content Include="Views\PersonalChart\_ProfileMirrorEnergyDetails.cshtml" />
@@ -1329,6 +1336,10 @@
     <Content Include="Views\Shared\ActionLinkButtons\_PersonalProfileWithForm.cshtml" />
     <Content Include="Views\Shared\ActionLinkButtons\_BiorhythmsWithForm.cshtml" />
     <Content Include="Views\Shared\ActionLinkButtons\_PredictionsWithForm.cshtml" />
+    <Content Include="Views\Account\_UserConsultations.cshtml" />
+    <Content Include="Views\Consultation\ScheduleConsultation.cshtml" />
+    <Content Include="Views\Shared\_WhatsApp.cshtml" />
+    <Content Include="Views\Consultation\ViewAvailableSlots.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -11,6 +11,7 @@ using NLog;
 using System;
 using System.Linq;
 using System.Web.Mvc;
+using K9.Base.WebApplication.Filters;
 using K9.SharedLibrary.Authentication;
 
 namespace K9.WebApplication.Controllers
@@ -119,13 +120,19 @@ namespace K9.WebApplication.Controllers
             return View();
         }
 
-        [Authorize(Roles = RoleNames.Administrators)]
+        [RequirePermissions(Role = RoleNames.Administrators)]
         [Route("consultation/create-free-slots")]
         public ActionResult CreateFreeSlots()
         {
             _consultationService.CreateFreeSlots();
+            return RedirectToAction("ViewAvailableSlots");
+        }
 
-            return View("ViewAvailableSlots", _consultationService.GetAvailableSlots());
+        [RequirePermissions(Role = RoleNames.Administrators)]
+        [Route("consultation/view-free-slots")]
+        public ActionResult ViewAvailableSlots()
+        {
+            return View("", _consultationService.GetAvailableSlots());
         }
 
         public override string GetObjectName()

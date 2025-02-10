@@ -87,7 +87,7 @@ namespace K9.DataAccessLayer.Models
         public int NumberOfCreditsLeft { get; set; }
 
         [NotMapped]
-        public bool IsActive => (DateTime.Today.IsBetween(StartsOn.Date, EndsOn.Date) || MembershipOption.SubscriptionType == MembershipOption.ESubscriptionType.LifeTimePlatinum) && !IsDeactivated;
+        public bool IsActive => (DateTime.Today.IsBetween(StartsOn.Date, EndsOn.Date) || MembershipOption?.SubscriptionType == MembershipOption.ESubscriptionType.LifeTimePlatinum) && !IsDeactivated;
 
         [NotMapped]
         public TimeSpan Duration => EndsOn.Subtract(StartsOn);

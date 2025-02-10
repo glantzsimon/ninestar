@@ -2799,7 +2799,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create Free Appointment Slots.
+        ///   Looks up a localized string similar to Create Free Slots.
         /// </summary>
         public static string CreateFreeSlots {
             get {
@@ -10320,6 +10320,15 @@ namespace K9.Globalisation {
         public static string View {
             get {
                 return ResourceManager.GetString("View", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Available Slots.
+        /// </summary>
+        public static string ViewAvailableSlots {
+            get {
+                return ResourceManager.GetString("ViewAvailableSlots", resourceCulture);
             }
         }
         

@@ -2810,7 +2810,7 @@
     <value>Continue reading...</value>
   </data>
   <data name="CreateFreeSlots" xml:space="preserve">
-    <value>Create Free Appointment Slots</value>
+    <value>Create Free Slots</value>
   </data>
   <data name="CyclesOfLightAndDark" xml:space="preserve">
     <value>Cycles of Light and Dark</value>
@@ -2859,6 +2859,9 @@
   </data>
   <data name="Slots" xml:space="preserve">
     <value>Slots</value>
+  </data>
+  <data name="ViewAvailableSlots" xml:space="preserve">
+    <value>View Available Slots</value>
   </data>
   <data name="ViewPredictionsForSelectedDate" xml:space="preserve">
     <value>View Predictions for Selected Date</value>

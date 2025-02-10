@@ -140,6 +140,9 @@
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\NLog.dll</HintPath>
     </Reference>
+    <Reference Include="NodaTime, Version=3.2.1.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NodaTime.3.2.1\lib\netstandard2.0\NodaTime.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\System.Buffers.dll</HintPath>
@@ -165,7 +168,7 @@
       <HintPath>..\packages\K9.Base.DataAccessLayer.2.0.0.201\lib\net461\System.Reflection.TypeExtensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
@@ -205,7 +208,7 @@
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
     <Compile Include="Enums\EConsultationDuration.cs" />
-    <Compile Include="Extensions\ModelExtensions.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Helpers\Methods.cs" />
     <Compile Include="Migrations\202007211011153_July2020.cs" />
     <Compile Include="Migrations\202007211011153_July2020.Designer.cs">
@@ -294,6 +297,10 @@
     <Compile Include="Migrations\202502091521536_AddSlots.cs" />
     <Compile Include="Migrations\202502091521536_AddSlots.Designer.cs">
       <DependentUpon>202502091521536_AddSlots.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202502100737030_SlotsAndTimeZones.cs" />
+    <Compile Include="Migrations\202502100737030_SlotsAndTimeZones.Designer.cs">
+      <DependentUpon>202502100737030_SlotsAndTimeZones.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\TimeZoneBase.cs" />
     <Compile Include="Models\Slot.cs" />
@@ -390,6 +397,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202502091521536_AddSlots.resx">
       <DependentUpon>202502091521536_AddSlots.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502100737030_SlotsAndTimeZones.resx">
+      <DependentUpon>202502100737030_SlotsAndTimeZones.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

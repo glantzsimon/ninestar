@@ -314,12 +314,12 @@ namespace K9.WebApplication.Helpers
         public static void SetCurrentUserRoles(IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, int userId)
         {
             var adminRole = rolesRepository.Find(e => e.Name == Constants.Constants.Administrator).First();
-            var powerUserRole = rolesRepository.Find(e => e.Name == Constants.Constants.ClientUser).First();
-            var clientRole = rolesRepository.Find(e => e.Name == Constants.Constants.ClientUser).First();
+            var powerUserRole = rolesRepository.Find(e => e.Name == Constants.Constants.ClientUser).FirstOrDefault();
+            var clientRole = rolesRepository.Find(e => e.Name == Constants.Constants.ClientUser).FirstOrDefault();
 
             var isAdmin = userRolesRepository.Exists(e => e.UserId == userId && e.RoleId == adminRole.Id);
-            var isPower = userRolesRepository.Exists(e => e.UserId == userId && e.RoleId == powerUserRole.Id);
-            var isClient = userRolesRepository.Exists(e => e.UserId == userId && e.RoleId == clientRole.Id);
+            var isPower = powerUserRole != null && userRolesRepository.Exists(e => e.UserId == userId && e.RoleId == powerUserRole.Id);
+            var isClient = clientRole != null && userRolesRepository.Exists(e => e.UserId == userId && e.RoleId == clientRole.Id);
 
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.Constants.Administrator, isAdmin);
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.Constants.PowerUser, isPower);

@@ -14,6 +14,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using K9.DataAccessLayer.Enums;
+using K9.DataAccessLayer.Extensions;
+using NodaTime;
 
 namespace K9.WebApplication.Services
 {
@@ -58,14 +60,21 @@ namespace K9.WebApplication.Services
 
         public List<Slot> GetAvailableSlots()
         {
+            var myTimeZoneId = _defaultValues.CurrentTimeZone;
             var userTimeZoneId = SessionHelper.GetCurrentUserTimeZone();
-            var myTimeZone = _defaultValues.CurrentTimeZone;
-            var userTimeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(userTimeZoneId);
-            var userNow = TimeZoneInfo.ConvertTime(DateTime.UtcNow, userTimeZoneInfo);
+            var tomorrow = DateTime.UtcNow.AddDays(1);
+
+            // Give two days notice
+            var userTomorrow = tomorrow.ToZonedTime(_defaultValues.CurrentTimeZone);
+            var userTomorrowUtc = userTomorrow.ToDateTimeUtc().Date;
 
             // Starting from tomorrow, user's local time
-            var slots = _slotRepository.Find(e => !e.IsTaken && e.StartsOn.Date > userNow.Date).ToList();
-            slots.ForEach(e => e.UserTimeZone = userTimeZoneId);
+            var slots = _slotRepository.Find(e => !e.IsTaken && e.StartsOn > userTomorrowUtc).ToList();
+            slots.ForEach((e) =>
+            {
+                e.UserTimeZone = userTimeZoneId;
+                e.MyTimeZone = myTimeZoneId;
+            });
             return slots;
         }
 
@@ -114,14 +123,18 @@ namespace K9.WebApplication.Services
 
         public void CreateFreeSlots()
         {
+            var myTimeZone = _defaultValues.CurrentTimeZone;
             var slots = new List<Slot>();
             var startDay = GetNextTuesday();
+            var timeZone = DateTimeZoneProviders.Tzdb[myTimeZone];
+            var now = SystemClock.Instance.GetCurrentInstant();
+            var offset = timeZone.GetUtcOffset(now).ToTimeSpan();
 
             for (int weekNumber = 0; weekNumber < 8; weekNumber++)
             {
                 for (int dayNumber = 0; dayNumber < 3; dayNumber++)
                 {
-                    var startTime = new DateTimeOffset(startDay.Year, startDay.Month, startDay.Day, 11, 0, 0, TimeSpan.Zero);
+                    var startTime = new DateTimeOffset(startDay.Year, startDay.Month, startDay.Day, 11, 0, 0, offset);
                     CreateSlotsForDay(slots, startTime);
                     startDay = startDay.AddDays(1);
                 }

@@ -12,7 +12,7 @@
         <li><a data-toggle="tab" href="#membership">@Dictionary.YourCurrentMembership</a></li>
     }
 
-    @if (Model.Consultations.Any())
+    @if (Model.Consultations != null && Model.Consultations.Any())
     {
         <li><a data-toggle="tab" href="#consultations">@Dictionary.YourConsultations</a></li>
     }
@@ -50,7 +50,10 @@
             @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership", null, "", EButtonClass.Large)
         }
     </div>
-    <div id="consultations" class="tab-pane fade in active padding-top-20">
-        @Html.Partial("_UserConsultations")
-    </div>
+    @if (Model.Consultations != null && Model.Consultations.Any())
+    {
+        <div id="consultations" class="tab-pane fade in active padding-top-20">
+            @Html.Partial("_UserConsultations", Model.Consultations)
+        </div>
+    }
 </div>

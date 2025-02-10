@@ -46,7 +46,7 @@ namespace K9.DataAccessLayer.Models
             : "";
 
         public string FormattedStartsOnLocalTime => StartsOnLocalTime.HasValue
-            ? StartsOnLocalTime.Value.Date.ToString(Constants.FormatConstants.AppointmentDisplayTimeFormat)
+            ? StartsOnLocalTime.Value.ToString(Constants.FormatConstants.AppointmentDisplayTimeFormat)
             : "";
 
         public string FormattedEndsOnLocalDate => EndsOnLocalTime.HasValue
@@ -54,7 +54,7 @@ namespace K9.DataAccessLayer.Models
             : "";
 
         public string FormattedEndsOnLocalTime => EndsOnLocalTime.HasValue
-            ? EndsOnLocalTime.Value.Date.ToString(Constants.FormatConstants.AppointmentDisplayTimeFormat)
+            ? EndsOnLocalTime.Value.ToString(Constants.FormatConstants.AppointmentDisplayTimeFormat)
             : "";
 
         public string FormattedStartsOnMyDate => StartsOnMyTime.HasValue
@@ -62,7 +62,7 @@ namespace K9.DataAccessLayer.Models
             : "";
 
         public string FormattedStartsOnMyTime => StartsOnMyTime.HasValue
-            ? StartsOnMyTime.Value.Date.ToString(Constants.FormatConstants.AppointmentDisplayTimeFormat)
+            ? StartsOnMyTime.Value.ToString(Constants.FormatConstants.AppointmentDisplayTimeFormat)
             : "";
 
         public string FormattedEndsOnMyDate => EndsOnMyTime.HasValue
@@ -70,7 +70,7 @@ namespace K9.DataAccessLayer.Models
             : "";
 
         public string FormattedEndsOnMyTime => EndsOnMyTime.HasValue
-            ? EndsOnMyTime.Value.Date.ToString(Constants.FormatConstants.AppointmentDisplayTimeFormat)
+            ? EndsOnMyTime.Value.ToString(Constants.FormatConstants.AppointmentDisplayTimeFormat)
             : "";
 
         [UIHint("DateTime")]

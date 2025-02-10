@@ -1,10 +1,24 @@
 ﻿using K9.DataAccessLayer.Models;
+using NodaTime;
 using System;
 
 namespace K9.DataAccessLayer.Extensions
 {
-    public static class ModelExtensions
+    public static class Extensions
     {
+        public static ZonedDateTime ToZonedTime(this DateTimeOffset value, string timeZoneId)
+        {
+            var tz = DateTimeZoneProviders.Tzdb[timeZoneId];
+            var instant = Instant.FromDateTimeOffset(value);
+            return instant.InZone(tz);
+        }
+
+        public static ZonedDateTime ToZonedTime(this DateTime value, string timeZoneId)
+        {
+            var tz = DateTimeZoneProviders.Tzdb[timeZoneId];
+            var instant = Instant.FromDateTimeOffset(value);
+            return instant.InZone(tz);
+        }
 
         public static DateTimeOffset? ToUserTimeZone(this TimeZoneBase model, DateTimeOffset value)
         {
@@ -13,8 +27,7 @@ namespace K9.DataAccessLayer.Extensions
                 return null;
             }
 
-            TimeZoneInfo userTimeZone = TimeZoneInfo.FindSystemTimeZoneById(model.UserTimeZone);
-            return TimeZoneInfo.ConvertTime(value, userTimeZone);
+            return value.ToZonedTime(model.UserTimeZone).ToDateTimeOffset();
         }
 
         public static DateTimeOffset? ToMyTimeZone(this TimeZoneBase model, DateTimeOffset value)
@@ -24,8 +37,7 @@ namespace K9.DataAccessLayer.Extensions
                 return null;
             }
 
-            TimeZoneInfo myTimeZone = TimeZoneInfo.FindSystemTimeZoneById(model.MyTimeZone);
-            return TimeZoneInfo.ConvertTime(value, myTimeZone);
+            return value.ToZonedTime(model.MyTimeZone).ToDateTimeOffset();
         }
 
         public static DateTimeOffset? ToUserTimeZone(this TimeZoneBase model, DateTimeOffset? value)
@@ -35,8 +47,7 @@ namespace K9.DataAccessLayer.Extensions
                 return null;
             }
 
-            TimeZoneInfo userTimeZone = TimeZoneInfo.FindSystemTimeZoneById(model.UserTimeZone);
-            return TimeZoneInfo.ConvertTime(value.Value, userTimeZone);
+            return value.Value.ToZonedTime(model.UserTimeZone).ToDateTimeOffset();
         }
 
         public static DateTimeOffset? ToMyTimeZone(this TimeZoneBase model, DateTimeOffset? value)
@@ -46,8 +57,7 @@ namespace K9.DataAccessLayer.Extensions
                 return null;
             }
 
-            TimeZoneInfo myTimeZone = TimeZoneInfo.FindSystemTimeZoneById(model.MyTimeZone);
-            return TimeZoneInfo.ConvertTime(value.Value, myTimeZone);
+            return value.Value.ToZonedTime(model.MyTimeZone).ToDateTimeOffset();
         }
 
     }

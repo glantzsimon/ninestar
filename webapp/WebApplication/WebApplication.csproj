@@ -1336,6 +1336,8 @@
     <Content Include="Views\Consultation\ScheduleConsultationSuccess.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DateTimeOffset.cshtml" />
     <Content Include="Views\KnowledgeBase\_AboutRelationships.cshtml" />
+    <Content Include="Views\Home\TermsOfService.cshtml" />
+    <Content Include="Views\Home\HowToRemoveYourData.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

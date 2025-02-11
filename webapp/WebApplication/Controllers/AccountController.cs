@@ -590,6 +590,13 @@ namespace K9.WebApplication.Controllers
             return View();
         }
 
+        [Route("remove-my-data")]
+        [Authorize]
+        public ActionResult RemoveMyData()
+        {
+            return RedirectToAction("ConfirmDeleteAccount", new { id = Current.UserId });
+        }
+
         public ActionResult ConfirmDeleteAccount(int id)
         {
             var user = _userRepository.Find(id);

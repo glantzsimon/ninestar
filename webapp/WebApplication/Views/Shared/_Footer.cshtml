@@ -4,7 +4,8 @@
 @{
     var termsText = TemplateProcessor.PopulateTemplate(Dictionary.AgreeToTerms, new
     {
-        privacypolicyurl = Url.Action("PrivacyPolicy", "Home")
+        PrivacyPolicyUrl = Url.Action("PrivacyPolicy", "Home"),
+        TermsOfServiceUrl = Url.Action("TermsOfService", "Home")
     });
 }
 
@@ -29,6 +30,7 @@
 			        <li class="text"><a href="@Url.Action("Index", "Predictions")"> @Dictionary.Predictions</a></li>
 			        <li class="text"><a href="@Url.Action("Index", "Biorhythms")"> @Dictionary.BiorhythmsLabel</a></li>
 			        <li class="text"><a href="@Url.Action("Index", "KnowledgeBase")"> @Dictionary.LearnNineStarKiTitle</a></li>
+			        <li class="text"><a href="@Url.Action("HowToRemoveYourData", "Home")">@Dictionary.HowToRemoveYourDataTitle</a></li>
 			    </ul>
 			</div>
 			<div class="clearfix"> </div>
@@ -38,7 +40,6 @@
 <div class="footer-copyright">
 	<div class="container">
 	    <p>@Html.Raw(termsText) </p>
-	    <p>&copy; Glantz Software Consulting Limited @DateTime.Now.Year - @K9.Base.Globalisation.Dictionary.AllRightsReserved.</p>
-
+        <p>&copy; @Dictionary.NineStarKiAstrology @DateTime.Now.Year - @K9.Base.Globalisation.Dictionary.AllRightsReserved.</p>
 	</div>
 </div>

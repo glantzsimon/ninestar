@@ -182,6 +182,8 @@
     <Content Include="Compatibility\en-gb\main-modality-same.htm" />
     <Content Include="General\en-gb\platinum-lifetime-membership-description.htm" />
     <Content Include="General\en-gb\platinum-weekly-membership-description.htm" />
+    <Content Include="General\en-gb\HowToRemoveYourData.htm" />
+    <Content Include="General\en-gb\TermsOfService.htm" />
     <Content Include="General\en-gb\what-you-get.htm" />
     <Content Include="General\en-gb\why-upgrade.htm" />
     <Content Include="Predictions\Monthly\en-gb\core-earth-month.htm" />

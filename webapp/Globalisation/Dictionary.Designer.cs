@@ -1384,7 +1384,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Whilst using this site, you agree to have read and accepted our &lt;a target=&quot;_blank&quot; href=&quot;{privacypolicyurl}&quot;&gt;terms of use, cookie and privacy policy&lt;/a&gt;.
+        ///   Looks up a localized string similar to Whilst using this site, you agree to have read and accepted our &lt;a target=&quot;_blank&quot; href=&quot;{privacypolicyurl}&quot;&gt;Privacy Policy&lt;/a&gt; and &lt;a target=&quot;_blank&quot; href=&quot;{privacypolicyurl}&quot;&gt;Terms of Service&lt;/a&gt;.
         /// </summary>
         public static string AgreeToTerms {
             get {
@@ -1950,7 +1950,8 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Please note that the &apos;Emotional Energy&apos; alone does not give a very detailed description of a person. It is important to also take into account the &apos;Fundamental Adult Nature&apos;, as well as the &apos;Mirror Energy&apos;. However, it does give a useful overview of their deeper character. The Emotional Energy also has quite a significant influence on intimate relationships, where the more emotional aspects of ourselves tend to be revealed. There is more information on that in the &lt;a href=&quot;{RelationshipsUrl}&quot;&gt;Relat [rest of string was truncated]&quot;;.
+        ///    Please note that the &apos;Emotional Energy&apos; alone does not give a very detailed description of a person. It is important to also take into account the &apos;Fundamental Adult Nature&apos;, as well as the &apos;Mirror Energy&apos;. However, it does give a useful overview of their deeper character. The Emotional Energy also has quite a significant influence on intimate relationships, where the more emotional aspects of ourselves tend to be revealed.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string character_energies_short_description {
             get {
@@ -2190,7 +2191,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to NineStar has been created to share the knowledge about 9 Star Ki astrology. This ancient system and the incredible wisdom within it can really help people to gain a better understanding of themselves and of their loved ones. It also helps us to understand and leverage the power of the many cycles that affect our lives..
+        ///   Looks up a localized string similar to This site has been created to share the knowledge about 9 Star Ki astrology. This ancient system and the incredible wisdom within it can really help people to gain a better understanding of themselves and of their loved ones. It also helps us to understand and leverage the power of the many cycles that affect our lives..
         /// </summary>
         public static string CompanyBlurbFooter {
             get {
@@ -3241,7 +3242,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Making a donation to NineStar will make a big impact on our ability to continue to provide and develop this resource. We are tremendously grateful for your support..
+        ///   Looks up a localized string similar to Making a donation to 9 Star Ki Astrology will make a big impact on our ability to continue to provide and develop this resource. We are tremendously grateful for your support..
         /// </summary>
         public static string DonationBlurb {
             get {
@@ -3358,7 +3359,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Donation To NineStar.
+        ///   Looks up a localized string similar to Donation To 9 Star Ki Astrology.
         /// </summary>
         public static string DonationToNineStar {
             get {
@@ -4644,6 +4645,35 @@ namespace K9.Globalisation {
         public static string High {
             get {
                 return ResourceManager.GetString("High", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    &lt;strong&gt;
+        ///        These are the instructions for removing all of your data.
+        ///    &lt;/strong&gt;
+        ///&lt;/p&gt;
+        ///
+        ///&lt;h4&gt;Instructions&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    To permanently remove all of your data, simply &lt;a href=&quot;{LoginUrl}&quot;&gt;click here&lt;/a&gt;. You will be asked to log into your account, if you do not already have a session open.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt; If you have any question regarding your data or require any assistance, please &lt;a href=&quot;mailto:support@9starkiastrology.com&quot;&gt;contact us&lt;/a&gt;.&lt;/p&gt;.
+        /// </summary>
+        public static string HowToRemoveYourData {
+            get {
+                return ResourceManager.GetString("HowToRemoveYourData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Instructions For Removing Your Data.
+        /// </summary>
+        public static string HowToRemoveYourDataTitle {
+            get {
+                return ResourceManager.GetString("HowToRemoveYourDataTitle", resourceCulture);
             }
         }
         
@@ -7215,7 +7245,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to NineStar.
+        ///   Looks up a localized string similar to 9 Star Ki Astrology.
         /// </summary>
         public static string NineStar {
             get {
@@ -7287,7 +7317,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to NineStar is the best online resource to learn all about 9 Star Ki Astrology. 9 Star Ki is an ancient system of astrology, largely unknown in the west, but slowly regaining popularity. It is simpler yet deeper and more intuitive than the zodiac and can offer some quite astonishing insights into our nature and the many cycles that influence our lives..
+        ///   Looks up a localized string similar to This site is the best online resource to learn all about 9 Star Ki Astrology. 9 Star Ki is an ancient system of astrology, largely unknown in the west, but slowly regaining popularity. It is simpler yet deeper and more intuitive than the zodiac and can offer some quite astonishing insights into our nature and the many cycles that influence our lives..
         /// </summary>
         public static string NineStarMetaDescriptionMain {
             get {
@@ -8021,20 +8051,13 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    &lt;strong&gt;
-        ///        This is the privacy notice of Glantz Software Consulting Limited. In this document, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot; refer to Glantz Software Consulting Limited.
-        ///        We are company number 9762805 registered in The United Kingdom.
-        ///    &lt;/strong&gt;
-        ///&lt;/p&gt;
-        ///
-        ///&lt;p&gt;
-        ///    &lt;strong&gt;
-        ///        Our registered office is at: SG House, 6 St Cross Road, Winchester, Hampshire, SO23 9HX.
+        ///        This is the privacy notice of 9 Star Ki Astrology. In this document, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot; refer to 9 Star Ki Astrology.
         ///    &lt;/strong&gt;
         ///&lt;/p&gt;
         ///
         ///&lt;h4&gt;Introduction&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    This privacy notice aims to inform you about how we collect and pr [rest of string was truncated]&quot;;.
+        ///    This privacy notice aims to inform you about how we collect and process any information that we collect from you, or that you provide to us. It covers information that could identify you (“personal information”) and information that could not. In the context of the law and this notice, “process” means collec [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PrivacyPolicy {
             get {
@@ -8129,7 +8152,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You have received a promo code from NineStar.
+        ///   Looks up a localized string similar to You have received a promo code from 9 Star Ki Astrology.
         /// </summary>
         public static string PromoCodeEmailTitle {
             get {
@@ -9717,6 +9740,37 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    &lt;strong&gt;Effective Date:&lt;/strong&gt;&lt;span&gt;3rd December 2019&lt;/span&gt;
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    &lt;strong&gt;
+        ///        Welcome to 9 Star Ki Astrology (https://9starkiastrology.com). These Terms of Service (&quot;Terms&quot;) govern your use of our website and services. By accessing or using our website, you agree to comply with these Terms.
+        ///    &lt;/strong&gt;
+        ///&lt;/p&gt;
+        ///
+        ///&lt;h4&gt;1. Acceptance of Terms&lt;/h4&gt;
+        ///
+        ///&lt;p&gt;
+        ///    By accessing or using our website, you agree to be bound by these Terms. If you do not agree to these Terms, please do not [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string TermsOfService {
+            get {
+                return ResourceManager.GetString("TermsOfService", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Terms of Service.
+        /// </summary>
+        public static string TermsOfServiceTitle {
+            get {
+                return ResourceManager.GetString("TermsOfServiceTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thank you for booking a 9 Star Ki consultation.
         /// </summary>
         public static string ThankyouForBookingConsultationEmailTitle {
@@ -10674,7 +10728,7 @@ namespace K9.Globalisation {
         ///&lt;/h4&gt;
         ///
         ///&lt;p&gt;
-        ///    Greetings and thank you for visiting NineStar. Whether you are new to 9 Star Ki or even new to astrology as a whole, you&apos;ve come to a great resource to find detailed and accurate information on this ancient and fascinating system of astrology.
+        ///    Greetings and thank you for visiting 9 Star Ki Astrology. Whether you are new to 9 Star Ki or even new to astrology as a whole, you&apos;ve come to a great resource to find detailed and accurate information on this ancient and fascinating system of astrology.
         ///&lt;/p&gt;
         ///
         ///&lt;h5&gt;
@@ -10682,7 +10736,7 @@ namespace K9.Globalisation {
         ///&lt;/h5&gt;
         ///
         ///&lt;p&gt;
-        ///    9 Star Ki is based off the 4000-year-old Chinese &apos;Book of Changes&apos; (the &apos;I Ching&apos;), whose pr [rest of string was truncated]&quot;;.
+        ///    9 Star Ki is based off the 4000-year-old Chinese &apos;Book of Changes&apos; (the &apos;I Ching&apos; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string welcome {
             get {
@@ -10714,7 +10768,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Welcome to NineStar.
+        ///   Looks up a localized string similar to Welcome to 9 Star Ki Astrology.
         /// </summary>
         public static string WelcomeSubTitle {
             get {

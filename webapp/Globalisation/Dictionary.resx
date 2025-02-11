@@ -134,10 +134,10 @@
     <value>Blessings</value>
   </data>
   <data name="CompanyBlurbFooter" xml:space="preserve">
-    <value>NineStar has been created to share the knowledge about 9 Star Ki astrology. This ancient system and the incredible wisdom within it can really help people to gain a better understanding of themselves and of their loved ones. It also helps us to understand and leverage the power of the many cycles that affect our lives.</value>
+    <value>This site has been created to share the knowledge about 9 Star Ki astrology. This ancient system and the incredible wisdom within it can really help people to gain a better understanding of themselves and of their loved ones. It also helps us to understand and leverage the power of the many cycles that affect our lives.</value>
   </data>
   <data name="NineStarMetaDescriptionMain" xml:space="preserve">
-    <value>NineStar is the best online resource to learn all about 9 Star Ki Astrology. 9 Star Ki is an ancient system of astrology, largely unknown in the west, but slowly regaining popularity. It is simpler yet deeper and more intuitive than the zodiac and can offer some quite astonishing insights into our nature and the many cycles that influence our lives.</value>
+    <value>This site is the best online resource to learn all about 9 Star Ki Astrology. 9 Star Ki is an ancient system of astrology, largely unknown in the west, but slowly regaining popularity. It is simpler yet deeper and more intuitive than the zodiac and can offer some quite astonishing insights into our nature and the many cycles that influence our lives.</value>
   </data>
   <data name="CompanyLegalDescription" xml:space="preserve">
     <value />
@@ -194,7 +194,7 @@
     <value>How much would you like to donate?</value>
   </data>
   <data name="DonationBlurb" xml:space="preserve">
-    <value>Making a donation to NineStar will make a big impact on our ability to continue to provide and develop this resource. We are tremendously grateful for your support.</value>
+    <value>Making a donation to 9 Star Ki Astrology will make a big impact on our ability to continue to provide and develop this resource. We are tremendously grateful for your support.</value>
   </data>
   <data name="Donations" xml:space="preserve">
     <value>Donations</value>
@@ -209,7 +209,7 @@
     <value>Donation To</value>
   </data>
   <data name="DonationToNineStar" xml:space="preserve">
-    <value>Donation To NineStar</value>
+    <value>Donation To 9 Star Ki Astrology</value>
   </data>
   <data name="MakeDonation" xml:space="preserve">
     <value>Make a Donation</value>
@@ -650,7 +650,7 @@
     <value>More About 9 Star Ki</value>
   </data>
   <data name="WelcomeSubTitle" xml:space="preserve">
-    <value>Welcome to NineStar</value>
+    <value>Welcome to 9 Star Ki Astrology</value>
   </data>
   <data name="LearnMoreAboutNineStarKi" xml:space="preserve">
     <value>Learn about 9 Star Ki</value>
@@ -1208,7 +1208,7 @@
     <value>Monthly Standard Membership</value>
   </data>
   <data name="NineStar" xml:space="preserve">
-    <value>NineStar</value>
+    <value>9 Star Ki Astrology</value>
   </data>
   <data name="NoChargeUntilText" xml:space="preserve">
     <value>You will not be charged for this change in plan until</value>
@@ -2024,7 +2024,7 @@
     <value>Code</value>
   </data>
   <data name="PromoCodeEmailTitle" xml:space="preserve">
-    <value>You have received a promo code from NineStar</value>
+    <value>You have received a promo code from 9 Star Ki Astrology</value>
   </data>
   <data name="AgreeToTerms" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>general\en-gb\agreetoterms.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -2898,5 +2898,17 @@
   </data>
   <data name="YourConsultations" xml:space="preserve">
     <value>Your Consultations</value>
+  </data>
+  <data name="TermsOfService" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>general\en-gb\termsofservice.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="TermsOfServiceTitle" xml:space="preserve">
+    <value>Terms of Service</value>
+  </data>
+  <data name="HowToRemoveYourData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>general\en-gb\howtoremoveyourdata.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="HowToRemoveYourDataTitle" xml:space="preserve">
+    <value>Instructions For Removing Your Data</value>
   </data>
 </root>

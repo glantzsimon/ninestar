@@ -1,0 +1,19 @@
+﻿@using K9.SharedLibrary.Helpers
+@{
+    ViewBag.Title = Dictionary.HowToRemoveYourDataTitle;
+    ViewBag.SubTitle = Dictionary.HowToRemoveYourDataTitle;
+
+    Layout = "../Shared/_LayoutForm.cshtml";
+}
+
+@Html.Partial("_BetaPopup")
+
+<div class="container main-content privacy-policy">
+    <article>
+        @using (Html.BeginBootstrapForm())
+        {
+            @MvcHtmlString.Create(TemplateProcessor.PopulateTemplate(Dictionary.HowToRemoveYourData, new { RemoveDataUrl = Url.Action("RemoveMyData", "Account") }))
+        }
+    </article>
+</div>
+

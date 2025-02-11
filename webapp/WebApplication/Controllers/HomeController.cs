@@ -32,6 +32,18 @@ namespace K9.WebApplication.Controllers
             return View();
         }
 
+        [Route("terms-of-service")]
+        public ActionResult TermsOfService()
+        {
+            return View();
+        }
+
+        [Route("how-to-remove-your-data")]
+        public ActionResult HowToRemoveYourData()
+        {
+            return View();
+        }
+
         public override string GetObjectName()
         {
             return string.Empty;

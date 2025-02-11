@@ -51,6 +51,10 @@
                 {
                     @Html.Panel(Dictionary.BiorhythmsDetails, Html.Partial("_BiorhythmsPills", Model).ToString())
                 }
+                else
+                {
+                    @Html.Partial("_ButtonsFooter")
+                }
             </article>
         </div>
     </div>

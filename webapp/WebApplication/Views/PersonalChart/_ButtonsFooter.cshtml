@@ -1,7 +1,7 @@
 ﻿@model K9.WebApplication.Models.NineStarKiModel
 
 <div>
-    <br />
+    <hr />
     @if (Model != null && Model.IsProcessed)
     {
         @Html.Partial("ActionLinkButtons/_PredictionsWithForm")
@@ -14,7 +14,7 @@
     }
 
     @Html.Partial("ActionLinkButtons/_Compatibility")
-    
+
     @Html.Partial("ActionLinkButtons/_KnowledgeBase")
 
     @Html.Partial("ActionLinkButtons/_BookConsultation")

@@ -27,8 +27,6 @@
             <article>
                 <div class="margin-bottom-20">
                     @Html.Panel("9 Star Ki Personal Chart", Dictionary.personal_chart, "chart")
-
-                    @Html.Partial("_ButtonsFooter")
                 </div>
             </article>
         }
@@ -41,4 +39,8 @@
     <article>
         @Html.Panel(Dictionary.PersonalChartDetails, Html.Partial("_ProfilePills", Model).ToString())
     </article>
+}
+else
+{
+    @Html.Partial("_ButtonsFooter")
 }

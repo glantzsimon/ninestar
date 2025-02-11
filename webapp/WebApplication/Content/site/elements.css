@@ -10,6 +10,9 @@ html, body {
     font-size: 100%;
     font-family: 'Candara', 'Sorts Mill Goudy', 'Petrona', 'Montserrat', sans-serif;
     font-weight: 400;
+    -webkit-text-size-adjust: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
 }
 
 body {

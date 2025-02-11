@@ -59,7 +59,7 @@ namespace K9.WebApplication.Services
         {
             userId = userId ?? Current.UserId;
             var membershipOptions = _membershipOptionRepository.Find(e => !e.IsDeleted).ToList();
-            var activeUserMembership = GetActiveUserMembership(userId);
+            var activeUserMembership = userId.HasValue ? GetActiveUserMembership(userId) : null;
 
             return new MembershipViewModel
             {

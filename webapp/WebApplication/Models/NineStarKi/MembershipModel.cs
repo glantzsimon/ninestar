@@ -34,11 +34,5 @@ namespace K9.WebApplication.Models
         public bool IsUpgrade => ActiveUserMembership != null &&
                                  ActiveUserMembership.MembershipOption.CanUpgradeTo(MembershipOption);
         
-        public bool IsPayable => IsSelectable && ActiveUserMembership?.CostOfRemainingActiveSubscription < MembershipOption.Price;
-
-        /// <summary>
-        /// Returns true when the user is upgrading but the new plan is shorter-term and costs less, despite being an upgrade
-        /// </summary>
-        public bool IsExtendedSwitch => IsUpgrade && !IsPayable;
     }
 }

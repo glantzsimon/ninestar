@@ -306,7 +306,7 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public ActionResult Register(string promoCode = null)
+        public ActionResult Register(string promoCode = null, string returnUrl = null)
         {
             ViewBag.RecaptchaSiteKey = _recaptchaConfig.RecaptchaSiteKey;
 
@@ -329,6 +329,8 @@ namespace K9.WebApplication.Controllers
                     ModelState.AddModelError("PromoCode", e.Message);
                 }
             }
+
+            TempData["ReturnUrl"] = returnUrl;
 
             return View(new RegisterViewModel
             {
@@ -393,6 +395,12 @@ namespace K9.WebApplication.Controllers
                         }
                     }
 
+                    // ToDo: ReturnUrl in Register
+                    //if (TempData["ReturnUrl"] != null)
+                    //{
+                    //    var returnUrl = TempData["ReturnUrl"].ToString();
+                    //    return RedirectToAction("AccountCreated", "Account", new { returnUrl }); ;
+                    //}
                     return RedirectToAction("AccountCreated", "Account");
                 }
 

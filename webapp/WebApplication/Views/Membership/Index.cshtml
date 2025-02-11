@@ -48,7 +48,7 @@
     <hr />
 
     @{
-        var memberships = Model.MembershipModels.Where(e => e.IsPayable).ToList();
+        var memberships = Model.MembershipModels.Where(e => e.MembershipOption.SubscriptionType > MembershipOption.ESubscriptionType.Free).ToList();
         var columnClass = "";
         var containerColumnClass = "";
 

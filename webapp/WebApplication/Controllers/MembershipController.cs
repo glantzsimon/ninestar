@@ -12,7 +12,6 @@ using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-    [Authorize]
     public class MembershipController : BaseNineStarKiController
     {
         private readonly ILogger _logger;
@@ -33,12 +32,14 @@ namespace K9.WebApplication.Controllers
             return View(_membershipService.GetMembershipViewModel());
         }
 
+        [Authorize]
         [Route("membership/signup")]
         public ActionResult PurchaseStart(int membershipOptionId)
         {
             return View(_membershipService.GetPurchaseMembershipModel(membershipOptionId));
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult ProcessPurchase(PurchaseModel purchaseModel)
         {
@@ -54,6 +55,7 @@ namespace K9.WebApplication.Controllers
             }
         }
 
+        [Authorize]
         [Route("membership/signup/success")]
         public ActionResult PurchaseSuccess()
         {
@@ -68,12 +70,14 @@ namespace K9.WebApplication.Controllers
             });
         }
         
+        [Authorize]
         [Route("membership/signup/cancel/success")]
         public ActionResult PurchaseCancelSuccess()
         {
             return View();
         }
         
+        [Authorize]
         [Route("membership/switch")]
         public ActionResult SwitchStart(int membershipOptionId)
         {
@@ -85,6 +89,7 @@ namespace K9.WebApplication.Controllers
             return View("SwitchPurchaseStart", switchMembershipModel);
         }
 
+        [Authorize]
         [Route("membership/switch/review")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -98,6 +103,7 @@ namespace K9.WebApplication.Controllers
             return View(switchMembershipModel);
         }
         
+        [Authorize]
         [HttpPost]
         [Route("membership/switch/processing")]
         [ValidateAntiForgeryToken]
@@ -116,6 +122,7 @@ namespace K9.WebApplication.Controllers
             return View("SwitchPurchase", _membershipService.GetSwitchMembershipModel(model.ItemId));
         }
         
+        [Authorize]
         [Route("membership/switch/success")]
         public ActionResult SwitchSuccess()
         {

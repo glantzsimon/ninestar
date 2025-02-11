@@ -106,7 +106,7 @@ namespace K9.WebApplication.Helpers
         {
             var baseController = html.ViewContext.Controller as BaseNineStarKiController;
             var activeUserMembership = baseController?.GetActiveUserMembership();
-            return html.PayWall<NineStarKiModel>(section, null, () => activeUserMembership.IsAuthorisedToViewPaidContent(), silent, displayHtml);
+            return html.PayWall<NineStarKiModel>(section, null, () => activeUserMembership.IsAuthorisedToViewPaidContent() || SessionHelper.CurrentUserIsAdmin(), silent, displayHtml);
         }
 
         public static IDisposable PayWall<T>(this HtmlHelper html, ESection section, T model, Func<bool?> condition, bool silent = false, string displayHtml = "")
@@ -161,7 +161,7 @@ namespace K9.WebApplication.Helpers
         {
             var baseController = html.ViewContext.Controller as BaseNineStarKiController;
             var activeUserMembership = baseController?.GetActiveUserMembership();
-            var isAuthorised = activeUserMembership != null && activeUserMembership.IsAuthorisedToViewPaidContent();
+            var isAuthorised = activeUserMembership != null && activeUserMembership.IsAuthorisedToViewPaidContent() || SessionHelper.CurrentUserIsAdmin();
 
             if (!(WebSecurity.IsAuthenticated && isAuthorised))
             {

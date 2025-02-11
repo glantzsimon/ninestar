@@ -1,6 +1,7 @@
 ﻿@using K9.Base.WebApplication.Extensions
+@using K9.SharedLibrary.Extensions
 @model int?
 @{
-    var value = this.GetDropdownData().GetName<MembershipOption>(Model, true, "Name");
+    var value = this.GetDropdownData().GetName<MembershipOption>(Model, true, "Name").SplitOnCapitalLetter();
 }
 <div>@value</div>

@@ -3,7 +3,6 @@ param([String]$publishPassword='', [String]$env='')
 $publishDir = "publish"
 $appDir = "webapp"
 $projectPath = "WebApplication\WebApplication.csproj"
-$mobileProjectPath = "MobileApplication\MobileApplication.csproj"
 	
 function ProcessErrors(){
   if($? -eq $false)
@@ -28,8 +27,6 @@ function _Publish() {
   ProcessErrors
   
   Msbuild $projectPath /p:DeployOnBuild=true /p:PublishProfile=$env /p:Configuration=$env /p:AllowUntrustedCertificate=true /p:Password=$publishPassword /p:LangVersion=7.3
-    
-  # Msbuild $mobileProjectPath /p:DeployOnBuild=true /p:PublishProfile=$env /p:Configuration=$env /p:AllowUntrustedCertificate=true /p:Password=$publishPassword  
   
   ProcessErrors
   popd

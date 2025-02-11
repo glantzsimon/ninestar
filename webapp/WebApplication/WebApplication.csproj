@@ -1140,7 +1140,6 @@
     <Content Include="Views\Shared\EditorTemplates\Energy.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\EnergyType.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Relationships\Index.cshtml" />
     <Content Include="Views\NineStarKi\_EnergyTitle.cshtml" />
     <Content Include="Views\Shared\Controls\_CollapsiblePanel.cshtml" />
     <Content Include="Views\Shared\_GoogleAnalytics.cshtml" />
@@ -1283,7 +1282,6 @@
     <Content Include="Views\Account\FacebookPostRegsiter.cshtml" />
     <Content Include="Views\PersonalChart\_Sexuality.cshtml" />
     <Content Include="Views\PersonalChart\AboutProfile.cshtml" />
-    <Content Include="Views\Relationships\_AboutRelationships.cshtml" />
     <Content Include="Views\Compatibility\_CompatibilityYinYang.cshtml" />
     <Content Include="Views\Users\AssignMembershipSuccess.cshtml" />
     <Content Include="Views\Users\AssignMembershipStart.cshtml" />
@@ -1337,6 +1335,7 @@
     <Content Include="Views\Consultation\ViewAvailableSlots.cshtml" />
     <Content Include="Views\Consultation\ScheduleConsultationSuccess.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DateTimeOffset.cshtml" />
+    <Content Include="Views\KnowledgeBase\_AboutRelationships.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

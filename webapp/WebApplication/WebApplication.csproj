@@ -270,6 +270,7 @@
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
+    <Compile Include="Controllers\CssController.cs" />
     <Compile Include="Controllers\BaseNineStarKiController.cs" />
     <Compile Include="Controllers\ConsultationsController.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
@@ -888,6 +889,9 @@
     <Content Include="Scripts\library\vticker-min.js" />
     <Content Include="Scripts\template\scroller.js" />
     <Content Include="sitemap.xml" />
+    <Content Include="Videos\Shared\stars-bg.mp4" />
+    <Content Include="Videos\Shared\stars-bg.webm" />
+    <Content Include="Videos\Shared\9Star-Bg3.mp4" />
     <Content Include="Videos\Shared\stars-bg-high.mp4" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

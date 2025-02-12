@@ -7,5 +7,7 @@
         public string DefaultUserId { get; set; }
         public string WhatsAppSupportNumber { get; set; }
         public string CurrentTimeZone { get; set; }
+        public string StorjBaseImagesPath { get; set; }
+        public string StorjBaseVideoPath { get; set; }
     }
 }

@@ -1,20 +1,17 @@
 ﻿.time-slots {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }
-
 .time-slots p {
-    margin: 0;
-    line-height: 1em;
-    font-size: 1.3em;
+  margin: 0;
+  line-height: 1em;
+  font-size: 1.3em;
 }
-
 .time-slots a {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }
-
 .time-slots h4 {
-    font-size: 1.2em;
-    margin: 0 !important;
+  font-size: 1.2em;
+  margin: 0 !important;
 }

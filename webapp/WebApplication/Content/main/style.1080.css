@@ -1,17 +1,5 @@
-@media (max-width:1080px) {
-	.agile-footer-grid {
-		width: 50%;
-		margin: 0 0 2em 0;
-	}
-	.agile-footer-grid:nth-child(3), .agile-footer-grid:nth-child(4) {
-		margin: 0;
-	}
-    
-	.team {
-		padding: 4em 0;
-	}
-
-    #bs-navbar-collapse-1 {
-        font-size: 0.8em;
-    }
+﻿@media (max-width: 1080px) {
+  #bs-navbar-collapse-1 {
+    font-size: 0.8em;
+  }
 }

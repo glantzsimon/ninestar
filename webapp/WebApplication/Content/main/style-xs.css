@@ -1,11 +1,10 @@
-﻿@media (max-width:576px) {
-
-    .panel-body .col-xs-12 {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .yearly-planner-container, .monthly-planner-container {
-        font-size: 0.6em;
-    }
+﻿@media (max-width: 576px) {
+  .panel-body .col-xs-12 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .yearly-planner-container,
+  .monthly-planner-container {
+    font-size: 0.6em;
+  }
 }

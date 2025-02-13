@@ -1,19 +1,16 @@
 ﻿.sinusgraph {
-    width: 100%;
-    border: 1px solid #eeeeee;
+  width: 100%;
+  border: 1px solid #eeeeee;
 }
-
 .highgauge {
-    width: 100%;
-    border: 1px solid #eeeeee;
+  width: 100%;
+  border: 1px solid #eeeeee;
 }
-
 #biorhythms .panel-default {
-    margin-top: 0;
+  margin-top: 0;
 }
-
 .biorhythms-container {
-    padding: 0 !important;
-    margin-bottom: 0 !important;
-    margin-top: 0 !important;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
 }

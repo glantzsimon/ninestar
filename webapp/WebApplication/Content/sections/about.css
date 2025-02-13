@@ -1,9 +1,8 @@
 ﻿.energies-summary h4:first-child {
-    margin-top: 0;
+  margin-top: 0;
 }
-
 .modality-energy-container {
-    padding: 5px;
-    padding-bottom: 0;
-    margin-bottom: 0;
+  padding: 5px;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }

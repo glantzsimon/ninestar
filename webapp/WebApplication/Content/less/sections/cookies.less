@@ -1,0 +1,40 @@
+﻿@import "../config/colours.less";
+
+#cookie-warning-container {
+    position: fixed;
+    z-index: 100000;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 1em;
+    line-height: 1.6em;
+
+    .alert {
+        border-radius: 0 !important;
+        margin: 0;
+        background-color: @gunmetal-grey !important;
+        color: @snow-white !important;
+        text-shadow: none !important;
+
+        h4 {
+            color: @snow-white !important;
+            font-weight: bold;
+        }
+    }
+
+    a {
+        opacity: 0.8;
+        margin-top: -5px;
+        color: white;
+
+        &:not(.close) {
+            text-decoration: underline;
+        }
+    }
+
+    span {
+        display: inline-block;
+        margin-top: 5px;
+    }
+}
+

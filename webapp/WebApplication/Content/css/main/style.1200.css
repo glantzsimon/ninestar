@@ -1,0 +1,22 @@
+@media(max-width:1200px) {
+    .captn-top h4 {
+        font-size: 0.8em;
+    }
+
+    .captn-top p {
+        font-size: 0.8em;
+    }
+
+    div.main-logo {
+        height: 120px;
+        width: 120px;
+        background-size: contain;
+        background-image: url(../../Images/company/logo-med.png);
+    }
+
+    #bs-navbar-collapse-1 {
+        padding-left: 3%;
+        padding-right: 3%;
+        font-size: 0.9em;
+    }
+}

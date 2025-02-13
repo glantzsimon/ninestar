@@ -1,97 +1,80 @@
-@media (max-width:736px) {
-    .navbar-header {
-        text-align: center;
-    }
-
-    .navbar-toggle {
-        float: none;
-        margin-right: 0;
-    }
-
-    .navbar-default .navbar-toggle {
-        border-color: #fff;
-        background-color: #000020;
-    }
-
-        .navbar-default .navbar-toggle .icon-bar {
-            background-color: #fff;
-        }
-
-        .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-            background-color: #ff9800;
-        }
-
-    .top-nav ul li {
-        display: block;
-        float: none;
-        width: 100% !important;
-    }
-
-    .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-        border: none;
-        position: absolute;
-        width: 100%;
-        box-shadow: none;
-        z-index: 999;
-    }
-
-    .team {
-        padding: 3.5em 0;
-    }
-    
-    ul.main-navbar .open ul.dropdown-menu {
-        background-color: rgba(0, 0, 0, 0.6);
-        border-radius: 5px;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-    }
-
-    ul.main-navbar .open ul.dropdown-menu > li:hover > a, ul.main-navbar ul.dropdown-menu > li:focus > a {
-        background-color: rgba(0, 0, 0, 0.05) !important;
-        color: #FF9800 !important;
-        font-weight: bold !important;
-        -webkit-transition: none;
-        -o-transition: none;
-        transition: none;
-    }
-
-    #main-menu-container.menu-small {
-        height: 50px !important;
-    }
-
-    .top-nav ul li a {
-        font-size: 0.9em !important;
-    }
-
-    .page {
-        padding: 10px !important;
-    }
-
-    .container-fluid {
-        padding-left: 7px;
-        padding-right: 7px;
-    }
-
-    .page h2, .page h4 {
-        width: 100%;
-    }
-
-    .page .well {
-        padding: 15px !important;
-    }
-
-    .page .well-mobile {
-        padding: 0 !important;
-        margin-top: 10px !important;
-    }
-
-    .panel-body h4 {
-        padding-left: 5px !important;
-        padding-right: 5px !important;
-    }
-
-    .panel-body .table-responsive {
-        margin-left: 5px;
-        margin-right: 5px;
-    }
+﻿@media (max-width: 736px) {
+  .navbar-header {
+    text-align: center;
+  }
+  .navbar-toggle {
+    float: none;
+    margin-right: 0;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: #ffffff;
+    background-color: #000020;
+  }
+  .navbar-default .navbar-toggle:hover,
+  .navbar-default .navbar-toggle:focus {
+    background-color: #ff9800;
+  }
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: #ffffff;
+  }
+  .navbar-default .navbar-collapse,
+  .navbar-default .navbar-form {
+    border: none;
+    position: absolute;
+    width: 100%;
+    box-shadow: none;
+    z-index: 999;
+  }
+  .top-nav ul li {
+    display: block;
+    float: none;
+    width: 100% !important;
+  }
+  .top-nav ul li a {
+    font-size: 0.9em !important;
+  }
+  ul.main-navbar .open ul.dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  ul.main-navbar .open ul.dropdown-menu > li:hover > a,
+  ul.main-navbar .open ul.dropdown-menu > li:focus > a {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    color: #FF9800 !important;
+    font-weight: bold !important;
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
+  #main-menu-container.menu-small {
+    height: 50px !important;
+  }
+  .page {
+    padding: 10px !important;
+  }
+  .page h2,
+  .page h4 {
+    width: 100%;
+  }
+  .page .well {
+    padding: 15px !important;
+  }
+  .page .well-mobile {
+    padding: 0 !important;
+    margin-top: 10px !important;
+  }
+  .container-fluid {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+  .panel-body h4 {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+  .panel-body .table-responsive {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 }

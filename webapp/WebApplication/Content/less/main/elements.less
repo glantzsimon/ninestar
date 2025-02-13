@@ -1,0 +1,98 @@
+﻿@import "../config/colours.less";
+
+body a, h4 {
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+
+html, body {
+    font-size: 100%;
+    font-family: 'Candara', 'Sorts Mill Goudy', 'Petrona', 'Montserrat', sans-serif;
+    font-weight: 400;
+    -webkit-text-size-adjust: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+body {
+    background: @snow-white;
+    color: @deep-grey;
+}
+
+h3, h4 {
+    color: @medium-blue !important;
+}
+
+div.text-center > h3 {
+    font-size: 1.2em;
+}
+
+h5 {
+    color: @primary-blue !important;
+
+    &.dark {
+        color: @medium-blue !important;
+    }
+}
+
+h4 {
+    line-height: 1.3em;
+}
+
+h5 {
+    line-height: 1.2em;
+}
+
+article {
+    line-height: 1.6em !important;
+    margin-bottom: 20px;
+
+    h4 {
+        margin-top: 32px;
+        margin-bottom: 15px;
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+
+    h5 {
+        margin-top: 32px;
+        margin-bottom: 15px;
+        font-weight: bold;
+        font-size: 1.2em;
+        line-height: 1.5em;
+    }
+}
+
+p {
+    line-height: 1.6em !important;
+    margin-bottom: 20px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+form div.well h3 {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid @light-silver;
+    line-height: 1.3em;
+    font-size: 1.4em;
+}
+
+.footer {
+    h3, h4, h5 {
+        color: @warm-grey !important;
+    }
+}
+
+hr {
+    border-color: @light-silver;
+}
+
+button .fa, a .fa {
+    margin-right: 2px;
+}

@@ -1,0 +1,77 @@
+﻿@import "../config/colours.less";
+
+.nav-tabs > li > a {
+    border-right: 1px solid @ghost-white;
+    margin-bottom: 4px;
+}
+
+.nav-pills > li > a, .nav-tabs > li > a {
+    background-color: @light-silver;
+}
+
+.nav-pills > li.active > a, .nav-tabs > li.active > a {
+    background-color: @primary-blue;
+    color: white;
+}
+
+.nav-tabs a, .nav-pills a {
+    font-size: 1.2em !important;
+}
+
+ul.image-pill {
+    margin-bottom: 0;
+
+    div.img-rounded {
+        height: 60px;
+        width: 60px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 10px 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    li {
+        height: 100%;
+
+        &.active a {
+            background-color: white !important;
+            -webkit-box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.2); /* Top shadow */
+            -moz-box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.2); /* Top shadow */
+            box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.2); /* Top shadow */
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+
+            &:hover {
+                background-color: white !important;
+                z-index: 2;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+        }
+
+        &:not(:last-child) a {
+            margin-right: 1px;
+        }
+
+        &:not(.active) a:hover {
+            background-color: white !important;
+            -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+
+        a {
+            background-color: transparent !important;
+            font-size: 0.95em !important;
+            font-weight: bold;
+            color: @medium-blue !important;
+        }
+    }
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    border-radius: 10px;
+}

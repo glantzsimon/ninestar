@@ -1,29 +1,16 @@
-@media (max-width:320px) {
-	.tabs .nav-tabs li a {
-		padding: 1em;
-	}
-	.main-heading h3, .agileits-top-heading h2 {
-		letter-spacing: 1px;
-	}
-	.main-section h4 {
-		font-size: 1em;
-	}
-	.agile-footer-grid h4 {
-		font-size: 1em;
-	}
-	.top-nav ul li a {
-		font-size: .9em;
-		padding: .5em;
-	}
-	.agileinfo-social-grids ul li a i.fa {
-		width: 30px;
-		height: 30px;
-		line-height: 2.4em;
-	}
-	.captn-top h4 {
-		font-size: 0.8em;
-	}
-	.captn-top p {
-		font-size: 0.8em;
-	}
+﻿@media (max-width: 320px) {
+  .tabs .nav-tabs li a {
+    padding: 1em;
+  }
+  .main-heading h3,
+  .agileits-top-heading h2 {
+    letter-spacing: 1px;
+  }
+  .main-section h4 {
+    font-size: 1em;
+  }
+  .top-nav ul li a {
+    font-size: .9em;
+    padding: .5em;
+  }
 }

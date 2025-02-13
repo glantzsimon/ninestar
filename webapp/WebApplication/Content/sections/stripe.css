@@ -1,22 +1,20 @@
 ﻿h5 {
-    margin-top: 0;
+  margin-top: 0;
 }
-
 .powered-by-stripe {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    height: auto;
-    padding: 11px;
-    border-radius: 5px;
-    background-image: url(../../../images/shared/powered-by-stripe-cards.png);
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: center;
-    background-size: contain;
-    margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: auto;
+  padding: 11px;
+  border-radius: 5px;
+  background-image: url(../../images/shared/powered-by-stripe-cards.png);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: contain;
+  margin-bottom: 10px;
 }
-
 .security-info {
-    font-size: 0.8em;
+  font-size: 0.8em;
 }

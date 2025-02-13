@@ -1,0 +1,401 @@
+﻿[
+  {
+    "inputFile": "Content/less/main/elements.less",
+    "outputFile": "Content/main/elements.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/main/style.less",
+    "outputFile": "Content/main/style.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/main/style-lg.less",
+    "outputFile": "Content/main/style-lg.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/main/style-md.less",
+    "outputFile": "Content/main/style-md.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/main/style-sm.less",
+    "outputFile": "Content/main/style-sm.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/main/style-xs.less",
+    "outputFile": "Content/main/style-xs.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/main/style.1024.less",
+    "outputFile": "Content/main/style.1024.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/main/style.1080.less",
+    "outputFile": "Content/main/style.1080.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/main/style.1200.less",
+    "outputFile": "Content/main/style.1200.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/main/style.320.less",
+    "outputFile": "Content/main/style.320.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/main/style.375.less",
+    "outputFile": "Content/main/style.375.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/main/style.384.less",
+    "outputFile": "Content/main/style.384.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/main/style.414.less",
+    "outputFile": "Content/main/style.414.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/main/style.480.less",
+    "outputFile": "Content/main/style.480.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/main/style.525.less",
+    "outputFile": "Content/main/style.525.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/main/style.610.less",
+    "outputFile": "Content/main/style.610.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/main/style.736.less",
+    "outputFile": "Content/main/style.736.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/main/style.760.less",
+    "outputFile": "Content/main/style.760.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/main/style.768.less",
+    "outputFile": "Content/main/style.768.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/main/style.991.less",
+    "outputFile": "Content/main/style.991.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/bootstrap-custom/shared.less",
+    "outputFile": "Content/bootstrap-custom/shared.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/bootstrap-custom/shared-md.less",
+    "outputFile": "Content/bootstrap-custom/shared-md.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/bootstrap-custom/shared-sm.less",
+    "outputFile": "Content/bootstrap-custom/shared-sm.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/bootstrap-custom/shared-xs.less",
+    "outputFile": "Content/bootstrap-custom/shared-xs.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/controls/carousel.less",
+    "outputFile": "Content/controls/carousel.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/controls/fadeIn.less",
+    "outputFile": "Content/controls/fadeIn.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/controls/filesource.less",
+    "outputFile": "Content/controls/filesource.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/controls/fileUpload.less",
+    "outputFile": "Content/controls/fileUpload.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/controls/layout.less",
+    "outputFile": "Content/controls/layout.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/controls/pageSpinner.less",
+    "outputFile": "Content/controls/pageSpinner.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/controls/panel.less",
+    "outputFile": "Content/controls/panel.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/controls/picture-frame.less",
+    "outputFile": "Content/controls/picture-frame.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/controls/pills.less",
+    "outputFile": "Content/controls/pills.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/controls/scroller.less",
+    "outputFile": "Content/controls/scroller.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/controls/separator.less",
+    "outputFile": "Content/controls/separator.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/controls/tables.less",
+    "outputFile": "Content/controls/tables.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/controls/testimonial.less",
+    "outputFile": "Content/controls/testimonial.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/controls/validation.less",
+    "outputFile": "Content/controls/validation.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/controls/video.less",
+    "outputFile": "Content/controls/video.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/device/desktop.less",
+    "outputFile": "Content/device/desktop.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/device/mobile.less",
+    "outputFile": "Content/device/mobile.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/device/tablet.less",
+    "outputFile": "Content/device/tablet.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/about.less",
+    "outputFile": "Content/sections/about.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/archive.less",
+    "outputFile": "Content/sections/archive.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/biorhythms.less",
+    "outputFile": "Content/sections/biorhythms.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/book-consultation.less",
+    "outputFile": "Content/sections/book-consultation.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/compatibility.less",
+    "outputFile": "Content/sections/compatibility.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/cookies.less",
+    "outputFile": "Content/sections/cookies.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/footer.less",
+    "outputFile": "Content/sections/footer.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/knowledgebase.less",
+    "outputFile": "Content/sections/knowledgebase.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/membership.less",
+    "outputFile": "Content/sections/membership.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/navbar.less",
+    "outputFile": "Content/sections/navbar.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/ninestar.less",
+    "outputFile": "Content/sections/ninestar.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/payments.less",
+    "outputFile": "Content/sections/payments.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/predictions.less",
+    "outputFile": "Content/sections/predictions.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/privacypolicy.less",
+    "outputFile": "Content/sections/privacypolicy.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/stripe.less",
+    "outputFile": "Content/sections/stripe.css",
+    "options": {
+      "compress": false
+    }
+  }
+]

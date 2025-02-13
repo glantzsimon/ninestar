@@ -1,0 +1,173 @@
+@import "../config/colours.less";
+@import "../config/paths.less";
+
+@font-face {
+    font-family: 'candara';
+    font-style: normal;
+    src: url('@{fonts-path}/candara.ttf') format('truetype');
+}
+
+.background-stars {
+    background: url(@{images-path}/background/yin-yang.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.background-fixed {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: fixed;
+    z-index: -10;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Keep the video in the background */
+
+    video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.jarallax {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.flag-item {
+    width: 30px;
+}
+
+.well {
+    background-image: -webkit-linear-gradient(top, @whisper-white 0, @almost-white 100%);
+    background-image: -o-linear-gradient(top, @whisper-white 0, @almost-white 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(@whisper-white), to(@almost-white));
+    background-image: linear-gradient(to bottom, @whisper-white 0, @almost-white 100%);
+
+    h4:first-of-type {
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+}
+
+.btn {
+    margin-bottom: 4px;
+}
+
+.page {
+    margin: 3em auto;
+    padding: 30px 30px 10px 30px;
+    width: auto;
+    max-width: 1180px;
+    border: none;
+    background: @snow-white;
+}
+
+.mainContent {
+    position: relative;
+    width: 100%;
+}
+
+.roundCorners {
+    border-radius: 6px;
+}
+
+.alphaBackground {
+    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.9);
+    filter: alpha(opacity=90);
+}
+
+.shadow {
+    -webkit-box-shadow: 0 0 64px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 64px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 64px rgba(0, 0, 0, 0.5);
+}
+
+.shadow-light {
+    -webkit-box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+}
+
+a.btn {
+    color: @snow-white !important;
+    text-decoration: none !important;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+a#toTop {
+    display: block;
+    width: 100%;
+    background: @almost-black;
+    text-align: center;
+    color: white;
+    -webkit-transition: all 1.5s ease-out;
+    -moz-transition: all 1.5s ease-out;
+    transition: all 1.5s ease-out;
+
+    &:hover {
+        color: @bold-orange;
+    }
+}
+
+.hidden-date-field {
+    opacity: 0;
+    height: 0;
+    position: absolute;
+}
+
+.seo {
+    font-size: 0.3em;
+    position: fixed;
+    left: -15000px;
+    top: -20000px;
+    width: 1px;
+    height: 2px;
+}
+
+.main-content {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.inline-form {
+    display: inline-block;
+
+    form {
+        display: inline-block;
+    }
+}
+
+li.divider {
+    height: 1px !important;
+    margin: 9px 0 !important;
+    overflow: hidden !important;
+    background-color: @soft-grey !important;
+}

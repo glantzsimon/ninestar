@@ -1,63 +1,53 @@
 ﻿.footer {
-    background: #1f1f1f;
-    padding: 25px;
-    margin: 0 0 3em 0;
+  background: #1f1f1f;
+  padding: 25px;
+  margin: 0 0 0 0;
 }
-
-    .footer h4 {
-        color: #ffffff;
-        font-size: 1.3em;
-        font-weight: 600;
-        margin: 0 0 1em 0;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-    }
-
-    .footer p {
-        color: #8a8a8a;
-        font-size: .9em;
-        line-height: 1.8em;
-        margin: 0;
-    }
-
-        .footer p span {
-            display: block;
-            margin: 1em 0 0 0;
-        }
-
-    .footer ul {
-        padding: 0;
-        margin: 0;
-    }
-
-        .footer ul li {
-            list-style-type: none;
-            color: #8a8a8a;
-            line-height: 1.8em;
-            list-style-type: none;
-            display: block;
-            margin-bottom: .5em;
-            font-size: .9em;
-        }
-
-            .footer ul li a {
-                color: #8a8a8a;
-                text-decoration: none;
-            }
-
-                .footer ul li a:hover {
-                    color: #ff9800;
-                }
-
+.footer h4 {
+  color: #ffffff;
+  font-size: 1.3em;
+  font-weight: 600;
+  margin: 0 0 1em 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.footer p {
+  color: #8a8a8a;
+  font-size: .9em;
+  line-height: 1.8em;
+  margin: 0;
+}
+.footer p span {
+  display: block;
+  margin: 1em 0 0 0;
+}
+.footer ul {
+  padding: 0;
+  margin: 0;
+}
+.footer ul li {
+  color: #8a8a8a;
+  line-height: 1.8em;
+  list-style-type: none;
+  display: block;
+  margin-bottom: .5em;
+  font-size: .9em;
+}
+.footer ul li a {
+  color: #8a8a8a;
+  text-decoration: none;
+}
+.footer ul li a:hover {
+  color: #ff9800;
+}
 .footer-copyright {
-    padding: 1em 0;
-    background: #0f1215;
-    text-align: center;
+  padding: 1em 0;
+  background: #0f1215;
+  text-align: center;
 }
-
-    .footer-copyright p {
-        color: #8a8a8a;
-        font-size: .9em;
-        line-height: 1.6em;
-        margin: 0;
-    }
+.footer-copyright p {
+  color: #8a8a8a;
+  font-size: .9em;
+  line-height: 1.6em;
+  margin: 0;
+}

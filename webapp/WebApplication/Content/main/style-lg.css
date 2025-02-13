@@ -1,34 +1,31 @@
-﻿@media (min-width:993px) {
-    
-    .btn:not(:last-of-type) {
-        margin-right: 2px;
-    }
-
-    form .well .col-sm-6, .well form .col-sm-6,
-    form .well .col-sm-12, .well form .col-sm-12 {
-        padding: 0;
-    }
-
-    form .well div .col-sm-6:first-of-type, .well form div .col-sm-6:first-of-type {
-        padding-right: 5px;
-        padding-left: 0 !important;
-    }
-
-    form .well div .col-sm-6:last-of-type, .well form div .col-sm-6:last-of-type {
-        padding-left: 5px;
-    }
-
-    .panel-body .col-md-6:first-child {
-        padding-left: 0;
-        padding-right: 7px;
-    }
-
-    .panel-body .col-md-6:last-child {
-        padding-left: 7px;
-        padding-right: 0;
-    }
-
-    .mobile-only {
-        display: none !important;
-    }
+﻿@media (min-width: 993px) {
+  .btn:not(:last-of-type) {
+    margin-right: 2px;
+  }
+  form .well .col-sm-6,
+  .well form .col-sm-6,
+  form .well .col-sm-12,
+  .well form .col-sm-12 {
+    padding: 0;
+  }
+  form .well div .col-sm-6:first-of-type,
+  .well form div .col-sm-6:first-of-type {
+    padding-right: 5px;
+    padding-left: 0 !important;
+  }
+  form .well div .col-sm-6:last-of-type,
+  .well form div .col-sm-6:last-of-type {
+    padding-left: 5px;
+  }
+  .panel-body .col-md-6:first-child {
+    padding-left: 0;
+    padding-right: 7px;
+  }
+  .panel-body .col-md-6:last-child {
+    padding-left: 7px;
+    padding-right: 0;
+  }
+  .mobile-only {
+    display: none !important;
+  }
 }

@@ -1,9 +1,10 @@
-﻿@model AlertOptions
+﻿@using K9.WebApplication.Config
+@model AlertOptions
 
 <div class="text-center">
     @if (Model.AlertType != EAlertType.Unspecified)
     {
-        <img alt="@Model.AlertType.ToString()" src="~/Images/ui/@Model.GetAlertImage()"/>
+        <img alt="@Model.AlertType.ToString()" src="@DefaultValuesConfiguration.Instance.StorjBaseImagesPath/ui/@Model.GetAlertImage().ToLower()"/>
     }
 
     <h3><strong>@MvcHtmlString.Create(@Model.Message)</strong>

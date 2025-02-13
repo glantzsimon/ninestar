@@ -1,4 +1,5 @@
 ﻿@using K9.SharedLibrary.Extensions
+@using K9.WebApplication.Config
 @using K9.WebApplication.Enums
 @using K9.WebApplication.Extensions
 @using K9.WebApplication.Helpers
@@ -17,28 +18,28 @@
         <li class="active">
             <a data-toggle="tab" href="#current-monthly-cycle">
                 @Dictionary.MonthlyPrediction
-                <div class="img-rounded image-pill" style="background-image: url('Images/ui/moon.png');"></div>
+                <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.StorjBaseImagesPath/ui/moon.png');"></div>
             </a>
         </li>
 
         <li>
             <a data-toggle="tab" href="#current-yearly-cycle">
                 @Dictionary.YearlyPrediction
-                <div class="img-rounded image-pill" style="background-image: url('Images/ui/sun.png');"></div>
+                <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.StorjBaseImagesPath/ui/sun.png');"></div>
             </a>
         </li>
 
         <li>
             <a data-toggle="tab" href="#monthly-planner">
                 @Dictionary.MonthlyPlanner
-                <div class="img-rounded image-pill" style="background-image: url('Images/ui/monthly-planner.png');"></div>
+                <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.StorjBaseImagesPath/ui/monthly-planner.png');"></div>
             </a>
         </li>
 
         <li>
             <a data-toggle="tab" href="#yearly-planner">
                 @Dictionary.YearlyPlanner
-                <div class="img-rounded image-pill" style="background-image: url('Images/ui/yearly-planner.png');"></div>
+                <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.StorjBaseImagesPath/ui/yearly-planner.png');"></div>
             </a>
         </li>
     </ul>

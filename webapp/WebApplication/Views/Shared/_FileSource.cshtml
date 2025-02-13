@@ -1,4 +1,5 @@
 ﻿@using K9.SharedLibrary.Extensions
+@using K9.WebApplication.Config
 @model K9.SharedLibrary.Models.FileSource
 @{
     var displayStyle = Model.UploadedFiles.Any() ? "display: block;" : "display: none;";
@@ -27,15 +28,15 @@
                         }
                         else if (assetInfo.IsVideo())
                         {
-                            <img src="~/Images/ui/video.png">
+                            <img src="@DefaultValuesConfiguration.Instance.StorjBaseImagesPath/ui/video.png">
                         }
                         else if (assetInfo.IsAudio())
                         {
-                            <img src="~/Images/ui/audio.png">
+                            <img src="@DefaultValuesConfiguration.Instance.StorjBaseImagesPath/ui/audio.png">
                         }
                         else
                         {
-                            <img src="~/Images/ui/document.jpg">
+                            <img src="@DefaultValuesConfiguration.Instance.StorjBaseImagesPath/ui/document.jpg">
                         }
                     </div>
                     <div class="doc-info">

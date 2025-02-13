@@ -1,9 +1,19 @@
-﻿.nav-tabs a, .nav-pills a {
-    font-size: 1.2em !important;
+﻿.nav-tabs > li > a {
+    border-right: 1px solid #eeeeee;
+    margin-bottom: 4px;
 }
 
-.nav-tabs > li > a {
-    margin-bottom: 4px;
+.nav-pills > li > a, .nav-tabs > li > a {
+    background-color: #d9d9d9;
+}
+
+.nav-pills > li.active > a, .nav-tabs > li.active > a {
+    background-color: #337ab7;
+    color: white;
+}
+
+.nav-tabs a, .nav-pills a {
+    font-size: 1.2em !important;
 }
 
 ul.image-pill {

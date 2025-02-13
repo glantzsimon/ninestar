@@ -141,12 +141,7 @@
 	    payWall().init();
 
         userLocale().init("@Url.Action("SetCurrentUserTimeZone", "Account")");
-
-	    revealText({
-            moreText: "@K9.Base.Globalisation.Dictionary.More",
-            lessText: "@K9.Base.Globalisation.Dictionary.Less"
-        }).init();
-
+        
         imagePreloader({
             imageArray: [
                 "@Url.Content("~/Images/shared/ninestar-spinner.gif")",

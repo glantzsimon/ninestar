@@ -11,47 +11,35 @@ namespace K9.WebApplication
                 "~/Content/fontawesome/font-awesome-legacy.css",
                 "~/Content/bootstrap/*.css"));
 
-            bundles.Add(new StyleBundle("~/Content/site").Include(
-                "~/Content/site/elements.css",
-                "~/Content/site/classes.css",
-                "~/Content/site/pills.css",
-                "~/Content/site/shared.css",
-                "~/Content/site/shared-md.css",
-                "~/Content/site/shared-sm.css",
-                "~/Content/site/shared-xs.css",
-                "~/Content/site/validation.css",
-                "~/Content/site/desktop.css",
-                "~/Content/site/tablet.css",
-                "~/Content/site/mobile.css",
-                "~/Content/site/tables.css",
-                "~/Content/site/navbar.css",
-                "~/Content/site/sections/*.css"));
-
-            bundles.Add(new StyleBundle("~/Content/k9").Include(
-                "~/Content/k9/*.css"));
-
-            bundles.Add(new StyleBundle("~/Content/tpl").Include(
-                "~/Content/template/style.css"));
+            bundles.Add(new StyleBundle("~/Content/sections").Include(
+                "~/Content/main/elements.css",
+                "~/Content/bootstrap-custom/*.css",
+                "~/Content/device/*.css",
+                "~/Content/sections/*.css",
+                "~/Content/controls/*.css"));
+            
+            bundles.Add(new StyleBundle("~/Content/style").Include(
+                "~/Content/main/style.css"));
 
             bundles.Add(new StyleBundle("~/Content/responsive").Include(
-                "~/Content/template/style.1200.css",
-                "~/Content/template/style.1080.css",
-                "~/Content/template/style.1024.css",
-                "~/Content/template/style-lg.css",
-                "~/Content/template/style-md.css",
-                "~/Content/template/style-sm.css",
-                "~/Content/template/style-xs.css",
-                "~/Content/template/style.991.css",
-                "~/Content/template/style.768.css",
-                "~/Content/template/style.760.css",
-                "~/Content/template/style.736.css",
-                "~/Content/template/style.610.css",
-                "~/Content/template/style.525.css",
-                "~/Content/template/style.480.css",
-                "~/Content/template/style.414.css",
-                "~/Content/template/style.384.css",
-                "~/Content/template/style.375.css",
-                "~/Content/template/style.320.css"));
+                "~/Content/main/style.1200.css",
+                "~/Content/main/style.1080.css",
+                "~/Content/main/style.1024.css",
+                "~/Content/main/style-lg.css",
+                "~/Content/main/style-md.css",
+                "~/Content/main/style-sm.css",
+                "~/Content/main/style-xs.css",
+                "~/Content/main/style.991.css",
+                "~/Content/main/style.768.css",
+                "~/Content/main/style.760.css",
+                "~/Content/main/style.736.css",
+                "~/Content/main/style.610.css",
+                "~/Content/main/style.525.css",
+                "~/Content/main/style.480.css",
+                "~/Content/main/style.414.css",
+                "~/Content/main/style.384.css",
+                "~/Content/main/style.375.css",
+                "~/Content/main/style.320.css"));
 
             bundles.Add(new ScriptBundle("~/Scripts/js").Include(
                 "~/Scripts/imageSwitcher/*.js",

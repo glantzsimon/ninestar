@@ -325,3 +325,12 @@ div.small-logo {
     .nav > li > a:hover, .nav > li > a:focus {
         border-radius: 10px;
     }
+    
+#account-controls a .fa {
+    margin-right: 0;
+}
+
+.navbar-nav:not(.navbar-login):not(.dropdown-menu) li.active a {
+    color: #ff9800 !important;
+    background: none !important;
+}

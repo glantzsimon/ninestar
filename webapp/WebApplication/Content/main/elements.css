@@ -24,6 +24,10 @@ h3, h4 {
     color: #0a4070 !important;
 }
 
+div.text-center > h3 {
+    font-size: 1.2em;
+}
+
 h5 {
     color: #337ab7 !important;
 }
@@ -45,6 +49,15 @@ article h4 {
     margin-bottom: 15px;
     font-weight: bold;
     font-size: 1.5em;
+}
+
+article, p {
+    line-height: 1.6em !important;
+    margin-bottom: 20px;
+}
+
+p:last-child {
+    margin-bottom: 0;
 }
 
 article h5 {
@@ -69,4 +82,8 @@ form div.well h3 {
 
 hr {
     border-color: #d9d9d9;
+}
+
+button .fa, a .fa {
+    margin-right: 2px;
 }

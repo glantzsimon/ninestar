@@ -1,0 +1,16 @@
+﻿.navigation a, .time-slots a {
+    font-size: 0.9em;
+    display: inline-block;
+    padding: 7px;
+    margin: 2px !important;
+    margin-bottom: 6px;
+    border: 1px solid #eeeeee;
+    border-radius: 7px;
+    background-color: #337ab7;
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
+.navigation a:hover, .time-slots a:hover {
+    background-color: #286090;
+}

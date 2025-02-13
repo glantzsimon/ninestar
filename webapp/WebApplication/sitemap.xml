@@ -4,62 +4,72 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+  <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 
-<url>
-  <loc>https://9starkiastrology.com/</loc>
-  <lastmod>2025-02-11T09:00:36+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://9starkiastrology.com/donate</loc>
-  <lastmod>2025-02-11T09:00:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://9starkiastrology.com/support</loc>
-  <lastmod>2025-02-11T09:00:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://9starkiastrology.com/account/login</loc>
-  <lastmod>2025-02-11T09:00:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://9starkiastrology.com/account/register</loc>
-  <lastmod>2025-02-11T09:00:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://9starkiastrology.com/personalchart/calculate</loc>
-  <lastmod>2025-02-11T09:00:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://9starkiastrology.com/compatibility</loc>
-  <lastmod>2025-02-11T09:00:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://9starkiastrology.com/predictions</loc>
-  <lastmod>2025-02-11T09:00:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://9starkiastrology.com/biorhythms</loc>
-  <lastmod>2025-02-11T09:00:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://9starkiastrology.com/learn</loc>
-  <lastmod>2025-02-11T09:00:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://9starkiastrology.com/privacy-policy</loc>
-  <lastmod>2025-02-11T09:00:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
+  <url>
+    <loc>https://9starkiastrology.com/</loc>
+    <lastmod>2025-02-11T09:00:36+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://9starkiastrology.com/donate</loc>
+    <lastmod>2025-02-11T09:00:36+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://9starkiastrology.com/support</loc>
+    <lastmod>2025-02-11T09:00:36+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://9starkiastrology.com/account/login</loc>
+    <lastmod>2025-02-11T09:00:36+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://9starkiastrology.com/account/register</loc>
+    <lastmod>2025-02-11T09:00:36+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://9starkiastrology.com/personalchart/</loc>
+    <lastmod>2025-02-11T09:00:36+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://9starkiastrology.com/compatibility</loc>
+    <lastmod>2025-02-11T09:00:36+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://9starkiastrology.com/predictions</loc>
+    <lastmod>2025-02-11T09:00:36+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://9starkiastrology.com/biorhythms</loc>
+    <lastmod>2025-02-11T09:00:36+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://9starkiastrology.com/learn</loc>
+    <lastmod>2025-02-11T09:00:36+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://9starkiastrology.com/privacy-policy</loc>
+    <lastmod>2025-02-11T09:00:36+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://9starkiastrology.com/terms-of-service</loc>
+    <lastmod>2025-02-11T09:00:36+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://9starkiastrology.com/how-to-remove-your-data</loc>
+    <lastmod>2025-02-11T09:00:36+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
 </urlset>

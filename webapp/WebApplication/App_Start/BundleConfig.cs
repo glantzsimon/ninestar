@@ -31,9 +31,6 @@ namespace K9.WebApplication
                 "~/Content/k9/*.css"));
 
             bundles.Add(new StyleBundle("~/Content/tpl").Include(
-                "~/Content/template/lsb.css",
-                "~/Content/template/owl.carousel.css",
-                "~/Content/template/owl.theme.css",
                 "~/Content/template/style.css"));
 
             bundles.Add(new StyleBundle("~/Content/responsive").Include(

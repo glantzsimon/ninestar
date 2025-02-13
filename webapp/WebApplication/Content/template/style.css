@@ -1,30 +1,7 @@
 @font-face {
-    font-family: 'Alex Brush';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../fonts/alex-brush-v8-latin-regular.eot'); /* IE9 Compat Modes */
-    src: local('Alex Brush Regular'), local('AlexBrush-Regular'), url('../fonts/alex-brush-v8-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('../fonts/alex-brush-v8-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-    url('../fonts/alex-brush-v8-latin-regular.woff') format('woff'), /* Modern Browsers */
-    url('../fonts/alex-brush-v8-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-    url('../fonts/alex-brush-v8-latin-regular.svg#AlexBrush') format('svg'); /* Legacy iOS */
-}
-
-@font-face {
     font-family: 'candara';
     font-style: normal;
     src: url('../fonts/candara.ttf') format('truetype');
-}
-
-.banner-plain {
-    background: #fff;
-}
-
-.background-slides {
-    -webkit-transition: background 0.5s linear;
-    -moz-transition: background 0.5s linear;
-    -o-transition: background 0.5s linear;
-    transition: background 0.5s linear;
 }
 
 .background-stars {
@@ -46,20 +23,6 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-}
-
-.sinusgraph {
-    width: 100%;
-    border: 1px solid #eeeeee;
-}
-
-.highgauge {
-    width: 100%;
-    border: 1px solid #eeeeee;
-}
-
-#ninestarki-cycles .panel-default, #biorhythms .panel-default {
-    margin-top: 0;
 }
 
 .background-video {
@@ -89,38 +52,7 @@
     padding: 2em 0 2em 0;
 }
 
-.main-section ul {
-    padding: 0;
-}
 
-.main-section h5 {
-    color: #000;
-    font-size: 1em;
-    line-height: 1.5em;
-    font-weight: 600;
-    margin: 0;
-}
-
-.main-section h4 {
-    font-size: 1.2em;
-    margin: 0 0 1em 0;
-    color: #FFFFFF;
-    line-height: 1.5em;
-    text-transform: uppercase;
-}
-
-.main-section p {
-    margin: 1em 0 0 0;
-    font-size: .9em;
-    line-height: 1.8em;
-}
-
-.main-section ul li {
-    display: block;
-    margin-bottom: 20px;
-    font-size: .9em;
-    text-decoration: none;
-}
 
 .text-white {
     color: #fff !important;
@@ -136,15 +68,6 @@
 
 .main-section .main-heading {
     margin: 0 0 3em 0;
-}
-
-.main-heading h3 {
-    color: #212121;
-    font-size: 2.5em;
-    margin: 0;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 6px;
 }
 
 .jarallax {
@@ -163,68 +86,7 @@ button.btn1:hover {
         color: #fff !important;
     }
 
-.footer {
-    background: #1f1f1f;
-    padding: 25px;
-}
 
-.agile-footer-grid h4 {
-    color: #ffffff;
-    font-size: 1.3em;
-    font-weight: 600;
-    margin: 0 0 1em 0;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.agile-footer-grid p {
-    color: #8a8a8a;
-    font-size: .9em;
-    line-height: 1.8em;
-    margin: 0;
-}
-
-    .agile-footer-grid p span {
-        display: block;
-        margin: 1em 0 0 0;
-    }
-
-.agile-footer-grid ul {
-    padding: 0;
-    margin: 0;
-}
-
-    .agile-footer-grid ul li {
-        list-style-type: none;
-        color: #8a8a8a;
-        line-height: 1.8em;
-        list-style-type: none;
-        display: block;
-        margin-bottom: .5em;
-        font-size: .9em;
-    }
-
-        .agile-footer-grid ul li a {
-            color: #8a8a8a;
-            text-decoration: none;
-        }
-
-            .agile-footer-grid ul li a:hover {
-                color: #ff9800;
-            }
-
-.footer-copyright {
-    padding: 1em 0;
-    background: #0f1215;
-    text-align: center;
-}
-
-    .footer-copyright p {
-        color: #8a8a8a;
-        font-size: .9em;
-        line-height: 1.6em;
-        margin: 0;
-    }
 
 .page-subtitle {
     padding: 2.4em 0;

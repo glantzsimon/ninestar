@@ -9,37 +9,32 @@
     });
 }
 
-<div class="footer main-section">
-	<div class="container">
-		<div class="agile-footer-grids">
-			<div class="col-md-4 agile-footer-grid">
-				<h4>@Dictionary.NineStar</h4>
-				<p>
-				    @Dictionary.CompanyBlurbFooter
-				</p>
-			</div>
-			<div class="col-md-4 agile-footer-grid">
-				@Html.Action("NewsSummary", "News")
-			</div>
-			<div class="col-md-4 agile-footer-grid">
-				<h4>Navigation</h4>
-			    <ul>
-			        <li class="text"><a href="@Url.Action("Index", "Home")"> @K9.Base.Globalisation.Dictionary.Home</a></li>
-			        <li class="text"><a href="@Url.Action("Index", "PersonalChart")"> @Dictionary.PersonalProfileCalculator</a></li>
-			        <li class="text"><a href="@Url.Action("Index", "Compatibility")"> @Dictionary.CompatibilityCalculator</a></li>
-			        <li class="text"><a href="@Url.Action("Index", "Predictions")"> @Dictionary.Predictions</a></li>
-			        <li class="text"><a href="@Url.Action("Index", "Biorhythms")"> @Dictionary.BiorhythmsLabel</a></li>
-			        <li class="text"><a href="@Url.Action("Index", "KnowledgeBase")"> @Dictionary.LearnNineStarKiTitle</a></li>
-			        <li class="text"><a href="@Url.Action("HowToRemoveYourData", "Home")">@Dictionary.HowToRemoveYourDataTitle</a></li>
-			    </ul>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-	</div>
+<div class="footer">
+    <div class="container">
+        <div class="col-md-8 agile-footer-grid">
+            <h4>@Dictionary.NineStar</h4>
+            <p>
+                @Dictionary.CompanyBlurbFooter
+            </p>
+        </div>
+        <div class="col-md-4 agile-footer-grid">
+            <h4>@Dictionary.Navigation</h4>
+            <ul>
+                <li class="text"><a href="@Url.Action("Index", "Home")"> @K9.Base.Globalisation.Dictionary.Home</a></li>
+                <li class="text"><a href="@Url.Action("Index", "PersonalChart")"> @Dictionary.PersonalProfileCalculator</a></li>
+                <li class="text"><a href="@Url.Action("Index", "Compatibility")"> @Dictionary.CompatibilityCalculator</a></li>
+                <li class="text"><a href="@Url.Action("Index", "Predictions")"> @Dictionary.Predictions</a></li>
+                <li class="text"><a href="@Url.Action("Index", "Biorhythms")"> @Dictionary.BiorhythmsLabel</a></li>
+                <li class="text"><a href="@Url.Action("Index", "KnowledgeBase")"> @Dictionary.LearnNineStarKiTitle</a></li>
+                <li class="text"><a href="@Url.Action("HowToRemoveYourData", "Home")">@Dictionary.HowToRemoveYourDataTitle</a></li>
+            </ul>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
 </div>
 <div class="footer-copyright">
-	<div class="container">
-	    <p>@Html.Raw(termsText) </p>
+    <div class="container">
+        <p>@Html.Raw(termsText) </p>
         <p>&copy; @Dictionary.NineStarKiAstrology @DateTime.Now.Year - @K9.Base.Globalisation.Dictionary.AllRightsReserved.</p>
-	</div>
+    </div>
 </div>

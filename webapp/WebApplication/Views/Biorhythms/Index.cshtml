@@ -16,31 +16,33 @@
             @Html.Partial("_CalculatorForm", Model)
         </div>
         <div class="col-md-9 col-sm-9 padding-left-20-desktop padding-right-0 mobile panel-margin-top-20">
-            @if (Model != null && Model.IsProcessed)
-            {
-                <div class="well padding-bottom-0">
-                    <div class="row">
-                        <div class="col-sm-12 padding-0">
-                            @if (Model.SelectedDate != DateTime.Today)
-                            {
-                                @Html.Partial("_SelectedDateAndPeriodTitle")
-                            }
+            <article>
+                @if (Model != null && Model.IsProcessed)
+                {
+                    <div class="well padding-bottom-0">
+                        <div class="row">
+                            <div class="col-sm-12 padding-0">
+                                @if (Model.SelectedDate != DateTime.Today)
+                                {
+                                    @Html.Partial("_SelectedDateAndPeriodTitle")
+                                }
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-sm-12 padding-0">
-                            @Html.Partial("_DateSelector")
+                        <div class="row">
+                            <div class="col-sm-12 padding-0">
+                                @Html.Partial("_DateSelector")
+                            </div>
                         </div>
                     </div>
-                </div>
-            }
-            else
-            {
-                <div class="margin-bottom-20">
-                    @Html.Panel(Dictionary.WhatAreBiorhythms, Dictionary.biorhythms, "biorhythms")
-                </div>
-            }
+                }
+                else
+                {
+                    <div class="margin-bottom-20">
+                        @Html.Panel(Dictionary.WhatAreBiorhythms, Dictionary.biorhythms, "biorhythms")
+                    </div>
+                }
+            </article>
         </div>
     </div>
 

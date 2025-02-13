@@ -2,10 +2,10 @@
 @font-face {
   font-family: 'candara';
   font-style: normal;
-  src: url('../less/fonts/candara.ttf') format('truetype');
+  src: url('../fonts/candara.ttf') format('truetype');
 }
 .background-stars {
-  background: url(../less/main/@{images-path}/background/yin-yang.jpg) no-repeat;
+  background: url('../../Images/background/yin-yang.jpg') no-repeat;
   background-size: cover;
   background-position: center;
 }

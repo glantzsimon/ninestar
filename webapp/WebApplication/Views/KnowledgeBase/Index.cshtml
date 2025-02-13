@@ -1,4 +1,5 @@
-﻿@using K9.WebApplication.Enums
+﻿@using K9.WebApplication.Config
+@using K9.WebApplication.Enums
 @using K9.WebApplication.Extensions
 @using K9.WebApplication.Helpers
 @using K9.WebApplication.Options
@@ -20,9 +21,9 @@
 
         @Html.Panel(Dictionary.OriginsTitle, Dictionary.origins, "origins")
 
-        @Html.Panel(Dictionary.CyclesOfLightAndDark, Dictionary.cycles, "cycles", "~/Images/about/light-dark.jpg", EPanelImageSize.Default, EPanelImageLayout.Contain)
+        @Html.Panel(Dictionary.CyclesOfLightAndDark, Dictionary.cycles, "cycles", $"{DefaultValuesConfiguration.Instance.StorjBaseImagesPath}/about/light-dark.jpg", EPanelImageSize.Default, EPanelImageLayout.Contain)
 
-        @Html.Panel(Dictionary.YinAndYang, Dictionary.yinyang, "yinyang", "~/Images/ninestar/yinyang/yinyang-large.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+        @Html.Panel(Dictionary.YinAndYang, Dictionary.yinyang, "yinyang", $"{DefaultValuesConfiguration.Instance.StorjBaseImagesPath}/ninestar/yinyang/yinyang-large.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
 
         @Html.Panel(Dictionary.ThreeModalitiesTitle,
             Dictionary.modalities_description,
@@ -43,7 +44,7 @@
             Dictionary.FireElement,
             Html.PayWallContent(ESection.KnowledgeBase, "fire", Dictionary.fire_element).ToString(),
             "fire",
-            "~/Images/ninestar/elements/fire.png",
+            $"{DefaultValuesConfiguration.Instance.StorjBaseImagesPath}/ninestar/elements/fire.png",
             EPanelImageSize.Default,
             EPanelImageLayout.Contain)
 
@@ -51,7 +52,7 @@
             Dictionary.EarthElement,
             Html.PayWallContent(ESection.KnowledgeBase, "earth", Dictionary.earth_element).ToString(),
             "earth",
-            "~/Images/ninestar/elements/earth.png",
+            $"{DefaultValuesConfiguration.Instance.StorjBaseImagesPath}/ninestar/elements/earth.png",
             EPanelImageSize.Default,
             EPanelImageLayout.Contain)
 
@@ -59,7 +60,7 @@
             Dictionary.MetalElement,
             Html.PayWallContent(ESection.KnowledgeBase, "metal", Dictionary.metal_element).ToString(),
             "metal",
-            "~/Images/ninestar/elements/metal.png",
+            $"{DefaultValuesConfiguration.Instance.StorjBaseImagesPath}/ninestar/elements/metal.png",
             EPanelImageSize.Default,
             EPanelImageLayout.Contain)
 
@@ -67,14 +68,14 @@
             Dictionary.WaterElement,
             Html.PayWallContent(ESection.KnowledgeBase, "water", Dictionary.water_element).ToString(),
             "water",
-            "~/Images/ninestar/elements/water.png",
+            $"{DefaultValuesConfiguration.Instance.StorjBaseImagesPath}/ninestar/elements/water.png",
             EPanelImageSize.Default,
             EPanelImageLayout.Contain)
 
         @Html.Panel(Dictionary.TreeElement,
             Html.PayWallContent(ESection.KnowledgeBase, "tree", Dictionary.tree_element).ToString(),
             "tree",
-            "~/Images/ninestar/elements/tree.png",
+            $"{DefaultValuesConfiguration.Instance.StorjBaseImagesPath}/ninestar/elements/tree.png",
             EPanelImageSize.Default,
             EPanelImageLayout.Contain)
 

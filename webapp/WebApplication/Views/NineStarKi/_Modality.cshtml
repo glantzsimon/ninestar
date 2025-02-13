@@ -1,10 +1,11 @@
-﻿@using K9.WebApplication.Helpers
+﻿@using K9.WebApplication.Config
+@using K9.WebApplication.Helpers
 @model K9.WebApplication.Models.NineStarKiEnergy
 
 <a target="_blank" href="@Url.ActionWithBookmark("Index", "KnowledgeBase", Model.ModalityName.ToLower())">
     <div class="ninestar-summary-container">
         <h3 class="margin-bottom-0 padding-bottom-0">@Dictionary.ModalityLabel</h3>
         <p>@Model.ModalityName</p>
-        <img title="@Model.ModalityName @Dictionary.ModalityLabel" alt="@Model.ModalityName @Dictionary.ModalityLabel" class="auto-size center-block" src="~/Images/ninestar/modalities/@(Model.ModalityName).png" />
+        <img title="@Model.ModalityName @Dictionary.ModalityLabel" alt="@Model.ModalityName @Dictionary.ModalityLabel" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.StorjBaseImagesPath/ninestar/modalities/@(Model.ModalityName).png" />
     </div>
 </a>

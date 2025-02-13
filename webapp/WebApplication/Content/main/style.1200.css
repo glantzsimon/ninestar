@@ -1,4 +1,4 @@
-﻿/*@images-path: "https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images";*/
+﻿/*@images-path: "../../../Images";*/
 @media (max-width: 1200px) {
   .captn-top h4 {
     font-size: 0.8em;
@@ -10,7 +10,7 @@
     height: 120px;
     width: 120px;
     background-size: contain;
-    background-image: url(../less/main/@{images-path}/company/logo-med.png);
+    background-image: url('https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images/company/logo-med.png');
   }
   #bs-navbar-collapse-1 {
     padding-left: 3%;

@@ -1,4 +1,5 @@
-﻿@using K9.WebApplication.Helpers
+﻿@using K9.WebApplication.Config
+@using K9.WebApplication.Helpers
 @using K9.WebApplication.Models
 @using K9.WebApplication.Options
 @model NineStarKiModel
@@ -11,7 +12,7 @@
                 <li class="active">
                     <a data-toggle="tab" href="#m-details">
                         @Model.SurfaceEnergy.DescriptiveTitle
-                        <div class="img-rounded image-pill" style="background-image: url('@($"../Images/ninestar/energies/{Model.SurfaceEnergy.Energy}.png")');"></div>
+                        <div class="img-rounded image-pill" style="background-image: url('@($"{DefaultValuesConfiguration.Instance.StorjBaseImagesPath}/ninestar/energies/{Model.SurfaceEnergy.EnergyLowerCase}.png")');"></div>
                     </a>
                 </li>
             </ul>

@@ -1,12 +1,13 @@
 ﻿@using K9.WebApplication.Enums
 @using K9.WebApplication.Extensions
 @using K9.WebApplication.Options
+@using SessionHelper = K9.WebApplication.Helpers.SessionHelper
 @model K9.WebApplication.Models.CompatibilityModel
 
 @{
     var colOffset = Model.IsHideSexualChemistry ? "col-sm-offset-2" : "";
     var membership = this.GetActiveUserMembership();
-    var isUnlimited = membership?.MembershipOption?.IsUnlimited ?? false;
+    var isUnlimited = (membership?.MembershipOption?.IsUnlimited ?? false) || SessionHelper.CurrentUserIsAdmin();
 }
 
 <div class="well">

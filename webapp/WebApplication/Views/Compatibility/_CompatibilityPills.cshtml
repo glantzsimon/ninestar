@@ -1,4 +1,5 @@
 ﻿@using K9.SharedLibrary.Helpers
+@using K9.WebApplication.Config
 @using K9.WebApplication.Enums
 @using K9.WebApplication.Extensions
 @using K9.WebApplication.Helpers
@@ -10,21 +11,21 @@
             <li class="active">
                 <a data-toggle="tab" href="#overview">
                     @Dictionary.OverviewLabel
-                    <div class="img-rounded image-pill" style="background-image: url('Images/ui/overview.png');"></div>
+                    <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.StorjBaseImagesPath/ui/overview.png');"></div>
                 </a>
             </li>
 
             <li>
                 <a data-toggle="tab" href="#strengthsandchallenges">
                     @Dictionary.StrengthsWeaknesses
-                    <div class="img-rounded image-pill" style="background-image: url('Images/ui/relationships-strengths-challenges.png');"></div>
+                    <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.StorjBaseImagesPath/ui/relationships-strengths-challenges.png');"></div>
                 </a>
             </li>
 
             <li>
                 <a data-toggle="tab" href="#indepth">
                     @Dictionary.InDepthAnalysis
-                    <div class="img-rounded image-pill" style="background-image: url('Images/ui/in-depth-analysis.png');"></div>
+                    <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.StorjBaseImagesPath/ui/in-depth-analysis.png');"></div>
                 </a>
             </li>
 
@@ -33,7 +34,7 @@
                 <li>
                     <a data-toggle="tab" href="#sexuality">
                         @Dictionary.SexualChemistryDetails
-                        <div class="img-rounded image-pill" style="background-image: url('Images/ui/sexuality.png');"></div>
+                        <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.StorjBaseImagesPath/ui/sexuality.png');"></div>
                     </a>
                 </li>
             }

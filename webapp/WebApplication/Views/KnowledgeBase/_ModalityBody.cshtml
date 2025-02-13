@@ -1,4 +1,5 @@
-﻿@using K9.WebApplication.Enums
+﻿@using K9.WebApplication.Config
+@using K9.WebApplication.Enums
 @using K9.WebApplication.Extensions
 @using K9.WebApplication.Helpers
 @using K9.WebApplication.Options
@@ -11,7 +12,7 @@
             @foreach (var energy in Model.ModalityEnergies)
             {
                 <div class="col-sm-4 modality-energy-container">
-                    @Html.ImagePanel(energy.EnergyNameAndNumber, $"~/Images/ninestar/energies/{energy.Energy.ToString().ToLower()}.png", EPanelImageSize.Small, EPanelImageLayout.Contain)
+                    @Html.ImagePanel(energy.EnergyNameAndNumber, $"{DefaultValuesConfiguration.Instance.StorjBaseImagesPath}/ninestar/energies/{energy.Energy.ToString().ToLower()}.png", EPanelImageSize.Small, EPanelImageLayout.Contain)
                 </div>
             }
         </div>

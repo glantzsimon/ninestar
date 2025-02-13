@@ -1,4 +1,4 @@
-﻿/*@images-path: "https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images";*/
+﻿/*@images-path: "../../../Images";*/
 .membership-option-container {
   display: table;
   margin: 0 auto;
@@ -97,13 +97,13 @@
   font-size: 0.7em !important;
 }
 .platinum {
-  background: url(../less/sections/@{images-path}/membership/membership-medal.png) no-repeat 0 0;
+  background: url('https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images/membership/membership-medal.png') no-repeat 0 0;
 }
 .free {
-  background: url(../less/sections/@{images-path}/membership/free-membership.png) no-repeat 0 0;
+  background: url('https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images/membership/free-membership.png') no-repeat 0 0;
 }
 .standard {
-  background: url(../less/sections/@{images-path}/membership/standard-membership.png) no-repeat 0 0;
+  background: url('https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images/membership/standard-membership.png') no-repeat 0 0;
 }
 .membership-selected {
   border: 2px solid #22BB44;

@@ -1,4 +1,5 @@
-﻿@using K9.WebApplication.Enums
+﻿@using K9.WebApplication.Config
+@using K9.WebApplication.Enums
 @using K9.WebApplication.Extensions
 @using K9.WebApplication.Helpers
 @using K9.WebApplication.Options
@@ -17,13 +18,13 @@
                 <li class="active">
                     <a data-toggle="tab" href="#fundamental">
                         @Model.MainEnergy.AdultEnergyLabel
-                        <div class="img-rounded image-pill" style="background-image: url('../Images/ui/fundamental-nature.png');"></div>
+                        <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.StorjBaseImagesPath/ui/fundamental-nature.png');"></div>
                     </a>
                 </li>
                 <li>
                     <a data-toggle="tab" href="#character">
                         @Model.CharacterEnergy.CharacteEnergyLabel
-                        <div class="img-rounded image-pill" style="background-image: url('../Images/ui/emotional-energy.png');"></div>
+                        <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.StorjBaseImagesPath/ui/emotional-energy.png');"></div>
                     </a>
                 </li>
             }
@@ -32,7 +33,7 @@
                 <li class="active">
                     <a data-toggle="tab" href="#character">
                         @Model.CharacterEnergy.CharacteEnergyLabel
-                        <div class="img-rounded image-pill" style="background-image: url('../Images/ui/emotional-energy.png');"></div>
+                        <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.StorjBaseImagesPath/ui/emotional-energy.png');"></div>
                     </a>
                 </li>
             }
@@ -40,7 +41,7 @@
             <li>
                 <a data-toggle="tab" href="#surface">
                     @Dictionary.ExternalPersona
-                    <div class="img-rounded image-pill" style="background-image: url('../Images/ui/mirror-energy.png');"></div>
+                    <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.StorjBaseImagesPath/ui/mirror-energy.png');"></div>
                 </a>
             </li>
 
@@ -49,20 +50,20 @@
                 <li>
                     <a data-toggle="tab" href="#sexuality">
                         @Dictionary.SexualityLabel
-                        <div class="img-rounded image-pill" style="background-image: url('../Images/ui/sexuality.png');"></div>
+                        <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.StorjBaseImagesPath/ui/sexuality.png');"></div>
                     </a>
                 </li>
             }
             <li>
                 <a data-toggle="tab" href="#health">
                     @Dictionary.Health
-                    <div class="img-rounded image-pill" style="background-image: url('../Images/ui/health.png');"></div>
+                    <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.StorjBaseImagesPath/ui/health.png');"></div>
                 </a>
             </li>
             <li>
                 <a data-toggle="tab" href="#career">
                     @Dictionary.Career
-                    <div class="img-rounded image-pill" style="background-image: url('../Images/ui/career.png');"></div>
+                    <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.StorjBaseImagesPath/ui/career.png');"></div>
                 </a>
             </li>
         </ul>

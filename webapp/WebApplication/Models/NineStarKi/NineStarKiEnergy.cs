@@ -301,6 +301,8 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyDescriptionLabel)]
         public string EnergyDescription { get; set; }
 
+        public string EnergyLowerCase => Energy.ToString().ToLower();
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ChildLabel)]
         public string ChildDescription => EnergyType == ENineStarKiEnergyType.CharacterEnergy ? GetChildDescription() : string.Empty;
 

@@ -1,4 +1,5 @@
 ﻿@using K9.SharedLibrary.Helpers
+@using K9.WebApplication.Config
 @using K9.WebApplication.Enums
 @using K9.WebApplication.Helpers
 @using K9.WebApplication.Models
@@ -29,7 +30,7 @@
             @Html.Panel(
                 energy.EnergyTitle,
                 Html.PayWallContent(ESection.KnowledgeBase, id, energy.EnergyDescription).ToString(),
-                id, $"Images/ninestar/energies/{energy.Energy}.png",
+                id, $"{DefaultValuesConfiguration.Instance.StorjBaseImagesPath}/ninestar/energies/{energy.EnergyLowerCase}.png",
                 EPanelImageSize.Default,
                 EPanelImageLayout.Contain)
         }

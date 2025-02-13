@@ -1,4 +1,5 @@
-﻿@using K9.WebApplication.Helpers
+﻿@using K9.WebApplication.Config
+@using K9.WebApplication.Helpers
 @using K9.WebApplication.Models
 @using K9.WebApplication.Options
 @model NineStarKiEnergy
@@ -15,7 +16,7 @@
                     @Html.CollapsiblePanel(Html.GetEnergySpecificDisplayNameFor(m => Model.ChildDescription, Model.EnergyNameAndNumber), Model.ChildDescription, true)
                 }
 
-                @Html.CollapsiblePanel(Html.GetEnergySpecificDisplayNameFor(m => Model.Trigram, Model.EnergyNameAndNumber), Model.TrigramDescription, true, "", Model.TrigramUIName, $"Images/ninestar/trigrams/trigram-{Model.Energy}-square.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                @Html.CollapsiblePanel(Html.GetEnergySpecificDisplayNameFor(m => Model.Trigram, Model.EnergyNameAndNumber), Model.TrigramDescription, true, "", Model.TrigramUIName, $"{DefaultValuesConfiguration.Instance.StorjBaseImagesPath}/ninestar/trigrams/trigram-{Model.EnergyLowerCase}-square.png", EPanelImageSize.Default, EPanelImageLayout.Contain)
             </div>
         </article>
     </div>

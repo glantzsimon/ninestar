@@ -1,4 +1,4 @@
-﻿/*@images-path: "https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images";*/
+﻿/*@images-path: "../../../Images";*/
 .navbar {
   margin-bottom: 0 !important;
   height: 0;
@@ -261,13 +261,13 @@ ul.main-navbar li.open a {
 div.main-logo {
   height: 174px;
   width: 174px;
-  background-image: url(../less/sections/@{images-path}/company/logo-notext.png);
+  background-image: url('https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images/company/logo-notext.png');
   background-repeat: no-repeat;
 }
 div.small-logo {
   height: 88px;
   width: 88px;
-  background-image: url(../less/sections/@{images-path}/company/logo-small.png);
+  background-image: url('https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images/company/logo-small.png');
   background-repeat: no-repeat;
 }
 .nav > li > a:hover,

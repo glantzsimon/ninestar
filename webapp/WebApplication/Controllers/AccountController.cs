@@ -721,7 +721,7 @@ namespace K9.WebApplication.Controllers
 
         [AllowAnonymous]
         [Route("account/created/{uniqueIdentifier}")]
-        public ActionResult AccountCreated(Guid uniqueIdentifier, string returnUrl = null, string additionalError = null, bool resendCode = false)
+        public ActionResult AccountCreated(Guid uniqueIdentifier, string returnUrl = null, string additionalError = null, int resendCode = 0)
         {
             TempData["AdditionalError"] = additionalError;
             
@@ -737,16 +737,16 @@ namespace K9.WebApplication.Controllers
                 return HttpNotFound("User not found");
             }
 
-            if (resendCode)
+            if (resendCode == 1)
             {
-                _accountService.CreateAccountActivationOTP(otp.UserId, true);
+                _accountService.ResentActivationCode(user.Id);
             }
             
             return View(new AccountActivationModel
             {
                 UserId = user.Id,
                 UniqueIdentifier = uniqueIdentifier,
-                IsCodeResent = resendCode
+                IsCodeResent = resendCode == 1
             });
         }
 

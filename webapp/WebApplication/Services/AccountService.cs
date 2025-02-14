@@ -568,6 +568,13 @@ namespace K9.WebApplication.Services
             return _userRepository.CustomQuery<string>(sql).FirstOrDefault();
         }
 
+        public void ResentActivationCode(int userId)
+        {
+            var user = _userService.Find(userId);
+            var otp = CreateAccountActivationOTP(userId, true);
+            _accountMailerService.SendActivationEmail(user, otp.SixDigitCode);
+        }
+
         public UserOTP CreateAccountActivationOTP(int userId, bool recreate = false)
         {
             if (recreate)

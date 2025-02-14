@@ -40,6 +40,19 @@ namespace K9.WebApplication.Services
             _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }
 
+        public void SendActivationEmail(User user, int sixDigitCode)
+        {
+            SendActivationEmail(new UserAccount.RegisterModel
+            {
+                BirthDate = user.BirthDate,
+                EmailAddress = user.EmailAddress,
+                PhoneNumber = user.PhoneNumber,
+                UserName = user.Username,
+                FirstName = user.FirstName,
+                LastName = user.LastName
+            }, sixDigitCode);
+        }
+
         public void SendActivationEmail(UserAccount.RegisterModel model, int sixDigitCode)
         {
             var contact = _contactService.Find(model.EmailAddress);

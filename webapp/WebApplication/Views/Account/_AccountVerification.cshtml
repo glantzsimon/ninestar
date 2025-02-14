@@ -29,7 +29,7 @@
                         @Html.BootstrapButton(Dictionary.Verify, EButtonType.Submit, "", EButtonClass.Large)
 
                         <p>
-                            @Dictionary.DidntReceiveCodePrompt <a href="@Url.Action("AccountCreated", new { Model.UniqueIdentifier, returnUrl, resendCode = true})" class="">@Dictionary.Resend</a>
+                            @Dictionary.DidntReceiveCodePrompt <a href="@Url.Action("AccountCreated", new { Model.UniqueIdentifier, returnUrl, resendCode = 1})" class="">@Dictionary.Resend</a>
                         </p>
                     </div>
                 </div>

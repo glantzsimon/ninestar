@@ -17,12 +17,12 @@
                         <h4>@Dictionary.EnterVerificationCode</h4>
 
                         <div class="code-input-container">
-                            <input id="@nameof(Model.Digit1)" name="@nameof(Model.Digit1)" type="text" maxlength="1" class="otp-input">
-                            <input id="@nameof(Model.Digit2)" name="@nameof(Model.Digit2)" type="text" maxlength="1" class="otp-input">
-                            <input id="@nameof(Model.Digit3)" name="@nameof(Model.Digit3)" type="text" maxlength="1" class="otp-input">
-                            <input id="@nameof(Model.Digit4)" name="@nameof(Model.Digit4)" type="text" maxlength="1" class="otp-input">
-                            <input id="@nameof(Model.Digit5)" name="@nameof(Model.Digit5)" type="text" maxlength="1" class="otp-input">
-                            <input id="@nameof(Model.Digit6)" name="@nameof(Model.Digit6)" type="text" maxlength="1" class="otp-input">
+                            @Html.BootstrapEditorFor(e => e.Digit1, new EditorOptions { Label = "" })
+                            @Html.BootstrapEditorFor(e => e.Digit2, new EditorOptions { Label = "" })
+                            @Html.BootstrapEditorFor(e => e.Digit3, new EditorOptions { Label = "" })
+                            @Html.BootstrapEditorFor(e => e.Digit4, new EditorOptions { Label = "" })
+                            @Html.BootstrapEditorFor(e => e.Digit5, new EditorOptions { Label = "" })
+                            @Html.BootstrapEditorFor(e => e.Digit6, new EditorOptions { Label = "" })
                         </div>
 
                         <hr />
@@ -54,5 +54,19 @@
             }
         });
     });
+
+    $(function() {
+        document.addEventListener("paste", function (event) {
+            let pastedCode = event.clipboardData.getData("text");
+            if (pastedCode.length === 6) {
+                $("#@nameof(Model.Digit1)").val(pastedCode[0]);
+                $("#@nameof(Model.Digit2)").val(pastedCode[1]);
+                $("#@nameof(Model.Digit3)").val(pastedCode[2]);
+                $("#@nameof(Model.Digit4)").val(pastedCode[3]);
+                $("#@nameof(Model.Digit5)").val(pastedCode[4]);
+                $("#@nameof(Model.Digit6)").val(pastedCode[5]);
+            }
+        });
+    })
 </script>
 

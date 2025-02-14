@@ -767,12 +767,12 @@ namespace K9.WebApplication.Controllers
                     {
                         _accountService.VerifyCode(
                             model.UserId, 
-                            model.Digit1, 
-                            model.Digit2, 
-                            model.Digit3, 
-                            model.Digit4, 
-                            model.Digit5, 
-                            model.Digit6);
+                            model.Digit1 ?? 0, 
+                            model.Digit2 ?? 0, 
+                            model.Digit3 ?? 0, 
+                            model.Digit4 ?? 0, 
+                            model.Digit5 ?? 0, 
+                            model.Digit6 ?? 0);
                     }
                     catch (Exception e)
                     {

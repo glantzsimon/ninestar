@@ -5,18 +5,20 @@
     ViewBag.Title = K9.Base.Globalisation.Dictionary.Registration;
     Layout = "../Shared/_LayoutForm.cshtml";
 
-    string additionalError = ViewBag.AdditionalError?.ToString();
+    string additionalError = TempData["AdditionalError"]?.ToString();
+    var confirmationText = Model.IsCodeResent ? Dictionary.WeveResentCodeToEmail : Dictionary.WeveSentCodeToEmail;
 }
 
 <div class="margin-bottom-10">
-    @Html.Success(K9.Base.Globalisation.Dictionary.AccountCreatedSuccessfully, K9.Base.Globalisation.Dictionary.CheckAccountActivationEmail)
+    @Html.Success(K9.Base.Globalisation.Dictionary.AccountCreatedSuccessfully, K9.Globalisation.Dictionary.WeveSentCodeToEmail)
 
     @if (!string.IsNullOrEmpty(additionalError))
     {
         <hr />
         @Html.Alert(EAlertType.Warning, additionalError)
     }
-
-    <hr />
-    @Html.Partial("_AccountVerification")
+    else
+    {
+        @Html.Partial("_AccountVerification")
+    }
 </div>

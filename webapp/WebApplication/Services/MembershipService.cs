@@ -441,6 +441,7 @@ namespace K9.WebApplication.Services
                     userMembership.MembershipOption.NumberOfCompatibilityReadings,
                     ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
                     PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
+                    TermsOfServiceLink = _urlHelper.AbsoluteAction("TermsOfService", "Home"),
                     UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { id = contact.Id }),
                     DateTime.Now.Year
                 }), userMembership.User.EmailAddress, userMembership.User.FirstName, _config.SupportEmailAddress,

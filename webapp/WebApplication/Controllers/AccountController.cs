@@ -54,9 +54,6 @@ namespace K9.WebApplication.Controllers
             _promoCodesRepository = promoCodesRepository;
             _recaptchaService = recaptchaService;
             _recaptchaConfig = recaptchaConfig.Value;
-
-            websiteConfig.Value.RegistrationEmailTemplateText = Globalisation.Dictionary.WelcomeEmail;
-            websiteConfig.Value.PasswordResetEmailTemplateText = Globalisation.Dictionary.PasswordResetEmail;
         }
 
         #region Membership
@@ -386,11 +383,6 @@ namespace K9.WebApplication.Controllers
                             }
 
                             _membershipService.ProcessPurchaseWithPromoCode(user.Id, model.PromoCode);
-                        }
-                        else
-                        {
-                            _logger.Error("AccountController => Register => Promo code used but UserId is 0");
-                            return RedirectToAction("AccountCreated", "Account", new { userId = user.Id, additionalError = Globalisation.Dictionary.PromoCodeNotUsed });
                         }
                     }
                     else
@@ -728,37 +720,40 @@ namespace K9.WebApplication.Controllers
         #region Account Activation
 
         [AllowAnonymous]
-        public ActionResult AccountCreated(Guid uniqueIdentifier, string returnUrl = null, string additionalError = null)
+        [Route("account/created/{uniqueIdentifier}")]
+        public ActionResult AccountCreated(Guid uniqueIdentifier, string returnUrl = null, string additionalError = null, bool resendCode = false)
         {
-            ViewBag["AdditionalError"] = additionalError;
-            var code = _accountService.GetAccountActivationOTP(uniqueIdentifier);
-
-            if (code == null)
+            TempData["AdditionalError"] = additionalError;
+            
+            var otp = _accountService.GetAccountActivationOTP(uniqueIdentifier);
+            if (otp == null)
             {
                 return HttpNotFound("OTP not found");
             }
 
-            var user = _userService.Find(code.UserId);
+            var user = _userService.Find(otp.UserId);
             if (user == null)
             {
                 return HttpNotFound("User not found");
             }
 
-            if (user.Id != Current.UserId)
+            if (resendCode)
             {
-                throw new Exception("Invalid UserId");
+                _accountService.CreateAccountActivationOTP(otp.UserId, true);
             }
-
+            
             return View(new AccountActivationModel
             {
                 UserId = user.Id,
-                UniqueIdentifier = uniqueIdentifier
+                UniqueIdentifier = uniqueIdentifier,
+                IsCodeResent = resendCode
             });
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult VerifyDixDigitCode(AccountActivationModel model)
+        [Route("account/verify")]
+        public ActionResult VerifySixDigitCode(AccountActivationModel model)
         {
             if (ModelState.IsValid)
             {

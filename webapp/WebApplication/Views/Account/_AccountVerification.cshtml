@@ -1,37 +1,42 @@
 ﻿@model K9.WebApplication.Models.AccountActivationModel
 
-<script src="https://cdn.tailwindcss.com"></script>
-
-@using (Html.BeginForm("VerifyDixDigitCode", "Account"))
-{
-    using (Html.BeginBootstrapForm())
-    {
-        @Html.HiddenFor(model => model.UserId)
-
-        <div class="bg-gray-100 flex items-center justify-center min-h-screen">
-            <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md text-center">
-                <h2 class="text-2xl font-semibold text-gray-800">@Dictionary.EnterVerificationCode</h2>
-                <p class="text-gray-500 text-sm mt-2">@Dictionary.WeveSentCodeToEmail</p>
-
-                <div class="flex justify-center gap-3 mt-6">
-                    <input id="@nameof(Model.Digit1)" name="id="@nameof(Model.Digit1)" type="text" maxlength="1" class="otp-input">
-                    <input id="@nameof(Model.Digit2)" name="id=" @nameof(Model.Digit2) " type="text" maxlength="1" class="otp-input">
-                    <input id="@nameof(Model.Digit3)" name="id=" @nameof(Model.Digit3) " type="text" maxlength="1" class="otp-input">
-                    <input id="@nameof(Model.Digit4)" name="id=" @nameof(Model.Digit4) " type="text" maxlength="1" class="otp-input">
-                    <input id="@nameof(Model.Digit5)" name="id=" @nameof(Model.Digit5) " type="text" maxlength="1" class="otp-input">
-                    <input id="@nameof(Model.Digit6)" name="id=" @nameof(Model.Digit6) " type="text" maxlength="1" class="otp-input">
-                </div>
-
-                <hr />
-                @Html.BootstrapButton(Dictionary.Verify, EButtonType.Submit, "", EButtonClass.Large)
-
-                <p class="text-gray-500 text-sm mt-4">
-                    @Dictionary.DidntReceiveCodePrompt <a id="resend-code-button" href="#" class="text-blue-600 hover:underline">@Dictionary.Resend</a>
-                </p>
-            </div>
-        </div>
-    }
+@{
+    var returnUrl = TempData["ReturnUrl"] ?? "";
 }
+
+<div class="otp-container">
+    @using (Html.BeginForm("VerifySixDigitCode", "Account"))
+    {
+        using (Html.BeginBootstrapForm())
+        {
+            @Html.HiddenFor(model => model.UserId)
+
+            <div class="row">
+                <div class="col-sm-offset-3 col-sm-6">
+                    <div class="verification-container">
+                        <h4>@Dictionary.EnterVerificationCode</h4>
+
+                        <div class="code-input-container">
+                            <input id="@nameof(Model.Digit1)" name="@nameof(Model.Digit1)" type="text" maxlength="1" class="otp-input">
+                            <input id="@nameof(Model.Digit2)" name="@nameof(Model.Digit2)" type="text" maxlength="1" class="otp-input">
+                            <input id="@nameof(Model.Digit3)" name="@nameof(Model.Digit3)" type="text" maxlength="1" class="otp-input">
+                            <input id="@nameof(Model.Digit4)" name="@nameof(Model.Digit4)" type="text" maxlength="1" class="otp-input">
+                            <input id="@nameof(Model.Digit5)" name="@nameof(Model.Digit5)" type="text" maxlength="1" class="otp-input">
+                            <input id="@nameof(Model.Digit6)" name="@nameof(Model.Digit6)" type="text" maxlength="1" class="otp-input">
+                        </div>
+
+                        <hr />
+                        @Html.BootstrapButton(Dictionary.Verify, EButtonType.Submit, "", EButtonClass.Large)
+
+                        <p>
+                            @Dictionary.DidntReceiveCodePrompt <a href="@Url.Action("AccountCreated", new { Model.UniqueIdentifier, returnUrl, resendCode = true})" class="">@Dictionary.Resend</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
 
 <script>
     const inputs = document.querySelectorAll(".otp-input");
@@ -49,22 +54,5 @@
             }
         });
     });
-
-    function resendActivationCode() {
-        var url = '@Url.Action("ResendActivationCode","Account")';
-
-        ajaxcontroller().send(url,
-            {
-                userId: @Model.UserId
-            }, "POST").done(
-            function (result) {
-                if (result.data.success) {
-                    document.location = that.data.successUrl;
-                } else {
-                    that.changeLoadingState(false);
-                    that.processError(result.errorMessage || errorMessage);
-                }
-            });;
-    }
 </script>
 

@@ -1,0 +1,27 @@
+﻿.otp-container .well {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.otp-container .verification-container {
+  border: 1px solid #8a8a8a;
+  border-radius: 8px;
+  padding: 20px;
+  background: #ffffff;
+  text-align: center;
+}
+.otp-input {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s;
+}
+.otp-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+}

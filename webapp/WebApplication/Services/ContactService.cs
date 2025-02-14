@@ -25,7 +25,7 @@ namespace K9.WebApplication.Services
             {
                 try
                 {
-                    var existingCustomer = _contactsRepository.Find(_ => _.StripeCustomerId == stripeCustomerId || _.EmailAddress == emailAddress).FirstOrDefault();
+                    var existingCustomer = _contactsRepository.Find(_ => (!string.IsNullOrEmpty(stripeCustomerId) && _.StripeCustomerId == stripeCustomerId) || _.EmailAddress == emailAddress).FirstOrDefault();
                     if (existingCustomer == null)
                     {
                         _contactsRepository.Create(new Contact

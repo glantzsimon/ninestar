@@ -10876,7 +10876,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to We&apos;ve sent a 6-digit code to your email..
+        ///   Looks up a localized string similar to We&apos;ve sent a new 6-digit code to your email address to activate your account..
+        /// </summary>
+        public static string WeveResentCodeToEmail {
+            get {
+                return ResourceManager.GetString("WeveResentCodeToEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We&apos;ve sent a 6-digit code to your email address to activate your account..
         /// </summary>
         public static string WeveSentCodeToEmail {
             get {

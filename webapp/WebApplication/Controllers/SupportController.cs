@@ -158,6 +158,7 @@ namespace K9.WebApplication.Controllers
                     Title = title,
                     contact.FirstName,
                     PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
+                    TermsOfServiceLink = _urlHelper.AbsoluteAction("TermsOfService", "Home"),
                     UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact.Name }),
                     DateTime.Now.Year
                 }), contact.EmailAddress, contact.FirstName, _config.SupportEmailAddress,

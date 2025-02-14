@@ -132,6 +132,7 @@ namespace K9.WebApplication.Services
                 model.EmailAddress,
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
                 PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
+                TermsOfServiceLink = _urlHelper.AbsoluteAction("TermsOfService", "Home"),
                 UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact.Name }),
                 PromoLink = _urlHelper.AbsoluteAction("Register", "Account", new { promoCode = model.PromoCode.Code }),
                 PromoDetails = model.PromoCode.Details,

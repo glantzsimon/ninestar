@@ -18,6 +18,7 @@ namespace K9.WebApplication.Services
         private readonly IMailer _mailer;
         private readonly ILogger _logger;
         private readonly IRoles _roles;
+        private readonly IContactService _contactService;
         private readonly WebsiteConfiguration _config;
         private UrlHelper _urlHelper;
 
@@ -27,18 +28,21 @@ namespace K9.WebApplication.Services
             set => _urlHelper = value;
         }
 
-        public AccountMailerService(IOptions<WebsiteConfiguration> config, IRepository<User> usersRepository, IMailer mailer, ILogger logger, IRoles roles)
+        public AccountMailerService(IOptions<WebsiteConfiguration> config, IRepository<User> usersRepository, IMailer mailer, ILogger logger, IRoles roles,
+            IContactService contactService)
         {
             _usersRepository = usersRepository;
             _mailer = mailer;
             _logger = logger;
             _roles = roles;
+            _contactService = contactService;
             _config = config.Value;
             _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }
 
         public void SendActivationEmail(UserAccount.RegisterModel model, int sixDigitCode)
         {
+            var contact = _contactService.Find(model.EmailAddress);
             var imageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl);
 
             var emailContent = TemplateProcessor.PopulateTemplate(Globalisation.Dictionary.WelcomeEmail, new
@@ -46,12 +50,15 @@ namespace K9.WebApplication.Services
                 Title = Dictionary.Welcome,
                 model.FirstName,
                 Company = _config.CompanyName,
+                PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
+                TermsOfServiceLink = _urlHelper.AbsoluteAction("TermsOfService", "Home"),
+                UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact.Name }),
                 ActivationCode = sixDigitCode,
                 ImageUrl = imageUrl,
                 From = _config.CompanyName
             });
 
-            _mailer.SendEmail(Dictionary.AccountActivationTitle, emailContent, model.EmailAddress, model.GetFullName());
+            _mailer.SendEmail(Dictionary.AccountActivationTitle, emailContent, model.EmailAddress, model.GetFullName(), _config.SupportEmailAddress, _config.CompanyName);
         }
 
         public void SendPasswordResetEmail(UserAccount.PasswordResetRequestModel model, string token)
@@ -76,7 +83,7 @@ namespace K9.WebApplication.Services
                 From = _config.CompanyName
             });
 
-            _mailer.SendEmail(Dictionary.PasswordResetTitle, emailContent, model.EmailAddress, user.FullName);
+            _mailer.SendEmail(Dictionary.PasswordResetTitle, emailContent, model.EmailAddress, user.FullName, _config.SupportEmailAddress, _config.CompanyName);
         }
 
         private string GetPasswordResetLink(UserAccount.PasswordResetRequestModel model, string token)

@@ -254,6 +254,7 @@ namespace K9.WebApplication.Services
                 Duration = consultation.DurationDescription,
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
                 PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
+                TermsOfServiceLink = _urlHelper.AbsoluteAction("TermsOfService", "Home"),
                 UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact.Name }),
                 DateTime.Now.Year
             }), contact.EmailAddress, contact.FullName, _config.SupportEmailAddress, _config.CompanyName);
@@ -261,7 +262,7 @@ namespace K9.WebApplication.Services
 
         private void SendAppointmentConfirmationEmailToNineStar(Consultation consultation, Contact contact)
         {
-            var template = Dictionary.ConsultationBookedEmail;
+            var template = Dictionary.ConsultationScheduledEmail;
             var title = "We have received a consultation booking!";
             _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
             {
@@ -278,7 +279,7 @@ namespace K9.WebApplication.Services
 
         private void SendAppointmentConfirmationEmailToCustomer(Consultation consultation, Contact contact)
         {
-            var template = Dictionary.ConsultationBookedThankYouEmail;
+            var template = Dictionary.ConsultationScheduledThankYouEmail;
             var title = Dictionary.ThankyouForBookingConsultationEmailTitle;
             _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
             {
@@ -288,6 +289,7 @@ namespace K9.WebApplication.Services
                 ScheduledOn = consultation.ScheduledOnLocalTime.Value.ToString(DataAccessLayer.Constants.FormatConstants.AppointmentDisplayDateTimeFormat),
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
                 PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
+                TermsOfServiceLink = _urlHelper.AbsoluteAction("TermsOfService", "Home"),
                 UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact.Name }),
                 DateTime.Now.Year
             }), contact.EmailAddress, contact.FullName, _config.SupportEmailAddress, _config.CompanyName);

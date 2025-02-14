@@ -515,6 +515,7 @@
     <Content Include="Content\main\style.991.css" />
     <Content Include="Content\main\style.css" />
     <Content Include="Content\sections\about.css" />
+    <Content Include="Content\sections\account.css" />
     <Content Include="Content\sections\archive.css" />
     <Content Include="Content\sections\biorhythms.css" />
     <Content Include="Content\sections\book-consultation.css" />

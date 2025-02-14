@@ -308,6 +308,13 @@
     }
   },
   {
+    "inputFile": "Content/less/sections/account.less",
+    "outputFile": "Content/sections/account.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
     "inputFile": "Content/less/sections/biorhythms.less",
     "outputFile": "Content/sections/biorhythms.css",
     "options": {

@@ -2936,12 +2936,15 @@
     <value>Verify</value>
   </data>
   <data name="WeveSentCodeToEmail" xml:space="preserve">
-    <value>We've sent a 6-digit code to your email.</value>
+    <value>We've sent a 6-digit code to your email address to activate your account.</value>
   </data>
   <data name="AccountCreatedErrorSendingEmail" xml:space="preserve">
     <value>Your account was successfully created, but an error occurred when trying to email your activation code. Please contact support for more details.</value>
   </data>
   <data name="ErrorCreatingUserAccount" xml:space="preserve">
     <value>An error occurred whilst trying to create your account. Please contact support for more assistance. We apologise for the inconvenience.</value>
+  </data>
+  <data name="WeveResentCodeToEmail" xml:space="preserve">
+    <value>We've sent a new 6-digit code to your email address to activate your account.</value>
   </data>
 </root>

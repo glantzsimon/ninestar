@@ -26,7 +26,6 @@ namespace K9.WebApplication.Tests.Unit.Services
         private readonly Mock<IRepository<User>> _usersRepository = new Mock<IRepository<User>>();
         private readonly Mock<IRepository<UserMembership>> _userMembershipRepository = new Mock<IRepository<UserMembership>>();
         private readonly Mock<IRepository<MembershipOption>> _membershipOptionRepository = new Mock<IRepository<MembershipOption>>();
-        private readonly Mock<IRepository<UserCreditPack>> _userCreditPackRepository = new Mock<IRepository<UserCreditPack>>();
         private readonly Mock<ILogger> _logger = new Mock<ILogger>();
         private readonly Mock<IMailer> _mailer = new Mock<IMailer>();
         private readonly Mock<IOptions<WebsiteConfiguration>> _config = new Mock<IOptions<WebsiteConfiguration>>();
@@ -80,16 +79,6 @@ namespace K9.WebApplication.Tests.Unit.Services
                 _platinumMonthlyMembership,
                 _platinumYearlyMembership
             };
-
-            var userCreditPacks = new List<UserCreditPack>
-            {
-                new UserCreditPack
-                {
-                    UserId = 2,
-                    NumberOfCredits = 11,
-                    TotalPrice = 33.3
-                }
-            };
             
             HttpContext.Current = Helpers.Helpers.CreateHttpContextWithSession();
             
@@ -113,9 +102,6 @@ namespace K9.WebApplication.Tests.Unit.Services
             _membershipOptionRepository.Setup(_ => _.Find(_platinumMonthlyMembership.Id)).Returns(_platinumMonthlyMembership);
             _membershipOptionRepository.Setup(_ => _.Find(_platinumYearlyMembership.Id)).Returns(_platinumYearlyMembership);
             
-            _userCreditPackRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserCreditPack, bool>>>()))
-                .Returns(userCreditPacks);
-
             SessionHelper.SetCurrentUserId(_userId);
             SessionHelper.SetCurrentUserName("simon");
 
@@ -124,7 +110,6 @@ namespace K9.WebApplication.Tests.Unit.Services
                 _authentication.Object,
                 _membershipOptionRepository.Object,
                 _userMembershipRepository.Object,
-                _userCreditPackRepository.Object,
                 _usersRepository.Object,
                 _contactService.Object,
                 _mailer.Object,

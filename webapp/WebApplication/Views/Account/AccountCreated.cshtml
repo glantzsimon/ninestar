@@ -1,4 +1,5 @@
 ﻿@using K9.Base.WebApplication.Helpers
+@model K9.WebApplication.Models.AccountActivationModel
 
 @{
     ViewBag.Title = K9.Base.Globalisation.Dictionary.Registration;
@@ -15,4 +16,7 @@
         <hr />
         @Html.Alert(EAlertType.Warning, additionalError)
     }
+
+    <hr />
+    @Html.Partial("_AccountVerification")
 </div>

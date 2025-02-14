@@ -30,7 +30,7 @@ namespace K9.WebApplication.Controllers
     {
         private readonly IRepository<User> _userRepository;
         private readonly ILogger _logger;
-        private readonly IAccountService _accountService;
+        private readonly Services.IAccountService _accountService;
         private readonly IAuthentication _authentication;
         private readonly IFacebookService _facebookService;
         private readonly IMembershipService _membershipService;
@@ -40,7 +40,7 @@ namespace K9.WebApplication.Controllers
         private readonly IRecaptchaService _recaptchaService;
         private readonly RecaptchaConfiguration _recaptchaConfig;
 
-        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IContactService contactService, IUserService userService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository)
+        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, Services.IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IContactService contactService, IUserService userService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
         {
             _userRepository = userRepository;
@@ -306,9 +306,10 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public ActionResult Register(string promoCode = null)
+        public ActionResult Register(string promoCode = null, string returnUrl = null)
         {
             ViewBag.RecaptchaSiteKey = _recaptchaConfig.RecaptchaSiteKey;
+            TempData["ReturnUrl"] = returnUrl;
 
             if (WebSecurity.IsAuthenticated)
             {
@@ -362,14 +363,14 @@ namespace K9.WebApplication.Controllers
             }
 
             if (ModelState.IsValid)
-            {
+            {   
                 var result = _accountService.Register(model.RegisterModel);
 
                 if (result.IsSuccess)
                 {
                     var user = _userRepository.Find(e => e.Username == model.RegisterModel.UserName).FirstOrDefault();
 
-                    if (user?.Id > 0)
+                    if (user.Id > 0)
                     {
                         _contactService.GetOrCreateContact("", user.FullName, user.EmailAddress, user.PhoneNumber, user.Id);
 
@@ -389,11 +390,29 @@ namespace K9.WebApplication.Controllers
                         else
                         {
                             _logger.Error("AccountController => Register => Promo code used but UserId is 0");
-                            return RedirectToAction("AccountCreated", "Account", new { additionalError = Globalisation.Dictionary.PromoCodeNotUsed });
+                            return RedirectToAction("AccountCreated", "Account", new { userId = user.Id, additionalError = Globalisation.Dictionary.PromoCodeNotUsed });
                         }
                     }
-                    
-                    return RedirectToAction("AccountCreated", "Account");
+                    else
+                    {
+                        _logger.Error("AccountController => Register => User not found after registration");
+                        throw new Exception("User not found");
+                    }
+
+                    var otp = (UserOTP)result.Data;
+                    if (otp == null)
+                    {
+                        _logger.Error("AccountController => Register => UserOTP was null");
+                        throw new Exception("UserOTP canot be null");
+                    }
+
+                    var returnUrl = TempData["ReturnUrl"];
+                    if (returnUrl != null)
+                    {
+                        return RedirectToAction("AccountCreated", "Account", new { uniqueIdentifier = otp.UniqueIdentifier, returnUrl });
+                    }
+
+                    return RedirectToAction("AccountCreated", "Account", new { uniqueIdentifier = otp.UniqueIdentifier });
                 }
 
                 foreach (var registrationError in result.Errors)
@@ -709,14 +728,90 @@ namespace K9.WebApplication.Controllers
         #region Account Activation
 
         [AllowAnonymous]
-        public ActionResult AccountCreated(string userName, string additionalError = "")
+        public ActionResult AccountCreated(Guid uniqueIdentifier, string returnUrl = null, string additionalError = null)
         {
-            ViewBag.AdditionalError = additionalError;
-            return View();
+            ViewBag["AdditionalError"] = additionalError;
+            var code = _accountService.GetAccountActivationOTP(uniqueIdentifier);
+
+            if (code == null)
+            {
+                return HttpNotFound("OTP not found");
+            }
+
+            var user = _userService.Find(code.UserId);
+            if (user == null)
+            {
+                return HttpNotFound("User not found");
+            }
+
+            if (user.Id != Current.UserId)
+            {
+                throw new Exception("Invalid UserId");
+            }
+
+            return View(new AccountActivationModel
+            {
+                UserId = user.Id,
+                UniqueIdentifier = uniqueIdentifier
+            });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult VerifyDixDigitCode(AccountActivationModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (model.UserId != Current.UserId)
+                {
+                    ModelState.AddModelError("", "Invalid UserId");
+                }
+                else
+                {
+                    try
+                    {
+                        _accountService.VerifyCode(
+                            model.UserId, 
+                            model.Digit1, 
+                            model.Digit2, 
+                            model.Digit3, 
+                            model.Digit4, 
+                            model.Digit5, 
+                            model.Digit6);
+                    }
+                    catch (Exception e)
+                    {
+                        _logger.Error($"AccountController => VerifyDixDigitCode => Error: {e.GetFullErrorMessage()}");
+                        ModelState.AddModelError("", Globalisation.Dictionary.ErrorValidatingCode);
+                    }
+
+                    try
+                    {
+                        var result = _accountService.ActivateAccount(model.UserId);
+
+                        _accountService.Login(model.UserId);
+
+                        return RedirectToAction("AccountVerified");
+                    }
+                    catch (Exception e)
+                    {
+                        _logger.Error($"AccountController => VerifyDixDigitCode => ActivateAccount => Error: {e.GetFullErrorMessage()}");
+                        ModelState.AddModelError("", Globalisation.Dictionary.ErrorActivatingAccount);
+                    }
+                }
+            }
+
+            return View(model);
         }
 
         [AllowAnonymous]
         public ActionResult AccountActivated(string userName)
+        {
+            return View();
+        }
+
+        [AllowAnonymous]
+        public ActionResult AccountVerified(string userName)
         {
             return View();
         }
@@ -751,7 +846,7 @@ namespace K9.WebApplication.Controllers
                     return RedirectToAction("AccountActivationFailed", "Account");
             }
         }
-
+        
         [RequirePermissions(Permission = Permissions.Edit)]
         public ActionResult ActivateUserAccount(int userId)
         {

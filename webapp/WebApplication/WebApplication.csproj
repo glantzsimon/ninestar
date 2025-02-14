@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -52,58 +53,58 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\Antlr3.Runtime.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Autofac, Version=6.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.201\lib\net461\Autofac.dll</HintPath>
+      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.206\lib\net461\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="Autofac.Integration.Mvc, Version=6.1.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.201\lib\net461\Autofac.Integration.Mvc.dll</HintPath>
+      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.206\lib\net461\Autofac.Integration.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
     <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.201\lib\net461\Dapper.dll</HintPath>
+      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.206\lib\net461\Dapper.dll</HintPath>
     </Reference>
     <Reference Include="DataAnnotationsExtensions, Version=5.0.1.16, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.201\lib\net461\DataAnnotationsExtensions.dll</HintPath>
+      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.206\lib\net461\DataAnnotationsExtensions.dll</HintPath>
     </Reference>
     <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.201\lib\net461\Facebook.dll</HintPath>
+      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.206\lib\net461\Facebook.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.11.72.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.11.72\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
     <Reference Include="K9.Base.DataAccessLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.201\lib\net461\K9.Base.DataAccessLayer.dll</HintPath>
+      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.206\lib\net461\K9.Base.DataAccessLayer.dll</HintPath>
     </Reference>
     <Reference Include="K9.Base.Globalisation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\K9.Base.Globalisation.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\K9.Base.Globalisation.dll</HintPath>
     </Reference>
     <Reference Include="K9.Base.WebApplication, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.201\lib\net461\K9.Base.WebApplication.dll</HintPath>
+      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.206\lib\net461\K9.Base.WebApplication.dll</HintPath>
     </Reference>
     <Reference Include="K9.SharedLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\K9.SharedLibrary.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\K9.SharedLibrary.dll</HintPath>
     </Reference>
     <Reference Include="MailChimp.Net, Version=5.1.0.0, Culture=neutral, PublicKeyToken=37d26d538413c581, processorArchitecture=MSIL">
       <HintPath>..\packages\MailChimp.Net.V3.5.1.0\lib\net472\MailChimp.Net.dll</HintPath>
     </Reference>
     <Reference Include="MailKit, Version=4.5.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\MailKit.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\MailKit.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.201\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.206\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -140,16 +141,16 @@
       <HintPath>..\packages\Microsoft.Extensions.Primitives.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\Microsoft.Web.Infrastructure.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="MimeKit, Version=4.5.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\MimeKit.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\MimeKit.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\NLog.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\NLog.dll</HintPath>
     </Reference>
     <Reference Include="NodaTime, Version=3.2.1.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL">
       <HintPath>..\packages\NodaTime.3.2.1\lib\netstandard2.0\NodaTime.dll</HintPath>
@@ -162,23 +163,23 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\System.Buffers.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.DataAccessLayer.2.0.0.201\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+      <HintPath>..\packages\K9.Base.DataAccessLayer.2.0.0.206\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.201\lib\net461\System.Diagnostics.DiagnosticSource.dll</HintPath>
+      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.206\lib\net461\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
     <Reference Include="System.Formats.Asn1, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\System.Formats.Asn1.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\System.Formats.Asn1.dll</HintPath>
     </Reference>
     <Reference Include="System.Linq" />
     <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\System.Memory.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -186,14 +187,14 @@
     </Reference>
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\System.Numerics.Vectors.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\System.Numerics.Vectors.dll</HintPath>
     </Reference>
     <Reference Include="System.Reflection.TypeExtensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.DataAccessLayer.2.0.0.201\lib\net461\System.Reflection.TypeExtensions.dll</HintPath>
+      <HintPath>..\packages\K9.Base.DataAccessLayer.2.0.0.206\lib\net461\System.Reflection.TypeExtensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.InteropServices" />
     <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -203,11 +204,11 @@
     </Reference>
     <Reference Include="System.Security" />
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Thread" />
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\System.ValueTuple.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -219,38 +220,38 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\System.Web.Helpers.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\System.Web.Helpers.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\System.Web.Mvc.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\System.Web.Razor.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\System.Web.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\System.Web.WebPages.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\System.Web.WebPages.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\System.Web.WebPages.Deployment.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\System.Web.WebPages.Deployment.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\System.Web.WebPages.Razor.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.201\lib\net461\WebGrease.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\WebGrease.dll</HintPath>
     </Reference>
     <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.3.2.7\lib\net45\WebMatrix.Data.dll</HintPath>
     </Reference>
     <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.201\lib\net461\WebMatrix.WebData.dll</HintPath>
+      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.206\lib\net461\WebMatrix.WebData.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -283,7 +284,6 @@
     <Compile Include="Controllers\MembershipController.cs" />
     <Compile Include="Controllers\MembershipOptionsController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
-    <Compile Include="Controllers\UserCreditPacksController.cs" />
     <Compile Include="Controllers\UserConsultationsController.cs" />
     <Compile Include="Controllers\UserPromoCodesController.cs" />
     <Compile Include="Controllers\UserMembershipsController.cs" />
@@ -349,8 +349,13 @@
     <Compile Include="Models\PurchaseModel.cs" />
     <Compile Include="Models\LogItem.cs" />
     <Compile Include="Models\RetrieveLastModel.cs" />
+    <Compile Include="Models\AccountActivationModel.cs" />
     <Compile Include="Options\BiorhythmGaugeOptions.cs" />
     <Compile Include="Options\GaugeOptions.cs" />
+    <Compile Include="Services\AccountMailerService.cs" />
+    <Compile Include="Services\AccountService.cs" />
+    <Compile Include="Services\IAccountMailerService.cs" />
+    <Compile Include="Services\IAccountService.cs" />
     <Compile Include="ViewModels\WhatsAppViewModel.cs" />
     <Compile Include="ViewModels\PredictionsViewModel.cs" />
     <Compile Include="ViewModels\PromptViewModel.cs" />
@@ -534,7 +539,6 @@
     <Content Include="Content\css\sections\navbar.css" />
     <Content Include="Content\css\controls\tables.css" />
     <Content Include="Content\css\controls\pageSpinner.css" />
-    <Content Include="Content\_colors.txt" />
     <Content Include="Global.asax" />
     <Content Include="Images\about\light-dark.jpg" />
     <Content Include="Images\background\stars.jpg" />
@@ -1187,6 +1191,7 @@
     <Content Include="Content\less\sections\stripe.less" />
     <Content Include="Content\less\config\colours.less" />
     <Content Include="Content\less\config\paths.less" />
+    <Content Include="Content\less\sections\account.less" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\Integration.pubxml" />
     <None Include="Properties\PublishProfiles\IntegrationLocal.pubxml" />
@@ -1426,6 +1431,8 @@
     <Content Include="Views\KnowledgeBase\_AboutRelationships.cshtml" />
     <Content Include="Views\Home\TermsOfService.cshtml" />
     <Content Include="Views\Home\HowToRemoveYourData.cshtml" />
+    <Content Include="Views\Account\_AccountVerification.cshtml" />
+    <Content Include="Views\Account\AccountVerified.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1537,8 +1544,11 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
   </Target>
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

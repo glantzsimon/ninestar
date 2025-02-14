@@ -11,8 +11,9 @@ namespace K9.WebApplication.Services
         bool CheckIfPromoCodeIsUsed(string code);
         void UsePromoCode(int userId, string code);
         void SendPromoCode(EmailPromoCodeViewModel model);
-        User Find(int userId);
+        User Find(int id);
         User Find(string username);
         List<UserConsultation> GetPendingConsultations(int? userId = null);
+        void DeleteUser(int id);
     }
 }

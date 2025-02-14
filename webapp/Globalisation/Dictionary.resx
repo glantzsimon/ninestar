@@ -2911,4 +2911,37 @@
   <data name="HowToRemoveYourDataTitle" xml:space="preserve">
     <value>Instructions For Removing Your Data</value>
   </data>
+  <data name="DidntReceiveCodePrompt" xml:space="preserve">
+    <value>Didn't receive a code?</value>
+  </data>
+  <data name="EnterVerificationCode" xml:space="preserve">
+    <value>Enter Verification Code</value>
+  </data>
+  <data name="ErrorActivatingAccount" xml:space="preserve">
+    <value>Your account could not be activated. Please contact support.</value>
+  </data>
+  <data name="ErrorValidatingCode" xml:space="preserve">
+    <value>The code provided is incorrect. Please try again.</value>
+  </data>
+  <data name="Resend" xml:space="preserve">
+    <value>Resend</value>
+  </data>
+  <data name="SixDigitCodeLabel" xml:space="preserve">
+    <value>Six Digit Code</value>
+  </data>
+  <data name="VerifiedOnLabel" xml:space="preserve">
+    <value>Verified On</value>
+  </data>
+  <data name="Verify" xml:space="preserve">
+    <value>Verify</value>
+  </data>
+  <data name="WeveSentCodeToEmail" xml:space="preserve">
+    <value>We've sent a 6-digit code to your email.</value>
+  </data>
+  <data name="AccountCreatedErrorSendingEmail" xml:space="preserve">
+    <value>Your account was successfully created, but an error occurred when trying to email your activation code. Please contact support for more details.</value>
+  </data>
+  <data name="ErrorCreatingUserAccount" xml:space="preserve">
+    <value>An error occurred whilst trying to create your account. Please contact support for more assistance. We apologise for the inconvenience.</value>
+  </data>
 </root>

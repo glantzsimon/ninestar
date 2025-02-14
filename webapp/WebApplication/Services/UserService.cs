@@ -28,10 +28,16 @@ namespace K9.WebApplication.Services
         private readonly IRepository<Consultation> _consultationsRepository;
         private readonly ILogger _logger;
         private readonly IConsultationService _consultationService;
+        private readonly IRepository<UserRole> _userRolesRepository;
+        private readonly IRepository<Contact> _contactsRepository;
+        private readonly IRepository<UserMembership> _userMembershipsRepository;
+        private readonly IRepository<UserOTP> _userOtpRepository;
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public UserService(IRepository<User> usersRepository, IRepository<PromoCode> promoCodesRepository, IRepository<UserPromoCode> userPromoCodeRepository, IAuthentication authentication, IMailer mailer, IOptions<WebsiteConfiguration> config, IContactService contactService, IRepository<UserConsultation> userConsultationsRepository, IRepository<Consultation> consultationsRepository, ILogger logger, IConsultationService consultationService)
+        public UserService(IRepository<User> usersRepository, IRepository<PromoCode> promoCodesRepository, IRepository<UserPromoCode> userPromoCodeRepository, IAuthentication authentication, IMailer mailer, IOptions<WebsiteConfiguration> config, IContactService contactService, IRepository<UserConsultation> userConsultationsRepository, IRepository<Consultation> consultationsRepository, ILogger logger, IConsultationService consultationService,
+            IRepository<UserRole> userRolesRepository, IRepository<Contact> contactsRepository, IRepository<UserMembership> userMembershipsRepository,
+            IRepository<UserOTP> userOtpRepository)
         {
             _usersRepository = usersRepository;
             _promoCodesRepository = promoCodesRepository;
@@ -43,6 +49,10 @@ namespace K9.WebApplication.Services
             _consultationsRepository = consultationsRepository;
             _logger = logger;
             _consultationService = consultationService;
+            _userRolesRepository = userRolesRepository;
+            _contactsRepository = contactsRepository;
+            _userMembershipsRepository = userMembershipsRepository;
+            _userOtpRepository = userOtpRepository;
             _config = config.Value;
             _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }
@@ -132,9 +142,9 @@ namespace K9.WebApplication.Services
             _promoCodesRepository.Update(model.PromoCode);
         }
 
-        public User Find(int userId)
+        public User Find(int id)
         {
-            return _usersRepository.Find(userId);
+            return _usersRepository.Find(id);
         }
 
         public User Find(string username)
@@ -173,6 +183,68 @@ namespace K9.WebApplication.Services
             }
 
             return userConsultations.Where(e => !e.Consultation.ScheduledOn.HasValue || e.Consultation.ScheduledOn >= DateTime.Today).ToList();
+        }
+
+        public void DeleteUser(int id)
+        {
+            var user = Find(id);
+
+            if (user == null)
+            {
+                throw new Exception("User not found");
+            }
+
+            try
+            {
+                var userRoles = _userRolesRepository.Find(e => e.UserId == user.Id);
+                foreach (var userRole in userRoles)
+                {
+                    _userRolesRepository.Delete(userRole);
+                }
+
+                var userConsultations = _userConsultationsRepository.Find(e => e.UserId == user.Id);
+                foreach (var userConsultation in userConsultations)
+                {
+                    _userConsultationsRepository.Delete(userConsultation);
+                }
+
+                var contactRecord = _contactService.Find(user.EmailAddress);
+                if (contactRecord != null)
+                {
+                    var consultations = _consultationsRepository.Find(e => e.ContactId == contactRecord.Id);
+                    foreach (var consultation in consultations)
+                    {
+                        consultation.ContactId = 2; // SYSTEM
+                        _consultationsRepository.Update(consultation);
+                    }
+
+                    _contactsRepository.Delete(contactRecord);
+                }
+
+                var userMemberships = _userMembershipsRepository.Find(e => e.UserId == user.Id);
+                foreach (var userMembership in userMemberships)
+                {
+                    _userMembershipsRepository.Delete(userMembership);
+                }
+
+                var userOTPs = _userOtpRepository.Find(e => e.UserId == user.Id);
+                foreach (var userOTP in userOTPs)
+                {
+                    _userOtpRepository.Delete(userOTP);
+                }
+
+                var userPromoCodes = _userPromoCodeRepository.Find(e => e.UserId == user.Id);
+                foreach (var userPromoCode in userPromoCodes)
+                {
+                    _userPromoCodeRepository.Delete(userPromoCode);
+                }
+
+            }
+            catch (Exception e)
+            {
+                _logger.Log(LogLevel.Error, $"UserService => DeleteUser => Error: {e.GetFullErrorMessage()}");
+                throw new Exception("Error deleting user account");
+            }
         }
     }
 }

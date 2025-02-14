@@ -1348,6 +1348,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your account was successfully created, but an error occurred when trying to email your activation code. Please contact support for more details..
+        /// </summary>
+        public static string AccountCreatedErrorSendingEmail {
+            get {
+                return ResourceManager.GetString("AccountCreatedErrorSendingEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Additional Comments.
         /// </summary>
         public static string AdditionalComments {
@@ -1384,7 +1393,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Whilst using this site, you agree to have read and accepted our &lt;a target=&quot;_blank&quot; href=&quot;{privacypolicyurl}&quot;&gt;Privacy Policy&lt;/a&gt; and &lt;a target=&quot;_blank&quot; href=&quot;{privacypolicyurl}&quot;&gt;Terms of Service&lt;/a&gt;.
+        ///   Looks up a localized string similar to Whilst using this site, you agree to have read and accepted our &lt;a target=&quot;_blank&quot; href=&quot;{PrivacyPolicyUrl}&quot;&gt;Privacy Policy&lt;/a&gt; and &lt;a target=&quot;_blank&quot; href=&quot;{TermsOfServiceUrl}&quot;&gt;Terms of Service&lt;/a&gt;.
         /// </summary>
         public static string AgreeToTerms {
             get {
@@ -3188,6 +3197,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Didn&apos;t receive a code?.
+        /// </summary>
+        public static string DidntReceiveCodePrompt {
+            get {
+                return ResourceManager.GetString("DidntReceiveCodePrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Diplomat.
         /// </summary>
         public static string Diplomat {
@@ -3800,11 +3818,47 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter Verification Code.
+        /// </summary>
+        public static string EnterVerificationCode {
+            get {
+                return ResourceManager.GetString("EnterVerificationCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your account could not be activated. Please contact support..
+        /// </summary>
+        public static string ErrorActivatingAccount {
+            get {
+                return ResourceManager.GetString("ErrorActivatingAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An error occurred whilst trying to create your account. Please contact support for more assistance. We apologise for the inconvenience..
+        /// </summary>
+        public static string ErrorCreatingUserAccount {
+            get {
+                return ResourceManager.GetString("ErrorCreatingUserAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error Log.
         /// </summary>
         public static string ErrorLog {
             get {
                 return ResourceManager.GetString("ErrorLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The code provided is incorrect. Please try again..
+        /// </summary>
+        public static string ErrorValidatingCode {
+            get {
+                return ResourceManager.GetString("ErrorValidatingCode", resourceCulture);
             }
         }
         
@@ -4657,7 +4711,7 @@ namespace K9.Globalisation {
         ///
         ///&lt;h4&gt;Instructions&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    To permanently remove all of your data, simply &lt;a href=&quot;{LoginUrl}&quot;&gt;click here&lt;/a&gt;. You will be asked to log into your account, if you do not already have a session open.
+        ///    To permanently remove all of your data, simply &lt;a href=&quot;{RemoveDataUrl}&quot;&gt;click here&lt;/a&gt;. You will be asked to log into your account, if you do not already have a session open.
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt; If you have any question regarding your data or require any assistance, please &lt;a href=&quot;mailto:support@9starkiastrology.com&quot;&gt;contact us&lt;/a&gt;.&lt;/p&gt;.
@@ -8341,6 +8395,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Resend.
+        /// </summary>
+        public static string Resend {
+            get {
+                return ResourceManager.GetString("Resend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Results.
         /// </summary>
         public static string Results {
@@ -8965,6 +9028,15 @@ namespace K9.Globalisation {
         public static string SignUpToNewsLetter {
             get {
                 return ResourceManager.GetString("SignUpToNewsLetter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Six Digit Code.
+        /// </summary>
+        public static string SixDigitCodeLabel {
+            get {
+                return ResourceManager.GetString("SixDigitCodeLabel", resourceCulture);
             }
         }
         
@@ -9741,7 +9813,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    &lt;strong&gt;Effective Date:&lt;/strong&gt;&lt;span&gt;3rd December 2019&lt;/span&gt;
+        ///    &lt;strong&gt;Effective Date: &lt;/strong&gt;&lt;span&gt;3rd December 2019&lt;/span&gt;
         ///&lt;/p&gt;
         ///
         ///&lt;p&gt;
@@ -9753,7 +9825,7 @@ namespace K9.Globalisation {
         ///&lt;h4&gt;1. Acceptance of Terms&lt;/h4&gt;
         ///
         ///&lt;p&gt;
-        ///    By accessing or using our website, you agree to be bound by these Terms. If you do not agree to these Terms, please do not [rest of string was truncated]&quot;;.
+        ///    By accessing or using our website, you agree to be bound by these Terms. If you do not agree to these Terms, please do no [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TermsOfService {
             get {
@@ -10414,6 +10486,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Verified On.
+        /// </summary>
+        public static string VerifiedOnLabel {
+            get {
+                return ResourceManager.GetString("VerifiedOnLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Verify.
+        /// </summary>
+        public static string Verify {
+            get {
+                return ResourceManager.GetString("Verify", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Very High.
         /// </summary>
         public static string VeryHigh {
@@ -10782,6 +10872,15 @@ namespace K9.Globalisation {
         public static string West {
             get {
                 return ResourceManager.GetString("West", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We&apos;ve sent a 6-digit code to your email..
+        /// </summary>
+        public static string WeveSentCodeToEmail {
+            get {
+                return ResourceManager.GetString("WeveSentCodeToEmail", resourceCulture);
             }
         }
         

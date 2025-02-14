@@ -24,7 +24,6 @@ namespace K9.WebApplication.Services
         private readonly IAuthentication _authentication;
         private readonly IRepository<MembershipOption> _membershipOptionRepository;
         private readonly IRepository<UserMembership> _userMembershipRepository;
-        private readonly IRepository<UserCreditPack> _userCreditPacksRepository;
         private readonly IRepository<User> _usersRepository;
         private readonly IContactService _contactService;
         private readonly IMailer _mailer;
@@ -36,13 +35,12 @@ namespace K9.WebApplication.Services
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<UserCreditPack> userCreditPacksRepository, IRepository<User> usersRepository, IContactService contactService, IMailer mailer, IOptions<WebsiteConfiguration> config, IRepository<PromoCode> promoCodesRepository, IUserService userService, IRepository<Consultation> consultationsRepository, IRepository<UserConsultation> userConsultationsRepository, IConsultationService consultationService)
+        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<User> usersRepository, IContactService contactService, IMailer mailer, IOptions<WebsiteConfiguration> config, IRepository<PromoCode> promoCodesRepository, IUserService userService, IRepository<Consultation> consultationsRepository, IRepository<UserConsultation> userConsultationsRepository, IConsultationService consultationService)
         {
             _logger = logger;
             _authentication = authentication;
             _membershipOptionRepository = membershipOptionRepository;
             _userMembershipRepository = userMembershipRepository;
-            _userCreditPacksRepository = userCreditPacksRepository;
             _usersRepository = usersRepository;
             _contactService = contactService;
             _mailer = mailer;

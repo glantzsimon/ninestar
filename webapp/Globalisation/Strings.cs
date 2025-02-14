@@ -57,6 +57,8 @@
             public const string PersonalDevelopemntLabel = "PersonalDevelopemntLabel";
             public const string ExamplesLabel = "ExamplesLabel";
             public const string StripeCustomerIdLabel = "StripeCustomerIdLabel";
+            public const string SixDigitCodeLabel = "SixDigitCodeLabel";
+            public const string VerifiedOnLabel = "VerifiedOnLabel";
             public const string MembershipLabel = "MembershipLabel";
             public const string SubscriptionCostLabel = "SubscriptionCostLabel";
             public const string SubscriptionTypeLabel = "SubscriptionTypeLabel";

@@ -90,7 +90,7 @@ namespace K9.WebApplication.Services
             return slot;
         }
 
-        public void CreateConsultation(Consultation consultation, Contact contact)
+        public void CreateConsultation(Consultation consultation, Contact contact, int? userId = null)
         {
             try
             {
@@ -100,7 +100,7 @@ namespace K9.WebApplication.Services
                 {
                     _userConsultationRepository.Create(new UserConsultation
                     {
-                        UserId = Current.UserId,
+                        UserId = userId ?? Current.UserId,
                         ConsultationId = consultation.Id
                     });
                 }

@@ -382,7 +382,7 @@ namespace K9.WebApplication.Services
 
             try
             {
-                _consultationService.CreateConsultation(consultation, contact);
+                _consultationService.CreateConsultation(consultation, contact, userId);
             }
             catch (Exception e)
             {

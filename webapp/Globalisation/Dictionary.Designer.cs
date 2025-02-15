@@ -7163,7 +7163,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to My Consultations.
+        ///   Looks up a localized string similar to My Client Consultations.
         /// </summary>
         public static string MyConsultations {
             get {
@@ -11433,7 +11433,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your Consultations.
+        ///   Looks up a localized string similar to My Consultations.
         /// </summary>
         public static string YourConsultations {
             get {
@@ -11442,7 +11442,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your Current Membership.
+        ///   Looks up a localized string similar to My Current Membership.
         /// </summary>
         public static string YourCurrentMembership {
             get {

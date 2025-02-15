@@ -1253,7 +1253,7 @@
     <value>Your subscription was successful. Thank you and a warm welcome!</value>
   </data>
   <data name="YourCurrentMembership" xml:space="preserve">
-    <value>Your Current Membership</value>
+    <value>My Current Membership</value>
   </data>
   <data name="MediaTheque" xml:space="preserve">
     <value>Multimedia</value>
@@ -2897,7 +2897,7 @@
     <value>You must select a slot</value>
   </data>
   <data name="YourConsultations" xml:space="preserve">
-    <value>Your Consultations</value>
+    <value>My Consultations</value>
   </data>
   <data name="TermsOfService" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>general\en-gb\termsofservice.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -2957,7 +2957,7 @@
     <value>{TimeZone} Time</value>
   </data>
   <data name="MyConsultations" xml:space="preserve">
-    <value>My Consultations</value>
+    <value>My Client Consultations</value>
   </data>
   <data name="RescheduleAppointment" xml:space="preserve">
     <value>Reschedule Appointment</value>

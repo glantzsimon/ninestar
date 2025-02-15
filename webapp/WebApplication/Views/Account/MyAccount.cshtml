@@ -15,7 +15,14 @@
 
     @if (Model.Consultations != null && Model.Consultations.Any())
     {
-        <li><a data-toggle="tab" href="#consultations">@Dictionary.YourConsultations</a></li>
+        if (SessionHelper.CurrentUserIsAdmin())
+        {
+            <li><a data-toggle="tab" href="#consultations">@Dictionary.MyConsultations</a></li>
+        }
+        else
+        {
+            <li><a data-toggle="tab" href="#consultations">@Dictionary.YourConsultations</a></li>
+        }
     }
 </ul>
 

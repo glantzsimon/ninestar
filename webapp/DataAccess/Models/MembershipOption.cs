@@ -3,6 +3,7 @@ using K9.Base.DataAccessLayer.Extensions;
 using K9.Base.DataAccessLayer.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Authentication;
+using K9.SharedLibrary.Extensions;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
@@ -109,6 +110,8 @@ namespace K9.DataAccessLayer.Models
             }
             return false;
         }
+
+        public string SubscriptionTypeText => Name.SplitOnCapitalLetter();
 
         private string GetCssClassName()
         {

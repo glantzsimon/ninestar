@@ -317,6 +317,10 @@
     <Compile Include="Migrations\202502150103429_MissingOTP.designer.cs">
       <DependentUpon>202502150103429_MissingOTP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202502150142514_UserOTPMod.cs" />
+    <Compile Include="Migrations\202502150142514_UserOTPMod.designer.cs">
+      <DependentUpon>202502150142514_UserOTPMod.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\UserOTP.cs" />
     <Compile Include="Models\TimeZoneBase.cs" />
     <Compile Include="Models\Slot.cs" />
@@ -422,6 +426,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202502150103429_MissingOTP.resx">
       <DependentUpon>202502150103429_MissingOTP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502150142514_UserOTPMod.resx">
+      <DependentUpon>202502150142514_UserOTPMod.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

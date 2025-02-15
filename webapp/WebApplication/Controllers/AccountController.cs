@@ -360,7 +360,7 @@ namespace K9.WebApplication.Controllers
             }
 
             if (ModelState.IsValid)
-            {   
+            {
                 var result = _accountService.Register(model.RegisterModel);
 
                 if (result.IsSuccess)
@@ -724,7 +724,7 @@ namespace K9.WebApplication.Controllers
         public ActionResult AccountCreated(Guid uniqueIdentifier, string returnUrl = null, string additionalError = null, int resendCode = 0)
         {
             TempData["AdditionalError"] = additionalError;
-            
+
             var otp = _accountService.GetAccountActivationOTP(uniqueIdentifier);
             if (otp == null)
             {
@@ -741,7 +741,7 @@ namespace K9.WebApplication.Controllers
             {
                 _accountService.ResentActivationCode(user.Id);
             }
-            
+
             return View(new AccountActivationModel
             {
                 UserId = user.Id,
@@ -757,46 +757,39 @@ namespace K9.WebApplication.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (model.UserId != Current.UserId)
+                try
                 {
-                    ModelState.AddModelError("", "Invalid UserId");
+                    _accountService.VerifyCode(
+                        model.UserId,
+                        model.Digit1,
+                        model.Digit2,
+                        model.Digit3,
+                        model.Digit4,
+                        model.Digit5,
+                        model.Digit6);
                 }
-                else
+                catch (Exception e)
                 {
-                    try
-                    {
-                        _accountService.VerifyCode(
-                            model.UserId, 
-                            model.Digit1 ?? 0, 
-                            model.Digit2 ?? 0, 
-                            model.Digit3 ?? 0, 
-                            model.Digit4 ?? 0, 
-                            model.Digit5 ?? 0, 
-                            model.Digit6 ?? 0);
-                    }
-                    catch (Exception e)
-                    {
-                        _logger.Error($"AccountController => VerifyDixDigitCode => Error: {e.GetFullErrorMessage()}");
-                        ModelState.AddModelError("", Globalisation.Dictionary.ErrorValidatingCode);
-                    }
+                    _logger.Error($"AccountController => VerifyDixDigitCode => Error: {e.GetFullErrorMessage()}");
+                    ModelState.AddModelError("", Globalisation.Dictionary.ErrorValidatingCode);
+                }
 
-                    try
-                    {
-                        var result = _accountService.ActivateAccount(model.UserId);
+                try
+                {
+                    var result = _accountService.ActivateAccount(model.UserId);
 
-                        _accountService.Login(model.UserId);
+                    _accountService.Login(model.UserId);
 
-                        return RedirectToAction("AccountVerified");
-                    }
-                    catch (Exception e)
-                    {
-                        _logger.Error($"AccountController => VerifyDixDigitCode => ActivateAccount => Error: {e.GetFullErrorMessage()}");
-                        ModelState.AddModelError("", Globalisation.Dictionary.ErrorActivatingAccount);
-                    }
+                    return RedirectToAction("AccountVerified");
+                }
+                catch (Exception e)
+                {
+                    _logger.Error($"AccountController => VerifyDixDigitCode => ActivateAccount => Error: {e.GetFullErrorMessage()}");
+                    ModelState.AddModelError("", Globalisation.Dictionary.ErrorActivatingAccount);
                 }
             }
 
-            return View(model);
+            return View("AccountCreated", model);
         }
 
         [AllowAnonymous]
@@ -841,7 +834,7 @@ namespace K9.WebApplication.Controllers
                     return RedirectToAction("AccountActivationFailed", "Account");
             }
         }
-        
+
         [RequirePermissions(Permission = Permissions.Edit)]
         public ActionResult ActivateUserAccount(int userId)
         {

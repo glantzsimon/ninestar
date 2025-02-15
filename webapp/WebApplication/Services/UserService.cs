@@ -200,44 +200,45 @@ namespace K9.WebApplication.Services
                 var userRoles = _userRolesRepository.Find(e => e.UserId == user.Id);
                 foreach (var userRole in userRoles)
                 {
-                    _userRolesRepository.Delete(userRole);
+                    _userRolesRepository.Delete(userRole.Id);
                 }
 
                 var userConsultations = _userConsultationsRepository.Find(e => e.UserId == user.Id);
                 foreach (var userConsultation in userConsultations)
                 {
-                    _userConsultationsRepository.Delete(userConsultation);
+                    _userConsultationsRepository.Delete(userConsultation.Id);
                 }
 
-                var contactRecord = _contactService.Find(user.EmailAddress);
+                var contactRecord = _contactsRepository.Find(e => e.EmailAddress == user.EmailAddress).FirstOrDefault();
                 if (contactRecord != null)
                 {
                     var consultations = _consultationsRepository.Find(e => e.ContactId == contactRecord.Id);
                     foreach (var consultation in consultations)
                     {
-                        consultation.ContactId = 2; // SYSTEM
-                        _consultationsRepository.Update(consultation);
+                        var itemToUpdate = _consultationsRepository.Find(consultation.Id);
+                        itemToUpdate.ContactId = 2; // SYSTEM
+                        _consultationsRepository.Update(itemToUpdate);
                     }
 
-                    _contactsRepository.Delete(contactRecord);
+                    _contactsRepository.Delete(contactRecord.Id);
                 }
 
                 var userMemberships = _userMembershipsRepository.Find(e => e.UserId == user.Id);
                 foreach (var userMembership in userMemberships)
                 {
-                    _userMembershipsRepository.Delete(userMembership);
+                    _userMembershipsRepository.Delete(userMembership.Id);
                 }
 
                 var userOTPs = _userOtpRepository.Find(e => e.UserId == user.Id);
                 foreach (var userOTP in userOTPs)
                 {
-                    _userOtpRepository.Delete(userOTP);
+                    _userOtpRepository.Delete(userOTP.Id);
                 }
 
                 var userPromoCodes = _userPromoCodeRepository.Find(e => e.UserId == user.Id);
                 foreach (var userPromoCode in userPromoCodes)
                 {
-                    _userPromoCodeRepository.Delete(userPromoCode);
+                    _userPromoCodeRepository.Delete(userPromoCode.Id);
                 }
 
             }

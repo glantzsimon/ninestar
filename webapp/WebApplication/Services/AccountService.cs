@@ -27,6 +27,7 @@ namespace K9.WebApplication.Services
         private readonly Services.IAccountMailerService _accountMailerService;
         private readonly IRepository<UserOTP> _otpRepository;
         private readonly IUserService _userService;
+        private readonly IContactService _contactService;
         private readonly WebsiteConfiguration _config;
         private UrlHelper _urlHelper;
 
@@ -36,7 +37,8 @@ namespace K9.WebApplication.Services
             set => _urlHelper = value;
         }
 
-        public AccountService(IRepository<User> userRepository, IOptions<WebsiteConfiguration> config, IMailer mailer, IAuthentication authentication, ILogger logger, IRoles roles, Services.IAccountMailerService accountMailerService, IRepository<UserOTP> otpRepository, IUserService userService)
+        public AccountService(IRepository<User> userRepository, IOptions<WebsiteConfiguration> config, IMailer mailer, IAuthentication authentication, ILogger logger, IRoles roles, Services.IAccountMailerService accountMailerService, IRepository<UserOTP> otpRepository, IUserService userService,
+            IContactService contactService)
         {
             _userRepository = userRepository;
             _mailer = mailer;
@@ -46,6 +48,7 @@ namespace K9.WebApplication.Services
             _accountMailerService = accountMailerService;
             _otpRepository = otpRepository;
             _userService = userService;
+            _contactService = contactService;
             _config = config.Value;
             _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }
@@ -202,14 +205,35 @@ namespace K9.WebApplication.Services
                 }
 
                 UserOTP otp = null;
+                User user = null;
                 try
                 {
-                    var user = _userRepository.Find(e => e.Username == model.UserName).FirstOrDefault();
+                    user = _userRepository.Find(e => e.Username == model.UserName).FirstOrDefault();
                     otp = CreateAccountActivationOTP(user.Id);
                 }
                 catch (Exception e)
                 {
                     _logger.Log(LogLevel.Error, $"AccountService => Register => CreateAccountActivationOTP => {e.GetFullErrorMessage()}");
+
+                    TryDeleteUserAccount(model.UserName);
+
+                    result.Errors.Add(new ServiceError
+                    {
+                        FieldName = "",
+                        ErrorMessage = Globalisation.Dictionary.ErrorCreatingUserAccount,
+                        Exception = e,
+                        Data = newUser
+                    });
+                    return result;
+                }
+
+                try
+                {
+                    _contactService.GetOrCreateContact("", user.FullName, user.EmailAddress, user.PhoneNumber, user.Id);
+                }
+                catch (Exception e)
+                {
+                    _logger.Log(LogLevel.Error, $"AccountService => Register => GetOrCreateContact => {e.GetFullErrorMessage()}");
 
                     TryDeleteUserAccount(model.UserName);
 
@@ -671,7 +695,7 @@ namespace K9.WebApplication.Services
             {
                 try
                 {
-                    DeleteAccount(user.Id);
+                    _userService.DeleteUser(user.Id);
                 }
                 catch (Exception e)
                 {

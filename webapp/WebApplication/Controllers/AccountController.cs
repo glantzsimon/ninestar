@@ -369,8 +369,6 @@ namespace K9.WebApplication.Controllers
 
                     if (user.Id > 0)
                     {
-                        _contactService.GetOrCreateContact("", user.FullName, user.EmailAddress, user.PhoneNumber, user.Id);
-
                         if (!string.IsNullOrEmpty(model.PromoCode))
                         {
                             try

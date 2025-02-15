@@ -7163,6 +7163,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to My Consultations.
+        /// </summary>
+        public static string MyConsultations {
+            get {
+                return ResourceManager.GetString("MyConsultations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to My Personal Chart.
         /// </summary>
         public static string MyPersonalProfile {

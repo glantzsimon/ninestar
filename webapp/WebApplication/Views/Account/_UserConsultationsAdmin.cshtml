@@ -8,17 +8,18 @@
     {
         <article>
 
-            <h5 class="margin-0">@Dictionary.YourConsultations</h5>
+            <h5 class="margin-0">@Dictionary.MyConsultations</h5>
             <hr />
 
             <div class="row">
                 <div class="col-sm-4">
                     @Html.Label(Dictionary.StatusLabel)
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-2">
                     @Html.LabelFor(e => Model[0].Consultation.Duration)
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-6">
+                    @Html.Label(Dictionary.Contact)
                 </div>
             </div>
 
@@ -37,16 +38,17 @@
                             <span>@Dictionary.Unscheduled</span>
                         }
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-2">
                         @Html.DisplayFor(e => Model[i].Consultation.DurationDescription)
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         @{
-                            var scheduleText = (Model[i].Consultation.ScheduledOnLocalTime.HasValue) ? Dictionary.RescheduleAppointment : Dictionary.ScheduleAppointment;
+                            var userConsultation = Model[i];
+                            var consultation = userConsultation.Consultation;
+                            var user = userConsultation.User;
+
+                            <span>@user.FullName <a href="mailto:@user.EmailAddress">@user.EmailAddress</a> @user.PhoneNumber</span>
                         }
-                        <a href="@Url.Action("ScheduleConsultation", "Consultation", new {consultationId = Model[i].ConsultationId})">
-                            @Dictionary.ScheduleAppointment
-                        </a>
                     </div>
                 </div>
 

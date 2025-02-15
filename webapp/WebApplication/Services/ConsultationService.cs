@@ -264,6 +264,7 @@ namespace K9.WebApplication.Services
                 contact.FirstName,
                 Duration = consultation.DurationDescription,
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
+                ScheduleUrl = _urlHelper.AbsoluteAction("ScheduleConsultation", "Consultation", new { consultationId = consultation.Id }),
                 PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
                 TermsOfServiceLink = _urlHelper.AbsoluteAction("TermsOfService", "Home"),
                 UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact.Name }),

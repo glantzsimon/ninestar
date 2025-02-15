@@ -1435,6 +1435,7 @@
     <Content Include="Views\Account\AccountVerified.cshtml" />
     <Content Include="Views\Users\AssignFreeConsultationStart.cshtml" />
     <Content Include="Views\Users\AssignFreeConsultationSuccess.cshtml" />
+    <Content Include="Views\Account\_UserConsultationsAdmin.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

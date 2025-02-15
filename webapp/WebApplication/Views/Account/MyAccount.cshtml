@@ -1,4 +1,5 @@
-﻿@model K9.WebApplication.ViewModels.MyAccountViewModel
+﻿@using SessionHelper = K9.WebApplication.Helpers.SessionHelper
+@model K9.WebApplication.ViewModels.MyAccountViewModel
 @{
     ViewBag.Title = K9.Base.Globalisation.Dictionary.MyAccountTitle;
     ViewBag.SubTitle = K9.Base.Globalisation.Dictionary.MyAccountTitle;
@@ -54,7 +55,14 @@
     @if (Model.Consultations != null && Model.Consultations.Any())
     {
         <div id="consultations" class="tab-pane fade padding-top-20">
-            @Html.Partial("_UserConsultations", Model.Consultations)
+            @if (SessionHelper.CurrentUserIsAdmin())
+            {
+                @Html.Partial("_UserConsultationsAdmin", Model.Consultations)
+            }
+            else
+            {
+                @Html.Partial("_UserConsultations", Model.Consultations)
+            }
         </div>
     }
 </div>

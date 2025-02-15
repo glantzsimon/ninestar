@@ -2956,6 +2956,9 @@
   <data name="LocalTimeDisplay" xml:space="preserve">
     <value>{TimeZone} Time</value>
   </data>
+  <data name="MyConsultations" xml:space="preserve">
+    <value>My Consultations</value>
+  </data>
   <data name="RescheduleAppointment" xml:space="preserve">
     <value>Reschedule Appointment</value>
   </data>

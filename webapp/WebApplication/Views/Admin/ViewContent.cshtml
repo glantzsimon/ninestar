@@ -1,0 +1,18 @@
+﻿@model K9.WebApplication.ViewModels.AdminViewModel
+
+@{
+    ViewBag.Title = Dictionary.Admin;
+    ViewBag.SubTitle = "All Content";
+
+    Layout = "../Shared/_LayoutFormMedium.cshtml";
+}
+
+<div class="container main-content margin-bottom-0">
+    <div class="row">
+        <div class="col-sm-12">
+            <article>
+                @Html.Raw(Model.Content)
+            </article>
+        </div>
+    </div>
+</div>

@@ -2944,6 +2944,9 @@
   <data name="ErrorCreatingUserAccount" xml:space="preserve">
     <value>An error occurred whilst trying to create your account. Please contact support for more assistance. We apologise for the inconvenience.</value>
   </data>
+  <data name="Admin" xml:space="preserve">
+    <value>Admin</value>
+  </data>
   <data name="At" xml:space="preserve">
     <value>at</value>
   </data>

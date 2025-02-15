@@ -177,6 +177,7 @@
     <Reference Include="System.Formats.Asn1, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\System.Formats.Asn1.dll</HintPath>
     </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Linq" />
     <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\System.Memory.dll</HintPath>
@@ -271,6 +272,7 @@
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BaseNineStarKiController.cs" />
     <Compile Include="Controllers\ConsultationsController.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
@@ -357,6 +359,7 @@
     <Compile Include="Services\IAccountMailerService.cs" />
     <Compile Include="Services\IAccountService.cs" />
     <Compile Include="ViewModels\AssignConsultationModel.cs" />
+    <Compile Include="ViewModels\AdminViewModel.cs" />
     <Compile Include="ViewModels\WhatsAppViewModel.cs" />
     <Compile Include="ViewModels\PredictionsViewModel.cs" />
     <Compile Include="ViewModels\PromptViewModel.cs" />
@@ -1127,9 +1130,6 @@
     <Content Include="Content\fonts\CANDARALI.TTF" />
     <Content Include="Content\fonts\CANDARAZ.TTF" />
     <None Include="compilerconfig.json" />
-    <Content Include="compilerconfig.json.bindings">
-      <DependentUpon>compilerconfig.json</DependentUpon>
-    </Content>
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
@@ -1436,6 +1436,7 @@
     <Content Include="Views\Users\AssignFreeConsultationStart.cshtml" />
     <Content Include="Views\Users\AssignFreeConsultationSuccess.cshtml" />
     <Content Include="Views\Account\_UserConsultationsAdmin.cshtml" />
+    <Content Include="Views\Admin\ViewContent.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

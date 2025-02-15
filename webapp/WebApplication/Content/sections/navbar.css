@@ -106,12 +106,12 @@ ul.nav.navbar-nav:not(.dropdown-menu) {
 #account-header ul.admin-menu {
   left: 0;
   margin-left: 5px;
-  width: 200px !important;
+  width: 233px !important;
 }
 #account-header ul.admin-menu ul.dropdown-menu {
   margin-top: 40px;
   background: none;
-  width: 200px;
+  width: 233px;
 }
 #account-header ul.admin-menu ul.dropdown-menu li {
   width: 100%;

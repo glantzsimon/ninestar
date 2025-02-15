@@ -1375,6 +1375,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Admin.
+        /// </summary>
+        public static string Admin {
+            get {
+                return ResourceManager.GetString("Admin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Adult Nature.
         /// </summary>
         public static string AdultPersona {

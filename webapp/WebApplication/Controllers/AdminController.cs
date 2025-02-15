@@ -110,7 +110,7 @@ namespace K9.WebApplication.Controllers
         private static void AppendFolderContents(StringBuilder htmlContent, string directory)
         {
             htmlContent.Append("<div class=\"well\">");
-            htmlContent.AppendFormat("<h1>{0}</h2>", new DirectoryInfo(directory).Name);
+            htmlContent.AppendFormat("<h1>{0}</h1>", new DirectoryInfo(directory).Name);
 
             var files = Directory.GetFiles(directory, "*.*", SearchOption.AllDirectories)
                 .Where(f => f.EndsWith(".htm"));

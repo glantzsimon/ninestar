@@ -15,6 +15,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Web.Mvc;
+using HtmlAgilityPack;
 
 namespace K9.WebApplication.Controllers
 {
@@ -101,10 +102,21 @@ namespace K9.WebApplication.Controllers
             });
         }
 
-        public ActionResult DownloadTextFile(string fileName, string contents)
+        public ActionResult DownloadTextFile(string fileName, string html)
         {
-            byte[] fileBytes = Encoding.UTF8.GetBytes(contents);
+            var text = ExtractTextFromHtml(html);
+            byte[] fileBytes = Encoding.UTF8.GetBytes(text);
             return File(fileBytes, "text/plain", fileName);
+        }
+
+        private static string ExtractTextFromHtml(string htmlContent)
+        {
+            if (string.IsNullOrWhiteSpace(htmlContent))
+                return string.Empty;
+
+            var doc = new HtmlDocument();
+            doc.LoadHtml(htmlContent);
+            return doc.DocumentNode.InnerText.Trim();
         }
 
         private static void AppendFolderContents(StringBuilder htmlContent, string directory)

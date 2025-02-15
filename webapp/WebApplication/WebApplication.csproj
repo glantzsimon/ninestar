@@ -264,6 +264,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Attributes\NineStarKiCycleEnumMetaDataAttribute.cs" />
     <Compile Include="Attributes\NineStarKiEnumMetaDataAttribute.cs" />
+    <Compile Include="Config\ApiConfiguration.cs" />
     <Compile Include="Config\GoogleConfiguration.cs" />
     <Compile Include="Config\MailChimpConfiguration.cs" />
     <Compile Include="Config\ColumnsConfig.cs" />
@@ -272,6 +273,8 @@
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
+    <Compile Include="Controllers\NineStarKiPureAlchemyControllerAjax.cs" />
+    <Compile Include="Controllers\NineStarKiControllerAjax.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BaseNineStarKiController.cs" />
     <Compile Include="Controllers\ConsultationsController.cs" />

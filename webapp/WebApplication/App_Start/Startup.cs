@@ -100,6 +100,10 @@ namespace K9.WebApplication
             var defaultConfig = ConfigHelper.GetConfiguration<DefaultValuesConfiguration>(json);
             builder.Register(c => defaultConfig).SingleInstance();
             DefaultValuesConfiguration.Instance = defaultConfig.Value;
+
+            var apiConfig = ConfigHelper.GetConfiguration<ApiConfiguration>(json);
+            builder.Register(c => apiConfig).SingleInstance();
+            ApiConfiguration.Instance = apiConfig.Value;
         }
     }
 }

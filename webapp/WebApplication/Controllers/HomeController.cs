@@ -1,8 +1,11 @@
 ﻿using K9.Base.DataAccessLayer.Models;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Helpers;
+using K9.WebApplication.Models;
 using K9.WebApplication.Services;
 using NLog;
+using System;
 using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
@@ -23,7 +26,13 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var dateOfBirth = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day);
+            var personModel = new PersonModel
+            {
+                DateOfBirth = dateOfBirth,
+                Gender = Methods.GetRandomGender()
+            };
+            return View(new NineStarKiModel(personModel));
         }
         
         [Route("privacy-policy")]

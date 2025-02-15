@@ -250,8 +250,8 @@ namespace K9.WebApplication.Services
                 _logger.Error($"MembershipService => ProcessPurchase => Send Emails failed: {e.GetFullErrorMessage()}");
             }
         }
-
-        public void AssignMembershipToUser(int membershipOptionId, int? userId = null, PromoCode promoCode = null)
+        
+        public void AssignMembershipToUser(int membershipOptionId, int userId, PromoCode promoCode = null)
         {
             try
             {
@@ -264,7 +264,7 @@ namespace K9.WebApplication.Services
 
                 var userMembership = new UserMembership
                 {
-                    UserId = userId ?? Current.UserId,
+                    UserId = userId,
                     MembershipOptionId = membershipOptionId,
                     StartsOn = DateTime.Today,
                     EndsOn = membershipOption.IsAnnual ? DateTime.Today.AddYears(1) : DateTime.Today.AddMonths(1),
@@ -272,7 +272,7 @@ namespace K9.WebApplication.Services
                 };
 
                 _userMembershipRepository.Create(userMembership);
-                userMembership.User = _usersRepository.Find(userId ?? Current.UserId);
+                userMembership.User = _usersRepository.Find(userId);
                 TerminateExistingMemberships(membershipOptionId);
             }
             catch (Exception ex)
@@ -362,6 +362,34 @@ namespace K9.WebApplication.Services
             }
         }
 
+        public void CreateComplementaryUserConsultation(int userId, EConsultationDuration duration = EConsultationDuration.OneHour)
+        {
+            var user = _usersRepository.Find(userId);
+            var contact = _contactService.Find(user.EmailAddress);
+
+            if (contact == null)
+            {
+                contact = _contactService.GetOrCreateContact("", user.FullName, user.EmailAddress, user.PhoneNumber,
+                    user.Id);
+            }
+
+            var consultation = new Consultation
+            {
+                ContactId = contact.Id,
+                ConsultationDuration = duration,
+                ContactName = contact.FullName
+            };
+
+            try
+            {
+                _consultationService.CreateConsultation(consultation, contact);
+            }
+            catch (Exception e)
+            {
+                _logger.Error($"MembershipService => CreateComplementaryUserConsultation => Error creating consultation => {e.GetFullErrorMessage()}");
+            }
+        }
+
         private void TerminateExistingMemberships(int activeUserMembershipId)
         {
             var userMemberships = GetActiveUserMemberships();
@@ -377,28 +405,6 @@ namespace K9.WebApplication.Services
                 userMembership.EndsOn = activeUserMembership.StartsOn;
                 userMembership.IsDeactivated = true;
                 _userMembershipRepository.Update(userMembership);
-            }
-        }
-
-        private void CreateComplementaryUserConsultation(int userId)
-        {
-            var user = _usersRepository.Find(userId);
-            var contact = _contactService.Find(user.EmailAddress);
-
-            var consultation = new Consultation
-            {
-                ContactId = contact.Id,
-                ConsultationDuration = EConsultationDuration.OneHour,
-                ContactName = contact.FullName
-            };
-
-            try
-            {
-                _consultationService.CreateConsultation(consultation, contact);
-            }
-            catch (Exception e)
-            {
-                _logger.Error($"MembershipService => CreateComplementaryUserConsultation => Error creating consultation => {e.GetFullErrorMessage()}");
             }
         }
 

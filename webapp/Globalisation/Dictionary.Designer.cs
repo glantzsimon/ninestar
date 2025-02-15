@@ -2426,6 +2426,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Complementary Consultation Created.
+        /// </summary>
+        public static string ConsultationAssignedSuccess {
+            get {
+                return ResourceManager.GetString("ConsultationAssignedSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
         ///&lt;html lang=&quot;en&quot;&gt;
         ///
@@ -2823,6 +2832,15 @@ namespace K9.Globalisation {
         public static string CreateAccount {
             get {
                 return ResourceManager.GetString("CreateAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Complementary Consultation.
+        /// </summary>
+        public static string CreateComplementaryConsultation {
+            get {
+                return ResourceManager.GetString("CreateComplementaryConsultation", resourceCulture);
             }
         }
         
@@ -8589,6 +8607,15 @@ namespace K9.Globalisation {
         public static string Select {
             get {
                 return ResourceManager.GetString("Select", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Consultation Duration.
+        /// </summary>
+        public static string SelectConsultationDuration {
+            get {
+                return ResourceManager.GetString("SelectConsultationDuration", resourceCulture);
             }
         }
         

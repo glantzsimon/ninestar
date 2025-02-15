@@ -86,7 +86,7 @@ ul.nav.navbar-nav:not(.dropdown-menu) {
   font-weight: 200;
   padding: 0 6px 0 6px;
   z-index: 13000;
-  background: black;
+  background: #020202 !important;
 }
 #account-header ul.site-controls {
   right: 0;
@@ -114,7 +114,6 @@ ul.nav.navbar-nav:not(.dropdown-menu) {
   width: 200px;
 }
 #account-header ul.admin-menu ul.dropdown-menu li {
-  background: #f6f6f6;
   width: 100%;
 }
 #account-header ul.admin-menu ul.dropdown-menu li.active > a {

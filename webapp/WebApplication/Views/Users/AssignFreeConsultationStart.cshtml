@@ -1,0 +1,28 @@
+﻿@model K9.WebApplication.ViewModels.AssignConsultationModel
+@{
+    ViewBag.Title = Dictionary.CreateComplementaryConsultation;
+    ViewBag.SubTitle = Dictionary.CreateComplementaryConsultation;
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+
+@using (Html.BeginForm("AssignFreeConsultation", "Users", FormMethod.Post))
+{
+    using (Html.BeginBootstrapForm())
+    {
+        <div class="credit-packs">
+            <h4 class="margin-bottom-20 margin-top-0"><strong>@Dictionary.SelectConsultationDuration</strong></h4>
+
+            <div class="row padding-0">
+                <div class="col-sm-6 padding-0">
+                    @Html.BootstrapEditorFor(e => e.Duration)
+                </div>
+                <div class="col-sm-6 padding-0">
+                    @Html.HiddenFor(e => e.UserId)
+                </div>
+            </div>
+
+            <hr />
+            @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Submit, EButtonType.Submit, null, EButtonClass.Primary, EButtonClass.Large)
+        </div>
+    }
+}

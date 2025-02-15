@@ -2947,11 +2947,20 @@
   <data name="At" xml:space="preserve">
     <value>at</value>
   </data>
+  <data name="ConsultationAssignedSuccess" xml:space="preserve">
+    <value>Complementary Consultation Created</value>
+  </data>
+  <data name="CreateComplementaryConsultation" xml:space="preserve">
+    <value>Create Complementary Consultation</value>
+  </data>
   <data name="LocalTimeDisplay" xml:space="preserve">
     <value>{TimeZone} Time</value>
   </data>
   <data name="RescheduleAppointment" xml:space="preserve">
     <value>Reschedule Appointment</value>
+  </data>
+  <data name="SelectConsultationDuration" xml:space="preserve">
+    <value>Select Consultation Duration</value>
   </data>
   <data name="WeveResentCodeToEmail" xml:space="preserve">
     <value>We've sent a new 6-digit code to your email address to activate your account.</value>

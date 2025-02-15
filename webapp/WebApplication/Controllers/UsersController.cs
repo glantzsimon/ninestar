@@ -89,6 +89,38 @@ namespace K9.WebApplication.Controllers
             return View();
         }
 
+        [Route("users/assign-consultation/start")]
+        public ActionResult AssignFreeConsultationStart(int id)
+        {
+            ViewBag.UserId = id;
+            return View(new AssignConsultationModel
+            {
+                UserId = id
+            });
+        }
+
+        [Route("users/assign-consultation")]
+        [HttpPost]
+        public ActionResult AssignFreeConsultation(AssignConsultationModel model)
+        {
+            try
+            {
+                _membershipService.CreateComplementaryUserConsultation(model.UserId, model.Duration);
+                return RedirectToAction("AssignFreeConsultationSuccess");
+            }
+            catch (Exception ex)
+            {
+                Logger.Error($"UsersController => AssignFreeConsultation => Error: {ex.GetFullErrorMessage()}");
+                throw;
+            }
+        }
+
+        [Route("users/assign-consultation/success")]
+        public ActionResult AssignFreeConsultationSuccess()
+        {
+            return View();
+        }
+
         [Route("users/assign-promocode/start")]
         public ActionResult AssignPromoCodeStart(int Id)
         {

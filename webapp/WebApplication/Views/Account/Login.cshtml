@@ -4,13 +4,14 @@
     ViewBag.Title = Dictionary.LogIn;
     ViewBag.SubTitle = Dictionary.LogIn;
     Layout = "~/Views/Shared/_LayoutFormSmall.cshtml";
+    var returnUrl = TempData["ReturnUrl"] ?? string.Empty;
 }
 
 @using (Html.BeginForm())
 {
     using (Html.BeginBootstrapForm())
     {
-        <p>@K9.Globalisation.Dictionary.NotRegisteredYet Sign up @Html.ActionLink(K9.Globalisation.Dictionary.Here.ToLowerInvariant(), "Register")</p>
+        <p>@K9.Globalisation.Dictionary.NotRegisteredYet @K9.Globalisation.Dictionary.SignUp @Html.ActionLink(K9.Globalisation.Dictionary.Here.ToLowerInvariant(), "Register", new { returnUrl })</p>
         <hr />
         @Html.BootstrapEditorFor(model => model.UserName)
         @Html.BootstrapEditorFor(model => model.Password)

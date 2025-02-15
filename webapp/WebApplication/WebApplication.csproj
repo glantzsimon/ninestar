@@ -823,10 +823,8 @@
     <Content Include="Images\icons\logo.png" />
     <Content Include="Images\icons\safari-pinned-tab.svg" />
     <Content Include="Images\icons\web.png" />
-    <Content Include="Images\membership\free-membership.png" />
+    <Content Include="Images\membership\membership-medal-green.png" />
     <Content Include="Images\membership\membership-medal.png" />
-    <Content Include="Images\membership\platinum-membership.png" />
-    <Content Include="Images\membership\standard-membership.png" />
     <Content Include="Images\ninestar\elements\cycle-five.png" />
     <Content Include="Images\ninestar\elements\cycle-four.png" />
     <Content Include="Images\ninestar\elements\cycle.png" />

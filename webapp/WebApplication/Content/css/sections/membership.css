@@ -117,11 +117,11 @@
 }
 
 .free {
-    background: url(../../Images/membership/free-membership.png) no-repeat 0 0;
+    background: url(../../Images/membership/membership-medal.png) no-repeat 0 0;
 }
 
 .standard {
-    background: url(../../Images/membership/standard-membership.png) no-repeat 0 0;
+    background: url(../../Images/membership/membership-medal.png) no-repeat 0 0;
 }
 
 .membership-selected {

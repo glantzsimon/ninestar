@@ -33,14 +33,14 @@ namespace K9.WebApplication.Controllers
         }
 
         [Authorize]
-        [Route("membership/signup")]
+        [Route("membership/unlock")]
         public ActionResult PurchaseStart(int membershipOptionId)
         {
             return View(_membershipService.GetPurchaseMembershipModel(membershipOptionId));
         }
 
         [Authorize]
-        [Route("membership/signup/payment")]
+        [Route("membership/unlock/payment")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Purchase(int membershipOptionId)
@@ -52,7 +52,7 @@ namespace K9.WebApplication.Controllers
 
         [Authorize]
         [HttpPost]
-        [Route("membership/signup/payment/process")]
+        [Route("membership/unlock/payment/process")]
         public ActionResult ProcessPurchase(PurchaseModel purchaseModel)
         {
             try
@@ -68,7 +68,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Authorize]
-        [Route("membership/signup/success")]
+        [Route("membership/unlock/success")]
         public ActionResult PurchaseSuccess()
         {
             var membership = _membershipService.GetActiveUserMembership(Current.UserId);
@@ -83,7 +83,7 @@ namespace K9.WebApplication.Controllers
         }
         
         [Authorize]
-        [Route("membership/signup/cancel/success")]
+        [Route("membership/unlock/cancel/success")]
         public ActionResult PurchaseCancelSuccess()
         {
             return View();
@@ -102,7 +102,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Authorize]
-        [Route("membership/upgrade/review")]
+        [Route("membership/upgrade/payment/process")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult SwitchPurchase(int membershipOptionId)
@@ -116,26 +116,7 @@ namespace K9.WebApplication.Controllers
         }
         
         [Authorize]
-        [HttpPost]
-        [Route("membership/switch/processing")]
-        [ValidateAntiForgeryToken]
-        public ActionResult SwitchPurchaseProcess(PurchaseModel model)
-        {
-            try
-            {
-                _membershipService.ProcessPurchase(model);
-                return RedirectToAction("SwitchSuccess");
-            }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError("", ex.Message);
-            }
-
-            return View("SwitchPurchase", _membershipService.GetSwitchMembershipModel(model.ItemId));
-        }
-        
-        [Authorize]
-        [Route("membership/switch/success")]
+        [Route("membership/upgrade/success")]
         public ActionResult SwitchSuccess()
         {
             return View();

@@ -100,10 +100,10 @@
   background: url('https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images/membership/membership-medal.png') no-repeat 0 0;
 }
 .free {
-  background: url('https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images/membership/free-membership.png') no-repeat 0 0;
+  background: url('https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images/membership/membership-medal-green.png') no-repeat 0 0;
 }
 .standard {
-  background: url('https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images/membership/standard-membership.png') no-repeat 0 0;
+  background: url('https://link.storjshare.io/raw/jxneumevusbsv3gkpge55qqdq44a/cdn-media/Images/membership/membership-medal.png') no-repeat 0 0;
 }
 .membership-selected {
   border: 2px solid #22BB44;

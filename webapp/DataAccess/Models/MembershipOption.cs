@@ -92,7 +92,7 @@ namespace K9.DataAccessLayer.Models
         public bool IsAnnual =>
             new[] { ESubscriptionType.AnnualPlatinum, ESubscriptionType.AnnualStandard }.Contains(SubscriptionType);
 
-        public bool IsUpgradable => SubscriptionType < ESubscriptionType.AnnualPlatinum;
+        public bool IsUpgradable => SubscriptionType < ESubscriptionType.LifeTimePlatinum;
 
         public bool IsUnlimited => SubscriptionType >= ESubscriptionType.WeeklyPlatinum;
 

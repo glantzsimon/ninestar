@@ -751,7 +751,7 @@ namespace K9.WebApplication.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("account/verify")]
-        public ActionResult VerifySixDigitCode(AccountActivationModel model, string returnUrl = "")
+        public ActionResult VerifySixDigitCode(AccountActivationModel model, string returnUrl = null)
         {
             if (ModelState.IsValid)
             {
@@ -768,7 +768,7 @@ namespace K9.WebApplication.Controllers
                 }
                 catch (Exception e)
                 {
-                    _logger.Error($"AccountController => VerifyDixDigitCode => Error: {e.GetFullErrorMessage()}");
+                    _logger.Error($"AccountController => VerifySixDigitCode => Error: {e.GetFullErrorMessage()}");
                     ModelState.AddModelError("", Globalisation.Dictionary.ErrorValidatingCode);
                 }
 
@@ -777,7 +777,6 @@ namespace K9.WebApplication.Controllers
                     var result = _accountService.ActivateAccount(model.UserId);
 
                     _accountService.Login(model.UserId);
-
 
                     if (returnUrl != null)
                     {
@@ -788,7 +787,7 @@ namespace K9.WebApplication.Controllers
                 }
                 catch (Exception e)
                 {
-                    _logger.Error($"AccountController => VerifyDixDigitCode => ActivateAccount => Error: {e.GetFullErrorMessage()}");
+                    _logger.Error($"AccountController => VerifySixDigitCode => ActivateAccount => Error: {e.GetFullErrorMessage()}");
                     ModelState.AddModelError("", Globalisation.Dictionary.ErrorActivatingAccount);
                 }
             }

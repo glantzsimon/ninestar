@@ -5,7 +5,7 @@
     Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
 
-@using (Html.BeginForm("ProcessPurchase", "Membership", FormMethod.Post))
+@using (Html.BeginForm("Purchase", "Membership", FormMethod.Post))
 {
     using (Html.BeginBootstrapForm())
     {
@@ -13,10 +13,11 @@
 
         @Html.Partial("_MembershipOption")
 
-        @Html.HiddenFor(model => model.MembershipOption.Id)
+        @Html.Hidden(nameof(UserMembership.MembershipOptionId), Model.MembershipOption.Id)
 
         <hr />
         @Html.BootstrapActionLinkButton(Dictionary.Back, "Index", "Membership", null, "fa-chevron-left", EButtonClass.Large)
+        <span class="margin-right-2 desktop-only"></span>
         @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight, EButtonClass.Large)
     }
 }

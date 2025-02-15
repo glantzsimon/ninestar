@@ -40,7 +40,19 @@ namespace K9.WebApplication.Controllers
         }
 
         [Authorize]
+        [Route("membership/signup/payment")]
         [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Purchase(int membershipOptionId)
+        {
+            var membershipModel = _membershipService.GetPurchaseMembershipModel(membershipOptionId);
+            ViewBag.SubTitle = Globalisation.Dictionary.UpgradeMembership;
+            return View(membershipModel);
+        }
+
+        [Authorize]
+        [HttpPost]
+        [Route("membership/signup/payment/process")]
         public ActionResult ProcessPurchase(PurchaseModel purchaseModel)
         {
             try
@@ -78,7 +90,7 @@ namespace K9.WebApplication.Controllers
         }
         
         [Authorize]
-        [Route("membership/switch")]
+        [Route("membership/upgrade/payment")]
         public ActionResult SwitchStart(int membershipOptionId)
         {
             var switchMembershipModel = _membershipService.GetSwitchMembershipModel(membershipOptionId);
@@ -90,7 +102,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Authorize]
-        [Route("membership/switch/review")]
+        [Route("membership/upgrade/review")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult SwitchPurchase(int membershipOptionId)

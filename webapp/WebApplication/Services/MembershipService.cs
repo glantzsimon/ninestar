@@ -157,7 +157,7 @@ namespace K9.WebApplication.Services
 
             var membershipOption = _membershipOptionRepository.Find(membershipOptionId);
             var userMemberships = GetActiveUserMemberships();
-            if (userMemberships.Any(e => e.MembershipOption.Id != membershipOption.Id))
+            if (userMemberships.Any(e => e.MembershipOption.Id != membershipOption.Id && !e.MembershipOption.IsFree))
             {
                 throw new Exception(Dictionary.PurchaseMembershipErrorAlreadySubscribedToAnother);
             }

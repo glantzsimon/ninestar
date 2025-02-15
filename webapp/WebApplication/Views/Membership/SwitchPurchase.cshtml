@@ -1,7 +1,8 @@
 ﻿@using K9.WebApplication.Options
 @model K9.WebApplication.Models.MembershipModel
 @{
-    ViewBag.Title = Dictionary.MembershipOptions;
+    ViewBag.Title = Dictionary.MembershipLabel;
+    ViewBag.SubTitle = Dictionary.YourSelectedSubscription;
     Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
 
@@ -11,7 +12,7 @@
     Model.SubscriptionPrice,
     Model.MembershipOption.Description,
     "",
-    "PurchaseStart", "Membership",
+    "SwitchPurchaseStart", "Membership",
     Url.Action("PurchaseSuccess"),
     Url.Action("Index", "Error"),
     Url.Action("ProcessPurchase", "Membership")

@@ -5,7 +5,7 @@
 }
 
 <div class="otp-container">
-    @using (Html.BeginForm("VerifySixDigitCode", "Account"))
+    @using (Html.BeginForm("VerifySixDigitCode", "Account", new { returnUrl }))
     {
         using (Html.BeginBootstrapForm())
         {
@@ -67,6 +67,31 @@
                 $("#@nameof(Model.Digit6)").val(pastedCode[5]);
             }
         });
+
+        const inputs = document.querySelectorAll(".otp-input");
+        let $form = $(inputs[0]).closest(form);
+
+        inputs.forEach((input, index) => {
+            input.addEventListener("input", () => {
+                if (input.value.length === 1 && index < inputs.length - 1) {
+                    inputs[index + 1].focus(); // Move to next input
+                }
+                checkAndSubmit();
+            });
+
+            input.addEventListener("keydown", (e) => {
+                if (e.key === "Backspace" && !input.value && index > 0) {
+                    inputs[index - 1].focus(); // Move to previous input on backspace
+                }
+            });
+        });
+
+        function checkAndSubmit() {
+            const allFilled = [...inputs].every(input => input.value.length === 1);
+            if (allFilled) {
+                $form.submit();
+            }
+        }
     })
 </script>
 

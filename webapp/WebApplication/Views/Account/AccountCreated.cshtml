@@ -4,6 +4,7 @@
 @{
     ViewBag.Title = K9.Base.Globalisation.Dictionary.Registration;
     Layout = "../Shared/_LayoutForm.cshtml";
+    ViewBag.TitleTag = "text-center";
 
     string additionalError = TempData["AdditionalError"]?.ToString();
     var confirmationText = Model.IsCodeResent ? Dictionary.WeveResentCodeToEmail : Dictionary.WeveSentCodeToEmail;

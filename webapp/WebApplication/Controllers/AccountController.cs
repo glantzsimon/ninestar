@@ -751,7 +751,7 @@ namespace K9.WebApplication.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("account/verify")]
-        public ActionResult VerifySixDigitCode(AccountActivationModel model)
+        public ActionResult VerifySixDigitCode(AccountActivationModel model, string returnUrl = "")
         {
             if (ModelState.IsValid)
             {
@@ -777,6 +777,12 @@ namespace K9.WebApplication.Controllers
                     var result = _accountService.ActivateAccount(model.UserId);
 
                     _accountService.Login(model.UserId);
+
+
+                    if (returnUrl != null)
+                    {
+                        return Redirect(returnUrl);
+                    }
 
                     return RedirectToAction("AccountVerified");
                 }

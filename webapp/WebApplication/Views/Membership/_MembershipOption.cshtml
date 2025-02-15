@@ -17,9 +17,9 @@
             else if (Model.IsSelectable)
             {
                 var buttonText = Model.ActiveUserMembershipId > 0
-                    ? Model.IsUpgrade
-                        ? Dictionary.Unlock
-                        : Dictionary.Upgrade
+                    ? Model.IsUpgrade && !Model.ActiveUserMembership.MembershipOption.IsFree
+                        ? Dictionary.Upgrade
+                        : Dictionary.Unlock
                     : Dictionary.Select;
                 var iconClass = Model.ActiveUserMembershipId > 0
                     ? Model.IsUpgrade
@@ -27,7 +27,7 @@
                         : "fa-random"
                     : Dictionary.Select;
                 <div style="padding-top: 1px;">
-                    @Html.BootstrapActionLinkButton(buttonText, Model.IsUpgrade ? "SwitchStart" : "PurchaseStart", "Membership", new { membershipOptionId = Model.MembershipOption.Id }, iconClass, EButtonClass.Large)
+                    @Html.BootstrapActionLinkButton(buttonText, Model.IsUpgrade && !Model.ActiveUserMembership.MembershipOption.IsFree ? "SwitchStart" : "PurchaseStart", "Membership", new { membershipOptionId = Model.MembershipOption.Id }, iconClass, EButtonClass.Large)
                 </div>
             }
             else

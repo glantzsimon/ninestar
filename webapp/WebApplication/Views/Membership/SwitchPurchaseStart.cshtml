@@ -17,10 +17,11 @@
 
         @Html.Partial("_MembershipOption")
 
-        @Html.Hidden("MembershipOptionId", Model.MembershipOption.Id)
+        @Html.Hidden(nameof(UserMembership.MembershipOptionId), Model.MembershipOption.Id)
 
         <hr />
         @Html.BootstrapActionLinkButton(Dictionary.Back, "Index", "Membership", null, "fa-chevron-left", EButtonClass.Large)
+        <span class="margin-right-2 desktop-only"></span>
         @Html.BootstrapButton(buttonText, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight, EButtonClass.Large)
     }
 }

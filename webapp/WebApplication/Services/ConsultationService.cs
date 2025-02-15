@@ -62,14 +62,14 @@ namespace K9.WebApplication.Services
         {
             var myTimeZoneId = _defaultValues.CurrentTimeZone;
             var userTimeZoneId = SessionHelper.GetCurrentUserTimeZone();
-            var tomorrow = DateTime.UtcNow.AddDays(1);
+            var tomorrow = DateTime.UtcNow.AddDays(2);
 
             // Give two days notice
-            var userTomorrow = tomorrow.ToZonedTime(_defaultValues.CurrentTimeZone);
-            var userTomorrowUtc = userTomorrow.ToDateTimeUtc().Date;
+            var userDatAfterTomorrow = tomorrow.ToZonedTime(_defaultValues.CurrentTimeZone);
+            var userDayAfterTomorrowUtc = userDatAfterTomorrow.ToDateTimeUtc().Date;
 
             // Starting from tomorrow, user's local time
-            var slots = _slotRepository.Find(e => !e.IsTaken && e.StartsOn > userTomorrowUtc).ToList();
+            var slots = _slotRepository.Find(e => !e.IsTaken && e.StartsOn > userDayAfterTomorrowUtc).ToList();
             slots.ForEach((e) =>
             {
                 e.UserTimeZone = userTimeZoneId;
@@ -132,11 +132,12 @@ namespace K9.WebApplication.Services
 
             for (int weekNumber = 0; weekNumber < 5; weekNumber++)
             {
+                var day = new DateTime(startDay.Ticks);
                 for (int dayNumber = 0; dayNumber < 3; dayNumber++)
                 {
-                    var startTime = new DateTimeOffset(startDay.Year, startDay.Month, startDay.Day, 11, 0, 0, offset);
+                    var startTime = new DateTimeOffset(day.Year, day.Month, day.Day, 11, 0, 0, offset);
                     CreateSlotsForDay(slots, startTime);
-                    startDay = startDay.AddDays(1);
+                    day = day.AddDays(1);
                 }
                 startDay = startDay.AddDays(7);
             }

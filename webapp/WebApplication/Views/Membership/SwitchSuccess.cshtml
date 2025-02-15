@@ -1,9 +1,11 @@
 ﻿@using K9.Base.WebApplication.Helpers
+@model K9.WebApplication.ViewModels.MyAccountViewModel
+
 @{
     ViewBag.Title = Dictionary.MembershipOptions;
     ViewBag.SubTitle = Dictionary.SwitchSuccessfulTitle + "<i class='fa fa-smile'></i>";
     Layout = "../Shared/_LayoutForm.cshtml";
-    @model K9.WebApplication.ViewModels.MyAccountViewModel
+    ViewBag.TitleTag = "text-center";
 }
 
 <div class="margin-bottom-10">

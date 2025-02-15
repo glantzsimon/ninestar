@@ -241,6 +241,8 @@ namespace K9.WebApplication.Services
                     _userPromoCodeRepository.Delete(userPromoCode.Id);
                 }
 
+                _usersRepository.GetQuery($"DELETE FROM [User] WHERE Id = {user.Id}");
+
             }
             catch (Exception e)
             {

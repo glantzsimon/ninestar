@@ -30,7 +30,7 @@ else
             <div class="page shadow alphaBackground roundCorners wide-form">
                 @if (!string.IsNullOrEmpty(ViewBag.SubTitle))
                 {
-                    <div class="page-header">
+                    <div class="page-header @ViewBag.TitleTag">
                         <h2><strong>@Html.Raw(ViewBag.SubTitle)</strong></h2>
                     </div>
                 }

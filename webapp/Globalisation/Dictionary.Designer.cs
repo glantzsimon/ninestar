@@ -1501,6 +1501,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to at.
+        /// </summary>
+        public static string At {
+            get {
+                return ResourceManager.GetString("At", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Auto Renewal.
         /// </summary>
         public static string AutoRenewLabel {
@@ -5403,6 +5412,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {TimeZone} Time.
+        /// </summary>
+        public static string LocalTimeDisplay {
+            get {
+                return ResourceManager.GetString("LocalTimeDisplay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Log In.
         /// </summary>
         public static string LogIn {
@@ -8395,6 +8413,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reschedule Appointment.
+        /// </summary>
+        public static string RescheduleAppointment {
+            get {
+                return ResourceManager.GetString("RescheduleAppointment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Resend.
         /// </summary>
         public static string Resend {
@@ -8467,7 +8494,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your {Duration} consultation has been successfully scheduled for {AppointmentDate} at {AppointmentTime}..
+        ///   Looks up a localized string similar to Your {Duration} consultation has been successfully scheduled for:.
         /// </summary>
         public static string ScheduleAConsultationSuccess {
             get {

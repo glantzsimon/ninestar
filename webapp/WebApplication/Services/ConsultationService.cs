@@ -184,8 +184,18 @@ namespace K9.WebApplication.Services
             try
             {
                 consultation = Find(consultationId);
-                var slot = FindSlot(slotId);
 
+                if (consultation.ScheduledOn.HasValue)
+                {
+                    var existingSlot = _slotRepository.Find(e => e.Id == consultation.SlotId).FirstOrDefault();
+                    if (existingSlot != null)
+                    {
+                        existingSlot.IsTaken = false;
+                        _slotRepository.Update(existingSlot);
+                    }
+                }
+
+                var slot = FindSlot(slotId);
                 slot.IsTaken = true;
                 consultation.ScheduledOn = slot.StartsOn;
                 consultation.SlotId = slot.Id;
@@ -289,6 +299,7 @@ namespace K9.WebApplication.Services
                 Duration = consultation.DurationDescription,
                 ScheduledOn = consultation.ScheduledOnLocalTime.Value.ToString(DataAccessLayer.Constants.FormatConstants.AppointmentDisplayDateTimeFormat),
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
+                RescheduleUrl = _urlHelper.AbsoluteAction("ScheduleConsultation", "Consultation", new { consultationId = consultation.Id }),
                 PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
                 TermsOfServiceLink = _urlHelper.AbsoluteAction("TermsOfService", "Home"),
                 UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact.Name }),

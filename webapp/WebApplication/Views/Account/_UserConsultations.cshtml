@@ -55,12 +55,11 @@
                         }
                         else
                         {
-                            if (!Model[i].Consultation.ScheduledOnLocalTime.HasValue)
-                            {
-                                <a href="@Url.Action("ScheduleConsultation", "Consultation", new {consultationId = Model[i].ConsultationId})">
-                                    @Dictionary.ScheduleAppointment
-                                </a>
-                            }
+                            var scheduleText = (Model[i].Consultation.ScheduledOnLocalTime.HasValue) ? Dictionary.RescheduleAppointment : Dictionary.ScheduleAppointment;
+
+                            <a href="@Url.Action("ScheduleConsultation", "Consultation", new {consultationId = Model[i].ConsultationId})">
+                                @Dictionary.ScheduleAppointment
+                            </a>
                         }
                     </div>
                 </div>

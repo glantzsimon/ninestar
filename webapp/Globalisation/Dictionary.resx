@@ -2846,7 +2846,7 @@
     <value>Please select a suitable time slot for your {ConsultationDuration} consultation. If none of the slots are suitable, please contact us to arrange a suitable time (see button at the bottom of this page).</value>
   </data>
   <data name="ScheduleAConsultationSuccess" xml:space="preserve">
-    <value>Your {Duration} consultation has been successfully scheduled for {AppointmentDate} at {AppointmentTime}.</value>
+    <value>Your {Duration} consultation has been successfully scheduled for:</value>
   </data>
   <data name="ScheduleAppointment" xml:space="preserve">
     <value>Schedule Appointment</value>
@@ -2943,6 +2943,15 @@
   </data>
   <data name="ErrorCreatingUserAccount" xml:space="preserve">
     <value>An error occurred whilst trying to create your account. Please contact support for more assistance. We apologise for the inconvenience.</value>
+  </data>
+  <data name="At" xml:space="preserve">
+    <value>at</value>
+  </data>
+  <data name="LocalTimeDisplay" xml:space="preserve">
+    <value>{TimeZone} Time</value>
+  </data>
+  <data name="RescheduleAppointment" xml:space="preserve">
+    <value>Reschedule Appointment</value>
   </data>
   <data name="WeveResentCodeToEmail" xml:space="preserve">
     <value>We've sent a new 6-digit code to your email address to activate your account.</value>

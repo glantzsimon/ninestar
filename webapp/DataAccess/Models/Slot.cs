@@ -51,16 +51,24 @@ namespace K9.DataAccessLayer.Models
             ? StartsOnLocalTime.Value.ToString(Constants.FormatConstants.AppointmentDisplayDateTimeFormat)
             : "";
 
-        public string FormattedStartsOnLocalTime => StartsOnLocalTime.HasValue
+        public string FormattedStartsOnLocalTimeOnly => StartsOnLocalTime.HasValue
             ? StartsOnLocalTime.Value.ToString(Constants.FormatConstants.AppointmentDisplayTimeFormat)
+            : "";
+
+        public string FormattedStartsOnLocalTime => StartsOnLocalTime.HasValue
+            ? $"{StartsOnLocalTime.Value.ToString(Constants.FormatConstants.AppointmentDisplayTimeFormat)} - {TimeZoneDisplayText}"
             : "";
 
         public string FormattedEndsOnLocalDate => EndsOnLocalTime.HasValue
             ? EndsOnLocalTime.Value.Date.ToString(Constants.FormatConstants.AppointmentDisplayDateFormat)
             : "";
 
-        public string FormattedEndsOnLocalTime => EndsOnLocalTime.HasValue
+        public string FormattedEndsOnLocalTimeOnly => EndsOnLocalTime.HasValue
             ? EndsOnLocalTime.Value.ToString(Constants.FormatConstants.AppointmentDisplayTimeFormat)
+            : "";
+
+        public string FormattedEndsOnLocalTime => EndsOnLocalTime.HasValue
+            ? $"{EndsOnLocalTime.Value.ToString(Constants.FormatConstants.AppointmentDisplayTimeFormat)} - {TimeZoneDisplayText}"
             : "";
 
         #endregion

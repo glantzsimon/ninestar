@@ -90,11 +90,6 @@ namespace K9.WebApplication.Controllers
                 return HttpNotFound();
             }
 
-            if (consultation.ScheduledOn.HasValue)
-            {
-                return RedirectToAction("MyAccount", "Account");
-            }
-
             var freeSlots = _consultationService.GetAvailableSlots().Where(e =>
                             e.ConsultationDuration == consultation.ConsultationDuration).ToList();
 
@@ -118,14 +113,19 @@ namespace K9.WebApplication.Controllers
 
             _consultationService.SelectSlot(consultationId, slotId);
 
-            return RedirectToAction("ScheduleConsultationSuccess", new { selectedSlotId = selectedSlot.Id });
+            return RedirectToAction("ScheduleConsultationSuccess", new { consultationId, selectedSlotId = selectedSlot.Id });
         }
 
         [Route("consultation/schedule-success")]
-        public ActionResult ScheduleConsultationSuccess(int selectedSlotId)
+        public ActionResult ScheduleConsultationSuccess(int consultationId, int selectedSlotId)
         {
             var selectedSlot = _consultationService.FindSlot(selectedSlotId);
-            return View(selectedSlot);
+            var consultation = _consultationService.Find(consultationId);
+            return View(new ScheduleConsultationViewModel
+            {
+                SelectedSlot = selectedSlot,
+                Consultation = consultation
+            });
         }
 
         [RequirePermissions(Role = RoleNames.Administrators)]

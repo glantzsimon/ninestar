@@ -1,5 +1,6 @@
 ﻿using K9.Base.DataAccessLayer.Models;
 using System.ComponentModel.DataAnnotations.Schema;
+using K9.SharedLibrary.Helpers;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -10,5 +11,12 @@ namespace K9.DataAccessLayer.Models
 
 	    [NotMapped]
 	    public string MyTimeZone { get; set; }
+
+	    public string TimeZoneDisplayText => TemplateProcessor.PopulateTemplate(
+	        Globalisation.Dictionary.LocalTimeDisplay,
+	        new
+	        {
+	            TimeZone = UserTimeZone
+	        });
 	}
 }

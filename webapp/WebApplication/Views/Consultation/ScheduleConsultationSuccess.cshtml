@@ -1,5 +1,5 @@
 ﻿@using K9.SharedLibrary.Helpers
-@model Slot
+@model K9.WebApplication.ViewModels.ScheduleConsultationViewModel
 
 @{
     ViewBag.Title = Dictionary.ScheduleConsultation;
@@ -13,20 +13,30 @@
         @Html.Success(
             TemplateProcessor.PopulateTemplate(Dictionary.ScheduleAConsultationSuccess, new
             {
-                AppointmentDate = Model.FormattedStartsOnLocalDate,
-                AppointmentTime = Model.FormattedStartsOnLocalTime,
-                Duration = Model.DurationDescription.ToLower()
-            }),
-            Dictionary.IfYouNeedToChangeYourAppointment)
+                Duration = Model.SelectedSlot.DurationDescription.ToLower()
+            }))
+        
+        <div class="text-center">
+            <h2 class="bold">@($"{Model.SelectedSlot.FormattedStartsOnLocalDate} {Dictionary.At} {Model.SelectedSlot.FormattedStartsOnLocalTime}")</h2>
+        </div>
     </div>
 
     <hr />
+
+    <div class="text-center">
+        <h5>@Dictionary.NeedToScheduleADifferentTime</h5>
+        @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.RescheduleAppointment,
+            "ScheduleConsultation", "Consultation",
+            new { consultationId = Model.Consultation.Id },
+            "",
+            EButtonClass.Large)
+    </div>
 
     <div class="row">
         <div class="col-md-12 text-center">
             @Html.Partial("_WhatsApp", new K9.WebApplication.ViewModels.WhatsAppViewModel
             {
-                Title = Dictionary.NeedToScheduleADifferentTime,
+                Title = "",
                 Message = Dictionary.WhatsAppScheduleAppointmentText
             })
         </div>

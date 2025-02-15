@@ -1,6 +1,6 @@
 ﻿using K9.Base.DataAccessLayer.Attributes;
-using K9.Base.DataAccessLayer.Models;
 using K9.DataAccessLayer.Enums;
+using K9.DataAccessLayer.Extensions;
 using K9.Globalisation;
 using K9.SharedLibrary.Attributes;
 using K9.SharedLibrary.Extensions;
@@ -8,7 +8,6 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
-using K9.DataAccessLayer.Extensions;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -60,7 +59,7 @@ namespace K9.DataAccessLayer.Models
         public int? SlotId { get; set; }
 
         public virtual Slot Slot { get; set; }
-        
+
         [UIHint("DateTimeOffset")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EndsOnLabel)]
         public DateTimeOffset? EndsOn
@@ -79,7 +78,7 @@ namespace K9.DataAccessLayer.Models
         [UIHint("DateTimeOffset")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StartsOnLabel)]
         public DateTimeOffset? ScheduledOnLocalTime => this.ToUserTimeZone(ScheduledOn);
-        
+
         [UIHint("DateTimeOffset")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EndsOnLabel)]
         public DateTimeOffset? EndsOnLocalTime => this.ToUserTimeZone(EndsOn);
@@ -87,7 +86,7 @@ namespace K9.DataAccessLayer.Models
         [UIHint("DateTimeOffset")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StartsOnLabel)]
         public DateTimeOffset? ScheduledOnMyTime => this.ToMyTimeZone(ScheduledOn);
-        
+
         [UIHint("DateTimeOffset")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EndsOnLabel)]
         public DateTimeOffset? EndsOnMyTime => this.ToMyTimeZone(EndsOn);
@@ -103,7 +102,7 @@ namespace K9.DataAccessLayer.Models
             : "";
 
         public string FormattedScheduledOnLocalTime => ScheduledOnLocalTime.HasValue
-            ? ScheduledOnLocalTime.Value.ToString(Constants.FormatConstants.AppointmentDisplayTimeFormat)
+            ? $"{ScheduledOnLocalTime.Value.ToString(Constants.FormatConstants.AppointmentDisplayTimeFormat)} - {TimeZoneDisplayText}"
             : "";
 
         public string FormattedEndsOnLocalDate => EndsOnLocalTime.HasValue
@@ -111,10 +110,9 @@ namespace K9.DataAccessLayer.Models
             : "";
 
         public string FormattedEndsOnLocalTime => EndsOnLocalTime.HasValue
-            ? EndsOnLocalTime.Value.ToString(Constants.FormatConstants.AppointmentDisplayTimeFormat)
+            ? $"{EndsOnLocalTime.Value.ToString(Constants.FormatConstants.AppointmentDisplayTimeFormat)} - {TimeZoneDisplayText}"
             : "";
-
-
+        
         private double GetPrice()
         {
             if (ConsultationDuration == EConsultationDuration.OneHour)

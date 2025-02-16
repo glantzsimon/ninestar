@@ -1348,6 +1348,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unlimited access to our AI 9 Star Ki astrologer GPT.
+        /// </summary>
+        public static string AccessToOurGPT {
+            get {
+                return ResourceManager.GetString("AccessToOurGPT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your account was successfully created, but an error occurred when trying to email your activation code. Please contact support for more details..
         /// </summary>
         public static string AccountCreatedErrorSendingEmail {

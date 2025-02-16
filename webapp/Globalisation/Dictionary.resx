@@ -2971,6 +2971,9 @@
   <data name="WeveResentCodeToEmail" xml:space="preserve">
     <value>We've sent a new 6-digit code to your email address to activate your account.</value>
   </data>
+  <data name="AccessToOurGPT" xml:space="preserve">
+    <value>Unlimited access to our AI 9 Star Ki astrologer GPT</value>
+  </data>
   <data name="AccountNumberLabel" xml:space="preserve">
     <value>Account Number</value>
   </data>

@@ -6,6 +6,7 @@ using K9.WebApplication.Extensions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Script.Serialization;
 
 namespace K9.WebApplication.Models
 {
@@ -65,18 +66,24 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PersonalDevelopemntLabel)]
         public string PersonalDevelopemnt { get; set; }
 
+        [ScriptIgnore]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BiorhythmsLabel)]
         public BioRhythmsResultSet BiorhythmResultSet { get; set; }
         
+        [ScriptIgnore]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SelectedDateLabel)]
         public DateTime? SelectedDate { get; set; }
 
+        [ScriptIgnore]
         public bool IsScrollToCyclesOverview { get; set; }
 
+        [ScriptIgnore]
         public string ActiveCycleTabId { get; set; }
 
+        [ScriptIgnore]
         public bool IsShowSummary { get; set; } = true;
 
+        [ScriptIgnore]
         public bool IsCompatibility { get; set; } = false;
 
         /// <summary>
@@ -89,24 +96,33 @@ namespace K9.WebApplication.Models
         /// </summary>
         public NineStarKiEnergy MonthlyCycleEnergy { get; }
         
+        [ScriptIgnore]
         public ESexualityRelationType SexualityRelationType => GetSexualityRelationType();
 
+        [ScriptIgnore]
         public string OverviewLabel => $"{MainEnergy.EnergyNameAndNumber} Overview";
 
+        [ScriptIgnore]
         public string EnergySexualityLabel => $"{MainEnergy.EnergyName} {Dictionary.SexualityLabel}";
 
+        [ScriptIgnore]
         public string SexualityRelationTypeDetailsStraight => GetSexualityGenderDescription();
 
+        [ScriptIgnore]
         public string SexualityRelationTypeDetailsGay => GetSexualityGenderDescription(true);
 
+        [ScriptIgnore]
         public string MainEnergySexualityDetails => GetMainEnergySexualityDetails();
 
+        [ScriptIgnore]
         public string GayLabel => PersonModel?.Gender == EGender.Female ? Dictionary.Lesbian : Dictionary.Gay;
 
+        [ScriptIgnore]
         public bool IsProcessed { get; set; } = false;
 
+        [ScriptIgnore]
         public bool IsMyProfile { get; set; } = false;
-
+        
         public List<Tuple<int, NineStarKiEnergy>> GetYearlyPlanner()
         {
             var cycles = new List<Tuple<int, NineStarKiEnergy>>();

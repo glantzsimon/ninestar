@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.Script.Serialization;
 
 namespace K9.WebApplication.Models
 {
@@ -22,8 +23,13 @@ namespace K9.WebApplication.Models
             ChallengingScores = new List<ECompatibilityScore>();
         }
 
+        [ScriptIgnore]
         public double SupportiveScoreAsPercentage { get; set; }
+
+        [ScriptIgnore]
         public double SameScoreAsPercentage { get; set; }
+
+        [ScriptIgnore]
         public double ChallengingAsPercentage { get; set; }
 
         public ECompatibilityScore HarmonyScore { get; set; }
@@ -42,6 +48,7 @@ namespace K9.WebApplication.Models
 
         public ECompatibilityScore LearningPotentialScore { get; set; }
 
+        [ScriptIgnore]
         public ECompatibilityScore OverallScore { get; set; }
 
         private List<ECompatibilityScore> HarmonyScores { get; }

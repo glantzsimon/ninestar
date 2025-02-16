@@ -166,10 +166,10 @@ components:
         data:
           type: object
           properties:
-            NineStarKiModel1:
-              $ref: "#/components/schemas/NineStarKiModel"
-            NineStarKiModel2:
-              $ref: "#/components/schemas/NineStarKiModel"
+            NineStarKiSummaryModel1:
+              $ref: "#/components/schemas/NineStarKiSummaryModel"
+            NineStarKiSummaryModel2:
+              $ref: "#/components/schemas/NineStarKiSummaryModel"
             FundamentalEnergiesCompatibility:
               type: string
               description: A textual summary of the compatibility between the first and second person's fundamental nature.
@@ -297,6 +297,25 @@ components:
           type: string
           description: Advice for personal growth based on the person's energy.
 
+    NineStarKiSummaryModel:
+      type: object
+      properties:
+        PersonModel:
+          $ref: "#/components/schemas/PersonModel"
+        MainEnergy:
+          $ref: "#/components/schemas/EnergySummary"
+        CharacterEnergy:
+          $ref: "#/components/schemas/EnergySummary"
+        SurfaceEnergy:
+          $ref: "#/components/schemas/EnergySummary"
+        Summary:
+          type: string
+          description: A textual summary of the person's characteristics.
+          example: "You have a lot of energy and vitality and are not afraid to take on plenty of hard work and commitments."
+        Overview:
+          type: string
+          description: A general overview of the person's characteristics.
+
     PersonModel:
       type: object
       properties:
@@ -329,56 +348,37 @@ components:
     Energy:
       type: object
       properties:
-        Energy:
-          type: integer
-          description: Energy type number.
-          example: 3
+        ChildDescription:
+          type: string
+          description: A detailed description of the energy if the person is younger than 18 years old.
+          example: "Thunder Energies embody the power of spring and have plenty of vitality and energy."
         EnergyName:
           type: string
           description: Name of the energy.
           example: "Thunder"
-        EnergyNameAndNumber:
-          type: string
-          example: "3 Tree / Thunder"
-        DescriptiveTitle:
-          type: string
-          description: A brief title describing the energy type.
-          example: "The Pioneer"
+        EnergyNumber:
+          type: integer
+          example: 0
         EnergyDescription:
           type: string
           description: A detailed description of the energy.
           example: "Thunder Energies embody the power of spring and have plenty of vitality and energy."
-        EnergyLowerCase:
-          type: string
-          example: "thunder"
-        Trigram:
-          type: string
-          description: The trigram associated with the energy.
-          example: "Chen"
         ElementName:
           type: string
           description: The element associated with the energy.
           example: "Tree"
-        Element:
-          type: integer
-          description: Element type.
-          example: 2
-        ElementWithYingYang:
-          type: string
-          example: "Yang Tree"
         ElementDescription:
           type: string
           description: A detailed explanation of the element's characteristics.
-        Colour:
+        FamilyMember:
           type: string
-          description: The color associated with this energy.
-          example: "Bright Green"
-        Modality:
-          type: integer
-          description: The modality type.
-          example: 3
+          description: The member of the family associated with the Energy
         ModalityName:
           type: string
+          example: "Dynamic"
+        ModalityDescription:
+          type: string
+          description: A detailed description of the Modality
           example: "Dynamic"
         Direction:
           type: string
@@ -386,3 +386,46 @@ components:
         Season:
           type: string
           example: "Early Spring"
+        SeasonDescription:
+          type: string
+          description: A detailed description of the season
+          example: "Early Spring bla bla"
+        CycleDescription:
+          type: string
+          example: "Early Spring bla bla"
+        Trigram:
+          type: string
+          description: The name of the Trigram associated with this Energy
+          example: "Khun"
+        TrigramDescription:
+          type: string
+          example: "Early Spring bla bla"
+        YinYangName:
+          type: string
+          example: "Yin"
+
+    EnergySummary:
+      type: object
+      properties:
+        Energy:
+          type: string
+          description: Name of the energy.
+          example: "Thunder"
+        EnergyNumber:
+          type: integer
+          example: 0
+        EnergyDescription:
+          type: string
+          description: A detailed description of the energy.
+          example: "Thunder Energies embody the power of spring and have plenty of vitality and energy."
+        YinYang:
+          type: string
+          example: "Yin"
+        Element:
+          type: string
+          description: The element associated with the energy.
+          example: "Tree"
+        Modality:
+          type: integer
+          description: The modality type.
+          example: 3

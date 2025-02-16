@@ -354,6 +354,8 @@
     <Compile Include="Models\NineStarKi\CompatibilityModel.cs" />
     <Compile Include="Models\Biorhythms\BioRhythmsModel.cs" />
     <Compile Include="Models\NineStarKi\NineStarKiBiorhythmsFactors.cs" />
+    <Compile Include="Models\NineStarKi\NineStarKiEnergySummary.cs" />
+    <Compile Include="Models\NineStarKi\NineStarKiSummaryModel.cs" />
     <Compile Include="Models\NineStarKi\NineStarKiMonthlyDates.cs" />
     <Compile Include="Models\Browser.cs.cs" />
     <Compile Include="Models\Recaptcha.cs" />

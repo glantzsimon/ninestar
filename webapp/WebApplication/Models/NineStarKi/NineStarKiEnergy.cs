@@ -5,6 +5,7 @@ using K9.SharedLibrary.Extensions;
 using K9.WebApplication.Attributes;
 using K9.WebApplication.Extensions;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Script.Serialization;
 
 namespace K9.WebApplication.Models
 {
@@ -280,102 +281,123 @@ namespace K9.WebApplication.Models
             EnergyCycleType = energyCycleType;
         }
 
-        public ENineStarKiEnergy Energy { get; }
-
-        /// <summary>
-        /// Used to determine YinYang of 5 energies
-        /// </summary>
-        public ENineStarKiEnergy RelatedEnergy { get; set; }
-
-        /// <summary>
-        /// Used to determine YinYang of 5.5.5 energies
-        /// </summary>
-        public EGender Gender { get; set; }
-
-        public bool IsAdult { get; set; }
-
-        public ENineStarKiEnergyType EnergyType { get; }
-
-        public ENineStarKiEnergyCycleType EnergyCycleType { get; set; }
-
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyDescriptionLabel)]
-        public string EnergyDescription { get; set; }
-
-        public string EnergyLowerCase => Energy.ToString().ToLower();
-
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ChildLabel)]
         public string ChildDescription => EnergyType == ENineStarKiEnergyType.CharacterEnergy ? GetChildDescription() : string.Empty;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyLabel)]
         public string EnergyName => MetaData.GetDescription();
 
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyLabel)]
-        public string DescriptiveTitle => $"The {MetaData.GetDescriptiveTitle()}";
-
-        public string EnergyNameAndNumber => GetEnergyNameAndNumber();
-
-        public string EnergyTitle => GetEnergyTitle();
-
         public int EnergyNumber => (int)Energy;
 
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.YinYangLabel)]
-        public ENineStarKiYinYang YinYang => GetYinYang();
-
-        public string YinYangName => YinYang == ENineStarKiYinYang.Unspecified ? string.Empty : YinYang.ToString();
-
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyMemberLabel)]
-        public string FamilyMember => MetaData.GetFamilyMember();
-
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TrigramLabel)]
-        public string Trigram => MetaData.GetTrigram();
-
-        public string TrigramUIName => $"{MetaData.TrigramName}{EnergyType}";
-
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TrigramLabel)]
-        public string TrigramDescription => GetTrigramDescription();
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyDescriptionLabel)]
+        public string EnergyDescription { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ElementLabel)]
         public string ElementName => MetaData.GetElement();
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ElementLabel)]
-        public ENineStarKiElement Element => MetaData.Element;
-
-        public string ElementWithYingYang => $"{YinYangName} {ElementName}".Trim();
-
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ElementLabel)]
-        public string ElementTitle => $"{ElementName} {Dictionary.Element}";
-
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ElementLabel)]
         public string ElementDescription => MetaData.GetElementDescription();
 
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ColourLabel)]
-        public string Colour => MetaData.GetColour();
-
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ModalityLabel)]
-        public ENineStarKiModality Modality => MetaData.Modality;
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyMemberLabel)]
+        public string FamilyMember => MetaData.GetFamilyMember();
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ModalityLabel)]
         public string ModalityName => Modality.ToString();
-
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ModalityLabel)]
-        public string ModalityTitle => $"{ModalityName} {Dictionary.ModalityLabel}";
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ModalityDescriptionLabel)]
         public string ModalityDescription => MetaData.ModalityDeescription;
 
         public string Direction => MetaData.GetDirection();
 
-        public string AdultEnergyLabel => GetAdultEnergyLabel();
-
-        public string CharacteEnergyLabel => GetCharacterEnergyLabel();
-
         public string Season => CycleMetaData.Season;
 
         public string SeasonDescription => CycleMetaData.SeasonDescription;
 
-        public string CycleDescriptiveName => CycleMetaData.DescriptiveTitle;
-
         public string CycleDescription => EnergyType == ENineStarKiEnergyType.MainEnergy ? CycleMetaData.YearlyDescription : CycleMetaData.MonthlyDescription;
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TrigramLabel)]
+        public string Trigram => MetaData.GetTrigram();
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TrigramLabel)]
+        public string TrigramDescription => GetTrigramDescription();
+
+        public string YinYangName => YinYang == ENineStarKiYinYang.Unspecified ? string.Empty : YinYang.ToString();
+
+        [ScriptIgnore]
+        public ENineStarKiEnergy Energy { get; }
+
+        [ScriptIgnore]
+        /// <summary>
+        /// Used to determine YinYang of 5 energies
+        /// </summary>
+        public ENineStarKiEnergy RelatedEnergy { get; set; }
+
+        [ScriptIgnore]
+        /// <summary>
+        /// Used to determine YinYang of 5.5.5 energies
+        /// </summary>
+        public EGender Gender { get; set; }
+
+        [ScriptIgnore]
+        public bool IsAdult { get; set; }
+
+        [ScriptIgnore]
+        public ENineStarKiEnergyType EnergyType { get; }
+
+        [ScriptIgnore]
+        public ENineStarKiEnergyCycleType EnergyCycleType { get; set; }
+
+        [ScriptIgnore]
+        public string EnergyLowerCase => Energy.ToString().ToLower();
+
+        [ScriptIgnore]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyLabel)]
+        public string DescriptiveTitle => $"The {MetaData.GetDescriptiveTitle()}";
+
+        [ScriptIgnore]
+        public string EnergyNameAndNumber => GetEnergyNameAndNumber();
+
+        [ScriptIgnore]
+        public string EnergyTitle => GetEnergyTitle();
+
+        [ScriptIgnore]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.YinYangLabel)]
+        public ENineStarKiYinYang YinYang => GetYinYang();
+
+        [ScriptIgnore]
+        public string TrigramUIName => $"{MetaData.TrigramName}{EnergyType}";
+
+        [ScriptIgnore]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ElementLabel)]
+        public ENineStarKiElement Element => MetaData.Element;
+
+        [ScriptIgnore]
+        public string ElementWithYingYang => $"{YinYangName} {ElementName}".Trim();
+
+        [ScriptIgnore]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ElementLabel)]
+        public string ElementTitle => $"{ElementName} {Dictionary.Element}";
+
+        [ScriptIgnore]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ColourLabel)]
+        public string Colour => MetaData.GetColour();
+
+        [ScriptIgnore]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ModalityLabel)]
+        public ENineStarKiModality Modality => MetaData.Modality;
+
+        [ScriptIgnore]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ModalityLabel)]
+        public string ModalityTitle => $"{ModalityName} {Dictionary.ModalityLabel}";
+
+        [ScriptIgnore]
+        public string AdultEnergyLabel => GetAdultEnergyLabel();
+
+        [ScriptIgnore]
+        public string CharacteEnergyLabel => GetCharacterEnergyLabel();
+        
+        [ScriptIgnore]
+        public string CycleDescriptiveName => CycleMetaData.DescriptiveTitle;
 
         private string GetEnergyNameAndNumber()
         {

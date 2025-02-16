@@ -1,12 +1,9 @@
-﻿using K9.SharedLibrary.Extensions;
+﻿using K9.Globalisation;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.WebApplication.Enums;
-using K9.WebApplication.Extensions;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
-using K9.Globalisation;
+using System.Web.Script.Serialization;
 
 namespace K9.WebApplication.Models
 {
@@ -23,6 +20,8 @@ namespace K9.WebApplication.Models
         {
             NineStarKiModel1 = nineStarKiModel1;
             NineStarKiModel2 = nineStarKiModel2;
+            NineStarKiSummaryModel1 = new NineStarKiSummaryModel(nineStarKiModel1);
+            NineStarKiSummaryModel2 = new NineStarKiSummaryModel(nineStarKiModel2);
 
             CompatibilityDetails = new CompatibilityDetailsModel(this);
             
@@ -59,73 +58,97 @@ namespace K9.WebApplication.Models
             });
         }
 
+        [ScriptIgnore]
         public NineStarKiModel NineStarKiModel1 { get; }
 
+        [ScriptIgnore]
         public NineStarKiModel NineStarKiModel2 { get; }
+
+        public NineStarKiSummaryModel NineStarKiSummaryModel1 { get; }
+        
+        public NineStarKiSummaryModel NineStarKiSummaryModel2 { get; }
         
         public string FundamentalEnergiesCompatibility { get; }
         
         public string SexualChemistryDetails { get; }
 
+        [ScriptIgnore]
         public bool IsProcessed { get; set; }
 
+        [ScriptIgnore]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DoNotDisplaySexualityLabel)]
         public bool IsHideSexualChemistry { get; set; }
         
         public CompatibilityDetailsModel CompatibilityDetails { get; set; }
 
+        [ScriptIgnore]
         public string FirstPersonName => NineStarKiModel1.PersonModel.Name ?? Globalisation.Dictionary.FirstPerson;
 
+        [ScriptIgnore]
         public string SecondPersonName => NineStarKiModel2.PersonModel.Name ?? Globalisation.Dictionary.SecondPerson;
         
+        [ScriptIgnore]
         public string FirstPersonNameWithArticle => NineStarKiModel1.PersonModel.Name ?? $"the {Globalisation.Dictionary.FirstPerson.ToLower()}";
 
+        [ScriptIgnore]
         public string SecondPersonNameWithArticle => NineStarKiModel2.PersonModel.Name ?? $"the {Globalisation.Dictionary.SecondPerson.ToLower()}";
 
+        [ScriptIgnore]
         public string FirstFundamentalEnergyPersonName => NineStarKiModel1.MainEnergy.Energy <= NineStarKiModel2.MainEnergy.Energy
             ? FirstPersonNameWithArticle
             : SecondPersonNameWithArticle;
 
+        [ScriptIgnore]
         public string SecondFundamentalEnergyPersonName => NineStarKiModel1.MainEnergy.Energy <= NineStarKiModel2.MainEnergy.Energy
             ? SecondPersonNameWithArticle
             : FirstPersonNameWithArticle;
 
+        [ScriptIgnore]
         public string FirstFundamentalEnergyGenderPossessivePronoun => NineStarKiModel1.MainEnergy.Energy <= NineStarKiModel2.MainEnergy.Energy
             ? NineStarKiModel1?.PersonModel?.GenderPossessivePronoun
             : NineStarKiModel2?.PersonModel?.GenderPossessivePronoun;
 
+        [ScriptIgnore]
         public string SecondFundamentalEnergyGenderPossessivePronoun => NineStarKiModel1.MainEnergy.Energy <= NineStarKiModel2.MainEnergy.Energy
             ? NineStarKiModel2?.PersonModel?.GenderPossessivePronoun
             : NineStarKiModel1?.PersonModel?.GenderPossessivePronoun;
 
+        [ScriptIgnore]
         public string FirstCharacterEnergyGenderPossessivePronoun => NineStarKiModel1.CharacterEnergy.Energy <= NineStarKiModel2.CharacterEnergy.Energy
             ? NineStarKiModel1?.PersonModel?.GenderPossessivePronoun
             : NineStarKiModel2?.PersonModel?.GenderPossessivePronoun;
 
+        [ScriptIgnore]
         public string SecondCharacterEnergyGenderPossessivePronoun => NineStarKiModel1.CharacterEnergy.Energy <= NineStarKiModel2.CharacterEnergy.Energy
             ? NineStarKiModel2?.PersonModel?.GenderPossessivePronoun
             : NineStarKiModel1?.PersonModel?.GenderPossessivePronoun;
 
+        [ScriptIgnore]
         public string FirstFundamentalEnergyGenderPronoun => NineStarKiModel1.MainEnergy.Energy <= NineStarKiModel2.MainEnergy.Energy
             ? NineStarKiModel1?.PersonModel?.GenderPronoun
             : NineStarKiModel2?.PersonModel?.GenderPronoun;
 
+        [ScriptIgnore]
         public string SecondFundamentalEnergyGenderPronoun => NineStarKiModel1.MainEnergy.Energy <= NineStarKiModel2.MainEnergy.Energy
             ? NineStarKiModel2?.PersonModel?.GenderPronoun
             : NineStarKiModel1?.PersonModel?.GenderPronoun;
 
+        [ScriptIgnore]
         public string FirstCharacterEnergyGenderPronoun => NineStarKiModel1.CharacterEnergy.Energy <= NineStarKiModel2.CharacterEnergy.Energy
             ? NineStarKiModel1?.PersonModel?.GenderPronoun
             : NineStarKiModel2?.PersonModel?.GenderPronoun;
 
+        [ScriptIgnore]
         public string SecondCharacterEnergyGenderPronoun => NineStarKiModel1.CharacterEnergy.Energy <= NineStarKiModel2.CharacterEnergy.Energy
             ? NineStarKiModel2?.PersonModel?.GenderPronoun
             : NineStarKiModel1?.PersonModel?.GenderPronoun;
 
+        [ScriptIgnore]
         public string FirstCharacterEnergyPersonName => NineStarKiModel1.CharacterEnergy.Energy <= NineStarKiModel2.CharacterEnergy.Energy
             ? FirstPersonNameWithArticle
             : SecondPersonNameWithArticle;
 
+        [ScriptIgnore]
         public string SecondCharacterEnergyPersonName => NineStarKiModel1.CharacterEnergy.Energy <= NineStarKiModel2.CharacterEnergy.Energy
             ? SecondPersonNameWithArticle
             : FirstPersonNameWithArticle;

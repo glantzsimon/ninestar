@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Web.Script.Serialization;
 
 namespace K9.WebApplication.Models
 {
@@ -56,61 +57,133 @@ namespace K9.WebApplication.Models
         }
 
         public CompatibilityScoreModel Score { get; }
-
+        
+        [ScriptIgnore]
         public ETransformationType FundamentalEnergiesTransformationType { get; }
+
+        [ScriptIgnore]
         public ETransformationType FundamentalEnergy1ToCharacterEnergy2TransformationType { get; }
+
+        [ScriptIgnore]
         public ETransformationType FundamentalEnergy1ToSurfaceEnergy2TransformationType { get; }
+
+        [ScriptIgnore]
         public ETransformationType FundamentalEnergy2ToCharacterEnergy1TransformationType { get; }
+
+        [ScriptIgnore]
         public ETransformationType FundamentalEnergy2ToSurfaceEnergy1TransformationType { get; }
 
+        [ScriptIgnore]
         public ETransformationType CharacterEnergiesTransformationType { get; }
+
+        [ScriptIgnore]
         public ETransformationType CharacterEnergy1ToSurfaceEnergy2TransformationType { get; }
+
+        [ScriptIgnore]
         public ETransformationType CharacterEnergy2ToSurfaceEnergy1TransformationType { get; }
 
+        [ScriptIgnore]
         public ETransformationType SurfaceEnergiesTransformationType { get; }
 
         public string FundamentalElementsTransformationDetails { get; }
         public string CharacterElementsTransformationDetails { get; }
         public string FundamentalElementsCompatibilityDetails { get; }
+
+        [ScriptIgnore]
         public string FundamentalElementsCompatibilityDetailsTitle { get; }
+
         public string CharacterElementsCompatibilityDetails { get; }
 
         public string AllOtherElementsCompatibility { get; }
 
+        [ScriptIgnore]
         public bool FundamentalElementsAreSupportive => IsSupportive(FundamentalEnergiesTransformationType);
+
+        [ScriptIgnore]
         public bool FundamentalEnergiesAreSame => FundamentalEnergiesTransformationType == ETransformationType.Same;
+
+        [ScriptIgnore]
         public bool FundamentalEnergiesAreChallenging => IsChallenging(FundamentalEnergiesTransformationType);
+
+        [ScriptIgnore]
         public bool FundamentalEnergiesAreSameEnergy => _nineStarKiModel1.MainEnergy.Energy == _nineStarKiModel2.MainEnergy.Energy;
 
+        [ScriptIgnore]
         public bool CharacterEnergiesAreSupportive => IsSupportive(CharacterEnergiesTransformationType);
+
+        [ScriptIgnore]
         public bool CharacterEnergiesAreSame => CharacterEnergiesTransformationType == ETransformationType.Same;
+
+        [ScriptIgnore]
         public bool CharacterEnergiesAreChallenging => IsChallenging(CharacterEnergiesTransformationType);
+
+        [ScriptIgnore]
         public bool CharacterEnergiesAreSameEnergy => _nineStarKiModel1.CharacterEnergy.Energy == _nineStarKiModel2.CharacterEnergy.Energy;
 
+        [ScriptIgnore]
         public bool SurfaceEnergiesAreSupportive => IsSupportive(SurfaceEnergiesTransformationType);
+
+        [ScriptIgnore]
         public bool SurfaceEnergiesAreSame => SurfaceEnergiesTransformationType == ETransformationType.Same;
+
+        [ScriptIgnore]
         public bool SurfaceEnergiesAreChallenging => IsChallenging(SurfaceEnergiesTransformationType);
+
+        [ScriptIgnore]
         public bool SurfaceEnergiesAreSameEnergy => _nineStarKiModel1.SurfaceEnergy.Energy == _nineStarKiModel2.SurfaceEnergy.Energy;
 
+        [ScriptIgnore]
         public bool FundamentalEnergy1ToCharacterEnergy2IsSupportive => IsSupportive(FundamentalEnergy1ToCharacterEnergy2TransformationType);
+
+        [ScriptIgnore]
         public bool FundamentalEnergy2ToCharacterEnergy1IsSupportive => IsSupportive(FundamentalEnergy2ToCharacterEnergy1TransformationType);
+
+        [ScriptIgnore]
         public bool FundamentalEnergy1ToSurfaceEnergy2IsSupportive => IsSupportive(FundamentalEnergy1ToSurfaceEnergy2TransformationType);
+
+        [ScriptIgnore]
         public bool FundamentalEnergy2ToSurfaceEnergy1IsSupportive => IsSupportive(FundamentalEnergy2ToSurfaceEnergy1TransformationType);
+
+        [ScriptIgnore]
         public bool CharacterEnergy1ToSurfaceEnergy2IsSupportive => IsSupportive(CharacterEnergy1ToSurfaceEnergy2TransformationType);
+
+        [ScriptIgnore]
         public bool CharacterEnergy2ToSurfaceEnergy1IsSupportive => IsSupportive(CharacterEnergy2ToSurfaceEnergy1TransformationType);
 
+        [ScriptIgnore]
         public bool FundamentalEnergy1ToCharacterEnergy2IsSame => IsSame(FundamentalEnergy1ToCharacterEnergy2TransformationType);
+
+        [ScriptIgnore]
         public bool FundamentalEnergy2ToCharacterEnergy1IsSame => IsSame(FundamentalEnergy2ToCharacterEnergy1TransformationType);
+
+        [ScriptIgnore]
         public bool FundamentalEnergy1ToSurfaceEnergy2IsSame => IsSame(FundamentalEnergy1ToSurfaceEnergy2TransformationType);
+
+        [ScriptIgnore]
         public bool FundamentalEnergy2ToSurfaceEnergy1IsSame => IsSame(FundamentalEnergy2ToSurfaceEnergy1TransformationType);
+
+        [ScriptIgnore]
         public bool CharacterEnergy1ToSurfaceEnergy2IsSame => IsSame(CharacterEnergy1ToSurfaceEnergy2TransformationType);
+
+        [ScriptIgnore]
         public bool CharacterEnergy2ToSurfaceEnergy1IsSame => IsSame(CharacterEnergy2ToSurfaceEnergy1TransformationType);
 
+        [ScriptIgnore]
         public bool FundamentalEnergy1ToCharacterEnergy2IsChallenging => IsChallenging(FundamentalEnergy1ToCharacterEnergy2TransformationType);
+
+        [ScriptIgnore]
         public bool FundamentalEnergy2ToCharacterEnergy1IsChallenging => IsChallenging(FundamentalEnergy2ToCharacterEnergy1TransformationType);
+
+        [ScriptIgnore]
         public bool FundamentalEnergy1ToSurfaceEnergy2IsChallenging => IsChallenging(FundamentalEnergy1ToSurfaceEnergy2TransformationType);
+        
+        [ScriptIgnore]
         public bool FundamentalEnergy2ToSurfaceEnergy1IsChallenging => IsChallenging(FundamentalEnergy2ToSurfaceEnergy1TransformationType);
+
+        [ScriptIgnore]
         public bool CharacterEnergy1ToSurfaceEnergy2IsChallenging => IsChallenging(CharacterEnergy1ToSurfaceEnergy2TransformationType);
+
+        [ScriptIgnore]
         public bool CharacterEnergy2ToSurfaceEnergy1IsChallenging => IsChallenging(CharacterEnergy2ToSurfaceEnergy1TransformationType);
 
         private string GetElementCompatibilityDetails(NineStarKiEnergy energy1, NineStarKiEnergy energy2)
@@ -747,13 +820,20 @@ namespace K9.WebApplication.Models
         }
 
         public CompatibilityScoreModel Score { get; }
+
+        [ScriptIgnore]
         public bool IsFundamtenalGenderSame { get; set; }
+
+        [ScriptIgnore]
         public bool IsCharacterGenderSame { get; set; }
         
+        [ScriptIgnore]
         public bool IsBothGenderSame => IsFundamtenalGenderSame && IsCharacterGenderSame;
 
+        [ScriptIgnore]
         public ENineStarKiYinYang FundamentalGenderSameYinYang => IsFundamtenalGenderSame ? _nineStarKiModel1.MainEnergy.YinYang : ENineStarKiYinYang.Unspecified;
 
+        [ScriptIgnore]
         public ENineStarKiYinYang CharacterGenderSameYinYang => IsCharacterGenderSame ? _nineStarKiModel1.CharacterEnergy.YinYang : ENineStarKiYinYang.Unspecified;
 
         private void CalculateScore()
@@ -814,8 +894,14 @@ namespace K9.WebApplication.Models
         }
 
         public CompatibilityScoreModel Score { get; }
+
+        [ScriptIgnore]
         public bool IsCharacterModalitySame { get; set; }
+
+        [ScriptIgnore]
         public bool IsFundamentalModalitySame { get; set; }
+
+        [ScriptIgnore]
         public bool IsSurfaceModalitySame { get; set; }
 
         private void CalculateScore()

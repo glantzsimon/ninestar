@@ -102,7 +102,41 @@ namespace K9.WebApplication.Controllers
                 return Json(new { success = true, data = model }, JsonRequestBehavior.AllowGet);
             });
         }
-        
+
+        public JsonResult GetCompatibilityTest()
+        {
+            var personModel1 = new PersonModel
+            {
+                Name = "Simon Baby Kotik",
+                DateOfBirth = new DateTime(1979, 06, 16),
+                Gender = EGender.Male
+            };
+            var personModel2 = new PersonModel
+            {
+                Name = "Andrei Kotik",
+                DateOfBirth = new DateTime(1984, 09, 07),
+                Gender = EGender.Male
+            };
+
+            var model = _nineStarKiService.CalculateCompatibility(personModel1, personModel2, false);
+
+            foreach (var propertyInfo in model.GetProperties())
+            {
+                if (propertyInfo.PropertyType == typeof(string) && propertyInfo.CanWrite)
+                {
+                    try
+                    {
+                        model.SetProperty(propertyInfo, string.Empty);
+                    }
+                    catch (Exception e)
+                    {
+                    }
+                }
+            }
+
+            return Json(new { success = true, data = model }, JsonRequestBehavior.AllowGet);
+        }
+
         private JsonResult Validate(string accountNumber, Func<JsonResult> method)
         {
             if (!IsValidApiKey(Request.Headers[authRequestHeader]))

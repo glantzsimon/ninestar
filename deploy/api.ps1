@@ -1,7 +1,9 @@
+curl -k "https://localhost/ninestar/api/personal-chart/get?dateOfBirth=1979-06-16&gender=Male" -H "Authorization: 1ba65158-2942-4bba-b6b5-fb39c15e64b0"
+
 # Define variables
 $API_BASE_URL = "https://localhost:443/ninestar/api/"
 $GET_PERSONAL_PROFILE_URL = "personal-chart/get?dateOfBirth=1979-06-16&gender=Male"
-$API_KEY = ""
+$API_KEY = "1ba65158-2942-4bba-b6b5-fb39c15e64b0"
 	
 function ProcessErrors(){
 	if($? -eq $false)

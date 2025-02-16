@@ -101,14 +101,17 @@ namespace K9.WebApplication.Services
         /// <returns></returns>
         public UserMembership GetActiveUserMembership(int? userId = null)
         {
-            var activeUserMembership = GetActiveUserMemberships(userId).OrderByDescending(_ => _.MembershipOption.SubscriptionType)
+            var activeUserMembership = GetActiveUserMemberships(userId).OrderByDescending(_ => _.MembershipOption?.SubscriptionType)
                 .FirstOrDefault();
 
             if (activeUserMembership == null && userId.HasValue)
             {
                 try
                 {
-                    CreateFreeMembership(userId.Value);
+                    if (_userService.Find(userId.Value) != null)
+                    {
+                        CreateFreeMembership(userId.Value);
+                    }
                     activeUserMembership = GetActiveUserMemberships(userId).OrderByDescending(_ => _.MembershipOption.SubscriptionType)
                         .FirstOrDefault();
                 }
@@ -343,6 +346,12 @@ namespace K9.WebApplication.Services
                 if (membershipOption == null)
                 {
                     _logger.Error($"MembershipService => CreateFreeMembership => MembershipOption with Subscription Type {MembershipOption.ESubscriptionType.Free} was not found.");
+                    return;
+                }
+
+                if (_userService.Find(userId) == null)
+                {
+                    _logger.Error($"MembershipService => CreateFreeMembership => UserId {userId} was not found.");
                     return;
                 }
 

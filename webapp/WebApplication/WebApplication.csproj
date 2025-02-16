@@ -1241,19 +1241,12 @@
     <Content Include="Views\Shared\EditorTemplates\Currency.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Gender.cshtml" />
     <Content Include="Views\PersonalChart\_ProfileHeader.cshtml" />
-    <Content Include="Views\Api\_Energy.cshtml" />
-    <Content Include="Views\Api\_Trigram.cshtml" />
-    <Content Include="Views\Api\_YinYang.cshtml" />
-    <Content Include="Views\Api\_Element.cshtml" />
-    <Content Include="Views\Api\_FamilyMember.cshtml" />
-    <Content Include="Views\Api\_Colour.cshtml" />
     <Content Include="Views\PersonalChart\_ProfileOverview.cshtml" />
     <Content Include="Views\Shared\_BetaPopup.cshtml" />
     <Content Include="Views\PersonalChart\_ProfileBody.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Energy.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\EnergyType.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Api\_EnergyTitle.cshtml" />
     <Content Include="Views\Shared\Controls\_CollapsiblePanel.cshtml" />
     <Content Include="Views\Shared\_GoogleAnalytics.cshtml" />
     <Content Include="Views\Shared\_SEO.cshtml" />
@@ -1299,7 +1292,6 @@
     <Content Include="Views\Shared\_Selected.cshtml" />
     <Content Include="Views\Home\PrivacyPolicy.cshtml" />
     <Content Include="Views\KnowledgeBase\_NineEnergiesOverview.cshtml" />
-    <Content Include="Views\Api\_Modality.cshtml" />
     <Content Include="Views\KnowledgeBase\_ModalityBody.cshtml" />
     <Content Include="Views\KnowledgeBase\_ModalityDetails.cshtml" />
     <Content Include="Views\Compatibility\Index.cshtml" />
@@ -1328,7 +1320,6 @@
     <Content Include="Views\Account\UnsubscribeFailed.cshtml" />
     <Content Include="Views\Account\UnsubscribeSuccess.cshtml" />
     <Content Include="Views\Predictions\_CycleHeader.cshtml" />
-    <Content Include="Views\Api\_Season.cshtml" />
     <Content Include="Views\Predictions\_YearlyPlanner.cshtml" />
     <Content Include="Views\Predictions\_Year.cshtml" />
     <Content Include="Views\Predictions\_YearlyCyclesOverview.cshtml" />
@@ -1373,7 +1364,6 @@
     <Content Include="Views\Consultations\Edit.cshtml" />
     <Content Include="Views\Consultations\Index.cshtml" />
     <Content Include="Views\Shared\_Recaptcha.cshtml" />
-    <Content Include="Views\Api\_FiveTransformations.cshtml" />
     <Content Include="Views\Compatibility\_CompatibilityElementsBreakdown.cshtml" />
     <Content Include="Views\Predictions\MyCycles.cshtml" />
     <Content Include="Views\Predictions\_CyclesJs.cshtml" />

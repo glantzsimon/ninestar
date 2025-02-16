@@ -13,6 +13,12 @@
         @Html.Hidden("User.Password", "th1515n0tmypa55w0rd")
 
         <div>
+            <div class="col-sm-12">
+                @Html.BootstrapDisplayFor(model => model.Membership.AccountNumber)
+                <hr />
+            </div>
+        </div>
+        <div>
             <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.User.FirstName)</div>
             <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.User.LastName)</div>
         </div>

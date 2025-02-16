@@ -394,7 +394,7 @@
     <Compile Include="ViewModels\ArchiveItemViewModel.cs" />
     <Compile Include="Models\NineStarKi\MembershipModel.cs" />
     <Compile Include="ViewModels\PurchaseCreditsViewModel.cs" />
-    <Compile Include="ViewModels\MembershipViewModel.cs" />
+    <Compile Include="ViewModels\UserMembership.cs" />
     <Compile Include="ViewModels\NineStarKiModalitySummaryViewModel.cs" />
     <Compile Include="ViewModels\NineStarKiSummaryViewModel.cs" />
     <Compile Include="ViewModels\MyAccountViewModel.cs" />
@@ -957,9 +957,9 @@
     <Content Include="Scripts\library\SmoothScroll.min.js" />
     <Content Include="Scripts\library\vticker-min.js" />
     <Content Include="Scripts\template\scroller.js" />
-    <None Include="openapi.yaml">
+    <Content Include="openapi.yaml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </Content>
     <Content Include="sitemap.xml" />
     <Content Include="Videos\Shared\stars-bg.mp4" />
     <Content Include="Videos\Shared\stars-bg.webm" />

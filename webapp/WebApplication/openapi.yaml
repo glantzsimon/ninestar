@@ -4,16 +4,23 @@ info:
   description: API that returns information about a person using 9 Star Ki Astrology.
   version: "1.0"
 servers:
-  - url: https://9starkiastrology.com/api
+  - url: https://9starkiastrology.com
 paths:
-  /personal-chart/get:
+  /api/personal-chart/get/{accountNumber}/{dateOfBirth}/{gender}:
     get:
-      operationId: getPersonalChart  
+      operationId: getPersonalChart
       summary: Retrieve information about a person using 9 Star Ki Astrology.
       description: Returns JSON data about a person based on birth date and gender.
       parameters:
+        - name: accountNumber
+          in: path
+          required: true
+          description: The user's 9-digit account number
+          schema:
+            type: string
+            example: "123456789"
         - name: dateOfBirth
-          in: query
+          in: path
           required: true
           description: Date of birth in YYYY-MM-DD format.
           schema:
@@ -21,7 +28,7 @@ paths:
             format: date
             example: "1985-06-16"
         - name: gender
-          in: query
+          in: path
           required: true
           description: Gender of the person.
           schema:
@@ -39,16 +46,107 @@ paths:
           description: Bad request. Invalid or missing parameters.
         "401":
           description: Unauthorized. API key missing or invalid.
+        "404":
+          description: Unauthorized. Invalid account number.
+        "422":
+          description: Unauthorized. Valid account number but membership requires upgrade.
         "500":
           description: Internal server error.
       security:
         - apiKeyAuth: []
+
+  /api/compatibility/get/{accountNumber}/{firstPersonName}/{firstPersonDateOfBirth}/{firstPersonGender}/{secondPersonName}/{secondPersonDateOfBirth}/{secondPersonGender}/{displaySexualChemistry}:
+    get:
+      operationId: getCompatibility
+      summary: Retrieve information about the compatibility of two people using 9 Star Ki Astrology.
+      description: Returns JSON data about the compatibility of two people based on their birth dates and gender.
+      parameters:
+        - name: accountNumber
+          in: path
+          required: true
+          description: The user's 9-digit account number
+          schema:
+            type: string
+            example: "123456789"
+        - name: firstPersonName
+          in: path
+          required: true
+          description: Name of the first person
+          schema:
+            type: string
+            example: "John"
+        - name: firstPersonDateOfBirth
+          in: path
+          required: true
+          description: Date of birth of the first person in YYYY-MM-DD format.
+          schema:
+            type: string
+            format: date
+            example: "1985-06-16"
+        - name: firstPersonGender
+          in: path
+          required: true
+          description: Gender of the first person.
+          schema:
+            type: string
+            enum: ["Male", "Female", "Other"]
+            example: "Male"
+        - name: secondPersonName
+          in: path
+          required: true
+          description: Name of the second person
+          schema:
+            type: string
+            example: "Jenny"
+        - name: secondPersonDateOfBirth
+          in: path
+          required: true
+          description: Date of birth of the second person in YYYY-MM-DD format.
+          schema:
+            type: string
+            format: date
+            example: "1985-06-16"
+        - name: secondPersonGender
+          in: path
+          required: true
+          description: Gender of the second person.
+          schema:
+            type: string
+            enum: ["Male", "Female", "Other"]
+            example: "Female"
+        - name: displaySexualChemistry
+          in: path
+          required: true
+          description: Whether or not to return information about the sexual chemistry between the first person and the second person
+          schema:
+            type: boolean
+      responses:
+        "200":
+          description: Successful response with person data.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CompatibilityResponse"
+        "400":
+          description: Bad request. Invalid or missing parameters.
+        "401":
+          description: Unauthorized. API key missing or invalid.
+        "404":
+          description: Unauthorized. Invalid account number.
+        "422":
+          description: Unauthorized. Valid account number but membership requires upgrade.
+        "500":
+          description: Internal server error.
+      security:
+        - apiKeyAuth: []
+
 components:
   securitySchemes:
     apiKeyAuth:
       type: apiKey
       in: header
       name: ApiKey
+
   schemas:
     PersonalChartResponse:
       type: object
@@ -57,40 +155,155 @@ components:
           type: boolean
           example: true
         data:
+          $ref: "#/components/schemas/NineStarKiModel"
+
+    CompatibilityResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        data:
           type: object
           properties:
-            PersonModel:
-              $ref: "#/components/schemas/PersonModel"
-            MainEnergy:
-              $ref: "#/components/schemas/Energy"
-            CharacterEnergy:
-              $ref: "#/components/schemas/Energy"
-            SurfaceEnergy:
-              $ref: "#/components/schemas/Energy"
-            YearlyCycleEnergy:
-              $ref: "#/components/schemas/Energy"
-            MonthlyCycleEnergy:
-              $ref: "#/components/schemas/Energy"
-            Summary:
+            NineStarKiModel1:
+              $ref: "#/components/schemas/NineStarKiModel"
+            NineStarKiModel2:
+              $ref: "#/components/schemas/NineStarKiModel"
+            FundamentalEnergiesCompatibility:
               type: string
-              description: A textual summary of the person's characteristics.
-              example: "You have a lot of energy and vitality and are not afraid to take on plenty of hard work and commitments."
-            Overview:
+              description: A textual summary of the compatibility between the first and second person's fundamental nature.
+              example: "You are very compatible."
+            SexualChemistryDetails:
               type: string
-              description: A general overview of the person's characteristics.
-            Health:
-              type: string
-              description: Health-related insights for this person.
-            Occupations:
-              type: string
-              description: Suggested occupations based on the 9 Star Ki system.
-            PersonalDevelopment:
-              type: string
-              description: Advice for personal growth based on the person's energy.
+              description: A textual summary of the sexual chemistry between the first and second person.
+              example: "There is great sexual chemistry."
+            CompatibilityDetails:
+              $ref: "#/components/schemas/CompatibilityDetailsModel"
+
+    CompatibilityDetailsModel:
+      type: object
+      properties:
+        ElementCompatibility:
+          $ref: "#/components/schemas/ElementCompatibility"
+        GenderCompatibility:
+          $ref: "#/components/schemas/GenderCompatibility"
+        ModalityCompatibility:
+          $ref: "#/components/schemas/ModalityCompatibility"
+        Score:
+          $ref: "#/components/schemas/CompatibilityScoreModel"
+
+    ElementCompatibility:
+      type: object
+      properties:
+        Score:
+          $ref: "#/components/schemas/CompatibilityScoreModel"
+        FundamentalElementsTransformationDetails:
+          type: string
+          description: A textual summary of the first and second person's fundamental element interaction according to The 5 Transformations.
+          example: "Both of your energies are the same element"
+        CharacterElementsTransformationDetails:
+          type: string
+          description: A textual summary of the first and second person's emotional element interaction according to The 5 Transformations.
+          example: "Both of your energies are the same element"
+        FundamentalElementsCompatibilityDetails:
+          type: string
+          description: A textual summary of the first and second person's fundamental element compatibility.
+          example: "Both of your energies are the same element"
+        CharacterElementsCompatibilityDetails:
+          type: string
+          description: A textual summary of the first and second person's emotional element compatibility.
+          example: "Both of your energies are the same element"
+        AllOtherElementsCompatibility:
+          type: string
+          description: A textual summary of the first and second person's other elements compatibility.
+          example: "Both of your energies are the same element"
+
+    GenderCompatibility:
+      type: object
+      properties:
+        Score:
+          $ref: "#/components/schemas/CompatibilityScoreModel"
+
+    ModalityCompatibility:
+      type: object
+      properties:
+        Score:
+          $ref: "#/components/schemas/CompatibilityScoreModel"
+
+    ECompatibilityScore:
+      type: string
+      enum:
+        - Unspecified
+        - ExtremelyLow
+        - VeryLow
+        - Low
+        - LowToMedium
+        - Medium
+        - MediumToHigh
+        - High
+        - VeryHigh
+        - ExtremelyHigh
+
+    CompatibilityScoreModel:
+      type: object
+      properties:
+        HarmonyScore:
+          $ref: "#/components/schemas/ECompatibilityScore"
+        ConflictScore:
+          $ref: "#/components/schemas/ECompatibilityScore"
+        SupportScore:
+          $ref: "#/components/schemas/ECompatibilityScore"
+        MutualUnderstandingScore:
+          $ref: "#/components/schemas/ECompatibilityScore"
+        ComplementarityScore:
+          $ref: "#/components/schemas/ECompatibilityScore"
+        SexualChemistryScore:
+          $ref: "#/components/schemas/ECompatibilityScore"
+        SparkScore:
+          $ref: "#/components/schemas/ECompatibilityScore"
+        LearningPotentialScore:
+          $ref: "#/components/schemas/ECompatibilityScore"
+
+    NineStarKiModel:
+      type: object
+      properties:
+        PersonModel:
+          $ref: "#/components/schemas/PersonModel"
+        MainEnergy:
+          $ref: "#/components/schemas/Energy"
+        CharacterEnergy:
+          $ref: "#/components/schemas/Energy"
+        SurfaceEnergy:
+          $ref: "#/components/schemas/Energy"
+        YearlyCycleEnergy:
+          $ref: "#/components/schemas/Energy"
+        MonthlyCycleEnergy:
+          $ref: "#/components/schemas/Energy"
+        Summary:
+          type: string
+          description: A textual summary of the person's characteristics.
+          example: "You have a lot of energy and vitality and are not afraid to take on plenty of hard work and commitments."
+        Overview:
+          type: string
+          description: A general overview of the person's characteristics.
+        Health:
+          type: string
+          description: Health-related insights for this person.
+        Occupations:
+          type: string
+          description: Suggested occupations based on the 9 Star Ki system.
+        PersonalDevelopment:
+          type: string
+          description: Advice for personal growth based on the person's energy.
 
     PersonModel:
       type: object
       properties:
+        Name:
+          type: string
+          description: the person's name
+          example: "Simon"
         Gender:
           type: integer
           description: Gender represented as an integer.
@@ -99,12 +312,6 @@ components:
           type: string
           description: Name of the gender.
           example: "Male"
-        GenderPronoun:
-          type: string
-          example: "he"
-        GenderPossessivePronoun:
-          type: string
-          example: "his"
         DateOfBirth:
           type: string
           format: date
@@ -114,6 +321,10 @@ components:
           type: integer
           description: Age of the person.
           example: 45
+        IsAdult:
+          type: boolean
+          description: If the person is over 18
+          example: true
 
     Energy:
       type: object

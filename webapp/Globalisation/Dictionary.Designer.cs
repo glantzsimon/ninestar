@@ -122,7 +122,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    On the surface you may appear passionate and flamboyant or even impulsive and ostentatious at times. In relationships, you tend to be direct, clear and straight to the point in your communication. You have healthy boundaries and may even be a little overbearing at times. However, you are also naturally empathetic and sensitive to others. You are a perfectionist and take pride in what you do. You are likekly to be very sensitive to criticism and take it to heart. You crave your own space at times an [rest of string was truncated]&quot;;.
+        ///    On the surface you may appear passionate and flamboyant or even impulsive and ostentatious at times. In relationships, you tend to be direct, clear and straight to the point in your communication. You have healthy boundaries and may even be a little overbearing at times. However, you are also naturally empathetic and sensitive to others. You are a perfectionist and take pride in what you do. You are likely to be very sensitive to criticism and take it to heart. You crave your own space at times and [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _169 {
             get {
@@ -384,7 +384,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You have a very strong will and assertive, even agressive nature at times. You have an incredible ability to overcome difficulties in your life. You are spontaneous, enthusiastic and energetic and others may find it difficult to keep up with you. You can be very expressive, often speaking your mind before thinking through the consequences. You can also be bold and demanding. Many people born into this sign are precocious as children.
+        ///    You have a very strong will and assertive, even aggressive nature at times. You have an incredible ability to overcome difficulties in your life. You are spontaneous, enthusiastic and energetic and others may find it difficult to keep up with you. You can be very expressive, often speaking your mind before thinking through the consequences. You can also be bold and demanding. Many people born into this sign are precocious as children.
         ///&lt;/p&gt;.
         /// </summary>
         public static string _353 {
@@ -427,7 +427,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    On the surface you may appear quiet and reserved. You have enormous inner strength and learn from the difficulties you encounter throughout life.
-        ///    You tend to go about your business in a quiet way. You have enormous strength and frequently learn in life through dealing with difficulties. You can be extremely spontaneous or impulsive when provoked. Those who get to know you will discover that you can be quite lively, optimistic and affectionate. You may also be a little vein and self-centred. Yo [rest of string was truncated]&quot;;.
+        ///    You tend to go about your business in a quiet way. You have enormous strength and frequently learn in life through dealing with difficulties. You can be extremely spontaneous or impulsive when provoked. Those who get to know you will discover that you can be quite lively, optimistic and affectionate. You may also be a little vain and self-centred. Yo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _398 {
             get {
@@ -486,7 +486,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You tend to come across as gentle and helpful. You are trusting of others and can bring your influence to bear on situations in which you are involved. You are generally consistent and reliable. You tend to keep your word. Those clsoe to you will also know another side of you which emerges especially when stressed or emotional, which is bold, assertive and even demanding. You have an enormous capacity to bounce back from difficulties through your strong will and determination.
+        ///    You tend to come across as gentle and helpful. You are trusting of others and can bring your influence to bear on situations in which you are involved. You are generally consistent and reliable. You tend to keep your word. Those close to you will also know another side of you which emerges especially when stressed or emotional, which is bold, assertive and even demanding. You have an enormous capacity to bounce back from difficulties through your strong will and determination.
         ///
         ///&lt;/p&gt;.
         /// </summary>
@@ -529,7 +529,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    There is a lot of fire in your cahrt and this gives you the potential to be extremely influential. You can be exceptionally intuitive and have enormous capacity to shed light on situations. You can also be rather flamboyant and even ostentatious. You are spontaneous and lively but you need to guard against being overly impulsive. You may, at times, be self-centred. Your fundamental nature is steady, consistent and thoughtful.
+        ///    There is a lot of fire in your chart and this gives you the potential to be extremely influential. You can be exceptionally intuitive and have enormous capacity to shed light on situations. You can also be rather flamboyant and even ostentatious. You are spontaneous and lively but you need to guard against being overly impulsive. You may, at times, be self-centred. Your fundamental nature is steady, consistent and thoughtful.
         ///&lt;/p&gt;.
         /// </summary>
         public static string _499 {
@@ -703,9 +703,9 @@ namespace K9.Globalisation {
         ///    
         ///    You have a strong desire to support and help others. You can, at times, be overly fastidious and detail-obsessed.
         ///
-        ///    Your fundamental nature is bold and moral and you express your opinions clearly and dirctly.
+        ///    Your fundamental nature is bold and moral and you express your opinions clearly and directly.
         ///    
-        ///    You have exceptional leadership potential and can be a [rest of string was truncated]&quot;;.
+        ///    You have exceptional leadership potential and can be  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _629 {
             get {
@@ -721,9 +721,9 @@ namespace K9.Globalisation {
         ///
         ///    Your deeper nature, which is revealed under pressure or to those who know you more intimately, is strong, energetic, persistent and hard-working. You can be very expressive and potentially explosive under duress.
         ///
-        ///    Your fundamental nature is bold and moral and you express your opinions clearly and dirctly. 
+        ///    Your fundamental nature is bold and moral and you express your opinions clearly and directly. 
         ///    
-        ///    You ha [rest of string was truncated]&quot;;.
+        ///    You h [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _638 {
             get {
@@ -800,7 +800,7 @@ namespace K9.Globalisation {
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    On the surface you often appear energetic, enthusiastic and spontaneous. You can be very expressive, especially verbally.
         ///
-        ///    Sometimes you can be withdrawn, uncommunicative and deeply private. Those who know you well will appreciate your need to retreat into your cave from time to time, especially when under pressure or uspet. However, when provoked, you can deliver a powerful argument.
+        ///    Sometimes you can be withdrawn, uncommunicative and deeply private. Those who know you well will appreciate your need to retreat into your cave from time to time, especially when under pressure or upset. However, when provoked, you can deliver a powerful argument.
         ///
         ///    You can be very moral and noble and are direct and to-the-point in your communication.
         ///
@@ -818,7 +818,7 @@ namespace K9.Globalisation {
         ///
         ///    You have the potential to be quite bold and courageous and can be very persistent when inspired. You believe that things ought to be done properly or not at all.
         ///
-        ///    Under pressure, you can be impulsive, unpredictable and firy.
+        ///    Under pressure, you can be impulsive, unpredictable and fiery.
         ///
         ///    You are lively, affectionate and passionate. You may also be self-centred at times. 
         ///    
@@ -839,7 +839,7 @@ namespace K9.Globalisation {
         ///
         ///    You are stylish and appreciate the finer things in life. You may well appear younger than your biological age.
         ///
-        ///    You know how to relax and enjoy putting your feel up. Care must be taken not to become lazy, however.
+        ///    You know how to relax and enjoy putting your feet up. Care must be taken not to become lazy, however.
         ///
         ///    However, you are, at times, rather quite withdrawn, c [rest of string was truncated]&quot;;.
         /// </summary>
@@ -857,7 +857,7 @@ namespace K9.Globalisation {
         ///
         ///    Those who know you well would describe you as supportive, helpful and tactful. You sensitive to others&apos; needs and have a deep sense of justice. You may, at times, be overly fastidious and detail-obsessed.
         ///
-        ///    You know how to relax and enjoy putting your feel up. Care must be taken not to become lazy, however.
+        ///    You know how to relax and enjoy putting your feet up. Care must be taken not to become lazy, however.
         ///        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _721 {
@@ -916,7 +916,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You are naturally charming and stylish nature and have a gift for speaking.  Your manner tends to be direct and you are detail-oriented and a critical thnker.
+        ///    You are naturally charming and stylish nature and have a gift for speaking.  Your manner tends to be direct and you are detail-oriented and a critical thinker.
         ///
         ///    You tend to have a straightforward, logical approach to life, with lots of common sense. Your sincerity and charm are persuasive to others.
         ///
@@ -924,7 +924,7 @@ namespace K9.Globalisation {
         ///
         ///    You may also be highly intuitive and emotionally sensitive.
         ///
-        ///    You can be quietly self-critical and do not take criti [rest of string was truncated]&quot;;.
+        ///    You can be quietly self-critical and do not take crit [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _766 {
             get {
@@ -942,7 +942,7 @@ namespace K9.Globalisation {
         ///
         ///    You are stylish and appreciate the finer things in life. You may well appear younger than your biological age.
         ///
-        ///    You know how to relax and enjoy putting your feel up. Care must be t [rest of string was truncated]&quot;;.
+        ///    You know how to relax and enjoy putting your feet up. Care must be t [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _775 {
             get {
@@ -1012,11 +1012,11 @@ namespace K9.Globalisation {
         ///
         ///    You have a strong sense of what is right and wrong and are helpful and supportive in towards those around you.
         ///
-        ///    You and have a natural flair for diplomacy.
+        ///    You have a natural flair for diplomacy.
         ///
         ///    Outwardly you may appear rather reserved. You can be single-minded and determined when motivated and are not afraid of hard work. 
         ///    
-        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by o [rest of string was truncated]&quot;;.
+        ///    You prefer to learn from your own mistakes and may feel threatened by advice given by other [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _822 {
             get {
@@ -1044,7 +1044,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Outwardly you may appear firy, flamboyant and even ostentatious.
+        ///    Outwardly you may appear fiery, flamboyant and even ostentatious.
         ///
         ///    You can also be impulsive and changeable.
         ///
@@ -1056,7 +1056,7 @@ namespace K9.Globalisation {
         ///    
         ///    You are naturally influential and persuasive.
         ///
-        ///    You prefer [rest of string was truncated]&quot;;.
+        ///    You prefe [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _849 {
             get {
@@ -1136,7 +1136,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    You may appear helpful, gentle and quiet. However, when provoked you can be firy, stubborn and self-centred.
+        ///    You may appear helpful, gentle and quiet. However, when provoked you can be fiery, stubborn and self-centred.
         ///
         ///    You are reliable and keep your word. You have great reserves of hidden strength and can be extremely determined and single-minded.
         ///    
@@ -1175,7 +1175,7 @@ namespace K9.Globalisation {
         ///
         ///    Your fundamental nature is Fire, which gives you great strength, brilliance, clarity and sensitivity. You may well have strokes of genius, at times and can inspire others.
         ///
-        ///    You need acknowledgemen [rest of string was truncated]&quot;;.
+        ///    You need acknowledgment [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _923 {
             get {
@@ -1223,9 +1223,9 @@ namespace K9.Globalisation {
         ///    
         ///    You are a natural visionary and your ideas and clear-sightedness are immensely helpful to those around you. 
         ///    
-        ///    You are deeply intuitive and sensitive. However, this sensitivity means you often need the acknowledgement and appreciation of those around you. Otherwise you may begin to feel insecure.
+        ///    You are deeply intuitive and sensitive. However, this sensitivity means you often need the acknowledgment and appreciation of those around you. Otherwise you may begin to feel insecure.
         ///    
-        ///    Sometimes you are impulsive and can fly off the han [rest of string was truncated]&quot;;.
+        ///    Sometimes you are impulsive and can fly off the hand [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _959 {
             get {
@@ -1353,6 +1353,15 @@ namespace K9.Globalisation {
         public static string AccountCreatedErrorSendingEmail {
             get {
                 return ResourceManager.GetString("AccountCreatedErrorSendingEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account Number.
+        /// </summary>
+        public static string AccountNumberLabel {
+            get {
+                return ResourceManager.GetString("AccountNumberLabel", resourceCulture);
             }
         }
         
@@ -1571,7 +1580,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Overall, your energy levels are citically low. Now is a time to take it really easy and to listen to your body. Be gentle with yourself and make sure you get plenty of rest.
+        ///    Overall, your energy levels are critically low. Now is a time to take it really easy and to listen to your body. Be gentle with yourself and make sure you get plenty of rest.
         ///&lt;/p&gt;
         ///.
         /// </summary>
@@ -1607,7 +1616,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Overall, your energy levels are average. You don&apos;t have to be too concerned about overdoing it, but don&apos;t push too hard and make sure you get enough rest.
+        ///    Overall, your energy levels are average. You don&apos;t have to be too concerned about overdoing it, but don&apos;t push too hard and Take plenty of breaks.
         ///&lt;/p&gt;
         ///.
         /// </summary>
@@ -1619,7 +1628,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Overall, you are on great form. Now is a very good time get out there and enjoy life, whether it&apos;s work or play. Enjoy!
+        ///    Overall, you are on great form. Now is a very good time to get out there and enjoy life, whether it&apos;s work or play. Enjoy!
         ///&lt;/p&gt;
         ///.
         /// </summary>
@@ -1682,7 +1691,7 @@ namespace K9.Globalisation {
         ///    Biorhythms are biological rhythms of different durations that influence our energy levels and functioning in multiple ways.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    There are many different biorhythms of different lengths, each one influencing a particular faculty. For example, there are intellectual, emotional, physical, spiritual and many other, more subtle biorhythms. 9 Star Ki also influeces us cyclically, from short cycles, similar to biorhythms to longer, cosmic cycles. When you combine the information of biorhythm [rest of string was truncated]&quot;;.
+        ///    There are many different biorhythms of different lengths, each one influencing a particular faculty. For example, there are intellectual, emotional, physical, spiritual and many other, more subtle biorhythms. 9 Star Ki also influences us cyclically, from short cycles, similar to biorhythms to longer, cosmic cycles. When you combine the information of biorhyth [rest of string was truncated]&quot;;.
         /// </summary>
         public static string biorhythms {
             get {
@@ -2303,9 +2312,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The 9 Star Ki Compatibility Calculator is a powerful tool to help you understand your relationship dynamics whether it be in romance, friendships, work or within the family. This tool can shed much light on the dynamics between people and help you to harness the inherent benefits as well as helping to smoothe out challenges which are likekly to arise.
+        ///   Looks up a localized string similar to The 9 Star Ki Compatibility Calculator is a powerful tool to help you understand your relationship dynamics whether it be in romance, friendships, work or within the family. This tool can shed much light on the dynamics between people and help you to harness the inherent benefits as well as helping to smoothe out challenges which are likely to arise.
         ///
-        ///9 Star Ki can bring greater bring greater harmony and understanding to our relationships and to reduce or eliminate resentment and anger. It helps to take  [rest of string was truncated]&quot;;.
+        ///9 Star Ki can bring greater bring greater harmony and understanding to our relationships and to reduce or eliminate resentment and anger. It helps to take b [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CompatibilityMetaDescription {
             get {
@@ -2637,10 +2646,10 @@ namespace K9.Globalisation {
         ///    This month is associated with the energy of adolescence and also rebirth
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Core Earth months are associated with the energy of adolescence and we can often feel like one during this time. It is an unpredictale time and there may well be ups and downs and feelings of uncertainty.
+        ///    Core Earth months are associated with the energy of adolescence, often making us feel like we are experiencing adolescence again. It is an unpredictable time and there may well be ups and downs and feelings of uncertainty.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    There may well be many different opportunities to explore and it may be difficult to decide what to do or where to go. It is important for us to try to stay grounded and centred. [rest of string was truncated]&quot;;.
+        ///    There may well be many different opportunities to explore and it may be difficult to decide what to do or where to go. It is important for us to try to stay gro [rest of string was truncated]&quot;;.
         /// </summary>
         public static string core_earth_month {
             get {
@@ -2678,7 +2687,7 @@ namespace K9.Globalisation {
         ///    Like other Earth children, it is especially important for 5 Earth children to have a stable family and school life.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Core Earth is at the centre of 9 Star Ki and this can sometimes make it hard for these children to navigate a clear path. Without appropriate guidance, they may looe their way and even succumb to undesirable influences.
+        ///    Core Earth is at the centre of 9 Star Ki and this can sometimes make it hard for these children to navigate a clear path. Without appropriate guidance, they may lose their way and even succumb to undesirable influences.
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    5 Earth characters are naturally nurturing and supportive and children with this character number display these qualities early on in t [rest of string was truncated]&quot;;.
@@ -2873,7 +2882,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Your creative energy is currently in a critical period. This means that it is prone to fluctuations. However, if the inspiration is there, then follow it!
+        ///    Your creative energy is currently fluctuating. However, if the inspiration is there, then follow it!
         ///&lt;/p&gt;
         ///.
         /// </summary>
@@ -3513,7 +3522,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Both people have Earth element in their charts. Earth typically brings qualities of stability, strength and reliability. It is likely that both people are supportive and caring and may share very similar values and priorities. This could very well result in a close friendship where both people feel understood and that they can count on each other..
+        ///   Looks up a localized string similar to Both individuals have the Earth element in their charts. Earth typically brings qualities of stability, strength and reliability. It is likely that both people are supportive and caring and may share very similar values and priorities. This could very well result in a close friendship where both people feel understood and that they can count on each other..
         /// </summary>
         public static string earth_earth {
             get {
@@ -3535,7 +3544,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The steady, stable and reliable quality of Earth is extremely beneficial and supportive for Metal elements. Metal people are also quite reliable and steady by nature and may struggle a little with the more impulsive and dynaic Tree and Fire elements. Additionally, Metal people can, at time, be quite sharp in the way they communicate. Earth people are typically far more receptive and less impacted by Metal&apos;s communication style, resulting in good communication and understanding betwen these elements.
+        ///   Looks up a localized string similar to The steady, stable and reliable quality of Earth is extremely beneficial and supportive for Metal elements. Metal people are also quite reliable and steady by nature and may struggle a little with the more impulsive and dynamic Tree and Fire elements. Additionally, Metal people can, at times, be quite sharp in the way they communicate. Earth people are typically far more receptive and less impacted by Metal&apos;s communication style, resulting in good communication and understanding between these elements.
         /// </summary>
         public static string earth_metal {
             get {
@@ -3662,7 +3671,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Your emotional capacity is currently in a critical period. This means that it is prone to fluctuations. You may be in a great mood one moment, only to find that the next you are feeling emotionally drained. It is wise not to take on too much during this period and wait for your energy to stabilise.
+        ///    Your emotional capacity is currently fluctuating. You may be in a great mood one moment, only to find that the next you are feeling emotionally drained. It is wise not to take on too much during this period and wait for your energy to stabilise.
         ///&lt;/p&gt;
         ///.
         /// </summary>
@@ -3677,7 +3686,7 @@ namespace K9.Globalisation {
         ///    Your emotional capacity is at the maximum point of the cycle. You have excellent reserves of emotional energy and is the best time to deal with more emotionally challenging situations, if you have been unable to face them when your emotional energy was lower. 
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Now is an excellent time to reach out to loved ones who may need your emotional support. However, don&apos;t forget to find some alone time and to rest! It&apos;s always good to keep some energy for the lower points. This stabilises the [rest of string was truncated]&quot;;.
+        ///    Now is an excellent time to reach out to loved ones, who may need your emotional support. However, don&apos;t forget to find some alone time and to rest and recharge! It&apos;s always good to keep some energy for the lower points. This  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string emotional_excellent {
             get {
@@ -3690,7 +3699,7 @@ namespace K9.Globalisation {
         ///    Your emotional energy is currently at the lowest point in the cycle. It can be very helpful to take plenty of breaks and not to take on anything emotionally challenging during this period. You may feel vulnerable or hyper sensitive at this time or that you simply don&apos;t have a lot of emotional capacity. Be gentle with yourself.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Now is a great time to meditate, practise Asana, go for Nature walks, listen to some beuatiful music, get a massage, watch an inspiring movie, or whatever hel [rest of string was truncated]&quot;;.
+        ///    Now is a great time to meditate, practise Asana, go for Nature walks, listen to some beautiful music, get a massage, watch an inspiring movie, or whatever hel [rest of string was truncated]&quot;;.
         /// </summary>
         public static string emotional_extremely_low {
             get {
@@ -3700,10 +3709,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Your emotional capacity is currently high. You have good reserves of emotional energy. Now is a great time to socialise and enjoy yourself. However, even when biorhtyhms are high, it&apos;s wise not to push it too hard. Rest is always important. 
+        ///    Your emotional capacity is currently high. You have good reserves of emotional energy. Now is a great time to socialise and enjoy yourself. However, even when biorhythms are high, it&apos;s wise not to push it too hard. Rest is always important. 
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Now is a good time to reach out to loved ones who may need your emotional support.
+        ///    Now is a good time to reach out to loved ones, who may need your emotional support.
         ///&lt;/p&gt;
         ///.
         /// </summary>
@@ -3721,7 +3730,7 @@ namespace K9.Globalisation {
         ///    You may, at times, feel a little vulnerable or sensitive or that you simply don&apos;t have a lot of emotional capacity. Be gentle with yourself and try not to take on anything too emotionally exhausting.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Now is a great time to meditate, practise Asana, go for Nature walks, listen to some beuatifu [rest of string was truncated]&quot;;.
+        ///    Now is a great time to meditate, practise Asana, go for Nature walks, listen to some beautifu [rest of string was truncated]&quot;;.
         /// </summary>
         public static string emotional_low {
             get {
@@ -3749,7 +3758,7 @@ namespace K9.Globalisation {
         ///    Your emotional capacity is currently very high. You have very good reserves of emotional energy and it is a good time to deal with more emotionally challenging situations, if you have been unable to face them when your emotional energy was lower.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Now is a great time to reach out to loved ones who may need your emotional support. However, don&apos;t forget to find some alone time and to rest!
+        ///    Now is a great time to reach out to loved ones, who may need your emotional support. However, don&apos;t forget to find some alone time and to rest and recharge!
         ///&lt;/p&gt;
         ///.
         /// </summary>
@@ -3764,7 +3773,7 @@ namespace K9.Globalisation {
         ///    Your emotional capacity is currently very low for this cycle. It can be very helpful to take plenty of rest and not to take on anything too emotionally challenging during this period. You may feel vulnerable or hyper sensitive at this time or that you simply don&apos;t have a lot of emotional capacity. Be gentle with yourself.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Now is a great time to meditate, practise Asana, go for Nature walks, listen to some beuatiful music, get a massage, watch an inspiring movie, or whatever helps yo [rest of string was truncated]&quot;;.
+        ///    Now is a great time to meditate, practise Asana, go for Nature walks, listen to some beautiful music, get a massage, watch an inspiring movie, or whatever helps yo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string emotional_very_low {
             get {
@@ -4194,7 +4203,7 @@ namespace K9.Globalisation {
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Two Yang lines encapsulating an inner Yin lines. This represents the vanity and brilliance of fire, with a softer inner nature,
         ///    which can manifest as a quietly self-critical and doubting quality. Just as fire needs a constant supply of material to burn, 
-        ///    Fire Energies require the acknowledgement and support of others in order to reach their full expression and potential. 
+        ///    Fire Energies require the acknowledgment and support of others in order to reach their full expression and potential. 
         ///&lt;/p&gt;.
         /// </summary>
         public static string fire_trigram {
@@ -4255,7 +4264,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The 5 transformatios decribe the way in which each of the 5 elements interacts with the others
+        ///    The 5 transformations decribe how the 5 elements interact with one another
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    Each of the 5 elements relates to the other elements in 3 distinct ways, called &quot;transformations&quot;. Traditional Chinese medicine use these same transformations to help make medical diagnoses, as well as to prescribe appropriate treatments to bring the body back into balance.
@@ -4263,7 +4272,7 @@ namespace K9.Globalisation {
         ///
         ///&lt;h4&gt;There are 3 different types of transformation or relationship:&lt;/h4&gt;
         ///
-        ///&lt;div id=&quot;same-transformation&quot; s [rest of string was truncated]&quot;;.
+        ///&lt;div id=&quot;same-transformation&quot; style=&quot;position: rela [rest of string was truncated]&quot;;.
         /// </summary>
         public static string five_transformations {
             get {
@@ -4537,10 +4546,10 @@ namespace K9.Globalisation {
         ///    This month is associated with early autumn or evening
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    During a Heaven month, we often begin to feel more confident, clear with a sense of purpose. Our will is typically stronger during this time and we have a natural sense of being right. We need to be careful not to become overbearing or inflexible.
+        ///    During a Heaven month, we often begin to feel more confident and clear, with a strong sense of purpose. Our will is typically stronger during this time and we have a natural sense of being right. We need to be careful not to become overbearing or inflexible.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    It is also advisable to pay extra attention to the way we communicate verbally during this time, as we may hurt people if we are too bold or direct in our [rest of string was truncated]&quot;;.
+        ///    It is also advisable to pay extra attention to the way we communicate verbally during this time, as we may hurt people if we are too bold or di [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_month {
             get {
@@ -4835,10 +4844,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Your intellectual capacity is currently at the highest point of the cycle. You have excellent reserves of mental energy and can sustain hard work very easily. Still, don&apos;t forget to rest and catch your breath. It&apos;s always good to keep some energy for the lower points. This stabilises the cycle. 
+        ///    Your intellectual capacity is currently at the highest point of the cycle. You have excellent reserves of mental energy and can sustain hard work very easily. Still, don&apos;t forget to rest and catch your breath. It&apos;s always good to keep some energy for the lower points. This helps maintain balance throughout the cycle.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    You should have lots of energy, clarity and drive to tend to work and to to your responsibilities. It&apos;s also a great time to challenge yourself and learn new things and expand your perspecti [rest of string was truncated]&quot;;.
+        ///    You should have lots of energy, clarity and drive to tend to work and to your responsibilities. It&apos;s also a great time to challenge yourself and learn new things and ex [rest of string was truncated]&quot;;.
         /// </summary>
         public static string intellectual_excellent {
             get {
@@ -4851,7 +4860,7 @@ namespace K9.Globalisation {
         ///    Your intellectual capacity is currently at the lowest point in the cycle. This does not mean that you cannot carry out your tasks, work and attend to your responsibilities. However, it can be very helpful to take plenty of breaks and not to take on anything too challenging for the mind.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Now is a great time to meditate, practise Asana, go for Nature walks, listen to some beuatiful music, get a massage, watch an inspiring movie, or whatever helps you to relax and unwind. Passive activ [rest of string was truncated]&quot;;.
+        ///    Now is a great time to meditate, practise Asana, go for Nature walks, listen to some beautiful music, get a massage, watch an inspiring movie, or whatever helps you to relax and unwind. Passive activ [rest of string was truncated]&quot;;.
         /// </summary>
         public static string intellectual_extremely_low {
             get {
@@ -4861,11 +4870,12 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Your intellectual capacity is currently high. You have good reserves of mental energy, so you don&apos;t have to worry about working hard. However, even when biorhtyhms are high, it&apos;s wise not to push it too hard. Rest is always important. 
+        ///    Your intellectual capacity is currently high. You have good reserves of mental energy, so you don&apos;t have to worry about working hard. However, even when biorhythms are high, it&apos;s wise not to push it too hard. Rest is always important. 
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    You should have good energy, clarity and motivation to tend to work and to to your responsibilities. It&apos;s also a great time to learn new things and expand your perspectives and awareness. However, don&apos;t forget to take a break from time to time. 
-        ///&lt;/p&gt; [rest of string was truncated]&quot;;.
+        ///    You should have good energy, clarity and motivation to tend to work and to your responsibilities. It&apos;s also a great time to learn new things and expand your perspectives and awareness. However, don&apos;t forget to take a break from time to time. 
+        ///&lt;/p&gt;
+        ///.
         /// </summary>
         public static string intellectual_high {
             get {
@@ -4878,10 +4888,10 @@ namespace K9.Globalisation {
         ///    Your intellectual capacity is currently low for this cycle. You still have some reserves of mental energy, but it would be ideal to take it easier than when you&apos;re on peak form. 
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    You should have no problem tending to work and to to your responsibilities. However, it can be very helpful to take breaks and not to take on anything too mentally exhausting.
+        ///    You should have no problem tending to work and to your responsibilities. However, it can be very helpful to take breaks and not to take on anything too mentally exhausting.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Now is a great time to meditate, practise Asana, go for Nature walks, listen to some beuatiful music, get a massage, [rest of string was truncated]&quot;;.
+        ///    Now is a great time to meditate, practise Asana, go for Nature walks, listen to some beautiful music, get a massage, wa [rest of string was truncated]&quot;;.
         /// </summary>
         public static string intellectual_low {
             get {
@@ -4894,7 +4904,7 @@ namespace K9.Globalisation {
         ///    Your intellectual capacity is currently moderate. You have adequate reserves of mental energy, so you don&apos;t have to worry too much, but it would be ideal to take it a little easier than when you&apos;re on peak form. 
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    You should have no problem tending to work and to to your responsibilities. However, don&apos;t forget to take breaks from time to time. Now is not a time to challenge yourself to the max.
+        ///    You should have no problem tending to work and to your responsibilities. However, don&apos;t forget to take breaks from time to time. Now is not a time to challenge yourself to the max.
         ///&lt;/p&gt;
         ///.
         /// </summary>
@@ -4906,10 +4916,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Your intellectual capacity is currently very high. You have very good reserves of mental energy and can sustain hard work easily. However, even when biorhtyhms are high, it&apos;s wise not to push it too hard. Rest is always important. 
+        ///    Your intellectual capacity is currently very high. You have very good reserves of mental energy and can sustain hard work easily. However, even when biorhythms are high, it&apos;s wise not to push it too hard. Rest is always important. 
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    You should have plenty of energy, clarity and motivation to tend to work and to to your responsibilities. It&apos;s also a great time to challenge yourself and learn new things and expand your perspectives and awareness. Don&apos;t forget to take a break from time  [rest of string was truncated]&quot;;.
+        ///    You should have plenty of energy, clarity and motivation to tend to work and to your responsibilities. It&apos;s also a great time to challenge yourself and learn new things and expand your perspectives and awareness. Don&apos;t forget to take a break from time to  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string intellectual_very_high {
             get {
@@ -4922,7 +4932,7 @@ namespace K9.Globalisation {
         ///    Your intellectual capacity is currently very low for this cycle. This does not mean that you cannot carry out your tasks, work and attend to your responsibilities. However, it can be very helpful to take plenty of breaks and not to take on anything too challenging for the mind.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Now is a great time to meditate, practise Asana, go for Nature walks, listen to some beuatiful music, get a massage, watch an inspiring movie, or whatever helps you to relax and unwind.
+        ///    Now is a great time to meditate, practise Asana, go for Nature walks, listen to some beautiful music, get a massage, watch an inspiring movie, or whatever helps you to relax and unwind.
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    If you [rest of string was truncated]&quot;;.
@@ -4944,7 +4954,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Your intuition is currently in a critical period. This means that it is prone to fluctuations. Be wary when you are faced with important decisions or delicate situations. Your intuition may not be as clear as it could be.
+        ///    Your intuition is currently fluctuating. Be wary when you are faced with important decisions or delicate situations. Your intuition may not be as clear as it could be.
         ///&lt;/p&gt;
         ///.
         /// </summary>
@@ -5175,7 +5185,7 @@ namespace K9.Globalisation {
         ///    We often feel more carefree and adventurous during a 7 month, with a sense of quiet, inner confidence.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This can also be a very good time to spend some quiet time alone to reflect.
+        ///    This can also be a great time for self-reflection and solitude.
         ///&lt;/p&gt;.
         /// </summary>
         public static string lake_month {
@@ -6074,7 +6084,7 @@ namespace K9.Globalisation {
         ///    {Person1Proper} and {Person2} are in a Supportive Transformation, with {Person1} supporting {Person2}. This type of combination typically leads to greater harmony and mutual understanding.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Both 4 Tree and Fire Energies can be very energetic, changeable and even impulsive at times. This can either work very wel [rest of string was truncated]&quot;;.
+        ///    Both 4 Tree and Fire Energies can be very energetic, changeable and even impulsive at times. This can work very well, lead [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_49 {
             get {
@@ -6405,7 +6415,7 @@ namespace K9.Globalisation {
         ///    &lt;img title=&quot;Sibling Relationship&quot; alt=&quot;Sibling Relationship&quot; class=&quot;auto-size center-block&quot; src=&quot;Images/ninestar/transformations/transformation-same.png&quot; /&gt;
         ///&lt;/div&gt;
         ///&lt;p&gt;
-        ///    The Fundamental Energies have the same element. This combination tends to lead to a &lt;strong&gt;strong &quot;sibling&quot; relationship&lt;/strong&gt; in which there is an &lt;strong&gt;effortless and profound understanding&lt;/strong&gt; between both parties. There is a great potential for &lt;strong&gt;mutu [rest of string was truncated]&quot;;.
+        ///    The Fundamental Energies have the same element. This combination tends to lead to a &lt;strong&gt;strong &quot;sibling&quot; relationship&lt;/strong&gt; with an &lt;strong&gt;effortless and profound understanding&lt;/strong&gt; between both parties. There is a great potential for &lt;strong&gt;mutual understand [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_element_same {
             get {
@@ -6729,7 +6739,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tree people are highly creative, forward-thinking individuals and can be quite pioneering. However, many of their ideas require a great deal of refinement before they are of use. Metal people, with their broad perspective, common sense and critical eye are especially good at seeing the potential pitfalls in the ideas brought forward by Tree people. When this interaction works in a balanced way, the results can be spectacular (one might think of a beautifully pruned tree). However, when exposed to too much o [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to Tree people are highly creative, forward-thinking individuals and can be quite pioneering. However, many of their ideas require a great deal of refinement before they are of use. Metal people, with their broad perspective, common sense and critical eye are especially good at seeing the potential pitfalls in the ideas brought forward by Tree people. When this interaction works in a balanced way, the results can be spectacular (one might think of a beautifully pruned tree). However, when exposed to a very str [rest of string was truncated]&quot;;.
         /// </summary>
         public static string metal_tree {
             get {
@@ -7017,7 +7027,7 @@ namespace K9.Globalisation {
         ///    This can be a time of change and it is important not to be too impulsive.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    It can be very hepful for us to make an extra effort to connect with others during this time, so as not to become overly isolated. We should seek the sup [rest of string was truncated]&quot;;.
+        ///    It can be very helpful for us to make an extra effort to connect with others during this time, so as not to become overly isolated. We should seek the su [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_month {
             get {
@@ -7145,7 +7155,7 @@ namespace K9.Globalisation {
         ///    This year represents the transition from evening to night or autumn to winter. It is a time when Nature returns to stillness. We go indoors to shelter from the outside.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This is a time we tend to retreat into our &quot;cave&quot;. We often feel withdrawn, reserved and uncommunicative. It is a time for deep, honest intropsection.  However, we need to be mindful that we don&apos;t become too withdrawn, as this could be upsetting to those who are  [rest of string was truncated]&quot;;.
+        ///    This is a time we tend to retreat into our &quot;cave&quot;. We often feel withdrawn, reserved and uncommunicative. It is a time for deep, honest introspection.  However, we need to be mindful that we don&apos;t become too withdrawn, as this could be upsetting to those who are  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_year {
             get {
@@ -7861,7 +7871,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Your physical energy is currently in a critical period. This means that it is prone to fluctuations. You may be have plenty of energy one minute, only to find that the next you are feeling tired again. It is wise not to take on too much during this period and wait for your energy to stabilise.
+        ///    Your physical energy is currently fluctuating. You may have plenty of energy one minute, only to feel tired again the next. It is wise not to take on too much during this period and wait for your energy to stabilise.
         ///&lt;/p&gt;
         ///.
         /// </summary>
@@ -7873,10 +7883,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Your physical energy is currently at the maximum point of the cycle. You have excellent reserves of physical energy and it is a great time to deal with more physically challenging tasks, if you have been unable to carty them out when your energy was lower. 
+        ///    Your physical energy is currently at the maximum point of the cycle. You have excellent reserves of physical energy and it is a great time to deal with more physically challenging tasks, if you have been unable to carry them out when your energy was lower. 
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Now is also an excellent time to enjoy vigorous exercise and to challenge yourself.. However, don&apos;t forget to find some alone time and to rest! It&apos;s always good to keep some energy for the lower points. This stabilises the cycle. [rest of string was truncated]&quot;;.
+        ///    Now is also an excellent time to enjoy vigorous exercise and to challenge yourself. However, don&apos;t forget find some alone time and to rest and recharge! It&apos;s always good to keep some energy for the lower points. This helps mainta [rest of string was truncated]&quot;;.
         /// </summary>
         public static string physical_excellent {
             get {
@@ -7889,7 +7899,7 @@ namespace K9.Globalisation {
         ///    Your physical energy is currently at the lowest point in the cycle. Make sure to take plenty of breaks and not to take on anything physically challenging during this period. You may feel tired at this time, especially if you have been very busy during the last cycle. Be gentle with yourself and take it easy and get plenty of rest.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Now is a great time to catch up on sleep, to eat nourishing food, meditate, go for gentle Nature walks, listen to some beuatiful music, get a massage, wat [rest of string was truncated]&quot;;.
+        ///    Now is a great time to catch up on sleep, to eat nourishing food, meditate, go for gentle Nature walks, listen to some beautiful music, get a massage, wat [rest of string was truncated]&quot;;.
         /// </summary>
         public static string physical_extremely_low {
             get {
@@ -7899,7 +7909,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Your physical energy is currently high. You have good reserves of physical energy. Now is a great time to exercise, go for a hike in Nature, catch up on unfinished tasks, etc. However, even when biorhtyhms are high, it&apos;s wise not to push it too hard. Rest is always important. 
+        ///    Your physical energy is currently high. You have good reserves of physical energy. Now is a great time to exercise, go for a hike in Nature, catch up on unfinished tasks, etc. However, even when biorhythms are high, it&apos;s wise not to push it too hard. Rest is always important. 
         ///&lt;/p&gt;
         ///.
         /// </summary>
@@ -7914,7 +7924,7 @@ namespace K9.Globalisation {
         ///    Your physical energy is low for the current cycle. It can be very helpful to take plenty of breaks and not to take on anything too physically challenging during this period, especially if you are feeling tired. Be gentle with yourself and get plenty of rest.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Now is a great time to catch up on sleep, to eat nourishing food, meditate, go for gentle Nature walks, listen to some beuatiful music, get a massage, watch an inspiring movie, or whatever helps you to relax and unwind. Passive  [rest of string was truncated]&quot;;.
+        ///    Now is a great time to catch up on sleep, to eat nourishing food, meditate, go for gentle Nature walks, listen to some beautiful music, get a massage, watch an inspiring movie, or whatever helps you to relax and unwind. Passive  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string physical_low {
             get {
@@ -7954,7 +7964,7 @@ namespace K9.Globalisation {
         ///    Your physical energy is very low for the current cycle. It can be very helpful to take plenty of breaks and not to take on anything too physically challenging during this period. You may feel tired at this time, especially if you have been very busy during the last cycle. Be gentle with yourself and get plenty of rest.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Now is a great time to catch up on sleep, to eat nourishing food, meditate, go for gentle Nature walks, listen to some beuatiful music, get a massage, watch an inspir [rest of string was truncated]&quot;;.
+        ///    Now is a great time to catch up on sleep, to eat nourishing food, meditate, go for gentle Nature walks, listen to some beautiful music, get a massage, watch an inspir [rest of string was truncated]&quot;;.
         /// </summary>
         public static string physical_very_low {
             get {
@@ -9219,7 +9229,7 @@ namespace K9.Globalisation {
         ///    During a Soil month, we often still feel the stillness and stagnation of winter, however there is a sense of light at the end of the tunnel and an urge to start planning and moving.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Socialising can be somewhat challenging suring a Soil month as our energy is typically still fairly reserved and introverted. This is a great time for slowing down, making plans and sorting out al [rest of string was truncated]&quot;;.
+        ///    Socialising can be somewhat challenging during a Soil month as our energy is typically still fairly reserved and introverted. This is a great time for slowing down, making plans and sorting out al [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_month {
             get {
@@ -9397,7 +9407,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Your spiritual energy is currently in a critical period. This means that it is prone to fluctuations. You may be feeling very spiritualy aware one minute, only to find that the next you are feeling much more materially oriented the next. 
+        ///    Your spiritual energy is currently fluctuating. You may be feeling very spiritualy aware one minute, only to find that the next you are feeling much more materially oriented the next.
         ///&lt;/p&gt;
         ///.
         /// </summary>
@@ -9409,7 +9419,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Your spiritual energy is currently at the maximum point of the cycle. Now is is an excellent time to engage in your spiritual practice. Your psychic abilities are at their most active at this time.
+        ///    Your spiritual energy is currently at the maximum point of the cycle. Now is an excellent time to engage in spiritual practice. Your psychic abilities are at their most active at this time.
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    Now is an excellent time to be more spiritually focused. You may find that you are much less interested in mundane, everyday affairs at this time.
@@ -10047,7 +10057,7 @@ namespace K9.Globalisation {
         ///    During a Tree month, we usually feel a surge of energy and vitality. We typically feel creative, enthusiastic and spontaneous with a deep sense of optimism and fun.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This is a great time to get moving on projects and putting plans into action. It can also be a great time to socialise and have fun.
+        ///    This is a great time to start projects and for putting plans into action. This is also an excellent time for socializing and enjoyment.
         ///&lt;/p&gt;.
         /// </summary>
         public static string thunder_month {
@@ -10236,7 +10246,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tree people love change and are constantly creating new solutions and ideas, which they pursue with passion. This can be extremely disruptive to Earth people, who tend to dislike change not instigated by others. Earth people can feel pushed by Tree people. One can easily invisage a vigorous young sappling breaking up the Earth in the spring time, as it begins its growth upwards. However, when out of balance, Earth people tend to get a bit stuck and stagnate and so the fresh, enthusiastic input of the Tree e [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to Tree people love change and are constantly creating new solutions and ideas, which they pursue with passion. This can be extremely disruptive to Earth people, who tend to dislike change not instigated by others. Earth people can feel pushed by Tree people. One can easily envisage a vigorous young sappling breaking up the Earth in the spring time, as it begins its growth upwards. However, when out of balance, Earth people tend to get a bit stuck and stagnate and so the fresh, enthusiastic input of the Tree e [rest of string was truncated]&quot;;.
         /// </summary>
         public static string tree_earth {
             get {
@@ -10823,7 +10833,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Water element nourishes the Tree element, helping it to grow; to develop its creativity and natural exploratory and pioneering nature. For example, Water people tend to show a natural fascination in the ideas of Tree people. Also, being flexible, they can keep up wiht the fast and dynamic pace of Trees, encouraging them and even providing additional ideas and inspiration..
+        ///   Looks up a localized string similar to The Water element nourishes the Tree element, helping it to grow; to develop its creativity and natural exploratory and pioneering nature. For example, Water people tend to show a natural fascination in the ideas of Tree people. Also, being flexible, they can keep up with the fast and dynamic pace of Trees, encouraging them and even providing additional ideas and inspiration..
         /// </summary>
         public static string water_tree {
             get {
@@ -10842,7 +10852,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Both people have the Water element in their chart. Water is perhaps the most intuitive and empathetic of the 9 Energies and so there is a potential for an deep and intuitive connection between two people who share the Water element..
+        ///   Looks up a localized string similar to Both people have the Water element in their chart. Water is perhaps the most intuitive and empathetic of the 9 Energies and so there is a potential for a deep and intuitive connection between two people who share the Water element..
         /// </summary>
         public static string water_water {
             get {
@@ -11113,7 +11123,7 @@ namespace K9.Globalisation {
         ///    During a Wind month, we feel the energy of spring, which bring us joy, enthusiasm and optimism.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    It&apos;s important for us not to overdo it during a Wind month, both in terms of getting carried away with thigns we&apos;re involved in as well as being careful not to exhaust ourselves. It&apos;s important to rest and to remain grounded.
+        ///    It&apos;s important for us not to overdo it during a Wind month, both in terms of getting carried away with things we&apos;re involved in as well as being careful not to exhaust ourselves. It&apos;s important to rest and to remain grounded.
         ///&lt;/p&gt;.
         /// </summary>
         public static string wind_month {

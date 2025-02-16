@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using UserMembership = K9.DataAccessLayer.Models.UserMembership;
 
 namespace K9.WebApplication.Services
 {

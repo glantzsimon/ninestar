@@ -144,7 +144,7 @@ namespace K9.WebApplication.Tests.Unit.Services
 
             var model = _Membershipservice.GetMembershipViewModel();
 
-            Assert.Equal(1, _Membershipservice.GetActiveUserMemberships().Count);
+            Assert.Equal(1, _Membershipservice.GetActiveUserMemberships(_userId).Count);
             Assert.Equal(userMembershipModels.First(), _Membershipservice.GetActiveUserMembership());
             Assert.Equal(0, model.MembershipModels.Count(_ => _.IsSelected));
             Assert.Equal(3, model.MembershipModels.Count(_ => _.IsUpgrade));
@@ -175,7 +175,7 @@ namespace K9.WebApplication.Tests.Unit.Services
 
             var model = _Membershipservice.GetMembershipViewModel();
 
-            Assert.Equal(1, _Membershipservice.GetActiveUserMemberships().Count);
+            Assert.Equal(1, _Membershipservice.GetActiveUserMemberships(_userId).Count);
             Assert.Equal(userMembershipModels.First(), _Membershipservice.GetActiveUserMembership());
             Assert.Equal(0, model.MembershipModels.Count(_ => _.IsSelected));
             Assert.Equal(1, model.MembershipModels.Count(_ => _.IsUpgrade));
@@ -206,7 +206,7 @@ namespace K9.WebApplication.Tests.Unit.Services
 
             var model = _Membershipservice.GetMembershipViewModel();
 
-            Assert.Equal(1, _Membershipservice.GetActiveUserMemberships().Count);
+            Assert.Equal(1, _Membershipservice.GetActiveUserMemberships(_userId).Count);
             Assert.Equal(userMembershipModels.First(), _Membershipservice.GetActiveUserMembership());
             Assert.Equal(0, model.MembershipModels.Count(_ => _.IsSelected));
             Assert.Equal(1, model.MembershipModels.Count(_ => _.IsUpgrade));
@@ -238,7 +238,7 @@ namespace K9.WebApplication.Tests.Unit.Services
 
             var model = _Membershipservice.GetMembershipViewModel();
 
-            Assert.Equal(1, _Membershipservice.GetActiveUserMemberships().Count);
+            Assert.Equal(1, _Membershipservice.GetActiveUserMemberships(_userId).Count);
             Assert.Equal(userMembershipModels.First(), _Membershipservice.GetActiveUserMembership());
             Assert.Equal(0, model.MembershipModels.Count(_ => _.IsSelected));
             Assert.Equal(0, model.MembershipModels.Count(_ => _.IsUpgrade));
@@ -286,7 +286,7 @@ namespace K9.WebApplication.Tests.Unit.Services
 
             var model = _Membershipservice.GetMembershipViewModel();
             
-            Assert.Equal(1, _Membershipservice.GetActiveUserMemberships().Count);
+            Assert.Equal(1, _Membershipservice.GetActiveUserMemberships(_userId).Count);
             Assert.Equal(userMembershipModels.First(), _Membershipservice.GetActiveUserMembership());
             Assert.Equal(0, model.MembershipModels.Count(_ => _.IsSelected));
             Assert.Equal(1, model.MembershipModels.Count(_ => _.IsUpgrade));

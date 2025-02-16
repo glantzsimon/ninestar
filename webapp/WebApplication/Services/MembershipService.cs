@@ -15,6 +15,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using K9.DataAccessLayer.Helpers;
+using UserMembership = K9.WebApplication.ViewModels.UserMembership;
 
 namespace K9.WebApplication.Services
 {
@@ -23,7 +25,7 @@ namespace K9.WebApplication.Services
         private readonly ILogger _logger;
         private readonly IAuthentication _authentication;
         private readonly IRepository<MembershipOption> _membershipOptionRepository;
-        private readonly IRepository<UserMembership> _userMembershipRepository;
+        private readonly IRepository<DataAccessLayer.Models.UserMembership> _userMembershipRepository;
         private readonly IRepository<User> _usersRepository;
         private readonly IContactService _contactService;
         private readonly IMailer _mailer;
@@ -35,7 +37,7 @@ namespace K9.WebApplication.Services
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<User> usersRepository, IContactService contactService, IMailer mailer, IOptions<WebsiteConfiguration> config, IRepository<PromoCode> promoCodesRepository, IUserService userService, IRepository<Consultation> consultationsRepository, IRepository<UserConsultation> userConsultationsRepository, IConsultationService consultationService)
+        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<DataAccessLayer.Models.UserMembership> userMembershipRepository, IRepository<User> usersRepository, IContactService contactService, IMailer mailer, IOptions<WebsiteConfiguration> config, IRepository<PromoCode> promoCodesRepository, IUserService userService, IRepository<Consultation> consultationsRepository, IRepository<UserConsultation> userConsultationsRepository, IConsultationService consultationService)
         {
             _logger = logger;
             _authentication = authentication;
@@ -53,13 +55,32 @@ namespace K9.WebApplication.Services
             _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }
 
-        public MembershipViewModel GetMembershipViewModel(int? userId = null)
+        public DataAccessLayer.Models.UserMembership GetActiveUserMembership(string accountNumber)
+        {
+            var membershipIds =
+                _userMembershipRepository.CustomQuery<string>($"SELECT [{nameof(DataAccessLayer.Models.UserMembership.Name)}] FROM {nameof(DataAccessLayer.Models.UserMembership)}");
+
+            var matching = membershipIds.FirstOrDefault(e => e.ToSixDigitCode() == accountNumber);
+
+            if (matching != null)
+            {
+                var userMembership = _userMembershipRepository.Find(e => e.Name == matching).FirstOrDefault();
+                if (userMembership != null)
+                {
+                    return GetActiveUserMembership(userMembership.UserId);
+                }
+            }
+
+            return null;
+        }
+
+        public UserMembership GetMembershipViewModel(int? userId = null)
         {
             userId = userId ?? Current.UserId;
             var membershipOptions = _membershipOptionRepository.Find(e => !e.IsDeleted).ToList();
             var activeUserMembership = userId.HasValue ? GetActiveUserMembership(userId) : null;
 
-            return new MembershipViewModel
+            return new UserMembership
             {
                 MembershipModels = new List<MembershipModel>(membershipOptions
                     .Where(e => !e.IsDeleted)
@@ -78,9 +99,8 @@ namespace K9.WebApplication.Services
             };
         }
 
-        public List<UserMembership> GetActiveUserMemberships(int? userId = null, bool includeScheduled = false)
+        public List<DataAccessLayer.Models.UserMembership> GetActiveUserMemberships(int userId, bool includeScheduled = false)
         {
-            userId = userId ?? Current.UserId;
             var membershipOptions = _membershipOptionRepository.List();
             var activeMemberships = _userMembershipRepository.Find(_ => _.UserId == userId).ToList()
                 .Where(_ => _.IsActive || includeScheduled && _.EndsOn > DateTime.Today);
@@ -91,7 +111,7 @@ namespace K9.WebApplication.Services
                     return userMembership;
                 }).ToList();
 
-            return _authentication.IsAuthenticated ? userMemberships : new List<UserMembership>();
+            return userMemberships;
         }
 
         /// <summary>
@@ -99,9 +119,10 @@ namespace K9.WebApplication.Services
         /// </summary>
         /// <param name="userId"></param>
         /// <returns></returns>
-        public UserMembership GetActiveUserMembership(int? userId = null)
+        public DataAccessLayer.Models.UserMembership GetActiveUserMembership(int? userId = null)
         {
-            var activeUserMembership = GetActiveUserMemberships(userId).OrderByDescending(_ => _.MembershipOption?.SubscriptionType)
+            userId = userId ?? Current.UserId;
+            var activeUserMembership = GetActiveUserMemberships(userId.Value).OrderByDescending(_ => _.MembershipOption?.SubscriptionType)
                 .FirstOrDefault();
 
             if (activeUserMembership == null && userId.HasValue)
@@ -112,7 +133,7 @@ namespace K9.WebApplication.Services
                     {
                         CreateFreeMembership(userId.Value);
                     }
-                    activeUserMembership = GetActiveUserMemberships(userId).OrderByDescending(_ => _.MembershipOption.SubscriptionType)
+                    activeUserMembership = GetActiveUserMemberships(userId.Value).OrderByDescending(_ => _.MembershipOption.SubscriptionType)
                         .FirstOrDefault();
                 }
                 catch (Exception e)
@@ -120,13 +141,17 @@ namespace K9.WebApplication.Services
                     _logger.Error($"MembershipService => GetActiveUserMembership => {e.GetFullErrorMessage()}");
                 }
             }
+            else
+            {
+                activeUserMembership.User = _userService.Find(activeUserMembership.UserId);
+            }
 
             return activeUserMembership;
         }
 
         public MembershipModel GetSwitchMembershipModel(int membershipOptionId)
         {
-            var userMemberships = GetActiveUserMemberships();
+            var userMemberships = GetActiveUserMemberships(Current.UserId);
             if (!userMemberships.Any())
             {
                 throw new Exception(Dictionary.SwitchMembershipErrorNotSubscribed);
@@ -159,7 +184,7 @@ namespace K9.WebApplication.Services
             }
 
             var membershipOption = _membershipOptionRepository.Find(membershipOptionId);
-            var userMemberships = GetActiveUserMemberships();
+            var userMemberships = GetActiveUserMemberships(Current.UserId);
             if (userMemberships.Any(e => e.MembershipOption.Id != membershipOption.Id && !e.MembershipOption.IsFree))
             {
                 throw new Exception(Dictionary.PurchaseMembershipErrorAlreadySubscribedToAnother);
@@ -170,7 +195,7 @@ namespace K9.WebApplication.Services
                 IsSelected = true
             };
         }
-        
+
         public void ProcessPurchaseWithPromoCode(int userId, string code)
         {
             var promoCode = _promoCodesRepository.Find(e => e.Code == code).FirstOrDefault();
@@ -204,8 +229,8 @@ namespace K9.WebApplication.Services
 
         public void ProcessPurchase(PurchaseModel purchaseModel)
         {
-            UserMembership userMembership = null;
-            
+            DataAccessLayer.Models.UserMembership userMembership = null;
+
             try
             {
                 var membershipOptionId = purchaseModel.ItemId;
@@ -218,7 +243,7 @@ namespace K9.WebApplication.Services
                     throw new IndexOutOfRangeException("Invalid MembershipOptionId");
                 }
 
-                userMembership = new UserMembership
+                userMembership = new DataAccessLayer.Models.UserMembership
                 {
                     UserId = Current.UserId,
                     MembershipOptionId = membershipOptionId,
@@ -253,7 +278,7 @@ namespace K9.WebApplication.Services
                 _logger.Error($"MembershipService => ProcessPurchase => Send Emails failed: {e.GetFullErrorMessage()}");
             }
         }
-        
+
         public void AssignMembershipToUser(int membershipOptionId, int userId, PromoCode promoCode = null)
         {
             try
@@ -265,7 +290,7 @@ namespace K9.WebApplication.Services
                     throw new IndexOutOfRangeException("Invalid MembershipOptionId");
                 }
 
-                var userMembership = new UserMembership
+                var userMembership = new DataAccessLayer.Models.UserMembership
                 {
                     UserId = userId,
                     MembershipOptionId = membershipOptionId,
@@ -284,7 +309,7 @@ namespace K9.WebApplication.Services
                 throw ex;
             }
         }
-        
+
         public void ProcessSwitch(int membershipOptionId)
         {
             PurchaseModel purchaseModel = null;
@@ -298,7 +323,7 @@ namespace K9.WebApplication.Services
                     throw new IndexOutOfRangeException("Invalid MembershipOptionId");
                 }
 
-                var userMembership = new UserMembership
+                var userMembership = new DataAccessLayer.Models.UserMembership
                 {
                     UserId = Current.UserId,
                     MembershipOptionId = membershipOptionId,
@@ -355,7 +380,7 @@ namespace K9.WebApplication.Services
                     return;
                 }
 
-                _userMembershipRepository.Create(new UserMembership
+                _userMembershipRepository.Create(new DataAccessLayer.Models.UserMembership
                 {
                     UserId = userId,
                     MembershipOptionId = membershipOption.Id,
@@ -401,7 +426,7 @@ namespace K9.WebApplication.Services
 
         private void TerminateExistingMemberships(int activeUserMembershipId)
         {
-            var userMemberships = GetActiveUserMemberships();
+            var userMemberships = GetActiveUserMemberships(Current.UserId);
             var activeUserMembership =
                 userMemberships.FirstOrDefault(_ => _.MembershipOptionId == activeUserMembershipId);
             if (activeUserMembership == null)
@@ -417,7 +442,7 @@ namespace K9.WebApplication.Services
             }
         }
 
-        private void SendEmailToNineStar(PurchaseModel purchaseModel, UserMembership userMembership)
+        private void SendEmailToNineStar(PurchaseModel purchaseModel, DataAccessLayer.Models.UserMembership userMembership)
         {
             var template = Dictionary.MembershipCreatedEmail;
             var title = "We have received a new subscription!";
@@ -435,7 +460,7 @@ namespace K9.WebApplication.Services
             }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
         }
 
-        private void SendEmailToCustomer(PurchaseModel purchaseModel, UserMembership userMembership)
+        private void SendEmailToCustomer(PurchaseModel purchaseModel, DataAccessLayer.Models.UserMembership userMembership)
         {
             var contact = _contactService.Find(purchaseModel.CustomerEmailAddress);
             var template = Dictionary.NewMembershipThankYouEmail;
@@ -463,7 +488,7 @@ namespace K9.WebApplication.Services
                     _config.CompanyName);
             }
         }
-        
+
         private void SendEmailToNineStarAboutFailure(PurchaseModel purchaseModel, string errorMessage)
         {
             var template = Dictionary.PaymentError;

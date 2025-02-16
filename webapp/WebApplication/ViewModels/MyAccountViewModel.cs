@@ -9,7 +9,7 @@ namespace K9.WebApplication.ViewModels
     {
         public User User { get; set; }
 
-        public UserMembership Membership { get; set; }
+        public DataAccessLayer.Models.UserMembership Membership { get; set; }
 
         public List<UserConsultation> Consultations { get; set; }
 

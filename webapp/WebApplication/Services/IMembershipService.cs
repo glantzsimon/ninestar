@@ -3,12 +3,13 @@ using K9.DataAccessLayer.Models;
 using K9.WebApplication.Models;
 using K9.WebApplication.ViewModels;
 using System.Collections.Generic;
+using UserMembership = K9.WebApplication.ViewModels.UserMembership;
 
 namespace K9.WebApplication.Services
 {
     public interface IMembershipService
     {
-        MembershipViewModel GetMembershipViewModel(int? userId = null);
+        UserMembership GetMembershipViewModel(int? userId = null);
         MembershipModel GetSwitchMembershipModel(int membershipOptionId);
         MembershipModel GetPurchaseMembershipModel(int membershipOptionId);
         
@@ -26,7 +27,8 @@ namespace K9.WebApplication.Services
         /// <param name="membershipOptionId"></param>
         void ProcessSwitch(int membershipOptionId);
 
-        List<UserMembership> GetActiveUserMemberships(int? userId = null, bool includeScheduled = false);
-        UserMembership GetActiveUserMembership(int? userId = null);
+        List<DataAccessLayer.Models.UserMembership> GetActiveUserMemberships(int userId, bool includeScheduled = false);
+        DataAccessLayer.Models.UserMembership GetActiveUserMembership(int? userId = null);
+        DataAccessLayer.Models.UserMembership GetActiveUserMembership(string accountNumber);
     }
 }

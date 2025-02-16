@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace K9.DataAccessLayer.Helpers
 {
@@ -23,6 +24,12 @@ namespace K9.DataAccessLayer.Helpers
             {
                 return false;
             }
+        }
+
+        public static string ToSixDigitCode(this string value)
+        {
+            var numericOnly = new string(value.Where(char.IsDigit).ToArray());
+            return numericOnly.Substring(0, 9);
         }
     }
 }

@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using K9.DataAccessLayer.Helpers;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -51,25 +52,26 @@ namespace K9.DataAccessLayer.Models
         public virtual User User { get; set; }
 
         public virtual MembershipOption MembershipOption { get; set; }
-        
+
         [LinkedColumn(LinkedTableName = "User", LinkedColumnName = "Username")]
         public string UserName { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubscriptionTypeLabel)]
         [LinkedColumn(LinkedTableName = "MembershipOption", LinkedColumnName = "Name")]
         public string MembershipOptionName { get; set; }
-        
-        [NotMapped]
+
         public bool IsActive => (DateTime.Today.IsBetween(StartsOn.Date, EndsOn.Date) || MembershipOption?.SubscriptionType == MembershipOption.ESubscriptionType.LifeTimePlatinum) && !IsDeactivated;
 
-        [NotMapped]
         public TimeSpan Duration => EndsOn.Subtract(StartsOn);
 
-        [NotMapped]
         public double CostOfRemainingActiveSubscription => GetCostOfRemainingActiveSubscription();
 
         public bool IsAuthorisedToViewPaidContent() =>
             MembershipOption?.SubscriptionType > MembershipOption.ESubscriptionType.Free && IsActive;
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.AccountNumberLabel)]
+        public string AccountNumber => GetAccountNumber();
 
         private double GetCostOfRemainingActiveSubscription()
         {
@@ -77,5 +79,11 @@ namespace K9.DataAccessLayer.Models
             var percentageRemaining = (double)timeRemaining.Ticks / (double)Duration.Ticks;
             return MembershipOption?.Price * percentageRemaining ?? 0;
         }
+
+        private string GetAccountNumber()
+        {
+            return Name.ToSixDigitCode();
+        }
+
     }
 }

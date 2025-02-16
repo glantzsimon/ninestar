@@ -2588,6 +2588,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Consult our AI 9 Star Ki Astrologer.
+        /// </summary>
+        public static string ConsultOurAiAstrologer {
+            get {
+                return ResourceManager.GetString("ConsultOurAiAstrologer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Our AI 9 Star Ki Astrologer has extensive knowledge about 9 Star Ki and can answer many of your questions and provide guidance..
+        /// </summary>
+        public static string ConsultOurAiAstrologerDetails {
+            get {
+                return ResourceManager.GetString("ConsultOurAiAstrologerDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact.
         /// </summary>
         public static string Contact {

@@ -2974,4 +2974,10 @@
   <data name="AccountNumberLabel" xml:space="preserve">
     <value>Account Number</value>
   </data>
+  <data name="ConsultOurAiAstrologer" xml:space="preserve">
+    <value>Consult our AI 9 Star Ki Astrologer</value>
+  </data>
+  <data name="ConsultOurAiAstrologerDetails" xml:space="preserve">
+    <value>Our AI 9 Star Ki Astrologer has extensive knowledge about 9 Star Ki and can answer many of your questions and provide guidance.</value>
+  </data>
 </root>

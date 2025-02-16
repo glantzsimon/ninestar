@@ -1,0 +1,15 @@
+﻿@using K9.WebApplication.Config
+@using K9.WebApplication.Extensions
+@using SessionHelper = K9.WebApplication.Helpers.SessionHelper
+
+@{
+    var membership = this.GetActiveUserMembership();
+}
+
+@if (SessionHelper.CurrentUserIsAdmin() || (membership != null && membership.IsUnlimited()))
+{
+}
+
+<a target="_blank" class="btn btn-success btn-lg" href="@ApiConfiguration.Instance.NineStarKiAstrologerGptUrl">
+    <i class="fa fa-robot"></i> @Dictionary.ConsultOurAiAstrologer
+</a>

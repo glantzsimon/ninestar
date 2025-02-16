@@ -69,6 +69,8 @@ namespace K9.DataAccessLayer.Models
         public bool IsAuthorisedToViewPaidContent() =>
             MembershipOption?.SubscriptionType > MembershipOption.ESubscriptionType.Free && IsActive;
 
+        public bool IsUnlimited() => IsActive && MembershipOption.IsUnlimited;
+
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.AccountNumberLabel)]
         public string AccountNumber => GetAccountNumber();

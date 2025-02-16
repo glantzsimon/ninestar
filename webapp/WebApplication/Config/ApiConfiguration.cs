@@ -6,5 +6,6 @@
 
         public string ApiKey { get; set; }
         public string OpenAIApiKey { get; set; }
+        public string NineStarKiAstrologerGptUrl { get; set; }
     }
 }

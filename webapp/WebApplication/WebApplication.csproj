@@ -951,7 +951,9 @@
     <Content Include="Scripts\library\SmoothScroll.min.js" />
     <Content Include="Scripts\library\vticker-min.js" />
     <Content Include="Scripts\template\scroller.js" />
-    <None Include="openapi.yaml" />
+    <None Include="openapi.yaml">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Content Include="sitemap.xml" />
     <Content Include="Videos\Shared\stars-bg.mp4" />
     <Content Include="Videos\Shared\stars-bg.webm" />
@@ -1198,6 +1200,7 @@
     <Content Include="Content\less\config\paths.less" />
     <Content Include="Content\less\sections\account.less" />
     <None Include="packages.config" />
+    <Content Include="Properties\PublishProfiles\.gitattributes" />
     <None Include="Properties\PublishProfiles\Integration.pubxml" />
     <None Include="Properties\PublishProfiles\IntegrationLocal.pubxml" />
     <None Include="Properties\PublishProfiles\Production2.pubxml" />

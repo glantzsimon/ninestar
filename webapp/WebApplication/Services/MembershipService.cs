@@ -248,9 +248,9 @@ namespace K9.WebApplication.Services
                     UserId = Current.UserId,
                     MembershipOptionId = membershipOptionId,
                     StartsOn = DateTime.Today,
-                    EndsOn = membershipOption.IsAnnual ? DateTime.Today.AddYears(1) : DateTime.Today.AddMonths(1),
                     IsAutoRenew = true
                 };
+                SetMembershipEndDate(userMembership);
 
                 _userMembershipRepository.Create(userMembership);
                 userMembership.User = _usersRepository.Find(Current.UserId);
@@ -279,6 +279,26 @@ namespace K9.WebApplication.Services
             }
         }
 
+        private void SetMembershipEndDate(DataAccessLayer.Models.UserMembership membership)
+        {
+            if (membership.MembershipOption.IsWeekly)
+            {
+                membership.EndsOn = membership.StartsOn.AddDays(7);
+            }
+            else if (membership.MembershipOption.IsMonthly)
+            {
+                membership.EndsOn = membership.StartsOn.AddMonths(1);
+            }
+            else if (membership.MembershipOption.IsAnnual)
+            {
+                membership.EndsOn = membership.StartsOn.AddYears(1);
+            }
+            else if (membership.MembershipOption.IsForever)
+            {
+                membership.EndsOn = DateTime.MaxValue;
+            }
+        }
+
         public void AssignMembershipToUser(int membershipOptionId, int userId, PromoCode promoCode = null)
         {
             try
@@ -295,9 +315,9 @@ namespace K9.WebApplication.Services
                     UserId = userId,
                     MembershipOptionId = membershipOptionId,
                     StartsOn = DateTime.Today,
-                    EndsOn = membershipOption.IsAnnual ? DateTime.Today.AddYears(1) : DateTime.Today.AddMonths(1),
                     IsAutoRenew = true
                 };
+                SetMembershipEndDate(userMembership);
 
                 _userMembershipRepository.Create(userMembership);
                 userMembership.User = _usersRepository.Find(userId);
@@ -328,9 +348,10 @@ namespace K9.WebApplication.Services
                     UserId = Current.UserId,
                     MembershipOptionId = membershipOptionId,
                     StartsOn = DateTime.Today,
-                    EndsOn = membershipOption.IsAnnual ? DateTime.Today.AddYears(1) : DateTime.Today.AddMonths(1),
                     IsAutoRenew = true
                 };
+                SetMembershipEndDate(userMembership);
+
                 _userMembershipRepository.Create(userMembership);
                 var user = _userService.Find(Current.UserId);
                 userMembership.User = user;

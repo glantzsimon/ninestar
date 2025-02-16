@@ -183,8 +183,8 @@
       <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -222,6 +222,12 @@
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.4\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.SharedLibrary.2.0.0.206\lib\net461\System.Web.Mvc.dll</HintPath>
@@ -273,8 +279,8 @@
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
-    <Compile Include="Controllers\NineStarKiPureAlchemyControllerAjax.cs" />
-    <Compile Include="Controllers\NineStarKiControllerAjax.cs" />
+    <Compile Include="Controllers\ApiPureAlchemyController.cs" />
+    <Compile Include="Controllers\ApiController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BaseNineStarKiController.cs" />
     <Compile Include="Controllers\ConsultationsController.cs" />
@@ -952,7 +958,7 @@
     <Content Include="Scripts\library\vticker-min.js" />
     <Content Include="Scripts\template\scroller.js" />
     <None Include="openapi.yaml">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <Content Include="sitemap.xml" />
     <Content Include="Videos\Shared\stars-bg.mp4" />
@@ -1235,19 +1241,19 @@
     <Content Include="Views\Shared\EditorTemplates\Currency.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Gender.cshtml" />
     <Content Include="Views\PersonalChart\_ProfileHeader.cshtml" />
-    <Content Include="Views\NineStarKi\_Energy.cshtml" />
-    <Content Include="Views\NineStarKi\_Trigram.cshtml" />
-    <Content Include="Views\NineStarKi\_YinYang.cshtml" />
-    <Content Include="Views\NineStarKi\_Element.cshtml" />
-    <Content Include="Views\NineStarKi\_FamilyMember.cshtml" />
-    <Content Include="Views\NineStarKi\_Colour.cshtml" />
+    <Content Include="Views\Api\_Energy.cshtml" />
+    <Content Include="Views\Api\_Trigram.cshtml" />
+    <Content Include="Views\Api\_YinYang.cshtml" />
+    <Content Include="Views\Api\_Element.cshtml" />
+    <Content Include="Views\Api\_FamilyMember.cshtml" />
+    <Content Include="Views\Api\_Colour.cshtml" />
     <Content Include="Views\PersonalChart\_ProfileOverview.cshtml" />
     <Content Include="Views\Shared\_BetaPopup.cshtml" />
     <Content Include="Views\PersonalChart\_ProfileBody.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Energy.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\EnergyType.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\NineStarKi\_EnergyTitle.cshtml" />
+    <Content Include="Views\Api\_EnergyTitle.cshtml" />
     <Content Include="Views\Shared\Controls\_CollapsiblePanel.cshtml" />
     <Content Include="Views\Shared\_GoogleAnalytics.cshtml" />
     <Content Include="Views\Shared\_SEO.cshtml" />
@@ -1293,7 +1299,7 @@
     <Content Include="Views\Shared\_Selected.cshtml" />
     <Content Include="Views\Home\PrivacyPolicy.cshtml" />
     <Content Include="Views\KnowledgeBase\_NineEnergiesOverview.cshtml" />
-    <Content Include="Views\NineStarKi\_Modality.cshtml" />
+    <Content Include="Views\Api\_Modality.cshtml" />
     <Content Include="Views\KnowledgeBase\_ModalityBody.cshtml" />
     <Content Include="Views\KnowledgeBase\_ModalityDetails.cshtml" />
     <Content Include="Views\Compatibility\Index.cshtml" />
@@ -1322,7 +1328,7 @@
     <Content Include="Views\Account\UnsubscribeFailed.cshtml" />
     <Content Include="Views\Account\UnsubscribeSuccess.cshtml" />
     <Content Include="Views\Predictions\_CycleHeader.cshtml" />
-    <Content Include="Views\NineStarKi\_Season.cshtml" />
+    <Content Include="Views\Api\_Season.cshtml" />
     <Content Include="Views\Predictions\_YearlyPlanner.cshtml" />
     <Content Include="Views\Predictions\_Year.cshtml" />
     <Content Include="Views\Predictions\_YearlyCyclesOverview.cshtml" />
@@ -1367,7 +1373,7 @@
     <Content Include="Views\Consultations\Edit.cshtml" />
     <Content Include="Views\Consultations\Index.cshtml" />
     <Content Include="Views\Shared\_Recaptcha.cshtml" />
-    <Content Include="Views\NineStarKi\_FiveTransformations.cshtml" />
+    <Content Include="Views\Api\_FiveTransformations.cshtml" />
     <Content Include="Views\Compatibility\_CompatibilityElementsBreakdown.cshtml" />
     <Content Include="Views\Predictions\MyCycles.cshtml" />
     <Content Include="Views\Predictions\_CyclesJs.cshtml" />

@@ -11,7 +11,8 @@ using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-    public partial class NineStarKiController : BaseNineStarKiController
+    [RoutePrefix("api")]
+    public partial class ApiController : BaseNineStarKiController
     {
         private readonly IAuthentication _authentication;
         private readonly INineStarKiService _nineStarKiService;
@@ -20,7 +21,7 @@ namespace K9.WebApplication.Controllers
         private readonly ApiConfiguration _apiConfig;
         private const string authRequestHeader = "Authorization";
 
-        public NineStarKiController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService, IRepository<User> usersRepository, IBiorhythmsService biorhythmsService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, IOptions<ApiConfiguration> apiConfig)
+        public ApiController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService, IRepository<User> usersRepository, IBiorhythmsService biorhythmsService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, IOptions<ApiConfiguration> apiConfig)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
         {
             _authentication = authentication;
@@ -30,7 +31,7 @@ namespace K9.WebApplication.Controllers
             _apiConfig = apiConfig.Value;
         }
 
-        [Route("api/personal-chart/get/{dateOfBirth}/{gender}")]
+        [Route("personal-chart/get/{dateOfBirth}/{gender}")]
         public JsonResult GetPersonalChart(DateTime dateOfBirth, EGender gender)
         {
             if (!IsValidApiKey(Request.Headers[authRequestHeader]))
@@ -56,7 +57,12 @@ namespace K9.WebApplication.Controllers
 
         private JsonResult InvalidApiKeyResult()
         {
-            return Json(new { success = false, error = "Invalid ApiKey" }, JsonRequestBehavior.AllowGet);
+            return Json(new
+            {
+                success = false, 
+                error = "Invalid ApiKey",
+                statusCode = 401
+            }, JsonRequestBehavior.AllowGet);
         }
 
         private bool IsValidApiKey(string authHeader)
@@ -64,7 +70,7 @@ namespace K9.WebApplication.Controllers
             string apiKey = null;
             if (!string.IsNullOrEmpty(authHeader))
             {
-                apiKey = authHeader.Substring("Bearer ".Length).Trim();
+                apiKey = authHeader.Substring("ApiKey".Length).Trim();
             }
             return apiKey != null && apiKey == _apiConfig.ApiKey;
         }

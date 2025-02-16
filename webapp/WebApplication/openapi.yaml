@@ -1,50 +1,177 @@
-openapi: 3.0.1
+﻿openapi: 3.1.0
 info:
   title: 9 Star Ki API
   description: API that returns information about a person using 9 Star Ki Astrology.
   version: "1.0"
 servers:
-  - url: https://9starkiastrology.com
+  - url: https://9starkiastrology.com/api
 paths:
-  /api/personal-chart/get/{dateOfBirth}/{gender}:
+  /personal-chart/get:
     get:
+      operationId: getPersonalChart  
       summary: Retrieve information about a person using 9 Star Ki Astrology.
-      description: Returns JSON data about a person. Expects two query parameters: "dateOfBirth", "gender.
-      - name: dateOfBirth
-          in: path
+      description: Returns JSON data about a person based on birth date and gender.
+      parameters:
+        - name: dateOfBirth
+          in: query
           required: true
+          description: Date of birth in YYYY-MM-DD format.
           schema:
             type: string
             format: date
             example: "1985-06-16"
-          description: Date of birth in yyyy-MM-dd format.
         - name: gender
-          in: path
+          in: query
           required: true
+          description: Gender of the person.
           schema:
             type: string
             enum: ["Male", "Female", "Other"]
-          description: Gender of the person.
+            example: "Male"
       responses:
         "200":
           description: Successful response with person data.
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  name:
-                    type: string
-                  data:
-                    type: object
-                    description: Contains various data points calculated from 9 Star Ki.
+                $ref: "#/components/schemas/PersonalChartResponse"
+        "400":
+          description: Bad request. Invalid or missing parameters.
         "401":
           description: Unauthorized. API key missing or invalid.
+        "500":
+          description: Internal server error.
       security:
-        - bearerAuth: []
+        - apiKeyAuth: []
 components:
   securitySchemes:
-    bearerAuth:
-      type: http
-      scheme: bearer
-      bearerFormat: "API Key"
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: ApiKey
+  schemas:
+    PersonalChartResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        data:
+          type: object
+          properties:
+            PersonModel:
+              $ref: "#/components/schemas/PersonModel"
+            MainEnergy:
+              $ref: "#/components/schemas/Energy"
+            CharacterEnergy:
+              $ref: "#/components/schemas/Energy"
+            SurfaceEnergy:
+              $ref: "#/components/schemas/Energy"
+            YearlyCycleEnergy:
+              $ref: "#/components/schemas/Energy"
+            MonthlyCycleEnergy:
+              $ref: "#/components/schemas/Energy"
+            Summary:
+              type: string
+              description: A textual summary of the person's characteristics.
+              example: "You have a lot of energy and vitality and are not afraid to take on plenty of hard work and commitments."
+            Overview:
+              type: string
+              description: A general overview of the person's characteristics.
+            Health:
+              type: string
+              description: Health-related insights for this person.
+            Occupations:
+              type: string
+              description: Suggested occupations based on the 9 Star Ki system.
+            PersonalDevelopment:
+              type: string
+              description: Advice for personal growth based on the person's energy.
+
+    PersonModel:
+      type: object
+      properties:
+        Gender:
+          type: integer
+          description: Gender represented as an integer.
+          example: 2
+        GenderName:
+          type: string
+          description: Name of the gender.
+          example: "Male"
+        GenderPronoun:
+          type: string
+          example: "he"
+        GenderPossessivePronoun:
+          type: string
+          example: "his"
+        DateOfBirth:
+          type: string
+          format: date
+          description: Date of birth in milliseconds since epoch.
+          example: "/Date(298310400000)/"
+        YearsOld:
+          type: integer
+          description: Age of the person.
+          example: 45
+
+    Energy:
+      type: object
+      properties:
+        Energy:
+          type: integer
+          description: Energy type number.
+          example: 3
+        EnergyName:
+          type: string
+          description: Name of the energy.
+          example: "Thunder"
+        EnergyNameAndNumber:
+          type: string
+          example: "3 Tree / Thunder"
+        DescriptiveTitle:
+          type: string
+          description: A brief title describing the energy type.
+          example: "The Pioneer"
+        EnergyDescription:
+          type: string
+          description: A detailed description of the energy.
+          example: "Thunder Energies embody the power of spring and have plenty of vitality and energy."
+        EnergyLowerCase:
+          type: string
+          example: "thunder"
+        Trigram:
+          type: string
+          description: The trigram associated with the energy.
+          example: "Chen"
+        ElementName:
+          type: string
+          description: The element associated with the energy.
+          example: "Tree"
+        Element:
+          type: integer
+          description: Element type.
+          example: 2
+        ElementWithYingYang:
+          type: string
+          example: "Yang Tree"
+        ElementDescription:
+          type: string
+          description: A detailed explanation of the element's characteristics.
+        Colour:
+          type: string
+          description: The color associated with this energy.
+          example: "Bright Green"
+        Modality:
+          type: integer
+          description: The modality type.
+          example: 3
+        ModalityName:
+          type: string
+          example: "Dynamic"
+        Direction:
+          type: string
+          example: "East"
+        Season:
+          type: string
+          example: "Early Spring"

@@ -7,9 +7,9 @@ using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-    public partial class NineStarKiController : BaseNineStarKiController
+    public partial class ApiController : BaseNineStarKiController
     {
-        [Route("api/calculate")]
+        [Route("calculate")]
         public JsonResult CalculateNineStarKiAjax(DateTime dateOfBirth, EGender gender)
         {
             var model = new NineStarKiModel(new PersonModel

@@ -951,6 +951,7 @@
     <Content Include="Scripts\library\SmoothScroll.min.js" />
     <Content Include="Scripts\library\vticker-min.js" />
     <Content Include="Scripts\template\scroller.js" />
+    <None Include="openapi.yaml" />
     <Content Include="sitemap.xml" />
     <Content Include="Videos\Shared\stars-bg.mp4" />
     <Content Include="Videos\Shared\stars-bg.webm" />
@@ -1132,6 +1133,7 @@
     <Content Include="Content\fonts\CANDARAL.TTF" />
     <Content Include="Content\fonts\CANDARALI.TTF" />
     <Content Include="Content\fonts\CANDARAZ.TTF" />
+    <Content Include=".well-known\ai-plugin.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>

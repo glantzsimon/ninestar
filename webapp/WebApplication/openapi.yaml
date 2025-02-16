@@ -1,0 +1,50 @@
+openapi: 3.0.1
+info:
+  title: 9 Star Ki API
+  description: API that returns information about a person using 9 Star Ki Astrology.
+  version: "1.0"
+servers:
+  - url: https://9starkiastrology.com
+paths:
+  /api/personal-chart/get/{dateOfBirth}/{gender}:
+    get:
+      summary: Retrieve information about a person using 9 Star Ki Astrology.
+      description: Returns JSON data about a person. Expects two query parameters: "dateOfBirth", "gender.
+      - name: dateOfBirth
+          in: path
+          required: true
+          schema:
+            type: string
+            format: date
+            example: "1985-06-16"
+          description: Date of birth in yyyy-MM-dd format.
+        - name: gender
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: ["Male", "Female", "Other"]
+          description: Gender of the person.
+      responses:
+        "200":
+          description: Successful response with person data.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  data:
+                    type: object
+                    description: Contains various data points calculated from 9 Star Ki.
+        "401":
+          description: Unauthorized. API key missing or invalid.
+      security:
+        - bearerAuth: []
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: "API Key"

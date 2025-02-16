@@ -1,0 +1,19 @@
+﻿{
+  "schema_version": "v1",
+  "name_for_human": "9 Star Ki Api",
+  "name_for_model": "nine_star_ki",
+  "description_for_human": "Access information about a person based on their birth chart in 9 Star Ki Astrology.",
+  "description_for_model": "Plugin to access information about a person based on 9 Star Ki Astrology. It requires an API key passed via the Authorization header.",
+  "auth": {
+    "type": "user_http",
+    "authorization_type": "bearer"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://9starkiastrology.com/openapi.yaml",
+    "is_user_authenticated": true
+  },
+  "logo_url": "https://9starkiastrology.com/images/company/logo.png",
+  "contact_email": "support@9starkiastrology.com",
+  "legal_info_url": "https://9starkiastrology.com/terms-of-service"
+}

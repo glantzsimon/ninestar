@@ -30,7 +30,7 @@ namespace K9.WebApplication.Controllers
             _apiConfig = apiConfig.Value;
         }
 
-        [Route("api/personal-chart/get")]
+        [Route("api/personal-chart/get/{dateOfBirth}/{gender}")]
         public JsonResult GetPersonalChart(DateTime dateOfBirth, EGender gender)
         {
             if (!IsValidApiKey(Request.Headers[authRequestHeader]))
@@ -56,11 +56,16 @@ namespace K9.WebApplication.Controllers
 
         private JsonResult InvalidApiKeyResult()
         {
-            return Json(new {success = false, error = "Invalid ApiKey"}, JsonRequestBehavior.AllowGet);
+            return Json(new { success = false, error = "Invalid ApiKey" }, JsonRequestBehavior.AllowGet);
         }
 
-        private bool IsValidApiKey(string apiKey)
+        private bool IsValidApiKey(string authHeader)
         {
+            string apiKey = null;
+            if (!string.IsNullOrEmpty(authHeader))
+            {
+                apiKey = authHeader.Substring("Bearer ".Length).Trim();
+            }
             return apiKey != null && apiKey == _apiConfig.ApiKey;
         }
     }

@@ -224,8 +224,8 @@ components:
         data:
           type: object
           properties:
-            NineStarKiModel:
-              $ref: "#/components/schemas/NineStarKiModel"
+            PredictionsSummaryModel:
+              $ref: "#/components/schemas/NineStarKiPredictionsSummaryModel"
 
     CompatibilityResponse:
       type: object
@@ -334,6 +334,14 @@ components:
           $ref: "#/components/schemas/ECompatibilityScore"
         LearningPotentialScore:
           $ref: "#/components/schemas/ECompatibilityScore"
+
+    NineStarKiPredictionsSummaryModel:
+      type: object
+      properties:
+        YearlyPrediction:
+          $ref: "#/components/schemas/NineStarKiEnergyCycleSummary"
+        MonthlyPrediction:
+          $ref: "#/components/schemas/NineStarKiEnergyCycleSummary"
 
     NineStarKiModel:
       type: object
@@ -498,6 +506,36 @@ components:
           type: string
           example: "Yin"
 
+    NineStarKiEnergyCycleSummary:
+      type: object
+      properties:
+        Energy:
+          type: string
+          description: Name of the energy.
+          example: "Thunder"
+        EnergyNumber:
+          type: integer
+          example: 0
+        Direction:
+          type: string
+          description: A detailed description of the direction.
+          example: "North"
+        Element:
+          type: string
+          description: The element associated with the energy.
+          example: "Tree"
+        Season:
+          type: string
+          example: "Spring"
+        SeasonDescription:
+          type: string
+          description: A detailed description of the qualities of the season associated with this energy.
+          example: "Spring is a time for..."
+        PredictionDetails:
+          type: string
+          description: A detailed description of the predictions / forecast for this energy.
+          example: "For this period, you will have more energy..."
+
     EnergySummary:
       type: object
       properties:
@@ -520,6 +558,6 @@ components:
           description: The element associated with the energy.
           example: "Tree"
         Modality:
-          type: integer
+          type: string
           description: The modality type.
-          example: 3
+          example: "Fixed"

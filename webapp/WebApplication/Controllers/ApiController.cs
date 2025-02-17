@@ -105,13 +105,11 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("predictions/get/{accountNumber}/" +
-               "{dateOfBirth}/{gender}")]
-        public JsonResult GetPredictions(string accountNumber, DateTime dateOfBirth, EGender gender, DateTime? selectedDate = null)
+               "{dateOfBirth}/{gender}/{selectedDate}")]
+        public JsonResult GetPredictions(string accountNumber, DateTime dateOfBirth, EGender gender, DateTime selectedDate)
         {
             return Validate(accountNumber, () =>
             {
-                selectedDate = selectedDate.HasValue ? selectedDate.Value : DateTime.Today;
-
                 var model = new NineStarKiModel(new PersonModel
                 {
                     DateOfBirth = dateOfBirth,

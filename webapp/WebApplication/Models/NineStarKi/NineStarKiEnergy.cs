@@ -421,9 +421,9 @@ namespace K9.WebApplication.Models
                 : EnergyNameAndNumber;
         }
 
-        private NineStarKiEnumMetaDataAttribute MetaData => Energy.GetAttribute<NineStarKiEnumMetaDataAttribute>();
+        internal NineStarKiEnumMetaDataAttribute MetaData => Energy.GetAttribute<NineStarKiEnumMetaDataAttribute>();
 
-        private NineStarKiCycleEnumMetaDataAttribute CycleMetaData => MetaData.Cycle.GetAttribute<NineStarKiCycleEnumMetaDataAttribute>();
+        internal NineStarKiCycleEnumMetaDataAttribute CycleMetaData => MetaData.Cycle.GetAttribute<NineStarKiCycleEnumMetaDataAttribute>();
 
         private NineStarKiEnumMetaDataAttribute RelatedMetaData => RelatedEnergy.GetAttribute<NineStarKiEnumMetaDataAttribute>();
 

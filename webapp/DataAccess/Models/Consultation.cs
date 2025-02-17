@@ -15,7 +15,6 @@ namespace K9.DataAccessLayer.Models
     [Name(ResourceType = typeof(Dictionary), ListName = Strings.Names.Consultations, PluralName = Strings.Names.Consultations, Name = Strings.Names.Consultation)]
     public class Consultation : TimeZoneBase
     {
-
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ContactLabel)]
         [UIHint("Contact")]
         [Required]
@@ -112,7 +111,7 @@ namespace K9.DataAccessLayer.Models
         public string FormattedEndsOnLocalTime => EndsOnLocalTime.HasValue
             ? $"{EndsOnLocalTime.Value.ToString(Constants.FormatConstants.AppointmentDisplayTimeFormat)} - {TimeZoneDisplayText}"
             : "";
-        
+
         private double GetPrice()
         {
             if (ConsultationDuration == EConsultationDuration.OneHour)

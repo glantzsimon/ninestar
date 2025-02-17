@@ -48,6 +48,12 @@ namespace K9.WebApplication.Services
             _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }
 
+        public UserConsultation FindUserConsultation(int consultationId, int userId)
+        {
+            return _userConsultationRepository
+                .Find(e => e.ConsultationId == consultationId && e.UserId == userId).FirstOrDefault();
+        }
+
         public Consultation Find(int id)
         {
             var consultationUserTimeZone = SessionHelper.GetCurrentUserTimeZone();
@@ -92,7 +98,7 @@ namespace K9.WebApplication.Services
             return slot;
         }
 
-        public void CreateConsultation(Consultation consultation, Contact contact, int? userId = null)
+        public int CreateConsultation(Consultation consultation, Contact contact, int? userId = null)
         {
             userId = userId.HasValue ? userId : Current.UserId;
 
@@ -122,6 +128,8 @@ namespace K9.WebApplication.Services
             {
                 _logger.Error($"ConsultationService => CreateConsultation => Error sending emails {e.GetFullErrorMessage()}");
             }
+
+            return consultation.Id;
         }
 
         public void CreateFreeSlots()
@@ -215,9 +223,9 @@ namespace K9.WebApplication.Services
             try
             {
                 var contact = _contactService.Find(consultation.ContactId);
-
-                SendAppointmentConfirmationEmailToCustomer(consultation, contact);
-                SendAppointmentConfirmationEmailToNineStar(consultation, contact);
+                var user = _userRepository.Find(contact.UserId ?? Current.UserId);
+                SendAppointmentConfirmationEmailToUser(consultation, user);
+                SendAppointmentConfirmationEmailToNineStar(consultation, user);
             }
             catch (Exception e)
             {
@@ -272,21 +280,21 @@ namespace K9.WebApplication.Services
                 ScheduleUrl = _urlHelper.AbsoluteAction("ScheduleConsultation", "Consultation", new { consultationId = consultation.Id }),
                 PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
                 TermsOfServiceLink = _urlHelper.AbsoluteAction("TermsOfService", "Home"),
-                UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact?.Name }),
+                UnsubscribeLink = _urlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }),
                 DateTime.Now.Year
             }), user.EmailAddress, user.FullName, _config.SupportEmailAddress, _config.CompanyName);
         }
 
-        private void SendAppointmentConfirmationEmailToNineStar(Consultation consultation, Contact contact)
+        private void SendAppointmentConfirmationEmailToNineStar(Consultation consultation, User user)
         {
             var template = Dictionary.ConsultationScheduledEmail;
             var title = "We have received a consultation booking!";
             _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
             {
                 Title = title,
-                ContactName = contact.FullName,
-                CustomerEmail = contact.EmailAddress,
-                contact.PhoneNumber,
+                ContactName = user.FullName,
+                CustomerEmail = user.EmailAddress,
+                user.PhoneNumber,
                 Duration = consultation.DurationDescription,
                 ScheduledOn = consultation.ScheduledOnMyTime.Value.ToString(DataAccessLayer.Constants.FormatConstants.AppointmentDisplayDateTimeFormat),
                 Company = _config.CompanyName,
@@ -294,23 +302,23 @@ namespace K9.WebApplication.Services
             }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
         }
 
-        private void SendAppointmentConfirmationEmailToCustomer(Consultation consultation, Contact contact)
+        private void SendAppointmentConfirmationEmailToUser(Consultation consultation, User user)
         {
             var template = Dictionary.ConsultationScheduledThankYouEmail;
             var title = Dictionary.ThankyouForBookingConsultationEmailTitle;
             _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
             {
                 Title = title,
-                contact.FirstName,
+                user.FirstName,
                 Duration = consultation.DurationDescription,
                 ScheduledOn = consultation.ScheduledOnLocalTime.Value.ToString(DataAccessLayer.Constants.FormatConstants.AppointmentDisplayDateTimeFormat),
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
                 RescheduleUrl = _urlHelper.AbsoluteAction("ScheduleConsultation", "Consultation", new { consultationId = consultation.Id }),
                 PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
                 TermsOfServiceLink = _urlHelper.AbsoluteAction("TermsOfService", "Home"),
-                UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact?.Name }),
+                UnsubscribeLink = _urlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }),
                 DateTime.Now.Year
-            }), contact.EmailAddress, contact.FullName, _config.SupportEmailAddress, _config.CompanyName);
+            }), user.EmailAddress, user.FullName, _config.SupportEmailAddress, _config.CompanyName);
         }
     }
 }

@@ -251,12 +251,12 @@ namespace K9.WebApplication.Services
                     IsAutoRenew = true
                 };
                 SetMembershipEndDate(userMembership);
-                
+
                 TerminateExistingMemberships(userMembership.UserId);
 
                 _userMembershipRepository.Create(userMembership);
                 userMembership.User = _usersRepository.Find(Current.UserId);
-                
+
                 if (membershipOption.SubscriptionType >= MembershipOption.ESubscriptionType.AnnualPlatinum)
                 {
                     CreateComplementaryUserConsultation(Current.UserId);
@@ -379,7 +379,7 @@ namespace K9.WebApplication.Services
                 _userMembershipRepository.Create(userMembership);
                 var user = _userService.Find(Current.UserId);
                 userMembership.User = user;
-                
+
                 var contact = _contactService.Find(user.EmailAddress);
                 if (contact == null)
                 {
@@ -507,10 +507,9 @@ namespace K9.WebApplication.Services
             }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
         }
 
-        private void SendEmailToUser(PurchaseModel purchaseModel, DataAccessLayer.Models.UserMembership userMembership)
+        private void SendEmailToUser(PurchaseModel purchaseModel, UserMembership userMembership)
         {
             var user = userMembership.User;
-            var contact = _contactService.Find(purchaseModel.CustomerEmailAddress);
             var template = Dictionary.NewMembershipThankYouEmail;
             var title = TemplateProcessor.PopulateTemplate(Dictionary.ThankyouForSubscriptionEmailTitle, new
             {
@@ -529,7 +528,7 @@ namespace K9.WebApplication.Services
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
                 PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
                 TermsOfServiceLink = _urlHelper.AbsoluteAction("TermsOfService", "Home"),
-                UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { id = contact?.Name }),
+                UnsubscribeLink = _urlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }),
                 DateTime.Now.Year
             }), user.EmailAddress, user.FirstName, _config.SupportEmailAddress,
                 _config.CompanyName);

@@ -13,6 +13,7 @@ using System.Linq;
 using System.Web.Mvc;
 using K9.Base.WebApplication.Filters;
 using K9.SharedLibrary.Authentication;
+using K9.WebApplication.Helpers;
 
 namespace K9.WebApplication.Controllers
 {
@@ -57,13 +58,18 @@ namespace K9.WebApplication.Controllers
             {
                 var contact = _contactService.Find(purchaseModel.ContactId);
 
-                _consultationService.CreateConsultation(new Consultation
+                var consultationId = _consultationService.CreateConsultation(new Consultation
                 {
                     ConsultationDuration = (EConsultationDuration)purchaseModel.Quantity,
                     ContactId = purchaseModel.ContactId
                 }, contact);
-
-                return Json(new { success = true });
+                
+                return Json(new
+                {
+                    success = true, 
+                    idProperty = "consultationId", 
+                    idValue = consultationId
+                });
             }
             catch (Exception ex)
             {
@@ -86,7 +92,13 @@ namespace K9.WebApplication.Controllers
             if (consultation == null)
             {
                 _logger.Error($"ConsultationController => ScheduleConsultation => Consultation Not Found => ConsultationId: {consultationId}");
+                return HttpNotFound();
+            }
 
+            var userConsultation = _consultationService.FindUserConsultation(consultationId, Current.UserId);
+            if (userConsultation == null)
+            {
+                _logger.Error($"ConsultationController => ScheduleConsultation => UserConsultation Not Found => ConsultationId: {consultationId} UserId: {Current.UserId}");
                 return HttpNotFound();
             }
 

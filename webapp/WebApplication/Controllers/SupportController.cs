@@ -170,7 +170,7 @@ namespace K9.WebApplication.Controllers
                     contact.FirstName,
                     PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
                     TermsOfServiceLink = _urlHelper.AbsoluteAction("TermsOfService", "Home"),
-                    UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact.Name }),
+                    UnsubscribeLink = _urlHelper.AbsoluteAction("UnsubscribeContact", "Account", new { externalId = contact.Name }),
                     DateTime.Now.Year
                 }), contact.EmailAddress, contact.FirstName, _config.SupportEmailAddress,
                     _config.CompanyName);

@@ -2983,6 +2983,12 @@
   <data name="ConsultOurAiAstrologerDetails" xml:space="preserve">
     <value>Our AI 9 Star Ki Astrologer has extensive knowledge about 9 Star Ki and can answer many of your questions and provide guidance.</value>
   </data>
+  <data name="AllowMarketingEmails" xml:space="preserve">
+    <value>I would like to receive email communications</value>
+  </data>
+  <data name="AreMarketingEmailsAllowedLabel" xml:space="preserve">
+    <value>Are Marketing Emails Allowed</value>
+  </data>
   <data name="IsActiveLabel" xml:space="preserve">
     <value>Is Active</value>
   </data>

@@ -38,9 +38,10 @@ namespace K9.WebApplication.Controllers
         private readonly IUserService _userService;
         private readonly IRepository<PromoCode> _promoCodesRepository;
         private readonly IRecaptchaService _recaptchaService;
+        private readonly IRepository<Contact> _contactsRepository;
         private readonly RecaptchaConfiguration _recaptchaConfig;
 
-        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, Services.IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IContactService contactService, IUserService userService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository)
+        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, Services.IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IContactService contactService, IUserService userService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, IRepository<Contact> contactsRepository)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
         {
             _userRepository = userRepository;
@@ -53,6 +54,7 @@ namespace K9.WebApplication.Controllers
             _userService = userService;
             _promoCodesRepository = promoCodesRepository;
             _recaptchaService = recaptchaService;
+            _contactsRepository = contactsRepository;
             _recaptchaConfig = recaptchaConfig.Value;
         }
 
@@ -469,6 +471,7 @@ namespace K9.WebApplication.Controllers
             {
                 User = user,
                 Membership = _membershipService.GetActiveUserMembership(user?.Id),
+                AllowMarketingEmails = !user.IsUnsubscribed,
                 Consultations = _userService.GetPendingConsultations(user.Id)
             });
         }
@@ -480,6 +483,7 @@ namespace K9.WebApplication.Controllers
             return View("MyAccount", new MyAccountViewModel
             {
                 User = user,
+                AllowMarketingEmails = !user.IsUnsubscribed,
                 Membership = _membershipService.GetActiveUserMembership(user?.Id)
             });
         }
@@ -520,8 +524,26 @@ namespace K9.WebApplication.Controllers
                         }
                     }
 
+                    model.User.IsUnsubscribed = !model.AllowMarketingEmails;
                     _userRepository.Update(model.User);
 
+                    // Update contact record too
+                    var contact = _contactService.Find(model.User.EmailAddress);
+                    if (contact != null)
+                    {
+                        try
+                        {
+                            contact.IsUnsubscribed = !model.AllowMarketingEmails;
+                            _contactsRepository.Update(contact);
+                        }
+                        catch (Exception e)
+                        {
+                            _logger.Log(LogLevel.Error,
+                                $"AccountController => UpdateAccount => Could not update contact => ContactId: {contact.Id} Error => {e.GetFullErrorMessage()}");
+                            throw;
+                        }
+                    }
+                    
                     ViewBag.IsPopupAlert = true;
                     ViewBag.AlertOptions = new AlertOptions
                     {
@@ -860,12 +882,33 @@ namespace K9.WebApplication.Controllers
             }
         }
 
-        [Route("unsubscribe")]
-        public ActionResult Unsubscribe(string code = null)
+        [Route("unsubscribe-contact")]
+        public ActionResult UnsubscribeContact(string externalId)
         {
-            if (_contactService.Unsubscribe(code))
+            try
             {
+                _contactService.EnableMarketingEmails(externalId, false);
+            }
+            catch (Exception e)
+            {
+                _logger.Log(LogLevel.Error, $"AccountController => UnsubscribeContact => Contact with ExternalId: {externalId} was not found");
+                return View("UnsubscribeFailed");
+            }
+
+            return View("UnsubscribeSuccess");
+        }
+
+        [Route("unsubscribe-user")]
+        public ActionResult UnsubscribeUser(string externalId)
+        {
+            try
+            {
+                _userService.EnableMarketingEmails(externalId, false);
                 return View("UnsubscribeSuccess");
+            }
+            catch (Exception e)
+            {
+                _logger.Log(LogLevel.Error, $"AccountController => UnsubscribeUser => externalId: {externalId} => error: {e.GetFullErrorMessage()}");
             }
 
             return View("UnsubscribeFailed");

@@ -8,6 +8,9 @@
 	using (Html.BeginBootstrapForm())
 	{
 		@Html.HiddenFor(model => model.Id)
+		@Html.HiddenFor(model => model.Name)
+		@Html.HiddenFor(model => model.IsDeleted)
+
 		@Html.Partial("_EditFields")
 		<hr/>
 		@Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Update, EButtonType.Submit, "fa-save")

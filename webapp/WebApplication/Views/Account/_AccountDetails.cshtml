@@ -9,6 +9,7 @@
     {
         @Html.HiddenFor(model => model.User.Id)
         @Html.HiddenFor(model => model.User.Username)
+        @Html.HiddenFor(model => model.User.Name)
         @Html.HiddenFor(model => model.User.EmailAddress)
         @Html.Hidden("User.Password", "th1515n0tmypa55w0rd")
 
@@ -26,12 +27,21 @@
             <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.User.BirthDate)</div>
             <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.User.Gender)</div>
         </div>
-        @Html.BootstrapEditorFor(model => model.User.PhoneNumber)
+        <div>
+            <div class="col-sm-12">@Html.BootstrapEditorFor(model => model.User.PhoneNumber)</div>
+        </div>
+        <div>
+            <div class="col-sm-12">@Html.BootstrapEditorFor(model => model.AllowMarketingEmails)</div>
+        </div>
 
-        <hr />
-        @Html.BootstrapEditorFor(model => model.PromoCode)
+        <div>
+            <div class="col-sm-12">
+                <hr />
+                @Html.BootstrapEditorFor(model => model.PromoCode)
+                <hr />
+            </div>
+        </div>
 
-        <hr />
         @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Update, EButtonType.Submit, "fa-save", EButtonClass.Large)
         <span class="margin-right-2"></span>
         @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.DeleteMyAccount, "ConfirmDeleteAccount", "Account", new { id = Model.User.Id }, "fa-trash-alt", EButtonClass.Danger, EButtonClass.Large)

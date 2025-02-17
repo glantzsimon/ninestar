@@ -10,6 +10,7 @@ namespace K9.WebApplication.Services
         Contact Find(int id);
         Contact Find(string emailAddress);
         List<Contact> ListContacts();
-        bool Unsubscribe(string code = null);
+        void EnableMarketingEmails(string externalId, bool value = true);
+        bool AreMarketingEmailsEnableForContact(int id);
     }
 }

@@ -48,6 +48,10 @@ namespace K9.DataAccessLayer.Models
 	    [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IsUnsubscribedLabel)]
         public bool IsUnsubscribed { get; set; }
 
+	    [Display(ResourceType = typeof(Globalisation.Dictionary),
+	        Name = Globalisation.Strings.Labels.AreMarketingEmailsAllowedLabel)]
+	    public bool AreMarketingEmailsAllowed => !IsUnsubscribed;
+
 	    public string FirstName => FullName.Split(' ').FirstOrDefault();
 
 	}

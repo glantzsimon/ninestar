@@ -85,11 +85,14 @@
             public const string CodeLabel = "Code";
             public const string BiorhythmsLabel = "BiorhythmsLabel";
             public const string NineStarKiBiorhythmsLabel = "NineStarKiBiorhythmsLabel";
+
+            public const string AreMarketingEmailsAllowedLabel = "AreMarketingEmailsAllowedLabel";
         }
 
         public static class Names
         {
             public const string RedeemPromoCode = "RedeemPromoCode";
+            public const string AllowMarketingEmails = "AllowMarketingEmails";
             public const string UserData = "UserData";
             public const string UserDatas = "UserDatas";
             public const string Contacts = "Contacts";

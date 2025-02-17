@@ -4,14 +4,17 @@ using K9.Base.WebApplication.Controllers;
 using K9.Base.WebApplication.EventArgs;
 using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.UnitsOfWork;
+using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Services;
-using System;
-using System.Web.Mvc;
 using K9.WebApplication.ViewModels;
+using System;
+using System.Linq;
+using System.Web.Mvc;
 using WebMatrix.WebData;
+using LogLevel = NLog.LogLevel;
 
 namespace K9.WebApplication.Controllers
 {
@@ -23,16 +26,42 @@ namespace K9.WebApplication.Controllers
         private readonly IRoles _roles;
         private readonly IMembershipService _membershipService;
         private readonly IUserService _userService;
+        private readonly IRepository<Contact> _contactsRepository;
 
-        public UsersController(IControllerPackage<User> controllerPackage, IOptions<DatabaseConfiguration> dataConfig, IRoles roles, IMembershipService membershipService, IUserService userService)
+        public UsersController(IControllerPackage<User> controllerPackage, IOptions<DatabaseConfiguration> dataConfig, IRoles roles, IMembershipService membershipService, IUserService userService, IRepository<Contact> contactsRepository)
             : base(controllerPackage)
         {
             _dataConfig = dataConfig;
             _roles = roles;
             _membershipService = membershipService;
             _userService = userService;
+            _contactsRepository = contactsRepository;
+
             RecordCreated += UsersController_RecordCreated;
             RecordBeforeDeleted += UsersController_RecordBeforeDeleted;
+            RecordUpdated += UsersController_RecordUpdated;
+        }
+
+        private void UsersController_RecordUpdated(object sender, CrudEventArgs e)
+        {
+            var user = (User)e.Item;
+            var contact = _contactsRepository.Find(c => c.EmailAddress == user.EmailAddress).FirstOrDefault();
+
+            if (contact != null && user.IsUnsubscribed != contact.IsUnsubscribed)
+            {
+                contact.IsUnsubscribed = user.IsUnsubscribed;
+
+                try
+                {
+                    _contactsRepository.Update(contact);
+                }
+                catch (Exception ex)
+                {
+                    Logger.Log(LogLevel.Error,
+                        $"UsersController => UsersController_RecordUpdated => Could not update contact => ContactId: {contact.Id} => Error: {ex.GetFullErrorMessage()}");
+                    throw;
+                }
+            }
         }
 
         private void UsersController_RecordBeforeDeleted(object sender, CrudEventArgs e)

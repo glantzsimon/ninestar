@@ -11,6 +11,7 @@ using NLog;
 using System;
 using System.Linq;
 using System.Web.Mvc;
+using K9.Base.DataAccessLayer.Models;
 
 namespace K9.WebApplication.Controllers
 {
@@ -21,12 +22,38 @@ namespace K9.WebApplication.Controllers
         private readonly IRepository<Donation> _donationRepository;
         private readonly ILogger _logger;
         private readonly IMailChimpService _mailChimpService;
+        private readonly IRepository<User> _usersRepository;
 
-        public ContactsController(IControllerPackage<Contact> controllerPackage, IRepository<Donation> donationRepository, ILogger logger, IMailChimpService mailChimpService) : base(controllerPackage)
+        public ContactsController(IControllerPackage<Contact> controllerPackage, IRepository<Donation> donationRepository, ILogger logger, IMailChimpService mailChimpService, IRepository<User> usersRepository) : base(controllerPackage)
         {
             _donationRepository = donationRepository;
             _logger = logger;
             _mailChimpService = mailChimpService;
+            _usersRepository = usersRepository;
+
+            RecordUpdated += ContactsController_RecordUpdated;
+        }
+
+        private void ContactsController_RecordUpdated(object sender, Base.WebApplication.EventArgs.CrudEventArgs e)
+        {
+            var contact = (Contact)e.Item;
+            var user = _usersRepository.Find(u => u.EmailAddress == contact.EmailAddress).FirstOrDefault();
+
+            if (user != null && user.IsUnsubscribed != contact.IsUnsubscribed)
+            {
+                user.IsUnsubscribed = contact.IsUnsubscribed;
+
+                try
+                {
+                    _usersRepository.Update(user);
+                }
+                catch (Exception ex)
+                {
+                    _logger.Log(LogLevel.Error,
+                        $"ContactsController => ContactsController_RecordUpdated => Could not update user => UserId: {user.Id} => Error: {ex.GetFullErrorMessage()}");
+                    throw;
+                }
+            }
         }
 
         public ActionResult ImportContactsFromDonations()

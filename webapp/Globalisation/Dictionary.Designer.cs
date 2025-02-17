@@ -1447,6 +1447,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to I would like to receive email communications.
+        /// </summary>
+        public static string AllowMarketingEmails {
+            get {
+                return ResourceManager.GetString("AllowMarketingEmails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Amount Donated.
         /// </summary>
         public static string AmountDonatedLabel {
@@ -1497,6 +1506,15 @@ namespace K9.Globalisation {
         public static string AnnualStandardMembership {
             get {
                 return ResourceManager.GetString("AnnualStandardMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are Marketing Emails Allowed.
+        /// </summary>
+        public static string AreMarketingEmailsAllowedLabel {
+            get {
+                return ResourceManager.GetString("AreMarketingEmailsAllowedLabel", resourceCulture);
             }
         }
         
@@ -9894,7 +9912,7 @@ namespace K9.Globalisation {
         ///
         ///&lt;body&gt;
         ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;We have received a d [rest of string was truncated]&quot;;.
+        ///    &lt;p class=&quot;text&quot;&gt;We have received a s [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SupportQueryReceived {
             get {

@@ -1,10 +1,11 @@
-﻿using K9.DataAccessLayer.Models;
+﻿using K9.Base.DataAccessLayer.Models;
+using K9.DataAccessLayer.Models;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using K9.SharedLibrary.Extensions;
 
 namespace K9.WebApplication.Services
 {
@@ -12,11 +13,13 @@ namespace K9.WebApplication.Services
     {
         private readonly IRepository<Contact> _contactsRepository;
         private readonly ILogger _logger;
+        private readonly IRepository<User> _usersRepository;
 
-        public ContactService(IRepository<Contact> contactsRepository, ILogger logger)
+        public ContactService(IRepository<Contact> contactsRepository, ILogger logger, IRepository<User> usersRepository)
         {
             _contactsRepository = contactsRepository;
             _logger = logger;
+            _usersRepository = usersRepository;
         }
 
         public Contact GetOrCreateContact(string stripeCustomerId, string fullName, string emailAddress, string phoneNumber = "", int? userId = null)
@@ -90,19 +93,56 @@ namespace K9.WebApplication.Services
             return _contactsRepository.List().OrderBy(e => e.FullName).ToList();
         }
 
-        public bool Unsubscribe(string code = null)
+        public void EnableMarketingEmails(string externalId, bool value = true)
         {
-            if (code != null)
+            if (externalId != null)
             {
-                var contact = _contactsRepository.Find(e => e.Name == code).FirstOrDefault();
-                if (contact != null)
+                var contact = _contactsRepository.Find(e => e.Name == externalId).FirstOrDefault();
+                if (contact == null)
                 {
-                    contact.IsUnsubscribed = true;
+                    _logger.Log(LogLevel.Error, $"ContactService => EnableMarketingEmails => Contact with External Id: {externalId} not found");
+                    throw new Exception("Contact not found");
+                }
+
+                try
+                {
+                    contact.IsUnsubscribed = !value;
                     _contactsRepository.Update(contact);
-                    return true;
+                }
+                catch (Exception e)
+                {
+                    _logger.Log(LogLevel.Error,
+                        $"ContactService => EnableMarketingEmails => Could not update contact => ContactId: {contact.Id} Error => {e.GetFullErrorMessage()}");
+                    throw;
+                }
+
+                var user = _usersRepository.Find(e => e.EmailAddress == contact.EmailAddress).FirstOrDefault();
+                if (user != null)
+                {
+                    user.IsUnsubscribed = !value;
+                    try
+                    {
+                        _usersRepository.Update(user);
+                    }
+                    catch (Exception e)
+                    {
+                        _logger.Log(LogLevel.Error,
+                            $"ContactService => EnableMarketingEmails => Could not update user => UserId: {user.Id} => Error: {e.GetFullErrorMessage()}");
+                        throw;
+                    }
                 }
             }
-            return false;
+        }
+
+        public bool AreMarketingEmailsEnableForContact(int id)
+        {
+            var contact = _contactsRepository.Find(id);
+            if (contact == null)
+            {
+                _logger.Log(LogLevel.Error, $"ContactService => AreMarketingEmailsEnableForContact => Contact with ContactId: {id} not found");
+                throw new Exception("Contact not found");
+            }
+            return !contact.IsUnsubscribed;
         }
     }
 }

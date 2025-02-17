@@ -56,6 +56,7 @@ namespace K9.WebApplication.Services
         public void SendActivationEmail(UserAccount.RegisterModel model, int sixDigitCode)
         {
             var contact = _contactService.Find(model.EmailAddress);
+            var user = _usersRepository.Find(e => e.Username == model.UserName).FirstOrDefault();
             var imageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl);
 
             var emailContent = TemplateProcessor.PopulateTemplate(Globalisation.Dictionary.WelcomeEmail, new
@@ -65,7 +66,7 @@ namespace K9.WebApplication.Services
                 Company = _config.CompanyName,
                 PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
                 TermsOfServiceLink = _urlHelper.AbsoluteAction("TermsOfService", "Home"),
-                UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact?.Name }),
+                UnsubscribeLink = _urlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }),
                 ActivationCode = sixDigitCode,
                 ImageUrl = imageUrl,
                 From = _config.CompanyName

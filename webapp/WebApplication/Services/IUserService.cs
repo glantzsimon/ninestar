@@ -15,5 +15,8 @@ namespace K9.WebApplication.Services
         User Find(string username);
         List<UserConsultation> GetPendingConsultations(int? userId = null);
         void DeleteUser(int id);
+        void EnableMarketingEmails(string externalId, bool value = true);
+        void EnableMarketingEmails(int id, bool value = true);
+        bool AreMarketingEmailsAllowedForUser(int id);
     }
 }

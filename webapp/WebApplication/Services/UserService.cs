@@ -124,7 +124,7 @@ namespace K9.WebApplication.Services
         {
             var template = Dictionary.PromoCodeEmail;
             var title = Dictionary.PromoCodeEmailTitle;
-            var contact = _contactService.GetOrCreateContact("", model.Name, model.EmailAddress);
+            var user = _usersRepository.Find(e => e.EmailAddress == model.EmailAddress).FirstOrDefault();
 
             _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
             {
@@ -134,7 +134,7 @@ namespace K9.WebApplication.Services
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
                 PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
                 TermsOfServiceLink = _urlHelper.AbsoluteAction("TermsOfService", "Home"),
-                UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact?.Name }),
+                UnsubscribeLink = _urlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }),
                 PromoLink = _urlHelper.AbsoluteAction("Register", "Account", new { promoCode = model.PromoCode.Code }),
                 PromoDetails = model.PromoCode.Details,
                 DateTime.Now.Year
@@ -151,7 +151,7 @@ namespace K9.WebApplication.Services
 
         public User Find(string username)
         {
-            return _usersRepository.Find(username).FirstOrDefault();
+            return _usersRepository.Find(e => e.Username == username).FirstOrDefault();
         }
 
         public List<UserConsultation> GetPendingConsultations(int? userId = null)
@@ -249,6 +249,65 @@ namespace K9.WebApplication.Services
             {
                 _logger.Log(LogLevel.Error, $"UserService => DeleteUser => Error: {e.GetFullErrorMessage()}");
                 throw new Exception("Error deleting user account");
+            }
+        }
+
+        public bool AreMarketingEmailsAllowedForUser(int id)
+        {
+            var user = _usersRepository.Find(id);
+            if (user == null)
+            {
+                _logger.Log(LogLevel.Error, $"UserService => AreMarketingEmailsAllowedForUser => User with UserId: {id} not found");
+                throw new Exception("User not found");
+            }
+            return !user.IsUnsubscribed;
+        }
+
+        public void EnableMarketingEmails(int id, bool value = true)
+        {
+            EnableMarketingEmailForUser(value, _usersRepository.Find(id));
+        }
+
+        public void EnableMarketingEmails(string externalId, bool value = true)
+        {
+            var user = _usersRepository.Find(e => e.Name == externalId).FirstOrDefault();
+            if (user == null)
+            {
+                _logger.Log(LogLevel.Error, $"UserService => EnableMarketingEmails => User with External Id: {externalId} not found");
+                throw new Exception("User not found");
+            }
+
+            EnableMarketingEmailForUser(value, user);
+
+            var contact = _contactService.Find(user.EmailAddress);
+            if (contact != null)
+            {
+                try
+                {
+                    contact.IsUnsubscribed = !value;
+                    _contactsRepository.Update(contact);
+                }
+                catch (Exception e)
+                {
+                    _logger.Log(LogLevel.Error,
+                        $"UserService => EnableMarketingEmails => Could not update contact => ContactId: {contact.Id} Error => {e.GetFullErrorMessage()}");
+                    throw;
+                }
+            }
+        }
+
+        private void EnableMarketingEmailForUser(bool value, User user)
+        {
+            user.IsUnsubscribed = !value;
+            try
+            {
+                _usersRepository.Update(user);
+            }
+            catch (Exception e)
+            {
+                _logger.Log(LogLevel.Error,
+                    $"UserService => EnableMarketingEmailForUser => Could not update user => UserId: {user.Id} => error: {e.GetFullErrorMessage()}");
+                throw;
             }
         }
     }

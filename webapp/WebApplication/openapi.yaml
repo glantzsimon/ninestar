@@ -55,6 +55,64 @@ paths:
       security:
         - apiKeyAuth: []
 
+  /api/predictions/get/{accountNumber}/{dateOfBirth}/{gender}/{selectedDate}:
+    get:
+      operationId: getPredictions
+      summary: Retrieve information about a person's 9 star ki monthly and yearly predictions.
+      description: Returns JSON data about a person's 9 Star Ki monthly and yearly predictions based on birth date and gender.
+      parameters:
+        - name: accountNumber
+          in: path
+          required: true
+          description: The user's 9-digit account number
+          schema:
+            type: string
+            example: "123456789"
+        - name: dateOfBirth
+          in: path
+          required: true
+          description: Date of birth in YYYY-MM-DD format.
+          schema:
+            type: string
+            format: date
+            example: "1985-06-16"
+        - name: gender
+          in: path
+          required: true
+          description: Gender of the person.
+          schema:
+            type: string
+            enum: ["Male", "Female", "Other"]
+            example: "Male"
+        - name: selectedDate
+          in: path
+          required: true
+          description: selected date in YYYY-MM-DD format.
+          schema:
+            type: string
+            format: date
+            example: "1985-06-16"
+
+      responses:
+        "200":
+          description: Successful response with person data.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PredictionsResponse"
+        "400":
+          description: Bad request. Invalid or missing parameters.
+        "401":
+          description: Unauthorized. API key missing or invalid.
+        "404":
+          description: Unauthorized. Invalid account number.
+        "422":
+          description: Unauthorized. Valid account number but membership requires upgrade.
+        "500":
+          description: Internal server error.
+      security:
+        - apiKeyAuth: []
+
   /api/compatibility/get/{accountNumber}/{firstPersonName}/{firstPersonDateOfBirth}/{firstPersonGender}/{secondPersonName}/{secondPersonDateOfBirth}/{secondPersonGender}/{displaySexualChemistry}:
     get:
       operationId: getCompatibility
@@ -156,6 +214,18 @@ components:
           example: true
         data:
           $ref: "#/components/schemas/NineStarKiModel"
+
+    PredictionsResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        data:
+          type: object
+          properties:
+            NineStarKiModel:
+              $ref: "#/components/schemas/NineStarKiModel"
 
     CompatibilityResponse:
       type: object
@@ -315,6 +385,30 @@ components:
         Overview:
           type: string
           description: A general overview of the person's characteristics.
+
+    NineStarKiSummaryKbViewModel:
+      type: object
+      properties:
+        CharacterEnergies:
+          type: array
+          items:
+            $ref: "#/components/schemas/Energy"
+        MainEnergies:
+          type: array
+          items:
+            $ref: "#/components/schemas/Energy"
+        DynamicEnergies:
+          type: array
+          items:
+            $ref: "#/components/schemas/Energy"
+        StableEnergies:
+          type: array
+          items:
+            $ref: "#/components/schemas/Energy"
+        FlexibleEnergies:
+          type: array
+          items:
+            $ref: "#/components/schemas/Energy"
 
     PersonModel:
       type: object

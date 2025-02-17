@@ -379,6 +379,7 @@
     <Compile Include="Services\IAccountService.cs" />
     <Compile Include="ViewModels\AssignConsultationModel.cs" />
     <Compile Include="ViewModels\AdminViewModel.cs" />
+    <Compile Include="ViewModels\NineStarKiSummaryKbViewModel.cs" />
     <Compile Include="ViewModels\UserMembershipsViewModel.cs" />
     <Compile Include="ViewModels\WhatsAppViewModel.cs" />
     <Compile Include="ViewModels\PredictionsViewModel.cs" />

@@ -37,11 +37,7 @@ namespace K9.WebApplication.Controllers
                 Gender = Methods.GetRandomGender()
             };
             return View(
-                new PredictionsViewModel
-                {
-                    NineStarKiModel = new NineStarKiModel(personModel),
-                    NineStarKiSummaryViewModel = _nineStarKiService.GetNineStarKiSummaryViewModel()
-                });
+                new PredictionsViewModel(new NineStarKiModel(personModel), _nineStarKiService.GetNineStarKiSummaryViewModel()));
         }
 
         [Route("predictions")]
@@ -57,12 +53,7 @@ namespace K9.WebApplication.Controllers
                 model.SelectedDate = selectedDate;
             }
 
-            return View(
-                new PredictionsViewModel
-                {
-                    NineStarKiModel = model,
-                    NineStarKiSummaryViewModel = _nineStarKiService.GetNineStarKiSummaryViewModel()
-                });
+            return View(new PredictionsViewModel(model, _nineStarKiService.GetNineStarKiSummaryViewModel()));
         }
 
         [Authorize]
@@ -77,7 +68,7 @@ namespace K9.WebApplication.Controllers
                 Gender = myAccount.Gender
             }, false, true));
         }
-        
+
         [Route("predictions/retrieve-last")]
         [Authorize]
         public ActionResult RetrieveLastPredictions(bool todayOnly = false)

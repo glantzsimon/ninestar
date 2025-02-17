@@ -1,15 +1,25 @@
 ﻿using K9.WebApplication.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.Script.Serialization;
 
 namespace K9.WebApplication.ViewModels
 {
     public class NineStarKiSummaryViewModel
     {
+        [ScriptIgnore]
         public List<NineStarKiEnergy> CharacterEnergies { get; set; }
+
+        [ScriptIgnore]
         public List<NineStarKiEnergy> MainEnergies { get; set; }
+
+        [ScriptIgnore]
         public NineStarKiModalitySummaryViewModel DynamicEnergies { get; set; }
+
+        [ScriptIgnore]
         public NineStarKiModalitySummaryViewModel StableEnergies { get; set; }
+        
+        [ScriptIgnore]
         public NineStarKiModalitySummaryViewModel FlexibleEnergies { get; set; }
 
         public NineStarKiSummaryViewModel(

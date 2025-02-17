@@ -4,7 +4,14 @@ namespace K9.WebApplication.ViewModels
 {
     public class PredictionsViewModel
     {
-        public NineStarKiModel NineStarKiModel { get; set; }
-        public NineStarKiSummaryViewModel NineStarKiSummaryViewModel { get; set; }
+        public NineStarKiModel NineStarKiModel { get; }
+
+        public NineStarKiSummaryViewModel NineStarKiSummaryViewModel { get; }
+
+        public PredictionsViewModel(NineStarKiModel nineStarKiModel, NineStarKiSummaryViewModel nineStarKiSummaryViewModel)
+        {
+            NineStarKiModel = nineStarKiModel;
+            NineStarKiSummaryViewModel = nineStarKiSummaryViewModel;
+        }
     }
 }

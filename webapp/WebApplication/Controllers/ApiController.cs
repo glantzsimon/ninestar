@@ -1,16 +1,17 @@
 ﻿using K9.Base.DataAccessLayer.Enums;
 using K9.Base.DataAccessLayer.Models;
+using K9.DataAccessLayer.Models;
+using K9.SharedLibrary.Authentication;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.Models;
 using K9.WebApplication.Services;
+using K9.WebApplication.ViewModels;
 using NLog;
 using System;
 using System.Web.Mvc;
-using K9.DataAccessLayer.Models;
-using K9.SharedLibrary.Authentication;
-using K9.SharedLibrary.Extensions;
 
 namespace K9.WebApplication.Controllers
 {
@@ -100,6 +101,33 @@ namespace K9.WebApplication.Controllers
                 }
 
                 return Json(new { success = true, data = model }, JsonRequestBehavior.AllowGet);
+            });
+        }
+
+        [Route("predictions/get/{accountNumber}/" +
+               "{dateOfBirth}/{gender}")]
+        public JsonResult GetPredictions(string accountNumber, DateTime dateOfBirth, EGender gender, DateTime? selectedDate = null)
+        {
+            return Validate(accountNumber, () =>
+            {
+                selectedDate = selectedDate.HasValue ? selectedDate.Value : DateTime.Today;
+
+                var model = new NineStarKiModel(new PersonModel
+                {
+                    DateOfBirth = dateOfBirth,
+                    Gender = gender
+                })
+                {
+                    SelectedDate = selectedDate
+                };
+
+                model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false, selectedDate);
+                model.SelectedDate = selectedDate;
+
+                var predictionsViewModel =
+                    new PredictionsViewModel(model, _nineStarKiService.GetNineStarKiSummaryViewModel());
+
+                return Json(new { success = true, data = predictionsViewModel }, JsonRequestBehavior.AllowGet);
             });
         }
 

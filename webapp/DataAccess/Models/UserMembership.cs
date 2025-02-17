@@ -60,7 +60,7 @@ namespace K9.DataAccessLayer.Models
         [LinkedColumn(LinkedTableName = "MembershipOption", LinkedColumnName = "Name")]
         public string MembershipOptionName { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubscriptionTypeLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsActiveLabel)]
         public bool IsActive => (DateTime.Today.IsBetween(StartsOn.Date, EndsOn.Date) || MembershipOption?.SubscriptionType == MembershipOption.ESubscriptionType.LifeTimePlatinum) && !IsDeactivated;
 
         public TimeSpan Duration => EndsOn.Subtract(StartsOn);

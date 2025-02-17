@@ -338,6 +338,8 @@ components:
     NineStarKiPredictionsSummaryModel:
       type: object
       properties:
+        PersonalChartModel:
+          $ref: "#/components/schemas/NineStarKiSummaryModel"
         YearlyPrediction:
           $ref: "#/components/schemas/NineStarKiEnergyCycleSummary"
         MonthlyPrediction:

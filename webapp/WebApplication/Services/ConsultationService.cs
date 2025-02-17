@@ -1,21 +1,21 @@
-﻿using K9.Base.WebApplication.Config;
+﻿using K9.Base.DataAccessLayer.Models;
+using K9.Base.WebApplication.Config;
+using K9.DataAccessLayer.Enums;
+using K9.DataAccessLayer.Extensions;
 using K9.DataAccessLayer.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
-using K9.WebApplication.Constants;
 using K9.WebApplication.Helpers;
 using NLog;
+using NodaTime;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using K9.DataAccessLayer.Enums;
-using K9.DataAccessLayer.Extensions;
-using NodaTime;
 
 namespace K9.WebApplication.Services
 {
@@ -28,11 +28,12 @@ namespace K9.WebApplication.Services
         private readonly IRepository<UserConsultation> _userConsultationRepository;
         private readonly IRepository<Slot> _slotRepository;
         private readonly IContactService _contactService;
+        private readonly IRepository<User> _userRepository;
         private readonly DefaultValuesConfiguration _defaultValues;
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public ConsultationService(IRepository<Consultation> consultationRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> config, IAuthentication authentication, IRepository<UserConsultation> userConsultationRepository, IRepository<Slot> slotRepository, IContactService contactService, IOptions<DefaultValuesConfiguration> defaultValue)
+        public ConsultationService(IRepository<Consultation> consultationRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> config, IAuthentication authentication, IRepository<UserConsultation> userConsultationRepository, IRepository<Slot> slotRepository, IContactService contactService, IOptions<DefaultValuesConfiguration> defaultValue, IRepository<User> userRepository)
         {
             _consultationRepository = consultationRepository;
             _logger = logger;
@@ -41,6 +42,7 @@ namespace K9.WebApplication.Services
             _userConsultationRepository = userConsultationRepository;
             _slotRepository = slotRepository;
             _contactService = contactService;
+            _userRepository = userRepository;
             _defaultValues = defaultValue.Value;
             _config = config.Value;
             _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
@@ -92,18 +94,17 @@ namespace K9.WebApplication.Services
 
         public void CreateConsultation(Consultation consultation, Contact contact, int? userId = null)
         {
+            userId = userId.HasValue ? userId : Current.UserId;
+
             try
             {
                 _consultationRepository.Create(consultation);
-
-                if (_authentication.IsAuthenticated)
+                _userConsultationRepository.Create(new UserConsultation
                 {
-                    _userConsultationRepository.Create(new UserConsultation
-                    {
-                        UserId = userId ?? Current.UserId,
-                        ConsultationId = consultation.Id
-                    });
-                }
+                    UserId = userId.Value,
+                    ConsultationId = consultation.Id
+                });
+
             }
             catch (Exception ex)
             {
@@ -112,8 +113,10 @@ namespace K9.WebApplication.Services
 
             try
             {
-                SendEmailToNineStar(consultation, contact);
-                SendEmailToCustomer(consultation, contact);
+                var user = _userRepository.Find(userId.Value);
+
+                SendEmailToNineStar(consultation, user);
+                SendEmailToUser(consultation, user);
             }
             catch (Exception e)
             {
@@ -237,16 +240,16 @@ namespace K9.WebApplication.Services
         }
 
 
-        private void SendEmailToNineStar(Consultation consultation, Contact contact)
+        private void SendEmailToNineStar(Consultation consultation, User user)
         {
             var template = Dictionary.ConsultationBookedEmail;
             var title = "We have received a consultation booking!";
             _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
             {
                 Title = title,
-                ContactName = contact.FullName,
-                CustomerEmail = contact.EmailAddress,
-                contact.PhoneNumber,
+                ContactName = user.FullName,
+                CustomerEmail = user.EmailAddress,
+                user.PhoneNumber,
                 Duration = consultation.DurationDescription,
                 Price = consultation.FormattedPrice,
                 Company = _config.CompanyName,
@@ -254,22 +257,24 @@ namespace K9.WebApplication.Services
             }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
         }
 
-        private void SendEmailToCustomer(Consultation consultation, Contact contact)
+        private void SendEmailToUser(Consultation consultation, User user)
         {
             var template = Dictionary.ConsultationBookedThankYouEmail;
             var title = Dictionary.ThankyouForBookingConsultationEmailTitle;
+            var contact = _contactService.Find(user.EmailAddress);
+
             _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
             {
                 Title = title,
-                contact.FirstName,
+                user.FirstName,
                 Duration = consultation.DurationDescription,
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
                 ScheduleUrl = _urlHelper.AbsoluteAction("ScheduleConsultation", "Consultation", new { consultationId = consultation.Id }),
                 PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
                 TermsOfServiceLink = _urlHelper.AbsoluteAction("TermsOfService", "Home"),
-                UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact.Name }),
+                UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact?.Name }),
                 DateTime.Now.Year
-            }), contact.EmailAddress, contact.FullName, _config.SupportEmailAddress, _config.CompanyName);
+            }), user.EmailAddress, user.FullName, _config.SupportEmailAddress, _config.CompanyName);
         }
 
         private void SendAppointmentConfirmationEmailToNineStar(Consultation consultation, Contact contact)
@@ -303,7 +308,7 @@ namespace K9.WebApplication.Services
                 RescheduleUrl = _urlHelper.AbsoluteAction("ScheduleConsultation", "Consultation", new { consultationId = consultation.Id }),
                 PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
                 TermsOfServiceLink = _urlHelper.AbsoluteAction("TermsOfService", "Home"),
-                UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact.Name }),
+                UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact?.Name }),
                 DateTime.Now.Year
             }), contact.EmailAddress, contact.FullName, _config.SupportEmailAddress, _config.CompanyName);
         }

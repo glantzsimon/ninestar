@@ -345,13 +345,16 @@ namespace K9.WebApplication.Controllers
         {
             ViewBag.RecaptchaSiteKey = _recaptchaConfig.RecaptchaSiteKey;
 
-            var encodedResponse = Request.Form[RecaptchaResult.ResponseFormVariable];
-            var isCaptchaValid = _recaptchaService.Validate(encodedResponse);
-
-            if (!isCaptchaValid)
+            if (!Helpers.Environment.IsDebug)
             {
-                ModelState.AddModelError("", Globalisation.Dictionary.InvalidRecaptcha);
-                return View(model);
+                var encodedResponse = Request.Form[RecaptchaResult.ResponseFormVariable];
+                var isCaptchaValid = _recaptchaService.Validate(encodedResponse);
+
+                if (!isCaptchaValid)
+                {
+                    ModelState.AddModelError("", Globalisation.Dictionary.InvalidRecaptcha);
+                    return View(model);
+                }
             }
 
             if (_authentication.IsAuthenticated)
@@ -858,7 +861,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("unsubscribe")]
-        public ActionResult Unsubscribe(string code)
+        public ActionResult Unsubscribe(string code = null)
         {
             if (_contactService.Unsubscribe(code))
             {

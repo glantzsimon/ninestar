@@ -19,6 +19,15 @@
 form .pull-right .btn {
   margin-right: 0;
 }
+.table-row {
+  border-bottom: 1px solid #d9d9d9;
+  padding-top: 11px;
+  padding-bottom: 6px;
+}
+.table-row button {
+  margin-top: -4px !important;
+  margin-bottom: 0 !important;
+}
 .datatable-container .col-lg-1,
 .datatable-container .col-lg-10,
 .datatable-container .col-lg-11,

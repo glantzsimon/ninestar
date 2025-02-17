@@ -16,7 +16,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using K9.DataAccessLayer.Helpers;
-using UserMembership = K9.WebApplication.ViewModels.UserMembership;
 
 namespace K9.WebApplication.Services
 {
@@ -74,13 +73,13 @@ namespace K9.WebApplication.Services
             return null;
         }
 
-        public UserMembership GetMembershipViewModel(int? userId = null)
+        public UserMembershipViewModel GetMembershipViewModel(int? userId = null)
         {
             userId = userId ?? Current.UserId;
             var membershipOptions = _membershipOptionRepository.Find(e => !e.IsDeleted).ToList();
             var activeUserMembership = userId.HasValue ? GetActiveUserMembership(userId) : null;
 
-            return new UserMembership
+            return new UserMembershipViewModel
             {
                 MembershipModels = new List<MembershipModel>(membershipOptions
                     .Where(e => !e.IsDeleted)
@@ -229,12 +228,13 @@ namespace K9.WebApplication.Services
 
         public void ProcessPurchase(PurchaseModel purchaseModel)
         {
-            DataAccessLayer.Models.UserMembership userMembership = null;
+            UserMembership userMembership = null;
+            MembershipOption membershipOption = null;
 
             try
             {
                 var membershipOptionId = purchaseModel.ItemId;
-                var membershipOption = _membershipOptionRepository.Find(membershipOptionId);
+                membershipOption = _membershipOptionRepository.Find(membershipOptionId);
 
                 if (membershipOption == null)
                 {
@@ -251,11 +251,12 @@ namespace K9.WebApplication.Services
                     IsAutoRenew = true
                 };
                 SetMembershipEndDate(userMembership);
+                
+                TerminateExistingMemberships(userMembership.UserId);
 
                 _userMembershipRepository.Create(userMembership);
                 userMembership.User = _usersRepository.Find(Current.UserId);
-                TerminateExistingMemberships(membershipOptionId);
-
+                
                 if (membershipOption.SubscriptionType >= MembershipOption.ESubscriptionType.AnnualPlatinum)
                 {
                     CreateComplementaryUserConsultation(Current.UserId);
@@ -268,10 +269,27 @@ namespace K9.WebApplication.Services
                 throw ex;
             }
 
+            var user = userMembership.User;
             try
             {
+                var contact = _contactService.Find(purchaseModel.CustomerEmailAddress);
+                if (contact == null)
+                {
+                    contact = _contactService.GetOrCreateContact("", purchaseModel.CustomerName, purchaseModel.CustomerEmailAddress, "",
+                        user.Id);
+                }
+            }
+            catch (Exception e)
+            {
+                _logger.Error($"MembershipService => ProcessPurchase => Get contact record failed failed for user: {user.Id} {e.GetFullErrorMessage()}");
+                SendEmailToNineStarAboutFailure(purchaseModel, e.GetFullErrorMessage());
+            }
+
+            try
+            {
+                userMembership.MembershipOption = membershipOption;
                 SendEmailToNineStar(purchaseModel, userMembership);
-                SendEmailToCustomer(purchaseModel, userMembership);
+                SendEmailToUser(purchaseModel, userMembership);
             }
             catch (Exception e)
             {
@@ -281,19 +299,22 @@ namespace K9.WebApplication.Services
 
         private void SetMembershipEndDate(DataAccessLayer.Models.UserMembership membership)
         {
-            if (membership.MembershipOption.IsWeekly)
+            var membershipOption = _membershipOptionRepository.Find(e => e.Id == membership.MembershipOptionId)
+                    .FirstOrDefault();
+
+            if (membershipOption.IsWeekly)
             {
                 membership.EndsOn = membership.StartsOn.AddDays(7);
             }
-            else if (membership.MembershipOption.IsMonthly)
+            else if (membershipOption.IsMonthly)
             {
                 membership.EndsOn = membership.StartsOn.AddMonths(1);
             }
-            else if (membership.MembershipOption.IsAnnual)
+            else if (membershipOption.IsAnnual)
             {
                 membership.EndsOn = membership.StartsOn.AddYears(1);
             }
-            else if (membership.MembershipOption.IsForever)
+            else if (membershipOption.IsForever)
             {
                 membership.EndsOn = DateTime.MaxValue;
             }
@@ -319,9 +340,10 @@ namespace K9.WebApplication.Services
                 };
                 SetMembershipEndDate(userMembership);
 
+                TerminateExistingMemberships(userId);
+
                 _userMembershipRepository.Create(userMembership);
                 userMembership.User = _usersRepository.Find(userId);
-                TerminateExistingMemberships(membershipOptionId);
             }
             catch (Exception ex)
             {
@@ -352,13 +374,18 @@ namespace K9.WebApplication.Services
                 };
                 SetMembershipEndDate(userMembership);
 
+                TerminateExistingMemberships(Current.UserId);
+
                 _userMembershipRepository.Create(userMembership);
                 var user = _userService.Find(Current.UserId);
                 userMembership.User = user;
-
-                TerminateExistingMemberships(membershipOptionId);
-
-                var contact = _contactService.GetOrCreateContact("", user.FullName, user.EmailAddress, user.PhoneNumber, user.Id);
+                
+                var contact = _contactService.Find(user.EmailAddress);
+                if (contact == null)
+                {
+                    contact = _contactService.GetOrCreateContact("", user.FullName, user.EmailAddress, user.PhoneNumber,
+                        user.Id);
+                }
 
                 purchaseModel = new PurchaseModel
                 {
@@ -372,7 +399,7 @@ namespace K9.WebApplication.Services
                 };
 
                 SendEmailToNineStar(purchaseModel, userMembership);
-                SendEmailToCustomer(purchaseModel, userMembership);
+                SendEmailToUser(purchaseModel, userMembership);
             }
             catch (Exception ex)
             {
@@ -445,19 +472,18 @@ namespace K9.WebApplication.Services
             }
         }
 
-        private void TerminateExistingMemberships(int activeUserMembershipId)
+        private void TerminateExistingMemberships(int userId)
         {
-            var userMemberships = GetActiveUserMemberships(Current.UserId);
-            var activeUserMembership =
-                userMemberships.FirstOrDefault(_ => _.MembershipOptionId == activeUserMembershipId);
-            if (activeUserMembership == null)
+            var userMemberships = GetActiveUserMemberships(userId);
+            var activeUserMemberships = userMemberships.Where(e => e.IsActive).ToList();
+            if (!activeUserMemberships.Any())
             {
-                _logger.Error($"MembershipService => TerminateExistingMemberships => ActiveMembership cannot be determined or does not exist");
+                _logger.Error($"MembershipService => TerminateExistingMemberships => No active memberships");
                 return;
             }
-            foreach (var userMembership in userMemberships.Where(_ => _.MembershipOptionId != activeUserMembershipId))
+            foreach (var userMembership in activeUserMemberships)
             {
-                userMembership.EndsOn = activeUserMembership.StartsOn;
+                userMembership.EndsOn = DateTime.Now;
                 userMembership.IsDeactivated = true;
                 _userMembershipRepository.Update(userMembership);
             }
@@ -481,33 +507,32 @@ namespace K9.WebApplication.Services
             }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
         }
 
-        private void SendEmailToCustomer(PurchaseModel purchaseModel, DataAccessLayer.Models.UserMembership userMembership)
+        private void SendEmailToUser(PurchaseModel purchaseModel, DataAccessLayer.Models.UserMembership userMembership)
         {
+            var user = userMembership.User;
             var contact = _contactService.Find(purchaseModel.CustomerEmailAddress);
             var template = Dictionary.NewMembershipThankYouEmail;
             var title = TemplateProcessor.PopulateTemplate(Dictionary.ThankyouForSubscriptionEmailTitle, new
             {
                 SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal
             });
-            if (contact != null && !contact.IsUnsubscribed)
+
+            _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
             {
-                _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
-                {
-                    Title = title,
-                    CustomerName = contact.FirstName,
-                    SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal,
-                    TotalPrice = userMembership.MembershipOption.FormattedPrice,
-                    EndsOn = userMembership.EndsOn.ToLongDateString(),
-                    userMembership.MembershipOption.NumberOfProfileReadings,
-                    userMembership.MembershipOption.NumberOfCompatibilityReadings,
-                    ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
-                    PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                    TermsOfServiceLink = _urlHelper.AbsoluteAction("TermsOfService", "Home"),
-                    UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { id = contact.Id }),
-                    DateTime.Now.Year
-                }), userMembership.User.EmailAddress, userMembership.User.FirstName, _config.SupportEmailAddress,
-                    _config.CompanyName);
-            }
+                Title = title,
+                CustomerName = user.FirstName,
+                SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal,
+                TotalPrice = userMembership.MembershipOption.FormattedPrice,
+                EndsOn = userMembership.EndsOn.ToLongDateString(),
+                userMembership.MembershipOption.NumberOfProfileReadings,
+                userMembership.MembershipOption.NumberOfCompatibilityReadings,
+                ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
+                PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
+                TermsOfServiceLink = _urlHelper.AbsoluteAction("TermsOfService", "Home"),
+                UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { id = contact?.Name }),
+                DateTime.Now.Year
+            }), user.EmailAddress, user.FirstName, _config.SupportEmailAddress,
+                _config.CompanyName);
         }
 
         private void SendEmailToNineStarAboutFailure(PurchaseModel purchaseModel, string errorMessage)

@@ -8,7 +8,7 @@ namespace K9.DataAccessLayer.Database
         protected override void Seed(LocalDb db)
 		{
             base.Seed(db);
-            MembershipOptionsSeeder.Seed(db);
+            //MembershipOptionsSeeder.Seed(db);
         }
 	}
 }

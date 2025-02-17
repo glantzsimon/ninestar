@@ -65,7 +65,7 @@ namespace K9.WebApplication.Services
                 Company = _config.CompanyName,
                 PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
                 TermsOfServiceLink = _urlHelper.AbsoluteAction("TermsOfService", "Home"),
-                UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact.Name }),
+                UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact?.Name }),
                 ActivationCode = sixDigitCode,
                 ImageUrl = imageUrl,
                 From = _config.CompanyName

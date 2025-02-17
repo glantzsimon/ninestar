@@ -5085,6 +5085,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Is Active.
+        /// </summary>
+        public static string IsActiveLabel {
+            get {
+                return ResourceManager.GetString("IsActiveLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Is Taken.
         /// </summary>
         public static string IsTakenLabel {
@@ -7791,6 +7800,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Period.
+        /// </summary>
+        public static string Period {
+            get {
+                return ResourceManager.GetString("Period", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    The 9 Star Ki personal chart is comprised of three numbers, each from 1 to 9. For example: &lt;strong&gt;&quot;3.1.7&quot;&lt;/strong&gt;. 
         ///&lt;/p&gt;
@@ -8392,6 +8410,15 @@ namespace K9.Globalisation {
         public static string Purple {
             get {
                 return ResourceManager.GetString("Purple", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recaptcha Disabled.
+        /// </summary>
+        public static string RecaptchaDisabled {
+            get {
+                return ResourceManager.GetString("RecaptchaDisabled", resourceCulture);
             }
         }
         

@@ -1,32 +1,63 @@
-﻿@using K9.Base.WebApplication.Controllers
-@using K9.Base.WebApplication.Helpers
-@using K9.SharedLibrary.Authentication
-@using K9.WebApplication.Config
-@using SessionHelper = K9.WebApplication.Helpers.SessionHelper
-@model UserMembership
+﻿@using K9.SharedLibrary.Extensions
+@using K9.SharedLibrary.Helpers.Html
+@using K9.SharedLibrary.Models
+@using EButtonType = K9.SharedLibrary.Models.EButtonType
+@model K9.WebApplication.ViewModels.UserMembershipsViewModel
 @{
     Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
 }
-@Html.BootstrapTable(new DataTableOptions<UserMembership>
-{
-    AllowCreate = true,
-    AllowEdit = true,
-    AllowDelete = SessionHelper.CurrentUserIsAdmin(),
-    ColumnsConfig = new ColumnsConfig
-    {
-        ColumnsToIgnore =
+
+<div class="row">
+    <div class="col-xs-6 padding-0">
+        @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.Users, "Index", "Users", null, "", EButtonClass.Primary)
+    </div>
+    <div class="col-xs-6">
+        @Html.Partial("Controls/_SearchBox", new K9.WebApplication.Options.SearchBoxOptions
         {
-            "IsActive" , "CostOfRemainingActiveSubscription"
-        }
-    },
-    VisibleColumns = new List<string>
-    {
-        "UserName",
-        "IsActive",
-        "StartsOn",
-        "EndsOn",
-        "IsDeactivated",
-        "MembershipOptionName"
-    },
-    Controller = "UserMemberships"
-})
+            CssSelector = "div.data-row"
+        })
+    </div>
+</div>
+
+<br />
+
+<div id="users-by-membership-table-container">
+    <div class="well">
+        <div class="row table-row">
+            <div class="col-xs-12">
+
+                <ul class="nav nav-pills nav-justified">
+                    @if (Model != null && Model.UserMemberships.Any())
+                    {
+                        foreach (var subscriptionType in Model.SubscriptionTypes)
+                        {
+                            var activeClass = subscriptionType == MembershipOption.ESubscriptionType.Free ? "active" : "";
+
+                            <li class="@activeClass">
+                                <a data-toggle="tab" href="#@subscriptionType.ToString()">
+                                    @subscriptionType.ToString().SplitOnCapitalLetter()
+                                </a>
+                            </li>
+                        }
+                    }
+                </ul>
+
+                <div class="tab-content">
+                    @if (Model != null && Model.UserMemberships.Any())
+                    {
+                        foreach (var subscriptionType in Model.SubscriptionTypes)
+                        {
+                            var activeClass = subscriptionType == MembershipOption.ESubscriptionType.Free ? "in active" : "";
+
+                            <div id="@subscriptionType.ToString()" class="tab-pane fade @activeClass">
+                                <div>
+                                    @Html.Partial("_TableFields", Model.GetMembershipsBySubscriptionType(subscriptionType))
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

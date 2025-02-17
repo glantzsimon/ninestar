@@ -90,16 +90,18 @@ namespace K9.WebApplication.Services
             return _contactsRepository.List().OrderBy(e => e.FullName).ToList();
         }
 
-        public bool Unsubscribe(string code)
+        public bool Unsubscribe(string code = null)
         {
-            var contact = _contactsRepository.Find(e => e.Name == code).FirstOrDefault();
-            if (contact != null)
+            if (code != null)
             {
-                contact.IsUnsubscribed = true;
-                _contactsRepository.Update(contact);
-                return true;
+                var contact = _contactsRepository.Find(e => e.Name == code).FirstOrDefault();
+                if (contact != null)
+                {
+                    contact.IsUnsubscribed = true;
+                    _contactsRepository.Update(contact);
+                    return true;
+                }
             }
-
             return false;
         }
     }

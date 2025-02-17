@@ -1,0 +1,35 @@
+﻿@model K9.WebApplication.Options.SearchBoxOptions
+<div class="form-group" data-input-id="Search">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+        <input class="form-control" culture-info="" data-val="true" data-val-length="The field Search From must be a string with a maximum length of 512." data-val-length-max="512" id="Search" label="" name="Search" id="Search" placeholder="" title="" type="text" value="">
+    </div>
+    <span class="field-validation-valid" data-valmsg-for="Search" data-valmsg-replace="true"></span>
+</div>
+<script type="text/javascript">
+    $(window).on("load", function() {
+        searchTimeout = null;
+
+        $("#Search").keyup(function() {
+            if (searchTimeout) {
+                window.clearTimeout(searchTimeout);
+            }
+            searchTimeout = window.setTimeout(filterSearch, 333);
+        });
+
+        function filterSearch() {
+            var searchText = $("#Search").val();
+            if (searchText === "")
+            {
+                $("@Model.CssSelector").show();
+            }
+            else {
+                $("@Model.CssSelector").hide();
+                $("@Model.CssSelector:contains('" + searchText + "')").show();
+                $("@(Model.CssSelector)[data-category*=" + searchText + "]").show();
+                $("@(Model.CssSelector)[data-itemcode*=" + searchText + "]").show();
+            }
+            window.clearTimeout(searchTimeout);
+        }
+    })
+</script>

@@ -1,8 +1,10 @@
-﻿<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-        async defer>
-</script>
+﻿@if (!K9.WebApplication.Helpers.Environment.IsDebug)
+{
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+            async defer>
+    </script>
 
-<script language="javascript">
+    <script language="javascript">
 
     function verifyCallback(response) {
         if (response.length > 0) {
@@ -27,4 +29,9 @@
         enableButtons(false);
     });
 
-</script>
+    </script>
+}
+else
+{
+    <p>@Dictionary.RecaptchaDisabled</p>
+}

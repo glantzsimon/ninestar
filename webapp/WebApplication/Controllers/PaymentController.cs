@@ -54,7 +54,7 @@ namespace K9.WebApplication.Controllers
             try
             {
                 var result = _stripeService.GetPaymentIntentById(paymentIntentId);
-                var contact = _contactService.GetOrCreateContact("", fullName, emailAddress);
+                var contact = _contactService.GetOrCreateContact(result.CustomerId, fullName, emailAddress, phoneNumber);
                 _userService.UpdateActiveUserEmailAddressIfFromFacebook(contact);
 
                 return Json(new

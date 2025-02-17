@@ -50,13 +50,16 @@ namespace K9.WebApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult ContactUs(ContactUsViewModel model)
         {
-            var encodedResponse = Request.Form[RecaptchaResult.ResponseFormVariable];
-            var isCaptchaValid = _recaptchaService.Validate(encodedResponse);
-
-            if (!isCaptchaValid)
+            if (!Helpers.Environment.IsDebug)
             {
-                ModelState.AddModelError("", Dictionary.InvalidRecaptcha);
-                return View("ContactUs", model);
+                var encodedResponse = Request.Form[RecaptchaResult.ResponseFormVariable];
+                var isCaptchaValid = _recaptchaService.Validate(encodedResponse);
+
+                if (!isCaptchaValid)
+                {
+                    ModelState.AddModelError("", Dictionary.InvalidRecaptcha);
+                    return View("ContactUs", model);
+                }
             }
 
             try
@@ -85,7 +88,7 @@ namespace K9.WebApplication.Controllers
         {
             return View();
         }
-        
+
         [Route("donate")]
         public ActionResult DonateStart()
         {
@@ -94,7 +97,7 @@ namespace K9.WebApplication.Controllers
                 DonationAmount = 10,
                 DonationDescription = Dictionary.DonationToNineStar
             });
-        }   
+        }
 
         [Route("donate")]
         [HttpPost]
@@ -151,7 +154,7 @@ namespace K9.WebApplication.Controllers
         {
             var template = Dictionary.SupportQuery;
             var title = Dictionary.EmailThankYouTitle;
-            if (contact != null && !contact.IsUnsubscribed)
+            if (contact != null)
             {
                 _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
                 {

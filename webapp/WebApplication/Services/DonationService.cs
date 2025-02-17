@@ -29,19 +29,19 @@ namespace K9.WebApplication.Services
             _config = config.Value;
             _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }
-        
+
         public void CreateDonation(Donation donation, Contact contact)
         {
             try
             {
                 _donationRepository.Create(donation);
                 SendEmailToNineStar(donation);
-                if (contact != null && !contact.IsUnsubscribed)
+                if (contact != null)
                 {
                     SendEmailToCustomer(donation, contact);
                 }
             }
-            catch (Exception ex)    
+            catch (Exception ex)
             {
                 _logger.Error($"DonationService => CreateDonation => {ex.GetFullErrorMessage()}");
             }
@@ -88,7 +88,7 @@ namespace K9.WebApplication.Services
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
                 PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
                 TermsOfServiceLink = _urlHelper.AbsoluteAction("TermsOfService", "Home"),
-                UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact.Name }),
+                UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact?.Name }),
                 DateTime.Now.Year
             }), donation.CustomerEmail, donation.Customer, _config.SupportEmailAddress, _config.CompanyName);
         }

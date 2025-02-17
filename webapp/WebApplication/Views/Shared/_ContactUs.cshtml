@@ -5,7 +5,8 @@
 @{
     var blurb = TemplateProcessor.PopulateTemplate(Dictionary.support_blurb, new
     {
-        BookConsultationLink = Url.AbsoluteAction("BookConsultation", "Consultation")
+        BookConsultationLink = Url.AbsoluteAction("BookConsultation", "Consultation"),
+        ChatWithGptLink = K9.WebApplication.Config.ApiConfiguration.Instance.NineStarKiAstrologerGptUrl
     });
 }
 
@@ -24,7 +25,6 @@
         <hr />
         <div id="recaptcha-container">
         </div>
-        <hr />
         <div id="recaptcha-buttons-container">
             @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Submit, EButtonType.Submit, "fa-envelope", EButtonClass.Large)
         </div>

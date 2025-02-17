@@ -567,6 +567,7 @@
     <Content Include="Images\company\logo-small-text.png" />
     <Content Include="Images\company\logo-small.png" />
     <Content Include="Images\company\logo.png" />
+    <Content Include="Images\emailtemplates\email-template-header.png" />
     <Content Include="Images\emailtemplates\email-template-header.jpg" />
     <Content Include="Images\flags\ad.png" />
     <Content Include="Images\flags\ae.png" />

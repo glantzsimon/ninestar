@@ -62,15 +62,23 @@ namespace K9.WebApplication.Controllers
                 }
             }
 
+            var body = TemplateProcessor.PopulateTemplate(Dictionary.SupportQueryReceived, new
+            {
+                Customer = model.Name,
+                CustomerEmail = model.EmailAddress,
+                model.Subject,
+                Query = model.Body
+            });
+                
             try
             {
                 _mailer.SendEmail(
                     model.Subject,
-                    model.Body,
+                    body,
                     _config.SupportEmailAddress,
                     _config.CompanyName,
-                    model.EmailAddress,
-                    model.Name);
+                    _config.SupportEmailAddress,
+                    _config.CompanyName);
 
                 var contact = _contactService.GetOrCreateContact("", model.Name, model.EmailAddress);
                 SendEmailToCustomer(contact);

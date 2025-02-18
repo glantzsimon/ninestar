@@ -30,6 +30,7 @@ namespace K9.WebApplication
                 "~/Content/main/style-sm.css",
                 "~/Content/main/style-xs.css",
                 "~/Content/main/style.991.css",
+                "~/Content/main/style.956.css",
                 "~/Content/main/style.768.css",
                 "~/Content/main/style.760.css",
                 "~/Content/main/style.736.css",

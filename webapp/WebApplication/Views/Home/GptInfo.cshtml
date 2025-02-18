@@ -1,0 +1,23 @@
+﻿@model K9.WebApplication.Models.NineStarKiModel
+
+@{
+    ViewBag.Title = K9.Base.Globalisation.Dictionary.Home;
+    ViewBag.SubTitle = Dictionary.AIAstrologer;
+    Layout = "../Shared/_LayoutForm.cshtml";
+}
+
+@Html.Partial("_BetaPopup")
+
+<div class="container main-content">
+    <article>
+        @using (Html.BeginBootstrapForm())
+        {
+            @MvcHtmlString.Create(Dictionary.gptinfo)
+        }
+
+        @Html.Partial("ActionLinkButtons/_TryOurGpt")
+    </article>
+
+    <hr />
+    @Html.Partial("_ButtonsFooter")
+</div>

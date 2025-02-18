@@ -187,6 +187,7 @@
     <Content Include="General\en-gb\TermsOfService.htm" />
     <Content Include="General\en-gb\what-you-get.htm" />
     <Content Include="General\en-gb\why-upgrade.htm" />
+    <Content Include="Gpt\en-gb\gptinfo.htm" />
     <Content Include="IChing\en-gb\abundance-details.htm" />
     <Content Include="IChing\en-gb\after-completion-details.htm" />
     <Content Include="IChing\en-gb\approach-details.htm" />

@@ -3625,6 +3625,9 @@
   <data name="after_completion_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>iching\en-gb\after-completion-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="AIAstrologer" xml:space="preserve">
+    <value>AI Astrologer</value>
+  </data>
   <data name="approach_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>iching\en-gb\approach-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
@@ -3699,6 +3702,9 @@
   </data>
   <data name="GenerateHexagram" xml:space="preserve">
     <value>Generate Hexagram</value>
+  </data>
+  <data name="gptinfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gpt\en-gb\gptinfo.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="grace_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>iching\en-gb\grace-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>

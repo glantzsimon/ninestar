@@ -133,6 +133,13 @@
     }
   },
   {
+    "inputFile": "Content/less/main/style.956.less",
+    "outputFile": "Content/main/style.956.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
     "inputFile": "Content/less/main/style.991.less",
     "outputFile": "Content/main/style.991.css",
     "options": {

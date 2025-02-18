@@ -34,6 +34,12 @@ namespace K9.WebApplication.Controllers
             };
             return View(new NineStarKiModel(personModel));
         }
+
+        [Route("ai-gpt-astrologer")]
+        public ActionResult GptInfo()
+        {
+            return View();
+        }
         
         [Route("privacy-policy")]
         public ActionResult PrivacyPolicy()

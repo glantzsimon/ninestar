@@ -567,6 +567,7 @@
     <Content Include="Content\main\style.736.css" />
     <Content Include="Content\main\style.760.css" />
     <Content Include="Content\main\style.768.css" />
+    <Content Include="Content\main\style.956.css" />
     <Content Include="Content\main\style.991.css" />
     <Content Include="Content\main\style.css" />
     <Content Include="Content\sections\about.css" />
@@ -1250,6 +1251,7 @@
     <Content Include="Content\less\config\paths.less" />
     <Content Include="Content\less\sections\account.less" />
     <Content Include="Content\less\sections\iching.less" />
+    <Content Include="Content\less\main\style.956.less" />
     <None Include="packages.config" />
     <Content Include="Properties\PublishProfiles\.gitattributes" />
     <None Include="Properties\PublishProfiles\Integration.pubxml" />
@@ -1508,6 +1510,7 @@
     <Content Include="Views\Shared\ActionLinkButtons\_IChing.cshtml" />
     <Content Include="Views\IChing\_HexagramResult.cshtml" />
     <Content Include="Views\IChing\_GenerateButtonForm.cshtml" />
+    <Content Include="Views\Home\GptInfo.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

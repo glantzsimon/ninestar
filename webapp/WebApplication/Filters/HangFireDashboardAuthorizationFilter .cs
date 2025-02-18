@@ -11,7 +11,7 @@ namespace K9.WebApplication.Services
         {
             var owinContext = new OwinContext(context.GetOwinEnvironment());
             var user = owinContext.Authentication.User;
-            return user?.Identity?.IsAuthenticated == true && user.IsInRole("Meows");
+            return user?.Identity?.IsAuthenticated == true && user.IsInRole(RoleNames.Administrators);
         }
     }
 }

@@ -31,6 +31,7 @@ namespace K9.WebApplication.Services
             _config = config.Value;
         }
 
+
         public void ProcessQueue()
         {
             var emailsToSend = _emailQueueItemsRepository.Find(e => !e.SentOn.HasValue)

@@ -8,7 +8,7 @@ namespace K9.WebApplication.Services
     public class IChingService : IIChingService
     {
         private static readonly Random _random = new Random();
-        
+
         public Hexagram GenerateHexagram()
         {
             var eLines = new ELineType[6];

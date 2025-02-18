@@ -1,15 +1,17 @@
 ﻿@using K9.WebApplication.Config
-@model K9.WebApplication.Models.NineStarKiModel
 
-@using (Html.BeginForm("Index", "IChing", FormMethod.Post))
+@using (Html.BeginForm("Toss", "IChing", FormMethod.Post))
 {
     using (Html.BeginBootstrapForm())
     {
-        <label>@Dictionary.ConsultTheIChing</label>
-
-        <img title="i-ching" alt="i-ching" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/iching/iching.png"/>
+        <img id="iching-image" title="i-ching" alt="i-ching" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/iching/iching.png" />
 
         <hr />
-        @Html.BootstrapButton(Dictionary.GenerateHexagram, EButtonType.Submit, "", EButtonClass.Large)
+        <div class="desktop-only text-center">
+            @Html.BootstrapButton(Dictionary.GenerateHexagram, EButtonType.Submit, "", EButtonClass.Large)
+        </div>
+        <div class="device-only text-center">
+            @Html.BootstrapButton(Dictionary.Generate, EButtonType.Submit, "", EButtonClass.Large)
+        </div>
     }
 }

@@ -1,8 +1,12 @@
 ﻿@model K9.WebApplication.Models.HexagramInfo
 
 <div class="hexagram-card">
-    <h2>@Model.Title</h2>
-    <h3 class="stage">@Model.Stage</h3>
-    <p class="summary">@Model.Summary</p>
-    <p class="description">@Model.Description>
+    <h4>@Model.Name - @Model.Stage</h4>
+    <p class="summary">@Model.Title</p>
+    <p class="description">@Model.Summary</p>
+    @if (!string.IsNullOrEmpty(Model.ChangingLinesInterpretation))
+    {
+        <hr />
+        <div>@Html.Raw(Model.ChangingLinesInterpretation)</div>
+    }
 </div>

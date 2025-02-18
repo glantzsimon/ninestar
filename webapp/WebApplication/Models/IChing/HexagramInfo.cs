@@ -2,22 +2,20 @@
 {
     public class HexagramInfo
     {
-        public string Stage { get; set; }   // Thematic category
-        public string Title { get; set; }   // Traditional I Ching name
-        public string Summary { get; set; } 
-        public string Description { get; set; } 
+        public string Stage { get; set; }
+        public string Name { get; set; }
+        public string Title { get; set; }
+        public string Summary { get; set; }
+        public string Details { get; set; }
+        public string ChangingLinesInterpretation { get; set; }
 
-        public HexagramInfo(string stage, string title, string summary, string description)
+        public HexagramInfo(string stage, string name, string title, string summary, string details = "")
         {
             Stage = stage;
+            Name = name;
             Title = title;
             Summary = summary;
-            Description = description;
-        }
-
-        public override string ToString()
-        {
-            return $"{Title} ({Stage})\n{Summary}\n{Description}";
+            Details = details;
         }
     }
 }

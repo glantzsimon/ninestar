@@ -187,6 +187,7 @@
     <Content Include="General\en-gb\TermsOfService.htm" />
     <Content Include="General\en-gb\what-you-get.htm" />
     <Content Include="General\en-gb\why-upgrade.htm" />
+    <Content Include="IChing\en-gb\the-creative-details.htm" />
     <Content Include="Predictions\Monthly\en-gb\core-earth-month.htm" />
     <Content Include="Predictions\Monthly\en-gb\fire-month.htm" />
     <Content Include="Predictions\Monthly\en-gb\heaven-month.htm" />

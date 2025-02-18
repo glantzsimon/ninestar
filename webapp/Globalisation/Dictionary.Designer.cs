@@ -2156,6 +2156,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Changing Line {LineNumber} Interpretation.
+        /// </summary>
+        public static string ChangingLineInterpretation {
+            get {
+                return ResourceManager.GetString("ChangingLineInterpretation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    Character Elements are in a &lt;a target=&quot;_blank&quot; href=&quot;{ChallengingTransformationLink}&quot;&gt;Challenging Transformation&lt;/a&gt;
         ///&lt;/h5&gt;
@@ -3647,6 +3656,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Detailed Interpretation.
+        /// </summary>
+        public static string DetailedInterpretation {
+            get {
+                return ResourceManager.GetString("DetailedInterpretation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Details.
         /// </summary>
         public static string Details {
@@ -5021,6 +5039,15 @@ namespace K9.Globalisation {
         public static string GenderSelectionTooltip {
             get {
                 return ResourceManager.GetString("GenderSelectionTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generate.
+        /// </summary>
+        public static string Generate {
+            get {
+                return ResourceManager.GetString("Generate", resourceCulture);
             }
         }
         
@@ -7483,6 +7510,15 @@ namespace K9.Globalisation {
         public static string MainEnergyShortLabel {
             get {
                 return ResourceManager.GetString("MainEnergyShortLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main Hexagram (The Present Path).
+        /// </summary>
+        public static string MainHexagram {
+            get {
+                return ResourceManager.GetString("MainHexagram", resourceCulture);
             }
         }
         
@@ -11468,6 +11504,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+        ///    &lt;title&gt;The Creative&lt;/title&gt;
+        ///&lt;/head&gt;
+        ///&lt;body&gt;
+        ///    &lt;h5&gt;The Creative&lt;/h5&gt;
+        ///&lt;p&gt;The Creative represents pure yang energy, the force of creation and strength. It is a symbol of unlimited potential, innovation, and new beginnings. When this hexagram appears, it signifies a time to take bold action, trust your instincts, and embrace leadership. The energy of this moment is p [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string the_creative_details {
+            get {
+                return ResourceManager.GetString("the_creative_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The Abysmal (Water).
         /// </summary>
         public static string TheAbysmal {
@@ -12082,6 +12136,15 @@ namespace K9.Globalisation {
         public static string TransFemale {
             get {
                 return ResourceManager.GetString("TransFemale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transformed Hexagram (The Path of Transformation).
+        /// </summary>
+        public static string TransformedHexagram {
+            get {
+                return ResourceManager.GetString("TransformedHexagram", resourceCulture);
             }
         }
         
@@ -13441,6 +13504,15 @@ namespace K9.Globalisation {
         public static string YourCurrentMembership {
             get {
                 return ResourceManager.GetString("YourCurrentMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Hexagram.
+        /// </summary>
+        public static string YourHexagram {
+            get {
+                return ResourceManager.GetString("YourHexagram", resourceCulture);
             }
         }
         

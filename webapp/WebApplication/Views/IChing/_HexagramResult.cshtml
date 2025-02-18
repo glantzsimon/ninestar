@@ -1,40 +1,11 @@
-﻿@model K9.WebApplication.ViewModels.IChingViewModel
+﻿@using K9.WebApplication.Helpers
+@model K9.WebApplication.Models.Hexagram
 
-<div class="row">
-    @if (Model.TransformedHexagram == null)
-    {
-        <div class="col-sm-12">
-            @Html.Partial("_Hexagram", Model.Hexagram)
+@{
+    var hexagramInfo = Model.GetHexagramInfo(); 
+}
 
-            <div class="text-center">
-                <h4>@Dictionary.Interpretation</h4>
+@Html.Partial("_Hexagram", Model)
+@Html.Partial("_HexagramInterpretation", hexagramInfo)
 
-                @Html.Partial("_HexagramInterpretation", Model.HexagramInfo)
-            </div>
-        </div>
-    }
-    else
-    {
-        <div class="col-xm-5">
-            @Html.Partial("_Hexagram", Model.Hexagram)
-
-            <div class="text-center">
-                <h4>@Dictionary.Interpretation</h4>
-
-                @Html.Partial("_HexagramInterpretation", Model.HexagramInfo)
-            </div>
-        </div>
-        <div class="col-xm-2">
-            =>
-        </div>
-        <div class="col-xm-5">
-            @Html.Partial("_Hexagram", Model.TransformedHexagram)
-
-            <div class="text-center">
-                <h4>@Dictionary.Interpretation</h4>
-
-                @Html.Partial("_HexagramInterpretation", Model.TransformedHexagramInfo)
-            </div>
-        </div>
-    }
-</div>
+@Html.CollapsiblePanel(Dictionary.DetailedInterpretation, hexagramInfo.Details)

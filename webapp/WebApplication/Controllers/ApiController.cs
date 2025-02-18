@@ -129,6 +129,16 @@ namespace K9.WebApplication.Controllers
             });
         }
 
+        [Route("knowledgebase/get/{accountNumber}")]
+        public JsonResult GetKnowledgeBase(string accountNumber)
+        {
+            return Validate(accountNumber, () =>
+            {
+                var model = new NineStarKiSummaryKbViewModel(_nineStarKiService.GetNineStarKiSummaryViewModel());
+                return Json(new { success = true, data = model }, JsonRequestBehavior.AllowGet);
+            });
+        }
+
         public JsonResult GetCompatibilityTest()
         {
             var personModel1 = new PersonModel

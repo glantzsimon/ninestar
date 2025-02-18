@@ -37,7 +37,7 @@ paths:
             example: "Male"
       responses:
         "200":
-          description: Successful response with person data.
+          description: Successful response with personal chart data.
           content:
             application/json:
               schema:
@@ -95,7 +95,7 @@ paths:
 
       responses:
         "200":
-          description: Successful response with person data.
+          description: Successful response with predictions data.
           content:
             application/json:
               schema:
@@ -180,11 +180,44 @@ paths:
             type: boolean
       responses:
         "200":
-          description: Successful response with person data.
+          description: Successful response with compatibility data.
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/CompatibilityResponse"
+        "400":
+          description: Bad request. Invalid or missing parameters.
+        "401":
+          description: Unauthorized. API key missing or invalid.
+        "404":
+          description: Unauthorized. Invalid account number.
+        "422":
+          description: Unauthorized. Valid account number but membership requires upgrade.
+        "500":
+          description: Internal server error.
+      security:
+        - apiKeyAuth: []
+
+  /api/knowledgebase/get/{accountNumber}:
+    get:
+      operationId: getKnowledgeBase
+      summary: Retrieve general information about 9 star ki.
+      description: Returns JSON data about 9 star ki astrology.
+      parameters:
+        - name: accountNumber
+          in: path
+          required: true
+          description: The user's 9-digit account number
+          schema:
+            type: string
+            example: "123456789"
+      responses:
+        "200":
+          description: Successful response with knowledge base data.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/KnowledgeBaseResponse"
         "400":
           description: Bad request. Invalid or missing parameters.
         "401":
@@ -250,6 +283,18 @@ components:
               example: "There is great sexual chemistry."
             CompatibilityDetails:
               $ref: "#/components/schemas/CompatibilityDetailsModel"
+
+    KnowledgeBaseResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        data:
+          type: object
+          properties:
+            PredictionsSummaryModel:
+              $ref: "#/components/schemas/NineStarKiSummaryKbViewModel"
 
     CompatibilityDetailsModel:
       type: object
@@ -402,23 +447,23 @@ components:
         CharacterEnergies:
           type: array
           items:
-            $ref: "#/components/schemas/Energy"
+            $ref: "#/components/schemas/EnergySummary"
         MainEnergies:
           type: array
           items:
-            $ref: "#/components/schemas/Energy"
+            $ref: "#/components/schemas/EnergySummary"
         DynamicEnergies:
           type: array
           items:
-            $ref: "#/components/schemas/Energy"
+            $ref: "#/components/schemas/ModalitySummary"
         StableEnergies:
           type: array
           items:
-            $ref: "#/components/schemas/Energy"
+            $ref: "#/components/schemas/ModalitySummary"
         FlexibleEnergies:
           type: array
           items:
-            $ref: "#/components/schemas/Energy"
+            $ref: "#/components/schemas/ModalitySummary"
 
     PersonModel:
       type: object
@@ -563,3 +608,15 @@ components:
           type: string
           description: The modality type.
           example: "Fixed"
+
+    ModalitySummary:
+      type: object
+      properties:
+        Title:
+          type: string
+          description: The Modality name / title.
+          example: "Fixed"
+        Body:
+          type: string
+          description: A detailed description about the Modality.
+          example: "Fixed energies are very stable and..."

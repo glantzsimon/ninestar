@@ -17,7 +17,6 @@ namespace K9.WebApplication
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
 			
-			Startup.RegisterTypes();
 			Startup.RegisterStaticTypes();
 
 			DataConfig.InitialiseDatabase();
@@ -26,7 +25,7 @@ namespace K9.WebApplication
 
 		    AntiForgeryConfig.SuppressIdentityHeuristicChecks = true;
 
-		    Stripe.StripeConfiguration.SetApiKey(ConfigurationManager.AppSettings["SecretKey"]);
+		    Stripe.StripeConfiguration.ApiKey = ConfigurationManager.AppSettings["SecretKey"];
         }
 	}
 }

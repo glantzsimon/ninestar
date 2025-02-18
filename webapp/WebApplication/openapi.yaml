@@ -231,7 +231,7 @@ paths:
       security:
         - apiKeyAuth: []
 
-  /api/iching/get/{accountNumber}:
+  /api/iching/get:
     get:
       operationId: getIChing
       summary: Generates an I Ching hexagram and returns information about it and its interpretation

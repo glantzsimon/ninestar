@@ -3673,6 +3673,15 @@
   <data name="duration_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>iching\en-gb\duration-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="EmailQueue" xml:space="preserve">
+    <value>Email Queue</value>
+  </data>
+  <data name="EmailQueueItem" xml:space="preserve">
+    <value>Email Queue Item</value>
+  </data>
+  <data name="EmailQueueItems" xml:space="preserve">
+    <value>Email Queue Items</value>
+  </data>
   <data name="enthusiasm_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>iching\en-gb\enthusiasm-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
@@ -3762,6 +3771,9 @@
   </data>
   <data name="pushing_upward_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>iching\en-gb\pushing-upward-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="RecipientEmailAddressLabel" xml:space="preserve">
+    <value>Recipient Email Address</value>
   </data>
   <data name="retreat_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>iching\en-gb\retreat-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>

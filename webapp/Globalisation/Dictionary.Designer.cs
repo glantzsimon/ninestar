@@ -4384,6 +4384,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email Queue.
+        /// </summary>
+        public static string EmailQueue {
+            get {
+                return ResourceManager.GetString("EmailQueue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email Queue Item.
+        /// </summary>
+        public static string EmailQueueItem {
+            get {
+                return ResourceManager.GetString("EmailQueueItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email Queue Items.
+        /// </summary>
+        public static string EmailQueueItems {
+            get {
+                return ResourceManager.GetString("EmailQueueItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thank you for your email.
         /// </summary>
         public static string EmailThankYouTitle {
@@ -10227,6 +10254,15 @@ namespace K9.Globalisation {
         public static string RecaptchaDisabled {
             get {
                 return ResourceManager.GetString("RecaptchaDisabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recipient Email Address.
+        /// </summary>
+        public static string RecipientEmailAddressLabel {
+            get {
+                return ResourceManager.GetString("RecipientEmailAddressLabel", resourceCulture);
             }
         }
         

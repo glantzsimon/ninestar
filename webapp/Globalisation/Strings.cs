@@ -30,6 +30,7 @@
             public const string ScheduledOnClientLocalLabel = "ScheduledOnClientLocalLabel";
             public const string CurrencyLabel = "CurrencyLabel";
             public const string CustomerEmailLabel = "CustomerEmailLabel";
+            public const string RecipientEmailAddressLabel = "RecipientEmailAddressLabel";
             public const string GenderLabel = "GenderLabel";
             public const string DateOfBirthLabel = "DateOfBirthLabel";
             public const string MainEnergyLabel = "MainEnergyLabel";
@@ -106,6 +107,8 @@
             public const string UserMemberships = "UserMemberships";
             public const string UserMembershipsListName = "UserMemberships";
             public const string Donations = "Donations";
+            public const string EmailQueueItems = "EmailQueueItems";
+            public const string EmailQueueItem = "EmailQueueItem";
             public const string Slot = "Slot";
             public const string Consultation = "Consultation";
             public const string UserConsultation = "UserConsultation";

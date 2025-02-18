@@ -15,18 +15,23 @@ using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.Services;
 using K9.WebApplication.Services.Stripe;
+using Microsoft.Owin;
 using NLog;
 using System;
 using System.Configuration;
 using System.Data.Entity;
 using System.IO;
 using System.Web.Mvc;
+using Hangfire;
+using Owin;
+
+[assembly: OwinStartup(typeof(K9.WebApplication.Startup))]
 
 namespace K9.WebApplication
 {
-    public static class Startup
+    public class Startup
     {
-        public static void RegisterTypes()
+        public void Configuration(IAppBuilder app)
         {
             var builder = new ContainerBuilder();
 
@@ -67,11 +72,27 @@ namespace K9.WebApplication
             builder.RegisterType<LogService>().As<ILogService>().InstancePerRequest();
             builder.RegisterType<BiorhythmsService>().As<IBiorhythmsService>().InstancePerRequest();
             builder.RegisterType<IChingService>().As<IIChingService>().InstancePerRequest();
+            builder.RegisterType<EmailQueueService>().As<IEmailQueueService>().InstancePerRequest();
 
             RegisterConfiguration(builder);
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+
+            // Configure Hangfire to use SQL Server storage and the Autofac job activator
+            GlobalConfiguration.Configuration
+                .UseAutofacActivator(container)
+                .UseSqlServerStorage("DefaultConnection"); // replace with your connection string name
+
+            app.UseHangfireDashboard("/hangfire", new DashboardOptions
+            {
+                Authorization = new[] { new HangfireDashboardAuthorizationFilter() }
+            });
+
+            RecurringJob.AddOrUpdate<EmailQueueService>(
+                "ProcessEmailQueue",
+                service => service.ProcessQueue(),
+                Cron.MinuteInterval(10));        // Cron expression to run every 10 minutes
         }
 
         public static void RegisterStaticTypes()
@@ -108,7 +129,7 @@ namespace K9.WebApplication
 
 #if DEBUG
             Helpers.Environment.IsDebug = true;
-            
+
             defaultConfig.Value.BaseImagesPath = "https://localhost/ninestar/Images";
             defaultConfig.Value.BaseVideosPath = "https://localhost/ninestar/Videos";
 #endif

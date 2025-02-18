@@ -15,5 +15,6 @@ namespace K9.DataAccessLayer.Database
 	    public DbSet<UserConsultation> UserConsultations { get; set; }
 	    public DbSet<Slot> Slots { get; set; }
 	    public DbSet<UserOTP> UserOtps { get; set; }
+	    public DbSet<EmailQueueItem> EmailQueueItems { get; set; }
     }
 }

@@ -1,9 +1,13 @@
-﻿@model K9.WebApplication.Models.HexagramInfo
+﻿@using K9.WebApplication.Helpers
+@model K9.WebApplication.Models.HexagramInfo
 
 <div class="hexagram-card">
     <h4>@Model.Name - @Model.Stage</h4>
     <p class="summary">@Model.Title</p>
     <p class="description">@Model.Summary</p>
+    
+    @Html.CollapsiblePanel(Dictionary.DetailedInterpretation, Model.Details)
+
     @if (!string.IsNullOrEmpty(Model.ChangingLinesInterpretation))
     {
         <hr />

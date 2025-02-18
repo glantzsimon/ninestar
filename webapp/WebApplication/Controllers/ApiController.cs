@@ -22,17 +22,19 @@ namespace K9.WebApplication.Controllers
         private readonly INineStarKiService _nineStarKiService;
         private readonly IRepository<User> _usersRepository;
         private readonly IBiorhythmsService _biorhythmsService;
+        private readonly IIChingService _iChingService;
         private readonly IMembershipService _membershipService;
         private readonly ApiConfiguration _apiConfig;
         private const string authRequestHeader = "Authorization";
 
-        public ApiController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService, IRepository<User> usersRepository, IBiorhythmsService biorhythmsService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, IOptions<ApiConfiguration> apiConfig)
+        public ApiController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService, IRepository<User> usersRepository, IBiorhythmsService biorhythmsService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, IOptions<ApiConfiguration> apiConfig, IIChingService iChingService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
         {
             _authentication = authentication;
             _nineStarKiService = nineStarKiService;
             _usersRepository = usersRepository;
             _biorhythmsService = biorhythmsService;
+            _iChingService = iChingService;
             _membershipService = membershipService;
             _apiConfig = apiConfig.Value;
         }
@@ -139,6 +141,16 @@ namespace K9.WebApplication.Controllers
             });
         }
 
+        [Route("iching/get")]
+        public JsonResult GetIChing()
+        {
+            return Validate(null, () =>
+            {
+                var model = new IChingViewModel(_iChingService.GenerateHexagram());
+                return Json(new { success = true, data = model }, JsonRequestBehavior.AllowGet);
+            });
+        }
+
         public JsonResult GetCompatibilityTest()
         {
             var personModel1 = new PersonModel
@@ -180,15 +192,18 @@ namespace K9.WebApplication.Controllers
                 return InvalidApiKeyResult();
             }
 
-            var membership = GetMembership(accountNumber);
-            if (membership == null)
+            if (accountNumber != null)
             {
-                return InvalidAccountNumberResult();
-            }
+                var membership = GetMembership(accountNumber);
+                if (membership == null)
+                {
+                    return InvalidAccountNumberResult();
+                }
 
-            if (!IsValidMembership(membership))
-            {
-                return MembershipRequiresUpgradeResult();
+                if (!IsValidMembership(membership))
+                {
+                    return MembershipRequiresUpgradeResult();
+                }
             }
 
             return method.Invoke();

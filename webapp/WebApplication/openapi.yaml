@@ -231,6 +231,27 @@ paths:
       security:
         - apiKeyAuth: []
 
+  /api/iching/get/{accountNumber}:
+    get:
+      operationId: getIChing
+      summary: Generates an I Ching hexagram and returns information about it and its interpretation
+      description: Returns JSON data about I Ching 
+      responses:
+        "200":
+          description: Successful response with I Ching hexagram data
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/IChingResponse"
+        "400":
+          description: Bad request. Invalid or missing parameters.
+        "401":
+          description: Unauthorized. API key missing or invalid.
+        "500":
+          description: Internal server error.
+      security:
+        - apiKeyAuth: []
+
 components:
   securitySchemes:
     apiKeyAuth:
@@ -295,6 +316,24 @@ components:
           properties:
             PredictionsSummaryModel:
               $ref: "#/components/schemas/NineStarKiSummaryKbViewModel"
+
+    IChingResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        data:
+          type: object
+          properties:
+            Hexagram:
+              $ref: "#/components/schemas/Hexagram"
+            TransformedHexagram:
+              $ref: "#/components/schemas/Hexagram"
+            HexagramInfo:
+              $ref: "#/components/schemas/HexagramInfo"
+            TransformedHexagramInfo:
+              $ref: "#/components/schemas/HexagramInfo"
 
     CompatibilityDetailsModel:
       type: object
@@ -620,3 +659,43 @@ components:
           type: string
           description: A detailed description about the Modality.
           example: "Fixed energies are very stable and..."
+
+    Hexagram:
+      type: object
+      properties:
+        Name:
+          type: string
+          description: The name of the hexagram.
+          example: "Growth and Stability"
+        Number:
+          type: integer
+          description: The number of the hexagram 1 - 64.
+          example: 3
+
+    HexagramInfo:
+      type: object
+      properties:
+        Stage:
+          type: string
+          description: The stage of the hexagram.
+          example: "Growth and Stability"
+        Name:
+          type: string
+          description: The original I Ching name of the hexagram
+          example: "Gathering Together"
+        Title:
+          type: string
+          description: Title of the hexagram
+          example: "Community and connection bring strength"
+        Summary:
+          type: string
+          description: Summary of the hexagram meaning
+          example: "Community and connection bring strength"
+        Details:
+          type: string
+          description: Detailed interpretation of the hexagram meaning
+          example: "Community and connection bring strength"
+        ChangingLinesInterpretation:
+          type: string
+          description: Interpretation of the hexagram's changing lines
+          example: "Community and connection bring strength"

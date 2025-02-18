@@ -3619,14 +3619,71 @@
   <data name="AboutTheIChing" xml:space="preserve">
     <value>About The I Ching</value>
   </data>
+  <data name="abundance_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\abundance-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="after_completion_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\after-completion-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="approach_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\approach-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="before_completion_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\before-completion-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="biting_through_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\biting-through-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="breakthrough_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\breakthrough-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
   <data name="ChangingLineInterpretation" xml:space="preserve">
     <value>Changing Line {LineNumber} Interpretation</value>
+  </data>
+  <data name="coming_to_meet_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\coming-to-meet-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="conflict_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\conflict-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="ConsultTheIChing" xml:space="preserve">
     <value>Consult the I Ching</value>
   </data>
+  <data name="contemplation_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\contemplation-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="darkening_of_the_light_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\darkening-of-the-light-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="decrease_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\decrease-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="deliverance_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\deliverance-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
   <data name="DetailedInterpretation" xml:space="preserve">
     <value>Detailed Interpretation</value>
+  </data>
+  <data name="difficulty_at_the_beginning_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\difficulty-at-the-beginning-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="dispersion_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\dispersion-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="duration_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\duration-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="enthusiasm_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\enthusiasm-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="fellowship_with_men_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\fellowship-with-men-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="following_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\following-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="gathering_together_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\gathering-together-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Generate" xml:space="preserve">
     <value>Generate</value>
@@ -3634,8 +3691,29 @@
   <data name="GenerateHexagram" xml:space="preserve">
     <value>Generate Hexagram</value>
   </data>
+  <data name="grace_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\grace-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="gradual_progress_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\gradual-progress-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="holding_together_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\holding-together-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
   <data name="IChingMeta" xml:space="preserve">
     <value>Free I Ching reading. Consult the I Ching and get guidance about a question or situation</value>
+  </data>
+  <data name="increase_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\increase-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="influence_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\influence-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="inner_truth_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\inner-truth-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="innocence_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\innocence-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Interpretation" xml:space="preserve">
     <value>Interpretation</value>
@@ -3643,16 +3721,127 @@
   <data name="i_ching_info" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\i-ching-info.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="keeping_still_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\keeping-still-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="limitation_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\limitation-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
   <data name="MainHexagram" xml:space="preserve">
     <value>Main Hexagram (The Present Path)</value>
+  </data>
+  <data name="modesty_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\modesty-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="obstruction_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\obstruction-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="opposition_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\opposition-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="oppression_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\oppression-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="peace_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\peace-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="possession_in_great_measure_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\possession-in-great-measure-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="preponderance_of_the_great_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\preponderance-of-the-great-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="preponderance_of_the_small_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\preponderance-of-the-small-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="progress_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\progress-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="providing_nourishment_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\providing-nourishment-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="pushing_upward_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\pushing-upward-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="retreat_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\retreat-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="return_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\return-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="revolution_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\revolution-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="splitting_apart_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\splitting-apart-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="standstill_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\standstill-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="taming_power_of_the_great_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\taming-power-of-the-great-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="taming_power_of_the_small_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\taming-power-of-the-small-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="the_abysmal_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\the-abysmal-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="the_army_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\the-army-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="the_arousing_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\the-arousing-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="the_cauldron_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\the-cauldron-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="the_clinging_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\the-clinging-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="the_creative_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>iching\en-gb\the-creative-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="the_family_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\the-family-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="the_gentle_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\the-gentle-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="the_joyous_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\the-joyous-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="the_marrying_maiden_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\the-marrying-maiden-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="the_power_of_the_great_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\the-power-of-the-great-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="the_receptive_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>IChing\en-gb\the-receptive-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="the_wanderer_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\the-wanderer-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="the_well_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\the-well-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
   <data name="TransformedHexagram" xml:space="preserve">
     <value>Transformed Hexagram (The Path of Transformation)</value>
   </data>
+  <data name="treading_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\treading-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="waiting_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\waiting-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="work_on_what_has_been_spoiled_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\work-on-what-has-been-spoiled-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
   <data name="YourHexagram" xml:space="preserve">
     <value>Your Hexagram</value>
+  </data>
+  <data name="youthful_folly_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>iching\en-gb\youthful-folly-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
 </root>

@@ -1366,6 +1366,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Abundance&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Abundance represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Abundance encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situa [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string abundance_details {
+            get {
+                return ResourceManager.GetString("abundance_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Abundance and Change.
         /// </summary>
         public static string AbundanceAndChange {
@@ -1461,6 +1475,20 @@ namespace K9.Globalisation {
         public static string Advisor {
             get {
                 return ResourceManager.GetString("Advisor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;After Completion&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    After Completion represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of After Completion encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a remi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string after_completion_details {
+            get {
+                return ResourceManager.GetString("after_completion_details", resourceCulture);
             }
         }
         
@@ -1587,6 +1615,20 @@ namespace K9.Globalisation {
         public static string Approach {
             get {
                 return ResourceManager.GetString("Approach", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Approach&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Approach represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Approach encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situatio [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string approach_details {
+            get {
+                return ResourceManager.GetString("approach_details", resourceCulture);
             }
         }
         
@@ -1795,6 +1837,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Before Completion&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Before Completion represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Before Completion encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a r [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string before_completion_details {
+            get {
+                return ResourceManager.GetString("before_completion_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Before Completion.
         /// </summary>
         public static string BeforeCompletion {
@@ -1902,6 +1958,20 @@ namespace K9.Globalisation {
         public static string BiorhythmsLabel {
             get {
                 return ResourceManager.GetString("BiorhythmsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Biting Through&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Biting Through represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Biting Through encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder t [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string biting_through_details {
+            get {
+                return ResourceManager.GetString("biting_through_details", resourceCulture);
             }
         }
         
@@ -2044,6 +2114,20 @@ namespace K9.Globalisation {
         public static string Breakthrough {
             get {
                 return ResourceManager.GetString("Breakthrough", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Breakthrough&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Breakthrough represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Breakthrough encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that ev [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string breakthrough_details {
+            get {
+                return ResourceManager.GetString("breakthrough_details", resourceCulture);
             }
         }
         
@@ -2434,6 +2518,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Coming to Meet&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Coming to Meet represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Coming to Meet encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder t [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string coming_to_meet_details {
+            get {
+                return ResourceManager.GetString("coming_to_meet_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Coming Soon....
         /// </summary>
         public static string ComingSoon {
@@ -2661,6 +2759,20 @@ namespace K9.Globalisation {
         public static string Conflict {
             get {
                 return ResourceManager.GetString("Conflict", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Conflict&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Conflict represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Conflict encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situatio [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string conflict_details {
+            get {
+                return ResourceManager.GetString("conflict_details", resourceCulture);
             }
         }
         
@@ -2935,6 +3047,20 @@ namespace K9.Globalisation {
         public static string Contemplation {
             get {
                 return ResourceManager.GetString("Contemplation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Contemplation&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Contemplation represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Contemplation encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string contemplation_details {
+            get {
+                return ResourceManager.GetString("contemplation_details", resourceCulture);
             }
         }
         
@@ -3548,6 +3674,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Darkening of the Light&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Darkening of the Light represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Darkening of the Light encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagra [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string darkening_of_the_light_details {
+            get {
+                return ResourceManager.GetString("darkening_of_the_light_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Darkening of the Light.
         /// </summary>
         public static string DarkeningOfTheLight {
@@ -3602,6 +3742,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Decrease&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Decrease represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Decrease encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situatio [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string decrease_details {
+            get {
+                return ResourceManager.GetString("decrease_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reducing unnecessary burdens creates clarity and alignment with your true purpose..
         /// </summary>
         public static string DecreaseSummary {
@@ -3625,6 +3779,20 @@ namespace K9.Globalisation {
         public static string Deliverance {
             get {
                 return ResourceManager.GetString("Deliverance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Deliverance&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Deliverance represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Deliverance encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string deliverance_details {
+            get {
+                return ResourceManager.GetString("deliverance_details", resourceCulture);
             }
         }
         
@@ -3683,6 +3851,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Difficulty at the Beginning&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Difficulty at the Beginning represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Difficulty at the Beginning encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observ [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string difficulty_at_the_beginning_details {
+            get {
+                return ResourceManager.GetString("difficulty_at_the_beginning_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Difficulty at the Beginning.
         /// </summary>
         public static string DifficultyAtTheBeginning {
@@ -3724,6 +3906,20 @@ namespace K9.Globalisation {
         public static string Dispersion {
             get {
                 return ResourceManager.GetString("Dispersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Dispersion&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Dispersion represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Dispersion encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every si [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string dispersion_details {
+            get {
+                return ResourceManager.GetString("dispersion_details", resourceCulture);
             }
         }
         
@@ -3949,6 +4145,20 @@ namespace K9.Globalisation {
         public static string Duration {
             get {
                 return ResourceManager.GetString("Duration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Duration&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Duration represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Duration encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situatio [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string duration_details {
+            get {
+                return ResourceManager.GetString("duration_details", resourceCulture);
             }
         }
         
@@ -4394,6 +4604,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Enthusiasm&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Enthusiasm represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Enthusiasm encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every si [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string enthusiasm_details {
+            get {
+                return ResourceManager.GetString("enthusiasm_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Momentum is building. Channel your energy into positive change..
         /// </summary>
         public static string EnthusiasmSummary {
@@ -4498,6 +4722,20 @@ namespace K9.Globalisation {
         public static string Father {
             get {
                 return ResourceManager.GetString("Father", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Fellowship with Men&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Fellowship with Men represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Fellowship with Men encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fellowship_with_men_details {
+            get {
+                return ResourceManager.GetString("fellowship_with_men_details", resourceCulture);
             }
         }
         
@@ -4900,6 +5138,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Following&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Following represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Following encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situa [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string following_details {
+            get {
+                return ResourceManager.GetString("following_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to By following the natural course of events, you align with opportunity..
         /// </summary>
         public static string FollowingSummary {
@@ -4989,6 +5241,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Gathering Together&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Gathering Together represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Gathering Together encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string gathering_together_details {
+            get {
+                return ResourceManager.GetString("gathering_together_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gathering Together.
         /// </summary>
         public static string GatheringTogether {
@@ -5070,6 +5336,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Grace&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Grace represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Grace encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situation is an o [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string grace_details {
+            get {
+                return ResourceManager.GetString("grace_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Refinement and balance in behavior lead to success..
         /// </summary>
         public static string GraceSummary {
@@ -5084,6 +5364,20 @@ namespace K9.Globalisation {
         public static string GraceTitle {
             get {
                 return ResourceManager.GetString("GraceTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Gradual Progress&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Gradual Progress represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Gradual Progress encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a remi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string gradual_progress_details {
+            get {
+                return ResourceManager.GetString("gradual_progress_details", resourceCulture);
             }
         }
         
@@ -5450,6 +5744,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Holding Together&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Holding Together represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Holding Together encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a remi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string holding_together_details {
+            get {
+                return ResourceManager.GetString("holding_together_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Holding Together.
         /// </summary>
         public static string HoldingTogether {
@@ -5580,6 +5888,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Increase&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Increase represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Increase encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situatio [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string increase_details {
+            get {
+                return ResourceManager.GetString("increase_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A time of abundance and opportunity—use it wisely and share your success..
         /// </summary>
         public static string IncreaseSummary {
@@ -5616,6 +5938,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Influence&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Influence represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Influence encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situa [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string influence_details {
+            get {
+                return ResourceManager.GetString("influence_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Influencer.
         /// </summary>
         public static string Influencer {
@@ -5639,6 +5975,20 @@ namespace K9.Globalisation {
         public static string InfluenceTitle {
             get {
                 return ResourceManager.GetString("InfluenceTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Inner Truth&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Inner Truth represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Inner Truth encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string inner_truth_details {
+            get {
+                return ResourceManager.GetString("inner_truth_details", resourceCulture);
             }
         }
         
@@ -5675,6 +6025,20 @@ namespace K9.Globalisation {
         public static string Innocence {
             get {
                 return ResourceManager.GetString("Innocence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Innocence&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Innocence represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Innocence encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situa [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string innocence_details {
+            get {
+                return ResourceManager.GetString("innocence_details", resourceCulture);
             }
         }
         
@@ -5956,6 +6320,20 @@ namespace K9.Globalisation {
         public static string Kan {
             get {
                 return ResourceManager.GetString("Kan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Keeping Still&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Keeping Still represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Keeping Still encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string keeping_still_details {
+            get {
+                return ResourceManager.GetString("keeping_still_details", resourceCulture);
             }
         }
         
@@ -6347,6 +6725,20 @@ namespace K9.Globalisation {
         public static string Limitation {
             get {
                 return ResourceManager.GetString("Limitation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Limitation&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Limitation represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Limitation encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every si [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string limitation_details {
+            get {
+                return ResourceManager.GetString("limitation_details", resourceCulture);
             }
         }
         
@@ -7792,6 +8184,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Modesty&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Modesty represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Modesty encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situation i [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string modesty_details {
+            get {
+                return ResourceManager.GetString("modesty_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pride can lead to downfall, but staying humble fosters respect and stability..
         /// </summary>
         public static string ModestySummary {
@@ -8589,6 +8995,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Obstruction&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Obstruction represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Obstruction encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string obstruction_details {
+            get {
+                return ResourceManager.GetString("obstruction_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A roadblock signals a need to rethink your strategy..
         /// </summary>
         public static string ObstructionSummary {
@@ -8643,6 +9063,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Opposition&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Opposition represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Opposition encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every si [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string opposition_details {
+            get {
+                return ResourceManager.GetString("opposition_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Instead of resisting opposition, find ways to integrate different perspectives..
         /// </summary>
         public static string OppositionSummary {
@@ -8666,6 +9100,20 @@ namespace K9.Globalisation {
         public static string Oppression {
             get {
                 return ResourceManager.GetString("Oppression", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Oppression&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Oppression represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Oppression encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every si [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string oppression_details {
+            get {
+                return ResourceManager.GetString("oppression_details", resourceCulture);
             }
         }
         
@@ -8851,6 +9299,20 @@ namespace K9.Globalisation {
         public static string Peace {
             get {
                 return ResourceManager.GetString("Peace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Peace&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Peace represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Peace encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situation is an o [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string peace_details {
+            get {
+                return ResourceManager.GetString("peace_details", resourceCulture);
             }
         }
         
@@ -9204,6 +9666,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Possession in Great Measure&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Possession in Great Measure represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Possession in Great Measure encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observ [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string possession_in_great_measure_details {
+            get {
+                return ResourceManager.GetString("possession_in_great_measure_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Possession in Great Measure.
         /// </summary>
         public static string PossessionInGreatMeasure {
@@ -9317,6 +9793,34 @@ namespace K9.Globalisation {
         public static string PredictionsTitle {
             get {
                 return ResourceManager.GetString("PredictionsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Preponderance of the Great&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Preponderance of the Great represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Preponderance of the Great encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe.  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string preponderance_of_the_great_details {
+            get {
+                return ResourceManager.GetString("preponderance_of_the_great_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Preponderance of the Small&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Preponderance of the Small represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Preponderance of the Small encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe.  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string preponderance_of_the_small_details {
+            get {
+                return ResourceManager.GetString("preponderance_of_the_small_details", resourceCulture);
             }
         }
         
@@ -9455,6 +9959,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Progress&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Progress represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Progress encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situatio [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string progress_details {
+            get {
+                return ResourceManager.GetString("progress_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Continue pushing forward, as conditions are ripe for success..
         /// </summary>
         public static string ProgressSummary {
@@ -9559,6 +10077,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Providing Nourishment&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Providing Nourishment represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Providing Nourishment encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram s [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string providing_nourishment_details {
+            get {
+                return ResourceManager.GetString("providing_nourishment_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The Corners of the Mouth (Providing Nourishment).
         /// </summary>
         public static string ProvidingNourishment {
@@ -9645,6 +10177,20 @@ namespace K9.Globalisation {
         public static string Purple {
             get {
                 return ResourceManager.GetString("Purple", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Pushing Upward&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Pushing Upward represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Pushing Upward encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder t [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string pushing_upward_details {
+            get {
+                return ResourceManager.GetString("pushing_upward_details", resourceCulture);
             }
         }
         
@@ -9820,6 +10366,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Retreat&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Retreat represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Retreat encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situation i [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string retreat_details {
+            get {
+                return ResourceManager.GetString("retreat_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Knowing when to step back can preserve strength for the right moment..
         /// </summary>
         public static string RetreatSummary {
@@ -9865,6 +10425,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Return&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Return represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Return encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situation is a [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string return_details {
+            get {
+                return ResourceManager.GetString("return_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This hexagram signifies the natural cycle of renewal and returning to one&apos;s path..
         /// </summary>
         public static string ReturnSummary {
@@ -9888,6 +10462,20 @@ namespace K9.Globalisation {
         public static string Revolution {
             get {
                 return ResourceManager.GetString("Revolution", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Revolution&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Revolution represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Revolution encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every si [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string revolution_details {
+            get {
+                return ResourceManager.GetString("revolution_details", resourceCulture);
             }
         }
         
@@ -10927,6 +11515,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Splitting Apart&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Splitting Apart represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Splitting Apart encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminde [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string splitting_apart_details {
+            get {
+                return ResourceManager.GetString("splitting_apart_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Splitting Apart.
         /// </summary>
         public static string SplittingApart {
@@ -11045,6 +11647,20 @@ namespace K9.Globalisation {
         public static string Standstill {
             get {
                 return ResourceManager.GetString("Standstill", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Standstill&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Standstill represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Standstill encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every si [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string standstill_details {
+            get {
+                return ResourceManager.GetString("standstill_details", resourceCulture);
             }
         }
         
@@ -11383,6 +11999,34 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Taming Power of the Great&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Taming Power of the Great represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Taming Power of the Great encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. Thi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string taming_power_of_the_great_details {
+            get {
+                return ResourceManager.GetString("taming_power_of_the_great_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Taming Power of the Small&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Taming Power of the Small represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Taming Power of the Small encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. Thi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string taming_power_of_the_small_details {
+            get {
+                return ResourceManager.GetString("taming_power_of_the_small_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The Taming Power of the Great.
         /// </summary>
         public static string TamingPowerOfTheGreat {
@@ -11504,20 +12148,198 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
-        ///&lt;html lang=&quot;en&quot;&gt;
-        ///&lt;head&gt;
-        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
-        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-        ///    &lt;title&gt;The Creative&lt;/title&gt;
-        ///&lt;/head&gt;
-        ///&lt;body&gt;
-        ///    &lt;h5&gt;The Creative&lt;/h5&gt;
-        ///&lt;p&gt;The Creative represents pure yang energy, the force of creation and strength. It is a symbol of unlimited potential, innovation, and new beginnings. When this hexagram appears, it signifies a time to take bold action, trust your instincts, and embrace leadership. The energy of this moment is p [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;The Abysmal&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The Abysmal represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of The Abysmal encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string the_abysmal_details {
+            get {
+                return ResourceManager.GetString("the_abysmal_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;The Army&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The Army represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of The Army encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situatio [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string the_army_details {
+            get {
+                return ResourceManager.GetString("the_army_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;The Arousing&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The Arousing represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of The Arousing encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that ev [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string the_arousing_details {
+            get {
+                return ResourceManager.GetString("the_arousing_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;The Cauldron&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The Cauldron represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of The Cauldron encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that ev [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string the_cauldron_details {
+            get {
+                return ResourceManager.GetString("the_cauldron_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;The Clinging&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The Clinging represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of The Clinging encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that ev [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string the_clinging_details {
+            get {
+                return ResourceManager.GetString("the_clinging_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;The Creative&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The Creative represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of The Creative encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that ev [rest of string was truncated]&quot;;.
         /// </summary>
         public static string the_creative_details {
             get {
                 return ResourceManager.GetString("the_creative_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;The Family&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The Family represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of The Family encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every si [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string the_family_details {
+            get {
+                return ResourceManager.GetString("the_family_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;The Gentle&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The Gentle represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of The Gentle encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every si [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string the_gentle_details {
+            get {
+                return ResourceManager.GetString("the_gentle_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;The Joyous&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The Joyous represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of The Joyous encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every si [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string the_joyous_details {
+            get {
+                return ResourceManager.GetString("the_joyous_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;The Marrying Maiden&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The Marrying Maiden represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of The Marrying Maiden encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string the_marrying_maiden_details {
+            get {
+                return ResourceManager.GetString("the_marrying_maiden_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;The Power of the Great&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The Power of the Great represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of The Power of the Great encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagra [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string the_power_of_the_great_details {
+            get {
+                return ResourceManager.GetString("the_power_of_the_great_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;The Receptive&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The Receptive represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of The Receptive encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string the_receptive_details {
+            get {
+                return ResourceManager.GetString("the_receptive_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;The Wanderer&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The Wanderer represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of The Wanderer encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that ev [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string the_wanderer_details {
+            get {
+                return ResourceManager.GetString("the_wanderer_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;The Well&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The Well represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of The Well encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situatio [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string the_well_details {
+            get {
+                return ResourceManager.GetString("the_well_details", resourceCulture);
             }
         }
         
@@ -12167,6 +12989,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Treading&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Treading represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Treading encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situatio [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string treading_details {
+            get {
+                return ResourceManager.GetString("treading_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to One must act with caution and awareness, avoiding unnecessary risks..
         /// </summary>
         public static string TreadingSummary {
@@ -12611,6 +13447,20 @@ namespace K9.Globalisation {
         public static string Waiting {
             get {
                 return ResourceManager.GetString("Waiting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Waiting&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Waiting represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Waiting encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situation i [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string waiting_details {
+            get {
+                return ResourceManager.GetString("waiting_details", resourceCulture);
             }
         }
         
@@ -13263,6 +14113,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Work on What Has Been Spoiled&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Work on What Has Been Spoiled represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Work on What Has Been Spoiled encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string work_on_what_has_been_spoiled_details {
+            get {
+                return ResourceManager.GetString("work_on_what_has_been_spoiled_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Work on What Has Been Spoiled.
         /// </summary>
         public static string WorkOnWhatHasBeenSpoiled {
@@ -13522,6 +14386,20 @@ namespace K9.Globalisation {
         public static string YourSelectedSubscription {
             get {
                 return ResourceManager.GetString("YourSelectedSubscription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Youthful Folly&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Youthful Folly represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The wisdom of Youthful Folly encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder t [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string youthful_folly_details {
+            get {
+                return ResourceManager.GetString("youthful_folly_details", resourceCulture);
             }
         }
         

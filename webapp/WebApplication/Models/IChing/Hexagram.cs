@@ -3,6 +3,7 @@ using K9.WebApplication.Enums;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Web.Script.Serialization;
 
 namespace K9.WebApplication.Models
 {
@@ -85,255 +86,318 @@ namespace K9.WebApplication.Models
 
             { 2, new HexagramInfo(Globalisation.Dictionary.BeginningsAndChallenges, Globalisation.Dictionary.TheReceptive,
                 Globalisation.Dictionary.TheReceptiveTitle,
-                Globalisation.Dictionary.TheReceptiveSummary) },
+                Globalisation.Dictionary.TheReceptiveSummary,
+                Globalisation.Dictionary.the_receptive_details) },
 
             { 3, new HexagramInfo(Globalisation.Dictionary.BeginningsAndChallenges, Globalisation.Dictionary.DifficultyAtTheBeginning,
                 Globalisation.Dictionary.DifficultyAtTheBeginningTitle,
-                Globalisation.Dictionary.DifficultyAtTheBeginningSummary) },
+                Globalisation.Dictionary.DifficultyAtTheBeginningSummary,
+                Globalisation.Dictionary.difficulty_at_the_beginning_details) },
 
             { 4, new HexagramInfo(Globalisation.Dictionary.BeginningsAndChallenges, Globalisation.Dictionary.YouthfulFolly,
                 Globalisation.Dictionary.YouthfulFollyTitle,
-                Globalisation.Dictionary.YouthfulFollySummary) },
+                Globalisation.Dictionary.YouthfulFollySummary,
+                Globalisation.Dictionary.youthful_folly_details) },
 
             { 5, new HexagramInfo(Globalisation.Dictionary.GrowthAndStability, Globalisation.Dictionary.Waiting,
                 Globalisation.Dictionary.WaitingTitle,
-                Globalisation.Dictionary.WaitingSummary) },
+                Globalisation.Dictionary.WaitingSummary,
+                Globalisation.Dictionary.waiting_details) },
 
             { 6, new HexagramInfo(Globalisation.Dictionary.GrowthAndStability, Globalisation.Dictionary.Conflict,
                 Globalisation.Dictionary.ConflictTitle,
-                Globalisation.Dictionary.ConflictSummary) },
+                Globalisation.Dictionary.ConflictSummary,
+                Globalisation.Dictionary.conflict_details) },
 
             { 7, new HexagramInfo(Globalisation.Dictionary.GrowthAndStability, Globalisation.Dictionary.TheArmy,
                 Globalisation.Dictionary.TheArmyTitle,
-                Globalisation.Dictionary.TheArmySummary) },
+                Globalisation.Dictionary.TheArmySummary,
+                Globalisation.Dictionary.the_army_details) },
 
             { 8, new HexagramInfo(Globalisation.Dictionary.GrowthAndStability, Globalisation.Dictionary.HoldingTogether,
                 Globalisation.Dictionary.HoldingTogetherTitle,
-                Globalisation.Dictionary.HoldingTogetherSummary) },
+                Globalisation.Dictionary.HoldingTogetherSummary,
+                Globalisation.Dictionary.holding_together_details) },
 
             { 9, new HexagramInfo(Globalisation.Dictionary.OvercomingObstacles, Globalisation.Dictionary.TamingPowerOfTheSmall,
                 Globalisation.Dictionary.TamingPowerOfTheSmallTitle,
-                Globalisation.Dictionary.TamingPowerOfTheSmallSummary) },
+                Globalisation.Dictionary.TamingPowerOfTheSmallSummary,
+                Globalisation.Dictionary.taming_power_of_the_small_details) },
 
             { 10, new HexagramInfo(Globalisation.Dictionary.OvercomingObstacles, Globalisation.Dictionary.Treading,
                 Globalisation.Dictionary.TreadingTitle,
-                Globalisation.Dictionary.TreadingSummary) },
+                Globalisation.Dictionary.TreadingSummary,
+                Globalisation.Dictionary.treading_details) },
 
             { 11, new HexagramInfo(Globalisation.Dictionary.GrowthAndStability, Globalisation.Dictionary.Peace,
                 Globalisation.Dictionary.PeaceTitle,
-                Globalisation.Dictionary.PeaceSummary) },
+                Globalisation.Dictionary.PeaceSummary,
+                Globalisation.Dictionary.peace_details) },
 
             { 12, new HexagramInfo(Globalisation.Dictionary.OvercomingObstacles, Globalisation.Dictionary.Standstill,
                 Globalisation.Dictionary.StandstillTitle,
-                Globalisation.Dictionary.StandstillSummary) },
+                Globalisation.Dictionary.StandstillSummary,
+                Globalisation.Dictionary.standstill_details) },
 
             { 13, new HexagramInfo(Globalisation.Dictionary.RelationshipsAndTransformation, Globalisation.Dictionary.FellowshipWithMen,
                 Globalisation.Dictionary.FellowshipWithMenTitle,
-                Globalisation.Dictionary.FellowshipWithMenSummary) },
+                Globalisation.Dictionary.FellowshipWithMenSummary,
+                Globalisation.Dictionary.fellowship_with_men_details) },
 
             { 14, new HexagramInfo(Globalisation.Dictionary.AbundanceAndChange, Globalisation.Dictionary.PossessionInGreatMeasure,
                 Globalisation.Dictionary.PossessionInGreatMeasureTitle,
-                Globalisation.Dictionary.PossessionInGreatMeasureSummary) },
+                Globalisation.Dictionary.PossessionInGreatMeasureSummary,
+                Globalisation.Dictionary.possession_in_great_measure_details) },
 
             { 15, new HexagramInfo(Globalisation.Dictionary.AbundanceAndChange, Globalisation.Dictionary.Modesty,
                 Globalisation.Dictionary.ModestyTitle,
-                Globalisation.Dictionary.ModestySummary) },
+                Globalisation.Dictionary.ModestySummary,
+                Globalisation.Dictionary.modesty_details) },
 
             { 16, new HexagramInfo(Globalisation.Dictionary.AbundanceAndChange, Globalisation.Dictionary.Enthusiasm,
                 Globalisation.Dictionary.EnthusiasmTitle,
-                Globalisation.Dictionary.EnthusiasmSummary) },
+                Globalisation.Dictionary.EnthusiasmSummary,
+                Globalisation.Dictionary.enthusiasm_details) },
 
             { 17, new HexagramInfo(Globalisation.Dictionary.RelationshipsAndTransformation, Globalisation.Dictionary.Following,
                 Globalisation.Dictionary.FollowingTitle,
-                Globalisation.Dictionary.FollowingSummary) },
+                Globalisation.Dictionary.FollowingSummary,
+                Globalisation.Dictionary.following_details) },
 
             { 18, new HexagramInfo(Globalisation.Dictionary.OvercomingObstacles, Globalisation.Dictionary.WorkOnWhatHasBeenSpoiled,
                 Globalisation.Dictionary.WorkOnWhatHasBeenSpoiledTitle,
-                Globalisation.Dictionary.WorkOnWhatHasBeenSpoiledSummary) },
+                Globalisation.Dictionary.WorkOnWhatHasBeenSpoiledSummary,
+                Globalisation.Dictionary.work_on_what_has_been_spoiled_details) },
 
             { 19, new HexagramInfo(Globalisation.Dictionary.GrowthAndStability, Globalisation.Dictionary.Approach,
                 Globalisation.Dictionary.ApproachTitle,
-                Globalisation.Dictionary.ApproachSummary) },
+                Globalisation.Dictionary.ApproachSummary,
+                Globalisation.Dictionary.approach_details) },
 
             { 20, new HexagramInfo(Globalisation.Dictionary.RelationshipsAndTransformation, Globalisation.Dictionary.Contemplation,
                 Globalisation.Dictionary.ContemplationTitle,
-                Globalisation.Dictionary.ContemplationSummary) },
+                Globalisation.Dictionary.ContemplationSummary,
+                Globalisation.Dictionary.contemplation_details) },
 
             { 21, new HexagramInfo(Globalisation.Dictionary.OvercomingObstacles, Globalisation.Dictionary.BitingThrough,
                 Globalisation.Dictionary.BitingThroughTitle,
-                Globalisation.Dictionary.BitingThroughSummary) },
+                Globalisation.Dictionary.BitingThroughSummary,
+                Globalisation.Dictionary.biting_through_details) },
 
             { 22, new HexagramInfo(Globalisation.Dictionary.AbundanceAndChange, Globalisation.Dictionary.Grace,
                 Globalisation.Dictionary.GraceTitle,
-                Globalisation.Dictionary.GraceSummary) },
+                Globalisation.Dictionary.GraceSummary,
+                Globalisation.Dictionary.grace_details) },
 
             { 23, new HexagramInfo(Globalisation.Dictionary.OvercomingObstacles, Globalisation.Dictionary.SplittingApart,
                 Globalisation.Dictionary.SplittingApartTitle,
-                Globalisation.Dictionary.SplittingApartSummary) },
+                Globalisation.Dictionary.SplittingApartSummary,
+                Globalisation.Dictionary.splitting_apart_details) },
 
             { 24, new HexagramInfo(Globalisation.Dictionary.MasteryAndCompletion, Globalisation.Dictionary.Return,
                 Globalisation.Dictionary.ReturnTitle,
-                Globalisation.Dictionary.ReturnSummary) },
+                Globalisation.Dictionary.ReturnSummary,
+                Globalisation.Dictionary.return_details) },
 
             { 25, new HexagramInfo(Globalisation.Dictionary.OvercomingObstacles, Globalisation.Dictionary.Innocence,
                 Globalisation.Dictionary.InnocenceTitle,
-                Globalisation.Dictionary.InnocenceSummary) },
+                Globalisation.Dictionary.InnocenceSummary,
+                Globalisation.Dictionary.innocence_details) },
 
             { 26, new HexagramInfo(Globalisation.Dictionary.GrowthAndStability, Globalisation.Dictionary.TamingPowerOfTheGreat,
                 Globalisation.Dictionary.TamingPowerOfTheGreatTitle,
-                Globalisation.Dictionary.TamingPowerOfTheGreatSummary) },
+                Globalisation.Dictionary.TamingPowerOfTheGreatSummary,
+                Globalisation.Dictionary.taming_power_of_the_great_details) },
 
             { 27, new HexagramInfo(Globalisation.Dictionary.GrowthAndStability, Globalisation.Dictionary.ProvidingNourishment,
                 Globalisation.Dictionary.ProvidingNourishmentTitle,
-                Globalisation.Dictionary.ProvidingNourishmentSummary) },
+                Globalisation.Dictionary.ProvidingNourishmentSummary,
+                Globalisation.Dictionary.providing_nourishment_details) },
 
-            { 28, new HexagramInfo(Globalisation.Dictionary.AbundanceAndChange, Globalisation.Dictionary.PreponderanceOfTheGreat,
+            { 28, new HexagramInfo(Globalisation.Dictionary.OvercomingObstacles, Globalisation.Dictionary.PreponderanceOfTheGreat,
                 Globalisation.Dictionary.PreponderanceOfTheGreatTitle,
-                Globalisation.Dictionary.PreponderanceOfTheGreatSummary) },
+                Globalisation.Dictionary.PreponderanceOfTheGreatSummary,
+                Globalisation.Dictionary.preponderance_of_the_great_details) },
 
             { 29, new HexagramInfo(Globalisation.Dictionary.OvercomingObstacles, Globalisation.Dictionary.TheAbysmal,
                 Globalisation.Dictionary.TheAbysmalTitle,
-                Globalisation.Dictionary.TheAbysmalSummary) },
+                Globalisation.Dictionary.TheAbysmalSummary,
+                Globalisation.Dictionary.the_abysmal_details) },
 
-            { 30, new HexagramInfo(Globalisation.Dictionary.AbundanceAndChange, Globalisation.Dictionary.TheClinging,
+            { 30, new HexagramInfo(Globalisation.Dictionary.GrowthAndStability, Globalisation.Dictionary.TheClinging,
                 Globalisation.Dictionary.TheClingingTitle,
-                Globalisation.Dictionary.TheClingingSummary) },
+                Globalisation.Dictionary.TheClingingSummary,
+                Globalisation.Dictionary.the_clinging_details) },
 
             { 31, new HexagramInfo(Globalisation.Dictionary.RelationshipsAndTransformation, Globalisation.Dictionary.Influence,
                 Globalisation.Dictionary.InfluenceTitle,
-                Globalisation.Dictionary.InfluenceSummary) },
+                Globalisation.Dictionary.InfluenceSummary,
+                Globalisation.Dictionary.influence_details) },
 
             { 32, new HexagramInfo(Globalisation.Dictionary.GrowthAndStability, Globalisation.Dictionary.Duration,
                 Globalisation.Dictionary.DurationTitle,
-                Globalisation.Dictionary.DurationSummary) },
+                Globalisation.Dictionary.DurationSummary,
+                Globalisation.Dictionary.duration_details) },
 
             { 33, new HexagramInfo(Globalisation.Dictionary.OvercomingObstacles, Globalisation.Dictionary.Retreat,
                 Globalisation.Dictionary.RetreatTitle,
-                Globalisation.Dictionary.RetreatSummary) },
+                Globalisation.Dictionary.RetreatSummary,
+                Globalisation.Dictionary.retreat_details) },
 
             { 34, new HexagramInfo(Globalisation.Dictionary.GrowthAndStability, Globalisation.Dictionary.PowerOfTheGreat,
                 Globalisation.Dictionary.PowerOfTheGreatTitle,
-                Globalisation.Dictionary.PowerOfTheGreatSummary) },
+                Globalisation.Dictionary.PowerOfTheGreatSummary,
+                Globalisation.Dictionary.the_power_of_the_great_details) },
 
             { 35, new HexagramInfo(Globalisation.Dictionary.AbundanceAndChange, Globalisation.Dictionary.Progress,
                 Globalisation.Dictionary.ProgressTitle,
-                Globalisation.Dictionary.ProgressSummary) },
+                Globalisation.Dictionary.ProgressSummary,
+                Globalisation.Dictionary.progress_details) },
 
             { 36, new HexagramInfo(Globalisation.Dictionary.OvercomingObstacles, Globalisation.Dictionary.DarkeningOfTheLight,
                 Globalisation.Dictionary.DarkeningOfTheLightTitle,
-                Globalisation.Dictionary.DarkeningOfTheLightSummary) },
+                Globalisation.Dictionary.DarkeningOfTheLightSummary,
+                Globalisation.Dictionary.darkening_of_the_light_details) },
 
             { 37, new HexagramInfo(Globalisation.Dictionary.GrowthAndStability, Globalisation.Dictionary.TheFamily,
                 Globalisation.Dictionary.TheFamilyTitle,
-                Globalisation.Dictionary.TheFamilySummary) },
+                Globalisation.Dictionary.TheFamilySummary,
+                Globalisation.Dictionary.the_family_details) },
 
             { 38, new HexagramInfo(Globalisation.Dictionary.RelationshipsAndTransformation, Globalisation.Dictionary.Opposition,
                 Globalisation.Dictionary.OppositionTitle,
-                Globalisation.Dictionary.OppositionSummary) },
+                Globalisation.Dictionary.OppositionSummary,
+                Globalisation.Dictionary.opposition_details) },
 
             { 39, new HexagramInfo(Globalisation.Dictionary.OvercomingObstacles, Globalisation.Dictionary.Obstruction,
                 Globalisation.Dictionary.ObstructionTitle,
-                Globalisation.Dictionary.ObstructionSummary) },
+                Globalisation.Dictionary.ObstructionSummary,
+                Globalisation.Dictionary.obstruction_details) },
 
             { 40, new HexagramInfo(Globalisation.Dictionary.GrowthAndStability, Globalisation.Dictionary.Deliverance,
                 Globalisation.Dictionary.DeliveranceTitle,
-                Globalisation.Dictionary.DeliveranceSummary) },
+                Globalisation.Dictionary.DeliveranceSummary,
+                Globalisation.Dictionary.deliverance_details) },
 
-            { 41, new HexagramInfo(Globalisation.Dictionary.AbundanceAndChange, Globalisation.Dictionary.Decrease,
+            { 41, new HexagramInfo(Globalisation.Dictionary.OvercomingObstacles, Globalisation.Dictionary.Decrease,
                 Globalisation.Dictionary.DecreaseTitle,
-                Globalisation.Dictionary.DecreaseSummary) },
+                Globalisation.Dictionary.DecreaseSummary,
+                Globalisation.Dictionary.decrease_details) },
 
             { 42, new HexagramInfo(Globalisation.Dictionary.AbundanceAndChange, Globalisation.Dictionary.Increase,
                 Globalisation.Dictionary.IncreaseTitle,
-                Globalisation.Dictionary.IncreaseSummary) },
+                Globalisation.Dictionary.IncreaseSummary,
+                Globalisation.Dictionary.increase_details) },
 
             { 43, new HexagramInfo(Globalisation.Dictionary.OvercomingObstacles, Globalisation.Dictionary.Breakthrough,
                 Globalisation.Dictionary.BreakthroughTitle,
-                Globalisation.Dictionary.BreakthroughSummary) },
+                Globalisation.Dictionary.BreakthroughSummary,
+                Globalisation.Dictionary.breakthrough_details) },
 
             { 44, new HexagramInfo(Globalisation.Dictionary.RelationshipsAndTransformation, Globalisation.Dictionary.ComingToMeet,
                 Globalisation.Dictionary.ComingToMeetTitle,
-                Globalisation.Dictionary.ComingToMeetSummary) },
+                Globalisation.Dictionary.ComingToMeetSummary,
+                Globalisation.Dictionary.coming_to_meet_details) },
 
             { 45, new HexagramInfo(Globalisation.Dictionary.GrowthAndStability, Globalisation.Dictionary.GatheringTogether,
                 Globalisation.Dictionary.GatheringTogetherTitle,
-                Globalisation.Dictionary.GatheringTogetherSummary) },
+                Globalisation.Dictionary.GatheringTogetherSummary,
+                Globalisation.Dictionary.gathering_together_details) },
 
-            { 46, new HexagramInfo(Globalisation.Dictionary.AbundanceAndChange, Globalisation.Dictionary.PushingUpward,
+            { 46, new HexagramInfo(Globalisation.Dictionary.GrowthAndStability, Globalisation.Dictionary.PushingUpward,
                 Globalisation.Dictionary.PushingUpwardTitle,
-                Globalisation.Dictionary.PushingUpwardSummary) },
+                Globalisation.Dictionary.PushingUpwardSummary,
+                Globalisation.Dictionary.pushing_upward_details) },
 
             { 47, new HexagramInfo(Globalisation.Dictionary.OvercomingObstacles, Globalisation.Dictionary.Oppression,
                 Globalisation.Dictionary.OppressionTitle,
-                Globalisation.Dictionary.OppressionSummary) },
+                Globalisation.Dictionary.OppressionSummary,
+                Globalisation.Dictionary.oppression_details) },
 
             { 48, new HexagramInfo(Globalisation.Dictionary.GrowthAndStability, Globalisation.Dictionary.TheWell,
                 Globalisation.Dictionary.TheWellTitle,
-                Globalisation.Dictionary.TheWellSummary) },
+                Globalisation.Dictionary.TheWellSummary,
+                Globalisation.Dictionary.the_well_details) },
 
             { 49, new HexagramInfo(Globalisation.Dictionary.AbundanceAndChange, Globalisation.Dictionary.Revolution,
                 Globalisation.Dictionary.RevolutionTitle,
-                Globalisation.Dictionary.RevolutionSummary) },
+                Globalisation.Dictionary.RevolutionSummary,
+                Globalisation.Dictionary.revolution_details) },
 
-            { 50, new HexagramInfo(Globalisation.Dictionary.AbundanceAndChange, Globalisation.Dictionary.TheCauldron,
+            { 50, new HexagramInfo(Globalisation.Dictionary.GrowthAndStability, Globalisation.Dictionary.TheCauldron,
                 Globalisation.Dictionary.TheCauldronTitle,
-                Globalisation.Dictionary.TheCauldronSummary) },
+                Globalisation.Dictionary.TheCauldronSummary,
+                Globalisation.Dictionary.the_cauldron_details) },
 
             { 51, new HexagramInfo(Globalisation.Dictionary.OvercomingObstacles, Globalisation.Dictionary.TheArousing,
                 Globalisation.Dictionary.TheArousingTitle,
-                Globalisation.Dictionary.TheArousingSummary) },
+                Globalisation.Dictionary.TheArousingSummary,
+                Globalisation.Dictionary.the_arousing_details) },
 
             { 52, new HexagramInfo(Globalisation.Dictionary.GrowthAndStability, Globalisation.Dictionary.KeepingStill,
                 Globalisation.Dictionary.KeepingStillTitle,
-                Globalisation.Dictionary.KeepingStillSummary) },
+                Globalisation.Dictionary.KeepingStillSummary,
+                Globalisation.Dictionary.keeping_still_details) },
 
             { 53, new HexagramInfo(Globalisation.Dictionary.GrowthAndStability, Globalisation.Dictionary.GradualProgress,
                 Globalisation.Dictionary.GradualProgressTitle,
-                Globalisation.Dictionary.GradualProgressSummary) },
+                Globalisation.Dictionary.GradualProgressSummary,
+                Globalisation.Dictionary.gradual_progress_details) },
 
             { 54, new HexagramInfo(Globalisation.Dictionary.RelationshipsAndTransformation, Globalisation.Dictionary.TheMarryingMaiden,
                 Globalisation.Dictionary.TheMarryingMaidenTitle,
-                Globalisation.Dictionary.TheMarryingMaidenSummary) },
-
+                Globalisation.Dictionary.TheMarryingMaidenSummary,
+                Globalisation.Dictionary.the_marrying_maiden_details) },
+            
             { 55, new HexagramInfo(Globalisation.Dictionary.AbundanceAndChange, Globalisation.Dictionary.Abundance,
                 Globalisation.Dictionary.AbundanceTitle,
-                Globalisation.Dictionary.AbundanceSummary) },
+                Globalisation.Dictionary.AbundanceSummary,
+                Globalisation.Dictionary.abundance_details) },
 
-            { 56, new HexagramInfo(Globalisation.Dictionary.AbundanceAndChange, Globalisation.Dictionary.TheWanderer,
+            { 56, new HexagramInfo(Globalisation.Dictionary.RelationshipsAndTransformation, Globalisation.Dictionary.TheWanderer,
                 Globalisation.Dictionary.TheWandererTitle,
-                Globalisation.Dictionary.TheWandererSummary) },
+                Globalisation.Dictionary.TheWandererSummary,
+                Globalisation.Dictionary.the_wanderer_details) },
 
-            { 57, new HexagramInfo(Globalisation.Dictionary.RelationshipsAndTransformation, Globalisation.Dictionary.TheGentle,
+            { 57, new HexagramInfo(Globalisation.Dictionary.GrowthAndStability, Globalisation.Dictionary.TheGentle,
                 Globalisation.Dictionary.TheGentleTitle,
-                Globalisation.Dictionary.TheGentleSummary) },
+                Globalisation.Dictionary.TheGentleSummary,
+                Globalisation.Dictionary.the_gentle_details) },
 
-            { 58, new HexagramInfo(Globalisation.Dictionary.AbundanceAndChange, Globalisation.Dictionary.TheJoyous,
+            { 58, new HexagramInfo(Globalisation.Dictionary.GrowthAndStability, Globalisation.Dictionary.TheJoyous,
                 Globalisation.Dictionary.TheJoyousTitle,
-                Globalisation.Dictionary.TheJoyousSummary) },
+                Globalisation.Dictionary.TheJoyousSummary,
+                Globalisation.Dictionary.the_joyous_details) },
 
             { 59, new HexagramInfo(Globalisation.Dictionary.OvercomingObstacles, Globalisation.Dictionary.Dispersion,
                 Globalisation.Dictionary.DispersionTitle,
-                Globalisation.Dictionary.DispersionSummary) },
+                Globalisation.Dictionary.DispersionSummary,
+                Globalisation.Dictionary.dispersion_details) },
 
             { 60, new HexagramInfo(Globalisation.Dictionary.GrowthAndStability, Globalisation.Dictionary.Limitation,
                 Globalisation.Dictionary.LimitationTitle,
-                Globalisation.Dictionary.LimitationSummary) },
+                Globalisation.Dictionary.LimitationSummary,
+                Globalisation.Dictionary.limitation_details) },
 
-            { 61, new HexagramInfo(Globalisation.Dictionary.MasteryAndCompletion, Globalisation.Dictionary.InnerTruth,
+            { 61, new HexagramInfo(Globalisation.Dictionary.AbundanceAndChange, Globalisation.Dictionary.InnerTruth,
                 Globalisation.Dictionary.InnerTruthTitle,
-                Globalisation.Dictionary.InnerTruthSummary) },
+                Globalisation.Dictionary.InnerTruthSummary,
+                Globalisation.Dictionary.inner_truth_details) },
 
-            { 62, new HexagramInfo(Globalisation.Dictionary.OvercomingObstacles, Globalisation.Dictionary.PreponderanceOfTheSmall,
+            { 62, new HexagramInfo(Globalisation.Dictionary.GrowthAndStability, Globalisation.Dictionary.PreponderanceOfTheSmall,
                 Globalisation.Dictionary.PreponderanceOfTheSmallTitle,
-                Globalisation.Dictionary.PreponderanceOfTheSmallSummary) },
+                Globalisation.Dictionary.PreponderanceOfTheSmallSummary,
+                Globalisation.Dictionary.preponderance_of_the_small_details) },
 
             { 63, new HexagramInfo(Globalisation.Dictionary.MasteryAndCompletion, Globalisation.Dictionary.AfterCompletion,
                 Globalisation.Dictionary.AfterCompletionTitle,
-                Globalisation.Dictionary.AfterCompletionSummary) },
+                Globalisation.Dictionary.AfterCompletionSummary,
+                Globalisation.Dictionary.after_completion_details) },
 
             { 64, new HexagramInfo(Globalisation.Dictionary.MasteryAndCompletion, Globalisation.Dictionary.BeforeCompletion,
-                Globalisation.Dictionary.BeforeCompletionTitle,
-                Globalisation.Dictionary.BeforeCompletionSummary) }
+                Globalisation.Dictionary.BeforeCompletionTitle, 
+                Globalisation.Dictionary.BeforeCompletionSummary,
+                Globalisation.Dictionary.before_completion_details) }
         };
 
         private static readonly Dictionary<int, Dictionary<int, string>> ChangingLineInterpretations = new Dictionary<int, Dictionary<int, string>>
@@ -1046,7 +1110,9 @@ namespace K9.WebApplication.Models
         private static ELineType[] ChangingLineTypes =>
             new ELineType[] { ELineType.ChangingYang, ELineType.ChangingYin }.ToArray();
 
+        [ScriptIgnore]
         public ELineType[] Lines { get; }
+
         public int Number { get; }
         public string Name { get; }
 

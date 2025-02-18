@@ -272,6 +272,7 @@
     <Content Include="Predictions\Yearly\en-gb\water-year.htm" />
     <Content Include="Predictions\Yearly\en-gb\wind-year.htm" />
     <Content Include="Predictions\Yearly\en-gb\year-description.htm" />
+    <Content Include="Templates\en-gb\DefaultEmailTemplate.htm" />
     <Content Include="Templates\en-gb\ConsultationScheduledThankYouEmail.htm" />
     <Content Include="Templates\en-gb\ConsultationScheduledEmail.htm" />
     <Content Include="Templates\en-gb\SupportQueryReceived.htm" />

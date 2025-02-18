@@ -12,31 +12,31 @@
                 <li class="active">
                     <a data-toggle="tab" href="#e-details">
                         @Model.CharacterEnergy.DescriptiveTitle
-                        <div class="img-rounded image-pill" style="background-image: url('@($"{DefaultValuesConfiguration.Instance.StorjBaseImagesPath}/ninestar/energies/{Model.MainEnergy.EnergyLowerCase}.png")');"></div>
+                        <div class="img-rounded image-pill" style="background-image: url('@($"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/energies/{Model.MainEnergy.EnergyLowerCase}.png")');"></div>
                     </a>
                 </li>
                 <li>
                     <a data-toggle="tab" href="#e-element">
                         @Model.CharacterEnergy.ElementTitle
-                        <div class="img-rounded image-pill" style="background-image: url('@($"{DefaultValuesConfiguration.Instance.StorjBaseImagesPath}/ninestar/elements/{Model.CharacterEnergy.ElementName.ToLower()}.png")');"></div>
+                        <div class="img-rounded image-pill" style="background-image: url('@($"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/elements/{Model.CharacterEnergy.ElementName.ToLower()}.png")');"></div>
                     </a>
                 </li>
                 <li>
                     <a data-toggle="tab" href="#e-modality">
                         @Model.CharacterEnergy.ModalityTitle
-                        <div class="img-rounded image-pill" style="background-image: url('@($"{DefaultValuesConfiguration.Instance.StorjBaseImagesPath}/ninestar/modalities/{Model.CharacterEnergy.ModalityName.ToLower()}.png")');"></div>
+                        <div class="img-rounded image-pill" style="background-image: url('@($"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/modalities/{Model.CharacterEnergy.ModalityName.ToLower()}.png")');"></div>
                     </a>
                 </li>
                 <li>
                     <a data-toggle="tab" href="#e-trigram">
                         @Dictionary.Trigram
-                        <div class="img-rounded image-pill" style="background-image: url('@($"{DefaultValuesConfiguration.Instance.StorjBaseImagesPath}/ninestar/trigrams/trigram-{Model.CharacterEnergy.EnergyLowerCase}-square.png")');"></div>
+                        <div class="img-rounded image-pill" style="background-image: url('@($"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/trigrams/trigram-{Model.CharacterEnergy.EnergyLowerCase}-square.png")');"></div>
                     </a>
                 </li>
                 <li>
                     <a data-toggle="tab" href="#e-yinyang">
                         @Model.CharacterEnergy.YinYangName
-                        <div class="img-rounded image-pill" style="background-image: url('@($"{DefaultValuesConfiguration.Instance.StorjBaseImagesPath}/ninestar/yinyang/{Model.CharacterEnergy.YinYangName.ToLower()}.png")');"></div>
+                        <div class="img-rounded image-pill" style="background-image: url('@($"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/yinyang/{Model.CharacterEnergy.YinYangName.ToLower()}.png")');"></div>
                     </a>
                 </li>
             </ul>

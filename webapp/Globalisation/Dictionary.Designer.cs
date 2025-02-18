@@ -1330,6 +1330,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About The I Ching.
+        /// </summary>
+        public static string AboutTheIChing {
+            get {
+                return ResourceManager.GetString("AboutTheIChing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About Yearly &amp; Monthly Cycles.
         /// </summary>
         public static string AboutYearlyAndMonthlyCycles {
@@ -1344,6 +1353,42 @@ namespace K9.Globalisation {
         public static string AboutYearlyCycles {
             get {
                 return ResourceManager.GetString("AboutYearlyCycles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Abundance (Fullness).
+        /// </summary>
+        public static string Abundance {
+            get {
+                return ResourceManager.GetString("Abundance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Abundance and Change.
+        /// </summary>
+        public static string AbundanceAndChange {
+            get {
+                return ResourceManager.GetString("AbundanceAndChange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This is a time of great success; act with clarity before the moment passes..
+        /// </summary>
+        public static string AbundanceSummary {
+            get {
+                return ResourceManager.GetString("AbundanceSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A peak moment—use it wisely..
+        /// </summary>
+        public static string AbundanceTitle {
+            get {
+                return ResourceManager.GetString("AbundanceTitle", resourceCulture);
             }
         }
         
@@ -1416,6 +1461,33 @@ namespace K9.Globalisation {
         public static string Advisor {
             get {
                 return ResourceManager.GetString("Advisor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to After Completion.
+        /// </summary>
+        public static string AfterCompletion {
+            get {
+                return ResourceManager.GetString("AfterCompletion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sustaining progress requires continuous awareness and effort..
+        /// </summary>
+        public static string AfterCompletionSummary {
+            get {
+                return ResourceManager.GetString("AfterCompletionSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Success has been achieved but must be maintained..
+        /// </summary>
+        public static string AfterCompletionTitle {
+            get {
+                return ResourceManager.GetString("AfterCompletionTitle", resourceCulture);
             }
         }
         
@@ -1506,6 +1578,33 @@ namespace K9.Globalisation {
         public static string AnnualStandardMembership {
             get {
                 return ResourceManager.GetString("AnnualStandardMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Approach.
+        /// </summary>
+        public static string Approach {
+            get {
+                return ResourceManager.GetString("Approach", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Positive momentum is increasing. Be ready to seize the moment..
+        /// </summary>
+        public static string ApproachSummary {
+            get {
+                return ResourceManager.GetString("ApproachSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opportunities are coming; prepare to act..
+        /// </summary>
+        public static string ApproachTitle {
+            get {
+                return ResourceManager.GetString("ApproachTitle", resourceCulture);
             }
         }
         
@@ -1696,6 +1795,42 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Before Completion.
+        /// </summary>
+        public static string BeforeCompletion {
+            get {
+                return ResourceManager.GetString("BeforeCompletion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The journey is not yet over—stay focused to reach completion..
+        /// </summary>
+        public static string BeforeCompletionSummary {
+            get {
+                return ResourceManager.GetString("BeforeCompletionSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The final steps must be taken carefully..
+        /// </summary>
+        public static string BeforeCompletionTitle {
+            get {
+                return ResourceManager.GetString("BeforeCompletionTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Beginnings and Challenges.
+        /// </summary>
+        public static string BeginningsAndChallenges {
+            get {
+                return ResourceManager.GetString("BeginningsAndChallenges", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This site is under development and new features are being added continuously. Your feedback is welcome. Please visit the support page to get in touch..
         /// </summary>
         public static string BetaWarning {
@@ -1767,6 +1902,33 @@ namespace K9.Globalisation {
         public static string BiorhythmsLabel {
             get {
                 return ResourceManager.GetString("BiorhythmsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Biting Through.
+        /// </summary>
+        public static string BitingThrough {
+            get {
+                return ResourceManager.GetString("BitingThrough", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This hexagram calls for direct action in overcoming resistance and seeking justice..
+        /// </summary>
+        public static string BitingThroughSummary {
+            get {
+                return ResourceManager.GetString("BitingThroughSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Face challenges head-on with determination..
+        /// </summary>
+        public static string BitingThroughTitle {
+            get {
+                return ResourceManager.GetString("BitingThroughTitle", resourceCulture);
             }
         }
         
@@ -1873,6 +2035,33 @@ namespace K9.Globalisation {
         public static string both_gender_same_yin {
             get {
                 return ResourceManager.GetString("both_gender_same_yin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Breakthrough (Resoluteness).
+        /// </summary>
+        public static string Breakthrough {
+            get {
+                return ResourceManager.GetString("Breakthrough", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stand your ground and act with clarity; obstacles must be removed..
+        /// </summary>
+        public static string BreakthroughSummary {
+            get {
+                return ResourceManager.GetString("BreakthroughSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A decisive moment requires firm action..
+        /// </summary>
+        public static string BreakthroughTitle {
+            get {
+                return ResourceManager.GetString("BreakthroughTitle", resourceCulture);
             }
         }
         
@@ -2245,6 +2434,42 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Coming to Meet.
+        /// </summary>
+        public static string ComingToMeet {
+            get {
+                return ResourceManager.GetString("ComingToMeet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Coming to Meet.
+        /// </summary>
+        public static string ComingToMeet1 {
+            get {
+                return ResourceManager.GetString("ComingToMeet1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Be mindful of powerful influences and remain centered..
+        /// </summary>
+        public static string ComingToMeetSummary {
+            get {
+                return ResourceManager.GetString("ComingToMeetSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An unexpected encounter brings change..
+        /// </summary>
+        public static string ComingToMeetTitle {
+            get {
+                return ResourceManager.GetString("ComingToMeetTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Communicator.
         /// </summary>
         public static string Communicator {
@@ -2422,11 +2647,38 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Conflict.
+        /// </summary>
+        public static string Conflict {
+            get {
+                return ResourceManager.GetString("Conflict", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Conflict Likelihood.
         /// </summary>
         public static string ConflictScore {
             get {
                 return ResourceManager.GetString("ConflictScore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Conflict must be handled with care. Direct confrontation may not always be the best strategy..
+        /// </summary>
+        public static string ConflictSummary {
+            get {
+                return ResourceManager.GetString("ConflictSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disputes arise; seek resolution with wisdom..
+        /// </summary>
+        public static string ConflictTitle {
+            get {
+                return ResourceManager.GetString("ConflictTitle", resourceCulture);
             }
         }
         
@@ -2633,6 +2885,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Consult the I Ching.
+        /// </summary>
+        public static string ConsultTheIChing {
+            get {
+                return ResourceManager.GetString("ConsultTheIChing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact.
         /// </summary>
         public static string Contact {
@@ -2656,6 +2917,33 @@ namespace K9.Globalisation {
         public static string Contacts {
             get {
                 return ResourceManager.GetString("Contacts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contemplation (View).
+        /// </summary>
+        public static string Contemplation {
+            get {
+                return ResourceManager.GetString("Contemplation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Before making a decision, pause and reflect on the bigger picture..
+        /// </summary>
+        public static string ContemplationSummary {
+            get {
+                return ResourceManager.GetString("ContemplationSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Observation before action ensures clarity..
+        /// </summary>
+        public static string ContemplationTitle {
+            get {
+                return ResourceManager.GetString("ContemplationTitle", resourceCulture);
             }
         }
         
@@ -3251,6 +3539,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Darkening of the Light.
+        /// </summary>
+        public static string DarkeningOfTheLight {
+            get {
+                return ResourceManager.GetString("DarkeningOfTheLight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sometimes you must hide your brilliance to survive difficult times..
+        /// </summary>
+        public static string DarkeningOfTheLightSummary {
+            get {
+                return ResourceManager.GetString("DarkeningOfTheLightSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adversity requires quiet endurance..
+        /// </summary>
+        public static string DarkeningOfTheLightTitle {
+            get {
+                return ResourceManager.GetString("DarkeningOfTheLightTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date Of Birth.
         /// </summary>
         public static string DateOfBirthLabel {
@@ -3265,6 +3580,60 @@ namespace K9.Globalisation {
         public static string DeactivatedLabel {
             get {
                 return ResourceManager.GetString("DeactivatedLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Decrease.
+        /// </summary>
+        public static string Decrease {
+            get {
+                return ResourceManager.GetString("Decrease", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reducing unnecessary burdens creates clarity and alignment with your true purpose..
+        /// </summary>
+        public static string DecreaseSummary {
+            get {
+                return ResourceManager.GetString("DecreaseSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Letting go of excess allows for balance..
+        /// </summary>
+        public static string DecreaseTitle {
+            get {
+                return ResourceManager.GetString("DecreaseTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deliverance.
+        /// </summary>
+        public static string Deliverance {
+            get {
+                return ResourceManager.GetString("Deliverance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Difficulties are clearing; a new path is opening up..
+        /// </summary>
+        public static string DeliveranceSummary {
+            get {
+                return ResourceManager.GetString("DeliveranceSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Relief follows struggle..
+        /// </summary>
+        public static string DeliveranceTitle {
+            get {
+                return ResourceManager.GetString("DeliveranceTitle", resourceCulture);
             }
         }
         
@@ -3296,11 +3665,65 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Difficulty at the Beginning.
+        /// </summary>
+        public static string DifficultyAtTheBeginning {
+            get {
+                return ResourceManager.GetString("DifficultyAtTheBeginning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The start of any endeavor is fraught with difficulties, but perseverance will lead to clarity and success..
+        /// </summary>
+        public static string DifficultyAtTheBeginningSummary {
+            get {
+                return ResourceManager.GetString("DifficultyAtTheBeginningSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Challenges mark the start of something new..
+        /// </summary>
+        public static string DifficultyAtTheBeginningTitle {
+            get {
+                return ResourceManager.GetString("DifficultyAtTheBeginningTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Diplomat.
         /// </summary>
         public static string Diplomat {
             get {
                 return ResourceManager.GetString("Diplomat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dispersion (Dissolution).
+        /// </summary>
+        public static string Dispersion {
+            get {
+                return ResourceManager.GetString("Dispersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dissolving barriers and rigid structures allows for new flow..
+        /// </summary>
+        public static string DispersionSummary {
+            get {
+                return ResourceManager.GetString("DispersionSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Breaking stagnation leads to freedom..
+        /// </summary>
+        public static string DispersionTitle {
+            get {
+                return ResourceManager.GetString("DispersionTitle", resourceCulture);
             }
         }
         
@@ -3508,6 +3931,33 @@ namespace K9.Globalisation {
         public static string Duration {
             get {
                 return ResourceManager.GetString("Duration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Duration.
+        /// </summary>
+        public static string Duration1 {
+            get {
+                return ResourceManager.GetString("Duration1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A lasting approach will yield the best results..
+        /// </summary>
+        public static string DurationSummary {
+            get {
+                return ResourceManager.GetString("DurationSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Consistency and endurance ensure success..
+        /// </summary>
+        public static string DurationTitle {
+            get {
+                return ResourceManager.GetString("DurationTitle", resourceCulture);
             }
         }
         
@@ -3917,6 +4367,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enthusiasm.
+        /// </summary>
+        public static string Enthusiasm {
+            get {
+                return ResourceManager.GetString("Enthusiasm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Momentum is building. Channel your energy into positive change..
+        /// </summary>
+        public static string EnthusiasmSummary {
+            get {
+                return ResourceManager.GetString("EnthusiasmSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inspired action leads to progress..
+        /// </summary>
+        public static string EnthusiasmTitle {
+            get {
+                return ResourceManager.GetString("EnthusiasmTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your account could not be activated. Please contact support..
         /// </summary>
         public static string ErrorActivatingAccount {
@@ -4003,6 +4480,33 @@ namespace K9.Globalisation {
         public static string Father {
             get {
                 return ResourceManager.GetString("Father", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fellowship with Men.
+        /// </summary>
+        public static string FellowshipWithMen {
+            get {
+                return ResourceManager.GetString("FellowshipWithMen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Working together toward a common cause strengthens bonds and fosters success..
+        /// </summary>
+        public static string FellowshipWithMenSummary {
+            get {
+                return ResourceManager.GetString("FellowshipWithMenSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Strength in unity and shared purpose..
+        /// </summary>
+        public static string FellowshipWithMenTitle {
+            get {
+                return ResourceManager.GetString("FellowshipWithMenTitle", resourceCulture);
             }
         }
         
@@ -4369,6 +4873,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Following.
+        /// </summary>
+        public static string Following {
+            get {
+                return ResourceManager.GetString("Following", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to By following the natural course of events, you align with opportunity..
+        /// </summary>
+        public static string FollowingSummary {
+            get {
+                return ResourceManager.GetString("FollowingSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adaptability and alignment with the flow lead to success..
+        /// </summary>
+        public static string FollowingTitle {
+            get {
+                return ResourceManager.GetString("FollowingTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Forever.
         /// </summary>
         public static string Forever {
@@ -4440,6 +4971,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gathering Together.
+        /// </summary>
+        public static string GatheringTogether {
+            get {
+                return ResourceManager.GetString("GatheringTogether", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unifying with others toward a shared goal leads to success..
+        /// </summary>
+        public static string GatheringTogetherSummary {
+            get {
+                return ResourceManager.GetString("GatheringTogetherSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Community and connection bring strength..
+        /// </summary>
+        public static string GatheringTogetherTitle {
+            get {
+                return ResourceManager.GetString("GatheringTogetherTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gay.
         /// </summary>
         public static string Gay {
@@ -4467,11 +5025,83 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Generate Hexagram.
+        /// </summary>
+        public static string GenerateHexagram {
+            get {
+                return ResourceManager.GetString("GenerateHexagram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grace.
+        /// </summary>
+        public static string Grace {
+            get {
+                return ResourceManager.GetString("Grace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Refinement and balance in behavior lead to success..
+        /// </summary>
+        public static string GraceSummary {
+            get {
+                return ResourceManager.GetString("GraceSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inner integrity is more important than external beauty..
+        /// </summary>
+        public static string GraceTitle {
+            get {
+                return ResourceManager.GetString("GraceTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Development (Gradual Progress).
+        /// </summary>
+        public static string GradualProgress {
+            get {
+                return ResourceManager.GetString("GradualProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Like a tree growing, patience and persistence lead to long-term rewards..
+        /// </summary>
+        public static string GradualProgressSummary {
+            get {
+                return ResourceManager.GetString("GradualProgressSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Slow, steady progress ensures success..
+        /// </summary>
+        public static string GradualProgressTitle {
+            get {
+                return ResourceManager.GetString("GradualProgressTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Green.
         /// </summary>
         public static string Green {
             get {
                 return ResourceManager.GetString("Green", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Growth and Stability.
+        /// </summary>
+        public static string GrowthAndStability {
+            get {
+                return ResourceManager.GetString("GrowthAndStability", resourceCulture);
             }
         }
         
@@ -4793,6 +5423,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Holding Together.
+        /// </summary>
+        public static string HoldingTogether {
+            get {
+                return ResourceManager.GetString("HoldingTogether", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Group harmony and loyalty are essential. Work together toward shared goals..
+        /// </summary>
+        public static string HoldingTogetherSummary {
+            get {
+                return ResourceManager.GetString("HoldingTogetherSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unity and trust build strong foundations..
+        /// </summary>
+        public static string HoldingTogetherTitle {
+            get {
+                return ResourceManager.GetString("HoldingTogetherTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    &lt;strong&gt;
         ///        These are the instructions for removing all of your data.
@@ -4831,6 +5488,35 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Understanding the I Ching&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    The &lt;em&gt;I Ching&lt;/em&gt;, also known as the &lt;strong&gt;Book of Changes&lt;/strong&gt;, is an ancient Chinese divination text that has been used for thousands of years to provide guidance, wisdom, and insight into life&apos;s challenges. It is based on a system of &lt;strong&gt;64 hexagrams&lt;/strong&gt;, each composed of six lines that represent different states of energy—either &lt;em&gt;yin&lt;/em&gt; (receptive) or &lt;em&gt;yang&lt;/em&gt; (active). These hexagrams are generated through methods such as tossing  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string i_ching_info {
+            get {
+                return ResourceManager.GetString("i_ching_info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I Ching.
+        /// </summary>
+        public static string IChing {
+            get {
+                return ResourceManager.GetString("IChing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Free I Ching reading. Consult the I Ching and get guidance about a question or situation.
+        /// </summary>
+        public static string IChingMeta {
+            get {
+                return ResourceManager.GetString("IChingMeta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to If LGBTQ+.
         /// </summary>
         public static string IfLGBTQ {
@@ -4858,6 +5544,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Increase.
+        /// </summary>
+        public static string Increase {
+            get {
+                return ResourceManager.GetString("Increase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A time of abundance and opportunity—use it wisely and share your success..
+        /// </summary>
+        public static string IncreaseSummary {
+            get {
+                return ResourceManager.GetString("IncreaseSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Growth and expansion are on the horizon..
+        /// </summary>
+        public static string IncreaseTitle {
+            get {
+                return ResourceManager.GetString("IncreaseTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to In Depth Analysis.
         /// </summary>
         public static string InDepthAnalysis {
@@ -4867,11 +5580,92 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Influence (Wooing).
+        /// </summary>
+        public static string Influence {
+            get {
+                return ResourceManager.GetString("Influence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Influencer.
         /// </summary>
         public static string Influencer {
             get {
                 return ResourceManager.GetString("Influencer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use soft power to create change rather than force..
+        /// </summary>
+        public static string InfluenceSummary {
+            get {
+                return ResourceManager.GetString("InfluenceSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gentle persuasion and attraction lead to progress..
+        /// </summary>
+        public static string InfluenceTitle {
+            get {
+                return ResourceManager.GetString("InfluenceTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inner Truth.
+        /// </summary>
+        public static string InnerTruth {
+            get {
+                return ResourceManager.GetString("InnerTruth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Being honest with yourself and others strengthens relationships and purpose..
+        /// </summary>
+        public static string InnerTruthSummary {
+            get {
+                return ResourceManager.GetString("InnerTruthSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sincerity leads to deeper connections and wisdom..
+        /// </summary>
+        public static string InnerTruthTitle {
+            get {
+                return ResourceManager.GetString("InnerTruthTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Innocence (The Unexpected).
+        /// </summary>
+        public static string Innocence {
+            get {
+                return ResourceManager.GetString("Innocence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Acting with sincerity and without ulterior motives will bring success..
+        /// </summary>
+        public static string InnocenceSummary {
+            get {
+                return ResourceManager.GetString("InnocenceSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stay true to yourself; let things unfold naturally..
+        /// </summary>
+        public static string InnocenceTitle {
+            get {
+                return ResourceManager.GetString("InnocenceTitle", resourceCulture);
             }
         }
         
@@ -4994,6 +5788,15 @@ namespace K9.Globalisation {
         public static string IntellectualBiorhythm {
             get {
                 return ResourceManager.GetString("IntellectualBiorhythm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interpretation.
+        /// </summary>
+        public static string Interpretation {
+            get {
+                return ResourceManager.GetString("Interpretation", resourceCulture);
             }
         }
         
@@ -5130,6 +5933,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Keeping Still (Mountain).
+        /// </summary>
+        public static string KeepingStill {
+            get {
+                return ResourceManager.GetString("KeepingStill", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sometimes, doing nothing is the right action—find stability within..
+        /// </summary>
+        public static string KeepingStillSummary {
+            get {
+                return ResourceManager.GetString("KeepingStillSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inner peace and stillness bring clarity..
+        /// </summary>
+        public static string KeepingStillTitle {
+            get {
+                return ResourceManager.GetString("KeepingStillTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ken.
         /// </summary>
         public static string Ken {
@@ -5139,7 +5969,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9 Star Ki Astrology Free Calculator Predictions Relationships Compatibility Biorhythms Gene Keys Human Design Nine Energies Feng Shui Astrology I Ching Love Dating Nine Star Ki Bio-Rhythms.
+        ///   Looks up a localized string similar to 9 Star Ki Astrology Free Calculator Predictions Relationships Compatibility Biorhythms I Ching Free I Ching Gene Keys Human Design Nine Energies Feng Shui Astrology I Ching Love Dating Nine Star Ki Bio-Rhythms.
         /// </summary>
         public static string Keywords {
             get {
@@ -5481,6 +6311,33 @@ namespace K9.Globalisation {
         public static string LifeTimePlatinumMembership {
             get {
                 return ResourceManager.GetString("LifeTimePlatinumMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Limitation.
+        /// </summary>
+        public static string Limitation {
+            get {
+                return ResourceManager.GetString("Limitation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Setting clear limits allows for sustainable growth..
+        /// </summary>
+        public static string LimitationSummary {
+            get {
+                return ResourceManager.GetString("LimitationSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Boundaries create stability and clarity..
+        /// </summary>
+        public static string LimitationTitle {
+            get {
+                return ResourceManager.GetString("LimitationTitle", resourceCulture);
             }
         }
         
@@ -6666,6 +7523,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mastery and Completion.
+        /// </summary>
+        public static string MasteryAndCompletion {
+            get {
+                return ResourceManager.GetString("MasteryAndCompletion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Multimedia.
         /// </summary>
         public static string MediaTheque {
@@ -6877,6 +7743,33 @@ namespace K9.Globalisation {
         public static string Moderate {
             get {
                 return ResourceManager.GetString("Moderate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Modesty.
+        /// </summary>
+        public static string Modesty {
+            get {
+                return ResourceManager.GetString("Modesty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pride can lead to downfall, but staying humble fosters respect and stability..
+        /// </summary>
+        public static string ModestySummary {
+            get {
+                return ResourceManager.GetString("ModestySummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Humility ensures long-term success..
+        /// </summary>
+        public static string ModestyTitle {
+            get {
+                return ResourceManager.GetString("ModestyTitle", resourceCulture);
             }
         }
         
@@ -7426,6 +8319,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 9 Star GPT.
+        /// </summary>
+        public static string NineStarGPT {
+            get {
+                return ResourceManager.GetString("NineStarGPT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 9 Star Ki Astrology.
         /// </summary>
         public static string NineStarKiAstrology {
@@ -7642,6 +8544,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Obstruction.
+        /// </summary>
+        public static string Obstruction {
+            get {
+                return ResourceManager.GetString("Obstruction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A roadblock signals a need to rethink your strategy..
+        /// </summary>
+        public static string ObstructionSummary {
+            get {
+                return ResourceManager.GetString("ObstructionSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pause and reassess before proceeding..
+        /// </summary>
+        public static string ObstructionTitle {
+            get {
+                return ResourceManager.GetString("ObstructionTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Occupations.
         /// </summary>
         public static string OccupationsLabel {
@@ -7665,6 +8594,60 @@ namespace K9.Globalisation {
         public static string OnTheBrinkOfExtinctionTitle {
             get {
                 return ResourceManager.GetString("OnTheBrinkOfExtinctionTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opposition.
+        /// </summary>
+        public static string Opposition {
+            get {
+                return ResourceManager.GetString("Opposition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Instead of resisting opposition, find ways to integrate different perspectives..
+        /// </summary>
+        public static string OppositionSummary {
+            get {
+                return ResourceManager.GetString("OppositionSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Differences can be opportunities for growth..
+        /// </summary>
+        public static string OppositionTitle {
+            get {
+                return ResourceManager.GetString("OppositionTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oppression (Exhaustion).
+        /// </summary>
+        public static string Oppression {
+            get {
+                return ResourceManager.GetString("Oppression", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You may feel burdened, but enduring hardship leads to wisdom..
+        /// </summary>
+        public static string OppressionSummary {
+            get {
+                return ResourceManager.GetString("OppressionSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Struggles test endurance; remain resilient..
+        /// </summary>
+        public static string OppressionTitle {
+            get {
+                return ResourceManager.GetString("OppressionTitle", resourceCulture);
             }
         }
         
@@ -7733,6 +8716,15 @@ namespace K9.Globalisation {
         public static string OverallScore {
             get {
                 return ResourceManager.GetString("OverallScore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overcoming Obstacles.
+        /// </summary>
+        public static string OvercomingObstacles {
+            get {
+                return ResourceManager.GetString("OvercomingObstacles", resourceCulture);
             }
         }
         
@@ -7814,6 +8806,33 @@ namespace K9.Globalisation {
         public static string PayNow {
             get {
                 return ResourceManager.GetString("PayNow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Peace.
+        /// </summary>
+        public static string Peace {
+            get {
+                return ResourceManager.GetString("Peace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A period of stability and growth, but maintain vigilance to sustain it..
+        /// </summary>
+        public static string PeaceSummary {
+            get {
+                return ResourceManager.GetString("PeaceSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Balance and harmony bring prosperity..
+        /// </summary>
+        public static string PeaceTitle {
+            get {
+                return ResourceManager.GetString("PeaceTitle", resourceCulture);
             }
         }
         
@@ -8149,6 +9168,60 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Possession in Great Measure.
+        /// </summary>
+        public static string PossessionInGreatMeasure {
+            get {
+                return ResourceManager.GetString("PossessionInGreatMeasure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You are in a position of advantage. Use your resources with integrity..
+        /// </summary>
+        public static string PossessionInGreatMeasureSummary {
+            get {
+                return ResourceManager.GetString("PossessionInGreatMeasureSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Great fortune, but use it wisely..
+        /// </summary>
+        public static string PossessionInGreatMeasureTitle {
+            get {
+                return ResourceManager.GetString("PossessionInGreatMeasureTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Power of the Great.
+        /// </summary>
+        public static string PowerOfTheGreat {
+            get {
+                return ResourceManager.GetString("PowerOfTheGreat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Raw power is not enough; wisdom is needed to guide it..
+        /// </summary>
+        public static string PowerOfTheGreatSummary {
+            get {
+                return ResourceManager.GetString("PowerOfTheGreatSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Strength must be used wisely..
+        /// </summary>
+        public static string PowerOfTheGreatTitle {
+            get {
+                return ResourceManager.GetString("PowerOfTheGreatTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pragmatist.
         /// </summary>
         public static string Pragmatist {
@@ -8208,6 +9281,60 @@ namespace K9.Globalisation {
         public static string PredictionsTitle {
             get {
                 return ResourceManager.GetString("PredictionsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preponderance of the Great.
+        /// </summary>
+        public static string PreponderanceOfTheGreat {
+            get {
+                return ResourceManager.GetString("PreponderanceOfTheGreat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You are carrying a great weight. Strength is needed, but be mindful of limitations..
+        /// </summary>
+        public static string PreponderanceOfTheGreatSummary {
+            get {
+                return ResourceManager.GetString("PreponderanceOfTheGreatSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Excessive burden requires balance..
+        /// </summary>
+        public static string PreponderanceOfTheGreatTitle {
+            get {
+                return ResourceManager.GetString("PreponderanceOfTheGreatTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preponderance of the Small.
+        /// </summary>
+        public static string PreponderanceOfTheSmall {
+            get {
+                return ResourceManager.GetString("PreponderanceOfTheSmall", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Success comes by focusing on precision and avoiding excessive ambition..
+        /// </summary>
+        public static string PreponderanceOfTheSmallSummary {
+            get {
+                return ResourceManager.GetString("PreponderanceOfTheSmallSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Small details require attention..
+        /// </summary>
+        public static string PreponderanceOfTheSmallTitle {
+            get {
+                return ResourceManager.GetString("PreponderanceOfTheSmallTitle", resourceCulture);
             }
         }
         
@@ -8279,6 +9406,33 @@ namespace K9.Globalisation {
         public static string ProfileReadings {
             get {
                 return ResourceManager.GetString("ProfileReadings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Progress.
+        /// </summary>
+        public static string Progress {
+            get {
+                return ResourceManager.GetString("Progress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Continue pushing forward, as conditions are ripe for success..
+        /// </summary>
+        public static string ProgressSummary {
+            get {
+                return ResourceManager.GetString("ProgressSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Momentum is in your favor..
+        /// </summary>
+        public static string ProgressTitle {
+            get {
+                return ResourceManager.GetString("ProgressTitle", resourceCulture);
             }
         }
         
@@ -8369,6 +9523,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Corners of the Mouth (Providing Nourishment).
+        /// </summary>
+        public static string ProvidingNourishment {
+            get {
+                return ResourceManager.GetString("ProvidingNourishment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pay attention to what you nourish yourself with, both in body and mind..
+        /// </summary>
+        public static string ProvidingNourishmentSummary {
+            get {
+                return ResourceManager.GetString("ProvidingNourishmentSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What you consume, physically and mentally, shapes your life..
+        /// </summary>
+        public static string ProvidingNourishmentTitle {
+            get {
+                return ResourceManager.GetString("ProvidingNourishmentTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Purchased Cancelled.
         /// </summary>
         public static string PurchaseCancelled {
@@ -8428,6 +9609,33 @@ namespace K9.Globalisation {
         public static string Purple {
             get {
                 return ResourceManager.GetString("Purple", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pushing Upward.
+        /// </summary>
+        public static string PushingUpward {
+            get {
+                return ResourceManager.GetString("PushingUpward", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Perseverance and effort will bring gradual, meaningful growth..
+        /// </summary>
+        public static string PushingUpwardSummary {
+            get {
+                return ResourceManager.GetString("PushingUpwardSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Steady progress leads to lasting success..
+        /// </summary>
+        public static string PushingUpwardTitle {
+            get {
+                return ResourceManager.GetString("PushingUpwardTitle", resourceCulture);
             }
         }
         
@@ -8499,6 +9707,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Relationships and Transformation.
+        /// </summary>
+        public static string RelationshipsAndTransformation {
+            get {
+                return ResourceManager.GetString("RelationshipsAndTransformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 9 Star Ki Understanding Relationships Love Romance Friendship Compatibility Work Relationships Team Building.
         /// </summary>
         public static string RelationshipsKeywords {
@@ -8558,6 +9775,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Retreat.
+        /// </summary>
+        public static string Retreat {
+            get {
+                return ResourceManager.GetString("Retreat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Knowing when to step back can preserve strength for the right moment..
+        /// </summary>
+        public static string RetreatSummary {
+            get {
+                return ResourceManager.GetString("RetreatSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sometimes withdrawal is the best strategy..
+        /// </summary>
+        public static string RetreatTitle {
+            get {
+                return ResourceManager.GetString("RetreatTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Retrieve saved Compatibility Score.
         /// </summary>
         public static string RetrieveLastCompatibility {
@@ -8576,11 +9820,65 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Return (The Turning Point).
+        /// </summary>
+        public static string Return {
+            get {
+                return ResourceManager.GetString("Return", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This hexagram signifies the natural cycle of renewal and returning to one&apos;s path..
+        /// </summary>
+        public static string ReturnSummary {
+            get {
+                return ResourceManager.GetString("ReturnSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A new cycle begins; renewal is near..
+        /// </summary>
+        public static string ReturnTitle {
+            get {
+                return ResourceManager.GetString("ReturnTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Revolution / Quiet before Storm.
         /// </summary>
         public static string Revolution {
             get {
                 return ResourceManager.GetString("Revolution", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Revolution (Molting).
+        /// </summary>
+        public static string Revolution1 {
+            get {
+                return ResourceManager.GetString("Revolution1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change is inevitable; embrace it with courage..
+        /// </summary>
+        public static string RevolutionSummary {
+            get {
+                return ResourceManager.GetString("RevolutionSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transformation is necessary for renewal..
+        /// </summary>
+        public static string RevolutionTitle {
+            get {
+                return ResourceManager.GetString("RevolutionTitle", resourceCulture);
             }
         }
         
@@ -9593,6 +10891,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Splitting Apart.
+        /// </summary>
+        public static string SplittingApart {
+            get {
+                return ResourceManager.GetString("SplittingApart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sometimes things must fall apart before they can be rebuilt stronger..
+        /// </summary>
+        public static string SplittingApartSummary {
+            get {
+                return ResourceManager.GetString("SplittingApartSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Letting go of old structures allows for renewal..
+        /// </summary>
+        public static string SplittingApartTitle {
+            get {
+                return ResourceManager.GetString("SplittingApartTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Spotlight / Fame.
         /// </summary>
         public static string Spotlight {
@@ -9675,6 +11000,33 @@ namespace K9.Globalisation {
         public static string StandardMembership {
             get {
                 return ResourceManager.GetString("StandardMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Standstill (Stagnation).
+        /// </summary>
+        public static string Standstill {
+            get {
+                return ResourceManager.GetString("Standstill", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sometimes things do not move forward. Retreat and regroup..
+        /// </summary>
+        public static string StandstillSummary {
+            get {
+                return ResourceManager.GetString("StandstillSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blocked progress; patience is required..
+        /// </summary>
+        public static string StandstillTitle {
+            get {
+                return ResourceManager.GetString("StandstillTitle", resourceCulture);
             }
         }
         
@@ -9995,6 +11347,60 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Taming Power of the Great.
+        /// </summary>
+        public static string TamingPowerOfTheGreat {
+            get {
+                return ResourceManager.GetString("TamingPowerOfTheGreat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Now is the time to gather energy and wisdom before making a decisive move..
+        /// </summary>
+        public static string TamingPowerOfTheGreatSummary {
+            get {
+                return ResourceManager.GetString("TamingPowerOfTheGreatSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restraint and preparation lead to future strength..
+        /// </summary>
+        public static string TamingPowerOfTheGreatTitle {
+            get {
+                return ResourceManager.GetString("TamingPowerOfTheGreatTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Taming Power of the Small.
+        /// </summary>
+        public static string TamingPowerOfTheSmall {
+            get {
+                return ResourceManager.GetString("TamingPowerOfTheSmall", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Even small efforts can influence great outcomes over time. Be persistent..
+        /// </summary>
+        public static string TamingPowerOfTheSmallSummary {
+            get {
+                return ResourceManager.GetString("TamingPowerOfTheSmallSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Small actions accumulate to bring change..
+        /// </summary>
+        public static string TamingPowerOfTheSmallTitle {
+            get {
+                return ResourceManager.GetString("TamingPowerOfTheSmallTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    &lt;strong&gt;Effective Date: &lt;/strong&gt;&lt;span&gt;3rd December 2019&lt;/span&gt;
         ///&lt;/p&gt;
@@ -10058,6 +11464,357 @@ namespace K9.Globalisation {
         public static string ThankyouForSubscriptionEmailTitle {
             get {
                 return ResourceManager.GetString("ThankyouForSubscriptionEmailTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Abysmal (Water).
+        /// </summary>
+        public static string TheAbysmal {
+            get {
+                return ResourceManager.GetString("TheAbysmal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You are facing deep challenges. Move forward cautiously but with confidence..
+        /// </summary>
+        public static string TheAbysmalSummary {
+            get {
+                return ResourceManager.GetString("TheAbysmalSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Persistence and resilience are required..
+        /// </summary>
+        public static string TheAbysmalTitle {
+            get {
+                return ResourceManager.GetString("TheAbysmalTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Army.
+        /// </summary>
+        public static string TheArmy {
+            get {
+                return ResourceManager.GetString("TheArmy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Strength is in structure. A well-organized team or strategy ensures success..
+        /// </summary>
+        public static string TheArmySummary {
+            get {
+                return ResourceManager.GetString("TheArmySummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Organization and discipline lead to success..
+        /// </summary>
+        public static string TheArmyTitle {
+            get {
+                return ResourceManager.GetString("TheArmyTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Arousing (Shock, Thunder).
+        /// </summary>
+        public static string TheArousing {
+            get {
+                return ResourceManager.GetString("TheArousing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unexpected events shake things up—stay grounded and respond wisely..
+        /// </summary>
+        public static string TheArousingSummary {
+            get {
+                return ResourceManager.GetString("TheArousingSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sudden change disrupts the status quo..
+        /// </summary>
+        public static string TheArousingTitle {
+            get {
+                return ResourceManager.GetString("TheArousingTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Cauldron.
+        /// </summary>
+        public static string TheCauldron {
+            get {
+                return ResourceManager.GetString("TheCauldron", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nurturing yourself and your purpose leads to fulfillment..
+        /// </summary>
+        public static string TheCauldronSummary {
+            get {
+                return ResourceManager.GetString("TheCauldronSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Refinement and inner development create strength..
+        /// </summary>
+        public static string TheCauldronTitle {
+            get {
+                return ResourceManager.GetString("TheCauldronTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Clinging (Fire).
+        /// </summary>
+        public static string TheClinging {
+            get {
+                return ResourceManager.GetString("TheClinging", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Like fire needing fuel, maintaining brightness requires focus and dedication..
+        /// </summary>
+        public static string TheClingingSummary {
+            get {
+                return ResourceManager.GetString("TheClingingSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clarity and vision light the way..
+        /// </summary>
+        public static string TheClingingTitle {
+            get {
+                return ResourceManager.GetString("TheClingingTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Creative.
+        /// </summary>
+        public static string TheCreative {
+            get {
+                return ResourceManager.GetString("TheCreative", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This hexagram represents pure yang energy, symbolizing strength, leadership, and creativity. It calls for decisive action and confidence..
+        /// </summary>
+        public static string TheCreativeSummary {
+            get {
+                return ResourceManager.GetString("TheCreativeSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Strength and innovation lead to new beginnings..
+        /// </summary>
+        public static string TheCreativeTitle {
+            get {
+                return ResourceManager.GetString("TheCreativeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Family (The Clan).
+        /// </summary>
+        public static string TheFamily {
+            get {
+                return ResourceManager.GetString("TheFamily", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A strong foundation within relationships brings stability and peace..
+        /// </summary>
+        public static string TheFamilySummary {
+            get {
+                return ResourceManager.GetString("TheFamilySummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order and structure create harmony..
+        /// </summary>
+        public static string TheFamilyTitle {
+            get {
+                return ResourceManager.GetString("TheFamilyTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Gentle (The Penetrating, Wind).
+        /// </summary>
+        public static string TheGentle {
+            get {
+                return ResourceManager.GetString("TheGentle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gentle persistence shapes outcomes over time..
+        /// </summary>
+        public static string TheGentleSummary {
+            get {
+                return ResourceManager.GetString("TheGentleSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subtle influence is more effective than force..
+        /// </summary>
+        public static string TheGentleTitle {
+            get {
+                return ResourceManager.GetString("TheGentleTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Joyous (Lake).
+        /// </summary>
+        public static string TheJoyous {
+            get {
+                return ResourceManager.GetString("TheJoyous", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Find happiness through openness, communication, and sincerity..
+        /// </summary>
+        public static string TheJoyousSummary {
+            get {
+                return ResourceManager.GetString("TheJoyousSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to True joy comes from inner harmony..
+        /// </summary>
+        public static string TheJoyousTitle {
+            get {
+                return ResourceManager.GetString("TheJoyousTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Marrying Maiden.
+        /// </summary>
+        public static string TheMarryingMaiden {
+            get {
+                return ResourceManager.GetString("TheMarryingMaiden", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compromise may be necessary, but self-respect must remain intact..
+        /// </summary>
+        public static string TheMarryingMaidenSummary {
+            get {
+                return ResourceManager.GetString("TheMarryingMaidenSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adapting to circumstances requires wisdom..
+        /// </summary>
+        public static string TheMarryingMaidenTitle {
+            get {
+                return ResourceManager.GetString("TheMarryingMaidenTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Receptive.
+        /// </summary>
+        public static string TheReceptive {
+            get {
+                return ResourceManager.GetString("TheReceptive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pure yin energy, emphasizing receptivity, humility, and flowing with circumstances. Success comes through support and responsiveness..
+        /// </summary>
+        public static string TheReceptiveSummary {
+            get {
+                return ResourceManager.GetString("TheReceptiveSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Patience and adaptability bring success..
+        /// </summary>
+        public static string TheReceptiveTitle {
+            get {
+                return ResourceManager.GetString("TheReceptiveTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Wanderer.
+        /// </summary>
+        public static string TheWanderer {
+            get {
+                return ResourceManager.GetString("TheWanderer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You are in a transient phase—embrace flexibility and learning..
+        /// </summary>
+        public static string TheWandererSummary {
+            get {
+                return ResourceManager.GetString("TheWandererSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adaptability is key in unfamiliar territory..
+        /// </summary>
+        public static string TheWandererTitle {
+            get {
+                return ResourceManager.GetString("TheWandererTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Well.
+        /// </summary>
+        public static string TheWell {
+            get {
+                return ResourceManager.GetString("TheWell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A hidden source of strength is available—seek it out..
+        /// </summary>
+        public static string TheWellSummary {
+            get {
+                return ResourceManager.GetString("TheWellSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tap into deep wisdom and nourishment..
+        /// </summary>
+        public static string TheWellTitle {
+            get {
+                return ResourceManager.GetString("TheWellTitle", resourceCulture);
             }
         }
         
@@ -10338,6 +12095,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Treading (Conduct).
+        /// </summary>
+        public static string Treading {
+            get {
+                return ResourceManager.GetString("Treading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to One must act with caution and awareness, avoiding unnecessary risks..
+        /// </summary>
+        public static string TreadingSummary {
+            get {
+                return ResourceManager.GetString("TreadingSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Careful steps lead to progress..
+        /// </summary>
+        public static string TreadingTitle {
+            get {
+                return ResourceManager.GetString("TreadingTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tree.
         /// </summary>
         public static string Tree {
@@ -10440,6 +12224,24 @@ namespace K9.Globalisation {
         public static string Unavailable {
             get {
                 return ResourceManager.GetString("Unavailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unchangin Yang - Solid Line.
+        /// </summary>
+        public static string UnchangingYang {
+            get {
+                return ResourceManager.GetString("UnchangingYang", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unchanging Yin - Broken Line.
+        /// </summary>
+        public static string UnchangingYin {
+            get {
+                return ResourceManager.GetString("UnchangingYin", resourceCulture);
             }
         }
         
@@ -10737,6 +12539,33 @@ namespace K9.Globalisation {
         public static string ViewPredictionsForSelectedDate {
             get {
                 return ResourceManager.GetString("ViewPredictionsForSelectedDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Waiting (Nourishment).
+        /// </summary>
+        public static string Waiting {
+            get {
+                return ResourceManager.GetString("Waiting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sometimes the best approach is to wait and gather strength before making a move..
+        /// </summary>
+        public static string WaitingSummary {
+            get {
+                return ResourceManager.GetString("WaitingSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Patience is necessary before action..
+        /// </summary>
+        public static string WaitingTitle {
+            get {
+                return ResourceManager.GetString("WaitingTitle", resourceCulture);
             }
         }
         
@@ -11371,11 +13200,47 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Work on What Has Been Spoiled.
+        /// </summary>
+        public static string WorkOnWhatHasBeenSpoiled {
+            get {
+                return ResourceManager.GetString("WorkOnWhatHasBeenSpoiled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cleaning up unresolved issues leads to renewal and progress..
+        /// </summary>
+        public static string WorkOnWhatHasBeenSpoiledSummary {
+            get {
+                return ResourceManager.GetString("WorkOnWhatHasBeenSpoiledSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Past mistakes need correction..
+        /// </summary>
+        public static string WorkOnWhatHasBeenSpoiledTitle {
+            get {
+                return ResourceManager.GetString("WorkOnWhatHasBeenSpoiledTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Yang.
         /// </summary>
         public static string Yang {
             get {
                 return ResourceManager.GetString("Yang", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Changing Yang to Yin.
+        /// </summary>
+        public static string YangToYin {
+            get {
+                return ResourceManager.GetString("YangToYin", resourceCulture);
             }
         }
         
@@ -11495,6 +13360,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Changing Yin to Yang.
+        /// </summary>
+        public static string YinToYang {
+            get {
+                return ResourceManager.GetString("YinToYang", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    Many ancient civilisations had an in-depth understanding of the cosmic male and female energies
         ///&lt;/h5&gt;
@@ -11576,6 +13450,33 @@ namespace K9.Globalisation {
         public static string YourSelectedSubscription {
             get {
                 return ResourceManager.GetString("YourSelectedSubscription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Youthful Folly.
+        /// </summary>
+        public static string YouthfulFolly {
+            get {
+                return ResourceManager.GetString("YouthfulFolly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mistakes and inexperience are natural. Seek guidance and be willing to learn..
+        /// </summary>
+        public static string YouthfulFollySummary {
+            get {
+                return ResourceManager.GetString("YouthfulFollySummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Learning requires humility and openness..
+        /// </summary>
+        public static string YouthfulFollyTitle {
+            get {
+                return ResourceManager.GetString("YouthfulFollyTitle", resourceCulture);
             }
         }
     }

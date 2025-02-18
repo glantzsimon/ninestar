@@ -289,6 +289,7 @@
     <Compile Include="Controllers\ApiController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BaseNineStarKiController.cs" />
+    <Compile Include="Controllers\IChingController.cs" />
     <Compile Include="Controllers\ConsultationsController.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\ConsultationController.cs" />
@@ -304,6 +305,7 @@
     <Compile Include="Controllers\UserConsultationsController.cs" />
     <Compile Include="Controllers\UserPromoCodesController.cs" />
     <Compile Include="Controllers\UserMembershipsController.cs" />
+    <Compile Include="Enums\ELineType.cs" />
     <Compile Include="Enums\EDeviceType.cs" />
     <Compile Include="Enums\EBiorhythmValue.cs" />
     <Compile Include="Enums\EBiorhythmTrend.cs" />
@@ -356,6 +358,8 @@
     <Compile Include="Models\Biorhythms\IntellectBiorhythm.cs" />
     <Compile Include="Models\Biorhythms\IBioRhythm.cs" />
     <Compile Include="Models\Biorhythms\BioRhythmBase.cs" />
+    <Compile Include="Models\IChing\HexagramInfo.cs" />
+    <Compile Include="Models\IChing\Hexagram.cs" />
     <Compile Include="Models\NineStarKi\CompatibilityScoreModel.cs" />
     <Compile Include="Models\NineStarKi\CompatibilityDetailsModel.cs" />
     <Compile Include="Models\NineStarKi\CompatibilityModel.cs" />
@@ -376,9 +380,12 @@
     <Compile Include="Options\GaugeOptions.cs" />
     <Compile Include="Options\SearchBoxOptions.cs" />
     <Compile Include="Services\AccountMailerService.cs" />
+    <Compile Include="Services\IIChingService.cs" />
+    <Compile Include="Services\IChingService.cs" />
     <Compile Include="Services\AccountService.cs" />
     <Compile Include="Services\IAccountMailerService.cs" />
     <Compile Include="Services\IAccountService.cs" />
+    <Compile Include="ViewModels\IChingViewModel.cs" />
     <Compile Include="ViewModels\AssignConsultationModel.cs" />
     <Compile Include="ViewModels\AdminViewModel.cs" />
     <Compile Include="ViewModels\NineStarKiSummaryKbViewModel.cs" />
@@ -543,12 +550,12 @@
     <Content Include="Content\main\style.css" />
     <Content Include="Content\sections\about.css" />
     <Content Include="Content\sections\account.css" />
-    <Content Include="Content\sections\archive.css" />
     <Content Include="Content\sections\biorhythms.css" />
     <Content Include="Content\sections\book-consultation.css" />
     <Content Include="Content\sections\compatibility.css" />
     <Content Include="Content\sections\cookies.css" />
     <Content Include="Content\sections\footer.css" />
+    <Content Include="Content\sections\iching.css" />
     <Content Include="Content\sections\knowledgebase.css" />
     <Content Include="Content\sections\membership.css" />
     <Content Include="Content\sections\navbar.css" />
@@ -826,6 +833,7 @@
     <Content Include="Images\flags\zm.png" />
     <Content Include="Images\flags\zw.png" />
     <Content Include="Images\home\ninestar-home-bg.jpg" />
+    <Content Include="Images\iching\iching.png" />
     <Content Include="Images\icons\android-chrome-192x192.png" />
     <Content Include="Images\icons\apple-touch-icon-114x114.png" />
     <Content Include="Images\icons\apple-touch-icon-120x120.png" />
@@ -1220,6 +1228,7 @@
     <Content Include="Content\less\config\colours.less" />
     <Content Include="Content\less\config\paths.less" />
     <Content Include="Content\less\sections\account.less" />
+    <Content Include="Content\less\sections\iching.less" />
     <None Include="packages.config" />
     <Content Include="Properties\PublishProfiles\.gitattributes" />
     <None Include="Properties\PublishProfiles\Integration.pubxml" />
@@ -1471,6 +1480,13 @@
     <Content Include="Views\UserMemberships\_TableButtons.cshtml" />
     <Content Include="Views\Shared\Controls\_SearchBox.cshtml" />
     <Content Include="Views\UserMemberships\_TableFields.cshtml" />
+    <Content Include="Views\IChing\_ButtonsFooter.cshtml" />
+    <Content Include="Views\IChing\Index.cshtml" />
+    <Content Include="Views\IChing\_Hexagram.cshtml" />
+    <Content Include="Views\IChing\_HexagramInterpretation.cshtml" />
+    <Content Include="Views\Shared\ActionLinkButtons\_IChing.cshtml" />
+    <Content Include="Views\IChing\_HexagramResult.cshtml" />
+    <Content Include="Views\IChing\_GenerateButtonForm.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

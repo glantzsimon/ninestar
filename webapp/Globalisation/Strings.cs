@@ -192,6 +192,11 @@
             public const string Dynamic = "Dynamic";
             public const string Flexible = "Flexible";
 
+            public const string UnchangingYang = "UnchangingYang";
+            public const string UnchangingYin = "UnchangingYin";
+            public const string YangToYin = "YangToYin";
+            public const string YinToYang = "YinToYang";
+
             public const string Diplomat = "Diplomat";
             public const string Nurturer = "Nurturer";
             public const string Pioneer = "Pioneer";

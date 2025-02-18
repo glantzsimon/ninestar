@@ -66,6 +66,7 @@ namespace K9.WebApplication
             builder.RegisterType<RecaptchaService>().As<IRecaptchaService>().InstancePerRequest();
             builder.RegisterType<LogService>().As<ILogService>().InstancePerRequest();
             builder.RegisterType<BiorhythmsService>().As<IBiorhythmsService>().InstancePerRequest();
+            builder.RegisterType<IChingService>().As<IIChingService>().InstancePerRequest();
 
             RegisterConfiguration(builder);
 
@@ -107,6 +108,9 @@ namespace K9.WebApplication
 
 #if DEBUG
             Helpers.Environment.IsDebug = true;
+            
+            defaultConfig.Value.BaseImagesPath = "https://localhost/ninestar/Images";
+            defaultConfig.Value.BaseVideosPath = "https://localhost/ninestar/Videos";
 #endif
         }
     }

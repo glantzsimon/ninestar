@@ -105,6 +105,7 @@
     <Content Include="Articles\en-gb\compatibility-subtitle.htm" />
     <Content Include="Articles\en-gb\biorhythms.htm" />
     <Content Include="Articles\en-gb\cycles-description.htm" />
+    <Content Include="Articles\en-gb\i-ching-info.htm" />
     <Content Include="Biorhythms\en-gb\LevelDescriptions\Creative\creative-critical.htm" />
     <Content Include="Biorhythms\en-gb\LevelDescriptions\Creative\creative-excellent.htm" />
     <Content Include="Biorhythms\en-gb\LevelDescriptions\Creative\creative-extremely-low.htm" />

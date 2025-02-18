@@ -3001,4 +3001,637 @@
   <data name="SupportQueryReceived" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>templates\en-gb\supportqueryreceived.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="Abundance" xml:space="preserve">
+    <value>Abundance (Fullness)</value>
+  </data>
+  <data name="AbundanceAndChange" xml:space="preserve">
+    <value>Abundance and Change</value>
+  </data>
+  <data name="AbundanceSummary" xml:space="preserve">
+    <value>This is a time of great success; act with clarity before the moment passes.</value>
+  </data>
+  <data name="AbundanceTitle" xml:space="preserve">
+    <value>A peak moment—use it wisely.</value>
+  </data>
+  <data name="AfterCompletion" xml:space="preserve">
+    <value>After Completion</value>
+  </data>
+  <data name="AfterCompletionSummary" xml:space="preserve">
+    <value>Sustaining progress requires continuous awareness and effort.</value>
+  </data>
+  <data name="AfterCompletionTitle" xml:space="preserve">
+    <value>Success has been achieved but must be maintained.</value>
+  </data>
+  <data name="Approach" xml:space="preserve">
+    <value>Approach</value>
+  </data>
+  <data name="ApproachSummary" xml:space="preserve">
+    <value>Positive momentum is increasing. Be ready to seize the moment.</value>
+  </data>
+  <data name="ApproachTitle" xml:space="preserve">
+    <value>Opportunities are coming; prepare to act.</value>
+  </data>
+  <data name="BeforeCompletion" xml:space="preserve">
+    <value>Before Completion</value>
+  </data>
+  <data name="BeforeCompletionSummary" xml:space="preserve">
+    <value>The journey is not yet over—stay focused to reach completion.</value>
+  </data>
+  <data name="BeforeCompletionTitle" xml:space="preserve">
+    <value>The final steps must be taken carefully.</value>
+  </data>
+  <data name="BeginningsAndChallenges" xml:space="preserve">
+    <value>Beginnings and Challenges</value>
+  </data>
+  <data name="BitingThrough" xml:space="preserve">
+    <value>Biting Through</value>
+  </data>
+  <data name="BitingThroughSummary" xml:space="preserve">
+    <value>This hexagram calls for direct action in overcoming resistance and seeking justice.</value>
+  </data>
+  <data name="BitingThroughTitle" xml:space="preserve">
+    <value>Face challenges head-on with determination.</value>
+  </data>
+  <data name="Breakthrough" xml:space="preserve">
+    <value>Breakthrough (Resoluteness)</value>
+  </data>
+  <data name="BreakthroughSummary" xml:space="preserve">
+    <value>Stand your ground and act with clarity; obstacles must be removed.</value>
+  </data>
+  <data name="BreakthroughTitle" xml:space="preserve">
+    <value>A decisive moment requires firm action.</value>
+  </data>
+  <data name="ComingToMeet" xml:space="preserve">
+    <value>Coming to Meet</value>
+  </data>
+  <data name="ComingToMeet1" xml:space="preserve">
+    <value>Coming to Meet</value>
+  </data>
+  <data name="ComingToMeetSummary" xml:space="preserve">
+    <value>Be mindful of powerful influences and remain centered.</value>
+  </data>
+  <data name="ComingToMeetTitle" xml:space="preserve">
+    <value>An unexpected encounter brings change.</value>
+  </data>
+  <data name="Conflict" xml:space="preserve">
+    <value>Conflict</value>
+  </data>
+  <data name="ConflictSummary" xml:space="preserve">
+    <value>Conflict must be handled with care. Direct confrontation may not always be the best strategy.</value>
+  </data>
+  <data name="ConflictTitle" xml:space="preserve">
+    <value>Disputes arise; seek resolution with wisdom.</value>
+  </data>
+  <data name="Contemplation" xml:space="preserve">
+    <value>Contemplation (View)</value>
+  </data>
+  <data name="ContemplationSummary" xml:space="preserve">
+    <value>Before making a decision, pause and reflect on the bigger picture.</value>
+  </data>
+  <data name="ContemplationTitle" xml:space="preserve">
+    <value>Observation before action ensures clarity.</value>
+  </data>
+  <data name="DarkeningOfTheLight" xml:space="preserve">
+    <value>Darkening of the Light</value>
+  </data>
+  <data name="DarkeningOfTheLightSummary" xml:space="preserve">
+    <value>Sometimes you must hide your brilliance to survive difficult times.</value>
+  </data>
+  <data name="DarkeningOfTheLightTitle" xml:space="preserve">
+    <value>Adversity requires quiet endurance.</value>
+  </data>
+  <data name="Decrease" xml:space="preserve">
+    <value>Decrease</value>
+  </data>
+  <data name="DecreaseSummary" xml:space="preserve">
+    <value>Reducing unnecessary burdens creates clarity and alignment with your true purpose.</value>
+  </data>
+  <data name="DecreaseTitle" xml:space="preserve">
+    <value>Letting go of excess allows for balance.</value>
+  </data>
+  <data name="Deliverance" xml:space="preserve">
+    <value>Deliverance</value>
+  </data>
+  <data name="DeliveranceSummary" xml:space="preserve">
+    <value>Difficulties are clearing; a new path is opening up.</value>
+  </data>
+  <data name="DeliveranceTitle" xml:space="preserve">
+    <value>Relief follows struggle.</value>
+  </data>
+  <data name="DifficultyAtTheBeginning" xml:space="preserve">
+    <value>Difficulty at the Beginning</value>
+  </data>
+  <data name="DifficultyAtTheBeginningSummary" xml:space="preserve">
+    <value>The start of any endeavor is fraught with difficulties, but perseverance will lead to clarity and success.</value>
+  </data>
+  <data name="DifficultyAtTheBeginningTitle" xml:space="preserve">
+    <value>Challenges mark the start of something new.</value>
+  </data>
+  <data name="Dispersion" xml:space="preserve">
+    <value>Dispersion (Dissolution)</value>
+  </data>
+  <data name="DispersionSummary" xml:space="preserve">
+    <value>Dissolving barriers and rigid structures allows for new flow.</value>
+  </data>
+  <data name="DispersionTitle" xml:space="preserve">
+    <value>Breaking stagnation leads to freedom.</value>
+  </data>
+  <data name="Duration1" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="DurationSummary" xml:space="preserve">
+    <value>A lasting approach will yield the best results.</value>
+  </data>
+  <data name="DurationTitle" xml:space="preserve">
+    <value>Consistency and endurance ensure success.</value>
+  </data>
+  <data name="Enthusiasm" xml:space="preserve">
+    <value>Enthusiasm</value>
+  </data>
+  <data name="EnthusiasmSummary" xml:space="preserve">
+    <value>Momentum is building. Channel your energy into positive change.</value>
+  </data>
+  <data name="EnthusiasmTitle" xml:space="preserve">
+    <value>Inspired action leads to progress.</value>
+  </data>
+  <data name="FellowshipWithMen" xml:space="preserve">
+    <value>Fellowship with Men</value>
+  </data>
+  <data name="FellowshipWithMenSummary" xml:space="preserve">
+    <value>Working together toward a common cause strengthens bonds and fosters success.</value>
+  </data>
+  <data name="FellowshipWithMenTitle" xml:space="preserve">
+    <value>Strength in unity and shared purpose.</value>
+  </data>
+  <data name="Following" xml:space="preserve">
+    <value>Following</value>
+  </data>
+  <data name="FollowingSummary" xml:space="preserve">
+    <value>By following the natural course of events, you align with opportunity.</value>
+  </data>
+  <data name="FollowingTitle" xml:space="preserve">
+    <value>Adaptability and alignment with the flow lead to success.</value>
+  </data>
+  <data name="GatheringTogether" xml:space="preserve">
+    <value>Gathering Together</value>
+  </data>
+  <data name="GatheringTogetherSummary" xml:space="preserve">
+    <value>Unifying with others toward a shared goal leads to success.</value>
+  </data>
+  <data name="GatheringTogetherTitle" xml:space="preserve">
+    <value>Community and connection bring strength.</value>
+  </data>
+  <data name="Grace" xml:space="preserve">
+    <value>Grace</value>
+  </data>
+  <data name="GraceSummary" xml:space="preserve">
+    <value>Refinement and balance in behavior lead to success.</value>
+  </data>
+  <data name="GraceTitle" xml:space="preserve">
+    <value>Inner integrity is more important than external beauty.</value>
+  </data>
+  <data name="GradualProgress" xml:space="preserve">
+    <value>Development (Gradual Progress)</value>
+  </data>
+  <data name="GradualProgressSummary" xml:space="preserve">
+    <value>Like a tree growing, patience and persistence lead to long-term rewards.</value>
+  </data>
+  <data name="GradualProgressTitle" xml:space="preserve">
+    <value>Slow, steady progress ensures success.</value>
+  </data>
+  <data name="GrowthAndStability" xml:space="preserve">
+    <value>Growth and Stability</value>
+  </data>
+  <data name="HoldingTogether" xml:space="preserve">
+    <value>Holding Together</value>
+  </data>
+  <data name="HoldingTogetherSummary" xml:space="preserve">
+    <value>Group harmony and loyalty are essential. Work together toward shared goals.</value>
+  </data>
+  <data name="HoldingTogetherTitle" xml:space="preserve">
+    <value>Unity and trust build strong foundations.</value>
+  </data>
+  <data name="IChing" xml:space="preserve">
+    <value>I Ching</value>
+  </data>
+  <data name="Increase" xml:space="preserve">
+    <value>Increase</value>
+  </data>
+  <data name="IncreaseSummary" xml:space="preserve">
+    <value>A time of abundance and opportunity—use it wisely and share your success.</value>
+  </data>
+  <data name="IncreaseTitle" xml:space="preserve">
+    <value>Growth and expansion are on the horizon.</value>
+  </data>
+  <data name="Influence" xml:space="preserve">
+    <value>Influence (Wooing)</value>
+  </data>
+  <data name="InfluenceSummary" xml:space="preserve">
+    <value>Use soft power to create change rather than force.</value>
+  </data>
+  <data name="InfluenceTitle" xml:space="preserve">
+    <value>Gentle persuasion and attraction lead to progress.</value>
+  </data>
+  <data name="InnerTruth" xml:space="preserve">
+    <value>Inner Truth</value>
+  </data>
+  <data name="InnerTruthSummary" xml:space="preserve">
+    <value>Being honest with yourself and others strengthens relationships and purpose.</value>
+  </data>
+  <data name="InnerTruthTitle" xml:space="preserve">
+    <value>Sincerity leads to deeper connections and wisdom.</value>
+  </data>
+  <data name="Innocence" xml:space="preserve">
+    <value>Innocence (The Unexpected)</value>
+  </data>
+  <data name="InnocenceSummary" xml:space="preserve">
+    <value>Acting with sincerity and without ulterior motives will bring success.</value>
+  </data>
+  <data name="InnocenceTitle" xml:space="preserve">
+    <value>Stay true to yourself; let things unfold naturally.</value>
+  </data>
+  <data name="KeepingStill" xml:space="preserve">
+    <value>Keeping Still (Mountain)</value>
+  </data>
+  <data name="KeepingStillSummary" xml:space="preserve">
+    <value>Sometimes, doing nothing is the right action—find stability within.</value>
+  </data>
+  <data name="KeepingStillTitle" xml:space="preserve">
+    <value>Inner peace and stillness bring clarity.</value>
+  </data>
+  <data name="Limitation" xml:space="preserve">
+    <value>Limitation</value>
+  </data>
+  <data name="LimitationSummary" xml:space="preserve">
+    <value>Setting clear limits allows for sustainable growth.</value>
+  </data>
+  <data name="LimitationTitle" xml:space="preserve">
+    <value>Boundaries create stability and clarity.</value>
+  </data>
+  <data name="MasteryAndCompletion" xml:space="preserve">
+    <value>Mastery and Completion</value>
+  </data>
+  <data name="Modesty" xml:space="preserve">
+    <value>Modesty</value>
+  </data>
+  <data name="ModestySummary" xml:space="preserve">
+    <value>Pride can lead to downfall, but staying humble fosters respect and stability.</value>
+  </data>
+  <data name="ModestyTitle" xml:space="preserve">
+    <value>Humility ensures long-term success.</value>
+  </data>
+  <data name="NineStarGPT" xml:space="preserve">
+    <value>9 Star GPT</value>
+  </data>
+  <data name="Obstruction" xml:space="preserve">
+    <value>Obstruction</value>
+  </data>
+  <data name="ObstructionSummary" xml:space="preserve">
+    <value>A roadblock signals a need to rethink your strategy.</value>
+  </data>
+  <data name="ObstructionTitle" xml:space="preserve">
+    <value>Pause and reassess before proceeding.</value>
+  </data>
+  <data name="Opposition" xml:space="preserve">
+    <value>Opposition</value>
+  </data>
+  <data name="OppositionSummary" xml:space="preserve">
+    <value>Instead of resisting opposition, find ways to integrate different perspectives.</value>
+  </data>
+  <data name="OppositionTitle" xml:space="preserve">
+    <value>Differences can be opportunities for growth.</value>
+  </data>
+  <data name="Oppression" xml:space="preserve">
+    <value>Oppression (Exhaustion)</value>
+  </data>
+  <data name="OppressionSummary" xml:space="preserve">
+    <value>You may feel burdened, but enduring hardship leads to wisdom.</value>
+  </data>
+  <data name="OppressionTitle" xml:space="preserve">
+    <value>Struggles test endurance; remain resilient.</value>
+  </data>
+  <data name="OvercomingObstacles" xml:space="preserve">
+    <value>Overcoming Obstacles</value>
+  </data>
+  <data name="Peace" xml:space="preserve">
+    <value>Peace</value>
+  </data>
+  <data name="PeaceSummary" xml:space="preserve">
+    <value>A period of stability and growth, but maintain vigilance to sustain it.</value>
+  </data>
+  <data name="PeaceTitle" xml:space="preserve">
+    <value>Balance and harmony bring prosperity.</value>
+  </data>
+  <data name="PossessionInGreatMeasure" xml:space="preserve">
+    <value>Possession in Great Measure</value>
+  </data>
+  <data name="PossessionInGreatMeasureSummary" xml:space="preserve">
+    <value>You are in a position of advantage. Use your resources with integrity.</value>
+  </data>
+  <data name="PossessionInGreatMeasureTitle" xml:space="preserve">
+    <value>Great fortune, but use it wisely.</value>
+  </data>
+  <data name="PowerOfTheGreat" xml:space="preserve">
+    <value>The Power of the Great</value>
+  </data>
+  <data name="PowerOfTheGreatSummary" xml:space="preserve">
+    <value>Raw power is not enough; wisdom is needed to guide it.</value>
+  </data>
+  <data name="PowerOfTheGreatTitle" xml:space="preserve">
+    <value>Strength must be used wisely.</value>
+  </data>
+  <data name="PreponderanceOfTheGreat" xml:space="preserve">
+    <value>Preponderance of the Great</value>
+  </data>
+  <data name="PreponderanceOfTheGreatSummary" xml:space="preserve">
+    <value>You are carrying a great weight. Strength is needed, but be mindful of limitations.</value>
+  </data>
+  <data name="PreponderanceOfTheGreatTitle" xml:space="preserve">
+    <value>Excessive burden requires balance.</value>
+  </data>
+  <data name="PreponderanceOfTheSmall" xml:space="preserve">
+    <value>Preponderance of the Small</value>
+  </data>
+  <data name="PreponderanceOfTheSmallSummary" xml:space="preserve">
+    <value>Success comes by focusing on precision and avoiding excessive ambition.</value>
+  </data>
+  <data name="PreponderanceOfTheSmallTitle" xml:space="preserve">
+    <value>Small details require attention.</value>
+  </data>
+  <data name="Progress" xml:space="preserve">
+    <value>Progress</value>
+  </data>
+  <data name="ProgressSummary" xml:space="preserve">
+    <value>Continue pushing forward, as conditions are ripe for success.</value>
+  </data>
+  <data name="ProgressTitle" xml:space="preserve">
+    <value>Momentum is in your favor.</value>
+  </data>
+  <data name="ProvidingNourishment" xml:space="preserve">
+    <value>The Corners of the Mouth (Providing Nourishment)</value>
+  </data>
+  <data name="ProvidingNourishmentSummary" xml:space="preserve">
+    <value>Pay attention to what you nourish yourself with, both in body and mind.</value>
+  </data>
+  <data name="ProvidingNourishmentTitle" xml:space="preserve">
+    <value>What you consume, physically and mentally, shapes your life.</value>
+  </data>
+  <data name="PushingUpward" xml:space="preserve">
+    <value>Pushing Upward</value>
+  </data>
+  <data name="PushingUpwardSummary" xml:space="preserve">
+    <value>Perseverance and effort will bring gradual, meaningful growth.</value>
+  </data>
+  <data name="PushingUpwardTitle" xml:space="preserve">
+    <value>Steady progress leads to lasting success.</value>
+  </data>
+  <data name="RelationshipsAndTransformation" xml:space="preserve">
+    <value>Relationships and Transformation</value>
+  </data>
+  <data name="Retreat" xml:space="preserve">
+    <value>Retreat</value>
+  </data>
+  <data name="RetreatSummary" xml:space="preserve">
+    <value>Knowing when to step back can preserve strength for the right moment.</value>
+  </data>
+  <data name="RetreatTitle" xml:space="preserve">
+    <value>Sometimes withdrawal is the best strategy.</value>
+  </data>
+  <data name="Return" xml:space="preserve">
+    <value>Return (The Turning Point)</value>
+  </data>
+  <data name="ReturnSummary" xml:space="preserve">
+    <value>This hexagram signifies the natural cycle of renewal and returning to one's path.</value>
+  </data>
+  <data name="ReturnTitle" xml:space="preserve">
+    <value>A new cycle begins; renewal is near.</value>
+  </data>
+  <data name="Revolution1" xml:space="preserve">
+    <value>Revolution (Molting)</value>
+  </data>
+  <data name="RevolutionSummary" xml:space="preserve">
+    <value>Change is inevitable; embrace it with courage.</value>
+  </data>
+  <data name="RevolutionTitle" xml:space="preserve">
+    <value>Transformation is necessary for renewal.</value>
+  </data>
+  <data name="SplittingApart" xml:space="preserve">
+    <value>Splitting Apart</value>
+  </data>
+  <data name="SplittingApartSummary" xml:space="preserve">
+    <value>Sometimes things must fall apart before they can be rebuilt stronger.</value>
+  </data>
+  <data name="SplittingApartTitle" xml:space="preserve">
+    <value>Letting go of old structures allows for renewal.</value>
+  </data>
+  <data name="Standstill" xml:space="preserve">
+    <value>Standstill (Stagnation)</value>
+  </data>
+  <data name="StandstillSummary" xml:space="preserve">
+    <value>Sometimes things do not move forward. Retreat and regroup.</value>
+  </data>
+  <data name="StandstillTitle" xml:space="preserve">
+    <value>Blocked progress; patience is required.</value>
+  </data>
+  <data name="TamingPowerOfTheGreat" xml:space="preserve">
+    <value>The Taming Power of the Great</value>
+  </data>
+  <data name="TamingPowerOfTheGreatSummary" xml:space="preserve">
+    <value>Now is the time to gather energy and wisdom before making a decisive move.</value>
+  </data>
+  <data name="TamingPowerOfTheGreatTitle" xml:space="preserve">
+    <value>Restraint and preparation lead to future strength.</value>
+  </data>
+  <data name="TamingPowerOfTheSmall" xml:space="preserve">
+    <value>The Taming Power of the Small</value>
+  </data>
+  <data name="TamingPowerOfTheSmallSummary" xml:space="preserve">
+    <value>Even small efforts can influence great outcomes over time. Be persistent.</value>
+  </data>
+  <data name="TamingPowerOfTheSmallTitle" xml:space="preserve">
+    <value>Small actions accumulate to bring change.</value>
+  </data>
+  <data name="TheAbysmal" xml:space="preserve">
+    <value>The Abysmal (Water)</value>
+  </data>
+  <data name="TheAbysmalSummary" xml:space="preserve">
+    <value>You are facing deep challenges. Move forward cautiously but with confidence.</value>
+  </data>
+  <data name="TheAbysmalTitle" xml:space="preserve">
+    <value>Persistence and resilience are required.</value>
+  </data>
+  <data name="TheArmy" xml:space="preserve">
+    <value>The Army</value>
+  </data>
+  <data name="TheArmySummary" xml:space="preserve">
+    <value>Strength is in structure. A well-organized team or strategy ensures success.</value>
+  </data>
+  <data name="TheArmyTitle" xml:space="preserve">
+    <value>Organization and discipline lead to success.</value>
+  </data>
+  <data name="TheArousing" xml:space="preserve">
+    <value>The Arousing (Shock, Thunder)</value>
+  </data>
+  <data name="TheArousingSummary" xml:space="preserve">
+    <value>Unexpected events shake things up—stay grounded and respond wisely.</value>
+  </data>
+  <data name="TheArousingTitle" xml:space="preserve">
+    <value>Sudden change disrupts the status quo.</value>
+  </data>
+  <data name="TheCauldron" xml:space="preserve">
+    <value>The Cauldron</value>
+  </data>
+  <data name="TheCauldronSummary" xml:space="preserve">
+    <value>Nurturing yourself and your purpose leads to fulfillment.</value>
+  </data>
+  <data name="TheCauldronTitle" xml:space="preserve">
+    <value>Refinement and inner development create strength.</value>
+  </data>
+  <data name="TheClinging" xml:space="preserve">
+    <value>The Clinging (Fire)</value>
+  </data>
+  <data name="TheClingingSummary" xml:space="preserve">
+    <value>Like fire needing fuel, maintaining brightness requires focus and dedication.</value>
+  </data>
+  <data name="TheClingingTitle" xml:space="preserve">
+    <value>Clarity and vision light the way.</value>
+  </data>
+  <data name="TheCreative" xml:space="preserve">
+    <value>The Creative</value>
+  </data>
+  <data name="TheCreativeSummary" xml:space="preserve">
+    <value>This hexagram represents pure yang energy, symbolizing strength, leadership, and creativity. It calls for decisive action and confidence.</value>
+  </data>
+  <data name="TheCreativeTitle" xml:space="preserve">
+    <value>Strength and innovation lead to new beginnings.</value>
+  </data>
+  <data name="TheFamily" xml:space="preserve">
+    <value>The Family (The Clan)</value>
+  </data>
+  <data name="TheFamilySummary" xml:space="preserve">
+    <value>A strong foundation within relationships brings stability and peace.</value>
+  </data>
+  <data name="TheFamilyTitle" xml:space="preserve">
+    <value>Order and structure create harmony.</value>
+  </data>
+  <data name="TheGentle" xml:space="preserve">
+    <value>The Gentle (The Penetrating, Wind)</value>
+  </data>
+  <data name="TheGentleSummary" xml:space="preserve">
+    <value>Gentle persistence shapes outcomes over time.</value>
+  </data>
+  <data name="TheGentleTitle" xml:space="preserve">
+    <value>Subtle influence is more effective than force.</value>
+  </data>
+  <data name="TheJoyous" xml:space="preserve">
+    <value>The Joyous (Lake)</value>
+  </data>
+  <data name="TheJoyousSummary" xml:space="preserve">
+    <value>Find happiness through openness, communication, and sincerity.</value>
+  </data>
+  <data name="TheJoyousTitle" xml:space="preserve">
+    <value>True joy comes from inner harmony.</value>
+  </data>
+  <data name="TheMarryingMaiden" xml:space="preserve">
+    <value>The Marrying Maiden</value>
+  </data>
+  <data name="TheMarryingMaidenSummary" xml:space="preserve">
+    <value>Compromise may be necessary, but self-respect must remain intact.</value>
+  </data>
+  <data name="TheMarryingMaidenTitle" xml:space="preserve">
+    <value>Adapting to circumstances requires wisdom.</value>
+  </data>
+  <data name="TheReceptive" xml:space="preserve">
+    <value>The Receptive</value>
+  </data>
+  <data name="TheReceptiveSummary" xml:space="preserve">
+    <value>Pure yin energy, emphasizing receptivity, humility, and flowing with circumstances. Success comes through support and responsiveness.</value>
+  </data>
+  <data name="TheReceptiveTitle" xml:space="preserve">
+    <value>Patience and adaptability bring success.</value>
+  </data>
+  <data name="TheWanderer" xml:space="preserve">
+    <value>The Wanderer</value>
+  </data>
+  <data name="TheWandererSummary" xml:space="preserve">
+    <value>You are in a transient phase—embrace flexibility and learning.</value>
+  </data>
+  <data name="TheWandererTitle" xml:space="preserve">
+    <value>Adaptability is key in unfamiliar territory.</value>
+  </data>
+  <data name="TheWell" xml:space="preserve">
+    <value>The Well</value>
+  </data>
+  <data name="TheWellSummary" xml:space="preserve">
+    <value>A hidden source of strength is available—seek it out.</value>
+  </data>
+  <data name="TheWellTitle" xml:space="preserve">
+    <value>Tap into deep wisdom and nourishment.</value>
+  </data>
+  <data name="Treading" xml:space="preserve">
+    <value>Treading (Conduct)</value>
+  </data>
+  <data name="TreadingSummary" xml:space="preserve">
+    <value>One must act with caution and awareness, avoiding unnecessary risks.</value>
+  </data>
+  <data name="TreadingTitle" xml:space="preserve">
+    <value>Careful steps lead to progress.</value>
+  </data>
+  <data name="UnchangingYang" xml:space="preserve">
+    <value>Unchangin Yang - Solid Line</value>
+  </data>
+  <data name="UnchangingYin" xml:space="preserve">
+    <value>Unchanging Yin - Broken Line</value>
+  </data>
+  <data name="Waiting" xml:space="preserve">
+    <value>Waiting (Nourishment)</value>
+  </data>
+  <data name="WaitingSummary" xml:space="preserve">
+    <value>Sometimes the best approach is to wait and gather strength before making a move.</value>
+  </data>
+  <data name="WaitingTitle" xml:space="preserve">
+    <value>Patience is necessary before action.</value>
+  </data>
+  <data name="WorkOnWhatHasBeenSpoiled" xml:space="preserve">
+    <value>Work on What Has Been Spoiled</value>
+  </data>
+  <data name="WorkOnWhatHasBeenSpoiledSummary" xml:space="preserve">
+    <value>Cleaning up unresolved issues leads to renewal and progress.</value>
+  </data>
+  <data name="WorkOnWhatHasBeenSpoiledTitle" xml:space="preserve">
+    <value>Past mistakes need correction.</value>
+  </data>
+  <data name="YangToYin" xml:space="preserve">
+    <value>Changing Yang to Yin</value>
+  </data>
+  <data name="YinToYang" xml:space="preserve">
+    <value>Changing Yin to Yang</value>
+  </data>
+  <data name="YouthfulFolly" xml:space="preserve">
+    <value>Youthful Folly</value>
+  </data>
+  <data name="YouthfulFollySummary" xml:space="preserve">
+    <value>Mistakes and inexperience are natural. Seek guidance and be willing to learn.</value>
+  </data>
+  <data name="YouthfulFollyTitle" xml:space="preserve">
+    <value>Learning requires humility and openness.</value>
+  </data>
+  <data name="AboutTheIChing" xml:space="preserve">
+    <value>About The I Ching</value>
+  </data>
+  <data name="ConsultTheIChing" xml:space="preserve">
+    <value>Consult the I Ching</value>
+  </data>
+  <data name="GenerateHexagram" xml:space="preserve">
+    <value>Generate Hexagram</value>
+  </data>
+  <data name="IChingMeta" xml:space="preserve">
+    <value>Free I Ching reading. Consult the I Ching and get guidance about a question or situation</value>
+  </data>
+  <data name="Interpretation" xml:space="preserve">
+    <value>Interpretation</value>
+  </data>
+  <data name="i_ching_info" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\i-ching-info.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

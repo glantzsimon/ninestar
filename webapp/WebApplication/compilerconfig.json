@@ -301,13 +301,6 @@
     }
   },
   {
-    "inputFile": "Content/less/sections/archive.less",
-    "outputFile": "Content/sections/archive.css",
-    "options": {
-      "compress": false
-    }
-  },
-  {
     "inputFile": "Content/less/sections/account.less",
     "outputFile": "Content/sections/account.css",
     "options": {
@@ -345,6 +338,13 @@
   {
     "inputFile": "Content/less/sections/footer.less",
     "outputFile": "Content/sections/footer.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/iching.less",
+    "outputFile": "Content/sections/iching.css",
     "options": {
       "compress": false
     }

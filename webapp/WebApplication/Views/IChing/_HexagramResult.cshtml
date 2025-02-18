@@ -1,0 +1,40 @@
+﻿@model K9.WebApplication.ViewModels.IChingViewModel
+
+<div class="row">
+    @if (Model.TransformedHexagram == null)
+    {
+        <div class="col-sm-12">
+            @Html.Partial("_Hexagram", Model.Hexagram)
+
+            <div class="text-center">
+                <h4>@Dictionary.Interpretation</h4>
+
+                @Html.Partial("_HexagramInterpretation", Model.HexagramInfo)
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="col-xm-5">
+            @Html.Partial("_Hexagram", Model.Hexagram)
+
+            <div class="text-center">
+                <h4>@Dictionary.Interpretation</h4>
+
+                @Html.Partial("_HexagramInterpretation", Model.HexagramInfo)
+            </div>
+        </div>
+        <div class="col-xm-2">
+            =>
+        </div>
+        <div class="col-xm-5">
+            @Html.Partial("_Hexagram", Model.TransformedHexagram)
+
+            <div class="text-center">
+                <h4>@Dictionary.Interpretation</h4>
+
+                @Html.Partial("_HexagramInterpretation", Model.TransformedHexagramInfo)
+            </div>
+        </div>
+    }
+</div>

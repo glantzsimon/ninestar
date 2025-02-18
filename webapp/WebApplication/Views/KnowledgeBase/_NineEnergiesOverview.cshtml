@@ -30,7 +30,7 @@
             @Html.Panel(
                 energy.EnergyTitle,
                 Html.PayWallContent(ESection.KnowledgeBase, id, energy.EnergyDescription).ToString(),
-                id, $"{DefaultValuesConfiguration.Instance.StorjBaseImagesPath}/ninestar/energies/{energy.EnergyLowerCase}.png",
+                id, $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/energies/{energy.EnergyLowerCase}.png",
                 EPanelImageSize.Default,
                 EPanelImageLayout.Contain)
         }

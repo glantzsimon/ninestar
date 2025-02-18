@@ -1,9 +1,10 @@
-﻿@model K9.WebApplication.Models.NineStarKiModel
+﻿@using K9.WebApplication.Config
+@model K9.WebApplication.Models.NineStarKiModel
 
 @{
     ViewBag.Title = K9.Base.Globalisation.Dictionary.Home;
     ViewBag.SubTitle = Dictionary.AIAstrologer;
-    Layout = "../Shared/_LayoutForm.cshtml";
+    Layout = "../Shared/_LayoutFormMedium.cshtml";
 }
 
 @Html.Partial("_BetaPopup")
@@ -12,10 +13,20 @@
     <article>
         @using (Html.BeginBootstrapForm())
         {
-            @MvcHtmlString.Create(Dictionary.gptinfo)
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="text-center gpt-example margin-bottom-20">
+                        <img title="i-ching" alt="i-ching" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/home/gpt-example.png" />
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    @MvcHtmlString.Create(Dictionary.gptinfo)
+                    
+                    <hr/>
+                    @Html.Partial("ActionLinkButtons/_TryOurGpt")
+                </div>
+            </div>
         }
-
-        @Html.Partial("ActionLinkButtons/_TryOurGpt")
     </article>
 
     <hr />

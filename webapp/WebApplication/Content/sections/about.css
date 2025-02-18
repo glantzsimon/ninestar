@@ -1,8 +1,15 @@
-﻿.energies-summary h4:first-child {
-  margin-top: 0;
+﻿div.gpt-example {
+  -webkit-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
+  max-width: 465px;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 11px;
 }
-.modality-energy-container {
-  padding: 5px;
-  padding-bottom: 0;
-  margin-bottom: 0;
+div.gpt-example img {
+  width: 100%;
+  height: auto;
 }

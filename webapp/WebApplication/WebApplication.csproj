@@ -854,6 +854,7 @@
     <Content Include="Images\flags\za.png" />
     <Content Include="Images\flags\zm.png" />
     <Content Include="Images\flags\zw.png" />
+    <Content Include="Images\home\gpt-example.png" />
     <Content Include="Images\home\ninestar-home-bg.jpg" />
     <Content Include="Images\iching\iching.png" />
     <Content Include="Images\icons\android-chrome-192x192.png" />

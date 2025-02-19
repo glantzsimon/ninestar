@@ -48,9 +48,14 @@ namespace K9.WebApplication.Services
             _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }
 
+        public PromoCode Find(string code)
+        {
+            return _promoCodesRepository.Find(e => e.Code == code).FirstOrDefault();
+        }
+
         public bool IsPromoCodeAlreadyUsed(string code)
         {
-            var promoCode = _promoCodesRepository.Find(e => e.Code == code).FirstOrDefault();
+            var promoCode = Find(code);
             if (promoCode == null)
             {
                 throw new Exception("Invalid promo code");
@@ -68,7 +73,7 @@ namespace K9.WebApplication.Services
 
         public void UsePromoCode(int userId, string code)
         {
-            var promoCode = _promoCodesRepository.Find(e => e.Code == code).FirstOrDefault();
+            var promoCode = Find(code);
             if (promoCode == null)
             {
                 throw new Exception("Invalid promo code");
@@ -107,7 +112,7 @@ namespace K9.WebApplication.Services
             }
 
             var code = model.PromoCode.Code;    
-            var promoCode = _promoCodesRepository.Find(e => e.Code == code).FirstOrDefault();
+            var promoCode = Find(code);
             if (promoCode == null)
             {
                 throw new Exception($"PromoCodeService => SendRegistrationPromoCode => PromoCode {code} was not found");
@@ -148,7 +153,7 @@ namespace K9.WebApplication.Services
             var template = Dictionary.PromoCodeEmail;
             var title = Dictionary.PromoCodeEmailTitle;
 
-            var promoCode = _promoCodesRepository.Find(e => e.Code == code).FirstOrDefault();
+            var promoCode = Find(code);
             if (promoCode == null)
             {
                 throw new Exception($"PromoCodeService => SendMembershipPromoCode => PromoCode {code} was not found");

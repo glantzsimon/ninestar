@@ -44,9 +44,29 @@ namespace K9.WebApplication.Controllers
                 {
                     ModelState.AddModelError("", Globalisation.Dictionary.PromoCodeInUse);
                 }
+
+                var promoCodeModel = _promoCodeService.Find(promoCode);
+                if (promoCodeModel == null)
+                {
+                    ModelState.AddModelError("", "Invalid promo code");
+                }
+
+                if (promoCodeModel.UsedOn.HasValue)
+                {
+                    ModelState.AddModelError("", Globalisation.Dictionary.PromoCodeInUse);
+                }
             }
 
-            return View(_membershipService.GetPurchaseMembershipModel(membershipOptionId, promoCode));
+            try
+            {
+                var model = _membershipService.GetPurchaseMembershipModel(membershipOptionId, promoCode);
+                return View(model);
+            }
+            catch (Exception e)
+            {
+                _logger.Log(LogLevel.Error, e.GetFullErrorMessage);
+                throw;
+            }
         }
 
         [Authorize]
@@ -91,21 +111,21 @@ namespace K9.WebApplication.Controllers
                 Consultations = _userService.GetPendingConsultations(user.Id)
             });
         }
-        
+
         [Authorize]
         [Route("membership/unlock/cancel/success")]
         public ActionResult PurchaseCancelSuccess()
         {
             return View();
         }
-        
+
         [Authorize]
         [Route("membership/upgrade/payment")]
         public ActionResult SwitchStart(int membershipOptionId)
         {
             var switchMembershipModel = _membershipService.GetSwitchMembershipModel(membershipOptionId);
             ViewBag.Title = Globalisation.Dictionary.UpgradeMembership;
-            
+
             return View("PurchaseStart", switchMembershipModel);
         }
 

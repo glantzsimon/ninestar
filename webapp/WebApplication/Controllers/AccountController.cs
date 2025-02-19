@@ -627,7 +627,7 @@ namespace K9.WebApplication.Controllers
             }
             else if (promoCode.SentOn.HasValue)
             {
-                ModelState.AddModelError("", $"Promo code was already sent on {promoCode.SentOn.Value.ToLongTimeString()}");
+                ModelState.AddModelError("", $"Promo code was already sent on {promoCode.SentOn.Value.ToLongDateString()}");
             }
 
             var membershipOption = _membershipOptionsRepository.Find(promoCode.MembershipOptionId);
@@ -650,6 +650,27 @@ namespace K9.WebApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EmailPromoCode(EmailPromoCodeViewModel model)
         {
+            var promoCode = _promoCodesRepository.Find(model.PromoCode.Id);
+            if (promoCode == null)
+            {
+                ModelState.AddModelError("", "Invalid promo code");
+            }
+
+            if (promoCode.UsedOn.HasValue)
+            {
+                ModelState.AddModelError("", Globalisation.Dictionary.PromoCodeInUse);
+            }
+            else if (promoCode.SentOn.HasValue)
+            {
+                ModelState.AddModelError("", $"Promo code was already sent on {promoCode.SentOn.Value.ToLongDateString()}");
+            }
+
+            var membershipOption = _membershipOptionsRepository.Find(promoCode.MembershipOptionId);
+            if (membershipOption == null)
+            {
+                ModelState.AddModelError("", "Membership Option not found");
+            }
+
             if (ModelState.IsValid)
             {
                 try

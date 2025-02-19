@@ -20,7 +20,7 @@
         @Html.HiddenFor(model => model.PromoCode.MembershipOption.Price)
         @Html.HiddenFor(model => model.PromoCode.MembershipOption.SubscriptionType)
         @Html.HiddenFor(model => model.PromoCode.MembershipOption.SubscriptionDetails)
-        
+
         <div class="row">
             <div class="col-sm-6 col-xs-12">
                 @Html.BootstrapDisplayFor(model => model.PromoCode.Code)
@@ -33,5 +33,6 @@
         @Html.BootstrapEditorFor(model => model.EmailAddress)
         <hr />
         @Html.BootstrapButton(K9.Globalisation.Dictionary.Send, EButtonType.Submit, "fa fa-envelope")
+        @Html.BootstrapActionLinkButton(Dictionary.BackToList, "Index", "PromoCodes", null, "fa-chevron-left")
     }
 }

@@ -11597,6 +11597,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to special promotion.
+        /// </summary>
+        public static string SpecialPromotion {
+            get {
+                return ResourceManager.GetString("SpecialPromotion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Your spiritual energy is currently fluctuating. You may be feeling very spiritualy aware one minute, only to find that the next you are feeling much more materially oriented the next.
         ///&lt;/p&gt;

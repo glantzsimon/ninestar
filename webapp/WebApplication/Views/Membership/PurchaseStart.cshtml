@@ -1,4 +1,5 @@
-﻿@model K9.WebApplication.Models.MembershipModel
+﻿@using K9.WebApplication.Models
+@model K9.WebApplication.Models.MembershipModel
 @{
     ViewBag.Title = ViewBag.Title ?? Dictionary.MembershipLabel;
     ViewBag.SubTitle = Dictionary.YourSelectedSubscription;
@@ -14,9 +15,13 @@
         @Html.Partial("_MembershipOption")
 
         @Html.Hidden(nameof(UserMembership.MembershipOptionId), Model.MembershipOption.Id)
-
+        @Html.Hidden(nameof(MembershipModel.PromoCode), Model.PromoCode.Code)
+        
         <hr />
-        @Html.BootstrapActionLinkButton(Dictionary.Back, "Index", "Membership", null, "fa-chevron-left", EButtonClass.Large)
+        if (Model.PromoCode == null)
+        {
+            @Html.BootstrapActionLinkButton(Dictionary.Back, "Index", "Membership", null, "fa-chevron-left", EButtonClass.Large)
+        }
         <span class="margin-right-2 desktop-only"></span>
         @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight, EButtonClass.Large)
     }

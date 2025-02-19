@@ -625,12 +625,18 @@ namespace K9.WebApplication.Services
         public void VerifyCode(int userId, int digit1, int digit2, int digit3, int digit4, int digit5, int digit6)
         {
             var sixDigitCode = int.Parse($"{digit1}{digit2}{digit3}{digit4}{digit5}{digit6}");
-            var otp = _otpRepository.Find(e => e.UserId == userId && e.SixDigitCode == sixDigitCode && !e.VerifiedOn.HasValue).FirstOrDefault();
+            var otp = _otpRepository.Find(e => e.UserId == userId && e.SixDigitCode == sixDigitCode).FirstOrDefault();
 
             if (otp == null)
             {
                 _logger.Error($"Account Service => VerifyCode => Invalid OTP. UserId: {userId}, code:{sixDigitCode}");
                 throw new Exception("Invalid OTP");
+            }
+
+            if (otp.VerifiedOn.HasValue)
+            {
+                _logger.Error($"Account Service => VerifyCode => OTP already verified. UserId: {userId}, code:{sixDigitCode}");
+                throw new Exception("This six digit code has already been used to verify your account. Please log in.");
             }
 
             otp.VerifiedOn = DateTime.UtcNow;

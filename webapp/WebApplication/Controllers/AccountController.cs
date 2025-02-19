@@ -401,7 +401,7 @@ namespace K9.WebApplication.Controllers
                                         new
                                         {
                                             membershipOptionId = promoCode.MembershipOptionId,
-                                            code = model.PromoCode
+                                            promoCode = model.PromoCode
                                         });
                                 };
                             }
@@ -821,6 +821,7 @@ namespace K9.WebApplication.Controllers
         public ActionResult AccountCreated(Guid uniqueIdentifier, string returnUrl = null, string additionalError = null, int resendCode = 0)
         {
             TempData["AdditionalError"] = additionalError;
+            TempData["ReturnUrl"] = returnUrl;
 
             var otp = _accountService.GetAccountActivationOTP(uniqueIdentifier);
             if (otp == null)
@@ -869,6 +870,7 @@ namespace K9.WebApplication.Controllers
                 {
                     _logger.Error($"AccountController => VerifySixDigitCode => Error: {e.GetFullErrorMessage()}");
                     ModelState.AddModelError("", Globalisation.Dictionary.ErrorValidatingCode);
+                    return View("AccountCreated", model);
                 }
 
                 try

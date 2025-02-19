@@ -9,6 +9,7 @@ using K9.WebApplication.ViewModels;
 using NLog;
 using System;
 using System.Web.Mvc;
+using K9.DataAccessLayer.Models;
 
 namespace K9.WebApplication.Controllers
 {
@@ -38,6 +39,8 @@ namespace K9.WebApplication.Controllers
         [Route("membership/unlock")]
         public ActionResult PurchaseStart(int membershipOptionId, string promoCode = "")
         {
+            PromoCode promoCodeModel = null;
+
             if (!string.IsNullOrEmpty(promoCode))
             {
                 if (_promoCodeService.IsPromoCodeAlreadyUsed(promoCode))
@@ -45,7 +48,7 @@ namespace K9.WebApplication.Controllers
                     ModelState.AddModelError("", Globalisation.Dictionary.PromoCodeInUse);
                 }
 
-                var promoCodeModel = _promoCodeService.Find(promoCode);
+                promoCodeModel = _promoCodeService.Find(promoCode);
                 if (promoCodeModel == null)
                 {
                     ModelState.AddModelError("", "Invalid promo code");
@@ -60,6 +63,7 @@ namespace K9.WebApplication.Controllers
             try
             {
                 var model = _membershipService.GetPurchaseMembershipModel(membershipOptionId, promoCode);
+                model.PromoCode = promoCodeModel;
                 return View(model);
             }
             catch (Exception e)
@@ -73,9 +77,11 @@ namespace K9.WebApplication.Controllers
         [Route("membership/unlock/payment")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Purchase(int membershipOptionId)
+        public ActionResult Purchase(int membershipOptionId, string promoCode)
         {
+            var code = _promoCodeService.Find(promoCode);
             var membershipModel = _membershipService.GetPurchaseMembershipModel(membershipOptionId);
+            membershipModel.PromoCode = code;
             ViewBag.SubTitle = Globalisation.Dictionary.UpgradeMembership;
             return View(membershipModel);
         }

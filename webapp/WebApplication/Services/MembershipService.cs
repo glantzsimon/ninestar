@@ -189,15 +189,14 @@ namespace K9.WebApplication.Services
         public MembershipModel GetPurchaseMembershipModel(int membershipOptionId, string promoCode = "")
         {
             ValidateUpgrade(Current.UserId, membershipOptionId);
-
-            PromoCode code = null;
+            PromoCode promoCodeModel = null;
 
             if (!string.IsNullOrEmpty(promoCode))
             {
                 try
                 {
-                    code = _promoCodesRepository.Find(e => e.Code == promoCode).FirstOrDefault();
-                    if (code == null)
+                    promoCodeModel = _promoCodesRepository.Find(e => e.Code == promoCode).FirstOrDefault();
+                    if (promoCodeModel == null)
                     {
                         var errorMessage =
                             $"MembershipService => GetPurchaseMembershipModel => Invalid Promo Code: {promoCode}";
@@ -215,11 +214,15 @@ namespace K9.WebApplication.Services
             }
 
             var membershipOption = _membershipOptionRepository.Find(membershipOptionId);
-
+            if (promoCodeModel != null)
+            {
+                membershipOption.Price = promoCodeModel.TotalPrice;
+            }
+            membershipOption.PromoCode = promoCodeModel;
             return new MembershipModel(Current.UserId, membershipOption)
             {
                 IsSelected = true,
-                PromoCode = code
+                PromoCode = promoCodeModel
             };
         }
 

@@ -70,8 +70,12 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NumberOfCompatibilityReadingsLabel)]
         public int NumberOfCompatibilityReadings { get; set; }
 
+        [NotMapped] public PromoCode PromoCode { get; set; }
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubscriptionCostLabel)]
         public string FormattedPrice => Price.ToString("C0", CultureInfo.GetCultureInfo("en-US"));
+
+        public string GetDiscountText() => PromoCode != null ? $"({Dictionary.SpecialPromotion})" : "";
 
         public string CssClassName => GetCssClassName();
 

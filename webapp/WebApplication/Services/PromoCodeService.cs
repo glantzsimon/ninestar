@@ -139,7 +139,7 @@ namespace K9.WebApplication.Services
                 UnsubscribeLink = _urlHelper.AbsoluteAction("UnsubscribeContact", "Account", new { externalId = contact.Name }),
                 PromoLink = _urlHelper.AbsoluteAction("Register", "Account", new { promoCode = code }),
                 PromoDetails = model.PromoCode.Details,
-                model.PromoCode.PriceDescription,
+                promoCode.PriceDescription,
                 DateTime.Now.Year
             }), model.EmailAddress, model.Name, _config.SupportEmailAddress, _config.CompanyName);
 

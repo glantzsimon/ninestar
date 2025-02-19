@@ -636,6 +636,7 @@ namespace K9.WebApplication.Controllers
                 ModelState.AddModelError("", "Membership Option not found");
             }
 
+            promoCode.MembershipOption = membershipOption;
             var model = new EmailPromoCodeViewModel
             {
                 PromoCode = promoCode

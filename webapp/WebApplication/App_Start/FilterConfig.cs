@@ -1,4 +1,5 @@
 ﻿using K9.Base.WebApplication.Filters;
+using K9.WebApplication.Services;
 using System.Web.Mvc;
 
 namespace K9.WebApplication
@@ -7,8 +8,12 @@ namespace K9.WebApplication
 	{
 		public static void RegisterGlobalFilters(GlobalFilterCollection filters)
 		{
-			filters.Add(new HandleErrorAttribute());
-			filters.Add(new CultureAttribute());
+
+#if !DEBUG
+			filters.Add(new CustomExceptionFilter());
+    #endif
+
+		    filters.Add(new CultureAttribute());
 		    filters.Add(new ContentLoaderAttribute());
         }
 	}

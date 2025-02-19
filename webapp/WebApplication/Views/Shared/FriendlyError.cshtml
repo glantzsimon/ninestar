@@ -1,8 +1,10 @@
 ﻿@{
-	ViewBag.Title = K9.Base.Globalisation.Dictionary.Oops;
-	Layout = "~/Views/Shared/_LayoutForm.cshtml";
+    ViewBag.Title = K9.Base.Globalisation.Dictionary.Oops;
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
 }
-@Html.Alert(EAlertType.Fail, K9.Base.Globalisation.Dictionary.FriendlyErrorMessage)
+@Html.Alert(EAlertType.Fail, K9.Globalisation.Dictionary.FriendlyErrorMessage, K9.Globalisation.Dictionary.FriendlyErrorMessageOther)
+
+<hr />
 <div class="text-center margin-bottom-10">
-	@Html.ActionLink(K9.Base.Globalisation.Dictionary.ContactSupport, "ContactUs", "Support") | @Html.ActionLink(K9.Base.Globalisation.Dictionary.GoBackHome, "Index", "PersonalChart")
+    @Html.ActionLink(K9.Base.Globalisation.Dictionary.ContactSupport, "ContactUs", "Support") | @Html.ActionLink(K9.Base.Globalisation.Dictionary.GoBackHome, "Index", "PersonalChart")
 </div>

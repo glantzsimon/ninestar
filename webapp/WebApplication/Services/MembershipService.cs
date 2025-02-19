@@ -302,7 +302,7 @@ namespace K9.WebApplication.Services
             {
                 _logger.Error($"MembershipService => CreateMembership => Purchase failed: {ex.GetFullErrorMessage()}");
                 SendEmailToNineStarAboutFailure(customerName, customerEmailAddress, ex.GetFullErrorMessage());
-                throw ex;
+                throw;
             }
 
             var user = userMembership.User;
@@ -384,7 +384,7 @@ namespace K9.WebApplication.Services
             catch (Exception ex)
             {
                 _logger.Error($"MembershipService => AssignMembershipToUser => Assign Membership failed: {ex.GetFullErrorMessage()}");
-                throw ex;
+                throw;
             }
         }
 
@@ -418,7 +418,7 @@ namespace K9.WebApplication.Services
             catch (Exception ex)
             {
                 _logger.Error($"MembershipService => CreateFreeMembership => failed: {ex.GetFullErrorMessage()}");
-                throw ex;
+                throw;
             }
         }
 

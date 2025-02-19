@@ -340,6 +340,7 @@
     <Compile Include="Enums\ESexualityType.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="Filters\CustomExceptionFilter.cs" />
     <Compile Include="Filters\HangFireDashboardAuthorizationFilter .cs" />
     <Compile Include="Helpers\Current.cs" />
     <Compile Include="Helpers\ArrayHelper.cs" />
@@ -916,6 +917,7 @@
     <Content Include="Images\ui\mirror-energy.png" />
     <Content Include="Images\ui\monthly-planner.png" />
     <Content Include="Images\ui\moon.png" />
+    <Content Include="Images\ui\fail.png" />
     <Content Include="Images\ui\overview.png" />
     <Content Include="Images\ui\predictions.png" />
     <Content Include="Images\ui\relationships-strengths-challenges.png" />
@@ -972,7 +974,7 @@
     <Content Include="Images\ui\audio.png" />
     <Content Include="Images\ui\document.jpg" />
     <Content Include="Images\ui\fade-out.png" />
-    <Content Include="Images\ui\fail.png" />
+    <Content Include="Images\ui\fail-red.png" />
     <Content Include="Images\ui\notfound.png" />
     <Content Include="Images\ui\locked.png" />
     <Content Include="Images\ui\question-mark.jpg" />

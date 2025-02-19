@@ -5309,6 +5309,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Oops! We encountered a problem processing your request..
+        /// </summary>
+        public static string FriendlyErrorMessage {
+            get {
+                return ResourceManager.GetString("FriendlyErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please try again and if the problem persists, let us know and we&apos;ll gladly assist you further. .
+        /// </summary>
+        public static string FriendlyErrorMessageOther {
+            get {
+                return ResourceManager.GetString("FriendlyErrorMessageOther", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fundamental Elements.
         /// </summary>
         public static string FundamentalElements {

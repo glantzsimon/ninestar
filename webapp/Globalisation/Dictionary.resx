@@ -3874,6 +3874,12 @@
   <data name="EmailTemplates" xml:space="preserve">
     <value>Email Templates</value>
   </data>
+  <data name="FriendlyErrorMessage" xml:space="preserve">
+    <value>Oops! We encountered a problem processing your request.</value>
+  </data>
+  <data name="FriendlyErrorMessageOther" xml:space="preserve">
+    <value>Please try again and if the problem persists, let us know and we'll gladly assist you further. </value>
+  </data>
   <data name="MailingList" xml:space="preserve">
     <value>Mailing List</value>
   </data>

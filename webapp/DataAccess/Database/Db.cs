@@ -16,5 +16,9 @@ namespace K9.DataAccessLayer.Database
 	    public DbSet<Slot> Slots { get; set; }
 	    public DbSet<UserOTP> UserOtps { get; set; }
 	    public DbSet<EmailQueueItem> EmailQueueItems { get; set; }
+	    public DbSet<EmailTemplate> EmailTemplates { get; set; }
+	    public DbSet<MailingList> MailingLists { get; set; }
+	    public DbSet<MailingListUser> MailingListUsers { get; set; }
+	    public DbSet<MailingListContact> MailingListContacts { get; set; }
     }
 }

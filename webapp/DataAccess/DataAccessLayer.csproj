@@ -331,7 +331,18 @@
     <Compile Include="Migrations\202502181325506_EmailQueue.designer.cs">
       <DependentUpon>202502181325506_EmailQueue.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202502182306116_RemovePromoCredits.cs" />
+    <Compile Include="Migrations\202502182306116_RemovePromoCredits.designer.cs">
+      <DependentUpon>202502182306116_RemovePromoCredits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202502190118440_MailingsListsEmailTempltes.cs" />
+    <Compile Include="Migrations\202502190118440_MailingsListsEmailTempltes.designer.cs">
+      <DependentUpon>202502190118440_MailingsListsEmailTempltes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MailingList.cs" />
+    <Compile Include="Models\EmailTemplate.cs" />
     <Compile Include="Models\EmailQueueItem.cs" />
+    <Compile Include="Models\MailingListContact.cs" />
     <Compile Include="Models\UserOTP.cs" />
     <Compile Include="Models\TimeZoneBase.cs" />
     <Compile Include="Models\Slot.cs" />
@@ -340,6 +351,7 @@
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\MembershipOption.cs" />
     <Compile Include="Models\UserConsultation.cs" />
+    <Compile Include="Models\MailingListUser.cs" />
     <Compile Include="Models\UserPromoCode.cs" />
     <Compile Include="Models\UserMembership.cs" />
     <Compile Include="Models\Donation.cs" />
@@ -443,6 +455,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202502181325506_EmailQueue.resx">
       <DependentUpon>202502181325506_EmailQueue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502182306116_RemovePromoCredits.resx">
+      <DependentUpon>202502182306116_RemovePromoCredits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502190118440_MailingsListsEmailTempltes.resx">
+      <DependentUpon>202502190118440_MailingsListsEmailTempltes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

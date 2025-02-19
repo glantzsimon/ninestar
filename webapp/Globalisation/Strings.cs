@@ -20,6 +20,8 @@
             public const string AmountToDonateLabel = "AmountToDonateLabel";
             public const string AmountToPayLabel = "AmountToPayLabel";
             public const string CustomerLabel = "CustomerLabel";
+            public const string BodyLabel = "BodyLabel";
+            public const string SubjectLabel = "SubjectLabel";
             public const string AdditionalCommentsLabel = "AdditionalComments";
             public const string ConsultationDurationLabel = "ConsultationDurationLabel";
             public const string DurationLabel = "Duration";
@@ -107,6 +109,10 @@
             public const string UserMemberships = "UserMemberships";
             public const string UserMembershipsListName = "UserMemberships";
             public const string Donations = "Donations";
+            public const string EmailTemplates = "EmailTemplates";
+            public const string EmailTemplate = "EmailTemplate";
+            public const string MailingLists = "MailingLists";
+            public const string MailingList = "MailingList";
             public const string EmailQueueItems = "EmailQueueItems";
             public const string EmailQueueItem = "EmailQueueItem";
             public const string Slot = "Slot";

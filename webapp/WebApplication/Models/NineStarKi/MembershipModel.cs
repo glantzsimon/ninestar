@@ -4,27 +4,34 @@ namespace K9.WebApplication.Models
 {
     public class MembershipModel
     {
-        public MembershipModel(int userId, MembershipOption membershipOption, UserMembership activeUserMembership = null)
+        public MembershipModel(int userId, MembershipOption membershipOption, UserMembership activeUserMembership = null, PromoCode promoCode = null)
         {
             MembershipOption = membershipOption;
             ActiveUserMembership = activeUserMembership;
             UserId = userId;
-
+            PromoCode = PromoCode;
+            
             if (MembershipOption != null)
             {
-                MembershipOption.PriceIncludingDiscount = MembershipOption.Price - (ActiveUserMembership?.CostOfRemainingActiveSubscription ?? 0);
+                if (promoCode != null)
+                {
+                    membershipOption.Price = promoCode.TotalPrice;
+                }
+
+                MembershipOption.PriceIncludingDiscountForRemainingPreviousSubscription = MembershipOption.Price - (ActiveUserMembership?.CostOfRemainingActiveSubscription ?? 0);
             }
         }
 
         public MembershipOption MembershipOption { get; }
         public UserMembership ActiveUserMembership { get; }
+        public PromoCode PromoCode { get; set; }
         public int UserId { get; }
         public bool IsSelected { get; set; }
         public bool IsSelectable { get; set; }
         public bool IsSubscribed { get; set; }
 
-        public double SubscriptionPrice => MembershipOption.PriceIncludingDiscount;
-            
+        public double SubscriptionPrice => MembershipOption.PriceIncludingDiscountForRemainingPreviousSubscription;
+
         public string MembershipDisplayCssClass => IsSelected ? "membership-selected" : IsUpgrade ? "membership-upgrade" : "";
 
         public string MembershipHoverCssClass => IsSelected ? "" : "shadow-hover";
@@ -33,6 +40,6 @@ namespace K9.WebApplication.Models
 
         public bool IsUpgrade => ActiveUserMembership != null &&
                                  ActiveUserMembership.MembershipOption.CanUpgradeTo(MembershipOption);
-        
+
     }
 }

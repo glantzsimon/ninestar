@@ -24,7 +24,7 @@ namespace K9.WebApplication.Services
         private readonly ILogger _logger;
         private readonly IAuthentication _authentication;
         private readonly IRepository<MembershipOption> _membershipOptionRepository;
-        private readonly IRepository<DataAccessLayer.Models.UserMembership> _userMembershipRepository;
+        private readonly IRepository<UserMembership> _userMembershipRepository;
         private readonly IRepository<User> _usersRepository;
         private readonly IContactService _contactService;
         private readonly IMailer _mailer;
@@ -36,7 +36,7 @@ namespace K9.WebApplication.Services
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<DataAccessLayer.Models.UserMembership> userMembershipRepository, IRepository<User> usersRepository, IContactService contactService, IMailer mailer, IOptions<WebsiteConfiguration> config, IRepository<PromoCode> promoCodesRepository, IUserService userService, IRepository<Consultation> consultationsRepository, IRepository<UserConsultation> userConsultationsRepository, IConsultationService consultationService)
+        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<User> usersRepository, IContactService contactService, IMailer mailer, IOptions<WebsiteConfiguration> config, IRepository<PromoCode> promoCodesRepository, IUserService userService, IRepository<Consultation> consultationsRepository, IRepository<UserConsultation> userConsultationsRepository, IConsultationService consultationService)
         {
             _logger = logger;
             _authentication = authentication;
@@ -54,7 +54,7 @@ namespace K9.WebApplication.Services
             _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }
 
-        public DataAccessLayer.Models.UserMembership GetActiveUserMembership(string accountNumber)
+        public UserMembership GetActiveUserMembership(string accountNumber)
         {
             var membershipIds =
                 _userMembershipRepository.CustomQuery<string>($"SELECT [{nameof(DataAccessLayer.Models.UserMembership.Name)}] FROM {nameof(DataAccessLayer.Models.UserMembership)}");
@@ -98,7 +98,7 @@ namespace K9.WebApplication.Services
             };
         }
 
-        public List<DataAccessLayer.Models.UserMembership> GetActiveUserMemberships(int userId, bool includeScheduled = false)
+        public List<UserMembership> GetActiveUserMemberships(int userId, bool includeScheduled = false)
         {
             var membershipOptions = _membershipOptionRepository.List();
             var activeMemberships = _userMembershipRepository.Find(_ => _.UserId == userId).ToList()
@@ -118,7 +118,7 @@ namespace K9.WebApplication.Services
         /// </summary>
         /// <param name="userId"></param>
         /// <returns></returns>
-        public DataAccessLayer.Models.UserMembership GetActiveUserMembership(int? userId = null)
+        public UserMembership GetActiveUserMembership(int? userId = null)
         {
             userId = userId ?? Current.UserId;
             var activeUserMembership = GetActiveUserMemberships(userId.Value).OrderByDescending(_ => _.MembershipOption?.SubscriptionType)
@@ -148,18 +148,33 @@ namespace K9.WebApplication.Services
             return activeUserMembership;
         }
 
-        public MembershipModel GetSwitchMembershipModel(int membershipOptionId)
+        public MembershipModel GetSwitchMembershipModel(int membershipOptionId, int? userId = null)
         {
-            var userMemberships = GetActiveUserMemberships(Current.UserId);
+            userId = userId.HasValue ? userId : Current.UserId;
+
+            var userMemberships = GetActiveUserMemberships(userId.Value);
             if (!userMemberships.Any())
             {
                 throw new Exception(Dictionary.SwitchMembershipErrorNotSubscribed);
             }
 
-            var activeUserMembership = GetActiveUserMembership();
+            ValidateUpgrade(userId.Value, membershipOptionId);
+
+            var activeUserMembership = GetActiveUserMembership(userId);
+            var membershipOption = _membershipOptionRepository.Find(membershipOptionId);
+
+            return new MembershipModel(userId.Value, membershipOption, activeUserMembership)
+            {
+                IsSelected = true
+            };
+        }
+
+        private void ValidateUpgrade(int userId, int membershipOptionId)
+        {
+            var activeUserMembership = GetActiveUserMembership(userId);
             if (activeUserMembership.MembershipOptionId == membershipOptionId)
             {
-                throw new Exception(Dictionary.SwitchMembershipErrorAlreadySubscribed);
+                throw new Exception(Dictionary.PurchaseMembershipErrorAlreadySubscribed);
             }
 
             var membershipOption = _membershipOptionRepository.Find(membershipOptionId);
@@ -167,35 +182,46 @@ namespace K9.WebApplication.Services
             {
                 throw new Exception(Dictionary.CannotSwitchMembershipError);
             }
-
-            return new MembershipModel(Current.UserId, membershipOption, activeUserMembership)
-            {
-                IsSelected = true
-            };
         }
 
-        public MembershipModel GetPurchaseMembershipModel(int membershipOptionId)
+        public MembershipModel GetPurchaseMembershipModel(int membershipOptionId, string promoCode = "")
         {
-            var activeUserMembership = GetActiveUserMembership();
-            if (activeUserMembership?.MembershipOptionId == membershipOptionId)
+            ValidateUpgrade(Current.UserId, membershipOptionId);
+
+            PromoCode code = null;
+
+            if (!string.IsNullOrEmpty(promoCode))
             {
-                throw new Exception(Dictionary.PurchaseMembershipErrorAlreadySubscribed);
+                try
+                {
+                    code = _promoCodesRepository.Find(e => e.Code == promoCode).FirstOrDefault();
+                    if (code == null)
+                    {
+                        var errorMessage =
+                            $"MembershipService => GetPurchaseMembershipModel => Invalid Promo Code: {promoCode}";
+                        _logger.Error(errorMessage);
+                        throw new Exception(errorMessage);
+                    }
+                }
+                catch (Exception e)
+                {
+                    var errorMessage =
+                        $"MembershipService => GetPurchaseMembershipModel => Error: {e.GetFullErrorMessage()}";
+                    _logger.Error(errorMessage);
+                    throw;
+                }
             }
 
             var membershipOption = _membershipOptionRepository.Find(membershipOptionId);
-            var userMemberships = GetActiveUserMemberships(Current.UserId);
-            if (userMemberships.Any(e => e.MembershipOption.Id != membershipOption.Id && !e.MembershipOption.IsFree))
-            {
-                throw new Exception(Dictionary.PurchaseMembershipErrorAlreadySubscribedToAnother);
-            }
 
             return new MembershipModel(Current.UserId, membershipOption)
             {
-                IsSelected = true
+                IsSelected = true,
+                PromoCode = code
             };
         }
 
-        public void ProcessPurchaseWithPromoCode(int userId, string code)
+        public void CreateMembershipFromPromoCode(int userId, string code)
         {
             var promoCode = _promoCodesRepository.Find(e => e.Code == code).FirstOrDefault();
 
@@ -205,45 +231,55 @@ namespace K9.WebApplication.Services
                 throw new Exception("Invalid promo code");
             }
 
-            var subscription = _membershipOptionRepository.Find(e => e.SubscriptionType == promoCode.SubscriptionType).FirstOrDefault();
-
-            if (subscription == null)
+            var membershipOption = _membershipOptionRepository.Find(e => e.SubscriptionType == promoCode.SubscriptionType).FirstOrDefault();
+            if (membershipOption == null)
             {
-                _logger.Error($"MembershipService => ProcessPurchaseWithPromoCode => No subscription of type {promoCode.SubscriptionTypeName} found");
-                throw new Exception($"No subscription of type {promoCode.SubscriptionTypeName} found");
+                _logger.Error($"MembershipService => ProcessPurchaseWithPromoCode => No MembershipOption of type {promoCode.SubscriptionTypeName} found");
+                throw new Exception($"No Membership Option of type {promoCode.SubscriptionTypeName} found");
             }
 
-            var credits = promoCode.Credits;
+            var activeMembership = GetActiveUserMembership(userId);
             var user = _usersRepository.Find(userId);
-            var contact = _contactService.GetOrCreateContact("", user.FullName, user.EmailAddress, user.PhoneNumber, user.Id);
 
-            ProcessPurchase(new PurchaseModel
+            if (activeMembership.MembershipOption.SubscriptionType > MembershipOption.ESubscriptionType.Free)
             {
-                ItemId = subscription.Id,
-                ContactId = contact.Id
-            });
+                try
+                {
+                    ValidateUpgrade(membershipOption.Id, userId);
+                }
+                catch (Exception e)
+                {
+                    _logger.Error($"MembershipService => CreateMembershipFromPromoCode => ValidateSwitch Failed => {e.GetFullErrorMessage()}");
+                    throw;
+                }
+            }
 
+            CreateMembership(membershipOption.Id, user.FullName, user.EmailAddress);
             _userService.UsePromoCode(user.Id, code);
         }
 
         public void ProcessPurchase(PurchaseModel purchaseModel)
+        {
+            CreateMembership(purchaseModel.ItemId, purchaseModel.CustomerName, purchaseModel.CustomerEmailAddress);
+        }
+
+        public void CreateMembership(int membershipOptionId, string customerName, string customerEmailAddress)
         {
             UserMembership userMembership = null;
             MembershipOption membershipOption = null;
 
             try
             {
-                var membershipOptionId = purchaseModel.ItemId;
                 membershipOption = _membershipOptionRepository.Find(membershipOptionId);
 
                 if (membershipOption == null)
                 {
                     _logger.Error(
-                        $"MembershipService => ProcessPurchase => No MembershipOption with id {membershipOptionId} was found.");
+                        $"MembershipService => CreateMembership => No MembershipOption with id {membershipOptionId} was found.");
                     throw new IndexOutOfRangeException("Invalid MembershipOptionId");
                 }
 
-                userMembership = new DataAccessLayer.Models.UserMembership
+                userMembership = new UserMembership
                 {
                     UserId = Current.UserId,
                     MembershipOptionId = membershipOptionId,
@@ -264,32 +300,32 @@ namespace K9.WebApplication.Services
             }
             catch (Exception ex)
             {
-                _logger.Error($"MembershipService => ProcessPurchase => Purchase failed: {ex.GetFullErrorMessage()}");
-                SendEmailToNineStarAboutFailure(purchaseModel, ex.GetFullErrorMessage());
+                _logger.Error($"MembershipService => CreateMembership => Purchase failed: {ex.GetFullErrorMessage()}");
+                SendEmailToNineStarAboutFailure(customerName, customerEmailAddress, ex.GetFullErrorMessage());
                 throw ex;
             }
 
             var user = userMembership.User;
             try
             {
-                var contact = _contactService.Find(purchaseModel.CustomerEmailAddress);
+                var contact = _contactService.Find(customerEmailAddress);
                 if (contact == null)
                 {
-                    contact = _contactService.GetOrCreateContact("", purchaseModel.CustomerName, purchaseModel.CustomerEmailAddress, "",
+                    contact = _contactService.GetOrCreateContact("", customerName, customerEmailAddress, "",
                         user.Id);
                 }
             }
             catch (Exception e)
             {
                 _logger.Error($"MembershipService => ProcessPurchase => Get contact record failed failed for user: {user.Id} {e.GetFullErrorMessage()}");
-                SendEmailToNineStarAboutFailure(purchaseModel, e.GetFullErrorMessage());
+                SendEmailToNineStarAboutFailure(customerName, customerEmailAddress, e.GetFullErrorMessage());
             }
 
             try
             {
                 userMembership.MembershipOption = membershipOption;
-                SendEmailToNineStar(purchaseModel, userMembership);
-                SendEmailToUser(purchaseModel, userMembership);
+                SendEmailToNineStar(customerName, customerEmailAddress, userMembership);
+                SendEmailToUser(userMembership);
             }
             catch (Exception e)
             {
@@ -297,7 +333,7 @@ namespace K9.WebApplication.Services
             }
         }
 
-        private void SetMembershipEndDate(DataAccessLayer.Models.UserMembership membership)
+        private void SetMembershipEndDate(UserMembership membership)
         {
             var membershipOption = _membershipOptionRepository.Find(e => e.Id == membership.MembershipOptionId)
                     .FirstOrDefault();
@@ -331,7 +367,7 @@ namespace K9.WebApplication.Services
                     throw new IndexOutOfRangeException("Invalid MembershipOptionId");
                 }
 
-                var userMembership = new DataAccessLayer.Models.UserMembership
+                var userMembership = new UserMembership
                 {
                     UserId = userId,
                     MembershipOptionId = membershipOptionId,
@@ -348,64 +384,6 @@ namespace K9.WebApplication.Services
             catch (Exception ex)
             {
                 _logger.Error($"MembershipService => AssignMembershipToUser => Assign Membership failed: {ex.GetFullErrorMessage()}");
-                throw ex;
-            }
-        }
-
-        public void ProcessSwitch(int membershipOptionId)
-        {
-            PurchaseModel purchaseModel = null;
-
-            try
-            {
-                var membershipOption = _membershipOptionRepository.Find(membershipOptionId);
-                if (membershipOption == null)
-                {
-                    _logger.Error($"MembershipService => ProcessSwitch => No MembershipOption with id {membershipOptionId} was found.");
-                    throw new IndexOutOfRangeException("Invalid MembershipOptionId");
-                }
-
-                var userMembership = new DataAccessLayer.Models.UserMembership
-                {
-                    UserId = Current.UserId,
-                    MembershipOptionId = membershipOptionId,
-                    StartsOn = DateTime.Today,
-                    IsAutoRenew = true
-                };
-                SetMembershipEndDate(userMembership);
-
-                TerminateExistingMemberships(Current.UserId);
-
-                _userMembershipRepository.Create(userMembership);
-                var user = _userService.Find(Current.UserId);
-                userMembership.User = user;
-
-                var contact = _contactService.Find(user.EmailAddress);
-                if (contact == null)
-                {
-                    contact = _contactService.GetOrCreateContact("", user.FullName, user.EmailAddress, user.PhoneNumber,
-                        user.Id);
-                }
-
-                purchaseModel = new PurchaseModel
-                {
-                    ItemId = membershipOptionId,
-                    ContactId = contact.Id,
-                    Quantity = 1,
-                    Amount = 1,
-                    Currency = "USD",
-                    CustomerEmailAddress = contact.EmailAddress,
-                    CustomerName = contact.FullName
-                };
-
-                SendEmailToNineStar(purchaseModel, userMembership);
-                SendEmailToUser(purchaseModel, userMembership);
-            }
-            catch (Exception ex)
-            {
-                _logger.Error($"MembershipService => ProcessSwitch => Switch failed: {ex.GetFullErrorMessage()}");
-
-                SendEmailToNineStarAboutFailure(purchaseModel, ex.GetFullErrorMessage());
                 throw ex;
             }
         }
@@ -428,7 +406,7 @@ namespace K9.WebApplication.Services
                     return;
                 }
 
-                _userMembershipRepository.Create(new DataAccessLayer.Models.UserMembership
+                _userMembershipRepository.Create(new UserMembership
                 {
                     UserId = userId,
                     MembershipOptionId = membershipOption.Id,
@@ -489,15 +467,15 @@ namespace K9.WebApplication.Services
             }
         }
 
-        private void SendEmailToNineStar(PurchaseModel purchaseModel, DataAccessLayer.Models.UserMembership userMembership)
+        private void SendEmailToNineStar(string customerName, string customerEmailAddress, UserMembership userMembership)
         {
             var template = Dictionary.MembershipCreatedEmail;
             var title = "We have received a new subscription!";
             _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
             {
                 Title = title,
-                Customer = purchaseModel.CustomerName,
-                CustomerEmail = purchaseModel.CustomerEmailAddress,
+                Customer = customerName,
+                CustomerEmail = customerEmailAddress,
                 SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal,
                 TotalPrice = userMembership.MembershipOption.FormattedPrice,
                 LinkToSummary = _urlHelper.AbsoluteAction("Index", "UserMemberships"),
@@ -507,7 +485,7 @@ namespace K9.WebApplication.Services
             }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
         }
 
-        private void SendEmailToUser(PurchaseModel purchaseModel, UserMembership userMembership)
+        private void SendEmailToUser(UserMembership userMembership)
         {
             var user = userMembership.User;
             var template = Dictionary.NewMembershipThankYouEmail;
@@ -534,15 +512,15 @@ namespace K9.WebApplication.Services
                 _config.CompanyName);
         }
 
-        private void SendEmailToNineStarAboutFailure(PurchaseModel purchaseModel, string errorMessage)
+        private void SendEmailToNineStarAboutFailure(string customerName, string customerEmailAddress, string errorMessage)
         {
             var template = Dictionary.PaymentError;
             var title = "A customer made a successful payment, but an error occurred.";
             _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
             {
                 Title = title,
-                Customer = purchaseModel.CustomerName,
-                CustomerEmail = purchaseModel.CustomerEmailAddress,
+                Customer = customerName,
+                CustomerEmail = customerEmailAddress,
                 ErrorMessage = errorMessage,
                 Company = _config.CompanyName,
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl)

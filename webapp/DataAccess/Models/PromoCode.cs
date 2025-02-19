@@ -22,13 +22,10 @@ namespace K9.DataAccessLayer.Models
         [MinLength(5)]
         [Index(IsUnique = true)]
         public string Code { get; set; }
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.NumberOfCreditsLabel)]
-        public int Credits { get; set; }
-
+        
         [NotMapped]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.NumberToCreateLabel)]
-        public int NumberToCreate { get; set; }
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberToCreateLabel)]
+        public int NumberToCreate { get;set; }
 
         [UIHint("SubscriptionType")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.SubscriptionTypeLabel)]
@@ -65,28 +62,22 @@ namespace K9.DataAccessLayer.Models
                 switch (SubscriptionType)
                 {
                     case MembershipOption.ESubscriptionType.WeeklyPlatinum:
-                        sb.Append(K9.Globalisation.Dictionary.platinum_weekly_membership_description);
+                        sb.Append(Globalisation.Dictionary.platinum_weekly_membership_description);
                         break;
 
                     case MembershipOption.ESubscriptionType.MonthlyPlatinum:
-                        sb.Append(K9.Globalisation.Dictionary.platinum_monthly_membership_description);
+                        sb.Append(Globalisation.Dictionary.platinum_monthly_membership_description);
                         break;
                     
                     case MembershipOption.ESubscriptionType.AnnualPlatinum:
-                        sb.Append(K9.Globalisation.Dictionary.platinum_annual_membership_description);
+                        sb.Append(Globalisation.Dictionary.platinum_annual_membership_description);
                         break;
                     
                     case MembershipOption.ESubscriptionType.LifeTimePlatinum:
-                        sb.Append(K9.Globalisation.Dictionary.platinum_lifetime_membership_description);
+                        sb.Append(Globalisation.Dictionary.platinum_lifetime_membership_description);
                         break;
 
                 }
-            }
-
-            if (Credits > 0)
-            {
-                sb.Append($"<h4><strong>{Globalisation.Dictionary.Credits}:</strong></h4>");
-                sb.Append($"<p>{Credits}</p>");
             }
 
             return sb.ToString();

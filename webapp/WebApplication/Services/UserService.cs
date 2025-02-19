@@ -75,7 +75,7 @@ namespace K9.WebApplication.Services
             }
         }
 
-        public bool CheckIfPromoCodeIsUsed(string code)
+        public bool IsPromoCodeAlreadyUsed(string code)
         {
             var promoCode = _promoCodesRepository.Find(e => e.Code == code).FirstOrDefault();
             if (promoCode == null)

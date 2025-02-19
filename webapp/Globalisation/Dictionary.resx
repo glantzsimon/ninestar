@@ -1880,7 +1880,7 @@
     <value>Unsubscibe Request</value>
   </data>
   <data name="CannotSwitchMembershipError" xml:space="preserve">
-    <value>Sorry, you cannot switch to the selected membership</value>
+    <value>Sorry, you cannot upgrade to the selected membership. </value>
   </data>
   <data name="MyPersonalProfile" xml:space="preserve">
     <value>My Personal Chart</value>
@@ -2315,7 +2315,7 @@
     <value>Overall Compatibility Score</value>
   </data>
   <data name="PromoCodeInUse" xml:space="preserve">
-    <value>Promo code is already in use</value>
+    <value>This promo code has already been used.</value>
   </data>
   <data name="PromoCodeNotUsed" xml:space="preserve">
     <value>Your account was created but the promo code could not be used. Please contact support.</value>
@@ -3862,7 +3862,25 @@
   <data name="youthful_folly_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>iching\en-gb\youthful-folly-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="BodyLabel" xml:space="preserve">
+    <value>Body</value>
+  </data>
   <data name="DefaultEmailTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>templates\en-gb\defaultemailtemplate.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EmailTemplate" xml:space="preserve">
+    <value>Email Template</value>
+  </data>
+  <data name="EmailTemplates" xml:space="preserve">
+    <value>Email Templates</value>
+  </data>
+  <data name="MailingList" xml:space="preserve">
+    <value>Mailing List</value>
+  </data>
+  <data name="MailingLists" xml:space="preserve">
+    <value>Mailing Lists</value>
+  </data>
+  <data name="SubjectLabel" xml:space="preserve">
+    <value>Subject</value>
   </data>
 </root>

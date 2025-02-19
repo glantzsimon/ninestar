@@ -307,6 +307,8 @@
     <Compile Include="Controllers\ApiController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BaseNineStarKiController.cs" />
+    <Compile Include="Controllers\MailingListsController.cs" />
+    <Compile Include="Controllers\EmailTemplatesController.cs" />
     <Compile Include="Controllers\IChingController.cs" />
     <Compile Include="Controllers\ConsultationsController.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
@@ -315,6 +317,7 @@
     <Compile Include="Controllers\LogController.cs" />
     <Compile Include="Controllers\CompatibilityController.cs" />
     <Compile Include="Controllers\BiorhythmsController.cs" />
+    <Compile Include="Controllers\MailingListContactsController.cs" />
     <Compile Include="Controllers\PredictionsController.cs" />
     <Compile Include="Controllers\PromoCodesController.cs" />
     <Compile Include="Controllers\MembershipController.cs" />
@@ -323,6 +326,7 @@
     <Compile Include="Controllers\UserConsultationsController.cs" />
     <Compile Include="Controllers\UserPromoCodesController.cs" />
     <Compile Include="Controllers\UserMembershipsController.cs" />
+    <Compile Include="Controllers\MailingListUsersController.cs" />
     <Compile Include="Enums\ELineType.cs" />
     <Compile Include="Enums\EDeviceType.cs" />
     <Compile Include="Enums\EBiorhythmValue.cs" />
@@ -1320,9 +1324,6 @@
     <Content Include="Views\Membership\Purchase.cshtml" />
     <Content Include="Views\Membership\PurchaseStart.cshtml" />
     <Content Include="Views\Membership\PurchaseSuccess.cshtml" />
-    <Content Include="Views\Membership\SwitchPurchase.cshtml" />
-    <Content Include="Views\Membership\SwitchPurchaseStart.cshtml" />
-    <Content Include="Views\Membership\SwitchSuccess.cshtml" />
     <Content Include="Views\Membership\_MembershipDetails.cshtml" />
     <Content Include="Views\Membership\_MembershipMedal.cshtml" />
     <Content Include="Views\Membership\_MembershipOption.cshtml" />

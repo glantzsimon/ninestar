@@ -68,7 +68,7 @@ namespace K9.WebApplication.Controllers
                 {
                     success = true, 
                     idProperty = "consultationId", 
-                    idValue = consultationId
+                    id = consultationId
                 });
             }
             catch (Exception ex)

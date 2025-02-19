@@ -1,4 +1,5 @@
-﻿using K9.Base.WebApplication.Controllers;
+﻿using System.Collections.Generic;
+using K9.Base.WebApplication.Controllers;
 using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
 using System.Web.Mvc;
@@ -23,16 +24,19 @@ namespace K9.WebApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreateMultiple(PromoCode promoCode)
         {
+            var codes = new List<PromoCode>();
+
             for (int i = 0; i < promoCode.NumberToCreate; i++)
             {
                 var newPromoCode = new PromoCode
                 {
-                    SubscriptionType = promoCode.SubscriptionType,
-                    Credits = promoCode.Credits
+                    SubscriptionType = promoCode.SubscriptionType
                 };
 
-                Repository.Create(newPromoCode);
+                codes.Add(newPromoCode);
             }
+
+            Repository.CreateBatch(codes);
 
             return RedirectToAction("Index");
         }

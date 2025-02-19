@@ -2039,6 +2039,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Body.
+        /// </summary>
+        public static string BodyLabel {
+            get {
+                return ResourceManager.GetString("BodyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;article&gt;
         ///    &lt;h5 class=&quot;margin-top-0&quot;&gt;
         ///        Explore your personal chart and your relationships in greater depth and detail with a one-to-one 9 Star Ki consultation with our lead astrologer.
@@ -2186,7 +2195,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sorry, you cannot switch to the selected membership.
+        ///   Looks up a localized string similar to Sorry, you cannot upgrade to the selected membership. .
         /// </summary>
         public static string CannotSwitchMembershipError {
             get {
@@ -4439,6 +4448,24 @@ namespace K9.Globalisation {
         public static string EmailQueueItems {
             get {
                 return ResourceManager.GetString("EmailQueueItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email Template.
+        /// </summary>
+        public static string EmailTemplate {
+            get {
+                return ResourceManager.GetString("EmailTemplate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email Templates.
+        /// </summary>
+        public static string EmailTemplates {
+            get {
+                return ResourceManager.GetString("EmailTemplates", resourceCulture);
             }
         }
         
@@ -6921,6 +6948,24 @@ namespace K9.Globalisation {
         public static string MailChimpImportSuccess {
             get {
                 return ResourceManager.GetString("MailChimpImportSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mailing List.
+        /// </summary>
+        public static string MailingList {
+            get {
+                return ResourceManager.GetString("MailingList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mailing Lists.
+        /// </summary>
+        public static string MailingLists {
+            get {
+                return ResourceManager.GetString("MailingLists", resourceCulture);
             }
         }
         
@@ -10124,7 +10169,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Promo code is already in use.
+        ///   Looks up a localized string similar to This promo code has already been used..
         /// </summary>
         public static string PromoCodeInUse {
             get {
@@ -11816,6 +11861,15 @@ namespace K9.Globalisation {
         public static string StripeCustomerIdLabel {
             get {
                 return ResourceManager.GetString("StripeCustomerIdLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subject.
+        /// </summary>
+        public static string SubjectLabel {
+            get {
+                return ResourceManager.GetString("SubjectLabel", resourceCulture);
             }
         }
         

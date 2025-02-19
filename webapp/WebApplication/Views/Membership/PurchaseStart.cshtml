@@ -1,6 +1,6 @@
 ﻿@model K9.WebApplication.Models.MembershipModel
 @{
-    ViewBag.Title = Dictionary.MembershipLabel;
+    ViewBag.Title = ViewBag.Title ?? Dictionary.MembershipLabel;
     ViewBag.SubTitle = Dictionary.YourSelectedSubscription;
     Layout = "../Shared/_LayoutFormSmall.cshtml";
 }

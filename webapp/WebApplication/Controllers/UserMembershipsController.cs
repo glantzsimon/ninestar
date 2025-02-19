@@ -1,14 +1,13 @@
-﻿using System.Linq;
+﻿using K9.Base.DataAccessLayer.Models;
 using K9.Base.WebApplication.Controllers;
 using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
-using System.Web.Mvc;
-using K9.Base.DataAccessLayer.Models;
 using K9.SharedLibrary.Models;
-using K9.WebApplication.Services;
 using K9.WebApplication.ViewModels;
+using System.Linq;
+using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {

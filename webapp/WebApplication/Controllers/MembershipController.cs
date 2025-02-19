@@ -34,9 +34,17 @@ namespace K9.WebApplication.Controllers
 
         [Authorize]
         [Route("membership/unlock")]
-        public ActionResult PurchaseStart(int membershipOptionId)
+        public ActionResult PurchaseStart(int membershipOptionId, string promoCode = "")
         {
-            return View(_membershipService.GetPurchaseMembershipModel(membershipOptionId));
+            if (!string.IsNullOrEmpty(promoCode))
+            {
+                if (_userService.IsPromoCodeAlreadyUsed(promoCode))
+                {
+                    ModelState.AddModelError("", Globalisation.Dictionary.PromoCodeInUse);
+                }
+            }
+
+            return View(_membershipService.GetPurchaseMembershipModel(membershipOptionId, promoCode));
         }
 
         [Authorize]
@@ -94,32 +102,9 @@ namespace K9.WebApplication.Controllers
         public ActionResult SwitchStart(int membershipOptionId)
         {
             var switchMembershipModel = _membershipService.GetSwitchMembershipModel(membershipOptionId);
-            ViewBag.SubTitle = switchMembershipModel.IsUpgrade
-                ? Globalisation.Dictionary.UpgradeMembership
-                : Globalisation.Dictionary.ChangeMembership;
+            ViewBag.Title = Globalisation.Dictionary.UpgradeMembership;
             
-            return View("SwitchPurchaseStart", switchMembershipModel);
-        }
-
-        [Authorize]
-        [Route("membership/upgrade/payment/process")]
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult SwitchPurchase(int membershipOptionId)
-        {
-            var switchMembershipModel = _membershipService.GetSwitchMembershipModel(membershipOptionId);
-            ViewBag.SubTitle = switchMembershipModel.IsUpgrade
-                ? Globalisation.Dictionary.UpgradeMembership
-                : Globalisation.Dictionary.ChangeMembership;
-
-            return View(switchMembershipModel);
-        }
-        
-        [Authorize]
-        [Route("membership/upgrade/success")]
-        public ActionResult SwitchSuccess()
-        {
-            return View();
+            return View("PurchaseStart", switchMembershipModel);
         }
 
         public override string GetObjectName()

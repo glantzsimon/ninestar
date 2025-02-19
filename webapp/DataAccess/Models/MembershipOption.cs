@@ -60,7 +60,7 @@ namespace K9.DataAccessLayer.Models
         [NotMapped]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubscriptionCostLabel)]
         [DataType(DataType.Currency)]
-        public double PriceIncludingDiscount { get; set; }
+        public double PriceIncludingDiscountForRemainingPreviousSubscription { get; set; }
 
         [Required]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NumberOfProfileReadingsLabel)]

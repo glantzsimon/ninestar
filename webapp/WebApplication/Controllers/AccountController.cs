@@ -255,7 +255,7 @@ namespace K9.WebApplication.Controllers
 
                 if (!string.IsNullOrEmpty(model.PromoCode))
                 {
-                    if (_userService.CheckIfPromoCodeIsUsed(model.PromoCode))
+                    if (_userService.IsPromoCodeAlreadyUsed(model.PromoCode))
                     {
                         ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
                         return View(model);
@@ -264,7 +264,7 @@ namespace K9.WebApplication.Controllers
                     try
                     {
                         _userService.UsePromoCode(user.Id, model.PromoCode);
-                        _membershipService.ProcessPurchaseWithPromoCode(user.Id, model.PromoCode);
+                        _membershipService.CreateMembershipFromPromoCode(user.Id, model.PromoCode);
                     }
                     catch (Exception e)
                     {
@@ -319,7 +319,7 @@ namespace K9.WebApplication.Controllers
             {
                 try
                 {
-                    if (_userService.CheckIfPromoCodeIsUsed(promoCode))
+                    if (_userService.IsPromoCodeAlreadyUsed(promoCode))
                     {
                         ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
                     };
@@ -366,6 +366,15 @@ namespace K9.WebApplication.Controllers
 
             if (ModelState.IsValid)
             {
+                if (!string.IsNullOrEmpty(model.PromoCode))
+                {
+                    if (_userService.IsPromoCodeAlreadyUsed(model.PromoCode))
+                    {
+                        ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
+                        return View(model);
+                    }
+                }
+
                 var result = _accountService.Register(model.RegisterModel);
 
                 if (result.IsSuccess)
@@ -378,14 +387,13 @@ namespace K9.WebApplication.Controllers
                         {
                             try
                             {
-                                _userService.UsePromoCode(user.Id, model.PromoCode);
+                                _membershipService.CreateMembershipFromPromoCode(user.Id, model.PromoCode);
                             }
                             catch (Exception e)
                             {
-                                ModelState.AddModelError("PromoCode", e.Message);
+                                _logger.Error($"AccountController => Register => CreateMembershipFromPromoCode => Error: {e.GetFullErrorMessage()}");
+                                throw new Exception("Error creating membership from promo code");
                             }
-
-                            _membershipService.ProcessPurchaseWithPromoCode(user.Id, model.PromoCode);
                         }
                     }
                     else
@@ -508,14 +516,14 @@ namespace K9.WebApplication.Controllers
                     {
                         try
                         {
-                            if (_userService.CheckIfPromoCodeIsUsed(model.PromoCode))
+                            if (_userService.IsPromoCodeAlreadyUsed(model.PromoCode))
                             {
                                 ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
                             }
                             else
                             {
                                 _userService.UsePromoCode(model.User.Id, model.PromoCode);
-                                _membershipService.ProcessPurchaseWithPromoCode(model.User.Id, model.PromoCode);
+                                _membershipService.CreateMembershipFromPromoCode(model.User.Id, model.PromoCode);
                             }
                         }
                         catch (Exception e)
@@ -543,7 +551,7 @@ namespace K9.WebApplication.Controllers
                             throw;
                         }
                     }
-                    
+
                     ViewBag.IsPopupAlert = true;
                     ViewBag.AlertOptions = new AlertOptions
                     {

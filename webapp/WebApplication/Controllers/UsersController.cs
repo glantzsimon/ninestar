@@ -166,7 +166,7 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                if (_userService.CheckIfPromoCodeIsUsed(model.PromoCode))
+                if (_userService.IsPromoCodeAlreadyUsed(model.PromoCode))
                 {
                     ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
                     return RedirectToAction("AssignPromoCodeStart", "Users", new { Id = model.UserId });
@@ -180,7 +180,7 @@ namespace K9.WebApplication.Controllers
 
             try
             {
-                _membershipService.ProcessPurchaseWithPromoCode(model.UserId, model.PromoCode);
+                _membershipService.CreateMembershipFromPromoCode(model.UserId, model.PromoCode);
                 return RedirectToAction("AssignPromoCodeSuccess");
             }
             catch (Exception ex)

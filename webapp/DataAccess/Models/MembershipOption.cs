@@ -52,6 +52,10 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubscriptionDetailsLabel)]
         public string SubscriptionDetailsLocal => GetLocalisedPropertyValue(nameof(SubscriptionDetails));
 
+        public string GetSubscriptionDetails() => PromoCode == null
+            ? SubscriptionTypeNameLocal
+            : $"{SubscriptionTypeNameLocal} ({Dictionary.SpecialPromotion})";
+
         [Required]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubscriptionCostLabel)]
         [DataType(DataType.Currency)]

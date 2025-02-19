@@ -79,9 +79,7 @@ namespace K9.WebApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Purchase(int membershipOptionId, string promoCode)
         {
-            var code = _promoCodeService.Find(promoCode);
-            var membershipModel = _membershipService.GetPurchaseMembershipModel(membershipOptionId);
-            membershipModel.PromoCode = code;
+            var membershipModel = _membershipService.GetPurchaseMembershipModel(membershipOptionId, promoCode);
             ViewBag.SubTitle = Globalisation.Dictionary.UpgradeMembership;
             return View(membershipModel);
         }

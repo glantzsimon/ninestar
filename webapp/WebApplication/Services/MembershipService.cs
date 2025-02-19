@@ -217,8 +217,9 @@ namespace K9.WebApplication.Services
             if (promoCodeModel != null)
             {
                 membershipOption.Price = promoCodeModel.TotalPrice;
+                membershipOption.PromoCode = promoCodeModel;
             }
-            membershipOption.PromoCode = promoCodeModel;
+            
             return new MembershipModel(Current.UserId, membershipOption)
             {
                 IsSelected = true,

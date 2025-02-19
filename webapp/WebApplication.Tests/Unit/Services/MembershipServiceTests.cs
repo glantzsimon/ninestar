@@ -118,7 +118,8 @@ namespace K9.WebApplication.Tests.Unit.Services
                 _userService.Object,
                 new Mock<IRepository<Consultation>>().Object,
                 new Mock<IRepository<UserConsultation>>().Object,
-                new Mock<IConsultationService>().Object);
+                new Mock<IConsultationService>().Object,
+                new Mock<IPromoCodeService>().Object);
         }
 
         [Fact]

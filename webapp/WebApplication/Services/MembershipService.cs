@@ -1,6 +1,7 @@
 ﻿using K9.Base.DataAccessLayer.Models;
 using K9.Base.WebApplication.Config;
 using K9.DataAccessLayer.Enums;
+using K9.DataAccessLayer.Helpers;
 using K9.DataAccessLayer.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
@@ -15,7 +16,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using K9.DataAccessLayer.Helpers;
 
 namespace K9.WebApplication.Services
 {
@@ -33,10 +33,11 @@ namespace K9.WebApplication.Services
         private readonly IRepository<Consultation> _consultationsRepository;
         private readonly IRepository<UserConsultation> _userConsultationsRepository;
         private readonly IConsultationService _consultationService;
+        private readonly IPromoCodeService _promoCodeService;
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<User> usersRepository, IContactService contactService, IMailer mailer, IOptions<WebsiteConfiguration> config, IRepository<PromoCode> promoCodesRepository, IUserService userService, IRepository<Consultation> consultationsRepository, IRepository<UserConsultation> userConsultationsRepository, IConsultationService consultationService)
+        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<User> usersRepository, IContactService contactService, IMailer mailer, IOptions<WebsiteConfiguration> config, IRepository<PromoCode> promoCodesRepository, IUserService userService, IRepository<Consultation> consultationsRepository, IRepository<UserConsultation> userConsultationsRepository, IConsultationService consultationService, IPromoCodeService promoCodeService)
         {
             _logger = logger;
             _authentication = authentication;
@@ -50,6 +51,7 @@ namespace K9.WebApplication.Services
             _consultationsRepository = consultationsRepository;
             _userConsultationsRepository = userConsultationsRepository;
             _consultationService = consultationService;
+            _promoCodeService = promoCodeService;
             _config = config.Value;
             _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }
@@ -255,7 +257,7 @@ namespace K9.WebApplication.Services
             }
 
             CreateMembership(membershipOption.Id, user.FullName, user.EmailAddress);
-            _userService.UsePromoCode(user.Id, code);
+            _promoCodeService.UsePromoCode(user.Id, code);
         }
 
         public void ProcessPurchase(PurchaseModel purchaseModel)

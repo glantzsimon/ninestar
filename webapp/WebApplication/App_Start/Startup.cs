@@ -75,6 +75,7 @@ namespace K9.WebApplication
             builder.RegisterType<BiorhythmsService>().As<IBiorhythmsService>().InstancePerRequest();
             builder.RegisterType<IChingService>().As<IIChingService>().InstancePerRequest();
             builder.RegisterType<EmailQueueService>().As<IEmailQueueService>().InstancePerRequest();
+            builder.RegisterType<PromoCodeService>().As<IPromoCodeService>().InstancePerRequest();
 
             RegisterConfiguration(builder);
 

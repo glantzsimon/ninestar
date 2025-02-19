@@ -10,6 +10,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
 using System.Text;
+using K9.SharedLibrary.Helpers;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -60,7 +61,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.SubscriptionTypeLabel)]
         public string SubscriptionTypeName => MembershipOption?.SubscriptionTypeNameLocal;
-        
+
         public string Details => GetDetails();
 
         public PromoCode()
@@ -72,30 +73,34 @@ namespace K9.DataAccessLayer.Models
         {
             if (MembershipOption != null)
             {
-                var sb = new StringBuilder();
+                var template = "";
                 if (MembershipOption.SubscriptionType > MembershipOption.ESubscriptionType.Free)
                 {
                     switch (MembershipOption.SubscriptionType)
                     {
                         case MembershipOption.ESubscriptionType.WeeklyPlatinum:
-                            sb.Append(Globalisation.Dictionary.platinum_weekly_membership_description);
+                            template = Globalisation.Dictionary.weekly_membership_description;
                             break;
 
                         case MembershipOption.ESubscriptionType.MonthlyPlatinum:
-                            sb.Append(Globalisation.Dictionary.platinum_monthly_membership_description);
+                            template = Globalisation.Dictionary.monthly_membership_description;
                             break;
 
                         case MembershipOption.ESubscriptionType.AnnualPlatinum:
-                            sb.Append(Globalisation.Dictionary.platinum_annual_membership_description);
+                            template = Globalisation.Dictionary.annual_membership_description;
                             break;
 
                         case MembershipOption.ESubscriptionType.LifeTimePlatinum:
-                            sb.Append(Globalisation.Dictionary.platinum_lifetime_membership_description);
+                            template = Globalisation.Dictionary.lifetime_membership_description;
                             break;
 
                     }
                 }
-                return sb.ToString();
+
+                return TemplateProcessor.PopulateTemplate(template, new
+                {
+                    FullFeatureList = Globalisation.Dictionary.full_feature_list
+                });
             }
 
             return string.Empty;

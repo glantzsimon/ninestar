@@ -17,7 +17,7 @@ namespace K9.WebApplication.ViewModels
         public string EmailAddress { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NameLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name =Globalisation.Strings.Labels.CustomerLabel)]
         [StringLength(128)]
         public string Name { get; set; }
 

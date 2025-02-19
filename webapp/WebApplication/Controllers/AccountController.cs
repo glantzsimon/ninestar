@@ -40,9 +40,10 @@ namespace K9.WebApplication.Controllers
         private readonly IRecaptchaService _recaptchaService;
         private readonly IRepository<Contact> _contactsRepository;
         private readonly IRepository<MembershipOption> _membershipOptionsRepository;
+        private readonly IPromoCodeService _promoCodeService;
         private readonly RecaptchaConfiguration _recaptchaConfig;
 
-        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, Services.IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IContactService contactService, IUserService userService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, IRepository<Contact> contactsRepository, IRepository<MembershipOption> membershipOptionsRepository)
+        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, Services.IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IContactService contactService, IUserService userService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, IRepository<Contact> contactsRepository, IRepository<MembershipOption> membershipOptionsRepository, IPromoCodeService promoCodeService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
         {
             _userRepository = userRepository;
@@ -57,6 +58,7 @@ namespace K9.WebApplication.Controllers
             _recaptchaService = recaptchaService;
             _contactsRepository = contactsRepository;
             _membershipOptionsRepository = membershipOptionsRepository;
+            _promoCodeService = promoCodeService;
             _recaptchaConfig = recaptchaConfig.Value;
         }
 
@@ -257,7 +259,7 @@ namespace K9.WebApplication.Controllers
 
                 if (!string.IsNullOrEmpty(model.PromoCode))
                 {
-                    if (_userService.IsPromoCodeAlreadyUsed(model.PromoCode))
+                    if (_promoCodeService.IsPromoCodeAlreadyUsed(model.PromoCode))
                     {
                         ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
                         return View(model);
@@ -265,7 +267,7 @@ namespace K9.WebApplication.Controllers
 
                     try
                     {
-                        _userService.UsePromoCode(user.Id, model.PromoCode);
+                        _promoCodeService.UsePromoCode(user.Id, model.PromoCode);
                         _membershipService.CreateMembershipFromPromoCode(user.Id, model.PromoCode);
                     }
                     catch (Exception e)
@@ -321,7 +323,7 @@ namespace K9.WebApplication.Controllers
             {
                 try
                 {
-                    if (_userService.IsPromoCodeAlreadyUsed(promoCode))
+                    if (_promoCodeService.IsPromoCodeAlreadyUsed(promoCode))
                     {
                         ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
                     };
@@ -370,7 +372,7 @@ namespace K9.WebApplication.Controllers
             {
                 if (!string.IsNullOrEmpty(model.PromoCode))
                 {
-                    if (_userService.IsPromoCodeAlreadyUsed(model.PromoCode))
+                    if (_promoCodeService.IsPromoCodeAlreadyUsed(model.PromoCode))
                     {
                         ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
                         return View(model);
@@ -518,13 +520,13 @@ namespace K9.WebApplication.Controllers
                     {
                         try
                         {
-                            if (_userService.IsPromoCodeAlreadyUsed(model.PromoCode))
+                            if (_promoCodeService.IsPromoCodeAlreadyUsed(model.PromoCode))
                             {
                                 ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
                             }
                             else
                             {
-                                _userService.UsePromoCode(model.User.Id, model.PromoCode);
+                                _promoCodeService.UsePromoCode(model.User.Id, model.PromoCode);
                                 _membershipService.CreateMembershipFromPromoCode(model.User.Id, model.PromoCode);
                             }
                         }
@@ -610,7 +612,7 @@ namespace K9.WebApplication.Controllers
 
             var membershipOption = _membershipOptionsRepository.Find(promoCode.MembershipOptionId);
             promoCode.MembershipOption = membershipOption ?? throw new Exception("Membership was not found");
-
+            
             var model = new EmailPromoCodeViewModel
             {
                 PromoCode = promoCode
@@ -627,7 +629,7 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                _userService.SendPromoCode(model);
+                _promoCodeService.SendRegistrationPromoCode(model);
             }
             catch (Exception e)
             {

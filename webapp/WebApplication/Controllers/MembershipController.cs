@@ -17,13 +17,15 @@ namespace K9.WebApplication.Controllers
         private readonly ILogger _logger;
         private readonly IMembershipService _membershipService;
         private readonly IUserService _userService;
+        private readonly IPromoCodeService _promoCodeService;
 
-        public MembershipController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, IUserService userService)
+        public MembershipController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, IUserService userService, IPromoCodeService promoCodeService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
         {
             _logger = logger;
             _membershipService = membershipService;
             _userService = userService;
+            _promoCodeService = promoCodeService;
         }
 
         public ActionResult Index(string retrieveLast = null)
@@ -38,7 +40,7 @@ namespace K9.WebApplication.Controllers
         {
             if (!string.IsNullOrEmpty(promoCode))
             {
-                if (_userService.IsPromoCodeAlreadyUsed(promoCode))
+                if (_promoCodeService.IsPromoCodeAlreadyUsed(promoCode))
                 {
                     ModelState.AddModelError("", Globalisation.Dictionary.PromoCodeInUse);
                 }

@@ -27,8 +27,9 @@ namespace K9.WebApplication.Controllers
         private readonly IMembershipService _membershipService;
         private readonly IUserService _userService;
         private readonly IRepository<Contact> _contactsRepository;
+        private readonly IPromoCodeService _promoCodeService;
 
-        public UsersController(IControllerPackage<User> controllerPackage, IOptions<DatabaseConfiguration> dataConfig, IRoles roles, IMembershipService membershipService, IUserService userService, IRepository<Contact> contactsRepository)
+        public UsersController(IControllerPackage<User> controllerPackage, IOptions<DatabaseConfiguration> dataConfig, IRoles roles, IMembershipService membershipService, IUserService userService, IRepository<Contact> contactsRepository, IPromoCodeService promoCodeService)
             : base(controllerPackage)
         {
             _dataConfig = dataConfig;
@@ -36,6 +37,7 @@ namespace K9.WebApplication.Controllers
             _membershipService = membershipService;
             _userService = userService;
             _contactsRepository = contactsRepository;
+            _promoCodeService = promoCodeService;
 
             RecordCreated += UsersController_RecordCreated;
             RecordBeforeDeleted += UsersController_RecordBeforeDeleted;
@@ -166,7 +168,7 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                if (_userService.IsPromoCodeAlreadyUsed(model.PromoCode))
+                if (_promoCodeService.IsPromoCodeAlreadyUsed(model.PromoCode))
                 {
                     ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
                     return RedirectToAction("AssignPromoCodeStart", "Users", new { Id = model.UserId });

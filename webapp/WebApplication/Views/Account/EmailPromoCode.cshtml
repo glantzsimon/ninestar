@@ -16,8 +16,15 @@
         @Html.HiddenFor(model => model.PromoCode.UsedOn)
         @Html.HiddenFor(model => model.PromoCode.SentOn)
 
-        @Html.BootstrapDisplayFor(model => model.PromoCode.Code)
+        @Html.HiddenFor(model => model.PromoCode.MembershipOption.Id)
+        @Html.HiddenFor(model => model.PromoCode.MembershipOption.Price)
+        @Html.HiddenFor(model => model.PromoCode.MembershipOption.SubscriptionType)
+        @Html.HiddenFor(model => model.PromoCode.MembershipOption.SubscriptionDetails)
+        
         <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                @Html.BootstrapDisplayFor(model => model.PromoCode.Code)
+            </div>
             <div class="col-sm-6 col-xs-12">
                 @Html.BootstrapDisplayFor(model => model.PromoCode.SubscriptionTypeName)
             </div>

@@ -15,13 +15,13 @@ namespace K9.DataAccessLayer.Database.Seeds
 
             //AddMembershipOption(context, "YearlyStandardMembership", "standard_annual_membership_description", MembershipOption.ESubscriptionType.AnnualStandard, 79, 50, 20);
 
-            AddOrEditMembershipOption(context, "WeeklyPlatinumMembership", "platinum_weekly_membership_description", MembershipOption.ESubscriptionType.WeeklyPlatinum, 14, MembershipOption.Unlimited, MembershipOption.Unlimited);
+            AddOrEditMembershipOption(context, "WeeklyPlatinumMembership", "weekly_membership_description", MembershipOption.ESubscriptionType.WeeklyPlatinum, 14, MembershipOption.Unlimited, MembershipOption.Unlimited);
 
-            AddOrEditMembershipOption(context, "MonthlyPlatinumMembership", "platinum_monthly_membership_description", MembershipOption.ESubscriptionType.MonthlyPlatinum, 27, MembershipOption.Unlimited, MembershipOption.Unlimited);
+            AddOrEditMembershipOption(context, "MonthlyPlatinumMembership", "monthly_membership_description", MembershipOption.ESubscriptionType.MonthlyPlatinum, 27, MembershipOption.Unlimited, MembershipOption.Unlimited);
 
-            AddOrEditMembershipOption(context, "YearlyPlatinumMembership", "platinum_annual_membership_description", MembershipOption.ESubscriptionType.AnnualPlatinum, 72, MembershipOption.Unlimited, MembershipOption.Unlimited);
+            AddOrEditMembershipOption(context, "YearlyPlatinumMembership", "annual_membership_description", MembershipOption.ESubscriptionType.AnnualPlatinum, 72, MembershipOption.Unlimited, MembershipOption.Unlimited);
 
-            AddOrEditMembershipOption(context, "LifeTimePlatinumMembership", "platinum_lifetime_membership_description", MembershipOption.ESubscriptionType.LifeTimePlatinum, 144, MembershipOption.Unlimited, MembershipOption.Unlimited);
+            AddOrEditMembershipOption(context, "LifeTimePlatinumMembership", "lifetime_membership_description", MembershipOption.ESubscriptionType.LifeTimePlatinum, 144, MembershipOption.Unlimited, MembershipOption.Unlimited);
 
             RemoveMembershipOption(context, "MonthlyStandardMembership");
 

@@ -74,76 +74,7 @@ namespace K9.WebApplication.Services
                 }
             }
         }
-
-        public bool IsPromoCodeAlreadyUsed(string code)
-        {
-            var promoCode = _promoCodesRepository.Find(e => e.Code == code).FirstOrDefault();
-            if (promoCode == null)
-            {
-                throw new Exception("Invalid promo code");
-            }
-
-            var userPromoCode = _userPromoCodeRepository.Find(e => e.PromoCodeId == promoCode.Id)
-                .FirstOrDefault();
-            if (userPromoCode != null)
-            {
-                return true;
-            }
-
-            return false;
-        }
-
-        public void UsePromoCode(int userId, string code)
-        {
-            var promoCode = _promoCodesRepository.Find(e => e.Code == code).FirstOrDefault();
-            if (promoCode == null)
-            {
-                throw new Exception("Invalid promo code");
-            }
-
-            var userPromoCode = _userPromoCodeRepository.Find(e => e.PromoCodeId == promoCode.Id)
-                .FirstOrDefault();
-            if (userPromoCode != null)
-            {
-                throw new Exception("Promo code has already been used");
-            }
-
-            var newUserPromo = new UserPromoCode
-            {
-                UserId = userId,
-                PromoCodeId = promoCode.Id
-            };
-
-            _userPromoCodeRepository.Create(newUserPromo);
-
-            promoCode.UsedOn = DateTime.Now;
-            _promoCodesRepository.Update(promoCode);
-        }
-
-        public void SendPromoCode(EmailPromoCodeViewModel model)
-        {
-            var template = Dictionary.PromoCodeEmail;
-            var title = Dictionary.PromoCodeEmailTitle;
-            var user = _usersRepository.Find(e => e.EmailAddress == model.EmailAddress).FirstOrDefault();
-
-            _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
-            {
-                Title = title,
-                model.FirstName,
-                model.EmailAddress,
-                ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
-                PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                TermsOfServiceLink = _urlHelper.AbsoluteAction("TermsOfService", "Home"),
-                UnsubscribeLink = _urlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }),
-                PromoLink = _urlHelper.AbsoluteAction("Register", "Account", new { promoCode = model.PromoCode.Code }),
-                PromoDetails = model.PromoCode.Details,
-                DateTime.Now.Year
-            }), model.EmailAddress, model.Name, _config.SupportEmailAddress, _config.CompanyName);
-
-            model.PromoCode.SentOn = DateTime.Now;
-            _promoCodesRepository.Update(model.PromoCode);
-        }
-
+        
         public User Find(int id)
         {
             return _usersRepository.Find(id);

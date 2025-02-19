@@ -1594,9 +1594,6 @@
   <data name="FreeMembership" xml:space="preserve">
     <value>Free Membership</value>
   </data>
-  <data name="free_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\free-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="AboutRelationships" xml:space="preserve">
     <value>About Relationships</value>
   </data>
@@ -2029,20 +2026,8 @@
   <data name="AgreeToTerms" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>general\en-gb\agreetoterms.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="platinum_annual_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>general\en-gb\platinum-annual-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="platinum_monthly_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>general\en-gb\platinum-monthly-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="PrivacyPolicy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>general\en-gb\privacypolicy.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="standard_annual_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>general\en-gb\standard-annual-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="standard_monthly_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>general\en-gb\standard-monthly-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="support_blurb" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>general\en-gb\support-blurb.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -2109,9 +2094,6 @@
   </data>
   <data name="CompletedOnLabel" xml:space="preserve">
     <value>Completed On</value>
-  </data>
-  <data name="consultation_email" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>general\en-gb\consultation-email.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="InvalidRecaptcha" xml:space="preserve">
     <value>Invalid reCAPTCHA response</value>
@@ -2698,12 +2680,6 @@
   <data name="OptionalNameLabel" xml:space="preserve">
     <value>Name (Optional)</value>
   </data>
-  <data name="platinum_lifetime_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>general\en-gb\platinum-lifetime-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="platinum_weekly_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>general\en-gb\platinum-weekly-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="BackToMyAccountTitle" xml:space="preserve">
     <value>Back To My Account</value>
   </data>
@@ -2779,14 +2755,8 @@
   <data name="WhatDoIGet" xml:space="preserve">
     <value>What do I get?</value>
   </data>
-  <data name="what_you_get" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>general\en-gb\what-you-get.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="WhyUpgrade" xml:space="preserve">
     <value>Why upgrade?</value>
-  </data>
-  <data name="why_upgrade" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>general\en-gb\why-upgrade.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="YearlyPrediction" xml:space="preserve">
     <value>Yearly Prediction</value>
@@ -3906,5 +3876,29 @@
   </data>
   <data name="YearlyPlatinumMembership" xml:space="preserve">
     <value>Yearly Membership</value>
+  </data>
+  <data name="annual_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>membership\en-gb\annual-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="free_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>membership\en-gb\free-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="full_feature_list" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>membership\en-gb\full-feature-list.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lifetime_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>membership\en-gb\lifetime-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="monthly_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>membership\en-gb\monthly-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="weekly_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>membership\en-gb\weekly-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="what_you_get" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>membership\en-gb\what-you-get.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="why_upgrade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>membership\en-gb\why-upgrade.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

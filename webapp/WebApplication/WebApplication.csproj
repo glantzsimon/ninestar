@@ -409,6 +409,8 @@
     <Compile Include="Services\AccountService.cs" />
     <Compile Include="Services\IAccountMailerService.cs" />
     <Compile Include="Services\IAccountService.cs" />
+    <Compile Include="Services\IPromoCodeService.cs" />
+    <Compile Include="Services\PromoCodeService.cs" />
     <Compile Include="ViewModels\IChingViewModel.cs" />
     <Compile Include="ViewModels\AssignConsultationModel.cs" />
     <Compile Include="ViewModels\AdminViewModel.cs" />

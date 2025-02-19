@@ -1601,6 +1601,19 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
+        ///    &lt;h4&gt;&lt;strong&gt;Yearly Membership:&lt;/strong&gt;&lt;/h4&gt;
+        ///    &lt;h5&gt;&lt;strong&gt;For one year, you get:&lt;/strong&gt;&lt;/h5&gt;
+        ///    {FullFeatureList}
+        ///&lt;/div&gt;.
+        /// </summary>
+        public static string annual_membership_description {
+            get {
+                return ResourceManager.GetString("annual_membership_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Yearly Membership.
         /// </summary>
         public static string AnnualPlatinumMembership {
@@ -2867,28 +2880,6 @@ namespace K9.Globalisation {
         public static string Consultation {
             get {
                 return ResourceManager.GetString("Consultation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Dear {FirstName},
-        ///
-        ///{LineFeed}
-        ///{LineFeed}
-        ///You recently booked a 9 Star Ki consultation for {Duration}. Please let me know what time would be convenient to arrange a call.
-        ///{LineFeed}
-        ///{LineFeed}
-        ///I look forward to speaking with you very soon.
-        ///{LineFeed}
-        ///{LineFeed}
-        ///Very best wishes,
-        ///{LineFeed}
-        ///{LineFeed}
-        ///Simon.
-        /// </summary>
-        public static string consultation_email {
-            get {
-                return ResourceManager.GetString("consultation_email", resourceCulture);
             }
         }
         
@@ -5376,6 +5367,35 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    &amp;#8226; Unlimited complete personal chart readings
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    &amp;#8226; Unlimited relationship compatibility readings
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    &amp;#8226; Unlimited yearly and monthly predictions
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    &amp;#8226; Unlimited biorhythms 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    &amp;#8226; Full access to our 9 Star Ki knowledge base
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    &amp;#8226; Unlimited access to our I Ching hexagram generator and interpreter
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    &amp;#8226; Full access to our 9 Star Ki AI Astrologer GPT (ChatGPT paid customers only)
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string full_feature_list {
+            get {
+                return ResourceManager.GetString("full_feature_list", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fundamental Elements.
         /// </summary>
         public static string FundamentalElements {
@@ -6875,6 +6895,19 @@ namespace K9.Globalisation {
         public static string Li {
             get {
                 return ResourceManager.GetString("Li", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
+        ///    &lt;h4&gt;&lt;strong&gt;Lifetime Platinum Membership:&lt;/strong&gt;&lt;/h4&gt;
+        ///    &lt;h5&gt;&lt;strong&gt;Lifetime access to:&lt;/strong&gt;&lt;/h5&gt;
+        ///    {FullFeatureList}    
+        ///&lt;/div&gt;.
+        /// </summary>
+        public static string lifetime_membership_description {
+            get {
+                return ResourceManager.GetString("lifetime_membership_description", resourceCulture);
             }
         }
         
@@ -8433,6 +8466,19 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
+        ///    &lt;h4&gt;&lt;strong&gt;Monthly Platinum Membership:&lt;/strong&gt;&lt;/h4&gt;
+        ///    &lt;h5&gt;&lt;strong&gt;For month, you get:&lt;/strong&gt;&lt;/h5&gt;
+        ///    {FullFeatureList}
+        ///&lt;/div&gt;.
+        /// </summary>
+        public static string monthly_membership_description {
+            get {
+                return ResourceManager.GetString("monthly_membership_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Monthly Energy.
         /// </summary>
         public static string MonthlyCycle {
@@ -9762,74 +9808,6 @@ namespace K9.Globalisation {
         public static string Planning {
             get {
                 return ResourceManager.GetString("Planning", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
-        ///    &lt;h4&gt;&lt;strong&gt;Annual Platinum Membership:&lt;/strong&gt;&lt;/h4&gt;
-        ///    &lt;p&gt;
-        ///        &amp;#8226; Unlimited complete personal chart readings for a year.
-        ///    &lt;/p&gt;
-        ///    &lt;p&gt;
-        ///        &amp;#8226; Unlimited relationship compatibility readings for a year.
-        ///    &lt;/p&gt;
-        ///&lt;/div&gt;.
-        /// </summary>
-        public static string platinum_annual_membership_description {
-            get {
-                return ResourceManager.GetString("platinum_annual_membership_description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
-        ///    &lt;h4&gt;&lt;strong&gt;Lifetime Platinum Membership:&lt;/strong&gt;&lt;/h4&gt;
-        ///    &lt;p&gt;
-        ///        &amp;#8226; Unlimited complete personal chart readings forever.
-        ///    &lt;/p&gt;
-        ///    &lt;p&gt;
-        ///        &amp;#8226; Unlimited relationship compatibility readings forever.
-        ///    &lt;/p&gt;
-        ///&lt;/div&gt;.
-        /// </summary>
-        public static string platinum_lifetime_membership_description {
-            get {
-                return ResourceManager.GetString("platinum_lifetime_membership_description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
-        ///    &lt;h4&gt;&lt;strong&gt;Monthly Platinum Membership:&lt;/strong&gt;&lt;/h4&gt;
-        ///    &lt;p&gt;
-        ///        &amp;#8226; Unlimited complete personal chart readings for a month.
-        ///    &lt;/p&gt;
-        ///    &lt;p&gt;
-        ///        &amp;#8226; Unlimited relationship compatibility readings for a month.
-        ///    &lt;/p&gt;
-        ///&lt;/div&gt;.
-        /// </summary>
-        public static string platinum_monthly_membership_description {
-            get {
-                return ResourceManager.GetString("platinum_monthly_membership_description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
-        ///    &lt;h4&gt;&lt;strong&gt;Weekly Platinum Membership:&lt;/strong&gt;&lt;/h4&gt;
-        ///    &lt;p&gt;
-        ///        &amp;#8226; Unlimited complete personal chart readings for one week.
-        ///    &lt;/p&gt;
-        ///    &lt;p&gt;
-        ///        &amp;#8226; Unlimited relationship compatibility readings for one week.
-        ///    &lt;/p&gt;
-        ///&lt;/div&gt;.
-        /// </summary>
-        public static string platinum_weekly_membership_description {
-            get {
-                return ResourceManager.GetString("platinum_weekly_membership_description", resourceCulture);
             }
         }
         
@@ -11799,40 +11777,6 @@ namespace K9.Globalisation {
         public static string stable_modality {
             get {
                 return ResourceManager.GetString("stable_modality", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
-        ///    &lt;h4&gt;&lt;strong&gt;Annual Standard Membership:&lt;/strong&gt;&lt;/h4&gt;
-        ///    &lt;p&gt;
-        ///        &amp;#8226; {NumberOfProfileReadings} full Personal Chart readings a month for a whole year.
-        ///    &lt;/p&gt;
-        ///    &lt;p&gt;
-        ///        &amp;#8226; {NumberOfCompatibilityReadings} full Relationship Compatibility readings a month for a whole year.
-        ///    &lt;/p&gt;
-        ///&lt;/div&gt;.
-        /// </summary>
-        public static string standard_annual_membership_description {
-            get {
-                return ResourceManager.GetString("standard_annual_membership_description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
-        ///    &lt;h4&gt;&lt;strong&gt;Monthly Standard Membership:&lt;/strong&gt;&lt;/h4&gt;
-        ///    &lt;p&gt;
-        ///        &amp;#8226; {NumberOfProfileReadings} full Personal Chart readings for a whole month.
-        ///    &lt;/p&gt;
-        ///    &lt;p&gt;
-        ///        &amp;#8226; {NumberOfCompatibilityReadings} full Relationship Compatibility readings for a whole month.
-        ///    &lt;/p&gt;
-        ///&lt;/div&gt;.
-        /// </summary>
-        public static string standard_monthly_membership_description {
-            get {
-                return ResourceManager.GetString("standard_monthly_membership_description", resourceCulture);
             }
         }
         
@@ -13947,6 +13891,19 @@ namespace K9.Globalisation {
         public static string WaterElement {
             get {
                 return ResourceManager.GetString("WaterElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
+        ///    &lt;h4&gt;&lt;strong&gt;Weekly Membership:&lt;/strong&gt;&lt;/h4&gt;
+        ///    &lt;h5&gt;&lt;strong&gt;For one week, you get:&lt;/strong&gt;&lt;/h5&gt;
+        ///    {FullFeatureList}
+        ///&lt;/div&gt;.
+        /// </summary>
+        public static string weekly_membership_description {
+            get {
+                return ResourceManager.GetString("weekly_membership_description", resourceCulture);
             }
         }
         

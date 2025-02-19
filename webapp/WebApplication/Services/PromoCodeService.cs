@@ -148,11 +148,12 @@ namespace K9.WebApplication.Services
             _promoCodesRepository.Update(promoCode);
         }
 
-        public void SendMembershipPromoCode(string code, int userId)
+        public void SendMembershipPromoCode(EmailPromoCodeViewModel model)
         {
             var template = Dictionary.PromoCodeEmail;
             var title = Dictionary.PromoCodeEmailTitle;
 
+            var code = model.PromoCode.Code;    
             var promoCode = Find(code);
             if (promoCode == null)
             {
@@ -168,15 +169,15 @@ namespace K9.WebApplication.Services
             }
 
             // Check if user already exists with email address
-            var user = _usersRepository.Find(userId);
+            var user = _usersRepository.Find(model.UserId.Value);
             if (user == null)
             {
-                _logger.Log(LogLevel.Error, $"PromoCodeService => SendMembershipPromoCode => User {userId} not found");
-                throw new Exception($"Cannot use this promo code. The user {userId} was not found");
+                _logger.Log(LogLevel.Error, $"PromoCodeService => SendMembershipPromoCode => User {model.UserId.Value} not found");
+                throw new Exception($"Cannot use this promo code. The user {model.UserId.Value} was not found");
             }
 
             // Check membership option
-            var membershipOption = _membershipOptionsRepository.Find(promoCode.MembershipOptionId);
+            var membershipOption = _membershipOptionsRepository.Find(model.PromoCode.MembershipOptionId);
             if (membershipOption == null)
             {
                 _logger.Log(LogLevel.Error, $"PromoCodeService => SendMembershipPromoCode => Membership Option {promoCode.MembershipOptionId} not found");
@@ -192,8 +193,9 @@ namespace K9.WebApplication.Services
                 PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
                 TermsOfServiceLink = _urlHelper.AbsoluteAction("TermsOfService", "Home"),
                 UnsubscribeLink = _urlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }),
-                PromoLink = _urlHelper.AbsoluteAction("PurchaseStart", "Membership", new { membershipOptionId = promoCode.MembershipOptionId, promoCode = promoCode.Code }),
-                PromoDetails = promoCode.Details,
+                PromoLink = _urlHelper.AbsoluteAction("PurchaseStart", "Membership", new { membershipOptionId = model.PromoCode.MembershipOptionId, promoCode = promoCode.Code }),
+                PromoDetails = model.PromoCode.Details,
+                promoCode.PriceDescription,
                 DateTime.Now.Year
             }), user.EmailAddress, user.Name, _config.SupportEmailAddress, _config.CompanyName);
 

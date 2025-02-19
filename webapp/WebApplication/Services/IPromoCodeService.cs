@@ -9,6 +9,6 @@ namespace K9.WebApplication.Services
         bool IsPromoCodeAlreadyUsed(string code);
         void UsePromoCode(int userId, string code);
         void SendRegistrationPromoCode(EmailPromoCodeViewModel model);
-        void SendMembershipPromoCode(string code, int userId);
+        void SendMembershipPromoCode(EmailPromoCodeViewModel model);
     }
 }

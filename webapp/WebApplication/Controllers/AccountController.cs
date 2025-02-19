@@ -691,12 +691,13 @@ namespace K9.WebApplication.Controllers
                 var user = _userService.Find(model.UserId.Value);
                 model.EmailAddress = user.EmailAddress;
                 model.Name = user.FullName;
+                model.User = user;
 
                 if (ModelState.IsValid)
                 {
                     try
                     {
-                        _promoCodeService.SendMembershipPromoCode(model.PromoCode.Code, model.UserId.Value);
+                        _promoCodeService.SendMembershipPromoCode(model);
                     }
                     catch (Exception e)
                     {

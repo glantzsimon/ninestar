@@ -1522,6 +1522,16 @@
     <Content Include="Views\IChing\_GenerateButtonForm.cshtml" />
     <Content Include="Views\Home\GptInfo.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Discount.cshtml" />
+    <Content Include="Views\Account\EmailPromoCodeToUser.cshtml" />
+    <Content Include="Views\MailingLists\_DisplayFields.cshtml" />
+    <Content Include="Views\MailingLists\_EditFields.cshtml" />
+    <Content Include="Views\MailingLists\_TableButtons.cshtml" />
+    <Content Include="Views\MailingLists\_TableFields.cshtml" />
+    <Content Include="Views\MailingLists\Create.cshtml" />
+    <Content Include="Views\MailingLists\Delete.cshtml" />
+    <Content Include="Views\MailingLists\Details.cshtml" />
+    <Content Include="Views\MailingLists\Edit.cshtml" />
+    <Content Include="Views\MailingLists\Index.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

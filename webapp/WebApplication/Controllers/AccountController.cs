@@ -615,31 +615,9 @@ namespace K9.WebApplication.Controllers
         [Authorize]
         public ActionResult EmailPromoCode(int id)
         {
-            var promoCode = _promoCodesRepository.Find(id);
-            if (promoCode == null)
-            {
-                ModelState.AddModelError("", "Invalid promo code");
-            }
-
-            if (promoCode.UsedOn.HasValue)
-            {
-                ModelState.AddModelError("", Globalisation.Dictionary.PromoCodeInUse);
-            }
-            else if (promoCode.SentOn.HasValue)
-            {
-                ModelState.AddModelError("", $"Promo code was already sent on {promoCode.SentOn.Value.ToLongDateString()}");
-            }
-
-            var membershipOption = _membershipOptionsRepository.Find(promoCode.MembershipOptionId);
-            if (membershipOption == null)
-            {
-                ModelState.AddModelError("", "Membership Option not found");
-            }
-
-            promoCode.MembershipOption = membershipOption;
             var model = new EmailPromoCodeViewModel
             {
-                PromoCode = promoCode
+                PromoCode = ValidatePromoCode(_promoCodesRepository.Find(id))
             };
 
             return View(model);
@@ -651,25 +629,16 @@ namespace K9.WebApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EmailPromoCode(EmailPromoCodeViewModel model)
         {
-            var promoCode = _promoCodesRepository.Find(model.PromoCode.Id);
-            if (promoCode == null)
+            var promoCode = ValidatePromoCode(_promoCodesRepository.Find(model.PromoCode.Id));
+
+            if (string.IsNullOrEmpty(model.EmailAddress))
             {
-                ModelState.AddModelError("", "Invalid promo code");
+                ModelState.AddModelError(nameof(model.EmailAddress), Dictionary.FieldIsRequired);
             }
 
-            if (promoCode.UsedOn.HasValue)
+            if (string.IsNullOrEmpty(model.Name))
             {
-                ModelState.AddModelError("", Globalisation.Dictionary.PromoCodeInUse);
-            }
-            else if (promoCode.SentOn.HasValue)
-            {
-                ModelState.AddModelError("", $"Promo code was already sent on {promoCode.SentOn.Value.ToLongDateString()}");
-            }
-
-            var membershipOption = _membershipOptionsRepository.Find(promoCode.MembershipOptionId);
-            if (membershipOption == null)
-            {
-                ModelState.AddModelError("", "Membership Option not found");
+                ModelState.AddModelError(nameof(model.Name), Dictionary.FieldIsRequired);
             }
 
             if (ModelState.IsValid)
@@ -688,6 +657,57 @@ namespace K9.WebApplication.Controllers
                 }
 
                 return RedirectToAction("PromoCodeEmailSent");
+            }
+
+            return View(model);
+        }
+
+        [Route("email-promocode-to-user")]
+        [Authorize]
+        public ActionResult EmailPromoCodeToUser(int id)
+        {
+            var model = new EmailPromoCodeViewModel
+            {
+                PromoCode = ValidatePromoCode(_promoCodesRepository.Find(id))
+            };
+
+            return View(model);
+        }
+
+        [Route("email-promocode-to-user")]
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EmailPromoCodeToUser(EmailPromoCodeViewModel model)
+        {
+            var promoCode = ValidatePromoCode(_promoCodesRepository.Find(model.PromoCode.Id));
+
+            if (!model.UserId.HasValue)
+            {
+                ModelState.AddModelError(nameof(model.UserId), "Please select a user");
+            }
+            else
+            {
+                var user = _userService.Find(model.UserId.Value);
+                model.EmailAddress = user.EmailAddress;
+                model.Name = user.FullName;
+
+                if (ModelState.IsValid)
+                {
+                    try
+                    {
+                        _promoCodeService.SendMembershipPromoCode(model.PromoCode.Code, model.UserId.Value);
+                    }
+                    catch (Exception e)
+                    {
+                        var fullErrorMessage = e.GetFullErrorMessage();
+                        _logger.Error($"AccountController => EmailPromocode => Error: {fullErrorMessage}");
+                        ModelState.AddModelError("", fullErrorMessage);
+
+                        return View(model);
+                    }
+                    return RedirectToAction("PromoCodeEmailSent");
+                }
             }
 
             return View(model);
@@ -1014,7 +1034,34 @@ namespace K9.WebApplication.Controllers
             _userRepository.GetQuery($"UPDATE [webpages_Membership] SET Password = '{password}', PasswordChangedDate = GetDate() WHERE UserId = {user.Id}");
         }
 
+        private PromoCode ValidatePromoCode(PromoCode promoCode)
+        {
+            if (promoCode == null)
+            {
+                ModelState.AddModelError("", "Invalid promo code");
+            }
+
+            if (promoCode.UsedOn.HasValue)
+            {
+                ModelState.AddModelError("", Globalisation.Dictionary.PromoCodeInUse);
+            }
+            else if (promoCode.SentOn.HasValue)
+            {
+                ModelState.AddModelError("", $"Promo code was already sent on {promoCode.SentOn.Value.ToLongDateString()}");
+            }
+
+            var membershipOption = _membershipOptionsRepository.Find(promoCode.MembershipOptionId);
+            if (membershipOption == null)
+            {
+                ModelState.AddModelError("", "Membership Option not found");
+            }
+
+            promoCode.MembershipOption = membershipOption;
+            return promoCode;
+        }
+
         #endregion
+
 
     }
 }

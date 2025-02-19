@@ -1,0 +1,15 @@
+﻿@using K9.Base.WebApplication.Helpers
+@using K9.WebApplication.Helpers
+@model UserMembership
+
+@if (Model.Id > 0)
+{
+    @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.User, "Edit", "User", new { id = Model.UserId }, "fa fa-pencil", EButtonClass.Info)
+    @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.MembershipLabel, "Edit", "UserMembership", new { id = Model.Id }, "fa fa-pencil", EButtonClass.Info)
+
+    @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.AssignMembership, "AssignMembershipStart", "Users", new { id = Model.UserId }, "", EButtonClass.Success)
+
+    @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.CreateComplementaryConsultation, "AssignFreeConsultationStart", "Users", new { id = Model.UserId }, "", EButtonClass.Success)
+
+    @Html.BootstrapActionLinkButton("View Account Details", "ViewAccount", "Users", new { id = Model.UserId }, "", EButtonClass.Success)
+}

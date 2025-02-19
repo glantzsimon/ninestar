@@ -1,0 +1,13 @@
+﻿@using K9.Base.WebApplication.Helpers
+@using K9.SharedLibrary.Helpers
+@model UserMembership
+@Html.BootstrapDisplayFor(model => model.StartsOn)
+@Html.BootstrapDisplayFor(model => model.EndsOn)
+@Html.BootstrapDisplayFor(model => model.IsActive)
+@Html.BootstrapDisplayFor(model => model.IsAutoRenew)
+@Html.BootstrapDisplayFor(model => model.IsDeactivated)
+@Html.BootstrapDisplayFor(model => model.UserName)
+@Html.BootstrapDisplayFor(model => model.MembershipOptionName)
+@Html.BootstrapDisplayFor(model => model.NumberOfProfileReadingsLeft)
+@Html.BootstrapDisplayFor(model => model.NumberOfRelationshipCompatibilityReadingsLeft)
+@Html.BootstrapDisplayFor(model => model.NumberOfCreditsLeft)

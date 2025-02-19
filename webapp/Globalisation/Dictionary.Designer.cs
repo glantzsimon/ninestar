@@ -4455,6 +4455,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email Promo Code to User.
+        /// </summary>
+        public static string EmailPromoCodeToUser {
+            get {
+                return ResourceManager.GetString("EmailPromoCodeToUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email Queue.
         /// </summary>
         public static string EmailQueue {

@@ -15,6 +15,19 @@
         "SentOn",
         "UsedOn"
     },
+    CustomMenuButtons =
+    {
+        new Button
+        {
+            Text = Dictionary.CreateMultiple,
+            Controller = "PromoCodes",
+            Action = "CreateMultiple",
+            ButtonType = EButtonType.Primary,
+            IconCssClass = "fa fa-plus",
+            IsMainMenuButton = true
+
+        }
+    },
     CustomButtons = new List<IButton>
     {
         new Button
@@ -29,12 +42,12 @@
 
         new Button
         {
-            Text = Dictionary.CreateMultiple,
-            Controller = "PromoCodes",
-            Action = "CreateMultiple",
+            Text = Dictionary.EmailPromoCodeToUser,
+            Controller = "",
+            Action = "../account/email-promocode-to-user",
             ButtonType = EButtonType.Primary,
-            IconCssClass = "fa fa-plus",
-            IsMainMenuButton = true
+            IconCssClass = "fa fa-envelope"
+
 
         }
     }

@@ -106,6 +106,21 @@ namespace K9.WebApplication.Services
                 throw new Exception("Cannot use this promo code. The user is already registered on the system");
             }
 
+            var code = model.PromoCode.Code;    
+            var promoCode = _promoCodesRepository.Find(e => e.Code == code).FirstOrDefault();
+            if (promoCode == null)
+            {
+                throw new Exception($"PromoCodeService => SendRegistrationPromoCode => PromoCode {code} was not found");
+            }
+            if (promoCode.UsedOn.HasValue)
+            {
+                throw new Exception($"PromoCodeService => SendRegistrationPromoCode => PromoCode {code} was already used on {promoCode.UsedOn.Value}");
+            }
+            if (promoCode.SentOn.HasValue)
+            {
+                throw new Exception($"PromoCodeService => SendRegistrationPromoCode => PromoCode {code} was already sent on {promoCode.SentOn.Value}");
+            }
+
             var contact = _contactService.GetOrCreateContact("", model.Name, model.EmailAddress);
 
             _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
@@ -117,13 +132,15 @@ namespace K9.WebApplication.Services
                 PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
                 TermsOfServiceLink = _urlHelper.AbsoluteAction("TermsOfService", "Home"),
                 UnsubscribeLink = _urlHelper.AbsoluteAction("UnsubscribeContact", "Account", new { externalId = contact.Name }),
-                PromoLink = _urlHelper.AbsoluteAction("Register", "Account", new { promoCode = model.PromoCode.Code }),
+                PromoLink = _urlHelper.AbsoluteAction("Register", "Account", new { promoCode = code }),
                 PromoDetails = model.PromoCode.Details,
+                model.PromoCode.PriceDescription,
                 DateTime.Now.Year
             }), model.EmailAddress, model.Name, _config.SupportEmailAddress, _config.CompanyName);
 
-            model.PromoCode.SentOn = DateTime.Now;
-            _promoCodesRepository.Update(model.PromoCode);
+         
+            promoCode.SentOn = DateTime.Now;
+            _promoCodesRepository.Update(promoCode);
         }
 
         public void SendMembershipPromoCode(string code, int userId)

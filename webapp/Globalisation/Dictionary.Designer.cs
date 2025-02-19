@@ -1603,7 +1603,6 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
         ///    &lt;h4&gt;&lt;strong&gt;Yearly Membership:&lt;/strong&gt;&lt;/h4&gt;
-        ///    &lt;h5&gt;&lt;strong&gt;For one year, you get:&lt;/strong&gt;&lt;/h5&gt;
         ///    {FullFeatureList}
         ///&lt;/div&gt;.
         /// </summary>
@@ -5305,6 +5304,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to for the discounted price of {DiscountedPrice}.
+        /// </summary>
+        public static string ForTheDiscountedPriceOf {
+            get {
+                return ResourceManager.GetString("ForTheDiscountedPriceOf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Free.
         /// </summary>
         public static string Free {
@@ -5316,13 +5324,17 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
         ///    &lt;h4&gt;&lt;strong&gt;Free Membership:&lt;/strong&gt;&lt;/h4&gt;
-        ///    &lt;p&gt;
-        ///        &amp;#8226; {NumberOfProfileReadings} full Personal Profile readings.
+        ///    &lt;p style=&quot;font-size: 15px&quot;&gt;
+        ///        &amp;#8226; Unlimited simple personal chart readings
         ///    &lt;/p&gt;
-        ///    &lt;p&gt;
-        ///        &amp;#8226; {NumberOfCompatibilityReadings} full Relationship Compatibility readings.
+        ///    &lt;p style=&quot;font-size: 15px&quot;&gt;
+        ///        &amp;#8226; Unlimited simple relationship compatibility readings
         ///    &lt;/p&gt;
-        ///&lt;/div&gt;.
+        ///    &lt;p style=&quot;font-size: 15px&quot;&gt;
+        ///        &amp;#8226; Unlimited simple yearly and monthly predictions
+        ///    &lt;/p&gt;
+        ///    &lt;p style=&quot;font-size: 15px&quot;&gt;
+        ///        &amp;#8226; Unlimited access to our I Ching hexagram generator and inte [rest of string was truncated]&quot;;.
         /// </summary>
         public static string free_membership_description {
             get {
@@ -5349,6 +5361,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to free of charge.
+        /// </summary>
+        public static string FreeOfCharge {
+            get {
+                return ResourceManager.GetString("FreeOfCharge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Oops! We encountered a problem processing your request..
         /// </summary>
         public static string FriendlyErrorMessage {
@@ -5367,27 +5388,23 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
+        ///   Looks up a localized string similar to &lt;p style=&quot;font-size: 15px&quot;&gt;
         ///    &amp;#8226; Unlimited complete personal chart readings
         ///&lt;/p&gt;
-        ///&lt;p&gt;
+        ///&lt;p style=&quot;font-size: 15px&quot;&gt;
         ///    &amp;#8226; Unlimited relationship compatibility readings
         ///&lt;/p&gt;
-        ///&lt;p&gt;
+        ///&lt;p style=&quot;font-size: 15px&quot;&gt;
         ///    &amp;#8226; Unlimited yearly and monthly predictions
         ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    &amp;#8226; Unlimited biorhythms 
+        ///&lt;p style=&quot;font-size: 15px&quot;&gt;
+        ///    &amp;#8226; Unlimited biorhythms
         ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    &amp;#8226; Full access to our 9 Star Ki knowledge base
+        ///&lt;p style=&quot;font-size: 15px&quot;&gt;
+        ///    &amp;#8226; Unlimited use of our I Ching hexagram generator and interpreter
         ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    &amp;#8226; Unlimited access to our I Ching hexagram generator and interpreter
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    &amp;#8226; Full access to our 9 Star Ki AI Astrologer GPT (ChatGPT paid customers only)
-        ///&lt;/p&gt;.
+        ///&lt;p style=&quot;font-size: 15px&quot;&gt;
+        ///    &amp;#8226; Full access to o [rest of string was truncated]&quot;;.
         /// </summary>
         public static string full_feature_list {
             get {
@@ -6900,9 +6917,8 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
-        ///    &lt;h4&gt;&lt;strong&gt;Lifetime Platinum Membership:&lt;/strong&gt;&lt;/h4&gt;
-        ///    &lt;h5&gt;&lt;strong&gt;Lifetime access to:&lt;/strong&gt;&lt;/h5&gt;
-        ///    {FullFeatureList}    
+        ///    &lt;h2&gt;&lt;strong&gt;Lifetime Membership:&lt;/strong&gt;&lt;/h2&gt;
+        ///    {FullFeatureList}
         ///&lt;/div&gt;.
         /// </summary>
         public static string lifetime_membership_description {
@@ -8467,8 +8483,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
-        ///    &lt;h4&gt;&lt;strong&gt;Monthly Platinum Membership:&lt;/strong&gt;&lt;/h4&gt;
-        ///    &lt;h5&gt;&lt;strong&gt;For month, you get:&lt;/strong&gt;&lt;/h5&gt;
+        ///    &lt;h2&gt;&lt;strong&gt;Monthly Membership:&lt;/strong&gt;&lt;/h2&gt;
         ///    {FullFeatureList}
         ///&lt;/div&gt;.
         /// </summary>
@@ -13896,8 +13911,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
-        ///    &lt;h4&gt;&lt;strong&gt;Weekly Membership:&lt;/strong&gt;&lt;/h4&gt;
-        ///    &lt;h5&gt;&lt;strong&gt;For one week, you get:&lt;/strong&gt;&lt;/h5&gt;
+        ///    &lt;h2&gt;&lt;strong&gt;Weekly Membership:&lt;/strong&gt;&lt;/h2&gt;
         ///    {FullFeatureList}
         ///&lt;/div&gt;.
         /// </summary>

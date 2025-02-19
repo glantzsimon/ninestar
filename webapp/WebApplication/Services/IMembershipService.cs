@@ -13,7 +13,13 @@ namespace K9.WebApplication.Services
         MembershipModel GetPurchaseMembershipModel(int membershipOptionId, string promoCode = "");
         
         void CreateFreeMembership(int userId);
-        void CreateMembershipFromPromoCode(int userId, string code);
+        /// <summary>
+        /// Returns true if no payment is required. Returns false if payment is requried. Errors if an exception occurs
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="code"></param>
+        /// <returns></returns>
+        bool CreateMembershipFromPromoCode(int userId, string code);
         void ProcessPurchase(PurchaseModel purchaseModel);
         void AssignMembershipToUser(int membershipOptionId, int userId, PromoCode promoCode = null);
 

@@ -64,9 +64,26 @@ namespace K9.DataAccessLayer.Models
 
         public string Details => GetDetails();
 
+        public string PriceDescription => GetPriceDescription();
+
         public PromoCode()
         {
             Code = $"9STAR{GetCode(5)}";
+        }
+
+        private string GetPriceDescription()
+        {
+            if (TotalPrice == 0)
+            {
+                return Globalisation.Dictionary.FreeOfCharge;
+            }
+            else
+            {
+                return TemplateProcessor.PopulateTemplate(Globalisation.Dictionary.ForTheDiscountedPriceOf, new
+                {
+                    DiscountedPrice = FormattedPrice
+                });
+            }
         }
 
         private string GetDetails()

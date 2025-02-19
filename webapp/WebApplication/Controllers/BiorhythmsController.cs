@@ -43,16 +43,19 @@ namespace K9.WebApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(NineStarKiModel model)
         {
-            if (model.PersonModel != null || model.SelectedDate != DateTime.Today)
+            if (ModelState.IsValid)
             {
-                var selectedDate = model.SelectedDate ?? DateTime.Today;
-                var isScrollToCyclesOverview = model.IsScrollToCyclesOverview;
-                var activeTabId = model.ActiveCycleTabId;
+                if (model.PersonModel != null || model.SelectedDate != DateTime.Today)
+                {
+                    var selectedDate = model.SelectedDate ?? DateTime.Today;
+                    var isScrollToCyclesOverview = model.IsScrollToCyclesOverview;
+                    var activeTabId = model.ActiveCycleTabId;
 
-                model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false, selectedDate);
-                model.SelectedDate = selectedDate;
-                model.IsScrollToCyclesOverview = isScrollToCyclesOverview;
-                model.ActiveCycleTabId = activeTabId;
+                    model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false, selectedDate);
+                    model.SelectedDate = selectedDate;
+                    model.IsScrollToCyclesOverview = isScrollToCyclesOverview;
+                    model.ActiveCycleTabId = activeTabId;
+                }
             }
 
             model.BiorhythmResultSet = _biorhythmsService.Calculate(model, model.SelectedDate ?? DateTime.Today);
@@ -72,7 +75,7 @@ namespace K9.WebApplication.Controllers
             var model = _nineStarKiService.CalculateNineStarKiProfile(lastBiorhythms.DateOfBirth, lastBiorhythms.Gender);
             return View("Index", model);
         }
-        
+
         public override string GetObjectName()
         {
             return string.Empty;

@@ -384,6 +384,7 @@ namespace K9.WebApplication.Controllers
 
                 if (result.IsSuccess)
                 {
+                    var returnUrl = TempData["ReturnUrl"];
                     var user = _userRepository.Find(e => e.Username == model.RegisterModel.UserName).FirstOrDefault();
 
                     if (user.Id > 0)
@@ -392,7 +393,17 @@ namespace K9.WebApplication.Controllers
                         {
                             try
                             {
-                                _membershipService.CreateMembershipFromPromoCode(user.Id, model.PromoCode);
+                                // If this method returns false, then the user needs to pay for their discounted membership
+                                if (!_membershipService.CreateMembershipFromPromoCode(user.Id, model.PromoCode))
+                                {
+                                    var promoCode = _promoCodesRepository.Find(e => e.Code == model.PromoCode).FirstOrDefault();
+                                    returnUrl = Url.Action("PurchaseStart", "Membership",
+                                        new
+                                        {
+                                            membershipOptionId = promoCode.MembershipOptionId,
+                                            code = model.PromoCode
+                                        });
+                                };
                             }
                             catch (Exception e)
                             {
@@ -414,8 +425,7 @@ namespace K9.WebApplication.Controllers
                         throw new Exception("UserOTP canot be null");
                     }
 
-                    var returnUrl = TempData["ReturnUrl"];
-                    if (returnUrl != null)
+                    if (returnUrl != null && !string.IsNullOrEmpty(returnUrl.ToString()))
                     {
                         return RedirectToAction("AccountCreated", "Account", new { uniqueIdentifier = otp.UniqueIdentifier, returnUrl });
                     }
@@ -601,19 +611,31 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("DeleteAccountFailed");
         }
 
-        [Route("promocodes/email")]
+        [Route("email-promocode")]
         [Authorize]
         public ActionResult EmailPromoCode(int id)
         {
             var promoCode = _promoCodesRepository.Find(id);
             if (promoCode == null)
             {
-                throw new Exception("Promo code not found");
+                ModelState.AddModelError("", "Invalid promo code");
+            }
+
+            if (promoCode.UsedOn.HasValue)
+            {
+                ModelState.AddModelError("", Globalisation.Dictionary.PromoCodeInUse);
+            }
+            else if (promoCode.SentOn.HasValue)
+            {
+                ModelState.AddModelError("", $"Promo code was already sent on {promoCode.SentOn.Value.ToLongTimeString()}");
             }
 
             var membershipOption = _membershipOptionsRepository.Find(promoCode.MembershipOptionId);
-            promoCode.MembershipOption = membershipOption ?? throw new Exception("Membership was not found");
-            
+            if (membershipOption == null)
+            {
+                ModelState.AddModelError("", "Membership Option not found");
+            }
+
             var model = new EmailPromoCodeViewModel
             {
                 PromoCode = promoCode
@@ -622,23 +644,31 @@ namespace K9.WebApplication.Controllers
             return View(model);
         }
 
-        [Route("promocodes/email")]
+        [Route("email-promocode")]
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EmailPromoCode(EmailPromoCodeViewModel model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                _promoCodeService.SendRegistrationPromoCode(model);
-            }
-            catch (Exception e)
-            {
-                _logger.Error($"AccountController => EmailPromocode => Error: {e.GetFullErrorMessage()}");
-                throw;
+                try
+                {
+                    _promoCodeService.SendRegistrationPromoCode(model);
+                }
+                catch (Exception e)
+                {
+                    var fullErrorMessage = e.GetFullErrorMessage();
+                    _logger.Error($"AccountController => EmailPromocode => Error: {fullErrorMessage}");
+                    ModelState.AddModelError("", fullErrorMessage);
+
+                    return View(model);
+                }
+
+                return RedirectToAction("PromoCodeEmailSent");
             }
 
-            return RedirectToAction("PromoCodeEmailSent");
+            return View(model);
         }
 
         public ActionResult PromoCodeEmailSent()

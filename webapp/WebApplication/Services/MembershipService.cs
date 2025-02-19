@@ -257,8 +257,8 @@ namespace K9.WebApplication.Services
 
             _promoCodeService.SendMembershipPromoCode(promoCode.Code, user.Id);
         }
-
-        public void CreateMembershipFromPromoCode(int userId, string code)
+        
+        public bool CreateMembershipFromPromoCode(int userId, string code)
         {
             var promoCode = _promoCodesRepository.Find(e => e.Code == code).FirstOrDefault();
 
@@ -291,8 +291,15 @@ namespace K9.WebApplication.Services
                 }
             }
 
+            if (promoCode.TotalPrice > 0)
+            {
+                return false;
+            }
+
             CreateMembership(membershipOption.Id, user.FullName, user.EmailAddress);
             _promoCodeService.UsePromoCode(user.Id, code);
+
+            return true;
         }
 
         public void ProcessPurchase(PurchaseModel purchaseModel)

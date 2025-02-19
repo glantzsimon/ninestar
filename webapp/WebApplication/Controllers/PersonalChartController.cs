@@ -47,23 +47,27 @@ namespace K9.WebApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(NineStarKiModel model)
         {
-            if (model.PersonModel != null || model.SelectedDate != DateTime.Today)
+            if (ModelState.IsValid)
             {
-                var selectedDate = model.SelectedDate ?? DateTime.Today;
-                var isScrollToCyclesOverview = model.IsScrollToCyclesOverview;
-                var activeTabId = model.ActiveCycleTabId;
+                if (model.PersonModel != null || model.SelectedDate != DateTime.Today)
+                {
+                    var selectedDate = model.SelectedDate ?? DateTime.Today;
+                    var isScrollToCyclesOverview = model.IsScrollToCyclesOverview;
+                    var activeTabId = model.ActiveCycleTabId;
 
-                model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false, selectedDate);
-                model.SelectedDate = selectedDate;
-                model.IsScrollToCyclesOverview = isScrollToCyclesOverview;
-                model.ActiveCycleTabId = activeTabId;
+                    model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false,
+                        selectedDate);
+                    model.SelectedDate = selectedDate;
+                    model.IsScrollToCyclesOverview = isScrollToCyclesOverview;
+                    model.ActiveCycleTabId = activeTabId;
+                }
+
+                model.BiorhythmResultSet = _biorhythmsService.Calculate(model, model.SelectedDate ?? DateTime.Today);
             }
 
-            model.BiorhythmResultSet = _biorhythmsService.Calculate(model, model.SelectedDate ?? DateTime.Today);
-
-            return View("Index", model);
+            return View(model);
         }
-        
+
         [Authorize]
         [Route("personalchart/my-chart")]
         public ActionResult MyProfile()

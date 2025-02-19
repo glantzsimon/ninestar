@@ -123,9 +123,6 @@
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.207\lib\net461\K9.Base.WebApplication.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="K9.SharedLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.207\lib\net461\K9.SharedLibrary.dll</HintPath>
-    </Reference>
     <Reference Include="MailKit, Version=4.5.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.SharedLibrary.2.0.0.207\lib\net461\MailKit.dll</HintPath>
     </Reference>
@@ -211,12 +208,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\DiscountAttribute.cs" />
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="Database\DatabaseInitialiser.cs" />
     <Compile Include="Database\Db.cs" />
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
     <Compile Include="Enums\EConsultationDuration.cs" />
+    <Compile Include="Enums\EDiscount.cs" />
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Helpers\Methods.cs" />
     <Compile Include="Migrations\202007211011153_July2020.cs" />
@@ -339,6 +338,14 @@
     <Compile Include="Migrations\202502190118440_MailingsListsEmailTempltes.designer.cs">
       <DependentUpon>202502190118440_MailingsListsEmailTempltes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202502190342154_PromoDiscount.cs" />
+    <Compile Include="Migrations\202502190342154_PromoDiscount.designer.cs">
+      <DependentUpon>202502190342154_PromoDiscount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202502190409371_PromoCodeMembershipOption.cs" />
+    <Compile Include="Migrations\202502190409371_PromoCodeMembershipOption.designer.cs">
+      <DependentUpon>202502190409371_PromoCodeMembershipOption.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\MailingList.cs" />
     <Compile Include="Models\EmailTemplate.cs" />
     <Compile Include="Models\EmailQueueItem.cs" />
@@ -362,13 +369,16 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Attributes\" />
     <Folder Include="Exceptions\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Globalisation\Globalisation.csproj">
       <Project>{37795dc6-45c9-458c-a3a5-48da6534c35c}</Project>
       <Name>Globalisation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharedLibrary\K9.SharedLibrary.csproj">
+      <Project>{1030c285-fb19-4d76-8e0b-01eaca67bd31}</Project>
+      <Name>K9.SharedLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -461,6 +471,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202502190118440_MailingsListsEmailTempltes.resx">
       <DependentUpon>202502190118440_MailingsListsEmailTempltes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502190342154_PromoDiscount.resx">
+      <DependentUpon>202502190342154_PromoDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502190409371_PromoCodeMembershipOption.resx">
+      <DependentUpon>202502190409371_PromoCodeMembershipOption.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

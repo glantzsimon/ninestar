@@ -39,6 +39,6 @@ namespace K9.DataAccessLayer.Models
         public string PromoCodeName { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.SubscriptionTypeLabel)]
-        public string SubscriptionTypeName => PromoCode?.SubscriptionType > 0 ? PromoCode.SubscriptionType.GetLocalisedLanguageName() : "";
+        public string SubscriptionTypeName => PromoCode?.MembershipOption?.SubscriptionType > 0 ? PromoCode.MembershipOption.SubscriptionType.GetLocalisedLanguageName() : "";
     }
 }

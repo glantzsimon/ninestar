@@ -107,9 +107,6 @@
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.207\lib\net461\K9.Base.WebApplication.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="K9.SharedLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.207\lib\net461\K9.SharedLibrary.dll</HintPath>
-    </Reference>
     <Reference Include="MailChimp.Net, Version=5.1.0.0, Culture=neutral, PublicKeyToken=37d26d538413c581, processorArchitecture=MSIL">
       <HintPath>..\packages\MailChimp.Net.V3.5.1.0\lib\net472\MailChimp.Net.dll</HintPath>
     </Reference>
@@ -342,6 +339,7 @@
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Filters\CustomExceptionFilter.cs" />
     <Compile Include="Filters\HangFireDashboardAuthorizationFilter .cs" />
+    <Compile Include="Helpers\DataSetsHelper.cs" />
     <Compile Include="Helpers\Current.cs" />
     <Compile Include="Helpers\ArrayHelper.cs" />
     <Compile Include="Helpers\Environment.cs" />
@@ -918,6 +916,7 @@
     <Content Include="Images\ui\monthly-planner.png" />
     <Content Include="Images\ui\moon.png" />
     <Content Include="Images\ui\fail.png" />
+    <Content Include="Images\ui\notfound.png" />
     <Content Include="Images\ui\overview.png" />
     <Content Include="Images\ui\predictions.png" />
     <Content Include="Images\ui\relationships-strengths-challenges.png" />
@@ -975,7 +974,7 @@
     <Content Include="Images\ui\document.jpg" />
     <Content Include="Images\ui\fade-out.png" />
     <Content Include="Images\ui\fail-red.png" />
-    <Content Include="Images\ui\notfound.png" />
+    <Content Include="Images\ui\notfoundold.png" />
     <Content Include="Images\ui\locked.png" />
     <Content Include="Images\ui\question-mark.jpg" />
     <Content Include="Images\ui\selected.png" />
@@ -992,6 +991,7 @@
     <Content Include="Scripts\ajax\ajaxcontroller.js" />
     <Content Include="Scripts\imageSwitcher\backgroundSwitcher.js" />
     <Content Include="Scripts\imageSwitcher\responsiveslides.js" />
+    <Content Include="Scripts\k9\datasetsHelper.js" />
     <Content Include="Scripts\k9\buttonBehaviours.js" />
     <Content Include="Scripts\k9\bootstrapControls.js" />
     <Content Include="Scripts\k9\imagePreloader.js" />
@@ -1044,6 +1044,10 @@
     <ProjectReference Include="..\Globalisation\Globalisation.csproj">
       <Project>{37795dc6-45c9-458c-a3a5-48da6534c35c}</Project>
       <Name>Globalisation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharedLibrary\K9.SharedLibrary.csproj">
+      <Project>{1030c285-fb19-4d76-8e0b-01eaca67bd31}</Project>
+      <Name>K9.SharedLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -1515,6 +1519,7 @@
     <Content Include="Views\IChing\_HexagramResult.cshtml" />
     <Content Include="Views\IChing\_GenerateButtonForm.cshtml" />
     <Content Include="Views\Home\GptInfo.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Discount.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

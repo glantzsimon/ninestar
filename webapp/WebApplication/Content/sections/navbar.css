@@ -284,3 +284,7 @@ div.small-logo {
   color: #ff9800 !important;
   background: none !important;
 }
+#admin-menu-items {
+  overflow-y: auto;
+  max-height: 95%;
+}

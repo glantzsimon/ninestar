@@ -1,6 +1,6 @@
 ﻿@using K9.Base.WebApplication.Extensions
 @using K9.Base.WebApplication.Helpers
 @using K9.WebApplication.Enums
-@model EEnergyType
+@model K9.WebApplication.Models.ENineStarKiEnergyType
 
-@Html.BootstrapDropdownFor(model => model, this.GetDropdownData().GetSelectListFromEnum<EEnergyType>(Convert.ToInt32(Model), true))
+@Html.BootstrapDropdownFor(model => model, this.GetDropdownData().GetSelectListFromEnum<K9.WebApplication.Models.ENineStarKiEnergyType>(Convert.ToInt32(Model), true))

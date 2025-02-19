@@ -128,9 +128,6 @@
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.207\lib\net461\K9.Base.WebApplication.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="K9.SharedLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.207\lib\net461\K9.SharedLibrary.dll</HintPath>
-    </Reference>
     <Reference Include="MailKit, Version=4.5.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.SharedLibrary.2.0.0.207\lib\net461\MailKit.dll</HintPath>
     </Reference>
@@ -290,6 +287,10 @@
     <ProjectReference Include="..\DataAccess\DataAccessLayer.csproj">
       <Project>{20948D36-2ABE-4429-B175-AF781A5F6CB3}</Project>
       <Name>DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharedLibrary\K9.SharedLibrary.csproj">
+      <Project>{1030c285-fb19-4d76-8e0b-01eaca67bd31}</Project>
+      <Name>K9.SharedLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

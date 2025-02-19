@@ -5,7 +5,7 @@ namespace K9.WebApplication.Services
 {
     public interface IConsultationService
     {
-        int CreateConsultation(Consultation consultation, Contact contact, int? userId = null);
+        int CreateConsultation(Consultation consultation, Contact contact, int? userId = null, bool isComplementary = false);
         Consultation Find(int id);
         UserConsultation FindUserConsultation(int consultationId, int userId);
         Slot FindSlot(int id);

@@ -39,9 +39,10 @@ namespace K9.WebApplication.Controllers
         private readonly IRepository<PromoCode> _promoCodesRepository;
         private readonly IRecaptchaService _recaptchaService;
         private readonly IRepository<Contact> _contactsRepository;
+        private readonly IRepository<MembershipOption> _membershipOptionsRepository;
         private readonly RecaptchaConfiguration _recaptchaConfig;
 
-        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, Services.IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IContactService contactService, IUserService userService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, IRepository<Contact> contactsRepository)
+        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, Services.IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IContactService contactService, IUserService userService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, IRepository<Contact> contactsRepository, IRepository<MembershipOption> membershipOptionsRepository)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
         {
             _userRepository = userRepository;
@@ -55,6 +56,7 @@ namespace K9.WebApplication.Controllers
             _promoCodesRepository = promoCodesRepository;
             _recaptchaService = recaptchaService;
             _contactsRepository = contactsRepository;
+            _membershipOptionsRepository = membershipOptionsRepository;
             _recaptchaConfig = recaptchaConfig.Value;
         }
 
@@ -601,10 +603,19 @@ namespace K9.WebApplication.Controllers
         public ActionResult EmailPromoCode(int id)
         {
             var promoCode = _promoCodesRepository.Find(id);
+            if (promoCode == null)
+            {
+                throw new Exception("Promo code not found");
+            }
+
+            var membershipOption = _membershipOptionsRepository.Find(promoCode.MembershipOptionId);
+            promoCode.MembershipOption = membershipOption ?? throw new Exception("Membership was not found");
+
             var model = new EmailPromoCodeViewModel
             {
                 PromoCode = promoCode
             };
+
             return View(model);
         }
 

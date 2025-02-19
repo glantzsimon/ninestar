@@ -65,6 +65,7 @@
             public const string MembershipLabel = "MembershipLabel";
             public const string SubscriptionCostLabel = "SubscriptionCostLabel";
             public const string SubscriptionTypeLabel = "SubscriptionTypeLabel";
+            public const string DiscountLabel = "DiscountLabel";
             public const string IsActiveLabel = "IsActiveLabel";
             public const string AccountNumberLabel = "AccountNumberLabel";
             public const string UsedOnLabel = "UsedOnLabel";
@@ -200,6 +201,11 @@
             public const string Stable = "Stable";
             public const string Dynamic = "Dynamic";
             public const string Flexible = "Flexible";
+
+            public const string FirstDiscount = "FirstDiscount";
+            public const string SecondDiscount = "SecondDiscount";
+            public const string ThirdDiscount = "ThirdDiscount";
+            public const string None = "None";
 
             public const string UnchangingYang = "UnchangingYang";
             public const string UnchangingYin = "UnchangingYin";

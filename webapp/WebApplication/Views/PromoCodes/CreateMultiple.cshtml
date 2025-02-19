@@ -7,11 +7,12 @@
 {
     using (Html.BeginBootstrapForm())
     {
-        @Html.BootstrapEditorFor(e => e.NumberToCreate)
+        @TempData["MembershipOptions"]
 
         @Html.Partial("_EditFields")
+        @Html.BootstrapEditorFor(e => e.NumberToCreate)
         <hr />
-        @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Create, EButtonType.Submit, "fa-save")
+        @Html.BootstrapButton(K9.Globalisation.Dictionary.CreateMultiple, EButtonType.Submit, "fa-save")
         @Html.BootstrapBackToListButton()
     }
 }

@@ -1,9 +1,11 @@
 ﻿@{
-	ViewBag.Title = K9.Base.Globalisation.Dictionary.Oops;
-	Layout = "~/Views/Shared/_LayoutForm.cshtml";
+    ViewBag.Title = K9.Base.Globalisation.Dictionary.Oops;
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
 }
 @Html.Alert(EAlertType.NotFound, K9.Base.Globalisation.Dictionary.NotFoundTitle)
 <div class="text-center margin-bottom-10">
-	<p>@K9.Base.Globalisation.Dictionary.NotFoundError</p>
+    <p>@K9.Base.Globalisation.Dictionary.NotFoundError</p>
+
+    <hr />
     @Html.ActionLink(K9.Base.Globalisation.Dictionary.GoBackHome, "Index", "PersonalChart")
 </div>

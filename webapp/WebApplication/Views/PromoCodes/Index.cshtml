@@ -10,10 +10,10 @@
     VisibleColumns = new List<string>
     {
         "Code",
-        "SubscriptionTypeName",
-        "Credits",
+        "MembershipOptionName",
+        "TotalPrice",
         "SentOn",
-        "UsedOn",
+        "UsedOn"
     },
     CustomButtons = new List<IButton>
     {
@@ -26,13 +26,16 @@
             IconCssClass = "fa fa-envelope"
 
         },
+
         new Button
         {
             Text = Dictionary.CreateMultiple,
             Controller = "PromoCodes",
             Action = "CreateMultiple",
             ButtonType = EButtonType.Primary,
+            IconCssClass = "fa fa-plus",
             IsMainMenuButton = true
+
         }
     }
 })

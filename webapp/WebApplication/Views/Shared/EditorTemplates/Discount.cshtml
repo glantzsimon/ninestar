@@ -1,0 +1,11 @@
+﻿@using K9.Base.WebApplication.Extensions
+@using K9.Base.WebApplication.Helpers
+@using K9.DataAccessLayer.Enums
+@using K9.WebApplication.Enums
+@model K9.DataAccessLayer.Enums.EDiscount
+
+@{
+    var discountListItems = EDiscountExtensions.GetDiscountListItems();
+    this.GetDropdownData().AddDataSetToCollection<EDiscount>(discountListItems);
+}
+@Html.BootstrapDropdownFor(model => model, new SelectList(discountListItems, "Id", "Name", Model))

@@ -23,7 +23,7 @@
                         @K9.Base.Globalisation.Dictionary.Admin
                         <span class="caret"></span>
                     </a>
-                    <ul class="dropdown-menu nav navbar-nav">
+                    <ul id="admin-menu-items" class="dropdown-menu nav navbar-nav">
                         <li class="@ViewContext.GetActiveClass("Index", "Contacts") sub-item"><a href="@Url.Action("Index", "Contacts")">@Dictionary.Contacts</a></li>
 
                         <li class="@ViewContext.GetActiveClass("Index", "Users") sub-item"><a href="@Url.Action("Index", "Users")">@K9.Base.Globalisation.Dictionary.Users</a></li>
@@ -35,9 +35,7 @@
                         <li class="@ViewContext.GetActiveClass("Index", "EmailTemplates") sub-item"><a href="@Url.Action("Index", "EmailTemplates")">@Dictionary.EmailTemplates</a></li>
 
                         <li class="@ViewContext.GetActiveClass("Index", "MailingLists") sub-item"><a href="@Url.Action("Index", "MailingLists")">@Dictionary.MailingLists</a></li>
-
-                        <li class="@ViewContext.GetActiveClass("Index", "PromoCodes") sub-item"><a href="@Url.Action("Index", "PromoCodes")">@Dictionary.MailingLists</a></li>
-
+                        
                         <li class="divider"></li>
 
                         <li class="@ViewContext.GetActiveClass("Index", "Consultations") sub-item"><a href="@Url.Action("Index", "Consultations")">@Dictionary.Consultations</a></li>

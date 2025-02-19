@@ -3865,14 +3865,23 @@
   <data name="BodyLabel" xml:space="preserve">
     <value>Body</value>
   </data>
+  <data name="ComplimentaryConsultationBookedEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>templates\en-gb\complimentaryconsultationbookedemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="DefaultEmailTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>templates\en-gb\defaultemailtemplate.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="DiscountLabel" xml:space="preserve">
+    <value>Discount</value>
   </data>
   <data name="EmailTemplate" xml:space="preserve">
     <value>Email Template</value>
   </data>
   <data name="EmailTemplates" xml:space="preserve">
     <value>Email Templates</value>
+  </data>
+  <data name="FirstDiscount" xml:space="preserve">
+    <value>First Discount</value>
   </data>
   <data name="FriendlyErrorMessage" xml:space="preserve">
     <value>Oops! We encountered a problem processing your request.</value>
@@ -3886,7 +3895,16 @@
   <data name="MailingLists" xml:space="preserve">
     <value>Mailing Lists</value>
   </data>
+  <data name="SecondDiscount" xml:space="preserve">
+    <value>Second Discount</value>
+  </data>
   <data name="SubjectLabel" xml:space="preserve">
     <value>Subject</value>
+  </data>
+  <data name="ThirdDiscount" xml:space="preserve">
+    <value>Third Discount</value>
+  </data>
+  <data name="YearlyPlatinumMembership" xml:space="preserve">
+    <value>Yearly Membership</value>
   </data>
 </root>

@@ -1,19 +1,21 @@
 ﻿using K9.Base.DataAccessLayer.Attributes;
-using K9.Base.DataAccessLayer.Extensions;
 using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
+using K9.DataAccessLayer.Enums;
+using K9.DataAccessLayer.Helpers;
+using K9.SharedLibrary.Attributes;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
 using System.Text;
-using K9.DataAccessLayer.Helpers;
 
 namespace K9.DataAccessLayer.Models
 {
     [AutoGenerateName]
     [Name(ResourceType = typeof(K9.Globalisation.Dictionary), ListName = Globalisation.Strings.Names.PromoCodes, PluralName = Globalisation.Strings.Names.PromoCodes, Name = Globalisation.Strings.Names.PromoCode)]
-    public class PromoCode : ObjectBase
+    public class PromoCode : ObjectBase, IValidatableObject
     {
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.CodeLabel)]
@@ -22,14 +24,26 @@ namespace K9.DataAccessLayer.Models
         [MinLength(5)]
         [Index(IsUnique = true)]
         public string Code { get; set; }
-        
+
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberToCreateLabel)]
-        public int NumberToCreate { get;set; }
+        public int NumberToCreate { get; set; }
 
-        [UIHint("SubscriptionType")]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.SubscriptionTypeLabel)]
-        public MembershipOption.ESubscriptionType SubscriptionType { get; set; }
+        [UIHint("MembershipOption")]
+        [Required]
+        [ForeignKey("MembershipOption")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubscriptionTypeLabel)]
+        public int MembershipOptionId { get; set; }
+
+        public virtual MembershipOption MembershipOption { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubscriptionTypeLabel)]
+        [LinkedColumn(LinkedTableName = "MembershipOption", LinkedColumnName = "Name")]
+        public string MembershipOptionName { get; set; }
+
+        [UIHint("Discount")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.DiscountLabel)]
+        public EDiscount Discount { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SentOnLabel)]
         public DateTime? SentOn { get; set; }
@@ -45,8 +59,8 @@ namespace K9.DataAccessLayer.Models
         public string FormattedPrice => TotalPrice == 0 ? Globalisation.Dictionary.Free : TotalPrice.ToString("C0", CultureInfo.GetCultureInfo("en-US"));
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.SubscriptionTypeLabel)]
-        public string SubscriptionTypeName => SubscriptionType > 0 ? SubscriptionType.GetLocalisedLanguageName() : "";
-
+        public string SubscriptionTypeName => MembershipOption?.SubscriptionTypeNameLocal;
+        
         public string Details => GetDetails();
 
         public PromoCode()
@@ -56,37 +70,41 @@ namespace K9.DataAccessLayer.Models
 
         private string GetDetails()
         {
-            var sb = new StringBuilder();
-            if (SubscriptionType > MembershipOption.ESubscriptionType.Free)
+            if (MembershipOption != null)
             {
-                switch (SubscriptionType)
+                var sb = new StringBuilder();
+                if (MembershipOption.SubscriptionType > MembershipOption.ESubscriptionType.Free)
                 {
-                    case MembershipOption.ESubscriptionType.WeeklyPlatinum:
-                        sb.Append(Globalisation.Dictionary.platinum_weekly_membership_description);
-                        break;
+                    switch (MembershipOption.SubscriptionType)
+                    {
+                        case MembershipOption.ESubscriptionType.WeeklyPlatinum:
+                            sb.Append(Globalisation.Dictionary.platinum_weekly_membership_description);
+                            break;
 
-                    case MembershipOption.ESubscriptionType.MonthlyPlatinum:
-                        sb.Append(Globalisation.Dictionary.platinum_monthly_membership_description);
-                        break;
-                    
-                    case MembershipOption.ESubscriptionType.AnnualPlatinum:
-                        sb.Append(Globalisation.Dictionary.platinum_annual_membership_description);
-                        break;
-                    
-                    case MembershipOption.ESubscriptionType.LifeTimePlatinum:
-                        sb.Append(Globalisation.Dictionary.platinum_lifetime_membership_description);
-                        break;
+                        case MembershipOption.ESubscriptionType.MonthlyPlatinum:
+                            sb.Append(Globalisation.Dictionary.platinum_monthly_membership_description);
+                            break;
 
+                        case MembershipOption.ESubscriptionType.AnnualPlatinum:
+                            sb.Append(Globalisation.Dictionary.platinum_annual_membership_description);
+                            break;
+
+                        case MembershipOption.ESubscriptionType.LifeTimePlatinum:
+                            sb.Append(Globalisation.Dictionary.platinum_lifetime_membership_description);
+                            break;
+
+                    }
                 }
+                return sb.ToString();
             }
 
-            return sb.ToString();
+            return string.Empty;
         }
 
         private string GetCode(int max)
         {
             var sb = new StringBuilder();
-            
+
             for (int i = 0; i < max; i++)
             {
                 var number = Methods.RandomGenerator.Next(0, 26);
@@ -96,5 +114,22 @@ namespace K9.DataAccessLayer.Models
 
             return sb.ToString();
         }
+
+
+        #region Validation
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            if (MembershipOptionId == 0)
+            {
+                yield return new ValidationResult("You must select a membership", new[] { "MembershipOptionId" });
+            }
+            if (TotalPrice > 0 && Discount == 0)
+            {
+                yield return new ValidationResult("Please input the discount amount", new[] { "Discount" });
+            }
+        }
+
+        #endregion
     }
 }

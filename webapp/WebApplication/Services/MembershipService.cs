@@ -231,7 +231,7 @@ namespace K9.WebApplication.Services
                 throw new Exception("Invalid promo code");
             }
 
-            var membershipOption = _membershipOptionRepository.Find(e => e.SubscriptionType == promoCode.SubscriptionType).FirstOrDefault();
+            var membershipOption = _membershipOptionRepository.Find(e => e.Id == promoCode.MembershipOptionId).FirstOrDefault();
             if (membershipOption == null)
             {
                 _logger.Error($"MembershipService => ProcessPurchaseWithPromoCode => No MembershipOption of type {promoCode.SubscriptionTypeName} found");
@@ -442,7 +442,7 @@ namespace K9.WebApplication.Services
 
             try
             {
-                _consultationService.CreateConsultation(consultation, contact, userId);
+                _consultationService.CreateConsultation(consultation, contact, userId, true);
             }
             catch (Exception e)
             {

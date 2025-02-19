@@ -1,5 +1,6 @@
 ﻿@media (min-width: 993px) {
-  .btn:not(:last-of-type) {
+  .btn:not(:last-of-type),
+  .btn:first-of-type {
     margin-right: 2px;
   }
   form .well .col-sm-6,

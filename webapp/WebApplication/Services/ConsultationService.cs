@@ -98,7 +98,7 @@ namespace K9.WebApplication.Services
             return slot;
         }
 
-        public int CreateConsultation(Consultation consultation, Contact contact, int? userId = null)
+        public int CreateConsultation(Consultation consultation, Contact contact, int? userId = null, bool isComplementary = false)
         {
             userId = userId.HasValue ? userId : Current.UserId;
 
@@ -121,8 +121,15 @@ namespace K9.WebApplication.Services
             {
                 var user = _userRepository.Find(userId.Value);
 
-                SendEmailToNineStar(consultation, user);
-                SendEmailToUser(consultation, user);
+                if (isComplementary)
+                {
+                    SendEmailToNineStarAboutComplimentary(consultation, user);
+                }
+                else
+                {
+                    SendEmailToNineStar(consultation, user);
+                    SendEmailToUser(consultation, user);
+                }
             }
             catch (Exception e)
             {
@@ -247,6 +254,22 @@ namespace K9.WebApplication.Services
             return today.AddDays(daysUntilNextTuesday);
         }
 
+        private void SendEmailToNineStarAboutComplimentary(Consultation consultation, User user)
+        {
+            var template = Dictionary.ComplimentaryConsultationBookedEmail;
+            var title = "A complimentary consultation has been booked!";
+            _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
+            {
+                Title = title,
+                ContactName = user.FullName,
+                CustomerEmail = user.EmailAddress,
+                user.PhoneNumber,
+                Duration = consultation.DurationDescription,
+                Price = consultation.FormattedPrice,
+                Company = _config.CompanyName,
+                ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl)
+            }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
+        }
 
         private void SendEmailToNineStar(Consultation consultation, User user)
         {

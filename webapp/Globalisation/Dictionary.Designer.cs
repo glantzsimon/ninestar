@@ -2772,6 +2772,37 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///
+        ///&lt;head&gt;
+        ///    &lt;title&gt;{Title}&lt;/title&gt;
+        ///&lt;/head&gt;
+        ///
+        ///&lt;style type=&quot;text/css&quot;&gt;
+        ///    html {
+        ///        margin: 0;
+        ///        padding: 0;
+        ///        font-family: &quot;Segoe UI&quot;, Verdana, Helvetica, Sans-Serif;
+        ///        font-size: 100%;
+        ///        text-rendering: optimizeLegibility !important;
+        ///        -webkit-font-smoothing: antialiased !important;
+        ///        margin: 0;
+        ///        color: #333;
+        ///    }
+        ///&lt;/style&gt;
+        ///
+        ///&lt;body&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;A new complimentary  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ComplimentaryConsultationBookedEmail {
+            get {
+                return ResourceManager.GetString("ComplimentaryConsultationBookedEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Conflict.
         /// </summary>
         public static string Conflict {
@@ -3938,6 +3969,15 @@ namespace K9.Globalisation {
         public static string Diplomat {
             get {
                 return ResourceManager.GetString("Diplomat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discount.
+        /// </summary>
+        public static string DiscountLabel {
+            get {
+                return ResourceManager.GetString("DiscountLabel", resourceCulture);
             }
         }
         
@@ -5128,6 +5168,15 @@ namespace K9.Globalisation {
         public static string FireElement {
             get {
                 return ResourceManager.GetString("FireElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to First Discount.
+        /// </summary>
+        public static string FirstDiscount {
+            get {
+                return ResourceManager.GetString("FirstDiscount", resourceCulture);
             }
         }
         
@@ -10761,6 +10810,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Second Discount.
+        /// </summary>
+        public static string SecondDiscount {
+            get {
+                return ResourceManager.GetString("SecondDiscount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Second Person.
         /// </summary>
         public static string SecondPerson {
@@ -12850,6 +12908,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Third Discount.
+        /// </summary>
+        public static string ThirdDiscount {
+            get {
+                return ResourceManager.GetString("ThirdDiscount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The 3 Modalities.
         /// </summary>
         public static string ThreeModalitiesTitle {
@@ -14402,6 +14469,15 @@ namespace K9.Globalisation {
         public static string YearlyPlanner {
             get {
                 return ResourceManager.GetString("YearlyPlanner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yearly Membership.
+        /// </summary>
+        public static string YearlyPlatinumMembership {
+            get {
+                return ResourceManager.GetString("YearlyPlatinumMembership", resourceCulture);
             }
         }
         

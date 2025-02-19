@@ -21,7 +21,7 @@ namespace K9.WebApplication.Services
                 $"Unhandled Error: Controller: {controllerName} => Action: {actionName} => Error: {exception.GetFullErrorMessage()} => StackTrace: {stackTrace}");
 
             filterContext.ExceptionHandled = true;
-
+            
             filterContext.Result = new ViewResult
             {
                 ViewName = "FriendlyError"

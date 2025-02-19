@@ -12,12 +12,14 @@
     @Html.Success(Dictionary.YouAreSignedUp)
 
     @Html.Partial("_RetrieveLast")
-    
+
     <article>
 
         @if (Model.Consultations.Any())
         {
-            <p><strong>@Dictionary.BookConsultationNowPrompt</strong></p>
+            <hr />
+
+            <p class="text-center"><strong>@Dictionary.BookConsultationNowPrompt</strong></p>
             @Html.Partial("../Account/_UserConsultations", Model.Consultations)
         }
 

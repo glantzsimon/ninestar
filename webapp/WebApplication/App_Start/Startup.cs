@@ -23,7 +23,9 @@ using System.Data.Entity;
 using System.IO;
 using System.Web.Mvc;
 using Hangfire;
+using K9.WebApplication.Helpers;
 using Owin;
+using HtmlHelpers = K9.Base.WebApplication.Helpers.HtmlHelpers;
 
 [assembly: OwinStartup(typeof(K9.WebApplication.Startup))]
 
@@ -47,7 +49,7 @@ namespace K9.WebApplication
             builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IRepository<>)).InstancePerRequest();
             builder.RegisterGeneric(typeof(DataTableAjaxHelper<>)).As(typeof(IDataTableAjaxHelper<>)).InstancePerRequest();
             builder.RegisterType<Config.ColumnsConfig>().As<IColumnsConfig>().InstancePerRequest();
-            builder.RegisterType<DataSetsHelper>().As<IDataSetsHelper>().InstancePerRequest();
+            builder.RegisterType<NineStarDataSetsHelper>().As<IDataSetsHelper>().InstancePerRequest();
             builder.RegisterType<DataSets>().As<IDataSets>().SingleInstance();
             builder.RegisterType<Users>().As<IUsers>().InstancePerRequest();
             builder.RegisterType<Roles>().As<IRoles>().InstancePerRequest();

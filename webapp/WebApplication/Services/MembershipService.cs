@@ -223,6 +223,41 @@ namespace K9.WebApplication.Services
             };
         }
 
+        public void SendPromoCodeToUser(int userId, string code)
+        {
+            var promoCode = _promoCodesRepository.Find(e => e.Code == code).FirstOrDefault();
+            if (promoCode == null)
+            {
+                _logger.Error($"MembershipService => SendPromoCodeToUser => Invalid Promo Code");
+                throw new Exception("Invalid promo code");
+            }
+
+            var membershipOption = _membershipOptionRepository.Find(e => e.Id == promoCode.MembershipOptionId).FirstOrDefault();
+            if (membershipOption == null)
+            {
+                _logger.Error($"MembershipService => SendPromoCodeToUser => No MembershipOption of type {promoCode.SubscriptionTypeName} found");
+                throw new Exception($"No Membership Option of type {promoCode.SubscriptionTypeName} found");
+            }
+
+            var activeMembership = GetActiveUserMembership(userId);
+            var user = _usersRepository.Find(userId);
+
+            if (activeMembership.MembershipOption.SubscriptionType > MembershipOption.ESubscriptionType.Free)
+            {
+                try
+                {
+                    ValidateUpgrade(membershipOption.Id, userId);
+                }
+                catch (Exception e)
+                {
+                    _logger.Error($"MembershipService => SendPromoCodeToUser => ValidateSwitch Failed => {e.GetFullErrorMessage()}");
+                    throw;
+                }
+            }
+
+            _promoCodeService.SendMembershipPromoCode(promoCode.Code, user.Id);
+        }
+
         public void CreateMembershipFromPromoCode(int userId, string code)
         {
             var promoCode = _promoCodesRepository.Find(e => e.Code == code).FirstOrDefault();

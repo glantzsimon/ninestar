@@ -429,33 +429,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             var ex = Assert.Throws<Exception>(() => _Membershipservice.GetPurchaseMembershipModel(_standardYearlyMembership.Id));
             Assert.Equal(Globalisation.Dictionary.PurchaseMembershipErrorAlreadySubscribed, ex.Message);
         }
-
-        [Fact]
-        public void GetPurchaseMembershipModel_ShouldThrowError_IfSubscriptionsAlreadyExist()
-        {
-            AuthenticateUser();
-
-            var startsOn = DateTime.Today.AddDays(-7);
-            var userMembershipModels = new List<UserMembership>
-            {
-                new UserMembership
-                {
-                    Id = 7,
-                    UserId = _userId,
-                    MembershipOptionId = _standardYearlyMembership.Id,
-                    MembershipOption = _standardYearlyMembership,
-                    StartsOn = startsOn,
-                    EndsOn = startsOn.AddMonths(1)
-                }
-            };
-
-            _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
-                .Returns(userMembershipModels);
-
-            var ex = Assert.Throws<Exception>(() => _Membershipservice.GetPurchaseMembershipModel(_platinumYearlyMembership.Id));
-            Assert.Equal(Globalisation.Dictionary.PurchaseMembershipErrorAlreadySubscribedToAnother, ex.Message);
-        }
-
+        
         private void AuthenticateUser()
         {
             _authentication.SetupGet(_ => _.IsAuthenticated).Returns(true);

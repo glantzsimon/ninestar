@@ -26,6 +26,7 @@ using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
 {
+    [RoutePrefix("account")]
     public partial class AccountController : BaseNineStarKiController
     {
         private readonly IRepository<User> _userRepository;

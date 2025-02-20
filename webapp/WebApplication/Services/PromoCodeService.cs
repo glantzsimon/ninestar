@@ -15,17 +15,18 @@ namespace K9.WebApplication.Services
     {
         private readonly IRepository<PromoCode> _promoCodesRepository;
         private readonly IRepository<UserPromoCode> _userPromoCodeRepository;
-        private readonly IContactService _contactService;
         private readonly IRepository<UserMembership> _userMembershipsRepository;
         private readonly IRepository<MembershipOption> _membershipOptionsRepository;
+        private readonly IContactService _contactService;
 
-        public PromoCodeService(INineStarKiBasePackage my, IRepository<PromoCode> promoCodesRepository, IRepository<UserPromoCode> userPromoCodeRepository, IRepository<UserMembership> userMembershipsRepository, IRepository<UserOTP> userOtpRepository, IRepository<MembershipOption> membershipOptionsRepository)
+        public PromoCodeService(INineStarKiBasePackage my, IRepository<PromoCode> promoCodesRepository, IRepository<UserPromoCode> userPromoCodeRepository, IRepository<UserMembership> userMembershipsRepository, IRepository<UserOTP> userOtpRepository, IRepository<MembershipOption> membershipOptionsRepository, IContactService contactService)
             : base(my)
         {
             _promoCodesRepository = promoCodesRepository;
             _userPromoCodeRepository = userPromoCodeRepository;
             _userMembershipsRepository = userMembershipsRepository;
             _membershipOptionsRepository = membershipOptionsRepository;
+            _contactService = contactService;
         }
 
         public PromoCode Find(string code)

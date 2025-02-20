@@ -43,5 +43,10 @@ namespace K9.SharedLibrary.Helpers
             map.TryGetValue(isoCurrencySymbol, out var tuple);
             return tuple != null ? tuple.Item2 : Thread.CurrentThread.CurrentUICulture;
         }
+
+        public static string ToFormattedString(this double amount)
+        {
+            return amount.ToString("C0", CultureInfo.GetCultureInfo("en-US"));
+        }
     }
 }

@@ -1,7 +1,5 @@
-﻿using K9.Base.DataAccessLayer.Models;
-using K9.DataAccessLayer.Models;
+﻿using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Extensions;
-using K9.SharedLibrary.Models;
 using K9.WebApplication.Packages;
 using NLog;
 using System;
@@ -12,11 +10,7 @@ namespace K9.WebApplication.Services
 {
     public class ContactService : BaseService, IContactService
     {
-        private readonly IRepository<Contact> _contactsRepository;
-        private readonly ILogger _logger;
-        private readonly IRepository<User> _usersRepository;
-
-        public ContactService(INineStarKiBasePackage my, IRepository<Contact> contactsRepository, ILogger logger, IRepository<User> usersRepository)
+        public ContactService(INineStarKiBasePackage my)
             : base(my)
         {
         }
@@ -27,17 +21,17 @@ namespace K9.WebApplication.Services
             {
                 try
                 {
-                    var existingCustomer = _contactsRepository.Find(_ => (!string.IsNullOrEmpty(stripeCustomerId) && _.StripeCustomerId == stripeCustomerId) || _.EmailAddress == emailAddress).FirstOrDefault();
+                    var existingCustomer = My.ContactsRepository.Find(_ => (!string.IsNullOrEmpty(stripeCustomerId) && _.StripeCustomerId == stripeCustomerId) || _.EmailAddress == emailAddress).FirstOrDefault();
                     if (existingCustomer == null)
                     {
-                        _contactsRepository.Create(new Contact
+                        My.ContactsRepository.Create(new Contact
                         {
                             StripeCustomerId = stripeCustomerId,
                             FullName = string.IsNullOrEmpty(fullName) ? emailAddress : fullName,
                             EmailAddress = emailAddress,
                             PhoneNumber = phoneNumber
                         });
-                        return _contactsRepository.Find(e => e.EmailAddress == emailAddress).FirstOrDefault();
+                        return My.ContactsRepository.Find(e => e.EmailAddress == emailAddress).FirstOrDefault();
                     }
 
                     var isUpdated = false;
@@ -61,71 +55,71 @@ namespace K9.WebApplication.Services
 
                     if (isUpdated)
                     {
-                        _contactsRepository.Update(existingCustomer);
+                        My.ContactsRepository.Update(existingCustomer);
                     }
 
                     return existingCustomer;
                 }
                 catch (Exception e)
                 {
-                    _logger.Error($"ContactService => CreateCustomer => {e.GetFullErrorMessage()}");
+                    My.Logger.Error($"ContactService => CreateCustomer => {e.GetFullErrorMessage()}");
                     throw;
                 }
             }
 
-            _logger.Error($"ContactService => CreateCustomer => Email Address is Empty");
+            My.Logger.Error($"ContactService => CreateCustomer => Email Address is Empty");
             return null;
         }
 
         public Contact Find(int id)
         {
-            return _contactsRepository.Find(id);
+            return My.ContactsRepository.Find(id);
         }
 
         public Contact Find(string emailAddress)
         {
-            return _contactsRepository.Find(e => e.EmailAddress == emailAddress).FirstOrDefault();
+            return My.ContactsRepository.Find(e => e.EmailAddress == emailAddress).FirstOrDefault();
         }
 
         public List<Contact> ListContacts()
         {
-            return _contactsRepository.List().OrderBy(e => e.FullName).ToList();
+            return My.ContactsRepository.List().OrderBy(e => e.FullName).ToList();
         }
 
         public void EnableMarketingEmails(string externalId, bool value = true)
         {
             if (externalId != null)
             {
-                var contact = _contactsRepository.Find(e => e.Name == externalId).FirstOrDefault();
+                var contact = My.ContactsRepository.Find(e => e.Name == externalId).FirstOrDefault();
                 if (contact == null)
                 {
-                    _logger.Log(LogLevel.Error, $"ContactService => EnableMarketingEmails => Contact with External Id: {externalId} not found");
+                    My.Logger.Log(LogLevel.Error, $"ContactService => EnableMarketingEmails => Contact with External Id: {externalId} not found");
                     throw new Exception("Contact not found");
                 }
 
                 try
                 {
                     contact.IsUnsubscribed = !value;
-                    _contactsRepository.Update(contact);
+                    My.ContactsRepository.Update(contact);
                 }
                 catch (Exception e)
                 {
-                    _logger.Log(LogLevel.Error,
+                    My.Logger.Log(LogLevel.Error,
                         $"ContactService => EnableMarketingEmails => Could not update contact => ContactId: {contact.Id} Error => {e.GetFullErrorMessage()}");
                     throw;
                 }
 
-                var user = _usersRepository.Find(e => e.EmailAddress == contact.EmailAddress).FirstOrDefault();
+                var user = My.UsersRepository.Find(e => e.EmailAddress == contact.EmailAddress).FirstOrDefault();
                 if (user != null)
                 {
                     user.IsUnsubscribed = !value;
                     try
                     {
-                        _usersRepository.Update(user);
+                        My.UsersRepository.Update(user);
                     }
                     catch (Exception e)
                     {
-                        _logger.Log(LogLevel.Error,
+                        My.Logger.Log(LogLevel.Error,
                             $"ContactService => EnableMarketingEmails => Could not update user => UserId: {user.Id} => Error: {e.GetFullErrorMessage()}");
                         throw;
                     }
@@ -135,10 +129,10 @@ namespace K9.WebApplication.Services
 
         public bool AreMarketingEmailsEnableForContact(int id)
         {
-            var contact = _contactsRepository.Find(id);
+            var contact = My.ContactsRepository.Find(id);
             if (contact == null)
             {
-                _logger.Log(LogLevel.Error, $"ContactService => AreMarketingEmailsEnableForContact => Contact with ContactId: {id} not found");
+                My.Logger.Log(LogLevel.Error, $"ContactService => AreMarketingEmailsEnableForContact => Contact with ContactId: {id} not found");
                 throw new Exception("Contact not found");
             }
             return !contact.IsUnsubscribed;

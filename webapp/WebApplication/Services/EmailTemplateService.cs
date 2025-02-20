@@ -10,7 +10,6 @@ namespace K9.WebApplication.Services
 {
     public class EmailTemplateService : BaseService, IEmailTemplateService
     {
-
         private readonly IRepository<EmailTemplate> _emailTemplatesRepository;
 
         public EmailTemplateService(IRepository<EmailTemplate> emailTemplatesRepository, INineStarKiBasePackage my)

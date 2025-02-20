@@ -18,14 +18,16 @@ namespace K9.WebApplication.Services
     public class ConsultationService : BaseService, IConsultationService
     {
         private readonly IContactService _contactService;
+        private readonly IEmailTemplateService _emailTemplateService;
         private readonly IRepository<Consultation> _consultationRepository;
         private readonly IRepository<UserConsultation> _userConsultationRepository;
         private readonly IRepository<Slot> _slotRepository;
         
-        public ConsultationService(INineStarKiBasePackage my, IContactService contactService, IRepository<Consultation> consultationRepository, IRepository<UserConsultation> userConsultationRepository, IRepository<Slot> slotRepository)
+        public ConsultationService(INineStarKiBasePackage my, IContactService contactService, IEmailTemplateService emailTemplateService, IRepository<Consultation> consultationRepository, IRepository<UserConsultation> userConsultationRepository, IRepository<Slot> slotRepository)
             : base(my)
         {
             _contactService = contactService;
+            _emailTemplateService = emailTemplateService;
             _consultationRepository = consultationRepository;
             _userConsultationRepository = userConsultationRepository;
             _slotRepository = slotRepository;
@@ -239,19 +241,33 @@ namespace K9.WebApplication.Services
 
         private void SendEmailToNineStarAboutComplimentary(Consultation consultation, User user)
         {
-            var template = Dictionary.ComplimentaryConsultationBookedEmail;
             var title = "A complimentary consultation has been booked!";
-            My.Mailer.SendEmail(title, TemplateParser.Parse(template, new
+            var body = _emailTemplateService.ParseForUser(
+                title,
+                Dictionary.ComplimentaryConsultationBookedEmail,
+                user,
+                new
+                {
+                    Title = title,
+                    ContactName = user.FullName,
+                    CustomerEmail = user.EmailAddress,
+                    user.PhoneNumber,
+                    Duration = consultation.DurationDescription,
+                    Price = consultation.FormattedPrice,
+                });
+
+            try
             {
-                Title = title,
-                ContactName = user.FullName,
-                CustomerEmail = user.EmailAddress,
-                user.PhoneNumber,
-                Duration = consultation.DurationDescription,
-                Price = consultation.FormattedPrice,
-                Company = My.WebsiteConfiguration.CompanyName,
-                ImageUrl = My.UrlHelper.AbsoluteContent(My.WebsiteConfiguration.CompanyLogoUrl)
-            }), My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName, My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName);
+                My.Mailer.SendEmail(
+                    title,
+                    body,
+                    user.EmailAddress,
+                    user.FullName);
+            }
+            catch (Exception ex)
+            {
+                My.Logger.Error(ex.GetFullErrorMessage());
+            }
         }
 
         private void SendEmailToNineStar(Consultation consultation, User user)

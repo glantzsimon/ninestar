@@ -3826,9 +3826,6 @@
   <data name="BodyLabel" xml:space="preserve">
     <value>Body</value>
   </data>
-  <data name="ComplimentaryConsultationBookedEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>templates\en-gb\complimentaryconsultationbookedemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="DefaultEmailTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>templates\en-gb\defaultemailtemplate.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -3918,5 +3915,8 @@
   </data>
   <data name="SupportQueryThankYou" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>emailtemplates\en-gb\tocustomer\supportquerythankyou.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ComplimentaryConsultationBookedEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\en-gb\toninestar\complimentaryconsultationbookedemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

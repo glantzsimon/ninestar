@@ -1,9 +1,9 @@
 ﻿using K9.DataAccessLayer.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
+using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Packages;
-using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,9 +55,9 @@ namespace K9.WebApplication.Services
                 contact,
                 new
                 {
-                    Customer = contact.Name,
+                    Customer = contact.FullName,
                     CustomerEmail = contact.EmailAddress,
-                    Amount = donation.DonationAmount,
+                    Amount = donation.DonationAmount.ToFormattedString(),
                     donation.Currency,
                     LinkToSummary = My.UrlHelper.AbsoluteAction("Index", "Donations"),
                 });
@@ -88,7 +88,7 @@ namespace K9.WebApplication.Services
                     Customer = contact.Name,
                     CustomerName = contact.FirstName,
                     donation.CustomerEmail,
-                    Amount = donation.DonationAmount,
+                    Amount = donation.DonationAmount.ToFormattedString(),
                     donation.Currency,
                 });
 
@@ -97,8 +97,8 @@ namespace K9.WebApplication.Services
                 My.Mailer.SendEmail(
                     subject,
                     body,
-                    My.WebsiteConfiguration.SupportEmailAddress,
-                    My.WebsiteConfiguration.CompanyName);
+                    contact.EmailAddress,
+                    contact.FullName);
             }
             catch (Exception ex)
             {

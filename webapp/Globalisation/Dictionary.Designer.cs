@@ -4117,8 +4117,7 @@ namespace K9.Globalisation {
         ///   Looks up a localized string similar to &lt;p&gt;Dear Team,&lt;/p&gt;
         ///&lt;p&gt;We have received a donation from {Customer} ({CustomerEmail}) for the following amount:&lt;/p&gt;
         ///&lt;p&gt;{Amount} {Currency}&lt;/p&gt;
-        ///&lt;p&gt;You can view a summary of donations to date &lt;a href=&quot;{LinkToSummary}&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
-        ///.
+        ///&lt;p&gt;You can view a summary of donations to date &lt;a href=&quot;{LinkToSummary}&quot;&gt;here&lt;/a&gt;&lt;/p&gt;.
         /// </summary>
         public static string DonationReceivedEmail {
             get {
@@ -4154,21 +4153,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!doctype html&gt;
-        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
-        ///&lt;head&gt;
-        ///    &lt;!-- NAME: 1:2:1 COLUMN --&gt;
-        ///    &lt;!--[if gte mso 15]&gt;
-        ///    &lt;xml&gt;
-        ///        &lt;o:OfficeDocumentSettings&gt;
-        ///        &lt;o:AllowPNG/&gt;
-        ///        &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
-        ///        &lt;/o:OfficeDocumentSettings&gt;
-        ///    &lt;/xml&gt;
-        ///    &lt;![endif]--&gt;
-        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
-        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;p&gt;Dear {CustomerName},&lt;/p&gt;
+        ///&lt;p&gt;Thank you very much for your kind donation of {Amount} {Currency}. Your support is invaluable to us and helps us to continue to provide this service and to develop new features and functionality.&lt;/p&gt;
+        ///.
         /// </summary>
         public static string DonationThankYouEmail {
             get {
@@ -12106,9 +12093,9 @@ namespace K9.Globalisation {
         ///   Looks up a localized string similar to &lt;p&gt;Dear Team,&lt;/p&gt;
         ///&lt;p&gt;We have received a support query from {Customer} &lt;a href=&quot;mailto:{CustomerEmail}?subject=Re: {Subject}&amp;body=Customer Query: {UnformattedQuery}&quot;&gt;{CustomerEmail}&lt;/a&gt;.&lt;/p&gt;
         ///&lt;hr /&gt;
-        ///&lt;div&gt;
-        ///    {Query}
-        ///&lt;/div&gt;
+        ///    &lt;div&gt;
+        ///        {Query}
+        ///    &lt;/div&gt;
         ///&lt;hr /&gt;.
         /// </summary>
         public static string SupportQueryReceived1 {

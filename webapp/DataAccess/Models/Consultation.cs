@@ -8,6 +8,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
+using K9.SharedLibrary.Helpers;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -45,7 +46,7 @@ namespace K9.DataAccessLayer.Models
         public double Price => GetPrice();
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TotalPriceLabel)]
-        public string FormattedPrice => Price.ToString("C0", CultureInfo.GetCultureInfo("en-US"));
+        public string FormattedPrice => Price.ToFormattedString();
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DurationLabel)]
         public TimeSpan Duration => new TimeSpan((int)ConsultationDuration, 0, 0);

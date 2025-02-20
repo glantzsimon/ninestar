@@ -59,7 +59,7 @@ namespace K9.WebApplication.Services
             var user = _usersRepository.Find(e => e.Username == model.UserName).FirstOrDefault();
             var imageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl);
 
-            var emailContent = TemplateProcessor.PopulateTemplate(Globalisation.Dictionary.WelcomeEmail, new
+            var emailContent = TemplateParser.Parse(Globalisation.Dictionary.WelcomeEmail, new
             {
                 Title = Dictionary.Welcome,
                 model.FirstName,
@@ -87,7 +87,7 @@ namespace K9.WebApplication.Services
                 throw new NullReferenceException("User cannot be null");
             }
 
-            var emailContent = TemplateProcessor.PopulateTemplate(string.IsNullOrEmpty(_config.PasswordResetEmailTemplateText) ? Dictionary.PasswordResetEmail : _config.PasswordResetEmailTemplateText, new
+            var emailContent = TemplateParser.Parse(string.IsNullOrEmpty(_config.PasswordResetEmailTemplateText) ? Dictionary.PasswordResetEmail : _config.PasswordResetEmailTemplateText, new
             {
                 Title = Dictionary.Welcome,
                 user.FirstName,

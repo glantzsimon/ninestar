@@ -79,7 +79,7 @@ namespace K9.DataAccessLayer.Models
             }
             else
             {
-                return TemplateProcessor.PopulateTemplate(Globalisation.Dictionary.ForTheDiscountedPriceOf, new
+                return TemplateParser.Parse(Globalisation.Dictionary.ForTheDiscountedPriceOf, new
                 {
                     DiscountedPrice = FormattedPrice
                 });
@@ -114,7 +114,7 @@ namespace K9.DataAccessLayer.Models
                     }
                 }
 
-                return TemplateProcessor.PopulateTemplate(template, new
+                return TemplateParser.Parse(template, new
                 {
                     FullFeatureList = Globalisation.Dictionary.full_feature_list
                 });

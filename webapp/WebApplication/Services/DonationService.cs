@@ -61,7 +61,7 @@ namespace K9.WebApplication.Services
         {
             var template = Dictionary.DonationReceivedEmail;
             var title = "We have received a donation!";
-            _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
+            _mailer.SendEmail(title, TemplateParser.Parse(template, new
             {
                 Title = title,
                 donation.Customer,
@@ -78,7 +78,7 @@ namespace K9.WebApplication.Services
         {
             var template = Dictionary.DonationThankYouEmail;
             var title = Dictionary.ThankyouForDonationEmailTitle;
-            _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
+            _mailer.SendEmail(title, TemplateParser.Parse(template, new
             {
                 Title = title,
                 CustomerName = contact.FirstName,

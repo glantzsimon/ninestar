@@ -1191,7 +1191,7 @@ namespace K9.WebApplication.Models
                         ChangingLineInterpretations[Number].ContainsKey(lineNumber))
                     {
                         var interpretation = ChangingLineInterpretations[Number][lineNumber];
-                        var title = TemplateProcessor.PopulateTemplate(
+                        var title = TemplateParser.Parse(
                             Globalisation.Dictionary.ChangingLineInterpretation, new
                             {
                                 LineNumber = lineNumber

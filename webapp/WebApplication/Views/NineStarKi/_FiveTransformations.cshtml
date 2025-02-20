@@ -1,5 +1,6 @@
 ﻿@using K9.SharedLibrary.Helpers
-@Html.Raw(TemplateProcessor.PopulateTemplate(Dictionary.five_transformations, new
+@using TemplateParser = K9.SharedLibrary.Helpers.TemplateParser
+@Html.Raw(TemplateParser.Parse(Dictionary.five_transformations, new
 {
     WaterTree = Dictionary.water_tree,
     TreeFire = Dictionary.tree_fire,

@@ -46,7 +46,7 @@ namespace K9.WebApplication.Services
 
             foreach (var biorhythm in biorhythmsModel.GetResultsWithoutAverage())
             {
-                sb.Append(TemplateProcessor.PopulateTemplate(Globalisation.Dictionary.biorhythms_summary, new
+                sb.Append(TemplateParser.Parse(Globalisation.Dictionary.biorhythms_summary, new
                 {
                     BiorhythmName = biorhythm.BioRhythm.FullName,
                     BiorhythmLevel = biorhythm.GetValueLevelDescription(biorhythm.Value),
@@ -62,7 +62,7 @@ namespace K9.WebApplication.Services
 
             var average = biorhythmsModel.GetAverageResult();
 
-            sb.Append(TemplateProcessor.PopulateTemplate(Globalisation.Dictionary.biorhythms_summary, new
+            sb.Append(TemplateParser.Parse(Globalisation.Dictionary.biorhythms_summary, new
             {
                 BiorhythmName = average.BioRhythm.FullName,
                 BiorhythmLevel = average.GetValueLevelDescription(average.Value),

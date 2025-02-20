@@ -540,7 +540,7 @@ namespace K9.WebApplication.Models
             }
 
             // Apply sexuality specific vocabulary
-            text = TemplateProcessor.PopulateTemplate(text,
+            text = TemplateParser.Parse(text,
                 new
                 {
                     PotentialMatesText = potentialMatesText,

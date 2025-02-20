@@ -1,5 +1,6 @@
 ﻿@using K9.SharedLibrary.Helpers
 @using K9.WebApplication.Options
+@using TemplateParser = K9.SharedLibrary.Helpers.TemplateParser
 @model K9.WebApplication.ViewModels.ScheduleConsultationViewModel
 @{
     ViewBag.Title = Dictionary.ScheduleConsultation;
@@ -13,7 +14,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <h5 class="margin-0">
-                        @Html.Raw(TemplateProcessor.PopulateTemplate(Dictionary.PleaseSelectATimeSlot, new
+                        @Html.Raw(TemplateParser.Parse(Dictionary.PleaseSelectATimeSlot, new
                         {
                             ConsultationDuration = Model.Consultation.DurationDescription.ToLower()
                         }))

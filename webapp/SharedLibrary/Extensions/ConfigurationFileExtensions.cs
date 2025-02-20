@@ -1,9 +1,8 @@
-﻿
-using System.Collections.Specialized;
+﻿using System.Collections.Specialized;
 
 namespace K9.SharedLibrary.Extensions
 {
-	public static class ConfigurationFileExtensions
+    public static class ConfigurationFileExtensions
 	{
 
 		public static string GetValue(this NameValueCollection appSettings, string key)

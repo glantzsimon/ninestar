@@ -1,8 +1,9 @@
 ﻿@using K9.Base.WebApplication.Config
 @using K9.SharedLibrary.Helpers
+@using TemplateParser = K9.SharedLibrary.Helpers.TemplateParser
 
 @{
-    var termsText = TemplateProcessor.PopulateTemplate(Dictionary.AgreeToTerms, new
+    var termsText = TemplateParser.Parse(Dictionary.AgreeToTerms, new
     {
         PrivacyPolicyUrl = Url.Action("PrivacyPolicy", "Home"),
         TermsOfServiceUrl = Url.Action("TermsOfService", "Home")

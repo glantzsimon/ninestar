@@ -25,7 +25,7 @@ namespace K9.WebApplication.Models
 
             CompatibilityDetails = new CompatibilityDetailsModel(this);
             
-            FundamentalEnergiesCompatibility = TemplateProcessor.PopulateTemplate(GetFundamentalEnergiesCompatibilityDetails(), new
+            FundamentalEnergiesCompatibility = TemplateParser.Parse(GetFundamentalEnergiesCompatibilityDetails(), new
             {
                 Person1 = FirstFundamentalEnergyPersonName,
                 Person2 = SecondFundamentalEnergyPersonName,
@@ -41,7 +41,7 @@ namespace K9.WebApplication.Models
                 Gender2PronounProper = SecondFundamentalEnergyGenderPronoun.ToProperCase()
             });
             
-            SexualChemistryDetails = TemplateProcessor.PopulateTemplate(GetSexualChemistryDescription(), new
+            SexualChemistryDetails = TemplateParser.Parse(GetSexualChemistryDescription(), new
             {
                 Person1 = FirstPersonNameWithArticle,
                 Person2 = SecondPersonNameWithArticle,

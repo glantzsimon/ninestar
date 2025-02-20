@@ -75,6 +75,7 @@ namespace K9.WebApplication
             builder.RegisterType<BiorhythmsService>().As<IBiorhythmsService>().InstancePerRequest();
             builder.RegisterType<IChingService>().As<IIChingService>().InstancePerRequest();
             builder.RegisterType<EmailQueueService>().As<IEmailQueueService>().InstancePerRequest();
+            builder.RegisterType<EmailTemplateService>().As<IEmailTemplateService>().InstancePerRequest();
             builder.RegisterType<PromoCodeService>().As<IPromoCodeService>().InstancePerRequest();
 
             RegisterConfiguration(builder);
@@ -125,6 +126,9 @@ namespace K9.WebApplication
             var defaultConfig = ConfigHelper.GetConfiguration<DefaultValuesConfiguration>(json);
             builder.Register(c => defaultConfig).SingleInstance();
             DefaultValuesConfiguration.Instance = defaultConfig.Value;
+
+            defaultConfig.Value.BaseEmailTemplateImagesPath = defaultConfig.Value.BaseImagesPath;
+            defaultConfig.Value.BaseBaseEmailTemplateVideosPath = defaultConfig.Value.BaseVideosPath;
 
             var apiConfig = ConfigHelper.GetConfiguration<ApiConfiguration>(json);
             builder.Register(c => apiConfig).SingleInstance();

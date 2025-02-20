@@ -484,7 +484,7 @@ namespace K9.WebApplication.Services
         {
             var template = Dictionary.MembershipCreatedEmail;
             var title = "We have received a new subscription!";
-            _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
+            _mailer.SendEmail(title, TemplateParser.Parse(template, new
             {
                 Title = title,
                 Customer = customerName,
@@ -502,12 +502,12 @@ namespace K9.WebApplication.Services
         {
             var user = userMembership.User;
             var template = Dictionary.NewMembershipThankYouEmail;
-            var title = TemplateProcessor.PopulateTemplate(Dictionary.ThankyouForSubscriptionEmailTitle, new
+            var title = TemplateParser.Parse(Dictionary.ThankyouForSubscriptionEmailTitle, new
             {
                 SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal
             });
 
-            _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
+            _mailer.SendEmail(title, TemplateParser.Parse(template, new
             {
                 Title = title,
                 CustomerName = user.FirstName,
@@ -529,7 +529,7 @@ namespace K9.WebApplication.Services
         {
             var template = Dictionary.PaymentError;
             var title = "A customer made a successful payment, but an error occurred.";
-            _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
+            _mailer.SendEmail(title, TemplateParser.Parse(template, new
             {
                 Title = title,
                 Customer = customerName,

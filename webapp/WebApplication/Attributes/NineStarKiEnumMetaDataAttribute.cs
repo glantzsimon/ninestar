@@ -113,7 +113,7 @@ namespace K9.WebApplication.Attributes
                     break;
             }
 
-            return TemplateProcessor.PopulateTemplate(modalityText,
+            return TemplateParser.Parse(modalityText,
                 new
                 {
                     water = GetEnergytNumberAndName(ENineStarKiEnergy.Water),

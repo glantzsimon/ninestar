@@ -1,9 +1,10 @@
 ﻿@using K9.SharedLibrary.Extensions
 @using K9.SharedLibrary.Helpers
+@using TemplateParser = K9.SharedLibrary.Helpers.TemplateParser
 @model K9.Base.WebApplication.ViewModels.ContactUsViewModel
 
 @{
-    var blurb = TemplateProcessor.PopulateTemplate(Dictionary.support_blurb, new
+    var blurb = TemplateParser.Parse(Dictionary.support_blurb, new
     {
         BookConsultationLink = Url.AbsoluteAction("BookConsultation", "Consultation"),
         ChatWithGptLink = K9.WebApplication.Config.ApiConfiguration.Instance.NineStarKiAstrologerGptUrl

@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace K9.SharedLibrary.Extensions
 {
-	public static class IoExtensions
+    public static class IoExtensions
 	{
 
 		public static string GetFileNameWithoutExtension(this FileInfo fileInfo)

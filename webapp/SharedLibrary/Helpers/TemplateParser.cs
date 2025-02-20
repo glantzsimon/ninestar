@@ -1,19 +1,14 @@
-﻿using System.Text.RegularExpressions;
-using K9.SharedLibrary.Extensions;
+﻿using K9.SharedLibrary.Extensions;
+using System.Text.RegularExpressions;
 
 namespace K9.SharedLibrary.Helpers
 {
-	public class TemplateProcessor
+    public class TemplateParser
 	{
 
 		#region Methods
 
-		private static string GetPlaceHolder(string fieldName)
-		{
-			return $"{{{fieldName}}}";
-		}
-
-		public static string PopulateTemplate(string template, object data)
+	    public static string Parse(string template, object data)
 		{
 			foreach (var prop in data.GetType().GetProperties())
 			{
@@ -25,7 +20,12 @@ namespace K9.SharedLibrary.Helpers
 			return template;
 		}
 
-		#endregion
+	    private static string GetPlaceHolder(string fieldName)
+	    {
+	        return $"{{{fieldName}}}";
+	    }
+
+	    #endregion
 
 	}
 }

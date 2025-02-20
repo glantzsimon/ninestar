@@ -402,6 +402,8 @@
     <Compile Include="Options\GaugeOptions.cs" />
     <Compile Include="Options\SearchBoxOptions.cs" />
     <Compile Include="Services\AccountMailerService.cs" />
+    <Compile Include="Services\IEmailTemplateService.cs" />
+    <Compile Include="Services\EmailTemplateService.cs" />
     <Compile Include="Services\IEmailQueueService.cs" />
     <Compile Include="Services\EmailQueueService.cs" />
     <Compile Include="Services\IIChingService.cs" />

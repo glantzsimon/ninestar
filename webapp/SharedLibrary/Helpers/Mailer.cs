@@ -15,7 +15,13 @@ namespace K9.SharedLibrary.Helpers
             _config = config.Value;
         }
 
-        public void SendEmail(string subject, string body, string recipientEmailAddress, string recipientDisplayName, string fromEmailAddress = "", string fromDisplayName = "", bool isHtml = true, SecureSocketOptions socketOptions = SecureSocketOptions.Auto, int? port = null)
+        public void SendEmail(string subject, string body, string recipientEmailAddress, string recipientDisplayName, bool isHtml = true, SecureSocketOptions socketOptions = SecureSocketOptions.Auto, int? port = null)
+        {
+            SendEmail(subject, body, recipientEmailAddress, recipientDisplayName, _config.SmtpFromEmailAddress,
+                _config.SmtpFromDisplayName, isHtml, socketOptions, port);
+        }
+
+        public void SendEmail(string subject, string body, string recipientEmailAddress, string recipientDisplayName, string fromEmailAddress, string fromDisplayName, bool isHtml = true, SecureSocketOptions socketOptions = SecureSocketOptions.Auto, int? port = null)
         {
             var message = new MimeMessage();
             message.From.Add(new MailboxAddress(fromDisplayName, fromEmailAddress));
@@ -25,7 +31,7 @@ namespace K9.SharedLibrary.Helpers
             var bodyBuilder = new BodyBuilder();
             bodyBuilder.HtmlBody = body;
             message.Body = bodyBuilder.ToMessageBody();
-            
+
             using (var client = new SmtpClient())
             {
                 client.Connect(_config.SmtpServer, port.HasValue ? port.Value : _config.SmtpPort, socketOptions);

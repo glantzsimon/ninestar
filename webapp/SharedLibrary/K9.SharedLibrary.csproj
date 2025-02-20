@@ -129,6 +129,7 @@
     <Compile Include="Exceptions\FailedToMapPropertyException.cs" />
     <Compile Include="Exceptions\FileSourceFilePathNotSpecifiedException.cs" />
     <Compile Include="Extensions\ConfigurationFileExtensions.cs" />
+    <Compile Include="Extensions\ValidationExtensions.cs" />
     <Compile Include="Extensions\IOExtensions.cs" />
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Extensions\MvcExtensions.cs" />
@@ -141,6 +142,7 @@
     <Compile Include="Helpers\HelperMethods.cs" />
     <Compile Include="Helpers\FileSourceHelper.cs" />
     <Compile Include="Helpers\Html\ColumnInfo.cs" />
+    <Compile Include="Helpers\Html\HtmlFormatter.cs" />
     <Compile Include="Helpers\Html\HtmlTableHelper.cs" />
     <Compile Include="Helpers\IFileSourceHelper.cs" />
     <Compile Include="Helpers\LinkPreviewer.cs" />
@@ -151,7 +153,7 @@
     <Compile Include="Helpers\Mailer.cs" />
     <Compile Include="Helpers\ObjectMapper.cs" />
     <Compile Include="Helpers\PostedFileHelper.cs" />
-    <Compile Include="Helpers\TemplateProcessor.cs" />
+    <Compile Include="Helpers\TemplateParser.cs" />
     <Compile Include="Authentication\RoleNames.cs" />
     <Compile Include="Models\AssetInfo.cs" />
     <Compile Include="Models\IAuthentication.cs" />

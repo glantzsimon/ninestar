@@ -90,7 +90,7 @@ namespace K9.WebApplication.Controllers
             if (ModelState.IsValid)
             {
                 // In case user logs in with email address
-                if (DataAccessLayer.Helpers.Methods.IsValidEmail(model.UserName))
+                if (model.UserName.IsValidEmail())
                 {
                     var user = _userRepository.Find(e => e.EmailAddress == model.UserName).FirstOrDefault();
                     if (user != null)

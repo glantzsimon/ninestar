@@ -1858,6 +1858,34 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;utf-8&quot;&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+        ///    &lt;title&gt;{Title}&lt;/title&gt;
+        ///    &lt;style type=&quot;text/css&quot;&gt;
+        ///        /* General resets for email clients */
+        ///        body, table, td, a {
+        ///            -webkit-text-size-adjust: 100%;
+        ///            -ms-text-size-adjust: 100%;
+        ///        }
+        ///
+        ///        table, td {
+        ///            mso-table-lspace: 0pt;
+        ///            mso-table-rspace: 0pt;
+        ///        }
+        ///
+        ///        img {
+        ///            -ms-interpolation-mode: bic [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string BaseEmailTemplate {
+            get {
+                return ResourceManager.GetString("BaseEmailTemplate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Before Completion&lt;/h5&gt;
         ///&lt;p&gt;
         ///    Before Completion represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
@@ -12111,6 +12139,37 @@ namespace K9.Globalisation {
         public static string SupportQueryReceived {
             get {
                 return ResourceManager.GetString("SupportQueryReceived", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///
+        ///&lt;head&gt;
+        ///    &lt;title&gt;{Title}&lt;/title&gt;
+        ///&lt;/head&gt;
+        ///
+        ///&lt;style type=&quot;text/css&quot;&gt;
+        ///    html {
+        ///        margin: 0;
+        ///        padding: 0;
+        ///        font-family: &quot;Segoe UI&quot;, Verdana, Helvetica, Sans-Serif;
+        ///        font-size: 100%;
+        ///        text-rendering: optimizeLegibility !important;
+        ///        -webkit-font-smoothing: antialiased !important;
+        ///        margin: 0;
+        ///        color: #333;
+        ///    }
+        ///&lt;/style&gt;
+        ///
+        ///&lt;body&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;We have received a s [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string SupportQueryReceived1 {
+            get {
+                return ResourceManager.GetString("SupportQueryReceived1", resourceCulture);
             }
         }
         

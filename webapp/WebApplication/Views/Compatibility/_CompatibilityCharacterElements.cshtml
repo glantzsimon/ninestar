@@ -1,8 +1,9 @@
 ﻿@using K9.SharedLibrary.Extensions
 @using K9.SharedLibrary.Helpers
+@using TemplateParser = K9.SharedLibrary.Helpers.TemplateParser
 @model K9.WebApplication.Models.CompatibilityModel
 
-@Html.Raw(TemplateProcessor.PopulateTemplate(Model.CompatibilityDetails.ElementCompatibility.CharacterElementsTransformationDetails, new
+@Html.Raw(TemplateParser.Parse(Model.CompatibilityDetails.ElementCompatibility.CharacterElementsTransformationDetails, new
 {
     SameTransformationLink = Url.ActionWithBookmark("Index", "KnowledgeBase", "same-transformation"),
     SupportiveTransformationLink = Url.ActionWithBookmark("Index", "KnowledgeBase", "supportive-transformation"),

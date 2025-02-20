@@ -128,7 +128,7 @@ namespace K9.WebApplication.Services
 
             var contact = _contactService.GetOrCreateContact("", model.Name, model.EmailAddress);
 
-            _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
+            _mailer.SendEmail(title, TemplateParser.Parse(template, new
             {
                 Title = title,
                 model.FirstName,
@@ -184,7 +184,7 @@ namespace K9.WebApplication.Services
                 throw new Exception($"Cannot use this promo code. The Membership Option {promoCode.MembershipOptionId} was not found");
             }
 
-            _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
+            _mailer.SendEmail(title, TemplateParser.Parse(template, new
             {
                 Title = title,
                 user.FirstName,

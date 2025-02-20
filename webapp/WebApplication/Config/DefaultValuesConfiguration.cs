@@ -9,6 +9,9 @@
         public string CurrentTimeZone { get; set; }
         public string BaseImagesPath { get; set; }
         public string BaseVideosPath { get; set; }
+        public string BaseEmailTemplateImagesPath { get; set; }
+        public string BaseBaseEmailTemplateVideosPath { get; set; }
+        public string CompanyAddress { get; set; }
         public int EmailQueueMaxBatchSize { get; set; } = 20;
     }
 }

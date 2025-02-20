@@ -1,9 +1,10 @@
 ﻿@using K9.Base.WebApplication.Helpers
 @using K9.SharedLibrary.Helpers
+@using TemplateParser = K9.SharedLibrary.Helpers.TemplateParser
 @model Consultation
 @{
     Layout = "../Shared/_LayoutFormSmall.cshtml";
-    var body = TemplateProcessor.PopulateTemplate(Dictionary.consultation_email, new
+    var body = TemplateParser.Parse(Dictionary.consultation_email, new
     {
         Model.Contact.FirstName,
         Duration = Model.DurationDescription.ToLower(),

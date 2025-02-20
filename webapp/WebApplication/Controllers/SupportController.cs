@@ -1,4 +1,5 @@
-﻿using K9.Base.WebApplication.Config;
+﻿using K9.Base.DataAccessLayer.Models;
+using K9.Base.WebApplication.Config;
 using K9.Base.WebApplication.ViewModels;
 using K9.DataAccessLayer.Models;
 using K9.Globalisation;
@@ -11,7 +12,7 @@ using K9.WebApplication.Services;
 using NLog;
 using System;
 using System.Web.Mvc;
-using K9.Base.DataAccessLayer.Models;
+using K9.SharedLibrary.Helpers.Html;
 
 namespace K9.WebApplication.Controllers
 {
@@ -22,11 +23,12 @@ namespace K9.WebApplication.Controllers
         private readonly IDonationService _donationService;
         private readonly IContactService _contactService;
         private readonly IRecaptchaService _recaptchaService;
+        private readonly IEmailTemplateService _emailTemplateService;
         private readonly RecaptchaConfiguration _recaptchaConfig;
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public SupportController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IMailer mailer, IOptions<WebsiteConfiguration> config, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IOptions<StripeConfiguration> stripeConfig, IDonationService donationService, IMembershipService membershipService, IContactService contactService, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository)
+        public SupportController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IMailer mailer, IOptions<WebsiteConfiguration> config, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IOptions<StripeConfiguration> stripeConfig, IDonationService donationService, IMembershipService membershipService, IContactService contactService, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, IEmailTemplateService emailTemplateService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
         {
             _logger = logger;
@@ -34,6 +36,7 @@ namespace K9.WebApplication.Controllers
             _donationService = donationService;
             _contactService = contactService;
             _recaptchaService = recaptchaService;
+            _emailTemplateService = emailTemplateService;
             _recaptchaConfig = recaptchaConfig.Value;
             _config = config.Value;
             _urlHelper = new UrlHelper(System.Web.HttpContext.Current.Request.RequestContext);
@@ -62,26 +65,28 @@ namespace K9.WebApplication.Controllers
                 }
             }
 
-            var body = TemplateProcessor.PopulateTemplate(Dictionary.SupportQueryReceived, new
-            {
-                Customer = model.Name,
-                CustomerEmail = model.EmailAddress,
+            var contact = _contactService.GetOrCreateContact("", model.Name, model.EmailAddress);
+            var body = _emailTemplateService.ParseForContact(
                 model.Subject,
-                Query = model.Body
-            });
-                
+                Dictionary.SupportQueryReceived1,
+                contact, 
+                new {
+                    Customer = model.Name,
+                    CustomerEmail = model.EmailAddress,
+                    model.Subject,
+                    Query = HtmlFormatter.ConvertNewlinesToParagraphs(model.Body),
+                    UnformattedQuery = model.Body,
+                });
+
             try
             {
                 _mailer.SendEmail(
                     model.Subject,
                     body,
                     _config.SupportEmailAddress,
-                    _config.CompanyName,
-                    _config.SupportEmailAddress,
                     _config.CompanyName);
 
-                var contact = _contactService.GetOrCreateContact("", model.Name, model.EmailAddress);
-                SendEmailToCustomer(contact);
+                //SendEmailToCustomer(contact);
 
                 return RedirectToAction("ContactUsSuccess");
             }
@@ -164,14 +169,14 @@ namespace K9.WebApplication.Controllers
             var title = Dictionary.EmailThankYouTitle;
             if (contact != null)
             {
-                _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
+                _mailer.SendEmail(title, TemplateParser.Parse(template, new
                 {
                     Title = title,
                     contact.FirstName,
                     PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
                     TermsOfServiceLink = _urlHelper.AbsoluteAction("TermsOfService", "Home"),
                     UnsubscribeLink = _urlHelper.AbsoluteAction("UnsubscribeContact", "Account", new { externalId = contact.Name }),
-                    DateTime.Now.Year
+                    DateTime.Now.Year,
                 }), contact.EmailAddress, contact.FirstName, _config.SupportEmailAddress,
                     _config.CompanyName);
             }

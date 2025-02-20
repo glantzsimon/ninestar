@@ -258,7 +258,7 @@ namespace K9.WebApplication.Services
         {
             var template = Dictionary.ComplimentaryConsultationBookedEmail;
             var title = "A complimentary consultation has been booked!";
-            _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
+            _mailer.SendEmail(title, TemplateParser.Parse(template, new
             {
                 Title = title,
                 ContactName = user.FullName,
@@ -275,7 +275,7 @@ namespace K9.WebApplication.Services
         {
             var template = Dictionary.ConsultationBookedEmail;
             var title = "We have received a consultation booking!";
-            _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
+            _mailer.SendEmail(title, TemplateParser.Parse(template, new
             {
                 Title = title,
                 ContactName = user.FullName,
@@ -294,7 +294,7 @@ namespace K9.WebApplication.Services
             var title = Dictionary.ThankyouForBookingConsultationEmailTitle;
             var contact = _contactService.Find(user.EmailAddress);
 
-            _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
+            _mailer.SendEmail(title, TemplateParser.Parse(template, new
             {
                 Title = title,
                 user.FirstName,
@@ -312,7 +312,7 @@ namespace K9.WebApplication.Services
         {
             var template = Dictionary.ConsultationScheduledEmail;
             var title = "We have received a consultation booking!";
-            _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
+            _mailer.SendEmail(title, TemplateParser.Parse(template, new
             {
                 Title = title,
                 ContactName = user.FullName,
@@ -329,7 +329,7 @@ namespace K9.WebApplication.Services
         {
             var template = Dictionary.ConsultationScheduledThankYouEmail;
             var title = Dictionary.ThankyouForBookingConsultationEmailTitle;
-            _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
+            _mailer.SendEmail(title, TemplateParser.Parse(template, new
             {
                 Title = title,
                 user.FirstName,

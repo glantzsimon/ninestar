@@ -1,7 +1,8 @@
 ﻿@using K9.SharedLibrary.Helpers
 @using K9.WebApplication.Helpers
+@using TemplateParser = K9.SharedLibrary.Helpers.TemplateParser
 
-@Html.Raw(TemplateProcessor.PopulateTemplate(Dictionary.sexuality, new
+@Html.Raw(TemplateParser.Parse(Dictionary.sexuality, new
 {
     AboutTitle = Dictionary.AboutNineStarKi,
     AboutLink = Url.ActionWithBookmark("Index", "KnowledgeBase", "yinyang"),

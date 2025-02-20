@@ -12,7 +12,7 @@ namespace K9.DataAccessLayer.Models
 	    [NotMapped]
 	    public string MyTimeZone { get; set; }
 
-	    public string TimeZoneDisplayText => TemplateProcessor.PopulateTemplate(
+	    public string TimeZoneDisplayText => TemplateParser.Parse(
 	        Globalisation.Dictionary.LocalTimeDisplay,
 	        new
 	        {

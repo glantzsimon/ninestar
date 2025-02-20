@@ -1,4 +1,5 @@
 ﻿@using K9.SharedLibrary.Helpers
+@using TemplateParser = K9.SharedLibrary.Helpers.TemplateParser
 @{
     ViewBag.Title = Dictionary.HowToRemoveYourDataTitle;
     ViewBag.SubTitle = Dictionary.HowToRemoveYourDataTitle;
@@ -12,7 +13,7 @@
     <article>
         @using (Html.BeginBootstrapForm())
         {
-            @MvcHtmlString.Create(TemplateProcessor.PopulateTemplate(Dictionary.HowToRemoveYourData, new { RemoveDataUrl = Url.Action("RemoveMyData", "Account") }))
+            @MvcHtmlString.Create(TemplateParser.Parse(Dictionary.HowToRemoveYourData, new { RemoveDataUrl = Url.Action("RemoveMyData", "Account") }))
         }
     </article>
 </div>

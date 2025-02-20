@@ -1,5 +1,6 @@
 ﻿@using K9.SharedLibrary.Helpers
-@Html.Raw(TemplateProcessor.PopulateTemplate(Dictionary.relationships_description, new
+@using TemplateParser = K9.SharedLibrary.Helpers.TemplateParser
+@Html.Raw(TemplateParser.Parse(Dictionary.relationships_description, new
 {
     CompatibilityLink = Url.Action("Index", "Compatibility"),
 }))

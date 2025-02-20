@@ -61,7 +61,7 @@ namespace K9.WebApplication.Controllers
         [Route("personalchart/my-chart")]
         public ActionResult MyProfile()
         {
-            var myAccount = Package.UsersRepository.Find(Current.UserId);
+            var myAccount = My.UsersRepository.Find(Current.UserId);
             var personModel = new PersonModel
             {
                 Name = myAccount.FullName,

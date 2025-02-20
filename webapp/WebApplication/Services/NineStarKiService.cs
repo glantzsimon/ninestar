@@ -10,7 +10,7 @@ namespace K9.WebApplication.Services
 {
     public class NineStarKiService : BaseService, INineStarKiService
     {
-        public NineStarKiService(INineStarKiPackage package) : base(package)
+        public NineStarKiService(INineStarKiPackage my) : base(my)
         {
         }
 

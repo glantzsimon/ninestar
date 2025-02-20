@@ -21,7 +21,7 @@ namespace K9.WebApplication.Controllers
 		[RequirePermissions(Permission = Permissions.Edit)]
 		public ActionResult EditPermissionsForRole(int id = 0)
 		{
-			return EditMultiple<Role, Permission>(Package.RolesRepository.Find(id));
+			return EditMultiple<Role, Permission>(My.RolesRepository.Find(id));
 		}
 
 		[Authorize]

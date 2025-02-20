@@ -13,8 +13,8 @@ namespace K9.WebApplication.Services
 
         private readonly IRepository<EmailTemplate> _emailTemplatesRepository;
 
-        public EmailTemplateService(IRepository<EmailTemplate> emailTemplatesRepository, INineStarKiBasePackage package)
-        : base(package)
+        public EmailTemplateService(IRepository<EmailTemplate> emailTemplatesRepository, INineStarKiBasePackage my)
+        : base(my)
         {
             _emailTemplatesRepository = emailTemplatesRepository;
         }
@@ -32,7 +32,7 @@ namespace K9.WebApplication.Services
             }
 
             return Parse(emailTemplateId, user.FirstName,
-                Package.UrlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }), data);
+                My.UrlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }), data);
         }
 
         public string ParseForContact(int emailTemplateId, string title, Contact contact, object data)
@@ -43,7 +43,7 @@ namespace K9.WebApplication.Services
             }
 
             return Parse(emailTemplateId, contact.FirstName,
-                Package.UrlHelper.AbsoluteAction("UnsubscribeContact", "Account", new { externalId = contact.Name }), data);
+                My.UrlHelper.AbsoluteAction("UnsubscribeContact", "Account", new { externalId = contact.Name }), data);
         }
 
         public string ParseForUser(string title, string body, User user, object data)
@@ -54,7 +54,7 @@ namespace K9.WebApplication.Services
             }
 
             return Parse(title, body, user.FirstName,
-                Package.UrlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }), data);
+                My.UrlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }), data);
         }
 
         public string ParseForContact(string title, string body, Contact contact, object data)
@@ -65,7 +65,7 @@ namespace K9.WebApplication.Services
             }
 
             return Parse(title, body, contact.FirstName,
-                Package.UrlHelper.AbsoluteAction("UnsubscribeContact", "Account", new { externalId = contact.Name }), data);
+                My.UrlHelper.AbsoluteAction("UnsubscribeContact", "Account", new { externalId = contact.Name }), data);
         }
 
         private string Parse(int emailTemplateId, string recipientFirstName, string unsubscribeLink, object data)
@@ -108,15 +108,15 @@ namespace K9.WebApplication.Services
                 Title = title,
                 FirstName = recipientFirstName,
                 Body = body,
-                PrivacyPolicyLink = Package.UrlHelper.AbsoluteAction("PrivacyPolicy",
+                PrivacyPolicyLink = My.UrlHelper.AbsoluteAction("PrivacyPolicy",
                 "Home"),
-                TermsOfServiceLink = Package.UrlHelper.AbsoluteAction("TermsOfService", "Home"),
+                TermsOfServiceLink = My.UrlHelper.AbsoluteAction("TermsOfService", "Home"),
                 UnsubscribeLink = unsubscribeLink,
                 DateTime.Now.Year,
-                Package.WebsiteConfiguration.CompanyName,
-                Package.DefaultValuesConfiguration.CompanyAddress,
-                HeaderImageSrc = $"{Package.DefaultValuesConfiguration.BaseEmailTemplateImagesPath}/emailtemplates/email-template-header.jpg",
-                CompanyLogoSrc = $"{Package.DefaultValuesConfiguration.BaseEmailTemplateImagesPath}/company/logo-small.png",
+                My.WebsiteConfiguration.CompanyName,
+                My.DefaultValuesConfiguration.CompanyAddress,
+                HeaderImageSrc = $"{My.DefaultValuesConfiguration.BaseEmailTemplateImagesPath}/emailtemplates/email-template-header.jpg",
+                CompanyLogoSrc = $"{My.DefaultValuesConfiguration.BaseEmailTemplateImagesPath}/company/logo-small.png",
             });
         }
     }

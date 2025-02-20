@@ -21,7 +21,7 @@ namespace K9.WebApplication.Controllers
 		[RequirePermissions(Permission = Permissions.Edit)]
 		public ActionResult EditMailingListsForContact(int id = 0)
 		{
-			return EditMultiple<Contact, MailingList>(Package.ContactsRepository.Find(id));
+			return EditMultiple<Contact, MailingList>(My.ContactsRepository.Find(id));
 		}
 
 		[Authorize]

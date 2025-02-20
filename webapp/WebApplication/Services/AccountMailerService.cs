@@ -13,8 +13,8 @@ namespace K9.WebApplication.Services
     {
         private readonly IContactService _contactService;
 
-        public AccountMailerService(INineStarKiBasePackage package, IContactService contactService)
-        : base(package)
+        public AccountMailerService(INineStarKiBasePackage my, IContactService contactService)
+        : base(my)
         {
             _contactService = contactService;
         }
@@ -35,34 +35,34 @@ namespace K9.WebApplication.Services
         public void SendActivationEmail(UserAccount.RegisterModel model, int sixDigitCode)
         {
             var contact = _contactService.Find(model.EmailAddress);
-            var user = Package.UsersRepository.Find(e => e.Username == model.UserName).FirstOrDefault();
-            var imageUrl = Package.UrlHelper.AbsoluteContent(Package.WebsiteConfiguration.CompanyLogoUrl);
+            var user = My.UsersRepository.Find(e => e.Username == model.UserName).FirstOrDefault();
+            var imageUrl = My.UrlHelper.AbsoluteContent(My.WebsiteConfiguration.CompanyLogoUrl);
 
             var emailContent = TemplateParser.Parse(Globalisation.Dictionary.WelcomeEmail, new
             {
                 Title = Dictionary.Welcome,
                 model.FirstName,
-                Company = Package.WebsiteConfiguration.CompanyName,
-                PrivacyPolicyLink = Package.UrlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                TermsOfServiceLink = Package.UrlHelper.AbsoluteAction("TermsOfService", "Home"),
-                UnsubscribeLink = Package.UrlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }),
+                Company = My.WebsiteConfiguration.CompanyName,
+                PrivacyPolicyLink = My.UrlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
+                TermsOfServiceLink = My.UrlHelper.AbsoluteAction("TermsOfService", "Home"),
+                UnsubscribeLink = My.UrlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }),
                 ActivationCode = sixDigitCode,
                 ImageUrl = imageUrl,
-                From = Package.WebsiteConfiguration.CompanyName
+                From = My.WebsiteConfiguration.CompanyName
             });
 
-            Package.Mailer.SendEmail(Dictionary.AccountActivationTitle, emailContent, model.EmailAddress, model.GetFullName(), Package.WebsiteConfiguration.SupportEmailAddress, Package.WebsiteConfiguration.CompanyName);
+            My.Mailer.SendEmail(Dictionary.AccountActivationTitle, emailContent, model.EmailAddress, model.GetFullName(), My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName);
         }
 
         public void SendPasswordResetEmail(UserAccount.PasswordResetRequestModel model, string token)
         {
             var resetPasswordLink = GetPasswordResetLink(model, token);
-            var imageUrl = Package.UrlHelper.AbsoluteContent(Package.WebsiteConfiguration.CompanyLogoUrl);
-            var user = Package.UsersRepository.Find(u => u.Username == model.UserName).FirstOrDefault();
+            var imageUrl = My.UrlHelper.AbsoluteContent(My.WebsiteConfiguration.CompanyLogoUrl);
+            var user = My.UsersRepository.Find(u => u.Username == model.UserName).FirstOrDefault();
 
             if (user == null)
             {
-                Package.Logger.Error("SendPasswordResetEmail failed as no user was found. PasswordResetRequestModel: {0}", model);
+                My.Logger.Error("SendPasswordResetEmail failed as no user was found. PasswordResetRequestModel: {0}", model);
                 throw new NullReferenceException("User cannot be null");
             }
 
@@ -70,23 +70,23 @@ namespace K9.WebApplication.Services
             {
                 Title = Dictionary.Welcome,
                 user.FirstName,
-                Company = Package.WebsiteConfiguration.CompanyName,
+                Company = My.WebsiteConfiguration.CompanyName,
                 ResetPasswordLink = resetPasswordLink,
                 ImageUrl = imageUrl,
-                From = Package.WebsiteConfiguration.CompanyName
+                From = My.WebsiteConfiguration.CompanyName
             });
 
-            Package.Mailer.SendEmail(Dictionary.PasswordResetTitle, emailContent, model.EmailAddress, user.FullName, Package.WebsiteConfiguration.SupportEmailAddress, Package.WebsiteConfiguration.CompanyName);
+            My.Mailer.SendEmail(Dictionary.PasswordResetTitle, emailContent, model.EmailAddress, user.FullName, My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName);
         }
 
         private string GetPasswordResetLink(UserAccount.PasswordResetRequestModel model, string token)
         {
-            return Package.UrlHelper.AbsoluteAction("ResetPassword", "Account", new { userName = model.UserName, token });
+            return My.UrlHelper.AbsoluteAction("ResetPassword", "Account", new { userName = model.UserName, token });
         }
 
         private string GetActivationLink(UserAccount.RegisterModel model, string token)
         {
-            return Package.UrlHelper.AbsoluteAction("ActivateAccount", "Account", new { userName = model.UserName, token });
+            return My.UrlHelper.AbsoluteAction("ActivateAccount", "Account", new { userName = model.UserName, token });
         }
     }
 }

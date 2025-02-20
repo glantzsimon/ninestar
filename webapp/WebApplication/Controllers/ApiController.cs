@@ -237,7 +237,7 @@ namespace K9.WebApplication.Controllers
             {
                 apiKey = authHeader.Substring("ApiKey".Length).Trim();
             }
-            return apiKey != null && apiKey == Package.ApiConfiguration.ApiKey;
+            return apiKey != null && apiKey == My.ApiConfiguration.ApiKey;
         }
 
         private bool IsValidMembership(UserMembership membership)
@@ -248,7 +248,7 @@ namespace K9.WebApplication.Controllers
 
         private UserMembership GetMembership(string accountNumber)
         {
-            return Package.MembershipService.GetActiveUserMembership(accountNumber);
+            return My.MembershipService.GetActiveUserMembership(accountNumber);
         }
     }
 }

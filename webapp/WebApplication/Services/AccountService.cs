@@ -8,62 +8,41 @@ using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Packages;
 using NLog;
 using System;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
 using System.Web.Security;
 
 namespace K9.WebApplication.Services
 {
-    public class AccountService : IAccountService
+    public class AccountService : BaseService, IAccountService
     {
-        private readonly IRepository<User> _userRepository;
-        private readonly IMailer _mailer;
-        private readonly IAuthentication _authentication;
-        private readonly ILogger _logger;
-        private readonly IRoles _roles;
-        private readonly Services.IAccountMailerService _accountMailerService;
+        private readonly IAccountMailerService _accountMailerService;
         private readonly IRepository<UserOTP> _otpRepository;
         private readonly IUserService _userService;
         private readonly IContactService _contactService;
-        private readonly WebsiteConfiguration _config;
-        private UrlHelper _urlHelper;
-
-        public UrlHelper UrlHelper
+        
+        public AccountService(INineStarKiBasePackage package, IRepository<User> userRepository, IOptions<WebsiteConfiguration> config, IMailer mailer, IAuthentication authentication, ILogger logger, IRoles roles, Services.IAccountMailerService accountMailerService, IRepository<UserOTP> otpRepository, IUserService userService,
+            IContactService contactService) : base(package)
         {
-            get => _urlHelper;
-            set => _urlHelper = value;
-        }
-
-        public AccountService(IRepository<User> userRepository, IOptions<WebsiteConfiguration> config, IMailer mailer, IAuthentication authentication, ILogger logger, IRoles roles, Services.IAccountMailerService accountMailerService, IRepository<UserOTP> otpRepository, IUserService userService,
-            IContactService contactService)
-        {
-            _userRepository = userRepository;
-            _mailer = mailer;
-            _authentication = authentication;
-            _logger = logger;
-            _roles = roles;
             _accountMailerService = accountMailerService;
             _otpRepository = otpRepository;
             _userService = userService;
             _contactService = contactService;
-            _config = config.Value;
-            _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }
 
         public ELoginResult Login(string username, string password, bool isRemember)
         {
-            if (_authentication.Login(username, password, isRemember))
+            if (My.Authentication.Login(username, password, isRemember))
             {
                 return ELoginResult.Success;
             }
-            if (_authentication.IsAccountLockedOut(username, 10, TimeSpan.FromDays(1)))
+            if (My.Authentication.IsAccountLockedOut(username, 10, TimeSpan.FromDays(1)))
             {
                 return ELoginResult.AccountLocked;
             }
-            if (!_authentication.IsConfirmed(username))
+            if (!My.Authentication.IsConfirmed(username))
             {
                 return ELoginResult.AccountNotActivated;
             }
@@ -72,14 +51,14 @@ namespace K9.WebApplication.Services
 
         public ELoginResult Login(int userId)
         {
-            var user = _userRepository.Find(userId);
+            var user = My.UsersRepository.Find(userId);
 
             if (user == null)
             {
                 throw new Exception("User not found");
             }
 
-            if (!_authentication.IsConfirmed(user.Username))
+            if (!My.Authentication.IsConfirmed(user.Username))
             {
                 return ELoginResult.AccountNotActivated;
             }
@@ -91,7 +70,7 @@ namespace K9.WebApplication.Services
             }
             catch (Exception e)
             {
-                _logger.Error($"AccountController => Login => Error: {e.GetFullErrorMessage()}");
+                My.Logger.Error($"AccountController => Login => Error: {e.GetFullErrorMessage()}");
             }
 
             return ELoginResult.Fail;
@@ -101,7 +80,7 @@ namespace K9.WebApplication.Services
         {
             var result = new ServiceResult();
 
-            if (_userRepository.Exists(u => u.Username == model.UserName))
+            if (My.UsersRepository.Exists(u => u.Username == model.UserName))
             {
                 result.Errors.Add(new ServiceError
                 {
@@ -109,7 +88,7 @@ namespace K9.WebApplication.Services
                     ErrorMessage = Dictionary.UsernameIsUnavailableError
                 });
             }
-            if (_userRepository.Exists(u => u.EmailAddress == model.EmailAddress))
+            if (My.UsersRepository.Exists(u => u.EmailAddress == model.EmailAddress))
             {
                 result.Errors.Add(new ServiceError
                 {
@@ -158,7 +137,7 @@ namespace K9.WebApplication.Services
 
                 try
                 {
-                    _authentication.CreateUserAndAccount(model.UserName, model.Password,
+                    My.Authentication.CreateUserAndAccount(model.UserName, model.Password,
                         newUser, true);
                 }
                 catch (MembershipCreateUserException e)
@@ -172,7 +151,7 @@ namespace K9.WebApplication.Services
                 }
                 catch (Exception ex)
                 {
-                    _logger.Log(LogLevel.Error, $"AccountService => Register => CreatUserAndAccount => {ex.GetFullErrorMessage()}");
+                    My.Logger.Log(LogLevel.Error, $"AccountService => Register => CreatUserAndAccount => {ex.GetFullErrorMessage()}");
 
                     result.Errors.Add(new ServiceError
                     {
@@ -186,11 +165,11 @@ namespace K9.WebApplication.Services
 
                 try
                 {
-                    _roles.AddUserToRole(model.UserName, RoleNames.DefaultUsers);
+                    My.Roles.AddUserToRole(model.UserName, RoleNames.DefaultUsers);
                 }
                 catch (Exception ex)
                 {
-                    _logger.Log(LogLevel.Error, $"AccountService => Register => AddUserToRole => {ex.GetFullErrorMessage()}");
+                    My.Logger.Log(LogLevel.Error, $"AccountService => Register => AddUserToRole => {ex.GetFullErrorMessage()}");
                     
                     TryDeleteUserAccount(model.UserName);
 
@@ -208,12 +187,12 @@ namespace K9.WebApplication.Services
                 User user = null;
                 try
                 {
-                    user = _userRepository.Find(e => e.Username == model.UserName).FirstOrDefault();
+                    user = My.UsersRepository.Find(e => e.Username == model.UserName).FirstOrDefault();
                     otp = CreateAccountActivationOTP(user.Id);
                 }
                 catch (Exception e)
                 {
-                    _logger.Log(LogLevel.Error, $"AccountService => Register => CreateAccountActivationOTP => {e.GetFullErrorMessage()}");
+                    My.Logger.Log(LogLevel.Error, $"AccountService => Register => CreateAccountActivationOTP => {e.GetFullErrorMessage()}");
 
                     TryDeleteUserAccount(model.UserName);
 
@@ -233,7 +212,7 @@ namespace K9.WebApplication.Services
                 }
                 catch (Exception e)
                 {
-                    _logger.Log(LogLevel.Error, $"AccountService => Register => GetOrCreateContact => {e.GetFullErrorMessage()}");
+                    My.Logger.Log(LogLevel.Error, $"AccountService => Register => GetOrCreateContact => {e.GetFullErrorMessage()}");
 
                     TryDeleteUserAccount(model.UserName);
 
@@ -253,7 +232,7 @@ namespace K9.WebApplication.Services
                 }
                 catch (Exception e)
                 {
-                    _logger.Log(LogLevel.Error, $"AccountService => Register => SendActivationEmail => {e.GetFullErrorMessage()}");
+                    My.Logger.Log(LogLevel.Error, $"AccountService => Register => SendActivationEmail => {e.GetFullErrorMessage()}");
 
                     TryDeleteUserAccount(model.UserName);
 
@@ -279,7 +258,7 @@ namespace K9.WebApplication.Services
         {
             var result = new ServiceResult();
 
-            if (_userRepository.Exists(u => u.Username == model.UserName))
+            if (My.UsersRepository.Exists(u => u.Username == model.UserName))
             {
                 result.IsSuccess = true;
                 FormsAuthentication.SetAuthCookie(model.UserName, false);
@@ -307,8 +286,8 @@ namespace K9.WebApplication.Services
 
             try
             {
-                _userRepository.Create(newUser);
-                _roles.AddUserToRole(model.UserName, RoleNames.DefaultUsers);
+                My.UsersRepository.Create(newUser);
+                My.Roles.AddUserToRole(model.UserName, RoleNames.DefaultUsers);
                 result.IsSuccess = true;
                 FormsAuthentication.SetAuthCookie(newUser.Username, false);
                 return result;
@@ -338,9 +317,9 @@ namespace K9.WebApplication.Services
         public ServiceResult DeleteAccount(int userId)
         {
             var result = new ServiceResult();
-            var user = _userRepository.Find(userId);
+            var user = My.UsersRepository.Find(userId);
 
-            if (user == null || _authentication.CurrentUserName != user.Username)
+            if (user == null || My.Authentication.CurrentUserName != user.Username)
             {
                 result.Errors.Add(new ServiceError
                 {
@@ -353,7 +332,7 @@ namespace K9.WebApplication.Services
             {
                 try
                 {
-                    _authentication.Logout();
+                    My.Authentication.Logout();
                     _userService.DeleteUser(userId);
                     result.IsSuccess = true;
                     return result;
@@ -378,7 +357,7 @@ namespace K9.WebApplication.Services
             var result = new ServiceResult();
             try
             {
-                if (_authentication.ChangePassword(_authentication.CurrentUserName, model.OldPassword, model.NewPassword))
+                if (My.Authentication.ChangePassword(My.Authentication.CurrentUserName, model.OldPassword, model.NewPassword))
                 {
                     result.IsSuccess = true;
                 }
@@ -393,7 +372,7 @@ namespace K9.WebApplication.Services
             }
             catch (Exception ex)
             {
-                _logger.Error(ex.GetFullErrorMessage());
+                My.Logger.Error(ex.GetFullErrorMessage());
                 result.Errors.Add(new ServiceError
                 {
                     FieldName = "",
@@ -406,21 +385,21 @@ namespace K9.WebApplication.Services
         public ServiceResult PasswordResetRequest(UserAccount.PasswordResetRequestModel model)
         {
             var result = new ServiceResult();
-            var user = _userRepository.Find(u => u.EmailAddress == model.EmailAddress).FirstOrDefault();
+            var user = My.UsersRepository.Find(u => u.EmailAddress == model.EmailAddress).FirstOrDefault();
 
             if (user != null)
             {
                 try
                 {
                     model.UserName = user.Username;
-                    var token = _authentication.GeneratePasswordResetToken(user.Username);
+                    var token = My.Authentication.GeneratePasswordResetToken(user.Username);
                     _accountMailerService.SendPasswordResetEmail(model, token);
                     result.IsSuccess = true;
                     result.Data = token;
                 }
                 catch (Exception ex)
                 {
-                    _logger.Error(ex.GetFullErrorMessage());
+                    My.Logger.Error(ex.GetFullErrorMessage());
                 }
             }
             else
@@ -437,8 +416,8 @@ namespace K9.WebApplication.Services
 
         public bool ConfirmUserFromToken(string username, string token)
         {
-            var userId = _authentication.GetUserIdFromPasswordResetToken(token);
-            var confirmUserId = _authentication.GetUserId(username);
+            var userId = My.Authentication.GetUserIdFromPasswordResetToken(token);
+            var confirmUserId = My.Authentication.GetUserId(username);
             return userId == confirmUserId;
         }
 
@@ -448,13 +427,13 @@ namespace K9.WebApplication.Services
 
             try
             {
-                _authentication.ResetPassword(model.Token, model.NewPassword);
-                _authentication.Login(model.UserName, model.NewPassword);
+                My.Authentication.ResetPassword(model.Token, model.NewPassword);
+                My.Authentication.Login(model.UserName, model.NewPassword);
                 result.IsSuccess = true;
             }
             catch (Exception ex)
             {
-                _logger.Error(ex.GetFullErrorMessage());
+                My.Logger.Error(ex.GetFullErrorMessage());
                 result.Errors.Add(new ServiceError
                 {
                     FieldName = "",
@@ -466,7 +445,7 @@ namespace K9.WebApplication.Services
 
         public ActivateAccountResult ActivateAccount(int userId, string token = "")
         {
-            var user = _userRepository.Find(u => u.Id == userId).FirstOrDefault();
+            var user = My.UsersRepository.Find(u => u.Id == userId).FirstOrDefault();
             if (user != null)
             {
                 return ActivateAccount(user, token);
@@ -479,7 +458,7 @@ namespace K9.WebApplication.Services
 
         public ActivateAccountResult ActivateAccount(string username, string token = "")
         {
-            var user = _userRepository.Find(u => u.Username == username).FirstOrDefault();
+            var user = My.UsersRepository.Find(u => u.Username == username).FirstOrDefault();
             if (user != null)
             {
                 return ActivateAccount(user, token);
@@ -499,9 +478,9 @@ namespace K9.WebApplication.Services
 
             if (user != null)
             {
-                if (_authentication.IsConfirmed(user.Username))
+                if (My.Authentication.IsConfirmed(user.Username))
                 {
-                    _logger.Error("Account already activated for user '{0}'.", user.Username);
+                    My.Logger.Error("Account already activated for user '{0}'.", user.Username);
                     result.Result = EActivateAccountResult.AlreadyActivated;
                     return result;
                 }
@@ -510,9 +489,9 @@ namespace K9.WebApplication.Services
                 {
                     token = GetAccountActivationToken(user.Id);
                 }
-                if (!_authentication.ConfirmAccount(user.Username, token))
+                if (!My.Authentication.ConfirmAccount(user.Username, token))
                 {
-                    _logger.Error("ActivateAccount failed as user '{0}' was not found.", user.Username);
+                    My.Logger.Error("ActivateAccount failed as user '{0}' was not found.", user.Username);
                     result.Result = EActivateAccountResult.Fail;
                     return result;
                 }
@@ -526,7 +505,7 @@ namespace K9.WebApplication.Services
 
         public ActivateAccountResult ActivateAccount(int userId)
         {
-            var user = _userRepository.Find(u => u.Id == userId).FirstOrDefault();
+            var user = My.UsersRepository.Find(u => u.Id == userId).FirstOrDefault();
             if (user != null)
             {
                 return ActivateAccount(user);
@@ -539,7 +518,7 @@ namespace K9.WebApplication.Services
 
         public ActivateAccountResult ActivateAccount(string username)
         {
-            var user = _userRepository.Find(u => u.Username == username).FirstOrDefault();
+            var user = My.UsersRepository.Find(u => u.Username == username).FirstOrDefault();
             if (user != null)
             {
                 return ActivateAccount(user);
@@ -559,17 +538,17 @@ namespace K9.WebApplication.Services
 
             if (user != null)
             {
-                if (_authentication.IsConfirmed(user.Username))
+                if (My.Authentication.IsConfirmed(user.Username))
                 {
-                    _logger.Error("Account already activated for user '{0}'.", user.Username);
+                    My.Logger.Error("Account already activated for user '{0}'.", user.Username);
                     result.Result = EActivateAccountResult.AlreadyActivated;
                     return result;
                 }
 
                 var token = GetAccountActivationToken(user.Id);
-                if (!_authentication.ConfirmAccount(user.Username, token))
+                if (!My.Authentication.ConfirmAccount(user.Username, token))
                 {
-                    _logger.Error("ActivateAccount failed as user '{0}' was not found.", user.Username);
+                    My.Logger.Error("ActivateAccount failed as user '{0}' was not found.", user.Username);
                     result.Result = EActivateAccountResult.Fail;
                     return result;
                 }
@@ -583,13 +562,13 @@ namespace K9.WebApplication.Services
 
         public void Logout()
         {
-            _authentication.Logout();
+            My.Authentication.Logout();
         }
 
         public string GetAccountActivationToken(int userId)
         {
             string sql = "SELECT ConfirmationToken FROM webpages_Membership " + $"WHERE UserId = {userId}";
-            return _userRepository.CustomQuery<string>(sql).FirstOrDefault();
+            return My.UsersRepository.CustomQuery<string>(sql).FirstOrDefault();
         }
 
         public void ResentActivationCode(int userId)
@@ -629,13 +608,13 @@ namespace K9.WebApplication.Services
 
             if (otp == null)
             {
-                _logger.Error($"Account Service => VerifyCode => Invalid OTP. UserId: {userId}, code:{sixDigitCode}");
+                My.Logger.Error($"Account Service => VerifyCode => Invalid OTP. UserId: {userId}, code:{sixDigitCode}");
                 throw new Exception("Invalid OTP");
             }
 
             if (otp.VerifiedOn.HasValue)
             {
-                _logger.Error($"Account Service => VerifyCode => OTP already verified. UserId: {userId}, code:{sixDigitCode}");
+                My.Logger.Error($"Account Service => VerifyCode => OTP already verified. UserId: {userId}, code:{sixDigitCode}");
                 throw new Exception("This six digit code has already been used to verify your account. Please log in.");
             }
 
@@ -650,12 +629,12 @@ namespace K9.WebApplication.Services
 
         public string GetPasswordResetLink(UserAccount.PasswordResetRequestModel model, string token)
         {
-            return _urlHelper.AbsoluteAction("ResetPassword", "Account", new { userName = model.UserName, token });
+            return My.UrlHelper.AbsoluteAction("ResetPassword", "Account", new { userName = model.UserName, token });
         }
 
         public string GetActivationLink(UserAccount.RegisterModel model, string token)
         {
-            return _urlHelper.AbsoluteAction("ActivateAccount", "Account", new { userName = model.UserName, token });
+            return My.UrlHelper.AbsoluteAction("ActivateAccount", "Account", new { userName = model.UserName, token });
         }
 
         private static string ErrorCodeToString(MembershipCreateStatus createStatus)
@@ -696,7 +675,7 @@ namespace K9.WebApplication.Services
 
         private void TryDeleteUserAccount(string username)
         {
-            var user = _userRepository.Find(e => e.Username == username).FirstOrDefault();
+            var user = My.UsersRepository.Find(e => e.Username == username).FirstOrDefault();
             if (user != null)
             {
                 try

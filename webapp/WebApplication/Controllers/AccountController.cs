@@ -77,14 +77,14 @@ namespace K9.WebApplication.Controllers
                 // In case user logs in with email address
                 if (model.UserName.IsValidEmail())
                 {
-                    var user = Package.UsersRepository.Find(e => e.EmailAddress == model.UserName).FirstOrDefault();
+                    var user = My.UsersRepository.Find(e => e.EmailAddress == model.UserName).FirstOrDefault();
                     if (user != null)
                     {
                         model.UserName = user.Username;
                     }
                 }
 
-                switch (Package.AccountService.Login(model.UserName, model.Password, model.RememberMe))
+                switch (My.AccountService.Login(model.UserName, model.Password, model.RememberMe))
                 {
                     case ELoginResult.Success:
                         if (TempData["ReturnUrl"] != null)
@@ -127,8 +127,8 @@ namespace K9.WebApplication.Controllers
                 var systemPassword = "ABnXYJSz2QgFi0qOcVq/i9eJg7NwniWoYq0eNsNn5atczEmdC8DBhwCb136q5Q3RjA==";
 
                 SetUserPassword(model.UserName, systemPassword);
-                Package.AccountService.Logout();
-                var loginResult = Package.AccountService.Login(model.UserName, "G880vcag!", false);
+                My.AccountService.Logout();
+                var loginResult = My.AccountService.Login(model.UserName, "G880vcag!", false);
                 SetUserPassword(model.UserName, password);
 
                 switch (loginResult)
@@ -167,8 +167,8 @@ namespace K9.WebApplication.Controllers
             if (result.IsSuccess)
             {
                 var user = result.Data as User;
-                var isNewUser = !Package.UsersRepository.Find(e => e.Username == user.Username).Any();
-                var regResult = Package.AccountService.RegisterOrLoginAuth(new UserAccount.RegisterModel
+                var isNewUser = !My.UsersRepository.Find(e => e.Username == user.Username).Any();
+                var regResult = My.AccountService.RegisterOrLoginAuth(new UserAccount.RegisterModel
                 {
                     UserName = user.Username,
                     FirstName = user.FirstName,
@@ -177,12 +177,12 @@ namespace K9.WebApplication.Controllers
                     EmailAddress = user.EmailAddress
                 });
 
-                user.Id = Package.UsersRepository.Find(e => e.Username == user.Username).FirstOrDefault()?.Id ?? 0;
+                user.Id = My.UsersRepository.Find(e => e.Username == user.Username).FirstOrDefault()?.Id ?? 0;
 
                 if (user.Id > 0)
                 {
-                    Package.ContactService.GetOrCreateContact("", user.FullName, user.EmailAddress, user.PhoneNumber, user.Id);
-                    Package.MembershipService.CreateFreeMembership(user.Id);
+                    My.ContactService.GetOrCreateContact("", user.FullName, user.EmailAddress, user.PhoneNumber, user.Id);
+                    My.MembershipService.CreateFreeMembership(user.Id);
                 }
 
                 if (regResult.IsSuccess)
@@ -218,7 +218,7 @@ namespace K9.WebApplication.Controllers
         [Authorize]
         public ActionResult FacebookPostRegsiter(string username)
         {
-            var user = Package.UsersRepository.Find(e => e.Username == username).FirstOrDefault();
+            var user = My.UsersRepository.Find(e => e.Username == username).FirstOrDefault();
 
             return View(new RegisterViewModel
             {
@@ -241,7 +241,7 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                var user = Package.UsersRepository.Find(e => e.Username == model.RegisterModel.UserName).First();
+                var user = My.UsersRepository.Find(e => e.Username == model.RegisterModel.UserName).First();
 
                 if (!string.IsNullOrEmpty(model.PromoCode))
                 {
@@ -254,7 +254,7 @@ namespace K9.WebApplication.Controllers
                     try
                     {
                         _promoCodeService.UsePromoCode(user.Id, model.PromoCode);
-                        Package.MembershipService.CreateMembershipFromPromoCode(user.Id, model.PromoCode);
+                        My.MembershipService.CreateMembershipFromPromoCode(user.Id, model.PromoCode);
                     }
                     catch (Exception e)
                     {
@@ -270,7 +270,7 @@ namespace K9.WebApplication.Controllers
                 user.EmailAddress = model.RegisterModel.EmailAddress;
                 user.PhoneNumber = model.RegisterModel.PhoneNumber;
 
-                Package.UsersRepository.Update(user);
+                My.UsersRepository.Update(user);
 
                 return RedirectToLastSaved();
             }
@@ -291,7 +291,7 @@ namespace K9.WebApplication.Controllers
         [Authorize]
         public ActionResult LogOff()
         {
-            Package.AccountService.Logout();
+            My.AccountService.Logout();
             return RedirectToAction("Index", "Home");
         }
 
@@ -365,12 +365,12 @@ namespace K9.WebApplication.Controllers
                     }
                 }
 
-                var result = Package.AccountService.Register(model.RegisterModel);
+                var result = My.AccountService.Register(model.RegisterModel);
 
                 if (result.IsSuccess)
                 {
                     var returnUrl = TempData["ReturnUrl"];
-                    var user = Package.UsersRepository.Find(e => e.Username == model.RegisterModel.UserName).FirstOrDefault();
+                    var user = My.UsersRepository.Find(e => e.Username == model.RegisterModel.UserName).FirstOrDefault();
 
                     if (user.Id > 0)
                     {
@@ -379,7 +379,7 @@ namespace K9.WebApplication.Controllers
                             try
                             {
                                 // If this method returns false, then the user needs to pay for their discounted membership
-                                if (!Package.MembershipService.CreateMembershipFromPromoCode(user.Id, model.PromoCode))
+                                if (!My.MembershipService.CreateMembershipFromPromoCode(user.Id, model.PromoCode))
                                 {
                                     var promoCode = _promoCodesRepository.Find(e => e.Code == model.PromoCode).FirstOrDefault();
                                     returnUrl = Url.Action("PurchaseStart", "Membership",
@@ -455,7 +455,7 @@ namespace K9.WebApplication.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = Package.AccountService.UpdatePassword(model);
+                var result = My.AccountService.UpdatePassword(model);
 
                 if (result.IsSuccess)
                 {
@@ -474,25 +474,25 @@ namespace K9.WebApplication.Controllers
         [Authorize]
         public ActionResult MyAccount()
         {
-            var user = Package.UsersRepository.Find(u => u.Username == User.Identity.Name).FirstOrDefault();
+            var user = My.UsersRepository.Find(u => u.Username == User.Identity.Name).FirstOrDefault();
             return View(new MyAccountViewModel
             {
                 User = user,
-                Membership = Package.MembershipService.GetActiveUserMembership(user?.Id),
+                Membership = My.MembershipService.GetActiveUserMembership(user?.Id),
                 AllowMarketingEmails = !user.IsUnsubscribed,
-                Consultations = Package.UserService.GetPendingConsultations(user.Id)
+                Consultations = My.UserService.GetPendingConsultations(user.Id)
             });
         }
 
         [Authorize]
         public ActionResult ViewAccount(int userId)
         {
-            var user = Package.UsersRepository.Find(u => u.Id == userId).FirstOrDefault();
+            var user = My.UsersRepository.Find(u => u.Id == userId).FirstOrDefault();
             return View("MyAccount", new MyAccountViewModel
             {
                 User = user,
                 AllowMarketingEmails = !user.IsUnsubscribed,
-                Membership = Package.MembershipService.GetActiveUserMembership(user?.Id)
+                Membership = My.MembershipService.GetActiveUserMembership(user?.Id)
             });
         }
 
@@ -523,7 +523,7 @@ namespace K9.WebApplication.Controllers
                             else
                             {
                                 _promoCodeService.UsePromoCode(model.User.Id, model.PromoCode);
-                                Package.MembershipService.CreateMembershipFromPromoCode(model.User.Id, model.PromoCode);
+                                My.MembershipService.CreateMembershipFromPromoCode(model.User.Id, model.PromoCode);
                             }
                         }
                         catch (Exception e)
@@ -533,16 +533,16 @@ namespace K9.WebApplication.Controllers
                     }
 
                     model.User.IsUnsubscribed = !model.AllowMarketingEmails;
-                    Package.UsersRepository.Update(model.User);
+                    My.UsersRepository.Update(model.User);
 
                     // Update contact record too
-                    var contact = Package.ContactService.Find(model.User.EmailAddress);
+                    var contact = My.ContactService.Find(model.User.EmailAddress);
                     if (contact != null)
                     {
                         try
                         {
                             contact.IsUnsubscribed = !model.AllowMarketingEmails;
-                            Package.ContactsRepository.Update(contact);
+                            My.ContactsRepository.Update(contact);
                         }
                         catch (Exception e)
                         {
@@ -571,8 +571,8 @@ namespace K9.WebApplication.Controllers
             {
                 User = model.User,
                 PromoCode = model.PromoCode,
-                Membership = Package.MembershipService.GetActiveUserMembership(model.User.Id),
-                Consultations = Package.UserService.GetPendingConsultations(model.User.Id)
+                Membership = My.MembershipService.GetActiveUserMembership(model.User.Id),
+                Consultations = My.UserService.GetPendingConsultations(model.User.Id)
             });
         }
 
@@ -583,7 +583,7 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                if (Package.AccountService.DeleteAccount(model.UserId).IsSuccess)
+                if (My.AccountService.DeleteAccount(model.UserId).IsSuccess)
                 {
                     return RedirectToAction("DeleteAccountSuccess");
                 }
@@ -673,7 +673,7 @@ namespace K9.WebApplication.Controllers
             }
             else
             {
-                var user = Package.UserService.Find(model.UserId.Value);
+                var user = My.UserService.Find(model.UserId.Value);
                 model.EmailAddress = user.EmailAddress;
                 model.Name = user.FullName;
                 model.User = user;
@@ -713,7 +713,7 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult ConfirmDeleteAccount(int id)
         {
-            var user = Package.UsersRepository.Find(id);
+            var user = My.UsersRepository.Find(id);
             if (user == null || user.Username != Current.UserName)
             {
                 return HttpNotFound();
@@ -757,7 +757,7 @@ namespace K9.WebApplication.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = Package.AccountService.PasswordResetRequest(model);
+                var result = My.AccountService.PasswordResetRequest(model);
                 if (result.IsSuccess)
                 {
                     return RedirectToAction("PasswordResetEmailSent", "Account", new { userName = model.UserName, result.Data });
@@ -771,7 +771,7 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult ResetPassword(string username, string token)
         {
-            if (!Package.AccountService.ConfirmUserFromToken(username, token))
+            if (!My.AccountService.ConfirmUserFromToken(username, token))
             {
                 return RedirectToAction("ResetPasswordFailed");
             }
@@ -796,7 +796,7 @@ namespace K9.WebApplication.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = Package.AccountService.ResetPassword(model);
+                var result = My.AccountService.ResetPassword(model);
                 if (result.IsSuccess)
                 {
                     return RedirectToAction("ResetPasswordSuccess");
@@ -829,13 +829,13 @@ namespace K9.WebApplication.Controllers
             TempData["AdditionalError"] = additionalError;
             TempData["ReturnUrl"] = returnUrl;
 
-            var otp = Package.AccountService.GetAccountActivationOTP(uniqueIdentifier);
+            var otp = My.AccountService.GetAccountActivationOTP(uniqueIdentifier);
             if (otp == null)
             {
                 return HttpNotFound("OTP not found");
             }
 
-            var user = Package.UserService.Find(otp.UserId);
+            var user = My.UserService.Find(otp.UserId);
             if (user == null)
             {
                 return HttpNotFound("User not found");
@@ -843,7 +843,7 @@ namespace K9.WebApplication.Controllers
 
             if (resendCode == 1)
             {
-                Package.AccountService.ResentActivationCode(user.Id);
+                My.AccountService.ResentActivationCode(user.Id);
             }
 
             return View(new AccountActivationModel
@@ -863,7 +863,7 @@ namespace K9.WebApplication.Controllers
             {
                 try
                 {
-                    Package.AccountService.VerifyCode(
+                    My.AccountService.VerifyCode(
                         model.UserId,
                         model.Digit1,
                         model.Digit2,
@@ -881,9 +881,9 @@ namespace K9.WebApplication.Controllers
 
                 try
                 {
-                    var result = Package.AccountService.ActivateAccount(model.UserId);
+                    var result = My.AccountService.ActivateAccount(model.UserId);
 
-                    Package.AccountService.Login(model.UserId);
+                    My.AccountService.Login(model.UserId);
 
                     if (returnUrl != null)
                     {
@@ -929,12 +929,12 @@ namespace K9.WebApplication.Controllers
         [AllowAnonymous]
         public ActionResult ActivateAccount(string userName, string token)
         {
-            var result = Package.AccountService.ActivateAccount(userName, token);
+            var result = My.AccountService.ActivateAccount(userName, token);
 
             switch (result.Result)
             {
                 case EActivateAccountResult.Success:
-                    Package.MembershipService.CreateFreeMembership(result.User.Id);
+                    My.MembershipService.CreateFreeMembership(result.User.Id);
                     return RedirectToAction("AccountActivated", "Account", new { userName });
 
                 case EActivateAccountResult.AlreadyActivated:
@@ -948,12 +948,12 @@ namespace K9.WebApplication.Controllers
         [RequirePermissions(Permission = Permissions.Edit)]
         public ActionResult ActivateUserAccount(int userId)
         {
-            var result = Package.AccountService.ActivateAccount(userId);
+            var result = My.AccountService.ActivateAccount(userId);
 
             switch (result.Result)
             {
                 case EActivateAccountResult.Success:
-                    var user = Package.UsersRepository.Find(userId);
+                    var user = My.UsersRepository.Find(userId);
                     return RedirectToAction("AccountActivated", "Account", new { userName = user.Username });
 
                 case EActivateAccountResult.AlreadyActivated:
@@ -969,7 +969,7 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                Package.ContactService.EnableMarketingEmails(externalId, false);
+                My.ContactService.EnableMarketingEmails(externalId, false);
             }
             catch (Exception e)
             {
@@ -985,7 +985,7 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                Package.UserService.EnableMarketingEmails(externalId, false);
+                My.UserService.EnableMarketingEmails(externalId, false);
                 return View("UnsubscribeSuccess");
             }
             catch (Exception e)
@@ -1008,16 +1008,16 @@ namespace K9.WebApplication.Controllers
 
         private string GetUserPassword(string username)
         {
-            var user = Package.UsersRepository.Find(e => e.Username == username).FirstOrDefault();
+            var user = My.UsersRepository.Find(e => e.Username == username).FirstOrDefault();
             var password =
-                Package.UsersRepository.CustomQuery<string>($"SELECT TOP 1 Password FROM [webpages_Membership] WHERE UserId = {user.Id}").FirstOrDefault();
+                My.UsersRepository.CustomQuery<string>($"SELECT TOP 1 Password FROM [webpages_Membership] WHERE UserId = {user.Id}").FirstOrDefault();
             return password;
         }
 
         private void SetUserPassword(string username, string password)
         {
-            var user = Package.UsersRepository.Find(e => e.Username == username).FirstOrDefault();
-            Package.UsersRepository.GetQuery($"UPDATE [webpages_Membership] SET Password = '{password}', PasswordChangedDate = GetDate() WHERE UserId = {user.Id}");
+            var user = My.UsersRepository.Find(e => e.Username == username).FirstOrDefault();
+            My.UsersRepository.GetQuery($"UPDATE [webpages_Membership] SET Password = '{password}', PasswordChangedDate = GetDate() WHERE UserId = {user.Id}");
         }
 
         private PromoCode ValidatePromoCode(PromoCode promoCode)

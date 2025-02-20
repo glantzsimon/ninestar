@@ -16,8 +16,8 @@ namespace K9.WebApplication.Services
         private readonly ILogger _logger;
         private readonly IRepository<User> _usersRepository;
 
-        public ContactService(INineStarKiBasePackage package, IRepository<Contact> contactsRepository, ILogger logger, IRepository<User> usersRepository)
-            : base(package)
+        public ContactService(INineStarKiBasePackage my, IRepository<Contact> contactsRepository, ILogger logger, IRepository<User> usersRepository)
+            : base(my)
         {
         }
 

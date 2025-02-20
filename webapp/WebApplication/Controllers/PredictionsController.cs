@@ -56,7 +56,7 @@ namespace K9.WebApplication.Controllers
         [Route("predictions/my-predictions")]
         public ActionResult MyCycles()
         {
-            var myAccount = Package.UsersRepository.Find(Current.UserId);
+            var myAccount = My.UsersRepository.Find(Current.UserId);
             return View(_nineStarKiService.CalculateNineStarKiProfile(new PersonModel
             {
                 Name = myAccount.FullName,

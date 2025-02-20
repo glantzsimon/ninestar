@@ -8,13 +8,13 @@ namespace K9.WebApplication.Controllers
         [Route("account/is-username-available")]
         public JsonResult IsUserNameAvailable(string username)
         {
-            return Json(Package.UsersRepository.Exists(u => u.Username == username), JsonRequestBehavior.AllowGet);
+            return Json(My.UsersRepository.Exists(u => u.Username == username), JsonRequestBehavior.AllowGet);
         }
 
         [Route("account/is-email-available")]
         public JsonResult IsEmailAddressAvailable(string emailAddress)
         {
-            return Json(Package.UsersRepository.Exists(u => u.EmailAddress == emailAddress), JsonRequestBehavior.AllowGet);
+            return Json(My.UsersRepository.Exists(u => u.EmailAddress == emailAddress), JsonRequestBehavior.AllowGet);
         }
 
         [Route("account/set-user-timezone")]
@@ -28,7 +28,7 @@ namespace K9.WebApplication.Controllers
         [HttpPost]
         public JsonResult ResendActivationCode(int userId)
         {
-            var user = Package.UserService.Find(userId);
+            var user = My.UserService.Find(userId);
             if (user == null)
             {
                 return Json(new { success = false, error = "User not found" }, JsonRequestBehavior.AllowGet);
@@ -39,7 +39,7 @@ namespace K9.WebApplication.Controllers
                 return Json(new { success = false, error = "Invalid UserId" }, JsonRequestBehavior.AllowGet);
             }
 
-            var otp = Package.AccountService.CreateAccountActivationOTP(userId, true);
+            var otp = My.AccountService.CreateAccountActivationOTP(userId, true);
             return Json(new
             {
                 success = true

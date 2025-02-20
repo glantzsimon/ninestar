@@ -53,7 +53,7 @@ namespace K9.WebApplication.Controllers
                 }
             }
 
-            var contact = Package.ContactService.GetOrCreateContact("", model.Name, model.EmailAddress);
+            var contact = My.ContactService.GetOrCreateContact("", model.Name, model.EmailAddress);
             var body = _emailTemplateService.ParseForContact(
                 model.Subject,
                 Dictionary.SupportQueryReceived1,
@@ -69,11 +69,11 @@ namespace K9.WebApplication.Controllers
 
             try
             {
-                Package.Mailer.SendEmail(
+                My.Mailer.SendEmail(
                     model.Subject,
                     body,
-                    Package.WebsiteConfiguration.SupportEmailAddress,
-                    Package.WebsiteConfiguration.CompanyName);
+                    My.WebsiteConfiguration.SupportEmailAddress,
+                    My.WebsiteConfiguration.CompanyName);
 
                 SendEmailToCustomer(contact);
 
@@ -114,7 +114,7 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                var contact = Package.ContactService.Find(purchaseModel.ContactId);
+                var contact = My.ContactService.Find(purchaseModel.ContactId);
 
                 _donationService.CreateDonation(new Donation
                 {
@@ -170,11 +170,11 @@ namespace K9.WebApplication.Controllers
 
                 try
                 {
-                    Package.Mailer.SendEmail(
+                    My.Mailer.SendEmail(
                         title,
                         body,
-                        Package.WebsiteConfiguration.SupportEmailAddress,
-                        Package.WebsiteConfiguration.CompanyName);
+                        My.WebsiteConfiguration.SupportEmailAddress,
+                        My.WebsiteConfiguration.CompanyName);
                 }
                 catch (Exception ex)
                 {

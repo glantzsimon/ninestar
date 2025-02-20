@@ -34,7 +34,7 @@ namespace K9.WebApplication.Controllers
         private void ContactsController_RecordUpdated(object sender, Base.WebApplication.EventArgs.CrudEventArgs e)
         {
             var contact = (Contact)e.Item;
-            var user = Package.UsersRepository.Find(u => u.EmailAddress == contact.EmailAddress).FirstOrDefault();
+            var user = My.UsersRepository.Find(u => u.EmailAddress == contact.EmailAddress).FirstOrDefault();
 
             if (user != null && user.IsUnsubscribed != contact.IsUnsubscribed)
             {
@@ -42,7 +42,7 @@ namespace K9.WebApplication.Controllers
 
                 try
                 {
-                    Package.UsersRepository.Update(user);
+                    My.UsersRepository.Update(user);
                 }
                 catch (Exception ex)
                 {

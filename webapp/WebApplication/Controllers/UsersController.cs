@@ -38,7 +38,7 @@ namespace K9.WebApplication.Controllers
         private void UsersController_RecordUpdated(object sender, CrudEventArgs e)
         {
             var user = (User)e.Item;
-            var contact = Package.ContactsRepository.Find(c => c.EmailAddress == user.EmailAddress).FirstOrDefault();
+            var contact = My.ContactsRepository.Find(c => c.EmailAddress == user.EmailAddress).FirstOrDefault();
 
             if (contact != null && user.IsUnsubscribed != contact.IsUnsubscribed)
             {
@@ -46,7 +46,7 @@ namespace K9.WebApplication.Controllers
 
                 try
                 {
-                    Package.ContactsRepository.Update(contact);
+                    My.ContactsRepository.Update(contact);
                 }
                 catch (Exception ex)
                 {
@@ -95,7 +95,7 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                Package.MembershipService.AssignMembershipToUser(model.MembershipOptionId, model.UserId);
+                My.MembershipService.AssignMembershipToUser(model.MembershipOptionId, model.UserId);
                 return RedirectToAction("AssignMembershipSuccess");
             }
             catch (Exception ex)
@@ -127,7 +127,7 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                Package.MembershipService.CreateComplementaryUserConsultation(model.UserId, model.Duration);
+                My.MembershipService.CreateComplementaryUserConsultation(model.UserId, model.Duration);
                 return RedirectToAction("AssignFreeConsultationSuccess");
             }
             catch (Exception ex)
@@ -173,7 +173,7 @@ namespace K9.WebApplication.Controllers
 
             try
             {
-                Package.MembershipService.CreateMembershipFromPromoCode(model.UserId, model.PromoCode);
+                My.MembershipService.CreateMembershipFromPromoCode(model.UserId, model.PromoCode);
                 return RedirectToAction("AssignPromoCodeSuccess");
             }
             catch (Exception ex)

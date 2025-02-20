@@ -1,8 +1,6 @@
 ﻿using K9.Base.DataAccessLayer.Models;
-using K9.Base.WebApplication.Config;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Extensions;
-using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Helpers;
 using K9.WebApplication.Packages;
@@ -10,33 +8,23 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web.Mvc;
 using UserMembership = K9.DataAccessLayer.Models.UserMembership;
 
 namespace K9.WebApplication.Services
 {
     public class UserService : BaseService, IUserService
     {
-        private readonly IRepository<User> _usersRepository;
-        private readonly IRepository<PromoCode> _promoCodesRepository;
         private readonly IRepository<UserPromoCode> _userPromoCodeRepository;
-        private readonly IAuthentication _authentication;
-        private readonly IMailer _mailer;
-        private readonly IContactService _contactService;
         private readonly IRepository<UserConsultation> _userConsultationsRepository;
         private readonly IRepository<Consultation> _consultationsRepository;
-        private readonly ILogger _logger;
         private readonly IConsultationService _consultationService;
-        private readonly IRepository<UserRole> _userRolesRepository;
-        private readonly IRepository<Contact> _contactsRepository;
         private readonly IRepository<UserMembership> _userMembershipsRepository;
         private readonly IRepository<UserOTP> _userOtpRepository;
-        private readonly WebsiteConfiguration _config;
-        private readonly UrlHelper _urlHelper;
+        private readonly IContactService _contactService;
 
-        public UserService(INineStarKiPackage package, IRepository<PromoCode> promoCodesRepository, IRepository<UserPromoCode> userPromoCodeRepository, IRepository<UserConsultation> userConsultationsRepository, IRepository<Consultation> consultationsRepository, IConsultationService consultationService,
-            IRepository<UserMembership> userMembershipsRepository, IRepository<UserOTP> userOtpRepository)
-            : base(package)
+        public UserService(INineStarKiPackage my, IRepository<PromoCode> promoCodesRepository, IRepository<UserPromoCode> userPromoCodeRepository, IRepository<UserConsultation> userConsultationsRepository, IRepository<Consultation> consultationsRepository, IConsultationService consultationService,
+            IRepository<UserMembership> userMembershipsRepository, IRepository<UserOTP> userOtpRepository, IContactService contactService)
+            : base(my)
         {
             _userPromoCodeRepository = userPromoCodeRepository;
             _userConsultationsRepository = userConsultationsRepository;
@@ -44,20 +32,21 @@ namespace K9.WebApplication.Services
             _consultationService = consultationService;
             _userMembershipsRepository = userMembershipsRepository;
             _userOtpRepository = userOtpRepository;
+            _contactService = contactService;
         }
 
         public void UpdateActiveUserEmailAddressIfFromFacebook(Contact contact)
         {
-            if (_authentication.IsAuthenticated)
+            if (My.Authentication.IsAuthenticated)
             {
-                var activeUser = _usersRepository.Find(Current.UserId);
+                var activeUser = My.UsersRepository.Find(Current.UserId);
                 var defaultFacebookAddress = $"{activeUser.FirstName}.{activeUser.LastName}@facebook.com";
                 if (activeUser.IsOAuth && activeUser.EmailAddress == defaultFacebookAddress && activeUser.EmailAddress != contact.EmailAddress)
                 {
-                    if (!_usersRepository.Find(e => e.EmailAddress == contact.EmailAddress).Any())
+                    if (!My.UsersRepository.Find(e => e.EmailAddress == contact.EmailAddress).Any())
                     {
                         activeUser.EmailAddress = contact.EmailAddress;
-                        _usersRepository.Update(activeUser);
+                        My.UsersRepository.Update(activeUser);
                     }
                 }
             }
@@ -65,17 +54,17 @@ namespace K9.WebApplication.Services
         
         public User Find(int id)
         {
-            return _usersRepository.Find(id);
+            return My.UsersRepository.Find(id);
         }
 
         public User Find(string username)
         {
-            return _usersRepository.Find(e => e.Username == username).FirstOrDefault();
+            return My.UsersRepository.Find(e => e.Username == username).FirstOrDefault();
         }
 
         public List<UserConsultation> GetPendingConsultations(int? userId = null)
         {
-            var user = _usersRepository.Find(userId ?? Current.UserId);
+            var user = My.UsersRepository.Find(userId ?? Current.UserId);
             var userConsultations = new List<UserConsultation>();
 
             if (user != null)
@@ -94,12 +83,12 @@ namespace K9.WebApplication.Services
                     foreach (var userConsultation in userConsultations)
                     {
                         userConsultation.Consultation = _consultationService.Find(userConsultation.ConsultationId);
-                        userConsultation.User = _usersRepository.Find(userConsultation.UserId);
+                        userConsultation.User = My.UsersRepository.Find(userConsultation.UserId);
                     }
                 }
                 catch (Exception e)
                 {
-                    _logger.Error($"UserService => GetConsultations => {e.GetFullErrorMessage()}");
+                    My.Logger.Error($"UserService => GetConsultations => {e.GetFullErrorMessage()}");
                 }
             }
 
@@ -117,10 +106,10 @@ namespace K9.WebApplication.Services
 
             try
             {
-                var userRoles = _userRolesRepository.Find(e => e.UserId == user.Id);
+                var userRoles = My.UserRolesRepository.Find(e => e.UserId == user.Id);
                 foreach (var userRole in userRoles)
                 {
-                    _userRolesRepository.Delete(userRole.Id);
+                    My.UserRolesRepository.Delete(userRole.Id);
                 }
 
                 var userConsultations = _userConsultationsRepository.Find(e => e.UserId == user.Id);
@@ -129,7 +118,7 @@ namespace K9.WebApplication.Services
                     _userConsultationsRepository.Delete(userConsultation.Id);
                 }
 
-                var contactRecord = _contactsRepository.Find(e => e.EmailAddress == user.EmailAddress).FirstOrDefault();
+                var contactRecord = My.ContactsRepository.Find(e => e.EmailAddress == user.EmailAddress).FirstOrDefault();
                 if (contactRecord != null)
                 {
                     var consultations = _consultationsRepository.Find(e => e.ContactId == contactRecord.Id);
@@ -140,7 +129,7 @@ namespace K9.WebApplication.Services
                         _consultationsRepository.Update(itemToUpdate);
                     }
 
-                    _contactsRepository.Delete(contactRecord.Id);
+                    My.ContactsRepository.Delete(contactRecord.Id);
                 }
 
                 var userMemberships = _userMembershipsRepository.Find(e => e.UserId == user.Id);
@@ -161,22 +150,22 @@ namespace K9.WebApplication.Services
                     _userPromoCodeRepository.Delete(userPromoCode.Id);
                 }
 
-                _usersRepository.GetQuery($"DELETE FROM [User] WHERE Id = {user.Id}");
+                My.UsersRepository.GetQuery($"DELETE FROM [User] WHERE Id = {user.Id}");
 
             }
             catch (Exception e)
             {
-                _logger.Log(LogLevel.Error, $"UserService => DeleteUser => Error: {e.GetFullErrorMessage()}");
+                My.Logger.Log(LogLevel.Error, $"UserService => DeleteUser => Error: {e.GetFullErrorMessage()}");
                 throw new Exception("Error deleting user account");
             }
         }
 
         public bool AreMarketingEmailsAllowedForUser(int id)
         {
-            var user = _usersRepository.Find(id);
+            var user = My.UsersRepository.Find(id);
             if (user == null)
             {
-                _logger.Log(LogLevel.Error, $"UserService => AreMarketingEmailsAllowedForUser => User with UserId: {id} not found");
+                My.Logger.Log(LogLevel.Error, $"UserService => AreMarketingEmailsAllowedForUser => User with UserId: {id} not found");
                 throw new Exception("User not found");
             }
             return !user.IsUnsubscribed;
@@ -184,15 +173,15 @@ namespace K9.WebApplication.Services
 
         public void EnableMarketingEmails(int id, bool value = true)
         {
-            EnableMarketingEmailForUser(value, _usersRepository.Find(id));
+            EnableMarketingEmailForUser(value, My.UsersRepository.Find(id));
         }
 
         public void EnableMarketingEmails(string externalId, bool value = true)
         {
-            var user = _usersRepository.Find(e => e.Name == externalId).FirstOrDefault();
+            var user = My.UsersRepository.Find(e => e.Name == externalId).FirstOrDefault();
             if (user == null)
             {
-                _logger.Log(LogLevel.Error, $"UserService => EnableMarketingEmails => User with External Id: {externalId} not found");
+                My.Logger.Log(LogLevel.Error, $"UserService => EnableMarketingEmails => User with External Id: {externalId} not found");
                 throw new Exception("User not found");
             }
 
@@ -204,11 +193,11 @@ namespace K9.WebApplication.Services
                 try
                 {
                     contact.IsUnsubscribed = !value;
-                    _contactsRepository.Update(contact);
+                    My.ContactsRepository.Update(contact);
                 }
                 catch (Exception e)
                 {
-                    _logger.Log(LogLevel.Error,
+                    My.Logger.Log(LogLevel.Error,
                         $"UserService => EnableMarketingEmails => Could not update contact => ContactId: {contact.Id} Error => {e.GetFullErrorMessage()}");
                     throw;
                 }
@@ -220,11 +209,11 @@ namespace K9.WebApplication.Services
             user.IsUnsubscribed = !value;
             try
             {
-                _usersRepository.Update(user);
+                My.UsersRepository.Update(user);
             }
             catch (Exception e)
             {
-                _logger.Log(LogLevel.Error,
+                My.Logger.Log(LogLevel.Error,
                     $"UserService => EnableMarketingEmailForUser => Could not update user => UserId: {user.Id} => error: {e.GetFullErrorMessage()}");
                 throw;
             }

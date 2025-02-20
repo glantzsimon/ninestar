@@ -24,7 +24,7 @@ namespace K9.WebApplication.Controllers
         public ActionResult Index(string retrieveLast = null)
         {
             TempData["RetrieveLast"] = retrieveLast;
-            return View(Package.MembershipService.GetMembershipViewModel());
+            return View(My.MembershipService.GetMembershipViewModel());
         }
 
         [Authorize]
@@ -54,7 +54,7 @@ namespace K9.WebApplication.Controllers
 
             try
             {
-                var model = Package.MembershipService.GetPurchaseMembershipModel(membershipOptionId, promoCode);
+                var model = My.MembershipService.GetPurchaseMembershipModel(membershipOptionId, promoCode);
                 model.PromoCode = promoCodeModel;
                 return View(model);
             }
@@ -71,7 +71,7 @@ namespace K9.WebApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Purchase(int membershipOptionId, string promoCode)
         {
-            var membershipModel = Package.MembershipService.GetPurchaseMembershipModel(membershipOptionId, promoCode);
+            var membershipModel = My.MembershipService.GetPurchaseMembershipModel(membershipOptionId, promoCode);
             ViewBag.SubTitle = Globalisation.Dictionary.UpgradeMembership;
             return View(membershipModel);
         }
@@ -83,7 +83,7 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                Package.MembershipService.ProcessPurchase(purchaseModel);
+                My.MembershipService.ProcessPurchase(purchaseModel);
                 return Json(new { success = true });
             }
             catch (Exception ex)
@@ -97,14 +97,14 @@ namespace K9.WebApplication.Controllers
         [Route("membership/unlock/success")]
         public ActionResult PurchaseSuccess()
         {
-            var membership = Package.MembershipService.GetActiveUserMembership(Current.UserId);
-            var consultations = Package.UserService.GetPendingConsultations(Current.UserId);
-            var user = Package.UserService.Find(Current.UserId);
+            var membership = My.MembershipService.GetActiveUserMembership(Current.UserId);
+            var consultations = My.UserService.GetPendingConsultations(Current.UserId);
+            var user = My.UserService.Find(Current.UserId);
             return View(new MyAccountViewModel
             {
                 User = user,
-                Membership = Package.MembershipService.GetActiveUserMembership(user?.Id),
-                Consultations = Package.UserService.GetPendingConsultations(user.Id)
+                Membership = My.MembershipService.GetActiveUserMembership(user?.Id),
+                Consultations = My.UserService.GetPendingConsultations(user.Id)
             });
         }
 
@@ -119,7 +119,7 @@ namespace K9.WebApplication.Controllers
         [Route("membership/upgrade/payment")]
         public ActionResult SwitchStart(int membershipOptionId)
         {
-            var switchMembershipModel = Package.MembershipService.GetSwitchMembershipModel(membershipOptionId);
+            var switchMembershipModel = My.MembershipService.GetSwitchMembershipModel(membershipOptionId);
             ViewBag.Title = Globalisation.Dictionary.UpgradeMembership;
 
             return View("PurchaseStart", switchMembershipModel);

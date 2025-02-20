@@ -4,11 +4,11 @@ namespace K9.WebApplication.Services
 {
     public class BaseService : IBaseService
     {
-        public INineStarKiBasePackage Package { get; }
+        public INineStarKiBasePackage My { get; }
 
         public BaseService(INineStarKiBasePackage package)
         {
-            Package = package;
+            My = package;
         }
     }
 }

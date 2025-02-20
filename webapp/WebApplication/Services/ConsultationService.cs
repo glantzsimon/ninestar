@@ -22,8 +22,8 @@ namespace K9.WebApplication.Services
         private readonly IRepository<UserConsultation> _userConsultationRepository;
         private readonly IRepository<Slot> _slotRepository;
         
-        public ConsultationService(INineStarKiBasePackage package, IContactService contactService, IRepository<Consultation> consultationRepository, IRepository<UserConsultation> userConsultationRepository, IRepository<Slot> slotRepository)
-            : base(package)
+        public ConsultationService(INineStarKiBasePackage my, IContactService contactService, IRepository<Consultation> consultationRepository, IRepository<UserConsultation> userConsultationRepository, IRepository<Slot> slotRepository)
+            : base(my)
         {
             _contactService = contactService;
             _consultationRepository = consultationRepository;
@@ -40,7 +40,7 @@ namespace K9.WebApplication.Services
         public Consultation Find(int id)
         {
             var consultationUserTimeZone = SessionHelper.GetCurrentUserTimeZone();
-            var myTimeZone = Package.DefaultValuesConfiguration.CurrentTimeZone;
+            var myTimeZone = My.DefaultValuesConfiguration.CurrentTimeZone;
 
             var consultation = _consultationRepository.Find(id);
             consultation.UserTimeZone = consultationUserTimeZone;
@@ -51,12 +51,12 @@ namespace K9.WebApplication.Services
 
         public List<Slot> GetAvailableSlots()
         {
-            var myTimeZoneId = Package.DefaultValuesConfiguration.CurrentTimeZone;
+            var myTimeZoneId = My.DefaultValuesConfiguration.CurrentTimeZone;
             var userTimeZoneId = SessionHelper.GetCurrentUserTimeZone();
             var tomorrow = DateTime.UtcNow.AddDays(2);
 
             // Give two days notice
-            var userDatAfterTomorrow = tomorrow.ToZonedTime(Package.DefaultValuesConfiguration.CurrentTimeZone);
+            var userDatAfterTomorrow = tomorrow.ToZonedTime(My.DefaultValuesConfiguration.CurrentTimeZone);
             var userDayAfterTomorrowUtc = userDatAfterTomorrow.ToDateTimeUtc().Date;
 
             // Starting from tomorrow, user's local time
@@ -72,7 +72,7 @@ namespace K9.WebApplication.Services
         public Slot FindSlot(int id)
         {
             var consultationUserTimeZone = SessionHelper.GetCurrentUserTimeZone();
-            var myTimeZone = Package.DefaultValuesConfiguration.CurrentTimeZone;
+            var myTimeZone = My.DefaultValuesConfiguration.CurrentTimeZone;
 
             var slot = _slotRepository.Find(id);
             slot.UserTimeZone = consultationUserTimeZone;
@@ -97,12 +97,12 @@ namespace K9.WebApplication.Services
             }
             catch (Exception ex)
             {
-                Package.Logger.Error($"ConsultationService => CreateConsultation => {ex.GetFullErrorMessage()}");
+                My.Logger.Error($"ConsultationService => CreateConsultation => {ex.GetFullErrorMessage()}");
             }
 
             try
             {
-                var user = Package.UsersRepository.Find(userId.Value);
+                var user = My.UsersRepository.Find(userId.Value);
 
                 if (isComplementary)
                 {
@@ -116,7 +116,7 @@ namespace K9.WebApplication.Services
             }
             catch (Exception e)
             {
-                Package.Logger.Error($"ConsultationService => CreateConsultation => Error sending emails {e.GetFullErrorMessage()}");
+                My.Logger.Error($"ConsultationService => CreateConsultation => Error sending emails {e.GetFullErrorMessage()}");
             }
 
             return consultation.Id;
@@ -124,7 +124,7 @@ namespace K9.WebApplication.Services
 
         public void CreateFreeSlots()
         {
-            var myTimeZone = Package.DefaultValuesConfiguration.CurrentTimeZone;
+            var myTimeZone = My.DefaultValuesConfiguration.CurrentTimeZone;
             var slots = new List<Slot>();
             var startDay = GetNextTuesday();
             var timeZone = DateTimeZoneProviders.Tzdb[myTimeZone];
@@ -206,20 +206,20 @@ namespace K9.WebApplication.Services
             }
             catch (Exception e)
             {
-                Package.Logger.Error($"ConsultationService => SelectSlot => {e.GetFullErrorMessage()}");
+                My.Logger.Error($"ConsultationService => SelectSlot => {e.GetFullErrorMessage()}");
                 throw;
             }
 
             try
             {
                 var contact = _contactService.Find(consultation.ContactId);
-                var user = Package.UsersRepository.Find(contact.UserId ?? Current.UserId);
+                var user = My.UsersRepository.Find(contact.UserId ?? Current.UserId);
                 SendAppointmentConfirmationEmailToUser(consultation, user);
                 SendAppointmentConfirmationEmailToNineStar(consultation, user);
             }
             catch (Exception e)
             {
-                Package.Logger.Error($"ConsultationService => SelectSlot => Error Sending Emails => {e.GetFullErrorMessage()}");
+                My.Logger.Error($"ConsultationService => SelectSlot => Error Sending Emails => {e.GetFullErrorMessage()}");
             }
         }
 
@@ -241,7 +241,7 @@ namespace K9.WebApplication.Services
         {
             var template = Dictionary.ComplimentaryConsultationBookedEmail;
             var title = "A complimentary consultation has been booked!";
-            Package.Mailer.SendEmail(title, TemplateParser.Parse(template, new
+            My.Mailer.SendEmail(title, TemplateParser.Parse(template, new
             {
                 Title = title,
                 ContactName = user.FullName,
@@ -249,16 +249,16 @@ namespace K9.WebApplication.Services
                 user.PhoneNumber,
                 Duration = consultation.DurationDescription,
                 Price = consultation.FormattedPrice,
-                Company = Package.WebsiteConfiguration.CompanyName,
-                ImageUrl = Package.UrlHelper.AbsoluteContent(Package.WebsiteConfiguration.CompanyLogoUrl)
-            }), Package.WebsiteConfiguration.SupportEmailAddress, Package.WebsiteConfiguration.CompanyName, Package.WebsiteConfiguration.SupportEmailAddress, Package.WebsiteConfiguration.CompanyName);
+                Company = My.WebsiteConfiguration.CompanyName,
+                ImageUrl = My.UrlHelper.AbsoluteContent(My.WebsiteConfiguration.CompanyLogoUrl)
+            }), My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName, My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName);
         }
 
         private void SendEmailToNineStar(Consultation consultation, User user)
         {
             var template = Dictionary.ConsultationBookedEmail;
             var title = "We have received a consultation booking!";
-            Package.Mailer.SendEmail(title, TemplateParser.Parse(template, new
+            My.Mailer.SendEmail(title, TemplateParser.Parse(template, new
             {
                 Title = title,
                 ContactName = user.FullName,
@@ -266,9 +266,9 @@ namespace K9.WebApplication.Services
                 user.PhoneNumber,
                 Duration = consultation.DurationDescription,
                 Price = consultation.FormattedPrice,
-                Company = Package.WebsiteConfiguration.CompanyName,
-                ImageUrl = Package.UrlHelper.AbsoluteContent(Package.WebsiteConfiguration.CompanyLogoUrl)
-            }), Package.WebsiteConfiguration.SupportEmailAddress, Package.WebsiteConfiguration.CompanyName, Package.WebsiteConfiguration.SupportEmailAddress, Package.WebsiteConfiguration.CompanyName);
+                Company = My.WebsiteConfiguration.CompanyName,
+                ImageUrl = My.UrlHelper.AbsoluteContent(My.WebsiteConfiguration.CompanyLogoUrl)
+            }), My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName, My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName);
         }
 
         private void SendEmailToUser(Consultation consultation, User user)
@@ -277,25 +277,25 @@ namespace K9.WebApplication.Services
             var title = Dictionary.ThankyouForBookingConsultationEmailTitle;
             var contact = _contactService.Find(user.EmailAddress);
 
-            Package.Mailer.SendEmail(title, TemplateParser.Parse(template, new
+            My.Mailer.SendEmail(title, TemplateParser.Parse(template, new
             {
                 Title = title,
                 user.FirstName,
                 Duration = consultation.DurationDescription,
-                ImageUrl = Package.UrlHelper.AbsoluteContent(Package.WebsiteConfiguration.CompanyLogoUrl),
-                ScheduleUrl = Package.UrlHelper.AbsoluteAction("ScheduleConsultation", "Consultation", new { consultationId = consultation.Id }),
-                PrivacyPolicyLink = Package.UrlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                TermsOfServiceLink = Package.UrlHelper.AbsoluteAction("TermsOfService", "Home"),
-                UnsubscribeLink = Package.UrlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }),
+                ImageUrl = My.UrlHelper.AbsoluteContent(My.WebsiteConfiguration.CompanyLogoUrl),
+                ScheduleUrl = My.UrlHelper.AbsoluteAction("ScheduleConsultation", "Consultation", new { consultationId = consultation.Id }),
+                PrivacyPolicyLink = My.UrlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
+                TermsOfServiceLink = My.UrlHelper.AbsoluteAction("TermsOfService", "Home"),
+                UnsubscribeLink = My.UrlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }),
                 DateTime.Now.Year
-            }), user.EmailAddress, user.FullName, Package.WebsiteConfiguration.SupportEmailAddress, Package.WebsiteConfiguration.CompanyName);
+            }), user.EmailAddress, user.FullName, My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName);
         }
 
         private void SendAppointmentConfirmationEmailToNineStar(Consultation consultation, User user)
         {
             var template = Dictionary.ConsultationScheduledEmail;
             var title = "We have received a consultation booking!";
-            Package.Mailer.SendEmail(title, TemplateParser.Parse(template, new
+            My.Mailer.SendEmail(title, TemplateParser.Parse(template, new
             {
                 Title = title,
                 ContactName = user.FullName,
@@ -303,28 +303,28 @@ namespace K9.WebApplication.Services
                 user.PhoneNumber,
                 Duration = consultation.DurationDescription,
                 ScheduledOn = consultation.ScheduledOnMyTime.Value.ToString(DataAccessLayer.Constants.FormatConstants.AppointmentDisplayDateTimeFormat),
-                Company = Package.WebsiteConfiguration.CompanyName,
-                ImageUrl = Package.UrlHelper.AbsoluteContent(Package.WebsiteConfiguration.CompanyLogoUrl)
-            }), Package.WebsiteConfiguration.SupportEmailAddress, Package.WebsiteConfiguration.CompanyName, Package.WebsiteConfiguration.SupportEmailAddress, Package.WebsiteConfiguration.CompanyName);
+                Company = My.WebsiteConfiguration.CompanyName,
+                ImageUrl = My.UrlHelper.AbsoluteContent(My.WebsiteConfiguration.CompanyLogoUrl)
+            }), My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName, My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName);
         }
 
         private void SendAppointmentConfirmationEmailToUser(Consultation consultation, User user)
         {
             var template = Dictionary.ConsultationScheduledThankYouEmail;
             var title = Dictionary.ThankyouForBookingConsultationEmailTitle;
-            Package.Mailer.SendEmail(title, TemplateParser.Parse(template, new
+            My.Mailer.SendEmail(title, TemplateParser.Parse(template, new
             {
                 Title = title,
                 user.FirstName,
                 Duration = consultation.DurationDescription,
                 ScheduledOn = consultation.ScheduledOnLocalTime.Value.ToString(DataAccessLayer.Constants.FormatConstants.AppointmentDisplayDateTimeFormat),
-                ImageUrl = Package.UrlHelper.AbsoluteContent(Package.WebsiteConfiguration.CompanyLogoUrl),
-                RescheduleUrl = Package.UrlHelper.AbsoluteAction("ScheduleConsultation", "Consultation", new { consultationId = consultation.Id }),
-                PrivacyPolicyLink = Package.UrlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                TermsOfServiceLink = Package.UrlHelper.AbsoluteAction("TermsOfService", "Home"),
-                UnsubscribeLink = Package.UrlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }),
+                ImageUrl = My.UrlHelper.AbsoluteContent(My.WebsiteConfiguration.CompanyLogoUrl),
+                RescheduleUrl = My.UrlHelper.AbsoluteAction("ScheduleConsultation", "Consultation", new { consultationId = consultation.Id }),
+                PrivacyPolicyLink = My.UrlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
+                TermsOfServiceLink = My.UrlHelper.AbsoluteAction("TermsOfService", "Home"),
+                UnsubscribeLink = My.UrlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }),
                 DateTime.Now.Year
-            }), user.EmailAddress, user.FullName, Package.WebsiteConfiguration.SupportEmailAddress, Package.WebsiteConfiguration.CompanyName);
+            }), user.EmailAddress, user.FullName, My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName);
         }
     }
 }

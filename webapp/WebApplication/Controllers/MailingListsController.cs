@@ -28,7 +28,7 @@ namespace K9.WebApplication.Controllers
         {
             var memberships = _userMembershipsRepository.List().Select(e =>
             {
-                e.User = Package.UsersRepository.Find(e.UserId);
+                e.User = My.UsersRepository.Find(e.UserId);
                 e.MembershipOption = _membershipOptionsRepository.Find(m => m.Id == e.MembershipOptionId)
                     .FirstOrDefault();
                 return e;

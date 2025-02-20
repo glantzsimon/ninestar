@@ -19,8 +19,8 @@ namespace K9.WebApplication.Services
         private readonly IRepository<UserMembership> _userMembershipsRepository;
         private readonly IRepository<MembershipOption> _membershipOptionsRepository;
 
-        public PromoCodeService(INineStarKiBasePackage package, IRepository<PromoCode> promoCodesRepository, IRepository<UserPromoCode> userPromoCodeRepository, IRepository<UserMembership> userMembershipsRepository, IRepository<UserOTP> userOtpRepository, IRepository<MembershipOption> membershipOptionsRepository)
-            : base(package)
+        public PromoCodeService(INineStarKiBasePackage my, IRepository<PromoCode> promoCodesRepository, IRepository<UserPromoCode> userPromoCodeRepository, IRepository<UserMembership> userMembershipsRepository, IRepository<UserOTP> userOtpRepository, IRepository<MembershipOption> membershipOptionsRepository)
+            : base(my)
         {
             _promoCodesRepository = promoCodesRepository;
             _userPromoCodeRepository = userPromoCodeRepository;
@@ -84,10 +84,10 @@ namespace K9.WebApplication.Services
             var title = Dictionary.PromoCodeEmailTitle;
 
             // Check if user already exists with email address
-            var user = Package.UsersRepository.Find(e => e.EmailAddress == model.EmailAddress).FirstOrDefault();
+            var user = My.UsersRepository.Find(e => e.EmailAddress == model.EmailAddress).FirstOrDefault();
             if (user != null)
             {
-                Package.Logger.Log(LogLevel.Error, $"PromoCodeService => SendRegistrationPromoCode => User {user.Id} is already registered");
+                My.Logger.Log(LogLevel.Error, $"PromoCodeService => SendRegistrationPromoCode => User {user.Id} is already registered");
                 throw new Exception("Cannot use this promo code. The user is already registered on the system");
             }
 
@@ -108,20 +108,20 @@ namespace K9.WebApplication.Services
 
             var contact = _contactService.GetOrCreateContact("", model.Name, model.EmailAddress);
 
-            Package.Mailer.SendEmail(title, TemplateParser.Parse(template, new
+            My.Mailer.SendEmail(title, TemplateParser.Parse(template, new
             {
                 Title = title,
                 model.FirstName,
                 model.EmailAddress,
-                ImageUrl = Package.UrlHelper.AbsoluteContent(Package.WebsiteConfiguration.CompanyLogoUrl),
-                PrivacyPolicyLink = Package.UrlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                TermsOfServiceLink = Package.UrlHelper.AbsoluteAction("TermsOfService", "Home"),
-                UnsubscribeLink = Package.UrlHelper.AbsoluteAction("UnsubscribeContact", "Account", new { externalId = contact.Name }),
-                PromoLink = Package.UrlHelper.AbsoluteAction("Register", "Account", new { promoCode = code }),
+                ImageUrl = My.UrlHelper.AbsoluteContent(My.WebsiteConfiguration.CompanyLogoUrl),
+                PrivacyPolicyLink = My.UrlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
+                TermsOfServiceLink = My.UrlHelper.AbsoluteAction("TermsOfService", "Home"),
+                UnsubscribeLink = My.UrlHelper.AbsoluteAction("UnsubscribeContact", "Account", new { externalId = contact.Name }),
+                PromoLink = My.UrlHelper.AbsoluteAction("Register", "Account", new { promoCode = code }),
                 PromoDetails = model.PromoCode.Details,
                 promoCode.PriceDescription,
                 DateTime.Now.Year
-            }), model.EmailAddress, model.Name, Package.WebsiteConfiguration.SupportEmailAddress, Package.WebsiteConfiguration.CompanyName);
+            }), model.EmailAddress, model.Name, My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName);
 
 
             promoCode.SentOn = DateTime.Now;
@@ -149,10 +149,10 @@ namespace K9.WebApplication.Services
             }
 
             // Check if user already exists with email address
-            var user = Package.UsersRepository.Find(model.UserId.Value);
+            var user = My.UsersRepository.Find(model.UserId.Value);
             if (user == null)
             {
-                Package.Logger.Log(LogLevel.Error, $"PromoCodeService => SendMembershipPromoCode => User {model.UserId.Value} not found");
+                My.Logger.Log(LogLevel.Error, $"PromoCodeService => SendMembershipPromoCode => User {model.UserId.Value} not found");
                 throw new Exception($"Cannot use this promo code. The user {model.UserId.Value} was not found");
             }
 
@@ -160,24 +160,24 @@ namespace K9.WebApplication.Services
             var membershipOption = _membershipOptionsRepository.Find(model.PromoCode.MembershipOptionId);
             if (membershipOption == null)
             {
-                Package.Logger.Log(LogLevel.Error, $"PromoCodeService => SendMembershipPromoCode => Membership Option {promoCode.MembershipOptionId} not found");
+                My.Logger.Log(LogLevel.Error, $"PromoCodeService => SendMembershipPromoCode => Membership Option {promoCode.MembershipOptionId} not found");
                 throw new Exception($"Cannot use this promo code. The Membership Option {promoCode.MembershipOptionId} was not found");
             }
 
-            Package.Mailer.SendEmail(title, TemplateParser.Parse(template, new
+            My.Mailer.SendEmail(title, TemplateParser.Parse(template, new
             {
                 Title = title,
                 user.FirstName,
                 user.EmailAddress,
-                ImageUrl = Package.UrlHelper.AbsoluteContent(Package.WebsiteConfiguration.CompanyLogoUrl),
-                PrivacyPolicyLink = Package.UrlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                TermsOfServiceLink = Package.UrlHelper.AbsoluteAction("TermsOfService", "Home"),
-                UnsubscribeLink = Package.UrlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }),
-                PromoLink = Package.UrlHelper.AbsoluteAction("PurchaseStart", "Membership", new { membershipOptionId = model.PromoCode.MembershipOptionId, promoCode = promoCode.Code }),
+                ImageUrl = My.UrlHelper.AbsoluteContent(My.WebsiteConfiguration.CompanyLogoUrl),
+                PrivacyPolicyLink = My.UrlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
+                TermsOfServiceLink = My.UrlHelper.AbsoluteAction("TermsOfService", "Home"),
+                UnsubscribeLink = My.UrlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }),
+                PromoLink = My.UrlHelper.AbsoluteAction("PurchaseStart", "Membership", new { membershipOptionId = model.PromoCode.MembershipOptionId, promoCode = promoCode.Code }),
                 PromoDetails = model.PromoCode.Details,
                 promoCode.PriceDescription,
                 DateTime.Now.Year
-            }), user.EmailAddress, user.Name, Package.WebsiteConfiguration.SupportEmailAddress, Package.WebsiteConfiguration.CompanyName);
+            }), user.EmailAddress, user.Name, My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName);
 
             promoCode.SentOn = DateTime.Now;
             _promoCodesRepository.Update(promoCode);

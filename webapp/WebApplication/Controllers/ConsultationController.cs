@@ -53,7 +53,7 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                var contact = Package.ContactService.Find(purchaseModel.ContactId);
+                var contact = My.ContactService.Find(purchaseModel.ContactId);
 
                 var consultationId = _consultationService.CreateConsultation(new Consultation
                 {

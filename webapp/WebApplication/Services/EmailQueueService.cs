@@ -14,8 +14,8 @@ namespace K9.WebApplication.Services
         private readonly IContactService _contactService;
         private readonly IRepository<EmailQueueItem> _emailQueueItemsRepository;
 
-        public EmailQueueService(INineStarKiBasePackage package, IContactService contactService, IRepository<EmailQueueItem> emailQueueItemsRepository)
-            : base(package)
+        public EmailQueueService(INineStarKiBasePackage my, IContactService contactService, IRepository<EmailQueueItem> emailQueueItemsRepository)
+            : base(my)
         {
             _contactService = contactService;
             _emailQueueItemsRepository = emailQueueItemsRepository;
@@ -28,7 +28,7 @@ namespace K9.WebApplication.Services
                 var contact = _contactService.Find(recipientEmailAddress);
                 if (contact == null)
                 {
-                    Package.Logger.Log(LogLevel.Error, $"EmailQueueService => AddEmailToQueue => Contact not found: {recipientEmailAddress}");
+                    My.Logger.Log(LogLevel.Error, $"EmailQueueService => AddEmailToQueue => Contact not found: {recipientEmailAddress}");
                     throw new Exception("Contact not found");
                 }
 
@@ -41,7 +41,7 @@ namespace K9.WebApplication.Services
             var contact = _contactService.Find(contactId);
             if (contact == null)
             {
-                Package.Logger.Log(LogLevel.Error, $"EmailQueueService => AddEmailToQueueForContact => Contact not found. ContactId: {contactId}");
+                My.Logger.Log(LogLevel.Error, $"EmailQueueService => AddEmailToQueueForContact => Contact not found. ContactId: {contactId}");
                 throw new Exception("Contact not found");
             }
 
@@ -52,10 +52,10 @@ namespace K9.WebApplication.Services
                     Subject = subject,
                     contact.FirstName,
                     Body = body,
-                    PrivacyPolicyLink = Package.UrlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                    TermsOfServiceLink = Package.UrlHelper.AbsoluteAction("TermsOfService", "Home"),
+                    PrivacyPolicyLink = My.UrlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
+                    TermsOfServiceLink = My.UrlHelper.AbsoluteAction("TermsOfService", "Home"),
                     UnsubscribeLink =
-                    Package.UrlHelper.AbsoluteAction("UnsubscribeContact", "Account", new { externalId = contact.Name }),
+                    My.UrlHelper.AbsoluteAction("UnsubscribeContact", "Account", new { externalId = contact.Name }),
                 });
             }
 
@@ -70,10 +70,10 @@ namespace K9.WebApplication.Services
 
         public void AddEmailToQueueForUser(int userId, string subject, string body, bool useDefaultTemplate = true)
         {
-            var user = Package.UsersRepository.Find(userId);
+            var user = My.UsersRepository.Find(userId);
             if (user == null)
             {
-                Package.Logger.Log(LogLevel.Error, $"EmailQueueService => AddEmailToQueueForUser => User not found. UserId: {userId}");
+                My.Logger.Log(LogLevel.Error, $"EmailQueueService => AddEmailToQueueForUser => User not found. UserId: {userId}");
                 throw new Exception("User not found");
             }
 
@@ -84,10 +84,10 @@ namespace K9.WebApplication.Services
                     Subject = subject,
                     user.FirstName,
                     Body = body,
-                    PrivacyPolicyLink = Package.UrlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                    TermsOfServiceLink = Package.UrlHelper.AbsoluteAction("TermsOfService", "Home"),
+                    PrivacyPolicyLink = My.UrlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
+                    TermsOfServiceLink = My.UrlHelper.AbsoluteAction("TermsOfService", "Home"),
                     UnsubscribeLink =
-                    Package.UrlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }),
+                    My.UrlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }),
                 });
             }
 
@@ -104,9 +104,9 @@ namespace K9.WebApplication.Services
         {
             var emailsToSend = _emailQueueItemsRepository.Find(e => !e.SentOn.HasValue)
                 .OrderBy(e => e.Id)
-                .Take(Package.DefaultValuesConfiguration.EmailQueueMaxBatchSize).ToList();
+                .Take(My.DefaultValuesConfiguration.EmailQueueMaxBatchSize).ToList();
 
-            Package.Logger.Log(LogLevel.Info, $"EmailQueueService => ProcessQueue => Sending emails");
+            My.Logger.Log(LogLevel.Info, $"EmailQueueService => ProcessQueue => Sending emails");
 
             foreach (var email in emailsToSend)
             {
@@ -116,7 +116,7 @@ namespace K9.WebApplication.Services
                 }
                 catch (Exception ex)
                 {
-                    Package.Logger.Log(LogLevel.Error, $"EmailQueueService => ProcessQueue => Error sending mail with mailId: {email.Id} => {ex.GetFullErrorMessage()}");
+                    My.Logger.Log(LogLevel.Error, $"EmailQueueService => ProcessQueue => Error sending mail with mailId: {email.Id} => {ex.GetFullErrorMessage()}");
                     continue;
                 }
 
@@ -127,15 +127,15 @@ namespace K9.WebApplication.Services
                 }
                 catch (Exception e)
                 {
-                    Package.Logger.Log(LogLevel.Error, $"EmailQueueService => ProcessQueue => Email sent but error updating mail with maildId: {email.Id} => Error: {e.GetFullErrorMessage()}");
+                    My.Logger.Log(LogLevel.Error, $"EmailQueueService => ProcessQueue => Email sent but error updating mail with maildId: {email.Id} => Error: {e.GetFullErrorMessage()}");
                 }
             }
         }
 
         private void SendEmail(EmailQueueItem email)
         {
-            Package.Mailer.SendEmail(email.Subject, email.Body, email.RecipientEmailAddress, email.RecipientName,
-                Package.SmtpConfiguration.SmtpFromEmailAddress, Package.SmtpConfiguration.SmtpFromDisplayName);
+            My.Mailer.SendEmail(email.Subject, email.Body, email.RecipientEmailAddress, email.RecipientName,
+                My.SmtpConfiguration.SmtpFromEmailAddress, My.SmtpConfiguration.SmtpFromDisplayName);
         }
 
     }

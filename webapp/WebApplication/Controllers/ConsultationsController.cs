@@ -20,7 +20,7 @@ namespace K9.WebApplication.Controllers
         private void ConsultationsController_RecordBeforeDetails(object sender, Base.WebApplication.EventArgs.CrudEventArgs e)
         {
             var consultation = e.Item as Consultation;
-            consultation.Contact = Package.ContactsRepository.Find(consultation.ContactId);
+            consultation.Contact = My.ContactsRepository.Find(consultation.ContactId);
         }
     }
 }

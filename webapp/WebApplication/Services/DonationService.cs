@@ -32,7 +32,7 @@ namespace K9.WebApplication.Services
             }
             catch (Exception ex)
             {
-                Package.Logger.Error($"DonationService => CreateDonation => {ex.GetFullErrorMessage()}");
+                My.Logger.Error($"DonationService => CreateDonation => {ex.GetFullErrorMessage()}");
             }
         }
 
@@ -59,20 +59,20 @@ namespace K9.WebApplication.Services
                     CustomerEmail = contact.EmailAddress,
                     Amount = donation.DonationAmount,
                     donation.Currency,
-                    LinkToSummary = Package.UrlHelper.AbsoluteAction("Index", "Donations"),
+                    LinkToSummary = My.UrlHelper.AbsoluteAction("Index", "Donations"),
                 });
 
             try
             {
-                Package.Mailer.SendEmail(
+                My.Mailer.SendEmail(
                     subject,
                     body,
-                    Package.WebsiteConfiguration.SupportEmailAddress,
-                    Package.WebsiteConfiguration.CompanyName);
+                    My.WebsiteConfiguration.SupportEmailAddress,
+                    My.WebsiteConfiguration.CompanyName);
             }
             catch (Exception ex)
             {
-                Package.Logger.Error(ex.GetFullErrorMessage());
+                My.Logger.Error(ex.GetFullErrorMessage());
             }
         }
 
@@ -94,15 +94,15 @@ namespace K9.WebApplication.Services
 
             try
             {
-                Package.Mailer.SendEmail(
+                My.Mailer.SendEmail(
                     subject,
                     body,
-                    Package.WebsiteConfiguration.SupportEmailAddress,
-                    Package.WebsiteConfiguration.CompanyName);
+                    My.WebsiteConfiguration.SupportEmailAddress,
+                    My.WebsiteConfiguration.CompanyName);
             }
             catch (Exception ex)
             {
-                Package.Logger.Error(ex.GetFullErrorMessage());
+                My.Logger.Error(ex.GetFullErrorMessage());
             }
         }
     }

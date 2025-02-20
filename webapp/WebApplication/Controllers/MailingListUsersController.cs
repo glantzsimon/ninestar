@@ -22,7 +22,7 @@ namespace K9.WebApplication.Controllers
 		[RequirePermissions(Permission = Permissions.Edit)]
 		public ActionResult EditMailingListsForUser(int id = 0)
 		{
-			return EditMultiple<User, MailingList>(Package.UsersRepository.Find(id));
+			return EditMultiple<User, MailingList>(My.UsersRepository.Find(id));
 		}
 
 		[Authorize]

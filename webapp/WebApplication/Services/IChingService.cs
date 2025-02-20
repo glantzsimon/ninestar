@@ -7,8 +7,8 @@ namespace K9.WebApplication.Services
 {
     public class IChingService : BaseService, IIChingService
     {
-        public IChingService(INineStarKiBasePackage package)
-            : base(package)
+        public IChingService(INineStarKiBasePackage my)
+            : base(my)
         {
         }
 

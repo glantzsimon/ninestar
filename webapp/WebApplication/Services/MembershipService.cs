@@ -27,9 +27,9 @@ namespace K9.WebApplication.Services
         private readonly IContactService _contactService;
         private readonly IUserService _userService;
 
-        public MembershipService(INineStarKiBasePackage package, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<PromoCode> promoCodesRepository, IRepository<Consultation> consultationsRepository, IRepository<UserConsultation> userConsultationsRepository, IConsultationService consultationService, IPromoCodeService promoCodeService, IContactService contactService,
+        public MembershipService(INineStarKiBasePackage my, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<PromoCode> promoCodesRepository, IRepository<Consultation> consultationsRepository, IRepository<UserConsultation> userConsultationsRepository, IConsultationService consultationService, IPromoCodeService promoCodeService, IContactService contactService,
             IUserService userService)
-            : base(package)
+            : base(my)
         {
             _membershipOptionRepository = membershipOptionRepository;
             _userMembershipRepository = userMembershipRepository;
@@ -125,7 +125,7 @@ namespace K9.WebApplication.Services
                 }
                 catch (Exception e)
                 {
-                    Package.Logger.Error($"MembershipService => GetActiveUserMembership => {e.GetFullErrorMessage()}");
+                    My.Logger.Error($"MembershipService => GetActiveUserMembership => {e.GetFullErrorMessage()}");
                 }
             }
             else
@@ -186,7 +186,7 @@ namespace K9.WebApplication.Services
                     {
                         var errorMessage =
                             $"MembershipService => GetPurchaseMembershipModel => Invalid Promo Code: {promoCode}";
-                        Package.Logger.Error(errorMessage);
+                        My.Logger.Error(errorMessage);
                         throw new Exception(errorMessage);
                     }
                 }
@@ -194,7 +194,7 @@ namespace K9.WebApplication.Services
                 {
                     var errorMessage =
                         $"MembershipService => GetPurchaseMembershipModel => Error: {e.GetFullErrorMessage()}";
-                    Package.Logger.Error(errorMessage);
+                    My.Logger.Error(errorMessage);
                     throw;
                 }
             }
@@ -219,19 +219,19 @@ namespace K9.WebApplication.Services
 
             if (promoCode == null)
             {
-                Package.Logger.Error($"MembershipService => ProcessPurchaseWithPromoCode => Invalid Promo Code");
+                My.Logger.Error($"MembershipService => ProcessPurchaseWithPromoCode => Invalid Promo Code");
                 throw new Exception("Invalid promo code");
             }
 
             var membershipOption = _membershipOptionRepository.Find(e => e.Id == promoCode.MembershipOptionId).FirstOrDefault();
             if (membershipOption == null)
             {
-                Package.Logger.Error($"MembershipService => ProcessPurchaseWithPromoCode => No MembershipOption of type {promoCode.SubscriptionTypeName} found");
+                My.Logger.Error($"MembershipService => ProcessPurchaseWithPromoCode => No MembershipOption of type {promoCode.SubscriptionTypeName} found");
                 throw new Exception($"No Membership Option of type {promoCode.SubscriptionTypeName} found");
             }
 
             var activeMembership = GetActiveUserMembership(userId);
-            var user = Package.UsersRepository.Find(userId);
+            var user = My.UsersRepository.Find(userId);
 
             if (activeMembership.MembershipOption.SubscriptionType > MembershipOption.ESubscriptionType.Free)
             {
@@ -241,7 +241,7 @@ namespace K9.WebApplication.Services
                 }
                 catch (Exception e)
                 {
-                    Package.Logger.Error($"MembershipService => CreateMembershipFromPromoCode => ValidateSwitch Failed => {e.GetFullErrorMessage()}");
+                    My.Logger.Error($"MembershipService => CreateMembershipFromPromoCode => ValidateSwitch Failed => {e.GetFullErrorMessage()}");
                     throw;
                 }
             }
@@ -273,7 +273,7 @@ namespace K9.WebApplication.Services
 
                 if (membershipOption == null)
                 {
-                    Package.Logger.Error(
+                    My.Logger.Error(
                         $"MembershipService => CreateMembership => No MembershipOption with id {membershipOptionId} was found.");
                     throw new IndexOutOfRangeException("Invalid MembershipOptionId");
                 }
@@ -290,7 +290,7 @@ namespace K9.WebApplication.Services
                 TerminateExistingMemberships(userMembership.UserId);
 
                 _userMembershipRepository.Create(userMembership);
-                userMembership.User = Package.UsersRepository.Find(Current.UserId);
+                userMembership.User = My.UsersRepository.Find(Current.UserId);
 
                 if (membershipOption.SubscriptionType >= MembershipOption.ESubscriptionType.AnnualPlatinum)
                 {
@@ -299,7 +299,7 @@ namespace K9.WebApplication.Services
             }
             catch (Exception ex)
             {
-                Package.Logger.Error($"MembershipService => CreateMembership => Purchase failed: {ex.GetFullErrorMessage()}");
+                My.Logger.Error($"MembershipService => CreateMembership => Purchase failed: {ex.GetFullErrorMessage()}");
                 SendEmailToNineStarAboutFailure(customerName, customerEmailAddress, ex.GetFullErrorMessage());
                 throw;
             }
@@ -316,7 +316,7 @@ namespace K9.WebApplication.Services
             }
             catch (Exception e)
             {
-                Package.Logger.Error($"MembershipService => ProcessPurchase => Get contact record failed failed for user: {user.Id} {e.GetFullErrorMessage()}");
+                My.Logger.Error($"MembershipService => ProcessPurchase => Get contact record failed failed for user: {user.Id} {e.GetFullErrorMessage()}");
                 SendEmailToNineStarAboutFailure(customerName, customerEmailAddress, e.GetFullErrorMessage());
             }
 
@@ -328,7 +328,7 @@ namespace K9.WebApplication.Services
             }
             catch (Exception e)
             {
-                Package.Logger.Error($"MembershipService => ProcessPurchase => Send Emails failed: {e.GetFullErrorMessage()}");
+                My.Logger.Error($"MembershipService => ProcessPurchase => Send Emails failed: {e.GetFullErrorMessage()}");
             }
         }
 
@@ -362,7 +362,7 @@ namespace K9.WebApplication.Services
                 var membershipOption = _membershipOptionRepository.Find(membershipOptionId);
                 if (membershipOption == null)
                 {
-                    Package.Logger.Error($"MembershipService => AssignMembershipToUser => No MembershipOption with id {membershipOptionId} was found.");
+                    My.Logger.Error($"MembershipService => AssignMembershipToUser => No MembershipOption with id {membershipOptionId} was found.");
                     throw new IndexOutOfRangeException("Invalid MembershipOptionId");
                 }
 
@@ -378,11 +378,11 @@ namespace K9.WebApplication.Services
                 TerminateExistingMemberships(userId);
 
                 _userMembershipRepository.Create(userMembership);
-                userMembership.User = Package.UsersRepository.Find(userId);
+                userMembership.User = My.UsersRepository.Find(userId);
             }
             catch (Exception ex)
             {
-                Package.Logger.Error($"MembershipService => AssignMembershipToUser => Assign Membership failed: {ex.GetFullErrorMessage()}");
+                My.Logger.Error($"MembershipService => AssignMembershipToUser => Assign Membership failed: {ex.GetFullErrorMessage()}");
                 throw;
             }
         }
@@ -395,13 +395,13 @@ namespace K9.WebApplication.Services
 
                 if (membershipOption == null)
                 {
-                    Package.Logger.Error($"MembershipService => CreateFreeMembership => MembershipOption with Subscription Type {MembershipOption.ESubscriptionType.Free} was not found.");
+                    My.Logger.Error($"MembershipService => CreateFreeMembership => MembershipOption with Subscription Type {MembershipOption.ESubscriptionType.Free} was not found.");
                     return;
                 }
 
                 if (_userService.Find(userId) == null)
                 {
-                    Package.Logger.Error($"MembershipService => CreateFreeMembership => UserId {userId} was not found.");
+                    My.Logger.Error($"MembershipService => CreateFreeMembership => UserId {userId} was not found.");
                     return;
                 }
 
@@ -416,14 +416,14 @@ namespace K9.WebApplication.Services
             }
             catch (Exception ex)
             {
-                Package.Logger.Error($"MembershipService => CreateFreeMembership => failed: {ex.GetFullErrorMessage()}");
+                My.Logger.Error($"MembershipService => CreateFreeMembership => failed: {ex.GetFullErrorMessage()}");
                 throw;
             }
         }
 
         public void CreateComplementaryUserConsultation(int userId, EConsultationDuration duration = EConsultationDuration.OneHour)
         {
-            var user = Package.UsersRepository.Find(userId);
+            var user = My.UsersRepository.Find(userId);
             var contact = _contactService.Find(user.EmailAddress);
 
             if (contact == null)
@@ -445,7 +445,7 @@ namespace K9.WebApplication.Services
             }
             catch (Exception e)
             {
-                Package.Logger.Error($"MembershipService => CreateComplementaryUserConsultation => Error creating consultation => {e.GetFullErrorMessage()}");
+                My.Logger.Error($"MembershipService => CreateComplementaryUserConsultation => Error creating consultation => {e.GetFullErrorMessage()}");
             }
         }
 
@@ -455,7 +455,7 @@ namespace K9.WebApplication.Services
             var activeUserMemberships = userMemberships.Where(e => e.IsActive).ToList();
             if (!activeUserMemberships.Any())
             {
-                Package.Logger.Error($"MembershipService => TerminateExistingMemberships => No active memberships");
+                My.Logger.Error($"MembershipService => TerminateExistingMemberships => No active memberships");
                 return;
             }
             foreach (var userMembership in activeUserMemberships)
@@ -470,18 +470,18 @@ namespace K9.WebApplication.Services
         {
             var template = Dictionary.MembershipCreatedEmail;
             var title = "We have received a new subscription!";
-            Package.Mailer.SendEmail(title, TemplateParser.Parse(template, new
+            My.Mailer.SendEmail(title, TemplateParser.Parse(template, new
             {
                 Title = title,
                 Customer = customerName,
                 CustomerEmail = customerEmailAddress,
                 SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal,
                 TotalPrice = userMembership.MembershipOption.FormattedPrice,
-                LinkToSummary = Package.UrlHelper.AbsoluteAction("Index", "UserMemberships"),
-                Company = Package.WebsiteConfiguration.CompanyName,
-                ImageUrl = Package.UrlHelper.AbsoluteContent(Package.WebsiteConfiguration.CompanyLogoUrl),
+                LinkToSummary = My.UrlHelper.AbsoluteAction("Index", "UserMemberships"),
+                Company = My.WebsiteConfiguration.CompanyName,
+                ImageUrl = My.UrlHelper.AbsoluteContent(My.WebsiteConfiguration.CompanyLogoUrl),
                 FailedText = ""
-            }), Package.WebsiteConfiguration.SupportEmailAddress, Package.WebsiteConfiguration.CompanyName, Package.WebsiteConfiguration.SupportEmailAddress, Package.WebsiteConfiguration.CompanyName);
+            }), My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName, My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName);
         }
 
         private void SendEmailToUser(UserMembership userMembership)
@@ -493,7 +493,7 @@ namespace K9.WebApplication.Services
                 SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal
             });
 
-            Package.Mailer.SendEmail(title, TemplateParser.Parse(template, new
+            My.Mailer.SendEmail(title, TemplateParser.Parse(template, new
             {
                 Title = title,
                 CustomerName = user.FirstName,
@@ -502,28 +502,28 @@ namespace K9.WebApplication.Services
                 EndsOn = userMembership.EndsOn.ToLongDateString(),
                 userMembership.MembershipOption.NumberOfProfileReadings,
                 userMembership.MembershipOption.NumberOfCompatibilityReadings,
-                ImageUrl = Package.UrlHelper.AbsoluteContent(Package.WebsiteConfiguration.CompanyLogoUrl),
-                PrivacyPolicyLink = Package.UrlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                TermsOfServiceLink = Package.UrlHelper.AbsoluteAction("TermsOfService", "Home"),
-                UnsubscribeLink = Package.UrlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }),
+                ImageUrl = My.UrlHelper.AbsoluteContent(My.WebsiteConfiguration.CompanyLogoUrl),
+                PrivacyPolicyLink = My.UrlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
+                TermsOfServiceLink = My.UrlHelper.AbsoluteAction("TermsOfService", "Home"),
+                UnsubscribeLink = My.UrlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }),
                 DateTime.Now.Year
-            }), user.EmailAddress, user.FirstName, Package.WebsiteConfiguration.SupportEmailAddress,
-                Package.WebsiteConfiguration.CompanyName);
+            }), user.EmailAddress, user.FirstName, My.WebsiteConfiguration.SupportEmailAddress,
+                My.WebsiteConfiguration.CompanyName);
         }
 
         private void SendEmailToNineStarAboutFailure(string customerName, string customerEmailAddress, string errorMessage)
         {
             var template = Dictionary.PaymentError;
             var title = "A customer made a successful payment, but an error occurred.";
-            Package.Mailer.SendEmail(title, TemplateParser.Parse(template, new
+            My.Mailer.SendEmail(title, TemplateParser.Parse(template, new
             {
                 Title = title,
                 Customer = customerName,
                 CustomerEmail = customerEmailAddress,
                 ErrorMessage = errorMessage,
-                Company = Package.WebsiteConfiguration.CompanyName,
-                ImageUrl = Package.UrlHelper.AbsoluteContent(Package.WebsiteConfiguration.CompanyLogoUrl)
-            }), Package.WebsiteConfiguration.SupportEmailAddress, Package.WebsiteConfiguration.CompanyName, Package.WebsiteConfiguration.SupportEmailAddress, Package.WebsiteConfiguration.CompanyName);
+                Company = My.WebsiteConfiguration.CompanyName,
+                ImageUrl = My.UrlHelper.AbsoluteContent(My.WebsiteConfiguration.CompanyLogoUrl)
+            }), My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName, My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName);
         }
 
     }

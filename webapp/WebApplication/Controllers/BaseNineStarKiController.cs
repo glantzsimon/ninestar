@@ -27,7 +27,7 @@ namespace K9.WebApplication.Controllers
             : base(nineStarKiPackage.Logger, nineStarKiPackage.DataSetsHelper,
                 nineStarKiPackage.Roles, nineStarKiPackage.Authentication, nineStarKiPackage.FileSourceHelper)
         {
-            Package = nineStarKiPackage;
+            My = nineStarKiPackage;
             UrlHelper = new UrlHelper(System.Web.HttpContext.Current.Request.RequestContext);
             SetBetaWarningSessionVariable();
             SetSessionRoles(Current.UserId);
@@ -40,7 +40,7 @@ namespace K9.WebApplication.Controllers
             ViewBag.DeviceType = GetDeviceType();
         }
 
-        public INineStarKiPackage Package { get; }
+        public INineStarKiPackage My { get; }
 
         public UrlHelper UrlHelper { get; }
 
@@ -55,7 +55,7 @@ namespace K9.WebApplication.Controllers
         {
             if (Authentication.IsAuthenticated)
             {
-                return Package.MembershipService.GetActiveUserMembership(Authentication.CurrentUserId);
+                return My.MembershipService.GetActiveUserMembership(Authentication.CurrentUserId);
             }
 
             return null;
@@ -112,7 +112,7 @@ namespace K9.WebApplication.Controllers
 
         public void SetSessionRoles(int userId)
         {
-            Helpers.SessionHelper.SetCurrentUserRoles(Package.RolesRepository, Package.UserRolesRepository, userId);
+            Helpers.SessionHelper.SetCurrentUserRoles(My.RolesRepository, My.UserRolesRepository, userId);
         }
 
         public override string GetObjectName()
@@ -140,7 +140,7 @@ namespace K9.WebApplication.Controllers
         public BaseNineStarKiController(IControllerPackage<T> controllerPackage, INineStarKiPackage nineStarPackage)
             : base(controllerPackage)
         {
-            Package = nineStarPackage;
+            My = nineStarPackage;
             UrlHelper = new UrlHelper(System.Web.HttpContext.Current.Request.RequestContext);
 
             SetSessionRoles(Current.UserId);
@@ -150,13 +150,13 @@ namespace K9.WebApplication.Controllers
             RecordBeforeUpdate += BaseNineStarKiController_RecordBeforeUpdate;
         }
 
-        public INineStarKiPackage Package { get; }
+        public INineStarKiPackage My { get; }
 
         public UrlHelper UrlHelper { get; }
 
         public void SetSessionRoles(int userId)
         {
-            Helpers.SessionHelper.SetCurrentUserRoles(Package.RolesRepository, Package.UserRolesRepository, userId);
+            Helpers.SessionHelper.SetCurrentUserRoles(My.RolesRepository, My.UserRolesRepository, userId);
         }
 
         private void BaseNineStarKiController_RecordBeforeUpdated(object sender, CrudEventArgs e)

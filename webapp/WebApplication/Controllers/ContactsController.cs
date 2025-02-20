@@ -21,9 +21,9 @@ namespace K9.WebApplication.Controllers
         private readonly IRepository<Donation> _donationRepository;
         private readonly IMailChimpService _mailChimpService;
         
-        public ContactsController(IControllerPackage<Contact> controllerPackage, INineStarKiControllerPackage nineStarKiControllerPackage,
+        public ContactsController(IControllerPackage<Contact> controllerPackage, INineStarKiPackage nineStarKiPackage,
             IRepository<Donation> donationRepository, IMailChimpService mailChimpService) 
-            : base(controllerPackage, nineStarKiControllerPackage)
+            : base(controllerPackage, nineStarKiPackage)
         {
             _donationRepository = donationRepository;
             _mailChimpService = mailChimpService;

@@ -2,7 +2,7 @@
 
 namespace K9.WebApplication.Services
 {
-    public interface IIChingService
+    public interface IIChingService : IBaseService
     {
         Hexagram GenerateHexagram();
     }

@@ -1,4 +1,5 @@
-﻿using K9.Base.DataAccessLayer.Models;
+﻿using System.Web.Mvc;
+using K9.Base.DataAccessLayer.Models;
 using K9.Base.WebApplication.Config;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Helpers;
@@ -9,9 +10,9 @@ using NLog;
 
 namespace K9.WebApplication.Packages
 {
-    public class NineStarKiControllerPackage : INineStarKiControllerPackage
+    public class NineStarKiPackage : INineStarKiPackage
     {
-        public NineStarKiControllerPackage(ILogger logger, IDataSetsHelper datasetsHelper, IRoles roles, IFileSourceHelper fileSourceHelper, IAuthentication authentication, IMailer mailer, IMembershipService membershipService, IAccountService accountService, IUserService userService,
+        public NineStarKiPackage(ILogger logger, IDataSetsHelper datasetsHelper, IRoles roles, IFileSourceHelper fileSourceHelper, IAuthentication authentication, IMailer mailer, IMembershipService membershipService, IAccountService accountService, IUserService userService,
            IContactService contactService, IRepository<User> usersRepository, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, IRepository<Contact> contactsRepository, IOptions<DefaultValuesConfiguration> defaultValuesConfiguration, IOptions<SmtpConfiguration> smtpConfiguration,
             IOptions<ApiConfiguration> apiConfiguration, IOptions<WebsiteConfiguration> websiteConfiguration, IOptions<GoogleConfiguration> googleConfiguration)
         {
@@ -36,6 +37,8 @@ namespace K9.WebApplication.Packages
             ApiConfiguration = apiConfiguration.Value;
             WebsiteConfiguration = websiteConfiguration.Value;
             GoogleConfiguration = googleConfiguration.Value;
+
+            UrlHelper = new UrlHelper(System.Web.HttpContext.Current.Request.RequestContext);
         }
 
         public ILogger Logger { get; set; }
@@ -44,6 +47,7 @@ namespace K9.WebApplication.Packages
         public IFileSourceHelper FileSourceHelper { get; set; }
         public IAuthentication Authentication { get; set; }
         public IMailer Mailer { get; set; }
+        public UrlHelper UrlHelper { get; set; }
 
         public IMembershipService MembershipService { get; set; }
         public IAccountService AccountService { get; set; }

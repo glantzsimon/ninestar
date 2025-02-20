@@ -1,5 +1,6 @@
 ﻿using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Packages;
 using MailChimp.Net;
 using MailChimp.Net.Models;
 using System;
@@ -11,11 +12,14 @@ namespace K9.WebApplication.Services
 {
     public class MailChimpService : IMailChimpService
     {
+        public INineStarKiPackage Package { get; }
+
         private readonly IContactService _contactService;
         private readonly MailChimpConfiguration _mailChimpConfig;
 
-        public MailChimpService(IOptions<MailChimpConfiguration> mailChimpConfig, IContactService contactService)
+        public MailChimpService(INineStarKiPackage packge, IOptions<MailChimpConfiguration> mailChimpConfig, IContactService contactService)
         {
+            Package = packge;
             _contactService = contactService;
             _mailChimpConfig = mailChimpConfig.Value;
         }

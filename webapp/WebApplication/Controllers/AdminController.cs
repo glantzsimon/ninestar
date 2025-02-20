@@ -15,8 +15,8 @@ namespace K9.WebApplication.Controllers
     [RequirePermissions(Role = RoleNames.Administrators)]
     public class AdminController : BaseNineStarKiController
     {
-        public AdminController(INineStarKiControllerPackage nineStarKiControllerPackage)
-            : base(nineStarKiControllerPackage)
+        public AdminController(INineStarKiPackage nineStarKiPackage)
+            : base(nineStarKiPackage)
         {
         }
 

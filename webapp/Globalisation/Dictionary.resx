@@ -211,9 +211,6 @@
   <data name="MakeDonation" xml:space="preserve">
     <value>Make a Donation</value>
   </data>
-  <data name="DonationReceivedEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>templates\en-gb\donationreceivedemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="Black" xml:space="preserve">
     <value>Black</value>
   </data>
@@ -1101,9 +1098,6 @@
   </data>
   <data name="AutoRenewLabel" xml:space="preserve">
     <value>Auto Renewal</value>
-  </data>
-  <data name="DonationThankYouEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>templates\en-gb\donationthankyouemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="EndsOnLabel" xml:space="preserve">
     <value>Ends On</value>
@@ -3912,6 +3906,12 @@
   </data>
   <data name="BaseEmailTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>emailtemplates\en-gb\baseemailtemplate.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="DonationReceivedEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\en-gb\toninestar\donationreceivedemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="DonationThankYouEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\en-gb\tocustomer\donationthankyouemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="SupportQueryReceived1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>emailtemplates\en-gb\toninestar\supportqueryreceived.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

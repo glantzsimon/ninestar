@@ -11,8 +11,8 @@ namespace K9.WebApplication.Controllers
     {
         private readonly INineStarKiService _nineStarKiService;
 
-        public CompatibilityController(INineStarKiControllerPackage nineStarKiControllerPackage, INineStarKiService nineStarKiService)
-            : base(nineStarKiControllerPackage)
+        public CompatibilityController(INineStarKiPackage nineStarKiPackage, INineStarKiService nineStarKiService)
+            : base(nineStarKiPackage)
         {
             _nineStarKiService = nineStarKiService;
         }

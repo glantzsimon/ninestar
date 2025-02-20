@@ -5,8 +5,8 @@ namespace K9.WebApplication.Controllers
 {
     public class ErrorController : BaseNineStarKiController
 	{
-	    public ErrorController(INineStarKiControllerPackage nineStarKiControllerPackage)
-	        : base(nineStarKiControllerPackage)
+	    public ErrorController(INineStarKiPackage nineStarKiPackage)
+	        : base(nineStarKiPackage)
 	    {
 	    }
 

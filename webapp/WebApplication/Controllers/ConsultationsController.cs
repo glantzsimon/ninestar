@@ -11,8 +11,8 @@ namespace K9.WebApplication.Controllers
     [RequirePermissions(Role = RoleNames.Administrators)]
     public class ConsultationsController : BaseNineStarKiController<Consultation>
     {
-        public ConsultationsController(IControllerPackage<Consultation> controllerPackage, INineStarKiControllerPackage nineStarKiControllerPackage)
-            : base(controllerPackage, nineStarKiControllerPackage)
+        public ConsultationsController(IControllerPackage<Consultation> controllerPackage, INineStarKiPackage nineStarKiPackage)
+            : base(controllerPackage, nineStarKiPackage)
         {
             RecordBeforeDetails += ConsultationsController_RecordBeforeDetails;
         }

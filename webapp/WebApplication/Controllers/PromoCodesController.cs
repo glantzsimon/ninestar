@@ -14,8 +14,8 @@ namespace K9.WebApplication.Controllers
     {
         private readonly IRepository<MembershipOption> _membershipOptionsRepository;
 
-        public PromoCodesController(IControllerPackage<PromoCode> controllerPackage, INineStarKiControllerPackage nineStarKiControllerPackage, IRepository<MembershipOption> membershipOptionsRepository)
-            : base(controllerPackage, nineStarKiControllerPackage)
+        public PromoCodesController(IControllerPackage<PromoCode> controllerPackage, INineStarKiPackage nineStarKiPackage, IRepository<MembershipOption> membershipOptionsRepository)
+            : base(controllerPackage, nineStarKiPackage)
         {
             _membershipOptionsRepository = membershipOptionsRepository;
         }

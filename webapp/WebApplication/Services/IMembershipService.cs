@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace K9.WebApplication.Services
 {
-    public interface IMembershipService
+    public interface IMembershipService : IBaseService
     {
         UserMembershipViewModel GetMembershipViewModel(int? userId = null);
         MembershipModel GetSwitchMembershipModel(int membershipOptionId, int? userId = null);

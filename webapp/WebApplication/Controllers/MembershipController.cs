@@ -15,8 +15,8 @@ namespace K9.WebApplication.Controllers
     {
         private readonly IPromoCodeService _promoCodeService;
 
-        public MembershipController(INineStarKiControllerPackage nineStarKiControllerPackage, IPromoCodeService promoCodeService)
-            : base(nineStarKiControllerPackage)
+        public MembershipController(INineStarKiPackage nineStarKiPackage, IPromoCodeService promoCodeService)
+            : base(nineStarKiPackage)
         {
             _promoCodeService = promoCodeService;
         }

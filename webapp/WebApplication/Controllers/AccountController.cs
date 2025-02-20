@@ -37,8 +37,8 @@ namespace K9.WebApplication.Controllers
         private readonly IPromoCodeService _promoCodeService;
         private readonly RecaptchaConfiguration _recaptchaConfig;
 
-        public AccountController(INineStarKiControllerPackage nineStarKiControllerPackage, IFacebookService facebookService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<MembershipOption> membershipOptionsRepository, IPromoCodeService promoCodeService)
-            : base(nineStarKiControllerPackage)
+        public AccountController(INineStarKiPackage nineStarKiPackage, IFacebookService facebookService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<MembershipOption> membershipOptionsRepository, IPromoCodeService promoCodeService)
+            : base(nineStarKiPackage)
         {
             _facebookService = facebookService;
             _promoCodesRepository = promoCodesRepository;

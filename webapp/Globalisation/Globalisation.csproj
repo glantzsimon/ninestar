@@ -572,8 +572,7 @@
     <Content Include="Templates\en-gb\NewCreditPackThankYouEmail.htm" />
     <Content Include="Templates\en-gb\NewMembershipThankYouEmail.htm" />
     <Content Include="Templates\en-gb\MembershipCreatedEmail.htm" />
-    <Content Include="Templates\en-gb\DonationThankYouEmail.htm" />
-    <Content Include="Templates\en-gb\DonationReceivedEmail.htm" />
+    <Content Include="EmailTemplates\en-gb\ToCustomer\DonationThankYouEmail.htm" />
     <Content Include="Templates\en-gb\PasswordResetEmail.htm" />
     <Content Include="Templates\en-gb\WelcomeEmail.htm" />
     <Content Include="Articles\en-gb\CompatibilityMetaDescription.htm" />

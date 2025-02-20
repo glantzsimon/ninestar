@@ -12,8 +12,8 @@ namespace K9.WebApplication.Controllers
 	[RequirePermissions(Role = RoleNames.Administrators)]
 	public class RolePermissionsController : BaseNineStarKiController<RolePermission>
 	{
-		public RolePermissionsController(IControllerPackage<RolePermission> controllerPackage, INineStarKiControllerPackage nineStarKiControllerPackage)
-			: base(controllerPackage, nineStarKiControllerPackage)
+		public RolePermissionsController(IControllerPackage<RolePermission> controllerPackage, INineStarKiPackage nineStarKiPackage)
+			: base(controllerPackage, nineStarKiPackage)
 		{
 		}
 

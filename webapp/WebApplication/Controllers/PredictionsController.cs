@@ -12,8 +12,8 @@ namespace K9.WebApplication.Controllers
     {
         private readonly INineStarKiService _nineStarKiService;
 
-        public PredictionsController(INineStarKiControllerPackage nineStarKiControllerPackage, INineStarKiService nineStarKiService)
-            : base(nineStarKiControllerPackage)
+        public PredictionsController(INineStarKiPackage nineStarKiPackage, INineStarKiService nineStarKiService)
+            : base(nineStarKiPackage)
         {
             _nineStarKiService = nineStarKiService;
         }

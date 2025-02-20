@@ -17,8 +17,8 @@ namespace K9.WebApplication.Controllers
         private readonly IRepository<MembershipOption> _membershipOptionsRepository;
         private readonly IRepository<UserMembership> _userMembershipsRepository;
 
-        public MailingListsController (IControllerPackage<MailingList> controllerPackage, INineStarKiControllerPackage nineStarKiControllerPackage, IRepository<MembershipOption> membershipOptionsRepository, IRepository<UserMembership> userMembershipsRepository)
-            : base(controllerPackage, nineStarKiControllerPackage)
+        public MailingListsController (IControllerPackage<MailingList> controllerPackage, INineStarKiPackage nineStarKiPackage, IRepository<MembershipOption> membershipOptionsRepository, IRepository<UserMembership> userMembershipsRepository)
+            : base(controllerPackage, nineStarKiPackage)
         {
             _membershipOptionsRepository = membershipOptionsRepository;
             _userMembershipsRepository = userMembershipsRepository;

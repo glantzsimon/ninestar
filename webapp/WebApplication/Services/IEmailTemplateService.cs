@@ -3,7 +3,7 @@ using K9.DataAccessLayer.Models;
 
 namespace K9.WebApplication.Services
 {
-    public interface IEmailTemplateService
+    public interface IEmailTemplateService : IBaseService
     {
         EmailTemplate Find(int id);
         string ParseForUser(int emailTemplateId, string title, User user, object data);

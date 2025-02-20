@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace K9.WebApplication.Services
 {
-    public interface IConsultationService
+    public interface IConsultationService : IBaseService
     {
         int CreateConsultation(Consultation consultation, Contact contact, int? userId = null, bool isComplementary = false);
         Consultation Find(int id);

@@ -24,8 +24,8 @@ namespace K9.WebApplication.Controllers
         private readonly IOptions<DatabaseConfiguration> _dataConfig;
         private readonly IPromoCodeService _promoCodeService;
 
-        public UsersController(IControllerPackage<User> controllerPackage, INineStarKiControllerPackage nineStarKiControllerPackage, IOptions<DatabaseConfiguration> dataConfig, IPromoCodeService promoCodeService)
-            : base(controllerPackage, nineStarKiControllerPackage)
+        public UsersController(IControllerPackage<User> controllerPackage, INineStarKiPackage nineStarKiPackage, IOptions<DatabaseConfiguration> dataConfig, IPromoCodeService promoCodeService)
+            : base(controllerPackage, nineStarKiPackage)
         {
             _dataConfig = dataConfig;
             _promoCodeService = promoCodeService;

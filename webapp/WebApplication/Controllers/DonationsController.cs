@@ -9,8 +9,8 @@ namespace K9.WebApplication.Controllers
     public class DonationsController : BaseNineStarKiController<Donation>
     {
 
-        public DonationsController(IControllerPackage<Donation> controllerPackage, INineStarKiControllerPackage nineStarKiControllerPackage)
-            : base(controllerPackage, nineStarKiControllerPackage)
+        public DonationsController(IControllerPackage<Donation> controllerPackage, INineStarKiPackage nineStarKiPackage)
+            : base(controllerPackage, nineStarKiPackage)
         {
         }
 

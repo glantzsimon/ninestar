@@ -6,11 +6,14 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using K9.WebApplication.Packages;
 
 namespace K9.WebApplication.Services
 {
     public class ContactService : IContactService
     {
+        public INineStarKiPackage Package { get; }
+
         private readonly IRepository<Contact> _contactsRepository;
         private readonly ILogger _logger;
         private readonly IRepository<User> _usersRepository;

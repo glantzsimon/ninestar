@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace K9.WebApplication.Services
 {
-    public interface IContactService
+    public interface IContactService : IBaseService
     {
         Contact GetOrCreateContact(string stripeCustomerId, string fullName, string emailAddress,
             string phoneNumber = "", int? userId = null); 

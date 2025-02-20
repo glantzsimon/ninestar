@@ -4,11 +4,11 @@ using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Packages;
 using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace K9.WebApplication.Services
@@ -16,18 +16,20 @@ namespace K9.WebApplication.Services
     public class DonationService : IDonationService
     {
         private readonly IRepository<Donation> _donationRepository;
+        private readonly IEmailTemplateService _emailTemplateService;
+        private readonly INineStarKiPackage _nineStarKiPackage;
         private readonly ILogger _logger;
         private readonly IMailer _mailer;
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public DonationService(IRepository<Donation> donationRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> config)
+        public INineStarKiPackage Package { get; }
+
+        public DonationService(IRepository<Donation> donationRepository, INineStarKiPackage nineStarKiPackage, IEmailTemplateService emailTemplateService)
         {
             _donationRepository = donationRepository;
-            _logger = logger;
-            _mailer = mailer;
-            _config = config.Value;
-            _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
+            _emailTemplateService = emailTemplateService;
+            Package = nineStarKiPackage;
         }
 
         public void CreateDonation(Donation donation, Contact contact)
@@ -35,11 +37,8 @@ namespace K9.WebApplication.Services
             try
             {
                 _donationRepository.Create(donation);
-                SendEmailToNineStar(donation);
-                if (contact != null)
-                {
-                    SendEmailToCustomer(donation, contact);
-                }
+                SendEmailToNineStar(donation, contact);
+                SendEmailToCustomer(donation, contact);
             }
             catch (Exception ex)
             {
@@ -57,40 +56,64 @@ namespace K9.WebApplication.Services
             return _donationRepository.List();
         }
 
-        private void SendEmailToNineStar(Donation donation)
+        private void SendEmailToNineStar(Donation donation, Contact contact)
         {
-            var template = Dictionary.DonationReceivedEmail;
-            var title = "We have received a donation!";
-            _mailer.SendEmail(title, TemplateParser.Parse(template, new
+            var subject = "We have received a donation";
+            var body = _emailTemplateService.ParseForContact(
+                subject,
+                Dictionary.DonationReceivedEmail,
+                contact,
+                new
+                {
+                    Customer = contact.Name,
+                    CustomerEmail = contact.EmailAddress,
+                    Amount = donation.DonationAmount,
+                    donation.Currency,
+                    LinkToSummary = _urlHelper.AbsoluteAction("Index", "Donations"),
+                });
+
+            try
             {
-                Title = title,
-                donation.Customer,
-                donation.CustomerEmail,
-                Amount = donation.DonationAmount,
-                donation.Currency,
-                LinkToSummary = _urlHelper.AbsoluteAction("Index", "Donations"),
-                Company = _config.CompanyName,
-                ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl)
-            }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
+                Package.Mailer.SendEmail(
+                    subject,
+                    body,
+                    Package.WebsiteConfiguration.SupportEmailAddress,
+                    Package.WebsiteConfiguration.CompanyName);
+            }
+            catch (Exception ex)
+            {
+                Package.Logger.Error(ex.GetFullErrorMessage());
+            }
         }
 
         private void SendEmailToCustomer(Donation donation, Contact contact)
         {
-            var template = Dictionary.DonationThankYouEmail;
-            var title = Dictionary.ThankyouForDonationEmailTitle;
-            _mailer.SendEmail(title, TemplateParser.Parse(template, new
+            var subject = Dictionary.ThankyouForDonationEmailTitle;
+            var body = _emailTemplateService.ParseForContact(
+                subject,
+                Dictionary.DonationThankYouEmail,
+                contact,
+                new
+                {
+                    Customer = contact.Name,
+                    CustomerName = contact.FirstName,
+                    donation.CustomerEmail,
+                    Amount = donation.DonationAmount,
+                    donation.Currency,
+                });
+
+            try
             {
-                Title = title,
-                CustomerName = contact.FirstName,
-                donation.CustomerEmail,
-                Amount = donation.DonationAmount,
-                donation.Currency,
-                ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
-                PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                TermsOfServiceLink = _urlHelper.AbsoluteAction("TermsOfService", "Home"),
-                UnsubscribeLink = _urlHelper.AbsoluteAction("UnsubscribeContact", "Account", new { externalId = contact?.Name }),
-                DateTime.Now.Year
-            }), donation.CustomerEmail, donation.Customer, _config.SupportEmailAddress, _config.CompanyName);
+                Package.Mailer.SendEmail(
+                    subject,
+                    body,
+                    Package.WebsiteConfiguration.SupportEmailAddress,
+                    Package.WebsiteConfiguration.CompanyName);
+            }
+            catch (Exception ex)
+            {
+                Package.Logger.Error(ex.GetFullErrorMessage());
+            }
         }
     }
 }

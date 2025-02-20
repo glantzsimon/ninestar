@@ -10,8 +10,8 @@ namespace K9.WebApplication.Controllers
     {
         private readonly IIChingService _ichingService;
 
-        public IChingController(INineStarKiControllerPackage nineStarKiControllerPackage, IIChingService ichingService)
-            : base(nineStarKiControllerPackage)
+        public IChingController(INineStarKiPackage nineStarKiPackage, IIChingService ichingService)
+            : base(nineStarKiPackage)
         {
             _ichingService = ichingService;
         }

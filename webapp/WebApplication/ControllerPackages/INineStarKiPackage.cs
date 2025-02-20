@@ -1,4 +1,5 @@
-﻿using K9.Base.DataAccessLayer.Models;
+﻿using System.Web.Mvc;
+using K9.Base.DataAccessLayer.Models;
 using K9.Base.WebApplication.Config;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Helpers;
@@ -9,7 +10,7 @@ using NLog;
 
 namespace K9.WebApplication.Packages
 {
-    public interface INineStarKiControllerPackage
+    public interface INineStarKiPackage
     {
         ILogger Logger { get; set; }
         IDataSetsHelper DataSetsHelper { get; set; }
@@ -17,6 +18,7 @@ namespace K9.WebApplication.Packages
         IFileSourceHelper FileSourceHelper { get; set; }
         IAuthentication Authentication { get; set; }
         IMailer Mailer { get; set; }
+        UrlHelper UrlHelper { get; set; }
 
         IMembershipService MembershipService { get; set; }
         IAccountService AccountService { get; set; }

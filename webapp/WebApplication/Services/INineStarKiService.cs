@@ -5,7 +5,7 @@ using System;
 
 namespace K9.WebApplication.Services
 {
-    public interface INineStarKiService
+    public interface INineStarKiService : IBaseService
     {
         NineStarKiModel CalculateNineStarKiProfile(DateTime dateOfBirth, EGender gender = EGender.Male);
         NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, bool isCompatibility = false, bool isMyProfile = false,  DateTime? today = null);

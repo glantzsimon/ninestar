@@ -9,8 +9,8 @@ namespace K9.WebApplication.Controllers
     public class EmailTemplatesController : BaseNineStarKiController<EmailTemplate>
     {
 
-        public EmailTemplatesController(IControllerPackage<EmailTemplate> controllerPackage, INineStarKiControllerPackage nineStarKiControllerPackage)
-            : base(controllerPackage, nineStarKiControllerPackage)
+        public EmailTemplatesController(IControllerPackage<EmailTemplate> controllerPackage, INineStarKiPackage nineStarKiPackage)
+            : base(controllerPackage, nineStarKiPackage)
         {
         }
 

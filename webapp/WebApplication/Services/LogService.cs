@@ -5,17 +5,25 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
+using K9.WebApplication.Packages;
 
 namespace K9.WebApplication.Services
 {
     public class LogService : ILogService
     {
+        public INineStarKiPackage Package { get; }
+
         private const string withResultsAs = "WITH RESULTS AS";
         private const string dataTablesDef = "&draw=";
         private const string dataTablesDef2 = "\"draw\":";
         private const string cleanUpText1 = "K9.WebApplication.Startup+<>c";
         private const string cleanUpText2 = "K9.WebApplication.Startup";
         private const string separator = "=>";
+
+        public LogService(INineStarKiPackage package)
+        {
+            Package = package;
+        }
 
         public List<LogItem> GetLogItems()
         {

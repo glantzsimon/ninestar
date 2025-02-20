@@ -11,8 +11,8 @@ namespace K9.WebApplication.Controllers
     [RequirePermissions(Role = RoleNames.Administrators)]
     public class UserPromoCodesController : BaseNineStarKiController<UserPromoCode>
     {
-        public UserPromoCodesController(IControllerPackage<UserPromoCode> controllerPackage, INineStarKiControllerPackage nineStarKiControllerPackage)
-            : base(controllerPackage, nineStarKiControllerPackage)
+        public UserPromoCodesController(IControllerPackage<UserPromoCode> controllerPackage, INineStarKiPackage nineStarKiPackage)
+            : base(controllerPackage, nineStarKiPackage)
         {
         }
     }

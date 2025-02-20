@@ -24,8 +24,8 @@ namespace K9.WebApplication.Controllers
         private readonly IConsultationService _consultationService;
         private readonly IRepository<Slot> _slotsRepository;
 
-        public ConsultationController(INineStarKiControllerPackage nineStarKiControllerPackage, IConsultationService consultationService, IRepository<Slot> slotsRepository)
-            : base(nineStarKiControllerPackage)
+        public ConsultationController(INineStarKiPackage nineStarKiPackage, IConsultationService consultationService, IRepository<Slot> slotsRepository)
+            : base(nineStarKiPackage)
         {
             _consultationService = consultationService;
             _slotsRepository = slotsRepository;

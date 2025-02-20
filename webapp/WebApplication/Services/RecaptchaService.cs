@@ -1,15 +1,19 @@
 ﻿using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.Models;
+using K9.WebApplication.Packages;
 
 namespace K9.WebApplication.Services
 {
     public class RecaptchaService : IRecaptchaService
     {
+        public INineStarKiPackage Package { get; }
+
         private readonly RecaptchaConfiguration _config;
 
-        public RecaptchaService(IOptions<RecaptchaConfiguration> config)
+        public RecaptchaService(INineStarKiPackage packge, IOptions<RecaptchaConfiguration> config)
         {
+            Package = packge;
             _config = config.Value;
         }
         

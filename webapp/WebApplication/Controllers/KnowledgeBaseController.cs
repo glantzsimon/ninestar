@@ -9,8 +9,8 @@ namespace K9.WebApplication.Controllers
     {
         private readonly INineStarKiService _nineStarKiService;
 
-        public KnowledgeBaseController(INineStarKiControllerPackage nineStarKiControllerPackage, INineStarKiService nineStarKiService)
-            : base(nineStarKiControllerPackage)
+        public KnowledgeBaseController(INineStarKiPackage nineStarKiPackage, INineStarKiService nineStarKiService)
+            : base(nineStarKiPackage)
         {
             _nineStarKiService = nineStarKiService;
         }

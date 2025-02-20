@@ -11,8 +11,8 @@ namespace K9.WebApplication.Controllers
     [RequirePermissions(Role = RoleNames.Administrators)]
     public class MembershipOptionsController : BaseNineStarKiController<MembershipOption>
     {
-        public MembershipOptionsController(IControllerPackage<MembershipOption> controllerPackage, INineStarKiControllerPackage nineStarKiControllerPackage)
-            : base(controllerPackage, nineStarKiControllerPackage)
+        public MembershipOptionsController(IControllerPackage<MembershipOption> controllerPackage, INineStarKiPackage nineStarKiPackage)
+            : base(controllerPackage, nineStarKiPackage)
         {
         }
     }

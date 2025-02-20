@@ -8,8 +8,8 @@ namespace K9.WebApplication.Controllers
 {
     public class HomeController : BaseNineStarKiController
     {
-        public HomeController(INineStarKiControllerPackage nineStarKiControllerPackage)
-            : base(nineStarKiControllerPackage)
+        public HomeController(INineStarKiPackage nineStarKiPackage)
+            : base(nineStarKiPackage)
         {
         }
 

@@ -5,6 +5,7 @@ using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Packages;
 using K9.WebApplication.ViewModels;
 using NLog;
 using System;
@@ -17,6 +18,8 @@ namespace K9.WebApplication.Services
 {
     public class PromoCodeService : IPromoCodeService
     {
+        public INineStarKiPackage Package { get; }
+
         private readonly IRepository<User> _usersRepository;
         private readonly IRepository<PromoCode> _promoCodesRepository;
         private readonly IRepository<UserPromoCode> _userPromoCodeRepository;
@@ -30,22 +33,13 @@ namespace K9.WebApplication.Services
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public PromoCodeService(IRepository<User> usersRepository, IRepository<PromoCode> promoCodesRepository, IRepository<UserPromoCode> userPromoCodeRepository, IAuthentication authentication, IMailer mailer, IOptions<WebsiteConfiguration> config, IContactService contactService, IRepository<UserConsultation> userConsultationsRepository, IRepository<Consultation> consultationsRepository, ILogger logger, IConsultationService consultationService,
-            IRepository<UserRole> userRolesRepository, IRepository<Contact> contactsRepository, IRepository<UserMembership> userMembershipsRepository,
-            IRepository<UserOTP> userOtpRepository, IRepository<MembershipOption> membershipOptionsRepository)
+        public PromoCodeService(INineStarKiPackage package, IRepository<PromoCode> promoCodesRepository, IRepository<UserPromoCode> userPromoCodeRepository, IRepository<UserMembership> userMembershipsRepository, IRepository<UserOTP> userOtpRepository, IRepository<MembershipOption> membershipOptionsRepository)
         {
-            _usersRepository = usersRepository;
+            Package = package;
             _promoCodesRepository = promoCodesRepository;
             _userPromoCodeRepository = userPromoCodeRepository;
-            _authentication = authentication;
-            _mailer = mailer;
-            _contactService = contactService;
-            _logger = logger;
-            _contactsRepository = contactsRepository;
             _userMembershipsRepository = userMembershipsRepository;
             _membershipOptionsRepository = membershipOptionsRepository;
-            _config = config.Value;
-            _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }
 
         public PromoCode Find(string code)

@@ -15,8 +15,8 @@ namespace K9.WebApplication.Controllers
     {
         private readonly INineStarKiService _nineStarKiService;
         
-        public PersonalChartController(INineStarKiControllerPackage nineStarKiControllerPackage, INineStarKiService nineStarKiService)
-            : base(nineStarKiControllerPackage)
+        public PersonalChartController(INineStarKiPackage nineStarKiPackage, INineStarKiService nineStarKiService)
+            : base(nineStarKiPackage)
         {
             _nineStarKiService = nineStarKiService;
         }

@@ -2,7 +2,7 @@
 
 namespace K9.WebApplication.Services
 {
-    public interface IDonationService
+    public interface IDonationService : IBaseService
     {
         void CreateDonation(Donation donation, Contact contact);
         int GetFundsReceivedToDate();

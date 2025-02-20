@@ -13,8 +13,8 @@ namespace K9.WebApplication.Controllers
     [RequirePermissions(Role = RoleNames.Administrators)]
 	public class MailingListUsersController : BaseNineStarKiController<MailingListUser>
 	{
-		public MailingListUsersController(IControllerPackage<MailingListUser> controllerPackage, INineStarKiControllerPackage nineStarKiControllerPackage)
-			: base(controllerPackage, nineStarKiControllerPackage)
+		public MailingListUsersController(IControllerPackage<MailingListUser> controllerPackage, INineStarKiPackage nineStarKiPackage)
+			: base(controllerPackage, nineStarKiPackage)
 		{
 		}
 

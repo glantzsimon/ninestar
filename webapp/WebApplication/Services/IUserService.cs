@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace K9.WebApplication.Services
 {
-    public interface IUserService
+    public interface IUserService : IBaseService
     {
         void UpdateActiveUserEmailAddressIfFromFacebook(Contact contact);
         User Find(int id);

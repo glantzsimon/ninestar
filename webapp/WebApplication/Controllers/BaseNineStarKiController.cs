@@ -23,11 +23,11 @@ namespace K9.WebApplication.Controllers
 {
     public class BaseNineStarKiController : BaseController
     {
-        public BaseNineStarKiController(INineStarKiControllerPackage nineStarKiControllerPackage)
-            : base(nineStarKiControllerPackage.Logger, nineStarKiControllerPackage.DataSetsHelper,
-                nineStarKiControllerPackage.Roles, nineStarKiControllerPackage.Authentication, nineStarKiControllerPackage.FileSourceHelper)
+        public BaseNineStarKiController(INineStarKiPackage nineStarKiPackage)
+            : base(nineStarKiPackage.Logger, nineStarKiPackage.DataSetsHelper,
+                nineStarKiPackage.Roles, nineStarKiPackage.Authentication, nineStarKiPackage.FileSourceHelper)
         {
-            Package = nineStarKiControllerPackage;
+            Package = nineStarKiPackage;
             UrlHelper = new UrlHelper(System.Web.HttpContext.Current.Request.RequestContext);
             SetBetaWarningSessionVariable();
             SetSessionRoles(Current.UserId);
@@ -40,7 +40,7 @@ namespace K9.WebApplication.Controllers
             ViewBag.DeviceType = GetDeviceType();
         }
 
-        public INineStarKiControllerPackage Package { get; }
+        public INineStarKiPackage Package { get; }
 
         public UrlHelper UrlHelper { get; }
 
@@ -137,10 +137,10 @@ namespace K9.WebApplication.Controllers
 
     public class BaseNineStarKiController<T> : BaseController<T> where T : class, IObjectBase
     {
-        public BaseNineStarKiController(IControllerPackage<T> controllerPackage, INineStarKiControllerPackage nineStarControllerPackage)
+        public BaseNineStarKiController(IControllerPackage<T> controllerPackage, INineStarKiPackage nineStarPackage)
             : base(controllerPackage)
         {
-            Package = nineStarControllerPackage;
+            Package = nineStarPackage;
             UrlHelper = new UrlHelper(System.Web.HttpContext.Current.Request.RequestContext);
 
             SetSessionRoles(Current.UserId);
@@ -150,7 +150,7 @@ namespace K9.WebApplication.Controllers
             RecordBeforeUpdate += BaseNineStarKiController_RecordBeforeUpdate;
         }
 
-        public INineStarKiControllerPackage Package { get; }
+        public INineStarKiPackage Package { get; }
 
         public UrlHelper UrlHelper { get; }
 

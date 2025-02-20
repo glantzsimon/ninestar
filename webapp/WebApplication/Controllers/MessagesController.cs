@@ -14,8 +14,8 @@ namespace K9.WebApplication.Controllers
 	public class MessagesController : BaseNineStarKiController<Message>
 	{
 		
-		public MessagesController(IControllerPackage<Message> controllerPackage, INineStarKiControllerPackage nineStarKiControllerPackage)
-			: base(controllerPackage, nineStarKiControllerPackage)
+		public MessagesController(IControllerPackage<Message> controllerPackage, INineStarKiPackage nineStarKiPackage)
+			: base(controllerPackage, nineStarKiPackage)
 		{
 			RecordBeforeCreate += MessagesController_RecordBeforeCreate;
 		}

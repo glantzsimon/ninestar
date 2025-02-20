@@ -16,6 +16,7 @@ using System.Linq;
 using System.Web;
 using System.Web.SessionState;
 using K9.WebApplication.Helpers;
+using K9.WebApplication.Packages;
 using Xunit;
 
 namespace K9.WebApplication.Tests.Unit.Services
@@ -106,16 +107,10 @@ namespace K9.WebApplication.Tests.Unit.Services
             SessionHelper.SetCurrentUserName("simon");
 
             _Membershipservice = new MembershipService(
-                _logger.Object,
-                _authentication.Object,
+                new Mock<INineStarKiPackage>().Object,
                 _membershipOptionRepository.Object,
                 _userMembershipRepository.Object,
-                _usersRepository.Object,
-                _contactService.Object,
-                _mailer.Object,
-                _config.Object,
                 new Mock<IRepository<PromoCode>>().Object,
-                _userService.Object,
                 new Mock<IRepository<Consultation>>().Object,
                 new Mock<IRepository<UserConsultation>>().Object,
                 new Mock<IConsultationService>().Object,

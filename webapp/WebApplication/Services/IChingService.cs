@@ -1,13 +1,18 @@
 ﻿using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
+using K9.WebApplication.Packages;
 using System;
 
 namespace K9.WebApplication.Services
 {
-
     public class IChingService : IIChingService
     {
-        private static readonly Random _random = new Random();
+        public INineStarKiPackage Package { get; }
+
+        public IChingService(INineStarKiPackage nineStarKiPackage)
+        {
+            Package = nineStarKiPackage;
+        }
 
         public Hexagram GenerateHexagram()
         {
@@ -20,6 +25,8 @@ namespace K9.WebApplication.Services
 
             return new Hexagram(eLines);
         }
+
+        private static readonly Random _random = new Random();
 
         private static ELineType GenerateLine()
         {

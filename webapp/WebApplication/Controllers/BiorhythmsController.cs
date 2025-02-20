@@ -16,8 +16,8 @@ namespace K9.WebApplication.Controllers
         private readonly INineStarKiService _nineStarKiService;
         private readonly IBiorhythmsService _biorhythmsService;
 
-        public BiorhythmsController(INineStarKiControllerPackage nineStarKiControllerPackage, INineStarKiService nineStarKiService, IBiorhythmsService biorhythmsService)
-            : base(nineStarKiControllerPackage)
+        public BiorhythmsController(INineStarKiPackage nineStarKiPackage, INineStarKiService nineStarKiService, IBiorhythmsService biorhythmsService)
+            : base(nineStarKiPackage)
         {
             _nineStarKiService = nineStarKiService;
             _biorhythmsService = biorhythmsService;

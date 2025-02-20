@@ -3,7 +3,7 @@ using K9.WebApplication.ViewModels;
 
 namespace K9.WebApplication.Services
 {
-    public interface IPromoCodeService
+    public interface IPromoCodeService : IBaseService
     {
         PromoCode Find(string code);
         bool IsPromoCodeAlreadyUsed(string code);

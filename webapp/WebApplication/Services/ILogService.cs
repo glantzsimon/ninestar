@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace K9.WebApplication.Services
 {
-    public interface ILogService
+    public interface ILogService : IBaseService
     {
         List<LogItem> GetLogItems();
     }

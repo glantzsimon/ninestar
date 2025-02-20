@@ -11,8 +11,8 @@ namespace K9.WebApplication.Controllers
     [RequirePermissions(Role = RoleNames.Administrators)]
     public class UserConsultationsController : BaseNineStarKiController<UserConsultation>
     {
-        public UserConsultationsController(IControllerPackage<UserConsultation> controllerPackage, INineStarKiControllerPackage nineStarKiControllerPackage)
-            : base(controllerPackage, nineStarKiControllerPackage)
+        public UserConsultationsController(IControllerPackage<UserConsultation> controllerPackage, INineStarKiPackage nineStarKiPackage)
+            : base(controllerPackage, nineStarKiPackage)
         {
         }
     }

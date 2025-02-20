@@ -18,8 +18,8 @@ namespace K9.WebApplication.Controllers
         private readonly IStripeService _stripeService;
         private readonly StripeConfiguration _stripeConfig;
 
-        public PaymentsController(INineStarKiControllerPackage nineStarKiControllerPackage, IStripeService stripeService, IOptions<StripeConfiguration> stripeConfig)
-            : base(nineStarKiControllerPackage)
+        public PaymentsController(INineStarKiPackage nineStarKiPackage, IStripeService stripeService, IOptions<StripeConfiguration> stripeConfig)
+            : base(nineStarKiPackage)
         {
             _stripeService = stripeService;
             _stripeConfig = stripeConfig.Value;

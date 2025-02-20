@@ -23,8 +23,8 @@ namespace K9.WebApplication.Controllers
         private readonly IIChingService _iChingService;
         private const string authRequestHeader = "Authorization";
 
-        public ApiController(INineStarKiControllerPackage nineStarKiControllerPackage, INineStarKiService nineStarKiService, IIChingService iChingService)
-            : base(nineStarKiControllerPackage)
+        public ApiController(INineStarKiPackage nineStarKiPackage, INineStarKiService nineStarKiService, IIChingService iChingService)
+            : base(nineStarKiPackage)
         {
             _nineStarKiService = nineStarKiService;
             _iChingService = iChingService;

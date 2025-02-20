@@ -17,8 +17,8 @@ namespace K9.WebApplication.Controllers
     {
         private readonly IRepository<MembershipOption> _membershipOptionsRepository;
         
-        public UserMembershipsController(IControllerPackage<UserMembership> controllerPackage, IRepository<MembershipOption> membershipOptionsRepository, INineStarKiControllerPackage nineStarKiControllerPackage)
-            : base(controllerPackage, nineStarKiControllerPackage)
+        public UserMembershipsController(IControllerPackage<UserMembership> controllerPackage, IRepository<MembershipOption> membershipOptionsRepository, INineStarKiPackage nineStarKiPackage)
+            : base(controllerPackage, nineStarKiPackage)
         {
             _membershipOptionsRepository = membershipOptionsRepository;
         }

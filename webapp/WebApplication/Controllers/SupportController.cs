@@ -21,8 +21,8 @@ namespace K9.WebApplication.Controllers
         private readonly RecaptchaConfiguration _recaptchaConfig;
         private readonly IDonationService _donationService;
 
-        public SupportController(INineStarKiControllerPackage nineStarKiControllerPackage, IDonationService donationService, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IEmailTemplateService emailTemplateService)
-            : base(nineStarKiControllerPackage)
+        public SupportController(INineStarKiPackage nineStarKiPackage, IDonationService donationService, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IEmailTemplateService emailTemplateService)
+            : base(nineStarKiPackage)
         {
             _donationService = donationService;
             _recaptchaService = recaptchaService;

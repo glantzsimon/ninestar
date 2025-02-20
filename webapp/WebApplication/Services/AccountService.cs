@@ -22,7 +22,7 @@ namespace K9.WebApplication.Services
         private readonly IRepository<UserOTP> _otpRepository;
         private readonly IUserService _userService;
         private readonly IContactService _contactService;
-        
+
         public AccountService(INineStarKiBasePackage package, IRepository<User> userRepository, IOptions<WebsiteConfiguration> config, IMailer mailer, IAuthentication authentication, ILogger logger, IRoles roles, Services.IAccountMailerService accountMailerService, IRepository<UserOTP> otpRepository, IUserService userService,
             IContactService contactService) : base(package)
         {
@@ -170,7 +170,7 @@ namespace K9.WebApplication.Services
                 catch (Exception ex)
                 {
                     My.Logger.Log(LogLevel.Error, $"AccountService => Register => AddUserToRole => {ex.GetFullErrorMessage()}");
-                    
+
                     TryDeleteUserAccount(model.UserName);
 
                     result.Errors.Add(new ServiceError

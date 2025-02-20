@@ -61,6 +61,7 @@ namespace K9.WebApplication
             builder.RegisterGeneric(typeof(ControllerPackage<>)).As(typeof(IControllerPackage<>)).InstancePerRequest();
             builder.RegisterType<Services.AccountService>().As<Services.IAccountService>().InstancePerRequest();
             builder.RegisterType<NineStarKiPackage>().As<INineStarKiPackage>().InstancePerRequest();
+            builder.RegisterType<NineStarKiBasePackage>().As<INineStarKiBasePackage>().InstancePerRequest();
             builder.RegisterType<FacebookService>().As<IFacebookService>().InstancePerRequest();
             builder.RegisterType<StripeService>().As<IStripeService>().InstancePerRequest();
             builder.RegisterType<DonationService>().As<IDonationService>().InstancePerRequest();

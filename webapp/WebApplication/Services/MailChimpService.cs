@@ -15,7 +15,7 @@ namespace K9.WebApplication.Services
         private readonly IContactService _contactService;
         private readonly MailChimpConfiguration _mailChimpConfig;
 
-        public MailChimpService(INineStarKiPackage packge, IOptions<MailChimpConfiguration> mailChimpConfig, IContactService contactService)
+        public MailChimpService(INineStarKiBasePackage packge, IOptions<MailChimpConfiguration> mailChimpConfig, IContactService contactService)
             : base(packge)
         {
             _contactService = contactService;

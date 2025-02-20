@@ -25,10 +25,8 @@ namespace K9.WebApplication.Services
         private readonly IConsultationService _consultationService;
         private readonly IPromoCodeService _promoCodeService;
         private readonly IContactService _contactService;
-        private readonly IUserService _userService;
-
-        public MembershipService(INineStarKiBasePackage my, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<PromoCode> promoCodesRepository, IRepository<Consultation> consultationsRepository, IRepository<UserConsultation> userConsultationsRepository, IConsultationService consultationService, IPromoCodeService promoCodeService, IContactService contactService,
-            IUserService userService)
+        
+        public MembershipService(INineStarKiBasePackage my, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<PromoCode> promoCodesRepository, IRepository<Consultation> consultationsRepository, IRepository<UserConsultation> userConsultationsRepository, IConsultationService consultationService, IPromoCodeService promoCodeService, IContactService contactService)
             : base(my)
         {
             _membershipOptionRepository = membershipOptionRepository;
@@ -39,7 +37,6 @@ namespace K9.WebApplication.Services
             _consultationService = consultationService;
             _promoCodeService = promoCodeService;
             _contactService = contactService;
-            _userService = userService;
         }
 
         public UserMembership GetActiveUserMembership(string accountNumber)
@@ -116,7 +113,7 @@ namespace K9.WebApplication.Services
             {
                 try
                 {
-                    if (_userService.Find(userId.Value) != null)
+                    if (My.UsersRepository.Find(userId.Value) != null)
                     {
                         CreateFreeMembership(userId.Value);
                     }
@@ -130,7 +127,7 @@ namespace K9.WebApplication.Services
             }
             else
             {
-                activeUserMembership.User = _userService.Find(activeUserMembership.UserId);
+                activeUserMembership.User = My.UsersRepository.Find(activeUserMembership.UserId);
             }
 
             return activeUserMembership;
@@ -399,7 +396,7 @@ namespace K9.WebApplication.Services
                     return;
                 }
 
-                if (_userService.Find(userId) == null)
+                if (My.UsersRepository.Find(userId) == null)
                 {
                     My.Logger.Error($"MembershipService => CreateFreeMembership => UserId {userId} was not found.");
                     return;

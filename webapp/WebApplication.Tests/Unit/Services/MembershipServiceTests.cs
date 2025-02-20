@@ -110,7 +110,10 @@ namespace K9.WebApplication.Tests.Unit.Services
             _userService = new Mock<IUserService>();
             _userService.Setup(_ => _.Find(It.IsAny<int>())).Returns(_user);
 
+            _usersRepository.Setup(_ => _.Find(It.IsAny<int>())).Returns(_user);
+            
             _nineStarKiPackage = new Mock<INineStarKiBasePackage>();
+            _nineStarKiPackage.Setup(_ => _.UsersRepository).Returns(_usersRepository.Object);
             
             SessionHelper.SetCurrentUserId(_userId);
             SessionHelper.SetCurrentUserName("simon");
@@ -124,8 +127,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                 new Mock<IRepository<UserConsultation>>().Object,
                 new Mock<IConsultationService>().Object,
                 new Mock<IPromoCodeService>().Object,
-                _contactService.Object,
-                _userService.Object);
+                _contactService.Object);
         }
 
         [Fact]

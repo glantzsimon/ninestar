@@ -20,10 +20,9 @@ namespace K9.WebApplication.Services
         private readonly IConsultationService _consultationService;
         private readonly IRepository<UserMembership> _userMembershipsRepository;
         private readonly IRepository<UserOTP> _userOtpRepository;
-        private readonly IContactService _contactService;
 
-        public UserService(INineStarKiPackage my, IRepository<PromoCode> promoCodesRepository, IRepository<UserPromoCode> userPromoCodeRepository, IRepository<UserConsultation> userConsultationsRepository, IRepository<Consultation> consultationsRepository, IConsultationService consultationService,
-            IRepository<UserMembership> userMembershipsRepository, IRepository<UserOTP> userOtpRepository, IContactService contactService)
+        public UserService(INineStarKiBasePackage my, IRepository<PromoCode> promoCodesRepository, IRepository<UserPromoCode> userPromoCodeRepository, IRepository<UserConsultation> userConsultationsRepository, IRepository<Consultation> consultationsRepository, IConsultationService consultationService,
+            IRepository<UserMembership> userMembershipsRepository, IRepository<UserOTP> userOtpRepository)
             : base(my)
         {
             _userPromoCodeRepository = userPromoCodeRepository;
@@ -32,7 +31,6 @@ namespace K9.WebApplication.Services
             _consultationService = consultationService;
             _userMembershipsRepository = userMembershipsRepository;
             _userOtpRepository = userOtpRepository;
-            _contactService = contactService;
         }
 
         public void UpdateActiveUserEmailAddressIfFromFacebook(Contact contact)
@@ -187,7 +185,7 @@ namespace K9.WebApplication.Services
 
             EnableMarketingEmailForUser(value, user);
 
-            var contact = _contactService.Find(user.EmailAddress);
+            var contact = My.ContactsRepository.Find(e => e.EmailAddress == user.EmailAddress).FirstOrDefault();
             if (contact != null)
             {
                 try

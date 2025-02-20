@@ -9,7 +9,7 @@ namespace K9.WebApplication.Services
     {
         private readonly RecaptchaConfiguration _config;
 
-        public RecaptchaService(INineStarKiPackage packge, IOptions<RecaptchaConfiguration> config) : base(packge)
+        public RecaptchaService(INineStarKiBasePackage packge, IOptions<RecaptchaConfiguration> config) : base(packge)
         {
             _config = config.Value;
         }

@@ -18,7 +18,7 @@ namespace K9.WebApplication.Services
         private const string cleanUpText2 = "K9.WebApplication.Startup";
         private const string separator = "=>";
 
-        public LogService(INineStarKiPackage my) : base(my)
+        public LogService(INineStarKiBasePackage my) : base(my)
         {
         }
 

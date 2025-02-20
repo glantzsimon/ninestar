@@ -1,22 +1,19 @@
-﻿using K9.Base.DataAccessLayer.Enums;
-using K9.Base.DataAccessLayer.Models;
+﻿using K9.Base.DataAccessLayer.Models;
 using K9.Base.WebApplication.Config;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
+using K9.WebApplication.Helpers;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using K9.WebApplication.Services.Stripe;
 using Moq;
 using NLog;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Web;
-using System.Web.SessionState;
-using K9.WebApplication.Helpers;
-using K9.WebApplication.Packages;
 using Xunit;
 
 namespace K9.WebApplication.Tests.Unit.Services
@@ -24,6 +21,7 @@ namespace K9.WebApplication.Tests.Unit.Services
 
     public class MembershipModelserviceTests
     {
+        private readonly Mock<INineStarKiPackage> _nineStarKiPackage = new Mock<INineStarKiPackage>();
         private readonly Mock<IRepository<User>> _usersRepository = new Mock<IRepository<User>>();
         private readonly Mock<IRepository<UserMembership>> _userMembershipRepository = new Mock<IRepository<UserMembership>>();
         private readonly Mock<IRepository<MembershipOption>> _membershipOptionRepository = new Mock<IRepository<MembershipOption>>();
@@ -35,9 +33,15 @@ namespace K9.WebApplication.Tests.Unit.Services
         private readonly Mock<IStripeService> _stripeService = new Mock<IStripeService>();
         private readonly Mock<IContactService> _contactService = new Mock<IContactService>();
         private readonly Mock<IUserService> _userService = new Mock<IUserService>();
-        private MembershipService _Membershipservice;
+        private MembershipService _membershipservice;
 
-        private readonly int _userId = 1;
+        private static readonly int _userId = 1;
+
+        private User _user = new User
+        {
+            Id = _userId,
+            Username = "Simon"
+        };
 
         private readonly MembershipOption _standardMonthlyMembership = new MembershipOption
         {
@@ -80,9 +84,9 @@ namespace K9.WebApplication.Tests.Unit.Services
                 _platinumMonthlyMembership,
                 _platinumYearlyMembership
             };
-            
+
             HttpContext.Current = Helpers.Helpers.CreateHttpContextWithSession();
-            
+
             _config.SetupGet(_ => _.Value).Returns(new WebsiteConfiguration
             {
                 CompanyLogoUrl = "http://local",
@@ -102,12 +106,18 @@ namespace K9.WebApplication.Tests.Unit.Services
             _membershipOptionRepository.Setup(_ => _.Find(_standardYearlyMembership.Id)).Returns(_standardYearlyMembership);
             _membershipOptionRepository.Setup(_ => _.Find(_platinumMonthlyMembership.Id)).Returns(_platinumMonthlyMembership);
             _membershipOptionRepository.Setup(_ => _.Find(_platinumYearlyMembership.Id)).Returns(_platinumYearlyMembership);
-            
+
+            _userService = new Mock<IUserService>();
+            _userService.Setup(_ => _.Find(It.IsAny<int>())).Returns(_user);
+
+            _nineStarKiPackage = new Mock<INineStarKiPackage>();
+            _nineStarKiPackage.Setup(_ => _.UserService).Returns(_userService.Object);
+
             SessionHelper.SetCurrentUserId(_userId);
             SessionHelper.SetCurrentUserName("simon");
 
-            _Membershipservice = new MembershipService(
-                new Mock<INineStarKiPackage>().Object,
+            _membershipservice = new MembershipService(
+                _nineStarKiPackage.Object,
                 _membershipOptionRepository.Object,
                 _userMembershipRepository.Object,
                 new Mock<IRepository<PromoCode>>().Object,
@@ -138,10 +148,10 @@ namespace K9.WebApplication.Tests.Unit.Services
             _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
                 .Returns(userMembershipModels);
 
-            var model = _Membershipservice.GetMembershipViewModel();
+            var model = _membershipservice.GetMembershipViewModel();
 
-            Assert.Equal(1, _Membershipservice.GetActiveUserMemberships(_userId).Count);
-            Assert.Equal(userMembershipModels.First(), _Membershipservice.GetActiveUserMembership());
+            Assert.Equal(1, _membershipservice.GetActiveUserMemberships(_userId).Count);
+            Assert.Equal(userMembershipModels.First(), _membershipservice.GetActiveUserMembership());
             Assert.Equal(0, model.MembershipModels.Count(_ => _.IsSelected));
             Assert.Equal(3, model.MembershipModels.Count(_ => _.IsUpgrade));
             Assert.Equal(1, model.MembershipModels.Count(_ => _.IsSubscribed));
@@ -169,10 +179,10 @@ namespace K9.WebApplication.Tests.Unit.Services
             _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
                 .Returns(userMembershipModels);
 
-            var model = _Membershipservice.GetMembershipViewModel();
+            var model = _membershipservice.GetMembershipViewModel();
 
-            Assert.Equal(1, _Membershipservice.GetActiveUserMemberships(_userId).Count);
-            Assert.Equal(userMembershipModels.First(), _Membershipservice.GetActiveUserMembership());
+            Assert.Equal(1, _membershipservice.GetActiveUserMemberships(_userId).Count);
+            Assert.Equal(userMembershipModels.First(), _membershipservice.GetActiveUserMembership());
             Assert.Equal(0, model.MembershipModels.Count(_ => _.IsSelected));
             Assert.Equal(1, model.MembershipModels.Count(_ => _.IsUpgrade));
             Assert.Equal(1, model.MembershipModels.Count(_ => _.IsSubscribed));
@@ -200,10 +210,10 @@ namespace K9.WebApplication.Tests.Unit.Services
             _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
                 .Returns(userMembershipModels);
 
-            var model = _Membershipservice.GetMembershipViewModel();
+            var model = _membershipservice.GetMembershipViewModel();
 
-            Assert.Equal(1, _Membershipservice.GetActiveUserMemberships(_userId).Count);
-            Assert.Equal(userMembershipModels.First(), _Membershipservice.GetActiveUserMembership());
+            Assert.Equal(1, _membershipservice.GetActiveUserMemberships(_userId).Count);
+            Assert.Equal(userMembershipModels.First(), _membershipservice.GetActiveUserMembership());
             Assert.Equal(0, model.MembershipModels.Count(_ => _.IsSelected));
             Assert.Equal(1, model.MembershipModels.Count(_ => _.IsUpgrade));
             Assert.Equal(1, model.MembershipModels.Count(_ => _.IsSubscribed));
@@ -232,10 +242,10 @@ namespace K9.WebApplication.Tests.Unit.Services
             _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
                 .Returns(userMembershipModels);
 
-            var model = _Membershipservice.GetMembershipViewModel();
+            var model = _membershipservice.GetMembershipViewModel();
 
-            Assert.Equal(1, _Membershipservice.GetActiveUserMemberships(_userId).Count);
-            Assert.Equal(userMembershipModels.First(), _Membershipservice.GetActiveUserMembership());
+            Assert.Equal(1, _membershipservice.GetActiveUserMemberships(_userId).Count);
+            Assert.Equal(userMembershipModels.First(), _membershipservice.GetActiveUserMembership());
             Assert.Equal(0, model.MembershipModels.Count(_ => _.IsSelected));
             Assert.Equal(0, model.MembershipModels.Count(_ => _.IsUpgrade));
             Assert.Equal(1, model.MembershipModels.Count(_ => _.IsSubscribed));
@@ -280,10 +290,10 @@ namespace K9.WebApplication.Tests.Unit.Services
             _userMembershipRepository.Setup(_ => _.List())
                 .Returns(userMembershipModels);
 
-            var model = _Membershipservice.GetMembershipViewModel();
-            
-            Assert.Equal(1, _Membershipservice.GetActiveUserMemberships(_userId).Count);
-            Assert.Equal(userMembershipModels.First(), _Membershipservice.GetActiveUserMembership());
+            var model = _membershipservice.GetMembershipViewModel();
+
+            Assert.Equal(1, _membershipservice.GetActiveUserMemberships(_userId).Count);
+            Assert.Equal(userMembershipModels.First(), _membershipservice.GetActiveUserMembership());
             Assert.Equal(0, model.MembershipModels.Count(_ => _.IsSelected));
             Assert.Equal(1, model.MembershipModels.Count(_ => _.IsUpgrade));
             Assert.Equal(1, model.MembershipModels.Count(_ => _.IsSubscribed));
@@ -302,7 +312,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
                 .Returns(userMembershipModels);
 
-            var ex = Assert.Throws<Exception>(() => _Membershipservice.GetSwitchMembershipModel(1));
+            var ex = Assert.Throws<Exception>(() => _membershipservice.GetSwitchMembershipModel(1));
             Assert.Equal(Globalisation.Dictionary.SwitchMembershipErrorNotSubscribed, ex.Message);
         }
 
@@ -329,7 +339,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                 .Returns(userMembershipModels);
 
 
-            var ex = Assert.Throws<Exception>(() => _Membershipservice.GetSwitchMembershipModel(_standardMonthlyMembership.Id));
+            var ex = Assert.Throws<Exception>(() => _membershipservice.GetSwitchMembershipModel(_standardMonthlyMembership.Id));
             Assert.Equal(Globalisation.Dictionary.SwitchMembershipErrorAlreadySubscribed, ex.Message);
         }
 
@@ -368,7 +378,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                 .Returns(userMembershipModels);
 
 
-            var ex = Assert.Throws<Exception>(() => _Membershipservice.GetSwitchMembershipModel(_standardYearlyMembership.Id));
+            var ex = Assert.Throws<Exception>(() => _membershipservice.GetSwitchMembershipModel(_standardYearlyMembership.Id));
             Assert.Equal(Globalisation.Dictionary.CannotSwitchMembershipError, ex.Message);
         }
 
@@ -395,10 +405,10 @@ namespace K9.WebApplication.Tests.Unit.Services
                 .Returns(userMembershipModels);
 
 
-            var result = _Membershipservice.GetSwitchMembershipModel(_standardYearlyMembership.Id);
+            var result = _membershipservice.GetSwitchMembershipModel(_standardYearlyMembership.Id);
             Assert.True(result.IsUpgrade);
         }
-        
+
         [Fact]
         public void GetPurchaseMembershipModel_ShouldThrowError_IfAlreadySubscribed()
         {
@@ -421,10 +431,10 @@ namespace K9.WebApplication.Tests.Unit.Services
             _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
                 .Returns(userMembershipModels);
 
-            var ex = Assert.Throws<Exception>(() => _Membershipservice.GetPurchaseMembershipModel(_standardYearlyMembership.Id));
+            var ex = Assert.Throws<Exception>(() => _membershipservice.GetPurchaseMembershipModel(_standardYearlyMembership.Id));
             Assert.Equal(Globalisation.Dictionary.PurchaseMembershipErrorAlreadySubscribed, ex.Message);
         }
-        
+
         private void AuthenticateUser()
         {
             _authentication.SetupGet(_ => _.IsAuthenticated).Returns(true);

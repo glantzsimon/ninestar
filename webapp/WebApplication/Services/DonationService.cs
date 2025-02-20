@@ -1,35 +1,25 @@
-﻿using K9.Base.WebApplication.Config;
-using K9.DataAccessLayer.Models;
+﻿using K9.DataAccessLayer.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
-using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Packages;
 using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web.Mvc;
 
 namespace K9.WebApplication.Services
 {
-    public class DonationService : IDonationService
+    public class DonationService : BaseService, IDonationService
     {
         private readonly IRepository<Donation> _donationRepository;
         private readonly IEmailTemplateService _emailTemplateService;
-        private readonly INineStarKiPackage _nineStarKiPackage;
-        private readonly ILogger _logger;
-        private readonly IMailer _mailer;
-        private readonly WebsiteConfiguration _config;
-        private readonly UrlHelper _urlHelper;
-
-        public INineStarKiPackage Package { get; }
-
-        public DonationService(IRepository<Donation> donationRepository, INineStarKiPackage nineStarKiPackage, IEmailTemplateService emailTemplateService)
+        
+        public DonationService(IRepository<Donation> donationRepository, INineStarKiBasePackage package, IEmailTemplateService emailTemplateService)
+            : base(package)
         {
             _donationRepository = donationRepository;
             _emailTemplateService = emailTemplateService;
-            Package = nineStarKiPackage;
         }
 
         public void CreateDonation(Donation donation, Contact contact)
@@ -42,7 +32,7 @@ namespace K9.WebApplication.Services
             }
             catch (Exception ex)
             {
-                _logger.Error($"DonationService => CreateDonation => {ex.GetFullErrorMessage()}");
+                Package.Logger.Error($"DonationService => CreateDonation => {ex.GetFullErrorMessage()}");
             }
         }
 
@@ -69,7 +59,7 @@ namespace K9.WebApplication.Services
                     CustomerEmail = contact.EmailAddress,
                     Amount = donation.DonationAmount,
                     donation.Currency,
-                    LinkToSummary = _urlHelper.AbsoluteAction("Index", "Donations"),
+                    LinkToSummary = Package.UrlHelper.AbsoluteAction("Index", "Donations"),
                 });
 
             try

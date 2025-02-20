@@ -8,13 +8,10 @@ using System.Collections.Generic;
 
 namespace K9.WebApplication.Services
 {
-    public class NineStarKiService : INineStarKiService
+    public class NineStarKiService : BaseService, INineStarKiService
     {
-        public INineStarKiPackage Package { get; }
-        
-        public NineStarKiService(INineStarKiPackage package)
+        public NineStarKiService(INineStarKiPackage package) : base(package)
         {
-            Package = package;
         }
 
         public NineStarKiModel CalculateNineStarKiProfile(DateTime dateOfBirth, EGender gender = EGender.Male)
@@ -51,7 +48,7 @@ namespace K9.WebApplication.Services
 
             return model;
         }
-        
+
         public CompatibilityModel CalculateCompatibility(DateTime dateOfBirth1, EGender gender1, DateTime dateOfBirth2,
             EGender gender2)
         {
@@ -91,7 +88,7 @@ namespace K9.WebApplication.Services
 
             return model;
         }
-        
+
         public NineStarKiSummaryViewModel GetNineStarKiSummaryViewModel()
         {
             var mainEnergies = new List<NineStarKiModel>

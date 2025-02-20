@@ -2,27 +2,23 @@
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Packages;
 using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using K9.WebApplication.Packages;
 
 namespace K9.WebApplication.Services
 {
-    public class ContactService : IContactService
+    public class ContactService : BaseService, IContactService
     {
-        public INineStarKiPackage Package { get; }
-
         private readonly IRepository<Contact> _contactsRepository;
         private readonly ILogger _logger;
         private readonly IRepository<User> _usersRepository;
 
-        public ContactService(IRepository<Contact> contactsRepository, ILogger logger, IRepository<User> usersRepository)
+        public ContactService(INineStarKiBasePackage package, IRepository<Contact> contactsRepository, ILogger logger, IRepository<User> usersRepository)
+            : base(package)
         {
-            _contactsRepository = contactsRepository;
-            _logger = logger;
-            _usersRepository = usersRepository;
         }
 
         public Contact GetOrCreateContact(string stripeCustomerId, string fullName, string emailAddress, string phoneNumber = "", int? userId = null)

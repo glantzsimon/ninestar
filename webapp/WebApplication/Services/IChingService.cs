@@ -5,13 +5,11 @@ using System;
 
 namespace K9.WebApplication.Services
 {
-    public class IChingService : IIChingService
+    public class IChingService : BaseService, IIChingService
     {
-        public INineStarKiPackage Package { get; }
-
-        public IChingService(INineStarKiPackage nineStarKiPackage)
+        public IChingService(INineStarKiBasePackage package)
+            : base(package)
         {
-            Package = nineStarKiPackage;
         }
 
         public Hexagram GenerateHexagram()

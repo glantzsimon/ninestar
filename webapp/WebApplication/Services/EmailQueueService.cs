@@ -9,15 +9,15 @@ using System.Linq;
 
 namespace K9.WebApplication.Services
 {
-    public class EmailQueueService : IEmailQueueService
+    public class EmailQueueService : BaseService, IEmailQueueService
     {
-        public INineStarKiPackage Package { get; }
-
+        private readonly IContactService _contactService;
         private readonly IRepository<EmailQueueItem> _emailQueueItemsRepository;
 
-        public EmailQueueService(INineStarKiPackage package, IRepository<EmailQueueItem> emailQueueItemsRepository)
+        public EmailQueueService(INineStarKiBasePackage package, IContactService contactService, IRepository<EmailQueueItem> emailQueueItemsRepository)
+            : base(package)
         {
-            Package = package;
+            _contactService = contactService;
             _emailQueueItemsRepository = emailQueueItemsRepository;
         }
 
@@ -25,7 +25,7 @@ namespace K9.WebApplication.Services
         {
             if (useDefaultTemplate)
             {
-                var contact = Package.ContactService.Find(recipientEmailAddress);
+                var contact = _contactService.Find(recipientEmailAddress);
                 if (contact == null)
                 {
                     Package.Logger.Log(LogLevel.Error, $"EmailQueueService => AddEmailToQueue => Contact not found: {recipientEmailAddress}");
@@ -38,7 +38,7 @@ namespace K9.WebApplication.Services
 
         public void AddEmailToQueueForContact(int contactId, string subject, string body, bool useDefaultTemplate = true)
         {
-            var contact = Package.ContactService.Find(contactId);
+            var contact = _contactService.Find(contactId);
             if (contact == null)
             {
                 Package.Logger.Log(LogLevel.Error, $"EmailQueueService => AddEmailToQueueForContact => Contact not found. ContactId: {contactId}");

@@ -8,15 +8,14 @@ using System;
 
 namespace K9.WebApplication.Services
 {
-    public class EmailTemplateService : IEmailTemplateService
+    public class EmailTemplateService : BaseService, IEmailTemplateService
     {
-        public INineStarKiPackage Package { get; }
 
         private readonly IRepository<EmailTemplate> _emailTemplatesRepository;
-        
-        public EmailTemplateService(IRepository<EmailTemplate> emailTemplatesRepository, INineStarKiPackage package)
+
+        public EmailTemplateService(IRepository<EmailTemplate> emailTemplatesRepository, INineStarKiBasePackage package)
+        : base(package)
         {
-            Package = package;
             _emailTemplatesRepository = emailTemplatesRepository;
         }
 

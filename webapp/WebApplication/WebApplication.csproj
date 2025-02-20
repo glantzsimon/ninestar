@@ -300,8 +300,10 @@
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
-    <Compile Include="ControllerPackages\NineStarKiPackage.cs" />
     <Compile Include="ControllerPackages\INineStarKiPackage.cs" />
+    <Compile Include="ControllerPackages\NineStarKiBasePackage.cs" />
+    <Compile Include="ControllerPackages\NineStarKiPackage.cs" />
+    <Compile Include="ControllerPackages\INineStarKiBasePackage.cs" />
     <Compile Include="Controllers\ApiPureAlchemyController.cs" />
     <Compile Include="Controllers\ApiController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
@@ -404,6 +406,7 @@
     <Compile Include="Options\GaugeOptions.cs" />
     <Compile Include="Options\SearchBoxOptions.cs" />
     <Compile Include="Services\AccountMailerService.cs" />
+    <Compile Include="Services\BaseService.cs" />
     <Compile Include="Services\IBaseService.cs" />
     <Compile Include="Services\IEmailTemplateService.cs" />
     <Compile Include="Services\EmailTemplateService.cs" />

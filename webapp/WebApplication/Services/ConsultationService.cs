@@ -8,7 +8,6 @@ using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Helpers;
 using K9.WebApplication.Packages;
-using NLog;
 using NodaTime;
 using System;
 using System.Collections.Generic;
@@ -16,17 +15,17 @@ using System.Linq;
 
 namespace K9.WebApplication.Services
 {
-    public class ConsultationService : IConsultationService
+    public class ConsultationService : BaseService, IConsultationService
     {
-        public INineStarKiPackage Package { get; }
-
+        private readonly IContactService _contactService;
         private readonly IRepository<Consultation> _consultationRepository;
         private readonly IRepository<UserConsultation> _userConsultationRepository;
         private readonly IRepository<Slot> _slotRepository;
         
-        public ConsultationService(INineStarKiPackage package, IRepository<Consultation> consultationRepository, IRepository<UserConsultation> userConsultationRepository, IRepository<Slot> slotRepository)
+        public ConsultationService(INineStarKiBasePackage package, IContactService contactService, IRepository<Consultation> consultationRepository, IRepository<UserConsultation> userConsultationRepository, IRepository<Slot> slotRepository)
+            : base(package)
         {
-            Package = package;
+            _contactService = contactService;
             _consultationRepository = consultationRepository;
             _userConsultationRepository = userConsultationRepository;
             _slotRepository = slotRepository;
@@ -213,7 +212,7 @@ namespace K9.WebApplication.Services
 
             try
             {
-                var contact = Package.ContactService.Find(consultation.ContactId);
+                var contact = _contactService.Find(consultation.ContactId);
                 var user = Package.UsersRepository.Find(contact.UserId ?? Current.UserId);
                 SendAppointmentConfirmationEmailToUser(consultation, user);
                 SendAppointmentConfirmationEmailToNineStar(consultation, user);
@@ -276,7 +275,7 @@ namespace K9.WebApplication.Services
         {
             var template = Dictionary.ConsultationBookedThankYouEmail;
             var title = Dictionary.ThankyouForBookingConsultationEmailTitle;
-            var contact = Package.ContactService.Find(user.EmailAddress);
+            var contact = _contactService.Find(user.EmailAddress);
 
             Package.Mailer.SendEmail(title, TemplateParser.Parse(template, new
             {

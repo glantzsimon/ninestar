@@ -5,15 +5,12 @@ using K9.WebApplication.Packages;
 
 namespace K9.WebApplication.Services
 {
-    public class RecaptchaService : IRecaptchaService
+    public class RecaptchaService : BaseService, IRecaptchaService
     {
-        public INineStarKiPackage Package { get; }
-
         private readonly RecaptchaConfiguration _config;
 
-        public RecaptchaService(INineStarKiPackage packge, IOptions<RecaptchaConfiguration> config)
+        public RecaptchaService(INineStarKiPackage packge, IOptions<RecaptchaConfiguration> config) : base(packge)
         {
-            Package = packge;
             _config = config.Value;
         }
         

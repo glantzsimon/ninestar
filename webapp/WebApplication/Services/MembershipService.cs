@@ -15,10 +15,8 @@ using System.Linq;
 
 namespace K9.WebApplication.Services
 {
-    public class MembershipService : IMembershipService
+    public class MembershipService : BaseService, IMembershipService
     {
-        public INineStarKiPackage Package { get; }
-
         private readonly IRepository<MembershipOption> _membershipOptionRepository;
         private readonly IRepository<UserMembership> _userMembershipRepository;
         private readonly IRepository<PromoCode> _promoCodesRepository;
@@ -26,10 +24,13 @@ namespace K9.WebApplication.Services
         private readonly IRepository<UserConsultation> _userConsultationsRepository;
         private readonly IConsultationService _consultationService;
         private readonly IPromoCodeService _promoCodeService;
+        private readonly IContactService _contactService;
+        private readonly IUserService _userService;
 
-        public MembershipService(INineStarKiPackage package, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<PromoCode> promoCodesRepository, IRepository<Consultation> consultationsRepository, IRepository<UserConsultation> userConsultationsRepository, IConsultationService consultationService, IPromoCodeService promoCodeService)
+        public MembershipService(INineStarKiBasePackage package, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<PromoCode> promoCodesRepository, IRepository<Consultation> consultationsRepository, IRepository<UserConsultation> userConsultationsRepository, IConsultationService consultationService, IPromoCodeService promoCodeService, IContactService contactService,
+            IUserService userService)
+            : base(package)
         {
-            Package = package;
             _membershipOptionRepository = membershipOptionRepository;
             _userMembershipRepository = userMembershipRepository;
             _promoCodesRepository = promoCodesRepository;
@@ -37,6 +38,8 @@ namespace K9.WebApplication.Services
             _userConsultationsRepository = userConsultationsRepository;
             _consultationService = consultationService;
             _promoCodeService = promoCodeService;
+            _contactService = contactService;
+            _userService = userService;
         }
 
         public UserMembership GetActiveUserMembership(string accountNumber)
@@ -113,7 +116,7 @@ namespace K9.WebApplication.Services
             {
                 try
                 {
-                    if (Package.UserService.Find(userId.Value) != null)
+                    if (_userService.Find(userId.Value) != null)
                     {
                         CreateFreeMembership(userId.Value);
                     }
@@ -127,7 +130,7 @@ namespace K9.WebApplication.Services
             }
             else
             {
-                activeUserMembership.User = Package.UserService.Find(activeUserMembership.UserId);
+                activeUserMembership.User = _userService.Find(activeUserMembership.UserId);
             }
 
             return activeUserMembership;
@@ -202,14 +205,14 @@ namespace K9.WebApplication.Services
                 membershipOption.Price = promoCodeModel.TotalPrice;
                 membershipOption.PromoCode = promoCodeModel;
             }
-            
+
             return new MembershipModel(Current.UserId, membershipOption)
             {
                 IsSelected = true,
                 PromoCode = promoCodeModel
             };
         }
-        
+
         public bool CreateMembershipFromPromoCode(int userId, string code)
         {
             var promoCode = _promoCodesRepository.Find(e => e.Code == code).FirstOrDefault();
@@ -304,10 +307,10 @@ namespace K9.WebApplication.Services
             var user = userMembership.User;
             try
             {
-                var contact = Package.ContactService.Find(customerEmailAddress);
+                var contact = _contactService.Find(customerEmailAddress);
                 if (contact == null)
                 {
-                    contact = Package.ContactService.GetOrCreateContact("", customerName, customerEmailAddress, "",
+                    contact = _contactService.GetOrCreateContact("", customerName, customerEmailAddress, "",
                         user.Id);
                 }
             }
@@ -396,7 +399,7 @@ namespace K9.WebApplication.Services
                     return;
                 }
 
-                if (Package.UserService.Find(userId) == null)
+                if (_userService.Find(userId) == null)
                 {
                     Package.Logger.Error($"MembershipService => CreateFreeMembership => UserId {userId} was not found.");
                     return;
@@ -421,11 +424,11 @@ namespace K9.WebApplication.Services
         public void CreateComplementaryUserConsultation(int userId, EConsultationDuration duration = EConsultationDuration.OneHour)
         {
             var user = Package.UsersRepository.Find(userId);
-            var contact = Package.ContactService.Find(user.EmailAddress);
+            var contact = _contactService.Find(user.EmailAddress);
 
             if (contact == null)
             {
-                contact = Package.ContactService.GetOrCreateContact("", user.FullName, user.EmailAddress, user.PhoneNumber,
+                contact = _contactService.GetOrCreateContact("", user.FullName, user.EmailAddress, user.PhoneNumber,
                     user.Id);
             }
 

@@ -10,16 +10,14 @@ using MailChimpConfiguration = K9.WebApplication.Config.MailChimpConfiguration;
 
 namespace K9.WebApplication.Services
 {
-    public class MailChimpService : IMailChimpService
+    public class MailChimpService : BaseService, IMailChimpService
     {
-        public INineStarKiPackage Package { get; }
-
         private readonly IContactService _contactService;
         private readonly MailChimpConfiguration _mailChimpConfig;
 
         public MailChimpService(INineStarKiPackage packge, IOptions<MailChimpConfiguration> mailChimpConfig, IContactService contactService)
+            : base(packge)
         {
-            Package = packge;
             _contactService = contactService;
             _mailChimpConfig = mailChimpConfig.Value;
         }

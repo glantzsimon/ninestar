@@ -21,7 +21,7 @@ namespace K9.WebApplication.Tests.Unit.Services
 
     public class MembershipModelserviceTests
     {
-        private readonly Mock<INineStarKiPackage> _nineStarKiPackage = new Mock<INineStarKiPackage>();
+        private readonly Mock<INineStarKiBasePackage> _nineStarKiPackage = new Mock<INineStarKiBasePackage>();
         private readonly Mock<IRepository<User>> _usersRepository = new Mock<IRepository<User>>();
         private readonly Mock<IRepository<UserMembership>> _userMembershipRepository = new Mock<IRepository<UserMembership>>();
         private readonly Mock<IRepository<MembershipOption>> _membershipOptionRepository = new Mock<IRepository<MembershipOption>>();
@@ -110,9 +110,8 @@ namespace K9.WebApplication.Tests.Unit.Services
             _userService = new Mock<IUserService>();
             _userService.Setup(_ => _.Find(It.IsAny<int>())).Returns(_user);
 
-            _nineStarKiPackage = new Mock<INineStarKiPackage>();
-            _nineStarKiPackage.Setup(_ => _.UserService).Returns(_userService.Object);
-
+            _nineStarKiPackage = new Mock<INineStarKiBasePackage>();
+            
             SessionHelper.SetCurrentUserId(_userId);
             SessionHelper.SetCurrentUserName("simon");
 
@@ -124,7 +123,9 @@ namespace K9.WebApplication.Tests.Unit.Services
                 new Mock<IRepository<Consultation>>().Object,
                 new Mock<IRepository<UserConsultation>>().Object,
                 new Mock<IConsultationService>().Object,
-                new Mock<IPromoCodeService>().Object);
+                new Mock<IPromoCodeService>().Object,
+                _contactService.Object,
+                _userService.Object);
         }
 
         [Fact]

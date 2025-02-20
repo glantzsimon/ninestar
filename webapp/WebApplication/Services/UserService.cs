@@ -15,10 +15,8 @@ using UserMembership = K9.DataAccessLayer.Models.UserMembership;
 
 namespace K9.WebApplication.Services
 {
-    public class UserService : IUserService
+    public class UserService : BaseService, IUserService
     {
-        public INineStarKiPackage Package { get; }
-
         private readonly IRepository<User> _usersRepository;
         private readonly IRepository<PromoCode> _promoCodesRepository;
         private readonly IRepository<UserPromoCode> _userPromoCodeRepository;
@@ -38,9 +36,8 @@ namespace K9.WebApplication.Services
 
         public UserService(INineStarKiPackage package, IRepository<PromoCode> promoCodesRepository, IRepository<UserPromoCode> userPromoCodeRepository, IRepository<UserConsultation> userConsultationsRepository, IRepository<Consultation> consultationsRepository, IConsultationService consultationService,
             IRepository<UserMembership> userMembershipsRepository, IRepository<UserOTP> userOtpRepository)
+            : base(package)
         {
-            Package = package;
-
             _userPromoCodeRepository = userPromoCodeRepository;
             _userConsultationsRepository = userConsultationsRepository;
             _consultationsRepository = consultationsRepository;

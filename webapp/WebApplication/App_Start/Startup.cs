@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
+using Hangfire;
 using K9.Base.DataAccessLayer.Config;
 using K9.Base.DataAccessLayer.Helpers;
 using K9.Base.DataAccessLayer.Respositories;
@@ -13,18 +14,18 @@ using K9.DataAccessLayer.Database;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
+using K9.WebApplication.Helpers;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using K9.WebApplication.Services.Stripe;
 using Microsoft.Owin;
 using NLog;
+using Owin;
 using System;
 using System.Configuration;
 using System.Data.Entity;
 using System.IO;
 using System.Web.Mvc;
-using Hangfire;
-using K9.WebApplication.Helpers;
-using Owin;
 using HtmlHelpers = K9.Base.WebApplication.Helpers.HtmlHelpers;
 
 [assembly: OwinStartup(typeof(K9.WebApplication.Startup))]
@@ -59,7 +60,7 @@ namespace K9.WebApplication
             builder.RegisterType<FileSourceHelper>().As<IFileSourceHelper>().InstancePerRequest();
             builder.RegisterGeneric(typeof(ControllerPackage<>)).As(typeof(IControllerPackage<>)).InstancePerRequest();
             builder.RegisterType<Services.AccountService>().As<Services.IAccountService>().InstancePerRequest();
-            builder.RegisterType<ShopService>().As<IShopService>().InstancePerRequest();
+            builder.RegisterType<NineStarKiControllerPackage>().As<INineStarKiControllerPackage>().InstancePerRequest();
             builder.RegisterType<FacebookService>().As<IFacebookService>().InstancePerRequest();
             builder.RegisterType<StripeService>().As<IStripeService>().InstancePerRequest();
             builder.RegisterType<DonationService>().As<IDonationService>().InstancePerRequest();
@@ -96,7 +97,7 @@ namespace K9.WebApplication
             RecurringJob.AddOrUpdate<EmailQueueService>(
                 "ProcessEmailQueue",
                 service => service.ProcessQueue(),
-                Cron.MinuteInterval(10));        // Cron expression to run every 10 minutes
+                Cron.MinuteInterval(10));      
         }
 
         public static void RegisterStaticTypes()

@@ -8,25 +8,20 @@ using K9.WebApplication.Services.Stripe;
 using NLog;
 using System;
 using System.Web.Mvc;
+using K9.WebApplication.Packages;
 using StripeConfiguration = K9.WebApplication.Config.StripeConfiguration;
 
 namespace K9.WebApplication.Controllers
 {
     public class PaymentsController : BaseNineStarKiController
     {
-        private readonly ILogger _logger;
         private readonly IStripeService _stripeService;
-        private readonly IContactService _contactService;
-        private readonly IUserService _userService;
         private readonly StripeConfiguration _stripeConfig;
 
-        public PaymentsController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IStripeService stripeService, IOptions<StripeConfiguration> stripeConfig, IMembershipService membershipService, IContactService contactService, IUserService userService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
+        public PaymentsController(INineStarKiControllerPackage nineStarKiControllerPackage, IStripeService stripeService, IOptions<StripeConfiguration> stripeConfig)
+            : base(nineStarKiControllerPackage)
         {
-            _logger = logger;
             _stripeService = stripeService;
-            _contactService = contactService;
-            _userService = userService;
             _stripeConfig = stripeConfig.Value;
         }
 
@@ -54,8 +49,8 @@ namespace K9.WebApplication.Controllers
             try
             {
                 var result = _stripeService.GetPaymentIntentById(paymentIntentId);
-                var contact = _contactService.GetOrCreateContact(result.CustomerId, fullName, emailAddress, phoneNumber);
-                _userService.UpdateActiveUserEmailAddressIfFromFacebook(contact);
+                var contact = Package.ContactService.GetOrCreateContact(result.CustomerId, fullName, emailAddress, phoneNumber);
+                Package.UserService.UpdateActiveUserEmailAddressIfFromFacebook(contact);
 
                 return Json(new
                 {
@@ -76,7 +71,7 @@ namespace K9.WebApplication.Controllers
             }
             catch (Exception ex)
             {
-                _logger.Error($"PaymentController => ProcessPayment => Error: {ex.GetFullErrorMessage()}");
+                Logger.Error($"PaymentController => ProcessPayment => Error: {ex.GetFullErrorMessage()}");
                 return Json(new
                 {
                     success = false,

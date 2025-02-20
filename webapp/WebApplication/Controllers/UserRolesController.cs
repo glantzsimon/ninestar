@@ -1,31 +1,27 @@
 ﻿using K9.Base.DataAccessLayer.Models;
-using K9.Base.WebApplication.Controllers;
 using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.UnitsOfWork;
 using K9.Base.WebApplication.ViewModels;
 using K9.SharedLibrary.Authentication;
-using K9.SharedLibrary.Models;
+using K9.WebApplication.Packages;
 using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
     [Authorize]
 	[RequirePermissions(Role = RoleNames.Administrators)]
-	public class UserRolesController : BaseController<UserRole>
+	public class UserRolesController : BaseNineStarKiController<UserRole>
 	{
-		private readonly IRepository<User> _userRepository;
-		
-		public UserRolesController(IControllerPackage<UserRole> controllerPackage, IRepository<User> userRepository)
-			: base(controllerPackage)
+		public UserRolesController(IControllerPackage<UserRole> controllerPackage, INineStarKiControllerPackage nineStarKiControllerPackage)
+			: base(controllerPackage, nineStarKiControllerPackage)
 		{
-			_userRepository = userRepository;
 		}
 
 		[Authorize]
 		[RequirePermissions(Permission = Permissions.Edit)]
 		public ActionResult EditRolesForUser(int id = 0)
 		{
-			return EditMultiple<User, Role>(_userRepository.Find(id));
+			return EditMultiple<User, Role>(Package.UsersRepository.Find(id));
 		}
 
 		[Authorize]

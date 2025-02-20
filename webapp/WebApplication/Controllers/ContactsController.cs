@@ -1,35 +1,32 @@
-﻿using K9.Base.WebApplication.Controllers;
-using K9.Base.WebApplication.Extensions;
+﻿using K9.Base.WebApplication.Extensions;
 using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using NLog;
 using System;
 using System.Linq;
 using System.Web.Mvc;
-using K9.Base.DataAccessLayer.Models;
 
 namespace K9.WebApplication.Controllers
 {
     [Authorize]
     [RequirePermissions(Role = RoleNames.Administrators)]
-    public class ContactsController : BaseController<Contact>
+    public class ContactsController : BaseNineStarKiController<Contact>
     {
         private readonly IRepository<Donation> _donationRepository;
-        private readonly ILogger _logger;
         private readonly IMailChimpService _mailChimpService;
-        private readonly IRepository<User> _usersRepository;
-
-        public ContactsController(IControllerPackage<Contact> controllerPackage, IRepository<Donation> donationRepository, ILogger logger, IMailChimpService mailChimpService, IRepository<User> usersRepository) : base(controllerPackage)
+        
+        public ContactsController(IControllerPackage<Contact> controllerPackage, INineStarKiControllerPackage nineStarKiControllerPackage,
+            IRepository<Donation> donationRepository, IMailChimpService mailChimpService) 
+            : base(controllerPackage, nineStarKiControllerPackage)
         {
             _donationRepository = donationRepository;
-            _logger = logger;
             _mailChimpService = mailChimpService;
-            _usersRepository = usersRepository;
 
             RecordUpdated += ContactsController_RecordUpdated;
         }
@@ -37,7 +34,7 @@ namespace K9.WebApplication.Controllers
         private void ContactsController_RecordUpdated(object sender, Base.WebApplication.EventArgs.CrudEventArgs e)
         {
             var contact = (Contact)e.Item;
-            var user = _usersRepository.Find(u => u.EmailAddress == contact.EmailAddress).FirstOrDefault();
+            var user = Package.UsersRepository.Find(u => u.EmailAddress == contact.EmailAddress).FirstOrDefault();
 
             if (user != null && user.IsUnsubscribed != contact.IsUnsubscribed)
             {
@@ -45,11 +42,11 @@ namespace K9.WebApplication.Controllers
 
                 try
                 {
-                    _usersRepository.Update(user);
+                    Package.UsersRepository.Update(user);
                 }
                 catch (Exception ex)
                 {
-                    _logger.Log(LogLevel.Error,
+                    Logger.Log(LogLevel.Error,
                         $"ContactsController => ContactsController_RecordUpdated => Could not update user => UserId: {user.Id} => Error: {ex.GetFullErrorMessage()}");
                     throw;
                 }
@@ -99,7 +96,7 @@ namespace K9.WebApplication.Controllers
                 }
                 catch (Exception ex)
                 {
-                    _logger.Error(ex.GetFullErrorMessage());
+                    Logger.Error(ex.GetFullErrorMessage());
                     ModelState.AddErrorMessageFromException<Contact>(ex, contact);
                 }
             }

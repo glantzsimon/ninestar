@@ -1,32 +1,28 @@
 ﻿using K9.Base.DataAccessLayer.Models;
-using K9.Base.WebApplication.Controllers;
 using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.UnitsOfWork;
 using K9.Base.WebApplication.ViewModels;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
-using K9.SharedLibrary.Models;
+using K9.WebApplication.Packages;
 using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
     [Authorize]
     [RequirePermissions(Role = RoleNames.Administrators)]
-	public class MailingListUsersController : BaseController<MailingListUser>
+	public class MailingListUsersController : BaseNineStarKiController<MailingListUser>
 	{
-		private readonly IRepository<User> _userRepository;
-		
-		public MailingListUsersController(IControllerPackage<MailingListUser> controllerPackage, IRepository<User> userRepository)
-			: base(controllerPackage)
+		public MailingListUsersController(IControllerPackage<MailingListUser> controllerPackage, INineStarKiControllerPackage nineStarKiControllerPackage)
+			: base(controllerPackage, nineStarKiControllerPackage)
 		{
-			_userRepository = userRepository;
 		}
 
 		[Authorize]
 		[RequirePermissions(Permission = Permissions.Edit)]
 		public ActionResult EditMailingListsForUser(int id = 0)
 		{
-			return EditMultiple<User, MailingList>(_userRepository.Find(id));
+			return EditMultiple<User, MailingList>(Package.UsersRepository.Find(id));
 		}
 
 		[Authorize]

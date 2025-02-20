@@ -1,12 +1,16 @@
 ﻿using K9.Base.DataAccessLayer.Models;
 using K9.Base.WebApplication.Constants;
 using K9.Base.WebApplication.Controllers;
+using K9.Base.WebApplication.EventArgs;
+using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Helpers;
+using K9.SharedLibrary.Helpers.Html;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Enums;
 using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using NLog;
 using System;
@@ -19,17 +23,12 @@ namespace K9.WebApplication.Controllers
 {
     public class BaseNineStarKiController : BaseController
     {
-        private readonly IMembershipService _membershipService;
-        private readonly IRepository<Role> _rolesRepository;
-        private readonly IRepository<UserRole> _userRolesRepository;
-
-        public BaseNineStarKiController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles,
-            IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
+        public BaseNineStarKiController(INineStarKiControllerPackage nineStarKiControllerPackage)
+            : base(nineStarKiControllerPackage.Logger, nineStarKiControllerPackage.DataSetsHelper,
+                nineStarKiControllerPackage.Roles, nineStarKiControllerPackage.Authentication, nineStarKiControllerPackage.FileSourceHelper)
         {
-            _membershipService = membershipService;
-            _rolesRepository = rolesRepository;
-            _userRolesRepository = userRolesRepository;
+            Package = nineStarKiControllerPackage;
+            UrlHelper = new UrlHelper(System.Web.HttpContext.Current.Request.RequestContext);
             SetBetaWarningSessionVariable();
             SetSessionRoles(Current.UserId);
         }
@@ -37,9 +36,13 @@ namespace K9.WebApplication.Controllers
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             base.OnActionExecuting(filterContext);
-        
+
             ViewBag.DeviceType = GetDeviceType();
         }
+
+        public INineStarKiControllerPackage Package { get; }
+
+        public UrlHelper UrlHelper { get; }
 
         public ActionResult SetLanguage(string languageCode, string cultureCode)
         {
@@ -52,7 +55,7 @@ namespace K9.WebApplication.Controllers
         {
             if (Authentication.IsAuthenticated)
             {
-                return _membershipService.GetActiveUserMembership(Authentication.CurrentUserId);
+                return Package.MembershipService.GetActiveUserMembership(Authentication.CurrentUserId);
             }
 
             return null;
@@ -109,7 +112,7 @@ namespace K9.WebApplication.Controllers
 
         public void SetSessionRoles(int userId)
         {
-            Helpers.SessionHelper.SetCurrentUserRoles(_rolesRepository, _userRolesRepository, userId);
+            Helpers.SessionHelper.SetCurrentUserRoles(Package.RolesRepository, Package.UserRolesRepository, userId);
         }
 
         public override string GetObjectName()
@@ -129,6 +132,49 @@ namespace K9.WebApplication.Controllers
             {
                 SessionHelper.SetValue(Constants.SessionConstants.BetaWarningHide, true);
             }
+        }
+    }
+
+    public class BaseNineStarKiController<T> : BaseController<T> where T : class, IObjectBase
+    {
+        public BaseNineStarKiController(IControllerPackage<T> controllerPackage, INineStarKiControllerPackage nineStarControllerPackage)
+            : base(controllerPackage)
+        {
+            Package = nineStarControllerPackage;
+            UrlHelper = new UrlHelper(System.Web.HttpContext.Current.Request.RequestContext);
+
+            SetSessionRoles(Current.UserId);
+
+            RecordBeforeCreated += BaseNineStarKiController_RecordBeforeCreated;
+            RecordBeforeUpdated += BaseNineStarKiController_RecordBeforeUpdated;
+            RecordBeforeUpdate += BaseNineStarKiController_RecordBeforeUpdate;
+        }
+
+        public INineStarKiControllerPackage Package { get; }
+
+        public UrlHelper UrlHelper { get; }
+
+        public void SetSessionRoles(int userId)
+        {
+            Helpers.SessionHelper.SetCurrentUserRoles(Package.RolesRepository, Package.UserRolesRepository, userId);
+        }
+
+        private void BaseNineStarKiController_RecordBeforeUpdated(object sender, CrudEventArgs e)
+        {
+            var model = e.Item as T;
+            HtmlParser.ParseHtml(ref model);
+        }
+
+        private void BaseNineStarKiController_RecordBeforeCreated(object sender, CrudEventArgs e)
+        {
+            var model = e.Item as T;
+            HtmlParser.ParseHtml(ref model);
+        }
+
+        private void BaseNineStarKiController_RecordBeforeUpdate(object sender, CrudEventArgs e)
+        {
+            var model = e.Item as T;
+            HtmlParser.ParseHtml(ref model);
         }
     }
 }

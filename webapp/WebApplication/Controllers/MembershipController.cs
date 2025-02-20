@@ -1,38 +1,30 @@
-﻿using K9.Base.DataAccessLayer.Models;
+﻿using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Extensions;
-using K9.SharedLibrary.Helpers;
-using K9.SharedLibrary.Models;
 using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using K9.WebApplication.ViewModels;
 using NLog;
 using System;
 using System.Web.Mvc;
-using K9.DataAccessLayer.Models;
 
 namespace K9.WebApplication.Controllers
 {
     public class MembershipController : BaseNineStarKiController
     {
-        private readonly ILogger _logger;
-        private readonly IMembershipService _membershipService;
-        private readonly IUserService _userService;
         private readonly IPromoCodeService _promoCodeService;
 
-        public MembershipController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, IUserService userService, IPromoCodeService promoCodeService)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
+        public MembershipController(INineStarKiControllerPackage nineStarKiControllerPackage, IPromoCodeService promoCodeService)
+            : base(nineStarKiControllerPackage)
         {
-            _logger = logger;
-            _membershipService = membershipService;
-            _userService = userService;
             _promoCodeService = promoCodeService;
         }
 
         public ActionResult Index(string retrieveLast = null)
         {
             TempData["RetrieveLast"] = retrieveLast;
-            return View(_membershipService.GetMembershipViewModel());
+            return View(Package.MembershipService.GetMembershipViewModel());
         }
 
         [Authorize]
@@ -62,13 +54,13 @@ namespace K9.WebApplication.Controllers
 
             try
             {
-                var model = _membershipService.GetPurchaseMembershipModel(membershipOptionId, promoCode);
+                var model = Package.MembershipService.GetPurchaseMembershipModel(membershipOptionId, promoCode);
                 model.PromoCode = promoCodeModel;
                 return View(model);
             }
             catch (Exception e)
             {
-                _logger.Log(LogLevel.Error, e.GetFullErrorMessage);
+                Logger.Log(LogLevel.Error, e.GetFullErrorMessage);
                 throw;
             }
         }
@@ -79,7 +71,7 @@ namespace K9.WebApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Purchase(int membershipOptionId, string promoCode)
         {
-            var membershipModel = _membershipService.GetPurchaseMembershipModel(membershipOptionId, promoCode);
+            var membershipModel = Package.MembershipService.GetPurchaseMembershipModel(membershipOptionId, promoCode);
             ViewBag.SubTitle = Globalisation.Dictionary.UpgradeMembership;
             return View(membershipModel);
         }
@@ -91,12 +83,12 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                _membershipService.ProcessPurchase(purchaseModel);
+                Package.MembershipService.ProcessPurchase(purchaseModel);
                 return Json(new { success = true });
             }
             catch (Exception ex)
             {
-                _logger.Error($"MembershipController => ProcessPurchase => Error: {ex.GetFullErrorMessage()}");
+                Logger.Error($"MembershipController => ProcessPurchase => Error: {ex.GetFullErrorMessage()}");
                 return Json(new { success = false, error = ex.Message });
             }
         }
@@ -105,14 +97,14 @@ namespace K9.WebApplication.Controllers
         [Route("membership/unlock/success")]
         public ActionResult PurchaseSuccess()
         {
-            var membership = _membershipService.GetActiveUserMembership(Current.UserId);
-            var consultations = _userService.GetPendingConsultations(Current.UserId);
-            var user = _userService.Find(Current.UserId);
+            var membership = Package.MembershipService.GetActiveUserMembership(Current.UserId);
+            var consultations = Package.UserService.GetPendingConsultations(Current.UserId);
+            var user = Package.UserService.Find(Current.UserId);
             return View(new MyAccountViewModel
             {
                 User = user,
-                Membership = _membershipService.GetActiveUserMembership(user?.Id),
-                Consultations = _userService.GetPendingConsultations(user.Id)
+                Membership = Package.MembershipService.GetActiveUserMembership(user?.Id),
+                Consultations = Package.UserService.GetPendingConsultations(user.Id)
             });
         }
 
@@ -127,7 +119,7 @@ namespace K9.WebApplication.Controllers
         [Route("membership/upgrade/payment")]
         public ActionResult SwitchStart(int membershipOptionId)
         {
-            var switchMembershipModel = _membershipService.GetSwitchMembershipModel(membershipOptionId);
+            var switchMembershipModel = Package.MembershipService.GetSwitchMembershipModel(membershipOptionId);
             ViewBag.Title = Globalisation.Dictionary.UpgradeMembership;
 
             return View("PurchaseStart", switchMembershipModel);

@@ -121,9 +121,6 @@
   <data name="PasswordResetEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>templates\en-gb\passwordresetemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="SupportQuery" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>templates\en-gb\supportquery.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="WelcomeEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>templates\en-gb\welcomeemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -3917,6 +3914,9 @@
     <value>emailtemplates\en-gb\baseemailtemplate.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="SupportQueryReceived1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>emailtemplates\en-gb\supportqueryreceived.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>emailtemplates\en-gb\toninestar\supportqueryreceived.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SupportQueryThankYou" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\en-gb\tocustomer\supportquerythankyou.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

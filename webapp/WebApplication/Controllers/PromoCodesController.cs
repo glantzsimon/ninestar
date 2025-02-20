@@ -1,22 +1,21 @@
-﻿using K9.Base.WebApplication.Controllers;
-using K9.Base.WebApplication.UnitsOfWork;
+﻿using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Packages;
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
-using PromoCode = K9.DataAccessLayer.Models.PromoCode;
 
 namespace K9.WebApplication.Controllers
 {
     [Authorize]
-    public class PromoCodesController : BaseController<PromoCode>
+    public class PromoCodesController : BaseNineStarKiController<PromoCode>
     {
         private readonly IRepository<MembershipOption> _membershipOptionsRepository;
 
-        public PromoCodesController(IControllerPackage<PromoCode> controllerPackage, IRepository<MembershipOption> membershipOptionsRepository)
-            : base(controllerPackage)
+        public PromoCodesController(IControllerPackage<PromoCode> controllerPackage, INineStarKiControllerPackage nineStarKiControllerPackage, IRepository<MembershipOption> membershipOptionsRepository)
+            : base(controllerPackage, nineStarKiControllerPackage)
         {
             _membershipOptionsRepository = membershipOptionsRepository;
         }

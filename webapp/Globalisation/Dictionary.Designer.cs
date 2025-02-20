@@ -1865,7 +1865,6 @@ namespace K9.Globalisation {
         ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
         ///    &lt;title&gt;{Title}&lt;/title&gt;
         ///    &lt;style type=&quot;text/css&quot;&gt;
-        ///        /* General resets for email clients */
         ///        body, table, td, a {
         ///            -webkit-text-size-adjust: 100%;
         ///            -ms-text-size-adjust: 100%;
@@ -1877,7 +1876,9 @@ namespace K9.Globalisation {
         ///        }
         ///
         ///        img {
-        ///            -ms-interpolation-mode: bic [rest of string was truncated]&quot;;.
+        ///            -ms-interpolation-mode: bicubic;
+        ///            display: block;
+        ///             [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BaseEmailTemplate {
             get {
@@ -12089,29 +12090,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!doctype html&gt;
-        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
-        ///&lt;head&gt;
-        ///    &lt;!-- NAME: 1:2:1 COLUMN --&gt;
-        ///    &lt;!--[if gte mso 15]&gt;
-        ///    &lt;xml&gt;
-        ///        &lt;o:OfficeDocumentSettings&gt;
-        ///        &lt;o:AllowPNG/&gt;
-        ///        &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
-        ///        &lt;/o:OfficeDocumentSettings&gt;
-        ///    &lt;/xml&gt;
-        ///    &lt;![endif]--&gt;
-        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
-        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string SupportQuery {
-            get {
-                return ResourceManager.GetString("SupportQuery", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
         ///&lt;html lang=&quot;en&quot;&gt;
         ///
@@ -12143,33 +12121,27 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
-        ///&lt;html lang=&quot;en&quot;&gt;
-        ///
-        ///&lt;head&gt;
-        ///    &lt;title&gt;{Title}&lt;/title&gt;
-        ///&lt;/head&gt;
-        ///
-        ///&lt;style type=&quot;text/css&quot;&gt;
-        ///    html {
-        ///        margin: 0;
-        ///        padding: 0;
-        ///        font-family: &quot;Segoe UI&quot;, Verdana, Helvetica, Sans-Serif;
-        ///        font-size: 100%;
-        ///        text-rendering: optimizeLegibility !important;
-        ///        -webkit-font-smoothing: antialiased !important;
-        ///        margin: 0;
-        ///        color: #333;
-        ///    }
-        ///&lt;/style&gt;
-        ///
-        ///&lt;body&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;We have received a s [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;p&gt;Dear Team,&lt;/p&gt;
+        ///&lt;p&gt;We have received a support query from {Customer} &lt;a href=&quot;mailto:{CustomerEmail}?subject=Re: {Subject}&amp;body=Customer Query: {UnformattedQuery}&quot;&gt;{CustomerEmail}&lt;/a&gt;.&lt;/p&gt;
+        ///&lt;hr /&gt;
+        ///&lt;div&gt;
+        ///    {Query}
+        ///&lt;/div&gt;
+        ///&lt;hr /&gt;.
         /// </summary>
         public static string SupportQueryReceived1 {
             get {
                 return ResourceManager.GetString("SupportQueryReceived1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;Dear {FirstName},&lt;/p&gt;
+        ///&lt;p&gt;Thank you for your interest in 9 Star Ki. A member of our team will be in touch with you shortly.&lt;/p&gt;.
+        /// </summary>
+        public static string SupportQueryThankYou {
+            get {
+                return ResourceManager.GetString("SupportQueryThankYou", resourceCulture);
             }
         }
         

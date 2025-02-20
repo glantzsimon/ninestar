@@ -14,23 +14,20 @@ using System.Web.Mvc;
 using K9.Base.WebApplication.Filters;
 using K9.SharedLibrary.Authentication;
 using K9.WebApplication.Helpers;
+using K9.WebApplication.Packages;
 
 namespace K9.WebApplication.Controllers
 {
     [Authorize]
     public class ConsultationController : BaseNineStarKiController
     {
-        private readonly ILogger _logger;
         private readonly IConsultationService _consultationService;
-        private readonly IContactService _contactService;
         private readonly IRepository<Slot> _slotsRepository;
 
-        public ConsultationController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IConsultationService consultationService, IContactService contactService, IRepository<Slot> slotsRepository, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
+        public ConsultationController(INineStarKiControllerPackage nineStarKiControllerPackage, IConsultationService consultationService, IRepository<Slot> slotsRepository)
+            : base(nineStarKiControllerPackage)
         {
-            _logger = logger;
             _consultationService = consultationService;
-            _contactService = contactService;
             _slotsRepository = slotsRepository;
         }
 
@@ -56,24 +53,24 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                var contact = _contactService.Find(purchaseModel.ContactId);
+                var contact = Package.ContactService.Find(purchaseModel.ContactId);
 
                 var consultationId = _consultationService.CreateConsultation(new Consultation
                 {
                     ConsultationDuration = (EConsultationDuration)purchaseModel.Quantity,
                     ContactId = purchaseModel.ContactId
                 }, contact);
-                
+
                 return Json(new
                 {
-                    success = true, 
-                    idProperty = "consultationId", 
+                    success = true,
+                    idProperty = "consultationId",
                     id = consultationId
                 });
             }
             catch (Exception ex)
             {
-                _logger.Error($"SupportController => ProcessConsultation => Error: {ex.GetFullErrorMessage()}");
+                Logger.Error($"SupportController => ProcessConsultation => Error: {ex.GetFullErrorMessage()}");
                 return Json(new { success = false, error = ex.Message });
             }
         }
@@ -91,14 +88,14 @@ namespace K9.WebApplication.Controllers
 
             if (consultation == null)
             {
-                _logger.Error($"ConsultationController => ScheduleConsultation => Consultation Not Found => ConsultationId: {consultationId}");
+                Logger.Error($"ConsultationController => ScheduleConsultation => Consultation Not Found => ConsultationId: {consultationId}");
                 return HttpNotFound();
             }
 
             var userConsultation = _consultationService.FindUserConsultation(consultationId, Current.UserId);
             if (userConsultation == null)
             {
-                _logger.Error($"ConsultationController => ScheduleConsultation => UserConsultation Not Found => ConsultationId: {consultationId} UserId: {Current.UserId}");
+                Logger.Error($"ConsultationController => ScheduleConsultation => UserConsultation Not Found => ConsultationId: {consultationId} UserId: {Current.UserId}");
                 return HttpNotFound();
             }
 

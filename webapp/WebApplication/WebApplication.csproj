@@ -300,6 +300,8 @@
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
+    <Compile Include="ControllerPackages\NineStarKiControllerPackage.cs" />
+    <Compile Include="ControllerPackages\INineStarKiControllerPackage.cs" />
     <Compile Include="Controllers\ApiPureAlchemyController.cs" />
     <Compile Include="Controllers\ApiController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
@@ -461,12 +463,10 @@
     <Compile Include="Services\IDonationService.cs" />
     <Compile Include="Services\IMailChimpService.cs" />
     <Compile Include="Services\IMembershipService.cs" />
-    <Compile Include="Services\IShopService.cs" />
     <Compile Include="Services\INineStarKiService.cs" />
     <Compile Include="Services\MailChimpService.cs" />
     <Compile Include="Services\MembershipService.cs" />
     <Compile Include="Services\NineStarKiService.cs" />
-    <Compile Include="Services\ShopService.cs" />
     <Compile Include="Services\Stripe\Charge.cs" />
     <Compile Include="Services\Stripe\IStripeService.cs" />
     <Compile Include="Services\Stripe\StripeService.cs" />
@@ -1102,9 +1102,6 @@
     <Content Include="Views\Countries\Create.cshtml" />
     <Content Include="Views\Countries\_EditFields.cshtml" />
     <Content Include="Views\Countries\_DisplayFields.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Course.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\Student.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\Course.cshtml" />
     <Content Include="Views\Shared\FriendlyError.cshtml" />
     <Content Include="Views\Users\_DisplayFields.cshtml" />
     <Content Include="Views\Users\_EditFields.cshtml" />
@@ -1283,8 +1280,6 @@
     <Content Include="Views\Account\DeleteAccountFailed.cshtml" />
     <Content Include="Views\Account\DeleteAccountSuccess.cshtml" />
     <Content Include="Views\Shared\_FileSource.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\ArchiveCategory.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\ArchiveCategory.cshtml" />
     <Content Include="Views\Shared\_UploadedFilesDisplay.cshtml" />
     <Content Include="Views\PersonalChart\_CalculatorForm.cshtml" />
     <Content Include="Views\Shared\_EmbeddedVideo.cshtml" />

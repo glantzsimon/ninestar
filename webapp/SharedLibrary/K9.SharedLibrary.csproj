@@ -143,6 +143,7 @@
     <Compile Include="Helpers\FileSourceHelper.cs" />
     <Compile Include="Helpers\Html\ColumnInfo.cs" />
     <Compile Include="Helpers\Html\HtmlFormatter.cs" />
+    <Compile Include="Helpers\Html\HtmlParser.cs" />
     <Compile Include="Helpers\Html\HtmlTableHelper.cs" />
     <Compile Include="Helpers\IFileSourceHelper.cs" />
     <Compile Include="Helpers\LinkPreviewer.cs" />

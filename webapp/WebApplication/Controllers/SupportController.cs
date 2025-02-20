@@ -1,45 +1,33 @@
-﻿using K9.Base.DataAccessLayer.Models;
-using K9.Base.WebApplication.Config;
-using K9.Base.WebApplication.ViewModels;
+﻿using K9.Base.WebApplication.ViewModels;
 using K9.DataAccessLayer.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
-using K9.SharedLibrary.Helpers;
+using K9.SharedLibrary.Helpers.Html;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.Models;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using NLog;
 using System;
 using System.Web.Mvc;
-using K9.SharedLibrary.Helpers.Html;
 
 namespace K9.WebApplication.Controllers
 {
     public class SupportController : BaseNineStarKiController
     {
-        private readonly ILogger _logger;
-        private readonly IMailer _mailer;
-        private readonly IDonationService _donationService;
-        private readonly IContactService _contactService;
         private readonly IRecaptchaService _recaptchaService;
         private readonly IEmailTemplateService _emailTemplateService;
         private readonly RecaptchaConfiguration _recaptchaConfig;
-        private readonly WebsiteConfiguration _config;
-        private readonly UrlHelper _urlHelper;
+        private readonly IDonationService _donationService;
 
-        public SupportController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IMailer mailer, IOptions<WebsiteConfiguration> config, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IOptions<StripeConfiguration> stripeConfig, IDonationService donationService, IMembershipService membershipService, IContactService contactService, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, IEmailTemplateService emailTemplateService)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
+        public SupportController(INineStarKiControllerPackage nineStarKiControllerPackage, IDonationService donationService, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IEmailTemplateService emailTemplateService)
+            : base(nineStarKiControllerPackage)
         {
-            _logger = logger;
-            _mailer = mailer;
             _donationService = donationService;
-            _contactService = contactService;
             _recaptchaService = recaptchaService;
             _emailTemplateService = emailTemplateService;
             _recaptchaConfig = recaptchaConfig.Value;
-            _config = config.Value;
-            _urlHelper = new UrlHelper(System.Web.HttpContext.Current.Request.RequestContext);
         }
 
         [HttpGet]
@@ -65,34 +53,35 @@ namespace K9.WebApplication.Controllers
                 }
             }
 
-            var contact = _contactService.GetOrCreateContact("", model.Name, model.EmailAddress);
+            var contact = Package.ContactService.GetOrCreateContact("", model.Name, model.EmailAddress);
             var body = _emailTemplateService.ParseForContact(
                 model.Subject,
                 Dictionary.SupportQueryReceived1,
-                contact, 
-                new {
+                contact,
+                new
+                {
                     Customer = model.Name,
                     CustomerEmail = model.EmailAddress,
                     model.Subject,
                     Query = HtmlFormatter.ConvertNewlinesToParagraphs(model.Body),
-                    UnformattedQuery = model.Body,
+                    UnformattedQuery = $"%0D%0A %0D%0A {model.Body}"
                 });
 
             try
             {
-                _mailer.SendEmail(
+                Package.Mailer.SendEmail(
                     model.Subject,
                     body,
-                    _config.SupportEmailAddress,
-                    _config.CompanyName);
+                    Package.WebsiteConfiguration.SupportEmailAddress,
+                    Package.WebsiteConfiguration.CompanyName);
 
-                //SendEmailToCustomer(contact);
+                SendEmailToCustomer(contact);
 
                 return RedirectToAction("ContactUsSuccess");
             }
             catch (Exception ex)
             {
-                _logger.Error(ex.GetFullErrorMessage());
+                Logger.Error(ex.GetFullErrorMessage());
                 return View("FriendlyError");
             }
         }
@@ -125,7 +114,7 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                var contact = _contactService.Find(purchaseModel.ContactId);
+                var contact = Package.ContactService.Find(purchaseModel.ContactId);
 
                 _donationService.CreateDonation(new Donation
                 {
@@ -141,7 +130,7 @@ namespace K9.WebApplication.Controllers
             }
             catch (Exception ex)
             {
-                _logger.Error($"SupportController => ProcessDonation => Error: {ex.GetFullErrorMessage()}");
+                Logger.Error($"SupportController => ProcessDonation => Error: {ex.GetFullErrorMessage()}");
                 return Json(new { success = false, error = ex.Message });
             }
         }
@@ -165,20 +154,32 @@ namespace K9.WebApplication.Controllers
 
         private void SendEmailToCustomer(Contact contact)
         {
-            var template = Dictionary.SupportQuery;
+            var template = Dictionary.SupportQueryThankYou;
             var title = Dictionary.EmailThankYouTitle;
+
             if (contact != null)
             {
-                _mailer.SendEmail(title, TemplateParser.Parse(template, new
+                var body = _emailTemplateService.ParseForContact(
+                    title,
+                    Dictionary.SupportQueryThankYou,
+                    contact,
+                    new
+                    {
+                        contact.FirstName
+                    });
+
+                try
                 {
-                    Title = title,
-                    contact.FirstName,
-                    PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                    TermsOfServiceLink = _urlHelper.AbsoluteAction("TermsOfService", "Home"),
-                    UnsubscribeLink = _urlHelper.AbsoluteAction("UnsubscribeContact", "Account", new { externalId = contact.Name }),
-                    DateTime.Now.Year,
-                }), contact.EmailAddress, contact.FirstName, _config.SupportEmailAddress,
-                    _config.CompanyName);
+                    Package.Mailer.SendEmail(
+                        title,
+                        body,
+                        Package.WebsiteConfiguration.SupportEmailAddress,
+                        Package.WebsiteConfiguration.CompanyName);
+                }
+                catch (Exception ex)
+                {
+                    Logger.Error(ex.GetFullErrorMessage());
+                }
             }
         }
     }

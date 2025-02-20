@@ -7,22 +7,19 @@ using K9.WebApplication.Services;
 using NLog;
 using System;
 using System.Web.Mvc;
+using K9.WebApplication.Packages;
 
 namespace K9.WebApplication.Controllers
 {
     public partial class BiorhythmsController : BaseNineStarKiController
     {
-        private readonly IAuthentication _authentication;
         private readonly INineStarKiService _nineStarKiService;
-        private readonly IRepository<User> _usersRepository;
         private readonly IBiorhythmsService _biorhythmsService;
 
-        public BiorhythmsController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService, IRepository<User> usersRepository, IBiorhythmsService biorhythmsService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
+        public BiorhythmsController(INineStarKiControllerPackage nineStarKiControllerPackage, INineStarKiService nineStarKiService, IBiorhythmsService biorhythmsService)
+            : base(nineStarKiControllerPackage)
         {
-            _authentication = authentication;
             _nineStarKiService = nineStarKiService;
-            _usersRepository = usersRepository;
             _biorhythmsService = biorhythmsService;
         }
 

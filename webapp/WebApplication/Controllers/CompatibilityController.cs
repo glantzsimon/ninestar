@@ -1,10 +1,7 @@
-﻿using K9.Base.DataAccessLayer.Models;
-using K9.SharedLibrary.Helpers;
-using K9.SharedLibrary.Models;
-using K9.WebApplication.Helpers;
+﻿using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
-using NLog;
 using System;
 using System.Web.Mvc;
 
@@ -12,18 +9,12 @@ namespace K9.WebApplication.Controllers
 {
     public partial class CompatibilityController : BaseNineStarKiController
     {
-        private readonly IAuthentication _authentication;
         private readonly INineStarKiService _nineStarKiService;
-        private readonly IRepository<User> _usersRepository;
-        private readonly IBiorhythmsService _biorhythmsService;
 
-        public CompatibilityController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService, IRepository<User> usersRepository, IBiorhythmsService biorhythmsService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
+        public CompatibilityController(INineStarKiControllerPackage nineStarKiControllerPackage, INineStarKiService nineStarKiService)
+            : base(nineStarKiControllerPackage)
         {
-            _authentication = authentication;
             _nineStarKiService = nineStarKiService;
-            _usersRepository = usersRepository;
-            _biorhythmsService = biorhythmsService;
         }
 
         [Route("compatibility")]

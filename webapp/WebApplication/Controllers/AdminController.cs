@@ -1,21 +1,13 @@
-﻿using K9.Base.DataAccessLayer.Models;
-using K9.Base.WebApplication.Config;
+﻿using HtmlAgilityPack;
 using K9.Base.WebApplication.Filters;
-using K9.Base.WebApplication.Services;
-using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
-using K9.SharedLibrary.Helpers;
-using K9.SharedLibrary.Models;
-using K9.WebApplication.Config;
-using K9.WebApplication.Services;
+using K9.WebApplication.Packages;
 using K9.WebApplication.ViewModels;
-using NLog;
 using System;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Web.Mvc;
-using HtmlAgilityPack;
 
 namespace K9.WebApplication.Controllers
 {
@@ -23,32 +15,9 @@ namespace K9.WebApplication.Controllers
     [RequirePermissions(Role = RoleNames.Administrators)]
     public class AdminController : BaseNineStarKiController
     {
-        private readonly IRepository<User> _userRepository;
-        private readonly ILogger _logger;
-        private readonly Services.IAccountService _accountService;
-        private readonly IAuthentication _authentication;
-        private readonly IFacebookService _facebookService;
-        private readonly IMembershipService _membershipService;
-        private readonly IContactService _contactService;
-        private readonly IUserService _userService;
-        private readonly IRepository<PromoCode> _promoCodesRepository;
-        private readonly IRecaptchaService _recaptchaService;
-        private readonly RecaptchaConfiguration _recaptchaConfig;
-
-        public AdminController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, Services.IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IContactService contactService, IUserService userService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
+        public AdminController(INineStarKiControllerPackage nineStarKiControllerPackage)
+            : base(nineStarKiControllerPackage)
         {
-            _userRepository = userRepository;
-            _logger = logger;
-            _accountService = accountService;
-            _authentication = authentication;
-            _facebookService = facebookService;
-            _membershipService = membershipService;
-            _contactService = contactService;
-            _userService = userService;
-            _promoCodesRepository = promoCodesRepository;
-            _recaptchaService = recaptchaService;
-            _recaptchaConfig = recaptchaConfig.Value;
         }
 
         [Route("admin/display/all-content-files/{folder}/")]

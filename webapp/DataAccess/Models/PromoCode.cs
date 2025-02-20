@@ -140,7 +140,7 @@ namespace K9.DataAccessLayer.Models
 
         #region Validation
 
-        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        new public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             if (MembershipOptionId == 0)
             {
@@ -150,6 +150,8 @@ namespace K9.DataAccessLayer.Models
             {
                 yield return new ValidationResult("Please input the discount amount", new[] { "Discount" });
             }
+
+            base.Validate(validationContext);
         }
 
         #endregion

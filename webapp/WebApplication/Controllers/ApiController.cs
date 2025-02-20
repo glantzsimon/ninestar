@@ -12,31 +12,22 @@ using K9.WebApplication.ViewModels;
 using NLog;
 using System;
 using System.Web.Mvc;
+using K9.WebApplication.Packages;
 
 namespace K9.WebApplication.Controllers
 {
     [RoutePrefix("api")]
     public partial class ApiController : BaseNineStarKiController
     {
-        private readonly IAuthentication _authentication;
         private readonly INineStarKiService _nineStarKiService;
-        private readonly IRepository<User> _usersRepository;
-        private readonly IBiorhythmsService _biorhythmsService;
         private readonly IIChingService _iChingService;
-        private readonly IMembershipService _membershipService;
-        private readonly ApiConfiguration _apiConfig;
         private const string authRequestHeader = "Authorization";
 
-        public ApiController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService, IRepository<User> usersRepository, IBiorhythmsService biorhythmsService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, IOptions<ApiConfiguration> apiConfig, IIChingService iChingService)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
+        public ApiController(INineStarKiControllerPackage nineStarKiControllerPackage, INineStarKiService nineStarKiService, IIChingService iChingService)
+            : base(nineStarKiControllerPackage)
         {
-            _authentication = authentication;
             _nineStarKiService = nineStarKiService;
-            _usersRepository = usersRepository;
-            _biorhythmsService = biorhythmsService;
             _iChingService = iChingService;
-            _membershipService = membershipService;
-            _apiConfig = apiConfig.Value;
         }
 
         [Route("personal-chart/get/{accountNumber}/" +
@@ -246,7 +237,7 @@ namespace K9.WebApplication.Controllers
             {
                 apiKey = authHeader.Substring("ApiKey".Length).Trim();
             }
-            return apiKey != null && apiKey == _apiConfig.ApiKey;
+            return apiKey != null && apiKey == Package.ApiConfiguration.ApiKey;
         }
 
         private bool IsValidMembership(UserMembership membership)
@@ -257,7 +248,7 @@ namespace K9.WebApplication.Controllers
 
         private UserMembership GetMembership(string accountNumber)
         {
-            return _membershipService.GetActiveUserMembership(accountNumber);
+            return Package.MembershipService.GetActiveUserMembership(accountNumber);
         }
     }
 }

@@ -1,13 +1,10 @@
 ﻿using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.DataAccessLayer.Enums;
-using K9.Base.DataAccessLayer.Models;
-using K9.SharedLibrary.Helpers;
-using K9.SharedLibrary.Models;
 using K9.WebApplication.Enums;
 using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
-using NLog;
 using System;
 using System.Text;
 using System.Web.Mvc;
@@ -16,18 +13,12 @@ namespace K9.WebApplication.Controllers
 {
     public partial class PersonalChartController : BaseNineStarKiController
     {
-        private readonly IAuthentication _authentication;
         private readonly INineStarKiService _nineStarKiService;
-        private readonly IRepository<User> _usersRepository;
-        private readonly IBiorhythmsService _biorhythmsService;
-
-        public PersonalChartController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, INineStarKiService nineStarKiService, IMembershipService membershipService, IRepository<User> usersRepository, IBiorhythmsService biorhythmsService, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService, rolesRepository, userRolesRepository)
+        
+        public PersonalChartController(INineStarKiControllerPackage nineStarKiControllerPackage, INineStarKiService nineStarKiService)
+            : base(nineStarKiControllerPackage)
         {
-            _authentication = authentication;
             _nineStarKiService = nineStarKiService;
-            _usersRepository = usersRepository;
-            _biorhythmsService = biorhythmsService;
         }
 
         [Route("personalchart/calculate")]
@@ -61,8 +52,6 @@ namespace K9.WebApplication.Controllers
                     model.IsScrollToCyclesOverview = isScrollToCyclesOverview;
                     model.ActiveCycleTabId = activeTabId;
                 }
-
-                model.BiorhythmResultSet = _biorhythmsService.Calculate(model, model.SelectedDate ?? DateTime.Today);
             }
 
             return View(model);
@@ -72,7 +61,7 @@ namespace K9.WebApplication.Controllers
         [Route("personalchart/my-chart")]
         public ActionResult MyProfile()
         {
-            var myAccount = _usersRepository.Find(Current.UserId);
+            var myAccount = Package.UsersRepository.Find(Current.UserId);
             var personModel = new PersonModel
             {
                 Name = myAccount.FullName,
@@ -81,7 +70,6 @@ namespace K9.WebApplication.Controllers
             };
             var nineStarKiProfile = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, true);
 
-            nineStarKiProfile.BiorhythmResultSet = _biorhythmsService.Calculate(nineStarKiProfile, DateTime.Today);
             nineStarKiProfile.IsMyProfile = true;
 
             return View("Index", nineStarKiProfile);
@@ -133,7 +121,7 @@ namespace K9.WebApplication.Controllers
                 Gender = lastProfile.Gender
             };
             var model = _nineStarKiService.CalculateNineStarKiProfile(personModel);
-            model.BiorhythmResultSet = _biorhythmsService.Calculate(model, DateTime.Today);
+            
             return View("Index", model);
         }
 

@@ -1,13 +1,12 @@
 ﻿using K9.Base.DataAccessLayer.Config;
 using K9.Base.DataAccessLayer.Models;
-using K9.Base.WebApplication.Controllers;
 using K9.Base.WebApplication.EventArgs;
 using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.UnitsOfWork;
-using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using K9.WebApplication.ViewModels;
 using System;
@@ -20,23 +19,15 @@ namespace K9.WebApplication.Controllers
 {
     [Authorize]
     [RequirePermissions(Role = RoleNames.Administrators)]
-    public class UsersController : BaseController<User>
+    public class UsersController : BaseNineStarKiController<User>
     {
         private readonly IOptions<DatabaseConfiguration> _dataConfig;
-        private readonly IRoles _roles;
-        private readonly IMembershipService _membershipService;
-        private readonly IUserService _userService;
-        private readonly IRepository<Contact> _contactsRepository;
         private readonly IPromoCodeService _promoCodeService;
 
-        public UsersController(IControllerPackage<User> controllerPackage, IOptions<DatabaseConfiguration> dataConfig, IRoles roles, IMembershipService membershipService, IUserService userService, IRepository<Contact> contactsRepository, IPromoCodeService promoCodeService)
-            : base(controllerPackage)
+        public UsersController(IControllerPackage<User> controllerPackage, INineStarKiControllerPackage nineStarKiControllerPackage, IOptions<DatabaseConfiguration> dataConfig, IPromoCodeService promoCodeService)
+            : base(controllerPackage, nineStarKiControllerPackage)
         {
             _dataConfig = dataConfig;
-            _roles = roles;
-            _membershipService = membershipService;
-            _userService = userService;
-            _contactsRepository = contactsRepository;
             _promoCodeService = promoCodeService;
 
             RecordCreated += UsersController_RecordCreated;
@@ -47,7 +38,7 @@ namespace K9.WebApplication.Controllers
         private void UsersController_RecordUpdated(object sender, CrudEventArgs e)
         {
             var user = (User)e.Item;
-            var contact = _contactsRepository.Find(c => c.EmailAddress == user.EmailAddress).FirstOrDefault();
+            var contact = Package.ContactsRepository.Find(c => c.EmailAddress == user.EmailAddress).FirstOrDefault();
 
             if (contact != null && user.IsUnsubscribed != contact.IsUnsubscribed)
             {
@@ -55,7 +46,7 @@ namespace K9.WebApplication.Controllers
 
                 try
                 {
-                    _contactsRepository.Update(contact);
+                    Package.ContactsRepository.Update(contact);
                 }
                 catch (Exception ex)
                 {
@@ -85,9 +76,9 @@ namespace K9.WebApplication.Controllers
         {
             var user = e.Item as User;
             WebSecurity.CreateAccount(user.Username, _dataConfig.Value.DefaultUserPassword);
-            _roles.AddUserToRole(user.Username, RoleNames.DefaultUsers);
+            Roles.AddUserToRole(user.Username, RoleNames.DefaultUsers);
         }
-        
+
         [Route("users/assign-membership/start")]
         public ActionResult AssignMembershipStart(int Id)
         {
@@ -104,7 +95,7 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                _membershipService.AssignMembershipToUser(model.MembershipOptionId, model.UserId);
+                Package.MembershipService.AssignMembershipToUser(model.MembershipOptionId, model.UserId);
                 return RedirectToAction("AssignMembershipSuccess");
             }
             catch (Exception ex)
@@ -136,7 +127,7 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                _membershipService.CreateComplementaryUserConsultation(model.UserId, model.Duration);
+                Package.MembershipService.CreateComplementaryUserConsultation(model.UserId, model.Duration);
                 return RedirectToAction("AssignFreeConsultationSuccess");
             }
             catch (Exception ex)
@@ -182,7 +173,7 @@ namespace K9.WebApplication.Controllers
 
             try
             {
-                _membershipService.CreateMembershipFromPromoCode(model.UserId, model.PromoCode);
+                Package.MembershipService.CreateMembershipFromPromoCode(model.UserId, model.PromoCode);
                 return RedirectToAction("AssignPromoCodeSuccess");
             }
             catch (Exception ex)

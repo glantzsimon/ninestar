@@ -1,9 +1,9 @@
 ﻿using K9.Base.DataAccessLayer.Models;
-using K9.Base.WebApplication.Controllers;
 using K9.Base.WebApplication.EventArgs;
 using K9.Base.WebApplication.UnitsOfWork;
 using K9.SharedLibrary.Attributes;
 using K9.WebApplication.Helpers;
+using K9.WebApplication.Packages;
 using System.Web.Mvc;
 using WebMatrix.WebData;
 
@@ -11,11 +11,11 @@ namespace K9.WebApplication.Controllers
 {
     [Authorize]
 	[LimitByUserId]
-	public class MessagesController : BaseController<Message>
+	public class MessagesController : BaseNineStarKiController<Message>
 	{
 		
-		public MessagesController(IControllerPackage<Message> controllerPackage)
-			: base(controllerPackage)
+		public MessagesController(IControllerPackage<Message> controllerPackage, INineStarKiControllerPackage nineStarKiControllerPackage)
+			: base(controllerPackage, nineStarKiControllerPackage)
 		{
 			RecordBeforeCreate += MessagesController_RecordBeforeCreate;
 		}

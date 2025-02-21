@@ -82,9 +82,11 @@ namespace K9.WebApplication
 
             RegisterConfiguration(builder);
 
+            RegisterStaticTypes();
+
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
-
+            
             // Configure Hangfire to use SQL Server storage and the Autofac job activator
             GlobalConfiguration.Configuration
                 .UseAutofacActivator(container)

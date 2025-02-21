@@ -4,11 +4,10 @@ using K9.DataAccessLayer.Extensions;
 using K9.Globalisation;
 using K9.SharedLibrary.Attributes;
 using K9.SharedLibrary.Extensions;
+using K9.SharedLibrary.Helpers;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Globalization;
-using K9.SharedLibrary.Helpers;
 
 namespace K9.DataAccessLayer.Models
 {

@@ -1,16 +1,16 @@
-﻿using K9.DataAccessLayer.Models;
+﻿using K9.DataAccessLaye.Attributes;
+using K9.DataAccessLayer.Enums;
+using K9.DataAccessLayer.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
+using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.EmailTemplates;
 using K9.WebApplication.Packages;
 using K9.WebApplication.ViewModels;
 using NLog;
 using System;
 using System.Linq;
-using K9.DataAccessLaye.Attributes;
-using K9.DataAccessLayer.Enums;
-using K9.SharedLibrary.Helpers;
-using K9.WebApplication.EmailTemplates;
 
 namespace K9.WebApplication.Services
 {
@@ -22,8 +22,9 @@ namespace K9.WebApplication.Services
         private readonly IRepository<MembershipOption> _membershipOptionsRepository;
         private readonly IContactService _contactService;
         private readonly IEmailTemplateService _emailTemplateService;
+        private readonly IEmailQueueService _emailQueueService;
 
-        public PromotionService(INineStarKiBasePackage my, IRepository<PromoCode> promoCodesRepository, IRepository<UserPromoCode> userPromoCodeRepository, IRepository<UserMembership> userMembershipsRepository, IRepository<UserOTP> userOtpRepository, IRepository<MembershipOption> membershipOptionsRepository, IContactService contactService, IEmailTemplateService emailTemplateService)
+        public PromotionService(INineStarKiBasePackage my, IRepository<PromoCode> promoCodesRepository, IRepository<UserPromoCode> userPromoCodeRepository, IRepository<UserMembership> userMembershipsRepository, IRepository<UserOTP> userOtpRepository, IRepository<MembershipOption> membershipOptionsRepository, IContactService contactService, IEmailTemplateService emailTemplateService, IEmailQueueService emailQueueService)
             : base(my)
         {
             _promoCodesRepository = promoCodesRepository;
@@ -32,6 +33,7 @@ namespace K9.WebApplication.Services
             _membershipOptionsRepository = membershipOptionsRepository;
             _contactService = contactService;
             _emailTemplateService = emailTemplateService;
+            _emailQueueService = emailQueueService;
         }
 
         public PromoCode Find(string code)
@@ -209,19 +211,19 @@ namespace K9.WebApplication.Services
         public void SendFirstMembershipReminderToUser(int userId)
         {
             var promoCode = CreatePromoCodeForMembership(EDiscount.FirstDiscount);
-            SendPromotionFromTemplateToUser(userId, new FirstMembershipReminderEmailTemplate(), promoCode);
+            SchedulePromotionFromTemplateToUser(userId, new FirstMembershipReminderEmailTemplate(), promoCode, TimeSpan.FromMinutes(2));
         }
 
         public void SendSecondMembershipReminderToUser(int userId)
         {
             var promoCode = CreatePromoCodeForMembership(EDiscount.SecondDiscount);
-            SendPromotionFromTemplateToUser(userId, new FirstMembershipReminderEmailTemplate(), promoCode);
+            SchedulePromotionFromTemplateToUser(userId, new FirstMembershipReminderEmailTemplate(), promoCode, TimeSpan.FromMinutes(3));
         }
 
         public void SendThirdMembershipReminderToUser(int userId)
         {
             var promoCode = CreatePromoCodeForMembership(EDiscount.ThirdDiscount);
-            SendPromotionFromTemplateToUser(userId, new FirstMembershipReminderEmailTemplate(), promoCode);
+            SchedulePromotionFromTemplateToUser(userId, new FirstMembershipReminderEmailTemplate(), promoCode, TimeSpan.FromMinutes(4));
         }
 
         private PromoCode CreatePromoCodeForMembership(EDiscount discount)
@@ -252,8 +254,19 @@ namespace K9.WebApplication.Services
             return promoCode;
         }
 
-        private void SendPromotionFromTemplateToUser(int userId, EmailTemplate emailTemplate, PromoCode promoCode)
+        private void SchedulePromotionFromTemplateToUser(int userId, EmailTemplate emailTemplate, PromoCode promoCode,
+            TimeSpan scheduledOn)
         {
+            SendPromotionFromTemplateToUser(userId, emailTemplate, promoCode, true);
+        }
+
+        private void SendPromotionFromTemplateToUser(int userId, EmailTemplate emailTemplate, PromoCode promoCode, bool isScheduled = false, TimeSpan? scheduledOn = null)
+        {
+            if (isScheduled && scheduledOn == null)
+            {
+                throw new Exception("scheduledOn must be set when scheduling an email.");
+            }
+
             promoCode = Find(promoCode.Code);
             if (promoCode == null)
             {
@@ -320,11 +333,18 @@ namespace K9.WebApplication.Services
 
             try
             {
-                My.Mailer.SendEmail(
-                    subject,
-                    body,
-                    user.EmailAddress,
-                    user.FullName);
+                if (isScheduled)
+                {
+                    _emailQueueService.AddEmailToQueueForUser(user.Id, subject, body, EEmailType.MembershipPromotion, scheduledOn);
+                }
+                else
+                {
+                    My.Mailer.SendEmail(
+                        subject,
+                        body,
+                        user.EmailAddress,
+                        user.FullName);
+                }
             }
             catch (Exception ex)
             {

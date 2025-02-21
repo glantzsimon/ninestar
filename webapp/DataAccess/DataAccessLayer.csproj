@@ -215,6 +215,7 @@
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
     <Compile Include="Enums\EConsultationDuration.cs" />
+    <Compile Include="Enums\EEmailType.cs" />
     <Compile Include="Enums\EDiscount.cs" />
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Helpers\Methods.cs" />
@@ -345,6 +346,10 @@
     <Compile Include="Migrations\202502190409371_PromoCodeMembershipOption.cs" />
     <Compile Include="Migrations\202502190409371_PromoCodeMembershipOption.designer.cs">
       <DependentUpon>202502190409371_PromoCodeMembershipOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202502211546059_ExpandEmailQueueItem.cs" />
+    <Compile Include="Migrations\202502211546059_ExpandEmailQueueItem.designer.cs">
+      <DependentUpon>202502211546059_ExpandEmailQueueItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\MailingList.cs" />
     <Compile Include="Models\EmailTemplate.cs" />
@@ -477,6 +482,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202502190409371_PromoCodeMembershipOption.resx">
       <DependentUpon>202502190409371_PromoCodeMembershipOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502211546059_ExpandEmailQueueItem.resx">
+      <DependentUpon>202502211546059_ExpandEmailQueueItem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

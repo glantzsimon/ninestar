@@ -464,14 +464,9 @@ namespace K9.WebApplication.Services
 
         public void ScheduleRemindersForUser(int userId)
         {
-            BackgroundJob.Schedule<IPromotionService>(service => service.SendFirstMembershipReminderToUser(userId),
-                TimeSpan.FromMinutes(2));
-
-            BackgroundJob.Schedule<IPromotionService>(service => service.SendSecondMembershipReminderToUser(userId),
-                TimeSpan.FromMinutes(3));
-
-            BackgroundJob.Schedule<IPromotionService>(service => service.SendThirdMembershipReminderToUser(userId),
-                TimeSpan.FromMinutes(4));
+            _promotionService.SendFirstMembershipReminderToUser(userId);
+            _promotionService.SendSecondMembershipReminderToUser(userId);
+            _promotionService.SendThirdMembershipReminderToUser(userId);
         }
 
         private void TerminateExistingMemberships(int userId)

@@ -3946,4 +3946,7 @@
   <data name="YoureSignedUp" xml:space="preserve">
     <value>You're Signed Up!</value>
   </data>
+  <data name="EmailTypeLabel" xml:space="preserve">
+    <value>Email Type</value>
+  </data>
 </root>

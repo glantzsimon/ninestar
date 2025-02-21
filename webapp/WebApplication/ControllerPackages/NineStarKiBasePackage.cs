@@ -20,7 +20,7 @@ namespace K9.WebApplication.Packages
             FileSourceHelper = fileSourceHelper;
             Authentication = authentication;
             Mailer = mailer;
-            
+
             UsersRepository = usersRepository;
             RolesRepository = rolesRepository;
             UserRolesRepository = userRolesRepository;
@@ -42,7 +42,7 @@ namespace K9.WebApplication.Packages
         public IAuthentication Authentication { get; set; }
         public IMailer Mailer { get; set; }
         public UrlHelper UrlHelper { get; set; }
-        
+
         public IRepository<User> UsersRepository { get; set; }
         public IRepository<Contact> ContactsRepository { get; set; }
         public IRepository<Role> RolesRepository { get; set; }

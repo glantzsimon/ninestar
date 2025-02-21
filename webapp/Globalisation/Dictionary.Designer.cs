@@ -4429,6 +4429,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email Type.
+        /// </summary>
+        public static string EmailTypeLabel {
+            get {
+                return ResourceManager.GetString("EmailTypeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Your emotional capacity is currently fluctuating. You may be in a great mood one moment, only to find that the next you are feeling emotionally drained. It is wise not to take on too much during this period and wait for your energy to stabilise.
         ///&lt;/p&gt;

@@ -17,8 +17,6 @@ namespace K9.WebApplication
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
 			
-			Startup.RegisterStaticTypes();
-
 			DataConfig.InitialiseDatabase();
 			AuthConfig.InitialiseWebSecurity();
 			DataConfig.InitialiseUsersAndRoles();

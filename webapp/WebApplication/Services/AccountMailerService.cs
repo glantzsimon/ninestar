@@ -38,7 +38,7 @@ namespace K9.WebApplication.Services
             var user = My.UsersRepository.Find(e => e.Username == model.UserName).FirstOrDefault();
             var imageUrl = My.UrlHelper.AbsoluteContent(My.WebsiteConfiguration.CompanyLogoUrl);
 
-            var emailContent = TemplateParser.Parse(Globalisation.Dictionary.WelcomeEmail, new
+            var emailContent = TemplateParser.Parse(Globalisation.Dictionary.AccountActivationEmail, new
             {
                 Title = Dictionary.Welcome,
                 model.FirstName,

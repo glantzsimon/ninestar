@@ -10,10 +10,10 @@
                 <div class="row">
                     @if (Model.Quantity > 0)
                     {
-                        <div class="col-sm-6 padding-0">
+                        <div class="col-sm-5 padding-0">
                             @Html.BootstrapDisplayFor(e => e.Description)
                         </div>
-                        <div class="col-sm-3 padding-0">
+                        <div class="col-sm-4 padding-0">
                             @Html.BootstrapDisplayFor(e => e.Quantity, new EditorOptions
                             {
                                 Label = Model.QuantityDescription ?? Html.GetDisplayNameFor(ex => ex.Quantity)

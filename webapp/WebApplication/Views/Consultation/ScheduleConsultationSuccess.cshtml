@@ -9,37 +9,35 @@
     ViewBag.TitleTag = "text-center";
 }
 
-<article>
-    <div class="margin-bottom-10">
-        @Html.Success(
-            TemplateParser.Parse(Dictionary.ScheduleAConsultationSuccess, new
-            {
-                Duration = Model.SelectedSlot.DurationDescription.ToLower()
-            }))
-        
-        <div class="text-center">
-            <h2 class="bold">@($"{Model.SelectedSlot.FormattedStartsOnLocalDate} {Dictionary.At} {Model.SelectedSlot.FormattedStartsOnLocalTime}")</h2>
-        </div>
-    </div>
-
-    <hr />
+<div class="margin-bottom-10">
+    @Html.Success(
+        TemplateParser.Parse(Dictionary.ScheduleAConsultationSuccess, new
+        {
+            Duration = Model.SelectedSlot.DurationDescription.ToLower()
+        }))
 
     <div class="text-center">
-        <h5>@Dictionary.NeedToScheduleADifferentTime</h5>
-        @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.RescheduleAppointment,
-            "ScheduleConsultation", "Consultation",
-            new { consultationId = Model.Consultation.Id },
-            "",
-            EButtonClass.Large)
+        <h2 class="bold">@($"{Model.SelectedSlot.FormattedStartsOnLocalDate} {Dictionary.At} {Model.SelectedSlot.FormattedStartsOnLocalTime}")</h2>
     </div>
+</div>
 
-    <div class="row">
-        <div class="col-md-12 text-center">
-            @Html.Partial("_WhatsApp", new K9.WebApplication.ViewModels.WhatsAppViewModel
-            {
-                Title = "",
-                Message = Dictionary.WhatsAppScheduleAppointmentText
-            })
-        </div>
+<hr />
+
+<div class="text-center">
+    <h5>@Dictionary.NeedToScheduleADifferentTime</h5>
+    @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.RescheduleAppointment,
+        "ScheduleConsultation", "Consultation",
+        new { consultationId = Model.Consultation.Id },
+        "",
+        EButtonClass.Large)
+</div>
+
+<div class="row">
+    <div class="col-md-12 text-center">
+        @Html.Partial("_WhatsApp", new K9.WebApplication.ViewModels.WhatsAppViewModel
+        {
+            Title = "",
+            Message = Dictionary.WhatsAppScheduleAppointmentText
+        })
     </div>
-</article>
+</div>

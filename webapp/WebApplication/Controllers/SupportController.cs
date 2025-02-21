@@ -56,7 +56,7 @@ namespace K9.WebApplication.Controllers
             var contact = My.ContactService.GetOrCreateContact("", model.Name, model.EmailAddress);
             var body = _emailTemplateService.ParseForContact(
                 model.Subject,
-                Dictionary.SupportQueryReceived1,
+                Dictionary.SupportQueryReceivedEmail,
                 contact,
                 new
                 {
@@ -154,14 +154,13 @@ namespace K9.WebApplication.Controllers
 
         private void SendEmailToCustomer(Contact contact)
         {
-            var template = Dictionary.SupportQueryThankYou;
             var title = Dictionary.EmailThankYouTitle;
 
             if (contact != null)
             {
                 var body = _emailTemplateService.ParseForContact(
                     title,
-                    Dictionary.SupportQueryThankYou,
+                    Dictionary.SupportQueryThankYouEmail,
                     contact,
                     new
                     {

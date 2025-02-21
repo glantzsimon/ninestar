@@ -121,9 +121,6 @@
   <data name="PasswordResetEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>templates\en-gb\passwordresetemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="WelcomeEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>templates\en-gb\welcomeemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="Keywords" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>text\en-gb\keywords.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -2041,12 +2038,6 @@
   <data name="Consultation" xml:space="preserve">
     <value>Consultation</value>
   </data>
-  <data name="ConsultationBookedEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>templates\en-gb\consultationbookedemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="ConsultationBookedThankYouEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>templates\en-gb\consultationbookedthankyouemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="ConsultationDurationDescription" xml:space="preserve">
     <value>Duration (hours)</value>
   </data>
@@ -2764,12 +2755,6 @@
   <data name="CompatibilityResults" xml:space="preserve">
     <value>Compatibility Results</value>
   </data>
-  <data name="ConsultationScheduledEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>templates\en-gb\consultationscheduledemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="ConsultationScheduledThankYouEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>templates\en-gb\consultationscheduledthankyouemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="ContinueReading" xml:space="preserve">
     <value>Continue reading...</value>
   </data>
@@ -2958,9 +2943,6 @@
   </data>
   <data name="RecaptchaDisabled" xml:space="preserve">
     <value>Recaptcha Disabled</value>
-  </data>
-  <data name="SupportQueryReceived" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>templates\en-gb\supportqueryreceived.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="Abundance" xml:space="preserve">
     <value>Abundance (Fullness)</value>
@@ -3826,9 +3808,6 @@
   <data name="BodyLabel" xml:space="preserve">
     <value>Body</value>
   </data>
-  <data name="DefaultEmailTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>templates\en-gb\defaultemailtemplate.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="DiscountLabel" xml:space="preserve">
     <value>Discount</value>
   </data>
@@ -3910,13 +3889,40 @@
   <data name="DonationThankYouEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>emailtemplates\en-gb\tocustomer\donationthankyouemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="SupportQueryReceived1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>emailtemplates\en-gb\toninestar\supportqueryreceived.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="SupportQueryThankYou" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>emailtemplates\en-gb\tocustomer\supportquerythankyou.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="AccountActivationEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\en-gb\tocustomer\accountactivationemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ComplimentaryConsultationBookedEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>emailtemplates\en-gb\toninestar\complimentaryconsultationbookedemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="ConfirmSlotSubTitle" xml:space="preserve">
+    <value>You have selected the following time for your {Duration} consultation</value>
+  </data>
+  <data name="ConfirmYourSlot" xml:space="preserve">
+    <value>Confirm Appointment Time</value>
+  </data>
+  <data name="ConsultationBookedEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\en-gb\toninestar\consultationbookedemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ConsultationBookedThankYouEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\en-gb\tocustomer\consultationbookedthankyouemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ConsultationScheduledEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\en-gb\toninestar\consultationscheduledemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ConsultationScheduledThankYouEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\en-gb\tocustomer\consultationscheduledthankyouemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SelectADifferentTime" xml:space="preserve">
+    <value>Change Time</value>
+  </data>
+  <data name="SupportQueryReceivedEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\en-gb\toninestar\supportqueryreceivedemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SupportQueryThankYouEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\en-gb\tocustomer\supportquerythankyouemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

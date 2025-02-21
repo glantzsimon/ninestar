@@ -27,7 +27,7 @@
                     @foreach (var slot in Model.AvailableSlots)
                     {
                         <div class="col-sm-6">
-                            <a href="@Url.Action("SelectSlot", "Consultation",
+                            <a href="@Url.Action("ConfirmSlot", "Consultation",
                                          new
                                          {
                                              consultationId = Model.Consultation.Id,
@@ -54,6 +54,5 @@
                 })
             </div>
         </div>
-</div>
     </article>
-    </div>
+</div>

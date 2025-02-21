@@ -1,0 +1,52 @@
+﻿@using K9.SharedLibrary.Helpers
+@using TemplateParser = K9.SharedLibrary.Helpers.TemplateParser
+@model K9.WebApplication.ViewModels.ScheduleConsultationViewModel
+
+@{
+    ViewBag.Title = Dictionary.ScheduleConsultation;
+    ViewBag.SubTitle = Dictionary.ConfirmYourSlot;
+    Layout = "../Shared/_LayoutForm.cshtml";
+    ViewBag.TitleTag = "text-center";
+}
+
+@using (Html.BeginForm("SelectSlot", "Consultation", FormMethod.Post))
+{
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.HiddenFor(e => e.ConsultationId)
+        @Html.HiddenFor(e => e.SelectedSlotId)
+
+        <div class="margin-bottom-10">
+            <div class="text-center">
+                <h4>
+                    @TemplateParser.Parse(Dictionary.ConfirmSlotSubTitle, new
+                    {
+                        Duration = Model.SelectedSlot.DurationDescription.ToLower()
+                    }):
+                </h4>
+
+                <h2 class="bold margin-bottom-30">@($"{Model.SelectedSlot.FormattedStartsOnLocalDate} {Dictionary.At} {Model.SelectedSlot.FormattedStartsOnLocalTime}")</h2>
+
+                @Html.BootstrapButton(K9.Globalisation.Dictionary.Confirm, EButtonType.Submit, "fa-check-circle", EButtonClass.Large)
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-md-12 text-center padding-0 margin-top-5">
+                @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.SelectADifferentTime,
+                    "ScheduleConsultation", "Consultation",
+                    new {consultationId = Model.Consultation.Id},
+                    "fa-chevron-left",
+                    EButtonClass.Large)
+
+                @Html.Partial("_WhatsApp", new K9.WebApplication.ViewModels.WhatsAppViewModel
+                {
+                    Title = "",
+                    Message = Dictionary.WhatsAppScheduleAppointmentText
+                })
+            </div>
+        </div>
+    }
+}

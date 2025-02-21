@@ -83,7 +83,7 @@ namespace K9.SharedLibrary.Extensions
             return item.GetType().GetProperties()
                 .Where(p =>
                     (
-                        p.PropertyType.IsGenericType && typeof(IEnumerable).IsAssignableFrom(p.PropertyType) 
+                        p.PropertyType.IsGenericType && typeof(IEnumerable).IsAssignableFrom(p.PropertyType)
                     )).ToList();
         }
 
@@ -115,17 +115,17 @@ namespace K9.SharedLibrary.Extensions
 
         public static bool HasProperty(this object obj, string propertyName)
         {
-            return obj.GetProperties().Any(p => p.Name == propertyName);
+            return obj.GetProperty(propertyName) != null;
         }
 
         public static bool HasAttribute(this Type type, Type attributeType)
         {
-            return type.GetCustomAttributes(attributeType, true).Any();
+            return type.GetCustomAttribute(attributeType) != null;
         }
 
         public static void SetProperty(this object obj, string propertyName, object value)
         {
-            var propInfo = obj.GetType().GetProperties().FirstOrDefault(p => p.Name == propertyName);
+            var propInfo = obj.GetType().GetProperty(propertyName);
             SetProperty(obj, propInfo, value);
         }
 
@@ -152,12 +152,12 @@ namespace K9.SharedLibrary.Extensions
 
         public static bool IsPrimaryKey(this PropertyInfo info)
         {
-            return info.GetCustomAttributes(typeof(KeyAttribute), false).Any();
+            return info.GetCustomAttribute(typeof(KeyAttribute)) != null;
         }
 
         public static bool IsForeignKey(this PropertyInfo info)
         {
-            return info.GetCustomAttributes(typeof(ForeignKeyAttribute), false).Any();
+            return info.GetCustomAttribute(typeof(ForeignKeyAttribute)) != null;
         }
 
         public static bool IsVirtualCollection(this PropertyInfo info)
@@ -174,7 +174,7 @@ namespace K9.SharedLibrary.Extensions
 
         public static int GetStringLength(this PropertyInfo info)
         {
-            var attr = info.GetCustomAttributes(typeof(StringLengthAttribute), false).FirstOrDefault();
+            var attr = info.GetCustomAttribute(typeof(StringLengthAttribute), false);
             if (attr != null)
             {
                 return ((StringLengthAttribute)attr).MaximumLength;
@@ -190,13 +190,13 @@ namespace K9.SharedLibrary.Extensions
         /// <returns></returns>
         public static string GetDisplayName(this PropertyInfo info)
         {
-            var attr = info.GetCustomAttributes(typeof(DisplayAttribute), true).FirstOrDefault();
+            var attr = info.GetCustomAttribute(typeof(DisplayAttribute), true);
             return attr == null ? info.Name : ((DisplayAttribute)attr).GetName();
         }
 
         public static bool IsDataBound(this PropertyInfo info)
         {
-            return (!info.GetCustomAttributes(typeof(NotMappedAttribute), false).Any() || info.GetCustomAttributes(typeof(LinkedColumnAttribute), false).Any()) && info.CanWrite;
+            return (info.GetCustomAttribute(typeof(NotMappedAttribute), false) == null || info.GetCustomAttribute(typeof(LinkedColumnAttribute), false) != null) && info.CanWrite;
         }
 
         public static Type GetLinkedPropertyType(this Type type, string propertyName)
@@ -206,10 +206,10 @@ namespace K9.SharedLibrary.Extensions
 
         public static string GetLinkedForeignTableName(this Type type, string foreignKeyColumn)
         {
-            var firstOrDefault = type.GetProperties().FirstOrDefault(p => p.Name == foreignKeyColumn);
-            if (firstOrDefault != null)
+            var property = type.GetProperty(foreignKeyColumn);
+            if (property != null)
             {
-                var attribute = firstOrDefault.GetCustomAttributes(typeof(ForeignKeyAttribute), true).FirstOrDefault() as ForeignKeyAttribute;
+                var attribute = property.GetCustomAttribute(typeof(ForeignKeyAttribute), true) as ForeignKeyAttribute;
                 if (attribute == null)
                 {
                     throw new Exception($"No ForeignKey attribute is set on property {foreignKeyColumn}");
@@ -221,7 +221,7 @@ namespace K9.SharedLibrary.Extensions
 
         public static bool LimitedByUser(this Type type)
         {
-            return type.GetCustomAttributes(typeof(LimitByUserIdAttribute), true).Any();
+            return type.GetCustomAttribute(typeof(LimitByUserIdAttribute), true) != null;
         }
 
         public static List<PropertyInfo> GetUserIdProperties(this Type type)
@@ -236,7 +236,7 @@ namespace K9.SharedLibrary.Extensions
 
         public static bool FilterByParent(this Type type)
         {
-            return type.GetCustomAttributes(typeof(LimitByUserIdAttribute), true).Any();
+            return type.GetCustomAttribute(typeof(LimitByUserIdAttribute), true) != null;
         }
 
         public static bool ImplementsIUserData(this PropertyInfo propertyInfo)
@@ -252,19 +252,19 @@ namespace K9.SharedLibrary.Extensions
         public static T GetAttribute<T>(this Type type)
             where T : Attribute
         {
-            return type.GetCustomAttributes(typeof(T), true).FirstOrDefault() as T;
+            return type.GetCustomAttribute(typeof(T), true) as T;
         }
 
         public static List<T> GetAttributes<T>(this Type type)
             where T : Attribute
         {
-            return type.GetCustomAttributes(typeof(T), true).Select(e => e as T).ToList();
+            return type.GetCustomAttributes(typeof(T), true).Cast<T>().ToList();
         }
 
         public static T GetAttribute<T>(this PropertyInfo propertyInfo)
             where T : Attribute
         {
-            return propertyInfo.GetCustomAttributes(typeof(T), true).FirstOrDefault() as T;
+            return propertyInfo.GetCustomAttribute(typeof(T), true) as T;
         }
 
         public static T GetAttribute<T>(this Enum value)

@@ -47,7 +47,7 @@ namespace K9.WebApplication.Services
 
             if (useDefaultTemplate)
             {
-                body = TemplateParser.Parse(Globalisation.Dictionary.DefaultEmailTemplate, new
+                body = TemplateParser.Parse(Globalisation.Dictionary.BaseEmailTemplate, new
                 {
                     Subject = subject,
                     contact.FirstName,
@@ -79,7 +79,7 @@ namespace K9.WebApplication.Services
 
             if (useDefaultTemplate)
             {
-                body = TemplateParser.Parse(Globalisation.Dictionary.DefaultEmailTemplate, new
+                body = TemplateParser.Parse(Globalisation.Dictionary.BaseEmailTemplate, new
                 {
                     Subject = subject,
                     user.FirstName,

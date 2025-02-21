@@ -4,7 +4,6 @@ using K9.DataAccessLayer.Extensions;
 using K9.DataAccessLayer.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
-using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Helpers;
 using K9.WebApplication.Packages;
@@ -22,7 +21,7 @@ namespace K9.WebApplication.Services
         private readonly IRepository<Consultation> _consultationRepository;
         private readonly IRepository<UserConsultation> _userConsultationRepository;
         private readonly IRepository<Slot> _slotRepository;
-        
+
         public ConsultationService(INineStarKiBasePackage my, IContactService contactService, IEmailTemplateService emailTemplateService, IRepository<Consultation> consultationRepository, IRepository<UserConsultation> userConsultationRepository, IRepository<Slot> slotRepository)
             : base(my)
         {
@@ -45,8 +44,12 @@ namespace K9.WebApplication.Services
             var myTimeZone = My.DefaultValuesConfiguration.CurrentTimeZone;
 
             var consultation = _consultationRepository.Find(id);
-            consultation.UserTimeZone = consultationUserTimeZone;
-            consultation.MyTimeZone = myTimeZone;
+
+            if (consultation != null)
+            {
+                consultation.UserTimeZone = consultationUserTimeZone;
+                consultation.MyTimeZone = myTimeZone;
+            }
 
             return consultation;
         }
@@ -77,8 +80,12 @@ namespace K9.WebApplication.Services
             var myTimeZone = My.DefaultValuesConfiguration.CurrentTimeZone;
 
             var slot = _slotRepository.Find(id);
-            slot.UserTimeZone = consultationUserTimeZone;
-            slot.MyTimeZone = myTimeZone;
+
+            if (slot != null)
+            {
+                slot.UserTimeZone = consultationUserTimeZone;
+                slot.MyTimeZone = myTimeZone;
+            }
 
             return slot;
         }
@@ -261,8 +268,8 @@ namespace K9.WebApplication.Services
                 My.Mailer.SendEmail(
                     title,
                     body,
-                    user.EmailAddress,
-                    user.FullName);
+                    My.WebsiteConfiguration.SupportEmailAddress,
+                    My.WebsiteConfiguration.CompanyName);
             }
             catch (Exception ex)
             {
@@ -272,75 +279,121 @@ namespace K9.WebApplication.Services
 
         private void SendEmailToNineStar(Consultation consultation, User user)
         {
-            var template = Dictionary.ConsultationBookedEmail;
-            var title = "We have received a consultation booking!";
-            My.Mailer.SendEmail(title, TemplateParser.Parse(template, new
+            var subject = "We have received a consultation booking!";
+            var body = _emailTemplateService.ParseForUser(
+                subject,
+                Dictionary.ConsultationBookedEmail,
+                user,
+                new
+                {
+                    ContactName = user.FullName,
+                    CustomerEmail = user.EmailAddress,
+                    user.PhoneNumber,
+                    Duration = consultation.DurationDescription,
+                    Price = consultation.FormattedPrice
+                });
+
+            try
             {
-                Title = title,
-                ContactName = user.FullName,
-                CustomerEmail = user.EmailAddress,
-                user.PhoneNumber,
-                Duration = consultation.DurationDescription,
-                Price = consultation.FormattedPrice,
-                Company = My.WebsiteConfiguration.CompanyName,
-                ImageUrl = My.UrlHelper.AbsoluteContent(My.WebsiteConfiguration.CompanyLogoUrl)
-            }), My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName, My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName);
+                My.Mailer.SendEmail(
+                    subject,
+                    body,
+                    My.WebsiteConfiguration.SupportEmailAddress,
+                    My.WebsiteConfiguration.CompanyName);
+            }
+            catch (Exception ex)
+            {
+                My.Logger.Error(ex.GetFullErrorMessage());
+            }
         }
 
         private void SendEmailToUser(Consultation consultation, User user)
         {
-            var template = Dictionary.ConsultationBookedThankYouEmail;
-            var title = Dictionary.ThankyouForBookingConsultationEmailTitle;
-            var contact = _contactService.Find(user.EmailAddress);
+            var subject = Dictionary.ThankyouForBookingConsultationEmailTitle;
+            var body = _emailTemplateService.ParseForUser(
+                subject,
+                Dictionary.ConsultationBookedThankYouEmail,
+                user,
+                new
+                {
+                    user.FirstName,
+                    Duration = consultation.DurationDescription,
+                    ImageUrl = My.UrlHelper.AbsoluteContent(My.WebsiteConfiguration.CompanyLogoUrl),
+                    ScheduleUrl = My.UrlHelper.AbsoluteAction("ScheduleConsultation", "Consultation", new { consultationId = consultation.Id })
+                });
 
-            My.Mailer.SendEmail(title, TemplateParser.Parse(template, new
+            try
             {
-                Title = title,
-                user.FirstName,
-                Duration = consultation.DurationDescription,
-                ImageUrl = My.UrlHelper.AbsoluteContent(My.WebsiteConfiguration.CompanyLogoUrl),
-                ScheduleUrl = My.UrlHelper.AbsoluteAction("ScheduleConsultation", "Consultation", new { consultationId = consultation.Id }),
-                PrivacyPolicyLink = My.UrlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                TermsOfServiceLink = My.UrlHelper.AbsoluteAction("TermsOfService", "Home"),
-                UnsubscribeLink = My.UrlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }),
-                DateTime.Now.Year
-            }), user.EmailAddress, user.FullName, My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName);
+                My.Mailer.SendEmail(
+                    subject,
+                    body,
+                    user.EmailAddress,
+                    user.FullName);
+            }
+            catch (Exception ex)
+            {
+                My.Logger.Error(ex.GetFullErrorMessage());
+            }
         }
 
         private void SendAppointmentConfirmationEmailToNineStar(Consultation consultation, User user)
         {
-            var template = Dictionary.ConsultationScheduledEmail;
-            var title = "We have received a consultation booking!";
-            My.Mailer.SendEmail(title, TemplateParser.Parse(template, new
+            var subject = "A suer has scheduled a consultation!";
+            var body = _emailTemplateService.ParseForUser(
+                subject,
+                Dictionary.ConsultationScheduledEmail,
+                user,
+                new
+                {
+                    ContactName = user.FullName,
+                    CustomerEmail = user.EmailAddress,
+                    user.PhoneNumber,
+                    Duration = consultation.DurationDescription,
+                    ScheduledOn = consultation.ScheduledOnMyTime.Value.ToString(DataAccessLayer.Constants.FormatConstants.AppointmentDisplayDateTimeFormat)
+                });
+
+            try
             {
-                Title = title,
-                ContactName = user.FullName,
-                CustomerEmail = user.EmailAddress,
-                user.PhoneNumber,
-                Duration = consultation.DurationDescription,
-                ScheduledOn = consultation.ScheduledOnMyTime.Value.ToString(DataAccessLayer.Constants.FormatConstants.AppointmentDisplayDateTimeFormat),
-                Company = My.WebsiteConfiguration.CompanyName,
-                ImageUrl = My.UrlHelper.AbsoluteContent(My.WebsiteConfiguration.CompanyLogoUrl)
-            }), My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName, My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName);
+                My.Mailer.SendEmail(
+                    subject,
+                    body,
+                    My.WebsiteConfiguration.SupportEmailAddress,
+                    My.WebsiteConfiguration.CompanyName);
+            }
+            catch (Exception ex)
+            {
+                My.Logger.Error(ex.GetFullErrorMessage());
+            }
         }
 
         private void SendAppointmentConfirmationEmailToUser(Consultation consultation, User user)
         {
-            var template = Dictionary.ConsultationScheduledThankYouEmail;
-            var title = Dictionary.ThankyouForBookingConsultationEmailTitle;
-            My.Mailer.SendEmail(title, TemplateParser.Parse(template, new
+            var subject = Dictionary.ThankyouForBookingConsultationEmailTitle;
+            var body = _emailTemplateService.ParseForUser(
+                subject,
+                Dictionary.ConsultationScheduledThankYouEmail,
+                user,
+                new
+                {
+                    user.FirstName,
+                    Duration = consultation.DurationDescription,
+                    ScheduledOn = consultation.ScheduledOnLocalTime.Value.ToString(DataAccessLayer.Constants.FormatConstants.AppointmentDisplayDateTimeFormat),
+                    ImageUrl = My.UrlHelper.AbsoluteContent(My.WebsiteConfiguration.CompanyLogoUrl),
+                    RescheduleUrl = My.UrlHelper.AbsoluteAction("ScheduleConsultation", "Consultation", new { consultationId = consultation.Id })
+                });
+
+            try
             {
-                Title = title,
-                user.FirstName,
-                Duration = consultation.DurationDescription,
-                ScheduledOn = consultation.ScheduledOnLocalTime.Value.ToString(DataAccessLayer.Constants.FormatConstants.AppointmentDisplayDateTimeFormat),
-                ImageUrl = My.UrlHelper.AbsoluteContent(My.WebsiteConfiguration.CompanyLogoUrl),
-                RescheduleUrl = My.UrlHelper.AbsoluteAction("ScheduleConsultation", "Consultation", new { consultationId = consultation.Id }),
-                PrivacyPolicyLink = My.UrlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                TermsOfServiceLink = My.UrlHelper.AbsoluteAction("TermsOfService", "Home"),
-                UnsubscribeLink = My.UrlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }),
-                DateTime.Now.Year
-            }), user.EmailAddress, user.FullName, My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName);
+                My.Mailer.SendEmail(
+                    subject,
+                    body,
+                    user.EmailAddress,
+                    user.FullName);
+            }
+            catch (Exception ex)
+            {
+                My.Logger.Error(ex.GetFullErrorMessage());
+            }
         }
     }
 }

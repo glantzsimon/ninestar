@@ -1416,6 +1416,19 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;Dear {FirstName},&lt;/p&gt;
+        ///&lt;p&gt;Thank you for registering with 9 Star Ki Astrology. Your six-digit activation code is:&lt;/p&gt;
+        ///&lt;p style=&quot;color: #337ab7; font-size: 22px;&quot;&gt;
+        ///    &lt;strong&gt;{ActivationCode}&lt;/strong&gt;
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string AccountActivationEmail {
+            get {
+                return ResourceManager.GetString("AccountActivationEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your account was successfully created, but an error occurred when trying to email your activation code. Please contact support for more details..
         /// </summary>
         public static string AccountCreatedErrorSendingEmail {
@@ -2813,33 +2826,43 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
-        ///&lt;html lang=&quot;en&quot;&gt;
-        ///
-        ///&lt;head&gt;
-        ///    &lt;title&gt;{Title}&lt;/title&gt;
-        ///&lt;/head&gt;
-        ///
-        ///&lt;style type=&quot;text/css&quot;&gt;
-        ///    html {
-        ///        margin: 0;
-        ///        padding: 0;
-        ///        font-family: &quot;Segoe UI&quot;, Verdana, Helvetica, Sans-Serif;
-        ///        font-size: 100%;
-        ///        text-rendering: optimizeLegibility !important;
-        ///        -webkit-font-smoothing: antialiased !important;
-        ///        margin: 0;
-        ///        color: #333;
-        ///    }
-        ///&lt;/style&gt;
-        ///
-        ///&lt;body&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;A new complimentary  [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;p&gt;Dear Team,&lt;/p&gt;
+        ///&lt;p&gt;A new complimentary consultation has been booked.&lt;/p&gt;
+        ///&lt;p&gt;&lt;strong&gt;Customer&lt;/strong&gt;: {ContactName}&lt;/p&gt;
+        ///&lt;p&gt;&lt;strong&gt;Email Address&lt;/strong&gt;: {CustomerEmail}&lt;/p&gt;
+        ///&lt;p&gt;&lt;strong&gt;Phone Number&lt;/strong&gt;: {PhoneNumber}&lt;/p&gt;
+        ///&lt;p&gt;&lt;strong&gt;Consultation Duration&lt;/strong&gt;: {Duration}&lt;/p&gt;.
         /// </summary>
         public static string ComplimentaryConsultationBookedEmail {
             get {
                 return ResourceManager.GetString("ComplimentaryConsultationBookedEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm.
+        /// </summary>
+        public static string Confirm {
+            get {
+                return ResourceManager.GetString("Confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have selected the following time for your {Duration} consultation.
+        /// </summary>
+        public static string ConfirmSlotSubTitle {
+            get {
+                return ResourceManager.GetString("ConfirmSlotSubTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm Appointment Time.
+        /// </summary>
+        public static string ConfirmYourSlot {
+            get {
+                return ResourceManager.GetString("ConfirmYourSlot", resourceCulture);
             }
         }
         
@@ -2921,29 +2944,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
-        ///&lt;html lang=&quot;en&quot;&gt;
-        ///
-        ///&lt;head&gt;
-        ///    &lt;title&gt;{Title}&lt;/title&gt;
-        ///&lt;/head&gt;
-        ///
-        ///&lt;style type=&quot;text/css&quot;&gt;
-        ///    html {
-        ///        margin: 0;
-        ///        padding: 0;
-        ///        font-family: &quot;Segoe UI&quot;, Verdana, Helvetica, Sans-Serif;
-        ///        font-size: 100%;
-        ///        text-rendering: optimizeLegibility !important;
-        ///        -webkit-font-smoothing: antialiased !important;
-        ///        margin: 0;
-        ///        color: #333;
-        ///    }
-        ///&lt;/style&gt;
-        ///
-        ///&lt;body&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;We have received a n [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;p&gt;Dear Team,&lt;/p&gt;
+        ///&lt;p&gt;We have received a new consultation booking.&lt;/p&gt;
+        ///&lt;p&gt;&lt;strong&gt;Customer&lt;/strong&gt;: {ContactName}&lt;/p&gt;
+        ///&lt;p&gt;&lt;strong&gt;Email Address&lt;/strong&gt;: {CustomerEmail}&lt;/p&gt;
+        ///&lt;p&gt;&lt;strong&gt;Phone Number&lt;/strong&gt;: {PhoneNumber}&lt;/p&gt;
+        ///&lt;p&gt;&lt;strong&gt;Consultation Duration&lt;/strong&gt;: {Duration}&lt;/p&gt;
+        ///&lt;p&gt;&lt;strong&gt;Price&lt;/strong&gt;: {Price}&lt;/p&gt;
+        ///.
         /// </summary>
         public static string ConsultationBookedEmail {
             get {
@@ -2952,21 +2960,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!doctype html&gt;
-        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
-        ///&lt;head&gt;
-        ///    &lt;!-- NAME: 1:2:1 COLUMN --&gt;
-        ///    &lt;!--[if gte mso 15]&gt;
-        ///    &lt;xml&gt;
-        ///        &lt;o:OfficeDocumentSettings&gt;
-        ///        &lt;o:AllowPNG/&gt;
-        ///        &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
-        ///        &lt;/o:OfficeDocumentSettings&gt;
-        ///    &lt;/xml&gt;
-        ///    &lt;![endif]--&gt;
-        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
-        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;p&gt;Dear {FirstName},&lt;/p&gt;
+        ///&lt;p&gt;Thank you very much for booking a 9 Star Ki consultation with us. Please click &lt;a href=&quot;{ScheduleUrl}&quot;&gt;here&lt;/a&gt; to schedule your consultation. Alternatively, simply log into your account, go to &quot;My Account&quot; &gt; &quot;My Consultations&quot; and click &quot;Schedule Appointment&quot;.&lt;/p&gt;
+        ///
+        ///.
         /// </summary>
         public static string ConsultationBookedThankYouEmail {
             get {
@@ -3838,29 +3835,6 @@ namespace K9.Globalisation {
         public static string DecreaseTitle {
             get {
                 return ResourceManager.GetString("DecreaseTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;!doctype html&gt;
-        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
-        ///&lt;head&gt;
-        ///    &lt;!-- NAME: 1:2:1 COLUMN --&gt;
-        ///    &lt;!--[if gte mso 15]&gt;
-        ///    &lt;xml&gt;
-        ///        &lt;o:OfficeDocumentSettings&gt;
-        ///        &lt;o:AllowPNG/&gt;
-        ///        &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
-        ///        &lt;/o:OfficeDocumentSettings&gt;
-        ///    &lt;/xml&gt;
-        ///    &lt;![endif]--&gt;
-        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
-        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string DefaultEmailTemplate {
-            get {
-                return ResourceManager.GetString("DefaultEmailTemplate", resourceCulture);
             }
         }
         
@@ -10837,6 +10811,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change Time.
+        /// </summary>
+        public static string SelectADifferentTime {
+            get {
+                return ResourceManager.GetString("SelectADifferentTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select Consultation Duration.
         /// </summary>
         public static string SelectConsultationDuration {
@@ -12059,37 +12042,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
-        ///&lt;html lang=&quot;en&quot;&gt;
-        ///
-        ///&lt;head&gt;
-        ///    &lt;title&gt;{Title}&lt;/title&gt;
-        ///&lt;/head&gt;
-        ///
-        ///&lt;style type=&quot;text/css&quot;&gt;
-        ///    html {
-        ///        margin: 0;
-        ///        padding: 0;
-        ///        font-family: &quot;Segoe UI&quot;, Verdana, Helvetica, Sans-Serif;
-        ///        font-size: 100%;
-        ///        text-rendering: optimizeLegibility !important;
-        ///        -webkit-font-smoothing: antialiased !important;
-        ///        margin: 0;
-        ///        color: #333;
-        ///    }
-        ///&lt;/style&gt;
-        ///
-        ///&lt;body&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;We have received a s [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string SupportQueryReceived {
-            get {
-                return ResourceManager.GetString("SupportQueryReceived", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;Dear Team,&lt;/p&gt;
         ///&lt;p&gt;We have received a support query from {Customer} &lt;a href=&quot;mailto:{CustomerEmail}?subject=Re: {Subject}&amp;body=Customer Query: {UnformattedQuery}&quot;&gt;{CustomerEmail}&lt;/a&gt;.&lt;/p&gt;
         ///&lt;hr /&gt;
@@ -12098,9 +12050,9 @@ namespace K9.Globalisation {
         ///    &lt;/div&gt;
         ///&lt;hr /&gt;.
         /// </summary>
-        public static string SupportQueryReceived1 {
+        public static string SupportQueryReceivedEmail {
             get {
-                return ResourceManager.GetString("SupportQueryReceived1", resourceCulture);
+                return ResourceManager.GetString("SupportQueryReceivedEmail", resourceCulture);
             }
         }
         
@@ -12108,9 +12060,9 @@ namespace K9.Globalisation {
         ///   Looks up a localized string similar to &lt;p&gt;Dear {FirstName},&lt;/p&gt;
         ///&lt;p&gt;Thank you for your interest in 9 Star Ki. A member of our team will be in touch with you shortly.&lt;/p&gt;.
         /// </summary>
-        public static string SupportQueryThankYou {
+        public static string SupportQueryThankYouEmail {
             get {
-                return ResourceManager.GetString("SupportQueryThankYou", resourceCulture);
+                return ResourceManager.GetString("SupportQueryThankYouEmail", resourceCulture);
             }
         }
         
@@ -13967,29 +13919,6 @@ namespace K9.Globalisation {
         public static string welcome {
             get {
                 return ResourceManager.GetString("welcome", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;!doctype html&gt;
-        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
-        ///&lt;head&gt;
-        ///    &lt;!-- NAME: 1:2:1 COLUMN --&gt;
-        ///    &lt;!--[if gte mso 15]&gt;
-        ///    &lt;xml&gt;
-        ///        &lt;o:OfficeDocumentSettings&gt;
-        ///        &lt;o:AllowPNG/&gt;
-        ///        &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
-        ///        &lt;/o:OfficeDocumentSettings&gt;
-        ///    &lt;/xml&gt;
-        ///    &lt;![endif]--&gt;
-        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
-        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string WelcomeEmail {
-            get {
-                return ResourceManager.GetString("WelcomeEmail", resourceCulture);
             }
         }
         

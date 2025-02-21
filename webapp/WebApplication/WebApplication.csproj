@@ -1533,6 +1533,7 @@
     <Content Include="Views\MailingLists\Details.cshtml" />
     <Content Include="Views\MailingLists\Edit.cshtml" />
     <Content Include="Views\MailingLists\Index.cshtml" />
+    <Content Include="Views\Consultation\ScheduleConsultationConfirm.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

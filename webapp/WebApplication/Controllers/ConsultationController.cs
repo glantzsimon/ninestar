@@ -109,8 +109,8 @@ namespace K9.WebApplication.Controllers
             });
         }
 
-        [Route("consultation/select-timeslot")]
-        public ActionResult SelectSlot(int consultationId, int slotId)
+        [Route("consultation/confirm-timeslot")]
+        public ActionResult ConfirmSlot(int consultationId, int slotId)
         {
             var selectedSlot = _consultationService.FindSlot(slotId);
             var consultation = _consultationService.Find(consultationId);
@@ -120,9 +120,29 @@ namespace K9.WebApplication.Controllers
                 return HttpNotFound();
             }
 
-            _consultationService.SelectSlot(consultationId, slotId);
+            return View("ScheduleConsultationConfirm", new ScheduleConsultationViewModel
+            {
+                Consultation = consultation,
+                SelectedSlot = selectedSlot
+            });
+        }
 
-            return RedirectToAction("ScheduleConsultationSuccess", new { consultationId, selectedSlotId = selectedSlot.Id });
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Route("consultation/select-timeslot")]
+        public ActionResult SelectSlot(ScheduleConsultationViewModel model)
+        {
+            var selectedSlot = _consultationService.FindSlot(model.SelectedSlotId);
+            var consultation = _consultationService.Find(model.ConsultationId);
+
+            if (selectedSlot == null || consultation == null)
+            {
+                return HttpNotFound();
+            }
+
+            _consultationService.SelectSlot(model.ConsultationId, model.SelectedSlotId);
+
+            return RedirectToAction("ScheduleConsultationSuccess", new { model.ConsultationId, selectedSlotId = model.SelectedSlotId });
         }
 
         [Route("consultation/schedule-success")]
@@ -130,6 +150,12 @@ namespace K9.WebApplication.Controllers
         {
             var selectedSlot = _consultationService.FindSlot(selectedSlotId);
             var consultation = _consultationService.Find(consultationId);
+
+            if (selectedSlot == null || consultation == null)
+            {
+                return HttpNotFound();
+            }
+
             return View(new ScheduleConsultationViewModel
             {
                 SelectedSlot = selectedSlot,

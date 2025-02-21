@@ -58,23 +58,26 @@ namespace K9.WebApplication.Helpers
         public List<ListItem> GetDataSetFromEnum<T>(bool refresh = false, Type resourceType = null)
         {
             List<ListItem> dataset = null;
-            if (refresh || !_datasets.Collection.ContainsKey(typeof(T)))
+            var enumType = typeof(T);
+
+            if (refresh || !_datasets.Collection.ContainsKey(enumType))
             {
-                var dictionary = resourceType ?? typeof(Base.Globalisation.Dictionary);
-                var values = Enum.GetValues(typeof(T)).Cast<T>();
+                var dictionary = resourceType ??
+                                 (enumType.Namespace.Contains("K9.Base") ? typeof(Base.Globalisation.Dictionary) : typeof(Globalisation.Dictionary));
+
+                var values = Enum.GetValues(enumType).Cast<T>();
                 dataset = new List<ListItem>(values.Select(e =>
                 {
                     var enumValue = e as Enum;
                     var id = Convert.ToInt32(e);
-
                     var descriptionAttribute = enumValue.GetAttribute<EnumDescriptionAttribute>();
-                    descriptionAttribute.ResourceType = dictionary;
 
+                    descriptionAttribute.ResourceType = dictionary;
                     var name = descriptionAttribute.GetDescription();
 
                     return new ListItem(id, name);
                 }));
-                _datasets.Collection[typeof(T)] = dataset;
+                _datasets.Collection[enumType] = dataset;
             }
             return dataset;
         }

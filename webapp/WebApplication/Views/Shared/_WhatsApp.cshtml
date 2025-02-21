@@ -10,11 +10,12 @@
         : $"https://wa.me/{whatsAppTelephone}/?text={whatsAppQueryText}";
 }
 
-<h5 class="margin-top-0">@Model.Title</h5>
+@if (!string.IsNullOrEmpty(Model.Title))
+{
+    <h5 class="margin-top-0">@Model.Title</h5>
+}
 
 <a class="btn btn btn-primary btn-lg" target="_blank" title="@Dictionary.MessageUs" href="@(whatsAppLink)">
     <i class="fab fa-whatsapp"></i>
-    <span class="site-controls-text">
-        @Model.ButtonText
-    </span>
+    <span>@Model.ButtonText</span>
 </a>

@@ -93,7 +93,7 @@ namespace K9.WebApplication.Services
                 .OrderBy(e => e.Id)
                 .Take(_defaultConfig.EmailQueueMaxBatchSize).ToList();
 
-            _logger.Log(LogLevel.Info, $"EmailQueueService => ProcessQueue => Sending emails");
+            _logger.Log(LogLevel.Info, $"EmailQueueService => ProcessQueue => Sending emails => Batch Size: {_defaultConfig.EmailQueueMaxBatchSize}");
 
             foreach (var email in emailsToSend)
             {
@@ -118,7 +118,9 @@ namespace K9.WebApplication.Services
                         if (email.Type == EEmailType.MembershipPromotion)
                         {
                             var userMemberships = _userMembershipsRepository
-                                .Find(e => e.UserId == email.UserId && e.IsActive).ToList();
+                                .Find(e => e.UserId == email.UserId)
+                                .Where(e => e.IsActive)
+                                .ToList();
                             var maxSubscriptionType = _membershipOptionsRepository
                                 .Find(e => userMemberships.Select(m => m.MembershipOptionId).Contains(e.Id))
                                 .Max(e => e.SubscriptionType);

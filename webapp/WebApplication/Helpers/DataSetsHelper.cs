@@ -26,12 +26,12 @@ namespace K9.WebApplication.Helpers
 
         public string GetAllDataSetsJson()
         {
-            var jsonDictionary = _datasets.Collection.ToDictionary(
+            var jsonDictionary = _datasets.Collection.Distinct()
+                .Where(e => e.Key != null && e.Value != null)
+                .ToDictionary(
                 kvp => kvp.Key.Name,
                 kvp => kvp.Value
             );
-
-
 
             return JsonConvert.SerializeObject(jsonDictionary);
         }
@@ -42,15 +42,17 @@ namespace K9.WebApplication.Helpers
             if (refresh || !_datasets.Collection.ContainsKey(typeof(T)))
             {
                 dataset = GetItemList<T>(nameExpression, valueExpression, includeDeleted, resourceType);
-                if (refresh)
+                if (dataset != null)
                 {
-                    _datasets.Collection[typeof(T)] = dataset;
+                    if (refresh)
+                    {
+                        _datasets.Collection[typeof(T)] = dataset;
+                    }
+                    else
+                    {
+                        _datasets.Collection.Add(typeof(T), dataset);
+                    }
                 }
-                else
-                {
-                    _datasets.Collection.Add(typeof(T), dataset);
-                }
-
             }
             return dataset;
         }

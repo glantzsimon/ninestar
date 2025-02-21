@@ -1510,12 +1510,6 @@
   <data name="DeactivatedLabel" xml:space="preserve">
     <value>Deactivated</value>
   </data>
-  <data name="MembershipCreatedEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>templates\en-gb\membershipcreatedemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="NewMembershipThankYouEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>templates\en-gb\newmembershipthankyouemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="NumberOfCreditsLeft" xml:space="preserve">
     <value>Number of Credits Remaining</value>
   </data>
@@ -1540,9 +1534,6 @@
   <data name="UserMemberships" xml:space="preserve">
     <value>User Memberships</value>
   </data>
-  <data name="CreditPackPurchased" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>templates\en-gb\creditpackpurchased.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="CreditPricingTitle" xml:space="preserve">
     <value>You can save money by purchasing Credit Packs</value>
   </data>
@@ -1557,9 +1548,6 @@
   </data>
   <data name="EnterCreditsText" xml:space="preserve">
     <value>Plese enter how many credits you would like to purchase</value>
-  </data>
-  <data name="NewCreditPackThankYouEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>templates\en-gb\newcreditpackthankyouemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="NumberOfCreditsLabel" xml:space="preserve">
     <value>Number of Credits</value>
@@ -1849,9 +1837,6 @@
   <data name="PaymentCompleted" xml:space="preserve">
     <value>Payment Complete</value>
   </data>
-  <data name="PaymentError" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>templates\en-gb\paymenterror.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="NineStarKiAstrology" xml:space="preserve">
     <value>9 Star Ki Astrology</value>
   </data>
@@ -1983,9 +1968,6 @@
   </data>
   <data name="EmailPromoCode" xml:space="preserve">
     <value>Email Promo Code</value>
-  </data>
-  <data name="PromoCodeEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>templates\en-gb\promocodeemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="Send" xml:space="preserve">
     <value>Send</value>
@@ -3915,6 +3897,21 @@
   </data>
   <data name="ConsultationScheduledThankYouEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>emailtemplates\en-gb\tocustomer\consultationscheduledthankyouemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GeneralErrorEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\en-gb\toninestar\generalerroremail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="NewSubscriptionEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\en-gb\toninestar\newsubscriptionemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="NewSubscriptionErrorEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\en-gb\toninestar\newsubscriptionerroremail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="NewSubscriptionThankYouEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\en-gb\tocustomer\newsubscriptionthankyouemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PromoCodeOfferedEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\en-gb\tocustomer\promocodeofferedemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="SelectADifferentTime" xml:space="preserve">
     <value>Change Time</value>

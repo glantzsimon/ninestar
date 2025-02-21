@@ -9,7 +9,7 @@
     ViewBag.TitleTag = "text-center";
 }
 
-<div class="margin-bottom-10">
+<div class="margin-bottom-30">
     @Html.Success(
         TemplateParser.Parse(Dictionary.ScheduleAConsultationSuccess, new
         {
@@ -23,21 +23,19 @@
 
 <hr />
 
-<div class="text-center">
-    <h5>@Dictionary.NeedToScheduleADifferentTime</h5>
-    @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.RescheduleAppointment,
-        "ScheduleConsultation", "Consultation",
-        new { consultationId = Model.Consultation.Id },
-        "",
-        EButtonClass.Large)
-</div>
-
-<div class="row">
-    <div class="col-md-12 text-center">
+<article>
+    <div class="text-center">
+        <h5 class="margin-top-5">@Dictionary.NeedToScheduleADifferentTime</h5>
+        @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.RescheduleAppointment,
+            "ScheduleConsultation", "Consultation",
+            new { consultationId = Model.Consultation.Id },
+            "",
+            EButtonClass.Large)
+        
         @Html.Partial("_WhatsApp", new K9.WebApplication.ViewModels.WhatsAppViewModel
         {
             Title = "",
             Message = Dictionary.WhatsAppScheduleAppointmentText
         })
-    </div>
-</div>
+    </div>  
+</article>

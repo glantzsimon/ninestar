@@ -25,8 +25,10 @@ namespace K9.WebApplication.Services
         private readonly IConsultationService _consultationService;
         private readonly IPromoCodeService _promoCodeService;
         private readonly IContactService _contactService;
-        
-        public MembershipService(INineStarKiBasePackage my, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<PromoCode> promoCodesRepository, IRepository<Consultation> consultationsRepository, IRepository<UserConsultation> userConsultationsRepository, IConsultationService consultationService, IPromoCodeService promoCodeService, IContactService contactService)
+        private readonly IEmailTemplateService _emailTemplateService;
+
+        public MembershipService(INineStarKiBasePackage my, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<PromoCode> promoCodesRepository, IRepository<Consultation> consultationsRepository, IRepository<UserConsultation> userConsultationsRepository, IConsultationService consultationService, IPromoCodeService promoCodeService, IContactService contactService,
+            IEmailTemplateService emailTemplateService)
             : base(my)
         {
             _membershipOptionRepository = membershipOptionRepository;
@@ -37,6 +39,7 @@ namespace K9.WebApplication.Services
             _consultationService = consultationService;
             _promoCodeService = promoCodeService;
             _contactService = contactService;
+            _emailTemplateService = emailTemplateService;
         }
 
         public UserMembership GetActiveUserMembership(string accountNumber)
@@ -296,8 +299,9 @@ namespace K9.WebApplication.Services
             }
             catch (Exception ex)
             {
-                My.Logger.Error($"MembershipService => CreateMembership => Purchase failed: {ex.GetFullErrorMessage()}");
-                SendEmailToNineStarAboutFailure(customerName, customerEmailAddress, ex.GetFullErrorMessage());
+                var errorMessage = $"MembershipService => CreateMembership => Purchase failed: {ex.GetFullErrorMessage()}";
+                My.Logger.Error(errorMessage);
+                SendEmailToNineStarAboutSubscriptionFailure(customerName, customerEmailAddress, errorMessage);
                 throw;
             }
 
@@ -313,8 +317,9 @@ namespace K9.WebApplication.Services
             }
             catch (Exception e)
             {
-                My.Logger.Error($"MembershipService => ProcessPurchase => Get contact record failed failed for user: {user.Id} {e.GetFullErrorMessage()}");
-                SendEmailToNineStarAboutFailure(customerName, customerEmailAddress, e.GetFullErrorMessage());
+                var errorMessage = $"MembershipService => ProcessPurchase => Get contact record failed failed for user: {user.Id} {e.GetFullErrorMessage()}";
+                My.Logger.Error(errorMessage);
+                SendEmailToNineStarAboutSubscriptionFailure(customerName, customerEmailAddress, errorMessage);
             }
 
             try
@@ -325,7 +330,10 @@ namespace K9.WebApplication.Services
             }
             catch (Exception e)
             {
-                My.Logger.Error($"MembershipService => ProcessPurchase => Send Emails failed: {e.GetFullErrorMessage()}");
+                var errorMessage = $"MembershipService => ProcessPurchase => Send Emails failed: {e.GetFullErrorMessage()}";
+                My.Logger.Error(errorMessage);
+
+                SendEmailToNineStarAboutSubscriptionFailure(customerName, customerEmailAddress, errorMessage);
             }
         }
 
@@ -413,7 +421,12 @@ namespace K9.WebApplication.Services
             }
             catch (Exception ex)
             {
-                My.Logger.Error($"MembershipService => CreateFreeMembership => failed: {ex.GetFullErrorMessage()}");
+                var errorMessage = $"MembershipService => CreateFreeMembership => Error: {ex.GetFullErrorMessage()}";
+                My.Logger.Error(errorMessage);
+
+                var user = My.UsersRepository.Find(userId);
+                SendEmailToNineStarAboutFailure(errorMessage, userId);
+
                 throw;
             }
         }
@@ -442,7 +455,9 @@ namespace K9.WebApplication.Services
             }
             catch (Exception e)
             {
-                My.Logger.Error($"MembershipService => CreateComplementaryUserConsultation => Error creating consultation => {e.GetFullErrorMessage()}");
+                var errorMessage = $"MembershipService => CreateComplementaryUserConsultation => Error creating consultation => {e.GetFullErrorMessage()}";
+                My.Logger.Error(errorMessage);
+                SendEmailToNineStarAboutFailure(errorMessage, userId);
             }
         }
 
@@ -465,62 +480,95 @@ namespace K9.WebApplication.Services
 
         private void SendEmailToNineStar(string customerName, string customerEmailAddress, UserMembership userMembership)
         {
-            var template = Dictionary.MembershipCreatedEmail;
+            var user = My.UsersRepository.Find(userMembership.UserId);
             var title = "We have received a new subscription!";
-            My.Mailer.SendEmail(title, TemplateParser.Parse(template, new
+            var body = _emailTemplateService.ParseForUser(
+                title,
+                Dictionary.NewSubscriptionEmail,
+                user,
+                new
+                {
+                    Customer = customerName,
+                    CustomerEmail = customerEmailAddress,
+                    SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal,
+                    TotalPrice = userMembership.MembershipOption.FormattedPrice,
+                    LinkToSummary = My.UrlHelper.AbsoluteAction("Index", "UserMemberships"),
+                });
+
+            try
             {
-                Title = title,
-                Customer = customerName,
-                CustomerEmail = customerEmailAddress,
-                SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal,
-                TotalPrice = userMembership.MembershipOption.FormattedPrice,
-                LinkToSummary = My.UrlHelper.AbsoluteAction("Index", "UserMemberships"),
-                Company = My.WebsiteConfiguration.CompanyName,
-                ImageUrl = My.UrlHelper.AbsoluteContent(My.WebsiteConfiguration.CompanyLogoUrl),
-                FailedText = ""
-            }), My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName, My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName);
+                My.Mailer.SendEmail(
+                    title,
+                    body,
+                    My.WebsiteConfiguration.SupportEmailAddress,
+                    My.WebsiteConfiguration.CompanyName);
+            }
+            catch (Exception ex)
+            {
+                My.Logger.Error(ex.GetFullErrorMessage());
+            }
         }
 
         private void SendEmailToUser(UserMembership userMembership)
         {
-            var user = userMembership.User;
-            var template = Dictionary.NewMembershipThankYouEmail;
+            var user = My.UsersRepository.Find(userMembership.UserId);
             var title = TemplateParser.Parse(Dictionary.ThankyouForSubscriptionEmailTitle, new
             {
                 SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal
             });
+            var body = _emailTemplateService.ParseForUser(
+                title,
+                Dictionary.NewSubscriptionEmail,
+                user,
+                new
+                {
+                    CustomerName = user.FirstName,
+                    SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal,
+                    TotalPrice = userMembership.MembershipOption.FormattedPrice,
+                    EndsOn = userMembership.EndsOn.ToLongDateString(),
+                });
 
-            My.Mailer.SendEmail(title, TemplateParser.Parse(template, new
+            try
             {
-                Title = title,
-                CustomerName = user.FirstName,
-                SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal,
-                TotalPrice = userMembership.MembershipOption.FormattedPrice,
-                EndsOn = userMembership.EndsOn.ToLongDateString(),
-                userMembership.MembershipOption.NumberOfProfileReadings,
-                userMembership.MembershipOption.NumberOfCompatibilityReadings,
-                ImageUrl = My.UrlHelper.AbsoluteContent(My.WebsiteConfiguration.CompanyLogoUrl),
-                PrivacyPolicyLink = My.UrlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                TermsOfServiceLink = My.UrlHelper.AbsoluteAction("TermsOfService", "Home"),
-                UnsubscribeLink = My.UrlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }),
-                DateTime.Now.Year
-            }), user.EmailAddress, user.FirstName, My.WebsiteConfiguration.SupportEmailAddress,
-                My.WebsiteConfiguration.CompanyName);
+                My.Mailer.SendEmail(
+                    title,
+                    body,
+                    user.EmailAddress,
+                    user.FullName);
+            }
+            catch (Exception ex)
+            {
+                My.Logger.Error(ex.GetFullErrorMessage());
+            }
         }
 
-        private void SendEmailToNineStarAboutFailure(string customerName, string customerEmailAddress, string errorMessage)
+        private void SendEmailToNineStarAboutSubscriptionFailure(string customerName, string customerEmailAddress, string errorMessage)
         {
-            var template = Dictionary.PaymentError;
-            var title = "A customer made a successful payment, but an error occurred.";
-            My.Mailer.SendEmail(title, TemplateParser.Parse(template, new
+            var contact = My.ContactsRepository.Find(e => e.EmailAddress == customerEmailAddress).FirstOrDefault();
+            var title = "A new subscription was created, but something went wrong.";
+            var body = _emailTemplateService.ParseForContact(
+                title,
+                Dictionary.NewSubscriptionErrorEmail,
+                contact,
+                new
+                {
+                    Customer = customerName,
+                    CustomerEmail = customerEmailAddress,
+                    ErrorMessage = errorMessage
+                });
+
+            try
             {
-                Title = title,
-                Customer = customerName,
-                CustomerEmail = customerEmailAddress,
-                ErrorMessage = errorMessage,
-                Company = My.WebsiteConfiguration.CompanyName,
-                ImageUrl = My.UrlHelper.AbsoluteContent(My.WebsiteConfiguration.CompanyLogoUrl)
-            }), My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName, My.WebsiteConfiguration.SupportEmailAddress, My.WebsiteConfiguration.CompanyName);
+                My.Mailer.SendEmail(
+                    title,
+                    body,
+                    My.WebsiteConfiguration.SupportEmailAddress,
+                    My.WebsiteConfiguration.CompanyName);
+            }
+            catch (Exception ex)
+            {
+                My.Logger.Error(ex.GetFullErrorMessage());
+            }
         }
 
     }

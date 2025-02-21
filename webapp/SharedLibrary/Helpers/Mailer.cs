@@ -49,6 +49,6 @@ namespace K9.SharedLibrary.Helpers
                 SendEmail(subject, body, recipientEmailAddress, recipientDisplayName, fromEmailAddress, fromDisplayName, isHtml, socketOptions, port);
             });
         }
-
+        
     }
 }

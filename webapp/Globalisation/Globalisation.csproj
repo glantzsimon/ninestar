@@ -183,6 +183,7 @@
     <Content Include="Compatibility\en-gb\main-modality-same.htm" />
     <Content Include="EmailTemplates\en-gb\ToCustomer\SupportQueryThankYouEmail.htm" />
     <Content Include="EmailTemplates\en-gb\ToNineStar\DonationReceivedEmail.htm" />
+    <Content Include="EmailTemplates\en-gb\ToNineStar\GeneralErrorEmail.htm" />
     <Content Include="Membership\en-gb\lifetime-membership-description.htm" />
     <Content Include="Membership\en-gb\full-feature-list.htm" />
     <Content Include="Membership\en-gb\weekly-membership-description.htm" />
@@ -564,12 +565,10 @@
     <Content Include="Articles\en-gb\water-trigram.htm" />
     <Content Include="EmailTemplates\en-gb\ToNineStar\ConsultationBookedEmail.htm" />
     <Content Include="EmailTemplates\en-gb\ToCustomer\ConsultationBookedThankYouEmail.htm" />
-    <Content Include="Templates\en-gb\PromoCodeEmail.htm" />
-    <Content Include="Templates\en-gb\PaymentError.htm" />
-    <Content Include="Templates\en-gb\CreditPackPurchased.htm" />
-    <Content Include="Templates\en-gb\NewCreditPackThankYouEmail.htm" />
-    <Content Include="Templates\en-gb\NewMembershipThankYouEmail.htm" />
-    <Content Include="Templates\en-gb\MembershipCreatedEmail.htm" />
+    <Content Include="EmailTemplates\en-gb\ToCustomer\PromoCodeOfferedEmail.htm" />
+    <Content Include="EmailTemplates\en-gb\ToNineStar\NewSubscriptionErrorEmail.htm" />
+    <Content Include="EmailTemplates\en-gb\ToCustomer\NewSubscriptionThankYouEmail.htm" />
+    <Content Include="EmailTemplates\en-gb\ToNineStar\NewSubscriptionEmail.htm" />
     <Content Include="EmailTemplates\en-gb\ToCustomer\DonationThankYouEmail.htm" />
     <Content Include="Templates\en-gb\PasswordResetEmail.htm" />
     <Content Include="EmailTemplates\en-gb\ToCustomer\AccountActivationEmail.htm" />

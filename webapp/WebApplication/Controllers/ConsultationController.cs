@@ -132,17 +132,30 @@ namespace K9.WebApplication.Controllers
         [Route("consultation/select-timeslot")]
         public ActionResult SelectSlot(ScheduleConsultationViewModel model)
         {
-            var selectedSlot = _consultationService.FindSlot(model.SelectedSlotId);
-            var consultation = _consultationService.Find(model.ConsultationId);
+            var selectedSlot = _consultationService.FindSlot(model.SelectedSlot.Id);
+            var consultation = _consultationService.Find(model.Consultation.Id);
 
             if (selectedSlot == null || consultation == null)
             {
                 return HttpNotFound();
             }
 
-            _consultationService.SelectSlot(model.ConsultationId, model.SelectedSlotId);
+            try
+            {
+                _consultationService.SelectSlot(model.Consultation.Id, model.SelectedSlot.Id);
+                return RedirectToAction("ScheduleConsultationSuccess", new { consultationId = model.Consultation.Id, selectedSlotId = model.SelectedSlot.Id });
+            }
+            catch (Exception e)
+            {
+                My.Logger.Error($"ConsultationController => SelectSlot => Error: {e.GetFullErrorMessage()}");
+                ModelState.AddModelError("", Globalisation.Dictionary.FriendlyErrorMessage);
+            }
 
-            return RedirectToAction("ScheduleConsultationSuccess", new { model.ConsultationId, selectedSlotId = model.SelectedSlotId });
+            return View("ScheduleConsultationConfirm", new ScheduleConsultationViewModel
+            {
+                Consultation = consultation,
+                SelectedSlot = selectedSlot
+            });
         }
 
         [Route("consultation/schedule-success")]

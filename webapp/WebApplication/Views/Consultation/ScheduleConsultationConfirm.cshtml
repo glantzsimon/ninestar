@@ -13,8 +13,8 @@
 {
     using (Html.BeginBootstrapForm())
     {
-        @Html.HiddenFor(e => e.ConsultationId)
-        @Html.HiddenFor(e => e.SelectedSlotId)
+        @Html.HiddenFor(e => e.Consultation.Id)
+        @Html.HiddenFor(e => e.SelectedSlot.Id)
 
         <div class="margin-bottom-10">
             <div class="text-center">

@@ -193,25 +193,40 @@ namespace K9.WebApplication.Services
 
             try
             {
-                consultation = Find(consultationId);
+                consultation = _consultationRepository.Find(consultationId);
+                if (consultation == null)
+                {
+                    My.Logger.Error($"ConsultationService => SelectSlot => Consultation {consultationId} not found");
+                    throw new Exception("Consultation not found");
+                }
 
                 if (consultation.ScheduledOn.HasValue)
                 {
-                    var existingSlot = _slotRepository.Find(e => e.Id == consultation.SlotId).FirstOrDefault();
-                    if (existingSlot != null)
+                    var existingSlots = _slotRepository.Find(e => e.Id == consultation.SlotId).ToList();
+                    foreach (var existingSlot in existingSlots)
                     {
-                        existingSlot.IsTaken = false;
-                        _slotRepository.Update(existingSlot);
+                        if (existingSlot.Id != slotId)
+                        {
+                            existingSlot.IsTaken = false;
+                            _slotRepository.Update(existingSlot);    
+                        }
                     }
                 }
 
-                var slot = FindSlot(slotId);
+                var slot = _slotRepository.Find(slotId);
+                if (slot == null)
+                {
+                    My.Logger.Error($"ConsultationService => SelectSlot => Slot {slotId} not found");
+                    throw new Exception("Slot not found");
+                }
+
                 slot.IsTaken = true;
+                _slotRepository.Update(slot);
+
                 consultation.ScheduledOn = slot.StartsOn;
                 consultation.SlotId = slot.Id;
-
                 _consultationRepository.Update(consultation);
-                _slotRepository.Update(slot);
+                
             }
             catch (Exception e)
             {
@@ -338,7 +353,7 @@ namespace K9.WebApplication.Services
 
         private void SendAppointmentConfirmationEmailToNineStar(Consultation consultation, User user)
         {
-            var subject = "A suer has scheduled a consultation!";
+            var subject = "A user has scheduled a consultation!";
             var body = _emailTemplateService.ParseForUser(
                 subject,
                 Dictionary.ConsultationScheduledEmail,

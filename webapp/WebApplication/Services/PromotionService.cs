@@ -9,6 +9,7 @@ using System;
 using System.Linq;
 using K9.DataAccessLaye.Attributes;
 using K9.DataAccessLayer.Enums;
+using K9.SharedLibrary.Helpers;
 using K9.WebApplication.EmailTemplates;
 
 namespace K9.WebApplication.Services
@@ -232,7 +233,7 @@ namespace K9.WebApplication.Services
             {
                 throw new Exception("Yearly Membership not found on the system");
             }
-            
+
             if (discount == EDiscount.None)
             {
                 throw new Exception($"Discount cannot be zero");
@@ -267,6 +268,14 @@ namespace K9.WebApplication.Services
                 throw new Exception($"PromoCodeService => SendMembershipReminderToUser => PromoCode {promoCode.Code} was already sent on {promoCode.SentOn.Value}");
             }
 
+            var membershipOption = _membershipOptionsRepository
+                .Find(e => e.Id == promoCode.MembershipOptionId).FirstOrDefault();
+
+            if (membershipOption == null)
+            {
+                throw new Exception("Yearly Membership not found on the system");
+            }
+
             // Check if user already exists with email address
             var user = My.UsersRepository.Find(userId);
             if (user == null)
@@ -279,7 +288,7 @@ namespace K9.WebApplication.Services
             var activeUserMembershipIds = _userMembershipsRepository.Find(e => e.IsActive && e.UserId == userId).Select(e => e.MembershipOptionId).ToList();
             var userMembershipOptions =
                 _membershipOptionsRepository.Find(e => activeUserMembershipIds.Contains(e.Id)).ToList();
-            
+
             if (userMembershipOptions.Any(e => e.SubscriptionType >= MembershipOption.ESubscriptionType.Free))
             {
                 // User is already signed up
@@ -288,20 +297,31 @@ namespace K9.WebApplication.Services
                 return;
             }
 
+            var discountPercent = promoCode.Discount.GetAttribute<DiscountAttribute>().DiscountPercent;
+            var fullPrice = membershipOption.FormattedPrice;
+            var discountedPrice = promoCode.FormattedPrice;
+            var subject = TemplateParser.Parse(emailTemplate.Subject, new
+            {
+                Discount = discountPercent
+            });
             var body = _emailTemplateService.ParseForUser(
-                emailTemplate.Subject,
+                subject,
                 emailTemplate.HtmlBody,
                 user,
                 new
                 {
                     user.FirstName,
+                    Discount = discountPercent,
+                    FullPrice = fullPrice,
+                    DiscountedPrice = discountedPrice,
+                    MembershipOptionName = membershipOption.SubscriptionTypeNameLocal,
                     PromoLink = My.UrlHelper.AbsoluteAction("PurchaseStart", "Membership", new { membershipOptionId = promoCode.MembershipOptionId, promoCode = promoCode.Code })
                 });
 
             try
             {
                 My.Mailer.SendEmail(
-                    emailTemplate.Subject,
+                    subject,
                     body,
                     user.EmailAddress,
                     user.FullName);

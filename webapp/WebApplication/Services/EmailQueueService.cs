@@ -78,6 +78,7 @@ namespace K9.WebApplication.Services
 
             _emailQueueItemsRepository.Create(new EmailQueueItem
             {
+                Name = Guid.NewGuid().ToString(),
                 Type = type,
                 UserId = userId,
                 Subject = subject,

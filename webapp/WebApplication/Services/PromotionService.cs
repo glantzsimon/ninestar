@@ -355,8 +355,8 @@ namespace K9.WebApplication.Services
                 My.Logger.Error(ex.GetFullErrorMessage());
             }
 
-            promoCode.SentOn = DateTime.Now;
-            _promoCodesRepository.Update(promoCode);
+            _promoCodesRepository.GetQuery(
+                $"UPDATE [{nameof(PromoCode)}] SET [{nameof(PromoCode.SentOn)}] = GETDATE() WHERE [Id] = {promoCode.Id}");
         }
 
     }

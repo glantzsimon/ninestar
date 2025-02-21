@@ -244,10 +244,11 @@ namespace K9.WebApplication.Services
             var promoCode = new PromoCode
             {
                 MembershipOptionId = yearlyMembershipOption.Id,
-                Discount = discount
+                Discount = discount,
             };
+            promoCode.Name = promoCode.Code;
 
-            var discountAmount = discount.GetAttribute<DiscountAttribute>().DiscountPercent / 100;
+            var discountAmount = (double)discount.GetAttribute<DiscountAttribute>().DiscountPercent / 100;
             promoCode.TotalPrice = yearlyMembershipOption.Price - (yearlyMembershipOption.Price * discountAmount);
             _promoCodesRepository.Create(promoCode);
 
@@ -257,7 +258,7 @@ namespace K9.WebApplication.Services
         private void SchedulePromotionFromTemplateToUser(int userId, EmailTemplate emailTemplate, PromoCode promoCode,
             TimeSpan scheduledOn)
         {
-            SendPromotionFromTemplateToUser(userId, emailTemplate, promoCode, true);
+            SendPromotionFromTemplateToUser(userId, emailTemplate, promoCode, true, scheduledOn);
         }
 
         private void SendPromotionFromTemplateToUser(int userId, EmailTemplate emailTemplate, PromoCode promoCode, bool isScheduled = false, TimeSpan? scheduledOn = null)
@@ -298,7 +299,10 @@ namespace K9.WebApplication.Services
             }
 
             // Check membership option - if the user is signed up, don't send
-            var activeUserMembershipIds = _userMembershipsRepository.Find(e => e.IsActive && e.UserId == userId).Select(e => e.MembershipOptionId).ToList();
+            var activeUserMembershipIds = _userMembershipsRepository.Find(e => e.UserId == userId)
+                .Where(e => e.IsActive)
+                .Select(e => e.MembershipOptionId)
+                .ToList();
             var userMembershipOptions =
                 _membershipOptionsRepository.Find(e => activeUserMembershipIds.Contains(e.Id)).ToList();
 

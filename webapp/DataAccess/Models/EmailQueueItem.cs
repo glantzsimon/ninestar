@@ -30,10 +30,6 @@ namespace K9.DataAccessLayer.Models
         
         public virtual User User { get; set; }
 
-        [DataType(DataType.EmailAddress, ErrorMessageResourceType = typeof(Dictionary),
-            ErrorMessageResourceName = Strings.ErrorMessages.InvalidEmailAddress)]
-        [EmailAddress(ErrorMessageResourceType = typeof(Dictionary),
-            ErrorMessageResourceName = Strings.ErrorMessages.InvalidEmailAddress)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EmailAddressLabel)]
         public string RecipientEmailAddress => User != null ? User.EmailAddress :
             Contact != null ? Contact.EmailAddress : string.Empty;

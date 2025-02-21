@@ -52,7 +52,13 @@ namespace K9.WebApplication.Helpers
                     }
                     else
                     {
-                        _datasets.Collection.Add(typeof(T), dataset);
+                        try
+                        {
+                            _datasets.Collection.Add(typeof(T), dataset);
+                        }
+                        catch (Exception e)
+                        {
+                        }
                     }
                 }
             }
@@ -84,7 +90,13 @@ namespace K9.WebApplication.Helpers
 
                 if (!_datasets.Collection.ContainsKey(enumType))
                 {
-                    _datasets.Collection.Add(typeof(T), dataset);
+                    try
+                    {
+                        _datasets.Collection.Add(typeof(T), dataset);
+                    }
+                    catch (Exception e)
+                    {
+                    }
                 }
                 else
                 {
@@ -98,7 +110,13 @@ namespace K9.WebApplication.Helpers
         {
             if (!_datasets.Collection.ContainsKey(typeof(T)))
             {
-                _datasets.Collection.Add(typeof(T), items);
+                try
+                {
+                    _datasets.Collection.Add(typeof(T), items);
+                }
+                catch (Exception e)
+                {
+                }
             }
         }
 

@@ -921,6 +921,8 @@ namespace K9.WebApplication.Controllers
                 {
                     var result = My.AccountService.ActivateAccount(model.UserId);
 
+                    My.MembershipService.ScheduleRemindersForUser(result.User.Id);
+
                     My.AccountService.Login(model.UserId);
 
                     if (returnUrl != null)

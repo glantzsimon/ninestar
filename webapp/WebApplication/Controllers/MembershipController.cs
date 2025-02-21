@@ -13,12 +13,12 @@ namespace K9.WebApplication.Controllers
 {
     public class MembershipController : BaseNineStarKiController
     {
-        private readonly IPromoCodeService _promoCodeService;
+        private readonly IPromotionService _promotionService;
 
-        public MembershipController(INineStarKiPackage nineStarKiPackage, IPromoCodeService promoCodeService)
+        public MembershipController(INineStarKiPackage nineStarKiPackage, IPromotionService promotionService)
             : base(nineStarKiPackage)
         {
-            _promoCodeService = promoCodeService;
+            _promotionService = promotionService;
         }
 
         public ActionResult Index(string retrieveLast = null)
@@ -35,12 +35,12 @@ namespace K9.WebApplication.Controllers
 
             if (!string.IsNullOrEmpty(promoCode))
             {
-                if (_promoCodeService.IsPromoCodeAlreadyUsed(promoCode))
+                if (_promotionService.IsPromoCodeAlreadyUsed(promoCode))
                 {
                     ModelState.AddModelError("", Globalisation.Dictionary.PromoCodeInUse);
                 }
 
-                promoCodeModel = _promoCodeService.Find(promoCode);
+                promoCodeModel = _promotionService.Find(promoCode);
                 if (promoCodeModel == null)
                 {
                     ModelState.AddModelError("", "Invalid promo code");

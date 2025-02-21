@@ -181,6 +181,12 @@
     <Content Include="Compatibility\en-gb\main-gender-same-yin.htm" />
     <Content Include="Compatibility\en-gb\main-modality-different.htm" />
     <Content Include="Compatibility\en-gb\main-modality-same.htm" />
+    <Content Include="EmailTemplates\en-gb\Promotions\SecondMembershipReminderEmail .htm" />
+    <Content Include="EmailTemplates\en-gb\Promotions\ThirdMembershipReminderEmail.htm" />
+    <Content Include="EmailTemplates\en-gb\Promotions\SecondMembershipReminderSubject.htm" />
+    <Content Include="EmailTemplates\en-gb\Promotions\ThirdMembershipReminderSubject.htm" />
+    <Content Include="EmailTemplates\en-gb\Promotions\FirstMembershipReminderSubject.htm" />
+    <Content Include="EmailTemplates\en-gb\Promotions\FirstMembershipReminderEmail.htm" />
     <Content Include="EmailTemplates\en-gb\ToCustomer\SupportQueryThankYouEmail.htm" />
     <Content Include="EmailTemplates\en-gb\ToNineStar\DonationReceivedEmail.htm" />
     <Content Include="EmailTemplates\en-gb\ToNineStar\GeneralErrorEmail.htm" />
@@ -570,7 +576,7 @@
     <Content Include="EmailTemplates\en-gb\ToCustomer\NewSubscriptionThankYouEmail.htm" />
     <Content Include="EmailTemplates\en-gb\ToNineStar\NewSubscriptionEmail.htm" />
     <Content Include="EmailTemplates\en-gb\ToCustomer\DonationThankYouEmail.htm" />
-    <Content Include="Templates\en-gb\PasswordResetEmail.htm" />
+    <Content Include="EmailTemplates\en-gb\ToCustomer\PasswordResetEmail.htm" />
     <Content Include="EmailTemplates\en-gb\ToCustomer\AccountActivationEmail.htm" />
     <Content Include="Articles\en-gb\CompatibilityMetaDescription.htm" />
     <Content Include="Articles\en-gb\SurfaceEnergyDescription.htm" />
@@ -585,7 +591,9 @@
     <None Include="App.config" />
     <None Include="Globalisation.ruleset" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Templates\en-gb\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

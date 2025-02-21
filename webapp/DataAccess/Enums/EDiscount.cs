@@ -15,7 +15,7 @@ namespace K9.DataAccessLayer.Enums
         FirstDiscount,
         [Discount(DiscountPercent = 30, ResourceType = typeof(Dictionary), Name = Strings.Names.SecondDiscount)]
         SecondDiscount,
-        [Discount(DiscountPercent = 70, ResourceType = typeof(Dictionary), Name = Strings.Names.ThirdDiscount)]
+        [Discount(DiscountPercent = 50, ResourceType = typeof(Dictionary), Name = Strings.Names.ThirdDiscount)]
         ThirdDiscount
     }
 

@@ -328,6 +328,9 @@
     <Compile Include="Controllers\UserPromoCodesController.cs" />
     <Compile Include="Controllers\UserMembershipsController.cs" />
     <Compile Include="Controllers\MailingListUsersController.cs" />
+    <Compile Include="EmailTemplates\SecondMembershipReminderEmailTemplate.cs" />
+    <Compile Include="EmailTemplates\ThirdMembershipReminderEmailTemplate.cs" />
+    <Compile Include="EmailTemplates\FirstMembershipReminderEmailTemplate.cs" />
     <Compile Include="Enums\ELineType.cs" />
     <Compile Include="Enums\EDeviceType.cs" />
     <Compile Include="Enums\EBiorhythmValue.cs" />
@@ -417,8 +420,8 @@
     <Compile Include="Services\AccountService.cs" />
     <Compile Include="Services\IAccountMailerService.cs" />
     <Compile Include="Services\IAccountService.cs" />
-    <Compile Include="Services\IPromoCodeService.cs" />
-    <Compile Include="Services\PromoCodeService.cs" />
+    <Compile Include="Services\IPromotionService.cs" />
+    <Compile Include="Services\PromotionService.cs" />
     <Compile Include="ViewModels\IChingViewModel.cs" />
     <Compile Include="ViewModels\AssignConsultationModel.cs" />
     <Compile Include="ViewModels\AdminViewModel.cs" />

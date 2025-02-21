@@ -78,7 +78,7 @@ namespace K9.WebApplication
             builder.RegisterType<IChingService>().As<IIChingService>().InstancePerRequest();
             builder.RegisterType<EmailQueueService>().As<IEmailQueueService>().InstancePerRequest();
             builder.RegisterType<EmailTemplateService>().As<IEmailTemplateService>().InstancePerRequest();
-            builder.RegisterType<PromoCodeService>().As<IPromoCodeService>().InstancePerRequest();
+            builder.RegisterType<PromotionService>().As<IPromotionService>().InstancePerRequest();
 
             RegisterConfiguration(builder);
 
@@ -98,7 +98,7 @@ namespace K9.WebApplication
             RecurringJob.AddOrUpdate<EmailQueueService>(
                 "ProcessEmailQueue",
                 service => service.ProcessQueue(),
-                Cron.MinuteInterval(10));      
+                Cron.MinuteInterval(10));
         }
 
         public static void RegisterStaticTypes()

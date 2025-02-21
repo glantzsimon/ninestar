@@ -7,34 +7,36 @@
 <div class="otp-container">
     @using (Html.BeginForm("VerifySixDigitCode", "Account", new { returnUrl }))
     {
-        using (Html.BeginBootstrapForm())
-        {
-            @Html.HiddenFor(model => model.UserId)
-
-            <div class="row">
-                <div class="col-sm-offset-3 col-sm-6">
-                    <div class="verification-container">
+        @Html.HiddenFor(model => model.UserId)
+        @Html.HiddenFor(model => model.UniqueIdentifier)
+        @Html.HiddenFor(model => model.IsCodeResent)
+        
+        <div class="row">
+            <div class="col-sm-offset-3 col-sm-6">
+                <div class="verification-container">
+                    @using (Html.BeginBootstrapForm())
+                    {
                         <h4>@Dictionary.EnterVerificationCode</h4>
 
                         <div class="code-input-container">
-                            <input id="@nameof(Model.Digit1)" name="@nameof(Model.Digit1)" type="text" maxlength="1" class="otp-input">
-                            <input id="@nameof(Model.Digit2)" name="@nameof(Model.Digit2)" type="text" maxlength="1" class="otp-input">
-                            <input id="@nameof(Model.Digit3)" name="@nameof(Model.Digit3)" type="text" maxlength="1" class="otp-input">
-                            <input id="@nameof(Model.Digit4)" name="@nameof(Model.Digit4)" type="text" maxlength="1" class="otp-input">
-                            <input id="@nameof(Model.Digit5)" name="@nameof(Model.Digit5)" type="text" maxlength="1" class="otp-input">
-                            <input id="@nameof(Model.Digit6)" name="@nameof(Model.Digit6)" type="text" maxlength="1" class="otp-input">
+                            <input id="@nameof(Model.Digit1)" name="@nameof(Model.Digit1)" type="text" maxlength="1" class="otp-input" data-val="true" data-val-required="This is a required field.">
+                            <input id="@nameof(Model.Digit2)" name="@nameof(Model.Digit2)" type="text" maxlength="1" class="otp-input" data-val="true" data-val-required="This is a required field.">
+                            <input id="@nameof(Model.Digit3)" name="@nameof(Model.Digit3)" type="text" maxlength="1" class="otp-input" data-val="true" data-val-required="This is a required field.">
+                            <input id="@nameof(Model.Digit4)" name="@nameof(Model.Digit4)" type="text" maxlength="1" class="otp-input" data-val="true" data-val-required="This is a required field.">
+                            <input id="@nameof(Model.Digit5)" name="@nameof(Model.Digit5)" type="text" maxlength="1" class="otp-input" data-val="true" data-val-required="This is a required field.">
+                            <input id="@nameof(Model.Digit6)" name="@nameof(Model.Digit6)" type="text" maxlength="1" class="otp-input" data-val="true" data-val-required="This is a required field.">
                         </div>
 
                         <hr />
                         @Html.BootstrapButton(Dictionary.Verify, EButtonType.Submit, "", EButtonClass.Large)
 
-                        <p>
-                            @Dictionary.DidntReceiveCodePrompt <a href="@Url.Action("AccountCreated", new { Model.UniqueIdentifier, returnUrl, resendCode = 1})" class="">@Dictionary.Resend</a>
+                        <p class="margin-top-5">
+                            @Dictionary.DidntReceiveCodePrompt <a href="@Url.Action("AccountCreated", new {Model.UniqueIdentifier, returnUrl, resendCode = 1})" class="">@Dictionary.Resend</a>
                         </p>
-                    </div>
+                    }
                 </div>
             </div>
-        }
+        </div>
     }
 </div>
 

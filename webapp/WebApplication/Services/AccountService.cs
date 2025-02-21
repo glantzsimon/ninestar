@@ -228,7 +228,7 @@ namespace K9.WebApplication.Services
 
                 try
                 {
-                    _accountMailerService.SendActivationEmail(model, otp.SixDigitCode);
+                    _accountMailerService.SendActivationEmailToUser(model, otp.SixDigitCode);
                 }
                 catch (Exception e)
                 {
@@ -393,7 +393,7 @@ namespace K9.WebApplication.Services
                 {
                     model.UserName = user.Username;
                     var token = My.Authentication.GeneratePasswordResetToken(user.Username);
-                    _accountMailerService.SendPasswordResetEmail(model, token);
+                    _accountMailerService.SendPasswordResetEmailToUser(model, token);
                     result.IsSuccess = true;
                     result.Data = token;
                 }
@@ -571,21 +571,21 @@ namespace K9.WebApplication.Services
             return My.UsersRepository.CustomQuery<string>(sql).FirstOrDefault();
         }
 
-        public void ResentActivationCode(int userId)
+        public void ResendActivationCode(int userId)
         {
             var user = _userService.Find(userId);
             var otp = CreateAccountActivationOTP(userId, true);
-            _accountMailerService.SendActivationEmail(user, otp.SixDigitCode);
+            _accountMailerService.SendActivationEmailToUser(user, otp.SixDigitCode);
         }
 
         public UserOTP CreateAccountActivationOTP(int userId, bool recreate = false)
         {
             if (recreate)
             {
-                var existing = _otpRepository.Find(e => e.UserId == userId).Where(e => e.VerifiedOn.HasValue);
+                var existing = _otpRepository.Find(e => e.UserId == userId).ToList();
                 foreach (var userOtp in existing)
                 {
-                    userOtp.VerifiedOn = DateTime.UtcNow;
+                    userOtp.IsDeleted = true;
                     _otpRepository.Update(userOtp);
                 }
             }
@@ -604,7 +604,7 @@ namespace K9.WebApplication.Services
         public void VerifyCode(int userId, int digit1, int digit2, int digit3, int digit4, int digit5, int digit6)
         {
             var sixDigitCode = int.Parse($"{digit1}{digit2}{digit3}{digit4}{digit5}{digit6}");
-            var otp = _otpRepository.Find(e => e.UserId == userId && e.SixDigitCode == sixDigitCode).FirstOrDefault();
+            var otp = _otpRepository.Find(e => e.UserId == userId && e.SixDigitCode == sixDigitCode && !e.IsDeleted).FirstOrDefault();
 
             if (otp == null)
             {

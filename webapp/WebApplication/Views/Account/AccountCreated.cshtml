@@ -7,20 +7,33 @@
     ViewBag.TitleTag = "text-center";
 
     string additionalError = TempData["AdditionalError"]?.ToString();
-    var confirmationText = Model.IsCodeResent ? Dictionary.WeveResentCodeToEmail : Dictionary.WeveSentCodeToEmail;
 }
 
 <div class="margin-bottom-10">
-    @Html.Success(K9.Base.Globalisation.Dictionary.AccountCreatedSuccessfully, confirmationText)
-
-    @if (!string.IsNullOrEmpty(additionalError))
+    @if (Model.IsCodeResent)
     {
-        <hr />
-        @Html.Alert(EAlertType.Warning, additionalError)
+        @Html.Success(Dictionary.WeveResentCodeToEmail)
+    }
+    else if (Model.IsAccountAlreadyActivated)
+    {
+        @Html.Success(K9.Base.Globalisation.Dictionary.AccountAlreadyActivated)
+
+        <div class="text-center margin-top-20">
+            @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.LogIntoYourAccount,
+                "Login", "Account", null, "", EButtonClass.Large)
+        </div>
     }
     else
     {
-        @Html.Partial("_AccountVerification")
+        @Html.Success(K9.Base.Globalisation.Dictionary.AccountCreatedSuccessfully, Dictionary.WeveSentCodeToEmail)
+
+        if (!string.IsNullOrEmpty(additionalError))
+        {
+            <hr />
+            @Html.Alert(EAlertType.Warning, additionalError)
+        }
     }
+    
+    @Html.Partial("_AccountVerification")
 </div>
 

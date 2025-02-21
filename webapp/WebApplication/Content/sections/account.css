@@ -2,11 +2,15 @@
   background: none !important;
   border: none !important;
   box-shadow: none !important;
+  padding: 12px !important;
+  padding-bottom: 2px !important;
 }
 .otp-container .verification-container {
   border: 1px solid #8a8a8a;
   border-radius: 8px;
-  padding: 20px;
+  padding: 0;
+  margin-top: 20px;
+  margin-bottom: 10px;
   background: #ffffff;
   text-align: center;
 }
@@ -20,10 +24,16 @@
   text-align: center;
   font-size: 24px;
   font-weight: bold;
-  border: 2px solid #ddd;
+  border: 2px solid #dddddd;
   border-radius: 8px;
   outline: none;
   transition: all 0.2s;
+}
+.otp-container .verification-container input.input-validation-error {
+  border: 2px solid #a94442;
+}
+.otp-container .verification-container input.input-validation-error:focus {
+  border-color: #a94442;
 }
 .otp-container .verification-container input:focus {
   border-color: #3b82f6;

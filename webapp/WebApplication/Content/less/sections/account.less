@@ -5,12 +5,16 @@
         background: none !important;
         border: none !important;
         box-shadow: none !important;
+        padding: 12px !important;
+        padding-bottom: 2px !important;
     }
 
     .verification-container {
         border: 1px solid @warm-grey;
         border-radius: 8px;
-        padding: 20px;
+        padding: 0;
+        margin-top: 20px;
+        margin-bottom: 10px;
         background: @snow-white;
         text-align: center;
     }
@@ -27,10 +31,18 @@
             text-align: center;
             font-size: 24px;
             font-weight: bold;
-            border: 2px solid #ddd;
+            border: 2px solid @border-grey;
             border-radius: 8px;
             outline: none;
             transition: all 0.2s;
+
+            &.input-validation-error {
+                border: 2px solid @deep-red;
+
+                &:focus {
+                    border-color: @deep-red;
+                }
+            }
 
             &:focus {
                 border-color: #3b82f6;

@@ -7,6 +7,7 @@ namespace K9.WebApplication.Models
         public int UserId { get; set; }
         public Guid UniqueIdentifier { get; set; }
         public bool IsCodeResent { get; set; }
+        public bool IsAccountAlreadyActivated { get; set; }
         
         public int Digit1 { get; set; }
         public int Digit2 { get; set; }

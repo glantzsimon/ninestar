@@ -1,17 +1,19 @@
 ﻿using K9.DataAccessLayer.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
-using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Packages;
 using K9.WebApplication.ViewModels;
 using NLog;
 using System;
 using System.Linq;
+using K9.DataAccessLaye.Attributes;
+using K9.DataAccessLayer.Enums;
+using K9.WebApplication.EmailTemplates;
 
 namespace K9.WebApplication.Services
 {
-    public class PromoCodeService : BaseService, IPromoCodeService
+    public class PromotionService : BaseService, IPromotionService
     {
         private readonly IRepository<PromoCode> _promoCodesRepository;
         private readonly IRepository<UserPromoCode> _userPromoCodeRepository;
@@ -20,7 +22,7 @@ namespace K9.WebApplication.Services
         private readonly IContactService _contactService;
         private readonly IEmailTemplateService _emailTemplateService;
 
-        public PromoCodeService(INineStarKiBasePackage my, IRepository<PromoCode> promoCodesRepository, IRepository<UserPromoCode> userPromoCodeRepository, IRepository<UserMembership> userMembershipsRepository, IRepository<UserOTP> userOtpRepository, IRepository<MembershipOption> membershipOptionsRepository, IContactService contactService, IEmailTemplateService emailTemplateService)
+        public PromotionService(INineStarKiBasePackage my, IRepository<PromoCode> promoCodesRepository, IRepository<UserPromoCode> userPromoCodeRepository, IRepository<UserMembership> userMembershipsRepository, IRepository<UserOTP> userOtpRepository, IRepository<MembershipOption> membershipOptionsRepository, IContactService contactService, IEmailTemplateService emailTemplateService)
             : base(my)
         {
             _promoCodesRepository = promoCodesRepository;
@@ -198,7 +200,117 @@ namespace K9.WebApplication.Services
             {
                 My.Logger.Error(ex.GetFullErrorMessage());
             }
+
+            promoCode.SentOn = DateTime.Now;
+            _promoCodesRepository.Update(promoCode);
+        }
+
+        public void SendFirstMembershipReminderToUser(int userId)
+        {
+            var promoCode = CreatePromoCodeForMembership(EDiscount.FirstDiscount);
+            SendPromotionFromTemplateToUser(userId, new FirstMembershipReminderEmailTemplate(), promoCode);
+        }
+
+        public void SendSecondMembershipReminderToUser(int userId)
+        {
+            var promoCode = CreatePromoCodeForMembership(EDiscount.SecondDiscount);
+            SendPromotionFromTemplateToUser(userId, new FirstMembershipReminderEmailTemplate(), promoCode);
+        }
+
+        public void SendThirdMembershipReminderToUser(int userId)
+        {
+            var promoCode = CreatePromoCodeForMembership(EDiscount.ThirdDiscount);
+            SendPromotionFromTemplateToUser(userId, new FirstMembershipReminderEmailTemplate(), promoCode);
+        }
+
+        private PromoCode CreatePromoCodeForMembership(EDiscount discount)
+        {
+            var yearlyMembershipOption = _membershipOptionsRepository
+                .Find(e => e.SubscriptionType == MembershipOption.ESubscriptionType.AnnualPlatinum).FirstOrDefault();
+
+            if (yearlyMembershipOption == null)
+            {
+                throw new Exception("Yearly Membership not found on the system");
+            }
             
+            if (discount == EDiscount.None)
+            {
+                throw new Exception($"Discount cannot be zero");
+            }
+
+            var promoCode = new PromoCode
+            {
+                MembershipOptionId = yearlyMembershipOption.Id,
+                Discount = discount
+            };
+
+            var discountAmount = discount.GetAttribute<DiscountAttribute>().DiscountPercent / 100;
+            promoCode.TotalPrice = yearlyMembershipOption.Price - (yearlyMembershipOption.Price * discountAmount);
+            _promoCodesRepository.Create(promoCode);
+
+            return promoCode;
+        }
+
+        private void SendPromotionFromTemplateToUser(int userId, EmailTemplate emailTemplate, PromoCode promoCode)
+        {
+            promoCode = Find(promoCode.Code);
+            if (promoCode == null)
+            {
+                throw new Exception($"PromoCodeService => SendMembershipReminderToUser => PromoCode {promoCode.Code} was not found");
+            }
+            if (promoCode.UsedOn.HasValue)
+            {
+                throw new Exception($"PromoCodeService => SendMembershipReminderToUser => PromoCode {promoCode.Code} was already used on {promoCode.UsedOn.Value}");
+            }
+            if (promoCode.SentOn.HasValue)
+            {
+                throw new Exception($"PromoCodeService => SendMembershipReminderToUser => PromoCode {promoCode.Code} was already sent on {promoCode.SentOn.Value}");
+            }
+
+            // Check if user already exists with email address
+            var user = My.UsersRepository.Find(userId);
+            if (user == null)
+            {
+                My.Logger.Log(LogLevel.Error, $"PromoCodeService => SendMembershipReminderToUser => User {userId} not found");
+                throw new Exception($"The user {userId} was not found");
+            }
+
+            // Check membership option - if the user is signed up, don't send
+            var activeUserMembershipIds = _userMembershipsRepository.Find(e => e.IsActive && e.UserId == userId).Select(e => e.MembershipOptionId).ToList();
+            var userMembershipOptions =
+                _membershipOptionsRepository.Find(e => activeUserMembershipIds.Contains(e.Id)).ToList();
+            
+            if (userMembershipOptions.Any(e => e.SubscriptionType >= MembershipOption.ESubscriptionType.Free))
+            {
+                // User is already signed up
+                var errorMessage = $"PromoCodeService => SendMembershipReminderToUser => User is already signed up";
+                My.Logger.Log(LogLevel.Error, errorMessage);
+                return;
+            }
+
+            var body = _emailTemplateService.ParseForUser(
+                emailTemplate.Subject,
+                emailTemplate.HtmlBody,
+                user,
+                new
+                {
+                    user.FirstName,
+                    PromoLink = My.UrlHelper.AbsoluteAction("PurchaseStart", "Membership", new { membershipOptionId = promoCode.MembershipOptionId, promoCode = promoCode.Code })
+                });
+
+            try
+            {
+                My.Mailer.SendEmail(
+                    emailTemplate.Subject,
+                    body,
+                    user.EmailAddress,
+                    user.FullName);
+            }
+            catch (Exception ex)
+            {
+                My.Logger.Error(ex.GetFullErrorMessage());
+            }
+
             promoCode.SentOn = DateTime.Now;
             _promoCodesRepository.Update(promoCode);
         }

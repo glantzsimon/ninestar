@@ -4,8 +4,8 @@ namespace K9.WebApplication.Services
 {
     public interface IAccountMailerService
     {
-        void SendActivationEmail(UserAccount.RegisterModel model, int sixDigitCode);
-        void SendActivationEmail(User user, int sixDigitCode);
-        void SendPasswordResetEmail(UserAccount.PasswordResetRequestModel model, string token);
+        void SendActivationEmailToUser(UserAccount.RegisterModel model, int sixDigitCode);
+        void SendActivationEmailToUser(User user, int sixDigitCode);
+        void SendPasswordResetEmailToUser(UserAccount.PasswordResetRequestModel model, string token);
     }
 }

@@ -1,7 +1,6 @@
 ﻿using K9.Base.DataAccessLayer.Enums;
 using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
-using K9.Base.WebApplication.Config;
 using K9.Base.WebApplication.Enums;
 using K9.Base.WebApplication.Extensions;
 using K9.Base.WebApplication.Filters;
@@ -16,13 +15,13 @@ using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using K9.WebApplication.ViewModels;
 using NLog;
 using System;
 using System.Linq;
 using System.Web.Mvc;
-using K9.WebApplication.Packages;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
@@ -34,17 +33,17 @@ namespace K9.WebApplication.Controllers
         private readonly IRepository<PromoCode> _promoCodesRepository;
         private readonly IRecaptchaService _recaptchaService;
         private readonly IRepository<MembershipOption> _membershipOptionsRepository;
-        private readonly IPromoCodeService _promoCodeService;
+        private readonly IPromotionService _promotionService;
         private readonly RecaptchaConfiguration _recaptchaConfig;
 
-        public AccountController(INineStarKiPackage nineStarKiPackage, IFacebookService facebookService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<MembershipOption> membershipOptionsRepository, IPromoCodeService promoCodeService)
+        public AccountController(INineStarKiPackage nineStarKiPackage, IFacebookService facebookService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<MembershipOption> membershipOptionsRepository, IPromotionService promotionService)
             : base(nineStarKiPackage)
         {
             _facebookService = facebookService;
             _promoCodesRepository = promoCodesRepository;
             _recaptchaService = recaptchaService;
             _membershipOptionsRepository = membershipOptionsRepository;
-            _promoCodeService = promoCodeService;
+            _promotionService = promotionService;
             _recaptchaConfig = recaptchaConfig.Value;
         }
 
@@ -245,7 +244,7 @@ namespace K9.WebApplication.Controllers
 
                 if (!string.IsNullOrEmpty(model.PromoCode))
                 {
-                    if (_promoCodeService.IsPromoCodeAlreadyUsed(model.PromoCode))
+                    if (_promotionService.IsPromoCodeAlreadyUsed(model.PromoCode))
                     {
                         ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
                         return View(model);
@@ -253,7 +252,7 @@ namespace K9.WebApplication.Controllers
 
                     try
                     {
-                        _promoCodeService.UsePromoCode(user.Id, model.PromoCode);
+                        _promotionService.UsePromoCode(user.Id, model.PromoCode);
                         My.MembershipService.CreateMembershipFromPromoCode(user.Id, model.PromoCode);
                     }
                     catch (Exception e)
@@ -309,7 +308,7 @@ namespace K9.WebApplication.Controllers
             {
                 try
                 {
-                    if (_promoCodeService.IsPromoCodeAlreadyUsed(promoCode))
+                    if (_promotionService.IsPromoCodeAlreadyUsed(promoCode))
                     {
                         ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
                     };
@@ -358,7 +357,7 @@ namespace K9.WebApplication.Controllers
             {
                 if (!string.IsNullOrEmpty(model.PromoCode))
                 {
-                    if (_promoCodeService.IsPromoCodeAlreadyUsed(model.PromoCode))
+                    if (_promotionService.IsPromoCodeAlreadyUsed(model.PromoCode))
                     {
                         ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
                         return View(model);
@@ -516,13 +515,13 @@ namespace K9.WebApplication.Controllers
                     {
                         try
                         {
-                            if (_promoCodeService.IsPromoCodeAlreadyUsed(model.PromoCode))
+                            if (_promotionService.IsPromoCodeAlreadyUsed(model.PromoCode))
                             {
                                 ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
                             }
                             else
                             {
-                                _promoCodeService.UsePromoCode(model.User.Id, model.PromoCode);
+                                _promotionService.UsePromoCode(model.User.Id, model.PromoCode);
                                 My.MembershipService.CreateMembershipFromPromoCode(model.User.Id, model.PromoCode);
                             }
                         }
@@ -630,7 +629,7 @@ namespace K9.WebApplication.Controllers
             {
                 try
                 {
-                    _promoCodeService.SendRegistrationPromoCode(model);
+                    _promotionService.SendRegistrationPromoCode(model);
                 }
                 catch (Exception e)
                 {
@@ -682,7 +681,7 @@ namespace K9.WebApplication.Controllers
                 {
                     try
                     {
-                        _promoCodeService.SendMembershipPromoCode(model);
+                        _promotionService.SendMembershipPromoCode(model);
                     }
                     catch (Exception e)
                     {
@@ -841,9 +840,21 @@ namespace K9.WebApplication.Controllers
                 return HttpNotFound("User not found");
             }
 
+            if (user.IsActivated)
+            {
+                ModelState.AddModelError("", Dictionary.AccountAlreadyActivated);
+
+                return View(new AccountActivationModel
+                {
+                    UserId = user.Id,
+                    UniqueIdentifier = uniqueIdentifier,
+                    IsAccountAlreadyActivated = true
+                });
+            }
+
             if (resendCode == 1)
             {
-                My.AccountService.ResentActivationCode(user.Id);
+                My.AccountService.ResendActivationCode(user.Id);
             }
 
             return View(new AccountActivationModel
@@ -859,8 +870,35 @@ namespace K9.WebApplication.Controllers
         [Route("account/verify")]
         public ActionResult VerifySixDigitCode(AccountActivationModel model, string returnUrl = null)
         {
+            TempData["ReturnUrl"] = returnUrl;
+
             if (ModelState.IsValid)
             {
+                if (model.Digit1 == 0)
+                {
+                    ModelState.AddModelError(nameof(AccountActivationModel.Digit1), Dictionary.FieldIsRequired);
+                }
+                if (model.Digit2 == 0)
+                {
+                    ModelState.AddModelError(nameof(AccountActivationModel.Digit2), Dictionary.FieldIsRequired);
+                }
+                if (model.Digit3 == 0)
+                {
+                    ModelState.AddModelError(nameof(AccountActivationModel.Digit3), Dictionary.FieldIsRequired);
+                }
+                if (model.Digit4 == 0)
+                {
+                    ModelState.AddModelError(nameof(AccountActivationModel.Digit4), Dictionary.FieldIsRequired);
+                }
+                if (model.Digit5 == 0)
+                {
+                    ModelState.AddModelError(nameof(AccountActivationModel.Digit5), Dictionary.FieldIsRequired);
+                }
+                if (model.Digit6 == 0)
+                {
+                    ModelState.AddModelError(nameof(AccountActivationModel.Digit6), Dictionary.FieldIsRequired);
+                }
+
                 try
                 {
                     My.AccountService.VerifyCode(
@@ -935,6 +973,8 @@ namespace K9.WebApplication.Controllers
             {
                 case EActivateAccountResult.Success:
                     My.MembershipService.CreateFreeMembership(result.User.Id);
+                    My.MembershipService.ScheduleRemindersForUser(result.User.Id);
+
                     return RedirectToAction("AccountActivated", "Account", new { userName });
 
                 case EActivateAccountResult.AlreadyActivated:

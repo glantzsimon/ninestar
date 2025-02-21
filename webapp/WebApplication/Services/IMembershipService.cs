@@ -13,6 +13,8 @@ namespace K9.WebApplication.Services
         MembershipModel GetPurchaseMembershipModel(int membershipOptionId, string promoCode = "");
         
         void CreateFreeMembership(int userId);
+        void ScheduleRemindersForUser(int userId);
+
         /// <summary>
         /// Returns true if no payment is required. Returns false if payment is requried. Errors if an exception occurs
         /// </summary>

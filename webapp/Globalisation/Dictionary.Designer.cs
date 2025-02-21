@@ -1881,13 +1881,16 @@ namespace K9.Globalisation {
         ///        body, table, td, a {
         ///            -webkit-text-size-adjust: 100%;
         ///            -ms-text-size-adjust: 100%;
-        ///            text-rendering: optimizeLegibility !important;
         ///            -webkit-font-smoothing: antialiased !important;
         ///        }
         ///
         ///        table, td {
         ///            mso-table-lspace: 0pt;
-        ///            mso-table-rspace:  [rest of string was truncated]&quot;;.
+        ///            mso-table-rspace: 0pt;
+        ///        }
+        ///
+        ///        img {
+        ///            -ms-interpolat [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BaseEmailTemplate {
             get {
@@ -5088,6 +5091,62 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;utf-8&quot;&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+        ///    &lt;title&gt;{Title}&lt;/title&gt;
+        ///    &lt;style type=&quot;text/css&quot;&gt;
+        ///        body, table, td, a {
+        ///            -webkit-text-size-adjust: 100%;
+        ///            -ms-text-size-adjust: 100%;
+        ///            -webkit-font-smoothing: antialiased !important;
+        ///        }
+        ///
+        ///        table, td {
+        ///            mso-table-lspace: 0pt;
+        ///            mso-table-rspace: 0pt;
+        ///        }
+        ///
+        ///        img {
+        ///            -ms-interpolat [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string FirstMembershipReminderEmail {
+            get {
+                return ResourceManager.GetString("FirstMembershipReminderEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;utf-8&quot;&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+        ///    &lt;title&gt;{Title}&lt;/title&gt;
+        ///    &lt;style type=&quot;text/css&quot;&gt;
+        ///        body, table, td, a {
+        ///            -webkit-text-size-adjust: 100%;
+        ///            -ms-text-size-adjust: 100%;
+        ///            -webkit-font-smoothing: antialiased !important;
+        ///        }
+        ///
+        ///        table, td {
+        ///            mso-table-lspace: 0pt;
+        ///            mso-table-rspace: 0pt;
+        ///        }
+        ///
+        ///        img {
+        ///            -ms-interpolat [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string FirstMembershipReminderSubject {
+            get {
+                return ResourceManager.GetString("FirstMembershipReminderSubject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to First Person.
         /// </summary>
         public static string FirstPerson {
@@ -5417,7 +5476,8 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;Dear Team,&lt;/p&gt;
-        ///&lt;p&gt;A new subscription was successfully created for {Customer} ({CustomerEmail}). However, something went wrong. Here are the details:&lt;/p&gt;
+        ///&lt;p&gt;A user encountered an error at a critical point in their journey. Here are the details:&lt;/p&gt;
+        ///&lt;p&gt;&lt;strong&gt;User Id:&lt;/strong&gt; {UserId}&lt;/p&gt;
         ///&lt;p style=&quot;padding: 20px; border: 1px solid #dc143c; background-color: #ffc0cb; font-style: italic;&quot;&gt;{ErrorMessage}&lt;/p&gt;.
         /// </summary>
         public static string GeneralErrorEmail {
@@ -9357,21 +9417,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!doctype html&gt;
-        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
-        ///&lt;head&gt;
-        ///    &lt;!-- NAME: 1:2:1 COLUMN --&gt;
-        ///    &lt;!--[if gte mso 15]&gt;
-        ///    &lt;xml&gt;
-        ///        &lt;o:OfficeDocumentSettings&gt;
-        ///        &lt;o:AllowPNG/&gt;
-        ///        &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
-        ///        &lt;/o:OfficeDocumentSettings&gt;
-        ///    &lt;/xml&gt;
-        ///    &lt;![endif]--&gt;
-        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
-        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;p&gt;Dear {FirstName},&lt;/p&gt;
+        ///&lt;p&gt;Your password has been reset. Please click on the link below to create a new password:&lt;/p&gt;
+        ///&lt;p&gt;&lt;a href=&quot;{ResetPasswordLink}&quot;&gt;{ResetPasswordLink}&lt;/a&gt;&lt;/p&gt;.
         /// </summary>
         public static string PasswordResetEmail {
             get {
@@ -10081,21 +10129,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!doctype html&gt;
-        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
-        ///&lt;head&gt;
-        ///    &lt;!-- NAME: 1:2:1 COLUMN --&gt;
-        ///    &lt;!--[if gte mso 15]&gt;
-        ///    &lt;xml&gt;
-        ///        &lt;o:OfficeDocumentSettings&gt;
-        ///        &lt;o:AllowPNG/&gt;
-        ///        &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
-        ///        &lt;/o:OfficeDocumentSettings&gt;
-        ///    &lt;/xml&gt;
-        ///    &lt;![endif]--&gt;
-        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
-        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;p&gt;Dear {FirstName},&lt;/p&gt;
+        ///&lt;p&gt;You have received a promo code to sign up to 9 Star Ki Astrology. With this promotion, you will get the following {PriceDescription}:&lt;/p&gt;
+        ///&lt;p&gt;{PromoDetails}&lt;/p&gt;
+        ///&lt;p&gt;Click &lt;a href=&quot;{PromoLink}&quot;&gt;here&lt;/a&gt; to sign up and take advantage of this offer now.&lt;/p&gt;.
         /// </summary>
         public static string PromoCodeOfferedEmail {
             get {
@@ -10665,6 +10702,62 @@ namespace K9.Globalisation {
         public static string SecondDiscount {
             get {
                 return ResourceManager.GetString("SecondDiscount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;utf-8&quot;&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+        ///    &lt;title&gt;{Title}&lt;/title&gt;
+        ///    &lt;style type=&quot;text/css&quot;&gt;
+        ///        body, table, td, a {
+        ///            -webkit-text-size-adjust: 100%;
+        ///            -ms-text-size-adjust: 100%;
+        ///            -webkit-font-smoothing: antialiased !important;
+        ///        }
+        ///
+        ///        table, td {
+        ///            mso-table-lspace: 0pt;
+        ///            mso-table-rspace: 0pt;
+        ///        }
+        ///
+        ///        img {
+        ///            -ms-interpolat [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string SecondMembershipReminderEmail {
+            get {
+                return ResourceManager.GetString("SecondMembershipReminderEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;utf-8&quot;&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+        ///    &lt;title&gt;{Title}&lt;/title&gt;
+        ///    &lt;style type=&quot;text/css&quot;&gt;
+        ///        body, table, td, a {
+        ///            -webkit-text-size-adjust: 100%;
+        ///            -ms-text-size-adjust: 100%;
+        ///            -webkit-font-smoothing: antialiased !important;
+        ///        }
+        ///
+        ///        table, td {
+        ///            mso-table-lspace: 0pt;
+        ///            mso-table-rspace: 0pt;
+        ///        }
+        ///
+        ///        img {
+        ///            -ms-interpolat [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string SecondMembershipReminderSubject {
+            get {
+                return ResourceManager.GetString("SecondMembershipReminderSubject", resourceCulture);
             }
         }
         
@@ -12722,6 +12815,62 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;utf-8&quot;&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+        ///    &lt;title&gt;{Title}&lt;/title&gt;
+        ///    &lt;style type=&quot;text/css&quot;&gt;
+        ///        body, table, td, a {
+        ///            -webkit-text-size-adjust: 100%;
+        ///            -ms-text-size-adjust: 100%;
+        ///            -webkit-font-smoothing: antialiased !important;
+        ///        }
+        ///
+        ///        table, td {
+        ///            mso-table-lspace: 0pt;
+        ///            mso-table-rspace: 0pt;
+        ///        }
+        ///
+        ///        img {
+        ///            -ms-interpolat [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ThirdMembershipReminderEmail {
+            get {
+                return ResourceManager.GetString("ThirdMembershipReminderEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;utf-8&quot;&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+        ///    &lt;title&gt;{Title}&lt;/title&gt;
+        ///    &lt;style type=&quot;text/css&quot;&gt;
+        ///        body, table, td, a {
+        ///            -webkit-text-size-adjust: 100%;
+        ///            -ms-text-size-adjust: 100%;
+        ///            -webkit-font-smoothing: antialiased !important;
+        ///        }
+        ///
+        ///        table, td {
+        ///            mso-table-lspace: 0pt;
+        ///            mso-table-rspace: 0pt;
+        ///        }
+        ///
+        ///        img {
+        ///            -ms-interpolat [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ThirdMembershipReminderSubject {
+            get {
+                return ResourceManager.GetString("ThirdMembershipReminderSubject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The 3 Modalities.
         /// </summary>
         public static string ThreeModalitiesTitle {
@@ -14393,6 +14542,15 @@ namespace K9.Globalisation {
         public static string YourCurrentMembership {
             get {
                 return ResourceManager.GetString("YourCurrentMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You&apos;re Signed Up!.
+        /// </summary>
+        public static string YoureSignedUp {
+            get {
+                return ResourceManager.GetString("YoureSignedUp", resourceCulture);
             }
         }
         

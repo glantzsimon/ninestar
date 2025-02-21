@@ -126,7 +126,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                 new Mock<IRepository<Consultation>>().Object,
                 new Mock<IRepository<UserConsultation>>().Object,
                 new Mock<IConsultationService>().Object,
-                new Mock<IPromoCodeService>().Object,
+                new Mock<IPromotionService>().Object,
                 _contactService.Object,
                 new Mock<IEmailTemplateService>().Object);
         }

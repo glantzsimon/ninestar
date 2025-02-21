@@ -22,13 +22,13 @@ namespace K9.WebApplication.Controllers
     public class UsersController : BaseNineStarKiController<User>
     {
         private readonly IOptions<DatabaseConfiguration> _dataConfig;
-        private readonly IPromoCodeService _promoCodeService;
+        private readonly IPromotionService _promotionService;
 
-        public UsersController(IControllerPackage<User> controllerPackage, INineStarKiPackage nineStarKiPackage, IOptions<DatabaseConfiguration> dataConfig, IPromoCodeService promoCodeService)
+        public UsersController(IControllerPackage<User> controllerPackage, INineStarKiPackage nineStarKiPackage, IOptions<DatabaseConfiguration> dataConfig, IPromotionService promotionService)
             : base(controllerPackage, nineStarKiPackage)
         {
             _dataConfig = dataConfig;
-            _promoCodeService = promoCodeService;
+            _promotionService = promotionService;
 
             RecordCreated += UsersController_RecordCreated;
             RecordBeforeDeleted += UsersController_RecordBeforeDeleted;
@@ -159,7 +159,7 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                if (_promoCodeService.IsPromoCodeAlreadyUsed(model.PromoCode))
+                if (_promotionService.IsPromoCodeAlreadyUsed(model.PromoCode))
                 {
                     ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
                     return RedirectToAction("AssignPromoCodeStart", "Users", new { Id = model.UserId });

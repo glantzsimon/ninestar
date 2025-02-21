@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="PasswordResetEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>templates\en-gb\passwordresetemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="Keywords" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>text\en-gb\keywords.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -3898,6 +3895,12 @@
   <data name="ConsultationScheduledThankYouEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>emailtemplates\en-gb\tocustomer\consultationscheduledthankyouemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="FirstMembershipReminderEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\en-gb\promotions\firstmembershipreminderemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="FirstMembershipReminderSubject" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\en-gb\promotions\firstmembershipremindersubject.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="GeneralErrorEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>emailtemplates\en-gb\toninestar\generalerroremail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -3910,8 +3913,17 @@
   <data name="NewSubscriptionThankYouEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>emailtemplates\en-gb\tocustomer\newsubscriptionthankyouemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="PasswordResetEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\en-gb\tocustomer\passwordresetemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="PromoCodeOfferedEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>emailtemplates\en-gb\tocustomer\promocodeofferedemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SecondMembershipReminderEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\en-gb\promotions\secondmembershipreminderemail .htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SecondMembershipReminderSubject" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\en-gb\promotions\secondmembershipremindersubject.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="SelectADifferentTime" xml:space="preserve">
     <value>Change Time</value>
@@ -3921,5 +3933,14 @@
   </data>
   <data name="SupportQueryThankYouEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>emailtemplates\en-gb\tocustomer\supportquerythankyouemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ThirdMembershipReminderEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\en-gb\promotions\thirdmembershipreminderemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ThirdMembershipReminderSubject" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\en-gb\promotions\thirdmembershipremindersubject.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="YoureSignedUp" xml:space="preserve">
+    <value>You're Signed Up!</value>
   </data>
 </root>

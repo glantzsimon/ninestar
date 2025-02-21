@@ -12,6 +12,7 @@ using K9.WebApplication.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Hangfire;
 
 namespace K9.WebApplication.Services
 {
@@ -23,11 +24,11 @@ namespace K9.WebApplication.Services
         private readonly IRepository<Consultation> _consultationsRepository;
         private readonly IRepository<UserConsultation> _userConsultationsRepository;
         private readonly IConsultationService _consultationService;
-        private readonly IPromoCodeService _promoCodeService;
+        private readonly IPromotionService _promotionService;
         private readonly IContactService _contactService;
         private readonly IEmailTemplateService _emailTemplateService;
 
-        public MembershipService(INineStarKiBasePackage my, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<PromoCode> promoCodesRepository, IRepository<Consultation> consultationsRepository, IRepository<UserConsultation> userConsultationsRepository, IConsultationService consultationService, IPromoCodeService promoCodeService, IContactService contactService,
+        public MembershipService(INineStarKiBasePackage my, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<PromoCode> promoCodesRepository, IRepository<Consultation> consultationsRepository, IRepository<UserConsultation> userConsultationsRepository, IConsultationService consultationService, IPromotionService promotionService, IContactService contactService,
             IEmailTemplateService emailTemplateService)
             : base(my)
         {
@@ -37,7 +38,7 @@ namespace K9.WebApplication.Services
             _consultationsRepository = consultationsRepository;
             _userConsultationsRepository = userConsultationsRepository;
             _consultationService = consultationService;
-            _promoCodeService = promoCodeService;
+            _promotionService = promotionService;
             _contactService = contactService;
             _emailTemplateService = emailTemplateService;
         }
@@ -252,7 +253,7 @@ namespace K9.WebApplication.Services
             }
 
             CreateMembership(membershipOption.Id, user.FullName, user.EmailAddress);
-            _promoCodeService.UsePromoCode(user.Id, code);
+            _promotionService.UsePromoCode(user.Id, code);
 
             return true;
         }
@@ -461,6 +462,13 @@ namespace K9.WebApplication.Services
             }
         }
 
+        public void ScheduleRemindersForUser(int userId)
+        {
+            BackgroundJob.Schedule(() => _promotionService.SendFirstMembershipReminderToUser(userId), TimeSpan.FromMinutes(2));
+            BackgroundJob.Schedule(() => _promotionService.SendSecondMembershipReminderToUser(userId), TimeSpan.FromMinutes(2));
+            BackgroundJob.Schedule(() => _promotionService.SendThirdMembershipReminderToUser(userId), TimeSpan.FromMinutes(2));
+        }
+
         private void TerminateExistingMemberships(int userId)
         {
             var userMemberships = GetActiveUserMemberships(userId);
@@ -518,7 +526,7 @@ namespace K9.WebApplication.Services
             });
             var body = _emailTemplateService.ParseForUser(
                 title,
-                Dictionary.NewSubscriptionEmail,
+                Dictionary.NewSubscriptionThankYouEmail,
                 user,
                 new
                 {

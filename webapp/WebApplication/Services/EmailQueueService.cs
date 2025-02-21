@@ -89,11 +89,11 @@ namespace K9.WebApplication.Services
 
         public void ProcessQueue()
         {
-            var emailsToSend = _emailQueueItemsRepository.Find(e => !e.SentOn.HasValue && (!e.ScheduleOn.HasValue || e.ScheduleOn.Value >= DateTime.Now))
+            var emailsToSend = _emailQueueItemsRepository.Find(e => !e.SentOn.HasValue && ((e.ScheduleOn.HasValue && e.ScheduleOn.Value >= DateTime.Now) || !e.ScheduleOn.HasValue))
                 .OrderBy(e => e.Id)
                 .Take(_defaultConfig.EmailQueueMaxBatchSize).ToList();
 
-            _logger.Log(LogLevel.Info, $"EmailQueueService => ProcessQueue => Sending emails => Batch Size: {_defaultConfig.EmailQueueMaxBatchSize}");
+            _logger.Log(LogLevel.Info, $"EmailQueueService => ProcessQueue => Sending {emailsToSend.Count} emails => Batch Size: {_defaultConfig.EmailQueueMaxBatchSize}");
 
             foreach (var email in emailsToSend)
             {

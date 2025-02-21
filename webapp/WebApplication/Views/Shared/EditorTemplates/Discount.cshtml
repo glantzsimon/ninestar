@@ -6,6 +6,6 @@
 
 @{
     var discountListItems = EDiscountExtensions.GetDiscountListItems();
-    this.GetDropdownData().AddDataSetToCollection<EDiscount>(discountListItems);
+    this.GetDropdownData().AddOrUpdateDataset<EDiscount>(discountListItems);
 }
 @Html.BootstrapDropdownFor(model => model, new SelectList(discountListItems, "Id", "Name", Model))

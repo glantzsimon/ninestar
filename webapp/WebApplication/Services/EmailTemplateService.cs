@@ -85,13 +85,14 @@ namespace K9.WebApplication.Services
             {
                 throw new Exception("Body cannot be empty");
             }
-            
+
             if (string.IsNullOrEmpty(unsubscribeLink))
             {
                 throw new Exception("Unsubscribe link cannot be empty");
             }
 
-            body = TemplateParser.Parse(body, data);
+            if (data != null)
+                body = TemplateParser.Parse(body, data);
 
             return TemplateParser.Parse(Globalisation.Dictionary.BaseEmailTemplate, new
             {

@@ -11,7 +11,7 @@ namespace K9.SharedLibrary.Models
         SelectList GetSelectList<T>(int? selectedId, bool refresh = false, string nameExpression = "Name", string valueExpression = "Name", bool includeDeleted = false, Type resourceType = null) where T : class, IObjectBase;
         SelectList GetSelectListFromEnum<T>(int selectedId, bool refresh = false, Type resourceType = null);
         string GetName<T>(int? selectedId, bool refresh = false, string nameExpression = "Name") where T : class, IObjectBase;
-        void AddDataSetToCollection<T>(List<ListItem> items);
         string GetAllDataSetsJson();
+        void AddDataSetToCollection<T>(List<ListItem> items);
     }
 }

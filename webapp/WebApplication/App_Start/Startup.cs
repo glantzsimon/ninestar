@@ -45,40 +45,40 @@ namespace K9.WebApplication
             builder.RegisterSource(new ViewRegistrationSource());
             builder.RegisterFilterProvider();
 
-            builder.RegisterType<LocalDb>().As<DbContext>().InstancePerRequest();
+            builder.RegisterType<LocalDb>().As<DbContext>().InstancePerLifetimeScope();
             builder.Register(c => LogManager.GetCurrentClassLogger()).As<ILogger>().SingleInstance();
-            builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IRepository<>)).InstancePerRequest();
-            builder.RegisterGeneric(typeof(DataTableAjaxHelper<>)).As(typeof(IDataTableAjaxHelper<>)).InstancePerRequest();
-            builder.RegisterType<Config.ColumnsConfig>().As<IColumnsConfig>().InstancePerRequest();
-            builder.RegisterType<NineStarDataSetsHelper>().As<IDataSetsHelper>().InstancePerRequest();
+            builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IRepository<>)).InstancePerLifetimeScope();
+            builder.RegisterGeneric(typeof(DataTableAjaxHelper<>)).As(typeof(IDataTableAjaxHelper<>)).InstancePerLifetimeScope();
+            builder.RegisterType<Config.ColumnsConfig>().As<IColumnsConfig>().InstancePerLifetimeScope();
+            builder.RegisterType<NineStarDataSetsHelper>().As<IDataSetsHelper>().InstancePerLifetimeScope();
             builder.RegisterType<DataSets>().As<IDataSets>().SingleInstance();
-            builder.RegisterType<Users>().As<IUsers>().InstancePerRequest();
-            builder.RegisterType<Roles>().As<IRoles>().InstancePerRequest();
-            builder.RegisterType<Mailer>().As<IMailer>().InstancePerRequest();
-            builder.RegisterType<Authentication>().As<IAuthentication>().InstancePerRequest();
-            builder.RegisterType<PostedFileHelper>().As<IPostedFileHelper>().InstancePerRequest();
-            builder.RegisterType<FileSourceHelper>().As<IFileSourceHelper>().InstancePerRequest();
-            builder.RegisterGeneric(typeof(ControllerPackage<>)).As(typeof(IControllerPackage<>)).InstancePerRequest();
-            builder.RegisterType<Services.AccountService>().As<Services.IAccountService>().InstancePerRequest();
-            builder.RegisterType<NineStarKiPackage>().As<INineStarKiPackage>().InstancePerRequest();
-            builder.RegisterType<NineStarKiBasePackage>().As<INineStarKiBasePackage>().InstancePerRequest();
-            builder.RegisterType<FacebookService>().As<IFacebookService>().InstancePerRequest();
-            builder.RegisterType<StripeService>().As<IStripeService>().InstancePerRequest();
-            builder.RegisterType<DonationService>().As<IDonationService>().InstancePerRequest();
-            builder.RegisterType<ConsultationService>().As<IConsultationService>().InstancePerRequest();
-            builder.RegisterType<NineStarKiService>().As<INineStarKiService>().InstancePerRequest();
-            builder.RegisterType<Services.AccountMailerService>().As<Services.IAccountMailerService>().InstancePerRequest();
-            builder.RegisterType<MembershipService>().As<IMembershipService>().InstancePerRequest();
-            builder.RegisterType<ContactService>().As<IContactService>().InstancePerRequest();
-            builder.RegisterType<MailChimpService>().As<IMailChimpService>().InstancePerRequest();
-            builder.RegisterType<UserService>().As<IUserService>().InstancePerRequest();
-            builder.RegisterType<RecaptchaService>().As<IRecaptchaService>().InstancePerRequest();
-            builder.RegisterType<LogService>().As<ILogService>().InstancePerRequest();
-            builder.RegisterType<BiorhythmsService>().As<IBiorhythmsService>().InstancePerRequest();
-            builder.RegisterType<IChingService>().As<IIChingService>().InstancePerRequest();
-            builder.RegisterType<EmailQueueService>().As<IEmailQueueService>().InstancePerRequest();
-            builder.RegisterType<EmailTemplateService>().As<IEmailTemplateService>().InstancePerRequest();
-            builder.RegisterType<PromotionService>().As<IPromotionService>().InstancePerRequest();
+            builder.RegisterType<Users>().As<IUsers>().InstancePerLifetimeScope();
+            builder.RegisterType<Roles>().As<IRoles>().InstancePerLifetimeScope();
+            builder.RegisterType<Mailer>().As<IMailer>().InstancePerLifetimeScope();
+            builder.RegisterType<Authentication>().As<IAuthentication>().InstancePerLifetimeScope();
+            builder.RegisterType<PostedFileHelper>().As<IPostedFileHelper>().InstancePerLifetimeScope();
+            builder.RegisterType<FileSourceHelper>().As<IFileSourceHelper>().InstancePerLifetimeScope();
+            builder.RegisterGeneric(typeof(ControllerPackage<>)).As(typeof(IControllerPackage<>)).InstancePerLifetimeScope();
+            builder.RegisterType<Services.AccountService>().As<Services.IAccountService>().InstancePerLifetimeScope();
+            builder.RegisterType<NineStarKiPackage>().As<INineStarKiPackage>().InstancePerLifetimeScope();
+            builder.RegisterType<NineStarKiBasePackage>().As<INineStarKiBasePackage>().InstancePerLifetimeScope();
+            builder.RegisterType<FacebookService>().As<IFacebookService>().InstancePerLifetimeScope();
+            builder.RegisterType<StripeService>().As<IStripeService>().InstancePerLifetimeScope();
+            builder.RegisterType<DonationService>().As<IDonationService>().InstancePerLifetimeScope();
+            builder.RegisterType<ConsultationService>().As<IConsultationService>().InstancePerLifetimeScope();
+            builder.RegisterType<NineStarKiService>().As<INineStarKiService>().InstancePerLifetimeScope();
+            builder.RegisterType<Services.AccountMailerService>().As<Services.IAccountMailerService>().InstancePerLifetimeScope();
+            builder.RegisterType<MembershipService>().As<IMembershipService>().InstancePerLifetimeScope();
+            builder.RegisterType<ContactService>().As<IContactService>().InstancePerLifetimeScope();
+            builder.RegisterType<MailChimpService>().As<IMailChimpService>().InstancePerLifetimeScope();
+            builder.RegisterType<UserService>().As<IUserService>().InstancePerLifetimeScope();
+            builder.RegisterType<RecaptchaService>().As<IRecaptchaService>().InstancePerLifetimeScope();
+            builder.RegisterType<LogService>().As<ILogService>().InstancePerLifetimeScope();
+            builder.RegisterType<BiorhythmsService>().As<IBiorhythmsService>().InstancePerLifetimeScope();
+            builder.RegisterType<IChingService>().As<IIChingService>().InstancePerLifetimeScope();
+            builder.RegisterType<EmailQueueService>().As<IEmailQueueService>().InstancePerLifetimeScope();
+            builder.RegisterType<EmailTemplateService>().As<IEmailTemplateService>().InstancePerLifetimeScope();
+            builder.RegisterType<PromotionService>().As<IPromotionService>().InstancePerLifetimeScope();
 
             RegisterConfiguration(builder);
 
@@ -95,7 +95,9 @@ namespace K9.WebApplication
                 Authorization = new[] { new HangfireDashboardAuthorizationFilter() }
             });
 
-            RecurringJob.AddOrUpdate<EmailQueueService>(
+            app.UseHangfireServer();
+
+            RecurringJob.AddOrUpdate<IEmailQueueService>(
                 "ProcessEmailQueue",
                 service => service.ProcessQueue(),
                 Cron.MinuteInterval(10));

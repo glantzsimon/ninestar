@@ -5091,26 +5091,13 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
-        ///&lt;html&gt;
-        ///&lt;head&gt;
-        ///    &lt;meta charset=&quot;utf-8&quot;&gt;
-        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
-        ///    &lt;title&gt;{Title}&lt;/title&gt;
-        ///    &lt;style type=&quot;text/css&quot;&gt;
-        ///        body, table, td, a {
-        ///            -webkit-text-size-adjust: 100%;
-        ///            -ms-text-size-adjust: 100%;
-        ///            -webkit-font-smoothing: antialiased !important;
-        ///        }
-        ///
-        ///        table, td {
-        ///            mso-table-lspace: 0pt;
-        ///            mso-table-rspace: 0pt;
-        ///        }
-        ///
-        ///        img {
-        ///            -ms-interpolat [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;p&gt;Dear {FirstName},&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Ever felt you&apos;re capable of more but need clarity and direction or wanted deeper insights into yourself, your relationships, and life&apos;s cycles? 9 Star Ki Astrology helps you unlock your full potential by revealing your unique energy blueprint.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;We&apos;d love to welcome you with a special gift! Get {Discount}% off—pay only {DiscountedPrice} instead of {FullPrice} for a full {MembershipOptionName}!&lt;/p&gt;
+        ///&lt;p&gt;With your {MembershipOptionName}, you&apos;ll unlock:&lt;/p&gt;
+        ///&lt;p&gt;✔ Unlim [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FirstMembershipReminderEmail {
             get {
@@ -5119,26 +5106,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
-        ///&lt;html&gt;
-        ///&lt;head&gt;
-        ///    &lt;meta charset=&quot;utf-8&quot;&gt;
-        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
-        ///    &lt;title&gt;{Title}&lt;/title&gt;
-        ///    &lt;style type=&quot;text/css&quot;&gt;
-        ///        body, table, td, a {
-        ///            -webkit-text-size-adjust: 100%;
-        ///            -ms-text-size-adjust: 100%;
-        ///            -webkit-font-smoothing: antialiased !important;
-        ///        }
-        ///
-        ///        table, td {
-        ///            mso-table-lspace: 0pt;
-        ///            mso-table-rspace: 0pt;
-        ///        }
-        ///
-        ///        img {
-        ///            -ms-interpolat [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to Unlock Your Potential – {Discount}% Off Your Yearly Membership!.
         /// </summary>
         public static string FirstMembershipReminderSubject {
             get {
@@ -6504,6 +6472,15 @@ namespace K9.Globalisation {
         public static string IsTakenLabel {
             get {
                 return ResourceManager.GetString("IsTakenLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Job Queue.
+        /// </summary>
+        public static string JobQueue {
+            get {
+                return ResourceManager.GetString("JobQueue", resourceCulture);
             }
         }
         
@@ -10734,26 +10711,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
-        ///&lt;html&gt;
-        ///&lt;head&gt;
-        ///    &lt;meta charset=&quot;utf-8&quot;&gt;
-        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
-        ///    &lt;title&gt;{Title}&lt;/title&gt;
-        ///    &lt;style type=&quot;text/css&quot;&gt;
-        ///        body, table, td, a {
-        ///            -webkit-text-size-adjust: 100%;
-        ///            -ms-text-size-adjust: 100%;
-        ///            -webkit-font-smoothing: antialiased !important;
-        ///        }
-        ///
-        ///        table, td {
-        ///            mso-table-lspace: 0pt;
-        ///            mso-table-rspace: 0pt;
-        ///        }
-        ///
-        ///        img {
-        ///            -ms-interpolat [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to Strengthen Your Relationships – {Discount}% Off for a Limited Time!.
         /// </summary>
         public static string SecondMembershipReminderSubject {
             get {

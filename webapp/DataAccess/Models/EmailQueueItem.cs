@@ -3,7 +3,6 @@ using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 
 namespace K9.DataAccessLayer.Models
 {

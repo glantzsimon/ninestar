@@ -1,4 +1,5 @@
-﻿using K9.WebApplication.Helpers;
+﻿using K9.SharedLibrary.Authentication;
+using Microsoft.Owin;
 
 namespace K9.WebApplication.Services
 {
@@ -8,7 +9,23 @@ namespace K9.WebApplication.Services
     {
         public bool Authorize(DashboardContext context)
         {
-            return SessionHelper.CurrentUserIsAdmin();
+            var environment = context.GetOwinEnvironment();
+            if (environment == null)
+            {
+                // Deny access if we can't get the OWIN environment
+                return false;
+            }
+
+            var owinContext = new OwinContext(environment);
+            var user = owinContext.Authentication?.User;
+
+            // If user info is missing, deny access or use a fallback
+            if (user == null || !user.Identity.IsAuthenticated)
+            {
+                return false;
+            }
+
+            return user.Identity.Name == "system";
         }
     }
 }

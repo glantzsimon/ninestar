@@ -12,19 +12,19 @@ namespace K9.WebApplication.Services
     public class EmailQueueService : BaseService, IEmailQueueService
     {
         private readonly IContactService _contactService;
+        private readonly IEmailTemplateService _emailTemplateService;
         private readonly IRepository<EmailQueueItem> _emailQueueItemsRepository;
 
-        public EmailQueueService(INineStarKiBasePackage my, IContactService contactService, IRepository<EmailQueueItem> emailQueueItemsRepository)
+        public EmailQueueService(INineStarKiBasePackage my, IContactService contactService, IEmailTemplateService emailTemplateService, IRepository<EmailQueueItem> emailQueueItemsRepository)
             : base(my)
         {
             _contactService = contactService;
+            _emailTemplateService = emailTemplateService;
             _emailQueueItemsRepository = emailQueueItemsRepository;
         }
 
-        public void AddEmailToQueue(string recipientEmailAddress, string recipientFirstName, string recipientFullName, string subject, string body, bool useDefaultTemplate = true)
+        public void AddEmailToQueue(string recipientEmailAddress, string recipientFirstName, string recipientFullName, string subject, string body)
         {
-            if (useDefaultTemplate)
-            {
                 var contact = _contactService.Find(recipientEmailAddress);
                 if (contact == null)
                 {
@@ -32,11 +32,10 @@ namespace K9.WebApplication.Services
                     throw new Exception("Contact not found");
                 }
 
-                AddEmailToQueueForContact(contact.Id, subject, body, useDefaultTemplate);
-            }
+                AddEmailToQueueForContact(contact.Id, subject, body);
         }
 
-        public void AddEmailToQueueForContact(int contactId, string subject, string body, bool useDefaultTemplate = true)
+        public void AddEmailToQueueForContact(int contactId, string subject, string body)
         {
             var contact = _contactService.Find(contactId);
             if (contact == null)
@@ -45,19 +44,11 @@ namespace K9.WebApplication.Services
                 throw new Exception("Contact not found");
             }
 
-            if (useDefaultTemplate)
-            {
-                body = TemplateParser.Parse(Globalisation.Dictionary.BaseEmailTemplate, new
-                {
-                    Subject = subject,
-                    contact.FirstName,
-                    Body = body,
-                    PrivacyPolicyLink = My.UrlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                    TermsOfServiceLink = My.UrlHelper.AbsoluteAction("TermsOfService", "Home"),
-                    UnsubscribeLink =
-                    My.UrlHelper.AbsoluteAction("UnsubscribeContact", "Account", new { externalId = contact.Name }),
-                });
-            }
+            var templateBody = _emailTemplateService.ParseForContact(
+                subject,
+                body,
+                contact,
+                null);
 
             _emailQueueItemsRepository.Create(new EmailQueueItem
             {
@@ -68,7 +59,7 @@ namespace K9.WebApplication.Services
             });
         }
 
-        public void AddEmailToQueueForUser(int userId, string subject, string body, bool useDefaultTemplate = true)
+        public void AddEmailToQueueForUser(int userId, string subject, string body)
         {
             var user = My.UsersRepository.Find(userId);
             if (user == null)
@@ -77,20 +68,12 @@ namespace K9.WebApplication.Services
                 throw new Exception("User not found");
             }
 
-            if (useDefaultTemplate)
-            {
-                body = TemplateParser.Parse(Globalisation.Dictionary.BaseEmailTemplate, new
-                {
-                    Subject = subject,
-                    user.FirstName,
-                    Body = body,
-                    PrivacyPolicyLink = My.UrlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                    TermsOfServiceLink = My.UrlHelper.AbsoluteAction("TermsOfService", "Home"),
-                    UnsubscribeLink =
-                    My.UrlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }),
-                });
-            }
-
+            var templateBody = _emailTemplateService.ParseForUser(
+                subject,
+                body,
+                user,
+                null);
+            
             _emailQueueItemsRepository.Create(new EmailQueueItem
             {
                 RecipientName = user.FirstName,

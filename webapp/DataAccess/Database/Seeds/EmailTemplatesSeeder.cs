@@ -27,6 +27,7 @@ namespace K9.DataAccessLayer.Database.Seeds
             {
                 context.Set<EmailTemplate>().AddOrUpdate(new EmailTemplate
                 {
+                    Name = systemEmailTemplate.ToString(),
                     SystemEmailTemplate = systemEmailTemplate,
                     Subject = subject,
                     HtmlBody = body,
@@ -35,6 +36,7 @@ namespace K9.DataAccessLayer.Database.Seeds
             }
             else
             {
+                entity.Name = systemEmailTemplate.ToString();
                 entity.Subject = subject;
                 entity.HtmlBody = body;
                 context.Set<EmailTemplate>().AddOrUpdate(entity);

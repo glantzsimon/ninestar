@@ -25,7 +25,6 @@ namespace K9.DataAccessLayer.Models
         public string HtmlBody { get; set; }
 
         [UIHint("MembershipOption")]
-        [Required]
         [ForeignKey("MembershipOption")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubscriptionTypeLabel)]
         public int? MembershipOptionId { get; set; }
@@ -37,7 +36,6 @@ namespace K9.DataAccessLayer.Models
         public string MembershipOptionName { get; set; }
 
         [UIHint("Promotion")]
-        [Required]
         [ForeignKey("Promotion")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PromotionLabel)]
         public int? PromotionId { get; set; }

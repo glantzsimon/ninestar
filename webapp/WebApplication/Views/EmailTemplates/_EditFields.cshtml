@@ -51,11 +51,12 @@
             done(
                 function(result) {
                     if (result.data.success) {
-                        var promotion = result.data;
-                        $("#SubscriptionTypeName").text(promotion.SubscriptionTypeName);
-                        $("#DiscountPercent").text(promotion.DiscountPercent + "%");
-                        $("#FullPrice").text(promotion.FormattedFullPrice);
-                        $("#SpecialPrice").text(promotion.FormattedSpecialPrice);
+                        var promotion = result.data.promotion;
+                        
+                        $("#SubscriptionTypeName").val(promotion.SubscriptionTypeName);
+                        $("#DiscountPercent").val(promotion.DiscountPercent + "%");
+                        $("#FullPrice").val(promotion.FormattedFullPrice);
+                        $("#SpecialPrice").val(promotion.FormattedSpecialPrice);
                     } else {
                         that.changeLoadingState(false);
                         that.processError(result.errorMessage || errorMessage);

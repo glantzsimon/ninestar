@@ -36,7 +36,7 @@ namespace K9.WebApplication.Services
             _defaultConfig = defaultConfig.Value;
         }
 
-        public void AddEmailToQueue(string recipientEmailAddress, string recipientFirstName, string recipientFullName, string subject, string body, EEmailType type = EEmailType.General, TimeSpan? scheduledOn = null)
+        public void AddEmailToQueue(int emailTemplateId, string recipientEmailAddress, string subject, string body, EEmailType type = EEmailType.General, TimeSpan? scheduledOn = null)
         {
             var contact = _contactsRepository.Find(e => e.EmailAddress == recipientEmailAddress).FirstOrDefault();
             if (contact == null)
@@ -45,10 +45,10 @@ namespace K9.WebApplication.Services
                 throw new Exception("Contact not found");
             }
 
-            AddEmailToQueueForContact(contact.Id, subject, body, type);
+            AddEmailToQueueForContact(emailTemplateId, contact.Id, subject, body, type);
         }
 
-        public void AddEmailToQueueForContact(int contactId, string subject, string body, EEmailType type = EEmailType.General, TimeSpan? scheduledOn = null)
+        public void AddEmailToQueueForContact(int emailTemplateId, int contactId, string subject, string body, EEmailType type = EEmailType.General, TimeSpan? scheduledOn = null)
         {
             var contact = _contactsRepository.Find(contactId);
             if (contact == null)
@@ -57,17 +57,10 @@ namespace K9.WebApplication.Services
                 throw new Exception("Contact not found");
             }
 
-            _emailQueueItemsRepository.Create(new EmailQueueItem
-            {
-                Type = type,
-                ContactId = contactId,
-                Subject = subject,
-                Body = body,
-                ScheduleOn = scheduledOn.HasValue ? DateTime.Now.Add(scheduledOn.Value) : (DateTime?)null
-            });
+            AddEmailToQueue(emailTemplateId, null, contactId, subject, body, type, scheduledOn);
         }
 
-        public void AddEmailToQueueForUser(int userId, string subject, string body, EEmailType type = EEmailType.General, TimeSpan? scheduledOn = null)
+        public void AddEmailToQueueForUser(int emailTemplateId, int userId, string subject, string body, EEmailType type = EEmailType.General, TimeSpan? scheduledOn = null)
         {
             var user = _usersRepository.Find(userId);
             if (user == null)
@@ -76,15 +69,7 @@ namespace K9.WebApplication.Services
                 throw new Exception("User not found");
             }
 
-            _emailQueueItemsRepository.Create(new EmailQueueItem
-            {
-                Name = Guid.NewGuid().ToString(),
-                Type = type,
-                UserId = userId,
-                Subject = subject,
-                Body = body,
-                ScheduleOn = scheduledOn.HasValue ? DateTime.Now.Add(scheduledOn.Value) : (DateTime?)null
-            });
+            AddEmailToQueue(emailTemplateId, userId, null, subject, body, type, scheduledOn);
         }
 
         public void ProcessQueue()
@@ -188,6 +173,31 @@ namespace K9.WebApplication.Services
                     _logger.Log(LogLevel.Error, $"EmailQueueService => ProcessQueue => Email sent but error updating mail with maildId: {email.Id} => Error: {e.GetFullErrorMessage()}");
                 }
             }
+        }
+
+        private void AddEmailToQueue(int emailTemplateId, int? userId, int? contactId, string subject, string body, EEmailType type, TimeSpan? scheduledOn, bool allowResend = false)
+        {
+            if (_emailQueueItemsRepository.Exists(e =>
+                    e.EmailTemplateId == emailTemplateId &&
+                    (e.UserId == userId || e.ContactId == e.ContactId)) && !allowResend)
+            {
+                var person = userId.HasValue ? $"user {userId}" : $"contact {contactId}";
+                var errorMessage = $"EmailQueueService => AddEmailToQueue => Email template {emailTemplateId} has already been sent to {person}";
+                _logger.Log(LogLevel.Error, errorMessage);
+                throw new Exception(errorMessage);
+            }
+
+            _emailQueueItemsRepository.Create(new EmailQueueItem
+            {
+                Name = Guid.NewGuid().ToString(),
+                Type = type,
+                UserId = userId,
+                ContactId = contactId,
+                EmailTemplateId = emailTemplateId,
+                Subject = subject,
+                Body = body,
+                ScheduleOn = scheduledOn.HasValue ? DateTime.Now.Add(scheduledOn.Value) : (DateTime?)null
+            });
         }
 
         private void SendEmail(EmailQueueItem email)

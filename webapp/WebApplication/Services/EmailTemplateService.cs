@@ -105,6 +105,7 @@ namespace K9.WebApplication.Services
                 DateTime.Now.Year,
                 My.WebsiteConfiguration.CompanyName,
                 My.DefaultValuesConfiguration.CompanyAddress,
+                My.DefaultValuesConfiguration.SiteBaseUrl,
                 HeaderImageSrc = $"{My.DefaultValuesConfiguration.BaseEmailTemplateImagesPath}/emailtemplates/email-template-header.jpg",
                 CompanyLogoSrc = $"{My.DefaultValuesConfiguration.BaseEmailTemplateImagesPath}/company/logo-small.png",
             });

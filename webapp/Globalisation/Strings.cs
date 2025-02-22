@@ -10,6 +10,7 @@
             public const string CompanyLabel = "CompanyLabel";
             public const string ContactLabel = "ContactLabel";
             public const string EmailTypeLabel = "EmailTypeLabel";
+            public const string EmailTemplateLabel = "EmailTemplateLabel";
             public const string DoNotDisplaySexualityLabel = "DoNotDisplaySexualityLabel";
             public const string AmountDonatedLabel = "AmountDonatedLabel";
             public const string AmountLabel = "AmountLabel";

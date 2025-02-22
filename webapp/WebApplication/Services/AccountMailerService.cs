@@ -57,6 +57,7 @@ namespace K9.WebApplication.Services
             catch (Exception ex)
             {
                 My.Logger.Error(ex.GetFullErrorMessage());
+                throw;
             }
         }
 
@@ -93,6 +94,7 @@ namespace K9.WebApplication.Services
             catch (Exception ex)
             {
                 My.Logger.Error(ex.GetFullErrorMessage());
+                throw;
             }
         }
 

@@ -6,6 +6,7 @@ namespace K9.WebApplication.EmailTemplates
     {
         public SecondMembershipReminderEmailTemplate()
         {
+            Id = -2;
             Subject = Globalisation.Dictionary.SecondMembershipReminderSubject;
             HtmlBody = Globalisation.Dictionary.SecondMembershipReminderEmail;
         }

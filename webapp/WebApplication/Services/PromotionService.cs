@@ -339,7 +339,7 @@ namespace K9.WebApplication.Services
             {
                 if (isScheduled)
                 {
-                    _emailQueueService.AddEmailToQueueForUser(user.Id, subject, body, EEmailType.MembershipPromotion, scheduledOn);
+                    _emailQueueService.AddEmailToQueueForUser(emailTemplate.Id, user.Id, subject, body, EEmailType.MembershipPromotion, scheduledOn);
                 }
                 else
                 {

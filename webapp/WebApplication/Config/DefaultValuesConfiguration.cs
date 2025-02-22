@@ -11,6 +11,7 @@
         public string BaseVideosPath { get; set; }
         public string BaseEmailTemplateImagesPath { get; set; }
         public string BaseBaseEmailTemplateVideosPath { get; set; }
+        public string SiteBaseUrl{ get; set; }
         public string CompanyAddress { get; set; }
         public int EmailQueueMaxBatchSize { get; set; } = 20;
     }

@@ -761,8 +761,10 @@ namespace K9.WebApplication.Controllers
                 {
                     return RedirectToAction("PasswordResetEmailSent", "Account", new { userName = model.UserName, result.Data });
                 }
-
-                return RedirectToAction("ResetPasswordFailed");
+                else
+                {
+                    return RedirectToAction("ResetPasswordFailed");
+                }
             }
 
             return View(model);

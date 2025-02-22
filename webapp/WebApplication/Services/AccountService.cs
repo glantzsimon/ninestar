@@ -400,6 +400,11 @@ namespace K9.WebApplication.Services
                 catch (Exception ex)
                 {
                     My.Logger.Error(ex.GetFullErrorMessage());
+                    result.Errors.Add(new ServiceError
+                    {
+                        FieldName = "",
+                        ErrorMessage = ex.GetFullErrorMessage()
+                    });
                 }
             }
             else

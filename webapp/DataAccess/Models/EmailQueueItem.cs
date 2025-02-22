@@ -16,6 +16,14 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.EmailTypeLabel)]
         public EEmailType Type { get; set; }
 
+        [Required]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.EmailTemplateLabel)]
+        [UIHint("EmailTemplate")]
+        [ForeignKey("EmailTemplate")]
+        public int EmailTemplateId { get; set; }
+
+        public virtual EmailTemplate EmailTemplate { get; set; }
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ContactLabel)]
         [UIHint("Contact")]
         [ForeignKey("Contact")]

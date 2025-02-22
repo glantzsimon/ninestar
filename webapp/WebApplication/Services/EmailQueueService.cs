@@ -89,9 +89,25 @@ namespace K9.WebApplication.Services
 
         public void ProcessQueue()
         {
-            var emailsToSend = _emailQueueItemsRepository.Find(e => !e.SentOn.HasValue && ((e.ScheduleOn.HasValue && e.ScheduleOn.Value >= DateTime.Now) || !e.ScheduleOn.HasValue))
+            var now = DateTime.Now;
+            var emailsToSend = _emailQueueItemsRepository.Find(e =>
+                    !e.SentOn.HasValue &&
+                    ((e.ScheduleOn.HasValue && e.ScheduleOn.Value <= now) || !e.ScheduleOn.HasValue))
                 .OrderBy(e => e.Id)
-                .Take(_defaultConfig.EmailQueueMaxBatchSize).ToList();
+                .Take(_defaultConfig.EmailQueueMaxBatchSize)
+                .Select(e =>
+                {
+                    if (e.UserId.HasValue)
+                    {
+                        e.User = _usersRepository.Find(u => u.Id == e.UserId).FirstOrDefault();
+                    }
+                    else if (e.ContactId.HasValue)
+                    {
+                        e.Contact = _contactsRepository.Find(c => c.Id == e.ContactId).FirstOrDefault();
+                    }
+                    return e;
+                })
+                .ToList();
 
             _logger.Log(LogLevel.Info, $"EmailQueueService => ProcessQueue => Sending {emailsToSend.Count} emails => Batch Size: {_defaultConfig.EmailQueueMaxBatchSize}");
 
@@ -99,17 +115,20 @@ namespace K9.WebApplication.Services
             {
                 try
                 {
+                    if (!email.UserId.HasValue && !email.ContactId.HasValue)
+                    {
+                        throw new Exception("Email cannot be sent. Both contactId and userId are null");
+                    }
+
                     if (email.UserId.HasValue)
                     {
-                        var user = _usersRepository.Find(email.UserId.Value);
-
-                        if (user == null)
+                        if (email.User == null)
                         {
                             _logger.Error($"EmailQueueService => ProcessQueue => User not found: UserId {email.UserId}");
                             continue;
                         }
 
-                        if (user.IsUnsubscribed)
+                        if (email.User.IsUnsubscribed)
                         {
                             _logger.Info($"EmailQueueService => ProcessQueue => User with UserId {email.UserId} has unsubscribed. Cannot send email: {email.Subject}");
                             continue;
@@ -119,21 +138,39 @@ namespace K9.WebApplication.Services
                         {
                             var userMemberships = _userMembershipsRepository
                                 .Find(e => e.UserId == email.UserId)
+                                .Select(e =>
+                                {
+                                    e.MembershipOption = _membershipOptionsRepository
+                                        .Find(o => o.Id == e.MembershipOptionId).FirstOrDefault();
+                                    return e;
+                                })
                                 .Where(e => e.IsActive)
                                 .ToList();
-                            var maxSubscriptionType = _membershipOptionsRepository
-                                .Find(e => userMemberships.Select(m => m.MembershipOptionId).Contains(e.Id))
-                                .Max(e => e.SubscriptionType);
 
+                            var maxSubscriptionType = userMemberships.Max(e => e.MembershipOption.SubscriptionType);
                             if (maxSubscriptionType > MembershipOption.ESubscriptionType.Free)
                             {
                                 _logger.Info($"EmailQueueService => ProcessQueue => User with UserId {email.UserId} has already upgraded their membership to {maxSubscriptionType.ToString().SplitOnCapitalLetter()}. Cannot send email: {email.Subject}");
                                 continue;
                             }
                         }
-
-                        SendEmail(email);
                     }
+                    else if (email.ContactId.HasValue)
+                    {
+                        if (email.Contact == null)
+                        {
+                            _logger.Error($"EmailQueueService => ProcessQueue => Contact not found: ContactId {email.ContactId}");
+                            continue;
+                        }
+
+                        if (email.Contact.IsUnsubscribed)
+                        {
+                            _logger.Info($"EmailQueueService => ProcessQueue => Contact with ContactId {email.ContactId} has unsubscribed. Cannot send email: {email.Subject}");
+                            continue;
+                        }
+                    }
+
+                    SendEmail(email);
                 }
                 catch (Exception ex)
                 {

@@ -63,7 +63,7 @@ namespace K9.WebApplication.Controllers
                 return Json(new
                 {
                     success = true,
-                    data = promotion
+                    promotion
                 }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception e)

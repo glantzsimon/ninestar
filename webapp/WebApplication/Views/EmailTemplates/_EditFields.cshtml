@@ -9,8 +9,16 @@
 
 @Html.BootstrapEditorFor(model => model.PromotionId)
 
-@Html.LabelFor(model => model.Promotion.SubscriptionTypeName)
-<input class="  form-control" culture-info="" id="SubscriptionTypeName" type="text" value="" disabled>
+<div class="row">
+    <div class="col-sm-6">
+        @Html.LabelFor(model => model.Promotion.SubscriptionTypeName)
+        <input class="  form-control" culture-info="" id="SubscriptionTypeName" type="text" value="" disabled>
+    </div>
+    <div class="col-sm-6">
+        @Html.LabelFor(model => model.Promotion.FullPrice)
+        <input class="  form-control" culture-info="" id="FullPrice" type="text" value="" disabled>
+    </div>
+</div>
 
 <div class="row">
     <div class="col-sm-6">
@@ -42,12 +50,12 @@
             }, "POST").
             done(
                 function(result) {
-                    debugger;
                     if (result.data.success) {
                         var promotion = result.data;
-                        $("#SubscriptionTypeName").val(promotion.SubscriptionTypeName);
-                        $("#DiscountPercent").val(promotion.DiscountPercent + "%");
-                        $("#SpecialPrice").val(promotion.SpecialPrice);
+                        $("#SubscriptionTypeName").text(promotion.SubscriptionTypeName);
+                        $("#DiscountPercent").text(promotion.DiscountPercent + "%");
+                        $("#FullPrice").text(promotion.FormattedFullPrice);
+                        $("#SpecialPrice").text(promotion.FormattedSpecialPrice);
                     } else {
                         that.changeLoadingState(false);
                         that.processError(result.errorMessage || errorMessage);

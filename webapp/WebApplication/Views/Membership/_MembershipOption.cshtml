@@ -4,7 +4,7 @@
     <div class="membership-option-title">
         <h5 class="margin-0">@Model.MembershipOption.SubscriptionTypeNameLocal</h5>
         <p class="margin-0"><strong>@Model.MembershipOption.FormattedPrice</strong></p>
-        @if (Model.PromoCode != null)
+        @if (Model.Promotion != null)
         {
             <h5 class="special-promotion">@Model.MembershipOption.GetDiscountText()</h5>
         }

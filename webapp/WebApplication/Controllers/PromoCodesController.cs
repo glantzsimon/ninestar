@@ -10,11 +10,11 @@ using System.Web.Mvc;
 namespace K9.WebApplication.Controllers
 {
     [Authorize]
-    public class PromoCodesController : BaseNineStarKiController<PromoCode>
+    public class PromoCodesController : BaseNineStarKiController<Promotion>
     {
         private readonly IRepository<MembershipOption> _membershipOptionsRepository;
 
-        public PromoCodesController(IControllerPackage<PromoCode> controllerPackage, INineStarKiPackage nineStarKiPackage, IRepository<MembershipOption> membershipOptionsRepository)
+        public PromoCodesController(IControllerPackage<Promotion> controllerPackage, INineStarKiPackage nineStarKiPackage, IRepository<MembershipOption> membershipOptionsRepository)
             : base(controllerPackage, nineStarKiPackage)
         {
             _membershipOptionsRepository = membershipOptionsRepository;
@@ -22,87 +22,48 @@ namespace K9.WebApplication.Controllers
 
         public override ActionResult Create()
         {
-            return View(new PromoCode
+            return View(new Promotion
             {
             });
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public override ActionResult Create(PromoCode promoCode)
+        public override ActionResult Create(Promotion promotion)
         {
-            Validate(promoCode);
+            Validate(promotion);
 
             if (ModelState.IsValid)
             {
-                promoCode.Name = promoCode.Code;
+                promotion.Name = promotion.Code;
 
                 try
                 {
-                    Repository.Create(promoCode);
+                    Repository.Create(promotion);
                 }
                 catch (Exception e)
                 {
                     ModelState.AddModelError("", e.GetFullErrorMessage());
-                    return View(promoCode);
+                    return View(promotion);
                 }
 
                 return RedirectToAction("Index");
             }
 
-            return View(promoCode);
+            return View(promotion);
         }
 
-        public ActionResult CreateMultiple()
+        private void Validate(Promotion promotion)
         {
-            return View(new PromoCode
-            {
-                NumberToCreate = 11
-            });
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult CreateMultiple(PromoCode promoCode)
-        {
-            var codes = new List<PromoCode>();
-
-            Validate(promoCode);
-
-            if (ModelState.IsValid)
-            {
-                for (int i = 0; i < promoCode.NumberToCreate; i++)
-                {
-                    var newPromoCode = new PromoCode
-                    {
-                        MembershipOptionId = promoCode.MembershipOptionId,
-                        Discount = promoCode.Discount,
-                        TotalPrice = promoCode.TotalPrice
-                    };
-                    newPromoCode.Name = newPromoCode.Code;
-
-                    codes.Add(newPromoCode);
-                }
-
-                Repository.CreateBatch(codes);
-
-                return RedirectToAction("Index");
-            }
-
-            return View(promoCode);
-        }
-
-        private void Validate(PromoCode promoCode)
-        {
-            var membershipOption = _membershipOptionsRepository.Find(promoCode.MembershipOptionId);
+            var membershipOption = _membershipOptionsRepository.Find(promotion.MembershipOptionId);
             if (membershipOption.SubscriptionType == MembershipOption.ESubscriptionType.Free)
             {
-                ModelState.AddModelError(nameof(PromoCode.MembershipOptionId), "Cannot create promocode for free membership");
+                ModelState.AddModelError(nameof(Promotion.MembershipOptionId), "Cannot create promocode for free membership");
             }
 
-            if (membershipOption.Price == promoCode.TotalPrice)
+            if (membershipOption.Price == promotion.SpecialPrice)
             {
-                ModelState.AddModelError(nameof(PromoCode.TotalPrice), "Total price must be discounted.");
+                ModelState.AddModelError(nameof(Promotion.SpecialPrice), "Total price must be discounted.");
             }
         }
     }

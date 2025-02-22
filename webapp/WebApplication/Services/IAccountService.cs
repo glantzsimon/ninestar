@@ -32,6 +32,7 @@ namespace K9.WebApplication.Services
         UserOTP GetAccountActivationOTP(Guid uniqueIdentifier);
         void ResendActivationCode(int userId);
         void VerifyCode(int userId, int digit1, int digit2, int digit3, int digit4, int digit5, int digit6);
+        void UnverifyCode(int userId, int digit1, int digit2, int digit3, int digit4, int digit5, int digit6);
 
         string GetPasswordResetLink(UserAccount.PasswordResetRequestModel model, string token);
         string GetActivationLink(UserAccount.RegisterModel model, string token);

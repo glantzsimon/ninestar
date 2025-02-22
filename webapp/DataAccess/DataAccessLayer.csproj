@@ -206,9 +206,11 @@
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="Database\DatabaseInitialiser.cs" />
     <Compile Include="Database\Db.cs" />
+    <Compile Include="Database\Seeds\EmailTemplatesSeeder.cs" />
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
     <Compile Include="Enums\EConsultationDuration.cs" />
+    <Compile Include="Enums\ESystemEmailTemplate.cs" />
     <Compile Include="Enums\EEmailType.cs" />
     <Compile Include="Enums\EDiscount.cs" />
     <Compile Include="Extensions\Extensions.cs" />
@@ -349,6 +351,14 @@
     <Compile Include="Migrations\202502221020149_ExpandEmailTemplates.designer.cs">
       <DependentUpon>202502221020149_ExpandEmailTemplates.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202502221311560_UpdatePromoCodes.cs" />
+    <Compile Include="Migrations\202502221311560_UpdatePromoCodes.designer.cs">
+      <DependentUpon>202502221311560_UpdatePromoCodes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202502221441146_EditedEmailTemplates.cs" />
+    <Compile Include="Migrations\202502221441146_EditedEmailTemplates.designer.cs">
+      <DependentUpon>202502221441146_EditedEmailTemplates.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\MailingList.cs" />
     <Compile Include="Models\EmailTemplate.cs" />
     <Compile Include="Models\EmailQueueItem.cs" />
@@ -357,12 +367,12 @@
     <Compile Include="Models\TimeZoneBase.cs" />
     <Compile Include="Models\Slot.cs" />
     <Compile Include="Models\Consultation.cs" />
-    <Compile Include="Models\PromoCode.cs" />
+    <Compile Include="Models\Promotion.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\MembershipOption.cs" />
     <Compile Include="Models\UserConsultation.cs" />
     <Compile Include="Models\MailingListUser.cs" />
-    <Compile Include="Models\UserPromoCode.cs" />
+    <Compile Include="Models\UserPromotion.cs" />
     <Compile Include="Models\UserMembership.cs" />
     <Compile Include="Models\Donation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -486,6 +496,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202502221020149_ExpandEmailTemplates.resx">
       <DependentUpon>202502221020149_ExpandEmailTemplates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502221311560_UpdatePromoCodes.resx">
+      <DependentUpon>202502221311560_UpdatePromoCodes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502221441146_EditedEmailTemplates.resx">
+      <DependentUpon>202502221441146_EditedEmailTemplates.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

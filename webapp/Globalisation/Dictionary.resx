@@ -1961,7 +1961,7 @@
     <value>Promo Code</value>
   </data>
   <data name="PromoCodes" xml:space="preserve">
-    <value>Promo Codes</value>
+    <value>Promotions</value>
   </data>
   <data name="EmailPromoCode" xml:space="preserve">
     <value>Email Promo Code</value>
@@ -3937,19 +3937,43 @@
   <data name="SupportQueryThankYouEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>emailtemplates\en-gb\tocustomer\supportquerythankyouemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="ThirdMembershipReminderEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>emailtemplates\en-gb\promotions\thirdmembershipreminderemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="ThirdMembershipReminderSubject" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>emailtemplates\en-gb\promotions\thirdmembershipremindersubject.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="YoureSignedUp" xml:space="preserve">
     <value>You're Signed Up!</value>
+  </data>
+  <data name="DiscountAmountLabel" xml:space="preserve">
+    <value>Discount Amount</value>
+  </data>
+  <data name="DiscountPercentLabel" xml:space="preserve">
+    <value>Discount Percent</value>
   </data>
   <data name="EmailTemplateLabel" xml:space="preserve">
     <value>Email Template</value>
   </data>
   <data name="EmailTypeLabel" xml:space="preserve">
     <value>Email Type</value>
+  </data>
+  <data name="InvalidPromoCode" xml:space="preserve">
+    <value>Invalid Promo Code</value>
+  </data>
+  <data name="Promotion" xml:space="preserve">
+    <value>Promotion</value>
+  </data>
+  <data name="PromotionLabel" xml:space="preserve">
+    <value>Promotion</value>
+  </data>
+  <data name="Promotions" xml:space="preserve">
+    <value>Promotions</value>
+  </data>
+  <data name="UserPromotion" xml:space="preserve">
+    <value>User Promotion</value>
+  </data>
+  <data name="UserPromotions" xml:space="preserve">
+    <value>User Promotions</value>
+  </data>
+  <data name="ThirdMembershipReminderEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\en-gb\promotions\thirdmembershipreminderemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ThirdMembershipReminderSubject" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>emailtemplates\en-gb\promotions\thirdmembershipremindersubject.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

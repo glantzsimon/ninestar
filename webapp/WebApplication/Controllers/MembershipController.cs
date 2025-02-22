@@ -31,22 +31,24 @@ namespace K9.WebApplication.Controllers
         [Route("membership/unlock")]
         public ActionResult PurchaseStart(int membershipOptionId, string promoCode = "")
         {
-            PromoCode promoCodeModel = null;
+            Promotion promotion = null;
 
             if (!string.IsNullOrEmpty(promoCode))
             {
-                if (_promotionService.IsPromoCodeAlreadyUsed(promoCode))
+                if (_promotionService.IsPromotionAlreadyUsed(promoCode, Current.UserId))
                 {
                     ModelState.AddModelError("", Globalisation.Dictionary.PromoCodeInUse);
                 }
 
-                promoCodeModel = _promotionService.Find(promoCode);
-                if (promoCodeModel == null)
-                {
-                    ModelState.AddModelError("", "Invalid promo code");
-                }
+                promotion = _promotionService.Find(promoCode);
+                var userPromotion = _promotionService.FindForUser(promoCode, Current.UserId);
 
-                if (promoCodeModel.UsedOn.HasValue)
+                if (promotion == null || userPromotion == null)
+                {
+                    ModelState.AddModelError("", Globalisation.Dictionary.InvalidPromoCode);
+                }
+                
+                if (userPromotion.UsedOn.HasValue)
                 {
                     ModelState.AddModelError("", Globalisation.Dictionary.PromoCodeInUse);
                 }
@@ -55,7 +57,7 @@ namespace K9.WebApplication.Controllers
             try
             {
                 var model = My.MembershipService.GetPurchaseMembershipModel(membershipOptionId, promoCode);
-                model.PromoCode = promoCodeModel;
+                model.Promotion = promotion;
                 return View(model);
             }
             catch (Exception e)

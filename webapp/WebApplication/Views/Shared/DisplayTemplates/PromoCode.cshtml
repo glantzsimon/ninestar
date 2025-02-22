@@ -1,6 +1,6 @@
 ﻿@using K9.Base.WebApplication.Extensions
 @model int?
 @{
-    var value = this.GetDropdownData().GetName<PromoCode>(Model, true, "Code");
+    var value = this.GetDropdownData().GetName<Promotion>(Model, true, "Code");
 }
 <div>@value</div>

@@ -10,24 +10,24 @@
 {
     using (Html.BeginBootstrapForm())
     {
-        @Html.HiddenFor(model => model.PromoCode.MembershipOptionId)
-        @Html.HiddenFor(model => model.PromoCode.Id)
-        @Html.HiddenFor(model => model.PromoCode.Code)
-        @Html.HiddenFor(model => model.PromoCode.UsedOn)
-        @Html.HiddenFor(model => model.PromoCode.SentOn)
+        @Html.HiddenFor(model => model.Promotion.MembershipOptionId)
+        @Html.HiddenFor(model => model.Promotion.Id)
+        @Html.HiddenFor(model => model.Promotion.Code)
+        @Html.HiddenFor(model => model.Promotion.UsedOn)
+        @Html.HiddenFor(model => model.Promotion.SentOn)
         
-        @Html.HiddenFor(model => model.PromoCode.MembershipOption.Id)
-        @Html.HiddenFor(model => model.PromoCode.MembershipOption.Name)
-        @Html.HiddenFor(model => model.PromoCode.MembershipOption.Price)
-        @Html.HiddenFor(model => model.PromoCode.MembershipOption.SubscriptionType)
-        @Html.HiddenFor(model => model.PromoCode.MembershipOption.SubscriptionDetails)
+        @Html.HiddenFor(model => model.Promotion.MembershipOption.Id)
+        @Html.HiddenFor(model => model.Promotion.MembershipOption.Name)
+        @Html.HiddenFor(model => model.Promotion.MembershipOption.Price)
+        @Html.HiddenFor(model => model.Promotion.MembershipOption.SubscriptionType)
+        @Html.HiddenFor(model => model.Promotion.MembershipOption.SubscriptionDetails)
 
         <div class="row">
             <div class="col-sm-6 col-xs-12">
-                @Html.BootstrapDisplayFor(model => model.PromoCode.Code)
+                @Html.BootstrapDisplayFor(model => model.Promotion.Code)
             </div>
             <div class="col-sm-6 col-xs-12">
-                @Html.BootstrapDisplayFor(model => model.PromoCode.SubscriptionTypeName)
+                @Html.BootstrapDisplayFor(model => model.Promotion.SubscriptionTypeName)
             </div>
         </div>
         @Html.BootstrapEditorFor(model => model.Name)

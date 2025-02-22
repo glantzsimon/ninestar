@@ -23,7 +23,7 @@ namespace K9.WebApplication.Services
         /// <returns></returns>
         bool CreateMembershipFromPromoCode(int userId, string code);
         void ProcessPurchase(PurchaseModel purchaseModel);
-        void AssignMembershipToUser(int membershipOptionId, int userId, PromoCode promoCode = null);
+        void AssignMembershipToUser(int membershipOptionId, int userId, Promotion promotion = null);
 
         void CreateComplementaryUserConsultation(int userId,
             EConsultationDuration duration = EConsultationDuration.OneHour);

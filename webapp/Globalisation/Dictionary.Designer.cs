@@ -3905,11 +3905,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Discount Amount.
+        /// </summary>
+        public static string DiscountAmountLabel {
+            get {
+                return ResourceManager.GetString("DiscountAmountLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Discount.
         /// </summary>
         public static string DiscountLabel {
             get {
                 return ResourceManager.GetString("DiscountLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discount Percent.
+        /// </summary>
+        public static string DiscountPercentLabel {
+            get {
+                return ResourceManager.GetString("DiscountPercentLabel", resourceCulture);
             }
         }
         
@@ -5114,8 +5132,8 @@ namespace K9.Globalisation {
         ///    Ever felt you&apos;re capable of more but need clarity and direction or wanted deeper insights into yourself, your relationships, and life&apos;s cycles? 9 Star Ki Astrology helps you unlock your full potential by revealing your unique energy blueprint.
         ///&lt;/p&gt;
         ///&lt;p&gt;We&apos;d love to welcome you with a special gift!&lt;/p&gt;
-        ///&lt;p&gt;&lt;strong&gt;Get {Discount}% off — pay only {DiscountedPrice} instead of {FullPrice} for a full {MembershipOptionName}!&lt;/strong&gt;&lt;/p&gt;
-        ///&lt;p&gt;With your {MembershipOptionName}, you [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;&lt;strong&gt;Get {DiscountPercent}% off — pay only {FormattedSpecialPrice} instead of {FormattedFullPrice} for a full {MembershipOptionName}!&lt;/strong&gt;&lt;/p&gt;
+        ///&lt;p&gt;With your {Memb [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FirstMembershipReminderEmail {
             get {
@@ -5124,7 +5142,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unlock Your Potential – {Discount}% Off Your Yearly Membership!.
+        ///   Looks up a localized string similar to Unlock Your Potential – {DiscountPercent}% Off Your Yearly Membership!.
         /// </summary>
         public static string FirstMembershipReminderSubject {
             get {
@@ -6463,6 +6481,15 @@ namespace K9.Globalisation {
         public static string intuitive_very_low {
             get {
                 return ResourceManager.GetString("intuitive_very_low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid Promo Code.
+        /// </summary>
+        public static string InvalidPromoCode {
+            get {
+                return ResourceManager.GetString("InvalidPromoCode", resourceCulture);
             }
         }
         
@@ -10136,11 +10163,38 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Promo Codes.
+        ///   Looks up a localized string similar to Promotions.
         /// </summary>
         public static string PromoCodes {
             get {
                 return ResourceManager.GetString("PromoCodes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Promotion.
+        /// </summary>
+        public static string Promotion {
+            get {
+                return ResourceManager.GetString("Promotion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Promotion.
+        /// </summary>
+        public static string PromotionLabel {
+            get {
+                return ResourceManager.GetString("PromotionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Promotions.
+        /// </summary>
+        public static string Promotions {
+            get {
+                return ResourceManager.GetString("Promotions", resourceCulture);
             }
         }
         
@@ -10712,7 +10766,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Strengthen Your Relationships – {Discount}% Off for a Limited Time!.
+        ///   Looks up a localized string similar to Strengthen Your Relationships – {DiscountPercent}% Off for a Limited Time!.
         /// </summary>
         public static string SecondMembershipReminderSubject {
             get {
@@ -12774,7 +12828,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;p&gt;Every relationship has its unique energy — some connections flow effortlessly, while others require more understanding and balance.&lt;/p&gt;
+        ///&lt;p&gt;9 Star Ki Astrology reveals the hidden dynamics between you and the people around you—your partner, friends, family, and even colleagues. Whether you want to strengthen your romantic bond, improve communication with loved ones, or build better professional relationships, understanding energy compatibility is key.&lt;/p&gt;
+        ///&lt;p&gt;&lt;strong&gt;✨ As a special gift, we&apos;re offering yo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ThirdMembershipReminderEmail {
             get {
@@ -12783,26 +12839,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
-        ///&lt;html&gt;
-        ///&lt;head&gt;
-        ///    &lt;meta charset=&quot;utf-8&quot;&gt;
-        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
-        ///    &lt;title&gt;{Title}&lt;/title&gt;
-        ///    &lt;style type=&quot;text/css&quot;&gt;
-        ///        body, table, td, a {
-        ///            -webkit-text-size-adjust: 100%;
-        ///            -ms-text-size-adjust: 100%;
-        ///            -webkit-font-smoothing: antialiased !important;
-        ///        }
-        ///
-        ///        table, td {
-        ///            mso-table-lspace: 0pt;
-        ///            mso-table-rspace: 0pt;
-        ///        }
-        ///
-        ///        img {
-        ///            -ms-interpolat [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to Unlock Your Potential – {DiscountPercent}% Off Your Yearly Membership!.
         /// </summary>
         public static string ThirdMembershipReminderSubject {
             get {
@@ -13473,6 +13510,24 @@ namespace K9.Globalisation {
         public static string UserPromoCodes {
             get {
                 return ResourceManager.GetString("UserPromoCodes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Promotion.
+        /// </summary>
+        public static string UserPromotion {
+            get {
+                return ResourceManager.GetString("UserPromotion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Promotions.
+        /// </summary>
+        public static string UserPromotions {
+            get {
+                return ResourceManager.GetString("UserPromotions", resourceCulture);
             }
         }
         

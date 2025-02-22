@@ -44,21 +44,19 @@ namespace K9.WebApplication.Helpers
                 dataset = GetItemList<T>(nameExpression, valueExpression, includeDeleted, resourceType);
                 if (dataset != null)
                 {
-                    var collectionItem = _datasets.Collection[typeof(T)];
-
                     if (_datasets.Collection.ContainsKey(typeof(T)))
-                    {
-                        _datasets.Collection[typeof(T)] = dataset;
-                    }
-                    else
                     {
                         try
                         {
-                            _datasets.Collection.Add(typeof(T), dataset);
+                            _datasets.Collection[typeof(T)] = dataset;
                         }
                         catch (Exception e)
                         {
                         }
+                    }
+                    else
+                    {
+                        AddDataSetToCollection<T>(dataset);
                     }
                 }
             }
@@ -90,17 +88,17 @@ namespace K9.WebApplication.Helpers
 
                 if (!_datasets.Collection.ContainsKey(enumType))
                 {
+                    AddDataSetToCollection<T>(dataset);
+                }
+                else
+                {
                     try
                     {
-                        _datasets.Collection.Add(typeof(T), dataset);
+                        _datasets.Collection[enumType] = dataset;
                     }
                     catch (Exception e)
                     {
                     }
-                }
-                else
-                {
-                    _datasets.Collection[enumType] = dataset;
                 }
             }
             return dataset;

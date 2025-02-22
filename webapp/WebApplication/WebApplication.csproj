@@ -74,10 +74,10 @@
       <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.208\lib\net461\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.DataAccessLayer.2.0.0.208\lib\net461\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.208\lib\net461\Facebook.dll</HintPath>
@@ -322,9 +322,9 @@
     <Compile Include="Controllers\UserPromoCodesController.cs" />
     <Compile Include="Controllers\UserMembershipsController.cs" />
     <Compile Include="Controllers\MailingListUsersController.cs" />
-    <Compile Include="EmailTemplates\SecondMembershipReminderEmailTemplate.cs" />
-    <Compile Include="EmailTemplates\ThirdMembershipReminderEmailTemplate.cs" />
-    <Compile Include="EmailTemplates\FirstMembershipReminderEmailTemplate.cs" />
+    <Compile Include="StaticEmailTemplates\SecondMembershipReminderEmailTemplate.cs" />
+    <Compile Include="StaticEmailTemplates\ThirdMembershipReminderEmailTemplate.cs" />
+    <Compile Include="StaticEmailTemplates\FirstMembershipReminderEmailTemplate.cs" />
     <Compile Include="Enums\ELineType.cs" />
     <Compile Include="Enums\EDeviceType.cs" />
     <Compile Include="Enums\EBiorhythmValue.cs" />
@@ -416,6 +416,7 @@
     <Compile Include="Services\IAccountService.cs" />
     <Compile Include="Services\IPromotionService.cs" />
     <Compile Include="Services\PromotionService.cs" />
+    <Compile Include="ViewModels\EmailTemplateDynamicFieldsViewModel.cs" />
     <Compile Include="ViewModels\IChingViewModel.cs" />
     <Compile Include="ViewModels\AssignConsultationModel.cs" />
     <Compile Include="ViewModels\AdminViewModel.cs" />
@@ -1380,13 +1381,13 @@
     <Content Include="Views\Predictions\_YearlyCyclesOverview.cshtml" />
     <Content Include="Views\Predictions\_Cycle.cshtml" />
     <Content Include="Views\Membership\_RetrieveLast.cshtml" />
-    <Content Include="Views\PromoCodes\_DisplayFields.cshtml" />
-    <Content Include="Views\PromoCodes\_EditFields.cshtml" />
-    <Content Include="Views\PromoCodes\Create.cshtml" />
-    <Content Include="Views\PromoCodes\Delete.cshtml" />
-    <Content Include="Views\PromoCodes\Details.cshtml" />
-    <Content Include="Views\PromoCodes\Edit.cshtml" />
-    <Content Include="Views\PromoCodes\Index.cshtml" />
+    <Content Include="Views\Promotions\_DisplayFields.cshtml" />
+    <Content Include="Views\Promotions\_EditFields.cshtml" />
+    <Content Include="Views\Promotions\Create.cshtml" />
+    <Content Include="Views\Promotions\Delete.cshtml" />
+    <Content Include="Views\Promotions\Details.cshtml" />
+    <Content Include="Views\Promotions\Edit.cshtml" />
+    <Content Include="Views\Promotions\Index.cshtml" />
     <Content Include="Views\UserPromoCodes\_DisplayFields.cshtml" />
     <Content Include="Views\UserPromoCodes\Delete.cshtml" />
     <Content Include="Views\UserPromoCodes\Details.cshtml" />
@@ -1426,7 +1427,6 @@
     <Content Include="Views\Predictions\_MonthlyPlanner.cshtml" />
     <Content Include="Views\Predictions\_Month.cshtml" />
     <Content Include="Views\Predictions\_MonthlyCyclesOverview.cshtml" />
-    <Content Include="Views\PromoCodes\CreateMultiple.cshtml" />
     <Content Include="Views\Compatibility\_CompatibilityFundamentalElements.cshtml" />
     <Content Include="Views\Compatibility\_CompatibilityCharacterElements.cshtml" />
     <Content Include="Views\Shared\_GlobalJs.cshtml" />
@@ -1531,6 +1531,14 @@
     <Content Include="Views\MailingLists\Edit.cshtml" />
     <Content Include="Views\MailingLists\Index.cshtml" />
     <Content Include="Views\Consultation\ScheduleConsultationConfirm.cshtml" />
+    <Content Include="Views\EmailTemplates\_DisplayFields.cshtml" />
+    <Content Include="Views\EmailTemplates\_EditFields.cshtml" />
+    <Content Include="Views\EmailTemplates\Create.cshtml" />
+    <Content Include="Views\EmailTemplates\Delete.cshtml" />
+    <Content Include="Views\EmailTemplates\Details.cshtml" />
+    <Content Include="Views\EmailTemplates\Edit.cshtml" />
+    <Content Include="Views\EmailTemplates\Index.cshtml" />
+    <Content Include="Views\EmailTemplates\_DynamicFields.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

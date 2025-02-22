@@ -9,8 +9,8 @@ namespace K9.DataAccessLayer.Database
 	    public DbSet<Donation> Donations { get; set; }
 	    public DbSet<MembershipOption> MembershipOptions { get; set; }
 	    public DbSet<UserMembership> UserMemberships { get; set; }
-	    public DbSet<PromoCode> PromoCodes { get; set; }
-	    public DbSet<UserPromoCode> UserPromoCodes { get; set; }
+	    public DbSet<Promotion> PromoCodes { get; set; }
+	    public DbSet<UserPromotion> UserPromoCodes { get; set; }
 	    public DbSet<Consultation> Consultations { get; set; }
 	    public DbSet<UserConsultation> UserConsultations { get; set; }
 	    public DbSet<Slot> Slots { get; set; }

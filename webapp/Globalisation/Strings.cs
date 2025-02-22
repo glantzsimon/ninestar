@@ -68,6 +68,8 @@
             public const string SubscriptionCostLabel = "SubscriptionCostLabel";
             public const string SubscriptionTypeLabel = "SubscriptionTypeLabel";
             public const string DiscountLabel = "DiscountLabel";
+            public const string DiscountPercentLabel = "DiscountPercentLabel";
+            public const string DiscountAmountLabel = "DiscountAmountLabel";
             public const string IsActiveLabel = "IsActiveLabel";
             public const string AccountNumberLabel = "AccountNumberLabel";
             public const string UsedOnLabel = "UsedOnLabel";
@@ -87,7 +89,7 @@
             public const string NumberOfRelationshipCompatibilityReadingsLeft = "NumberOfRelationshipCompatibilityReadingsLeft";
             public const string NumberOfCreditsLeft = "NumberOfCreditsLeft";
             public const string UserDataLabel = "UserData";
-            public const string PromoCodeLabel = "PromoCode";
+            public const string PromotionLabel = "PromotionLabel";
             public const string CodeLabel = "Code";
             public const string BiorhythmsLabel = "BiorhythmsLabel";
             public const string NineStarKiBiorhythmsLabel = "NineStarKiBiorhythmsLabel";
@@ -103,11 +105,11 @@
             public const string UserDatas = "UserDatas";
             public const string Contacts = "Contacts";
             public const string Contact = "Contact";
-            public const string PromoCodes = "PromoCodes";
+            public const string Promotions = "Promotions";
             public const string Donation = "Donation";
-            public const string PromoCode = "PromoCode";
-            public const string UserPromoCode = "UserPromoCode";
-            public const string UserPromoCodes = "UserPromoCodes";
+            public const string Promotion = "Promotion";
+            public const string UserPromotion = "UserPromotion";
+            public const string UserPromotions = "UserPromotions";
             public const string UserMembership = "UserMembershipModelName";
             public const string UserMemberships = "UserMemberships";
             public const string UserMembershipsListName = "UserMemberships";

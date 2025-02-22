@@ -1,0 +1,8 @@
+﻿@using K9.Base.WebApplication.Helpers
+@using K9.SharedLibrary.Helpers
+@model EmailTemplate
+@Html.BootstrapEditorFor(model => model.PromotionId)
+@Html.BootstrapEditorFor(model => model.Subject)
+
+@Html.Partial("_DynamicFields")
+@Html.BootstrapEditorFor(model => model.HtmlBody)

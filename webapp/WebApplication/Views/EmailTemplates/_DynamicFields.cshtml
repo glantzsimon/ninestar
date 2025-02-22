@@ -1,0 +1,13 @@
+﻿@using K9.Base.WebApplication.Helpers
+@using K9.SharedLibrary.Helpers
+@model K9.WebApplication.ViewModels.EmailTemplateDynamicFieldsViewModel
+
+<div class="form-group">
+    <label for="multiSelect">Dynamic Fields:</label>
+    <select id="multiSelect" class="form-control" multiple>
+        @foreach (var item in Model.DynamicFields)
+        {
+            <option value="@item">{@item}</option>
+        }
+    </select>
+</div>

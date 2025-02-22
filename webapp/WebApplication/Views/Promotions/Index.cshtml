@@ -1,11 +1,11 @@
 ﻿@using K9.Base.WebApplication.Helpers
 @using K9.SharedLibrary.Models
 @using EButtonType = K9.SharedLibrary.Models.EButtonType
-@model PromoCode
+@model Promotion
 @{
     Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
 }
-@Html.BootstrapTable(new DataTableOptions<PromoCode>
+@Html.BootstrapTable(new DataTableOptions<Promotion>
 {
     VisibleColumns = new List<string>
     {
@@ -14,19 +14,6 @@
         "TotalPrice",
         "SentOn",
         "UsedOn"
-    },
-    CustomMenuButtons =
-    {
-        new Button
-        {
-            Text = Dictionary.CreateMultiple,
-            Controller = "PromoCodes",
-            Action = "CreateMultiple",
-            ButtonType = EButtonType.Primary,
-            IconCssClass = "fa fa-plus",
-            IsMainMenuButton = true
-
-        }
     },
     CustomButtons = new List<IButton>
     {

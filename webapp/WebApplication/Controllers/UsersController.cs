@@ -159,9 +159,9 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                if (_promotionService.IsPromoCodeAlreadyUsed(model.PromoCode))
+                if (_promotionService.Find(model.PromoCode) == null)
                 {
-                    ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
+                    ModelState.AddModelError("PromoCode", Globalisation.Dictionary.InvalidPromoCode);
                     return RedirectToAction("AssignPromoCodeStart", "Users", new { Id = model.UserId });
                 };
             }

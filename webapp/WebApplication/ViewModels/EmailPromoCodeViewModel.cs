@@ -8,7 +8,7 @@ namespace K9.WebApplication.ViewModels
 {
     public class EmailPromoCodeViewModel
     {
-        public PromoCode PromoCode { get; set; }
+        public Promotion Promotion { get; set; }
         
         [DataType(DataType.EmailAddress, ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.InvalidEmailAddress)]
         [EmailAddress(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.InvalidEmailAddress)]

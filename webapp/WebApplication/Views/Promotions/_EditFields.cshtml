@@ -1,32 +1,26 @@
 ﻿@using K9.DataAccessLayer.Enums
-@model PromoCode
+@model Promotion
 
 @Html.HiddenFor(model => model.Code)
-<div class="row">
-    <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.SentOn)
-    </div>
-    <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.UsedOn)
-    </div>
-</div>
-
+@Html.BootstrapDisplayFor(model => model.Name)
+@Html.BootstrapDisplayFor(model => model.Description)
 @Html.BootstrapEditorFor(model => model.MembershipOptionId)
+
 <div class="row">
     <div class="col-sm-6">
         @Html.BootstrapEditorFor(model => model.Discount)
     </div>
     <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.TotalPrice)
+        @Html.BootstrapEditorFor(model => model.SpecialPrice)
     </div>
 </div>
 
 <script type="text/javascript">
 
     $(function() {
-        let $membershipDropdown = $("#@(nameof(PromoCode.MembershipOptionId))");
-        let $discountDropdown = $("#@(nameof(PromoCode.Discount))");
-        let $totalPrice = $("#@(nameof(PromoCode.TotalPrice))");
+        let $membershipDropdown = $("#@(nameof(Promotion.MembershipOptionId))");
+        let $discountDropdown = $("#@(nameof(Promotion.Discount))");
+        let $totalPrice = $("#@(nameof(Promotion.SpecialPrice))");
 
         function getDiscount() {
             var discountIndex = $discountDropdown.val();

@@ -4,18 +4,18 @@ namespace K9.WebApplication.Models
 {
     public class MembershipModel
     {
-        public MembershipModel(int userId, MembershipOption membershipOption, UserMembership activeUserMembership = null, PromoCode promoCode = null)
+        public MembershipModel(int userId, MembershipOption membershipOption, UserMembership activeUserMembership = null, Promotion promotion = null)
         {
             MembershipOption = membershipOption;
             ActiveUserMembership = activeUserMembership;
             UserId = userId;
-            PromoCode = PromoCode;
+            Promotion = Promotion;
             
             if (MembershipOption != null)
             {
-                if (promoCode != null)
+                if (promotion != null)
                 {
-                    membershipOption.Price = promoCode.TotalPrice;
+                    membershipOption.Price = promotion.SpecialPrice;
                 }
 
                 MembershipOption.PriceIncludingDiscountForRemainingPreviousSubscription = MembershipOption.Price - (ActiveUserMembership?.CostOfRemainingActiveSubscription ?? 0);
@@ -24,7 +24,7 @@ namespace K9.WebApplication.Models
 
         public MembershipOption MembershipOption { get; }
         public UserMembership ActiveUserMembership { get; }
-        public PromoCode PromoCode { get; set; }
+        public Promotion Promotion { get; set; }
         public int UserId { get; }
         public bool IsSelected { get; set; }
         public bool IsSelectable { get; set; }

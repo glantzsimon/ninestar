@@ -5,7 +5,7 @@
 @using EButtonType = K9.SharedLibrary.Models.EButtonType
 @using SessionHelper = K9.WebApplication.Helpers.SessionHelper
 
-@model UserPromoCode
+@model UserPromotion
 @{
     Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
 }
@@ -16,7 +16,7 @@
     });
 </script>
 
-@Html.BootstrapTable(new DataTableOptions<UserPromoCode>
+@Html.BootstrapTable(new DataTableOptions<UserPromotion>
 {
     AllowCreate = false,
     AllowEdit = false,

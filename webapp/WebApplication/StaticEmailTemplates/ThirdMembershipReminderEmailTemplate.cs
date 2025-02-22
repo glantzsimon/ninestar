@@ -1,4 +1,5 @@
-﻿using K9.DataAccessLayer.Models;
+﻿using K9.DataAccessLayer.Enums;
+using K9.DataAccessLayer.Models;
 
 namespace K9.WebApplication.EmailTemplates
 {
@@ -6,7 +7,7 @@ namespace K9.WebApplication.EmailTemplates
     {
         public ThirdMembershipReminderEmailTemplate()
         {
-            Id = -3;
+            SystemEmailTemplate = ESystemEmailTemplate.ThirdMembershipReminder;
             Subject = Globalisation.Dictionary.ThirdMembershipReminderSubject;
             HtmlBody = Globalisation.Dictionary.ThirdMembershipReminderEmail;
         }

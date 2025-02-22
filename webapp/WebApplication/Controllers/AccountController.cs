@@ -30,13 +30,13 @@ namespace K9.WebApplication.Controllers
     public partial class AccountController : BaseNineStarKiController
     {
         private readonly IFacebookService _facebookService;
-        private readonly IRepository<PromoCode> _promoCodesRepository;
+        private readonly IRepository<Promotion> _promoCodesRepository;
         private readonly IRecaptchaService _recaptchaService;
         private readonly IRepository<MembershipOption> _membershipOptionsRepository;
         private readonly IPromotionService _promotionService;
         private readonly RecaptchaConfiguration _recaptchaConfig;
 
-        public AccountController(INineStarKiPackage nineStarKiPackage, IFacebookService facebookService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<MembershipOption> membershipOptionsRepository, IPromotionService promotionService)
+        public AccountController(INineStarKiPackage nineStarKiPackage, IFacebookService facebookService, IRepository<Promotion> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<MembershipOption> membershipOptionsRepository, IPromotionService promotionService)
             : base(nineStarKiPackage)
         {
             _facebookService = facebookService;
@@ -244,7 +244,7 @@ namespace K9.WebApplication.Controllers
 
                 if (!string.IsNullOrEmpty(model.PromoCode))
                 {
-                    if (_promotionService.IsPromoCodeAlreadyUsed(model.PromoCode))
+                    if (_promotionService.IsPromotionAlreadyUsed(model.PromoCode, user.Id))
                     {
                         ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
                         return View(model);
@@ -252,7 +252,7 @@ namespace K9.WebApplication.Controllers
 
                     try
                     {
-                        _promotionService.UsePromoCode(user.Id, model.PromoCode);
+                        _promotionService.UsePromotion(user.Id, model.PromoCode);
                         My.MembershipService.CreateMembershipFromPromoCode(user.Id, model.PromoCode);
                     }
                     catch (Exception e)
@@ -308,9 +308,9 @@ namespace K9.WebApplication.Controllers
             {
                 try
                 {
-                    if (_promotionService.IsPromoCodeAlreadyUsed(promoCode))
+                    if (_promotionService.Find(promoCode) == null)
                     {
-                        ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
+                        ModelState.AddModelError("PromoCode", Globalisation.Dictionary.InvalidPromoCode);
                     };
                 }
                 catch (Exception e)
@@ -355,11 +355,13 @@ namespace K9.WebApplication.Controllers
 
             if (ModelState.IsValid)
             {
+                var promotion = _promotionService.Find(model.PromoCode);
+
                 if (!string.IsNullOrEmpty(model.PromoCode))
                 {
-                    if (_promotionService.IsPromoCodeAlreadyUsed(model.PromoCode))
+                    if (promotion == null)
                     {
-                        ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
+                        ModelState.AddModelError("PromoCode", Globalisation.Dictionary.InvalidPromoCode);
                         return View(model);
                     }
                 }
@@ -380,11 +382,10 @@ namespace K9.WebApplication.Controllers
                                 // If this method returns false, then the user needs to pay for their discounted membership
                                 if (!My.MembershipService.CreateMembershipFromPromoCode(user.Id, model.PromoCode))
                                 {
-                                    var promoCode = _promoCodesRepository.Find(e => e.Code == model.PromoCode).FirstOrDefault();
                                     returnUrl = Url.Action("PurchaseStart", "Membership",
                                         new
                                         {
-                                            membershipOptionId = promoCode.MembershipOptionId,
+                                            membershipOptionId = promotion.MembershipOptionId,
                                             promoCode = model.PromoCode
                                         });
                                 };
@@ -515,13 +516,14 @@ namespace K9.WebApplication.Controllers
                     {
                         try
                         {
-                            if (_promotionService.IsPromoCodeAlreadyUsed(model.PromoCode))
+                            var promotion = _promotionService.Find(model.PromoCode);
+                            if (promotion == null)
                             {
-                                ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
+                                ModelState.AddModelError("PromoCode", Globalisation.Dictionary.InvalidPromoCode);
                             }
                             else
                             {
-                                _promotionService.UsePromoCode(model.User.Id, model.PromoCode);
+                                _promotionService.UsePromotion(model.User.Id, model.PromoCode);
                                 My.MembershipService.CreateMembershipFromPromoCode(model.User.Id, model.PromoCode);
                             }
                         }
@@ -601,7 +603,7 @@ namespace K9.WebApplication.Controllers
         {
             var model = new EmailPromoCodeViewModel
             {
-                PromoCode = ValidatePromoCode(_promoCodesRepository.Find(id))
+                Promotion = ValidateAndGetPromoCode(_promoCodesRepository.Find(id))
             };
 
             return View(model);
@@ -613,7 +615,7 @@ namespace K9.WebApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EmailPromoCode(EmailPromoCodeViewModel model)
         {
-            var promoCode = ValidatePromoCode(_promoCodesRepository.Find(model.PromoCode.Id));
+            var promoCode = ValidateAndGetPromoCode(_promoCodesRepository.Find(model.Promotion.Id));
 
             if (string.IsNullOrEmpty(model.EmailAddress))
             {
@@ -629,7 +631,7 @@ namespace K9.WebApplication.Controllers
             {
                 try
                 {
-                    _promotionService.SendRegistrationPromoCode(model);
+                    _promotionService.SendRegistrationPromotion(model);
                 }
                 catch (Exception e)
                 {
@@ -652,7 +654,7 @@ namespace K9.WebApplication.Controllers
         {
             var model = new EmailPromoCodeViewModel
             {
-                PromoCode = ValidatePromoCode(_promoCodesRepository.Find(id))
+                Promotion = ValidateAndGetPromoCode(_promoCodesRepository.Find(id))
             };
 
             return View(model);
@@ -664,7 +666,7 @@ namespace K9.WebApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EmailPromoCodeToUser(EmailPromoCodeViewModel model)
         {
-            var promoCode = ValidatePromoCode(_promoCodesRepository.Find(model.PromoCode.Id));
+            var promoCode = ValidateAndGetPromoCode(_promoCodesRepository.Find(model.Promotion.Id));
 
             if (!model.UserId.HasValue)
             {
@@ -681,7 +683,7 @@ namespace K9.WebApplication.Controllers
                 {
                     try
                     {
-                        _promotionService.SendMembershipPromoCode(model);
+                        _promotionService.SendMembershipPromotion(model);
                     }
                     catch (Exception e)
                     {
@@ -915,7 +917,7 @@ namespace K9.WebApplication.Controllers
                 catch (Exception e)
                 {
                     Logger.Error($"AccountController => VerifySixDigitCode => Error: {e.GetFullErrorMessage()}");
-                    ModelState.AddModelError("", Globalisation.Dictionary.ErrorValidatingCode);
+                    ModelState.AddModelError("", e.Message);
                     return View("AccountCreated", model);
                 }
 
@@ -938,6 +940,21 @@ namespace K9.WebApplication.Controllers
                 {
                     Logger.Error($"AccountController => VerifySixDigitCode => ActivateAccount => Error: {e.GetFullErrorMessage()}");
                     ModelState.AddModelError("", Globalisation.Dictionary.ErrorActivatingAccount);
+
+                    try
+                    {
+                        My.AccountService.UnverifyCode(
+                            model.UserId,
+                            model.Digit1,
+                            model.Digit2,
+                            model.Digit3,
+                            model.Digit4,
+                            model.Digit5,
+                            model.Digit6);
+                    }
+                    catch (Exception exception)
+                    {
+                    }
                 }
             }
 
@@ -1064,30 +1081,21 @@ namespace K9.WebApplication.Controllers
             My.UsersRepository.GetQuery($"UPDATE [webpages_Membership] SET Password = '{password}', PasswordChangedDate = GetDate() WHERE UserId = {user.Id}");
         }
 
-        private PromoCode ValidatePromoCode(PromoCode promoCode)
+        private Promotion ValidateAndGetPromoCode(Promotion promotion)
         {
-            if (promoCode == null)
+            if (promotion == null)
             {
                 ModelState.AddModelError("", "Invalid promo code");
             }
 
-            if (promoCode.UsedOn.HasValue)
-            {
-                ModelState.AddModelError("", Globalisation.Dictionary.PromoCodeInUse);
-            }
-            else if (promoCode.SentOn.HasValue)
-            {
-                ModelState.AddModelError("", $"Promo code was already sent on {promoCode.SentOn.Value.ToLongDateString()}");
-            }
-
-            var membershipOption = _membershipOptionsRepository.Find(promoCode.MembershipOptionId);
+            var membershipOption = _membershipOptionsRepository.Find(promotion.MembershipOptionId);
             if (membershipOption == null)
             {
                 ModelState.AddModelError("", "Membership Option not found");
             }
 
-            promoCode.MembershipOption = membershipOption;
-            return promoCode;
+            promotion.MembershipOption = membershipOption;
+            return promotion;
         }
 
         #endregion

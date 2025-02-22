@@ -10,13 +10,14 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
 using System.Text;
+using K9.DataAccessLaye.Attributes;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 
 namespace K9.DataAccessLayer.Models
 {
-    [AutoGenerateName]
-    [Name(ResourceType = typeof(K9.Globalisation.Dictionary), ListName = Globalisation.Strings.Names.PromoCodes, PluralName = Globalisation.Strings.Names.PromoCodes, Name = Globalisation.Strings.Names.PromoCode)]
-    public class PromoCode : ObjectBase, IValidatableObject
+    [Name(ResourceType = typeof(K9.Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Promotions, PluralName = Globalisation.Strings.Names.Promotions, Name = Globalisation.Strings.Names.Promotion)]
+    public class Promotion : ObjectBase, IValidatableObject
     {
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.CodeLabel)]
@@ -25,11 +26,7 @@ namespace K9.DataAccessLayer.Models
         [MinLength(5)]
         [Index(IsUnique = true)]
         public string Code { get; set; }
-
-        [NotMapped]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberToCreateLabel)]
-        public int NumberToCreate { get; set; }
-
+        
         [UIHint("MembershipOption")]
         [Required]
         [ForeignKey("MembershipOption")]
@@ -42,38 +39,63 @@ namespace K9.DataAccessLayer.Models
         [LinkedColumn(LinkedTableName = "MembershipOption", LinkedColumnName = "Name")]
         public string MembershipOptionName { get; set; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.SubscriptionTypeLabel)]
+        [LinkedColumn(LinkedTableName = "MembershipOption", LinkedColumnName = "Name")]
+        public string MembershipName => MembershipOption?.SubscriptionTypeNameLocal;
+
         [UIHint("Discount")]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.DiscountLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         public EDiscount Discount { get; set; }
 
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SentOnLabel)]
-        public DateTime? SentOn { get; set; }
+        private int? discountPercent;
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.UsedOnLabel)]
-        public DateTime? UsedOn { get; set; }
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountPercentLabel)]
+        public int DiscountPercent
+        {
+            get
+            {
+                if (!discountPercent.HasValue)
+                {
+                    discountPercent = Discount.GetAttribute<DiscountAttribute>().DiscountPercent;
+                }
+
+                return discountPercent.Value;
+            }
+        }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountAmountLabel)]
+        public double DiscountFactorAmount => DiscountPercent / 100;
+        
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
+        [DataType(DataType.Currency)]
+        public double SpecialPrice { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         [DataType(DataType.Currency)]
-        public double TotalPrice { get; set; }
+        public double FullPrice => MembershipOption?.Price ?? 0;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
-        public string FormattedPrice => TotalPrice == 0 ? Globalisation.Dictionary.Free : TotalPrice.ToString("C0", CultureInfo.GetCultureInfo("en-US"));
+        public string FormattedSpecialPrice => SpecialPrice == 0 ? Globalisation.Dictionary.Free : SpecialPrice.ToString("C0", CultureInfo.GetCultureInfo("en-US"));
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.SubscriptionTypeLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
+        public string FormattedFullPrice => FullPrice == 0 ? Globalisation.Dictionary.Free : FullPrice.ToString("C0", CultureInfo.GetCultureInfo("en-US"));
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubscriptionTypeLabel)]
         public string SubscriptionTypeName => MembershipOption?.SubscriptionTypeNameLocal;
-
-        public string Details => GetDetails();
-
+        
         public string PriceDescription => GetPriceDescription();
 
-        public PromoCode()
+        [NotMapped] public string PromoLink { get; set; }
+
+        public Promotion()
         {
             Code = $"9STAR{GetCode(5)}";
         }
 
         private string GetPriceDescription()
         {
-            if (TotalPrice == 0)
+            if (SpecialPrice == 0)
             {
                 return Globalisation.Dictionary.FreeOfCharge;
             }
@@ -81,48 +103,11 @@ namespace K9.DataAccessLayer.Models
             {
                 return TemplateParser.Parse(Globalisation.Dictionary.ForTheDiscountedPriceOf, new
                 {
-                    DiscountedPrice = FormattedPrice
+                    DiscountedPrice = FormattedSpecialPrice
                 });
             }
         }
-
-        private string GetDetails()
-        {
-            if (MembershipOption != null)
-            {
-                var template = "";
-                if (MembershipOption.SubscriptionType > MembershipOption.ESubscriptionType.Free)
-                {
-                    switch (MembershipOption.SubscriptionType)
-                    {
-                        case MembershipOption.ESubscriptionType.WeeklyPlatinum:
-                            template = Globalisation.Dictionary.weekly_membership_description;
-                            break;
-
-                        case MembershipOption.ESubscriptionType.MonthlyPlatinum:
-                            template = Globalisation.Dictionary.monthly_membership_description;
-                            break;
-
-                        case MembershipOption.ESubscriptionType.AnnualPlatinum:
-                            template = Globalisation.Dictionary.annual_membership_description;
-                            break;
-
-                        case MembershipOption.ESubscriptionType.LifeTimePlatinum:
-                            template = Globalisation.Dictionary.lifetime_membership_description;
-                            break;
-
-                    }
-                }
-
-                return TemplateParser.Parse(template, new
-                {
-                    FullFeatureList = Globalisation.Dictionary.full_feature_list
-                });
-            }
-
-            return string.Empty;
-        }
-
+        
         private string GetCode(int max)
         {
             var sb = new StringBuilder();
@@ -146,7 +131,7 @@ namespace K9.DataAccessLayer.Models
             {
                 yield return new ValidationResult("You must select a membership", new[] { "MembershipOptionId" });
             }
-            if (TotalPrice > 0 && Discount == 0)
+            if (SpecialPrice > 0 && Discount == 0)
             {
                 yield return new ValidationResult("Please input the discount amount", new[] { "Discount" });
             }

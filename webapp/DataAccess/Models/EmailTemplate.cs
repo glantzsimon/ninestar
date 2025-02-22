@@ -16,8 +16,11 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubjectLabel)]
         public string Subject { get; set; }
 
+        public ESystemEmailTemplate SystemEmailTemplate { get; set; }
+
         [Required]
         [AllowHtml]
+        [DataType(DataType.MultilineText)]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BodyLabel)]
         public string HtmlBody { get; set; }
 
@@ -33,9 +36,16 @@ namespace K9.DataAccessLayer.Models
         [LinkedColumn(LinkedTableName = "MembershipOption", LinkedColumnName = "Name")]
         public string MembershipOptionName { get; set; }
 
-        [UIHint("Discount")]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.DiscountLabel)]
-        public EDiscount? Discount { get; set; }
-        
+        [UIHint("Promotion")]
+        [Required]
+        [ForeignKey("Promotion")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PromotionLabel)]
+        public int? PromotionId { get; set; }
+
+        public virtual Promotion Promotion { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PromotionLabel)]
+        [LinkedColumn(LinkedTableName = "Promotion", LinkedColumnName = "Name")]
+        public string PromotionName { get; set; }
     }
 }

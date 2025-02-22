@@ -52,7 +52,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubscriptionDetailsLabel)]
         public string SubscriptionDetailsLocal => GetLocalisedPropertyValue(nameof(SubscriptionDetails));
 
-        public string GetSubscriptionDetails() => PromoCode == null
+        public string GetSubscriptionDetails() => Promotion == null
             ? SubscriptionTypeNameLocal
             : $"{SubscriptionTypeNameLocal} ({Dictionary.SpecialPromotion})";
 
@@ -74,12 +74,12 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NumberOfCompatibilityReadingsLabel)]
         public int NumberOfCompatibilityReadings { get; set; }
 
-        [NotMapped] public PromoCode PromoCode { get; set; }
+        [NotMapped] public Promotion Promotion { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubscriptionCostLabel)]
         public string FormattedPrice => Price.ToString("C0", CultureInfo.GetCultureInfo("en-US"));
 
-        public string GetDiscountText() => PromoCode != null ? $"({Dictionary.SpecialPromotion})" : "";
+        public string GetDiscountText() => Promotion != null ? $"({Dictionary.SpecialPromotion})" : "";
 
         public string CssClassName => GetCssClassName();
 

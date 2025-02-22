@@ -14,14 +14,14 @@ namespace K9.WebApplication.Services
 {
     public class UserService : BaseService, IUserService
     {
-        private readonly IRepository<UserPromoCode> _userPromoCodeRepository;
+        private readonly IRepository<UserPromotion> _userPromoCodeRepository;
         private readonly IRepository<UserConsultation> _userConsultationsRepository;
         private readonly IRepository<Consultation> _consultationsRepository;
         private readonly IConsultationService _consultationService;
         private readonly IRepository<UserMembership> _userMembershipsRepository;
         private readonly IRepository<UserOTP> _userOtpRepository;
 
-        public UserService(INineStarKiBasePackage my, IRepository<PromoCode> promoCodesRepository, IRepository<UserPromoCode> userPromoCodeRepository, IRepository<UserConsultation> userConsultationsRepository, IRepository<Consultation> consultationsRepository, IConsultationService consultationService,
+        public UserService(INineStarKiBasePackage my, IRepository<Promotion> promoCodesRepository, IRepository<UserPromotion> userPromoCodeRepository, IRepository<UserConsultation> userConsultationsRepository, IRepository<Consultation> consultationsRepository, IConsultationService consultationService,
             IRepository<UserMembership> userMembershipsRepository, IRepository<UserOTP> userOtpRepository)
             : base(my)
         {

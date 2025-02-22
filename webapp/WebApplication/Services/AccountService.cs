@@ -627,6 +627,25 @@ namespace K9.WebApplication.Services
             _otpRepository.Update(otp);
         }
 
+        public void UnverifyCode(int userId, int digit1, int digit2, int digit3, int digit4, int digit5, int digit6)
+        {
+            var sixDigitCode = int.Parse($"{digit1}{digit2}{digit3}{digit4}{digit5}{digit6}");
+            var otp = _otpRepository.Find(e => e.UserId == userId && e.SixDigitCode == sixDigitCode && !e.IsDeleted).FirstOrDefault();
+
+            if (otp == null)
+            {
+                My.Logger.Error($"Account Service => UnverifyCode => Invalid OTP. UserId: {userId}, code:{sixDigitCode}");
+            }
+
+            if (!otp.VerifiedOn.HasValue)
+            {
+                My.Logger.Error($"Account Service => UnverifyCode => OTP not verified. UserId: {userId}, code:{sixDigitCode}");
+            }
+
+            otp.VerifiedOn = null;
+            _otpRepository.Update(otp);
+        }
+
         public UserOTP GetAccountActivationOTP(Guid uniqueIdentifier)
         {
             return _otpRepository.Find(e => e.UniqueIdentifier == uniqueIdentifier).FirstOrDefault();

@@ -122,7 +122,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                 _nineStarKiPackage.Object,
                 _membershipOptionRepository.Object,
                 _userMembershipRepository.Object,
-                new Mock<IRepository<PromoCode>>().Object,
+                new Mock<IRepository<Promotion>>().Object,
                 new Mock<IRepository<Consultation>>().Object,
                 new Mock<IRepository<UserConsultation>>().Object,
                 new Mock<IConsultationService>().Object,

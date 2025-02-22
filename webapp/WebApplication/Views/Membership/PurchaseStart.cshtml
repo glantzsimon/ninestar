@@ -15,10 +15,10 @@
         @Html.Partial("_MembershipOption")
 
         @Html.Hidden(nameof(UserMembership.MembershipOptionId), Model.MembershipOption.Id)
-        @Html.Hidden(nameof(MembershipModel.PromoCode), Model.PromoCode?.Code)
+        @Html.Hidden(nameof(MembershipModel.Promotion), Model.Promotion?.Code)
         
         <hr />
-        if (Model.PromoCode == null)
+        if (Model.Promotion == null)
         {
             @Html.BootstrapActionLinkButton(Dictionary.Back, "Index", "Membership", null, "fa-chevron-left", EButtonClass.Large)
         }

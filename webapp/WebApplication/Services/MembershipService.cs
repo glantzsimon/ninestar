@@ -20,7 +20,7 @@ namespace K9.WebApplication.Services
     {
         private readonly IRepository<MembershipOption> _membershipOptionRepository;
         private readonly IRepository<UserMembership> _userMembershipRepository;
-        private readonly IRepository<PromoCode> _promoCodesRepository;
+        private readonly IRepository<Promotion> _promoCodesRepository;
         private readonly IRepository<Consultation> _consultationsRepository;
         private readonly IRepository<UserConsultation> _userConsultationsRepository;
         private readonly IConsultationService _consultationService;
@@ -28,7 +28,7 @@ namespace K9.WebApplication.Services
         private readonly IContactService _contactService;
         private readonly IEmailTemplateService _emailTemplateService;
 
-        public MembershipService(INineStarKiBasePackage my, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<PromoCode> promoCodesRepository, IRepository<Consultation> consultationsRepository, IRepository<UserConsultation> userConsultationsRepository, IConsultationService consultationService, IPromotionService promotionService, IContactService contactService,
+        public MembershipService(INineStarKiBasePackage my, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<Promotion> promoCodesRepository, IRepository<Consultation> consultationsRepository, IRepository<UserConsultation> userConsultationsRepository, IConsultationService consultationService, IPromotionService promotionService, IContactService contactService,
             IEmailTemplateService emailTemplateService)
             : base(my)
         {
@@ -176,14 +176,14 @@ namespace K9.WebApplication.Services
         public MembershipModel GetPurchaseMembershipModel(int membershipOptionId, string promoCode = "")
         {
             ValidateUpgrade(Current.UserId, membershipOptionId);
-            PromoCode promoCodeModel = null;
+            Promotion promotionModel = null;
 
             if (!string.IsNullOrEmpty(promoCode))
             {
                 try
                 {
-                    promoCodeModel = _promoCodesRepository.Find(e => e.Code == promoCode).FirstOrDefault();
-                    if (promoCodeModel == null)
+                    promotionModel = _promoCodesRepository.Find(e => e.Code == promoCode).FirstOrDefault();
+                    if (promotionModel == null)
                     {
                         var errorMessage =
                             $"MembershipService => GetPurchaseMembershipModel => Invalid Promo Code: {promoCode}";
@@ -201,16 +201,16 @@ namespace K9.WebApplication.Services
             }
 
             var membershipOption = _membershipOptionRepository.Find(membershipOptionId);
-            if (promoCodeModel != null)
+            if (promotionModel != null)
             {
-                membershipOption.Price = promoCodeModel.TotalPrice;
-                membershipOption.PromoCode = promoCodeModel;
+                membershipOption.Price = promotionModel.SpecialPrice;
+                membershipOption.Promotion = promotionModel;
             }
 
             return new MembershipModel(Current.UserId, membershipOption)
             {
                 IsSelected = true,
-                PromoCode = promoCodeModel
+                Promotion = promotionModel
             };
         }
 
@@ -247,13 +247,13 @@ namespace K9.WebApplication.Services
                 }
             }
 
-            if (promoCode.TotalPrice > 0)
+            if (promoCode.SpecialPrice > 0)
             {
                 return false;
             }
 
             CreateMembership(membershipOption.Id, user.FullName, user.EmailAddress);
-            _promotionService.UsePromoCode(user.Id, code);
+            _promotionService.UsePromotion(user.Id, code);
 
             return true;
         }
@@ -361,7 +361,7 @@ namespace K9.WebApplication.Services
             }
         }
 
-        public void AssignMembershipToUser(int membershipOptionId, int userId, PromoCode promoCode = null)
+        public void AssignMembershipToUser(int membershipOptionId, int userId, Promotion promotion = null)
         {
             try
             {

@@ -1,10 +1,12 @@
 ﻿using K9.Base.DataAccessLayer.Models;
+using K9.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Packages;
 using System;
+using System.Linq;
 
 namespace K9.WebApplication.Services
 {
@@ -23,24 +25,49 @@ namespace K9.WebApplication.Services
             return _emailTemplatesRepository.Find(id);
         }
 
-        public string ParseForUser(int emailTemplateId, string title, User user, object data)
+        public EmailTemplate FindSystemTemplate(ESystemEmailTemplate systemEmailTemplate)
+        {
+            return _emailTemplatesRepository.Find(e => e.SystemEmailTemplate == systemEmailTemplate).FirstOrDefault();
+        }
+
+        public string ParseForUser(int emailTemplateId, User user, object data)
         {
             if (user == null)
             {
                 throw new Exception("User is null");
             }
 
-            return Parse(emailTemplateId, My.UrlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }), data);
+            return Parse(emailTemplateId, user.FirstName, My.UrlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }), data);
         }
 
-        public string ParseForContact(int emailTemplateId, string title, Contact contact, object data)
+        public string ParseForUser(EmailTemplate emailTemplate, User user, object data)
+        {
+            if (user == null)
+            {
+                throw new Exception("User is null");
+            }
+
+            return Parse(emailTemplate, user.FirstName, My.UrlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }), data);
+        }
+
+        public string ParseForContact(int emailTemplateId, Contact contact, object data)
         {
             if (contact == null)
             {
                 throw new Exception("Contact is null");
             }
 
-            return Parse(emailTemplateId, My.UrlHelper.AbsoluteAction("UnsubscribeContact", "Account", new { externalId = contact.Name }), data);
+            return Parse(emailTemplateId, contact.FirstName, My.UrlHelper.AbsoluteAction("UnsubscribeContact", "Account", new { externalId = contact.Name }), data);
+        }
+
+        public string ParseForContact(EmailTemplate emailTemplate, Contact contact, object data)
+        {
+            if (contact == null)
+            {
+                throw new Exception("Contact is null");
+            }
+
+            return Parse(emailTemplate, contact.FirstName, My.UrlHelper.AbsoluteAction("UnsubscribeContact", "Account", new { externalId = contact.Name }), data);
         }
 
         public string ParseForUser(string title, string body, User user, object data)
@@ -50,7 +77,7 @@ namespace K9.WebApplication.Services
                 throw new Exception("User is null");
             }
 
-            return Parse(title, body, My.UrlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }), data);
+            return Parse(title, body, user.FirstName, My.UrlHelper.AbsoluteAction("UnsubscribeUser", "Account", new { externalId = user.Name }), data);
         }
 
         public string ParseForContact(string title, string body, Contact contact, object data)
@@ -60,10 +87,10 @@ namespace K9.WebApplication.Services
                 throw new Exception("Contact is null");
             }
 
-            return Parse(title, body, My.UrlHelper.AbsoluteAction("UnsubscribeContact", "Account", new { externalId = contact.Name }), data);
+            return Parse(title, body, contact.FirstName, My.UrlHelper.AbsoluteAction("UnsubscribeContact", "Account", new { externalId = contact.Name }), data);
         }
 
-        private string Parse(int emailTemplateId, string unsubscribeLink, object data)
+        private string Parse(int emailTemplateId, string recipientFirstName, string unsubscribeLink, object data)
         {
             var template = Find(emailTemplateId);
             if (template == null)
@@ -71,10 +98,15 @@ namespace K9.WebApplication.Services
                 throw new Exception($"Email Template {emailTemplateId} was not found");
             }
 
-            return Parse(template.Subject, TemplateParser.Parse(template.HtmlBody, data), unsubscribeLink, data);
+            return Parse(template, recipientFirstName, unsubscribeLink, data);
         }
 
-        private string Parse(string title, string body, string unsubscribeLink, object data)
+        private string Parse(EmailTemplate emailTemplate, string recipientFirstName, string unsubscribeLink, object data)
+        {
+            return Parse(emailTemplate.Subject, emailTemplate.HtmlBody, recipientFirstName, unsubscribeLink, data);
+        }
+
+        private string Parse(string title, string body, string recipientFirstName, string unsubscribeLink, object data)
         {
             if (string.IsNullOrEmpty(title))
             {
@@ -96,6 +128,7 @@ namespace K9.WebApplication.Services
 
             return TemplateParser.Parse(Globalisation.Dictionary.BaseEmailTemplate, new
             {
+                FirstName = recipientFirstName,
                 Title = title,
                 Body = body,
                 PrivacyPolicyLink = My.UrlHelper.AbsoluteAction("PrivacyPolicy",

@@ -389,7 +389,7 @@ namespace K9.WebApplication.Services
                     user.FirstName,
                     promotion.DiscountPercent,
                     promotion.FormattedFullPrice,
-                    DiscountedPrice = promotion.FormattedSpecialPrice,
+                    promotion.FormattedSpecialPrice,
                     promotion.MembershipName,
                     promotion.PromoLink
                 });

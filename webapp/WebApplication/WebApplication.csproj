@@ -314,7 +314,7 @@
     <Compile Include="Controllers\BiorhythmsController.cs" />
     <Compile Include="Controllers\MailingListContactsController.cs" />
     <Compile Include="Controllers\PredictionsController.cs" />
-    <Compile Include="Controllers\PromoCodesController.cs" />
+    <Compile Include="Controllers\PromotionsController.cs" />
     <Compile Include="Controllers\MembershipController.cs" />
     <Compile Include="Controllers\MembershipOptionsController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
@@ -1394,8 +1394,8 @@
     <Content Include="Views\UserPromoCodes\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\MembershipOption.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\MembershipOption.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\PromoCode.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\PromoCode.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Promotion.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Promotion.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\SubscriptionType.cshtml" />
     <Content Include="Views\Account\EmailPromoCode.cshtml" />
     <Content Include="Views\Account\PromoCodeEmailSent.cshtml" />

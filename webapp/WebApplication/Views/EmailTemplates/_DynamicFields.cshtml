@@ -3,11 +3,39 @@
 @model K9.WebApplication.ViewModels.EmailTemplateDynamicFieldsViewModel
 
 <div class="form-group">
-    <label for="multiSelect">Dynamic Fields:</label>
-    <select id="multiSelect" class="form-control" multiple>
+    <label for="dynamicFields">Dynamic Fields:</label>
+    <select id="dynamicFields" class="form-control" multiple>
         @foreach (var item in Model.DynamicFields)
         {
             <option value="@item">{@item}</option>
         }
     </select>
 </div>
+
+<script type="text/javascript">
+
+    document.getElementById("dynamicFields").addEventListener("click", function () {
+        let listbox = document.getElementById("listbox");
+        let selectedOptions = [...listbox.selectedOptions].map(option => option.text).join("\n");
+
+        if (selectedOptions) {
+            navigator.clipboard.writeText(selectedOptions)
+                .catch(err => console.error("Failed to copy:", err));
+        } else {
+            alert("Please select an option.");
+        }
+    });
+
+    // Enable Ctrl+C to copy selected items
+    document.getElementById("dynamicFields").addEventListener("keydown", function (event) {
+        if (event.ctrlKey && event.key === "c") {
+            let selectedOptions = [...this.selectedOptions].map(option => option.text).join("\n");
+
+            if (selectedOptions) {
+                navigator.clipboard.writeText(selectedOptions)
+                    .catch(err => console.error("Failed to copy:", err));
+            }
+        }
+    });
+
+</script>

@@ -10,11 +10,11 @@ using System.Web.Mvc;
 namespace K9.WebApplication.Controllers
 {
     [Authorize]
-    public class PromoCodesController : BaseNineStarKiController<Promotion>
+    public class PromotionsController : BaseNineStarKiController<Promotion>
     {
         private readonly IRepository<MembershipOption> _membershipOptionsRepository;
 
-        public PromoCodesController(IControllerPackage<Promotion> controllerPackage, INineStarKiPackage nineStarKiPackage, IRepository<MembershipOption> membershipOptionsRepository)
+        public PromotionsController(IControllerPackage<Promotion> controllerPackage, INineStarKiPackage nineStarKiPackage, IRepository<MembershipOption> membershipOptionsRepository)
             : base(controllerPackage, nineStarKiPackage)
         {
             _membershipOptionsRepository = membershipOptionsRepository;
@@ -51,6 +51,30 @@ namespace K9.WebApplication.Controllers
             }
 
             return View(promotion);
+        }
+
+        public JsonResult Get(int id)
+        {
+            try
+            {
+                var promotion = Repository.Find(id);
+                promotion.MembershipOption = _membershipOptionsRepository.Find(promotion.MembershipOptionId);
+
+                return Json(new
+                {
+                    success = true,
+                    data = promotion
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                Logger.Error(e.GetFullErrorMessage);
+                return Json(new
+                {
+                    success = false,
+                    error = e.GetFullErrorMessage()
+                });
+            }
         }
 
         private void Validate(Promotion promotion)

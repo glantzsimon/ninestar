@@ -1,11 +1,9 @@
-﻿using K9.DataAccessLaye.Attributes;
-using K9.DataAccessLayer.Enums;
+﻿using K9.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
-using K9.WebApplication.EmailTemplates;
 using K9.WebApplication.Packages;
 using K9.WebApplication.ViewModels;
 using NLog;
@@ -35,6 +33,11 @@ namespace K9.WebApplication.Services
             _contactService = contactService;
             _emailTemplateService = emailTemplateService;
             _emailQueueService = emailQueueService;
+        }
+
+        public Promotion Find(int id)
+        {
+            return _promoCodesRepository.Find(id);
         }
 
         public Promotion Find(string code)
@@ -274,54 +277,7 @@ namespace K9.WebApplication.Services
 #endif
         }
 
-        private Promotion CreateOrGetPromotionForMembership(EDiscount discount, string name, bool updateIfExists = false)
-        {
-            var yearlyMembershipOption = _membershipOptionsRepository
-                .Find(e => e.SubscriptionType == MembershipOption.ESubscriptionType.AnnualPlatinum).FirstOrDefault();
-
-            if (yearlyMembershipOption == null)
-            {
-                throw new Exception("Yearly Membership not found on the system");
-            }
-
-            if (discount == EDiscount.None)
-            {
-                throw new Exception($"Discount cannot be zero");
-            }
-
-            var promotion = _promoCodesRepository
-                .Find(e => e.MembershipOptionId == yearlyMembershipOption.Id &&
-                           e.Discount == discount &&
-                           e.Name == name).FirstOrDefault();
-
-            if (promotion == null)
-            {
-                promotion = new Promotion
-                {
-                    MembershipOptionId = yearlyMembershipOption.Id,
-                    Discount = discount,
-                    Name = name
-                };
-                promotion.SpecialPrice = promotion.GetSpecialPrice(yearlyMembershipOption.Price);
-
-                _promoCodesRepository.Create(promotion);
-            }
-            else if (updateIfExists)
-            {
-                promotion.SpecialPrice = promotion.GetSpecialPrice(yearlyMembershipOption.Price);
-                _promoCodesRepository.Update(promotion);
-            };
-
-            return promotion;
-        }
-
-        private void SchedulePromotionFromTemplateToUser(int userId, EmailTemplate emailTemplate, Promotion promotion,
-            TimeSpan scheduledOn)
-        {
-            SendPromotionFromTemplateToUser(userId, emailTemplate, promotion, true, scheduledOn);
-        }
-
-        private void SendPromotionFromTemplateToUser(int userId, EmailTemplate emailTemplate, Promotion promotion, bool isScheduled = false, TimeSpan? scheduledOn = null)
+        public void SendPromotionFromTemplateToUser(int userId, EmailTemplate emailTemplate, Promotion promotion, bool isScheduled = false, TimeSpan? scheduledOn = null)
         {
             if (isScheduled && scheduledOn == null)
             {
@@ -428,5 +384,51 @@ namespace K9.WebApplication.Services
             }
         }
 
+        private Promotion CreateOrGetPromotionForMembership(EDiscount discount, string name, bool updateIfExists = false)
+        {
+            var yearlyMembershipOption = _membershipOptionsRepository
+                .Find(e => e.SubscriptionType == MembershipOption.ESubscriptionType.AnnualPlatinum).FirstOrDefault();
+
+            if (yearlyMembershipOption == null)
+            {
+                throw new Exception("Yearly Membership not found on the system");
+            }
+
+            if (discount == EDiscount.None)
+            {
+                throw new Exception($"Discount cannot be zero");
+            }
+
+            var promotion = _promoCodesRepository
+                .Find(e => e.MembershipOptionId == yearlyMembershipOption.Id &&
+                           e.Discount == discount &&
+                           e.Name == name).FirstOrDefault();
+
+            if (promotion == null)
+            {
+                promotion = new Promotion
+                {
+                    MembershipOptionId = yearlyMembershipOption.Id,
+                    Discount = discount,
+                    Name = name
+                };
+                promotion.SpecialPrice = promotion.GetSpecialPrice(yearlyMembershipOption.Price);
+
+                _promoCodesRepository.Create(promotion);
+            }
+            else if (updateIfExists)
+            {
+                promotion.SpecialPrice = promotion.GetSpecialPrice(yearlyMembershipOption.Price);
+                _promoCodesRepository.Update(promotion);
+            };
+
+            return promotion;
+        }
+
+        private void SchedulePromotionFromTemplateToUser(int userId, EmailTemplate emailTemplate, Promotion promotion,
+            TimeSpan scheduledOn)
+        {
+            SendPromotionFromTemplateToUser(userId, emailTemplate, promotion, true, scheduledOn);
+        }
     }
 }

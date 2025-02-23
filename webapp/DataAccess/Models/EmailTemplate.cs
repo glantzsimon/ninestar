@@ -45,5 +45,10 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PromotionLabel)]
         [LinkedColumn(LinkedTableName = "Promotion", LinkedColumnName = "Name")]
         public string PromotionName { get; set; }
+
+        [NotMapped]
+        [UIHint("User")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SendToUser)]
+        public int? UserId { get; set; }
     }
 }

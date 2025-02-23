@@ -1,0 +1,17 @@
+﻿@using K9.Base.WebApplication.Helpers
+@model EmailTemplate
+@{
+    ViewBag.Title = Dictionary.MailingLists;
+    ViewBag.SubTitle = Dictionary.MailingListTestSucceeded;
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.Success(Dictionary.MailingListTestSucceeded)
+        <div class="text-center margin-bottom-10">
+            @Html.BootstrapBackToListButton()
+        </div>
+    }
+}

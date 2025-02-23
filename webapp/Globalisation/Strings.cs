@@ -90,6 +90,7 @@
             public const string NumberOfCreditsLeft = "NumberOfCreditsLeft";
             public const string UserDataLabel = "UserData";
             public const string PromotionLabel = "PromotionLabel";
+            public const string SendToUser = "SendToUser";
             public const string CodeLabel = "Code";
             public const string BiorhythmsLabel = "BiorhythmsLabel";
             public const string NineStarKiBiorhythmsLabel = "NineStarKiBiorhythmsLabel";

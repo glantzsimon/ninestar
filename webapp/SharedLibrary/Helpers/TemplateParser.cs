@@ -13,8 +13,10 @@ namespace K9.SharedLibrary.Helpers
 			foreach (var prop in data.GetType().GetProperties())
 			{
 				var placeHolder = GetPlaceHolder(prop.Name);
+				var doublePlaceHolder = GetDoublePlaceHolder(prop.Name);
 				var value = data.GetProperty(prop.Name)?.ToString();
 
+			    template = Regex.Replace(template, doublePlaceHolder, value ?? string.Empty);
 				template = Regex.Replace(template, placeHolder, value ?? string.Empty);
 			}
 			return template;
@@ -24,6 +26,12 @@ namespace K9.SharedLibrary.Helpers
 	    {
 	        return $"{{{fieldName}}}";
 	    }
+
+	    private static string GetDoublePlaceHolder(string fieldName)
+	    {
+	        return $"{{{{{fieldName}}}}}"; // {{FirstName}}
+	    }
+
 
 	    #endregion
 

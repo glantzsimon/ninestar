@@ -1,0 +1,12 @@
+﻿@using K9.Base.WebApplication.Helpers
+@model EmailTemplate
+@{
+    ViewBag.Title = Dictionary.MailingLists;
+    ViewBag.SubTitle = Dictionary.MailingListTestFailed;
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+@Html.Failure(Dictionary.MailingListTestFailed, ViewBag.ErrorMessage)
+
+<div class="text-center margin-bottom-10">
+    @Html.BootstrapBackToListButton()
+</div>

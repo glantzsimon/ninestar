@@ -1,0 +1,20 @@
+﻿@using K9.Base.WebApplication.Helpers
+@model EmailTemplate
+@{
+    ViewBag.Title = Dictionary.MailingLists;
+    ViewBag.SubTitle = Dictionary.SendToToUser;
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.HiddenFor(model => model.Id)
+        
+        @Html.BootstrapEditorFor(e => Model.)
+
+        <hr/>
+        @Html.BootstrapButton(K9.Globalisation.Dictionary.SendToToUser, EButtonType.Submit, "fa-save")
+        @Html.BootstrapBackToListButton()
+    }
+}

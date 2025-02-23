@@ -36,22 +36,36 @@ namespace K9.SharedLibrary.Helpers.Html
             using (var sr = new StringReader(value))
             {
                 string line;
+
                 while ((line = sr.ReadLine()) != null)
                 {
-                    // Preserve {{ and }} but replace single { and }
-                    var html = line
-                        .Replace("{{", "##OPEN##") // Temporarily mark double {{
-                        .Replace("}}", "##CLOSE##") // Temporarily mark double }}
-                        .Replace("{", "<") // Replace single {
-                        .Replace("}", ">") // Replace single }
-                        .Replace("##OPEN##", "{{") // Restore double {{
-                        .Replace("##CLOSE##", "}}"); // Restore double }}
+                    if (line.Contains("{{") || line.Contains("}}"))
+                    {
+                        // Temporarily replace double curly braces to avoid incorrect replacement
+                        line = line.Replace("{{", "##OPEN##").Replace("}}", "##CLOSE##");
+                    }
 
-                    sb.AppendLine(html);
+                    if (line.Contains("{"))
+                    {
+                        var html = line.Replace("{", "<").Replace("}", ">");
+                        // Restore double curly braces
+                        html = html.Replace("##OPEN##", "{{").Replace("##CLOSE##", "}}");
+                        sb.AppendLine(html);
+                    }
+                    else if (line.Contains("<"))
+                    {
+                        var html = line.Replace("<", "{").Replace(">", "}");
+                        sb.AppendLine(html);
+                    }
+                    else
+                    {
+                        sb.AppendLine(line);
+                    }
                 }
             }
 
             return sb.ToString();
         }
+
     }
 }

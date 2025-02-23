@@ -1,0 +1,8 @@
+﻿@using K9.Base.WebApplication.Extensions
+@using K9.SharedLibrary.Models
+@model int?
+@{
+    var mailingListItems = ViewData["MailingListListItems"] as List<ListItem>;
+}
+
+@Html.BootstrapDropdownFor(model => model, new SelectList(mailingListItems, "Id", "Name", Model))

@@ -324,6 +324,8 @@
     <Compile Include="Controllers\MailingListUsersController.cs" />
     <Compile Include="Exceptions\UpgradeNotPossibleException.cs" />
     <Compile Include="Exceptions\UserAlreadySubscribedException.cs" />
+    <Compile Include="Services\MailingListService.cs" />
+    <Compile Include="Services\IMailingListService.cs" />
     <Compile Include="StaticEmailTemplates\SecondMembershipReminderEmailTemplate.cs" />
     <Compile Include="StaticEmailTemplates\ThirdMembershipReminderEmailTemplate.cs" />
     <Compile Include="StaticEmailTemplates\FirstMembershipReminderEmailTemplate.cs" />
@@ -418,6 +420,7 @@
     <Compile Include="Services\IAccountService.cs" />
     <Compile Include="Services\IPromotionService.cs" />
     <Compile Include="Services\PromotionService.cs" />
+    <Compile Include="ViewModels\SendEmailTemplateViewModel.cs" />
     <Compile Include="ViewModels\EmailTemplateDynamicFieldsViewModel.cs" />
     <Compile Include="ViewModels\IChingViewModel.cs" />
     <Compile Include="ViewModels\AssignConsultationModel.cs" />
@@ -1542,6 +1545,11 @@
     <Content Include="Views\EmailTemplates\Index.cshtml" />
     <Content Include="Views\EmailTemplates\_DynamicFields.cshtml" />
     <Content Include="Views\Membership\AlreadySubscribed.cshtml" />
+    <Content Include="Views\EmailTemplates\SendToUser.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\MailingList.cshtml" />
+    <Content Include="Views\EmailTemplates\SendToMailingList.cshtml" />
+    <Content Include="Views\EmailTemplates\TestEmailTemplateSuccess.cshtml" />
+    <Content Include="Views\EmailTemplates\TestEmailTemplateFailure.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -90,7 +90,7 @@ namespace K9.WebApplication.Services
             return Parse(title, body, contact.FirstName, My.UrlHelper.AbsoluteAction("UnsubscribeContact", "Account", new { externalId = contact.Name }), data);
         }
 
-        private string Parse(int emailTemplateId, string recipientFirstName, string unsubscribeLink, object data)
+        public string Parse(int emailTemplateId, string recipientFirstName, string unsubscribeLink, object data)
         {
             var template = Find(emailTemplateId);
             if (template == null)

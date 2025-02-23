@@ -7106,6 +7106,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mailing List Test Failed.
+        /// </summary>
+        public static string MailingListTestFailed {
+            get {
+                return ResourceManager.GetString("MailingListTestFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mailing List Test Succeeded.
+        /// </summary>
+        public static string MailingListTestSucceeded {
+            get {
+                return ResourceManager.GetString("MailingListTestSucceeded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This has the potential to be a very harmonious combination. However, it might be better suited to friendship than romance.
         ///&lt;/h5&gt;
@@ -10862,6 +10880,33 @@ namespace K9.Globalisation {
         public static string Send {
             get {
                 return ResourceManager.GetString("Send", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send to Mailing List.
+        /// </summary>
+        public static string SendToMailingList {
+            get {
+                return ResourceManager.GetString("SendToMailingList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send to User.
+        /// </summary>
+        public static string SendToToUser {
+            get {
+                return ResourceManager.GetString("SendToToUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send to User.
+        /// </summary>
+        public static string SendToUser {
+            get {
+                return ResourceManager.GetString("SendToUser", resourceCulture);
             }
         }
         

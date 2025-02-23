@@ -14,5 +14,6 @@ namespace K9.WebApplication.Services
         string ParseForContact(EmailTemplate emailTemplate, Contact contact, object data);
         string ParseForUser(string title, string body, User user, object data);
         string ParseForContact(string title, string body, Contact contact, object data);
+        string Parse(int emailTemplateId, string recipientFirstName, string unsubscribeLink, object data);
     }
 }

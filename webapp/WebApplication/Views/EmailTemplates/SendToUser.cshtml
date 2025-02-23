@@ -10,6 +10,13 @@
     using (Html.BeginBootstrapForm())
     {
         @Html.HiddenFor(model => Model.EmailTemplate.Id)
+        @Html.HiddenFor(model => Model.UserId)
+        @Html.HiddenFor(model => Model.EmailTemplate.Name)
+        @Html.HiddenFor(model => Model.EmailTemplate.PromotionId)
+        @Html.HiddenFor(model => Model.EmailTemplate.MembershipOptionId)
+        @Html.HiddenFor(model => Model.EmailTemplate.SystemEmailTemplate)
+        @Html.HiddenFor(model => Model.EmailTemplate.Subject)
+        @Html.HiddenFor(model => Model.EmailTemplate.HtmlBody)
 
         @Html.BootstrapDisplayFor(e => Model.EmailTemplate.Subject)
         @Html.BootstrapDisplayFor(e => Model.EmailTemplate.HtmlBody)

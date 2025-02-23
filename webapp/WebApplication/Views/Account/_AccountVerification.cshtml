@@ -10,7 +10,7 @@
         @Html.HiddenFor(model => model.UserId)
         @Html.HiddenFor(model => model.UniqueIdentifier)
         @Html.HiddenFor(model => model.IsCodeResent)
-        
+
         <div class="row">
             <div class="col-sm-offset-3 col-sm-6">
                 <div class="verification-container">
@@ -41,55 +41,44 @@
 </div>
 
 <script>
-    const inputs = document.querySelectorAll(".otp-input");
-
-    inputs.forEach((input, index) => {
-        input.addEventListener("input", (e) => {
-            if (e.target.value && index < inputs.length - 1) {
-                inputs[index + 1].focus();
-            }
-        });
-
-        input.addEventListener("keydown", (e) => {
-            if (e.key === "Backspace" && !input.value && index > 0) {
-                inputs[index - 1].focus();
-            }
-        });
-    });
-
     $(function() {
-        document.addEventListener("paste", function (event) {
-            let pastedCode = event.clipboardData.getData("text");
+        $(document).on("paste", function(event) {
+            let pastedCode = (event.originalEvent.clipboardData || window.clipboardData).getData("text");
             if (pastedCode.length === 6) {
-                $("#@nameof(Model.Digit1)").val(pastedCode[0]);
-                $("#@nameof(Model.Digit2)").val(pastedCode[1]);
-                $("#@nameof(Model.Digit3)").val(pastedCode[2]);
-                $("#@nameof(Model.Digit4)").val(pastedCode[3]);
-                $("#@nameof(Model.Digit5)").val(pastedCode[4]);
+                $("#@nameof(Model.Digit1)").prop("value", pastedCode[0]);
+                $("#@nameof(Model.Digit2)").prop("value", pastedCode[1]);
+                $("#@nameof(Model.Digit3)").prop("value", pastedCode[2]);
+                $("#@nameof(Model.Digit4)").prop("value", pastedCode[3]);
+                $("#@nameof(Model.Digit5)").prop("value", pastedCode[4]);
                 $("#@nameof(Model.Digit6)").val(pastedCode[5]);
             }
         });
 
-        const inputs = document.querySelectorAll(".otp-input");
-        let $form = $(inputs[0]).closest(form);
+        // Select OTP input fields
+        let $inputs = $(".otp-input");
+        console.log("Inputs count:", $inputs.length); // Fix typo in alert (was 'lengtj')
 
-        inputs.forEach((input, index) => {
-            input.addEventListener("input", () => {
-                if (input.value.length === 1 && index < inputs.length - 1) {
-                    inputs[index + 1].focus(); // Move to next input
+        // Ensure form is correctly selected
+        let $form = $inputs.first().closest("form");
+
+        // Event listeners for OTP inputs
+        $inputs.each(function(index) {
+            $(this).on("input", function() {
+                if ($(this).val().length === 1 && index < $inputs.length - 1) {
+                    $inputs.eq(index + 1).focus(); // Move to next input
                 }
                 checkAndSubmit();
             });
 
-            input.addEventListener("keydown", (e) => {
-                if (e.key === "Backspace" && !input.value && index > 0) {
-                    inputs[index - 1].focus(); // Move to previous input on backspace
+            $(this).on("keydown", function(e) {
+                if (e.key === "Backspace" && !$(this).val() && index > 0) {
+                    $inputs.eq(index - 1).focus(); // Move to previous input on backspace
                 }
             });
         });
 
         function checkAndSubmit() {
-            const allFilled = [...inputs].every(input => input.value.length === 1);
+            let allFilled = $inputs.toArray().every(input => $(input).val().length === 1);
             if (allFilled) {
                 $form.submit();
             }

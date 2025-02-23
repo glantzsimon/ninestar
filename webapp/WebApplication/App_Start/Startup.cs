@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
 using Hangfire;
+using Hangfire.SqlServer;
 using K9.Base.DataAccessLayer.Config;
 using K9.Base.DataAccessLayer.Helpers;
 using K9.Base.DataAccessLayer.Respositories;
@@ -86,11 +87,14 @@ namespace K9.WebApplication
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
-            
+
             // Configure Hangfire to use SQL Server storage and the Autofac job activator
             GlobalConfiguration.Configuration
                 .UseAutofacActivator(container)
-                .UseSqlServerStorage("DefaultConnection"); // replace with your connection string name
+                .UseSqlServerStorage("DefaultConnection", new SqlServerStorageOptions
+                {
+                    JobExpirationCheckInterval = TimeSpan.FromMinutes(30), // Checks for expired jobs every 30 minutes
+                });
 
             app.UseHangfireDashboard("/hangfire", new DashboardOptions
             {
@@ -103,6 +107,36 @@ namespace K9.WebApplication
                 "ProcessEmailQueue",
                 service => service.ProcessQueue(),
                 Cron.MinuteInterval(10));
+
+            RecurringJob.AddOrUpdate("CleanupOldJobs", () =>
+                CleanupOldJobs(), Cron.Daily);
+        }
+
+        public static void CleanupOldJobs()
+        {
+            var monitoringApi = JobStorage.Current.GetMonitoringApi();
+
+            // Fetch first 10,000 failed jobs
+            var failedJobs = monitoringApi.FailedJobs(0, 10000);
+            foreach (var job in failedJobs)
+            {
+                var jobData = monitoringApi.JobDetails(job.Key);
+                if (jobData?.CreatedAt < DateTime.UtcNow.AddDays(-3))
+                {
+                    BackgroundJob.Delete(job.Key);
+                }
+            }
+
+            // Fetch first 10,000 deleted jobs
+            var deletedJobs = monitoringApi.DeletedJobs(0, 10000);
+            foreach (var job in deletedJobs)
+            {
+                var jobData = monitoringApi.JobDetails(job.Key);
+                if (jobData?.CreatedAt < DateTime.UtcNow.AddDays(-3))
+                {
+                    BackgroundJob.Delete(job.Key);
+                }
+            }
         }
 
         public static void RegisterStaticTypes()

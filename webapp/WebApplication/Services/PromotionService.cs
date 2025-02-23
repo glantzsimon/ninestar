@@ -78,7 +78,7 @@ namespace K9.WebApplication.Services
             {
                 throw new Exception("Promo code has already been used");
             }
-            
+
             userPromotion.UsedOn = DateTime.Now;
             _userPromotionsRepository.Update(userPromotion);
         }
@@ -237,10 +237,10 @@ namespace K9.WebApplication.Services
 
         public void SendFirstMembershipReminderToUser(int userId)
         {
-            var promoCode = CreateOrGetPromoCodeForMembership(EDiscount.FirstDiscount);
             var template = _emailTemplateService.FindSystemTemplate(ESystemEmailTemplate.FirstMembershipReminder);
+            var promotion = CreateOrGetPromotionForMembership(EDiscount.FirstDiscount, template.Name, true);
 #if DEBUG
-            SchedulePromotionFromTemplateToUser(userId, template, promoCode, TimeSpan.FromMinutes(3));
+            SchedulePromotionFromTemplateToUser(userId, template, promotion, TimeSpan.FromMinutes(3));
 #else
             SchedulePromotionFromTemplateToUser(userId, template, promoCode, TimeSpan.FromDays(3));
 #endif
@@ -248,10 +248,10 @@ namespace K9.WebApplication.Services
 
         public void SendSecondMembershipReminderToUser(int userId)
         {
-            var promoCode = CreateOrGetPromoCodeForMembership(EDiscount.SecondDiscount);
             var template = _emailTemplateService.FindSystemTemplate(ESystemEmailTemplate.SecondMembershipReminder);
+            var promotion = CreateOrGetPromotionForMembership(EDiscount.SecondDiscount, template.Name, true);
 #if DEBUG
-            SchedulePromotionFromTemplateToUser(userId, template, promoCode, TimeSpan.FromMinutes(7));
+            SchedulePromotionFromTemplateToUser(userId, template, promotion, TimeSpan.FromMinutes(7));
 #else
             SchedulePromotionFromTemplateToUser(userId, template, promoCode, TimeSpan.FromDays(7));
 #endif
@@ -259,16 +259,16 @@ namespace K9.WebApplication.Services
 
         public void SendThirdMembershipReminderToUser(int userId)
         {
-            var promoCode = CreateOrGetPromoCodeForMembership(EDiscount.ThirdDiscount);
             var template = _emailTemplateService.FindSystemTemplate(ESystemEmailTemplate.ThirdMembershipReminder);
+            var promotion = CreateOrGetPromotionForMembership(EDiscount.ThirdDiscount, template.Name, true);
 #if DEBUG
-            SchedulePromotionFromTemplateToUser(userId, template, promoCode, TimeSpan.FromMinutes(11));
+            SchedulePromotionFromTemplateToUser(userId, template, promotion, TimeSpan.FromMinutes(11));
 #else
             SchedulePromotionFromTemplateToUser(userId, template, promoCode, TimeSpan.FromDays(11));
 #endif
         }
 
-        private Promotion CreateOrGetPromoCodeForMembership(EDiscount discount)
+        private Promotion CreateOrGetPromotionForMembership(EDiscount discount, string name, bool updateIfExists = false)
         {
             var yearlyMembershipOption = _membershipOptionsRepository
                 .Find(e => e.SubscriptionType == MembershipOption.ESubscriptionType.AnnualPlatinum).FirstOrDefault();
@@ -283,24 +283,30 @@ namespace K9.WebApplication.Services
                 throw new Exception($"Discount cannot be zero");
             }
 
-            var promoCode = _promoCodesRepository
-                .Find(e => e.MembershipOptionId == yearlyMembershipOption.Id && e.Discount == discount)
-                .FirstOrDefault();
+            var promotion = _promoCodesRepository
+                .Find(e => e.MembershipOptionId == yearlyMembershipOption.Id &&
+                           e.Discount == discount &&
+                           e.Name == name).FirstOrDefault();
 
-            if (promoCode == null)
+            if (promotion == null)
             {
-                promoCode = new Promotion
+                promotion = new Promotion
                 {
                     MembershipOptionId = yearlyMembershipOption.Id,
                     Discount = discount,
+                    Name = name
                 };
-                promoCode.Name = promoCode.Code;
+                promotion.SpecialPrice = yearlyMembershipOption.Price - promotion.DiscountFactorAmount;
 
-                promoCode.SpecialPrice = yearlyMembershipOption.Price - promoCode.DiscountFactorAmount;
-                _promoCodesRepository.Create(promoCode);
+                _promoCodesRepository.Create(promotion);
             }
+            else if (updateIfExists)
+            {
+                promotion.SpecialPrice = yearlyMembershipOption.Price - promotion.DiscountFactorAmount;
+                _promoCodesRepository.Update(promotion);
+            };
 
-            return promoCode;
+            return promotion;
         }
 
         private void SchedulePromotionFromTemplateToUser(int userId, EmailTemplate emailTemplate, Promotion promotion,
@@ -407,9 +413,8 @@ namespace K9.WebApplication.Services
                         body,
                         user.EmailAddress,
                         user.FullName);
-
-                    _userPromotionsRepository.Create(userPromoCode);
                 }
+                _userPromotionsRepository.Create(userPromoCode);
             }
             catch (Exception ex)
             {

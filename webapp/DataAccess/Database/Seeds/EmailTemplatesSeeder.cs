@@ -1,7 +1,6 @@
 ﻿using K9.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Models;
 using System.Data.Entity;
-using System.Data.Entity.Migrations;
 using System.Linq;
 
 namespace K9.DataAccessLayer.Database.Seeds
@@ -22,10 +21,10 @@ namespace K9.DataAccessLayer.Database.Seeds
         private static void AddOrEditEmailTemplate(DbContext context, string subject, string body, ESystemEmailTemplate systemEmailTemplate)
         {
             var entity = context.Set<EmailTemplate>().FirstOrDefault(e => e.SystemEmailTemplate == systemEmailTemplate);
-           
+   
             if (entity == null)
             {
-                context.Set<EmailTemplate>().AddOrUpdate(new EmailTemplate
+                context.Set<EmailTemplate>().Add(new EmailTemplate
                 {
                     Name = systemEmailTemplate.ToString(),
                     SystemEmailTemplate = systemEmailTemplate,
@@ -39,8 +38,10 @@ namespace K9.DataAccessLayer.Database.Seeds
                 entity.Name = systemEmailTemplate.ToString();
                 entity.Subject = subject;
                 entity.HtmlBody = body;
-                context.Set<EmailTemplate>().AddOrUpdate(entity);
+                
+                context.Entry(entity).State = EntityState.Modified;
             }
         }
+
     }
 }

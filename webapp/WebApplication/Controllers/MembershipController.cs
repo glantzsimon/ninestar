@@ -47,8 +47,7 @@ namespace K9.WebApplication.Controllers
                 {
                     ModelState.AddModelError("", Globalisation.Dictionary.InvalidPromoCode);
                 }
-                
-                if (userPromotion.UsedOn.HasValue)
+                else if (userPromotion.UsedOn.HasValue)
                 {
                     ModelState.AddModelError("", Globalisation.Dictionary.PromoCodeInUse);
                 }

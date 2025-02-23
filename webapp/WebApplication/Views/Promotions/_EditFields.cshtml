@@ -2,8 +2,9 @@
 @model Promotion
 
 @Html.HiddenFor(model => model.Code)
-@Html.BootstrapDisplayFor(model => model.Name)
-@Html.BootstrapDisplayFor(model => model.Description)
+@Html.BootstrapDisplayFor(model => model.Code)
+@Html.BootstrapEditorFor(model => model.Name)
+@Html.BootstrapEditorFor(model => model.Description)
 @Html.BootstrapEditorFor(model => model.MembershipOptionId)
 
 <div class="row">

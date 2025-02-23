@@ -33,26 +33,21 @@ namespace K9.SharedLibrary.Helpers.Html
         {
             var sb = new StringBuilder();
 
-            using (var sr = new StringReader(value)) {
-                var line = "";
+            using (var sr = new StringReader(value))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    // Preserve {{ and }} but replace single { and }
+                    var html = line
+                        .Replace("{{", "##OPEN##") // Temporarily mark double {{
+                        .Replace("}}", "##CLOSE##") // Temporarily mark double }}
+                        .Replace("{", "<") // Replace single {
+                        .Replace("}", ">") // Replace single }
+                        .Replace("##OPEN##", "{{") // Restore double {{
+                        .Replace("##CLOSE##", "}}"); // Restore double }}
 
-                while ((line = sr.ReadLine()) != null) {
-                    if (line.Contains("{"))
-                    {
-                        var html = line.Replace("{", "<");
-                        html = html.Replace("}", ">");
-                        sb.AppendLine(html);
-                    }
-                    else if (line.Contains("<"))
-                    {
-                        var html = line.Replace("<", "{");
-                        html = html.Replace(">", "}");
-                        sb.AppendLine(html);
-                    }
-                    else
-                    {
-                        sb.AppendLine(line);
-                    }
+                    sb.AppendLine(html);
                 }
             }
 

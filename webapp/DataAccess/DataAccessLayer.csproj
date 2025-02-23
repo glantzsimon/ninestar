@@ -363,6 +363,10 @@
     <Compile Include="Migrations\202502221510094_EmailTemplateNotRequiredFields.designer.cs">
       <DependentUpon>202502221510094_EmailTemplateNotRequiredFields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202502231007240_ScheduledOn.cs" />
+    <Compile Include="Migrations\202502231007240_ScheduledOn.designer.cs">
+      <DependentUpon>202502231007240_ScheduledOn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\MailingList.cs" />
     <Compile Include="Models\EmailTemplate.cs" />
     <Compile Include="Models\EmailQueueItem.cs" />
@@ -509,6 +513,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202502221510094_EmailTemplateNotRequiredFields.resx">
       <DependentUpon>202502221510094_EmailTemplateNotRequiredFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502231007240_ScheduledOn.resx">
+      <DependentUpon>202502231007240_ScheduledOn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

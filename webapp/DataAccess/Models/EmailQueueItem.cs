@@ -56,7 +56,7 @@ namespace K9.DataAccessLayer.Models
         public string Body { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ScheduledOnLabel)]
-        public DateTime? ScheduleOn { get; set; }
+        public DateTime? ScheduledOn { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SentOnLabel)]
         public DateTime? SentOn { get; set; }

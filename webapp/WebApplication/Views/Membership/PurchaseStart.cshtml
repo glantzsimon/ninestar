@@ -15,7 +15,7 @@
         @Html.Partial("_MembershipOption")
 
         @Html.Hidden(nameof(UserMembership.MembershipOptionId), Model.MembershipOption.Id)
-        @Html.Hidden(nameof(MembershipModel.Promotion), Model.Promotion?.Code)
+        @Html.Hidden("promoCode", Model.Promotion?.Code)
         
         <hr />
         if (Model.Promotion == null)

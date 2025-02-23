@@ -322,6 +322,8 @@
     <Compile Include="Controllers\UserPromoCodesController.cs" />
     <Compile Include="Controllers\UserMembershipsController.cs" />
     <Compile Include="Controllers\MailingListUsersController.cs" />
+    <Compile Include="Exceptions\UpgradeNotPossibleException.cs" />
+    <Compile Include="Exceptions\UserAlreadySubscribedException.cs" />
     <Compile Include="StaticEmailTemplates\SecondMembershipReminderEmailTemplate.cs" />
     <Compile Include="StaticEmailTemplates\ThirdMembershipReminderEmailTemplate.cs" />
     <Compile Include="StaticEmailTemplates\FirstMembershipReminderEmailTemplate.cs" />

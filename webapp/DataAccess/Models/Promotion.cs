@@ -65,7 +65,7 @@ namespace K9.DataAccessLayer.Models
         }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountAmountLabel)]
-        public double DiscountFactorAmount => DiscountPercent / 100;
+        public double DiscountFactorAmount => (double)DiscountPercent / 100f;
         
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         [DataType(DataType.Currency)]
@@ -91,6 +91,11 @@ namespace K9.DataAccessLayer.Models
         public Promotion()
         {
             Code = $"9STAR{GetCode(5)}";
+        }
+
+        public double GetSpecialPrice(double price)
+        {
+            return price - (price * DiscountFactorAmount);
         }
 
         private string GetPriceDescription()

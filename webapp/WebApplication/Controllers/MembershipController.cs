@@ -1,5 +1,6 @@
 ﻿using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Extensions;
+using K9.WebApplication.Exceptions;
 using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
@@ -56,8 +57,12 @@ namespace K9.WebApplication.Controllers
             try
             {
                 var model = My.MembershipService.GetPurchaseMembershipModel(membershipOptionId, promoCode);
-                model.Promotion = promotion;
                 return View(model);
+            }
+            catch (UserAlreadySubscribedException e)
+            {
+                ModelState.AddModelError("", e.Message);
+                return View(new MembershipModel(Current.UserId, null));
             }
             catch (Exception e)
             {

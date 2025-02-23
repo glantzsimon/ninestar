@@ -5,6 +5,7 @@ using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Exceptions;
 using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
@@ -12,7 +13,6 @@ using K9.WebApplication.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Hangfire;
 
 namespace K9.WebApplication.Services
 {
@@ -20,7 +20,7 @@ namespace K9.WebApplication.Services
     {
         private readonly IRepository<MembershipOption> _membershipOptionRepository;
         private readonly IRepository<UserMembership> _userMembershipRepository;
-        private readonly IRepository<Promotion> _promoCodesRepository;
+        private readonly IRepository<Promotion> _promotionsRepository;
         private readonly IRepository<Consultation> _consultationsRepository;
         private readonly IRepository<UserConsultation> _userConsultationsRepository;
         private readonly IConsultationService _consultationService;
@@ -28,13 +28,13 @@ namespace K9.WebApplication.Services
         private readonly IContactService _contactService;
         private readonly IEmailTemplateService _emailTemplateService;
 
-        public MembershipService(INineStarKiBasePackage my, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<Promotion> promoCodesRepository, IRepository<Consultation> consultationsRepository, IRepository<UserConsultation> userConsultationsRepository, IConsultationService consultationService, IPromotionService promotionService, IContactService contactService,
+        public MembershipService(INineStarKiBasePackage my, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<Promotion> promotionsRepository, IRepository<Consultation> consultationsRepository, IRepository<UserConsultation> userConsultationsRepository, IConsultationService consultationService, IPromotionService promotionService, IContactService contactService,
             IEmailTemplateService emailTemplateService)
             : base(my)
         {
             _membershipOptionRepository = membershipOptionRepository;
             _userMembershipRepository = userMembershipRepository;
-            _promoCodesRepository = promoCodesRepository;
+            _promotionsRepository = promotionsRepository;
             _consultationsRepository = consultationsRepository;
             _userConsultationsRepository = userConsultationsRepository;
             _consultationService = consultationService;
@@ -163,13 +163,13 @@ namespace K9.WebApplication.Services
             var activeUserMembership = GetActiveUserMembership(userId);
             if (activeUserMembership.MembershipOptionId == membershipOptionId)
             {
-                throw new Exception(Dictionary.PurchaseMembershipErrorAlreadySubscribed);
+                throw new UserAlreadySubscribedException();
             }
 
             var membershipOption = _membershipOptionRepository.Find(membershipOptionId);
             if (!activeUserMembership.MembershipOption.CanUpgradeTo(membershipOption))
             {
-                throw new Exception(Dictionary.CannotSwitchMembershipError);
+                throw new UpgradeNotPossibleException();
             }
         }
 
@@ -182,7 +182,7 @@ namespace K9.WebApplication.Services
             {
                 try
                 {
-                    promotionModel = _promoCodesRepository.Find(e => e.Code == promoCode).FirstOrDefault();
+                    promotionModel = _promotionsRepository.Find(e => e.Code == promoCode).FirstOrDefault();
                     if (promotionModel == null)
                     {
                         var errorMessage =
@@ -203,32 +203,30 @@ namespace K9.WebApplication.Services
             var membershipOption = _membershipOptionRepository.Find(membershipOptionId);
             if (promotionModel != null)
             {
-                membershipOption.Price = promotionModel.SpecialPrice;
+                promotionModel.MembershipOption = membershipOption;
                 membershipOption.Promotion = promotionModel;
             }
 
-            return new MembershipModel(Current.UserId, membershipOption)
+            return new MembershipModel(Current.UserId, membershipOption, null, promotionModel)
             {
                 IsSelected = true,
-                Promotion = promotionModel
             };
         }
 
         public bool CreateMembershipFromPromoCode(int userId, string code)
         {
-            var promoCode = _promoCodesRepository.Find(e => e.Code == code).FirstOrDefault();
-
-            if (promoCode == null)
+            var promotion = _promotionsRepository.Find(e => e.Code == code).FirstOrDefault();
+            if (promotion == null)
             {
                 My.Logger.Error($"MembershipService => ProcessPurchaseWithPromoCode => Invalid Promo Code");
                 throw new Exception("Invalid promo code");
             }
 
-            var membershipOption = _membershipOptionRepository.Find(e => e.Id == promoCode.MembershipOptionId).FirstOrDefault();
+            var membershipOption = _membershipOptionRepository.Find(e => e.Id == promotion.MembershipOptionId).FirstOrDefault();
             if (membershipOption == null)
             {
-                My.Logger.Error($"MembershipService => ProcessPurchaseWithPromoCode => No MembershipOption of type {promoCode.SubscriptionTypeName} found");
-                throw new Exception($"No Membership Option of type {promoCode.SubscriptionTypeName} found");
+                My.Logger.Error($"MembershipService => ProcessPurchaseWithPromoCode => No MembershipOption of type {promotion.SubscriptionTypeName} found");
+                throw new Exception($"No Membership Option of type {promotion.SubscriptionTypeName} found");
             }
 
             var activeMembership = GetActiveUserMembership(userId);
@@ -247,7 +245,8 @@ namespace K9.WebApplication.Services
                 }
             }
 
-            if (promoCode.SpecialPrice > 0)
+            // If they have to pay something, return false, which redirects them to the payment page
+            if (promotion.SpecialPrice > 0)
             {
                 return false;
             }
@@ -520,6 +519,18 @@ namespace K9.WebApplication.Services
         private void SendEmailToUser(UserMembership userMembership)
         {
             var user = My.UsersRepository.Find(userMembership.UserId);
+            var userPromotions = _promotionService.ListForUser(userMembership.UserId)
+                .Where(e => !e.UsedOn.HasValue)
+                .Select(e => e.PromotionId)
+                .ToList();
+            var promotion = _promotionsRepository.Find(e =>
+                    userPromotions.Contains(e.Id) && e.MembershipOptionId == userMembership.MembershipOptionId)
+                .FirstOrDefault();
+            if (promotion != null)
+            {
+                promotion.MembershipOption = userMembership.MembershipOption;
+            }
+
             var title = TemplateParser.Parse(Dictionary.ThankyouForSubscriptionEmailTitle, new
             {
                 SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal
@@ -532,7 +543,7 @@ namespace K9.WebApplication.Services
                 {
                     CustomerName = user.FirstName,
                     SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal,
-                    TotalPrice = userMembership.MembershipOption.FormattedPrice,
+                    TotalPrice = promotion != null ? promotion.FormattedSpecialPrice : userMembership.MembershipOption.FormattedPrice,
                     EndsOn = userMembership.EndsOn.ToLongDateString(),
                 });
 

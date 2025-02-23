@@ -26,14 +26,23 @@ namespace K9.WebApplication.Helpers
 
         public string GetAllDataSetsJson()
         {
-            var jsonDictionary = _datasets.Collection.Distinct()
-                .Where(e => e.Key != null && e.Value != null)
-                .ToDictionary(
-                kvp => kvp.Key.Name,
-                kvp => kvp.Value
-            );
+            try
+            {
+                var jsonDictionary = _datasets.Collection
+                    .Where(e => e.Key != null && e.Value != null)
+                    .GroupBy(kvp => kvp.Key.Name)
+                    .ToDictionary(
+                        g => g.Key,
+                        g => g.First().Value
+                    );
 
-            return JsonConvert.SerializeObject(jsonDictionary);
+                return JsonConvert.SerializeObject(jsonDictionary);
+            }
+            catch (Exception e)
+            {
+            }
+
+            return "[]";
         }
 
         public List<ListItem> GetDataSet<T>(bool refresh = false, string nameExpression = "Name", string valueExpression = "Name", bool includeDeleted = false, Type resourceType = null) where T : class, IObjectBase

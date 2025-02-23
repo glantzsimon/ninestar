@@ -9,7 +9,7 @@ namespace K9.WebApplication.Models
             MembershipOption = membershipOption;
             ActiveUserMembership = activeUserMembership;
             UserId = userId;
-            Promotion = Promotion;
+            Promotion = promotion;
             
             if (MembershipOption != null)
             {
@@ -30,7 +30,7 @@ namespace K9.WebApplication.Models
         public bool IsSelectable { get; set; }
         public bool IsSubscribed { get; set; }
 
-        public double SubscriptionPrice => MembershipOption.PriceIncludingDiscountForRemainingPreviousSubscription;
+        public double SubscriptionPrice => MembershipOption.Price;
 
         public string MembershipDisplayCssClass => IsSelected ? "membership-selected" : IsUpgrade ? "membership-upgrade" : "";
 

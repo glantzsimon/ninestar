@@ -382,6 +382,7 @@ namespace K9.WebApplication.Controllers
                                 // If this method returns false, then the user needs to pay for their discounted membership
                                 if (!My.MembershipService.CreateMembershipFromPromoCode(user.Id, model.PromoCode))
                                 {
+                                    _promotionService.UsePromotion(user.Id, model.PromoCode);
                                     returnUrl = Url.Action("PurchaseStart", "Membership",
                                         new
                                         {

@@ -44,6 +44,7 @@ namespace K9.WebApplication.Services
                 {
                     model.FirstName,
                     ActivationCode = sixDigitCode,
+                    AccountActivationUrl = My.UrlHelper.AbsoluteAction("AccountCreated", "Account", new { uniqueIdentifier = user.Name })
                 });
 
             try

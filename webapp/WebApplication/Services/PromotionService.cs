@@ -10,6 +10,7 @@ using K9.WebApplication.Packages;
 using K9.WebApplication.ViewModels;
 using NLog;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace K9.WebApplication.Services
@@ -45,6 +46,11 @@ namespace K9.WebApplication.Services
         {
             var promotion = Find(code);
             return _userPromotionsRepository.Find(e => e.PromotionId == promotion.Id && e.UserId == userId).FirstOrDefault();
+        }
+
+        public List<UserPromotion> ListForUser(int userId)
+        {
+            return _userPromotionsRepository.Find(e => e.UserId == userId).ToList();
         }
 
         public bool IsPromotionAlreadyUsed(string code, int userId)
@@ -296,13 +302,13 @@ namespace K9.WebApplication.Services
                     Discount = discount,
                     Name = name
                 };
-                promotion.SpecialPrice = yearlyMembershipOption.Price - promotion.DiscountFactorAmount;
+                promotion.SpecialPrice = promotion.GetSpecialPrice(yearlyMembershipOption.Price);
 
                 _promoCodesRepository.Create(promotion);
             }
             else if (updateIfExists)
             {
-                promotion.SpecialPrice = yearlyMembershipOption.Price - promotion.DiscountFactorAmount;
+                promotion.SpecialPrice = promotion.GetSpecialPrice(yearlyMembershipOption.Price);
                 _promoCodesRepository.Update(promotion);
             };
 

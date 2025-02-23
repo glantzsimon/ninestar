@@ -77,7 +77,7 @@ namespace K9.WebApplication.Services
             var now = DateTime.Now;
             var emailsToSend = _emailQueueItemsRepository.Find(e =>
                     !e.SentOn.HasValue &&
-                    ((e.ScheduleOn.HasValue && e.ScheduleOn.Value <= now) || !e.ScheduleOn.HasValue))
+                    ((e.ScheduledOn.HasValue && e.ScheduledOn.Value <= now) || !e.ScheduledOn.HasValue))
                 .OrderBy(e => e.Id)
                 .Take(_defaultConfig.EmailQueueMaxBatchSize)
                 .Select(e =>
@@ -196,7 +196,7 @@ namespace K9.WebApplication.Services
                 EmailTemplateId = emailTemplateId,
                 Subject = subject,
                 Body = body,
-                ScheduleOn = scheduledOn.HasValue ? DateTime.Now.Add(scheduledOn.Value) : (DateTime?)null
+                ScheduledOn = scheduledOn.HasValue ? DateTime.Now.Add(scheduledOn.Value) : (DateTime?)null
             });
         }
 

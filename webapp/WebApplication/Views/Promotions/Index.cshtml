@@ -7,13 +7,15 @@
 }
 @Html.BootstrapTable(new DataTableOptions<Promotion>
 {
+    Controller = "Promotions",
+    Action = "List",
     VisibleColumns = new List<string>
     {
         "Code",
         "MembershipOptionName",
-        "TotalPrice",
-        "SentOn",
-        "UsedOn"
+        "Discount",
+        "DiscountPercent",
+        "SpecialPrice"
     },
     CustomButtons = new List<IButton>
     {

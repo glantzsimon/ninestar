@@ -61,8 +61,7 @@ namespace K9.WebApplication.Controllers
             }
             catch (UserAlreadySubscribedException e)
             {
-                ModelState.AddModelError("", e.Message);
-                return View(new MembershipModel(Current.UserId, null));
+                return View("AlreadySubscribed");
             }
             catch (Exception e)
             {

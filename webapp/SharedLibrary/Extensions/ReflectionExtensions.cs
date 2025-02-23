@@ -49,31 +49,26 @@ namespace K9.SharedLibrary.Extensions
             return (from prop in item.GetType().GetProperties() let attributes = prop.GetCustomAttributes(attributeType, true) where attributes.Any() select prop).ToList();
         }
 
-        public static Dictionary<T, PropertyInfo> GetPropertiesAndAttributesWithAttribute<T>(this IEnumerable<PropertyInfo> propertyInfos) where T : Attribute
+        public static Dictionary<PropertyInfo, T> GetPropertiesAndAttributesWithAttribute<T>(this IEnumerable<PropertyInfo> propertyInfos) 
+            where T : Attribute
         {
-            var dictionary = new Dictionary<T, PropertyInfo>();
-            propertyInfos.Select(p =>
-            {
-                var a = p.GetCustomAttributes(typeof(T), true).FirstOrDefault() as T;
-                return new
+            return propertyInfos
+                .Select(p => new
                 {
                     Property = p,
-                    Attribute = a
-                };
-            }).Where(x => x.Attribute != null)
-            .ForEach(_ =>
-            {
-                dictionary.Add(_.Attribute, _.Property);
-            });
-            return dictionary;
+                    Attribute = p.GetCustomAttributes(typeof(T), true).FirstOrDefault() as T
+                })
+                .Where(x => x.Attribute != null)
+                .ToDictionary(x => x.Property, x => x.Attribute);
         }
 
-        public static Dictionary<T, PropertyInfo> GetPropertiesAndAttributesWithAttribute<T>(this Type type) where T : Attribute
+
+        public static Dictionary<PropertyInfo, T> GetPropertiesAndAttributesWithAttribute<T>(this Type type) where T : Attribute
         {
             return type.GetProperties().GetPropertiesAndAttributesWithAttribute<T>();
         }
 
-        public static Dictionary<T, PropertyInfo> GetPropertiesAndAttributesWithAttribute<T>(this Object item) where T : Attribute
+        public static Dictionary<PropertyInfo, T> GetPropertiesAndAttributesWithAttribute<T>(this Object item) where T : Attribute
         {
             return item.GetType().GetProperties().GetPropertiesAndAttributesWithAttribute<T>();
         }

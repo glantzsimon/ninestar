@@ -1420,7 +1420,8 @@ namespace K9.Globalisation {
         ///&lt;p&gt;Thank you for registering with 9 Star Ki Astrology. Your six-digit activation code is:&lt;/p&gt;
         ///&lt;p style=&quot;color: #337ab7; font-size: 22px;&quot;&gt;
         ///    &lt;strong&gt;{ActivationCode}&lt;/strong&gt;
-        ///&lt;/p&gt;.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;If you closed the Account Activation page, simply enter the code &lt;a href=&quot;{AccountActivationUrl}&quot;&gt;here&lt;/a&gt; to activate your account.&lt;/p&gt;.
         /// </summary>
         public static string AccountActivationEmail {
             get {
@@ -1574,6 +1575,15 @@ namespace K9.Globalisation {
         public static string AllowMarketingEmails {
             get {
                 return ResourceManager.GetString("AllowMarketingEmails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Membership Already Active.
+        /// </summary>
+        public static string AlreadySubscribed {
+            get {
+                return ResourceManager.GetString("AlreadySubscribed", resourceCulture);
             }
         }
         
@@ -5132,8 +5142,8 @@ namespace K9.Globalisation {
         ///    Ever felt you&apos;re capable of more but need clarity and direction or wanted deeper insights into yourself, your relationships, and life&apos;s cycles? 9 Star Ki Astrology helps you unlock your full potential by revealing your unique energy blueprint.
         ///&lt;/p&gt;
         ///&lt;p&gt;We&apos;d love to welcome you with a special gift!&lt;/p&gt;
-        ///&lt;p&gt;&lt;strong&gt;Get {DiscountPercent}% off — pay only {FormattedSpecialPrice} instead of {FormattedFullPrice} for a full {MembershipOptionName}!&lt;/strong&gt;&lt;/p&gt;
-        ///&lt;p&gt;With your {Memb [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;&lt;strong&gt;Get {DiscountPercent}% off — pay only {FormattedSpecialPrice} instead of {FormattedFullPrice} for a full {MembershipName}!&lt;/strong&gt;&lt;/p&gt;
+        ///&lt;p&gt;With your {Membership [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FirstMembershipReminderEmail {
             get {
@@ -12839,7 +12849,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unlock Your Potential – {DiscountPercent}% Off Your Yearly Membership!.
+        ///   Looks up a localized string similar to Third Email Unlock Your Potential – {DiscountPercent}% Off Your Yearly Membership!.
         /// </summary>
         public static string ThirdMembershipReminderSubject {
             get {

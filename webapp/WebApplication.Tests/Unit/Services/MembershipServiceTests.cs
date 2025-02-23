@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using K9.WebApplication.Exceptions;
 using Xunit;
 
 namespace K9.WebApplication.Tests.Unit.Services
@@ -342,8 +343,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
                 .Returns(userMembershipModels);
 
-
-            var ex = Assert.Throws<Exception>(() => _membershipservice.GetSwitchMembershipModel(_standardMonthlyMembership.Id));
+            var ex = Assert.Throws<UserAlreadySubscribedException>(() => _membershipservice.GetSwitchMembershipModel(_standardMonthlyMembership.Id));
             Assert.Equal(Globalisation.Dictionary.SwitchMembershipErrorAlreadySubscribed, ex.Message);
         }
 
@@ -382,7 +382,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                 .Returns(userMembershipModels);
 
 
-            var ex = Assert.Throws<Exception>(() => _membershipservice.GetSwitchMembershipModel(_standardYearlyMembership.Id));
+            var ex = Assert.Throws<UserAlreadySubscribedException>(() => _membershipservice.GetSwitchMembershipModel(_standardYearlyMembership.Id));
             Assert.Equal(Globalisation.Dictionary.CannotSwitchMembershipError, ex.Message);
         }
 
@@ -435,7 +435,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
                 .Returns(userMembershipModels);
 
-            var ex = Assert.Throws<Exception>(() => _membershipservice.GetPurchaseMembershipModel(_standardYearlyMembership.Id));
+            var ex = Assert.Throws<UserAlreadySubscribedException>(() => _membershipservice.GetPurchaseMembershipModel(_standardYearlyMembership.Id));
             Assert.Equal(Globalisation.Dictionary.PurchaseMembershipErrorAlreadySubscribed, ex.Message);
         }
 

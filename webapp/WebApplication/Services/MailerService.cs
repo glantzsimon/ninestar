@@ -36,40 +36,12 @@ namespace K9.WebApplication.Services
                 throw new NotFoundException();
             }
             var systemUser = My.UsersRepository.Find(e => e.Username == "SYSTEM").FirstOrDefault();
-            SendEmailTemplateToUser(emailTemplate.Id, systemUser);
+            SendEmailTemplateToUser(emailTemplate.Id, systemUser, true);
         }
 
         public void SendEmailTemplateToUser(int id, User user)
         {
-            try
-            {
-                var emailTemplate = _emailTemplateService.Find(id);
-                if (emailTemplate == null)
-                {
-                    My.Logger.Error($"MailerService => SendEmailTemplateToUser => Email Template {id} not found");
-                    throw new NotFoundException();
-                }
-
-                if (emailTemplate.PromotionId.HasValue)
-                {
-                    var promotion = _promotionService.Find(emailTemplate.PromotionId.Value);
-                    _promotionService.SendPromotionFromTemplateToUser(user.Id, emailTemplate, promotion);
-                }
-                else
-                {
-                    var parsedTemplate = _emailTemplateService.Parse(
-                        emailTemplate.Id,
-                        user.FirstName,
-                        My.UrlHelper.AbsoluteAction("UnsubscribeUser", "UsersController", new { externalId = user.Name }), null);
-
-                    _emailQueueService.AddEmailToQueueForUser(emailTemplate.Id, user.Id, emailTemplate.Subject, parsedTemplate, EEmailType.General, TimeSpan.FromSeconds(1));
-                }
-            }
-            catch (Exception e)
-            {
-                My.Logger.Error($"MailerService => SendEmailTemplateToUser => Error: {e.GetFullErrorMessage()}");
-                throw;
-            }
+            SendEmailTemplateToUser(id, user, false);
         }
 
         public void SendEmailTemplateToUsers(int id, List<User> users)
@@ -135,5 +107,37 @@ namespace K9.WebApplication.Services
             }
         }
 
+        private void SendEmailTemplateToUser(int id, User user, bool isTest)
+        {
+            try
+            {
+                var emailTemplate = _emailTemplateService.Find(id);
+                if (emailTemplate == null)
+                {
+                    My.Logger.Error($"MailerService => SendEmailTemplateToUser => Email Template {id} not found");
+                    throw new NotFoundException();
+                }
+
+                if (emailTemplate.PromotionId.HasValue)
+                {
+                    var promotion = _promotionService.Find(emailTemplate.PromotionId.Value);
+                    _promotionService.SendPromotionFromTemplateToUser(user.Id, emailTemplate, promotion, true, TimeSpan.FromSeconds(1), isTest);
+                }
+                else
+                {
+                    var parsedTemplate = _emailTemplateService.Parse(
+                        emailTemplate.Id,
+                        user.FirstName,
+                        My.UrlHelper.AbsoluteAction("UnsubscribeUser", "UsersController", new { externalId = user.Name }), null);
+
+                    _emailQueueService.AddEmailToQueueForUser(emailTemplate.Id, user.Id, emailTemplate.Subject, parsedTemplate, EEmailType.General, TimeSpan.FromSeconds(1));
+                }
+            }
+            catch (Exception e)
+            {
+                My.Logger.Error($"MailerService => SendEmailTemplateToUser => Error: {e.GetFullErrorMessage()}");
+                throw;
+            }
+        }
     }
 }

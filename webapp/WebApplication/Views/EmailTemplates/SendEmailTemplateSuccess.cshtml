@@ -1,17 +1,18 @@
 ﻿@using K9.Base.WebApplication.Helpers
-@model EmailTemplate
+@model K9.WebApplication.ViewModels.SendEmailTemplateViewModel
 @{
     ViewBag.Title = Dictionary.MailingLists;
     ViewBag.SubTitle = Dictionary.EmailTemplateSentSuccessfully;
+    ViewBag.TitleTag = "text-center";
     Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
-@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-    using (Html.BeginBootstrapForm())
-    {
-        @Html.Success(Dictionary.EmailTemplateSentSuccessfully)
-        <div class="text-center margin-bottom-10">
-            @Html.BootstrapBackToListButton()
-        </div>
-    }
-}
+
+<div class="margin-bottom-10">
+    @Html.Success(Dictionary.EmailTemplateSentSuccessfully)
+</div>
+
+<hr />
+<div class="text-center margin-bottom-10">
+    @Html.BootstrapBackToListButton()
+</div>
+

@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using K9.DataAccessLayer.Models;
+﻿using K9.DataAccessLayer.Models;
 using K9.WebApplication.ViewModels;
+using System;
+using System.Collections.Generic;
 
 namespace K9.WebApplication.Services
 {
@@ -19,6 +19,6 @@ namespace K9.WebApplication.Services
         void SendSecondMembershipReminderToUser(int userId);
         void SendThirdMembershipReminderToUser(int userId);
         void SendPromotionFromTemplateToUser(int userId, EmailTemplate emailTemplate, Promotion promotion,
-            bool isScheduled = false, TimeSpan? scheduledOn = null);
+            bool isScheduled = false, TimeSpan? scheduledOn = null, bool isTest = false);
     }
 }

@@ -4,10 +4,11 @@
 <div class="text-center">
     @if (Model.AlertType != EAlertType.Unspecified)
     {
-        <img alt="@Model.AlertType.ToString()" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/@Model.GetAlertImage().ToLower()"/>
+        <img alt="@Model.AlertType.ToString()" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/@Model.GetAlertImage().ToLower()" />
     }
 
-    <h3><strong>@MvcHtmlString.Create(@Model.Message)</strong>
+    <h3 style="margin-top: 20px !Important;">
+        <strong>@MvcHtmlString.Create(@Model.Message)</strong>
     </h3>
 
     @if (!string.IsNullOrEmpty(Model.OtherMessage))

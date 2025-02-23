@@ -277,7 +277,7 @@ namespace K9.WebApplication.Services
 #endif
         }
 
-        public void SendPromotionFromTemplateToUser(int userId, EmailTemplate emailTemplate, Promotion promotion, bool isScheduled = false, TimeSpan? scheduledOn = null)
+        public void SendPromotionFromTemplateToUser(int userId, EmailTemplate emailTemplate, Promotion promotion, bool isScheduled = false, TimeSpan? scheduledOn = null, bool isTest = false)
         {
             if (isScheduled && scheduledOn == null)
             {
@@ -309,7 +309,7 @@ namespace K9.WebApplication.Services
             var userMembershipOptions =
                 _membershipOptionsRepository.Find(e => activeUserMembershipIds.Contains(e.Id)).ToList();
 
-            if (userMembershipOptions.Any(e => e.SubscriptionType >= MembershipOption.ESubscriptionType.Free))
+            if (!isTest && userMembershipOptions.Any(e => e.SubscriptionType >= MembershipOption.ESubscriptionType.Free))
             {
                 // User is already signed up
                 var errorMessage = $"PromoCodeService => SendMembershipReminderToUser => User is already signed up";
@@ -320,13 +320,13 @@ namespace K9.WebApplication.Services
             var userPromoCode = FindForUser(promotion.Code, userId);
             if (userPromoCode != null)
             {
-                if (userPromoCode.UsedOn.HasValue)
+                if (!isTest && userPromoCode.UsedOn.HasValue)
                 {
                     throw new Exception($"PromoCodeService => SendPromotionFromTemplateToUser => Promotion {promotion.Code} was already used on {userPromoCode.UsedOn.Value}");
                 }
                 else
                 {
-                    if (userPromoCode.SentOn >= DateTime.Today.Subtract(TimeSpan.FromDays(90)))
+                    if (!isTest && userPromoCode.SentOn >= DateTime.Today.Subtract(TimeSpan.FromDays(90)))
                     {
                         throw new Exception($"PromoCodeService => SendPromotionFromTemplateToUser => PromoCode {promotion.Code} has already been sent to user {userId} in the last 90 days");
                     }

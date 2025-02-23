@@ -80,6 +80,7 @@ namespace K9.WebApplication
             builder.RegisterType<EmailQueueService>().As<IEmailQueueService>().InstancePerLifetimeScope();
             builder.RegisterType<EmailTemplateService>().As<IEmailTemplateService>().InstancePerLifetimeScope();
             builder.RegisterType<PromotionService>().As<IPromotionService>().InstancePerLifetimeScope();
+            builder.RegisterType<MailingListService>().As<IMailingListService>().InstancePerLifetimeScope();
 
             RegisterConfiguration(builder);
 

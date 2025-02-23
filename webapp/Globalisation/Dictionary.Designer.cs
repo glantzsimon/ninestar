@@ -4457,6 +4457,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email Template Failed ot Send.
+        /// </summary>
+        public static string EmailTemplateSendFailed {
+            get {
+                return ResourceManager.GetString("EmailTemplateSendFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email Template Sent Successfully.
+        /// </summary>
+        public static string EmailTemplateSentSuccessfully {
+            get {
+                return ResourceManager.GetString("EmailTemplateSentSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thank you for your email.
         /// </summary>
         public static string EmailThankYouTitle {
@@ -7102,24 +7120,6 @@ namespace K9.Globalisation {
         public static string MailingLists {
             get {
                 return ResourceManager.GetString("MailingLists", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Mailing List Test Failed.
-        /// </summary>
-        public static string MailingListTestFailed {
-            get {
-                return ResourceManager.GetString("MailingListTestFailed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Mailing List Test Succeeded.
-        /// </summary>
-        public static string MailingListTestSucceeded {
-            get {
-                return ResourceManager.GetString("MailingListTestSucceeded", resourceCulture);
             }
         }
         
@@ -12287,6 +12287,15 @@ namespace K9.Globalisation {
         public static string TermsOfServiceTitle {
             get {
                 return ResourceManager.GetString("TermsOfServiceTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Test.
+        /// </summary>
+        public static string Test {
+            get {
+                return ResourceManager.GetString("Test", resourceCulture);
             }
         }
         

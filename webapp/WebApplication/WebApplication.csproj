@@ -323,7 +323,10 @@
     <Compile Include="Controllers\UserMembershipsController.cs" />
     <Compile Include="Controllers\MailingListUsersController.cs" />
     <Compile Include="Exceptions\UpgradeNotPossibleException.cs" />
+    <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Exceptions\UserAlreadySubscribedException.cs" />
+    <Compile Include="Services\IMailerService.cs" />
+    <Compile Include="Services\MailerService.cs" />
     <Compile Include="Services\MailingListService.cs" />
     <Compile Include="Services\IMailingListService.cs" />
     <Compile Include="StaticEmailTemplates\SecondMembershipReminderEmailTemplate.cs" />
@@ -1548,8 +1551,8 @@
     <Content Include="Views\EmailTemplates\SendToUser.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\MailingList.cshtml" />
     <Content Include="Views\EmailTemplates\SendToMailingList.cshtml" />
-    <Content Include="Views\EmailTemplates\TestEmailTemplateSuccess.cshtml" />
-    <Content Include="Views\EmailTemplates\TestEmailTemplateFailure.cshtml" />
+    <Content Include="Views\EmailTemplates\SendEmailTemplateSuccess.cshtml" />
+    <Content Include="Views\EmailTemplates\SendEmailTemplateFailure.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

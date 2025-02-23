@@ -2,14 +2,14 @@
 @model EmailTemplate
 @{
     ViewBag.Title = Dictionary.MailingLists;
-    ViewBag.SubTitle = Dictionary.MailingListTestSucceeded;
+    ViewBag.SubTitle = Dictionary.EmailTemplateSentSuccessfully;
     Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
 @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     using (Html.BeginBootstrapForm())
     {
-        @Html.Success(Dictionary.MailingListTestSucceeded)
+        @Html.Success(Dictionary.EmailTemplateSentSuccessfully)
         <div class="text-center margin-bottom-10">
             @Html.BootstrapBackToListButton()
         </div>

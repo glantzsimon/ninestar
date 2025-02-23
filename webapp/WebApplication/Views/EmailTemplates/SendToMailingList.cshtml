@@ -1,5 +1,5 @@
 ﻿@using K9.Base.WebApplication.Helpers
-@model EmailTemplate
+@model K9.WebApplication.ViewModels.SendEmailTemplateViewModel
 @{
     ViewBag.Title = Dictionary.MailingLists;
     ViewBag.SubTitle = Dictionary.SendToToUser;
@@ -9,12 +9,15 @@
 {
     using (Html.BeginBootstrapForm())
     {
-        @Html.HiddenFor(model => model.Id)
-        
-        @Html.BootstrapEditorFor(e => Model.)
+        @Html.HiddenFor(model => Model.EmailTemplate.Id)
 
-        <hr/>
-        @Html.BootstrapButton(K9.Globalisation.Dictionary.SendToToUser, EButtonType.Submit, "fa-save")
+        @Html.BootstrapDisplayFor(e => Model.EmailTemplate.Subject)
+        @Html.BootstrapDisplayFor(e => Model.EmailTemplate.HtmlBody)
+
+        @Html.BootstrapEditorFor(e => Model.MailingListId)
+
+        <hr />
+        @Html.BootstrapButton(K9.Globalisation.Dictionary.SendToMailingList, EButtonType.Submit, "fa-save")
         @Html.BootstrapBackToListButton()
     }
 }

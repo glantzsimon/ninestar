@@ -5,6 +5,7 @@ using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
+using K9.WebApplication.Exceptions;
 using NLog;
 using System;
 using System.Linq;
@@ -18,18 +19,20 @@ namespace K9.WebApplication.Services
         private readonly IRepository<Contact> _contactsRepository;
         private readonly IRepository<MembershipOption> _membershipOptionsRepository;
         private readonly IRepository<UserMembership> _userMembershipsRepository;
+        private readonly IRepository<EmailTemplate> _emailTemplatesRepository;
         private readonly ILogger _logger;
         private readonly SmtpConfiguration _smtpConfig;
         private readonly IMailer _mailer;
         private readonly DefaultValuesConfiguration _defaultConfig;
 
-        public EmailQueueService(IRepository<EmailQueueItem> emailQueueItemsRepository, IRepository<User> usersRepository, IRepository<Contact> contactsRepository, IRepository<MembershipOption> membershipOptionsRepository, IRepository<UserMembership> userMembershipsRepository, ILogger logger, IOptions<DefaultValuesConfiguration> defaultConfig, IOptions<SmtpConfiguration> smtpConfig, IMailer mailer)
+        public EmailQueueService(IRepository<EmailQueueItem> emailQueueItemsRepository, IRepository<User> usersRepository, IRepository<Contact> contactsRepository, IRepository<MembershipOption> membershipOptionsRepository, IRepository<UserMembership> userMembershipsRepository, IRepository<EmailTemplate> emailTemplatesRepository, ILogger logger, IOptions<DefaultValuesConfiguration> defaultConfig, IOptions<SmtpConfiguration> smtpConfig, IMailer mailer)
         {
             _emailQueueItemsRepository = emailQueueItemsRepository;
             _usersRepository = usersRepository;
             _contactsRepository = contactsRepository;
             _membershipOptionsRepository = membershipOptionsRepository;
             _userMembershipsRepository = userMembershipsRepository;
+            _emailTemplatesRepository = emailTemplatesRepository;
             _logger = logger;
             _smtpConfig = smtpConfig.Value;
             _mailer = mailer;

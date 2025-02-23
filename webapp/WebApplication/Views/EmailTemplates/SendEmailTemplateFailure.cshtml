@@ -2,10 +2,10 @@
 @model EmailTemplate
 @{
     ViewBag.Title = Dictionary.MailingLists;
-    ViewBag.SubTitle = Dictionary.MailingListTestFailed;
+    ViewBag.SubTitle = Dictionary.EmailTemplateSendFailed;
     Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
-@Html.Failure(Dictionary.MailingListTestFailed, ViewBag.ErrorMessage)
+@Html.Failure(Dictionary.EmailTemplateSendFailed, ViewBag.ErrorMessage)
 
 <div class="text-center margin-bottom-10">
     @Html.BootstrapBackToListButton()

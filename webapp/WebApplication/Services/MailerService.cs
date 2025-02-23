@@ -68,7 +68,7 @@ namespace K9.WebApplication.Services
             catch (Exception e)
             {
                 My.Logger.Error($"MailerService => SendEmailTemplateToUser => Error: {e.GetFullErrorMessage()}");
-                throw
+                throw;
             }
         }
 
@@ -97,7 +97,7 @@ namespace K9.WebApplication.Services
                         }
                         catch (Exception e)
                         {
-                            isError = true
+                            isError = true;
                             My.Logger.Error($"MailerService => SendEmailTemplateToUsers => {e.GetFullErrorMessage()}");
                         }
                     }
@@ -117,7 +117,7 @@ namespace K9.WebApplication.Services
                         }
                         catch (Exception e)
                         {
-                            isError = true
+                            isError = true;
                             My.Logger.Error($"MailerService => SendEmailTemplateToUsers => {e.GetFullErrorMessage()}");
                         }
                     }
@@ -125,7 +125,7 @@ namespace K9.WebApplication.Services
             }
             catch (Exception e)
             {
-                isError = true
+                isError = true;
                 My.Logger.Error($"MailerService => SendEmailTemplateToUsers => {e.GetFullErrorMessage()}");
             }
 

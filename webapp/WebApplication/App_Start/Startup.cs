@@ -81,6 +81,7 @@ namespace K9.WebApplication
             builder.RegisterType<EmailTemplateService>().As<IEmailTemplateService>().InstancePerLifetimeScope();
             builder.RegisterType<PromotionService>().As<IPromotionService>().InstancePerLifetimeScope();
             builder.RegisterType<MailingListService>().As<IMailingListService>().InstancePerLifetimeScope();
+            builder.RegisterType<MailerService>().As<IMailerService>().InstancePerLifetimeScope();
 
             RegisterConfiguration(builder);
 

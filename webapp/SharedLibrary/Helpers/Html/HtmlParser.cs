@@ -39,33 +39,30 @@ namespace K9.SharedLibrary.Helpers.Html
 
                 while ((line = sr.ReadLine()) != null)
                 {
-                    if (line.Contains("{{") || line.Contains("}}"))
-                    {
-                        // Temporarily replace double curly braces to avoid incorrect replacement
-                        line = line.Replace("{{", "##OPEN##").Replace("}}", "##CLOSE##");
-                    }
+                    // Temporarily replace double curly braces to avoid incorrect replacement
+                    line = line.Replace("{{", "##OPEN##").Replace("}}", "##CLOSE##");
 
                     if (line.Contains("{"))
                     {
-                        var html = line.Replace("{", "<").Replace("}", ">");
-                        // Restore double curly braces
-                        html = html.Replace("##OPEN##", "{{").Replace("##CLOSE##", "}}");
-                        sb.AppendLine(html);
+                        // Convert { -> < and } -> >
+                        line = line.Replace("{", "<").Replace("}", ">");
                     }
                     else if (line.Contains("<"))
                     {
-                        var html = line.Replace("<", "{").Replace(">", "}");
-                        sb.AppendLine(html);
+                        // Convert < -> { and > -> }
+                        line = line.Replace("<", "{").Replace(">", "}");
                     }
-                    else
-                    {
-                        sb.AppendLine(line);
-                    }
+
+                    // Restore double curly braces
+                    line = line.Replace("##OPEN##", "{{").Replace("##CLOSE##", "}}");
+
+                    sb.AppendLine(line);
                 }
             }
 
             return sb.ToString();
         }
+
 
     }
 }

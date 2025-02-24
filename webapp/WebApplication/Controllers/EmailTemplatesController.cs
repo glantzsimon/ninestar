@@ -115,7 +115,7 @@ namespace K9.WebApplication.Controllers
 
                 if (ModelState.IsValid)
                 {
-                    var mailingList = _mailingListService.Find(model.MailingListId.Value);
+                    var mailingList = _mailingListService.Find(model.MailingListId.Value, true);
                     if (mailingList == null)
                     {
                         ModelState.AddModelError("", "Mailing List not found");

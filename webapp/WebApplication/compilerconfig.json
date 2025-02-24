@@ -371,6 +371,13 @@
     }
   },
   {
+    "inputFile": "Content/less/sections/mailing-lists.less",
+    "outputFile": "Content/sections/mailing-lists.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
     "inputFile": "Content/less/sections/navbar.less",
     "outputFile": "Content/sections/navbar.css",
     "options": {

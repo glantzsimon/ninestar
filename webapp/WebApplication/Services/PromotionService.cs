@@ -10,6 +10,7 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using K9.WebApplication.Exceptions;
 
 namespace K9.WebApplication.Services
 {
@@ -121,7 +122,7 @@ namespace K9.WebApplication.Services
                 {
                     if (userPromoCode.SentOn >= DateTime.Today.Subtract(TimeSpan.FromDays(90)))
                     {
-                        throw new Exception($"PromoCodeService => SendRegistrationPromotion => PromoCode {code} has already been sent to user {user.Id} in the last 90 days");
+                        throw new Exception($"PromoCodeService => SendRegistrationPromotion => Promotion {promotion.Name} ({code}) has already been sent to user {user.FullName} (UserId {user.Id}) in the last 90 days");
                     }
                 }
             }
@@ -187,13 +188,13 @@ namespace K9.WebApplication.Services
             {
                 if (userPromoCode.UsedOn.HasValue)
                 {
-                    throw new Exception($"PromoCodeService => SendMembershipPromotion => Promotion {code} was already used on {userPromoCode.UsedOn.Value}");
+                    throw new Exception($"PromoCodeService => SendMembershipPromotion => Promotion {promotion.Name} ({code}) was already used on {userPromoCode.UsedOn.Value}");
                 }
                 else
                 {
                     if (userPromoCode.SentOn >= DateTime.Today.Subtract(TimeSpan.FromDays(90)))
                     {
-                        throw new Exception($"PromoCodeService => SendMembershipPromotion => PromoCode {code} has already been sent to user {user.Id} in the last 90 days");
+                        throw new Exception($"PromoCodeService => SendMembershipPromotion => Promotion {promotion.Name} ({code}) has already been sent to user {user.FullName} (UserID: {user.Id}) in the last 90 days");
                     }
                 }
             }
@@ -313,7 +314,7 @@ namespace K9.WebApplication.Services
                 // User is already signed up
                 var errorMessage = $"PromoCodeService => SendMembershipReminderToUser => User is already signed up";
                 My.Logger.Log(LogLevel.Error, errorMessage);
-                return;
+                throw new UserAlreadySubscribedException();
             }
 
             var userPromoCode = FindForUser(promotion.Code, userId);
@@ -327,7 +328,7 @@ namespace K9.WebApplication.Services
                 {
                     if (!isTest && userPromoCode.SentOn >= DateTime.Today.Subtract(TimeSpan.FromDays(90)))
                     {
-                        throw new Exception($"PromoCodeService => SendPromotionFromTemplateToUser => PromoCode {promotion.Code} has already been sent to user {userId} in the last 90 days");
+                        throw new Exception($"PromoCodeService => SendPromotionFromTemplateToUser => Promotion {promotion.Name} ({promotion.Code}) has already been sent to user {user.FullName} (UserId: {userId}) in the last 90 days");
                     }
                 }
             }
@@ -378,6 +379,7 @@ namespace K9.WebApplication.Services
             catch (Exception ex)
             {
                 My.Logger.Error(ex.GetFullErrorMessage());
+                throw new Exception($"PromoCodeService => SendPromotionFromTemplateToUser failed => {ex.GetFullErrorMessage()}");
             }
         }
 
@@ -425,7 +427,19 @@ namespace K9.WebApplication.Services
         private void SchedulePromotionFromTemplateToUser(int userId, EmailTemplate emailTemplate, Promotion promotion,
             TimeSpan scheduledOn)
         {
-            SendPromotionFromTemplateToUser(userId, emailTemplate, promotion, true, scheduledOn);
+            try
+            {
+                SendPromotionFromTemplateToUser(userId, emailTemplate, promotion, true, scheduledOn);
+            }
+            catch (UserAlreadySubscribedException e)
+            {
+                // Do nothing
+            }
+            catch (Exception e)
+            {
+                My.Logger.Error($"PromotionService => SchedulePromotionFromTemplateToUser => {e.GetFullErrorMessage()}");
+                throw;
+            }
         }
     }
 }

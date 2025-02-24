@@ -1,8 +1,4 @@
-﻿@using K9.Base.WebApplication.Helpers
-@model UserMembership
-@Html.BootstrapEditorFor(model => model.StartsOn)
-@Html.BootstrapEditorFor(model => model.EndsOn)
-@Html.BootstrapEditorFor(model => model.IsAutoRenew)
-@Html.BootstrapEditorFor(model => model.IsDeactivated)
-@Html.BootstrapEditorFor(model => model.MembershipOptionId)
-@Html.BootstrapEditorFor(model => model.UserId)
+﻿@model MailingList
+
+@Html.BootstrapEditorFor(model => model.Name)
+@Html.BootstrapEditorFor(model => model.Details)

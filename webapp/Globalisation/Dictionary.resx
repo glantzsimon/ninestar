@@ -3991,6 +3991,12 @@
   <data name="MailingListResults" xml:space="preserve">
     <value>Mailing List Send Results</value>
   </data>
+  <data name="MailingListUsersUpdated" xml:space="preserve">
+    <value>Mailing list users were successfully updated.</value>
+  </data>
+  <data name="SelectUsers" xml:space="preserve">
+    <value>Select Users</value>
+  </data>
   <data name="SendToMailingList" xml:space="preserve">
     <value>Send to Mailing List</value>
   </data>

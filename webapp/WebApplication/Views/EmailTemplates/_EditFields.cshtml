@@ -59,7 +59,7 @@
                         $("#SpecialPrice").val(promotion.FormattedSpecialPrice);
                     } else {
                         that.changeLoadingState(false);
-                        that.processError(result.errorMessage || errorMessage);
+                        alert(result.errorMessage || errorMessage);
                     }
                 });
         });

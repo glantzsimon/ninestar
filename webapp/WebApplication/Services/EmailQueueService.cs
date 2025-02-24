@@ -5,7 +5,6 @@ using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
-using K9.WebApplication.Exceptions;
 using NLog;
 using System;
 using System.Linq;
@@ -180,12 +179,18 @@ namespace K9.WebApplication.Services
 
         private void AddEmailToQueue(int emailTemplateId, int? userId, int? contactId, string subject, string body, EEmailType type, TimeSpan? scheduledOn, bool allowResend = false)
         {
+            var _90DaysAgo = DateTime.Today.Subtract(TimeSpan.FromDays(90));
+
             if (_emailQueueItemsRepository.Exists(e =>
                     e.EmailTemplateId == emailTemplateId &&
-                    (e.UserId == userId || e.ContactId == e.ContactId)) && !allowResend)
+                    (e.UserId == userId || e.ContactId == e.ContactId) &&
+                    (!e.SentOn.HasValue || e.SentOn >= _90DaysAgo && !allowResend)))
             {
-                var person = userId.HasValue ? $"user {userId}" : $"contact {contactId}";
-                var errorMessage = $"EmailQueueService => AddEmailToQueue => Email template {emailTemplateId} has already been sent to {person}";
+                var user = userId.HasValue ? _usersRepository.Find(userId.Value) : null;
+                var contact = contactId.HasValue ? _contactsRepository.Find(contactId.Value) : null;
+                var person = userId.HasValue ? $"user {user.FullName} (UserId {userId})" : $"contact {contact.FullName} (ContactId {contactId})";
+                var emailTemplate = _emailTemplatesRepository.Find(emailTemplateId);
+                var errorMessage = $"EmailQueueService => AddEmailToQueue => Email template '{emailTemplate.Name}' (Id {emailTemplateId}) has already been sent to {person} in the last 90 days";
                 _logger.Log(LogLevel.Error, errorMessage);
                 throw new Exception(errorMessage);
             }

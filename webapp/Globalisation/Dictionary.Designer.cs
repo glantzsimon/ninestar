@@ -7142,6 +7142,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mailing list users were successfully updated..
+        /// </summary>
+        public static string MailingListUsersUpdated {
+            get {
+                return ResourceManager.GetString("MailingListUsersUpdated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This has the potential to be a very harmonious combination. However, it might be better suited to friendship than romance.
         ///&lt;/h5&gt;
@@ -10889,6 +10898,15 @@ namespace K9.Globalisation {
         public static string SelectMembershipTitle {
             get {
                 return ResourceManager.GetString("SelectMembershipTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Users.
+        /// </summary>
+        public static string SelectUsers {
+            get {
+                return ResourceManager.GetString("SelectUsers", resourceCulture);
             }
         }
         

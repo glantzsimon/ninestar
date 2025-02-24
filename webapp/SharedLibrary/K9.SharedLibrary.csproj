@@ -185,6 +185,7 @@
     <Compile Include="Helpers\Mailer.cs" />
     <Compile Include="Helpers\ObjectMapper.cs" />
     <Compile Include="Helpers\PostedFileHelper.cs" />
+    <Compile Include="Helpers\SqlValidator.cs" />
     <Compile Include="Helpers\TemplateParser.cs" />
     <Compile Include="Authentication\RoleNames.cs" />
     <Compile Include="Models\AssetInfo.cs" />

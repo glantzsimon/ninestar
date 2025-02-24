@@ -1,0 +1,46 @@
+﻿@using K9.SharedLibrary.Helpers.Html
+@model K9.WebApplication.Models.MailingListViewModel
+
+@if (Model.MailingList != null && Model.MailingList.Users != null)
+{
+    <div class="sql-container">
+        <label for="sqlQuery" class="form-label">Enter SQL Query:</label>
+        <textarea id="sqlQuery" class="form-control sql-textarea" placeholder="SELECT * FROM [User];"></textarea>
+
+        <button id="run-query-button" type="button" class="btn btn-primary">Run Query</button>
+    </div>
+
+    <hr />
+
+    <div id="users-results-table">
+        @Html.Action("SelectUsersTable", new { id = Model.MailingList.Id, sqlQuery = Model.SqlQuery })
+    </div>
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#run-query-button").click(function () {
+            var id = @Model.MailingList.Id;
+            var sqlQuery = $("#sqlQuery").val();
+            var url = "@Url.Action("SelectUsersTableJson")";
+
+            ajaxcontroller().send(url,
+                    {
+                        id,
+                        sqlQuery
+                    }, "POST").
+                done(
+                    function(result) {
+                        debugger;
+                        if (result.data.success) {
+                            alert(result.data);
+                            $("#users-results.table").innerHTML = result.data;
+                        } else {
+                            alert(result.data.error);
+                        }
+                    });
+        });
+    });
+
+</script>

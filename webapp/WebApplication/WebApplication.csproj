@@ -325,6 +325,7 @@
     <Compile Include="Exceptions\UpgradeNotPossibleException.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Exceptions\UserAlreadySubscribedException.cs" />
+    <Compile Include="Models\MailingListViewModel.cs" />
     <Compile Include="Models\MailingListSendResultItem.cs" />
     <Compile Include="Services\IMailerService.cs" />
     <Compile Include="Services\MailerService.cs" />
@@ -597,6 +598,7 @@
     <Content Include="Content\sections\footer.css" />
     <Content Include="Content\sections\iching.css" />
     <Content Include="Content\sections\knowledgebase.css" />
+    <Content Include="Content\sections\mailing-lists.css" />
     <Content Include="Content\sections\membership.css" />
     <Content Include="Content\sections\navbar.css" />
     <Content Include="Content\sections\ninestar.css" />
@@ -1275,6 +1277,7 @@
     <Content Include="Content\less\sections\account.less" />
     <Content Include="Content\less\sections\iching.less" />
     <Content Include="Content\less\main\style.956.less" />
+    <Content Include="Content\less\sections\mailing-lists.less" />
     <None Include="packages.config" />
     <Content Include="Properties\PublishProfiles\.gitattributes" />
     <None Include="Properties\PublishProfiles\Integration.pubxml" />
@@ -1530,15 +1533,6 @@
     <Content Include="Views\Home\GptInfo.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Discount.cshtml" />
     <Content Include="Views\Account\EmailPromoCodeToUser.cshtml" />
-    <Content Include="Views\MailingLists\_DisplayFields.cshtml" />
-    <Content Include="Views\MailingLists\_EditFields.cshtml" />
-    <Content Include="Views\MailingLists\_TableButtons.cshtml" />
-    <Content Include="Views\MailingLists\_TableFields.cshtml" />
-    <Content Include="Views\MailingLists\Create.cshtml" />
-    <Content Include="Views\MailingLists\Delete.cshtml" />
-    <Content Include="Views\MailingLists\Details.cshtml" />
-    <Content Include="Views\MailingLists\Edit.cshtml" />
-    <Content Include="Views\MailingLists\Index.cshtml" />
     <Content Include="Views\Consultation\ScheduleConsultationConfirm.cshtml" />
     <Content Include="Views\EmailTemplates\_DisplayFields.cshtml" />
     <Content Include="Views\EmailTemplates\_EditFields.cshtml" />
@@ -1555,6 +1549,16 @@
     <Content Include="Views\EmailTemplates\SendEmailTemplateSuccess.cshtml" />
     <Content Include="Views\EmailTemplates\SendEmailTemplateFailure.cshtml" />
     <Content Include="Views\EmailTemplates\SendEmailTemplateResults.cshtml" />
+    <Content Include="Views\MailingLists\Index.cshtml" />
+    <Content Include="Views\MailingLists\_DisplayFields.cshtml" />
+    <Content Include="Views\MailingLists\_EditFields.cshtml" />
+    <Content Include="Views\MailingLists\Create.cshtml" />
+    <Content Include="Views\MailingLists\Delete.cshtml" />
+    <Content Include="Views\MailingLists\Details.cshtml" />
+    <Content Include="Views\MailingLists\Edit.cshtml" />
+    <Content Include="Views\MailingLists\SelectUsers.cshtml" />
+    <Content Include="Views\MailingLists\_SelectUsers.cshtml" />
+    <Content Include="Views\MailingLists\_SelectUsersTable.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

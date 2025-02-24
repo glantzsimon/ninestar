@@ -1,0 +1,15 @@
+﻿/*@images-path: "../../../Images";*/
+.sql-container {
+  margin-bottom: 50px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.sql-container #run-query-button {
+  margin-top: 10px !important;
+}
+.sql-textarea {
+  font-family: monospace;
+  height: 111px !important;
+}

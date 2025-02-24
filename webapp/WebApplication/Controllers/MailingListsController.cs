@@ -52,7 +52,10 @@ namespace K9.WebApplication.Controllers
             try
             {
                 var mailingList = GetMailingList(id);
-                return PartialView("_SelectUsersTable", mailingList);
+                return PartialView("_SelectUsersTable", new MailingListViewModel
+                {
+                    MailingList = mailingList
+                });
             }
             catch (NotFoundException exception)
             {
@@ -76,7 +79,11 @@ namespace K9.WebApplication.Controllers
             try
             {
                 var mailingList = GetMailingList(id, sqlQuery);
-                return PartialView("_SelectUsersTable", mailingList);
+                return PartialView("_SelectUsersTable", new MailingListViewModel
+                {
+                    SqlQuery = sqlQuery,
+                    MailingList = mailingList
+                });
             }
             catch (NotFoundException)
             {
@@ -87,15 +94,15 @@ namespace K9.WebApplication.Controllers
         [Route("select-users")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SelectUsers(MailingList model)
+        public ActionResult SelectUsers(MailingListViewModel model)
         {
-            var mailingList = Repository.Find(model.Id);
-            var existingUsers = _mailingListUsersRepository.Find(e => e.MailingListId == model.Id).ToList();
+            var mailingList = Repository.Find(model.MailingList.Id);
+            var existingUsers = _mailingListUsersRepository.Find(e => e.MailingListId == model.MailingList.Id).ToList();
             _mailingListUsersRepository.DeleteBatch(existingUsers);
 
-            var selectedUsers = model.Users.Where(e => e.IsSelected).Select(e => new MailingListUser
+            var selectedUsers = model.MailingList.Users.Where(e => e.IsSelected).Select(e => new MailingListUser
             {
-                MailingListId = model.Id,
+                MailingListId = model.MailingList.Id,
                 UserId = e.Id
             }).ToList();
             _mailingListUsersRepository.CreateBatch(selectedUsers);
@@ -110,8 +117,9 @@ namespace K9.WebApplication.Controllers
 
             try
             {
-                mailingList = GetMailingList(model.Id);
-                return View(mailingList);
+                mailingList = GetMailingList(model.MailingList.Id);
+                model.MailingList = mailingList;
+                return View(model);
             }
             catch (NotFoundException exception)
             {

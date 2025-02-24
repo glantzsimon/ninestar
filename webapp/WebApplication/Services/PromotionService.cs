@@ -111,16 +111,16 @@ namespace K9.WebApplication.Services
                 throw new Exception($"PromoCodeService => SendRegistrationPromotion => Promotion {code} was not found");
             }
 
-            var userPromoCode = FindForUser(code, user.Id);
-            if (userPromoCode != null)
+            var userPromotion = FindForUser(code, user.Id);
+            if (userPromotion != null)
             {
-                if (userPromoCode.UsedOn.HasValue)
+                if (userPromotion.UsedOn.HasValue)
                 {
-                    throw new Exception($"PromoCodeService => SendRegistrationPromotion => Promotion {code} was already used on {userPromoCode.UsedOn.Value}");
+                    throw new Exception($"PromoCodeService => SendRegistrationPromotion => Promotion {code} was already used on {userPromotion.UsedOn.Value}");
                 }
                 else
                 {
-                    if (userPromoCode.SentOn >= DateTime.Today.Subtract(TimeSpan.FromDays(90)))
+                    if (userPromotion.SentOn >= DateTime.Today.Subtract(TimeSpan.FromDays(90)))
                     {
                         throw new Exception($"PromoCodeService => SendRegistrationPromotion => Promotion {promotion.Name} ({code}) has already been sent to user {user.FullName} (UserId {user.Id}) in the last 90 days");
                     }
@@ -128,13 +128,17 @@ namespace K9.WebApplication.Services
             }
             else
             {
-                userPromoCode = new UserPromotion
+                userPromotion = new UserPromotion
                 {
                     PromotionId = promotion.Id,
                     UserId = user.Id,
-                    SentOn = DateTime.Now
+                    SentOn = DateTime.Now,
+                    Name = Guid.NewGuid().ToString()
                 };
-                _userPromotionsRepository.Create(userPromoCode);
+                if (userPromotion.Id == 0)
+                {
+                    _userPromotionsRepository.Create(userPromotion);
+                }
             }
 
             var contact = _contactService.GetOrCreateContact("", model.Name, model.EmailAddress);
@@ -183,16 +187,16 @@ namespace K9.WebApplication.Services
                 throw new Exception($"Cannot use this promo code. The user {model.UserId.Value} was not found");
             }
 
-            var userPromoCode = FindForUser(code, user.Id);
-            if (userPromoCode != null)
+            var userPromotion = FindForUser(code, user.Id);
+            if (userPromotion != null)
             {
-                if (userPromoCode.UsedOn.HasValue)
+                if (userPromotion.UsedOn.HasValue)
                 {
-                    throw new Exception($"PromoCodeService => SendMembershipPromotion => Promotion {promotion.Name} ({code}) was already used on {userPromoCode.UsedOn.Value}");
+                    throw new Exception($"PromoCodeService => SendMembershipPromotion => Promotion {promotion.Name} ({code}) was already used on {userPromotion.UsedOn.Value}");
                 }
                 else
                 {
-                    if (userPromoCode.SentOn >= DateTime.Today.Subtract(TimeSpan.FromDays(90)))
+                    if (userPromotion.SentOn >= DateTime.Today.Subtract(TimeSpan.FromDays(90)))
                     {
                         throw new Exception($"PromoCodeService => SendMembershipPromotion => Promotion {promotion.Name} ({code}) has already been sent to user {user.FullName} (UserID: {user.Id}) in the last 90 days");
                     }
@@ -200,13 +204,17 @@ namespace K9.WebApplication.Services
             }
             else
             {
-                userPromoCode = new UserPromotion
+                userPromotion = new UserPromotion
                 {
                     PromotionId = promotion.Id,
                     UserId = user.Id,
-                    SentOn = DateTime.Now
+                    SentOn = DateTime.Now,
+                    Name = Guid.NewGuid().ToString()
                 };
-                _userPromotionsRepository.Create(userPromoCode);
+                if (userPromotion.Id == 0)
+                {
+                    _userPromotionsRepository.Create(userPromotion);
+                }
             }
 
             // Check membership option
@@ -317,16 +325,16 @@ namespace K9.WebApplication.Services
                 throw new UserAlreadySubscribedException();
             }
 
-            var userPromoCode = FindForUser(promotion.Code, userId);
-            if (userPromoCode != null)
+            var userPromotion = FindForUser(promotion.Code, userId);
+            if (userPromotion != null)
             {
-                if (!isTest && userPromoCode.UsedOn.HasValue)
+                if (!isTest && userPromotion.UsedOn.HasValue)
                 {
-                    throw new Exception($"PromoCodeService => SendPromotionFromTemplateToUser => Promotion {promotion.Code} was already used on {userPromoCode.UsedOn.Value}");
+                    throw new Exception($"PromoCodeService => SendPromotionFromTemplateToUser => Promotion {promotion.Code} was already used on {userPromotion.UsedOn.Value}");
                 }
                 else
                 {
-                    if (!isTest && userPromoCode.SentOn >= DateTime.Today.Subtract(TimeSpan.FromDays(90)))
+                    if (!isTest && userPromotion.SentOn >= DateTime.Today.Subtract(TimeSpan.FromDays(90)))
                     {
                         throw new Exception($"PromoCodeService => SendPromotionFromTemplateToUser => Promotion {promotion.Name} ({promotion.Code}) has already been sent to user {user.FullName} (UserId: {userId}) in the last 90 days");
                     }
@@ -334,11 +342,12 @@ namespace K9.WebApplication.Services
             }
             else
             {
-                userPromoCode = new UserPromotion
+                userPromotion = new UserPromotion
                 {
                     PromotionId = promotion.Id,
                     UserId = userId,
-                    SentOn = DateTime.Now
+                    SentOn = DateTime.Now,
+                    Name = Guid.NewGuid().ToString()
                 };
             }
 
@@ -374,7 +383,11 @@ namespace K9.WebApplication.Services
                         user.EmailAddress,
                         user.FullName);
                 }
-                _userPromotionsRepository.Create(userPromoCode);
+
+                if (userPromotion.Id == 0)
+                {
+                    _userPromotionsRepository.Create(userPromotion);
+                }
             }
             catch (Exception ex)
             {

@@ -209,8 +209,8 @@
       <HintPath>..\packages\K9.Base.DataAccessLayer.2.0.0.209\lib\net461\System.Reflection.TypeExtensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime" />
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.209\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.0\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.InteropServices" />
     <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -325,6 +325,7 @@
     <Compile Include="Exceptions\UpgradeNotPossibleException.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Exceptions\UserAlreadySubscribedException.cs" />
+    <Compile Include="Models\MailingListSendResultItem.cs" />
     <Compile Include="Services\IMailerService.cs" />
     <Compile Include="Services\MailerService.cs" />
     <Compile Include="Services\MailingListService.cs" />
@@ -1553,6 +1554,7 @@
     <Content Include="Views\EmailTemplates\SendToMailingList.cshtml" />
     <Content Include="Views\EmailTemplates\SendEmailTemplateSuccess.cshtml" />
     <Content Include="Views\EmailTemplates\SendEmailTemplateFailure.cshtml" />
+    <Content Include="Views\EmailTemplates\SendEmailTemplateResults.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

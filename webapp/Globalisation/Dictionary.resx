@@ -3979,11 +3979,17 @@
   <data name="AlreadySubscribed" xml:space="preserve">
     <value>Membership Already Active</value>
   </data>
+  <data name="Daily" xml:space="preserve">
+    <value>Daily</value>
+  </data>
   <data name="EmailTemplateSendFailed" xml:space="preserve">
     <value>Email Template Failed ot Send</value>
   </data>
   <data name="EmailTemplateSentSuccessfully" xml:space="preserve">
     <value>Email Template Sent Successfully</value>
+  </data>
+  <data name="MailingListResults" xml:space="preserve">
+    <value>Mailing List Send Results</value>
   </data>
   <data name="SendToMailingList" xml:space="preserve">
     <value>Send to Mailing List</value>
@@ -3996,5 +4002,11 @@
   </data>
   <data name="Test" xml:space="preserve">
     <value>Test</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="Yearly" xml:space="preserve">
+    <value>Yearly</value>
   </data>
 </root>

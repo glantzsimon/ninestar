@@ -88,7 +88,7 @@ namespace K9.WebApplication.Helpers
             return $"{energyName} {html.GetDisplayNameFor(expression)}";
         }
 
-        public static IDisposable PayWall(this HtmlHelper html, ESection section, MembershipOption.ESubscriptionType subscriptionType = MembershipOption.ESubscriptionType.MonthlyStandard, bool silent = false, string displayHtml = "")
+        public static IDisposable PayWall(this HtmlHelper html, ESection section, MembershipOption.ESubscriptionType subscriptionType = MembershipOption.ESubscriptionType.WeeklyPlatinum, bool silent = false, string displayHtml = "")
         {
             var baseController = html.ViewContext.Controller as BaseNineStarKiController;
             var activeUserMembership = baseController?.GetActiveUserMembership();
@@ -157,11 +157,13 @@ namespace K9.WebApplication.Helpers
             return html.PayWallContent<NineStarKiModel>(section, null, content, showPadlock);
         }
 
-        public static MvcHtmlString PayWallContent<T>(this HtmlHelper html, ESection section, T model, string content, bool showPadlock = false)
+        public static MvcHtmlString PayWallContent<T>(this HtmlHelper html, ESection section, T model, string content, bool showPadlock = false, MembershipOption.ESubscriptionType subscriptionType = MembershipOption.ESubscriptionType.WeeklyPlatinum)
         {
             var baseController = html.ViewContext.Controller as BaseNineStarKiController;
             var activeUserMembership = baseController?.GetActiveUserMembership();
-            var isAuthorised = (activeUserMembership != null && activeUserMembership.IsAuthorisedToViewPaidContent()) || SessionHelper.CurrentUserIsAdmin();
+            var isAuthorised = (activeUserMembership != null && (activeUserMembership.IsAuthorisedToViewPaidContent() || 
+                                activeUserMembership.MembershipOption.SubscriptionType >= subscriptionType)) ||
+                                SessionHelper.CurrentUserIsAdmin();
 
             if (!(WebSecurity.IsAuthenticated && isAuthorised))
             {

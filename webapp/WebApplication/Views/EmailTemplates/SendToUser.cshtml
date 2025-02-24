@@ -10,7 +10,6 @@
     using (Html.BeginBootstrapForm())
     {
         @Html.HiddenFor(model => Model.EmailTemplate.Id)
-        @Html.HiddenFor(model => Model.UserId)
         @Html.HiddenFor(model => Model.EmailTemplate.Name)
         @Html.HiddenFor(model => Model.EmailTemplate.PromotionId)
         @Html.HiddenFor(model => Model.EmailTemplate.MembershipOptionId)

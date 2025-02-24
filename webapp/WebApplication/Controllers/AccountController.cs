@@ -827,7 +827,7 @@ namespace K9.WebApplication.Controllers
         #region Account Activation
 
         [AllowAnonymous]
-        [Route("account/created/{uniqueIdentifier}")]
+        [Route("created/{uniqueIdentifier}")]
         public ActionResult AccountCreated(Guid uniqueIdentifier, string returnUrl = null, string additionalError = null, int resendCode = 0)
         {
             TempData["AdditionalError"] = additionalError;
@@ -872,7 +872,7 @@ namespace K9.WebApplication.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Route("account/verify")]
+        [Route("verify")]
         public ActionResult VerifySixDigitCode(AccountActivationModel model, string returnUrl = null)
         {
             TempData["ReturnUrl"] = returnUrl;

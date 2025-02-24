@@ -23,10 +23,6 @@ namespace K9.DataAccessLayer.Models
         {
             [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Free)]
             Free = 0,
-            [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.MonthlyStandardMembership)]
-            MonthlyStandard = 1,
-            [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.AnnualStandardMembership)]
-            AnnualStandard = 2,
             [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.WeeklyPlatinumMembership)]
             WeeklyPlatinum = 9,
             [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.MonthlyPlatinumMembership)]
@@ -95,11 +91,9 @@ namespace K9.DataAccessLayer.Models
 
         public bool IsForever => SubscriptionType == ESubscriptionType.LifeTimePlatinum;
 
-        public bool IsMonthly =>
-            new[] { ESubscriptionType.MonthlyPlatinum, ESubscriptionType.MonthlyStandard }.Contains(SubscriptionType);
+        public bool IsMonthly => SubscriptionType == ESubscriptionType.MonthlyPlatinum;
 
-        public bool IsAnnual =>
-            new[] { ESubscriptionType.AnnualPlatinum, ESubscriptionType.AnnualStandard }.Contains(SubscriptionType);
+        public bool IsAnnual => SubscriptionType == ESubscriptionType.AnnualPlatinum;
 
         public bool IsWeekly =>
             new[] { ESubscriptionType.WeeklyPlatinum }.Contains(SubscriptionType);
@@ -110,16 +104,7 @@ namespace K9.DataAccessLayer.Models
 
         public bool CanUpgradeTo(MembershipOption membershipOption)
         {
-            if (SubscriptionType < membershipOption?.SubscriptionType)
-            {
-                if (SubscriptionType == ESubscriptionType.AnnualStandard &&
-                    membershipOption.SubscriptionType == ESubscriptionType.MonthlyPlatinum)
-                {
-                    return false;
-                }
-                return true;
-            }
-            return false;
+            return SubscriptionType < membershipOption.SubscriptionType;
         }
 
         public string SubscriptionTypeText => Name.SplitOnCapitalLetter();
@@ -133,13 +118,7 @@ namespace K9.DataAccessLayer.Models
             {
                 return "platinum";
             }
-
-            if (SubscriptionType == ESubscriptionType.AnnualStandard ||
-                SubscriptionType == ESubscriptionType.MonthlyStandard)
-            {
-                return "standard";
-            }
-
+            
             return "free";
         }
 
@@ -152,26 +131,18 @@ namespace K9.DataAccessLayer.Models
             {
                 return "PlatinumMembership";
             }
-
-            if (SubscriptionType == ESubscriptionType.AnnualStandard ||
-                SubscriptionType == ESubscriptionType.MonthlyStandard)
-            {
-                return "StandardMembership";
-            }
-
+            
             return "FreeMembership";
         }
 
         private string GetMembershipPeriod()
         {
-            if (SubscriptionType == ESubscriptionType.AnnualPlatinum ||
-                SubscriptionType == ESubscriptionType.AnnualStandard)
+            if (SubscriptionType == ESubscriptionType.AnnualPlatinum)
             {
                 return "Yearly";
             }
 
-            if (SubscriptionType == ESubscriptionType.MonthlyPlatinum ||
-                SubscriptionType == ESubscriptionType.MonthlyStandard)
+            if (SubscriptionType == ESubscriptionType.MonthlyPlatinum)
             {
                 return "Monthly";
             }

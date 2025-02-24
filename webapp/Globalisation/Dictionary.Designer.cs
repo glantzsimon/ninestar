@@ -3688,6 +3688,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Daily.
+        /// </summary>
+        public static string Daily {
+            get {
+                return ResourceManager.GetString("Daily", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Darkening of the Light&lt;/h5&gt;
         ///&lt;p&gt;
         ///    Darkening of the Light represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
@@ -7111,6 +7120,15 @@ namespace K9.Globalisation {
         public static string MailingList {
             get {
                 return ResourceManager.GetString("MailingList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mailing List Send Results.
+        /// </summary>
+        public static string MailingListResults {
+            get {
+                return ResourceManager.GetString("MailingListResults", resourceCulture);
             }
         }
         
@@ -13515,6 +13533,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to User.
+        /// </summary>
+        public static string User {
+            get {
+                return ResourceManager.GetString("User", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User Consultations.
         /// </summary>
         public static string UserConsultations {
@@ -14417,6 +14444,15 @@ namespace K9.Globalisation {
         public static string year_description {
             get {
                 return ResourceManager.GetString("year_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yearly.
+        /// </summary>
+        public static string Yearly {
+            get {
+                return ResourceManager.GetString("Yearly", resourceCulture);
             }
         }
         

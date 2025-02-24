@@ -1,13 +1,12 @@
 ﻿using K9.Base.DataAccessLayer.Models;
 using K9.DataAccessLayer.Enums;
-using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Extensions;
 using K9.WebApplication.Exceptions;
+using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web.Mvc;
 
 namespace K9.WebApplication.Services
 {
@@ -44,9 +43,9 @@ namespace K9.WebApplication.Services
             SendEmailTemplateToUser(id, user, false);
         }
 
-        public void SendEmailTemplateToUsers(int id, List<User> users)
+        public List<MailingListSendResultItem> SendEmailTemplateToUsers(int id, List<User> users)
         {
-            bool isError = false;
+            var results = new List<MailingListSendResultItem>();
 
             try
             {
@@ -63,21 +62,37 @@ namespace K9.WebApplication.Services
 
                     foreach (var user in users)
                     {
+                        var mailingListSendResultItem = new MailingListSendResultItem
+                        {
+                            UserId = user.Id,
+                            EmailAddress = user.EmailAddress,
+                            RecipientName = user.FullName
+                        };
                         try
                         {
                             _promotionService.SendPromotionFromTemplateToUser(user.Id, emailTemplate, promotion, true, TimeSpan.FromMinutes(1));
+                            mailingListSendResultItem.IsSuccess = true;
                         }
                         catch (Exception e)
                         {
-                            isError = true;
                             My.Logger.Error($"MailerService => SendEmailTemplateToUsers => {e.GetFullErrorMessage()}");
+                            mailingListSendResultItem.ErrorMessage = e.GetFullErrorMessage();
                         }
+
+                        results.Add(mailingListSendResultItem);
                     }
                 }
                 else
                 {
                     foreach (User user in users)
                     {
+                        var mailingListSendResultItem = new MailingListSendResultItem
+                        {
+                            UserId = user.Id,
+                            EmailAddress = user.EmailAddress,
+                            RecipientName = user.FullName
+                        };
+
                         try
                         {
                             var parsedTemplate = _emailTemplateService.Parse(
@@ -86,25 +101,26 @@ namespace K9.WebApplication.Services
                                 My.UrlHelper.AbsoluteAction("UnsubscribeUser", "UsersController", new { externalId = user.Name }), null);
 
                             _emailQueueService.AddEmailToQueueForUser(emailTemplate.Id, user.Id, emailTemplate.Subject, parsedTemplate, EEmailType.General, TimeSpan.FromMinutes(1));
+
+                            mailingListSendResultItem.IsSuccess = true;
                         }
                         catch (Exception e)
                         {
-                            isError = true;
+                            mailingListSendResultItem.ErrorMessage = e.GetFullErrorMessage();
                             My.Logger.Error($"MailerService => SendEmailTemplateToUsers => {e.GetFullErrorMessage()}");
                         }
+
+                        results.Add(mailingListSendResultItem);
                     }
                 }
             }
             catch (Exception e)
             {
-                isError = true;
                 My.Logger.Error($"MailerService => SendEmailTemplateToUsers => {e.GetFullErrorMessage()}");
-            }
-
-            if (isError)
-            {
                 throw new Exception($"MailerService => SendEmailTemplateToUsers => An error occured when sending mail to users. Please check the logs for details.");
             }
+
+            return results;
         }
 
         private void SendEmailTemplateToUser(int id, User user, bool isTest)
@@ -121,7 +137,7 @@ namespace K9.WebApplication.Services
                 if (emailTemplate.PromotionId.HasValue)
                 {
                     var promotion = _promotionService.Find(emailTemplate.PromotionId.Value);
-                    _promotionService.SendPromotionFromTemplateToUser(user.Id, emailTemplate, promotion, true, TimeSpan.FromSeconds(1), isTest);
+                    _promotionService.SendPromotionFromTemplateToUser(user.Id, emailTemplate, promotion, false, null, isTest);
                 }
                 else
                 {

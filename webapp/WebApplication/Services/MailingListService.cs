@@ -128,7 +128,7 @@ namespace K9.WebApplication.Services
 
             var paidUserMemberships = _userMembershipsRepository.Find(
                 e => fullMembershipIds.Contains(e.MembershipOptionId) &&
-                     (DateTime.Today.IsBetween(e.StartsOn.Date, e.EndsOn.Date) || e.MembershipOptionId == listTimeMembership.Id) && !e.IsDeactivated).ToList();
+                     (e.StartsOn <= DateTime.Today && DateTime.Today <= e.EndsOn || e.MembershipOptionId == listTimeMembership.Id) && !e.IsDeactivated).ToList();
 
             var paidUserIds = paidUserMemberships.Select(e => e.UserId).ToList();
 
@@ -153,7 +153,7 @@ namespace K9.WebApplication.Services
 
             var subscribedMembers = _userMembershipsRepository.Find(
                 e => membershipIds.Contains(e.MembershipOptionId) &&
-                     (DateTime.Today.IsBetween(e.StartsOn.Date, e.EndsOn.Date) || e.MembershipOptionId == membership.Id) && !e.IsDeactivated).ToList();
+                     (e.StartsOn <= DateTime.Today && DateTime.Today <= e.EndsOn || e.MembershipOptionId == membership.Id) && !e.IsDeactivated).ToList();
 
             var userIds = subscribedMembers.Select(e => e.UserId).ToList();
 
@@ -177,7 +177,7 @@ namespace K9.WebApplication.Services
 
             var freeMemberships = _userMembershipsRepository.Find(
                 e => !paidUserIds.Contains(e.UserId) && e.MembershipOptionId == freeMembership.Id &&
-                     DateTime.Today.IsBetween(e.StartsOn.Date, e.EndsOn.Date) && !e.IsDeactivated).ToList();
+                     e.StartsOn <= DateTime.Today && DateTime.Today <= e.EndsOn && !e.IsDeactivated).ToList();
 
             var freeMembershipUserIds = freeMemberships.Select(e => e.UserId).ToList();
 

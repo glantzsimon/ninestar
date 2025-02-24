@@ -9,6 +9,7 @@ using K9.WebApplication.ViewModels;
 using System;
 using System.Linq;
 using System.Web.Mvc;
+using K9.WebApplication.Exceptions;
 
 namespace K9.WebApplication.Controllers
 {
@@ -41,22 +42,14 @@ namespace K9.WebApplication.Controllers
                 EmailTemplate = emailTemplate
             });
         }
-        
+
         [Route("send-to-user")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult SendToUser(SendEmailTemplateViewModel model)
         {
-            EmailTemplate emailTemplate = null;
-
             if (ModelState.IsValid)
             {
-                emailTemplate = Repository.Find(model.EmailTemplate.Id);
-                if (emailTemplate == null)
-                {
-                    ModelState.AddModelError("", "Email Template not found");
-                }
-
                 if (!model.UserId.HasValue)
                 {
                     ModelState.AddModelError("UserId", Base.Globalisation.Dictionary.FieldIsRequired);
@@ -73,27 +66,23 @@ namespace K9.WebApplication.Controllers
                     {
                         try
                         {
-                            _mailerService.SendEmailTemplateToUser(emailTemplate.Id, user);
-                            return View("SendEmailTemplateSuccess",new SendEmailTemplateViewModel
-                            {
-                                EmailTemplate = emailTemplate
-                            });
+                            _mailerService.SendEmailTemplateToUser(model.EmailTemplate.Id, user);
+                            return View("SendEmailTemplateSuccess");
+                        }
+                        catch (NotFoundException e)
+                        {
+                            ViewBag.ErrorMessage = "Email Template not found";
+                            return View("SendEmailTemplateFailure");
                         }
                         catch (Exception e)
                         {
                             ViewBag.ErrorMessage = e.GetFullErrorMessage();
-                            return View("SendEmailTemplateFailure",new SendEmailTemplateViewModel
-                            {
-                                EmailTemplate = emailTemplate
-                            });
+                            return View("SendEmailTemplateFailure");
                         }
                     }
                 }
             }
-            return View(new SendEmailTemplateViewModel
-            {
-                EmailTemplate = emailTemplate
-            });
+            return View(model);
         }
 
         [Route("send-to-mailinglist")]
@@ -117,16 +106,8 @@ namespace K9.WebApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult SendToMailingList(SendEmailTemplateViewModel model)
         {
-            EmailTemplate emailTemplate = null;
-
             if (ModelState.IsValid)
             {
-                emailTemplate = Repository.Find(model.EmailTemplate.Id);
-                if (emailTemplate == null)
-                {
-                    ModelState.AddModelError("", "Email Template not found");
-                }
-
                 if (!model.MailingListId.HasValue)
                 {
                     ModelState.AddModelError("MailingListId", Base.Globalisation.Dictionary.FieldIsRequired);
@@ -143,54 +124,43 @@ namespace K9.WebApplication.Controllers
                     {
                         try
                         {
-                            _mailerService.SendEmailTemplateToUsers(emailTemplate.Id, mailingList.Users);
-                            return View("SendEmailTemplateSuccess",new SendEmailTemplateViewModel
-                            {
-                                EmailTemplate = emailTemplate
-                            });
+                            var results = _mailerService.SendEmailTemplateToUsers(model.EmailTemplate.Id, mailingList.Users);
+                            return View("SendEmailTemplateResults", results.OrderBy(e => e.IsSuccess).ThenBy(e => e.RecipientName).ToList());
+
+                        }
+                        catch (NotFoundException e)
+                        {
+                            ViewBag.ErrorMessage = "Email Template not found";
+                            return View("SendEmailTemplateFailure");
                         }
                         catch (Exception e)
                         {
                             ViewBag.ErrorMessage = e.GetFullErrorMessage();
-                            return View("SendEmailTemplateFailure",new SendEmailTemplateViewModel
-                            {
-                                EmailTemplate = emailTemplate
-                            });
+                            return View("SendEmailTemplateFailure");
                         }
                     }
                 }
             }
-            return View(new SendEmailTemplateViewModel
-            {
-                EmailTemplate = emailTemplate
-            });
+            return View(model);
         }
-        
+
         [Route("test")]
         public ActionResult TestEmailTemplate(int id)
         {
-            var emailTemplate = Repository.Find(id);
-            if (emailTemplate == null)
-            {
-                return HttpNotFound();
-            }
-            var systemUser = My.UsersRepository.Find(e => e.Username == "SYSTEM").FirstOrDefault();
-
             try
             {
-                _mailerService.SendEmailTemplateToUser(emailTemplate.Id, systemUser);
-                return View("SendEmailTemplateSuccess",new SendEmailTemplateViewModel
-                {
-                    EmailTemplate = emailTemplate
-                });
+                _mailerService.TestEmailTemplate(id);
+                return View("SendEmailTemplateSuccess");
+            }
+            catch (NotFoundException e)
+            {
+                ViewBag.ErrorMessage = "Email Template not found";
+                return View("SendEmailTemplateFailure");
             }
             catch (Exception e)
             {
                 ViewBag.ErrorMessage = e.GetFullErrorMessage();
-                return View("SendEmailTemplateFailure",new SendEmailTemplateViewModel
-                {
-                    EmailTemplate = emailTemplate
-                });
+                return View("SendEmailTemplateFailure");
             }
         }
     }

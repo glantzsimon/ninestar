@@ -4,19 +4,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.Mvc;
+using K9.SharedLibrary.Enums;
 
 namespace K9.SharedLibrary.Helpers.Html
 {
     public static class HtmlTableHelper
     {
-        private const string DefaultTableClassName = "k9-datatable";
+        private const string DefaultTableClassName = "k9-datatable bootstraptable table table-striped table-bordered dataTable no-footer dtr-inline";
 
-        public static string ToHtmlTable(this IEnumerable<Object> items, params string[] visibleColumns)
+        public static string ToHtmlTable(this IEnumerable<object> items, params string[] visibleColumns)
         {
             return ToHtmlTable(items, visibleColumns.Select(c => new ColumnInfo(c)).ToList());
         }
         
-        public static string ToHtmlTable(this IEnumerable<Object> items, List<ColumnInfo> visibleColumns, params string[] classNames)
+        public static string ToHtmlTable(this IEnumerable<object> items, List<ColumnInfo> visibleColumns, params string[] classNames)
         {
             var table = new TagBuilder("table");
             var columns = visibleColumns.Any() ? visibleColumns : GetColumns(items);
@@ -85,7 +86,7 @@ namespace K9.SharedLibrary.Helpers.Html
                 return dict?.Keys.Select(k => new ColumnInfo(k)).ToList();
             }
 
-            return firstItem.GetType().GetProperties().Select(p => new ColumnInfo(p.Name)).ToList();
+            return firstItem.GetType().GetProperties().Select(p => new ColumnInfo(EColumnType.Text, p.Name, p.GetDisplayName().SplitOnCapitalLetter())).ToList();
         }
 
         private static object GetValue(object item, string name)

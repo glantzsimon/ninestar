@@ -623,7 +623,7 @@ namespace K9.WebApplication.Services
                 throw new Exception("This six digit code has already been used to verify your account. Please log in.");
             }
 
-            otp.VerifiedOn = DateTime.UtcNow;
+            otp.VerifiedOn = DateTime.Now;
             _otpRepository.Update(otp);
         }
 

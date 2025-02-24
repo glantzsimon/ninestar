@@ -1,0 +1,20 @@
+﻿@using K9.Base.WebApplication.Helpers
+@using K9.SharedLibrary.Helpers.Html
+@model List<K9.WebApplication.Models.MailingListSendResultItem>
+
+@{
+    ViewBag.Title = Dictionary.MailingLists;
+    ViewBag.SubTitle = Dictionary.MailingListResults;    
+    Layout = "../Shared/_LayoutFormWide.cshtml";
+}
+
+@if (Model != null)
+{
+    @Html.Raw(Model.ToHtmlTable())
+}
+
+<hr />
+<div class="text-center margin-bottom-10">
+    @Html.BootstrapBackToListButton()
+</div>
+

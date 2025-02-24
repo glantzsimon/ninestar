@@ -284,7 +284,6 @@ namespace K9.WebApplication.Services
                 throw new Exception("scheduledOn must be set when scheduling an email.");
             }
 
-            promotion = Find(promotion.Code);
             if (promotion == null)
             {
                 throw new Exception($"PromoCodeService => SendPromotionFromTemplateToUser => PromoCode {promotion.Code} was not found");
@@ -293,7 +292,7 @@ namespace K9.WebApplication.Services
             promotion.MembershipOption = _membershipOptionsRepository
                                              .Find(e => e.Id == promotion.MembershipOptionId).FirstOrDefault() ?? throw new Exception($"Membership {promotion.MembershipOptionId} not found on the system");
 
-            // Check if user already exists with email address
+            // Check if user exists 
             var user = My.UsersRepository.Find(userId);
             if (user == null)
             {
@@ -309,7 +308,7 @@ namespace K9.WebApplication.Services
             var userMembershipOptions =
                 _membershipOptionsRepository.Find(e => activeUserMembershipIds.Contains(e.Id)).ToList();
 
-            if (!isTest && userMembershipOptions.Any(e => e.SubscriptionType >= MembershipOption.ESubscriptionType.Free))
+            if (!isTest && userMembershipOptions.Any(e => e.SubscriptionType > MembershipOption.ESubscriptionType.Free))
             {
                 // User is already signed up
                 var errorMessage = $"PromoCodeService => SendMembershipReminderToUser => User is already signed up";
@@ -345,22 +344,20 @@ namespace K9.WebApplication.Services
             promotion.PromoLink = My.UrlHelper.AbsoluteAction("PurchaseStart", "Membership",
                 new { membershipOptionId = promotion.MembershipOptionId, promoCode = promotion.Code });
 
-            var subject = TemplateParser.Parse(emailTemplate.Subject, new
+            var data = new
             {
-                promotion.DiscountPercent
-            });
+                user.FirstName,
+                promotion.DiscountPercent,
+                promotion.FormattedFullPrice,
+                promotion.FormattedSpecialPrice,
+                promotion.MembershipName,
+                promotion.PromoLink
+            };
+            var subject = TemplateParser.Parse(emailTemplate.Subject, data);
             var body = _emailTemplateService.ParseForUser(
                 emailTemplate,
                 user,
-                new
-                {
-                    user.FirstName,
-                    promotion.DiscountPercent,
-                    promotion.FormattedFullPrice,
-                    promotion.FormattedSpecialPrice,
-                    promotion.MembershipName,
-                    promotion.PromoLink
-                });
+                data);
 
             try
             {

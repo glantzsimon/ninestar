@@ -168,7 +168,7 @@ namespace K9.WebApplication.Services
 
                 try
                 {
-                    email.SentOn = DateTime.UtcNow;
+                    email.SentOn = DateTime.Now;
                     _emailQueueItemsRepository.Update(email);
                 }
                 catch (Exception e)

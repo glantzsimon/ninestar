@@ -44,19 +44,19 @@ namespace K9.WebApplication.Tests.Unit.Services
             Username = "Simon"
         };
 
-        private readonly MembershipOption _standardMonthlyMembership = new MembershipOption
+        private readonly MembershipOption _freeMembership = new MembershipOption
         {
             Id = 1,
-            Name = "Monthly Standard Membership",
-            SubscriptionType = MembershipOption.ESubscriptionType.MonthlyStandard,
+            Name = "Free Membership",
+            SubscriptionType = MembershipOption.ESubscriptionType.Free,
             Price = 10
         };
 
-        private readonly MembershipOption _standardYearlyMembership = new MembershipOption
+        private readonly MembershipOption _weeklyMembership = new MembershipOption
         {
             Id = 2,
-            Name = "Annual Standard Membership",
-            SubscriptionType = MembershipOption.ESubscriptionType.AnnualStandard,
+            Name = "Weekly Platinum Membership",
+            SubscriptionType = MembershipOption.ESubscriptionType.WeeklyPlatinum,
             Price = 90
         };
 
@@ -80,8 +80,8 @@ namespace K9.WebApplication.Tests.Unit.Services
         {
             var membershipOptions = new List<MembershipOption>
             {
-                _standardMonthlyMembership,
-                _standardYearlyMembership,
+                _freeMembership,
+                _weeklyMembership,
                 _platinumMonthlyMembership,
                 _platinumYearlyMembership
             };
@@ -103,8 +103,8 @@ namespace K9.WebApplication.Tests.Unit.Services
 
             _membershipOptionRepository.Setup(_ => _.List()).Returns(membershipOptions);
             _membershipOptionRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<MembershipOption, bool>>>())).Returns(membershipOptions);
-            _membershipOptionRepository.Setup(_ => _.Find(_standardMonthlyMembership.Id)).Returns(_standardMonthlyMembership);
-            _membershipOptionRepository.Setup(_ => _.Find(_standardYearlyMembership.Id)).Returns(_standardYearlyMembership);
+            _membershipOptionRepository.Setup(_ => _.Find(_freeMembership.Id)).Returns(_freeMembership);
+            _membershipOptionRepository.Setup(_ => _.Find(_weeklyMembership.Id)).Returns(_weeklyMembership);
             _membershipOptionRepository.Setup(_ => _.Find(_platinumMonthlyMembership.Id)).Returns(_platinumMonthlyMembership);
             _membershipOptionRepository.Setup(_ => _.Find(_platinumYearlyMembership.Id)).Returns(_platinumYearlyMembership);
 
@@ -143,8 +143,8 @@ namespace K9.WebApplication.Tests.Unit.Services
                 new UserMembership
                 {
                     UserId = _userId,
-                    MembershipOptionId = _standardMonthlyMembership.Id,
-                    MembershipOption = _standardMonthlyMembership,
+                    MembershipOptionId = _freeMembership.Id,
+                    MembershipOption = _freeMembership,
                     StartsOn = startsOn,
                     EndsOn = startsOn.AddMonths(1)
                 }
@@ -174,8 +174,8 @@ namespace K9.WebApplication.Tests.Unit.Services
                 new UserMembership
                 {
                     UserId = _userId,
-                    MembershipOptionId = _standardYearlyMembership.Id,
-                    MembershipOption = _standardYearlyMembership,
+                    MembershipOptionId = _weeklyMembership.Id,
+                    MembershipOption = _weeklyMembership,
                     StartsOn = startsOn,
                     EndsOn = startsOn.AddYears(1)
                 }
@@ -189,9 +189,9 @@ namespace K9.WebApplication.Tests.Unit.Services
             Assert.Equal(1, _membershipservice.GetActiveUserMemberships(_userId).Count);
             Assert.Equal(userMembershipModels.First(), _membershipservice.GetActiveUserMembership());
             Assert.Equal(0, model.MembershipModels.Count(_ => _.IsSelected));
-            Assert.Equal(1, model.MembershipModels.Count(_ => _.IsUpgrade));
+            Assert.Equal(2, model.MembershipModels.Count(_ => _.IsUpgrade));
             Assert.Equal(1, model.MembershipModels.Count(_ => _.IsSubscribed));
-            Assert.Equal(1, model.MembershipModels.Count(_ => _.IsSelectable));
+            Assert.Equal(2, model.MembershipModels.Count(_ => _.IsSelectable));
         }
 
         [Fact]
@@ -269,8 +269,8 @@ namespace K9.WebApplication.Tests.Unit.Services
             {
                 Id = 8,
                 UserId = _userId,
-                MembershipOptionId = _standardMonthlyMembership.Id,
-                MembershipOption = _standardMonthlyMembership,
+                MembershipOptionId = _freeMembership.Id,
+                MembershipOption = _freeMembership,
                 StartsOn = scheduledStartsOn,
                 EndsOn = scheduledStartsOn.AddMonths(1),
                 IsAutoRenew = true
@@ -333,8 +333,8 @@ namespace K9.WebApplication.Tests.Unit.Services
                 {
                     Id = 7,
                     UserId = _userId,
-                    MembershipOptionId = _standardMonthlyMembership.Id,
-                    MembershipOption = _standardMonthlyMembership,
+                    MembershipOptionId = _freeMembership.Id,
+                    MembershipOption = _freeMembership,
                     StartsOn = startsOn,
                     EndsOn = startsOn.AddMonths(1)
                 }
@@ -343,7 +343,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
                 .Returns(userMembershipModels);
 
-            var ex = Assert.Throws<UserAlreadySubscribedException>(() => _membershipservice.GetSwitchMembershipModel(_standardMonthlyMembership.Id));
+            var ex = Assert.Throws<UserAlreadySubscribedException>(() => _membershipservice.GetSwitchMembershipModel(_freeMembership.Id));
             Assert.Equal(Globalisation.Dictionary.SwitchMembershipErrorAlreadySubscribed, ex.Message);
         }
 
@@ -358,8 +358,8 @@ namespace K9.WebApplication.Tests.Unit.Services
             {
                 Id = 8,
                 UserId = _userId,
-                MembershipOptionId = _standardYearlyMembership.Id,
-                MembershipOption = _standardYearlyMembership,
+                MembershipOptionId = _weeklyMembership.Id,
+                MembershipOption = _weeklyMembership,
                 StartsOn = scheduledStartsOn,
                 EndsOn = scheduledStartsOn.AddMonths(1),
                 IsAutoRenew = true
@@ -382,7 +382,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                 .Returns(userMembershipModels);
 
 
-            var ex = Assert.Throws<UserAlreadySubscribedException>(() => _membershipservice.GetSwitchMembershipModel(_standardYearlyMembership.Id));
+            var ex = Assert.Throws<UpgradeNotPossibleException>(() => _membershipservice.GetSwitchMembershipModel(_weeklyMembership.Id));
             Assert.Equal(Globalisation.Dictionary.CannotSwitchMembershipError, ex.Message);
         }
 
@@ -398,8 +398,8 @@ namespace K9.WebApplication.Tests.Unit.Services
                 {
                     Id = 7,
                     UserId = _userId,
-                    MembershipOptionId = _standardMonthlyMembership.Id,
-                    MembershipOption = _standardMonthlyMembership,
+                    MembershipOptionId = _freeMembership.Id,
+                    MembershipOption = _freeMembership,
                     StartsOn = startsOn,
                     EndsOn = startsOn.AddMonths(1)
                 }
@@ -409,7 +409,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                 .Returns(userMembershipModels);
 
 
-            var result = _membershipservice.GetSwitchMembershipModel(_standardYearlyMembership.Id);
+            var result = _membershipservice.GetSwitchMembershipModel(_weeklyMembership.Id);
             Assert.True(result.IsUpgrade);
         }
 
@@ -425,8 +425,8 @@ namespace K9.WebApplication.Tests.Unit.Services
                 {
                     Id = 7,
                     UserId = _userId,
-                    MembershipOptionId = _standardYearlyMembership.Id,
-                    MembershipOption = _standardYearlyMembership,
+                    MembershipOptionId = _weeklyMembership.Id,
+                    MembershipOption = _weeklyMembership,
                     StartsOn = startsOn,
                     EndsOn = startsOn.AddMonths(1)
                 }
@@ -435,7 +435,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
                 .Returns(userMembershipModels);
 
-            var ex = Assert.Throws<UserAlreadySubscribedException>(() => _membershipservice.GetPurchaseMembershipModel(_standardYearlyMembership.Id));
+            var ex = Assert.Throws<UserAlreadySubscribedException>(() => _membershipservice.GetPurchaseMembershipModel(_weeklyMembership.Id));
             Assert.Equal(Globalisation.Dictionary.PurchaseMembershipErrorAlreadySubscribed, ex.Message);
         }
 

@@ -61,7 +61,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [HttpPost]
-        public JsonResult SelectUsersTableJson(int id, string sqlQuery)
+        public ActionResult SelectUsersTableJson(int id, string sqlQuery)
         {
             if (!string.IsNullOrEmpty(sqlQuery))
             {
@@ -76,7 +76,7 @@ namespace K9.WebApplication.Controllers
             try
             {
                 var mailingList = GetMailingList(id, sqlQuery);
-                return Json(PartialView("_SelectUsersTable", mailingList).ToString(), JsonRequestBehavior.AllowGet);
+                return PartialView("_SelectUsersTable", mailingList);
             }
             catch (NotFoundException)
             {
@@ -87,15 +87,15 @@ namespace K9.WebApplication.Controllers
         [Route("select-users")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SelectUsers(MailingListViewModel model)
+        public ActionResult SelectUsers(MailingList model)
         {
-            var mailingList = Repository.Find(model.MailingList.Id);
-            var existingUsers = _mailingListUsersRepository.Find(e => e.MailingListId == model.MailingList.Id).ToList();
+            var mailingList = Repository.Find(model.Id);
+            var existingUsers = _mailingListUsersRepository.Find(e => e.MailingListId == model.Id).ToList();
             _mailingListUsersRepository.DeleteBatch(existingUsers);
 
-            var selectedUsers = model.MailingList.Users.Where(e => e.IsSelected).Select(e => new MailingListUser
+            var selectedUsers = model.Users.Where(e => e.IsSelected).Select(e => new MailingListUser
             {
-                MailingListId = model.MailingList.Id,
+                MailingListId = model.Id,
                 UserId = e.Id
             }).ToList();
             _mailingListUsersRepository.CreateBatch(selectedUsers);
@@ -110,7 +110,7 @@ namespace K9.WebApplication.Controllers
 
             try
             {
-                mailingList = GetMailingList(model.MailingList.Id);
+                mailingList = GetMailingList(model.Id);
                 return View(mailingList);
             }
             catch (NotFoundException exception)

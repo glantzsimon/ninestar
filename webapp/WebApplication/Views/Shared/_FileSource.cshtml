@@ -24,19 +24,19 @@
                     <div class="preview-thumbnail">
                         @if (assetInfo.IsImage())
                         {
-                            <img src="@assetInfo.Src" class="@imgClass">
+                            <img loading="lazy" src="@assetInfo.Src" class="@imgClass">
                         }
                         else if (assetInfo.IsVideo())
                         {
-                            <img src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/video.png">
+                            <img loading="lazy" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/video.png">
                         }
                         else if (assetInfo.IsAudio())
                         {
-                            <img src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/audio.png">
+                            <img loading="lazy" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/audio.png">
                         }
                         else
                         {
-                            <img src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/document.jpg">
+                            <img loading="lazy" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/document.jpg">
                         }
                     </div>
                     <div class="doc-info">

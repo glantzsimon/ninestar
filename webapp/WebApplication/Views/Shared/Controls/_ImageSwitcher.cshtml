@@ -42,7 +42,7 @@
 @foreach (var image in Model.Images)
  {
 	<li>
-		<img style="@Model.RoundCornersStyle" src="@image.Src" alt="">
+		<img loading="lazy" style="@Model.RoundCornersStyle" src="@image.Src" alt="">
 	</li>			
  }
 </ul>

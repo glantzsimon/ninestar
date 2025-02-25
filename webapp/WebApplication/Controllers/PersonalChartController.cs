@@ -15,14 +15,14 @@ namespace K9.WebApplication.Controllers
     public partial class PersonalChartController : BaseNineStarKiController
     {
         private readonly INineStarKiService _nineStarKiService;
-        
+
         public PersonalChartController(INineStarKiPackage nineStarKiPackage, INineStarKiService nineStarKiService)
             : base(nineStarKiPackage)
         {
             _nineStarKiService = nineStarKiService;
         }
 
-        [OutputCache(Duration = 86400, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
         [Route("personalchart/calculate")]
         public ActionResult Index()
         {
@@ -32,9 +32,10 @@ namespace K9.WebApplication.Controllers
                 DateOfBirth = dateOfBirth,
                 Gender = Methods.GetRandomGender()
             };
-            return View(new NineStarKiModel(personModel));
-        }
 
+            var nineStarKiModel = new NineStarKiModel(personModel);
+            return View(nineStarKiModel);
+        }
 
         [Route("personalchart/calculate")]
         [HttpPost]
@@ -79,7 +80,7 @@ namespace K9.WebApplication.Controllers
                 Gender = myAccount.Gender
             };
             var nineStarKiProfile = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, true);
-            
+
             return View("Index", nineStarKiProfile);
         }
 
@@ -131,11 +132,11 @@ namespace K9.WebApplication.Controllers
                 Gender = lastProfile.Gender
             };
             var model = _nineStarKiService.CalculateNineStarKiProfile(personModel);
-            
+
             return View("Index", model);
         }
 
-        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
         [Route("list/allenegies")]
         public ContentResult GetAllEnergies()
         {

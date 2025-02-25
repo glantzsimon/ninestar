@@ -33,7 +33,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("consultation/book")]
-        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult BookConsultationStart()
         {
             return View(new Consultation
@@ -78,7 +78,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("consultation/booking-success")]
-        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult BookConsultationSuccess()
         {
             return View();

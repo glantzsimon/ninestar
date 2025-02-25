@@ -101,7 +101,7 @@ namespace K9.WebApplication.Controllers
 
         [Authorize]
         [Route("membership/unlock/success")]
-        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult PurchaseSuccess()
         {
             var membership = My.MembershipService.GetActiveUserMembership(Current.UserId);
@@ -117,7 +117,7 @@ namespace K9.WebApplication.Controllers
 
         [Authorize]
         [Route("membership/unlock/cancel/success")]
-        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult PurchaseCancelSuccess()
         {
             return View();

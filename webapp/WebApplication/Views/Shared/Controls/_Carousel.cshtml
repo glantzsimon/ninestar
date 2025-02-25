@@ -24,11 +24,11 @@
 			<div class="item @imageClass">
 				@if (fullsizeImage != null)
 				{
-					<a href="@fullsizeImage.Src" target="_new"><img src="@image.Src" style="@imageStyle"/></a>
+					<a href="@fullsizeImage.Src" target="_new"><img loading="lazy" src="@image.Src" style="@imageStyle"/></a>
 				}
 				else
 				{
-					<img src="@image.Src" style="@imageStyle"/>	
+					<img loading="lazy" src="@image.Src" style="@imageStyle"/>	
 				}
 			</div>
 		}

@@ -104,6 +104,9 @@
     padding-left: 5%;
     padding-right: 5%;
   }
+  .footer div:not(:first-of-type) h4 {
+    margin-top: 20px !important;
+  }
 }
 @media (min-width: 991px) {
   .device-only {

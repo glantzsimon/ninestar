@@ -37,7 +37,7 @@
 
         @Html.Panel(
             Dictionary.FiveElementsTitle,
-            Dictionary.five_elements,
+            Html.PayWallContent(ESection.KnowledgeBase, "elements", Dictionary.five_elements, false, MembershipOption.ESubscriptionType.Free).ToString(),
             "elements")
 
         @Html.Panel(

@@ -28,16 +28,13 @@
         @Html.BootstrapEditorFor(model => model.RegisterModel.PhoneNumber)
         @Html.BootstrapEditorFor(model => model.PromoCode)
         <hr />
-        <div id="recaptcha-container">
-        </div>
+        @Html.Partial("_Recaptcha")
         <div id="recaptcha-buttons-container">
             @Html.BootstrapButton(Dictionary.Register, EButtonType.Submit, "", EButtonClass.Large)
             @*@Html.BootstrapActionLinkButton(Dictionary.SignInWithFacebook, "Facebook", "Account", null, "fao fa-facebook", EButtonClass.Large)*@
         </div>
     }
 }
-
-@Html.Partial("_Recaptcha")
 
 <script language="javascript">
 

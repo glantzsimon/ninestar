@@ -4,6 +4,7 @@ using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using System;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace K9.WebApplication.Controllers
 {
@@ -18,6 +19,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("compatibility")]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult Index()
         {
             var dateOfBirth1 = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day);

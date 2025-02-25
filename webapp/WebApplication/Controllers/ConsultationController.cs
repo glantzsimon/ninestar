@@ -11,6 +11,7 @@ using NLog;
 using System;
 using System.Linq;
 using System.Web.Mvc;
+using System.Web.UI;
 using K9.Base.WebApplication.Filters;
 using K9.SharedLibrary.Authentication;
 using K9.WebApplication.Helpers;
@@ -32,6 +33,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("consultation/book")]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult BookConsultationStart()
         {
             return View(new Consultation
@@ -76,6 +78,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("consultation/booking-success")]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult BookConsultationSuccess()
         {
             return View();

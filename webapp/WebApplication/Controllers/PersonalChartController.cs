@@ -8,6 +8,7 @@ using K9.WebApplication.Services;
 using System;
 using System.Text;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace K9.WebApplication.Controllers
 {
@@ -21,6 +22,7 @@ namespace K9.WebApplication.Controllers
             _nineStarKiService = nineStarKiService;
         }
 
+        [OutputCache(Duration = 86400, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
         [Route("personalchart/calculate")]
         public ActionResult Index()
         {
@@ -125,6 +127,7 @@ namespace K9.WebApplication.Controllers
             return View("Index", model);
         }
 
+        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
         [Route("list/allenegies")]
         public ContentResult GetAllEnergies()
         {

@@ -1,12 +1,13 @@
 ﻿using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.WebApplication.Helpers;
+using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
 using System;
 
 namespace K9.WebApplication.Services
 {
-    public class BaseService : IBaseService
+    public abstract class BaseService : CachableBase, IBaseService
     {
         public INineStarKiBasePackage My { get; }
 

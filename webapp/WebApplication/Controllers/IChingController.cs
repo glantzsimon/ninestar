@@ -2,6 +2,7 @@
 using K9.WebApplication.Services;
 using K9.WebApplication.ViewModels;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace K9.WebApplication.Controllers
 {
@@ -17,6 +18,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("")]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult Index()
         {
             return View();

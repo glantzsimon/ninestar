@@ -1,18 +1,15 @@
 ﻿using K9.Base.DataAccessLayer.Enums;
-using K9.Base.DataAccessLayer.Models;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
-using K9.SharedLibrary.Helpers;
-using K9.SharedLibrary.Models;
-using K9.WebApplication.Config;
 using K9.WebApplication.Models;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using K9.WebApplication.ViewModels;
-using NLog;
 using System;
+using System.Web;
 using System.Web.Mvc;
-using K9.WebApplication.Packages;
+using System.Web.UI;
 
 namespace K9.WebApplication.Controllers
 {
@@ -123,8 +120,13 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("knowledgebase/get/{accountNumber}")]
+        [OutputCache(Duration = 2592000, VaryByParam = "accountNumber", Location = OutputCacheLocation.ServerAndClient)]
         public JsonResult GetKnowledgeBase(string accountNumber)
         {
+            Response.Cache.SetCacheability(HttpCacheability.ServerAndPrivate);
+            Response.Cache.SetExpires(DateTime.UtcNow.AddDays(1));
+            Response.Cache.SetValidUntilExpires(true);
+
             return Validate(accountNumber, () =>
             {
                 var model = new NineStarKiSummaryKbViewModel(_nineStarKiService.GetNineStarKiSummaryViewModel());

@@ -22,6 +22,7 @@ using NLog;
 using System;
 using System.Linq;
 using System.Web.Mvc;
+using System.Web.UI;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
@@ -280,8 +281,7 @@ namespace K9.WebApplication.Controllers
             }
         }
 
-
-
+        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult AccountLocked()
         {
             return View();
@@ -438,12 +438,14 @@ namespace K9.WebApplication.Controllers
         }
 
         [Authorize]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult UpdatePassword()
         {
             return View();
         }
 
         [Authorize]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult UpdatePasswordSuccess()
         {
             return View();
@@ -701,6 +703,7 @@ namespace K9.WebApplication.Controllers
             return View(model);
         }
 
+        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult PromoCodeEmailSent()
         {
             return View();
@@ -723,11 +726,13 @@ namespace K9.WebApplication.Controllers
             return View(new ConfirmDeleteAccountModel { UserId = id });
         }
 
+        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult DeleteAccountSuccess()
         {
             return View();
         }
 
+        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult DeleteAccountFailed()
         {
             return View();
@@ -738,6 +743,7 @@ namespace K9.WebApplication.Controllers
 
         #region Password Reset
 
+        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult PasswordResetEmailSent()
         {
             return View();
@@ -789,6 +795,7 @@ namespace K9.WebApplication.Controllers
             return View(model);
         }
 
+        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult ResetPasswordFailed()
         {
             return View();
@@ -816,6 +823,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Authorize]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult ResetPasswordSuccess()
         {
             return View();
@@ -975,12 +983,14 @@ namespace K9.WebApplication.Controllers
         }
 
         [AllowAnonymous]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult AccountActivationFailed()
         {
             return View();
         }
 
         [AllowAnonymous]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult AccountAlreadyActivated()
         {
             return View();

@@ -8,9 +8,9 @@ using K9.WebApplication.Config;
 using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
-using NLog;
 using System;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace K9.WebApplication.Controllers
 {
@@ -31,6 +31,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [HttpGet]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult Index()
         {
             ViewBag.RecaptchaSiteKey = _recaptchaConfig.RecaptchaSiteKey;
@@ -86,12 +87,14 @@ namespace K9.WebApplication.Controllers
             }
         }
 
+        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult ContactUsSuccess()
         {
             return View();
         }
 
         [Route("donate")]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult DonateStart()
         {
             return View(new Donation
@@ -136,12 +139,14 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("donate/success")]
-        public ActionResult DonationSuccess(string sessionId)
+        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
+        public ActionResult DonationSuccess()
         {
             return View();
         }
 
         [Route("donate/cancel/success")]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult DonationCancelSuccess()
         {
             return View();

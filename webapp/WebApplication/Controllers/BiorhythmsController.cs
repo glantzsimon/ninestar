@@ -1,13 +1,10 @@
-﻿using K9.Base.DataAccessLayer.Models;
-using K9.SharedLibrary.Helpers;
-using K9.SharedLibrary.Models;
-using K9.WebApplication.Helpers;
+﻿using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
-using NLog;
 using System;
 using System.Web.Mvc;
-using K9.WebApplication.Packages;
+using System.Web.UI;
 
 namespace K9.WebApplication.Controllers
 {
@@ -24,6 +21,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("biorhythms")]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult Index()
         {
             var dateOfBirth = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day);

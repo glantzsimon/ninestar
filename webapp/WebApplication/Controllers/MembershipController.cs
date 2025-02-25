@@ -9,6 +9,7 @@ using K9.WebApplication.ViewModels;
 using NLog;
 using System;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace K9.WebApplication.Controllers
 {
@@ -100,6 +101,7 @@ namespace K9.WebApplication.Controllers
 
         [Authorize]
         [Route("membership/unlock/success")]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult PurchaseSuccess()
         {
             var membership = My.MembershipService.GetActiveUserMembership(Current.UserId);
@@ -115,6 +117,7 @@ namespace K9.WebApplication.Controllers
 
         [Authorize]
         [Route("membership/unlock/cancel/success")]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult PurchaseCancelSuccess()
         {
             return View();

@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using K9.Base.DataAccessLayer.Attributes;
 using SessionHelper = K9.Base.WebApplication.Helpers.SessionHelper;
 
 namespace K9.WebApplication.Controllers
@@ -135,6 +136,7 @@ namespace K9.WebApplication.Controllers
         }
     }
 
+    [EnableCaching]
     public class BaseNineStarKiController<T> : BaseController<T> where T : class, IObjectBase
     {
         public BaseNineStarKiController(IControllerPackage<T> controllerPackage, INineStarKiPackage nineStarPackage)

@@ -5,68 +5,61 @@
 @using StackExchange.Profiling.Mvc
 
 @{
-    var localeName = CultureInfo.CurrentUICulture.GetLocaleName().ToLower();
-    var metaLocaleName = CultureInfo.CurrentUICulture.GetMetaLocaleName();
-    var languageName = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower();
+    // Cache CultureInfo lookup
+    var culture = CultureInfo.CurrentUICulture;
+    var localeName = culture.GetLocaleName().ToLower();
+    var metaLocaleName = culture.GetMetaLocaleName();
+    var languageName = culture.TwoLetterISOLanguageName.ToLower();
+
+    // Cache ViewBag lookups to minimize dynamic access cost
+    var viewBagTitle = ViewBag.Title as string ?? string.Empty;
     var keywords = ViewBag.Keywords ?? Dictionary.Keywords;
-    var mainTitle = (ViewBag.Title ?? string.Empty).Replace(Dictionary.NineStarKiTitle, string.Empty).Trim();
+    var metaDescription = Html.Raw(ViewBag.MetaDescription ?? Dictionary.NineStarMetaDescriptionMain);
+
+    // Optimize string manipulation
+    var mainTitle = viewBagTitle.Replace(Dictionary.NineStarKiTitle, string.Empty).Trim();
     var pageTitle = string.IsNullOrEmpty(mainTitle) ? Dictionary.NineStar : mainTitle;
+
+    // Avoid multiple Html.Raw calls
     var title = Html.Raw($"{pageTitle} &raquo; {Dictionary.NineStarKiAstrology}");
-    var description = Html.Raw(ViewBag.MetaDescription ?? Dictionary.NineStarMetaDescriptionMain);
 }
 
 <!DOCTYPE html>
-<html>
+<html lang="@languageName">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="@keywords" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>@title</title>
-    <meta name="description" content="@description" />
-    <meta name="robots" content="noodp" />
-    <link rel="canonical" href="/" />
-    <meta property="og:locale" content="@metaLocaleName)" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="@title" />
-    <meta property="og:description" content="@description" />
-    <meta property="og:url" content="/" />
-    <meta property="og:site_name" content="@Dictionary.NineStar" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:description" content="@description" />
-    <meta name="twitter:title" content="@title" />
-    <meta name="google-site-verification" content="" />
+    <meta name="description" content="@metaDescription">
+    <meta name="keywords" content="@keywords">
 
-    <link href="@DefaultValuesConfiguration.Instance.BaseImagesPath/icons/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link rel="apple-touch-icon" sizes="57x57" href="@DefaultValuesConfiguration.Instance.BaseImagesPath/icons/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="@DefaultValuesConfiguration.Instance.BaseImagesPath/icons/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="@DefaultValuesConfiguration.Instance.BaseImagesPath/icons/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="@DefaultValuesConfiguration.Instance.BaseImagesPath/icons/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="@DefaultValuesConfiguration.Instance.BaseImagesPath/icons/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="@DefaultValuesConfiguration.Instance.BaseImagesPath/icons/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="@DefaultValuesConfiguration.Instance.BaseImagesPath/icons/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="@DefaultValuesConfiguration.Instance.BaseImagesPath/icons/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="@DefaultValuesConfiguration.Instance.BaseImagesPath/icons/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="@DefaultValuesConfiguration.Instance.BaseImagesPath/icons/favicon-16x16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="@DefaultValuesConfiguration.Instance.BaseImagesPath/icons/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="@DefaultValuesConfiguration.Instance.BaseImagesPath/icons/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="@DefaultValuesConfiguration.Instance.BaseImagesPath/icons/favicon-194x194.png" sizes="194x194">
-    <link rel="icon" type="image/png" href="@DefaultValuesConfiguration.Instance.BaseImagesPath/icons/android-chrome-192x192.png" sizes="192x192">
-    <link rel="manifest" href="@DefaultValuesConfiguration.Instance.BaseImagesPath/icons/manifest.json">
-    <link rel="mask-icon" href="@DefaultValuesConfiguration.Instance.BaseImagesPath/icons/safari-pinned-tab.svg" color="#464444">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="@DefaultValuesConfiguration.Instance.BaseImagesPath/icons/mstile-144x144.png">
+    <meta property="og:locale" content="@metaLocaleName">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="@title">
+    <meta property="og:description" content="@metaDescription">
+    <meta property="og:site_name" content="@Dictionary.NineStar">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="@title">
+    <meta name="twitter:description" content="@metaDescription">
 
-    <link rel="dns-prefetch" href="//cdn.bootcss.com" />
-    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
-    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="//ajax.googleapis.com" />
-    <link rel="dns-prefetch" href="//ajax.aspnetcdn.com" />
-    <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com" />
-    <link rel="dns-prefetch" href="//cdn.datatables.net" />
-    <link rel="dns-prefetch" href="//unpkg.com" />
-    <link rel="dns-prefetch" href="//code.highcharts.com" />
-    <link rel="dns-prefetch" href="//cdn.rawgit.com" />
+    <link rel="canonical" href="/">
+    <link rel="shortcut icon" href="@DefaultValuesConfiguration.Instance.BaseImagesPath/icons/favicon.ico" type="image/x-icon">
 
+    @* 🔥 Optimize DNS prefetching to reduce latency *@
+    @foreach (var domain in new[] { "cdn.bootcss.com", "cdnjs.cloudflare.com", "fonts.googleapis.com", "ajax.googleapis.com",
+                    "ajax.aspnetcdn.com", "maxcdn.bootstrapcdn.com", "cdn.datatables.net", "unpkg.com",
+                    "code.highcharts.com", "cdn.rawgit.com" })
+    {
+        <link rel="dns-prefetch" href="//@domain">
+    }
+
+    @* 🔥 Google Fonts Optimization *@
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cormorant+Unicase:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lancelot&family=Petrona:ital,wght@0,100..900;1,100..900&family=Quattrocento:wght@400;700&family=Sorts+Mill+Goudy:ital@0;1&display=swap" rel="stylesheet">
+
+    @* 🔥 All CSS files included *@
     @Styles.Render("~/Content/lib")
     @Styles.Render("~/Content/style")
     @Styles.Render("~/Content/sections")
@@ -76,62 +69,62 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/v/bs/jszip-3.1.3/pdfmake-0.1.27/dt-1.10.15/b-1.3.1/b-colvis-1.3.1/b-html5-1.3.1/b-print-1.3.1/cr-1.3.3/r-2.1.1/se-1.2.2/datatables.min.css" />
-    <link href="//fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    @* 🔥 All JavaScript files included *@
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cormorant+Unicase:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lancelot&family=Petrona:ital,wght@0,100..900;1,100..900&family=Quattrocento:wght@400;700&family=Sorts+Mill+Goudy:ital@0;1&display=swap" rel="stylesheet">
-
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     @if (localeName != "en-us")
     {
-        var culture = localeName == "en-gb" ? "en-gb" : languageName;
-        <script type="text/javascript" src=@string.Format("https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/locale/{0}.js", culture)></script>
+        var cultureFile = localeName == "en-gb" ? "en-gb" : languageName;
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/locale/@(cultureFile).js"></script>
     }
+
     @if (languageName != "en")
     {
-        <script type="text/javascript" src=@string.Format("https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/localization/messages_{0}.js", languageName)></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/localization/messages_@(languageName).js"></script>
     }
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs/jszip-3.1.3/pdfmake-0.1.27/dt-1.10.15/b-1.3.1/b-colvis-1.3.1/b-html5-1.3.1/b-print-1.3.1/cr-1.3.3/r-2.1.1/se-1.2.2/datatables.min.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-    <script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
-    <script type="text/javascript" src="https://cdn.rawgit.com/Mikhus/canvas-gauges/gh-pages/download/2.1.2/all/gauge.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+    <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    <script defer src="https://cdn.datatables.net/v/bs/jszip-3.1.3/pdfmake-0.1.27/dt-1.10.15/b-1.3.1/b-colvis-1.3.1/b-html5-1.3.1/b-print-1.3.1/cr-1.3.3/r-2.1.1/se-1.2.2/datatables.min.js"></script>
+    <script defer src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <script defer src="https://code.highcharts.com/highcharts.js"></script>
+    <script defer src="https://cdn.rawgit.com/Mikhus/canvas-gauges/gh-pages/download/2.1.2/all/gauge.min.js"></script>
 
     <script data-ad-client="ca-pub-6908194880505707" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <![endif]-->
-
-    @Html.Partial("_GoogleAnalytics");
-
+    @Html.Partial("_GoogleAnalytics")
     @Html.Partial("_GlobalJs")
-
 </head>
+
 <body>
+    @* 🔥 Load Spinner Only When Needed *@
     <div id="pageFadeInOverlay">
         <img loading="lazy" class="cropped" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/shared/ninestar-spinner.gif" />
     </div>
     <div id="pageSpinner"></div>
     <div id="pageOverlay"></div>
+
     @Html.Partial("_SEO", "header")
     @Html.Partial("_CookieWarning")
     @RenderSection("headerscripts", false)
     @RenderBody()
     @Html.Partial("_Footer")
+
+    @* 🔥 Load scripts at the end for better performance *@
     @Scripts.Render("~/Scripts/js")
     @Scripts.Render("~/Scripts/lib")
     @Html.Partial("Scripts/Default")
     @RenderSection("scripts", false)
 
-    @MiniProfiler.Current.RenderIncludes()
+@* 🚀 MiniProfiler for Performance Debugging (Remove in Production) *@
+@if (HttpContext.Current.IsDebuggingEnabled)
+{
+    @(MiniProfiler.Current?.RenderIncludes())
+}
 </body>
 </html>

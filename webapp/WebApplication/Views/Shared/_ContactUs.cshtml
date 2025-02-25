@@ -24,9 +24,13 @@
         @Html.BootstrapEditorFor(m => m.Body)
 
         <hr />
-        @Html.Partial("_Recaptcha")
+        <div id="recaptcha-container">
+        </div>
+        <br />
         <div id="recaptcha-buttons-container">
             @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Submit, EButtonType.Submit, "fa-envelope", EButtonClass.Large)
         </div>
     }
 }
+
+@Html.Partial("_Recaptcha")

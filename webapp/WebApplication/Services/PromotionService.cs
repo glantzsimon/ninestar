@@ -260,7 +260,7 @@ namespace K9.WebApplication.Services
 #if DEBUG
             SchedulePromotionFromTemplateToUser(userId, template, promotion, TimeSpan.FromMinutes(3));
 #else
-            SchedulePromotionFromTemplateToUser(userId, template, promoCode, TimeSpan.FromDays(3));
+            SchedulePromotionFromTemplateToUser(userId, template, promotion, TimeSpan.FromDays(3));
 #endif
         }
 
@@ -271,7 +271,7 @@ namespace K9.WebApplication.Services
 #if DEBUG
             SchedulePromotionFromTemplateToUser(userId, template, promotion, TimeSpan.FromMinutes(7));
 #else
-            SchedulePromotionFromTemplateToUser(userId, template, promoCode, TimeSpan.FromDays(7));
+            SchedulePromotionFromTemplateToUser(userId, template, promotion, TimeSpan.FromDays(7));
 #endif
         }
 
@@ -282,7 +282,7 @@ namespace K9.WebApplication.Services
 #if DEBUG
             SchedulePromotionFromTemplateToUser(userId, template, promotion, TimeSpan.FromMinutes(11));
 #else
-            SchedulePromotionFromTemplateToUser(userId, template, promoCode, TimeSpan.FromDays(11));
+            SchedulePromotionFromTemplateToUser(userId, template, promotion, TimeSpan.FromDays(11));
 #endif
         }
 

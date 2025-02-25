@@ -11,17 +11,18 @@ namespace K9.WebApplication.Models
         public BioRhythmsModel()
         {
             PersonModel = new PersonModel();
+            BiorhythmResults = new List<BioRhythmResult>();
+            _biorhythmLookup = new Dictionary<EBiorhythm, BioRhythmResult>();
         }
 
         public BioRhythmsModel(NineStarKiModel nineStarKiModel, DateTime? selectedDate = null)
         {
-            selectedDate = selectedDate ?? DateTime.Today;
-
-            SelectedDate = selectedDate;
+            SelectedDate = selectedDate ?? DateTime.Today;
             PersonModel = nineStarKiModel.PersonModel;
             NineStarKiModel = nineStarKiModel;
-            DaysElapsedSinceBirth = GetDaysElapsedSinceBirth(selectedDate.Value);
+            DaysElapsedSinceBirth = (int)(SelectedDate.Value - PersonModel.DateOfBirth).TotalDays;
             BiorhythmResults = new List<BioRhythmResult>();
+            _biorhythmLookup = new Dictionary<EBiorhythm, BioRhythmResult>();
         }
 
         public DateTime? SelectedDate { get; }
@@ -31,28 +32,38 @@ namespace K9.WebApplication.Models
         [ScriptIgnore]
         public NineStarKiModel NineStarKiModel { get; }
 
-        public int DaysElapsedSinceBirth { get; }
+        public int DaysElapsedSinceBirth { get; private set; }
 
         public string Summary { get; set; }
 
-        public List<BioRhythmResult> BiorhythmResults { get; set; }
-        
+        private List<BioRhythmResult> _biorhythmResults;
+        public List<BioRhythmResult> BiorhythmResults
+        {
+            get { return _biorhythmResults; }
+            set
+            {
+                _biorhythmResults = value;
+                _biorhythmLookup = value.ToDictionary(e => e.BioRhythm.Biorhythm, e => e);
+            }
+        }
+
         public int MaxCycleLength { get; set; }
 
-        public List<BioRhythmResult> GetBiorhythmResultsByDisplayIndex() => BiorhythmResults.OrderBy(e => e.BioRhythm.DisplayIndex).ToList();
+        // Optimized List Operations
+        public IEnumerable<BioRhythmResult> GetBiorhythmResultsByDisplayIndex() =>
+            BiorhythmResults.OrderBy(e => e.BioRhythm.DisplayIndex);
 
         public BioRhythmResult GetAverageResult() =>
-            BiorhythmResults.FirstOrDefault(e => e.BioRhythm.Biorhythm == EBiorhythm.Average);
+            _biorhythmLookup.TryGetValue(EBiorhythm.Average, out var result) ? result : null;
 
-        public List<BioRhythmResult> GetResultsWithoutAverage() =>
-            BiorhythmResults.Where(e => e.BioRhythm.Biorhythm != EBiorhythm.Average).ToList();
+        public IEnumerable<BioRhythmResult> GetResultsWithoutAverage() =>
+            BiorhythmResults.Where(e => e.BioRhythm.Biorhythm != EBiorhythm.Average);
 
         public BioRhythmResult GetResultByType(EBiorhythm biorhythm) =>
-            BiorhythmResults?.FirstOrDefault(e => e.BioRhythm.Biorhythm == biorhythm);
-        
-        private int GetDaysElapsedSinceBirth(DateTime date)
-        {
-            return (int)date.Subtract(PersonModel.DateOfBirth).TotalDays;
-        }
+            _biorhythmLookup.TryGetValue(biorhythm, out var result) ? result : null;
+
+        private Dictionary<EBiorhythm, BioRhythmResult> _biorhythmLookup;
     }
 }
+
+

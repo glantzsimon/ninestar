@@ -24,8 +24,14 @@ namespace K9.WebApplication
 		    AntiForgeryConfig.SuppressIdentityHeuristicChecks = true;
 
 		    Stripe.StripeConfiguration.ApiKey = ConfigurationManager.AppSettings["SecretKey"];
-
-		    Response.Cache.SetCacheability(HttpCacheability.ServerAndPrivate);
         }
+
+	    protected void Application_BeginRequest()
+	    {
+	        if (HttpContext.Current != null && HttpContext.Current.Response != null)
+	        {
+	            HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.ServerAndPrivate);
+	        }
+	    }
 	}
 }

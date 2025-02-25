@@ -36,10 +36,10 @@ namespace K9.WebApplication.Models
             SurfaceEnergy = GetOrAddToCache($"SurfaceEnergy_{MainEnergy.EnergyNumber}_{CharacterEnergy.EnergyNumber}",
                 GetSurfaceEnergy, TimeSpan.FromDays(30));
 
-            YearlyCycleEnergy = GetOrAddToCache($"YearlyCycleEnergy_{SelectedDate.Value.Year}_{MainEnergy.EnergyNumber}",
+            YearlyCycleEnergy = GetOrAddToCache($"YearlyCycleEnergy_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{SelectedDate.Value.ToString()}",
                 GetYearlyCycleEnergy, TimeSpan.FromDays(30));
 
-            MonthlyCycleEnergy = GetOrAddToCache($"MonthlyCycleEnergy_{SelectedDate.Value.Year}_{SelectedDate.Value.Month}",
+            MonthlyCycleEnergy = GetOrAddToCache($"MonthlyCycleEnergy_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{SelectedDate.Value.ToString()}",
                 GetMonthlyCycleEnergy, TimeSpan.FromDays(30));
 
             MainEnergy.RelatedEnergy = CharacterEnergy.Energy;
@@ -413,21 +413,42 @@ namespace K9.WebApplication.Models
         private int InvertEnergy(int energyNumber) =>
             _invertedEnergies.TryGetValue(energyNumber, out var inverted) ? inverted : energyNumber;
 
-        private static readonly Dictionary<(ENineStarKiYinYang, ENineStarKiYinYang), ESexualityRelationType> _sexualityRelations
-            = new Dictionary<(ENineStarKiYinYang, ENineStarKiYinYang), ESexualityRelationType>
+        private static readonly Dictionary<bool, Dictionary<(ENineStarKiYinYang, ENineStarKiYinYang), ESexualityRelationType>> _sexualityRelations
+            = new Dictionary<bool, Dictionary<(ENineStarKiYinYang, ENineStarKiYinYang), ESexualityRelationType>>
             {
-                { (ENineStarKiYinYang.Yin, ENineStarKiYinYang.Yin), ESexualityRelationType.MatchMatch },
-                { (ENineStarKiYinYang.Yang, ENineStarKiYinYang.Yang), ESexualityRelationType.OppositeOpposite },
-                { (ENineStarKiYinYang.Yin, ENineStarKiYinYang.Yang), ESexualityRelationType.MatchOpposite },
-                { (ENineStarKiYinYang.Yang, ENineStarKiYinYang.Yin), ESexualityRelationType.OppositeMatch }
+                // If PersonModel.Gender.IsYin() == true
+                [true] = new Dictionary<(ENineStarKiYinYang, ENineStarKiYinYang), ESexualityRelationType>
+                {
+                    { (ENineStarKiYinYang.Yin, ENineStarKiYinYang.Yin), ESexualityRelationType.MatchMatch },
+                    { (ENineStarKiYinYang.Yang, ENineStarKiYinYang.Yang), ESexualityRelationType.OppositeOpposite },
+                    { (ENineStarKiYinYang.Yin, ENineStarKiYinYang.Yang), ESexualityRelationType.MatchOpposite },
+                    { (ENineStarKiYinYang.Yang, ENineStarKiYinYang.Yin), ESexualityRelationType.OppositeMatch }
+                },
+
+                // If PersonModel.Gender.IsYin() == false
+                [false] = new Dictionary<(ENineStarKiYinYang, ENineStarKiYinYang), ESexualityRelationType>
+                {
+                    { (ENineStarKiYinYang.Yin, ENineStarKiYinYang.Yin), ESexualityRelationType.OppositeOpposite },
+                    { (ENineStarKiYinYang.Yang, ENineStarKiYinYang.Yang), ESexualityRelationType.MatchMatch },
+                    { (ENineStarKiYinYang.Yin, ENineStarKiYinYang.Yang), ESexualityRelationType.OppositeMatch },
+                    { (ENineStarKiYinYang.Yang, ENineStarKiYinYang.Yin), ESexualityRelationType.MatchOpposite }
+                }
             };
 
         private ESexualityRelationType GetSexualityRelationType()
         {
-            return _sexualityRelations.TryGetValue((MainEnergy.YinYang, CharacterEnergy.YinYang), out var relation)
+            if (PersonModel == null || MainEnergy == null || CharacterEnergy == null)
+            {
+                return ESexualityRelationType.Unspecified;
+            }
+
+            bool isPersonYin = PersonModel.Gender.IsYin();
+
+            return _sexualityRelations[isPersonYin].TryGetValue((MainEnergy.YinYang, CharacterEnergy.YinYang), out var relation)
                 ? relation
                 : ESexualityRelationType.Unspecified;
         }
+
 
         private string GetSexualityGenderDescription(bool isGay = false)
         {

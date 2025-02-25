@@ -31,7 +31,7 @@ namespace K9.WebApplication.Services
         public NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, bool isCompatibility = false,
             bool isMyProfile = false, DateTime? today = null)
         {
-            var cacheKey = $"CalculateNineStarKiProfileFromModel_{personModel.DateOfBirth.ToString()}_{personModel.Name}_{isCompatibility}_{isMyProfile}_{today.ToString()}";
+            var cacheKey = $"CalculateNineStarKiProfileFromModel_{personModel.DateOfBirth.ToString()}_{personModel.Name}_{personModel.Gender}_{isCompatibility}_{isMyProfile}_{today.ToString()}";
             return GetOrAddToCache(cacheKey, () =>
             {
                 var model = new NineStarKiModel(personModel, today);

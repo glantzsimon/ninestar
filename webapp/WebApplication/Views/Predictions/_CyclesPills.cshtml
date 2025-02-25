@@ -48,7 +48,7 @@
         <div id="current-monthly-cycle" class="tab-pane fade in active">
             @Html.Panel("", Dictionary.month_description)
 
-            @using (Html.PayWall(ESection.Predictions, Model, () => Model.IsMyProfile))
+            @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
                 @Html.Partial("_Cycle", Model.MonthlyCycleEnergy)
             }
@@ -59,7 +59,7 @@
         <div id="current-yearly-cycle" class="tab-pane fade">
             @Html.Panel("", Dictionary.year_description)
 
-            @using (Html.PayWall(ESection.Predictions, Model, () => Model.IsMyProfile))
+            @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
                 @Html.Partial("_Cycle", Model.YearlyCycleEnergy)
             }
@@ -68,7 +68,7 @@
         </div>
 
         <div id="yearly-planner" class="tab-pane fade">
-            @using (Html.PayWall(ESection.Predictions, Model, () => Model.IsMyProfile))
+            @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
                 @Html.Partial("_YearlyPlanner", Model)
             }
@@ -77,7 +77,7 @@
         </div>
 
         <div id="monthly-planner" class="tab-pane fade">
-            @using (Html.PayWall(ESection.Predictions, Model, () => Model.IsMyProfile))
+            @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
                 @Html.Partial("_MonthlyPlanner", Model)
             }

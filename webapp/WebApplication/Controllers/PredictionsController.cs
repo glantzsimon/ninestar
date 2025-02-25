@@ -62,6 +62,7 @@ namespace K9.WebApplication.Controllers
 
         [Authorize]
         [Route("predictions/my-predictions")]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult MyCycles()
         {
             var myAccount = My.UsersRepository.Find(Current.UserId);
@@ -75,6 +76,7 @@ namespace K9.WebApplication.Controllers
 
         [Route("predictions/retrieve-last")]
         [Authorize]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult RetrieveLastPredictions(bool todayOnly = false)
         {
             var lastPredictions = SessionHelper.GetLastCompatibility(todayOnly).PersonModel;

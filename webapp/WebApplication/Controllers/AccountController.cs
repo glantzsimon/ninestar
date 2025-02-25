@@ -50,6 +50,7 @@ namespace K9.WebApplication.Controllers
 
         #region Membership
 
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult Login(string returnUrl, string retrieveLast = null)
         {
             if (WebSecurity.IsAuthenticated)
@@ -62,6 +63,7 @@ namespace K9.WebApplication.Controllers
             return View(new UserAccount.LoginModel());
         }
 
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         [Authorize]
         [RequirePermissions(Role = RoleNames.Administrators)]
         public ActionResult LoginUser()
@@ -161,6 +163,7 @@ namespace K9.WebApplication.Controllers
             return Redirect(_facebookService.GetLoginUrl().AbsoluteUri);
         }
 
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult FacebookCallback(string code)
         {
             var result = _facebookService.Authenticate(code);
@@ -215,6 +218,7 @@ namespace K9.WebApplication.Controllers
             return View("Login", new UserAccount.LoginModel());
         }
 
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         [Authorize]
         public ActionResult FacebookPostRegsiter(string username)
         {
@@ -294,6 +298,7 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult Register(string promoCode = null, string returnUrl = null)
         {
             ViewBag.RecaptchaSiteKey = _recaptchaConfig.RecaptchaSiteKey;
@@ -438,7 +443,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Authorize]
-        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult UpdatePassword()
         {
             return View();
@@ -602,6 +607,7 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("DeleteAccountFailed");
         }
 
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         [Route("email-promocode")]
         [Authorize]
         public ActionResult EmailPromoCode(int id)
@@ -653,6 +659,7 @@ namespace K9.WebApplication.Controllers
             return View(model);
         }
 
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         [Route("email-promocode-to-user")]
         [Authorize]
         public ActionResult EmailPromoCodeToUser(int id)
@@ -718,6 +725,7 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("ConfirmDeleteAccount", new { id = Current.UserId });
         }
 
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult ConfirmDeleteAccount(int id)
         {
             var user = My.UsersRepository.Find(id);
@@ -751,6 +759,7 @@ namespace K9.WebApplication.Controllers
             return View();
         }
 
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult PasswordResetRequest()
         {
             if (WebSecurity.IsAuthenticated)
@@ -781,6 +790,7 @@ namespace K9.WebApplication.Controllers
             return View(model);
         }
 
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult ResetPassword(string username, string token)
         {
             if (!My.AccountService.ConfirmUserFromToken(username, token))
@@ -883,6 +893,7 @@ namespace K9.WebApplication.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("verify")]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult VerifySixDigitCode(AccountActivationModel model, string returnUrl = null)
         {
             TempData["ReturnUrl"] = returnUrl;
@@ -973,12 +984,14 @@ namespace K9.WebApplication.Controllers
         }
 
         [AllowAnonymous]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult AccountActivated(string userName)
         {
             return View();
         }
 
         [AllowAnonymous]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult AccountVerified(string userName)
         {
             return View();
@@ -999,6 +1012,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [AllowAnonymous]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult ActivateAccount(string userName, string token)
         {
             var result = My.AccountService.ActivateAccount(userName, token);
@@ -1020,6 +1034,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [RequirePermissions(Permission = Permissions.Edit)]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult ActivateUserAccount(int userId)
         {
             var result = My.AccountService.ActivateAccount(userId);
@@ -1039,6 +1054,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("unsubscribe-contact")]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult UnsubscribeContact(string externalId)
         {
             try
@@ -1055,6 +1071,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("unsubscribe-user")]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult UnsubscribeUser(string externalId)
         {
             try

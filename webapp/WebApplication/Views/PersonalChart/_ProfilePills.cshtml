@@ -73,7 +73,7 @@
                 @Html.Panel("", Dictionary.MainEnergyDescription)
 
                 <br />
-                @using (Html.PayWall(ESection.Profile, Model, () => Model.IsMyProfile))
+                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
                     @Html.Partial("_ProfileMainEnergyDetails", Model)
                 }
@@ -84,7 +84,7 @@
                 @Html.Panel("", Dictionary.CharacterEnergyDescription)
 
                 <br />
-                @using (Html.PayWall(ESection.Profile, Model, () => Model.IsMyProfile))
+                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
                     @Html.Partial("_ProfileEmotionalEnergyDetails", Model)
                 }
@@ -96,7 +96,7 @@
                 @Html.Panel("", Dictionary.SurfaceEnergyDescription)
 
                 <br />
-                @using (Html.PayWall(ESection.Profile, Model, () => Model.IsMyProfile))
+                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
                     @Html.Partial("_ProfileMirrorEnergyDetails", Model)
                 }
@@ -118,7 +118,7 @@
             }
 
             <div id="health" class="tab-pane fade">
-                @using (Html.PayWall(ESection.Profile, Model, () => Model.IsMyProfile))
+                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
                     @Html.Panel("", Model.Health, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 }
@@ -126,7 +126,7 @@
             </div>
 
             <div id="career" class="tab-pane fade">
-                @using (Html.PayWall(ESection.Profile, Model, () => Model.IsMyProfile))
+                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
                     @Html.Panel("", $"{Model.Occupations}{Model.PersonalDevelopemnt}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 }

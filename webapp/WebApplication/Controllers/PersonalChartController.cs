@@ -35,6 +35,7 @@ namespace K9.WebApplication.Controllers
             return View(new NineStarKiModel(personModel));
         }
 
+
         [Route("personalchart/calculate")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -67,6 +68,7 @@ namespace K9.WebApplication.Controllers
 
         [Authorize]
         [Route("personalchart/my-chart")]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult MyProfile()
         {
             var myAccount = My.UsersRepository.Find(Current.UserId);
@@ -83,6 +85,7 @@ namespace K9.WebApplication.Controllers
 
         [Route("retrieve-last")]
         [Authorize]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult RetrieveLast()
         {
             var retrieveLast = TempData["RetrieveLast"].ToString();
@@ -112,6 +115,7 @@ namespace K9.WebApplication.Controllers
 
         [Route("personalchart/retrieve-last")]
         [Authorize]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult RetrieveLastProfile(bool todayOnly = false)
         {
             var lastProfile = SessionHelper.GetLastProfile(todayOnly).PersonModel;

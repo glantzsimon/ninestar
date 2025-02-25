@@ -54,6 +54,7 @@ namespace K9.WebApplication.Controllers
 
         [Route("compatibility/retrieve-last")]
         [Authorize]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult RetrieveLastCompatibility(bool todayOnly = false)
         {
             var lastCompatibility = SessionHelper.GetLastCompatibility(todayOnly).CompatibilityModel;

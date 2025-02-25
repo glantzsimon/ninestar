@@ -1026,7 +1026,6 @@
     <Content Include="Scripts\k9\navbar.js" />
     <Content Include="Scripts\library\easing.js" />
     <Content Include="Scripts\library\gauge.js" />
-    <Content Include="Scripts\library\jarallax.js" />
     <Content Include="Scripts\library\move-top.js" />
     <Content Include="Scripts\library\SmoothScroll.min.js" />
     <Content Include="Scripts\library\vticker-min.js" />

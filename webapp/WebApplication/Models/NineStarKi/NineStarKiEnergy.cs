@@ -4,6 +4,7 @@ using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
 using K9.WebApplication.Attributes;
 using K9.WebApplication.Extensions;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Script.Serialization;
 
@@ -271,8 +272,36 @@ namespace K9.WebApplication.Models
         Fire
     }
 
+
     public class NineStarKiEnergy
     {
+        // Dictionaries for fast lookups instead of switch statements
+        private static readonly Dictionary<ENineStarKiEnergy, string> _trigramDescriptions = new Dictionary<ENineStarKiEnergy, string>
+        {
+            { ENineStarKiEnergy.Water, Dictionary.water_trigram },
+            { ENineStarKiEnergy.Wind, Dictionary.wind_trigram },
+            { ENineStarKiEnergy.Lake, Dictionary.lake_trigram },
+            { ENineStarKiEnergy.Soil, Dictionary.soil_trigram },
+            { ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_trigram },
+            { ENineStarKiEnergy.Mountain, Dictionary.mountain_trigram },
+            { ENineStarKiEnergy.Thunder, Dictionary.thunder_trigram },
+            { ENineStarKiEnergy.Heaven, Dictionary.heaven_trigram },
+            { ENineStarKiEnergy.Fire, Dictionary.fire_trigram }
+        };
+
+        private static readonly Dictionary<ENineStarKiEnergy, string> _childDescriptions = new Dictionary<ENineStarKiEnergy, string>
+        {
+            { ENineStarKiEnergy.Water, Dictionary.water_child },
+            { ENineStarKiEnergy.Soil, Dictionary.soil_child },
+            { ENineStarKiEnergy.Thunder, Dictionary.thunder_child },
+            { ENineStarKiEnergy.Wind, Dictionary.wind_child },
+            { ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_child },
+            { ENineStarKiEnergy.Heaven, Dictionary.heaven_child },
+            { ENineStarKiEnergy.Lake, Dictionary.lake_child },
+            { ENineStarKiEnergy.Mountain, Dictionary.mountain_child },
+            { ENineStarKiEnergy.Fire, Dictionary.fire_child }
+        };
+
         public NineStarKiEnergy(ENineStarKiEnergy energy, ENineStarKiEnergyType type, bool isAdult = true, ENineStarKiEnergyCycleType energyCycleType = ENineStarKiEnergyCycleType.Unspecified)
         {
             Energy = energy;
@@ -304,68 +333,41 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ModalityLabel)]
         public string ModalityName => Modality.ToString();
 
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ElementLabel)]
+        public string ElementTitle => $"{ElementName} {Dictionary.Element}";
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ModalityLabel)]
+        public string ModalityTitle => $"{ModalityName} {Dictionary.ModalityLabel}";
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ModalityDescriptionLabel)]
-        public string ModalityDescription => MetaData.ModalityDeescription;
+        public string ModalityDescription => MetaData.ModalityDescription;
 
         public string Direction => MetaData.GetDirection();
-
         public string Season => CycleMetaData.Season;
-
         public string SeasonDescription => CycleMetaData.SeasonDescription;
-
         public string CycleDescription => EnergyType == ENineStarKiEnergyType.MainEnergy ? CycleMetaData.YearlyDescription : CycleMetaData.MonthlyDescription;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TrigramLabel)]
         public string Trigram => MetaData.GetTrigram();
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TrigramLabel)]
-        public string TrigramDescription => GetTrigramDescription();
+        public string TrigramDescription => _trigramDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
 
         public string YinYangName => YinYang == ENineStarKiYinYang.Unspecified ? string.Empty : YinYang.ToString();
 
-        [ScriptIgnore]
-        public ENineStarKiEnergy Energy { get; }
+        [ScriptIgnore] public ENineStarKiEnergy Energy { get; }
+        [ScriptIgnore] public ENineStarKiEnergy RelatedEnergy { get; set; }
+        [ScriptIgnore] public EGender Gender { get; set; }
+        [ScriptIgnore] public bool IsAdult { get; set; }
+        [ScriptIgnore] public ENineStarKiEnergyType EnergyType { get; }
+        [ScriptIgnore] public ENineStarKiEnergyCycleType EnergyCycleType { get; set; }
+        [ScriptIgnore] public string EnergyLowerCase => Energy.ToString().ToLower();
+        [ScriptIgnore] public string EnergyNameAndNumber => $"{EnergyNumber} {EnergyName}";
+        [ScriptIgnore] public string EnergyTitle => $"{EnergyNameAndNumber} - {DescriptiveTitle}";
+        [ScriptIgnore] public string DescriptiveTitle => $"The {MetaData.GetDescriptiveTitle()}";
 
         [ScriptIgnore]
-        /// <summary>
-        /// Used to determine YinYang of 5 energies
-        /// </summary>
-        public ENineStarKiEnergy RelatedEnergy { get; set; }
-
-        [ScriptIgnore]
-        /// <summary>
-        /// Used to determine YinYang of 5.5.5 energies
-        /// </summary>
-        public EGender Gender { get; set; }
-
-        [ScriptIgnore]
-        public bool IsAdult { get; set; }
-
-        [ScriptIgnore]
-        public ENineStarKiEnergyType EnergyType { get; }
-
-        [ScriptIgnore]
-        public ENineStarKiEnergyCycleType EnergyCycleType { get; set; }
-
-        [ScriptIgnore]
-        public string EnergyLowerCase => Energy.ToString().ToLower();
-
-        [ScriptIgnore]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyLabel)]
-        public string DescriptiveTitle => $"The {MetaData.GetDescriptiveTitle()}";
-
-        [ScriptIgnore]
-        public string EnergyNameAndNumber => GetEnergyNameAndNumber();
-
-        [ScriptIgnore]
-        public string EnergyTitle => GetEnergyTitle();
-
-        [ScriptIgnore]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.YinYangLabel)]
-        public ENineStarKiYinYang YinYang => GetYinYang();
-
-        [ScriptIgnore]
-        public string TrigramUIName => $"{MetaData.TrigramName}{EnergyType}";
+        public ENineStarKiYinYang YinYang => GetYinYang();  
 
         [ScriptIgnore]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ElementLabel)]
@@ -373,10 +375,6 @@ namespace K9.WebApplication.Models
 
         [ScriptIgnore]
         public string ElementWithYingYang => $"{YinYangName} {ElementName}".Trim();
-
-        [ScriptIgnore]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ElementLabel)]
-        public string ElementTitle => $"{ElementName} {Dictionary.Element}";
 
         [ScriptIgnore]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ColourLabel)]
@@ -387,45 +385,19 @@ namespace K9.WebApplication.Models
         public ENineStarKiModality Modality => MetaData.Modality;
 
         [ScriptIgnore]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ModalityLabel)]
-        public string ModalityTitle => $"{ModalityName} {Dictionary.ModalityLabel}";
+        public string AdultEnergyLabel => Dictionary.MainEnergyLabel;
 
         [ScriptIgnore]
-        public string AdultEnergyLabel => GetAdultEnergyLabel();
+        public string CharacteEnergyLabel => Dictionary.CharacterEnergyLabel;
 
-        [ScriptIgnore]
-        public string CharacteEnergyLabel => GetCharacterEnergyLabel();
-        
         [ScriptIgnore]
         public string CycleDescriptiveName => CycleMetaData.DescriptiveTitle;
 
-        private string GetEnergyNameAndNumber()
-        {
-            switch (EnergyNumber)
-            {
-                case 1:
-                case 9:
-                case 5:
-                    return $"{EnergyNumber} {EnergyName}";
-
-                default:
-                    return $"{EnergyNumber} {ElementName} / {EnergyName}";
-            }
-
-        }
-
-        private string GetEnergyTitle()
-        {
-            return EnergyType == ENineStarKiEnergyType.MainEnergy
-                ? $"{EnergyNameAndNumber} - {DescriptiveTitle}"
-                : EnergyNameAndNumber;
-        }
+        private string GetChildDescription() => _childDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
 
         internal NineStarKiEnumMetaDataAttribute MetaData => Energy.GetAttribute<NineStarKiEnumMetaDataAttribute>();
 
         internal NineStarKiCycleEnumMetaDataAttribute CycleMetaData => MetaData.Cycle.GetAttribute<NineStarKiCycleEnumMetaDataAttribute>();
-
-        private NineStarKiEnumMetaDataAttribute RelatedMetaData => RelatedEnergy.GetAttribute<NineStarKiEnumMetaDataAttribute>();
 
         private ENineStarKiYinYang GetYinYang()
         {
@@ -435,81 +407,9 @@ namespace K9.WebApplication.Models
             }
             if (Energy == ENineStarKiEnergy.CoreEarth && RelatedEnergy != ENineStarKiEnergy.Unspecified)
             {
-                return RelatedMetaData.YinYang;
+                return RelatedEnergy.GetAttribute<NineStarKiEnumMetaDataAttribute>().YinYang;
             }
             return MetaData.YinYang;
-        }
-
-        private string GetChildDescription()
-        {
-            switch (Energy)
-            {
-                case ENineStarKiEnergy.Water:
-                    return Dictionary.water_child;
-
-                case ENineStarKiEnergy.Soil:
-                    return Dictionary.soil_child;
-
-                case ENineStarKiEnergy.Thunder:
-                    return Dictionary.thunder_child;
-
-                case ENineStarKiEnergy.Wind:
-                    return Dictionary.wind_child;
-
-                case ENineStarKiEnergy.CoreEarth:
-                    return Dictionary.coreearth_child;
-
-                case ENineStarKiEnergy.Heaven:
-                    return Dictionary.heaven_child;
-
-                case ENineStarKiEnergy.Lake:
-                    return Dictionary.lake_child;
-
-                case ENineStarKiEnergy.Mountain:
-                    return Dictionary.mountain_child;
-
-                case ENineStarKiEnergy.Fire:
-                    return Dictionary.fire_child;
-            }
-
-            return string.Empty;
-        }
-
-        private string GetTrigramDescription()
-        {
-            switch (Energy)
-            {
-                case ENineStarKiEnergy.Water:
-                    return Dictionary.water_trigram;
-                case ENineStarKiEnergy.Wind:
-                    return Dictionary.wind_trigram;
-                case ENineStarKiEnergy.Lake:
-                    return Dictionary.lake_trigram;
-                case ENineStarKiEnergy.Soil:
-                    return Dictionary.soil_trigram;
-                case ENineStarKiEnergy.CoreEarth:
-                    return Dictionary.coreearth_trigram;
-                case ENineStarKiEnergy.Mountain:
-                    return Dictionary.mountain_trigram;
-                case ENineStarKiEnergy.Thunder:
-                    return Dictionary.thunder_trigram;
-                case ENineStarKiEnergy.Heaven:
-                    return Dictionary.heaven_trigram;
-                case ENineStarKiEnergy.Fire:
-                    return Dictionary.fire_trigram;
-            }
-
-            return string.Empty;
-        }
-
-        private string GetAdultEnergyLabel()
-        {
-            return IsAdult ? Dictionary.MainEnergyLabel : Dictionary.AdultPersona;
-        }
-
-        private string GetCharacterEnergyLabel()
-        {
-            return IsAdult ? Dictionary.CharacterEnergyLabel : Dictionary.MainChildLabel;
         }
     }
 }

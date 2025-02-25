@@ -15,30 +15,73 @@ namespace K9.WebApplication.Attributes
         public string YearlyDescriptionName { get; set; }
         public string MonthlyDescriptionName { get; set; }
 
-        public string DescriptiveTitle => GetDescriptiveTitle();
-        public string YearlyDescription => GetYearlyDescription();
-        public string MonthlyDescription => GetMonthlyDescription();
-        public string SeasonDescription => GetSeason();
-        
-        public string GetDescriptiveTitle()
+        private string _descriptiveTitle;
+        private string _yearlyDescription;
+        private string _monthlyDescription;
+        private string _seasonDescription;
+
+        public string DescriptiveTitle
         {
-            var attr = DescriptiveName.GetAttribute<EnumDescriptionAttribute>();
-            return attr.GetDescription();
-        }
-       
-        public string GetSeason()
-        {
-            return !string.IsNullOrEmpty(Season) ? ResourceType.GetValueFromResource(Season) : string.Empty;
+            get
+            {
+                if (_descriptiveTitle == null)
+                {
+                    _descriptiveTitle = GetEnumDescription(DescriptiveName);
+                }
+                return _descriptiveTitle;
+            }
         }
 
-        public string GetYearlyDescription()
+        public string YearlyDescription
         {
-            return ResourceType.GetValueFromResource(YearlyDescriptionName);
+            get
+            {
+                if (_yearlyDescription == null)
+                {
+                    _yearlyDescription = GetResourceValue(YearlyDescriptionName);
+                }
+                return _yearlyDescription;
+            }
         }
 
-        public string GetMonthlyDescription()
+        public string MonthlyDescription
         {
-            return ResourceType.GetValueFromResource(MonthlyDescriptionName);
+            get
+            {
+                if (_monthlyDescription == null)
+                {
+                    _monthlyDescription = GetResourceValue(MonthlyDescriptionName);
+                }
+                return _monthlyDescription;
+            }
+        }
+
+        public string SeasonDescription
+        {
+            get
+            {
+                if (_seasonDescription == null)
+                {
+                    _seasonDescription = GetResourceValue(Season);
+                }
+                return _seasonDescription;
+            }
+        }
+
+        private string GetEnumDescription(Enum value)
+        {
+            if (value == null)
+            {
+                return string.Empty;
+            }
+
+            var attr = value.GetAttribute<EnumDescriptionAttribute>();
+            return attr != null ? attr.GetDescription() : string.Empty;
+        }
+
+        private string GetResourceValue(string resourceKey)
+        {
+            return !string.IsNullOrEmpty(resourceKey) ? ResourceType.GetValueFromResource(resourceKey) : string.Empty;
         }
     }
 }

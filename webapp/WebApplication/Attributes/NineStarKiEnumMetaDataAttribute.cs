@@ -4,6 +4,7 @@ using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.WebApplication.Models;
 using System;
+using System.Collections.Generic;
 
 namespace K9.WebApplication.Attributes
 {
@@ -22,7 +23,10 @@ namespace K9.WebApplication.Attributes
         public string TrigramName { get; set; }
         public string Name { get; set; }
 
-        public string ModalityDeescription => GetModalityDescription();
+        public string ModalityDescription
+        {
+            get { return GetModalityDescription(); }
+        }
 
         public string GetDescription()
         {
@@ -31,57 +35,32 @@ namespace K9.WebApplication.Attributes
 
         public string GetDescriptiveTitle()
         {
-            var attr = DescriptiveName.GetAttribute<EnumDescriptionAttribute>();
-            return attr.GetDescription();
+            return GetEnumDescription(DescriptiveName);
         }
 
         public string GetYinYang()
         {
-            var attr = YinYang.GetAttribute<EnumDescriptionAttribute>();
-            return attr.GetDescription();
+            return GetEnumDescription(YinYang);
         }
 
         public string GetFamilyMember()
         {
-            var attr = FamilyMember.GetAttribute<EnumDescriptionAttribute>();
-            return attr.GetDescription();
+            return GetEnumDescription(FamilyMember);
         }
 
         public string GetElement()
         {
-            var attr = Element.GetAttribute<EnumDescriptionAttribute>();
-            return attr.GetDescription();
-        }
-
-        public string GetElementDescription()
-        {
-            switch (Element)
-            {
-                case ENineStarKiElement.Earth:
-                    return Dictionary.earth_element;
-                case ENineStarKiElement.Fire:
-                    return Dictionary.fire_element;
-                case ENineStarKiElement.Metal:
-                    return Dictionary.metal_element;
-                case ENineStarKiElement.Tree:
-                    return Dictionary.tree_element;
-                case ENineStarKiElement.Water:
-                    return Dictionary.water_element;
-                default:
-                    return string.Empty;
-            }
+            return GetEnumDescription(Element);
         }
 
         public string GetColour()
         {
-            var attr = Colour.GetAttribute<EnumDescriptionAttribute>();
-            return attr.GetDescription();
+            return GetEnumDescription(Colour);
         }
 
         public string GetDirection()
         {
-            var attr = Direction.GetAttribute<EnumDescriptionAttribute>();
-            return attr.GetDescription();
+            return GetEnumDescription(Direction);
         }
 
         public string GetTrigram()
@@ -89,45 +68,76 @@ namespace K9.WebApplication.Attributes
             return ResourceType.GetValueFromResource(TrigramName);
         }
 
-        private string GetEnergytNumberAndName(ENineStarKiEnergy energy)
+        /// <summary>
+        /// Generic method to get the description of any enum with EnumDescriptionAttribute.
+        /// </summary>
+        private static string GetEnumDescription<TEnum>(TEnum value) where TEnum : Enum
         {
-            return $"{(int)energy} {energy.GetAttribute<NineStarKiEnumMetaDataAttribute>().Name}";
+            var attr = value.GetAttribute<EnumDescriptionAttribute>();
+            return attr != null ? attr.GetDescription() : value.ToString();
         }
 
+        /// <summary>
+        /// Dictionary for fast lookup of element descriptions.
+        /// </summary>
+        private static readonly Dictionary<ENineStarKiElement, string> _elementDescriptions = new Dictionary<ENineStarKiElement, string>
+        {
+            { ENineStarKiElement.Earth, Dictionary.earth_element },
+            { ENineStarKiElement.Fire, Dictionary.fire_element },
+            { ENineStarKiElement.Metal, Dictionary.metal_element },
+            { ENineStarKiElement.Tree, Dictionary.tree_element },
+            { ENineStarKiElement.Water, Dictionary.water_element }
+        };
+
+        public string GetElementDescription()
+        {
+            return _elementDescriptions.TryGetValue(Element, out var desc) ? desc : string.Empty;
+        }
+
+        /// <summary>
+        /// Returns the energy number and name in a formatted string.
+        /// </summary>
+        private string GetEnergyNumberAndName(ENineStarKiEnergy energy)
+        {
+            var attr = energy.GetAttribute<NineStarKiEnumMetaDataAttribute>();
+            return string.Format("{0} {1}", (int)energy, attr != null ? attr.Name : energy.ToString());
+        }
+
+        /// <summary>
+        /// Dictionary for fast lookup of modality descriptions.
+        /// </summary>
+        private static readonly Dictionary<ENineStarKiModality, string> _modalityDescriptions = new Dictionary<ENineStarKiModality, string>
+        {
+            { ENineStarKiModality.Dynamic, Dictionary.dynamic_modality },
+            { ENineStarKiModality.Stable, Dictionary.stable_modality },
+            { ENineStarKiModality.Flexible, Dictionary.flexible_modality }
+        };
+
+        /// <summary>
+        /// Returns the description of the modality with formatted energy names.
+        /// </summary>
         private string GetModalityDescription()
         {
-            var modalityText = "";
-
-            switch (Modality)
+            if (!_modalityDescriptions.TryGetValue(Modality, out var modalityText))
             {
-                case ENineStarKiModality.Dynamic:
-                    modalityText = Dictionary.dynamic_modality;
-                    break;
-
-                case ENineStarKiModality.Stable:
-                    modalityText = Dictionary.stable_modality;
-                    break;
-
-                case ENineStarKiModality.Flexible:
-                    modalityText = Dictionary.flexible_modality;
-                    break;
+                modalityText = string.Empty;
             }
 
-            return TemplateParser.Parse(modalityText,
+            return TemplateParser.Parse(
+                modalityText,
                 new
                 {
-                    water = GetEnergytNumberAndName(ENineStarKiEnergy.Water),
-                    soil = GetEnergytNumberAndName(ENineStarKiEnergy.Soil),
-                    thunder = GetEnergytNumberAndName(ENineStarKiEnergy.Thunder),
-                    wind = GetEnergytNumberAndName(ENineStarKiEnergy.Wind),
-                    coreearth = GetEnergytNumberAndName(ENineStarKiEnergy.CoreEarth),
-                    heaven = GetEnergytNumberAndName(ENineStarKiEnergy.Heaven),
-                    lake = GetEnergytNumberAndName(ENineStarKiEnergy.Lake),
-                    mountain = GetEnergytNumberAndName(ENineStarKiEnergy.Mountain),
-                    fire = GetEnergytNumberAndName(ENineStarKiEnergy.Fire)
+                    water = GetEnergyNumberAndName(ENineStarKiEnergy.Water),
+                    soil = GetEnergyNumberAndName(ENineStarKiEnergy.Soil),
+                    thunder = GetEnergyNumberAndName(ENineStarKiEnergy.Thunder),
+                    wind = GetEnergyNumberAndName(ENineStarKiEnergy.Wind),
+                    coreearth = GetEnergyNumberAndName(ENineStarKiEnergy.CoreEarth),
+                    heaven = GetEnergyNumberAndName(ENineStarKiEnergy.Heaven),
+                    lake = GetEnergyNumberAndName(ENineStarKiEnergy.Lake),
+                    mountain = GetEnergyNumberAndName(ENineStarKiEnergy.Mountain),
+                    fire = GetEnergyNumberAndName(ENineStarKiEnergy.Fire)
                 }
             );
         }
     }
-
 }

@@ -77,7 +77,7 @@ function _Publish() {
   ProcessErrors
   
   echo "Building project"  
-  Msbuild $projectPath /p:DeployOnBuild=true /p:PublishProfile=Integration /p:AllowUntrustedCertificate=true /p:Password=$publishPassword
+  Msbuild $projectPath /p:DeployOnBuild=true /p:PublishProfile=Integration /p:Configuration=Integration /p:DefineConstants="Integration" /p:AllowUntrustedCertificate=true /p:Password=$publishPassword
   ProcessErrors 
 
 }

@@ -102,14 +102,14 @@ namespace K9.WebApplication.Helpers
         }
 
         public static IDisposable PayWall<T>(this HtmlHelper html, ESection section, T model, bool silent = false,
-            string displayHtml = "")
+            string displayHtml = "", bool hidePadlock = false)
         {
             var baseController = html.ViewContext.Controller as BaseNineStarKiController;
             var activeUserMembership = baseController?.GetActiveUserMembership();
-            return html.PayWall<NineStarKiModel>(section, null, () => (activeUserMembership != null && activeUserMembership.IsAuthorisedToViewPaidContent()) || SessionHelper.CurrentUserIsAdmin(), silent, displayHtml);
+            return html.PayWall<NineStarKiModel>(section, null, () => (activeUserMembership != null && activeUserMembership.IsAuthorisedToViewPaidContent()) || SessionHelper.CurrentUserIsAdmin(), silent, displayHtml, hidePadlock);
         }
 
-        public static IDisposable PayWall<T>(this HtmlHelper html, ESection section, T model, Func<bool?> condition, bool silent = false, string displayHtml = "")
+        public static IDisposable PayWall<T>(this HtmlHelper html, ESection section, T model, Func<bool?> condition, bool silent = false, string displayHtml = "", bool hidePadlock = false)
         {
             var baseController = html.ViewContext.Controller as BaseNineStarKiController;
             var activeUserMembership = baseController?.GetActiveUserMembership();
@@ -133,11 +133,25 @@ namespace K9.WebApplication.Helpers
                 html.ViewContext.Writer.WriteLine(centerDiv.ToString(TagRenderMode.StartTag));
                 if (WebSecurity.IsAuthenticated)
                 {
-                    html.ViewContext.Writer.Write(html.Partial("UpgradePrompt", retrieveLast));
+                    if (hidePadlock)
+                    {
+                        html.ViewContext.Writer.Write(html.Partial("UpgradePromptNoPadlock", retrieveLast));
+                    }
+                    else
+                    {
+                        html.ViewContext.Writer.Write(html.Partial("UpgradePrompt", retrieveLast));
+                    }
                 }
                 else
                 {
-                    html.ViewContext.Writer.Write(html.Partial("LoginPrompt", retrieveLast));
+                    if (hidePadlock)
+                    {
+                        html.ViewContext.Writer.Write(html.Partial("LoginPromptNoPadlock", retrieveLast));
+                    }
+                    else
+                    {
+                        html.ViewContext.Writer.Write(html.Partial("LoginPrompt", retrieveLast));
+                    }
                 }
 
                 if (!string.IsNullOrEmpty(displayHtml))

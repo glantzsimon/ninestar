@@ -1564,6 +1564,8 @@
     <Content Include="Views\MailingLists\SelectUsers.cshtml" />
     <Content Include="Views\MailingLists\_SelectUsers.cshtml" />
     <Content Include="Views\MailingLists\_SelectUsersTable.cshtml" />
+    <Content Include="Views\Shared\UpgradePromptNoPadlock.cshtml" />
+    <Content Include="Views\Shared\LoginPromptNoPadlock.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

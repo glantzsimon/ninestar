@@ -19,7 +19,7 @@
            {
                Title = Dictionary.ComplementarityScore,
                Value = (int) Model.CompatibilityDetails.Score.ComplementarityScore,
-               IsSecret = membership != null
+               IsSecret = membership == null
            })
             }
         </div>
@@ -31,7 +31,7 @@
                     Title = Dictionary.ConflictScore,
                     Value = (int) Model.CompatibilityDetails.Score.ConflictScore,
                     IsInverted = true,
-                    IsSecret = membership != null
+                    IsSecret = membership == null
                 })
             }
         </div>

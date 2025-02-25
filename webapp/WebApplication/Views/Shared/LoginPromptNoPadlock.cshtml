@@ -1,0 +1,11 @@
+﻿@using K9.Base.WebApplication.Helpers
+@model string
+
+<h4>@Dictionary.LogIntoYourAccountToView</h4>
+
+<br />
+
+@Html.BootstrapActionLinkButton(
+    Dictionary.LogIn,
+    "Login", "Account", new { retrieveLast = Model }, "fa-sign-in",
+    EButtonClass.Large)

@@ -474,6 +474,7 @@ namespace K9.WebApplication.Controllers
             return View(model);
         }
 
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         [Authorize]
         public ActionResult MyAccount()
         {
@@ -487,6 +488,7 @@ namespace K9.WebApplication.Controllers
             });
         }
 
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         [Authorize]
         public ActionResult ViewAccount(int userId)
         {

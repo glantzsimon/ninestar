@@ -1592,7 +1592,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Integration|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\</OutputPath>
-    <DefineConstants>TRACE;Integration</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;Integration</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>

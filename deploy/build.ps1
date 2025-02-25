@@ -3,9 +3,7 @@ param([String]$publishPassword='')
 $publishDir = "publish"
 $appDir = "webapp"
 $projectPath = ".\WebApplication\WebApplication.csproj"
-$mobileProjectPath = ".\MobileApplication\MobileApplication.csproj"
 $webTestFile = ".\WebApplication.Tests\bin\Debug\K9.WebApplication.Tests.dll"
-$mobileTestFile = ".\MobileApplication.Tests\bin\Debug\K9.WebApplication.Tests.dll"
 $dataTestFile = ".\DataAccess.Tests\bin\Debug\K9.DataAccessLayer.Tests.dll"
 	
 function ProcessErrors(){
@@ -80,12 +78,8 @@ function _Publish() {
   
   echo "Building project"  
   Msbuild $projectPath /p:DeployOnBuild=true /p:PublishProfile=Integration /p:AllowUntrustedCertificate=true /p:Password=$publishPassword
-  ProcessErrors
-  
-  # echo "Building mobile project"  
-  # Msbuild $mobileProjectPath /p:DeployOnBuild=true /p:PublishProfile=Integration /p:AllowUntrustedCertificate=true /p:Password=$publishPassword
-  # ProcessErrors
-  # popd
+  ProcessErrors 
+
 }
 
 function Main {

@@ -183,7 +183,7 @@ namespace K9.WebApplication.Services
 
             if (_emailQueueItemsRepository.Exists(e =>
                     e.EmailTemplateId == emailTemplateId &&
-                    (e.UserId == userId || e.ContactId == e.ContactId) &&
+                    ((e.UserId.HasValue && e.UserId == userId) || (e.ContactId.HasValue && e.ContactId == e.ContactId)) &&
                     (!e.SentOn.HasValue || e.SentOn >= _90DaysAgo && !allowResend)))
             {
                 var user = userId.HasValue ? _usersRepository.Find(userId.Value) : null;

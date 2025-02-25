@@ -29,7 +29,7 @@
             var id = $"{energyType}{energy.EnergyName}";
             @Html.Panel(
                 energy.EnergyTitle,
-                Html.PayWallContent(ESection.KnowledgeBase, id, energy.EnergyDescription).ToString(),
+                Html.PayWallContent(ESection.KnowledgeBase, id, energy.EnergyDescription, false, MembershipOption.ESubscriptionType.Free).ToString(),
                 id, $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/energies/{energy.EnergyLowerCase}.png",
                 EPanelImageSize.Default,
                 EPanelImageLayout.Contain)

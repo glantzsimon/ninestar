@@ -11,6 +11,7 @@
         @Html.HiddenFor(model => model.User.Username)
         @Html.HiddenFor(model => model.User.Name)
         @Html.HiddenFor(model => model.User.EmailAddress)
+        @Html.HiddenFor(model => model.User.BirthDate)
         @Html.Hidden("User.Password", "th1515n0tmypa55w0rd")
 
         <div>
@@ -24,7 +25,7 @@
             <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.User.LastName)</div>
         </div>
         <div>
-            <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.User.BirthDate)</div>
+            <div class="col-sm-6">@Html.BootstrapDisplayFor(model => model.User.BirthDate)</div>
             <div class="col-sm-6">@Html.BootstrapEditorFor(model => model.User.Gender)</div>
         </div>
         <div>

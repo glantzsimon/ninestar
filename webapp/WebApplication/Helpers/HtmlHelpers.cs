@@ -113,7 +113,7 @@ namespace K9.WebApplication.Helpers
         {
             var baseController = html.ViewContext.Controller as BaseNineStarKiController;
             var activeUserMembership = baseController?.GetActiveUserMembership();
-            var isAuthorised = activeUserMembership != null && (condition?.Invoke().Value ?? true);
+            var isAuthorised = activeUserMembership != null && (condition?.Invoke().Value ?? true) || activeUserMembership.IsAuthorisedToViewPaidContent();
             var isProfile = typeof(T) == typeof(NineStarKiModel);
             var isCompatibility = typeof(T) == typeof(CompatibilityModel);
             var div = new TagBuilder(Tags.Div);

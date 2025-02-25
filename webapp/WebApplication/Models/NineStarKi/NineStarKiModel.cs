@@ -131,7 +131,7 @@ namespace K9.WebApplication.Models
 
         [ScriptIgnore]
         public bool IsMyProfile { get; set; } = false;
-
+        
         public List<Tuple<int, NineStarKiEnergy>> GetYearlyPlanner()
         {
             return GetOrAddToCache($"YearlyPlanner_{DateTime.Today.Year}", () =>

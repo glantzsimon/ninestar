@@ -42,7 +42,7 @@
 
         @Html.Panel(
             Dictionary.FireElement,
-            Html.PayWallContent(ESection.KnowledgeBase, "fire", Dictionary.fire_element).ToString(),
+            Html.PayWallContent(ESection.KnowledgeBase, "fire", Dictionary.fire_element, false, MembershipOption.ESubscriptionType.Free).ToString(),
             "fire",
             $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/elements/fire.png",
             EPanelImageSize.Default,
@@ -50,7 +50,7 @@
 
         @Html.Panel(
             Dictionary.EarthElement,
-            Html.PayWallContent(ESection.KnowledgeBase, "earth", Dictionary.earth_element).ToString(),
+            Html.PayWallContent(ESection.KnowledgeBase, "earth", Dictionary.earth_element, false, MembershipOption.ESubscriptionType.Free).ToString(),
             "earth",
             $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/elements/earth.png",
             EPanelImageSize.Default,
@@ -58,7 +58,7 @@
 
         @Html.Panel(
             Dictionary.MetalElement,
-            Html.PayWallContent(ESection.KnowledgeBase, "metal", Dictionary.metal_element).ToString(),
+            Html.PayWallContent(ESection.KnowledgeBase, "metal", Dictionary.metal_element, false, MembershipOption.ESubscriptionType.Free).ToString(),
             "metal",
             $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/elements/metal.png",
             EPanelImageSize.Default,
@@ -66,14 +66,14 @@
 
         @Html.Panel(
             Dictionary.WaterElement,
-            Html.PayWallContent(ESection.KnowledgeBase, "water", Dictionary.water_element).ToString(),
+            Html.PayWallContent(ESection.KnowledgeBase, "water", Dictionary.water_element, false, MembershipOption.ESubscriptionType.Free).ToString(),
             "water",
             $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/elements/water.png",
             EPanelImageSize.Default,
             EPanelImageLayout.Contain)
 
         @Html.Panel(Dictionary.TreeElement,
-            Html.PayWallContent(ESection.KnowledgeBase, "tree", Dictionary.tree_element).ToString(),
+            Html.PayWallContent(ESection.KnowledgeBase, "tree", Dictionary.tree_element, false, MembershipOption.ESubscriptionType.Free).ToString(),
             "tree",
             $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/elements/tree.png",
             EPanelImageSize.Default,
@@ -112,11 +112,11 @@
             "relationships")
 
         @Html.Panel(Dictionary.FiveTransformationsTitle,
-            Html.PayWallContent(ESection.KnowledgeBase, $"transformations", Html.Partial("../NineStarKi/_FiveTransformations").ToString()).ToString(),
+            Html.PayWallContent(ESection.KnowledgeBase, $"transformations", Html.Partial("../NineStarKi/_FiveTransformations").ToString(), false, MembershipOption.ESubscriptionType.Free).ToString(),
             "transformations")
 
         @Html.Panel(Dictionary.SexualityTitle,
-            Html.PayWallContent(ESection.KnowledgeBase, $"sexuality", Html.Partial("../PersonalChart/_Sexuality").ToString()).ToString(),
+            Html.PayWallContent(ESection.KnowledgeBase, $"sexuality", Html.Partial("../PersonalChart/_Sexuality").ToString(), false, MembershipOption.ESubscriptionType.Free).ToString(),
             "sexuality")
 
         @Html.Partial("_ButtonsFooter")

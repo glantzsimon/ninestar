@@ -47,6 +47,12 @@ namespace K9.WebApplication.Controllers
                     model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false,
                         selectedDate);
                     model.SelectedDate = selectedDate;
+
+                    if (Current.UserId > 0)
+                    {
+                        var user = My.UserService.Find(Current.UserId);
+                        model.IsMyProfile = user.BirthDate == model.PersonModel.DateOfBirth;
+                    }
                 }
                 return View(new PredictionsViewModel(model, _nineStarKiService.GetNineStarKiSummaryViewModel()));
             }

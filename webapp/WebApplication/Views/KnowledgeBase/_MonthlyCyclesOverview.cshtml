@@ -17,7 +17,7 @@
                 @Html.Panel(energy.CycleDescriptiveName,
                     @Html.PayWallContent(ESection.KnowledgeBase,
                         $"monthly-cycles-{energy.EnergyName}",
-                        energy.CycleDescription).ToString())
+                        energy.CycleDescription, false, MembershipOption.ESubscriptionType.Free).ToString())
             </div>
         }
     }

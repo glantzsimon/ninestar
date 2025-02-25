@@ -53,6 +53,12 @@ namespace K9.WebApplication.Controllers
                     model.SelectedDate = selectedDate;
                     model.IsScrollToCyclesOverview = isScrollToCyclesOverview;
                     model.ActiveCycleTabId = activeTabId;
+
+                    if (Current.UserId > 0)
+                    {
+                        var user = My.UserService.Find(Current.UserId);
+                        model.IsMyProfile = user.BirthDate == model.PersonModel.DateOfBirth && user.Gender == model.PersonModel.Gender;
+                    }
                 }
             }
 
@@ -71,9 +77,7 @@ namespace K9.WebApplication.Controllers
                 Gender = myAccount.Gender
             };
             var nineStarKiProfile = _nineStarKiService.CalculateNineStarKiProfile(personModel, false, true);
-
-            nineStarKiProfile.IsMyProfile = true;
-
+            
             return View("Index", nineStarKiProfile);
         }
 

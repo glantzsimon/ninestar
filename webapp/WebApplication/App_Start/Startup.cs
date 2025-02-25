@@ -179,8 +179,14 @@ namespace K9.WebApplication
 #if DEBUG
             Helpers.Environment.IsDebug = true;
 
+#if !Integration
+
             defaultConfig.Value.BaseImagesPath = "https://localhost/ninestar/Images";
             defaultConfig.Value.BaseVideosPath = "https://localhost/ninestar/Videos";
+
+#endif
+
+
 #endif
         }
     }

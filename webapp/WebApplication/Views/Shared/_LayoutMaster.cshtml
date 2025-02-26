@@ -42,14 +42,15 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="@title">
     <meta name="twitter:description" content="@metaDescription">
+    <meta name="robots" content="index, follow">
 
     <link rel="canonical" href="/">
     <link rel="shortcut icon" href="@DefaultValuesConfiguration.Instance.BaseImagesPath/icons/favicon.ico" type="image/x-icon">
 
     @* 🔥 Optimize DNS prefetching to reduce latency *@
     @foreach (var domain in new[] { "cdn.bootcss.com", "cdnjs.cloudflare.com", "fonts.googleapis.com", "ajax.googleapis.com",
-                    "ajax.aspnetcdn.com", "maxcdn.bootstrapcdn.com", "cdn.datatables.net", "unpkg.com",
-                    "code.highcharts.com", "cdn.rawgit.com" })
+            "ajax.aspnetcdn.com", "maxcdn.bootstrapcdn.com", "cdn.datatables.net", "unpkg.com",
+            "code.highcharts.com", "cdn.rawgit.com" })
     {
         <link rel="dns-prefetch" href="//@domain">
     }

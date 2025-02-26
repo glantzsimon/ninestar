@@ -9060,7 +9060,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9 Star Ki Astrology Free Reading Detailed Personal Chart Personal Profile Calculator.
+        ///   Looks up a localized string similar to 9 Star Ki Astrology Free Calculator Personal Chart Personal Profile Calculator.
         /// </summary>
         public static string NineStarKiCalculatorKeywords {
             get {
@@ -9069,7 +9069,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use this simple but powerful calculator to determine your or a loved one&apos;s 9 Star Ki personal chart. Our calculator is one of the most accurate and detailed calculators available, as it uses a little known but important factor when determining a person&apos;s chart. Try it now for free!.
+        ///   Looks up a localized string similar to Free 9 Star Ki calculator. Discover your 9 Star Ki personal chart. Our calculator is unique and uses the original and largely forgotten algorithm to determine your energies. Most 9 star ki websites today do not use the original algorithm and are incorrect. Try it now for free!.
         /// </summary>
         public static string NineStarKiCalculatorMetaDescription {
             get {
@@ -9078,7 +9078,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9 Star Ki Personal Chart Calculator.
+        ///   Looks up a localized string similar to Free 9 Star Ki Personal Chart Calculator.
         /// </summary>
         public static string NineStarKiCalculatorTitle {
             get {
@@ -9105,7 +9105,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This site is the best online resource to learn all about 9 Star Ki Astrology. 9 Star Ki is an ancient system of astrology, largely unknown in the west, but slowly regaining popularity. It is simpler yet deeper and more intuitive than the zodiac and can offer some quite astonishing insights into our nature and the many cycles that influence our lives..
+        ///   Looks up a localized string similar to Welcome to the best online resource to learn about 9 Star Ki Astrology. Use our free calculator to discover your personal chart, relationship compatibility, yearly and monthly predictions, biorhythms and more. Use our I Ching Hexagram generator. 9 Star Ki is an ancient system of astrology, largely unknown in the west, but slowly regaining popularity. It is simpler yet deeper and more intuitive than the zodiac and can offer some quite astonishing insights into our nature and the many cycles that influence ou [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NineStarMetaDescriptionMain {
             get {
@@ -9931,7 +9931,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9 Star Ki astrology is an excellent tool for understanding the subtle energies and their cycles, whcih govern our lives. Each person&apos;s life moves throug predictable cycles of nine years, as well as nine months. These cycles are similar in nature to the seasons. Understanding where we are in a given cycle is tremendously helpful and can greatly assist us in taking appropriate action that is timely and in sync with the natural rhythms governing our lives..
+        ///   Looks up a localized string similar to Discover your 9 Star Ki yearly and monthly predictions. This is an excellent tool for understanding the subtle energies and their cycles, whcih govern our lives. Each person&apos;s life moves throug predictable cycles of nine years, as well as nine months. These cycles are similar in nature to the seasons. Understanding where we are in a given cycle is tremendously helpful and can greatly assist us in taking appropriate action that is timely and in sync with the natural rhythms governing our lives..
         /// </summary>
         public static string PredictionsMetaDescription {
             get {
@@ -10484,7 +10484,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9 Star Ki Understanding Relationships Love Romance Friendship Compatibility Work Relationships Team Building.
+        ///   Looks up a localized string similar to 9 Star Ki Compatibility Love Harmony Understanding Relationships Love Romance Friendship Compatibility Work Relationships Team Building.
         /// </summary>
         public static string RelationshipsKeywords {
             get {

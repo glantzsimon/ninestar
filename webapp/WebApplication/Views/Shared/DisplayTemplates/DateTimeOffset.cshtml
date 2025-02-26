@@ -3,4 +3,5 @@
 @{
 	var value = Model.HasValue ? Model.Value.ToString(K9.DataAccessLayer.Constants.FormatConstants.AppointmentDisplayDateTimeFormat) : "";
 }
-<div>@value</div>
+
+<input type="text" class="form-control text-muted bg-light" value="@value" readonly />

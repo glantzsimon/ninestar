@@ -27,16 +27,16 @@
 {
     <div class="row table-row data-row">
         <div class="col-xs-2">
-            @Html.DisplayFor(e => item.User.FullName)
+            @Html.ValueFor(e => item.User.FullName)
         </div>
         <div class="col-xs-2">
-            @Html.DisplayFor(e => item.User.EmailAddress)
+            @Html.ValueFor(e => item.User.EmailAddress)
         </div>
         <div class="col-xs-2">
-            @Html.DisplayFor(e => item.User.PhoneNumber)
+            @Html.ValueFor(e => item.User.PhoneNumber)
         </div>
         <div class="col-xs-2">
-            @Html.DisplayFor(e => item.StartsOn) - @Html.DisplayFor(e => item.EndsOn)
+            @Html.ValueFor(e => item.StartsOn) - @Html.DisplayFor(e => item.EndsOn)
         </div>
         <div class="col-xs-2">
             @item.IsActive.ToYesNo()

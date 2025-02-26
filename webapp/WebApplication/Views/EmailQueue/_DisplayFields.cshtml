@@ -1,4 +1,11 @@
 ﻿@using K9.Base.WebApplication.Helpers
-@model MailingList
-@Html.BootstrapDisplayFor(model => model.Name)
-@Html.BootstrapDisplayFor(model => model.Details)
+@model EmailQueueItem
+@Html.BootstrapDisplayFor(model => model.Subject)
+@Html.BootstrapDisplayFor(model => model.EmailTemplateName)
+@Html.BootstrapDisplayFor(model => model.UserName)
+@Html.BootstrapDisplayFor(model => model.ContactName)
+@Html.BootstrapDisplayFor(model => model.ScheduledOn)
+@Html.BootstrapDisplayFor(model => model.SentOn)
+@Html.BootstrapDisplayFor(model => model.IsProcessed)
+@Html.BootstrapDisplayFor(model => model.Result)
+

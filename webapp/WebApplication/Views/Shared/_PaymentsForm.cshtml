@@ -11,25 +11,27 @@
                     @if (Model.Quantity > 0)
                     {
                         <div class="col-sm-5 padding-0">
-                            @Html.BootstrapDisplayFor(e => e.Description)
+                            <div>@Html.LabelFor(e => e.Description)</div>
+                            @Html.ValueFor(e => e.Description)
                         </div>
                         <div class="col-sm-4 padding-0">
-                            @Html.BootstrapDisplayFor(e => e.Quantity, new EditorOptions
-                            {
-                                Label = Model.QuantityDescription ?? Html.GetDisplayNameFor(ex => ex.Quantity)
-                            })
+                            <div>@Html.Label(Model.QuantityDescription ?? Html.GetDisplayNameFor(ex => ex.Quantity))</div>
+                            @Html.ValueFor(e => e.Quantity)
                         </div>
                         <div class="col-sm-3 padding-0">
-                            @Html.BootstrapDisplayFor(e => e.Total)
+                            <div>@Html.LabelFor(e => e.Description)</div>
+                            @Html.ValueFor(e => e.Total)
                         </div>
                     }
                     else
                     {
                         <div class="col-sm-6 padding-0">
-                            @Html.BootstrapDisplayFor(e => e.Description)
+                            <div>@Html.LabelFor(e => e.Description)</div>
+                            @Html.ValueFor(e => e.Description)
                         </div>
                         <div class="col-sm-6 padding-0">
-                            @Html.BootstrapDisplayFor(e => e.Amount)
+                            <div>@Html.LabelFor(e => e.Amount)</div>
+                            @Html.ValueFor(e => e.Amount)
                         </div>
                     }
                 </div>

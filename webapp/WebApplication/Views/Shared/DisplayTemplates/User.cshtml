@@ -3,4 +3,4 @@
 @{
     var value = this.GetDropdownData().GetName<User>(Model, true, "FullName");
 }
-<div>@value</div>
+<input type="text" class="form-control text-muted bg-light" value="@value" readonly />

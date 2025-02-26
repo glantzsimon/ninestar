@@ -23,6 +23,7 @@ namespace K9.WebApplication.Controllers
             _promotionService = promotionService;
         }
 
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult Index(string retrieveLast = null)
         {
             TempData["RetrieveLast"] = retrieveLast;
@@ -31,6 +32,7 @@ namespace K9.WebApplication.Controllers
 
         [Authorize]
         [Route("membership/unlock")]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult PurchaseStart(int membershipOptionId, string promoCode = "")
         {
             Promotion promotion = null;
@@ -125,6 +127,7 @@ namespace K9.WebApplication.Controllers
 
         [Authorize]
         [Route("membership/upgrade/payment")]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult SwitchStart(int membershipOptionId)
         {
             var switchMembershipModel = My.MembershipService.GetSwitchMembershipModel(membershipOptionId);

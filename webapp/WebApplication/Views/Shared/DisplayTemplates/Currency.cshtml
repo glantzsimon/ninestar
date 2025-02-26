@@ -1,5 +1,9 @@
 ﻿@using System.Globalization
 @model Object
 <div>
-    @(Model == null ? string.Empty : double.Parse(Model.ToString()).ToString("C", CultureInfo.GetCultureInfo("en-US")))
+    @{
+        var value = Model == null ? string.Empty : double.Parse(Model.ToString()).ToString("C", CultureInfo.GetCultureInfo("en-US")))
+    }
 </div>
+
+<input type="text" class="form-control text-muted bg-light" value="@value" readonly />

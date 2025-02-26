@@ -25,10 +25,10 @@
                 @Html.CheckBoxFor(e => Model.MailingList.Users[i].IsSelected)
             </div>
             <div class="col-xs-6">
-                @Html.DisplayFor(e => Model.MailingList.Users[i].FullName)
+                @Html.ValueFor(e => Model.MailingList.Users[i].FullName)
             </div>
             <div class="col-xs-5">
-                @Html.DisplayFor(e => Model.MailingList.Users[i].EmailAddress)
+                @Html.ValueFor(e => Model.MailingList.Users[i].EmailAddress)
             </div>
         </div>
     }

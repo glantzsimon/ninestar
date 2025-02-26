@@ -4124,7 +4124,7 @@
     <value>To guide, support, and serve</value>
   </data>
   <data name="ElderTitle" xml:space="preserve">
-    <value>Elder</value>
+    <value>Guide</value>
   </data>
   <data name="Gallbladder" xml:space="preserve">
     <value>Gallbladder</value>
@@ -4464,5 +4464,11 @@
   </data>
   <data name="WhatIsKarmicNumerology" xml:space="preserve">
     <value>What is Karmic Numerology?</value>
+  </data>
+  <data name="Purpose" xml:space="preserve">
+    <value>Purpose</value>
+  </data>
+  <data name="The" xml:space="preserve">
+    <value>The</value>
   </data>
 </root>

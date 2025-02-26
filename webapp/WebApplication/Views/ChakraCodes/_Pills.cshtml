@@ -46,7 +46,10 @@
 
     <div class="tab-content">
         <div id="main" class="tab-pane fade in active padding-top-10">
-
+            @using (Html.PayWall(ESection.Predictions, Model))
+            {
+                @Html.Partial("_ChakraCodesMain")
+            }
             <hr />
             @Html.Partial("_ButtonsFooter")
         </div>
@@ -54,7 +57,7 @@
         <div id="evolution" class="tab-pane fade padding-top-10">
             @using (Html.PayWall(ESection.Predictions, Model))
             {
-                @Html.Partial("_ChakraCodesMain")
+                @Html.Partial("_ChakraCodesEvolution")
             }
 
             <br />

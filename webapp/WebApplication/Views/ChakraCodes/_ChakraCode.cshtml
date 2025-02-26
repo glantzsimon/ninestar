@@ -1,11 +1,21 @@
 ﻿@using K9.SharedLibrary.Extensions
+@using K9.WebApplication.Helpers
 @model K9.WebApplication.Models.ChakraCodeDetails
 
-<div class="chakra-code-container">
-    <h3>@(Model?.Title)</h3>
-    <img src="~/Images/chakracodes/@($"{Model.Name}.png")" />
-    @if (Model.ShowDates)
-    {
-        <p class="text-center">@Model.StartDate.ToShortDateString() - @Model.EndDate.ToShortDateString()</p>
-    }
+<div class="well">
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            <img src="~/Images/chakracodes/@($"{Model.Name}.png")" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            @Html.Panel(Model.FullName, Html.Partial("_ChakraCodeDetails", Model).ToString())
+        </div>
+    </div>
 </div>
+
+@if (Model.ShowDates)
+{
+    <p class="text-center">@Model.StartDate.ToShortDateString() - @Model.EndDate.ToShortDateString()</p>
+}

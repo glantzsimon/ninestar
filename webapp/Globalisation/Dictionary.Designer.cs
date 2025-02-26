@@ -5718,7 +5718,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Elder.
+        ///   Looks up a localized string similar to Guide.
         /// </summary>
         public static string ElderTitle {
             get {
@@ -8067,11 +8067,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Biorhythms are biological rhythms of different durations that influence our energy levels and functioning in multiple ways.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    There are many different biorhythms of different lengths, each one influencing a particular faculty. For example, there are intellectual, emotional, physical, spiritual and many other, more subtle biorhythms. 9 Star Ki also influences us cyclically, from short cycles, similar to biorhythms to longer, cosmic cycles. When you combine the information of biorhyth [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h4&gt;Karmic Numerology: Unlocking Your Celestial Blueprint&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;Your Birth Was No Accident&lt;/h5&gt;
+        ///&lt;p&gt;In the vast cosmic dance of the universe, nothing happens by chance—including your birth. Karmic Numerology is a profound system that reveals how the &lt;strong&gt;planets, stars, and cosmic forces&lt;/strong&gt; influence your journey. Your birth date is not a coincidence but a &lt;strong&gt;precisely chosen moment&lt;/strong&gt;, aligned with the celestial vibrations necessary for your &lt;strong&gt;karmic evolution&lt;/strong&gt;.&lt;/p&gt;        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string karmic_numerology {
             get {
@@ -12081,6 +12080,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Purpose.
+        /// </summary>
+        public static string Purpose {
+            get {
+                return ResourceManager.GetString("Purpose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Pushing Upward&lt;/h5&gt;
         ///&lt;p&gt;
         ///    Pushing Upward represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
@@ -14200,6 +14208,15 @@ namespace K9.Globalisation {
         public static string ThankyouForSubscriptionEmailTitle {
             get {
                 return ResourceManager.GetString("ThankyouForSubscriptionEmailTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The.
+        /// </summary>
+        public static string The {
+            get {
+                return ResourceManager.GetString("The", resourceCulture);
             }
         }
         

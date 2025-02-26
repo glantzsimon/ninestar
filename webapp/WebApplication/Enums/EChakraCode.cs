@@ -32,13 +32,13 @@ namespace K9.WebApplication.Enums
         Healer,
         [ChakraCodeEnumMetaData(ResourceType = typeof(Dictionary),
             NameKey = "AkashicTitle",
-            DescriptionKey = "Akashic",
+            DescriptionKey = "akashic",
             Colour = "#1e506d",
             PurposeKey = "AkashicPurpose")]
         Akashic,
         [ChakraCodeEnumMetaData(ResourceType = typeof(Dictionary),
             NameKey = "ManifestorTitle",
-            DescriptionKey = "Manifestor",
+            DescriptionKey = "manifestor",
             Colour = "#4a4d69",
             PurposeKey = "ManifestorPurpose")]
         Manifestor,

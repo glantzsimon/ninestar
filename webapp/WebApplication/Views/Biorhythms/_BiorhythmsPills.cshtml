@@ -35,6 +35,7 @@
         <div id="overview" class="tab-pane fade in active padding-top-10">
             @Html.Partial("_BiorhythmsGauges")
 
+            <hr />
             @Html.Partial("_ButtonsFooter")
         </div>
 
@@ -44,6 +45,7 @@
                 @Html.Partial("_BioRhythms", Model.BiorhythmResultSet.NineStarKiBioRhythms)
             }
 
+            <br />
             @Html.Partial("_ButtonsFooter")
         </div>
 
@@ -53,6 +55,7 @@
                 @Html.Partial("_InDepthAnalysis", Model)
             }
 
+            <br />
             @Html.Partial("_ButtonsFooter")
         </div>
     </div>

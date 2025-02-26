@@ -1612,6 +1612,8 @@
     <Content Include="Views\EmailQueue\Delete.cshtml" />
     <Content Include="Views\EmailQueue\Details.cshtml" />
     <Content Include="Views\EmailQueue\Index.cshtml" />
+    <Content Include="Views\PersonalChart\_ProfileHealth.cshtml" />
+    <Content Include="Views\PersonalChart\_ProfileCareer.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

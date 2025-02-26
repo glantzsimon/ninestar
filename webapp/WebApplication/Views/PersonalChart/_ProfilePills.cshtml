@@ -117,21 +117,21 @@
                 </div>
             }
 
-            <div id="health" class="tab-pane fade">
-                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
-                {
-                    @Html.Panel("", Model.Health, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
-                }
-                @Html.Partial("_ButtonsFooter")
-            </div>
+                <div id="health" class="tab-pane fade">
+                    @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
+                    {
+                        @Html.Partial("_ProfileHealth", Model)
+                    }
+                    @Html.Partial("_ButtonsFooter")
+                </div>
 
-            <div id="career" class="tab-pane fade">
-                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
-                {
-                    @Html.Panel("", $"{Model.Occupations}{Model.PersonalDevelopemnt}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
-                }
-                @Html.Partial("_ButtonsFooter")
-            </div>
+                <div id="career" class="tab-pane fade">
+                    @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
+                    {
+                        @Html.Partial("_ProfileCareer", Model)
+                    }
+                    @Html.Partial("_ButtonsFooter")
+                </div>
         </div>
     </div>
 </div>

@@ -44,6 +44,7 @@
         <div class="tab-content">
             <div id="overview" class="tab-pane fade in active">
                 @Html.Partial("_CompatibilityOverview", Model)
+                <br />
                 @Html.Partial("_ButtonsFooter")
             </div>
 
@@ -52,6 +53,7 @@
                 {
                     @Html.Panel(Dictionary.FundamentalEnergiesCompatibility, Model.FundamentalEnergiesCompatibility)
                 }
+                <br />
                 @Html.Partial("_ButtonsFooter")
             </div>
 
@@ -68,6 +70,7 @@
                         ChallengingTransformationLink = Url.ActionWithBookmark("Index", "KnowledgeBase", "challenging-transformation")
                     }))
                 }
+                <br />
                 @Html.Partial("_ButtonsFooter")
             </div>
 
@@ -78,6 +81,7 @@
                     {
                         @Html.Panel(Dictionary.SexualChemistryDetails, Model.SexualChemistryDetails)
                     }
+                    <br />
                     @Html.Partial("_ButtonsFooter")
                 </div>
             }

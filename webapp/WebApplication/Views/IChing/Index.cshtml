@@ -21,17 +21,18 @@
             @if (Model != null && Model.Hexagram != null)
             {
                 var hexagramTitle = Model.TransformedHexagram == null ? Dictionary.YourHexagram : Dictionary.MainHexagram;
-                
+
                 @Html.Panel(hexagramTitle, Html.Partial("_HexagramResult", Model.Hexagram).ToString())
 
                 if (Model.TransformedHexagram != null)
                 {
                     @Html.Panel(Dictionary.TransformedHexagram, Html.Partial("_HexagramResult", Model.TransformedHexagram).ToString())
                 }
+
+                <br />
             }
             else
             {
-
                 <div class="margin-bottom-20">
                     @Html.Panel(Dictionary.AboutTheIChing, Dictionary.i_ching_info)
                 </div>
@@ -40,5 +41,6 @@
     </article>
 </div>
 
+<hr class="margin-top-0" />
 @Html.Partial("_ButtonsFooter")
 

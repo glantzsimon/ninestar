@@ -399,6 +399,14 @@
     <Compile Include="Migrations\202502241239507_MailingListDescription.designer.cs">
       <DependentUpon>202502241239507_MailingListDescription.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202502260614229_EmailQueueController.cs" />
+    <Compile Include="Migrations\202502260614229_EmailQueueController.designer.cs">
+      <DependentUpon>202502260614229_EmailQueueController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202502260630489_EmailQueueItem-Result.cs" />
+    <Compile Include="Migrations\202502260630489_EmailQueueItem-Result.designer.cs">
+      <DependentUpon>202502260630489_EmailQueueItem-Result.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\MailingList.cs" />
     <Compile Include="Models\EmailTemplate.cs" />
     <Compile Include="Models\EmailQueueItem.cs" />
@@ -551,6 +559,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202502241239507_MailingListDescription.resx">
       <DependentUpon>202502241239507_MailingListDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502260614229_EmailQueueController.resx">
+      <DependentUpon>202502260614229_EmailQueueController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502260630489_EmailQueueItem-Result.resx">
+      <DependentUpon>202502260630489_EmailQueueItem-Result.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

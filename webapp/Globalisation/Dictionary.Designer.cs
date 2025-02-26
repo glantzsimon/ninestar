@@ -4862,20 +4862,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    &lt;strong&gt;Effective Date: &lt;/strong&gt;&lt;span&gt;3rd December 2019&lt;/span&gt;
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;What is 9 Star Ki Astrology?&lt;/h4&gt;
+        ///&lt;p&gt;9 Star Ki Astrology is an ancient Japanese system rooted in the cycles of nature and energy. It assigns individuals a unique energy pattern based on their birthdate, revealing insights into personality, relationships, and life path.&lt;/p&gt;
         ///
-        ///&lt;p&gt;
-        ///    &lt;strong&gt;
-        ///        Welcome to 9 Star Ki Astrology (https://9starkiastrology.com). These Terms of Service (&quot;Terms&quot;) govern your use of our website and services. By accessing or using our website, you agree to comply with these Terms.
-        ///    &lt;/strong&gt;
-        ///&lt;/p&gt;
-        ///
-        ///&lt;h4&gt;1. Acceptance of Terms&lt;/h4&gt;
-        ///
-        ///&lt;p&gt;
-        ///    By accessing or using our website, you agree to be bound by these Terms. If you do not agree to these Terms, please do no [rest of string was truncated]&quot;;.
+        ///&lt;h4&gt;What are the different energies in 9 Star Ki?&lt;/h4&gt;
+        ///&lt;p&gt;Each person belongs to one of **nine energies**, which correspond to natural elements: Water, Earth, Tree, Metal, and Fire. These energies further divide into subtypes lik [rest of string was truncated]&quot;;.
         /// </summary>
         public static string faq {
             get {
@@ -6621,6 +6612,15 @@ namespace K9.Globalisation {
         public static string IsActiveLabel {
             get {
                 return ResourceManager.GetString("IsActiveLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is Processed.
+        /// </summary>
+        public static string IsProcessedLabel {
+            get {
+                return ResourceManager.GetString("IsProcessedLabel", resourceCulture);
             }
         }
         
@@ -10615,6 +10615,15 @@ namespace K9.Globalisation {
         public static string Resend {
             get {
                 return ResourceManager.GetString("Resend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Result.
+        /// </summary>
+        public static string ResultLabel {
+            get {
+                return ResourceManager.GetString("ResultLabel", resourceCulture);
             }
         }
         

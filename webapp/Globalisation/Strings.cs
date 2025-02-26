@@ -29,6 +29,8 @@
             public const string DurationLabel = "Duration";
             public const string DonatedOnLabel = "DonatedOnLabel";
             public const string CompletedOnLabel = "CompletedOnLabel";
+            public const string IsProcessedLabel = "IsProcessedLabel";
+            public const string ResultLabel = "ResultLabel";
             public const string ScheduledOnLabel = "ScheduledOnLabel";
             public const string ScheduledOnLocalLabel = "ScheduledOnLocalLabel";
             public const string ScheduledOnClientLocalLabel = "ScheduledOnClientLocalLabel";

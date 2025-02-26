@@ -5,6 +5,7 @@ using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
+using K9.WebApplication.Exceptions;
 using NLog;
 using System;
 using System.Linq;
@@ -78,6 +79,7 @@ namespace K9.WebApplication.Services
         {
             var now = DateTime.Now;
             var emailsToSend = _emailQueueItemsRepository.Find(e =>
+                    !e.IsProcessed &&
                     !e.SentOn.HasValue &&
                     ((e.ScheduledOn.HasValue && e.ScheduledOn.Value <= now) || !e.ScheduledOn.HasValue))
                 .OrderBy(e => e.Id)
@@ -104,20 +106,27 @@ namespace K9.WebApplication.Services
                 {
                     if (!email.UserId.HasValue && !email.ContactId.HasValue)
                     {
-                        throw new Exception("Email cannot be sent. Both contactId and userId are null");
+                        var error = "EmailQueueService => ProcessQueue => Email cannot be sent. Both contactId and userId are null";
+                        _logger.Error(error);
+                        MarkEmailAsProcessed(email, error);
+                        continue;
                     }
 
                     if (email.UserId.HasValue)
                     {
                         if (email.User == null)
                         {
-                            _logger.Error($"EmailQueueService => ProcessQueue => User not found: UserId {email.UserId}");
+                            var error = $"EmailQueueService => ProcessQueue => User not found: UserId {email.UserId}";
+                            _logger.Error(error);
+                            MarkEmailAsProcessed(email, error);
                             continue;
                         }
 
                         if (email.User.IsUnsubscribed)
                         {
-                            _logger.Info($"EmailQueueService => ProcessQueue => User with UserId {email.UserId} has unsubscribed. Cannot send email: {email.Subject}");
+                            var resultText = $"EmailQueueService => ProcessQueue => User with UserId {email.UserId} has unsubscribed. Cannot send email: {email.Subject}";
+                            _logger.Info(resultText);
+                            MarkEmailAsProcessed(email, resultText);
                             continue;
                         }
 
@@ -137,7 +146,9 @@ namespace K9.WebApplication.Services
                             var maxSubscriptionType = userMemberships.Max(e => e.MembershipOption.SubscriptionType);
                             if (maxSubscriptionType > MembershipOption.ESubscriptionType.Free)
                             {
-                                _logger.Info($"EmailQueueService => ProcessQueue => User with UserId {email.UserId} has already upgraded their membership to {maxSubscriptionType.ToString().SplitOnCapitalLetter()}. Cannot send email: {email.Subject}");
+                                var resultText = $"EmailQueueService => ProcessQueue => User with UserId {email.UserId} has already upgraded their membership to {maxSubscriptionType.ToString().SplitOnCapitalLetter()}. Cannot send email: {email.Subject}";
+                                _logger.Info(resultText);
+                                MarkEmailAsProcessed(email, resultText);
                                 continue;
                             }
                         }
@@ -146,13 +157,17 @@ namespace K9.WebApplication.Services
                     {
                         if (email.Contact == null)
                         {
-                            _logger.Error($"EmailQueueService => ProcessQueue => Contact not found: ContactId {email.ContactId}");
+                            var error = $"EmailQueueService => ProcessQueue => Contact not found: ContactId {email.ContactId}"; 
+                            _logger.Error(error);
+                            MarkEmailAsProcessed(email, error);
                             continue;
                         }
 
                         if (email.Contact.IsUnsubscribed)
                         {
-                            _logger.Info($"EmailQueueService => ProcessQueue => Contact with ContactId {email.ContactId} has unsubscribed. Cannot send email: {email.Subject}");
+                            var resultText = $"EmailQueueService => ProcessQueue => Contact with ContactId {email.ContactId} has unsubscribed. Cannot send email: {email.Subject}"; 
+                            _logger.Info(resultText);
+                            MarkEmailAsProcessed(email, resultText);
                             continue;
                         }
                     }
@@ -161,7 +176,18 @@ namespace K9.WebApplication.Services
                 }
                 catch (Exception ex)
                 {
-                    _logger.Log(LogLevel.Error, $"EmailQueueService => ProcessQueue => Error sending mail with mailId: {email.Id} => {ex.GetFullErrorMessage()}");
+                    var error = $"EmailQueueService => ProcessQueue => Error sending mail with mailId: {email.Id} => {ex.GetFullErrorMessage()}";   
+                    _logger.Log(LogLevel.Error, error);
+
+                    try
+                    {
+                        email.Result = error;
+                        _emailQueueItemsRepository.Update(email);
+                    }
+                    catch (Exception e)
+                    {
+                    }
+
                     continue;
                 }
 
@@ -174,6 +200,20 @@ namespace K9.WebApplication.Services
                 {
                     _logger.Log(LogLevel.Error, $"EmailQueueService => ProcessQueue => Email sent but error updating mail with maildId: {email.Id} => Error: {e.GetFullErrorMessage()}");
                 }
+            }
+        }
+
+        private void MarkEmailAsProcessed(EmailQueueItem email, string result)
+        {
+            try
+            {
+                email.Result = result;
+                email.IsProcessed = true;
+                _emailQueueItemsRepository.Update(email);
+            }
+            catch (Exception e)
+            {
+                _logger.Log(LogLevel.Error, $"EmailQueueService => ProcessQueue => MarkEmailAsProcessed: {email.Id} => Error: {e.GetFullErrorMessage()}");
             }
         }
 
@@ -192,7 +232,7 @@ namespace K9.WebApplication.Services
                 var emailTemplate = _emailTemplatesRepository.Find(emailTemplateId);
                 var errorMessage = $"EmailQueueService => AddEmailToQueue => Email template '{emailTemplate.Name}' (Id {emailTemplateId}) has already been sent to {person} in the last 90 days";
                 _logger.Log(LogLevel.Error, errorMessage);
-                throw new Exception(errorMessage);
+                throw new EmailTemplateAlreadySentException(errorMessage);
             }
 
             _emailQueueItemsRepository.Create(new EmailQueueItem

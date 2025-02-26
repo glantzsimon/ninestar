@@ -347,6 +347,7 @@
     <Compile Include="Controllers\ApiController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BaseNineStarKiController.cs" />
+    <Compile Include="Controllers\EmailQueueController.cs" />
     <Compile Include="Controllers\MailingListsController.cs" />
     <Compile Include="Controllers\EmailTemplatesController.cs" />
     <Compile Include="Controllers\IChingController.cs" />
@@ -369,6 +370,7 @@
     <Compile Include="Controllers\MailingListUsersController.cs" />
     <Compile Include="Exceptions\UpgradeNotPossibleException.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />
+    <Compile Include="Exceptions\EmailTemplateAlreadySentException.cs" />
     <Compile Include="Exceptions\UserAlreadySubscribedException.cs" />
     <Compile Include="Models\MailingListViewModel.cs" />
     <Compile Include="Models\MailingListSendResultItem.cs" />
@@ -1606,6 +1608,10 @@
     <Content Include="Views\Shared\_LayoutMasterOriginal.cshtml" />
     <Content Include="Views\Home\FAQ.cshtml" />
     <Content Include="Views\Shared\Scripts\JsonLD.cshtml" />
+    <Content Include="Views\EmailQueue\_DisplayFields.cshtml" />
+    <Content Include="Views\EmailQueue\Delete.cshtml" />
+    <Content Include="Views\EmailQueue\Details.cshtml" />
+    <Content Include="Views\EmailQueue\Index.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

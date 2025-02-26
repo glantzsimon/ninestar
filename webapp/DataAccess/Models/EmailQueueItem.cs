@@ -2,6 +2,7 @@
 using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
 using K9.DataAccessLayer.Enums;
+using K9.SharedLibrary.Attributes;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -24,6 +25,10 @@ namespace K9.DataAccessLayer.Models
 
         public virtual EmailTemplate EmailTemplate { get; set; }
 
+        [Display(ResourceType = typeof(K9.Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.EmailTemplateLabel)]
+        [LinkedColumn(LinkedTableName = "EmailTemplate", LinkedColumnName = "Name")]
+        public string EmailTemplateName { get; set; }
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ContactLabel)]
         [UIHint("Contact")]
         [ForeignKey("Contact")]
@@ -31,12 +36,20 @@ namespace K9.DataAccessLayer.Models
 
         public virtual Contact Contact { get; set; }
 
+        [Display(ResourceType = typeof(K9.Globalisation.Dictionary), Name = K9.Globalisation.Strings.Names.Contact)]
+        [LinkedColumn(LinkedTableName = "Contact", LinkedColumnName = "FullName")]
+        public string ContactName { get; set; }
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.User)]
         [UIHint("User")]
         [ForeignKey("User")]
         public int? UserId { get; set; }
         
         public virtual User User { get; set; }
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.UserNameLabel)]
+        [LinkedColumn(LinkedTableName = "User", LinkedColumnName = "FullName")]
+        public string UserName { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EmailAddressLabel)]
         public string RecipientEmailAddress => User != null ? User.EmailAddress :
@@ -60,6 +73,12 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SentOnLabel)]
         public DateTime? SentOn { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsProcessedLabel)]
+        public bool IsProcessed { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ResultLabel)]
+        public string Result { get; set; }
 
         public bool IsSent => SentOn.HasValue;
     }

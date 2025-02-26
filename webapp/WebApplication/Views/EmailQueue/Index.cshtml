@@ -1,0 +1,25 @@
+﻿@using K9.Base.WebApplication.Helpers
+@using K9.SharedLibrary.Models
+@using EButtonType = K9.SharedLibrary.Models.EButtonType
+@model EmailQueueItem
+@{
+    Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
+}
+
+@Html.BootstrapTable(new DataTableOptions<EmailQueueItem>
+{
+    Controller = "EmailQueue",
+    AllowCreate = false,
+    AllowEdit = false,
+    AllowDelete = true,
+    VisibleColumns = new List<string>
+    {
+        "Subject",
+        "EmailTemplateName",
+        "UserName",
+        "ContactName",
+        "ScheduledOn",
+        "SentOn",
+        "IsProcessed",
+    }
+})

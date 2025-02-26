@@ -8,6 +8,7 @@ using System.Web.UI;
 
 namespace K9.WebApplication.Controllers
 {
+    [RoutePrefix("biorhythms")]
     public partial class BiorhythmsController : BaseNineStarKiController
     {
         private readonly INineStarKiService _nineStarKiService;
@@ -20,7 +21,7 @@ namespace K9.WebApplication.Controllers
             _biorhythmsService = biorhythmsService;
         }
 
-        [Route("biorhythms")]
+        [Route("calculator")]
         [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult Index()
         {
@@ -33,7 +34,7 @@ namespace K9.WebApplication.Controllers
             return View(new NineStarKiModel(personModel));
         }
 
-        [Route("biorhythms")]
+        [Route("calculator")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Index(NineStarKiModel model)
@@ -58,7 +59,7 @@ namespace K9.WebApplication.Controllers
             return View("Index", model);
         }
 
-        [Route("biorhythms/retrieve-last")]
+        [Route("retrieve-last")]
         [Authorize]
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult RetrieveLastBiorhythms(bool todayOnly = false)

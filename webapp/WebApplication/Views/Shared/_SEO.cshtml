@@ -9,15 +9,14 @@
 <!--@keywords-->
 
 <div class="seo @Model">
-    <h1>
-        @title
-    </h1>
     <h2>
         @ViewBag.SubTitle
     </h2>
-    <div>
+    <h2>
+        @Dictionary.NineStarMetaDescriptionMain
+    </h2>
+    <h3>
         @description
-        @Html.Raw(Dictionary.origins)
         @keywords
-    </div>
+    </h3>
 </div>

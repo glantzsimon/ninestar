@@ -5,6 +5,7 @@ using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
+    [RoutePrefix("learn-about-9-star-ki")]
     public class KnowledgeBaseController : BaseNineStarKiController
     {
         private readonly INineStarKiService _nineStarKiService;
@@ -15,13 +16,13 @@ namespace K9.WebApplication.Controllers
             _nineStarKiService = nineStarKiService;
         }
 
-        [Route("learn")]
+        [Route("")]
         public ActionResult Index()
         {
             return View(_nineStarKiService.GetNineStarKiSummaryViewModel());
         }
 
-        [Route("learn/retrieve-last")]
+        [Route("retrieve-last")]
         [Authorize]
         public ActionResult RetrieveLastKnowledgeBaseSection(bool todayOnly = false)
         {

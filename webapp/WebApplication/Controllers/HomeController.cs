@@ -26,7 +26,7 @@ namespace K9.WebApplication.Controllers
             return View(new NineStarKiModel(personModel));
         }
 
-        [Route("ai-gpt-astrologer")]
+        [Route("ai-chatgpt-astrologer")]
         [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult GptInfo()
         {

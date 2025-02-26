@@ -1,0 +1,13 @@
+﻿<script type="application/ld+json">
+@Html.Raw(Json.Encode(new {
+    @context = "https://schema.org",
+    @type = "WebSite",
+    name = "9 Star Ki Astrology",
+    url = "https://9starkiastrology.com",
+    description = ViewBag.MetaDescription ?? Dictionary.NineStarMetaDescriptionMain,
+    author = new {
+        @type = "Person",
+        name = "Simon Shine"
+    }
+}))
+</script>

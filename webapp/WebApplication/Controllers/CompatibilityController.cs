@@ -8,6 +8,7 @@ using System.Web.UI;
 
 namespace K9.WebApplication.Controllers
 {
+    [RoutePrefix("relationship-compatibility")]
     public partial class CompatibilityController : BaseNineStarKiController
     {
         private readonly INineStarKiService _nineStarKiService;
@@ -18,7 +19,7 @@ namespace K9.WebApplication.Controllers
             _nineStarKiService = nineStarKiService;
         }
 
-        [Route("compatibility")]
+        [Route("calculator")]
         [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult Index()
         {
@@ -37,7 +38,7 @@ namespace K9.WebApplication.Controllers
             return View(new CompatibilityModel(new NineStarKiModel(personModel1), new NineStarKiModel(personModel2)));
         }
 
-        [Route("compatibility")]
+        [Route("calculator")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Index(CompatibilityModel model)
@@ -52,7 +53,7 @@ namespace K9.WebApplication.Controllers
             return View(model);
         }
 
-        [Route("compatibility/retrieve-last")]
+        [Route("retrieve-last")]
         [Authorize]
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult RetrieveLastCompatibility(bool todayOnly = false)

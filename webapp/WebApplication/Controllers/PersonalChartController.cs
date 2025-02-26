@@ -12,6 +12,7 @@ using System.Web.UI;
 
 namespace K9.WebApplication.Controllers
 {
+    [RoutePrefix("personal-chart")]
     public partial class PersonalChartController : BaseNineStarKiController
     {
         private readonly INineStarKiService _nineStarKiService;
@@ -23,7 +24,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
-        [Route("personalchart/calculate")]
+        [Route("free-calculator")]
         public ActionResult Index()
         {
             var dateOfBirth = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day);
@@ -37,7 +38,7 @@ namespace K9.WebApplication.Controllers
             return View(nineStarKiModel);
         }
 
-        [Route("personalchart/calculate")]
+        [Route("free-calculator")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Index(NineStarKiModel model)
@@ -68,7 +69,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Authorize]
-        [Route("personalchart/my-chart")]
+        [Route("my-free-chart")]
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult MyProfile()
         {

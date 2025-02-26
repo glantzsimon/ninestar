@@ -7,7 +7,7 @@
 		@if (!string.IsNullOrEmpty(ViewBag.SubTitle))
 		{
 			<div class="page-header @ViewBag.TitleTag">
-				<h2><strong>@Html.Raw(ViewBag.SubTitle)</strong></h2>
+				<h1><strong>@Html.Raw(ViewBag.SubTitle)</strong></h1>
 			</div>
 		}
 		@RenderBody()

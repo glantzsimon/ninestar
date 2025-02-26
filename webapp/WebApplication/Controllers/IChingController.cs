@@ -17,14 +17,14 @@ namespace K9.WebApplication.Controllers
             _ichingService = ichingService;
         }
 
-        [Route("")]
+        [Route("free-hexagram-generator")]
         [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult Index()
         {
             return View();
         }
 
-        [Route("")]
+        [Route("free-hexagram-generator")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Toss()

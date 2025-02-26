@@ -1552,6 +1552,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 9 Star Ki Astrology GPT ChatGPT AI Astrologer.
+        /// </summary>
+        public static string AIKeywords {
+            get {
+                return ResourceManager.GetString("AIKeywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discover Our New ChatGPT AI9 Star KI Astrologer. Receive accurate and detailed wisdom and guidance from our 9 Star Ki Astrology GPT..
+        /// </summary>
+        public static string AIMeta {
+            get {
+                return ResourceManager.GetString("AIMeta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All Elements.
         /// </summary>
         public static string AllElements {
@@ -2025,11 +2043,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 9 Star Ki Biorhythms Natural Rhythms Calculator.
+        /// </summary>
+        public static string BiorhythmsKeywords {
+            get {
+                return ResourceManager.GetString("BiorhythmsKeywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Biorhythms.
         /// </summary>
         public static string BiorhythmsLabel {
             get {
                 return ResourceManager.GetString("BiorhythmsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 9 Star Ki Biorhythms Calculator - Discover your natural 9 star ki biorhythms.
+        /// </summary>
+        public static string BiorhythmsMetaDescription {
+            get {
+                return ResourceManager.GetString("BiorhythmsMetaDescription", resourceCulture);
             }
         }
         
@@ -2752,9 +2788,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The 9 Star Ki Compatibility Calculator is a powerful tool to help you understand your relationship dynamics whether it be in romance, friendships, work or within the family. This tool can shed much light on the dynamics between people and help you to harness the inherent benefits as well as helping to smoothe out challenges which are likely to arise.
+        ///   Looks up a localized string similar to Discover our 9 Star Ki Compatibility Calculator. This powerful tool can help you to understand your relationship dynamics whether it be in romance, friendships, work or within the family. This tool can shed much light on the dynamics between people and help you to harness the inherent benefits as well as helping to smoothe out challenges which are likely to arise.
         ///
-        ///9 Star Ki can bring greater bring greater harmony and understanding to our relationships and to reduce or eliminate resentment and anger. It helps to take b [rest of string was truncated]&quot;;.
+        ///9 Star Ki can bring greater bring greater harmony and understanding to our relationships and to reduce or eliminate resentment and anger. It h [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CompatibilityMetaDescription {
             get {
@@ -4826,6 +4862,37 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    &lt;strong&gt;Effective Date: &lt;/strong&gt;&lt;span&gt;3rd December 2019&lt;/span&gt;
+        ///&lt;/p&gt;
+        ///
+        ///&lt;p&gt;
+        ///    &lt;strong&gt;
+        ///        Welcome to 9 Star Ki Astrology (https://9starkiastrology.com). These Terms of Service (&quot;Terms&quot;) govern your use of our website and services. By accessing or using our website, you agree to comply with these Terms.
+        ///    &lt;/strong&gt;
+        ///&lt;/p&gt;
+        ///
+        ///&lt;h4&gt;1. Acceptance of Terms&lt;/h4&gt;
+        ///
+        ///&lt;p&gt;
+        ///    By accessing or using our website, you agree to be bound by these Terms. If you do not agree to these Terms, please do no [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string faq {
+            get {
+                return ResourceManager.GetString("faq", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FAQ.
+        /// </summary>
+        public static string FAQTitle {
+            get {
+                return ResourceManager.GetString("FAQTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Father.
         /// </summary>
         public static string Father {
@@ -6077,7 +6144,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Free I Ching reading. Consult the I Ching and get guidance about a question or situation.
+        ///   Looks up a localized string similar to I Ching Free Hexagram Generator Guidacne Divination.
+        /// </summary>
+        public static string IChingKeywords {
+            get {
+                return ResourceManager.GetString("IChingKeywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Free I Ching Hexagram Generator. Consult the I Ching and receive guidance about a question or situation.
         /// </summary>
         public static string IChingMeta {
             get {
@@ -6626,7 +6702,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9 Star Ki Astrology Free Calculator Predictions Relationships Compatibility Biorhythms I Ching Free I Ching Gene Keys Human Design Nine Energies Feng Shui Astrology I Ching Love Dating Nine Star Ki Bio-Rhythms.
+        ///   Looks up a localized string similar to 9 Star Ki Astrology Free Calculator Personal Chart Relationship Compatibility Yearly and Monthly Predictions Biorhythms Free I Ching Hexagram Generator Nine Energies Feng Shui Love Dating Nine Star Ki Bio-Rhythms.
         /// </summary>
         public static string Keywords {
             get {
@@ -9047,6 +9123,15 @@ namespace K9.Globalisation {
         public static string NineStarKiAstrology {
             get {
                 return ResourceManager.GetString("NineStarKiAstrology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 9 Star Ki Astrology Free Personal Chart Calculator Relationships Yearly and Monthly Predictions.
+        /// </summary>
+        public static string NineStarKiAstrologyFreeCalculator {
+            get {
+                return ResourceManager.GetString("NineStarKiAstrologyFreeCalculator", resourceCulture);
             }
         }
         

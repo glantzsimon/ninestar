@@ -3638,7 +3638,7 @@
     <value>iching\en-gb\holding-together-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="IChingMeta" xml:space="preserve">
-    <value>Free I Ching reading. Consult the I Ching and get guidance about a question or situation</value>
+    <value>Free I Ching Hexagram Generator. Consult the I Ching and receive guidance about a question or situation</value>
   </data>
   <data name="increase_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>iching\en-gb\increase-details.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
@@ -4014,5 +4014,29 @@
   </data>
   <data name="Yearly" xml:space="preserve">
     <value>Yearly</value>
+  </data>
+  <data name="AIKeywords" xml:space="preserve">
+    <value>9 Star Ki Astrology GPT ChatGPT AI Astrologer</value>
+  </data>
+  <data name="AIMeta" xml:space="preserve">
+    <value>Discover Our New ChatGPT AI9 Star KI Astrologer. Receive accurate and detailed wisdom and guidance from our 9 Star Ki Astrology GPT.</value>
+  </data>
+  <data name="BiorhythmsKeywords" xml:space="preserve">
+    <value>9 Star Ki Biorhythms Natural Rhythms Calculator</value>
+  </data>
+  <data name="BiorhythmsMetaDescription" xml:space="preserve">
+    <value>9 Star Ki Biorhythms Calculator - Discover your natural 9 star ki biorhythms</value>
+  </data>
+  <data name="faq" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>general\en-gb\faq.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="FAQTitle" xml:space="preserve">
+    <value>FAQ</value>
+  </data>
+  <data name="IChingKeywords" xml:space="preserve">
+    <value>I Ching Free Hexagram Generator Guidacne Divination</value>
+  </data>
+  <data name="NineStarKiAstrologyFreeCalculator" xml:space="preserve">
+    <value>9 Star Ki Astrology Free Personal Chart Calculator Relationships Yearly and Monthly Predictions</value>
   </data>
 </root>

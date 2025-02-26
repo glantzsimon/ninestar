@@ -1604,6 +1604,8 @@
     <Content Include="Views\Shared\UpgradePromptNoPadlock.cshtml" />
     <Content Include="Views\Shared\LoginPromptNoPadlock.cshtml" />
     <Content Include="Views\Shared\_LayoutMasterOriginal.cshtml" />
+    <Content Include="Views\Home\FAQ.cshtml" />
+    <Content Include="Views\Shared\Scripts\JsonLD.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -9,6 +9,7 @@ using System.Web.UI;
 
 namespace K9.WebApplication.Controllers
 {
+    [RoutePrefix("yearly-and-monthly-predictions")]
     public partial class PredictionsController : BaseNineStarKiController
     {
         private readonly INineStarKiService _nineStarKiService;
@@ -19,7 +20,7 @@ namespace K9.WebApplication.Controllers
             _nineStarKiService = nineStarKiService;
         }
 
-        [Route("predictions")]
+        [Route("calculator")]
         [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult Index()
         {
@@ -33,7 +34,7 @@ namespace K9.WebApplication.Controllers
                 new PredictionsViewModel(new NineStarKiModel(personModel), _nineStarKiService.GetNineStarKiSummaryViewModel()));
         }
 
-        [Route("predictions")]
+        [Route("calculator")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Index(NineStarKiModel model)
@@ -61,7 +62,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Authorize]
-        [Route("predictions/my-predictions")]
+        [Route("my-free-predictions")]
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult MyCycles()
         {
@@ -74,7 +75,7 @@ namespace K9.WebApplication.Controllers
             }, false, true));
         }
 
-        [Route("predictions/retrieve-last")]
+        [Route("retrieve-last")]
         [Authorize]
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult RetrieveLastPredictions(bool todayOnly = false)

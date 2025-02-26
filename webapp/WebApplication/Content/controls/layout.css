@@ -18,6 +18,7 @@
 .page-header img {
   margin-bottom: 10px;
 }
+.page-header h1,
 .page-header h2 {
   color: #331a00;
   font-size: 33px !important;

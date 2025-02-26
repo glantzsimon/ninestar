@@ -49,8 +49,8 @@
 
     @* 🔥 Optimize DNS prefetching to reduce latency *@
     @foreach (var domain in new[] { "cdn.bootcss.com", "cdnjs.cloudflare.com", "fonts.googleapis.com", "ajax.googleapis.com",
-            "ajax.aspnetcdn.com", "maxcdn.bootstrapcdn.com", "cdn.datatables.net", "unpkg.com",
-            "code.highcharts.com", "cdn.rawgit.com" })
+    "ajax.aspnetcdn.com", "maxcdn.bootstrapcdn.com", "cdn.datatables.net", "unpkg.com",
+    "code.highcharts.com", "cdn.rawgit.com" })
     {
         <link rel="dns-prefetch" href="//@domain">
     }
@@ -100,12 +100,13 @@
 
     @Html.Partial("_GoogleAnalytics")
     @Html.Partial("_GlobalJs")
+    @Html.Partial("Scripts/JsonLD")
 </head>
 
 <body>
     @* 🔥 Load Spinner Only When Needed *@
     <div id="pageFadeInOverlay">
-        <img loading="lazy" class="cropped" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/shared/ninestar-spinner.gif" />
+        <img loading="lazy" class="cropped" alt="@Dictionary.NineStarKiAstrologyFreeCalculator" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/shared/ninestar-spinner.gif" />
     </div>
     <div id="pageSpinner"></div>
     <div id="pageOverlay"></div>
@@ -120,12 +121,28 @@
     @Scripts.Render("~/Scripts/js")
     @Scripts.Render("~/Scripts/lib")
     @Html.Partial("Scripts/Default")
+    @Html.Partial("Scripts/JsonLD")
     @RenderSection("scripts", false)
 
-@* 🚀 MiniProfiler for Performance Debugging (Remove in Production) *@
-@if (HttpContext.Current.IsDebuggingEnabled)
-{
-    @(MiniProfiler.Current?.RenderIncludes())
-}
+    @* 🚀 Improve search rankigns and click-through rates *@
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "9 Star Ki Astrology",
+        "url": "https://yourwebsite.com",
+        "description": "Find your 9 Star Ki number using our Free Calculator. Discover love compatibility, predictions, I Ching, Feng Shui, Bio-Rhythms & more.",
+        "author": {
+        "@type": "Person",
+        "name": "Your Name"
+        }
+        }
+    </script>
+
+    @* 🚀 MiniProfiler for Performance Debugging (Remove in Production) *@
+    @if (HttpContext.Current.IsDebuggingEnabled)
+    {
+        @(MiniProfiler.Current?.RenderIncludes())
+    }
 </body>
 </html>

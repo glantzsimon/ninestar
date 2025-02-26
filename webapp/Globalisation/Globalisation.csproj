@@ -190,6 +190,7 @@
     <Content Include="EmailTemplates\en-gb\ToCustomer\SupportQueryThankYouEmail.htm" />
     <Content Include="EmailTemplates\en-gb\ToNineStar\DonationReceivedEmail.htm" />
     <Content Include="EmailTemplates\en-gb\ToNineStar\GeneralErrorEmail.htm" />
+    <Content Include="General\en-gb\faq.htm" />
     <Content Include="Membership\en-gb\lifetime-membership-description.htm" />
     <Content Include="Membership\en-gb\full-feature-list.htm" />
     <Content Include="Membership\en-gb\weekly-membership-description.htm" />

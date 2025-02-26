@@ -54,6 +54,7 @@
   .page {
     padding: 10px !important;
   }
+  .page h1,
   .page h2,
   .page h4 {
     width: 100%;

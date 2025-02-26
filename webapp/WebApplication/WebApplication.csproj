@@ -368,6 +368,10 @@
     <Compile Include="Controllers\UserPromotionsController.cs" />
     <Compile Include="Controllers\UserMembershipsController.cs" />
     <Compile Include="Controllers\MailingListUsersController.cs" />
+    <Compile Include="Enums\ESeason.cs" />
+    <Compile Include="Enums\ENineStarKiElement.cs" />
+    <Compile Include="Enums\ENineStarKiElementEnumMetaDataAttribute.cs" />
+    <Compile Include="Enums\EOrgan.cs" />
     <Compile Include="Exceptions\UpgradeNotPossibleException.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Exceptions\EmailTemplateAlreadySentException.cs" />
@@ -972,6 +976,16 @@
     <Content Include="Images\ninestar\modalities\dynamic.png" />
     <Content Include="Images\ninestar\modalities\flexible.png" />
     <Content Include="Images\ninestar\modalities\stable.png" />
+    <Content Include="Images\ninestar\organs\gallbladder.png" />
+    <Content Include="Images\ninestar\organs\heart.png" />
+    <Content Include="Images\ninestar\organs\kidneys.png" />
+    <Content Include="Images\ninestar\organs\largeintestine.png" />
+    <Content Include="Images\ninestar\organs\liver.png" />
+    <Content Include="Images\ninestar\organs\lungs.png" />
+    <Content Include="Images\ninestar\organs\smallintestine.png" />
+    <Content Include="Images\ninestar\organs\spleenpancreas.png" />
+    <Content Include="Images\ninestar\organs\stomach.png" />
+    <Content Include="Images\ninestar\organs\urinarybladder.png" />
     <Content Include="Images\ui\career.png" />
     <Content Include="Images\ui\emotional-energy.png" />
     <Content Include="Images\ui\fundamental-nature.png" />
@@ -1614,6 +1628,8 @@
     <Content Include="Views\EmailQueue\Index.cshtml" />
     <Content Include="Views\PersonalChart\_ProfileHealth.cshtml" />
     <Content Include="Views\PersonalChart\_ProfileCareer.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Organ.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Organs.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

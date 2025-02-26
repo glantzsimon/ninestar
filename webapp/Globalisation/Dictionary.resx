@@ -4045,4 +4045,67 @@
   <data name="ResultLabel" xml:space="preserve">
     <value>Result</value>
   </data>
+  <data name="SpleenPancreas" xml:space="preserve">
+    <value>Spleen &amp; Pancreas</value>
+  </data>
+  <data name="Lungs" xml:space="preserve">
+    <value>Lungs</value>
+  </data>
+  <data name="Kidneys" xml:space="preserve">
+    <value>Kidneys</value>
+  </data>
+  <data name="Liver" xml:space="preserve">
+    <value>Liver</value>
+  </data>
+  <data name="Heart" xml:space="preserve">
+    <value>Heart</value>
+  </data>
+  <data name="Stomach" xml:space="preserve">
+    <value>Stomach</value>
+  </data>
+  <data name="LargeIntestine" xml:space="preserve">
+    <value>Large Intestine</value>
+  </data>
+  <data name="UrinaryBladder" xml:space="preserve">
+    <value>Urinary Bladder</value>
+  </data>
+  <data name="SmallIntestine" xml:space="preserve">
+    <value>Small Intestine</value>
+  </data>
+  <data name="Autumn" xml:space="preserve">
+    <value>Autumn</value>
+  </data>
+  <data name="LateSummer" xml:space="preserve">
+    <value>Late Summer</value>
+  </data>
+  <data name="Spring" xml:space="preserve">
+    <value>Spring</value>
+  </data>
+  <data name="StrongYangOrgans" xml:space="preserve">
+    <value>Strong Yang Organs</value>
+  </data>
+  <data name="StrongYinOrgans" xml:space="preserve">
+    <value>Strong Yin Organs</value>
+  </data>
+  <data name="WeakYangOrgans" xml:space="preserve">
+    <value>Weak Yang Organs</value>
+  </data>
+  <data name="WeakYinOrgans" xml:space="preserve">
+    <value>Weak Yin Organs</value>
+  </data>
+  <data name="StrongOrgans" xml:space="preserve">
+    <value>Strong Organs</value>
+  </data>
+  <data name="StrongOrgansDescription" xml:space="preserve">
+    <value>These organs have more qi running through their meridians, as their element matches your primary element. They are therefore capapble of relatively more work than the other organs; however, stress, trauma and overactivity can cause excess qi to flow through these meridians, leading to the possibility of irritation, inflammation and congestion. Care must be taken to soothe and calm these organs and meridians, especially in times of stress or overexertion.</value>
+  </data>
+  <data name="WeakOrgans" xml:space="preserve">
+    <value>Weak Organs</value>
+  </data>
+  <data name="WeakOrgansDescription" xml:space="preserve">
+    <value>These organs have less qi running through their meridians and their associated element is in an antagonistic relationship with your primary element. They are therefore more susceptible to blockages and imbalances related to insufficiency and stagnation. Care must be taken to nourish these organs and meridians, especially during times of lower energy.</value>
+  </data>
+  <data name="Gallbladder" xml:space="preserve">
+    <value>Gallbladder</value>
+  </data>
 </root>

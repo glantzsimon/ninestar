@@ -1,0 +1,14 @@
+﻿@using K9.Base.DataAccessLayer.Attributes
+@using K9.WebApplication.Attributes
+@using K9.SharedLibrary.Extensions
+@using K9.WebApplication.Config
+@model K9.WebApplication.Enums.EOrgan
+
+@{
+    var attribute = Model.GetAttribute<EnumDescriptionAttribute>();
+}
+
+<div>
+    <img class="ninestarki-image" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/organs/@(Model).png" />
+</div>
+<p>@attribute.GetDescription()</p>

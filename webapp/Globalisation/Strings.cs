@@ -4,6 +4,11 @@
     {
         public static class Labels
         {
+            public const string StrongYinOrgans = "StrongYinOrgans";
+            public const string StrongYangOrgans = "StrongYangOrgans";
+            public const string WeakYinOrgans = "WeakYinOrgans";
+            public const string WeakYangOrgans = "WeakYangOrgans";
+
             public const string OptionalNameLabel = "OptionalNameLabel";
             public const string NumberToCreateLabel = "NumberToCreateLabel";
             public const string DonationAmountLabel = "DonationAmountLabel";
@@ -211,6 +216,17 @@
             public const string Dynamic = "Dynamic";
             public const string Flexible = "Flexible";
 
+            public const string SpleenPancreas = "SpleenPancreas";
+            public const string Lungs = "Lungs";
+            public const string Kidneys = "Kidneys";
+            public const string Liver = "Liver";
+            public const string Heart = "Heart";
+            public const string Stomach = "Stomach";
+            public const string LargeIntestine = "LargeIntestine";
+            public const string UrinaryBladder = "UrinaryBladder";
+            public const string Gallbladder = "Gallbladder";
+            public const string SmallIntestine = "SmallIntestine";
+
             public const string FirstDiscount = "FirstDiscount";
             public const string SecondDiscount = "SecondDiscount";
             public const string ThirdDiscount = "ThirdDiscount";
@@ -239,8 +255,12 @@
             public const string EarlyAutumn = "EarlyAutumn";
             public const string LateAutumn = "LateAutumn";
             public const string AutumnToWinter = "AutumnToWinter";
-            public const string Summer = "Summer";
 
+            public const string Spring = "Spring";
+            public const string Summer = "Summer";
+            public const string LateSummer = "LateSummer";
+            public const string Autumn = "Autumn";
+            
             public const string Hibernation = "Hibernation";
             public const string Planning = "Planning";
             public const string Sprouting = "Sprouting";

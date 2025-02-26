@@ -131,6 +131,25 @@ namespace K9.WebApplication.Models
 
         [ScriptIgnore]
         public bool IsMyProfile { get; set; } = false;
+
+        [UIHint("Organ")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StrongYinOrgans)]
+        public EOrgan? StrongYinOrgans => MainEnergy.MetaData?.StrongYinOrgans;
+
+        [UIHint("Organ")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StrongYangOrgans)]
+        public EOrgan? StrongYangOrgans =>
+            MainEnergy.MetaData?.StrongYangOrgans;
+
+        [UIHint("Organs")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WeakYinOrgans)]
+        public EOrgan[] WeakYinOrgans =>
+            MainEnergy.MetaData?.WeakYinOrgans;
+
+        [UIHint("Organs")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WeakYangOrgans)]
+        public EOrgan[] WeakYangOrgans =>
+            MainEnergy.MetaData?.WeakYangOrgans;
         
         public List<Tuple<int, NineStarKiEnergy>> GetYearlyPlanner()
         {

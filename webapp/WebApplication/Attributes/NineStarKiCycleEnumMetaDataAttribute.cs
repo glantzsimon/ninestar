@@ -1,5 +1,6 @@
 ﻿using K9.Base.DataAccessLayer.Attributes;
 using K9.SharedLibrary.Extensions;
+using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
 using System;
 

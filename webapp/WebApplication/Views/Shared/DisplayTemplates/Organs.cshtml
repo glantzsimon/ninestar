@@ -1,0 +1,10 @@
+﻿@using K9.Base.DataAccessLayer.Attributes
+@using K9.WebApplication.Attributes
+@using K9.SharedLibrary.Extensions
+@using K9.WebApplication.Config
+
+@model K9.WebApplication.Enums.EOrgan[]
+@foreach (var organ in Model)
+{
+    @Html.Partial("DisplayTemplates/Organ", organ)
+}

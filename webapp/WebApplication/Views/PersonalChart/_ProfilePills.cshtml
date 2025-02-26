@@ -118,7 +118,7 @@
             }
 
                 <div id="health" class="tab-pane fade">
-                    @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
+                    @using (Html.PayWall(ESection.Profile, Model))
                     {
                         @Html.Partial("_ProfileHealth", Model)
                     }
@@ -126,7 +126,7 @@
                 </div>
 
                 <div id="career" class="tab-pane fade">
-                    @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
+                    @using (Html.PayWall(ESection.Profile, Model))
                     {
                         @Html.Partial("_ProfileCareer", Model)
                     }

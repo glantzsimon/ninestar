@@ -3,6 +3,7 @@ using K9.Base.DataAccessLayer.Enums;
 using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
 using K9.WebApplication.Attributes;
+using K9.WebApplication.Enums;
 using K9.WebApplication.Extensions;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -26,20 +27,6 @@ namespace K9.WebApplication.Models
         Red,
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Purple)]
         Purple
-    }
-
-    public enum ENineStarKiElement
-    {
-        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Water)]
-        Water,
-        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Earth)]
-        Earth,
-        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Tree)]
-        Tree,
-        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Metal)]
-        Metal,
-        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Fire)]
-        Fire
     }
 
     public enum ENineStarKiFamilyMember
@@ -272,7 +259,6 @@ namespace K9.WebApplication.Models
         Fire
     }
 
-
     public class NineStarKiEnergy
     {
         // Dictionaries for fast lookups instead of switch statements
@@ -393,12 +379,34 @@ namespace K9.WebApplication.Models
         [ScriptIgnore]
         public string CycleDescriptiveName => CycleMetaData.DescriptiveTitle;
 
+        private NineStarKiEnumMetaDataAttribute _metaData;
+        public NineStarKiEnumMetaDataAttribute MetaData 
+        {
+            get 
+            {
+                if (_metaData == null)
+                {
+                    _metaData = Energy.GetAttribute<NineStarKiEnumMetaDataAttribute>();
+                }
+                return _metaData;
+            }
+        }
+        
         private string GetChildDescription() => _childDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
-
-        internal NineStarKiEnumMetaDataAttribute MetaData => Energy.GetAttribute<NineStarKiEnumMetaDataAttribute>();
-
-        internal NineStarKiCycleEnumMetaDataAttribute CycleMetaData => MetaData.Cycle.GetAttribute<NineStarKiCycleEnumMetaDataAttribute>();
-
+        
+        private NineStarKiCycleEnumMetaDataAttribute _cycleMetaData;
+        internal NineStarKiCycleEnumMetaDataAttribute CycleMetaData
+        {
+            get
+            {
+                if (_cycleMetaData == null)
+                {
+                    _cycleMetaData = MetaData.Cycle.GetAttribute<NineStarKiCycleEnumMetaDataAttribute>();
+                }
+                return _cycleMetaData;
+            }
+        }
+        
         private ENineStarKiYinYang GetYinYang()
         {
             if (Energy == ENineStarKiEnergy.CoreEarth && RelatedEnergy == ENineStarKiEnergy.CoreEarth)

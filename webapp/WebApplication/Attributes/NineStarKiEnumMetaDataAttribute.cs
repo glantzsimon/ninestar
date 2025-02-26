@@ -2,6 +2,7 @@
 using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
+using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,11 @@ namespace K9.WebApplication.Attributes
         public ENineStarKiDescriptiveName DescriptiveName { get; set; }
         public ENineStarKiModality Modality { get; set; }
         public ENineStarKiCycle Cycle { get; set; }
+        public EOrgan StrongYinOrgans => GetStrongYinOrgans();
+        public EOrgan StrongYangOrgans => GetStrongYangOrgans();
+        public EOrgan[] WeakYinOrgans => GetWeakYinOrgans();
+        public EOrgan[] WeakYangOrgans => GetWeakYangOrgans();
+
         public Type ResourceType { get; set; }
         public string TrigramName { get; set; }
         public string Name { get; set; }
@@ -66,6 +72,26 @@ namespace K9.WebApplication.Attributes
         public string GetTrigram()
         {
             return ResourceType.GetValueFromResource(TrigramName);
+        }
+
+        private EOrgan GetStrongYinOrgans()
+        {
+            return Element.GetAttribute<ENineStarKiElementEnumMetaDataAttribute>().StrongYinOrgans;
+        }
+
+        private EOrgan GetStrongYangOrgans()
+        {
+            return Element.GetAttribute<ENineStarKiElementEnumMetaDataAttribute>().StrongYangOrgans;
+        }
+
+        private EOrgan[] GetWeakYinOrgans()
+        {
+            return Element.GetAttribute<ENineStarKiElementEnumMetaDataAttribute>().WeakYinOrgans;
+        }
+
+        private EOrgan[] GetWeakYangOrgans()
+        {
+            return Element.GetAttribute<ENineStarKiElementEnumMetaDataAttribute>().WeakYangOrgans;
         }
 
         /// <summary>

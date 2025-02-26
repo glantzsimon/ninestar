@@ -1767,6 +1767,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Autumn.
+        /// </summary>
+        public static string Autumn {
+            get {
+                return ResourceManager.GetString("Autumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Early Winter.
         /// </summary>
         public static string AutumnToWinter {
@@ -5506,6 +5515,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gallbladder.
+        /// </summary>
+        public static string Gallbladder {
+            get {
+                return ResourceManager.GetString("Gallbladder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Gathering Together&lt;/h5&gt;
         ///&lt;p&gt;
         ///    Gathering Together represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
@@ -5751,6 +5769,15 @@ namespace K9.Globalisation {
         public static string HealthLabel {
             get {
                 return ResourceManager.GetString("HealthLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heart.
+        /// </summary>
+        public static string Heart {
+            get {
+                return ResourceManager.GetString("Heart", resourceCulture);
             }
         }
         
@@ -6711,6 +6738,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Kidneys.
+        /// </summary>
+        public static string Kidneys {
+            get {
+                return ResourceManager.GetString("Kidneys", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Knowledge Base.
         /// </summary>
         public static string KnowledgeBase {
@@ -6940,6 +6976,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Large Intestine.
+        /// </summary>
+        public static string LargeIntestine {
+            get {
+                return ResourceManager.GetString("LargeIntestine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Late Autumn.
         /// </summary>
         public static string LateAutumn {
@@ -6954,6 +6999,15 @@ namespace K9.Globalisation {
         public static string LateSpring {
             get {
                 return ResourceManager.GetString("LateSpring", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Late Summer.
+        /// </summary>
+        public static string LateSummer {
+            get {
+                return ResourceManager.GetString("LateSummer", resourceCulture);
             }
         }
         
@@ -7101,6 +7155,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Liver.
+        /// </summary>
+        public static string Liver {
+            get {
+                return ResourceManager.GetString("Liver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Loading....
         /// </summary>
         public static string Loading {
@@ -7169,6 +7232,15 @@ namespace K9.Globalisation {
         public static string Low {
             get {
                 return ResourceManager.GetString("Low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lungs.
+        /// </summary>
+        public static string Lungs {
+            get {
+                return ResourceManager.GetString("Lungs", resourceCulture);
             }
         }
         
@@ -11498,6 +11570,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Small Intestine.
+        /// </summary>
+        public static string SmallIntestine {
+            get {
+                return ResourceManager.GetString("SmallIntestine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Soil.
         /// </summary>
         public static string Soil {
@@ -11878,6 +11959,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Spleen &amp; Pancreas.
+        /// </summary>
+        public static string SpleenPancreas {
+            get {
+                return ResourceManager.GetString("SpleenPancreas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Splitting Apart&lt;/h5&gt;
         ///&lt;p&gt;
         ///    Splitting Apart represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
@@ -11924,6 +12014,15 @@ namespace K9.Globalisation {
         public static string Spotlight {
             get {
                 return ResourceManager.GetString("Spotlight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spring.
+        /// </summary>
+        public static string Spring {
+            get {
+                return ResourceManager.GetString("Spring", resourceCulture);
             }
         }
         
@@ -12039,6 +12138,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Stomach.
+        /// </summary>
+        public static string Stomach {
+            get {
+                return ResourceManager.GetString("Stomach", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Straight.
         /// </summary>
         public static string Straight {
@@ -12062,6 +12170,42 @@ namespace K9.Globalisation {
         public static string StripeCustomerIdLabel {
             get {
                 return ResourceManager.GetString("StripeCustomerIdLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Strong Organs.
+        /// </summary>
+        public static string StrongOrgans {
+            get {
+                return ResourceManager.GetString("StrongOrgans", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to These organs have more qi running through their meridians, as their element matches your primary element. They are therefore capapble of relatively more work than the other organs; however, stress, trauma and overactivity can cause excess qi to flow through these meridians, leading to the possibility of irritation, inflammation and congestion. Care must be taken to soothe and calm these organs and meridians, especially in times of stress or overexertion..
+        /// </summary>
+        public static string StrongOrgansDescription {
+            get {
+                return ResourceManager.GetString("StrongOrgansDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Strong Yang Organs.
+        /// </summary>
+        public static string StrongYangOrgans {
+            get {
+                return ResourceManager.GetString("StrongYangOrgans", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Strong Yin Organs.
+        /// </summary>
+        public static string StrongYinOrgans {
+            get {
+                return ResourceManager.GetString("StrongYinOrgans", resourceCulture);
             }
         }
         
@@ -13636,6 +13780,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Urinary Bladder.
+        /// </summary>
+        public static string UrinaryBladder {
+            get {
+                return ResourceManager.GetString("UrinaryBladder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Used On.
         /// </summary>
         public static string UsedOnLabel {
@@ -14099,6 +14252,42 @@ namespace K9.Globalisation {
         public static string WaterElement {
             get {
                 return ResourceManager.GetString("WaterElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weak Organs.
+        /// </summary>
+        public static string WeakOrgans {
+            get {
+                return ResourceManager.GetString("WeakOrgans", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to These organs have less qi running through their meridians and their associated element is in an antagonistic relationship with your primary element. They are therefore more susceptible to blockages and imbalances related to insufficiency and stagnation. Care must be taken to nourish these organs and meridians, especially during times of lower energy..
+        /// </summary>
+        public static string WeakOrgansDescription {
+            get {
+                return ResourceManager.GetString("WeakOrgansDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weak Yang Organs.
+        /// </summary>
+        public static string WeakYangOrgans {
+            get {
+                return ResourceManager.GetString("WeakYangOrgans", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weak Yin Organs.
+        /// </summary>
+        public static string WeakYinOrgans {
+            get {
+                return ResourceManager.GetString("WeakYinOrgans", resourceCulture);
             }
         }
         

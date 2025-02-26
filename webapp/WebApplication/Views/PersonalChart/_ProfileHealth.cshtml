@@ -6,9 +6,53 @@
 @if (Model != null)
 {
     <div class="container main-content clear-both">
-        @Html.Panel("", $"{Model.Occupations}{Model.PersonalDevelopemnt}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+        @Html.Panel("", Model.Health, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+
+        <br />
+
+        <div class="row">
+            <div class="col-xs-12">
+                <h3 class="section-title">@Dictionary.StrongOrgans</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                @Html.Raw(Dictionary.StrongOrgansDescription)
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-xs-4 col-sm-6">
+                @Html.BootstrapDisplayFor(e => Model.StrongYinOrgans)
+            </div>
+            <div class="col-xs-4 col-sm-6">
+                @Html.BootstrapDisplayFor(e => Model.StrongYangOrgans)
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <h3 class="section-title">@Dictionary.WeakOrgans</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                @Html.Raw(Dictionary.WeakOrgansDescription)
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-xs-4 col-sm-6">
+                @Html.BootstrapDisplayFor(e => Model.WeakYinOrgans)
+            </div>
+            <div class="col-xs-4 col-sm-6">
+                @Html.BootstrapDisplayFor(e => Model.WeakYangOrgans)
+            </div>
+        </div>
+
     </div>
-
-
-
 }

@@ -119,7 +119,7 @@ namespace K9.WebApplication.Controllers
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult RetrieveLastProfile(bool todayOnly = false)
         {
-            var lastProfile = SessionHelper.GetLastProfile(todayOnly).PersonModel;
+            var lastProfile = SessionHelper.GetLastProfile(todayOnly)?.PersonModel;
             if (lastProfile == null)
             {
                 return RedirectToAction("Index");

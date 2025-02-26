@@ -25,7 +25,7 @@ namespace K9.WebApplication.Controllers
         [Authorize]
         public ActionResult RetrieveLastKnowledgeBaseSection(bool todayOnly = false)
         {
-            var lastKnowledgeBaseBookmark = SessionHelper.GetLastKnowledgeBase(todayOnly).Value;
+            var lastKnowledgeBaseBookmark = SessionHelper.GetLastKnowledgeBase(todayOnly)?.Value;
             if (lastKnowledgeBaseBookmark != null)
             {
                 return Redirect(Url.Action("Index") + $"#{lastKnowledgeBaseBookmark}");

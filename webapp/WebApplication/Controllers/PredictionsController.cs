@@ -79,7 +79,7 @@ namespace K9.WebApplication.Controllers
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult RetrieveLastPredictions(bool todayOnly = false)
         {
-            var lastPredictions = SessionHelper.GetLastCompatibility(todayOnly).PersonModel;
+            var lastPredictions = SessionHelper.GetLastCompatibility(todayOnly)?.PersonModel;
             if (lastPredictions == null)
             {
                 return RedirectToAction("Index");

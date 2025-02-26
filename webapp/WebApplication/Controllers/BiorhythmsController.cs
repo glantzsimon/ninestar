@@ -63,7 +63,7 @@ namespace K9.WebApplication.Controllers
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult RetrieveLastBiorhythms(bool todayOnly = false)
         {
-            var lastBiorhythms = SessionHelper.GetLastBiorhythm(todayOnly).PersonModel;
+            var lastBiorhythms = SessionHelper.GetLastBiorhythm(todayOnly)?.PersonModel;
             if (lastBiorhythms == null)
             {
                 return RedirectToAction("Index");

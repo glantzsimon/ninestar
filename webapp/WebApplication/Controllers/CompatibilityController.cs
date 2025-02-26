@@ -57,7 +57,7 @@ namespace K9.WebApplication.Controllers
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult RetrieveLastCompatibility(bool todayOnly = false)
         {
-            var lastCompatibility = SessionHelper.GetLastCompatibility(todayOnly).CompatibilityModel;
+            var lastCompatibility = SessionHelper.GetLastCompatibility(todayOnly)?.CompatibilityModel;
             if (lastCompatibility == null)
             {
                 return RedirectToAction("Index");

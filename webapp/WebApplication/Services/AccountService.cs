@@ -42,6 +42,10 @@ namespace K9.WebApplication.Services
             {
                 return ELoginResult.AccountLocked;
             }
+            if (!My.Authentication.UserExists(username))
+            {
+                return ELoginResult.Fail;
+            }
             if (!My.Authentication.IsConfirmed(username))
             {
                 return ELoginResult.AccountNotActivated;

@@ -1,0 +1,32 @@
+﻿@using K9.WebApplication.Enums
+@using K9.WebApplication.Helpers
+@using K9.WebApplication.Models
+@model K9.WebApplication.Models.ChakraCodesModel
+
+<div class="well">
+    <h2>Ten Year Outlook</h2>
+    <div class="row" id="yearly-forecast-container">
+        @foreach (var code in Model.YearlyPlannerCodes)
+        {
+            <div class="col-xs-4 col-sm-3 col-md-2 month-chakra-code-container @code.IsCurrentCssClass">
+                <div>
+                    <strong>@code.EndDate.Year</strong>
+                </div>
+                <p>
+                    @Html.Partial("_ChakraCodeSmall", new ChakraCodeDetails
+                    {
+                        ChakraCode = code.ChakraCode,
+                        Type = EForecastType.Yearly,
+                        Offset = code.Offset
+                    })
+                </p>
+                <p>@code.StartDate.ToShortDateString() - @code.EndDate.ToShortDateString()</p>
+            </div>
+        }
+    </div>
+    <div class="row margin-top-30">
+        <div class="col-xs-12">
+            @Html.CollapsiblePanel(Model.YearlyForecast.Title, Model.YearlyForecast.Forecast, true, "", "yearly-forecast")
+        </div>
+    </div>
+</div>

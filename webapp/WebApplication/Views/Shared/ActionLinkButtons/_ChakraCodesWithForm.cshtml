@@ -1,0 +1,18 @@
+﻿@using K9.WebApplication.Models
+@model K9.WebApplication.Models.NineStarKiModel
+
+@{
+    var chakraCodesModel = new ChakraCodesModel(Model.PersonModel);
+}
+
+<div class="inline-form">
+    @using (Html.BeginForm("Index", "ChakraCodes"))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => chakraCodesModel.PersonModel.Name)
+        @Html.HiddenFor(model => chakraCodesModel.PersonModel.DateOfBirth)
+        @Html.HiddenFor(model => chakraCodesModel.PersonModel.Gender)
+        
+        @Html.BootstrapButton(Dictionary.KarmicNumerologyCalculator, EButtonType.Submit, "fa-sort-numeric-asc", EButtonClass.Large)
+    }
+</div>

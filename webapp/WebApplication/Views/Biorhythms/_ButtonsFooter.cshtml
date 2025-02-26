@@ -7,14 +7,18 @@
         <span class="margin-right-2 desktop-only"></span>
         @Html.Partial("ActionLinkButtons/_PredictionsWithForm")
         <span class="margin-right-1 desktop-only"></span>
+        @Html.Partial("ActionLinkButtons/_ChakraCodesWithForm")
+        <span class="margin-right-1 desktop-only"></span>
     }
     else
     {
         @Html.Partial("ActionLinkButtons/_PersonalProfile")
         <span class="desktop-only"></span>
         @Html.Partial("ActionLinkButtons/_Predictions")
+        <span class="margin-right-1 desktop-only"></span>
+        @Html.Partial("ActionLinkButtons/_ChakraCodes")
     }
-    
+
     @Html.Partial("ActionLinkButtons/_IChing")
 
     @Html.Partial("ActionLinkButtons/_Compatibility")

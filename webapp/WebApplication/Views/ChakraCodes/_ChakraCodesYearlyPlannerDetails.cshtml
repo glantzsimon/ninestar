@@ -1,0 +1,49 @@
+﻿@model IEnumerable<K9.WebApplication.Models.DharmaChakraCodeModel>
+
+<div class="row">
+    <div class="col-xs-2">
+        <strong>Age</strong>
+    </div>
+    <div class="col-xs-2">
+        <strong>Year</strong>
+    </div>
+    <div class="col-xs-2">
+        <strong>Chakra Code</strong>
+    </div>
+    <div class="col-xs-3">
+        <strong>Dharmic Chakra Code</strong>
+    </div>
+    <div class="col-xs-3">
+        <strong>Dharmic Chakra Code Group</strong>
+    </div>
+</div>
+@{
+    var group = Model.First().DharmaGroupChakraCodeNumber;
+
+    foreach (var code in Model)
+    {
+        if (code.DharmaGroupChakraCodeNumber != group)
+        {
+            <hr />
+            group = code.DharmaGroupChakraCodeNumber;
+        }
+
+        <div class="row">
+            <div class="col-xs-2">
+                @code.Age
+            </div>
+            <div class="col-xs-2">
+                @code.Year
+            </div>
+            <div class="col-xs-2">
+                @code.ChakraCodeNumber
+            </div>
+            <div class="col-xs-3">
+                @code.DharmaChakraBaseCodeNumber / @code.DharmaChakraCodeNumber
+            </div>
+            <div class="col-xs-3">
+                @code.DharmaGroupChakraCodeNumber
+            </div>
+        </div>
+    }
+}

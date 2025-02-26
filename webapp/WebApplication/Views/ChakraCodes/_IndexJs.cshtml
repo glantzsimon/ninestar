@@ -1,0 +1,38 @@
+﻿@using K9.WebApplication.Enums
+
+<script type="text/javascript">
+
+    $(function() {
+        $(".chakra-code-planner-item").click(function() {
+            var $el = $(this);
+            var forecastType = $el.attr("data-forecast-type");
+            var offset = ($el.attr("data-offset") || 0);
+            var $panel, $container;
+
+            if (forecastType === "@EForecastType.Yearly") {
+                $panel = $("[data-panel-container-id='yearly-forecast']");
+                $container = $("#yearly-forecast-container");
+            }
+            else if (forecastType === "@EForecastType.Monthly") {
+                $panel = $("[data-panel-container-id='monthly-forecast']");
+                $container = $("#monthly-forecast-container");
+            }
+            else if (forecastType === "@EForecastType.Daily") {
+                $panel = $("[data-panel-container-id='daily-forecast']");
+                $container = $("#daily-forecast-container");
+            }
+
+            $container.find(".month-chakra-code-container").removeClass("current");
+            $el.closest(".month-chakra-code-container").addClass("current");
+
+            ajaxcontroller().get("@Url.Action("CalculateForecast", "Chakra")", {forecastType, offset}).done(
+                function(result) {
+                    if (result.success) {
+                        $panel.find(".panel-title-text").html(result.data.Title);
+                        $panel.find(".panel-body").html(result.data.Forecast);
+                    }
+                });
+        });
+    });
+
+</script>

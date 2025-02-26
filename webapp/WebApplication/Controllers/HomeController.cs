@@ -47,6 +47,13 @@ namespace K9.WebApplication.Controllers
             return View();
         }
 
+        [Route("faq")]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
+        public ActionResult FAQ()
+        {
+            return View();
+        }
+
         [Route("how-to-remove-your-data")]
         [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult HowToRemoveYourData()

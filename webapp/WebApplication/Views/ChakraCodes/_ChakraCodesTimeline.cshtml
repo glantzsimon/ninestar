@@ -1,0 +1,33 @@
+﻿@using K9.WebApplication.Extensions
+@model K9.WebApplication.Models.ChakraCodesModel
+
+@{
+    var subDominantActive = Model.SubDominant.IsActive ? "active" : "";
+    var guideActive = Model.Guide.IsActive ? "active" : "";
+    var giftActive = Model.Gift.IsActive ? "active" : "";
+}
+
+<div class="timeline">
+    <div class="row">
+        <div class="col-xs-4" style="padding: 0 !important;">
+            <div class="year-span @subDominantActive">
+                <span>0 - 27 </span>
+            </div>
+        </div>
+        <div class="col-xs-4" style="padding: 0 !important;">
+            <div class="year-span @guideActive">
+                <span>27 - 54</span>
+            </div>
+        </div>
+        <div class="col-xs-4" style="padding: 0 !important;">
+            <div class="year-span @giftActive">
+                <span>54 - 81</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <p style="margin-top: 5px;"><strong>TIMELINE (current age: @Model.PersonModel.YearsOld)</strong></p>
+        </div>
+    </div>
+</div>

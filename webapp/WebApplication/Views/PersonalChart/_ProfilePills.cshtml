@@ -117,21 +117,23 @@
                 </div>
             }
 
-                <div id="health" class="tab-pane fade">
-                    @using (Html.PayWall(ESection.Profile, Model))
-                    {
-                        @Html.Partial("_ProfileHealth", Model)
-                    }
-                    @Html.Partial("_ButtonsFooter")
-                </div>
+            <div id="health" class="tab-pane fade">
+                @using (Html.PayWall(ESection.Profile, Model))
+                {
+                    @Html.Partial("_ProfileHealth", Model)
+                }
 
-                <div id="career" class="tab-pane fade">
-                    @using (Html.PayWall(ESection.Profile, Model))
-                    {
-                        @Html.Partial("_ProfileCareer", Model)
-                    }
-                    @Html.Partial("_ButtonsFooter")
-                </div>
+                <hr />
+                @Html.Partial("_ButtonsFooter")
+            </div>
+
+            <div id="career" class="tab-pane fade">
+                @using (Html.PayWall(ESection.Profile, Model))
+                {
+                    @Html.Partial("_ProfileCareer", Model)
+                }
+                @Html.Partial("_ButtonsFooter")
+            </div>
         </div>
     </div>
 </div>

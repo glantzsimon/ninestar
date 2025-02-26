@@ -24,11 +24,11 @@
         <br />
 
         <div class="row">
-            <div class="col-xs-4 col-sm-6">
-                @Html.BootstrapDisplayFor(e => Model.StrongYinOrgans)
+            <div class="col-xs-6 col-sm-3">
+                @Html.Partial("DisplayTemplates/Organ", Model.StrongYinOrgans)
             </div>
-            <div class="col-xs-4 col-sm-6">
-                @Html.BootstrapDisplayFor(e => Model.StrongYangOrgans)
+            <div class="col-xs-6 col-sm-3">
+                @Html.Partial("DisplayTemplates/Organ", Model.StrongYangOrgans)
             </div>
         </div>
 
@@ -46,12 +46,18 @@
         <br />
 
         <div class="row">
-            <div class="col-xs-4 col-sm-6">
-                @Html.BootstrapDisplayFor(e => Model.WeakYinOrgans)
-            </div>
-            <div class="col-xs-4 col-sm-6">
-                @Html.BootstrapDisplayFor(e => Model.WeakYangOrgans)
-            </div>
+            @foreach (var organ in Model.WeakYinOrgans)
+            {
+                <div class="col-xs-6 col-sm-3">
+                    @Html.Partial("DisplayTemplates/Organ", organ)
+                </div>
+            }
+            @foreach (var organ in Model.WeakYangOrgans)
+            {
+                <div class="col-xs-6 col-sm-3">
+                    @Html.Partial("DisplayTemplates/Organ", organ)
+                </div>
+            }
         </div>
 
     </div>

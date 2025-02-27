@@ -33,7 +33,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("consultation/book")]
-        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult BookConsultationStart()
         {
             return View(new Consultation

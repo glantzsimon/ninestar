@@ -7,3 +7,75 @@
         width: 100%;
     }
 }
+
+.chakra-code-card {
+    width: 100%;
+    padding: 20px;
+    margin: 20px auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 10px;
+    background-color: @whisper-white;
+    border: 2px solid @mist-grey;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+
+    .summary {
+        font-weight: bold;
+        color: @deep-grey;
+        margin: 10px 0;
+        margin-top: 0;
+        font-style: italic;
+    }
+
+    .description {
+        font-size: 14px;
+        color: @beautiful-grey;
+        line-height: 1.5;
+        margin-top: 22px;
+    }
+
+    img {
+        max-width: 222px;
+        height: auto;
+    }
+}
+
+.timeline {
+    width: 100%;
+    margin-top: 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 10px 0;
+    text-align: center;
+
+    .year-span {
+        border-right: 1px solid #eee;
+        width: 100%;
+        text-align: center;
+    }
+
+    .active {
+        -webkit-box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+
+        span {
+            font-weight: bold;
+        }
+    }
+}
+
+.current {
+    background: white;
+    font-weight: bold;
+    border: 2px solid black;
+    -webkit-box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+}
+
+.chakra-code-planner-item {
+    cursor: pointer;
+}

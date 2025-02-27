@@ -109,10 +109,10 @@ namespace K9.WebApplication.Models
         public ESexualityRelationType SexualityRelationType => GetSexualityRelationType();
 
         [ScriptIgnore]
-        public string OverviewLabel => $"{MainEnergy.EnergyNameAndNumber} Overview";
+        public string OverviewLabel => MainEnergy != null ? $"{MainEnergy.EnergyNameAndNumber} Overview" : "";
 
         [ScriptIgnore]
-        public string EnergySexualityLabel => $"{MainEnergy.EnergyName} {Dictionary.SexualityLabel}";
+        public string EnergySexualityLabel => MainEnergy != null ? $"{MainEnergy.EnergyName} {Dictionary.SexualityLabel}" : "";
 
         [ScriptIgnore]
         public string SexualityRelationTypeDetailsStraight => GetSexualityGenderDescription();
@@ -134,22 +134,19 @@ namespace K9.WebApplication.Models
 
         [UIHint("Organ")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StrongYinOrgans)]
-        public EOrgan? StrongYinOrgans => MainEnergy.MetaData?.StrongYinOrgans;
+        public EOrgan? StrongYinOrgans => MainEnergy != null ? MainEnergy.MetaData?.StrongYinOrgans : null;
 
         [UIHint("Organ")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StrongYangOrgans)]
-        public EOrgan? StrongYangOrgans =>
-            MainEnergy.MetaData?.StrongYangOrgans;
+        public EOrgan? StrongYangOrgans => MainEnergy != null ? MainEnergy.MetaData?.StrongYangOrgans : null;
 
         [UIHint("Organs")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WeakYinOrgans)]
-        public EOrgan[] WeakYinOrgans =>
-            MainEnergy.MetaData?.WeakYinOrgans;
+        public EOrgan[] WeakYinOrgans => MainEnergy != null ? MainEnergy.MetaData?.WeakYinOrgans : null;
 
         [UIHint("Organs")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WeakYangOrgans)]
-        public EOrgan[] WeakYangOrgans =>
-            MainEnergy.MetaData?.WeakYangOrgans;
+        public EOrgan[] WeakYangOrgans => MainEnergy != null ? MainEnergy.MetaData?.WeakYangOrgans : null;
         
         public List<Tuple<int, NineStarKiEnergy>> GetYearlyPlanner()
         {
@@ -539,9 +536,9 @@ namespace K9.WebApplication.Models
 
         private string GetMainEnergySexualityDetails()
         {
-            return _sexualityDetails.TryGetValue(MainEnergy.Energy, out var getSexuality)
+            return MainEnergy != null ? _sexualityDetails.TryGetValue(MainEnergy.Energy, out var getSexuality)
                 ? getSexuality(PersonModel.Gender)
-                : string.Empty;
+                : string.Empty : string.Empty;
         }
     }
 }

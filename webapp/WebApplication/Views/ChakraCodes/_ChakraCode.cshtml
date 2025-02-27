@@ -2,20 +2,12 @@
 @using K9.WebApplication.Helpers
 @model K9.WebApplication.Models.ChakraCodeDetails
 
-<div class="well">
-    <div class="row">
-        <div class="col-sm-4 col-sm-offset-4">
-            <img src="~/Images/chakracodes/@($"{Model.Name}.png")" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-            @Html.Panel(Model.FullName, Html.Partial("_ChakraCodeDetails", Model).ToString())
-        </div>
-    </div>
-</div>
+<div class="chakra-code-card">
+    <img src="~/Images/chakracodes/@($"{Model.Name}.png")" />
+    @Html.Panel(Model.FullName, Html.Partial("_ChakraCodeDetails", Model).ToString())
 
-@if (Model.ShowDates)
-{
-    <p class="text-center">@Model.StartDate.ToShortDateString() - @Model.EndDate.ToShortDateString()</p>
-}
+    @if (Model.ShowDates)
+    {
+        <p class="text-center">@Model.StartDate.ToShortDateString() - @Model.EndDate.ToShortDateString()</p>
+    }
+</div>

@@ -2,5 +2,9 @@
 @model K9.WebApplication.Models.ChakraCodesModel
 
 <div class="chakra-code-container">
-    @Html.Partial("_ChakraCode", Model.Dominant)
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+            @Html.Partial("_ChakraCode", Model.Dominant)
+        </div>
+    </div>
 </div>

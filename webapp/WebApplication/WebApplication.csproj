@@ -1369,7 +1369,7 @@
     <Content Include="Views\Shared\Scripts\Default.cshtml" />
     <Content Include="Views\Support\ContactUs.cshtml" />
     <Content Include="Views\UserRoles\Index.cshtml" />
-    <Content Include="Views\Shared\_ContactUs.cshtml" />
+    <Content Include="Views\Support\_ContactUs.cshtml" />
     <Content Include="Views\Support\ContactUsSuccess.cshtml" />
     <Content Include="Views\Account\ConfirmDeleteAccount.cshtml" />
     <Content Include="Views\Account\DeleteAccountFailed.cshtml" />

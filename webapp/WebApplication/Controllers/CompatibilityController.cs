@@ -23,6 +23,12 @@ namespace K9.WebApplication.Controllers
         [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult Index()
         {
+            return View();
+        }
+
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
+        public ActionResult _CalculatorForm()
+        {
             var dateOfBirth1 = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day);
             var dateOfBirth2 = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day).AddMonths(2);
             var personModel1 = new PersonModel
@@ -35,7 +41,7 @@ namespace K9.WebApplication.Controllers
                 DateOfBirth = dateOfBirth2,
                 Gender = Methods.GetRandomGender()
             };
-            return View(new CompatibilityModel(new NineStarKiModel(personModel1), new NineStarKiModel(personModel2)));
+            return PartialView(new CompatibilityModel(new NineStarKiModel(personModel1), new NineStarKiModel(personModel2)));
         }
 
         [Route("calculator")]

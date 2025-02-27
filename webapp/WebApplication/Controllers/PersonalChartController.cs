@@ -23,9 +23,14 @@ namespace K9.WebApplication.Controllers
             _nineStarKiService = nineStarKiService;
         }
 
-        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
         [Route("free-calculator")]
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
+        public ActionResult _CalculatorForm()
         {
             var dateOfBirth = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day);
             var personModel = new PersonModel
@@ -35,7 +40,7 @@ namespace K9.WebApplication.Controllers
             };
 
             var nineStarKiModel = new NineStarKiModel(personModel);
-            return View(nineStarKiModel);
+            return PartialView(nineStarKiModel);
         }
 
         [Route("free-calculator")]

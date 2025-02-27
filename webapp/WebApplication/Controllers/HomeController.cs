@@ -1,7 +1,4 @@
-﻿using K9.WebApplication.Helpers;
-using K9.WebApplication.Models;
-using K9.WebApplication.Packages;
-using System;
+﻿using K9.WebApplication.Packages;
 using System.Web.Mvc;
 using System.Web.UI;
 
@@ -17,13 +14,7 @@ namespace K9.WebApplication.Controllers
         [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult Index()
         {
-            var dateOfBirth = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day);
-            var personModel = new PersonModel
-            {
-                DateOfBirth = dateOfBirth,
-                Gender = Methods.GetRandomGender()
-            };
-            return View(new NineStarKiModel(personModel));
+            return View();
         }
 
         [Route("ai-chatgpt-astrologer")]

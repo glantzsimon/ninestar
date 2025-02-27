@@ -38,6 +38,12 @@ namespace K9.WebApplication.Controllers
             return View("ContactUs");
         }
 
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
+        public ActionResult _ContactUs()
+        {
+            return PartialView();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ContactUs(ContactUsViewModel model)
@@ -94,7 +100,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("donate")]
-        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult DonateStart()
         {
             return View(new Donation

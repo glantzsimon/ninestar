@@ -24,6 +24,12 @@ namespace K9.WebApplication.Controllers
             return View();
         }
 
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
+        public ActionResult _GenerateButtonForm()
+        {
+            return PartialView();
+        }
+
         [Route("free-hexagram-generator")]
         [HttpPost]
         [ValidateAntiForgeryToken]

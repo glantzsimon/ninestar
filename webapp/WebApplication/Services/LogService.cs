@@ -14,6 +14,8 @@ namespace K9.WebApplication.Services
         private const string withResultsAs = "WITH RESULTS AS";
         private const string dataTablesDef = "&draw=";
         private const string dataTablesDef2 = "\"draw\":";
+        private const string hangFireHeartBeat = "heartbeat successfully sent";
+        private const string sendingZeroEmails = "ProcessQueue => Sending 0 emails";
         private const string cleanUpText1 = "K9.WebApplication.Startup+<>c";
         private const string cleanUpText2 = "K9.WebApplication.Startup";
         private const string separator = "=>";
@@ -34,7 +36,9 @@ namespace K9.WebApplication.Services
                 {
                     if (line.Contains(withResultsAs) ||
                         line.Contains(dataTablesDef) ||
-                        line.Contains(dataTablesDef2))
+                        line.Contains(dataTablesDef2) ||
+                        line.Contains(sendingZeroEmails) ||
+                        line.Contains(hangFireHeartBeat))
                     {
                         continue;
                     }

@@ -26,12 +26,18 @@ namespace K9.WebApplication.Controllers
         [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult Index()
         {
+            return View();
+        }
+
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
+        public ActionResult _CalculatorForm()
+        {
             var dateOfBirth = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day);
             var personModel = new PersonModel
             {
                 DateOfBirth = dateOfBirth
             };
-            return View(new ChakraCodesModel(personModel));
+            return PartialView(new ChakraCodesModel(personModel));
         }
 
         [Route("calculator")]

@@ -14,6 +14,8 @@ namespace K9.WebApplication.Enums
         [EnumDescription(CultureCode = "b")]
         Biorhythms,
         [EnumDescription(CultureCode = "k")]
-        KnowledgeBase
+        KnowledgeBase,
+        [EnumDescription(CultureCode = "n")]
+        Numerology
     }
 }

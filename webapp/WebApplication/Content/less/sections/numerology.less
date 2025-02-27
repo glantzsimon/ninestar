@@ -1,0 +1,118 @@
+﻿@import "../config/colours.less";
+
+.numerology-container {
+    text-align: center;
+
+    ul.nav-pills li a p {
+        width: 108px;
+        margin: auto;
+        padding: 0 5px;
+
+        &.active {
+            border-radius: 7px;
+            border: 1px solid @ghost-white;
+            background-color: @pale-sky-blue;
+        }
+    }
+}
+
+.numerology-card {
+    width: 63%;
+    min-width: 454px;
+    padding: 20px;
+    margin: 20px auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 7px;
+    border-top-left-radius: 54px;
+    border-top-right-radius: 54px;
+    background-color: @whisper-white;
+    border: 2px solid @mist-grey;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+
+    .summary {
+        font-weight: bold;
+        color: @deep-grey;
+        margin: 10px 0;
+        margin-top: 0;
+        font-style: italic;
+    }
+
+    .description {
+        font-size: 14px;
+        color: @beautiful-grey;
+        line-height: 1.5;
+        margin-top: 22px;
+    }
+
+    img {
+        max-width: 154px;
+        height: auto;
+    }
+}
+
+.numerology-planner-container {
+    text-align: center;
+
+    img {
+        width: 100% !important;
+        display: table;
+        margin: 4px auto;
+    }
+
+    .numerology-planner-item {
+        cursor: pointer;
+
+        img.small {
+            max-width: 72px;
+        }
+    }
+
+    h4 {
+        margin-top: 0 !important;
+        margin-bottom: 5px;
+    }
+
+    p {
+        margin-top: 2px !important;
+    }
+
+    .panel h3 {
+        margin-top: 0 !important;
+    }
+}
+
+.numerology-planner-item-container {
+    padding: 11px;
+    border-radius: 7px;
+    margin-bottom: 7px;
+    transition: transform 0.2s, box-shadow 0.2s;
+
+    &.current {
+        font-weight: bold;
+        outline: 1px solid @light-silver;
+    }
+
+    &.selected {
+        background: white;
+        font-weight: bold;
+        outline: 1px solid @electric-blue;
+        -webkit-box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+    }
+
+    &:hover {
+        background: @almost-white !important;
+        -webkit-box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+        transform: scale(1.05);
+        transition: transform 0.2s ease-out;
+        will-change: transform; /* Optimizes performance */
+        &.selected {
+            outline: 1px solid @electric-blue;
+        }
+    }
+}

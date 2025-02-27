@@ -2663,6 +2663,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Actualisation.
+        /// </summary>
+        public static string Actualisation {
+            get {
+                return ResourceManager.GetString("Actualisation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 27 - 53 years.
+        /// </summary>
+        public static string ActualisationYears {
+            get {
+                return ResourceManager.GetString("ActualisationYears", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Additional Comments.
         /// </summary>
         public static string AdditionalComments {
@@ -2781,33 +2799,6 @@ namespace K9.Globalisation {
         public static string AIMeta {
             get {
                 return ResourceManager.GetString("AIMeta", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to These individuals are deeply passionate about freedom, fearless in their pursuits, and driven by an innate need for self-expression. Whether through speech, writing, or other forms of communication, they have a powerful voice that demands to be heard. Their role is to express ideas, share truths, and amplify the call for change, ensuring that important messages reach the world. Without their words, movements would lack momentum, and transformation would struggle to take shape. They thrive in fields such as  [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string akashic {
-            get {
-                return ResourceManager.GetString("akashic", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to To channel wisdom and express truth.
-        /// </summary>
-        public static string AkashicPurpose {
-            get {
-                return ResourceManager.GetString("AkashicPurpose", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Expressive.
-        /// </summary>
-        public static string AkashicTitle {
-            get {
-                return ResourceManager.GetString("AkashicTitle", resourceCulture);
             }
         }
         
@@ -4984,6 +4975,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Daily Karmic Influences&lt;/h4&gt;
+        ///&lt;p&gt;The &lt;strong&gt;Daily Karmic Influences&lt;/strong&gt; provide a detailed, fine-grained map of the shifting energies that shape each day. Every day is guided by one of the nine karmic numbers, subtly influencing our experiences, decisions, and interactions. Just as the tides are governed by celestial rhythms, these daily codes create an ever-changing flow of opportunities, challenges, and lessons. By tuning into these energies, we gain deeper insight into the natural cycles of lif [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string daily_karmic_influences {
+            get {
+                return ResourceManager.GetString("daily_karmic_influences", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Daily Karmic Influences.
         /// </summary>
         public static string DailyKarmicInfluences {
@@ -5636,7 +5637,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Guide.
+        ///   Looks up a localized string similar to Elder.
         /// </summary>
         public static string ElderTitle {
             get {
@@ -5821,6 +5822,24 @@ namespace K9.Globalisation {
         public static string EmailTypeLabel {
             get {
                 return ResourceManager.GetString("EmailTypeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Emergence.
+        /// </summary>
+        public static string Emergence {
+            get {
+                return ResourceManager.GetString("Emergence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 0 - 26 years.
+        /// </summary>
+        public static string EmergenceYears {
+            get {
+                return ResourceManager.GetString("EmergenceYears", resourceCulture);
             }
         }
         
@@ -7984,6 +8003,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Karmic Evolution&lt;/h4&gt;
+        ///&lt;p&gt;&lt;strong&gt;Karmic Evolution&lt;/strong&gt; reflects the shifting numerological influences that shape each 27-year period of life. These secondary energies do not replace the Primary Karmic Blueprint but instead build upon it, adding depth and new dimensions to one’s journey. Different phases of life bring unique lessons, challenges, and areas for growth, calling for shifts in focus and action. As we evolve, these influences guide us through cycles of transformation, helping us align wit [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string karmic_evolution {
+            get {
+                return ResourceManager.GetString("karmic_evolution", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Karmic Numerology: Unlocking Your Celestial Blueprint&lt;/h4&gt;
         ///
         ///&lt;h5&gt;Your Birth Was No Accident&lt;/h5&gt;
@@ -8019,6 +8048,15 @@ namespace K9.Globalisation {
         public static string KarmicNumerologyCalculator {
             get {
                 return ResourceManager.GetString("KarmicNumerologyCalculator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Karmic Numerology Details.
+        /// </summary>
+        public static string KarmicNumerologyDetails {
+            get {
+                return ResourceManager.GetString("KarmicNumerologyDetails", resourceCulture);
             }
         }
         
@@ -9797,11 +9835,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mastery.
+        /// </summary>
+        public static string Mastery {
+            get {
+                return ResourceManager.GetString("Mastery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mastery and Completion.
         /// </summary>
         public static string MasteryAndCompletion {
             get {
                 return ResourceManager.GetString("MasteryAndCompletion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 54 - 80 years.
+        /// </summary>
+        public static string MasteryYears {
+            get {
+                return ResourceManager.GetString("MasteryYears", resourceCulture);
             }
         }
         
@@ -9856,6 +9912,33 @@ namespace K9.Globalisation {
         public static string MembershipRunsUntil {
             get {
                 return ResourceManager.GetString("MembershipRunsUntil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spiritually attuned and naturally refined, they exude a sense of wisdom, grace, and quiet authority. With a deep love for knowledge and a passion for awakening others, they find fulfillment in teaching, guiding, and sharing insights that expand human consciousness. Their purpose is to bridge the gap between the material and the spiritual, helping others cultivate awareness and enlightenment. Whether in educational settings, leadership roles, or as mentors and advisors, they inspire growth, encourage deep in [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mentor {
+            get {
+                return ResourceManager.GetString("mentor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To lead, teach, and inspire others.
+        /// </summary>
+        public static string MentorPurpose {
+            get {
+                return ResourceManager.GetString("MentorPurpose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mentor.
+        /// </summary>
+        public static string MentorTitle {
+            get {
+                return ResourceManager.GetString("MentorTitle", resourceCulture);
             }
         }
         
@@ -11694,6 +11777,25 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Primary Karmic Blueprint&lt;/h4&gt;
+        ///&lt;p&gt;The &lt;strong&gt;Primary Karmic Blueprint&lt;/strong&gt; is the main numerological influence in a person’s chart, shaping their path from birth to the end of their journey. This core energetic imprint remains active throughout their entire life, influencing key aspects such as career, relationships, and personal growth. It serves as a guiding force in how one interacts with the world, navigates challenges, and fulfills their life mission. Deeply tied to both destiny and soul evolu [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string primary_blueprint {
+            get {
+                return ResourceManager.GetString("primary_blueprint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Primary Blueprint.
+        /// </summary>
+        public static string PrimaryBlueprint {
+            get {
+                return ResourceManager.GetString("PrimaryBlueprint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    &lt;strong&gt;
         ///        This is the privacy notice of 9 Star Ki Astrology. In this document, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot; refer to 9 Star Ki Astrology.
@@ -12329,6 +12431,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to These individuals possess a strong will and an unshakable drive, fueled by ambition and a deep desire to create impact. Their dynamic and magnetic personalities naturally draw others toward them, making them powerful catalysts for transformation. They are not just visionaries—they are action-takers, continuously pushing forward, inspiring change, and ensuring progress. Their relentless energy and determination make them highly effective in leadership roles, whether as coaches, strategists, or managers. With [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string revolutionary {
+            get {
+                return ResourceManager.GetString("revolutionary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To transform, protect, and take action.
+        /// </summary>
+        public static string RevolutionaryPurpose {
+            get {
+                return ResourceManager.GetString("RevolutionaryPurpose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Revolutionary.
+        /// </summary>
+        public static string RevolutionaryTitle {
+            get {
+                return ResourceManager.GetString("RevolutionaryTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change is inevitable; embrace it with courage..
         /// </summary>
         public static string RevolutionSummary {
@@ -12352,33 +12481,6 @@ namespace K9.Globalisation {
         public static string Ripening {
             get {
                 return ResourceManager.GetString("Ripening", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spiritually attuned and naturally refined, they exude a sense of wisdom, grace, and quiet authority. With a deep love for knowledge and a passion for awakening others, they find fulfillment in teaching, guiding, and sharing insights that expand human consciousness. Their purpose is to bridge the gap between the material and the spiritual, helping others cultivate awareness and enlightenment. Whether in educational settings, leadership roles, or as mentors and advisors, they inspire growth, encourage deep in [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string royal {
-            get {
-                return ResourceManager.GetString("royal", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to To lead, teach, and inspire others.
-        /// </summary>
-        public static string RoyalPurpose {
-            get {
-                return ResourceManager.GetString("RoyalPurpose", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Teacher.
-        /// </summary>
-        public static string RoyalTitle {
-            get {
-                return ResourceManager.GetString("RoyalTitle", resourceCulture);
             }
         }
         
@@ -14968,6 +15070,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Transcenence.
+        /// </summary>
+        public static string Transcenence {
+            get {
+                return ResourceManager.GetString("Transcenence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 81 - 107 years.
+        /// </summary>
+        public static string TranscenenceYears {
+            get {
+                return ResourceManager.GetString("TranscenenceYears", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Trans Female.
         /// </summary>
         public static string TransFemale {
@@ -15124,6 +15244,26 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Twelve Month Outlook&lt;/h4&gt;
+        ///&lt;p&gt;The &lt;strong&gt;Twelve Month Outlook&lt;/strong&gt; offers insight into the shifting energies that influence each month throughout the year. Just as the seasons bring changes in weather and activity, these numerological cycles guide different areas of focus, action, and personal growth. Each month is shaped by one of the nine karmic numbers, creating a dynamic flow of opportunities, challenges, and lessons. Unlike traditional calendar months, these cycles follow celestial rhythms rat [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string twelve_month_outlook {
+            get {
+                return ResourceManager.GetString("twelve_month_outlook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Twelve Year Outlook&lt;/h4&gt;
+        ///&lt;p&gt;The &lt;strong&gt;Twelve Year Outlook&lt;/strong&gt; serves as a map of the next 12 years, revealing the cyclical nature of karmic influences. Each year is guided by the energy of one of the nine karmic numbers, introducing different themes and lessons, much like the changing seasons bring shifts in climate and activity. These energies help shape our focus, directing us toward specific areas of growth, action, and transformation. Unlike the Gregorian calendar, the start and end dates of [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string twelve_year_outlook {
+            get {
+                return ResourceManager.GetString("twelve_year_outlook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Twelve-Month Karmic Outlook.
         /// </summary>
         public static string TwelveMonthKarmicOutlook {
@@ -15133,11 +15273,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 12 Month Outlook.
+        /// </summary>
+        public static string TwelveMonthOutlook {
+            get {
+                return ResourceManager.GetString("TwelveMonthOutlook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Twelve-Year Karmic Outlook.
         /// </summary>
         public static string TwelveYearKarmicOutlook {
             get {
                 return ResourceManager.GetString("TwelveYearKarmicOutlook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 12 Year Outlook.
+        /// </summary>
+        public static string TwelveYearOutlook {
+            get {
+                return ResourceManager.GetString("TwelveYearOutlook", resourceCulture);
             }
         }
         
@@ -15511,6 +15669,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to These individuals are deeply passionate about freedom, fearless in their pursuits, and driven by an innate need for self-expression. Whether through speech, writing, or other forms of communication, they have a powerful voice that demands to be heard. Their role is to express ideas, share truths, and amplify the call for change, ensuring that important messages reach the world. Without their words, movements would lack momentum, and transformation would struggle to take shape. They thrive in fields such as  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string visionary {
+            get {
+                return ResourceManager.GetString("visionary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To channel wisdom and express truth.
+        /// </summary>
+        public static string VisionaryPurpose {
+            get {
+                return ResourceManager.GetString("VisionaryPurpose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Visionary.
+        /// </summary>
+        public static string VisionaryTitle {
+            get {
+                return ResourceManager.GetString("VisionaryTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Waiting (Nourishment).
         /// </summary>
         public static string Waiting {
@@ -15548,33 +15733,6 @@ namespace K9.Globalisation {
         public static string WaitingTitle {
             get {
                 return ResourceManager.GetString("WaitingTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to These individuals possess a strong will and an unshakable drive, fueled by ambition and a deep desire to create impact. Their dynamic and magnetic personalities naturally draw others toward them, making them powerful catalysts for transformation. They are not just visionaries—they are action-takers, continuously pushing forward, inspiring change, and ensuring progress. Their relentless energy and determination make them highly effective in leadership roles, whether as coaches, strategists, or managers. With [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string warrior {
-            get {
-                return ResourceManager.GetString("warrior", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to To transform, protect, and take action.
-        /// </summary>
-        public static string WarriorPurpose {
-            get {
-                return ResourceManager.GetString("WarriorPurpose", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Revolutionary.
-        /// </summary>
-        public static string WarriorTitle {
-            get {
-                return ResourceManager.GetString("WarriorTitle", resourceCulture);
             }
         }
         

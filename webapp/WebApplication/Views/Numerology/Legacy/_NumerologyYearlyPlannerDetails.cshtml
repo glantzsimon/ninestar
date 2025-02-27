@@ -1,0 +1,49 @@
+﻿@model IEnumerable<K9.WebApplication.Models.DharmaNumerologyCodeModel>
+
+<div class="row">
+    <div class="col-xs-2">
+        <strong>Age</strong>
+    </div>
+    <div class="col-xs-2">
+        <strong>Year</strong>
+    </div>
+    <div class="col-xs-2">
+        <strong>Numerology Code</strong>
+    </div>
+    <div class="col-xs-3">
+        <strong>Dharmic Numerology Code</strong>
+    </div>
+    <div class="col-xs-3">
+        <strong>Dharmic Numerology Code Group</strong>
+    </div>
+</div>
+@{
+    var group = Model.First().DharmaNumerologyCodeNumber;
+
+    foreach (var code in Model)
+    {
+        if (code.DharmaGroupCodeNumber != group)
+        {
+            <hr />
+            group = code.DharmaGroupCodeNumber;
+        }
+
+        <div class="row">
+            <div class="col-xs-2">
+                @code.Age
+            </div>
+            <div class="col-xs-2">
+                @code.Year
+            </div>
+            <div class="col-xs-2">
+                @code.NumerologyCodeNumber
+            </div>
+            <div class="col-xs-3">
+                @code.DharmaChakraBaseCodeNumber / @code.DharmaNumerologyCodeNumber
+            </div>
+            <div class="col-xs-3">
+                @code.DharmaNumerologyCodeNumber
+            </div>
+        </div>
+    }
+}

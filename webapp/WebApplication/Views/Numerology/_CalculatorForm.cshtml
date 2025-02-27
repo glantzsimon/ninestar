@@ -1,0 +1,16 @@
+﻿@model K9.WebApplication.Models.NumerologyModel
+
+@using (Html.BeginForm("Index", "Numerology"))
+{
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.BootstrapEditorFor(model => model.PersonModel.Name, new EditorOptions
+        {
+            Label = Dictionary.OptionalNameLabel
+        })
+        @Html.BootstrapEditorFor(model => model.PersonModel.DateOfBirth)
+        
+        <hr />
+        @Html.BootstrapButton(Dictionary.Calculate, EButtonType.Submit, "", EButtonClass.Large)
+    }
+}

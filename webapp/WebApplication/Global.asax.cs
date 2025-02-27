@@ -52,7 +52,11 @@ namespace K9.WebApplication
         {
             if (HttpContext.Current != null && HttpContext.Current.Response != null)
             {
-                HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.ServerAndPrivate);
+#if DEBUG
+                HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.NoCache);
+#else
+                    HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.ServerAndPrivate);
+#endif
             }
 
 #if DEBUG

@@ -1,5 +1,46 @@
 ﻿@import "../config/colours.less";
 
+@panel-bg: #ffffff;
+@panel-border: #ddd;
+@panel-header-gradient-start: #007bff;
+@panel-header-gradient-end: #0056b3;
+@panel-header-text-color: white;
+
+.panel {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid @panel-border;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    .panel-heading {
+        font-weight: bold;        
+        padding: 12px 15px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-bottom: none;
+    }
+
+    .panel-title {
+        font-size: 16px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .panel-body {
+        background-color: @panel-bg;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .panel-footer {
+        background-color: darken(@panel-bg, 5%);
+        border-top: 1px solid @panel-border;
+        padding: 10px;
+        text-align: right;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+}
+
 .image-panel {
     height: 200px;
     width: 100%;

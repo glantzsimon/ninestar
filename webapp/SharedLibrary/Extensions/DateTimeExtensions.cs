@@ -9,5 +9,10 @@ namespace K9.SharedLibrary.Extensions
 		{
 			return value >= startDate && value <= endDate;
 		}
+
+	    public static string ToShortDateFormatString(this DateTime value)
+	    {
+	        return value.ToString("dd/MMM/yy");
+	    }
 	}
 }

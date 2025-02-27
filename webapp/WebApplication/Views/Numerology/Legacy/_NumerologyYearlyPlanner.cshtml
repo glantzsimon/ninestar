@@ -1,0 +1,29 @@
+﻿@model K9.WebApplication.Models.NumerologyModel
+
+<div class="well">
+    <h2>Roadmap</h2>
+    <div class="row">
+        <div class="col-sm-4 col-xs-12">
+            <h3>Foundation</h3>
+            @Html.Partial("_NumerologyCodeDisplay", Model.Emergence)
+            @Html.Partial("_NumerologyYearlyPlannerDetails", Model.DharmaCodesFoundation)
+        </div>
+        <div class="col-sm-4 col-xs-12">
+            <h3>Guide</h3>
+            @Html.Partial("_NumerologyCodeDisplay", Model.Actualisation)
+            @Html.Partial("_NumerologyYearlyPlannerDetails", Model.DharmaCodesContribution)
+        </div>
+        <div class="col-sm-4 col-xs-12">
+            <h3>Ascension</h3>
+            @Html.Partial("_NumerologyCodeDisplay", Model.Mastery)
+            @Html.Partial("_NumerologyYearlyPlannerDetails", Model.DharmaCodesAscension)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 col-xs-12">
+            <h3>Elders</h3>
+            @Html.Partial("_NumerologyCodeDisplay", Model.Primary)
+            @Html.Partial("_NumerologyYearlyPlannerDetails", Model.DharmaCodesElders)
+        </div>
+    </div>
+</div>

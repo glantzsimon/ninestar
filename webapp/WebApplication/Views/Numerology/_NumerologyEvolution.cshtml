@@ -1,0 +1,64 @@
+﻿@using K9.WebApplication.Enums
+@using K9.WebApplication.Helpers
+@using K9.WebApplication.Config;
+@model K9.WebApplication.Models.NumerologyModel
+
+<div class="ninestar-summmary numerology-container container padding-0 margin-top-0">
+    @Html.Panel("", Dictionary.karmic_evolution)
+    <br />
+
+    <div class="row padding-0">
+        <div class="col-sm-12">
+            <ul class="nav nav-pills nav-justified image-pill">
+                <li class="@Model.Emergence.IsActiveCssTabClass">
+                    <a data-toggle="tab" href="#emergence">
+                        @Dictionary.Emergence
+                        <p class="@Model.Emergence.IsActiveCssTabClass">@Dictionary.EmergenceYears</p>
+                        <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/numerology/@(Model.Emergence.Name).png');"></div>
+                    </a>
+                </li>
+
+                <li class="@Model.Actualisation.IsActiveCssTabClass">
+                    <a data-toggle="tab" href="#actualisation">
+                        @Dictionary.Actualisation
+                        <p class="@Model.Actualisation.IsActiveCssTabClass">@Dictionary.ActualisationYears</p>
+                        <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/numerology/@(Model.Actualisation.Name).png');"></div>
+                    </a>
+                </li>
+
+                <li class="@Model.Mastery.IsActiveCssTabClass">
+                    <a data-toggle="tab" href="#mastery">
+                        @Dictionary.Mastery
+                        <p class="@Model.Mastery.IsActiveCssTabClass">@Dictionary.MasteryYears</p>
+                        <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/numerology/@(Model.Mastery.Name).png');"></div>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="emergence" class="tab-pane fade padding-top-10 @Model.Emergence.IsActiveCssPaneClass">
+                    @using (Html.PayWall(ESection.Numerology, Model))
+                    {
+                        @Html.Partial("_NumerologyCodeDisplay", Model.Emergence)
+                    }
+                </div>
+
+                <div id="actualisation" class="tab-pane fade padding-top-10 @Model.Actualisation.IsActiveCssPaneClass">
+                    @using (Html.PayWall(ESection.Numerology, Model))
+                    {
+                        @Html.Partial("_NumerologyCodeDisplay", Model.Actualisation)
+                    }
+                </div>
+
+                <div id="mastery" class="tab-pane fade padding-top-10 @Model.Mastery.IsActiveCssPaneClass">
+                    @using (Html.PayWall(ESection.Numerology, Model))
+                    {
+                        @Html.Partial("_NumerologyCodeDisplay", Model.Mastery)
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

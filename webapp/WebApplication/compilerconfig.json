@@ -322,8 +322,8 @@
     }
   },
   {
-    "inputFile": "Content/less/sections/chakracodes.less",
-    "outputFile": "Content/sections/chakracodes.css",
+    "inputFile": "Content/less/sections/numerology.less",
+    "outputFile": "Content/sections/numerology.css",
     "options": {
       "compress": false
     }

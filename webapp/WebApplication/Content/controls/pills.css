@@ -33,11 +33,11 @@ ul.image-pill li {
 }
 ul.image-pill li.active a {
   background-color: white !important;
-  -webkit-box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.3);
   /* Top shadow */
-  -moz-box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.3);
   /* Top shadow */
-  box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.3);
   /* Top shadow */
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -53,16 +53,33 @@ ul.image-pill li:not(:last-child) a {
 }
 ul.image-pill li:not(.active) a:hover {
   background-color: white !important;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.2);
+  /* Top shadow */
+  -moz-box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.2);
+  /* Top shadow */
+  box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.2);
+  /* Top shadow */
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   z-index: 2;
 }
 ul.image-pill li a {
   background-color: transparent !important;
-  font-size: 0.95em !important;
+  font-size: 1.1em !important;
   font-weight: bold;
   color: #0a4070 !important;
+  -webkit-box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.05);
+  /* Top shadow */
+  -moz-box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.05);
+  /* Top shadow */
+  box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.05);
+  /* Top shadow */
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+ul.image-pill li a p {
+  margin: 0;
+  font-weight: normal;
 }
 .nav > li > a:hover,
 .nav > li > a:focus {

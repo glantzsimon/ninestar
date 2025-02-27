@@ -1,0 +1,48 @@
+﻿@using K9.WebApplication.Enums
+@model K9.WebApplication.Models.NumerologyModel
+
+@{
+    var dateOfBirth = Model?.PersonModel?.DateOfBirth.ToString("yyyy-MM-dd");
+}
+
+<script type="text/javascript">
+
+    $(function() {
+        $(".numerology-planner-item").click(function() {
+            var $el = $(this);
+            var forecastType = $el.attr("data-forecast-type");
+            var offset = ($el.attr("data-offset") || 0);
+            var $panel, $container;
+            var dateOfBirth = new Date('@dateOfBirth');
+            var dateOfBirthString = dateOfBirth.toISOString(); // Convert Date object to ISO string
+
+            if (forecastType === "@EForecastType.Yearly") {
+                $panel = $("#twelve-year-outlook");
+                $container = $("#yearly-forecast-container");
+            }
+            else if (forecastType === "@EForecastType.Monthly") {
+                $panel = $("#twelve-month-outlook");
+                $container = $("#monthly-forecast-container");
+            }
+            else if (forecastType === "@EForecastType.Daily") {
+                $panel = $("#daily-outlook");
+                $container = $("#daily-forecast-container");
+            }
+
+            // clear current class from all items
+            $container.find(".numerology-planner-item-container").removeClass("selected");
+
+            // set current class on current selected item
+            $el.closest(".numerology-planner-item-container").addClass("selected");
+
+            ajaxcontroller().get("@Url.Action("CalculateForecast", "Numerology")", {forecastType, dateOfBirth: dateOfBirthString, offset}).done(
+                function(result) {
+                    if (result.success) {
+                        // $panel.find(".panel-title-text").html(result.data.Title);
+                        $panel.find(".panel-body").html(result.data.Forecast);
+                    }
+                });
+        });
+    });
+
+</script>

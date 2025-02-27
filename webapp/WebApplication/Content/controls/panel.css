@@ -1,4 +1,34 @@
-﻿.image-panel {
+﻿.panel {
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid #ddd;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.panel .panel-heading {
+  font-weight: bold;
+  padding: 12px 15px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom: none;
+}
+.panel .panel-title {
+  font-size: 16px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+.panel .panel-body {
+  background-color: #ffffff;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.panel .panel-footer {
+  background-color: #f2f2f2;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+  text-align: right;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.image-panel {
   height: 200px;
   width: 100%;
   margin-bottom: 30px;

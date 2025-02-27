@@ -59,8 +59,9 @@ article h5 {
   line-height: 1.5em;
 }
 p {
-  line-height: 1.6em !important;
+  line-height: 1.7em !important;
   margin-bottom: 20px;
+  font-size: 15px;
 }
 p:last-child {
   margin-bottom: 0;
@@ -80,7 +81,16 @@ form div.well h3 {
 hr {
   border-color: #d9d9d9;
 }
+button,
+a.btn {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important;
+}
 button .fa,
-a .fa {
+a.btn .fa,
+button a .fa,
+a.btn a .fa {
   margin-right: 2px;
+}
+.well {
+  border-radius: 7px;
 }

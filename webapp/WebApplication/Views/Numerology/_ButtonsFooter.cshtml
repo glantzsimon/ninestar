@@ -1,0 +1,34 @@
+﻿@using K9.WebApplication.Models
+@model K9.WebApplication.Models.NumerologyModel
+
+<div>
+    @if (Model != null && Model.IsProcessed)
+    {
+        var nineStarKiModel = new NineStarKiModel(Model.PersonModel);
+
+        @Html.Partial("ActionLinkButtons/_PersonalProfileWithForm", nineStarKiModel)
+        <span class="margin-right-2 desktop-only"></span>
+        @Html.Partial("ActionLinkButtons/_PredictionsWithForm", nineStarKiModel)
+        <span class="margin-right-1 desktop-only"></span>
+        @Html.Partial("ActionLinkButtons/_BiorhythmsWithForm", nineStarKiModel)
+        <span class="margin-right-1 desktop-only"></span>
+    }
+    else
+    {
+        @Html.Partial("ActionLinkButtons/_PersonalProfile")
+        <span class="desktop-only"></span>
+        @Html.Partial("ActionLinkButtons/_Predictions")
+        <span class="desktop-only"></span>
+        @Html.Partial("ActionLinkButtons/_Biorhythms")
+    }
+
+    @Html.Partial("ActionLinkButtons/_IChing")
+
+    @Html.Partial("ActionLinkButtons/_Compatibility")
+
+    @Html.Partial("ActionLinkButtons/_KnowledgeBase")
+
+    @Html.Partial("ActionLinkButtons/_BookConsultation")
+
+    @Html.Partial("ActionLinkButtons/_TryOurGpt")
+</div>

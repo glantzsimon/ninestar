@@ -1,0 +1,35 @@
+﻿@using K9.SharedLibrary.Extensions
+@using K9.WebApplication.Config
+@using K9.WebApplication.Enums
+@using K9.WebApplication.Helpers
+@using K9.WebApplication.Models
+@model K9.WebApplication.ViewModels.NumerologyForecastViewModel
+
+<div class="well numerology-planner-container">
+    <div class="row" id="@(Model.RazorId)-container">
+        @foreach (var code in Model.PlannerItems)
+        {
+            var details = new NumerologyDetails
+            {
+                NumerologyCode = code.NumerologyCode
+            };
+            var footer = Model.GetFooter(code);
+
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                <a class="numerology-planner-item" data-forecast-type="@Model.Forecast.ForecastType" data-offset="@code.Offset">
+                    <div class="numerology-planner-item-container @code.IsSelectedCssClass @code.IsCurrentCssClass">
+                        <h4 class="margin-top-0 margin-bottom-5">@Model.GetTitle(code)</h4>
+                        <img class="small" src="@(DefaultValuesConfiguration.Instance.BaseImagesPath)/numerology/@($"{details.Name}.png")" />
+                        @if (!string.IsNullOrEmpty(footer))
+                        {
+                            <p>@footer</p>
+                        }
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+
+    <hr />
+    @Html.Panel("", Model.Forecast.Forecast, Model.RazorId)
+</div>

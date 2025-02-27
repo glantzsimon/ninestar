@@ -78,7 +78,7 @@
             <ul class="site-controls">
                 <li class="@ViewContext.GetActiveClass("BookConsultationStart", "Consultation")"><a title="@Dictionary.BookAConsultation" href="@Url.Action("BookConsultationStart", "Consultation")"><i class="fa fa-phone-alt"></i><span class="site-controls-text"> @Dictionary.BookAConsultation</span></a></li>
 
-                <li><a target="_blank" title="@Dictionary.ConsultOurAiAstrologer" href="@ApiConfiguration.Instance.NineStarKiAstrologerGptUrl"><i class="fa fa-robot"></i><span class="site-controls-text"> @Dictionary.NineStarGPT</span></a></li>
+                <li><a target="_blank" title="@Dictionary.ConsultOurAiAstrologer" href="@ApiConfiguration.Instance.NineStarKiAstrologerGptUrl"><i class="fa fa-magic"></i><span class="site-controls-text"> @Dictionary.NineStarGPT</span></a></li>
 
                 @if (!isAuthenticated || (membership == null || (membership.MembershipOption != null && membership.MembershipOption.IsUpgradable)))
                 {
@@ -132,7 +132,7 @@
 
                         <li class="desktop-only @ViewContext.GetActiveClass("Index", "IChing")"><a href="@Url.Action("Index", "IChing")"> <span class="">@Dictionary.IChing</span></a></li>
 
-                        @*<li class="desktop-only @ViewContext.GetActiveClass("Index", "ChakraCodes")"><a href="@Url.Action("Index", "ChakraCodes")"> <span class="">@Dictionary.KarmicNumerology</span></a></li>*@
+                        <li class="desktop-only @ViewContext.GetActiveClass("Index", "Numerology")"><a href="@Url.Action("Index", "Numerology")"> <span class="">@Dictionary.KarmicNumerology</span></a></li>
 
                         <li class="desktop-only @ViewContext.GetActiveClass("Index", "Biorhythms")"><a href="@Url.Action("Index", "Biorhythms")"> <span class="">@Dictionary.BiorhythmsLabel</span></a></li>
 

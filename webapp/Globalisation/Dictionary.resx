@@ -4105,32 +4105,29 @@
   <data name="WeakOrgansDescription" xml:space="preserve">
     <value>These organs have less qi running through their meridians and their associated element is in an antagonistic relationship with your primary element. They are therefore more susceptible to blockages and imbalances related to insufficiency and stagnation. Care must be taken to nourish these organs and meridians, especially during times of lower energy.</value>
   </data>
-  <data name="akashic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\codes\akashic.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="AkashicPurpose" xml:space="preserve">
+  <data name="VisionaryPurpose" xml:space="preserve">
     <value>To channel wisdom and express truth</value>
   </data>
-  <data name="AkashicTitle" xml:space="preserve">
-    <value>Expressive</value>
+  <data name="VisionaryTitle" xml:space="preserve">
+    <value>Visionary</value>
   </data>
   <data name="DailyKarmicInfluences" xml:space="preserve">
     <value>Daily Karmic Influences</value>
   </data>
   <data name="elder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\codes\elder.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\codes\elder.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ElderPurpose" xml:space="preserve">
     <value>To guide, support, and serve</value>
   </data>
   <data name="ElderTitle" xml:space="preserve">
-    <value>Guide</value>
+    <value>Elder</value>
   </data>
   <data name="Gallbladder" xml:space="preserve">
     <value>Gallbladder</value>
   </data>
   <data name="healer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\codes\healer.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\codes\healer.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="HealerPurpose" xml:space="preserve">
     <value>To restore balance and nurture growth</value>
@@ -4154,7 +4151,7 @@
     <value>Primary Karmic Blueprint</value>
   </data>
   <data name="manifestor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\codes\manifestor.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\codes\manifestor.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ManifestorPurpose" xml:space="preserve">
     <value>To bring visions into reality</value>
@@ -4163,7 +4160,7 @@
     <value>Manifestor</value>
   </data>
   <data name="mystic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\codes\mystic.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\codes\mystic.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="MysticPurpose" xml:space="preserve">
     <value>To uncover truth and expand awareness</value>
@@ -4172,7 +4169,7 @@
     <value>Mystic</value>
   </data>
   <data name="peacemaker" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\codes\peacemaker.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\codes\peacemaker.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="PeacemakerPurpose" xml:space="preserve">
     <value>To unite people and create harmony</value>
@@ -4181,7 +4178,7 @@
     <value>Peacemaker</value>
   </data>
   <data name="pioneer1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\codes\pioneer.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\codes\pioneer.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="PioneerPurpose" xml:space="preserve">
     <value>To innovate and lead new paths</value>
@@ -4189,14 +4186,11 @@
   <data name="PioneerTitle" xml:space="preserve">
     <value>Pioneer</value>
   </data>
-  <data name="royal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\codes\royal.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="RoyalPurpose" xml:space="preserve">
+  <data name="MentorPurpose" xml:space="preserve">
     <value>To lead, teach, and inspire others</value>
   </data>
-  <data name="RoyalTitle" xml:space="preserve">
-    <value>Teacher</value>
+  <data name="MentorTitle" xml:space="preserve">
+    <value>Mentor</value>
   </data>
   <data name="TwelveMonthKarmicOutlook" xml:space="preserve">
     <value>Twelve-Month Karmic Outlook</value>
@@ -4204,257 +4198,254 @@
   <data name="TwelveYearKarmicOutlook" xml:space="preserve">
     <value>Twelve-Year Karmic Outlook</value>
   </data>
-  <data name="warrior" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\codes\warrior.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="WarriorPurpose" xml:space="preserve">
+  <data name="RevolutionaryPurpose" xml:space="preserve">
     <value>To transform, protect, and take action</value>
   </data>
-  <data name="WarriorTitle" xml:space="preserve">
+  <data name="RevolutionaryTitle" xml:space="preserve">
     <value>Revolutionary</value>
   </data>
   <data name="_1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\1-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\1-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_1_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\1-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\1-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_1_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\1-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\1-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_1_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\1-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\1-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_1_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\1-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\1-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_1_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\1-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\1-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_1_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\1-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\1-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_1_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\1-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\1-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_1_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\1-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\1-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_2_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\2-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\2-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_2_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\2-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\2-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_2_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\2-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\2-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_2_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\2-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\2-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_2_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\2-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\2-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_2_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\2-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\2-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_2_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\2-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\2-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_2_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\2-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\2-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_2_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\2-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\2-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_3_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\3-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\3-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_3_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\3-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\3-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_3_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\3-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\3-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_3_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\3-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\3-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_3_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\3-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\3-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_3_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\3-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\3-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_3_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\3-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\3-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_3_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\3-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\3-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_3_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\3-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\3-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_4_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\4-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\4-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_4_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\4-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\4-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_4_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\4-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\4-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_4_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\4-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\4-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_4_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\4-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\4-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_4_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\4-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\4-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_4_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\4-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\4-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_4_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\4-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\4-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_4_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\4-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\4-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_5_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\5-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\5-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_5_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\5-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\5-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_5_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\5-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\5-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_5_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\5-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\5-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_5_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\5-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\5-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_5_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\5-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\5-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_5_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\5-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\5-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_5_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\5-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\5-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_5_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\5-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\5-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_6_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\6-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\6-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_6_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\6-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\6-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_6_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\6-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\6-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_6_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\6-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\6-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_6_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\6-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\6-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_6_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\6-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\6-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_6_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\6-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\6-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_6_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\6-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\6-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_6_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\6-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\6-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_7_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\7-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\7-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_7_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\7-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\7-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_7_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\7-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\7-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_7_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\7-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\7-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_7_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\7-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\7-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_7_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\7-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\7-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_7_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\7-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\7-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_7_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\7-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\7-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_7_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\7-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\7-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_8_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\8-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\8-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_8_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\8-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\8-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_8_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\8-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\8-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_8_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\8-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\8-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_8_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\8-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\8-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_8_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\8-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\8-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_8_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\8-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\8-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_8_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\8-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\8-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_8_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\8-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\8-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_9_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\9-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\9-1.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_9_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\9-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\9-2.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_9_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\9-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\9-3.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_9_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\9-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\9-4.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_9_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\9-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\9-5.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_9_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\9-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\9-6.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_9_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\9-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\9-7.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_9_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\9-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\9-8.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_9_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chakracodes\en-gb\forecasts\9-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>numerology\en-gb\forecasts\9-9.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="KarmicNumerologyCalculator" xml:space="preserve">
     <value>Karmic Numerology Calculator</value>
@@ -4465,10 +4456,70 @@
   <data name="WhatIsKarmicNumerology" xml:space="preserve">
     <value>What is Karmic Numerology?</value>
   </data>
+  <data name="mentor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>numerology\en-gb\codes\mentor.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="Purpose" xml:space="preserve">
     <value>Purpose</value>
   </data>
+  <data name="revolutionary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>numerology\en-gb\codes\revolutionary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="The" xml:space="preserve">
     <value>The</value>
+  </data>
+  <data name="TwelveMonthOutlook" xml:space="preserve">
+    <value>12 Month Outlook</value>
+  </data>
+  <data name="TwelveYearOutlook" xml:space="preserve">
+    <value>12 Year Outlook</value>
+  </data>
+  <data name="visionary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>numerology\en-gb\codes\visionary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Actualisation" xml:space="preserve">
+    <value>Actualisation</value>
+  </data>
+  <data name="ActualisationYears" xml:space="preserve">
+    <value>27 - 53 years</value>
+  </data>
+  <data name="daily_karmic_influences" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>numerology\en-gb\articles\daily-karmic-influences.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Emergence" xml:space="preserve">
+    <value>Emergence</value>
+  </data>
+  <data name="EmergenceYears" xml:space="preserve">
+    <value>0 - 26 years</value>
+  </data>
+  <data name="KarmicNumerologyDetails" xml:space="preserve">
+    <value>Karmic Numerology Details</value>
+  </data>
+  <data name="karmic_evolution" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>numerology\en-gb\articles\karmic-evolution.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Mastery" xml:space="preserve">
+    <value>Mastery</value>
+  </data>
+  <data name="MasteryYears" xml:space="preserve">
+    <value>54 - 80 years</value>
+  </data>
+  <data name="PrimaryBlueprint" xml:space="preserve">
+    <value>Primary Blueprint</value>
+  </data>
+  <data name="primary_blueprint" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>numerology\en-gb\articles\primary-blueprint.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Transcenence" xml:space="preserve">
+    <value>Transcenence</value>
+  </data>
+  <data name="TranscenenceYears" xml:space="preserve">
+    <value>81 - 107 years</value>
+  </data>
+  <data name="twelve_month_outlook" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>numerology\en-gb\articles\twelve-month-outlook.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="twelve_year_outlook" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>numerology\en-gb\articles\twelve-year-outlook.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

@@ -1,0 +1,12 @@
+﻿@using K9.WebApplication.Helpers
+@model K9.WebApplication.Models.NumerologyModel
+
+<div class="numerology-container">
+    <div class="row">
+        <div class="col-sm-12 padding-0">
+            @Html.Panel("", Dictionary.primary_blueprint)
+            <br />
+            @Html.Partial("_NumerologyCodeDisplay", Model.Primary)
+        </div>
+    </div>
+</div>

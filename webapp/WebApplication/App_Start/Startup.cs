@@ -82,7 +82,7 @@ namespace K9.WebApplication
             builder.RegisterType<PromotionService>().As<IPromotionService>().InstancePerLifetimeScope();
             builder.RegisterType<MailingListService>().As<IMailingListService>().InstancePerLifetimeScope();
             builder.RegisterType<MailerService>().As<IMailerService>().InstancePerLifetimeScope();
-            builder.RegisterType<ChakraCodesService>().As<IChakraCodesService>().InstancePerLifetimeScope();
+            builder.RegisterType<NumerologyService>().As<INumerologyService>().InstancePerLifetimeScope();
 
             RegisterConfiguration(builder);
 

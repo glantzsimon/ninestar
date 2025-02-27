@@ -1,0 +1,14 @@
+﻿@using K9.SharedLibrary.Extensions
+@using K9.WebApplication.Config
+@using K9.WebApplication.Helpers
+@model K9.WebApplication.Models.NumerologyDetails
+
+<div class="numerology-card">
+    <img src="@(DefaultValuesConfiguration.Instance.BaseImagesPath)/numerology/@($"{Model.Name}.png")" />
+    @Html.Panel(Model.FullName, Html.Partial("_NumerologyCodeDetails", Model).ToString())
+
+    @if (Model.ShowDates)
+    {
+        <p class="text-center">@Model.StartDate.ToShortDateString() - @Model.EndDate.ToShortDateString()</p>
+    }
+</div>

@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using K9.SharedLibrary.Extensions;
 
 namespace K9.WebApplication.Services
 {
@@ -21,9 +22,9 @@ namespace K9.WebApplication.Services
             model.Primary = CalculateDominant(model.PersonModel.DateOfBirth);
             model.Emergence = CalculateSubDominant(model.PersonModel.DateOfBirth);
             model.Actualisation = CalculateGuide(model.PersonModel.DateOfBirth);
-            model.Mastery = CalculateGift(model.PersonModel.DateOfBirth);
-            model.BirthYear = CalculateBirthYear(model.PersonModel);
-            model.CurrentYear = CalculateCurrentYear(model.PersonModel);
+            model.Mastery = CalculateGiftCode(model.PersonModel.DateOfBirth);
+            model.BirthYear = CalculateBirthCode(model.PersonModel);
+            model.CurrentYear = CalculateCurrentYearCode(model.PersonModel);
             model.CurrentMonth = CalculateCurrentMonth(model.PersonModel);
             model.MonthlyPlannerCodes = CalculateMonthCodes(model.PersonModel);
             model.YearlyPlannerCodes = CalculateYearlyPlannerCodes(model.PersonModel);
@@ -38,22 +39,22 @@ namespace K9.WebApplication.Services
             return model;
         }
 
-        public NumerologyDetails CalculateDominant(DateTime date)
+        public NumerologyCodeDetails CalculateDominant(DateTime date)
         {
             var result = CalculateNumerology(date.Year + date.Month + date.Day);
 
-            return new NumerologyDetails
+            return new NumerologyCodeDetails
             {
                 NumerologyCode = (ENumerologyCode)result,
                 Title = "Dominant"
             };
         }
 
-        public NumerologyDetails CalculateSubDominant(DateTime date)
+        public NumerologyCodeDetails CalculateSubDominant(DateTime date)
         {
             var result = date.Month > 9 ? date.Month - 9 : date.Month;
 
-            return new NumerologyDetails
+            return new NumerologyCodeDetails
             {
                 NumerologyCode = (ENumerologyCode)result,
                 IsActive = IsActive(date, 0, 27),
@@ -61,11 +62,11 @@ namespace K9.WebApplication.Services
             };
         }
 
-        public NumerologyDetails CalculateGuide(DateTime date)
+        public NumerologyCodeDetails CalculateGuide(DateTime date)
         {
             var result = CalculateNumerology(date.Day);
 
-            return new NumerologyDetails
+            return new NumerologyCodeDetails
             {
                 NumerologyCode = (ENumerologyCode)result,
                 IsActive = IsActive(date, 27, 54),
@@ -73,11 +74,11 @@ namespace K9.WebApplication.Services
             };
         }
 
-        public NumerologyDetails CalculateGift(DateTime date)
+        public NumerologyCodeDetails CalculateGiftCode(DateTime date)
         {
             var result = CalculateNumerology(date.Year);
 
-            return new NumerologyDetails
+            return new NumerologyCodeDetails
             {
                 NumerologyCode = (ENumerologyCode)result,
                 IsActive = IsActive(date, 54, 81),
@@ -85,22 +86,22 @@ namespace K9.WebApplication.Services
             };
         }
 
-        public NumerologyDetails CalculateBirthYear(PersonModel person)
+        public NumerologyCodeDetails CalculateBirthCode(PersonModel person)
         {
             var result = CalculateDominant(person.DateOfBirth).NumerologyCode;
 
             result = result == ENumerologyCode.Elder ? ENumerologyCode.Pioneer : result + 1;
 
-            return new NumerologyDetails
+            return new NumerologyCodeDetails
             {
                 NumerologyCode = result,
                 Title = "Birth Year"
             };
         }
 
-        public NumerologyDetails CalculateCurrentYear(PersonModel person, int? offset = null)
+        public NumerologyCodeDetails CalculateCurrentYearCode(PersonModel person, int? offset = null)
         {
-            var result = CalculateBirthYear(person).NumerologyCode;
+            var result = CalculateBirthCode(person).NumerologyCode;
             var year = person.DateOfBirth.Year + person.YearsOld;
 
             result = (ENumerologyCode)(((int)result + person.YearsOld) % 9);
@@ -126,7 +127,7 @@ namespace K9.WebApplication.Services
                 result = result.Increment(offset.Value);
             }
 
-            return new NumerologyDetails
+            return new NumerologyCodeDetails
             {
                 NumerologyCode = result,
                 Title = "Current Year",
@@ -136,7 +137,7 @@ namespace K9.WebApplication.Services
             };
         }
 
-        public NumerologyDetails CalculateCurrentMonth(PersonModel person, int? offset = null)
+        public NumerologyCodeDetails CalculateCurrentMonth(PersonModel person, int? offset = null)
         {
             var monthCodes = CalculateMonthCodes(person);
             var code = monthCodes.FirstOrDefault(e => e.IsCurrent).NumerologyCode;
@@ -153,7 +154,7 @@ namespace K9.WebApplication.Services
 
             var activeMonth = monthCodes.FirstOrDefault(e => e.NumerologyCode == code);
 
-            return activeMonth == null ? null : new NumerologyDetails
+            return activeMonth == null ? null : new NumerologyCodeDetails
             {
                 NumerologyCode = activeMonth.NumerologyCode,
                 Title = "Current Month",
@@ -190,35 +191,61 @@ namespace K9.WebApplication.Services
         public List<NumerologyPlannerModel> CalculateMonthCodes(PersonModel person)
         {
             var items = new List<NumerologyPlannerModel>();
-            var yearEnergy = CalculateCurrentYear(person);
+            var yearEnergy = CalculateCurrentYearCode(person);
             var monthEnergy = yearEnergy.CodeNumber - 6;
 
             monthEnergy = monthEnergy < 1 ? (9 + monthEnergy) : monthEnergy;
 
+            // List to store month models
+            NumerologyPlannerModel currentMonthModel = null;
+
             for (int i = 0; i < 12; i++)
             {
                 var monthNumber = i + 1;
-                var offset = monthNumber - DateTime.Today.Day;
+                var startDate = GetMonthStartDate((ENumerologyCode)monthEnergy, monthNumber);
+                var endDate = GetMonthEndDate((ENumerologyCode)monthEnergy, monthNumber);
 
-                items.Add(new NumerologyPlannerModel
+                var model = new NumerologyPlannerModel
                 {
                     NumerologyCode = (ENumerologyCode)monthEnergy,
-                    StartDate = GetMonthStartDate((ENumerologyCode)monthEnergy, monthNumber),
-                    EndDate = GetMonthEndDate((ENumerologyCode)monthEnergy, monthNumber),
-                    Offset = offset
-                });
+                    StartDate = startDate,
+                    EndDate = endDate,
+                    Offset = 0 // Temporary
+                };
+
+                items.Add(model);
+
+                // Check if this is the current month
+                if (DateTime.Today >= startDate && DateTime.Today <= endDate)
+                {
+                    currentMonthModel = model;
+                }
 
                 monthEnergy = monthEnergy.Increment();
+            }
+
+            // Calculate offsets relative to the current month
+            if (currentMonthModel != null)
+            {
+                int currentIndex = items.IndexOf(currentMonthModel);
+
+                for (int i = 0; i < items.Count; i++)
+                {
+                    items[i].Offset = i - currentIndex;
+                }
             }
 
             return items;
         }
 
+
         public List<NumerologyPlannerModel> CalculateYearlyPlannerCodes(PersonModel person)
         {
             var items = new List<NumerologyPlannerModel>();
-            var currentYear = CalculateCurrentYear(person);
-            var year = person.DateOfBirth.Year + person.YearsOld;
+            var currentYear = CalculateCurrentYearCode(person);
+            var endOfYear = GetYearEndDate(currentYear.NumerologyCode);
+            var birthdayFactor = person.DateOfBirth.HasBirthdayPassedThisYear() ? -1 : 0;
+            var year = person.DateOfBirth.Year + person.YearsOld + birthdayFactor;
             var offset = 5;
             var yearEnergy = currentYear.CodeNumber.Decrement(offset + 1);
 
@@ -246,7 +273,7 @@ namespace K9.WebApplication.Services
             var items = new List<DharmaNumerologyCodeModel>();
             var age = 0;
             var year = person.DateOfBirth.Year;
-            var yearEnergy = CalculateBirthYear(person).CodeNumber;
+            var yearEnergy = CalculateBirthCode(person).CodeNumber;
 
             for (int i = 0; i < 100; i++)
             {
@@ -379,7 +406,7 @@ namespace K9.WebApplication.Services
         public NumerologyForecast GetYearlyForecast(PersonModel person, int? offset = 0)
         {
             var dominant = CalculateDominant(person.DateOfBirth);
-            var yearEnergy = CalculateCurrentYear(person, offset);
+            var yearEnergy = CalculateCurrentYearCode(person, offset);
             var x = CalculateNumerology(dominant.CodeNumber + yearEnergy.CodeNumber);
 
             return new NumerologyForecast
@@ -393,7 +420,7 @@ namespace K9.WebApplication.Services
 
         public NumerologyForecast GetMonthlyForecast(PersonModel person, int? offset = 0)
         {
-            var yearEnergy = CalculateCurrentYear(person);
+            var yearEnergy = CalculateCurrentYearCode(person);
             var currentMonth = CalculateCurrentMonth(person, offset);
             var x = CalculateNumerology(yearEnergy.CodeNumber + currentMonth.CodeNumber);
 

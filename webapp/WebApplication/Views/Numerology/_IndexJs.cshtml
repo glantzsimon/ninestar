@@ -17,15 +17,15 @@
             var dateOfBirthString = dateOfBirth.toISOString(); // Convert Date object to ISO string
 
             if (forecastType === "@EForecastType.Yearly") {
-                $panel = $("#twelve-year-outlook");
+                $panel = $("#yearly-forecast");
                 $container = $("#yearly-forecast-container");
             }
             else if (forecastType === "@EForecastType.Monthly") {
-                $panel = $("#twelve-month-outlook");
+                $panel = $("#monthly-forecast");
                 $container = $("#monthly-forecast-container");
             }
             else if (forecastType === "@EForecastType.Daily") {
-                $panel = $("#daily-outlook");
+                $panel = $("#daily-forecast");
                 $container = $("#daily-forecast-container");
             }
 
@@ -33,13 +33,13 @@
             $container.find(".numerology-planner-item-container").removeClass("selected");
 
             // set current class on current selected item
-            $el.closest(".numerology-planner-item-container").addClass("selected");
+            $el.find(".numerology-planner-item-container").addClass("selected");
 
             ajaxcontroller().get("@Url.Action("CalculateForecast", "Numerology")", {forecastType, dateOfBirth: dateOfBirthString, offset}).done(
                 function(result) {
                     if (result.success) {
                         // $panel.find(".panel-title-text").html(result.data.Title);
-                        $panel.find(".panel-body").html(result.data.Forecast);
+                        $panel.siblings(".panel").find(".panel-body").html(result.data.Forecast);
                     }
                 });
         });

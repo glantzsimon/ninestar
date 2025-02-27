@@ -1,4 +1,5 @@
-﻿using K9.WebApplication.Enums;
+﻿using System;
+using K9.WebApplication.Enums;
 using System.Linq;
 
 namespace K9.WebApplication.Extensions
@@ -35,28 +36,14 @@ namespace K9.WebApplication.Extensions
 
         public static int ToNumerology(this int value)
         {
-            if (value < 0)
+            value = Math.Abs(value); // Ensure positive number
+
+            while (value >= 10)
             {
-                value = value + 9;
+                value = value.ToString().Sum(c => c - '0'); // Sum the digits
             }
 
-            if (value == 0)
-            {
-                return 0;
-            }
-
-            var result = 0;
-            while (result >= 10 || result == 0)
-            {
-                if (result == 0)
-                {
-                    result = value;
-                }
-
-                result = result.ToString().Select(e => int.Parse(e.ToString())).Sum();
-            }
-
-            return result;
+            return value;
         }
     }
 }

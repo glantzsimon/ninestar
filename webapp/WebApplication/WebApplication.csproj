@@ -381,7 +381,7 @@
     <Compile Include="Exceptions\EmailTemplateAlreadySentException.cs" />
     <Compile Include="Exceptions\UserAlreadySubscribedException.cs" />
     <Compile Include="Extensions\NumerologyExtensions.cs" />
-    <Compile Include="Models\Numerology\NumerologyDetails.cs" />
+    <Compile Include="Models\Numerology\NumerologyCodeDetails.cs" />
     <Compile Include="Models\Numerology\Forecast.cs" />
     <Compile Include="Models\Numerology\NumerologyPlannerModel.cs" />
     <Compile Include="Models\Numerology\NumerologyModel.cs" />

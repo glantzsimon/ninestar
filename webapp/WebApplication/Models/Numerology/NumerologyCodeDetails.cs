@@ -6,7 +6,7 @@ using System;
 
 namespace K9.WebApplication.Models
 {
-    public class NumerologyDetails
+    public class NumerologyCodeDetails
     {
         public ENumerologyCode NumerologyCode { get; set; }
 

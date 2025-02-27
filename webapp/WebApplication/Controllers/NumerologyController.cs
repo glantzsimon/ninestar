@@ -61,7 +61,7 @@ namespace K9.WebApplication.Controllers
                     break;
 
                 case EForecastType.Monthly:
-                    result = _numerologyService.GetMonthlyForecast(personModel, offset - 1);
+                    result = _numerologyService.GetMonthlyForecast(personModel, offset);
                     break;
 
                 default:

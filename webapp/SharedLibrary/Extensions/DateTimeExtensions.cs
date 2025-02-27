@@ -14,5 +14,14 @@ namespace K9.SharedLibrary.Extensions
 	    {
 	        return value.ToString("dd/MMM/yy");
 	    }
+
+	    public static bool HasBirthdayPassedThisYear(this DateTime dob)
+	    {
+	        DateTime today = DateTime.Today;
+	        DateTime birthdayThisYear = new DateTime(today.Year, dob.Month, dob.Day);
+
+	        return today >= birthdayThisYear;
+	    }
+
 	}
 }

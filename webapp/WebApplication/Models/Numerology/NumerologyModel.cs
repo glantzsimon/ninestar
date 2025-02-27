@@ -22,19 +22,19 @@ namespace K9.WebApplication.Models
 
         public PersonModel PersonModel { get; set; }
 
-        public NumerologyDetails Primary { get; set; }
+        public NumerologyCodeDetails Primary { get; set; }
         
-        public NumerologyDetails Emergence { get; set; }
+        public NumerologyCodeDetails Emergence { get; set; }
         
-        public NumerologyDetails Actualisation { get; set; }
+        public NumerologyCodeDetails Actualisation { get; set; }
         
-        public NumerologyDetails Mastery { get; set; }
+        public NumerologyCodeDetails Mastery { get; set; }
 
-        public NumerologyDetails BirthYear { get; set; }
+        public NumerologyCodeDetails BirthYear { get; set; }
 
-        public NumerologyDetails CurrentYear { get; set; }
+        public NumerologyCodeDetails CurrentYear { get; set; }
         
-        public NumerologyDetails CurrentMonth { get; set; }
+        public NumerologyCodeDetails CurrentMonth { get; set; }
 
         public List<NumerologyPlannerModel> MonthlyPlannerCodes { get; set; }
         

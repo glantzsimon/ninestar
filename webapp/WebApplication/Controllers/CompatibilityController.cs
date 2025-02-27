@@ -27,21 +27,9 @@ namespace K9.WebApplication.Controllers
         }
 
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
-        public ActionResult _CalculatorForm()
+        public ActionResult _CalculatorForm(CompatibilityModel model)
         {
-            var dateOfBirth1 = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day);
-            var dateOfBirth2 = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day).AddMonths(2);
-            var personModel1 = new PersonModel
-            {
-                DateOfBirth = dateOfBirth1,
-                Gender = Methods.GetRandomGender()
-            };
-            var personModel2 = new PersonModel
-            {
-                DateOfBirth = dateOfBirth2,
-                Gender = Methods.GetRandomGender()
-            };
-            return PartialView(new CompatibilityModel(new NineStarKiModel(personModel1), new NineStarKiModel(personModel2)));
+            return PartialView(model);
         }
 
         [Route("calculator")]

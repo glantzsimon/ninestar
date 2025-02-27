@@ -1,6 +1,10 @@
 ﻿@using K9.WebApplication.Enums
 @model K9.WebApplication.Models.ChakraCodesModel
 
+@{
+    var dateOfBirth = Model?.PersonModel?.DateOfBirth.ToString("yyyy-MM-dd");
+}
+
 <script type="text/javascript">
 
     $(function() {
@@ -9,9 +13,9 @@
             var forecastType = $el.attr("data-forecast-type");
             var offset = ($el.attr("data-offset") || 0);
             var $panel, $container;
-            var dateOfBirth = new Date('@Model.PersonModel.DateOfBirth.ToString("yyyy-MM-dd")');
+            var dateOfBirth = new Date('@dateOfBirth');
             var dateOfBirthString = dateOfBirth.toISOString(); // Convert Date object to ISO string
-            
+
             if (forecastType === "@EForecastType.Yearly") {
                 $panel = $("#twelve-year-outlook");
                 $container = $("#yearly-forecast-container");

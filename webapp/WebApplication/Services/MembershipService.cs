@@ -292,7 +292,7 @@ namespace K9.WebApplication.Services
                 _userMembershipRepository.Create(userMembership);
                 userMembership.User = My.UsersRepository.Find(Current.UserId);
 
-                if (membershipOption.SubscriptionType >= MembershipOption.ESubscriptionType.AnnualPlatinum)
+                if (membershipOption.SubscriptionType == MembershipOption.ESubscriptionType.LifeTimePlatinum)
                 {
                     CreateComplementaryUserConsultation(Current.UserId);
                 }

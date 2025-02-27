@@ -34,15 +34,9 @@ namespace K9.WebApplication.Controllers
         }
 
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
-        public ActionResult _CalculatorForm()
+        public ActionResult _CalculatorForm(NineStarKiModel model)
         {
-            var dateOfBirth = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day);
-            var personModel = new PersonModel
-            {
-                DateOfBirth = dateOfBirth,
-                Gender = Methods.GetRandomGender()
-            };
-            return PartialView(new NineStarKiModel(personModel));
+            return PartialView(model);
         }
 
         [Route("calculator")]

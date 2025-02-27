@@ -63,12 +63,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Disappointments through associations or socially.  Later half could lead to trouble or quarrels.
+        ///        Challenges in Social Connections and Potential Conflicts Later On
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Because the predominant energy is that of social relations (2), the activities will be along those lines, however the reactive energy is from the personal power of the solar plexus (3), giving strong personal opinion rather than going with the flow.
-        ///&lt;/p&gt;.
+        ///    The dominant energy influencing this period is centered around social relationships (2), making interactions with others a primary focus. However, the counteracting force arises from the assertive energy of the solar plexus (3), which amplifies personal opinions and strong-willed attitudes. This dynamic may lead to friction, as there is a tendency to prioritize individual perspective [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _1_1 {
             get {
@@ -79,12 +78,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Emotional scattering - adverse period. Do not over extend. Later half can lead to failure.
+        ///        Emotional Turbulence and Challenges Ahead – Avoid Overextending
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    The relentless driving action of energy (3) is inhibited or crossed by the feelings of intuition and/or karmic interference (4). Action and feelings do not coincide leading to inner conflict.
-        ///&lt;/p&gt;.
+        ///    During this period, the relentless momentum of dynamic energy (3) is hindered or disrupted by the introspective nature of intuition and karmic influences (4). This creates a misalignment between action and emotion, leading to inner tension and uncertainty. The push to move forward is met with hesitation, self-doubt, or unforeseen obstacles, making it difficult to maintain focus and dir [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _1_2 {
             get {
@@ -95,12 +93,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Trouble period. Can be accident prone, stomach disorders, time for pruning of business. Listen to your heart before you take action.
+        ///        Challenging Period – Prone to Accidents, Health Issues, and Business Adjustments  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Best to not be too active as the introverted nature of the heart is pulling inward to check how we feel about things (4) - but this is mixed with the strong re-active tendency of our expression center to do something (5).
-        ///&lt;/p&gt;.
+        ///    This is a time for caution and reflection, as conflicting energies create tension between action and introspection. The inward pull of the heart (4) urges deep self-examination and emotional awareness, prompting you to assess how you truly feel before making decisions. However, this introspective energy is countered by the restless and reactive force of the expressio [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _1_3 {
             get {
@@ -111,12 +108,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Time for decisions, settle indebtedness, possible concerns about travel.
+        ///        A Time for Decisions, Financial Settlements, and Travel Considerations  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    During this time the mind is active with many new possibilities from access of the akashic records (5) but also influenced by the inner eye (6) allowing access to see a moderating and balancing overview leading to good clarity with easy action.
-        ///&lt;/p&gt;.
+        ///    This period brings heightened mental activity, as numerous new possibilities emerge through access to deeper knowledge and insights from the Akashic records (5). At the same time, the influence of the inner eye (6) provides a broader, more balanced perspective, allowing for greater clarity and well-reasoned decision-making. This alignment of intuitive wisdom and intellectual e [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _1_4 {
             get {
@@ -127,12 +123,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Good for birth, settlement and reuniting.
+        ///        Favorable Period for New Beginnings, Resolution, and Reconciliation  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Mind element is bringing together the perspectives of intellect and intuition (6), producing a complete picture. Unite further by becoming aware of your feelings (7).
-        ///&lt;/p&gt;.
+        ///    This is a harmonious time for fresh starts, resolving past matters, and rekindling connections. The mind element fosters unity by integrating both intellectual reasoning and intuitive insight (6), creating a well-rounded and complete perspective. This clarity allows for meaningful decisions and deeper understanding in personal and professional matters. To further strengthen this  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _1_5 {
             get {
@@ -143,12 +138,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Lucky cycle. First half may feel  financially tight, the last half brings inheritance, income or credit collected. Something coming from nature also.
+        ///        A Fortunate Cycle – Financial Shifts and Unexpected Gains  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    The reflective waiting energy (7) feels like it will all work out and it does as time shifts into an incoming flow and reward (8).
-        ///&lt;/p&gt;.
+        ///    This period carries a promising energy, though it may begin with financial constraints or a sense of limitation. The first half requires patience and trust, as resources might feel stretched or delayed. However, as time progresses, the tide turns in your favor, bringing financial relief in the form of inheritance, income, or long-overdue payments. The reflective and waiting energy (7) enco [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _1_6 {
             get {
@@ -159,12 +153,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Careful winding up, retrospective, analysis of financial situation, funds coming in.
+        ///        Careful Closure, Financial Reflection, and Incoming Rewards  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    The rewards, or lack thereof, for whatever you have been working on are apparent (8). We can see what we get and there is a contemplative view (9). Previous actions measure/reflect how abundant the funds coming in are/were. A good time for  analysing previous actions: what worked and what didn’t, and how it has earned you this reward.
-        ///&lt;/p&gt;.
+        ///    This period marks an important phase of assessment and resolution, particularly in financial matters. The results of past efforts—whether successful or lacking—become clear (8), providing valuable insight into the effectiveness of previous decisions. As funds begin to flow in, it becomes evident how past actions have shaped current financial outcomes. The reflective energy of this cycle  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _1_7 {
             get {
@@ -175,12 +168,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Tend to emotions. Good for affairs of short nature. Ripe time to begin with charitable or universal service. A time for sowing one’s karma.
+        ///        Nurture Emotions, Embrace Short-Term Connections, and Initiate Acts of Service  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    A global view brings in the inspiration to help others (9) with a tendency to act from the need to feel safety, security or to promote personal needs (1). Ego resistance may create emotions rather than flowing with service. Planning and contemplation is wise.
-        ///&lt;/p&gt;.
+        ///    This period encourages emotional awareness and thoughtful action. It is well-suited for short-lived relationships or temporary engagements, while also marking an ideal time to embark on charitable or universal service. The expansive perspective of this cycle (9) inspires a deep sense of compassion and a desire to assist others, yet it is intertwined with personal motiv [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _1_8 {
             get {
@@ -191,12 +183,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Positive in opinion of mind but weak in action. Good time to start or continue activities through associations.
+        ///        Strong Mental Conviction but Limited Action – Ideal for Collaborative Efforts  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Creative actions (1) can be dampened by the resistance of others (2) but with good centering this can be a good time for instigating projects that involve others.
-        ///&lt;/p&gt;.
+        ///    This period fosters confidence in thought and opinion, yet translating ideas into decisive action may prove challenging. The energy of creativity and initiative (1) is present, but external resistance from others (2) may create obstacles or slow momentum. However, with proper focus and balance, this phase offers an excellent opportunity to initiate or further develop pr [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _1_9 {
             get {
@@ -309,12 +300,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        First half very positive / powerful, last half accident / loss. Tend to moodiness, excellent for people in the arts.
+        ///        A Dynamic Start Followed by Caution – Emotional Shifts and Artistic Inspiration  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Very active (1)  and expressive (5)  but be prepared to slow down in the latter half. Mind will remain inspired but actions may not be able to materialize.
-        ///&lt;/p&gt;.
+        ///    The first half of this period is filled with powerful energy, creativity, and forward momentum. A strong sense of initiative (1) combined with expressive and dynamic influences (5) makes this an excellent time for bold actions, artistic pursuits, and inspired thinking. However, as the cycle progresses, the pace begins to slow, and external or internal limitations may  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _2_1 {
             get {
@@ -325,12 +315,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Possible test/worry period. Decisions that involve detailed work.
+        ///        A Period of Tests and Concerns – Thoughtful Decisions Required  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Consideration of feelings important (4). Allow careful contemplation of the intuitive side before making decisions with the mind (6). Look at the details of both sides of the picture to help balance the energy.  
-        ///&lt;/p&gt;.
+        ///    This phase may bring challenges that test patience and clarity, particularly in areas requiring careful decision-making. Emotional awareness (4) plays a crucial role, as intuition provides valuable insights that should not be overlooked. Before making logical or analytical choices (6), take the time to reflect deeply and ensure that both intellect and intuition are in harmony. Paying  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _2_2 {
             get {
@@ -341,12 +330,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Mind in conflict about activity or introversion. Positive settlement involving change or travel. Ulcer combination.
+        ///        Mental Conflict Between Action and Reflection – Change, Travel, and Inner Tension  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Begins with lots of inspiring new ideas (5) but action to follow should be reserved for later. Relax and let some insights flow in from higher levels before taking action (7). Writing could be one of the best activities during this period.
-        ///&lt;/p&gt;.
+        ///    This period begins with an influx of inspiring new ideas (5), sparking a desire for movement and change. However, there is an internal struggle between the urge to take immediate action and the need for introspection. Rather than rushing forward, it is wiser to pause, reflect, and allow deeper insights to emerge from higher awareness (7). Major decisions, particular [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _2_3 {
             get {
@@ -357,12 +345,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Decisions regarding finances. Quarrels coming to an end. Family income or business.
+        ///        Financial Decisions, Resolution of Conflicts, and Stability in Family or Business  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Clarity about life in the material world (6). Prosperous decisions can be made at this time. Also a fine time for unity and rewards at spiritual levels (8).
-        ///&lt;/p&gt;.
+        ///    This period brings greater clarity regarding material and financial matters (6), making it an opportune time for making sound economic decisions. Whether related to family income, business ventures, or investments, choices made now have the potential to yield prosperity and long-term stability. Additionally, any lingering quarrels or disputes are likely to reach a r [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _2_4 {
             get {
@@ -373,12 +360,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Some problems settling affairs. Key period for meditation, concentration, contemplation - time to go within.
+        ///        Challenges in Settling Affairs – A Key Time for Reflection and Inner Growth  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Look for inspiration coming from the universal reality, the lessons, the reasons why things are happening (7). Feel the inflow of energy from source and remind yourself it is all part of the one, the journey (9). Take advantage of this time and focus on the spiritual, philosophical and going within to receive wisdom and guidance.
-        ///&lt;/p&gt;.
+        ///    This period may bring some difficulties in resolving practical matters, but rather than forcing solutions, it is a time to turn inward. Inspiration and insight can be found by connecting with the universal reality (7), exploring the deeper lessons and underlying reasons behind current experiences. The energy of this phase encourages a heightened awareness of the bigger pi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _2_5 {
             get {
@@ -389,12 +375,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Good period financially, to harvest and sow, for investments.
+        ///        A Prosperous Period – Ideal for Financial Gains, Investments, and New Opportunities  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Go shopping. Anything you buy today will be cheaper than yesterday or tomorrow. Your rewards at the material level are yours for the taking (8). If you have been working more on spiritual levels that will also come, but you might see them at a more earthly level (1).
-        ///&lt;/p&gt;.
+        ///    This is a favorable time for financial growth, making investments, and reaping the rewards of past efforts. Whether in business, savings, or long-term financial planning, opportunities for prosperity are abundant (8). Even everyday purchases are likely to be more cost-effective now than they were before or will be in the future, making this an ideal time to buy wi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _2_6 {
             get {
@@ -405,12 +390,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Meeting of the wise, spiritual and material advisors. Highly emotional time if things are not done.
+        ///        A Time for Guidance – Wisdom, Reflection, and Emotional Balance  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Contemplation and consideration of input and advice from associates is the key here (2). Philosophical discussions are in order (9), balanced with movements such as hatha yoga, running or other physical activities.
-        ///&lt;/p&gt;.
+        ///    This period presents an opportunity to seek insight from both spiritual and material advisors. Engaging in thoughtful discussions and carefully considering advice from trusted associates is essential (2), as the right guidance can provide valuable clarity and direction. Deep philosophical conversations (9) are particularly meaningful during this time, offering new perspectives and he [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _2_7 {
             get {
@@ -421,12 +405,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Positive first half for creation and expression, but period closes with disappointment if over-extended.
+        ///        A Strong Start for Creativity and Action – Caution Against Overextension  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Do things early. Great time for physical activity (1), creativity may run high, maybe a little over-optimism but a good time to get things done (3). During the latter part, allow for some intuitive insights that may slow down and balance your production.
-        ///&lt;/p&gt;.
+        ///    The first half of this period is highly favorable for initiating projects, self-expression, and taking decisive action. Physical energy is strong (1), and creativity flows abundantly, making it an excellent time to accomplish tasks and bring ideas to life (3). Enthusiasm and optimism may be heightened, fueling productivity and momentum. However, there is a risk of overcommit [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _2_8 {
             get {
@@ -437,12 +420,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Test period. Time for quarrels with associations.
+        ///        A Challenging Period – Tensions in Relationships and Emotional Clarity  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Might be a better time for writing about how you feel to someone (2). Insights coming from the subconscious might taint your expression otherwise. Your feelings about people might be more accurate than what you are seeing or feeling from them (4).
-        ///&lt;/p&gt;.
+        ///    This phase may bring interpersonal challenges, making it a testing time for relationships and associations. Communication could be strained, and misunderstandings may arise, leading to quarrels or emotional friction. Rather than engaging in reactive discussions, it might be more beneficial to express your thoughts through writing (2), allowing for greater clarity and emotional [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _2_9 {
             get {
@@ -625,12 +607,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Very fussy and introverted period, good for working silently. Can end with a very late statement.
+        ///        A Quiet, Reflective Period – Ideal for Inner Work and Healing  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Feelings predominate, or should. (4) Healing time for the body while the mind may be reviewing life’s situations.  Awareness element brings some insight (7); perfect time to write about it, not acting on anything. Becomes inspiring towards the end.
-        ///&lt;/p&gt;.
+        ///    This phase encourages introspection and solitude, making it an excellent time for working in silence and focusing on personal healing. Emotional awareness takes center stage (4), allowing for deep reflection on life’s circumstances and the emotions tied to them. While the body benefits from rest and recuperation, the mind is naturally inclined to review past experiences, seeking meanin [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _3_1 {
             get {
@@ -641,12 +622,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Re-investments, reaping old debts, gambling day, may have to be spent on travel.
+        ///        Financial Reevaluation – Reinvestments, Settling Debts, and Taking Risks  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Strong drive to do - new ideas (5). Good time to act on business or express some progressive thoughts on finance. Insightful rewarding time at spiritual levels (8).  Moving ahead with new ideas is beneficial at this time.
-        ///&lt;/p&gt;.
+        ///    This period brings a strong urge to take action, particularly in areas related to finance and business. Fresh ideas (5) inspire movement, making it an excellent time to reinvest, reclaim old debts, or explore opportunities that carry an element of risk, such as strategic investments or even gambling. It is also a favorable moment to express innovative financial strategies or [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _3_2 {
             get {
@@ -657,12 +637,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Time of completion and careful decisions. Retrospection, past decisions, emotional evolution. Stability, planning; most positive time in groups.
+        ///        A Time of Completion, Reflection, and Strategic Decision-Making  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Mind is striving for balance with the overview of the past. Making plans and keeping the long term vision in mind (6). Visualization, or clearing the vision at least, while keeping a universal view of things (9).
-        ///&lt;/p&gt;.
+        ///    This period is marked by a need for careful planning, retrospection, and emotional growth. The mind seeks balance by reviewing past choices and their outcomes, allowing for a deeper understanding of how they have shaped the present. Stability and long-term vision (6) play a crucial role, making this an ideal time for thoughtful decision-making and structured planning. It is also a fa [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _3_3 {
             get {
@@ -673,12 +652,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Start: “so shall ye reap”; hectic but firming, good for natural things.
+        ///        Reaping What You Sow – A Hectic but Grounding Period  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Time to put a vision into action, but stay grounded (1). Easy time to see reactions. Begin cycle with meditation (7), connecting with the universe before stepping out.
-        ///&lt;/p&gt;.
+        ///    This is a pivotal time for turning vision into action, but it is essential to remain grounded and intentional (1). The energy of this period is dynamic and fast-paced, making it easier to observe the direct results of past efforts and choices. It is a favorable time for engaging with nature, working on tangible goals, and solidifying plans. However, before diving into action, it is wise to begi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _3_4 {
             get {
@@ -689,12 +667,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Partnerships and associations leading to money and finance. Good for justice.
+        ///        Prosperity Through Partnerships – Financial Growth and Justice  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Time for reaping the benefits of social contacts and sharing with others (8). Beneficial time for your friends as well as yourself. (2)
-        ///&lt;/p&gt;.
+        ///    This period highlights the power of partnerships and social connections, as collaborations and associations play a key role in financial success (8). It is a time to reap the rewards of past networking efforts, where shared resources and mutual support can bring prosperity not only to you but also to those around you (2). Legal matters or issues related to fairness and justice are als [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _3_5 {
             get {
@@ -705,12 +682,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Hyper-emotional period. Lose friendships, disappointment affecting nervous system. Nervous breakdown.
+        ///        An Emotionally Intense Period – Potential Loss, Disappointment, and Nervous Strain  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    There is a strong tendency towards action that may be inappropriate (3). Contemplation time with insights rather than action, allow the vision to change but don’t act on changing it till the next cycle (9).
-        ///&lt;/p&gt;.
+        ///    This phase is marked by heightened emotions, making it a challenging time for relationships and personal stability. There may be feelings of disappointment, the potential for losing friendships, or situations that place strain on the nervous system. The strong urge to take action (3) may lead to impulsive or inappropriate decisions, which could further escalate ten [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _3_6 {
             get {
@@ -721,12 +697,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Test phase in regards to sowing - instant karma cycle.
+        ///        A Test Phase of Cause and Effect – The Instant Karma Cycle  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Period for beginning things (1) - actions done in the light of Karma Yoga in particular; working in the service of others, checking in with your heart center (4)
-        ///&lt;/p&gt;.
+        ///    This period serves as a powerful reminder that actions taken now will have immediate consequences, making it an essential time to act with mindfulness and integrity. It is a favorable moment for initiating new endeavors (1), particularly those rooted in selfless service and the principles of Karma Yoga. Acts of generosity, kindness, and working for the benefit of others will yield meaning [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _3_7 {
             get {
@@ -737,12 +712,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Period for expansion, new contacts, meet new people who help and stimulate in new projects. Good for pruning people.
+        ///        A Time for Expansion – New Connections, Fresh Opportunities, and Refining Relationships  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    This can be a very dynamic time to be working with people as your energy can be very inspiring and motivating to them (2). Sharing new ideas and letting them spread through social networks (5).
-        ///&lt;/p&gt;.
+        ///    This period is highly dynamic, bringing opportunities to meet new people who can provide valuable inspiration and support for upcoming projects. Your energy is particularly engaging and motivating to others (2), making it an excellent time for collaboration, networking, and forming meaningful partnerships. Sharing fresh ideas and allowing them to gain momentum [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _3_8 {
             get {
@@ -753,12 +727,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Decisions, artistic criticism; some problems in the last half, worrisome period.
+        ///        A Period of Decisions, Creativity, and Caution in the Latter Half  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Very active period in the beginning (3); creative thoughts and actions but some contemplating time should be allowed so as not to go too far (6), pace yourself and take time in the latter half to check the effects/results of what you are doing.
-        ///&lt;/p&gt;.
+        ///    This cycle begins with a surge of creativity and dynamic activity (3), making it a great time for artistic expression, innovation, and bold decision-making. However, while enthusiasm may be high, it is important to allow space for contemplation and reflection to avoid overextending or pushing too far (6). As the period progresses, challenges may arise, bringing a need for careful a [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _3_9 {
             get {
@@ -870,12 +843,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Emotional desire for changes; mind spiritualized. Time to think about new activities, think carefully about the next phase.
+        ///        Emotional Urge for Change – A Time for Vision, Planning, and Spiritual Reflection  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Excellent planning time good for new visions and ideas to come in, can also be active but with careful contemplation (5). Good time to communicate your global vision and make plans to act on it (9).
-        ///&lt;/p&gt;.
+        ///    This period brings a strong emotional desire for transformation, accompanied by a heightened sense of spiritual awareness. It is an excellent time for envisioning new possibilities, generating fresh ideas, and carefully strategizing the next phase of your journey. While there is an active energy present (5), thoughtful contemplation is essential to ensure that chang [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _4_1 {
             get {
@@ -886,12 +858,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Starting something new in family, or starting new family. Things to do with institutions. Stable decisions.
+        ///        New Beginnings in Family, Community, and Institutional Matters – A Time for Stability and Growth  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Family being the greater spiritual family, this is a good time to be initiating the projects with people of like mind (1). Communication is at a high level for understanding and seeing the whole picture/project (6).
-        ///&lt;/p&gt;.
+        ///    This period supports new beginnings, whether within your immediate family, a broader spiritual community, or collaborative efforts related to institutions. It is an ideal time to initiate projects with like-minded individuals (1), as shared values and collective goals provide a strong foundation for success. Communication flows easily, fostering deepe [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _4_2 {
             get {
@@ -902,12 +873,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Association leading to beneficial period later. Hard beginning, good end. Spiritual quietness; time for nature.
+        ///        A Challenging Start Leading to Success – Reflection, Nature, and Future Growth  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    The beginning should be meditative and quiet, best thing in a setting connected with nature (7). Allow some inspiration from the universe, after which sharing with others will flow (2).
-        ///&lt;/p&gt;.
+        ///    This period may begin with difficulties, requiring patience, introspection, and a quiet, spiritual approach. The best way to navigate the early phase is through meditation and deep reflection, ideally in a natural setting where clarity and inspiration can emerge (7). By tuning into universal wisdom and allowing insights to unfold organically, a sense of inner peace and [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _4_3 {
             get {
@@ -918,12 +888,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Disappointment, often financially if over extended; money in first half, money out second half.
+        ///        A Period of Financial Fluctuations – Gain Early, Reflect Later  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    First half dynamic and optimistic (3), good time to do and gain but do so early; last half should become more introverted - going inward to feel what is really going on in the heart center. Be thankful for what is gained in the first half of the cycle but drop expectations (8).
-        ///&lt;/p&gt;.
+        ///    This cycle brings a mix of financial opportunities and potential setbacks, making timing crucial. The first half is dynamic and optimistic (3), offering a favorable window for action, earning, and seizing opportunities. However, it is important to make the most of this phase early, as the second half of the period shifts inward, requiring greater introspection and emotional awareness. [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _4_4 {
             get {
@@ -934,12 +903,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Test for nervous system, time to relax. Loss of family, friends; introspection; period for getting things in order.
+        ///        A Period of Reflection and Release – Emotional Challenges and Inner Reorganization  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    This is a deeply contemplative time with focus on how you really feel about things (4). Allow silent time and communication with the higher forces; journal and look at purity of motives. Cleansing time for body and mind; not a time for action other than service to fellow beings (9).
-        ///&lt;/p&gt;.
+        ///    This phase is a test of emotional resilience and nervous system stability, making it essential to slow down and prioritize self-care. It is a deeply introspective time, encouraging you to examine your true feelings and reassess personal relationships (4). Loss or distance from family and friends may bring a sense of solitude, but this can also serve as an opportuni [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _4_5 {
             get {
@@ -950,12 +918,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Time for rapid expansion, looking for new ideas and projects. Watch for accidents.
+        ///        A Time of Rapid Expansion – New Ideas, Bold Beginnings, and Caution in Action  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    New ideas will be flowing in and this is prime time for beginning them. The energy and inspiration are in full force moving towards implementing the project and planting the seeds (1), they might even sprout early. Watch the mind as it will tend to race a little ahead of physical actions (5).
-        ///&lt;/p&gt;.
+        ///    This period is filled with excitement and forward momentum, making it an ideal time for generating fresh ideas and launching new projects. Inspiration flows abundantly, and the energy is strong for taking the first steps toward implementation (1). Seeds of opportunity planted now may begin to sprout sooner than expected, signaling early progress. However, with this surg [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _4_6 {
             get {
@@ -966,12 +933,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Harmonious period. Excellent for decisions regarding others. Good day to approach people.
+        ///        A Harmonious Period – Ideal for Relationship Building and Important Decisions  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Social expansion time with good communication of thought and feelings, life is in the flow (2). If there are unresolved issues with anyone this is the time to resolve (6).
-        ///&lt;/p&gt;.
+        ///    This phase brings a natural sense of balance and ease, making it an excellent time for meaningful interactions and thoughtful decision-making. Communication flows effortlessly, fostering mutual understanding and deeper connections (2). It is an opportune moment to approach people, engage in discussions, and expand social or professional networks. If there are lingering  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _4_7 {
             get {
@@ -982,12 +948,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Over- optimism going to failure, negative emotions, feeling of tension, writing expression.
+        ///        A Cycle of Shifting Energy – From Overconfidence to Reflection and Expression  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Dynamic extroverted energy to act (3), spiritual insight, changing to non action more reflective time halfway through (7). Good time for observing the inspirations and writing about them - Swadhiyaya
-        ///&lt;/p&gt;.
+        ///    This period begins with a surge of dynamic and extroverted energy (3), driving action and a sense of enthusiasm. However, there is a risk of over-optimism, which, if unchecked, may lead to disappointment or setbacks. As the cycle progresses, the energy shifts inward, transitioning into a more contemplative and introspective phase (7). This shift may bring feelings of te [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _4_8 {
             get {
@@ -998,12 +963,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Time for settlements, payments, etc. Hard work, rewards come hard. Go cautiously, watch details.
+        ///        A Time for Settlements, Hard Work, and Mindful Effort – Proceed with Caution  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Meditation should be the beginning of this day, with some contemplative thought towards Karma Yoga and whether we are living in it. Clearing the past and looking at what else we can do for others (4). The feeling can be very rewarding and this is a good time to focus on those feelings (8).
-        ///&lt;/p&gt;.
+        ///    This period calls for careful attention to financial matters, outstanding obligations, and the completion of responsibilities. Rewards may come, but only through persistent effort and diligence. It is important to move cautiously, paying close attention to details to avoid missteps. Beginning the day with meditation can provide clarity, helping to align actions with the  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _4_9 {
             get {
@@ -1117,12 +1081,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Settled down, social contacts, family, friends, acquaintances, institutions; all help with decisions.
+        ///        Stability and Social Connections – A Time for Collaboration and Thoughtful Decisions  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Good co-operative period for networking, meetings and gaining feedback from various perspectives, about projects (2). Very good to analyze what is happening with an open mind (6).
-        ///&lt;/p&gt;.
+        ///    This period fosters a sense of stability and support, making it an excellent time for engaging with family, friends, acquaintances, and institutions. Cooperation and networking thrive, as interactions with others provide valuable feedback and fresh perspectives on projects and important decisions (2). Meetings, discussions, and collaborative efforts are especiall [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _5_1 {
             get {
@@ -1133,12 +1096,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Starts out well but ends badly if over-extended; sensitivity and introversion, fighting yourself.
+        ///        A Cycle of Shifting Energy – From Creativity to Introspection, Avoid Overextension  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    The start is introverted with a strong creative drive to do something (3), then becomes positive outgoing with feelings drawing you in to a quiet place (7).
-        ///&lt;/p&gt;.
+        ///    This period begins with a strong inner drive for creative expression and action (3), fueling enthusiasm and a desire to accomplish something meaningful. However, as the cycle progresses, the energy shifts, bringing a pull toward introspection and emotional sensitivity. While the initial momentum may feel exciting and productive, overextending yourself could lead to [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _5_2 {
             get {
@@ -1149,12 +1111,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Positive, but, financial test period, do not buy or sell.
+        ///        A Positive Yet Testing Period – Financial Caution and Inner Reflection  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Can be a rewarding time (8), depending on your karma, but not a time of action; better to sit in a quiet place, be thankful for all that you have and observe how you feel about it all (4).
-        ///&lt;/p&gt;.
+        ///    While this period carries the potential for rewards and financial growth (8), it is not a time for active buying, selling, or making major financial moves. Instead, this phase serves as a test, urging patience and mindful observation rather than immediate action. The best approach is to embrace stillness—find a quiet space to reflect, express gratitude for what you have, and a [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _5_3 {
             get {
@@ -1165,12 +1126,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Indulgence, emotional; change in spiritual matters.
+        ///        Emotional Indulgence and Spiritual Shifts – A Time of Reflection and Change  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Contemplative time again, overviewing your life (9), with a strong reactive tendency to make some changes and do something new and different (5). too many ideas can create a certain amount of anxiety; they cannot all be acted upon.
-        ///&lt;/p&gt;.
+        ///    This period encourages deep contemplation, providing an opportunity to step back and reflect on your life as a whole (9). A strong desire for change emerges, accompanied by an urge to break free from routines and explore new spiritual or philosophical perspectives (5). However, with so many ideas and possibilities surfacing, there is a risk of feeling overwhelmed or anxio [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _5_4 {
             get {
@@ -1181,12 +1141,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Good period, reasonable drive, decisions, usually regarding projects, often time for paying out rather than taking in.
+        ///        A Balanced and Productive Period – Ideal for Decisions and New Projects  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    This is also a very good time to start a project (1) with a balanced perspective and good vision in mind. It is a stable and reasonable period that maintains a very level headed approach (6).
-        ///&lt;/p&gt;.
+        ///    This phase offers a steady and well-balanced energy, making it an excellent time for making thoughtful decisions, particularly regarding projects and long-term goals. It is a favorable period for initiating new endeavors (1), provided they are approached with a clear vision and a practical mindset. Financially, this may be a time of paying out rather than receiving, but such  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _5_5 {
             get {
@@ -1197,12 +1156,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Introversion, watch procrastination; nature, beneficial settlement in later half, with associations.
+        ///        A Period of Introversion and Gradual Progress – Avoid Procrastination, Embrace Natural Flow  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Social time with relaxed energy, hangout in the beginning (2) but with the later half comes more rewards, inspiration and a more active energy at least at the mind level (7).
-        ///&lt;/p&gt;.
+        ///    This phase begins with a relaxed and social energy (2), making it a good time for lighthearted interactions and casual gatherings. However, there is also a tendency toward procrastination or hesitation, so it is important to remain mindful of any delays in taking action. As the cycle progresses, inspiration begins to build, and a more active mental energy  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _5_6 {
             get {
@@ -1213,12 +1171,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Fruition period, creative reward, but last half may be foolishly spent.
+        ///        A Period of Fruition and Creativity – Balance Enjoyment with Caution  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    The dynamic energy can take this fruition time too far and result in loss during the latter half, overspending, etc (8). Spiritually can be very inspiring time with creativity bubbling in new visual ideas (3).
-        ///&lt;/p&gt;.
+        ///    This cycle brings a sense of accomplishment and creative fulfillment, making it a rewarding time for seeing the results of past efforts. The dynamic energy of this phase (8) supports material success and abundance, but there is also a risk of overindulgence, particularly in the latter half, where impulsive decisions or overspending could lead to unnecessary losses. Spiritually,  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _5_7 {
             get {
@@ -1229,12 +1186,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Time to make careful decisions, can represent a test on nervous system. Reflection or contemplation time.
+        ///        A Time for Careful Decisions – Reflection, Inner Stability, and Nervous System Balance  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    This should remain an inner time - not a time for action other than Karma yoga with no expectations (4). Can lead to many insights on past experiences, healing with connection to universal energies (9). Stay centered and be sure to take a lot of quiet time.
-        ///&lt;/p&gt;.
+        ///    This period calls for deep contemplation and careful decision-making, as it may serve as a test for emotional resilience and nervous system stability. It is best to remain inwardly focused and avoid unnecessary external action, except for selfless service through Karma Yoga—acting without expectation of reward (4). This is a powerful time for gaining insights f [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _5_8 {
             get {
@@ -1245,12 +1201,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Time for a fresh start, new enterprise, something you haven’t done before, but stay within the scope of your knowledge; dont be foolish and watch accidents.
+        ///        A Fresh Start – New Ventures, Bold Steps, and Mindful Action  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Dynamic time when new ideas and inspirations can be overwhelming; stay grounded and do not let your mind to ge too far ahead of your body actions (1). Excellent for action and communication even physical travel (5).
-        ///&lt;/p&gt;.
+        ///    This period offers the perfect opportunity for new beginnings, whether launching a fresh enterprise, exploring an uncharted path, or stepping into unfamiliar territory. However, while enthusiasm and inspiration may be high, it is essential to stay within the scope of your knowledge and avoid reckless decisions. The energy is dynamic and fast-moving, with a strong surge of new ideas and  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _5_9 {
             get {
@@ -1403,12 +1358,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Introversion, feeling withdrawn, repressed emotions, test period.
+        ///        A Period of Introversion – Emotional Processing and Inner Awareness  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Time to center on awareness of feelings, healing (4). With contemplation and yoga practice it can be a very intuitive and inspirational time. Attention to physical and emotional feelings can bring a lot of insight (7).
-        ///&lt;/p&gt;.
+        ///    This phase may bring feelings of withdrawal, emotional repression, or a sense of being tested. Rather than resisting these emotions, it is a time to turn inward and focus on self-awareness and healing (4). Through quiet contemplation, mindfulness, or yoga practice, this period can become deeply intuitive and spiritually enriching. Paying close attention to both physical and emoti [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _6_1 {
             get {
@@ -1419,12 +1373,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Ripe time for business ventures, transactions, accumulation, could be a lucrative period.
+        ///        A Prime Time for Business Ventures and Financial Growth  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    As we feel rewards coming in (8) we feel the akashic possibilities and urge to do something, new ideas (5) - how to benefit from them. Appropriate actions can bring immediate results during this time.
-        ///&lt;/p&gt;.
+        ///    This is an excellent period for pursuing business ventures, making transactions, and accumulating wealth. As rewards begin to flow in (8), there is a strong sense of alignment with the potential of the universe, sparking new ideas (5) and inspiring action. You may feel a deep connection to the Akashic records, sensing opportunities that can lead to tangible benefits. The energy is ripe for t [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _6_2 {
             get {
@@ -1435,12 +1388,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Possible family worries. Decision regarding spirituality of mental health.
+        ///        Family Concerns and Spiritual Reflection – A Time for Clarity and Decision-Making  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Overview of life’s situations, seeing both the sides of a coin (9). Good time to weed out any potential problems and make decisions about what we preach, living in harmony with our belief system (6).
-        ///&lt;/p&gt;.
+        ///    This period may bring concerns related to family or home life, prompting a need for careful reflection and decision-making. It is an ideal time for gaining a comprehensive view of life’s situations, seeing both the positive and challenging aspects (9). This clarity allows you to address potential issues before they escalate, and it is a good moment to make decisions [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _6_3 {
             get {
@@ -1451,12 +1403,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        A rest period, although possible head pressures, settlement in later half.
+        ///        A Rest Period with Subtle Drive – Reflection, Planning, and Gradual Action  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Feels like a rest time but with a drive to do something physical or in the material world (1). Act, and even start something but with an awareness that has thought it through to the completion (7). Plan in first half, action later.
-        ///&lt;/p&gt;.
+        ///    This phase feels like a time for rest and rejuvenation, yet there is a subtle drive to engage in physical activity or material pursuits (1). While the urge to act may be present, it is important to balance this with introspection and thoughtful planning. The first half of the period is ideal for reflection and strategizing, laying the groundwork for future actions. In the  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _6_4 {
             get {
@@ -1467,12 +1418,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Very active period, partnerships, business, financial gains through associations.
+        ///        A Highly Active Period – Prosperity Through Partnerships and Associations  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Social connections should be established or affirmed at this time in order to move into prosperity (2). Communication and sharing will bring very good benefits and be obviously rewarding (8).
-        ///&lt;/p&gt;.
+        ///    This is an exceptionally active phase, especially in the realms of partnerships, business, and financial growth. Establishing or reaffirming social connections during this time is crucial for building a foundation that leads to prosperity (2). Collaborative efforts and effective communication will be particularly rewarding, creating opportunities for mutual success. Sharing [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _6_5 {
             get {
@@ -1483,12 +1433,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Highly emotional period, passionate, associations turning badly. Time to make resolutions; sit back and think carefully.
+        ///        A Highly Emotional Period – Passion, Challenges in Associations, and the Need for Reflection  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    If everything was put in order during last cycle this will be a dynamic advancement (9), optimism and energy can be a bit overwhelming, some over reactions may come up (3). Keep things in moderation and calm during the first half, karma in mind, and allow for quiet reflection in latter half.
-        ///&lt;/p&gt;.
+        ///    This period is marked by heightened emotions and intense passion, which may bring both opportunities and challenges, particularly in relationships and associations. If you took the time to resolve matters in the previous cycle, this will lead to dynamic progress and advancement (9). However, the surge of optimism and energy can become overwhelming, leadin [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _6_6 {
             get {
@@ -1499,12 +1448,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Start, provided you pay attention to detail and take care.  No foolish ventures.
+        ///        A Time to Start with Caution – Focus on Details and Mindful Action  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Pay particular attention to the effects or results of what you are doing, karma yoga time (4), leave personal desires behind (1). Results can come instantly.
-        ///&lt;/p&gt;.
+        ///    This period is favorable for starting new ventures, but it requires a careful, detail-oriented approach. Avoid rushing into anything without fully considering the potential outcomes and implications. This is a time for selfless action, focusing on Karma Yoga (4), and setting aside personal desires and attachments (1). When approached with patience and mindfulness, results can mani [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _6_7 {
             get {
@@ -1515,12 +1463,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Frustration, time of activity, holiday, travel, extroversion, outward going, associations dull.
+        ///        A Time of Frustration and Activity – Embrace Communication and Lead with Inspiration  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Keep communication open and this can be a very progressive, happy time with your friends (2) - you lead with your own inspirations and they will be glad to listen or follow (5).
-        ///&lt;/p&gt;.
+        ///    This period brings a mix of frustration and high activity, marked by a desire for change, travel, and social engagement. While associations may feel lackluster or unresponsive, keeping communication open is key to turning this phase into a productive and enjoyable time. When you lead with your own inspirations (5), your friends and associates will be more likely  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _6_8 {
             get {
@@ -1531,12 +1478,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Phase of disappointments in family decisions if over extended. Very emotional, lose out on friendships.
+        ///        A Phase of Disappointment – Overextension and Emotional Strain in Family Decisions  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    High energy in the beginning can lead to over optimism (3). Consider the latter half will be non-active introverted time and act accordingly. Planning and re-assessing works well in second half (6).
-        ///&lt;/p&gt;.
+        ///    This period starts with high energy and enthusiasm, which can easily lead to over-optimism and overextension (3). While the initial surge of activity may feel promising, it is important to recognize that the latter half of this phase will shift into a more introverted, non-active time. As the energy slows, emotional tensions may rise, potentially leading to disappo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _6_9 {
             get {
@@ -1698,12 +1644,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Family and finances and organizations, decisions, possible some small worries.
+        ///        A Time for Family, Finances, and Organizational Decisions – Small Concerns and Planning Ahead  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Good time for income and decisions regarding how to best utilize it (8). Rewards are good and it is best if we contemplate from where they come from, then decide and plan what comes next (6).
-        ///&lt;/p&gt;.
+        ///    This period is favorable for making decisions related to family, finances, and organizational matters. It’s an excellent time to assess income and determine the best way to utilize it (8). Rewards are likely to come your way, and it’s important to pause and reflect on their sources, appreciating the efforts and circumstances that have contributed to your [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _7_1 {
             get {
@@ -1714,12 +1659,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Strong spiritual period, wisdom, heart disorders, rest in first half.
+        ///        A Strong Spiritual Period – Wisdom, Reflection, and Rest  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Very good time to go inward for an overview of life with spiritual insight (7). Review of the last complete nine cycles from a perspective of evolution. Meditational time to go for higher consciousness (9).
-        ///&lt;/p&gt;.
+        ///    This is a deeply spiritual period, offering a powerful opportunity for introspection and growth. The first half of this cycle is a time for rest and inner reflection, providing the space needed to recharge and gain clarity. Use this time to look inward and gain an overview of your life, drawing on spiritual insights (7) to understand your path. It’s an excellent moment to review the lessons [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _7_2 {
             get {
@@ -1730,12 +1674,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Money in, reaping of sowing period, time to buy and sell at a profit. Good to start financial things.
+        ///        A Prosperous Period – Reaping Rewards, Investments, and Financial Growth  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Prime time for investment (8), it can be rewarding in the present and lead to greater rewards in later cycles, Plant your seeds with fruition already in sight (1).
-        ///&lt;/p&gt;.
+        ///    This is a prime time for financial gains, as money comes in and the rewards of your past efforts become apparent. It’s an excellent period to buy and sell at a profit, as opportunities for success are abundant. Whether you are making investments (8) or starting new financial ventures, this phase supports growth both now and in the future. The seeds you plant during this time [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _7_3 {
             get {
@@ -1746,12 +1689,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Time to guard the tongue, emotionally turbulent period, relationships particularly.
+        ///        A Period of Emotional Turmoil – Guarding Words and Navigating Relationships  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Contemplative time in relations, with good attitude this can be a very positive time to see how we relate, what we need to communicate to whom and how best to do it with compassion (2). Reflection on the situations needs to be there before speaking (9).
-        ///&lt;/p&gt;.
+        ///    This phase may bring emotional turbulence, especially within relationships, making it an important time to be mindful of what you say. It is a time for deep contemplation on how we relate to others, how we communicate our needs, and how we can express ourselves with compassion (2). With the right attitude, this can be a very positive time for gaining clarity on relational [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _7_4 {
             get {
@@ -1762,12 +1704,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Over optimism. Sowing in the first half extremely positive, latter half tends to go negative.
+        ///        A Cycle of High Optimism – Starting Strong, Ending with Reflection  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Strong dynamics start with energy and transformation (3) but be prepared to slow down and check in with your feelings in the second half; it becomes a time of intuition and going inward quietly (1).
-        ///&lt;/p&gt;.
+        ///    This period begins with a surge of energy and transformation (3), filled with optimism and the drive to take action. The first half is highly productive and favorable for starting new ventures and pursuing ambitious goals. However, as the cycle progresses, it is important to be mindful of over-optimism. The latter half of the period brings a shift toward introspection and intuitio [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _7_5 {
             get {
@@ -1778,12 +1719,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Time, time to work of details with associations. Watch you do not get bogged down.
+        ///        A Time for Detail Work and Collaboration – Staying Mindful of Overwhelm  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Intuitive and sensitive time - apply compassion (4). Insights through feeling can help to perceive and analyse social situations during this period. Especially positive time for healing with others (2).
-        ///&lt;/p&gt;.
+        ///    This period calls for a focus on the details, especially in relationships and collaborations. While it is a good time to work with others and refine important tasks, be cautious not to get bogged down in minutiae or become overly absorbed in the process. This is an intuitive and sensitive time, where compassion (4) plays a key role. Trusting your feelings and insights can hel [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _7_6 {
             get {
@@ -1794,12 +1734,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Tremendous activity, change, travel in first half, disappointment causing a change in life or vice versa in latter half.
+        ///        A Period of Dynamic Action and Change – Balance with Reflection and Intuition  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Drive towards action and doing, can be a very dynamic time to get things done (3). Changes and accomplishments come easy with many new ideas but you need to check out those ideas and action with intuition and feeling in latter half (5). Think twice before acting; or, think and feel, then decide.
-        ///&lt;/p&gt;.
+        ///    The first half of this cycle is filled with tremendous energy, driving you toward action and accomplishment (3). It&apos;s an ideal time to push forward with new projects, travel, and embrace change, as many fresh ideas and opportunities present themselves. However, as the period progresses, the latter half may bring some disappointment or challenges, prompting a shift in di [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _7_7 {
             get {
@@ -1810,12 +1749,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Test phase regarding crisis in the family, sit tight financially.
+        ///        A Test Phase – Family Challenges and Financial Caution  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Good time for analysis of family or group activities; contemplate and allow time for intuition to come through quietly (6), listen and feel (4). Breath and watch for the insights, in this way you see what is coming and are prepared.
-        ///&lt;/p&gt;.
+        ///    This period may bring challenges or crises within the family or close-knit groups, making it a time to pause and reflect rather than take immediate action. It’s a good moment to analyze family dynamics or group activities, paying close attention to underlying issues. Take time to contemplate, allowing intuition to rise quietly (6). Trust your feelings and observations (4), as they will provid [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _7_8 {
             get {
@@ -1826,12 +1764,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Spiritual and mental conflicts. Possible accidents, heart, lungs, a period of positive change, close to nature.
+        ///        A Period of Spiritual and Mental Conflict – Embrace Calm and Observe Change  
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Relax and just observe the many inspirations during the first half rather than acting on any of them; allow the mind to be clear and avoid rushing (7). Positive time to be in nature and do little planning. Second half can be very active and rewarding (5).
-        ///&lt;/p&gt;.
+        ///    This period may bring internal spiritual and mental conflicts, potentially affecting your physical health, especially the heart and lungs. It is important to remain calm and simply observe the many inspirations that come your way in the first half, rather than acting on them impulsively. Allow your mind to clear, taking time to reflect and avoid rushing into decisions or  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _7_9 {
             get {
@@ -1997,12 +1934,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Time of financial settlement, possible overspending. Spirituality may have to look after someone.
+        ///        A Time for Financial Settlement and the Risk of Overspending; Spirituality May Call for Supporting Others
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    This contemplation time can be very rewarding (8); a period of feeling very connected to the universe - feeling the divine presence (9). All goes well at the material level and we sense that the universe supports us.
-        ///&lt;/p&gt;.
+        ///    This is a moment for deep contemplation, one that holds great potential for personal growth and connection (8). You may find yourself feeling profoundly aligned with the universe, sensing the divine presence around you (9). On a material level, everything seems to be falling into place, and you may feel a reassuring sense that the universe is s [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _8_1 {
             get {
@@ -2013,12 +1949,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Completion period. Resist the urge to start something prematurely. Time to think and gather together loose ends.
+        ///        A Time of Completion: Resist the Urge to Begin Something New Prematurely; Focus on Tying Up Loose Ends
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Complete previous projects before starting anything new. Contemplate and plan for the project you are commencing (1), things done with a spiritual overview, with the consideration of benefits for all, will do well (9).
-        ///&lt;/p&gt;.
+        ///    This is a period to bring closure to your current endeavors before diving into new projects. Take the time to reflect and plan thoughtfully for what&apos;s ahead (1). Approaching the next phase with a spiritual perspective—considering the broader benefits for everyone involved—will set a strong foundation for success (9). By tying up loose ends and ens [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _8_2 {
             get {
@@ -2029,12 +1964,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Time for sage advice, seek cooperation of old associates. Very positive influence for looking up, positive and action but unsure in mind.
+        ///        A Time for Sage Advice: Seek the Cooperation of Trusted Associates; Positive Influence for Action, Though the Mind May Be Uncertain
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    A strong time to act socially (1), making connections and beginning projects that involve others (2). Listen for what can be learned from them, keeping in mind that the divine shines in through many.
-        ///&lt;/p&gt;.
+        ///    This is a powerful time for social engagement (1), where making meaningful connections and launching collaborative projects (2) are favored. It’s an ideal moment to seek the wisdom of those with experience, particularly from trusted associates who can offer valuable guidance. While there’s a strong push toward positive [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _8_3 {
             get {
@@ -2045,12 +1979,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Lazy period, a tendency to become argumentative. Do things early. Feeling for new associations. Sad ending.
+        ///        A Lazy Period with a Tendency Toward Becoming Argumentative: Take Action Early, Seek New Associations, and Brace for a Sad Ending
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Transformation and action in social situations (2); can lead to positive change if done smoothly with compassion. Keep your vision in mind with the goal towards early accomplishments (3), then go into a more quiet feeling mode with meditation (with others) in latter half.
-        ///&lt;/p&gt;.
+        ///    This period calls for transformation and action, especially in social situations (2). If approached with compassion and grace, it can lead to positive change. However, it’s important to keep your vision clear, focusing on early accomplishments (3) before shifting into a more reflective mode. As the period progresses, emb [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _8_4 {
             get {
@@ -2061,12 +1994,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Conflict period. On guard. Disappointment in social affairs.
+        ///        A Period of Conflict: Stay On Guard and Be Prepared for Disappointment in Social Matters
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Quiet feeling, time is good for healing (4), but with an urge towards action (3). Keep actions in the area of healing. Sensitivity is high - use it for expanding awareness, not reacting. Positive time for developing intuition.
-        ///&lt;/p&gt;.
+        ///    This period calls for a more introspective approach, offering a quiet space ideal for healing (4). While there may be an urge to take action (3), it’s best to channel your efforts into areas of healing and personal growth. Sensitivity is heightened, so use this awareness to expand your understanding rather than reacting impulsively. It’s a positive time for nur [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _8_5 {
             get {
@@ -2077,12 +2009,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Accident prone period, personal safety, no drastic change. Do not start any projects or work on them. 
+        ///        A Period of Being Accident-Prone: Prioritize Personal Safety and Avoid Drastic Changes
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Mind goes too far ahead of heart in this time so it is important to have some quiet sitting time before jumping to action in spite of the urge to move (5). Watch for intuitive tips about how things could go (4).
-        ///&lt;/p&gt;.
+        ///    During this time, your mind may race ahead of your heart, creating a sense of urgency to act (5). However, it’s important to take moments of quiet reflection before rushing into any new projects or actions. Resist the urge to start anything new and avoid making drastic changes. Pay close attention to intuitive insights that may arise, offering valuable guidance o [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _8_6 {
             get {
@@ -2093,12 +2024,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Change, travel, decisions should be made and acted upon without delay. Quite positve phase, family changes, etc.
+        ///        A Time of Change and Travel: Make Decisions and Take Action Without Delay, a Positive Phase with Family Changes
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Optimism and balance provide a clear picture of what can be done and how to do it (6). New directions with purpose (5).
-        ///&lt;/p&gt;.
+        ///    This is a phase filled with optimism and balance, offering a clear perspective on what can be done and how to proceed (6). It’s a time to embrace new directions with purpose and intention (5). Whether it’s family changes or personal decisions, act decisively and without hesitation, as the energy supports progress and growth during this pe [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _8_7 {
             get {
@@ -2109,12 +2039,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        First half may be negative if it is not spiritual. Decisions in early part will bring fruit by the end of this cycle.
+        ///        The First Half May Be Challenging Unless Focused on the Spiritual: Decisions Made Early Will Bear Fruit by the End of the Cycle
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Relaxed time (7) for some inspired reading in the first half (6); be thankful for what you have. Latter half brings more.
-        ///&lt;/p&gt;.
+        ///    The first half of this period may feel negative unless you focus on the spiritual. It’s a relaxed time (7) ideal for inspired reading or reflection (6), and a chance to cultivate gratitude for what you already have. As the cycle progresses, the latter half brings more rewards and positive outcomes, with the decisions you m [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _8_8 {
             get {
@@ -2125,12 +2054,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Good period, unsettled first half, financial gains in the second half.
+        ///        A Good Period: Unsettled in the First Half, Financial Gains in the Second Half
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Very rewarding time, receiving with gratitude in the first half and winning the lotto in the second half (8). Good time to buy what you were looking for. In the spiritual cycles it’s a wonderful time to gain some universal bliss as if by grace (7).
-        ///&lt;/p&gt;.
+        ///    This is a rewarding period, with the first half focused on receiving with gratitude, and the second half bringing financial gains, almost as if by luck or divine timing (8). It’s an excellent time to make purchases you’ve been wanting or seeking. In the spiritual cycles, this is also a wonderful time to experience a sense of universal bliss, as if by grace (7), bringing  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _8_9 {
             get {
@@ -2306,12 +2234,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Positive sowing period. start immediately. Hard headed, dynamic time.    
+        ///        A Positive Sowing Period: Start Immediately with Determination and Dynamic Energy
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Grounding and solid, this time is for foundations and whatever is begun here will likely to survive. This can be from the concrete of your house, or in the spiritual cycles time to initiate new practices or add them to make stronger sadhana.
-        ///&lt;/p&gt;.
+        ///    This is a time for building strong foundations, whether in the physical realm or your spiritual practices. Whatever you begin during this period is likely to endure and grow. It’s a grounded, solid time—perfect for starting new projects, from the construction of your home to initiating new spiritual practices that can strengthen your sadhana. Approach this time with h [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _9_1 {
             get {
@@ -2322,12 +2249,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Time to devote to social activities; very feminine passive time, watch procrastination.
+        ///        A Time to Devote to Social Activities: A Feminine, Passive Time—Beware of Procrastination
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Time to spread out and connect, utilizing forces of others to help in your projects, or letting them become part of it. Go with the flow but remain centered in your own inspiration that rooted you in the beginnings of this cycle.
-        ///&lt;/p&gt;.
+        ///    This is a period to expand your social circle and connect with others, utilizing their energy and support to further your projects or inviting them to become part of your endeavors. While it&apos;s a time to go with the flow, it’s essential to stay grounded in the inspiration that guided you at the start of this cycle. Avoid getting caught in procrastination, and i [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _9_2 {
             get {
@@ -2338,12 +2264,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Time of immense activity with the urge to do more, this will change halfway through the cycle as one seems to run out of steam.
+        ///        A Time of Immense Activity: A Strong Urge to Do More, But Expect a Shift Halfway Through the Cycle
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Physically one should be active during the first part, applying energy to the rejuvenation of body and transformation of mind. Time to accomplishment but watch the clock.
-        ///&lt;/p&gt;.
+        ///    The first part of this period calls for physical activity and focused energy, with an emphasis on rejuvenating the body and transforming the mind. It’s a time to make progress and accomplish tasks, but be mindful of pacing yourself, as the initial surge of energy may fade midway through the cycle. Watch the clock and be conscious of your limits to avo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _9_3 {
             get {
@@ -2354,12 +2279,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Strict detail attention, all tests. Do not attempt anything unusual or difficult.
+        ///        A Time for Strict Attention to Detail: Focus on Routine and Avoid Anything Unusual or Difficult
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Time for cleansing of the body, and of weeding out feelings and negative images from the mind. Time of service and compassionate healing.
-        ///&lt;/p&gt;.
+        ///    This is a period for careful attention to detail and thoroughness, particularly in any tasks or tests you may face. It’s not a time to take on unusual challenges or difficult undertakings. Instead, focus on cleansing—both physically, by nurturing your body, and mentally, by clearing negative thoughts and emotions. This is also a time for service and comp [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _9_4 {
             get {
@@ -2370,12 +2294,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Time of tremendous positivity. Get out and get things done. Re-sow-remending period.
+        ///        A Time of Tremendous Positivity: Take Action and Get Things Done, a Period for Re-Sowing and Recommitting
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Watch procrastination, as there might be too many ideas to deal with and the subsequent tendency to just dream about the possibilities. Time to express and layout some plans at least; be realistic about what can be done and allow the wisdom of the next cycle to make decisions.
-        ///&lt;/p&gt;.
+        ///    This is an energized period, urging you to take action and bring your ideas to life. Be mindful of procrastination, as the abundance of ideas may lead to simply dreaming about possibilities rather than making progress. It’s a time to express your thoughts and begin laying out concrete plans. However, be realistic about what you can achieve and  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _9_5 {
             get {
@@ -2386,12 +2309,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Good family time. decisions regarding family; fertility time for women, conception, union, positive.
+        ///        A Positive Time for Family: Decisions Regarding Family, Fertility, Union, and Conception
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    This is a very sober time for decisions in general bearing in mind that the spiritual family is all inclusive. Seeing both the sides of the coin is easy at this time so a little contemplation is in order.
-        ///&lt;/p&gt;.
+        ///    This is a grounded and thoughtful time for making decisions, particularly those related to family. Keep in mind that the spiritual family encompasses all beings, and it&apos;s a good moment to reflect on the interconnectedness of everyone. Seeing both sides of the situation comes easily now, so take some time for contemplation before making any decisions. Whether it [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _9_6 {
             get {
@@ -2402,12 +2324,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Period of jubilee; time of rest. Meditation and harmony; good time for creative writing.
+        ///        A Period of Jubilee: A Time for Rest, Meditation, and Creative Harmony
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Relax during the first part and recognise that you are part of an eternal spiritual reality. Feel and express gratitude; in the latter half there will be an inflow of rewards and benefits that carry on through the next cycle. These can easily be feelings of bliss and higher states of consciousness.
-        ///&lt;/p&gt;.
+        ///    Take time to relax during the first part of this period, and remember that you are an integral part of an eternal spiritual reality. Embrace gratitude, letting it flow through you. In the latter half, expect an inflow of rewards and benefits that will carry through into the next cycle. These rewards may come in the form of deep feelings of bliss, elevated states of consciousness [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _9_7 {
             get {
@@ -2418,12 +2339,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Very positive time to buy or sell at a profit, investments. Reward for the work of the previous cycles. Go shopping now.
+        ///        A Very Positive Time for Buying, Selling, and Profitable Investments: Reaping the Rewards of Past Efforts
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Continuation of the positive rewarding that began in the 7 cycle, again this can be material or spiritual depending on what you have been working towards - can easily be both.
-        ///&lt;/p&gt;.
+        ///    This period continues the positive momentum that began in the 7th cycle, bringing rewarding outcomes—whether material or spiritual—based on the work you&apos;ve put in. It’s a time to reap the benefits of your previous efforts, and this can manifest in both tangible and intangible ways. Whether you’re making profitable investments, completing transa [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _9_8 {
             get {
@@ -2434,12 +2354,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;
         ///    &lt;strong&gt;
-        ///        Completion time; keep under control. Spiritual fulfilment.
+        ///        A Time of Completion: Stay in Control and Seek Spiritual Fulfillment
         ///    &lt;/strong&gt;
         ///&lt;/h3&gt;
         ///&lt;p&gt;
-        ///    Remain mindful of spiritual practices at this time will draw one upwards towards blissful attainment. Let the mind review life in perspective, as an overview with insights about how to re- align actions with the universal pattern in coming times. ( Next cycles. )
-        ///&lt;/p&gt;.
+        ///    During this period, remain committed to your spiritual practices, as they will guide you toward a state of blissful attainment. Allow your mind to take a step back and review your life from a broader perspective, gaining valuable insights into how to realign your actions with the universal flow in the upcoming cycles. This time is ideal for reflection and preparation, setting the  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _9_9 {
             get {
@@ -2866,7 +2785,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to They are freedom loving, fearless and have a desire to express, especially through the voice or writing. They are here to express. Without their voice no one would ever hear the demand for change. They do well in communications/media, marketing and public speaking..
+        ///   Looks up a localized string similar to These individuals are deeply passionate about freedom, fearless in their pursuits, and driven by an innate need for self-expression. Whether through speech, writing, or other forms of communication, they have a powerful voice that demands to be heard. Their role is to express ideas, share truths, and amplify the call for change, ensuring that important messages reach the world. Without their words, movements would lack momentum, and transformation would struggle to take shape. They thrive in fields such as  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string akashic {
             get {
@@ -5699,8 +5618,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Spiritually inclined they emanate universal love and understanding with sincerity. They are intuitive and always been wiser than their years. They are here to anchor in the pursuit of human evolution even when all seems lost. They can be happy serving coffee as the barista at a mom and pop cafe or pursuing humanitarian causes and entrepreneurial endeavors.
-        ///.
+        ///   Looks up a localized string similar to Spiritually attuned, they radiate universal love, wisdom, and deep understanding with a genuine sincerity that touches those around them. Highly intuitive, they have always carried a wisdom beyond their years, offering guidance and insight that others naturally seek. Their purpose is to anchor the pursuit of human evolution, holding faith in progress even when the world seems lost. Whether finding fulfillment in the simple joy of serving coffee at a cozy café or dedicating themselves to humanitarian causes  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string elder {
             get {
@@ -6787,7 +6705,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 60 minute personal consultation with our lead astrologer (only with yearly and lifetime memberships).
+        ///   Looks up a localized string similar to 60 minute personal consultation with our lead astrologer (with lifetime membership only).
         /// </summary>
         public static string FreeConsultationOfferText {
             get {
@@ -7115,8 +7033,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to They are extremely intuitive, hyper sensitive, emotional and compassionate with a practical and introspective nature. They will assist in our healing, both on a personal and collective level, and help us to transcend into love and light. They often find themselves in the healing arts, working in non-profits or in human resources.
-        ///.
+        ///   Looks up a localized string similar to Deeply intuitive and highly sensitive, these individuals possess a profound emotional depth paired with a grounded, introspective nature. Their innate compassion and empathy allow them to connect with others on a soul level, offering support, guidance, and healing where it is needed most. They play a vital role in both personal and collective transformation, helping to mend emotional wounds and uplift humanity toward a higher state of love and light. Whether working in the healing arts, serving in nonprofit [rest of string was truncated]&quot;;.
         /// </summary>
         public static string healer {
             get {
@@ -9853,8 +9770,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Calm of mind, visionary, studious and intellectually curious they are inventive and have an ability to see the whole picture. They have come here to harness the quantum energy of the mind and utilize this to manifest and anchor in a new and exciting future. They do well in tech, design and engineering.
-        ///.
+        ///   Looks up a localized string similar to With a calm and focused mind, they are visionaries driven by intellectual curiosity and a deep love for learning. Naturally inventive, they possess the rare ability to see the bigger picture, connecting ideas and concepts in ways others may overlook. Their purpose is to harness the quantum energy of the mind, using their insight and creativity to manifest innovative solutions and anchor in a bold, new future. Whether in technology, design, or engineering, they excel in fields that require ingenuity, problem [rest of string was truncated]&quot;;.
         /// </summary>
         public static string manifestor {
             get {
@@ -10518,8 +10434,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Spiritually inclined especially with the unknowns, they are like the robin hoods of the world. They like to push buttons and take risks in the name of challenging ‘the system’. They have come here to reveal what is hidden behind the veil and bridge the tangible with the mystical realms. Because luck is on their side they do well with financials and investments especially in underground currency.
-        ///.
+        ///   Looks up a localized string similar to Deeply spiritual and drawn to the mysteries of the unknown, they embody the spirit of the rebel, much like modern-day Robin Hoods. Fearless and daring, they thrive on pushing boundaries, questioning authority, and disrupting outdated systems in the pursuit of truth and transformation. Their mission is to unveil what lies beyond the veil, bridging the tangible with the mystical and shedding light on hidden knowledge. With an uncanny sense of timing and fortune on their side, they excel in finance, investment [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mystic {
             get {
@@ -11213,7 +11128,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to They are easy-going, adaptable, sensitive and incredibly creative. They bring together and harmonize people with different views. They are vital for nurturing a positive and loving community. They often find themselves in creative environments, in event coordination or cultivating work culture..
+        ///   Looks up a localized string similar to Easy-going and highly adaptable, they possess a natural sensitivity and a deep well of creativity. With an innate ability to bring people together, they serve as harmonizers, bridging differences and fostering understanding among those with opposing views. Their presence is vital in nurturing a positive, loving, and inclusive community where everyone feels valued and connected. Whether in artistic spaces, event coordination, or shaping workplace culture, they thrive in roles that allow them to cultivate har [rest of string was truncated]&quot;;.
         /// </summary>
         public static string peacemaker {
             get {
@@ -11494,8 +11409,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to They are grounded, original, independent and have a strong sense of their individuality. They are here to pioneer a new way of life by creating strong foundations and roots. They often find themselves as business owners, working with their hands or in a career that is highly purpose driven.
-        ///.
+        ///   Looks up a localized string similar to Grounded and deeply original, they possess a strong sense of individuality and unwavering independence. With a pioneering spirit, they are here to lay the foundation for a new way of life, building structures—both literal and metaphorical—that stand the test of time. Their strength lies in their ability to create stability while embracing innovation, forging paths that others may one day follow. Often drawn to entrepreneurship, hands-on craftsmanship, or purpose-driven careers, they thrive in roles where th [rest of string was truncated]&quot;;.
         /// </summary>
         public static string pioneer1 {
             get {
@@ -12442,8 +12356,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Spiritually inclined, refined, meditative and regal they value education and enjoy awakening others through teaching. They are here to bridge the connection between human and spiritual awareness. They often find themselves in educational environments, in leadership positions or as a mentor or advisor.
-        ///.
+        ///   Looks up a localized string similar to Spiritually attuned and naturally refined, they exude a sense of wisdom, grace, and quiet authority. With a deep love for knowledge and a passion for awakening others, they find fulfillment in teaching, guiding, and sharing insights that expand human consciousness. Their purpose is to bridge the gap between the material and the spiritual, helping others cultivate awareness and enlightenment. Whether in educational settings, leadership roles, or as mentors and advisors, they inspire growth, encourage deep in [rest of string was truncated]&quot;;.
         /// </summary>
         public static string royal {
             get {
@@ -15639,8 +15552,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to They are strong-willed, driven by desire, ambitious and have a lively and magnetic personality. They are here to fuel transformation. They will keep motivating and taking action to move us forward into change. They do well as coaches, with strategy and execution tasks and in management positions.
-        ///.
+        ///   Looks up a localized string similar to These individuals possess a strong will and an unshakable drive, fueled by ambition and a deep desire to create impact. Their dynamic and magnetic personalities naturally draw others toward them, making them powerful catalysts for transformation. They are not just visionaries—they are action-takers, continuously pushing forward, inspiring change, and ensuring progress. Their relentless energy and determination make them highly effective in leadership roles, whether as coaches, strategists, or managers. With [rest of string was truncated]&quot;;.
         /// </summary>
         public static string warrior {
             get {

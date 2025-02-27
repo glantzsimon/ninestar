@@ -2,6 +2,8 @@
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.WebApplication.Enums;
+using K9.WebApplication.Helpers;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Script.Serialization;
 
@@ -12,8 +14,21 @@ namespace K9.WebApplication.Models
     {
         public CompatibilityModel()
         {
-            NineStarKiModel1 = new NineStarKiModel();
-            NineStarKiModel2 = new NineStarKiModel();
+            var dateOfBirth1 = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day);
+            var dateOfBirth2 = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day).AddMonths(2);
+            var personModel1 = new PersonModel
+            {
+                DateOfBirth = dateOfBirth1,
+                Gender = Methods.GetRandomGender()
+            };
+            var personModel2 = new PersonModel
+            {
+                DateOfBirth = dateOfBirth2,
+                Gender = Methods.GetRandomGender()
+            };
+            
+            NineStarKiModel1 = new NineStarKiModel(personModel1);
+            NineStarKiModel2 = new NineStarKiModel(personModel2);
         }
 
         public CompatibilityModel(NineStarKiModel nineStarKiModel1, NineStarKiModel nineStarKiModel2)

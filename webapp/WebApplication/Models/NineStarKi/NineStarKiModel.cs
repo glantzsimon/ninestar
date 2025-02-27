@@ -3,6 +3,7 @@ using K9.Globalisation;
 using K9.SharedLibrary.Helpers;
 using K9.WebApplication.Enums;
 using K9.WebApplication.Extensions;
+using K9.WebApplication.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -17,7 +18,14 @@ namespace K9.WebApplication.Models
 
         public NineStarKiModel()
         {
-            PersonModel = new PersonModel();
+            var dateOfBirth = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day);
+            var personModel = new PersonModel
+            {
+                DateOfBirth = dateOfBirth,
+                Gender = Methods.GetRandomGender()
+            };
+
+            PersonModel = personModel;
             BiorhythmResultSet = new BioRhythmsResultSet();
         }
 

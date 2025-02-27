@@ -1,12 +1,23 @@
 ﻿@using System.Web.Mvc.Html
+@using K9.DataAccessLayer.Enums
 @using K9.SharedLibrary.Helpers
 @using K9.WebApplication.Helpers
+@using K9.WebApplication.ViewModels
 @model K9.WebApplication.ViewModels.UserMembershipViewModel
 
 @{
     ViewBag.Title = Dictionary.MembershipLabel;
     ViewBag.SubTitle = Dictionary.MembershipOptions;
     Layout = "../Shared/_LayoutForm.cshtml";
+
+    var oneHourConsultation = new Consultation
+    {
+        ConsultationDuration = EConsultationDuration.OneHour
+    };
+    var twoHourConsultation = new Consultation
+    {
+        ConsultationDuration = EConsultationDuration.TwoHours
+    };
 }
 
 @Html.Partial("_BetaPopup")
@@ -19,7 +30,7 @@
                 <p>@Dictionary.why_upgrade</p>
             </div>
             <div class="col-sm-12 padding-0">
-                <br />  
+                <br />
                 <h4 class="">@Dictionary.WhatDoIGet</h4>
                 <h5 class="margin-top-0">@Html.Raw(Dictionary.what_you_get)</h5>
                 <ul>
@@ -36,13 +47,19 @@
                         @Dictionary.NineStarKiBiorhythmsLabel
                     </li>
                     <li>
+                        @Dictionary.IChingHexagramGenerator
+                    </li>
+                    <li>
+                        @Dictionary.AccessToKarmicNumerology
+                    </li>
+                    <li>
+                        @Dictionary.AccessToOurGPTMembershipItem
+                    </li>
+                    <li>
                         @Dictionary.KnowledgeBase
                     </li>
                     <li>
                         @Dictionary.FreeConsultationOfferText
-                    </li>
-                    <li>
-                        @Dictionary.AccessToOurGPT
                     </li>
                 </ul>
             </div>
@@ -75,8 +92,8 @@
         }
     }
 
-    <div class="row">
-        <article>
+    <article>
+        <div class="row">
             <div class="text-center">
                 <div class="@containerColumnClass">
                     @foreach (var membershipModel in memberships)
@@ -87,57 +104,81 @@
                     }
                 </div>
             </div>
-        </article>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-4">
-            <div class="text-center center-block">
-                @Html.Partial("_Testimonial", new K9.WebApplication.ViewModels.TestimonialViewModel
-                {
-                    Name = "Claire",
-                    Body = "I cannot recommend this highly enough. This is by far the best 9 star ki resource on the web. The other sites are so confusing. 9 star ki has changed my life! I love it! And Simon is an amazing astrologer and was so helpful on our call. I got so much clarity on so many important things. Thank you so much!"
-                })
-            </div>
         </div>
-        <div class="col-sm-4">
-            <div class="text-center center-block">
-                @Html.Partial("_Testimonial", new K9.WebApplication.ViewModels.TestimonialViewModel
-                {
-                    Name = "Julie",
-                    Body = "This system makes so much sense. It's really helped me to understand my husband and my kids, as well as myself. It's not like the zodiac. I find it a lot more accurate and intuitive, although I do like both system. I also find the yearly and montly predictions really helpful - it helps me to not worry and to trust the process."
-                })
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="text-center center-block">
-                @Html.Partial("_Testimonial", new K9.WebApplication.ViewModels.TestimonialViewModel
-                {
-                    Name = "Emily",
-                    Body = "9 Star Ki is the best system of astrology IMHO. I use it pretty much every day and it has helped me SO MUCH over the last few years. It's quite a simple system, once you start to get familiar with it. I highly recommend getting a consultation with Simon. He's super knowledgeable about 9 star ki and can really help you to understand it more deeply and to get a lot of clarity. I also highly recommend you get the full membership - the tools and content are also really good. Highly recommended!"
-                })
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="text-center center-block">
-                @Html.Partial("_Testimonial", new K9.WebApplication.ViewModels.TestimonialViewModel
-                {
-                    Name = "David",
-                    Body = "I love this website! It's really well organised and presented. I had been using 9 star ki for a while, but since getting access to this tool, I've been using it a lot more, as I can get the information I need really quickly. I especially love the compatibility tool and the yearly and montly predictions. Great job! Much gratitude to you."
-                })
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="text-center center-block">
-                @Html.Partial("_Testimonial", new K9.WebApplication.ViewModels.TestimonialViewModel
-                {
-                    Name = "Alice",
-                    Body = "I can't believe I hadn't come across this system before! It's really helped me so much, especially with understanding my boyfriend (and exes!!! lol). It also helps me to be more patient with my mum and my sister - I've had quite a lot of issues with them over the years, but now it all makes so much sense and I'm able to be the bigger person a lot more. Simon is a great astrologer! I highly recommend you book a session with him. Thank you!!!"
-                })
-            </div>
-        </div>
-    </div>
+    </article>
 
     <hr />
-    @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.BackToMyAccountTitle, "MyAccount", "Account", null, "fa-user-circle", EButtonClass.Large)
-</div>
+
+    <div class="container main-content">
+        <div class="row well">
+            <article>
+                <div class="col-sm-12 padding-0">
+                    <h4 class="margin-top-0">@Dictionary.BookAConsultation</h4>
+                </div>
+                <div class="col-sm-12 padding-0">
+                    @Html.Raw(Dictionary.book_consultation_blurb)
+                    <hr />
+
+                    <a class="btn btn-success btn-lg" href="@Url.Action("BookConsultationStart", "Consultation", new {duration = oneHourConsultation.ConsultationDuration})">
+                        @Dictionary.BookOneHourConsultation
+                    </a>
+                    <a class="btn btn-success btn-lg" href="@Url.Action("BookConsultationStart", "Consultation", new {duration = twoHourConsultation.ConsultationDuration})">
+                        @Dictionary.BookTwoHourConsultation
+                    </a>
+                </div>
+            </article>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="text-center center-block">
+                    @Html.Partial("_Testimonial", new K9.WebApplication.ViewModels.TestimonialViewModel
+                    {
+                        Name = "Claire",
+                        Body = "I cannot recommend this highly enough. This is by far the best 9 star ki resource on the web. The other sites are so confusing. 9 star ki has changed my life! I love it! And Simon is an amazing astrologer and was so helpful on our call. I got so much clarity on so many important things. Thank you so much!"
+                    })
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="text-center center-block">
+                    @Html.Partial("_Testimonial", new K9.WebApplication.ViewModels.TestimonialViewModel
+                    {
+                        Name = "Julie",
+                        Body = "This system makes so much sense. It's really helped me to understand my husband and my kids, as well as myself. It's not like the zodiac. I find it a lot more accurate and intuitive, although I do like both system. I also find the yearly and montly predictions really helpful - it helps me to not worry and to trust the process."
+                    })
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="text-center center-block">
+                    @Html.Partial("_Testimonial", new K9.WebApplication.ViewModels.TestimonialViewModel
+                    {
+                        Name = "Emily",
+                        Body = "9 Star Ki is the best system of astrology IMHO. I use it pretty much every day and it has helped me SO MUCH over the last few years. It's quite a simple system, once you start to get familiar with it. I highly recommend getting a consultation with Simon. He's super knowledgeable about 9 star ki and can really help you to understand it more deeply and to get a lot of clarity. I also highly recommend you get the full membership - the tools and content are also really good. Highly recommended!"
+                    })
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="text-center center-block">
+                    @Html.Partial("_Testimonial", new K9.WebApplication.ViewModels.TestimonialViewModel
+                    {
+                        Name = "David",
+                        Body = "I love this website! It's really well organised and presented. I had been using 9 star ki for a while, but since getting access to this tool, I've been using it a lot more, as I can get the information I need really quickly. I especially love the compatibility tool and the yearly and montly predictions. Great job! Much gratitude to you."
+                    })
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="text-center center-block">
+                    @Html.Partial("_Testimonial", new K9.WebApplication.ViewModels.TestimonialViewModel
+                    {
+                        Name = "Alice",
+                        Body = "I can't believe I hadn't come across this system before! It's really helped me so much, especially with understanding my boyfriend (and exes!!! lol). It also helps me to be more patient with my mum and my sister - I've had quite a lot of issues with them over the years, but now it all makes so much sense and I'm able to be the bigger person a lot more. Simon is a great astrologer! I highly recommend you book a session with him. Thank you!!!"
+                    })
+                </div>
+            </div>
+        </div>
+
+        <hr />
+        @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.BackToMyAccountTitle, "MyAccount", "Account", null, "fa-user-circle", EButtonClass.Large)
+    </div>

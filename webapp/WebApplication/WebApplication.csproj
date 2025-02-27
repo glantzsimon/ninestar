@@ -497,6 +497,7 @@
     <Compile Include="ViewModels\AdminViewModel.cs" />
     <Compile Include="ViewModels\NineStarKiSummaryKbViewModel.cs" />
     <Compile Include="ViewModels\UserMembershipsViewModel.cs" />
+    <Compile Include="ViewModels\PricingViewModel.cs" />
     <Compile Include="ViewModels\WhatsAppViewModel.cs" />
     <Compile Include="ViewModels\PredictionsViewModel.cs" />
     <Compile Include="ViewModels\PromptViewModel.cs" />
@@ -1616,6 +1617,7 @@
     <Content Include="Views\Shared\ActionLinkButtons\_NumerologyWithForm.cshtml" />
     <Content Include="Views\Numerology\_NumerologyEvolution.cshtml" />
     <Content Include="Views\Numerology\_NumerologyCodeDetails.cshtml" />
+    <Content Include="Views\Membership\_PricingOption.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

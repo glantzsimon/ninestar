@@ -34,11 +34,11 @@ namespace K9.WebApplication.Controllers
 
         [Route("consultation/book")]
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
-        public ActionResult BookConsultationStart()
+        public ActionResult BookConsultationStart(EConsultationDuration duration = EConsultationDuration.OneHour)
         {
             return View(new Consultation
             {
-                ConsultationDuration = EConsultationDuration.OneHour
+                ConsultationDuration = duration
             });
         }
 

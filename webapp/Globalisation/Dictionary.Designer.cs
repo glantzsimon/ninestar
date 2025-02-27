@@ -2622,11 +2622,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unlimited access to our AI 9 Star Ki astrologer GPT.
+        ///   Looks up a localized string similar to Our new Karmic Numerology calculator.
+        /// </summary>
+        public static string AccessToKarmicNumerology {
+            get {
+                return ResourceManager.GetString("AccessToKarmicNumerology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unlimited access to our AI 9 Star Ki astrologer GPT (requries a ChatGPT plus account or greater).
         /// </summary>
         public static string AccessToOurGPT {
             get {
                 return ResourceManager.GetString("AccessToOurGPT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AI 9 Star Ki astrologer GPT (requries a ChatGPT plus account or greater).
+        /// </summary>
+        public static string AccessToOurGPTMembershipItem {
+            get {
+                return ResourceManager.GetString("AccessToOurGPTMembershipItem", resourceCulture);
             }
         }
         
@@ -3442,6 +3460,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Book Now.
+        /// </summary>
+        public static string BookNow {
+            get {
+                return ResourceManager.GetString("BookNow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Book a One-Hour Consultation.
+        /// </summary>
+        public static string BookOneHourConsultation {
+            get {
+                return ResourceManager.GetString("BookOneHourConsultation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Book a Two-Hour Consultation.
+        /// </summary>
+        public static string BookTwoHourConsultation {
+            get {
+                return ResourceManager.GetString("BookTwoHourConsultation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    Both Fundamental and Emotional Energies are Yang
         ///&lt;/h5&gt;
@@ -3514,6 +3559,15 @@ namespace K9.Globalisation {
         public static string BrightGreen {
             get {
                 return ResourceManager.GetString("BrightGreen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Buy Now.
+        /// </summary>
+        public static string BuyNow {
+            get {
+                return ResourceManager.GetString("BuyNow", resourceCulture);
             }
         }
         
@@ -4227,6 +4281,15 @@ namespace K9.Globalisation {
         public static string ConsultationAssignedSuccess {
             get {
                 return ResourceManager.GetString("ConsultationAssignedSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string ConsultationBenefits {
+            get {
+                return ResourceManager.GetString("ConsultationBenefits", resourceCulture);
             }
         }
         
@@ -7482,6 +7545,15 @@ namespace K9.Globalisation {
         public static string IChing {
             get {
                 return ResourceManager.GetString("IChing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I Ching Hexagram Generator.
+        /// </summary>
+        public static string IChingHexagramGenerator {
+            get {
+                return ResourceManager.GetString("IChingHexagramGenerator", resourceCulture);
             }
         }
         

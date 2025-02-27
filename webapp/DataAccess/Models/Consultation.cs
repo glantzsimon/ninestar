@@ -54,6 +54,8 @@ namespace K9.DataAccessLayer.Models
         public string DurationDescription =>
             ConsultationDuration.GetAttribute<EnumDescriptionAttribute>().GetDescription();
 
+        public string ConsultationDescription => $"{DurationDescription} {Dictionary.Consultation}";
+
         [ForeignKey("Slot")]
         public int? SlotId { get; set; }
 

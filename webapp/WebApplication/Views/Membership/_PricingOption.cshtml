@@ -1,0 +1,24 @@
+﻿@model K9.WebApplication.ViewModels.PricingViewModel
+
+<div class="shadow-light membership-option-container">
+    <div class="membership-option-title">
+        <h5 class="margin-0">@Model.Name</h5>
+        <p class="margin-0"><strong>@Model.FormattedPrice</strong></p>
+    </div>
+    <div class="membership-option">
+        <div class="membership-medal platinum">
+            <div class="membership-medal-item membership-price">@Model.FormattedPrice</div>
+            <div class="membership-medal-item membership-element">
+                <p>@Model.Name</p>
+            </div>
+            <div class="membership-medal-item membership-period">
+            </div>
+        </div>
+
+        <div class="membership-footer">
+            <div style="padding-top: 1px;">
+                @Html.BootstrapActionLinkButton(Model.ActionText, Model.ActionName, Model.ControllerName, Model.RouteValues, "", EButtonClass.Large)
+            </div>
+        </div>
+    </div>
+</div>

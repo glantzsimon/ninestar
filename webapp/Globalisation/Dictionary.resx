@@ -2897,7 +2897,7 @@
     <value>We've sent a new 6-digit code to your email address to activate your account.</value>
   </data>
   <data name="AccessToOurGPT" xml:space="preserve">
-    <value>Unlimited access to our AI 9 Star Ki astrologer GPT</value>
+    <value>Unlimited access to our AI 9 Star Ki astrologer GPT (requries a ChatGPT plus account or greater)</value>
   </data>
   <data name="AccountNumberLabel" xml:space="preserve">
     <value>Account Number</value>
@@ -4477,11 +4477,32 @@
   <data name="visionary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>numerology\en-gb\codes\visionary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="AccessToKarmicNumerology" xml:space="preserve">
+    <value>Our new Karmic Numerology calculator</value>
+  </data>
+  <data name="AccessToOurGPTMembershipItem" xml:space="preserve">
+    <value>AI 9 Star Ki astrologer GPT (requries a ChatGPT plus account or greater)</value>
+  </data>
   <data name="Actualisation" xml:space="preserve">
     <value>Actualisation</value>
   </data>
   <data name="ActualisationYears" xml:space="preserve">
     <value>27 - 53 years</value>
+  </data>
+  <data name="BookNow" xml:space="preserve">
+    <value>Book Now</value>
+  </data>
+  <data name="BookOneHourConsultation" xml:space="preserve">
+    <value>Book a One-Hour Consultation</value>
+  </data>
+  <data name="BookTwoHourConsultation" xml:space="preserve">
+    <value>Book a Two-Hour Consultation</value>
+  </data>
+  <data name="BuyNow" xml:space="preserve">
+    <value>Buy Now</value>
+  </data>
+  <data name="ConsultationBenefits" xml:space="preserve">
+    <value />
   </data>
   <data name="daily_karmic_influences" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>numerology\en-gb\articles\daily-karmic-influences.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -4491,6 +4512,9 @@
   </data>
   <data name="EmergenceYears" xml:space="preserve">
     <value>0 - 26 years</value>
+  </data>
+  <data name="IChingHexagramGenerator" xml:space="preserve">
+    <value>I Ching Hexagram Generator</value>
   </data>
   <data name="KarmicNumerologyDetails" xml:space="preserve">
     <value>Karmic Numerology Details</value>

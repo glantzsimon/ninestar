@@ -8,7 +8,9 @@
     var attribute = Model.GetAttribute<EnumDescriptionAttribute>();
 }
 
-<div>
-    <img class="ninestarki-image" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/organs/@(Model).png" />
+<div class="text-center organs-container">
+    <div>
+        <img class="ninestarki-image" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/organs/@(Model).png" />
+    </div>
+    <h5>@attribute.GetDescription()</h5>
 </div>
-<p>@attribute.GetDescription()</p>

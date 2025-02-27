@@ -1,0 +1,30 @@
+﻿@using K9.WebApplication.Helpers
+@using K9.WebApplication.Models
+@using K9.WebApplication.Options
+@model NineStarKiModel
+
+@if (Model != null)
+{
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.Raw(Dictionary.WeakOrgansDescription)
+        </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+        @foreach (var organ in Model.WeakYinOrgans)
+        {
+            <div class="col-xs-6 col-sm-3">
+                @Html.Partial("DisplayTemplates/Organ", organ)
+            </div>
+        }
+        @foreach (var organ in Model.WeakYangOrgans)
+        {
+            <div class="col-xs-6 col-sm-3">
+                @Html.Partial("DisplayTemplates/Organ", organ)
+            </div>
+        }
+    </div>
+}

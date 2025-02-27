@@ -1618,6 +1618,8 @@
     <Content Include="Views\Numerology\_NumerologyEvolution.cshtml" />
     <Content Include="Views\Numerology\_NumerologyCodeDetails.cshtml" />
     <Content Include="Views\Membership\_PricingOption.cshtml" />
+    <Content Include="Views\PersonalChart\_ProfileHealthStrongOrgans.cshtml" />
+    <Content Include="Views\PersonalChart\_ProfileHealthWeakOrgans.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

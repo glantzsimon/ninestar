@@ -37,4 +37,8 @@
     padding-bottom: 0;
     padding-top: 0;
   }
+  div.inline-form,
+  form {
+    width: 100% !important;
+  }
 }

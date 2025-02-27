@@ -98,3 +98,14 @@ a > .ninestar-summary-container:hover {
   padding-bottom: 0;
   margin-bottom: 0;
 }
+.organs-container {
+  margin-bottom: 9px;
+}
+.organs-container img {
+  display: table;
+  margin: auto;
+  width: 100%;
+}
+.organs-container h5 {
+  margin-top: 5px;
+}

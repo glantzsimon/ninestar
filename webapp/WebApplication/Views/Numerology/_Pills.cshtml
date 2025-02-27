@@ -8,7 +8,7 @@
 @model K9.WebApplication.Models.NumerologyModel
 
 <div class="ninestar-summmary container padding-0">
-    <ul class="nav nav-pills nav-justified image-pill">
+    <ul class="nav nav-pills nav-justified image-pill" data-autoscroll="true">
         <li class="active">
             <a data-toggle="tab" href="#main">
                 @Dictionary.PrimaryBlueprint
@@ -45,9 +45,9 @@
         </li>
     </ul>
 
-    <div class="tab-content">
-        <div id="main" class="tab-pane fade in active padding-top-10">
-            @using (Html.PayWall(ESection.Numerology, Model))
+        <div class="tab-content">
+            <div id="main" class="tab-pane fade in active padding-top-10">
+                @using (Html.PayWall(ESection.Numerology, Model))
             {
                 @Html.Partial("_NumerologyMain")
             }

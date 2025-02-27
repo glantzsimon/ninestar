@@ -385,7 +385,7 @@
     <Compile Include="Models\Numerology\Forecast.cs" />
     <Compile Include="Models\Numerology\NumerologyPlannerModel.cs" />
     <Compile Include="Models\Numerology\NumerologyModel.cs" />
-    <Compile Include="Models\Numerology\DharmaChakraCode.cs" />
+    <Compile Include="Models\Numerology\DharmaNumerologyCodeModel.cs" />
     <Compile Include="Models\MailingListViewModel.cs" />
     <Compile Include="Models\MailingListSendResultItem.cs" />
     <Compile Include="Models\CachableBase.cs" />

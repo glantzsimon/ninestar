@@ -48,6 +48,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("calculate-forecast")]
+        [OutputCache(Duration = 2592000, VaryByParam = "forecastType;dateOfBirth;offset", Location = OutputCacheLocation.ServerAndClient)]
         public JsonResult CalculateForecast(EForecastType forecastType, DateTime dateOfBirth, int offset)
         {
             NumerologyForecast result;

@@ -57,6 +57,9 @@
 .numerology-planner-container .numerology-planner-item img.small {
   max-width: 72px;
 }
+.numerology-planner-container .numerology-planner-item:hover {
+  text-decoration: none !important;
+}
 .numerology-planner-container h4 {
   margin-top: 0 !important;
   margin-bottom: 5px;
@@ -68,18 +71,16 @@
   margin-top: 0 !important;
 }
 .numerology-planner-item-container {
-  padding: 11px;
-  border-radius: 7px;
+  padding: 7px;
+  border-radius: 18px;
   margin-bottom: 7px;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .numerology-planner-item-container.current {
-  font-weight: bold;
   outline: 1px solid #d9d9d9;
 }
 .numerology-planner-item-container.selected {
   background: white;
-  font-weight: bold;
   outline: 1px solid #0074E4;
   -webkit-box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
@@ -97,4 +98,8 @@
 }
 .numerology-planner-item-container:hover.selected {
   outline: 1px solid #0074E4;
+}
+.numerology-planner-item-container .numerology-planner-footer {
+  font-size: 0.8em !important;
+  font-weight: normal !important;
 }

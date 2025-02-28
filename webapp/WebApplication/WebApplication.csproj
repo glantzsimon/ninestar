@@ -366,6 +366,7 @@
     <Compile Include="Controllers\MembershipController.cs" />
     <Compile Include="Controllers\MembershipOptionsController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
+    <Compile Include="Controllers\SystemSettingsController.cs" />
     <Compile Include="Controllers\UserConsultationsController.cs" />
     <Compile Include="Controllers\UserPromotionsController.cs" />
     <Compile Include="Controllers\UserMembershipsController.cs" />
@@ -1620,6 +1621,11 @@
     <Content Include="Views\Membership\_PricingOption.cshtml" />
     <Content Include="Views\PersonalChart\_ProfileHealthStrongOrgans.cshtml" />
     <Content Include="Views\PersonalChart\_ProfileHealthWeakOrgans.cshtml" />
+    <Content Include="Views\SystemSettings\_DisplayFields.cshtml" />
+    <Content Include="Views\SystemSettings\_EditFields.cshtml" />
+    <Content Include="Views\SystemSettings\Details.cshtml" />
+    <Content Include="Views\SystemSettings\Edit.cshtml" />
+    <Content Include="Views\SystemSettings\Index.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

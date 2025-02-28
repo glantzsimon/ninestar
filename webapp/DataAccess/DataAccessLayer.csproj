@@ -407,10 +407,15 @@
     <Compile Include="Migrations\202502260630489_EmailQueueItem-Result.designer.cs">
       <DependentUpon>202502260630489_EmailQueueItem-Result.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202502280803070_SystemSettings.cs" />
+    <Compile Include="Migrations\202502280803070_SystemSettings.designer.cs">
+      <DependentUpon>202502280803070_SystemSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\MailingList.cs" />
     <Compile Include="Models\EmailTemplate.cs" />
     <Compile Include="Models\EmailQueueItem.cs" />
     <Compile Include="Models\MailingListContact.cs" />
+    <Compile Include="Models\SystemSetting.cs" />
     <Compile Include="Models\UserOTP.cs" />
     <Compile Include="Models\TimeZoneBase.cs" />
     <Compile Include="Models\Slot.cs" />
@@ -565,6 +570,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202502260630489_EmailQueueItem-Result.resx">
       <DependentUpon>202502260630489_EmailQueueItem-Result.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502280803070_SystemSettings.resx">
+      <DependentUpon>202502280803070_SystemSettings.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

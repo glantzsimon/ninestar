@@ -1,0 +1,17 @@
+﻿@using K9.Base.WebApplication.Helpers
+@model SystemSetting
+@{
+    Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
+}
+@Html.BootstrapTable(new DataTableOptions<SystemSetting>
+{
+    AllowCreate = false,
+    AllowDelete = false,
+    AllowEdit = true,
+    VisibleColumns = new List<string>
+    {
+        "LastUpdatedOn",
+        "IsPausedEmailJobQueue",
+        "IsSendMembershipUpgradeReminders"
+    }
+})

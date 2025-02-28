@@ -1,4 +1,5 @@
 ﻿using K9.WebApplication.Helpers;
+using StackExchange.Profiling;
 using System.Configuration;
 using System.Diagnostics;
 using System.Web;
@@ -6,13 +7,14 @@ using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using StackExchange.Profiling;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication
 {
     public class MvcApplication : HttpApplication
     {
+        private const bool EnableMiniProfiler = false;
+
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
@@ -30,11 +32,14 @@ namespace K9.WebApplication
             Stripe.StripeConfiguration.ApiKey = ConfigurationManager.AppSettings["SecretKey"];
 
 #if DEBUG
-            MiniProfiler.Configure(new MiniProfilerOptions
+            if (EnableMiniProfiler)
             {
-                RouteBasePath = "~/profiler",
-                ResultsAuthorize = request => true // Allow all users to see results
-            });
+                MiniProfiler.Configure(new MiniProfilerOptions
+                {
+                    RouteBasePath = "~/profiler",
+                    ResultsAuthorize = request => true // Allow all users to see results
+                });
+            }
 #endif  
         }
 
@@ -55,18 +60,15 @@ namespace K9.WebApplication
 #if DEBUG
                 HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.NoCache);
 #else
-                    HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.ServerAndPrivate);
+                HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.ServerAndPrivate);
 #endif
             }
 
 #if DEBUG
-            if (Request.IsLocal)
+            if (EnableMiniProfiler && Request.IsLocal) // Enable MiniProfiler only for local requests
             {
-                if (Request.IsLocal) // Enable MiniProfiler only for local requests
-                {
-                    MiniProfiler.StartNew();
-                    HttpContext.Current.Items["RequestStartTime"] = Stopwatch.StartNew();
-                }
+                MiniProfiler.StartNew();
+                HttpContext.Current.Items["RequestStartTime"] = Stopwatch.StartNew();
             }
 #endif
         }
@@ -74,7 +76,7 @@ namespace K9.WebApplication
         protected void Application_EndRequest()
         {
 #if DEBUG
-            if (MiniProfiler.Current != null)
+            if (EnableMiniProfiler && MiniProfiler.Current != null)
             {
                 LogTimeElapsed();
                 MiniProfiler.Current?.Stop();

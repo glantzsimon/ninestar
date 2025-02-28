@@ -1,4 +1,5 @@
-﻿using K9.Base.DataAccessLayer.Models;
+﻿using System.Linq;
+using K9.Base.DataAccessLayer.Models;
 using K9.Base.WebApplication.Config;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Helpers;
@@ -11,9 +12,12 @@ namespace K9.WebApplication.Packages
 {
     public class NineStarKiBasePackage : INineStarKiBasePackage
     {
-        public NineStarKiBasePackage(ILogger logger, IDataSetsHelper datasetsHelper, IRoles roles, IFileSourceHelper fileSourceHelper, IAuthentication authentication, IMailer mailer, IRepository<User> usersRepository, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, IRepository<Contact> contactsRepository, IOptions<DefaultValuesConfiguration> defaultValuesConfiguration, IOptions<SmtpConfiguration> smtpConfiguration,
+        private readonly IRepository<SystemSetting> _systemSettingsRepository;
+
+        public NineStarKiBasePackage(ILogger logger, IDataSetsHelper datasetsHelper, IRoles roles, IFileSourceHelper fileSourceHelper, IAuthentication authentication, IMailer mailer, IRepository<User> usersRepository, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, IRepository<Contact> contactsRepository, IRepository<SystemSetting> systemSettingsRepository, IOptions<DefaultValuesConfiguration> defaultValuesConfiguration, IOptions<SmtpConfiguration> smtpConfiguration,
             IOptions<ApiConfiguration> apiConfiguration, IOptions<WebsiteConfiguration> websiteConfiguration, IOptions<GoogleConfiguration> googleConfiguration)
         {
+            _systemSettingsRepository = systemSettingsRepository;
             Logger = logger;
             DataSetsHelper = datasetsHelper;
             Roles = roles;
@@ -33,25 +37,29 @@ namespace K9.WebApplication.Packages
             GoogleConfiguration = googleConfiguration.Value;
 
             UrlHelper = new UrlHelper(System.Web.HttpContext.Current.Request.RequestContext);
+
+            SystemSettings = _systemSettingsRepository.List().FirstOrDefault() ?? new SystemSetting();
         }
 
-        public ILogger Logger { get; set; }
-        public IDataSetsHelper DataSetsHelper { get; set; }
-        public IRoles Roles { get; set; }
-        public IFileSourceHelper FileSourceHelper { get; set; }
-        public IAuthentication Authentication { get; set; }
-        public IMailer Mailer { get; set; }
-        public UrlHelper UrlHelper { get; set; }
+        public ILogger Logger { get; }
+        public IDataSetsHelper DataSetsHelper { get; }
+        public IRoles Roles { get; }
+        public IFileSourceHelper FileSourceHelper { get; }
+        public IAuthentication Authentication { get; }
+        public IMailer Mailer { get; }
+        public UrlHelper UrlHelper { get; }
 
-        public IRepository<User> UsersRepository { get; set; }
-        public IRepository<Contact> ContactsRepository { get; set; }
-        public IRepository<Role> RolesRepository { get; set; }
-        public IRepository<UserRole> UserRolesRepository { get; set; }
+        public IRepository<User> UsersRepository { get; }
+        public IRepository<Contact> ContactsRepository { get; }
+        public IRepository<Role> RolesRepository { get; }
+        public IRepository<UserRole> UserRolesRepository { get; }
 
-        public DefaultValuesConfiguration DefaultValuesConfiguration { get; set; }
-        public SmtpConfiguration SmtpConfiguration { get; set; }
-        public ApiConfiguration ApiConfiguration { get; set; }
-        public WebsiteConfiguration WebsiteConfiguration { get; set; }
-        public GoogleConfiguration GoogleConfiguration { get; set; }
+        public DefaultValuesConfiguration DefaultValuesConfiguration { get; }
+        public SmtpConfiguration SmtpConfiguration { get; }
+        public ApiConfiguration ApiConfiguration { get; }
+        public WebsiteConfiguration WebsiteConfiguration { get; }
+        public GoogleConfiguration GoogleConfiguration { get; }
+
+        public SystemSetting SystemSettings { get; }
     }
 }

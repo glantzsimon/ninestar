@@ -463,9 +463,12 @@ namespace K9.WebApplication.Services
 
         public void ScheduleRemindersForUser(int userId)
         {
-            _promotionService.SendFirstMembershipReminderToUser(userId);
-            _promotionService.SendSecondMembershipReminderToUser(userId);
-            _promotionService.SendThirdMembershipReminderToUser(userId);
+            if (My.SystemSettings.IsSendMembershipUpgradeReminders)
+            {
+                _promotionService.SendFirstMembershipReminderToUser(userId);
+                _promotionService.SendSecondMembershipReminderToUser(userId);
+                _promotionService.SendThirdMembershipReminderToUser(userId);
+            }
         }
 
         private void TerminateExistingMemberships(int userId)

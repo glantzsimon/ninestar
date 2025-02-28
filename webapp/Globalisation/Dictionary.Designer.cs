@@ -4285,7 +4285,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Consultation Benefits.
         /// </summary>
         public static string ConsultationBenefits {
             get {
@@ -8039,11 +8039,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pause Email Job Queue for All Emails.
+        /// </summary>
+        public static string IsPausedEmailJobQueueLabel {
+            get {
+                return ResourceManager.GetString("IsPausedEmailJobQueueLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Is Processed.
         /// </summary>
         public static string IsProcessedLabel {
             get {
                 return ResourceManager.GetString("IsProcessedLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send Membership Upgrade Reminders to Users.
+        /// </summary>
+        public static string IsSendMembershipUpgradeRemindersLabel {
+            get {
+                return ResourceManager.GetString("IsSendMembershipUpgradeRemindersLabel", resourceCulture);
             }
         }
         
@@ -14137,6 +14155,24 @@ namespace K9.Globalisation {
         public static string SwitchSuccessfulTitle {
             get {
                 return ResourceManager.GetString("SwitchSuccessfulTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System Setting.
+        /// </summary>
+        public static string SystemSetting {
+            get {
+                return ResourceManager.GetString("SystemSetting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System Settings.
+        /// </summary>
+        public static string SystemSettings {
+            get {
+                return ResourceManager.GetString("SystemSettings", resourceCulture);
             }
         }
         

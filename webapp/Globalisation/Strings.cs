@@ -105,6 +105,8 @@
             public const string NineStarKiBiorhythmsLabel = "NineStarKiBiorhythmsLabel";
 
             public const string AreMarketingEmailsAllowedLabel = "AreMarketingEmailsAllowedLabel";
+            public const string IsSendMembershipUpgradeRemindersLabel = "IsSendMembershipUpgradeRemindersLabel";
+            public const string IsPausedEmailJobQueueLabel = "IsPausedEmailJobQueueLabel";
         }
 
         public static class Names
@@ -134,6 +136,8 @@
             public const string Consultation = "Consultation";
             public const string UserConsultation = "UserConsultation";
             public const string Slots = "Slots";
+            public const string SystemSetting = "SystemSetting";
+            public const string SystemSettings = "SystemSettings";
             public const string Consultations = "Consultations";
             public const string UserConsultations = "UserConsultations";
             public const string MembershipOptions = "MembershipOptions";

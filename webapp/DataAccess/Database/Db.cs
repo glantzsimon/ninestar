@@ -20,5 +20,6 @@ namespace K9.DataAccessLayer.Database
 	    public DbSet<MailingList> MailingLists { get; set; }
 	    public DbSet<MailingListUser> MailingListUsers { get; set; }
 	    public DbSet<MailingListContact> MailingListContacts { get; set; }
+	    public DbSet<SystemSetting> SystemSettings { get; set; }
     }
 }

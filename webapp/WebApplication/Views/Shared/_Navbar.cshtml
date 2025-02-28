@@ -71,6 +71,8 @@
                         <li class="sub-item"><a href="@Url.Action("Index", "Home")hangfire">@Dictionary.JobQueue</a></li>
 
                         <li class="@ViewContext.GetActiveClass("Index", "Log") sub-item"><a href="@Url.Action("Index", "Log")">@Dictionary.ErrorLog</a></li>
+
+                        <li class="@ViewContext.GetActiveClass("Index", "SystemSettings") sub-item"><a href="@Url.Action("Index", "SystemSettings")">@Dictionary.SystemSettings</a></li>
                     </ul>
                 </li>
             </ul>

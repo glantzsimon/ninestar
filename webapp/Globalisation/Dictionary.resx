@@ -4502,7 +4502,7 @@
     <value>Buy Now</value>
   </data>
   <data name="ConsultationBenefits" xml:space="preserve">
-    <value />
+    <value>Consultation Benefits</value>
   </data>
   <data name="daily_karmic_influences" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>numerology\en-gb\articles\daily-karmic-influences.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -4515,6 +4515,12 @@
   </data>
   <data name="IChingHexagramGenerator" xml:space="preserve">
     <value>I Ching Hexagram Generator</value>
+  </data>
+  <data name="IsPausedEmailJobQueueLabel" xml:space="preserve">
+    <value>Pause Email Job Queue for All Emails</value>
+  </data>
+  <data name="IsSendMembershipUpgradeRemindersLabel" xml:space="preserve">
+    <value>Send Membership Upgrade Reminders to Users</value>
   </data>
   <data name="KarmicNumerologyDetails" xml:space="preserve">
     <value>Karmic Numerology Details</value>
@@ -4533,6 +4539,12 @@
   </data>
   <data name="primary_blueprint" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>numerology\en-gb\articles\primary-blueprint.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SystemSetting" xml:space="preserve">
+    <value>System Setting</value>
+  </data>
+  <data name="SystemSettings" xml:space="preserve">
+    <value>System Settings</value>
   </data>
   <data name="Transcenence" xml:space="preserve">
     <value>Transcenence</value>

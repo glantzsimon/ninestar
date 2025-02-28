@@ -128,6 +128,11 @@ namespace K9.WebApplication.Services
             if (data != null)
                 body = TemplateParser.Parse(body, data);
 
+            body = TemplateParser.Parse(body, new
+            {
+                FirstName = recipientFirstName
+            });
+
             return TemplateParser.Parse(Globalisation.Dictionary.BaseEmailTemplate, new
             {
                 FirstName = recipientFirstName,

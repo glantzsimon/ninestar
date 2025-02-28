@@ -6593,11 +6593,10 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;Dear {FirstName},&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Ever felt you&apos;re capable of more but need clarity and direction or wanted deeper insights into yourself, your relationships, and life&apos;s cycles? 9 Star Ki Astrology helps you unlock your full potential by revealing your unique energy blueprint.
+        ///    Ever felt you&apos;re capable of more but need clarity and direction or wanted deeper insights into yourself, your relationships, and life&apos;s seemingly unpredictable cycles? 9 Star Ki Astrology helps you to unlock your full potential by showing you how to maximise your strengths as well as develop much greater awareness of your blindspots. By revealing your unique energy blueprint, 9 Star Ki Astrology accelerates your path towards self-mastery.
         ///&lt;/p&gt;
-        ///&lt;p&gt;We&apos;d love to welcome you with a special gift!&lt;/p&gt;
-        ///&lt;p&gt;&lt;strong&gt;Get {DiscountPercent}% off — pay only {FormattedSpecialPrice} instead of {FormattedFullPrice} for a full {MembershipName}!&lt;/strong&gt;&lt;/p&gt;
-        ///&lt;p&gt;With your {Membership [rest of string was truncated]&quot;;.
+        ///
+        ///&lt;p&gt;&lt;strong&gt;We&apos;d love to w [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FirstMembershipReminderEmail {
             get {
@@ -6606,7 +6605,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unlock Your Potential – {DiscountPercent}% Off Your Yearly Membership!.
+        ///   Looks up a localized string similar to Unlock your potential! Save {DiscountPercent}% on your Yearly Membership!.
         /// </summary>
         public static string FirstMembershipReminderSubject {
             get {
@@ -12683,9 +12682,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;Every relationship has its unique energy — some connections flow effortlessly, while others require more understanding and balance.&lt;/p&gt;
-        ///&lt;p&gt;9 Star Ki Astrology reveals the hidden dynamics between you and the people around you—your partner, friends, family, and even colleagues. Whether you want to strengthen your romantic bond, improve communication with loved ones, or build better professional relationships, understanding energy compatibility is key.&lt;/p&gt;
-        ///&lt;p&gt;&lt;strong&gt;✨ As a special gift, we&apos;re offering yo [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;p&gt;Dear {FirstName},&lt;/p&gt;
+        ///
+        ///&lt;p&gt;Every relationship has its unique energy — some connections flow effortlessly, while others challenge us to grow and require more effort and awareness to bring them into balance. 9 Star Ki Astrology reveals the hidden dynamics between you and the people in your life — your partner, friends, family, and even colleagues. Whether you want to strengthen your romantic bond, improve communication with loved ones, or build better professional relationships, understanding energy compa [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SecondMembershipReminderEmail {
             get {
@@ -12694,7 +12693,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Strengthen Your Relationships – {DiscountPercent}% Off for a Limited Time!.
+        ///   Looks up a localized string similar to Strengthen your relationships! {DiscountPercent}% off for a limited time!.
         /// </summary>
         public static string SecondMembershipReminderSubject {
             get {
@@ -14900,9 +14899,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;Every relationship has its unique energy — some connections flow effortlessly, while others require more understanding and balance.&lt;/p&gt;
-        ///&lt;p&gt;9 Star Ki Astrology reveals the hidden dynamics between you and the people around you—your partner, friends, family, and even colleagues. Whether you want to strengthen your romantic bond, improve communication with loved ones, or build better professional relationships, understanding energy compatibility is key.&lt;/p&gt;
-        ///&lt;p&gt;&lt;strong&gt;✨ As a special gift, we&apos;re offering yo [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;p&gt;Dear {FirstName},&lt;/p&gt;
+        ///
+        ///&lt;p&gt;Do you ever feel uncertain about the future or wish for clearer guidance in daily life? Navigating without a roadmap can be challenging and frustrating. With 9 Star Ki Astrology, you can get a much clearer picture of the road ahead and how to best navigate it. Gain deep insights into yourself and others, harness your natural energetic cycles and rhythms and make aligned decisions with confidence.&lt;/p&gt;
+        ///
+        ///&lt;p&gt;&lt;strong&gt;We&apos;re offering you {DiscountPercent}% off a full {MembershipNam [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ThirdMembershipReminderEmail {
             get {
@@ -14911,7 +14912,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Third Email Unlock Your Potential – {DiscountPercent}% Off Your Yearly Membership!.
+        ///   Looks up a localized string similar to Find greater clarity and understanding with 9 Star Ki. Get {DiscountPercent}% off today!.
         /// </summary>
         public static string ThirdMembershipReminderSubject {
             get {

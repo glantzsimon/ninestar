@@ -13,7 +13,8 @@
 }
 .numerology-card {
   width: 63%;
-  min-width: 322px;
+  min-width: 297px;
+  max-width: 100%;
   padding: 20px;
   margin: 20px auto;
   margin-top: 0;
@@ -102,4 +103,20 @@
 .numerology-planner-item-container .numerology-planner-footer {
   font-size: 0.8em !important;
   font-weight: normal !important;
+}
+@media (max-width: 748px) {
+  .numerology-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100%;
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+  }
+}
+@media (max-width: 1008px) {
+  .numerology-card {
+    width: 90%;
+    min-width: 0 !important;
+    max-width: 100%;
+  }
 }

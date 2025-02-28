@@ -103,6 +103,8 @@ namespace K9.WebApplication.Services
         
         private string Parse(EmailTemplate emailTemplate, string recipientFirstName, string unsubscribeLink, object data)
         {
+
+
             return Parse(emailTemplate.Subject, emailTemplate.HtmlBody, recipientFirstName, unsubscribeLink, data);
         }
 

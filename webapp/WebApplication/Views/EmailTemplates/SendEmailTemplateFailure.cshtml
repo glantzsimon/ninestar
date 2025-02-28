@@ -4,12 +4,13 @@
 @{
     ViewBag.Title = Dictionary.MailingLists;
     ViewBag.SubTitle = Dictionary.EmailTemplateSendFailed;
+    ViewBag.TitleTag = "text-center";
     Layout = "../Shared/_LayoutFormSmall.cshtml";
 
     string errorMessage = ViewBag.ErrorMessage ?? "";
 }
 @Html.Failure(Dictionary.EmailTemplateSendFailed, errorMessage)
 
-<div class="text-center margin-bottom-10">
+<div class="text-center margin-bottom-10 margin-top-20">
     @Html.BootstrapBackToListButton()
 </div>

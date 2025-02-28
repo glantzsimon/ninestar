@@ -1,6 +1,8 @@
 ﻿using K9.Base.DataAccessLayer.Models;
 using K9.DataAccessLayer.Enums;
+using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Extensions;
+using K9.SharedLibrary.Models;
 using K9.WebApplication.Exceptions;
 using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
@@ -16,14 +18,16 @@ namespace K9.WebApplication.Services
         private readonly IMailingListService _mailingListService;
         private readonly IPromotionService _promotionService;
         private readonly IEmailQueueService _emailQueueService;
+        private readonly IRepository<Promotion> _promotionsRepository;
 
-        public MailerService(INineStarKiBasePackage my, IEmailTemplateService emailTemplateService, IMailingListService mailingListService, IPromotionService promotionService, IEmailQueueService emailQueueService)
+        public MailerService(INineStarKiBasePackage my, IEmailTemplateService emailTemplateService, IMailingListService mailingListService, IPromotionService promotionService, IEmailQueueService emailQueueService, IRepository<Promotion> promotionsRepository)
             : base(my)
         {
             _emailTemplateService = emailTemplateService;
             _mailingListService = mailingListService;
             _promotionService = promotionService;
             _emailQueueService = emailQueueService;
+            _promotionsRepository = promotionsRepository;
         }
 
         public void TestEmailTemplate(int id)
@@ -138,16 +142,36 @@ namespace K9.WebApplication.Services
                 {
                     var promotion = _promotionService.Find(emailTemplate.PromotionId.Value);
                     _promotionService.SendPromotionFromTemplateToUser(user.Id, emailTemplate, promotion, false, null, isTest);
+                    return;
                 }
-                else
+                else if (emailTemplate.MembershipOptionId.HasValue)
                 {
-                    var parsedTemplate = _emailTemplateService.Parse(
+                    var discount = emailTemplate.SystemEmailTemplate == ESystemEmailTemplate.FirstMembershipReminder ?
+                        EDiscount.FirstDiscount :
+                        emailTemplate.SystemEmailTemplate == ESystemEmailTemplate.SecondMembershipReminder ?
+                            EDiscount.SecondDiscount :
+                            emailTemplate.SystemEmailTemplate == ESystemEmailTemplate.ThirdMembershipReminder ?
+                                EDiscount.ThirdDiscount :
+                                EDiscount.None;
+
+                    var promotion = _promotionsRepository
+                        .Find(e => e.MembershipOptionId == emailTemplate.MembershipOptionId.Value &&
+                                   e.Discount == discount &&
+                                   e.Name == emailTemplate.Name).FirstOrDefault();
+
+                    if (promotion != null)
+                    {
+                        _promotionService.SendPromotionFromTemplateToUser(user.Id, emailTemplate, promotion, false, null, isTest);
+                        return;
+                    }
+                }
+
+                var parsedTemplate = _emailTemplateService.Parse(
                         emailTemplate.Id,
                         user.FirstName,
                         My.UrlHelper.AbsoluteAction("UnsubscribeUser", "UsersController", new { externalId = user.Name }), null);
 
-                    _emailQueueService.AddEmailToQueueForUser(emailTemplate.Id, user.Id, emailTemplate.Subject, parsedTemplate, EEmailType.General, TimeSpan.FromSeconds(1));
-                }
+                _emailQueueService.AddEmailToQueueForUser(emailTemplate.Id, user.Id, emailTemplate.Subject, parsedTemplate, EEmailType.General, TimeSpan.FromSeconds(1), isTest);
             }
             catch (Exception e)
             {

@@ -72,44 +72,44 @@
 
                         <li class="@ViewContext.GetActiveClass("Index", "Log") sub-item"><a href="@Url.Action("Index", "Log")">@Dictionary.ErrorLog</a></li>
 
-                        <li class="@ViewContext.GetActiveClass("Index", "SystemSettings") sub-item"><a href="@Url.Action("Index", "SystemSettings")">@Dictionary.SystemSettings</a></li>
+                        <li class="@ViewContext.GetActiveClass("Edit", "SystemSettings") sub-item"><a href="@Url.Action("Index", "SystemSettings")">@Dictionary.SystemSettings</a></li>
                     </ul>
                 </li>
             </ul>
         }
-            <ul class="site-controls">
-                <li class="@ViewContext.GetActiveClass("BookConsultationStart", "Consultation")"><a title="@Dictionary.BookAConsultation" href="@Url.Action("BookConsultationStart", "Consultation")"><i class="fa fa-phone-alt"></i><span class="site-controls-text"> @Dictionary.BookAConsultation</span></a></li>
+        <ul class="site-controls">
+            <li class="@ViewContext.GetActiveClass("BookConsultationStart", "Consultation")"><a title="@Dictionary.BookAConsultation" href="@Url.Action("BookConsultationStart", "Consultation")"><i class="fa fa-phone-alt"></i><span class="site-controls-text"> @Dictionary.BookAConsultation</span></a></li>
 
-                <li><a target="_blank" title="@Dictionary.ConsultOurAiAstrologer" href="@ApiConfiguration.Instance.NineStarKiAstrologerGptUrl"><i class="fa fa-magic"></i><span class="site-controls-text"> @Dictionary.NineStarGPT</span></a></li>
+            <li><a target="_blank" title="@Dictionary.ConsultOurAiAstrologer" href="@ApiConfiguration.Instance.NineStarKiAstrologerGptUrl"><i class="fa fa-magic"></i><span class="site-controls-text"> @Dictionary.NineStarGPT</span></a></li>
 
-                @if (!isAuthenticated || (membership == null || (membership.MembershipOption != null && membership.MembershipOption.IsUpgradable)))
+            @if (!isAuthenticated || (membership == null || (membership.MembershipOption != null && membership.MembershipOption.IsUpgradable)))
+            {
+                <li class="@ViewContext.GetActiveClass("Index", "Membership")"><a title="@Dictionary.Pricing" href="@Url.Action("Index", "Membership")"><i class="fa fa-dollar-sign"></i><span class="site-controls-text"> @Dictionary.Pricing</span></a></li>
+            }
+
+            <li class="@ViewContext.GetActiveClass("DonateStart", "Support")"><a title="@Dictionary.Donate" href="@Url.Action("DonateStart", "Support")"><i class="fa fa-donate"></i><span class="site-controls-text"> @Dictionary.Donate</span></a></li>
+
+            <li class="@ViewContext.GetActiveClass("Index", "Support")"><a title="@Dictionary.Support" href="@Url.Action("Index", "Support")"><i class="fa fa-question-circle"></i><span class="site-controls-text"> @Dictionary.Support</span></a></li>
+
+            @if (isAuthenticated)
+            {
+                if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsClientUser() && membership.MembershipOption.IsUnlimited)
                 {
-                    <li class="@ViewContext.GetActiveClass("Index", "Membership")"><a title="@Dictionary.Pricing" href="@Url.Action("Index", "Membership")"><i class="fa fa-dollar-sign"></i><span class="site-controls-text"> @Dictionary.Pricing</span></a></li>
+                    <li>
+                        <a class="whatsapp-button" target="_blank" title="@Dictionary.MessageUs" href="@(whatsAppLink)">
+                            <i class="fab fa-whatsapp"></i>
+                            <span class="site-controls-text">
+                                @Dictionary.MessageUs
+                            </span>
+                        </a>
+                    </li>
                 }
 
-                <li class="@ViewContext.GetActiveClass("DonateStart", "Support")"><a title="@Dictionary.Donate" href="@Url.Action("DonateStart", "Support")"><i class="fa fa-donate"></i><span class="site-controls-text"> @Dictionary.Donate</span></a></li>
-
-                <li class="@ViewContext.GetActiveClass("Index", "Support")"><a title="@Dictionary.Support" href="@Url.Action("Index", "Support")"><i class="fa fa-question-circle"></i><span class="site-controls-text"> @Dictionary.Support</span></a></li>
-
-                @if (isAuthenticated)
-                {
-                    if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsClientUser() && membership.MembershipOption.IsUnlimited)
-                    {
-                        <li>
-                            <a class="whatsapp-button" target="_blank" title="@Dictionary.MessageUs" href="@(whatsAppLink)">
-                                <i class="fab fa-whatsapp"></i>
-                                <span class="site-controls-text">
-                                    @Dictionary.MessageUs
-                                </span>
-                            </a>
-                        </li>
-                    }
-
-                    <li class="@ViewContext.GetActiveClass("Index", "PersonalProfile")"><a title="@Dictionary.MyPersonalProfile" href="@Url.Action("MyProfile", "PersonalChart")"><i class="fa fa-yin-yang"></i><span class="site-controls-text"> @Dictionary.MyPersonalProfile</span></a></li>
-                    <li class="@ViewContext.GetActiveClass("MyAccount", "Account")"><a title="@K9.Base.Globalisation.Dictionary.MyAccountTitle" href="@Url.Action("MyAccount", "Account")"><i class="fa fa-user-circle"></i><span class="site-controls-text"> @K9.Base.Globalisation.Dictionary.MyAccountTitle</span></a></li>
-                }
-                @Html.LoginLogout()
-            </ul>
+                <li class="@ViewContext.GetActiveClass("Index", "PersonalProfile")"><a title="@Dictionary.MyPersonalProfile" href="@Url.Action("MyProfile", "PersonalChart")"><i class="fa fa-yin-yang"></i><span class="site-controls-text"> @Dictionary.MyPersonalProfile</span></a></li>
+                <li class="@ViewContext.GetActiveClass("MyAccount", "Account")"><a title="@K9.Base.Globalisation.Dictionary.MyAccountTitle" href="@Url.Action("MyAccount", "Account")"><i class="fa fa-user-circle"></i><span class="site-controls-text"> @K9.Base.Globalisation.Dictionary.MyAccountTitle</span></a></li>
+            }
+            @Html.LoginLogout()
+        </ul>
     </div>
 </div>
 <div id="main-menu-container" class="menu-main">

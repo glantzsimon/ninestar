@@ -14,14 +14,15 @@ namespace K9.DataAccessLayer.Database.Seeds
             AddOrEditEmailTemplate(context, Globalisation.Dictionary.SecondMembershipReminderSubject, Globalisation.Dictionary.SecondMembershipReminderEmail, ESystemEmailTemplate.SecondMembershipReminder);
 
             AddOrEditEmailTemplate(context, Globalisation.Dictionary.ThirdMembershipReminderSubject, Globalisation.Dictionary.ThirdMembershipReminderEmail, ESystemEmailTemplate.ThirdMembershipReminder);
-         
+
             context.SaveChanges();
         }
 
         private static void AddOrEditEmailTemplate(DbContext context, string subject, string body, ESystemEmailTemplate systemEmailTemplate)
         {
             var entity = context.Set<EmailTemplate>().FirstOrDefault(e => e.SystemEmailTemplate == systemEmailTemplate);
-   
+            var yearlyMembership = context.Set<MembershipOption>().FirstOrDefault(e => e.SubscriptionType == MembershipOption.ESubscriptionType.AnnualPlatinum);
+
             if (entity == null)
             {
                 context.Set<EmailTemplate>().Add(new EmailTemplate
@@ -30,7 +31,8 @@ namespace K9.DataAccessLayer.Database.Seeds
                     SystemEmailTemplate = systemEmailTemplate,
                     Subject = subject,
                     HtmlBody = body,
-                    IsSystemStandard = true
+                    MembershipOptionId = yearlyMembership?.Id,
+                    IsSystemStandard = true,
                 });
             }
             else
@@ -38,7 +40,8 @@ namespace K9.DataAccessLayer.Database.Seeds
                 entity.Name = systemEmailTemplate.ToString();
                 entity.Subject = subject;
                 entity.HtmlBody = body;
-                
+                entity.MembershipOptionId = yearlyMembership?.Id;
+
                 context.Entry(entity).State = EntityState.Modified;
             }
         }

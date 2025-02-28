@@ -4,19 +4,19 @@ using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Exceptions;
 using K9.WebApplication.Packages;
 using K9.WebApplication.ViewModels;
 using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using K9.WebApplication.Exceptions;
 
 namespace K9.WebApplication.Services
 {
     public class PromotionService : BaseService, IPromotionService
     {
-        private readonly IRepository<Promotion> _promoCodesRepository;
+        private readonly IRepository<Promotion> _promotionsRepository;
         private readonly IRepository<UserPromotion> _userPromotionsRepository;
         private readonly IRepository<UserMembership> _userMembershipsRepository;
         private readonly IRepository<MembershipOption> _membershipOptionsRepository;
@@ -24,10 +24,10 @@ namespace K9.WebApplication.Services
         private readonly IEmailTemplateService _emailTemplateService;
         private readonly IEmailQueueService _emailQueueService;
 
-        public PromotionService(INineStarKiBasePackage my, IRepository<Promotion> promoCodesRepository, IRepository<UserPromotion> userPromotionsRepository, IRepository<UserMembership> userMembershipsRepository, IRepository<UserOTP> userOtpRepository, IRepository<MembershipOption> membershipOptionsRepository, IContactService contactService, IEmailTemplateService emailTemplateService, IEmailQueueService emailQueueService)
+        public PromotionService(INineStarKiBasePackage my, IRepository<Promotion> promotionsRepository, IRepository<UserPromotion> userPromotionsRepository, IRepository<UserMembership> userMembershipsRepository, IRepository<UserOTP> userOtpRepository, IRepository<MembershipOption> membershipOptionsRepository, IContactService contactService, IEmailTemplateService emailTemplateService, IEmailQueueService emailQueueService)
             : base(my)
         {
-            _promoCodesRepository = promoCodesRepository;
+            _promotionsRepository = promotionsRepository;
             _userPromotionsRepository = userPromotionsRepository;
             _userMembershipsRepository = userMembershipsRepository;
             _membershipOptionsRepository = membershipOptionsRepository;
@@ -38,12 +38,17 @@ namespace K9.WebApplication.Services
 
         public Promotion Find(int id)
         {
-            return _promoCodesRepository.Find(id);
+            return _promotionsRepository.Find(id);
+        }
+
+        public Promotion FindByMembershipOption(int membershipOptionId)
+        {
+            return _promotionsRepository.Find(e => e.MembershipOptionId == membershipOptionId).FirstOrDefault();
         }
 
         public Promotion Find(string code)
         {
-            return _promoCodesRepository.Find(e => e.Code == code).FirstOrDefault();
+            return _promotionsRepository.Find(e => e.Code == code).FirstOrDefault();
         }
 
         public UserPromotion FindForUser(string code, int userId)
@@ -256,33 +261,33 @@ namespace K9.WebApplication.Services
         public void SendFirstMembershipReminderToUser(int userId)
         {
             var template = _emailTemplateService.FindSystemTemplate(ESystemEmailTemplate.FirstMembershipReminder);
-            var promotion = CreateOrGetPromotionForMembership(EDiscount.FirstDiscount, template.Name, true);
+            var promotion = CreateOrUpdatePromotionForMembership(EDiscount.FirstDiscount, template.Name, true);
 #if DEBUG
             SchedulePromotionFromTemplateToUser(userId, template, promotion, TimeSpan.FromMinutes(3));
 #else
-            SchedulePromotionFromTemplateToUser(userId, template, promotion, TimeSpan.FromDays(3));
+            SchedulePromotionFromTemplateToUser(userId, template, promotion, TimeSpan.FromDays(7));
 #endif
         }
 
         public void SendSecondMembershipReminderToUser(int userId)
         {
             var template = _emailTemplateService.FindSystemTemplate(ESystemEmailTemplate.SecondMembershipReminder);
-            var promotion = CreateOrGetPromotionForMembership(EDiscount.SecondDiscount, template.Name, true);
+            var promotion = CreateOrUpdatePromotionForMembership(EDiscount.SecondDiscount, template.Name, true);
 #if DEBUG
             SchedulePromotionFromTemplateToUser(userId, template, promotion, TimeSpan.FromMinutes(7));
 #else
-            SchedulePromotionFromTemplateToUser(userId, template, promotion, TimeSpan.FromDays(7));
+            SchedulePromotionFromTemplateToUser(userId, template, promotion, TimeSpan.FromDays(11));
 #endif
         }
 
         public void SendThirdMembershipReminderToUser(int userId)
         {
             var template = _emailTemplateService.FindSystemTemplate(ESystemEmailTemplate.ThirdMembershipReminder);
-            var promotion = CreateOrGetPromotionForMembership(EDiscount.ThirdDiscount, template.Name, true);
+            var promotion = CreateOrUpdatePromotionForMembership(EDiscount.ThirdDiscount, template.Name, true);
 #if DEBUG
-            SchedulePromotionFromTemplateToUser(userId, template, promotion, TimeSpan.FromMinutes(11));
+            SchedulePromotionFromTemplateToUser(userId, template, promotion, TimeSpan.FromMinutes(12));
 #else
-            SchedulePromotionFromTemplateToUser(userId, template, promotion, TimeSpan.FromDays(11));
+            SchedulePromotionFromTemplateToUser(userId, template, promotion, TimeSpan.FromDays(22));
 #endif
         }
 
@@ -396,7 +401,7 @@ namespace K9.WebApplication.Services
             }
         }
 
-        private Promotion CreateOrGetPromotionForMembership(EDiscount discount, string name, bool updateIfExists = false)
+        private Promotion CreateOrUpdatePromotionForMembership(EDiscount discount, string name, bool updateIfExists = false)
         {
             var yearlyMembershipOption = _membershipOptionsRepository
                 .Find(e => e.SubscriptionType == MembershipOption.ESubscriptionType.AnnualPlatinum).FirstOrDefault();
@@ -411,7 +416,7 @@ namespace K9.WebApplication.Services
                 throw new Exception($"Discount cannot be zero");
             }
 
-            var promotion = _promoCodesRepository
+            var promotion = _promotionsRepository
                 .Find(e => e.MembershipOptionId == yearlyMembershipOption.Id &&
                            e.Discount == discount &&
                            e.Name == name).FirstOrDefault();
@@ -426,12 +431,15 @@ namespace K9.WebApplication.Services
                 };
                 promotion.SpecialPrice = promotion.GetSpecialPrice(yearlyMembershipOption.Price);
 
-                _promoCodesRepository.Create(promotion);
+                _promotionsRepository.Create(promotion);
             }
             else if (updateIfExists)
             {
-                promotion.SpecialPrice = promotion.GetSpecialPrice(yearlyMembershipOption.Price);
-                _promoCodesRepository.Update(promotion);
+                promotion.Name = name;
+                promotion.Discount = discount;
+                promotion.SpecialPrice = Math.Ceiling(promotion.GetSpecialPrice(yearlyMembershipOption.Price));
+
+                _promotionsRepository.Update(promotion);
             };
 
             return promotion;

@@ -65,7 +65,7 @@ namespace K9.WebApplication.Services
             AddEmailToQueue(emailTemplateId, null, contactId, subject, body, type, scheduledOn);
         }
 
-        public void AddEmailToQueueForUser(int emailTemplateId, int userId, string subject, string body, EEmailType type = EEmailType.General, TimeSpan? scheduledOn = null)
+        public void AddEmailToQueueForUser(int emailTemplateId, int userId, string subject, string body, EEmailType type = EEmailType.General, TimeSpan? scheduledOn = null, bool isTest = false)
         {
             var user = _usersRepository.Find(userId);
             if (user == null)
@@ -74,7 +74,7 @@ namespace K9.WebApplication.Services
                 throw new Exception("User not found");
             }
 
-            AddEmailToQueue(emailTemplateId, userId, null, subject, body, type, scheduledOn);
+            AddEmailToQueue(emailTemplateId, userId, null, subject, body, type, scheduledOn, isTest);
         }
 
         public void ProcessQueue()

@@ -234,6 +234,7 @@
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="Database\DatabaseInitialiser.cs" />
     <Compile Include="Database\Db.cs" />
+    <Compile Include="Database\Seeds\SystemSettingsSeeder.cs" />
     <Compile Include="Database\Seeds\EmailTemplatesSeeder.cs" />
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />

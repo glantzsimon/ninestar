@@ -9,6 +9,7 @@ namespace K9.WebApplication.Services
     {
         Promotion Find(int id);
         Promotion Find(string code);
+        Promotion FindByMembershipOption(int membershipOptionId);
         UserPromotion FindForUser(string code, int userId);
         List<UserPromotion> ListForUser(int userId);
         bool IsPromotionAlreadyUsed(string code, int userId);

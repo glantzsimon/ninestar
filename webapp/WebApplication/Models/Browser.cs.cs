@@ -1,4 +1,5 @@
-﻿using K9.WebApplication.Enums;
+﻿using System;
+using K9.WebApplication.Enums;
 using System.Text.RegularExpressions;
 
 namespace K9.WebApplication.Models
@@ -21,23 +22,26 @@ namespace K9.WebApplication.Models
         {
             UserAgent = userAgent;
 
-            if (OperatingSystemRegex.IsMatch(UserAgent))
+            if (!string.IsNullOrEmpty(userAgent))
             {
-                DeviceInfo = OperatingSystemRegex.Match(UserAgent).Groups[0].Value;
-            }
+                if (OperatingSystemRegex.IsMatch(UserAgent))
+                {
+                    DeviceInfo = OperatingSystemRegex.Match(UserAgent).Groups[0].Value;
+                }
 
-            if (DeviceRegex.IsMatch(UserAgent.Substring(0, 4)))
-            {
-                DeviceInfo += DeviceRegex.Match(UserAgent).Groups[0].Value;
-            }
+                if (DeviceRegex.IsMatch(UserAgent.Substring(0, 4)))
+                {
+                    DeviceInfo += DeviceRegex.Match(UserAgent).Groups[0].Value;
+                }
 
-            if (!string.IsNullOrEmpty(DeviceInfo))
-            {
-                DeviceType = EDeviceType.Mobile;
-            }
-            else
-            {
-                DeviceType = EDeviceType.Desktop;
+                if (!string.IsNullOrEmpty(DeviceInfo))
+                {
+                    DeviceType = EDeviceType.Mobile;
+                }
+                else
+                {
+                    DeviceType = EDeviceType.Desktop;
+                }
             }
         }
     }

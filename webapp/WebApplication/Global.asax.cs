@@ -75,6 +75,13 @@ namespace K9.WebApplication
 
         protected void Application_EndRequest()
         {
+            var cookie = Response.Cookies["__RequestVerificationToken"];
+            if (cookie != null)
+            {
+                cookie.Secure = true;
+                cookie.SameSite = SameSiteMode.Strict;
+            }
+
 #if DEBUG
             if (EnableMiniProfiler && MiniProfiler.Current != null)
             {

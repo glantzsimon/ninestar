@@ -11,7 +11,7 @@ namespace K9.WebApplication.Controllers
         {
         }
 
-        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.Server)]
         public ActionResult Index()
         {
             return View();

@@ -13,6 +13,8 @@ using K9.WebApplication.Packages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using SessionHelper = K9.Base.WebApplication.Helpers.SessionHelper;
 
@@ -30,12 +32,22 @@ namespace K9.WebApplication.Controllers
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
+            //AddAntiForgeryTokenToViewBag(filterContext);
+
             base.OnActionExecuting(filterContext);
 
             SetBetaWarningSessionVariable();
             SetSessionRoles(Current.UserId);
-
+            
             ViewBag.DeviceType = GetDeviceType();
+        }
+
+        private void AddAntiForgeryTokenToViewBag(ActionExecutingContext filterContext)
+        {
+            if (filterContext.HttpContext.Items["AntiForgeryToken"] != null)
+            {
+                ViewBag.AntiForgeryToken = filterContext.HttpContext.Items["AntiForgeryToken"].ToString();
+            }
         }
 
         public INineStarKiPackage My { get; }
@@ -117,7 +129,7 @@ namespace K9.WebApplication.Controllers
         {
             return string.Empty;
         }
-
+        
         private static void SetBetaWarningSessionVariable()
         {
             var numberOfDisplays = Helpers.SessionHelper.GetIntValue(Constants.SessionConstants.BetaWarningDisplay);
@@ -141,7 +153,7 @@ namespace K9.WebApplication.Controllers
         {
             My = nineStarPackage;
             UrlHelper = new UrlHelper(System.Web.HttpContext.Current.Request.RequestContext);
-            
+
             RecordBeforeCreated += BaseNineStarKiController_RecordBeforeCreated;
             RecordBeforeUpdated += BaseNineStarKiController_RecordBeforeUpdated;
             RecordBeforeUpdate += BaseNineStarKiController_RecordBeforeUpdate;
@@ -153,16 +165,26 @@ namespace K9.WebApplication.Controllers
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
+            //AddAntiForgeryTokenToViewBag(filterContext);
+
             base.OnActionExecuting(filterContext);
-        
+            
             SetSessionRoles(Current.UserId);
         }
-        
+
+        private void AddAntiForgeryTokenToViewBag(ActionExecutingContext filterContext)
+        {
+            if (filterContext.HttpContext.Items["AntiForgeryToken"] != null)
+            {
+                ViewBag.AntiForgeryToken = filterContext.HttpContext.Items["AntiForgeryToken"].ToString();
+            }
+        }
+
         public void SetSessionRoles(int userId)
         {
             Helpers.SessionHelper.SetCurrentUserRoles(My.RolesRepository, My.UserRolesRepository, userId);
         }
-
+        
         private void BaseNineStarKiController_RecordBeforeUpdated(object sender, CrudEventArgs e)
         {
             var model = e.Item as T;
@@ -181,4 +203,5 @@ namespace K9.WebApplication.Controllers
             HtmlParser.ParseHtml(ref model);
         }
     }
+
 }

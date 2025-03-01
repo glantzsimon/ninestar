@@ -231,6 +231,48 @@ namespace K9.WebApplication.Helpers
 
             return new MvcHtmlString(content);
         }
+        
+        public static IDisposable BeginBootstrapFormWithToken(this HtmlHelper html, string title = "", string titleTag = Tags.H2, bool insertAntiForgeryToken = true)
+        {
+            var div = new TagBuilder(Tags.Div);
+            html.ViewContext.Writer.WriteLine(div.ToString(TagRenderMode.StartTag));
+
+            if (insertAntiForgeryToken)
+            {
+                string tokenHtml;
+
+                if (html.ViewBag.AntiForgeryToken == null)
+                {
+                    // Generate the anti-forgery token manually
+                    tokenHtml = html.AntiForgeryToken().ToHtmlString();
+                }
+                else
+                {
+                    var token = html.ViewBag.AntiForgeryToken as string;
+                    if (!string.IsNullOrEmpty(token))
+                    {
+                        tokenHtml = $"<input type=\"hidden\" name=\"__RequestVerificationToken\" value=\"{token}\" />";
+                    }
+                    else
+                    {
+                        tokenHtml = "";
+                    }
+                }
+
+                html.ViewContext.Writer.WriteLine(tokenHtml);
+            }
+
+            html.ViewContext.Writer.WriteLine(html.BootstrapValidationSummary());
+
+            if (!string.IsNullOrEmpty(title))
+            {
+                var h = new TagBuilder(titleTag);
+                h.SetInnerText(title);
+                html.ViewContext.Writer.WriteLine(h.ToString());
+            }
+
+            return new TagCloser(html, Tags.Div);
+        }
 
         private static string GetSectionCode(ESection section)
         {

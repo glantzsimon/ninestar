@@ -33,6 +33,7 @@ namespace K9.WebApplication.Controllers
             return View(new PredictionsViewModel(new NineStarKiModel(personModel), _nineStarKiService.GetNineStarKiSummaryViewModel()));
         }
 
+        [ChildActionOnly]
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult _CalculatorForm(NineStarKiModel model)
         {

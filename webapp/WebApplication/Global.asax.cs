@@ -79,7 +79,7 @@ namespace K9.WebApplication
             if (cookie != null)
             {
                 cookie.Secure = true;
-                cookie.SameSite = SameSiteMode.Lax;
+                cookie.SameSite = SameSiteMode.None;
             }
 
 #if DEBUG

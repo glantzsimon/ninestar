@@ -80,6 +80,7 @@ namespace K9.WebApplication
             {
                 cookie.Secure = true;
                 cookie.SameSite = SameSiteMode.None;
+
             }
 
 #if DEBUG

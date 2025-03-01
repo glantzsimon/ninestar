@@ -1489,9 +1489,6 @@
     <Content Include="Views\KnowledgeBase\_Navigation.cshtml" />
     <Content Include="Views\Numerology\_CalculatorForm.cshtml" />
     <Content Include="Views\Numerology\_Pills.cshtml" />
-    <Content Include="Views\Shared\ActionLinkButtons\_PersonalProfileWithForm.cshtml" />
-    <Content Include="Views\Shared\ActionLinkButtons\_BiorhythmsWithForm.cshtml" />
-    <Content Include="Views\Shared\ActionLinkButtons\_PredictionsWithForm.cshtml" />
     <Content Include="Views\Account\_UserConsultations.cshtml" />
     <Content Include="Views\Consultation\ScheduleConsultation.cshtml" />
     <Content Include="Views\Shared\_WhatsApp.cshtml" />
@@ -1588,7 +1585,6 @@
     <Content Include="Views\Numerology\Legacy\_NumerologyYearlyPlannerDetails.cshtml" />
     <Content Include="Views\Numerology\_IndexJs.cshtml" />
     <Content Include="Views\Shared\ActionLinkButtons\_Numerology.cshtml" />
-    <Content Include="Views\Shared\ActionLinkButtons\_NumerologyWithForm.cshtml" />
     <Content Include="Views\Numerology\_NumerologyEvolution.cshtml" />
     <Content Include="Views\Numerology\_NumerologyCodeDetails.cshtml" />
     <Content Include="Views\Membership\_PricingOption.cshtml" />

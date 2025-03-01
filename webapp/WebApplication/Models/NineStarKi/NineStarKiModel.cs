@@ -120,7 +120,7 @@ namespace K9.WebApplication.Models
         public string OverviewLabel => MainEnergy != null ? $"{MainEnergy.EnergyNameAndNumber} Overview" : "";
 
         [ScriptIgnore]
-        public string EnergySexualityLabel => MainEnergy != null ? $"{MainEnergy.EnergyName} {Dictionary.SexualityLabel}" : "";
+        public string EnergySexualityLabel => MainEnergy != null ? $"{MainEnergy.EnergyNameAndNumber} {Dictionary.SexualityLabel}" : "";
 
         [ScriptIgnore]
         public string SexualityRelationTypeDetailsStraight => GetSexualityGenderDescription();

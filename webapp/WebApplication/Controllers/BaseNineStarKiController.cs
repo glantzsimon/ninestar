@@ -1,23 +1,19 @@
-﻿using K9.Base.DataAccessLayer.Models;
+﻿using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.WebApplication.Constants;
 using K9.Base.WebApplication.Controllers;
 using K9.Base.WebApplication.EventArgs;
 using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
-using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Helpers.Html;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Enums;
 using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
-using K9.WebApplication.Services;
-using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using K9.Base.DataAccessLayer.Attributes;
 using SessionHelper = K9.Base.WebApplication.Helpers.SessionHelper;
 
 namespace K9.WebApplication.Controllers
@@ -30,13 +26,14 @@ namespace K9.WebApplication.Controllers
         {
             My = nineStarKiPackage;
             UrlHelper = new UrlHelper(System.Web.HttpContext.Current.Request.RequestContext);
-            SetBetaWarningSessionVariable();
-            SetSessionRoles(Current.UserId);
         }
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             base.OnActionExecuting(filterContext);
+
+            SetBetaWarningSessionVariable();
+            SetSessionRoles(Current.UserId);
 
             ViewBag.DeviceType = GetDeviceType();
         }
@@ -144,9 +141,7 @@ namespace K9.WebApplication.Controllers
         {
             My = nineStarPackage;
             UrlHelper = new UrlHelper(System.Web.HttpContext.Current.Request.RequestContext);
-
-            SetSessionRoles(Current.UserId);
-
+            
             RecordBeforeCreated += BaseNineStarKiController_RecordBeforeCreated;
             RecordBeforeUpdated += BaseNineStarKiController_RecordBeforeUpdated;
             RecordBeforeUpdate += BaseNineStarKiController_RecordBeforeUpdate;
@@ -156,6 +151,13 @@ namespace K9.WebApplication.Controllers
 
         public UrlHelper UrlHelper { get; }
 
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            base.OnActionExecuting(filterContext);
+        
+            SetSessionRoles(Current.UserId);
+        }
+        
         public void SetSessionRoles(int userId)
         {
             Helpers.SessionHelper.SetCurrentUserRoles(My.RolesRepository, My.UserRolesRepository, userId);

@@ -3,5 +3,5 @@
 @using K9.WebApplication.Options
 @model K9.WebApplication.Models.NineStarKiModel
 
-<h4 class="text-center bold" style="font-size: 1.3em;">Displaying data for @Model.SelectedDate.Value.ToLongDateString()</h4>
+<h4 class="text-center bold" style="font-size: 1.3em;">@Dictionary.DisplayingDataFor @Model.SelectedDate.Value.ToLongDateString()</h4>
 

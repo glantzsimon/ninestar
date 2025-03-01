@@ -34,9 +34,8 @@
                     <div class="margin-bottom-20">
                         @Html.Panel("9 Star Ki and Relationships", Html.Partial("../KnowledgeBase/_AboutRelationships").ToString(), "relationships")
 
-                        @using (Html.PayWall(ESection.Compatibility, Model, true))
+                        @using (Html.PayWall(ESection.Compatibility, Model, () => WebSecurity.IsAuthenticated, true))
                         {
-
                             @Html.Panel("The 5 Transformations", Html.Partial("../NineStarKi/_FiveTransformations").ToString(), "transformations")
 
                             @Html.Panel("9 Star Ki and Sexuality", Html.Partial("../PersonalChart/_Sexuality").ToString(), "sexuality")

@@ -5,7 +5,13 @@
 @using K9.WebApplication.Models
 @model K9.WebApplication.ViewModels.NumerologyForecastViewModel
 
-<div class="well numerology-planner-container">
+@{
+    var bootstrapClass = Model.Forecast.ForecastType == EForecastType.Daily
+        ? "col-xs-3 col-sm-2 col-md-2 col-lg-1"
+        : "col-xs-6 col-sm-4 col-md-3 col-lg-2";
+}
+
+<div class="well numerology-planner-container margin-bottom-0">
     <div class="row" id="@(Model.RazorId)-container">
         @foreach (var code in Model.PlannerItems)
         {
@@ -15,10 +21,10 @@
             };
             var footer = Model.GetFooter(code);
 
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="@bootstrapClass padding-5">
                 <a class="numerology-planner-item" data-forecast-type="@Model.Forecast.ForecastType" data-offset="@code.Offset">
                     <div class="numerology-planner-item-container @code.IsSelectedCssClass @code.IsCurrentCssClass">
-                        <h4 class="margin-top-0 margin-bottom-5">@Model.GetTitle(code)</h4>
+                        <h5 class="margin-top-0 margin-bottom-5">@Model.GetTitle(code)</h5>
                         <img class="small" src="@(DefaultValuesConfiguration.Instance.BaseImagesPath)/numerology/@($"{details.Name}.png")" />
                         @if (!string.IsNullOrEmpty(footer))
                         {
@@ -29,7 +35,8 @@
             </div>
         }
     </div>
-
-    <hr />
-    @Html.Panel("", Model.Forecast.Forecast, Model.RazorId)
+    
+    <div class="planner-footer padding-5 padding-top-0">
+        @Html.Panel("", Model.Forecast.Forecast, Model.RazorId)
+    </div>
 </div>

@@ -37,7 +37,7 @@
 
         @Html.Panel(
             Dictionary.FiveElementsTitle,
-            Html.PayWallContent(ESection.KnowledgeBase, "elements", Dictionary.five_elements, false, MembershipOption.ESubscriptionType.Free).ToString(),
+            Html.PayWallContent(ESection.KnowledgeBase, "elements", K9.SharedLibrary.Helpers.TemplateParser.Parse(Dictionary.five_elements, new {BaseImagesPath = DefaultValuesConfiguration.Instance.BaseImagesPath}), false, MembershipOption.ESubscriptionType.Free).ToString(),
             "elements")
 
         @Html.Panel(

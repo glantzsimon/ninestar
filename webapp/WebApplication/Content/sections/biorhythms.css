@@ -14,3 +14,12 @@
   margin-bottom: 0 !important;
   margin-top: 0 !important;
 }
+.biorhythms-summary-container .panel {
+  margin-top: 0 !important;
+}
+.biorhythms-summary-container .panel h4:not(:first-child) {
+  margin-top: 20px !important;
+}
+.biorhythms-summary-container .panel .panel-body p:nth-last-child(2) {
+  margin-bottom: 0 !important;
+}

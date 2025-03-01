@@ -32,4 +32,14 @@
   .site-controls-text {
     display: none !important;
   }
+  .page .panel-heading {
+    padding: 11px !important;
+  }
+  .page .panel-body {
+    padding: 11px !important;
+  }
+  .page .panel-body h4 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }

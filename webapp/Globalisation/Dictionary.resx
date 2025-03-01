@@ -1697,7 +1697,7 @@
     <value>Thank you for your email</value>
   </data>
   <data name="FundamentalEnergiesCompatibility" xml:space="preserve">
-    <value>Fundamental Energies Details</value>
+    <value>Fundamental Energies Compatibility</value>
   </data>
   <data name="main_26" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>compatibility\en-gb\main-26.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -2231,7 +2231,7 @@
     <value>Spark</value>
   </data>
   <data name="AllElementsBreakdown" xml:space="preserve">
-    <value>All Elements Breakdown</value>
+    <value>Total Elements Breakdown</value>
   </data>
   <data name="ChallengingElements" xml:space="preserve">
     <value>Challenging Elements</value>
@@ -4557,5 +4557,35 @@
   </data>
   <data name="twelve_year_outlook" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>numerology\en-gb\articles\twelve-year-outlook.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BiorhythmsIndepthAnalysis" xml:space="preserve">
+    <value>Biorhythms In-Depth Analysis</value>
+  </data>
+  <data name="BiorhythmsMonthlyPlanner" xml:space="preserve">
+    <value>Biorhythms Monthly Planner</value>
+  </data>
+  <data name="BiorhythmsOverview" xml:space="preserve">
+    <value>Biorhythms Overview</value>
+  </data>
+  <data name="CharacterElementsAnalysis" xml:space="preserve">
+    <value>Emotional Elements Analysis</value>
+  </data>
+  <data name="ClickOnATabBelowForMoreInformation" xml:space="preserve">
+    <value>Click on a tab below to uncover more information!</value>
+  </data>
+  <data name="DisplayingDataFor" xml:space="preserve">
+    <value>Displaying data for</value>
+  </data>
+  <data name="FundamentalElementsAnalysis" xml:space="preserve">
+    <value>Fundamental Elements Analysis</value>
+  </data>
+  <data name="ViewBiorhythmsForSelectedDate" xml:space="preserve">
+    <value>View Biorhythms for Selected Date</value>
+  </data>
+  <data name="YinAndYangAnalysis" xml:space="preserve">
+    <value>Yin / Yang Analysis</value>
+  </data>
+  <data name="YinYangTitle" xml:space="preserve">
+    <value>Yin and Yang</value>
   </data>
 </root>

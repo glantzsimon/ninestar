@@ -45,7 +45,7 @@
                 }
             }
         }
-    }         
+    }
 
     ul.main-navbar {
         .open {
@@ -71,11 +71,28 @@
         height: 50px !important;
     }
 
-    .page {
-        padding: 10px !important;
+    .mainContent {
+        font-size: 108% !important;
 
-        h1, h2, h4 {
-            width: 100%;
+        p {
+            font-size: 108% !important;
+        }
+    }
+
+    .page {
+        padding: 7px !important;
+
+        .page-header {
+            padding-bottom: 11px;
+            padding-top: 11px;
+
+            h1, h2 {
+                font-size: 28px !important;
+            }
+
+            h1, h2, h4 {
+                width: 100%;
+            }
         }
 
         .well {
@@ -86,22 +103,29 @@
             padding: 0 !important;
             margin-top: 10px !important;
         }
+
+        .panel-heading {
+            h4 {
+                padding-left: 5px !important;
+                padding-right: 5px !important;
+            }
+        }
+
+        .panel-body {
+            h4 {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            .table-responsive {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
     }
 
     .container-fluid {
-        padding-left: 7px;
-        padding-right: 7px;
+        padding-left: 5px;
+        padding-right: 5px;
     }
-
-    .panel-body {
-        h4 {
-            padding-left: 5px !important;
-            padding-right: 5px !important;
-        }
-
-        .table-responsive {
-            margin-left: 5px;
-            margin-right: 5px;
-        }
-    }    
 }

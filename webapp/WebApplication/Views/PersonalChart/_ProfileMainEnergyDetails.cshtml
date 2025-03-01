@@ -42,21 +42,21 @@
             </ul>
             <div class="tab-content">
                 <div id="details" class="tab-pane fade in active">
-                    @Html.Panel("", $"{Model.MainEnergy.EnergyDescription}" +
-                                    $"<h5>{Dictionary.OverviewLabel}</h5>" +
-                                    $"{Model.Overview}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                    @Html.Panel(Model.MainEnergy.EnergyTitle, Model.MainEnergy.EnergyDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+
+                    @Html.Panel(Dictionary.OverviewLabel, Model.Overview, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 </div>
                 <div id="element" class="tab-pane fade">
-                    @Html.Panel("", Model.MainEnergy.ElementDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                    @Html.Panel(Model.MainEnergy.ElementTitle, Model.MainEnergy.ElementDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 </div>
                 <div id="modality" class="tab-pane fade">
-                    @Html.Panel("", Model.MainEnergy.ModalityDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                    @Html.Panel(Model.MainEnergy.ModalityTitle, Model.MainEnergy.ModalityDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 </div>
                 <div id="trigram" class="tab-pane fade">
-                    @Html.Panel("", Model.MainEnergy.TrigramDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                    @Html.Panel(Model.MainEnergy.TrigramTitle, Model.MainEnergy.TrigramDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 </div>
                 <div id="yinyang" class="tab-pane fade">
-                    @Html.Panel("", Dictionary.yinyang, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                    @Html.Panel(Dictionary.YinAndYang, Dictionary.yinyang, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 </div>
             </div>
         </div>

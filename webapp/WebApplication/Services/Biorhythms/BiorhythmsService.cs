@@ -57,7 +57,7 @@ namespace K9.WebApplication.Services
                     BiorhythmNextMin = biorhythm.GetDaysUntilNextMinimumString(),
                     BiorhythmNextCritical = biorhythm.GetDaysUntilNextCriticalString()
                 }));
-                sb.AppendLine("</br>");
+                sb.AppendLine("<hr class=\"margin-0\"/>");
             }
 
             var average = biorhythmsModel.GetAverageResult();
@@ -74,8 +74,7 @@ namespace K9.WebApplication.Services
                 BiorhythmNextCritical = average.GetDaysUntilNextCriticalString(),
                 AverageClass = "display-none"
             }));
-            sb.AppendLine("</br>");
-
+            
             return sb.ToString();
         }
 

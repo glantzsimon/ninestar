@@ -3,13 +3,16 @@
 @model K9.WebApplication.Models.CompatibilityModel
 
 <div>
-    <h4 class="margin-top-0">@Model.FirstPersonName</h4>
-    @Html.Partial("../PersonalChart/_PersonalChart", Model.NineStarKiModel1)
-
-    <br />
-
-    <h4 class="margin-top-0">@Model.SecondPersonName</h4>
-    @Html.Partial("../PersonalChart/_PersonalChart", Model.NineStarKiModel2)
+    <div class="row">
+        <div class="col-sm-12 col-xs-6 padding-0">
+            <h4 class="margin-top-0 text-center">@Model.FirstPersonName</h4>
+            @Html.Partial("../PersonalChart/_PersonalChart", Model.NineStarKiModel1)
+        </div>
+        <div class="col-sm-12 col-xs-6 padding-0">
+            <h4 class="margin-top-0 text-center">@Model.SecondPersonName</h4>
+            @Html.Partial("../PersonalChart/_PersonalChart", Model.NineStarKiModel2)
+        </div>
+    </div>
 
     <br/>
     @Html.Partial("_CompatibilityGauges")

@@ -10,13 +10,11 @@
         @Html.HiddenFor(model => model.ActiveCycleTabId)
 
         <div class="row padding-0 margin-0">
-            <div class="col-sm-7">
+            <div class="col-sm-12">
                 @Html.BootstrapEditorFor(model => model.SelectedDate)
             </div>
-            <div class="col-sm-5">
-                <div class="margin-top-30">
-                    @Html.BootstrapButton(Dictionary.ViewPredictionsForSelectedDate, EButtonType.Submit, "")
-                </div>
+            <div class="col-sm-12">
+                @Html.BootstrapButton(Dictionary.ViewPredictionsForSelectedDate, EButtonType.Submit, "")
             </div>
         </div>
     }

@@ -1,4 +1,11 @@
 @media (max-width:767px) {
+    .mobile-only {
+        display: block !important;
+    }
+
+    .desktop-only {
+        display: none;
+    }
 
     .padding-left-20-desktop {
         padding-left: 0 !important;
@@ -28,6 +35,10 @@
         margin: 0 !important;
     }
 
+    form .well {
+        margin-bottom: 20px !important;
+    }
+
     .well-mobile {
         padding: 0 !important;
     }
@@ -37,16 +48,23 @@
         padding-right: 0 !important;
     }
 
-    .page {
-        padding: 10px;
-    }
-
-    .page-header {
-        padding-bottom: 0;
-        padding-top: 0;
-    }
-
     div.inline-form, form {
         width: 100% !important;
+    }
+
+    .page {
+        h1 {
+            text-align: center;
+        }
+
+        .panel-heading h4 {
+            text-align: center;
+        }
+    }
+}
+
+@media (min-width: 766px) {
+    .device-only {
+        display: none;
     }
 }

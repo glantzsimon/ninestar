@@ -6,7 +6,7 @@
 @if (Model != null)
 {
     <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-12 padding-0">
             @Html.Raw(Dictionary.StrongOrgansDescription)
         </div>
     </div>
@@ -14,10 +14,10 @@
     <br />
 
     <div class="row">
-        <div class="col-xs-6 col-sm-3">
+        <div class="col-xs-6 col-sm-3 padding-0">
             @Html.Partial("DisplayTemplates/Organ", Model.StrongYinOrgans)
         </div>
-        <div class="col-xs-6 col-sm-3">
+        <div class="col-xs-6 col-sm-3 padding-0">
             @Html.Partial("DisplayTemplates/Organ", Model.StrongYangOrgans)
         </div>
     </div>

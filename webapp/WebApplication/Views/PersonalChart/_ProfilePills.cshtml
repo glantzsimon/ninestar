@@ -70,7 +70,7 @@
 
         <div class="tab-content">
             <div id="fundamental" class="tab-pane fade @adultActiveClass">
-                @Html.Panel("", Dictionary.MainEnergyDescription)
+                @Html.Panel(Dictionary.MainEnergyLabel, $"{Dictionary.MainEnergyDescription} {Html.Partial("_ClickOnATabBelow").ToString()}")
 
                 <br />
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
@@ -81,7 +81,7 @@
             </div>
 
             <div id="character" class="tab-pane fade @childActiveClass">
-                @Html.Panel("", Dictionary.CharacterEnergyDescription)
+                @Html.Panel(Dictionary.CharacterEnergyLabel, Dictionary.CharacterEnergyDescription)
 
                 <br />
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
@@ -93,7 +93,7 @@
             </div>
 
             <div id="surface" class="tab-pane fade">
-                @Html.Panel("", Dictionary.SurfaceEnergyDescription)
+                @Html.Panel(Dictionary.SurfaceEnergyLabel, Dictionary.SurfaceEnergyDescription)
 
                 <br />
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
@@ -106,9 +106,8 @@
             @if (Model.PersonModel.IsSixteenOrOver())
             {
                 <div id="sexuality" class="tab-pane fade">
-                    @Html.Panel("", Dictionary.sexuality_description)
-
-                    <br />
+                    @Html.Panel(Dictionary.SexualityTitle, Dictionary.sexuality_description)
+                    
                     @using (Html.PayWall(ESection.Profile, Model))
                     {
                         @Html.Partial("_ProfileSexuality", Model)

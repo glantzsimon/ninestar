@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.Script.Serialization;
+using K9.SharedLibrary.Helpers;
+using K9.WebApplication.Config;
 
 namespace K9.WebApplication.Models
 {
@@ -57,7 +59,7 @@ namespace K9.WebApplication.Models
         }
 
         public CompatibilityScoreModel Score { get; }
-        
+
         [ScriptIgnore]
         public ETransformationType FundamentalEnergiesTransformationType { get; }
 
@@ -176,7 +178,7 @@ namespace K9.WebApplication.Models
 
         [ScriptIgnore]
         public bool FundamentalEnergy1ToSurfaceEnergy2IsChallenging => IsChallenging(FundamentalEnergy1ToSurfaceEnergy2TransformationType);
-        
+
         [ScriptIgnore]
         public bool FundamentalEnergy2ToSurfaceEnergy1IsChallenging => IsChallenging(FundamentalEnergy2ToSurfaceEnergy1TransformationType);
 
@@ -307,15 +309,15 @@ namespace K9.WebApplication.Models
         {
             if (FundamentalElementsAreSupportive)
             {
-                return Globalisation.Dictionary.main_element_supportive;
+                return TemplateParser.Parse(Globalisation.Dictionary.main_element_supportive, new { DefaultValuesConfiguration.Instance.BaseImagesPath });
             }
             if (FundamentalEnergiesAreChallenging)
             {
-                return Globalisation.Dictionary.main_element_challenging;
+                return TemplateParser.Parse(Globalisation.Dictionary.main_element_challenging, new { DefaultValuesConfiguration.Instance.BaseImagesPath });
             }
             if (FundamentalEnergiesAreSame)
             {
-                return Globalisation.Dictionary.main_element_same;
+                return TemplateParser.Parse(Globalisation.Dictionary.main_element_same, new { DefaultValuesConfiguration.Instance.BaseImagesPath });
             }
 
             return string.Empty;
@@ -826,7 +828,7 @@ namespace K9.WebApplication.Models
 
         [ScriptIgnore]
         public bool IsCharacterGenderSame { get; set; }
-        
+
         [ScriptIgnore]
         public bool IsBothGenderSame => IsFundamtenalGenderSame && IsCharacterGenderSame;
 

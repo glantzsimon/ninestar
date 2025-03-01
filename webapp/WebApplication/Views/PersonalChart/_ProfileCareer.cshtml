@@ -6,7 +6,7 @@
 @if (Model != null)
 {
     <div class="container main-content clear-both">
-        @Html.Panel("", $"{Model.Occupations}{Model.PersonalDevelopemnt}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+        @Html.Panel($"{Model.MainEnergy.EnergyNameAndNumber} {Dictionary.Career}", $"{Model.Occupations}{Model.PersonalDevelopemnt}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
     </div>
 
 

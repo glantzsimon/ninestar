@@ -39,6 +39,41 @@ form .pull-right .btn {
     }
 }
 
+.table-responsive {
+    margin-left: 0;
+    margin-right: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 1px solid @border-grey;
+
+    thead {
+        background-color: @whisper-white;
+
+        th {
+            padding-top: 12px !important;
+            padding-bottom: 12px !important;
+        }
+    }
+
+    table {
+        margin-bottom: 0 !important;
+    }
+
+    &.table-left-nowrap {
+        table {
+            th:first-child, td:first-child {
+                white-space: nowrap !important;                
+            }
+
+            th:not(:first-child), td:not(:first-child) {
+                white-space: normal !important;
+                word-wrap: break-word !important;
+                word-break: break-word !important;
+            }
+        }
+    }
+}
+
 .datatable-container .col-lg-1,
 .datatable-container .col-lg-10,
 .datatable-container .col-lg-11,

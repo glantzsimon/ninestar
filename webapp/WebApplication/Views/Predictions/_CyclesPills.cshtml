@@ -46,7 +46,7 @@
 
     <div class="tab-content">
         <div id="current-monthly-cycle" class="tab-pane fade in active">
-            @Html.Panel("", Dictionary.month_description)
+            @Html.Panel(Dictionary.MonthlyPrediction, Dictionary.month_description)
 
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
@@ -58,7 +58,7 @@
         </div>
 
         <div id="current-yearly-cycle" class="tab-pane fade">
-            @Html.Panel("", Dictionary.year_description)
+            @Html.Panel(Dictionary.YearlyPrediction, Dictionary.year_description)
 
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
@@ -72,7 +72,7 @@
         <div id="yearly-planner" class="tab-pane fade">
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
-                @Html.Partial("_YearlyPlanner", Model)
+                @Html.Panel(Dictionary.YearlyPlanner, Html.Partial("_YearlyPlanner", Model).ToString())
             }
 
             <hr />
@@ -82,7 +82,7 @@
         <div id="monthly-planner" class="tab-pane fade">
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
-                @Html.Partial("_MonthlyPlanner", Model)
+                @Html.Panel(Dictionary.MonthlyPlanner, Html.Partial("_MonthlyPlanner", Model).ToString())
             }
 
             <hr />

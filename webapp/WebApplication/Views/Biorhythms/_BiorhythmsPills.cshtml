@@ -33,16 +33,16 @@
 
     <div class="tab-content">
         <div id="overview" class="tab-pane fade in active padding-top-10">
-            @Html.Partial("_BiorhythmsGauges")
+            @Html.Panel(Dictionary.BiorhythmsOverview, Html.Partial("_BiorhythmsGauges").ToString())
 
-            <hr />
+            <br />
             @Html.Partial("_ButtonsFooter")
         </div>
 
         <div id="monthly-planner" class="tab-pane fade padding-top-10">
-            @using (Html.PayWall(ESection.Predictions, Model))
+            @using (Html.PayWall(ESection.Biorhythms, Model))
             {
-                @Html.Partial("_BioRhythms", Model.BiorhythmResultSet.NineStarKiBioRhythms)
+                @Html.Panel(Dictionary.BiorhythmsMonthlyPlanner, Html.Partial("_BioRhythms", Model.BiorhythmResultSet.NineStarKiBioRhythms).ToString())
             }
 
             <br />
@@ -50,9 +50,9 @@
         </div>
 
         <div id="in-depth-analysis" class="tab-pane fade padding-top-10">
-            @using (Html.PayWall(ESection.Predictions, Model))
+            @using (Html.PayWall(ESection.Biorhythms, Model))
             {
-                @Html.Partial("_InDepthAnalysis", Model)
+                @Html.Panel(Dictionary.BiorhythmsIndepthAnalysis, Html.Partial("_InDepthAnalysis", Model).ToString())
             }
 
             <br />

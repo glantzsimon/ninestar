@@ -12,7 +12,7 @@ namespace K9.SharedLibrary.Extensions
 
 	    public static string ToShortDateFormatString(this DateTime value)
 	    {
-	        return value.ToString("dd/MMM/yy");
+	        return value.ToString("dd/MMM/yy").ToLower();
 	    }
 
 	    public static bool HasBirthdayPassedThisYear(this DateTime dob)

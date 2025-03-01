@@ -6,7 +6,7 @@
 }
 .panel .panel-heading {
   font-weight: bold;
-  padding: 12px 15px;
+  padding: 12px 20px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   border-bottom: none;
@@ -19,6 +19,11 @@
   background-color: #ffffff;
   font-size: 15px;
   line-height: 1.7;
+  padding: 20px;
+}
+.panel .panel-body h5:first-child,
+.panel .panel-body .panel-body h4:first-child {
+  margin-top: 0 !important;
 }
 .panel .panel-footer {
   background-color: #f2f2f2;
@@ -28,6 +33,32 @@
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
+.panel .panel-heading h4 {
+  font-size: 1.4em !important;
+}
+.panel .panel-heading h4,
+.panel .panel-heading h5 {
+  color: #444 !important;
+}
+.panel .panel-body-image {
+  padding-top: 0;
+}
+.panel.panel-default > .panel-heading {
+  /* Subtle pale blue background */
+  background-color: #f0f8ff;
+  /* Optional gradient for extra depth */
+  background: linear-gradient(to bottom, #f7fbff 0%, #f0f8ff 100%);
+  /* Make sure text is readable */
+  color: #333;
+  /* Tweak spacing and borders as desired */
+  border-bottom: 1px solid #ddd;
+}
+.panel.panel-default:last-of-type {
+  margin-bottom: 0;
+}
+.panel .panel-group {
+  margin-bottom: 0 !important;
+}
 .image-panel {
   height: 200px;
   width: 100%;
@@ -36,10 +67,10 @@
   background-position: center;
   background-repeat: no-repeat;
 }
-.image-panel-medium {
+.image-panel.image-panel-medium {
   height: 300px;
 }
-.image-panel-small {
+.image-panel.image-panel-small {
   height: 100px;
 }
 .panel-image-container {
@@ -48,36 +79,18 @@
 .panel-image-container .image-panel {
   margin-bottom: 0;
 }
-.panel-body-image {
-  padding-top: 0;
-}
 a.collapsible-panel-link {
   font-weight: bold;
   text-decoration: none !important;
-  transition: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 a.collapsible-panel-link:hover {
-  text-decoration: underline !important;
+  color: #337ab7;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
-.panel-default:last-of-type {
-  margin-bottom: 0;
-}
-.panel-group {
-  margin-bottom: 0 !important;
-}
-.panel-heading h4,
-.panel-heading h5 {
-  color: #444 !important;
-}
-.panel-heading h4 {
-  font-size: 1.4em !important;
-}
-.panel-body {
-  padding: 20px;
-}
-.panel-body h5:first-child,
-.panel-body h4:first-child {
-  margin-top: 0 !important;
+a.collapsible-panel-link .fa-caret-up,
+a.collapsible-panel-link .fa-caret-down {
+  color: #dddddd;
 }
 .tab-pane .panel {
   margin-top: 20px;

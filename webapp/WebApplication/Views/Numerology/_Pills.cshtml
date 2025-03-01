@@ -45,9 +45,9 @@
         </li>
     </ul>
 
-        <div class="tab-content">
-            <div id="main" class="tab-pane fade in active padding-top-10">
-                @using (Html.PayWall(ESection.Numerology, Model))
+    <div class="tab-content">
+        <div id="main" class="tab-pane fade in active padding-top-10">
+            @using (Html.PayWall(ESection.Numerology, Model))
             {
                 @Html.Partial("_NumerologyMain")
             }
@@ -68,39 +68,42 @@
         <div id="twelve-year-outlook" class="tab-pane fade padding-top-10">
             @using (Html.PayWall(ESection.Numerology, Model))
             {
-                @Html.Partial("_NumerologyPlanner", new NumerologyForecastViewModel
-                {
-                    Forecast = Model.YearlyForecast,
-                    PlannerItems = Model.YearlyPlannerCodes
-                })
+                @Html.Panel(Dictionary.TwelveYearOutlook, Html.Partial("_NumerologyPlanner", new NumerologyForecastViewModel
+                   {
+                       Forecast = Model.YearlyForecast,
+                       PlannerItems = Model.YearlyPlannerCodes
+                   }).ToString())
             }
-            
+
+            <br />
             @Html.Partial("_ButtonsFooter")
         </div>
 
         <div id="twelve-month-outlook" class="tab-pane fade padding-top-10">
             @using (Html.PayWall(ESection.Numerology, Model))
             {
-                @Html.Partial("_NumerologyPlanner", new NumerologyForecastViewModel
-                {
-                    Forecast = Model.MonthlyForecast,
-                    PlannerItems = Model.MonthlyPlannerCodes
-                })
+                @Html.Panel(Dictionary.TwelveMonthOutlook, Html.Partial("_NumerologyPlanner", new NumerologyForecastViewModel
+                   {
+                       Forecast = Model.MonthlyForecast,
+                       PlannerItems = Model.MonthlyPlannerCodes
+                   }).ToString())
             }
 
+            <br />
             @Html.Partial("_ButtonsFooter")
         </div>
 
         <div id="daily-outlook" class="tab-pane fade padding-top-10">
             @using (Html.PayWall(ESection.Numerology, Model))
             {
-                @Html.Partial("_NumerologyPlanner", new NumerologyForecastViewModel
+                @Html.Panel(Dictionary.DailyKarmicInfluences, Html.Partial("_NumerologyPlanner", new NumerologyForecastViewModel
                 {
                     Forecast = Model.DailyForecast,
                     PlannerItems = Model.DailyPlannerCodes
-                })
+                }).ToString())
             }
-            
+
+            <br />
             @Html.Partial("_ButtonsFooter")
         </div>
     </div>

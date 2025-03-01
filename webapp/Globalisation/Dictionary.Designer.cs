@@ -2830,7 +2830,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to All Elements Breakdown.
+        ///   Looks up a localized string similar to Total Elements Breakdown.
         /// </summary>
         public static string AllElementsBreakdown {
             get {
@@ -3303,6 +3303,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Biorhythms In-Depth Analysis.
+        /// </summary>
+        public static string BiorhythmsIndepthAnalysis {
+            get {
+                return ResourceManager.GetString("BiorhythmsIndepthAnalysis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 9 Star Ki Biorhythms Natural Rhythms Calculator.
         /// </summary>
         public static string BiorhythmsKeywords {
@@ -3326,6 +3335,24 @@ namespace K9.Globalisation {
         public static string BiorhythmsMetaDescription {
             get {
                 return ResourceManager.GetString("BiorhythmsMetaDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Biorhythms Monthly Planner.
+        /// </summary>
+        public static string BiorhythmsMonthlyPlanner {
+            get {
+                return ResourceManager.GetString("BiorhythmsMonthlyPlanner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Biorhythms Overview.
+        /// </summary>
+        public static string BiorhythmsOverview {
+            get {
+                return ResourceManager.GetString("BiorhythmsOverview", resourceCulture);
             }
         }
         
@@ -3801,6 +3828,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Emotional Elements Analysis.
+        /// </summary>
+        public static string CharacterElementsAnalysis {
+            get {
+                return ResourceManager.GetString("CharacterElementsAnalysis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Emotional Energies Compatibility.
         /// </summary>
         public static string CharacterEnergiesCompatibility {
@@ -3900,6 +3936,15 @@ namespace K9.Globalisation {
         public static string ChildLabel {
             get {
                 return ResourceManager.GetString("ChildLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click on a tab below to uncover more information!.
+        /// </summary>
+        public static string ClickOnATabBelowForMoreInformation {
+            get {
+                return ResourceManager.GetString("ClickOnATabBelowForMoreInformation", resourceCulture);
             }
         }
         
@@ -5348,6 +5393,15 @@ namespace K9.Globalisation {
         public static string DispersionTitle {
             get {
                 return ResourceManager.GetString("DispersionTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Displaying data for.
+        /// </summary>
+        public static string DisplayingDataFor {
+            get {
+                return ResourceManager.GetString("DisplayingDataFor", resourceCulture);
             }
         }
         
@@ -6865,7 +6919,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fundamental Energies Details.
+        ///   Looks up a localized string similar to Fundamental Elements Analysis.
+        /// </summary>
+        public static string FundamentalElementsAnalysis {
+            get {
+                return ResourceManager.GetString("FundamentalElementsAnalysis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fundamental Energies Compatibility.
         /// </summary>
         public static string FundamentalEnergiesCompatibility {
             get {
@@ -9663,10 +9726,10 @@ namespace K9.Globalisation {
         ///    Challenging Transformation
         ///&lt;/h5&gt;
         ///&lt;div&gt;
-        ///    &lt;img title=&quot;Challenging Transformation&quot; alt=&quot;Challenging Transformation&quot; class=&quot;auto-size center-block&quot; src=&quot;Images/ninestar/transformations/transformation-challenging.png&quot; /&gt;
+        ///    &lt;img title=&quot;Challenging Transformation&quot; alt=&quot;Challenging Transformation&quot; class=&quot;auto-size center-block&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-challenging.png&quot; /&gt;
         ///&lt;/div&gt;
         ///&lt;p&gt;
-        ///    This combination can be &lt;strong&gt;one of the most magnetic&lt;/strong&gt; and results in the most &lt;strong&gt;personal growth&lt;/strong&gt;. There is often a lot of &lt;strong&gt;natural chemistry between people with opposite elements&lt;/strong&gt;. It is also the combination that is &lt;stro [rest of string was truncated]&quot;;.
+        ///    This combination can be &lt;strong&gt;one of the most magnetic&lt;/strong&gt; and results in the most &lt;strong&gt;personal growth&lt;/strong&gt;. There is often a lot of &lt;strong&gt;natural chemistry between people with opposite elements&lt;/strong&gt;. It is also the combination tha [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_element_challenging {
             get {
@@ -9679,10 +9742,10 @@ namespace K9.Globalisation {
         ///    Same Element - Sibling Relationship
         ///&lt;/h5&gt;
         ///&lt;div&gt;
-        ///    &lt;img title=&quot;Sibling Relationship&quot; alt=&quot;Sibling Relationship&quot; class=&quot;auto-size center-block&quot; src=&quot;Images/ninestar/transformations/transformation-same.png&quot; /&gt;
+        ///    &lt;img title=&quot;Sibling Relationship&quot; alt=&quot;Sibling Relationship&quot; class=&quot;auto-size center-block&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-same.png&quot; /&gt;
         ///&lt;/div&gt;
         ///&lt;p&gt;
-        ///    The Fundamental Energies have the same element. This combination tends to lead to a &lt;strong&gt;strong &quot;sibling&quot; relationship&lt;/strong&gt; with an &lt;strong&gt;effortless and profound understanding&lt;/strong&gt; between both parties. There is a great potential for &lt;strong&gt;mutual understand [rest of string was truncated]&quot;;.
+        ///    The Fundamental Energies have the same element. This combination tends to lead to a &lt;strong&gt;strong &quot;sibling&quot; relationship&lt;/strong&gt; with an &lt;strong&gt;effortless and profound understanding&lt;/strong&gt; between both parties. There is a great potential for &lt;strong&gt;mutual  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_element_same {
             get {
@@ -9695,10 +9758,10 @@ namespace K9.Globalisation {
         ///    Supportive Transformation - Parent Child Relationship
         ///&lt;/h5&gt;
         ///&lt;div&gt;
-        ///    &lt;img title=&quot;Supportive Transformation&quot; alt=&quot;Supportive Transformation&quot; class=&quot;auto-size center-block&quot; src=&quot;Images/ninestar/transformations/transformation-supportive.png&quot; /&gt;
+        ///    &lt;img title=&quot;Supportive Transformation&quot; alt=&quot;Supportive Transformation&quot; class=&quot;auto-size center-block&quot; src=&quot;{BaseImagesPath}/ninestar/transformations/transformation-supportive.png&quot; /&gt;
         ///&lt;/div&gt;
         ///&lt;p&gt;
-        ///    The Fundamental Energies are in a Supportive Transformation, in which one Energy supports or nourishes the next. On the surface, it may appear that it is more of a one-way street. However, in reality, &lt;strong&gt;it does work both ways&lt;/stron [rest of string was truncated]&quot;;.
+        ///    The Fundamental Energies are in a Supportive Transformation, in which one Energy supports or nourishes the next. On the surface, it may appear that it is more of a one-way street. However, in reality, &lt;strong&gt;it does work both w [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_element_supportive {
             get {
@@ -15760,6 +15823,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to View Biorhythms for Selected Date.
+        /// </summary>
+        public static string ViewBiorhythmsForSelectedDate {
+            get {
+                return ResourceManager.GetString("ViewBiorhythmsForSelectedDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to View Membership Options.
         /// </summary>
         public static string ViewMembershipOptions {
@@ -16702,6 +16774,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Yin / Yang Analysis.
+        /// </summary>
+        public static string YinAndYangAnalysis {
+            get {
+                return ResourceManager.GetString("YinAndYangAnalysis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Changing Yin to Yang.
         /// </summary>
         public static string YinToYang {
@@ -16729,6 +16810,15 @@ namespace K9.Globalisation {
         public static string YinYangLabel {
             get {
                 return ResourceManager.GetString("YinYangLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yin and Yang.
+        /// </summary>
+        public static string YinYangTitle {
+            get {
+                return ResourceManager.GetString("YinYangTitle", resourceCulture);
             }
         }
         

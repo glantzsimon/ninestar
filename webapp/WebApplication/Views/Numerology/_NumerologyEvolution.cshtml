@@ -39,22 +39,34 @@
                 <div id="emergence" class="tab-pane fade padding-top-10 @Model.Emergence.IsActiveCssPaneClass">
                     @using (Html.PayWall(ESection.Numerology, Model))
                     {
-                        @Html.Partial("_NumerologyCodeDisplay", Model.Emergence)
+                        <div class="device-only">
+                            @Html.Panel(Model.EmergenceTitle, Html.Partial("_NumerologyCodeDisplay", Model.Emergence).ToString())
+                        </div>
+                        <div class="desktop-only">
+                            @Html.Partial("_NumerologyCodeDisplay", Model.Emergence)
+                        </div>
                     }
                 </div>
 
                 <div id="actualisation" class="tab-pane fade padding-top-10 @Model.Actualisation.IsActiveCssPaneClass">
                     @using (Html.PayWall(ESection.Numerology, Model))
                     {
-                        @Html.Partial("_NumerologyCodeDisplay", Model.Actualisation)
+                        <div class="device-only">
+                            @Html.Panel(Model.ActualisationTitle, Html.Partial("_NumerologyCodeDisplay", Model.Actualisation).ToString())
+                        </div>
+                        <div class="desktop-only">
+                            @Html.Partial("_NumerologyCodeDisplay", Model.Actualisation)
+                        </div>
                     }
                 </div>
 
                 <div id="mastery" class="tab-pane fade padding-top-10 @Model.Mastery.IsActiveCssPaneClass">
-                    @using (Html.PayWall(ESection.Numerology, Model))
-                    {
+                    <div class="device-only">
+                        @Html.Panel(Model.MasteryTitle, Html.Partial("_NumerologyCodeDisplay", Model.Mastery).ToString())
+                    </div>
+                    <div class="desktop-only">
                         @Html.Partial("_NumerologyCodeDisplay", Model.Mastery)
-                    }
+                    </div>
                 </div>
             </div>
         </div>

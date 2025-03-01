@@ -337,6 +337,9 @@ namespace K9.WebApplication.Models
         public string Trigram => MetaData.GetTrigram();
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TrigramLabel)]
+        public string TrigramTitle => $"{Dictionary.Trigram} '{Trigram}'";
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TrigramLabel)]
         public string TrigramDescription => _trigramDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
 
         public string YinYangName => YinYang == ENineStarKiYinYang.Unspecified ? string.Empty : YinYang.ToString();

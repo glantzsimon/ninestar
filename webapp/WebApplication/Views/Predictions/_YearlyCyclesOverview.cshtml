@@ -11,9 +11,8 @@
             <div class="cycle-summary">
                 <div class="bookmark" id="@bookmark"></div>
 
-                @Html.Partial("_CycleHeader", energy)
-
-                @Html.CollapsiblePanel(energy.CycleDescriptiveName, energy.CycleDescription, true)
+                @Html.CollapsiblePanel(energy.CycleDescriptiveName, Html.Partial("_CycleHeaderWithDescription", energy).ToString(), true)
+                <br />
             </div>
         }
     }

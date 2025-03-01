@@ -237,10 +237,10 @@ namespace K9.WebApplication.Services
         {
             var _90DaysAgo = DateTime.Today.Subtract(TimeSpan.FromDays(90));
 
-            if (_emailQueueItemsRepository.Exists(e =>
+            if (!allowResend && _emailQueueItemsRepository.Exists(e =>
                     e.EmailTemplateId == emailTemplateId &&
                     ((e.UserId.HasValue && e.UserId == userId) || (e.ContactId.HasValue && e.ContactId == e.ContactId)) &&
-                    (!e.SentOn.HasValue || e.SentOn >= _90DaysAgo && !allowResend)))
+                    (!e.SentOn.HasValue || e.SentOn >= _90DaysAgo)))
             {
                 var user = userId.HasValue ? _usersRepository.Find(userId.Value) : null;
                 var contact = contactId.HasValue ? _contactsRepository.Find(contactId.Value) : null;

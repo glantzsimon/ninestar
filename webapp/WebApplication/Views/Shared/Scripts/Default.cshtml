@@ -91,13 +91,13 @@
 	        }
 	        fileInput.attr("accept", accepted);
         };
-
+        
 	    $.fn.scrollToTopOf = function(el, adjustment) {
 	        var offset = $(el).offset();
 	        $("html, body").animate({
 	            scrollTop: offset.top + (adjustment || 0)
-	        }, 40);
-        };
+	        }, 600, "swing"); // 600ms duration, 'swing' easing for smooth transition
+	    };
 
 	    $.fn.displayValidationWarningFor = function(field, validationMessage) {
 	        var validationSpan = $("span[data-valmsg-for='" + field + "']");

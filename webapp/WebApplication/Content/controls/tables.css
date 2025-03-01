@@ -28,6 +28,33 @@ form .pull-right .btn {
   margin-top: -4px !important;
   margin-bottom: 0 !important;
 }
+.table-responsive {
+  margin-left: 0;
+  margin-right: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 1px solid #dddddd;
+}
+.table-responsive thead {
+  background-color: #f9f9f9;
+}
+.table-responsive thead th {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+.table-responsive table {
+  margin-bottom: 0 !important;
+}
+.table-responsive.table-left-nowrap table th:first-child,
+.table-responsive.table-left-nowrap table td:first-child {
+  white-space: nowrap !important;
+}
+.table-responsive.table-left-nowrap table th:not(:first-child),
+.table-responsive.table-left-nowrap table td:not(:first-child) {
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  word-break: break-word !important;
+}
 .datatable-container .col-lg-1,
 .datatable-container .col-lg-10,
 .datatable-container .col-lg-11,

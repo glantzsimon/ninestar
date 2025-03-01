@@ -1,5 +1,5 @@
 ﻿using K9.WebApplication.Helpers;
-using StackExchange.Profiling;
+using System;
 using System.Configuration;
 using System.Diagnostics;
 using System.Web;
@@ -31,16 +31,7 @@ namespace K9.WebApplication
 
             Stripe.StripeConfiguration.ApiKey = ConfigurationManager.AppSettings["SecretKey"];
 
-#if DEBUG
-            if (EnableMiniProfiler)
-            {
-                MiniProfiler.Configure(new MiniProfilerOptions
-                {
-                    RouteBasePath = "~/profiler",
-                    ResultsAuthorize = request => true // Allow all users to see results
-                });
-            }
-#endif  
+            ConfigureMiniProfiler();
         }
 
         public override string GetVaryByCustomString(HttpContext context, string custom)
@@ -55,15 +46,32 @@ namespace K9.WebApplication
 
         protected void Application_BeginRequest()
         {
-            if (HttpContext.Current != null && HttpContext.Current.Response != null)
-            {
-#if DEBUG
-                HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.NoCache);
-#else
-                HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.ServerAndPrivate);
-#endif
-            }
+            SetSameSiteNoneForCookies();
+            SetCacheBehaviour();
+            InitMiniProfiler();
+        }
 
+        protected void Application_EndRequest()
+        {
+            StopMiniProfiler();
+        }
+
+        private void ConfigureMiniProfiler()
+        {
+#if DEBUG
+            if (EnableMiniProfiler)
+            {
+                MiniProfiler.Configure(new MiniProfilerOptions
+                {
+                    RouteBasePath = "~/profiler",
+                    ResultsAuthorize = request => true // Allow all users to see results
+                });
+            }
+#endif  
+        }
+
+        private void InitMiniProfiler()
+        {
 #if DEBUG
             if (EnableMiniProfiler && Request.IsLocal) // Enable MiniProfiler only for local requests
             {
@@ -73,16 +81,43 @@ namespace K9.WebApplication
 #endif
         }
 
-        protected void Application_EndRequest()
+        private static void SetCacheBehaviour()
         {
-            var cookie = Response.Cookies["__RequestVerificationToken"];
-            if (cookie != null)
+            if (HttpContext.Current != null && HttpContext.Current.Response != null)
             {
-                cookie.Secure = true;
-                cookie.SameSite = SameSiteMode.None;
-
+#if DEBUG
+                HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.NoCache);
+#else
+                HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.ServerAndPrivate);
+#endif
             }
+        }
 
+        private static void SetSameSiteNoneForCookies()
+        {
+            HttpContext context = HttpContext.Current;
+            if (context != null && context.Response != null)
+            {
+                context.Response.AddOnSendingHeaders(ctx =>
+                {
+                    foreach (string key in ctx.Response.Headers.Keys)
+                    {
+                        if (key.Equals("Set-Cookie", StringComparison.OrdinalIgnoreCase))
+                        {
+                            string cookieHeader = ctx.Response.Headers[key];
+                            // Ensure SameSite=None and Secure for cross-site cookies
+                            if (!cookieHeader.Contains("SameSite"))
+                            {
+                                ctx.Response.Headers[key] = cookieHeader + "; SameSite=None; Secure";
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        private void StopMiniProfiler()
+        {
 #if DEBUG
             if (EnableMiniProfiler && MiniProfiler.Current != null)
             {

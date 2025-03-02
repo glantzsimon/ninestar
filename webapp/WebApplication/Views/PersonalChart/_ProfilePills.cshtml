@@ -81,7 +81,7 @@
             </div>
 
             <div id="character" class="tab-pane fade @childActiveClass">
-                @Html.Panel(Dictionary.CharacterEnergyLabel, Dictionary.CharacterEnergyDescription)
+                @Html.Panel(Dictionary.CharacterEnergyLabel, $"{Dictionary.CharacterEnergyDescription} {Html.Partial("_ClickOnATabBelow").ToString()}")
 
                 <br />
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
@@ -107,7 +107,7 @@
             {
                 <div id="sexuality" class="tab-pane fade">
                     @Html.Panel(Dictionary.SexualityTitle, Dictionary.sexuality_description)
-                    
+
                     @using (Html.PayWall(ESection.Profile, Model))
                     {
                         @Html.Partial("_ProfileSexuality", Model)

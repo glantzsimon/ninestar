@@ -31,7 +31,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [ChildActionOnly]
-        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None, VaryByHeader = "X-Requested-With")]
         public ActionResult _CalculatorForm(NineStarKiModel model)
         {
             return PartialView(model);

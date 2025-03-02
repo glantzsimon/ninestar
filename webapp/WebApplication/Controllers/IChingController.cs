@@ -24,7 +24,7 @@ namespace K9.WebApplication.Controllers
             return View();
         }
 
-        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None, VaryByHeader = "X-Requested-With")]
         public ActionResult _GenerateButtonForm()
         {
             return PartialView();

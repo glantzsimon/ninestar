@@ -72,18 +72,30 @@ namespace K9.WebApplication.Services
                             EmailAddress = user.EmailAddress,
                             RecipientName = user.FullName
                         };
-                        try
-                        {
-                            _promotionService.SendPromotionFromTemplateToUser(user.Id, emailTemplate, promotion, true, TimeSpan.FromMinutes(1));
-                            mailingListSendResultItem.IsSuccess = true;
-                        }
-                        catch (Exception e)
-                        {
-                            My.Logger.Error($"MailerService => SendEmailTemplateToUsers => {e.GetFullErrorMessage()}");
-                            mailingListSendResultItem.ErrorMessage = e.GetFullErrorMessage();
-                        }
 
-                        results.Add(mailingListSendResultItem);
+                        if (!user.IsUnsubscribed)
+                        {
+                            try
+                            {
+                                _promotionService.SendPromotionFromTemplateToUser(user.Id, emailTemplate, promotion,
+                                    true, TimeSpan.FromMinutes(1));
+                                mailingListSendResultItem.IsSuccess = true;
+                            }
+                            catch (Exception e)
+                            {
+                                My.Logger.Error(
+                                    $"MailerService => SendEmailTemplateToUsers => {e.GetFullErrorMessage()}");
+                                mailingListSendResultItem.ErrorMessage = e.GetFullErrorMessage();
+                            }
+
+                            results.Add(mailingListSendResultItem);
+                        }
+                        else
+                        {
+                            mailingListSendResultItem.IsSuccess = false;
+                            mailingListSendResultItem.ErrorMessage = Globalisation.Dictionary.UserIsUnsubscribed;
+                            results.Add(mailingListSendResultItem);
+                        }
                     }
                 }
                 else
@@ -97,24 +109,36 @@ namespace K9.WebApplication.Services
                             RecipientName = user.FullName
                         };
 
-                        try
+                        if (!user.IsUnsubscribed)
                         {
-                            var parsedTemplate = _emailTemplateService.Parse(
-                                emailTemplate.Id,
-                                user.FirstName,
-                                My.UrlHelper.AbsoluteAction("UnsubscribeUser", "UsersController", new { externalId = user.Name }), null);
+                            try
+                            {
+                                var parsedTemplate = _emailTemplateService.Parse(
+                                    emailTemplate.Id,
+                                    user.FirstName,
+                                    My.UrlHelper.AbsoluteAction("UnsubscribeUser", "UsersController",
+                                        new { externalId = user.Name }), null);
 
-                            _emailQueueService.AddEmailToQueueForUser(emailTemplate.Id, user.Id, emailTemplate.Subject, parsedTemplate, EEmailType.General, TimeSpan.FromMinutes(1));
+                                _emailQueueService.AddEmailToQueueForUser(emailTemplate.Id, user.Id,
+                                    emailTemplate.Subject, parsedTemplate, EEmailType.General, TimeSpan.FromMinutes(1));
 
-                            mailingListSendResultItem.IsSuccess = true;
+                                mailingListSendResultItem.IsSuccess = true;
+                            }
+                            catch (Exception e)
+                            {
+                                mailingListSendResultItem.ErrorMessage = e.GetFullErrorMessage();
+                                My.Logger.Error(
+                                    $"MailerService => SendEmailTemplateToUsers => {e.GetFullErrorMessage()}");
+                            }
+
+                            results.Add(mailingListSendResultItem);
                         }
-                        catch (Exception e)
+                        else
                         {
-                            mailingListSendResultItem.ErrorMessage = e.GetFullErrorMessage();
-                            My.Logger.Error($"MailerService => SendEmailTemplateToUsers => {e.GetFullErrorMessage()}");
+                            mailingListSendResultItem.IsSuccess = false;
+                            mailingListSendResultItem.ErrorMessage = Globalisation.Dictionary.UserIsUnsubscribed;
+                            results.Add(mailingListSendResultItem);
                         }
-
-                        results.Add(mailingListSendResultItem);
                     }
                 }
             }
@@ -136,6 +160,11 @@ namespace K9.WebApplication.Services
                 {
                     My.Logger.Error($"MailerService => SendEmailTemplateToUser => Email Template {id} not found");
                     throw new NotFoundException();
+                }
+
+                if (user.IsUnsubscribed && !isTest)
+                {
+                    throw new Exception(Globalisation.Dictionary.UserIsUnsubscribed);
                 }
 
                 if (emailTemplate.PromotionId.HasValue)

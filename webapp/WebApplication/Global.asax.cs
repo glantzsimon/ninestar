@@ -1,13 +1,14 @@
 ﻿using K9.WebApplication.Helpers;
+using StackExchange.Profiling;
 using System;
 using System.Configuration;
 using System.Diagnostics;
+using System.Linq;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using StackExchange.Profiling;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication
@@ -101,15 +102,18 @@ namespace K9.WebApplication
             {
                 context.Response.AddOnSendingHeaders(ctx =>
                 {
-                    foreach (string key in ctx.Response.Headers.Keys)
+                    var headerKeys = ctx.Response.Headers.AllKeys.ToList();
+
+                    foreach (string key in headerKeys)
                     {
                         if (key.Equals("Set-Cookie", StringComparison.OrdinalIgnoreCase))
                         {
                             string cookieHeader = ctx.Response.Headers[key];
-                            // Ensure SameSite=None and Secure for cross-site cookies
+
                             if (!cookieHeader.Contains("SameSite"))
                             {
-                                ctx.Response.Headers[key] = cookieHeader + "; SameSite=None; Secure";
+                                ctx.Response.Headers.Remove(key);
+                                ctx.Response.Headers.Add(key, cookieHeader + "; SameSite=None; Secure");
                             }
                         }
                     }

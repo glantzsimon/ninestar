@@ -3268,18 +3268,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4 class=&quot;bold&quot; style=&quot;font-size: 1.3em;&quot;&gt;
+        ///   Looks up a localized string similar to &lt;h4 class=&quot;margin-bottom-10&quot;&gt;
         ///    {BiorhythmName}
         ///&lt;/h4&gt;
         ///&lt;div&gt;
-        ///    &lt;h4&gt;
+        ///    &lt;h5 class=&quot;margin-0&quot;&gt;
         ///        &lt;strong&gt;{BiorhythmLevel}&lt;/strong&gt; -
         ///        &lt;strong&gt;{BiorhythmTrend} {BiorhythmTrendHtml}&lt;/strong&gt;
-        ///    &lt;/h4&gt;
-        ///    &lt;h4 class=&quot;{AverageClass}&quot;&gt;
+        ///    &lt;/h5&gt;
+        ///    &lt;h5 class=&quot;margin-0 {AverageClass}&quot;&gt;
         ///        &lt;span&gt;Maximum in {BiorhythmNextMax} days.&lt;/span&gt;
         ///        &lt;span&gt;Minimum in {BiorhythmNextMin} days.&lt;/span&gt;
-        ///    &lt;/h4&gt;
+        ///    &lt;/h5&gt;
         ///&lt;/div&gt;
         ///&lt;p&gt;
         ///    {BiorhythmSummary}
@@ -15693,6 +15693,15 @@ namespace K9.Globalisation {
         public static string UserData {
             get {
                 return ResourceManager.GetString("UserData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Is Unsubscribed.
+        /// </summary>
+        public static string UserIsUnsubscribed {
+            get {
+                return ResourceManager.GetString("UserIsUnsubscribed", resourceCulture);
             }
         }
         

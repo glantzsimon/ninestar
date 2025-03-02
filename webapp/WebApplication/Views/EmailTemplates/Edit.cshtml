@@ -13,8 +13,8 @@
         @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Update, EButtonType.Submit, "fa-save")
         @Html.BootstrapBackToListButton()
         
-        @Html.BootstrapActionLinkButton(Dictionary.SendToMailingList, "send-to-mailinglist", "", new { id = Model.Id })
-        @Html.BootstrapActionLinkButton(Dictionary.SendToToUser, "send-to-use", "", new { id = Model.Id })
-        @Html.BootstrapActionLinkButton(Dictionary.Test, "test", "", new { id = Model.Id })
+        @Html.BootstrapActionLinkButton(Dictionary.SendToMailingList, "SendToMailingList", "EmailTemplates", new { id = Model.Id })
+        @Html.BootstrapActionLinkButton(Dictionary.SendToToUser, "SendToUser", "EmailTemplates", new { id = Model.Id })
+        @Html.BootstrapActionLinkButton(Dictionary.Test, "TestEmailTemplate", "EmailTemplates", new { id = Model.Id })
     }
 }

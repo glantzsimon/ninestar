@@ -23,7 +23,7 @@ namespace K9.WebApplication.Controllers
             _nineStarKiService = nineStarKiService;
         }
 
-        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.Server)]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
         [Route("free-calculator")]
         public ActionResult Index()
         {
@@ -31,7 +31,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [ChildActionOnly]
-        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None, VaryByHeader = "X-Requested-With")]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult _CalculatorForm(NineStarKiModel model)
         {
             return PartialView(model);
@@ -39,7 +39,6 @@ namespace K9.WebApplication.Controllers
 
         [Route("free-calculator")]
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Index(NineStarKiModel model)
         {
             if (ModelState.IsValid)
@@ -136,7 +135,7 @@ namespace K9.WebApplication.Controllers
             return View("Index", model);
         }
 
-        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", Location = OutputCacheLocation.ServerAndClient)]
         [Route("list/allenegies")]
         public ContentResult GetAllEnergies()
         {

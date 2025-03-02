@@ -1,6 +1,6 @@
 ﻿@model K9.WebApplication.Models.NineStarKiModel
 
-@using (Html.BeginForm("Index", "Predictions", new { t = DateTime.UtcNow.Ticks }, FormMethod.Post))
+@using (Html.BeginForm("Index", "Predictions", FormMethod.Post))
 {
     using (Html.BeginBootstrapForm())
     {

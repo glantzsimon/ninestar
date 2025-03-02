@@ -18,13 +18,13 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("free-hexagram-generator")]
-        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.Server)]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult Index()
         {
             return View();
         }
 
-        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None, VaryByHeader = "X-Requested-With")]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult _GenerateButtonForm()
         {
             return PartialView();
@@ -32,7 +32,6 @@ namespace K9.WebApplication.Controllers
 
         [Route("free-hexagram-generator")]
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Toss()
         {
             var model = new IChingViewModel(_ichingService.GenerateHexagram());

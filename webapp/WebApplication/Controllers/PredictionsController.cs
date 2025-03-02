@@ -21,7 +21,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("calculator")]
-        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.Server)]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult Index()
         {
             var dateOfBirth = new DateTime(DateTime.Now.Year - (27), DateTime.Now.Month, DateTime.Now.Day);
@@ -34,7 +34,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [ChildActionOnly]
-        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None, VaryByHeader = "X-Requested-With")]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult _CalculatorForm(NineStarKiModel model)
         {
             return PartialView(model);
@@ -42,7 +42,6 @@ namespace K9.WebApplication.Controllers
 
         [Route("calculator")]
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Index(NineStarKiModel model)
         {
             if (ModelState.IsValid)

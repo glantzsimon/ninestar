@@ -1597,6 +1597,10 @@
     <Content Include="Views\SystemSettings\Index.cshtml" />
     <Content Include="Views\Predictions\_CycleHeaderWithDescription.cshtml" />
     <Content Include="Views\Shared\_ClickOnATabBelow.cshtml" />
+    <Content Include="Views\Shared\ActionLinkButtons\WithForm\_BiorhythmsWithForm.cshtml" />
+    <Content Include="Views\Shared\ActionLinkButtons\WithForm\_NumerologyWithForm.cshtml" />
+    <Content Include="Views\Shared\ActionLinkButtons\WithForm\_PersonalProfileWithForm.cshtml" />
+    <Content Include="Views\Shared\ActionLinkButtons\WithForm\_PredictionsWithForm.cshtml" />
     <Content Include="Views\Shared\ActionLinkButtons\_BiorhythmsWithForm.cshtml" />
     <Content Include="Views\Shared\ActionLinkButtons\_NumerologyWithForm.cshtml" />
     <Content Include="Views\Shared\ActionLinkButtons\_PersonalProfileWithForm.cshtml" />

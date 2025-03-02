@@ -20,14 +20,14 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("calculator")]
-        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.Server)]
+        [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult Index()
         {
             return View();
         }
 
         [ChildActionOnly]
-        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None, VaryByHeader = "X-Requested-With")]
+        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult _CalculatorForm(CompatibilityModel model)
         {
             return PartialView(model);
@@ -35,7 +35,6 @@ namespace K9.WebApplication.Controllers
 
         [Route("calculator")]
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Index(CompatibilityModel model)
         {
             if (ModelState.IsValid)

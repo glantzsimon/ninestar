@@ -32,22 +32,12 @@ namespace K9.WebApplication.Controllers
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            //AddAntiForgeryTokenToViewBag(filterContext);
-
             base.OnActionExecuting(filterContext);
 
             SetBetaWarningSessionVariable();
             SetSessionRoles(Current.UserId);
             
             ViewBag.DeviceType = GetDeviceType();
-        }
-
-        private void AddAntiForgeryTokenToViewBag(ActionExecutingContext filterContext)
-        {
-            if (filterContext.HttpContext.Items["AntiForgeryToken"] != null)
-            {
-                ViewBag.AntiForgeryToken = filterContext.HttpContext.Items["AntiForgeryToken"].ToString();
-            }
         }
 
         public INineStarKiPackage My { get; }
@@ -165,21 +155,11 @@ namespace K9.WebApplication.Controllers
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            //AddAntiForgeryTokenToViewBag(filterContext);
-
             base.OnActionExecuting(filterContext);
             
             SetSessionRoles(Current.UserId);
         }
-
-        private void AddAntiForgeryTokenToViewBag(ActionExecutingContext filterContext)
-        {
-            if (filterContext.HttpContext.Items["AntiForgeryToken"] != null)
-            {
-                ViewBag.AntiForgeryToken = filterContext.HttpContext.Items["AntiForgeryToken"].ToString();
-            }
-        }
-
+        
         public void SetSessionRoles(int userId)
         {
             Helpers.SessionHelper.SetCurrentUserRoles(My.RolesRepository, My.UserRolesRepository, userId);

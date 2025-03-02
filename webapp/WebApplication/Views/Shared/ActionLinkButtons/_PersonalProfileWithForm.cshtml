@@ -1,12 +1,11 @@
 ﻿@model K9.WebApplication.Models.NineStarKiModel
-
 <div class="inline-form">
-    @using (Html.BeginForm("Index", "PersonalChart"))
+    @using (Html.BeginForm("Index", "PersonalChart", new { t = DateTime.UtcNow.Ticks }, FormMethod.Post))
     {
         @Html.AntiForgeryToken()
         @Html.HiddenFor(model => model.PersonModel.Name)
         @Html.HiddenFor(model => model.PersonModel.DateOfBirth)
-        @Html.HiddenFor(model => model.PersonModel.Gender)        
+        @Html.HiddenFor(model => model.PersonModel.Gender)
         @Html.HiddenFor(model => model.SelectedDate)
 
         @Html.BootstrapButton(Dictionary.PersonalProfileCalculator, EButtonType.Submit, "fa-yin-yang", EButtonClass.Large)

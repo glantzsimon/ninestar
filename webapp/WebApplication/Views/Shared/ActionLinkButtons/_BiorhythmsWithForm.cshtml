@@ -1,7 +1,6 @@
 ﻿@model K9.WebApplication.Models.NineStarKiModel
-
 <div class="inline-form">
-    @using (Html.BeginForm("Index", "Biorhythms"))
+    @using (Html.BeginForm("Index", "Biorhythms", new { t = DateTime.UtcNow.Ticks }, FormMethod.Post))
     {
         @Html.AntiForgeryToken()
         @Html.HiddenFor(model => model.PersonModel.Name)

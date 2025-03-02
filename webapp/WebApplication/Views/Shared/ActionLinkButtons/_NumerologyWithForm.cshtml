@@ -1,18 +1,15 @@
 ﻿@using K9.WebApplication.Models
 @model K9.WebApplication.Models.NineStarKiModel
-
 @{
-    var numerologyModel = new NumerologyModel(Model.PersonModel);
 }
-
 <div class="inline-form">
-    @using (Html.BeginForm("Index", "Numerology"))
+    @using (Html.BeginForm("Link", "Numerology", new { t = DateTime.UtcNow.Ticks }, FormMethod.Post))
     {
         @Html.AntiForgeryToken()
-        @Html.HiddenFor(model => numerologyModel.PersonModel.Name)
-        @Html.HiddenFor(model => numerologyModel.PersonModel.DateOfBirth)
-        @Html.HiddenFor(model => numerologyModel.PersonModel.Gender)
-        
+        @Html.HiddenFor(model => Model.PersonModel.Name)
+        @Html.HiddenFor(model => Model.PersonModel.DateOfBirth)
+        @Html.HiddenFor(model => Model.PersonModel.Gender)
+
         @Html.BootstrapButton(Dictionary.KarmicNumerologyCalculator, EButtonType.Submit, "fa-sort-numeric-up", EButtonClass.Large)
     }
 </div>

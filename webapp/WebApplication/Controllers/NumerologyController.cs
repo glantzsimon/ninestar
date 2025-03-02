@@ -36,6 +36,23 @@ namespace K9.WebApplication.Controllers
             return PartialView(model);
         }
 
+        [Route("calculator-l")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Link(NineStarKiModel model)
+        {
+            NumerologyModel nModel = null;
+            if (model.PersonModel != null)
+            {
+                nModel = _numerologyService.Calculate(new NumerologyModel(model.PersonModel));
+            }
+            else
+            {
+                nModel = new NumerologyModel(new PersonModel());
+            }
+            return View("Index", nModel);
+        }
+
         [Route("calculator")]
         [HttpPost]
         [ValidateAntiForgeryToken]

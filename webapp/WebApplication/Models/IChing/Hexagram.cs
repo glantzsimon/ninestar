@@ -1107,6 +1107,75 @@ namespace K9.WebApplication.Models
             }
         };
 
+        private static readonly int[] KingWenMapping = new int[64]
+        {
+            /* binary value: King Wen number */
+            /*  0 (000000) */ 2,
+            /*  1 (000001) */ 23,
+            /*  2 (000010) */ 8,
+            /*  3 (000011) */ 20,
+            /*  4 (000100) */ 16,
+            /*  5 (000101) */ 35,
+            /*  6 (000110) */ 45,
+            /*  7 (000111) */ 12,
+            /*  8 (001000) */ 15,
+            /*  9 (001001) */ 52,
+            /* 10 (001010) */ 39,
+            /* 11 (001011) */ 53,
+            /* 12 (001100) */ 62,
+            /* 13 (001101) */ 56,
+            /* 14 (001110) */ 31,
+            /* 15 (001111) */ 33,
+            /* 16 (010000) */ 7,
+            /* 17 (010001) */ 4,
+            /* 18 (010010) */ 29,
+            /* 19 (010011) */ 59,
+            /* 20 (010100) */ 40,
+            /* 21 (010101) */ 64,
+            /* 22 (010110) */ 47,
+            /* 23 (010111) */ 6,
+            /* 24 (011000) */ 46,
+            /* 25 (011001) */ 18,
+            /* 26 (011010) */ 48,
+            /* 27 (011011) */ 57,
+            /* 28 (011100) */ 32,
+            /* 29 (011101) */ 50,
+            /* 30 (011110) */ 28,
+            /* 31 (011111) */ 24,
+            /* 32 (100000) */ 9,
+            /* 33 (100001) */ 42,
+            /* 34 (100010) */ 3,
+            /* 35 (100011) */ 27,
+            /* 36 (100100) */ 26,
+            /* 37 (100101) */ 22,
+            /* 38 (100110) */ 63,
+            /* 39 (100111) */ 37,
+            /* 40 (101000) */ 55,
+            /* 41 (101001) */ 3,   // ← for Difficulty at the Beginning
+            /* 42 (101010) */ 49,
+            /* 43 (101011) */ 17,
+            /* 44 (101100) */ 36,
+            /* 45 (101101) */ 54,
+            /* 46 (101110) */ 38,
+            /* 47 (101111) */ 61,
+            /* 48 (110000) */ 5,
+            /* 49 (110001) */ 60,
+            /* 50 (110010) */ 51,
+            /* 51 (110011) */ 21,
+            /* 52 (110100) */ 44,
+            /* 53 (110101) */ 11,
+            /* 54 (110110) */ 13,
+            /* 55 (110111) */ 41,
+            /* 56 (111000) */ 25,
+            /* 57 (111001) */ 19,
+            /* 58 (111010) */ 14,
+            /* 59 (111011) */ 10,
+            /* 60 (111100) */ 34,
+            /* 61 (111101) */ 1,   // ← all yang: King Wen 1
+            /* 62 (111110) */ 42,
+            /* 63 (111111) */ 1    // Alternatively, you might want to swap 61 and 63 depending on your bit‐order
+        };
+
         private static ELineType[] ChangingLineTypes =>
             new ELineType[] { ELineType.ChangingYang, ELineType.ChangingYin }.ToArray();
 
@@ -1160,7 +1229,8 @@ namespace K9.WebApplication.Models
             var html = new StringBuilder();
             html.Append("<div class='hexagram-container'>");
 
-            for (int i = 5; i >= 0; i--)
+            // Iterate in natural top-to-bottom order.
+            for (int i = 0; i < 6; i++)
             {
                 html.Append($"<div class='{GetCssClass(Lines[i])}'></div>");
             }
@@ -1210,10 +1280,12 @@ namespace K9.WebApplication.Models
             int binaryValue = 0;
             for (int i = 0; i < 6; i++)
             {
-                bool isYang = eLines[5 - i] == ELineType.Yang || eLines[5 - i] == ELineType.ChangingYang;
-                binaryValue = (binaryValue << 1) | (isYang ? 1 : 0);
+                bool isYang = eLines[i] == ELineType.Yang || eLines[i] == ELineType.ChangingYang;
+                binaryValue |= (isYang ? 1 : 0) << i;
             }
-            return binaryValue + 1;
+
+            // Instead of "binaryValue + 1", use a lookup table:
+            return KingWenMapping[binaryValue];
         }
 
         private static string GetHexagramDiagram(ELineType[] eLines)

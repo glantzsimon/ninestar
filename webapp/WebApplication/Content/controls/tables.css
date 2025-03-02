@@ -5,6 +5,9 @@
 .datatable-container div {
   margin: 0;
 }
+.button-container {
+  margin-bottom: 9px;
+}
 .bootstraptable {
   border-top-left-radius: 9px !important;
   border-top-right-radius: 9px !important;
@@ -62,6 +65,28 @@ form .pull-right .btn {
   white-space: normal !important;
   word-wrap: break-word !important;
   word-break: break-word !important;
+}
+/* Style the search input */
+/* Style the search input */
+.form-control.input-sm[type="search"] {
+  border-radius: 25px;
+  /* Makes it round */
+  padding: 10px 40px 10px 15px;
+  /* Add space for the icon */
+  border: 1px solid #ccc;
+  transition: all 0.3s ease-in-out;
+  font-size: 14px;
+  /* Beautiful magnifying glass icon */
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>') no-repeat;
+  background-size: 20px;
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+}
+.form-control.input-sm[type="search"]:focus {
+  border-color: #007bff;
+  /* Highlight on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
 }
 .datatable-container .col-lg-1,
 .datatable-container .col-lg-10,

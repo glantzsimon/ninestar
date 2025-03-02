@@ -268,6 +268,8 @@ namespace K9.WebApplication.Services
         {
             _mailer.SendEmail(email.Subject, email.Body, email.RecipientEmailAddress, email.RecipientName,
                 _smtpConfig.SmtpFromEmailAddress, _smtpConfig.SmtpFromDisplayName);
+
+            MarkEmailAsProcessed(email, "Success");
         }
 
     }

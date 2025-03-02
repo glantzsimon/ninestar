@@ -155,7 +155,7 @@ namespace K9.WebApplication.Models
         [UIHint("Organs")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WeakYangOrgans)]
         public EOrgan[] WeakYangOrgans => MainEnergy != null ? MainEnergy.MetaData?.WeakYangOrgans : null;
-        
+
         public List<Tuple<int, NineStarKiEnergy>> GetYearlyPlanner()
         {
             return GetOrAddToCache($"YearlyPlanner_{DateTime.Today.Year}", () =>

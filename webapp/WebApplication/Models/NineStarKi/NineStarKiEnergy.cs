@@ -383,6 +383,8 @@ namespace K9.WebApplication.Models
         public string CycleDescriptiveName => CycleMetaData.DescriptiveTitle;
 
         private NineStarKiEnumMetaDataAttribute _metaData;
+        
+        [ScriptIgnore]
         public NineStarKiEnumMetaDataAttribute MetaData 
         {
             get 

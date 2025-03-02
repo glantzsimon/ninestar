@@ -27,6 +27,7 @@ namespace K9.WebApplication.Models
 
         public DateTime? SelectedDate { get; }
 
+        [ScriptIgnore]
         public PersonModel PersonModel { get; }
         
         [ScriptIgnore]

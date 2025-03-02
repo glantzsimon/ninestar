@@ -10,8 +10,17 @@
 }
 
 .bootstraptable {
+    border-top-left-radius: 9px !important;
+    border-top-right-radius: 9px !important;
+    background-color: #f0f8ff; // AliceBlue
+    background: linear-gradient(to bottom, #f7fbff 0%, #f0f8ff 100%);
+
     .btn, form .btn {
         margin-right: 6px;
+    }
+
+    thead {
+        color: #333;
     }
 
     tbody tr:hover {
@@ -42,27 +51,28 @@ form .pull-right .btn {
 .table-responsive {
     margin-left: 0;
     margin-right: 0;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 9px !important;
+    border-top-right-radius: 9px !important;
+    background-color: #f0f8ff; // AliceBlue
+    background: linear-gradient(to bottom, #f7fbff 0%, #f0f8ff 100%);
     border: 1px solid @border-grey;
-
-    thead {
-        background-color: @whisper-white;
-
-        th {
-            padding-top: 12px !important;
-            padding-bottom: 12px !important;
-        }
-    }
 
     table {
         margin-bottom: 0 !important;
+
+        thead {            
+
+            th {
+                padding-top: 12px !important;
+                padding-bottom: 12px !important;
+            }
+        }
     }
 
     &.table-left-nowrap {
         table {
             th:first-child, td:first-child {
-                white-space: nowrap !important;                
+                white-space: nowrap !important;
             }
 
             th:not(:first-child), td:not(:first-child) {

@@ -109,9 +109,19 @@ namespace K9.WebApplication.Models
         public NineStarKiEnergy YearlyCycleEnergy { get; }
 
         /// <summary>
+        /// Where Core Earth is for this year - important for directionality
+        /// </summary>
+        public NineStarKiEnergy YearlyCycleCoreEarthEnergy { get; set; }
+
+        /// <summary>
         /// Determines the 9 Star Ki energy of the current month
         /// </summary>
         public NineStarKiEnergy MonthlyCycleEnergy { get; }
+
+        /// <summary>
+        /// Where Core Earth is for this month - important for directionality
+        /// </summary>
+        public NineStarKiEnergy MonthlyCycleCoreEarthEnergy { get; set; }
 
         [ScriptIgnore]
         public ESexualityRelationType SexualityRelationType => GetSexualityRelationType();
@@ -396,6 +406,7 @@ namespace K9.WebApplication.Models
         private NineStarKiEnergy GetYearlyCycleEnergy()
         {
             var todayYearEnergy = (int)GetMainEnergy(SelectedDate ?? DateTime.Today, EGender.Male).Energy;
+            /// Get the male energy for this calculation
             var personalYearEnergy = PersonModel.Gender.IsYin() ? InvertEnergy(MainEnergy.EnergyNumber) : MainEnergy.EnergyNumber;
             var offset = todayYearEnergy - personalYearEnergy;
             var lifeCycleYearEnergy = LoopEnergyNumber(5 - offset);

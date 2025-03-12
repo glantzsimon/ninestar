@@ -35,6 +35,11 @@ namespace K9.WebApplication.Services
             return GetOrAddToCache(cacheKey, () =>
             {
                 var model = new NineStarKiModel(personModel, today);
+                var coreEarthModel = new NineStarKiModel(new PersonModel
+                {
+                    DateOfBirth = personModel.Gender == EGender.Male ? new DateTime(1977, 2, 4) : new DateTime(1981, 2, 4),
+                    Gender = personModel.Gender
+                }, today);
 
                 model.MainEnergy.EnergyDescription = GetMainEnergyDescription(model.MainEnergy.Energy);
                 model.CharacterEnergy.EnergyDescription = GetCharacterEnergyDescription(model.CharacterEnergy.Energy);
@@ -44,7 +49,9 @@ namespace K9.WebApplication.Services
                 model.PersonalDevelopemnt = GetPersonalDevelopemnt(model.MainEnergy.Energy);
                 model.Summary = GetSummary(model);
                 model.Overview = GetOverview(model.MainEnergy.Energy);
-
+                model.YearlyCycleCoreEarthEnergy = coreEarthModel.YearlyCycleEnergy;
+                model.MonthlyCycleCoreEarthEnergy = coreEarthModel.MonthlyCycleEnergy;
+                
                 if (isCompatibility)
                 {
                     model.IsShowSummary = false;

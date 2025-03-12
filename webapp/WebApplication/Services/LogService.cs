@@ -25,7 +25,8 @@ namespace K9.WebApplication.Services
             "ProcessQueue => Sending 0 emails",
             "Aggregating records in",
             "recurring job(s) processed by scheduler",
-            "Hangfire"
+            "Hangfire",
+            "ProcessQueue => Sending"
         };
 
         // Compiled regex to normalize multiple spaces into one.

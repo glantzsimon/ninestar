@@ -173,24 +173,32 @@ namespace K9.WebApplication.Models
 
     public enum ENineStarKiDirection
     {
-        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Unspecified)]
-        Centre,
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.North)]
-        North,
-        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.NorthWest)]
-        NorthWest,
-        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.West)]
-        West,
+        North = 1,
+
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.SouthWest)]
         SouthWest,
-        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.South)]
-        South,
-        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.SouthEast)]
-        SouthEast,
+
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.East)]
         East,
+
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.SouthEast)]
+        SouthEast,
+
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Unspecified)]
+        Centre,
+
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.NorthWest)]
+        NorthWest,
+
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.West)]
+        West,
+
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.NorthEast)]
-        NorthEast
+        NorthEast,
+
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.South)]
+        South
     }
 
     public enum ENineStarKiYinYang
@@ -232,7 +240,7 @@ namespace K9.WebApplication.Models
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.YearlyCycleEnergy)]
         YearlyCycleEnergy,
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.MonthlyCycleEnergy)]
-        MonthlyCycleEnergy,
+        MonthlyCycleEnergy
     }
 
     public enum ENineStarKiEnergy
@@ -328,9 +336,12 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ModalityDescriptionLabel)]
         public string ModalityDescription => MetaData.ModalityDescription;
 
-        public string Direction => MetaData.GetDirection();
+        public ENineStarKiDirection Direction => MetaData.Direction;
+        public string DirectionName => MetaData.GetDirection();
+        
         public string Season => CycleMetaData.Season;
         public string SeasonDescription => CycleMetaData.SeasonDescription;
+        
         public string CycleDescription => EnergyType == ENineStarKiEnergyType.MainEnergy ? CycleMetaData.YearlyDescription : CycleMetaData.MonthlyDescription;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TrigramLabel)]

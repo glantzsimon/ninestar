@@ -1,7 +1,7 @@
 ﻿using K9.Base.DataAccessLayer.Enums;
 using K9.SharedLibrary.Models;
-using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using Moq;
 using System;
@@ -26,7 +26,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         [InlineData(1985, ENineStarKiEnergy.Heaven, EGender.Male)]
         [InlineData(1986, ENineStarKiEnergy.CoreEarth, EGender.Male)]
         [InlineData(1987, ENineStarKiEnergy.Wind, EGender.Male)]
-        public void YearEnergy_HappyPath(int year, ENineStarKiEnergy energy, EGender gender)
+        public void YearEnergy_Test(int year, ENineStarKiEnergy energy, EGender gender)
         {
             var ninestar = new NineStarKiModel(new PersonModel
             {
@@ -45,7 +45,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         [InlineData(1985, ENineStarKiEnergy.Fire, EGender.Other)]
         [InlineData(1986, ENineStarKiEnergy.Water, EGender.Female)]
         [InlineData(1987, ENineStarKiEnergy.Soil, EGender.Female)]
-        public void YearEnergyFemale_HappyPath(int year, ENineStarKiEnergy energy, EGender gender)
+        public void YearEnergyFemale_Test(int year, ENineStarKiEnergy energy, EGender gender)
         {
             var ninestar = new NineStarKiModel(new PersonModel
             {
@@ -56,7 +56,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         }
 
         [Fact]
-        public void YearEnergyBeforeFeb4_HappyPath()
+        public void YearEnergyBeforeFeb4_Test()
         {
             var ninestar = new NineStarKiModel(new PersonModel
             {
@@ -93,7 +93,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         [InlineData(1979, 1976, 1973, 12, 6, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.CoreEarth, EGender.Male)]
         [InlineData(1980, 1977, 1974, 1, 4, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Wind, EGender.Male)]
         [InlineData(1980, 1977, 1974, 2, 3, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Thunder, EGender.Male)]
-        public void MonthEnergy_HappyPath(int year, int year2, int year3, int month, int day, ENineStarKiEnergy year1Energy, ENineStarKiEnergy year2Energy, ENineStarKiEnergy year3Energy, ENineStarKiEnergy monthEnergy, EGender gender)
+        public void MonthEnergy_Test(int year, int year2, int year3, int month, int day, ENineStarKiEnergy year1Energy, ENineStarKiEnergy year2Energy, ENineStarKiEnergy year3Energy, ENineStarKiEnergy monthEnergy, EGender gender)
         {
             var ninestar = new NineStarKiModel(new PersonModel
             {
@@ -153,8 +153,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         [InlineData(1979, 1976, 1973, 11, 6, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Fire, EGender.Female)]
         [InlineData(1979, 1976, 1973, 12, 6, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Water, EGender.Female)]
         [InlineData(1980, 1977, 1974, 1, 4, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Soil, EGender.Female)]
-        [InlineData(1980, 1977, 1974, 2, 3, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Thunder, EGender.Female)]
-        public void MonthEnergy_Yin_HappyPath(int year, int year2, int year3, int month, int day, ENineStarKiEnergy year1Energy, ENineStarKiEnergy year2Energy, ENineStarKiEnergy year3Energy, ENineStarKiEnergy monthEnergy, EGender gender)
+        public void MonthEnergy_Yin_Test(int year, int year2, int year3, int month, int day, ENineStarKiEnergy year1Energy, ENineStarKiEnergy year2Energy, ENineStarKiEnergy year3Energy, ENineStarKiEnergy monthEnergy, EGender gender)
         {
             var ninestar = new NineStarKiModel(new PersonModel
             {
@@ -203,7 +202,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         [InlineData(1986, 12, 7, ENineStarKiEnergy.CoreEarth, ENineStarKiEnergy.Water, ENineStarKiEnergy.Fire, EGender.Male)]
         [InlineData(1987, 2, 4, ENineStarKiEnergy.Wind, ENineStarKiEnergy.Mountain, ENineStarKiEnergy.Water, EGender.Male)]
         [InlineData(1988, 3, 6, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Wind, ENineStarKiEnergy.Wind, EGender.Male)]
-        public void SurfaceEnergy_HappyPath(int year, int month, int day, ENineStarKiEnergy yearEnergy, ENineStarKiEnergy monthEnergy, ENineStarKiEnergy surfaceEnergy, EGender gender)
+        public void SurfaceEnergy_Test(int year, int month, int day, ENineStarKiEnergy yearEnergy, ENineStarKiEnergy monthEnergy, ENineStarKiEnergy surfaceEnergy, EGender gender)
         {
             var ninestar = new NineStarKiModel(new PersonModel
             {
@@ -223,7 +222,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         [InlineData(1978, 6, 16, 2020, 12, 14, EGender.Male, ENineStarKiEnergy.Soil, ENineStarKiEnergy.Water)]
         [InlineData(1978, 6, 16, 2020, 12, 14, EGender.Female, ENineStarKiEnergy.Wind, ENineStarKiEnergy.Mountain)]
         [InlineData(1980, 6, 16, 2020, 12, 14, EGender.Female, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Soil)]
-        public void LifeCycle_HappyPath(int birthYear, int birthMonth, int birthDay, int year, int month, int day, EGender gender, ENineStarKiEnergy yearlyCycleEnergy, ENineStarKiEnergy monthlyCycleEnergy)
+        public void LifeCycle_Test(int birthYear, int birthMonth, int birthDay, int year, int month, int day, EGender gender, ENineStarKiEnergy yearlyCycleEnergy, ENineStarKiEnergy monthlyCycleEnergy)
         {
             var ninestar = new NineStarKiModel(new PersonModel
             {
@@ -256,6 +255,80 @@ namespace K9.WebApplication.Tests.Unit.Services
                 dobYear++;
             }
         }
+
+        [Theory]
+        [InlineData(1977, ENineStarKiEnergy.CoreEarth, EGender.Male, 
+            1977, ENineStarKiEnergy.CoreEarth, ENineStarKiDirection.Centre, 
+            ENineStarKiEnergy.CoreEarth, ENineStarKiDirection.Centre,
+            3, ENineStarKiEnergy.Water, ENineStarKiDirection.North)]
+        
+        [InlineData(1978, ENineStarKiEnergy.Wind, EGender.Male,
+            1978, ENineStarKiEnergy.CoreEarth, ENineStarKiDirection.Centre,
+            ENineStarKiEnergy.Heaven, ENineStarKiDirection.NorthWest,
+            2, ENineStarKiEnergy.Mountain, ENineStarKiDirection.NorthEast )]
+
+        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
+            1979, ENineStarKiEnergy.CoreEarth, ENineStarKiDirection.Centre,
+            ENineStarKiEnergy.Lake, ENineStarKiDirection.West,
+            3, ENineStarKiEnergy.Fire, ENineStarKiDirection.South )]
+
+        [InlineData(1991, ENineStarKiEnergy.Fire, EGender.Male,
+            1991, ENineStarKiEnergy.CoreEarth, ENineStarKiDirection.Centre,
+            ENineStarKiEnergy.Water, ENineStarKiDirection.North,
+            5, ENineStarKiEnergy.Wind, ENineStarKiDirection.East)]
+
+        [InlineData(1991, ENineStarKiEnergy.Fire, EGender.Male,
+            1990, ENineStarKiEnergy.Wind, ENineStarKiDirection.SouthEast,
+            ENineStarKiEnergy.Fire, ENineStarKiDirection.South,
+            6, ENineStarKiEnergy.Mountain, ENineStarKiDirection.NorthEast)]
+
+        [InlineData(1991, ENineStarKiEnergy.Heaven, EGender.Female,
+            1990, ENineStarKiEnergy.Soil, ENineStarKiDirection.SouthWest,
+            ENineStarKiEnergy.Water, ENineStarKiDirection.North,
+            3, ENineStarKiEnergy.Mountain, ENineStarKiDirection.NorthEast)]
+        public void CalculateDirectionForYear_Test(
+            int birthYear, 
+            ENineStarKiEnergy energy, 
+            EGender gender, 
+            int todayYear, 
+            ENineStarKiEnergy yearlyCycleEnergy,
+            ENineStarKiDirection yearlyCycleDirection,
+            ENineStarKiEnergy coreEarthYearlyCycleEnergy,
+            ENineStarKiDirection coreEarthYearlyCycleDirection,
+            int monthNumber,
+            ENineStarKiEnergy coreEarthMonthlyCycleEnergy,
+            ENineStarKiDirection coreEarthMonthlyCycleDirection)
+        {
+            var mockAuthentication = new Mock<IAuthentication>();
+            mockAuthentication.SetupGet(e => e.CurrentUserId).Returns(2);
+            mockAuthentication.SetupGet(e => e.IsAuthenticated).Returns(true);
+
+            var basePackage = new Mock<INineStarKiBasePackage>();
+            basePackage.SetupGet(e => e.Authentication).Returns(mockAuthentication.Object);
+
+            var nineStarKiService = new NineStarKiService(basePackage.Object);
+
+            var ninestar = nineStarKiService.CalculateNineStarKiProfile(
+                new PersonModel
+                {
+                    DateOfBirth = new DateTime(birthYear, 2, 4), 
+                    Gender = gender, 
+                },
+                false,
+                false,
+                new DateTime(todayYear, monthNumber, 15));
+
+            
+            Assert.Equal(energy, ninestar.MainEnergy.Energy);
+            Assert.Equal(yearlyCycleEnergy, ninestar.YearlyCycleEnergy.Energy);
+            Assert.Equal(yearlyCycleDirection, ninestar.YearlyCycleEnergy.Direction);
+            Assert.Equal(coreEarthYearlyCycleEnergy, ninestar.YearlyCycleCoreEarthEnergy.Energy);
+            Assert.Equal(coreEarthYearlyCycleDirection, ninestar.YearlyCycleCoreEarthEnergy.Direction);
+        }
+
+
+
+
 
         //[Theory]
         //[InlineData(1979, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyHigh)]

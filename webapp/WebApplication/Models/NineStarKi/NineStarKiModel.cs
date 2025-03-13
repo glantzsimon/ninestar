@@ -118,6 +118,9 @@ namespace K9.WebApplication.Models
         /// </summary>
         public NineStarKiEnergy MonthlyCycleEnergy { get; }
 
+        public NineStarKiDirections YearlyDirections { get; set; }
+        public NineStarKiDirections MonthlyDirections { get; set; }
+        
         /// <summary>
         /// Where Core Earth is for this month - important for directionality
         /// </summary>
@@ -209,6 +212,32 @@ namespace K9.WebApplication.Models
             }, TimeSpan.FromDays(30));
         }
 
+        public static int LoopEnergyNumber(int energyNumber) => (energyNumber + 8) % 9 + 1;
+
+        public NineStarKiDates GetMonthlyPeriod(DateTime date, EGender gender)
+        {
+            var month = GetMonth(date);
+            var yearlyEnergy = GetMainEnergy(date, gender);
+            var energyNumber = GetEnergyNumberFromYearlyEnergy(yearlyEnergy.Energy, month);
+            var monthlyEnergy = ProcessEnergy(energyNumber, gender, ENineStarKiEnergyType.CharacterEnergy);
+
+            var startDate = new DateTime(date.Year, month, GetMonthStartDay(month));
+            var nextMonthDate = startDate.AddMonths(1);
+            nextMonthDate = new DateTime(nextMonthDate.Year, nextMonthDate.Month, 15);
+
+            var nextMonth = GetMonth(nextMonthDate);
+            var nextMonthStartDay = GetMonthStartDay(nextMonth);
+            var endDate = new DateTime(nextMonthDate.Year, nextMonthDate.Month, nextMonthStartDay - 1);
+
+            return new NineStarKiDates
+            {
+                YearlyEnergy = yearlyEnergy.Energy,
+                MonthlyEnergy = monthlyEnergy.Energy,
+                MonthlyPeriodStartsOn = startDate,
+                MonthlyPeriodEndsOn = endDate
+            };
+        }
+
         private NineStarKiEnergy GetMainEnergy(DateTime date, EGender gender)
         {
             var month = date.Month;
@@ -293,30 +322,6 @@ namespace K9.WebApplication.Models
             }
 
             throw new ArgumentOutOfRangeException();
-        }
-
-        public NineStarKiDates GetMonthlyPeriod(DateTime date, EGender gender)
-        {
-            var month = GetMonth(date);
-            var yearlyEnergy = GetMainEnergy(date, gender);
-            var energyNumber = GetEnergyNumberFromYearlyEnergy(yearlyEnergy.Energy, month);
-            var monthlyEnergy = ProcessEnergy(energyNumber, gender, ENineStarKiEnergyType.CharacterEnergy);
-
-            var startDate = new DateTime(date.Year, month, GetMonthStartDay(month));
-            var nextMonthDate = startDate.AddMonths(1);
-            nextMonthDate = new DateTime(nextMonthDate.Year, nextMonthDate.Month, 15);
-
-            var nextMonth = GetMonth(nextMonthDate);
-            var nextMonthStartDay = GetMonthStartDay(nextMonth);
-            var endDate = new DateTime(nextMonthDate.Year, nextMonthDate.Month, nextMonthStartDay - 1);
-
-            return new NineStarKiDates
-            {
-                YearlyEnergy = yearlyEnergy.Energy,
-                MonthlyEnergy = monthlyEnergy.Energy,
-                MonthlyPeriodStartsOn = startDate,
-                MonthlyPeriodEndsOn = endDate
-            };
         }
 
         private int GetEnergyNumberFromYearlyEnergy(ENineStarKiEnergy yearlyEnergy, int month)
@@ -443,11 +448,9 @@ namespace K9.WebApplication.Models
             { 6, 9 }, { 7, 8 }, { 8, 7 }, { 9, 6 }
         };
 
-        private static int LoopEnergyNumber(int energyNumber) => (energyNumber + 8) % 9 + 1;
-
         private int InvertEnergy(int energyNumber) =>
             _invertedEnergies.TryGetValue(energyNumber, out var inverted) ? inverted : energyNumber;
-
+        
         private static readonly Dictionary<bool, Dictionary<(ENineStarKiYinYang, ENineStarKiYinYang), ESexualityRelationType>> _sexualityRelations
             = new Dictionary<bool, Dictionary<(ENineStarKiYinYang, ENineStarKiYinYang), ESexualityRelationType>>
             {

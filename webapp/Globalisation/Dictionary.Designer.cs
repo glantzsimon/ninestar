@@ -2582,11 +2582,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Abundance&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Abundance represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Abundance encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situa [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Abundance symbolizes great prosperity, success, and a peak moment of fulfillment. It represents a time when one&apos;s efforts are rewarded with significant gains.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises making the most of favorable conditions. However, one must also prepare for eventual changes, as abundance is often temporary.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Abundance teaches that true wealth comes from appreciation and wise stewardship. By using prosperity wisely, one ensures continued growth and stab [rest of string was truncated]&quot;;.
         /// </summary>
         public static string abundance_details {
             get {
@@ -2745,11 +2743,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;After Completion&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    After Completion represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of After Completion encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a remi [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;After Completion represents a moment of fulfillment, where a cycle has been completed successfully. However, it also warns that maintaining stability requires continued effort.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises staying vigilant even after achieving success. Complacency can lead to decline, while mindful action ensures lasting achievements.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, After Completion teaches that life is a continuous journey. Every ending leads to a new beginning, and awareness ensu [rest of string was truncated]&quot;;.
         /// </summary>
         public static string after_completion_details {
             get {
@@ -2932,12 +2928,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Approach&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Approach represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Approach encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situatio [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Lin (Approach)&lt;/h5&gt;
+        ///&lt;p&gt;Lin signifies progress, expansion, and the approach of positive change. It represents a time when new opportunities arise, and one&apos;s efforts begin to bear fruit. The future holds promise.&lt;/p&gt;
+        ///&lt;p&gt;Success is close at hand, but this hexagram advises maintaining awareness and responsibility. Good fortune should not lead to complacency but should be met with careful planning and continued effort.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Lin reminds one to welcome change with an open heart. Growth  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string approach_details {
             get {
@@ -3188,11 +3182,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Before Completion&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Before Completion represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Before Completion encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a r [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Before Completion symbolizes transition, anticipation, and the final steps before achieving a goal. It represents a time when one must remain focused and patient.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises caution and perseverance. The final stretch of any journey is often the most challenging, requiring steady effort and precision.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Before Completion teaches that true mastery is in the details. By finishing what has been started with care and intention, one ensur [rest of string was truncated]&quot;;.
         /// </summary>
         public static string before_completion_details {
             get {
@@ -3358,11 +3350,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Biting Through&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Biting Through represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Biting Through encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder t [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Biting Through represents the power of decisive action and the need for justice. It signifies a time when obstacles must be broken down, and truth must prevail. Like a strong bite cutting through tough material, firm resolution is required to move forward.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises confronting problems directly and ensuring that fairness is upheld. Avoidance or indecision will only prolong difficulties. When justice is served, clarity and progress follow.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string biting_through_details {
             get {
@@ -3550,11 +3540,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Breakthrough&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Breakthrough represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Breakthrough encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that ev [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Breakthrough signifies decisive action, overcoming obstacles, and making bold moves to create change. It represents a time when barriers must be broken down to allow new possibilities to emerge.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises confidence and determination. Hesitation will only prolong stagnation, whereas firm and focused action leads to success.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Breakthrough teaches that real transformation requires courage. By embracing change and taking decisive steps, on [rest of string was truncated]&quot;;.
         /// </summary>
         public static string breakthrough_details {
             get {
@@ -3977,11 +3965,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Coming to Meet&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Coming to Meet represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Coming to Meet encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder t [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Coming to Meet represents encounters, unexpected meetings, and the arrival of influential forces in one&apos;s life. It signifies a time when opportunities or challenges arise through external interactions.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises being aware of the nature of what is approaching. Whether positive or negative, encounters should be handled with discernment and readiness.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Coming to Meet teaches that every meeting holds a purpose. By staying open yet cauti [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coming_to_meet_details {
             get {
@@ -4262,12 +4248,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Conflict&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Conflict represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Conflict encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situatio [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Song (Conflict)&lt;/h5&gt;
+        ///&lt;p&gt;Song signifies tension, disagreement, and struggle. It represents situations where conflicts arise, whether in personal relationships, business, or inner struggles. Conflict is a natural part of life, but how one navigates it determines whether it leads to growth or destruction.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises against engaging in unnecessary disputes. While standing firm in one’s beliefs is important, some conflicts are best resolved through diplomacy and understanding. Recognizin [rest of string was truncated]&quot;;.
         /// </summary>
         public static string conflict_details {
             get {
@@ -4482,12 +4465,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Contemplation&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Contemplation represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Contemplation encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Guan (Contemplation)&lt;/h5&gt;
+        ///&lt;p&gt;Guan symbolizes observation, reflection, and gaining a deeper understanding of the world. It represents a time to step back and assess the situation with wisdom rather than immediate action.&lt;/p&gt;
+        ///&lt;p&gt;Careful contemplation leads to better decisions. This hexagram advises looking beyond surface appearances and seeking insight before proceeding. True leadership comes from seeing the whole picture.&lt;/p&gt;
+        ///&lt;p&gt;On a spiritual level, Guan speaks of inner clarity. The more one cultivat [rest of string was truncated]&quot;;.
         /// </summary>
         public static string contemplation_details {
             get {
@@ -5103,11 +5084,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Darkening of the Light&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Darkening of the Light represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Darkening of the Light encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagra [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Darkening of the Light signifies a time of difficulty, where truth and clarity are obscured. It represents situations where darkness prevails, requiring patience and inner strength to endure.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises caution and restraint. Rather than fighting against the darkness, one should conserve energy and wait for the right moment to act. Wisdom lies in knowing when to retreat and when to advance.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Darkening of the Light teaches that  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string darkening_of_the_light_details {
             get {
@@ -5143,6 +5122,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dark Sword Killing (&quot;An Ken Satsu&quot;).
+        /// </summary>
+        public static string DarkSwordKilling {
+            get {
+                return ResourceManager.GetString("DarkSwordKilling", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This is more subtle than &quot;Go O Satsu&quot;. Travelling in this direction tends to bring unexpected kinds of misfortune, hence the image of a sword coming at you in the darkness..
+        /// </summary>
+        public static string DarkSwordKillingDescription {
+            get {
+                return ResourceManager.GetString("DarkSwordKillingDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date Of Birth.
         /// </summary>
         public static string DateOfBirthLabel {
@@ -5171,11 +5168,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Decrease&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Decrease represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Decrease encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situatio [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Decrease represents reduction, simplification, and the wisdom of letting go. It signifies a time when shedding excess leads to clarity and balance.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises evaluating what is truly necessary. By eliminating distractions, unnecessary burdens, or material excess, one can focus on what is truly meaningful and essential.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Decrease teaches that less can be more. By embracing simplicity and minimalism, one finds a greater sense of peace and pur [rest of string was truncated]&quot;;.
         /// </summary>
         public static string decrease_details {
             get {
@@ -5212,11 +5207,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Deliverance&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Deliverance represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Deliverance encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Deliverance symbolizes release, resolution, and the lifting of burdens. It represents a time when difficulties are resolved, and one is freed from past struggles or entanglements.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises letting go of past tensions and moving forward with renewed energy. Whether through forgiveness, reconciliation, or decisive action, finding closure allows one to embrace new opportunities.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Deliverance teaches that true freedom comes from inner clari [rest of string was truncated]&quot;;.
         /// </summary>
         public static string deliverance_details {
             get {
@@ -5279,12 +5272,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Difficulty at the Beginning&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Difficulty at the Beginning represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Difficulty at the Beginning encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observ [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Zhun (Difficulty at the Beginning)&lt;/h5&gt;
+        ///&lt;p&gt;Zhun symbolizes the struggles and challenges of new beginnings. It represents the chaos and uncertainty that often accompany the start of any endeavor. Just as a seed must break through the earth to grow, one must push through obstacles to achieve progress.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises perseverance and patience. The difficulties faced now are not signs of failure but part of the natural process of development. It suggests seeking support, staying flexible, an [rest of string was truncated]&quot;;.
         /// </summary>
         public static string difficulty_at_the_beginning_details {
             get {
@@ -5366,11 +5356,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Dispersion&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Dispersion represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Dispersion encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every si [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Dispersion symbolizes dissolving barriers, clearing stagnation, and restoring harmony. It represents a time when obstacles are removed, allowing free movement.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises letting go of rigidity and embracing flow. Releasing attachments or grudges creates space for renewal and growth.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Dispersion teaches that unity is found in openness. By breaking down false divisions, one reconnects with truth and inner peace.&lt;/p&gt;
+        ///.
         /// </summary>
         public static string dispersion_details {
             get {
@@ -5583,11 +5572,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Duration&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Duration represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Duration encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situatio [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Duration symbolizes stability, endurance, and the power of consistency. It represents a time when perseverance and dedication lead to lasting success.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises maintaining commitments and staying true to one&apos;s principles. Short-term gains may be tempting, but true achievement comes from steady effort and integrity.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Duration teaches that real strength lies in resilience. By aligning with natural rhythms and remaining steadfast in one&apos;s pur [rest of string was truncated]&quot;;.
         /// </summary>
         public static string duration_details {
             get {
@@ -6172,12 +6159,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Enthusiasm&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Enthusiasm represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Enthusiasm encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every si [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Yu (Enthusiasm)&lt;/h5&gt;
+        ///&lt;p&gt;Yu represents joy, excitement, and the energy of new opportunities. It signifies a time when enthusiasm fuels action, and motivation leads to success. This is a period of dynamic movement and inspired effort.&lt;/p&gt;
+        ///&lt;p&gt;While enthusiasm is powerful, it should be balanced with wisdom. Acting impulsively without careful thought can lead to mistakes. This hexagram advises using energy wisely and directing it toward meaningful goals.&lt;/p&gt;
+        ///&lt;p&gt;On a spiritual level, Yu speaks of the joy o [rest of string was truncated]&quot;;.
         /// </summary>
         public static string enthusiasm_details {
             get {
@@ -6316,12 +6301,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Fellowship with Men&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Fellowship with Men represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Fellowship with Men encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves  [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Tong Ren (Fellowship With Men)&lt;/h5&gt;
+        ///&lt;p&gt;Tong Ren symbolizes unity, collaboration, and the power of collective efforts. It represents a time when shared goals and common values bring people together, leading to mutual benefit and progress.&lt;/p&gt;
+        ///&lt;p&gt;Success comes through cooperation rather than competition. This hexagram advises seeking like-minded individuals and fostering strong relationships. Differences should be set aside in favor of a greater purpose.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Tong Ren speaks to the [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fellowship_with_men_details {
             get {
@@ -6726,6 +6709,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Five Yellow Killing (&quot;Go O Satsu&quot;).
+        /// </summary>
+        public static string FiveYellowKilling {
+            get {
+                return ResourceManager.GetString("FiveYellowKilling", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Travelling in this direction will tend to bring some obvious difficulty or misfortune, such as an accident, sickness, financial difficulty, failure, etc..
+        /// </summary>
+        public static string FiveYellowKillingDescription {
+            get {
+                return ResourceManager.GetString("FiveYellowKillingDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Flexible.
         /// </summary>
         public static string Flexible {
@@ -6760,12 +6761,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Following&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Following represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Following encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situa [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Sui (Following)&lt;/h5&gt;
+        ///&lt;p&gt;Sui symbolizes adaptability, responsiveness, and the ability to go with the flow. It represents a time when following the natural order of things leads to success rather than resisting change.&lt;/p&gt;
+        ///&lt;p&gt;Rather than forcing one&apos;s own way, Sui advises paying attention to signs and aligning with greater forces at work. Leadership is sometimes about knowing when to follow and when to take charge.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Sui teaches that wisdom lies in flexibility. Life is ever-chan [rest of string was truncated]&quot;;.
         /// </summary>
         public static string following_details {
             get {
@@ -6947,11 +6946,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Gathering Together&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Gathering Together represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Gathering Together encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as  [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Gathering Together symbolizes unity, collaboration, and the power of collective effort. It represents a time when bringing people together creates strength and shared success.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises fostering strong connections and aligning with like-minded individuals. Community and teamwork enhance progress and provide support in times of need.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Gathering Together teaches that unity is a source of great power. By working harmoniously with ot [rest of string was truncated]&quot;;.
         /// </summary>
         public static string gathering_together_details {
             get {
@@ -7069,11 +7066,8 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Grace&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Grace represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Grace encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situation is an o [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Grace symbolizes beauty, refinement, and the power of outward appearances. It suggests a time when elegance and harmony enhance life, making even difficult situations more bearable. However, true grace must be rooted in substance, not mere decoration.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises maintaining dignity and poise in all circumstances. A refined approach, rather than force, will yield better results. However, one should ensure that appearances align with genuine qualities, avoiding superficia [rest of string was truncated]&quot;;.
         /// </summary>
         public static string grace_details {
             get {
@@ -7101,11 +7095,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Gradual Progress&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Gradual Progress represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Gradual Progress encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a remi [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Gradual Progress symbolizes steady, organic development. It represents a time when patience and persistence lead to meaningful growth.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises trusting the process. Instead of seeking quick results, one should focus on consistent effort and long-term success.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Gradual Progress teaches that true achievement is built over time. By aligning with natural rhythms, one ensures stability and lasting fulfillment.&lt;/p&gt;
+        ///.
         /// </summary>
         public static string gradual_progress_details {
             get {
@@ -7512,12 +7505,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Holding Together&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Holding Together represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Holding Together encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a remi [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Bi (Holding Together)&lt;/h5&gt;
+        ///&lt;p&gt;Bi signifies unity, cooperation, and the importance of strong relationships. It reflects the bonds that connect people, whether in friendships, family, or communities. True success comes from mutual support and shared goals.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises cultivating trust and loyalty. Relationships thrive when built on sincerity and a willingness to support one another. However, it also warns against superficial alliances and the need to discern who is truly aligned with o [rest of string was truncated]&quot;;.
         /// </summary>
         public static string holding_together_details {
             get {
@@ -7675,11 +7665,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Increase&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Increase represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Increase encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situatio [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Increase symbolizes expansion, abundance, and growth. It represents a time when favorable conditions lead to progress and opportunities for advancement.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises taking advantage of positive momentum. By acting with generosity, sharing success, and maintaining gratitude, one ensures continued prosperity.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Increase teaches that true wealth comes from giving. The more one contributes to others and the world, the more abundance flows naturall [rest of string was truncated]&quot;;.
         /// </summary>
         public static string increase_details {
             get {
@@ -7725,11 +7713,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Influence&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Influence represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Influence encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situa [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Influence represents attraction, harmony, and the subtle forces that shape relationships and events. It signifies a time when gentle persuasion and mutual respect bring about positive change.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises using patience and sensitivity in interactions. Forceful action may be counterproductive, whereas genuine influence comes from sincerity and understanding.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Influence teaches that everything is connected. The energy one puts into the world c [rest of string was truncated]&quot;;.
         /// </summary>
         public static string influence_details {
             get {
@@ -7766,11 +7752,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Inner Truth&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Inner Truth represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Inner Truth encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Inner Truth represents sincerity, clarity, and the deep understanding that comes from within. It signifies a time when intuition and honesty guide the way forward.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises listening to one&apos;s inner voice and aligning actions with truth. External distractions should not sway one&apos;s convictions when the heart knows the right path.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Inner Truth teaches that wisdom and authenticity create harmony. By staying true to oneself and acting with i [rest of string was truncated]&quot;;.
         /// </summary>
         public static string inner_truth_details {
             get {
@@ -7816,11 +7800,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Innocence&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Innocence represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Innocence encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situa [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Innocence symbolizes purity, spontaneity, and trust in the natural order. It represents a state of being where one acts without ulterior motives, moving in alignment with truth. When actions stem from sincerity, success follows effortlessly.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises approaching life with openness and faith. Overthinking or manipulation will only disrupt the flow. Trusting in the rightness of things allows one to move forward with ease.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Innocence teaches [rest of string was truncated]&quot;;.
         /// </summary>
         public static string innocence_details {
             get {
@@ -8232,11 +8214,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Keeping Still&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Keeping Still represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Keeping Still encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Keeping Still represents meditation, inner peace, and stability. It signifies a time when stillness and contemplation bring clarity and strength.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises pausing before taking action. By grounding oneself in stillness, decisions are made with greater wisdom and awareness.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Keeping Still teaches that true power lies in inner calm. By cultivating mindfulness and patience, one aligns with the natural flow of life.&lt;/p&gt;
+        ///.
         /// </summary>
         public static string keeping_still_details {
             get {
@@ -8676,11 +8657,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Limitation&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Limitation represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Limitation encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every si [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Limitation represents discipline, boundaries, and knowing when to restrain oneself. It signifies a time when moderation leads to greater success.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises setting clear limits and avoiding excess. Restrictions, when wisely applied, provide structure and stability.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Limitation teaches that true freedom comes from self-discipline. By knowing when to say no, one creates space for what truly matters.&lt;/p&gt;
+        ///.
         /// </summary>
         public static string limitation_details {
             get {
@@ -10234,12 +10214,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Modesty&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Modesty represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Modesty encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situation i [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Qian (Modesty)&lt;/h5&gt;
+        ///&lt;p&gt;Qian symbolizes humility and the power of quiet strength. It teaches that true success comes not from boasting or seeking attention but from maintaining a low profile and acting with sincerity.&lt;/p&gt;
+        ///&lt;p&gt;In times of progress, modesty ensures continued success. Overconfidence or arrogance can lead to downfall, while humility allows one to adapt and grow. This hexagram advises listening more than speaking and acting with grace.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Qian reminds one that humilit [rest of string was truncated]&quot;;.
         /// </summary>
         public static string modesty_details {
             get {
@@ -11085,11 +11063,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Obstruction&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Obstruction represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Obstruction encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Obstruction represents difficulties, obstacles, and challenges that hinder progress. It signifies a time when external forces or internal doubts may create barriers that must be overcome with patience and strategy.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises persistence and adaptability. Instead of forcing one&apos;s way through resistance, it may be wiser to pause, reassess, and find alternative routes. Sometimes, obstacles present valuable lessons that lead to greater wisdom.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper lev [rest of string was truncated]&quot;;.
         /// </summary>
         public static string obstruction_details {
             get {
@@ -11153,11 +11129,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Opposition&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Opposition represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Opposition encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every si [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Opposition represents divergence, contrast, and differing perspectives. It signifies a time when conflicts or misunderstandings may arise, requiring wisdom to navigate.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises seeking understanding rather than division. Differences can lead to growth when approached with respect and openness. Clashes should be handled with diplomacy rather than force.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Opposition teaches that contrast is a part of nature. Just as day and night define e [rest of string was truncated]&quot;;.
         /// </summary>
         public static string opposition_details {
             get {
@@ -11194,11 +11168,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Oppression&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Oppression represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Oppression encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every si [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Oppression symbolizes adversity, constraint, and situations where one feels trapped or burdened. It represents a time when external pressures or internal struggles create a sense of limitation.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises endurance and inner strength. While external circumstances may be difficult, maintaining clarity and resilience ensures eventual relief.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Oppression teaches that hardship is a test of character. By facing challenges with wisdom and patien [rest of string was truncated]&quot;;.
         /// </summary>
         public static string oppression_details {
             get {
@@ -11349,12 +11321,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Peace&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Peace represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Peace encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situation is an o [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Tai (Peace)&lt;/h5&gt;
+        ///&lt;p&gt;Tai represents harmony, prosperity, and a time of flourishing. It signifies a period where the forces of heaven and earth are in balance, bringing peace and stability. This hexagram suggests that success comes easily, and efforts are met with minimal resistance.&lt;/p&gt;
+        ///&lt;p&gt;This is a time to consolidate achievements and strengthen connections. However, one should not become complacent, as peace and abundance require continuous effort to maintain. Wise leadership ensures that prosperity  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string peace_details {
             get {
@@ -11698,12 +11667,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Possession in Great Measure&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Possession in Great Measure represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Possession in Great Measure encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observ [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Da You (Possession In Great Measure)&lt;/h5&gt;
+        ///&lt;p&gt;Da You represents abundance, great resources, and the potential for vast success. It signifies a time when one possesses wealth, influence, or knowledge that can be used to achieve great things.&lt;/p&gt;
+        ///&lt;p&gt;However, with great abundance comes great responsibility. This hexagram warns against arrogance or misuse of resources. True wealth is not just material but also found in wisdom, generosity, and ethical conduct.&lt;/p&gt;
+        ///&lt;p&gt;On a spiritual level, Da You teaches th [rest of string was truncated]&quot;;.
         /// </summary>
         public static string possession_in_great_measure_details {
             get {
@@ -11830,11 +11797,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Preponderance of the Great&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Preponderance of the Great represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Preponderance of the Great encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe.  [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Preponderance of the Great signifies an imbalance where excessive weight or force threatens stability. It represents a time when strength is abundant, but without careful management, it may lead to collapse.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises caution and awareness. Overexertion, whether in ambitions, responsibilities, or physical efforts, can lead to burnout or structural failure. Strength must be balanced with flexibility and wisdom.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Preponderan [rest of string was truncated]&quot;;.
         /// </summary>
         public static string preponderance_of_the_great_details {
             get {
@@ -11844,11 +11809,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Preponderance of the Small&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Preponderance of the Small represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Preponderance of the Small encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe.  [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Preponderance of the Small symbolizes the power of minor efforts and attention to detail. It represents a time when small, careful actions lead to meaningful progress.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises humility and patience. Grand gestures may not be effective, but small, consistent steps bring steady results.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Preponderance of the Small teaches that true strength lies in subtlety and precision. By refining small aspects of life, one creates a fo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string preponderance_of_the_small_details {
             get {
@@ -12011,11 +11974,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Progress&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Progress represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Progress encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situatio [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Progress symbolizes advancement, success, and forward movement. It represents a time when efforts yield results, and one moves closer to their goals. The momentum is strong, and the path ahead is clear.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises taking advantage of favorable conditions. Now is the time to act decisively and make the most of opportunities. However, progress should be steady rather than reckless.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Progress reminds one that true growth is continuous. Even in  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string progress_details {
             get {
@@ -12145,11 +12106,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Providing Nourishment&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Providing Nourishment represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Providing Nourishment encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram s [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Nourishment symbolizes the importance of sustenance, both physical and spiritual. It represents how one takes in energy, whether through food, ideas, or relationships. Just as the body needs proper nourishment, so does the mind and soul.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises being mindful of what one consumes, not just in diet but in thoughts, emotions, and influences. Proper nourishment leads to strength and clarity, while poor nourishment results in weakness and confusion.&lt;/p&gt;
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string providing_nourishment_details {
             get {
@@ -12258,11 +12217,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Pushing Upward&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Pushing Upward represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Pushing Upward encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder t [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Pushing Upward represents steady progress, perseverance, and gradual advancement. It signifies a time when consistent effort leads to meaningful achievements.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises patience and persistence. Instead of seeking shortcuts, one should embrace the journey and trust that each step builds toward success.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Pushing Upward teaches that true growth happens over time. By maintaining integrity and dedication, one reaches great heights natural [rest of string was truncated]&quot;;.
         /// </summary>
         public static string pushing_upward_details {
             get {
@@ -12461,11 +12418,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Retreat&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Retreat represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Retreat encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situation i [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Retreat represents the wisdom of knowing when to step back. It signifies a time when withdrawal is necessary to regroup, strategize, or avoid unnecessary conflict.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises understanding that retreat is not failure but a tactical move. Sometimes, stepping away from a situation allows for greater strength and clarity in the future.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Retreat teaches that balance requires both advance and withdrawal. By honoring the natural ebb and flow of lif [rest of string was truncated]&quot;;.
         /// </summary>
         public static string retreat_details {
             get {
@@ -12520,11 +12475,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Return&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Return represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Return encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situation is a [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Return represents cycles, renewal, and coming back to one&apos;s true path. It signifies a turning point where one is called to realign with their essence and values. Just as the seasons change, life moves in cycles, and returning to the beginning brings new understanding.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises embracing new beginnings with openness. Even if one has strayed from their course, it is never too late to return. Small, consistent steps will lead back to alignment.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, R [rest of string was truncated]&quot;;.
         /// </summary>
         public static string return_details {
             get {
@@ -12561,11 +12514,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Revolution&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Revolution represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Revolution encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every si [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Revolution symbolizes radical change, transformation, and the overthrow of outdated structures. It represents a time when fundamental shifts are necessary to create progress.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises embracing change with wisdom and preparation. While transformation is needed, reckless action can lead to chaos. A well-planned revolution brings renewal.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Revolution teaches that true change begins within. By shifting perspectives and breaking free from li [rest of string was truncated]&quot;;.
         /// </summary>
         public static string revolution_details {
             get {
@@ -12842,6 +12793,24 @@ namespace K9.Globalisation {
         public static string SelectUsers {
             get {
                 return ResourceManager.GetString("SelectUsers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Self Life Killing (&quot;Hon Mei Satsu&quot;).
+        /// </summary>
+        public static string SelfLifeKilling {
+            get {
+                return ResourceManager.GetString("SelfLifeKilling", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Travelling in this direction tends to lead to problems or difficulties caused direclty by self..
+        /// </summary>
+        public static string SelfLifeKillingDescription {
+            get {
+                return ResourceManager.GetString("SelfLifeKillingDescription", resourceCulture);
             }
         }
         
@@ -13738,11 +13707,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Splitting Apart&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Splitting Apart represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Splitting Apart encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminde [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Splitting Apart signifies a time of disintegration and separation. It represents situations where forces are pulling apart, whether in relationships, organizations, or personal life. Such periods can be painful, but they also clear the way for renewal.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises recognizing when something is beyond repair. Clinging to what is breaking down may only cause further harm. Instead, one should accept the natural cycles of endings and beginnings.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper [rest of string was truncated]&quot;;.
         /// </summary>
         public static string splitting_apart_details {
             get {
@@ -13848,12 +13815,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Standstill&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Standstill represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Standstill encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every si [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Pi (Standstill)&lt;/h5&gt;
+        ///&lt;p&gt;Pi signifies a period of blockages and difficulty. It represents disharmony between forces, leading to stagnation, frustration, and an inability to move forward. It is a warning that something is out of balance and needs correction.&lt;/p&gt;
+        ///&lt;p&gt;During times of stagnation, it is wise to reflect on the situation rather than forcing progress. Obstacles should be analyzed calmly, and efforts should be directed towards small, internal adjustments rather than large external actions.&lt;/p&gt;
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string standstill_details {
             get {
@@ -14240,11 +14205,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Taming Power of the Great&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Taming Power of the Great represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Taming Power of the Great encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. Thi [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Great Power represents strength, influence, and the ability to shape circumstances. It signifies a time when energy is high, and opportunities for significant achievements are present. However, power must be handled with responsibility.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises using strength wisely. Recklessness or abuse of power can lead to downfall. True power lies in balance, self-awareness, and the ability to serve a greater good.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Great Power teache [rest of string was truncated]&quot;;.
         /// </summary>
         public static string taming_power_of_the_great_details {
             get {
@@ -14254,11 +14217,8 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Taming Power of the Small&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Taming Power of the Small represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Taming Power of the Small encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. Thi [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;This hexagram represents the power of small, gradual efforts. It suggests that great change is not always achieved through force but through consistent, subtle influence. Like wind shaping mountains over time, patience and persistence lead to success.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram teaches the value of restraint and careful planning. Rather than forcing outcomes, one should work steadily toward their goals, adjusting as needed. Flexibility and attention to detail will yield bet [rest of string was truncated]&quot;;.
         /// </summary>
         public static string taming_power_of_the_small_details {
             get {
@@ -14317,6 +14277,24 @@ namespace K9.Globalisation {
         public static string TamingPowerOfTheSmallTitle {
             get {
                 return ResourceManager.GetString("TamingPowerOfTheSmallTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target Killing (&quot;Teki Satsu&quot;).
+        /// </summary>
+        public static string TargetKilling {
+            get {
+                return ResourceManager.GetString("TargetKilling", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Travelling in this direction is similar to &quot;Hon Mei Satsu&quot; but the problems or difficulties are caused by others..
+        /// </summary>
+        public static string TargetKillingDescription {
+            get {
+                return ResourceManager.GetString("TargetKillingDescription", resourceCulture);
             }
         }
         
@@ -14407,11 +14385,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;The Abysmal&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    The Abysmal represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of The Abysmal encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;The Abysmal represents danger, uncertainty, and the need for resilience. It signifies a time when one must navigate challenges with inner strength and adaptability. Like water flowing through a canyon, perseverance is required to move forward.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises staying calm in the face of adversity. Panic or rash actions will only deepen difficulties. Instead, one must trust in their ability to endure and find a way through.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, The Abysmal teaches [rest of string was truncated]&quot;;.
         /// </summary>
         public static string the_abysmal_details {
             get {
@@ -14420,12 +14396,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;The Army&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    The Army represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of The Army encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situatio [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Shi (The Army)&lt;/h5&gt;
+        ///&lt;p&gt;Shi represents discipline, leadership, and the structured force of a well-organized group. It speaks of the power found in unity and coordinated effort, whether in military endeavors, teamwork, or societal structures.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram emphasizes strategy and responsibility. Leadership must be guided by wisdom and fairness, not brute force. Without proper direction, even the strongest army will fall into chaos. Discipline and moral clarity are essential for success.&lt;/p&gt;
+        ///&lt;p&gt;O [rest of string was truncated]&quot;;.
         /// </summary>
         public static string the_army_details {
             get {
@@ -14435,11 +14409,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;The Arousing&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    The Arousing represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of The Arousing encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that ev [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;The Arousing symbolizes sudden change, awakening, and the power of shock. It represents a time when unexpected events shake things up, requiring quick adaptation.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises staying composed in the face of surprises. While disruptions may be unsettling, they often lead to new insights and breakthroughs.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, The Arousing teaches that true stability comes from inner resilience. By embracing change and using shocks as opportunities for growth, [rest of string was truncated]&quot;;.
         /// </summary>
         public static string the_arousing_details {
             get {
@@ -14449,11 +14421,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;The Cauldron&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    The Cauldron represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of The Cauldron encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that ev [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;The Cauldron represents transformation, nourishment, and refinement. It signifies a time when inner development and wisdom are cultivated, much like a cauldron refines ingredients into a nourishing meal.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises embracing personal growth and the pursuit of higher understanding. Just as food sustains the body, knowledge and virtue sustain the soul.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, The Cauldron teaches that true fulfillment comes from inner refinement. By nurturing on [rest of string was truncated]&quot;;.
         /// </summary>
         public static string the_cauldron_details {
             get {
@@ -14463,11 +14433,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;The Clinging&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    The Clinging represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of The Clinging encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that ev [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;The Clinging symbolizes illumination, passion, and attachment. It represents the fire that brings warmth and light but also needs careful tending to prevent destruction.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises maintaining clarity and focus. While passion and intensity can be powerful forces, they must be directed wisely. Overattachment to ideas, people, or emotions can lead to imbalance.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, The Clinging teaches that true illumination comes from inner awareness. Just a [rest of string was truncated]&quot;;.
         /// </summary>
         public static string the_clinging_details {
             get {
@@ -14476,12 +14444,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;The Creative&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    The Creative represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of The Creative encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that ev [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Qian (The Creative)&lt;/h5&gt;
+        ///&lt;p&gt;Qian represents the pure, unyielding force of creation. It is the source of all things, embodying the principle of heaven and unceasing movement. This hexagram signifies strength, initiative, and leadership, encouraging one to take decisive action and assert oneself in the world.&lt;/p&gt;
+        ///&lt;p&gt;As a guide for human affairs, Qian teaches discipline and responsibility. It suggests that success comes through diligence, self-confidence, and maintaining high ethical standards. However,  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string the_creative_details {
             get {
@@ -14491,11 +14456,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;The Family&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    The Family represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of The Family encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every si [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;The Family symbolizes structure, responsibility, and the importance of relationships. It represents the foundation of society and the bonds that sustain it.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises maintaining harmony within relationships. A strong foundation at home leads to stability in all aspects of life. Respect, communication, and shared values are key.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, The Family teaches that true strength is built through unity and care. By nurturing meaningful connections, on [rest of string was truncated]&quot;;.
         /// </summary>
         public static string the_family_details {
             get {
@@ -14505,11 +14468,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;The Gentle&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    The Gentle represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of The Gentle encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every si [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;The Gentle symbolizes flexibility, influence, and the power of subtlety. It represents a time when soft yet persistent action brings the desired outcome.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises patience and careful persuasion. Rather than forcing results, one should move like the wind—shaping circumstances gently but effectively.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, The Gentle teaches that strength is not always loud or forceful. By moving with grace and wisdom, one achieves long-term success.&lt;/p&gt;
+        ///.
         /// </summary>
         public static string the_gentle_details {
             get {
@@ -14519,11 +14481,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;The Joyous&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    The Joyous represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of The Joyous encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every si [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;The Joyous represents happiness, communication, and the uplifting power of shared experiences. It signifies a time of harmony and emotional fulfillment.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises cultivating joy by fostering meaningful relationships and embracing life’s pleasures. Positivity and openness attract more good fortune.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, The Joyous teaches that true happiness comes from within. By maintaining a light heart and sharing joy with others, one creates lasting fulfi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string the_joyous_details {
             get {
@@ -14533,11 +14493,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;The Marrying Maiden&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    The Marrying Maiden represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of The Marrying Maiden encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves  [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;The Marrying Maiden represents adapting to circumstances and finding one&apos;s place within existing structures. It signifies a time when compromises may be necessary for harmony.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises accepting situations with grace and flexibility. While personal desires are important, adjusting to reality brings greater stability.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, The Marrying Maiden teaches that balance is found in understanding one&apos;s role. By aligning with life&apos;s flow, one [rest of string was truncated]&quot;;.
         /// </summary>
         public static string the_marrying_maiden_details {
             get {
@@ -14547,11 +14505,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;The Power of the Great&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    The Power of the Great represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of The Power of the Great encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagra [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Power of the Great represents immense strength and the ability to create significant change. It signifies a time when energy is high, and one&apos;s influence is at its peak.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises using power responsibly. Strength without wisdom can lead to recklessness, while disciplined action ensures lasting achievements.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Power of the Great teaches that true power comes from within. Mastery over oneself leads to mastery over external situa [rest of string was truncated]&quot;;.
         /// </summary>
         public static string the_power_of_the_great_details {
             get {
@@ -14560,12 +14516,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;The Receptive&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    The Receptive represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of The Receptive encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Kun (The Receptive)&lt;/h5&gt;
+        ///&lt;p&gt;Kun represents the receptive, nurturing qualities of the Earth. It is the complement to Qian, embodying patience, support, and adaptability. Where Qian initiates action, Kun follows with devotion, allowing things to take their natural course.&lt;/p&gt; 
+        ///&lt;p&gt;This hexagram advises embracing humility and openness. It suggests that success comes from yielding rather than forcing, from being receptive rather than aggressive. The power of Kun lies in its ability to nourish and sustain,  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string the_receptive_details {
             get {
@@ -14575,11 +14528,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;The Wanderer&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    The Wanderer represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of The Wanderer encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that ev [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;The Wanderer represents movement, transition, and the search for new experiences. It signifies a time of exploration, whether physical, emotional, or spiritual.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises embracing change with an open heart. While stability is important, growth often comes from stepping into the unknown.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, The Wanderer teaches that home is found within. By cultivating inner strength and adaptability, one thrives no matter where they go.&lt;/p&gt;
+        ///.
         /// </summary>
         public static string the_wanderer_details {
             get {
@@ -14589,11 +14541,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;The Well&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    The Well represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of The Well encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situatio [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;The Well represents nourishment, wisdom, and the deep resources that sustain life. It signifies a time when drawing from inner or external wells of knowledge leads to fulfillment.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises seeking wisdom, whether through learning, introspection, or connection with others. Just as a well provides water, one must tap into deeper sources of sustenance.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, The Well teaches that true nourishment comes from the soul. By cultivating wisdom and spir [rest of string was truncated]&quot;;.
         /// </summary>
         public static string the_well_details {
             get {
@@ -15297,11 +15247,8 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Treading&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Treading represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Treading encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situatio [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;Treading symbolizes caution, propriety, and the careful navigation of challenging situations. It represents walking a fine line where missteps can lead to danger. Just as one treads carefully across a frozen lake, awareness and balance are essential.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises mindfulness in words and actions. Overconfidence can lead to downfall, while humility and attentiveness ensure stability. Respect for both oneself and others is key to avoiding unnecessary conflicts and mainta [rest of string was truncated]&quot;;.
         /// </summary>
         public static string treading_details {
             get {
@@ -15895,12 +15842,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Waiting&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Waiting represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Waiting encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder that every situation i [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Xu (Waiting)&lt;/h5&gt;
+        ///&lt;p&gt;Xu symbolizes the need for patience and trust in the timing of life. It represents a period where action is not yet possible or advisable, requiring one to endure delays with faith. Just as a traveler waits for the right conditions to cross a river, sometimes waiting is the wisest choice.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram teaches the value of preparation and inner stability. It suggests maintaining composure and using this time to gather resources, reflect, and plan. Impulsiveness will only le [rest of string was truncated]&quot;;.
         /// </summary>
         public static string waiting_details {
             get {
@@ -16591,12 +16535,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Work on What Has Been Spoiled&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Work on What Has Been Spoiled represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Work on What Has Been Spoiled encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and  [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Gu (Work on What Has Been Spoiled)&lt;/h5&gt;
+        ///&lt;p&gt;Gu represents the need to address past mistakes and correct what has been damaged. It signifies a time for repair, cleansing, and improvement. Neglected issues must be acknowledged and resolved.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises taking responsibility and making amends where necessary. Avoiding problems only allows them to worsen. Healing and renewal come through honest effort and self-reflection.&lt;/p&gt;
+        ///&lt;p&gt;On a deeper level, Gu teaches that nothing is beyond repair. [rest of string was truncated]&quot;;.
         /// </summary>
         public static string work_on_what_has_been_spoiled_details {
             get {
@@ -16913,12 +16855,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Youthful Folly&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Youthful Folly represents an important aspect of life&apos;s natural rhythms and cycles. When this hexagram appears, it calls for deep reflection on your current circumstances. It may indicate a need for patience, strength, or adaptability, depending on the situation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The wisdom of Youthful Folly encourages balance and understanding. It teaches that success comes not only from action but also from knowing when to pause and observe. This hexagram serves as a reminder t [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h5&gt;Meng (Youthful Folly)&lt;/h5&gt;
+        ///&lt;p&gt;Representing the innocence and inexperience of youth, Meng speaks to the need for guidance and learning. It suggests a state of curiosity and openness but also warns against recklessness and ignorance. Proper instruction is crucial in transforming raw potential into wisdom.&lt;/p&gt;
+        ///&lt;p&gt;This hexagram advises seeking teachers or mentors and being willing to listen to advice. However, it also emphasizes that learning must be an active process, not just blind acceptance of authori [rest of string was truncated]&quot;;.
         /// </summary>
         public static string youthful_folly_details {
             get {

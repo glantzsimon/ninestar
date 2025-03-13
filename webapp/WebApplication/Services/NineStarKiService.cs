@@ -35,12 +35,7 @@ namespace K9.WebApplication.Services
             return GetOrAddToCache(cacheKey, () =>
             {
                 var model = new NineStarKiModel(personModel, today);
-                var coreEarthModel = new NineStarKiModel(new PersonModel
-                {
-                    DateOfBirth = personModel.Gender == EGender.Male ? new DateTime(1977, 2, 4) : new DateTime(1981, 2, 4),
-                    Gender = personModel.Gender
-                }, today);
-
+               
                 model.MainEnergy.EnergyDescription = GetMainEnergyDescription(model.MainEnergy.Energy);
                 model.CharacterEnergy.EnergyDescription = GetCharacterEnergyDescription(model.CharacterEnergy.Energy);
                 model.SurfaceEnergy.EnergyDescription = GetSurfaceEnergyDescription(model.SurfaceEnergy.Energy);
@@ -49,9 +44,15 @@ namespace K9.WebApplication.Services
                 model.PersonalDevelopemnt = GetPersonalDevelopemnt(model.MainEnergy.Energy);
                 model.Summary = GetSummary(model);
                 model.Overview = GetOverview(model.MainEnergy.Energy);
-                model.YearlyCycleCoreEarthEnergy = coreEarthModel.YearlyCycleEnergy;
-                model.MonthlyCycleCoreEarthEnergy = coreEarthModel.MonthlyCycleEnergy;
+
+                var yearlyCoreFactor = NineStarKiModel.LoopEnergyNumber(model.MainEnergy.EnergyNumber - (model.YearlyCycleEnergy.EnergyNumber - 5));
+                model.YearlyCycleCoreEarthEnergy = new NineStarKiEnergy((ENineStarKiEnergy)InvertDirectionEnergy(yearlyCoreFactor),  ENineStarKiEnergyType.MainEnergy);
+
+                model.MonthlyCycleCoreEarthEnergy = new NineStarKiEnergy((ENineStarKiEnergy)InvertDirectionEnergy(model.MonthlyCycleEnergy.EnergyNumber),  ENineStarKiEnergyType.CharacterEnergy);
                 
+                model.YearlyDirections = GetYearlyDirections(model);
+                model.MonthlyDirections = GetMonthlyDirections(model);
+
                 if (isCompatibility)
                 {
                     model.IsShowSummary = false;
@@ -792,6 +793,36 @@ namespace K9.WebApplication.Services
                 return string.Empty;
 
             }, TimeSpan.FromDays(30));
+        }
+
+        private static readonly Dictionary<int, int> _invertedDirectionEnergies = new Dictionary<int, int>
+        {
+            { 1, 9 }, { 2, 8 }, { 3, 7 }, { 4, 6 },
+            { 5, 5 }, { 6, 4 }, { 7, 3 }, { 8, 2 }, { 9, 1 }
+        };
+        
+        private int InvertDirectionEnergy(int energyNumber) =>
+            _invertedDirectionEnergies.TryGetValue(energyNumber, out var inverted) ? inverted : energyNumber;
+
+        private NineStarKiEnergy GetInvertedEnergy(NineStarKiEnergy energy, ENineStarKiEnergyType type)
+        {
+            return new NineStarKiEnergy((ENineStarKiEnergy)InvertDirectionEnergy(energy.EnergyNumber), type);
+        }
+
+        private NineStarKiDirections GetYearlyDirections(NineStarKiModel model)
+        {
+            return new NineStarKiDirections(model.YearlyCycleCoreEarthEnergy.Direction,
+                GetInvertedEnergy(model.YearlyCycleCoreEarthEnergy, ENineStarKiEnergyType.MainEnergy).Direction,
+                model.YearlyCycleEnergy.Direction,
+                GetInvertedEnergy(model.YearlyCycleEnergy, ENineStarKiEnergyType.MainEnergy).Direction);
+        }
+
+        private NineStarKiDirections GetMonthlyDirections(NineStarKiModel model)
+        {
+            return new NineStarKiDirections(model.MonthlyCycleCoreEarthEnergy.Direction,
+                GetInvertedEnergy(model.MonthlyCycleCoreEarthEnergy, ENineStarKiEnergyType.MainEnergy).Direction,
+                model.MonthlyCycleEnergy.Direction,
+                GetInvertedEnergy(model.MonthlyCycleEnergy, ENineStarKiEnergyType.MainEnergy).Direction);
         }
     }
 }

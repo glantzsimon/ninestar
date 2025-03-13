@@ -4591,4 +4591,28 @@
   <data name="UserIsUnsubscribed" xml:space="preserve">
     <value>User Is Unsubscribed</value>
   </data>
+  <data name="DarkSwordKilling" xml:space="preserve">
+    <value>Dark Sword Killing ("An Ken Satsu")</value>
+  </data>
+  <data name="DarkSwordKillingDescription" xml:space="preserve">
+    <value>This is more subtle than "Go O Satsu". Travelling in this direction tends to bring unexpected kinds of misfortune, hence the image of a sword coming at you in the darkness.</value>
+  </data>
+  <data name="FiveYellowKilling" xml:space="preserve">
+    <value>Five Yellow Killing ("Go O Satsu")</value>
+  </data>
+  <data name="FiveYellowKillingDescription" xml:space="preserve">
+    <value>Travelling in this direction will tend to bring some obvious difficulty or misfortune, such as an accident, sickness, financial difficulty, failure, etc.</value>
+  </data>
+  <data name="SelfLifeKilling" xml:space="preserve">
+    <value>Self Life Killing ("Hon Mei Satsu")</value>
+  </data>
+  <data name="SelfLifeKillingDescription" xml:space="preserve">
+    <value>Travelling in this direction tends to lead to problems or difficulties caused direclty by self.</value>
+  </data>
+  <data name="TargetKilling" xml:space="preserve">
+    <value>Target Killing ("Teki Satsu")</value>
+  </data>
+  <data name="TargetKillingDescription" xml:space="preserve">
+    <value>Travelling in this direction is similar to "Hon Mei Satsu" but the problems or difficulties are caused by others.</value>
+  </data>
 </root>

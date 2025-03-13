@@ -46,9 +46,9 @@ namespace K9.WebApplication.Services
                 model.Overview = GetOverview(model.MainEnergy.Energy);
 
                 var yearlyCoreFactor = NineStarKiModel.LoopEnergyNumber(model.MainEnergy.EnergyNumber - (model.YearlyCycleEnergy.EnergyNumber - 5));
-                model.YearlyCycleCoreEarthEnergy = new NineStarKiEnergy((ENineStarKiEnergy)InvertDirectionEnergy(yearlyCoreFactor),  ENineStarKiEnergyType.MainEnergy);
+                model.YearlyCycleCoreEarthEnergy = new NineStarKiEnergy((ENineStarKiEnergy)InvertDirectionEnergy(yearlyCoreFactor),  ENineStarKiEnergyType.MainEnergy, true, ENineStarKiEnergyCycleType.YearlyCycleEnergy);
 
-                model.MonthlyCycleCoreEarthEnergy = new NineStarKiEnergy((ENineStarKiEnergy)InvertDirectionEnergy(model.MonthlyCycleEnergy.EnergyNumber),  ENineStarKiEnergyType.CharacterEnergy);
+                model.MonthlyCycleCoreEarthEnergy = new NineStarKiEnergy((ENineStarKiEnergy)InvertDirectionEnergy(model.MonthlyCycleEnergy.EnergyNumber),  ENineStarKiEnergyType.CharacterEnergy, true, ENineStarKiEnergyCycleType.MonthlyCycleEnergy);
                 
                 model.YearlyDirections = GetYearlyDirections(model);
                 model.MonthlyDirections = GetMonthlyDirections(model);

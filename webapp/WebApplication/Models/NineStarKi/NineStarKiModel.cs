@@ -15,6 +15,7 @@ namespace K9.WebApplication.Models
     public class NineStarKiModel : CachableBase
     {
         private const bool invertCycleYinEnergies = true;
+        private static DateTime cycleSwitchDate = new DateTime(2013, 2, 4);
 
         public NineStarKiModel()
         {
@@ -120,7 +121,7 @@ namespace K9.WebApplication.Models
 
         public NineStarKiDirections YearlyDirections { get; set; }
         public NineStarKiDirections MonthlyDirections { get; set; }
-        
+
         /// <summary>
         /// Where Core Earth is for this month - important for directionality
         /// </summary>
@@ -410,31 +411,38 @@ namespace K9.WebApplication.Models
 
         private NineStarKiEnergy GetYearlyCycleEnergy()
         {
-            var todayYearEnergy = (int)GetMainEnergy(SelectedDate ?? DateTime.Today, EGender.Male).Energy;
+            var selectedDate = SelectedDate ?? DateTime.Today;
+            var todayYearEnergy = (int)GetMainEnergy(selectedDate, EGender.Male).Energy;
             /// Get the male energy for this calculation
             var personalYearEnergy = PersonModel.Gender.IsYin() ? InvertEnergy(MainEnergy.EnergyNumber) : MainEnergy.EnergyNumber;
             var offset = todayYearEnergy - personalYearEnergy;
             var lifeCycleYearEnergy = LoopEnergyNumber(5 - offset);
+            var isPastCycleSwitch = selectedDate >= cycleSwitchDate;
 
-            var energy = (ENineStarKiEnergy)(PersonModel.Gender.IsYin() && invertCycleYinEnergies ? InvertEnergy(lifeCycleYearEnergy) : lifeCycleYearEnergy);
+            var energy = (ENineStarKiEnergy)(PersonModel.Gender.IsYin() && invertCycleYinEnergies ?
+                isPastCycleSwitch ? lifeCycleYearEnergy : InvertEnergy(lifeCycleYearEnergy) :
+                isPastCycleSwitch ? InvertEnergy(lifeCycleYearEnergy) : lifeCycleYearEnergy);
 
             return new NineStarKiEnergy(energy, ENineStarKiEnergyType.MainEnergy, PersonModel.IsAdult(), ENineStarKiEnergyCycleType.YearlyCycleEnergy);
         }
 
         private NineStarKiEnergy GetMonthlyCycleEnergy()
         {
-            var month = GetMonth(SelectedDate.Value);
+            var selectedDate = SelectedDate ?? DateTime.Today;
+            var month = GetMonth(selectedDate);
             var yearlyCycleEnergy = GetYearlyCycleEnergy().Energy;
             var energyNumber = GetEnergyNumberFromYearlyEnergy(yearlyCycleEnergy, month);
-            var monthlyEnergy = ProcessEnergy(energyNumber, PersonModel.Gender, ENineStarKiEnergyType.CharacterEnergy);
+            var isPastCycleSwitch = selectedDate >= cycleSwitchDate;
+
+            var monthlyEnergy = ProcessEnergy(energyNumber, PersonModel.Gender, ENineStarKiEnergyType.CharacterEnergy, isPastCycleSwitch);
             monthlyEnergy.EnergyCycleType = ENineStarKiEnergyCycleType.MonthlyCycleEnergy;
             return monthlyEnergy;
         }
 
-        private NineStarKiEnergy ProcessEnergy(int energyNumber, EGender gender, ENineStarKiEnergyType type = ENineStarKiEnergyType.MainEnergy)
+        private NineStarKiEnergy ProcessEnergy(int energyNumber, EGender gender, ENineStarKiEnergyType type = ENineStarKiEnergyType.MainEnergy, bool isInvertedForCycleSwitch = false)
         {
             energyNumber = LoopEnergyNumber(energyNumber);
-            if (gender.IsYin())
+            if ((gender.IsYin() && !isInvertedForCycleSwitch) || isInvertedForCycleSwitch)
             {
                 energyNumber = InvertEnergy(energyNumber);
             }
@@ -450,7 +458,7 @@ namespace K9.WebApplication.Models
 
         private int InvertEnergy(int energyNumber) =>
             _invertedEnergies.TryGetValue(energyNumber, out var inverted) ? inverted : energyNumber;
-        
+
         private static readonly Dictionary<bool, Dictionary<(ENineStarKiYinYang, ENineStarKiYinYang), ESexualityRelationType>> _sexualityRelations
             = new Dictionary<bool, Dictionary<(ENineStarKiYinYang, ENineStarKiYinYang), ESexualityRelationType>>
             {

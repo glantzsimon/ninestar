@@ -15,6 +15,7 @@ namespace K9.WebApplication.Models
     public class NineStarKiModel : CachableBase
     {
         private const bool invertCycleYinEnergies = true;
+        private const bool enableCycleSwitch = false;
         private static DateTime cycleSwitchDate = new DateTime(2013, 2, 4);
 
         public NineStarKiModel()
@@ -248,7 +249,7 @@ namespace K9.WebApplication.Models
             year = (month == 2 && day <= 3) || month == 1 ? year - 1 : year;
             var energyNumber = 3 - ((year - 1979) % 9);
 
-            var nineStarKiEnergy = ProcessEnergy(energyNumber, gender);
+            var nineStarKiEnergy = ProcessEnergy(energyNumber, gender, ENineStarKiEnergyType.MainEnergy, enableCycleSwitch && date > cycleSwitchDate);
             nineStarKiEnergy.Gender = gender;
 
             return nineStarKiEnergy;
@@ -401,7 +402,7 @@ namespace K9.WebApplication.Models
             var yearlyEnergy = GetMainEnergy(date, gender).Energy;
             var energyNumber = GetEnergyNumberFromYearlyEnergy(yearlyEnergy, month);
 
-            return ProcessEnergy(energyNumber, gender, ENineStarKiEnergyType.CharacterEnergy);
+            return ProcessEnergy(energyNumber, gender, ENineStarKiEnergyType.CharacterEnergy, enableCycleSwitch && date > cycleSwitchDate);
         }
 
         private NineStarKiEnergy GetSurfaceEnergy()
@@ -417,7 +418,7 @@ namespace K9.WebApplication.Models
             var personalYearEnergy = PersonModel.Gender.IsYin() ? InvertEnergy(MainEnergy.EnergyNumber) : MainEnergy.EnergyNumber;
             var offset = todayYearEnergy - personalYearEnergy;
             var lifeCycleYearEnergy = LoopEnergyNumber(5 - offset);
-            var isPastCycleSwitch = selectedDate >= cycleSwitchDate;
+            var isPastCycleSwitch = enableCycleSwitch && selectedDate >= cycleSwitchDate;
 
             var energy = (ENineStarKiEnergy)(PersonModel.Gender.IsYin() && invertCycleYinEnergies ?
                 isPastCycleSwitch ? lifeCycleYearEnergy : InvertEnergy(lifeCycleYearEnergy) :
@@ -432,7 +433,7 @@ namespace K9.WebApplication.Models
             var month = GetMonth(selectedDate);
             var yearlyCycleEnergy = GetYearlyCycleEnergy().Energy;
             var energyNumber = GetEnergyNumberFromYearlyEnergy(yearlyCycleEnergy, month);
-            var isPastCycleSwitch = selectedDate >= cycleSwitchDate;
+            var isPastCycleSwitch = enableCycleSwitch && selectedDate >= cycleSwitchDate;
 
             var monthlyEnergy = ProcessEnergy(energyNumber, PersonModel.Gender, ENineStarKiEnergyType.CharacterEnergy, isPastCycleSwitch);
             monthlyEnergy.EnergyCycleType = ENineStarKiEnergyCycleType.MonthlyCycleEnergy;

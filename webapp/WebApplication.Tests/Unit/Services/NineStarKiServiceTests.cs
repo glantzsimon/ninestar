@@ -394,76 +394,82 @@ namespace K9.WebApplication.Tests.Unit.Services
             Assert.Equal(coreEarthMonthlyCycleDirection, ninestar.MonthlyCycleCoreEarthEnergy.Direction);
         }
 
-        [Theory]
-        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
-            1979, ENineStarKiEnergy.CoreEarth)]
-        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
-            1980, ENineStarKiEnergy.Heaven)]
-        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
-            2012, ENineStarKiEnergy.Soil)]
-        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
-            2013, ENineStarKiEnergy.Thunder)]
-        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
-            2014, ENineStarKiEnergy.Soil)]
-        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Female,
-            1979, ENineStarKiEnergy.Water)]
-        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Female,
-            1980, ENineStarKiEnergy.Fire)]
-        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Female,
-            2012, ENineStarKiEnergy.Wind)]
-        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Female,
-            2013, ENineStarKiEnergy.Thunder)]
-        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Female,
-            2014, ENineStarKiEnergy.Wind)]
-        public void CalcualteYearlyCycleWithCycleChange_Test(
-            int birthYear,
-            ENineStarKiEnergy energy,
-            EGender gender,
-            int todayYear,
-            ENineStarKiEnergy yearlyCycleEnergy)
-        {
+        //[Theory]
+        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
+        //    1979, ENineStarKiEnergy.CoreEarth)]
+        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
+        //    1980, ENineStarKiEnergy.Heaven)]
+        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
+        //    2012, ENineStarKiEnergy.Soil)]
+        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
+        //    2013, ENineStarKiEnergy.Thunder)]
+        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
+        //    2014, ENineStarKiEnergy.Soil)]
+        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Female,
+        //    1979, ENineStarKiEnergy.Water)]
+        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Female,
+        //    1980, ENineStarKiEnergy.Fire)]
+        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Female,
+        //    2012, ENineStarKiEnergy.Wind)]
+        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Female,
+        //    2013, ENineStarKiEnergy.Thunder)]
+        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Female,
+        //    2014, ENineStarKiEnergy.Wind)]
+        //public void CalcualteYearlyCycleWithCycleChange_Test(
+        //    int birthYear,
+        //    ENineStarKiEnergy energy,
+        //    EGender gender,
+        //    int todayYear,
+        //    ENineStarKiEnergy yearlyCycleEnergy)
+        //{
 
-            var ninestar = _nineStarKiService.CalculateNineStarKiProfile(
-                new PersonModel
-                {
-                    DateOfBirth = new DateTime(birthYear, 2, 4),
-                    Gender = gender,
-                },
-                false,
-                false,
-                new DateTime(todayYear, 2, 4));
+        //    var ninestar = _nineStarKiService.CalculateNineStarKiProfile(
+        //        new PersonModel
+        //        {
+        //            DateOfBirth = new DateTime(birthYear, 2, 4),
+        //            Gender = gender,
+        //        },
+        //        false,
+        //        false,
+        //        new DateTime(todayYear, 2, 4));
 
-            Assert.Equal(energy, ninestar.MainEnergy.Energy);
-            Assert.Equal(yearlyCycleEnergy, ninestar.YearlyCycleEnergy.Energy);
-        }
+        //    Assert.Equal(energy, ninestar.MainEnergy.Energy);
+        //    Assert.Equal(yearlyCycleEnergy, ninestar.YearlyCycleEnergy.Energy);
+        //}
 
-        [Theory]
-        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
-            1979, ENineStarKiEnergy.CoreEarth, 2, ENineStarKiEnergy.Soil)]
-        public void CalcualteMonthlyCycleWithCycleChange_Test(
-            int birthYear,
-            ENineStarKiEnergy energy,
-            EGender gender,
-            int todayYear,
-            ENineStarKiEnergy yearlyCycleEnergy,
-            int monthNumber,
-            ENineStarKiEnergy monthlyCycleEnergy)
-        {
+        //[Theory]
+        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
+        //    1979, ENineStarKiEnergy.CoreEarth, 2, ENineStarKiEnergy.Soil)]
+        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
+        //    2012, ENineStarKiEnergy.Soil, 2, ENineStarKiEnergy.Soil)]
+        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
+        //    2013, ENineStarKiEnergy.Thunder, 2, ENineStarKiEnergy.CoreEarth)]
+        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
+        //    2014, ENineStarKiEnergy.Soil, 2, ENineStarKiEnergy.Water)]
+        //public void CalcualteMonthlyCycleWithCycleChange_Test(
+        //    int birthYear,
+        //    ENineStarKiEnergy energy,
+        //    EGender gender,
+        //    int todayYear,
+        //    ENineStarKiEnergy yearlyCycleEnergy,
+        //    int monthNumber,
+        //    ENineStarKiEnergy monthlyCycleEnergy)
+        //{
 
-            var ninestar = _nineStarKiService.CalculateNineStarKiProfile(
-                new PersonModel
-                {
-                    DateOfBirth = new DateTime(birthYear, 2, 4),
-                    Gender = gender,
-                },
-                false,
-                false,
-                new DateTime(todayYear, monthNumber, 15));
+        //    var ninestar = _nineStarKiService.CalculateNineStarKiProfile(
+        //        new PersonModel
+        //        {
+        //            DateOfBirth = new DateTime(birthYear, 2, 4),
+        //            Gender = gender,
+        //        },
+        //        false,
+        //        false,
+        //        new DateTime(todayYear, monthNumber, 15));
 
-            Assert.Equal(energy, ninestar.MainEnergy.Energy);
-            Assert.Equal(yearlyCycleEnergy, ninestar.YearlyCycleEnergy.Energy);
-            Assert.Equal(monthlyCycleEnergy, ninestar.MonthlyCycleEnergy.Energy);
-        }
+        //    Assert.Equal(energy, ninestar.MainEnergy.Energy);
+        //    Assert.Equal(yearlyCycleEnergy, ninestar.YearlyCycleEnergy.Energy);
+        //    Assert.Equal(monthlyCycleEnergy, ninestar.MonthlyCycleEnergy.Energy);
+        //}
 
         //[Theory]
         //[InlineData(1979, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyHigh)]

@@ -215,6 +215,8 @@
             public const string Purple = "Purple";
             public const string MainEnergy = "MainEnergyLabel";
             public const string CharacterEnergy = "CharacterEnergyLabel";
+            public const string HourlyEnergy = "HourlyEnergy";
+            public const string DailyEnergy = "DailyEnergy";
             public const string SurfaceEnergy = "SurfaceEnergyLabel";
             public const string YearlyCycleEnergy = "YearlyCycleEnergy";
             public const string MonthlyCycleEnergy = "MonthlyCycleEnergy";

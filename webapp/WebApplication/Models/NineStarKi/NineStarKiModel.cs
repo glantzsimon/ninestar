@@ -31,26 +31,29 @@ namespace K9.WebApplication.Models
             BiorhythmResultSet = new BioRhythmsResultSet();
         }
 
-        public NineStarKiModel(PersonModel personModel, int preciseMainEnergy, int preciseEmotionalEnergy, int preciseYearlyCycleEnergy, int preciseMonthlyCycleEnergy, DateTime? selectedDate = null)
+        public NineStarKiModel(PersonModel personModel, int preciseMainEnergy, int preciseEmotionalEnergy, int preciseYearlyCycleEnergy, int preciseMonthlyCycleEnergy, int preciseDailyCycleEnergy, DateTime? selectedDate = null)
         {
             SelectedDate = selectedDate ?? DateTime.Today;
 
             PersonModel = personModel;
 
-            MainEnergy = GetOrAddToCache($"MainEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}",
+            MainEnergy = GetOrAddToCache($"MainEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{preciseMainEnergy}",
                 () => GetMainEnergy(PersonModel.DateOfBirth, preciseMainEnergy, PersonModel.Gender), TimeSpan.FromDays(30));
 
-            CharacterEnergy = GetOrAddToCache($"CharacterEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}",
+            CharacterEnergy = GetOrAddToCache($"CharacterEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{preciseEmotionalEnergy}",
                 () => GetCharacterEnergy(PersonModel.DateOfBirth, preciseEmotionalEnergy, PersonModel.Gender), TimeSpan.FromDays(30));
 
             SurfaceEnergy = GetOrAddToCache($"SurfaceEnergy_p_{MainEnergy.EnergyNumber}_{CharacterEnergy.EnergyNumber}",
                 GetSurfaceEnergy, TimeSpan.FromDays(30));
 
-            YearlyCycleEnergy = GetOrAddToCache($"YearlyCycleEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{SelectedDate.Value.ToString()}",
+            YearlyCycleEnergy = GetOrAddToCache($"YearlyCycleEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{SelectedDate.Value.ToString()}_{preciseYearlyCycleEnergy}",
                 () => GetYearlyCycleEnergy(preciseYearlyCycleEnergy), TimeSpan.FromDays(30));
 
-            MonthlyCycleEnergy = GetOrAddToCache($"MonthlyCycleEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{SelectedDate.Value.ToString()}",
+            MonthlyCycleEnergy = GetOrAddToCache($"MonthlyCycleEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{SelectedDate.Value.ToString()}_{preciseMonthlyCycleEnergy}",
                 () => GetMonthlyCycleEnergy(preciseYearlyCycleEnergy, preciseMonthlyCycleEnergy), TimeSpan.FromDays(30));
+
+            DailyCycleEnergy = GetOrAddToCache($"DailyCycleEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{SelectedDate.Value.ToString()}_{preciseDailyCycleEnergy}",
+                () => GetDailyCycleEnergy(preciseDailyCycleEnergy), TimeSpan.FromDays(30));
 
             MainEnergy.RelatedEnergy = CharacterEnergy.Energy;
             CharacterEnergy.RelatedEnergy = MainEnergy.Energy;
@@ -152,6 +155,11 @@ namespace K9.WebApplication.Models
         /// Determines the 9 Star Ki energy of the current month
         /// </summary>
         public NineStarKiEnergy MonthlyCycleEnergy { get; }
+
+        /// <summary>
+        /// Determines the 9 Star Ki energy of the current day
+        /// </summary>
+        public NineStarKiEnergy DailyCycleEnergy { get; }
 
         public NineStarKiDirections YearlyDirections { get; set; }
         public NineStarKiDirections MonthlyDirections { get; set; }
@@ -484,6 +492,16 @@ namespace K9.WebApplication.Models
             var monthlyEnergy = ProcessEnergy(energyNumber, PersonModel.Gender, ENineStarKiEnergyType.CharacterEnergy, isPastCycleSwitch);
             monthlyEnergy.EnergyCycleType = ENineStarKiEnergyCycleType.MonthlyCycleEnergy;
             return monthlyEnergy;
+        }
+
+        private NineStarKiEnergy GetDailyCycleEnergy(int dailyCycleEnergy)
+        {
+            var selectedDate = SelectedDate ?? DateTime.Today;
+            var isPastCycleSwitch = enableCycleSwitch && selectedDate >= cycleSwitchDate;
+
+            var dailyEnergy = ProcessEnergy(dailyCycleEnergy, PersonModel.Gender, ENineStarKiEnergyType.DailyEnergy, isPastCycleSwitch);
+            dailyEnergy.EnergyCycleType = ENineStarKiEnergyCycleType.DailyEnergy;
+            return dailyEnergy;
         }
 
         private NineStarKiEnergy ProcessEnergy(int energyNumber, EGender gender, ENineStarKiEnergyType type = ENineStarKiEnergyType.MainEnergy, bool isInvertedForCycleSwitch = false)

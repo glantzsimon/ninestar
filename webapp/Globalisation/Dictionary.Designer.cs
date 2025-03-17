@@ -5074,6 +5074,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Daily Energy.
+        /// </summary>
+        public static string DailyEnergy {
+            get {
+                return ResourceManager.GetString("DailyEnergy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Daily Karmic Influences.
         /// </summary>
         public static string DailyKarmicInfluences {
@@ -7539,6 +7548,15 @@ namespace K9.Globalisation {
         public static string HoldingTogetherTitle {
             get {
                 return ResourceManager.GetString("HoldingTogetherTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hourly Energy.
+        /// </summary>
+        public static string HourlyEnergy {
+            get {
+                return ResourceManager.GetString("HourlyEnergy", resourceCulture);
             }
         }
         

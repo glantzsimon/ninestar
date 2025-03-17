@@ -7,5 +7,6 @@ namespace K9.WebApplication.Services
         int GetNineStarKiYear(DateTime birthDate, string timeZoneId);
         int GetNineStarKiMonth(DateTime birthDate, string timeZoneId);
         int GetNineStarKiMonthNumber(DateTime birthDate, string timeZoneId);
+        int GetNineStarKiDailyNumber(int yearEnergyNumber, DateTime currentDate, string timeZoneId);
     }
 }

@@ -1,5 +1,7 @@
 ﻿using K9.WebApplication.Packages;
+using SwissEphNet;
 using System;
+using System.Collections.Generic;
 using TimeZoneConverter;
 
 namespace K9.WebApplication.Services
@@ -100,7 +102,7 @@ namespace K9.WebApplication.Services
 
                 // Get the Nine Star Ki year energy (which has already considered Lìchūn)
                 int yearEnergy = GetNineStarKiYear(birthDate, timeZoneId);
-                
+
                 // **Get Solar Terms for the 12 months after Lìchūn**
                 double[] solarTerms = GetSolarTerms(sweph, birthYear);
 
@@ -115,6 +117,68 @@ namespace K9.WebApplication.Services
 
                 // **If birth date is after last solar term, assign last month**
                 return 12;
+            }
+        }
+
+        public int GetNineStarKiDailyNumber(int yearEnergyNumber, DateTime currentDate, string timeZoneId)
+        {
+            yearEnergyNumber = InvertEnergy(yearEnergyNumber);
+
+            // Convert the current date to UTC based on the provided time zone
+            DateTime currentDateTimeInUtc = ConvertToUT(currentDate, timeZoneId);
+
+            // Get the date for the Lìchūn (Spring Begins) solar term for the current year
+            double targetLongitude = 315.0;  // Lìchūn solar term longitude
+            DateTime nineStarKiYearStart = GetSolarTermDate(currentDateTimeInUtc.Year, targetLongitude);
+
+            // Calculate the day of the Nine Star Ki year (from Lìchūn)
+            int dayOfNineStarKiYear = (currentDateTimeInUtc - nineStarKiYearStart).Days - 1;
+
+            // Get the date for the Winter Solstice (December 21) and Summer Solstice (June 21)
+            DateTime winterSolstice = new DateTime(currentDateTimeInUtc.Year - 1, 12, 21, 0, 0, 0, DateTimeKind.Utc);
+            DateTime summerSolstice = new DateTime(currentDateTimeInUtc.Year, 6, 21, 0, 0, 0, DateTimeKind.Utc);
+
+            int dailyKi;
+
+            // Ascending Cycle (before June 21)
+            if (currentDateTimeInUtc >= winterSolstice && currentDateTimeInUtc < summerSolstice)
+            {
+                // Ascending energy period: Ki number starts increasing
+                dailyKi = (yearEnergyNumber + (dayOfNineStarKiYear - 1)) % 9 + 1; // Ensure Ki number is between 1 and 9
+            }
+            // Descending Cycle (after June 21)
+            else
+            {
+                // Descending energy period: Ki number starts decreasing
+                dailyKi = (yearEnergyNumber - (dayOfNineStarKiYear - summerSolstice.DayOfYear) - 1) % 9;
+
+                // Wrap the Ki number correctly
+                if (dailyKi <= 0)
+                {
+                    dailyKi += 9; // Correct for negative values, such as -2 becoming 8
+                }
+            }
+
+            return dailyKi;
+        }
+
+        private DateTime GetSolarTermDate(int year, double targetLongitude)
+        {
+            using (var sweph = new SwissEphNet.SwissEph())
+            {
+                // Use the GetSolarTerm method to find the exact date of Lìchūn (315° longitude)
+                double julianDay = GetSolarTerm(sweph, year, targetLongitude); // Get the Julian day for the solar term
+
+                // Convert the Julian Day to DateTime using swe_revjul
+                int yearOut = 0, monthOut = 0, dayOut = 0;
+                double hourOut = 0;
+                string serr = "";
+
+                // Convert Julian Day to DateTime (using swe_revjul)
+                sweph.swe_revjul(julianDay, SwissEph.SE_GREG_CAL, ref yearOut, ref monthOut, ref dayOut, ref hourOut);
+
+                // Return the corresponding DateTime for Lìchūn
+                return new DateTime(yearOut, monthOut, dayOut);
             }
         }
 
@@ -211,5 +275,15 @@ namespace K9.WebApplication.Services
             }
             return solarTerms;
         }
+
+        private static readonly Dictionary<int, int> _invertedEnergies = new Dictionary<int, int>
+        {
+            { 1, 5 }, { 2, 4 }, { 4, 2 }, { 5, 1 },
+            { 6, 9 }, { 7, 8 }, { 8, 7 }, { 9, 6 }
+        };
+
+        private int InvertEnergy(int energyNumber) =>
+            _invertedEnergies.TryGetValue(energyNumber, out var inverted) ? inverted : energyNumber;
+
     }
 }

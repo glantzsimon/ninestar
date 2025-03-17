@@ -4621,4 +4621,10 @@
   <data name="TimeZones" xml:space="preserve">
     <value>Time Zones</value>
   </data>
+  <data name="DailyEnergy" xml:space="preserve">
+    <value>Daily Energy</value>
+  </data>
+  <data name="HourlyEnergy" xml:space="preserve">
+    <value>Hourly Energy</value>
+  </data>
 </root>

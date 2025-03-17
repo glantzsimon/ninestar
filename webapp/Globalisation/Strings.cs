@@ -117,6 +117,8 @@
             public const string UserDatas = "UserDatas";
             public const string Contacts = "Contacts";
             public const string Contact = "Contact";
+            public const string TimeZones = "TimeZones";
+            public const string TimeZone = "TimeZone";
             public const string Promotions = "Promotions";
             public const string Donation = "Donation";
             public const string Promotion = "Promotion";

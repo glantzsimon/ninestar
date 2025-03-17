@@ -10,8 +10,11 @@ namespace K9.WebApplication.Services
 {
     public class NineStarKiService : BaseService, INineStarKiService
     {
-        public NineStarKiService(INineStarKiBasePackage my) : base(my)
+        private readonly ISwissEphemerisService _swissEphemerisService;
+
+        public NineStarKiService(INineStarKiBasePackage my, ISwissEphemerisService swissEphemerisService) : base(my)
         {
+            _swissEphemerisService = swissEphemerisService;
         }
 
         public NineStarKiModel CalculateNineStarKiProfile(DateTime dateOfBirth, EGender gender = EGender.Male)
@@ -34,6 +37,9 @@ namespace K9.WebApplication.Services
             var cacheKey = $"CalculateNineStarKiProfileFromModel_{personModel.DateOfBirth.ToString()}_{personModel.Name}_{personModel.Gender}_{isCompatibility}_{isMyProfile}_{today.ToString()}";
             return GetOrAddToCache(cacheKey, () =>
             {
+                var preciseMainEnergy = _swissEphemerisService.GetNineStarKiYear(personModel.DateOfBirth, personModel.TimeZoneId);
+                var preciseEmotionalEnergy = _swissEphemerisService.GetNineStarKiMonth(personModel.DateOfBirth, personModel.TimeZoneId);    
+
                 var model = new NineStarKiModel(personModel, today);
                
                 model.MainEnergy.EnergyDescription = GetMainEnergyDescription(model.MainEnergy.Energy);
@@ -167,6 +173,11 @@ namespace K9.WebApplication.Services
                 return new NineStarKiSummaryViewModel(mainEnergies, characterEnergies, dynamicEnergies, staticEnergies,
                     flexibleEnergies);
             }, TimeSpan.FromDays(30));
+        }
+
+        public void TestSwiss()
+        {
+            
         }
 
         private string GetOverview(ENineStarKiEnergy energy)

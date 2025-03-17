@@ -220,6 +220,9 @@
       <HintPath>..\packages\K9.SharedLibrary.2.0.0.212\lib\net461\System.Web.WebPages.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="TimeZoneConverter, Version=7.0.0.0, Culture=neutral, PublicKeyToken=e20ab7d0d9479841, processorArchitecture=MSIL">
+      <HintPath>..\packages\TimeZoneConverter.7.0.0\lib\net462\TimeZoneConverter.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.SharedLibrary.2.0.0.212\lib\net461\WebGrease.dll</HintPath>
       <Private>True</Private>
@@ -234,6 +237,7 @@
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="Database\DatabaseInitialiser.cs" />
     <Compile Include="Database\Db.cs" />
+    <Compile Include="Database\Seeds\TimeZonesSeeder.cs" />
     <Compile Include="Database\Seeds\SystemSettingsSeeder.cs" />
     <Compile Include="Database\Seeds\EmailTemplatesSeeder.cs" />
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
@@ -412,6 +416,7 @@
     <Compile Include="Migrations\202502280803070_SystemSettings.designer.cs">
       <DependentUpon>202502280803070_SystemSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\TimeZone.cs" />
     <Compile Include="Models\MailingList.cs" />
     <Compile Include="Models\EmailTemplate.cs" />
     <Compile Include="Models\EmailQueueItem.cs" />

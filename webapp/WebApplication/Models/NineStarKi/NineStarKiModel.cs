@@ -15,8 +15,8 @@ namespace K9.WebApplication.Models
     public class NineStarKiModel : CachableBase
     {
         private const bool invertCycleYinEnergies = true;
-        private const bool enableCycleSwitch = false;
-        private static DateTime cycleSwitchDate = new DateTime(2013, 2, 4);
+        private const bool enableCycleSwitch = true;
+        private static DateTime cycleSwitchDate = new DateTime(2105, 2, 4);
 
         public NineStarKiModel()
         {
@@ -29,6 +29,34 @@ namespace K9.WebApplication.Models
 
             PersonModel = personModel;
             BiorhythmResultSet = new BioRhythmsResultSet();
+        }
+
+        public NineStarKiModel(PersonModel personModel, int mainEnergy, int emotionalEnergy, int yearlyCycleEnergy, DateTime? selectedDate = null)
+        {
+            SelectedDate = selectedDate ?? DateTime.Today;
+
+            PersonModel = personModel;
+
+            MainEnergy = GetOrAddToCache($"MainEnergy_{PersonModel.DateOfBirth}_{PersonModel.Gender}",
+                () => GetMainEnergy(PersonModel.DateOfBirth, mainEnergy, PersonModel.Gender), TimeSpan.FromDays(30));
+
+            CharacterEnergy = GetOrAddToCache($"CharacterEnergy_{PersonModel.DateOfBirth}_{PersonModel.Gender}",
+                () => GetCharacterEnergy(PersonModel.DateOfBirth, emotionalEnergy, PersonModel.Gender), TimeSpan.FromDays(30));
+
+            SurfaceEnergy = GetOrAddToCache($"SurfaceEnergy_{MainEnergy.EnergyNumber}_{CharacterEnergy.EnergyNumber}",
+                GetSurfaceEnergy, TimeSpan.FromDays(30));
+
+            YearlyCycleEnergy = GetOrAddToCache($"YearlyCycleEnergy_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{SelectedDate.Value.ToString()}",
+                () => GetYearlyCycleEnergy(yearlyCycleEnergy), TimeSpan.FromDays(30));
+
+            MonthlyCycleEnergy = GetOrAddToCache($"MonthlyCycleEnergy_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{SelectedDate.Value.ToString()}",
+                GetMonthlyCycleEnergy, TimeSpan.FromDays(30));
+
+            MainEnergy.RelatedEnergy = CharacterEnergy.Energy;
+            CharacterEnergy.RelatedEnergy = MainEnergy.Energy;
+            SurfaceEnergy.RelatedEnergy = MainEnergy.Energy;
+
+            BiorhythmResultSet = new BioRhythmsResultSet(this, selectedDate);
         }
 
         public NineStarKiModel(PersonModel personModel, DateTime? selectedDate = null)
@@ -47,7 +75,7 @@ namespace K9.WebApplication.Models
                 GetSurfaceEnergy, TimeSpan.FromDays(30));
 
             YearlyCycleEnergy = GetOrAddToCache($"YearlyCycleEnergy_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{SelectedDate.Value.ToString()}",
-                GetYearlyCycleEnergy, TimeSpan.FromDays(30));
+                () => GetYearlyCycleEnergy(), TimeSpan.FromDays(30));
 
             MonthlyCycleEnergy = GetOrAddToCache($"MonthlyCycleEnergy_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{SelectedDate.Value.ToString()}",
                 GetMonthlyCycleEnergy, TimeSpan.FromDays(30));
@@ -104,6 +132,11 @@ namespace K9.WebApplication.Models
 
         [ScriptIgnore]
         public bool IsCompatibility { get; set; } = false;
+
+        /// <summary>
+        /// Determines the 9 Star Ki energy of the current 9 year cycle
+        /// </summary>
+        public NineStarKiEnergy NineYearlyCycleEnergy { get; }
 
         /// <summary>
         /// Determines the 9 Star Ki energy of the current year
@@ -249,7 +282,15 @@ namespace K9.WebApplication.Models
             year = (month == 2 && day <= 3) || month == 1 ? year - 1 : year;
             var energyNumber = 3 - ((year - 1979) % 9);
 
-            var nineStarKiEnergy = ProcessEnergy(energyNumber, gender, ENineStarKiEnergyType.MainEnergy, enableCycleSwitch && date > cycleSwitchDate);
+            var nineStarKiEnergy = ProcessEnergy(energyNumber, gender, ENineStarKiEnergyType.MainEnergy, enableCycleSwitch && date >= cycleSwitchDate);
+            nineStarKiEnergy.Gender = gender;
+
+            return nineStarKiEnergy;
+        }
+
+        private NineStarKiEnergy GetMainEnergy(DateTime date, int energyNumber, EGender gender)
+        {
+            var nineStarKiEnergy = ProcessEnergy(energyNumber, gender, ENineStarKiEnergyType.MainEnergy, enableCycleSwitch && date >= cycleSwitchDate);
             nineStarKiEnergy.Gender = gender;
 
             return nineStarKiEnergy;
@@ -402,7 +443,12 @@ namespace K9.WebApplication.Models
             var yearlyEnergy = GetMainEnergy(date, gender).Energy;
             var energyNumber = GetEnergyNumberFromYearlyEnergy(yearlyEnergy, month);
 
-            return ProcessEnergy(energyNumber, gender, ENineStarKiEnergyType.CharacterEnergy, enableCycleSwitch && date > cycleSwitchDate);
+            return ProcessEnergy(energyNumber, gender, ENineStarKiEnergyType.CharacterEnergy, enableCycleSwitch && date >= cycleSwitchDate);
+        }
+
+        private NineStarKiEnergy GetCharacterEnergy(DateTime date, int energyNumber, EGender gender = EGender.Male)
+        {
+            return ProcessEnergy(energyNumber, gender, ENineStarKiEnergyType.CharacterEnergy, enableCycleSwitch && date >= cycleSwitchDate);
         }
 
         private NineStarKiEnergy GetSurfaceEnergy()
@@ -410,13 +456,13 @@ namespace K9.WebApplication.Models
             return ProcessEnergy(5 - (CharacterEnergy.EnergyNumber - MainEnergy.EnergyNumber), EGender.Male, ENineStarKiEnergyType.SurfaceEnergy);
         }
 
-        private NineStarKiEnergy GetYearlyCycleEnergy()
+        private NineStarKiEnergy GetYearlyCycleEnergy(int? todayYearEnergy = null)
         {
             var selectedDate = SelectedDate ?? DateTime.Today;
-            var todayYearEnergy = (int)GetMainEnergy(selectedDate, EGender.Male).Energy;
+            todayYearEnergy  = todayYearEnergy == null ? (int)GetMainEnergy(selectedDate, EGender.Male).Energy : todayYearEnergy;
             /// Get the male energy for this calculation
             var personalYearEnergy = PersonModel.Gender.IsYin() ? InvertEnergy(MainEnergy.EnergyNumber) : MainEnergy.EnergyNumber;
-            var offset = todayYearEnergy - personalYearEnergy;
+            var offset = todayYearEnergy.Value - personalYearEnergy;
             var lifeCycleYearEnergy = LoopEnergyNumber(5 - offset);
             var isPastCycleSwitch = enableCycleSwitch && selectedDate >= cycleSwitchDate;
 

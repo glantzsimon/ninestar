@@ -4615,4 +4615,10 @@
   <data name="TargetKillingDescription" xml:space="preserve">
     <value>Travelling in this direction is similar to "Hon Mei Satsu" but the problems or difficulties are caused by others.</value>
   </data>
+  <data name="TimeZone" xml:space="preserve">
+    <value>TimeZone</value>
+  </data>
+  <data name="TimeZones" xml:space="preserve">
+    <value>Time Zones</value>
+  </data>
 </root>

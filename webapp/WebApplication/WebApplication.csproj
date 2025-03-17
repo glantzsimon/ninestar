@@ -189,6 +189,9 @@
     <Reference Include="Stripe.net, Version=39.31.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Stripe.net.39.31.0\lib\net461\Stripe.net.dll</HintPath>
     </Reference>
+    <Reference Include="SwissEphNet, Version=2.8.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SwissEphNet.2.8.0.2\lib\net40\SwissEphNet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.217\lib\net461\System.Buffers.dll</HintPath>
@@ -284,6 +287,9 @@
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="TimeZoneConverter, Version=7.0.0.0, Culture=neutral, PublicKeyToken=e20ab7d0d9479841, processorArchitecture=MSIL">
+      <HintPath>..\packages\TimeZoneConverter.7.0.0\lib\net462\TimeZoneConverter.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.217\lib\net461\WebGrease.dll</HintPath>
     </Reference>
@@ -365,6 +371,8 @@
     <Compile Include="Models\MailingListViewModel.cs" />
     <Compile Include="Models\MailingListSendResultItem.cs" />
     <Compile Include="Models\CachableBase.cs" />
+    <Compile Include="Services\SwissEphemerisService.cs" />
+    <Compile Include="Services\ISwissEphemerisService.cs" />
     <Compile Include="Services\NumerologyService.cs" />
     <Compile Include="Services\INumerologyService.cs" />
     <Compile Include="Services\IMailerService.cs" />

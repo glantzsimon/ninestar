@@ -1,5 +1,6 @@
 ﻿using K9.Base.DataAccessLayer.Enums;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Config;
 using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
@@ -13,6 +14,7 @@ namespace K9.WebApplication.Tests.Unit.Services
     public class NineStarKiServiceTests
     {
         private NineStarKiService _nineStarKiService;
+        private SwissEphemerisService _swissEphemerisService;
 
         public NineStarKiServiceTests()
         {
@@ -23,7 +25,14 @@ namespace K9.WebApplication.Tests.Unit.Services
             var basePackage = new Mock<INineStarKiBasePackage>();
             basePackage.SetupGet(e => e.Authentication).Returns(mockAuthentication.Object);
 
-            _nineStarKiService = new NineStarKiService(basePackage.Object);
+            var nineStarKiBasePackage = new Mock<INineStarKiBasePackage>();
+            nineStarKiBasePackage.SetupGet(e => e.DefaultValuesConfiguration).Returns(new DefaultValuesConfiguration
+            {
+                SwephPath = @"c:\\workspace\\sweph\\datafiles"
+            });
+
+            _swissEphemerisService = new SwissEphemerisService(nineStarKiBasePackage.Object);
+            _nineStarKiService = new NineStarKiService(basePackage.Object, _swissEphemerisService);
         }
 
         [Theory]
@@ -394,81 +403,150 @@ namespace K9.WebApplication.Tests.Unit.Services
             Assert.Equal(coreEarthMonthlyCycleDirection, ninestar.MonthlyCycleCoreEarthEnergy.Direction);
         }
 
+        [Theory]
+        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
+            1979, ENineStarKiEnergy.CoreEarth)]
+        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
+            1980, ENineStarKiEnergy.Heaven)]
+        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
+            2102, ENineStarKiEnergy.Soil)]
+        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
+            2103, ENineStarKiEnergy.Thunder)]
+        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
+            2104, ENineStarKiEnergy.Wind)]
+        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
+            2105, ENineStarKiEnergy.Water)]
+        [InlineData(1980, ENineStarKiEnergy.Soil, EGender.Male,
+            2104, ENineStarKiEnergy.Thunder)]
+        [InlineData(1980, ENineStarKiEnergy.Soil, EGender.Male,
+            2105, ENineStarKiEnergy.Soil)]
+        public void CalcualteYearlyCycleWithCycleChange_Test(
+            int birthYear,
+            ENineStarKiEnergy energy,
+            EGender gender,
+            int todayYear,
+            ENineStarKiEnergy yearlyCycleEnergy)
+        {
+
+            var ninestar = _nineStarKiService.CalculateNineStarKiProfile(
+                new PersonModel
+                {
+                    DateOfBirth = new DateTime(birthYear, 2, 4),
+                    Gender = gender,
+                },
+                false,
+                false,
+                new DateTime(todayYear, 2, 4));
+
+            Assert.Equal(energy, ninestar.MainEnergy.Energy);
+            Assert.Equal(yearlyCycleEnergy, ninestar.YearlyCycleEnergy.Energy);
+        }
+
+        [Theory]
+        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
+            2096, ENineStarKiEnergy.CoreEarth, 2, ENineStarKiEnergy.Soil)]
+        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
+            2102, ENineStarKiEnergy.Soil, 2, ENineStarKiEnergy.Soil)]
+        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
+            2104, ENineStarKiEnergy.Wind, 2, ENineStarKiEnergy.Mountain)]
+        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
+            2105, ENineStarKiEnergy.Water, 2, ENineStarKiEnergy.Lake)]
+        public void CalcualteMonthlyCycleWithCycleChange_Test(
+            int birthYear,
+            ENineStarKiEnergy energy,
+            EGender gender,
+            int todayYear,
+            ENineStarKiEnergy yearlyCycleEnergy,
+            int monthNumber,
+            ENineStarKiEnergy monthlyCycleEnergy)
+        {
+
+            var ninestar = _nineStarKiService.CalculateNineStarKiProfile(
+                new PersonModel
+                {
+                    DateOfBirth = new DateTime(birthYear, 2, 4),
+                    Gender = gender,
+                },
+                false,
+                false,
+                new DateTime(todayYear, monthNumber, 15));
+
+            Assert.Equal(energy, ninestar.MainEnergy.Energy);
+            Assert.Equal(yearlyCycleEnergy, ninestar.YearlyCycleEnergy.Energy);
+            Assert.Equal(monthlyCycleEnergy, ninestar.MonthlyCycleEnergy.Energy);
+        }
+
+        [Theory]
+        [InlineData(1979, 6, 16, EGender.Male, ENineStarKiEnergy.Thunder)]
+        [InlineData(1980, 6, 16, EGender.Male, ENineStarKiEnergy.Soil)]
+        [InlineData(1981, 6, 16, EGender.Male, ENineStarKiEnergy.Water)]
+        [InlineData(1982, 6, 16, EGender.Male, ENineStarKiEnergy.Fire)]
+        [InlineData(1979, 2, 5, EGender.Male, ENineStarKiEnergy.Thunder)]
+        [InlineData(1979, 2, 4, EGender.Male, ENineStarKiEnergy.Wind)]
+        [InlineData(1976, 2, 1, EGender.Male, ENineStarKiEnergy.Lake)]
+        [InlineData(1985, 9, 7, EGender.Male, ENineStarKiEnergy.Heaven)]
+        [InlineData(1979, 2, 4, EGender.Male, ENineStarKiEnergy.Thunder, 23)]
+        public void CalcualteSwissEphemeris_Year(
+            int birthYear,
+            int birthMonth,
+            int birthDay,
+            EGender gender,
+            ENineStarKiEnergy energy,
+            int hour = 0)
+        {
+               var nineStarKiYear = _swissEphemerisService.GetNineStarKiYear(new DateTime(birthYear, birthMonth, birthDay, hour, 0, 0), "Europe/London");
+        
+            Assert.Equal((int)energy, nineStarKiYear);
+        }
+
+        [Theory]
+        [InlineData(1979, 6, 9, EGender.Male, ENineStarKiEnergy.Water)]
+        [InlineData(1979, 2, 5, EGender.Male, ENineStarKiEnergy.CoreEarth)]
+        [InlineData(1979, 3, 5, EGender.Male, ENineStarKiEnergy.CoreEarth)]
+        [InlineData(1979, 3, 6, EGender.Male, ENineStarKiEnergy.CoreEarth)]
+        [InlineData(1979, 3, 7, EGender.Male, ENineStarKiEnergy.Wind)]
+        [InlineData(1979, 4, 7, EGender.Male, ENineStarKiEnergy.Thunder)]
+        [InlineData(1979, 4, 6, EGender.Male, ENineStarKiEnergy.Thunder)]
+        [InlineData(1979, 4, 5, EGender.Male, ENineStarKiEnergy.Wind)]
+        [InlineData(1985, 9, 7, EGender.Male, ENineStarKiEnergy.Mountain, "Europe/Samara")]
+        [InlineData(1979, 2, 4, EGender.Male, ENineStarKiEnergy.CoreEarth, "Europe/London", 23)]
+        public void CalcualteSwissEphemeris_Month(
+            int birthYear,
+            int birthMonth,
+            int birthDay,
+            EGender gender,
+            ENineStarKiEnergy energy,
+            string timeZone = "Europe/London",
+            int hour = 0)
+        {
+            var nineStarKiMonth = _swissEphemerisService.GetNineStarKiMonth(new DateTime(birthYear, birthMonth, birthDay, hour, 0, 0), timeZone);
+            
+            Assert.Equal((int)energy, nineStarKiMonth);
+        }
+
         //[Theory]
-        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
-        //    1979, ENineStarKiEnergy.CoreEarth)]
-        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
-        //    1980, ENineStarKiEnergy.Heaven)]
-        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
-        //    2012, ENineStarKiEnergy.Soil)]
-        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
-        //    2013, ENineStarKiEnergy.Thunder)]
-        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
-        //    2014, ENineStarKiEnergy.Soil)]
-        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Female,
-        //    1979, ENineStarKiEnergy.Water)]
-        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Female,
-        //    1980, ENineStarKiEnergy.Fire)]
-        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Female,
-        //    2012, ENineStarKiEnergy.Wind)]
-        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Female,
-        //    2013, ENineStarKiEnergy.Thunder)]
-        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Female,
-        //    2014, ENineStarKiEnergy.Wind)]
-        //public void CalcualteYearlyCycleWithCycleChange_Test(
+        //[InlineData(1979, 6, 9, EGender.Male, ENineStarKiEnergy.Water)]
+        //[InlineData(1979, 2, 5, EGender.Male, ENineStarKiEnergy.CoreEarth)]
+        //[InlineData(1979, 3, 5, EGender.Male, ENineStarKiEnergy.CoreEarth)]
+        //[InlineData(1979, 3, 6, EGender.Male, ENineStarKiEnergy.CoreEarth)]
+        //[InlineData(1979, 3, 7, EGender.Male, ENineStarKiEnergy.Wind)]
+        //[InlineData(1979, 4, 7, EGender.Male, ENineStarKiEnergy.Thunder)]
+        //[InlineData(1979, 4, 6, EGender.Male, ENineStarKiEnergy.Thunder)]
+        //[InlineData(1979, 4, 5, EGender.Male, ENineStarKiEnergy.Wind)]
+        //[InlineData(1985, 9, 7, EGender.Male, ENineStarKiEnergy.Mountain, "Europe/Samara")]
+        //[InlineData(1979, 2, 4, EGender.Male, ENineStarKiEnergy.CoreEarth, "Europe/London", 23)]
+        //public void CalcualteSwissEphemeris_NineStarKi_Year(
         //    int birthYear,
-        //    ENineStarKiEnergy energy,
+        //    int birthMonth,
+        //    int birthDay,
         //    EGender gender,
-        //    int todayYear,
-        //    ENineStarKiEnergy yearlyCycleEnergy)
-        //{
-
-        //    var ninestar = _nineStarKiService.CalculateNineStarKiProfile(
-        //        new PersonModel
-        //        {
-        //            DateOfBirth = new DateTime(birthYear, 2, 4),
-        //            Gender = gender,
-        //        },
-        //        false,
-        //        false,
-        //        new DateTime(todayYear, 2, 4));
-
-        //    Assert.Equal(energy, ninestar.MainEnergy.Energy);
-        //    Assert.Equal(yearlyCycleEnergy, ninestar.YearlyCycleEnergy.Energy);
-        //}
-
-        //[Theory]
-        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
-        //    1979, ENineStarKiEnergy.CoreEarth, 2, ENineStarKiEnergy.Soil)]
-        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
-        //    2012, ENineStarKiEnergy.Soil, 2, ENineStarKiEnergy.Soil)]
-        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
-        //    2013, ENineStarKiEnergy.Thunder, 2, ENineStarKiEnergy.CoreEarth)]
-        //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
-        //    2014, ENineStarKiEnergy.Soil, 2, ENineStarKiEnergy.Water)]
-        //public void CalcualteMonthlyCycleWithCycleChange_Test(
-        //    int birthYear,
         //    ENineStarKiEnergy energy,
-        //    EGender gender,
-        //    int todayYear,
-        //    ENineStarKiEnergy yearlyCycleEnergy,
-        //    int monthNumber,
-        //    ENineStarKiEnergy monthlyCycleEnergy)
+        //    string timeZone = "Europe/London",
+        //    int hour = 0)
         //{
-
-        //    var ninestar = _nineStarKiService.CalculateNineStarKiProfile(
-        //        new PersonModel
-        //        {
-        //            DateOfBirth = new DateTime(birthYear, 2, 4),
-        //            Gender = gender,
-        //        },
-        //        false,
-        //        false,
-        //        new DateTime(todayYear, monthNumber, 15));
-
-        //    Assert.Equal(energy, ninestar.MainEnergy.Energy);
-        //    Assert.Equal(yearlyCycleEnergy, ninestar.YearlyCycleEnergy.Energy);
-        //    Assert.Equal(monthlyCycleEnergy, ninestar.MonthlyCycleEnergy.Energy);
+        //    var nineStarKiMonth = _nineStarKiService.CalculateNineStarKiProfile(new DateTime(birthYear, birthMonth, birthDay, hour, 0, 0), timeZone);
+            
+        //    Assert.Equal((int)energy, nineStarKiMonth);
         //}
 
         //[Theory]

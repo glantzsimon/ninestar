@@ -31,26 +31,26 @@ namespace K9.WebApplication.Models
             BiorhythmResultSet = new BioRhythmsResultSet();
         }
 
-        public NineStarKiModel(PersonModel personModel, int mainEnergy, int emotionalEnergy, int yearlyCycleEnergy, DateTime? selectedDate = null)
+        public NineStarKiModel(PersonModel personModel, int preciseMainEnergy, int preciseEmotionalEnergy, int preciseYearlyCycleEnergy, int preciseMonthlyCycleEnergy, DateTime? selectedDate = null)
         {
             SelectedDate = selectedDate ?? DateTime.Today;
 
             PersonModel = personModel;
 
-            MainEnergy = GetOrAddToCache($"MainEnergy_{PersonModel.DateOfBirth}_{PersonModel.Gender}",
-                () => GetMainEnergy(PersonModel.DateOfBirth, mainEnergy, PersonModel.Gender), TimeSpan.FromDays(30));
+            MainEnergy = GetOrAddToCache($"MainEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}",
+                () => GetMainEnergy(PersonModel.DateOfBirth, preciseMainEnergy, PersonModel.Gender), TimeSpan.FromDays(30));
 
-            CharacterEnergy = GetOrAddToCache($"CharacterEnergy_{PersonModel.DateOfBirth}_{PersonModel.Gender}",
-                () => GetCharacterEnergy(PersonModel.DateOfBirth, emotionalEnergy, PersonModel.Gender), TimeSpan.FromDays(30));
+            CharacterEnergy = GetOrAddToCache($"CharacterEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}",
+                () => GetCharacterEnergy(PersonModel.DateOfBirth, preciseEmotionalEnergy, PersonModel.Gender), TimeSpan.FromDays(30));
 
-            SurfaceEnergy = GetOrAddToCache($"SurfaceEnergy_{MainEnergy.EnergyNumber}_{CharacterEnergy.EnergyNumber}",
+            SurfaceEnergy = GetOrAddToCache($"SurfaceEnergy_p_{MainEnergy.EnergyNumber}_{CharacterEnergy.EnergyNumber}",
                 GetSurfaceEnergy, TimeSpan.FromDays(30));
 
-            YearlyCycleEnergy = GetOrAddToCache($"YearlyCycleEnergy_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{SelectedDate.Value.ToString()}",
-                () => GetYearlyCycleEnergy(yearlyCycleEnergy), TimeSpan.FromDays(30));
+            YearlyCycleEnergy = GetOrAddToCache($"YearlyCycleEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{SelectedDate.Value.ToString()}",
+                () => GetYearlyCycleEnergy(preciseYearlyCycleEnergy), TimeSpan.FromDays(30));
 
-            MonthlyCycleEnergy = GetOrAddToCache($"MonthlyCycleEnergy_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{SelectedDate.Value.ToString()}",
-                GetMonthlyCycleEnergy, TimeSpan.FromDays(30));
+            MonthlyCycleEnergy = GetOrAddToCache($"MonthlyCycleEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{SelectedDate.Value.ToString()}",
+                () => GetMonthlyCycleEnergy(preciseYearlyCycleEnergy, preciseMonthlyCycleEnergy), TimeSpan.FromDays(30));
 
             MainEnergy.RelatedEnergy = CharacterEnergy.Energy;
             CharacterEnergy.RelatedEnergy = MainEnergy.Energy;
@@ -78,7 +78,7 @@ namespace K9.WebApplication.Models
                 () => GetYearlyCycleEnergy(), TimeSpan.FromDays(30));
 
             MonthlyCycleEnergy = GetOrAddToCache($"MonthlyCycleEnergy_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{SelectedDate.Value.ToString()}",
-                GetMonthlyCycleEnergy, TimeSpan.FromDays(30));
+                () => GetMonthlyCycleEnergy(), TimeSpan.FromDays(30));
 
             MainEnergy.RelatedEnergy = CharacterEnergy.Energy;
             CharacterEnergy.RelatedEnergy = MainEnergy.Energy;
@@ -473,11 +473,11 @@ namespace K9.WebApplication.Models
             return new NineStarKiEnergy(energy, ENineStarKiEnergyType.MainEnergy, PersonModel.IsAdult(), ENineStarKiEnergyCycleType.YearlyCycleEnergy);
         }
 
-        private NineStarKiEnergy GetMonthlyCycleEnergy()
+        private NineStarKiEnergy GetMonthlyCycleEnergy(int? todayYearEnergy = null, int? todayMonthEnergy = null)
         {
             var selectedDate = SelectedDate ?? DateTime.Today;
-            var month = GetMonth(selectedDate);
-            var yearlyCycleEnergy = GetYearlyCycleEnergy().Energy;
+            var month = todayMonthEnergy ?? GetMonth(selectedDate);
+            var yearlyCycleEnergy = GetYearlyCycleEnergy(todayYearEnergy).Energy;
             var energyNumber = GetEnergyNumberFromYearlyEnergy(yearlyCycleEnergy, month);
             var isPastCycleSwitch = enableCycleSwitch && selectedDate >= cycleSwitchDate;
 

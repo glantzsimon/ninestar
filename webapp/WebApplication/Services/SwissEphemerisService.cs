@@ -79,6 +79,45 @@ namespace K9.WebApplication.Services
             }
         }
 
+        public int GetNineStarKiMonthNumber(DateTime birthDate, string timeZoneId)
+        {
+            using (var sweph = new SwissEphNet.SwissEph())
+            {
+                sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
+
+                DateTime birthDateTimeUT = ConvertToUT(birthDate, timeZoneId);
+                int birthYear = birthDateTimeUT.Year;
+
+                // Calculate Julian Date for Lìchūn (立春)
+                double jdLichun = GetSolarTerm(sweph, birthYear, 315.0); // 315° marks Lìchūn
+                double jdBirth = GetJulianDate(sweph, birthDateTimeUT);
+
+                // If birth date is before Lìchūn, use the previous year
+                if (jdBirth < jdLichun && birthDateTimeUT.Month <= 2)
+                {
+                    birthYear -= 1;
+                }
+
+                // Get the Nine Star Ki year energy (which has already considered Lìchūn)
+                int yearEnergy = GetNineStarKiYear(birthDate, timeZoneId);
+                
+                // **Get Solar Terms for the 12 months after Lìchūn**
+                double[] solarTerms = GetSolarTerms(sweph, birthYear);
+
+                // **Find the correct month by comparing birthdate with solar terms**
+                for (int i = 0; i < 11; i++) // Avoid out-of-bounds
+                {
+                    if (jdBirth >= solarTerms[i] && jdBirth < solarTerms[i + 1])
+                    {
+                        return i + 2;
+                    }
+                }
+
+                // **If birth date is after last solar term, assign last month**
+                return 12;
+            }
+        }
+
         private double GetSolarTerm(SwissEphNet.SwissEph sweph, int year, double targetLongitude)
         {
             double julianStart = sweph.swe_julday(year, 1, 1, 0.0, SE_GREG_CAL);

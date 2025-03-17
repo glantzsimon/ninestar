@@ -5,6 +5,7 @@ using K9.WebApplication.Packages;
 using K9.WebApplication.ViewModels;
 using System;
 using System.Collections.Generic;
+using TimeZoneConverter;
 
 namespace K9.WebApplication.Services
 {
@@ -37,11 +38,18 @@ namespace K9.WebApplication.Services
             var cacheKey = $"CalculateNineStarKiProfileFromModel_{personModel.DateOfBirth.ToString()}_{personModel.Name}_{personModel.Gender}_{isCompatibility}_{isMyProfile}_{today.ToString()}";
             return GetOrAddToCache(cacheKey, () =>
             {
+                var tzInfo = TZConvert.GetTimeZoneInfo(personModel.TimeZoneId);
+                var selectedDateTime = today == null 
+                    ? TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, tzInfo) 
+                    : today.Value;
+                
                 var preciseMainEnergy = _swissEphemerisService.GetNineStarKiYear(personModel.DateOfBirth, personModel.TimeZoneId);
-                var preciseEmotionalEnergy = _swissEphemerisService.GetNineStarKiMonth(personModel.DateOfBirth, personModel.TimeZoneId);    
+                var preciseEmotionalEnergy = _swissEphemerisService.GetNineStarKiMonth(personModel.DateOfBirth, personModel.TimeZoneId);
+                var preciseYearEnergy = _swissEphemerisService.GetNineStarKiYear(selectedDateTime, personModel.TimeZoneId);
+                var preciseMonthEnergy = _swissEphemerisService.GetNineStarKiMonthNumber(selectedDateTime, personModel.TimeZoneId);
 
-                var model = new NineStarKiModel(personModel, today);
-               
+                var model = new NineStarKiModel(personModel, preciseMainEnergy, preciseEmotionalEnergy, preciseYearEnergy, preciseMonthEnergy, selectedDateTime);
+                
                 model.MainEnergy.EnergyDescription = GetMainEnergyDescription(model.MainEnergy.Energy);
                 model.CharacterEnergy.EnergyDescription = GetCharacterEnergyDescription(model.CharacterEnergy.Energy);
                 model.SurfaceEnergy.EnergyDescription = GetSurfaceEnergyDescription(model.SurfaceEnergy.Energy);
@@ -52,10 +60,10 @@ namespace K9.WebApplication.Services
                 model.Overview = GetOverview(model.MainEnergy.Energy);
 
                 var yearlyCoreFactor = NineStarKiModel.LoopEnergyNumber(model.MainEnergy.EnergyNumber - (model.YearlyCycleEnergy.EnergyNumber - 5));
-                model.YearlyCycleCoreEarthEnergy = new NineStarKiEnergy((ENineStarKiEnergy)InvertDirectionEnergy(yearlyCoreFactor),  ENineStarKiEnergyType.MainEnergy, true, ENineStarKiEnergyCycleType.YearlyCycleEnergy);
+                model.YearlyCycleCoreEarthEnergy = new NineStarKiEnergy((ENineStarKiEnergy)InvertDirectionEnergy(yearlyCoreFactor), ENineStarKiEnergyType.MainEnergy, true, ENineStarKiEnergyCycleType.YearlyCycleEnergy);
 
-                model.MonthlyCycleCoreEarthEnergy = new NineStarKiEnergy((ENineStarKiEnergy)InvertDirectionEnergy(model.MonthlyCycleEnergy.EnergyNumber),  ENineStarKiEnergyType.CharacterEnergy, true, ENineStarKiEnergyCycleType.MonthlyCycleEnergy);
-                
+                model.MonthlyCycleCoreEarthEnergy = new NineStarKiEnergy((ENineStarKiEnergy)InvertDirectionEnergy(model.MonthlyCycleEnergy.EnergyNumber), ENineStarKiEnergyType.CharacterEnergy, true, ENineStarKiEnergyCycleType.MonthlyCycleEnergy);
+
                 model.YearlyDirections = GetYearlyDirections(model);
                 model.MonthlyDirections = GetMonthlyDirections(model);
 
@@ -177,7 +185,7 @@ namespace K9.WebApplication.Services
 
         public void TestSwiss()
         {
-            
+
         }
 
         private string GetOverview(ENineStarKiEnergy energy)
@@ -811,7 +819,7 @@ namespace K9.WebApplication.Services
             { 1, 9 }, { 2, 8 }, { 3, 7 }, { 4, 6 },
             { 5, 5 }, { 6, 4 }, { 7, 3 }, { 8, 2 }, { 9, 1 }
         };
-        
+
         private int InvertDirectionEnergy(int energyNumber) =>
             _invertedDirectionEnergies.TryGetValue(energyNumber, out var inverted) ? inverted : energyNumber;
 

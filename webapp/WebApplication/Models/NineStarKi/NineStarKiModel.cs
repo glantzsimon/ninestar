@@ -535,7 +535,7 @@ namespace K9.WebApplication.Models
             { 6, 9 }, { 7, 8 }, { 8, 7 }, { 9, 6 }
         };
 
-        private int InvertEnergy(int energyNumber) =>
+        public static int InvertEnergy(int energyNumber) =>
             _invertedEnergies.TryGetValue(energyNumber, out var inverted) ? inverted : energyNumber;
 
         private static readonly Dictionary<bool, Dictionary<(ENineStarKiYinYang, ENineStarKiYinYang), ESexualityRelationType>> _sexualityRelations

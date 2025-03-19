@@ -94,7 +94,7 @@ namespace K9.WebApplication.Services
                 int dayKi = BASE_DAY_KI;
                 int? invertedKi = null;
                 DateTime selectedDateTimeUT = ConvertToUT(selectedDateTime, timeZoneId);
-                int dayKiCount = BASE_DAY_KI_CYCLE_START;
+                int dayKiCycleCount = BASE_DAY_KI_CYCLE_START;
                 int dayKiCycleLength = BASE_DAY_KI_CYCLE;
                 int dayKiSmallCycle = BASE_DAY_KI_SMALL_CYCLE_START;
 
@@ -107,18 +107,18 @@ namespace K9.WebApplication.Services
                     DateTime day = startOfYear.AddDays(1);
 
                     // Compute solstice dates for the current year.
-                    DateTime juneSolstice = FindJuneSolstice(sweph, year);
-                    DateTime decemberSolstice = FindDecemberSolstice(sweph, year);
+                    DateTime juneSolstice = FindJuneSolstice(sweph, year).Date;
+                    DateTime decemberSolstice = FindDecemberSolstice(sweph, year).Date;
                     
                     while (day <= finishOfYear)
                     {
                         invertedKi = null;
                         
-                        if (dayKiCount == dayKiCycleLength)
+                        if (dayKiCycleCount == dayKiCycleLength)
                         {
                             // Every BASE_DAY_KI_CYCLE days, advance dayKi by 3.
                             dayKi = IncrementKi(dayKi, 3);
-                            dayKiCount = 1;
+                            dayKiCycleCount = 1;
 
                             switch (dayKiCycleLength)
                             {
@@ -135,15 +135,21 @@ namespace K9.WebApplication.Services
                                     break;
                             }
 
-                            if (dayKiCycleLength == BASE_DAY_KI_CYCLE + 180)
+                            if (dayKiCycleLength == BASE_DAY_KI_CYCLE + 360)
                             {
                                 dayKiCycleLength = BASE_DAY_KI_CYCLE;
                             }
                         }
 
-                        if (day < juneSolstice)
+                        if (day.Day == 22 && day.Year == 1900 && day.Month == 6)
                         {
-                            if (dayKiCount == 6 && dayKiSmallCycle == 5 && dayKi == 5)
+                            Debugger.Break();
+                        }
+
+                        if (day < juneSolstice.Date)
+                        {
+                            // A strange pattern that when you get what is in fact a 5. 5. 5 between 3 cycles, then the daily ki corrects itself ang goes back 3 points
+                            if (dayKiCycleCount == 6 && dayKiSmallCycle == 5 && dayKi == 5)
                             {
                                 dayKi = 3;
                             }
@@ -156,7 +162,7 @@ namespace K9.WebApplication.Services
                         {
                             dayKi = IncrementKi(dayKi);
                             invertedKi = dayKi;
-                            dayKi = InvertEnergy(dayKi);
+                            dayKi = NineStarKiService.InvertDirectionEnergy(dayKi);
                         }
                         else if (day > juneSolstice && day < decemberSolstice)
                         {
@@ -166,7 +172,7 @@ namespace K9.WebApplication.Services
                         {
                             dayKi = DecrementKi(dayKi);
                             invertedKi = dayKi;
-                            dayKi = InvertEnergy(dayKi);
+                            dayKi = NineStarKiService.InvertDirectionEnergy(dayKi);
                         }
                         else // day > decemberSolstice
                         {
@@ -180,7 +186,7 @@ namespace K9.WebApplication.Services
                         }
 
                         day = day.AddDays(1);
-                        dayKiCount++;
+                        dayKiCycleCount++;
                         dayKiSmallCycle++;
                     }
                 }
@@ -295,6 +301,12 @@ namespace K9.WebApplication.Services
             return TimeZoneInfo.ConvertTimeToUtc(localTime, tz);
         }
 
+        private DateTime ConvertToLocale(DateTime dateTimeUtc, string timeZoneId)
+        {
+            TimeZoneInfo tz = TZConvert.GetTimeZoneInfo(timeZoneId);
+            return TimeZoneInfo.ConvertTimeFromUtc(dateTimeUtc, tz);
+        }
+
         private int GetFirstMonthForYearEnergy(int yearEnergy)
         {
             if (yearEnergy == 1 || yearEnergy == 4 || yearEnergy == 7)
@@ -343,14 +355,5 @@ namespace K9.WebApplication.Services
         {
             return ((((ki - 1) - amount) % 9 + 9) % 9) + 1;
         }
-
-        private int InvertEnergy(int energyNumber) =>
-            _invertedEnergies.TryGetValue(energyNumber, out var inverted) ? inverted : energyNumber;
-
-        private static readonly Dictionary<int, int> _invertedEnergies = new Dictionary<int, int>
-        {
-            { 1, 5 }, { 2, 4 }, { 4, 2 }, { 5, 1 },
-            { 6, 9 }, { 7, 8 }, { 8, 7 }, { 9, 6 }
-        };
     }
 }

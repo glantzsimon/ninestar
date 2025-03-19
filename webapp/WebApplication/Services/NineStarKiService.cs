@@ -816,7 +816,7 @@ namespace K9.WebApplication.Services
             { 5, 5 }, { 6, 4 }, { 7, 3 }, { 8, 2 }, { 9, 1 }
         };
 
-        private int InvertDirectionEnergy(int energyNumber) =>
+        public static int InvertDirectionEnergy(int energyNumber) =>
             _invertedDirectionEnergies.TryGetValue(energyNumber, out var inverted) ? inverted : energyNumber;
 
         private NineStarKiEnergy GetInvertedEnergy(NineStarKiEnergy energy, ENineStarKiEnergyType type)

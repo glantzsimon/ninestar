@@ -1,4 +1,7 @@
-﻿namespace K9.WebApplication.Config
+﻿using System;
+using System.IO;
+
+namespace K9.WebApplication.Config
 {
     public class DefaultValuesConfiguration
     {
@@ -15,5 +18,13 @@
         public string CompanyAddress { get; set; }
         public string SwephPath { get; set; }
         public int EmailQueueMaxBatchSize { get; set; } = 20;
+
+        public void ValidateSwephPath()
+        {
+            if (!Directory.Exists(SwephPath))
+            {
+                throw new Exception($"Invalid path to Swiss Ephemeris files: {SwephPath}");
+            }
+        }
     }
 }

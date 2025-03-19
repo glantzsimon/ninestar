@@ -6,7 +6,13 @@ namespace K9.WebApplication.Services
     {
         int GetNineStarKiYear(DateTime birthDate, string timeZoneId);
         int GetNineStarKiMonth(DateTime birthDate, string timeZoneId);
+        /// <summary>
+        /// Returns the Gregorian calendar month number, from 1 - 12
+        /// </summary>
+        /// <param name="birthDate"></param>
+        /// <param name="timeZoneId"></param>
+        /// <returns></returns>
         int GetNineStarKiMonthNumber(DateTime birthDate, string timeZoneId);
-        int GetNineStarKiDailyNumber(int yearEnergyNumber, DateTime currentDate, string timeZoneId);
+        int GetNineStarKiDailyKi(DateTime currentDate, string timeZoneId);
     }
 }

@@ -2,203 +2,186 @@
 using SwissEphNet;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using TimeZoneConverter;
 
 namespace K9.WebApplication.Services
 {
     public class SwissEphemerisService : BaseService, ISwissEphemerisService
     {
-        public SwissEphemerisService(INineStarKiBasePackage my)
-            : base(my)
-        {
-            my.DefaultValuesConfiguration.ValidateSwephPath();
-
-            BASE_KI_DATEUT = ConvertToUT(new DateTime(1900, 1, 1, 1, 0, 0), BASE_DAY_TIMEZONE);
-        }
-
-        private const int SE_GREG_CAL = 1; // Gregorian calendar
-        private const int SEFLG_SWIEPH = 2; // Swiss Ephemeris flag
+        private const int SE_GREG_CAL = 1;              // Gregorian calendar flag
+        private const int SEFLG_SWIEPH = 2;             // Swiss Ephemeris flag for calculations
         private const double PRECISE_YEAR_LENGTH = 365.242190419;
         private const string BASE_DAY_TIMEZONE = "Europe/London";
         private const int BASE_DAY_KI_CYCLE_START = 71;
+        private const int BASE_DAY_KI_SMALL_CYCLE_START = 12;
+        private const int BASE_DAY_KI_SMALL_CYCLE = 60;
         private const int BASE_DAY_KI_CYCLE = 240;
         private const int BASE_DAY_KI = 2;
         private const int BASE_HOUR_KI = 5;
         private static DateTime BASE_KI_DATEUT;
 
+        public SwissEphemerisService(INineStarKiBasePackage my)
+            : base(my)
+        {
+            my.DefaultValuesConfiguration.ValidateSwephPath();
+            BASE_KI_DATEUT = ConvertToUT(new DateTime(1900, 1, 1, 1, 0, 0), BASE_DAY_TIMEZONE);
+        }
+
         public int GetNineStarKiYear(DateTime birthDate, string timeZoneId)
         {
-            using (var sweph = new SwissEphNet.SwissEph())
+            using (var sweph = new SwissEph())
             {
                 sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
-
                 DateTime birthDateTimeUT = ConvertToUT(birthDate, timeZoneId);
-                int birthYear = birthDateTimeUT.Year;
-
-                // Calculate Julian Date for Lìchūn (立春)
-                double jdLichun = GetSolarTerm(sweph, birthYear, 315.0); // 315° marks Lìchūn
-                double jdBirth = GetJulianDate(sweph, birthDateTimeUT);
-
-                // If birth date is before Lìchūn, use the previous year
-                if (jdBirth < jdLichun && birthDateTimeUT.Month <= 2)
-                {
-                    birthYear -= 1;
-                }
-
-                return GetNineStarKiNumber(birthYear);
+                int adjustedYear = AdjustBirthYear(sweph, birthDateTimeUT);
+                return GetNineStarKiNumber(adjustedYear);
             }
         }
 
         public int GetNineStarKiMonth(DateTime birthDate, string timeZoneId)
         {
-            using (var sweph = new SwissEphNet.SwissEph())
+            using (var sweph = new SwissEph())
             {
                 sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
-
                 DateTime birthDateTimeUT = ConvertToUT(birthDate, timeZoneId);
-                int birthYear = birthDateTimeUT.Year;
-
-                // Calculate Julian Date for Lìchūn (立春)
-                double jdLichun = GetSolarTerm(sweph, birthYear, 315.0); // 315° marks Lìchūn
-                double jdBirth = GetJulianDate(sweph, birthDateTimeUT);
-
-                // If birth date is before Lìchūn, use the previous year
-                if (jdBirth < jdLichun && birthDateTimeUT.Month <= 2)
-                {
-                    birthYear -= 1;
-                }
-
-                // Get the Nine Star Ki year energy (which has already considered Lìchūn)
-                int yearEnergy = GetNineStarKiYear(birthDate, timeZoneId);
-
-                // **Determine First Month Based on Year Energy**
+                int adjustedYear = AdjustBirthYear(sweph, birthDateTimeUT);
+                // Use the adjusted year to compute the energy directly instead of calling GetNineStarKiYear again.
+                int yearEnergy = GetNineStarKiNumber(adjustedYear);
                 int firstMonth = GetFirstMonthForYearEnergy(yearEnergy);
+                double jdBirth = GetJulianDate(sweph, birthDateTimeUT);
+                double[] solarTerms = GetSolarTerms(sweph, adjustedYear);
 
-                // **Get Solar Terms for the 12 months after Lìchūn**
-                double[] solarTerms = GetSolarTerms(sweph, birthYear);
-
-                // **Find the correct month by comparing birthdate with solar terms**
-                for (int i = 0; i < 11; i++) // Avoid out-of-bounds
+                for (int i = 0; i < 11; i++)
                 {
                     if (jdBirth >= solarTerms[i] && jdBirth < solarTerms[i + 1])
                     {
-                        return ((firstMonth - 1 - i + 9) % 9) + 1; // **Nine Star Ki downward cycle**
+                        // Downward cycle for Nine Star Ki month
+                        return ((firstMonth - 1 - i + 9) % 9) + 1;
                     }
                 }
-
-                // **If birth date is after last solar term, assign last month**
                 return ((firstMonth - 1 - 8 + 9) % 9) + 1;
             }
         }
 
-        /// <summary>
-        /// Returns the Gregorian calendar month number, from 1 - 12
-        /// </summary>
-        /// <param name="birthDate"></param>
-        /// <param name="timeZoneId"></param>
-        /// <returns></returns>
         public int GetNineStarKiMonthNumber(DateTime birthDate, string timeZoneId)
         {
-            using (var sweph = new SwissEphNet.SwissEph())
+            using (var sweph = new SwissEph())
             {
                 sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
-
                 DateTime birthDateTimeUT = ConvertToUT(birthDate, timeZoneId);
-                int birthYear = birthDateTimeUT.Year;
-
-                // Calculate Julian Date for Lìchūn (立春)
-                double jdLichun = GetSolarTerm(sweph, birthYear, 315.0); // 315° marks Lìchūn
+                int adjustedYear = AdjustBirthYear(sweph, birthDateTimeUT);
                 double jdBirth = GetJulianDate(sweph, birthDateTimeUT);
+                double[] solarTerms = GetSolarTerms(sweph, adjustedYear);
 
-                // If birth date is before Lìchūn, use the previous year
-                if (jdBirth < jdLichun && birthDateTimeUT.Month <= 2)
-                {
-                    birthYear -= 1;
-                }
-
-                // Get the Nine Star Ki year energy (which has already considered Lìchūn)
-                int yearEnergy = GetNineStarKiYear(birthDate, timeZoneId);
-
-                // **Get Solar Terms for the 12 months after Lìchūn**
-                double[] solarTerms = GetSolarTerms(sweph, birthYear);
-
-                // **Find the correct month by comparing birthdate with solar terms**
-                for (int i = 0; i < 11; i++) // Avoid out-of-bounds
+                for (int i = 0; i < 11; i++)
                 {
                     if (jdBirth >= solarTerms[i] && jdBirth < solarTerms[i + 1])
                     {
                         return i + 2;
                     }
                 }
-
-                // **If birth date is after last solar term, assign last month**
                 return 12;
             }
         }
 
         public (int ki, int? invertedKi) GetNineStarKiDailyKi(DateTime selectedDateTime, string timeZoneId)
         {
-            using (var sweph = new SwissEphNet.SwissEph())
+            using (var sweph = new SwissEph())
             {
                 sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
 
-                var dayKi = BASE_DAY_KI;
+                int dayKi = BASE_DAY_KI;
                 int? invertedKi = null;
-                var selectedDateTimeUT = ConvertToUT(selectedDateTime, timeZoneId);
-                var dayKiCount = BASE_DAY_KI_CYCLE_START;
+                DateTime selectedDateTimeUT = ConvertToUT(selectedDateTime, timeZoneId);
+                int dayKiCount = BASE_DAY_KI_CYCLE_START;
+                int dayKiCycleLength = BASE_DAY_KI_CYCLE;
+                int dayKiSmallCycle = BASE_DAY_KI_SMALL_CYCLE_START;
 
-                // Loop through each year from BASE_KI_DATEUT.Year to the year of the selected date.
+                // Loop through each year from the base Ki date up to the selected year.
                 for (int year = BASE_KI_DATEUT.Year; year <= selectedDateTimeUT.Year; year++)
                 {
                     DateTime startOfYear = new DateTime(year, 1, 1);
                     DateTime finishOfYear = (year == selectedDateTimeUT.Year) ? selectedDateTimeUT.Date : new DateTime(year, 12, 31);
-                    var day = startOfYear;
+                    // Start on the day after January 1, as the first day already has the correct ki.
+                    DateTime day = startOfYear.AddDays(1);
 
-                    // Get solstice dates for the current year.
-                    DateTime juneSolstice = FindJuneSolstice(sweph, new DateTime(year, 1, 1));
-                    DateTime decemberSolstice = FindDecemberSolstice(sweph, new DateTime(year, 1, 1));
-
-                    while (day < finishOfYear)
+                    // Compute solstice dates for the current year.
+                    DateTime juneSolstice = FindJuneSolstice(sweph, year);
+                    DateTime decemberSolstice = FindDecemberSolstice(sweph, year);
+                    
+                    while (day <= finishOfYear)
                     {
-                        // reset invertedKi
                         invertedKi = null;
-
-                        if (dayKiCount == BASE_DAY_KI_CYCLE)
+                        
+                        if (dayKiCount == dayKiCycleLength)
                         {
-                            // move the dayKi forward by 4
-                            dayKi = (((dayKi - 1) + 3) % 9) + 1;
-
-                            // reset counter
+                            // Every BASE_DAY_KI_CYCLE days, advance dayKi by 3.
+                            dayKi = IncrementKi(dayKi, 3);
                             dayKiCount = 1;
+
+                            switch (dayKiCycleLength)
+                            {
+                                case BASE_DAY_KI_CYCLE:
+                                    dayKiCycleLength += 60;
+                                    break;
+
+                                case BASE_DAY_KI_CYCLE + 60:
+                                    dayKiCycleLength += 120;
+                                    break;
+
+                                case BASE_DAY_KI_CYCLE + 120:
+                                    dayKiCycleLength += 180;
+                                    break;
+                            }
+
+                            if (dayKiCycleLength == BASE_DAY_KI_CYCLE + 180)
+                            {
+                                dayKiCycleLength = BASE_DAY_KI_CYCLE;
+                            }
                         }
 
                         if (day < juneSolstice)
                         {
-                            dayKi = (dayKi % 9) + 1;
+                            if (dayKiCount == 6 && dayKiSmallCycle == 5 && dayKi == 5)
+                            {
+                                dayKi = 3;
+                            }
+                            else
+                            {
+                                dayKi = IncrementKi(dayKi);
+                            }
                         }
                         else if (day == juneSolstice)
                         {
-                            dayKi = (dayKi + 1) % 9 + 1;
+                            dayKi = IncrementKi(dayKi);
                             invertedKi = dayKi;
                             dayKi = InvertEnergy(dayKi);
                         }
-                        else if (day > juneSolstice & day < decemberSolstice)
+                        else if (day > juneSolstice && day < decemberSolstice)
                         {
-                            dayKi = ((dayKi + 7) % 9) + 1;
+                            dayKi = DecrementKi(dayKi);
                         }
                         else if (day == decemberSolstice)
                         {
-                            dayKi = ((dayKi + 7) % 9) + 1;
+                            dayKi = DecrementKi(dayKi);
                             invertedKi = dayKi;
                             dayKi = InvertEnergy(dayKi);
                         }
-                        else if (day > decemberSolstice)
+                        else // day > decemberSolstice
                         {
-                            dayKi = (dayKi % 9) + 1;
+                            dayKi = IncrementKi(dayKi);
+                        }
+
+                        // Reste 60 day cycle
+                        if (dayKiSmallCycle == BASE_DAY_KI_SMALL_CYCLE)
+                        {
+                            dayKiSmallCycle = 0;
                         }
 
                         day = day.AddDays(1);
-                        dayKiCount++; // every 300 days, the dayKi moves forward by 4!!!
+                        dayKiCount++;
+                        dayKiSmallCycle++;
                     }
                 }
 
@@ -206,189 +189,98 @@ namespace K9.WebApplication.Services
             }
         }
 
-        // Method to calculate solar longitude for a given date using sweph
-        private double GetSolarLongitude(SwissEph sweph, DateTime date)
+        private DateTime FindSolstice(SwissEph sweph, int year, bool isJuneSoltice)
         {
-            double jd = GetJulianDate(sweph, date);
-
-            // Array to hold the Sun's position
-            double[] sunPosition = new double[6]; // [0] = ecliptic longitude, [1] = ecliptic latitude, [2] = distance, etc.
-            string error = "";
-
-            // Calculate Sun's position (ecliptic longitude)
-            sweph.swe_calc(jd, SwissEph.SE_SUN, SwissEph.SEFLG_SWIEPH, sunPosition, ref error);
-
-            // The solar longitude is the ecliptic longitude (in degrees) of the Sun
-            return sunPosition[0]; // The ecliptic longitude is the first element in the array
-        }
-
-        private DateTime FindJuneSolstice(SwissEph sweph, DateTime currentDateTimeInUtc) =>
-            FindSolstice(sweph, currentDateTimeInUtc.Year, true);
-
-        private DateTime FindDecemberSolstice(SwissEph sweph, DateTime currentDateTimeInUtc) =>
-            FindSolstice(sweph, currentDateTimeInUtc.Year, false);
-
-        /// <summary>
-        /// Computes the solstice date for a given year.
-        /// </summary>
-        /// <param name="year">Year for which to calculate the solstice.</param>
-        /// <param name="isJuneSoltice">
-        /// True for summer solstice (target 90°), false for winter solstice (target 270°).
-        /// </param>
-        /// <returns>The DateTime of the solstice.</returns>
-        public DateTime FindSolstice(SwissEph sweph, int year, bool isJuneSoltice)
-        {
-            // Set target solar longitude: 90° for summer, 270° for winter.
             double targetLongitude = isJuneSoltice ? 90.0 : 270.0;
-
-            // Initial approximate date near the solstice.
             DateTime approxDate = isJuneSoltice ? new DateTime(year, 6, 21) : new DateTime(year, 12, 21);
             double jd = GetJulianDate(sweph, approxDate);
-
-            // Convergence parameters.
-            double epsilon = 1e-6;  // tolerance in degrees
-            double delta = 1e-5;    // small change for numerical derivative
+            double epsilon = 1e-6;
+            double delta = 1e-5;
             int maxIter = 100;
             string serr = "";
+            double[] x = new double[6], xPlus = new double[6], xMinus = new double[6];
 
-            // Iteratively refine the Julian Day.
             for (int iter = 0; iter < maxIter; iter++)
             {
-                // Compute the Sun's position at jd.
-                double[] x = new double[6];
                 int ret = sweph.swe_calc_ut(jd, SwissEph.SE_SUN, SwissEph.SEFLG_SPEED, x, ref serr);
                 if (ret < 0)
                     throw new Exception("Error computing Sun position: " + serr);
 
-                // x[0] is the apparent ecliptic longitude.
                 double longitude = x[0];
-
-                // Compute the normalized difference (in the range -180° to 180°).
                 double diff = ((longitude - targetLongitude + 180) % 360) - 180;
                 if (Math.Abs(diff) < epsilon)
-                    break;  // Converged
+                    break;
 
-                // Numerical approximation of derivative f'(jd)
-                double[] xPlus = new double[6];
-                double[] xMinus = new double[6];
                 sweph.swe_calc_ut(jd + delta, SwissEph.SE_SUN, SwissEph.SEFLG_SPEED, xPlus, ref serr);
                 sweph.swe_calc_ut(jd - delta, SwissEph.SE_SUN, SwissEph.SEFLG_SPEED, xMinus, ref serr);
-                double longitudePlus = xPlus[0];
-                double longitudeMinus = xMinus[0];
-
-                double fPlus = ((longitudePlus - targetLongitude + 180) % 360) - 180;
-                double fMinus = ((longitudeMinus - targetLongitude + 180) % 360) - 180;
+                double fPlus = ((xPlus[0] - targetLongitude + 180) % 360) - 180;
+                double fMinus = ((xMinus[0] - targetLongitude + 180) % 360) - 180;
                 double derivative = (fPlus - fMinus) / (2 * delta);
-
-                // Update jd using Newton's method.
-                jd = jd - diff / derivative;
+                jd -= diff / derivative;
             }
 
-            // Convert the refined Julian Day back to a DateTime.
-            DateTime solsticeDate = JulianDayToDateTime(sweph, jd);
-            return solsticeDate;
+            return JulianDayToDateTime(sweph, jd);
         }
+
+        private DateTime FindJuneSolstice(SwissEph sweph, int year) => FindSolstice(sweph, year, true);
+
+        private DateTime FindDecemberSolstice(SwissEph sweph, int year) => FindSolstice(sweph, year, false);
 
         private DateTime JulianDayToDateTime(SwissEph sweph, double julianDay)
         {
-            // Use gregflag = 1 for the Gregorian calendar (suitable for dates after the reform)
             int gregflag = 1;
             int year = 0, month = 0, day = 0, hour = 0, minute = 0;
             double second = 0.0;
-
-            // Convert Julian Day to UTC using the Swiss Ephemeris conversion method.
             sweph.swe_jdet_to_utc(julianDay, gregflag, ref year, ref month, ref day, ref hour, ref minute, ref second);
-
-            // Split seconds into whole seconds and the fractional part.
             int wholeSeconds = (int)second;
             double fraction = second - wholeSeconds;
-
-            // Create the DateTime in UTC and add the fractional milliseconds.
-            DateTime utcDateTime = new DateTime(year, month, day, hour, minute, wholeSeconds, DateTimeKind.Utc)
+            return new DateTime(year, month, day, hour, minute, wholeSeconds, DateTimeKind.Utc)
                 .AddMilliseconds(fraction * 1000);
-
-            return utcDateTime;
         }
 
-        private DateTime GetSolarTermDate(int year, double targetLongitude)
-        {
-            using (var sweph = new SwissEphNet.SwissEph())
-            {
-                sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
-
-                // Use the GetSolarTerm method to find the exact date of Lìchūn (315° longitude)
-                double julianDay = GetSolarTerm(sweph, year, targetLongitude); // Get the Julian day for the solar term
-
-                // Convert the Julian Day to DateTime using swe_revjul
-                int yearOut = 0, monthOut = 0, dayOut = 0;
-                double hourOut = 0;
-
-                // Convert Julian Day to DateTime (using swe_revjul)
-                sweph.swe_revjul(julianDay, SwissEph.SE_GREG_CAL, ref yearOut, ref monthOut, ref dayOut, ref hourOut);
-
-                // Return the corresponding DateTime for Lìchūn
-                return new DateTime(yearOut, monthOut, dayOut);
-            }
-        }
-
-        private double GetSolarTerm(SwissEphNet.SwissEph sweph, int year, double targetLongitude)
+        private double GetSolarTerm(SwissEph sweph, int year, double targetLongitude)
         {
             double julianStart = sweph.swe_julday(year, 1, 1, 0.0, SE_GREG_CAL);
             double julianEnd = sweph.swe_julday(year, 12, 31, 23.999, SE_GREG_CAL);
-
-            double tolerance = 0.01;  // Precision tolerance
-            int maxIterations = 100;  // Maximum number of iterations
-            double mid, sunLongitude;
+            double tolerance = 0.01;
+            int maxIterations = 100;
             int iteration = 0;
             string serr = "";
+            double mid, sunLongitude;
 
             while (iteration < maxIterations)
             {
                 iteration++;
                 mid = (julianStart + julianEnd) / 2;
                 double[] xx = new double[6];
-
-                int ret = sweph.swe_calc(mid, SwissEphNet.SwissEph.SE_SUN, SEFLG_SWIEPH, xx, ref serr);
+                int ret = sweph.swe_calc(mid, SwissEph.SE_SUN, SEFLG_SWIEPH, xx, ref serr);
                 if (ret < 0)
-                {
                     throw new Exception($"Error calculating Sun position: {serr}");
-                }
+                sunLongitude = xx[0];
 
-                sunLongitude = xx[0]; // Sun's longitude in degrees
-
-                // Handle the longitude wrap-around correctly
+                // Handle wrap-around correctly
                 if (sunLongitude < targetLongitude && (targetLongitude - sunLongitude > 180))
-                {
-                    julianEnd = mid; // Move search range backward
-                }
+                    julianEnd = mid;
                 else if (sunLongitude > targetLongitude && (sunLongitude - targetLongitude > 180))
-                {
-                    julianStart = mid; // Move search range forward
-                }
+                    julianStart = mid;
                 else
-                {
-                    // Regular binary search
                     if (sunLongitude < targetLongitude)
-                        julianStart = mid;
-                    else
-                        julianEnd = mid;
-                }
+                    julianStart = mid;
+                else
+                    julianEnd = mid;
 
-                // Check if we have converged within the tolerance
                 if (Math.Abs(sunLongitude - targetLongitude) < tolerance)
-                {
                     return mid;
-                }
             }
 
             throw new Exception($"Could not find solar term at {targetLongitude}° for year {year} after {maxIterations} iterations.");
         }
 
-        private double GetJulianDate(SwissEphNet.SwissEph sweph, DateTime birthDateTimeUT)
+        private double GetJulianDate(SwissEph sweph, DateTime dateTimeUT)
         {
             return sweph.swe_julday(
-                birthDateTimeUT.Year, birthDateTimeUT.Month, birthDateTimeUT.Day,
-                birthDateTimeUT.Hour + birthDateTimeUT.Minute / 60.0, SE_GREG_CAL);
+                dateTimeUT.Year, dateTimeUT.Month, dateTimeUT.Day,
+                dateTimeUT.Hour + dateTimeUT.Minute / 60.0, SE_GREG_CAL);
         }
 
         private int GetNineStarKiNumber(int year)
@@ -413,26 +305,52 @@ namespace K9.WebApplication.Services
                 return 5;
         }
 
-        private double[] GetSolarTerms(SwissEphNet.SwissEph sweph, int birthYear)
+        private double[] GetSolarTerms(SwissEph sweph, int year)
         {
             double[] solarTerms = new double[12];
             for (int i = 0; i < 12; i++)
             {
-                var targetLongitude = 315.0 + (i * 30.0);
-                double normalizedTargetLongitude = targetLongitude % 360;
-                solarTerms[i] = GetSolarTerm(sweph, birthYear, normalizedTargetLongitude);
+                double targetLongitude = (315.0 + (i * 30.0)) % 360;
+                solarTerms[i] = GetSolarTerm(sweph, year, targetLongitude);
             }
             return solarTerms;
         }
+
+        /// <summary>
+        /// Adjusts the birth year based on Lìchūn (315° solar term) so that if the birth
+        /// date is before Lìchūn in January–February, the previous year is used.
+        /// </summary>
+        private int AdjustBirthYear(SwissEph sweph, DateTime birthDateTimeUT)
+        {
+            int year = birthDateTimeUT.Year;
+            double jdLichun = GetSolarTerm(sweph, year, 315.0);
+            double jdBirth = GetJulianDate(sweph, birthDateTimeUT);
+            return (jdBirth < jdLichun && birthDateTimeUT.Month <= 2) ? year - 1 : year;
+        }
+
+        /// <summary>
+        /// Increments a ki number (1–9) by a given amount.
+        /// </summary>
+        private int IncrementKi(int ki, int amount = 1)
+        {
+            return (((ki - 1) + amount) % 9) + 1;
+        }
+
+        /// <summary>
+        /// Decrements a ki number (1–9) by a given amount.
+        /// </summary>
+        private int DecrementKi(int ki, int amount = 1)
+        {
+            return ((((ki - 1) - amount) % 9 + 9) % 9) + 1;
+        }
+
+        private int InvertEnergy(int energyNumber) =>
+            _invertedEnergies.TryGetValue(energyNumber, out var inverted) ? inverted : energyNumber;
 
         private static readonly Dictionary<int, int> _invertedEnergies = new Dictionary<int, int>
         {
             { 1, 5 }, { 2, 4 }, { 4, 2 }, { 5, 1 },
             { 6, 9 }, { 7, 8 }, { 8, 7 }, { 9, 6 }
         };
-
-        private int InvertEnergy(int energyNumber) =>
-            _invertedEnergies.TryGetValue(energyNumber, out var inverted) ? inverted : energyNumber;
-
     }
 }

@@ -642,8 +642,20 @@ namespace K9.WebApplication.Tests.Unit.Services
         }
 
         [Theory]
-        [InlineData(1900, 6, 20, ENineStarKiEnergy.Wind)]
+        //[InlineData(1900, 6, 20, ENineStarKiEnergy.Wind)]
+        //[InlineData(1900, 6, 21, ENineStarKiEnergy.CoreEarth)]
+        //[InlineData(1900, 6, 22, ENineStarKiEnergy.Wind)]
         //[InlineData(1900, 7, 7, ENineStarKiEnergy.Lake)]
+        //[InlineData(1900, 10, 31, ENineStarKiEnergy.Mountain)]
+        //[InlineData(1901, 1, 5, ENineStarKiEnergy.CoreEarth)]
+        //[InlineData(1901, 2, 5, ENineStarKiEnergy.Fire)]
+        //[InlineData(1901, 2, 15, ENineStarKiEnergy.Water)]
+        //[InlineData(1901, 4, 16, ENineStarKiEnergy.Water)]
+        //[InlineData(1901, 4, 21, ENineStarKiEnergy.Thunder)]
+        //[InlineData(1901, 5, 6, ENineStarKiEnergy.Fire)]
+        //[InlineData(1901, 6, 15, ENineStarKiEnergy.Wind)]
+        [InlineData(1901, 8, 8, ENineStarKiEnergy.Heaven)]
+        //[InlineData(1901, 11, 8, ENineStarKiEnergy.Wind)]
         //[InlineData(2025, 3, 5, ENineStarKiEnergy.Lake)]
         //[InlineData(2025, 7, 30, ENineStarKiEnergy.Fire)]
         public void CalcualteSwissEphemeris_DailyKi_Ascending_Descending(

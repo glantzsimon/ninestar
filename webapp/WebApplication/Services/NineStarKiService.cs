@@ -39,18 +39,18 @@ namespace K9.WebApplication.Services
             return GetOrAddToCache(cacheKey, () =>
             {
                 var tzInfo = TZConvert.GetTimeZoneInfo(personModel.TimeZoneId);
-                var selectedDateTime = today == null 
-                    ? TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, tzInfo) 
+                var selectedDateTime = today == null
+                    ? TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, tzInfo)
                     : today.Value;
-                
+
                 var preciseMainEnergy = _swissEphemerisService.GetNineStarKiYear(personModel.DateOfBirth, personModel.TimeZoneId);
                 var preciseEmotionalEnergy = _swissEphemerisService.GetNineStarKiMonth(personModel.DateOfBirth, personModel.TimeZoneId);
                 var preciseYearEnergy = _swissEphemerisService.GetNineStarKiYear(selectedDateTime, personModel.TimeZoneId);
                 var preciseMonthEnergy = _swissEphemerisService.GetNineStarKiMonthNumber(selectedDateTime, personModel.TimeZoneId);
                 var preciseDailyEnergy = _swissEphemerisService.GetNineStarKiDailyKi(selectedDateTime, personModel.TimeZoneId);
 
-                var model = new NineStarKiModel(personModel, preciseMainEnergy, preciseEmotionalEnergy, preciseYearEnergy, preciseMonthEnergy, preciseDailyEnergy, selectedDateTime);
-                
+                var model = new NineStarKiModel(personModel, preciseMainEnergy, preciseEmotionalEnergy, preciseYearEnergy, preciseMonthEnergy, preciseDailyEnergy.ki, preciseDailyEnergy.invertedKi, selectedDateTime);
+
                 model.MainEnergy.EnergyDescription = GetMainEnergyDescription(model.MainEnergy.Energy);
                 model.CharacterEnergy.EnergyDescription = GetCharacterEnergyDescription(model.CharacterEnergy.Energy);
                 model.SurfaceEnergy.EnergyDescription = GetSurfaceEnergyDescription(model.SurfaceEnergy.Energy);
@@ -183,7 +183,7 @@ namespace K9.WebApplication.Services
                     flexibleEnergies);
             }, TimeSpan.FromDays(30));
         }
-        
+
         private string GetOverview(ENineStarKiEnergy energy)
         {
             var cacheKey = $"GetOverview_{energy}";

@@ -579,7 +579,8 @@ namespace K9.WebApplication.Tests.Unit.Services
             Assert.Equal((int)energy, ninestar.MainEnergy.EnergyNumber);
         }
 
-        //[Theory]
+        [Theory]
+        [InlineData(1974, 6, 9, EGender.Male, ENineStarKiEnergy.Mountain, ENineStarKiEnergy.Soil, 1900, 1, 1, ENineStarKiEnergy.Soil)]
         //[InlineData(1974, 6, 9, EGender.Male, ENineStarKiEnergy.Mountain, ENineStarKiEnergy.Soil, 2025, 3, 5, ENineStarKiEnergy.Lake)]
         //[InlineData(1974, 6, 9, EGender.Male, ENineStarKiEnergy.Mountain, ENineStarKiEnergy.Soil, 2025, 7, 30, ENineStarKiEnergy.Fire)]
         public void CalcualteSwissEphemeris_NineStarKi_DailyKi(
@@ -605,7 +606,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             //}, false, false, today);
 
             var dayEnergy = _swissEphemerisService.GetNineStarKiDailyKi(today, timeZone);
-            Assert.Equal((int)dailyKi, dayEnergy);
+            Assert.Equal((int)dailyKi, dayEnergy.ki);
 
             //Assert.Equal((int)energy, ninestar.MainEnergy.EnergyNumber);
             //Assert.Equal((int)yearlyCycleEnergy, ninestar.YearlyCycleEnergy.EnergyNumber);
@@ -613,24 +614,50 @@ namespace K9.WebApplication.Tests.Unit.Services
         }
 
         [Theory]
-        [InlineData(1900, 1, 1, 0, 0)]
-        [InlineData(1900, 1, 3, 2, 0)]
-        [InlineData(1900, 6, 21, 171, 0)]
-        public void CalcualteAscendingDays(
+        [InlineData(1900, 1, 1, ENineStarKiEnergy.Soil)]
+        [InlineData(1900, 1, 2, ENineStarKiEnergy.Thunder)]
+        [InlineData(1900, 1, 5, ENineStarKiEnergy.Heaven)]
+        [InlineData(1900, 1, 31, ENineStarKiEnergy.CoreEarth)]
+        [InlineData(1900, 2, 1, ENineStarKiEnergy.Heaven)]
+        [InlineData(1900, 2, 4, ENineStarKiEnergy.Fire)]
+        [InlineData(1900, 2, 28, ENineStarKiEnergy.Heaven)]
+        [InlineData(1900, 3, 1, ENineStarKiEnergy.Lake)]
+        [InlineData(1900, 3, 6, ENineStarKiEnergy.Thunder)]
+        [InlineData(1900, 3, 20, ENineStarKiEnergy.Mountain)]
+        [InlineData(1900, 3, 24, ENineStarKiEnergy.Thunder)]
+        [InlineData(1900, 3, 25, ENineStarKiEnergy.Wind)]
+        [InlineData(1900, 3, 26, ENineStarKiEnergy.CoreEarth)]
+        [InlineData(1900, 3, 31, ENineStarKiEnergy.Water)]
+        [InlineData(1900, 5, 5, ENineStarKiEnergy.Fire)]
+        public void CalcualteSwissEphemeris_DailyKi(
             int todayYear,
             int todayMonth,
             int todayDay,
-            int ascendingDays,
-            int descendingDays,
-            string timeZone = "Europe/London")
+            ENineStarKiEnergy dailyKi)
         {
             var today = new DateTime(todayYear, todayMonth, todayDay, 12, 0, 0);
-            var days = _swissEphemerisService.CalculateAscendingDescendingDays(today, timeZone);
-
-            Assert.Equal(ascendingDays, (int)days.ascendingDays);
-            Assert.Equal(descendingDays, (int)days.descendingDays);
+           
+            var dayEnergy = _swissEphemerisService.GetNineStarKiDailyKi(today, "Europe/London");
+            Assert.Equal((int)dailyKi, dayEnergy.ki);
         }
 
+        [Theory]
+        [InlineData(1900, 6, 20, ENineStarKiEnergy.Wind)]
+        //[InlineData(1900, 7, 7, ENineStarKiEnergy.Lake)]
+        //[InlineData(2025, 3, 5, ENineStarKiEnergy.Lake)]
+        //[InlineData(2025, 7, 30, ENineStarKiEnergy.Fire)]
+        public void CalcualteSwissEphemeris_DailyKi_Ascending_Descending(
+            int todayYear,
+            int todayMonth,
+            int todayDay,
+            ENineStarKiEnergy dailyKi)
+        {
+            var today = new DateTime(todayYear, todayMonth, todayDay, 12, 0, 0);
+           
+            var dayEnergy = _swissEphemerisService.GetNineStarKiDailyKi(today, "Europe/London");
+            Assert.Equal((int)dailyKi, dayEnergy.ki);
+        }
+        
         //[Theory]
         //[InlineData(1979, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyHigh)]
         //[InlineData(1981, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.MediumToHigh)]

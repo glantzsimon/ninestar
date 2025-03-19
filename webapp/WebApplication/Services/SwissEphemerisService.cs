@@ -20,6 +20,8 @@ namespace K9.WebApplication.Services
         private const int SEFLG_SWIEPH = 2; // Swiss Ephemeris flag
         private const double PRECISE_YEAR_LENGTH = 365.242190419;
         private const string BASE_DAY_TIMEZONE = "Europe/London";
+        private const int BASE_DAY_KI_CYCLE_START = 71;
+        private const int BASE_DAY_KI_CYCLE = 240;
         private const int BASE_DAY_KI = 2;
         private const int BASE_HOUR_KI = 5;
         private static DateTime BASE_KI_DATEUT;
@@ -134,165 +136,73 @@ namespace K9.WebApplication.Services
             }
         }
 
-        // Method to calculate the ascending and descending days from baseKiDate to selected date
-        public (double ascendingDays, double descendingDays) CalculateAscendingDescendingDays(DateTime selectedDate, string timeZoneId)
+        public (int ki, int? invertedKi) GetNineStarKiDailyKi(DateTime selectedDateTime, string timeZoneId)
         {
             using (var sweph = new SwissEphNet.SwissEph())
             {
                 sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
 
-                double ascendingDays = 0;
-                double descendingDays = 0;
+                var dayKi = BASE_DAY_KI;
+                int? invertedKi = null;
+                var selectedDateTimeUT = ConvertToUT(selectedDateTime, timeZoneId);
+                var dayKiCount = BASE_DAY_KI_CYCLE_START;
 
-                // The number of days per degree of solar longitude
-                double daysPerDegree = PRECISE_YEAR_LENGTH / 360;
-
-                // Loop through each year from baseKiDate to selected date
-                for (int year = BASE_KI_DATEUT.Year; year <= selectedDate.Year; year++)
+                // Loop through each year from BASE_KI_DATEUT.Year to the year of the selected date.
+                for (int year = BASE_KI_DATEUT.Year; year <= selectedDateTimeUT.Year; year++)
                 {
                     DateTime startOfYear = new DateTime(year, 1, 1);
-                    DateTime endOfYear = new DateTime(year, 12, 31);
+                    DateTime finishOfYear = (year == selectedDateTimeUT.Year) ? selectedDateTimeUT.Date : new DateTime(year, 12, 31);
+                    var day = startOfYear;
 
-                    // Adjust endOfYear if the selected date is before the end of the year
-                    if (year == selectedDate.Year)
+                    // Get solstice dates for the current year.
+                    DateTime juneSolstice = FindJuneSolstice(sweph, new DateTime(year, 1, 1));
+                    DateTime decemberSolstice = FindDecemberSolstice(sweph, new DateTime(year, 1, 1));
+
+                    while (day < finishOfYear)
                     {
-                        endOfYear = selectedDate;
-                    }
+                        // reset invertedKi
+                        invertedKi = null;
 
-                    // Get solar longitude for the start and end of the year
-                    double startLongitude = GetSolarLongitude(sweph, startOfYear);
-                    double endLongitude = GetSolarLongitude(sweph, endOfYear);
-                    
-                    // Handle the first phase (ascending or descending)
-                    if (startLongitude < 90 || (startLongitude >= 270 && startLongitude < 360))
-                    {
-                        // Ascending phase: 0° to 90° or 270° to 360°
-                        if (endLongitude <= 90 || (endLongitude >= 270 && endLongitude < 360))
+                        if (dayKiCount == BASE_DAY_KI_CYCLE)
                         {
-                            // Both start and end are within the ascending phase
-                            if (endLongitude < startLongitude)
-                            {
-                                ascendingDays += (endLongitude + 360) - startLongitude;
-                            }
-                            else
-                            {
-                                ascendingDays += endLongitude - startLongitude;
-                            }
+                            // move the dayKi forward by 4
+                            dayKi = (((dayKi - 1) + 3) % 9) + 1;
+
+                            // reset counter
+                            dayKiCount = 1;
                         }
-                        else
+
+                        if (day < juneSolstice)
                         {
-                            // Start in ascending phase, end in descending (90° to 270°)
-                            ascendingDays += 90 - startLongitude;  // First ascending part
-                            descendingDays += endLongitude - 90;  // Descending part
+                            dayKi = (dayKi % 9) + 1;
                         }
-                    }
-                    else if (startLongitude >= 90 && startLongitude < 270)
-                    {
-                        // Descending phase: 90° to 270°
-                        if (endLongitude >= 90 && endLongitude < 270)
+                        else if (day == juneSolstice)
                         {
-                            // Both start and end are within the descending phase
-                            descendingDays += endLongitude - startLongitude;
+                            dayKi = (dayKi + 1) % 9 + 1;
+                            invertedKi = dayKi;
+                            dayKi = InvertEnergy(dayKi);
                         }
-                        else
+                        else if (day > juneSolstice & day < decemberSolstice)
                         {
-                            // Start in descending, end in ascending (0° to 90° or 270° to 360°)
-                            descendingDays += 270 - startLongitude;  // First descending part
-                            ascendingDays += endLongitude - 270;  // Ascending part
+                            dayKi = ((dayKi + 7) % 9) + 1;
                         }
-                    }
-                }
+                        else if (day == decemberSolstice)
+                        {
+                            dayKi = ((dayKi + 7) % 9) + 1;
+                            invertedKi = dayKi;
+                            dayKi = InvertEnergy(dayKi);
+                        }
+                        else if (day > decemberSolstice)
+                        {
+                            dayKi = (dayKi % 9) + 1;
+                        }
 
-                // Apply the scaling factor for each degree of longitude
-                ascendingDays *= daysPerDegree;
-                descendingDays *= daysPerDegree;
-
-                return (ascendingDays, descendingDays);
-            }
-        }
-
-        public int CalculateKi(DateTime selectedDate, string timeZoneId)
-        {
-            using (var sweph = new SwissEphNet.SwissEph())
-            {
-                sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
-
-                (double ascendingDays, double descendingDays) = CalculateAscendingDescendingDays(selectedDate, timeZoneId);
-
-                // Use ascending and descending days to determine the Ki for the selected date
-                int baseKi = BASE_DAY_KI;
-                if (ascendingDays > descendingDays)
-                {
-                    baseKi = (baseKi + ((int)ascendingDays - 1)) % 9 + 1;
-                }
-                else
-                {
-                    baseKi = (baseKi + ((int)descendingDays - 1)) % 9 + 1;
-                }
-
-                return baseKi;
-            }
-        }
-
-        public int GetNineStarKiDailyKi(DateTime currentDate, string timeZoneId)
-        {
-            return CalculateKi(currentDate, timeZoneId);
-
-            using (var sweph = new SwissEphNet.SwissEph())
-            {
-                sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
-
-                // Convert the current date to UTC based on the provided time zone
-                DateTime currentDateTimeInUtc = ConvertToUT(currentDate, timeZoneId);
-
-                // Initialize arrays to hold planetary data
-                double[] sunPosition = new double[6]; // Array to hold the Sun's position and related data
-
-                // Search for the Summer and December Solstice by calculating the Sun's position
-                DateTime juneSolstice = FindSolstice(sweph, currentDateTimeInUtc, 180); // 180 degrees for the June Solstice
-                DateTime decemberSolstice = FindSolstice(sweph, currentDateTimeInUtc, 0); // 0 degrees for the December Solstice
-                DateTime previousDecemberSolstice = FindSolstice(sweph, currentDateTimeInUtc.AddYears(-1), 0); // 0 degrees for the December Solstice
-
-                // Calculate the day of the Nine Star Ki year (from January 1st)
-                int dayOfNineStarKiYear = (currentDateTimeInUtc - new DateTime(currentDateTimeInUtc.Year, 1, 1)).Days + 1;
-
-                // Normalize the starting point: 1st Jan 1900 is day 2
-                int baseKi = 2; // Starting point for January 1, 1900
-
-                int dailyKi;
-
-                // Ascending Cycle (before June Solstice)
-                if (currentDateTimeInUtc > previousDecemberSolstice && currentDateTimeInUtc <= juneSolstice)
-                {
-                    // Ascending energy period: Ki number starts increasing
-                    dailyKi = (baseKi + (dayOfNineStarKiYear - 1)) % 9 + 1;
-                }
-                // Descending Cycle (after June Solstice)
-                else if (currentDateTimeInUtc > juneSolstice && currentDateTimeInUtc <= decemberSolstice)
-                {
-                    // Descending energy period: Ki number starts decreasing
-                    dailyKi = (baseKi - (dayOfNineStarKiYear - juneSolstice.DayOfYear) - 1) % 9;
-
-                    // Ensure the Ki number stays within the 1-9 range, using wrapping
-                    if (dailyKi <= 0)
-                    {
-                        dailyKi += 9; // Correct for negative values, such as -2 becoming 8
+                        day = day.AddDays(1);
+                        dayKiCount++; // every 300 days, the dayKi moves forward by 4!!!
                     }
                 }
-                else
-                {
-                    // Handle edge cases if the date is not properly fitting within the expected range
-                    var details =
-                        $"{Environment.NewLine}" +
-                        $"JuneSolticeDate: {juneSolstice.ToString()} {Environment.NewLine}" +
-                        $"DecemberSolsticeDate: {decemberSolstice.ToString()} {Environment.NewLine}" +
-                        $"PreviousDecemberSolsticeDate: {previousDecemberSolstice.ToString()} {Environment.NewLine}" +
-                        $"CurrentDate: {currentDateTimeInUtc.ToString()}";
 
-                    throw new InvalidOperationException($"The calculated date does not fall within the expected solstice cycle. Details: {details}");
-                }
-
-                return dailyKi;
+                return (dayKi, invertedKi);
             }
         }
 
@@ -312,75 +222,90 @@ namespace K9.WebApplication.Services
             return sunPosition[0]; // The ecliptic longitude is the first element in the array
         }
 
-        private DateTime FindSolstice(SwissEph sweph, DateTime currentDateTimeInUtc, double targetLongitude)
+        private DateTime FindJuneSolstice(SwissEph sweph, DateTime currentDateTimeInUtc) =>
+            FindSolstice(sweph, currentDateTimeInUtc.Year, true);
+
+        private DateTime FindDecemberSolstice(SwissEph sweph, DateTime currentDateTimeInUtc) =>
+            FindSolstice(sweph, currentDateTimeInUtc.Year, false);
+
+        /// <summary>
+        /// Computes the solstice date for a given year.
+        /// </summary>
+        /// <param name="year">Year for which to calculate the solstice.</param>
+        /// <param name="isJuneSoltice">
+        /// True for summer solstice (target 90°), false for winter solstice (target 270°).
+        /// </param>
+        /// <returns>The DateTime of the solstice.</returns>
+        public DateTime FindSolstice(SwissEph sweph, int year, bool isJuneSoltice)
         {
-            // Convert current date to Julian Date
-            double jdCurrent = GetJulianDate(sweph, currentDateTimeInUtc);
+            // Set target solar longitude: 90° for summer, 270° for winter.
+            double targetLongitude = isJuneSoltice ? 90.0 : 270.0;
 
-            // Get the current year
-            int currentYear = currentDateTimeInUtc.Year;
+            // Initial approximate date near the solstice.
+            DateTime approxDate = isJuneSoltice ? new DateTime(year, 6, 21) : new DateTime(year, 12, 21);
+            double jd = GetJulianDate(sweph, approxDate);
 
-            // Calculate the Julian Date for the start of the current calendar year (January 1st)
-            double jdStartOfYear = GetJulianDate(sweph, new DateTime(currentYear, 1, 1));
-
-            // Find the solstice date using the target longitude (0° for Winter, 180° for Summer)
-            double jdSolstice = FindSolsticeJulianDay(sweph, jdStartOfYear, targetLongitude);
-
-            // Ensure the solstice date is within the calendar year range
-            double jdEndOfYear = GetJulianDate(sweph, new DateTime(currentYear, 12, 31, 23, 59, 59));
-
-            if (jdSolstice >= jdStartOfYear && jdSolstice <= jdEndOfYear)
-            {
-                // Return the solstice date as a DateTime
-                return JulianDayToDateTime(sweph, jdSolstice);
-            }
-
-            // If solstice is not found within the calendar year, throw an error
-            var details = $"{Environment.NewLine}" +
-                          $"currentDateTimeInUtc: {currentDateTimeInUtc.ToString()} {Environment.NewLine}" +
-                          $"jdStartOfYear: {jdStartOfYear} {Environment.NewLine}" +
-                          $"jdEndOfYear: {jdEndOfYear} {Environment.NewLine}" +
-                          $"jdSolstice: {jdSolstice}";
-
-            throw new InvalidOperationException($"The calculated solstice date does not fall within the expected calendar year. Details: {details}");
-        }
-
-        private double FindSolsticeJulianDay(SwissEph sweph, double startJulianDay, double targetLongitude)
-        {
-            double[] sunPosition = new double[6]; // Array to hold the Sun's position
-            double currentJulianDay = startJulianDay;
+            // Convergence parameters.
+            double epsilon = 1e-6;  // tolerance in degrees
+            double delta = 1e-5;    // small change for numerical derivative
+            int maxIter = 100;
             string serr = "";
 
-            // Loop to find the exact solar longitude crossing the target (0° or 180°)
-            while (true)
+            // Iteratively refine the Julian Day.
+            for (int iter = 0; iter < maxIter; iter++)
             {
-                // Calculate the Sun's position for the current Julian day
-                int ret = sweph.swe_calc(currentJulianDay, SwissEph.SE_SUN, SwissEph.SEFLG_SWIEPH, sunPosition, ref serr);
+                // Compute the Sun's position at jd.
+                double[] x = new double[6];
+                int ret = sweph.swe_calc_ut(jd, SwissEph.SE_SUN, SwissEph.SEFLG_SPEED, x, ref serr);
+                if (ret < 0)
+                    throw new Exception("Error computing Sun position: " + serr);
 
-                // Check if the Sun's longitude is close to the target (0° for December Solstice or 180° for June Solstice)
-                if (Math.Abs(sunPosition[0] - targetLongitude) < 0.1)
-                {
-                    // Return the solstice Julian Day
-                    return currentJulianDay;
-                }
+                // x[0] is the apparent ecliptic longitude.
+                double longitude = x[0];
 
-                // Increment Julian day to continue searching
-                currentJulianDay += 0.1; // Small step size to ensure precision
+                // Compute the normalized difference (in the range -180° to 180°).
+                double diff = ((longitude - targetLongitude + 180) % 360) - 180;
+                if (Math.Abs(diff) < epsilon)
+                    break;  // Converged
+
+                // Numerical approximation of derivative f'(jd)
+                double[] xPlus = new double[6];
+                double[] xMinus = new double[6];
+                sweph.swe_calc_ut(jd + delta, SwissEph.SE_SUN, SwissEph.SEFLG_SPEED, xPlus, ref serr);
+                sweph.swe_calc_ut(jd - delta, SwissEph.SE_SUN, SwissEph.SEFLG_SPEED, xMinus, ref serr);
+                double longitudePlus = xPlus[0];
+                double longitudeMinus = xMinus[0];
+
+                double fPlus = ((longitudePlus - targetLongitude + 180) % 360) - 180;
+                double fMinus = ((longitudeMinus - targetLongitude + 180) % 360) - 180;
+                double derivative = (fPlus - fMinus) / (2 * delta);
+
+                // Update jd using Newton's method.
+                jd = jd - diff / derivative;
             }
+
+            // Convert the refined Julian Day back to a DateTime.
+            DateTime solsticeDate = JulianDayToDateTime(sweph, jd);
+            return solsticeDate;
         }
 
         private DateTime JulianDayToDateTime(SwissEph sweph, double julianDay)
         {
-            // Initialize variables to hold the results of the conversion
-            int gregflag = 0;   // Calendar flag (not used in the conversion)
+            // Use gregflag = 1 for the Gregorian calendar (suitable for dates after the reform)
+            int gregflag = 1;
             int year = 0, month = 0, day = 0, hour = 0, minute = 0;
             double second = 0.0;
 
-            // Convert Julian Day to UTC using swe_jdet_to_utc method
+            // Convert Julian Day to UTC using the Swiss Ephemeris conversion method.
             sweph.swe_jdet_to_utc(julianDay, gregflag, ref year, ref month, ref day, ref hour, ref minute, ref second);
 
-            DateTime utcDateTime = new DateTime(
-                year, month, day, hour, minute, (int)second, DateTimeKind.Utc); // Setting the DateTime to UTC
+            // Split seconds into whole seconds and the fractional part.
+            int wholeSeconds = (int)second;
+            double fraction = second - wholeSeconds;
+
+            // Create the DateTime in UTC and add the fractional milliseconds.
+            DateTime utcDateTime = new DateTime(year, month, day, hour, minute, wholeSeconds, DateTimeKind.Utc)
+                .AddMilliseconds(fraction * 1000);
 
             return utcDateTime;
         }

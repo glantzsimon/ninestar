@@ -31,7 +31,7 @@ namespace K9.WebApplication.Models
             BiorhythmResultSet = new BioRhythmsResultSet();
         }
 
-        public NineStarKiModel(PersonModel personModel, int preciseMainEnergy, int preciseEmotionalEnergy, int preciseYearlyCycleEnergy, int preciseMonthlyCycleEnergy, int preciseDailyCycleEnergy, DateTime? selectedDate = null)
+        public NineStarKiModel(PersonModel personModel, int preciseMainEnergy, int preciseEmotionalEnergy, int preciseYearlyCycleEnergy, int preciseMonthlyCycleEnergy, int preciseDailyCycleEnergy, int? preciseDailyCycleInvertedEnergy, DateTime? selectedDate = null)
         {
             SelectedDate = selectedDate ?? DateTime.Today;
 
@@ -54,6 +54,12 @@ namespace K9.WebApplication.Models
 
             DailyCycleEnergy = GetOrAddToCache($"DailyCycleEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{SelectedDate.Value.ToString()}_{preciseDailyCycleEnergy}",
                 () => GetDailyCycleEnergy(preciseDailyCycleEnergy), TimeSpan.FromDays(30));
+
+            if (preciseDailyCycleInvertedEnergy.HasValue)
+            {
+                DailyCycleInvertedEnergy = GetOrAddToCache($"DailyCycleInvertedEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{SelectedDate.Value.ToString()}_{preciseDailyCycleEnergy}",
+                    () => GetDailyCycleEnergy(preciseDailyCycleInvertedEnergy.Value), TimeSpan.FromDays(30));
+            }
 
             MainEnergy.RelatedEnergy = CharacterEnergy.Energy;
             CharacterEnergy.RelatedEnergy = MainEnergy.Energy;
@@ -160,6 +166,14 @@ namespace K9.WebApplication.Models
         /// Determines the 9 Star Ki energy of the current day
         /// </summary>
         public NineStarKiEnergy DailyCycleEnergy { get; }
+
+        public string DailyCycleEnergyDisplayText =>
+            DailyCycleInvertedEnergy == null ? DailyCycleEnergy.EnergyNumber.ToString() : $"{DailyCycleEnergy.EnergyNumber.ToString()}/{DailyCycleInvertedEnergy.EnergyNumber.ToString()}";
+
+        /// <summary>
+        /// On solstice days, the daily ki inverts, we show both in charts
+        /// </summary>
+        public NineStarKiEnergy DailyCycleInvertedEnergy { get; }
 
         public NineStarKiDirections YearlyDirections { get; set; }
         public NineStarKiDirections MonthlyDirections { get; set; }

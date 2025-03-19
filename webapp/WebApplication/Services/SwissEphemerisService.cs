@@ -122,29 +122,28 @@ namespace K9.WebApplication.Services
 
                             switch (dayKiCycleLength)
                             {
-                                case BASE_DAY_KI_CYCLE:
+                                case BASE_DAY_KI_CYCLE: // 240
                                     dayKiCycleLength += 60;
                                     break;
 
-                                case BASE_DAY_KI_CYCLE + 60:
-                                    dayKiCycleLength += 120;
+                                case BASE_DAY_KI_CYCLE + 60: // 300
+                                    dayKiCycleLength += 240;
                                     break;
 
-                                case BASE_DAY_KI_CYCLE + 120:
-                                    dayKiCycleLength += 180;
+                                case BASE_DAY_KI_CYCLE + 300: // 540
+                                    dayKiCycleLength += 480;
                                     break;
-                            }
 
-                            if (dayKiCycleLength == BASE_DAY_KI_CYCLE + 360)
-                            {
-                                dayKiCycleLength = BASE_DAY_KI_CYCLE;
+                                case BASE_DAY_KI_CYCLE + 780: // 1020
+                                    dayKiCycleLength = BASE_DAY_KI_CYCLE;
+                                    break;
                             }
                         }
 
-                        if (day.Year == 1901 && day.Month == 4 && day.Day == 21)
-                        {
-                            Debugger.Break();
-                        }
+                        //if (day.Year == 1901 && day.Month == 4 && day.Day == 21)
+                        //{
+                        //    Debugger.Break();
+                        //}
 
                         if (day < juneSolstice.Date)
                         {

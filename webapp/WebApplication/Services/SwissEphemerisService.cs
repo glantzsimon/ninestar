@@ -104,16 +104,16 @@ namespace K9.WebApplication.Services
                     DateTime startOfYear = new DateTime(year, 1, 1);
                     DateTime finishOfYear = (year == selectedDateTimeUT.Year) ? selectedDateTimeUT.Date : new DateTime(year, 12, 31);
                     // Start on the day after January 1, as the first day already has the correct ki.
-                    DateTime day = startOfYear.AddDays(1);
+                    DateTime day = startOfYear == BASE_KI_DATEUT.Date ? startOfYear.AddDays(1) : startOfYear;
 
                     // Compute solstice dates for the current year.
                     DateTime juneSolstice = FindJuneSolstice(sweph, year).Date;
                     DateTime decemberSolstice = FindDecemberSolstice(sweph, year).Date;
-                    
+
                     while (day <= finishOfYear)
                     {
                         invertedKi = null;
-                        
+
                         if (dayKiCycleCount == dayKiCycleLength)
                         {
                             // Every BASE_DAY_KI_CYCLE days, advance dayKi by 3.
@@ -141,7 +141,7 @@ namespace K9.WebApplication.Services
                             }
                         }
 
-                        if (day.Day == 22 && day.Year == 1900 && day.Month == 6)
+                        if (day.Year == 1901 && day.Month == 4 && day.Day == 21)
                         {
                             Debugger.Break();
                         }
@@ -149,7 +149,7 @@ namespace K9.WebApplication.Services
                         if (day < juneSolstice.Date)
                         {
                             // A strange pattern that when you get what is in fact a 5. 5. 5 between 3 cycles, then the daily ki corrects itself ang goes back 3 points
-                            if (dayKiCycleCount == 6 && dayKiSmallCycle == 5 && dayKi == 5)
+                            if (dayKiCycleCount == 7 && dayKiSmallCycle == 6 && dayKi == 5)
                             {
                                 dayKi = 3;
                             }

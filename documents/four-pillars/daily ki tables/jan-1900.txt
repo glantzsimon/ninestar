@@ -1,0 +1,33 @@
+Day       St   Br      St     Br      Num      NSK
+------     ---- ----    ---- -------    ---      ---
+ 5 Jan       Wu  Yin     +Ea   Tiger     15       6
+ 6 Jan       Ji  Mao     -Ea  Rabbit     16       7
+ 7 Jan     Geng Chen     +Me  Dragon     17       8
+ 8 Jan      Xin   Si     -Me   Snake     18       9
+ 9 Jan      Ren   Wu     +Wa   Horse     19       1
+10 Jan      Gui  Wei     -Wa    Goat     20       2
+11 Jan      Jia Shen     +Wd  Monkey     21       3
+12 Jan       Yi  You     -Wd Rooster     22       4
+13 Jan     Bing   Xu     +Fi     Dog     23       5
+14 Jan     Ding  Hai     -Fi     Pig     24       6
+15 Jan       Wu   Zi     +Ea     Rat     25       7
+16 Jan       Ji Chou     -Ea      Ox     26       8
+17 Jan     Geng  Yin     +Me   Tiger     27       9
+18 Jan      Xin  Mao     -Me  Rabbit     28       1
+19 Jan      Ren Chen     +Wa  Dragon     29       2
+20 Jan      Gui   Si     -Wa   Snake     30       3
+21 Jan      Jia   Wu     +Wd   Horse     31       4
+22 Jan       Yi  Wei     -Wd    Goat     32       5
+23 Jan     Bing Shen     +Fi  Monkey     33       6
+24 Jan     Ding  You     -Fi Rooster     34       7
+25 Jan       Wu   Xu     +Ea     Dog     35       8
+26 Jan       Ji  Hai     -Ea     Pig     36       9
+27 Jan     Geng   Zi     +Me     Rat     37       1
+28 Jan      Xin Chou     -Me      Ox     38       2
+29 Jan      Ren  Yin     +Wa   Tiger     39       3
+30 Jan      Gui  Mao     -Wa  Rabbit     40       4
+31 Jan      Jia Chen     +Wd  Dragon     41       5
+ 1 Feb       Yi   Si     -Wd   Snake     42       6
+ 2 Feb     Bing   Wu     +Fi   Horse     43       7
+ 3 Feb     Ding  Wei     -Fi    Goat     44       8
+ 4 Feb       Wu Shen     +Ea  Monkey     45       9

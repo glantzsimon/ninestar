@@ -255,6 +255,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Unit\Helpers\TestOutputTraceListener.cs" />
     <Compile Include="Unit\Helpers\FakeHttpSessionState.cs" />
     <Compile Include="Unit\Models\NineStarKiModelTests.cs" />
     <Compile Include="Unit\Models\PersonModelTests.cs" />

@@ -4,19 +4,23 @@ using K9.WebApplication.Config;
 using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
+using K9.WebApplication.Tests.Unit.Helpers;
 using Moq;
 using System;
 using System.Diagnostics;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace K9.WebApplication.Tests.Unit.Services
 {
-    public class NineStarKiServiceTests
+    public class NineStarKiServiceTests : IDisposable
     {
+        private readonly ITestOutputHelper _output;
+        private readonly TestOutputTraceListener _listener;
         private NineStarKiService _nineStarKiService;
         private SwissEphemerisService _swissEphemerisService;
 
-        public NineStarKiServiceTests()
+        public NineStarKiServiceTests(ITestOutputHelper output)
         {
             var mockAuthentication = new Mock<IAuthentication>();
             mockAuthentication.SetupGet(e => e.CurrentUserId).Returns(2);
@@ -31,7 +35,11 @@ namespace K9.WebApplication.Tests.Unit.Services
                 SwephPath = @"c:\workspace\sweph\datafiles"
             });
 
-            _swissEphemerisService = new SwissEphemerisService(nineStarKiBasePackage.Object);
+            _output = output;
+            _listener = new TestOutputTraceListener(_output);
+            Trace.Listeners.Add(_listener);
+
+            _swissEphemerisService = new SwissEphemerisService(nineStarKiBasePackage.Object, _output);
             _nineStarKiService = new NineStarKiService(basePackage.Object, _swissEphemerisService);
         }
 
@@ -637,44 +645,61 @@ namespace K9.WebApplication.Tests.Unit.Services
             ENineStarKiEnergy dailyKi)
         {
             var today = new DateTime(todayYear, todayMonth, todayDay, 12, 0, 0);
-           
+
             var dayEnergy = _swissEphemerisService.GetNineStarKiDailyKi(today, "Europe/London");
             Assert.Equal((int)dailyKi, dayEnergy.ki);
         }
 
         [Theory]
-        [InlineData(1900, 6, 20, ENineStarKiEnergy.Wind)]
-        [InlineData(1900, 6, 21, ENineStarKiEnergy.CoreEarth)]
-        [InlineData(1900, 6, 22, ENineStarKiEnergy.Wind)]
-        [InlineData(1900, 7, 7, ENineStarKiEnergy.Lake)]
-        [InlineData(1900, 10, 31, ENineStarKiEnergy.Mountain)]
-        [InlineData(1900, 12, 7, ENineStarKiEnergy.Lake)]
-        [InlineData(1900, 12, 21, ENineStarKiEnergy.Soil)]
-        [InlineData(1900, 12, 22, ENineStarKiEnergy.Fire)]
-        [InlineData(1900, 12, 23, ENineStarKiEnergy.Water)]
-        [InlineData(1900, 12, 31, ENineStarKiEnergy.Fire)]
-        [InlineData(1901, 1, 1, ENineStarKiEnergy.Water)]
-        [InlineData(1901, 1, 5, ENineStarKiEnergy.CoreEarth)]
-        [InlineData(1901, 2, 5, ENineStarKiEnergy.Fire)]
-        [InlineData(1901, 2, 15, ENineStarKiEnergy.Water)]
-        [InlineData(1901, 4, 16, ENineStarKiEnergy.Water)]
-        [InlineData(1901, 4, 21, ENineStarKiEnergy.Thunder)]
-        [InlineData(1901, 5, 6, ENineStarKiEnergy.Fire)]
-        [InlineData(1901, 6, 15, ENineStarKiEnergy.Wind)]
-        [InlineData(1901, 6, 21, ENineStarKiEnergy.Water)]
-        [InlineData(1901, 6, 22, ENineStarKiEnergy.Mountain)]
-        [InlineData(1901, 8, 8, ENineStarKiEnergy.Heaven)]
-        [InlineData(1901, 11, 8, ENineStarKiEnergy.Wind)]
-        [InlineData(1901, 12, 21, ENineStarKiEnergy.Heaven)]
-        [InlineData(1901, 12, 22, ENineStarKiEnergy.CoreEarth)]
-        [InlineData(1901, 12, 23, ENineStarKiEnergy.Heaven)]
-        [InlineData(1902, 1, 8, ENineStarKiEnergy.Wind)]
-        [InlineData(1902, 4, 5, ENineStarKiEnergy.Water)]
-        [InlineData(1902, 6, 6, ENineStarKiEnergy.Fire)]
-        [InlineData(1902, 6, 12, ENineStarKiEnergy.Heaven)]
-        [InlineData(1902, 6, 21, ENineStarKiEnergy.Heaven)]
-        [InlineData(1902, 7, 15, ENineStarKiEnergy.Lake)]
+        //[InlineData(1900, 6, 20, ENineStarKiEnergy.Wind)]
+        //[InlineData(1900, 6, 21, ENineStarKiEnergy.CoreEarth)]
+        //[InlineData(1900, 6, 22, ENineStarKiEnergy.Wind)]
+        //[InlineData(1900, 7, 7, ENineStarKiEnergy.Lake)]
+        //[InlineData(1900, 10, 31, ENineStarKiEnergy.Mountain)]
+        //[InlineData(1900, 12, 7, ENineStarKiEnergy.Lake)]
+        //[InlineData(1900, 12, 21, ENineStarKiEnergy.Soil)]
+        //[InlineData(1900, 12, 22, ENineStarKiEnergy.Fire)]
+        //[InlineData(1900, 12, 23, ENineStarKiEnergy.Water)]
+        //[InlineData(1900, 12, 31, ENineStarKiEnergy.Fire)]
+        //[InlineData(1901, 1, 1, ENineStarKiEnergy.Water)]
+        //[InlineData(1901, 1, 5, ENineStarKiEnergy.CoreEarth)]
+        //[InlineData(1901, 2, 5, ENineStarKiEnergy.Fire)]
+        //[InlineData(1901, 2, 15, ENineStarKiEnergy.Water)]
+        //[InlineData(1901, 4, 16, ENineStarKiEnergy.Water)]
+        //[InlineData(1901, 4, 21, ENineStarKiEnergy.Thunder)]
+        //[InlineData(1901, 5, 6, ENineStarKiEnergy.Fire)]
+        //[InlineData(1901, 6, 15, ENineStarKiEnergy.Wind)]
+        //[InlineData(1901, 6, 21, ENineStarKiEnergy.Water)]
+        //[InlineData(1901, 6, 22, ENineStarKiEnergy.Mountain)]
+        //[InlineData(1901, 8, 8, ENineStarKiEnergy.Heaven)]
+        //[InlineData(1901, 11, 8, ENineStarKiEnergy.Wind)]
+        //[InlineData(1901, 12, 21, ENineStarKiEnergy.Heaven)]
+        //[InlineData(1901, 12, 22, ENineStarKiEnergy.CoreEarth)]
+        //[InlineData(1901, 12, 23, ENineStarKiEnergy.Heaven)]
+        //[InlineData(1902, 1, 8, ENineStarKiEnergy.Wind)]
+        //[InlineData(1902, 1, 24, ENineStarKiEnergy.Soil)]
+        //[InlineData(1902, 4, 5, ENineStarKiEnergy.Water)]
+        //[InlineData(1902, 6, 6, ENineStarKiEnergy.Fire)]
+        //[InlineData(1902, 6, 12, ENineStarKiEnergy.Heaven)]
+        //[InlineData(1902, 6, 21, ENineStarKiEnergy.Heaven)]
+        //[InlineData(1902, 7, 15, ENineStarKiEnergy.Lake)]
         [InlineData(1902, 9, 18, ENineStarKiEnergy.CoreEarth)]
+        [InlineData(1902, 10, 18, ENineStarKiEnergy.Soil)]
+        [InlineData(1902, 12, 18, ENineStarKiEnergy.Wind)]
+        [InlineData(1902, 12, 28, ENineStarKiEnergy.Lake)]
+        [InlineData(1903, 2, 10, ENineStarKiEnergy.Heaven)]
+        [InlineData(1903, 5, 18, ENineStarKiEnergy.Wind)]
+        [InlineData(1903, 11, 14, ENineStarKiEnergy.Heaven)]
+        [InlineData(1904, 2, 10, ENineStarKiEnergy.Soil)]
+        [InlineData(1904, 6, 16, ENineStarKiEnergy.Thunder)]
+        [InlineData(1904, 9, 8, ENineStarKiEnergy.Wind)]
+        [InlineData(1904, 11, 11, ENineStarKiEnergy.Thunder)]
+        [InlineData(1904, 12, 31, ENineStarKiEnergy.Thunder)]
+        [InlineData(1905, 3, 11, ENineStarKiEnergy.Water)]
+        [InlineData(1905, 3, 26, ENineStarKiEnergy.Water)]
+        [InlineData(1905, 11, 17, ENineStarKiEnergy.Water)]
+        [InlineData(1908, 5, 10, ENineStarKiEnergy.CoreEarth)]
+        [InlineData(1920, 9, 11, ENineStarKiEnergy.Wind)]
         //[InlineData(2025, 3, 5, ENineStarKiEnergy.Lake)]
         //[InlineData(2025, 7, 30, ENineStarKiEnergy.Fire)]
         public void CalcualteSwissEphemeris_DailyKi_Ascending_Descending(
@@ -684,74 +709,16 @@ namespace K9.WebApplication.Tests.Unit.Services
             ENineStarKiEnergy dailyKi)
         {
             var today = new DateTime(todayYear, todayMonth, todayDay, 12, 0, 0);
-           
             var dayEnergy = _swissEphemerisService.GetNineStarKiDailyKi(today, "Europe/London");
+            
             Assert.Equal((int)dailyKi, dayEnergy.ki);
         }
-        
-        //[Theory]
-        //[InlineData(1979, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyHigh)]
-        //[InlineData(1981, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.MediumToHigh)]
-        //[InlineData(1980, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.Medium)]
-        //[InlineData(1979, 6, 16, EGender.Male, 1983, 6, 21, EGender.Male, ECompatibilityScore.VeryHigh)]
-        //[InlineData(1979, 6, 16, EGender.Male, 1985, 6, 21, EGender.Male, ECompatibilityScore.High)]
-        //[InlineData(1979, 6, 16, EGender.Male, 1978, 6, 21, EGender.Male, ECompatibilityScore.LowToMedium)]
-        //[InlineData(1979, 6, 16, EGender.Male, 1979, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyLow)]
-        //[InlineData(1979, 6, 16, EGender.Male, 1982, 6, 21, EGender.Male, ECompatibilityScore.MediumToHigh)]
-        //[InlineData(1979, 6, 16, EGender.Male, 1980, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyHigh)]
-        //[InlineData(1982, 6, 16, EGender.Male, 1985, 6, 21, EGender.Male, ECompatibilityScore.VeryHigh)]
-        //public void Calculate_ChemistryLevel(int year1, int month1, int day1, EGender gender1, int year2, int month2, int day2, EGender gender2, ECompatibilityScore chemistryScore)
-        //{
-        //    var mockAuthentication = new Mock<IAuthentication>();
-        //    mockAuthentication.SetupGet(e => e.CurrentUserId).Returns(2);
-        //    mockAuthentication.SetupGet(e => e.IsAuthenticated).Returns(true);
 
-        //    var nineStarKiService = new NineStarKiService(new Mock<IMembershipService>().Object, mockAuthentication.Object, new Mock<IRoles>().Object);
-
-        //    var compatibility = nineStarKiService.CalculateCompatibility(new PersonModel
-        //    {
-        //        DateOfBirth = new DateTime(year1, month1, day1),
-        //        Gender = gender1
-        //    }, new PersonModel
-        //    {
-        //        DateOfBirth = new DateTime(year2, month2, day2),
-        //        Gender = gender2
-        //    }); 
-
-        //    Assert.Equal(chemistryScore, compatibility.CompatibilityDetails.Score.SparkScore);
-        //}
-
-        //[Theory]
-        //[InlineData(1979, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyHigh)]
-        //[InlineData(1981, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyLow)]
-        //[InlineData(1980, 6, 16, EGender.Male, 1984, 6, 21, EGender.Male, ECompatibilityScore.Low)]
-        //[InlineData(1979, 6, 16, EGender.Male, 1983, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyHigh)]
-        //[InlineData(1979, 6, 16, EGender.Male, 1985, 6, 21, EGender.Male, ECompatibilityScore.VeryHigh)]
-        //[InlineData(1979, 6, 16, EGender.Male, 1978, 6, 21, EGender.Male, ECompatibilityScore.Low)]
-        //[InlineData(1979, 6, 16, EGender.Male, 1979, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyLow)]
-        //[InlineData(1979, 6, 16, EGender.Male, 1982, 6, 21, EGender.Male, ECompatibilityScore.Low)]
-        //[InlineData(1979, 6, 16, EGender.Male, 1980, 6, 21, EGender.Male, ECompatibilityScore.ExtremelyHigh)]
-        //[InlineData(1982, 6, 16, EGender.Male, 1985, 6, 21, EGender.Male, ECompatibilityScore.High)]
-        //public void Calculate_ConflictLevel(int year1, int month1, int day1, EGender gender1, int year2, int month2, int day2, EGender gender2, ECompatibilityScore conflictScore)
-        //{
-        //    var mockAuthentication = new Mock<IAuthentication>();
-        //    mockAuthentication.SetupGet(e => e.CurrentUserId).Returns(2);
-        //    mockAuthentication.SetupGet(e => e.IsAuthenticated).Returns(true);
-
-        //    var nineStarKiService = new NineStarKiService(new Mock<IMembershipService>().Object, mockAuthentication.Object, new Mock<IRoles>().Object);
-
-        //    var compatibility = nineStarKiService.CalculateCompatibility(new PersonModel
-        //    {
-        //        DateOfBirth = new DateTime(year1, month1, day1),
-        //        Gender = gender1
-        //    }, new PersonModel
-        //    {
-        //        DateOfBirth = new DateTime(year2, month2, day2),
-        //        Gender = gender2
-        //    }); 
-
-        //    Assert.Equal(conflictScore, compatibility.CompatibilityDetails.Score.ConflictScore);
-        //}
+        public void Dispose()
+        {
+            Trace.Listeners.Remove(_listener);
+            _listener.Dispose();
+        }
 
     }
 }

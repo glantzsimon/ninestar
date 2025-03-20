@@ -4,16 +4,18 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using TimeZoneConverter;
+using Xunit.Abstractions;
 
 namespace K9.WebApplication.Services
 {
     public class SwissEphemerisService : BaseService, ISwissEphemerisService
     {
+        private readonly ITestOutputHelper _output;
         private const int SE_GREG_CAL = 1;              // Gregorian calendar flag
         private const int SEFLG_SWIEPH = 2;             // Swiss Ephemeris flag for calculations
         private const double PRECISE_YEAR_LENGTH = 365.242190419;
         private const string BASE_DAY_TIMEZONE = "Europe/London";
-        private const int BASE_DAY_KI_CYCLE_START = 71;
+        private const int BASE_DAY_KI_CYCLE_START = 73;
         private const int BASE_DAY_KI_SMALL_CYCLE_START = 12;
         private const int BASE_DAY_KI_SMALL_CYCLE = 60;
         private const int BASE_DAY_KI_CYCLE = 240;
@@ -21,9 +23,10 @@ namespace K9.WebApplication.Services
         private const int BASE_HOUR_KI = 5;
         private static DateTime BASE_KI_DATEUT;
 
-        public SwissEphemerisService(INineStarKiBasePackage my)
+        public SwissEphemerisService(INineStarKiBasePackage my, ITestOutputHelper output = null)
             : base(my)
         {
+            _output = output;
             my.DefaultValuesConfiguration.ValidateSwephPath();
             BASE_KI_DATEUT = ConvertToUT(new DateTime(1900, 1, 1, 1, 0, 0), BASE_DAY_TIMEZONE);
         }
@@ -114,7 +117,7 @@ namespace K9.WebApplication.Services
                     {
                         invertedKi = null;
 
-                        if (dayKiCycleCount == dayKiCycleLength)
+                        if (dayKiCycleCount == dayKiCycleLength + 1)
                         {
                             // Every BASE_DAY_KI_CYCLE days, advance dayKi by 3.
                             dayKi = IncrementKi(dayKi, 3);
@@ -123,19 +126,32 @@ namespace K9.WebApplication.Services
                             switch (dayKiCycleLength)
                             {
                                 case BASE_DAY_KI_CYCLE: // 240
+                                    _output?.WriteLine($"Day: {day.ToString()} {Environment.NewLine}" +
+                                                     $"Current DayKiCycleLength: {dayKiCycleLength}");
                                     dayKiCycleLength += 60;
+                                    _output?.WriteLine($"Next DayKiCycleLength: {dayKiCycleLength} {Environment.NewLine}");
                                     break;
 
                                 case BASE_DAY_KI_CYCLE + 60: // 300
-                                    dayKiCycleLength += 240;
+                                    _output?.WriteLine($"Day: {day.ToString()} {Environment.NewLine}" +
+                                                     $"Current DayKiCycleLength: {dayKiCycleLength}");
+                                    dayKiCycleLength += 1140;
+                                    _output?.WriteLine($"Next DayKiCycleLength: {dayKiCycleLength} {Environment.NewLine}");
                                     break;
 
-                                case BASE_DAY_KI_CYCLE + 300: // 540
-                                    dayKiCycleLength += 480;
+                                case BASE_DAY_KI_CYCLE + 60 + 1140: 
+                                    _output?.WriteLine($"Day: {day.ToString()} {Environment.NewLine}" +
+                                                     $"Current DayKiCycleLength: {dayKiCycleLength}");
+                                    dayKiCycleLength += 1140;
+                                    _output?.WriteLine($"Next DayKiCycleLength: {dayKiCycleLength} {Environment.NewLine}");
                                     break;
 
-                                case BASE_DAY_KI_CYCLE + 780: // 1020
+                                case BASE_DAY_KI_CYCLE + 60 + 1140 + 1140: 
+                                    _output?.WriteLine($"Day: {day.ToString()} {Environment.NewLine}" +
+                                                       $"Current DayKiCycleLength: {dayKiCycleLength}" +
+                                                       $"Cycle Reset");
                                     dayKiCycleLength = BASE_DAY_KI_CYCLE;
+                                    _output?.WriteLine($"Next DayKiCycleLength: {dayKiCycleLength} {Environment.NewLine}");
                                     break;
                             }
                         }

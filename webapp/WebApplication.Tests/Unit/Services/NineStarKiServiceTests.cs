@@ -723,9 +723,22 @@ namespace K9.WebApplication.Tests.Unit.Services
         [InlineData(1905, 4, 20, ENineStarKiEnergy.Mountain)]
         [InlineData(1905, 4, 21, ENineStarKiEnergy.Heaven)]
         [InlineData(1905, 4, 25, ENineStarKiEnergy.Water)]
+        [InlineData(1905, 11, 17, ENineStarKiEnergy.Water)]
+        
+        // Change
+        [InlineData(1907, 3, 16, ENineStarKiEnergy.Lake)]
+        [InlineData(1907, 3, 17, ENineStarKiEnergy.Mountain)]
+        [InlineData(1907, 5, 14, ENineStarKiEnergy.Thunder)]
+        [InlineData(1907, 5, 15, ENineStarKiEnergy.Wind)]
+        [InlineData(1907, 8, 15, ENineStarKiEnergy.Wind)]
+        [InlineData(1907, 10, 13, ENineStarKiEnergy.Mountain)]
+        [InlineData(1908, 1, 13, ENineStarKiEnergy.Wind)]
+        [InlineData(1908, 3, 13, ENineStarKiEnergy.Water)]
 
-        //[InlineData(1905, 11, 17, ENineStarKiEnergy.Water)]
+        //[InlineData(1908, 5, 09, ENineStarKiEnergy.Wind)]
         //[InlineData(1908, 5, 10, ENineStarKiEnergy.CoreEarth)]
+        //[InlineData(1908, 12, 30, ENineStarKiEnergy.CoreEarth)]
+
         //[InlineData(1909, 4, 20, ENineStarKiEnergy.Mountain)]
         //[InlineData(1909, 4, 21, ENineStarKiEnergy.Fire)]
         //[InlineData(1909, 5, 25, ENineStarKiEnergy.Lake)]

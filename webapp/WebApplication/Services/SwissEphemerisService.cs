@@ -105,6 +105,7 @@ namespace K9.WebApplication.Services
                 int sixtyDayCycleCount = BASE_DAY_KI_SIXTY_DAY_CYCLE_START;
                 int baseThreeYearCycle = BASE_DAY_KI_THREE_YEAR_CYCLE_START;
                 int threeYearCycleSkipCount = 1;
+                int threeYearCycleShiftCount = 1;
 
                 //_output?.WriteLine($"Next Three Year Cycle: {BASE_KI_DATEUT.AddDays(BASE_DAY_KI_THREE_YEAR_CYCLE - (BASE_DAY_KI_THREE_YEAR_CYCLE_START - 1)).ToString()} {Environment.NewLine}");
 
@@ -133,33 +134,37 @@ namespace K9.WebApplication.Services
                             switch (dayKiCycleLength)
                             {
                                 case BASE_DAY_KI_CYCLE: // 240
-                                    _output?.WriteLine($"Day: {day.ToString()} {Environment.NewLine}" +
-                                                     $"Current DayKiCycle Length: {dayKiCycleLength}");
+                                    _output?.WriteLine($"BASE_DAY_KI_CYCLE: {Environment.NewLine}" +
+                                                       $"Day: {day.ToString()} {Environment.NewLine}" +
+                                                       $"Current DayKiCycle Length: {dayKiCycleLength}");
                                     dayKiCycleLength = BASE_DAY_KI_CYCLE + 60;
                                     _output?.WriteLine($"Next DayKiCycle Length: {dayKiCycleLength} {Environment.NewLine}" +
                                                        $"Next DayKiCycle Date: {day.AddDays(dayKiCycleLength).ToString()} {Environment.NewLine}");
                                     break;
 
                                 case BASE_DAY_KI_CYCLE + 60:
-                                    _output?.WriteLine($"Day: {day.ToString()} {Environment.NewLine}" +
-                                                     $"Current DayKiCycle Length: {dayKiCycleLength}");
+                                    _output?.WriteLine($"BASE_DAY_KI_CYCLE: {Environment.NewLine}" +
+                                                       $"Day: {day.ToString()} {Environment.NewLine}" +
+                                                       $"Current DayKiCycle Length: {dayKiCycleLength}");
                                     dayKiCycleLength = BASE_DAY_KI_CYCLE + 840;
                                     _output?.WriteLine($"Next DayKiCycle Length: {dayKiCycleLength} {Environment.NewLine}" +
                                                        $"Next DayKiCycle Date: {day.AddDays(dayKiCycleLength).ToString()} {Environment.NewLine}");
                                     break;
 
                                 case BASE_DAY_KI_CYCLE + 840:
-                                    _output?.WriteLine($"Day: {day.ToString()} {Environment.NewLine}" +
-                                                     $"Current DayKiCycle Length: {dayKiCycleLength}");
+                                    _output?.WriteLine($"BASE_DAY_KI_CYCLE: {Environment.NewLine}" +
+                                                       $"Day: {day.ToString()} {Environment.NewLine}" +
+                                                       $"Current DayKiCycle Length: {dayKiCycleLength}");
                                     dayKiCycleLength = BASE_DAY_KI_CYCLE + 120;
                                     _output?.WriteLine($"Next DayKiCycle Length: {dayKiCycleLength} {Environment.NewLine}" +
                                                        $"Next DayKiCycle Date: {day.AddDays(dayKiCycleLength).ToString()} {Environment.NewLine}");
                                     break;
 
                                 case BASE_DAY_KI_CYCLE + 120:
-                                    _output?.WriteLine($"Day: {day.ToString()} {Environment.NewLine}" +
+                                    _output?.WriteLine($"BASE_DAY_KI_CYCLE: {Environment.NewLine}" +
+                                                       $"Day: {day.ToString()} {Environment.NewLine}" +
                                                        $"Current DayKiCycle Length: {dayKiCycleLength}");
-                                    dayKiCycleLength = BASE_DAY_KI_CYCLE + 480;
+                                    dayKiCycleLength = BASE_DAY_KI_CYCLE + 1620;
                                     _output?.WriteLine($"Next DayKiCycle Length: {dayKiCycleLength} {Environment.NewLine}" +
                                                        $"Next DayKiCycle Date: {day.AddDays(dayKiCycleLength).ToString()} {Environment.NewLine}");
                                     break;
@@ -182,13 +187,13 @@ namespace K9.WebApplication.Services
                             }
                         }
 
-                        //if (day.Year == 1904 && day.Month == 4 && day.Day == 20)
+                        //if (day.Year == 1905 && day.Month == 4 && day.Day == 20)
                         //{
                         //    _output?.WriteLine($"Day: {day.ToString()} {Environment.NewLine}" +
                         //                       $"DayKi: {dayKi + 1} {Environment.NewLine}" +
                         //                       $"Leap Year Cycle Day: {baseThreeYearCycle} {Environment.NewLine}" +
                         //                       $"Next Three Year Cycle: {day.AddDays(BASE_DAY_KI_THREE_YEAR_CYCLE).ToString()} {Environment.NewLine}" +
-                        //                       $"Reset to 3 {Environment.NewLine}");
+                        //                       $"Three Year Cycle Shift Count: {threeYearCycleShiftCount} {Environment.NewLine}");
                         //}
 
                         if (day < juneSolstice.Date)
@@ -196,15 +201,10 @@ namespace K9.WebApplication.Services
                             // Factor in three-year cycle
                             if (baseThreeYearCycle == BASE_DAY_KI_THREE_YEAR_CYCLE)
                             {
-                                //_output?.WriteLine($"Day: {day.ToString()} {Environment.NewLine}" +
-                                //                   $"DayKi: {dayKi + 1} {Environment.NewLine}" +
-                                //                   $"Leap Year Cycle Day: {baseThreeYearCycle} {Environment.NewLine}" +
-                                //                   $"Next Three Year Cycle: {day.AddDays(BASE_DAY_KI_THREE_YEAR_CYCLE).ToString()} {Environment.NewLine}" +
-                                //                   $"Reset to 3 {Environment.NewLine}");
-
                                 if (threeYearCycleSkipCount == BASE_DAY_KI_THREE_YEAR_CYCLE_SKIP)
                                 {
-                                    //_output?.WriteLine($"Skipping Cycle - dayKiCycle2SkipCount: {threeYearCycleSkipCount} {Environment.NewLine}");
+                                    _output?.WriteLine($"THREE_YEAR_CYCLE: {Environment.NewLine}" +
+                                                       $"Skipping Cycle - dayKiCycle2SkipCount: {threeYearCycleSkipCount} {Environment.NewLine}");
 
                                     // Reset skip cycle
                                     threeYearCycleSkipCount = 1;
@@ -220,7 +220,33 @@ namespace K9.WebApplication.Services
                                 }
 
                                 // Reset cycle
-                                baseThreeYearCycle = 0;
+                                if (threeYearCycleShiftCount == 5)
+                                {
+                                    baseThreeYearCycle = BASE_DAY_KI_THREE_YEAR_CYCLE - 365;
+
+                                    _output?.WriteLine($"THREE_YEAR_CYCLE: {Environment.NewLine}" +
+                                                       $"Day: {day.ToString()} {Environment.NewLine}" +
+                                                       $"Three Year Shifted {Environment.NewLine}");
+
+                                    // Reset
+                                    threeYearCycleShiftCount = 0;
+
+                                    if (threeYearCycleSkipCount == BASE_DAY_KI_THREE_YEAR_CYCLE_SKIP)
+                                    {
+                                        // Reset skip cycle
+                                        threeYearCycleSkipCount = 1;
+                                    }
+                                }
+                                else
+                                {
+                                    baseThreeYearCycle = 0;
+                                }
+
+                                _output?.WriteLine($"THREE_YEAR_CYCLE: {Environment.NewLine}" +
+                                                   $"Day: {day.ToString()} {Environment.NewLine}" +
+                                                   $"DayKi: {dayKi} {Environment.NewLine}" +
+                                                   $"Three Year Cycle Day: {baseThreeYearCycle} {Environment.NewLine}" +
+                                                   $"Next Three Year Cycle: {day.AddDays(BASE_DAY_KI_THREE_YEAR_CYCLE - baseThreeYearCycle).ToString()} {Environment.NewLine}");
                             }
                             else
                             {
@@ -259,6 +285,8 @@ namespace K9.WebApplication.Services
                         sixtyDayCycleCount++;
                         baseThreeYearCycle++;
                     }
+
+                    threeYearCycleShiftCount++;
                 }
 
                 return (dayKi, invertedKi);

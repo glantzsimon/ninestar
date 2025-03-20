@@ -203,8 +203,8 @@ namespace K9.WebApplication.Services
                             {
                                 if (threeYearCycleSkipCount == BASE_DAY_KI_THREE_YEAR_CYCLE_SKIP)
                                 {
-                                    _output?.WriteLine($"THREE_YEAR_CYCLE: {Environment.NewLine}" +
-                                                       $"Skipping Cycle - dayKiCycle2SkipCount: {threeYearCycleSkipCount} {Environment.NewLine}");
+                                    _output?.WriteLine($"SKIP THREE_YEAR_CYCLE: {Environment.NewLine}" +
+                                                       $"Skipping Cycle: Day: {day.ToString()} {Environment.NewLine}");
 
                                     // Reset skip cycle
                                     threeYearCycleSkipCount = 1;
@@ -224,9 +224,8 @@ namespace K9.WebApplication.Services
                                 {
                                     baseThreeYearCycle = BASE_DAY_KI_THREE_YEAR_CYCLE - 365;
 
-                                    _output?.WriteLine($"THREE_YEAR_CYCLE: {Environment.NewLine}" +
-                                                       $"Day: {day.ToString()} {Environment.NewLine}" +
-                                                       $"Three Year Shifted {Environment.NewLine}");
+                                    _output?.WriteLine($"SHIFT THREE_YEAR_CYCLE: {Environment.NewLine}" +
+                                                       $"Day: {day.ToString()} {Environment.NewLine}");
 
                                     // Reset
                                     threeYearCycleShiftCount = 0;
@@ -234,7 +233,7 @@ namespace K9.WebApplication.Services
                                     if (threeYearCycleSkipCount == BASE_DAY_KI_THREE_YEAR_CYCLE_SKIP)
                                     {
                                         // Reset skip cycle
-                                        threeYearCycleSkipCount = 1;
+                                        threeYearCycleSkipCount = 2;
                                     }
                                 }
                                 else
@@ -246,6 +245,7 @@ namespace K9.WebApplication.Services
                                                    $"Day: {day.ToString()} {Environment.NewLine}" +
                                                    $"DayKi: {dayKi} {Environment.NewLine}" +
                                                    $"Three Year Cycle Day: {baseThreeYearCycle} {Environment.NewLine}" +
+                                                   $"Next Three Year Cycle Skip Day: {day.AddDays((BASE_DAY_KI_THREE_YEAR_CYCLE - baseThreeYearCycle) + (BASE_DAY_KI_THREE_YEAR_CYCLE_SKIP - (threeYearCycleSkipCount)) * BASE_DAY_KI_THREE_YEAR_CYCLE).ToString()} {Environment.NewLine}" +
                                                    $"Next Three Year Cycle: {day.AddDays(BASE_DAY_KI_THREE_YEAR_CYCLE - baseThreeYearCycle).ToString()} {Environment.NewLine}");
                             }
                             else

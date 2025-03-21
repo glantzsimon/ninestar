@@ -445,6 +445,7 @@ namespace K9.WebApplication.Services
             {
                 return localTime; // Presumed to be UTC
             }
+            localTime = DateTime.SpecifyKind(localTime, DateTimeKind.Local);
             TimeZoneInfo tz = TZConvert.GetTimeZoneInfo(timeZoneId);
             return TimeZoneInfo.ConvertTimeToUtc(localTime, tz);
         }

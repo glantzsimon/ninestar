@@ -130,13 +130,13 @@ namespace K9.WebApplication.Helpers
         public SelectList GetSelectList<T>(int? selectedId, bool refresh = false, string nameExpression = "Name",
             string valueExpression = "Name", bool includeDeleted = false, Type resourceType = null) where T : class, IObjectBase
         {
-            return new SelectList(GetDataSet<T>(refresh, nameExpression, "Name", includeDeleted, resourceType), "Id", "Name", selectedId);
+            return new SelectList(GetDataSet<T>(refresh, nameExpression, valueExpression, includeDeleted, resourceType), "Id", "Name", selectedId);
         }
 
         public SelectList GetSelectList<T>(string selectedId, bool refresh = false, string nameExpression = "Name",
             string valueExpression = "Name", bool includeDeleted = false, Type resourceType = null) where T : class, IObjectBase
         {
-            return new SelectList(GetDataSet<T>(refresh, nameExpression, "Name", includeDeleted, resourceType), "Id", "Name", selectedId);
+            return new SelectList(GetDataSet<T>(refresh, nameExpression, valueExpression, includeDeleted, resourceType), string.IsNullOrEmpty(valueExpression) ? "Id" : "Value", "Name", selectedId);
         }
 
         public SelectList GetSelectListFromEnum<T>(int selectedId, bool refresh = false, Type resourceType = null)

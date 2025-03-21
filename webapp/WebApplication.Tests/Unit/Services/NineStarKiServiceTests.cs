@@ -794,6 +794,22 @@ namespace K9.WebApplication.Tests.Unit.Services
             Assert.Equal((int)dailyKi, dayEnergy.ki);
         }
 
+        [Theory]
+        [InlineData(1924, 6, 20, 0, ENineStarKiEnergy.Lake)]
+        public void CalcualteSwissEphemeris_DailyKi_HourlyKi(
+            int todayYear,
+            int todayMonth,
+            int todayDay,
+            int todayHour,
+            ENineStarKiEnergy hourlyKi,
+            bool isDebug = false)
+        {
+            var today = new DateTime(todayYear, todayMonth, todayDay, todayHour, 0, 0);
+            var actualHourlyKi = _swissEphemerisService.GetNineStarKiHourlyKi(today, "Europe/London");
+
+            Assert.Equal((int)hourlyKi, actualHourlyKi);
+        }
+
         public void Dispose()
         {
             Trace.Listeners.Remove(_listener);

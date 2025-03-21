@@ -23,7 +23,7 @@ namespace K9.WebApplication.Services
         private const int BASE_DAY_KI = 2;
         private const int BASE_HOUR_KI = 5;
         private static DateTime BASE_KI_DATEUT;
-        
+
         public SwissEphemerisService(INineStarKiBasePackage my, ITestOutputHelper output = null)
             : base(my)
         {
@@ -105,7 +105,7 @@ namespace K9.WebApplication.Services
                 DateTime juneSolsticeAdjustmentDay =
                     FindFirstJiaZiDayBeforeSolstice(sweph, selectedDateTimeUT.Year, true).Date;
                 DateTime decemberSolstice = FindDecemberSolstice(sweph, selectedDateTimeUT.Year).Date;
-                DateTime decemberSolsticeAdjustmentDay = 
+                DateTime decemberSolsticeAdjustmentDay =
                     FindFirstJiaZiDayBeforeSolstice(sweph, selectedDateTimeUT.Year, false).Date;
                 DateTime juneSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year, true).Date;
                 DateTime decemberSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year, false).Date;
@@ -168,7 +168,7 @@ namespace K9.WebApplication.Services
                         var daysFromJuneSolsticeJiaDay = (int)day.Subtract(juneSolsticeJiaDay).TotalDays;
                         dayKi = DecrementKi(SEXAGENARY_JUNE_JIA_ZI_DAY_KI, daysFromJuneSolsticeJiaDay);
                     }
-                  
+
                     // Adjust if needed
                     if (decAdjustmentNeeded && day >= decemberSolsticeAdjustmentDay)
                     {
@@ -189,7 +189,68 @@ namespace K9.WebApplication.Services
                 return (dayKi, invertedKi);
             }
         }
-        
+
+        public int GetNineStarKiHourlyKi(DateTime selectedDateTime, string timeZoneId)
+        {
+            using (var sweph = new SwissEph())
+            {
+                sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
+
+                DateTime selectedDateTimeUT = ConvertToUT(selectedDateTime, timeZoneId);
+                DateTime juneSolstice = FindJuneSolstice(sweph, selectedDateTimeUT.Year).Date;
+                DateTime decemberSolstice = FindDecemberSolstice(sweph, selectedDateTimeUT.Year).Date;
+                DateTime juneSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year, true).Date.AddHours(1);
+                DateTime decemberSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year, false).Date.AddHours(1);
+                DateTime previousDecemberSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year - 1, false).Date.AddHours(1);
+                DateTime day = selectedDateTimeUT;
+                int hourKi = 0;
+
+                if (day <= juneSolstice.Date)
+                {
+                    if (day > previousDecemberSolsticeJiaDay)
+                    {
+                        var hoursFromPreviousDecSolsticeJiaDay = (int)day.Subtract(previousDecemberSolsticeJiaDay).TotalHours / 2;
+                        hourKi = IncrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI, hoursFromPreviousDecSolsticeJiaDay);
+                    }
+                    else
+                    {
+                        var hoursToPreviousDecSolsticeJiaDay = (int)previousDecemberSolsticeJiaDay.Subtract(day).TotalHours / 2;
+                        hourKi = DecrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI, hoursToPreviousDecSolsticeJiaDay);
+                    }
+                }
+                else if (day > juneSolstice && day <= decemberSolstice)
+                {
+                    if (day < juneSolsticeJiaDay)
+                    {
+                        var hoursToNextJuneSolsticeJiaDay = (int)juneSolsticeJiaDay.Subtract(day).TotalHours / 2;
+                        hourKi = IncrementKi(SEXAGENARY_JUNE_JIA_ZI_DAY_KI, hoursToNextJuneSolsticeJiaDay);
+
+                    }
+                    else
+                    {
+                        var hoursFromJuneSolsticeJiaDay = (int)day.Subtract(juneSolsticeJiaDay).TotalHours / 2;
+                        hourKi = DecrementKi(SEXAGENARY_JUNE_JIA_ZI_DAY_KI, hoursFromJuneSolsticeJiaDay);
+                    }
+                }
+                else // day > decemberSolstice
+                {
+                    if (day < decemberSolsticeJiaDay)
+                    {
+                        var hoursToNextSolsticeJiaDay = (int)decemberSolsticeJiaDay.Subtract(day).TotalHours / 2;
+                        hourKi = IncrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI, hoursToNextSolsticeJiaDay);
+
+                    }
+                    else
+                    {
+                        var hoursFromSolsticeJiaDay = (int)day.Subtract(decemberSolsticeJiaDay).TotalHours / 2;
+                        hourKi = DecrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI, hoursFromSolsticeJiaDay);
+                    }
+                }
+
+                return hourKi;
+            }
+        }
+
         private DateTime FindFirstJiaZiDayAfterSolstice(SwissEph sweph, int year, bool isJuneSolstice)
         {
             // Get the solstice date using your existing method.

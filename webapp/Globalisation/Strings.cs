@@ -45,8 +45,8 @@
             public const string GenderLabel = "GenderLabel";
             public const string DateOfBirthLabel = "DateOfBirthLabel";
             public const string MainEnergyLabel = "MainEnergyLabel";
-            public const string LifeEnergyLabel = "LifeEnergyLabel";
-            public const string KarmicEnergyLabel = "KarmicEnergyLabel";
+            public const string WaveEnergyLabel = "WaveEnergyLabel";
+            public const string GenerationalEnergyLabel = "GenerationalEnergyLabel";
             public const string CharacterEnergyLabel = "CharacterEnergyLabel";
             public const string CharacterLabel = "CharacterLabel";
             public const string SurfaceEnergyLabel = "SurfaceEnergyLabel";

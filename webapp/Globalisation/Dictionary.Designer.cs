@@ -7077,6 +7077,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Generational Ki.
+        /// </summary>
+        public static string GenerationalEnergyLabel {
+            get {
+                return ResourceManager.GetString("GenerationalEnergyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Discover the Power of our 9 Star Ki AI Astrologer&lt;/h4&gt; 
         ///
         ///&lt;p&gt;Introducing our revolutionary AI GPT Astrologer — a cutting-edge tool that blends ancient 9 Star Ki wisdom with modern technology. Uncover your personal charts, compatibility readings, and detailed yearly and monthly predictions with ease.&lt;/p&gt; 
@@ -8204,15 +8213,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Karmic Ki.
-        /// </summary>
-        public static string KarmicEnergyLabel {
-            get {
-                return ResourceManager.GetString("KarmicEnergyLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Karmic Evolution.
         /// </summary>
         public static string KarmicEvolution {
@@ -8676,15 +8676,6 @@ namespace K9.Globalisation {
         public static string Li {
             get {
                 return ResourceManager.GetString("Li", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Life Work Ki.
-        /// </summary>
-        public static string LifeEnergyLabel {
-            get {
-                return ResourceManager.GetString("LifeEnergyLabel", resourceCulture);
             }
         }
         
@@ -16203,6 +16194,15 @@ namespace K9.Globalisation {
         public static string WaterElement {
             get {
                 return ResourceManager.GetString("WaterElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &apos;Wave&apos; / Sub Generation Ki.
+        /// </summary>
+        public static string WaveEnergyLabel {
+            get {
+                return ResourceManager.GetString("WaveEnergyLabel", resourceCulture);
             }
         }
         

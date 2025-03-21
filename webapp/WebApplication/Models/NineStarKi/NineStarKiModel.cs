@@ -31,17 +31,17 @@ namespace K9.WebApplication.Models
             BiorhythmResultSet = new BioRhythmsResultSet();
         }
 
-        public NineStarKiModel(PersonModel personModel, int preciseKarmicEnergy, int preciseLifeEnergy, int preciseMainEnergy, int preciseEmotionalEnergy, int preciseDayStarEnergy, int preciseEightyOneCycleEnergy, int preciseNineCycleEnergy, int preciseYearlyCycleEnergy, int preciseMonthlyCycleEnergy, int preciseDailyCycleEnergy, int? preciseDailyCycleInvertedEnergy, DateTime? selectedDate = null)
+        public NineStarKiModel(PersonModel personModel, int preciseGenerationEnergy, int preciseWaveEnergy, int preciseMainEnergy, int preciseEmotionalEnergy, int preciseDayStarEnergy, int preciseEightyOneCycleEnergy, int preciseNineCycleEnergy, int preciseYearlyCycleEnergy, int preciseMonthlyCycleEnergy, int preciseDailyCycleEnergy, int? preciseDailyCycleInvertedEnergy, DateTime? selectedDate = null)
         {
             SelectedDate = selectedDate ?? DateTime.Today;
 
             PersonModel = personModel;
 
-            KarmicEnergy = GetOrAddToCache($"KarmicEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{preciseKarmicEnergy}",
-                () => GetMainEnergy(PersonModel.DateOfBirth, preciseKarmicEnergy, PersonModel.Gender), TimeSpan.FromDays(30));
+            GenerationalEnergy = GetOrAddToCache($"GenerationalEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{preciseGenerationEnergy}",
+                () => GetMainEnergy(PersonModel.DateOfBirth, preciseGenerationEnergy, PersonModel.Gender), TimeSpan.FromDays(30));
 
-            LifeEnergy = GetOrAddToCache($"LifeEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{preciseLifeEnergy}",
-                () => GetMainEnergy(PersonModel.DateOfBirth, preciseLifeEnergy, PersonModel.Gender), TimeSpan.FromDays(30));
+            WaveEnergy = GetOrAddToCache($"WaveEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{preciseWaveEnergy}",
+                () => GetMainEnergy(PersonModel.DateOfBirth, preciseWaveEnergy, PersonModel.Gender), TimeSpan.FromDays(30));
 
             MainEnergy = GetOrAddToCache($"MainEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{preciseMainEnergy}",
                 () => GetMainEnergy(PersonModel.DateOfBirth, preciseMainEnergy, PersonModel.Gender), TimeSpan.FromDays(30));
@@ -110,14 +110,14 @@ namespace K9.WebApplication.Models
         /// <summary>
         /// Karmic lessons / life purpose / spiritual development
         /// </summary>
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.KarmicEnergyLabel)]
-        public NineStarKiEnergy KarmicEnergy { get; }
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GenerationalEnergyLabel)]
+        public NineStarKiEnergy GenerationalEnergy { get; }
 
         /// <summary>
         ///  Life contribution / work / our place in society
         /// </summary>
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LifeEnergyLabel)]
-        public NineStarKiEnergy LifeEnergy { get; }
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WaveEnergyLabel)]
+        public NineStarKiEnergy WaveEnergy { get; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MainEnergyLabel)]
         public NineStarKiEnergy MainEnergy { get; }

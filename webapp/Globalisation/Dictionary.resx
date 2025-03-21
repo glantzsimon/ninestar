@@ -4636,13 +4636,13 @@
   <data name="EightyOneYearlyEnergy" xml:space="preserve">
     <value>Eighty-One-Yearly Ki</value>
   </data>
-  <data name="KarmicEnergyLabel" xml:space="preserve">
-    <value>Karmic Ki</value>
-  </data>
-  <data name="LifeEnergyLabel" xml:space="preserve">
-    <value>Life Work Ki</value>
+  <data name="GenerationalEnergyLabel" xml:space="preserve">
+    <value>Generational Ki</value>
   </data>
   <data name="NineYearlyEnergy" xml:space="preserve">
     <value>Nine-Yearly Ki</value>
+  </data>
+  <data name="WaveEnergyLabel" xml:space="preserve">
+    <value>'Wave' / Sub Generation Ki</value>
   </data>
 </root>

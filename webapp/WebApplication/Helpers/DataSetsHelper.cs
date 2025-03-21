@@ -133,6 +133,12 @@ namespace K9.WebApplication.Helpers
             return new SelectList(GetDataSet<T>(refresh, nameExpression, "Name", includeDeleted, resourceType), "Id", "Name", selectedId);
         }
 
+        public SelectList GetSelectList<T>(string selectedId, bool refresh = false, string nameExpression = "Name",
+            string valueExpression = "Name", bool includeDeleted = false, Type resourceType = null) where T : class, IObjectBase
+        {
+            return new SelectList(GetDataSet<T>(refresh, nameExpression, "Name", includeDeleted, resourceType), "Id", "Name", selectedId);
+        }
+
         public SelectList GetSelectListFromEnum<T>(int selectedId, bool refresh = false, Type resourceType = null)
         {
             return new SelectList(GetDataSetFromEnum<T>(refresh, resourceType), "Id", "Name", selectedId);

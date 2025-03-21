@@ -2,4 +2,4 @@
 @using K9.SharedLibrary.Models
 @model string
 
-@Html.BootstrapDropdownFor(model => model, this.GetDropdownData().GetSelectList<K9.DataAccessLayer.Models.TimeZone>(null, true, "TimeZoneId", "TimeZoneId"))
+@Html.BootstrapDropdownFor(model => model, this.GetDropdownData().GetSelectList<K9.DataAccessLayer.Models.TimeZone>(Model, true, "TimeZoneId"))

@@ -273,7 +273,7 @@ namespace K9.WebApplication.Helpers
 
             return new TagCloser(html, Tags.Div);
         }
-
+        
         private static string GetSectionCode(ESection section)
         {
             return section.GetAttribute<EnumDescriptionAttribute>().CultureCode;

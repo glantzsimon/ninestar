@@ -44,6 +44,7 @@
             public const string RecipientEmailAddressLabel = "RecipientEmailAddressLabel";
             public const string GenderLabel = "GenderLabel";
             public const string DateOfBirthLabel = "DateOfBirthLabel";
+            public const string TimeOfBirthLabel = "TimeOfBirthLabel";
             public const string MainEnergyLabel = "MainEnergyLabel";
             public const string WaveEnergyLabel = "WaveEnergyLabel";
             public const string GenerationalEnergyLabel = "GenerationalEnergyLabel";

@@ -15237,6 +15237,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Time of Birth.
+        /// </summary>
+        public static string TimeOfBirthLabel {
+            get {
+                return ResourceManager.GetString("TimeOfBirthLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to TimeZone.
         /// </summary>
         public static string TimeZone {

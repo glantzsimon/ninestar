@@ -49,6 +49,9 @@ namespace K9.WebApplication.Controllers
                     var isScrollToCyclesOverview = model.IsScrollToCyclesOverview;
                     var activeTabId = model.ActiveCycleTabId;
 
+                    // Add time of birth
+                    model.PersonModel.DateOfBirth = model.PersonModel.DateOfBirth.Add(model.PersonModel.TimeOfBirth);
+
                     model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false,
                         selectedDate);
                     model.SelectedDate = selectedDate;
@@ -58,7 +61,7 @@ namespace K9.WebApplication.Controllers
                     if (Current.UserId > 0)
                     {
                         var user = My.UserService.Find(Current.UserId);
-                        model.IsMyProfile = user.BirthDate == model.PersonModel.DateOfBirth && user.Gender == model.PersonModel.Gender;
+                        model.IsMyProfile = user.BirthDate == model.PersonModel.DateOfBirth && model.PersonModel.TimeOfBirth == user.BirthDate.TimeOfDay && user.Gender == model.PersonModel.Gender;
                     }
                 }
             }

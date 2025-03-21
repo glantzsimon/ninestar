@@ -25,7 +25,7 @@ namespace K9.WebApplication.Models
             {
                 DateOfBirth = dateOfBirth,
                 Gender = Methods.GetRandomGender(),
-                TimeZone = Current.UserTimeZoneId
+                TimeZoneId = Current.UserTimeZoneId
             };
 
             PersonModel = personModel;

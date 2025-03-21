@@ -4642,6 +4642,9 @@
   <data name="NineYearlyEnergy" xml:space="preserve">
     <value>Nine-Yearly Ki</value>
   </data>
+  <data name="TimeOfBirthLabel" xml:space="preserve">
+    <value>Time of Birth</value>
+  </data>
   <data name="WaveEnergyLabel" xml:space="preserve">
     <value>'Wave' / Sub Generation Ki</value>
   </data>

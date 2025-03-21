@@ -143,6 +143,11 @@ namespace K9.WebApplication.Models
         public bool IsCompatibility { get; set; } = false;
 
         /// <summary>
+        /// Determines the 9 Star Ki energy of the current 81 year cycle
+        /// </summary>
+        public NineStarKiEnergy EightyOneYearlyCycleEnergy { get; }
+
+        /// <summary>
         /// Determines the 9 Star Ki energy of the current 9 year cycle
         /// </summary>
         public NineStarKiEnergy NineYearlyCycleEnergy { get; }
@@ -309,6 +314,23 @@ namespace K9.WebApplication.Models
 
             return nineStarKiEnergy;
         }
+
+        //private NineStarKiEnergy GetMainEnergy(DateTime date, EGender gender)
+        //{
+        //    // February 4, 1991 - 5
+
+        //    var month = date.Month;
+        //    var day = date.Day;
+        //    var year = date.Year;
+
+        //    year = (month == 2 && day <= 3) || month == 1 ? year - 1 : year;
+        //    var energyNumber = 3 - ((year - 1979) % 9);
+
+        //    var nineStarKiEnergy = ProcessEnergy(energyNumber, gender, ENineStarKiEnergyType.MainEnergy, enableCycleSwitch && date >= cycleSwitchDate);
+        //    nineStarKiEnergy.Gender = gender;
+
+        //    return nineStarKiEnergy;
+        //}
 
         private NineStarKiEnergy GetMainEnergy(DateTime date, int energyNumber, EGender gender)
         {

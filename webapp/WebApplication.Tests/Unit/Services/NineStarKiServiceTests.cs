@@ -502,7 +502,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             ENineStarKiEnergy energy,
             int hour = 0)
         {
-            var nineStarKiYear = _swissEphemerisService.GetNineStarKiYear(new DateTime(birthYear, birthMonth, birthDay, hour, 0, 0), "Europe/London");
+            var nineStarKiYear = _swissEphemerisService.GetNineStarKiYearlyKi(new DateTime(birthYear, birthMonth, birthDay, hour, 0, 0), "Europe/London");
 
             Assert.Equal((int)energy, nineStarKiYear);
         }
@@ -527,7 +527,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             string timeZone = "Europe/London",
             int hour = 0)
         {
-            var nineStarKiMonth = _swissEphemerisService.GetNineStarKiMonth(new DateTime(birthYear, birthMonth, birthDay, hour, 0, 0), timeZone);
+            var nineStarKiMonth = _swissEphemerisService.GetNineStarKiMonthlyKi(new DateTime(birthYear, birthMonth, birthDay, hour, 0, 0), timeZone);
 
             Assert.Equal((int)energy, nineStarKiMonth);
         }
@@ -801,7 +801,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         [InlineData(1924, 6, 21, 0, ENineStarKiEnergy.Wind)]
         [InlineData(1924, 11, 21, 13, ENineStarKiEnergy.Mountain)]
         [InlineData(2024, 08, 23, 1, ENineStarKiEnergy.Heaven, "Europe/London")]
-        public void CalcualteSwissEphemeris_DailyKi_HourlyKi(
+        public void CalcualteSwissEphemeris_HourlyKi(
             int todayYear,
             int todayMonth,
             int todayDay,
@@ -814,6 +814,43 @@ namespace K9.WebApplication.Tests.Unit.Services
             var actualHourlyKi = _swissEphemerisService.GetNineStarKiHourlyKi(today, timeZone, isDebug);
 
             Assert.Equal((int)hourlyKi, actualHourlyKi);
+        }
+
+        [Theory]
+        [InlineData(1991, 2, 5, ENineStarKiEnergy.CoreEarth)]
+        [InlineData(1991, 2, 3, ENineStarKiEnergy.Heaven)]
+        [InlineData(2000, 2, 7, ENineStarKiEnergy.Wind)]
+        [InlineData(2009, 2, 7, ENineStarKiEnergy.Thunder)]
+        [InlineData(2018, 2, 7, ENineStarKiEnergy.Soil)]
+        [InlineData(2027, 2, 7, ENineStarKiEnergy.Water)]
+        public void CalcualteSwissEphemeris_9YearKi(
+            int todayYear,
+            int todayMonth,
+            int todayDay,
+            ENineStarKiEnergy energy,
+            bool isDebug = false)
+        {
+            var today = new DateTime(todayYear, todayMonth, todayDay, 0, 0, 0);
+            var actual = _swissEphemerisService.GetNineStarKiNineYearKi(today, "");
+
+            Assert.Equal((int)energy, actual);
+        }
+
+        [Theory]
+        [InlineData(1955, 2, 5, ENineStarKiEnergy.Fire)]
+        [InlineData(2035, 2, 5, ENineStarKiEnergy.Fire)]
+        [InlineData(2036, 2, 5, ENineStarKiEnergy.Mountain)]
+        public void CalcualteSwissEphemeris_81YearKi(
+            int todayYear,
+            int todayMonth,
+            int todayDay,
+            ENineStarKiEnergy energy,
+            bool isDebug = false)
+        {
+            var today = new DateTime(todayYear, todayMonth, todayDay, 0, 0, 0);
+            var actual = _swissEphemerisService.GetNineStarKiEightyOneYearKi(today, "");
+
+            Assert.Equal((int)energy, actual);
         }
 
         public void Dispose()

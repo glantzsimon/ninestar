@@ -32,33 +32,59 @@ namespace K9.WebApplication.Services
             BASE_KI_DATEUT = ConvertToUT(new DateTime(1900, 1, 1, 1, 0, 0), BASE_DAY_TIMEZONE);
         }
 
-        public int GetNineStarKiYear(DateTime birthDate, string timeZoneId)
+        public int GetNineStarKiEightyOneYearKi(DateTime selectedDateTime, string timeZoneId)
         {
             using (var sweph = new SwissEph())
             {
                 sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
-                DateTime birthDateTimeUT = ConvertToUT(birthDate, timeZoneId);
-                int adjustedYear = AdjustBirthYear(sweph, birthDateTimeUT);
+                
+                DateTime selectedDateTimeUT = ConvertToUT(selectedDateTime, timeZoneId);
+                int adjustedYear = AdjustYearForLichun(sweph, selectedDateTimeUT);
+                int periodIndex = (int)Math.Floor((adjustedYear - 1955) / 81.0);
+                return ((((9 - periodIndex) - 1) % 9) + 9) % 9 + 1;
+            }
+        }
+
+        public int GetNineStarKiNineYearKi(DateTime selectedDateTime, string timeZoneId)
+        {
+            using (var sweph = new SwissEph())
+            {
+                sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
+
+                DateTime selectedDateTimeUT = ConvertToUT(selectedDateTime, timeZoneId);
+                int adjustedYear = AdjustYearForLichun(sweph, selectedDateTimeUT);
+                int periodIndex = (int)Math.Floor((adjustedYear - 1991) / 9.0);
+                return ((((5 - periodIndex) - 1) % 9) + 9) % 9 + 1;
+            }
+        }
+
+        public int GetNineStarKiYearlyKi(DateTime selectedDateTime, string timeZoneId)
+        {
+            using (var sweph = new SwissEph())
+            {
+                sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
+                DateTime selectedDateTimeUt = ConvertToUT(selectedDateTime, timeZoneId);
+                int adjustedYear = AdjustYearForLichun(sweph, selectedDateTimeUt);
                 return GetNineStarKiNumber(adjustedYear);
             }
         }
 
-        public int GetNineStarKiMonth(DateTime birthDate, string timeZoneId)
+        public int GetNineStarKiMonthlyKi(DateTime selectedDateTime, string timeZoneId)
         {
             using (var sweph = new SwissEph())
             {
                 sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
-                DateTime birthDateTimeUT = ConvertToUT(birthDate, timeZoneId);
-                int adjustedYear = AdjustBirthYear(sweph, birthDateTimeUT);
+                DateTime selectedDateTimeUT = ConvertToUT(selectedDateTime, timeZoneId);
+                int adjustedYear = AdjustYearForLichun(sweph, selectedDateTimeUT);
                 // Use the adjusted year to compute the energy directly instead of calling GetNineStarKiYear again.
                 int yearEnergy = GetNineStarKiNumber(adjustedYear);
                 int firstMonth = GetFirstMonthForYearEnergy(yearEnergy);
-                double jdBirth = GetJulianDate(sweph, birthDateTimeUT);
+                double jd = GetJulianDate(sweph, selectedDateTimeUT);
                 double[] solarTerms = GetSolarTerms(sweph, adjustedYear);
 
                 for (int i = 0; i < 11; i++)
                 {
-                    if (jdBirth >= solarTerms[i] && jdBirth < solarTerms[i + 1])
+                    if (jd >= solarTerms[i] && jd < solarTerms[i + 1])
                     {
                         // Downward cycle for Nine Star Ki month
                         return ((firstMonth - 1 - i + 9) % 9) + 1;
@@ -68,25 +94,30 @@ namespace K9.WebApplication.Services
             }
         }
 
-        public int GetNineStarKiMonthNumber(DateTime birthDate, string timeZoneId)
+        public int GetNineStarKiMonthNumber(DateTime selectedDateTime, string timeZoneId)
         {
             using (var sweph = new SwissEph())
             {
                 sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
-                DateTime birthDateTimeUT = ConvertToUT(birthDate, timeZoneId);
-                int adjustedYear = AdjustBirthYear(sweph, birthDateTimeUT);
-                double jdBirth = GetJulianDate(sweph, birthDateTimeUT);
+                DateTime selectedDateTimeUT = ConvertToUT(selectedDateTime, timeZoneId);
+                int adjustedYear = AdjustYearForLichun(sweph, selectedDateTimeUT);
+                double jd = GetJulianDate(sweph, selectedDateTimeUT);
                 double[] solarTerms = GetSolarTerms(sweph, adjustedYear);
 
                 for (int i = 0; i < 11; i++)
                 {
-                    if (jdBirth >= solarTerms[i] && jdBirth < solarTerms[i + 1])
+                    if (jd >= solarTerms[i] && jd < solarTerms[i + 1])
                     {
                         return i + 2;
                     }
                 }
                 return 12;
             }
+        }
+
+        public (int ki, int? invertedKi) GetNineStarKiDailyKi(DateTime selectedDateTime, string timeZoneId)
+        {
+            return GetNineStarKiDailyKi(selectedDateTime, timeZoneId, false);
         }
 
         public (int ki, int? invertedKi) GetNineStarKiDailyKi(DateTime selectedDateTime, string timeZoneId, bool isDebug = false)
@@ -111,7 +142,7 @@ namespace K9.WebApplication.Services
                 DateTime decemberSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year, false).Date;
                 DateTime previousDecemberSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year - 1, false).Date;
                 DateTime day = selectedDateTimeUT.Date;
-                
+
                 var predictedJuneSolticeDayKi = NineStarKiService.InvertDirectionEnergy(IncrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI,
                     (int)juneSolstice.Subtract(previousDecemberSolsticeJiaDay).TotalDays));
                 var actualJuneSolsticeDayKi = IncrementKi(SEXAGENARY_JUNE_JIA_ZI_DAY_KI, (int)juneSolsticeJiaDay.Subtract(juneSolstice).TotalDays);
@@ -188,6 +219,11 @@ namespace K9.WebApplication.Services
 
                 return (dayKi, invertedKi);
             }
+        }
+
+        public int GetNineStarKiHourlyKi(DateTime selectedDateTime, string timeZoneId)
+        {
+            return GetNineStarKiHourlyKi(selectedDateTime, timeZoneId, false);
         }
 
         public int GetNineStarKiHourlyKi(DateTime selectedDateTime, string timeZoneId, bool isDebug = false)
@@ -441,15 +477,15 @@ namespace K9.WebApplication.Services
         }
 
         /// <summary>
-        /// Adjusts the birth year based on Lìchūn (315° solar term) so that if the birth
+        /// Adjusts the year based on Lìchūn (315° solar term) so that if the 
         /// date is before Lìchūn in January–February, the previous year is used.
         /// </summary>
-        private int AdjustBirthYear(SwissEph sweph, DateTime birthDateTimeUT)
+        private int AdjustYearForLichun(SwissEph sweph, DateTime dateTimeUT)
         {
-            int year = birthDateTimeUT.Year;
+            int year = dateTimeUT.Year;
             double jdLichun = GetSolarTerm(sweph, year, 315.0);
-            double jdBirth = GetJulianDate(sweph, birthDateTimeUT);
-            return (jdBirth < jdLichun && birthDateTimeUT.Month <= 2) ? year - 1 : year;
+            double jd = GetJulianDate(sweph, dateTimeUT);
+            return (jd < jdLichun && dateTimeUT.Month <= 2) ? year - 1 : year;
         }
 
         private int AdjustKi(int ki, int amount = 1)

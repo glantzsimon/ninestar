@@ -31,20 +31,29 @@ namespace K9.WebApplication.Models
             BiorhythmResultSet = new BioRhythmsResultSet();
         }
 
-        public NineStarKiModel(PersonModel personModel, int preciseMainEnergy, int preciseEmotionalEnergy, int preciseYearlyCycleEnergy, int preciseMonthlyCycleEnergy, int preciseDailyCycleEnergy, int? preciseDailyCycleInvertedEnergy, DateTime? selectedDate = null)
+        public NineStarKiModel(PersonModel personModel, int preciseKarmicEnergy, int preciseLifeEnergy, int preciseMainEnergy, int preciseEmotionalEnergy, int preciseDayStarEnergy, int preciseEightyOneCycleEnergy, int preciseNineCycleEnergy, int preciseYearlyCycleEnergy, int preciseMonthlyCycleEnergy, int preciseDailyCycleEnergy, int? preciseDailyCycleInvertedEnergy, DateTime? selectedDate = null)
         {
             SelectedDate = selectedDate ?? DateTime.Today;
 
             PersonModel = personModel;
 
+            KarmicEnergy = GetOrAddToCache($"KarmicEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{preciseKarmicEnergy}",
+                () => GetMainEnergy(PersonModel.DateOfBirth, preciseKarmicEnergy, PersonModel.Gender), TimeSpan.FromDays(30));
+
+            LifeEnergy = GetOrAddToCache($"LifeEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{preciseLifeEnergy}",
+                () => GetMainEnergy(PersonModel.DateOfBirth, preciseLifeEnergy, PersonModel.Gender), TimeSpan.FromDays(30));
+
             MainEnergy = GetOrAddToCache($"MainEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{preciseMainEnergy}",
                 () => GetMainEnergy(PersonModel.DateOfBirth, preciseMainEnergy, PersonModel.Gender), TimeSpan.FromDays(30));
 
             CharacterEnergy = GetOrAddToCache($"CharacterEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{preciseEmotionalEnergy}",
-                () => GetCharacterEnergy(PersonModel.DateOfBirth, preciseEmotionalEnergy, PersonModel.Gender), TimeSpan.FromDays(30));
+                () => GetEnergy(PersonModel.DateOfBirth, preciseEmotionalEnergy, ENineStarKiEnergyType.CharacterEnergy), TimeSpan.FromDays(30));
 
             SurfaceEnergy = GetOrAddToCache($"SurfaceEnergy_p_{MainEnergy.EnergyNumber}_{CharacterEnergy.EnergyNumber}",
                 GetSurfaceEnergy, TimeSpan.FromDays(30));
+
+            DailyEnergy = GetOrAddToCache($"DailyEnergy_p_{MainEnergy.EnergyNumber}_{CharacterEnergy.EnergyNumber}_{preciseDayStarEnergy}",
+                () => GetEnergy(PersonModel.DateOfBirth, preciseDayStarEnergy, ENineStarKiEnergyType.DailyEnergy), TimeSpan.FromDays(30));
 
             YearlyCycleEnergy = GetOrAddToCache($"YearlyCycleEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{SelectedDate.Value.ToString()}_{preciseYearlyCycleEnergy}",
                 () => GetYearlyCycleEnergy(preciseYearlyCycleEnergy), TimeSpan.FromDays(30));
@@ -98,6 +107,18 @@ namespace K9.WebApplication.Models
 
         public PersonModel PersonModel { get; }
 
+        /// <summary>
+        /// Karmic lessons / life purpose / spiritual development
+        /// </summary>
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.KarmicEnergyLabel)]
+        public NineStarKiEnergy KarmicEnergy { get; }
+
+        /// <summary>
+        ///  Life contribution / work / our place in society
+        /// </summary>
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LifeEnergyLabel)]
+        public NineStarKiEnergy LifeEnergy { get; }
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MainEnergyLabel)]
         public NineStarKiEnergy MainEnergy { get; }
 
@@ -106,6 +127,9 @@ namespace K9.WebApplication.Models
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SurfaceEnergyLabel)]
         public NineStarKiEnergy SurfaceEnergy { get; }
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DayStarLabel)]
+        public NineStarKiEnergy DailyEnergy { get; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SummaryLabel)]
         public string Summary { get; set; }
@@ -315,23 +339,6 @@ namespace K9.WebApplication.Models
             return nineStarKiEnergy;
         }
 
-        //private NineStarKiEnergy GetMainEnergy(DateTime date, EGender gender)
-        //{
-        //    // February 4, 1991 - 5
-
-        //    var month = date.Month;
-        //    var day = date.Day;
-        //    var year = date.Year;
-
-        //    year = (month == 2 && day <= 3) || month == 1 ? year - 1 : year;
-        //    var energyNumber = 3 - ((year - 1979) % 9);
-
-        //    var nineStarKiEnergy = ProcessEnergy(energyNumber, gender, ENineStarKiEnergyType.MainEnergy, enableCycleSwitch && date >= cycleSwitchDate);
-        //    nineStarKiEnergy.Gender = gender;
-
-        //    return nineStarKiEnergy;
-        //}
-
         private NineStarKiEnergy GetMainEnergy(DateTime date, int energyNumber, EGender gender)
         {
             var nineStarKiEnergy = ProcessEnergy(energyNumber, gender, ENineStarKiEnergyType.MainEnergy, enableCycleSwitch && date >= cycleSwitchDate);
@@ -489,10 +496,10 @@ namespace K9.WebApplication.Models
 
             return ProcessEnergy(energyNumber, gender, ENineStarKiEnergyType.CharacterEnergy, enableCycleSwitch && date >= cycleSwitchDate);
         }
-
-        private NineStarKiEnergy GetCharacterEnergy(DateTime date, int energyNumber, EGender gender = EGender.Male)
+        
+        private NineStarKiEnergy GetEnergy(DateTime date, int energyNumber, ENineStarKiEnergyType energyType)
         {
-            return ProcessEnergy(energyNumber, gender, ENineStarKiEnergyType.CharacterEnergy, enableCycleSwitch && date >= cycleSwitchDate);
+            return ProcessEnergy(energyNumber, PersonModel.Gender, energyType, enableCycleSwitch && date >= cycleSwitchDate);
         }
 
         private NineStarKiEnergy GetSurfaceEnergy()
@@ -500,21 +507,40 @@ namespace K9.WebApplication.Models
             return ProcessEnergy(5 - (CharacterEnergy.EnergyNumber - MainEnergy.EnergyNumber), EGender.Male, ENineStarKiEnergyType.SurfaceEnergy);
         }
 
-        private NineStarKiEnergy GetYearlyCycleEnergy(int? todayYearEnergy = null)
+        private NineStarKiEnergy GetCycleEnergy(int cycleEnergy, int energyNumber, ENineStarKiEnergyType energyType, ENineStarKiEnergyCycleType cycleType)
         {
             var selectedDate = SelectedDate ?? DateTime.Today;
-            todayYearEnergy  = todayYearEnergy == null ? (int)GetMainEnergy(selectedDate, EGender.Male).Energy : todayYearEnergy;
-            /// Get the male energy for this calculation
-            var personalYearEnergy = PersonModel.Gender.IsYin() ? InvertEnergy(MainEnergy.EnergyNumber) : MainEnergy.EnergyNumber;
-            var offset = todayYearEnergy.Value - personalYearEnergy;
-            var lifeCycleYearEnergy = LoopEnergyNumber(5 - offset);
+            var personalEnergy = PersonModel.Gender.IsYin() ? InvertEnergy(energyNumber) : energyNumber;
+            var offset = cycleEnergy - personalEnergy;
+            cycleEnergy = LoopEnergyNumber(5 - offset);
             var isPastCycleSwitch = enableCycleSwitch && selectedDate >= cycleSwitchDate;
 
             var energy = (ENineStarKiEnergy)(PersonModel.Gender.IsYin() && invertCycleYinEnergies ?
-                isPastCycleSwitch ? lifeCycleYearEnergy : InvertEnergy(lifeCycleYearEnergy) :
-                isPastCycleSwitch ? InvertEnergy(lifeCycleYearEnergy) : lifeCycleYearEnergy);
+                isPastCycleSwitch ? cycleEnergy : InvertEnergy(cycleEnergy) :
+                isPastCycleSwitch ? InvertEnergy(cycleEnergy) : cycleEnergy);
 
-            return new NineStarKiEnergy(energy, ENineStarKiEnergyType.MainEnergy, PersonModel.IsAdult(), ENineStarKiEnergyCycleType.YearlyCycleEnergy);
+            return new NineStarKiEnergy(energy, energyType, PersonModel.IsAdult(), cycleType);
+        }
+
+        private NineStarKiEnergy GetEightyOneYearCycleEnergy(int cycleEnergy)
+        {
+            return GetCycleEnergy(cycleEnergy, EightyOneYearlyCycleEnergy.EnergyNumber,
+                ENineStarKiEnergyType.KarmicEnergy, ENineStarKiEnergyCycleType.EightyOneYearlyEnergy);
+        }
+
+        private NineStarKiEnergy GetNineYearCycleEnergy(int cycleEnergy)
+        {
+            return GetCycleEnergy(cycleEnergy, NineYearlyCycleEnergy.EnergyNumber,
+                ENineStarKiEnergyType.LifeEnergy, ENineStarKiEnergyCycleType.NineYearlyEnergy);
+        }
+
+        private NineStarKiEnergy GetYearlyCycleEnergy(int? todayYearEnergy = null)
+        {
+            var selectedDate = SelectedDate ?? DateTime.Today;
+            todayYearEnergy = todayYearEnergy == null ? (int)GetMainEnergy(selectedDate, EGender.Male).Energy : todayYearEnergy;
+
+            return GetCycleEnergy(todayYearEnergy.Value, MainEnergy.EnergyNumber,
+                ENineStarKiEnergyType.MainEnergy, ENineStarKiEnergyCycleType.YearlyCycleEnergy);
         }
 
         private NineStarKiEnergy GetMonthlyCycleEnergy(int? todayYearEnergy = null, int? todayMonthEnergy = null)

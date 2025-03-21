@@ -5083,6 +5083,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Daily Ki.
+        /// </summary>
+        public static string DailyEnergyLabel {
+            get {
+                return ResourceManager.GetString("DailyEnergyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Daily Karmic Influences.
         /// </summary>
         public static string DailyKarmicInfluences {
@@ -5154,6 +5163,15 @@ namespace K9.Globalisation {
         public static string DateOfBirthLabel {
             get {
                 return ResourceManager.GetString("DateOfBirthLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Day Star.
+        /// </summary>
+        public static string DayStarLabel {
+            get {
+                return ResourceManager.GetString("DayStarLabel", resourceCulture);
             }
         }
         
@@ -5728,6 +5746,15 @@ namespace K9.Globalisation {
         public static string East {
             get {
                 return ResourceManager.GetString("East", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Eighty-One-Yearly Ki.
+        /// </summary>
+        public static string EightyOneYearlyEnergy {
+            get {
+                return ResourceManager.GetString("EightyOneYearlyEnergy", resourceCulture);
             }
         }
         
@@ -8177,6 +8204,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Karmic Ki.
+        /// </summary>
+        public static string KarmicEnergyLabel {
+            get {
+                return ResourceManager.GetString("KarmicEnergyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Karmic Evolution.
         /// </summary>
         public static string KarmicEvolution {
@@ -8640,6 +8676,15 @@ namespace K9.Globalisation {
         public static string Li {
             get {
                 return ResourceManager.GetString("Li", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Life Work Ki.
+        /// </summary>
+        public static string LifeEnergyLabel {
+            get {
+                return ResourceManager.GetString("LifeEnergyLabel", resourceCulture);
             }
         }
         
@@ -10305,7 +10350,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Monthly Energy.
+        ///   Looks up a localized string similar to Monthly Ki.
         /// </summary>
         public static string MonthlyCycle {
             get {
@@ -10314,7 +10359,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Monthly Energy.
+        ///   Looks up a localized string similar to Monthly Ki.
         /// </summary>
         public static string MonthlyCycleEnergy {
             get {
@@ -10932,6 +10977,15 @@ namespace K9.Globalisation {
         public static string NineYearlyCyclesTitle {
             get {
                 return ResourceManager.GetString("NineYearlyCyclesTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine-Yearly Ki.
+        /// </summary>
+        public static string NineYearlyEnergy {
+            get {
+                return ResourceManager.GetString("NineYearlyEnergy", resourceCulture);
             }
         }
         
@@ -16680,7 +16734,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Yearly Energy.
+        ///   Looks up a localized string similar to Yearly Ki.
         /// </summary>
         public static string YearlyCycle {
             get {
@@ -16689,7 +16743,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Yearly Energy.
+        ///   Looks up a localized string similar to Yearly Ki.
         /// </summary>
         public static string YearlyCycleEnergy {
             get {

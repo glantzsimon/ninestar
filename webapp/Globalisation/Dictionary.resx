@@ -1880,7 +1880,7 @@
     <value>Late Spring</value>
   </data>
   <data name="MonthlyCycle" xml:space="preserve">
-    <value>Monthly Energy</value>
+    <value>Monthly Ki</value>
   </data>
   <data name="Planning" xml:space="preserve">
     <value>Planning / Germination</value>
@@ -1907,7 +1907,7 @@
     <value>Late Winter</value>
   </data>
   <data name="YearlyCycle" xml:space="preserve">
-    <value>Yearly Energy</value>
+    <value>Yearly Ki</value>
   </data>
   <data name="CurrentMonthlyCycle" xml:space="preserve">
     <value>Current Monthly Cycle</value>
@@ -2246,7 +2246,7 @@
     <value>Month</value>
   </data>
   <data name="MonthlyCycleEnergy" xml:space="preserve">
-    <value>Monthly Energy</value>
+    <value>Monthly Ki</value>
   </data>
   <data name="MyYearlyAndMonthlyCycles" xml:space="preserve">
     <value>My Yearly and Monthly Predictions</value>
@@ -2270,7 +2270,7 @@
     <value>Supportive Elements</value>
   </data>
   <data name="YearlyCycleEnergy" xml:space="preserve">
-    <value>Yearly Energy</value>
+    <value>Yearly Ki</value>
   </data>
   <data name="MySavedCharts" xml:space="preserve">
     <value>My Saved Charts</value>
@@ -4626,5 +4626,23 @@
   </data>
   <data name="HourlyEnergy" xml:space="preserve">
     <value>Hourly Energy</value>
+  </data>
+  <data name="DailyEnergyLabel" xml:space="preserve">
+    <value>Daily Ki</value>
+  </data>
+  <data name="DayStarLabel" xml:space="preserve">
+    <value>Day Star</value>
+  </data>
+  <data name="EightyOneYearlyEnergy" xml:space="preserve">
+    <value>Eighty-One-Yearly Ki</value>
+  </data>
+  <data name="KarmicEnergyLabel" xml:space="preserve">
+    <value>Karmic Ki</value>
+  </data>
+  <data name="LifeEnergyLabel" xml:space="preserve">
+    <value>Life Work Ki</value>
+  </data>
+  <data name="NineYearlyEnergy" xml:space="preserve">
+    <value>Nine-Yearly Ki</value>
   </data>
 </root>

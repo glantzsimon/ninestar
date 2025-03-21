@@ -1,4 +1,5 @@
 ﻿@using K9.WebApplication.Enums
+@using K9.WebApplication.Extensions
 @using K9.WebApplication.Helpers
 @model K9.WebApplication.Models.NineStarKiModel
 
@@ -8,5 +9,12 @@
 }
 
 <div class="energy-summary-container">
-    @Html.Panel(panelTitle, Html.Partial("../PersonalChart/_PersonalChart").ToString())
+    @if (this.GetActiveUserMembership().IsUnlimited())
+    {
+        @Html.Panel(panelTitle, Html.Partial("../PersonalChart/_PersonalChartExtended").ToString())
+    }
+    else
+    {
+        @Html.Panel(panelTitle, Html.Partial("../PersonalChart/_PersonalChart").ToString())
+    }
 </div>

@@ -234,7 +234,11 @@ namespace K9.WebApplication.Models
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.DailyEnergy)]
         DailyEnergy,
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.HourlyEnergy)]
-        HourlyEnergy
+        HourlyEnergy,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.LifeEnergy)]
+        LifeEnergy,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.KarmicEnergy)]
+        KarmicEnergy,
     }
 
     public enum ENineStarKiEnergyCycleType
@@ -249,6 +253,10 @@ namespace K9.WebApplication.Models
         DailyEnergy,
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.HourlyEnergy)]
         HourlyEnergy,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.HourlyEnergy)]
+        EightyOneYearlyEnergy,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.HourlyEnergy)]
+        NineYearlyEnergy,
     }
 
     public enum ENineStarKiEnergy

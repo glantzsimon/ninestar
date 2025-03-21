@@ -1618,6 +1618,7 @@
     <Content Include="Views\Shared\ActionLinkButtons\_NumerologyWithForm.cshtml" />
     <Content Include="Views\Shared\ActionLinkButtons\_PersonalProfileWithForm.cshtml" />
     <Content Include="Views\Shared\ActionLinkButtons\_PredictionsWithForm.cshtml" />
+    <Content Include="Views\PersonalChart\_PersonalChartExtended.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

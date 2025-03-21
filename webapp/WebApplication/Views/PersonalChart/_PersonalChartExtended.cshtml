@@ -1,0 +1,79 @@
+﻿@using K9.WebApplication.Enums
+@using K9.WebApplication.Helpers
+@model K9.WebApplication.Models.NineStarKiModel
+
+@{
+    var childClass = Model.PersonModel.IsAdult() ? "" : "child-profile";
+}
+
+<div class="row">
+    @if (!Model.IsCompatibility)
+    {
+        <div class="text-center">
+            <h5>@Dictionary.ClickOnTheNumbersBelowForMoreDetails</h5>
+        </div>
+    }
+    <div class="col-sm-4 margin-bottom-15 @childClass">
+        <div class="adult-profile">
+            @if (Model.IsCompatibility)
+            {
+                @Html.Partial("../NineStarKi/_EnergyTitle", Model.MainEnergy)
+            }
+            else
+            {
+                <a href="#" id="fundamental-energy">
+                    @Html.Partial("../NineStarKi/_EnergyTitle", Model.MainEnergy)
+                </a>
+            }
+        </div>
+    </div>
+    <div class="col-sm-4 margin-bottom-15">
+        @if (Model.IsCompatibility)
+        {
+            @Html.Partial("../NineStarKi/_EnergyTitle", Model.CharacterEnergy)
+        }
+        else
+        {
+            <a href="#" id="character-energy">
+                @Html.Partial("../NineStarKi/_EnergyTitle", Model.CharacterEnergy)
+            </a>
+        }
+    </div>
+    <div class="col-sm-4 margin-bottom-15">
+        @if (Model.IsCompatibility)
+        {
+            @Html.Partial("../NineStarKi/_EnergyTitle", Model.SurfaceEnergy)
+        }
+        else
+        {
+            <a href="#" id="surface-energy">
+                @Html.Partial("../NineStarKi/_EnergyTitle", Model.SurfaceEnergy)
+            </a>
+        }
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4 margin-bottom-15">
+        <a href="#" id="daily-energy">
+            @Html.Partial("../NineStarKi/_EnergyTitle", Model.DailyEnergy)
+        </a>
+    </div>
+    <div class="col-sm-4 margin-bottom-15">
+        <a href="#" id="karmic-energy">
+            @Html.Partial("../NineStarKi/_EnergyTitle", Model.KarmicEnergy)
+        </a>
+    </div>
+    <div class="col-sm-4 margin-bottom-15">
+        <a href="#" id="life-energy">
+            @Html.Partial("../NineStarKi/_EnergyTitle", Model.LifeEnergy)
+        </a>
+    </div>
+</div>
+@if (Model.IsShowSummary)
+{
+    <div class="row">
+        <div class="col-md-12 margin-top-15 padding-left-0 padding-right-0">
+            @Html.Panel(Dictionary.SummaryLabel, Model.Summary)
+        </div>
+    </div>
+}

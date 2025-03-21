@@ -43,13 +43,19 @@ namespace K9.WebApplication.Services
                     ? TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, tzInfo)
                     : today.Value;
 
+                var preciseKarmicEnergy = _swissEphemerisService.GetNineStarKiEightyOneYearKi(personModel.DateOfBirth, personModel.TimeZoneId);
+                var preciseLifeEnergy = _swissEphemerisService.GetNineStarKiNineYearKi(personModel.DateOfBirth, personModel.TimeZoneId);
                 var preciseMainEnergy = _swissEphemerisService.GetNineStarKiYearlyKi(personModel.DateOfBirth, personModel.TimeZoneId);
                 var preciseEmotionalEnergy = _swissEphemerisService.GetNineStarKiMonthlyKi(personModel.DateOfBirth, personModel.TimeZoneId);
+
+                var preciseEightyOneYearEnergy = _swissEphemerisService.GetNineStarKiEightyOneYearKi(selectedDateTime, personModel.TimeZoneId);
+                var preciseNineYearEnergy = _swissEphemerisService.GetNineStarKiNineYearKi(selectedDateTime, personModel.TimeZoneId);
                 var preciseYearEnergy = _swissEphemerisService.GetNineStarKiYearlyKi(selectedDateTime, personModel.TimeZoneId);
                 var preciseMonthEnergy = _swissEphemerisService.GetNineStarKiMonthNumber(selectedDateTime, personModel.TimeZoneId);
                 var preciseDailyEnergy = _swissEphemerisService.GetNineStarKiDailyKi(selectedDateTime, personModel.TimeZoneId);
 
-                var model = new NineStarKiModel(personModel, preciseMainEnergy, preciseEmotionalEnergy, preciseYearEnergy, preciseMonthEnergy, preciseDailyEnergy.ki, preciseDailyEnergy.invertedKi, selectedDateTime);
+                var model = new NineStarKiModel(personModel, preciseKarmicEnergy, preciseLifeEnergy, preciseMainEnergy, preciseEmotionalEnergy,
+                    preciseEightyOneYearEnergy, preciseNineYearEnergy, preciseYearEnergy, preciseMonthEnergy, preciseDailyEnergy.ki, preciseDailyEnergy.invertedKi, selectedDateTime);
 
                 model.MainEnergy.EnergyDescription = GetMainEnergyDescription(model.MainEnergy.Energy);
                 model.CharacterEnergy.EnergyDescription = GetCharacterEnergyDescription(model.CharacterEnergy.Energy);

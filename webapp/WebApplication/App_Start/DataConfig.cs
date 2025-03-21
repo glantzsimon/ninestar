@@ -27,6 +27,7 @@ namespace K9.WebApplication
         {
             UsersAndRolesInitialiser.Seed();
             PermissionsSeeder.Seed(new LocalDb());
+            TimeZonesSeeder.Seed(new LocalDb());
         }
     }
 }

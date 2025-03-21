@@ -3,18 +3,5 @@
 
 @using (Html.BeginForm("Index", "PersonalChart", FormMethod.Post))
 {
-    using (Html.BeginBootstrapForm())
-    {
-        @Html.BootstrapEditorFor(model => model.PersonModel.Name, new EditorOptions
-        {
-            Label = Dictionary.OptionalNameLabel
-        })
-        @Html.BootstrapEditorFor(model => model.PersonModel.DateOfBirth)
-        <div data-toggle="tooltip" data-placement="top" title="@Dictionary.GenderSelectionTooltip">
-            @Html.BootstrapEditorFor(model => model.PersonModel.Gender)
-        </div>
-
-        <hr />
-        @Html.BootstrapButton(Dictionary.Calculate, EButtonType.Submit, "", EButtonClass.Large)
-    }
+    @Html.Partial("../NineStarKi/_CalculatorForm")
 }

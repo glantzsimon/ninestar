@@ -70,7 +70,7 @@ namespace K9.WebApplication.Helpers
         public static string GetCurrentUserTimeZone()
         {
             var value = GetValue(Constants.SessionConstants.UserTimeZone);
-            var stringValue = value?.ToString() ?? string.Empty;
+            var stringValue = value?.ToString() ?? "Europe/London";
             return stringValue;
         }
 

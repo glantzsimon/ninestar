@@ -1619,6 +1619,8 @@
     <Content Include="Views\Shared\ActionLinkButtons\_PersonalProfileWithForm.cshtml" />
     <Content Include="Views\Shared\ActionLinkButtons\_PredictionsWithForm.cshtml" />
     <Content Include="Views\PersonalChart\_PersonalChartExtended.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\TimeZone.cshtml" />
+    <Content Include="Views\NineStarKi\_CalculatorForm.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

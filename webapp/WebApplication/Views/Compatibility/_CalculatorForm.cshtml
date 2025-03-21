@@ -14,6 +14,9 @@
                     @Html.BootstrapEditorFor(model => model.NineStarKiModel1.PersonModel.DateOfBirth)
                 </div>
                 <div class="col-sm-12">
+                    @Html.BootstrapEditorFor(model => model.NineStarKiModel1.PersonModel.TimeZoneId)
+                </div>
+                <div class="col-sm-12">
                     <div data-toggle="tooltip" data-placement="top" title="@Dictionary.GenderSelectionTooltip">
                         @Html.BootstrapEditorFor(model => model.NineStarKiModel1.PersonModel.Gender)
                     </div>
@@ -28,6 +31,9 @@
                     </div>
                     <div class="col-sm-12">
                         @Html.BootstrapEditorFor(model => model.NineStarKiModel2.PersonModel.DateOfBirth)
+                    </div>
+                    <div class="col-sm-12">
+                        @Html.BootstrapEditorFor(model => model.NineStarKiModel2.PersonModel.TimeZoneId)
                     </div>
                     <div class="col-sm-12">
                         <div data-toggle="tooltip" data-placement="top" title="@Dictionary.GenderSelectionTooltip">

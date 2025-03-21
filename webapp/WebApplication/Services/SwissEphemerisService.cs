@@ -37,7 +37,7 @@ namespace K9.WebApplication.Services
             using (var sweph = new SwissEph())
             {
                 sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
-                
+
                 DateTime selectedDateTimeUT = ConvertToUT(selectedDateTime, timeZoneId);
                 int adjustedYear = AdjustYearForLichun(sweph, selectedDateTimeUT);
                 int periodIndex = (int)Math.Floor((adjustedYear - 1955) / 81.0);
@@ -446,8 +446,7 @@ namespace K9.WebApplication.Services
                 return localTime; // Presumed to be UTC
             }
             localTime = DateTime.SpecifyKind(localTime, DateTimeKind.Local);
-            TimeZoneInfo tz = TZConvert.GetTimeZoneInfo(timeZoneId);
-            return TimeZoneInfo.ConvertTimeToUtc(localTime, tz);
+            return TimeZoneInfo.ConvertTimeToUtc(localTime);
         }
 
         private DateTime ConvertToLocale(DateTime dateTimeUtc, string timeZoneId)

@@ -9,12 +9,12 @@
 }
 
 <div class="energy-summary-container">
-    @if (this.GetActiveUserMembership().IsUnlimited())
-    {
+    @*@if (this.GetActiveUserMembership().IsUnlimited())*@
+    
         @Html.Panel(panelTitle, Html.Partial("../PersonalChart/_PersonalChartExtended").ToString())
-    }
-    else
+    
+    @*else
     {
         @Html.Panel(panelTitle, Html.Partial("../PersonalChart/_PersonalChart").ToString())
-    }
+    }*@
 </div>

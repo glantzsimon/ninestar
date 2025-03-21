@@ -218,8 +218,6 @@
             public const string Yellow = "Yellow";
             public const string Red = "Red";
             public const string Purple = "Purple";
-            public const string KarmicEnergy = "KarmicEnergyLabel";
-            public const string LifeEnergy = "LifeEnergyLabel";
             public const string MainEnergy = "MainEnergyLabel";
             public const string CharacterEnergy = "CharacterEnergyLabel";
             public const string HourlyEnergy = "HourlyEnergy";

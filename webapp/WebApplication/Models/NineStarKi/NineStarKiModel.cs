@@ -39,10 +39,10 @@ namespace K9.WebApplication.Models
             PersonModel = personModel;
 
             GenerationalEnergy = GetOrAddToCache($"GenerationalEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{preciseGenerationEnergy}",
-                () => GetMainEnergy(PersonModel.DateOfBirth, preciseGenerationEnergy, PersonModel.Gender), TimeSpan.FromDays(30));
+                () => GetEnergy(PersonModel.DateOfBirth, preciseGenerationEnergy, ENineStarKiEnergyType.GenerationEnergy), TimeSpan.FromDays(30));
 
             WaveEnergy = GetOrAddToCache($"WaveEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{preciseWaveEnergy}",
-                () => GetMainEnergy(PersonModel.DateOfBirth, preciseWaveEnergy, PersonModel.Gender), TimeSpan.FromDays(30));
+                () => GetEnergy(PersonModel.DateOfBirth, preciseWaveEnergy, ENineStarKiEnergyType.WaveEnergy), TimeSpan.FromDays(30));
 
             MainEnergy = GetOrAddToCache($"MainEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{preciseMainEnergy}",
                 () => GetMainEnergy(PersonModel.DateOfBirth, preciseMainEnergy, PersonModel.Gender), TimeSpan.FromDays(30));
@@ -526,13 +526,13 @@ namespace K9.WebApplication.Models
         private NineStarKiEnergy GetEightyOneYearCycleEnergy(int cycleEnergy)
         {
             return GetCycleEnergy(cycleEnergy, EightyOneYearlyCycleEnergy.EnergyNumber,
-                ENineStarKiEnergyType.KarmicEnergy, ENineStarKiEnergyCycleType.EightyOneYearlyEnergy);
+                ENineStarKiEnergyType.GenerationEnergy, ENineStarKiEnergyCycleType.EightyOneYearlyEnergy);
         }
 
         private NineStarKiEnergy GetNineYearCycleEnergy(int cycleEnergy)
         {
             return GetCycleEnergy(cycleEnergy, NineYearlyCycleEnergy.EnergyNumber,
-                ENineStarKiEnergyType.LifeEnergy, ENineStarKiEnergyCycleType.NineYearlyEnergy);
+                ENineStarKiEnergyType.WaveEnergy, ENineStarKiEnergyCycleType.NineYearlyEnergy);
         }
 
         private NineStarKiEnergy GetYearlyCycleEnergy(int? todayYearEnergy = null)

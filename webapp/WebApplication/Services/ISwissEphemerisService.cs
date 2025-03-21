@@ -14,6 +14,6 @@ namespace K9.WebApplication.Services
         /// <returns></returns>
         int GetNineStarKiMonthNumber(DateTime birthDate, string timeZoneId);
 
-        (int ki, int? invertedKi) GetNineStarKiDailyKi(DateTime currentDate, string timeZoneId);
+        (int ki, int? invertedKi) GetNineStarKiDailyKi(DateTime currentDate, string timeZoneId, bool isDebug = false);
     }
 }

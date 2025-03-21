@@ -1,7 +1,6 @@
 ﻿using K9.WebApplication.Packages;
 using SwissEphNet;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using TimeZoneConverter;
 using Xunit.Abstractions;
@@ -15,17 +14,16 @@ namespace K9.WebApplication.Services
         private const int SEFLG_SWIEPH = 2;             // Swiss Ephemeris flag for calculations
         private const double PRECISE_YEAR_LENGTH = 365.242190419;
         private const string BASE_DAY_TIMEZONE = "Europe/London";
-        private const int BASE_DAY_KI_CYCLE_START = 72;
-        private const int BASE_DAY_KI_SIXTY_DAY_CYCLE_START = 12;
-        private const int BASE_DAY_KI_SMALL_CYCLE = 60;
-        private const int BASE_DAY_KI_CYCLE = 240;
-        private const int BASE_DAY_KI_THREE_YEAR_CYCLE_START = 622;
-        private const int BASE_DAY_KI_THREE_YEAR_CYCLE = 1096; // 1462;
-        private const int BASE_DAY_KI_THREE_YEAR_CYCLE_SKIP = 3;
+
+        private const int SEXAGENARY_CYCLE_START_DAY = 12;
+        private const int SEXAGENARY_CYCLE_LENGTH = 60;
+        private const int SEXAGENARY_JUNE_JIA_ZI_DAY_KI = 9;
+        private const int SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI = 1;
+
         private const int BASE_DAY_KI = 2;
         private const int BASE_HOUR_KI = 5;
         private static DateTime BASE_KI_DATEUT;
-
+        
         public SwissEphemerisService(INineStarKiBasePackage my, ITestOutputHelper output = null)
             : base(my)
         {
@@ -91,206 +89,152 @@ namespace K9.WebApplication.Services
             }
         }
 
-        public (int ki, int? invertedKi) GetNineStarKiDailyKi(DateTime selectedDateTime, string timeZoneId)
+        public (int ki, int? invertedKi) GetNineStarKiDailyKi(DateTime selectedDateTime, string timeZoneId, bool isDebug = false)
         {
             using (var sweph = new SwissEph())
             {
                 sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
 
-                int dayKi = BASE_DAY_KI;
+                int dayKi = 0;
                 int? invertedKi = null;
+
                 DateTime selectedDateTimeUT = ConvertToUT(selectedDateTime, timeZoneId);
-                int dayKiCycleCount = BASE_DAY_KI_CYCLE_START;
-                int dayKiCycleLength = BASE_DAY_KI_CYCLE;
-                int sixtyDayCycleCount = BASE_DAY_KI_SIXTY_DAY_CYCLE_START;
-                int baseThreeYearCycle = BASE_DAY_KI_THREE_YEAR_CYCLE_START;
-                int threeYearCycleSkipCount = 1;
-                int threeYearCycleShiftCount = 1;
+                DateTime startOfYear = new DateTime(selectedDateTimeUT.Year, 1, 1);
+                DateTime finishOfYear = new DateTime(selectedDateTimeUT.Year, 12, 31);
+                DateTime juneSolstice = FindJuneSolstice(sweph, selectedDateTimeUT.Year).Date;
+                DateTime juneSolsticeAdjustmentDay =
+                    FindFirstJiaZiDayBeforeSolstice(sweph, selectedDateTimeUT.Year, true).Date;
+                DateTime decemberSolstice = FindDecemberSolstice(sweph, selectedDateTimeUT.Year).Date;
+                DateTime decemberSolsticeAdjustmentDay = 
+                    FindFirstJiaZiDayBeforeSolstice(sweph, selectedDateTimeUT.Year, false).Date;
+                DateTime juneSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year, true).Date;
+                DateTime decemberSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year, false).Date;
+                DateTime previousDecemberSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year - 1, false).Date;
+                DateTime day = selectedDateTimeUT.Date;
 
-                //_output?.WriteLine($"Next Three Year Cycle: {BASE_KI_DATEUT.AddDays(BASE_DAY_KI_THREE_YEAR_CYCLE - (BASE_DAY_KI_THREE_YEAR_CYCLE_START - 1)).ToString()} {Environment.NewLine}");
+                var predictedJuneSolticeDayKi = NineStarKiService.InvertDirectionEnergy(IncrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI,
+                    (int)juneSolstice.Subtract(previousDecemberSolsticeJiaDay).TotalDays));
+                var actualJuneSolsticeDayKi = IncrementKi(SEXAGENARY_JUNE_JIA_ZI_DAY_KI, (int)juneSolsticeJiaDay.Subtract(juneSolstice).TotalDays);
+                var juneAdjustmentNeeded = predictedJuneSolticeDayKi != actualJuneSolsticeDayKi;
+                var juneAdjustment = predictedJuneSolticeDayKi - actualJuneSolsticeDayKi;
 
-                // Loop through each year from the base Ki date up to the selected year.
-                for (int year = BASE_KI_DATEUT.Year; year <= selectedDateTimeUT.Year; year++)
+                var predictedDecSolticeDayKi = NineStarKiService.InvertDirectionEnergy(DecrementKi(SEXAGENARY_JUNE_JIA_ZI_DAY_KI,
+                    (int)decemberSolstice.Subtract(juneSolsticeJiaDay).TotalDays));
+                var actualDecSolsticeDayKi = DecrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI, (int)decemberSolsticeJiaDay.Subtract(decemberSolstice).TotalDays);
+                var decAdjustmentNeeded = predictedDecSolticeDayKi != actualDecSolsticeDayKi;
+                var decAdjustment = predictedDecSolticeDayKi - actualDecSolsticeDayKi;
+
+                if (isDebug)
                 {
-                    DateTime startOfYear = new DateTime(year, 1, 1);
-                    DateTime finishOfYear = (year == selectedDateTimeUT.Year) ? selectedDateTimeUT.Date : new DateTime(year, 12, 31);
-                    // Start on the day after January 1, as the first day already has the correct ki.
-                    DateTime day = startOfYear == BASE_KI_DATEUT.Date ? startOfYear.AddDays(1) : startOfYear;
+                    Debugger.Break();
+                }
 
-                    // Compute solstice dates for the current year.
-                    DateTime juneSolstice = FindJuneSolstice(sweph, year).Date;
-                    DateTime decemberSolstice = FindDecemberSolstice(sweph, year).Date;
-
-                    while (day <= finishOfYear)
+                if (day <= juneSolstice.Date)
+                {
+                    // Get day ki
+                    if (day > previousDecemberSolsticeJiaDay)
                     {
-                        invertedKi = null;
-
-                        if (dayKiCycleCount == dayKiCycleLength + 1)
-                        {
-                            // Every BASE_DAY_KI_CYCLE days, advance dayKi by 3.
-                            dayKi = IncrementKi(dayKi, 3);
-                            dayKiCycleCount = 1;
-
-                            switch (dayKiCycleLength)
-                            {
-                                case BASE_DAY_KI_CYCLE: // 240
-                                    _output?.WriteLine($"BASE_DAY_KI_CYCLE: {Environment.NewLine}" +
-                                                       $"Day: {day.ToString()} {Environment.NewLine}" +
-                                                       $"Current DayKiCycle Length: {dayKiCycleLength}");
-                                    dayKiCycleLength = BASE_DAY_KI_CYCLE + 60;
-                                    _output?.WriteLine($"Next DayKiCycle Length: {dayKiCycleLength} {Environment.NewLine}" +
-                                                       $"Next DayKiCycle Date: {day.AddDays(dayKiCycleLength).ToString()} {Environment.NewLine}");
-                                    break;
-
-                                case BASE_DAY_KI_CYCLE + 60:
-                                    _output?.WriteLine($"BASE_DAY_KI_CYCLE: {Environment.NewLine}" +
-                                                       $"Day: {day.ToString()} {Environment.NewLine}" +
-                                                       $"Current DayKiCycle Length: {dayKiCycleLength}");
-                                    dayKiCycleLength = BASE_DAY_KI_CYCLE + 840;
-                                    _output?.WriteLine($"Next DayKiCycle Length: {dayKiCycleLength} {Environment.NewLine}" +
-                                                       $"Next DayKiCycle Date: {day.AddDays(dayKiCycleLength).ToString()} {Environment.NewLine}");
-                                    break;
-
-                                case BASE_DAY_KI_CYCLE + 840:
-                                    _output?.WriteLine($"BASE_DAY_KI_CYCLE: {Environment.NewLine}" +
-                                                       $"Day: {day.ToString()} {Environment.NewLine}" +
-                                                       $"Current DayKiCycle Length: {dayKiCycleLength}");
-                                    dayKiCycleLength = BASE_DAY_KI_CYCLE + 120;
-                                    _output?.WriteLine($"Next DayKiCycle Length: {dayKiCycleLength} {Environment.NewLine}" +
-                                                       $"Next DayKiCycle Date: {day.AddDays(dayKiCycleLength).ToString()} {Environment.NewLine}");
-                                    break;
-
-                                case BASE_DAY_KI_CYCLE + 120:
-                                    _output?.WriteLine($"BASE_DAY_KI_CYCLE: {Environment.NewLine}" +
-                                                       $"Day: {day.ToString()} {Environment.NewLine}" +
-                                                       $"Current DayKiCycle Length: {dayKiCycleLength}");
-                                    dayKiCycleLength = BASE_DAY_KI_CYCLE + 1620;
-                                    _output?.WriteLine($"Next DayKiCycle Length: {dayKiCycleLength} {Environment.NewLine}" +
-                                                       $"Next DayKiCycle Date: {day.AddDays(dayKiCycleLength).ToString()} {Environment.NewLine}");
-                                    break;
-
-                                    //case BASE_DAY_KI_CYCLE + 480:
-                                    //    _output?.WriteLine($"Day: {day.ToString()} {Environment.NewLine}" +
-                                    //                       $"Current DayKiCycle Length: {dayKiCycleLength}");
-                                    //    dayKiCycleLength = BASE_DAY_KI_CYCLE + 1020;
-                                    //    _output?.WriteLine($"Next DayKiCycle Length: {dayKiCycleLength} {Environment.NewLine}" +
-                                    //                       $"Next DayKiCycle Date: {day.AddDays(dayKiCycleLength).ToString()} {Environment.NewLine}");
-                                    //    break;
-
-                                    //case BASE_DAY_KI_CYCLE + 60 + 1140 + 1140 + 1140: 
-                                    //    _output?.WriteLine($"Day: {day.ToString()} {Environment.NewLine}" +
-                                    //                       $"Current DayKiCycle Length: {dayKiCycleLength}" +
-                                    //                       $"Cycle Reset");
-                                    //    dayKiCycleLength = BASE_DAY_KI_CYCLE;
-                                    //    _output?.WriteLine($"Next DayKiCycle Length: {dayKiCycleLength} {Environment.NewLine}");
-                                    //    break;
-                            }
-                        }
-
-                        //if (day.Year == 1905 && day.Month == 4 && day.Day == 20)
-                        //{
-                        //    _output?.WriteLine($"Day: {day.ToString()} {Environment.NewLine}" +
-                        //                       $"DayKi: {dayKi + 1} {Environment.NewLine}" +
-                        //                       $"Leap Year Cycle Day: {baseThreeYearCycle} {Environment.NewLine}" +
-                        //                       $"Next Three Year Cycle: {day.AddDays(BASE_DAY_KI_THREE_YEAR_CYCLE).ToString()} {Environment.NewLine}" +
-                        //                       $"Three Year Cycle Shift Count: {threeYearCycleShiftCount} {Environment.NewLine}");
-                        //}
-
-                        if (day < juneSolstice.Date)
-                        {
-                            // Factor in three-year cycle
-                            if (baseThreeYearCycle == BASE_DAY_KI_THREE_YEAR_CYCLE)
-                            {
-                                if (threeYearCycleSkipCount == BASE_DAY_KI_THREE_YEAR_CYCLE_SKIP)
-                                {
-                                    _output?.WriteLine($"SKIP THREE_YEAR_CYCLE: {Environment.NewLine}" +
-                                                       $"Skipping Cycle: Day: {day.ToString()} {Environment.NewLine}");
-
-                                    // Reset skip cycle
-                                    threeYearCycleSkipCount = 1;
-
-                                    dayKi = IncrementKi(dayKi);
-                                }
-                                else
-                                {
-                                    // Decrement ki by 2 (instead of increasing by 3) - it drops back one modality
-                                    dayKi = DecrementKi(dayKi, 2);
-
-                                    threeYearCycleSkipCount++;
-                                }
-
-                                // Reset cycle
-                                if (threeYearCycleShiftCount == 5)
-                                {
-                                    baseThreeYearCycle = BASE_DAY_KI_THREE_YEAR_CYCLE - 365;
-
-                                    _output?.WriteLine($"SHIFT THREE_YEAR_CYCLE: {Environment.NewLine}" +
-                                                       $"Day: {day.ToString()} {Environment.NewLine}");
-
-                                    // Reset
-                                    threeYearCycleShiftCount = 0;
-
-                                    if (threeYearCycleSkipCount == BASE_DAY_KI_THREE_YEAR_CYCLE_SKIP)
-                                    {
-                                        // Reset skip cycle
-                                        threeYearCycleSkipCount = 2;
-                                    }
-                                }
-                                else
-                                {
-                                    baseThreeYearCycle = 0;
-                                }
-
-                                _output?.WriteLine($"THREE_YEAR_CYCLE: {Environment.NewLine}" +
-                                                   $"Day: {day.ToString()} {Environment.NewLine}" +
-                                                   $"DayKi: {dayKi} {Environment.NewLine}" +
-                                                   $"Three Year Cycle Day: {baseThreeYearCycle} {Environment.NewLine}" +
-                                                   $"Next Three Year Cycle Skip Day: {day.AddDays((BASE_DAY_KI_THREE_YEAR_CYCLE - baseThreeYearCycle) + (BASE_DAY_KI_THREE_YEAR_CYCLE_SKIP - (threeYearCycleSkipCount)) * BASE_DAY_KI_THREE_YEAR_CYCLE).ToString()} {Environment.NewLine}" +
-                                                   $"Next Three Year Cycle: {day.AddDays(BASE_DAY_KI_THREE_YEAR_CYCLE - baseThreeYearCycle).ToString()} {Environment.NewLine}");
-                            }
-                            else
-                            {
-                                dayKi = IncrementKi(dayKi);
-                            }
-                        }
-                        else if (day == juneSolstice)
-                        {
-                            dayKi = IncrementKi(dayKi);
-                            invertedKi = dayKi;
-                            dayKi = NineStarKiService.InvertDirectionEnergy(dayKi);
-                        }
-                        else if (day > juneSolstice && day < decemberSolstice)
-                        {
-                            dayKi = DecrementKi(dayKi);
-                        }
-                        else if (day == decemberSolstice)
-                        {
-                            dayKi = DecrementKi(dayKi);
-                            invertedKi = dayKi;
-                            dayKi = NineStarKiService.InvertDirectionEnergy(dayKi);
-                        }
-                        else // day > decemberSolstice
-                        {
-                            dayKi = IncrementKi(dayKi);
-                        }
-
-                        // Reste 60 day cycle
-                        if (sixtyDayCycleCount == BASE_DAY_KI_SMALL_CYCLE)
-                        {
-                            sixtyDayCycleCount = 0;
-                        }
-
-                        day = day.AddDays(1);
-                        dayKiCycleCount++;
-                        sixtyDayCycleCount++;
-                        baseThreeYearCycle++;
+                        var daysFromPreviousDecSolsticeJiaDay = (int)day.Subtract(previousDecemberSolsticeJiaDay).TotalDays;
+                        dayKi = IncrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI, daysFromPreviousDecSolsticeJiaDay);
+                    }
+                    else
+                    {
+                        var daysToPreviousDecSolsticeJiaDay = (int)previousDecemberSolsticeJiaDay.Subtract(day).TotalDays;
+                        dayKi = DecrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI, daysToPreviousDecSolsticeJiaDay);
                     }
 
-                    threeYearCycleShiftCount++;
+                    // Adjust if needed
+                    if (juneAdjustmentNeeded && day >= juneSolsticeAdjustmentDay)
+                    {
+                        dayKi = AdjustKi(dayKi, juneAdjustment);
+                    }
+                    if (day == juneSolstice)
+                    {
+                        invertedKi = dayKi;
+                        dayKi = NineStarKiService.InvertDirectionEnergy(dayKi);
+                    }
+                }
+                else if (day > juneSolstice && day <= decemberSolstice)
+                {
+                    // Get day ki
+                    if (day < juneSolsticeJiaDay)
+                    {
+                        var daysToNextJuneSolsticeJiaDay = (int)juneSolsticeJiaDay.Subtract(day).TotalDays;
+                        dayKi = IncrementKi(SEXAGENARY_JUNE_JIA_ZI_DAY_KI, daysToNextJuneSolsticeJiaDay);
+
+                    }
+                    else
+                    {
+                        var daysFromJuneSolsticeJiaDay = (int)day.Subtract(juneSolsticeJiaDay).TotalDays;
+                        dayKi = DecrementKi(SEXAGENARY_JUNE_JIA_ZI_DAY_KI, daysFromJuneSolsticeJiaDay);
+                    }
+                  
+                    // Adjust if needed
+                    if (decAdjustmentNeeded && day >= decemberSolsticeAdjustmentDay)
+                    {
+                        dayKi = AdjustKi(dayKi, decAdjustment);
+                    }
+                    if (day == decemberSolstice)
+                    {
+                        invertedKi = dayKi;
+                        dayKi = NineStarKiService.InvertDirectionEnergy(dayKi);
+                    }
+                }
+                else // day > decemberSolstice
+                {
+                    dayKi = IncrementKi(actualDecSolsticeDayKi,
+                        (int)day.Subtract(decemberSolstice).TotalDays);
                 }
 
                 return (dayKi, invertedKi);
             }
+        }
+        
+        private DateTime FindFirstJiaZiDayAfterSolstice(SwissEph sweph, int year, bool isJuneSolstice)
+        {
+            // Get the solstice date using your existing method.
+            DateTime solstice = FindSolstice(sweph, year, isJuneSolstice);
+
+            // Get the cycle day number for the solstice day.
+            int solsticeCycle = GetSexagenaryCycleDayNumber(solstice);
+
+            int offset = solsticeCycle == 1 ? 0 : 61 - solsticeCycle;
+
+            // Return the first day after the solstice with a cycle of 1.
+            return solstice.AddDays(offset);
+        }
+
+        private DateTime FindFirstJiaZiDayBeforeSolstice(SwissEph sweph, int year, bool isJuneSolstice)
+        {
+            // Get the solstice date using your existing method.
+            DateTime solstice = FindSolstice(sweph, year, isJuneSolstice);
+
+            // Get the cycle day number for the solstice day.
+            int solsticeCycle = GetSexagenaryCycleDayNumber(solstice);
+
+            // If the solstice is a Jia Zi day (cycle==1), then the previous Jia Zi is 60 days before.
+            // Otherwise, it's (solsticeCycle - 1) days before.
+            int offset = (solsticeCycle == 1) ? 60 : (solsticeCycle - 1);
+
+            // Return the day before the solstice that has a cycle value of 1.
+            return solstice.AddDays(-offset);
+        }
+
+        private static int GetSexagenaryCycleDayNumber(DateTime targetDate)
+        {
+            // Base date and base value: Jan 1, 1900 has the cycle value of 12.
+            DateTime baseDate = BASE_KI_DATEUT;
+            const int baseValue = 12;
+            const int cycleLength = 60;
+
+            // Calculate the number of full days between targetDate and baseDate.
+            int daysDifference = (targetDate.Date.Date - baseDate.Date).Days;
+
+            // Adjust the base value (convert to 0-indexed by subtracting 1), add the offset,
+            // then use modulus arithmetic ensuring a non-negative result, and convert back to 1-indexed.
+            int cycleValue = ((((baseValue - 1) + daysDifference - 1) % cycleLength) + cycleLength) % cycleLength + 1;
+
+            return cycleValue;
         }
 
         private DateTime FindSolstice(SwissEph sweph, int year, bool isJuneSoltice)
@@ -436,6 +380,22 @@ namespace K9.WebApplication.Services
             double jdLichun = GetSolarTerm(sweph, year, 315.0);
             double jdBirth = GetJulianDate(sweph, birthDateTimeUT);
             return (jdBirth < jdLichun && birthDateTimeUT.Month <= 2) ? year - 1 : year;
+        }
+
+        private int AdjustKi(int ki, int amount = 1)
+        {
+            if (amount > 0)
+            {
+                return IncrementKi(ki, amount);
+            }
+            else if (amount < 0)
+            {
+                return DecrementKi(ki, amount);
+            }
+            else
+            {
+                return amount;
+            }
         }
 
         /// <summary>

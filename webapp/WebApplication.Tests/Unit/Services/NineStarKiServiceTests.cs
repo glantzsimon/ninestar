@@ -795,17 +795,23 @@ namespace K9.WebApplication.Tests.Unit.Services
         }
 
         [Theory]
-        [InlineData(1924, 6, 20, 0, ENineStarKiEnergy.Lake)]
+        [InlineData(1924, 6, 20, 0, ENineStarKiEnergy.Water)]
+        [InlineData(1924, 6, 20, 1, ENineStarKiEnergy.Soil)]
+        [InlineData(1924, 6, 20, 3, ENineStarKiEnergy.Thunder)]
+        [InlineData(1924, 6, 21, 0, ENineStarKiEnergy.Wind)]
+        [InlineData(1924, 11, 21, 13, ENineStarKiEnergy.Mountain)]
+        [InlineData(2024, 08, 23, 1, ENineStarKiEnergy.Heaven, "Europe/London")]
         public void CalcualteSwissEphemeris_DailyKi_HourlyKi(
             int todayYear,
             int todayMonth,
             int todayDay,
             int todayHour,
             ENineStarKiEnergy hourlyKi,
+            string timeZone = "",
             bool isDebug = false)
         {
             var today = new DateTime(todayYear, todayMonth, todayDay, todayHour, 0, 0);
-            var actualHourlyKi = _swissEphemerisService.GetNineStarKiHourlyKi(today, "Europe/London");
+            var actualHourlyKi = _swissEphemerisService.GetNineStarKiHourlyKi(today, timeZone, isDebug);
 
             Assert.Equal((int)hourlyKi, actualHourlyKi);
         }

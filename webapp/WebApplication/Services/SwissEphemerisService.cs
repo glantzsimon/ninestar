@@ -111,7 +111,7 @@ namespace K9.WebApplication.Services
                 DateTime decemberSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year, false).Date;
                 DateTime previousDecemberSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year - 1, false).Date;
                 DateTime day = selectedDateTimeUT.Date;
-
+                
                 var predictedJuneSolticeDayKi = NineStarKiService.InvertDirectionEnergy(IncrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI,
                     (int)juneSolstice.Subtract(previousDecemberSolsticeJiaDay).TotalDays));
                 var actualJuneSolsticeDayKi = IncrementKi(SEXAGENARY_JUNE_JIA_ZI_DAY_KI, (int)juneSolsticeJiaDay.Subtract(juneSolstice).TotalDays);
@@ -190,7 +190,7 @@ namespace K9.WebApplication.Services
             }
         }
 
-        public int GetNineStarKiHourlyKi(DateTime selectedDateTime, string timeZoneId)
+        public int GetNineStarKiHourlyKi(DateTime selectedDateTime, string timeZoneId, bool isDebug = false)
         {
             using (var sweph = new SwissEph())
             {
@@ -202,47 +202,52 @@ namespace K9.WebApplication.Services
                 DateTime juneSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year, true).Date.AddHours(1);
                 DateTime decemberSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year, false).Date.AddHours(1);
                 DateTime previousDecemberSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year - 1, false).Date.AddHours(1);
-                DateTime day = selectedDateTimeUT;
+                DateTime day = selectedDateTimeUT.Date;
                 int hourKi = 0;
 
-                if (day <= juneSolstice.Date)
+                if (isDebug)
                 {
-                    if (day > previousDecemberSolsticeJiaDay)
+                    Debugger.Break();
+                }
+
+                if (day <= juneSolstice)
+                {
+                    if (day > previousDecemberSolsticeJiaDay.Date)
                     {
-                        var hoursFromPreviousDecSolsticeJiaDay = (int)day.Subtract(previousDecemberSolsticeJiaDay).TotalHours / 2;
+                        var hoursFromPreviousDecSolsticeJiaDay = (int)selectedDateTimeUT.Subtract(previousDecemberSolsticeJiaDay).TotalHours / 2 + 1;
                         hourKi = IncrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI, hoursFromPreviousDecSolsticeJiaDay);
                     }
                     else
                     {
-                        var hoursToPreviousDecSolsticeJiaDay = (int)previousDecemberSolsticeJiaDay.Subtract(day).TotalHours / 2;
+                        var hoursToPreviousDecSolsticeJiaDay = (int)previousDecemberSolsticeJiaDay.Subtract(selectedDateTimeUT).TotalHours / 2 + 1;
                         hourKi = DecrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI, hoursToPreviousDecSolsticeJiaDay);
                     }
                 }
                 else if (day > juneSolstice && day <= decemberSolstice)
                 {
-                    if (day < juneSolsticeJiaDay)
+                    if (day < juneSolsticeJiaDay.Date)
                     {
-                        var hoursToNextJuneSolsticeJiaDay = (int)juneSolsticeJiaDay.Subtract(day).TotalHours / 2;
+                        var hoursToNextJuneSolsticeJiaDay = (int)juneSolsticeJiaDay.Subtract(selectedDateTimeUT).TotalHours / 2 + 1;
                         hourKi = IncrementKi(SEXAGENARY_JUNE_JIA_ZI_DAY_KI, hoursToNextJuneSolsticeJiaDay);
 
                     }
                     else
                     {
-                        var hoursFromJuneSolsticeJiaDay = (int)day.Subtract(juneSolsticeJiaDay).TotalHours / 2;
+                        var hoursFromJuneSolsticeJiaDay = (int)selectedDateTimeUT.Subtract(juneSolsticeJiaDay).TotalHours / 2 + 1;
                         hourKi = DecrementKi(SEXAGENARY_JUNE_JIA_ZI_DAY_KI, hoursFromJuneSolsticeJiaDay);
                     }
                 }
                 else // day > decemberSolstice
                 {
-                    if (day < decemberSolsticeJiaDay)
+                    if (day < decemberSolsticeJiaDay.Date)
                     {
-                        var hoursToNextSolsticeJiaDay = (int)decemberSolsticeJiaDay.Subtract(day).TotalHours / 2;
+                        var hoursToNextSolsticeJiaDay = (int)decemberSolsticeJiaDay.Subtract(selectedDateTimeUT).TotalHours / 2 + 1;
                         hourKi = IncrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI, hoursToNextSolsticeJiaDay);
 
                     }
                     else
                     {
-                        var hoursFromSolsticeJiaDay = (int)day.Subtract(decemberSolsticeJiaDay).TotalHours / 2;
+                        var hoursFromSolsticeJiaDay = (int)selectedDateTimeUT.Subtract(decemberSolsticeJiaDay).TotalHours / 2 + 1;
                         hourKi = DecrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI, hoursFromSolsticeJiaDay);
                     }
                 }
@@ -400,6 +405,10 @@ namespace K9.WebApplication.Services
 
         private DateTime ConvertToUT(DateTime localTime, string timeZoneId)
         {
+            if (string.IsNullOrEmpty(timeZoneId))
+            {
+                return localTime; // Presumed to be UTC
+            }
             TimeZoneInfo tz = TZConvert.GetTimeZoneInfo(timeZoneId);
             return TimeZoneInfo.ConvertTimeToUtc(localTime, tz);
         }

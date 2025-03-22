@@ -77,21 +77,22 @@ namespace K9.WebApplication.Services
                 sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
                 DateTime selectedDateTimeUT = ConvertToUT(selectedDateTime, timeZoneId);
                 int adjustedYear = AdjustYearForLichun(sweph, selectedDateTimeUT);
-                // Use the adjusted year to compute the energy directly instead of calling GetNineStarKiYear again.
                 int yearEnergy = GetNineStarKiNumber(adjustedYear);
                 int firstMonth = GetFirstMonthForYearEnergy(yearEnergy);
                 double jd = GetJulianDate(sweph, selectedDateTimeUT);
                 double[] solarTerms = GetSolarTerms(sweph, adjustedYear);
 
-                for (int i = 0; i < 11; i++)
+                // There are 12 boundaries defining 12 intervals.
+                for (int i = 0; i < solarTerms.Length - 1; i++)
                 {
                     if (jd >= solarTerms[i] && jd < solarTerms[i + 1])
                     {
-                        // Downward cycle for Nine Star Ki month
+                        // Downward cycle for Nine Star Ki month:
                         return ((firstMonth - 1 - i + 9) % 9) + 1;
                     }
                 }
-                return ((firstMonth - 1 - 8 + 9) % 9) + 1;
+                // Should not normally happen if jd is within the year.
+                return ((firstMonth - 1 - (solarTerms.Length - 1) + 9) % 9) + 1;
             }
         }
 
@@ -502,15 +503,70 @@ namespace K9.WebApplication.Services
                 return 5;
         }
 
-        private double[] GetSolarTerms(SwissEph sweph, int year)
+        /// <summary>
+        /// Returns the 12 solar term boundaries (as Julian Day numbers) for the Nine Star Ki year,
+        /// i.e. from Lìchūn (315°) of the adjusted year until Lìchūn of the next year.
+        /// The boundaries are computed in an "unwrapped" fashion so that they are strictly increasing.
+        /// </summary>
+        private double[] GetSolarTerms(SwissEph sweph, int adjustedYear)
         {
+            // Compute the starting and ending boundaries of the Nine Star Ki year.
+            double jdStart = GetSolarTerm(sweph, adjustedYear, 315.0);         // Lìchūn of adjustedYear
+            double jdEnd = GetSolarTerm(sweph, adjustedYear + 1, 315.0);       // Lìchūn of next year
+
             double[] solarTerms = new double[12];
             for (int i = 0; i < 12; i++)
             {
-                double targetLongitude = (315.0 + (i * 30.0)) % 360;
-                solarTerms[i] = GetSolarTerm(sweph, year, targetLongitude);
+                // Compute the raw target angle.
+                double rawTarget = 315.0 + (i * 30.0);
+                double target = rawTarget % 360; // This gives a value in 0–359.
+                                                 // Unwrap the target: if it's less than 315, add 360.
+                double unwrappedTarget = (target < 315) ? target + 360 : target;
+
+                // Compute the boundary within the fixed interval [jdStart, jdEnd] using the unwrapped target.
+                solarTerms[i] = GetSolarTermWithinInterval(sweph, unwrappedTarget, jdStart, jdEnd);
             }
             return solarTerms;
+        }
+
+        /// <summary>
+        /// Finds the time (in JD) when the sun's unwrapped longitude reaches the unwrappedTarget,
+        /// searching within the interval [jdStart, jdEnd].
+        /// </summary>
+        private double GetSolarTermWithinInterval(SwissEph sweph, double unwrappedTarget, double jdStart, double jdEnd)
+        {
+            double tolerance = 0.01; // degrees tolerance
+            int maxIterations = 100;
+            int iteration = 0;
+            string serr = "";
+            double jdLow = jdStart;
+            double jdHigh = jdEnd;
+            double mid = 0;
+
+            while (iteration < maxIterations)
+            {
+                iteration++;
+                mid = (jdLow + jdHigh) / 2;
+                double[] xx = new double[6];
+                int ret = sweph.swe_calc_ut(mid, SwissEph.SE_SUN, SwissEph.SEFLG_SPEED, xx, ref serr);
+                if (ret < 0)
+                    throw new Exception("Error calculating Sun position: " + serr);
+
+                // Get the computed sun longitude.
+                double computed = xx[0];
+                // Unwrap the computed longitude: if it's less than 315, add 360.
+                double unwrappedComputed = (computed < 315) ? computed + 360 : computed;
+
+                // Use binary search.
+                if (unwrappedComputed < unwrappedTarget)
+                    jdLow = mid;
+                else
+                    jdHigh = mid;
+
+                if (Math.Abs(unwrappedComputed - unwrappedTarget) < tolerance)
+                    return mid;
+            }
+            throw new Exception($"Could not find solar term at {unwrappedTarget}° between JD {jdStart} and {jdEnd} after {maxIterations} iterations.");
         }
 
         /// <summary>

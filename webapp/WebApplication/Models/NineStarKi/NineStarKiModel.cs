@@ -329,7 +329,8 @@ namespace K9.WebApplication.Models
         {
             var selectedDate = SelectedDate ?? DateTime.Today;
             var invertEnergy = (PersonModel.Gender.IsYin() && InvertCycleYinEnergies) || IsCycleSwitchActive;
-            var houseOccupied = GetHouseOccupiedByNumber(cycleEnergy, energyNumber);
+            energyNumber = invertEnergy ? InvertEnergy(energyNumber) : energyNumber;
+            var houseOccupied =  GetHouseOccupiedByNumber(cycleEnergy, energyNumber);
             houseOccupied = invertEnergy ? GetOppositeEnergyInMagicSquare(houseOccupied) : houseOccupied;
 
             var energy = (ENineStarKiEnergy)(houseOccupied);

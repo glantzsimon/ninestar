@@ -819,25 +819,29 @@ namespace K9.WebApplication.Services
             }, TimeSpan.FromDays(30));
         }
 
-        private NineStarKiEnergy GetInvertedEnergy(NineStarKiEnergy energy, ENineStarKiEnergyType type)
+        private NineStarKiEnergy GetInvertedEnergy(NineStarKiEnergy energy)
         {
-            return new NineStarKiEnergy((ENineStarKiEnergy)NineStarKiModel.GetOppositeEnergyInMagicSquare(energy.EnergyNumber), type);
+            return new NineStarKiEnergy((ENineStarKiEnergy)NineStarKiModel.GetOppositeEnergyInMagicSquare(energy.EnergyNumber));
         }
 
         private NineStarKiDirections GetYearlyDirections(NineStarKiModel model)
         {
-            return new NineStarKiDirections(model.GlobalCycleEnergies.Year.Direction,
-                GetInvertedEnergy(model.GlobalCycleEnergies.Year, ENineStarKiEnergyType.MainEnergy).Direction,
+            var houseOfFive = model.GetHouseOfFive(model.PersonalHousesOccupiedEnergies.Year.EnergyNumber);
+
+            return new NineStarKiDirections(houseOfFive.Direction,
+                GetInvertedEnergy(houseOfFive).Direction,
                 model.PersonalHousesOccupiedEnergies.Year.Direction,
-                GetInvertedEnergy(model.PersonalHousesOccupiedEnergies.Year, ENineStarKiEnergyType.MainEnergy).Direction);
+                GetInvertedEnergy(model.PersonalHousesOccupiedEnergies.Year).Direction);
         }
 
         private NineStarKiDirections GetMonthlyDirections(NineStarKiModel model)
         {
-            return new NineStarKiDirections(model.GlobalCycleEnergies.Month.Direction,
-                GetInvertedEnergy(model.GlobalCycleEnergies.Month, ENineStarKiEnergyType.MainEnergy).Direction,
+            var houseOfFive = model.GetHouseOfFive(model.PersonalHousesOccupiedEnergies.Month.EnergyNumber);
+
+            return new NineStarKiDirections(houseOfFive.Direction,
+                GetInvertedEnergy(houseOfFive).Direction,
                 model.PersonalHousesOccupiedEnergies.Month.Direction,
-                GetInvertedEnergy(model.PersonalHousesOccupiedEnergies.Month, ENineStarKiEnergyType.MainEnergy).Direction);
+                GetInvertedEnergy(model.PersonalHousesOccupiedEnergies.Month).Direction);
         }
     }
 }

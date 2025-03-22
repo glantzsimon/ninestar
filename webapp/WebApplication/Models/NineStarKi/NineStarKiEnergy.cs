@@ -332,7 +332,7 @@ namespace K9.WebApplication.Models
         public string EnergyName => MetaData.GetDescription();
 
         public int EnergyNumber => (int)Energy;
-
+        
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyDescriptionLabel)]
         public string EnergyDescription { get; set; }
 

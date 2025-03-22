@@ -157,6 +157,8 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CharacterEnergyLabel)]
         public NineStarKiEnergy SurfaceEnergy => PersonalChartEnergies?.Surface;
 
+        public NineStarKiEnergy GetHouseOfFive(int energy) => new NineStarKiEnergy((ENineStarKiEnergy)GetNineStarKiNumber(energy + (5 - MainEnergy?.EnergyNumber ?? 0)));
+        
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SummaryLabel)]
         public string Summary { get; set; }
 

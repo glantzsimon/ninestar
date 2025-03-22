@@ -453,7 +453,6 @@
     <Compile Include="Models\NineStarKi\NineStarKiEnergySummary.cs" />
     <Compile Include="Models\NineStarKi\NineStarKiPredictionsSummaryModel.cs" />
     <Compile Include="Models\NineStarKi\NineStarKiSummaryModel.cs" />
-    <Compile Include="Models\NineStarKi\NineStarKiMonthlyDates.cs" />
     <Compile Include="Models\Browser.cs.cs" />
     <Compile Include="Models\Recaptcha.cs" />
     <Compile Include="Models\PurchaseModel.cs" />

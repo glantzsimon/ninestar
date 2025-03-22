@@ -74,8 +74,8 @@ namespace K9.WebApplication.Models
             var mainEnergyFactors = PersonalFactors.Where(e => e.Energy == NineStarKiModel.MainEnergy.Energy).ToList();
             var emotionalEnergyFactors = PersonalFactors.Where(e => e.Energy == NineStarKiModel.CharacterEnergy.Energy).ToList(); 
             var surfaceEnergyFactors = PersonalFactors.Where(e => e.Energy == NineStarKiModel.SurfaceEnergy.Energy).ToList(); 
-            var yearlyCycleFactors = CycleFactors.Where(e => e.Energy == NineStarKiModel.YearlyCycleEnergy.Energy).ToList(); 
-            var monthlyCycleFactors = CycleFactors.Where(e => e.Energy == NineStarKiModel.MonthlyCycleEnergy.Energy).ToList(); 
+            var yearlyCycleFactors = CycleFactors.Where(e => e.Energy == NineStarKiModel.PersonalHousesOccupiedEnergies.Year.Energy).ToList(); 
+            var monthlyCycleFactors = CycleFactors.Where(e => e.Energy == NineStarKiModel.PersonalHousesOccupiedEnergies.Month.Energy).ToList(); 
 
             factors.AddStabilityFactor(mainEnergyFactors.GetStabilityFactor(), MainEnergyWeight, StabilityInfluence);
             factors.AddStabilityFactor(emotionalEnergyFactors.GetStabilityFactor(), CharacterEnergyWeight, StabilityInfluence);
@@ -93,8 +93,8 @@ namespace K9.WebApplication.Models
             var mainEnergyFactors = PersonalFactors.Where(e => e.Energy == NineStarKiModel.MainEnergy.Energy).ToList();
             var characterEnergyFactors = PersonalFactors.Where(e => e.Energy == NineStarKiModel.CharacterEnergy.Energy).ToList();
             var surfaceEnergyFactors = PersonalFactors.Where(e => e.Energy == NineStarKiModel.SurfaceEnergy.Energy).ToList();
-            var yearlyCycleFactors = CycleFactors.Where(e => e.Energy == NineStarKiModel.YearlyCycleEnergy.Energy).ToList();
-            var monthlyCycleFactors = CycleFactors.Where(e => e.Energy == NineStarKiModel.MonthlyCycleEnergy.Energy).ToList();;
+            var yearlyCycleFactors = CycleFactors.Where(e => e.Energy == NineStarKiModel.PersonalHousesOccupiedEnergies.Year.Energy).ToList();
+            var monthlyCycleFactors = CycleFactors.Where(e => e.Energy == NineStarKiModel.PersonalHousesOccupiedEnergies.Month.Energy).ToList();;
 
             foreach (var factor in mainEnergyFactors)
             {

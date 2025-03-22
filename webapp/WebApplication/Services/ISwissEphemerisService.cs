@@ -16,7 +16,10 @@ namespace K9.WebApplication.Services
         /// <returns></returns>
         int GetNineStarKiMonthNumber(DateTime selectedDateTime, string timeZoneId);
 
-        (int ki, int? invertedKi) GetNineStarKiDailyKi(DateTime selectedDateTime, string timeZoneId);
+        (int DailyKi, int? InvertedDailyKi) GetNineStarKiDailyKi(DateTime selectedDateTime, string timeZoneId);
         int GetNineStarKiHourlyKi(DateTime selectedDateTime, string timeZoneId);
+
+        (DateTime PeriodStartOn, DateTime PeriodEndsOn) GetNineStarKiMonthlyPeriodBoundaries(DateTime selectedDateTime,
+            string timeZoneId);
     }
 }

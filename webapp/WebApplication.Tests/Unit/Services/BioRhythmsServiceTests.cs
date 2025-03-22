@@ -1,20 +1,38 @@
-﻿using System;
-using System.Diagnostics;
-using System.Linq;
-using K9.Base.DataAccessLayer.Enums;
+﻿using K9.Base.DataAccessLayer.Enums;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Config;
 using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using Moq;
+using System;
 using Xunit;
 
 namespace K9.WebApplication.Tests.Unit.Services
 {
     public class BioRhythmsServiceTests
     {
+        private NineStarKiService _nineStarKiService;
+        private SwissEphemerisService _swissEphemerisService;
+
         public BioRhythmsServiceTests()
         {
+            var mockAuthentication = new Mock<IAuthentication>();
+            mockAuthentication.SetupGet(e => e.CurrentUserId).Returns(2);
+            mockAuthentication.SetupGet(e => e.IsAuthenticated).Returns(true);
+
+            var basePackage = new Mock<INineStarKiBasePackage>();
+            basePackage.SetupGet(e => e.Authentication).Returns(mockAuthentication.Object);
+
+            var nineStarKiBasePackage = new Mock<INineStarKiBasePackage>();
+            nineStarKiBasePackage.SetupGet(e => e.DefaultValuesConfiguration).Returns(new DefaultValuesConfiguration
+            {
+                SwephPath = @"c:\workspace\sweph\datafiles"
+            });
+
+            _swissEphemerisService = new SwissEphemerisService(nineStarKiBasePackage.Object);
+            _nineStarKiService = new NineStarKiService(basePackage.Object, _swissEphemerisService);
         }
 
         [Theory]
@@ -27,17 +45,18 @@ namespace K9.WebApplication.Tests.Unit.Services
         [InlineData(1979, 06, 16, 1979, 08, 02, EGender.Male, ENineStarKiEnergy.Thunder, 47, 14, 73, 5)]
         public void Biorhythms_HappyPath(int birthYear, int birthMonth, int birthDay, int dateYear, int dateMonth, int dateDay, EGender gender, ENineStarKiEnergy expectedEnergy, int expectedDaysElapsedSinceBirth, int expectedDayInterval, double expectedIntellectualValue, double expectedEmotionalValue)
         {
-            var biorhythmsService = new BiorhythmsService(new Mock<IRoles>().Object, new Mock<IMembershipService>().Object, new Mock<IAuthentication>().Object);
+            var biorhythmsService = new BiorhythmsService(new Mock<IRoles>().Object, new Mock<IMembershipService>().Object, new Mock<IAuthentication>().Object, _swissEphemerisService);
 
-            var result = biorhythmsService.Calculate(new NineStarKiModel(
-                new PersonModel
+            var nineStarKiModel = _nineStarKiService.CalculateNineStarKiProfile(new PersonModel
                 {
                     DateOfBirth = new DateTime(birthYear, birthMonth, birthDay)
-                }), new DateTime(dateYear, dateMonth, dateDay));
+                });
+
+            var result = biorhythmsService.Calculate(nineStarKiModel, new DateTime(dateYear, dateMonth, dateDay));
 
             Assert.Equal(expectedEnergy, result.NineStarKiBioRhythms.NineStarKiModel.MainEnergy.Energy);
             Assert.Equal(expectedDaysElapsedSinceBirth, result.NineStarKiBioRhythms.DaysElapsedSinceBirth);
-            
+
             var intellectualResult = result.BioRhythms.GetResultByType(EBiorhythm.Intellectual);
             var emotionalResult = result.BioRhythms.GetResultByType(EBiorhythm.Emotional);
 
@@ -50,13 +69,13 @@ namespace K9.WebApplication.Tests.Unit.Services
         [InlineData(1979, 06, 16, 1979, 06, 16, EGender.Male, ENineStarKiEnergy.Thunder, 50, 50.2254)]
         public void NineStarKiBiorhythms_PhysicalEnergy_HappyPath(int birthYear, int birthMonth, int birthDay, int dateYear, int dateMonth, int dateDay, EGender gender, ENineStarKiEnergy expectedEnergy, double expectedBiorhythmValue, double expectedNineStarKiBiorhythmsValue)
         {
-            var biorhythmsService = new BiorhythmsService(new Mock<IRoles>().Object, new Mock<IMembershipService>().Object, new Mock<IAuthentication>().Object);
+            var biorhythmsService = new BiorhythmsService(new Mock<IRoles>().Object, new Mock<IMembershipService>().Object, new Mock<IAuthentication>().Object, _swissEphemerisService);
 
-            var result = biorhythmsService.Calculate(new NineStarKiModel(
-                new PersonModel
+            var nineStarKiModel = _nineStarKiService.CalculateNineStarKiProfile(new PersonModel
                 {
                     DateOfBirth = new DateTime(birthYear, birthMonth, birthDay)
-                }), new DateTime(dateYear, dateMonth, dateDay));
+                });
+            var result = biorhythmsService.Calculate(nineStarKiModel, new DateTime(dateYear, dateMonth, dateDay));
 
             var physicalResult = result.BioRhythms.GetResultByType(EBiorhythm.Physical);
             var nineStarPhysicalResult = result.NineStarKiBioRhythms.GetResultByType(EBiorhythm.Physical);

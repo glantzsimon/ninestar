@@ -1,11 +1,11 @@
-﻿using K9.SharedLibrary.Models;
+﻿using K9.SharedLibrary.Helpers;
+using K9.SharedLibrary.Models;
+using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using K9.SharedLibrary.Helpers;
-using K9.WebApplication.Enums;
 
 namespace K9.WebApplication.Services
 {
@@ -14,12 +14,14 @@ namespace K9.WebApplication.Services
         private readonly IRoles _roles;
         private readonly IMembershipService _membershipService;
         private readonly IAuthentication _authentication;
+        private readonly ISwissEphemerisService _swissEphemerisService;
 
-        public BiorhythmsService(IRoles roles, IMembershipService membershipService, IAuthentication authentication)
+        public BiorhythmsService(IRoles roles, IMembershipService membershipService, IAuthentication authentication, ISwissEphemerisService swissEphemerisService)
         {
             _roles = roles;
             _membershipService = membershipService;
             _authentication = authentication;
+            _swissEphemerisService = swissEphemerisService;
         }
 
         public BioRhythmsResultSet Calculate(NineStarKiModel nineStarKiModel, DateTime date)
@@ -34,10 +36,11 @@ namespace K9.WebApplication.Services
             biorhythmsModel.Summary = GetSummary(biorhythmsModel);
             nineStarBiorhythmsModel.Summary = GetSummary(nineStarBiorhythmsModel);
 
-            nineStarKiModel.BiorhythmResultSet.BioRhythms = biorhythmsModel;
-            nineStarKiModel.BiorhythmResultSet.NineStarKiBioRhythms = nineStarBiorhythmsModel;
-
-            return nineStarKiModel.BiorhythmResultSet;
+            return new BioRhythmsResultSet
+            {
+                BioRhythms = biorhythmsModel,
+                NineStarKiBioRhythms = nineStarBiorhythmsModel
+            };
         }
 
         private string GetSummary(BioRhythmsModel biorhythmsModel)
@@ -74,7 +77,7 @@ namespace K9.WebApplication.Services
                 BiorhythmNextCritical = average.GetDaysUntilNextCriticalString(),
                 AverageClass = "display-none"
             }));
-            
+
             return sb.ToString();
         }
 
@@ -380,15 +383,14 @@ namespace K9.WebApplication.Services
         private void CalculateCosineRangeValues(BioRhythmResult result, IBiorhythm biorhythm, BioRhythmsModel bioRhythmsModel, double nineStarKiFactor = 0, double stabilityFactor = 0)
         {
             var nineStarMonthlyPeriod =
-                bioRhythmsModel.NineStarKiModel.GetMonthlyPeriod(bioRhythmsModel.SelectedDate.Value,
-                    bioRhythmsModel.PersonModel.Gender);
-            var period = nineStarMonthlyPeriod.GetTotalDaysInMonthlyPeriod();
+                _swissEphemerisService.GetNineStarKiMonthlyPeriodBoundaries(bioRhythmsModel.SelectedDate.Value, "");
+            var periodLengthInDays = (int)nineStarMonthlyPeriod.PeriodEndsOn.Subtract(nineStarMonthlyPeriod.PeriodStartOn).TotalDays;
             var daysSinceBeginningOfPeriod =
-                (int)bioRhythmsModel.SelectedDate.Value.Subtract(nineStarMonthlyPeriod.MonthlyPeriodStartsOn).TotalDays;
+                (int)bioRhythmsModel.SelectedDate.Value.Subtract(nineStarMonthlyPeriod.PeriodStartOn).TotalDays;
             var rangeValues = new List<RangeValue>();
             var longRangeValues = new List<RangeValue>();
 
-            for (int i = 0; i <= period; i++)
+            for (int i = 0; i <= periodLengthInDays; i++)
             {
                 var factor = i - daysSinceBeginningOfPeriod;
                 var dayInterval = GetDayInterval(biorhythm, bioRhythmsModel.DaysElapsedSinceBirth + factor);

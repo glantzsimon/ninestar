@@ -116,7 +116,7 @@ namespace K9.WebApplication.Services
             }
         }
 
-        public (int ki, int? invertedKi) GetNineStarKiDailyKi(DateTime selectedDateTime, string timeZoneId)
+        public (int DailyKi, int? InvertedDailyKi) GetNineStarKiDailyKi(DateTime selectedDateTime, string timeZoneId)
         {
             using (var sweph = new SwissEph())
             {
@@ -270,6 +270,58 @@ namespace K9.WebApplication.Services
                 }
 
                 return hourKi;
+            }
+        }
+
+        public (DateTime PeriodStartOn, DateTime PeriodEndsOn) GetNineStarKiMonthlyPeriodBoundaries(DateTime selectedDateTime, string timeZoneId)
+        {
+            using (var sweph = new SwissEph())
+            {
+                sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
+
+                // Convert to UT using your method.
+                DateTime selectedUT = ConvertToUT(selectedDateTime, timeZoneId);
+
+                // Determine the “adjusted year” (using your Lichun adjustment).
+                int adjustedYear = AdjustYearForLichun(sweph, selectedUT);
+
+                // Get the 12 solar term boundaries for this adjusted year.
+                double[] solarTerms = GetSolarTerms(sweph, adjustedYear);
+                DateTime[] solarTermDates = new DateTime[solarTerms.Length];
+                for (int i = 0; i < solarTerms.Length; i++)
+                {
+                    // Convert each solar term (Julian Day) to DateTime.
+                    solarTermDates[i] = JulianDayToDateTime(sweph, solarTerms[i]).Date;
+                }
+
+                // Find the interval containing the selected date.
+                DateTime periodStart = DateTime.MinValue;
+                DateTime periodEnd = DateTime.MinValue;
+                bool found = false;
+                for (int i = 0; i < solarTermDates.Length - 1; i++)
+                {
+                    // Use an inclusive start and exclusive end boundary.
+                    if (selectedUT.Date >= solarTermDates[i] && selectedUT.Date < solarTermDates[i + 1])
+                    {
+                        periodStart = solarTermDates[i];
+                        // End on the day before the next solar term.
+                        periodEnd = solarTermDates[i + 1].AddDays(-1);
+                        found = true;
+                        break;
+                    }
+                }
+
+                // If the selected date is on or after the last solar term, use the last interval.
+                if (!found && selectedUT.Date >= solarTermDates[solarTermDates.Length - 1])
+                {
+                    periodStart = solarTermDates[solarTermDates.Length - 1];
+                    // For the next boundary, compute the Lichun of next year (first solar term of next cycle).
+                    double jdNextLichun = GetSolarTerm(sweph, adjustedYear + 1, 315.0);
+                    DateTime nextLichunDate = JulianDayToDateTime(sweph, jdNextLichun).Date;
+                    periodEnd = nextLichunDate.AddDays(-1);
+                }
+
+                return (periodStart, periodEnd);
             }
         }
 

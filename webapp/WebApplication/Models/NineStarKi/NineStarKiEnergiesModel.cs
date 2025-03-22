@@ -33,7 +33,7 @@ namespace K9.WebApplication.Models
         /// Used for daily ki, where on some days, two values exist and one is inverted
         /// </summary>
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DailyEnergyLabel)]
-        public NineStarKiEnergy DayInverted { get; set}
+        public NineStarKiEnergy DayInverted { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HourlyEnergyLabel)]
         public NineStarKiEnergy Hour { get; set; }

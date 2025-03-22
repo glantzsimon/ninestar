@@ -31,8 +31,8 @@ namespace K9.WebApplication.Controllers
                 MainEnergy = model.MainEnergy.Energy,
                 CharacterEnergy = model.CharacterEnergy.Energy,
                 SurfaceEnergy = model.SurfaceEnergy.Energy,
-                MonthlyCycleEnergy = model.MonthlyCycleEnergy.Energy,
-                YearlyCycleEnergy = model.YearlyCycleEnergy.Energy,
+                MonthlyCycleEnergy = model.PersonalHousesOccupiedEnergies.Month.Energy,
+                YearlyCycleEnergy = model.PersonalHousesOccupiedEnergies.Year.Energy,
                 HealthAdvice = GetHealthAdvice(model.MainEnergy.Energy)
             };
 

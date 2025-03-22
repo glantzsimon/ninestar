@@ -54,7 +54,7 @@ namespace K9.WebApplication.Controllers
                 }
             }
 
-            model.BiorhythmResultSet = _biorhythmsService.Calculate(model, model.SelectedDate ?? DateTime.Today);
+            var biorhythmResultSet = _biorhythmsService.Calculate(model, model.SelectedDate ?? DateTime.Today);
 
             return View("Index", model);
         }

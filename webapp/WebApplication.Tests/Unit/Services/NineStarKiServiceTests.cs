@@ -1,6 +1,7 @@
 ﻿using K9.Base.DataAccessLayer.Enums;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
+using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
@@ -41,6 +42,25 @@ namespace K9.WebApplication.Tests.Unit.Services
 
             _swissEphemerisService = new SwissEphemerisService(nineStarKiBasePackage.Object, _output);
             _nineStarKiService = new NineStarKiService(basePackage.Object, _swissEphemerisService);
+        }
+
+        [Theory]
+        [InlineData(1979, 6, 16, EGender.Male, ESexualityRelationType.MatchMatch)]
+        [InlineData(1979, 7, 16, EGender.Male, ESexualityRelationType.MatchOpposite)]
+        [InlineData(1984, 6, 21, EGender.Male, ESexualityRelationType.OppositeOpposite)]
+        [InlineData(1984, 7, 21, EGender.Male, ESexualityRelationType.OppositeMatch)]
+        [InlineData(1984, 6, 21, EGender.Female, ESexualityRelationType.OppositeOpposite)]
+        public void SexualityRelationType_HappyPath(int year, int month, int day, EGender gender, ESexualityRelationType relationType)
+        {
+            var personModel = new PersonModel
+            {
+                DateOfBirth = new DateTime(year, month, day),
+                Gender = gender
+            };
+
+            var nineStarKiModel = _nineStarKiService.CalculateNineStarKiProfile(personModel);
+
+            Assert.Equal(relationType, nineStarKiModel.SexualityRelationType);
         }
 
         [Theory]
@@ -617,7 +637,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             //}, false, false, today);
 
             var dayEnergy = _swissEphemerisService.GetNineStarKiDailyKi(today, timeZone);
-            Assert.Equal((int)dailyKi, dayEnergy.ki);
+            Assert.Equal((int)dailyKi, dayEnergy.DailyKi);
 
             //Assert.Equal((int)energy, ninestar.MainEnergy.EnergyNumber);
             //Assert.Equal((int)yearlyCycleEnergy, ninestar.YearlyCycleEnergy.EnergyNumber);
@@ -650,7 +670,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             var today = new DateTime(todayYear, todayMonth, todayDay, 12, 0, 0);
 
             var dayEnergy = _swissEphemerisService.GetNineStarKiDailyKi(today, "Europe/London");
-            Assert.Equal((int)dailyKi, dayEnergy.ki);
+            Assert.Equal((int)dailyKi, dayEnergy.DailyKi);
         }
 
         [Theory]
@@ -799,7 +819,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             var today = new DateTime(todayYear, todayMonth, todayDay, 12, 0, 0);
             var dayEnergy = _swissEphemerisService.GetNineStarKiDailyKi(today, "Europe/London");
 
-            Assert.Equal((int)dailyKi, dayEnergy.ki);
+            Assert.Equal((int)dailyKi, dayEnergy.DailyKi);
         }
 
         [Theory]

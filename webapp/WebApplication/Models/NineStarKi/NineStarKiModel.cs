@@ -38,6 +38,11 @@ namespace K9.WebApplication.Models
             PersonModel = personModel;
         }
 
+        public NineStarKiModel(PersonModel personModel)
+        {
+            PersonModel = personModel;
+        }
+
         public NineStarKiModel(PersonModel personModel, int precisePersonEpochEnergy, int precisePersonGenerationalEnergy, int preciseMainEnergy, int preciseEmotionalEnergy, int precisePersonalDayStarEnergy, int precisePersonalHourlyEnergy,
 
             int preciseEpochCycleEnergy, int preciseGenerationalCycleEnergy, int preciseYearlyCycleEnergy, int preciseMonthlyCycleEnergy, int preciseDailyCycleEnergy, int preciseHourlyCycleEnergy, int? preciseDailyCycleInvertedEnergy, DateTime? selectedDate = null)
@@ -66,7 +71,7 @@ namespace K9.WebApplication.Models
             PersonalChartEnergies.Month = GetOrAddToCache($"Month_p_{personalInfoString}_{preciseEmotionalEnergy}",
                 () => GetPersonalEnergy(preciseEmotionalEnergy, ENineStarKiEnergyType.CharacterEnergy), TimeSpan.FromDays(30));
 
-            PersonalChartEnergies.Surface = GetOrAddToCache($"Surface_p_{personalInfoString}_{PersonalChartEnergies.Surface.EnergyNumber}",
+            PersonalChartEnergies.Surface = GetOrAddToCache($"Surface_p_{personalInfoString}",
                 GetSurfaceEnergy, TimeSpan.FromDays(30));
 
             PersonalChartEnergies.Day = GetOrAddToCache($"Day_p_{personalInfoString}_{precisePersonalDayStarEnergy}",
@@ -144,13 +149,13 @@ namespace K9.WebApplication.Models
         public NineStarKiEnergiesModel PersonalHousesOccupiedEnergies { get; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MainEnergyLabel)]
-        public NineStarKiEnergy MainEnergy => PersonalChartEnergies.Year;
+        public NineStarKiEnergy MainEnergy => PersonalChartEnergies?.Year;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CharacterEnergyLabel)]
-        public NineStarKiEnergy CharacterEnergy => PersonalChartEnergies.Month;
+        public NineStarKiEnergy CharacterEnergy => PersonalChartEnergies?.Month;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CharacterEnergyLabel)]
-        public NineStarKiEnergy SurfaceEnergy => PersonalChartEnergies.Surface;
+        public NineStarKiEnergy SurfaceEnergy => PersonalChartEnergies?.Surface;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SummaryLabel)]
         public string Summary { get; set; }
@@ -233,6 +238,10 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WeakYangOrgans)]
         public EOrgan[] WeakYangOrgans => MainEnergy != null ? MainEnergy.MetaData?.WeakYangOrgans : null;
 
+        /// <summary>
+        /// To do: move to SwissEphem / NineStarService
+        /// </summary>
+        /// <returns></returns>
         public List<Tuple<int, NineStarKiEnergy>> GetYearlyPlanner()
         {
             return GetOrAddToCache($"YearlyPlanner_{DateTime.Today.Year}", () =>
@@ -243,7 +252,7 @@ namespace K9.WebApplication.Models
                 for (int i = -20; i <= 20; i++)
                 {
                     SelectedDate = today.AddYears(i);
-                    cycles.Add(new Tuple<int, NineStarKiEnergy>(SelectedDate.Value.Year, GetYearlyCycleEnergy()));
+                    cycles.Add(new Tuple<int, NineStarKiEnergy>(SelectedDate.Value.Year, new NineStarKiEnergy(ENineStarKiEnergy.CoreEarth, ENineStarKiEnergyCycleType.DailyEnergy)));
                 }
 
                 SelectedDate = null;

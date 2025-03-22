@@ -8,6 +8,7 @@ namespace K9.WebApplication.Services
     public interface INineStarKiService : IBaseService
     {
         NineStarKiModel CalculateNineStarKiProfile(DateTime dateOfBirth, EGender gender = EGender.Male);
+        NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, DateTime today);
         NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, bool isCompatibility = false, bool isMyProfile = false,  DateTime? today = null);
         NineStarKiSummaryViewModel GetNineStarKiSummaryViewModel();
         CompatibilityModel CalculateCompatibility(DateTime dateOfBirth1, EGender gender1, DateTime dateOfBirth2,

@@ -6,7 +6,10 @@
     var label = Model.EnergyType == ENineStarKiEnergyType.MainEnergy ? Model.AdultEnergyLabel
         : Model.EnergyType == ENineStarKiEnergyType.CharacterEnergy ? Model.CharacteEnergyLabel
             : Model.EnergyType == ENineStarKiEnergyType.SurfaceEnergy ? Dictionary.SurfaceEnergyShortLabel
-                : string.Empty;
+                : Model.EnergyType == ENineStarKiEnergyType.DailyEnergy ? Dictionary.DayStarLabel
+                    : Model.EnergyType == ENineStarKiEnergyType.GenerationalEnergy ? Dictionary.GenerationalEnergyLabel
+                        : Model.EnergyType == ENineStarKiEnergyType.EpochEnergy ? Dictionary.WaveEnergyLabel
+                            : string.Empty;
 }
 
 <div class="ninestar-summary-container">

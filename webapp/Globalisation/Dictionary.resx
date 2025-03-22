@@ -4627,8 +4627,14 @@
   <data name="HourlyEnergy" xml:space="preserve">
     <value>Hourly Energy</value>
   </data>
+  <data name="DailyCycleEnergy" xml:space="preserve">
+    <value>Daily Cycle Ki</value>
+  </data>
   <data name="DailyEnergyLabel" xml:space="preserve">
     <value>Daily Ki</value>
+  </data>
+  <data name="DailyInvertedEnergyLabel" xml:space="preserve">
+    <value>Daily Ki Inverted</value>
   </data>
   <data name="DayStarLabel" xml:space="preserve">
     <value>Day Star</value>
@@ -4636,8 +4642,23 @@
   <data name="EightyOneYearlyEnergy" xml:space="preserve">
     <value>Eighty-One-Yearly Ki</value>
   </data>
+  <data name="EpochCycleEnergy" xml:space="preserve">
+    <value>Epoch Cycle Energy</value>
+  </data>
+  <data name="EpochEnergyLabel" xml:space="preserve">
+    <value>Epoch Ki</value>
+  </data>
+  <data name="GenerationalCycleEnergy" xml:space="preserve">
+    <value>Generational Cycle Energy</value>
+  </data>
   <data name="GenerationalEnergyLabel" xml:space="preserve">
     <value>Generational Ki</value>
+  </data>
+  <data name="HourlyEnergyLabel" xml:space="preserve">
+    <value>Hourly Ki</value>
+  </data>
+  <data name="MonthlyEnergyLabel" xml:space="preserve">
+    <value>Monthly Ki</value>
   </data>
   <data name="NineYearlyEnergy" xml:space="preserve">
     <value>Nine-Yearly Ki</value>
@@ -4645,7 +4666,7 @@
   <data name="TimeOfBirthLabel" xml:space="preserve">
     <value>Time of Birth</value>
   </data>
-  <data name="WaveEnergyLabel" xml:space="preserve">
-    <value>'Wave' / Sub Generation Ki</value>
+  <data name="YearlyEnergyLabel" xml:space="preserve">
+    <value>Yearly Ki</value>
   </data>
 </root>

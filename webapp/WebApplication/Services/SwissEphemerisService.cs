@@ -1,4 +1,5 @@
-﻿using K9.WebApplication.Packages;
+﻿using K9.WebApplication.Models;
+using K9.WebApplication.Packages;
 using SwissEphNet;
 using System;
 using System.Diagnostics;
@@ -117,11 +118,6 @@ namespace K9.WebApplication.Services
 
         public (int ki, int? invertedKi) GetNineStarKiDailyKi(DateTime selectedDateTime, string timeZoneId)
         {
-            return GetNineStarKiDailyKi(selectedDateTime, timeZoneId, false);
-        }
-
-        public (int ki, int? invertedKi) GetNineStarKiDailyKi(DateTime selectedDateTime, string timeZoneId, bool isDebug = false)
-        {
             using (var sweph = new SwissEph())
             {
                 sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
@@ -143,22 +139,17 @@ namespace K9.WebApplication.Services
                 DateTime previousDecemberSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year - 1, false).Date;
                 DateTime day = selectedDateTimeUT.Date;
 
-                var predictedJuneSolticeDayKi = NineStarKiService.InvertDirectionEnergy(IncrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI,
+                var predictedJuneSolticeDayKi = NineStarKiModel.GetOppositeEnergyInMagicSquare(IncrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI,
                     (int)juneSolstice.Subtract(previousDecemberSolsticeJiaDay).TotalDays));
                 var actualJuneSolsticeDayKi = IncrementKi(SEXAGENARY_JUNE_JIA_ZI_DAY_KI, (int)juneSolsticeJiaDay.Subtract(juneSolstice).TotalDays);
                 var juneAdjustmentNeeded = predictedJuneSolticeDayKi != actualJuneSolsticeDayKi;
                 var juneAdjustment = predictedJuneSolticeDayKi - actualJuneSolsticeDayKi;
 
-                var predictedDecSolticeDayKi = NineStarKiService.InvertDirectionEnergy(DecrementKi(SEXAGENARY_JUNE_JIA_ZI_DAY_KI,
+                var predictedDecSolticeDayKi = NineStarKiModel.GetOppositeEnergyInMagicSquare(DecrementKi(SEXAGENARY_JUNE_JIA_ZI_DAY_KI,
                     (int)decemberSolstice.Subtract(juneSolsticeJiaDay).TotalDays));
                 var actualDecSolsticeDayKi = DecrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI, (int)decemberSolsticeJiaDay.Subtract(decemberSolstice).TotalDays);
                 var decAdjustmentNeeded = predictedDecSolticeDayKi != actualDecSolsticeDayKi;
                 var decAdjustment = predictedDecSolticeDayKi - actualDecSolsticeDayKi;
-
-                if (isDebug)
-                {
-                    Debugger.Break();
-                }
 
                 if (day <= juneSolstice.Date)
                 {
@@ -182,7 +173,7 @@ namespace K9.WebApplication.Services
                     if (day == juneSolstice)
                     {
                         invertedKi = dayKi;
-                        dayKi = NineStarKiService.InvertDirectionEnergy(dayKi);
+                        dayKi = NineStarKiModel.GetOppositeEnergyInMagicSquare(dayKi);
                     }
                 }
                 else if (day > juneSolstice && day <= decemberSolstice)
@@ -208,7 +199,7 @@ namespace K9.WebApplication.Services
                     if (day == decemberSolstice)
                     {
                         invertedKi = dayKi;
-                        dayKi = NineStarKiService.InvertDirectionEnergy(dayKi);
+                        dayKi = NineStarKiModel.GetOppositeEnergyInMagicSquare(dayKi);
                     }
                 }
                 else // day > decemberSolstice
@@ -223,11 +214,6 @@ namespace K9.WebApplication.Services
 
         public int GetNineStarKiHourlyKi(DateTime selectedDateTime, string timeZoneId)
         {
-            return GetNineStarKiHourlyKi(selectedDateTime, timeZoneId, false);
-        }
-
-        public int GetNineStarKiHourlyKi(DateTime selectedDateTime, string timeZoneId, bool isDebug = false)
-        {
             using (var sweph = new SwissEph())
             {
                 sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
@@ -240,11 +226,6 @@ namespace K9.WebApplication.Services
                 DateTime previousDecemberSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year - 1, false).Date.AddHours(1);
                 DateTime day = selectedDateTimeUT.Date;
                 int hourKi = 0;
-
-                if (isDebug)
-                {
-                    Debugger.Break();
-                }
 
                 if (day <= juneSolstice)
                 {
@@ -439,20 +420,24 @@ namespace K9.WebApplication.Services
             return kiNumber == 0 ? 9 : kiNumber;
         }
 
-        private DateTime ConvertToUT(DateTime localTime, string timeZoneId)
+        private DateTime ConvertToUT(DateTime rawDateTime, string timeZoneId)
         {
             if (string.IsNullOrEmpty(timeZoneId))
             {
-                return localTime; // Presumed to be UTC
+                return rawDateTime; // Presumed to be UTC
             }
-            localTime = DateTime.SpecifyKind(localTime, DateTimeKind.Local);
-            return TimeZoneInfo.ConvertTimeToUtc(localTime);
+
+            var localTime = DateTime.SpecifyKind(rawDateTime, DateTimeKind.Unspecified);
+            var tz = TZConvert.GetTimeZoneInfo(timeZoneId);
+            var utcTime = TimeZoneInfo.ConvertTimeToUtc(localTime, tz);
+            return utcTime;
         }
 
-        private DateTime ConvertToLocale(DateTime dateTimeUtc, string timeZoneId)
+        private DateTime ConvertToLocaleDateTime(DateTime rawdateTime, string timeZoneId)
         {
+            rawdateTime = DateTime.SpecifyKind(rawdateTime, DateTimeKind.Unspecified);
             TimeZoneInfo tz = TZConvert.GetTimeZoneInfo(timeZoneId);
-            return TimeZoneInfo.ConvertTimeFromUtc(dateTimeUtc, tz);
+            return TimeZoneInfo.ConvertTimeFromUtc(rawdateTime, tz);
         }
 
         private int GetFirstMonthForYearEnergy(int yearEnergy)

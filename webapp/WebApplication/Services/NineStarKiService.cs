@@ -32,6 +32,11 @@ namespace K9.WebApplication.Services
             }, TimeSpan.FromDays(30));
         }
 
+        public NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, DateTime today)
+        {
+            return CalculateNineStarKiProfile(personModel, false, false, today);
+        }
+
         public NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, bool isCompatibility = false,
             bool isMyProfile = false, DateTime? today = null)
         {
@@ -43,20 +48,22 @@ namespace K9.WebApplication.Services
                     ? TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, tzInfo)
                     : today.Value;
 
-                var preciseGenerationEnergy = _swissEphemerisService.GetNineStarKiEightyOneYearKi(personModel.DateOfBirth, personModel.TimeZoneId);
-                var preciseWaveEnergy = _swissEphemerisService.GetNineStarKiNineYearKi(personModel.DateOfBirth, personModel.TimeZoneId);
+                var preciseEpochEnergy = _swissEphemerisService.GetNineStarKiEightyOneYearKi(personModel.DateOfBirth, personModel.TimeZoneId);
+                var preciseGenerationalEnergy = _swissEphemerisService.GetNineStarKiNineYearKi(personModel.DateOfBirth, personModel.TimeZoneId);
                 var preciseMainEnergy = _swissEphemerisService.GetNineStarKiYearlyKi(personModel.DateOfBirth, personModel.TimeZoneId);
                 var preciseEmotionalEnergy = _swissEphemerisService.GetNineStarKiMonthlyKi(personModel.DateOfBirth, personModel.TimeZoneId);
                 var preciseDayStarEnergy = _swissEphemerisService.GetNineStarKiDailyKi(personModel.DateOfBirth, personModel.TimeZoneId);
+                var preciseHourlyEnergy = _swissEphemerisService.GetNineStarKiHourlyKi(personModel.DateOfBirth, personModel.TimeZoneId);
 
                 var preciseEightyOneYearEnergy = _swissEphemerisService.GetNineStarKiEightyOneYearKi(selectedDateTime, personModel.TimeZoneId);
                 var preciseNineYearEnergy = _swissEphemerisService.GetNineStarKiNineYearKi(selectedDateTime, personModel.TimeZoneId);
                 var preciseYearEnergy = _swissEphemerisService.GetNineStarKiYearlyKi(selectedDateTime, personModel.TimeZoneId);
-                var preciseMonthEnergy = _swissEphemerisService.GetNineStarKiMonthNumber(selectedDateTime, personModel.TimeZoneId);
+                var preciseMonthEnergy = _swissEphemerisService.GetNineStarKiMonthlyKi(selectedDateTime, personModel.TimeZoneId);
                 var preciseDailyEnergy = _swissEphemerisService.GetNineStarKiDailyKi(selectedDateTime, personModel.TimeZoneId);
+                var preciseHourlyCycleEnergy = _swissEphemerisService.GetNineStarKiHourlyKi(selectedDateTime, personModel.TimeZoneId);
 
-                var model = new NineStarKiModel(personModel, preciseGenerationEnergy, preciseWaveEnergy, preciseMainEnergy, preciseEmotionalEnergy, preciseDayStarEnergy.ki,
-                    preciseEightyOneYearEnergy, preciseNineYearEnergy, preciseYearEnergy, preciseMonthEnergy, preciseDailyEnergy.ki, preciseDailyEnergy.invertedKi, selectedDateTime);
+                var model = new NineStarKiModel(personModel, preciseEpochEnergy, preciseGenerationalEnergy, preciseMainEnergy, preciseEmotionalEnergy, preciseDayStarEnergy.ki, preciseHourlyEnergy,
+                    preciseEightyOneYearEnergy, preciseNineYearEnergy, preciseYearEnergy, preciseMonthEnergy, preciseDailyEnergy.ki, preciseHourlyEnergy, preciseDailyEnergy.invertedKi, selectedDateTime);
 
                 model.MainEnergy.EnergyDescription = GetMainEnergyDescription(model.MainEnergy.Energy);
                 model.CharacterEnergy.EnergyDescription = GetCharacterEnergyDescription(model.CharacterEnergy.Energy);
@@ -66,12 +73,7 @@ namespace K9.WebApplication.Services
                 model.PersonalDevelopemnt = GetPersonalDevelopemnt(model.MainEnergy.Energy);
                 model.Summary = GetSummary(model);
                 model.Overview = GetOverview(model.MainEnergy.Energy);
-
-                var yearlyCoreFactor = NineStarKiModel.LoopEnergyNumber(model.MainEnergy.EnergyNumber - (model.YearlyCycleEnergy.EnergyNumber - 5));
-                model.YearlyCycleCoreEarthEnergy = new NineStarKiEnergy((ENineStarKiEnergy)InvertDirectionEnergy(yearlyCoreFactor), ENineStarKiEnergyType.MainEnergy, true, ENineStarKiEnergyCycleType.YearlyCycleEnergy);
-
-                model.MonthlyCycleCoreEarthEnergy = new NineStarKiEnergy((ENineStarKiEnergy)InvertDirectionEnergy(model.MonthlyCycleEnergy.EnergyNumber), ENineStarKiEnergyType.CharacterEnergy, true, ENineStarKiEnergyCycleType.MonthlyCycleEnergy);
-
+                
                 model.YearlyDirections = GetYearlyDirections(model);
                 model.MonthlyDirections = GetMonthlyDirections(model);
 
@@ -817,34 +819,25 @@ namespace K9.WebApplication.Services
             }, TimeSpan.FromDays(30));
         }
 
-        private static readonly Dictionary<int, int> _invertedDirectionEnergies = new Dictionary<int, int>
-        {
-            { 1, 9 }, { 2, 8 }, { 3, 7 }, { 4, 6 },
-            { 5, 5 }, { 6, 4 }, { 7, 3 }, { 8, 2 }, { 9, 1 }
-        };
-
-        public static int InvertDirectionEnergy(int energyNumber) =>
-            _invertedDirectionEnergies.TryGetValue(energyNumber, out var inverted) ? inverted : energyNumber;
-
         private NineStarKiEnergy GetInvertedEnergy(NineStarKiEnergy energy, ENineStarKiEnergyType type)
         {
-            return new NineStarKiEnergy((ENineStarKiEnergy)InvertDirectionEnergy(energy.EnergyNumber), type);
+            return new NineStarKiEnergy((ENineStarKiEnergy)NineStarKiModel.GetOppositeEnergyInMagicSquare(energy.EnergyNumber), type);
         }
 
         private NineStarKiDirections GetYearlyDirections(NineStarKiModel model)
         {
-            return new NineStarKiDirections(model.YearlyCycleCoreEarthEnergy.Direction,
-                GetInvertedEnergy(model.YearlyCycleCoreEarthEnergy, ENineStarKiEnergyType.MainEnergy).Direction,
-                model.YearlyCycleEnergy.Direction,
-                GetInvertedEnergy(model.YearlyCycleEnergy, ENineStarKiEnergyType.MainEnergy).Direction);
+            return new NineStarKiDirections(model.GlobalCycleEnergies.Year.Direction,
+                GetInvertedEnergy(model.GlobalCycleEnergies.Year, ENineStarKiEnergyType.MainEnergy).Direction,
+                model.PersonalHousesOccupiedEnergies.Year.Direction,
+                GetInvertedEnergy(model.PersonalHousesOccupiedEnergies.Year, ENineStarKiEnergyType.MainEnergy).Direction);
         }
 
         private NineStarKiDirections GetMonthlyDirections(NineStarKiModel model)
         {
-            return new NineStarKiDirections(model.MonthlyCycleCoreEarthEnergy.Direction,
-                GetInvertedEnergy(model.MonthlyCycleCoreEarthEnergy, ENineStarKiEnergyType.MainEnergy).Direction,
-                model.MonthlyCycleEnergy.Direction,
-                GetInvertedEnergy(model.MonthlyCycleEnergy, ENineStarKiEnergyType.MainEnergy).Direction);
+            return new NineStarKiDirections(model.GlobalCycleEnergies.Month.Direction,
+                GetInvertedEnergy(model.GlobalCycleEnergies.Month, ENineStarKiEnergyType.MainEnergy).Direction,
+                model.PersonalHousesOccupiedEnergies.Month.Direction,
+                GetInvertedEnergy(model.PersonalHousesOccupiedEnergies.Month, ENineStarKiEnergyType.MainEnergy).Direction);
         }
     }
 }

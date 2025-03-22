@@ -5074,6 +5074,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Daily Cycle Ki.
+        /// </summary>
+        public static string DailyCycleEnergy {
+            get {
+                return ResourceManager.GetString("DailyCycleEnergy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Daily Energy.
         /// </summary>
         public static string DailyEnergy {
@@ -5088,6 +5097,15 @@ namespace K9.Globalisation {
         public static string DailyEnergyLabel {
             get {
                 return ResourceManager.GetString("DailyEnergyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Daily Ki Inverted.
+        /// </summary>
+        public static string DailyInvertedEnergyLabel {
+            get {
+                return ResourceManager.GetString("DailyInvertedEnergyLabel", resourceCulture);
             }
         }
         
@@ -6225,6 +6243,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Epoch Cycle Energy.
+        /// </summary>
+        public static string EpochCycleEnergy {
+            get {
+                return ResourceManager.GetString("EpochCycleEnergy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Epoch Ki.
+        /// </summary>
+        public static string EpochEnergyLabel {
+            get {
+                return ResourceManager.GetString("EpochEnergyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your account could not be activated. Please contact support..
         /// </summary>
         public static string ErrorActivatingAccount {
@@ -7077,6 +7113,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Generational Cycle Energy.
+        /// </summary>
+        public static string GenerationalCycleEnergy {
+            get {
+                return ResourceManager.GetString("GenerationalCycleEnergy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Generational Ki.
         /// </summary>
         public static string GenerationalEnergyLabel {
@@ -7593,6 +7638,15 @@ namespace K9.Globalisation {
         public static string HourlyEnergy {
             get {
                 return ResourceManager.GetString("HourlyEnergy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hourly Ki.
+        /// </summary>
+        public static string HourlyEnergyLabel {
+            get {
+                return ResourceManager.GetString("HourlyEnergyLabel", resourceCulture);
             }
         }
         
@@ -10364,6 +10418,15 @@ namespace K9.Globalisation {
         public static string MonthlyCycles {
             get {
                 return ResourceManager.GetString("MonthlyCycles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monthly Ki.
+        /// </summary>
+        public static string MonthlyEnergyLabel {
+            get {
+                return ResourceManager.GetString("MonthlyEnergyLabel", resourceCulture);
             }
         }
         
@@ -16207,15 +16270,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &apos;Wave&apos; / Sub Generation Ki.
-        /// </summary>
-        public static string WaveEnergyLabel {
-            get {
-                return ResourceManager.GetString("WaveEnergyLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Weak Organs.
         /// </summary>
         public static string WeakOrgans {
@@ -16766,6 +16820,15 @@ namespace K9.Globalisation {
         public static string YearlyCycles {
             get {
                 return ResourceManager.GetString("YearlyCycles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yearly Ki.
+        /// </summary>
+        public static string YearlyEnergyLabel {
+            get {
+                return ResourceManager.GetString("YearlyEnergyLabel", resourceCulture);
             }
         }
         

@@ -235,16 +235,20 @@ namespace K9.WebApplication.Models
         DailyEnergy,
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.HourlyEnergy)]
         HourlyEnergy,
-        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Labels.WaveEnergyLabel)]
-        WaveEnergy,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Labels.EpochEnergyLabel)]
+        EpochEnergy,
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Labels.GenerationalEnergyLabel)]
-        GenerationEnergy,
+        GenerationalEnergy,
     }
 
     public enum ENineStarKiEnergyCycleType
     {
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Unspecified)]
         Unspecified,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.EpochCycleEnergy)]
+        EpochEnergy,
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.GenerationalCycleEnergy)]
+        GenerationalEnergy,
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.YearlyCycleEnergy)]
         YearlyCycleEnergy,
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.MonthlyCycleEnergy)]
@@ -253,10 +257,6 @@ namespace K9.WebApplication.Models
         DailyEnergy,
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.HourlyEnergy)]
         HourlyEnergy,
-        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.EightyOneYearlyEnergy)]
-        EightyOneYearlyEnergy,
-        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.NineYearlyEnergy)]
-        NineYearlyEnergy,
     }
 
     public enum ENineStarKiEnergy
@@ -312,11 +312,16 @@ namespace K9.WebApplication.Models
             { ENineStarKiEnergy.Fire, Dictionary.fire_child }
         };
 
-        public NineStarKiEnergy(ENineStarKiEnergy energy, ENineStarKiEnergyType type, bool isAdult = true, ENineStarKiEnergyCycleType energyCycleType = ENineStarKiEnergyCycleType.Unspecified)
+        public NineStarKiEnergy(ENineStarKiEnergy energy, ENineStarKiEnergyType type, bool isAdult = true)
         {
             Energy = energy;
             EnergyType = type;
             IsAdult = isAdult;
+        }
+
+        public NineStarKiEnergy(ENineStarKiEnergy energy, ENineStarKiEnergyCycleType energyCycleType = ENineStarKiEnergyCycleType.Unspecified)
+        {
+            Energy = energy;
             EnergyCycleType = energyCycleType;
         }
 

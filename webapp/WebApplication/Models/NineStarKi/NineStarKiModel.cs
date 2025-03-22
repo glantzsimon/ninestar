@@ -14,9 +14,16 @@ namespace K9.WebApplication.Models
 
     public class NineStarKiModel : CachableBase
     {
-        private const bool invertCycleYinEnergies = true;
-        private const bool enableCycleSwitch = true;
-        private static DateTime cycleSwitchDate = new DateTime(2105, 2, 4);
+        #region Options and Flags
+
+        private static DateTime CYCLE_SWITCH_DATE = new DateTime(2105, 2, 4);
+
+        public bool InvertPersonalYinEnergies { get; set; } = true;
+        public bool InvertCycleYinEnergies { get; set; } = true;
+        public bool EnableCycleSwitch { get; set; } = true;
+        public bool IsCycleSwitchActive => EnableCycleSwitch && SelectedDate >= CYCLE_SWITCH_DATE;
+
+        #endregion
 
         public NineStarKiModel()
         {
@@ -29,108 +36,121 @@ namespace K9.WebApplication.Models
             };
 
             PersonModel = personModel;
-            BiorhythmResultSet = new BioRhythmsResultSet();
         }
 
-        public NineStarKiModel(PersonModel personModel, int preciseGenerationEnergy, int preciseWaveEnergy, int preciseMainEnergy, int preciseEmotionalEnergy, int preciseDayStarEnergy, int preciseEightyOneCycleEnergy, int preciseNineCycleEnergy, int preciseYearlyCycleEnergy, int preciseMonthlyCycleEnergy, int preciseDailyCycleEnergy, int? preciseDailyCycleInvertedEnergy, DateTime? selectedDate = null)
+        public NineStarKiModel(PersonModel personModel, int precisePersonEpochEnergy, int precisePersonGenerationalEnergy, int preciseMainEnergy, int preciseEmotionalEnergy, int precisePersonalDayStarEnergy, int precisePersonalHourlyEnergy,
+
+            int preciseEpochCycleEnergy, int preciseGenerationalCycleEnergy, int preciseYearlyCycleEnergy, int preciseMonthlyCycleEnergy, int preciseDailyCycleEnergy, int preciseHourlyCycleEnergy, int? preciseDailyCycleInvertedEnergy, DateTime? selectedDate = null)
         {
-            SelectedDate = selectedDate ?? DateTime.Today;
+            SelectedDate = selectedDate ?? DateTime.UtcNow;
 
             PersonModel = personModel;
+            PersonalChartEnergies = new NineStarKiEnergiesModel();
+            GlobalCycleEnergies = new NineStarKiEnergiesModel();
+            PersonalHousesOccupiedEnergies = new NineStarKiEnergiesModel();
 
-            GenerationalEnergy = GetOrAddToCache($"GenerationalEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{preciseGenerationEnergy}",
-                () => GetEnergy(PersonModel.DateOfBirth, preciseGenerationEnergy, ENineStarKiEnergyType.GenerationEnergy), TimeSpan.FromDays(30));
+            var personalInfoString =
+                $"{PersonModel.DateOfBirth}_{PersonModel.TimeOfBirth}_{PersonModel.TimeZoneId}_{PersonModel.Gender}";
 
-            WaveEnergy = GetOrAddToCache($"WaveEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{preciseWaveEnergy}",
-                () => GetEnergy(PersonModel.DateOfBirth, preciseWaveEnergy, ENineStarKiEnergyType.WaveEnergy), TimeSpan.FromDays(30));
+            #region Personal Chart
 
-            MainEnergy = GetOrAddToCache($"MainEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{preciseMainEnergy}",
-                () => GetMainEnergy(PersonModel.DateOfBirth, preciseMainEnergy, PersonModel.Gender), TimeSpan.FromDays(30));
+            PersonalChartEnergies.Epoch = GetOrAddToCache($"Epoch_p_{personalInfoString}_{precisePersonEpochEnergy}",
+                () => GetPersonalEnergy(precisePersonEpochEnergy, ENineStarKiEnergyType.EpochEnergy), TimeSpan.FromDays(30));
 
-            CharacterEnergy = GetOrAddToCache($"CharacterEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{preciseEmotionalEnergy}",
-                () => GetEnergy(PersonModel.DateOfBirth, preciseEmotionalEnergy, ENineStarKiEnergyType.CharacterEnergy), TimeSpan.FromDays(30));
+            PersonalChartEnergies.Generation = GetOrAddToCache($"Generation_p_{personalInfoString}_{precisePersonGenerationalEnergy}",
+                () => GetPersonalEnergy(precisePersonGenerationalEnergy, ENineStarKiEnergyType.GenerationalEnergy), TimeSpan.FromDays(30));
 
-            SurfaceEnergy = GetOrAddToCache($"SurfaceEnergy_p_{MainEnergy.EnergyNumber}_{CharacterEnergy.EnergyNumber}",
+            PersonalChartEnergies.Year = GetOrAddToCache($"Year_p_{personalInfoString}_{preciseMainEnergy}",
+                () => GetPersonalEnergy(preciseMainEnergy, ENineStarKiEnergyType.MainEnergy), TimeSpan.FromDays(30));
+
+            PersonalChartEnergies.Month = GetOrAddToCache($"Month_p_{personalInfoString}_{preciseEmotionalEnergy}",
+                () => GetPersonalEnergy(preciseEmotionalEnergy, ENineStarKiEnergyType.CharacterEnergy), TimeSpan.FromDays(30));
+
+            PersonalChartEnergies.Surface = GetOrAddToCache($"Surface_p_{personalInfoString}_{PersonalChartEnergies.Surface.EnergyNumber}",
                 GetSurfaceEnergy, TimeSpan.FromDays(30));
 
-            DailyEnergy = GetOrAddToCache($"DailyEnergy_p_{MainEnergy.EnergyNumber}_{CharacterEnergy.EnergyNumber}_{preciseDayStarEnergy}",
-                () => GetEnergy(PersonModel.DateOfBirth, preciseDayStarEnergy, ENineStarKiEnergyType.DailyEnergy), TimeSpan.FromDays(30));
+            PersonalChartEnergies.Day = GetOrAddToCache($"Day_p_{personalInfoString}_{precisePersonalDayStarEnergy}",
+                () => GetPersonalEnergy(precisePersonalDayStarEnergy, ENineStarKiEnergyType.DailyEnergy), TimeSpan.FromDays(30));
 
-            YearlyCycleEnergy = GetOrAddToCache($"YearlyCycleEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{SelectedDate.Value.ToString()}_{preciseYearlyCycleEnergy}",
-                () => GetYearlyCycleEnergy(preciseYearlyCycleEnergy), TimeSpan.FromDays(30));
+            PersonalChartEnergies.Hour = GetOrAddToCache($"Hour_p_{personalInfoString}_{precisePersonalHourlyEnergy}",
+                () => GetPersonalEnergy(precisePersonalDayStarEnergy, ENineStarKiEnergyType.DailyEnergy), TimeSpan.FromDays(30));
 
-            MonthlyCycleEnergy = GetOrAddToCache($"MonthlyCycleEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{SelectedDate.Value.ToString()}_{preciseMonthlyCycleEnergy}",
-                () => GetMonthlyCycleEnergy(preciseYearlyCycleEnergy, preciseMonthlyCycleEnergy), TimeSpan.FromDays(30));
+            #endregion region
 
-            DailyCycleEnergy = GetOrAddToCache($"DailyCycleEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{SelectedDate.Value.ToString()}_{preciseDailyCycleEnergy}",
-                () => GetDailyCycleEnergy(preciseDailyCycleEnergy), TimeSpan.FromDays(30));
 
+            #region Global Cycles
+
+            GlobalCycleEnergies.Epoch = GetOrAddToCache($"Epoch_g_{SelectedDate}_{preciseEpochCycleEnergy}",
+                () => GetCycleEnergy(preciseEpochCycleEnergy, preciseEpochCycleEnergy, ENineStarKiEnergyCycleType.EpochEnergy), TimeSpan.FromDays(30));
+
+            GlobalCycleEnergies.Generation = GetOrAddToCache($"Generation_g_{SelectedDate}_{preciseGenerationalCycleEnergy}",
+                () => GetCycleEnergy(preciseGenerationalCycleEnergy, preciseGenerationalCycleEnergy, ENineStarKiEnergyCycleType.GenerationalEnergy), TimeSpan.FromDays(30));
+
+            GlobalCycleEnergies.Year = GetOrAddToCache($"Year_g_{SelectedDate}_{preciseYearlyCycleEnergy}",
+                () => GetCycleEnergy(preciseYearlyCycleEnergy, preciseYearlyCycleEnergy, ENineStarKiEnergyCycleType.YearlyCycleEnergy), TimeSpan.FromDays(30));
+
+            GlobalCycleEnergies.Month = GetOrAddToCache($"Month_g_{SelectedDate}_{preciseMonthlyCycleEnergy}",
+                () => GetCycleEnergy(preciseMonthlyCycleEnergy, preciseMonthlyCycleEnergy, ENineStarKiEnergyCycleType.MonthlyCycleEnergy), TimeSpan.FromDays(30));
+
+            GlobalCycleEnergies.Day = GetOrAddToCache($"Day_g_{SelectedDate}_{preciseDailyCycleEnergy}_{preciseDailyCycleInvertedEnergy}",
+                () => GetCycleEnergy(preciseDailyCycleEnergy, preciseDailyCycleEnergy, ENineStarKiEnergyCycleType.DailyEnergy), TimeSpan.FromDays(30));
+
+            GlobalCycleEnergies.Hour = GetOrAddToCache($"Hour_g_{SelectedDate}_{preciseHourlyCycleEnergy}",
+                () => GetCycleEnergy(preciseHourlyCycleEnergy, preciseHourlyCycleEnergy, ENineStarKiEnergyCycleType.HourlyEnergy), TimeSpan.FromDays(30));
+
+            #endregion
+
+
+
+            #region Personal Cycle Energies / Houses Occupied
+
+            PersonalHousesOccupiedEnergies.Epoch = GetOrAddToCache($"Epoch_h_{SelectedDate}_{personalInfoString}_{preciseEpochCycleEnergy}",
+                () => GetCycleEnergy(preciseEpochCycleEnergy, MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.EpochEnergy), TimeSpan.FromDays(30));
+
+            PersonalHousesOccupiedEnergies.Generation = GetOrAddToCache($"Generation_h_{SelectedDate}_{preciseGenerationalCycleEnergy}",
+                () => GetCycleEnergy(preciseGenerationalCycleEnergy, preciseGenerationalCycleEnergy, ENineStarKiEnergyCycleType.GenerationalEnergy), TimeSpan.FromDays(30));
+
+            PersonalHousesOccupiedEnergies.Year = GetOrAddToCache($"Year_h_{SelectedDate}_{personalInfoString}_{preciseYearlyCycleEnergy}",
+                () => GetCycleEnergy(preciseYearlyCycleEnergy, preciseYearlyCycleEnergy, ENineStarKiEnergyCycleType.YearlyCycleEnergy), TimeSpan.FromDays(30));
+
+            PersonalHousesOccupiedEnergies.Month = GetOrAddToCache($"Month_h_{SelectedDate}_{personalInfoString}_{preciseMonthlyCycleEnergy}",
+                () => GetCycleEnergy(preciseMonthlyCycleEnergy, preciseMonthlyCycleEnergy, ENineStarKiEnergyCycleType.MonthlyCycleEnergy), TimeSpan.FromDays(30));
+            
+            PersonalHousesOccupiedEnergies.Day = GetOrAddToCache($"Day_h_{SelectedDate}_{personalInfoString}_{preciseDailyCycleEnergy}_{preciseDailyCycleInvertedEnergy}",
+                () => GetCycleEnergy(preciseDailyCycleEnergy, preciseDailyCycleEnergy, ENineStarKiEnergyCycleType.DailyEnergy), TimeSpan.FromDays(30));
+
+            PersonalHousesOccupiedEnergies.Hour = GetOrAddToCache($"Hour_h_{SelectedDate}_{personalInfoString}_{preciseHourlyCycleEnergy}",
+                () => GetCycleEnergy(preciseHourlyCycleEnergy, preciseHourlyCycleEnergy, ENineStarKiEnergyCycleType.HourlyEnergy), TimeSpan.FromDays(30));
+            
             if (preciseDailyCycleInvertedEnergy.HasValue)
             {
-                DailyCycleInvertedEnergy = GetOrAddToCache($"DailyCycleInvertedEnergy_p_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{SelectedDate.Value.ToString()}_{preciseDailyCycleEnergy}",
-                    () => GetDailyCycleEnergy(preciseDailyCycleInvertedEnergy.Value), TimeSpan.FromDays(30));
+                PersonalHousesOccupiedEnergies.DayInverted = GetOrAddToCache($"DayInverted_h_{SelectedDate}_{personalInfoString}_{preciseDailyCycleEnergy}_{preciseDailyCycleInvertedEnergy}",
+                    () => GetCycleEnergy(preciseDailyCycleInvertedEnergy.Value, preciseDailyCycleInvertedEnergy.Value, ENineStarKiEnergyCycleType.DailyEnergy), TimeSpan.FromDays(30));
             }
 
-            MainEnergy.RelatedEnergy = CharacterEnergy.Energy;
-            CharacterEnergy.RelatedEnergy = MainEnergy.Energy;
-            SurfaceEnergy.RelatedEnergy = MainEnergy.Energy;
-
-            BiorhythmResultSet = new BioRhythmsResultSet(this, selectedDate);
-        }
-
-        public NineStarKiModel(PersonModel personModel, DateTime? selectedDate = null)
-        {
-            SelectedDate = selectedDate ?? DateTime.Today;
-
-            PersonModel = personModel;
-
-            MainEnergy = GetOrAddToCache($"MainEnergy_{PersonModel.DateOfBirth}_{PersonModel.Gender}",
-                () => GetMainEnergy(PersonModel.DateOfBirth, PersonModel.Gender), TimeSpan.FromDays(30));
-
-            CharacterEnergy = GetOrAddToCache($"CharacterEnergy_{PersonModel.DateOfBirth}_{PersonModel.Gender}",
-                () => GetCharacterEnergy(PersonModel.DateOfBirth, PersonModel.Gender), TimeSpan.FromDays(30));
-
-            SurfaceEnergy = GetOrAddToCache($"SurfaceEnergy_{MainEnergy.EnergyNumber}_{CharacterEnergy.EnergyNumber}",
-                GetSurfaceEnergy, TimeSpan.FromDays(30));
-
-            YearlyCycleEnergy = GetOrAddToCache($"YearlyCycleEnergy_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{SelectedDate.Value.ToString()}",
-                () => GetYearlyCycleEnergy(), TimeSpan.FromDays(30));
-
-            MonthlyCycleEnergy = GetOrAddToCache($"MonthlyCycleEnergy_{PersonModel.DateOfBirth}_{PersonModel.Gender}_{SelectedDate.Value.ToString()}",
-                () => GetMonthlyCycleEnergy(), TimeSpan.FromDays(30));
+            #endregion
 
             MainEnergy.RelatedEnergy = CharacterEnergy.Energy;
             CharacterEnergy.RelatedEnergy = MainEnergy.Energy;
             SurfaceEnergy.RelatedEnergy = MainEnergy.Energy;
-
-            BiorhythmResultSet = new BioRhythmsResultSet(this, selectedDate);
         }
 
         public PersonModel PersonModel { get; }
 
-        /// <summary>
-        /// Karmic lessons / life purpose / spiritual development
-        /// </summary>
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GenerationalEnergyLabel)]
-        public NineStarKiEnergy GenerationalEnergy { get; }
+        public NineStarKiEnergiesModel PersonalChartEnergies { get; }
 
-        /// <summary>
-        ///  Life contribution / work / our place in society
-        /// </summary>
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WaveEnergyLabel)]
-        public NineStarKiEnergy WaveEnergy { get; }
+        public NineStarKiEnergiesModel GlobalCycleEnergies { get; }
+
+        public NineStarKiEnergiesModel PersonalHousesOccupiedEnergies { get; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MainEnergyLabel)]
-        public NineStarKiEnergy MainEnergy { get; }
+        public NineStarKiEnergy MainEnergy => PersonalChartEnergies.Year;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CharacterEnergyLabel)]
-        public NineStarKiEnergy CharacterEnergy { get; }
+        public NineStarKiEnergy CharacterEnergy => PersonalChartEnergies.Month;
 
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SurfaceEnergyLabel)]
-        public NineStarKiEnergy SurfaceEnergy { get; }
-
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DayStarLabel)]
-        public NineStarKiEnergy DailyEnergy { get; }
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CharacterEnergyLabel)]
+        public NineStarKiEnergy SurfaceEnergy => PersonalChartEnergies.Surface;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SummaryLabel)]
         public string Summary { get; set; }
@@ -148,10 +168,6 @@ namespace K9.WebApplication.Models
         public string PersonalDevelopemnt { get; set; }
 
         [ScriptIgnore]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BiorhythmsLabel)]
-        public BioRhythmsResultSet BiorhythmResultSet { get; set; }
-
-        [ScriptIgnore]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SelectedDateLabel)]
         public DateTime? SelectedDate { get; set; }
 
@@ -167,51 +183,12 @@ namespace K9.WebApplication.Models
         [ScriptIgnore]
         public bool IsCompatibility { get; set; } = false;
 
-        /// <summary>
-        /// Determines the 9 Star Ki energy of the current 81 year cycle
-        /// </summary>
-        public NineStarKiEnergy EightyOneYearlyCycleEnergy { get; }
-
-        /// <summary>
-        /// Determines the 9 Star Ki energy of the current 9 year cycle
-        /// </summary>
-        public NineStarKiEnergy NineYearlyCycleEnergy { get; }
-
-        /// <summary>
-        /// Determines the 9 Star Ki energy of the current year
-        /// </summary>
-        public NineStarKiEnergy YearlyCycleEnergy { get; }
-
-        /// <summary>
-        /// Where Core Earth is for this year - important for directionality
-        /// </summary>
-        public NineStarKiEnergy YearlyCycleCoreEarthEnergy { get; set; }
-
-        /// <summary>
-        /// Determines the 9 Star Ki energy of the current month
-        /// </summary>
-        public NineStarKiEnergy MonthlyCycleEnergy { get; }
-
-        /// <summary>
-        /// Determines the 9 Star Ki energy of the current day
-        /// </summary>
-        public NineStarKiEnergy DailyCycleEnergy { get; }
-
         public string DailyCycleEnergyDisplayText =>
-            DailyCycleInvertedEnergy == null ? DailyCycleEnergy.EnergyNumber.ToString() : $"{DailyCycleEnergy.EnergyNumber.ToString()}/{DailyCycleInvertedEnergy.EnergyNumber.ToString()}";
-
-        /// <summary>
-        /// On solstice days, the daily ki inverts, we show both in charts
-        /// </summary>
-        public NineStarKiEnergy DailyCycleInvertedEnergy { get; }
+            PersonalHousesOccupiedEnergies.DayInverted == null ? PersonalHousesOccupiedEnergies.Day.EnergyNumber.ToString() : $"{PersonalHousesOccupiedEnergies.Day.EnergyNumber.ToString()}/{PersonalHousesOccupiedEnergies.DayInverted.EnergyNumber.ToString()}";
 
         public NineStarKiDirections YearlyDirections { get; set; }
-        public NineStarKiDirections MonthlyDirections { get; set; }
 
-        /// <summary>
-        /// Where Core Earth is for this month - important for directionality
-        /// </summary>
-        public NineStarKiEnergy MonthlyCycleCoreEarthEnergy { get; set; }
+        public NineStarKiDirections MonthlyDirections { get; set; }
 
         [ScriptIgnore]
         public ESexualityRelationType SexualityRelationType => GetSexualityRelationType();
@@ -275,6 +252,10 @@ namespace K9.WebApplication.Models
             }, TimeSpan.FromDays(30));
         }
 
+        /// <summary>
+        /// TODO: Move this to SwissEphem
+        /// </summary>
+        /// <returns></returns>
         public List<Tuple<int, int, string, NineStarKiEnergy>> GetMonthlyPlanner()
         {
             return GetOrAddToCache($"MonthlyPlanner_{DateTime.Today.Year}", () =>
@@ -288,7 +269,7 @@ namespace K9.WebApplication.Models
                     {
                         var year = today.AddYears(i).Year;
                         SelectedDate = new DateTime(year, j + 1, 15);
-                        cycles.Add(new Tuple<int, int, string, NineStarKiEnergy>(SelectedDate.Value.Year, SelectedDate.Value.Month, SelectedDate.Value.ToString("MMMM"), GetMonthlyCycleEnergy()));
+                        cycles.Add(new Tuple<int, int, string, NineStarKiEnergy>(SelectedDate.Value.Year, SelectedDate.Value.Month, SelectedDate.Value.ToString("MMMM"), GetCycleEnergy(2, 1, ENineStarKiEnergyCycleType.MonthlyCycleEnergy)));
                     }
                 }
 
@@ -299,283 +280,46 @@ namespace K9.WebApplication.Models
             }, TimeSpan.FromDays(30));
         }
 
-        public static int LoopEnergyNumber(int energyNumber) => (energyNumber + 8) % 9 + 1;
+        /// <summary>
+        /// Ensures number is always in the range 1-9
+        /// </summary>
+        /// <param name="energyNumber"></param>
+        /// <returns></returns>
+        public static int GetNineStarKiNumber(int energyNumber) => (energyNumber + 8) % 9 + 1;
 
-        public NineStarKiDates GetMonthlyPeriod(DateTime date, EGender gender)
+        private NineStarKiEnergy GetPersonalEnergy(int energyNumber, ENineStarKiEnergyType energyType)
         {
-            var month = GetMonth(date);
-            var yearlyEnergy = GetMainEnergy(date, gender);
-            var energyNumber = GetEnergyNumberFromYearlyEnergy(yearlyEnergy.Energy, month);
-            var monthlyEnergy = ProcessEnergy(energyNumber, gender, ENineStarKiEnergyType.CharacterEnergy);
-
-            var startDate = new DateTime(date.Year, month, GetMonthStartDay(month));
-            var nextMonthDate = startDate.AddMonths(1);
-            nextMonthDate = new DateTime(nextMonthDate.Year, nextMonthDate.Month, 15);
-
-            var nextMonth = GetMonth(nextMonthDate);
-            var nextMonthStartDay = GetMonthStartDay(nextMonth);
-            var endDate = new DateTime(nextMonthDate.Year, nextMonthDate.Month, nextMonthStartDay - 1);
-
-            return new NineStarKiDates
-            {
-                YearlyEnergy = yearlyEnergy.Energy,
-                MonthlyEnergy = monthlyEnergy.Energy,
-                MonthlyPeriodStartsOn = startDate,
-                MonthlyPeriodEndsOn = endDate
-            };
-        }
-
-        private NineStarKiEnergy GetMainEnergy(DateTime date, EGender gender)
-        {
-            var month = date.Month;
-            var day = date.Day;
-            var year = date.Year;
-
-            year = (month == 2 && day <= 3) || month == 1 ? year - 1 : year;
-            var energyNumber = 3 - ((year - 1979) % 9);
-
-            var nineStarKiEnergy = ProcessEnergy(energyNumber, gender, ENineStarKiEnergyType.MainEnergy, enableCycleSwitch && date >= cycleSwitchDate);
-            nineStarKiEnergy.Gender = gender;
-
-            return nineStarKiEnergy;
-        }
-
-        private NineStarKiEnergy GetMainEnergy(DateTime date, int energyNumber, EGender gender)
-        {
-            var nineStarKiEnergy = ProcessEnergy(energyNumber, gender, ENineStarKiEnergyType.MainEnergy, enableCycleSwitch && date >= cycleSwitchDate);
-            nineStarKiEnergy.Gender = gender;
-
-            return nineStarKiEnergy;
-        }
-
-        private int GetMonth(DateTime date)
-        {
-            var month = date.Month;
-            var day = date.Day;
-
-            switch (month)
-            {
-                case 2:
-                    month = day >= 4 ? month : month - 1;
-                    break;
-
-                case 3:
-                case 6:
-                    month = day >= 6 ? month : month - 1;
-                    break;
-
-                case 4:
-                case 5:
-                    month = day >= 5 ? month : month - 1;
-                    break;
-
-                case 1:
-                    month = day >= 5 ? month : 12;
-                    break;
-
-                case 7:
-                case 8:
-                case 11:
-                case 12:
-                    month = day >= 7 ? month : month - 1;
-                    break;
-
-                case 9:
-                case 10:
-                    month = day >= 8 ? month : month - 1;
-                    break;
-            }
-
-            return month;
-        }
-
-        private int GetMonthStartDay(int month)
-        {
-            switch (month)
-            {
-                case 2:
-                    return 4;
-
-                case 3:
-                case 6:
-                    return 6;
-
-                case 4:
-                case 5:
-                case 1:
-                    return 5;
-
-                case 7:
-                case 8:
-                case 11:
-                case 12:
-                    return 7;
-
-                case 9:
-                case 10:
-                    return 8;
-            }
-
-            throw new ArgumentOutOfRangeException();
-        }
-
-        private int GetEnergyNumberFromYearlyEnergy(ENineStarKiEnergy yearlyEnergy, int month)
-        {
-            var energyNumber = 0;
-
-            switch (yearlyEnergy)
-            {
-                case ENineStarKiEnergy.Thunder:
-                case ENineStarKiEnergy.Heaven:
-                case ENineStarKiEnergy.Fire:
-                    energyNumber = 5;
-                    break;
-
-                case ENineStarKiEnergy.Water:
-                case ENineStarKiEnergy.Wind:
-                case ENineStarKiEnergy.Lake:
-                    energyNumber = 8;
-                    break;
-
-                case ENineStarKiEnergy.Soil:
-                case ENineStarKiEnergy.CoreEarth:
-                case ENineStarKiEnergy.Mountain:
-                    energyNumber = 2;
-                    break;
-            }
-
-            switch (month)
-            {
-                case 2:
-                case 11:
-                    // no need to change
-                    break;
-
-                case 3:
-                case 12:
-                    energyNumber -= 1;
-                    break;
-
-                case 4:
-                case 1:
-                    energyNumber -= 2;
-                    break;
-
-                case 5:
-                    energyNumber -= 3;
-                    break;
-
-                case 6:
-                    energyNumber -= 4;
-                    break;
-
-                case 7:
-                    energyNumber -= 5;
-                    break;
-
-                case 8:
-                    energyNumber -= 6;
-                    break;
-
-                case 9:
-                    energyNumber -= 7;
-                    break;
-
-                case 10:
-                    energyNumber -= 8;
-                    break;
-            }
-
-            return energyNumber;
-        }
-
-        private NineStarKiEnergy GetCharacterEnergy(DateTime date, EGender gender = EGender.Male)
-        {
-            var month = GetMonth(date);
-            var yearlyEnergy = GetMainEnergy(date, gender).Energy;
-            var energyNumber = GetEnergyNumberFromYearlyEnergy(yearlyEnergy, month);
-
-            return ProcessEnergy(energyNumber, gender, ENineStarKiEnergyType.CharacterEnergy, enableCycleSwitch && date >= cycleSwitchDate);
-        }
-        
-        private NineStarKiEnergy GetEnergy(DateTime date, int energyNumber, ENineStarKiEnergyType energyType)
-        {
-            return ProcessEnergy(energyNumber, PersonModel.Gender, energyType, enableCycleSwitch && date >= cycleSwitchDate);
-        }
-
-        private NineStarKiEnergy GetSurfaceEnergy()
-        {
-            return ProcessEnergy(5 - (CharacterEnergy.EnergyNumber - MainEnergy.EnergyNumber), EGender.Male, ENineStarKiEnergyType.SurfaceEnergy);
-        }
-
-        private NineStarKiEnergy GetCycleEnergy(int cycleEnergy, int energyNumber, ENineStarKiEnergyType energyType, ENineStarKiEnergyCycleType cycleType)
-        {
-            var selectedDate = SelectedDate ?? DateTime.Today;
-            var personalEnergy = PersonModel.Gender.IsYin() ? InvertEnergy(energyNumber) : energyNumber;
-            var offset = cycleEnergy - personalEnergy;
-            cycleEnergy = LoopEnergyNumber(5 - offset);
-            var isPastCycleSwitch = enableCycleSwitch && selectedDate >= cycleSwitchDate;
-
-            var energy = (ENineStarKiEnergy)(PersonModel.Gender.IsYin() && invertCycleYinEnergies ?
-                isPastCycleSwitch ? cycleEnergy : InvertEnergy(cycleEnergy) :
-                isPastCycleSwitch ? InvertEnergy(cycleEnergy) : cycleEnergy);
-
-            return new NineStarKiEnergy(energy, energyType, PersonModel.IsAdult(), cycleType);
-        }
-
-        private NineStarKiEnergy GetEightyOneYearCycleEnergy(int cycleEnergy)
-        {
-            return GetCycleEnergy(cycleEnergy, EightyOneYearlyCycleEnergy.EnergyNumber,
-                ENineStarKiEnergyType.GenerationEnergy, ENineStarKiEnergyCycleType.EightyOneYearlyEnergy);
-        }
-
-        private NineStarKiEnergy GetNineYearCycleEnergy(int cycleEnergy)
-        {
-            return GetCycleEnergy(cycleEnergy, NineYearlyCycleEnergy.EnergyNumber,
-                ENineStarKiEnergyType.WaveEnergy, ENineStarKiEnergyCycleType.NineYearlyEnergy);
-        }
-
-        private NineStarKiEnergy GetYearlyCycleEnergy(int? todayYearEnergy = null)
-        {
-            var selectedDate = SelectedDate ?? DateTime.Today;
-            todayYearEnergy = todayYearEnergy == null ? (int)GetMainEnergy(selectedDate, EGender.Male).Energy : todayYearEnergy;
-
-            return GetCycleEnergy(todayYearEnergy.Value, MainEnergy.EnergyNumber,
-                ENineStarKiEnergyType.MainEnergy, ENineStarKiEnergyCycleType.YearlyCycleEnergy);
-        }
-
-        private NineStarKiEnergy GetMonthlyCycleEnergy(int? todayYearEnergy = null, int? todayMonthEnergy = null)
-        {
-            var selectedDate = SelectedDate ?? DateTime.Today;
-            var month = todayMonthEnergy ?? GetMonth(selectedDate);
-            var yearlyCycleEnergy = GetYearlyCycleEnergy(todayYearEnergy).Energy;
-            var energyNumber = GetEnergyNumberFromYearlyEnergy(yearlyCycleEnergy, month);
-            var isPastCycleSwitch = enableCycleSwitch && selectedDate >= cycleSwitchDate;
-
-            var monthlyEnergy = ProcessEnergy(energyNumber, PersonModel.Gender, ENineStarKiEnergyType.CharacterEnergy, isPastCycleSwitch);
-            monthlyEnergy.EnergyCycleType = ENineStarKiEnergyCycleType.MonthlyCycleEnergy;
-            return monthlyEnergy;
-        }
-
-        private NineStarKiEnergy GetDailyCycleEnergy(int dailyCycleEnergy)
-        {
-            var selectedDate = SelectedDate ?? DateTime.Today;
-            var isPastCycleSwitch = enableCycleSwitch && selectedDate >= cycleSwitchDate;
-
-            var dailyEnergy = ProcessEnergy(dailyCycleEnergy, PersonModel.Gender, ENineStarKiEnergyType.DailyEnergy, isPastCycleSwitch);
-            dailyEnergy.EnergyCycleType = ENineStarKiEnergyCycleType.DailyEnergy;
-            return dailyEnergy;
-        }
-
-        private NineStarKiEnergy ProcessEnergy(int energyNumber, EGender gender, ENineStarKiEnergyType type = ENineStarKiEnergyType.MainEnergy, bool isInvertedForCycleSwitch = false)
-        {
-            energyNumber = LoopEnergyNumber(energyNumber);
-            if ((gender.IsYin() && !isInvertedForCycleSwitch) || isInvertedForCycleSwitch)
+            energyNumber = GetNineStarKiNumber(energyNumber);
+            if (PersonModel.Gender.IsYin() && InvertPersonalYinEnergies)
             {
                 energyNumber = InvertEnergy(energyNumber);
             }
 
-            return new NineStarKiEnergy((ENineStarKiEnergy)energyNumber, type, PersonModel.IsAdult());
+            return new NineStarKiEnergy((ENineStarKiEnergy)energyNumber, energyType, PersonModel.IsAdult());
+        }
+
+        private NineStarKiEnergy GetSurfaceEnergy()
+        {
+            var surfaceEnergyNumber = GetNineStarKiNumber(5 - (CharacterEnergy.EnergyNumber - MainEnergy.EnergyNumber));
+            return GetPersonalEnergy(surfaceEnergyNumber, ENineStarKiEnergyType.SurfaceEnergy);
+        }
+
+        private NineStarKiEnergy GetCycleEnergy(int cycleEnergy, int energyNumber, ENineStarKiEnergyCycleType cycleType)
+        {
+            var selectedDate = SelectedDate ?? DateTime.Today;
+            var invertEnergy = (PersonModel.Gender.IsYin() && InvertCycleYinEnergies) || IsCycleSwitchActive;
+            var houseOccupied = GetHouseOccupiedByNumber(cycleEnergy, energyNumber);
+            houseOccupied = invertEnergy ? GetOppositeEnergyInMagicSquare(houseOccupied) : houseOccupied;
+
+            var energy = (ENineStarKiEnergy)(houseOccupied);
+
+            return new NineStarKiEnergy(energy, cycleType);
+        }
+
+        public static int GetHouseOccupiedByNumber(int cycleEnergy, int personalPrimaryEnergy)
+        {
+            var offset = (5 - cycleEnergy);
+            return GetNineStarKiNumber(personalPrimaryEnergy + offset);
         }
 
         private static readonly Dictionary<int, int> _invertedEnergies = new Dictionary<int, int>
@@ -586,6 +330,15 @@ namespace K9.WebApplication.Models
 
         public static int InvertEnergy(int energyNumber) =>
             _invertedEnergies.TryGetValue(energyNumber, out var inverted) ? inverted : energyNumber;
+
+        private static readonly Dictionary<int, int> _invertedDirectionEnergies = new Dictionary<int, int>
+        {
+            { 1, 9 }, { 2, 8 }, { 3, 7 }, { 4, 6 },
+            { 5, 5 }, { 6, 4 }, { 7, 3 }, { 8, 2 }, { 9, 1 }
+        };
+
+        public static int GetOppositeEnergyInMagicSquare(int energyNumber) =>
+            _invertedDirectionEnergies.TryGetValue(energyNumber, out var inverted) ? inverted : energyNumber;
 
         private static readonly Dictionary<bool, Dictionary<(ENineStarKiYinYang, ENineStarKiYinYang), ESexualityRelationType>> _sexualityRelations
             = new Dictionary<bool, Dictionary<(ENineStarKiYinYang, ENineStarKiYinYang), ESexualityRelationType>>

@@ -55,17 +55,17 @@
 <div class="row">
     <div class="col-sm-4 margin-bottom-15">
         <a href="#" id="daily-energy">
-            @Html.Partial("../NineStarKi/_EnergyTitle", Model.DailyEnergy)
+            @Html.Partial("../NineStarKi/_EnergyTitle", Model.PersonalChartEnergies.Day)
         </a>
     </div>
     <div class="col-sm-4 margin-bottom-15">
-        <a href="#" id="karmic-energy">
-            @Html.Partial("../NineStarKi/_EnergyTitle", Model.GenerationalEnergy)
+        <a href="#" id="generation-energy">
+            @Html.Partial("../NineStarKi/_EnergyTitle", Model.PersonalChartEnergies.Generation)
         </a>
     </div>
     <div class="col-sm-4 margin-bottom-15">
-        <a href="#" id="life-energy">
-            @Html.Partial("../NineStarKi/_EnergyTitle", Model.WaveEnergy)
+        <a href="#" id="epoch-energy">
+            @Html.Partial("../NineStarKi/_EnergyTitle", Model.PersonalChartEnergies.Epoch)
         </a>
     </div>
 </div>

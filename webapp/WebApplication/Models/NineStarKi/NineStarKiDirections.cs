@@ -23,7 +23,7 @@ namespace K9.WebApplication.Models
         public NineStarKiDirection DarkSwordKilling { get; }
         public NineStarKiDirection SelfLifeKilling { get; }
         public NineStarKiDirection TargetKilling { get; }
-
+        
         public NineStarKiDirections(ENineStarKiDirection fiveYellowKilling, ENineStarKiDirection darkSwordKilling, ENineStarKiDirection selfLifeKilling, ENineStarKiDirection targetKilling)
         {
             FiveYelloKilling = new NineStarKiDirection(Dictionary.FiveYellowKilling, Dictionary.FiveYellowKillingDescription, fiveYellowKilling);

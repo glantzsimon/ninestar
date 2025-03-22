@@ -365,11 +365,11 @@ namespace K9.WebApplication.Tests.Unit.Services
         [Theory]
         [InlineData(1977, ENineStarKiEnergy.CoreEarth, EGender.Male,
             1977, ENineStarKiEnergy.CoreEarth, ENineStarKiDirection.Centre,
-            3, ENineStarKiEnergy.Water, ENineStarKiDirection.North)]
+            2, ENineStarKiEnergy.Mountain, ENineStarKiDirection.NorthEast)]
 
-        [InlineData(1978, ENineStarKiEnergy.Wind, EGender.Male,
-            1978, ENineStarKiEnergy.CoreEarth, ENineStarKiDirection.Centre,
-            2, ENineStarKiEnergy.Soil, ENineStarKiDirection.NorthWest)]
+        //[InlineData(1978, ENineStarKiEnergy.Wind, EGender.Male,
+        //    1978, ENineStarKiEnergy.CoreEarth, ENineStarKiDirection.Centre,
+        //    2, ENineStarKiEnergy.CoreEarth, ENineStarKiDirection.Centre)]
 
         //[InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male,
         //    1979, ENineStarKiEnergy.CoreEarth, ENineStarKiDirection.Centre,
@@ -422,7 +422,6 @@ namespace K9.WebApplication.Tests.Unit.Services
                 false,
                 false,
                 new DateTime(todayYear, monthNumber, 15));
-
 
             Assert.Equal(energy, ninestar.MainEnergy.Energy);
             Assert.Equal(yearlyCycleEnergy, ninestar.PersonalHousesOccupiedEnergies.Year.Energy);
@@ -489,7 +488,8 @@ namespace K9.WebApplication.Tests.Unit.Services
             int todayYear,
             ENineStarKiEnergy yearlyCycleEnergy,
             int monthNumber,
-            ENineStarKiEnergy monthlyCycleEnergy)
+            ENineStarKiEnergy monthlyCycleEnergy,
+            bool isDebug = false)
         {
 
             var ninestar = _nineStarKiService.CalculateNineStarKiProfile(

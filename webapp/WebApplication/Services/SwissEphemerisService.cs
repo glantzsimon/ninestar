@@ -92,7 +92,7 @@ namespace K9.WebApplication.Services
                     }
                 }
 
-                throw new Exception("Solar term not found");
+                return ((firstMonth - 1 - (solarTerms.Length - 1) + 9) % 9) + 1;
             }
         }
 
@@ -549,7 +549,7 @@ namespace K9.WebApplication.Services
                 iteration++;
                 mid = (jdLow + jdHigh) / 2;
                 double[] xx = new double[6];
-                int ret = sweph.swe_calc_ut(mid, SwissEph.SE_SUN, SwissEph.SEFLG_SPEED, xx, ref serr);
+                int ret = sweph.swe_calc_ut(mid, SwissEph.SE_SUN, SwissEph.SEFLG_TRUEPOS, xx, ref serr);
                 if (ret < 0)
                     throw new Exception("Error calculating Sun position: " + serr);
 

@@ -7,7 +7,7 @@ namespace K9.WebApplication.Services
         int GetNineStarKiEightyOneYearKi(DateTime selectedDateTime, string timeZoneId);
         int GetNineStarKiNineYearKi(DateTime selectedDateTime, string timeZoneId);
         int GetNineStarKiYearlyKi(DateTime selectedDateTime, string timeZoneId);
-        int GetNineStarKiMonthlyKi(DateTime selectedDateTime, string timeZoneId);
+        int GetNineStarKiMonthlyKi(DateTime selectedDateTime, string timeZoneId, bool invert = false);
         /// <summary>
         /// Returns the Gregorian calendar month number, from 1 - 12
         /// </summary>

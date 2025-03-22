@@ -8182,6 +8182,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use Ascending Ki for Predictions.
+        /// </summary>
+        public static string InvertCycleEnergiesLabel {
+            get {
+                return ResourceManager.GetString("InvertCycleEnergiesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Ascending Ki for Personal Charts.
+        /// </summary>
+        public static string InvertPersonalYinEnergiesLabel {
+            get {
+                return ResourceManager.GetString("InvertPersonalYinEnergiesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Is Active.
         /// </summary>
         public static string IsActiveLabel {

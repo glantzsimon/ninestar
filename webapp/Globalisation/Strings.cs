@@ -4,6 +4,9 @@
     {
         public static class Labels
         {
+            public const string InvertPersonalYinEnergiesLabel = "InvertPersonalYinEnergiesLabel";
+            public const string InvertCycleEnergiesLabel = "InvertCycleEnergiesLabel";
+
             public const string StrongYinOrgans = "StrongYinOrgans";
             public const string StrongYangOrgans = "StrongYangOrgans";
             public const string WeakYinOrgans = "WeakYinOrgans";

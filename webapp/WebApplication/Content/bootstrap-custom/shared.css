@@ -74,6 +74,15 @@
 .margin-0 {
   margin: 0;
 }
+.margin-10 {
+  margin: 10px;
+}
+.margin-15 {
+  margin: 15px;
+}
+.margin-20 {
+  margin: 20px;
+}
 .margin-left-0 {
   margin-left: 0;
 }

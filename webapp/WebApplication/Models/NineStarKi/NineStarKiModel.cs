@@ -18,9 +18,18 @@ namespace K9.WebApplication.Models
 
         private static DateTime CYCLE_SWITCH_DATE = new DateTime(2105, 2, 4);
 
+        [ScriptIgnore]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InvertPersonalYinEnergiesLabel)]
         public bool InvertPersonalYinEnergies { get; set; } = true;
+       
+        [ScriptIgnore]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InvertCycleEnergiesLabel)]
         public bool InvertCycleYinEnergies { get; set; } = true;
+        
+        [ScriptIgnore]
         public bool EnableCycleSwitch { get; set; } = true;
+
+        [ScriptIgnore]
         public bool IsCycleSwitchActive => EnableCycleSwitch && SelectedDate >= CYCLE_SWITCH_DATE;
 
         #endregion
@@ -43,7 +52,7 @@ namespace K9.WebApplication.Models
             PersonModel = personModel;
         }
 
-        public NineStarKiModel(PersonModel personModel, int precisePersonEpochEnergy, int precisePersonGenerationalEnergy, int preciseMainEnergy, int preciseEmotionalEnergy, int precisePersonalDayStarEnergy, int precisePersonalHourlyEnergy,
+        public NineStarKiModel(PersonModel personModel, int precisePersonEpochEnergy, int precisePersonGenerationalEnergy, int preciseMainEnergy, int preciseEmotionalEnergy, int preciseEmotionalEnergyForInvertedYear, int precisePersonalDayStarEnergy, int precisePersonalHourlyEnergy,
 
             int preciseEpochCycleEnergy, int preciseGenerationalCycleEnergy, int preciseYearlyCycleEnergy, int preciseMonthlyCycleEnergy, int preciseDailyCycleEnergy, int preciseHourlyCycleEnergy, int? preciseDailyCycleInvertedEnergy, DateTime? selectedDate = null)
         {
@@ -53,6 +62,10 @@ namespace K9.WebApplication.Models
             PersonalChartEnergies = new NineStarKiEnergiesModel();
             GlobalCycleEnergies = new NineStarKiEnergiesModel();
             PersonalHousesOccupiedEnergies = new NineStarKiEnergiesModel();
+
+            preciseEmotionalEnergy = PersonModel.Gender.IsYin() && InvertPersonalYinEnergies
+                ? preciseEmotionalEnergyForInvertedYear
+                : preciseEmotionalEnergy;
 
             var personalInfoString =
                 $"{PersonModel.DateOfBirth}_{PersonModel.TimeOfBirth}_{PersonModel.TimeZoneId}_{PersonModel.Gender}";
@@ -158,7 +171,7 @@ namespace K9.WebApplication.Models
         public NineStarKiEnergy SurfaceEnergy => PersonalChartEnergies?.Surface;
 
         public NineStarKiEnergy GetHouseOfFive(int energy) => new NineStarKiEnergy((ENineStarKiEnergy)GetNineStarKiNumber(energy + (5 - MainEnergy?.EnergyNumber ?? 0)));
-        
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SummaryLabel)]
         public string Summary { get; set; }
 
@@ -330,7 +343,7 @@ namespace K9.WebApplication.Models
             var selectedDate = SelectedDate ?? DateTime.Today;
             var invertEnergy = (PersonModel.Gender.IsYin() && InvertCycleYinEnergies) || IsCycleSwitchActive;
             energyNumber = invertEnergy ? InvertEnergy(energyNumber) : energyNumber;
-            var houseOccupied =  GetHouseOccupiedByNumber(cycleEnergy, energyNumber);
+            var houseOccupied = GetHouseOccupiedByNumber(cycleEnergy, energyNumber);
             houseOccupied = invertEnergy ? GetOppositeEnergyInMagicSquare(houseOccupied) : houseOccupied;
 
             var energy = (ENineStarKiEnergy)(houseOccupied);

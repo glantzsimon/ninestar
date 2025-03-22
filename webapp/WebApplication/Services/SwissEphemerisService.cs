@@ -70,14 +70,14 @@ namespace K9.WebApplication.Services
             }
         }
 
-        public int GetNineStarKiMonthlyKi(DateTime selectedDateTime, string timeZoneId)
+        public int GetNineStarKiMonthlyKi(DateTime selectedDateTime, string timeZoneId, bool invert = false)
         {
             using (var sweph = new SwissEph())
             {
                 sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
                 DateTime selectedDateTimeUT = ConvertToUT(selectedDateTime, timeZoneId);
                 int adjustedYear = AdjustYearForLichun(sweph, selectedDateTimeUT);
-                int yearEnergy = GetNineStarKiNumber(adjustedYear);
+                int yearEnergy = GetNineStarKiNumber(adjustedYear, invert);
                 int firstMonth = GetFirstMonthForYearEnergy(yearEnergy);
                 double jd = GetJulianDate(sweph, selectedDateTimeUT);
                 double[] solarTerms = GetSolarTerms(sweph, adjustedYear);
@@ -87,12 +87,12 @@ namespace K9.WebApplication.Services
                 {
                     if (jd >= solarTerms[i] && jd < solarTerms[i + 1])
                     {
-                        // Downward cycle for Nine Star Ki month:
+                        // Descending cycle: subtract i
                         return ((firstMonth - 1 - i + 9) % 9) + 1;
                     }
                 }
-                // Should not normally happen if jd is within the year.
-                return ((firstMonth - 1 - (solarTerms.Length - 1) + 9) % 9) + 1;
+
+                throw new Exception("Solar term not found");
             }
         }
 
@@ -467,10 +467,11 @@ namespace K9.WebApplication.Services
                 dateTimeUT.Hour + dateTimeUT.Minute / 60.0, SE_GREG_CAL);
         }
 
-        private int GetNineStarKiNumber(int year)
+        private int GetNineStarKiNumber(int year, bool invert = false)
         {
             int kiNumber = (11 - (year % 9)) % 9;
-            return kiNumber == 0 ? 9 : kiNumber;
+            kiNumber = kiNumber == 0 ? 9 : kiNumber;
+            return invert ? NineStarKiModel.InvertEnergy(kiNumber) : kiNumber;
         }
 
         private DateTime ConvertToUT(DateTime rawDateTime, string timeZoneId)

@@ -4669,4 +4669,10 @@
   <data name="YearlyEnergyLabel" xml:space="preserve">
     <value>Yearly Ki</value>
   </data>
+  <data name="InvertCycleEnergiesLabel" xml:space="preserve">
+    <value>Use Ascending Ki for Predictions</value>
+  </data>
+  <data name="InvertPersonalYinEnergiesLabel" xml:space="preserve">
+    <value>Use Ascending Ki for Personal Charts</value>
+  </data>
 </root>

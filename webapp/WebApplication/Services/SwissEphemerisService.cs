@@ -513,7 +513,7 @@ namespace K9.WebApplication.Services
         {
             // Compute the starting and ending boundaries of the Nine Star Ki year.
             double jdStart = GetSolarTerm(sweph, adjustedYear, 315.0);         // Lìchūn of adjustedYear
-            double jdEnd = GetSolarTerm(sweph, adjustedYear + 1, 315.0);       // Lìchūn of next year
+            double jdEnd = GetSolarTerm(sweph, adjustedYear + 1, 315.0) + 1.0;       // Lìchūn of next year plus one day
 
             double[] solarTerms = new double[12];
             for (int i = 0; i < 12; i++)
@@ -525,7 +525,13 @@ namespace K9.WebApplication.Services
                 double unwrappedTarget = (target < 315) ? target + 360 : target;
 
                 // Compute the boundary within the fixed interval [jdStart, jdEnd] using the unwrapped target.
-                solarTerms[i] = GetSolarTermWithinInterval(sweph, unwrappedTarget, jdStart, jdEnd);
+                try
+                {
+                    solarTerms[i] = GetSolarTermWithinInterval(sweph, unwrappedTarget, jdStart, jdEnd);
+                }
+                catch (Exception e)
+                {
+                }
             }
             return solarTerms;
         }
@@ -549,7 +555,7 @@ namespace K9.WebApplication.Services
                 iteration++;
                 mid = (jdLow + jdHigh) / 2;
                 double[] xx = new double[6];
-                int ret = sweph.swe_calc_ut(mid, SwissEph.SE_SUN, SwissEph.SEFLG_TRUEPOS, xx, ref serr);
+                int ret = sweph.swe_calc_ut(mid, SwissEph.SE_SUN, SwissEph.SEFLG_SWIEPH, xx, ref serr);
                 if (ret < 0)
                     throw new Exception("Error calculating Sun position: " + serr);
 

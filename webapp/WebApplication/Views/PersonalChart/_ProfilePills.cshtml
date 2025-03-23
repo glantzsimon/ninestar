@@ -81,12 +81,12 @@
 
                 @Html.Partial("_ProfileHeader", Model.CharacterEnergy)
 
-                <br />
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
                     @Html.Panel(Model.CharacterEnergy.EnergyTitle, $"{Model.CharacterEnergy.EnergyDescription}{Model.CharacterEnergy.ChildDescription}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 }
 
+                <br />
                 @Html.Partial("_ButtonsFooter")
             </div>
 
@@ -95,11 +95,26 @@
 
                 @Html.Partial("_ProfileHeader", Model.SurfaceEnergy)
 
-                <br />
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
                     @Html.Panel(Model.SurfaceEnergy.EnergyTitle, Model.SurfaceEnergy.EnergyDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 }
+
+                <br />
+                @Html.Partial("_ButtonsFooter")
+            </div>
+
+            <div id="daystar" class="tab-pane fade">
+                @Html.Panel(Dictionary.DayStarLabel, Dictionary.DayStarDescription)
+
+                @Html.Partial("_ProfileHeader", Model.PersonalChartEnergies.Day)
+
+                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
+                {
+                    @Html.Panel(Model.PersonalChartEnergies.Day.EnergyTitle, Model.PersonalChartEnergies.Day.EnergyDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                }
+
+                <br />
                 @Html.Partial("_ButtonsFooter")
             </div>
 
@@ -108,11 +123,12 @@
 
                 @Html.Partial("_ProfileHeader", Model.PersonalChartEnergies.Generation)
 
-                <br />
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
                     @Html.Panel(Model.PersonalChartEnergies.Generation.EnergyTitle, Model.PersonalChartEnergies.Generation.EnergyDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 }
+
+                <br />
                 @Html.Partial("_ButtonsFooter")
             </div>
 
@@ -121,11 +137,12 @@
 
                 @Html.Partial("_ProfileHeader", Model.PersonalChartEnergies.Epoch)
 
-                <br />
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
                     @Html.Panel(Model.PersonalChartEnergies.Epoch.EnergyTitle, Model.PersonalChartEnergies.Epoch.EnergyDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 }
+
+                <br />
                 @Html.Partial("_ButtonsFooter")
             </div>
         </div>
@@ -153,6 +170,21 @@
 
         $("#surface-energy").click(function () {
             $("a[href='#surface']").tab("show");
+            scrollProfile("#surface");
+        });
+
+        $("#daily-energy").click(function () {
+            $("a[href='#daystar']").tab("show");
+            scrollProfile("#fundamental");
+        });
+
+        $("#generation-energy").click(function () {
+            $("a[href='#generation']").tab("show");
+            scrollProfile("#character");
+        });
+
+        $("#epoch-energy").click(function () {
+            $("a[href='#epoch']").tab("show");
             scrollProfile("#surface");
         });
     });

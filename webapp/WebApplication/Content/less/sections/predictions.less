@@ -33,22 +33,33 @@
     flex-direction: column;
     align-items: flex-start;
     transition: background-color 0.2s;
-}
 
-.calendar-day:hover {
-    background-color: #f0f0f0;
-}
+    &:hover {
+        background-color: #f0f0f0;
+    }
 
-.calendar-day .date-label {
-    font-size: 0.75rem;
-    color: #999;
-    font-weight: 500;
-}
+    .date-label {
+        font-size: 0.75rem;
+        color: #999;
+        font-weight: 500;
+    }
 
-.calendar-day .custom-content {
-    margin-top: 0.25rem;
-    width: 100%;
-    color: #444;
+    .custom-content {
+        margin-top: 0.25rem;
+        width: 100%;
+        color: #444;
+    }
+
+    img {
+        max-width: 72px;
+        padding-left: 2px;
+    }
+
+    &.selected {
+        background-color: #d0ebff;
+        border-color: #74c0fc;
+        box-shadow: inset 0 0 0 2px #228be6;
+    }
 }
 
 .empty-cell {

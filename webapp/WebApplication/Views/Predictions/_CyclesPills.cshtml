@@ -111,7 +111,7 @@
         <div id="daily-planner" class="tab-pane fade">
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
-                @Html.Panel($"{Dictionary.DailyKiCalendar} {Model.SelectedDate.Value.ToString("MMMM yyyy")}", Html.Partial("_DailyKiCalendar", Model).ToString())
+                @Html.Panel($"{Dictionary.DailyKiCalendar} - {Model.SelectedDate.Value.ToString("MMMM yyyy")}", Html.Partial("_DailyKiCalendar", Model).ToString())
             }
 
             <hr />

@@ -7,6 +7,7 @@ using K9.WebApplication.ViewModels;
 using System;
 using System.Web.Mvc;
 using System.Web.UI;
+using K9.SharedLibrary.Helpers;
 
 namespace K9.WebApplication.Controllers
 {
@@ -49,7 +50,7 @@ namespace K9.WebApplication.Controllers
             {
                 if (model.PersonModel != null || model.SelectedDate != DateTime.Today)
                 {
-                    var selectedDate = model.SelectedDate ?? DateTime.UtcNow;
+                    var selectedDate = model.SelectedDate ?? model.GetLocalNow();
                     var invertYinEnergies = model.CalculationMethod == ECalculationMethod.Chinese;
 
                     // Add time of birth

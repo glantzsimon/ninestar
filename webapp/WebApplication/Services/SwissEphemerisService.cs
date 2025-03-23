@@ -584,14 +584,7 @@ namespace K9.WebApplication.Services
             var utcTime = TimeZoneInfo.ConvertTimeToUtc(localTime, tz);
             return utcTime;
         }
-
-        private DateTime ConvertToLocaleDateTime(DateTime rawdateTime, string timeZoneId)
-        {
-            rawdateTime = DateTime.SpecifyKind(rawdateTime, DateTimeKind.Unspecified);
-            TimeZoneInfo tz = TZConvert.GetTimeZoneInfo(timeZoneId);
-            return TimeZoneInfo.ConvertTimeFromUtc(rawdateTime, tz);
-        }
-
+        
         private int GetFirstMonthForYearEnergy(int yearEnergy)
         {
             if (yearEnergy == 1 || yearEnergy == 4 || yearEnergy == 7)

@@ -322,6 +322,13 @@ namespace K9.WebApplication.Models
         /// <returns></returns>
         public static int GetNineStarKiNumber(int energyNumber) => (energyNumber + 8) % 9 + 1;
 
+        public DateTime GetLocalNow()
+        {
+            return string.IsNullOrEmpty(PersonModel?.TimeZoneId)
+                ? DateTime.UtcNow
+                : DateTimeHelper.ConvertToLocaleDateTime(DateTime.UtcNow, PersonModel.TimeZoneId);
+        }
+
         private NineStarKiEnergy GetPersonalEnergy(int energyNumber, ENineStarKiEnergyType energyType)
         {
             energyNumber = GetNineStarKiNumber(energyNumber);

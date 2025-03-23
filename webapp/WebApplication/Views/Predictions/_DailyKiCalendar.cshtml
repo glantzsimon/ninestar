@@ -29,6 +29,9 @@
             var dayName = cycle.Item4;
             var monthName = cycle.Item5;
             var energy = cycle.Item6;
+            var date = new DateTime(year, month, day);
+
+            var selectedClass = date == Model.SelectedDate.Value.Date ? "selected" : "";
 
             // Add padding for first row
             if (isFirst)
@@ -41,7 +44,7 @@
                 isFirst = false;
             }
 
-            <div class="calendar-day">
+            <div class="calendar-day @selectedClass">
                 <div class="date-label">@monthName @day</div>
                 <div class="custom-content">
                     <img loading="lazy" title="@energy.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @energy.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(energy.Energy.ToString().ToLower()).png" />

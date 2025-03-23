@@ -43,6 +43,15 @@
   width: 100%;
   color: #444;
 }
+.calendar-day img {
+  max-width: 72px;
+  padding-left: 2px;
+}
+.calendar-day.selected {
+  background-color: #d0ebff;
+  border-color: #74c0fc;
+  box-shadow: inset 0 0 0 2px #228be6;
+}
 .empty-cell {
   visibility: hidden;
 }

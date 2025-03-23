@@ -3596,19 +3596,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Calculation Methods&lt;/h4&gt;
-        ///
-        ///&lt;h5&gt;
-        ///    When using the Personal Chart and Predictions calculators, there are three calcaultion methods to choose from:
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;margin-top-0&quot;&gt;
+        ///    When using the Personal Chart and Predictions calculators, there are three calculation methods to choose from:
         ///&lt;/h5&gt;
         ///
-        ///&lt;p&gt;&lt;strong&gt;Traditionl Nine Star Ki&lt;/strong&gt;&lt;/p&gt;
-        ///&lt;p&gt;Uses a Yang materialising spiral for both men&apos;s and women&apos;s personal charts&gt;&lt;/p&gt;
-        ///
-        ///&lt;p&gt;&lt;strong&gt;Ascending Yin Ki For Personal Charts&lt;/strong&gt;&lt;/p&gt;
-        ///&lt;p&gt;Uses a Yang materialising spiral for men&apos;s and a Yin ascending spiral for women&apos;s personal charts&gt;&lt;/p&gt;
-        ///
-        ///&lt;p&gt;&lt;strong&gt;Ascending Yin Ki For Personal C [rest of string was truncated]&quot;;.
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;
+        ///        &lt;p class=&quot;margin-bottom-0&quot;&gt;&lt;strong&gt;Traditional Nine Star Ki&lt;/strong&gt;&lt;/p&gt;
+        ///        &lt;p&gt;Uses a Yang materialising spiral for both men&apos;s and women&apos;s personal charts.&lt;/p&gt;
+        ///    &lt;/li&gt;
+        ///    &lt;li&gt;
+        ///        &lt;p class=&quot;margin-bottom-0&quot;&gt;&lt;strong&gt;Ascending Yin Ki For Personal Charts&lt;/strong&gt;&lt;/p&gt;
+        ///        &lt;p&gt;Uses a Yang materialising spiral for men&apos;s  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string calculation_methods {
             get {
@@ -6384,8 +6383,8 @@ namespace K9.Globalisation {
         ///   Looks up a localized string similar to &lt;h4&gt;What is 9 Star Ki Astrology?&lt;/h4&gt;
         ///&lt;p&gt;9 Star Ki Astrology is an ancient Japanese system rooted in the cycles of nature and energy. It assigns individuals a unique energy pattern based on their birthdate, revealing insights into personality, relationships, and life path.&lt;/p&gt;
         ///
-        ///&lt;h4&gt;What are the different energies in 9 Star Ki?&lt;/h4&gt;
-        ///&lt;p&gt;Each person belongs to one of **nine energies**, which correspond to natural elements: Water, Earth, Tree, Metal, and Fire. These energies further divide into subtypes lik [rest of string was truncated]&quot;;.
+        ///&lt;h4&gt;Why do my numbers look different from what I&apos;m used to?&lt;/h4&gt;
+        ///&lt;p&gt;There are three calculation methods available. If you&apos;re seeing different numbers from those you are used to, please select &quot;Traditional 9 Star Ki&quot; from the Calc [rest of string was truncated]&quot;;.
         /// </summary>
         public static string faq {
             get {
@@ -8248,7 +8247,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ascending Ki for Female Charts &amp; Predictions.
+        ///   Looks up a localized string similar to Ascending Ki for Females.
         /// </summary>
         public static string InvertYinYearsForPersonalChartAndCycles {
             get {

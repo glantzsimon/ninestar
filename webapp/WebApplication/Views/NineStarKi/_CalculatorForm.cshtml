@@ -31,16 +31,14 @@
 <script>
     $(document).ready(function () {
         $('#CalculationMethod').on('change', function () {
-            const value = $(this).val();
-      
-            if (value === '0') {
-                $('#PersonModel_Gender').fadeOut();
+            let value = $(this).val();
+            let $genderFormGroup = $("div[data-input-id='Gender']");
+
+            if (value === '2') {
+                $genderFormGroup.fadeOut();
             } else {
-                $('#PersonModel_Gender').fadeIn();
+                $genderFormGroup.fadeIn();
             }
         });
-
-        // Trigger on page load if needed
-        $('#CalculationMethod').trigger('change');
     });
 </script>

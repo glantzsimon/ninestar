@@ -1,0 +1,22 @@
+﻿@using K9.SharedLibrary.Extensions
+@model TimeSpan?
+
+@{
+    string value = Model.HasValue ? Model.Value.ToString(@"hh\:mm") : "";
+    var htmlAttributes = new Dictionary<string, object>
+{
+{ "type", "time" },                     // Use browser's time input (HH:MM)
+{ "class", "form-control" },
+{ "step", "60" }                        // Optional: set step to 1 min
+};
+
+    if (ViewData != null)
+    {
+        foreach (var kvp in ViewData)
+        {
+            htmlAttributes[kvp.Key] = kvp.Value;
+        }
+    }
+}
+
+@Html.TextBox("", value, htmlAttributes)

@@ -34,7 +34,14 @@ namespace K9.WebApplication.Helpers
 
         public static int GetIntValue(string key)
         {
-            var value = GetValue(key);
+            object value = null;
+            try
+            {
+                value = GetValue(key);
+            }
+            catch (Exception e)
+            {
+            }
             var stringValue = value?.ToString() ?? string.Empty;
             int.TryParse(stringValue, out var intValue);
             return intValue;

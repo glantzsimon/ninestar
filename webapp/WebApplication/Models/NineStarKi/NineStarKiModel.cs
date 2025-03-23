@@ -328,13 +328,13 @@ namespace K9.WebApplication.Models
         private NineStarKiEnergy GetSurfaceEnergy()
         {
             var surfaceEnergyNumber = GetNineStarKiNumber(5 - (CharacterEnergy.EnergyNumber - MainEnergy.EnergyNumber));
-            return GetPersonalEnergy(surfaceEnergyNumber, ENineStarKiEnergyType.SurfaceEnergy);
+            return new NineStarKiEnergy((ENineStarKiEnergy)surfaceEnergyNumber, ENineStarKiEnergyType.SurfaceEnergy);
         }
 
         private NineStarKiEnergy GetGlobalCycleEnergy(int cycleEnergy, ENineStarKiEnergyCycleType cycleType)
         {
             var selectedDate = SelectedDate ?? DateTime.Today;
-            cycleEnergy = IsCycleSwitchActive ? GetOppositeEnergyInMagicSquare(cycleEnergy) : cycleEnergy;
+            cycleEnergy = IsCycleSwitchActive ? InvertEnergy(cycleEnergy) : cycleEnergy;
 
             var energy = (ENineStarKiEnergy)cycleEnergy;
 
@@ -344,10 +344,10 @@ namespace K9.WebApplication.Models
         private NineStarKiEnergy GetPersonalCycleEnergy(int cycleEnergy, int energyNumber, ENineStarKiEnergyCycleType cycleType)
         {
             var selectedDate = SelectedDate ?? DateTime.Today;
-            var invertEnergy = (PersonModel.Gender.IsYin() && InvertCycleYinEnergies) || IsCycleSwitchActive;
-            energyNumber = invertEnergy ? InvertEnergy(energyNumber) : energyNumber;
+            var invertCycle = (InvertCycleYinEnergies && PersonModel.Gender.IsYin()) || IsCycleSwitchActive;
+            energyNumber = (PersonModel.Gender.IsYin() && !IsCycleSwitchActive) ? InvertEnergy(energyNumber) : energyNumber;
+            cycleEnergy = invertCycle ? InvertEnergy(cycleEnergy) : cycleEnergy;
             var houseOccupied = GetHouseOccupiedByNumber(cycleEnergy, energyNumber);
-            houseOccupied = invertEnergy ? GetOppositeEnergyInMagicSquare(houseOccupied) : houseOccupied;
 
             var energy = (ENineStarKiEnergy)(houseOccupied);
 

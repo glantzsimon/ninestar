@@ -18,7 +18,7 @@ namespace K9.WebApplication.Models
         public DateTime DateOfBirth { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DateOfBirthLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TimeOfBirthLabel)]
         public TimeSpan TimeOfBirth { get; set; }
 
         [UIHint("TimeZone")]

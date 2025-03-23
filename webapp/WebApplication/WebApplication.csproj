@@ -353,6 +353,7 @@
     <Compile Include="Controllers\UserPromotionsController.cs" />
     <Compile Include="Controllers\UserMembershipsController.cs" />
     <Compile Include="Controllers\MailingListUsersController.cs" />
+    <Compile Include="Enums\ECalculationsMethod.cs" />
     <Compile Include="Enums\ENumerologyCode.cs" />
     <Compile Include="Enums\EForecastType.cs" />
     <Compile Include="Enums\ESeason.cs" />
@@ -1621,6 +1622,8 @@
     <Content Include="Views\PersonalChart\_PersonalChartExtended.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\TimeZone.cshtml" />
     <Content Include="Views\NineStarKi\_CalculatorForm.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CalculationMethod.cshtml" />
+    <Content Include="Views\Home\CalculationMethods.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

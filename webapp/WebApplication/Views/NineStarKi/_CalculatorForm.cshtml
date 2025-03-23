@@ -4,29 +4,30 @@
 
 @using (Html.BeginBootstrapForm())
 {
+    <label>@Dictionary.CalculationMethodLabel</label>
+    <a target="_blank" href="@Url.Action("CalculationMethods","Home")"><i class="fa fa-question-circle"></i></a>
+
+    @Html.BootstrapEditorFor(model => model.CalculationMethod, new EditorOptions
+        {
+            Label = ""
+        })
+
     @Html.BootstrapEditorFor(model => model.PersonModel.Name, new EditorOptions
     {
         Label = Dictionary.OptionalNameLabel
     })
 
-    <div class="well margin-10">
-        <div class="row">
-            <div class="col-sm-6">
-                @Html.BootstrapEditorFor(model => model.InvertPersonalYinEnergies)
-            </div>
-            <div class="col-sm-6">
-                @Html.BootstrapEditorFor(model => model.InvertCycleYinEnergies)
-            </div>
-        </div>
-    </div>
-
     @Html.BootstrapEditorFor(model => model.PersonModel.DateOfBirth)
     @Html.BootstrapEditorFor(model => model.PersonModel.TimeOfBirth)
     @Html.BootstrapEditorFor(model => model.PersonModel.TimeZoneId)
-    <div data-toggle="tooltip" data-placement="top" title="@Dictionary.GenderSelectionTooltip">
+    <div data-toggle="tooltip" data-placement="bottom" title="@Dictionary.GenderSelectionTooltip">
         @Html.BootstrapEditorFor(model => model.PersonModel.Gender)
     </div>
 
     <hr />
     @Html.BootstrapButton(Dictionary.Calculate, EButtonType.Submit, "", EButtonClass.Large)
 }
+
+<script>
+
+</script>

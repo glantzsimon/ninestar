@@ -31,7 +31,7 @@ namespace K9.WebApplication.Helpers
         {
             HttpContext.Current.Session[key] = value;
         }
-       
+
         public static int GetIntValue(string key)
         {
             var value = GetValue(key);
@@ -60,6 +60,16 @@ namespace K9.WebApplication.Helpers
                 return boolValue;
             }
             return false;
+        }
+
+        public static void SetCurrentUserCalculationMethod(int value)
+        {
+            SetValue(Constants.SessionConstants.UserCalculationMethod, value);
+        }
+
+        public static int GetCurrentUserCalculationMethod()
+        {
+            return GetIntValue(Constants.SessionConstants.UserCalculationMethod);
         }
 
         public static void SetCurrentUserTimeZone(string value)

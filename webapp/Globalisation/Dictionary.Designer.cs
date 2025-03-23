@@ -3596,6 +3596,45 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Calculation Methods&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;
+        ///    When using the Personal Chart and Predictions calculators, there are three calcaultion methods to choose from:
+        ///&lt;/h5&gt;
+        ///
+        ///&lt;p&gt;&lt;strong&gt;Traditionl Nine Star Ki&lt;/strong&gt;&lt;/p&gt;
+        ///&lt;p&gt;Uses a Yang materialising spiral for both men&apos;s and women&apos;s personal charts&gt;&lt;/p&gt;
+        ///
+        ///&lt;p&gt;&lt;strong&gt;Ascending Yin Ki For Personal Charts&lt;/strong&gt;&lt;/p&gt;
+        ///&lt;p&gt;Uses a Yang materialising spiral for men&apos;s and a Yin ascending spiral for women&apos;s personal charts&gt;&lt;/p&gt;
+        ///
+        ///&lt;p&gt;&lt;strong&gt;Ascending Yin Ki For Personal C [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string calculation_methods {
+            get {
+                return ResourceManager.GetString("calculation_methods", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Calculation Method.
+        /// </summary>
+        public static string CalculationMethodLabel {
+            get {
+                return ResourceManager.GetString("CalculationMethodLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Calculation Methods.
+        /// </summary>
+        public static string CalculationMethods {
+            get {
+                return ResourceManager.GetString("CalculationMethods", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Calculator.
         /// </summary>
         public static string Calculator {
@@ -8196,6 +8235,24 @@ namespace K9.Globalisation {
         public static string InvertPersonalYinEnergiesLabel {
             get {
                 return ResourceManager.GetString("InvertPersonalYinEnergiesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ascending Ki for Female Charts.
+        /// </summary>
+        public static string InvertYinYearsForPersonalChart {
+            get {
+                return ResourceManager.GetString("InvertYinYearsForPersonalChart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ascending Ki for Female Charts &amp; Predictions.
+        /// </summary>
+        public static string InvertYinYearsForPersonalChartAndCycles {
+            get {
+                return ResourceManager.GetString("InvertYinYearsForPersonalChartAndCycles", resourceCulture);
             }
         }
         
@@ -15359,6 +15416,15 @@ namespace K9.Globalisation {
         public static string TotalPriceLabel {
             get {
                 return ResourceManager.GetString("TotalPriceLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Traditionl Nine Star Ki.
+        /// </summary>
+        public static string TraditionalNineStarKi {
+            get {
+                return ResourceManager.GetString("TraditionalNineStarKi", resourceCulture);
             }
         }
         

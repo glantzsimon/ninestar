@@ -4,9 +4,8 @@
     {
         public static class Labels
         {
-            public const string InvertPersonalYinEnergiesLabel = "InvertPersonalYinEnergiesLabel";
-            public const string InvertCycleEnergiesLabel = "InvertCycleEnergiesLabel";
-
+            public const string CalculationMethodLabel = "CalculationMethodLabel";
+            
             public const string StrongYinOrgans = "StrongYinOrgans";
             public const string StrongYangOrgans = "StrongYangOrgans";
             public const string WeakYinOrgans = "WeakYinOrgans";
@@ -278,6 +277,10 @@
             public const string EarlyAutumn = "EarlyAutumn";
             public const string LateAutumn = "LateAutumn";
             public const string AutumnToWinter = "AutumnToWinter";
+
+            public const string TraditionalNineStarKi = "TraditionalNineStarKi";
+            public const string InvertYinYearsForPersonalChart = "InvertYinYearsForPersonalChart";
+            public const string InvertYinYearsForPersonalChartAndCycles = "InvertYinYearsForPersonalChartAndCycles";
 
             public const string Spring = "Spring";
             public const string Summer = "Summer";

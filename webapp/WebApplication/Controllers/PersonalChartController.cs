@@ -43,6 +43,9 @@ namespace K9.WebApplication.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Set user calculation method preference cookie
+                SessionHelper.SetCurrentUserCalculationMethod((int)model.CalculationMethod);
+
                 if (model.PersonModel != null || model.SelectedDate != DateTime.Today)
                 {
                     var selectedDate = model.SelectedDate ?? DateTime.Today;

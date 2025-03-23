@@ -1,0 +1,20 @@
+﻿@using K9.SharedLibrary.Helpers
+@using TemplateParser = K9.SharedLibrary.Helpers.TemplateParser
+@{
+    ViewBag.Title = Dictionary.CalculationMethods;
+    ViewBag.SubTitle = Dictionary.CalculationMethods;
+
+    Layout = "../Shared/_LayoutForm.cshtml";
+}
+
+@Html.Partial("_BetaPopup")
+
+<div class="container main-content privacy-policy">
+    <article>
+        @using (Html.BeginBootstrapForm())
+        {
+            @MvcHtmlString.Create(Dictionary.calculation_methods)
+        }
+    </article>
+</div>
+

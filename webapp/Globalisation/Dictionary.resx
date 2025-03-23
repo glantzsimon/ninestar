@@ -4669,10 +4669,28 @@
   <data name="YearlyEnergyLabel" xml:space="preserve">
     <value>Yearly Ki</value>
   </data>
+  <data name="CalculationMethodLabel" xml:space="preserve">
+    <value>Calculation Method</value>
+  </data>
+  <data name="CalculationMethods" xml:space="preserve">
+    <value>Calculation Methods</value>
+  </data>
+  <data name="calculation_methods" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\calculation-methods.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="InvertCycleEnergiesLabel" xml:space="preserve">
     <value>Use Ascending Ki for Predictions</value>
   </data>
   <data name="InvertPersonalYinEnergiesLabel" xml:space="preserve">
     <value>Use Ascending Ki for Personal Charts</value>
+  </data>
+  <data name="InvertYinYearsForPersonalChart" xml:space="preserve">
+    <value>Ascending Ki for Female Charts</value>
+  </data>
+  <data name="InvertYinYearsForPersonalChartAndCycles" xml:space="preserve">
+    <value>Ascending Ki for Female Charts &amp; Predictions</value>
+  </data>
+  <data name="TraditionalNineStarKi" xml:space="preserve">
+    <value>Traditionl Nine Star Ki</value>
   </data>
 </root>

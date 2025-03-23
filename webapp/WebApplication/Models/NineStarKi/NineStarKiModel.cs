@@ -19,13 +19,16 @@ namespace K9.WebApplication.Models
         private static DateTime CYCLE_SWITCH_DATE = new DateTime(2105, 2, 4);
 
         [ScriptIgnore]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InvertPersonalYinEnergiesLabel)]
-        public bool InvertPersonalYinEnergies { get; set; } = true;
-       
+        [UIHint("CalculationMethod")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CalculationMethodLabel)]
+        public ECalculationMethod CalculationMethod { get; set; } = (ECalculationMethod)SessionHelper.GetCurrentUserCalculationMethod();
+
         [ScriptIgnore]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InvertCycleEnergiesLabel)]
+        public bool InvertPersonalYinEnergies { get; set; } = true;
+
+        [ScriptIgnore]
         public bool InvertCycleYinEnergies { get; set; } = true;
-        
+
         [ScriptIgnore]
         public bool EnableCycleSwitch { get; set; } = true;
 

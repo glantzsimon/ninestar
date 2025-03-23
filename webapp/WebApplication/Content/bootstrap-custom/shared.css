@@ -223,3 +223,10 @@
 .zoom-50 {
   zoom: 50%;
 }
+.tooltip {
+  text-align: left !important;
+}
+.inline-tooltip {
+  display: inline !important;
+  cursor: help;
+}

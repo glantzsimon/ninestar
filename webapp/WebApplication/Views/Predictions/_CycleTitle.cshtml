@@ -7,8 +7,8 @@
         : Model.EnergyCycleType == ENineStarKiEnergyCycleType.MonthlyCycleEnergy ? Dictionary.MonthlyCycle
             : Model.EnergyCycleType == ENineStarKiEnergyCycleType.DailyEnergy ? Dictionary.DailyCycleEnergy
                 : Model.EnergyCycleType == ENineStarKiEnergyCycleType.HourlyEnergy ? Dictionary.HourlyEnergy
-                    : Model.EnergyCycleType == ENineStarKiEnergyCycleType.GenerationalEnergy ? Dictionary.GenerationalEnergyLabel
-                        : Model.EnergyCycleType == ENineStarKiEnergyCycleType.EpochEnergy ? Dictionary.EpochEnergyLabel
+                    : Model.EnergyCycleType == ENineStarKiEnergyCycleType.GenerationalEnergy ? Dictionary.NineYearlyEnergy
+                        : Model.EnergyCycleType == ENineStarKiEnergyCycleType.EpochEnergy ? Dictionary.EightyOneYearlyEnergy
                             : string.Empty;
 }
 

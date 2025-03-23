@@ -99,7 +99,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         {
             var ninestar = _nineStarKiService.CalculateNineStarKiProfile(new PersonModel
             {
-                DateOfBirth = new DateTime(year, 2, 4),
+                DateOfBirth = new DateTime(year, 2, 15),
                 Gender = gender
             });
             Assert.Equal(energy, ninestar.MainEnergy.Energy);
@@ -277,13 +277,9 @@ namespace K9.WebApplication.Tests.Unit.Services
         }
 
         [Theory]
-        [InlineData(1979, 6, 16, 2011, 2, 14, EGender.Male, ENineStarKiEnergy.Water, ENineStarKiEnergy.Fire)] // Thunder man
-        [InlineData(1979, 6, 16, 2011, 12, 14, EGender.Male, ENineStarKiEnergy.Water, ENineStarKiEnergy.Water, true)] // Thunder man
-        //[InlineData(1979, 6, 16, 2011, 12, 14, EGender.Female, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Water)] // Thunder female
-        //[InlineData(1980, 6, 16, 2011, 12, 14, EGender.Male, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Wind)] // 2 soil man
-        //[InlineData(1978, 6, 16, 2011, 12, 14, EGender.Male, ENineStarKiEnergy.Soil, ENineStarKiEnergy.Water)] // 4 wind man
-        //[InlineData(1978, 6, 16, 2011, 12, 14, EGender.Female, ENineStarKiEnergy.Mountain, ENineStarKiEnergy.Mountain, true)] // 2 soil woman
-        //[InlineData(1980, 6, 16, 2011, 12, 14, EGender.Female, ENineStarKiEnergy.Water, ENineStarKiEnergy.Soil)] // 4 wind female
+        [InlineData(1979, 6, 16, 2011, 2, 14, EGender.Male, ENineStarKiEnergy.Water, ENineStarKiEnergy.Fire)] // Thunder man lake year
+        [InlineData(1979, 6, 16, 2011, 12, 14, EGender.Male, ENineStarKiEnergy.Water, ENineStarKiEnergy.Water, true)] // Thunder man / lake year
+        [InlineData(1979, 6, 16, 2011, 12, 14, EGender.Female, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Fire)] // Thunder female lake year
         public void LifeCycle_Test(int birthYear, int birthMonth, int birthDay, int year, int month, int day, EGender gender, ENineStarKiEnergy yearlyCycleEnergy, ENineStarKiEnergy monthlyCycleEnergy, bool isDebug = false)
         {
             if (isDebug)
@@ -655,72 +651,72 @@ namespace K9.WebApplication.Tests.Unit.Services
         [InlineData(1904, 2, 10, ENineStarKiEnergy.Soil)]
         [InlineData(1904, 3, 30, ENineStarKiEnergy.Heaven)]
         [InlineData(1904, 4, 23, ENineStarKiEnergy.Thunder)]
-        //[InlineData(1904, 6, 16, ENineStarKiEnergy.Thunder)]
-        //[InlineData(1904, 9, 8, ENineStarKiEnergy.Wind)]
-        //[InlineData(1904, 11, 11, ENineStarKiEnergy.Thunder)]
-        //[InlineData(1904, 12, 31, ENineStarKiEnergy.Thunder)]
-        //[InlineData(1905, 3, 11, ENineStarKiEnergy.Water)]
-        //[InlineData(1905, 3, 25, ENineStarKiEnergy.Heaven)]
-        //// Change
-        //[InlineData(1905, 3, 26, ENineStarKiEnergy.Water)]
-        //[InlineData(1905, 3, 31, ENineStarKiEnergy.Heaven)]
-        //[InlineData(1905, 4, 5, ENineStarKiEnergy.Soil)]
-        //[InlineData(1905, 4, 20, ENineStarKiEnergy.Mountain)]
-        //[InlineData(1905, 4, 21, ENineStarKiEnergy.Heaven)]
-        //[InlineData(1905, 4, 25, ENineStarKiEnergy.Water)]
-        //[InlineData(1905, 11, 17, ENineStarKiEnergy.Water)]
+        [InlineData(1904, 6, 16, ENineStarKiEnergy.Thunder)]
+        [InlineData(1904, 9, 8, ENineStarKiEnergy.Wind)]
+        [InlineData(1904, 11, 11, ENineStarKiEnergy.Thunder)]
+        [InlineData(1904, 12, 31, ENineStarKiEnergy.Thunder)]
+        [InlineData(1905, 3, 11, ENineStarKiEnergy.Water)]
+        [InlineData(1905, 3, 25, ENineStarKiEnergy.Heaven)]
+        // Change
+        [InlineData(1905, 3, 26, ENineStarKiEnergy.Lake)]
+        [InlineData(1905, 3, 31, ENineStarKiEnergy.Thunder)]
+        [InlineData(1905, 4, 5, ENineStarKiEnergy.Mountain)]
+        [InlineData(1905, 4, 20, ENineStarKiEnergy.CoreEarth)]
+        [InlineData(1905, 4, 21, ENineStarKiEnergy.Heaven)]
+        [InlineData(1905, 4, 25, ENineStarKiEnergy.Water)]
+        [InlineData(1905, 11, 17, ENineStarKiEnergy.Water)]
 
-        //// Change
-        //[InlineData(1907, 3, 16, ENineStarKiEnergy.Lake)]
-        //[InlineData(1907, 3, 17, ENineStarKiEnergy.Mountain)]
-        //[InlineData(1907, 5, 14, ENineStarKiEnergy.Thunder)]
-        //[InlineData(1907, 5, 15, ENineStarKiEnergy.Wind)]
-        //[InlineData(1907, 8, 15, ENineStarKiEnergy.Wind)]
-        //[InlineData(1907, 10, 13, ENineStarKiEnergy.Mountain)]
-        //[InlineData(1908, 1, 13, ENineStarKiEnergy.Wind)]
-        //[InlineData(1908, 3, 13, ENineStarKiEnergy.Water)]
-        //[InlineData(1908, 4, 21, ENineStarKiEnergy.Wind)]
+        // Change
+        [InlineData(1907, 3, 16, ENineStarKiEnergy.Lake)]
+        [InlineData(1907, 3, 17, ENineStarKiEnergy.Mountain)]
+        [InlineData(1907, 5, 14, ENineStarKiEnergy.Thunder)]
+        [InlineData(1907, 5, 15, ENineStarKiEnergy.Wind)]
+        [InlineData(1907, 8, 15, ENineStarKiEnergy.Wind)]
+        [InlineData(1907, 10, 13, ENineStarKiEnergy.Mountain)]
+        [InlineData(1908, 1, 13, ENineStarKiEnergy.Wind)]
+        [InlineData(1908, 3, 13, ENineStarKiEnergy.Water)]
+        [InlineData(1908, 4, 21, ENineStarKiEnergy.Wind)]
 
-        //[InlineData(1908, 5, 09, ENineStarKiEnergy.Wind)]
-        //[InlineData(1908, 5, 10, ENineStarKiEnergy.CoreEarth)]
-        //[InlineData(1908, 12, 30, ENineStarKiEnergy.CoreEarth)]
+        [InlineData(1908, 5, 09, ENineStarKiEnergy.Wind)]
+        [InlineData(1908, 5, 10, ENineStarKiEnergy.CoreEarth)]
+        [InlineData(1908, 12, 30, ENineStarKiEnergy.CoreEarth)]
 
-        //[InlineData(1909, 4, 20, ENineStarKiEnergy.Mountain)]
-        //[InlineData(1909, 4, 21, ENineStarKiEnergy.Fire)]
-        //[InlineData(1909, 5, 25, ENineStarKiEnergy.Lake)]
-        //[InlineData(1909, 6, 25, ENineStarKiEnergy.Mountain)]
-        //[InlineData(1909, 7, 25, ENineStarKiEnergy.CoreEarth)]
-        //[InlineData(1909, 8, 22, ENineStarKiEnergy.Wind)]
-        //[InlineData(1909, 9, 22, ENineStarKiEnergy.Fire)]
-        //[InlineData(1910, 3, 22, ENineStarKiEnergy.Soil)]
-        //[InlineData(1910, 4, 28, ENineStarKiEnergy.Thunder)]
-        //[InlineData(1910, 4, 29, ENineStarKiEnergy.Wind)]
-        //[InlineData(1910, 6, 28, ENineStarKiEnergy.Fire)]
-        //[InlineData(1910, 8, 27, ENineStarKiEnergy.Thunder)]
-        //[InlineData(1910, 7, 22, ENineStarKiEnergy.Thunder)]
-        //[InlineData(1910, 11, 22, ENineStarKiEnergy.Heaven)]
-        //[InlineData(1911, 3, 22, ENineStarKiEnergy.Lake)]
-        //[InlineData(1911, 4, 5, ENineStarKiEnergy.Thunder)]
-        //[InlineData(1911, 4, 22, ENineStarKiEnergy.Soil)]
-        //[InlineData(1911, 4, 23, ENineStarKiEnergy.Thunder)]
-        //[InlineData(1911, 8, 21, ENineStarKiEnergy.Wind)]
-        //[InlineData(1911, 8, 22, ENineStarKiEnergy.Fire)]
-        //[InlineData(1911, 9, 22, ENineStarKiEnergy.CoreEarth)]
-        //[InlineData(1911, 10, 22, ENineStarKiEnergy.Soil)]
-        //[InlineData(1911, 11, 22, ENineStarKiEnergy.Lake)]
-        //[InlineData(1912, 4, 7, ENineStarKiEnergy.CoreEarth)]
-        //[InlineData(1913, 4, 7, ENineStarKiEnergy.Water)]
-        //[InlineData(1914, 4, 7, ENineStarKiEnergy.Heaven)]
-        //[InlineData(1914, 8, 8, ENineStarKiEnergy.Lake)]
-        //[InlineData(1914, 11, 8, ENineStarKiEnergy.CoreEarth)]
-        //[InlineData(1915, 1, 8, ENineStarKiEnergy.Thunder)]
-        //[InlineData(1915, 3, 8, ENineStarKiEnergy.Mountain)]
-        //[InlineData(1915, 6, 8, ENineStarKiEnergy.Water)]
-        //[InlineData(1915, 8, 11, ENineStarKiEnergy.Mountain)]
-        //[InlineData(1915, 11, 8, ENineStarKiEnergy.Fire)]
-        //[InlineData(1915, 12, 8, ENineStarKiEnergy.Heaven)]
-        //[InlineData(1916, 1, 27, ENineStarKiEnergy.Fire)]
-        //[InlineData(1916, 3, 27, ENineStarKiEnergy.Heaven)]
+        [InlineData(1909, 4, 20, ENineStarKiEnergy.Mountain)]
+        [InlineData(1909, 4, 21, ENineStarKiEnergy.Fire)]
+        [InlineData(1909, 5, 25, ENineStarKiEnergy.Lake)]
+        [InlineData(1909, 6, 25, ENineStarKiEnergy.Mountain)]
+        [InlineData(1909, 7, 25, ENineStarKiEnergy.CoreEarth)]
+        [InlineData(1909, 8, 22, ENineStarKiEnergy.Wind)]
+        [InlineData(1909, 9, 22, ENineStarKiEnergy.Fire)]
+        [InlineData(1910, 3, 22, ENineStarKiEnergy.Soil)]
+        [InlineData(1910, 4, 28, ENineStarKiEnergy.Thunder)]
+        [InlineData(1910, 4, 29, ENineStarKiEnergy.Wind)]
+        [InlineData(1910, 6, 28, ENineStarKiEnergy.Fire)]
+        [InlineData(1910, 8, 27, ENineStarKiEnergy.Thunder)]
+        [InlineData(1910, 7, 22, ENineStarKiEnergy.Thunder)]
+        [InlineData(1910, 11, 22, ENineStarKiEnergy.Heaven)]
+        [InlineData(1911, 3, 22, ENineStarKiEnergy.Lake)]
+        [InlineData(1911, 4, 5, ENineStarKiEnergy.Thunder)]
+        [InlineData(1911, 4, 22, ENineStarKiEnergy.Soil)]
+        [InlineData(1911, 4, 23, ENineStarKiEnergy.Thunder)]
+        [InlineData(1911, 8, 21, ENineStarKiEnergy.Wind)]
+        [InlineData(1911, 8, 22, ENineStarKiEnergy.Thunder)]
+        [InlineData(1911, 9, 22, ENineStarKiEnergy.Mountain)]
+        [InlineData(1911, 10, 22, ENineStarKiEnergy.CoreEarth)]
+        [InlineData(1911, 11, 22, ENineStarKiEnergy.Water)]
+        [InlineData(1912, 4, 7, ENineStarKiEnergy.CoreEarth)]
+        [InlineData(1913, 4, 7, ENineStarKiEnergy.Water)]
+        [InlineData(1914, 4, 7, ENineStarKiEnergy.Heaven)]
+        [InlineData(1914, 8, 8, ENineStarKiEnergy.Lake)]
+        [InlineData(1914, 11, 8, ENineStarKiEnergy.CoreEarth)]
+        [InlineData(1915, 1, 8, ENineStarKiEnergy.Thunder)]
+        [InlineData(1915, 3, 8, ENineStarKiEnergy.Mountain)]
+        [InlineData(1915, 6, 8, ENineStarKiEnergy.Water)]
+        [InlineData(1915, 8, 11, ENineStarKiEnergy.Mountain)]
+        [InlineData(1915, 11, 8, ENineStarKiEnergy.Fire)]
+        [InlineData(1915, 12, 8, ENineStarKiEnergy.Heaven)]
+        [InlineData(1916, 1, 27, ENineStarKiEnergy.Fire)]
+        [InlineData(1916, 3, 27, ENineStarKiEnergy.Heaven)]
         [InlineData(1916, 5, 26, ENineStarKiEnergy.Thunder)]
         [InlineData(1916, 11, 22, ENineStarKiEnergy.Lake)]
         [InlineData(1916, 2, 8, ENineStarKiEnergy.Thunder)]

@@ -416,8 +416,9 @@ namespace K9.WebApplication.Services
 
                 for (DateTime day = PeriodStartOn; day <= PeriodEndsOn; day = day.AddDays(1))
                 {
-                    var dailyKi = GetNineStarKiDailyKi(day, timeZoneId);
-                    dailyEnergies.Add((day, dailyKi.DailyKi, dailyKi.InvertedDailyKi));
+                    var dayWithTime = day.Add(selectedDateTime.TimeOfDay);
+                    var dailyKi = GetNineStarKiDailyKi(dayWithTime, timeZoneId);
+                    dailyEnergies.Add((dayWithTime, dailyKi.DailyKi, dailyKi.InvertedDailyKi));
                 }
 
                 return dailyEnergies.ToArray();
@@ -584,7 +585,7 @@ namespace K9.WebApplication.Services
             var utcTime = TimeZoneInfo.ConvertTimeToUtc(localTime, tz);
             return utcTime;
         }
-        
+
         private int GetFirstMonthForYearEnergy(int yearEnergy)
         {
             if (yearEnergy == 1 || yearEnergy == 4 || yearEnergy == 7)

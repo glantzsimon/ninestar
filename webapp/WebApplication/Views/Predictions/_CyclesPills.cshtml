@@ -69,6 +69,18 @@
             @Html.Partial("_ButtonsFooter")
         </div>
 
+        <div id="current-daily-cycle" class="tab-pane fade">
+            @Html.Panel(Dictionary.DailyPrediction, Dictionary.year_description)
+
+            @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
+            {
+                @Html.Partial("_Cycle", Model.YearlyCycleEnergy)
+            }
+
+            <br />
+            @Html.Partial("_ButtonsFooter")
+        </div>
+
         <div id="yearly-planner" class="tab-pane fade">
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {

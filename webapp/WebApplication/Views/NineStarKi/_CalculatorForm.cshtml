@@ -33,9 +33,8 @@
         $('#CalculationMethod').on('change', function () {
             let value = $(this).val();
             let $genderFormGroup = $("div[data-input-id='Gender']");
-
-            debugger;
-            if (value === '2') {
+            
+            if (value != '0') {
                 $genderFormGroup.fadeOut();
             } else {
                 $genderFormGroup.fadeIn();

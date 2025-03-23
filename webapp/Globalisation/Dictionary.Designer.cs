@@ -5121,7 +5121,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Daily Cycle Ki.
+        ///   Looks up a localized string similar to Daily Ki.
         /// </summary>
         public static string DailyCycleEnergy {
             get {
@@ -5162,6 +5162,15 @@ namespace K9.Globalisation {
         public static string DailyKarmicInfluences {
             get {
                 return ResourceManager.GetString("DailyKarmicInfluences", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Daily Prediction.
+        /// </summary>
+        public static string DailyPrediction {
+            get {
+                return ResourceManager.GetString("DailyPrediction", resourceCulture);
             }
         }
         
@@ -5828,6 +5837,15 @@ namespace K9.Globalisation {
         public static string EightyOneYearlyEnergy {
             get {
                 return ResourceManager.GetString("EightyOneYearlyEnergy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Eighty-One-Year Prediction.
+        /// </summary>
+        public static string EightyOneYearlyPrediction {
+            get {
+                return ResourceManager.GetString("EightyOneYearlyPrediction", resourceCulture);
             }
         }
         
@@ -7692,7 +7710,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hourly Energy.
+        ///   Looks up a localized string similar to Hourly Ki.
         /// </summary>
         public static string HourlyEnergy {
             get {
@@ -7706,6 +7724,15 @@ namespace K9.Globalisation {
         public static string HourlyEnergyLabel {
             get {
                 return ResourceManager.GetString("HourlyEnergyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hourly Prediction.
+        /// </summary>
+        public static string HourlyPrediction {
+            get {
+                return ResourceManager.GetString("HourlyPrediction", resourceCulture);
             }
         }
         
@@ -10348,13 +10375,11 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    9 Star Ki has 3 &apos;Modalities&apos;, similar to those of the Zodiac
+        ///    9 Star Ki has 3 groups or &apos;Modalities&apos;, similar to those of the Zodiac and of Chinese Astrology
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The nine Energies in the 9 Star Ki system, as well as being grouped by Yin or Yang and by the five elements, can also be split into three groups, called the &apos;Modalities&apos;. This is very similar to the Modalities described in the Zodiac. It is another simple yet useful &apos;map&apos; that can be used to understand people&apos;s fundamental nature.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    You may find it interesting to know that the 9 Star Ki Modalities overlap t [rest of string was truncated]&quot;;.
+        ///    The nine Energies in the 9 Star Ki system, as well as being grouped by Yin or Yang and by the five elements, can also be split into three groups or &apos;Modalities&apos;. This is very similar to the modalities described in the Zodiac and the three groups of Chinese Astrology. It is another simple yet useful &apos;map&apos; that can be used to understand people&apos;s fundamental nature.
+        ///&lt;/p&gt;.
         /// </summary>
         public static string modalities_description {
             get {
@@ -11117,6 +11142,15 @@ namespace K9.Globalisation {
         public static string NineYearlyEnergy {
             get {
                 return ResourceManager.GetString("NineYearlyEnergy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine-Year Prediction.
+        /// </summary>
+        public static string NineYearlyPrediction {
+            get {
+                return ResourceManager.GetString("NineYearlyPrediction", resourceCulture);
             }
         }
         

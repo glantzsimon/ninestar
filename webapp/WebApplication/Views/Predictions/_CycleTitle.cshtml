@@ -5,7 +5,11 @@
 @{
     var label = Model.EnergyCycleType == ENineStarKiEnergyCycleType.YearlyCycleEnergy ? Dictionary.YearlyCycle
         : Model.EnergyCycleType == ENineStarKiEnergyCycleType.MonthlyCycleEnergy ? Dictionary.MonthlyCycle
-                : string.Empty;
+            : Model.EnergyCycleType == ENineStarKiEnergyCycleType.DailyEnergy ? Dictionary.DailyCycleEnergy
+                : Model.EnergyCycleType == ENineStarKiEnergyCycleType.HourlyEnergy ? Dictionary.HourlyEnergy
+                    : Model.EnergyCycleType == ENineStarKiEnergyCycleType.GenerationalEnergy ? Dictionary.GenerationalEnergyLabel
+                        : Model.EnergyCycleType == ENineStarKiEnergyCycleType.EpochEnergy ? Dictionary.EpochEnergyLabel
+                            : string.Empty;
 }
 
 <div class="ninestar-summary-container">

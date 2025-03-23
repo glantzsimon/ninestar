@@ -45,7 +45,7 @@ namespace K9.WebApplication.Services
             {
                 var tzInfo = TZConvert.GetTimeZoneInfo(personModel.TimeZoneId);
                 var selectedDateTime = today == null
-                    ? TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, tzInfo)
+                    ? DateTime.UtcNow
                     : today.Value;
 
                 var preciseEpochEnergy = _swissEphemerisService.GetNineStarKiEightyOneYearKi(personModel.DateOfBirth, personModel.TimeZoneId);

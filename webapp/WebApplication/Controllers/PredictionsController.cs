@@ -50,6 +50,9 @@ namespace K9.WebApplication.Controllers
                 {
                     var selectedDate = model.SelectedDate ?? DateTime.Today;
 
+                    // Add time of birth
+                    model.PersonModel.DateOfBirth = model.PersonModel.DateOfBirth.Add(model.PersonModel.TimeOfBirth);
+                 
                     model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false,
                         selectedDate);
                     model.SelectedDate = selectedDate;

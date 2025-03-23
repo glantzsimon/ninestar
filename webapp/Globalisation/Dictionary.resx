@@ -4625,10 +4625,10 @@
     <value>Daily Energy</value>
   </data>
   <data name="HourlyEnergy" xml:space="preserve">
-    <value>Hourly Energy</value>
+    <value>Hourly Ki</value>
   </data>
   <data name="DailyCycleEnergy" xml:space="preserve">
-    <value>Daily Cycle Ki</value>
+    <value>Daily Ki</value>
   </data>
   <data name="DailyEnergyLabel" xml:space="preserve">
     <value>Daily Ki</value>
@@ -4701,5 +4701,17 @@
   </data>
   <data name="Reflective" xml:space="preserve">
     <value>Reflective</value>
+  </data>
+  <data name="DailyPrediction" xml:space="preserve">
+    <value>Daily Prediction</value>
+  </data>
+  <data name="EightyOneYearlyPrediction" xml:space="preserve">
+    <value>Eighty-One-Year Prediction</value>
+  </data>
+  <data name="HourlyPrediction" xml:space="preserve">
+    <value>Hourly Prediction</value>
+  </data>
+  <data name="NineYearlyPrediction" xml:space="preserve">
+    <value>Nine-Year Prediction</value>
   </data>
 </root>

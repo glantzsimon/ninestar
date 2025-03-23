@@ -946,6 +946,14 @@
     <Content Include="Images\ninestar\organs\spleenpancreas.png" />
     <Content Include="Images\ninestar\organs\stomach.png" />
     <Content Include="Images\ninestar\organs\urinarybladder.png" />
+    <Content Include="Images\ui\daily-cycle.png" />
+    <Content Include="Images\ui\daily-planner.png" />
+    <Content Include="Images\ui\hourly-cycle.png" />
+    <Content Include="Images\ui\hourly-planner.png" />
+    <Content Include="Images\ui\nine-year-cycle.png" />
+    <Content Include="Images\ui\nine-year-planner.png" />
+    <Content Include="Images\ui\eighty-one-cycle.png" />
+    <Content Include="Images\ui\eighty-one-planner.png" />
     <Content Include="Images\ui\daystar.png" />
     <Content Include="Images\ui\generation.png" />
     <Content Include="Images\ui\epoch.png" />

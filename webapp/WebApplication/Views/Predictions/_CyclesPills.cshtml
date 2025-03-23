@@ -42,6 +42,13 @@
                 <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/yearly-planner.png');"></div>
             </a>
         </li>
+
+        <li>
+            <a data-toggle="tab" href="#daily-planner">
+                @Dictionary.DailyKiCalendar
+                <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/daily-planner.png');"></div>
+            </a>
+        </li>
     </ul>
 
     <div class="tab-content">
@@ -95,6 +102,16 @@
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
                 @Html.Panel(Dictionary.MonthlyPlanner, Html.Partial("_MonthlyPlanner", Model).ToString())
+            }
+
+            <hr />
+            @Html.Partial("_ButtonsFooter")
+        </div>
+
+        <div id="daily-planner" class="tab-pane fade">
+            @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
+            {
+                @Html.Panel(Dictionary.DailyKiCalendar, Html.Partial("_DailyKiCalendar", Model).ToString())
             }
 
             <hr />

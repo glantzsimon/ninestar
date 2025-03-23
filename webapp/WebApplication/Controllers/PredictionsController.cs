@@ -48,7 +48,7 @@ namespace K9.WebApplication.Controllers
             {
                 if (model.PersonModel != null || model.SelectedDate != DateTime.Today)
                 {
-                    var selectedDate = model.SelectedDate ?? DateTime.Today;
+                    var selectedDate = model.SelectedDate ?? DateTime.UtcNow;
 
                     // Add time of birth
                     model.PersonModel.DateOfBirth = model.PersonModel.DateOfBirth.Add(model.PersonModel.TimeOfBirth);

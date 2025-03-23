@@ -27,5 +27,8 @@ namespace K9.WebApplication.Services
 
         (DateTime YearStart, DateTime YearEnd, int YearlyKi)[] GetNineStarKiYearlyPeriods(DateTime selectedDateTime,
             string timeZoneId);
+
+        (DateTime Day, int DailyKi, int? InvertedDailyKi)[] GetNineStarKiDailyEnergiesForMonth(
+            DateTime selectedDateTime, string timeZoneId);
     }
 }

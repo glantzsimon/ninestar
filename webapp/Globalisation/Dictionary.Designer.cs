@@ -4589,10 +4589,10 @@ namespace K9.Globalisation {
         ///    The seedling is beginning to mature.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Everyone is born in a 5 year and returns to it at the age of nine, 18, 27, 36, 45, 54, etc. This is the centre of the 9 Star Ki cycle and represents the beginning and end of a cycle. Anything started during a 5 year will have a great impact on the following 8 years and so should be considered carefully.
+        ///    Everyone is born in a 5 Core Earth house and returns to it at the age of nine, 18, 27, 36, 45, 54, etc. This is the centre of the 9 Star Ki cycle and represents the beginning and end of a cycle. Anything started during a 5 year will have a great impact on the following 8 years and so should be considered carefully.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    As the stars are positioned exactly as they were during the year of our birth, we can experience a kind of &quot;rebirth&quot; during thi [rest of string was truncated]&quot;;.
+        ///    As the stars are positioned exactly as they were during the year of our birth, we can experience a kind of &quot;rebirth [rest of string was truncated]&quot;;.
         /// </summary>
         public static string core_earth_year {
             get {
@@ -5162,6 +5162,15 @@ namespace K9.Globalisation {
         public static string DailyKarmicInfluences {
             get {
                 return ResourceManager.GetString("DailyKarmicInfluences", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Daily Ki Calendar .
+        /// </summary>
+        public static string DailyKiCalendar {
+            get {
+                return ResourceManager.GetString("DailyKiCalendar", resourceCulture);
             }
         }
         
@@ -10464,10 +10473,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Our lives also move through monthly cycles. The Energy associated with the month affects us on a more immediate and emotional level.
+        ///    Our lives also move in monthly cycles. The Energy associated with the month affects us on a more immediate and emotional level.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    In addition to the yearly cycles that each our lives move through, there are also smaller, monthly cycles. The energy of the yearly cycle is always felt and is the overarching influence on the direction of our lives. However, the effect of the monthly cycle is more immediate and felt on an emotional level. For example, we could be in a 1 Water year,  [rest of string was truncated]&quot;;.
+        ///    In addition to the yearly cycles that each our lives move through, there are also smaller, monthly cycles. The energy or &apos;Ki&apos; of the yearly cycle or &apos;spiral&apos; is always felt and is the overarching influence in our lives. However, the effect of the monthly ki is more immediate and felt on an emotional level. For example, we could be in the 1 Water house dur [rest of string was truncated]&quot;;.
         /// </summary>
         public static string month_description {
             get {
@@ -16894,13 +16903,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Our lives pass through nine-year cycles, with each year representing one of the nine Energies of the 9 Star Ki system.
+        ///    Our lives pass through each of the houses in nine-year cycles, with each house or year representing one of the nine Energies of the 9 Star Ki system.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Not only does each person have a 9 Star Ki profile, which is determined by their date of birth, but in addition, each of our lives passes through nine-year cycles. Each year represents one of the nine Energies of the 9 Star Ki system and influences our lives in powerful ways. 
+        ///    Not only does each person have a 9 Star Ki birth chart, which is determined by their date of birth, but in addition, each of our lives passes through each of the nine houses in nine-year cycles. Each house is governed by one of the nine Energies of the 9 Star Ki system and influences our lives in powerful ways. 
         ///&lt;/p&gt;
         ///&lt;h5&gt;
-        ///    These nine-year cycles are seasonal in nature, with a spring, summer, a [rest of string was truncated]&quot;;.
+        ///    Thes [rest of string was truncated]&quot;;.
         /// </summary>
         public static string year_description {
             get {

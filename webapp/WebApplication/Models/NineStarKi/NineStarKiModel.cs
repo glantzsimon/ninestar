@@ -262,14 +262,12 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WeakYangOrgans)]
         public EOrgan[] WeakYangOrgans => MainEnergy != null ? MainEnergy.MetaData?.WeakYangOrgans : null;
 
-        public (DateTime PeriodStartOn, DateTime PeriodEndsOn, int MonthlyKi)[] MonthlyPeriods { get; set; }
-
         public (DateTime PeriodStartOn, DateTime PeriodEndsOn, int YearlyKi)[] YearlyPeriods { get; set; }
 
-        /// <summary>
-        /// To do: move to SwissEphem / NineStarService
-        /// </summary>
-        /// <returns></returns>
+        public (DateTime PeriodStartOn, DateTime PeriodEndsOn, int MonthlyKi)[] MonthlyPeriods { get; set; }
+
+        public (DateTime Date, int DailyKi, int? InvertedDailyKi)[] DailyPeriods { get; set; }
+
         public List<Tuple<int, NineStarKiEnergy>> GetYearlyPlanner()
         {
             return GetOrAddToCache($"YearlyPlanner_{SelectedDate.ToString()}", () =>
@@ -285,10 +283,6 @@ namespace K9.WebApplication.Models
             }, TimeSpan.FromDays(30));
         }
 
-        /// <summary>
-        /// TODO: Move this to SwissEphem
-        /// </summary>
-        /// <returns></returns>
         public List<Tuple<int, int, string, NineStarKiEnergy>> GetMonthlyPlanner()
         {
             return GetOrAddToCache($"MonthlyPlanner_{SelectedDate.ToString()}", () =>
@@ -297,7 +291,23 @@ namespace K9.WebApplication.Models
 
                 foreach (var monthlyPeriod in MonthlyPeriods)
                 {
-                    cycles.Add(new Tuple<int, int, string, NineStarKiEnergy>(monthlyPeriod.PeriodStartOn.Year, monthlyPeriod.PeriodStartOn.Month, SelectedDate.Value.ToString("MMMM"), GetPersonalCycleEnergy(monthlyPeriod.MonthlyKi, MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.MonthlyCycleEnergy)));
+                    cycles.Add(new Tuple<int, int, string, NineStarKiEnergy>(monthlyPeriod.PeriodStartOn.Year, monthlyPeriod.PeriodStartOn.Month, monthlyPeriod.PeriodStartOn.ToString("MMMM"), GetPersonalCycleEnergy(monthlyPeriod.MonthlyKi, MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.MonthlyCycleEnergy)));
+                }
+
+                return cycles;
+
+            }, TimeSpan.FromDays(30));
+        }
+
+        public List<Tuple<int, int, int, string, NineStarKiEnergy>> GetDailyPlanner()
+        {
+            return GetOrAddToCache($"DailyPlanner_{SelectedDate.ToString()}", () =>
+            {
+                var cycles = new List<Tuple<int, int, int, string, NineStarKiEnergy>>();
+
+                foreach (var day in DailyPeriods)
+                {
+                    cycles.Add(new Tuple<int, int, int, string, NineStarKiEnergy>(day.Date.Year, day.Date.Month, day.Date.Day, day.Date.ToString("ddd"), GetPersonalCycleEnergy(day.DailyKi, MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.DailyEnergy)));
                 }
 
                 return cycles;

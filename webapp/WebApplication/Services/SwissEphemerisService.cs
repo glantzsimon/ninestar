@@ -2,6 +2,7 @@
 using K9.WebApplication.Packages;
 using SwissEphNet;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using TimeZoneConverter;
 using Xunit.Abstractions;
@@ -35,393 +36,393 @@ namespace K9.WebApplication.Services
 
         public int GetNineStarKiEightyOneYearKi(DateTime selectedDateTime, string timeZoneId)
         {
-            using (var sweph = new SwissEph())
+            string cacheKey = $"{nameof(GetNineStarKiEightyOneYearKi)}_{selectedDateTime:yyyyMMdd}_{timeZoneId}";
+            return GetOrAddToCache(cacheKey, () =>
             {
-                sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
-
-                DateTime selectedDateTimeUT = ConvertToUT(selectedDateTime, timeZoneId);
-                int adjustedYear = AdjustYearForLichun(sweph, selectedDateTimeUT);
-                int periodIndex = (int)Math.Floor((adjustedYear - 1955) / 81.0);
-                return ((((9 - periodIndex) - 1) % 9) + 9) % 9 + 1;
-            }
+                using (var sweph = new SwissEph())
+                {
+                    sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
+                    DateTime selectedDateTimeUT = ConvertToUT(selectedDateTime, timeZoneId);
+                    int adjustedYear = AdjustYearForLichun(sweph, selectedDateTimeUT);
+                    int periodIndex = (int)Math.Floor((adjustedYear - 1955) / 81.0);
+                    return ((((9 - periodIndex) - 1) % 9) + 9) % 9 + 1;
+                }
+            }, TimeSpan.FromDays(30));
         }
 
         public int GetNineStarKiNineYearKi(DateTime selectedDateTime, string timeZoneId)
         {
-            using (var sweph = new SwissEph())
+            string cacheKey = $"{nameof(GetNineStarKiNineYearKi)}_{selectedDateTime:yyyyMMdd}_{timeZoneId}";
+            return GetOrAddToCache(cacheKey, () =>
             {
-                sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
-
-                DateTime selectedDateTimeUT = ConvertToUT(selectedDateTime, timeZoneId);
-                int adjustedYear = AdjustYearForLichun(sweph, selectedDateTimeUT);
-                int periodIndex = (int)Math.Floor((adjustedYear - 1991) / 9.0);
-                return ((((5 - periodIndex) - 1) % 9) + 9) % 9 + 1;
-            }
+                using (var sweph = new SwissEph())
+                {
+                    sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
+                    DateTime selectedDateTimeUT = ConvertToUT(selectedDateTime, timeZoneId);
+                    int adjustedYear = AdjustYearForLichun(sweph, selectedDateTimeUT);
+                    int periodIndex = (int)Math.Floor((adjustedYear - 1991) / 9.0);
+                    return ((((5 - periodIndex) - 1) % 9) + 9) % 9 + 1;
+                }
+            }, TimeSpan.FromDays(30));
         }
 
         public int GetNineStarKiYearlyKi(DateTime selectedDateTime, string timeZoneId)
         {
-            using (var sweph = new SwissEph())
+            string cacheKey = $"{nameof(GetNineStarKiYearlyKi)}_{selectedDateTime:yyyyMMdd}_{timeZoneId}";
+            return GetOrAddToCache(cacheKey, () =>
             {
-                sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
-                DateTime selectedDateTimeUt = ConvertToUT(selectedDateTime, timeZoneId);
-                int adjustedYear = AdjustYearForLichun(sweph, selectedDateTimeUt);
-                return GetNineStarKiNumber(adjustedYear);
-            }
+                using (var sweph = new SwissEph())
+                {
+                    sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
+                    DateTime selectedDateTimeUt = ConvertToUT(selectedDateTime, timeZoneId);
+                    int adjustedYear = AdjustYearForLichun(sweph, selectedDateTimeUt);
+                    return GetNineStarKiNumber(adjustedYear);
+                }
+            }, TimeSpan.FromDays(30));
         }
 
         public int GetNineStarKiMonthlyKi(DateTime selectedDateTime, string timeZoneId, bool invert = false)
         {
-            using (var sweph = new SwissEph())
+            string cacheKey = $"{nameof(GetNineStarKiMonthlyKi)}_{selectedDateTime:yyyyMMdd}_{timeZoneId}_{invert}";
+            return GetOrAddToCache(cacheKey, () =>
             {
-                sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
-                DateTime selectedDateTimeUT = ConvertToUT(selectedDateTime, timeZoneId);
-                int adjustedYear = AdjustYearForLichun(sweph, selectedDateTimeUT);
-                int yearEnergy = GetNineStarKiNumber(adjustedYear, invert);
-                int firstMonth = GetFirstMonthForYearEnergy(yearEnergy);
-                double jd = GetJulianDate(sweph, selectedDateTimeUT);
-                double[] solarTerms = GetSolarTerms(sweph, adjustedYear);
-
-                // There are 12 boundaries defining 12 intervals.
-                for (int i = 0; i < solarTerms.Length - 1; i++)
+                using (var sweph = new SwissEph())
                 {
-                    if (jd >= solarTerms[i] && jd < solarTerms[i + 1])
-                    {
-                        // Descending cycle: subtract i
-                        return ((firstMonth - 1 - i + 9) % 9) + 1;
-                    }
-                }
+                    sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
+                    DateTime selectedDateTimeUT = ConvertToUT(selectedDateTime, timeZoneId);
+                    int adjustedYear = AdjustYearForLichun(sweph, selectedDateTimeUT);
+                    int yearEnergy = GetNineStarKiNumber(adjustedYear, invert);
+                    int firstMonth = GetFirstMonthForYearEnergy(yearEnergy);
+                    double jd = GetJulianDate(sweph, selectedDateTimeUT);
+                    double[] solarTerms = GetSolarTerms(sweph, adjustedYear);
 
-                return ((firstMonth - 1 - (solarTerms.Length - 1) + 9) % 9) + 1;
-            }
+                    // There are 12 boundaries defining 12 intervals.
+                    for (int i = 0; i < solarTerms.Length - 1; i++)
+                    {
+                        if (jd >= solarTerms[i] && jd < solarTerms[i + 1])
+                        {
+                            // Descending cycle: subtract i
+                            return ((firstMonth - 1 - i + 9) % 9) + 1;
+                        }
+                    }
+                    return ((firstMonth - 1 - (solarTerms.Length - 1) + 9) % 9) + 1;
+                }
+            }, TimeSpan.FromDays(30));
         }
 
         public int GetNineStarKiMonthNumber(DateTime selectedDateTime, string timeZoneId)
         {
-            using (var sweph = new SwissEph())
+            string cacheKey = $"{nameof(GetNineStarKiMonthNumber)}_{selectedDateTime:yyyyMMdd}_{timeZoneId}";
+            return GetOrAddToCache(cacheKey, () =>
             {
-                sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
-                DateTime selectedDateTimeUT = ConvertToUT(selectedDateTime, timeZoneId);
-                int adjustedYear = AdjustYearForLichun(sweph, selectedDateTimeUT);
-                double jd = GetJulianDate(sweph, selectedDateTimeUT);
-                double[] solarTerms = GetSolarTerms(sweph, adjustedYear);
-
-                for (int i = 0; i < 11; i++)
+                using (var sweph = new SwissEph())
                 {
-                    if (jd >= solarTerms[i] && jd < solarTerms[i + 1])
+                    sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
+                    DateTime selectedDateTimeUT = ConvertToUT(selectedDateTime, timeZoneId);
+                    int adjustedYear = AdjustYearForLichun(sweph, selectedDateTimeUT);
+                    double jd = GetJulianDate(sweph, selectedDateTimeUT);
+                    double[] solarTerms = GetSolarTerms(sweph, adjustedYear);
+
+                    for (int i = 0; i < 11; i++)
                     {
-                        return i + 2;
+                        if (jd >= solarTerms[i] && jd < solarTerms[i + 1])
+                        {
+                            return i + 2;
+                        }
                     }
+                    return 12;
                 }
-                return 12;
-            }
+            }, TimeSpan.FromDays(30));
         }
 
         public (int DailyKi, int? InvertedDailyKi) GetNineStarKiDailyKi(DateTime selectedDateTime, string timeZoneId)
         {
-            using (var sweph = new SwissEph())
+            string cacheKey = $"{nameof(GetNineStarKiDailyKi)}_{selectedDateTime:yyyyMMdd}_{timeZoneId}";
+            return GetOrAddToCache(cacheKey, () =>
             {
-                sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
-
-                int dayKi = 0;
-                int? invertedKi = null;
-
-                DateTime selectedDateTimeUT = ConvertToUT(selectedDateTime, timeZoneId);
-                DateTime startOfYear = new DateTime(selectedDateTimeUT.Year, 1, 1);
-                DateTime finishOfYear = new DateTime(selectedDateTimeUT.Year, 12, 31);
-                DateTime juneSolstice = FindJuneSolstice(sweph, selectedDateTimeUT.Year).Date;
-                DateTime juneSolsticeAdjustmentDay =
-                    FindFirstJiaZiDayBeforeSolstice(sweph, selectedDateTimeUT.Year, true).Date;
-                DateTime decemberSolstice = FindDecemberSolstice(sweph, selectedDateTimeUT.Year).Date;
-                DateTime decemberSolsticeAdjustmentDay =
-                    FindFirstJiaZiDayBeforeSolstice(sweph, selectedDateTimeUT.Year, false).Date;
-                DateTime juneSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year, true).Date;
-                DateTime decemberSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year, false).Date;
-                DateTime previousDecemberSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year - 1, false).Date;
-                DateTime day = selectedDateTimeUT.Date;
-
-                var predictedJuneSolticeDayKi = NineStarKiModel.GetOppositeEnergyInMagicSquare(IncrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI,
-                    (int)juneSolstice.Subtract(previousDecemberSolsticeJiaDay).TotalDays));
-                var actualJuneSolsticeDayKi = IncrementKi(SEXAGENARY_JUNE_JIA_ZI_DAY_KI, (int)juneSolsticeJiaDay.Subtract(juneSolstice).TotalDays);
-                var juneAdjustmentNeeded = predictedJuneSolticeDayKi != actualJuneSolsticeDayKi;
-                var juneAdjustment = predictedJuneSolticeDayKi - actualJuneSolsticeDayKi;
-
-                var predictedDecSolticeDayKi = NineStarKiModel.GetOppositeEnergyInMagicSquare(DecrementKi(SEXAGENARY_JUNE_JIA_ZI_DAY_KI,
-                    (int)decemberSolstice.Subtract(juneSolsticeJiaDay).TotalDays));
-                var actualDecSolsticeDayKi = DecrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI, (int)decemberSolsticeJiaDay.Subtract(decemberSolstice).TotalDays);
-                var decAdjustmentNeeded = predictedDecSolticeDayKi != actualDecSolsticeDayKi;
-                var decAdjustment = predictedDecSolticeDayKi - actualDecSolsticeDayKi;
-
-                if (day <= juneSolstice.Date)
+                using (var sweph = new SwissEph())
                 {
-                    // Get day ki
-                    if (day > previousDecemberSolsticeJiaDay)
+                    sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
+
+                    int dayKi = 0;
+                    int? invertedKi = null;
+
+                    DateTime selectedDateTimeUT = ConvertToUT(selectedDateTime, timeZoneId);
+                    DateTime startOfYear = new DateTime(selectedDateTimeUT.Year, 1, 1);
+                    DateTime finishOfYear = new DateTime(selectedDateTimeUT.Year, 12, 31);
+                    DateTime juneSolstice = FindJuneSolstice(sweph, selectedDateTimeUT.Year).Date;
+                    DateTime juneSolsticeAdjustmentDay = FindFirstJiaZiDayBeforeSolstice(sweph, selectedDateTimeUT.Year, true).Date;
+                    DateTime decemberSolstice = FindDecemberSolstice(sweph, selectedDateTimeUT.Year).Date;
+                    DateTime decemberSolsticeAdjustmentDay = FindFirstJiaZiDayBeforeSolstice(sweph, selectedDateTimeUT.Year, false).Date;
+                    DateTime juneSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year, true).Date;
+                    DateTime decemberSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year, false).Date;
+                    DateTime previousDecemberSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year - 1, false).Date;
+                    DateTime day = selectedDateTimeUT.Date;
+
+                    var predictedJuneSolticeDayKi = NineStarKiModel.GetOppositeEnergyInMagicSquare(IncrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI,
+                        (int)juneSolstice.Subtract(previousDecemberSolsticeJiaDay).TotalDays));
+                    var actualJuneSolsticeDayKi = IncrementKi(SEXAGENARY_JUNE_JIA_ZI_DAY_KI, (int)juneSolsticeJiaDay.Subtract(juneSolstice).TotalDays);
+                    var juneAdjustmentNeeded = predictedJuneSolticeDayKi != actualJuneSolsticeDayKi;
+                    var juneAdjustment = predictedJuneSolticeDayKi - actualJuneSolsticeDayKi;
+
+                    var predictedDecSolticeDayKi = NineStarKiModel.GetOppositeEnergyInMagicSquare(DecrementKi(SEXAGENARY_JUNE_JIA_ZI_DAY_KI,
+                        (int)decemberSolstice.Subtract(juneSolsticeJiaDay).TotalDays));
+                    var actualDecSolsticeDayKi = DecrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI, (int)decemberSolsticeJiaDay.Subtract(decemberSolstice).TotalDays);
+                    var decAdjustmentNeeded = predictedDecSolticeDayKi != actualDecSolsticeDayKi;
+                    var decAdjustment = predictedDecSolticeDayKi - actualDecSolsticeDayKi;
+
+                    if (day <= juneSolstice.Date)
                     {
-                        var daysFromPreviousDecSolsticeJiaDay = (int)day.Subtract(previousDecemberSolsticeJiaDay).TotalDays;
-                        dayKi = IncrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI, daysFromPreviousDecSolsticeJiaDay);
+                        if (day > previousDecemberSolsticeJiaDay)
+                        {
+                            var daysFromPreviousDecSolsticeJiaDay = (int)day.Subtract(previousDecemberSolsticeJiaDay).TotalDays;
+                            dayKi = IncrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI, daysFromPreviousDecSolsticeJiaDay);
+                        }
+                        else
+                        {
+                            var daysToPreviousDecSolsticeJiaDay = (int)previousDecemberSolsticeJiaDay.Subtract(day).TotalDays;
+                            dayKi = DecrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI, daysToPreviousDecSolsticeJiaDay);
+                        }
+
+                        if (juneAdjustmentNeeded && day >= juneSolsticeAdjustmentDay)
+                        {
+                            dayKi = AdjustKi(dayKi, juneAdjustment);
+                        }
+                        if (day == juneSolstice)
+                        {
+                            invertedKi = dayKi;
+                            dayKi = NineStarKiModel.GetOppositeEnergyInMagicSquare(dayKi);
+                        }
+                    }
+                    else if (day > juneSolstice && day <= decemberSolstice)
+                    {
+                        if (day < juneSolsticeJiaDay)
+                        {
+                            var daysToNextJuneSolsticeJiaDay = (int)juneSolsticeJiaDay.Subtract(day).TotalDays;
+                            dayKi = IncrementKi(SEXAGENARY_JUNE_JIA_ZI_DAY_KI, daysToNextJuneSolsticeJiaDay);
+                        }
+                        else
+                        {
+                            var daysFromJuneSolsticeJiaDay = (int)day.Subtract(juneSolsticeJiaDay).TotalDays;
+                            dayKi = DecrementKi(SEXAGENARY_JUNE_JIA_ZI_DAY_KI, daysFromJuneSolsticeJiaDay);
+                        }
+
+                        if (decAdjustmentNeeded && day >= decemberSolsticeAdjustmentDay)
+                        {
+                            dayKi = AdjustKi(dayKi, decAdjustment);
+                        }
+                        if (day == decemberSolstice)
+                        {
+                            invertedKi = dayKi;
+                            dayKi = NineStarKiModel.GetOppositeEnergyInMagicSquare(dayKi);
+                        }
                     }
                     else
                     {
-                        var daysToPreviousDecSolsticeJiaDay = (int)previousDecemberSolsticeJiaDay.Subtract(day).TotalDays;
-                        dayKi = DecrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI, daysToPreviousDecSolsticeJiaDay);
+                        dayKi = IncrementKi(actualDecSolsticeDayKi,
+                            (int)day.Subtract(decemberSolstice).TotalDays);
                     }
 
-                    // Adjust if needed
-                    if (juneAdjustmentNeeded && day >= juneSolsticeAdjustmentDay)
-                    {
-                        dayKi = AdjustKi(dayKi, juneAdjustment);
-                    }
-                    if (day == juneSolstice)
-                    {
-                        invertedKi = dayKi;
-                        dayKi = NineStarKiModel.GetOppositeEnergyInMagicSquare(dayKi);
-                    }
+                    return (dayKi, invertedKi);
                 }
-                else if (day > juneSolstice && day <= decemberSolstice)
-                {
-                    // Get day ki
-                    if (day < juneSolsticeJiaDay)
-                    {
-                        var daysToNextJuneSolsticeJiaDay = (int)juneSolsticeJiaDay.Subtract(day).TotalDays;
-                        dayKi = IncrementKi(SEXAGENARY_JUNE_JIA_ZI_DAY_KI, daysToNextJuneSolsticeJiaDay);
-
-                    }
-                    else
-                    {
-                        var daysFromJuneSolsticeJiaDay = (int)day.Subtract(juneSolsticeJiaDay).TotalDays;
-                        dayKi = DecrementKi(SEXAGENARY_JUNE_JIA_ZI_DAY_KI, daysFromJuneSolsticeJiaDay);
-                    }
-
-                    // Adjust if needed
-                    if (decAdjustmentNeeded && day >= decemberSolsticeAdjustmentDay)
-                    {
-                        dayKi = AdjustKi(dayKi, decAdjustment);
-                    }
-                    if (day == decemberSolstice)
-                    {
-                        invertedKi = dayKi;
-                        dayKi = NineStarKiModel.GetOppositeEnergyInMagicSquare(dayKi);
-                    }
-                }
-                else // day > decemberSolstice
-                {
-                    dayKi = IncrementKi(actualDecSolsticeDayKi,
-                        (int)day.Subtract(decemberSolstice).TotalDays);
-                }
-
-                return (dayKi, invertedKi);
-            }
+            }, TimeSpan.FromDays(30));
         }
 
         public int GetNineStarKiHourlyKi(DateTime selectedDateTime, string timeZoneId)
         {
-            using (var sweph = new SwissEph())
+            string cacheKey = $"{nameof(GetNineStarKiHourlyKi)}_{selectedDateTime:yyyyMMddHH}_{timeZoneId}";
+            return GetOrAddToCache(cacheKey, () =>
             {
-                sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
-
-                DateTime selectedDateTimeUT = ConvertToUT(selectedDateTime, timeZoneId);
-                DateTime juneSolstice = FindJuneSolstice(sweph, selectedDateTimeUT.Year).Date;
-                DateTime decemberSolstice = FindDecemberSolstice(sweph, selectedDateTimeUT.Year).Date;
-                DateTime juneSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year, true).Date.AddHours(1);
-                DateTime decemberSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year, false).Date.AddHours(1);
-                DateTime previousDecemberSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year - 1, false).Date.AddHours(1);
-                DateTime day = selectedDateTimeUT.Date;
-                int hourKi = 0;
-
-                if (day <= juneSolstice)
+                using (var sweph = new SwissEph())
                 {
-                    if (day > previousDecemberSolsticeJiaDay.Date)
+                    sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
+                    DateTime selectedDateTimeUT = ConvertToUT(selectedDateTime, timeZoneId);
+                    DateTime juneSolstice = FindJuneSolstice(sweph, selectedDateTimeUT.Year).Date;
+                    DateTime decemberSolstice = FindDecemberSolstice(sweph, selectedDateTimeUT.Year).Date;
+                    DateTime juneSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year, true).Date.AddHours(1);
+                    DateTime decemberSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year, false).Date.AddHours(1);
+                    DateTime previousDecemberSolsticeJiaDay = FindFirstJiaZiDayAfterSolstice(sweph, selectedDateTimeUT.Year - 1, false).Date.AddHours(1);
+                    DateTime day = selectedDateTimeUT.Date;
+                    int hourKi = 0;
+
+                    if (day <= juneSolstice)
                     {
-                        var hoursFromPreviousDecSolsticeJiaDay = (int)selectedDateTimeUT.Subtract(previousDecemberSolsticeJiaDay).TotalHours / 2 + 1;
-                        hourKi = IncrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI, hoursFromPreviousDecSolsticeJiaDay);
+                        if (day > previousDecemberSolsticeJiaDay.Date)
+                        {
+                            var hoursFromPreviousDecSolsticeJiaDay = (int)selectedDateTimeUT.Subtract(previousDecemberSolsticeJiaDay).TotalHours / 2 + 1;
+                            hourKi = IncrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI, hoursFromPreviousDecSolsticeJiaDay);
+                        }
+                        else
+                        {
+                            var hoursToPreviousDecSolsticeJiaDay = (int)previousDecemberSolsticeJiaDay.Subtract(selectedDateTimeUT).TotalHours / 2 + 1;
+                            hourKi = DecrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI, hoursToPreviousDecSolsticeJiaDay);
+                        }
+                    }
+                    else if (day > juneSolstice && day <= decemberSolstice)
+                    {
+                        if (day < juneSolsticeJiaDay.Date)
+                        {
+                            var hoursToNextJuneSolsticeJiaDay = (int)juneSolsticeJiaDay.Subtract(selectedDateTimeUT).TotalHours / 2 + 1;
+                            hourKi = IncrementKi(SEXAGENARY_JUNE_JIA_ZI_DAY_KI, hoursToNextJuneSolsticeJiaDay);
+                        }
+                        else
+                        {
+                            var hoursFromJuneSolsticeJiaDay = (int)selectedDateTimeUT.Subtract(juneSolsticeJiaDay).TotalHours / 2 + 1;
+                            hourKi = DecrementKi(SEXAGENARY_JUNE_JIA_ZI_DAY_KI, hoursFromJuneSolsticeJiaDay);
+                        }
                     }
                     else
                     {
-                        var hoursToPreviousDecSolsticeJiaDay = (int)previousDecemberSolsticeJiaDay.Subtract(selectedDateTimeUT).TotalHours / 2 + 1;
-                        hourKi = DecrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI, hoursToPreviousDecSolsticeJiaDay);
+                        if (day < decemberSolsticeJiaDay.Date)
+                        {
+                            var hoursToNextSolsticeJiaDay = (int)decemberSolsticeJiaDay.Subtract(selectedDateTimeUT).TotalHours / 2 + 1;
+                            hourKi = IncrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI, hoursToNextSolsticeJiaDay);
+                        }
+                        else
+                        {
+                            var hoursFromSolsticeJiaDay = (int)selectedDateTimeUT.Subtract(decemberSolsticeJiaDay).TotalHours / 2 + 1;
+                            hourKi = DecrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI, hoursFromSolsticeJiaDay);
+                        }
                     }
-                }
-                else if (day > juneSolstice && day <= decemberSolstice)
-                {
-                    if (day < juneSolsticeJiaDay.Date)
-                    {
-                        var hoursToNextJuneSolsticeJiaDay = (int)juneSolsticeJiaDay.Subtract(selectedDateTimeUT).TotalHours / 2 + 1;
-                        hourKi = IncrementKi(SEXAGENARY_JUNE_JIA_ZI_DAY_KI, hoursToNextJuneSolsticeJiaDay);
 
-                    }
-                    else
-                    {
-                        var hoursFromJuneSolsticeJiaDay = (int)selectedDateTimeUT.Subtract(juneSolsticeJiaDay).TotalHours / 2 + 1;
-                        hourKi = DecrementKi(SEXAGENARY_JUNE_JIA_ZI_DAY_KI, hoursFromJuneSolsticeJiaDay);
-                    }
+                    return hourKi;
                 }
-                else // day > decemberSolstice
-                {
-                    if (day < decemberSolsticeJiaDay.Date)
-                    {
-                        var hoursToNextSolsticeJiaDay = (int)decemberSolsticeJiaDay.Subtract(selectedDateTimeUT).TotalHours / 2 + 1;
-                        hourKi = IncrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI, hoursToNextSolsticeJiaDay);
-
-                    }
-                    else
-                    {
-                        var hoursFromSolsticeJiaDay = (int)selectedDateTimeUT.Subtract(decemberSolsticeJiaDay).TotalHours / 2 + 1;
-                        hourKi = DecrementKi(SEXAGENARY_DECEMBER_JIA_ZI_DAY_KI, hoursFromSolsticeJiaDay);
-                    }
-                }
-
-                return hourKi;
-            }
+            }, TimeSpan.FromDays(30));
         }
 
         public (DateTime PeriodStartOn, DateTime PeriodEndsOn) GetNineStarKiMonthlyPeriodBoundaries(DateTime selectedDateTime, string timeZoneId)
         {
-            using (var sweph = new SwissEph())
+            string cacheKey = $"{nameof(GetNineStarKiMonthlyPeriodBoundaries)}_{selectedDateTime:yyyyMMdd}_{timeZoneId}";
+            return GetOrAddToCache(cacheKey, () =>
             {
-                sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
-
-                // Convert to UT using your method.
-                DateTime selectedUT = ConvertToUT(selectedDateTime, timeZoneId);
-
-                // Determine the “adjusted year” (using your Lichun adjustment).
-                int adjustedYear = AdjustYearForLichun(sweph, selectedUT);
-
-                // Get the 12 solar term boundaries for this adjusted year.
-                double[] solarTerms = GetSolarTerms(sweph, adjustedYear);
-                DateTime[] solarTermDates = new DateTime[solarTerms.Length];
-                for (int i = 0; i < solarTerms.Length; i++)
+                using (var sweph = new SwissEph())
                 {
-                    // Convert each solar term (Julian Day) to DateTime.
-                    solarTermDates[i] = JulianDayToDateTime(sweph, solarTerms[i]).Date;
-                }
-
-                // Find the interval containing the selected date.
-                DateTime periodStart = DateTime.MinValue;
-                DateTime periodEnd = DateTime.MinValue;
-                bool found = false;
-                for (int i = 0; i < solarTermDates.Length - 1; i++)
-                {
-                    // Use an inclusive start and exclusive end boundary.
-                    if (selectedUT.Date >= solarTermDates[i] && selectedUT.Date < solarTermDates[i + 1])
+                    sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
+                    DateTime selectedUT = ConvertToUT(selectedDateTime, timeZoneId);
+                    int adjustedYear = AdjustYearForLichun(sweph, selectedUT);
+                    double[] solarTerms = GetSolarTerms(sweph, adjustedYear);
+                    DateTime[] solarTermDates = new DateTime[solarTerms.Length];
+                    for (int i = 0; i < solarTerms.Length; i++)
                     {
-                        periodStart = solarTermDates[i];
-                        // End on the day before the next solar term.
-                        periodEnd = solarTermDates[i + 1].AddDays(-1);
-                        found = true;
-                        break;
+                        solarTermDates[i] = JulianDayToDateTime(sweph, solarTerms[i]).Date;
                     }
-                }
 
-                // If the selected date is on or after the last solar term, use the last interval.
-                if (!found && selectedUT.Date >= solarTermDates[solarTermDates.Length - 1])
-                {
-                    periodStart = solarTermDates[solarTermDates.Length - 1];
-                    // For the next boundary, compute the Lichun of next year (first solar term of next cycle).
-                    double jdNextLichun = GetSolarTerm(sweph, adjustedYear + 1, 315.0);
-                    DateTime nextLichunDate = JulianDayToDateTime(sweph, jdNextLichun).Date;
-                    periodEnd = nextLichunDate.AddDays(-1);
-                }
+                    DateTime periodStart = DateTime.MinValue;
+                    DateTime periodEnd = DateTime.MinValue;
+                    bool found = false;
+                    for (int i = 0; i < solarTermDates.Length - 1; i++)
+                    {
+                        if (selectedUT.Date >= solarTermDates[i] && selectedUT.Date < solarTermDates[i + 1])
+                        {
+                            periodStart = solarTermDates[i];
+                            periodEnd = solarTermDates[i + 1].AddDays(-1);
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (!found && selectedUT.Date >= solarTermDates[solarTermDates.Length - 1])
+                    {
+                        periodStart = solarTermDates[solarTermDates.Length - 1];
+                        double jdNextLichun = GetSolarTerm(sweph, adjustedYear + 1, 315.0);
+                        DateTime nextLichunDate = JulianDayToDateTime(sweph, jdNextLichun).Date;
+                        periodEnd = nextLichunDate.AddDays(-1);
+                    }
 
-                return (periodStart, periodEnd);
-            }
+                    return (periodStart, periodEnd);
+                }
+            }, TimeSpan.FromDays(30));
         }
 
         public (DateTime PeriodStartOn, DateTime PeriodEndsOn, int MonthlyKi)[] GetNineStarKiMonthlyPeriods(DateTime selectedDateTime, string timeZoneId)
         {
-            using (var sweph = new SwissEph())
+            string cacheKey = $"{nameof(GetNineStarKiMonthlyPeriods)}_{selectedDateTime:yyyyMMdd}_{timeZoneId}";
+            return GetOrAddToCache(cacheKey, () =>
             {
-                sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
-
-                // Convert the provided datetime to UT.
-                DateTime selectedUT = ConvertToUT(selectedDateTime, timeZoneId);
-
-                // Determine the "adjusted" Nine Star Ki year (based on your Lìchūn adjustment).
-                int adjustedYear = AdjustYearForLichun(sweph, selectedUT);
-
-                // Get the 12 solar term boundaries for this adjusted year.
-                double[] solarTerms = GetSolarTerms(sweph, adjustedYear);
-
-                // Convert each solar term (Julian Day) to DateTime.
-                DateTime[] solarTermDates = new DateTime[solarTerms.Length];
-                for (int i = 0; i < solarTerms.Length; i++)
+                using (var sweph = new SwissEph())
                 {
-                    solarTermDates[i] = JulianDayToDateTime(sweph, solarTerms[i]).Date;
+                    sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
+                    DateTime selectedUT = ConvertToUT(selectedDateTime, timeZoneId);
+                    int adjustedYear = AdjustYearForLichun(sweph, selectedUT);
+                    double[] solarTerms = GetSolarTerms(sweph, adjustedYear);
+                    DateTime[] solarTermDates = new DateTime[solarTerms.Length];
+                    for (int i = 0; i < solarTerms.Length; i++)
+                    {
+                        solarTermDates[i] = JulianDayToDateTime(sweph, solarTerms[i]).Date;
+                    }
+
+                    var periods = new (DateTime PeriodStartOn, DateTime PeriodEndsOn, int MonthlyKi)[12];
+                    for (int i = 0; i < solarTermDates.Length - 1; i++)
+                    {
+                        var solarTermDate = solarTermDates[i];
+                        var monthlyKi = GetNineStarKiMonthlyKi(solarTermDate.AddDays(1), timeZoneId);
+                        periods[i] = (solarTermDate, solarTermDates[i + 1].AddDays(-1), monthlyKi);
+                    }
+
+                    double jdNextLichun = GetSolarTerm(sweph, adjustedYear + 1, 315.0);
+                    DateTime nextLichunDate = JulianDayToDateTime(sweph, jdNextLichun).Date;
+                    var lastSolarTermDate = solarTermDates[11];
+                    var lastMonthlyKi = GetNineStarKiMonthlyKi(lastSolarTermDate.AddDays(1), timeZoneId);
+                    periods[11] = (lastSolarTermDate, nextLichunDate.AddDays(-1), lastMonthlyKi);
+
+                    return periods;
                 }
-
-                // Build an array of 12 periods.
-                // For each period, the start date is the solar term date,
-                // and the period ends on the day before the next solar term.
-                var periods = new (DateTime PeriodStartOn, DateTime PeriodEndsOn, int MonthlyKi)[12];
-
-                // Periods 0 to 10: use adjacent solar term dates.
-                for (int i = 0; i < solarTermDates.Length - 1; i++)
-                {
-                    var solarTermDate = solarTermDates[i];
-                    var monthlyKi = GetNineStarKiMonthlyKi(solarTermDate, timeZoneId);
-                    periods[i] = (solarTermDate, solarTermDates[i + 1].AddDays(-1), monthlyKi);
-                }
-
-                // For the 12th period (index 11): the start is the last solar term of this adjusted year.
-                // To get the end boundary, we compute next year's Lìchūn (which is the first solar term of the next cycle)
-                // and subtract one day.
-                double jdNextLichun = GetSolarTerm(sweph, adjustedYear + 1, 315.0);
-                DateTime nextLichunDate = JulianDayToDateTime(sweph, jdNextLichun).Date;
-                var lastSolarTermDate = solarTermDates[11];
-                var lastMonthlyKi = GetNineStarKiMonthlyKi(lastSolarTermDate, timeZoneId);
-                periods[11] = (lastSolarTermDate, nextLichunDate.AddDays(-1), lastMonthlyKi);
-
-                return periods;
-            }
+            }, TimeSpan.FromDays(30));
         }
 
         public (DateTime YearStart, DateTime YearEnd, int YearlyKi)[] GetNineStarKiYearlyPeriods(DateTime selectedDateTime, string timeZoneId)
         {
-            using (var sweph = new SwissEph())
+            string cacheKey = $"{nameof(GetNineStarKiYearlyPeriods)}_{selectedDateTime:yyyyMMdd}_{timeZoneId}";
+            return GetOrAddToCache(cacheKey, () =>
             {
-                // Set the ephemeris path.
-                sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
-
-                // Convert the provided datetime to UT.
-                DateTime selectedUT = ConvertToUT(selectedDateTime, timeZoneId);
-
-                // Determine the "adjusted" Nine Star Ki year (based on your Lìchūn adjustment).
-                int adjustedYear = AdjustYearForLichun(sweph, selectedUT);
-
-                // Define the range:
-                // We'll compute boundaries from (adjustedYear - 9) to (adjustedYear + 9) inclusive.
-                // This gives us 19 boundary dates, which in turn define 18 yearly periods.
-                int startYear = adjustedYear - 9;
-                int endYear = adjustedYear + 9;
-                int numBoundaries = endYear - startYear + 1;  // Should equal 19.
-
-                DateTime[] boundaries = new DateTime[numBoundaries];
-                for (int i = 0; i < numBoundaries; i++)
+                using (var sweph = new SwissEph())
                 {
-                    int year = startYear + i;
-                    // Compute Lìchūn for this year (the solar term at 315°).
-                    double jd = GetSolarTerm(sweph, year, 315.0);
-                    boundaries[i] = JulianDayToDateTime(sweph, jd).Date;
+                    sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
+                    DateTime selectedUT = ConvertToUT(selectedDateTime, timeZoneId);
+                    int adjustedYear = AdjustYearForLichun(sweph, selectedUT);
+                    int startYear = adjustedYear - 9;
+                    int endYear = adjustedYear + 9;
+                    int numBoundaries = endYear - startYear + 1;  // 19 boundaries
+                    DateTime[] boundaries = new DateTime[numBoundaries];
+                    for (int i = 0; i < numBoundaries; i++)
+                    {
+                        int year = startYear + i;
+                        double jd = GetSolarTerm(sweph, year, 315.0);
+                        boundaries[i] = JulianDayToDateTime(sweph, jd).Date;
+                    }
+
+                    int numPeriods = numBoundaries - 1; // 18 periods
+                    var periods = new (DateTime YearStart, DateTime YearEnd, int YearlyKi)[numPeriods];
+
+                    for (int i = 0; i < numPeriods; i++)
+                    {
+                        DateTime yearStart = boundaries[i];
+                        DateTime yearEnd = boundaries[i + 1].AddDays(-1);
+                        int yearlyKi = GetNineStarKiYearlyKi(yearStart.AddDays(1), timeZoneId);
+                        periods[i] = (yearStart, yearEnd, yearlyKi);
+                    }
+
+                    return periods;
                 }
-
-                // Now, create 18 periods from the 19 boundary dates.
-                int numPeriods = numBoundaries - 1;  // 18 periods.
-                var periods = new (DateTime YearStart, DateTime YearEnd, int YearlyKi)[numPeriods];
-
-                for (int i = 0; i < numPeriods; i++)
-                {
-                    DateTime yearStart = boundaries[i];
-                    // Each period ends the day before the next Lìchūn.
-                    DateTime yearEnd = boundaries[i + 1].AddDays(-1);
-                    // Compute the yearly Ki for this period.
-                    // (Assume that the yearly Ki is determined from the period's starting Lìchūn date.)
-                    int yearlyKi = GetNineStarKiYearlyKi(yearStart, timeZoneId);
-                    periods[i] = (yearStart, yearEnd, yearlyKi);
-                }
-
-                return periods;
-            }
+            }, TimeSpan.FromDays(30));
         }
 
+        public (DateTime Day, int DailyKi, int? InvertedDailyKi)[] GetNineStarKiDailyEnergiesForMonth(DateTime selectedDateTime, string timeZoneId)
+        {
+            string cacheKey = $"{nameof(GetNineStarKiDailyEnergiesForMonth)}_{selectedDateTime:yyyyMMdd}_{timeZoneId}";
+            return GetOrAddToCache(cacheKey, () =>
+            {
+                var (PeriodStartOn, PeriodEndsOn) = GetNineStarKiMonthlyPeriodBoundaries(selectedDateTime, timeZoneId);
+                var dailyEnergies = new List<(DateTime Day, int DailyKi, int? InvertedDailyKi)>();
+
+                for (DateTime day = PeriodStartOn; day <= PeriodEndsOn; day = day.AddDays(1))
+                {
+                    var dailyKi = GetNineStarKiDailyKi(day, timeZoneId);
+                    dailyEnergies.Add((day, dailyKi.DailyKi, dailyKi.InvertedDailyKi));
+                }
+
+                return dailyEnergies.ToArray();
+            }, TimeSpan.FromDays(30));
+        }
 
         private DateTime FindFirstJiaZiDayAfterSolstice(SwissEph sweph, int year, bool isJuneSolstice)
         {

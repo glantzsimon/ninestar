@@ -4702,6 +4702,9 @@
   <data name="Reflective" xml:space="preserve">
     <value>Reflective</value>
   </data>
+  <data name="DailyKiCalendar" xml:space="preserve">
+    <value>Daily Ki Calendar </value>
+  </data>
   <data name="DailyPrediction" xml:space="preserve">
     <value>Daily Prediction</value>
   </data>

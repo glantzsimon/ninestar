@@ -48,7 +48,7 @@ namespace K9.WebApplication.Controllers
 
                 if (model.PersonModel != null || model.SelectedDate != DateTime.Today)
                 {
-                    var selectedDate = model.SelectedDate ?? DateTime.Today;
+                    var selectedDate = model.SelectedDate ?? DateTime.UtcNow;
                     var isScrollToCyclesOverview = model.IsScrollToCyclesOverview;
                     var activeTabId = model.ActiveCycleTabId;
 

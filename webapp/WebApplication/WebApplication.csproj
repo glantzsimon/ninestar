@@ -1634,6 +1634,7 @@
     <Content Include="Views\Shared\EditorTemplates\CalculationMethod.cshtml" />
     <Content Include="Views\Home\CalculationMethods.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\TimeSpan.cshtml" />
+    <Content Include="Views\Predictions\_DailyKiCalendar.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -44,26 +44,22 @@
                     <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/mirror-energy.png');"></div>
                 </a>
             </li>
-
-            @if (Model.PersonModel.IsSixteenOrOver())
-            {
-                <li>
-                    <a data-toggle="tab" href="#sexuality">
-                        @Dictionary.SexualityLabel
-                        <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/sexuality.png');"></div>
-                    </a>
-                </li>
-            }
             <li>
-                <a data-toggle="tab" href="#health">
-                    @Dictionary.Health
-                    <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/health.png');"></div>
+                <a data-toggle="tab" href="#daystar">
+                    @Dictionary.DayStarLabel
+                    <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/daystar.png');"></div>
                 </a>
             </li>
             <li>
-                <a data-toggle="tab" href="#career">
-                    @Dictionary.Career
-                    <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/career.png');"></div>
+                <a data-toggle="tab" href="#generational">
+                    @Dictionary.GenerationalEnergyLabel
+                    <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/generation.png');"></div>
+                </a>
+            </li>
+            <li>
+                <a data-toggle="tab" href="#epoch">
+                    @Dictionary.EpochEnergyLabel
+                    <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/epoch.png');"></div>
                 </a>
             </li>
         </ul>
@@ -81,12 +77,14 @@
             </div>
 
             <div id="character" class="tab-pane fade @childActiveClass">
-                @Html.Panel(Dictionary.CharacterEnergyLabel, $"{Dictionary.CharacterEnergyDescription} {Html.Partial("_ClickOnATabBelow").ToString()}")
+                @Html.Panel(Dictionary.CharacterEnergyLabel, $"{Dictionary.CharacterEnergyDescription}")
+
+                @Html.Partial("_ProfileHeader", Model.CharacterEnergy)
 
                 <br />
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
-                    @Html.Partial("_ProfileEmotionalEnergyDetails", Model)
+                    @Html.Panel(Model.CharacterEnergy.EnergyTitle, $"{Model.CharacterEnergy.EnergyDescription}{Model.CharacterEnergy.ChildDescription}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 }
 
                 @Html.Partial("_ButtonsFooter")
@@ -95,41 +93,38 @@
             <div id="surface" class="tab-pane fade">
                 @Html.Panel(Dictionary.SurfaceEnergyLabel, Dictionary.SurfaceEnergyDescription)
 
+                @Html.Partial("_ProfileHeader", Model.SurfaceEnergy)
+
                 <br />
                 @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
-                    @Html.Partial("_ProfileMirrorEnergyDetails", Model)
+                    @Html.Panel(Model.SurfaceEnergy.EnergyTitle, Model.SurfaceEnergy.EnergyDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 }
                 @Html.Partial("_ButtonsFooter")
             </div>
 
-            @if (Model.PersonModel.IsSixteenOrOver())
-            {
-                <div id="sexuality" class="tab-pane fade">
-                    @Html.Panel(Dictionary.SexualityTitle, Dictionary.sexuality_description)
+            <div id="generational" class="tab-pane fade">
+                @Html.Panel(Dictionary.GenerationalEnergyLabel, Dictionary.GenerationalEnergyDescription)
 
-                    @using (Html.PayWall(ESection.Profile, Model))
-                    {
-                        @Html.Partial("_ProfileSexuality", Model)
-                    }
-                    @Html.Partial("_ButtonsFooter")
-                </div>
-            }
+                @Html.Partial("_ProfileHeader", Model.PersonalChartEnergies.Generation)
 
-            <div id="health" class="tab-pane fade">
-                @using (Html.PayWall(ESection.Profile, Model))
+                <br />
+                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
-                    @Html.Partial("_ProfileHealth", Model)
+                    @Html.Panel(Model.PersonalChartEnergies.Generation.EnergyTitle, Model.PersonalChartEnergies.Generation.EnergyDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 }
-
-                <hr />
                 @Html.Partial("_ButtonsFooter")
             </div>
 
-            <div id="career" class="tab-pane fade">
-                @using (Html.PayWall(ESection.Profile, Model))
+            <div id="epoch" class="tab-pane fade">
+                @Html.Panel(Dictionary.EpochEnergyLabel, Dictionary.EpochEnergyDescription)
+
+                @Html.Partial("_ProfileHeader", Model.PersonalChartEnergies.Epoch)
+
+                <br />
+                @using (Html.PayWall(ESection.Profile, Model, () => Model?.IsMyProfile))
                 {
-                    @Html.Partial("_ProfileCareer", Model)
+                    @Html.Panel(Model.PersonalChartEnergies.Epoch.EnergyTitle, Model.PersonalChartEnergies.Epoch.EnergyDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 }
                 @Html.Partial("_ButtonsFooter")
             </div>

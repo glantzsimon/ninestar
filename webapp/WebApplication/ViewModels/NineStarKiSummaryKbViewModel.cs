@@ -10,7 +10,7 @@ namespace K9.WebApplication.ViewModels
         public List<NineStarKiEnergySummary> MainEnergies { get; set; }
         public NineStarKiModalitySummaryViewModel DynamicEnergies { get; set; }
         public NineStarKiModalitySummaryViewModel StableEnergies { get; set; }
-        public NineStarKiModalitySummaryViewModel FlexibleEnergies { get; set; }
+        public NineStarKiModalitySummaryViewModel ReflectiveEnergies { get; set; }
 
         public NineStarKiSummaryKbViewModel(NineStarKiSummaryViewModel model)
         {
@@ -20,7 +20,7 @@ namespace K9.WebApplication.ViewModels
                 new List<NineStarKiEnergySummary>(model.MainEnergies.Select(e => new NineStarKiEnergySummary(e)));
             DynamicEnergies = model.DynamicEnergies;
             StableEnergies = model.StableEnergies;
-            FlexibleEnergies = model.FlexibleEnergies;
+            ReflectiveEnergies = model.ReflectiveEnergies;
         }
     }
 }

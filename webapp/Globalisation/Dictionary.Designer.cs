@@ -3597,7 +3597,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;margin-top-0&quot;&gt;
-        ///    When using the Personal Chart and Predictions calculators, there are three calculation methods to choose from:
+        ///    When using the Personal Chart and Predictions calculators, there are two calculation methods to choose from:
         ///&lt;/h5&gt;
         ///
         ///&lt;ul&gt;
@@ -3606,8 +3606,8 @@ namespace K9.Globalisation {
         ///        &lt;p&gt;Uses a Yang materialising spiral for both men&apos;s and women&apos;s personal charts.&lt;/p&gt;
         ///    &lt;/li&gt;
         ///    &lt;li&gt;
-        ///        &lt;p class=&quot;margin-bottom-0&quot;&gt;&lt;strong&gt;Ascending Yin Ki For Personal Charts&lt;/strong&gt;&lt;/p&gt;
-        ///        &lt;p&gt;Uses a Yang materialising spiral for men&apos;s  [rest of string was truncated]&quot;;.
+        ///        &lt;p class=&quot;margin-bottom-0&quot;&gt;&lt;strong&gt;The Chinese Method (Ascending Yin Ki for Females)&lt;/strong&gt;&lt;/p&gt;
+        ///        &lt;p&gt;Uses a Yang materialising spiral [rest of string was truncated]&quot;;.
         /// </summary>
         public static string calculation_methods {
             get {
@@ -3962,6 +3962,15 @@ namespace K9.Globalisation {
         public static string ChildLabel {
             get {
                 return ResourceManager.GetString("ChildLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chinese Method (Ascending Ki for Females).
+        /// </summary>
+        public static string ChineseMethod {
+            get {
+                return ResourceManager.GetString("ChineseMethod", resourceCulture);
             }
         }
         
@@ -5223,6 +5232,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The Day Star Energy is similar to the Mirror Energy in that its influence is more superficial than the yearly or monthly Ki of our birth chart. The Day Star influences &lt;strong&gt;how we appear to others&lt;/strong&gt; and also our general mannerisms and demeanour. 
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string DayStarDescription {
+            get {
+                return ResourceManager.GetString("DayStarDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Day Star.
         /// </summary>
         public static string DayStarLabel {
@@ -5703,16 +5723,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Dynamic Energies get things started, are generally expressive, extroverted and process information quickly
+        ///    Dynamic Energies get things started and are good leaders. They are generally expressive, extroverted, and process information quickly.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Energies {thunder}, {heaven} and {fire} are &apos;Dynamic&apos;. This is similar to the Cardinal Modality of the Zodiac.
+        ///    Energies {thunder}, {heaven}, and {fire} are classified as &apos;Dynamic&apos;. This energy type is similar to the Cardinal Modality of the Zodiac and the &lt;strong&gt;Action Group&lt;/strong&gt; Chinese Zodiac, which includes Tiger, Horse, Dog, and Dragon. These signs are known for their courage, dynamism, leadership, and initiative.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Dynamic Energies, as the name suggests, tend to be proactive and action-oriented. They are not afraid to make the first move and tend to act as a kind of &apos;spark&apos; or ignition to get things started.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Dynamic types tend to be quite communi [rest of string was truncated]&quot;;.
+        ///    Dynamic Energies,  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string dynamic_modality {
             get {
@@ -6290,6 +6307,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The Epoch Ki is the Ki that was present during the 81-year period in which a person was born. Its influence is similar to the generational Ki, but is very broad, affecting multiple generations. The Epoch Ki is visible in the global themes of the period in question and its influence extends to broader areas of human endeavour and activity, such as politics, science, technology, education, philosophy, ethics, culture, economics, and spirituality, as well as trends in the arts, architecture, fashion,  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string EpochEnergyDescription {
+            get {
+                return ResourceManager.GetString("EpochEnergyDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Epoch Ki.
         /// </summary>
         public static string EpochEnergyLabel {
@@ -6846,22 +6873,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Flexible Energies are easy-going, patient and empathetic with a broad perspective and balanced view of the world. They are generally more introverted and sometimes unpredictable.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Energies {water}, {wind} and {lake} are &apos;flexible&apos;. They are generally easy-going and have a gentle, &apos;go with the flow&apos; kind of attitude to life. They are generally happy to adapt to those around them. This modality is similar to the Mutable Modality of the Zodiac.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Flexible Energies are go [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string flexible_modality {
-            get {
-                return ResourceManager.GetString("flexible_modality", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Following.
         /// </summary>
         public static string Following {
@@ -7156,6 +7167,16 @@ namespace K9.Globalisation {
         public static string GenerationalCycleEnergy {
             get {
                 return ResourceManager.GetString("GenerationalCycleEnergy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The Generational Ki is the Ki that was present during the 9-year period in which a person was born. This is wider-reaching and has a less personal effect than the yearly or monthly Ki. Its influence is generally more visible in the behaviour and thinking of the generation or group. The influence of this energy can also be seen and felt in how a person or generation feels they can contribute to solving the problems of the era into which they were born and how that might shape career choices and proj [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string GenerationalEnergyDescription {
+            get {
+                return ResourceManager.GetString("GenerationalEnergyDescription", resourceCulture);
             }
         }
         
@@ -8234,24 +8255,6 @@ namespace K9.Globalisation {
         public static string InvertPersonalYinEnergiesLabel {
             get {
                 return ResourceManager.GetString("InvertPersonalYinEnergiesLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ascending Ki for Female Charts.
-        /// </summary>
-        public static string InvertYinYearsForPersonalChart {
-            get {
-                return ResourceManager.GetString("InvertYinYearsForPersonalChart", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ascending Ki for Females.
-        /// </summary>
-        public static string InvertYinYearsForPersonalChartAndCycles {
-            get {
-                return ResourceManager.GetString("InvertYinYearsForPersonalChartAndCycles", resourceCulture);
             }
         }
         
@@ -12491,6 +12494,28 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reflective.
+        /// </summary>
+        public static string Reflective {
+            get {
+                return ResourceManager.GetString("Reflective", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Reflective Energies are easy-going, patient, and empathetic, with a broad perspective and balanced view of the world. They are generally more introverted and sometimes unpredictable.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Energies {water}, {wind}, and {lake} are classified as &apos;Reflective&apos;. They tend to be easy-going and have a &apos;go with the flow&apos; kind of attitude to life, often happy to adapt to those around them. This group is similar to the Mutable Modality of the Zodiac and the &apos;Thinking Group&apos; of Chinese Astrology,  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string reflective_modality {
+            get {
+                return ResourceManager.GetString("reflective_modality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register Promo Code.
         /// </summary>
         public static string RegisterPromoCode {
@@ -13982,13 +14007,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Stable Energies are steady and solid, generally process information more slowly. They are pragmatic and risk-averse. They like to plan ahead and dislike change instigated by others.
+        ///    Stable Energies are steady and solid. They generally process information more slowly, are pragmatic and risk-averse, and prefer to plan ahead. They are less comfortable with change—especially when it is instigated by others.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Energies {soil}, {coreearth} and {mountain} are &apos;stable&apos;. As you can see, they are all of the Earth elements. Earth is by nature steady, solid and reliable. This modality is similar to the Fixed Modality of the Zodiac.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Stable Energies like to plan ahead and tend to have longer-term goal [rest of string was truncated]&quot;;.
+        ///    Energies {soil}, {coreearth}, and {mountain} are classified as &apos;stable&apos;. As you can see, they are all of the Earth elements. Earth is by nature steady, grounded, and reliable. This group is similar to the Fixed Modality of the Zodiac and the &lt;strong&gt;Relational [rest of string was truncated]&quot;;.
         /// </summary>
         public static string stable_modality {
             get {
@@ -15134,7 +15156,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The 3 Modalities.
+        ///   Looks up a localized string similar to The 3 Modalities / Groups.
         /// </summary>
         public static string ThreeModalitiesTitle {
             get {
@@ -15383,7 +15405,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TimeZone.
+        ///   Looks up a localized string similar to Time Zone.
         /// </summary>
         public static string TimeZone {
             get {

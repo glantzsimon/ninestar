@@ -103,11 +103,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Articles\en-gb\calculation-methods.htm" />
+    <Content Include="Articles\en-gb\EpochEnergyDescription.htm" />
+    <Content Include="Articles\en-gb\GenerationalEnergyDescription.htm" />
     <Content Include="Articles\en-gb\karmic-numerology.htm" />
     <Content Include="Articles\en-gb\compatibility-subtitle.htm" />
     <Content Include="Articles\en-gb\biorhythms.htm" />
     <Content Include="Articles\en-gb\cycles-description.htm" />
     <Content Include="Articles\en-gb\i-ching-info.htm" />
+    <Content Include="Articles\en-gb\DayStarDescription.htm" />
     <Content Include="Biorhythms\en-gb\LevelDescriptions\Creative\creative-critical.htm" />
     <Content Include="Biorhythms\en-gb\LevelDescriptions\Creative\creative-excellent.htm" />
     <Content Include="Biorhythms\en-gb\LevelDescriptions\Creative\creative-extremely-low.htm" />
@@ -442,7 +445,7 @@
     <Content Include="Articles\en-gb\heaven-child.htm" />
     <Content Include="Articles\en-gb\lake-child.htm" />
     <Content Include="Articles\en-gb\character-energies.short-description.htm" />
-    <Content Include="Articles\en-gb\flexible-modality.htm" />
+    <Content Include="Articles\en-gb\reflective-modality.htm" />
     <Content Include="Articles\en-gb\mountain-child.htm" />
     <Content Include="Articles\en-gb\mountain-overview.htm" />
     <Content Include="Articles\en-gb\lake-overview.htm" />

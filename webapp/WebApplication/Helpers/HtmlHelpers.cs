@@ -93,7 +93,7 @@ namespace K9.WebApplication.Helpers
             var baseController = html.ViewContext.Controller as BaseNineStarKiController;
             var activeUserMembership = baseController?.GetActiveUserMembership();
             return html.PayWall<NineStarKiModel>(section, null,
-                () => activeUserMembership?.MembershipOption?.SubscriptionType >= subscriptionType, silent, displayHtml);
+                () => activeUserMembership?.MembershipOption?.SubscriptionType >= subscriptionType || SessionHelper.CurrentUserIsAdmin(), silent, displayHtml);
         }
 
         public static IDisposable PayWall(this HtmlHelper html, ESection section, Func<bool?> condition, bool silent = false, string displayHtml = "")
@@ -113,7 +113,7 @@ namespace K9.WebApplication.Helpers
         {
             var baseController = html.ViewContext.Controller as BaseNineStarKiController;
             var activeUserMembership = baseController?.GetActiveUserMembership();
-            var isAuthorised = activeUserMembership != null && (condition?.Invoke().Value ?? true) || activeUserMembership?.IsAuthorisedToViewPaidContent() == true;
+            var isAuthorised = activeUserMembership != null && (condition?.Invoke().Value ?? true) || activeUserMembership?.IsAuthorisedToViewPaidContent() == true || SessionHelper.CurrentUserIsAdmin();
             var isProfile = typeof(T) == typeof(NineStarKiModel);
             var isCompatibility = typeof(T) == typeof(CompatibilityModel);
             var div = new TagBuilder(Tags.Div);

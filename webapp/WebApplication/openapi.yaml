@@ -499,7 +499,7 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/ModalitySummary"
-        FlexibleEnergies:
+        ReflectiveEnergies:
           type: array
           items:
             $ref: "#/components/schemas/ModalitySummary"

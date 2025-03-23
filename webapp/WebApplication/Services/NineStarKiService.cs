@@ -73,6 +73,12 @@ namespace K9.WebApplication.Services
                 model.MainEnergy.EnergyDescription = GetMainEnergyDescription(model.MainEnergy.Energy);
                 model.CharacterEnergy.EnergyDescription = GetCharacterEnergyDescription(model.CharacterEnergy.Energy);
                 model.SurfaceEnergy.EnergyDescription = GetSurfaceEnergyDescription(model.SurfaceEnergy.Energy);
+
+                // ToDo
+                model.PersonalChartEnergies.Day.EnergyDescription = Dictionary.ComingSoon;
+                model.PersonalChartEnergies.Generation.EnergyDescription = Dictionary.ComingSoon;
+                model.PersonalChartEnergies.Epoch.EnergyDescription = Dictionary.ComingSoon;
+
                 model.Health = GetHealth(model.MainEnergy.Energy);
                 model.Occupations = GetOccupations(model.MainEnergy.Energy);
                 model.PersonalDevelopemnt = GetPersonalDevelopemnt(model.MainEnergy.Energy);
@@ -186,7 +192,7 @@ namespace K9.WebApplication.Services
                 new NineStarKiEnergy(ENineStarKiEnergy.CoreEarth, ENineStarKiEnergyType.MainEnergy),
                 new NineStarKiEnergy(ENineStarKiEnergy.Mountain, ENineStarKiEnergyType.MainEnergy)
             };
-                var flexibleEnergies = new List<NineStarKiEnergy>
+                var reflectiveEnergies = new List<NineStarKiEnergy>
             {
                 new NineStarKiEnergy(ENineStarKiEnergy.Water, ENineStarKiEnergyType.MainEnergy),
                 new NineStarKiEnergy(ENineStarKiEnergy.Wind, ENineStarKiEnergyType.MainEnergy),
@@ -194,7 +200,7 @@ namespace K9.WebApplication.Services
             };
 
                 return new NineStarKiSummaryViewModel(mainEnergies, characterEnergies, dynamicEnergies, staticEnergies,
-                    flexibleEnergies);
+                    reflectiveEnergies);
             }, TimeSpan.FromDays(30));
         }
 

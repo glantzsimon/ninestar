@@ -236,7 +236,7 @@
             public const string MonthlyCycleEnergy = "MonthlyCycleEnergy";
             public const string Stable = "Stable";
             public const string Dynamic = "Dynamic";
-            public const string Flexible = "Flexible";
+            public const string Reflective = "Reflective";
 
             public const string SpleenPancreas = "SpleenPancreas";
             public const string Lungs = "Lungs";
@@ -279,8 +279,7 @@
             public const string AutumnToWinter = "AutumnToWinter";
 
             public const string TraditionalNineStarKi = "TraditionalNineStarKi";
-            public const string InvertYinYearsForPersonalChart = "InvertYinYearsForPersonalChart";
-            public const string InvertYinYearsForPersonalChartAndCycles = "InvertYinYearsForPersonalChartAndCycles";
+            public const string ChineseMethod = "ChineseMethod";
 
             public const string Spring = "Spring";
             public const string Summer = "Summer";

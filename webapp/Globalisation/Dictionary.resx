@@ -662,7 +662,7 @@
     <value>Personal Chart</value>
   </data>
   <data name="ThreeModalitiesTitle" xml:space="preserve">
-    <value>The 3 Modalities</value>
+    <value>The 3 Modalities / Groups</value>
   </data>
   <data name="YinAndYang" xml:space="preserve">
     <value>Yin and Yang</value>
@@ -1309,8 +1309,8 @@
   <data name="dynamic_modality" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\dynamic-modality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="flexible_modality" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\flexible-modality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="reflective_modality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\reflective-modality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="main_energies_short_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\main-energies.short-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -4616,7 +4616,7 @@
     <value>Travelling in this direction is similar to "Hon Mei Satsu" but the problems or difficulties are caused by others.</value>
   </data>
   <data name="TimeZone" xml:space="preserve">
-    <value>TimeZone</value>
+    <value>Time Zone</value>
   </data>
   <data name="TimeZones" xml:space="preserve">
     <value>Time Zones</value>
@@ -4678,19 +4678,28 @@
   <data name="calculation_methods" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\calculation-methods.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="ChineseMethod" xml:space="preserve">
+    <value>Chinese Method (Ascending Ki for Females)</value>
+  </data>
+  <data name="DayStarDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\daystardescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EpochEnergyDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\epochenergydescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GenerationalEnergyDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\generationalenergydescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="InvertCycleEnergiesLabel" xml:space="preserve">
     <value>Use Ascending Ki for Predictions</value>
   </data>
   <data name="InvertPersonalYinEnergiesLabel" xml:space="preserve">
     <value>Use Ascending Ki for Personal Charts</value>
   </data>
-  <data name="InvertYinYearsForPersonalChart" xml:space="preserve">
-    <value>Ascending Ki for Female Charts</value>
-  </data>
-  <data name="InvertYinYearsForPersonalChartAndCycles" xml:space="preserve">
-    <value>Ascending Ki for Females</value>
-  </data>
   <data name="TraditionalNineStarKi" xml:space="preserve">
     <value>Traditionl Nine Star Ki</value>
+  </data>
+  <data name="Reflective" xml:space="preserve">
+    <value>Reflective</value>
   </data>
 </root>

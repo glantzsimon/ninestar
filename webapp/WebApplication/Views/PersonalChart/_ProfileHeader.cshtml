@@ -1,4 +1,11 @@
-﻿@model K9.WebApplication.Models.NineStarKiEnergy
+﻿@using K9.WebApplication.Helpers
+@model K9.WebApplication.Models.NineStarKiEnergy
+
+@{
+    var yinYangUrl = Url.ActionWithBookmark("Index", "KnowledgeBase", "yinyang");
+    var elementUrl = Url.ActionWithBookmark("Index", "KnowledgeBase", Model.ElementName.ToLower());
+    var modalityUrl = Url.ActionWithBookmark("Index", "KnowledgeBase", Model.ModalityName.ToLower());
+}
 
 <div class="container main-content clear-both ninestar-header-container margin-top-5">
     <div class="row">
@@ -6,13 +13,19 @@
             @Html.Partial("../NineStarKi/_Energy")
         </div>
         <div class="col-md-2 col-sm-4 col-xs-6">
-            @Html.Partial("../NineStarKi/_YinYang")
+            <a target="_blank" href="@yinYangUrl">
+                @Html.Partial("../NineStarKi/_YinYang")
+            </a>
         </div>
         <div class="col-md-2 col-sm-4 col-xs-6">
-            @Html.Partial("../NineStarKi/_Element")
+            <a target="_blank" href="@elementUrl">
+                @Html.Partial("../NineStarKi/_Element")
+            </a>
         </div>
         <div class="col-md-2 col-sm-4 col-sm-offset-2 col-md-offset-0 col-xs-6">
-            @Html.Partial("../NineStarKi/_Modality")
+            <a target="_blank" href="@modalityUrl">
+                @Html.Partial("../NineStarKi/_Modality")
+            </a>
         </div>
         <div class="col-md-2 col-sm-4 col-xs-6 col-sm-offset-0 col-xs-offset-3">
             @Html.Partial("../NineStarKi/_Trigram")

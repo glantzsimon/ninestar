@@ -136,7 +136,7 @@ namespace K9.WebApplication.Attributes
         {
             { ENineStarKiModality.Dynamic, Dictionary.dynamic_modality },
             { ENineStarKiModality.Stable, Dictionary.stable_modality },
-            { ENineStarKiModality.Flexible, Dictionary.flexible_modality }
+            { ENineStarKiModality.Reflective, Dictionary.reflective_modality }
         };
 
         /// <summary>

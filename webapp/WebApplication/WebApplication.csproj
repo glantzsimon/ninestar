@@ -934,7 +934,7 @@
     <Content Include="Images\ninestar\energies\water.png" />
     <Content Include="Images\ninestar\energies\wind.png" />
     <Content Include="Images\ninestar\modalities\dynamic.png" />
-    <Content Include="Images\ninestar\modalities\flexible.png" />
+    <Content Include="Images\ninestar\modalities\reflective.png" />
     <Content Include="Images\ninestar\modalities\stable.png" />
     <Content Include="Images\ninestar\organs\gallbladder.png" />
     <Content Include="Images\ninestar\organs\heart.png" />
@@ -946,6 +946,9 @@
     <Content Include="Images\ninestar\organs\spleenpancreas.png" />
     <Content Include="Images\ninestar\organs\stomach.png" />
     <Content Include="Images\ninestar\organs\urinarybladder.png" />
+    <Content Include="Images\ui\daystar.png" />
+    <Content Include="Images\ui\generation.png" />
+    <Content Include="Images\ui\epoch.png" />
     <Content Include="Images\ui\career.png" />
     <Content Include="Images\ui\emotional-energy.png" />
     <Content Include="Images\ui\fundamental-nature.png" />
@@ -1479,8 +1482,6 @@
     <Content Include="Views\Shared\LoginPrompt.cshtml" />
     <Content Include="Views\Shared\_Testimonial.cshtml" />
     <Content Include="Views\PersonalChart\_ButtonsFooter.cshtml" />
-    <Content Include="Views\PersonalChart\_ProfileEmotionalEnergyDetails.cshtml" />
-    <Content Include="Views\PersonalChart\_ProfileMirrorEnergyDetails.cshtml" />
     <Content Include="Views\Compatibility\_CompatibilityProfilesHeader.cshtml" />
     <Content Include="Views\Predictions\_ButtonsFooter.cshtml" />
     <Content Include="Views\Compatibility\_ButtonsFooter.cshtml" />

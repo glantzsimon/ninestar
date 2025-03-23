@@ -20,20 +20,20 @@ namespace K9.WebApplication.ViewModels
         public NineStarKiModalitySummaryViewModel StableEnergies { get; set; }
         
         [ScriptIgnore]
-        public NineStarKiModalitySummaryViewModel FlexibleEnergies { get; set; }
+        public NineStarKiModalitySummaryViewModel ReflectiveEnergies { get; set; }
 
         public NineStarKiSummaryViewModel(
             List<NineStarKiModel> mainEnergies,
             List<NineStarKiModel> characterEnergies,
             List<NineStarKiEnergy> dynamicEnergies,
             List<NineStarKiEnergy> stableEnergies,
-            List<NineStarKiEnergy> flexibleEnergies)
+            List<NineStarKiEnergy> reflectiveEnergies)
         {
             CharacterEnergies = characterEnergies.Select(e => e.CharacterEnergy).OrderBy(e => e.EnergyNumber).ToList();
             MainEnergies = mainEnergies.Select(e => e.MainEnergy).ToList();
             DynamicEnergies = new NineStarKiModalitySummaryViewModel(ENineStarKiModality.Dynamic, dynamicEnergies);
             StableEnergies = new NineStarKiModalitySummaryViewModel(ENineStarKiModality.Stable, stableEnergies); ;
-            FlexibleEnergies = new NineStarKiModalitySummaryViewModel(ENineStarKiModality.Flexible, flexibleEnergies); ;
+            ReflectiveEnergies = new NineStarKiModalitySummaryViewModel(ENineStarKiModality.Reflective, reflectiveEnergies); ;
         }
     }
 }

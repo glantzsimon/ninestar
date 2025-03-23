@@ -1,4 +1,5 @@
 ﻿@using K9.WebApplication.Config
+@using K9.WebApplication.Enums
 @using K9.WebApplication.Helpers
 @using K9.WebApplication.Models
 @using K9.WebApplication.Options
@@ -15,48 +16,62 @@
                         <div class="img-rounded image-pill" style="background-image: url('@($"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/energies/{Model.MainEnergy.EnergyLowerCase}.png")');"></div>
                     </a>
                 </li>
+                @if (Model.PersonModel.IsSixteenOrOver())
+                {
+                    <li>
+                        <a data-toggle="tab" href="#sexuality">
+                            @Dictionary.SexualityLabel
+                            <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/sexuality.png');"></div>
+                        </a>
+                    </li>
+                }
                 <li>
-                    <a data-toggle="tab" href="#element">
-                        @Model.MainEnergy.ElementTitle
-                        <div class="img-rounded image-pill" style="background-image: url('@($"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/elements/{Model.MainEnergy.ElementName.ToLower()}.png")');"></div>
+                    <a data-toggle="tab" href="#health">
+                        @Dictionary.Health
+                        <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/health.png');"></div>
                     </a>
                 </li>
                 <li>
-                    <a data-toggle="tab" href="#modality">
-                        @Model.MainEnergy.ModalityTitle
-                        <div class="img-rounded image-pill" style="background-image: url('@($"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/modalities/{Model.MainEnergy.ModalityName.ToLower()}.png")');"></div>
-                    </a>
-                </li>
-                <li>
-                    <a data-toggle="tab" href="#trigram">
-                        @Dictionary.Trigram
-                        <div class="img-rounded image-pill" style="background-image: url('@($"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/trigrams/trigram-{Model.MainEnergy.EnergyLowerCase}-square.png")');"></div>
-                    </a>
-                </li>
-                <li>
-                    <a data-toggle="tab" href="#yinyang">
-                        @Model.MainEnergy.YinYangName
-                        <div class="img-rounded image-pill" style="background-image: url('@($"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/yinyang/{Model.MainEnergy.YinYangName.ToLower()}.png")');"></div>
+                    <a data-toggle="tab" href="#career">
+                        @Dictionary.Career
+                        <div class="img-rounded image-pill" style="background-image: url('@DefaultValuesConfiguration.Instance.BaseImagesPath/ui/career.png');"></div>
                     </a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div id="details" class="tab-pane fade in active">
-                    @Html.Panel(Model.MainEnergy.EnergyTitle, Model.MainEnergy.EnergyDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                    @Html.Partial("_ProfileHeader", Model.MainEnergy)
 
-                    @Html.Panel(Dictionary.OverviewLabel, Model.Overview, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                    @Html.Panel(Model.MainEnergy.EnergyTitle, $"{Model.MainEnergy.EnergyDescription} {Html.Raw(Model.Overview)}", "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
                 </div>
-                <div id="element" class="tab-pane fade">
-                    @Html.Panel(Model.MainEnergy.ElementTitle, Model.MainEnergy.ElementDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+                @if (Model.PersonModel.IsSixteenOrOver())
+                {
+                    <div id="sexuality" class="tab-pane fade">
+                        @Html.Panel(Dictionary.SexualityTitle, Dictionary.sexuality_description)
+
+                        @using (Html.PayWall(ESection.Profile, Model))
+                        {
+                            @Html.Partial("_ProfileSexuality", Model)
+                        }
+                        @Html.Partial("_ButtonsFooter")
+                    </div>
+                }
+                <div id="health" class="tab-pane fade">
+                    @using (Html.PayWall(ESection.Profile, Model))
+                    {
+                        @Html.Partial("_ProfileHealth", Model)
+                    }
+
+                    <hr />
+                    @Html.Partial("_ButtonsFooter")
                 </div>
-                <div id="modality" class="tab-pane fade">
-                    @Html.Panel(Model.MainEnergy.ModalityTitle, Model.MainEnergy.ModalityDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
-                </div>
-                <div id="trigram" class="tab-pane fade">
-                    @Html.Panel(Model.MainEnergy.TrigramTitle, Model.MainEnergy.TrigramDescription, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
-                </div>
-                <div id="yinyang" class="tab-pane fade">
-                    @Html.Panel(Dictionary.YinAndYang, Dictionary.yinyang, "", "", EPanelImageSize.Default, EPanelImageLayout.Contain)
+
+                <div id="career" class="tab-pane fade">
+                    @using (Html.PayWall(ESection.Profile, Model))
+                    {
+                        @Html.Partial("_ProfileCareer", Model)
+                    }
+                    @Html.Partial("_ButtonsFooter")
                 </div>
             </div>
         </div>

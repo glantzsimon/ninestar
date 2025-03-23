@@ -5,13 +5,13 @@
 <div class="container main-content clear-both daily-planner-container margin-top-5">
     <div class="calendar-grid">
         <!-- Day headers -->
-        <div class="calendar-header">@DayOfWeek.Monday.ToString("D", System.Globalization.CultureInfo.CurrentCulture)</div>
-        <div class="calendar-header">@DayOfWeek.Tuesday.ToString("D", System.Globalization.CultureInfo.CurrentCulture)</div>
-        <div class="calendar-header">@DayOfWeek.Wednesday.ToString("D", System.Globalization.CultureInfo.CurrentCulture)</div>
-        <div class="calendar-header">@DayOfWeek.Thursday.ToString("D", System.Globalization.CultureInfo.CurrentCulture)</div>
-        <div class="calendar-header">@DayOfWeek.Friday.ToString("D", System.Globalization.CultureInfo.CurrentCulture)</div>
-        <div class="calendar-header">@DayOfWeek.Saturday.ToString("D", System.Globalization.CultureInfo.CurrentCulture)</div>
-        <div class="calendar-header">@DayOfWeek.Sunday.ToString("D", System.Globalization.CultureInfo.CurrentCulture)</div>
+        <div class="calendar-header">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Monday)</div>
+        <div class="calendar-header">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Tuesday)</div>
+        <div class="calendar-header">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Wednesday)</div>
+        <div class="calendar-header">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Thursday)</div>
+        <div class="calendar-header">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Friday)</div>
+        <div class="calendar-header">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Saturday)</div>
+        <div class="calendar-header">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Sunday)</div>
 
         @{
             bool isFirst = true;
@@ -27,7 +27,8 @@
             var month = cycle.Item2;
             var day = cycle.Item3;
             var dayName = cycle.Item4;
-            var energy = cycle.Item5;
+            var monthName = cycle.Item5;
+            var energy = cycle.Item6;
 
             // Add padding for first row
             if (isFirst)
@@ -41,11 +42,9 @@
             }
 
             <div class="calendar-day">
-                <div class="date-label">@day</div>
+                <div class="date-label">@monthName @day</div>
                 <div class="custom-content">
                     <img loading="lazy" title="@energy.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @energy.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(energy.Energy.ToString().ToLower()).png" />
-                    <h5 class="margin-bottom-0 padding-bottom-0">@energy.EnergyName</h5>
-                    <p>@energy.CycleDescriptiveName</p>
                 </div>
             </div>
         }

@@ -438,7 +438,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         [InlineData(1981, 6, 16, EGender.Male, ENineStarKiEnergy.Water)]
         [InlineData(1982, 6, 16, EGender.Male, ENineStarKiEnergy.Fire)]
         [InlineData(1979, 2, 5, EGender.Male, ENineStarKiEnergy.Thunder)]
-        [InlineData(1979, 2, 4, EGender.Male, ENineStarKiEnergy.Wind)]
+        [InlineData(1979, 2, 3, EGender.Male, ENineStarKiEnergy.Wind)]
         [InlineData(1976, 2, 1, EGender.Male, ENineStarKiEnergy.Lake)]
         [InlineData(1985, 9, 7, EGender.Male, ENineStarKiEnergy.Heaven)]
         [InlineData(1979, 2, 4, EGender.Male, ENineStarKiEnergy.Thunder, 23)]

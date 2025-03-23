@@ -1,4 +1,5 @@
-﻿using K9.WebApplication.Helpers;
+﻿using K9.WebApplication.Enums;
+using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
@@ -49,12 +50,14 @@ namespace K9.WebApplication.Controllers
                 if (model.PersonModel != null || model.SelectedDate != DateTime.Today)
                 {
                     var selectedDate = model.SelectedDate ?? DateTime.UtcNow;
+                    var invertYinEnergies = model.CalculationMethod == ECalculationMethod.Chinese;
 
                     // Add time of birth
                     model.PersonModel.DateOfBirth = model.PersonModel.DateOfBirth.Add(model.PersonModel.TimeOfBirth);
                  
                     model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false,
-                        selectedDate);
+                        selectedDate, invertYinEnergies, invertYinEnergies);
+
                     model.SelectedDate = selectedDate;
 
                     if (Current.UserId > 0)

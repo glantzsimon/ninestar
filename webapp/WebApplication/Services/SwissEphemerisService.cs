@@ -36,7 +36,7 @@ namespace K9.WebApplication.Services
 
         public int GetNineStarKiEightyOneYearKi(DateTime selectedDateTime, string timeZoneId)
         {
-            string cacheKey = $"{nameof(GetNineStarKiEightyOneYearKi)}_{selectedDateTime:yyyyMMdd}_{timeZoneId}";
+            string cacheKey = $"{nameof(GetNineStarKiEightyOneYearKi)}_{selectedDateTime:yyyyMMddHH}_{timeZoneId}";
             return GetOrAddToCache(cacheKey, () =>
             {
                 using (var sweph = new SwissEph())
@@ -52,7 +52,7 @@ namespace K9.WebApplication.Services
 
         public int GetNineStarKiNineYearKi(DateTime selectedDateTime, string timeZoneId)
         {
-            string cacheKey = $"{nameof(GetNineStarKiNineYearKi)}_{selectedDateTime:yyyyMMdd}_{timeZoneId}";
+            string cacheKey = $"{nameof(GetNineStarKiNineYearKi)}_{selectedDateTime:yyyyMMddHH}_{timeZoneId}";
             return GetOrAddToCache(cacheKey, () =>
             {
                 using (var sweph = new SwissEph())
@@ -68,7 +68,7 @@ namespace K9.WebApplication.Services
 
         public int GetNineStarKiYearlyKi(DateTime selectedDateTime, string timeZoneId)
         {
-            string cacheKey = $"{nameof(GetNineStarKiYearlyKi)}_{selectedDateTime:yyyyMMdd}_{timeZoneId}";
+            string cacheKey = $"{nameof(GetNineStarKiYearlyKi)}_{selectedDateTime:yyyyMMddHH}_{timeZoneId}";
             return GetOrAddToCache(cacheKey, () =>
             {
                 using (var sweph = new SwissEph())
@@ -83,7 +83,7 @@ namespace K9.WebApplication.Services
 
         public int GetNineStarKiMonthlyKi(DateTime selectedDateTime, string timeZoneId, bool invert = false)
         {
-            string cacheKey = $"{nameof(GetNineStarKiMonthlyKi)}_{selectedDateTime:yyyyMMdd}_{timeZoneId}_{invert}";
+            string cacheKey = $"{nameof(GetNineStarKiMonthlyKi)}_{selectedDateTime:yyyyMMddHH}_{timeZoneId}_{invert}";
             return GetOrAddToCache(cacheKey, () =>
             {
                 using (var sweph = new SwissEph())
@@ -112,7 +112,7 @@ namespace K9.WebApplication.Services
 
         public int GetNineStarKiMonthNumber(DateTime selectedDateTime, string timeZoneId)
         {
-            string cacheKey = $"{nameof(GetNineStarKiMonthNumber)}_{selectedDateTime:yyyyMMdd}_{timeZoneId}";
+            string cacheKey = $"{nameof(GetNineStarKiMonthNumber)}_{selectedDateTime:yyyyMMddHH}_{timeZoneId}";
             return GetOrAddToCache(cacheKey, () =>
             {
                 using (var sweph = new SwissEph())
@@ -137,7 +137,7 @@ namespace K9.WebApplication.Services
 
         public (int DailyKi, int? InvertedDailyKi) GetNineStarKiDailyKi(DateTime selectedDateTime, string timeZoneId)
         {
-            string cacheKey = $"{nameof(GetNineStarKiDailyKi)}_{selectedDateTime:yyyyMMdd}_{timeZoneId}";
+            string cacheKey = $"{nameof(GetNineStarKiDailyKi)}_{selectedDateTime:yyyyMMddHH}_{timeZoneId}";
             return GetOrAddToCache(cacheKey, () =>
             {
                 using (var sweph = new SwissEph())
@@ -230,7 +230,7 @@ namespace K9.WebApplication.Services
 
         public int GetNineStarKiHourlyKi(DateTime selectedDateTime, string timeZoneId)
         {
-            string cacheKey = $"{nameof(GetNineStarKiHourlyKi)}_{selectedDateTime:yyyyMMddHH}_{timeZoneId}";
+            string cacheKey = $"{nameof(GetNineStarKiHourlyKi)}_{selectedDateTime:yyyyMMddHHHH}_{timeZoneId}";
             return GetOrAddToCache(cacheKey, () =>
             {
                 using (var sweph = new SwissEph())
@@ -292,7 +292,7 @@ namespace K9.WebApplication.Services
 
         public (DateTime PeriodStartOn, DateTime PeriodEndsOn) GetNineStarKiMonthlyPeriodBoundaries(DateTime selectedDateTime, string timeZoneId)
         {
-            string cacheKey = $"{nameof(GetNineStarKiMonthlyPeriodBoundaries)}_{selectedDateTime:yyyyMMdd}_{timeZoneId}";
+            string cacheKey = $"{nameof(GetNineStarKiMonthlyPeriodBoundaries)}_{selectedDateTime:yyyyMMddHH}_{timeZoneId}";
             return GetOrAddToCache(cacheKey, () =>
             {
                 using (var sweph = new SwissEph())
@@ -335,7 +335,7 @@ namespace K9.WebApplication.Services
 
         public (DateTime PeriodStartOn, DateTime PeriodEndsOn, int MonthlyKi)[] GetNineStarKiMonthlyPeriods(DateTime selectedDateTime, string timeZoneId)
         {
-            string cacheKey = $"{nameof(GetNineStarKiMonthlyPeriods)}_{selectedDateTime:yyyyMMdd}_{timeZoneId}";
+            string cacheKey = $"{nameof(GetNineStarKiMonthlyPeriods)}_{selectedDateTime:yyyyMMddHH}_{timeZoneId}";
             return GetOrAddToCache(cacheKey, () =>
             {
                 using (var sweph = new SwissEph())
@@ -371,7 +371,7 @@ namespace K9.WebApplication.Services
 
         public (DateTime YearStart, DateTime YearEnd, int YearlyKi)[] GetNineStarKiYearlyPeriods(DateTime selectedDateTime, string timeZoneId)
         {
-            string cacheKey = $"{nameof(GetNineStarKiYearlyPeriods)}_{selectedDateTime:yyyyMMdd}_{timeZoneId}";
+            string cacheKey = $"{nameof(GetNineStarKiYearlyPeriods)}_{selectedDateTime:yyyyMMddHH}_{timeZoneId}";
             return GetOrAddToCache(cacheKey, () =>
             {
                 using (var sweph = new SwissEph())
@@ -408,7 +408,7 @@ namespace K9.WebApplication.Services
 
         public (DateTime Day, int DailyKi, int? InvertedDailyKi)[] GetNineStarKiDailyEnergiesForMonth(DateTime selectedDateTime, string timeZoneId)
         {
-            string cacheKey = $"{nameof(GetNineStarKiDailyEnergiesForMonth)}_{selectedDateTime:yyyyMMdd}_{timeZoneId}";
+            string cacheKey = $"{nameof(GetNineStarKiDailyEnergiesForMonth)}_{selectedDateTime:yyyyMMddHH}_{timeZoneId}";
             return GetOrAddToCache(cacheKey, () =>
             {
                 var (PeriodStartOn, PeriodEndsOn) = GetNineStarKiMonthlyPeriodBoundaries(selectedDateTime, timeZoneId);

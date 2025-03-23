@@ -4626,13 +4626,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Core Earth Energies are at the centre of the system and this is often reflected in life, as they are &lt;strong&gt;often at the centre of
-        ///        everything they do&lt;/strong&gt;, in the personal life and at work. Indeed, Core Earth Energies may even feel left out if this is not so.
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Core Earth Energies&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Core Earth Energies sit at the centre of the Nine Star Ki system, and this centrality is often reflected in their lives. They are frequently &lt;strong&gt;at the heart of everything they do&lt;/strong&gt;—in work, family, or social settings. Others naturally &lt;strong&gt;gravitate toward them for support, leadership, and guidance&lt;/strong&gt;. When this central role is absent, they may even feel &lt;strong&gt;unseen or left out&lt;/strong&gt;.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    In their private life, Core Earth Energies &lt;strong&gt;tend to be outspoken and often take the lead&lt;/strong&gt;, with others coming to them for guidance
-        ///    and support. Whilst this can be fulfilling, these Energies &lt;st [rest of string was truncated]&quot;;.
+        ///    In their private lives, Core Ea [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_description {
             get {
@@ -6548,12 +6547,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Fire Energies are bestowed with great &lt;strong&gt;enlightenment and clarity&lt;/strong&gt; and can often steer a path through troubled waters. They are often &lt;strong&gt;highly inspirational&lt;/strong&gt; individuals who are
-        ///    often drawn to situations which require their &lt;strong&gt;brilliant capacity for bringing about change&lt;/strong&gt;.
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Fire Energies&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Fire Energies are known for their &lt;strong&gt;enlightenment, vision, and brilliance&lt;/strong&gt;. They often possess the clarity to &lt;strong&gt;navigate complex or emotionally charged situations&lt;/strong&gt; and are naturally drawn to roles where they can &lt;strong&gt;spark transformation and inspire others&lt;/strong&gt;. Their energy is radiant and captivating, lighting up any space they enter.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Of all nine Energies, 9 Fires are the &lt;strong&gt;most adept at and comfortable with communication&lt;/strong&gt;, especially with regards to emotional and personal experiences. [rest of string was truncated]&quot;;.
+        ///    Of all the Nine Star Ki types, 9 Fires are the &lt;strong&gt;most comfortable and ski [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_description {
             get {
@@ -7425,15 +7424,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Heaven Energies are &lt;strong&gt;natural leaders&lt;/strong&gt; and are comfortable in positions of &lt;strong&gt;authority&lt;/strong&gt;, whether it be in
-        ///    politics and the military, fashion or the arts.
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Heaven Energies&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Heaven Energies are often seen as &lt;strong&gt;natural leaders&lt;/strong&gt;—steady, commanding, and confident in roles of &lt;strong&gt;authority and influence&lt;/strong&gt;. Whether in politics, the military, business, or the arts, they frequently rise to positions of respect and responsibility.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    In addition, their &lt;strong&gt;strong, consistent nature&lt;/strong&gt; means that many 6 Metal Energies have broken new ground in their field and paved the way for future generations.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Heaven Energies can be &lt;strong&gt;very moral and noble&lt;/strong&gt;, with a strong sense of what is right and wrong, [rest of string was truncated]&quot;;.
+        ///    Their &lt;strong&gt;strong and consistent nature&lt;/strong&gt; enables them to break new ground, paving the way for future generations. Many 6 Metal Energies have a lasting impact in  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_description {
             get {
@@ -8543,12 +8539,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The season associated with this Energy is late autumn, when the harvest is in and people are enjoying the fruits of their labours, celebrating and having fun.
-        ///    For this reason, 7 Metal Energies have a propensity for being &lt;strong&gt;pleasure seekers&lt;/strong&gt; and more than any of the other Energies &lt;strong&gt;enjoy spending money on fashion, entertainment and socialising.&lt;/strong&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Lake Energies&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Lake Energies are associated with &lt;strong&gt;late autumn&lt;/strong&gt;, a season of enjoyment, celebration, and reflection after the harvest. This symbolism reflects their &lt;strong&gt;love of pleasure, beauty, and connection&lt;/strong&gt;. Of all the Nine Star Ki Energies, 7 Metal types are perhaps the most inclined to &lt;strong&gt;enjoy fashion, entertainment, and social life&lt;/strong&gt;. They are natural pleasure seekers and know how to have a good time.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Lake Energies are often &lt;strong&gt;great hosts&lt;/strong&gt; and unlike their Yang Metal counterparts are often &lt;s [rest of string was truncated]&quot;;.
+        ///    These individual [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_description {
             get {
@@ -10630,12 +10626,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Being the youngest son, Mountain Energies benefit from the combined experiences of the older siblings. In addition, these Energies &lt;strong&gt;often accumulate wealth from an early age&lt;/strong&gt;, through their own hard work or sometimes an inheritance. Success in achieving material wealth, however, is more a product of Mountain Energies&apos; &lt;strong&gt;singlemindedness&lt;/strong&gt;, than
-        ///    it is their creative talent or charm.
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Mountain Energies&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    As the youngest son in the family archetype, Mountain Energies benefit from the &lt;strong&gt;accumulated wisdom of those who came before&lt;/strong&gt;. They often &lt;strong&gt;develop a strong sense of independence early in life&lt;/strong&gt; and may accumulate material wealth through &lt;strong&gt;persistence, discipline, or inheritance&lt;/strong&gt;. However, their success is typically the result of &lt;strong&gt;single-minded dedication&lt;/strong&gt; rather than charisma or creativity.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This is the more Yang of the Earth Energies and people under this sta [rest of string was truncated]&quot;;.
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_description {
             get {
@@ -13486,7 +13482,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9 Star Ki &amp; Sexuality.
+        ///   Looks up a localized string similar to 9 Star Ki, Relationships &amp; Intimacy.
         /// </summary>
         public static string SexualityTitle {
             get {
@@ -13612,13 +13608,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Soil Energies are &lt;strong&gt;maternal and caring&lt;/strong&gt; in nature and are happiest when they are &lt;strong&gt;serving and supporting others&lt;/strong&gt;.
-        ///    They are &lt;strong&gt;not natural born leaders&lt;/strong&gt;, but &lt;strong&gt;work diligently and tirelessly&lt;/strong&gt; to get the job done. 
-        ///    Number two soil Energies are probably the &lt;strong&gt;most reliable of all the Energies&lt;/strong&gt;.
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Soil Energies&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Soil Energies are generally &lt;strong&gt;patient, resilient and calm&lt;/strong&gt;, although they may be &lt;strong&gt;prone to w [rest of string was truncated]&quot;;.
+        ///    Soil Energies are deeply &lt;strong&gt;maternal, caring, and supportive&lt;/strong&gt; by nature. They find fulfillment in &lt;strong&gt;serving and nurturing others&lt;/strong&gt;, and their presence often brings a sense of stability and comfort to those around them. While they may not be natural-born leaders, they &lt;strong&gt;work diligently and tirelessly&lt;/strong&gt; behind the scenes to get the job done. Number Two Soil Energies are considered among the &lt;strong&gt;most reliable and steadfast&lt;/ [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_description {
             get {
@@ -15235,12 +15227,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Thunder Energies embody the power of spring and have &lt;strong&gt;plenty of vitality and energy&lt;/strong&gt;. They are more about doing than being and like to take &lt;strong&gt;action and initiate&lt;/strong&gt;.
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Thunder Energies&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Thunder Energies embody the vitality and power of springtime. They are &lt;strong&gt;dynamic, action-oriented, and full of life&lt;/strong&gt;, preferring to &lt;strong&gt;do rather than be&lt;/strong&gt;. They are &lt;strong&gt;initiators and catalysts&lt;/strong&gt;, with a boldness that pushes things forward and shakes up stagnation.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Thunder Energies are generally &lt;strong&gt;very positive and joyful&lt;/strong&gt;, and their &lt;strong&gt;optimism and abundant energy&lt;/strong&gt; as well as their ability to take strong action makes them &lt;strong&gt;great pioneers&lt;/strong&gt; in any field they turn their attention to.
-        ///    However, in their constant [rest of string was truncated]&quot;;.
+        ///    Known for their &lt;strong&gt;joyful, optimistic energy&lt;/strong&gt;, Thunder Energies often emerge as &lt;strong&gt;pioneers and change-makers&lt;/strong&gt;. Their en [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_description {
             get {
@@ -16194,11 +16186,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Water people can often appear as &lt;strong&gt;quiet, brooding and contemplative&lt;/strong&gt;, like a deep lake or ocean. On the other hand, just like a bubbling mountain stream, Water people may also be &lt;strong&gt;lively and vivacious&lt;/strong&gt; with a &lt;strong&gt;natural exploratory nature&lt;/strong&gt;. Indeed, &lt;strong&gt;many famous explorers were born under this sign&lt;/strong&gt;.
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Water Energies&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Water people can often appear &lt;strong&gt;quiet, brooding, and contemplative&lt;/strong&gt;, like a deep lake or ocean. Yet, like a bubbling mountain stream, they may also be &lt;strong&gt;lively, curious, and vivacious&lt;/strong&gt;, possessing a &lt;strong&gt;natural sense of adventure and exploration&lt;/strong&gt;. Indeed, &lt;strong&gt;many famous explorers were born under this sign&lt;/strong&gt;.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    &lt;strong&gt;Water needs a container&lt;/strong&gt;, just as the river needs the river banks or the ocean needs the shore. &lt;strong&gt;Without t [rest of string was truncated]&quot;;.
+        ///    &lt;strong&gt;Water needs a container&lt;/strong&gt;, just as a river needs its banks or the ocean it [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_description {
             get {
@@ -16324,7 +16317,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Water Energies&apos; very independen nature coupled with their difficulty to express what they feel deep within them can lead to isolation if they are not careful. 
+        ///    Water Energies&apos; very independent nature coupled with their difficulty to express what they feel deep within them can lead to isolation if they are not careful. 
         ///    It is important for Water Energies to socialise and communicate. In so doing, others will also benefit from their extraordinary intuition and insight.
         ///&lt;/p&gt;.
         /// </summary>
@@ -16335,17 +16328,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    1 Water Energies often have a profound sense of sexual energy
-        ///&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;Relationships and Intimacy for Water Energies&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Of all the nine numbers, 1 VVater Energies tend to have the most profound sense of sexual energy. This is partly due to the fact that, in Chinese medicine, Water controls the function of the reproductive system.
+        ///    Of all the Nine Star Ki types, &lt;strong&gt;1 Water Energies are among the most deeply intuitive and emotionally complex&lt;/strong&gt;, and this extends into their romantic and intimate lives. In traditional Chinese medicine, Water governs the reproductive system, and this symbolic link often corresponds to a &lt;strong&gt;naturally strong connection to sensual and emotional intimacy&lt;/strong&gt;.
         ///&lt;/p&gt;
-        ///&lt;h5&gt;
-        ///    Water can result in two very different outward expressions of sexual energy
-        ///&lt;/h5&gt;
+        ///
+        ///&lt;h4&gt;A Dual Expression of Energy&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Just as water in the natural world can be either fresh and effervescent like that of a stream, or dee [rest of string was truncated]&quot;;.
+        ///    Much like  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_sexuality {
             get {
@@ -16637,11 +16627,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Wind Energies, as the name suggests, can express anything from stillness to a tornado. This Energy is &lt;strong&gt;one of the most changeable and indeed emotional&lt;/strong&gt; of the nine Energies.
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Wind Energies&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Wind Energies, as their name suggests, embody the qualities of movement and transformation. They can express anything from &lt;strong&gt;gentle stillness to sudden intensity&lt;/strong&gt;—like a quiet breeze or a sweeping gust. Among the Nine Star Ki Energies, Wind is &lt;strong&gt;one of the most changeable and emotionally expressive&lt;/strong&gt;.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Like Thunder Energies, also of the element Tree, Wind Energies &lt;strong&gt;can be impulsive&lt;/strong&gt; at times. However, they typically have a &lt;strong&gt;gentler, steadier nature&lt;/strong&gt; than 3 Tree Energies. Similarly, they are generally a lot &lt;strong&gt;more reliable and thoughtful&lt;/strong&gt; than 3 Energie [rest of string was truncated]&quot;;.
+        ///    Like their Thunder counterparts (also of the Tree element), Wind Energies can be &lt;strong&gt;impulsive&lt;/strong&gt;, but typically [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_description {
             get {

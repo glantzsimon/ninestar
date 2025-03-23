@@ -226,7 +226,7 @@ namespace K9.WebApplication.Models
         public string OverviewLabel => MainEnergy != null ? $"{MainEnergy.EnergyNameAndNumber} Overview" : "";
 
         [ScriptIgnore]
-        public string EnergySexualityLabel => MainEnergy != null ? $"{MainEnergy.EnergyNameAndNumber} {Dictionary.SexualityLabel}" : "";
+        public string EnergySexualityLabel => MainEnergy != null ? $"{MainEnergy.EnergyNameAndNumber} {Dictionary.Relationships}" : "";
 
         [ScriptIgnore]
         public string SexualityRelationTypeDetailsStraight => GetSexualityGenderDescription();
@@ -299,15 +299,15 @@ namespace K9.WebApplication.Models
             }, TimeSpan.FromDays(30));
         }
 
-        public List<Tuple<int, int, int, string, NineStarKiEnergy>> GetDailyPlanner()
+        public List<Tuple<int, int, int, string, string, NineStarKiEnergy>> GetDailyPlanner()
         {
             return GetOrAddToCache($"DailyPlanner_{SelectedDate.ToString()}", () =>
             {
-                var cycles = new List<Tuple<int, int, int, string, NineStarKiEnergy>>();
+                var cycles = new List<Tuple<int, int, int, string, string, NineStarKiEnergy>>();
 
                 foreach (var day in DailyPeriods)
                 {
-                    cycles.Add(new Tuple<int, int, int, string, NineStarKiEnergy>(day.Date.Year, day.Date.Month, day.Date.Day, day.Date.ToString("ddd"), GetPersonalCycleEnergy(day.DailyKi, MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.DailyEnergy)));
+                    cycles.Add(new Tuple<int, int, int, string, string, NineStarKiEnergy>(day.Date.Year, day.Date.Month, day.Date.Day, day.Date.ToString("MMM"), day.Date.ToString("ddd"), GetPersonalCycleEnergy(day.DailyKi, MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.DailyEnergy)));
                 }
 
                 return cycles;

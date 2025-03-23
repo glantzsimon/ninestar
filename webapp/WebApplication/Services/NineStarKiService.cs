@@ -38,7 +38,7 @@ namespace K9.WebApplication.Services
         }
 
         public NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, bool isCompatibility = false,
-            bool isMyProfile = false, DateTime? today = null, bool invertPersonalYinEnergies = true, bool invertCycleYinEnergies = true)
+            bool isMyProfile = false, DateTime? today = null, bool invertPersonalYinEnergies = true, bool invertCycleYinEnergies = true, bool includeCycles = true)
         {
             var cacheKey = $"CalculateNineStarKiProfileFromModel_{personModel.DateOfBirth.ToString()}_{personModel.Name}_{personModel.Gender}_{isCompatibility}_{isMyProfile}_{today.ToString()}";
             return GetOrAddToCache(cacheKey, () =>
@@ -47,6 +47,7 @@ namespace K9.WebApplication.Services
                 var selectedDateTime = today == null
                     ? DateTime.UtcNow
                     : today.Value;
+                NineStarKiModel model = null;
 
                 var preciseEpochEnergy = _swissEphemerisService.GetNineStarKiEightyOneYearKi(personModel.DateOfBirth, personModel.TimeZoneId);
                 var preciseGenerationalEnergy = _swissEphemerisService.GetNineStarKiNineYearKi(personModel.DateOfBirth, personModel.TimeZoneId);
@@ -55,27 +56,58 @@ namespace K9.WebApplication.Services
                 var preciseEmotionalEnergyForInvertedYear = _swissEphemerisService.GetNineStarKiMonthlyKi(personModel.DateOfBirth, personModel.TimeZoneId, true);
                 var preciseDayStarEnergy = _swissEphemerisService.GetNineStarKiDailyKi(personModel.DateOfBirth, personModel.TimeZoneId);
                 var preciseHourlyEnergy = _swissEphemerisService.GetNineStarKiHourlyKi(personModel.DateOfBirth, personModel.TimeZoneId);
-
-                var preciseEightyOneYearEnergy = _swissEphemerisService.GetNineStarKiEightyOneYearKi(selectedDateTime, personModel.TimeZoneId);
-                var preciseNineYearEnergy = _swissEphemerisService.GetNineStarKiNineYearKi(selectedDateTime, personModel.TimeZoneId);
-                var preciseYearEnergy = _swissEphemerisService.GetNineStarKiYearlyKi(selectedDateTime, personModel.TimeZoneId);
-                var preciseMonthEnergy = _swissEphemerisService.GetNineStarKiMonthlyKi(selectedDateTime, personModel.TimeZoneId);
-                var preciseDailyEnergy = _swissEphemerisService.GetNineStarKiDailyKi(selectedDateTime, personModel.TimeZoneId);
-                var preciseHourlyCycleEnergy = _swissEphemerisService.GetNineStarKiHourlyKi(selectedDateTime, personModel.TimeZoneId);
-
-                var monthlyPeriods = _swissEphemerisService.GetNineStarKiMonthlyPeriods(selectedDateTime, personModel.TimeZoneId);
-                var yearlyPeriods = _swissEphemerisService.GetNineStarKiYearlyPeriods(selectedDateTime, personModel.TimeZoneId);
-                var dailyPeriods = _swissEphemerisService.GetNineStarKiDailyEnergiesForMonth(selectedDateTime, personModel.TimeZoneId);
-
-                var model = new NineStarKiModel(personModel, preciseEpochEnergy, preciseGenerationalEnergy, preciseMainEnergy, preciseEmotionalEnergy, preciseEmotionalEnergyForInvertedYear, preciseDayStarEnergy.DailyKi, preciseHourlyEnergy,
-                    preciseEightyOneYearEnergy, preciseNineYearEnergy, preciseYearEnergy, preciseMonthEnergy, preciseDailyEnergy.DailyKi, preciseHourlyEnergy, preciseDailyEnergy.InvertedDailyKi, selectedDateTime)
+                
+                if (includeCycles)
                 {
-                    InvertCycleYinEnergies = invertCycleYinEnergies,
-                    InvertPersonalYinEnergies = invertPersonalYinEnergies,
-                    YearlyPeriods = yearlyPeriods,
-                    MonthlyPeriods = monthlyPeriods,
-                    DailyPeriods = dailyPeriods
-                };
+                    var preciseEightyOneYearEnergy =
+                        _swissEphemerisService.GetNineStarKiEightyOneYearKi(selectedDateTime, personModel.TimeZoneId);
+                    var preciseNineYearEnergy =
+                        _swissEphemerisService.GetNineStarKiNineYearKi(selectedDateTime, personModel.TimeZoneId);
+                    var preciseYearEnergy =
+                        _swissEphemerisService.GetNineStarKiYearlyKi(selectedDateTime, personModel.TimeZoneId);
+                    var preciseMonthEnergy =
+                        _swissEphemerisService.GetNineStarKiMonthlyKi(selectedDateTime, personModel.TimeZoneId);
+                    var preciseDailyEnergy =
+                        _swissEphemerisService.GetNineStarKiDailyKi(selectedDateTime, personModel.TimeZoneId);
+                    var preciseHourlyCycleEnergy =
+                        _swissEphemerisService.GetNineStarKiHourlyKi(selectedDateTime, personModel.TimeZoneId);
+
+                    var monthlyPeriods =
+                        _swissEphemerisService.GetNineStarKiMonthlyPeriods(selectedDateTime, personModel.TimeZoneId);
+                    var yearlyPeriods =
+                        _swissEphemerisService.GetNineStarKiYearlyPeriods(selectedDateTime, personModel.TimeZoneId);
+                    var dailyPeriods =
+                        _swissEphemerisService.GetNineStarKiDailyEnergiesForMonth(selectedDateTime,
+                            personModel.TimeZoneId);
+
+                    model = new NineStarKiModel(personModel, preciseEpochEnergy, preciseGenerationalEnergy,
+                        preciseMainEnergy, preciseEmotionalEnergy, preciseEmotionalEnergyForInvertedYear,
+                        preciseDayStarEnergy.DailyKi, preciseHourlyEnergy,
+                        preciseEightyOneYearEnergy, preciseNineYearEnergy, preciseYearEnergy, preciseMonthEnergy,
+                        preciseDailyEnergy.DailyKi, preciseHourlyEnergy, preciseDailyEnergy.InvertedDailyKi,
+                        selectedDateTime)
+                    {
+                        InvertCycleYinEnergies = invertCycleYinEnergies,
+                        InvertPersonalYinEnergies = invertPersonalYinEnergies,
+                        YearlyPeriods = yearlyPeriods,
+                        MonthlyPeriods = monthlyPeriods,
+                        DailyPeriods = dailyPeriods
+                    };
+                }
+                else
+                {
+                    model = new NineStarKiModel(personModel, preciseEpochEnergy, preciseGenerationalEnergy,
+                        preciseMainEnergy, preciseEmotionalEnergy, preciseEmotionalEnergyForInvertedYear,
+                        preciseDayStarEnergy.DailyKi, preciseHourlyEnergy,
+                        5, 5, 5, 5, 5, 5, 5, selectedDateTime)
+                    {
+                        InvertCycleYinEnergies = invertCycleYinEnergies,
+                        InvertPersonalYinEnergies = invertPersonalYinEnergies,
+                        YearlyPeriods = new (DateTime PeriodStartOn, DateTime PeriodEndsOn, int YearlyKi)[]{},
+                        MonthlyPeriods = new (DateTime PeriodStartOn, DateTime PeriodEndsOn, int MonthlyKi)[]{},
+                        DailyPeriods = new (DateTime Date, int DailyKi, int? InvertedDailyKi)[]{}
+                    };
+                }
 
                 model.MainEnergy.EnergyDescription = GetMainEnergyDescription(model.MainEnergy.Energy);
                 model.CharacterEnergy.EnergyDescription = GetCharacterEnergyDescription(model.CharacterEnergy.Energy);

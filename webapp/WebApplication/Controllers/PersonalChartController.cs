@@ -51,12 +51,13 @@ namespace K9.WebApplication.Controllers
                     var selectedDate = model.SelectedDate ?? DateTime.UtcNow;
                     var isScrollToCyclesOverview = model.IsScrollToCyclesOverview;
                     var activeTabId = model.ActiveCycleTabId;
+                    var invertYinEnergies = model.CalculationMethod == ECalculationMethod.Chinese;
 
                     // Add time of birth
                     model.PersonModel.DateOfBirth = model.PersonModel.DateOfBirth.Add(model.PersonModel.TimeOfBirth);
-                    
                     model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false,
-                        selectedDate);
+                        selectedDate, invertYinEnergies, invertYinEnergies, false);
+
                     model.SelectedDate = selectedDate;
                     model.IsScrollToCyclesOverview = isScrollToCyclesOverview;
                     model.ActiveCycleTabId = activeTabId;

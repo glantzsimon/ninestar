@@ -326,6 +326,103 @@ namespace K9.WebApplication.Services
             }
         }
 
+        public (DateTime PeriodStartOn, DateTime PeriodEndsOn, int MonthlyKi)[] GetNineStarKiMonthlyPeriods(DateTime selectedDateTime, string timeZoneId)
+        {
+            using (var sweph = new SwissEph())
+            {
+                sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
+
+                // Convert the provided datetime to UT.
+                DateTime selectedUT = ConvertToUT(selectedDateTime, timeZoneId);
+
+                // Determine the "adjusted" Nine Star Ki year (based on your Lìchūn adjustment).
+                int adjustedYear = AdjustYearForLichun(sweph, selectedUT);
+
+                // Get the 12 solar term boundaries for this adjusted year.
+                double[] solarTerms = GetSolarTerms(sweph, adjustedYear);
+
+                // Convert each solar term (Julian Day) to DateTime.
+                DateTime[] solarTermDates = new DateTime[solarTerms.Length];
+                for (int i = 0; i < solarTerms.Length; i++)
+                {
+                    solarTermDates[i] = JulianDayToDateTime(sweph, solarTerms[i]).Date;
+                }
+
+                // Build an array of 12 periods.
+                // For each period, the start date is the solar term date,
+                // and the period ends on the day before the next solar term.
+                var periods = new (DateTime PeriodStartOn, DateTime PeriodEndsOn, int MonthlyKi)[12];
+
+                // Periods 0 to 10: use adjacent solar term dates.
+                for (int i = 0; i < solarTermDates.Length - 1; i++)
+                {
+                    var solarTermDate = solarTermDates[i];
+                    var monthlyKi = GetNineStarKiMonthlyKi(solarTermDate, timeZoneId);
+                    periods[i] = (solarTermDate, solarTermDates[i + 1].AddDays(-1), monthlyKi);
+                }
+
+                // For the 12th period (index 11): the start is the last solar term of this adjusted year.
+                // To get the end boundary, we compute next year's Lìchūn (which is the first solar term of the next cycle)
+                // and subtract one day.
+                double jdNextLichun = GetSolarTerm(sweph, adjustedYear + 1, 315.0);
+                DateTime nextLichunDate = JulianDayToDateTime(sweph, jdNextLichun).Date;
+                var lastSolarTermDate = solarTermDates[11];
+                var lastMonthlyKi = GetNineStarKiMonthlyKi(lastSolarTermDate, timeZoneId);
+                periods[11] = (lastSolarTermDate, nextLichunDate.AddDays(-1), lastMonthlyKi);
+
+                return periods;
+            }
+        }
+
+        public (DateTime YearStart, DateTime YearEnd, int YearlyKi)[] GetNineStarKiYearlyPeriods(DateTime selectedDateTime, string timeZoneId)
+        {
+            using (var sweph = new SwissEph())
+            {
+                // Set the ephemeris path.
+                sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
+
+                // Convert the provided datetime to UT.
+                DateTime selectedUT = ConvertToUT(selectedDateTime, timeZoneId);
+
+                // Determine the "adjusted" Nine Star Ki year (based on your Lìchūn adjustment).
+                int adjustedYear = AdjustYearForLichun(sweph, selectedUT);
+
+                // Define the range:
+                // We'll compute boundaries from (adjustedYear - 9) to (adjustedYear + 9) inclusive.
+                // This gives us 19 boundary dates, which in turn define 18 yearly periods.
+                int startYear = adjustedYear - 9;
+                int endYear = adjustedYear + 9;
+                int numBoundaries = endYear - startYear + 1;  // Should equal 19.
+
+                DateTime[] boundaries = new DateTime[numBoundaries];
+                for (int i = 0; i < numBoundaries; i++)
+                {
+                    int year = startYear + i;
+                    // Compute Lìchūn for this year (the solar term at 315°).
+                    double jd = GetSolarTerm(sweph, year, 315.0);
+                    boundaries[i] = JulianDayToDateTime(sweph, jd).Date;
+                }
+
+                // Now, create 18 periods from the 19 boundary dates.
+                int numPeriods = numBoundaries - 1;  // 18 periods.
+                var periods = new (DateTime YearStart, DateTime YearEnd, int YearlyKi)[numPeriods];
+
+                for (int i = 0; i < numPeriods; i++)
+                {
+                    DateTime yearStart = boundaries[i];
+                    // Each period ends the day before the next Lìchūn.
+                    DateTime yearEnd = boundaries[i + 1].AddDays(-1);
+                    // Compute the yearly Ki for this period.
+                    // (Assume that the yearly Ki is determined from the period's starting Lìchūn date.)
+                    int yearlyKi = GetNineStarKiYearlyKi(yearStart, timeZoneId);
+                    periods[i] = (yearStart, yearEnd, yearlyKi);
+                }
+
+                return periods;
+            }
+        }
+
+
         private DateTime FindFirstJiaZiDayAfterSolstice(SwissEph sweph, int year, bool isJuneSolstice)
         {
             // Get the solstice date using your existing method.

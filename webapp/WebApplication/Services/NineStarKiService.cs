@@ -63,11 +63,16 @@ namespace K9.WebApplication.Services
                 var preciseDailyEnergy = _swissEphemerisService.GetNineStarKiDailyKi(selectedDateTime, personModel.TimeZoneId);
                 var preciseHourlyCycleEnergy = _swissEphemerisService.GetNineStarKiHourlyKi(selectedDateTime, personModel.TimeZoneId);
 
+                var monthlyPeriods = _swissEphemerisService.GetNineStarKiMonthlyPeriods(selectedDateTime, personModel.TimeZoneId);
+                var yearlyPeriods = _swissEphemerisService.GetNineStarKiYearlyPeriods(selectedDateTime, personModel.TimeZoneId);
+
                 var model = new NineStarKiModel(personModel, preciseEpochEnergy, preciseGenerationalEnergy, preciseMainEnergy, preciseEmotionalEnergy, preciseEmotionalEnergyForInvertedYear, preciseDayStarEnergy.DailyKi, preciseHourlyEnergy,
                     preciseEightyOneYearEnergy, preciseNineYearEnergy, preciseYearEnergy, preciseMonthEnergy, preciseDailyEnergy.DailyKi, preciseHourlyEnergy, preciseDailyEnergy.InvertedDailyKi, selectedDateTime)
                 {
                     InvertCycleYinEnergies = invertCycleYinEnergies,
-                    InvertPersonalYinEnergies = invertPersonalYinEnergies
+                    InvertPersonalYinEnergies = invertPersonalYinEnergies,
+                    MonthlyPeriods = monthlyPeriods,
+                    YearlyPeriods = yearlyPeriods
                 };
 
                 model.MainEnergy.EnergyDescription = GetMainEnergyDescription(model.MainEnergy.Energy);

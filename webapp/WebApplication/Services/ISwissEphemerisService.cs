@@ -21,5 +21,11 @@ namespace K9.WebApplication.Services
 
         (DateTime PeriodStartOn, DateTime PeriodEndsOn) GetNineStarKiMonthlyPeriodBoundaries(DateTime selectedDateTime,
             string timeZoneId);
+
+        (DateTime PeriodStartOn, DateTime PeriodEndsOn, int MonthlyKi)[] GetNineStarKiMonthlyPeriods(
+            DateTime selectedDateTime, string timeZoneId);
+
+        (DateTime YearStart, DateTime YearEnd, int YearlyKi)[] GetNineStarKiYearlyPeriods(DateTime selectedDateTime,
+            string timeZoneId);
     }
 }

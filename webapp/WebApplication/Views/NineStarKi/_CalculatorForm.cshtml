@@ -20,7 +20,7 @@
     @Html.BootstrapEditorFor(model => model.PersonModel.DateOfBirth)
     @Html.BootstrapEditorFor(model => model.PersonModel.TimeOfBirth)
     @Html.BootstrapEditorFor(model => model.PersonModel.TimeZoneId)
-    <div data-toggle="tooltip" data-placement="bottom" title="@Dictionary.GenderSelectionTooltip">
+    <div data-toggle="tooltip" data-placement="top" title="@Dictionary.GenderSelectionTooltip">
         @Html.BootstrapEditorFor(model => model.PersonModel.Gender)
     </div>
 
@@ -29,5 +29,18 @@
 }
 
 <script>
+    $(document).ready(function () {
+        $('#CalculationMethod').on('change', function () {
+            const value = $(this).val();
+      
+            if (value === '0') {
+                $('#PersonModel_Gender').fadeOut();
+            } else {
+                $('#PersonModel_Gender').fadeIn();
+            }
+        });
 
+        // Trigger on page load if needed
+        $('#CalculationMethod').trigger('change');
+    });
 </script>

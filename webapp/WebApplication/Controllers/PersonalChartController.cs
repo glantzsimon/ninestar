@@ -51,7 +51,7 @@ namespace K9.WebApplication.Controllers
 
                 if (model.PersonModel != null || model.SelectedDate != DateTime.Today)
                 {
-                    var selectedDate = model.SelectedDate ?? model.GetLocalNow();
+                    model.SelectedDate = model.SelectedDate ?? model.GetLocalNow();
                     var isScrollToCyclesOverview = model.IsScrollToCyclesOverview;
                     var activeTabId = model.ActiveCycleTabId;
                     var invertYinEnergies = model.CalculationMethod == ECalculationMethod.Chinese;
@@ -59,9 +59,8 @@ namespace K9.WebApplication.Controllers
                     // Add time of birth
                     model.PersonModel.DateOfBirth = model.PersonModel.DateOfBirth.Add(model.PersonModel.TimeOfBirth);
                     model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false,
-                        selectedDate, invertYinEnergies, invertYinEnergies, false);
-
-                    model.SelectedDate = selectedDate;
+                        model.SelectedDate, invertYinEnergies, invertYinEnergies, false);
+                    
                     model.IsScrollToCyclesOverview = isScrollToCyclesOverview;
                     model.ActiveCycleTabId = activeTabId;
 

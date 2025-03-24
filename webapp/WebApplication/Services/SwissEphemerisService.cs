@@ -230,7 +230,7 @@ namespace K9.WebApplication.Services
 
         public int GetNineStarKiHourlyKi(DateTime selectedDateTime, string timeZoneId)
         {
-            string cacheKey = $"{nameof(GetNineStarKiHourlyKi)}_{selectedDateTime:yyyyMMddHHHH}_{timeZoneId}";
+            string cacheKey = $"{nameof(GetNineStarKiHourlyKi)}_{selectedDateTime:yyyyMMddHHHHmm}_{timeZoneId}";
             return GetOrAddToCache(cacheKey, () =>
             {
                 using (var sweph = new SwissEph())

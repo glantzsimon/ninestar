@@ -16826,7 +16826,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Isometric Calculation Method.
+        ///   Looks up a localized string similar to Use Isometric Cycle Calculation.
         /// </summary>
         public static string UseHolographicMethod {
             get {

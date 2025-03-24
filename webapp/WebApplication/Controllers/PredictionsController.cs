@@ -51,7 +51,7 @@ namespace K9.WebApplication.Controllers
             {
                 if (model.PersonModel != null || model.SelectedDate != DateTime.Today)
                 {
-                    var selectedDate = model.SelectedDate ?? model.GetLocalNow();
+                    model.SelectedDate = model.SelectedDate ?? model.GetLocalNow();
                     var invertYinEnergies = model.CalculationMethod == ECalculationMethod.Chinese;
 
                     // Set user calculation method preference cookie
@@ -62,10 +62,8 @@ namespace K9.WebApplication.Controllers
                     model.PersonModel.DateOfBirth = model.PersonModel.DateOfBirth.Add(model.PersonModel.TimeOfBirth);
                  
                     model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false,
-                        selectedDate, invertYinEnergies, invertYinEnergies, true, model.UseHolograhpicCycleCalculation);
-
-                    model.SelectedDate = selectedDate;
-
+                        model.SelectedDate, invertYinEnergies, invertYinEnergies, true, model.UseHolograhpicCycleCalculation);
+                   
                     if (Current.UserId > 0)
                     {
                         var user = My.UserService.Find(Current.UserId);

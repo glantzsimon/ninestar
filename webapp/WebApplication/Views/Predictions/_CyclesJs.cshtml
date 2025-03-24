@@ -60,7 +60,7 @@
 
             $container = $(".monthly-planner-container");
             $plannerItem = $el.find(".monthly-planner-item-container");
-            $details = $el.find(".monthly-planner-details");
+            $details = $("#monthly-planner-details");
 
             // clear current class from all items
             $container.find(".monthly-planner-item .monthly-planner-item-container").removeClass("active").removeClass("current-month");
@@ -71,7 +71,8 @@
             ajaxcontroller().get("@Url.Action("GetMonthlyForecast", "Predictions")", {energy}).done(
                 function(result) {
                     if (result.success) {
-                        $panel.siblings(".panel").find(".panel-body").html(result.data.CycleDescription);
+                        $details.find(".panel .panel-heading h4 strong").html(result.data.CycleDescriptiveName);
+                        $details.find(".panel .panel-body").html(result.data.CycleDescription);
                     }
                 });
         });

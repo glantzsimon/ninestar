@@ -708,8 +708,7 @@ namespace K9.WebApplication.Models
 
         [ScriptIgnore]
         public string DayStarLabel => Dictionary.DayStarLabel;
-
-        [ScriptIgnore]
+        
         public string CycleDescriptiveName => CycleMetaData.DescriptiveTitle;
 
         [ScriptIgnore]

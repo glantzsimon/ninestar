@@ -4790,7 +4790,7 @@
     <value>energies\surface\en-gb\thunder-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="UseHolographicMethod" xml:space="preserve">
-    <value>Use Isometric Calculation Method</value>
+    <value>Use Isometric Cycle Calculation</value>
   </data>
   <data name="water_career" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\career\en-gb\water-career.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

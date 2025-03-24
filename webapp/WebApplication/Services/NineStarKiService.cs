@@ -40,7 +40,7 @@ namespace K9.WebApplication.Services
         public NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, bool isCompatibility = false,
             bool isMyProfile = false, DateTime? today = null, bool invertPersonalYinEnergies = true, bool invertCycleYinEnergies = true, bool includeCycles = true, bool useHolograhpicCycleCalculation = false)
         {
-            var cacheKey = $"CalculateNineStarKiProfileFromModel_{personModel.DateOfBirth.ToString()}_{personModel.Name}_{personModel.Gender}_{isCompatibility}_{isMyProfile}_{today.ToString()}";
+            var cacheKey = $"CalculateNineStarKiProfileFromModel_{personModel.DateOfBirth:yyyyMMddHHmm}_{personModel.TimeOfBirth.ToString()}_{personModel.TimeZoneId}_{personModel.Name}_{personModel.Gender}_{isCompatibility}_{isMyProfile}_{invertPersonalYinEnergies}_{invertCycleYinEnergies}_{includeCycles}_{useHolograhpicCycleCalculation}_{today:yyyyMMddHHmm}";
             return GetOrAddToCache(cacheKey, () =>
             {
                 var tzInfo = TZConvert.GetTimeZoneInfo(personModel.TimeZoneId);

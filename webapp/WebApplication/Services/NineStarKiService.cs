@@ -53,9 +53,7 @@ namespace K9.WebApplication.Services
 
         public NineStarKiModel CalculateNineStarKiProfile(NineStarKiModel model, bool isCompatibility = false, bool isMyProfile = false, DateTime? today = null, bool includeCycles = true)
         {
-            var invertYinEnergies = model.CalculationMethod == ECalculationMethod.Chinese;
-
-            var cacheKey = $"CalculateNineStarKiProfileFromModel_{model.PersonModel.DateOfBirth:yyyyMMddHHmm}_{model.PersonModel.TimeOfBirth.ToString()}_{model.PersonModel.TimeZoneId}_{model.PersonModel.Name}_{model.PersonModel.Gender}_{isCompatibility}_{isMyProfile}_{invertYinEnergies}_{includeCycles}_{model.UseHolograhpicCycleCalculation}_{model.SelectedDate:yyyyMMddHHmm}_{model.InvertDailyAndHourlyKiForSouthernHemisphere}";
+            var cacheKey = $"CalculateNineStarKiProfileFromModel_{model.PersonModel.DateOfBirth:yyyyMMddHHmm}_{model.PersonModel.TimeOfBirth.ToString()}_{model.PersonModel.TimeZoneId}_{model.PersonModel.Name}_{model.PersonModel.Gender}_{isCompatibility}_{isMyProfile}_{model.CalculationMethod}_{includeCycles}_{model.UseHolograhpicCycleCalculation}_{model.SelectedDate:yyyyMMddHHmm}_{model.InvertDailyAndHourlyKiForSouthernHemisphere}";
             return GetOrAddToCache(cacheKey, () =>
             {
                 var tzInfo = TZConvert.GetTimeZoneInfo(model.PersonModel.TimeZoneId);
@@ -63,7 +61,7 @@ namespace K9.WebApplication.Services
                     ? DateTime.UtcNow
                     : today.Value;
                 var personModel = model.PersonModel;
-                
+
                 var preciseEpochEnergy = _swissEphemerisService.GetNineStarKiEightyOneYearKi(personModel.DateOfBirth, personModel.TimeZoneId);
                 var preciseGenerationalEnergy = _swissEphemerisService.GetNineStarKiNineYearKi(personModel.DateOfBirth, personModel.TimeZoneId);
                 var preciseMainEnergy = _swissEphemerisService.GetNineStarKiYearlyKi(personModel.DateOfBirth, personModel.TimeZoneId);
@@ -104,7 +102,11 @@ namespace K9.WebApplication.Services
                     {
                         YearlyPeriods = yearlyPeriods,
                         MonthlyPeriods = monthlyPeriods,
-                        DailyPeriods = dailyPeriods
+                        DailyPeriods = dailyPeriods,
+
+                        CalculationMethod = model.CalculationMethod,
+                        UseHolograhpicCycleCalculation = model.UseHolograhpicCycleCalculation,
+                        InvertDailyAndHourlyKiForSouthernHemisphere = model.InvertDailyAndHourlyKiForSouthernHemisphere
                     };
                 }
                 else
@@ -119,7 +121,7 @@ namespace K9.WebApplication.Services
                         DailyPeriods = new (DateTime Date, int DailyKi, int? InvertedDailyKi)[] { }
                     };
                 }
-                
+
                 model.YearlyDirections = GetYearlyDirections(model);
                 model.MonthlyDirections = GetMonthlyDirections(model);
 
@@ -215,7 +217,7 @@ namespace K9.WebApplication.Services
                     new NineStarKiEnergy(ENineStarKiEnergy.Mountain, ENineStarKiEnergyType.CharacterEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.MonthlyCycleEnergy},
                     new NineStarKiEnergy(ENineStarKiEnergy.Fire, ENineStarKiEnergyType.CharacterEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.MonthlyCycleEnergy}
                 };
-                
+
                 var dynamicEnergies = new List<NineStarKiEnergy>
                 {
                     new NineStarKiEnergy(ENineStarKiEnergy.Thunder, ENineStarKiEnergyType.MainEnergy),
@@ -239,7 +241,7 @@ namespace K9.WebApplication.Services
                     reflectiveEnergies);
             }, TimeSpan.FromDays(30));
         }
-        
+
         private NineStarKiEnergy GetInvertedEnergy(NineStarKiEnergy energy)
         {
             return new NineStarKiEnergy((ENineStarKiEnergy)NineStarKiModel.GetOppositeEnergyInMagicSquare(energy.EnergyNumber));

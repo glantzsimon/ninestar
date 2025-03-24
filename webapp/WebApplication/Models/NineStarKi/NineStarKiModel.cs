@@ -34,6 +34,10 @@ namespace K9.WebApplication.Models
         public bool InvertDailyAndHourlyKiForSouthernHemisphere { get; set; }
 
         [ScriptIgnore]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InvertDailyAndHourlyKiForSouthernHemisphereLabel)]
+        public bool InvertDailyAndHourlyCycleKiForSouthernHemisphere { get; set; }
+
+        [ScriptIgnore]
         public bool HideHolograhpicCycleCalculationOption { get; set; }
 
         [ScriptIgnore]
@@ -63,12 +67,13 @@ namespace K9.WebApplication.Models
 
             int preciseEpochCycleEnergy, int preciseGenerationalCycleEnergy, int preciseYearlyCycleEnergy, int preciseMonthlyCycleEnergy, int preciseDailyCycleEnergy, int preciseHourlyCycleEnergy, int? preciseDailyCycleInvertedEnergy, DateTime? selectedDate = null,
             
-            ECalculationMethod calculationMethod = ECalculationMethod.Chinese, bool useHolograhpicCycleCalculation = false, bool invertDailyAndHourlyKiForSouthernHemisphere = false)
+            ECalculationMethod calculationMethod = ECalculationMethod.Chinese, bool useHolograhpicCycleCalculation = false, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false)
         {
             SelectedDate = selectedDate ?? DateTime.UtcNow;
             CalculationMethod = calculationMethod;
             UseHolograhpicCycleCalculation = useHolograhpicCycleCalculation;
             InvertDailyAndHourlyKiForSouthernHemisphere = invertDailyAndHourlyKiForSouthernHemisphere;
+            InvertDailyAndHourlyCycleKiForSouthernHemisphere = invertDailyAndHourlyCycleKiForSouthernHemisphere;
 
             PersonModel = personModel;
             PersonalChartEnergies = new NineStarKiEnergiesModel();
@@ -83,11 +88,11 @@ namespace K9.WebApplication.Models
                 ? GetOppositeEnergyInMagicSquare(precisePersonalDayStarEnergy)
                 : precisePersonalDayStarEnergy;
 
-            preciseDailyCycleEnergy = InvertDailyAndHourlyKiForSouthernHemisphere
+            preciseDailyCycleEnergy = InvertDailyAndHourlyCycleKiForSouthernHemisphere
                 ? GetOppositeEnergyInMagicSquare(preciseDailyCycleEnergy)
                 : preciseDailyCycleEnergy;
 
-            preciseDailyCycleInvertedEnergy = preciseDailyCycleInvertedEnergy.HasValue && InvertDailyAndHourlyKiForSouthernHemisphere
+            preciseDailyCycleInvertedEnergy = preciseDailyCycleInvertedEnergy.HasValue && InvertDailyAndHourlyCycleKiForSouthernHemisphere
                 ? GetOppositeEnergyInMagicSquare(preciseDailyCycleInvertedEnergy.Value)
                 : preciseDailyCycleInvertedEnergy;
 
@@ -95,7 +100,7 @@ namespace K9.WebApplication.Models
                 ? GetOppositeEnergyInMagicSquare(precisePersonalHourlyEnergy)
                 : precisePersonalHourlyEnergy;
 
-            preciseHourlyCycleEnergy = InvertDailyAndHourlyKiForSouthernHemisphere
+            preciseHourlyCycleEnergy = InvertDailyAndHourlyCycleKiForSouthernHemisphere
                 ? GetOppositeEnergyInMagicSquare(preciseHourlyCycleEnergy)
                 : preciseHourlyCycleEnergy;
 
@@ -336,7 +341,7 @@ namespace K9.WebApplication.Models
 
                 foreach (var day in DailyPeriods)
                 {
-                    cycles.Add(new Tuple<int, int, int, string, string, NineStarKiEnergy>(day.Date.Year, day.Date.Month, day.Date.Day, day.Date.ToString("MMM"), day.Date.ToString("ddd"), GetPersonalCycleEnergy(day.DailyKi, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Day.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.DailyEnergy)));
+                    cycles.Add(new Tuple<int, int, int, string, string, NineStarKiEnergy>(day.Date.Year, day.Date.Month, day.Date.Day, day.Date.ToString("MMM"), day.Date.ToString("ddd"), GetPersonalCycleEnergy(InvertDailyAndHourlyCycleKiForSouthernHemisphere ? GetOppositeEnergyInMagicSquare(day.DailyKi) : day.DailyKi, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Day.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.DailyEnergy)));
                 }
 
                 return cycles;

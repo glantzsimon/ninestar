@@ -62,7 +62,8 @@ namespace K9.WebApplication.Controllers
                     model.PersonModel.DateOfBirth = model.PersonModel.DateOfBirth.Add(model.PersonModel.TimeOfBirth);
                  
                     model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false,
-                        model.SelectedDate, model.CalculationMethod, true, model.UseHolograhpicCycleCalculation, model.InvertDailyAndHourlyKiForSouthernHemisphere);
+                        model.SelectedDate, model.CalculationMethod, true, model.UseHolograhpicCycleCalculation, model.InvertDailyAndHourlyKiForSouthernHemisphere,
+                        model.InvertDailyAndHourlyCycleKiForSouthernHemisphere);
                    
                     if (Current.UserId > 0)
                     {
@@ -82,6 +83,16 @@ namespace K9.WebApplication.Controllers
         {
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
             var cycle = summary.MonthlyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
+            
+            return Json(cycle, JsonRequestBehavior.AllowGet);
+        }
+
+        [Route("get-yearly-forecast")]
+        [OutputCache(Duration = 2592000, VaryByParam = "energy", Location = OutputCacheLocation.ServerAndClient)]
+        public JsonResult GetYearlyForecast(ENineStarKiEnergy energy)
+        {
+            var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
+            var cycle = summary.YearlyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
             
             return Json(cycle, JsonRequestBehavior.AllowGet);
         }

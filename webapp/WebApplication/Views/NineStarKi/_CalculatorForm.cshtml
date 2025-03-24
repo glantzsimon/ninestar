@@ -13,18 +13,25 @@
         })
 
     <div class="form-options">
+        @Html.CheckBoxFor(model => model.InvertDailyAndHourlyCycleKiForSouthernHemisphere)
+        <label>@Dictionary.InvertDailyAndHourlyCycleKiForSouthernHemisphereLabel</label>
+        <p class="hint">@Dictionary.OptionalForSouthernHemisphere</p>
+
         @Html.CheckBoxFor(model => model.InvertDailyAndHourlyKiForSouthernHemisphere)
         <label>@Dictionary.InvertDailyAndHourlyKiForSouthernHemisphereLabel</label>
         <p class="hint">@Dictionary.OptionalForSouthernHemisphere</p>
     </div>
 
-    if (!Model.HideHolograhpicCycleCalculationOption)
+    if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin())
     {
-        <div class="form-options">
-            @Html.CheckBoxFor(model => model.UseHolograhpicCycleCalculation)
-            <label>@Dictionary.UseHolographicMethod</label>
-            <a target="_blank" href="@Url.Action("CalculationMethods","Home")"><i class="fa fa-question-circle"></i></a>
-        </div>
+        if (!Model.HideHolograhpicCycleCalculationOption)
+        {
+            <div class="form-options">
+                @Html.CheckBoxFor(model => model.UseHolograhpicCycleCalculation)
+                <label>@Dictionary.UseHolographicMethod</label>
+                <a target="_blank" href="@Url.Action("CalculationMethods", "Home")"><i class="fa fa-question-circle"></i></a>
+            </div>
+        }
     }
 
     <hr />

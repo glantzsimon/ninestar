@@ -1,9 +1,16 @@
 ﻿@using K9.SharedLibrary.Extensions
 @using K9.WebApplication.Config
+@using K9.WebApplication.Helpers;
 @model K9.WebApplication.Models.NineStarKiModel
 
-<div class="container main-content clear-both yearly-planner-container margin-top-5">
-    @foreach (var cycle in Model.GetYearlyPlanner())
+@{
+    var cycles = Model.GetYearlyPlanner();
+    var activeCycle = cycles.FirstOrDefault();
+}
+
+<div class="container main-content clear-both planner-container margin-top-5">
+
+    @foreach (var cycle in cycles)
     {
         var year = cycle.Item1;
         var energy = cycle.Item2;
@@ -11,8 +18,13 @@
         var isCurrentYear = isAfterChineseNewYear ? year == DateTime.Today.Year : year == DateTime.Today.Year - 1;
         var activeClass = isCurrentYear ? "active current-year" : string.Empty;
 
-        <a target="_blank" href="@Url.ActionWithBookmark("Index", "KnowledgeBase", $"{energy.EnergyName.ToLower()}-year")">
-            <div class="row @activeClass">
+        if (isCurrentYear)
+        {
+            activeCycle = cycle;
+        }
+
+        <a class="planner-item" data-energy="@energy.Energy" data-type="year">
+            <div class="planner-item-container row @activeClass">
                 <div class="col-xs-2">
                     @Html.Partial("_Year", $"{year} - {year + 1}")
                 </div>
@@ -44,4 +56,10 @@
             </div>
         </a>
     }
+</div>
+
+<hr />
+
+<div id="yearly-planner-details">
+    @Html.Panel(activeCycle.Item2.CycleDescriptiveName, activeCycle.Item2.CycleDescription)
 </div>

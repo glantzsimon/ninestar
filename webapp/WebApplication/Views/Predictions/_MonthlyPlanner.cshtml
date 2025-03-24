@@ -8,7 +8,7 @@
     var activeCycle = cycles.FirstOrDefault();
 }
 
-<div class="container main-content clear-both monthly-planner-container margin-top-5">
+<div class="container main-content clear-both planner-container margin-top-5">
     @foreach (var cycle in cycles)
     {
         var year = cycle.Item1;
@@ -23,8 +23,8 @@
             activeCycle = cycle;
         }
 
-        <a class="monthly-planner-item" data-energy="@energy.Energy">
-            <div class="monthly-planner-item-container row @activeClass">
+        <a class="planner-item" data-energy="@energy.Energy" data-type="month">
+            <div class="planner-item-container row @activeClass">
                 <div class="col-xs-1">
                     @Html.Partial("_Year", year.ToString())
                 </div>

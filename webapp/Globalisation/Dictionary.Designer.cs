@@ -8690,7 +8690,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invert Daily &amp; Hourly Ki.
+        ///   Looks up a localized string similar to Invert Daily Ki for Predictions.
+        /// </summary>
+        public static string InvertDailyAndHourlyCycleKiForSouthernHemisphereLabel {
+            get {
+                return ResourceManager.GetString("InvertDailyAndHourlyCycleKiForSouthernHemisphereLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invert Daily Ki for Charts.
         /// </summary>
         public static string InvertDailyAndHourlyKiForSouthernHemisphereLabel {
             get {

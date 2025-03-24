@@ -8690,6 +8690,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invert Daily &amp; Hourly Ki.
+        /// </summary>
+        public static string InvertDailyAndHourlyKiForSouthernHemisphereLabel {
+            get {
+                return ResourceManager.GetString("InvertDailyAndHourlyKiForSouthernHemisphereLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use Ascending Ki for Personal Charts.
         /// </summary>
         public static string InvertPersonalYinEnergiesLabel {
@@ -12077,6 +12086,15 @@ namespace K9.Globalisation {
         public static string OppressionTitle {
             get {
                 return ResourceManager.GetString("OppressionTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (Optional - For Southern Hemisphere).
+        /// </summary>
+        public static string OptionalForSouthernHemisphere {
+            get {
+                return ResourceManager.GetString("OptionalForSouthernHemisphere", resourceCulture);
             }
         }
         

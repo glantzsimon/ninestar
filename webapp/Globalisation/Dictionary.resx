@@ -4900,11 +4900,17 @@
   <data name="heaven_hour_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>predictions\hour\en-gb\heaven-hour-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="InvertDailyAndHourlyKiForSouthernHemisphereLabel" xml:space="preserve">
+    <value>Invert Daily &amp; Hourly Ki</value>
+  </data>
   <data name="lake_hour_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>predictions\hour\en-gb\lake-hour-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="mountain_hour_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>predictions\hour\en-gb\mountain-hour-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="OptionalForSouthernHemisphere" xml:space="preserve">
+    <value>(Optional - For Southern Hemisphere)</value>
   </data>
   <data name="soil_hour_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>predictions\hour\en-gb\soil-hour-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

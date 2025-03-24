@@ -1,4 +1,6 @@
-﻿#ninestarki-cycles .panel-default {
+﻿@import "../config/colours.less";
+
+#ninestarki-cycles .panel-default {
     margin-top: 0;
 }
 
@@ -68,12 +70,20 @@
     visibility: hidden;
 }
 
-.use-isometric-method {
+.form-options {
     input {
         display: inline-block;        
     }
 
     label {
         vertical-align: top;
+    }
+
+    .hint {
+        font-size: 0.81em;
+        color: @medium-grey;
+        margin: 0;
+        margin-top: -5px;
+        margin-bottom: 7px;
     }
 }

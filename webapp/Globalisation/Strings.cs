@@ -5,6 +5,7 @@
         public static class Labels
         {
             public const string CalculationMethodLabel = "CalculationMethodLabel";
+            public const string InvertDailyAndHourlyKiForSouthernHemisphereLabel = "InvertDailyAndHourlyKiForSouthernHemisphereLabel";
             
             public const string StrongYinOrgans = "StrongYinOrgans";
             public const string StrongYangOrgans = "StrongYangOrgans";

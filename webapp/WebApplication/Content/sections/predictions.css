@@ -57,9 +57,16 @@
 .empty-cell {
   visibility: hidden;
 }
-.use-isometric-method input {
+.form-options input {
   display: inline-block;
 }
-.use-isometric-method label {
+.form-options label {
   vertical-align: top;
+}
+.form-options .hint {
+  font-size: 0.81em;
+  color: #999;
+  margin: 0;
+  margin-top: -5px;
+  margin-bottom: 7px;
 }

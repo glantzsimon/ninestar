@@ -53,11 +53,15 @@ namespace K9.WebApplication.Controllers
                     var selectedDate = model.SelectedDate ?? model.GetLocalNow();
                     var invertYinEnergies = model.CalculationMethod == ECalculationMethod.Chinese;
 
+                    // Set user calculation method preference cookie
+                    SessionHelper.SetCurrentUserCalculationMethod((int)model.CalculationMethod);
+                    SessionHelper.SetCurrentUserUseHolograhpicCycles(model.UseHolograhpicCycleCalculation);
+
                     // Add time of birth
                     model.PersonModel.DateOfBirth = model.PersonModel.DateOfBirth.Add(model.PersonModel.TimeOfBirth);
                  
                     model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false,
-                        selectedDate, invertYinEnergies, invertYinEnergies);
+                        selectedDate, invertYinEnergies, invertYinEnergies, true, model.UseHolograhpicCycleCalculation);
 
                     model.SelectedDate = selectedDate;
 

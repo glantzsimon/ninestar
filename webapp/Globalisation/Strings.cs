@@ -280,6 +280,7 @@
 
             public const string TraditionalNineStarKi = "TraditionalNineStarKi";
             public const string ChineseMethod = "ChineseMethod";
+            public const string HolographicMethod = "HolographicMethod";
 
             public const string Spring = "Spring";
             public const string Summer = "Summer";

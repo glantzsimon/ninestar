@@ -4717,4 +4717,7 @@
   <data name="NineYearlyPrediction" xml:space="preserve">
     <value>Nine-Year Prediction</value>
   </data>
+  <data name="UseHolographicMethod" xml:space="preserve">
+    <value>Use Isometric Calculation Method</value>
+  </data>
 </root>

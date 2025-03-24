@@ -57,3 +57,9 @@
 .empty-cell {
   visibility: hidden;
 }
+.use-isometric-method input {
+  display: inline-block;
+}
+.use-isometric-method label {
+  vertical-align: top;
+}

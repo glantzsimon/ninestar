@@ -580,8 +580,13 @@ namespace K9.WebApplication.Services
                 return rawDateTime; // Presumed to be UTC
             }
 
-            var localTime = DateTime.SpecifyKind(rawDateTime, DateTimeKind.Unspecified);
+            DateTime localTime = DateTime.SpecifyKind(rawDateTime, DateTimeKind.Unspecified);
             var tz = TZConvert.GetTimeZoneInfo(timeZoneId);
+            if (tz.IsInvalidTime(localTime))
+            {
+                // Adjust localTime to a valid time. For example, add an hour:
+                localTime = localTime.AddHours(1);
+            }
             var utcTime = TimeZoneInfo.ConvertTimeToUtc(localTime, tz);
             return utcTime;
         }

@@ -38,7 +38,7 @@ namespace K9.WebApplication.Services
         }
 
         public NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, bool isCompatibility = false,
-            bool isMyProfile = false, DateTime? today = null, bool invertPersonalYinEnergies = true, bool invertCycleYinEnergies = true, bool includeCycles = true)
+            bool isMyProfile = false, DateTime? today = null, bool invertPersonalYinEnergies = true, bool invertCycleYinEnergies = true, bool includeCycles = true, bool useHolograhpicCycleCalculation = false)
         {
             var cacheKey = $"CalculateNineStarKiProfileFromModel_{personModel.DateOfBirth.ToString()}_{personModel.Name}_{personModel.Gender}_{isCompatibility}_{isMyProfile}_{today.ToString()}";
             return GetOrAddToCache(cacheKey, () =>
@@ -52,11 +52,11 @@ namespace K9.WebApplication.Services
                 var preciseEpochEnergy = _swissEphemerisService.GetNineStarKiEightyOneYearKi(personModel.DateOfBirth, personModel.TimeZoneId);
                 var preciseGenerationalEnergy = _swissEphemerisService.GetNineStarKiNineYearKi(personModel.DateOfBirth, personModel.TimeZoneId);
                 var preciseMainEnergy = _swissEphemerisService.GetNineStarKiYearlyKi(personModel.DateOfBirth, personModel.TimeZoneId);
-                var preciseEmotionalEnergy =  _swissEphemerisService.GetNineStarKiMonthlyKi(personModel.DateOfBirth, personModel.TimeZoneId);
+                var preciseEmotionalEnergy = _swissEphemerisService.GetNineStarKiMonthlyKi(personModel.DateOfBirth, personModel.TimeZoneId);
                 var preciseEmotionalEnergyForInvertedYear = _swissEphemerisService.GetNineStarKiMonthlyKi(personModel.DateOfBirth, personModel.TimeZoneId, true);
                 var preciseDayStarEnergy = _swissEphemerisService.GetNineStarKiDailyKi(personModel.DateOfBirth, personModel.TimeZoneId);
                 var preciseHourlyEnergy = _swissEphemerisService.GetNineStarKiHourlyKi(personModel.DateOfBirth, personModel.TimeZoneId);
-                
+
                 if (includeCycles)
                 {
                     var preciseEightyOneYearEnergy =
@@ -89,6 +89,7 @@ namespace K9.WebApplication.Services
                     {
                         InvertCycleYinEnergies = invertCycleYinEnergies,
                         InvertPersonalYinEnergies = invertPersonalYinEnergies,
+                        UseHolograhpicCycleCalculation = useHolograhpicCycleCalculation,
                         YearlyPeriods = yearlyPeriods,
                         MonthlyPeriods = monthlyPeriods,
                         DailyPeriods = dailyPeriods
@@ -103,9 +104,9 @@ namespace K9.WebApplication.Services
                     {
                         InvertCycleYinEnergies = invertCycleYinEnergies,
                         InvertPersonalYinEnergies = invertPersonalYinEnergies,
-                        YearlyPeriods = new (DateTime PeriodStartOn, DateTime PeriodEndsOn, int YearlyKi)[]{},
-                        MonthlyPeriods = new (DateTime PeriodStartOn, DateTime PeriodEndsOn, int MonthlyKi)[]{},
-                        DailyPeriods = new (DateTime Date, int DailyKi, int? InvertedDailyKi)[]{}
+                        YearlyPeriods = new (DateTime PeriodStartOn, DateTime PeriodEndsOn, int YearlyKi)[] { },
+                        MonthlyPeriods = new (DateTime PeriodStartOn, DateTime PeriodEndsOn, int MonthlyKi)[] { },
+                        DailyPeriods = new (DateTime Date, int DailyKi, int? InvertedDailyKi)[] { }
                     };
                 }
 

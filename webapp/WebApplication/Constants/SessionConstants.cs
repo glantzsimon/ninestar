@@ -44,6 +44,7 @@
 
         public const string UserTimeZone = "UserTimeZone";
         public const string UserCalculationMethod = "UserCalculationMethod";
+        public const string UseHolograhpicCycles = "UseHolograhpicCycles";
 
         public const string CurrentUserId = "CurrentUserId";
         public const string CurrentUserName = "CurrentUserName";

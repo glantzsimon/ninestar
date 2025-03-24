@@ -12,6 +12,17 @@
             Label = ""
         })
 
+    if (!Model.HideHolograhpicCycleCalculationOption)
+    {
+        <div class="use-isometric-method">
+            @Html.CheckBoxFor(model => model.UseHolograhpicCycleCalculation)
+            <label>@Dictionary.UseHolographicMethod</label>
+            <a target="_blank" href="@Url.Action("CalculationMethods","Home")"><i class="fa fa-question-circle"></i></a>
+        </div>
+    }
+
+    <hr />
+
     @Html.BootstrapEditorFor(model => model.PersonModel.Name, new EditorOptions
     {
         Label = Dictionary.OptionalNameLabel
@@ -33,7 +44,7 @@
         $('#CalculationMethod').on('change', function () {
             let value = $(this).val();
             let $genderFormGroup = $("div[data-input-id='Gender']");
-            
+
             if (value != '0') {
                 $genderFormGroup.fadeOut();
             } else {

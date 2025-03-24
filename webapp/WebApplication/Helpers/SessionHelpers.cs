@@ -23,7 +23,15 @@ namespace K9.WebApplication.Helpers
 
         public static bool GetBoolValue(string key)
         {
-            bool.TryParse(GetValue(key)?.ToString() ?? "", out var boolValue);
+            object value = null;
+            try
+            {
+                value = GetValue(key);
+            }
+            catch (Exception e)
+            {
+            }
+            bool.TryParse(value?.ToString() ?? "", out var boolValue);
             return boolValue;
         }
 
@@ -77,6 +85,16 @@ namespace K9.WebApplication.Helpers
         public static int GetCurrentUserCalculationMethod()
         {
             return GetIntValue(Constants.SessionConstants.UserCalculationMethod);
+        }
+
+        public static void SetCurrentUserUseHolograhpicCycles(bool value)
+        {
+            SetValue(Constants.SessionConstants.UseHolograhpicCycles, value);
+        }
+
+        public static bool GetCurrentUserUseHolograhpicCycles()
+        {
+            return GetBoolValue(Constants.SessionConstants.UseHolograhpicCycles);
         }
 
         public static void SetCurrentUserTimeZone(string value)

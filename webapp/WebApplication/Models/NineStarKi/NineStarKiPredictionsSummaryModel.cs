@@ -11,8 +11,8 @@ namespace K9.WebApplication.Models
         public NineStarKiPredictionsSummaryModel(NineStarKiModel nineStarKiModel)
         {
             _nineStarKiModel = nineStarKiModel;
-            YearlyPrediction = nineStarKiModel.PersonalHousesOccupiedEnergies.Year;
-            MonthlyPrediction = nineStarKiModel.PersonalHousesOccupiedEnergies.Month;
+            YearlyPrediction = nineStarKiModel.PersonalHousesOccupiedEnergies?.Year;
+            MonthlyPrediction = nineStarKiModel.PersonalHousesOccupiedEnergies?.Month;
         }
         
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MainEnergyLabel)]

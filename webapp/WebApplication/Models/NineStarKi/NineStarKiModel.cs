@@ -66,7 +66,7 @@ namespace K9.WebApplication.Models
             int preciseEpochCycleEnergy, int preciseGenerationalCycleEnergy, int preciseYearlyCycleEnergy, int preciseMonthlyCycleEnergy, int preciseDailyCycleEnergy, int preciseHourlyCycleEnergy, int? preciseDailyCycleInvertedEnergy, DateTime? selectedDate = null)
         {
             SelectedDate = selectedDate ?? DateTime.UtcNow;
-
+            
             PersonModel = personModel;
             PersonalChartEnergies = new NineStarKiEnergiesModel();
             GlobalCycleEnergies = new NineStarKiEnergiesModel();
@@ -119,10 +119,10 @@ namespace K9.WebApplication.Models
             GlobalCycleEnergies.Month = GetOrAddToCache($"Month_g_{SelectedDate}_{preciseMonthlyCycleEnergy}",
                 () => GetGlobalCycleEnergy(preciseMonthlyCycleEnergy, ENineStarKiEnergyCycleType.MonthlyCycleEnergy), TimeSpan.FromDays(30));
 
-            GlobalCycleEnergies.Day = GetOrAddToCache($"Day_g_{SelectedDate}_{preciseDailyCycleEnergy}_{preciseDailyCycleInvertedEnergy}",
+            GlobalCycleEnergies.Day = GetOrAddToCache($"Day_g_{SelectedDate:yyyyMMddHH}_{preciseDailyCycleEnergy}_{preciseDailyCycleInvertedEnergy}",
                 () => GetGlobalCycleEnergy(preciseDailyCycleEnergy, ENineStarKiEnergyCycleType.DailyEnergy), TimeSpan.FromDays(30));
 
-            GlobalCycleEnergies.Hour = GetOrAddToCache($"Hour_g_{SelectedDate}_{preciseHourlyCycleEnergy}",
+            GlobalCycleEnergies.Hour = GetOrAddToCache($"Hour_g_{SelectedDate:yyyyMMddHH}_{preciseHourlyCycleEnergy}",
                 () => GetGlobalCycleEnergy(preciseHourlyCycleEnergy, ENineStarKiEnergyCycleType.HourlyEnergy), TimeSpan.FromDays(30));
 
             #endregion
@@ -143,15 +143,15 @@ namespace K9.WebApplication.Models
             PersonalHousesOccupiedEnergies.Month = GetOrAddToCache($"Month_h_{SelectedDate}_{personalInfoString}_{preciseMonthlyCycleEnergy}",
                 () => GetPersonalCycleEnergy(preciseMonthlyCycleEnergy, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Month.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.MonthlyCycleEnergy), TimeSpan.FromDays(30));
 
-            PersonalHousesOccupiedEnergies.Day = GetOrAddToCache($"Day_h_{SelectedDate}_{personalInfoString}_{preciseDailyCycleEnergy}_{preciseDailyCycleInvertedEnergy}",
+            PersonalHousesOccupiedEnergies.Day = GetOrAddToCache($"Day_h_{SelectedDate:yyyyMMddHH}_{personalInfoString}_{preciseDailyCycleEnergy}_{preciseDailyCycleInvertedEnergy}",
                 () => GetPersonalCycleEnergy(preciseDailyCycleEnergy, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Day.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.DailyEnergy), TimeSpan.FromDays(30));
 
-            PersonalHousesOccupiedEnergies.Hour = GetOrAddToCache($"Hour_h_{SelectedDate}_{personalInfoString}_{preciseHourlyCycleEnergy}",
+            PersonalHousesOccupiedEnergies.Hour = GetOrAddToCache($"Hour_h_{SelectedDate:yyyyMMddHH}_{personalInfoString}_{preciseHourlyCycleEnergy}",
                 () => GetPersonalCycleEnergy(preciseHourlyCycleEnergy, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Hour.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.HourlyEnergy), TimeSpan.FromDays(30));
 
             if (preciseDailyCycleInvertedEnergy.HasValue)
             {
-                PersonalHousesOccupiedEnergies.DayInverted = GetOrAddToCache($"DayInverted_h_{SelectedDate}_{personalInfoString}_{preciseDailyCycleEnergy}_{preciseDailyCycleInvertedEnergy}",
+                PersonalHousesOccupiedEnergies.DayInverted = GetOrAddToCache($"DayInverted_h_{SelectedDate:yyyyMMddHH}_{personalInfoString}_{preciseDailyCycleEnergy}_{preciseDailyCycleInvertedEnergy}",
                     () => GetPersonalCycleEnergy(preciseDailyCycleInvertedEnergy.Value, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Hour.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.DailyEnergy), TimeSpan.FromDays(30));
             }
 

@@ -56,7 +56,7 @@
         $(".monthly-planner-item").click(function() {
             var $el = $(this);
             var energy = $el.attr("data-energy");
-            var $planner, $details;
+            var $container, $plannerItem, $details;
 
             $container = $(".monthly-planner-container");
             $plannerItem = $el.find(".monthly-planner-item-container");
@@ -68,11 +68,10 @@
             // set current class on current selected item
             $plannerItem.addClass("active").addClass("current-month");
 
-            ajaxcontroller().get("@Url.Action("CalculateForecast", "Numerology")", {forecastType, dateOfBirth: dateOfBirthString, offset}).done(
+            ajaxcontroller().get("@Url.Action("GetMonthlyForecast", "Predictions")", {energy}).done(
                 function(result) {
                     if (result.success) {
-                        // $panel.find(".panel-title-text").html(result.data.Title);
-                        $panel.siblings(".panel").find(".panel-body").html(result.data.Forecast);
+                        $panel.siblings(".panel").find(".panel-body").html(result.data.CycleDescription);
                     }
                 });
         });

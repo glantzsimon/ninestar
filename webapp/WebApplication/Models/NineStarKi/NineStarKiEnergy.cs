@@ -457,7 +457,7 @@ namespace K9.WebApplication.Models
         public int EnergyNumber => (int)Energy;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyDescriptionLabel)]
-        public string EnergyDescription { get; set; }
+        public string EnergyDescription => GetEnergyDescription();
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ElementLabel)]
         public string ElementName => MetaData.GetElement();
@@ -565,9 +565,9 @@ namespace K9.WebApplication.Models
         }
 
         private string GetEpochDescription() => _epochDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
-        
+
         private string GetGenerationDescription() => _generationDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
-        
+
         private string GetMainEnergyDescription() => _mainEnergyDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
 
         private string GetEmotionalEnergyDescription() => _emotionalDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;

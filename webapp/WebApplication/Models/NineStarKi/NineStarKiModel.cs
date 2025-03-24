@@ -197,7 +197,7 @@ namespace K9.WebApplication.Models
         public string Health { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.OccupationsLabel)]
-        public string Occupations { get; set; }
+        public string Career { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PersonalDevelopemntLabel)]
         public string PersonalDevelopemnt { get; set; }

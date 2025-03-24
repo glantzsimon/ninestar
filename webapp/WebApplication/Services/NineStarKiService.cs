@@ -110,8 +110,9 @@ namespace K9.WebApplication.Services
                     };
                 }
                 
+                // Essence, Relationships & Intimacy, Career, Spirituality, Health, Overview Chart
                 model.Health = GetHealth(model.MainEnergy.Energy);
-                model.Occupations = GetOccupations(model.MainEnergy.Energy);
+                model.Career = GetOccupations(model.MainEnergy.Energy);
                 model.PersonalDevelopemnt = GetPersonalDevelopemnt(model.MainEnergy.Energy);
                 model.Summary = GetSummary(model);
                 model.Overview = GetOverview(model.MainEnergy.Energy);

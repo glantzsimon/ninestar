@@ -5,6 +5,7 @@ using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using K9.WebApplication.ViewModels;
 using System;
+using System.Linq;
 using System.Web.Mvc;
 using System.Web.UI;
 using K9.SharedLibrary.Helpers;
@@ -75,6 +76,16 @@ namespace K9.WebApplication.Controllers
             }
 
             return View(model);
+        }
+
+        [Route("get-monthly-forecast")]
+        [OutputCache(Duration = 2592000, VaryByParam = "energy", Location = OutputCacheLocation.ServerAndClient)]
+        public JsonResult GetMonthlyForecast(ENineStarKiEnergy energy)
+        {
+            var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
+            var cycle = summary.MonthlyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
+            
+            return Json(cycle, JsonRequestBehavior.AllowGet);
         }
 
         [Authorize]

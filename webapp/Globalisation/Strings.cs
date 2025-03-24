@@ -297,6 +297,26 @@
             public const string Revolution = "Revolution";
             public const string Spotlight = "Spotlight";
 
+            public const string WaterEpoch = "water_epoch";
+            public const string SoilEpoch = "soil_epoch";
+            public const string ThunderEpoch = "thunder_epoch";
+            public const string WindEpoch = "wind_epoch";
+            public const string CoreEarthEpoch = "core_earth_epoch";
+            public const string HeavenEpoch = "heaven_epoch";
+            public const string LakeEpoch = "lake_epoch";
+            public const string MountainEpoch = "mountain_epoch";
+            public const string FireEpoch = "fire_epoch";
+
+            public const string WaterGeneration = "water_generation";
+            public const string SoilGeneration = "soil_generation";
+            public const string ThunderGeneration = "thunder_generation";
+            public const string WindGeneration = "wind_generation";
+            public const string CoreEarthGeneration = "core_earth_generation";
+            public const string HeavenGeneration = "heaven_generation";
+            public const string LakeGeneration = "lake_generation";
+            public const string MountainGeneration = "mountain_generation";
+            public const string FireGeneration = "fire_generation";
+
             public const string WaterYear = "water_year";
             public const string SoilYear = "soil_year";
             public const string ThunderYear = "thunder_year";
@@ -316,6 +336,16 @@
             public const string LakeMonth = "lake_month";
             public const string MountainMonth = "mountain_month";
             public const string FireMonth = "fire_month";
+
+            public const string WaterDay = "water_day";
+            public const string SoilDay = "soil_day";
+            public const string ThunderDay = "thunder_day";
+            public const string WindDay = "wind_day";
+            public const string CoreEarthDay = "core_earth_day";
+            public const string HeavenDay = "heaven_day";
+            public const string LakeDay = "lake_day";
+            public const string MountainDay = "mountain_day";
+            public const string FireDay = "fire_day";
         }
     }
 }

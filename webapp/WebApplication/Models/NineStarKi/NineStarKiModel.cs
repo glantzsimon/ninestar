@@ -297,7 +297,7 @@ namespace K9.WebApplication.Models
 
                 foreach (var monthlyPeriod in MonthlyPeriods)
                 {
-                    cycles.Add(new Tuple<int, int, string, NineStarKiEnergy>(monthlyPeriod.PeriodStartOn.Year, monthlyPeriod.PeriodStartOn.Month, monthlyPeriod.PeriodStartOn.ToString("MMMM"), GetPersonalCycleEnergy(monthlyPeriod.MonthlyKi, MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.MonthlyCycleEnergy)));
+                    cycles.Add(new Tuple<int, int, string, NineStarKiEnergy>(monthlyPeriod.PeriodStartOn.Year, monthlyPeriod.PeriodStartOn.Month, monthlyPeriod.PeriodStartOn.ToString("MMMM"), GetPersonalCycleEnergy(monthlyPeriod.MonthlyKi, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Month.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.MonthlyCycleEnergy)));
                 }
 
                 return cycles;
@@ -313,7 +313,7 @@ namespace K9.WebApplication.Models
 
                 foreach (var day in DailyPeriods)
                 {
-                    cycles.Add(new Tuple<int, int, int, string, string, NineStarKiEnergy>(day.Date.Year, day.Date.Month, day.Date.Day, day.Date.ToString("MMM"), day.Date.ToString("ddd"), GetPersonalCycleEnergy(day.DailyKi, MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.DailyEnergy)));
+                    cycles.Add(new Tuple<int, int, int, string, string, NineStarKiEnergy>(day.Date.Year, day.Date.Month, day.Date.Day, day.Date.ToString("MMM"), day.Date.ToString("ddd"), GetPersonalCycleEnergy(day.DailyKi, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Day.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.DailyEnergy)));
                 }
 
                 return cycles;

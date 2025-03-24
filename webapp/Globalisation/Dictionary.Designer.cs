@@ -4569,6 +4569,54 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The seedling is beginning to mature.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Everyone is born in a 5 Core Earth house and returns to it at the age of nine, 18, 27, 36, 45, 54, etc. This is the centre of the 9 Star Ki cycle and represents the beginning and end of a cycle. Anything started during a 5 year will have a great impact on the following 8 years and so should be considered carefully.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    As the stars are positioned exactly as they were during the year of our birth, we can experience a kind of &quot;rebirth [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string core_earth_day {
+            get {
+                return ResourceManager.GetString("core_earth_day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The seedling is beginning to mature.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Everyone is born in a 5 Core Earth house and returns to it at the age of nine, 18, 27, 36, 45, 54, etc. This is the centre of the 9 Star Ki cycle and represents the beginning and end of a cycle. Anything started during a 5 year will have a great impact on the following 8 years and so should be considered carefully.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    As the stars are positioned exactly as they were during the year of our birth, we can experience a kind of &quot;rebirth [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string core_earth_epoch {
+            get {
+                return ResourceManager.GetString("core_earth_epoch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The seedling is beginning to mature.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Everyone is born in a 5 Core Earth house and returns to it at the age of nine, 18, 27, 36, 45, 54, etc. This is the centre of the 9 Star Ki cycle and represents the beginning and end of a cycle. Anything started during a 5 year will have a great impact on the following 8 years and so should be considered carefully.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    As the stars are positioned exactly as they were during the year of our birth, we can experience a kind of &quot;rebirth [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string core_earth_generation {
+            get {
+                return ResourceManager.GetString("core_earth_generation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This month is associated with the energy of adolescence and also rebirth
         ///&lt;/h5&gt;
@@ -6547,6 +6595,25 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is the year we take the spotlight
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents the full force of summer or the midday sun. It brings illumination, heat and clarity.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This year is our time to shine. We will be noticed, for good or bad reasons. We may find ourselves making significant achievements and we will likely feel very energetic, enthusiastic and optimistic with a great sense of adventure.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This is also a year when things we would rather keep a secret may well end  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fire_day {
+            get {
+                return ResourceManager.GetString("fire_day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Essence of Fire Energies&lt;/h4&gt;
         ///&lt;p&gt;
         ///    Fire Energies are known for their &lt;strong&gt;enlightenment, vision, and brilliance&lt;/strong&gt;. They often possess the clarity to &lt;strong&gt;navigate complex or emotionally charged situations&lt;/strong&gt; and are naturally drawn to roles where they can &lt;strong&gt;spark transformation and inspire others&lt;/strong&gt;. Their energy is radiant and captivating, lighting up any space they enter.
@@ -6608,11 +6675,49 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is the year we take the spotlight
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents the full force of summer or the midday sun. It brings illumination, heat and clarity.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This year is our time to shine. We will be noticed, for good or bad reasons. We may find ourselves making significant achievements and we will likely feel very energetic, enthusiastic and optimistic with a great sense of adventure.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This is also a year when things we would rather keep a secret may well end  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fire_epoch {
+            get {
+                return ResourceManager.GetString("fire_epoch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to As both people have Fire element in their charts and probably share many of the same qualities, such as the ability to inspire those around then with their great clarity, intuition and emotional intelligence. There is a good potential for both people to get on very well and they would likely enjoy talking to one another and feel very comfortable in each other&apos;s company..
         /// </summary>
         public static string fire_fire {
             get {
                 return ResourceManager.GetString("fire_fire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is the year we take the spotlight
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents the full force of summer or the midday sun. It brings illumination, heat and clarity.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This year is our time to shine. We will be noticed, for good or bad reasons. We may find ourselves making significant achievements and we will likely feel very energetic, enthusiastic and optimistic with a great sense of adventure.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This is also a year when things we would rather keep a secret may well end  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fire_generation {
+            get {
+                return ResourceManager.GetString("fire_generation", resourceCulture);
             }
         }
         
@@ -7424,6 +7529,25 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The fruits are beginning to ripen
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents early autumn or evening. It is where we begin to see the fruits of our labour; the reward of all the effort put in during the previous years.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This year is associated with the full force of Yang and we often feel confident with a strong sense of direction and purpose.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    We may well find that our skills and talents are more noticed by others and that we are rewarded for our efforts, perhaps with a p [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_day {
+            get {
+                return ResourceManager.GetString("heaven_day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Essence of Heaven Energies&lt;/h4&gt;
         ///&lt;p&gt;
         ///    Heaven Energies are often seen as &lt;strong&gt;natural leaders&lt;/strong&gt;—steady, commanding, and confident in roles of &lt;strong&gt;authority and influence&lt;/strong&gt;. Whether in politics, the military, business, or the arts, they frequently rise to positions of respect and responsibility.
@@ -7449,6 +7573,44 @@ namespace K9.Globalisation {
         public static string heaven_emotional_description {
             get {
                 return ResourceManager.GetString("heaven_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The fruits are beginning to ripen
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents early autumn or evening. It is where we begin to see the fruits of our labour; the reward of all the effort put in during the previous years.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This year is associated with the full force of Yang and we often feel confident with a strong sense of direction and purpose.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    We may well find that our skills and talents are more noticed by others and that we are rewarded for our efforts, perhaps with a p [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_epoch {
+            get {
+                return ResourceManager.GetString("heaven_epoch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The fruits are beginning to ripen
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents early autumn or evening. It is where we begin to see the fruits of our labour; the reward of all the effort put in during the previous years.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This year is associated with the full force of Yang and we often feel confident with a strong sense of direction and purpose.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    We may well find that our skills and talents are more noticed by others and that we are rewarded for our efforts, perhaps with a p [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_generation {
+            get {
+                return ResourceManager.GetString("heaven_generation", resourceCulture);
             }
         }
         
@@ -8539,6 +8701,22 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The harvest is in. It&apos;s time to celebrate and put one&apos;s feet up
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents late autumn or evening. It is the time to enjoy the harvest and to celebrate our achievements; a time to relax and be grateful for the abundance we have created for ourselves. It is also a time to reflect on the previous cycle.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This is perhaps the smoothest and most enjoyable House to occupy. It is a great time to become more sociable and broaden our horizons. We often feel more at [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string lake_day {
+            get {
+                return ResourceManager.GetString("lake_day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Essence of Lake Energies&lt;/h4&gt;
         ///&lt;p&gt;
         ///    Lake Energies are associated with &lt;strong&gt;late autumn&lt;/strong&gt;, a season of enjoyment, celebration, and reflection after the harvest. This symbolism reflects their &lt;strong&gt;love of pleasure, beauty, and connection&lt;/strong&gt;. Of all the Nine Star Ki Energies, 7 Metal types are perhaps the most inclined to &lt;strong&gt;enjoy fashion, entertainment, and social life&lt;/strong&gt;. They are natural pleasure seekers and know how to have a good time.
@@ -8561,6 +8739,38 @@ namespace K9.Globalisation {
         public static string lake_emotional_description {
             get {
                 return ResourceManager.GetString("lake_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The harvest is in. It&apos;s time to celebrate and put one&apos;s feet up
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents late autumn or evening. It is the time to enjoy the harvest and to celebrate our achievements; a time to relax and be grateful for the abundance we have created for ourselves. It is also a time to reflect on the previous cycle.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This is perhaps the smoothest and most enjoyable House to occupy. It is a great time to become more sociable and broaden our horizons. We often feel more at [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string lake_epoch {
+            get {
+                return ResourceManager.GetString("lake_epoch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The harvest is in. It&apos;s time to celebrate and put one&apos;s feet up
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents late autumn or evening. It is the time to enjoy the harvest and to celebrate our achievements; a time to relax and be grateful for the abundance we have created for ourselves. It is also a time to reflect on the previous cycle.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This is perhaps the smoothest and most enjoyable House to occupy. It is a great time to become more sociable and broaden our horizons. We often feel more at [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string lake_generation {
+            get {
+                return ResourceManager.GetString("lake_generation", resourceCulture);
             }
         }
         
@@ -10626,6 +10836,22 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The harvest is over. Winter is nigh.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents the transition from evening to night or autumn to winter. It is a time when Nature returns to stillness. We go indoors to shelter from the outside.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This is a time we tend to retreat into our &quot;cave&quot;. We often feel withdrawn, reserved and uncommunicative. It is a time for deep, honest introspection.  However, we need to be mindful that we don&apos;t become too withdrawn, as this could be upsetting to those who are  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_day {
+            get {
+                return ResourceManager.GetString("mountain_day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Essence of Mountain Energies&lt;/h4&gt;
         ///&lt;p&gt;
         ///    As the youngest son in the family archetype, Mountain Energies benefit from the &lt;strong&gt;accumulated wisdom of those who came before&lt;/strong&gt;. They often &lt;strong&gt;develop a strong sense of independence early in life&lt;/strong&gt; and may accumulate material wealth through &lt;strong&gt;persistence, discipline, or inheritance&lt;/strong&gt;. However, their success is typically the result of &lt;strong&gt;single-minded dedication&lt;/strong&gt; rather than charisma or creativity.
@@ -10649,6 +10875,38 @@ namespace K9.Globalisation {
         public static string mountain_emotional_description {
             get {
                 return ResourceManager.GetString("mountain_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The harvest is over. Winter is nigh.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents the transition from evening to night or autumn to winter. It is a time when Nature returns to stillness. We go indoors to shelter from the outside.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This is a time we tend to retreat into our &quot;cave&quot;. We often feel withdrawn, reserved and uncommunicative. It is a time for deep, honest introspection.  However, we need to be mindful that we don&apos;t become too withdrawn, as this could be upsetting to those who are  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_epoch {
+            get {
+                return ResourceManager.GetString("mountain_epoch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The harvest is over. Winter is nigh.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents the transition from evening to night or autumn to winter. It is a time when Nature returns to stillness. We go indoors to shelter from the outside.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This is a time we tend to retreat into our &quot;cave&quot;. We often feel withdrawn, reserved and uncommunicative. It is a time for deep, honest introspection.  However, we need to be mindful that we don&apos;t become too withdrawn, as this could be upsetting to those who are  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_generation {
+            get {
+                return ResourceManager.GetString("mountain_generation", resourceCulture);
             }
         }
         
@@ -13608,6 +13866,22 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The seed is starting to germinate and make its way up through the soil.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents the transition from winter to spring. There may be a sense of light at the end of the tunnel.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Socially and financially this is a time of slow or little growth. Rather, this is the perfect time to start planning and figuring out the details of what we have been dreaming about in the previous year; to get everything in order ready for the arrival of spring and a  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_day {
+            get {
+                return ResourceManager.GetString("soil_day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Essence of Soil Energies&lt;/h4&gt;
         ///&lt;p&gt;
         ///    Soil Energies are deeply &lt;strong&gt;maternal, caring, and supportive&lt;/strong&gt; by nature. They find fulfillment in &lt;strong&gt;serving and nurturing others&lt;/strong&gt;, and their presence often brings a sense of stability and comfort to those around them. While they may not be natural-born leaders, they &lt;strong&gt;work diligently and tirelessly&lt;/strong&gt; behind the scenes to get the job done. Number Two Soil Energies are considered among the &lt;strong&gt;most reliable and steadfast&lt;/ [rest of string was truncated]&quot;;.
@@ -13633,6 +13907,38 @@ namespace K9.Globalisation {
         public static string soil_emotional_description {
             get {
                 return ResourceManager.GetString("soil_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The seed is starting to germinate and make its way up through the soil.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents the transition from winter to spring. There may be a sense of light at the end of the tunnel.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Socially and financially this is a time of slow or little growth. Rather, this is the perfect time to start planning and figuring out the details of what we have been dreaming about in the previous year; to get everything in order ready for the arrival of spring and a  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_epoch {
+            get {
+                return ResourceManager.GetString("soil_epoch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The seed is starting to germinate and make its way up through the soil.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents the transition from winter to spring. There may be a sense of light at the end of the tunnel.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Socially and financially this is a time of slow or little growth. Rather, this is the perfect time to start planning and figuring out the details of what we have been dreaming about in the previous year; to get everything in order ready for the arrival of spring and a  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_generation {
+            get {
+                return ResourceManager.GetString("soil_generation", resourceCulture);
             }
         }
         
@@ -15227,6 +15533,25 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The seedling has sprouted, breaking through the top layer of soil with a tremendous burst of energy.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents early spring or dawn and therefore new growth, development as well as new opportunities. There is a sense of rising energy.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is the time to put our plans into action and begin working on our projects and endeavours. We are full of enthusiasm and have plenty of bright new ideas. It is also a great time to travel.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Having the full [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_day {
+            get {
+                return ResourceManager.GetString("thunder_day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Essence of Thunder Energies&lt;/h4&gt;
         ///&lt;p&gt;
         ///    Thunder Energies embody the vitality and power of springtime. They are &lt;strong&gt;dynamic, action-oriented, and full of life&lt;/strong&gt;, preferring to &lt;strong&gt;do rather than be&lt;/strong&gt;. They are &lt;strong&gt;initiators and catalysts&lt;/strong&gt;, with a boldness that pushes things forward and shakes up stagnation.
@@ -15256,6 +15581,44 @@ namespace K9.Globalisation {
         public static string thunder_emotional_description {
             get {
                 return ResourceManager.GetString("thunder_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The seedling has sprouted, breaking through the top layer of soil with a tremendous burst of energy.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents early spring or dawn and therefore new growth, development as well as new opportunities. There is a sense of rising energy.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is the time to put our plans into action and begin working on our projects and endeavours. We are full of enthusiasm and have plenty of bright new ideas. It is also a great time to travel.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Having the full [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_epoch {
+            get {
+                return ResourceManager.GetString("thunder_epoch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The seedling has sprouted, breaking through the top layer of soil with a tremendous burst of energy.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents early spring or dawn and therefore new growth, development as well as new opportunities. There is a sense of rising energy.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is the time to put our plans into action and begin working on our projects and endeavours. We are full of enthusiasm and have plenty of bright new ideas. It is also a great time to travel.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Having the full [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_generation {
+            get {
+                return ResourceManager.GetString("thunder_generation", resourceCulture);
             }
         }
         
@@ -16195,6 +16558,22 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This year represents night and winter. It&apos;s cold, dark and still. The seed is still in the ground. 
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This is a time for hibernation, deep rest and reflection. A time for pondering what one wishes to create during the next 9 year cycle.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    During this year, it is common to feel withdrawn and uncommunicative. Others may appear to keep their distance and we may feel vulnerable, hypersensitive and even fearful at times. It&apos;s a bit like when we are asleep and w [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_day {
+            get {
+                return ResourceManager.GetString("water_day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Essence of Water Energies&lt;/h4&gt;
         ///&lt;p&gt;
         ///    Water people can often appear &lt;strong&gt;quiet, brooding, and contemplative&lt;/strong&gt;, like a deep lake or ocean. Yet, like a bubbling mountain stream, they may also be &lt;strong&gt;lively, curious, and vivacious&lt;/strong&gt;, possessing a &lt;strong&gt;natural sense of adventure and exploration&lt;/strong&gt;. Indeed, &lt;strong&gt;many famous explorers were born under this sign&lt;/strong&gt;.
@@ -16240,11 +16619,43 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This year represents night and winter. It&apos;s cold, dark and still. The seed is still in the ground. 
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This is a time for hibernation, deep rest and reflection. A time for pondering what one wishes to create during the next 9 year cycle.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    During this year, it is common to feel withdrawn and uncommunicative. Others may appear to keep their distance and we may feel vulnerable, hypersensitive and even fearful at times. It&apos;s a bit like when we are asleep and w [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_epoch {
+            get {
+                return ResourceManager.GetString("water_epoch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The Water element runs deep and loves to explore the emotional world, flowing endlessly from one vantage point to the next. Fire people, on the other hand, are more comfortable with the perspective of the midday sun, where everything is illuminated and in plain view. What can therefore happen, is that Fire people can feel rather &apos;lost&apos; in the world of Water people. They don&apos;t have much common ground and it can result in their flame going out. Water people also typically react to Fire&apos;s clearly defined opini [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_fire {
             get {
                 return ResourceManager.GetString("water_fire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This year represents night and winter. It&apos;s cold, dark and still. The seed is still in the ground. 
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This is a time for hibernation, deep rest and reflection. A time for pondering what one wishes to create during the next 9 year cycle.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    During this year, it is common to feel withdrawn and uncommunicative. Others may appear to keep their distance and we may feel vulnerable, hypersensitive and even fearful at times. It&apos;s a bit like when we are asleep and w [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_generation {
+            get {
+                return ResourceManager.GetString("water_generation", resourceCulture);
             }
         }
         
@@ -16636,6 +17047,22 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The seedling is growing rapidly with many leaves and shoots appearing.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents mid morning or mid to late spring. It is a time of sustained growth, following on from the rapid burst of the previous year. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    However, this is also potentially a changeable and unpredictable time. It can be tempting to change direction or move away from what we have been working on so far. It is important to stick to the plans. A farmer wouldn&apos;t pull up his or her crops mid- [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_day {
+            get {
+                return ResourceManager.GetString("wind_day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Essence of Wind Energies&lt;/h4&gt;
         ///&lt;p&gt;
         ///    Wind Energies, as their name suggests, embody the qualities of movement and transformation. They can express anything from &lt;strong&gt;gentle stillness to sudden intensity&lt;/strong&gt;—like a quiet breeze or a sweeping gust. Among the Nine Star Ki Energies, Wind is &lt;strong&gt;one of the most changeable and emotionally expressive&lt;/strong&gt;.
@@ -16662,6 +17089,38 @@ namespace K9.Globalisation {
         public static string wind_emotional_description {
             get {
                 return ResourceManager.GetString("wind_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The seedling is growing rapidly with many leaves and shoots appearing.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents mid morning or mid to late spring. It is a time of sustained growth, following on from the rapid burst of the previous year. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    However, this is also potentially a changeable and unpredictable time. It can be tempting to change direction or move away from what we have been working on so far. It is important to stick to the plans. A farmer wouldn&apos;t pull up his or her crops mid- [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_epoch {
+            get {
+                return ResourceManager.GetString("wind_epoch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The seedling is growing rapidly with many leaves and shoots appearing.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents mid morning or mid to late spring. It is a time of sustained growth, following on from the rapid burst of the previous year. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    However, this is also potentially a changeable and unpredictable time. It can be tempting to change direction or move away from what we have been working on so far. It is important to stick to the plans. A farmer wouldn&apos;t pull up his or her crops mid- [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_generation {
+            get {
+                return ResourceManager.GetString("wind_generation", resourceCulture);
             }
         }
         
@@ -16911,9 +17370,57 @@ namespace K9.Globalisation {
         ///&lt;h5&gt;
         ///    Thes [rest of string was truncated]&quot;;.
         /// </summary>
+        public static string year_day {
+            get {
+                return ResourceManager.GetString("year_day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Our lives pass through each of the houses in nine-year cycles, with each house or year representing one of the nine Energies of the 9 Star Ki system.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Not only does each person have a 9 Star Ki birth chart, which is determined by their date of birth, but in addition, each of our lives passes through each of the nine houses in nine-year cycles. Each house is governed by one of the nine Energies of the 9 Star Ki system and influences our lives in powerful ways. 
+        ///&lt;/p&gt;
+        ///&lt;h5&gt;
+        ///    Thes [rest of string was truncated]&quot;;.
+        /// </summary>
         public static string year_description {
             get {
                 return ResourceManager.GetString("year_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Our lives pass through each of the houses in nine-year cycles, with each house or year representing one of the nine Energies of the 9 Star Ki system.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Not only does each person have a 9 Star Ki birth chart, which is determined by their date of birth, but in addition, each of our lives passes through each of the nine houses in nine-year cycles. Each house is governed by one of the nine Energies of the 9 Star Ki system and influences our lives in powerful ways. 
+        ///&lt;/p&gt;
+        ///&lt;h5&gt;
+        ///    Thes [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string year_epoch {
+            get {
+                return ResourceManager.GetString("year_epoch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Our lives pass through each of the houses in nine-year cycles, with each house or year representing one of the nine Energies of the 9 Star Ki system.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Not only does each person have a 9 Star Ki birth chart, which is determined by their date of birth, but in addition, each of our lives passes through each of the nine houses in nine-year cycles. Each house is governed by one of the nine Energies of the 9 Star Ki system and influences our lives in powerful ways. 
+        ///&lt;/p&gt;
+        ///&lt;h5&gt;
+        ///    Thes [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string year_generation {
+            get {
+                return ResourceManager.GetString("year_generation", resourceCulture);
             }
         }
         

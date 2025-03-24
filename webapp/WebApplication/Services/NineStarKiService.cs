@@ -109,16 +109,7 @@ namespace K9.WebApplication.Services
                         DailyPeriods = new (DateTime Date, int DailyKi, int? InvertedDailyKi)[] { }
                     };
                 }
-
-                model.MainEnergy.EnergyDescription = GetMainEnergyDescription(model.MainEnergy.Energy);
-                model.CharacterEnergy.EnergyDescription = GetCharacterEnergyDescription(model.CharacterEnergy.Energy);
-                model.SurfaceEnergy.EnergyDescription = GetSurfaceEnergyDescription(model.SurfaceEnergy.Energy);
-
-                // ToDo
-                model.PersonalChartEnergies.Day.EnergyDescription = Dictionary.ComingSoon;
-                model.PersonalChartEnergies.Generation.EnergyDescription = Dictionary.ComingSoon;
-                model.PersonalChartEnergies.Epoch.EnergyDescription = Dictionary.ComingSoon;
-
+                
                 model.Health = GetHealth(model.MainEnergy.Energy);
                 model.Occupations = GetOccupations(model.MainEnergy.Energy);
                 model.PersonalDevelopemnt = GetPersonalDevelopemnt(model.MainEnergy.Energy);
@@ -195,51 +186,52 @@ namespace K9.WebApplication.Services
         {
             return GetOrAddToCache("GetNineStarKiSummaryViewModel", () =>
             {
+                var yearEnergies = new List<NineStarKiEnergy>
+                {
+                    new NineStarKiEnergy(ENineStarKiEnergy.Water, ENineStarKiEnergyType.MainEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.YearlyCycleEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Soil, ENineStarKiEnergyType.MainEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.YearlyCycleEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Thunder, ENineStarKiEnergyType.MainEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.YearlyCycleEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Wind, ENineStarKiEnergyType.MainEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.YearlyCycleEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.CoreEarth, ENineStarKiEnergyType.MainEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.YearlyCycleEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Heaven, ENineStarKiEnergyType.MainEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.YearlyCycleEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Lake, ENineStarKiEnergyType.MainEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.YearlyCycleEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Mountain, ENineStarKiEnergyType.MainEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.YearlyCycleEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Fire, ENineStarKiEnergyType.MainEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.YearlyCycleEnergy}
+                };
 
-                var mainEnergies = new List<NineStarKiModel>
-            {
-                CalculateNineStarKiProfile(new DateTime(1981, 3, 3)),
-                CalculateNineStarKiProfile(new DateTime(1980, 3, 3)),
-                CalculateNineStarKiProfile(new DateTime(1979, 3, 3)),
-                CalculateNineStarKiProfile(new DateTime(1978, 3, 3)),
-                CalculateNineStarKiProfile(new DateTime(1977, 3, 3)),
-                CalculateNineStarKiProfile(new DateTime(1976, 3, 3)),
-                CalculateNineStarKiProfile(new DateTime(1984, 3, 3)),
-                CalculateNineStarKiProfile(new DateTime(1974, 3, 3)),
-                CalculateNineStarKiProfile(new DateTime(1973, 3, 3)),
-            };
-                var characterEnergies = new List<NineStarKiModel>
-            {
-                CalculateNineStarKiProfile(new DateTime(1980, 2, 10)),
-                CalculateNineStarKiProfile(new DateTime(1980, 3, 10)),
-                CalculateNineStarKiProfile(new DateTime(1980, 4, 10)),
-                CalculateNineStarKiProfile(new DateTime(1980, 5, 10)),
-                CalculateNineStarKiProfile(new DateTime(1980, 6, 10)),
-                CalculateNineStarKiProfile(new DateTime(1980, 7, 10)),
-                CalculateNineStarKiProfile(new DateTime(1980, 8, 10)),
-                CalculateNineStarKiProfile(new DateTime(1980, 9, 10)),
-                CalculateNineStarKiProfile(new DateTime(1980, 10, 10)),
-            };
+                var monthEnergies = new List<NineStarKiEnergy>
+                {
+                    new NineStarKiEnergy(ENineStarKiEnergy.Water, ENineStarKiEnergyType.CharacterEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.MonthlyCycleEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Soil, ENineStarKiEnergyType.CharacterEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.MonthlyCycleEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Thunder, ENineStarKiEnergyType.CharacterEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.MonthlyCycleEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Wind, ENineStarKiEnergyType.CharacterEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.MonthlyCycleEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.CoreEarth, ENineStarKiEnergyType.CharacterEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.MonthlyCycleEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Heaven, ENineStarKiEnergyType.CharacterEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.MonthlyCycleEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Lake, ENineStarKiEnergyType.CharacterEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.MonthlyCycleEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Mountain, ENineStarKiEnergyType.CharacterEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.MonthlyCycleEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Fire, ENineStarKiEnergyType.CharacterEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.MonthlyCycleEnergy}
+                };
+                
                 var dynamicEnergies = new List<NineStarKiEnergy>
-            {
-                new NineStarKiEnergy(ENineStarKiEnergy.Thunder, ENineStarKiEnergyType.MainEnergy),
-                new NineStarKiEnergy(ENineStarKiEnergy.Heaven, ENineStarKiEnergyType.MainEnergy),
-                new NineStarKiEnergy(ENineStarKiEnergy.Fire, ENineStarKiEnergyType.MainEnergy)
-            };
+                {
+                    new NineStarKiEnergy(ENineStarKiEnergy.Thunder, ENineStarKiEnergyType.MainEnergy),
+                    new NineStarKiEnergy(ENineStarKiEnergy.Heaven, ENineStarKiEnergyType.MainEnergy),
+                    new NineStarKiEnergy(ENineStarKiEnergy.Fire, ENineStarKiEnergyType.MainEnergy)
+                };
                 var staticEnergies = new List<NineStarKiEnergy>
-            {
-                new NineStarKiEnergy(ENineStarKiEnergy.Soil, ENineStarKiEnergyType.MainEnergy),
-                new NineStarKiEnergy(ENineStarKiEnergy.CoreEarth, ENineStarKiEnergyType.MainEnergy),
-                new NineStarKiEnergy(ENineStarKiEnergy.Mountain, ENineStarKiEnergyType.MainEnergy)
-            };
+                {
+                    new NineStarKiEnergy(ENineStarKiEnergy.Soil, ENineStarKiEnergyType.MainEnergy),
+                    new NineStarKiEnergy(ENineStarKiEnergy.CoreEarth, ENineStarKiEnergyType.MainEnergy),
+                    new NineStarKiEnergy(ENineStarKiEnergy.Mountain, ENineStarKiEnergyType.MainEnergy)
+                };
                 var reflectiveEnergies = new List<NineStarKiEnergy>
-            {
-                new NineStarKiEnergy(ENineStarKiEnergy.Water, ENineStarKiEnergyType.MainEnergy),
-                new NineStarKiEnergy(ENineStarKiEnergy.Wind, ENineStarKiEnergyType.MainEnergy),
-                new NineStarKiEnergy(ENineStarKiEnergy.Lake, ENineStarKiEnergyType.MainEnergy)
-            };
+                {
+                    new NineStarKiEnergy(ENineStarKiEnergy.Water, ENineStarKiEnergyType.MainEnergy),
+                    new NineStarKiEnergy(ENineStarKiEnergy.Wind, ENineStarKiEnergyType.MainEnergy),
+                    new NineStarKiEnergy(ENineStarKiEnergy.Lake, ENineStarKiEnergyType.MainEnergy)
+                };
 
-                return new NineStarKiSummaryViewModel(mainEnergies, characterEnergies, dynamicEnergies, staticEnergies,
+                return new NineStarKiSummaryViewModel(yearEnergies, monthEnergies, dynamicEnergies, staticEnergies,
                     reflectiveEnergies);
             }, TimeSpan.FromDays(30));
         }
@@ -626,127 +618,7 @@ namespace K9.WebApplication.Services
                 return string.Empty;
             }, TimeSpan.FromDays(30));
         }
-
-        private string GetMainEnergyDescription(ENineStarKiEnergy energy)
-        {
-            var cacheKey = $"GetMainEnergyDescription_{energy}";
-            return GetOrAddToCache(cacheKey, () =>
-            {
-                switch (energy)
-                {
-                    case ENineStarKiEnergy.Water:
-                        return Dictionary.water_description;
-
-                    case ENineStarKiEnergy.Soil:
-                        return Dictionary.soil_description;
-
-                    case ENineStarKiEnergy.Thunder:
-                        return Dictionary.thunder_description;
-
-                    case ENineStarKiEnergy.Wind:
-                        return Dictionary.wind_description;
-
-                    case ENineStarKiEnergy.CoreEarth:
-                        return Dictionary.coreearth_description;
-
-                    case ENineStarKiEnergy.Heaven:
-                        return Dictionary.heaven_description;
-
-                    case ENineStarKiEnergy.Lake:
-                        return Dictionary.lake_description;
-
-                    case ENineStarKiEnergy.Mountain:
-                        return Dictionary.mountain_description;
-
-                    case ENineStarKiEnergy.Fire:
-                        return Dictionary.fire_description;
-                }
-
-                return string.Empty;
-
-            }, TimeSpan.FromDays(30));
-        }
-
-        private string GetCharacterEnergyDescription(ENineStarKiEnergy energy)
-        {
-            var cacheKey = $"GetCharacterEnergyDescription_{energy}";
-            return GetOrAddToCache(cacheKey, () =>
-            {
-                switch (energy)
-                {
-                    case ENineStarKiEnergy.Water:
-                        return Dictionary.water_emotional_description;
-
-                    case ENineStarKiEnergy.Soil:
-                        return Dictionary.soil_emotional_description;
-
-                    case ENineStarKiEnergy.Thunder:
-                        return Dictionary.thunder_emotional_description;
-
-                    case ENineStarKiEnergy.Wind:
-                        return Dictionary.wind_emotional_description;
-
-                    case ENineStarKiEnergy.CoreEarth:
-                        return Dictionary.coreearth_emotional_description;
-
-                    case ENineStarKiEnergy.Heaven:
-                        return Dictionary.heaven_emotional_description;
-
-                    case ENineStarKiEnergy.Lake:
-                        return Dictionary.lake_emotional_description;
-
-                    case ENineStarKiEnergy.Mountain:
-                        return Dictionary.mountain_emotional_description;
-
-                    case ENineStarKiEnergy.Fire:
-                        return Dictionary.fire_emotional_description;
-                }
-
-                return string.Empty;
-
-            }, TimeSpan.FromDays(30));
-        }
-
-        private string GetSurfaceEnergyDescription(ENineStarKiEnergy energy)
-        {
-            var cacheKey = $"GetSurfaceEnergyDescription_{energy}";
-            return GetOrAddToCache(cacheKey, () =>
-            {
-                switch (energy)
-                {
-                    case ENineStarKiEnergy.Water:
-                        return Dictionary.water_surface_description;
-
-                    case ENineStarKiEnergy.Soil:
-                        return Dictionary.soil_surface_description;
-
-                    case ENineStarKiEnergy.Thunder:
-                        return Dictionary.thunder_surface_description;
-
-                    case ENineStarKiEnergy.Wind:
-                        return Dictionary.wind_surface_description;
-
-                    case ENineStarKiEnergy.CoreEarth:
-                        return Dictionary.coreearth_surface_description;
-
-                    case ENineStarKiEnergy.Heaven:
-                        return Dictionary.heaven_surface_description;
-
-                    case ENineStarKiEnergy.Lake:
-                        return Dictionary.lake_surface_description;
-
-                    case ENineStarKiEnergy.Mountain:
-                        return Dictionary.mountain_surface_description;
-
-                    case ENineStarKiEnergy.Fire:
-                        return Dictionary.fire_surface_description;
-                }
-
-                return string.Empty;
-
-            }, TimeSpan.FromDays(30));
-        }
-
+        
         private string GetHealth(ENineStarKiEnergy energy)
         {
             var cacheKey = $"GetHealth_{energy}";

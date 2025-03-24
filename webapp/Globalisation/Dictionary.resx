@@ -4702,6 +4702,15 @@
   <data name="Reflective" xml:space="preserve">
     <value>Reflective</value>
   </data>
+  <data name="core_earth_day" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\day\en-gb\core-earth-day.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="core_earth_epoch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\epoch\en-gb\core-earth-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="core_earth_generation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\generation\en-gb\core-earth-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="DailyKiCalendar" xml:space="preserve">
     <value>Daily Ki Calendar </value>
   </data>
@@ -4711,13 +4720,94 @@
   <data name="EightyOneYearlyPrediction" xml:space="preserve">
     <value>Eighty-One-Year Prediction</value>
   </data>
+  <data name="fire_day" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\day\en-gb\fire-day.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_epoch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\epoch\en-gb\fire-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_generation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\generation\en-gb\fire-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_day" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\day\en-gb\heaven-day.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_epoch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\epoch\en-gb\heaven-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_generation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\generation\en-gb\heaven-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="HourlyPrediction" xml:space="preserve">
     <value>Hourly Prediction</value>
+  </data>
+  <data name="lake_day" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\day\en-gb\lake-day.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_epoch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\epoch\en-gb\lake-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_generation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\generation\en-gb\lake-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_day" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\day\en-gb\mountain-day.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_epoch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\epoch\en-gb\mountain-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_generation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\generation\en-gb\mountain-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="NineYearlyPrediction" xml:space="preserve">
     <value>Nine-Year Prediction</value>
   </data>
+  <data name="soil_day" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\day\en-gb\soil-day.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="soil_epoch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\epoch\en-gb\soil-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="soil_generation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\generation\en-gb\soil-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="thunder_day" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\day\en-gb\thunder-day.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="thunder_epoch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\epoch\en-gb\thunder-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="thunder_generation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\generation\en-gb\thunder-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="UseHolographicMethod" xml:space="preserve">
     <value>Use Isometric Calculation Method</value>
+  </data>
+  <data name="water_day" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\day\en-gb\water-day.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_epoch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\epoch\en-gb\water-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_generation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\generation\en-gb\water-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wind_day" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\day\en-gb\wind-day.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wind_epoch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\epoch\en-gb\wind-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wind_generation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\generation\en-gb\wind-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="year_day" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\day\en-gb\year-day.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="year_epoch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\epoch\en-gb\year-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="year_generation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\generation\en-gb\year-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

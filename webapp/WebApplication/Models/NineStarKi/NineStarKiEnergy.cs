@@ -103,7 +103,10 @@ namespace K9.WebApplication.Models
             Element = ENineStarKiElement.Water,
             DescriptiveName = ENineStarKiCycleDescriptiveName.Hibernation,
             YearlyDescriptionName = Strings.Names.WaterYear,
-            MonthlyDescriptionName = Strings.Names.WaterMonth)]
+            MonthlyDescriptionName = Strings.Names.WaterMonth,
+            EightyOneYearDescriptionName = Strings.Names.WaterEpoch,
+            NineYearDescriptionName = Strings.Names.WaterGeneration,
+            DailyDescriptionName = Strings.Names.WaterDay)]
         Winter,
 
         [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
@@ -111,7 +114,10 @@ namespace K9.WebApplication.Models
             Element = ENineStarKiElement.Earth,
             DescriptiveName = ENineStarKiCycleDescriptiveName.Planning,
             YearlyDescriptionName = Strings.Names.SoilYear,
-            MonthlyDescriptionName = Strings.Names.SoilMonth)]
+            MonthlyDescriptionName = Strings.Names.SoilMonth,
+            EightyOneYearDescriptionName = Strings.Names.SoilEpoch,
+            NineYearDescriptionName = Strings.Names.SoilGeneration,
+            DailyDescriptionName = Strings.Names.SoilDay)]
         WinterToSpring,
 
         [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
@@ -119,7 +125,10 @@ namespace K9.WebApplication.Models
             Element = ENineStarKiElement.Tree,
             DescriptiveName = ENineStarKiCycleDescriptiveName.Sprouting,
             YearlyDescriptionName = Strings.Names.ThunderYear,
-            MonthlyDescriptionName = Strings.Names.ThunderMonth)]
+            MonthlyDescriptionName = Strings.Names.ThunderMonth,
+            EightyOneYearDescriptionName = Strings.Names.ThunderEpoch,
+            NineYearDescriptionName = Strings.Names.ThunderGeneration,
+            DailyDescriptionName = Strings.Names.ThunderDay)]
         EarlySpring,
 
         [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
@@ -127,7 +136,10 @@ namespace K9.WebApplication.Models
             Element = ENineStarKiElement.Tree,
             DescriptiveName = ENineStarKiCycleDescriptiveName.Blossoming,
             YearlyDescriptionName = Strings.Names.WindYear,
-            MonthlyDescriptionName = Strings.Names.WindMonth)]
+            MonthlyDescriptionName = Strings.Names.WindMonth,
+            EightyOneYearDescriptionName = Strings.Names.WindEpoch,
+            NineYearDescriptionName = Strings.Names.WindGeneration,
+            DailyDescriptionName = Strings.Names.WindDay)]
         LateSpring,
 
         [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
@@ -135,7 +147,10 @@ namespace K9.WebApplication.Models
             Element = ENineStarKiElement.Earth,
             DescriptiveName = ENineStarKiCycleDescriptiveName.Consolidating,
             YearlyDescriptionName = Strings.Names.CoreEarthYear,
-            MonthlyDescriptionName = Strings.Names.CoreEarthMonth)]
+            MonthlyDescriptionName = Strings.Names.CoreEarthMonth,
+            EightyOneYearDescriptionName = Strings.Names.CoreEarthEpoch,
+            NineYearDescriptionName = Strings.Names.CoreEarthGeneration,
+            DailyDescriptionName = Strings.Names.CoreEarthDay)]
         Centre,
 
         [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
@@ -143,7 +158,10 @@ namespace K9.WebApplication.Models
             Element = ENineStarKiElement.Metal,
             DescriptiveName = ENineStarKiCycleDescriptiveName.Ripening,
             YearlyDescriptionName = Strings.Names.HeavenYear,
-            MonthlyDescriptionName = Strings.Names.HeavenMonth)]
+            MonthlyDescriptionName = Strings.Names.HeavenMonth,
+            EightyOneYearDescriptionName = Strings.Names.HeavenEpoch,
+            NineYearDescriptionName = Strings.Names.HeavenGeneration,
+            DailyDescriptionName = Strings.Names.HeavenDay)]
         EarlyAutumn,
 
         [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
@@ -151,7 +169,10 @@ namespace K9.WebApplication.Models
             Element = ENineStarKiElement.Metal,
             DescriptiveName = ENineStarKiCycleDescriptiveName.Harvest,
             YearlyDescriptionName = Strings.Names.LakeYear,
-            MonthlyDescriptionName = Strings.Names.LakeMonth)]
+            MonthlyDescriptionName = Strings.Names.LakeMonth,
+            EightyOneYearDescriptionName = Strings.Names.LakeEpoch,
+            NineYearDescriptionName = Strings.Names.LakeGeneration,
+            DailyDescriptionName = Strings.Names.LakeDay)]
         LateAutumn,
 
         [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
@@ -159,7 +180,10 @@ namespace K9.WebApplication.Models
             Element = ENineStarKiElement.Earth,
             DescriptiveName = ENineStarKiCycleDescriptiveName.Revolution,
             YearlyDescriptionName = Strings.Names.MountainYear,
-            MonthlyDescriptionName = Strings.Names.MountainMonth)]
+            MonthlyDescriptionName = Strings.Names.MountainMonth,
+            EightyOneYearDescriptionName = Strings.Names.MountainEpoch,
+            NineYearDescriptionName = Strings.Names.MountainGeneration,
+            DailyDescriptionName = Strings.Names.MountainDay)]
         AutumnToWinter,
 
         [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
@@ -167,7 +191,10 @@ namespace K9.WebApplication.Models
             Element = ENineStarKiElement.Fire,
             DescriptiveName = ENineStarKiCycleDescriptiveName.Spotlight,
             YearlyDescriptionName = Strings.Names.FireYear,
-            MonthlyDescriptionName = Strings.Names.FireMonth)]
+            MonthlyDescriptionName = Strings.Names.FireMonth,
+            EightyOneYearDescriptionName = Strings.Names.WindEpoch,
+            NineYearDescriptionName = Strings.Names.FireGeneration,
+            DailyDescriptionName = Strings.Names.FireDay)]
         Summer
     }
 
@@ -299,6 +326,71 @@ namespace K9.WebApplication.Models
             { ENineStarKiEnergy.Fire, Dictionary.fire_trigram }
         };
 
+        private static readonly Dictionary<ENineStarKiEnergy, string> _epochDescriptions = new Dictionary<ENineStarKiEnergy, string>
+        {
+            { ENineStarKiEnergy.Water, Dictionary.water_epoch },
+            { ENineStarKiEnergy.Soil, Dictionary.soil_epoch },
+            { ENineStarKiEnergy.Thunder, Dictionary.thunder_epoch },
+            { ENineStarKiEnergy.Wind, Dictionary.wind_epoch },
+            { ENineStarKiEnergy.CoreEarth, Dictionary.core_earth_epoch },
+            { ENineStarKiEnergy.Heaven, Dictionary.heaven_epoch },
+            { ENineStarKiEnergy.Lake, Dictionary.lake_epoch },
+            { ENineStarKiEnergy.Mountain, Dictionary.mountain_epoch },
+            { ENineStarKiEnergy.Fire, Dictionary.fire_epoch }
+        };
+
+        private static readonly Dictionary<ENineStarKiEnergy, string> _generationDescriptions = new Dictionary<ENineStarKiEnergy, string>
+        {
+            { ENineStarKiEnergy.Water, Dictionary.water_generation },
+            { ENineStarKiEnergy.Soil, Dictionary.soil_generation },
+            { ENineStarKiEnergy.Thunder, Dictionary.thunder_generation },
+            { ENineStarKiEnergy.Wind, Dictionary.wind_generation },
+            { ENineStarKiEnergy.CoreEarth, Dictionary.core_earth_generation },
+            { ENineStarKiEnergy.Heaven, Dictionary.heaven_generation },
+            { ENineStarKiEnergy.Lake, Dictionary.lake_generation },
+            { ENineStarKiEnergy.Mountain, Dictionary.mountain_generation },
+            { ENineStarKiEnergy.Fire, Dictionary.fire_generation }
+        };
+
+        private static readonly Dictionary<ENineStarKiEnergy, string> _mainEnergyDescriptions = new Dictionary<ENineStarKiEnergy, string>
+        {
+            { ENineStarKiEnergy.Water, Dictionary.water_description },
+            { ENineStarKiEnergy.Soil, Dictionary.soil_description },
+            { ENineStarKiEnergy.Thunder, Dictionary.thunder_description },
+            { ENineStarKiEnergy.Wind, Dictionary.wind_description },
+            { ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_description },
+            { ENineStarKiEnergy.Heaven, Dictionary.heaven_description },
+            { ENineStarKiEnergy.Lake, Dictionary.lake_description },
+            { ENineStarKiEnergy.Mountain, Dictionary.mountain_description },
+            { ENineStarKiEnergy.Fire, Dictionary.fire_description }
+        };
+
+        private static readonly Dictionary<ENineStarKiEnergy, string> _emotionalDescriptions = new Dictionary<ENineStarKiEnergy, string>
+        {
+            { ENineStarKiEnergy.Water, Dictionary.water_emotional_description },
+            { ENineStarKiEnergy.Soil, Dictionary.soil_emotional_description  },
+            { ENineStarKiEnergy.Thunder, Dictionary.thunder_emotional_description  },
+            { ENineStarKiEnergy.Wind, Dictionary.wind_emotional_description  },
+            { ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_emotional_description  },
+            { ENineStarKiEnergy.Heaven, Dictionary.heaven_emotional_description  },
+            { ENineStarKiEnergy.Lake, Dictionary.lake_emotional_description  },
+            { ENineStarKiEnergy.Mountain, Dictionary.mountain_emotional_description  },
+            { ENineStarKiEnergy.Fire, Dictionary.fire_emotional_description  }
+        };
+
+        private static readonly Dictionary<ENineStarKiEnergy, string> _surfaceEnergyDescriptions = new Dictionary<ENineStarKiEnergy, string>
+        {
+            { ENineStarKiEnergy.Water, Dictionary.water_surface_description },
+            { ENineStarKiEnergy.Soil, Dictionary.soil_surface_description  },
+            { ENineStarKiEnergy.Thunder, Dictionary.thunder_surface_description  },
+            { ENineStarKiEnergy.Wind, Dictionary.wind_surface_description  },
+            { ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_surface_description  },
+            { ENineStarKiEnergy.Heaven, Dictionary.heaven_surface_description  },
+            { ENineStarKiEnergy.Lake, Dictionary.lake_surface_description  },
+            { ENineStarKiEnergy.Mountain, Dictionary.mountain_surface_description  },
+            { ENineStarKiEnergy.Fire, Dictionary.fire_surface_description  }
+        };
+
         private static readonly Dictionary<ENineStarKiEnergy, string> _childDescriptions = new Dictionary<ENineStarKiEnergy, string>
         {
             { ENineStarKiEnergy.Water, Dictionary.water_child },
@@ -310,6 +402,19 @@ namespace K9.WebApplication.Models
             { ENineStarKiEnergy.Lake, Dictionary.lake_child },
             { ENineStarKiEnergy.Mountain, Dictionary.mountain_child },
             { ENineStarKiEnergy.Fire, Dictionary.fire_child }
+        };
+
+        private static readonly Dictionary<ENineStarKiEnergy, string> _dayDescriptions = new Dictionary<ENineStarKiEnergy, string>
+        {
+            { ENineStarKiEnergy.Water, Dictionary.water_day },
+            { ENineStarKiEnergy.Soil, Dictionary.soil_day },
+            { ENineStarKiEnergy.Thunder, Dictionary.thunder_day },
+            { ENineStarKiEnergy.Wind, Dictionary.wind_day },
+            { ENineStarKiEnergy.CoreEarth, Dictionary.core_earth_day },
+            { ENineStarKiEnergy.Heaven, Dictionary.heaven_day },
+            { ENineStarKiEnergy.Lake, Dictionary.lake_day },
+            { ENineStarKiEnergy.Mountain, Dictionary.mountain_day },
+            { ENineStarKiEnergy.Fire, Dictionary.fire_day }
         };
 
         public NineStarKiEnergy(ENineStarKiEnergy energy, ENineStarKiEnergyType type, bool isAdult = true)
@@ -325,14 +430,32 @@ namespace K9.WebApplication.Models
             EnergyCycleType = energyCycleType;
         }
 
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EpochEnergyLabel)]
+        public string EpochDescription => EnergyType == ENineStarKiEnergyType.EpochEnergy ? GetEpochDescription() : string.Empty;
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GenerationalEnergyLabel)]
+        public string GenerationDescription => EnergyType == ENineStarKiEnergyType.GenerationalEnergy ? GetGenerationDescription() : string.Empty;
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MainEnergyLabel)]
+        public string MainEnergyDescription => EnergyType == ENineStarKiEnergyType.MainEnergy ? GetMainEnergyDescription() : string.Empty;
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CharacterEnergyLabel)]
+        public string EmotionalEnergyDescription => EnergyType == ENineStarKiEnergyType.CharacterEnergy ? GetEmotionalEnergyDescription() : string.Empty;
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SurfaceEnergyLabel)]
+        public string SurfaceEnergyDescription => EnergyType == ENineStarKiEnergyType.SurfaceEnergy ? GetSurfaceEnergyDescription() : string.Empty;
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ChildLabel)]
         public string ChildDescription => EnergyType == ENineStarKiEnergyType.CharacterEnergy ? GetChildDescription() : string.Empty;
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DayStarLabel)]
+        public string DayStarDescription => EnergyType == ENineStarKiEnergyType.DailyEnergy ? GetDayStarDescription() : string.Empty;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyLabel)]
         public string EnergyName => MetaData.GetDescription();
 
         public int EnergyNumber => (int)Energy;
-        
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyDescriptionLabel)]
         public string EnergyDescription { get; set; }
 
@@ -359,11 +482,11 @@ namespace K9.WebApplication.Models
 
         public ENineStarKiDirection Direction => MetaData.Direction;
         public string DirectionName => MetaData.GetDirection();
-        
+
         public string Season => CycleMetaData.Season;
         public string SeasonDescription => CycleMetaData.SeasonDescription;
-        
-        public string CycleDescription => EnergyType == ENineStarKiEnergyType.MainEnergy ? CycleMetaData.YearlyDescription : CycleMetaData.MonthlyDescription;
+
+        public string CycleDescription => GetCycleDescription();
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TrigramLabel)]
         public string Trigram => MetaData.GetTrigram();
@@ -388,7 +511,7 @@ namespace K9.WebApplication.Models
         [ScriptIgnore] public string DescriptiveTitle => $"The {MetaData.GetDescriptiveTitle()}";
 
         [ScriptIgnore]
-        public ENineStarKiYinYang YinYang => GetYinYang();  
+        public ENineStarKiYinYang YinYang => GetYinYang();
 
         [ScriptIgnore]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ElementLabel)]
@@ -406,20 +529,32 @@ namespace K9.WebApplication.Models
         public ENineStarKiModality Modality => MetaData.Modality;
 
         [ScriptIgnore]
+        public string EpochEnergyLabel => Dictionary.EpochEnergyLabel;
+
+        [ScriptIgnore]
+        public string GenerationalEnergyLabel => Dictionary.GenerationalEnergyLabel;
+
+        [ScriptIgnore]
         public string AdultEnergyLabel => Dictionary.MainEnergyLabel;
 
         [ScriptIgnore]
         public string CharacteEnergyLabel => Dictionary.CharacterEnergyLabel;
 
         [ScriptIgnore]
+        public string SurfaceEnergyLabel => Dictionary.SurfaceEnergyLabel;
+
+        [ScriptIgnore]
+        public string DayStarLabel => Dictionary.DayStarLabel;
+
+        [ScriptIgnore]
         public string CycleDescriptiveName => CycleMetaData.DescriptiveTitle;
 
         private NineStarKiEnumMetaDataAttribute _metaData;
-        
+
         [ScriptIgnore]
-        public NineStarKiEnumMetaDataAttribute MetaData 
+        public NineStarKiEnumMetaDataAttribute MetaData
         {
-            get 
+            get
             {
                 if (_metaData == null)
                 {
@@ -428,9 +563,21 @@ namespace K9.WebApplication.Models
                 return _metaData;
             }
         }
+
+        private string GetEpochDescription() => _epochDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
         
+        private string GetGenerationDescription() => _generationDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+        
+        private string GetMainEnergyDescription() => _mainEnergyDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+
+        private string GetEmotionalEnergyDescription() => _emotionalDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+
+        private string GetSurfaceEnergyDescription() => _surfaceEnergyDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+
         private string GetChildDescription() => _childDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
-        
+
+        private string GetDayStarDescription() => _dayDescriptions.TryGetValue(Energy, out var desc) ? desc : string.Empty;
+
         private NineStarKiCycleEnumMetaDataAttribute _cycleMetaData;
         internal NineStarKiCycleEnumMetaDataAttribute CycleMetaData
         {
@@ -443,7 +590,7 @@ namespace K9.WebApplication.Models
                 return _cycleMetaData;
             }
         }
-        
+
         private ENineStarKiYinYang GetYinYang()
         {
             if (Energy == ENineStarKiEnergy.CoreEarth && RelatedEnergy == ENineStarKiEnergy.CoreEarth)
@@ -455,6 +602,57 @@ namespace K9.WebApplication.Models
                 return RelatedEnergy.GetAttribute<NineStarKiEnumMetaDataAttribute>().YinYang;
             }
             return MetaData.YinYang;
+        }
+
+        private string GetEnergyDescription()
+        {
+            switch (EnergyType)
+            {
+                case ENineStarKiEnergyType.EpochEnergy:
+                    return EpochDescription;
+
+                case ENineStarKiEnergyType.GenerationalEnergy:
+                    return GenerationDescription;
+
+                case ENineStarKiEnergyType.MainEnergy:
+                    return MainEnergyDescription;
+
+                case ENineStarKiEnergyType.CharacterEnergy:
+                    return EmotionalEnergyDescription;
+
+                case ENineStarKiEnergyType.SurfaceEnergy:
+                    return SurfaceEnergyDescription;
+
+                case ENineStarKiEnergyType.DailyEnergy:
+                    return DayStarDescription;
+
+                default:
+                    return string.Empty;
+            }
+        }
+
+        private string GetCycleDescription()
+        {
+            switch (EnergyCycleType)
+            {
+                case ENineStarKiEnergyCycleType.EpochEnergy:
+                    return CycleMetaData.EightyOneYearDescription;
+
+                case ENineStarKiEnergyCycleType.GenerationalEnergy:
+                    return CycleMetaData.NineYearDescription;
+
+                case ENineStarKiEnergyCycleType.YearlyCycleEnergy:
+                    return CycleMetaData.YearlyDescription;
+
+                case ENineStarKiEnergyCycleType.MonthlyCycleEnergy:
+                    return CycleMetaData.MonthlyDescription;
+
+                case ENineStarKiEnergyCycleType.DailyEnergy:
+                    return CycleMetaData.DailyDescription;
+
+                default:
+                    return string.Empty;
+            }
         }
     }
 }

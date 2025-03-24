@@ -1,18 +1,30 @@
 ﻿@using K9.SharedLibrary.Extensions
 @using K9.WebApplication.Config
+@using K9.WebApplication.Helpers
 @model K9.WebApplication.Models.NineStarKiModel
 
+@{
+    var cycles = Model.GetMonthlyPlanner();
+    var activeCycle = cycles.FirstOrDefault();
+}
+
 <div class="container main-content clear-both monthly-planner-container margin-top-5">
-    @foreach (var cycle in Model.GetMonthlyPlanner())
+    @foreach (var cycle in cycles)
     {
         var year = cycle.Item1;
         var month = cycle.Item2;
         var monthName = cycle.Item3;
         var energy = cycle.Item4;
-        var activeClass = year == DateTime.Today.Year && month == DateTime.Today.Month ? "active current-month" : string.Empty;
+        var isActive = year == DateTime.Today.Year && month == DateTime.Today.Month;
+        var activeClass = isActive ? "active current-month" : string.Empty;
 
-        <a target="_blank" href="@Url.ActionWithBookmark("Index", "KnowledgeBase", $"{energy.EnergyName.ToLower()}-month")">
-            <div class="row @activeClass">
+        if (isActive)
+        {
+            activeCycle = cycle;
+        }
+
+        <a class="monthly-planner-item" data-energy="@energy">
+            <div class="monthly-planner-item-container row @activeClass">
                 <div class="col-xs-1">
                     @Html.Partial("_Year", year.ToString())
                 </div>
@@ -47,4 +59,8 @@
             </div>
         </a>
     }
+
+    <div class="calendar-footer padding-5 padding-top-0">
+        @Html.Panel("", activeCycle.Item4.CycleDescriptiveName, "monthly-planner-details")
+    </div>
 </div>

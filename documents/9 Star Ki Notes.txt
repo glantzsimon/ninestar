@@ -122,6 +122,6 @@ Note about the blending of energies - how each energy must be considered in the 
 
 --
 
-
+retest api and GPT - in case things have changed
 
 --

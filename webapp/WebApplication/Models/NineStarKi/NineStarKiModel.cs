@@ -22,7 +22,7 @@ namespace K9.WebApplication.Models
         [UIHint("CalculationMethod")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CalculationMethodLabel)]
         public ECalculationMethod CalculationMethod { get; set; } = (ECalculationMethod)SessionHelper.GetCurrentUserCalculationMethod();
-
+        
         [ScriptIgnore]
         public bool EnableCycleSwitch { get; set; } = true;
 
@@ -61,9 +61,14 @@ namespace K9.WebApplication.Models
 
         public NineStarKiModel(PersonModel personModel, int precisePersonEpochEnergy, int precisePersonGenerationalEnergy, int preciseMainEnergy, int preciseEmotionalEnergy, int preciseEmotionalEnergyForInvertedYear, int precisePersonalDayStarEnergy, int precisePersonalHourlyEnergy,
 
-            int preciseEpochCycleEnergy, int preciseGenerationalCycleEnergy, int preciseYearlyCycleEnergy, int preciseMonthlyCycleEnergy, int preciseDailyCycleEnergy, int preciseHourlyCycleEnergy, int? preciseDailyCycleInvertedEnergy, DateTime? selectedDate = null)
+            int preciseEpochCycleEnergy, int preciseGenerationalCycleEnergy, int preciseYearlyCycleEnergy, int preciseMonthlyCycleEnergy, int preciseDailyCycleEnergy, int preciseHourlyCycleEnergy, int? preciseDailyCycleInvertedEnergy, DateTime? selectedDate = null,
+            
+            ECalculationMethod calculationMethod = ECalculationMethod.Chinese, bool useHolograhpicCycleCalculation = false, bool invertDailyAndHourlyKiForSouthernHemisphere = false)
         {
             SelectedDate = selectedDate ?? DateTime.UtcNow;
+            CalculationMethod = calculationMethod;
+            UseHolograhpicCycleCalculation = useHolograhpicCycleCalculation;
+            InvertDailyAndHourlyKiForSouthernHemisphere = invertDailyAndHourlyKiForSouthernHemisphere;
 
             PersonModel = personModel;
             PersonalChartEnergies = new NineStarKiEnergiesModel();

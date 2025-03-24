@@ -62,7 +62,7 @@ namespace K9.WebApplication.Controllers
                     model.PersonModel.DateOfBirth = model.PersonModel.DateOfBirth.Add(model.PersonModel.TimeOfBirth);
                  
                     model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false,
-                        model.SelectedDate, invertYinEnergies, invertYinEnergies, true, model.UseHolograhpicCycleCalculation);
+                        model.SelectedDate, model.CalculationMethod, true, model.UseHolograhpicCycleCalculation);
                    
                     if (Current.UserId > 0)
                     {

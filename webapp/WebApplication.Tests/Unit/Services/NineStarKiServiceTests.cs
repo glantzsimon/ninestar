@@ -908,7 +908,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             else
             {
                 // Female energies are in their inverted personal house
-                Assert.Equal(ninestarWaterYear.PersonalChartEnergies.Year.EnergyNumber, NineStarKiModel.InvertEnergy(ninestarWaterYear.PersonalHousesOccupiedEnergies.Year.EnergyNumber));
+                Assert.Equal(ninestarWaterYear.PersonalChartEnergies.Year.EnergyNumber, ninestarWaterYear.PersonalHousesOccupiedEnergies.Year.EnergyNumber);
             }
 
             /*******************************

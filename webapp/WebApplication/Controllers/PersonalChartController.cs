@@ -59,7 +59,7 @@ namespace K9.WebApplication.Controllers
                     // Add time of birth
                     model.PersonModel.DateOfBirth = model.PersonModel.DateOfBirth.Add(model.PersonModel.TimeOfBirth);
                     model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false,
-                        model.SelectedDate, invertYinEnergies, invertYinEnergies, false);
+                        model.SelectedDate, model.CalculationMethod, false);
                     
                     model.IsScrollToCyclesOverview = isScrollToCyclesOverview;
                     model.ActiveCycleTabId = activeTabId;

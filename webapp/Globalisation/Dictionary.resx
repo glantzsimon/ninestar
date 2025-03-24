@@ -409,9 +409,6 @@
   <data name="ComingSoon" xml:space="preserve">
     <value>Coming Soon...</value>
   </data>
-  <data name="coreearth_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\coreearth-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="coreearth_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\coreearth-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -424,17 +421,11 @@
   <data name="ExamplesLabel" xml:space="preserve">
     <value>Examples</value>
   </data>
-  <data name="fire_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\fire-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="fire_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\fire-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="HealthLabel" xml:space="preserve">
     <value>Health</value>
-  </data>
-  <data name="heaven_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\heaven-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="heaven_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\heaven-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -448,17 +439,11 @@
   <data name="Kun" xml:space="preserve">
     <value>K'Un</value>
   </data>
-  <data name="lake_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\lake-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="lake_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\lake-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="Li" xml:space="preserve">
     <value>Li</value>
-  </data>
-  <data name="mountain_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\mountain-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="mountain_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\mountain-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -481,9 +466,6 @@
   <data name="RelationshipsTitle" xml:space="preserve">
     <value>9 Star Ki Relationships</value>
   </data>
-  <data name="soil_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\soil-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="soil_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\soil-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -492,9 +474,6 @@
   </data>
   <data name="Support" xml:space="preserve">
     <value>Support</value>
-  </data>
-  <data name="thunder_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\thunder-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="thunder_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\thunder-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -505,98 +484,11 @@
   <data name="Tui" xml:space="preserve">
     <value>Tui</value>
   </data>
-  <data name="water_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\water-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="water_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\water-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="wind_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\wind-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="wind_trigram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\wind-trigram.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="coreearth_health" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\coreearth-health.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="fire_health" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\fire-health.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="heaven_health" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\heaven-health.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="lake_health" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\lake-health.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="mountain_health" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\mountain-health.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="soil_health" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\soil-health.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="soil_occupations" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\soil-occupations.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="soil_personal_development" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\soil-personal-development.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="thunder_health" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\thunder-health.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="water_health" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\water-health.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="water_occupations" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\water-occupations.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="water_personal_development" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\water-personal-development.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="wind_health" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\wind-health.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="thunder_occupations" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\thunder-occupations.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="thunder_personal_development" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\thunder-personal-development.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="coreearth_occupations" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\coreearth-occupations.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="coreearth_personal_development" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\coreearth-personal-development.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="fire_occupations" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\fire-occupations.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="fire_personal_development" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\fire-personal-development.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="heaven_occupations" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\heaven-occupations.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="heaven_personal_development" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\heaven-personal-development.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="lake_occupations" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\lake-occupations.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="lake_personal_development" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\lake-personal-development.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="mountain_occupations" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\mountain-occupations.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="mountain_personal_development" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\mountain-personal-development.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="wind_occupations" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\wind-occupations.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="wind_personal_development" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\wind-personal-development.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="origins" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\origins.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -727,65 +619,8 @@
   <data name="water_element" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\water-element.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="coreearth_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\coreearth-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="fire_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\fire-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="heaven_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\heaven-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="lake_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\lake-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="mountain_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\mountain-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="soil_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\soil-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="thunder_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\thunder-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="water_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\water-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="wind_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\wind-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="coreearth_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\coreearth-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="fire_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\fire-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="heaven_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\heaven-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="lake_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\lake-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="mountain_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\mountain-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="soil_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\soil-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="thunder_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\thunder-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="water_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\water-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="wind_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\wind-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="AdultPersona" xml:space="preserve">
     <value>Adult Nature</value>
-  </data>
-  <data name="coreearth_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\coreearth-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="CharacterEnergyShortLabel" xml:space="preserve">
     <value>Emotional Energy</value>
@@ -793,17 +628,8 @@
   <data name="ExternalPersona" xml:space="preserve">
     <value>Mirror Energy</value>
   </data>
-  <data name="fire_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\fire-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="heaven_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\heaven-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="MainChildLabel" xml:space="preserve">
     <value>Fundamental Nature</value>
-  </data>
-  <data name="lake_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\lake-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="MainEnergyShortLabel" xml:space="preserve">
     <value>Fundamental Nature</value>
@@ -811,26 +637,11 @@
   <data name="MoreDetails" xml:space="preserve">
     <value>More Details</value>
   </data>
-  <data name="mountain_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\mountain-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="PersonalProfileDetails" xml:space="preserve">
     <value>Personal Chart Details</value>
   </data>
-  <data name="soil_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\soil-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="SurfaceEnergyShortLabel" xml:space="preserve">
     <value>Mirror Energy</value>
-  </data>
-  <data name="thunder_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\thunder-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="water_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\water-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="wind_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\wind-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="_216" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>summaries\en-gb\_216.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -1276,33 +1087,6 @@
   <data name="CharacterLabel" xml:space="preserve">
     <value>Character</value>
   </data>
-  <data name="coreearth_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\coreearth-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="fire_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\fire-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="heaven_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\heaven-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="lake_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\lake-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="mountain_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\mountain-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="soil_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\soil-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="thunder_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\thunder-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="water_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\water-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="wind_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\wind-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="character_energies_short_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\character-energies.short-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -1350,24 +1134,6 @@
   </data>
   <data name="sexuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\sexuality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="coreearth_sexuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\coreearth-sexuality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="fire_sexuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\fire-sexuality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="lake_sexuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\lake-sexuality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="mountain_sexuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\mountain-sexuality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="water_sexuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\water-sexuality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="wind_sexuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\wind-sexuality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="SexualityLabel" xml:space="preserve">
     <value>Sexuality</value>
@@ -1465,32 +1231,14 @@
   <data name="Gay" xml:space="preserve">
     <value>Gay</value>
   </data>
-  <data name="heaven_sexuality_female" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\heaven-sexuality-female.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="heaven_sexuality_male" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\heaven-sexuality-male.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="Lesbian" xml:space="preserve">
     <value>Lesbian</value>
   </data>
   <data name="sexuality_gay_notes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\sexuality-gay-notes.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="soil_sexuality_female" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\soil-sexuality-female.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="soil_sexuality_male" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\soil-sexuality-male.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="Straight" xml:space="preserve">
     <value>Straight</value>
-  </data>
-  <data name="thunder_sexuality_female" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\thunder-sexuality-female.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="thunder_sexuality_male" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\thunder-sexuality-male.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="UpgradeMembershipFullText" xml:space="preserve">
     <value>Please upgrade your membership to gain full access to this feature and much more.</value>
@@ -4702,14 +4450,50 @@
   <data name="Reflective" xml:space="preserve">
     <value>Reflective</value>
   </data>
-  <data name="core_earth_day" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\day\en-gb\core-earth-day.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="coreearth_career" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\career\en-gb\coreearth-career.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="core_earth_epoch" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\epoch\en-gb\core-earth-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="coreearth_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\child\en-gb\coreearth-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="core_earth_generation" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\generation\en-gb\core-earth-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="coreearth_daystar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\daystar\en-gb\coreearth-daystar.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="coreearth_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\main\en-gb\coreearth-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="coreearth_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\emotional\en-gb\coreearth-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="coreearth_epoch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\epoch\en-gb\coreearth-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="coreearth_generation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\generation\en-gb\coreearth-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="coreearth_health" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\health\en-gb\coreearth-health.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="coreearth_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\overview\en-gb\coreearth-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="coreearth_relationships" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\relationships\en-gb\coreearth-relationships.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="coreearth_spirituality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\spirituality\en-gb\coreearth-spirituality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="coreearth_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\surface\en-gb\coreearth-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="core_earth_day_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\day\en-gb\core-earth-day-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="core_earth_epoch_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\epoch\en-gb\core-earth-epoch-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="core_earth_generation_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\generation\en-gb\core-earth-generation-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="DailyKiCalendar" xml:space="preserve">
     <value>Daily Ki Calendar </value>
@@ -4720,94 +4504,421 @@
   <data name="EightyOneYearlyPrediction" xml:space="preserve">
     <value>Eighty-One-Year Prediction</value>
   </data>
-  <data name="fire_day" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\day\en-gb\fire-day.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="fire_career" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\career\en-gb\fire-career.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\child\en-gb\fire-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_daystar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\daystar\en-gb\fire-daystar.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_day_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\day\en-gb\fire-day-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\main\en-gb\fire-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\emotional\en-gb\fire-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="fire_epoch" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\epoch\en-gb\fire-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>energies\epoch\en-gb\fire-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_epoch_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\epoch\en-gb\fire-epoch-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="fire_generation" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\generation\en-gb\fire-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>energies\generation\en-gb\fire-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="heaven_day" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\day\en-gb\heaven-day.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="fire_generation_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\generation\en-gb\fire-generation-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_health" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\health\en-gb\fire-health.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\overview\en-gb\fire-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_relationships" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\relationships\en-gb\fire-relationships.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_spirituality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\spirituality\en-gb\fire-spirituality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\surface\en-gb\fire-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_career" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\career\en-gb\heaven-career.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\child\en-gb\heaven-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_daystar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\daystar\en-gb\heaven-daystar.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_day_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\day\en-gb\heaven-day-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\main\en-gb\heaven-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\emotional\en-gb\heaven-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="heaven_epoch" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\epoch\en-gb\heaven-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>energies\epoch\en-gb\heaven-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_epoch_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\epoch\en-gb\heaven-epoch-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="heaven_generation" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\generation\en-gb\heaven-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>energies\generation\en-gb\heaven-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_generation_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\generation\en-gb\heaven-generation-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_health" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\health\en-gb\heaven-health.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\overview\en-gb\heaven-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_relationships_female" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\relationships\en-gb\heaven-relationships-female.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_relationships_male" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\relationships\en-gb\heaven-relationships-male.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_spirituality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\spirituality\en-gb\heaven-spirituality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\surface\en-gb\heaven-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="HourlyPrediction" xml:space="preserve">
     <value>Hourly Prediction</value>
   </data>
-  <data name="lake_day" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\day\en-gb\lake-day.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="lake_career" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\career\en-gb\lake-career.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\child\en-gb\lake-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_daystar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\daystar\en-gb\lake-daystar.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_day_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\day\en-gb\lake-day-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\main\en-gb\lake-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\emotional\en-gb\lake-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="lake_epoch" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\epoch\en-gb\lake-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>energies\epoch\en-gb\lake-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_epoch_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\epoch\en-gb\lake-epoch-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="lake_generation" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\generation\en-gb\lake-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>energies\generation\en-gb\lake-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="mountain_day" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\day\en-gb\mountain-day.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="lake_generation_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\generation\en-gb\lake-generation-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_health" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\health\en-gb\lake-health.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\overview\en-gb\lake-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_relationships" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\relationships\en-gb\lake-relationships.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_spirituality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\spirituality\en-gb\lake-spirituality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\surface\en-gb\lake-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_career" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\career\en-gb\mountain-career.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\child\en-gb\mountain-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_daystar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\daystar\en-gb\mountain-daystar.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_day_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\day\en-gb\mountain-day-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\main\en-gb\mountain-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\emotional\en-gb\mountain-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="mountain_epoch" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\epoch\en-gb\mountain-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>energies\epoch\en-gb\mountain-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_epoch_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\epoch\en-gb\mountain-epoch-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="mountain_generation" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\generation\en-gb\mountain-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>energies\generation\en-gb\mountain-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_generation_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\generation\en-gb\mountain-generation-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_health" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\health\en-gb\mountain-health.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\overview\en-gb\mountain-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_relationships" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\relationships\en-gb\mountain-relationships.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_spirituality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\spirituality\en-gb\mountain-spirituality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\surface\en-gb\mountain-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="NineYearlyPrediction" xml:space="preserve">
     <value>Nine-Year Prediction</value>
   </data>
-  <data name="soil_day" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\day\en-gb\soil-day.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="soil_career" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\career\en-gb\soil-career.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="soil_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\child\en-gb\soil-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="soil_daystar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\daystar\en-gb\soil-daystar.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="soil_day_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\day\en-gb\soil-day-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="soil_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\main\en-gb\soil-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="soil_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\emotional\en-gb\soil-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="soil_epoch" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\epoch\en-gb\soil-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>energies\epoch\en-gb\soil-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="soil_epoch_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\epoch\en-gb\soil-epoch-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="soil_generation" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\generation\en-gb\soil-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>energies\generation\en-gb\soil-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="thunder_day" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\day\en-gb\thunder-day.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="soil_generation_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\generation\en-gb\soil-generation-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="soil_health" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\health\en-gb\soil-health.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="soil_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\overview\en-gb\soil-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="soil_relationships_female" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\relationships\en-gb\soil-relationships-female.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="soil_relationships_male" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\relationships\en-gb\soil-relationships-male.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="soil_spirituality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\spirituality\en-gb\soil-spirituality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="soil_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\surface\en-gb\soil-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="thunder_career" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\career\en-gb\thunder-career.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="thunder_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\child\en-gb\thunder-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="thunder_daystar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\daystar\en-gb\thunder-daystar.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="thunder_day_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\day\en-gb\thunder-day-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="thunder_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\main\en-gb\thunder-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="thunder_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\emotional\en-gb\thunder-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="thunder_epoch" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\epoch\en-gb\thunder-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>energies\epoch\en-gb\thunder-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="thunder_epoch_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\epoch\en-gb\thunder-epoch-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="thunder_generation" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\generation\en-gb\thunder-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>energies\generation\en-gb\thunder-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="thunder_generation_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\generation\en-gb\thunder-generation-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="thunder_health" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\health\en-gb\thunder-health.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="thunder_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\overview\en-gb\thunder-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="thunder_relationships_female" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\relationships\en-gb\thunder-relationships-female.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="thunder_relationships_male" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\relationships\en-gb\thunder-relationships-male.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="thunder_spirituality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\spirituality\en-gb\thunder-spirituality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="thunder_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\surface\en-gb\thunder-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="UseHolographicMethod" xml:space="preserve">
     <value>Use Isometric Calculation Method</value>
   </data>
-  <data name="water_day" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\day\en-gb\water-day.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="water_career" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\career\en-gb\water-career.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\child\en-gb\water-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_daystar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\daystar\en-gb\water-daystar.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_day_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\day\en-gb\water-day-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\main\en-gb\water-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\emotional\en-gb\water-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="water_epoch" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\epoch\en-gb\water-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>energies\epoch\en-gb\water-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_epoch_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\epoch\en-gb\water-epoch-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="water_generation" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\generation\en-gb\water-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>energies\generation\en-gb\water-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="wind_day" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\day\en-gb\wind-day.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="water_generation_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\generation\en-gb\water-generation-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_health" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\health\en-gb\water-health.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\overview\en-gb\water-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_relationships" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\relationships\en-gb\water-relationships.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_spirituality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\spirituality\en-gb\water-spirituality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\surface\en-gb\water-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wind_career" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\career\en-gb\wind-career.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wind_child" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\child\en-gb\wind-child.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wind_daystar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\daystar\en-gb\wind-daystar.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wind_day_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\day\en-gb\wind-day-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wind_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\main\en-gb\wind-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wind_emotional_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\emotional\en-gb\wind-emotional-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="wind_epoch" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\epoch\en-gb\wind-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>energies\epoch\en-gb\wind-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wind_epoch_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\epoch\en-gb\wind-epoch-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="wind_generation" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\generation\en-gb\wind-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>energies\generation\en-gb\wind-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="year_day" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\day\en-gb\year-day.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="wind_generation_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\generation\en-gb\wind-generation-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="year_epoch" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\epoch\en-gb\year-epoch.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="wind_health" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\health\en-gb\wind-health.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="year_generation" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\generation\en-gb\year-generation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="wind_overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\overview\en-gb\wind-overview.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wind_relationships" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\relationships\en-gb\wind-relationships.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wind_spirituality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\spirituality\en-gb\wind-spirituality.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wind_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\surface\en-gb\wind-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="year_day_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\day\en-gb\year-day-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="year_epoch_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\epoch\en-gb\year-epoch-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="year_generation_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\generation\en-gb\year-generation-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="core_earth_hour_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\hour\en-gb\core-earth-hour-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="fire_hour_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\hour\en-gb\fire-hour-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="heaven_hour_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\hour\en-gb\heaven-hour-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lake_hour_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\hour\en-gb\lake-hour-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mountain_hour_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\hour\en-gb\mountain-hour-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="soil_hour_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\hour\en-gb\soil-hour-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="thunder_hour_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\hour\en-gb\thunder-hour-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_hour_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\hour\en-gb\water-hour-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wind_hour_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\hour\en-gb\wind-hour-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="year_hour_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\hour\en-gb\year-hour-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

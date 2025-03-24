@@ -4578,9 +4578,9 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    As the stars are positioned exactly as they were during the year of our birth, we can experience a kind of &quot;rebirth [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string core_earth_day {
+        public static string core_earth_day_cycle {
             get {
-                return ResourceManager.GetString("core_earth_day", resourceCulture);
+                return ResourceManager.GetString("core_earth_day_cycle", resourceCulture);
             }
         }
         
@@ -4594,9 +4594,9 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    As the stars are positioned exactly as they were during the year of our birth, we can experience a kind of &quot;rebirth [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string core_earth_epoch {
+        public static string core_earth_epoch_cycle {
             get {
-                return ResourceManager.GetString("core_earth_epoch", resourceCulture);
+                return ResourceManager.GetString("core_earth_epoch_cycle", resourceCulture);
             }
         }
         
@@ -4610,9 +4610,25 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    As the stars are positioned exactly as they were during the year of our birth, we can experience a kind of &quot;rebirth [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string core_earth_generation {
+        public static string core_earth_generation_cycle {
             get {
-                return ResourceManager.GetString("core_earth_generation", resourceCulture);
+                return ResourceManager.GetString("core_earth_generation_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The seedling is beginning to mature.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Everyone is born in a 5 Core Earth house and returns to it at the age of nine, 18, 27, 36, 45, 54, etc. This is the centre of the 9 Star Ki cycle and represents the beginning and end of a cycle. Anything started during a 5 year will have a great impact on the following 8 years and so should be considered carefully.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    As the stars are positioned exactly as they were during the year of our birth, we can experience a kind of &quot;rebirth [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string core_earth_hour_cycle {
+            get {
+                return ResourceManager.GetString("core_earth_hour_cycle", resourceCulture);
             }
         }
         
@@ -4659,6 +4675,19 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Core Earth Energies are brilliant at bringing people together. For this reason, they can make great diplomats and political leaders.
+        ///    In addition, they are often comfortable with authority and control. Some Core Earth Energies have become famous military leaders due to
+        ///    their ambitious and dominant nature. 5 Earth Energies can also make exceptional entrepreneurs, for example Richard Branson and Simon Cowl.
+        ///    On the other hand, their down-to-earth nature also means that they can also make [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string coreearth_career {
+            get {
+                return ResourceManager.GetString("coreearth_career", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Like other Earth children, it is especially important for 5 Earth children to have a stable family and school life.
         ///&lt;/p&gt;
         ///&lt;p&gt;
@@ -4670,6 +4699,22 @@ namespace K9.Globalisation {
         public static string coreearth_child {
             get {
                 return ResourceManager.GetString("coreearth_child", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Like other Earth children, it is especially important for 5 Earth children to have a stable family and school life.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Core Earth is at the centre of 9 Star Ki and this can sometimes make it hard for these children to navigate a clear path. Without appropriate guidance, they may lose their way and even succumb to undesirable influences.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    5 Earth characters are naturally nurturing and supportive and children with this character number display these qualities early on in t [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string coreearth_daystar {
+            get {
+                return ResourceManager.GetString("coreearth_daystar", resourceCulture);
             }
         }
         
@@ -4705,6 +4750,38 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    5 Earth characters are born with &lt;strong&gt;natural leadership potential&lt;/strong&gt; and often have a &lt;strong&gt;bold and assertive&lt;/strong&gt; nature. They can be &lt;strong&gt;demanding&lt;/strong&gt; at times, to the point of aggressiveness.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    5 is at the centre of the 9 Star Ki system and this gives 5 soil characters a &lt;strong&gt;great capacity to influence&lt;/strong&gt; those around them.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Core Earth characters are &lt;strong&gt;extremely persevering&lt;/strong&gt;. They can also express different extremes.  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string coreearth_epoch {
+            get {
+                return ResourceManager.GetString("coreearth_epoch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    5 Earth characters are born with &lt;strong&gt;natural leadership potential&lt;/strong&gt; and often have a &lt;strong&gt;bold and assertive&lt;/strong&gt; nature. They can be &lt;strong&gt;demanding&lt;/strong&gt; at times, to the point of aggressiveness.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    5 is at the centre of the 9 Star Ki system and this gives 5 soil characters a &lt;strong&gt;great capacity to influence&lt;/strong&gt; those around them.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Core Earth characters are &lt;strong&gt;extremely persevering&lt;/strong&gt;. They can also express different extremes.  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string coreearth_generation {
+            get {
+                return ResourceManager.GetString("coreearth_generation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Generally speaking, Core Earth Energies have the constitution of an ox and are incredibly resilient. However, for this reason, it is also very important for
         ///    people under this star to exercise and push themselves, so that they do not stagnate and seize up.
         ///&lt;/p&gt;
@@ -4717,19 +4794,6 @@ namespace K9.Globalisation {
         public static string coreearth_health {
             get {
                 return ResourceManager.GetString("coreearth_health", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Core Earth Energies are brilliant at bringing people together. For this reason, they can make great diplomats and political leaders. 
-        ///    In addition, they are often comfortable with authority and control. Some Core Earth Energies have become famous military leaders due to 
-        ///    their ambitious and dominant nature. 5 Earth Energies can also make exceptional entrepreneurs, for example Richard Branson and Simon Cowl. 
-        ///    On the other hand, their down-to-earth nature also means that they can also m [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string coreearth_occupations {
-            get {
-                return ResourceManager.GetString("coreearth_occupations", resourceCulture);
             }
         }
         
@@ -4762,30 +4826,43 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Core Earth Energies are often drawn to the centre of whatever they do and whilst this can be very stimulating, it can also become very draining and
-        ///    caution must be taken not to burn out. It is important for them to pace themselves and take time out to reflect and recharge.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Finding an activity to keep themselves centred and grounded such as T&apos;ai Chi, Qi Gong, meditation or yoga can be extremely beneficial.
-        ///&lt;/p&gt;.
-        /// </summary>
-        public static string coreearth_personal_development {
-            get {
-                return ResourceManager.GetString("coreearth_personal_development", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    Core Earth Energies are compatible with any of the other energies. They can be sensitive and compassionate or, conversely, quite self-centred
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    Core Earth is at the centre of the 9 Star Ki system and, as as such, these Energies are typically quite comfortable and compatible with any of the other energies. This central position occupied by 5 Earths can either result in their having quite a lot of compassion and sensitivity to others or, conversely, it can also make them quite &quot;self-c [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string coreearth_sexuality {
+        public static string coreearth_relationships {
             get {
-                return ResourceManager.GetString("coreearth_sexuality", resourceCulture);
+                return ResourceManager.GetString("coreearth_relationships", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
+        ///    &lt;table class=&quot;table&quot;&gt;
+        ///        &lt;thead&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;th&gt;When in balance:&lt;/th&gt;
+        ///            &lt;th&gt;When out of balance:&lt;/th&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;/thead&gt;
+        ///        &lt;tbody&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Confident&lt;/td&gt;
+        ///                &lt;td&gt;Bossy&lt;/td&gt;
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Lively&lt;/td&gt;
+        ///                &lt;td&gt;Moody&lt;/td&gt;
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Resourceful&lt;/td&gt;
+        ///                &lt;td&gt;Thrifty [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string coreearth_spirituality {
+            get {
+                return ResourceManager.GetString("coreearth_spirituality", resourceCulture);
             }
         }
         
@@ -6579,6 +6656,17 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Fire Energies are well suited to jobs which are centred around communication and relationship building, or in careers in which they can express themselves as fully as possible, be it creatively, emotionally or artistically.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string fire_career {
+            get {
+                return ResourceManager.GetString("fire_career", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    9 Fire children do much better when they are supported by parents and caregivers who can teach them consideration for others, patience, how to plan ahead and to see tasks through to completion.
         ///&lt;/p&gt;
         ///&lt;p&gt;
@@ -6607,9 +6695,26 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    This is also a year when things we would rather keep a secret may well end  [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string fire_day {
+        public static string fire_day_cycle {
             get {
-                return ResourceManager.GetString("fire_day", resourceCulture);
+                return ResourceManager.GetString("fire_day_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    9 Fire children do much better when they are supported by parents and caregivers who can teach them consideration for others, patience, how to plan ahead and to see tasks through to completion.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Without adequate discipline, Fire children can become spoilt, conceited and vain.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Fire needs to be contained, and since this Emotional Energy can be extremely impulsive, it&apos;s important that parents and caregivers introduce order and boundaries early on in life.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string fire_daystar {
+            get {
+                return ResourceManager.GetString("fire_daystar", resourceCulture);
             }
         }
         
@@ -6675,6 +6780,25 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Fire characters are some of the &lt;strong&gt;brightest and liveliest of all the nine characters&lt;/strong&gt;. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    They tend to &lt;strong&gt;wear their heart on their sleeve&lt;/strong&gt; and can be exceptionally &lt;strong&gt;warm and affectionate&lt;/strong&gt;.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    9 Fire characters have a &lt;strong&gt;bubbly personality with lots of charisma&lt;/strong&gt; and often possess great &lt;strong&gt;clarity and intuition&lt;/strong&gt;, whch can help to &lt;strong&gt;shine light on situations&lt;/strong&gt;.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Sometimes Fire ch [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fire_epoch {
+            get {
+                return ResourceManager.GetString("fire_epoch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    This is the year we take the spotlight
         ///&lt;/h5&gt;
@@ -6687,9 +6811,9 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    This is also a year when things we would rather keep a secret may well end  [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string fire_epoch {
+        public static string fire_epoch_cycle {
             get {
-                return ResourceManager.GetString("fire_epoch", resourceCulture);
+                return ResourceManager.GetString("fire_epoch_cycle", resourceCulture);
             }
         }
         
@@ -6703,6 +6827,25 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Fire characters are some of the &lt;strong&gt;brightest and liveliest of all the nine characters&lt;/strong&gt;. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    They tend to &lt;strong&gt;wear their heart on their sleeve&lt;/strong&gt; and can be exceptionally &lt;strong&gt;warm and affectionate&lt;/strong&gt;.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    9 Fire characters have a &lt;strong&gt;bubbly personality with lots of charisma&lt;/strong&gt; and often possess great &lt;strong&gt;clarity and intuition&lt;/strong&gt;, whch can help to &lt;strong&gt;shine light on situations&lt;/strong&gt;.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Sometimes Fire ch [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fire_generation {
+            get {
+                return ResourceManager.GetString("fire_generation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    This is the year we take the spotlight
         ///&lt;/h5&gt;
@@ -6715,9 +6858,9 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    This is also a year when things we would rather keep a secret may well end  [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string fire_generation {
+        public static string fire_generation_cycle {
             get {
-                return ResourceManager.GetString("fire_generation", resourceCulture);
+                return ResourceManager.GetString("fire_generation_cycle", resourceCulture);
             }
         }
         
@@ -6733,6 +6876,25 @@ namespace K9.Globalisation {
         public static string fire_health {
             get {
                 return ResourceManager.GetString("fire_health", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    This is the year we take the spotlight
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents the full force of summer or the midday sun. It brings illumination, heat and clarity.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This year is our time to shine. We will be noticed, for good or bad reasons. We may find ourselves making significant achievements and we will likely feel very energetic, enthusiastic and optimistic with a great sense of adventure.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This is also a year when things we would rather keep a secret may well end  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fire_hour_cycle {
+            get {
+                return ResourceManager.GetString("fire_hour_cycle", resourceCulture);
             }
         }
         
@@ -6759,17 +6921,6 @@ namespace K9.Globalisation {
         public static string fire_month {
             get {
                 return ResourceManager.GetString("fire_month", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Fire Energies are well suited to jobs which are centred around communication and relationship building, or in careers in which they can express themselves as fully as possible, be it creatively, emotionally or artistically.
-        ///&lt;/p&gt;.
-        /// </summary>
-        public static string fire_occupations {
-            get {
-                return ResourceManager.GetString("fire_occupations", resourceCulture);
             }
         }
         
@@ -6802,16 +6953,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Fire is the energy of illumination and clarity. It is also the energy associated with the midday sun. As such, Fire Energies can often see the bigger picture as they have a clear vantage point, like the sun shining down from above. Their insights and perspective are very valuable to others who might not be able to see things as clearly. That being said, a fire needs to be rooted in the hearth and needs plenty of fuel. Therefore, it&apos;s important that Fire Energies learn to ground themselves and devel [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string fire_personal_development {
-            get {
-                return ResourceManager.GetString("fire_personal_development", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    9 Fires are typically passionate and warm in relationships
         ///&lt;/h5&gt;
@@ -6824,9 +6965,37 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    The Fire element makes these Energies very attractive to others. However, t [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string fire_sexuality {
+        public static string fire_relationships {
             get {
-                return ResourceManager.GetString("fire_sexuality", resourceCulture);
+                return ResourceManager.GetString("fire_relationships", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
+        ///    &lt;table class=&quot;table&quot;&gt;
+        ///        &lt;thead&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;th&gt;When in balance:&lt;/th&gt;
+        ///                &lt;th&gt;When out of balance:&lt;/th&gt;
+        ///            &lt;/tr&gt;
+        ///        &lt;/thead&gt;
+        ///        &lt;tbody&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Clear&lt;/td&gt;
+        ///                &lt;td&gt;Whimsical&lt;/td&gt;
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Radiant&lt;/td&gt;
+        ///                &lt;td&gt;Vain&lt;/td&gt;
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Passionate&lt;/td&gt;
+        ///             [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string fire_spirituality {
+            get {
+                return ResourceManager.GetString("fire_spirituality", resourceCulture);
             }
         }
         
@@ -7514,6 +7683,22 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Heaven Energies make excellent leaders and often excel in roles where they can use this skill to its fullest,
+        ///    whether it be in business, politics, the armed forces or even teachers. Many head teachers are Heaven Energies.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Their great sense of justice also makes 6 Metal Energies great lawyers and arbitrators. In addition, these Energies
+        ///    often thrive under pressure and therefore prefer challenging careers.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string heaven_career {
+            get {
+                return ResourceManager.GetString("heaven_career", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Heaven children need good moral guidance. They have a natural ability to pick up on what is right and need parents and teachers that lead by example.
         ///&lt;/p&gt;
         ///&lt;p&gt;
@@ -7541,9 +7726,25 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    We may well find that our skills and talents are more noticed by others and that we are rewarded for our efforts, perhaps with a p [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string heaven_day {
+        public static string heaven_day_cycle {
             get {
-                return ResourceManager.GetString("heaven_day", resourceCulture);
+                return ResourceManager.GetString("heaven_day_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Heaven children need good moral guidance. They have a natural ability to pick up on what is right and need parents and teachers that lead by example.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is important for Heaven children not to become overly rigid and opinionated. They should be encouraged to enter into debate and to be more flexible in their standpoint, allowing for differences of opinion.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    6 Metal children are exceptionally sensitive to criticism. They are naturally hypersensitive, proud and strongly [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_daystar {
+            get {
+                return ResourceManager.GetString("heaven_daystar", resourceCulture);
             }
         }
         
@@ -7577,17 +7778,13 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The fruits are beginning to ripen
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    This year represents early autumn or evening. It is where we begin to see the fruits of our labour; the reward of all the effort put in during the previous years.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    6 Metal characters tend to have a very &lt;strong&gt;direct, down-to-earth and uncompromising nature&lt;/strong&gt;.
+        ///
+        ///    They tend to have very &lt;strong&gt;clear opinions about what is fair and ethical&lt;/strong&gt; and what is not and can be quite &lt;strong&gt;opinionated and inflexible&lt;/strong&gt; in their views. They are certainly &lt;strong&gt;not afraid to express their opinion&lt;/strong&gt; and can be quite &lt;strong&gt;sharp and blunt&lt;/strong&gt; in the way they communicate at times.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This year is associated with the full force of Yang and we often feel confident with a strong sense of direction and purpose.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    We may well find that our skills and talents are more noticed by others and that we are rewarded for our efforts, perhaps with a p [rest of string was truncated]&quot;;.
+        ///    The Heaven character as &lt;strong&gt;trem [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_epoch {
             get {
@@ -7608,9 +7805,43 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    We may well find that our skills and talents are more noticed by others and that we are rewarded for our efforts, perhaps with a p [rest of string was truncated]&quot;;.
         /// </summary>
+        public static string heaven_epoch_cycle {
+            get {
+                return ResourceManager.GetString("heaven_epoch_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    6 Metal characters tend to have a very &lt;strong&gt;direct, down-to-earth and uncompromising nature&lt;/strong&gt;.
+        ///
+        ///    They tend to have very &lt;strong&gt;clear opinions about what is fair and ethical&lt;/strong&gt; and what is not and can be quite &lt;strong&gt;opinionated and inflexible&lt;/strong&gt; in their views. They are certainly &lt;strong&gt;not afraid to express their opinion&lt;/strong&gt; and can be quite &lt;strong&gt;sharp and blunt&lt;/strong&gt; in the way they communicate at times.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The Heaven character as &lt;strong&gt;trem [rest of string was truncated]&quot;;.
+        /// </summary>
         public static string heaven_generation {
             get {
                 return ResourceManager.GetString("heaven_generation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The fruits are beginning to ripen
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents early autumn or evening. It is where we begin to see the fruits of our labour; the reward of all the effort put in during the previous years.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This year is associated with the full force of Yang and we often feel confident with a strong sense of direction and purpose.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    We may well find that our skills and talents are more noticed by others and that we are rewarded for our efforts, perhaps with a p [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_generation_cycle {
+            get {
+                return ResourceManager.GetString("heaven_generation_cycle", resourceCulture);
             }
         }
         
@@ -7633,6 +7864,25 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The fruits are beginning to ripen
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents early autumn or evening. It is where we begin to see the fruits of our labour; the reward of all the effort put in during the previous years.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This year is associated with the full force of Yang and we often feel confident with a strong sense of direction and purpose.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    We may well find that our skills and talents are more noticed by others and that we are rewarded for our efforts, perhaps with a p [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_hour_cycle {
+            get {
+                return ResourceManager.GetString("heaven_hour_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This month is associated with early autumn or evening
         ///&lt;/h5&gt;
@@ -7645,22 +7895,6 @@ namespace K9.Globalisation {
         public static string heaven_month {
             get {
                 return ResourceManager.GetString("heaven_month", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Heaven Energies make excellent leaders and often excel in roles where they can use this skill to its fullest,
-        ///    whether it be in business, politics, the armed forces or even teachers. Many head teachers are Heaven Energies.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Their great sense of justice also makes 6 Metal Energies great lawyers and arbitrators. In addition, these Energies
-        ///    often thrive under pressure and therefore prefer challenging careers.
-        ///&lt;/p&gt;.
-        /// </summary>
-        public static string heaven_occupations {
-            get {
-                return ResourceManager.GetString("heaven_occupations", resourceCulture);
             }
         }
         
@@ -7695,24 +7929,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Being the full expression of Yang, it is advisable to work on bringing out a gentler, more flexible nature.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    It is important for Heaven Energies find time to let their hair down and to even spoil themselves from time to time (something they seldom do!)
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Heaven Energies&apos; natural leadership can at times make them less sensitive to others needs and they must take care not to become overbearing. It is a good idea 
-        ///    for them to develop their listening skills.
-        ///&lt;/p&gt;.
-        /// </summary>
-        public static string heaven_personal_development {
-            get {
-                return ResourceManager.GetString("heaven_personal_development", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    6 Metal women may appear overly dominant in relationships, especially in straight couples
         ///&lt;/h5&gt;
@@ -7728,9 +7944,9 @@ namespace K9.Globalisation {
         ///&lt;h5&gt;
         ///    For Heaven Energies, sex may be on  [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string heaven_sexuality_female {
+        public static string heaven_relationships_female {
             get {
-                return ResourceManager.GetString("heaven_sexuality_female", resourceCulture);
+                return ResourceManager.GetString("heaven_relationships_female", resourceCulture);
             }
         }
         
@@ -7750,9 +7966,39 @@ namespace K9.Globalisation {
         ///&lt;h5&gt;
         ///    For Heaven Energies, sex may be on t [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string heaven_sexuality_male {
+        public static string heaven_relationships_male {
             get {
-                return ResourceManager.GetString("heaven_sexuality_male", resourceCulture);
+                return ResourceManager.GetString("heaven_relationships_male", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
+        ///    &lt;table class=&quot;table&quot;&gt;
+        ///        &lt;thead&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;th&gt;When in balance:&lt;/th&gt;
+        ///            &lt;th&gt;When out of balance:&lt;/th&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;/thead&gt;
+        ///        &lt;tbody&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td&gt;Leader&lt;/td&gt;
+        ///            &lt;td&gt;Bossy&lt;/td&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td&gt;Responsible&lt;/td&gt;
+        ///            &lt;td&gt;Controlling&lt;/td&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td&gt;Action-oriented&lt;/td&gt;
+        ///            &lt;td&gt;Reckless&lt;/td&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string heaven_spirituality {
+            get {
+                return ResourceManager.GetString("heaven_spirituality", resourceCulture);
             }
         }
         
@@ -8687,6 +8933,19 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    7 Metal Energies are often very good with money and therefore make great accountants, stock controllers and financial advisers. Their eloquence and personal skills 
+        ///    would make them good teachers, lecturers or counsellors. 
+        ///    Being natural leaders, Lake Energies are comfortable in managerial positions but equally, these Energies can excel in the arts, television or fashion.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string lake_career {
+            get {
+                return ResourceManager.GetString("lake_career", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    7 Metal children are naturally fun-loving and it is very important for them to have plenty of social interaction. 7 Lake children&apos;s naturally gregarious and outgoing character could easily be damanged if they spend too much time alone in their formative years and could lead to their being withdrawn, aloof and introverted later on in life.
         ///&lt;/p&gt;
         ///&lt;p&gt;
@@ -8710,9 +8969,24 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    This is perhaps the smoothest and most enjoyable House to occupy. It is a great time to become more sociable and broaden our horizons. We often feel more at [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string lake_day {
+        public static string lake_day_cycle {
             get {
-                return ResourceManager.GetString("lake_day", resourceCulture);
+                return ResourceManager.GetString("lake_day_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    7 Metal children are naturally fun-loving and it is very important for them to have plenty of social interaction. 7 Lake children&apos;s naturally gregarious and outgoing character could easily be damanged if they spend too much time alone in their formative years and could lead to their being withdrawn, aloof and introverted later on in life.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Lake children are quite independent and free-spirited and this should be encouraged by allowing them greater freedom.
+        ///
+        ///    However, care must be [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string lake_daystar {
+            get {
+                return ResourceManager.GetString("lake_daystar", resourceCulture);
             }
         }
         
@@ -8743,14 +9017,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The harvest is in. It&apos;s time to celebrate and put one&apos;s feet up
-        ///&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    7 Metal characters are generally very &lt;strong&gt;easy-going and adaptable&lt;/strong&gt;. Many express themselves with great &lt;strong&gt;diplomacy&lt;/strong&gt; and they often have a &lt;strong&gt;great capacity to listen to others&lt;/strong&gt; and to make them feel understood and validated, thanks to their &lt;strong&gt;patient and compassionate&lt;/strong&gt; nature.
         ///&lt;p&gt;
-        ///    This year represents late autumn or evening. It is the time to enjoy the harvest and to celebrate our achievements; a time to relax and be grateful for the abundance we have created for ourselves. It is also a time to reflect on the previous cycle.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    This is perhaps the smoothest and most enjoyable House to occupy. It is a great time to become more sociable and broaden our horizons. We often feel more at [rest of string was truncated]&quot;;.
+        ///    Lake characters typically make &lt;strong&gt;great hosts&lt;/strong&gt;, owing to their &lt;strong&gt;charming, laid-back nature&lt;/strong&gt;. They are usually very &lt;strong&gt;expressive [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_epoch {
             get {
@@ -8768,9 +9038,37 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    This is perhaps the smoothest and most enjoyable House to occupy. It is a great time to become more sociable and broaden our horizons. We often feel more at [rest of string was truncated]&quot;;.
         /// </summary>
+        public static string lake_epoch_cycle {
+            get {
+                return ResourceManager.GetString("lake_epoch_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    7 Metal characters are generally very &lt;strong&gt;easy-going and adaptable&lt;/strong&gt;. Many express themselves with great &lt;strong&gt;diplomacy&lt;/strong&gt; and they often have a &lt;strong&gt;great capacity to listen to others&lt;/strong&gt; and to make them feel understood and validated, thanks to their &lt;strong&gt;patient and compassionate&lt;/strong&gt; nature.
+        ///&lt;p&gt;
+        ///    Lake characters typically make &lt;strong&gt;great hosts&lt;/strong&gt;, owing to their &lt;strong&gt;charming, laid-back nature&lt;/strong&gt;. They are usually very &lt;strong&gt;expressive [rest of string was truncated]&quot;;.
+        /// </summary>
         public static string lake_generation {
             get {
                 return ResourceManager.GetString("lake_generation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The harvest is in. It&apos;s time to celebrate and put one&apos;s feet up
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents late autumn or evening. It is the time to enjoy the harvest and to celebrate our achievements; a time to relax and be grateful for the abundance we have created for ourselves. It is also a time to reflect on the previous cycle.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This is perhaps the smoothest and most enjoyable House to occupy. It is a great time to become more sociable and broaden our horizons. We often feel more at [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string lake_generation_cycle {
+            get {
+                return ResourceManager.GetString("lake_generation_cycle", resourceCulture);
             }
         }
         
@@ -8784,6 +9082,22 @@ namespace K9.Globalisation {
         public static string lake_health {
             get {
                 return ResourceManager.GetString("lake_health", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The harvest is in. It&apos;s time to celebrate and put one&apos;s feet up
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents late autumn or evening. It is the time to enjoy the harvest and to celebrate our achievements; a time to relax and be grateful for the abundance we have created for ourselves. It is also a time to reflect on the previous cycle.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This is perhaps the smoothest and most enjoyable House to occupy. It is a great time to become more sociable and broaden our horizons. We often feel more at [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string lake_hour_cycle {
+            get {
+                return ResourceManager.GetString("lake_hour_cycle", resourceCulture);
             }
         }
         
@@ -8804,19 +9118,6 @@ namespace K9.Globalisation {
         public static string lake_month {
             get {
                 return ResourceManager.GetString("lake_month", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    7 Metal Energies are often very good with money and therefore make great accountants, stock controllers and financial advisers. Their eloquence and personal skills 
-        ///    would make them good teachers, lecturers or counsellors. 
-        ///    Being natural leaders, Lake Energies are comfortable in managerial positions but equally, these Energies can excel in the arts, television or fashion.
-        ///&lt;/p&gt;.
-        /// </summary>
-        public static string lake_occupations {
-            get {
-                return ResourceManager.GetString("lake_occupations", resourceCulture);
             }
         }
         
@@ -8852,23 +9153,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Lake Energies benefit from developing their generosity both financially and emotionally.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Being naturally fun loving can sometimes result in over-indulgence, which can lead to stagnation and lethargy. For this reason,
-        ///    Lake Energies sometimes find it hard to finish tasks and should make every effort to persevere and see things through.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Do not forget to exercise! Inactivity can lead to stagnation, which is especially detrimental to the health of the colon and lungs [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string lake_personal_development {
-            get {
-                return ResourceManager.GetString("lake_personal_development", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    7 Metal Energies often have a deep inner security
         ///&lt;/h5&gt;
@@ -8881,9 +9165,40 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    Metal is the element associated with the autumn, which is a time of year when the harvest is in and we can put our feet up and enjoy the fruits of our labour. 7 Metals are often relaxed and fun-lo [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string lake_sexuality {
+        public static string lake_relationships {
             get {
-                return ResourceManager.GetString("lake_sexuality", resourceCulture);
+                return ResourceManager.GetString("lake_relationships", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
+        ///    &lt;table class=&quot;table&quot;&gt;
+        ///        &lt;thead&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;th&gt;When in balance:&lt;/th&gt;
+        ///            &lt;th&gt;When out of balance:&lt;/th&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;/thead&gt;
+        ///        &lt;tbody&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td&gt;Easy-going&lt;/td&gt;
+        ///            &lt;td&gt;Spoilt&lt;/td&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td&gt;Charismatic&lt;/td&gt;
+        ///            &lt;td&gt;Wasteful&lt;/td&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td&gt;Wise&lt;/td&gt;
+        ///            &lt;td&gt;Shallow&lt;/td&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;tr&gt;
+        ///      [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string lake_spirituality {
+            get {
+                return ResourceManager.GetString("lake_spirituality", resourceCulture);
             }
         }
         
@@ -10821,6 +11136,20 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Being hard working, reliable and able to deliver, Mountain Energies are very well suited to service-related occupations, such as a shopkeeper, accountant, or a doctor or nurse.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Mountains have a great sense of justice and may also be suited to law enforcement, human rights or other similar professions.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string mountain_career {
+            get {
+                return ResourceManager.GetString("mountain_career", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Mountain children also need structure and routine and should be encouraged develop self-discipline early on in their lives.
         ///&lt;/p&gt;
         ///&lt;p&gt;
@@ -10845,9 +11174,25 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    This is a time we tend to retreat into our &quot;cave&quot;. We often feel withdrawn, reserved and uncommunicative. It is a time for deep, honest introspection.  However, we need to be mindful that we don&apos;t become too withdrawn, as this could be upsetting to those who are  [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string mountain_day {
+        public static string mountain_day_cycle {
             get {
-                return ResourceManager.GetString("mountain_day", resourceCulture);
+                return ResourceManager.GetString("mountain_day_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Mountain children also need structure and routine and should be encouraged develop self-discipline early on in their lives.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is highly beneficial to encourage Mountain children to develop their innate strengths through intellectual argument, such as debate and discussion on a wide range of topics.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///   8 Earth children are harmed by over-indulgence and hypocritical behaviour on the part of parents or teachers. They require consistency and clear direction from adults who  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_daystar {
+            get {
+                return ResourceManager.GetString("mountain_daystar", resourceCulture);
             }
         }
         
@@ -10879,14 +11224,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The harvest is over. Winter is nigh.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    This year represents the transition from evening to night or autumn to winter. It is a time when Nature returns to stillness. We go indoors to shelter from the outside.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    8 Earth characters are by far the &lt;strong&gt;most private of all of the Energies&lt;/strong&gt;. They &lt;strong&gt;value their own space&lt;/strong&gt; and can be &lt;strong&gt;verbally very uncommunicative&lt;/strong&gt;. Some 8 Mountain characters may find other channels for self expression, such as music, art or through their work.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This is a time we tend to retreat into our &quot;cave&quot;. We often feel withdrawn, reserved and uncommunicative. It is a time for deep, honest introspection.  However, we need to be mindful that we don&apos;t become too withdrawn, as this could be upsetting to those who are  [rest of string was truncated]&quot;;.
+        ///    The Mountain is a good description of this character, with its &lt;strong&gt;hard exterior protecting a much softer underbelly&lt;/strong&gt;, which is usually only revealed once people get to k [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_epoch {
             get {
@@ -10904,9 +11246,38 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    This is a time we tend to retreat into our &quot;cave&quot;. We often feel withdrawn, reserved and uncommunicative. It is a time for deep, honest introspection.  However, we need to be mindful that we don&apos;t become too withdrawn, as this could be upsetting to those who are  [rest of string was truncated]&quot;;.
         /// </summary>
+        public static string mountain_epoch_cycle {
+            get {
+                return ResourceManager.GetString("mountain_epoch_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    8 Earth characters are by far the &lt;strong&gt;most private of all of the Energies&lt;/strong&gt;. They &lt;strong&gt;value their own space&lt;/strong&gt; and can be &lt;strong&gt;verbally very uncommunicative&lt;/strong&gt;. Some 8 Mountain characters may find other channels for self expression, such as music, art or through their work.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The Mountain is a good description of this character, with its &lt;strong&gt;hard exterior protecting a much softer underbelly&lt;/strong&gt;, which is usually only revealed once people get to k [rest of string was truncated]&quot;;.
+        /// </summary>
         public static string mountain_generation {
             get {
                 return ResourceManager.GetString("mountain_generation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The harvest is over. Winter is nigh.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents the transition from evening to night or autumn to winter. It is a time when Nature returns to stillness. We go indoors to shelter from the outside.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This is a time we tend to retreat into our &quot;cave&quot;. We often feel withdrawn, reserved and uncommunicative. It is a time for deep, honest introspection.  However, we need to be mindful that we don&apos;t become too withdrawn, as this could be upsetting to those who are  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_generation_cycle {
+            get {
+                return ResourceManager.GetString("mountain_generation_cycle", resourceCulture);
             }
         }
         
@@ -10928,6 +11299,22 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The harvest is over. Winter is nigh.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents the transition from evening to night or autumn to winter. It is a time when Nature returns to stillness. We go indoors to shelter from the outside.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    This is a time we tend to retreat into our &quot;cave&quot;. We often feel withdrawn, reserved and uncommunicative. It is a time for deep, honest introspection.  However, we need to be mindful that we don&apos;t become too withdrawn, as this could be upsetting to those who are  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_hour_cycle {
+            get {
+                return ResourceManager.GetString("mountain_hour_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This month represents early winter or nightfall
         ///&lt;/h5&gt;
@@ -10943,20 +11330,6 @@ namespace K9.Globalisation {
         public static string mountain_month {
             get {
                 return ResourceManager.GetString("mountain_month", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Being hard working, reliable and able to deliver, Mountain Energies are very well suited to service-related occupations, such as a shopkeeper, accountant, or a doctor or nurse.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Mountains have a great sense of justice and may also be suited to law enforcement, human rights or other similar professions.
-        ///&lt;/p&gt;.
-        /// </summary>
-        public static string mountain_occupations {
-            get {
-                return ResourceManager.GetString("mountain_occupations", resourceCulture);
             }
         }
         
@@ -10991,25 +11364,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    8 Earth Energies must be cautious not to let their sense of justice turn into self-righteous
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    These individuals should try to develop their natural capacity for argument in a healthy and creative way, such as through a debating
-        ///    society, for example.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    It is advisable for Mountain Energies to try to remain flexible and to guard against stagnation. A combination of vigorous exercise and yoga or Pilates 
-        ///    may be ideal.
-        ///&lt;/p&gt;.
-        /// </summary>
-        public static string mountain_personal_development {
-            get {
-                return ResourceManager.GetString("mountain_personal_development", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    Mountains bring a strong, steady energy to their relationships
         ///&lt;/h5&gt;
@@ -11025,9 +11379,39 @@ namespace K9.Globalisation {
         ///&lt;h5&gt;
         ///    8 Earth  [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string mountain_sexuality {
+        public static string mountain_relationships {
             get {
-                return ResourceManager.GetString("mountain_sexuality", resourceCulture);
+                return ResourceManager.GetString("mountain_relationships", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
+        ///    &lt;table class=&quot;table&quot;&gt;
+        ///        &lt;thead&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;th&gt;When in balance:&lt;/th&gt;
+        ///            &lt;th&gt;When out of balance:&lt;/th&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;/thead&gt;
+        ///        &lt;tbody&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td&gt;Composed&lt;/td&gt;
+        ///            &lt;td&gt;Reserved&lt;/td&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td&gt;Focussed&lt;/td&gt;
+        ///            &lt;td&gt;Overly serious&lt;/td&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td&gt;Pragmatic&lt;/td&gt;
+        ///            &lt;td&gt;Impassive&lt;/td&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mountain_spirituality {
+            get {
+                return ResourceManager.GetString("mountain_spirituality", resourceCulture);
             }
         }
         
@@ -13849,6 +14233,19 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Owing to their supportive, caring nature, many Soil Energies make excellent nurses, carers, social workers as well as teachers and various types of assistants.
+        ///    Their strong connection with the land also makes Soil Energies excellent at careers in agriculture or horticulture.
+        ///    On the other hand, any job involving group work would also be well suited to number two Soil Energies.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string soil_career {
+            get {
+                return ResourceManager.GetString("soil_career", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    2 Earth children need a lot of consistency from their parents, teachers. Promises should be kept and a steady routine put in place.
         ///
         ///    Their character can be damaged if their caregivers frequently break their promises or fail to observe the moral standards they set.
@@ -13875,9 +14272,27 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    Socially and financially this is a time of slow or little growth. Rather, this is the perfect time to start planning and figuring out the details of what we have been dreaming about in the previous year; to get everything in order ready for the arrival of spring and a  [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string soil_day {
+        public static string soil_day_cycle {
             get {
-                return ResourceManager.GetString("soil_day", resourceCulture);
+                return ResourceManager.GetString("soil_day_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    2 Earth children need a lot of consistency from their parents, teachers. Promises should be kept and a steady routine put in place.
+        ///
+        ///    Their character can be damaged if their caregivers frequently break their promises or fail to observe the moral standards they set.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Soil children tend to have a very diplomatic nature, even at an early age. They may often adopt the role of peacemaker when siblings and friends fall out.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    These children have a strong sense of justice [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_daystar {
+            get {
+                return ResourceManager.GetString("soil_daystar", resourceCulture);
             }
         }
         
@@ -13911,14 +14326,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
-        ///    The seed is starting to germinate and make its way up through the soil.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    This year represents the transition from winter to spring. There may be a sense of light at the end of the tunnel.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Soil characters tend to be &lt;strong&gt;stable, reliable and helpful&lt;/strong&gt; people.
+        ///
+        ///    They are often quite &lt;strong&gt;dedicated to their families as well as to their work&lt;/strong&gt;, where they like to get to get stuck in and actively participate in activities.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Socially and financially this is a time of slow or little growth. Rather, this is the perfect time to start planning and figuring out the details of what we have been dreaming about in the previous year; to get everything in order ready for the arrival of spring and a  [rest of string was truncated]&quot;;.
+        ///    Soil characters are usually &lt;strong&gt;tactful and diplomatic&lt;/strong&gt;. They are quite willing to put others&apos; needs first. In fact they get a deep sense of satisfaction from it.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    2 Earth characters also need to be ca [rest of string was truncated]&quot;;.
         /// </summary>
         public static string soil_epoch {
             get {
@@ -13936,9 +14353,43 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    Socially and financially this is a time of slow or little growth. Rather, this is the perfect time to start planning and figuring out the details of what we have been dreaming about in the previous year; to get everything in order ready for the arrival of spring and a  [rest of string was truncated]&quot;;.
         /// </summary>
+        public static string soil_epoch_cycle {
+            get {
+                return ResourceManager.GetString("soil_epoch_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Soil characters tend to be &lt;strong&gt;stable, reliable and helpful&lt;/strong&gt; people.
+        ///
+        ///    They are often quite &lt;strong&gt;dedicated to their families as well as to their work&lt;/strong&gt;, where they like to get to get stuck in and actively participate in activities.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Soil characters are usually &lt;strong&gt;tactful and diplomatic&lt;/strong&gt;. They are quite willing to put others&apos; needs first. In fact they get a deep sense of satisfaction from it.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    2 Earth characters also need to be ca [rest of string was truncated]&quot;;.
+        /// </summary>
         public static string soil_generation {
             get {
                 return ResourceManager.GetString("soil_generation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The seed is starting to germinate and make its way up through the soil.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents the transition from winter to spring. There may be a sense of light at the end of the tunnel.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Socially and financially this is a time of slow or little growth. Rather, this is the perfect time to start planning and figuring out the details of what we have been dreaming about in the previous year; to get everything in order ready for the arrival of spring and a  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_generation_cycle {
+            get {
+                return ResourceManager.GetString("soil_generation_cycle", resourceCulture);
             }
         }
         
@@ -13956,6 +14407,22 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    The seed is starting to germinate and make its way up through the soil.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents the transition from winter to spring. There may be a sense of light at the end of the tunnel.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Socially and financially this is a time of slow or little growth. Rather, this is the perfect time to start planning and figuring out the details of what we have been dreaming about in the previous year; to get everything in order ready for the arrival of spring and a  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_hour_cycle {
+            get {
+                return ResourceManager.GetString("soil_hour_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This month represents late winter and is a time of planning and slow movement
         ///&lt;/h5&gt;
         ///&lt;p&gt;
@@ -13967,19 +14434,6 @@ namespace K9.Globalisation {
         public static string soil_month {
             get {
                 return ResourceManager.GetString("soil_month", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Owing to their supportive, caring nature, many Soil Energies make excellent nurses, carers, social workers as well as teachers and various types of assistants.
-        ///    Their strong connection with the land also makes Soil Energies excellent at careers in agriculture or horticulture.
-        ///    On the other hand, any job involving group work would also be well suited to number two Soil Energies.
-        ///&lt;/p&gt;.
-        /// </summary>
-        public static string soil_occupations {
-            get {
-                return ResourceManager.GetString("soil_occupations", resourceCulture);
             }
         }
         
@@ -14012,21 +14466,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Number two soils are so focussed on supporting and helping others than they may not take enough time out for themselves. 
-        ///    As such, they may be prone to getting a bit worn out. They should be encouraged to get a healthy balance between work and play and sometimes put themselves first.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    It is also very important for Soil Energies not to stagnate. Frequent walks and exercise are very good for this reason.
-        ///&lt;/p&gt;.
-        /// </summary>
-        public static string soil_personal_development {
-            get {
-                return ResourceManager.GetString("soil_personal_development", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    Soil women often embody the full expression of femininity
         ///&lt;/h5&gt;
@@ -14041,9 +14480,9 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    Although they may appear somewhat reserved sexually, Soil Ene [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string soil_sexuality_female {
+        public static string soil_relationships_female {
             get {
-                return ResourceManager.GetString("soil_sexuality_female", resourceCulture);
+                return ResourceManager.GetString("soil_relationships_female", resourceCulture);
             }
         }
         
@@ -14054,9 +14493,37 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    Soil men are gentle and nurturing and often have quite a mothering quality to them, which may be attractive to potential mates or not, depending on what they are looking for. Due to gender stereotypes that exist today, many men, especially straight men, feel uncomfortable expressing this role. Similarly, potential mates may subconsciously judge 2 Soil men as overly mothering and feminine, unaware that they may be respon [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string soil_sexuality_male {
+        public static string soil_relationships_male {
             get {
-                return ResourceManager.GetString("soil_sexuality_male", resourceCulture);
+                return ResourceManager.GetString("soil_relationships_male", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
+        ///    &lt;table class=&quot;table&quot;&gt;
+        ///        &lt;thead&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;th&gt;When in balance:&lt;/th&gt;
+        ///                &lt;th&gt;When out of balance:&lt;/th&gt;
+        ///            &lt;/tr&gt;
+        ///        &lt;/thead&gt;
+        ///        &lt;tbody&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Supportive&lt;/td&gt;
+        ///                &lt;td&gt;Stubborn&lt;/td&gt;
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Social&lt;/td&gt;
+        ///                &lt;td&gt;Cynical&lt;/td&gt;
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Tactful&lt;/td&gt;
+        ///          [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string soil_spirituality {
+            get {
+                return ResourceManager.GetString("soil_spirituality", resourceCulture);
             }
         }
         
@@ -15516,6 +15983,20 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Thunder Energies have tremendous potential for planning and seeing the road ahead, without getting bogged down in details. They are often able to find elegant solutions to the
+        ///    most complex problems, providing a clear vision of what needs to be done. For this reason, they may excel in computing, science, research as well as in business intelligence and consulting, to name a few.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Thunder Energies can also make energetic performers, artists and speakers and breaking ground in thes [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_career {
+            get {
+                return ResourceManager.GetString("thunder_career", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    It is vital to allow the Thunder child to explore his or her talents and interests to the full. 
         ///    
         ///    Encourage them to pursue their interests and do any practice necessary.
@@ -15545,9 +16026,27 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    Having the full [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string thunder_day {
+        public static string thunder_day_cycle {
             get {
-                return ResourceManager.GetString("thunder_day", resourceCulture);
+                return ResourceManager.GetString("thunder_day_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    It is vital to allow the Thunder child to explore his or her talents and interests to the full. 
+        ///    
+        ///    Encourage them to pursue their interests and do any practice necessary.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Thunder children are exceptionally curious. It is important not to discourage them in any way and, whilst their endless questions can be become tiring, try your best not to ignore them, as this can be detrimental to their development.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    3 Tree children are quite sociable and it&apos;s not uncommon [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_daystar {
+            get {
+                return ResourceManager.GetString("thunder_daystar", resourceCulture);
             }
         }
         
@@ -15585,17 +16084,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The seedling has sprouted, breaking through the top layer of soil with a tremendous burst of energy.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    This year represents early spring or dawn and therefore new growth, development as well as new opportunities. There is a sense of rising energy.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The 3 Tree character has the full force of spring in its nature, or the dawn.
+        ///
+        ///    Thunder characters are &lt;strong&gt;forward-thinking and enjoy initiating new projects&lt;/strong&gt; and
+        ///    discussing new concepts.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    It is the time to put our plans into action and begin working on our projects and endeavours. We are full of enthusiasm and have plenty of bright new ideas. It is also a great time to travel.
+        ///    3 Tree characters tend to be &lt;strong&gt;very lively and energetic&lt;/strong&gt;. They can also be very &lt;strong&gt;verbally expressive&lt;/strong&gt; and some of the quieter Energies may find them a &lt;strong&gt;overly talkative at times&lt;/strong&gt;.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Having the full [rest of string was truncated]&quot;;.
+        ///    Whilst Thunder characters are full o [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_epoch {
             get {
@@ -15616,9 +16115,47 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    Having the full [rest of string was truncated]&quot;;.
         /// </summary>
+        public static string thunder_epoch_cycle {
+            get {
+                return ResourceManager.GetString("thunder_epoch_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The 3 Tree character has the full force of spring in its nature, or the dawn.
+        ///
+        ///    Thunder characters are &lt;strong&gt;forward-thinking and enjoy initiating new projects&lt;/strong&gt; and
+        ///    discussing new concepts.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    3 Tree characters tend to be &lt;strong&gt;very lively and energetic&lt;/strong&gt;. They can also be very &lt;strong&gt;verbally expressive&lt;/strong&gt; and some of the quieter Energies may find them a &lt;strong&gt;overly talkative at times&lt;/strong&gt;.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Whilst Thunder characters are full o [rest of string was truncated]&quot;;.
+        /// </summary>
         public static string thunder_generation {
             get {
                 return ResourceManager.GetString("thunder_generation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The seedling has sprouted, breaking through the top layer of soil with a tremendous burst of energy.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents early spring or dawn and therefore new growth, development as well as new opportunities. There is a sense of rising energy.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is the time to put our plans into action and begin working on our projects and endeavours. We are full of enthusiasm and have plenty of bright new ideas. It is also a great time to travel.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Having the full [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_generation_cycle {
+            get {
+                return ResourceManager.GetString("thunder_generation_cycle", resourceCulture);
             }
         }
         
@@ -15643,6 +16180,25 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The seedling has sprouted, breaking through the top layer of soil with a tremendous burst of energy.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents early spring or dawn and therefore new growth, development as well as new opportunities. There is a sense of rising energy.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    It is the time to put our plans into action and begin working on our projects and endeavours. We are full of enthusiasm and have plenty of bright new ideas. It is also a great time to travel.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Having the full [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_hour_cycle {
+            get {
+                return ResourceManager.GetString("thunder_hour_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This month represents early spring or the dawn.
         ///&lt;/h5&gt;
@@ -15656,20 +16212,6 @@ namespace K9.Globalisation {
         public static string thunder_month {
             get {
                 return ResourceManager.GetString("thunder_month", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Thunder Energies have tremendous potential for planning and seeing the road ahead, without getting bogged down in details. They are often able to find elegant solutions to the
-        ///    most complex problems, providing a clear vision of what needs to be done. For this reason, they may excel in computing, science, research as well as in business intelligence and consulting, to name a few.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Thunder Energies can also make energetic performers, artists and speakers and breaking ground in thes [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string thunder_occupations {
-            get {
-                return ResourceManager.GetString("thunder_occupations", resourceCulture);
             }
         }
         
@@ -15702,23 +16244,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Thunder Energies benefit greatly from taking time to reflect and take stock. They should also endeavour to see projects through to completion.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Socially, Thunder Energies derive a lot of benefit from focussing more on listening to others. In addition, it is good to remember that the positive and energetic nature of
-        ///    thunder may be overbearing and intimitading to some.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    It is important for Thunder Energies to build up their energy reserves with sufficient sleep, res [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string thunder_personal_development {
-            get {
-                return ResourceManager.GetString("thunder_personal_development", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    3 Tree Energies often have a high sex drive
         ///&lt;/h5&gt;
@@ -15728,9 +16253,9 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    3 Tree women, of all the 9 Energies, are perhaps the least likely to conform to gender stereot [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string thunder_sexuality_female {
+        public static string thunder_relationships_female {
             get {
-                return ResourceManager.GetString("thunder_sexuality_female", resourceCulture);
+                return ResourceManager.GetString("thunder_relationships_female", resourceCulture);
             }
         }
         
@@ -15744,9 +16269,37 @@ namespace K9.Globalisation {
         ///&lt;h5&gt;
         ///    3 Tree men are typically strong and virile and their sex [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string thunder_sexuality_male {
+        public static string thunder_relationships_male {
             get {
-                return ResourceManager.GetString("thunder_sexuality_male", resourceCulture);
+                return ResourceManager.GetString("thunder_relationships_male", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
+        ///    &lt;table class=&quot;table&quot;&gt;
+        ///        &lt;thead&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;th&gt;When in balance:&lt;/th&gt;
+        ///            &lt;th&gt;When out of balance:&lt;/th&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;/thead&gt;
+        ///        &lt;tbody&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Pioneering&lt;/td&gt;
+        ///                &lt;td&gt;Unrealistic&lt;/td&gt;
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Proactive&lt;/td&gt;
+        ///                &lt;td&gt;Chaotic&lt;/td&gt;
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Strong&lt;/td&gt;
+        ///                &lt;td&gt; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string thunder_spirituality {
+            get {
+                return ResourceManager.GetString("thunder_spirituality", resourceCulture);
             }
         }
         
@@ -16546,6 +17099,19 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Water Energies are sensitive and deep thinkers, and as such, many of them are drawn to poetry, writing, composition, philosophy and some become therapists and healers.
+        ///    On the other hand, their natural ability to find a well thought-out and balanced argument means they can make excellent lawyers.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string water_career {
+            get {
+                return ResourceManager.GetString("water_career", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Water children, whilst they often have a naturally exploratory side, tend to be loners and need lots of encouragement to socialise and expand their horizons.
         ///
         ///    Parents ought to be careful not to be overly protective of Water children. This could cause them to further isolate from other children.
@@ -16567,9 +17133,22 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    During this year, it is common to feel withdrawn and uncommunicative. Others may appear to keep their distance and we may feel vulnerable, hypersensitive and even fearful at times. It&apos;s a bit like when we are asleep and w [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string water_day {
+        public static string water_day_cycle {
             get {
-                return ResourceManager.GetString("water_day", resourceCulture);
+                return ResourceManager.GetString("water_day_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Water children, whilst they often have a naturally exploratory side, tend to be loners and need lots of encouragement to socialise and expand their horizons.
+        ///
+        ///    Parents ought to be careful not to be overly protective of Water children. This could cause them to further isolate from other children.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string water_daystar {
+            get {
+                return ResourceManager.GetString("water_daystar", resourceCulture);
             }
         }
         
@@ -16619,6 +17198,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Water characters may appear rather &lt;strong&gt;shy, reserved and aloof&lt;/strong&gt; at times and tend to keep their thoughts and emotions to themselves.
+        ///
+        ///    However, sometimes the Water character can be expressed as the exact opposite, appearing quite &lt;strong&gt;sociable, vivacious and bubbly&lt;/strong&gt;.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Water characters can be incredibly &lt;strong&gt;charming, charismatic and deeply alluring&lt;/strong&gt;. Some would say there is a somewhat &lt;strong&gt;mysterious quality&lt;/strong&gt; to them.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///     [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_epoch {
+            get {
+                return ResourceManager.GetString("water_epoch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This year represents night and winter. It&apos;s cold, dark and still. The seed is still in the ground. 
         ///&lt;/h5&gt;
@@ -16628,9 +17225,9 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    During this year, it is common to feel withdrawn and uncommunicative. Others may appear to keep their distance and we may feel vulnerable, hypersensitive and even fearful at times. It&apos;s a bit like when we are asleep and w [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string water_epoch {
+        public static string water_epoch_cycle {
             get {
-                return ResourceManager.GetString("water_epoch", resourceCulture);
+                return ResourceManager.GetString("water_epoch_cycle", resourceCulture);
             }
         }
         
@@ -16644,6 +17241,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Water characters may appear rather &lt;strong&gt;shy, reserved and aloof&lt;/strong&gt; at times and tend to keep their thoughts and emotions to themselves.
+        ///
+        ///    However, sometimes the Water character can be expressed as the exact opposite, appearing quite &lt;strong&gt;sociable, vivacious and bubbly&lt;/strong&gt;.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Water characters can be incredibly &lt;strong&gt;charming, charismatic and deeply alluring&lt;/strong&gt;. Some would say there is a somewhat &lt;strong&gt;mysterious quality&lt;/strong&gt; to them.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///     [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_generation {
+            get {
+                return ResourceManager.GetString("water_generation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This year represents night and winter. It&apos;s cold, dark and still. The seed is still in the ground. 
         ///&lt;/h5&gt;
@@ -16653,9 +17268,9 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    During this year, it is common to feel withdrawn and uncommunicative. Others may appear to keep their distance and we may feel vulnerable, hypersensitive and even fearful at times. It&apos;s a bit like when we are asleep and w [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string water_generation {
+        public static string water_generation_cycle {
             get {
-                return ResourceManager.GetString("water_generation", resourceCulture);
+                return ResourceManager.GetString("water_generation_cycle", resourceCulture);
             }
         }
         
@@ -16678,6 +17293,22 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
+        ///    This year represents night and winter. It&apos;s cold, dark and still. The seed is still in the ground. 
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This is a time for hibernation, deep rest and reflection. A time for pondering what one wishes to create during the next 9 year cycle.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    During this year, it is common to feel withdrawn and uncommunicative. Others may appear to keep their distance and we may feel vulnerable, hypersensitive and even fearful at times. It&apos;s a bit like when we are asleep and w [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_hour_cycle {
+            get {
+                return ResourceManager.GetString("water_hour_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This month represents night and winter. We can often feel introverted and withdrawn
         ///&lt;/h5&gt;
         ///&lt;p&gt;
@@ -16692,19 +17323,6 @@ namespace K9.Globalisation {
         public static string water_month {
             get {
                 return ResourceManager.GetString("water_month", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Water Energies are sensitive and deep thinkers, and as such, many of them are drawn to poetry, writing, composition, philosophy and some become therapists and healers.
-        ///    On the other hand, their natural ability to find a well thought-out and balanced argument means they can make excellent lawyers.
-        ///&lt;/p&gt;
-        ///.
-        /// </summary>
-        public static string water_occupations {
-            get {
-                return ResourceManager.GetString("water_occupations", resourceCulture);
             }
         }
         
@@ -16736,18 +17354,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Water Energies&apos; very independent nature coupled with their difficulty to express what they feel deep within them can lead to isolation if they are not careful. 
-        ///    It is important for Water Energies to socialise and communicate. In so doing, others will also benefit from their extraordinary intuition and insight.
-        ///&lt;/p&gt;.
-        /// </summary>
-        public static string water_personal_development {
-            get {
-                return ResourceManager.GetString("water_personal_development", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Relationships and Intimacy for Water Energies&lt;/h4&gt;
         ///&lt;p&gt;
         ///    Of all the Nine Star Ki types, &lt;strong&gt;1 Water Energies are among the most deeply intuitive and emotionally complex&lt;/strong&gt;, and this extends into their romantic and intimate lives. In traditional Chinese medicine, Water governs the reproductive system, and this symbolic link often corresponds to a &lt;strong&gt;naturally strong connection to sensual and emotional intimacy&lt;/strong&gt;.
@@ -16757,9 +17363,36 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    Much like  [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string water_sexuality {
+        public static string water_relationships {
             get {
-                return ResourceManager.GetString("water_sexuality", resourceCulture);
+                return ResourceManager.GetString("water_relationships", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
+        ///    &lt;table class=&quot;table&quot;&gt;
+        ///        &lt;thead&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;th&gt;When in balance:&lt;/th&gt;
+        ///                &lt;th&gt;When out of balance:&lt;/th&gt;
+        ///            &lt;/tr&gt;
+        ///        &lt;/thead&gt;
+        ///        &lt;tbody&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Sensitive&lt;/td&gt;
+        ///                &lt;td&gt;Hypersensitive&lt;/td&gt;
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Curious&lt;/td&gt;
+        ///                &lt;td&gt;Disinterested&lt;/td&gt;
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Diplomatic&lt; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_spirituality {
+            get {
+                return ResourceManager.GetString("water_spirituality", resourceCulture);
             }
         }
         
@@ -17034,6 +17667,19 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    4 Tree Energies are excellent planners and organisers and often do extremely well at activities and jobs that require such skills.
+        ///    On the other hand, being naturally adaptable and sensitive to others, they can also do very well at public relations. 
+        ///    Wind Energies would also suit broadcasting, television or cinema where they could exploit their sensitivity to the arts.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string wind_career {
+            get {
+                return ResourceManager.GetString("wind_career", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    4 Tree children have tremendous creative potential and can be quite pioneering in the areas that most interest them.
         ///    It&apos;s important that they get lots of encouragement and appreciation from parents and teachers as well as plenty of inspiration, space and time to explore their talents freely.
         ///&lt;/p&gt;
@@ -17056,9 +17702,23 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    However, this is also potentially a changeable and unpredictable time. It can be tempting to change direction or move away from what we have been working on so far. It is important to stick to the plans. A farmer wouldn&apos;t pull up his or her crops mid- [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string wind_day {
+        public static string wind_day_cycle {
             get {
-                return ResourceManager.GetString("wind_day", resourceCulture);
+                return ResourceManager.GetString("wind_day_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    4 Tree children have tremendous creative potential and can be quite pioneering in the areas that most interest them.
+        ///    It&apos;s important that they get lots of encouragement and appreciation from parents and teachers as well as plenty of inspiration, space and time to explore their talents freely.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    If they show early signs of talent in a given field, do not dismiss it. Anything that acts to suppress their creativity and dreams in any way could be extremely damaging to 4 Tree children. [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_daystar {
+            get {
+                return ResourceManager.GetString("wind_daystar", resourceCulture);
             }
         }
         
@@ -17093,14 +17753,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    The seedling is growing rapidly with many leaves and shoots appearing.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    This year represents mid morning or mid to late spring. It is a time of sustained growth, following on from the rapid burst of the previous year. 
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The Wind character is &lt;strong&gt;exceptionally adaptable&lt;/strong&gt;. However, they do require quite a bit of support from others.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    However, this is also potentially a changeable and unpredictable time. It can be tempting to change direction or move away from what we have been working on so far. It is important to stick to the plans. A farmer wouldn&apos;t pull up his or her crops mid- [rest of string was truncated]&quot;;.
+        ///   4 Tree is also called &apos;Wind&apos; and this is quite an apt description, as these characters can be &lt;strong&gt;extremely changeable, scatty and unpredictable at times&lt;/strong&gt;, especially when under stress.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    4 Trees have a &lt;strong&gt;sensitive and emotional nature&lt;/strong&gt;, which makes them prone to &lt;strong&gt;mood swings&lt;/strong&gt; at times. They are very &lt;stron [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_epoch {
             get {
@@ -17118,9 +17778,41 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    However, this is also potentially a changeable and unpredictable time. It can be tempting to change direction or move away from what we have been working on so far. It is important to stick to the plans. A farmer wouldn&apos;t pull up his or her crops mid- [rest of string was truncated]&quot;;.
         /// </summary>
+        public static string wind_epoch_cycle {
+            get {
+                return ResourceManager.GetString("wind_epoch_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The Wind character is &lt;strong&gt;exceptionally adaptable&lt;/strong&gt;. However, they do require quite a bit of support from others.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///   4 Tree is also called &apos;Wind&apos; and this is quite an apt description, as these characters can be &lt;strong&gt;extremely changeable, scatty and unpredictable at times&lt;/strong&gt;, especially when under stress.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    4 Trees have a &lt;strong&gt;sensitive and emotional nature&lt;/strong&gt;, which makes them prone to &lt;strong&gt;mood swings&lt;/strong&gt; at times. They are very &lt;stron [rest of string was truncated]&quot;;.
+        /// </summary>
         public static string wind_generation {
             get {
                 return ResourceManager.GetString("wind_generation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The seedling is growing rapidly with many leaves and shoots appearing.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents mid morning or mid to late spring. It is a time of sustained growth, following on from the rapid burst of the previous year. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    However, this is also potentially a changeable and unpredictable time. It can be tempting to change direction or move away from what we have been working on so far. It is important to stick to the plans. A farmer wouldn&apos;t pull up his or her crops mid- [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_generation_cycle {
+            get {
+                return ResourceManager.GetString("wind_generation_cycle", resourceCulture);
             }
         }
         
@@ -17141,6 +17833,22 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    The seedling is growing rapidly with many leaves and shoots appearing.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    This year represents mid morning or mid to late spring. It is a time of sustained growth, following on from the rapid burst of the previous year. 
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    However, this is also potentially a changeable and unpredictable time. It can be tempting to change direction or move away from what we have been working on so far. It is important to stick to the plans. A farmer wouldn&apos;t pull up his or her crops mid- [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_hour_cycle {
+            get {
+                return ResourceManager.GetString("wind_hour_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This month represents mid morning or mid to late spring
         ///&lt;/h5&gt;
@@ -17154,19 +17862,6 @@ namespace K9.Globalisation {
         public static string wind_month {
             get {
                 return ResourceManager.GetString("wind_month", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    4 Tree Energies are excellent planners and organisers and often do extremely well at activities and jobs that require such skills.
-        ///    On the other hand, being naturally adaptable and sensitive to others, they can also do very well at public relations. 
-        ///    Wind Energies would also suit broadcasting, television or cinema where they could exploit their sensitivity to the arts.
-        ///&lt;/p&gt;.
-        /// </summary>
-        public static string wind_occupations {
-            get {
-                return ResourceManager.GetString("wind_occupations", resourceCulture);
             }
         }
         
@@ -17199,22 +17894,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Being exceptionally sensitive to and easily influenced by others, it is very useful for Wind Energies to develop a greater sense of
-        ///    their own tastes and opinions, so that they can become more resilient and assertive, if need be.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Being open and often highly empathic, Wind Energies may have a tendency to talk too openly about others&apos; private affairs. It is advisable to
-        ///    be very prudent in this regard.
-        ///&lt;/p&gt;.
-        /// </summary>
-        public static string wind_personal_development {
-            get {
-                return ResourceManager.GetString("wind_personal_development", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    4 Tree Energies tend to be dynamic, expressive and unpredictable in relationships
         ///&lt;/h5&gt;
@@ -17228,9 +17907,37 @@ namespace K9.Globalisation {
         ///&lt;p&gt;
         ///    The  [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string wind_sexuality {
+        public static string wind_relationships {
             get {
-                return ResourceManager.GetString("wind_sexuality", resourceCulture);
+                return ResourceManager.GetString("wind_relationships", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
+        ///    &lt;table class=&quot;table&quot;&gt;
+        ///        &lt;thead&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;th&gt;When in balance:&lt;/th&gt;
+        ///            &lt;th&gt;When out of balance:&lt;/th&gt;
+        ///        &lt;/tr&gt;
+        ///        &lt;/thead&gt;
+        ///        &lt;tbody&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Influential&lt;/td&gt;
+        ///                &lt;td&gt;Single-minded&lt;/td&gt;
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Penetrating&lt;/td&gt;
+        ///                &lt;td&gt;Unrealistic&lt;/td&gt;
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td&gt;Visionary&lt;/td&gt;
+        ///         [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string wind_spirituality {
+            get {
+                return ResourceManager.GetString("wind_spirituality", resourceCulture);
             }
         }
         
@@ -17370,9 +18077,9 @@ namespace K9.Globalisation {
         ///&lt;h5&gt;
         ///    Thes [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string year_day {
+        public static string year_day_cycle {
             get {
-                return ResourceManager.GetString("year_day", resourceCulture);
+                return ResourceManager.GetString("year_day_cycle", resourceCulture);
             }
         }
         
@@ -17402,9 +18109,9 @@ namespace K9.Globalisation {
         ///&lt;h5&gt;
         ///    Thes [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string year_epoch {
+        public static string year_epoch_cycle {
             get {
-                return ResourceManager.GetString("year_epoch", resourceCulture);
+                return ResourceManager.GetString("year_epoch_cycle", resourceCulture);
             }
         }
         
@@ -17418,9 +18125,25 @@ namespace K9.Globalisation {
         ///&lt;h5&gt;
         ///    Thes [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string year_generation {
+        public static string year_generation_cycle {
             get {
-                return ResourceManager.GetString("year_generation", resourceCulture);
+                return ResourceManager.GetString("year_generation_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Our lives pass through each of the houses in nine-year cycles, with each house or year representing one of the nine Energies of the 9 Star Ki system.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Not only does each person have a 9 Star Ki birth chart, which is determined by their date of birth, but in addition, each of our lives passes through each of the nine houses in nine-year cycles. Each house is governed by one of the nine Energies of the 9 Star Ki system and influences our lives in powerful ways. 
+        ///&lt;/p&gt;
+        ///&lt;h5&gt;
+        ///    Thes [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string year_hour_cycle {
+            get {
+                return ResourceManager.GetString("year_hour_cycle", resourceCulture);
             }
         }
         

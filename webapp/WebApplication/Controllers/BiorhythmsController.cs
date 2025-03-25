@@ -25,29 +25,27 @@ namespace K9.WebApplication.Controllers
         [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult Index()
         {
-            return View(new NineStarKiModel());
+            return View(new BioRhythmsModel());
         }
         
         [Route("calculator")]
         [HttpPost]
-        public ActionResult Index(NineStarKiModel model)
+        public ActionResult Index(BioRhythmsModel model)
         {
             if (ModelState.IsValid)
             {
                 if (model.PersonModel != null || model.SelectedDate != DateTime.Today)
                 {
                     var selectedDate = model.SelectedDate ?? DateTime.Today;
-                    var isScrollToCyclesOverview = model.IsScrollToCyclesOverview;
-                    var activeTabId = model.ActiveCycleTabId;
+                    
+                    var nineStarKiModel = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false, selectedDate);
+                    nineStarKiModel.SelectedDate = selectedDate;
 
-                    model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false, selectedDate);
-                    model.SelectedDate = selectedDate;
-                    model.IsScrollToCyclesOverview = isScrollToCyclesOverview;
-                    model.ActiveCycleTabId = activeTabId;
+                    var bioRhythmsModel = _biorhythmsService.Calculate(nineStarKiModel, selectedDate);
+            
+                    return View("Index", bioRhythmsModel);
                 }
             }
-
-            var biorhythmResultSet = _biorhythmsService.Calculate(model, model.SelectedDate ?? DateTime.Today);
             
             return View("Index", model);
         }

@@ -33,14 +33,23 @@ namespace K9.WebApplication.Controllers
                 DateOfBirth = dateOfBirth,
                 Gender = Methods.GetRandomGender()
             };
-            return View(new PredictionsViewModel(new NineStarKiModel(personModel), _nineStarKiService.GetNineStarKiSummaryViewModel()));
+            var nineStarKiModel = new NineStarKiModel(personModel)
+            {
+                IsPredictionsScreen = true
+            };
+            return View(new PredictionsViewModel(nineStarKiModel, _nineStarKiService.GetNineStarKiSummaryViewModel()));
         }
 
         [ChildActionOnly]
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
-        public ActionResult _CalculatorForm(NineStarKiModel model)
+        public ActionResult _CalculatorForm(bool isPredictionsScreen = false, DateTime? selectedDate = null, EDisplayDataFor displayDataFor = EDisplayDataFor.Now)
         {
-            return PartialView(model);
+            return PartialView(new NineStarKiModel
+            {
+                IsPredictionsScreen = isPredictionsScreen,
+                DisplayDataFor = displayDataFor,
+                SelectedDate = selectedDate
+            });
         }
 
         [Route("calculator")]
@@ -49,15 +58,19 @@ namespace K9.WebApplication.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (model.PersonModel != null || model.SelectedDate != DateTime.Today)
+                if (model.PersonModel != null)
                 {
-                    model.SelectedDate = model.SelectedDate ?? model.GetLocalNow();
+                    var localNow = model.GetLocalNow(); 
+                    model.SelectedDate = model.DisplayDataFor == EDisplayDataFor.SelectedDate ? model.SelectedDate ?? localNow : localNow;
+                    
                     var invertYinEnergies = model.CalculationMethod == ECalculationMethod.Chinese;
 
                     // Set user calculation method preference cookie
                     SessionHelper.SetCurrentUserCalculationMethod((int)model.CalculationMethod);
                     SessionHelper.SetCurrentUserUseHolograhpicCycles(model.UseHolograhpicCycleCalculation);
-
+                    SessionHelper.SetInvertDailyAndHourlyKiForSouthernHemisphere(model.InvertDailyAndHourlyKiForSouthernHemisphere);
+                    SessionHelper.SetInvertDailyAndHourlyCycleKiForSouthernHemisphere(model.InvertDailyAndHourlyCycleKiForSouthernHemisphere);
+                    
                     // Add time of birth
                     model.PersonModel.DateOfBirth = model.PersonModel.DateOfBirth.Add(model.PersonModel.TimeOfBirth);
                  
@@ -71,9 +84,11 @@ namespace K9.WebApplication.Controllers
                         model.IsMyProfile = user.BirthDate == model.PersonModel.DateOfBirth;
                     }
                 }
+                model.IsPredictionsScreen = true;
                 return View(new PredictionsViewModel(model, _nineStarKiService.GetNineStarKiSummaryViewModel()));
             }
 
+            model.IsPredictionsScreen = true;
             return View(model);
         }
 

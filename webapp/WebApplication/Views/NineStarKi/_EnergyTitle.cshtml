@@ -12,8 +12,10 @@
                             : string.Empty;
 }
 
-<div class="ninestar-summary-container">
-    <h3 class="margin-bottom-0 padding-bottom-0">@label</h3>
-    <p>@Model.EnergyName</p>
-    <img loading="lazy" title="@Model.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @Model.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(Model.Energy.ToString().ToLower()).png" />
+<div class="ninestar-summary-container margin-3">
+    <h3 class="margin-bottom-0 padding-bottom-0 margin-top-2">@label</h3>
+    <p class="margin-bottom-2">@Model.EnergyName</p>
+    <div class="energy-image-container">
+        <img loading="lazy" title="@Model.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @Model.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(Model.Energy.ToString().ToLower()).png" />
+    </div>
 </div>

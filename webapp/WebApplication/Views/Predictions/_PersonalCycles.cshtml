@@ -2,34 +2,38 @@
 @using K9.WebApplication.Helpers
 @model K9.WebApplication.Models.NineStarKiModel
 
-@if (Model.SelectedDate != DateTime.Today)
+@if (Model.DisplayDataFor != EDisplayDataFor.Now)
 {
-    <div class="row">
-        <div class="text-center">
-            @Html.Partial("_SelectedDateAndPeriodTitle")
-        </div>
+    <div class="text-center">
+        <h5>
+            @Dictionary.DisplayingDataFor @Model.SelectedDate.Value.ToLongDateString()
+        </h5>
     </div>
 }
 
 <div class="row">
-    <div class="col-sm-4 margin-bottom-0">
-        @Html.Partial("_CycleTitle", Model.YearlyCycleEnergy)
+    <div class="col-sm-4 col-sm-offset-4 very-small-energy">
+        @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Epoch)
     </div>
-    <div class="col-sm-4 margin-bottom-0">
+</div>
+<div class="row">
+    <div class="col-sm-4 col-sm-offset-4 very-small-energy">
+        @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Generation)
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4 medium-energy">
         @Html.Partial("_CycleTitle", Model.MonthlyCycleEnergy)
     </div>
-    <div class="col-sm-4 margin-bottom-0">
+    <div class="col-sm-4">
+        @Html.Partial("_CycleTitle", Model.YearlyCycleEnergy)
+    </div>
+    <div class="col-sm-4 small-energy">
         @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Day)
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-4 margin-bottom-0">
+    <div class="col-sm-4 col-sm-offset-4 very-small-energy">
         @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Hour)
-    </div>
-    <div class="col-sm-4 margin-bottom-0">
-        @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Generation)
-    </div>
-    <div class="col-sm-4 margin-bottom-0">
-        @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Epoch)
     </div>
 </div>

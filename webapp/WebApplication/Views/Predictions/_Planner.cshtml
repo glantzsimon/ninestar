@@ -1,0 +1,85 @@
+﻿@using K9.SharedLibrary.Extensions
+@using K9.WebApplication.Config
+@using K9.WebApplication.Helpers;
+@model K9.WebApplication.Models.NineStarKiModel
+
+@{
+    var cycles = Model.GetGlobalPlanner();
+    var activeCycle = cycles.FirstOrDefault();
+}
+
+<div class="container main-content clear-both planner-container margin-top-5">
+
+    <div class="year-planner">
+        @foreach (var yearlyCycle in cycles)
+        {
+            var year = yearlyCycle.Item1;
+            var startsOn = yearlyCycle.Item2;
+            var endsOn = yearlyCycle.Item3;
+            var energy = yearlyCycle.Item4;
+
+            var isAfterChineseNewYear = DateTime.Today.Month >= 3 || DateTime.Today.Month == 2 && DateTime.Today.Day >= 4;
+            var isCurrentYear = isAfterChineseNewYear ? year == DateTime.Today.Year : year == DateTime.Today.Year - 1;
+            var activeClass = isCurrentYear ? "active current-year" : string.Empty;
+
+            if (isCurrentYear)
+            {
+                activeCycle = yearlyCycle;
+            }
+
+            <!-- Year Block -->
+            <div class="global-planner-item" data-energy="@energy.Energy" data-type="year">
+                <div class="year-block global-planner-item @activeClass" data-year="@year">
+
+                    <!-- Top Row: Year Summary -->
+                    <div class="year-summary-row clickable">
+                        <div class="year-label">
+                            <div class="year-number">@year</div>
+                            <div class="year-dates">@startsOn.ToString("MMM dd") - @endsOn.ToString("MMM dd")</div>
+                        </div>
+                        <div class="year-detail narrow">
+                            <img loading="lazy" title="@energy.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @energy.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(energy.Energy.ToString().ToLower()).png" />
+                        </div>
+                        <div class="year-detail wide">
+                            @energy.EnergyName - @energy.SeasonDescription / @energy.CycleDescriptiveName
+                        </div>
+                    </div>
+
+                    @foreach (var monthlyCycle in yearlyCycle.Item5)
+                    {
+                        year = monthlyCycle.Item1;
+                        var month = monthlyCycle.Item2;
+                        startsOn = monthlyCycle.Item3;
+                        endsOn = monthlyCycle.Item4;
+                        var monthName = monthlyCycle.Item5;
+                        energy = monthlyCycle.Item6;
+                        var isActive = year == DateTime.Today.Year && month == DateTime.Today.Month;
+                        activeClass = isActive ? "active current-month" : string.Empty;
+
+                        if (isActive)
+                        {
+                            activeCycle = yearlyCycle;
+                        }
+
+                        <!-- Bottom Row: Month Breakdown -->
+                        <div class="month-row">
+                            <!-- Month -->
+                            <div class="month-block clickable">
+                                <div class="month-name">@monthName</div>
+                                <div class="month-dates">@startsOn.ToString("MMM dd") – @endsOn.ToString("MMM dd")</div>
+                                <img loading="lazy" title="@energy.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @energy.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(energy.Energy.ToString().ToLower()).png" />
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<hr />
+
+<div id="global-planner-details">
+    @Html.Panel(activeCycle.Item4.CycleDescriptiveName, activeCycle.Item4.CycleDescription)
+</div>

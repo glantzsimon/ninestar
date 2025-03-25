@@ -4930,4 +4930,19 @@
   <data name="year_hour_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>predictions\hour\en-gb\year-hour-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="BirthTimeZone" xml:space="preserve">
+    <value>Birth Time Zone</value>
+  </data>
+  <data name="DisplayDataForLabel" xml:space="preserve">
+    <value>Display Data For</value>
+  </data>
+  <data name="Now" xml:space="preserve">
+    <value>Now</value>
+  </data>
+  <data name="Planner" xml:space="preserve">
+    <value>Planner</value>
+  </data>
+  <data name="SelectedDateAndTime" xml:space="preserve">
+    <value>Selected Date and Time</value>
+  </data>
 </root>

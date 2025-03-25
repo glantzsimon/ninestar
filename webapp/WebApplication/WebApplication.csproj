@@ -353,6 +353,7 @@
     <Compile Include="Controllers\UserPromotionsController.cs" />
     <Compile Include="Controllers\UserMembershipsController.cs" />
     <Compile Include="Controllers\MailingListUsersController.cs" />
+    <Compile Include="Enums\EDisplayDataFor.cs" />
     <Compile Include="Enums\ECalculationsMethod.cs" />
     <Compile Include="Enums\ENumerologyCode.cs" />
     <Compile Include="Enums\EForecastType.cs" />
@@ -1484,7 +1485,6 @@
     <Content Include="Views\PersonalChart\_PersonalChart.cshtml" />
     <Content Include="Views\Predictions\_PersonalCycles.cshtml" />
     <Content Include="Views\Predictions\_CyclesPills.cshtml" />
-    <Content Include="Views\Predictions\_SelectedDateAndPeriodTitle.cshtml" />
     <Content Include="Views\Account\LoginUser.cshtml" />
     <Content Include="Views\Shared\UpgradePrompt.cshtml" />
     <Content Include="Views\Shared\LoginPrompt.cshtml" />
@@ -1635,6 +1635,9 @@
     <Content Include="Views\Home\CalculationMethods.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\TimeSpan.cshtml" />
     <Content Include="Views\Predictions\_DailyKiCalendar.cshtml" />
+    <Content Include="Views\Predictions\_Planner.cshtml" />
+    <Content Include="Views\Compatibility\_PersonalChart.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DisplayDataFor.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

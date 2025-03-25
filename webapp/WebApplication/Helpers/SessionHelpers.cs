@@ -97,6 +97,26 @@ namespace K9.WebApplication.Helpers
             return GetBoolValue(Constants.SessionConstants.UseHolograhpicCycles);
         }
 
+        public static bool GetInvertDailyAndHourlyKiForSouthernHemisphere()
+        {
+            return GetBoolValue(Constants.SessionConstants.InvertDailyAndHourlyKiForSouthernHemisphere);
+        }
+
+        public static void SetInvertDailyAndHourlyKiForSouthernHemisphere(bool value)
+        {
+            SetValue(Constants.SessionConstants.InvertDailyAndHourlyKiForSouthernHemisphere, value);
+        }
+
+        public static bool GetInvertDailyAndHourlyCycleKiForSouthernHemisphere()
+        {
+            return GetBoolValue(Constants.SessionConstants.InvertDailyAndHourlyCycleKiForSouthernHemisphere);
+        }
+
+        public static void SetInvertDailyAndHourlyCycleKiForSouthernHemisphere(bool value)
+        {
+            SetValue(Constants.SessionConstants.InvertDailyAndHourlyCycleKiForSouthernHemisphere, value);
+        }
+
         public static void SetCurrentUserTimeZone(string value)
         {
             SetValue(Constants.SessionConstants.UserTimeZone, value);

@@ -1,0 +1,21 @@
+﻿@using K9.WebApplication.Enums
+@using K9.WebApplication.Helpers
+@model K9.WebApplication.Models.NineStarKiModel
+
+@{
+    var childClass = Model.PersonModel.IsAdult() ? "" : "child-profile";
+}
+
+<div class="row">
+    <div class="col-sm-4 margin-bottom-15 @childClass medium-energy">
+        <div class="adult-profile">
+            @Html.Partial("../NineStarKi/_EnergyTitle", Model.MainEnergy)
+        </div>
+    </div>
+    <div class="col-sm-4 margin-bottom-15">
+        @Html.Partial("../NineStarKi/_EnergyTitle", Model.CharacterEnergy)
+    </div>
+    <div class="col-sm-4 margin-bottom-15 small-energy">
+        @Html.Partial("../NineStarKi/_EnergyTitle", Model.SurfaceEnergy)
+    </div>
+</div>

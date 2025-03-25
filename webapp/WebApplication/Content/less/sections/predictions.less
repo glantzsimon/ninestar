@@ -72,7 +72,7 @@
 
 .form-options {
     input {
-        display: inline-block;        
+        display: inline-block;
     }
 
     label {
@@ -85,5 +85,120 @@
         margin: 0;
         margin-top: -5px;
         margin-bottom: 7px;
+    }
+}
+
+
+.planner-container {
+    .year-planner {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        padding: 0;
+
+        .year-block {
+            border: 1px solid #ddd;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: box-shadow 0.3s;
+            background-color: #f9f9f9;
+            cursor: pointer !important;
+
+            &.active {
+                background-color: @primary-blue;
+
+                .year-label, .year-detail, .year-number, .year-dates {
+                    color: @snow-white;
+                }
+            }
+
+            &:hover {
+                box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+                background-color: @mist-grey;
+            }
+        }
+
+        .year-summary-row {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid #eee;            
+
+            year-label {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                min-width: 80px;
+
+                .year-number {
+                    font-size: 1.75rem;
+                    font-weight: 700;
+                    color: #222;
+                    line-height: 1.2;
+                }
+
+                .year-dates {
+                    font-size: 0.75rem;
+                    color: #888;
+                    margin-top: 0.25rem;
+                }
+            }
+
+            .year-detail {
+                &.narrow {
+                    flex: 0 0 120px;
+                    color: #666;
+                    font-weight: 500;
+                }
+
+                &.wide {
+                    flex: 1;
+                    color: #444;
+                }
+            }
+        }
+
+        .month-row {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 0.5rem;
+            padding: 1rem;
+            background-color: #fff;
+
+            .month-block {
+                border: 1px solid #eee;
+                border-radius: 0.5rem;
+                padding: 0.5rem;
+                text-align: center;
+                transition: background-color 0.2s, transform 0.2s;
+                cursor: pointer;
+                background-color: #fafafa;
+
+                &:hover {
+                    background-color: #f0f8ff;
+                    transform: translateY(-2px);
+                }
+
+                .month-name {
+                    font-weight: bold;
+                    font-size: 0.9rem;
+                    margin-bottom: 0.25rem;
+                }
+
+                .month-dates {
+                    font-size: 0.75rem;
+                    color: #777;
+                    margin-bottom: 0.5rem;
+                }
+
+                img {
+                    width: 100%;
+                    max-height: 60px;
+                    object-fit: cover;
+                    border-radius: 0.25rem;
+                }
+            }
+        }
     }
 }

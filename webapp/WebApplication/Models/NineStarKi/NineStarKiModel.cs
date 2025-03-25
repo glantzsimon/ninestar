@@ -7,7 +7,9 @@ using K9.WebApplication.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Web.Script.Serialization;
+using K9.SharedLibrary.Extensions;
 
 namespace K9.WebApplication.Models
 {
@@ -22,7 +24,7 @@ namespace K9.WebApplication.Models
         [UIHint("CalculationMethod")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CalculationMethodLabel)]
         public ECalculationMethod CalculationMethod { get; set; } = (ECalculationMethod)SessionHelper.GetCurrentUserCalculationMethod();
-        
+
         [ScriptIgnore]
         public bool EnableCycleSwitch { get; set; } = true;
 
@@ -31,14 +33,14 @@ namespace K9.WebApplication.Models
 
         [ScriptIgnore]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InvertDailyAndHourlyKiForSouthernHemisphereLabel)]
-        public bool InvertDailyAndHourlyKiForSouthernHemisphere { get; set; }
+        public bool InvertDailyAndHourlyKiForSouthernHemisphere { get; set; } = SessionHelper.GetInvertDailyAndHourlyKiForSouthernHemisphere();
 
         [ScriptIgnore]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InvertDailyAndHourlyKiForSouthernHemisphereLabel)]
-        public bool InvertDailyAndHourlyCycleKiForSouthernHemisphere { get; set; }
+        public bool InvertDailyAndHourlyCycleKiForSouthernHemisphere { get; set; } = SessionHelper.GetInvertDailyAndHourlyCycleKiForSouthernHemisphere();
 
         [ScriptIgnore]
-        public bool HideHolograhpicCycleCalculationOption { get; set; }
+        public bool IsPredictionsScreen { get; set; }
 
         [ScriptIgnore]
         public bool IsCycleSwitchActive => EnableCycleSwitch && SelectedDate >= CYCLE_SWITCH_DATE;
@@ -52,7 +54,7 @@ namespace K9.WebApplication.Models
             {
                 DateOfBirth = dateOfBirth,
                 Gender = Methods.GetRandomGender(),
-                TimeZoneId = Current.UserTimeZoneId
+                BirthTimeZoneId = Current.UserTimeZoneId
             };
 
             PersonModel = personModel;
@@ -66,7 +68,7 @@ namespace K9.WebApplication.Models
         public NineStarKiModel(PersonModel personModel, int precisePersonEpochEnergy, int precisePersonGenerationalEnergy, int preciseMainEnergy, int preciseEmotionalEnergy, int preciseEmotionalEnergyForInvertedYear, int precisePersonalDayStarEnergy, int precisePersonalHourlyEnergy,
 
             int preciseEpochCycleEnergy, int preciseGenerationalCycleEnergy, int preciseYearlyCycleEnergy, int preciseMonthlyCycleEnergy, int preciseDailyCycleEnergy, int preciseHourlyCycleEnergy, int? preciseDailyCycleInvertedEnergy, DateTime? selectedDate = null,
-            
+
             ECalculationMethod calculationMethod = ECalculationMethod.Chinese, bool useHolograhpicCycleCalculation = false, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false)
         {
             SelectedDate = selectedDate ?? DateTime.UtcNow;
@@ -105,7 +107,7 @@ namespace K9.WebApplication.Models
                 : preciseHourlyCycleEnergy;
 
             var personalInfoString =
-                $"{PersonModel.DateOfBirth}_{PersonModel.TimeOfBirth}_{PersonModel.TimeZoneId}_{PersonModel.Gender}";
+                $"{PersonModel.DateOfBirth}_{PersonModel.TimeOfBirth}_{PersonModel.BirthTimeZoneId}_{PersonModel.Gender}";
 
 
             #region Personal Chart
@@ -193,6 +195,21 @@ namespace K9.WebApplication.Models
 
         public PersonModel PersonModel { get; }
 
+        [UIHint("DisplayDataFor")]
+        [ScriptIgnore]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DisplayDataForLabel)]
+        public EDisplayDataFor DisplayDataFor { get; set; }
+
+        [ScriptIgnore]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SelectedDateLabel)]
+        public DateTime? SelectedDate { get; set; }
+
+        [UIHint("TimeZone")]
+        [Required(ErrorMessageResourceType = typeof(Base.Globalisation.Dictionary),
+            ErrorMessageResourceName = Base.Globalisation.Strings.ErrorMessages.FieldIsRequired)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.TimeZone)]
+        public string TimeZoneId { get; set; } = "Europe/London";
+
         public NineStarKiEnergiesModel PersonalChartEnergies { get; }
 
         public NineStarKiEnergiesModel GlobalCycleEnergies { get; }
@@ -229,10 +246,6 @@ namespace K9.WebApplication.Models
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.OccupationsLabel)]
         public string Career => MainEnergy?.CareerDescription;
-
-        [ScriptIgnore]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SelectedDateLabel)]
-        public DateTime? SelectedDate { get; set; }
 
         [ScriptIgnore]
         public bool IsScrollToCyclesOverview { get; set; }
@@ -301,6 +314,46 @@ namespace K9.WebApplication.Models
         public (DateTime PeriodStartOn, DateTime PeriodEndsOn, int MonthlyKi)[] MonthlyPeriods { get; set; }
 
         public (DateTime Date, int DailyKi, int? InvertedDailyKi)[] DailyPeriods { get; set; }
+
+        public List<Tuple<int, DateTime, DateTime, NineStarKiEnergy, List<Tuple<int, int, DateTime, DateTime, string, NineStarKiEnergy>>>> GetGlobalPlanner()
+        {
+            return GetOrAddToCache($"GlobalPlanner_{SelectedDate.ToString()}", () =>
+            {
+                var yearlyCycles = new List<Tuple<int, DateTime, DateTime, NineStarKiEnergy, List<Tuple<int, int, DateTime, DateTime, string, NineStarKiEnergy>>>>();
+
+                foreach (var yearlyPeriod in YearlyPeriods)
+                {
+                    var newYearlyCycle = new Tuple<int, DateTime, DateTime, NineStarKiEnergy, List<Tuple<int, int, DateTime, DateTime, string, NineStarKiEnergy>>>(
+                        yearlyPeriod.PeriodStartOn.Year,
+                        yearlyPeriod.PeriodStartOn,
+                        yearlyPeriod.PeriodEndsOn,
+
+                        GetPersonalCycleEnergy(yearlyPeriod.YearlyKi, MainEnergy.EnergyNumber,
+                            ENineStarKiEnergyCycleType.YearlyCycleEnergy),
+
+                        new List<Tuple<int, int, DateTime, DateTime, string, NineStarKiEnergy>>());
+
+                    var monthlyCycles = new List<Tuple<int, int, DateTime, DateTime, string, NineStarKiEnergy>>();
+                    var monthlyPeriodsForYear =
+                        MonthlyPeriods.Where(e => e.PeriodStartOn.IsBetween(yearlyPeriod.PeriodStartOn, yearlyPeriod.PeriodEndsOn)
+                                                  || e.PeriodEndsOn.IsBetween(yearlyPeriod.PeriodStartOn, yearlyPeriod.PeriodEndsOn)).OrderBy(e => e.PeriodStartOn).ToList();
+                    foreach (var monthlyPeriod in monthlyPeriodsForYear)
+                    {
+                        monthlyCycles.Add(new Tuple<int, int, DateTime, DateTime, string, NineStarKiEnergy>(
+                            monthlyPeriod.PeriodStartOn.Year,
+                            monthlyPeriod.PeriodStartOn.Month,
+                            monthlyPeriod.PeriodStartOn,
+                            monthlyPeriod.PeriodEndsOn,
+
+                            monthlyPeriod.PeriodStartOn.ToString("MMMM"), GetPersonalCycleEnergy(monthlyPeriod.MonthlyKi, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Month.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.MonthlyCycleEnergy)));
+                    }
+
+                    yearlyCycles.Add(newYearlyCycle);
+                }
+
+                return yearlyCycles;
+            }, TimeSpan.FromDays(30));
+        }
 
         public List<Tuple<int, NineStarKiEnergy>> GetYearlyPlanner()
         {
@@ -374,9 +427,9 @@ namespace K9.WebApplication.Models
 
         public DateTime GetLocalNow()
         {
-            return string.IsNullOrEmpty(PersonModel?.TimeZoneId)
+            return string.IsNullOrEmpty(PersonModel?.BirthTimeZoneId)
                 ? DateTime.UtcNow
-                : DateTimeHelper.ConvertToLocaleDateTime(DateTime.UtcNow, PersonModel.TimeZoneId);
+                : DateTimeHelper.ConvertToLocaleDateTime(DateTime.UtcNow, PersonModel.BirthTimeZoneId);
         }
 
         private NineStarKiEnergy GetPersonalEnergy(int energyNumber, ENineStarKiEnergyType energyType)

@@ -34,7 +34,6 @@ namespace K9.WebApplication.Controllers
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult _CalculatorForm(NineStarKiModel model)
         {
-            model.HideHolograhpicCycleCalculationOption = true;
             return PartialView(model);
         }
 
@@ -44,8 +43,6 @@ namespace K9.WebApplication.Controllers
         {
             if (ModelState.IsValid)
             {
-                model.HideHolograhpicCycleCalculationOption = true;
-
                 // Set user calculation method preference cookie
                 SessionHelper.SetCurrentUserCalculationMethod((int)model.CalculationMethod);
 

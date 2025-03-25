@@ -771,7 +771,6 @@ namespace K9.WebApplication.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult PasswordResetRequest(UserAccount.PasswordResetRequestModel model)
         {
             if (ModelState.IsValid)
@@ -814,7 +813,6 @@ namespace K9.WebApplication.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult ResetPassword(UserAccount.ResetPasswordModel model)
         {
             if (ModelState.IsValid)
@@ -891,7 +889,6 @@ namespace K9.WebApplication.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         [Route("verify")]
         [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
         public ActionResult VerifySixDigitCode(AccountActivationModel model, string returnUrl = null)

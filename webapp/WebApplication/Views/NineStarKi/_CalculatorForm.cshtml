@@ -1,4 +1,5 @@
-﻿@using K9.WebApplication.Helpers
+﻿@using K9.WebApplication.Enums
+@using K9.WebApplication.Helpers
 @model K9.WebApplication.Models.NineStarKiModel
 
 
@@ -13,9 +14,12 @@
         })
 
     <div class="form-options">
-        @Html.CheckBoxFor(model => model.InvertDailyAndHourlyCycleKiForSouthernHemisphere)
-        <label>@Dictionary.InvertDailyAndHourlyCycleKiForSouthernHemisphereLabel</label>
-        <p class="hint">@Dictionary.OptionalForSouthernHemisphere</p>
+        @if (Model.IsPredictionsScreen)
+        {
+            @Html.CheckBoxFor(model => model.InvertDailyAndHourlyCycleKiForSouthernHemisphere)
+            <label>@Dictionary.InvertDailyAndHourlyCycleKiForSouthernHemisphereLabel</label>
+            <p class="hint">@Dictionary.OptionalForSouthernHemisphere</p>
+        }
 
         @Html.CheckBoxFor(model => model.InvertDailyAndHourlyKiForSouthernHemisphere)
         <label>@Dictionary.InvertDailyAndHourlyKiForSouthernHemisphereLabel</label>
@@ -24,7 +28,7 @@
 
     if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin())
     {
-        if (!Model.HideHolograhpicCycleCalculationOption)
+        if (Model.IsPredictionsScreen)
         {
             <div class="form-options">
                 @Html.CheckBoxFor(model => model.UseHolograhpicCycleCalculation)
@@ -35,18 +39,25 @@
     }
 
     <hr />
-
-    @Html.BootstrapEditorFor(model => model.PersonModel.Name, new EditorOptions
-    {
-        Label = Dictionary.OptionalNameLabel
-    })
-
+    
     @Html.BootstrapEditorFor(model => model.PersonModel.DateOfBirth)
     @Html.BootstrapEditorFor(model => model.PersonModel.TimeOfBirth)
-    @Html.BootstrapEditorFor(model => model.PersonModel.TimeZoneId)
+    @Html.BootstrapEditorFor(model => model.PersonModel.BirthTimeZoneId)
     <div data-toggle="tooltip" data-placement="top" title="@Dictionary.GenderSelectionTooltip">
         @Html.BootstrapEditorFor(model => model.PersonModel.Gender)
     </div>
+
+    if (Model.IsPredictionsScreen)
+    {
+        var selectedDateDisplayStyle = Model.DisplayDataFor == EDisplayDataFor.Now ? "display: none;" : "";
+
+        <hr />
+        @Html.BootstrapEditorFor(model => model.DisplayDataFor)
+        <div id="predictions-selected-date-container" style="@selectedDateDisplayStyle">
+            @Html.BootstrapEditorFor(model => model.SelectedDate)
+            @Html.BootstrapEditorFor(model => model.TimeZoneId)
+        </div>
+    }
 
     <hr />
     @Html.BootstrapButton(Dictionary.Calculate, EButtonType.Submit, "", EButtonClass.Large)
@@ -62,6 +73,17 @@
                 $genderFormGroup.fadeOut();
             } else {
                 $genderFormGroup.fadeIn();
+            }
+        });
+
+        $('#DisplayDataFor').on('change', function () {
+            let value = $(this).val();
+            let $container = $("#predictions-selected-date-container");
+
+            if (value != '0') {
+                $container.fadeOut();
+            } else {
+                $container.fadeIn();
             }
         });
     });

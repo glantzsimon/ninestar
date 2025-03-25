@@ -6,66 +6,47 @@
     var childClass = Model.PersonModel.IsAdult() ? "" : "child-profile";
 }
 
+<div class="text-center">
+    <h5>@Dictionary.ClickOnTheNumbersBelowForMoreDetails</h5>
+</div>
+
 <div class="row">
-    @if (!Model.IsCompatibility)
-    {
-        <div class="text-center">
-            <h5>@Dictionary.ClickOnTheNumbersBelowForMoreDetails</h5>
-        </div>
-    }
-    <div class="col-sm-4 margin-bottom-15 @childClass">
-        <div class="adult-profile">
-            @if (Model.IsCompatibility)
-            {
-                @Html.Partial("../NineStarKi/_EnergyTitle", Model.MainEnergy)
-            }
-            else
-            {
-                <a href="#" id="fundamental-energy">
-                    @Html.Partial("../NineStarKi/_EnergyTitle", Model.MainEnergy)
-                </a>
-            }
-        </div>
-    </div>
-    <div class="col-sm-4 margin-bottom-15">
-        @if (Model.IsCompatibility)
-        {
-            @Html.Partial("../NineStarKi/_EnergyTitle", Model.CharacterEnergy)
-        }
-        else
-        {
-            <a href="#" id="character-energy">
-                @Html.Partial("../NineStarKi/_EnergyTitle", Model.CharacterEnergy)
-            </a>
-        }
-    </div>
-    <div class="col-sm-4 margin-bottom-15">
-        @if (Model.IsCompatibility)
-        {
-            @Html.Partial("../NineStarKi/_EnergyTitle", Model.SurfaceEnergy)
-        }
-        else
-        {
-            <a href="#" id="surface-energy">
-                @Html.Partial("../NineStarKi/_EnergyTitle", Model.SurfaceEnergy)
-            </a>
-        }
+    <div class="col-sm-4 col-sm-offset-4 very-small-energy">
+        <a href="#" id="epoch-energy">
+            @Html.Partial("../NineStarKi/_EnergyTitle", Model.PersonalChartEnergies.Epoch)
+        </a>
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-4 margin-bottom-15">
-        <a href="#" id="daily-energy">
-            @Html.Partial("../NineStarKi/_EnergyTitle", Model.PersonalChartEnergies.Day)
-        </a>
-    </div>
-    <div class="col-sm-4 margin-bottom-15">
+    <div class="col-sm-4 col-sm-offset-4 very-small-energy">
         <a href="#" id="generation-energy">
             @Html.Partial("../NineStarKi/_EnergyTitle", Model.PersonalChartEnergies.Generation)
         </a>
     </div>
-    <div class="col-sm-4 margin-bottom-15">
-        <a href="#" id="epoch-energy">
-            @Html.Partial("../NineStarKi/_EnergyTitle", Model.PersonalChartEnergies.Epoch)
+</div>
+<div class="row">
+    <div class="col-sm-4 medium-energy">
+        <a href="#" id="character-energy">
+            @Html.Partial("../NineStarKi/_EnergyTitle", Model.CharacterEnergy)
+        </a>
+    </div>
+    <div class="col-sm-4 @childClass">
+        <div class="adult-profile">
+            <a href="#" id="fundamental-energy">
+                @Html.Partial("../NineStarKi/_EnergyTitle", Model.MainEnergy)
+            </a>
+        </div>
+    </div>
+    <div class="col-sm-4 small-energy">
+        <a href="#" id="surface-energy">
+            @Html.Partial("../NineStarKi/_EnergyTitle", Model.SurfaceEnergy)
+        </a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4 col-sm-offset-4 very-small-energy">
+        <a href="#" id="daystar-energy">
+            @Html.Partial("../NineStarKi/_EnergyTitle", Model.PersonalChartEnergies.Day)
         </a>
     </div>
 </div>

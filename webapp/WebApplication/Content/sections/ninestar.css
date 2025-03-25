@@ -41,6 +41,23 @@ a > .ninestar-summary-container:hover {
   opacity: 0.3;
   filter: grayscale(100%);
 }
+.energy-image-container {
+  width: 160px;
+  display: table;
+  margin: auto;
+}
+.energy-image-container img {
+  width: 100%;
+}
+.small-energy img {
+  width: 38%;
+}
+.medium-energy img {
+  width: 62%;
+}
+.very-small-energy img {
+  width: 24%;
+}
 .profile-warning {
   color: #a94442;
   text-align: center;

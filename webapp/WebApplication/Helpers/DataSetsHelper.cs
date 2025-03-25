@@ -88,9 +88,13 @@ namespace K9.WebApplication.Helpers
                     var enumValue = e as Enum;
                     var id = Convert.ToInt32(e);
                     var descriptionAttribute = enumValue.GetAttribute<EnumDescriptionAttribute>();
+                    var name = enumValue.ToString();
 
-                    descriptionAttribute.ResourceType = dictionary;
-                    var name = descriptionAttribute.GetDescription();
+                    if (descriptionAttribute != null)
+                    {
+                        descriptionAttribute.ResourceType = dictionary;
+                        name = descriptionAttribute.GetDescription();
+                    }
 
                     return new ListItem(id, name);
                 }));

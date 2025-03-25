@@ -53,6 +53,31 @@
             $(".nav-pills a[href='#monthly']").tab("show");
         });
 
+        $(".global-planner-item").click(function() {
+            var $el = $(this);
+            var energy = $el.attr("data-energy");
+            var type = $el.attr("data-type");
+            var $container, $yearBlock, $details;
+
+            $container = $el.closest(".planner-container");
+            $yearBlock = $el.find(".year-block");
+            $details = $("#global-planner-details");
+
+            // clear current class from all items
+            $container.find(".year-block").removeClass("active");
+
+            // set current class on current selected item
+            $yearBlock.addClass("active");
+
+            //ajaxcontroller().get(url, {energy}).done(
+            //    function(result) {
+            //        if (result.success) {
+            //            $details.find(".panel .panel-heading h4 strong").html(result.data.CycleDescriptiveName);
+            //            $details.find(".panel .panel-body").html(result.data.CycleDescription);
+            //        }
+            //    });
+        });
+
         $(".planner-item").click(function() {
             var $el = $(this);
             var energy = $el.attr("data-energy");
@@ -74,7 +99,7 @@
 
             $container = $el.closest(".planner-container");
             $plannerItem = $el.find(".planner-item-container");
-           
+
             // clear current class from all items
             $container.find(".planner-item .planner-item-container").removeClass("active");
 

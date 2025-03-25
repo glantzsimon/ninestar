@@ -107,43 +107,43 @@ namespace K9.WebApplication.Services
                 _logger.Log(LogLevel.Info,
                     $"EmailQueueService => ProcessQueue => Sending {emailsToSend.Count} emails => Batch Size: {_defaultConfig.EmailQueueMaxBatchSize}");
 
-                foreach (var email in emailsToSend)
+                foreach (var emailQueueItem in emailsToSend)
                 {
                     try
                     {
-                        if (!email.UserId.HasValue && !email.ContactId.HasValue)
+                        if (!emailQueueItem.UserId.HasValue && !emailQueueItem.ContactId.HasValue)
                         {
                             var error =
                                 "EmailQueueService => ProcessQueue => Email cannot be sent. Both contactId and userId are null";
                             _logger.Error(error);
-                            MarkEmailAsProcessed(email, error);
+                            MarkEmailAsProcessed(emailQueueItem, error);
                             continue;
                         }
 
-                        if (email.UserId.HasValue)
+                        if (emailQueueItem.UserId.HasValue)
                         {
-                            if (email.User == null)
+                            if (emailQueueItem.User == null)
                             {
                                 var error =
-                                    $"EmailQueueService => ProcessQueue => User not found: UserId {email.UserId}";
+                                    $"EmailQueueService => ProcessQueue => User not found: UserId {emailQueueItem.UserId}";
                                 _logger.Error(error);
-                                MarkEmailAsProcessed(email, error);
+                                MarkEmailAsProcessed(emailQueueItem, error);
                                 continue;
                             }
 
-                            if (email.User.IsUnsubscribed)
+                            if (emailQueueItem.User.IsUnsubscribed)
                             {
                                 var resultText =
-                                    $"EmailQueueService => ProcessQueue => User with UserId {email.UserId} has unsubscribed. Cannot send email: {email.Subject}";
+                                    $"EmailQueueService => ProcessQueue => User with UserId {emailQueueItem.UserId} has unsubscribed. Cannot send email: {emailQueueItem.Subject}";
                                 _logger.Info(resultText);
-                                MarkEmailAsProcessed(email, resultText);
+                                MarkEmailAsProcessed(emailQueueItem, resultText);
                                 continue;
                             }
 
-                            if (email.Type == EEmailType.MembershipPromotion)
+                            if (emailQueueItem.Type == EEmailType.MembershipPromotion)
                             {
                                 var userMemberships = _userMembershipsRepository
-                                    .Find(e => e.UserId == email.UserId)
+                                    .Find(e => e.UserId == emailQueueItem.UserId)
                                     .Select(e =>
                                     {
                                         e.MembershipOption = _membershipOptionsRepository
@@ -157,49 +157,56 @@ namespace K9.WebApplication.Services
                                 if (maxSubscriptionType > MembershipOption.ESubscriptionType.Free)
                                 {
                                     var resultText =
-                                        $"EmailQueueService => ProcessQueue => User with UserId {email.UserId} has already upgraded their membership to {maxSubscriptionType.ToString().SplitOnCapitalLetter()}. Cannot send email: {email.Subject}";
+                                        $"EmailQueueService => ProcessQueue => User with UserId {emailQueueItem.UserId} has already upgraded their membership to {maxSubscriptionType.ToString().SplitOnCapitalLetter()}. Cannot send email: {emailQueueItem.Subject}";
                                     _logger.Info(resultText);
-                                    MarkEmailAsProcessed(email, resultText);
+                                    MarkEmailAsProcessed(emailQueueItem, resultText);
                                     continue;
                                 }
                             }
                         }
-                        else if (email.ContactId.HasValue)
+                        else if (emailQueueItem.ContactId.HasValue)
                         {
-                            if (email.Contact == null)
+                            if (emailQueueItem.Contact == null)
                             {
                                 var error =
-                                    $"EmailQueueService => ProcessQueue => Contact not found: ContactId {email.ContactId}";
+                                    $"EmailQueueService => ProcessQueue => Contact not found: ContactId {emailQueueItem.ContactId}";
                                 _logger.Error(error);
-                                MarkEmailAsProcessed(email, error);
+                                MarkEmailAsProcessed(emailQueueItem, error);
                                 continue;
                             }
 
-                            if (email.Contact.IsUnsubscribed)
+                            if (emailQueueItem.Contact.IsUnsubscribed)
                             {
                                 var resultText =
-                                    $"EmailQueueService => ProcessQueue => Contact with ContactId {email.ContactId} has unsubscribed. Cannot send email: {email.Subject}";
+                                    $"EmailQueueService => ProcessQueue => Contact with ContactId {emailQueueItem.ContactId} has unsubscribed. Cannot send email: {emailQueueItem.Subject}";
                                 _logger.Info(resultText);
-                                MarkEmailAsProcessed(email, resultText);
+                                MarkEmailAsProcessed(emailQueueItem, resultText);
                                 continue;
                             }
                         }
 
-                        SendEmail(email);
+                        SendEmail(emailQueueItem);
                     }
                     catch (Exception ex)
                     {
+                        var fullErrorMessage = ex.GetFullErrorMessage();
+
                         var error =
-                            $"EmailQueueService => ProcessQueue => Error sending mail with mailId: {email.Id} => {ex.GetFullErrorMessage()}";
+                            $"EmailQueueService => ProcessQueue => Error sending mail with mailId: {emailQueueItem.Id} => {fullErrorMessage}";
                         _logger.Log(LogLevel.Error, error);
 
                         try
                         {
-                            email.Result = error;
-                            _emailQueueItemsRepository.Update(email);
+                            emailQueueItem.Result = error;
+                            _emailQueueItemsRepository.Update(emailQueueItem);
                         }
                         catch (Exception e)
                         {
+                        }
+
+                        if (fullErrorMessage.Contains("mailbox unavailable or not local"))
+                        {
+                            MarkEmailAsProcessed(emailQueueItem, fullErrorMessage);
                         }
 
                         continue;
@@ -207,13 +214,13 @@ namespace K9.WebApplication.Services
 
                     try
                     {
-                        email.SentOn = DateTime.Now;
-                        _emailQueueItemsRepository.Update(email);
+                        emailQueueItem.SentOn = DateTime.Now;
+                        _emailQueueItemsRepository.Update(emailQueueItem);
                     }
                     catch (Exception e)
                     {
                         _logger.Log(LogLevel.Error,
-                            $"EmailQueueService => ProcessQueue => Email sent but error updating mail with maildId: {email.Id} => Error: {e.GetFullErrorMessage()}");
+                            $"EmailQueueService => ProcessQueue => Email sent but error updating mail with maildId: {emailQueueItem.Id} => Error: {e.GetFullErrorMessage()}");
                     }
                 }
             }

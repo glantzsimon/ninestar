@@ -4,6 +4,9 @@
     {
         public static class Labels
         {
+            public const string Now = "Now";
+            public const string SelectedDateAndTime = "SelectedDateAndTime";
+
             public const string CalculationMethodLabel = "CalculationMethodLabel";
             public const string InvertDailyAndHourlyKiForSouthernHemisphereLabel = "InvertDailyAndHourlyKiForSouthernHemisphereLabel";
             public const string InvertDailyAndHourlyCycleKiForSouthernHemisphereLabel = "InvertDailyAndHourlyCycleKiForSouthernHemisphereLabel";
@@ -69,6 +72,7 @@
             public const string ElementDescriptionLabel = "ElementDescriptionLabel";
             public const string SummaryLabel = "SummaryLabel";
             public const string SelectedDateLabel = "SelectedDateLabel";
+            public const string DisplayDataForLabel = "DisplayDataForLabel";
             public const string OverviewLabel = "OverviewLabel";
             public const string ColourLabel = "Colour";
             public const string EnergyLabel = "Energy";
@@ -131,6 +135,7 @@
             public const string Contacts = "Contacts";
             public const string Contact = "Contact";
             public const string TimeZones = "TimeZones";
+            public const string BirthTimeZone = "BirthTimeZone";
             public const string TimeZone = "TimeZone";
             public const string Promotions = "Promotions";
             public const string Donation = "Donation";

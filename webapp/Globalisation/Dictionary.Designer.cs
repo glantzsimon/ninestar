@@ -3349,6 +3349,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Birth Time Zone.
+        /// </summary>
+        public static string BirthTimeZone {
+            get {
+                return ResourceManager.GetString("BirthTimeZone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Biting Through&lt;/h5&gt;
         ///&lt;p&gt;Biting Through represents the power of decisive action and the need for justice. It signifies a time when obstacles must be broken down, and truth must prevail. Like a strong bite cutting through tough material, firm resolution is required to move forward.&lt;/p&gt;
         ///&lt;p&gt;This hexagram advises confronting problems directly and ensuring that fairness is upheld. Avoidance or indecision will only prolong difficulties. When justice is served, clarity and progress follow.&lt;/p&gt;
@@ -5627,6 +5636,15 @@ namespace K9.Globalisation {
         public static string DispersionTitle {
             get {
                 return ResourceManager.GetString("DispersionTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display Data For.
+        /// </summary>
+        public static string DisplayDataForLabel {
+            get {
+                return ResourceManager.GetString("DisplayDataForLabel", resourceCulture);
             }
         }
         
@@ -11883,6 +11901,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Now.
+        /// </summary>
+        public static string Now {
+            get {
+                return ResourceManager.GetString("Now", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Number of Relationship Compatibility Readings per month.
         /// </summary>
         public static string NumberOfCompatibilityReadingsLabel {
@@ -12547,6 +12574,15 @@ namespace K9.Globalisation {
         public static string PioneerTitle {
             get {
                 return ResourceManager.GetString("PioneerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Planner.
+        /// </summary>
+        public static string Planner {
+            get {
+                return ResourceManager.GetString("Planner", resourceCulture);
             }
         }
         
@@ -13681,6 +13717,15 @@ namespace K9.Globalisation {
         public static string SelectConsultationDuration {
             get {
                 return ResourceManager.GetString("SelectConsultationDuration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selected Date and Time.
+        /// </summary>
+        public static string SelectedDateAndTime {
+            get {
+                return ResourceManager.GetString("SelectedDateAndTime", resourceCulture);
             }
         }
         

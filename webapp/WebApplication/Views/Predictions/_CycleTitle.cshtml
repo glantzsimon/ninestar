@@ -13,9 +13,11 @@
 }
 
 <div class="ninestar-summary-container">
-    <h3 class="margin-bottom-0 padding-bottom-0" style="font-size: 0.95em;">@label</h3>
-    <p>@Model.EnergyName</p>
-    <img loading="lazy" title="@Model.SeasonDescription" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @Model.SeasonDescription" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(Model.Energy.ToString().ToLower()).png" />
+    <h3 class="margin-bottom-0 padding-bottom-0">@label</h3>
+    <p class="margin-bottom-2">@Model.EnergyName</p>
+    <div class="energy-image-container">
+        <img loading="lazy" title="@Model.SeasonDescription" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @Model.SeasonDescription" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(Model.Energy.ToString().ToLower()).png" />
+    </div>
     <p class="text-center" style="font-size: 0.9em;">
         @Model.CycleDescriptiveName
     </p>

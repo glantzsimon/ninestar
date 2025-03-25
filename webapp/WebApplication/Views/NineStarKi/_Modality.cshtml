@@ -3,8 +3,8 @@
 @model K9.WebApplication.Models.NineStarKiEnergy
 
 <a target="_blank" href="@Url.ActionWithBookmark("Index", "KnowledgeBase", Model.ModalityName.ToLower())">
-    <div class="ninestar-summary-container">
-        <h3 class="margin-bottom-0 padding-bottom-0">@Dictionary.ModalityLabel</h3>
+    <div class="ninestar-summary-container margin-3">
+        <h3 class="margin-bottom-0 padding-bottom-0 margin-top-2">@Dictionary.ModalityLabel</h3>
         <p>@Model.ModalityName</p>
         <img loading="lazy" title="@Model.ModalityName @Dictionary.ModalityLabel" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @Model.ModalityName @Dictionary.ModalityLabel" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/modalities/@(Model.ModalityName).png" />
     </div>

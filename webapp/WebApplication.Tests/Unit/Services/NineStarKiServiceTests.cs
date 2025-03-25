@@ -504,7 +504,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             {
                 DateOfBirth = new DateTime(birthYear, birthMonth, birthDay, hour, 0, 0),
                 Gender = gender,
-                TimeZoneId = timeZone
+                BirthTimeZoneId = timeZone
             });
 
             Assert.Equal((int)energy, ninestar.CharacterEnergy.EnergyNumber);
@@ -529,7 +529,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             {
                 DateOfBirth = new DateTime(birthYear, birthMonth, birthDay, hour, 0, 0),
                 Gender = gender,
-                TimeZoneId = timeZone
+                BirthTimeZoneId = timeZone
             });
 
             Assert.Equal((int)energy, ninestar.MainEnergy.EnergyNumber);

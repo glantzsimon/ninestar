@@ -2,7 +2,7 @@
 
 namespace K9.WebApplication.Enums
 {
-    public enum EDisplayDataFor
+    public enum EDisplayDataForPeriod
     {
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.Now)]
         Now,

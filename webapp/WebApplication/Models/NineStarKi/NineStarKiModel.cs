@@ -58,19 +58,22 @@ namespace K9.WebApplication.Models
             };
 
             PersonModel = personModel;
+            TimeZoneId = Current.UserTimeZoneId;
         }
 
         public NineStarKiModel(PersonModel personModel)
         {
             PersonModel = personModel;
+            TimeZoneId = Current.UserTimeZoneId;
         }
 
         public NineStarKiModel(PersonModel personModel, int precisePersonEpochEnergy, int precisePersonGenerationalEnergy, int preciseMainEnergy, int preciseEmotionalEnergy, int preciseEmotionalEnergyForInvertedYear, int precisePersonalDayStarEnergy, int precisePersonalHourlyEnergy,
 
             int preciseEpochCycleEnergy, int preciseGenerationalCycleEnergy, int preciseYearlyCycleEnergy, int preciseMonthlyCycleEnergy, int preciseDailyCycleEnergy, int preciseHourlyCycleEnergy, int? preciseDailyCycleInvertedEnergy, DateTime? selectedDate = null,
 
-            ECalculationMethod calculationMethod = ECalculationMethod.Chinese, bool useHolograhpicCycleCalculation = false, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false)
+            ECalculationMethod calculationMethod = ECalculationMethod.Chinese, bool useHolograhpicCycleCalculation = false, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false, string displayDataForTimeZoneId = "")
         {
+            TimeZoneId = string.IsNullOrEmpty(displayDataForTimeZoneId) ? Current.UserTimeZoneId : displayDataForTimeZoneId;
             SelectedDate = selectedDate ?? DateTime.UtcNow;
             CalculationMethod = calculationMethod;
             UseHolograhpicCycleCalculation = useHolograhpicCycleCalculation;
@@ -195,12 +198,10 @@ namespace K9.WebApplication.Models
 
         public PersonModel PersonModel { get; }
 
-        [UIHint("DisplayDataFor")]
-        [ScriptIgnore]
+        [UIHint("DisplayDataForPeriod")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DisplayDataForLabel)]
-        public EDisplayDataFor DisplayDataFor { get; set; }
-
-        [ScriptIgnore]
+        public EDisplayDataForPeriod DisplayDataForPeriod { get; set; }
+        
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SelectedDateLabel)]
         public DateTime? SelectedDate { get; set; }
 
@@ -208,7 +209,7 @@ namespace K9.WebApplication.Models
         [Required(ErrorMessageResourceType = typeof(Base.Globalisation.Dictionary),
             ErrorMessageResourceName = Base.Globalisation.Strings.ErrorMessages.FieldIsRequired)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.TimeZone)]
-        public string TimeZoneId { get; set; } = "Europe/London";
+        public string TimeZoneId { get; set; }
 
         public NineStarKiEnergiesModel PersonalChartEnergies { get; }
 

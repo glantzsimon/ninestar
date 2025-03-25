@@ -2,7 +2,6 @@
 @using K9.WebApplication.Helpers
 @model K9.WebApplication.Models.NineStarKiModel
 
-
 @using (Html.BeginBootstrapForm())
 {
     <label>@Dictionary.CalculationMethodLabel</label>
@@ -39,7 +38,7 @@
     }
 
     <hr />
-    
+
     @Html.BootstrapEditorFor(model => model.PersonModel.DateOfBirth)
     @Html.BootstrapEditorFor(model => model.PersonModel.TimeOfBirth)
     @Html.BootstrapEditorFor(model => model.PersonModel.BirthTimeZoneId)
@@ -49,10 +48,10 @@
 
     if (Model.IsPredictionsScreen)
     {
-        var selectedDateDisplayStyle = Model.DisplayDataFor == EDisplayDataFor.Now ? "display: none;" : "";
+        var selectedDateDisplayStyle = Model.DisplayDataForPeriod == EDisplayDataForPeriod.Now ? "display: none;" : "";
 
         <hr />
-        @Html.BootstrapEditorFor(model => model.DisplayDataFor)
+        @Html.BootstrapEditorFor(model => model.DisplayDataForPeriod)
         <div id="predictions-selected-date-container" style="@selectedDateDisplayStyle">
             @Html.BootstrapEditorFor(model => model.SelectedDate)
             @Html.BootstrapEditorFor(model => model.TimeZoneId)
@@ -80,7 +79,7 @@
             let value = $(this).val();
             let $container = $("#predictions-selected-date-container");
 
-            if (value != '0') {
+            if (value == '0') {
                 $container.fadeOut();
             } else {
                 $container.fadeIn();

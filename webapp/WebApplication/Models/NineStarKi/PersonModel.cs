@@ -25,11 +25,11 @@ namespace K9.WebApplication.Models
         [Required(ErrorMessageResourceType = typeof(Dictionary),
             ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.BirthTimeZone)]
-        public string BirthTimeZoneId { get; set; } = "Europe/London";
-        
+        public string BirthTimeZoneId { get; set; }
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NameLabel)]
         public string Name { get; set; }
-        
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LanguageLabel)]
         public string GenderName => Gender.GetLocalisedLanguageName();
 
@@ -40,7 +40,7 @@ namespace K9.WebApplication.Models
         public int YearsOld => GetYearsOld();
 
         public bool IsAdult() => YearsOld >= 18;
-        
+
         public bool IsSixteenOrOver() => YearsOld >= 16;
 
         private int GetYearsOld()

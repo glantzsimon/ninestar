@@ -353,7 +353,7 @@
     <Compile Include="Controllers\UserPromotionsController.cs" />
     <Compile Include="Controllers\UserMembershipsController.cs" />
     <Compile Include="Controllers\MailingListUsersController.cs" />
-    <Compile Include="Enums\EDisplayDataFor.cs" />
+    <Compile Include="Enums\EDisplayDataForPeriod.cs" />
     <Compile Include="Enums\ECalculationsMethod.cs" />
     <Compile Include="Enums\ENumerologyCode.cs" />
     <Compile Include="Enums\EForecastType.cs" />
@@ -1637,7 +1637,7 @@
     <Content Include="Views\Predictions\_DailyKiCalendar.cshtml" />
     <Content Include="Views\Predictions\_Planner.cshtml" />
     <Content Include="Views\Compatibility\_PersonalChart.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\DisplayDataFor.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DisplayDataForPeriod.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

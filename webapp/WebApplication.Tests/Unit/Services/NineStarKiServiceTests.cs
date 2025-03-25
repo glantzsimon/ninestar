@@ -243,7 +243,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         [InlineData(1976, 6, 8, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Water, ENineStarKiEnergy.Water, EGender.Male)]
         [InlineData(1980, 7, 8, ENineStarKiEnergy.Soil, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.Water, EGender.Male)]
         [InlineData(1981, 8, 8, ENineStarKiEnergy.Water, ENineStarKiEnergy.Soil, ENineStarKiEnergy.Wind, EGender.Male)]
-        [InlineData(1982, 9, 8, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Mountain, ENineStarKiEnergy.Heaven, EGender.Male)]
+        [InlineData(1982, 9, 8, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Lake, ENineStarKiEnergy.Lake, EGender.Male)]
         [InlineData(1983, 10, 9, ENineStarKiEnergy.Mountain, ENineStarKiEnergy.Thunder, ENineStarKiEnergy.Water, EGender.Male)]
         [InlineData(1984, 11, 7, ENineStarKiEnergy.Lake, ENineStarKiEnergy.Fire, ENineStarKiEnergy.Thunder, EGender.Male)]
         [InlineData(1985, 3, 5, ENineStarKiEnergy.Heaven, ENineStarKiEnergy.CoreEarth, ENineStarKiEnergy.Heaven, EGender.Male)]

@@ -13,7 +13,7 @@ namespace K9.WebApplication.Helpers
     {
         public static object GetValue(string key)
         {
-            return HttpContext.Current.Session == null ? null : HttpContext.Current.Session[key] ?? null;
+            return HttpContext.Current?.Session == null ? null : HttpContext.Current.Session[key] ?? null;
         }
 
         public static string GetStringValue(string key)

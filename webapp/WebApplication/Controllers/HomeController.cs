@@ -1,6 +1,7 @@
 ﻿using K9.WebApplication.Packages;
 using System.Web.Mvc;
 using System.Web.UI;
+using K9.WebApplication.Models;
 
 namespace K9.WebApplication.Controllers
 {
@@ -14,7 +15,7 @@ namespace K9.WebApplication.Controllers
         [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.Server)]
         public ActionResult Index()
         {
-            return View();
+            return View(new NineStarKiModel());
         }
 
         [Route("ai-chatgpt-astrologer")]

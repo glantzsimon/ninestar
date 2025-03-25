@@ -29,13 +29,6 @@ namespace K9.WebApplication.Controllers
             return View();
         }
 
-        [ChildActionOnly]
-        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
-        public ActionResult _CalculatorForm(NumerologyModel model)
-        {
-            return PartialView(model);
-        }
-
         [Route("calculator-l")]
         [HttpPost]
         public ActionResult Link(NineStarKiModel model)
@@ -52,7 +45,7 @@ namespace K9.WebApplication.Controllers
             return View("Index", nModel);
         }
 
-        [Route("calculator")]
+        [Route("calculator/results")]
         [HttpPost]
         public ActionResult Index(NumerologyModel model)
         {

@@ -15,7 +15,7 @@
 
 <div class="container main-content margin-bottom-0">
     <div class="col-sm-4 padding-0">
-        @Html.Action("_CalculatorForm")
+        @Html.Partial("_CalculatorForm", Model)
     </div>
     <div class="col-sm-8 padding-left-20-desktop padding-right-0 mobile panel-margin-top-20">
         @if (Model != null && Model.IsProcessed)

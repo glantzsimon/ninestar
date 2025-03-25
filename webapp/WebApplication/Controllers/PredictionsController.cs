@@ -41,19 +41,7 @@ namespace K9.WebApplication.Controllers
             return View(new PredictionsViewModel(nineStarKiModel, _nineStarKiService.GetNineStarKiSummaryViewModel()));
         }
 
-        [ChildActionOnly]
-        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
-        public ActionResult _CalculatorForm(bool isPredictionsScreen = false, DateTime? selectedDate = null, EDisplayDataForPeriod displayDataForPeriod = EDisplayDataForPeriod.Now)
-        {
-            return PartialView(new NineStarKiModel
-            {
-                IsPredictionsScreen = isPredictionsScreen,
-                DisplayDataForPeriod = displayDataForPeriod,
-                SelectedDate = selectedDate
-            });
-        }
-
-        [Route("calculator")]
+        [Route("calculator/results")]
         [HttpPost]
         public ActionResult Index(NineStarKiModel model)
         {

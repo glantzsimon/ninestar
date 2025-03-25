@@ -25,14 +25,7 @@ namespace K9.WebApplication.Controllers
         {
             return View();
         }
-
-        [ChildActionOnly]
-        [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
-        public ActionResult _CalculatorForm(CompatibilityModel model)
-        {
-            return PartialView(model);
-        }
-
+        
         [Route("calculator")]
         [HttpPost]
         public ActionResult Index(CompatibilityModel model)

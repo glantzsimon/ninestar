@@ -148,13 +148,13 @@ namespace K9.WebApplication.Services
         }
 
         public CompatibilityModel CalculateCompatibility(PersonModel personModel1, PersonModel personModel2,
-            bool isHideSexuality)
+            bool isHideSexuality, ECalculationMethod calculationMethod = ECalculationMethod.Chinese)
         {
             var cacheKey = $"CalculateCompatibilityFromModel_{personModel1.DateOfBirth.ToString()}_{personModel1.Name}_{personModel1.Gender}_{personModel2.DateOfBirth.ToString()}_{personModel2.Name}_{personModel2.Gender}";
             return GetOrAddToCache(cacheKey, () =>
             {
-                var nineStarKiModel1 = CalculateNineStarKiProfile(personModel1, true);
-                var nineStarKiModel2 = CalculateNineStarKiProfile(personModel2, true);
+                var nineStarKiModel1 = CalculateNineStarKiProfile(personModel1, true, false, null, calculationMethod);
+                var nineStarKiModel2 = CalculateNineStarKiProfile(personModel2, true, false, null, calculationMethod);
 
                 var model = new CompatibilityModel(nineStarKiModel1, nineStarKiModel2)
                 {

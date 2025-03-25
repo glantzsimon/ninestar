@@ -23,9 +23,9 @@ namespace K9.WebApplication.Controllers
         [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult Index()
         {
-            return View();
+            return View(new CompatibilityModel());
         }
-        
+
         [Route("calculator")]
         [HttpPost]
         public ActionResult Index(CompatibilityModel model)
@@ -34,7 +34,7 @@ namespace K9.WebApplication.Controllers
             {
                 if (model.NineStarKiModel1?.PersonModel != null && model.NineStarKiModel2?.PersonModel != null)
                 {
-                    model = _nineStarKiService.CalculateCompatibility(model.NineStarKiModel1.PersonModel, model.NineStarKiModel2.PersonModel, model.IsHideSexualChemistry);
+                    model = _nineStarKiService.CalculateCompatibility(model.NineStarKiModel1.PersonModel, model.NineStarKiModel2.PersonModel, model.IsHideSexualChemistry, model.NineStarKiModel1.CalculationMethod);
                 }
             }
             return View(model);

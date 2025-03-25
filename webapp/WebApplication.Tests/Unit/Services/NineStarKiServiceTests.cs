@@ -289,8 +289,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             {
                 DateOfBirth = new DateTime(birthYear, birthMonth, birthDay),
                 Gender = gender
-            }, new DateTime(year, month, day),
-                ECalculationMethod.Chinese,
+            }, false, false, new DateTime(year, month, day), ECalculationMethod.Chinese,
                 true);
 
             Assert.Equal(ENineStarKiEnergy.Lake, ninestar.GlobalCycleEnergies.Year.Energy);

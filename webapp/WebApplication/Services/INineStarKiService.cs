@@ -14,6 +14,8 @@ namespace K9.WebApplication.Services
         NineStarKiSummaryViewModel GetNineStarKiSummaryViewModel();
         CompatibilityModel CalculateCompatibility(DateTime dateOfBirth1, EGender gender1, DateTime dateOfBirth2,
             EGender gender2);
-        CompatibilityModel CalculateCompatibility(PersonModel personModel1, PersonModel personModel2, bool isHideSexuality);
+
+        CompatibilityModel CalculateCompatibility(PersonModel personModel1, PersonModel personModel2,
+            bool isHideSexuality, ECalculationMethod calculationMethod = ECalculationMethod.Chinese);
     }
 }

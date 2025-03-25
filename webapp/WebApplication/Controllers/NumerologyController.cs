@@ -26,7 +26,7 @@ namespace K9.WebApplication.Controllers
         [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult Index()
         {
-            return View();
+            return View(new NumerologyModel());
         }
 
         [Route("calculator-l")]
@@ -45,7 +45,7 @@ namespace K9.WebApplication.Controllers
             return View("Index", nModel);
         }
 
-        [Route("calculator/results")]
+        [Route("calculator")]
         [HttpPost]
         public ActionResult Index(NumerologyModel model)
         {

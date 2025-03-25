@@ -28,7 +28,7 @@ namespace K9.WebApplication.Controllers
             return View(new NineStarKiModel());
         }
         
-        [Route("calculator/results")]
+        [Route("calculator")]
         [HttpPost]
         public ActionResult Index(NineStarKiModel model)
         {

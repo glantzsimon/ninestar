@@ -15,12 +15,12 @@
 
 <div class="container main-content margin-bottom-0">
     <div class="col-sm-4 padding-0">
-        @Html.Partial("_CalculatorForm", Model)
+        @Html.Partial("_CalculatorForm")
     </div>
     <div class="col-sm-8 padding-left-20-desktop padding-right-0 mobile panel-margin-top-20">
         @if (Model != null && Model.IsProcessed)
         {
-            @Html.Partial("_ProfileOverview", Model)
+            @Html.Partial("_ProfileOverview")
         }
         else
         {
@@ -37,7 +37,7 @@
 {
     <br />
     <article>
-        @Html.Panel(Dictionary.PersonalChartDetails, Html.Partial("_ProfilePills", Model).ToString())
+        @Html.Panel(Dictionary.PersonalChartDetails, Html.Partial("_ProfilePills").ToString())
     </article>
 }
 else

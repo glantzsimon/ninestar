@@ -36,7 +36,7 @@
             @Html.Panel(Dictionary.BiorhythmsOverview, Html.Partial("_BiorhythmsGauges").ToString())
 
             <br />
-            @Html.Partial("_ButtonsFooter")
+            @Html.Partial("_ButtonsFooter", Model.NineStarKiModel)
         </div>
 
         <div id="monthly-planner" class="tab-pane fade padding-top-10">
@@ -46,7 +46,7 @@
             }
 
             <br />
-            @Html.Partial("_ButtonsFooter")
+            @Html.Partial("_ButtonsFooter", Model.NineStarKiModel)
         </div>
 
         <div id="in-depth-analysis" class="tab-pane fade padding-top-10">
@@ -56,7 +56,7 @@
             }
 
             <br />
-            @Html.Partial("_ButtonsFooter")
+            @Html.Partial("_ButtonsFooter", Model.NineStarKiModel)
         </div>
     </div>
 </div>

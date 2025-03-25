@@ -35,7 +35,7 @@ namespace K9.WebApplication.Services
 
             nineStarBiorhythmsModel.BiorhythmResults = GetBioRhythmResults(nineStarBiorhythmsModel, nineStarKiBiorhythmsFactors);
             nineStarBiorhythmsModel.Summary = GetSummary(nineStarBiorhythmsModel);
-
+            
             return nineStarBiorhythmsModel;
         }
 

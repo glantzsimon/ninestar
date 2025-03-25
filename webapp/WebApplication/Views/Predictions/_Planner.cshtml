@@ -35,7 +35,7 @@
                     <div class="year-summary-row clickable">
                         <div class="year-label">
                             <div class="year-number">@year</div>
-                            <div class="year-dates">@startsOn.ToString("MMM dd") - @endsOn.ToString("MMM dd")</div>
+                            <div class="year-dates">@startsOn.ToString("MMM yyyy") - @endsOn.ToString("MMM yyyy")</div>
                         </div>
                         <div class="year-detail narrow">
                             <img loading="lazy" title="@energy.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @energy.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(energy.Energy.ToString().ToLower()).png" />

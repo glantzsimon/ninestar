@@ -92,41 +92,44 @@
 .planner-container .year-planner .year-block.active .year-detail,
 .planner-container .year-planner .year-block.active .year-number,
 .planner-container .year-planner .year-block.active .year-dates {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 .planner-container .year-planner .year-block:hover {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   background-color: #e6e6e6;
 }
-.planner-container .year-planner .year-summary-row {
+.planner-container .year-planner .year-block:hover.active {
+  background-color: #337ab7;
+}
+.planner-container .year-planner .year-block .year-summary-row {
   display: flex;
   align-items: center;
   padding: 1rem;
   border-bottom: 1px solid #eee;
 }
-.planner-container .year-planner .year-summary-row year-label {
+.planner-container .year-planner .year-block .year-summary-row .year-label {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   min-width: 80px;
 }
-.planner-container .year-planner .year-summary-row year-label .year-number {
+.planner-container .year-planner .year-block .year-summary-row .year-label .year-number {
   font-size: 1.75rem;
   font-weight: 700;
   color: #222;
   line-height: 1.2;
 }
-.planner-container .year-planner .year-summary-row year-label .year-dates {
-  font-size: 0.75rem;
+.planner-container .year-planner .year-block .year-summary-row .year-label .year-dates {
+  font-size: 0.9rem;
   color: #888;
   margin-top: 0.25rem;
 }
-.planner-container .year-planner .year-summary-row .year-detail.narrow {
+.planner-container .year-planner .year-block .year-summary-row .year-detail.narrow {
   flex: 0 0 120px;
   color: #666;
   font-weight: 500;
 }
-.planner-container .year-planner .year-summary-row .year-detail.wide {
+.planner-container .year-planner .year-block .year-summary-row .year-detail.wide {
   flex: 1;
   color: #444;
 }

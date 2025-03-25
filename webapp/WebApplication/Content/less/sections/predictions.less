@@ -109,52 +109,56 @@
                 background-color: @primary-blue;
 
                 .year-label, .year-detail, .year-number, .year-dates {
-                    color: @snow-white;
+                    color: @snow-white !important;
                 }
             }
 
             &:hover {
                 box-shadow: 0 6px 16px rgba(0,0,0,0.1);
                 background-color: @mist-grey;
+
+                &.active {
+                    background-color: @primary-blue;
+                }
             }
-        }
 
-        .year-summary-row {
-            display: flex;
-            align-items: center;
-            padding: 1rem;
-            border-bottom: 1px solid #eee;            
-
-            year-label {
+            .year-summary-row {
                 display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                min-width: 80px;
+                align-items: center;
+                padding: 1rem;
+                border-bottom: 1px solid #eee;
 
-                .year-number {
-                    font-size: 1.75rem;
-                    font-weight: 700;
-                    color: #222;
-                    line-height: 1.2;
+                .year-label {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    min-width: 80px;
+
+                    .year-number {
+                        font-size: 1.75rem;
+                        font-weight: 700;
+                        color: #222;
+                        line-height: 1.2;
+                    }
+
+                    .year-dates {
+                        font-size: 0.9rem;
+                        color: #888;
+                        margin-top: 0.25rem;
+                    }
                 }
 
-                .year-dates {
-                    font-size: 0.75rem;
-                    color: #888;
-                    margin-top: 0.25rem;
-                }
-            }
+                .year-detail {
+                    &.narrow {
+                        flex: 0 0 120px;
+                        color: #666;
+                        font-weight: 500;
+                    }
 
-            .year-detail {
-                &.narrow {
-                    flex: 0 0 120px;
-                    color: #666;
-                    font-weight: 500;
-                }
-
-                &.wide {
-                    flex: 1;
-                    color: #444;
+                    &.wide {
+                        flex: 1;
+                        color: #444;
+                    }
                 }
             }
         }

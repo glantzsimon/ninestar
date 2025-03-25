@@ -47,6 +47,7 @@ namespace K9.WebApplication.Controllers
                 }
             }
 
+            model.NineStarKiModel = new NineStarKiModel(model.PersonModel);
             return View("Index", model);
         }
 

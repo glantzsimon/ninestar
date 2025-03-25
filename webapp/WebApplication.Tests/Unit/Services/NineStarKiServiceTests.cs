@@ -289,7 +289,9 @@ namespace K9.WebApplication.Tests.Unit.Services
             {
                 DateOfBirth = new DateTime(birthYear, birthMonth, birthDay),
                 Gender = gender
-            }, new DateTime(year, month, day));
+            }, new DateTime(year, month, day),
+                ECalculationMethod.Chinese,
+                true);
 
             Assert.Equal(ENineStarKiEnergy.Lake, ninestar.GlobalCycleEnergies.Year.Energy);
             Assert.Equal(yearlyCycleEnergy, ninestar.PersonalHousesOccupiedEnergies.Year.Energy);
@@ -344,7 +346,9 @@ namespace K9.WebApplication.Tests.Unit.Services
                 },
                 false,
                 false,
-                new DateTime(todayYear, todayMonth, 15));
+                new DateTime(todayYear, todayMonth, 15),
+                ECalculationMethod.Chinese,
+                true);
 
             Assert.Equal(mainEnergy, ninestar.MainEnergy.Energy);
             Assert.Equal(globalYearlyCycleEnergy, ninestar.GlobalCycleEnergies.Year.Energy);
@@ -395,7 +399,9 @@ namespace K9.WebApplication.Tests.Unit.Services
                 },
                 false,
                 false,
-                new DateTime(todayYear, 2, 5));
+                new DateTime(todayYear, 2, 5),
+                ECalculationMethod.Chinese,
+                true);
 
             Assert.Equal(energy, ninestar.MainEnergy.Energy);
             Assert.Equal(yearlyCycleEnergy, ninestar.PersonalHousesOccupiedEnergies.Year.Energy);
@@ -425,7 +431,9 @@ namespace K9.WebApplication.Tests.Unit.Services
                 },
                 false,
                 false,
-                new DateTime(todayYear, monthNumber, 15));
+                new DateTime(todayYear, monthNumber, 15),
+                ECalculationMethod.Chinese,
+                true);
 
             Assert.Equal(energy, ninestar.MainEnergy.Energy);
             Assert.Equal(yearlyCycleEnergy, ninestar.PersonalHousesOccupiedEnergies.Year.Energy);
@@ -847,31 +855,41 @@ namespace K9.WebApplication.Tests.Unit.Services
             {
                 DateOfBirth = new DateTime(birthYear, birthMonth, birthDay),
                 Gender = gender
-            }, false, false, new DateTime(2105, 2, 7));
+            }, false, false, new DateTime(2105, 2, 7),
+                ECalculationMethod.Chinese,
+                true);
 
             var ninestarCoreEarthYear = _nineStarKiService.CalculateNineStarKiProfile(new PersonModel
             {
                 DateOfBirth = new DateTime(birthYear, birthMonth, birthDay),
                 Gender = gender
-            }, false, false, new DateTime(2103, 2, 7)); // 5 Soil Earth Year
+            }, false, false, new DateTime(2103, 2, 7),
+                ECalculationMethod.Chinese,
+                true); // 5 Soil Earth Year
 
             var ninestarWaterYear = _nineStarKiService.CalculateNineStarKiProfile(new PersonModel
             {
                 DateOfBirth = new DateTime(birthYear, birthMonth, birthDay),
                 Gender = gender
-            }, false, false, new DateTime(2098, 2, 7));
+            }, false, false, new DateTime(2098, 2, 7),
+                ECalculationMethod.Chinese,
+                true);
 
             var ninestarInvertedCoreEarthYear = _nineStarKiService.CalculateNineStarKiProfile(new PersonModel
             {
                 DateOfBirth = new DateTime(birthYear, birthMonth, birthDay),
                 Gender = gender
-            }, false, false, new DateTime(2107, 2, 7)); // 5 Soil Earth Year
+            }, false, false, new DateTime(2107, 2, 7),
+                ECalculationMethod.Chinese,
+                true); // 5 Soil Earth Year
 
             var ninestarInvertedWaterYear = _nineStarKiService.CalculateNineStarKiProfile(new PersonModel
             {
                 DateOfBirth = new DateTime(birthYear, birthMonth, birthDay),
                 Gender = gender
-            }, false, false, new DateTime(2112, 2, 7)); // 5 Soil Earth Year
+            }, false, false, new DateTime(2112, 2, 7),
+                ECalculationMethod.Chinese,
+                true); // 5 Soil Earth Year
 
             // Double check main energy
             Assert.Equal(mainEnergy, ninestarWaterYear.PersonalChartEnergies.Year.Energy);

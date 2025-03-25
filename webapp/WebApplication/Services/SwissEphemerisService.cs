@@ -348,6 +348,11 @@ namespace K9.WebApplication.Services
                     for (int i = 0; i < solarTerms.Length; i++)
                     {
                         var solarTerm = solarTerms[i];
+                        if (solarTerm == 0)
+                        {
+                            Debugger.Break();
+                            continue;
+                        }
                         solarTermDates[i] = JulianDayToDateTime(sweph, solarTerm).Date;
                     }
 
@@ -638,11 +643,12 @@ namespace K9.WebApplication.Services
             double tolerance = 0.01; // degrees tolerance
             int maxIterations = 100;
             int iteration = 0;
-            
+            string serr = "";
+
             // For the 315° target, adjust jdStart by subtracting a small delta so that the computed value falls below 315.
             if (Math.Abs(target - 315) < 1e-6)
             {
-                jdStart -= 0.01;  // Adjust by 0.01 days (you may tweak this value if needed)
+                jdStart -= 0.001;  // Adjust by 0.01 days (you may tweak this value if needed)
             }
 
             double jdLow = jdStart;
@@ -652,44 +658,27 @@ namespace K9.WebApplication.Services
             while (iteration < maxIterations)
             {
                 iteration++;
-                mid = (jdLow + jdHigh) / 2.0;
-                double computed = GetComputedLongitude(sweph, mid);
-                // Use the angular difference function to get the minimal difference (in degrees)
-                double diff = AngularDifference(computed, target);
+                mid = (jdLow + jdHigh) / 2;
+                double[] xx = new double[6];
+                int ret = sweph.swe_calc_ut(mid, SwissEph.SE_SUN, SwissEph.SEFLG_SWIEPH, xx, ref serr);
+                if (ret < 0)
+                    throw new Exception("Error calculating Sun position: " + serr);
 
-                if (Math.Abs(diff) < tolerance)
-                    return mid;
+                // Get the computed sun longitude.
+                double computed = xx[0];
+                // Unwrap the computed longitude: if it's less than 315, add 360.
+                double unwrappedComputed = (computed < 315) ? computed + 360 : computed;
 
-                // If diff is negative, computed is less than target (in the circular sense)
-                if (diff < 0)
+                // Use binary search.
+                if (unwrappedComputed < target)
                     jdLow = mid;
                 else
                     jdHigh = mid;
+
+                if (Math.Abs(unwrappedComputed - target) < tolerance)
+                    return mid;
             }
-
-            double startComputed = GetComputedLongitude(sweph, jdStart);
-            double endComputed = GetComputedLongitude(sweph, jdEnd);
-            var info = ($"Start computed: {startComputed}, End computed: {endComputed}, Target: {target}");
-
             throw new Exception($"Could not find solar term at {target}° between JD {jdStart} and {jdEnd} after {maxIterations} iterations.");
-        }
-
-        private double AngularDifference(double computed, double target)
-        {
-            double diff = (computed - target + 180) % 360;
-            if (diff < 0)
-                diff += 360;
-            return diff - 180;
-        }
-
-        private double GetComputedLongitude(SwissEph sweph, double jd)
-        {
-            string serr = "";
-            double[] xx = new double[6];
-            int ret = sweph.swe_calc_ut(jd, SwissEph.SE_SUN, SwissEph.SEFLG_SWIEPH, xx, ref serr);
-            if (ret < 0)
-                throw new Exception("Error calculating Sun position: " + serr);
-            return xx[0];
         }
 
         /// <summary>

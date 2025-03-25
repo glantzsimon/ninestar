@@ -25,9 +25,9 @@ namespace K9.WebApplication.Controllers
         [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult Index()
         {
-            return View(new BioRhythmsModel());
+            return View(new BioRhythmsModel(new NineStarKiModel(), DateTime.Now));
         }
-        
+
         [Route("calculator")]
         [HttpPost]
         public ActionResult Index(BioRhythmsModel model)
@@ -37,16 +37,16 @@ namespace K9.WebApplication.Controllers
                 if (model.PersonModel != null || model.SelectedDate != DateTime.Today)
                 {
                     var selectedDate = model.SelectedDate ?? DateTime.Today;
-                    
+
                     var nineStarKiModel = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false, selectedDate);
                     nineStarKiModel.SelectedDate = selectedDate;
 
                     var bioRhythmsModel = _biorhythmsService.Calculate(nineStarKiModel, selectedDate);
-            
+
                     return View("Index", bioRhythmsModel);
                 }
             }
-            
+
             return View("Index", model);
         }
 

@@ -3,5 +3,9 @@
 @using K9.WebApplication.Options
 @model K9.WebApplication.Models.BioRhythmsModel
 
-<h4 class="text-center bold" style="font-size: 1.3em;">@Dictionary.DisplayingDataFor @Model.SelectedDate.Value.ToLongDateString()</h4>
+@if (Model.SelectedDate.HasValue)
+{
+    <h4 class="text-center bold" style="font-size: 1.3em;">@Dictionary.DisplayingDataFor @Model.SelectedDate.Value.ToLongDateString()</h4>
+}
+
 

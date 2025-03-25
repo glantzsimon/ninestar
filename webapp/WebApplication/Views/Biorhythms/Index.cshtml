@@ -19,7 +19,7 @@
         </div>
         <div class="col-md-9 col-sm-9 padding-left-20-desktop padding-right-0 mobile panel-margin-top-20">
             <article>
-                @if (Model != null)
+                @if (Model.BiorhythmResults != null && Model.BiorhythmResults.Count > 0)
                 {
                     <div class="well padding-bottom-0">
                         <div class="row">
@@ -51,14 +51,14 @@
     <div class="row">
         <div class="col-sm-12 padding-0">
             <article>
-                @if (Model != null)
+                @if (Model.BiorhythmResults != null && Model.BiorhythmResults.Count > 0)
                 {
                     @Html.Panel(Dictionary.BiorhythmsDetails, Html.Partial("_BiorhythmsPills", Model).ToString())
                 }
                 else
                 {
                     <hr class="margin-top-0" />
-                    @Html.Partial("_ButtonsFooter")
+                    @Html.Partial("_ButtonsFooter", Model.NineStarKiModel)
                 }
             </article>
         </div>

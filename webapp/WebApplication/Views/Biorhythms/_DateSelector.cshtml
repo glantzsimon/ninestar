@@ -1,4 +1,4 @@
-﻿@model K9.WebApplication.Models.NineStarKiModel
+﻿@model K9.WebApplication.Models.BioRhythmsModel
 
 @using (Html.BeginForm("Index", "Biorhythms", FormMethod.Post))
 {
@@ -7,8 +7,7 @@
         @Html.HiddenFor(model => model.PersonModel.Name)
         @Html.HiddenFor(model => model.PersonModel.DateOfBirth)
         @Html.HiddenFor(model => model.PersonModel.Gender)
-        @Html.HiddenFor(model => model.ActiveCycleTabId)
-
+        
         <div class="row padding-0 margin-0">
             <div class="col-sm-12">
                 @Html.BootstrapEditorFor(model => model.SelectedDate)

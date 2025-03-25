@@ -24,23 +24,19 @@ namespace K9.WebApplication.Services
             _swissEphemerisService = swissEphemerisService;
         }
 
-        public BioRhythmsResultSet Calculate(NineStarKiModel nineStarKiModel, DateTime date)
+        public BioRhythmsModel Calculate(NineStarKiModel nineStarKiModel, DateTime date)
         {
-            var biorhythmsModel = new BioRhythmsModel(nineStarKiModel, date);
             var nineStarBiorhythmsModel = new BioRhythmsModel(nineStarKiModel, date);
             var nineStarKiBiorhythmsFactors = new NineStarKiBiorhythmsFactors(nineStarKiModel);
+            var periodBoundaries = _swissEphemerisService.GetNineStarKiMonthlyPeriodBoundaries(date, "");
 
-            biorhythmsModel.BiorhythmResults = GetBioRhythmResults(biorhythmsModel);
+            nineStarBiorhythmsModel.MonthlyPeriodStartsOn = periodBoundaries.PeriodStartOn;
+            nineStarBiorhythmsModel.MonthlyPeriodEndsOn = periodBoundaries.PeriodEndsOn;
+
             nineStarBiorhythmsModel.BiorhythmResults = GetBioRhythmResults(nineStarBiorhythmsModel, nineStarKiBiorhythmsFactors);
-
-            biorhythmsModel.Summary = GetSummary(biorhythmsModel);
             nineStarBiorhythmsModel.Summary = GetSummary(nineStarBiorhythmsModel);
 
-            return new BioRhythmsResultSet
-            {
-                BioRhythms = biorhythmsModel,
-                NineStarKiBioRhythms = nineStarBiorhythmsModel
-            };
+            return nineStarBiorhythmsModel;
         }
 
         private string GetSummary(BioRhythmsModel biorhythmsModel)

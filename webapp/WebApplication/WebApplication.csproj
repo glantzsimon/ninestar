@@ -436,7 +436,6 @@
     <Compile Include="Models\Biorhythms\BiorhythmFactor.cs" />
     <Compile Include="Models\Biorhythms\BioRhythmResult.cs" />
     <Compile Include="Models\Biorhythms\CreativeBiorhythm.cs" />
-    <Compile Include="Models\Biorhythms\BioRhythmsResultSet.cs" />
     <Compile Include="Models\Biorhythms\IntuitiveBiorhythm.cs" />
     <Compile Include="Models\Biorhythms\SpiritualBiorhythm.cs" />
     <Compile Include="Models\Biorhythms\PhysicalBiorhythm.cs" />

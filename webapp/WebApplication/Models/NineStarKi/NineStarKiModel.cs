@@ -418,7 +418,7 @@ namespace K9.WebApplication.Models
 
             }, TimeSpan.FromDays(30));
         }
-
+        
         /// <summary>
         /// Ensures number is always in the range 1-9
         /// </summary>

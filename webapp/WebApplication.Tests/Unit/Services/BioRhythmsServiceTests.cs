@@ -54,11 +54,11 @@ namespace K9.WebApplication.Tests.Unit.Services
 
             var result = biorhythmsService.Calculate(nineStarKiModel, new DateTime(dateYear, dateMonth, dateDay));
 
-            Assert.Equal(expectedEnergy, result.NineStarKiBioRhythms.NineStarKiModel.MainEnergy.Energy);
-            Assert.Equal(expectedDaysElapsedSinceBirth, result.NineStarKiBioRhythms.DaysElapsedSinceBirth);
+            Assert.Equal(expectedEnergy, result.NineStarKiModel.MainEnergy.Energy);
+            Assert.Equal(expectedDaysElapsedSinceBirth, result.DaysElapsedSinceBirth);
 
-            var intellectualResult = result.BioRhythms.GetResultByType(EBiorhythm.Intellectual);
-            var emotionalResult = result.BioRhythms.GetResultByType(EBiorhythm.Emotional);
+            var intellectualResult = result.GetResultByType(EBiorhythm.Intellectual);
+            var emotionalResult = result.GetResultByType(EBiorhythm.Emotional);
 
             Assert.Equal(expectedDayInterval, intellectualResult?.DayInterval);
             Assert.Equal(expectedIntellectualValue, Math.Round(intellectualResult.Value, MidpointRounding.ToEven));
@@ -77,10 +77,10 @@ namespace K9.WebApplication.Tests.Unit.Services
                 });
             var result = biorhythmsService.Calculate(nineStarKiModel, new DateTime(dateYear, dateMonth, dateDay));
 
-            var physicalResult = result.BioRhythms.GetResultByType(EBiorhythm.Physical);
-            var nineStarPhysicalResult = result.NineStarKiBioRhythms.GetResultByType(EBiorhythm.Physical);
+            var physicalResult = result.GetResultByType(EBiorhythm.Physical);
+            var nineStarPhysicalResult = result.GetResultByType(EBiorhythm.Physical);
 
-            Assert.Equal(expectedEnergy, result.NineStarKiBioRhythms.NineStarKiModel.MainEnergy.Energy);
+            Assert.Equal(expectedEnergy, result.NineStarKiModel.MainEnergy.Energy);
             Assert.Equal(expectedBiorhythmValue, physicalResult.Value);
             //Assert.Equal(expectedNineStarKiBiorhythmsValue, Math.Round(nineStarPhysicalResult.Value, 4));
         }

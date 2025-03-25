@@ -44,7 +44,6 @@ namespace K9.WebApplication.Services
             var cacheKey = $"CalculateNineStarKiProfileFromModel_{personModel.DateOfBirth:yyyyMMddHHmm}_{personModel.TimeOfBirth.ToString()}_{personModel.BirthTimeZoneId}_{personModel.Name}_{personModel.Gender}_{isCompatibility}_{isMyProfile}_{calculationMethod}_{includeCycles}_{useHolograhpicCycleCalculation}_{today:yyyyMMddHHmm}_{invertDailyAndHourlyKiForSouthernHemisphere}";
             return GetOrAddToCache(cacheKey, () =>
             {
-                var tzInfo = TZConvert.GetTimeZoneInfo(personModel.BirthTimeZoneId);
                 var selectedDateTime = today == null
                     ? DateTime.UtcNow
                     : today.Value;

@@ -25,7 +25,7 @@ namespace K9.WebApplication.Controllers
         [OutputCache(Duration = 2592000, VaryByParam = "none", VaryByCustom = "User", Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult Index()
         {
-            return View();
+            return View(new NineStarKiModel());
         }
         
         [Route("calculator/results")]
@@ -48,7 +48,7 @@ namespace K9.WebApplication.Controllers
             }
 
             var biorhythmResultSet = _biorhythmsService.Calculate(model, model.SelectedDate ?? DateTime.Today);
-
+            
             return View("Index", model);
         }
 

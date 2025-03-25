@@ -27,7 +27,7 @@ namespace K9.WebApplication.Controllers
         [Route("free-calculator")]
         public ActionResult Index()
         {
-            return View();
+            return View(new NineStarKiModel());
         }
 
         [Route("free-calculator")]

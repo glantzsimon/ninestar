@@ -26,10 +26,18 @@ namespace K9.WebApplication.Models
         }
 
         public DateTime? SelectedDate { get; }
+        
+        public DateTime MonthlyPeriodStartsOn { get; set; }
+        public DateTime MonthlyPeriodEndsOn { get; set; }
+        
+        public int GetTotalDaysInMonthlyPeriod() => (int)MonthlyPeriodEndsOn.Subtract(MonthlyPeriodStartsOn).TotalDays;
+
+        public string GetPeriodTitle() =>
+            $"{MonthlyPeriodStartsOn.ToLongDateString()} - {MonthlyPeriodEndsOn.ToLongDateString()}";
 
         [ScriptIgnore]
         public PersonModel PersonModel { get; }
-        
+
         [ScriptIgnore]
         public NineStarKiModel NineStarKiModel { get; }
 

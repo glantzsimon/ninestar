@@ -1,13 +1,13 @@
 ﻿@using K9.WebApplication.Enums
 @using K9.WebApplication.Helpers
 @using K9.WebApplication.Options
-@model K9.WebApplication.Models.NineStarKiModel
+@model K9.WebApplication.Models.BioRhythmsModel
 
 @using (Html.PayWall(ESection.Biorhythms, Model))
 {
     <div class="mobile-only">
         <div class="row">
-            @foreach (var biorhythm in Model.BiorhythmResultSet.NineStarKiBioRhythms.GetResultsWithoutAverage())
+            @foreach (var biorhythm in Model.GetResultsWithoutAverage())
             {
                 <div class="col-xs-12 col-sm-6 col-md-3 col-sm-4 margin-bottom-0 padding-left-0 padding-right-0 text-center">
                     @Html.Partial("_HighGauge", new GaugeOptions
@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-sm-4 col-sm-offset-4 col-md-3 col-sm-4 margin-bottom-0 padding-left-0 padding-right-0 text-center">
                 @{
-                    var average = Model.BiorhythmResultSet.NineStarKiBioRhythms.GetAverageResult();
+                    var average = Model.GetAverageResult();
                 }
                 @Html.Partial("_HighGauge", new GaugeOptions
                 {
@@ -42,7 +42,7 @@
 
     <div class="desktop-only">
         <div class="row">
-            @foreach (var biorhythm in Model.BiorhythmResultSet.NineStarKiBioRhythms.GetBiorhythmResultsByDisplayIndex())
+            @foreach (var biorhythm in Model.GetBiorhythmResultsByDisplayIndex())
             {
                 <div class="col-md-3 col-sm-4 margin-bottom-0 padding-left-0 padding-right-0 text-center">
                     @Html.Partial("_HighGauge", new GaugeOptions

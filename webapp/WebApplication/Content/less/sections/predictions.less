@@ -89,7 +89,7 @@
 }
 
 
-.planner-container {
+.global-planner-container {
     .year-planner {
         display: flex;
         flex-direction: column;
@@ -171,7 +171,7 @@
                 background-color: @snow-white;
 
                 .month-container {
-                   
+
                     .month-block {
                         outline: 1px solid #eee;
                         padding: 0.5rem;
@@ -184,15 +184,19 @@
                         &:hover {
                             box-shadow: 0 6px 16px rgba(0,0,0,0.1);
                             background-color: @whisper-white;
+                            transform: scale(1.05);
                             transform: translateY(-2px);
+                            position: relative;
+                            z-index: 3 !important;
                         }
 
                         &.active {
+                            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
                             background-color: @primary-blue;
-
-                            &:hover {
-                                transform: translateY(0);
-                            }
+                            transform: scale(1.05);
+                            transform: translateY(-1x);
+                            position: relative;
+                            z-index: 2 !important;
 
                             .month-name, .month-dates {
                                 color: @snow-white !important;

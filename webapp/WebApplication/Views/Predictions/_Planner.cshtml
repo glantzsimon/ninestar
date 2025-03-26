@@ -8,7 +8,7 @@
     var activeCycle = cycles.FirstOrDefault();
 }
 
-<div class="container main-content clear-both planner-container margin-top-5">
+<div class="container main-content clear-both global-planner-container planner-container margin-top-5">
 
     <div class="year-planner">
         @foreach (var yearlyCycle in cycles)
@@ -63,12 +63,12 @@
                             activeCycle = yearlyCycle;
                         }
 
-                        <div class="col-md-1 col-sm-2 col-xs-3 padding-0 margin-0 month-container">
+                        <div class="col-md-1 col-sm-1 col-xs-2 padding-0 margin-0 month-container">
                             <!-- Month -->
                             <div class="global-planner-item" data-energy="@energy.Energy" data-type="month">
                                 <div class="planner-item-container month-block clickable @activeClass">
                                     <div class="month-name">@monthName</div>
-                                    <div class="month-dates">@startsOn.ToString("MMM dd") – @endsOn.ToString("MMM dd")</div>
+                                    <div class="desktop-only month-dates">@startsOn.ToString("MMM dd") @endsOn.ToString("MMM dd")</div>
                                     <img loading="lazy" title="@energy.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @energy.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(energy.Energy.ToString().ToLower()).png" />
                                 </div>
                             </div>

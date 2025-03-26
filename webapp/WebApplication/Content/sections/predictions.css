@@ -70,13 +70,13 @@
   margin-top: -5px;
   margin-bottom: 7px;
 }
-.planner-container .year-planner {
+.global-planner-container .year-planner {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
   padding: 0;
 }
-.planner-container .year-planner .year-block {
+.global-planner-container .year-planner .year-block {
   border: 1px solid #ddd;
   border-radius: 1rem;
   border-bottom: none;
@@ -86,62 +86,62 @@
   background-color: #f9f9f9;
   cursor: pointer !important;
 }
-.planner-container .year-planner .year-block.active {
+.global-planner-container .year-planner .year-block.active {
   background-color: #337ab7;
 }
-.planner-container .year-planner .year-block.active .year-label,
-.planner-container .year-planner .year-block.active .year-detail,
-.planner-container .year-planner .year-block.active .year-number,
-.planner-container .year-planner .year-block.active .year-dates {
+.global-planner-container .year-planner .year-block.active .year-label,
+.global-planner-container .year-planner .year-block.active .year-detail,
+.global-planner-container .year-planner .year-block.active .year-number,
+.global-planner-container .year-planner .year-block.active .year-dates {
   color: #ffffff !important;
 }
-.planner-container .year-planner .year-block:hover {
+.global-planner-container .year-planner .year-block:hover {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   background-color: #e6e6e6;
 }
-.planner-container .year-planner .year-block:hover.active {
+.global-planner-container .year-planner .year-block:hover.active {
   background-color: #337ab7;
 }
-.planner-container .year-planner .year-block .year-summary-row {
+.global-planner-container .year-planner .year-block .year-summary-row {
   display: flex;
   align-items: center;
   padding: 1rem;
   border-bottom: 1px solid #e6e6e6;
 }
-.planner-container .year-planner .year-block .year-summary-row .year-label {
+.global-planner-container .year-planner .year-block .year-summary-row .year-label {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   min-width: 90px;
 }
-.planner-container .year-planner .year-block .year-summary-row .year-label .year-number {
+.global-planner-container .year-planner .year-block .year-summary-row .year-label .year-number {
   font-size: 1.75rem;
   font-weight: 700;
   color: #337ab7;
   line-height: 1.2;
   margin-right: 11px;
 }
-.planner-container .year-planner .year-block .year-summary-row .year-label .year-dates {
+.global-planner-container .year-planner .year-block .year-summary-row .year-label .year-dates {
   font-size: 0.9rem;
   color: #888888;
   margin-top: 0.25rem;
 }
-.planner-container .year-planner .year-block .year-summary-row .year-detail.narrow {
+.global-planner-container .year-planner .year-block .year-summary-row .year-detail.narrow {
   flex: 0 0 120px;
   color: #666;
   font-weight: 500;
 }
-.planner-container .year-planner .year-block .year-summary-row .year-detail.wide {
+.global-planner-container .year-planner .year-block .year-summary-row .year-detail.wide {
   flex: 1;
   color: #444;
   font-size: 0.9rem;
 }
-.planner-container .year-planner .year-block .month-row {
+.global-planner-container .year-planner .year-block .month-row {
   padding: 0;
   border: none;
   background-color: #ffffff;
 }
-.planner-container .year-planner .year-block .month-row .month-container .month-block {
+.global-planner-container .year-planner .year-block .month-row .month-container .month-block {
   outline: 1px solid #eee;
   padding: 0.5rem;
   text-align: center;
@@ -150,32 +150,37 @@
   background-color: #fdfdfd;
   width: 100%;
 }
-.planner-container .year-planner .year-block .month-row .month-container .month-block:hover {
+.global-planner-container .year-planner .year-block .month-row .month-container .month-block:hover {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   background-color: #f9f9f9;
+  transform: scale(1.05);
   transform: translateY(-2px);
+  position: relative;
+  z-index: 3 !important;
 }
-.planner-container .year-planner .year-block .month-row .month-container .month-block.active {
+.global-planner-container .year-planner .year-block .month-row .month-container .month-block.active {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
   background-color: #337ab7;
+  transform: scale(1.05);
+  transform: translateY(-1x);
+  position: relative;
+  z-index: 2 !important;
 }
-.planner-container .year-planner .year-block .month-row .month-container .month-block.active:hover {
-  transform: translateY(0);
-}
-.planner-container .year-planner .year-block .month-row .month-container .month-block.active .month-name,
-.planner-container .year-planner .year-block .month-row .month-container .month-block.active .month-dates {
+.global-planner-container .year-planner .year-block .month-row .month-container .month-block.active .month-name,
+.global-planner-container .year-planner .year-block .month-row .month-container .month-block.active .month-dates {
   color: #ffffff !important;
 }
-.planner-container .year-planner .year-block .month-row .month-container .month-block .month-name {
+.global-planner-container .year-planner .year-block .month-row .month-container .month-block .month-name {
   font-weight: bold;
   font-size: 0.9rem;
   margin-bottom: 0.25rem;
 }
-.planner-container .year-planner .year-block .month-row .month-container .month-block .month-dates {
+.global-planner-container .year-planner .year-block .month-row .month-container .month-block .month-dates {
   font-size: 0.75rem;
   color: #777;
   margin-bottom: 0.5rem;
 }
-.planner-container .year-planner .year-block .month-row .month-container .month-block img {
+.global-planner-container .year-planner .year-block .month-row .month-container .month-block img {
   height: 100%;
   object-fit: cover;
   border-radius: 0.25rem;

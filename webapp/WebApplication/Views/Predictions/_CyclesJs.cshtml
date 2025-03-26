@@ -1,27 +1,30 @@
 ﻿<script language="javascript">
 
     function scrollCurrentYearIntoVew() {
-        if ($("#YearScrollStatus").val() !== "true") {
-            setTimeout(function () {
-                var $cycle = $("div.current-year");
-                var $yearlyPlannerContainer = ".yearly-planner-container";
+        setTimeout(function () {
+            var $cycle = $("div.current-year");
+            var $yearlyPlannerContainer = ".yearly-planner-container";
 
-                $($yearlyPlannerContainer).scrollTop($cycle.offset().top - $($yearlyPlannerContainer).offset().top);
-                $("#YearScrollStatus").val(true);
-            }, 200);
-        }
+            $($yearlyPlannerContainer).scrollTop($cycle.offset().top - $($yearlyPlannerContainer).offset().top);
+        }, 200);
     }
 
     function scrollCurrentMonthIntoVew() {
-        if ($("#MonthScrollStatus").val() !== "true") {
-            setTimeout(function () {
-                var $cycle = $("div.current-month");
-                var $monthlyPlannerContainer = ".monthly-planner-container";
+        setTimeout(function () {
+            var $cycle = $("div.current-month");
+            var $monthlyPlannerContainer = ".monthly-planner-container";
 
-                $($monthlyPlannerContainer).scrollTop($cycle.offset().top - $($monthlyPlannerContainer).offset().top);
-                $("#MonthScrollStatus").val(true);
-            }, 200);
-        }
+            $($monthlyPlannerContainer).scrollTop($cycle.offset().top - $($monthlyPlannerContainer).offset().top);
+        }, 200);
+    }
+
+    function scrollActivePlannerItemIntoVew() {
+        setTimeout(function () {
+            var $cycle = $(".year-planner .active");
+            var $container = $(".global-planner-container");
+
+            $container.scrollTop($cycle.offset().top - $container.offset().top - 154);
+        }, 200);
     }
 
     function scrollCyclesIntoVew(tab) {
@@ -53,13 +56,17 @@
             $(".nav-pills a[href='#monthly']").tab("show");
         });
 
+        $("a[href='#global-planner']").click(function () {
+            scrollActivePlannerItemIntoVew();
+        });
+
         $(".global-planner-item").click(function() {
             var $el = $(this);
             var energy = $el.attr("data-energy");
             var type = $el.attr("data-type");
             var $container, $yearBlock, $monthBlock, $details, url;
 
-            $container = $el.closest(".planner-container");
+            $container = $el.closest(".global-planner-container");
             $yearBlock = $el.closest(".year-block");
             $monthBlock = $el.find(".month-block");
             $details = $("#global-planner-details");
@@ -86,6 +93,13 @@
                         $details.find(".panel .panel-body").html(result.data.CycleDescription);
                     }
                 });
+
+            setTimeout(function () {
+                if (!$.fn.isVisible($details))
+                    $.fn.scrollToTopOf($details, -180);
+
+                scrollActivePlannerItemIntoVew();
+            }, 200);
         });
 
         $(".planner-item").click(function() {

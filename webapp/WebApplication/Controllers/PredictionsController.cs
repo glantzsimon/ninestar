@@ -50,7 +50,27 @@ namespace K9.WebApplication.Controllers
                 if (model.PersonModel != null)
                 {
                     var localNow = model.GetLocalNow();
-                    model.SelectedDate = model.DisplayDataForPeriod == EDisplayDataForPeriod.SelectedDate ? model.SelectedDate ?? localNow : localNow;
+                    if (model.DisplayDataForPeriod == EDisplayDataForPeriod.SelectedDate)
+                    {
+                        if (model.SelectedDate.HasValue)
+                        {
+                            if (model.SelectedTime.HasValue)
+                            {
+                                model.SelectedDate = model.SelectedDate.Value.Add(model.SelectedTime.Value);
+                            }
+                        }
+                        else
+                        {
+                            ModelState.AddModelError(nameof(model.SelectedDate), Base.Globalisation.Dictionary.FieldIsRequired);
+                            model.IsPredictionsScreen = true;
+                            return View("Index", new PredictionsViewModel(model, _nineStarKiService.GetNineStarKiSummaryViewModel()));
+                        }
+
+                    }
+                    else
+                    {
+                        model.SelectedDate = localNow;
+                    }
 
                     var invertYinEnergies = model.CalculationMethod == ECalculationMethod.Chinese;
 
@@ -63,9 +83,18 @@ namespace K9.WebApplication.Controllers
                     // Add time of birth
                     model.PersonModel.DateOfBirth = model.PersonModel.DateOfBirth.Add(model.PersonModel.TimeOfBirth);
 
-                    model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false,
+                    var processedModel = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false,
                         model.SelectedDate, model.CalculationMethod, true, true, model.UseHolograhpicCycleCalculation, model.InvertDailyAndHourlyKiForSouthernHemisphere,
                         model.InvertDailyAndHourlyCycleKiForSouthernHemisphere);
+
+                    processedModel.DisplayDataForPeriod = model.DisplayDataForPeriod;
+                    processedModel.SelectedTime = model.SelectedTime;
+                    processedModel.CalculationMethod = model.CalculationMethod;
+                    processedModel.TimeZoneId = model.TimeZoneId;
+                    processedModel.SelectedTime = model.SelectedTime;
+                    processedModel.UseHolograhpicCycleCalculation = model.UseHolograhpicCycleCalculation;
+                    processedModel.InvertDailyAndHourlyKiForSouthernHemisphere = model.InvertDailyAndHourlyKiForSouthernHemisphere;
+                    processedModel.InvertDailyAndHourlyCycleKiForSouthernHemisphere = model.InvertDailyAndHourlyCycleKiForSouthernHemisphere;
 
                     if (Current.UserId > 0)
                     {

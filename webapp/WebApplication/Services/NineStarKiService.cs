@@ -72,18 +72,20 @@ namespace K9.WebApplication.Services
                     var preciseHourlyCycleEnergy =
                         _swissEphemerisService.GetNineStarKiHourlyKi(selectedDateTime, personModel.BirthTimeZoneId);
 
-                    var yearlyPeriods =
-                        _swissEphemerisService.GetNineStarKiYearlyPeriods(selectedDateTime, personModel.BirthTimeZoneId);
+                    var yearlyPeriods = includePlannerData
+                        ? _swissEphemerisService.GetNineStarKiYearlyPeriods(selectedDateTime, personModel.BirthTimeZoneId)
+                        : new (DateTime PeriodStartOn, DateTime PeriodEndsOn, int YearlyKi)[] { };
 
                     var monthlyPeriods = new List<(DateTime PeriodStartOn, DateTime PeriodEndsOn, int MonthlyKi)>();
                     foreach (var yearlyPeriod in yearlyPeriods)
                     {
-                        monthlyPeriods.AddRange(_swissEphemerisService.GetNineStarKiMonthlyPeriods(yearlyPeriod.YearStart.AddDays(1), personModel.BirthTimeZoneId));
+                        monthlyPeriods.AddRange(_swissEphemerisService.GetNineStarKiMonthlyPeriods(yearlyPeriod.PeriodStartOn.AddDays(1), personModel.BirthTimeZoneId));
                     }
 
-                    var dailyPeriods =
-                        _swissEphemerisService.GetNineStarKiDailyEnergiesForMonth(selectedDateTime,
-                            personModel.BirthTimeZoneId);
+                    var dailyPeriods = includePlannerData
+                        ? _swissEphemerisService.GetNineStarKiDailyEnergiesForMonth(selectedDateTime,
+                            personModel.BirthTimeZoneId)
+                        : new (DateTime Date, int DailyKi, int? InvertedDailyKi)[] { };
 
                     model = new NineStarKiModel(personModel, preciseEpochEnergy, preciseGenerationalEnergy,
                         preciseMainEnergy, preciseEmotionalEnergy, preciseEmotionalEnergyForInvertedYear,

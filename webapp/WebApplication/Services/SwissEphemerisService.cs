@@ -375,7 +375,7 @@ namespace K9.WebApplication.Services
             }, TimeSpan.FromDays(30));
         }
 
-        public (DateTime YearStart, DateTime YearEnd, int YearlyKi)[] GetNineStarKiYearlyPeriods(DateTime selectedDateTime, string timeZoneId)
+        public (DateTime PeriodStartOn, DateTime PeriodEndsOn, int YearlyKi)[] GetNineStarKiYearlyPeriods(DateTime selectedDateTime, string timeZoneId)
         {
             string cacheKey = $"{nameof(GetNineStarKiYearlyPeriods)}_{selectedDateTime:yyyyMMddHH}_{timeZoneId}";
             return GetOrAddToCache(cacheKey, () =>
@@ -397,7 +397,7 @@ namespace K9.WebApplication.Services
                     }
 
                     int numPeriods = numBoundaries - 1; // 18 periods
-                    var periods = new (DateTime YearStart, DateTime YearEnd, int YearlyKi)[numPeriods];
+                    var periods = new (DateTime PeriodStartsOn, DateTime PeriodEndsOn, int YearlyKi)[numPeriods];
 
                     for (int i = 0; i < numPeriods; i++)
                     {

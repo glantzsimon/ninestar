@@ -13748,6 +13748,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Selected Time.
+        /// </summary>
+        public static string SelectedTimeLabel {
+            get {
+                return ResourceManager.GetString("SelectedTimeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select the membership you wish to assign to the user.
         /// </summary>
         public static string SelectMembershipText {

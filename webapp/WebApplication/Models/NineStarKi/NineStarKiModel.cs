@@ -59,12 +59,14 @@ namespace K9.WebApplication.Models
 
             PersonModel = personModel;
             TimeZoneId = Current.UserTimeZoneId;
+            SelectedTime = new TimeSpan?();
         }
 
         public NineStarKiModel(PersonModel personModel)
         {
             PersonModel = personModel;
             TimeZoneId = Current.UserTimeZoneId;
+            SelectedTime = new TimeSpan?();
         }
 
         public NineStarKiModel(PersonModel personModel, int precisePersonEpochEnergy, int precisePersonGenerationalEnergy, int preciseMainEnergy, int preciseEmotionalEnergy, int preciseEmotionalEnergyForInvertedYear, int precisePersonalDayStarEnergy, int precisePersonalHourlyEnergy,
@@ -200,6 +202,9 @@ namespace K9.WebApplication.Models
         
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SelectedDateLabel)]
         public DateTime? SelectedDate { get; set; }
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SelectedTimeLabel)]
+        public TimeSpan? SelectedTime { get; set; }
 
         [UIHint("DisplayDataForPeriod")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DisplayDataForLabel)]

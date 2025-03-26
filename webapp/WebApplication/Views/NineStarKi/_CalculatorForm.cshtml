@@ -54,6 +54,7 @@
         @Html.BootstrapEditorFor(model => model.DisplayDataForPeriod)
         <div id="predictions-selected-date-container" style="@selectedDateDisplayStyle">
             @Html.BootstrapEditorFor(model => model.SelectedDate)
+            @Html.BootstrapEditorFor(model => model.SelectedTime)
             @Html.BootstrapEditorFor(model => model.TimeZoneId)
         </div>
     }

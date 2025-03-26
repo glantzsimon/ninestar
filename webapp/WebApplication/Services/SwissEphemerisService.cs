@@ -360,7 +360,7 @@ namespace K9.WebApplication.Services
                     for (int i = 0; i < solarTermDates.Length - 1; i++)
                     {
                         var solarTermDate = solarTermDates[i];
-                        var monthlyKi = GetNineStarKiMonthlyKi(solarTermDate.AddDays(1), timeZoneId);
+                        var monthlyKi = GetNineStarKiMonthlyKi(solarTermDate.AddDays(2), timeZoneId);
                         periods[i] = (solarTermDate, solarTermDates[i + 1].AddDays(-1), monthlyKi);
                     }
 

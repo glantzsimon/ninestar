@@ -23,7 +23,7 @@
 .calendar-day {
   border: 1px solid #e0e0e0;
   border-radius: 0.5rem;
-  padding: 0.5rem;
+  padding: 0;
   background-color: #f9f9f9;
   display: flex;
   flex-direction: column;
@@ -70,6 +70,9 @@
   margin-top: -5px;
   margin-bottom: 7px;
 }
+.global-planner-container {
+  height: 100% !important;
+}
 .global-planner-container .year-planner {
   display: flex;
   flex-direction: column;
@@ -92,7 +95,8 @@
 .global-planner-container .year-planner .year-block.active .year-label,
 .global-planner-container .year-planner .year-block.active .year-detail,
 .global-planner-container .year-planner .year-block.active .year-number,
-.global-planner-container .year-planner .year-block.active .year-dates {
+.global-planner-container .year-planner .year-block.active .year-dates,
+.global-planner-container .year-planner .year-block.active h4 {
   color: #ffffff !important;
 }
 .global-planner-container .year-planner .year-block:hover {
@@ -126,10 +130,22 @@
   color: #888888;
   margin-top: 0.25rem;
 }
+.global-planner-container .year-planner .year-block .year-summary-row .year-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 90px;
+}
 .global-planner-container .year-planner .year-block .year-summary-row .year-detail.narrow {
-  flex: 0 0 120px;
+  flex: 0 0 150px;
   color: #666;
   font-weight: 500;
+}
+.global-planner-container .year-planner .year-block .year-summary-row .year-detail.narrow img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.25rem;
+  max-width: 90px;
 }
 .global-planner-container .year-planner .year-block .year-summary-row .year-detail.wide {
   flex: 1;
@@ -165,6 +181,7 @@
   transform: translateY(-1x);
   position: relative;
   z-index: 2 !important;
+  border-radius: 7px;
 }
 .global-planner-container .year-planner .year-block .month-row .month-container .month-block.active .month-name,
 .global-planner-container .year-planner .year-block .month-row .month-container .month-block.active .month-dates {

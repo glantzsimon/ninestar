@@ -6,6 +6,7 @@
 @{
     var cycles = Model.GetGlobalPlanner();
     var activeCycle = cycles.FirstOrDefault();
+    var activeMonthlyCycle = activeCycle.Item5.FirstOrDefault();
 }
 
 <div class="container main-content clear-both global-planner-container planner-container margin-top-5">
@@ -16,6 +17,7 @@
             var year = yearlyCycle.Item1;
             var startsOn = yearlyCycle.Item2;
             var endsOn = yearlyCycle.Item3;
+            var endYear = endsOn.Year;
             var energy = yearlyCycle.Item4;
 
             var isAfterChineseNewYear = DateTime.Today.Month >= 3 || DateTime.Today.Month == 2 && DateTime.Today.Day >= 4;
@@ -33,14 +35,19 @@
                 <div class="global-planner-item" data-energy="@energy.Energy" data-type="year">
                     <div class="year-summary-row clickable">
                         <div class="year-label">
-                            <div class="year-number">@year</div>
-                            <div class="year-dates">@startsOn.ToString("MMM yyyy") - @endsOn.ToString("MMM yyyy")</div>
+                            <div class="year-number">@year - @endYear</div>
+                            <div class="year-dates">@startsOn.ToString("MMM/dd/yy") - @endsOn.ToString("MMM/dd/yy")</div>
                         </div>
                         <div class="year-detail narrow">
                             <img loading="lazy" title="@energy.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @energy.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(energy.Energy.ToString().ToLower()).png" />
                         </div>
                         <div class="year-detail wide">
-                            @energy.EnergyName - @energy.SeasonDescription / @energy.CycleDescriptiveName
+                            <div>
+                                <h4 class="margin-0">@energy.EnergyName</h4>
+                            </div>
+                            <div>
+                                @energy.SeasonDescription / @energy.CycleDescriptiveName
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -58,14 +65,16 @@
                         var isActive = year == DateTime.Today.Year && month == DateTime.Today.Month;
                         activeClass = isActive ? "active current-month" : string.Empty;
 
+                        var dayActiveClass = isActive ? "" : "display: none;";
+
                         if (isActive)
                         {
-                            activeCycle = yearlyCycle;
+                            activeMonthlyCycle = monthlyCycle;
                         }
 
                         <div class="col-md-1 col-sm-1 col-xs-2 padding-0 margin-0 month-container">
                             <!-- Month -->
-                            <div class="global-planner-item" data-energy="@energy.Energy" data-type="month">
+                            <div class="global-planner-item" data-energy="@energy.Energy" data-type="month" data-month-startson="@startsOn.ToString("yyyy-MM-dddd")">
                                 <div class="planner-item-container month-block clickable @activeClass">
                                     <div class="month-name">@monthName</div>
                                     <div class="desktop-only month-dates">@startsOn.ToString("MMM dd") @endsOn.ToString("MMM dd")</div>
@@ -74,6 +83,18 @@
                             </div>
                         </div>
                     }
+                </div>
+                
+                <div class="day-row row">
+                    <div class="col-sm-12 padding: 0; margin: 0;">
+                        <div class="daily-planner-container" data-month-startson="@activeMonthlyCycle.Item3.ToString("yyyy-MM-dddd")">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    @Html.Partial("_DailyKiCalendar")
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>

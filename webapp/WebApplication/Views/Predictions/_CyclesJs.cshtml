@@ -1,4 +1,6 @@
-﻿<script language="javascript">
+﻿@model K9.WebApplication.Models.NineStarKiModel
+
+<script language="javascript">
 
     function scrollCurrentYearIntoVew() {
         setTimeout(function () {
@@ -84,8 +86,31 @@
                 $monthBlock.addClass("active");
 
                 url = '@Url.Action("GetMonthlyForecast", "Predictions")';
+
+                // Fetch daily calendar for month:
+                var dailyCalendarUrl = '@Url.Action("GetDailyCalendar", "Predictions")';
+                var monthStarsOn = $el.attr("data-month-startson");
+
+                ajaxcontroller().get(dailyCalendarUrl,
+                    {
+                        dateOfBirth: '@Model.PersonModel.DateOfBirth.ToString("yyyy-MM-dddd")',
+                        birthTimeZoneId: "@Model.PersonModel.BirthTimeZoneId",
+                        timeOfBirth: '@Model.PersonModel.TimeOfBirth.ToString()',
+                        gender: '@Model.PersonModel.Gender',
+                        selectedDateTime: monthStarsOn,
+                        calculationMethod: '@Model.CalculationMethod.ToString()',
+                        useHolograhpicCycleCalculation: '@Model.UseHolograhpicCycleCalculation.ToString().ToLower()',
+                        invertDailyAndHourlyKiForSouthernHemisphere: '@Model.InvertDailyAndHourlyKiForSouthernHemisphere.ToString().ToLower()',
+                        invertDailyAndHourlyCycleKiForSouthernHemisphere: '@Model.InvertDailyAndHourlyCycleKiForSouthernHemisphere.ToString().ToLower()'
+                    }).done(
+                    function(result) {
+                        if (result.success) {
+                            $details.find(".daily-planner-container [data-month-startson='" + monthStarsOn + "']").html(result.data);
+                        }
+                    });
             }
 
+            // Display selected month / year data
             ajaxcontroller().get(url, {energy}).done(
                 function(result) {
                     if (result.success) {
@@ -97,8 +122,6 @@
             setTimeout(function () {
                 if (!$.fn.isVisible($details))
                     $.fn.scrollToTopOf($details, -180);
-
-                scrollActivePlannerItemIntoVew();
             }, 200);
         });
 

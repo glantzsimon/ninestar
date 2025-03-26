@@ -29,7 +29,7 @@
 .calendar-day {
     border: 1px solid #e0e0e0;
     border-radius: 0.5rem;
-    padding: 0.5rem;
+    padding: 0;
     background-color: #f9f9f9;
     display: flex;
     flex-direction: column;
@@ -90,6 +90,8 @@
 
 
 .global-planner-container {
+    height: 100% !important;
+
     .year-planner {
         display: flex;
         flex-direction: column;
@@ -109,7 +111,7 @@
             &.active {
                 background-color: @primary-blue;
 
-                .year-label, .year-detail, .year-number, .year-dates {
+                .year-label, .year-detail, .year-number, .year-dates, h4 {
                     color: @snow-white !important;
                 }
             }
@@ -151,10 +153,22 @@
                 }
 
                 .year-detail {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    min-width: 90px;
+
                     &.narrow {
-                        flex: 0 0 120px;
+                        flex: 0 0 150px;
                         color: @beautiful-grey;
                         font-weight: 500;
+
+                        img {
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 0.25rem;
+                            max-width: 90px;
+                        }
                     }
 
                     &.wide {
@@ -197,6 +211,8 @@
                             transform: translateY(-1x);
                             position: relative;
                             z-index: 2 !important;
+                            border-radius: 7px;
+
 
                             .month-name, .month-dates {
                                 color: @snow-white !important;

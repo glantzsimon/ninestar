@@ -135,7 +135,7 @@ namespace K9.WebApplication.Controllers
             {
                 title = $"{Dictionary.DailyKiCalendar} - {nineStarKiModel.SelectedDate.Value.ToString("MMMM yyyy")}",
                 view = PartialView("_DailyKiCalendar", nineStarKiModel).ToString()
-            });
+            }, JsonRequestBehavior.AllowGet);
         }
 
         [Route("get-monthly-forecast")]

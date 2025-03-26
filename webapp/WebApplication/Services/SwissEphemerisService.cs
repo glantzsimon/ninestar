@@ -359,9 +359,10 @@ namespace K9.WebApplication.Services
                     var periods = new (DateTime PeriodStartOn, DateTime PeriodEndsOn, int MonthlyKi)[12];
                     for (int i = 0; i < solarTermDates.Length - 1; i++)
                     {
-                        var solarTermDate = solarTermDates[i];
-                        var monthlyKi = GetNineStarKiMonthlyKi(solarTermDate.AddDays(2), timeZoneId);
-                        periods[i] = (solarTermDate, solarTermDates[i + 1].AddDays(-1), monthlyKi);
+                        var periodStartOn = solarTermDates[i];
+                        var periodEndsOn = solarTermDates[i + 1].AddDays(-1);
+                        var monthlyKi = GetNineStarKiMonthlyKi(periodStartOn.AddDays(2), timeZoneId);
+                        periods[i] = (periodStartOn, periodEndsOn, monthlyKi);
                     }
 
                     double jdNextLichun = GetSolarTerm(sweph, adjustedYear + 1, 315.0);

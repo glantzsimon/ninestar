@@ -93,7 +93,7 @@
 
                 ajaxcontroller().get(dailyCalendarUrl,
                     {
-                        dateOfBirth: '@Model.PersonModel.DateOfBirth.ToString("yyyy-MM-dddd")',
+                        dateOfBirth: '@Model.PersonModel.DateOfBirth.ToString("yyyy-MM-dd")',
                         birthTimeZoneId: "@Model.PersonModel.BirthTimeZoneId",
                         timeOfBirth: '@Model.PersonModel.TimeOfBirth.ToString()',
                         gender: '@Model.PersonModel.Gender',

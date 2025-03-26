@@ -41,9 +41,9 @@ namespace K9.WebApplication.Controllers
             return View(new PredictionsViewModel(nineStarKiModel, _nineStarKiService.GetNineStarKiSummaryViewModel()));
         }
 
-        [Route("calculator")]
+        [Route("calculator/result")]
         [HttpPost]
-        public ActionResult Index(NineStarKiModel model)
+        public ActionResult IndexPost(NineStarKiModel model)
         {
             if (ModelState.IsValid)
             {

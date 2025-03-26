@@ -132,6 +132,7 @@
 .planner-container .year-planner .year-block .year-summary-row .year-detail.wide {
   flex: 1;
   color: #444;
+  font-size: 0.9rem;
 }
 .planner-container .year-planner .month-row {
   display: grid;

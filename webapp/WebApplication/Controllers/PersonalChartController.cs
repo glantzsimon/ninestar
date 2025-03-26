@@ -30,9 +30,9 @@ namespace K9.WebApplication.Controllers
             return View(new NineStarKiModel());
         }
 
-        [Route("free-calculator")]
+        [Route("free-calculator/result")]
         [HttpPost]
-        public ActionResult Index(NineStarKiModel model)
+        public ActionResult IndexPost(NineStarKiModel model)
         {
             if (ModelState.IsValid)
             {
@@ -62,7 +62,7 @@ namespace K9.WebApplication.Controllers
                 }
             }
 
-            return View(model);
+            return View("Index",model);
         }
 
         [Authorize]

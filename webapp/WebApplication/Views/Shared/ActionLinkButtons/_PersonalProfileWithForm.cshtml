@@ -1,6 +1,6 @@
 ﻿@model K9.WebApplication.Models.NineStarKiModel
 <div class="inline-form">
-    @using (Html.BeginForm("Index", "PersonalChart", FormMethod.Post))
+    @using (Html.BeginForm("IndexPost", "PersonalChart", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
         @Html.HiddenFor(model => model.PersonModel.Name)

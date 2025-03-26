@@ -48,7 +48,7 @@
 
     if (Model.IsPredictionsScreen)
     {
-        var selectedDateDisplayStyle = Model.DisplayDataForPeriod == EDisplayDataForPeriod.Now ? "display: none;" : "";
+        var selectedDateDisplayStyle = Model.DisplayDataForPeriod == EDisplayDataForPeriod.SelectedDate ? "" : "display: none;";
 
         <hr />
         @Html.BootstrapEditorFor(model => model.DisplayDataForPeriod)

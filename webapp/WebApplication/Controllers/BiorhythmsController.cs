@@ -28,9 +28,9 @@ namespace K9.WebApplication.Controllers
             return View(new BioRhythmsModel(new NineStarKiModel(), DateTime.Now));
         }
 
-        [Route("calculator")]
+        [Route("calculator/result")]
         [HttpPost]
-        public ActionResult Index(BioRhythmsModel model)
+        public ActionResult IndexPost(BioRhythmsModel model)
         {
             if (ModelState.IsValid)
             {

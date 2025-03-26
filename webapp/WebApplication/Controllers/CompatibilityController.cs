@@ -26,9 +26,9 @@ namespace K9.WebApplication.Controllers
             return View(new CompatibilityModel());
         }
 
-        [Route("calculator")]
+        [Route("calculator/result")]
         [HttpPost]
-        public ActionResult Index(CompatibilityModel model)
+        public ActionResult IndexPost(CompatibilityModel model)
         {
             if (ModelState.IsValid)
             {
@@ -37,7 +37,7 @@ namespace K9.WebApplication.Controllers
                     model = _nineStarKiService.CalculateCompatibility(model.NineStarKiModel1.PersonModel, model.NineStarKiModel2.PersonModel, model.IsHideSexualChemistry, model.NineStarKiModel1.CalculationMethod);
                 }
             }
-            return View(model);
+            return View("Index", model);
         }
 
         [Route("retrieve-last")]

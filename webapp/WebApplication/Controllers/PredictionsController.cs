@@ -134,7 +134,7 @@ namespace K9.WebApplication.Controllers
             return Json(new
             {
                 title = $"{Dictionary.DailyKiCalendar} - {nineStarKiModel.SelectedDate.Value.ToString("MMMM yyyy")}",
-                view = PartialView("_DailyKiCalendar", nineStarKiModel).ToString()
+                view = RenderPartialViewToString("_DailyKiCalendar", nineStarKiModel).ToString()
             }, JsonRequestBehavior.AllowGet);
         }
 

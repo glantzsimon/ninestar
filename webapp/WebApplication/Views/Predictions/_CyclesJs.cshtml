@@ -105,8 +105,9 @@
                     }).done(
                     function(result) {
                         if (result.success) {
-                            $("#daily-planner .panel-heading").html(result.title);
-                            $("#daily-planner .panel-body").html(result.view);
+                            debugger;
+                            $("#daily-planner .panel-heading").html(result.data.title);
+                            $("#daily-planner .panel-body").html(result.data.view);
                         }
                     });
             }

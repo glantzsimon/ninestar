@@ -119,6 +119,19 @@ namespace K9.WebApplication.Controllers
         {
             return string.Empty;
         }
+
+        public string RenderPartialViewToString(string viewName, object model)
+        {
+            var controllerContext = ControllerContext;
+            var tempData = controllerContext.Controller.TempData;
+            var viewData = new ViewDataDictionary(model);
+            var stringWriter = new System.IO.StringWriter();
+            var viewEngineResult = ViewEngines.Engines.FindPartialView(controllerContext, viewName);
+
+            var viewContext = new ViewContext(controllerContext, viewEngineResult.View, viewData, tempData, stringWriter);
+            viewEngineResult.View.Render(viewContext, stringWriter);
+            return stringWriter.ToString();
+        }
         
         private static void SetBetaWarningSessionVariable()
         {

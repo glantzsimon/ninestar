@@ -5,8 +5,12 @@
         @Html.AntiForgeryToken()
         @Html.HiddenFor(model => model.PersonModel.Name)
         @Html.HiddenFor(model => model.PersonModel.DateOfBirth)
+        @Html.HiddenFor(model => model.PersonModel.TimeOfBirth)
+        @Html.HiddenFor(model => model.PersonModel.BirthTimeZoneId)
         @Html.HiddenFor(model => model.PersonModel.Gender)
         @Html.HiddenFor(model => model.SelectedDate)
+        @Html.HiddenFor(model => model.SelectedTime)
+        @Html.HiddenFor(model => model.TimeZoneId)
 
         @Html.BootstrapButton(Dictionary.YearlyAndMonthlyCycles, EButtonType.Submit, "fa fa-moon", EButtonClass.Large)
     }

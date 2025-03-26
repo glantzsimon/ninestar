@@ -99,10 +99,11 @@
         .year-block {
             border: 1px solid #ddd;
             border-radius: 1rem;
+            border-bottom: none;
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             transition: box-shadow 0.3s;
-            background-color: #f9f9f9;
+            background-color: @whisper-white;
             cursor: pointer !important;
 
             &.active {
@@ -165,50 +166,56 @@
             }
 
             .month-row {
-                display: grid;
-                grid-template-columns: repeat(12, 1fr);
-                gap: 0rem;
                 padding: 0;
+                border: none;
                 background-color: @snow-white;
 
-                .month-block {
-                    border: 1px solid #eee;
-                    padding: 0.5rem;
-                    text-align: center;
-                    transition: background-color 0.2s, transform 0.2s;
-                    cursor: pointer;
-                    background-color: @almost-white;
-
-                    &:first-of-type {
-                        border-bottom-left-radius: 0.5rem;
-                    }
-
-                    &:last-of-type {
-                        border-bottom-right-radius: 0.5rem;
-                    }
-
-                    &:hover {
-                        background-color: #f0f8ff;
-                        transform: translateY(-2px);
-                    }
-
-                    .month-name {
-                        font-weight: bold;
-                        font-size: 0.9rem;
-                        margin-bottom: 0.25rem;
-                    }
-
-                    .month-dates {
-                        font-size: 0.75rem;
-                        color: #777;
-                        margin-bottom: 0.5rem;
-                    }
-
-                    img {
+                .month-container {
+                   
+                    .month-block {
+                        outline: 1px solid #eee;
+                        padding: 0.5rem;
+                        text-align: center;
+                        transition: background-color 0.2s, transform 0.2s;
+                        cursor: pointer;
+                        background-color: @almost-white;
                         width: 100%;
-                        max-height: 60px;
-                        object-fit: cover;
-                        border-radius: 0.25rem;
+
+                        &:hover {
+                            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+                            background-color: @whisper-white;
+                            transform: translateY(-2px);
+                        }
+
+                        &.active {
+                            background-color: @primary-blue;
+
+                            &:hover {
+                                transform: translateY(0);
+                            }
+
+                            .month-name, .month-dates {
+                                color: @snow-white !important;
+                            }
+                        }
+
+                        .month-name {
+                            font-weight: bold;
+                            font-size: 0.9rem;
+                            margin-bottom: 0.25rem;
+                        }
+
+                        .month-dates {
+                            font-size: 0.75rem;
+                            color: #777;
+                            margin-bottom: 0.5rem;
+                        }
+
+                        img {
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 0.25rem;
+                        }
                     }
                 }
             }

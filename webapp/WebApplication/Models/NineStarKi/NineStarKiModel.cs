@@ -329,16 +329,6 @@ namespace K9.WebApplication.Models
 
                 foreach (var yearlyPeriod in YearlyPeriods)
                 {
-                    var newYearlyCycle = new Tuple<int, DateTime, DateTime, NineStarKiEnergy, List<Tuple<int, int, DateTime, DateTime, string, NineStarKiEnergy>>>(
-                        yearlyPeriod.PeriodStartOn.Year,
-                        yearlyPeriod.PeriodStartOn,
-                        yearlyPeriod.PeriodEndsOn,
-
-                        GetPersonalCycleEnergy(yearlyPeriod.YearlyKi, MainEnergy.EnergyNumber,
-                            ENineStarKiEnergyCycleType.YearlyCycleEnergy),
-
-                        new List<Tuple<int, int, DateTime, DateTime, string, NineStarKiEnergy>>());
-
                     var monthlyCycles = new List<Tuple<int, int, DateTime, DateTime, string, NineStarKiEnergy>>();
                     var monthlyPeriodsForYear =
                         MonthlyPeriods.Where(e => e.PeriodStartOn.IsBetween(yearlyPeriod.PeriodStartOn, yearlyPeriod.PeriodEndsOn)
@@ -351,10 +341,18 @@ namespace K9.WebApplication.Models
                             monthlyPeriod.PeriodStartOn,
                             monthlyPeriod.PeriodEndsOn,
 
-                            monthlyPeriod.PeriodStartOn.ToString("MMMM"), GetPersonalCycleEnergy(monthlyPeriod.MonthlyKi, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Month.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.MonthlyCycleEnergy)));
+                            monthlyPeriod.PeriodStartOn.ToString("MMM"), GetPersonalCycleEnergy(monthlyPeriod.MonthlyKi, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Month.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.MonthlyCycleEnergy)));
                     }
 
-                    yearlyCycles.Add(newYearlyCycle);
+                    yearlyCycles.Add(new Tuple<int, DateTime, DateTime, NineStarKiEnergy, List<Tuple<int, int, DateTime, DateTime, string, NineStarKiEnergy>>>(
+                        yearlyPeriod.PeriodStartOn.Year,
+                        yearlyPeriod.PeriodStartOn,
+                        yearlyPeriod.PeriodEndsOn,
+
+                        GetPersonalCycleEnergy(yearlyPeriod.YearlyKi, MainEnergy.EnergyNumber,
+                            ENineStarKiEnergyCycleType.YearlyCycleEnergy),
+
+                        monthlyCycles));
                 }
 
                 return yearlyCycles;

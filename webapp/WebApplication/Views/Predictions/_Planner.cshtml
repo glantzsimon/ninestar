@@ -45,32 +45,34 @@
                         </div>
                     </div>
 
-                    @foreach (var monthlyCycle in yearlyCycle.Item5)
-                    {
-                        year = monthlyCycle.Item1;
-                        var month = monthlyCycle.Item2;
-                        startsOn = monthlyCycle.Item3;
-                        endsOn = monthlyCycle.Item4;
-                        var monthName = monthlyCycle.Item5;
-                        energy = monthlyCycle.Item6;
-                        var isActive = year == DateTime.Today.Year && month == DateTime.Today.Month;
-                        activeClass = isActive ? "active current-month" : string.Empty;
-
-                        if (isActive)
+                    <!-- Bottom Row: Month Breakdown -->
+                    <div class="month-row">
+                        @foreach (var monthlyCycle in yearlyCycle.Item5)
                         {
-                            activeCycle = yearlyCycle;
-                        }
+                            year = monthlyCycle.Item1;
+                            var month = monthlyCycle.Item2;
+                            startsOn = monthlyCycle.Item3;
+                            endsOn = monthlyCycle.Item4;
+                            var monthName = monthlyCycle.Item5;
+                            energy = monthlyCycle.Item6;
+                            var isActive = year == DateTime.Today.Year && month == DateTime.Today.Month;
+                            activeClass = isActive ? "active current-month" : string.Empty;
 
-                        <!-- Bottom Row: Month Breakdown -->
-                        <div class="month-row">
+                            if (isActive)
+                            {
+                                activeCycle = yearlyCycle;
+                            }
+
                             <!-- Month -->
-                            <div class="month-block clickable">
-                                <div class="month-name">@monthName</div>
-                                <div class="month-dates">@startsOn.ToString("MMM dd") – @endsOn.ToString("MMM dd")</div>
-                                <img loading="lazy" title="@energy.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @energy.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(energy.Energy.ToString().ToLower()).png" />
+                            <div class="global-planner-item" data-energy="@energy.Energy" data-type="month">
+                                <div class="month-block clickable">
+                                    <div class="month-name">@monthName</div>
+                                    <div class="month-dates">@startsOn.ToString("MMM dd") – @endsOn.ToString("MMM dd")</div>
+                                    <img loading="lazy" title="@energy.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @energy.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(energy.Energy.ToString().ToLower()).png" />
+                                </div>
                             </div>
-                        </div>
-                    }
+                        }
+                    </div>
 
                 </div>
             </div>

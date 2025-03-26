@@ -105,23 +105,24 @@
   display: flex;
   align-items: center;
   padding: 1rem;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #e6e6e6;
 }
 .planner-container .year-planner .year-block .year-summary-row .year-label {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-width: 80px;
+  min-width: 90px;
 }
 .planner-container .year-planner .year-block .year-summary-row .year-label .year-number {
   font-size: 1.75rem;
   font-weight: 700;
-  color: #222;
+  color: #337ab7;
   line-height: 1.2;
+  margin-right: 11px;
 }
 .planner-container .year-planner .year-block .year-summary-row .year-label .year-dates {
   font-size: 0.9rem;
-  color: #888;
+  color: #888888;
   margin-top: 0.25rem;
 }
 .planner-container .year-planner .year-block .year-summary-row .year-detail.narrow {
@@ -134,37 +135,42 @@
   color: #444;
   font-size: 0.9rem;
 }
-.planner-container .year-planner .month-row {
+.planner-container .year-planner .year-block .month-row {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 0.5rem;
-  padding: 1rem;
-  background-color: #fff;
+  gap: 0rem;
+  padding: 0;
+  background-color: #ffffff;
 }
-.planner-container .year-planner .month-row .month-block {
+.planner-container .year-planner .year-block .month-row .month-block {
   border: 1px solid #eee;
-  border-radius: 0.5rem;
   padding: 0.5rem;
   text-align: center;
   transition: background-color 0.2s, transform 0.2s;
   cursor: pointer;
-  background-color: #fafafa;
+  background-color: #fdfdfd;
 }
-.planner-container .year-planner .month-row .month-block:hover {
+.planner-container .year-planner .year-block .month-row .month-block:first-of-type {
+  border-bottom-left-radius: 0.5rem;
+}
+.planner-container .year-planner .year-block .month-row .month-block:last-of-type {
+  border-bottom-right-radius: 0.5rem;
+}
+.planner-container .year-planner .year-block .month-row .month-block:hover {
   background-color: #f0f8ff;
   transform: translateY(-2px);
 }
-.planner-container .year-planner .month-row .month-block .month-name {
+.planner-container .year-planner .year-block .month-row .month-block .month-name {
   font-weight: bold;
   font-size: 0.9rem;
   margin-bottom: 0.25rem;
 }
-.planner-container .year-planner .month-row .month-block .month-dates {
+.planner-container .year-planner .year-block .month-row .month-block .month-dates {
   font-size: 0.75rem;
   color: #777;
   margin-bottom: 0.5rem;
 }
-.planner-container .year-planner .month-row .month-block img {
+.planner-container .year-planner .year-block .month-row .month-block img {
   width: 100%;
   max-height: 60px;
   object-fit: cover;

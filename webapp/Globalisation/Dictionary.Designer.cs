@@ -8717,7 +8717,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invert Daily Ki for Charts.
+        ///   Looks up a localized string similar to Invert Daily Ki for Personal Charts.
         /// </summary>
         public static string InvertDailyAndHourlyKiForSouthernHemisphereLabel {
             get {

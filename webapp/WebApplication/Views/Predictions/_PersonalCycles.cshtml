@@ -1,4 +1,6 @@
-﻿@using K9.WebApplication.Enums
+﻿@using K9.Base.WebApplication.Extensions
+@using K9.SharedLibrary.Extensions
+@using K9.WebApplication.Enums
 @using K9.WebApplication.Helpers
 @model K9.WebApplication.Models.NineStarKiModel
 
@@ -6,7 +8,7 @@
 {
     <div class="text-center">
         <h5>
-            @Dictionary.DisplayingDataFor @Model.SelectedDate.Value.ToLongDateString()
+            @Dictionary.DisplayingDataFor @Model.SelectedDate.Value.ToLongDateTimeString()
         </h5>
     </div>
 }

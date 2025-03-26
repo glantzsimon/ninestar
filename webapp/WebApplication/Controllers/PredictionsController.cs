@@ -91,6 +91,7 @@ namespace K9.WebApplication.Controllers
                     processedModel.SelectedTime = model.SelectedTime;
                     processedModel.CalculationMethod = model.CalculationMethod;
                     processedModel.TimeZoneId = model.TimeZoneId;
+                    processedModel.SelectedDate = model.SelectedDate;
                     processedModel.SelectedTime = model.SelectedTime;
                     processedModel.UseHolograhpicCycleCalculation = model.UseHolograhpicCycleCalculation;
                     processedModel.InvertDailyAndHourlyKiForSouthernHemisphere = model.InvertDailyAndHourlyKiForSouthernHemisphere;
@@ -101,6 +102,9 @@ namespace K9.WebApplication.Controllers
                         var user = My.UserService.Find(Current.UserId);
                         model.IsMyProfile = user.BirthDate == model.PersonModel.DateOfBirth;
                     }
+
+                    processedModel.IsPredictionsScreen = true;
+                    return View("Index", new PredictionsViewModel(processedModel, _nineStarKiService.GetNineStarKiSummaryViewModel()));
                 }
             }
 

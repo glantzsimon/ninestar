@@ -15,6 +15,11 @@ namespace K9.SharedLibrary.Extensions
 	        return value.ToString("dd/MMM/yy").ToLower();
 	    }
 
+	    public static string ToLongDateTimeString(this DateTime value)
+	    {
+	        return value.ToString("dd MMMM yyyy - HHHH:mm");
+	    }
+
 	    public static bool HasBirthdayPassedThisYear(this DateTime dob)
 	    {
 	        DateTime today = DateTime.Today;

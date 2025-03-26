@@ -197,14 +197,14 @@ namespace K9.WebApplication.Models
         }
 
         public PersonModel PersonModel { get; }
+        
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SelectedDateLabel)]
+        public DateTime? SelectedDate { get; set; }
 
         [UIHint("DisplayDataForPeriod")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DisplayDataForLabel)]
         public EDisplayDataForPeriod DisplayDataForPeriod { get; set; }
         
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SelectedDateLabel)]
-        public DateTime? SelectedDate { get; set; }
-
         [UIHint("TimeZone")]
         [Required(ErrorMessageResourceType = typeof(Base.Globalisation.Dictionary),
             ErrorMessageResourceName = Base.Globalisation.Strings.ErrorMessages.FieldIsRequired)]

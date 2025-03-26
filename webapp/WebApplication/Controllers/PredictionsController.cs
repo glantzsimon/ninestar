@@ -49,9 +49,9 @@ namespace K9.WebApplication.Controllers
             {
                 if (model.PersonModel != null)
                 {
-                    var localNow = model.GetLocalNow(); 
+                    var localNow = model.GetLocalNow();
                     model.SelectedDate = model.DisplayDataForPeriod == EDisplayDataForPeriod.SelectedDate ? model.SelectedDate ?? localNow : localNow;
-                    
+
                     var invertYinEnergies = model.CalculationMethod == ECalculationMethod.Chinese;
 
                     // Set user calculation method preference cookie
@@ -59,26 +59,24 @@ namespace K9.WebApplication.Controllers
                     SessionHelper.SetCurrentUserUseHolograhpicCycles(model.UseHolograhpicCycleCalculation);
                     SessionHelper.SetInvertDailyAndHourlyKiForSouthernHemisphere(model.InvertDailyAndHourlyKiForSouthernHemisphere);
                     SessionHelper.SetInvertDailyAndHourlyCycleKiForSouthernHemisphere(model.InvertDailyAndHourlyCycleKiForSouthernHemisphere);
-                    
+
                     // Add time of birth
                     model.PersonModel.DateOfBirth = model.PersonModel.DateOfBirth.Add(model.PersonModel.TimeOfBirth);
-                 
+
                     model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false,
-                        model.SelectedDate, model.CalculationMethod, true, model.UseHolograhpicCycleCalculation, model.InvertDailyAndHourlyKiForSouthernHemisphere,
+                        model.SelectedDate, model.CalculationMethod, true, true, model.UseHolograhpicCycleCalculation, model.InvertDailyAndHourlyKiForSouthernHemisphere,
                         model.InvertDailyAndHourlyCycleKiForSouthernHemisphere);
-                   
+
                     if (Current.UserId > 0)
                     {
                         var user = My.UserService.Find(Current.UserId);
                         model.IsMyProfile = user.BirthDate == model.PersonModel.DateOfBirth;
                     }
                 }
-                model.IsPredictionsScreen = true;
-                return View(new PredictionsViewModel(model, _nineStarKiService.GetNineStarKiSummaryViewModel()));
             }
 
             model.IsPredictionsScreen = true;
-            return View(model);
+            return View("Index", new PredictionsViewModel(model, _nineStarKiService.GetNineStarKiSummaryViewModel()));
         }
 
         [Route("get-monthly-forecast")]
@@ -87,7 +85,7 @@ namespace K9.WebApplication.Controllers
         {
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
             var cycle = summary.MonthlyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
-            
+
             return Json(cycle, JsonRequestBehavior.AllowGet);
         }
 
@@ -97,7 +95,7 @@ namespace K9.WebApplication.Controllers
         {
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
             var cycle = summary.YearlyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
-            
+
             return Json(cycle, JsonRequestBehavior.AllowGet);
         }
 

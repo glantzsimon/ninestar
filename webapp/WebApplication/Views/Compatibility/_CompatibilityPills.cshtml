@@ -88,3 +88,19 @@
         </div>
     </div>
 </div>
+
+<script language="javascript">
+
+    function scrollTo(el) {
+        setTimeout(function () {
+            $.fn.scrollToTopOf(el, -261);
+        }, 200);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        if (window.location.pathname.endsWith("/calculator/result")) {
+            scrollTo("#overview"); 
+        }
+    });
+
+</script>

@@ -200,6 +200,9 @@ namespace K9.WebApplication.Models
 
         public PersonModel PersonModel { get; }
         
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LichunLabel)]
+        public DateTime? Lichun { get; set; }
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SelectedDateLabel)]
         public DateTime? SelectedDate { get; set; }
 

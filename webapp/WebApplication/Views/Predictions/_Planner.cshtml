@@ -9,7 +9,7 @@
     var activeMonthlyCycle = activeCycle.Item5.FirstOrDefault();
 }
 
-<div class="container main-content clear-both global-planner-container planner-container margin-top-5">
+<div class="container main-content clear-both global-planner-container">
 
     <div class="year-planner">
         @foreach (var yearlyCycle in cycles)
@@ -20,7 +20,7 @@
             var endYear = endsOn.Year;
             var energy = yearlyCycle.Item4;
 
-            var isAfterChineseNewYear = DateTime.Today.Month >= 3 || DateTime.Today.Month == 2 && DateTime.Today.Day >= 4;
+            var isAfterChineseNewYear = DateTime.Today.Month >= 3 || DateTime.Today.Month == 2 && DateTime.Today >= Model.Lichun.Value;
             var isCurrentYear = isAfterChineseNewYear ? year == DateTime.Today.Year : year == DateTime.Today.Year - 1;
             var activeClass = isCurrentYear ? "active current-year" : string.Empty;
 
@@ -84,19 +84,6 @@
                         </div>
                     }
                 </div>
-                
-                <div class="day-row row">
-                    <div class="col-sm-12 padding: 0; margin: 0;">
-                        <div class="daily-planner-container" data-month-startson="@activeMonthlyCycle.Item3.ToString("yyyy-MM-dddd")">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    @Html.Partial("_DailyKiCalendar")
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         }
     </div>

@@ -112,6 +112,8 @@ namespace K9.WebApplication.Services
                     };
                 }
 
+                model.Lichun = _swissEphemerisService.GetLichun(DateTime.UtcNow, "");
+
                 model.YearlyDirections = GetYearlyDirections(model);
                 model.MonthlyDirections = GetMonthlyDirections(model);
 

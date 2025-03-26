@@ -4658,14 +4658,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    The seedling is beginning to mature.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    Everyone is born in a 5 Core Earth house and returns to it at the age of nine, 18, 27, 36, 45, 54, etc. This is the centre of the 9 Star Ki cycle and represents the beginning and end of a cycle. Anything started during a 5 year will have a great impact on the following 8 years and so should be considered carefully.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    As the stars are positioned exactly as they were during the year of our birth, we can experience a kind of &quot;rebirth [rest of string was truncated]&quot;;.
+        ///    As the stars are positioned exactly as they were during the year of our birth, we can experience a kin [rest of string was truncated]&quot;;.
         /// </summary>
         public static string core_earth_year {
             get {
@@ -7046,7 +7046,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    This is the year we take the spotlight
         ///&lt;/h5&gt;
         ///&lt;p&gt;
@@ -7056,7 +7056,7 @@ namespace K9.Globalisation {
         ///    This year is our time to shine. We will be noticed, for good or bad reasons. We may find ourselves making significant achievements and we will likely feel very energetic, enthusiastic and optimistic with a great sense of adventure.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This is also a year when things we would rather keep a secret may well end  [rest of string was truncated]&quot;;.
+        ///    This is also a year when things we would rather keep a secret  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fire_year {
             get {
@@ -8048,7 +8048,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    The fruits are beginning to ripen
         ///&lt;/h5&gt;
         ///&lt;p&gt;
@@ -8058,7 +8058,7 @@ namespace K9.Globalisation {
         ///    This year is associated with the full force of Yang and we often feel confident with a strong sense of direction and purpose.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    We may well find that our skills and talents are more noticed by others and that we are rewarded for our efforts, perhaps with a p [rest of string was truncated]&quot;;.
+        ///    We may well find that our skills and talents are more noticed by others and that we are rewarded for our efforts, per [rest of string was truncated]&quot;;.
         /// </summary>
         public static string heaven_year {
             get {
@@ -9271,14 +9271,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    The harvest is in. It&apos;s time to celebrate and put one&apos;s feet up
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This year represents late autumn or evening. It is the time to enjoy the harvest and to celebrate our achievements; a time to relax and be grateful for the abundance we have created for ourselves. It is also a time to reflect on the previous cycle.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This is perhaps the smoothest and most enjoyable House to occupy. It is a great time to become more sociable and broaden our horizons. We often feel more at [rest of string was truncated]&quot;;.
+        ///    This is perhaps the smoothest and most enjoyable House to occupy. It is a great time to become more sociable and broaden our horizons. We often [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lake_year {
             get {
@@ -9400,6 +9400,15 @@ namespace K9.Globalisation {
         public static string Li {
             get {
                 return ResourceManager.GetString("Li", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lìchūn.
+        /// </summary>
+        public static string LichunLabel {
+            get {
+                return ResourceManager.GetString("LichunLabel", resourceCulture);
             }
         }
         
@@ -11479,14 +11488,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    The harvest is over. Winter is nigh.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This year represents the transition from evening to night or autumn to winter. It is a time when Nature returns to stillness. We go indoors to shelter from the outside.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This is a time we tend to retreat into our &quot;cave&quot;. We often feel withdrawn, reserved and uncommunicative. It is a time for deep, honest introspection.  However, we need to be mindful that we don&apos;t become too withdrawn, as this could be upsetting to those who are  [rest of string was truncated]&quot;;.
+        ///    This is a time we tend to retreat into our &quot;cave&quot;. We often feel withdrawn, reserved and uncommunicative. It is a time for deep, honest introspection.  However, we need to be mindful that we don&apos;t become too withdrawn, as this could be upsetting to t [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mountain_year {
             get {
@@ -16409,7 +16418,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    The seedling has sprouted, breaking through the top layer of soil with a tremendous burst of energy.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
@@ -16419,7 +16428,7 @@ namespace K9.Globalisation {
         ///    It is the time to put our plans into action and begin working on our projects and endeavours. We are full of enthusiasm and have plenty of bright new ideas. It is also a great time to travel.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Having the full [rest of string was truncated]&quot;;.
+        ///    Ha [rest of string was truncated]&quot;;.
         /// </summary>
         public static string thunder_year {
             get {
@@ -18049,14 +18058,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    The seedling is growing rapidly with many leaves and shoots appearing.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    This year represents mid morning or mid to late spring. It is a time of sustained growth, following on from the rapid burst of the previous year. 
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    However, this is also potentially a changeable and unpredictable time. It can be tempting to change direction or move away from what we have been working on so far. It is important to stick to the plans. A farmer wouldn&apos;t pull up his or her crops mid- [rest of string was truncated]&quot;;.
+        ///    However, this is also potentially a changeable and unpredictable time. It can be tempting to change direction or move away from what we have been working on so far. It is important to stick to the plans. A farmer wouldn&apos;t pull up his or h [rest of string was truncated]&quot;;.
         /// </summary>
         public static string wind_year {
             get {
@@ -18165,14 +18174,13 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    Our lives pass through each of the houses in nine-year cycles, with each house or year representing one of the nine Energies of the 9 Star Ki system.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    Not only does each person have a 9 Star Ki birth chart, which is determined by their date of birth, but in addition, each of our lives passes through each of the nine houses in nine-year cycles. Each house is governed by one of the nine Energies of the 9 Star Ki system and influences our lives in powerful ways. 
         ///&lt;/p&gt;
-        ///&lt;h5&gt;
-        ///    Thes [rest of string was truncated]&quot;;.
+        ///&lt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string year_description {
             get {

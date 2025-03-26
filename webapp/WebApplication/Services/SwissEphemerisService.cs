@@ -431,6 +431,22 @@ namespace K9.WebApplication.Services
             }, TimeSpan.FromDays(30));
         }
 
+        public DateTime GetLichun(DateTime selectedDateTime, string timeZoneId)
+        {
+            using (var sweph = new SwissEph())
+            {
+                sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
+                // Convert the provided datetime to UT.
+                DateTime selectedUT = ConvertToUT(selectedDateTime, timeZoneId);
+                // Determine the adjusted year based on Lìchūn.
+                int adjustedYear = AdjustYearForLichun(sweph, selectedUT);
+                // Get the Julian Day for Lìchūn (the solar term at 315°) for the adjusted year.
+                double jdLichun = GetSolarTerm(sweph, adjustedYear, 315.0);
+                // Convert the Julian Day to DateTime.
+                return JulianDayToDateTime(sweph, jdLichun);
+            }
+        }
+
         private DateTime FindFirstJiaZiDayAfterSolstice(SwissEph sweph, int year, bool isJuneSolstice)
         {
             // Get the solstice date using your existing method.

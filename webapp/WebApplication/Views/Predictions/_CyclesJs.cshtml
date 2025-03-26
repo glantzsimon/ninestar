@@ -105,7 +105,8 @@
                     }).done(
                     function(result) {
                         if (result.success) {
-                            $details.find(".daily-planner-container [data-month-startson='" + monthStarsOn + "']").html(result.data);
+                            $("#daily-planner .panel-heading").html(result.title);
+                            $("#daily-planner .panel-body").html(result.view);
                         }
                     });
             }

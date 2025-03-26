@@ -4945,6 +4945,9 @@
   <data name="SelectedDateAndTime" xml:space="preserve">
     <value>Selected Date and Time</value>
   </data>
+  <data name="LichunLabel" xml:space="preserve">
+    <value>Lìchūn</value>
+  </data>
   <data name="SelectedTimeLabel" xml:space="preserve">
     <value>Selected Time</value>
   </data>

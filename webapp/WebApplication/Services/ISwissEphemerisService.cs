@@ -30,5 +30,7 @@ namespace K9.WebApplication.Services
 
         (DateTime Day, int DailyKi, int? InvertedDailyKi)[] GetNineStarKiDailyEnergiesForMonth(
             DateTime selectedDateTime, string timeZoneId);
+
+        DateTime GetLichun(DateTime selectedDateTime, string timeZoneId);
     }
 }

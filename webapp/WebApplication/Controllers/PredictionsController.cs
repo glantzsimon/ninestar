@@ -9,6 +9,7 @@ using System;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.UI;
+using K9.Globalisation;
 
 namespace K9.WebApplication.Controllers
 {
@@ -130,7 +131,11 @@ namespace K9.WebApplication.Controllers
 
             nineStarKiModel.DailyPeriods = dailyPeriods;
 
-            return PartialView("_DailyKiCalendar", nineStarKiModel);
+            return Json(new
+            {
+                title = $"{Dictionary.DailyKiCalendar} - {nineStarKiModel.SelectedDate.Value.ToString("MMMM yyyy")}",
+                view = PartialView("_DailyKiCalendar", nineStarKiModel).ToString()
+            });
         }
 
         [Route("get-monthly-forecast")]

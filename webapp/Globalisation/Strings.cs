@@ -73,6 +73,7 @@
             public const string SummaryLabel = "SummaryLabel";
             public const string SelectedDateLabel = "SelectedDateLabel";
             public const string SelectedTimeLabel = "SelectedTimeLabel";
+            public const string LichunLabel = "LichunLabel";
             public const string DisplayDataForLabel = "DisplayDataForLabel";
             public const string OverviewLabel = "OverviewLabel";
             public const string ColourLabel = "Colour";

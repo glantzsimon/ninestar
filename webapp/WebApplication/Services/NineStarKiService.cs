@@ -74,43 +74,18 @@ namespace K9.WebApplication.Services
                     var preciseHourlyCycleEnergy =
                         _swissEphemerisService.GetNineStarKiHourlyKi(selectedDateTime, userTimeZoneId);
 
-                    var yearlyPeriods = includePlannerData
-                        ? _swissEphemerisService.GetNineStarKiYearlyPeriods(selectedDateTime, userTimeZoneId)
-                        : new (DateTime PeriodStartOn, DateTime PeriodEndsOn, int YearlyKi)[] { };
-
-                    var monthlyPeriods = new List<(DateTime PeriodStartOn, DateTime PeriodEndsOn, int MonthlyKi)>();
-                    foreach (var yearlyPeriod in yearlyPeriods)
-                    {
-                        monthlyPeriods.AddRange(_swissEphemerisService.GetNineStarKiMonthlyPeriods(yearlyPeriod.PeriodStartOn.AddDays(1), userTimeZoneId));
-                    }
-
-                    var dailyPeriods = includePlannerData
-                        ? _swissEphemerisService.GetNineStarKiDailyEnergiesForMonth(selectedDateTime,
-                            userTimeZoneId)
-                        : new (DateTime Date, int DailyKi, int? InvertedDailyKi, int? afternoonKi, int? invertedAfternoonKi)[] { };
-
                     model = new NineStarKiModel(personModel, preciseEpochEnergy, preciseGenerationalEnergy,
                         preciseMainEnergy, preciseEmotionalEnergy, preciseEmotionalEnergyForInvertedYear,
                         preciseDayStarEnergy.DailyKi, preciseHourlyEnergy,
                         preciseEightyOneYearEnergy, preciseNineYearEnergy, preciseYearEnergy, preciseMonthEnergy,
-                        preciseDailyEnergies, preciseHourlyCycleEnergy, selectedDateTime, calculationMethod, useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere)
-                    {
-                        YearlyPeriods = yearlyPeriods,
-                        MonthlyPeriods = monthlyPeriods.ToArray(),
-                        DailyPeriods = dailyPeriods
-                    };
+                        preciseDailyEnergies, preciseHourlyCycleEnergy, selectedDateTime, calculationMethod, useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
                 }
                 else
                 {
                     model = new NineStarKiModel(personModel, preciseEpochEnergy, preciseGenerationalEnergy,
                         preciseMainEnergy, preciseEmotionalEnergy, preciseEmotionalEnergyForInvertedYear,
                         preciseDayStarEnergy.DailyKi, preciseHourlyEnergy,
-                        5, 5, 5, 5, new (int DailyKi, int? InvertedDailyKi)[] { (5, 5), (5, 5) }, 5, selectedDateTime, calculationMethod, useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere)
-                    {
-                        YearlyPeriods = new (DateTime PeriodStartOn, DateTime PeriodEndsOn, int YearlyKi)[] { },
-                        MonthlyPeriods = new (DateTime PeriodStartOn, DateTime PeriodEndsOn, int MonthlyKi)[] { },
-                        DailyPeriods = new (DateTime Date, int DailyKi, int? InvertedDailyKi, int? afternoonKi, int? invertedAfternoonKi)[] { }
-                    };
+                        5, 5, 5, 5, new (int DailyKi, int? InvertedDailyKi)[] { (5, 5), (5, 5) }, 5, selectedDateTime, calculationMethod, useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
                 }
 
                 model.Lichun = _swissEphemerisService.GetLichun(DateTime.UtcNow, "");
@@ -255,7 +230,7 @@ namespace K9.WebApplication.Services
                                    $"{invertDailyAndHourlyKiForSouthernHemisphere}_" +
                                    $"{invertDailyAndHourlyCycleKiForSouthernHemisphere}", () =>
             {
-                var energies = new List<(NineStarKiEnergy Energy, DateTime EnergyStartsOn, DateTime EnergyEndsOn, bool IsSelected)>();
+                var energies = new List<(NineStarKiEnergy Energy, NineStarKiEnergy SecondEnergy, DateTime EnergyStartsOn, DateTime EnergyEndsOn, bool IsSelected)>();
                 var lichun = _swissEphemerisService.GetLichun(selectedDateTime, userTimeZoneId);
                 var nineStarKiModel = CalculateNineStarKiProfile(new PersonModel
                 {
@@ -266,30 +241,62 @@ namespace K9.WebApplication.Services
                 }, false, false, selectedDateTime, calculationMethod, false, false, userTimeZoneId,
                     useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
 
-                // Yearly
-                var yearlyPeriod = _swissEphemerisService.GetNineStarKiYearlyPeriod(selectedDateTime, userTimeZoneId);
-                var monthlyPeriodsForYear =
-                    _swissEphemerisService.GetNineStarKiMonthlyPeriods(selectedDateTime, userTimeZoneId);
-
-                foreach (var monthlyPeriod in monthlyPeriodsForYear)
+                switch (view)
                 {
-                    var energy = nineStarKiModel.GetPersonalCycleEnergy(monthlyPeriod.MonthlyKi, useHolograhpicCycleCalculation ? nineStarKiModel.PersonalChartEnergies.Month.EnergyNumber : nineStarKiModel.MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.MonthlyCycleEnergy);
+                    case EPlannerView.Month:
+                        var selectedMonthPeriod = _swissEphemerisService.GetNineStarKiMonthlyPeriodBoundaries(selectedDateTime, userTimeZoneId);
+                        var dailyPeriods =
+                            _swissEphemerisService.GetNineStarKiDailyEnergiesForMonth(selectedDateTime, userTimeZoneId);
 
-                    var isSelected =
-                        selectedDateTime.IsBetween(monthlyPeriod.PeriodStartOn, monthlyPeriod.PeriodEndsOn);
+                        foreach (var dailyEnergy in dailyPeriods)
+                        {
+                            var morningEnergy = nineStarKiModel.GetPersonalCycleEnergy(dailyEnergy.MorningKi, useHolograhpicCycleCalculation ? nineStarKiModel.PersonalChartEnergies.Day.EnergyNumber : nineStarKiModel.MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.DailyEnergy);
 
-                    energies.Add((energy, monthlyPeriod.PeriodStartOn, monthlyPeriod.PeriodEndsOn, isSelected));
+                            var afternoonEnergy = dailyEnergy.AfternoonKi.HasValue ? nineStarKiModel.GetPersonalCycleEnergy(dailyEnergy.AfternoonKi.Value, useHolograhpicCycleCalculation ? nineStarKiModel.PersonalChartEnergies.Day.EnergyNumber : nineStarKiModel.MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.DailyEnergy) : morningEnergy;
+
+                            var isSelected = dailyEnergy.Day.Date == selectedDateTime.Date;
+
+                            energies.Add((morningEnergy, afternoonEnergy, dailyEnergy.Day, dailyEnergy.Day, isSelected));
+                        }
+
+                        return new PlannerViewModel
+                        {
+                            View = view,
+                            Energy = nineStarKiModel.GlobalCycleEnergies.Month,
+                            Lichun = lichun,
+                            PeriodStarsOn = selectedMonthPeriod.PeriodStartsOn,
+                            PeriodEndsOn = selectedMonthPeriod.PeriodEndsOn,
+                            Energies = energies
+                        };
+
+                    // Year
+                    default:
+                        var yearlyPeriod = _swissEphemerisService.GetNineStarKiYearlyPeriod(selectedDateTime, userTimeZoneId);
+                        var monthlyPeriodsForYear =
+                            _swissEphemerisService.GetNineStarKiMonthlyPeriods(selectedDateTime, userTimeZoneId);
+
+                        foreach (var monthlyPeriod in monthlyPeriodsForYear)
+                        {
+                            var energy = nineStarKiModel.GetPersonalCycleEnergy(monthlyPeriod.MonthlyKi, useHolograhpicCycleCalculation ? nineStarKiModel.PersonalChartEnergies.Month.EnergyNumber : nineStarKiModel.MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.MonthlyCycleEnergy);
+
+                            var isSelected =
+                                selectedDateTime.IsBetween(monthlyPeriod.PeriodStartsOn, monthlyPeriod.PeriodEndsOn);
+
+                            energies.Add((energy, energy, monthlyPeriod.PeriodStartsOn, monthlyPeriod.PeriodEndsOn, isSelected));
+                        }
+
+                        return new PlannerViewModel
+                        {
+                            View = view,
+                            Energy = nineStarKiModel.GlobalCycleEnergies.Year,
+                            Lichun = lichun,
+                            PeriodStarsOn = yearlyPeriod.PeriodStartsOn,
+                            PeriodEndsOn = yearlyPeriod.PeriodEndsOn,
+                            Energies = energies
+                        };
                 }
 
-                return new PlannerViewModel
-                {
-                    View = view,
-                    Energy = nineStarKiModel.GlobalCycleEnergies.Year,
-                    Lichun = lichun,
-                    PeriodStarsOn = yearlyPeriod.PeriodStartsOn,
-                    PeriodEndsOn = yearlyPeriod.PeriodEndsOn,
-                    Energies = energies
-                };
+
             }, TimeSpan.FromDays(30));
         }
 

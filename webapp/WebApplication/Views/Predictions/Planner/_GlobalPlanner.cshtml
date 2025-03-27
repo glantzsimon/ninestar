@@ -1,31 +1,32 @@
 ﻿@using K9.SharedLibrary.Extensions
 @using K9.WebApplication.Config
+@using K9.WebApplication.Enums
 @using K9.WebApplication.Helpers
 
 @model K9.WebApplication.ViewModels.PlannerViewModel
 
 @{
-    var activeMonth = Model.Energies.FirstOrDefault();
+    var activeChild = Model.Energies.FirstOrDefault(e => e.IsSelected);
 }
 
 <div class="container main-content clear-both global-planner-container">
-    @Html.Hidden("PlannerEnableScrollIntoView", true);
+    @Html.Hidden("PlannerEnableScrollIntoView", true)
 
-    <div class="year-planner">
-        <!-- Year Block -->
-        <div class="year-block active planner-item-container" data-year="@Model.Energy">
-            
-            <!-- Top Row: Year Summary -->
-            <div class="global-planner-item" data-energy="@Model.Energy" data-view="@Model.View">
-                <div class="year-summary-row clickable">
-                    <div class="year-label">
-                        <div class="year-number">@Model.PeriodDatesTitle</div>
-                        <div class="year-dates">@Model.PeriodDatesDetails</div>
+    <div class="parent-planner">
+        <!-- Parent Block -->
+        <div class="parent-block planner-item-container">
+
+            <!-- Top Row: Parent Summary -->
+            <div class="global-planner-item" data-energy="@Model.Energy.Energy" data-type="parent" data-view="@Model.View">
+                <div class="parent-summary-row clickable">
+                    <div class="parent-label">
+                        <div class="parent-title">@Model.PeriodDatesTitle</div>
+                        <div class="parent-dates">@Model.PeriodDatesDetails</div>
                     </div>
-                    <div class="year-detail narrow">
-                        <img loading="lazy" title="@Model.Energy.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @Model.Energy.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(Model.Energy.ToString().ToLower()).png" />
+                    <div class="parent-detail narrow">
+                        <img loading="lazy" title="@Model.Energy.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @Model.Energy.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(Model.Energy.Energy.ToString().ToLower()).png" />
                     </div>
-                    <div class="year-detail wide">
+                    <div class="parent-detail wide">
                         <div>
                             <h4 class="margin-0">@Model.Energy.EnergyName</h4>
                         </div>
@@ -36,34 +37,52 @@
                 </div>
             </div>
 
-            <!-- Bottom Row: Month Breakdown -->
-            <div class="month-row row">
-                @foreach (var energy in Model.Energies)
-                {
-                    var activeClass = energy.IsSelected ? "active current-month" : string.Empty;
-                    var energyTitle = Model.GetEnergyTitle(energy);
-                    var datesDisplay = Model.GetEnergyDatesDetails(energy);
+            @switch (Model.View)
+            {
+                case EPlannerView.EightyOneYear:
+                case EPlannerView.NineYear:
+                case EPlannerView.Year:
 
-                    <div class="col-md-1 col-sm-1 col-xs-2 padding-0 margin-0 month-container">
-                        
-                        <div class="global-planner-item" data-energy="@energy.Energy" data-view="@Model.View" data-type="child" data-month-startson="@energy.EnergyStartsOn.ToString("yyyy-MM-dd HHHH:mm")">
-                            
-                            <div class="planner-item-container month-block clickable @activeClass">
-                                <div class="month-name">@energyTitle</div>
-                                <div class="desktop-only month-dates"></div>
-                                <img loading="lazy" title="@energy.Energy.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @energy.Energy.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(energy.Energy.ToString().ToLower()).png" />
+                    <!-- Bottom Row: Child -->
+                    <div class="child-row row">
+                        @foreach (var energy in Model.Energies)
+                        {
+                            var activeClass = energy.IsSelected ? "active" : string.Empty;
+                            var energyTitle = Model.GetEnergyTitle(energy);
+                            var datesDisplay = Model.GetEnergyDatesDetails(energy);
+
+                            <div class="col-md-1 col-sm-1 col-xs-2 padding-0 margin-0 child-container">
+
+                                <div class="global-planner-item" data-energy="@energy.Energy.Energy" data-view="@Model.View" data-type="child" data-child-startson="@energy.EnergyStartsOn.ToString("yyyy-MM-dd HHHH:mm")">
+
+                                    <div class="planner-item-container child-block clickable @activeClass">
+                                        <div class="child-name">@energyTitle</div>
+                                        <div class="desktop-only child-dates">@datesDisplay</div>
+                                        <img loading="lazy" title="@energy.Energy.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @energy.Energy.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(energy.Energy.Energy.ToString().ToLower()).png" />
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        }
                     </div>
-                }
-            </div>
+
+                    break;
+
+                    case EPlannerView.Month:
+
+                    @Html.Partial("_DailyCalendar")
+
+                        break;
+            }
+
+
         </div>
-        }
+    </div>
+    <hr />
+    <div id="global-planner-details">
+        @Html.Panel(activeChild.Energy.CycleDescriptiveName, activeChild.Energy.CycleDescription)
     </div>
 </div>
 
-<hr />
 
-@*<div id="global-planner-details">
-    @Html.Panel(activeMonth.Item4.CycleDescriptiveName, activeMonth.Item4.CycleDescription)
-</div>*@
+
+

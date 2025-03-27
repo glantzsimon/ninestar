@@ -1,15 +1,16 @@
 ﻿using K9.Base.DataAccessLayer.Enums;
 using K9.Globalisation;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.WebApplication.Enums;
 using K9.WebApplication.Extensions;
 using K9.WebApplication.Helpers;
+using K9.WebApplication.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web.Script.Serialization;
-using K9.SharedLibrary.Extensions;
 
 namespace K9.WebApplication.Models
 {
@@ -289,6 +290,8 @@ namespace K9.WebApplication.Models
 
         public string DailyCycleEnergyDisplayText =>
             PersonalHousesOccupiedEnergies.DayInverted == null ? PersonalHousesOccupiedEnergies.Day.EnergyNumber.ToString() : $"{PersonalHousesOccupiedEnergies.Day.EnergyNumber.ToString()}/{PersonalHousesOccupiedEnergies.DayInverted.EnergyNumber.ToString()}";
+
+        public PlannerViewModel PlannerViewModel { get; set; }
 
         public NineStarKiDirections YearlyDirections { get; set; }
 

@@ -1,0 +1,59 @@
+﻿@using K9.SharedLibrary.Extensions
+@using K9.WebApplication.Config
+@model K9.WebApplication.ViewModels.PlannerViewModel
+
+<div class="container main-content clear-both daily-planner-container padding-top-10">
+    <div class="calendar-grid">
+        <!-- Day headers -->
+        <div class="calendar-header">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Monday)</div>
+        <div class="calendar-header">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Tuesday)</div>
+        <div class="calendar-header">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Wednesday)</div>
+        <div class="calendar-header">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Thursday)</div>
+        <div class="calendar-header">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Friday)</div>
+        <div class="calendar-header">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Saturday)</div>
+        <div class="calendar-header">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Sunday)</div>
+
+        @{
+            bool isFirst = true;
+            var daysOfWeek = new Dictionary<string, int> {
+                { "Monday", 0 }, { "Tuesday", 1 }, { "Wednesday", 2 },
+                { "Thursday", 3 }, { "Friday", 4 }, { "Saturday", 5 }, { "Sunday", 6 }
+            };
+        }
+
+        @foreach (var energy in Model.Energies)
+        {
+            var selectedClass = energy.IsSelected ? "selected" : "";
+
+            // Add padding for first row
+            if (isFirst)
+            {
+                int offset = ((int)energy.EnergyStartsOn.DayOfWeek + 6) % 7;
+                for (int i = 0; i < offset; i++)
+                {
+                    <div class="empty-cell"></div>
+                }
+                isFirst = false;
+            }
+
+            <div class="calendar-day @selectedClass">
+                <div class="date-label">@Model.GetEnergyTitle(energy)</div>
+                <div class="custom-content">
+                    @if (energy.Energy.EnergyNumber == energy.SecondEnergy.EnergyNumber)
+                    {
+                        <img loading="lazy" title="@energy.Energy.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @energy.Energy.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(energy.Energy.ToString().ToLower()).png" />
+                    }
+                    else
+                    {
+                        <div class="double-energy-container">
+                            <img loading="lazy" title="@energy.Energy.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @energy.Energy.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(energy.Energy.ToString().ToLower()).png" />
+                            <span> - </span>
+                            <img loading="lazy" title="@energy.SecondEnergy.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @energy.SecondEnergy.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(energy.SecondEnergy.Energy.ToString().ToLower()).png" />
+                        </div>
+                    }
+
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -7,9 +7,7 @@ namespace K9.WebApplication.ViewModels
     {
         [ScriptIgnore]
         public NineStarKiModel NineStarKiModel { get; }
-
-        public PlannerViewModel PlannerViewModel { get; set; }
-
+        
         public NineStarKiSummaryModel PersonalChartModel { get; }
 
         public NineStarKiPredictionsSummaryModel PredictionsSummaryModel { get; }

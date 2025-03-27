@@ -114,17 +114,20 @@
 }
 
 .global-planner-container {
-    height: 418px !important;
-    max-height: 418px;
-    overflow-y: scroll;
+    #global-planner-details {
+        .panel-body {
+            max-height: 371px;
+            overflow-y: auto;
+        }
+    }
 
-    .year-planner {
+    .parent-planner {
         display: flex;
         flex-direction: column;
         gap: 2rem;
         padding: 0;
 
-        .year-block {
+        .parent-block {
             border: 1px solid #ddd;
             border-radius: 1rem;
             border-bottom: none;
@@ -137,7 +140,7 @@
             &.active {
                 background-color: @primary-blue;
 
-                .year-label, .year-detail, .year-number, .year-dates, h4 {
+                .parent-label, .parent-detail, .parent-title, .parent-dates, h4 {
                     color: @snow-white !important;
                 }
             }
@@ -151,19 +154,19 @@
                 }
             }
 
-            .year-summary-row {
+            .parent-summary-row {
                 display: flex;
                 align-items: center;
                 padding: 1rem;
                 border-bottom: 1px solid @mist-grey;
 
-                .year-label {
+                .parent-label {
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
                     min-width: 90px;
 
-                    .year-number {
+                    .parent-title {
                         font-size: 1.75rem;
                         font-weight: 700;
                         color: @primary-blue;
@@ -171,14 +174,14 @@
                         margin-right: 11px;
                     }
 
-                    .year-dates {
+                    .parent-dates {
                         font-size: 0.9rem;
                         color: @light-grey;
                         margin-top: 0.25rem;
                     }
                 }
 
-                .year-detail {
+                .parent-detail {
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
@@ -206,14 +209,14 @@
                 }
             }
 
-            .month-row {
+            .child-row {
                 padding: 0;
                 border: none;
                 background-color: @snow-white;
 
-                .month-container {
+                .child-container {
 
-                    .month-block {
+                    .child-block {
                         outline: 1px solid #eee;
                         padding: 0.5rem;
                         text-align: center;
@@ -242,18 +245,19 @@
                             border-top-right-radius: 7px;
 
 
-                            .month-name, .month-dates {
+                            .child-name, .child-dates {
                                 color: @snow-white !important;
                             }
                         }
 
-                        .month-name {
+                        .child-name {
                             font-weight: bold;
-                            font-size: 0.9rem;
+                            font-size: 1.1rem;
                             margin-bottom: 0.25rem;
+                            color: @primary-blue;
                         }
 
-                        .month-dates {
+                        .child-dates {
                             font-size: 0.75rem;
                             color: #777;
                             margin-bottom: 0.5rem;

@@ -70,39 +70,38 @@
             var $el = $(this);
             var energy = $el.attr("data-energy");
             var type = $el.attr("data-type");
-            var $container, $yearBlock, $monthBlock, $details, url;
+            var $container, $parentBlock, $childBlock, $details, url;
 
             $container = $el.closest(".global-planner-container");
-            $yearBlock = $el.closest(".year-block");
-            $monthBlock = $el.find(".month-block");
+            $parentBlock = $el.closest(".parent-block");
+            $childBlock = $el.find(".child-block");
             $details = $("#global-planner-details");
 
             // clear current class from all items
-            $container.find(".year-block, .month-block").removeClass("active");
+            $container.find(".parent-block, .child-block").removeClass("active");
 
             // set current class on current selected item
-            if (type === "year") {
-                $yearBlock.addClass("active");
+            if (type === "parent") {
+                $parentBlock.addClass("active");
 
                 url = '@Url.Action("GetYearlyForecast", "Predictions")';
             }
-            else if (type === "month") {
-                $yearBlock.addClass("active");
-                $monthBlock.addClass("active");
+            else if (type === "child") {
+                $childBlock.addClass("active");
 
                 url = '@Url.Action("GetMonthlyForecast", "Predictions")';
 
                 // Fetch daily calendar for month:
                 var dailyCalendarUrl = '@Url.Action("GetDailyCalendar", "Predictions")';
-                var monthStarsOn = $el.attr("data-month-startson");
+                var childStarsOn = $el.attr("data-child-startson");
 
-                ajaxcontroller().get(dailyCalendarUrl,
+                @*ajaxcontroller().get(dailyCalendarUrl,
                     {
                         dateOfBirth: '@Model.PersonModel.DateOfBirth.ToString("yyyy-MM-dd")',
                         birthTimeZoneId: "@Model.PersonModel.BirthTimeZoneId",
                         timeOfBirth: '@Model.PersonModel.TimeOfBirth.ToString()',
                         gender: '@Model.PersonModel.Gender',
-                        selectedDateTime: monthStarsOn,
+                        selectedDateTime: childStarsOn,
                         userTimeZoneId: '@Model.UserTimeZoneId',
                         calculationMethod: '@Model.CalculationMethod.ToString()',
                         useHolograhpicCycleCalculation: '@Model.UseHolograhpicCycleCalculation.ToString().ToLower()',
@@ -114,7 +113,7 @@
                             $("#daily-planner-container .panel-heading h4").html(result.data.title);
                             $("#daily-planner-container .panel-body").html(result.data.view);
                         }
-                    });
+                    });*@
             }
 
             // Display selected month / year data

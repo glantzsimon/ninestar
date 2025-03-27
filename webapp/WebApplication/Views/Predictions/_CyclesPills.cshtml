@@ -96,11 +96,11 @@
         <div id="global-planner" class="tab-pane fade">
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
-                @Html.Panel(Dictionary.Planner, Html.Partial("_Planner", Model).ToString())
+                @Html.Panel(Dictionary.Planner, Html.Partial("Planner/_GlobalPlanner", Model.PlannerViewModel).ToString())
 
-                <div id="daily-planner-container">
+                @*<div id="daily-planner-container">
                     @Html.Panel($"{Dictionary.DailyKiCalendar} - {Model.SelectedDate.Value.ToString("MMMM yyyy")}", Html.Partial("_DailyKiCalendar", Model).ToString())
-                </div>
+                </div>*@
             }
 
             <hr />
@@ -110,7 +110,7 @@
         <div id="yearly-planner" class="tab-pane fade">
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
-                @Html.Panel(Dictionary.YearlyPlanner, Html.Partial("_YearlyPlanner", Model).ToString())
+                @*@Html.Panel(Dictionary.YearlyPlanner, Html.Partial("_YearlyPlanner", Model).ToString())*@
             }
 
             <hr />
@@ -120,7 +120,7 @@
         <div id="monthly-planner" class="tab-pane fade">
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
-                @Html.Panel(Dictionary.MonthlyPlanner, Html.Partial("_MonthlyPlanner", Model).ToString())
+                @*@Html.Panel(Dictionary.MonthlyPlanner, Html.Partial("_MonthlyPlanner", Model).ToString())*@
             }
 
             <hr />
@@ -130,7 +130,7 @@
         <div id="daily-planner" class="tab-pane fade">
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
-                @Html.Panel($"{Dictionary.DailyKiCalendar} - {Model.SelectedDate.Value.ToString("MMMM yyyy")}", Html.Partial("_DailyKiCalendar", Model).ToString())
+                @*@Html.Panel($"{Dictionary.DailyKiCalendar} - {Model.SelectedDate.Value.ToString("MMMM yyyy")}", Html.Partial("_DailyKiCalendar", Model).ToString())*@
             }
 
             <hr />

@@ -106,6 +106,8 @@ namespace K9.WebApplication.Controllers
                     var plannerData = _nineStarKiService.GetPlannerData(model.PersonModel.DateOfBirth, model.PersonModel.BirthTimeZoneId, model.PersonModel.TimeOfBirth, model.PersonModel.Gender, model.SelectedDate.Value, model.CalculationMethod, model.UserTimeZoneId,
                         model.UseHolograhpicCycleCalculation, model.InvertDailyAndHourlyKiForSouthernHemisphere, model.InvertDailyAndHourlyCycleKiForSouthernHemisphere);
 
+                    processedModel.PlannerViewModel = plannerData;
+
                     if (Current.UserId > 0)
                     {
                         var user = My.UserService.Find(Current.UserId);
@@ -115,10 +117,7 @@ namespace K9.WebApplication.Controllers
                     processedModel.IsPredictionsScreen = true;
                     return View("Index", new PredictionsViewModel(
                         processedModel,
-                        _nineStarKiService.GetNineStarKiSummaryViewModel())
-                    {
-                        PlannerViewModel = plannerData
-                    });
+                        _nineStarKiService.GetNineStarKiSummaryViewModel()));
                 }
             }
 

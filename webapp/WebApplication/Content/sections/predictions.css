@@ -92,18 +92,17 @@
   margin-top: -5px;
   margin-bottom: 7px;
 }
-.global-planner-container {
-  height: 418px !important;
-  max-height: 418px;
-  overflow-y: scroll;
+.global-planner-container #global-planner-details .panel-body {
+  max-height: 371px;
+  overflow-y: auto;
 }
-.global-planner-container .year-planner {
+.global-planner-container .parent-planner {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding: 0;
 }
-.global-planner-container .year-planner .year-block {
+.global-planner-container .parent-planner .parent-block {
   border: 1px solid #ddd;
   border-radius: 1rem;
   border-bottom: none;
@@ -113,76 +112,76 @@
   background-color: #f9f9f9;
   cursor: pointer !important;
 }
-.global-planner-container .year-planner .year-block.active {
+.global-planner-container .parent-planner .parent-block.active {
   background-color: #337ab7;
 }
-.global-planner-container .year-planner .year-block.active .year-label,
-.global-planner-container .year-planner .year-block.active .year-detail,
-.global-planner-container .year-planner .year-block.active .year-number,
-.global-planner-container .year-planner .year-block.active .year-dates,
-.global-planner-container .year-planner .year-block.active h4 {
+.global-planner-container .parent-planner .parent-block.active .parent-label,
+.global-planner-container .parent-planner .parent-block.active .parent-detail,
+.global-planner-container .parent-planner .parent-block.active .parent-title,
+.global-planner-container .parent-planner .parent-block.active .parent-dates,
+.global-planner-container .parent-planner .parent-block.active h4 {
   color: #ffffff !important;
 }
-.global-planner-container .year-planner .year-block:hover {
+.global-planner-container .parent-planner .parent-block:hover {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   background-color: #e6e6e6;
 }
-.global-planner-container .year-planner .year-block:hover.active {
+.global-planner-container .parent-planner .parent-block:hover.active {
   background-color: #337ab7;
 }
-.global-planner-container .year-planner .year-block .year-summary-row {
+.global-planner-container .parent-planner .parent-block .parent-summary-row {
   display: flex;
   align-items: center;
   padding: 1rem;
   border-bottom: 1px solid #e6e6e6;
 }
-.global-planner-container .year-planner .year-block .year-summary-row .year-label {
+.global-planner-container .parent-planner .parent-block .parent-summary-row .parent-label {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   min-width: 90px;
 }
-.global-planner-container .year-planner .year-block .year-summary-row .year-label .year-number {
+.global-planner-container .parent-planner .parent-block .parent-summary-row .parent-label .parent-title {
   font-size: 1.75rem;
   font-weight: 700;
   color: #337ab7;
   line-height: 1.2;
   margin-right: 11px;
 }
-.global-planner-container .year-planner .year-block .year-summary-row .year-label .year-dates {
+.global-planner-container .parent-planner .parent-block .parent-summary-row .parent-label .parent-dates {
   font-size: 0.9rem;
   color: #888888;
   margin-top: 0.25rem;
 }
-.global-planner-container .year-planner .year-block .year-summary-row .year-detail {
+.global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   min-width: 90px;
 }
-.global-planner-container .year-planner .year-block .year-summary-row .year-detail.narrow {
+.global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.narrow {
   flex: 0 0 150px;
   color: #666;
   font-weight: 500;
 }
-.global-planner-container .year-planner .year-block .year-summary-row .year-detail.narrow img {
+.global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.narrow img {
   height: 100%;
   object-fit: cover;
   border-radius: 0.25rem;
   max-width: 90px;
 }
-.global-planner-container .year-planner .year-block .year-summary-row .year-detail.wide {
+.global-planner-container .parent-planner .parent-block .parent-summary-row .parent-detail.wide {
   flex: 1;
   color: #444;
   font-size: 0.9rem;
   font-weight: bold;
 }
-.global-planner-container .year-planner .year-block .month-row {
+.global-planner-container .parent-planner .parent-block .child-row {
   padding: 0;
   border: none;
   background-color: #ffffff;
 }
-.global-planner-container .year-planner .year-block .month-row .month-container .month-block {
+.global-planner-container .parent-planner .parent-block .child-row .child-container .child-block {
   outline: 1px solid #eee;
   padding: 0.5rem;
   text-align: center;
@@ -191,7 +190,7 @@
   background-color: #fdfdfd;
   width: 100%;
 }
-.global-planner-container .year-planner .year-block .month-row .month-container .month-block:hover {
+.global-planner-container .parent-planner .parent-block .child-row .child-container .child-block:hover {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   background-color: #f9f9f9;
   transform: scale(1.05);
@@ -199,7 +198,7 @@
   position: relative;
   z-index: 3 !important;
 }
-.global-planner-container .year-planner .year-block .month-row .month-container .month-block.active {
+.global-planner-container .parent-planner .parent-block .child-row .child-container .child-block.active {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
   background-color: #337ab7;
   transform: scale(1.05);
@@ -209,21 +208,22 @@
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
 }
-.global-planner-container .year-planner .year-block .month-row .month-container .month-block.active .month-name,
-.global-planner-container .year-planner .year-block .month-row .month-container .month-block.active .month-dates {
+.global-planner-container .parent-planner .parent-block .child-row .child-container .child-block.active .child-name,
+.global-planner-container .parent-planner .parent-block .child-row .child-container .child-block.active .child-dates {
   color: #ffffff !important;
 }
-.global-planner-container .year-planner .year-block .month-row .month-container .month-block .month-name {
+.global-planner-container .parent-planner .parent-block .child-row .child-container .child-block .child-name {
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   margin-bottom: 0.25rem;
+  color: #337ab7;
 }
-.global-planner-container .year-planner .year-block .month-row .month-container .month-block .month-dates {
+.global-planner-container .parent-planner .parent-block .child-row .child-container .child-block .child-dates {
   font-size: 0.75rem;
   color: #777;
   margin-bottom: 0.5rem;
 }
-.global-planner-container .year-planner .year-block .month-row .month-container .month-block img {
+.global-planner-container .parent-planner .parent-block .child-row .child-container .child-block img {
   height: 100%;
   object-fit: cover;
   border-radius: 0.25rem;

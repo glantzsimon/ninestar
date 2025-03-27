@@ -12,20 +12,20 @@ namespace K9.WebApplication.ViewModels
         public DateTime Lichun { get; set; }
         public DateTime PeriodStarsOn { get; set; }
         public DateTime PeriodEndsOn { get; set; }
-        public List<(NineStarKiEnergy Energy, DateTime EnergyStartsOn, DateTime EnergyEndsOn, bool IsSelected)> Energies { get; set; }
+        public List<(NineStarKiEnergy Energy, NineStarKiEnergy SecondEnergy, DateTime EnergyStartsOn, DateTime EnergyEndsOn, bool IsSelected)> Energies { get; set; }
 
         public string PeriodDatesTitle => GetPeriodDatesTitle();
 
         public string PeriodDatesDetails => GetPeriodDatesDetails();
 
-        public string GetEnergyTitle((NineStarKiEnergy Energy, DateTime EnergyStartsOn, DateTime EnergyEndsOn, bool IsSelected) energy)
+        public string GetEnergyTitle((NineStarKiEnergy Energy, NineStarKiEnergy SecondEnergy, DateTime EnergyStartsOn, DateTime EnergyEndsOn, bool IsSelected) energy)
         {
             return $"{energy.EnergyStartsOn.ToString("MMM")}";
         }
 
-        public string GetEnergyDatesDetails((NineStarKiEnergy Energy, DateTime EnergyStartsOn, DateTime EnergyEndsOn, bool IsSelected) energy)
+        public string GetEnergyDatesDetails((NineStarKiEnergy Energy, NineStarKiEnergy SecondEnergy, DateTime EnergyStartsOn, DateTime EnergyEndsOn, bool IsSelected) energy)
         {
-            return $"{energy.EnergyStartsOn.ToString("MMM dd")} {energy.EnergyEndsOn.ToString("MMM dd")}";
+            return $"{energy.EnergyStartsOn.ToString("MMM/dd")} {energy.EnergyEndsOn.ToString("MMM/dd")}";
         }
 
         private string GetPeriodDatesTitle()
@@ -69,8 +69,8 @@ namespace K9.WebApplication.ViewModels
                 case EPlannerView.NineYear:
                 case EPlannerView.Year:
                 case EPlannerView.Month:
-                    var periodStart = PeriodStarsOn.Year.ToString("MMM/dd/yy");
-                    var periodEnd = PeriodEndsOn.Year.ToString("MMM/dd/yy");
+                    var periodStart = PeriodStarsOn.ToString("MMM/dd/yy");
+                    var periodEnd = PeriodEndsOn.ToString("MMM/dd/yy");
                     return $"{periodStart} - {periodEnd}";
 
                 default:

@@ -9,7 +9,7 @@ namespace K9.WebApplication.Services
     public interface INineStarKiService : IBaseService
     {
         NineStarKiModel CalculateNineStarKiProfile(DateTime dateOfBirth, EGender gender = EGender.Male);
-        
+
         NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, DateTime today);
 
         NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, bool isCompatibility = false,
@@ -19,7 +19,7 @@ namespace K9.WebApplication.Services
             bool invertDailyAndHourlyKiForSouthernHemisphere = false,
             bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false,
             EDisplayDataForPeriod displayDataForPeriod = EDisplayDataForPeriod.Now);
-        
+
         NineStarKiSummaryViewModel GetNineStarKiSummaryViewModel();
         CompatibilityModel CalculateCompatibility(DateTime dateOfBirth1, EGender gender1, DateTime dateOfBirth2,
 
@@ -27,5 +27,19 @@ namespace K9.WebApplication.Services
 
         CompatibilityModel CalculateCompatibility(PersonModel personModel1, PersonModel personModel2,
             bool isHideSexuality, ECalculationMethod calculationMethod = ECalculationMethod.Chinese);
+
+        PlannerViewModel
+            GetPlannerData(
+                DateTime dateOfBirth,
+                string birthTimeZoneId,
+                TimeSpan timeOfBirth,
+                EGender gender,
+                DateTime selectedDateTime,
+                ECalculationMethod calculationMethod,
+                string userTimeZoneId,
+                bool useHolograhpicCycleCalculation,
+                bool invertDailyAndHourlyKiForSouthernHemisphere,
+                bool invertDailyAndHourlyCycleKiForSouthernHemisphere,
+                EPlannerView view = EPlannerView.Year);
     }
 }

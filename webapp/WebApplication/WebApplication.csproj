@@ -357,6 +357,7 @@
     <Compile Include="Enums\ECalculationsMethod.cs" />
     <Compile Include="Enums\ENumerologyCode.cs" />
     <Compile Include="Enums\EForecastType.cs" />
+    <Compile Include="Enums\EPlannerView.cs" />
     <Compile Include="Enums\ESeason.cs" />
     <Compile Include="Enums\ENineStarKiElement.cs" />
     <Compile Include="Enums\ENineStarKiElementEnumMetaDataAttribute.cs" />
@@ -477,6 +478,7 @@
     <Compile Include="Services\IAccountService.cs" />
     <Compile Include="Services\IPromotionService.cs" />
     <Compile Include="Services\PromotionService.cs" />
+    <Compile Include="ViewModels\PlannerViewModel.cs" />
     <Compile Include="ViewModels\NumerologyForecastViewModel.cs" />
     <Compile Include="ViewModels\SendEmailTemplateViewModel.cs" />
     <Compile Include="ViewModels\EmailTemplateDynamicFieldsViewModel.cs" />
@@ -1638,6 +1640,7 @@
     <Content Include="Views\Compatibility\_PersonalChart.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DisplayDataForPeriod.cshtml" />
     <Content Include="Views\Predictions\_CycleSplitTitle.cshtml" />
+    <Content Include="Views\Predictions\Planner\_GlobalPlanner.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

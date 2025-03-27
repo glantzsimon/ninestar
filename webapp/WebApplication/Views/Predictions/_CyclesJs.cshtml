@@ -111,8 +111,8 @@
                     }).done(
                     function(result) {
                         if (result.success) {
-                            $("#daily-planner .panel-heading h4").html(result.data.title);
-                            $("#daily-planner .panel-body").html(result.data.view);
+                            $("#daily-planner-container .panel-heading h4").html(result.data.title);
+                            $("#daily-planner-container .panel-body").html(result.data.view);
                         }
                     });
             }

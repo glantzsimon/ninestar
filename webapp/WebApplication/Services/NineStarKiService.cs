@@ -6,6 +6,7 @@ using K9.WebApplication.Packages;
 using K9.WebApplication.ViewModels;
 using System;
 using System.Collections.Generic;
+using K9.SharedLibrary.Extensions;
 
 namespace K9.WebApplication.Services
 {
@@ -231,6 +232,64 @@ namespace K9.WebApplication.Services
 
                 return new NineStarKiSummaryViewModel(yearEnergies, monthEnergies, dynamicEnergies, staticEnergies,
                     reflectiveEnergies);
+            }, TimeSpan.FromDays(30));
+        }
+
+        public PlannerViewModel
+            GetPlannerData(
+                DateTime dateOfBirth,
+                string birthTimeZoneId,
+                TimeSpan timeOfBirth,
+                EGender gender,
+                DateTime selectedDateTime,
+                ECalculationMethod calculationMethod,
+                string userTimeZoneId,
+                bool useHolograhpicCycleCalculation,
+                bool invertDailyAndHourlyKiForSouthernHemisphere,
+                bool invertDailyAndHourlyCycleKiForSouthernHemisphere,
+                EPlannerView view = EPlannerView.Year)
+        {
+            return GetOrAddToCache($"GetPlannerData_{view.ToString()}_{dateOfBirth:yyyyMMddHHmm}_{timeOfBirth.ToString()}_" +
+                                   $"{gender}_{selectedDateTime:yyyyMMddHHmm}_{userTimeZoneId}_{calculationMethod}_" +
+                                   $"{userTimeZoneId}_{useHolograhpicCycleCalculation}_" +
+                                   $"{invertDailyAndHourlyKiForSouthernHemisphere}_" +
+                                   $"{invertDailyAndHourlyCycleKiForSouthernHemisphere}", () =>
+            {
+                var energies = new List<(NineStarKiEnergy Energy, DateTime EnergyStartsOn, DateTime EnergyEndsOn, bool IsSelected)>();
+                var lichun = _swissEphemerisService.GetLichun(selectedDateTime, userTimeZoneId);
+                var nineStarKiModel = CalculateNineStarKiProfile(new PersonModel
+                {
+                    DateOfBirth = dateOfBirth,
+                    BirthTimeZoneId = birthTimeZoneId,
+                    TimeOfBirth = timeOfBirth,
+                    Gender = gender
+                }, false, false, selectedDateTime, calculationMethod, false, false, userTimeZoneId,
+                    useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
+
+                // Yearly
+                var yearlyPeriod = _swissEphemerisService.GetNineStarKiYearlyPeriod(selectedDateTime, userTimeZoneId);
+                var monthlyPeriodsForYear =
+                    _swissEphemerisService.GetNineStarKiMonthlyPeriods(selectedDateTime, userTimeZoneId);
+
+                foreach (var monthlyPeriod in monthlyPeriodsForYear)
+                {
+                    var energy = nineStarKiModel.GetPersonalCycleEnergy(monthlyPeriod.MonthlyKi, useHolograhpicCycleCalculation ? nineStarKiModel.PersonalChartEnergies.Month.EnergyNumber : nineStarKiModel.MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.MonthlyCycleEnergy);
+
+                    var isSelected =
+                        selectedDateTime.IsBetween(monthlyPeriod.PeriodStartOn, monthlyPeriod.PeriodEndsOn);
+
+                    energies.Add((energy, monthlyPeriod.PeriodStartOn, monthlyPeriod.PeriodEndsOn, isSelected));
+                }
+
+                return new PlannerViewModel
+                {
+                    View = view,
+                    Energy = nineStarKiModel.GlobalCycleEnergies.Year,
+                    Lichun = lichun,
+                    PeriodStarsOn = yearlyPeriod.PeriodStartsOn,
+                    PeriodEndsOn = yearlyPeriod.PeriodEndsOn,
+                    Energies = energies
+                };
             }, TimeSpan.FromDays(30));
         }
 

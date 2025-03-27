@@ -248,7 +248,7 @@
             public const string Stable = "Stable";
             public const string Dynamic = "Dynamic";
             public const string Reflective = "Reflective";
-
+            
             public const string SpleenPancreas = "SpleenPancreas";
             public const string Lungs = "Lungs";
             public const string Kidneys = "Kidneys";

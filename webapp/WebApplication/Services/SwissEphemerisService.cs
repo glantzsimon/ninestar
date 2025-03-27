@@ -302,6 +302,35 @@ namespace K9.WebApplication.Services
             }, TimeSpan.FromDays(30));
         }
 
+        public (DateTime PeriodStartsOn, DateTime PeriodEndsOn, int YearlyKi) GetNineStarKiYearlyPeriod(DateTime selectedDateTime, string timeZoneId)
+        {
+            // Create a cache key that includes the full date/time details.
+            string cacheKey = $"{nameof(GetNineStarKiYearlyPeriod)}_{selectedDateTime:yyyyMMddHHmmss}_{timeZoneId}";
+            return GetOrAddToCache(cacheKey, () =>
+            {
+                using (var sweph = new SwissEph())
+                {
+                    sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
+                    DateTime selectedUT = ConvertToUT(selectedDateTime, timeZoneId);
+                    // Determine the adjusted Nine Star Ki year based on Lìchūn.
+                    int adjustedYear = AdjustYearForLichun(sweph, selectedUT);
+
+                    // Get the Julian Day for Lìchūn of the adjusted year and the next year.
+                    double jdStart = GetSolarTerm(sweph, adjustedYear, 315.0);
+                    double jdEnd = GetSolarTerm(sweph, adjustedYear + 1, 315.0);
+
+                    // Convert these to DateTime.
+                    DateTime periodStart = JulianDayToDateTime(sweph, jdStart).Date;
+                    DateTime periodEnd = JulianDayToDateTime(sweph, jdEnd).Date.AddDays(-1);
+
+                    // Calculate the yearly ki, using your convention (for example, using periodStart.AddDays(1)).
+                    int yearlyKi = GetNineStarKiYearlyKi(periodStart.AddDays(1), timeZoneId);
+
+                    return (periodStart, periodEnd, yearlyKi);
+                }
+            }, TimeSpan.FromDays(30));
+        }
+
         public (DateTime PeriodStartOn, DateTime PeriodEndsOn) GetNineStarKiMonthlyPeriodBoundaries(DateTime selectedDateTime, string timeZoneId)
         {
             string cacheKey = $"{nameof(GetNineStarKiMonthlyPeriodBoundaries)}_{selectedDateTime:yyyyMMddHH}_{timeZoneId}";

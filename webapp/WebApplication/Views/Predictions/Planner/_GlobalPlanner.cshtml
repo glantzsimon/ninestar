@@ -1,0 +1,69 @@
+﻿@using K9.SharedLibrary.Extensions
+@using K9.WebApplication.Config
+@using K9.WebApplication.Helpers
+
+@model K9.WebApplication.ViewModels.PlannerViewModel
+
+@{
+    var activeMonth = Model.Energies.FirstOrDefault();
+}
+
+<div class="container main-content clear-both global-planner-container">
+    @Html.Hidden("PlannerEnableScrollIntoView", true);
+
+    <div class="year-planner">
+        <!-- Year Block -->
+        <div class="year-block active planner-item-container" data-year="@Model.Energy">
+            
+            <!-- Top Row: Year Summary -->
+            <div class="global-planner-item" data-energy="@Model.Energy" data-view="@Model.View">
+                <div class="year-summary-row clickable">
+                    <div class="year-label">
+                        <div class="year-number">@Model.PeriodDatesTitle</div>
+                        <div class="year-dates">@Model.PeriodDatesDetails</div>
+                    </div>
+                    <div class="year-detail narrow">
+                        <img loading="lazy" title="@Model.Energy.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @Model.Energy.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(Model.Energy.ToString().ToLower()).png" />
+                    </div>
+                    <div class="year-detail wide">
+                        <div>
+                            <h4 class="margin-0">@Model.Energy.EnergyName</h4>
+                        </div>
+                        <div>
+                            @Model.Energy.SeasonDescription / @Model.Energy.CycleDescriptiveName
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Row: Month Breakdown -->
+            <div class="month-row row">
+                @foreach (var energy in Model.Energies)
+                {
+                    var activeClass = energy.IsSelected ? "active current-month" : string.Empty;
+                    var energyTitle = Model.GetEnergyTitle(energy);
+                    var datesDisplay = Model.GetEnergyDatesDetails(energy);
+
+                    <div class="col-md-1 col-sm-1 col-xs-2 padding-0 margin-0 month-container">
+                        
+                        <div class="global-planner-item" data-energy="@energy.Energy" data-view="@Model.View" data-type="child" data-month-startson="@energy.EnergyStartsOn.ToString("yyyy-MM-dd HHHH:mm")">
+                            
+                            <div class="planner-item-container month-block clickable @activeClass">
+                                <div class="month-name">@energyTitle</div>
+                                <div class="desktop-only month-dates"></div>
+                                <img loading="lazy" title="@energy.Energy.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @energy.Energy.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(energy.Energy.ToString().ToLower()).png" />
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        }
+    </div>
+</div>
+
+<hr />
+
+@*<div id="global-planner-details">
+    @Html.Panel(activeMonth.Item4.CycleDescriptiveName, activeMonth.Item4.CycleDescription)
+</div>*@

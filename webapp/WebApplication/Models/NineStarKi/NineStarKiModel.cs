@@ -463,7 +463,7 @@ namespace K9.WebApplication.Models
                 : DateTimeHelper.ConvertToLocaleDateTime(DateTime.UtcNow, PersonModel.BirthTimeZoneId);
         }
 
-        private NineStarKiEnergy GetPersonalEnergy(int energyNumber, ENineStarKiEnergyType energyType)
+        public NineStarKiEnergy GetPersonalEnergy(int energyNumber, ENineStarKiEnergyType energyType)
         {
             energyNumber = GetNineStarKiNumber(energyNumber);
             if (PersonModel.Gender.IsYin() && CalculationMethod == ECalculationMethod.Chinese)
@@ -474,13 +474,13 @@ namespace K9.WebApplication.Models
             return new NineStarKiEnergy((ENineStarKiEnergy)energyNumber, energyType, PersonModel.IsAdult());
         }
 
-        private NineStarKiEnergy GetSurfaceEnergy()
+        public NineStarKiEnergy GetSurfaceEnergy()
         {
             var surfaceEnergyNumber = GetNineStarKiNumber(5 - (CharacterEnergy.EnergyNumber - MainEnergy.EnergyNumber));
             return new NineStarKiEnergy((ENineStarKiEnergy)surfaceEnergyNumber, ENineStarKiEnergyType.SurfaceEnergy);
         }
 
-        private NineStarKiEnergy GetGlobalCycleEnergy(int cycleEnergy, ENineStarKiEnergyCycleType cycleType)
+        public NineStarKiEnergy GetGlobalCycleEnergy(int cycleEnergy, ENineStarKiEnergyCycleType cycleType)
         {
             cycleEnergy = IsCycleSwitchActive ? InvertEnergy(cycleEnergy) : cycleEnergy;
 
@@ -489,7 +489,7 @@ namespace K9.WebApplication.Models
             return new NineStarKiEnergy(energy, cycleType);
         }
 
-        private NineStarKiEnergy GetPersonalCycleEnergy(int cycleEnergy, int energyNumber, ENineStarKiEnergyCycleType cycleType)
+        public NineStarKiEnergy GetPersonalCycleEnergy(int cycleEnergy, int energyNumber, ENineStarKiEnergyCycleType cycleType)
         {
             var invertCycle = (CalculationMethod == ECalculationMethod.Chinese && PersonModel.Gender.IsYin()) || IsCycleSwitchActive;
             cycleEnergy = invertCycle ? InvertEnergy(cycleEnergy) : cycleEnergy;

@@ -21,12 +21,16 @@
     }
 
     function scrollActivePlannerItemIntoVew() {
+        if ($("#PlannerEnableScrollIntoView").val() === 'True') {
         setTimeout(function () {
-            var $cycle = $(".year-planner .active");
+            var $cycle = $(".year-block .active");
             var $container = $(".global-planner-container");
 
             $container.scrollTop($cycle.offset().top - $container.offset().top - 154);
+
+            $("#PlannerEnableScrollIntoView").val(false);
         }, 200);
+        }
     }
 
     function scrollCyclesIntoVew(tab) {
@@ -83,6 +87,7 @@
                 url = '@Url.Action("GetYearlyForecast", "Predictions")';
             }
             else if (type === "month") {
+                $yearBlock.addClass("active");
                 $monthBlock.addClass("active");
 
                 url = '@Url.Action("GetMonthlyForecast", "Predictions")';
@@ -98,6 +103,7 @@
                         timeOfBirth: '@Model.PersonModel.TimeOfBirth.ToString()',
                         gender: '@Model.PersonModel.Gender',
                         selectedDateTime: monthStarsOn,
+                        userTimeZoneId: '@Model.UserTimeZoneId',
                         calculationMethod: '@Model.CalculationMethod.ToString()',
                         useHolograhpicCycleCalculation: '@Model.UseHolograhpicCycleCalculation.ToString().ToLower()',
                         invertDailyAndHourlyKiForSouthernHemisphere: '@Model.InvertDailyAndHourlyKiForSouthernHemisphere.ToString().ToLower()',
@@ -105,7 +111,6 @@
                     }).done(
                     function(result) {
                         if (result.success) {
-                            debugger;
                             $("#daily-planner .panel-heading").html(result.data.title);
                             $("#daily-planner .panel-body").html(result.data.view);
                         }

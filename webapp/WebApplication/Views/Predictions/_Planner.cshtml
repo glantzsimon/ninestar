@@ -10,6 +10,7 @@
 }
 
 <div class="container main-content clear-both global-planner-container">
+    @Html.Hidden("PlannerEnableScrollIntoView", true);
 
     <div class="year-planner">
         @foreach (var yearlyCycle in cycles)

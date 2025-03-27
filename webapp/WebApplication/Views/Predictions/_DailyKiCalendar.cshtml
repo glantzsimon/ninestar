@@ -26,10 +26,12 @@
             var year = cycle.Item1;
             var month = cycle.Item2;
             var day = cycle.Item3;
-            var dayName = cycle.Item4;
-            var monthName = cycle.Item5;
+            var monthName = cycle.Item4;
+            var dayName = cycle.Item5;
             var energy = cycle.Item6;
+            var secondEnergy = cycle.Item7;
             var date = new DateTime(year, month, day);
+            var displayDate = $"{dayName} {monthName} {@day}";
 
             var selectedClass = date == Model.SelectedDate.Value.Date ? "selected" : "";
 
@@ -45,9 +47,21 @@
             }
 
             <div class="calendar-day @selectedClass">
-                <div class="date-label">@monthName @day</div>
+                <div class="date-label">@displayDate</div>
                 <div class="custom-content">
-                    <img loading="lazy" title="@energy.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @energy.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(energy.Energy.ToString().ToLower()).png" />
+                    @if (secondEnergy == null)
+                    {
+                        <img loading="lazy" title="@energy.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @energy.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(energy.Energy.ToString().ToLower()).png" />
+                    }
+                    else
+                    {
+                        <div class="double-energy-container">
+                            <img loading="lazy" title="@energy.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @energy.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(energy.Energy.ToString().ToLower()).png" />
+                            <span> - </span>
+                            <img loading="lazy" title="@secondEnergy.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @secondEnergy.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(secondEnergy.Energy.ToString().ToLower()).png" />
+                        </div>
+                    }
+
                 </div>
             </div>
         }

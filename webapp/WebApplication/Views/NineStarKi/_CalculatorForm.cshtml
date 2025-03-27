@@ -51,11 +51,13 @@
         var selectedDateDisplayStyle = Model.DisplayDataForPeriod == EDisplayDataForPeriod.SelectedDate ? "" : "display: none;";
 
         <hr />
+            
         @Html.BootstrapEditorFor(model => model.DisplayDataForPeriod)
+        @Html.BootstrapEditorFor(model => model.UserTimeZoneId)
+
         <div id="predictions-selected-date-container" style="@selectedDateDisplayStyle">
             @Html.BootstrapEditorFor(model => model.SelectedDate)
             @Html.BootstrapEditorFor(model => model.SelectedTime)
-            @Html.BootstrapEditorFor(model => model.TimeZoneId)
         </div>
     }
 

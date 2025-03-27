@@ -17024,6 +17024,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to User Time Zone.
+        /// </summary>
+        public static string UserTimeZone {
+            get {
+                return ResourceManager.GetString("UserTimeZone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Valid until:.
         /// </summary>
         public static string ValidUntil {

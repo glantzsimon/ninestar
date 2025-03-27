@@ -4951,4 +4951,7 @@
   <data name="SelectedTimeLabel" xml:space="preserve">
     <value>Selected Time</value>
   </data>
+  <data name="UserTimeZone" xml:space="preserve">
+    <value>User Time Zone</value>
+  </data>
 </root>

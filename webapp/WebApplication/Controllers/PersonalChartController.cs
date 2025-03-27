@@ -49,8 +49,8 @@ namespace K9.WebApplication.Controllers
                     // Add time of birth
                     model.PersonModel.DateOfBirth = model.PersonModel.DateOfBirth.Add(model.PersonModel.TimeOfBirth);
                     var processedModel = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false,
-                        model.SelectedDate, model.CalculationMethod, false, model.UseHolograhpicCycleCalculation, model.InvertDailyAndHourlyKiForSouthernHemisphere);
-                    
+                        model.SelectedDate, model.CalculationMethod, false, model.UseHolograhpicCycleCalculation, model.PersonModel.BirthTimeZoneId, model.InvertDailyAndHourlyKiForSouthernHemisphere);
+
                     model.IsScrollToCyclesOverview = isScrollToCyclesOverview;
                     model.ActiveCycleTabId = activeTabId;
 
@@ -62,7 +62,7 @@ namespace K9.WebApplication.Controllers
                 }
             }
 
-            return View("Index",model);
+            return View("Index", model);
         }
 
         [Authorize]

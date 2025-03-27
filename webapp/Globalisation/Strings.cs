@@ -138,6 +138,7 @@
             public const string Contact = "Contact";
             public const string TimeZones = "TimeZones";
             public const string BirthTimeZone = "BirthTimeZone";
+            public const string UserTimeZone = "UserTimeZone";
             public const string TimeZone = "TimeZone";
             public const string Promotions = "Promotions";
             public const string Donation = "Donation";

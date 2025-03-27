@@ -23,11 +23,13 @@
     text-align: center;
     font-weight: 600;
     color: #666;
+    padding: 7px;
+    margin-bottom: 7px;
 }
 
 .calendar-day {
     outline: 1px solid #e0e0e0;
-    padding: 0;
+    padding: 3px;
     background-color: #f9f9f9;
     display: flex;
     flex-direction: column;
@@ -56,6 +58,17 @@
         margin-top: 0.25rem;
         width: 100%;
         color: #444;
+
+        .double-energy-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            img {
+                width: 48%; 
+                height: auto; 
+            }
+        }
     }
 
     img {
@@ -70,7 +83,7 @@
         transform: translateY(-1px);
         position: relative;
         z-index: 3 !important;
-        border-radius: 0px;
+        border-radius: 11px;
 
         div {
             color: @snow-white;
@@ -225,7 +238,8 @@
                             transform: translateY(-1x);
                             position: relative;
                             z-index: 2 !important;
-                            border-radius: 7px;
+                            border-top-left-radius: 7px;
+                            border-top-right-radius: 7px;
 
 
                             .month-name, .month-dates {

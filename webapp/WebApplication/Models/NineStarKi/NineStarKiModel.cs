@@ -58,14 +58,14 @@ namespace K9.WebApplication.Models
             };
 
             PersonModel = personModel;
-            TimeZoneId = Current.UserTimeZoneId;
+            UserTimeZoneId = Current.UserTimeZoneId;
             SelectedTime = new TimeSpan?();
         }
 
         public NineStarKiModel(PersonModel personModel)
         {
             PersonModel = personModel;
-            TimeZoneId = Current.UserTimeZoneId;
+            UserTimeZoneId = Current.UserTimeZoneId;
             SelectedTime = new TimeSpan?();
         }
 
@@ -75,7 +75,7 @@ namespace K9.WebApplication.Models
 
             ECalculationMethod calculationMethod = ECalculationMethod.Chinese, bool useHolograhpicCycleCalculation = false, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false, string displayDataForTimeZoneId = "")
         {
-            TimeZoneId = string.IsNullOrEmpty(displayDataForTimeZoneId) ? Current.UserTimeZoneId : displayDataForTimeZoneId;
+            UserTimeZoneId = string.IsNullOrEmpty(displayDataForTimeZoneId) ? Current.UserTimeZoneId : displayDataForTimeZoneId;
             SelectedDate = selectedDate ?? DateTime.UtcNow;
             CalculationMethod = calculationMethod;
             UseHolograhpicCycleCalculation = useHolograhpicCycleCalculation;
@@ -217,7 +217,7 @@ namespace K9.WebApplication.Models
         [Required(ErrorMessageResourceType = typeof(Base.Globalisation.Dictionary),
             ErrorMessageResourceName = Base.Globalisation.Strings.ErrorMessages.FieldIsRequired)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.TimeZone)]
-        public string TimeZoneId { get; set; }
+        public string UserTimeZoneId { get; set; }
 
         public NineStarKiEnergiesModel PersonalChartEnergies { get; }
 
@@ -322,7 +322,7 @@ namespace K9.WebApplication.Models
 
         public (DateTime PeriodStartOn, DateTime PeriodEndsOn, int MonthlyKi)[] MonthlyPeriods { get; set; }
 
-        public (DateTime Date, int DailyKi, int? InvertedDailyKi)[] DailyPeriods { get; set; }
+        public (DateTime Date, int DailyKi, int? InvertedDailyKi, int? AfternoonKi)[] DailyPeriods { get; set; }
 
         public List<Tuple<int, DateTime, DateTime, NineStarKiEnergy, List<Tuple<int, int, DateTime, DateTime, string, NineStarKiEnergy>>>> GetGlobalPlanner()
         {
@@ -393,15 +393,20 @@ namespace K9.WebApplication.Models
             }, TimeSpan.FromDays(30));
         }
 
-        public List<Tuple<int, int, int, string, string, NineStarKiEnergy>> GetDailyPlanner()
+        public List<Tuple<int, int, int, string, string, NineStarKiEnergy, NineStarKiEnergy>> GetDailyPlanner()
         {
             return GetOrAddToCache($"DailyPlanner_{SelectedDate.ToString()}", () =>
             {
-                var cycles = new List<Tuple<int, int, int, string, string, NineStarKiEnergy>>();
+                var cycles = new List<Tuple<int, int, int, string, string, NineStarKiEnergy, NineStarKiEnergy>>();
 
                 foreach (var day in DailyPeriods)
                 {
-                    cycles.Add(new Tuple<int, int, int, string, string, NineStarKiEnergy>(day.Date.Year, day.Date.Month, day.Date.Day, day.Date.ToString("MMM"), day.Date.ToString("ddd"), GetPersonalCycleEnergy(InvertDailyAndHourlyCycleKiForSouthernHemisphere ? GetOppositeEnergyInMagicSquare(day.DailyKi) : day.DailyKi, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Day.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.DailyEnergy)));
+                    cycles.Add(new Tuple<int, int, int, string, string, NineStarKiEnergy, NineStarKiEnergy>(day.Date.Year, day.Date.Month, day.Date.Day, day.Date.ToString("MMM"), day.Date.ToString("ddd"), 
+                        
+                        GetPersonalCycleEnergy(InvertDailyAndHourlyCycleKiForSouthernHemisphere ? GetOppositeEnergyInMagicSquare(day.DailyKi) : day.DailyKi, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Day.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.DailyEnergy),
+                        
+                        day.AfternoonKi == null ? null : GetPersonalCycleEnergy(InvertDailyAndHourlyCycleKiForSouthernHemisphere ? GetOppositeEnergyInMagicSquare(day.AfternoonKi.Value) : day.AfternoonKi.Value, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Day.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.DailyEnergy)
+                        ));
                 }
 
                 return cycles;

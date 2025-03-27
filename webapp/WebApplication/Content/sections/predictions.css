@@ -18,10 +18,12 @@
   text-align: center;
   font-weight: 600;
   color: #666;
+  padding: 7px;
+  margin-bottom: 7px;
 }
 .calendar-day {
   outline: 1px solid #e0e0e0;
-  padding: 0;
+  padding: 3px;
   background-color: #f9f9f9;
   display: flex;
   flex-direction: column;
@@ -49,6 +51,15 @@
   width: 100%;
   color: #444;
 }
+.calendar-day .custom-content .double-energy-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.calendar-day .custom-content .double-energy-container img {
+  width: 48%;
+  height: auto;
+}
 .calendar-day img {
   max-width: 72px;
   padding-left: 2px;
@@ -60,7 +71,7 @@
   transform: translateY(-1px);
   position: relative;
   z-index: 3 !important;
-  border-radius: 0px;
+  border-radius: 11px;
 }
 .calendar-day.selected div {
   color: #ffffff;
@@ -195,7 +206,8 @@
   transform: translateY(-1x);
   position: relative;
   z-index: 2 !important;
-  border-radius: 7px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
 }
 .global-planner-container .year-planner .year-block .month-row .month-container .month-block.active .month-name,
 .global-planner-container .year-planner .year-block .month-row .month-container .month-block.active .month-dates {

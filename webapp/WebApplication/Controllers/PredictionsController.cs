@@ -87,13 +87,13 @@ namespace K9.WebApplication.Controllers
                     model.PersonModel.DateOfBirth = model.PersonModel.DateOfBirth.Add(model.PersonModel.TimeOfBirth);
 
                     var processedModel = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false,
-                        model.SelectedDate, model.CalculationMethod, true, true, model.UseHolograhpicCycleCalculation, model.InvertDailyAndHourlyKiForSouthernHemisphere,
+                        model.SelectedDate, model.CalculationMethod, true, true, model.UserTimeZoneId, model.UseHolograhpicCycleCalculation, model.InvertDailyAndHourlyKiForSouthernHemisphere,
                         model.InvertDailyAndHourlyCycleKiForSouthernHemisphere);
 
                     processedModel.DisplayDataForPeriod = model.DisplayDataForPeriod;
                     processedModel.SelectedTime = model.SelectedTime;
                     processedModel.CalculationMethod = model.CalculationMethod;
-                    processedModel.TimeZoneId = model.TimeZoneId;
+                    processedModel.UserTimeZoneId = model.UserTimeZoneId;
                     processedModel.SelectedDate = model.SelectedDate;
                     processedModel.SelectedTime = model.SelectedTime;
                     processedModel.UseHolograhpicCycleCalculation = model.UseHolograhpicCycleCalculation;
@@ -116,9 +116,9 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("get-daily-calendar")]
-        public ActionResult GetDailyCalendar(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, DateTime selectedDateTime, ECalculationMethod calculationMethod, bool useHolograhpicCycleCalculation, bool invertDailyAndHourlyKiForSouthernHemisphere, bool invertDailyAndHourlyCycleKiForSouthernHemisphere)
+        public ActionResult GetDailyCalendar(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, DateTime selectedDateTime, string timeZoneId, ECalculationMethod calculationMethod, string userTimeZoneId, bool useHolograhpicCycleCalculation, bool invertDailyAndHourlyKiForSouthernHemisphere, bool invertDailyAndHourlyCycleKiForSouthernHemisphere)
         {
-            var dailyPeriods = _swissEphemerisService.GetNineStarKiDailyEnergiesForMonth(selectedDateTime, birthTimeZoneId);
+            var dailyPeriods = _swissEphemerisService.GetNineStarKiDailyEnergiesForMonth(selectedDateTime.AddDays(1), birthTimeZoneId);
 
             var nineStarKiModel = _nineStarKiService.CalculateNineStarKiProfile(new PersonModel
             {
@@ -126,7 +126,7 @@ namespace K9.WebApplication.Controllers
                 BirthTimeZoneId = birthTimeZoneId,
                 TimeOfBirth = timeOfBirth,
                 Gender = gender
-            }, false, false, selectedDateTime, calculationMethod, false, false,
+            }, false, false, selectedDateTime, calculationMethod, false, false, userTimeZoneId,
                 useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
 
             nineStarKiModel.DailyPeriods = dailyPeriods;

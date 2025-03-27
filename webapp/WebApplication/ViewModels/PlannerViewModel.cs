@@ -14,6 +14,8 @@ namespace K9.WebApplication.ViewModels
         public DateTime PeriodStarsOn { get; set; }
         public DateTime PeriodEndsOn { get; set; }
         public List<(NineStarKiEnergy Energy, NineStarKiEnergy SecondEnergy, DateTime EnergyStartsOn, DateTime EnergyEndsOn, bool IsSelected)> Energies { get; set; }
+        public string UpdateParentUrl { get; set; }
+        public string UpdateChildUrl { get; set; }
 
         public string PeriodDatesTitle => GetPeriodDatesTitle();
 

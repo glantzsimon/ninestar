@@ -160,6 +160,32 @@ namespace K9.WebApplication.Services
         {
             return GetOrAddToCache("GetNineStarKiSummaryViewModel", () =>
             {
+                var eightyOneYearEnergies = new List<NineStarKiEnergy>
+                {
+                    new NineStarKiEnergy(ENineStarKiEnergy.Water, ENineStarKiEnergyType.EpochEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.EpochEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Soil, ENineStarKiEnergyType.EpochEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.EpochEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Thunder, ENineStarKiEnergyType.EpochEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.EpochEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Wind, ENineStarKiEnergyType.EpochEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.EpochEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.CoreEarth, ENineStarKiEnergyType.EpochEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.EpochEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Heaven, ENineStarKiEnergyType.EpochEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.EpochEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Lake, ENineStarKiEnergyType.EpochEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.EpochEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Mountain, ENineStarKiEnergyType.EpochEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.EpochEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Fire, ENineStarKiEnergyType.EpochEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.YearlyCycleEnergy}
+                };
+
+                var nineYearEnergies = new List<NineStarKiEnergy>
+                {
+                    new NineStarKiEnergy(ENineStarKiEnergy.Water, ENineStarKiEnergyType.GenerationalEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.GenerationalEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Soil, ENineStarKiEnergyType.GenerationalEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.GenerationalEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Thunder, ENineStarKiEnergyType.GenerationalEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.GenerationalEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Wind, ENineStarKiEnergyType.GenerationalEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.GenerationalEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.CoreEarth, ENineStarKiEnergyType.GenerationalEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.GenerationalEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Heaven, ENineStarKiEnergyType.GenerationalEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.GenerationalEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Lake, ENineStarKiEnergyType.GenerationalEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.GenerationalEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Mountain, ENineStarKiEnergyType.GenerationalEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.GenerationalEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Fire, ENineStarKiEnergyType.GenerationalEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.YearlyCycleEnergy}
+                };
+
                 var yearEnergies = new List<NineStarKiEnergy>
                 {
                     new NineStarKiEnergy(ENineStarKiEnergy.Water, ENineStarKiEnergyType.MainEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.YearlyCycleEnergy},
@@ -186,6 +212,32 @@ namespace K9.WebApplication.Services
                     new NineStarKiEnergy(ENineStarKiEnergy.Fire, ENineStarKiEnergyType.CharacterEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.MonthlyCycleEnergy}
                 };
 
+                var dailyEnergies = new List<NineStarKiEnergy>
+                {
+                    new NineStarKiEnergy(ENineStarKiEnergy.Water, ENineStarKiEnergyType.DailyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.DailyEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Soil, ENineStarKiEnergyType.DailyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.DailyEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Thunder, ENineStarKiEnergyType.DailyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.DailyEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Wind, ENineStarKiEnergyType.DailyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.DailyEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.CoreEarth, ENineStarKiEnergyType.DailyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.DailyEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Heaven, ENineStarKiEnergyType.DailyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.DailyEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Lake, ENineStarKiEnergyType.DailyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.DailyEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Mountain, ENineStarKiEnergyType.DailyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.DailyEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Fire, ENineStarKiEnergyType.DailyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.YearlyCycleEnergy}
+                };
+
+                var hourlyEnergies = new List<NineStarKiEnergy>
+                {
+                    new NineStarKiEnergy(ENineStarKiEnergy.Water, ENineStarKiEnergyType.HourlyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.HourlyEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Soil, ENineStarKiEnergyType.HourlyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.HourlyEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Thunder, ENineStarKiEnergyType.HourlyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.HourlyEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Wind, ENineStarKiEnergyType.HourlyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.HourlyEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.CoreEarth, ENineStarKiEnergyType.HourlyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.HourlyEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Heaven, ENineStarKiEnergyType.HourlyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.HourlyEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Lake, ENineStarKiEnergyType.HourlyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.HourlyEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Mountain, ENineStarKiEnergyType.HourlyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.HourlyEnergy},
+                    new NineStarKiEnergy(ENineStarKiEnergy.Fire, ENineStarKiEnergyType.HourlyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.YearlyCycleEnergy}
+                };
+
                 var dynamicEnergies = new List<NineStarKiEnergy>
                 {
                     new NineStarKiEnergy(ENineStarKiEnergy.Thunder, ENineStarKiEnergyType.MainEnergy),
@@ -205,7 +257,8 @@ namespace K9.WebApplication.Services
                     new NineStarKiEnergy(ENineStarKiEnergy.Lake, ENineStarKiEnergyType.MainEnergy)
                 };
 
-                return new NineStarKiSummaryViewModel(yearEnergies, monthEnergies, dynamicEnergies, staticEnergies,
+                return new NineStarKiSummaryViewModel(eightyOneYearEnergies, nineYearEnergies, yearEnergies,
+                    monthEnergies, dailyEnergies, hourlyEnergies, dynamicEnergies, staticEnergies,
                     reflectiveEnergies);
             }, TimeSpan.FromDays(30));
         }
@@ -245,7 +298,7 @@ namespace K9.WebApplication.Services
 
                 switch (view)
                 {
-                    
+
                     case EPlannerView.Month:
                         var selectedMonthPeriod = _swissEphemerisService.GetNineStarKiMonthlyPeriodBoundaries(selectedDateTime, userTimeZoneId);
                         var dailyPeriods =

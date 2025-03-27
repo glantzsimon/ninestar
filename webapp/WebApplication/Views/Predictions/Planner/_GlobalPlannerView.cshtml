@@ -17,7 +17,7 @@
         <div class="parent-block planner-item-container">
 
             <!-- Top Row: Parent Summary -->
-            <div class="global-planner-item" data-energy="@Model.Energy.Energy" data-type="parent" data-view="@Model.View" data-selected-date="@Model.PeriodStarsOn.ToString("yyyy-MM-dd HHHH:mm")">
+            <div class="global-planner-item" data-energy="@Model.Energy.Energy" data-type="parent" data-view="@Model.View" data-selected-date="@Model.PeriodStarsOn.ToString("yyyy-MM-dd HHHH:mm")" data-update-url="@Model.UpdateParentUrl">
                 <div class="parent-summary-row clickable">
                     <div class="parent-label">
                         <div class="parent-title">@Model.PeriodDatesTitle</div>
@@ -53,7 +53,7 @@
 
                             <div class="col-md-1 col-sm-1 col-xs-2 padding-0 margin-0 child-container">
 
-                                <div class="global-planner-item" data-energy="@energy.Energy.Energy" data-view="@Model.View" data-type="child" data-selected-date="@energy.EnergyStartsOn.ToString("yyyy-MM-dd HHHH:mm")">
+                                <div class="global-planner-item" data-energy="@energy.Energy.Energy" data-view="@Model.View" data-type="child" data-selected-date="@energy.EnergyStartsOn.ToString("yyyy-MM-dd HHHH:mm")" data-update-url="@Model.UpdateChildUrl">
 
                                     <div class="planner-item-container child-block clickable @activeClass">
                                         <div class="child-name">@energyTitle</div>

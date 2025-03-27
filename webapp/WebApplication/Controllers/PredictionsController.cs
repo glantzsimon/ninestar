@@ -9,13 +9,10 @@ using System;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.UI;
-using K9.Globalisation;
-using K9.SharedLibrary.Helpers;
-using WebGrease.Css.Extensions;
 
 namespace K9.WebApplication.Controllers
 {
-    [RoutePrefix("yearly-and-monthly-predictions")]
+    [RoutePrefix("predictions")]
     public partial class PredictionsController : BaseNineStarKiController
     {
         private readonly INineStarKiService _nineStarKiService;
@@ -132,12 +129,60 @@ namespace K9.WebApplication.Controllers
                 selectedDateTime, calculationMethod, userTimeZoneId, useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere,
                 invertDailyAndHourlyCycleKiForSouthernHemisphere, view);
 
+            switch (view)
+            {
+                case EPlannerView.EightyOneYear:
+                    plannerData.UpdateParentUrl = Url.Action("GetEightyOneYearlyPredictions");
+                    plannerData.UpdateChildUrl = Url.Action("GetNineYearlyPredictions");
+                    break;
+
+                case EPlannerView.NineYear:
+                    plannerData.UpdateParentUrl = Url.Action("GetNineYearlyPredictions");
+                    plannerData.UpdateChildUrl = Url.Action("GetYearlyPredictions");
+                    break;
+
+                case EPlannerView.Month:
+                    plannerData.UpdateParentUrl = Url.Action("GetMonthlyPredictions");
+                    plannerData.UpdateChildUrl = Url.Action("GetDailyPredictions");
+                    break;
+
+                case EPlannerView.Day:
+                    plannerData.UpdateParentUrl = Url.Action("GetDailyPredictions");
+                    plannerData.UpdateChildUrl = Url.Action("GetHourlyPredictions");
+                    break;
+
+                default:
+                    plannerData.UpdateParentUrl = Url.Action("GetYearlyPredictions");
+                    plannerData.UpdateChildUrl = Url.Action("GetMonthlyPredictions");
+                    break;
+            }
+
             return PartialView("_GlobalPlanner", plannerData);
         }
 
-        [Route("get-monthly-forecast")]
+        [Route("get-hourly-predictions")]
         [OutputCache(Duration = 2592000, VaryByParam = "energy", Location = OutputCacheLocation.ServerAndClient)]
-        public JsonResult GetMonthlyForecast(ENineStarKiEnergy energy)
+        public JsonResult GetHourlyPredictions(ENineStarKiEnergy energy)
+        {
+            var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
+            var cycle = summary.HourlyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
+
+            return Json(cycle, JsonRequestBehavior.AllowGet);
+        }
+
+        [Route("get-daily-predictions")]
+        [OutputCache(Duration = 2592000, VaryByParam = "energy", Location = OutputCacheLocation.ServerAndClient)]
+        public JsonResult GetDailyPredictions(ENineStarKiEnergy energy)
+        {
+            var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
+            var cycle = summary.DailyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
+
+            return Json(cycle, JsonRequestBehavior.AllowGet);
+        }
+
+        [Route("get-monthly-predictions")]
+        [OutputCache(Duration = 2592000, VaryByParam = "energy", Location = OutputCacheLocation.ServerAndClient)]
+        public JsonResult GetMonthlyPredictions(ENineStarKiEnergy energy)
         {
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
             var cycle = summary.MonthlyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
@@ -145,12 +190,32 @@ namespace K9.WebApplication.Controllers
             return Json(cycle, JsonRequestBehavior.AllowGet);
         }
 
-        [Route("get-yearly-forecast")]
+        [Route("get-yearly-predictions")]
         [OutputCache(Duration = 2592000, VaryByParam = "energy", Location = OutputCacheLocation.ServerAndClient)]
-        public JsonResult GetYearlyForecast(ENineStarKiEnergy energy)
+        public JsonResult GetYearlyPredictions(ENineStarKiEnergy energy)
         {
             var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
             var cycle = summary.YearlyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
+
+            return Json(cycle, JsonRequestBehavior.AllowGet);
+        }
+
+        [Route("get-nine-yearly-predictions")]
+        [OutputCache(Duration = 2592000, VaryByParam = "energy", Location = OutputCacheLocation.ServerAndClient)]
+        public JsonResult GetNineYearlyPredictions(ENineStarKiEnergy energy)
+        {
+            var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
+            var cycle = summary.NineYearlyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
+
+            return Json(cycle, JsonRequestBehavior.AllowGet);
+        }
+
+        [Route("get-eighty-one-yearly-predictions")]
+        [OutputCache(Duration = 2592000, VaryByParam = "energy", Location = OutputCacheLocation.ServerAndClient)]
+        public JsonResult GetEightyOneYearlyPredictions(ENineStarKiEnergy energy)
+        {
+            var summary = _nineStarKiService.GetNineStarKiSummaryViewModel();
+            var cycle = summary.EightyOneYearlyCycleEnergies.FirstOrDefault(e => e.Energy == energy);
 
             return Json(cycle, JsonRequestBehavior.AllowGet);
         }

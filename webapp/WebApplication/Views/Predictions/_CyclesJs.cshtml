@@ -71,13 +71,13 @@
             scrollActivePlannerItemIntoVew();
         });
 
-        // Dril up or down
+        // Drill up or down
         $(".global-planner-item").dblclick(function() {
             var $el = $(this);
             var url = '@Url.Action("GetPlanner")';
             var view = $el.attr("data-view");
             var selectedDate = $el.attr("data-selected-date");
-            
+
             // Update planner
             ajaxcontroller().get(dailyCalendarUrl,
                 {
@@ -104,9 +104,7 @@
             var $el = $(this);
             var energy = $el.attr("data-energy");
             var type = $el.attr("data-type");
-            var url = '@Url.Action("GetPlanner")';
-            var view = $el.Attr("data-view");
-            var selectedDate = $el.attr("data-selected-date");
+            var url = $el.attr("data-update-url");
             var $container, $parentBlock, $childBlock, $details, url;
 
             $container = $el.closest(".global-planner-container");
@@ -140,6 +138,7 @@
             }, 200);
         });
 
+        // Obsolete
         $(".planner-item").click(function() {
             var $el = $(this);
             var energy = $el.attr("data-energy");

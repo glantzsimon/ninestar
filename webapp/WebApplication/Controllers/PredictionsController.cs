@@ -125,35 +125,14 @@ namespace K9.WebApplication.Controllers
             return View("Index", new PredictionsViewModel(model, _nineStarKiService.GetNineStarKiSummaryViewModel()));
         }
 
-        [Route("get-daily-calendar")]
-        public ActionResult GetDailyCalendar(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, DateTime selectedDateTime, string timeZoneId, ECalculationMethod calculationMethod, string userTimeZoneId, bool useHolograhpicCycleCalculation, bool invertDailyAndHourlyKiForSouthernHemisphere, bool invertDailyAndHourlyCycleKiForSouthernHemisphere)
+        [Route("get-planner")]
+        public ActionResult GetPlanner(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, DateTime selectedDateTime, string timeZoneId, ECalculationMethod calculationMethod, string userTimeZoneId, bool useHolograhpicCycleCalculation, bool invertDailyAndHourlyKiForSouthernHemisphere, bool invertDailyAndHourlyCycleKiForSouthernHemisphere, EPlannerView view)
         {
-            var dailyPeriods = _swissEphemerisService.GetNineStarKiDailyEnergiesForMonth(selectedDateTime.AddDays(1), birthTimeZoneId);
+            var plannerData = _nineStarKiService.GetPlannerData(dateOfBirth, birthTimeZoneId, timeOfBirth, gender,
+                selectedDateTime, calculationMethod, userTimeZoneId, useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere,
+                invertDailyAndHourlyCycleKiForSouthernHemisphere, view);
 
-            // Add time of birth
-            dateOfBirth = dateOfBirth.Add(timeOfBirth);
-
-            var nineStarKiModel = _nineStarKiService.CalculateNineStarKiProfile(new PersonModel
-            {
-                DateOfBirth = dateOfBirth,
-                BirthTimeZoneId = birthTimeZoneId,
-                TimeOfBirth = timeOfBirth,
-                Gender = gender
-            }, false, false, selectedDateTime, calculationMethod, false, false, userTimeZoneId,
-                useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
-
-            var monthStartTitle = nineStarKiModel.SelectedDate.Value.ToString("MMMM yyyy");
-
-            // Reset selected date to this current moment
-            nineStarKiModel.SelectedDate = DateTimeHelper.ConvertToLocaleDateTime(DateTime.UtcNow, userTimeZoneId);
-
-            nineStarKiModel.DailyPeriods = dailyPeriods;
-
-            return Json(new
-            {
-                title = $"{Dictionary.DailyKiCalendar} - {monthStartTitle}",
-                view = RenderPartialViewToString("_DailyKiCalendar", nineStarKiModel).ToString()
-            }, JsonRequestBehavior.AllowGet);
+            return PartialView("_GlobalPlanner", plannerData);
         }
 
         [Route("get-monthly-forecast")]

@@ -1420,7 +1420,7 @@
     <Content Include="Views\Account\UnsubscribeFailed.cshtml" />
     <Content Include="Views\Account\UnsubscribeSuccess.cshtml" />
     <Content Include="Views\Predictions\_CycleHeader.cshtml" />
-    <Content Include="Views\Predictions\_YearlyPlanner.cshtml" />
+    <Content Include="Views\Predictions\Old\_YearlyPlanner.cshtml" />
     <Content Include="Views\Predictions\_Year.cshtml" />
     <Content Include="Views\Predictions\_YearlyCyclesOverview.cshtml" />
     <Content Include="Views\Predictions\_Cycle.cshtml" />
@@ -1468,7 +1468,7 @@
     <Content Include="Views\Predictions\MyCycles.cshtml" />
     <Content Include="Views\Predictions\_CyclesJs.cshtml" />
     <Content Include="Views\Predictions\_CycleTitle.cshtml" />
-    <Content Include="Views\Predictions\_MonthlyPlanner.cshtml" />
+    <Content Include="Views\Predictions\Old\_MonthlyPlanner.cshtml" />
     <Content Include="Views\Predictions\_Month.cshtml" />
     <Content Include="Views\Predictions\_MonthlyCyclesOverview.cshtml" />
     <Content Include="Views\Compatibility\_CompatibilityFundamentalElements.cshtml" />
@@ -1635,13 +1635,14 @@
     <Content Include="Views\Shared\EditorTemplates\CalculationMethod.cshtml" />
     <Content Include="Views\Home\CalculationMethods.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\TimeSpan.cshtml" />
-    <Content Include="Views\Predictions\_DailyKiCalendar.cshtml" />
-    <Content Include="Views\Predictions\_Planner.cshtml" />
+    <Content Include="Views\Predictions\Old\_DailyKiCalendar.cshtml" />
+    <Content Include="Views\Predictions\Old\_Planner.cshtml" />
     <Content Include="Views\Compatibility\_PersonalChart.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DisplayDataForPeriod.cshtml" />
     <Content Include="Views\Predictions\_CycleSplitTitle.cshtml" />
+    <Content Include="Views\Predictions\Planner\_GlobalPlannerView.cshtml" />
+    <Content Include="Views\Predictions\Planner\_DailyCalendar.cshtml" />
     <Content Include="Views\Predictions\Planner\_GlobalPlanner.cshtml" />
-    <Content Include="Views\Predictions\Planner\_DailyKiCalendar.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

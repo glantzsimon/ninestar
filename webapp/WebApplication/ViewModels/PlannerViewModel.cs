@@ -8,6 +8,7 @@ namespace K9.WebApplication.ViewModels
     public class PlannerViewModel
     {
         public Enums.EPlannerView View { get; set; }
+        public NineStarKiModel NineStarKiModel { get; set; }
         public NineStarKiEnergy Energy { get; set; }
         public DateTime Lichun { get; set; }
         public DateTime PeriodStarsOn { get; set; }
@@ -18,6 +19,8 @@ namespace K9.WebApplication.ViewModels
 
         public string PeriodDatesDetails => GetPeriodDatesDetails();
 
+        public EPlannerView ChildView => GetChildView();
+
         public string GetEnergyTitle((NineStarKiEnergy Energy, NineStarKiEnergy SecondEnergy, DateTime EnergyStartsOn, DateTime EnergyEndsOn, bool IsSelected) energy)
         {
             return $"{energy.EnergyStartsOn.ToString("MMM")}";
@@ -26,6 +29,27 @@ namespace K9.WebApplication.ViewModels
         public string GetEnergyDatesDetails((NineStarKiEnergy Energy, NineStarKiEnergy SecondEnergy, DateTime EnergyStartsOn, DateTime EnergyEndsOn, bool IsSelected) energy)
         {
             return $"{energy.EnergyStartsOn.ToString("MMM/dd")} {energy.EnergyEndsOn.ToString("MMM/dd")}";
+        }
+
+        public EPlannerView GetChildView()
+        {
+            switch (View)
+            {
+                case EPlannerView.EightyOneYear:
+                    return EPlannerView.NineYear;
+
+                case EPlannerView.NineYear:
+                    return EPlannerView.Year;
+
+                case EPlannerView.Year:
+                    return EPlannerView.Month;
+
+                case EPlannerView.Month:
+                    return EPlannerView.Day;
+
+                default:
+                    return EPlannerView.Day;
+            }
         }
 
         private string GetPeriodDatesTitle()

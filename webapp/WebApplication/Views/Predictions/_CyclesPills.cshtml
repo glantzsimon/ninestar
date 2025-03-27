@@ -96,11 +96,9 @@
         <div id="global-planner" class="tab-pane fade">
             @using (Html.PayWall(ESection.Predictions, Model, () => Model?.IsMyProfile))
             {
-                @Html.Panel(Dictionary.Planner, Html.Partial("Planner/_GlobalPlanner", Model.PlannerViewModel).ToString())
-
-                @*<div id="daily-planner-container">
-                    @Html.Panel($"{Dictionary.DailyKiCalendar} - {Model.SelectedDate.Value.ToString("MMMM yyyy")}", Html.Partial("_DailyKiCalendar", Model).ToString())
-                </div>*@
+                <div id="global-planner-container">
+                    @Html.Partial("Planner/_GlobalPlanner", Model.PlannerViewModel)
+                </div>
             }
 
             <hr />

@@ -232,6 +232,8 @@ namespace K9.WebApplication.Services
             {
                 var energies = new List<(NineStarKiEnergy Energy, NineStarKiEnergy SecondEnergy, DateTime EnergyStartsOn, DateTime EnergyEndsOn, bool IsSelected)>();
                 var lichun = _swissEphemerisService.GetLichun(selectedDateTime, userTimeZoneId);
+                // Add time of birth
+                dateOfBirth = dateOfBirth.Add(timeOfBirth);
                 var nineStarKiModel = CalculateNineStarKiProfile(new PersonModel
                 {
                     DateOfBirth = dateOfBirth,
@@ -243,6 +245,7 @@ namespace K9.WebApplication.Services
 
                 switch (view)
                 {
+                    
                     case EPlannerView.Month:
                         var selectedMonthPeriod = _swissEphemerisService.GetNineStarKiMonthlyPeriodBoundaries(selectedDateTime, userTimeZoneId);
                         var dailyPeriods =
@@ -262,6 +265,7 @@ namespace K9.WebApplication.Services
                         return new PlannerViewModel
                         {
                             View = view,
+                            NineStarKiModel = nineStarKiModel,
                             Energy = nineStarKiModel.GlobalCycleEnergies.Month,
                             Lichun = lichun,
                             PeriodStarsOn = selectedMonthPeriod.PeriodStartsOn,

@@ -30,7 +30,7 @@ namespace K9.WebApplication.Services
             var nineStarKiBiorhythmsFactors = new NineStarKiBiorhythmsFactors(nineStarKiModel);
             var periodBoundaries = _swissEphemerisService.GetNineStarKiMonthlyPeriodBoundaries(date, "");
 
-            nineStarBiorhythmsModel.MonthlyPeriodStartsOn = periodBoundaries.PeriodStartOn;
+            nineStarBiorhythmsModel.MonthlyPeriodStartsOn = periodBoundaries.PeriodStartsOn;
             nineStarBiorhythmsModel.MonthlyPeriodEndsOn = periodBoundaries.PeriodEndsOn;
 
             nineStarBiorhythmsModel.BiorhythmResults = GetBioRhythmResults(nineStarBiorhythmsModel, nineStarKiBiorhythmsFactors);
@@ -380,9 +380,9 @@ namespace K9.WebApplication.Services
         {
             var nineStarMonthlyPeriod =
                 _swissEphemerisService.GetNineStarKiMonthlyPeriodBoundaries(bioRhythmsModel.SelectedDate.Value, "");
-            var periodLengthInDays = (int)nineStarMonthlyPeriod.PeriodEndsOn.Subtract(nineStarMonthlyPeriod.PeriodStartOn).TotalDays;
+            var periodLengthInDays = (int)nineStarMonthlyPeriod.PeriodEndsOn.Subtract(nineStarMonthlyPeriod.PeriodStartsOn).TotalDays;
             var daysSinceBeginningOfPeriod =
-                (int)bioRhythmsModel.SelectedDate.Value.Subtract(nineStarMonthlyPeriod.PeriodStartOn).TotalDays;
+                (int)bioRhythmsModel.SelectedDate.Value.Subtract(nineStarMonthlyPeriod.PeriodStartsOn).TotalDays;
             var rangeValues = new List<RangeValue>();
             var longRangeValues = new List<RangeValue>();
 

@@ -1,75 +1,112 @@
-﻿@model K9.WebApplication.Models.NineStarKiModel
+﻿@using K9.WebApplication.Enums
+@model K9.WebApplication.Models.NineStarKiModel
 
 <script language="javascript">
 
     function scrollCurrentYearIntoVew() {
-        setTimeout(function () {
-            var $cycle = $("div.current-year");
-            var $yearlyPlannerContainer = ".yearly-planner-container";
+        setTimeout(function() {
+                var $cycle = $("div.current-year");
+                var $yearlyPlannerContainer = ".yearly-planner-container";
 
-            $($yearlyPlannerContainer).scrollTop($cycle.offset().top - $($yearlyPlannerContainer).offset().top);
-        }, 200);
+                $($yearlyPlannerContainer).scrollTop($cycle.offset().top - $($yearlyPlannerContainer).offset().top);
+            },
+            200);
     }
 
     function scrollCurrentMonthIntoVew() {
-        setTimeout(function () {
-            var $cycle = $("div.current-month");
-            var $monthlyPlannerContainer = ".monthly-planner-container";
+        setTimeout(function() {
+                var $cycle = $("div.current-month");
+                var $monthlyPlannerContainer = ".monthly-planner-container";
 
-            $($monthlyPlannerContainer).scrollTop($cycle.offset().top - $($monthlyPlannerContainer).offset().top);
-        }, 200);
+                $($monthlyPlannerContainer).scrollTop($cycle.offset().top - $($monthlyPlannerContainer).offset().top);
+            },
+            200);
     }
 
     function scrollActivePlannerItemIntoVew() {
         if ($("#PlannerEnableScrollIntoView").val() === 'True') {
-        setTimeout(function () {
-            var $cycle = $(".year-block .active");
-            var $container = $(".global-planner-container");
+            setTimeout(function() {
+                    var $cycle = $(".year-block .active");
+                    var $container = $(".global-planner-container");
 
-            $container.scrollTop($cycle.offset().top - $container.offset().top - 154);
+                    $container.scrollTop($cycle.offset().top - $container.offset().top - 154);
 
-            $("#PlannerEnableScrollIntoView").val(false);
-        }, 200);
+                    $("#PlannerEnableScrollIntoView").val(false);
+                },
+                200);
         }
     }
 
     function scrollCyclesIntoVew(tab) {
-        setTimeout(function () {
-            $.fn.scrollToTopOf(tab, -230);
-        }, 200);
+        setTimeout(function() {
+                $.fn.scrollToTopOf(tab, -230);
+            },
+            200);
     }
 
-    $(function () {
-        $("a[href='#yearly-planner']").click(function () {
+    $(function() {
+        $("a[href='#yearly-planner']").click(function() {
             scrollCurrentYearIntoVew();
         });
 
-        $("a[href='#monthly-planner']").click(function () {
+        $("a[href='#monthly-planner']").click(function() {
             scrollCurrentMonthIntoVew();
         });
 
-        $("#current-yearly-cycle").click(function () {
+        $("#current-yearly-cycle").click(function() {
             scrollCyclesIntoVew("#yearly");
 
             $(".nav-pills a[href='#predictions']").tab("show");
             $(".nav-pills a[href='#yearly']").tab("show");
         });
 
-        $("#current-monthly-cycle").click(function () {
+        $("#current-monthly-cycle").click(function() {
             scrollCyclesIntoVew("#monthly");
 
             $(".nav-pills a[href='#predictions']").tab("show");
             $(".nav-pills a[href='#monthly']").tab("show");
         });
 
-        $("a[href='#global-planner']").click(function () {
+        $("a[href='#global-planner']").click(function() {
             scrollActivePlannerItemIntoVew();
+        });
+
+        // Dril up or down
+        $(".global-planner-item").dblclick(function() {
+            var $el = $(this);
+            var url = '@Url.Action("GetPlanner")';
+            var view = $el.attr("data-view");
+            var selectedDate = $el.attr("data-selected-date");
+            
+            // Update planner
+            ajaxcontroller().get(dailyCalendarUrl,
+                {
+                    dateOfBirth: '@Model.PersonModel.DateOfBirth.ToString("yyyy-MM-dd")',
+                    birthTimeZoneId: "@Model.PersonModel.BirthTimeZoneId",
+                    timeOfBirth: '@Model.PersonModel.TimeOfBirth.ToString()',
+                    gender: '@Model.PersonModel.Gender',
+                    selectedDateTime: selectedDate,
+                    userTimeZoneId: '@Model.UserTimeZoneId',
+                    calculationMethod: '@Model.CalculationMethod.ToString()',
+                    useHolograhpicCycleCalculation: '@Model.UseHolograhpicCycleCalculation.ToString().ToLower()',
+                    invertDailyAndHourlyKiForSouthernHemisphere: '@Model.InvertDailyAndHourlyKiForSouthernHemisphere.ToString().ToLower()',
+                    invertDailyAndHourlyCycleKiForSouthernHemisphere: '@Model.InvertDailyAndHourlyCycleKiForSouthernHemisphere.ToString().ToLower()',
+                    view: view,
+                }).done(
+                function(result) {
+                    if (result.success) {
+                        $("#global-planner-container").html(result.data);
+                    }
+                });
         });
 
         $(".global-planner-item").click(function() {
             var $el = $(this);
             var energy = $el.attr("data-energy");
             var type = $el.attr("data-type");
+            var url = '@Url.Action("GetPlanner")';
+            var view = $el.Attr("data-view");
+            var selectedDate = $el.attr("data-selected-date");
             var $container, $parentBlock, $childBlock, $details, url;
 
             $container = $el.closest(".global-planner-container");
@@ -83,40 +120,12 @@
             // set current class on current selected item
             if (type === "parent") {
                 $parentBlock.addClass("active");
-
-                url = '@Url.Action("GetYearlyForecast", "Predictions")';
             }
             else if (type === "child") {
                 $childBlock.addClass("active");
-
-                url = '@Url.Action("GetMonthlyForecast", "Predictions")';
-
-                // Fetch daily calendar for month:
-                var dailyCalendarUrl = '@Url.Action("GetDailyCalendar", "Predictions")';
-                var childStarsOn = $el.attr("data-child-startson");
-
-                @*ajaxcontroller().get(dailyCalendarUrl,
-                    {
-                        dateOfBirth: '@Model.PersonModel.DateOfBirth.ToString("yyyy-MM-dd")',
-                        birthTimeZoneId: "@Model.PersonModel.BirthTimeZoneId",
-                        timeOfBirth: '@Model.PersonModel.TimeOfBirth.ToString()',
-                        gender: '@Model.PersonModel.Gender',
-                        selectedDateTime: childStarsOn,
-                        userTimeZoneId: '@Model.UserTimeZoneId',
-                        calculationMethod: '@Model.CalculationMethod.ToString()',
-                        useHolograhpicCycleCalculation: '@Model.UseHolograhpicCycleCalculation.ToString().ToLower()',
-                        invertDailyAndHourlyKiForSouthernHemisphere: '@Model.InvertDailyAndHourlyKiForSouthernHemisphere.ToString().ToLower()',
-                        invertDailyAndHourlyCycleKiForSouthernHemisphere: '@Model.InvertDailyAndHourlyCycleKiForSouthernHemisphere.ToString().ToLower()'
-                    }).done(
-                    function(result) {
-                        if (result.success) {
-                            $("#daily-planner-container .panel-heading h4").html(result.data.title);
-                            $("#daily-planner-container .panel-body").html(result.data.view);
-                        }
-                    });*@
             }
 
-            // Display selected month / year data
+            // Display selected child / parent data
             ajaxcontroller().get(url, {energy}).done(
                 function(result) {
                     if (result.success) {

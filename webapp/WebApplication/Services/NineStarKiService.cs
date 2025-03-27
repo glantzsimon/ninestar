@@ -353,7 +353,6 @@ namespace K9.WebApplication.Services
                         };
                 }
 
-
             }, TimeSpan.FromDays(30));
         }
 

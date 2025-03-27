@@ -103,6 +103,8 @@ namespace K9.WebApplication.Controllers
                     var plannerData = _nineStarKiService.GetPlannerData(model.PersonModel.DateOfBirth, model.PersonModel.BirthTimeZoneId, model.PersonModel.TimeOfBirth, model.PersonModel.Gender, model.SelectedDate.Value, model.CalculationMethod, model.UserTimeZoneId,
                         model.UseHolograhpicCycleCalculation, model.InvertDailyAndHourlyKiForSouthernHemisphere, model.InvertDailyAndHourlyCycleKiForSouthernHemisphere);
 
+                    UpdatePlannerUrls(plannerData);
+
                     processedModel.PlannerViewModel = plannerData;
 
                     if (Current.UserId > 0)
@@ -129,33 +131,7 @@ namespace K9.WebApplication.Controllers
                 selectedDateTime, calculationMethod, userTimeZoneId, useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere,
                 invertDailyAndHourlyCycleKiForSouthernHemisphere, view);
 
-            switch (view)
-            {
-                case EPlannerView.EightyOneYear:
-                    plannerData.UpdateParentUrl = Url.Action("GetEightyOneYearlyPredictions");
-                    plannerData.UpdateChildUrl = Url.Action("GetNineYearlyPredictions");
-                    break;
-
-                case EPlannerView.NineYear:
-                    plannerData.UpdateParentUrl = Url.Action("GetNineYearlyPredictions");
-                    plannerData.UpdateChildUrl = Url.Action("GetYearlyPredictions");
-                    break;
-
-                case EPlannerView.Month:
-                    plannerData.UpdateParentUrl = Url.Action("GetMonthlyPredictions");
-                    plannerData.UpdateChildUrl = Url.Action("GetDailyPredictions");
-                    break;
-
-                case EPlannerView.Day:
-                    plannerData.UpdateParentUrl = Url.Action("GetDailyPredictions");
-                    plannerData.UpdateChildUrl = Url.Action("GetHourlyPredictions");
-                    break;
-
-                default:
-                    plannerData.UpdateParentUrl = Url.Action("GetYearlyPredictions");
-                    plannerData.UpdateChildUrl = Url.Action("GetMonthlyPredictions");
-                    break;
-            }
+            UpdatePlannerUrls(plannerData);
 
             return PartialView("_GlobalPlanner", plannerData);
         }
@@ -251,6 +227,37 @@ namespace K9.WebApplication.Controllers
         public override string GetObjectName()
         {
             return string.Empty;
+        }
+
+        private void UpdatePlannerUrls(PlannerViewModel plannerData)
+        {
+            switch (plannerData.View)
+            {
+                case EPlannerView.EightyOneYear:
+                    plannerData.UpdateParentUrl = Url.Action("GetEightyOneYearlyPredictions");
+                    plannerData.UpdateChildUrl = Url.Action("GetNineYearlyPredictions");
+                    break;
+
+                case EPlannerView.NineYear:
+                    plannerData.UpdateParentUrl = Url.Action("GetNineYearlyPredictions");
+                    plannerData.UpdateChildUrl = Url.Action("GetYearlyPredictions");
+                    break;
+
+                case EPlannerView.Month:
+                    plannerData.UpdateParentUrl = Url.Action("GetMonthlyPredictions");
+                    plannerData.UpdateChildUrl = Url.Action("GetDailyPredictions");
+                    break;
+
+                case EPlannerView.Day:
+                    plannerData.UpdateParentUrl = Url.Action("GetDailyPredictions");
+                    plannerData.UpdateChildUrl = Url.Action("GetHourlyPredictions");
+                    break;
+
+                default:
+                    plannerData.UpdateParentUrl = Url.Action("GetYearlyPredictions");
+                    plannerData.UpdateChildUrl = Url.Action("GetMonthlyPredictions");
+                    break;
+            }
         }
     }
 }

@@ -178,15 +178,15 @@ namespace K9.WebApplication.Models
             PersonalHousesOccupiedEnergies.Month = GetOrAddToCache($"Month_h_{SelectedDate}_{personalInfoString}_{preciseMonthlyCycleEnergy}_{UseHolograhpicCycleCalculation}",
                 () => GetPersonalCycleEnergy(preciseMonthlyCycleEnergy, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Month.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.MonthlyCycleEnergy), TimeSpan.FromDays(30));
 
-            PersonalHousesOccupiedEnergies.Day = GetOrAddToCache($"Day_h_{SelectedDate:yyyyMMddHH}_{personalInfoString}_{preciseDailyCycleEnergy}_{preciseDailyCycleInvertedEnergy}_{UseHolograhpicCycleCalculation}_{InvertDailyAndHourlyKiForSouthernHemisphere}",
+            PersonalHousesOccupiedEnergies.Day = GetOrAddToCache($"Day_h_{SelectedDate:yyyyMMddHH}_{personalInfoString}_{preciseDailyCycleEnergy}_{preciseDailyCycleInvertedEnergy}_{UseHolograhpicCycleCalculation}_{InvertDailyAndHourlyCycleKiForSouthernHemisphere}",
                 () => GetPersonalCycleEnergy(preciseDailyCycleEnergy, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Day.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.DailyEnergy), TimeSpan.FromDays(30));
 
-            PersonalHousesOccupiedEnergies.Hour = GetOrAddToCache($"Hour_h_{SelectedDate:yyyyMMddHHmm}_{personalInfoString}_{preciseHourlyCycleEnergy}_{UseHolograhpicCycleCalculation}_{InvertDailyAndHourlyKiForSouthernHemisphere}",
+            PersonalHousesOccupiedEnergies.Hour = GetOrAddToCache($"Hour_h_{SelectedDate:yyyyMMddHHmm}_{personalInfoString}_{preciseHourlyCycleEnergy}_{UseHolograhpicCycleCalculation}_{InvertDailyAndHourlyCycleKiForSouthernHemisphere}",
                 () => GetPersonalCycleEnergy(preciseHourlyCycleEnergy, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Hour.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.HourlyEnergy), TimeSpan.FromDays(30));
 
             if (preciseDailyCycleInvertedEnergy.HasValue)
             {
-                PersonalHousesOccupiedEnergies.DayInverted = GetOrAddToCache($"DayInverted_h_{SelectedDate:yyyyMMddHH}_{personalInfoString}_{preciseDailyCycleEnergy}_{preciseDailyCycleInvertedEnergy}_{UseHolograhpicCycleCalculation}_{InvertDailyAndHourlyKiForSouthernHemisphere}",
+                PersonalHousesOccupiedEnergies.DayInverted = GetOrAddToCache($"DayInverted_h_{SelectedDate:yyyyMMddHH}_{personalInfoString}_{preciseDailyCycleEnergy}_{preciseDailyCycleInvertedEnergy}_{UseHolograhpicCycleCalculation}_{InvertDailyAndHourlyCycleKiForSouthernHemisphere}",
                     () => GetPersonalCycleEnergy(preciseDailyCycleInvertedEnergy.Value, UseHolograhpicCycleCalculation ? PersonalChartEnergies.Hour.EnergyNumber : MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.DailyEnergy), TimeSpan.FromDays(30));
             }
 

@@ -423,9 +423,8 @@ namespace K9.WebApplication.Services
 
                 for (DateTime day = PeriodStartOn; day <= PeriodEndsOn; day = day.AddDays(1))
                 {
-                    var dayWithTime = day.Add(selectedDateTime.TimeOfDay);
-                    var dailyKi = GetNineStarKiDailyKi(dayWithTime, timeZoneId);
-                    dailyEnergies.Add((dayWithTime, dailyKi.DailyKi, dailyKi.InvertedDailyKi));
+                    var dailyKi = GetNineStarKiDailyKi(day.Date, timeZoneId);
+                    dailyEnergies.Add((day.Date, dailyKi.DailyKi, dailyKi.InvertedDailyKi));
                 }
 
                 return dailyEnergies.ToArray();

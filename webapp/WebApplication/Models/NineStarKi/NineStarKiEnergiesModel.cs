@@ -29,11 +29,20 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DailyEnergyLabel)]
         public NineStarKiEnergy Day { get; set; }
 
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DailyEnergyLabel)]
+        public NineStarKiEnergy Day2 { get; set; }
+
         /// <summary>
         /// Used for daily ki, where on some days, two values exist and one is inverted
         /// </summary>
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DailyEnergyLabel)]
         public NineStarKiEnergy DayInverted { get; set; }
+
+        /// <summary>
+        /// Used for daily ki, where on some days, two values exist and one is inverted
+        /// </summary>
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DailyEnergyLabel)]
+        public NineStarKiEnergy Day2Inverted { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HourlyEnergyLabel)]
         public NineStarKiEnergy Hour { get; set; }

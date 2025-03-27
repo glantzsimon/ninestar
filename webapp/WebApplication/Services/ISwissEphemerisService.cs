@@ -19,6 +19,8 @@ namespace K9.WebApplication.Services
         (int DailyKi, int? InvertedDailyKi) GetNineStarKiDailyKi(DateTime selectedDateTime, string timeZoneId);
         int GetNineStarKiHourlyKi(DateTime selectedDateTime, string timeZoneId);
 
+        (int DailyKi, int? InvertedDailyKi)[] GetNineStarKiDailyKis(DateTime selectedDateTime, string timeZoneId);
+
         (DateTime PeriodStartOn, DateTime PeriodEndsOn) GetNineStarKiMonthlyPeriodBoundaries(DateTime selectedDateTime,
             string timeZoneId);
 

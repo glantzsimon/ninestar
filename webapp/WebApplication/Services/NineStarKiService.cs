@@ -1,12 +1,11 @@
 ﻿using K9.Base.DataAccessLayer.Enums;
 using K9.Globalisation;
+using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
 using K9.WebApplication.ViewModels;
 using System;
 using System.Collections.Generic;
-using K9.WebApplication.Enums;
-using TimeZoneConverter;
 
 namespace K9.WebApplication.Services
 {
@@ -39,7 +38,7 @@ namespace K9.WebApplication.Services
         }
 
         public NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, bool isCompatibility = false,
-            bool isMyProfile = false, DateTime? today = null, ECalculationMethod calculationMethod = ECalculationMethod.Chinese, bool includeCycles = false, bool includePlannerData = false, string userTimeZoneId = "", bool useHolograhpicCycleCalculation = false, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false)
+            bool isMyProfile = false, DateTime? today = null, ECalculationMethod calculationMethod = ECalculationMethod.Chinese, bool includeCycles = false, bool includePlannerData = false, string userTimeZoneId = "", bool useHolograhpicCycleCalculation = false, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false, EDisplayDataForPeriod displayDataForPeriod = EDisplayDataForPeriod.Now)
         {
             var cacheKey = $"CalculateNineStarKiProfileFromModel_{personModel.DateOfBirth:yyyyMMddHHmm}_{personModel.TimeOfBirth.ToString()}_{personModel.BirthTimeZoneId}_{personModel.Name}_{personModel.Gender}_{isCompatibility}_{isMyProfile}_{calculationMethod}_{includeCycles}_{useHolograhpicCycleCalculation}_{today:yyyyMMddHHmm}_{invertDailyAndHourlyKiForSouthernHemisphere}";
             return GetOrAddToCache(cacheKey, () =>
@@ -48,7 +47,7 @@ namespace K9.WebApplication.Services
                     ? DateTime.UtcNow
                     : today.Value;
                 NineStarKiModel model = null;
-                                
+
                 var preciseEpochEnergy = _swissEphemerisService.GetNineStarKiEightyOneYearKi(personModel.DateOfBirth, personModel.BirthTimeZoneId);
                 var preciseGenerationalEnergy = _swissEphemerisService.GetNineStarKiNineYearKi(personModel.DateOfBirth, personModel.BirthTimeZoneId);
                 var preciseMainEnergy = _swissEphemerisService.GetNineStarKiYearlyKi(personModel.DateOfBirth, personModel.BirthTimeZoneId);
@@ -59,8 +58,8 @@ namespace K9.WebApplication.Services
 
                 if (includeCycles)
                 {
-                    userTimeZoneId = model.DisplayDataForPeriod == EDisplayDataForPeriod.Now ? "" : string.IsNullOrEmpty(userTimeZoneId) ? personModel.BirthTimeZoneId : userTimeZoneId;
-                    
+                    userTimeZoneId = displayDataForPeriod == EDisplayDataForPeriod.Now ? "" : string.IsNullOrEmpty(userTimeZoneId) ? personModel.BirthTimeZoneId : userTimeZoneId;
+
                     var preciseEightyOneYearEnergy =
                         _swissEphemerisService.GetNineStarKiEightyOneYearKi(selectedDateTime, userTimeZoneId);
                     var preciseNineYearEnergy =
@@ -69,8 +68,8 @@ namespace K9.WebApplication.Services
                         _swissEphemerisService.GetNineStarKiYearlyKi(selectedDateTime, userTimeZoneId);
                     var preciseMonthEnergy =
                         _swissEphemerisService.GetNineStarKiMonthlyKi(selectedDateTime, userTimeZoneId);
-                    var preciseDailyEnergy =
-                        _swissEphemerisService.GetNineStarKiDailyKi(selectedDateTime, userTimeZoneId);
+                    var preciseDailyEnergies =
+                        _swissEphemerisService.GetNineStarKiDailyKis(selectedDateTime, userTimeZoneId);
                     var preciseHourlyCycleEnergy =
                         _swissEphemerisService.GetNineStarKiHourlyKi(selectedDateTime, userTimeZoneId);
 
@@ -93,8 +92,7 @@ namespace K9.WebApplication.Services
                         preciseMainEnergy, preciseEmotionalEnergy, preciseEmotionalEnergyForInvertedYear,
                         preciseDayStarEnergy.DailyKi, preciseHourlyEnergy,
                         preciseEightyOneYearEnergy, preciseNineYearEnergy, preciseYearEnergy, preciseMonthEnergy,
-                        preciseDailyEnergy.DailyKi, preciseHourlyCycleEnergy, preciseDailyEnergy.InvertedDailyKi,
-                        selectedDateTime, calculationMethod, useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere)
+                        preciseDailyEnergies, preciseHourlyCycleEnergy, selectedDateTime, calculationMethod, useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere)
                     {
                         YearlyPeriods = yearlyPeriods,
                         MonthlyPeriods = monthlyPeriods.ToArray(),
@@ -106,7 +104,7 @@ namespace K9.WebApplication.Services
                     model = new NineStarKiModel(personModel, preciseEpochEnergy, preciseGenerationalEnergy,
                         preciseMainEnergy, preciseEmotionalEnergy, preciseEmotionalEnergyForInvertedYear,
                         preciseDayStarEnergy.DailyKi, preciseHourlyEnergy,
-                        5, 5, 5, 5, 5, 5, 5, selectedDateTime, calculationMethod, useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere)
+                        5, 5, 5, 5, new (int DailyKi, int? InvertedDailyKi)[] { (5, 5), (5, 5) }, 5, selectedDateTime, calculationMethod, useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere)
                     {
                         YearlyPeriods = new (DateTime PeriodStartOn, DateTime PeriodEndsOn, int YearlyKi)[] { },
                         MonthlyPeriods = new (DateTime PeriodStartOn, DateTime PeriodEndsOn, int MonthlyKi)[] { },

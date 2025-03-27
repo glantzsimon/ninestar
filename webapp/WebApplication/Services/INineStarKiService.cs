@@ -17,7 +17,8 @@ namespace K9.WebApplication.Services
             ECalculationMethod calculationMethod = ECalculationMethod.Chinese, bool includeCycles = false,
             bool includePlannerData = false, string userTimeZoneId = "", bool useHolograhpicCycleCalculation = false,
             bool invertDailyAndHourlyKiForSouthernHemisphere = false,
-            bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false);
+            bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false,
+            EDisplayDataForPeriod displayDataForPeriod = EDisplayDataForPeriod.Now);
         
         NineStarKiSummaryViewModel GetNineStarKiSummaryViewModel();
         CompatibilityModel CalculateCompatibility(DateTime dateOfBirth1, EGender gender1, DateTime dateOfBirth2,

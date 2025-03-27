@@ -10,6 +10,8 @@ using System.Linq;
 using System.Web.Mvc;
 using System.Web.UI;
 using K9.Globalisation;
+using K9.SharedLibrary.Helpers;
+using WebGrease.Css.Extensions;
 
 namespace K9.WebApplication.Controllers
 {
@@ -88,7 +90,8 @@ namespace K9.WebApplication.Controllers
 
                     var processedModel = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false,
                         model.SelectedDate, model.CalculationMethod, true, true, model.UserTimeZoneId, model.UseHolograhpicCycleCalculation, model.InvertDailyAndHourlyKiForSouthernHemisphere,
-                        model.InvertDailyAndHourlyCycleKiForSouthernHemisphere);
+                        model.InvertDailyAndHourlyCycleKiForSouthernHemisphere,
+                        model.DisplayDataForPeriod);
 
                     processedModel.DisplayDataForPeriod = model.DisplayDataForPeriod;
                     processedModel.SelectedTime = model.SelectedTime;
@@ -129,11 +132,16 @@ namespace K9.WebApplication.Controllers
             }, false, false, selectedDateTime, calculationMethod, false, false, userTimeZoneId,
                 useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
 
+            var monthStartTitle = nineStarKiModel.SelectedDate.Value.ToString("MMMM yyyy");
+
+            // Reset selected date to this current moment
+            nineStarKiModel.SelectedDate = DateTimeHelper.ConvertToLocaleDateTime(DateTime.UtcNow, userTimeZoneId);
+
             nineStarKiModel.DailyPeriods = dailyPeriods;
 
             return Json(new
             {
-                title = $"{Dictionary.DailyKiCalendar} - {nineStarKiModel.SelectedDate.Value.ToString("MMMM yyyy")}",
+                title = $"{Dictionary.DailyKiCalendar} - {monthStartTitle}",
                 view = RenderPartialViewToString("_DailyKiCalendar", nineStarKiModel).ToString()
             }, JsonRequestBehavior.AllowGet);
         }

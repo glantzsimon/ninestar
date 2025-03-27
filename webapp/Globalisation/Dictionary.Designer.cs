@@ -2781,6 +2781,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Afternoon Ki.
+        /// </summary>
+        public static string AfternoonEnergyLabel {
+            get {
+                return ResourceManager.GetString("AfternoonEnergyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Whilst using this site, you agree to have read and accepted our &lt;a target=&quot;_blank&quot; href=&quot;{PrivacyPolicyUrl}&quot;&gt;Privacy Policy&lt;/a&gt; and &lt;a target=&quot;_blank&quot; href=&quot;{TermsOfServiceUrl}&quot;&gt;Terms of Service&lt;/a&gt;.
         /// </summary>
         public static string AgreeToTerms {

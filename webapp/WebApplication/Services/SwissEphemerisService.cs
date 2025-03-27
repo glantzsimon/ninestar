@@ -135,6 +135,18 @@ namespace K9.WebApplication.Services
             }, TimeSpan.FromDays(30));
         }
 
+        public (int DailyKi, int? InvertedDailyKi)[] GetNineStarKiDailyKis(DateTime selectedDateTime, string timeZoneId)
+        {
+            var morningEnergy = GetNineStarKiDailyKi(selectedDateTime.Date.AddHours(8), timeZoneId);
+            var afternoonEnergy = GetNineStarKiDailyKi(selectedDateTime.Date.AddHours(16), timeZoneId);
+
+            return new (int DailyKi, int? InvertedDailyKi)[]
+            {
+                morningEnergy,
+                afternoonEnergy
+            };
+        }
+
         public (int DailyKi, int? InvertedDailyKi) GetNineStarKiDailyKi(DateTime selectedDateTime, string timeZoneId)
         {
             string cacheKey = $"{nameof(GetNineStarKiDailyKi)}_{selectedDateTime:yyyyMMddHH}_{timeZoneId}";
@@ -423,9 +435,11 @@ namespace K9.WebApplication.Services
 
                 for (DateTime day = PeriodStartOn; day <= PeriodEndsOn; day = day.AddDays(1))
                 {
-                    var dailyKi = GetNineStarKiDailyKi(day.Date.AddHours(8), timeZoneId); // Get the energy at the start of activities (not at mignight)
-                    var afternoonKi = GetNineStarKiDailyKi(day.Date.AddHours(16), timeZoneId);
-                    
+                    var dailyKi = GetNineStarKiDailyKi(day.AddHours(8), timeZoneId); // Get the energy at the start of activities (not at mignight)
+                    var afternoonKi = GetNineStarKiDailyKi(day.AddHours(16), timeZoneId); // Get energy in the afternoon
+
+                    // If the two energies are different, display a 'split energy'
+
                     int? secondKi = afternoonKi.DailyKi == dailyKi.DailyKi ? (int?)null : afternoonKi.DailyKi;
                     dailyEnergies.Add((day, dailyKi.DailyKi, dailyKi.InvertedDailyKi, secondKi));
                 }

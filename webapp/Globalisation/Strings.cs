@@ -62,6 +62,7 @@
             public const string CharacterLabel = "CharacterLabel";
             public const string SurfaceEnergyLabel = "SurfaceEnergyLabel";
             public const string DailyEnergyLabel = "DailyEnergyLabel";
+            public const string AfternoonEnergyLabel = "AfternoonEnergyLabel";
             public const string DailyInvertedEnergyLabel = "DailyInvertedEnergyLabel";
             public const string DayStarLabel = "DayStarLabel";
             public const string YinYangLabel = "YinYangLabel";

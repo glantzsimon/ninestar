@@ -275,7 +275,8 @@ namespace K9.WebApplication.Services
                 bool useHolograhpicCycleCalculation,
                 bool invertDailyAndHourlyKiForSouthernHemisphere,
                 bool invertDailyAndHourlyCycleKiForSouthernHemisphere,
-                EPlannerView view = EPlannerView.Year)
+                EPlannerView view = EPlannerView.Year,
+                NineStarKiModel nineStarKiModel = null)
         {
             return GetOrAddToCache($"GetPlannerData_{view.ToString()}_{dateOfBirth:yyyyMMddHHmm}_{timeOfBirth.ToString()}_" +
                                    $"{gender}_{selectedDateTime:yyyyMMddHHmm}_{userTimeZoneId}_{calculationMethod}_" +
@@ -287,7 +288,7 @@ namespace K9.WebApplication.Services
                 var lichun = _swissEphemerisService.GetLichun(selectedDateTime, userTimeZoneId);
                 // Add time of birth
                 dateOfBirth = dateOfBirth.Add(timeOfBirth);
-                var nineStarKiModel = CalculateNineStarKiProfile(new PersonModel
+                nineStarKiModel = nineStarKiModel ?? CalculateNineStarKiProfile(new PersonModel
                 {
                     DateOfBirth = dateOfBirth,
                     BirthTimeZoneId = birthTimeZoneId,
@@ -319,7 +320,7 @@ namespace K9.WebApplication.Services
                         {
                             View = view,
                             NineStarKiModel = nineStarKiModel,
-                            Energy = nineStarKiModel.GlobalCycleEnergies.Month,
+                            Energy = nineStarKiModel.PersonalHousesOccupiedEnergies.Month,
                             Lichun = lichun,
                             PeriodStarsOn = selectedMonthPeriod.PeriodStartsOn,
                             PeriodEndsOn = selectedMonthPeriod.PeriodEndsOn,
@@ -345,7 +346,7 @@ namespace K9.WebApplication.Services
                         return new PlannerViewModel
                         {
                             View = view,
-                            Energy = nineStarKiModel.GlobalCycleEnergies.Year,
+                            Energy = nineStarKiModel.PersonalHousesOccupiedEnergies.Year,
                             Lichun = lichun,
                             PeriodStarsOn = yearlyPeriod.PeriodStartsOn,
                             PeriodEndsOn = yearlyPeriod.PeriodEndsOn,

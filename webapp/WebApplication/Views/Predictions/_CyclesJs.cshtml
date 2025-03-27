@@ -79,7 +79,7 @@
             var selectedDate = $el.attr("data-selected-date");
 
             // Update planner
-            ajaxcontroller().get(dailyCalendarUrl,
+            ajaxcontroller().get(url,
                 {
                     dateOfBirth: '@Model.PersonModel.DateOfBirth.ToString("yyyy-MM-dd")',
                     birthTimeZoneId: "@Model.PersonModel.BirthTimeZoneId",

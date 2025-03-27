@@ -101,7 +101,8 @@ namespace K9.WebApplication.Controllers
                     processedModel.InvertDailyAndHourlyCycleKiForSouthernHemisphere = model.InvertDailyAndHourlyCycleKiForSouthernHemisphere;
 
                     var plannerData = _nineStarKiService.GetPlannerData(model.PersonModel.DateOfBirth, model.PersonModel.BirthTimeZoneId, model.PersonModel.TimeOfBirth, model.PersonModel.Gender, model.SelectedDate.Value, model.CalculationMethod, model.UserTimeZoneId,
-                        model.UseHolograhpicCycleCalculation, model.InvertDailyAndHourlyKiForSouthernHemisphere, model.InvertDailyAndHourlyCycleKiForSouthernHemisphere);
+                        model.UseHolograhpicCycleCalculation, model.InvertDailyAndHourlyKiForSouthernHemisphere, model.InvertDailyAndHourlyCycleKiForSouthernHemisphere,
+                        EPlannerView.Year, processedModel);
 
                     UpdatePlannerUrls(plannerData);
 
@@ -133,7 +134,7 @@ namespace K9.WebApplication.Controllers
 
             UpdatePlannerUrls(plannerData);
 
-            return PartialView("_GlobalPlanner", plannerData);
+            return PartialView("Planner/_GlobalPlanner", plannerData);
         }
 
         [Route("get-hourly-predictions")]

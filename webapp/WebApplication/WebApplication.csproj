@@ -1637,6 +1637,7 @@
     <Content Include="Views\Predictions\_Planner.cshtml" />
     <Content Include="Views\Compatibility\_PersonalChart.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DisplayDataForPeriod.cshtml" />
+    <Content Include="Views\Predictions\_CycleSplitTitle.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

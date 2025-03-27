@@ -49,7 +49,7 @@
             <div class="calendar-day @selectedClass">
                 <div class="date-label">@displayDate</div>
                 <div class="custom-content">
-                    @if (secondEnergy == null)
+                    @if (energy == secondEnergy)
                     {
                         <img loading="lazy" title="@energy.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @energy.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(energy.Energy.ToString().ToLower()).png" />
                     }

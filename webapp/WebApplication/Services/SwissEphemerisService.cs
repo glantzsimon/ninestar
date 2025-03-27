@@ -425,23 +425,18 @@ namespace K9.WebApplication.Services
             }, TimeSpan.FromDays(30));
         }
 
-        public (DateTime Day, int DailyKi, int? InvertedDailyKi, int? AfternoonKi)[] GetNineStarKiDailyEnergiesForMonth(DateTime selectedDateTime, string timeZoneId)
+        public (DateTime Day, int MorningKi, int? InvertedMorningKi, int? AfternoonKi, int? InvertedAfternoonKi)[] GetNineStarKiDailyEnergiesForMonth(DateTime selectedDateTime, string timeZoneId)
         {
             string cacheKey = $"{nameof(GetNineStarKiDailyEnergiesForMonth)}_{selectedDateTime:yyyyMMddHH}_{timeZoneId}";
             return GetOrAddToCache(cacheKey, () =>
             {
                 var (PeriodStartOn, PeriodEndsOn) = GetNineStarKiMonthlyPeriodBoundaries(selectedDateTime, timeZoneId);
-                var dailyEnergies = new List<(DateTime Day, int DailyKi, int? InvertedDailyKi, int? AfternoonKi)>();
+                var dailyEnergies = new List<(DateTime Day, int MorningKi, int? InvertedMorningKi, int? AfternoonKi, int? InvertedAfternoonKi)>();
 
                 for (DateTime day = PeriodStartOn; day <= PeriodEndsOn; day = day.AddDays(1))
                 {
-                    var dailyKi = GetNineStarKiDailyKi(day.AddHours(8), timeZoneId); // Get the energy at the start of activities (not at mignight)
-                    var afternoonKi = GetNineStarKiDailyKi(day.AddHours(16), timeZoneId); // Get energy in the afternoon
-
-                    // If the two energies are different, display a 'split energy'
-
-                    int? secondKi = afternoonKi.DailyKi == dailyKi.DailyKi ? (int?)null : afternoonKi.DailyKi;
-                    dailyEnergies.Add((day, dailyKi.DailyKi, dailyKi.InvertedDailyKi, secondKi));
+                    var dailyKis = GetNineStarKiDailyKis(day, timeZoneId); // Get the energy at the start of activities (not at mignight)
+                    dailyEnergies.Add((day, dailyKis[0].DailyKi, dailyKis[0].InvertedDailyKi, dailyKis[1].DailyKi, dailyKis[1].InvertedDailyKi));
                 }
 
                 return dailyEnergies.ToArray();

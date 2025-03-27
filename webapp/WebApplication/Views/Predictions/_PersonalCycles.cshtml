@@ -31,7 +31,14 @@
         @Html.Partial("_CycleTitle", Model.YearlyCycleEnergy)
     </div>
     <div class="col-sm-4 small-energy">
-        @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Day)
+        @if (Model.PersonalHousesOccupiedEnergies.Day.EnergyNumber == Model.PersonalHousesOccupiedEnergies.Day2.EnergyNumber)
+        {
+            @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Day)
+        }
+        else
+        {
+            @Html.Partial("_CycleSplitTitle", (Model.PersonalHousesOccupiedEnergies.Day, Model.PersonalHousesOccupiedEnergies.Day2))
+        }
     </div>
 </div>
 <div class="row">

@@ -122,7 +122,10 @@ namespace K9.WebApplication.Controllers
         public ActionResult GetDailyCalendar(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, DateTime selectedDateTime, string timeZoneId, ECalculationMethod calculationMethod, string userTimeZoneId, bool useHolograhpicCycleCalculation, bool invertDailyAndHourlyKiForSouthernHemisphere, bool invertDailyAndHourlyCycleKiForSouthernHemisphere)
         {
             var dailyPeriods = _swissEphemerisService.GetNineStarKiDailyEnergiesForMonth(selectedDateTime.AddDays(1), birthTimeZoneId);
-
+            
+            // Add time of birth
+            dateOfBirth = dateOfBirth.Add(timeOfBirth);
+            
             var nineStarKiModel = _nineStarKiService.CalculateNineStarKiProfile(new PersonModel
             {
                 DateOfBirth = dateOfBirth,
@@ -138,7 +141,7 @@ namespace K9.WebApplication.Controllers
             nineStarKiModel.SelectedDate = DateTimeHelper.ConvertToLocaleDateTime(DateTime.UtcNow, userTimeZoneId);
 
             nineStarKiModel.DailyPeriods = dailyPeriods;
-
+            
             return Json(new
             {
                 title = $"{Dictionary.DailyKiCalendar} - {monthStartTitle}",

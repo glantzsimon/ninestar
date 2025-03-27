@@ -86,7 +86,7 @@ namespace K9.WebApplication.Services
                     var dailyPeriods = includePlannerData
                         ? _swissEphemerisService.GetNineStarKiDailyEnergiesForMonth(selectedDateTime,
                             userTimeZoneId)
-                        : new (DateTime Date, int DailyKi, int? InvertedDailyKi, int? afternoonKi)[] { };
+                        : new (DateTime Date, int DailyKi, int? InvertedDailyKi, int? afternoonKi, int? invertedAfternoonKi)[] { };
 
                     model = new NineStarKiModel(personModel, preciseEpochEnergy, preciseGenerationalEnergy,
                         preciseMainEnergy, preciseEmotionalEnergy, preciseEmotionalEnergyForInvertedYear,
@@ -108,7 +108,7 @@ namespace K9.WebApplication.Services
                     {
                         YearlyPeriods = new (DateTime PeriodStartOn, DateTime PeriodEndsOn, int YearlyKi)[] { },
                         MonthlyPeriods = new (DateTime PeriodStartOn, DateTime PeriodEndsOn, int MonthlyKi)[] { },
-                        DailyPeriods = new (DateTime Date, int DailyKi, int? InvertedDailyKi, int? afternoonKi)[] { }
+                        DailyPeriods = new (DateTime Date, int DailyKi, int? InvertedDailyKi, int? afternoonKi, int? invertedAfternoonKi)[] { }
                     };
                 }
 

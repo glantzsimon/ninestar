@@ -20,6 +20,11 @@ namespace K9.SharedLibrary.Extensions
 	        return value.ToString("dd MMMM yyyy - HHHH:mm");
 	    }
 
+	    public static string ToAjaxDateTimeString(this DateTime value)
+	    {
+	        return value.ToString("yyyy-MM-dd HHHH:mm");
+	    }
+
 	    public static bool HasBirthdayPassedThisYear(this DateTime dob)
 	    {
 	        DateTime today = DateTime.Today;

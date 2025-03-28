@@ -6,6 +6,7 @@
         {
             public const string Now = "Now";
             public const string SelectedDateAndTime = "SelectedDateAndTime";
+            public const string ViewLabel = "ViewLabel";
 
             public const string CalculationMethodLabel = "CalculationMethodLabel";
             public const string InvertDailyAndHourlyKiForSouthernHemisphereLabel = "InvertDailyAndHourlyKiForSouthernHemisphereLabel";

@@ -297,9 +297,16 @@ namespace K9.WebApplication.Services
                 }, false, false, selectedDateTime, calculationMethod, false, false, userTimeZoneId,
                     useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
 
+                var plannerModel = new PlannerViewModel
+                {
+                    View = view,
+                    NineStarKiModel = nineStarKiModel,
+                    Lichun = lichun,
+                    SelectedDateTime = selectedDateTime
+                };
+
                 switch (view)
                 {
-
                     case EPlannerView.Month:
                         var selectedMonthPeriod = _swissEphemerisService.GetNineStarKiMonthlyPeriodBoundaries(selectedDateTime.AddDays(2), userTimeZoneId);
                         var dailyPeriods =
@@ -316,16 +323,12 @@ namespace K9.WebApplication.Services
                             energies.Add(new PlannerViewModelItem(morningEnergy, afternoonEnergy, dailyEnergy.Day, dailyEnergy.Day, isSelected));
                         }
 
-                        return new PlannerViewModel
-                        {
-                            View = view,
-                            NineStarKiModel = nineStarKiModel,
-                            Energy = nineStarKiModel.PersonalHousesOccupiedEnergies.Month,
-                            Lichun = lichun,
-                            PeriodStarsOn = selectedMonthPeriod.PeriodStartsOn,
-                            PeriodEndsOn = selectedMonthPeriod.PeriodEndsOn,
-                            Energies = energies
-                        };
+                        plannerModel.Energy = nineStarKiModel.PersonalHousesOccupiedEnergies.Month;
+                        plannerModel.PeriodStarsOn = selectedMonthPeriod.PeriodStartsOn;
+                        plannerModel.PeriodEndsOn = selectedMonthPeriod.PeriodEndsOn;
+                        plannerModel.Energies = energies;
+
+                        break;
 
                     // Year
                     default:
@@ -343,16 +346,15 @@ namespace K9.WebApplication.Services
                             energies.Add(new PlannerViewModelItem(energy, energy, monthlyPeriod.PeriodStartsOn, monthlyPeriod.PeriodEndsOn, isActive));
                         }
 
-                        return new PlannerViewModel
-                        {
-                            View = view,
-                            Energy = nineStarKiModel.PersonalHousesOccupiedEnergies.Year,
-                            Lichun = lichun,
-                            PeriodStarsOn = yearlyPeriod.PeriodStartsOn,
-                            PeriodEndsOn = yearlyPeriod.PeriodEndsOn,
-                            Energies = energies
-                        };
+                        plannerModel.Energy = nineStarKiModel.PersonalHousesOccupiedEnergies.Year;
+                        plannerModel.PeriodStarsOn = yearlyPeriod.PeriodStartsOn;
+                        plannerModel.PeriodEndsOn = yearlyPeriod.PeriodEndsOn;
+                        plannerModel.Energies = energies;
+
+                        break;
                 }
+
+                return plannerModel;
 
             }, TimeSpan.FromDays(30));
         }

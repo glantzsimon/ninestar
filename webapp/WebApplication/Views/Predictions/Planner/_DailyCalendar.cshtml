@@ -2,7 +2,7 @@
 @using K9.WebApplication.Config
 @model K9.WebApplication.ViewModels.PlannerViewModel
 
-<div class="container main-content clear-both daily-planner-container padding-top-10">
+<div class="container main-content clear-both daily-planner-container margin-bottom-0">
     <div class="calendar-grid">
         <!-- Day headers -->
         <div class="calendar-header">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DayOfWeek.Monday)</div>
@@ -34,8 +34,8 @@
                 isFirst = false;
             }
 
-            <div class="global-planner-item" data-energy="@energy.Energy.Energy" data-view="@Model.ChildView" data-type="child" data-selected-date="@energy.EnergyStartsOn.ToString("yyyy-MM-dd HHHH:mm")" data-update-url="@Model.UpdateChildUrl">
-                <div class="calendar-day @energy.SelectedCssClass">
+            <div class="global-planner-item" data-energy="@energy.Energy.Energy" data-view="@Model.ChildView" data-type="child" data-selected-date="@energy.EnergyStartsOn.ToAjaxDateTimeString()" data-update-url="@Model.UpdateChildUrl">
+                <div class="calendar-day child-block @energy.SelectedCssClass">
                     <div class="date-label">@Model.GetEnergyTitle(energy)</div>
                     <div class="custom-content">
                         @if (energy.IsSplitEnergy)

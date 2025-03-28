@@ -4,21 +4,29 @@ using K9.WebApplication.Enums;
 using K9.WebApplication.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using K9.SharedLibrary.Extensions;
 
 namespace K9.WebApplication.ViewModels
 {
     public class PlannerViewModel
     {
-        public Enums.EPlannerView View { get; set; }
+        [UIHint("PlannerView")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ViewLabel)]
+        public EPlannerView View { get; set; }
+
         public NineStarKiModel NineStarKiModel { get; set; }
         public NineStarKiEnergy Energy { get; set; }
         public DateTime Lichun { get; set; }
+        public DateTime SelectedDateTime { get; set; }
         public DateTime PeriodStarsOn { get; set; }
         public DateTime PeriodEndsOn { get; set; }
         public List<PlannerViewModelItem> Energies { get; set; }
         public string UpdateParentUrl { get; set; }
         public string UpdateChildUrl { get; set; }
-        
+
+        public string SelectedDateTimeString => SelectedDateTime.ToAjaxDateTimeString();
+
         public string EnergyName => Energy.EnergyName;
         public string ImgSrc => $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/energies/{Energy.EnergyUIName}.png";
         public string ImgAlt => $"{Dictionary.NineStarKiAstrologyFreeCalculator} {Energy.EnergyTitle}";
@@ -31,7 +39,19 @@ namespace K9.WebApplication.ViewModels
 
         public string GetEnergyTitle(PlannerViewModelItem energy)
         {
-            return $"{energy.EnergyStartsOn.ToString("MMM")}";
+            switch (View)
+            {
+                case EPlannerView.EightyOneYear:
+                case EPlannerView.NineYear:
+                case EPlannerView.Year:
+                    return $"{energy.EnergyStartsOn.ToString("MMM")}";
+
+                case EPlannerView.Month:
+                    return $"{energy.EnergyStartsOn.ToString("MMM dd")}";
+
+                default:
+                    return $"{energy.EnergyStartsOn.ToString("MMM")}";
+            }
         }
 
         public string GetEnergyDatesDetails(PlannerViewModelItem energy)
@@ -86,7 +106,7 @@ namespace K9.WebApplication.ViewModels
                     }
 
                 case EPlannerView.Day:
-                    return PeriodStarsOn.ToString("ddd MMM dd YYYY");
+                    return PeriodStarsOn.ToString("ddd MMM dd yyyy");
 
                 default:
                     return string.Empty;

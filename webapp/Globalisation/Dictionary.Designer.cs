@@ -17114,6 +17114,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to View.
+        /// </summary>
+        public static string ViewLabel {
+            get {
+                return ResourceManager.GetString("ViewLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to View Membership Options.
         /// </summary>
         public static string ViewMembershipOptions {

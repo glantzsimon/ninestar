@@ -10,14 +10,22 @@
 }
 
 <div class="container main-content clear-both global-planner-container">
-    @Html.Hidden("PlannerEnableScrollIntoView", true)
+    @Html.HiddenFor(e => e.SelectedDateTime)
+
+    <div class="row">
+        <div class="col-sm-4 col-xs-12 padding-0">
+            @Html.BootstrapEditorFor(e => e.View)
+        </div>
+    </div>
+
+    <hr />
 
     <div class="parent-planner">
         <!-- Parent Block -->
         <div class="parent-block planner-item-container">
 
             <!-- Top Row: Parent Summary -->
-            <div class="global-planner-item" data-energy="@Model.Energy.Energy" data-type="parent" data-view="@Model.View" data-selected-date="@Model.PeriodStarsOn.ToString("yyyy-MM-dd HHHH:mm")" data-update-url="@Model.UpdateParentUrl">
+            <div class="global-planner-item" data-energy="@Model.Energy.Energy" data-type="parent" data-view="@Model.View" data-selected-date="@Model.PeriodStarsOn.ToAjaxDateTimeString()" data-update-url="@Model.UpdateParentUrl">
                 <div class="parent-summary-row clickable">
                     <div class="parent-label">
                         <div class="parent-title">@Model.PeriodDatesTitle</div>
@@ -49,10 +57,10 @@
                         {
                             var energyTitle = Model.GetEnergyTitle(energy);
                             var datesDisplay = Model.GetEnergyDatesDetails(energy);
-                            
+
                             <div class="col-md-1 col-sm-1 col-xs-2 padding-0 margin-0 child-container">
 
-                                <div class="global-planner-item" data-energy="@energy.Energy.Energy" data-view="@Model.ChildView" data-type="child" data-selected-date="@energy.EnergyStartsOn.ToString("yyyy-MM-dd HHHH:mm")" data-update-url="@Model.UpdateChildUrl">
+                                <div class="global-planner-item" data-energy="@energy.Energy.Energy" data-view="@Model.ChildView" data-type="child" data-selected-date="@energy.EnergyStartsOn.ToAjaxDateTimeString()" data-update-url="@Model.UpdateChildUrl">
 
                                     <div class="planner-item-container child-block clickable @energy.SelectedCssClass">
                                         <div class="child-name">@energyTitle</div>

@@ -45,16 +45,30 @@
     }
 
     function bindGlobalPlannerEvents() {
+        let clickTimeout;
+
+        $("#View").change(function() {
+            var view = $(this).val();
+            var selectedDate = $("SelectedDateTime").val();
+
+            $.fn.displaySpinner("#global-planner-container");
+
+            // Update planner
+            updateGlobalPlanner(view, selectedDate);
+        });
 
         // Drill up or down
         $(".global-planner-item").dblclick(function() {
+            clearTimeout(clickTimeout);
+
             var $el = $(this);
-            var url = '@Url.Action("GetPlanner")';
             var view = $el.attr("data-view");
             var selectedDate = $el.attr("data-selected-date");
 
+            $.fn.displaySpinner("#global-planner-container");
+
             // Update planner
-            updateGlobalPlanner(url, view, selectedDate);
+            updateGlobalPlanner(view, selectedDate);
         });
 
         $(".global-planner-item").click(function() {
@@ -80,23 +94,28 @@
                 $childBlock.addClass("active");
             }
 
-            // Display selected child / parent data
-            ajaxcontroller().get(url, {energy}).done(
-                function(result) {
-                    if (result.success) {
-                        $details.find(".panel .panel-heading h4 strong").html(result.data.CycleDescriptiveName);
-                        $details.find(".panel .panel-body").html(result.data.CycleDescription);
-                    }
-                });
+            clickTimeout = setTimeout(function() {
+                // Display selected child / parent data
+                ajaxcontroller().get(url, {energy}).done(
+                    function(result) {
+                        if (result.success) {
+                            $details.find(".panel .panel-heading h4 strong").html(result.data.CycleDescriptiveName);
+                            $details.find(".panel .panel-body").html(result.data.CycleDescription);
+                        }
+                    });
 
-            setTimeout(function () {
-                if (!$.fn.isVisible($details))
-                    $.fn.scrollToTopOf($details, -180);
+                setTimeout(function () {
+                    if (!$.fn.isVisible($details))
+                        $.fn.scrollToTopOf($details, -180);
+                }, 200);
+
             }, 200);
         });
     }
 
-    function updateGlobalPlanner(url, view, selectedDate) {
+    function updateGlobalPlanner(view, selectedDate) {
+        var url = '@Url.Action("GetPlanner")';
+
         ajaxcontroller().getHtml(url,
             {
                 dateOfBirth: '@Model.PersonModel.DateOfBirth.ToString("yyyy-MM-dd")',
@@ -143,44 +162,6 @@
         });
 
         bindGlobalPlannerEvents();
-
-        // Obsolete
-        $(".planner-item").click(function() {
-            var $el = $(this);
-            var energy = $el.attr("data-energy");
-            var type = $el.attr("data-type");
-            var $container, $plannerItem, $details;
-            var url = "";
-
-            switch (type) {
-                case "year":
-                    $details = $("#yearly-planner-details");
-                    url = '@Url.Action("GetYearlyForecast", "Predictions")';
-                    break;
-
-                default:
-                    $details = $("#monthly-planner-details");
-                    url = '@Url.Action("GetMonthlyForecast", "Predictions")';
-                    break;
-            }
-
-            $container = $el.closest(".planner-container");
-            $plannerItem = $el.find(".planner-item-container");
-
-            // clear current class from all items
-            $container.find(".planner-item .planner-item-container").removeClass("active");
-
-            // set current class on current selected item
-            $plannerItem.addClass("active");
-
-            ajaxcontroller().get(url, {energy}).done(
-                function(result) {
-                    if (result.success) {
-                        $details.find(".panel .panel-heading h4 strong").html(result.data.CycleDescriptiveName);
-                        $details.find(".panel .panel-body").html(result.data.CycleDescription);
-                    }
-                });
-        });
     });
 
 </script>

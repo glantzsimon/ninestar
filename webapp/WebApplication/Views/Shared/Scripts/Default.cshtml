@@ -7,6 +7,7 @@
 <script type="text/javascript">
 
 	$(function () {
+
 		$.fn.formatBytes = function (bytes, si) {
 			var thresh = si ? 1000 : 1024;
 			if (Math.abs(bytes) < thresh) {
@@ -128,6 +129,29 @@
                     rect.right <= ($(window).width())
             );
 	    }
+
+	    $.fn.displaySpinner = function(selector) {
+	        var $this = selector === undefined ? $(this) : $(selector);
+
+	        // Create the spinner and overlay elements if they don't exist
+	        if ($this.find('.partialSpinner').length === 0) {
+	            $this.append('<div class="partialSpinner"></div>');
+	        }
+	        if ($this.find('.partialOverlay').length === 0) {
+	            $this.append('<div class="partialOverlay"></div>');
+	        }
+
+	        // Make sure the parent container has position relative
+	        $this.css('position', 'relative');
+
+	        // The spinner and overlay will automatically fill the container
+	        var $spinner = $this.find('.partialSpinner');
+	        var $overlay = $this.find('.partialOverlay');
+
+	        // Show the spinner and overlay
+	        $spinner.show();
+	        $overlay.show();
+	    };
 
 		bootstrapControls({
 			language: "@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower()",

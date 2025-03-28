@@ -58,9 +58,10 @@ namespace K9.WebApplication.ViewModels
         {
             switch (ChildView)
             {
-                case EPlannerView.Year:
-                case EPlannerView.NineYear:
                 case EPlannerView.EightyOneYear:
+                case EPlannerView.NineYear:
+                case EPlannerView.Year:
+                case EPlannerView.Month:
                     return EnergyStartsOn.AddDays(2).ToAjaxDateTimeString();
 
                 default:

@@ -134,9 +134,11 @@
             function(result) {
                 if (result.success) {
                     $("#global-planner-container").html(result.data);
-                    
+
                     bindGlobalPlannerEvents();
                     bootstrapControls().init();
+                    var view = $("#PlannerView").val();
+                    $("#View").val(view).selectpicker("refresh");
                 }
             });
     }

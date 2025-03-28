@@ -44,32 +44,7 @@
             200);
     }
 
-    $(function() {
-        $("a[href='#yearly-planner']").click(function() {
-            scrollCurrentYearIntoVew();
-        });
-
-        $("a[href='#monthly-planner']").click(function() {
-            scrollCurrentMonthIntoVew();
-        });
-
-        $("#current-yearly-cycle").click(function() {
-            scrollCyclesIntoVew("#yearly");
-
-            $(".nav-pills a[href='#predictions']").tab("show");
-            $(".nav-pills a[href='#yearly']").tab("show");
-        });
-
-        $("#current-monthly-cycle").click(function() {
-            scrollCyclesIntoVew("#monthly");
-
-            $(".nav-pills a[href='#predictions']").tab("show");
-            $(".nav-pills a[href='#monthly']").tab("show");
-        });
-
-        $("a[href='#global-planner']").click(function() {
-            scrollActivePlannerItemIntoVew();
-        });
+    function bindGlobalPlannerEvents() {
 
         // Drill up or down
         $(".global-planner-item").dblclick(function() {
@@ -79,25 +54,7 @@
             var selectedDate = $el.attr("data-selected-date");
 
             // Update planner
-            ajaxcontroller().get(url,
-                {
-                    dateOfBirth: '@Model.PersonModel.DateOfBirth.ToString("yyyy-MM-dd")',
-                    birthTimeZoneId: "@Model.PersonModel.BirthTimeZoneId",
-                    timeOfBirth: '@Model.PersonModel.TimeOfBirth.ToString()',
-                    gender: '@Model.PersonModel.Gender',
-                    selectedDateTime: selectedDate,
-                    userTimeZoneId: '@Model.UserTimeZoneId',
-                    calculationMethod: '@Model.CalculationMethod.ToString()',
-                    useHolograhpicCycleCalculation: '@Model.UseHolograhpicCycleCalculation.ToString().ToLower()',
-                    invertDailyAndHourlyKiForSouthernHemisphere: '@Model.InvertDailyAndHourlyKiForSouthernHemisphere.ToString().ToLower()',
-                    invertDailyAndHourlyCycleKiForSouthernHemisphere: '@Model.InvertDailyAndHourlyCycleKiForSouthernHemisphere.ToString().ToLower()',
-                    view: view,
-                }).done(
-                function(result) {
-                    if (result.success) {
-                        $("#global-planner-container").html(result.data);
-                    }
-                });
+            updateGlobalPlanner(url, view, selectedDate);
         });
 
         $(".global-planner-item").click(function() {
@@ -137,6 +94,55 @@
                     $.fn.scrollToTopOf($details, -180);
             }, 200);
         });
+    }
+
+    function updateGlobalPlanner(url, view, selectedDate) {
+        ajaxcontroller().getHtml(url,
+            {
+                dateOfBirth: '@Model.PersonModel.DateOfBirth.ToString("yyyy-MM-dd")',
+                birthTimeZoneId: "@Model.PersonModel.BirthTimeZoneId",
+                timeOfBirth: '@Model.PersonModel.TimeOfBirth.ToString()',
+                gender: '@Model.PersonModel.Gender',
+                selectedDateTime: selectedDate,
+                userTimeZoneId: '@Model.UserTimeZoneId',
+                calculationMethod: '@Model.CalculationMethod.ToString()',
+                useHolograhpicCycleCalculation: '@Model.UseHolograhpicCycleCalculation.ToString().ToLower()',
+                invertDailyAndHourlyKiForSouthernHemisphere: '@Model.InvertDailyAndHourlyKiForSouthernHemisphere.ToString().ToLower()',
+                invertDailyAndHourlyCycleKiForSouthernHemisphere: '@Model.InvertDailyAndHourlyCycleKiForSouthernHemisphere.ToString().ToLower()',
+                view: view,
+            }).done(
+            function(result) {
+                if (result.success) {
+                    $("#global-planner-container").html(result.data);
+                    bindGlobalPlannerEvents();
+                }
+            });
+    }
+
+    $(function() {
+        $("a[href='#yearly-planner']").click(function() {
+            scrollCurrentYearIntoVew();
+        });
+
+        $("a[href='#monthly-planner']").click(function() {
+            scrollCurrentMonthIntoVew();
+        });
+
+        $("#current-yearly-cycle").click(function() {
+            scrollCyclesIntoVew("#yearly");
+
+            $(".nav-pills a[href='#predictions']").tab("show");
+            $(".nav-pills a[href='#yearly']").tab("show");
+        });
+
+        $("#current-monthly-cycle").click(function() {
+            scrollCyclesIntoVew("#monthly");
+
+            $(".nav-pills a[href='#predictions']").tab("show");
+            $(".nav-pills a[href='#monthly']").tab("show");
+        });
+
+        bindGlobalPlannerEvents();
 
         // Obsolete
         $(".planner-item").click(function() {

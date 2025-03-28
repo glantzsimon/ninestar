@@ -284,7 +284,7 @@ namespace K9.WebApplication.Services
                                    $"{invertDailyAndHourlyKiForSouthernHemisphere}_" +
                                    $"{invertDailyAndHourlyCycleKiForSouthernHemisphere}", () =>
             {
-                var energies = new List<(NineStarKiEnergy Energy, NineStarKiEnergy SecondEnergy, DateTime EnergyStartsOn, DateTime EnergyEndsOn, bool IsSelected)>();
+                var energies = new List<PlannerViewModelItem>();
                 var lichun = _swissEphemerisService.GetLichun(selectedDateTime, userTimeZoneId);
                 // Add time of birth
                 dateOfBirth = dateOfBirth.Add(timeOfBirth);
@@ -301,7 +301,7 @@ namespace K9.WebApplication.Services
                 {
 
                     case EPlannerView.Month:
-                        var selectedMonthPeriod = _swissEphemerisService.GetNineStarKiMonthlyPeriodBoundaries(selectedDateTime, userTimeZoneId);
+                        var selectedMonthPeriod = _swissEphemerisService.GetNineStarKiMonthlyPeriodBoundaries(selectedDateTime.AddDays(2), userTimeZoneId);
                         var dailyPeriods =
                             _swissEphemerisService.GetNineStarKiDailyEnergiesForMonth(selectedDateTime, userTimeZoneId);
 
@@ -313,7 +313,7 @@ namespace K9.WebApplication.Services
 
                             var isSelected = dailyEnergy.Day.Date == selectedDateTime.Date;
 
-                            energies.Add((morningEnergy, afternoonEnergy, dailyEnergy.Day, dailyEnergy.Day, isSelected));
+                            energies.Add(new PlannerViewModelItem(morningEnergy, afternoonEnergy, dailyEnergy.Day, dailyEnergy.Day, isSelected));
                         }
 
                         return new PlannerViewModel
@@ -329,7 +329,7 @@ namespace K9.WebApplication.Services
 
                     // Year
                     default:
-                        var yearlyPeriod = _swissEphemerisService.GetNineStarKiYearlyPeriod(selectedDateTime, userTimeZoneId);
+                        var yearlyPeriod = _swissEphemerisService.GetNineStarKiYearlyPeriod(selectedDateTime.AddDays(2), userTimeZoneId);
                         var monthlyPeriodsForYear =
                             _swissEphemerisService.GetNineStarKiMonthlyPeriods(selectedDateTime, userTimeZoneId);
 
@@ -340,7 +340,7 @@ namespace K9.WebApplication.Services
                             var isSelected =
                                 selectedDateTime.IsBetween(monthlyPeriod.PeriodStartsOn, monthlyPeriod.PeriodEndsOn);
 
-                            energies.Add((energy, energy, monthlyPeriod.PeriodStartsOn, monthlyPeriod.PeriodEndsOn, isSelected));
+                            energies.Add(new PlannerViewModelItem(energy, energy, monthlyPeriod.PeriodStartsOn, monthlyPeriod.PeriodEndsOn, isSelected));
                         }
 
                         return new PlannerViewModel

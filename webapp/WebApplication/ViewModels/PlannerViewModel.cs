@@ -1,7 +1,9 @@
-﻿using K9.WebApplication.Models;
+﻿using K9.Globalisation;
+using K9.WebApplication.Config;
+using K9.WebApplication.Enums;
+using K9.WebApplication.Models;
 using System;
 using System.Collections.Generic;
-using K9.WebApplication.Enums;
 
 namespace K9.WebApplication.ViewModels
 {
@@ -13,9 +15,13 @@ namespace K9.WebApplication.ViewModels
         public DateTime Lichun { get; set; }
         public DateTime PeriodStarsOn { get; set; }
         public DateTime PeriodEndsOn { get; set; }
-        public List<(NineStarKiEnergy Energy, NineStarKiEnergy SecondEnergy, DateTime EnergyStartsOn, DateTime EnergyEndsOn, bool IsSelected)> Energies { get; set; }
+        public List<PlannerViewModelItem> Energies { get; set; }
         public string UpdateParentUrl { get; set; }
         public string UpdateChildUrl { get; set; }
+        
+        public string EnergyName => Energy.EnergyName;
+        public string ImgSrc => $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/energies/{Energy.EnergyUIName}.png";
+        public string ImgAlt => $"{Dictionary.NineStarKiAstrologyFreeCalculator} {Energy.EnergyTitle}";
 
         public string PeriodDatesTitle => GetPeriodDatesTitle();
 
@@ -23,12 +29,12 @@ namespace K9.WebApplication.ViewModels
 
         public EPlannerView ChildView => GetChildView();
 
-        public string GetEnergyTitle((NineStarKiEnergy Energy, NineStarKiEnergy SecondEnergy, DateTime EnergyStartsOn, DateTime EnergyEndsOn, bool IsSelected) energy)
+        public string GetEnergyTitle(PlannerViewModelItem energy)
         {
             return $"{energy.EnergyStartsOn.ToString("MMM")}";
         }
 
-        public string GetEnergyDatesDetails((NineStarKiEnergy Energy, NineStarKiEnergy SecondEnergy, DateTime EnergyStartsOn, DateTime EnergyEndsOn, bool IsSelected) energy)
+        public string GetEnergyDatesDetails(PlannerViewModelItem energy)
         {
             return $"{energy.EnergyStartsOn.ToString("MMM/dd")} {energy.EnergyEndsOn.ToString("MMM/dd")}";
         }

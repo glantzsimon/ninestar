@@ -23,10 +23,8 @@
 
         @foreach (var energy in Model.Energies)
         {
-            var selectedClass = energy.IsSelected ? "selected" : "";
-
             // Add padding for first row
-            if (isFirst)
+                if (isFirst)
             {
                 int offset = ((int)energy.EnergyStartsOn.DayOfWeek + 6) % 7;
                 for (int i = 0; i < offset; i++)
@@ -37,20 +35,21 @@
             }
 
             <div class="global-planner-item" data-energy="@energy.Energy.Energy" data-view="@Model.ChildView" data-type="child" data-selected-date="@energy.EnergyStartsOn.ToString("yyyy-MM-dd HHHH:mm")" data-update-url="@Model.UpdateChildUrl">
-                <div class="calendar-day @selectedClass">
+                <div class="calendar-day @energy.SelectedCssClass">
                     <div class="date-label">@Model.GetEnergyTitle(energy)</div>
                     <div class="custom-content">
-                        @if (energy.Energy.EnergyNumber == energy.SecondEnergy.EnergyNumber)
+                        @if (energy.IsSplitEnergy)
                         {
-                            <img loading="lazy" title="@energy.Energy.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @energy.Energy.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(energy.Energy.ToString().ToLower()).png" />
+                            <div class="double-energy-container">
+                                <img loading="lazy" title="@energy.Energy.EnergyName" alt="@energy.ImageAlt" class="auto-size center-block" src="@energy.ImageSrc" />
+                                <span> - </span>
+                                <img loading="lazy" title="@energy.SecondEnergy.EnergyName" alt="@energy.SecondImageAlt" class="auto-size center-block" src="@energy.SecondImageSrc" />
+                                <span> - </span>
+                            </div>
                         }
                         else
                         {
-                            <div class="double-energy-container">
-                                <img loading="lazy" title="@energy.Energy.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @energy.Energy.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(energy.Energy.ToString().ToLower()).png" />
-                                <span> - </span>
-                                <img loading="lazy" title="@energy.SecondEnergy.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @energy.SecondEnergy.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(energy.SecondEnergy.Energy.ToString().ToLower()).png" />
-                            </div>
+                            <img loading="lazy" title="@energy.Energy.EnergyName" alt="@energy.ImageAlt" class="auto-size center-block" src="@energy.ImageSrc" />
                         }
 
                     </div>

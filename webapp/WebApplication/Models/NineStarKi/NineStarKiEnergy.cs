@@ -617,6 +617,9 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyLabel)]
         public string EnergyName => MetaData.GetDescription();
 
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyLabel)]
+        public string EnergyUIName => EnergyName.RemoveSpaces().ToLower();
+
         public int EnergyNumber => (int)Energy;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyDescriptionLabel)]
@@ -670,6 +673,7 @@ namespace K9.WebApplication.Models
         [ScriptIgnore] public ENineStarKiEnergyCycleType EnergyCycleType { get; set; }
         [ScriptIgnore] public string EnergyLowerCase => Energy.ToString().ToLower();
         [ScriptIgnore] public string EnergyNameAndNumber => $"{EnergyNumber} {ElementName}";
+        [ScriptIgnore] public string EnergyNameNumberAndElement => $"{EnergyNumber} {ElementName} - {EnergyName}";
         [ScriptIgnore] public string EnergyTitle => $"{EnergyNumber} {ElementName} / {EnergyName} - {DescriptiveTitle}";
         [ScriptIgnore] public string DescriptiveTitle => $"The {MetaData.GetDescriptiveTitle()}";
 

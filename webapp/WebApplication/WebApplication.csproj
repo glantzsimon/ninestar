@@ -367,6 +367,7 @@
     <Compile Include="Exceptions\EmailTemplateAlreadySentException.cs" />
     <Compile Include="Exceptions\UserAlreadySubscribedException.cs" />
     <Compile Include="Extensions\NumerologyExtensions.cs" />
+    <Compile Include="ViewModels\PlannerViewModelItem.cs" />
     <Compile Include="Models\NineStarKi\NineStarKiDirections.cs" />
     <Compile Include="Models\NineStarKi\NineStarKiDirection.cs" />
     <Compile Include="Models\NineStarKi\NineStarKiEnergiesModel.cs" />
@@ -511,7 +512,7 @@
     <Compile Include="ViewModels\NineStarKiAjaxModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\ArchiveItemViewModel.cs" />
-    <Compile Include="Models\NineStarKi\MembershipModel.cs" />
+    <Compile Include="Models\MembershipModel.cs" />
     <Compile Include="ViewModels\PurchaseCreditsViewModel.cs" />
     <Compile Include="ViewModels\UserMembershipViewModel.cs" />
     <Compile Include="ViewModels\NineStarKiModalitySummaryViewModel.cs" />

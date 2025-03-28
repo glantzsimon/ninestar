@@ -282,12 +282,18 @@ namespace K9.WebApplication.Services
                 EPlannerNavigationDirection navigationDirection = EPlannerNavigationDirection.None,
                 NineStarKiModel nineStarKiModel = null)
         {
+            var navigationKey = "";
+            if (navigationDirection != EPlannerNavigationDirection.None)
+            {
+                navigationKey = Guid.NewGuid().ToString();
+            }
+
             return GetOrAddToCache($"GetPlannerData_{view.ToString()}_{dateOfBirth:yyyyMMddHHmm}_{timeOfBirth.ToString()}_" +
                                    $"{gender}_{selectedDateTime:yyyyMMddHHmm}_{userTimeZoneId}_{calculationMethod}_{displayDataForPeriod}" +
                                    $"{userTimeZoneId}_{useHolograhpicCycleCalculation}_" +
                                    $"{invertDailyAndHourlyKiForSouthernHemisphere}_" +
                                    $"{invertDailyAndHourlyCycleKiForSouthernHemisphere}_" +
-                                   $"{display}", () =>
+                                   $"{display}_{navigationKey}", () =>
             {
                 var energies = new List<PlannerViewModelItem>();
                 var lichun = _swissEphemerisService.GetLichun(selectedDateTime, userTimeZoneId);
@@ -320,14 +326,14 @@ namespace K9.WebApplication.Services
                         {
                             eightyOneYearPeriod =
                                 _swissEphemerisService.GetNineStarKiEightyOneYearPeriod(
-                                    eightyOneYearPeriod.PeriodEndsOn.AddDays(2), userTimeZoneId);
+                                    eightyOneYearPeriod.PeriodEndsOn.AddDays(3), userTimeZoneId);
                             selectedDateTime = selectedDateTime.AddYears(81);
                         }
                         else if (navigationDirection == EPlannerNavigationDirection.Back)
                         {
                             eightyOneYearPeriod =
                                 _swissEphemerisService.GetNineStarKiEightyOneYearPeriod(
-                                    eightyOneYearPeriod.PeriodStartsOn.AddDays(-2), userTimeZoneId);
+                                    eightyOneYearPeriod.PeriodStartsOn.AddDays(-3), userTimeZoneId);
                             selectedDateTime = selectedDateTime.AddYears(-81);
                         }
 
@@ -338,7 +344,7 @@ namespace K9.WebApplication.Services
                         }
 
                         var nineYearPeriodsForPeriod =
-                            _swissEphemerisService.GetNineStarKiNineYearPeriodsWithinEightyOneYearPeriod(selectedDateTime, userTimeZoneId);
+                            _swissEphemerisService.GetNineStarKiNineYearPeriodsWithinEightyOneYearPeriod(eightyOneYearPeriod.PeriodStartsOn.AddDays(3), userTimeZoneId);
 
                         foreach (var nineYearPeriodSlot in nineYearPeriodsForPeriod)
                         {
@@ -368,12 +374,12 @@ namespace K9.WebApplication.Services
 
                         if (navigationDirection == EPlannerNavigationDirection.Forward)
                         {
-                            nineYearPeriod = _swissEphemerisService.GetNineStarKiNineYearPeriod(nineYearPeriod.PeriodEndsOn.AddDays(2), userTimeZoneId);
+                            nineYearPeriod = _swissEphemerisService.GetNineStarKiNineYearPeriod(nineYearPeriod.PeriodEndsOn.AddDays(3), userTimeZoneId);
                             selectedDateTime = selectedDateTime.AddYears(9);
                         }
                         else if (navigationDirection == EPlannerNavigationDirection.Back)
                         {
-                            nineYearPeriod = _swissEphemerisService.GetNineStarKiNineYearPeriod(nineYearPeriod.PeriodStartsOn.AddDays(-2), userTimeZoneId);
+                            nineYearPeriod = _swissEphemerisService.GetNineStarKiNineYearPeriod(nineYearPeriod.PeriodStartsOn.AddDays(-3), userTimeZoneId);
                             selectedDateTime = selectedDateTime.AddYears(-9);
                         }
 
@@ -384,7 +390,7 @@ namespace K9.WebApplication.Services
                         }
 
                         var yearsForNineYearPeriod =
-                            _swissEphemerisService.GetNineStarKiYearlyPeriodsForNineYearPeriod(selectedDateTime, userTimeZoneId);
+                            _swissEphemerisService.GetNineStarKiYearlyPeriodsForNineYearPeriod(nineYearPeriod.PeriodStartsOn.AddDays(3), userTimeZoneId);
 
                         foreach (var yearlyPeriodChild in yearsForNineYearPeriod)
                         {
@@ -408,13 +414,13 @@ namespace K9.WebApplication.Services
 
                         if (navigationDirection == EPlannerNavigationDirection.Forward)
                         {
-                            selectedMonthPeriod = _swissEphemerisService.GetNineStarKiMonthlyPeriodBoundaries(selectedMonthPeriod.PeriodEndsOn.AddDays(2), userTimeZoneId);
+                            selectedMonthPeriod = _swissEphemerisService.GetNineStarKiMonthlyPeriodBoundaries(selectedMonthPeriod.PeriodEndsOn.AddDays(3), userTimeZoneId);
 
                             selectedDateTime = selectedDateTime.AddMonths(1);
                         }
                         else if (navigationDirection == EPlannerNavigationDirection.Back)
                         {
-                            selectedMonthPeriod = _swissEphemerisService.GetNineStarKiMonthlyPeriodBoundaries(selectedMonthPeriod.PeriodStartsOn.AddDays(-2), userTimeZoneId);
+                            selectedMonthPeriod = _swissEphemerisService.GetNineStarKiMonthlyPeriodBoundaries(selectedMonthPeriod.PeriodStartsOn.AddDays(-3), userTimeZoneId);
 
                             selectedDateTime = selectedDateTime.AddMonths(-1);
                         }
@@ -426,7 +432,7 @@ namespace K9.WebApplication.Services
                         }
 
                         var dailyPeriods =
-                            _swissEphemerisService.GetNineStarKiDailyEnergiesForMonth(selectedDateTime, userTimeZoneId);
+                            _swissEphemerisService.GetNineStarKiDailyEnergiesForMonth(selectedMonthPeriod.PeriodStartsOn.AddDays(3), userTimeZoneId);
 
                         foreach (var dailyEnergy in dailyPeriods)
                         {
@@ -502,13 +508,13 @@ namespace K9.WebApplication.Services
 
                         if (navigationDirection == EPlannerNavigationDirection.Forward)
                         {
-                            yearlyPeriod = _swissEphemerisService.GetNineStarKiYearlyPeriod(yearlyPeriod.PeriodEndsOn.AddDays(2), userTimeZoneId);
+                            yearlyPeriod = _swissEphemerisService.GetNineStarKiYearlyPeriod(yearlyPeriod.PeriodEndsOn.AddDays(3), userTimeZoneId);
 
                             selectedDateTime = selectedDateTime.AddYears(1);
                         }
                         else if (navigationDirection == EPlannerNavigationDirection.Back)
                         {
-                            yearlyPeriod = _swissEphemerisService.GetNineStarKiYearlyPeriod(yearlyPeriod.PeriodStartsOn.AddDays(-2), userTimeZoneId);
+                            yearlyPeriod = _swissEphemerisService.GetNineStarKiYearlyPeriod(yearlyPeriod.PeriodStartsOn.AddDays(-3), userTimeZoneId);
 
                             selectedDateTime = selectedDateTime.AddYears(-1);
                         }
@@ -520,7 +526,7 @@ namespace K9.WebApplication.Services
                         }
 
                         var monthlyPeriodsForYear =
-                            _swissEphemerisService.GetNineStarKiMonthlyPeriods(selectedDateTime, userTimeZoneId);
+                            _swissEphemerisService.GetNineStarKiMonthlyPeriods(yearlyPeriod.PeriodStartsOn.AddDays(3), userTimeZoneId);
 
                         foreach (var monthlyPeriod in monthlyPeriodsForYear)
                         {

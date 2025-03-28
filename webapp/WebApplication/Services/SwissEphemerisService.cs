@@ -103,10 +103,11 @@ namespace K9.WebApplication.Services
                         if (jd >= solarTerms[i] && jd < solarTerms[i + 1])
                         {
                             // Descending cycle: subtract i
-                            return ((firstMonth - 1 - i + 9) % 9) + 1;
+                            return (((firstMonth - 1 - i + 9) % 9 + 9) % 9) + 1;
                         }
                     }
-                    return ((firstMonth - 1 - (solarTerms.Length - 1) + 9) % 9) + 1;
+                    return (((firstMonth - 1 - (solarTerms.Length - 1)) % 9 + 9) % 9) + 1;
+
                 }
             }, TimeSpan.FromDays(30));
         }

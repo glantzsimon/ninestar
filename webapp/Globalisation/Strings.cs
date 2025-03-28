@@ -329,7 +329,7 @@
             public const string SoilEpoch = "soil_epoch";
             public const string ThunderEpoch = "thunder_epoch";
             public const string WindEpoch = "wind_epoch";
-            public const string CoreEarthEpoch = "core_earth_epoch";
+            public const string CoreEarthEpoch = "coreearth_epoch";
             public const string HeavenEpoch = "heaven_epoch";
             public const string LakeEpoch = "lake_epoch";
             public const string MountainEpoch = "mountain_epoch";

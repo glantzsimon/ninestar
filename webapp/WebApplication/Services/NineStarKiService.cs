@@ -362,6 +362,18 @@ namespace K9.WebApplication.Services
                             energies.Add(new PlannerViewModelItem(energy, energy, nineYearPeriodSlot.PeriodStartsOn, nineYearPeriodSlot.PeriodEndsOn, isActive, EPlannerView.NineYear));
                         }
 
+                        if (navigationDirection != EPlannerNavigationDirection.None)
+                        {
+                            nineStarKiModel = CalculateNineStarKiProfile(new PersonModel
+                            {
+                                DateOfBirth = dateOfBirth,
+                                BirthTimeZoneId = birthTimeZoneId,
+                                TimeOfBirth = timeOfBirth,
+                                Gender = gender
+                            }, false, false, selectedDateTime, calculationMethod, true, false, userTimeZoneId,
+                                                  useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
+                        }
+
                         plannerModel.Energy = display == EPlannerDisplay.PersonalKi ? nineStarKiModel.PersonalHousesOccupiedEnergies.Epoch : nineStarKiModel.GlobalCycleEnergies.Epoch;
                         plannerModel.PeriodStarsOn = eightyOneYearPeriod.PeriodStartsOn;
                         plannerModel.PeriodEndsOn = eightyOneYearPeriod.PeriodEndsOn;
@@ -400,6 +412,18 @@ namespace K9.WebApplication.Services
                                 DateTime.Today.IsBetween(yearlyPeriodChild.PeriodStartsOn, yearlyPeriodChild.PeriodEndsOn);
 
                             energies.Add(new PlannerViewModelItem(energy, energy, yearlyPeriodChild.PeriodStartsOn, yearlyPeriodChild.PeriodEndsOn, isActive, EPlannerView.Year));
+                        }
+
+                        if (navigationDirection != EPlannerNavigationDirection.None)
+                        {
+                            nineStarKiModel = CalculateNineStarKiProfile(new PersonModel
+                                {
+                                    DateOfBirth = dateOfBirth,
+                                    BirthTimeZoneId = birthTimeZoneId,
+                                    TimeOfBirth = timeOfBirth,
+                                    Gender = gender
+                                }, false, false, selectedDateTime, calculationMethod, true, false, userTimeZoneId,
+                                useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
                         }
 
                         plannerModel.Energy = display == EPlannerDisplay.PersonalKi ? nineStarKiModel.PersonalHousesOccupiedEnergies.Generation : nineStarKiModel.GlobalCycleEnergies.Generation;
@@ -461,6 +485,18 @@ namespace K9.WebApplication.Services
                             energies.Add(new PlannerViewModelItem(morningEnergy, afternoonEnergy, dailyEnergy.Day, dailyEnergy.Day, isActive, EPlannerView.Day));
                         }
 
+                        if (navigationDirection != EPlannerNavigationDirection.None)
+                        {
+                            nineStarKiModel = CalculateNineStarKiProfile(new PersonModel
+                                {
+                                    DateOfBirth = dateOfBirth,
+                                    BirthTimeZoneId = birthTimeZoneId,
+                                    TimeOfBirth = timeOfBirth,
+                                    Gender = gender
+                                }, false, false, selectedDateTime, calculationMethod, true, false, userTimeZoneId,
+                                useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
+                        }
+
                         plannerModel.Energy = display == EPlannerDisplay.PersonalKi ? nineStarKiModel.PersonalHousesOccupiedEnergies.Month : nineStarKiModel.GlobalCycleEnergies.Month;
                         plannerModel.PeriodStarsOn = selectedMonthPeriod.PeriodStartsOn;
                         plannerModel.PeriodEndsOn = selectedMonthPeriod.PeriodEndsOn;
@@ -493,6 +529,18 @@ namespace K9.WebApplication.Services
                             var isActive = DateTime.UtcNow.IsBetween(hourlyPeriod.SegmentStartsOn, hourlyPeriod.SegmentEndsOn);
 
                             energies.Add(new PlannerViewModelItem(presonalHourlyEnergy, presonalHourlyEnergy, hourlyPeriod.SegmentStartsOn, hourlyPeriod.SegmentEndsOn, isActive, EPlannerView.Day));
+                        }
+
+                        if (navigationDirection != EPlannerNavigationDirection.None)
+                        {
+                            nineStarKiModel = CalculateNineStarKiProfile(new PersonModel
+                                {
+                                    DateOfBirth = dateOfBirth,
+                                    BirthTimeZoneId = birthTimeZoneId,
+                                    TimeOfBirth = timeOfBirth,
+                                    Gender = gender
+                                }, false, false, selectedDateTime, calculationMethod, true, false, userTimeZoneId,
+                                useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
                         }
 
                         plannerModel.Energy = display == EPlannerDisplay.PersonalKi ? nineStarKiModel.PersonalHousesOccupiedEnergies.Day : nineStarKiModel.GlobalCycleEnergies.Day;
@@ -536,6 +584,18 @@ namespace K9.WebApplication.Services
                                 DateTime.Today.IsBetween(monthlyPeriod.PeriodStartsOn, monthlyPeriod.PeriodEndsOn);
 
                             energies.Add(new PlannerViewModelItem(energy, energy, monthlyPeriod.PeriodStartsOn, monthlyPeriod.PeriodEndsOn, isActive, EPlannerView.Month));
+                        }
+
+                        if (navigationDirection != EPlannerNavigationDirection.None)
+                        {
+                            nineStarKiModel = CalculateNineStarKiProfile(new PersonModel
+                                {
+                                    DateOfBirth = dateOfBirth,
+                                    BirthTimeZoneId = birthTimeZoneId,
+                                    TimeOfBirth = timeOfBirth,
+                                    Gender = gender
+                                }, false, false, selectedDateTime, calculationMethod, true, false, userTimeZoneId,
+                                useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
                         }
 
                         plannerModel.Energy = display == EPlannerDisplay.PersonalKi ? nineStarKiModel.PersonalHousesOccupiedEnergies.Year : nineStarKiModel.GlobalCycleEnergies.Year;

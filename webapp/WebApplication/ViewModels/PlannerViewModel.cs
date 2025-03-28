@@ -27,6 +27,8 @@ namespace K9.WebApplication.ViewModels
 
         public string SelectedDateTimeString => SelectedDateTime.ToAjaxDateTimeString();
 
+        public string PeriodStartsOnDateTimeString => GetPeriodStartsOnString();
+
         public string EnergyName => Energy.EnergyName;
         public string ImgSrc => $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/energies/{Energy.EnergyUIName}.png";
         public string ImgAlt => $"{Dictionary.NineStarKiAstrologyFreeCalculator} {Energy.EnergyTitle}";
@@ -59,7 +61,21 @@ namespace K9.WebApplication.ViewModels
             return $"{energy.EnergyStartsOn.ToString("MMM/dd")} {energy.EnergyEndsOn.ToString("MMM/dd")}";
         }
 
-        public EPlannerView GetChildView()
+        private string GetPeriodStartsOnString()
+        {
+            switch (View)
+            {
+                case EPlannerView.Year:
+                case EPlannerView.NineYear:
+                case EPlannerView.EightyOneYear:
+                    return PeriodStarsOn.AddDays(2).ToAjaxDateTimeString();
+
+                default:
+                    return PeriodStarsOn.ToAjaxDateTimeString();
+            }
+        }
+
+        private EPlannerView GetChildView()
         {
             switch (View)
             {

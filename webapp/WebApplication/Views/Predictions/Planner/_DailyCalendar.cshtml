@@ -34,7 +34,7 @@
                 isFirst = false;
             }
 
-            <div class="global-planner-item" data-energy="@energy.Energy.Energy" data-view="@Model.ChildView" data-type="child" data-selected-date="@energy.EnergyStartsOn.ToAjaxDateTimeString()" data-update-url="@Model.UpdateChildUrl">
+            <div class="global-planner-item" data-energy="@energy.Energy.Energy" data-view="@Model.ChildView" data-type="child" data-selected-date="@energy.EnergyStartsOnDateTimeString" data-update-url="@Model.UpdateChildUrl">
                 <div class="calendar-day child-block @energy.SelectedCssClass">
                     <div class="date-label">@Model.GetEnergyTitle(energy)</div>
                     <div class="custom-content">

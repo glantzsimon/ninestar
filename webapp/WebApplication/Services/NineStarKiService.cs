@@ -321,7 +321,7 @@ namespace K9.WebApplication.Services
 
                             var isSelected = dailyEnergy.Day.Date == selectedDateTime.Date;
 
-                            energies.Add(new PlannerViewModelItem(morningEnergy, afternoonEnergy, dailyEnergy.Day, dailyEnergy.Day, isSelected));
+                            energies.Add(new PlannerViewModelItem(morningEnergy, afternoonEnergy, dailyEnergy.Day, dailyEnergy.Day, isSelected, EPlannerView.Day));
                         }
 
                         plannerModel.Energy = nineStarKiModel.PersonalHousesOccupiedEnergies.Month;
@@ -344,7 +344,7 @@ namespace K9.WebApplication.Services
                             var isActive =
                                 selectedDateTime.IsBetween(monthlyPeriod.PeriodStartsOn, monthlyPeriod.PeriodEndsOn);
 
-                            energies.Add(new PlannerViewModelItem(energy, energy, monthlyPeriod.PeriodStartsOn, monthlyPeriod.PeriodEndsOn, isActive));
+                            energies.Add(new PlannerViewModelItem(energy, energy, monthlyPeriod.PeriodStartsOn, monthlyPeriod.PeriodEndsOn, isActive, EPlannerView.Month));
                         }
 
                         plannerModel.Energy = nineStarKiModel.PersonalHousesOccupiedEnergies.Year;

@@ -347,16 +347,16 @@
             public const string LakeMonth = "lake_month";
             public const string MountainMonth = "mountain_month";
             public const string FireMonth = "fire_month";
-
-            public const string WaterDay = "water_day";
-            public const string SoilDay = "soil_day";
-            public const string ThunderDay = "thunder_day";
-            public const string WindDay = "wind_day";
-            public const string CoreEarthDay = "core_earth_day";
-            public const string HeavenDay = "heaven_day";
-            public const string LakeDay = "lake_day";
-            public const string MountainDay = "mountain_day";
-            public const string FireDay = "fire_day";
+            
+            public const string WaterDayCycle = "water_day_cycle";
+            public const string SoilDayCycle = "soil_day_cycle";
+            public const string ThunderDayCycle = "thunder_day_cycle";
+            public const string WindDayCycle = "wind_day_cycle";
+            public const string CoreEarthDayCycle = "core_earth_day_cycle";
+            public const string HeavenDayCycle = "heaven_day_cycle";
+            public const string LakeDayCycle = "lake_day_cycle";
+            public const string MountainDayCycle = "mountain_day_cycle";
+            public const string FireDayCycle = "fire_day_cycle";
         }
     }
 }

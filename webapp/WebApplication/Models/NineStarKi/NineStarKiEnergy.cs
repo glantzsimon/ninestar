@@ -106,7 +106,7 @@ namespace K9.WebApplication.Models
             MonthlyDescriptionName = Strings.Names.WaterMonth,
             EightyOneYearDescriptionName = Strings.Names.WaterEpoch,
             NineYearDescriptionName = Strings.Names.WaterGeneration,
-            DailyDescriptionName = Strings.Names.WaterDay)]
+            DailyDescriptionName = Strings.Names.WaterDayCycle)]
         Winter,
 
         [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
@@ -117,7 +117,7 @@ namespace K9.WebApplication.Models
             MonthlyDescriptionName = Strings.Names.SoilMonth,
             EightyOneYearDescriptionName = Strings.Names.SoilEpoch,
             NineYearDescriptionName = Strings.Names.SoilGeneration,
-            DailyDescriptionName = Strings.Names.SoilDay)]
+            DailyDescriptionName = Strings.Names.SoilDayCycle)]
         WinterToSpring,
 
         [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
@@ -128,7 +128,7 @@ namespace K9.WebApplication.Models
             MonthlyDescriptionName = Strings.Names.ThunderMonth,
             EightyOneYearDescriptionName = Strings.Names.ThunderEpoch,
             NineYearDescriptionName = Strings.Names.ThunderGeneration,
-            DailyDescriptionName = Strings.Names.ThunderDay)]
+            DailyDescriptionName = Strings.Names.ThunderDayCycle)]
         EarlySpring,
 
         [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
@@ -139,7 +139,7 @@ namespace K9.WebApplication.Models
             MonthlyDescriptionName = Strings.Names.WindMonth,
             EightyOneYearDescriptionName = Strings.Names.WindEpoch,
             NineYearDescriptionName = Strings.Names.WindGeneration,
-            DailyDescriptionName = Strings.Names.WindDay)]
+            DailyDescriptionName = Strings.Names.WindDayCycle)]
         LateSpring,
 
         [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
@@ -150,7 +150,7 @@ namespace K9.WebApplication.Models
             MonthlyDescriptionName = Strings.Names.CoreEarthMonth,
             EightyOneYearDescriptionName = Strings.Names.CoreEarthEpoch,
             NineYearDescriptionName = Strings.Names.CoreEarthGeneration,
-            DailyDescriptionName = Strings.Names.CoreEarthDay)]
+            DailyDescriptionName = Strings.Names.CoreEarthDayCycle)]
         Centre,
 
         [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
@@ -161,7 +161,7 @@ namespace K9.WebApplication.Models
             MonthlyDescriptionName = Strings.Names.HeavenMonth,
             EightyOneYearDescriptionName = Strings.Names.HeavenEpoch,
             NineYearDescriptionName = Strings.Names.HeavenGeneration,
-            DailyDescriptionName = Strings.Names.HeavenDay)]
+            DailyDescriptionName = Strings.Names.HeavenDayCycle)]
         EarlyAutumn,
 
         [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
@@ -172,7 +172,7 @@ namespace K9.WebApplication.Models
             MonthlyDescriptionName = Strings.Names.LakeMonth,
             EightyOneYearDescriptionName = Strings.Names.LakeEpoch,
             NineYearDescriptionName = Strings.Names.LakeGeneration,
-            DailyDescriptionName = Strings.Names.LakeDay)]
+            DailyDescriptionName = Strings.Names.LakeDayCycle)]
         LateAutumn,
 
         [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
@@ -183,7 +183,7 @@ namespace K9.WebApplication.Models
             MonthlyDescriptionName = Strings.Names.MountainMonth,
             EightyOneYearDescriptionName = Strings.Names.MountainEpoch,
             NineYearDescriptionName = Strings.Names.MountainGeneration,
-            DailyDescriptionName = Strings.Names.MountainDay)]
+            DailyDescriptionName = Strings.Names.MountainDayCycle)]
         AutumnToWinter,
 
         [NineStarKiCycleEnumMetaData(ResourceType = typeof(Dictionary),
@@ -194,7 +194,7 @@ namespace K9.WebApplication.Models
             MonthlyDescriptionName = Strings.Names.FireMonth,
             EightyOneYearDescriptionName = Strings.Names.WindEpoch,
             NineYearDescriptionName = Strings.Names.FireGeneration,
-            DailyDescriptionName = Strings.Names.FireDay)]
+            DailyDescriptionName = Strings.Names.FireDayCycle)]
         Summer
     }
 
@@ -673,7 +673,7 @@ namespace K9.WebApplication.Models
         [ScriptIgnore] public ENineStarKiEnergyCycleType EnergyCycleType { get; set; }
         [ScriptIgnore] public string EnergyLowerCase => Energy.ToString().ToLower();
         [ScriptIgnore] public string EnergyNameAndNumber => $"{EnergyNumber} {ElementName}";
-        [ScriptIgnore] public string EnergyNameNumberAndElement => $"{EnergyNumber} {ElementName} - {EnergyName}";
+        [ScriptIgnore] public string EnergyNameNumberAndElement => ElementName == EnergyName ? $"{EnergyNumber} {ElementName}" : $"{EnergyNumber} {ElementName} - {EnergyName}";
         [ScriptIgnore] public string EnergyTitle => $"{EnergyNumber} {ElementName} / {EnergyName} - {DescriptiveTitle}";
         [ScriptIgnore] public string DescriptiveTitle => $"The {MetaData.GetDescriptiveTitle()}";
 

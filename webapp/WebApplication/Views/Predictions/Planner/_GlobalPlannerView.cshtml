@@ -6,7 +6,7 @@
 @model K9.WebApplication.ViewModels.PlannerViewModel
 
 @{
-    var activeChild = Model.Energies.FirstOrDefault(e => e.IsSelected);
+    var activeChild = Model.Energies.FirstOrDefault(e => e.IsActive);
 }
 
 <div class="container main-content clear-both global-planner-container">
@@ -47,7 +47,6 @@
                     <div class="child-row row">
                         @foreach (var energy in Model.Energies)
                         {
-                            var activeClass = energy.IsSelected ? "active" : string.Empty;
                             var energyTitle = Model.GetEnergyTitle(energy);
                             var datesDisplay = Model.GetEnergyDatesDetails(energy);
                             
@@ -55,7 +54,7 @@
 
                                 <div class="global-planner-item" data-energy="@energy.Energy.Energy" data-view="@Model.ChildView" data-type="child" data-selected-date="@energy.EnergyStartsOn.ToString("yyyy-MM-dd HHHH:mm")" data-update-url="@Model.UpdateChildUrl">
 
-                                    <div class="planner-item-container child-block clickable @activeClass">
+                                    <div class="planner-item-container child-block clickable @energy.SelectedCssClass">
                                         <div class="child-name">@energyTitle</div>
                                         <div class="desktop-only child-dates">@datesDisplay</div>
                                         <img loading="lazy" title="@energy.EnergyName" alt="@energy.ImageAlt" class="auto-size center-block" src="@energy.ImageSrc" />

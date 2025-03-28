@@ -64,7 +64,7 @@
   max-width: 72px;
   padding-left: 2px;
 }
-.calendar-day.selected {
+.calendar-day.active {
   background-color: #337ab7;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
   transform: scale(1.05) !important;
@@ -73,7 +73,7 @@
   z-index: 3 !important;
   border-radius: 11px;
 }
-.calendar-day.selected div {
+.calendar-day.active div {
   color: #ffffff;
 }
 .empty-cell {

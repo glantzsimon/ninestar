@@ -96,6 +96,9 @@
   max-height: 371px;
   overflow-y: auto;
 }
+.global-planner-container .form-group {
+  margin-bottom: 0;
+}
 .global-planner-container .parent-planner {
   display: flex;
   flex-direction: column;

@@ -4957,6 +4957,15 @@
   <data name="UserTimeZone" xml:space="preserve">
     <value>User Time Zone</value>
   </data>
+  <data name="Day" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="EightyOneYearPeriod" xml:space="preserve">
+    <value>Eighty-One-Year Period</value>
+  </data>
+  <data name="NineYearPeriod" xml:space="preserve">
+    <value>Nine-Year Period</value>
+  </data>
   <data name="ViewLabel" xml:space="preserve">
     <value>View</value>
   </data>

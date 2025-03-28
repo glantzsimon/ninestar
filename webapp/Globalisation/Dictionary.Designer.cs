@@ -5392,6 +5392,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Day.
+        /// </summary>
+        public static string Day {
+            get {
+                return ResourceManager.GetString("Day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    The Day Star Energy is similar to the Mirror Energy in that its influence is more superficial than the yearly or monthly Ki of our birth chart. The Day Star influences &lt;strong&gt;how we appear to others&lt;/strong&gt; and also our general mannerisms and demeanour. 
         ///&lt;/p&gt;.
@@ -6006,6 +6015,15 @@ namespace K9.Globalisation {
         public static string EightyOneYearlyPrediction {
             get {
                 return ResourceManager.GetString("EightyOneYearlyPrediction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Eighty-One-Year Period.
+        /// </summary>
+        public static string EightyOneYearPeriod {
+            get {
+                return ResourceManager.GetString("EightyOneYearPeriod", resourceCulture);
             }
         }
         
@@ -11852,6 +11870,15 @@ namespace K9.Globalisation {
         public static string NineYearlyPrediction {
             get {
                 return ResourceManager.GetString("NineYearlyPrediction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine-Year Period.
+        /// </summary>
+        public static string NineYearPeriod {
+            get {
+                return ResourceManager.GetString("NineYearPeriod", resourceCulture);
             }
         }
         

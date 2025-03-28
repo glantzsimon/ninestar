@@ -4,6 +4,12 @@
     {
         public static class Labels
         {
+            public const string EightyOneYearPeriod = "EightyOneYearPeriod";
+            public const string NineYearPeriod = "NineYearPeriod";
+            public const string Year = "Year";
+            public const string Month = "Month";
+            public const string Day = "Day";
+
             public const string Now = "Now";
             public const string SelectedDateAndTime = "SelectedDateAndTime";
             public const string ViewLabel = "ViewLabel";

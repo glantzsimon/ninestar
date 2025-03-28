@@ -41,7 +41,7 @@ namespace K9.WebApplication.Services
         public NineStarKiModel CalculateNineStarKiProfile(PersonModel personModel, bool isCompatibility = false,
             bool isMyProfile = false, DateTime? today = null, ECalculationMethod calculationMethod = ECalculationMethod.Chinese, bool includeCycles = false, bool includePlannerData = false, string userTimeZoneId = "", bool useHolograhpicCycleCalculation = false, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false, EDisplayDataForPeriod displayDataForPeriod = EDisplayDataForPeriod.Now)
         {
-            var cacheKey = $"CalculateNineStarKiProfileFromModel_{personModel.DateOfBirth:yyyyMMddHHmm}_{personModel.TimeOfBirth.ToString()}_{personModel.BirthTimeZoneId}_{personModel.Name}_{personModel.Gender}_{isCompatibility}_{isMyProfile}_{calculationMethod}_{includeCycles}_{useHolograhpicCycleCalculation}_{today:yyyyMMddHHmm}_{invertDailyAndHourlyKiForSouthernHemisphere}";
+            var cacheKey = $"CalculateNineStarKiProfileFromModel_{personModel.DateOfBirth:yyyyMMddHHmm}_{personModel.TimeOfBirth.ToString()}_{personModel.BirthTimeZoneId}_{personModel.Name}_{personModel.Gender}_{isCompatibility}_{isMyProfile}_{calculationMethod}_{includeCycles}_{useHolograhpicCycleCalculation}_{today:yyyyMMddHHmm}_{invertDailyAndHourlyKiForSouthernHemisphere}_{invertDailyAndHourlyCycleKiForSouthernHemisphere}_{displayDataForPeriod}";
             return GetOrAddToCache(cacheKey, () =>
             {
                 var selectedDateTime = today == null
@@ -270,8 +270,9 @@ namespace K9.WebApplication.Services
                 TimeSpan timeOfBirth,
                 EGender gender,
                 DateTime selectedDateTime,
-                ECalculationMethod calculationMethod,
                 string userTimeZoneId,
+                ECalculationMethod calculationMethod,
+                EDisplayDataForPeriod displayDataForPeriod,
                 bool useHolograhpicCycleCalculation,
                 bool invertDailyAndHourlyKiForSouthernHemisphere,
                 bool invertDailyAndHourlyCycleKiForSouthernHemisphere,
@@ -294,7 +295,7 @@ namespace K9.WebApplication.Services
                     BirthTimeZoneId = birthTimeZoneId,
                     TimeOfBirth = timeOfBirth,
                     Gender = gender
-                }, false, false, selectedDateTime, calculationMethod, false, false, userTimeZoneId,
+                }, false, false, selectedDateTime, calculationMethod, true, false, userTimeZoneId,
                     useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
 
                 var plannerModel = new PlannerViewModel

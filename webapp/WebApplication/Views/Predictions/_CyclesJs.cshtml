@@ -49,7 +49,7 @@
 
         $("#View").change(function() {
             var view = $(this).val();
-            var selectedDate = $("SelectedDateTime").val();
+            var selectedDate = $("#SelectedDateTimeString").val();
 
             $.fn.displaySpinner("#global-planner-container");
 
@@ -123,6 +123,7 @@
                 timeOfBirth: '@Model.PersonModel.TimeOfBirth.ToString()',
                 gender: '@Model.PersonModel.Gender',
                 selectedDateTime: selectedDate,
+                displayDataForPeriod: '@Model.DisplayDataForPeriod',
                 userTimeZoneId: '@Model.UserTimeZoneId',
                 calculationMethod: '@Model.CalculationMethod.ToString()',
                 useHolograhpicCycleCalculation: '@Model.UseHolograhpicCycleCalculation.ToString().ToLower()',
@@ -133,7 +134,9 @@
             function(result) {
                 if (result.success) {
                     $("#global-planner-container").html(result.data);
+                    
                     bindGlobalPlannerEvents();
+                    bootstrapControls().init();
                 }
             });
     }

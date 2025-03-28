@@ -57,6 +57,18 @@
             updateGlobalPlanner(view, selectedDate);
         });
 
+        $("a.planner-zoom-out").click(function() {
+            clearTimeout(clickTimeout);
+
+            var view = $(this).attr("data-view");
+            var selectedDate = $("#SelectedDateTimeString").val();
+
+            $.fn.displaySpinner("#global-planner-container");
+
+            // Update planner
+            updateGlobalPlanner(view, selectedDate);
+        });
+
         // Drill up or down
         $(".global-planner-item").dblclick(function() {
             clearTimeout(clickTimeout);

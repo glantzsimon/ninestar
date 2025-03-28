@@ -333,16 +333,16 @@ namespace K9.WebApplication.Services
                     case EPlannerView.NineYear:
                         var nineYearPeriod = _swissEphemerisService.GetNineStarKiNineYearPeriod(selectedDateTime, userTimeZoneId);
                         var yearsForNineYearPeriod =
-                            _swissEphemerisService.GetNineStarKiYearlyPeriods(selectedDateTime, userTimeZoneId);
+                            _swissEphemerisService.GetNineStarKiYearlyPeriodsForNineYearPeriod(selectedDateTime, userTimeZoneId);
 
-                        foreach (var nineYearPeriod in nineYearPeriodsForPeriod)
+                        foreach (var yearlyPeriodChild in yearsForNineYearPeriod)
                         {
-                            var energy = nineStarKiModel.GetPersonalCycleEnergy(nineYearPeriod.NineYearKi, useHolograhpicCycleCalculation ? nineStarKiModel.PersonalChartEnergies.Generation.EnergyNumber : nineStarKiModel.MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.GenerationalEnergy);
+                            var energy = nineStarKiModel.GetPersonalCycleEnergy(yearlyPeriodChild.YearlyKi, nineStarKiModel.MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.YearlyCycleEnergy);
 
                             var isActive =
-                                DateTime.Today.IsBetween(nineYearPeriod.PeriodStartsOn, nineYearPeriod.PeriodEndsOn);
+                                DateTime.Today.IsBetween(yearlyPeriodChild.PeriodStartsOn, yearlyPeriodChild.PeriodEndsOn);
 
-                            energies.Add(new PlannerViewModelItem(energy, energy, nineYearPeriod.PeriodStartsOn, nineYearPeriod.PeriodEndsOn, isActive, EPlannerView.EightyOneYear));
+                            energies.Add(new PlannerViewModelItem(energy, energy, yearlyPeriodChild.PeriodStartsOn, yearlyPeriodChild.PeriodEndsOn, isActive, EPlannerView.NineYear));
                         }
 
                         plannerModel.Energy = nineStarKiModel.PersonalHousesOccupiedEnergies.Epoch;

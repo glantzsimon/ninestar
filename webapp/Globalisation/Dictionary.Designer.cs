@@ -5421,6 +5421,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Day View.
+        /// </summary>
+        public static string DayView {
+            get {
+                return ResourceManager.GetString("DayView", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Deactivated.
         /// </summary>
         public static string DeactivatedLabel {
@@ -6024,6 +6033,15 @@ namespace K9.Globalisation {
         public static string EightyOneYearPeriod {
             get {
                 return ResourceManager.GetString("EightyOneYearPeriod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Eighty-One-Year View.
+        /// </summary>
+        public static string EightyOneYearView {
+            get {
+                return ResourceManager.GetString("EightyOneYearView", resourceCulture);
             }
         }
         
@@ -11171,6 +11189,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Month View.
+        /// </summary>
+        public static string MonthView {
+            get {
+                return ResourceManager.GetString("MonthView", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to More About 9 Star Ki.
         /// </summary>
         public static string MoreAboutNineStarKiTitle {
@@ -11879,6 +11906,15 @@ namespace K9.Globalisation {
         public static string NineYearPeriod {
             get {
                 return ResourceManager.GetString("NineYearPeriod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine-Year View.
+        /// </summary>
+        public static string NineYearView {
+            get {
+                return ResourceManager.GetString("NineYearView", resourceCulture);
             }
         }
         
@@ -12628,6 +12664,15 @@ namespace K9.Globalisation {
         public static string Planner {
             get {
                 return ResourceManager.GetString("Planner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Double click on an item to drill down and see more detail. Click the &apos;level up&apos; icon to roll up..
+        /// </summary>
+        public static string PlannerInstructions {
+            get {
+                return ResourceManager.GetString("PlannerInstructions", resourceCulture);
             }
         }
         
@@ -18377,6 +18422,15 @@ namespace K9.Globalisation {
         public static string YearlyPrediction {
             get {
                 return ResourceManager.GetString("YearlyPrediction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Year View.
+        /// </summary>
+        public static string YearView {
+            get {
+                return ResourceManager.GetString("YearView", resourceCulture);
             }
         }
         

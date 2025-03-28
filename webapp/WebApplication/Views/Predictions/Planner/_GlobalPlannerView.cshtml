@@ -13,18 +13,21 @@
     @Html.HiddenFor(e => e.SelectedDateTimeString)
     @Html.Hidden("PlannerView", (int)Model.View)
 
-    <div class="row margin-0">
-        <div class="col-sm-4 col-xs-12 padding-0">
+    <div class="row margin-0 margin-bottom-20">
+        <div class="col-sm-4 col-sm-offset-4 col-xs-12 padding-0">
             @Html.BootstrapEditorFor(e => e.View)
         </div>
     </div>
 
-    <hr />
+    <div class="text-center margin-top-20">
+        <h5>
+            @Dictionary.PlannerInstructions
+        </h5>
+    </div>
 
     <div class="parent-planner">
         <!-- Parent Block -->
         <div class="parent-block planner-item-container">
-
             <!-- Top Row: Parent Summary -->
             <div class="global-planner-item" data-energy="@Model.Energy.Energy" data-type="parent" data-view="@Model.View" data-selected-date="@Model.PeriodStartsOnDateTimeString" data-update-url="@Model.UpdateParentUrl">
                 <div class="parent-summary-row clickable">
@@ -42,6 +45,12 @@
                         <div>
                             @Model.Energy.SeasonDescription / @Model.Energy.CycleDescriptiveName
                         </div>
+                    </div>
+                    <div class="parent-detail narrow level-up">
+                        @if (Model.View != EPlannerView.EightyOneYear)
+                        {
+                            <a class="planner-zoom-out" data-view="@Model.NextViewUp"><i class="fa fa-level-up-alt"></i></a>
+                        }
                     </div>
                 </div>
             </div>

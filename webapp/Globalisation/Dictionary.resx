@@ -4960,13 +4960,31 @@
   <data name="Day" xml:space="preserve">
     <value>Day</value>
   </data>
+  <data name="DayView" xml:space="preserve">
+    <value>Day View</value>
+  </data>
   <data name="EightyOneYearPeriod" xml:space="preserve">
     <value>Eighty-One-Year Period</value>
+  </data>
+  <data name="EightyOneYearView" xml:space="preserve">
+    <value>Eighty-One-Year View</value>
+  </data>
+  <data name="MonthView" xml:space="preserve">
+    <value>Month View</value>
   </data>
   <data name="NineYearPeriod" xml:space="preserve">
     <value>Nine-Year Period</value>
   </data>
+  <data name="NineYearView" xml:space="preserve">
+    <value>Nine-Year View</value>
+  </data>
+  <data name="PlannerInstructions" xml:space="preserve">
+    <value>Double click on an item to drill down and see more detail. Click the 'level up' icon to roll up.</value>
+  </data>
   <data name="ViewLabel" xml:space="preserve">
     <value>View</value>
+  </data>
+  <data name="YearView" xml:space="preserve">
+    <value>Year View</value>
   </data>
 </root>

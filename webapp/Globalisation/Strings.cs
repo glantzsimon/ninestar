@@ -4,6 +4,12 @@
     {
         public static class Labels
         {
+            public const string EightyOneYearView = "EightyOneYearView";
+            public const string NineYearView = "NineYearView";
+            public const string YearView = "YearView";
+            public const string MonthView = "MonthView";
+            public const string DayView = "DayView";
+
             public const string EightyOneYearPeriod = "EightyOneYearPeriod";
             public const string NineYearPeriod = "NineYearPeriod";
             public const string Year = "Year";
@@ -17,7 +23,7 @@
             public const string CalculationMethodLabel = "CalculationMethodLabel";
             public const string InvertDailyAndHourlyKiForSouthernHemisphereLabel = "InvertDailyAndHourlyKiForSouthernHemisphereLabel";
             public const string InvertDailyAndHourlyCycleKiForSouthernHemisphereLabel = "InvertDailyAndHourlyCycleKiForSouthernHemisphereLabel";
-            
+
             public const string StrongYinOrgans = "StrongYinOrgans";
             public const string StrongYangOrgans = "StrongYangOrgans";
             public const string WeakYinOrgans = "WeakYinOrgans";
@@ -255,7 +261,7 @@
             public const string Stable = "Stable";
             public const string Dynamic = "Dynamic";
             public const string Reflective = "Reflective";
-            
+
             public const string SpleenPancreas = "SpleenPancreas";
             public const string Lungs = "Lungs";
             public const string Kidneys = "Kidneys";
@@ -304,7 +310,7 @@
             public const string Summer = "Summer";
             public const string LateSummer = "LateSummer";
             public const string Autumn = "Autumn";
-            
+
             public const string Hibernation = "Hibernation";
             public const string Planning = "Planning";
             public const string Sprouting = "Sprouting";
@@ -354,7 +360,7 @@
             public const string LakeMonth = "lake_month";
             public const string MountainMonth = "mountain_month";
             public const string FireMonth = "fire_month";
-            
+
             public const string WaterDayCycle = "water_day_cycle";
             public const string SoilDayCycle = "soil_day_cycle";
             public const string ThunderDayCycle = "thunder_day_cycle";

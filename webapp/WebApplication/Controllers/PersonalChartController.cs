@@ -39,7 +39,7 @@ namespace K9.WebApplication.Controllers
                 // Set user calculation method preference cookie
                 SessionHelper.SetCurrentUserCalculationMethod((int)model.CalculationMethod);
 
-                if (model.PersonModel != null || model.SelectedDate != DateTime.Today)
+                if (model.PersonModel != null)
                 {
                     model.SelectedDate = model.SelectedDate ?? model.GetLocalNow();
                     var isScrollToCyclesOverview = model.IsScrollToCyclesOverview;
@@ -48,7 +48,7 @@ namespace K9.WebApplication.Controllers
 
                     // Add time of birth
                     model.PersonModel.DateOfBirth = model.PersonModel.DateOfBirth.Add(model.PersonModel.TimeOfBirth);
-                    var processedModel = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false,
+                    model = _nineStarKiService.CalculateNineStarKiProfile(model.PersonModel, false, false,
                         model.SelectedDate, model.CalculationMethod, false, model.UseHolograhpicCycleCalculation, model.PersonModel.BirthTimeZoneId, model.InvertDailyAndHourlyKiForSouthernHemisphere);
 
                     model.IsScrollToCyclesOverview = isScrollToCyclesOverview;

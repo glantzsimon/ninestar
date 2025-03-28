@@ -116,6 +116,11 @@
 }
 
 .global-planner-container {
+    h5 {
+        font-size: 14px !important;
+        font-weight: normal !important;
+    }
+
     #global-planner-details {
         .panel-body {
             max-height: 371px;
@@ -191,7 +196,7 @@
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
-                    min-width: 90px;
+                    min-width: 50px;
 
                     &.narrow {
                         flex: 0 0 150px;
@@ -203,6 +208,42 @@
                             object-fit: cover;
                             border-radius: 0.25rem;
                             max-width: 90px;
+                        }
+
+                        &.level-up {
+                            font-size: 22px;
+                            align-items: flex-end;
+
+                            a {
+                                padding: 7px;
+                                outline: 1px solid @border-grey;
+                                border-radius: 100px;
+                                width: 48px;
+                                height: 48px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                text-decoration: none;
+                                background-color: #f0f0f0;
+
+                                &:hover {
+                                    background: @primary-blue;
+                                    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                                    transform: scale(1.3);
+                                    transform: translateY(-1px);
+
+                                    i {
+                                        color: white;
+                                    }
+                                }
+
+                                i {
+                                    font-size: 24px;
+                                    color: @primary-blue;
+                                    transition: box-shadow 0.3s;
+                                    cursor: pointer !important;
+                                }
+                            }
                         }
                     }
 
@@ -290,7 +331,6 @@
     height: 500px; /* Height of the full day container */
     border: 1px solid #ddd;
     background-color: #f9f9f9;
-
     /* Each 2-hour time slot */
     .time-slot {
         position: relative; /* Allow absolute positioning of slot items */
@@ -302,7 +342,6 @@
         border-bottom: 1px solid #ddd;
         background-color: #f0f0f0;
         font-size: 14px;
-
         /* Slot items that will be dynamically placed */
         .slot-item {
             position: absolute;
@@ -317,7 +356,6 @@
             justify-content: center;
             box-sizing: border-box;
             white-space: nowrap;
-
             /* Size adjustment based on duration of the slot */
             &.short {
                 height: 25px; /* For shorter slots */
@@ -329,10 +367,8 @@
         }
     }
 }
-
 /* Optional: You can customize variables for colors */
 @primary-color: #007bff; /* Light blue color */
-
 /* Apply variables to the styles */
 .slot-item {
     background-color: rgba(@primary-color, 0.5);

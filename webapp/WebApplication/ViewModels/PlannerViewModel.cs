@@ -30,7 +30,11 @@ namespace K9.WebApplication.ViewModels
         public string PeriodStartsOnDateTimeString => GetPeriodStartsOnString();
 
         public string EnergyName => Energy.EnergyName;
+
+        public EPlannerView NextViewUp => GetNextViewUp();
+        
         public string ImgSrc => $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/energies/{Energy.EnergyUIName}.png";
+
         public string ImgAlt => $"{Dictionary.NineStarKiAstrologyFreeCalculator} {Energy.EnergyTitle}";
 
         public string PeriodDatesTitle => GetPeriodDatesTitle();
@@ -59,6 +63,28 @@ namespace K9.WebApplication.ViewModels
         public string GetEnergyDatesDetails(PlannerViewModelItem energy)
         {
             return $"{energy.EnergyStartsOn.ToString("MMM/dd")} {energy.EnergyEndsOn.ToString("MMM/dd")}";
+        }
+
+        private EPlannerView GetNextViewUp()
+        {
+            switch (View)
+            {
+                case EPlannerView.EightyOneYear:
+                case EPlannerView.NineYear:
+                    return EPlannerView.EightyOneYear;
+
+                case EPlannerView.Year:
+                    return EPlannerView.NineYear;
+
+                case EPlannerView.Month:
+                    return EPlannerView.Year;
+
+                case EPlannerView.Day:
+                    return EPlannerView.Month;
+
+                default:
+                    return EPlannerView.Year;
+            }
         }
 
         private string GetPeriodStartsOnString()

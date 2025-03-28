@@ -370,6 +370,30 @@ namespace K9.WebApplication.Services
                         plannerModel.Energies = energies;
 
                         break;
+                        
+
+                    case EPlannerView.EightyOneYear:
+                        var eightyOneYearPeriod = _swissEphemerisService.GetNineStarKiYearlyPeriod(selectedDateTime, userTimeZoneId);
+                        var monthlyPeriodsForYear =
+                            _swissEphemerisService.GetNineStarKiMonthlyPeriods(selectedDateTime, userTimeZoneId);
+
+                        foreach (var monthlyPeriod in monthlyPeriodsForYear)
+                        {
+                            var energy = nineStarKiModel.GetPersonalCycleEnergy(monthlyPeriod.MonthlyKi, useHolograhpicCycleCalculation ? nineStarKiModel.PersonalChartEnergies.Month.EnergyNumber : nineStarKiModel.MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.MonthlyCycleEnergy);
+
+                            var isActive =
+                                DateTime.Today.IsBetween(monthlyPeriod.PeriodStartsOn, monthlyPeriod.PeriodEndsOn);
+
+                            energies.Add(new PlannerViewModelItem(energy, energy, monthlyPeriod.PeriodStartsOn, monthlyPeriod.PeriodEndsOn, isActive, EPlannerView.Month));
+                        }
+
+                        plannerModel.Energy = nineStarKiModel.PersonalHousesOccupiedEnergies.Year;
+                        plannerModel.PeriodStarsOn = yearlyPeriod.PeriodStartsOn;
+                        plannerModel.PeriodEndsOn = yearlyPeriod.PeriodEndsOn;
+                        plannerModel.Energies = energies;
+
+                        break;
+
 
                     // Year
                     default:

@@ -55,14 +55,14 @@
         updateGlobalPlanner(view, display, selectedDate, navigationDirection);
     }
 
-    function clearTimeouts() {
-        clearTimeout(clickTimeout);
-        clearTimeout(scrollTimeout);
-    }
-
     function bindGlobalPlannerEvents() {
         let clickTimeout;
         let scrollTimeout;
+
+        function clearTimeouts() {
+            clearTimeout(clickTimeout);
+            clearTimeout(scrollTimeout);
+        }
 
         $("a.planner-zoom-out, a.planner-navigation").click(function() {
             clearTimeouts();

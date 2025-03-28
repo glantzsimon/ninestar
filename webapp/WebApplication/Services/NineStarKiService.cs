@@ -308,26 +308,46 @@ namespace K9.WebApplication.Services
 
                 switch (view)
                 {
-                    case EPlannerView.Day:
-                        var hourlyPeriods =
-                            _swissEphemerisService.GetNineStarKiHourlyPeriodsForDay(selectedDateTime, userTimeZoneId);
+                    case EPlannerView.EightyOneYear:
+                        var eightyOneYearPeriod = _swissEphemerisService.GetNineStarKiEightyOneYearPeriod(selectedDateTime, userTimeZoneId);
+                        var nineYearPeriodsForPeriod =
+                            _swissEphemerisService.GetNineStarKiNineYearPeriodsWithinEightyOneYearPeriod(selectedDateTime, userTimeZoneId);
 
-                        foreach (var hourlyPeriod in hourlyPeriods)
+                        foreach (var nineYearPeriodSlot in nineYearPeriodsForPeriod)
                         {
-                            var preciseHourlyCycleEnergy = invertDailyAndHourlyCycleKiForSouthernHemisphere
-                                ? NineStarKiModel.GetOppositeEnergyInMagicSquare(hourlyPeriod.HourlyKi)
-                                : hourlyPeriod.HourlyKi;
+                            var energy = nineStarKiModel.GetPersonalCycleEnergy(nineYearPeriodSlot.NineYearKi, useHolograhpicCycleCalculation ? nineStarKiModel.PersonalChartEnergies.Generation.EnergyNumber : nineStarKiModel.MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.GenerationalEnergy);
 
-                            var presonalHourlyEnergy = nineStarKiModel.GetPersonalCycleEnergy(preciseHourlyCycleEnergy, useHolograhpicCycleCalculation ? nineStarKiModel.PersonalChartEnergies.Day.EnergyNumber : nineStarKiModel.MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.DailyEnergy);
+                            var isActive =
+                                DateTime.Today.IsBetween(nineYearPeriodSlot.PeriodStartsOn, nineYearPeriodSlot.PeriodEndsOn);
 
-                            var isActive = DateTime.UtcNow.IsBetween(hourlyPeriod.SegmentStartsOn, hourlyPeriod.SegmentEndsOn);
-
-                            energies.Add(new PlannerViewModelItem(presonalHourlyEnergy, presonalHourlyEnergy, hourlyPeriod.SegmentStartsOn, hourlyPeriod.SegmentEndsOn, isActive, EPlannerView.Day));
+                            energies.Add(new PlannerViewModelItem(energy, energy, nineYearPeriodSlot.PeriodStartsOn, nineYearPeriodSlot.PeriodEndsOn, isActive, EPlannerView.EightyOneYear));
                         }
 
-                        plannerModel.Energy = nineStarKiModel.PersonalHousesOccupiedEnergies.Day;
-                        plannerModel.PeriodStarsOn = selectedDateTime.Date;
-                        plannerModel.PeriodEndsOn = selectedDateTime.Date.AddHours(23).AddMinutes(59).AddSeconds(59);
+                        plannerModel.Energy = nineStarKiModel.PersonalHousesOccupiedEnergies.Epoch;
+                        plannerModel.PeriodStarsOn = eightyOneYearPeriod.PeriodStartsOn;
+                        plannerModel.PeriodEndsOn = eightyOneYearPeriod.PeriodEndsOn;
+                        plannerModel.Energies = energies;
+
+                        break;
+
+                    case EPlannerView.NineYear:
+                        var nineYearPeriod = _swissEphemerisService.GetNineStarKiNineYearPeriod(selectedDateTime, userTimeZoneId);
+                        var yearsForNineYearPeriod =
+                            _swissEphemerisService.GetNineStarKiYearlyPeriods(selectedDateTime, userTimeZoneId);
+
+                        foreach (var nineYearPeriod in nineYearPeriodsForPeriod)
+                        {
+                            var energy = nineStarKiModel.GetPersonalCycleEnergy(nineYearPeriod.NineYearKi, useHolograhpicCycleCalculation ? nineStarKiModel.PersonalChartEnergies.Generation.EnergyNumber : nineStarKiModel.MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.GenerationalEnergy);
+
+                            var isActive =
+                                DateTime.Today.IsBetween(nineYearPeriod.PeriodStartsOn, nineYearPeriod.PeriodEndsOn);
+
+                            energies.Add(new PlannerViewModelItem(energy, energy, nineYearPeriod.PeriodStartsOn, nineYearPeriod.PeriodEndsOn, isActive, EPlannerView.EightyOneYear));
+                        }
+
+                        plannerModel.Energy = nineStarKiModel.PersonalHousesOccupiedEnergies.Epoch;
+                        plannerModel.PeriodStarsOn = nineYearPeriod.PeriodStartsOn;
+                        plannerModel.PeriodEndsOn = nineYearPeriod.PeriodEndsOn;
                         plannerModel.Energies = energies;
 
                         break;
@@ -370,30 +390,30 @@ namespace K9.WebApplication.Services
                         plannerModel.Energies = energies;
 
                         break;
-                        
 
-                    case EPlannerView.EightyOneYear:
-                        var eightyOneYearPeriod = _swissEphemerisService.GetNineStarKiYearlyPeriod(selectedDateTime, userTimeZoneId);
-                        var monthlyPeriodsForYear =
-                            _swissEphemerisService.GetNineStarKiMonthlyPeriods(selectedDateTime, userTimeZoneId);
+                    case EPlannerView.Day:
+                        var hourlyPeriods =
+                            _swissEphemerisService.GetNineStarKiHourlyPeriodsForDay(selectedDateTime, userTimeZoneId);
 
-                        foreach (var monthlyPeriod in monthlyPeriodsForYear)
+                        foreach (var hourlyPeriod in hourlyPeriods)
                         {
-                            var energy = nineStarKiModel.GetPersonalCycleEnergy(monthlyPeriod.MonthlyKi, useHolograhpicCycleCalculation ? nineStarKiModel.PersonalChartEnergies.Month.EnergyNumber : nineStarKiModel.MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.MonthlyCycleEnergy);
+                            var preciseHourlyCycleEnergy = invertDailyAndHourlyCycleKiForSouthernHemisphere
+                                ? NineStarKiModel.GetOppositeEnergyInMagicSquare(hourlyPeriod.HourlyKi)
+                                : hourlyPeriod.HourlyKi;
 
-                            var isActive =
-                                DateTime.Today.IsBetween(monthlyPeriod.PeriodStartsOn, monthlyPeriod.PeriodEndsOn);
+                            var presonalHourlyEnergy = nineStarKiModel.GetPersonalCycleEnergy(preciseHourlyCycleEnergy, useHolograhpicCycleCalculation ? nineStarKiModel.PersonalChartEnergies.Hour.EnergyNumber : nineStarKiModel.MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.HourlyEnergy);
 
-                            energies.Add(new PlannerViewModelItem(energy, energy, monthlyPeriod.PeriodStartsOn, monthlyPeriod.PeriodEndsOn, isActive, EPlannerView.Month));
+                            var isActive = DateTime.UtcNow.IsBetween(hourlyPeriod.SegmentStartsOn, hourlyPeriod.SegmentEndsOn);
+
+                            energies.Add(new PlannerViewModelItem(presonalHourlyEnergy, presonalHourlyEnergy, hourlyPeriod.SegmentStartsOn, hourlyPeriod.SegmentEndsOn, isActive, EPlannerView.Day));
                         }
 
-                        plannerModel.Energy = nineStarKiModel.PersonalHousesOccupiedEnergies.Year;
-                        plannerModel.PeriodStarsOn = yearlyPeriod.PeriodStartsOn;
-                        plannerModel.PeriodEndsOn = yearlyPeriod.PeriodEndsOn;
+                        plannerModel.Energy = nineStarKiModel.PersonalHousesOccupiedEnergies.Day;
+                        plannerModel.PeriodStarsOn = selectedDateTime.Date;
+                        plannerModel.PeriodEndsOn = selectedDateTime.Date.AddHours(23).AddMinutes(59).AddSeconds(59);
                         plannerModel.Energies = energies;
 
                         break;
-
 
                     // Year
                     default:

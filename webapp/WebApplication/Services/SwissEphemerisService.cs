@@ -303,31 +303,40 @@ namespace K9.WebApplication.Services
             }, TimeSpan.FromDays(30));
         }
 
-        public (DateTime PeriodStartsOn, DateTime PeriodEndsOn, int YearlyKi) GetNineStarKiYearlyPeriod(DateTime selectedDateTime, string timeZoneId)
+        [Obsolete]
+        public (DateTime PeriodStartsOn, DateTime PeriodEndsOn, int YearlyKi)[] GetNineStarKiYearlyPeriods(DateTime selectedDateTime, string timeZoneId)
         {
-            // Create a cache key that includes the full date/time details.
-            string cacheKey = $"{nameof(GetNineStarKiYearlyPeriod)}_{selectedDateTime:yyyyMMddHHmmss}_{timeZoneId}";
+            string cacheKey = $"{nameof(GetNineStarKiYearlyPeriods)}_{selectedDateTime:yyyyMMddHH}_{timeZoneId}";
             return GetOrAddToCache(cacheKey, () =>
             {
                 using (var sweph = new SwissEph())
                 {
                     sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
                     DateTime selectedUT = ConvertToUT(selectedDateTime, timeZoneId);
-                    // Determine the adjusted Nine Star Ki year based on Lìchūn.
                     int adjustedYear = AdjustYearForLichun(sweph, selectedUT);
+                    int startYear = adjustedYear - 9;
+                    int endYear = adjustedYear + 9;
+                    int numBoundaries = endYear - startYear + 1;  // 19 boundaries
+                    DateTime[] boundaries = new DateTime[numBoundaries];
+                    for (int i = 0; i < numBoundaries; i++)
+                    {
+                        int year = startYear + i;
+                        double jd = GetSolarTerm(sweph, year, 315.0);
+                        boundaries[i] = JulianDayToDateTime(sweph, jd).Date;
+                    }
 
-                    // Get the Julian Day for Lìchūn of the adjusted year and the next year.
-                    double jdStart = GetSolarTerm(sweph, adjustedYear, 315.0);
-                    double jdEnd = GetSolarTerm(sweph, adjustedYear + 1, 315.0);
+                    int numPeriods = numBoundaries - 1; // 18 periods
+                    var periods = new (DateTime PeriodStartsOn, DateTime PeriodEndsOn, int YearlyKi)[numPeriods];
 
-                    // Convert these to DateTime.
-                    DateTime periodStart = JulianDayToDateTime(sweph, jdStart).Date;
-                    DateTime periodEnd = JulianDayToDateTime(sweph, jdEnd).Date.AddDays(-1);
+                    for (int i = 0; i < numPeriods; i++)
+                    {
+                        DateTime yearStart = boundaries[i];
+                        DateTime yearEnd = boundaries[i + 1].AddDays(-1);
+                        int yearlyKi = GetNineStarKiYearlyKi(yearStart.AddDays(1), timeZoneId);
+                        periods[i] = (yearStart, yearEnd, yearlyKi);
+                    }
 
-                    // Calculate the yearly ki, using your convention (for example, using periodStart.AddDays(1)).
-                    int yearlyKi = GetNineStarKiYearlyKi(periodStart.AddDays(1), timeZoneId);
-
-                    return (periodStart, periodEnd, yearlyKi);
+                    return periods;
                 }
             }, TimeSpan.FromDays(30));
         }
@@ -375,79 +384,77 @@ namespace K9.WebApplication.Services
             }, TimeSpan.FromDays(30));
         }
 
-        public (DateTime PeriodStartsOn, DateTime PeriodEndsOn, int MonthlyKi)[] GetNineStarKiMonthlyPeriods(DateTime selectedDateTime, string timeZoneId)
+        #region Planner Methods
+
+        public (DateTime PeriodStartsOn, DateTime PeriodEndsOn, int EightyOneYearKi) GetNineStarKiEightyOneYearPeriod(DateTime selectedDateTime, string timeZoneId)
         {
-            string cacheKey = $"{nameof(GetNineStarKiMonthlyPeriods)}_{selectedDateTime:yyyyMMddHH}_{timeZoneId}";
+            // Create a cache key that includes the full date/time details.
+            string cacheKey = $"{nameof(GetNineStarKiEightyOneYearPeriod)}_{selectedDateTime:yyyyMMddHHmmss}_{timeZoneId}";
             return GetOrAddToCache(cacheKey, () =>
             {
                 using (var sweph = new SwissEph())
                 {
                     sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
+                    // Convert the provided date to UT and adjust the year based on Lìchūn.
                     DateTime selectedUT = ConvertToUT(selectedDateTime, timeZoneId);
                     int adjustedYear = AdjustYearForLichun(sweph, selectedUT);
-                    double[] solarTerms = GetSolarTerms(sweph, adjustedYear);
-                    DateTime[] solarTermDates = new DateTime[solarTerms.Length];
-                    for (int i = 0; i < solarTerms.Length; i++)
-                    {
-                        var solarTerm = solarTerms[i];
-                        if (solarTerm == 0)
-                        {
-                            Debugger.Break();
-                            continue;
-                        }
-                        solarTermDates[i] = JulianDayToDateTime(sweph, solarTerm).Date;
-                    }
 
-                    var periods = new (DateTime PeriodStartOn, DateTime PeriodEndsOn, int MonthlyKi)[12];
-                    for (int i = 0; i < solarTermDates.Length - 1; i++)
-                    {
-                        var periodStartOn = solarTermDates[i];
-                        var periodEndsOn = solarTermDates[i + 1].AddDays(-1);
-                        var monthlyKi = GetNineStarKiMonthlyKi(periodStartOn.AddDays(2), timeZoneId);
-                        periods[i] = (periodStartOn, periodEndsOn, monthlyKi);
-                    }
+                    // Determine the 81-year period based on 1955 as the base year.
+                    int periodIndex = (int)Math.Floor((adjustedYear - 1955) / 81.0);
+                    int startYear = 1955 + periodIndex * 81;
+                    int endYear = startYear + 81;  // The end boundary is the Lìchūn of the next cycle.
 
-                    double jdNextLichun = GetSolarTerm(sweph, adjustedYear + 1, 315.0);
-                    DateTime nextLichunDate = JulianDayToDateTime(sweph, jdNextLichun).Date;
-                    var lastSolarTermDate = solarTermDates[11];
-                    var lastMonthlyKi = GetNineStarKiMonthlyKi(lastSolarTermDate.AddDays(1), timeZoneId);
-                    periods[11] = (lastSolarTermDate, nextLichunDate.AddDays(-1), lastMonthlyKi);
+                    // Get the Julian Day for Lìchūn (315°) for the start and end boundaries.
+                    double jdStart = GetSolarTerm(sweph, startYear, 315.0);
+                    double jdEnd = GetSolarTerm(sweph, endYear, 315.0);
 
-                    return periods;
+                    // Convert these to DateTime.
+                    DateTime periodStartsOn = JulianDayToDateTime(sweph, jdStart).Date;
+                    // The period ends the day before the next Lìchūn.
+                    DateTime periodEndsOn = JulianDayToDateTime(sweph, jdEnd).Date.AddDays(-1);
+
+                    // Get the 81-year ki (using your existing method).
+                    int eightyOneYearKi = GetNineStarKiEightyOneYearKi(selectedDateTime, timeZoneId);
+
+                    return (periodStartsOn, periodEndsOn, eightyOneYearKi);
                 }
             }, TimeSpan.FromDays(30));
         }
 
-        public (DateTime PeriodStartsOn, DateTime PeriodEndsOn, int YearlyKi)[] GetNineStarKiYearlyPeriods(DateTime selectedDateTime, string timeZoneId)
+        public (DateTime PeriodStartsOn, DateTime PeriodEndsOn, int NineYearKi)[] GetNineStarKiNineYearPeriodsWithinEightyOneYearPeriod(DateTime selectedDateTime, string timeZoneId)
         {
-            string cacheKey = $"{nameof(GetNineStarKiYearlyPeriods)}_{selectedDateTime:yyyyMMddHH}_{timeZoneId}";
+            // Cache key using the full date/time details.
+            string cacheKey = $"{nameof(GetNineStarKiNineYearPeriodsWithinEightyOneYearPeriod)}_{selectedDateTime:yyyyMMddHHmmss}_{timeZoneId}";
             return GetOrAddToCache(cacheKey, () =>
             {
                 using (var sweph = new SwissEph())
                 {
                     sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
-                    DateTime selectedUT = ConvertToUT(selectedDateTime, timeZoneId);
-                    int adjustedYear = AdjustYearForLichun(sweph, selectedUT);
-                    int startYear = adjustedYear - 9;
-                    int endYear = adjustedYear + 9;
-                    int numBoundaries = endYear - startYear + 1;  // 19 boundaries
-                    DateTime[] boundaries = new DateTime[numBoundaries];
-                    for (int i = 0; i < numBoundaries; i++)
-                    {
-                        int year = startYear + i;
-                        double jd = GetSolarTerm(sweph, year, 315.0);
-                        boundaries[i] = JulianDayToDateTime(sweph, jd).Date;
-                    }
 
-                    int numPeriods = numBoundaries - 1; // 18 periods
-                    var periods = new (DateTime PeriodStartsOn, DateTime PeriodEndsOn, int YearlyKi)[numPeriods];
+                    // Get the overall 81-year period (using your existing method).
+                    var overall81 = GetNineStarKiEightyOneYearPeriod(selectedDateTime, timeZoneId);
+                    // Use the year part of the overall period start as the base.
+                    int start81Year = overall81.PeriodStartsOn.Year;
 
-                    for (int i = 0; i < numPeriods; i++)
+                    // There are nine 9-year periods within an 81-year cycle.
+                    var periods = new (DateTime PeriodStartsOn, DateTime PeriodEndsOn, int NineYearKi)[9];
+
+                    for (int i = 0; i < 9; i++)
                     {
-                        DateTime yearStart = boundaries[i];
-                        DateTime yearEnd = boundaries[i + 1].AddDays(-1);
-                        int yearlyKi = GetNineStarKiYearlyKi(yearStart.AddDays(1), timeZoneId);
-                        periods[i] = (yearStart, yearEnd, yearlyKi);
+                        // Each 9-year block starts at:
+                        int blockStartYear = start81Year + i * 9;
+                        // The block's start boundary is the Lìchūn for blockStartYear.
+                        double jdBlockStart = GetSolarTerm(sweph, blockStartYear, 315.0);
+                        // The next block's Lìchūn defines the end boundary.
+                        double jdBlockEnd = GetSolarTerm(sweph, blockStartYear + 9, 315.0);
+
+                        DateTime blockStart = JulianDayToDateTime(sweph, jdBlockStart).Date;
+                        // The block ends the day before the next Lìchūn.
+                        DateTime blockEnd = JulianDayToDateTime(sweph, jdBlockEnd).Date.AddDays(-1);
+                        // Calculate the Nine-Year Ki for the block (using, for example, the day after blockStart).
+                        int nineYearKi = GetNineStarKiNineYearKi(blockStart.AddDays(1), timeZoneId);
+
+                        periods[i] = (blockStart, blockEnd, nineYearKi);
                     }
 
                     return periods;
@@ -491,41 +498,113 @@ namespace K9.WebApplication.Services
             }, TimeSpan.FromDays(30));
         }
 
-        public (DateTime PeriodStartsOn, DateTime PeriodEndsOn, int EightyOneYearKi) GetNineStarKiEightyOneYearPeriod(DateTime selectedDateTime, string timeZoneId)
+        public (DateTime PeriodStartsOn, DateTime PeriodEndsOn, int YearlyKi)[] GetNineStarKiYearlyPeriodsForNineYearPeriod(DateTime selectedDateTime, string timeZoneId)
         {
-            // Create a cache key that includes the full date/time details.
-            string cacheKey = $"{nameof(GetNineStarKiEightyOneYearPeriod)}_{selectedDateTime:yyyyMMddHHmmss}_{timeZoneId}";
+            string cacheKey = $"{nameof(GetNineStarKiYearlyPeriodsForNineYearPeriod)}_{selectedDateTime:yyyyMMddHHmmss}_{timeZoneId}";
             return GetOrAddToCache(cacheKey, () =>
             {
                 using (var sweph = new SwissEph())
                 {
                     sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
-                    // Convert the provided date to UT and adjust the year based on Lìchūn.
-                    DateTime selectedUT = ConvertToUT(selectedDateTime, timeZoneId);
-                    int adjustedYear = AdjustYearForLichun(sweph, selectedUT);
+                    // Get the overall 9-year period.
+                    var nineYearPeriod = GetNineStarKiNineYearPeriod(selectedDateTime, timeZoneId);
+                    // The starting year for the 9-year period is based on the Lìchūn of that period.
+                    int baseYear = nineYearPeriod.PeriodStartsOn.Year;
+                    var periods = new (DateTime PeriodStartsOn, DateTime PeriodEndsOn, int YearlyKi)[9];
 
-                    // Determine the 81-year period based on 1955 as the base year.
-                    int periodIndex = (int)Math.Floor((adjustedYear - 1955) / 81.0);
-                    int startYear = 1955 + periodIndex * 81;
-                    int endYear = startYear + 81;  // The end boundary is the Lìchūn of the next cycle.
+                    // For each year within the 9-year period:
+                    for (int i = 0; i < 9; i++)
+                    {
+                        int currentYear = baseYear + i;
+                        // Get the Lìchūn (315° solar term) for the current year.
+                        double jdStart = GetSolarTerm(sweph, currentYear, 315.0);
+                        // Get the Lìchūn for the following year.
+                        double jdNext = GetSolarTerm(sweph, currentYear + 1, 315.0);
+                        // Convert Julian Days to DateTime. The period starts on Lìchūn
+                        // and ends the day before the next Lìchūn.
+                        DateTime periodStart = JulianDayToDateTime(sweph, jdStart).Date;
+                        DateTime periodEnd = JulianDayToDateTime(sweph, jdNext).Date.AddDays(-1);
+                        // Compute the yearly ki for this year. For example, use the day after the Lìchūn.
+                        int yearlyKi = GetNineStarKiYearlyKi(periodStart.AddDays(1), timeZoneId);
+                        periods[i] = (periodStart, periodEnd, yearlyKi);
+                    }
 
-                    // Get the Julian Day for Lìchūn (315°) for the start and end boundaries.
-                    double jdStart = GetSolarTerm(sweph, startYear, 315.0);
-                    double jdEnd = GetSolarTerm(sweph, endYear, 315.0);
-
-                    // Convert these to DateTime.
-                    DateTime periodStartsOn = JulianDayToDateTime(sweph, jdStart).Date;
-                    // The period ends the day before the next Lìchūn.
-                    DateTime periodEndsOn = JulianDayToDateTime(sweph, jdEnd).Date.AddDays(-1);
-
-                    // Get the 81-year ki (using your existing method).
-                    int eightyOneYearKi = GetNineStarKiEightyOneYearKi(selectedDateTime, timeZoneId);
-
-                    return (periodStartsOn, periodEndsOn, eightyOneYearKi);
+                    return periods;
                 }
             }, TimeSpan.FromDays(30));
         }
 
+        public (DateTime PeriodStartsOn, DateTime PeriodEndsOn, int YearlyKi) GetNineStarKiYearlyPeriod(DateTime selectedDateTime, string timeZoneId)
+        {
+            // Create a cache key that includes the full date/time details.
+            string cacheKey = $"{nameof(GetNineStarKiYearlyPeriod)}_{selectedDateTime:yyyyMMddHHmmss}_{timeZoneId}";
+            return GetOrAddToCache(cacheKey, () =>
+            {
+                using (var sweph = new SwissEph())
+                {
+                    sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
+                    DateTime selectedUT = ConvertToUT(selectedDateTime, timeZoneId);
+                    // Determine the adjusted Nine Star Ki year based on Lìchūn.
+                    int adjustedYear = AdjustYearForLichun(sweph, selectedUT);
+
+                    // Get the Julian Day for Lìchūn of the adjusted year and the next year.
+                    double jdStart = GetSolarTerm(sweph, adjustedYear, 315.0);
+                    double jdEnd = GetSolarTerm(sweph, adjustedYear + 1, 315.0);
+
+                    // Convert these to DateTime.
+                    DateTime periodStart = JulianDayToDateTime(sweph, jdStart).Date;
+                    DateTime periodEnd = JulianDayToDateTime(sweph, jdEnd).Date.AddDays(-1);
+
+                    // Calculate the yearly ki, using your convention (for example, using periodStart.AddDays(1)).
+                    int yearlyKi = GetNineStarKiYearlyKi(periodStart.AddDays(1), timeZoneId);
+
+                    return (periodStart, periodEnd, yearlyKi);
+                }
+            }, TimeSpan.FromDays(30));
+        }
+
+        public (DateTime PeriodStartsOn, DateTime PeriodEndsOn, int MonthlyKi)[] GetNineStarKiMonthlyPeriods(DateTime selectedDateTime, string timeZoneId)
+        {
+            string cacheKey = $"{nameof(GetNineStarKiMonthlyPeriods)}_{selectedDateTime:yyyyMMddHH}_{timeZoneId}";
+            return GetOrAddToCache(cacheKey, () =>
+            {
+                using (var sweph = new SwissEph())
+                {
+                    sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
+                    DateTime selectedUT = ConvertToUT(selectedDateTime, timeZoneId);
+                    int adjustedYear = AdjustYearForLichun(sweph, selectedUT);
+                    double[] solarTerms = GetSolarTerms(sweph, adjustedYear);
+                    DateTime[] solarTermDates = new DateTime[solarTerms.Length];
+                    for (int i = 0; i < solarTerms.Length; i++)
+                    {
+                        var solarTerm = solarTerms[i];
+                        if (solarTerm == 0)
+                        {
+                            Debugger.Break();
+                            continue;
+                        }
+                        solarTermDates[i] = JulianDayToDateTime(sweph, solarTerm).Date;
+                    }
+
+                    var periods = new (DateTime PeriodStartOn, DateTime PeriodEndsOn, int MonthlyKi)[12];
+                    for (int i = 0; i < solarTermDates.Length - 1; i++)
+                    {
+                        var periodStartOn = solarTermDates[i];
+                        var periodEndsOn = solarTermDates[i + 1].AddDays(-1);
+                        var monthlyKi = GetNineStarKiMonthlyKi(periodStartOn.AddDays(2), timeZoneId);
+                        periods[i] = (periodStartOn, periodEndsOn, monthlyKi);
+                    }
+
+                    double jdNextLichun = GetSolarTerm(sweph, adjustedYear + 1, 315.0);
+                    DateTime nextLichunDate = JulianDayToDateTime(sweph, jdNextLichun).Date;
+                    var lastSolarTermDate = solarTermDates[11];
+                    var lastMonthlyKi = GetNineStarKiMonthlyKi(lastSolarTermDate.AddDays(1), timeZoneId);
+                    periods[11] = (lastSolarTermDate, nextLichunDate.AddDays(-1), lastMonthlyKi);
+
+                    return periods;
+                }
+            }, TimeSpan.FromDays(30));
+        }
 
         public (DateTime Day, int MorningKi, int? InvertedMorningKi, int? AfternoonKi, int? InvertedAfternoonKi)[] GetNineStarKiDailyEnergiesForMonth(DateTime selectedDateTime, string timeZoneId)
         {
@@ -581,6 +660,8 @@ namespace K9.WebApplication.Services
 
             return segments.ToArray();
         }
+
+        #endregion
 
         public DateTime GetLichun(DateTime selectedDateTime, string timeZoneId)
         {

@@ -36,6 +36,9 @@ namespace K9.WebApplication.Services
         (DateTime Day, int MorningKi, int? InvertedMorningKi, int? AfternoonKi, int? InvertedAfternoonKi)[]
             GetNineStarKiDailyEnergiesForMonth(DateTime selectedDateTime, string timeZoneId);
 
+        (DateTime SegmentStartsOn, DateTime SegmentEndsOn, int HourlyKi)[] GetNineStarKiHourlyPeriodsForDay(
+            DateTime selectedDateTime, string timeZoneId);
+
         DateTime GetLichun(DateTime selectedDateTime, string timeZoneId);
     }
 }

@@ -5,6 +5,7 @@
   position: relative;
   top: -180px;
 }
+/*Daily Calendar*/
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -14,14 +15,14 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   font-size: 0.9rem;
 }
-.calendar-header {
+.calendar-grid .calendar-header {
   text-align: center;
   font-weight: 600;
   color: #666;
   padding: 7px;
   margin-bottom: 7px;
 }
-.calendar-day {
+.calendar-grid .calendar-day {
   outline: 1px solid #e0e0e0;
   padding: 3px;
   background-color: #f9f9f9;
@@ -31,7 +32,7 @@
   transition: background-color 0.2s;
   cursor: pointer;
 }
-.calendar-day:hover {
+.calendar-grid .calendar-day:hover {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   background-color: #f9f9f9;
   transform: scale(1.05);
@@ -39,32 +40,33 @@
   position: relative;
   z-index: 3 !important;
 }
-.calendar-day .date-label {
+.calendar-grid .calendar-day .date-label {
   width: 100%;
   font-size: 0.81rem;
   color: #999;
   font-weight: 500;
   text-align: center !important;
 }
-.calendar-day .custom-content {
-  margin-top: 0.25rem;
+.calendar-grid .calendar-day .custom-content {
   width: 100%;
   color: #444;
 }
-.calendar-day .custom-content .double-energy-container {
+.calendar-grid .calendar-day .custom-content .double-energy-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.calendar-day .custom-content .double-energy-container img {
+.calendar-grid .calendar-day .custom-content .double-energy-container img {
   width: 48%;
   height: auto;
 }
-.calendar-day img {
+.calendar-grid .calendar-day img {
   max-width: 72px;
-  padding-left: 2px;
+  padding: 9px;
+  padding-left: 11px;
+  padding-top: 3px;
 }
-.calendar-day.active {
+.calendar-grid .calendar-day.active {
   background-color: #337ab7;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
   transform: scale(1.05) !important;
@@ -73,10 +75,10 @@
   z-index: 3 !important;
   border-radius: 11px;
 }
-.calendar-day.active div {
+.calendar-grid .calendar-day.active div {
   color: #ffffff;
 }
-.empty-cell {
+.calendar-grid .empty-cell {
   visibility: hidden;
 }
 .form-options input {
@@ -230,4 +232,59 @@
   height: 100%;
   object-fit: cover;
   border-radius: 0.25rem;
+}
+/* Hourly Planner */
+/* Container for the day */
+.day-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 500px;
+  /* Height of the full day container */
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  /* Each 2-hour time slot */
+}
+.day-container .time-slot {
+  position: relative;
+  /* Allow absolute positioning of slot items */
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  background-color: #f0f0f0;
+  font-size: 14px;
+  /* Slot items that will be dynamically placed */
+}
+.day-container .time-slot .slot-item {
+  position: absolute;
+  width: 100%;
+  padding: 5px;
+  background-color: rgba(0, 123, 255, 0.5);
+  /* Light blue */
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  white-space: nowrap;
+  /* Size adjustment based on duration of the slot */
+}
+.day-container .time-slot .slot-item.short {
+  height: 25px;
+  /* For shorter slots */
+}
+.day-container .time-slot .slot-item.long {
+  height: 70px;
+  /* For longer slots */
+}
+/* Optional: You can customize variables for colors */
+/* Light blue color */
+/* Apply variables to the styles */
+.slot-item {
+  background-color: rgba(0, 123, 255, 0.5);
 }

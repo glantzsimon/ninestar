@@ -139,8 +139,78 @@
                     bootstrapControls().init();
                     var view = $("#PlannerView").val();
                     $("#View").val(view).selectpicker("refresh");
+
+                    if (view.toString() === '@((int)EPlannerView.Day)') {
+                        renderDailyPlannerView();
+                    }
                 }
             });
+    }
+
+    function renderDailyPlannerView() {
+        const slots = [
+            { startTime: '01:15', endTime: '03:15', title: 'Meeting 1' },
+            { startTime: '04:30', endTime: '06:30', title: 'Meeting 2' },
+            { startTime: '02:00', endTime: '04:00', title: 'Meeting 3' },
+            { startTime: '05:00', endTime: '07:00', title: 'Meeting 4' },
+            { startTime: '07:30', endTime: '09:00', title: 'Meeting 5' },
+            // Add more slots as needed...
+        ];
+
+        // Function to calculate the time difference in minutes
+        function getTimeInMinutes(time) {
+            const [hours, minutes] = time.split(':').map(num => parseInt(num, 10));
+            return hours * 60 + minutes; // Return time in minutes
+        }
+
+        // Function to render the slots
+        function renderSlots() {
+            const container = document.querySelector('#dayContainer');
+            const totalSlots = 12; // 12 two-hour periods in a day
+            const slotDuration = 120; // Each slot is 2 hours (120 minutes)
+
+            // Generate 12 time blocks (for the day)
+            for (let i = 0; i < totalSlots; i++) {
+                const timeSlot = document.createElement('div');
+                timeSlot.classList.add('time-slot', 'bg-light', 'p-3', 'border-bottom');
+                const startTime = `${i * 2}:00`; // Start time for each slot in the format 'hh:00'
+                const endTime = `${(i + 1) * 2}:00`; // End time for each slot in the format 'hh:00'
+                timeSlot.setAttribute('data-time', startTime);
+
+                // Add time labels for reference
+                const label = document.createElement('span');
+                label.textContent = `${startTime} - ${endTime}`;
+                timeSlot.appendChild(label);
+                container.appendChild(timeSlot);
+
+                // Place the slot items within the correct time slots
+                slots.forEach((slot) => {
+                    const slotStart = getTimeInMinutes(slot.startTime);
+                    const slotEnd = getTimeInMinutes(slot.endTime);
+                    const slotStartBlock = Math.floor(slotStart / slotDuration); // Calculate which 2-hour block the slot belongs to
+                    const slotEndBlock = Math.floor(slotEnd / slotDuration);
+
+                    if (slotStartBlock === i || slotEndBlock === i || (slotStartBlock < i && slotEndBlock > i)) {
+                        const slotItem = document.createElement('div');
+                        slotItem.classList.add('slot-item', 'position-absolute', 'text-white', 'd-flex', 'align-items-center', 'justify-content-center');
+
+                        // Adjust height based on slot duration
+                        const slotDurationMinutes = slotEnd - slotStart;
+                        if (slotDurationMinutes <= 30) {
+                            slotItem.classList.add('short'); // Short slots
+                        } else if (slotDurationMinutes >= 90) {
+                            slotItem.classList.add('long'); // Long slots
+                        }
+
+                        slotItem.textContent = slot.title;
+                        timeSlot.appendChild(slotItem);
+                    }
+                });
+            }
+        }
+
+        // Call render function to populate the slots
+        renderSlots();
     }
 
     $(function() {

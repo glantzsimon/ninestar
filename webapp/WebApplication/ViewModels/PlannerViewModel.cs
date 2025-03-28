@@ -65,9 +65,11 @@ namespace K9.WebApplication.ViewModels
         {
             switch (View)
             {
-                case EPlannerView.Year:
-                case EPlannerView.NineYear:
                 case EPlannerView.EightyOneYear:
+                case EPlannerView.NineYear:
+                case EPlannerView.Year:
+                case EPlannerView.Month:
+                    // To account for time zone differences, add two days (so you don't get the previous period
                     return PeriodStarsOn.AddDays(2).ToAjaxDateTimeString();
 
                 default:

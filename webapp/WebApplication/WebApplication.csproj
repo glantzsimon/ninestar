@@ -1645,6 +1645,7 @@
     <Content Include="Views\Predictions\Planner\_DailyCalendar.cshtml" />
     <Content Include="Views\Predictions\Planner\_GlobalPlanner.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\PlannerView.cshtml" />
+    <Content Include="Views\Predictions\Planner\_HourlyPlanner.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

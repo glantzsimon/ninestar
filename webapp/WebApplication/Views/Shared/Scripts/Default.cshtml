@@ -133,17 +133,17 @@
         $.fn.setDropdownValue = function (inputSelector, value) {
             // Get the dropdown button based on the inputSelector
             var $dropdownButton = $(inputSelector).siblings('.dropdown').find('.dropdown-toggle');
-    
+
             // Set the value in the hidden input
-            $(inputSelector).val(value);
+            $(inputSelector).val(value).selectpicker("refresh");;
 
             // Find the corresponding text for the value and update the dropdown button text
             var selectedText = $(inputSelector).siblings('.dropdown').find('.dropdown-menu').find('[data-value="' + value + '"]').text();
-    
+
             // Update the dropdown button's text to reflect the selected value
             $dropdownButton.text(selectedText);
         }
-       
+
 	    $.fn.displaySpinner = function(selector) {
 	        var $this = selector === undefined ? $(this) : $(selector);
 

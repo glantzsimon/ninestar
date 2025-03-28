@@ -9,6 +9,7 @@
     top: -180px;
 }
 
+/*Daily Calendar*/
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -17,82 +18,83 @@
     background-color: #fff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     font-size: 0.9rem;
-}
 
-.calendar-header {
-    text-align: center;
-    font-weight: 600;
-    color: #666;
-    padding: 7px;
-    margin-bottom: 7px;
-}
-
-.calendar-day {
-    outline: 1px solid #e0e0e0;
-    padding: 3px;
-    background-color: #f9f9f9;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    transition: background-color 0.2s;
-    cursor: pointer;
-
-    &:hover {
-        box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-        background-color: @whisper-white;
-        transform: scale(1.05);
-        transform: translateY(-2px);
-        position: relative;
-        z-index: 3 !important;
+    .calendar-header {
+        text-align: center;
+        font-weight: 600;
+        color: #666;
+        padding: 7px;
+        margin-bottom: 7px;
     }
 
-    .date-label {
-        width: 100%;
-        font-size: 0.81rem;
-        color: #999;
-        font-weight: 500;
-        text-align: center !important;
-    }
+    .calendar-day {
+        outline: 1px solid #e0e0e0;
+        padding: 3px;
+        background-color: #f9f9f9;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        transition: background-color 0.2s;
+        cursor: pointer;
 
-    .custom-content {
-        margin-top: 0.25rem;
-        width: 100%;
-        color: #444;
+        &:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+            background-color: @whisper-white;
+            transform: scale(1.05);
+            transform: translateY(-2px);
+            position: relative;
+            z-index: 3 !important;
+        }
 
-        .double-energy-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        .date-label {
+            width: 100%;
+            font-size: 0.81rem;
+            color: #999;
+            font-weight: 500;
+            text-align: center !important;
+        }
 
-            img {
-                width: 48%;
-                height: auto;
+        .custom-content {
+            width: 100%;
+            color: #444;
+
+            .double-energy-container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                img {
+                    width: 48%;
+                    height: auto;
+                }
+            }
+        }
+
+        img {
+            max-width: 72px;
+            padding: 9px;
+            padding-left: 11px;
+            padding-top: 3px;
+        }
+
+        &.active {
+            background-color: @primary-blue;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+            transform: scale(1.05) !important;
+            transform: translateY(-1px);
+            position: relative;
+            z-index: 3 !important;
+            border-radius: 11px;
+
+            div {
+                color: @snow-white;
             }
         }
     }
 
-    img {
-        max-width: 72px;
-        padding-left: 2px;
+    .empty-cell {
+        visibility: hidden;
     }
-
-    &.active {
-        background-color: @primary-blue;
-        box-shadow: 0 6px 16px rgba(0,0,0,0.5);
-        transform: scale(1.05) !important;
-        transform: translateY(-1px);
-        position: relative;
-        z-index: 3 !important;
-        border-radius: 11px;
-
-        div {
-            color: @snow-white;
-        }
-    }
-}
-
-.empty-cell {
-    visibility: hidden;
 }
 
 .form-options {
@@ -277,4 +279,61 @@
             }
         }
     }
+}
+
+/* Hourly Planner */
+/* Container for the day */
+.day-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 500px; /* Height of the full day container */
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+
+    /* Each 2-hour time slot */
+    .time-slot {
+        position: relative; /* Allow absolute positioning of slot items */
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        background-color: #f0f0f0;
+        font-size: 14px;
+
+        /* Slot items that will be dynamically placed */
+        .slot-item {
+            position: absolute;
+            width: 100%;
+            padding: 5px;
+            background-color: rgba(0, 123, 255, 0.5); /* Light blue */
+            border-radius: 5px;
+            color: white;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            white-space: nowrap;
+
+            /* Size adjustment based on duration of the slot */
+            &.short {
+                height: 25px; /* For shorter slots */
+            }
+
+            &.long {
+                height: 70px; /* For longer slots */
+            }
+        }
+    }
+}
+
+/* Optional: You can customize variables for colors */
+@primary-color: #007bff; /* Light blue color */
+
+/* Apply variables to the styles */
+.slot-item {
+    background-color: rgba(@primary-color, 0.5);
 }

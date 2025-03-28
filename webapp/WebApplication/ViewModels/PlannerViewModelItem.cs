@@ -62,6 +62,7 @@ namespace K9.WebApplication.ViewModels
                 case EPlannerView.NineYear:
                 case EPlannerView.Year:
                 case EPlannerView.Month:
+                    // To account for time zone differences, add two days (so you don't get the previous period
                     return EnergyStartsOn.AddDays(2).ToAjaxDateTimeString();
 
                 default:

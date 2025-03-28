@@ -96,6 +96,10 @@ namespace K9.WebApplication.Models
                 ? GetOppositeEnergyInMagicSquare(precisePersonalDayStarEnergy)
                 : precisePersonalDayStarEnergy;
 
+            precisePersonalHourlyEnergy = InvertDailyAndHourlyKiForSouthernHemisphere
+                ? GetOppositeEnergyInMagicSquare(precisePersonalHourlyEnergy)
+                : precisePersonalHourlyEnergy;
+
             var preciseDailyCycleMorningEnergy = preciseDailyCycleEnergies[0].DailyKi;
             var preciseDailyCycleAfternoonEnergy = preciseDailyCycleEnergies[1].DailyKi;
             var preciseInvertedDailyCycleMorningEnergy = preciseDailyCycleEnergies[0].InvertedDailyKi;
@@ -116,11 +120,7 @@ namespace K9.WebApplication.Models
             preciseInvertedDailyCycleAfternoonEnergy = preciseInvertedDailyCycleAfternoonEnergy.HasValue && InvertDailyAndHourlyCycleKiForSouthernHemisphere
                 ? GetOppositeEnergyInMagicSquare(preciseInvertedDailyCycleAfternoonEnergy.Value)
                 : preciseInvertedDailyCycleAfternoonEnergy;
-
-            precisePersonalHourlyEnergy = InvertDailyAndHourlyKiForSouthernHemisphere
-                ? GetOppositeEnergyInMagicSquare(precisePersonalHourlyEnergy)
-                : precisePersonalHourlyEnergy;
-
+            
             preciseHourlyCycleEnergy = InvertDailyAndHourlyCycleKiForSouthernHemisphere
                 ? GetOppositeEnergyInMagicSquare(preciseHourlyCycleEnergy)
                 : preciseHourlyCycleEnergy;

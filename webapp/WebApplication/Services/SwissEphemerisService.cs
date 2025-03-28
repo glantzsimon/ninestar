@@ -1,4 +1,5 @@
-﻿using K9.WebApplication.Models;
+﻿using K9.SharedLibrary.Helpers;
+using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
 using SwissEphNet;
 using System;
@@ -472,6 +473,43 @@ namespace K9.WebApplication.Services
             }, TimeSpan.FromDays(30));
         }
 
+        public (DateTime SegmentStartsOn, DateTime SegmentEndsOn, int HourlyKi)[] GetNineStarKiHourlyPeriodsForDay(DateTime selectedDateTime, string timeZoneId)
+        {
+            // First, convert the selected date/time to local time in the specified time zone.
+            // Then obtain the local "day" from midnight to midnight.
+            DateTime localDateTime = DateTimeHelper.ConvertToLocaleDateTime(selectedDateTime, timeZoneId);
+            DateTime dayStart = new DateTime(localDateTime.Year, localDateTime.Month, localDateTime.Day, 0, 0, 0, DateTimeKind.Unspecified);
+            // Convert the local midnight to UTC using our conversion method.
+            DateTime utcDayStart = ConvertToUT(dayStart, timeZoneId);
+            DateTime utcDayEnd = ConvertToUT(dayStart.AddDays(1), timeZoneId);
+
+            var segments = new List<(DateTime SegmentStart, DateTime SegmentEnd, int HourlyKi)>();
+            DateTime currentUtc = utcDayStart;
+            // Get the hourly ki for the very start of the day.
+            int currentKi = GetNineStarKiHourlyKi(currentUtc, timeZoneId);
+
+            while (currentUtc < utcDayEnd)
+            {
+                // Find the next transition time when the hourly ki changes.
+                DateTime transitionUtc = FindHourlyTransition(currentUtc, utcDayEnd, timeZoneId, currentKi);
+                // If no transition is found before the end of the day, use utcDayEnd.
+                if (transitionUtc > utcDayEnd)
+                    transitionUtc = utcDayEnd;
+
+                segments.Add((currentUtc, transitionUtc, currentKi));
+
+                // Prepare for the next segment.
+                currentUtc = transitionUtc;
+                // If we haven't reached the end, update the current hourly ki.
+                if (currentUtc < utcDayEnd)
+                {
+                    currentKi = GetNineStarKiHourlyKi(currentUtc, timeZoneId);
+                }
+            }
+
+            return segments.ToArray();
+        }
+
         public DateTime GetLichun(DateTime selectedDateTime, string timeZoneId)
         {
             using (var sweph = new SwissEph())
@@ -486,6 +524,39 @@ namespace K9.WebApplication.Services
                 // Convert the Julian Day to DateTime.
                 return JulianDayToDateTime(sweph, jdLichun);
             }
+        }
+
+        /// <summary>
+        /// Uses a binary search (with a resolution of 1 minute) to find the earliest UTC time 
+        /// between 'startUtc' and 'endUtc' at which the hourly ki (as determined by GetNineStarKiHourlyKi)
+        /// differs from 'currentKi'. If no change occurs, returns endUtc.
+        /// </summary>
+        private DateTime FindHourlyTransition(DateTime startUtc, DateTime endUtc, string timeZoneId, int currentKi)
+        {
+            // First, check if there is any change by comparing the value at endUtc.
+            if (GetNineStarKiHourlyKi(endUtc, timeZoneId) == currentKi)
+            {
+                return endUtc;
+            }
+
+            TimeSpan resolution = TimeSpan.FromMinutes(1);
+            DateTime low = startUtc;
+            DateTime high = endUtc;
+
+            while ((high - low) > resolution)
+            {
+                DateTime mid = low + TimeSpan.FromTicks((high - low).Ticks / 2);
+                int midKi = GetNineStarKiHourlyKi(mid, timeZoneId);
+                if (midKi == currentKi)
+                {
+                    low = mid;
+                }
+                else
+                {
+                    high = mid;
+                }
+            }
+            return high;
         }
 
         private DateTime FindFirstJiaZiDayAfterSolstice(SwissEph sweph, int year, bool isJuneSolstice)

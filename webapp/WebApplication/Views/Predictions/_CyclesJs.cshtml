@@ -48,6 +48,8 @@
         let clickTimeout;
 
         $("#View, #Display").change(function() {
+            clearTimeout(clickTimeout);
+
             var view = $("#View").val();
             var display = $("#Display").val();
             var selectedDate = $("#SelectedDateTimeString").val();
@@ -122,9 +124,9 @@
                 setTimeout(function () {
                     if (!$.fn.isVisible($details))
                         $.fn.scrollToTopOf($details, -180);
-                }, 200);
+                }, 500);
 
-            }, 200);
+            }, 500);
         });
     }
 
@@ -149,16 +151,24 @@
             }).done(
             function(result) {
                 if (result.success) {
-                    $("#global-planner-container").html(result.data);
+                    let $container = $("#global-planner-container");
+                    $container.fadeOut(200, function() {
+                        $container.html(result.data);
+                        $container.fadeIn(100);
 
-                    bindGlobalPlannerEvents();
-                    bootstrapControls().init();
-                    var view = $("#PlannerView").val();
-                    $("#View").val(view).selectpicker("refresh");
+                        bindGlobalPlannerEvents();
+                        bootstrapControls().init();
+                    
+                        var view = $("#PlannerView").val();
+                        $("#View").val(view).selectpicker("refresh");
 
-                    if (view.toString() === '@((int)EPlannerView.Day)') {
-                        renderDailyPlannerView();
-                    }
+                        var display = $("#PlannerDisplay").val();
+                        $("#Display").val(display).selectpicker("refresh");
+
+                        if (view.toString() === '@((int)EPlannerView.Day)') {
+                            renderDailyPlannerView();
+                        }
+                    });
                 }
             });
     }

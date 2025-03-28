@@ -452,7 +452,7 @@ namespace K9.WebApplication.Services
                         // The block ends the day before the next Lìchūn.
                         DateTime blockEnd = JulianDayToDateTime(sweph, jdBlockEnd).Date.AddDays(-1);
                         // Calculate the Nine-Year Ki for the block (using, for example, the day after blockStart).
-                        int nineYearKi = GetNineStarKiNineYearKi(blockStart.AddDays(1), timeZoneId);
+                        int nineYearKi = GetNineStarKiNineYearKi(blockStart.AddDays(2), timeZoneId);
 
                         periods[i] = (blockStart, blockEnd, nineYearKi);
                     }
@@ -525,7 +525,7 @@ namespace K9.WebApplication.Services
                         DateTime periodStart = JulianDayToDateTime(sweph, jdStart).Date;
                         DateTime periodEnd = JulianDayToDateTime(sweph, jdNext).Date.AddDays(-1);
                         // Compute the yearly ki for this year. For example, use the day after the Lìchūn.
-                        int yearlyKi = GetNineStarKiYearlyKi(periodStart.AddDays(1), timeZoneId);
+                        int yearlyKi = GetNineStarKiYearlyKi(periodStart.AddDays(2), timeZoneId);
                         periods[i] = (periodStart, periodEnd, yearlyKi);
                     }
 

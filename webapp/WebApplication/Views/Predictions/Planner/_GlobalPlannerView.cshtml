@@ -124,7 +124,14 @@
     </div>
     <hr />
     <div id="global-planner-details">
-        @Html.Panel(activeChild?.Energy?.CycleDescriptiveName, activeChild?.Energy?.CycleDescription)
+        @if (activeChild != null)
+        {
+            @Html.Panel(activeChild.Energy.CycleDescriptiveName, activeChild.Energy.CycleDescription)
+        }
+        else
+        {
+            @Html.Panel(Model.Energy.CycleDescriptiveName, Model.Energy.CycleDescription)
+        }
     </div>
 </div>
 

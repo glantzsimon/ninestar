@@ -6,6 +6,7 @@ using K9.WebApplication.Packages;
 using K9.WebApplication.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using K9.SharedLibrary.Extensions;
 
 namespace K9.WebApplication.Services
@@ -539,10 +540,18 @@ namespace K9.WebApplication.Services
                         break;
                 }
 
-                // Update SelectedDateTime - the selected period is current, then make sure we select the present moment / Now
-                if (DateTime.UtcNow.IsBetween(plannerModel.PeriodStarsOn, plannerModel.PeriodEndsOn))
+                // Update selected time (in case of navigation)
+                plannerModel.SelectedDateTime = selectedDateTime;
+
+                // Check if an item is active
+                if (!plannerModel.Energies.Any(e => e.IsActive))
                 {
-                    plannerModel.SelectedDateTime = DateTime.UtcNow;
+                    var activeEnergyForSelectedDate = plannerModel.Energies.FirstOrDefault(e =>
+                        selectedDateTime.IsBetween(e.EnergyStartsOn, e.EnergyEndsOn));
+                    if (activeEnergyForSelectedDate != null)
+                    {
+                        activeEnergyForSelectedDate.IsActive = true;
+                    }
                 }
 
                 return plannerModel;

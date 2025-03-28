@@ -4963,11 +4963,17 @@
   <data name="DayView" xml:space="preserve">
     <value>Day View</value>
   </data>
+  <data name="DisplayLabel" xml:space="preserve">
+    <value>Display</value>
+  </data>
   <data name="EightyOneYearPeriod" xml:space="preserve">
     <value>Eighty-One-Year Period</value>
   </data>
   <data name="EightyOneYearView" xml:space="preserve">
     <value>Eighty-One-Year View</value>
+  </data>
+  <data name="GlobalKi" xml:space="preserve">
+    <value>Display Global Ki</value>
   </data>
   <data name="MonthView" xml:space="preserve">
     <value>Month View</value>
@@ -4977,6 +4983,9 @@
   </data>
   <data name="NineYearView" xml:space="preserve">
     <value>Nine-Year View</value>
+  </data>
+  <data name="PersonalHouses" xml:space="preserve">
+    <value>Display Houses Occupied</value>
   </data>
   <data name="PlannerInstructions" xml:space="preserve">
     <value>Double click on an item to drill down and see more detail. Click the 'level up' icon to roll up.</value>

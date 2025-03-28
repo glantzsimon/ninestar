@@ -15,6 +15,10 @@ namespace K9.WebApplication.ViewModels
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ViewLabel)]
         public EPlannerView View { get; set; }
 
+        [UIHint("PlannerDisplay")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ViewLabel)]
+        public EPlannerDisplay Display { get; set; }
+
         public NineStarKiModel NineStarKiModel { get; set; }
         public NineStarKiEnergy Energy { get; set; }
         public DateTime Lichun { get; set; }

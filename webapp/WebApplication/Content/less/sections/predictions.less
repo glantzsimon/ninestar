@@ -119,6 +119,7 @@
     h5 {
         font-size: 14px !important;
         font-weight: normal !important;
+        margin-bottom: 20px;
     }
 
     #global-planner-details {
@@ -260,6 +261,11 @@
                 padding: 0;
                 border: none;
                 background-color: @snow-white;
+
+                &.grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                }
 
                 .child-container {
 

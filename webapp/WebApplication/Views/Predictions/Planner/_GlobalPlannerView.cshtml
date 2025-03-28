@@ -14,8 +14,17 @@
     @Html.Hidden("PlannerView", (int)Model.View)
 
     <div class="row margin-0 margin-bottom-20">
-        <div class="col-sm-4 col-sm-offset-4 col-xs-12 padding-0">
-            @Html.BootstrapEditorFor(e => e.View)
+        <div class="col-sm-4 col-sm-offset-2 col-xs-6 padding-0">
+            @Html.BootstrapEditorFor(e => e.View, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
+        <div class="col-sm-4 col-xs-6 padding-0">
+            @Html.BootstrapEditorFor(e => e.Display, new EditorOptions
+            {
+                Label = ""
+            })
         </div>
     </div>
 
@@ -61,15 +70,17 @@
                 case EPlannerView.NineYear:
                 case EPlannerView.Year:
 
+                    var containerClass = Model.View == EPlannerView.Year ? "row" : "grid";
+
                     <!-- Bottom Row: Child -->
-                    <div class="child-row row">
+                    <div class="child-row @containerClass">
                         @foreach (var energy in Model.Energies)
                         {
                             var energyTitle = Model.GetEnergyTitle(energy);
                             var datesDisplay = Model.GetEnergyDatesDetails(energy);
+                            var columnClass = Model.View == EPlannerView.Year ? "col-md-1 col-sm-1 col-xs-2" : "";
 
-                            <div class="col-md-1 col-sm-1 col-xs-2 padding-0 margin-0 child-container">
-
+                            <div class="padding-0 margin-0 child-container @columnClass">
                                 <div class="global-planner-item" data-energy="@energy.Energy.Energy" data-view="@Model.ChildView" data-type="child" data-selected-date="@energy.EnergyStartsOnDateTimeString" data-update-url="@Model.UpdateChildUrl">
 
                                     <div class="planner-item-container child-block clickable @energy.SelectedCssClass">

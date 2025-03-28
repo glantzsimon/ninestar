@@ -5685,6 +5685,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Display.
+        /// </summary>
+        public static string DisplayLabel {
+            get {
+                return ResourceManager.GetString("DisplayLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to View Cycles &amp; Biorhythms For Selected Date.
         /// </summary>
         public static string DisplaySelectedDate {
@@ -7549,6 +7558,15 @@ namespace K9.Globalisation {
         public static string GenerationalEnergyLabel {
             get {
                 return ResourceManager.GetString("GenerationalEnergyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display Global Ki.
+        /// </summary>
+        public static string GlobalKi {
+            get {
+                return ResourceManager.GetString("GlobalKi", resourceCulture);
             }
         }
         
@@ -12480,6 +12498,15 @@ namespace K9.Globalisation {
         public static string PersonalDevelopemntLabel {
             get {
                 return ResourceManager.GetString("PersonalDevelopemntLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display Houses Occupied.
+        /// </summary>
+        public static string PersonalHouses {
+            get {
+                return ResourceManager.GetString("PersonalHouses", resourceCulture);
             }
         }
         

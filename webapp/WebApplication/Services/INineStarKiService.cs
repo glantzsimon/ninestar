@@ -42,6 +42,7 @@ namespace K9.WebApplication.Services
                 bool invertDailyAndHourlyKiForSouthernHemisphere,
                 bool invertDailyAndHourlyCycleKiForSouthernHemisphere,
                 EPlannerView view = EPlannerView.Year,
+                EPlannerDisplay display = EPlannerDisplay.PersonalKi,
                 NineStarKiModel nineStarKiModel = null);
     }
 }

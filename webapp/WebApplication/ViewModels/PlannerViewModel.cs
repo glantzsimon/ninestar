@@ -53,6 +53,8 @@ namespace K9.WebApplication.ViewModels
             {
                 case EPlannerView.EightyOneYear:
                 case EPlannerView.NineYear:
+                    return $"{energy.EnergyStartsOn.ToString("yyyy")} - {energy.EnergyEndsOn.ToString("yyyy")}";
+
                 case EPlannerView.Year:
                     return $"{energy.EnergyStartsOn.ToString("MMM")}";
 

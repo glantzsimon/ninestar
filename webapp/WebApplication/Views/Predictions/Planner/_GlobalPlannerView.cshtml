@@ -14,13 +14,13 @@
     @Html.Hidden("PlannerView", (int)Model.View)
 
     <div class="row margin-0 margin-bottom-20">
-        <div class="col-sm-4 col-sm-offset-2 col-xs-6 padding-0">
+        <div class="col-sm-4 col-sm-offset-1 col-xs-6 padding-0">
             @Html.BootstrapEditorFor(e => e.View, new EditorOptions
             {
                 Label = ""
             })
         </div>
-        <div class="col-sm-4 col-xs-6 padding-0">
+        <div class="col-sm-4 col-sm-offset-1 col-xs-6 padding-0">
             @Html.BootstrapEditorFor(e => e.Display, new EditorOptions
             {
                 Label = ""
@@ -38,7 +38,7 @@
         <!-- Parent Block -->
         <div class="parent-block planner-item-container">
             <!-- Top Row: Parent Summary -->
-            <div class="global-planner-item" data-energy="@Model.Energy.Energy" data-type="parent" data-view="@Model.View" data-selected-date="@Model.PeriodStartsOnDateTimeString" data-update-url="@Model.UpdateParentUrl">
+            <div class="global-planner-item" data-energy="@Model.Energy.Energy" data-type="parent" data-view="@Model.View" data-display="@Model.Display" data-selected-date="@Model.PeriodStartsOnDateTimeString" data-update-url="@Model.UpdateParentUrl">
                 <div class="parent-summary-row clickable">
                     <div class="parent-label">
                         <div class="parent-title">@Model.PeriodDatesTitle</div>
@@ -58,7 +58,7 @@
                     <div class="parent-detail narrow level-up">
                         @if (Model.View != EPlannerView.EightyOneYear)
                         {
-                            <a class="planner-zoom-out" data-view="@Model.NextViewUp"><i class="fa fa-level-up-alt"></i></a>
+                            <a class="planner-zoom-out" data-view="@Model.NextViewUp" data-display="@Model.Display"><i class="fa fa-level-up-alt"></i></a>
                         }
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                             var columnClass = Model.View == EPlannerView.Year ? "col-md-1 col-sm-1 col-xs-2" : "";
 
                             <div class="padding-0 margin-0 child-container @columnClass">
-                                <div class="global-planner-item" data-energy="@energy.Energy.Energy" data-view="@Model.ChildView" data-type="child" data-selected-date="@energy.EnergyStartsOnDateTimeString" data-update-url="@Model.UpdateChildUrl">
+                                <div class="global-planner-item" data-energy="@energy.Energy.Energy" data-view="@Model.ChildView" data-display="@Model.Display" data-type="child" data-selected-date="@energy.EnergyStartsOnDateTimeString" data-update-url="@Model.UpdateChildUrl">
 
                                     <div class="planner-item-container child-block clickable @energy.SelectedCssClass">
                                         <div class="child-name">@energyTitle</div>

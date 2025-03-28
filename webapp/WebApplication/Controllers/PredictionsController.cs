@@ -102,7 +102,7 @@ namespace K9.WebApplication.Controllers
                     processedModel.InvertDailyAndHourlyCycleKiForSouthernHemisphere = model.InvertDailyAndHourlyCycleKiForSouthernHemisphere;
 
                     var plannerData = _nineStarKiService.GetPlannerData(model.PersonModel.DateOfBirth, model.PersonModel.BirthTimeZoneId, model.PersonModel.TimeOfBirth, model.PersonModel.Gender, model.SelectedDate.Value, model.UserTimeZoneId, model.CalculationMethod, model.DisplayDataForPeriod, model.UseHolograhpicCycleCalculation, model.InvertDailyAndHourlyKiForSouthernHemisphere, model.InvertDailyAndHourlyCycleKiForSouthernHemisphere,
-                        EPlannerView.Year, processedModel);
+                        EPlannerView.Year, EPlannerDisplay.PersonalKi, processedModel);
 
                     UpdatePlannerUrls(plannerData);
 
@@ -126,11 +126,11 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("get-planner")]
-        public ActionResult GetPlanner(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, DateTime selectedDateTime, string userTimeZoneId, ECalculationMethod calculationMethod, EDisplayDataForPeriod displayDataForPeriod, bool useHolograhpicCycleCalculation, bool invertDailyAndHourlyKiForSouthernHemisphere, bool invertDailyAndHourlyCycleKiForSouthernHemisphere, EPlannerView view)
+        public ActionResult GetPlanner(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, DateTime selectedDateTime, string userTimeZoneId, ECalculationMethod calculationMethod, EDisplayDataForPeriod displayDataForPeriod, bool useHolograhpicCycleCalculation, bool invertDailyAndHourlyKiForSouthernHemisphere, bool invertDailyAndHourlyCycleKiForSouthernHemisphere, EPlannerView view, EPlannerDisplay display)
         {
             var plannerData = _nineStarKiService.GetPlannerData(dateOfBirth, birthTimeZoneId, timeOfBirth, gender,
                 selectedDateTime, userTimeZoneId, calculationMethod, displayDataForPeriod, useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere,
-                invertDailyAndHourlyCycleKiForSouthernHemisphere, view);
+                invertDailyAndHourlyCycleKiForSouthernHemisphere, view, display);
 
             UpdatePlannerUrls(plannerData);
 

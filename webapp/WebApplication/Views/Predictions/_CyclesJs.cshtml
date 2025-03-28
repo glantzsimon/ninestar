@@ -49,24 +49,26 @@
 
         $("#View").change(function() {
             var view = $(this).val();
+            var display = $("#Display").val();
             var selectedDate = $("#SelectedDateTimeString").val();
 
             $.fn.displaySpinner("#global-planner-container");
 
             // Update planner
-            updateGlobalPlanner(view, selectedDate);
+            updateGlobalPlanner(view, display, selectedDate);
         });
 
         $("a.planner-zoom-out").click(function() {
             clearTimeout(clickTimeout);
 
             var view = $(this).attr("data-view");
+            var display = $(this).attr("data-display");
             var selectedDate = $("#SelectedDateTimeString").val();
 
             $.fn.displaySpinner("#global-planner-container");
 
             // Update planner
-            updateGlobalPlanner(view, selectedDate);
+            updateGlobalPlanner(view, display, selectedDate);
         });
 
         // Drill up or down
@@ -75,12 +77,13 @@
 
             var $el = $(this);
             var view = $el.attr("data-view");
+            var display = $el.attr("data-display");
             var selectedDate = $el.attr("data-selected-date");
 
             $.fn.displaySpinner("#global-planner-container");
 
             // Update planner
-            updateGlobalPlanner(view, selectedDate);
+            updateGlobalPlanner(view, display, selectedDate);
         });
 
         $(".global-planner-item").click(function() {
@@ -125,7 +128,7 @@
         });
     }
 
-    function updateGlobalPlanner(view, selectedDate) {
+    function updateGlobalPlanner(view, display, selectedDate) {
         var url = '@Url.Action("GetPlanner")';
 
         ajaxcontroller().getHtml(url,
@@ -142,6 +145,7 @@
                 invertDailyAndHourlyKiForSouthernHemisphere: '@Model.InvertDailyAndHourlyKiForSouthernHemisphere.ToString().ToLower()',
                 invertDailyAndHourlyCycleKiForSouthernHemisphere: '@Model.InvertDailyAndHourlyCycleKiForSouthernHemisphere.ToString().ToLower()',
                 view: view,
+                display: display
             }).done(
             function(result) {
                 if (result.success) {

@@ -45,9 +45,7 @@
     }
 
     function processUiEvent($el) {
-        clearTimeout(clickTimeout);
-
-        var view = $("#View").val();
+        var view = $el.attr("data-view") || $("#View").val();
         var display = $("#Display").val();
         var selectedDate = $("#SelectedDateTimeString").val();
 
@@ -61,10 +59,12 @@
         let clickTimeout;
 
         $("a.planner-zoom-out, a.planner-navigation").click(function() {
+            clearTimeout(clickTimeout);
             processUiEvent($(this));
         });
 
         $("#View, #Display").change(function() {
+            clearTimeout(clickTimeout);
             processUiEvent($(this));
         });
 

@@ -122,8 +122,8 @@
 	    $.fn.isVisible = function(el) {
 	        const rect = el[0].getBoundingClientRect();
 
-	        // Check if the bottom of the element is within 100px from the bottom of the viewport
-	        return rect.bottom <= window.innerHeight && rect.bottom >= window.innerHeight - 100;
+	        // Check if the top of the element is within 30px from the bottom of the viewport
+	        return rect.top <= window.innerHeight;
 	    };
 
         $.fn.setDropdownValue = function (inputSelector, value) {
@@ -140,16 +140,18 @@
             $dropdownButton.text(selectedText);
         }
 
-	    $.fn.displaySpinner = function(selector) {
+	    $.fn.displaySpinner = function(selector, showOverlay) {
 	        var $this = selector === undefined ? $(this) : $(selector);
 
 	        // Create the spinner and overlay elements if they don't exist
 	        if ($this.find('.partialSpinner').length === 0) {
 	            $this.append('<div class="partialSpinner"></div>');
 	        }
-	        if ($this.find('.partialOverlay').length === 0) {
-	            $this.append('<div class="partialOverlay"></div>');
-	        }
+            if (showOverlay === true) {
+                if ($this.find('.partialOverlay').length === 0) {
+                    $this.append('<div class="partialOverlay"></div>');
+                }
+            }
 
 	        // Make sure the parent container has position relative
 	        $this.css('position', 'relative');

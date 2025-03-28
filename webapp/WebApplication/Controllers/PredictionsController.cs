@@ -102,7 +102,7 @@ namespace K9.WebApplication.Controllers
                     processedModel.InvertDailyAndHourlyCycleKiForSouthernHemisphere = model.InvertDailyAndHourlyCycleKiForSouthernHemisphere;
 
                     var plannerData = _nineStarKiService.GetPlannerData(model.PersonModel.DateOfBirth, model.PersonModel.BirthTimeZoneId, model.PersonModel.TimeOfBirth, model.PersonModel.Gender, model.SelectedDate.Value, model.UserTimeZoneId, model.CalculationMethod, model.DisplayDataForPeriod, model.UseHolograhpicCycleCalculation, model.InvertDailyAndHourlyKiForSouthernHemisphere, model.InvertDailyAndHourlyCycleKiForSouthernHemisphere,
-                        EPlannerView.Year, EPlannerDisplay.PersonalKi, processedModel);
+                        EPlannerView.Year, EPlannerDisplay.PersonalKi, EPlannerNavigationDirection.None, processedModel);
 
                     UpdatePlannerUrls(plannerData);
 

@@ -119,16 +119,12 @@
             }
         }
 
-        $.fn.isVisible = function(el) {
-            const rect = el[0].getBoundingClientRect();
+	    $.fn.isVisible = function(el) {
+	        const rect = el[0].getBoundingClientRect();
 
-            return (
-                rect.top >= 0 &&
-                    rect.left >= 0 &&
-                    rect.bottom <= ($(window).height()) &&
-                    rect.right <= ($(window).width())
-            );
-	    }
+	        // Check if the bottom of the element is within 100px from the bottom of the viewport
+	        return rect.bottom <= window.innerHeight && rect.bottom >= window.innerHeight - 100;
+	    };
 
         $.fn.setDropdownValue = function (inputSelector, value) {
             // Get the dropdown button based on the inputSelector

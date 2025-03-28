@@ -44,21 +44,28 @@
             200);
     }
 
+    function processUiEvent($el) {
+        clearTimeout(clickTimeout);
+
+        var view = $("#View").val();
+        var display = $("#Display").val();
+        var selectedDate = $("#SelectedDateTimeString").val();
+
+        var navigationDirection = $el.attr("data-navigation");
+
+        // Update planner
+        updateGlobalPlanner(view, display, selectedDate, navigationDirection);
+    }
+
     function bindGlobalPlannerEvents() {
         let clickTimeout;
 
-        $("#View, #Display, a.planner-zoom-out, a.planner-navigation").change(function() {
-            clearTimeout(clickTimeout);
+        $("a.planner-zoom-out, a.planner-navigation").click(function() {
+            processUiEvent($(this));
+        });
 
-            var view = $("#View").val();
-            var display = $("#Display").val();
-            var selectedDate = $("#SelectedDateTimeString").val();
-
-            var $el = $(this);
-            var navigationDirection = $el.attr("data-navigation");
-
-            // Update planner
-            updateGlobalPlanner(view, display, selectedDate, navigationDirection);
+        $("#View, #Display").change(function() {
+            processUiEvent($(this));
         });
 
         // Drill up or down

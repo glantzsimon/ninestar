@@ -282,18 +282,12 @@ namespace K9.WebApplication.Services
                 EPlannerNavigationDirection navigationDirection = EPlannerNavigationDirection.None,
                 NineStarKiModel nineStarKiModel = null)
         {
-            var navigationKey = "";
-            if (navigationDirection != EPlannerNavigationDirection.None)
-            {
-                navigationKey = Guid.NewGuid().ToString();
-            }
-
             return GetOrAddToCache($"GetPlannerData_{view.ToString()}_{dateOfBirth:yyyyMMddHHmm}_{timeOfBirth.ToString()}_" +
                                    $"{gender}_{selectedDateTime:yyyyMMddHHmm}_{userTimeZoneId}_{calculationMethod}_{displayDataForPeriod}" +
                                    $"{userTimeZoneId}_{useHolograhpicCycleCalculation}_" +
                                    $"{invertDailyAndHourlyKiForSouthernHemisphere}_" +
                                    $"{invertDailyAndHourlyCycleKiForSouthernHemisphere}_" +
-                                   $"{display}_{navigationKey}", () =>
+                                   $"{display}_{navigationDirection}", () =>
             {
                 var energies = new List<PlannerViewModelItem>();
                 var lichun = _swissEphemerisService.GetLichun(selectedDateTime, userTimeZoneId);

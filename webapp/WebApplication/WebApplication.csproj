@@ -358,6 +358,7 @@
     <Compile Include="Enums\ENumerologyCode.cs" />
     <Compile Include="Enums\EForecastType.cs" />
     <Compile Include="Enums\EPlannerDisplay.cs" />
+    <Compile Include="Enums\EPlannerNavigationDirection.cs" />
     <Compile Include="Enums\EPlannerView.cs" />
     <Compile Include="Enums\ESeason.cs" />
     <Compile Include="Enums\ENineStarKiElement.cs" />

@@ -47,30 +47,18 @@
     function bindGlobalPlannerEvents() {
         let clickTimeout;
 
-        $("#View, #Display").change(function() {
+        $("#View, #Display, a.planner-zoom-out, a.planner-navigation").change(function() {
             clearTimeout(clickTimeout);
 
             var view = $("#View").val();
             var display = $("#Display").val();
             var selectedDate = $("#SelectedDateTimeString").val();
 
-            $.fn.displaySpinner("#global-planner-container");
+            var $el = $(this);
+            var navigationDirection = $el.attr("data-navigation");
 
             // Update planner
-            updateGlobalPlanner(view, display, selectedDate);
-        });
-
-        $("a.planner-zoom-out").click(function() {
-            clearTimeout(clickTimeout);
-
-            var view = $(this).attr("data-view");
-            var display = $(this).attr("data-display");
-            var selectedDate = $("#SelectedDateTimeString").val();
-
-            $.fn.displaySpinner("#global-planner-container");
-
-            // Update planner
-            updateGlobalPlanner(view, display, selectedDate);
+            updateGlobalPlanner(view, display, selectedDate, navigationDirection);
         });
 
         // Drill up or down
@@ -81,8 +69,6 @@
             var view = $el.attr("data-view");
             var display = $el.attr("data-display");
             var selectedDate = $el.attr("data-selected-date");
-
-            $.fn.displaySpinner("#global-planner-container");
 
             // Update planner
             updateGlobalPlanner(view, display, selectedDate);
@@ -130,8 +116,10 @@
         });
     }
 
-    function updateGlobalPlanner(view, display, selectedDate) {
+    function updateGlobalPlanner(view, display, selectedDate, navigationDirection) {
         var url = '@Url.Action("GetPlanner")';
+
+        $.fn.displaySpinner("#global-planner-container");
 
         ajaxcontroller().getHtml(url,
             {
@@ -147,7 +135,8 @@
                 invertDailyAndHourlyKiForSouthernHemisphere: '@Model.InvertDailyAndHourlyKiForSouthernHemisphere.ToString().ToLower()',
                 invertDailyAndHourlyCycleKiForSouthernHemisphere: '@Model.InvertDailyAndHourlyCycleKiForSouthernHemisphere.ToString().ToLower()',
                 view: view,
-                display: display
+                display: display,
+                navigationDirection: navigationDirection
             }).done(
             function(result) {
                 if (result.success) {
@@ -158,7 +147,7 @@
 
                         bindGlobalPlannerEvents();
                         bootstrapControls().init();
-                    
+
                         var view = $("#PlannerView").val();
                         $("#View").val(view).selectpicker("refresh");
 

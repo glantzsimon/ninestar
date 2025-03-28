@@ -126,11 +126,11 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("get-planner")]
-        public ActionResult GetPlanner(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, DateTime selectedDateTime, string userTimeZoneId, ECalculationMethod calculationMethod, EDisplayDataForPeriod displayDataForPeriod, bool useHolograhpicCycleCalculation, bool invertDailyAndHourlyKiForSouthernHemisphere, bool invertDailyAndHourlyCycleKiForSouthernHemisphere, EPlannerView view, EPlannerDisplay display)
+        public ActionResult GetPlanner(DateTime dateOfBirth, string birthTimeZoneId, TimeSpan timeOfBirth, EGender gender, DateTime selectedDateTime, string userTimeZoneId, ECalculationMethod calculationMethod, EDisplayDataForPeriod displayDataForPeriod, bool useHolograhpicCycleCalculation, bool invertDailyAndHourlyKiForSouthernHemisphere, bool invertDailyAndHourlyCycleKiForSouthernHemisphere, EPlannerView view, EPlannerDisplay display, EPlannerNavigationDirection navigationDirection = EPlannerNavigationDirection.None)
         {
             var plannerData = _nineStarKiService.GetPlannerData(dateOfBirth, birthTimeZoneId, timeOfBirth, gender,
                 selectedDateTime, userTimeZoneId, calculationMethod, displayDataForPeriod, useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere,
-                invertDailyAndHourlyCycleKiForSouthernHemisphere, view, display);
+                invertDailyAndHourlyCycleKiForSouthernHemisphere, view, display, navigationDirection);
 
             UpdatePlannerUrls(plannerData);
 

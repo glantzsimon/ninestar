@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <div class="text-center margin-top-20">
+    <div class="text-center margin-top-15">
         <h5>
             @Dictionary.PlannerInstructions
         </h5>
@@ -60,11 +60,17 @@
                             @Model.Energy.SeasonDescription / @Model.Energy.CycleDescriptiveName
                         </div>
                     </div>
-                    <div class="parent-detail narrow level-up">
-                        @if (Model.View != EPlannerView.EightyOneYear)
-                        {
-                            <a class="planner-zoom-out" data-view="@Model.NextViewUp" data-display="@Model.Display"><i class="fa fa-level-up-alt"></i></a>
-                        }
+                    <div class="parent-detail wide level-up">
+                        <div>
+                            @if (Model.View != EPlannerView.EightyOneYear)
+                            {
+                                <a class="planner-zoom-out" data-view="@Model.NextViewUp" data-display="@Model.Display"><i class="fa fa-level-up-alt"></i></a>
+                            }
+                        </div>
+                        <div>
+                            <a class="planner-navigation" data-navigation="@EPlannerNavigationDirection.Back" data-view="@Model.View" data-display="@Model.Display"><i class="fa fa-arrow-circle-left"></i></a>
+                            <a class="planner-navigation" data-navigation="@EPlannerNavigationDirection.Forward" data-view="@Model.View" data-display="@Model.Display"><i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>

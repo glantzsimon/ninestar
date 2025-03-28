@@ -55,22 +55,28 @@
         updateGlobalPlanner(view, display, selectedDate, navigationDirection);
     }
 
+    function clearTimeouts() {
+        clearTimeout(clickTimeout);
+        clearTimeout(scrollTimeout);
+    }
+
     function bindGlobalPlannerEvents() {
         let clickTimeout;
+        let scrollTimeout;
 
         $("a.planner-zoom-out, a.planner-navigation").click(function() {
-            clearTimeout(clickTimeout);
+            clearTimeouts();
             processUiEvent($(this));
         });
 
         $("#View, #Display").change(function() {
-            clearTimeout(clickTimeout);
+            clearTimeouts();
             processUiEvent($(this));
         });
 
         // Drill up or down
         $(".global-planner-item").dblclick(function() {
-            clearTimeout(clickTimeout);
+            clearTimeouts();
 
             var $el = $(this);
             var view = $el.attr("data-view");
@@ -114,7 +120,7 @@
                         }
                     });
 
-                setTimeout(function () {
+                scrollTimeout = setTimeout(function () {
                     if (!$.fn.isVisible($details))
                         $.fn.scrollToTopOf($details, -180);
                 }, 500);

@@ -281,10 +281,11 @@ namespace K9.WebApplication.Services
                 NineStarKiModel nineStarKiModel = null)
         {
             return GetOrAddToCache($"GetPlannerData_{view.ToString()}_{dateOfBirth:yyyyMMddHHmm}_{timeOfBirth.ToString()}_" +
-                                   $"{gender}_{selectedDateTime:yyyyMMddHHmm}_{userTimeZoneId}_{calculationMethod}_" +
+                                   $"{gender}_{selectedDateTime:yyyyMMddHHmm}_{userTimeZoneId}_{calculationMethod}_{displayDataForPeriod}" +
                                    $"{userTimeZoneId}_{useHolograhpicCycleCalculation}_" +
                                    $"{invertDailyAndHourlyKiForSouthernHemisphere}_" +
-                                   $"{invertDailyAndHourlyCycleKiForSouthernHemisphere}", () =>
+                                   $"{invertDailyAndHourlyCycleKiForSouthernHemisphere}_" +
+                                   $"{display}", () =>
             {
                 var energies = new List<PlannerViewModelItem>();
                 var lichun = _swissEphemerisService.GetLichun(selectedDateTime, userTimeZoneId);

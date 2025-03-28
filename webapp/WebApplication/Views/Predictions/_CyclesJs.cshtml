@@ -47,8 +47,8 @@
     function bindGlobalPlannerEvents() {
         let clickTimeout;
 
-        $("#View").change(function() {
-            var view = $(this).val();
+        $("#View, #Display").change(function() {
+            var view = $("#View").val();
             var display = $("#Display").val();
             var selectedDate = $("#SelectedDateTimeString").val();
 

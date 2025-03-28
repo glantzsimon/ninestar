@@ -14,17 +14,21 @@
     @Html.Hidden("PlannerView", (int)Model.View)
 
     <div class="row margin-0 margin-bottom-20">
-        <div class="col-sm-4 col-sm-offset-1 col-xs-6 padding-0">
-            @Html.BootstrapEditorFor(e => e.View, new EditorOptions
-            {
-                Label = ""
-            })
-        </div>
-        <div class="col-sm-4 col-sm-offset-1 col-xs-6 padding-0">
-            @Html.BootstrapEditorFor(e => e.Display, new EditorOptions
-            {
-                Label = ""
-            })
+        <div class="col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0 padding-0">
+            <div class="col-sm-5 col-xs-12 padding-0 margin-bottom-5">
+                @Html.BootstrapEditorFor(e => e.View, new EditorOptions
+                {
+                    Label = ""
+                })
+            </div>
+            <div class="col-sm-1 desktop-only padding-0">
+            </div>
+            <div class="col-sm-5 col-xs-12 padding-0">
+                @Html.BootstrapEditorFor(e => e.Display, new EditorOptions
+                {
+                    Label = ""
+                })
+            </div>
         </div>
     </div>
 

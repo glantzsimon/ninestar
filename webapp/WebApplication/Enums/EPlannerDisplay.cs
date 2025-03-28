@@ -5,9 +5,9 @@ namespace K9.WebApplication.Enums
 {
     public enum EPlannerDisplay
     {
-        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Labels.EightyOneYearView)]
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Labels.PersonalHouses)]
         PersonalKi,
-        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Labels.NineYearView)]
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Labels.GlobalKi)]
         GlobalKi
     }
 }

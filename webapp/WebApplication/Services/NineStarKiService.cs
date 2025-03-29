@@ -367,7 +367,7 @@ namespace K9.WebApplication.Services
                                 TimeOfBirth = timeOfBirth,
                                 Gender = gender
                             }, false, false, eightyOneYearPeriod.PeriodStartsOn.AddDays(3), calculationMethod, true, false, userTimeZoneId,
-                                                  useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
+                                                  useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, EDisplayDataForPeriod.SelectedDate);
                         }
 
                         plannerModel.Energy = display == EPlannerDisplay.PersonalKi ? nineStarKiModel.PersonalHousesOccupiedEnergies.Epoch : nineStarKiModel.GlobalCycleEnergies.Epoch;
@@ -419,7 +419,7 @@ namespace K9.WebApplication.Services
                                 TimeOfBirth = timeOfBirth,
                                 Gender = gender
                             }, false, false, nineYearPeriod.PeriodStartsOn.AddDays(3), calculationMethod, true, false, userTimeZoneId,
-                                useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
+                                useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere, EDisplayDataForPeriod.SelectedDate);
                         }
 
                         plannerModel.Energy = display == EPlannerDisplay.PersonalKi ? nineStarKiModel.PersonalHousesOccupiedEnergies.Generation : nineStarKiModel.GlobalCycleEnergies.Generation;
@@ -490,7 +490,8 @@ namespace K9.WebApplication.Services
                                 TimeOfBirth = timeOfBirth,
                                 Gender = gender
                             }, false, false, selectedDateTime, calculationMethod, true, false, userTimeZoneId,
-                                useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
+                                useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere,
+                                EDisplayDataForPeriod.SelectedDate);
                         }
 
                         plannerModel.Energy = display == EPlannerDisplay.PersonalKi ? nineStarKiModel.PersonalHousesOccupiedEnergies.Month : nineStarKiModel.GlobalCycleEnergies.Month;
@@ -522,8 +523,8 @@ namespace K9.WebApplication.Services
 
                             var presonalHourlyEnergy = display == EPlannerDisplay.PersonalKi ? nineStarKiModel.GetPersonalCycleEnergy(preciseHourlyCycleEnergy, useHolograhpicCycleCalculation ? nineStarKiModel.PersonalChartEnergies.Hour.EnergyNumber : nineStarKiModel.MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.HourlyEnergy) : nineStarKiModel.GetGlobalCycleEnergy(preciseHourlyCycleEnergy, ENineStarKiEnergyCycleType.HourlyEnergy);
 
-                            var isActive =  localNow.IsBetween(hourlyPeriod.SegmentStartsOn, hourlyPeriod.SegmentEndsOn);
-
+                            var isActive = localNow.IsBetween(hourlyPeriod.SegmentStartsOn, hourlyPeriod.SegmentEndsOn);
+                            
                             energies.Add(new PlannerViewModelItem(presonalHourlyEnergy, presonalHourlyEnergy, hourlyPeriod.SegmentStartsOn, hourlyPeriod.SegmentEndsOn, isActive, EPlannerView.Day));
                         }
 
@@ -536,7 +537,8 @@ namespace K9.WebApplication.Services
                                 TimeOfBirth = timeOfBirth,
                                 Gender = gender
                             }, false, false, selectedDateTime, calculationMethod, true, false, userTimeZoneId,
-                                useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
+                                useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere,
+                                EDisplayDataForPeriod.SelectedDate);
                         }
 
                         plannerModel.Energy = display == EPlannerDisplay.PersonalKi ? nineStarKiModel.PersonalHousesOccupiedEnergies.Day : nineStarKiModel.GlobalCycleEnergies.Day;
@@ -591,7 +593,8 @@ namespace K9.WebApplication.Services
                                 TimeOfBirth = timeOfBirth,
                                 Gender = gender
                             }, false, false, selectedDateTime, calculationMethod, true, false, userTimeZoneId,
-                                useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
+                                useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere,
+                                EDisplayDataForPeriod.SelectedDate);
                         }
 
                         plannerModel.Energy = display == EPlannerDisplay.PersonalKi ? nineStarKiModel.PersonalHousesOccupiedEnergies.Year : nineStarKiModel.GlobalCycleEnergies.Year;
@@ -604,17 +607,6 @@ namespace K9.WebApplication.Services
 
                 // Update selected time (in case of navigation)
                 plannerModel.SelectedDateTime = selectedDateTime;
-
-                // Check if an item is active
-                if (!plannerModel.Energies.Any(e => e.IsActive))
-                {
-                    var activeEnergyForSelectedDate = plannerModel.Energies.FirstOrDefault(e =>
-                        selectedDateTime.IsBetween(e.EnergyStartsOn, e.EnergyEndsOn));
-                    if (activeEnergyForSelectedDate != null)
-                    {
-                        activeEnergyForSelectedDate.IsActive = true;
-                    }
-                }
 
                 return plannerModel;
 

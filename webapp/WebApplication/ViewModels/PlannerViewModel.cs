@@ -21,6 +21,7 @@ namespace K9.WebApplication.ViewModels
 
         public NineStarKiModel NineStarKiModel { get; set; }
         public NineStarKiEnergy Energy { get; set; }
+        public NineStarKiEnergy SecondEnergy { get; set; }
         public DateTime Lichun { get; set; }
         public DateTime SelectedDateTime { get; set; }
         public DateTime PeriodStarsOn { get; set; }

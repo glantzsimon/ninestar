@@ -364,7 +364,7 @@ namespace K9.WebApplication.Services
                                 BirthTimeZoneId = birthTimeZoneId,
                                 TimeOfBirth = timeOfBirth,
                                 Gender = gender
-                            }, false, false, selectedDateTime, calculationMethod, true, false, userTimeZoneId,
+                            }, false, false, eightyOneYearPeriod.PeriodStartsOn.AddDays(3), calculationMethod, true, false, userTimeZoneId,
                                                   useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
                         }
 
@@ -398,14 +398,14 @@ namespace K9.WebApplication.Services
                         var yearsForNineYearPeriod =
                             _swissEphemerisService.GetNineStarKiYearlyPeriodsForNineYearPeriod(nineYearPeriod.PeriodStartsOn.AddDays(3), userTimeZoneId);
 
-                        foreach (var yearlyPeriodChild in yearsForNineYearPeriod)
+                        foreach (var year in yearsForNineYearPeriod)
                         {
-                            var energy = display == EPlannerDisplay.PersonalKi ? nineStarKiModel.GetPersonalCycleEnergy(yearlyPeriodChild.YearlyKi, nineStarKiModel.MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.YearlyCycleEnergy) : nineStarKiModel.GetGlobalCycleEnergy(yearlyPeriodChild.YearlyKi, ENineStarKiEnergyCycleType.YearlyCycleEnergy);
+                            var energy = display == EPlannerDisplay.PersonalKi ? nineStarKiModel.GetPersonalCycleEnergy(year.YearlyKi, nineStarKiModel.MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.YearlyCycleEnergy) : nineStarKiModel.GetGlobalCycleEnergy(year.YearlyKi, ENineStarKiEnergyCycleType.YearlyCycleEnergy);
 
                             var isActive =
-                                DateTime.Today.IsBetween(yearlyPeriodChild.PeriodStartsOn, yearlyPeriodChild.PeriodEndsOn);
+                                DateTime.Today.IsBetween(year.PeriodStartsOn, year.PeriodEndsOn);
 
-                            energies.Add(new PlannerViewModelItem(energy, energy, yearlyPeriodChild.PeriodStartsOn, yearlyPeriodChild.PeriodEndsOn, isActive, EPlannerView.Year));
+                            energies.Add(new PlannerViewModelItem(energy, energy, year.PeriodStartsOn, year.PeriodEndsOn, isActive, EPlannerView.Year));
                         }
 
                         if (navigationDirection != EPlannerNavigationDirection.None)
@@ -416,7 +416,7 @@ namespace K9.WebApplication.Services
                                     BirthTimeZoneId = birthTimeZoneId,
                                     TimeOfBirth = timeOfBirth,
                                     Gender = gender
-                                }, false, false, selectedDateTime, calculationMethod, true, false, userTimeZoneId,
+                                }, false, false, nineYearPeriod.PeriodStartsOn.AddDays(3), calculationMethod, true, false, userTimeZoneId,
                                 useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
                         }
 

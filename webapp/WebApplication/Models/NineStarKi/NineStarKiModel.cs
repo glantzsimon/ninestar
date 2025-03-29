@@ -19,7 +19,7 @@ namespace K9.WebApplication.Models
     {
         #region Options and Flags
 
-        private static DateTime CYCLE_SWITCH_DATE = new DateTime(2105, 2, 4);
+        public static DateTime CYCLE_SWITCH_DATE = new DateTime(2105, 2, 4);
 
         [ScriptIgnore]
         [UIHint("CalculationMethod")]
@@ -120,7 +120,7 @@ namespace K9.WebApplication.Models
             preciseInvertedDailyCycleAfternoonEnergy = preciseInvertedDailyCycleAfternoonEnergy.HasValue && InvertDailyAndHourlyCycleKiForSouthernHemisphere
                 ? GetOppositeEnergyInMagicSquare(preciseInvertedDailyCycleAfternoonEnergy.Value)
                 : preciseInvertedDailyCycleAfternoonEnergy;
-            
+
             preciseHourlyCycleEnergy = InvertDailyAndHourlyCycleKiForSouthernHemisphere
                 ? GetOppositeEnergyInMagicSquare(preciseHourlyCycleEnergy)
                 : preciseHourlyCycleEnergy;
@@ -469,7 +469,7 @@ namespace K9.WebApplication.Models
         public NineStarKiEnergy GetPersonalEnergy(int energyNumber, ENineStarKiEnergyType energyType)
         {
             energyNumber = GetNineStarKiNumber(energyNumber);
-            if (PersonModel.Gender.IsYin() && CalculationMethod == ECalculationMethod.Chinese)
+            if ((PersonModel.Gender.IsYin() && CalculationMethod == ECalculationMethod.Chinese) || PersonModel.DateOfBirth >= CYCLE_SWITCH_DATE)
             {
                 energyNumber = InvertEnergy(energyNumber);
             }

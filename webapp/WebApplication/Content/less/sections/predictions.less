@@ -80,7 +80,7 @@
         &.current {
             background-color: @mist-grey;
             outline: 2px solid @primary-blue;
-            border-radius: 7px;
+            border-radius: 3px;
             position: relative;
             z-index: 1 !important;
         }
@@ -88,11 +88,9 @@
         &.active {
             background-color: @primary-blue;
             box-shadow: 0 6px 16px rgba(0,0,0,0.5);
-            transform: scale(1.05) !important;
-            transform: translateY(-1px);
             position: relative;
             z-index: 3 !important;
-            border-radius: 11px;
+            border-radius: 3px;
 
             div {
                 color: @snow-white;
@@ -398,8 +396,10 @@
 
         &.current {
             background-color: @mist-grey;
-            border: 2px solid @primary-blue;            
-            border-radius: 7px;
+            border: 2px solid @primary-blue;
+            border-top: 3px solid @primary-blue;
+            border-bottom: 3px solid @primary-blue;
+            border-radius: 3px;
         }
 
         &.active {

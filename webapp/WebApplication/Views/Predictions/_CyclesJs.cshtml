@@ -55,15 +55,16 @@
             var energy = $el.attr("data-energy");
             var type = $el.attr("data-type");
             var url = $el.attr("data-update-url");
-            var $container, $parentBlock, $childBlock, $details, url;
+            var $container, $parentBlock, $childBlock, $timeSlot, $details, url;
 
             $container = $el.closest(".global-planner-container");
             $parentBlock = $el.closest(".parent-block");
             $childBlock = $el.find(".child-block");
+            $timeSlot = $el.find(".time-slot");
             $details = $("#global-planner-details");
 
             // clear current class from all items
-            $container.find(".parent-block, .child-block").removeClass("active");
+            $container.find(".parent-block, .child-block, .time-slot").removeClass("active");
 
             // set current class on current selected item
             if (type === "parent") {
@@ -71,6 +72,8 @@
             }
             else if (type === "child") {
                 $childBlock.addClass("active");
+            } else if (type === "timeslot") {
+                $timeSlot.addClass("active");
             }
 
             clickTimeout = setTimeout(function() {

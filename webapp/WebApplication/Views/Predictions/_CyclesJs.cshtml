@@ -3,47 +3,6 @@
 
 <script language="javascript">
 
-    function scrollCurrentYearIntoVew() {
-        setTimeout(function() {
-                var $cycle = $("div.current-year");
-                var $yearlyPlannerContainer = ".yearly-planner-container";
-
-                $($yearlyPlannerContainer).scrollTop($cycle.offset().top - $($yearlyPlannerContainer).offset().top);
-            },
-            200);
-    }
-
-    function scrollCurrentMonthIntoVew() {
-        setTimeout(function() {
-                var $cycle = $("div.current-month");
-                var $monthlyPlannerContainer = ".monthly-planner-container";
-
-                $($monthlyPlannerContainer).scrollTop($cycle.offset().top - $($monthlyPlannerContainer).offset().top);
-            },
-            200);
-    }
-
-    function scrollActivePlannerItemIntoVew() {
-        if ($("#PlannerEnableScrollIntoView").val() === 'True') {
-            setTimeout(function() {
-                    var $cycle = $(".year-block .active");
-                    var $container = $(".global-planner-container");
-
-                    $container.scrollTop($cycle.offset().top - $container.offset().top - 154);
-
-                    $("#PlannerEnableScrollIntoView").val(false);
-                },
-                200);
-        }
-    }
-
-    function scrollCyclesIntoVew(tab) {
-        setTimeout(function() {
-                $.fn.scrollToTopOf(tab, -230);
-            },
-            200);
-    }
-
     function processUiEvent($el) {
         var view = $el.attr("data-view") || $("#View").val();
         var display = $("#Display").val();
@@ -64,18 +23,21 @@
             clearTimeout(scrollTimeout);
         }
 
-        $("a.planner-zoom-out, a.planner-navigation").click(function() {
+        $("a.planner-zoom-out, a.planner-navigation").click(function(e) {
+            e.stopPropagation();
             clearTimeouts();
             processUiEvent($(this));
         });
 
-        $("#View, #Display").change(function() {
+        $("#View, #Display").change(function(e) {
+            e.stopPropagation();
             clearTimeouts();
             processUiEvent($(this));
         });
 
         // Drill up or down
-        $(".global-planner-item").dblclick(function() {
+        $(".global-planner-item").dblclick(function(e) {
+            e.stopPropagation();
             clearTimeouts();
 
             var $el = $(this);
@@ -87,7 +49,8 @@
             updateGlobalPlanner(view, display, selectedDate);
         });
 
-        $(".global-planner-item").click(function() {
+        $(".global-planner-item").click(function(e) {
+            e.stopPropagation();
             var $el = $(this);
             var energy = $el.attr("data-energy");
             var type = $el.attr("data-type");
@@ -172,27 +135,6 @@
     }
 
     $(function() {
-        $("a[href='#yearly-planner']").click(function() {
-            scrollCurrentYearIntoVew();
-        });
-
-        $("a[href='#monthly-planner']").click(function() {
-            scrollCurrentMonthIntoVew();
-        });
-
-        $("#current-yearly-cycle").click(function() {
-            scrollCyclesIntoVew("#yearly");
-
-            $(".nav-pills a[href='#predictions']").tab("show");
-            $(".nav-pills a[href='#yearly']").tab("show");
-        });
-
-        $("#current-monthly-cycle").click(function() {
-            scrollCyclesIntoVew("#monthly");
-
-            $(".nav-pills a[href='#predictions']").tab("show");
-            $(".nav-pills a[href='#monthly']").tab("show");
-        });
 
         bindGlobalPlannerEvents();
     });

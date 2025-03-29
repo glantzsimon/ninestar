@@ -339,13 +339,12 @@
 }
 
 /* Hourly Planner */
-/* Container for the day */
-.day-container {
+#hourly-slots {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 500px; /* Height of the full day container */
-    border: 1px solid #ddd;
+    height: 333px;
+    outline: 1px solid #ddd;
     background-color: #f9f9f9;
     /* Each 2-hour time slot */
     .time-slot {
@@ -355,37 +354,21 @@
         align-items: center;
         justify-content: flex-start;
         padding: 10px;
-        border-bottom: 1px solid #ddd;
-        background-color: #f0f0f0;
+        background-color: @snow-white;
         font-size: 14px;
+
+        &:not(:last-child) {
+            outline: 1px solid #ddd;
+        }
         /* Slot items that will be dynamically placed */
         .slot-item {
             position: absolute;
-            width: 100%;
+            width: 80%;
+            left: 20%;
             padding: 5px;
-            background-color: rgba(0, 123, 255, 0.5); /* Light blue */
-            border-radius: 5px;
-            color: white;
-            font-size: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-sizing: border-box;
-            white-space: nowrap;
-            /* Size adjustment based on duration of the slot */
-            &.short {
-                height: 25px; /* For shorter slots */
-            }
-
-            &.long {
-                height: 70px; /* For longer slots */
-            }
         }
     }
-}
-/* Optional: You can customize variables for colors */
-@primary-color: #007bff; /* Light blue color */
-/* Apply variables to the styles */
-.slot-item {
-    background-color: rgba(@primary-color, 0.5);
 }

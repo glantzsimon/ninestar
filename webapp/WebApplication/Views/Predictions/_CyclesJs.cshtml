@@ -166,82 +166,10 @@
 
                         var display = $("#PlannerDisplay").val();
                         $("#Display").val(display).selectpicker("refresh");
-
-                        if (view.toString() === '@((int)EPlannerView.Day)') {
-                            renderDailyPlannerView();
-                        }
                     });
                 }
             });
     }
-
-    function renderDailyPlannerView() {
-        var slots = [
-            { startTime: '01:15', endTime: '03:15', title: 'Meeting 1' },
-            { startTime: '04:30', endTime: '06:30', title: 'Meeting 2' },
-            { startTime: '02:00', endTime: '04:00', title: 'Meeting 3' },
-            { startTime: '05:00', endTime: '07:00', title: 'Meeting 4' },
-            { startTime: '07:30', endTime: '09:00', title: 'Meeting 5' }
-            // Add more slots as needed...
-        ];
-
-        // Convert a "HH:MM" string into total minutes.
-        function getTimeInMinutes(time) {
-            var parts = time.split(':');
-            return parseInt(parts[0], 10) * 60 + parseInt(parts[1], 10);
-        }
-
-        function renderSlots() {
-            var $container = $('#dayContainer');
-            var totalSlots = 12; // 12 two-hour periods in a day
-            var slotDuration = 120; // each slot is 120 minutes
-
-            // Generate 12 time blocks
-            for (var i = 0; i < totalSlots; i++) {
-                var startTime = (i * 2) + ":00";
-                var endTime = ((i + 1) * 2) + ":00";
-
-                // Create a new time-slot container
-                var $timeSlot = $('<div>')
-                    .addClass('time-slot bg-light p-3 border-bottom')
-                    .attr('data-time', startTime);
-
-                // Add a label with the time range
-                var $label = $('<span>').text(startTime + " - " + endTime);
-                $timeSlot.append($label);
-
-                // Loop over each slot item and place it in the correct time block.
-                $.each(slots, function (index, slot) {
-                    var slotStart = getTimeInMinutes(slot.startTime);
-                    var slotEnd = getTimeInMinutes(slot.endTime);
-                    var slotStartBlock = Math.floor(slotStart / slotDuration);
-                    var slotEndBlock = Math.floor(slotEnd / slotDuration);
-
-                    // Check if the slot overlaps with the current block.
-                    if (slotStartBlock === i || slotEndBlock === i || (slotStartBlock < i && slotEndBlock > i)) {
-                        var $slotItem = $('<div>')
-                            .addClass('slot-item position-absolute text-white d-flex align-items-center justify-content-center')
-                            .text(slot.title);
-
-                        // Add a class based on slot duration.
-                        var slotDurationMinutes = slotEnd - slotStart;
-                        if (slotDurationMinutes <= 30) {
-                            $slotItem.addClass('short'); // Short slot
-                        } else if (slotDurationMinutes >= 90) {
-                            $slotItem.addClass('long');  // Long slot
-                        }
-                        $timeSlot.append($slotItem);
-                    }
-                });
-
-                $container.append($timeSlot);
-            }
-        }
-
-        // Render the slots.
-        renderSlots();
-    }
-
 
     $(function() {
         $("a[href='#yearly-planner']").click(function() {

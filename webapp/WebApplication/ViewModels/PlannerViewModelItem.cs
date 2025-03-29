@@ -54,6 +54,8 @@ namespace K9.WebApplication.ViewModels
 
         public string SecondImageAlt => $"{Dictionary.NineStarKiAstrologyFreeCalculator} {SecondEnergy.EnergyTitle}";
 
+        public string TimeSlotString => $"{EnergyStartsOn.TimeOfDay.ToString(@"hh\:mm")} - {EnergyEndsOn.TimeOfDay.ToString(@"hh\:mm")}";
+
         private string GetEnergyStartsOnString()
         {
             switch (ChildView)

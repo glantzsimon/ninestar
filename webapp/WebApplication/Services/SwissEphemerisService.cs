@@ -5,6 +5,7 @@ using SwissEphNet;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using TimeZoneConverter;
 using Xunit.Abstractions;
 
@@ -607,6 +608,22 @@ namespace K9.WebApplication.Services
             }, TimeSpan.FromDays(30));
         }
 
+        public DateTime GetLichun(DateTime selectedDateTime, string timeZoneId)
+        {
+            using (var sweph = new SwissEph())
+            {
+                sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
+                // Convert the provided datetime to UT.
+                DateTime selectedUT = ConvertToUT(selectedDateTime, timeZoneId);
+                // Determine the adjusted year based on Lìchūn.
+                int adjustedYear = AdjustYearForLichun(sweph, selectedUT);
+                // Get the Julian Day for Lìchūn (the solar term at 315°) for the adjusted year.
+                double jdLichun = GetSolarTerm(sweph, adjustedYear, 315.0);
+                // Convert the Julian Day to DateTime.
+                return JulianDayToDateTime(sweph, jdLichun);
+            }
+        }
+
         public (DateTime Day, int MorningKi, int? InvertedMorningKi, int? AfternoonKi, int? InvertedAfternoonKi)[] GetNineStarKiDailyEnergiesForMonth(DateTime selectedDateTime, string timeZoneId)
         {
             string cacheKey = $"{nameof(GetNineStarKiDailyEnergiesForMonth)}_{selectedDateTime:yyyyMMddHH}_{timeZoneId}";
@@ -627,91 +644,65 @@ namespace K9.WebApplication.Services
 
         public (DateTime SegmentStartsOn, DateTime SegmentEndsOn, int HourlyKi)[] GetNineStarKiHourlyPeriodsForDay(DateTime selectedDateTime, string timeZoneId)
         {
-            // First, convert the selected date/time to local time in the specified time zone.
-            // Then obtain the local "day" from midnight to midnight.
+            // Convert the selected date to local time.
             DateTime localDateTime = DateTimeHelper.ConvertToLocaleDateTime(selectedDateTime, timeZoneId);
-            DateTime dayStart = new DateTime(localDateTime.Year, localDateTime.Month, localDateTime.Day, 0, 0, 0, DateTimeKind.Unspecified);
-            // Convert the local midnight to UTC using our conversion method.
-            DateTime utcDayStart = ConvertToUT(dayStart, timeZoneId);
-            DateTime utcDayEnd = ConvertToUT(dayStart.AddDays(1), timeZoneId);
+            // Define the local day boundaries (from local midnight to the next midnight).
+            DateTime localDayStart = new DateTime(localDateTime.Year, localDateTime.Month, localDateTime.Day, 0, 0, 0, DateTimeKind.Unspecified);
+            DateTime localDayEnd = localDayStart.AddDays(1);
+            // Convert the local boundaries to UTC.
+            DateTime utcDayStart = ConvertToUT(localDayStart, timeZoneId);
+            DateTime utcDayEnd = ConvertToUT(localDayEnd, timeZoneId);
 
-            var segments = new List<(DateTime SegmentStart, DateTime SegmentEnd, int HourlyKi)>();
-            DateTime currentUtc = utcDayStart;
-            // Get the hourly ki for the very start of the day.
-            int currentKi = GetNineStarKiHourlyKi(currentUtc, timeZoneId);
-
-            while (currentUtc < utcDayEnd)
+            // Generate fixed UTC boundaries: they occur every 2 hours starting at 1:00 UTC.
+            // We want boundaries that fully cover [utcDayStart, utcDayEnd].
+            var boundariesUTC = new List<DateTime>();
+            // Choose a reference: 1:00 UTC on the day of utcDayStart.
+            DateTime referenceBoundary = new DateTime(utcDayStart.Year, utcDayStart.Month, utcDayStart.Day, 1, 0, 0, DateTimeKind.Utc);
+            // If the reference is after our day start, go one day earlier.
+            if (referenceBoundary > utcDayStart)
             {
-                // Find the next transition time when the hourly ki changes.
-                DateTime transitionUtc = FindHourlyTransition(currentUtc, utcDayEnd, timeZoneId, currentKi);
-                // If no transition is found before the end of the day, use utcDayEnd.
-                if (transitionUtc > utcDayEnd)
-                    transitionUtc = utcDayEnd;
+                referenceBoundary = referenceBoundary.AddDays(-1);
+            }
+            // Generate boundaries from the reference until a little past utcDayEnd.
+            DateTime boundary = referenceBoundary;
+            while (boundary <= utcDayEnd.AddHours(2))
+            {
+                boundariesUTC.Add(boundary);
+                boundary = boundary.AddHours(2);
+            }
 
-                segments.Add((currentUtc, transitionUtc, currentKi));
+            // Now, select the boundaries that cover our UTC day.
+            // We want the last boundary before or equal to utcDayStart...
+            DateTime firstBoundary = boundariesUTC.LastOrDefault(b => b <= utcDayStart);
+            if (firstBoundary == default(DateTime))
+                firstBoundary = boundariesUTC.First();
+            // ...and the first boundary after or equal to utcDayEnd.
+            DateTime lastBoundary = boundariesUTC.FirstOrDefault(b => b >= utcDayEnd);
+            if (lastBoundary == default(DateTime))
+                lastBoundary = boundariesUTC.Last();
 
-                // Prepare for the next segment.
-                currentUtc = transitionUtc;
-                // If we haven't reached the end, update the current hourly ki.
-                if (currentUtc < utcDayEnd)
-                {
-                    currentKi = GetNineStarKiHourlyKi(currentUtc, timeZoneId);
-                }
+            // Collect all boundaries between these (inclusive)
+            var segmentBoundaries = boundariesUTC.Where(b => b >= firstBoundary && b <= lastBoundary).ToList();
+            // If the last boundary is less than utcDayEnd, add lastBoundary explicitly.
+            if (segmentBoundaries.Last() < utcDayEnd)
+            {
+                segmentBoundaries.Add(lastBoundary);
+            }
+
+            // Build segments from consecutive boundaries.
+            var segments = new List<(DateTime SegmentStartsOn, DateTime SegmentEndsOn, int HourlyKi)>();
+            for (int i = 0; i < segmentBoundaries.Count - 1; i++)
+            {
+                DateTime segStart = segmentBoundaries[i];
+                DateTime segEnd = segmentBoundaries[i + 1];
+                int ki = GetNineStarKiHourlyKi(segStart, timeZoneId);
+                segments.Add((segStart, segEnd, ki));
             }
 
             return segments.ToArray();
         }
 
         #endregion
-
-        public DateTime GetLichun(DateTime selectedDateTime, string timeZoneId)
-        {
-            using (var sweph = new SwissEph())
-            {
-                sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
-                // Convert the provided datetime to UT.
-                DateTime selectedUT = ConvertToUT(selectedDateTime, timeZoneId);
-                // Determine the adjusted year based on Lìchūn.
-                int adjustedYear = AdjustYearForLichun(sweph, selectedUT);
-                // Get the Julian Day for Lìchūn (the solar term at 315°) for the adjusted year.
-                double jdLichun = GetSolarTerm(sweph, adjustedYear, 315.0);
-                // Convert the Julian Day to DateTime.
-                return JulianDayToDateTime(sweph, jdLichun);
-            }
-        }
-
-        /// <summary>
-        /// Uses a binary search (with a resolution of 1 minute) to find the earliest UTC time 
-        /// between 'startUtc' and 'endUtc' at which the hourly ki (as determined by GetNineStarKiHourlyKi)
-        /// differs from 'currentKi'. If no change occurs, returns endUtc.
-        /// </summary>
-        private DateTime FindHourlyTransition(DateTime startUtc, DateTime endUtc, string timeZoneId, int currentKi)
-        {
-            // First, check if there is any change by comparing the value at endUtc.
-            if (GetNineStarKiHourlyKi(endUtc, timeZoneId) == currentKi)
-            {
-                return endUtc;
-            }
-
-            TimeSpan resolution = TimeSpan.FromMinutes(1);
-            DateTime low = startUtc;
-            DateTime high = endUtc;
-
-            while ((high - low) > resolution)
-            {
-                DateTime mid = low + TimeSpan.FromTicks((high - low).Ticks / 2);
-                int midKi = GetNineStarKiHourlyKi(mid, timeZoneId);
-                if (midKi == currentKi)
-                {
-                    low = mid;
-                }
-                else
-                {
-                    high = mid;
-                }
-            }
-            return high;
-        }
 
         private DateTime FindFirstJiaZiDayAfterSolstice(SwissEph sweph, int year, bool isJuneSolstice)
         {

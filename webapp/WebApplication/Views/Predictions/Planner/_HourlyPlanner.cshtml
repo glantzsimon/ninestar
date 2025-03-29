@@ -4,6 +4,12 @@
 
 <div class="container main-content clear-both hourly-planner-container margin-bottom-0">
     <div id="hourly-slots">
-
+        @foreach (var item in Model.Energies)
+        {
+            <div class="time-slot" data-time="0:00">
+                <span>@item.TimeSlotString</span>
+                <div class="slot-item">@item.EnergyName</div>
+            </div>
+        }
     </div>
 </div>

@@ -644,65 +644,66 @@ namespace K9.WebApplication.Services
 
         public (DateTime SegmentStartsOn, DateTime SegmentEndsOn, int HourlyKi)[] GetNineStarKiHourlyPeriodsForDay(DateTime selectedDateTime, string timeZoneId)
         {
-            // Convert the selected date to local time.
-            DateTime localDateTime = DateTimeHelper.ConvertToLocaleDateTime(selectedDateTime, timeZoneId);
-            // Define the local day boundaries (from local midnight to the next midnight).
+            // Convert the selected date/time to local time in the specified time zone.
+            DateTime localDateTime = string.IsNullOrEmpty(timeZoneId) ? selectedDateTime : DateTimeHelper.ConvertToLocaleDateTime(selectedDateTime, timeZoneId);
+            
+            // Define the local day from midnight to midnight.
             DateTime localDayStart = new DateTime(localDateTime.Year, localDateTime.Month, localDateTime.Day, 0, 0, 0, DateTimeKind.Unspecified);
             DateTime localDayEnd = localDayStart.AddDays(1);
-            // Convert the local boundaries to UTC.
+
+            // Convert these local boundaries to UTC.
             DateTime utcDayStart = ConvertToUT(localDayStart, timeZoneId);
             DateTime utcDayEnd = ConvertToUT(localDayEnd, timeZoneId);
 
-            // Generate fixed UTC boundaries: they occur every 2 hours starting at 1:00 UTC.
-            // We want boundaries that fully cover [utcDayStart, utcDayEnd].
-            var boundariesUTC = new List<DateTime>();
-            // Choose a reference: 1:00 UTC on the day of utcDayStart.
-            DateTime referenceBoundary = new DateTime(utcDayStart.Year, utcDayStart.Month, utcDayStart.Day, 1, 0, 0, DateTimeKind.Utc);
-            // If the reference is after our day start, go one day earlier.
-            if (referenceBoundary > utcDayStart)
-            {
-                referenceBoundary = referenceBoundary.AddDays(-1);
-            }
-            // Generate boundaries from the reference until a little past utcDayEnd.
-            DateTime boundary = referenceBoundary;
-            while (boundary <= utcDayEnd.AddHours(2))
-            {
-                boundariesUTC.Add(boundary);
-                boundary = boundary.AddHours(2);
-            }
+            // Get a full set of fixed UTC segments (e.g. boundaries at 1:00, 3:00, 5:00, etc.) over an extended period.
+            var utcSegments = GetFixedUtcHourlySegments(selectedDateTime);
 
-            // Now, select the boundaries that cover our UTC day.
-            // We want the last boundary before or equal to utcDayStart...
-            DateTime firstBoundary = boundariesUTC.LastOrDefault(b => b <= utcDayStart);
-            if (firstBoundary == default(DateTime))
-                firstBoundary = boundariesUTC.First();
-            // ...and the first boundary after or equal to utcDayEnd.
-            DateTime lastBoundary = boundariesUTC.FirstOrDefault(b => b >= utcDayEnd);
-            if (lastBoundary == default(DateTime))
-                lastBoundary = boundariesUTC.Last();
-
-            // Collect all boundaries between these (inclusive)
-            var segmentBoundaries = boundariesUTC.Where(b => b >= firstBoundary && b <= lastBoundary).ToList();
-            // If the last boundary is less than utcDayEnd, add lastBoundary explicitly.
-            if (segmentBoundaries.Last() < utcDayEnd)
+            // Filter the segments to only those that overlap our UTC day.
+            var localSegments = new List<(DateTime LocalStart, DateTime LocalEnd, int HourlyKi)>();
+            foreach (var seg in utcSegments)
             {
-                segmentBoundaries.Add(lastBoundary);
+                // Skip segments that lie entirely before or after our day.
+                if (seg.UtcEnd <= utcDayStart || seg.UtcStart >= utcDayEnd)
+                    continue;
+
+                // Clip the segment boundaries to [utcDayStart, utcDayEnd].
+                DateTime segUtcStart = seg.UtcStart < utcDayStart ? utcDayStart : seg.UtcStart;
+                DateTime segUtcEnd = seg.UtcEnd > utcDayEnd ? utcDayEnd : seg.UtcEnd;
+
+                // Convert the UTC segment boundaries back to local time.
+                DateTime localSegStart = DateTimeHelper.ConvertToLocaleDateTime(segUtcStart, timeZoneId);
+                DateTime localSegEnd = DateTimeHelper.ConvertToLocaleDateTime(segUtcEnd, timeZoneId);
+
+                localSegments.Add((localSegStart, localSegEnd, seg.HourlyKi));
             }
 
-            // Build segments from consecutive boundaries.
-            var segments = new List<(DateTime SegmentStartsOn, DateTime SegmentEndsOn, int HourlyKi)>();
-            for (int i = 0; i < segmentBoundaries.Count - 1; i++)
-            {
-                DateTime segStart = segmentBoundaries[i];
-                DateTime segEnd = segmentBoundaries[i + 1];
-                int ki = GetNineStarKiHourlyKi(segStart, timeZoneId);
-                segments.Add((segStart, segEnd, ki));
-            }
-
-            return segments.ToArray();
+            return localSegments.OrderBy(e => e.LocalStart).ToArray();
         }
 
         #endregion
+
+        /// <summary>
+        /// Generates fixed 2‑hour UTC segments with boundaries at 1:00, 3:00, 5:00, etc. for an extended period.
+        /// We generate segments for 48 hours so that we cover any local day that may span parts of two UTC dates.
+        /// </summary>
+        private (DateTime UtcStart, DateTime UtcEnd, int HourlyKi)[] GetFixedUtcHourlySegments(DateTime selectedDateTime)
+        {
+            // Cover a 3 day range, to ensure we cover the day in any time zone
+            DateTime startDate = selectedDateTime.AddDays(-1);
+            DateTime endDate = selectedDateTime.AddDays(1).Date.AddHours(23);
+            DateTime hour = startDate.Date.AddHours(1);
+
+            // Generate 24 segments of 2 hours each (covering 48 hours).
+            var segments = new List<(DateTime UtcStart, DateTime UtcEnd, int HourlyKi)>();
+            while (hour < endDate)
+            {
+                int hourlyKi = GetNineStarKiHourlyKi(hour, "");
+                segments.Add((hour, hour.AddHours(2), hourlyKi));
+
+                hour = hour.AddHours(2);
+            }
+            return segments.ToArray();
+        }
 
         private DateTime FindFirstJiaZiDayAfterSolstice(SwissEph sweph, int year, bool isJuneSolstice)
         {

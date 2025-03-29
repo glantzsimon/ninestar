@@ -4,11 +4,14 @@
 
 <div class="container main-content clear-both hourly-planner-container margin-bottom-0">
     <div id="hourly-slots">
-        @foreach (var item in Model.Energies)
+        @foreach (var energy in Model.Energies)
         {
-            <div class="time-slot" data-time="0:00">
-                <span>@item.TimeSlotString</span>
-                <div class="slot-item">@item.EnergyName</div>
+            <div class="time-slot @energy.SelectedCssClass" data-time="0:00">
+                <div class="time-display">@energy.TimeSlotString</div>
+                <div class="img-container">
+                    <img loading="lazy" title="@energy.EnergyName" alt="@energy.ImageAlt" class="auto-size center-block" src="@energy.ImageSrc" />
+                </div>
+                <div class="slot-item">@energy.EnergyName</div>
             </div>
         }
     </div>

@@ -45,7 +45,7 @@ namespace K9.WebApplication.Services
             var cacheKey = $"CalculateNineStarKiProfileFromModel_{personModel.DateOfBirth:yyyyMMddHHmm}_{personModel.TimeOfBirth.ToString()}_{personModel.BirthTimeZoneId}_{personModel.Name}_{personModel.Gender}_{isCompatibility}_{isMyProfile}_{calculationMethod}_{includeCycles}_{useHolograhpicCycleCalculation}_{today:yyyyMMddHHmm}_{invertDailyAndHourlyKiForSouthernHemisphere}_{invertDailyAndHourlyCycleKiForSouthernHemisphere}_{displayDataForPeriod}";
             return GetOrAddToCache(cacheKey, () =>
             {
-                var selectedDateTime = today == null
+                var selectedDateTime = displayDataForPeriod == EDisplayDataForPeriod.Now || today == null
                     ? DateTime.UtcNow
                     : today.Value;
                 NineStarKiModel model = null;
@@ -311,6 +311,8 @@ namespace K9.WebApplication.Services
                     SelectedDateTime = selectedDateTime
                 };
 
+                var localNow = nineStarKiModel.GetLocalNow();
+                
                 switch (view)
                 {
                     case EPlannerView.EightyOneYear:
@@ -351,7 +353,7 @@ namespace K9.WebApplication.Services
                                 : nineStarKiModel.GetGlobalCycleEnergy(nineYearPeriodSlot.NineYearKi, ENineStarKiEnergyCycleType.GenerationalEnergy);
 
                             var isActive =
-                                DateTime.Today.IsBetween(nineYearPeriodSlot.PeriodStartsOn, nineYearPeriodSlot.PeriodEndsOn);
+                                localNow.Date.IsBetween(nineYearPeriodSlot.PeriodStartsOn, nineYearPeriodSlot.PeriodEndsOn);
 
                             energies.Add(new PlannerViewModelItem(energy, energy, nineYearPeriodSlot.PeriodStartsOn, nineYearPeriodSlot.PeriodEndsOn, isActive, EPlannerView.NineYear));
                         }
@@ -403,7 +405,7 @@ namespace K9.WebApplication.Services
                             var energy = display == EPlannerDisplay.PersonalKi ? nineStarKiModel.GetPersonalCycleEnergy(year.YearlyKi, nineStarKiModel.MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.YearlyCycleEnergy) : nineStarKiModel.GetGlobalCycleEnergy(year.YearlyKi, ENineStarKiEnergyCycleType.YearlyCycleEnergy);
 
                             var isActive =
-                                DateTime.Today.IsBetween(year.PeriodStartsOn, year.PeriodEndsOn);
+                                localNow.Date.IsBetween(year.PeriodStartsOn, year.PeriodEndsOn);
 
                             energies.Add(new PlannerViewModelItem(energy, energy, year.PeriodStartsOn, year.PeriodEndsOn, isActive, EPlannerView.Year));
                         }
@@ -474,7 +476,7 @@ namespace K9.WebApplication.Services
 
                             var afternoonEnergy = display == EPlannerDisplay.PersonalKi ? preciseDailyCycleAfternoonEnergy.HasValue ? nineStarKiModel.GetPersonalCycleEnergy(preciseDailyCycleAfternoonEnergy.Value, useHolograhpicCycleCalculation ? nineStarKiModel.PersonalChartEnergies.Day.EnergyNumber : nineStarKiModel.MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.DailyEnergy) : morningEnergy : nineStarKiModel.GetGlobalCycleEnergy(preciseDailyCycleAfternoonEnergy.Value, ENineStarKiEnergyCycleType.DailyEnergy);
 
-                            var isActive = dailyEnergy.Day.Date == DateTime.Today;
+                            var isActive = dailyEnergy.Day.Date == localNow.Date;
 
                             energies.Add(new PlannerViewModelItem(morningEnergy, afternoonEnergy, dailyEnergy.Day, dailyEnergy.Day, isActive, EPlannerView.Day));
                         }
@@ -520,7 +522,7 @@ namespace K9.WebApplication.Services
 
                             var presonalHourlyEnergy = display == EPlannerDisplay.PersonalKi ? nineStarKiModel.GetPersonalCycleEnergy(preciseHourlyCycleEnergy, useHolograhpicCycleCalculation ? nineStarKiModel.PersonalChartEnergies.Hour.EnergyNumber : nineStarKiModel.MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.HourlyEnergy) : nineStarKiModel.GetGlobalCycleEnergy(preciseHourlyCycleEnergy, ENineStarKiEnergyCycleType.HourlyEnergy);
 
-                            var isActive = DateTime.UtcNow.IsBetween(hourlyPeriod.SegmentStartsOn, hourlyPeriod.SegmentEndsOn);
+                            var isActive = localNow.IsBetween(hourlyPeriod.SegmentStartsOn, hourlyPeriod.SegmentEndsOn);
 
                             energies.Add(new PlannerViewModelItem(presonalHourlyEnergy, presonalHourlyEnergy, hourlyPeriod.SegmentStartsOn, hourlyPeriod.SegmentEndsOn, isActive, EPlannerView.Day));
                         }
@@ -575,7 +577,7 @@ namespace K9.WebApplication.Services
                             var energy = display == EPlannerDisplay.PersonalKi ? nineStarKiModel.GetPersonalCycleEnergy(monthlyPeriod.MonthlyKi, useHolograhpicCycleCalculation ? nineStarKiModel.PersonalChartEnergies.Month.EnergyNumber : nineStarKiModel.MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.MonthlyCycleEnergy) : nineStarKiModel.GetGlobalCycleEnergy(monthlyPeriod.MonthlyKi, ENineStarKiEnergyCycleType.MonthlyCycleEnergy);
 
                             var isActive =
-                                DateTime.Today.IsBetween(monthlyPeriod.PeriodStartsOn, monthlyPeriod.PeriodEndsOn);
+                                localNow.Date.IsBetween(monthlyPeriod.PeriodStartsOn, monthlyPeriod.PeriodEndsOn);
 
                             energies.Add(new PlannerViewModelItem(energy, energy, monthlyPeriod.PeriodStartsOn, monthlyPeriod.PeriodEndsOn, isActive, EPlannerView.Month));
                         }

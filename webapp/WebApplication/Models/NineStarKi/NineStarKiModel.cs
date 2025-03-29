@@ -461,9 +461,9 @@ namespace K9.WebApplication.Models
 
         public DateTime GetLocalNow()
         {
-            return string.IsNullOrEmpty(PersonModel?.BirthTimeZoneId)
+            return string.IsNullOrEmpty(UserTimeZoneId)
                 ? DateTime.UtcNow
-                : DateTimeHelper.ConvertToLocaleDateTime(DateTime.UtcNow, PersonModel.BirthTimeZoneId);
+                : DateTimeHelper.ConvertToLocaleDateTime(DateTime.UtcNow, UserTimeZoneId);
         }
 
         public NineStarKiEnergy GetPersonalEnergy(int energyNumber, ENineStarKiEnergyType energyType)

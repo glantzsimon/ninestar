@@ -6,12 +6,14 @@
     <div id="hourly-slots">
         @foreach (var energy in Model.Energies)
         {
-            <div class="time-slot @energy.SelectedCssClass" data-time="0:00">
-                <div class="time-display">@energy.TimeSlotString</div>
-                <div class="img-container">
-                    <img loading="lazy" title="@energy.EnergyName" alt="@energy.ImageAlt" class="auto-size center-block" src="@energy.ImageSrc" />
+            <div class="global-planner-item" data-energy="@energy.Energy.Energy" data-view="@Model.ChildView" data-display="@Model.Display" data-type="child" data-selected-date="@energy.EnergyStartsOnDateTimeString" data-update-url="@Model.UpdateChildUrl">
+                <div class="time-slot planner-item-container @energy.SelectedCssClass" data-time="0:00">
+                    <div class="time-display">@energy.TimeSlotString</div>
+                    <div class="img-container">
+                        <img loading="lazy" title="@energy.EnergyName" alt="@energy.ImageAlt" class="auto-size center-block" src="@energy.ImageSrc" />
+                    </div>
+                    <div class="slot-item">@energy.EnergyName</div>
                 </div>
-                <div class="slot-item">@energy.EnergyName</div>
             </div>
         }
     </div>

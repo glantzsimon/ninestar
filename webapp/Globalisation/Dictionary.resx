@@ -4882,15 +4882,6 @@
   <data name="wind_surface_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\surface\en-gb\wind-surface-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="year_day_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\day\en-gb\year-day-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="year_epoch_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\epoch\en-gb\year-epoch-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="year_generation_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\generation\en-gb\year-generation-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="core_earth_hour_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>predictions\hour\en-gb\core-earth-hour-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -4927,9 +4918,6 @@
   <data name="wind_hour_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>predictions\hour\en-gb\wind-hour-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="year_hour_cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>predictions\hour\en-gb\year-hour-cycle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="BirthTimeZone" xml:space="preserve">
     <value>Birth Time Zone</value>
   </data>
@@ -4963,6 +4951,9 @@
   <data name="DayView" xml:space="preserve">
     <value>Day View</value>
   </data>
+  <data name="day_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\day\en-gb\day-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="DisplayLabel" xml:space="preserve">
     <value>Display</value>
   </data>
@@ -4972,8 +4963,17 @@
   <data name="EightyOneYearView" xml:space="preserve">
     <value>Eighty-One-Year View</value>
   </data>
+  <data name="epoch_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\epoch\en-gb\epoch-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="generation_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\generation\en-gb\generation-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="GlobalKi" xml:space="preserve">
     <value>Display Global Ki</value>
+  </data>
+  <data name="hour_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>predictions\hour\en-gb\hour-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="MonthView" xml:space="preserve">
     <value>Month View</value>

@@ -46,7 +46,7 @@ namespace K9.WebApplication.ViewModels
 
         public string ImageAlt => $"{Dictionary.NineStarKiAstrologyFreeCalculator} {Energy.EnergyTitle}";
 
-        public string SelectedCssClass => IsActive ? "active" : "";
+        public string SelectedCssClass => IsActive ? "active current" : "";
 
         public string SecondEnergyName => SecondEnergy.EnergyName;
 

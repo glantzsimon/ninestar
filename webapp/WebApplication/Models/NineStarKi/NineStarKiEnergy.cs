@@ -532,7 +532,7 @@ namespace K9.WebApplication.Models
 
         private static readonly Dictionary<ENineStarKiEnergy, string> _hourCycleDescriptions = new Dictionary<ENineStarKiEnergy, string>
         {
-            { ENineStarKiEnergy.Water, Dictionary.water_day_cycle },
+            { ENineStarKiEnergy.Water, Dictionary.water_hour_cycle },
             { ENineStarKiEnergy.Soil, Dictionary.soil_hour_cycle },
             { ENineStarKiEnergy.Thunder, Dictionary.thunder_hour_cycle },
             { ENineStarKiEnergy.Wind, Dictionary.wind_hour_cycle },

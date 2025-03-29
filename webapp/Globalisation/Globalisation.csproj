@@ -399,16 +399,19 @@
     <Content Include="IChing\en-gb\waiting-details.htm" />
     <Content Include="IChing\en-gb\work-on-what-has-been-spoiled-details.htm" />
     <Content Include="IChing\en-gb\youthful-folly-details.htm" />
+    <Content Include="Predictions\Day\en-gb\day-description.htm" />
+    <Content Include="Predictions\Epoch\en-gb\epoch-description.htm" />
+    <Content Include="Predictions\Generation\en-gb\generation-description.htm" />
     <Content Include="Predictions\Hour\en-gb\core-earth-hour-cycle.htm" />
     <Content Include="Predictions\Hour\en-gb\fire-hour-cycle.htm" />
     <Content Include="Predictions\Hour\en-gb\heaven-hour-cycle.htm" />
     <Content Include="Predictions\Hour\en-gb\lake-hour-cycle.htm" />
+    <Content Include="Predictions\Hour\en-gb\hour-description.htm" />
     <Content Include="Predictions\Hour\en-gb\mountain-hour-cycle.htm" />
     <Content Include="Predictions\Hour\en-gb\soil-hour-cycle.htm" />
     <Content Include="Predictions\Hour\en-gb\thunder-hour-cycle.htm" />
     <Content Include="Predictions\Hour\en-gb\water-hour-cycle.htm" />
     <Content Include="Predictions\Hour\en-gb\wind-hour-cycle.htm" />
-    <Content Include="Predictions\Hour\en-gb\year-hour-cycle.htm" />
     <Content Include="Predictions\Generation\en-gb\core-earth-generation-cycle.htm" />
     <Content Include="Predictions\Generation\en-gb\fire-generation-cycle.htm" />
     <Content Include="Predictions\Generation\en-gb\heaven-generation-cycle.htm" />
@@ -418,7 +421,6 @@
     <Content Include="Predictions\Generation\en-gb\thunder-generation-cycle.htm" />
     <Content Include="Predictions\Generation\en-gb\water-generation-cycle.htm" />
     <Content Include="Predictions\Generation\en-gb\wind-generation-cycle.htm" />
-    <Content Include="Predictions\Generation\en-gb\year-generation-cycle.htm" />
     <Content Include="Predictions\Day\en-gb\core-earth-day-cycle.htm" />
     <Content Include="Predictions\Day\en-gb\fire-day-cycle.htm" />
     <Content Include="Predictions\Day\en-gb\heaven-day-cycle.htm" />
@@ -428,7 +430,6 @@
     <Content Include="Predictions\Day\en-gb\thunder-day-cycle.htm" />
     <Content Include="Predictions\Day\en-gb\water-day-cycle.htm" />
     <Content Include="Predictions\Day\en-gb\wind-day-cycle.htm" />
-    <Content Include="Predictions\Day\en-gb\year-day-cycle.htm" />
     <Content Include="Predictions\Monthly\en-gb\core-earth-month.htm" />
     <Content Include="Predictions\Monthly\en-gb\fire-month.htm" />
     <Content Include="Predictions\Monthly\en-gb\heaven-month.htm" />
@@ -448,7 +449,6 @@
     <Content Include="Predictions\Epoch\en-gb\thunder-epoch-cycle.htm" />
     <Content Include="Predictions\Epoch\en-gb\water-epoch-cycle.htm" />
     <Content Include="Predictions\Epoch\en-gb\wind-epoch-cycle.htm" />
-    <Content Include="Predictions\Epoch\en-gb\year-epoch-cycle.htm" />
     <Content Include="Predictions\Yearly\en-gb\core-earth-year.htm" />
     <Content Include="Predictions\Yearly\en-gb\fire-year.htm" />
     <Content Include="Predictions\Yearly\en-gb\heaven-year.htm" />

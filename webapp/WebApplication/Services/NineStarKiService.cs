@@ -171,7 +171,7 @@ namespace K9.WebApplication.Services
                     new NineStarKiEnergy(ENineStarKiEnergy.Heaven, ENineStarKiEnergyType.EpochEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.EpochEnergy},
                     new NineStarKiEnergy(ENineStarKiEnergy.Lake, ENineStarKiEnergyType.EpochEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.EpochEnergy},
                     new NineStarKiEnergy(ENineStarKiEnergy.Mountain, ENineStarKiEnergyType.EpochEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.EpochEnergy},
-                    new NineStarKiEnergy(ENineStarKiEnergy.Fire, ENineStarKiEnergyType.EpochEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.YearlyCycleEnergy}
+                    new NineStarKiEnergy(ENineStarKiEnergy.Fire, ENineStarKiEnergyType.EpochEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.EpochEnergy}
                 };
 
                 var nineYearEnergies = new List<NineStarKiEnergy>
@@ -184,7 +184,7 @@ namespace K9.WebApplication.Services
                     new NineStarKiEnergy(ENineStarKiEnergy.Heaven, ENineStarKiEnergyType.GenerationalEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.GenerationalEnergy},
                     new NineStarKiEnergy(ENineStarKiEnergy.Lake, ENineStarKiEnergyType.GenerationalEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.GenerationalEnergy},
                     new NineStarKiEnergy(ENineStarKiEnergy.Mountain, ENineStarKiEnergyType.GenerationalEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.GenerationalEnergy},
-                    new NineStarKiEnergy(ENineStarKiEnergy.Fire, ENineStarKiEnergyType.GenerationalEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.YearlyCycleEnergy}
+                    new NineStarKiEnergy(ENineStarKiEnergy.Fire, ENineStarKiEnergyType.GenerationalEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.GenerationalEnergy}
                 };
 
                 var yearEnergies = new List<NineStarKiEnergy>
@@ -223,7 +223,7 @@ namespace K9.WebApplication.Services
                     new NineStarKiEnergy(ENineStarKiEnergy.Heaven, ENineStarKiEnergyType.DailyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.DailyEnergy},
                     new NineStarKiEnergy(ENineStarKiEnergy.Lake, ENineStarKiEnergyType.DailyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.DailyEnergy},
                     new NineStarKiEnergy(ENineStarKiEnergy.Mountain, ENineStarKiEnergyType.DailyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.DailyEnergy},
-                    new NineStarKiEnergy(ENineStarKiEnergy.Fire, ENineStarKiEnergyType.DailyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.YearlyCycleEnergy}
+                    new NineStarKiEnergy(ENineStarKiEnergy.Fire, ENineStarKiEnergyType.DailyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.DailyEnergy}
                 };
 
                 var hourlyEnergies = new List<NineStarKiEnergy>
@@ -236,7 +236,7 @@ namespace K9.WebApplication.Services
                     new NineStarKiEnergy(ENineStarKiEnergy.Heaven, ENineStarKiEnergyType.HourlyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.HourlyEnergy},
                     new NineStarKiEnergy(ENineStarKiEnergy.Lake, ENineStarKiEnergyType.HourlyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.HourlyEnergy},
                     new NineStarKiEnergy(ENineStarKiEnergy.Mountain, ENineStarKiEnergyType.HourlyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.HourlyEnergy},
-                    new NineStarKiEnergy(ENineStarKiEnergy.Fire, ENineStarKiEnergyType.HourlyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.YearlyCycleEnergy}
+                    new NineStarKiEnergy(ENineStarKiEnergy.Fire, ENineStarKiEnergyType.HourlyEnergy){EnergyCycleType = ENineStarKiEnergyCycleType.HourlyEnergy}
                 };
 
                 var dynamicEnergies = new List<NineStarKiEnergy>
@@ -312,7 +312,7 @@ namespace K9.WebApplication.Services
                 };
 
                 var localNow = nineStarKiModel.GetLocalNow();
-                
+
                 switch (view)
                 {
                     case EPlannerView.EightyOneYear:
@@ -413,12 +413,12 @@ namespace K9.WebApplication.Services
                         if (navigationDirection != EPlannerNavigationDirection.None)
                         {
                             nineStarKiModel = CalculateNineStarKiProfile(new PersonModel
-                                {
-                                    DateOfBirth = dateOfBirth,
-                                    BirthTimeZoneId = birthTimeZoneId,
-                                    TimeOfBirth = timeOfBirth,
-                                    Gender = gender
-                                }, false, false, nineYearPeriod.PeriodStartsOn.AddDays(3), calculationMethod, true, false, userTimeZoneId,
+                            {
+                                DateOfBirth = dateOfBirth,
+                                BirthTimeZoneId = birthTimeZoneId,
+                                TimeOfBirth = timeOfBirth,
+                                Gender = gender
+                            }, false, false, nineYearPeriod.PeriodStartsOn.AddDays(3), calculationMethod, true, false, userTimeZoneId,
                                 useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
                         }
 
@@ -484,12 +484,12 @@ namespace K9.WebApplication.Services
                         if (navigationDirection != EPlannerNavigationDirection.None)
                         {
                             nineStarKiModel = CalculateNineStarKiProfile(new PersonModel
-                                {
-                                    DateOfBirth = dateOfBirth,
-                                    BirthTimeZoneId = birthTimeZoneId,
-                                    TimeOfBirth = timeOfBirth,
-                                    Gender = gender
-                                }, false, false, selectedDateTime, calculationMethod, true, false, userTimeZoneId,
+                            {
+                                DateOfBirth = dateOfBirth,
+                                BirthTimeZoneId = birthTimeZoneId,
+                                TimeOfBirth = timeOfBirth,
+                                Gender = gender
+                            }, false, false, selectedDateTime, calculationMethod, true, false, userTimeZoneId,
                                 useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
                         }
 
@@ -522,7 +522,7 @@ namespace K9.WebApplication.Services
 
                             var presonalHourlyEnergy = display == EPlannerDisplay.PersonalKi ? nineStarKiModel.GetPersonalCycleEnergy(preciseHourlyCycleEnergy, useHolograhpicCycleCalculation ? nineStarKiModel.PersonalChartEnergies.Hour.EnergyNumber : nineStarKiModel.MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.HourlyEnergy) : nineStarKiModel.GetGlobalCycleEnergy(preciseHourlyCycleEnergy, ENineStarKiEnergyCycleType.HourlyEnergy);
 
-                            var isActive = localNow.IsBetween(hourlyPeriod.SegmentStartsOn, hourlyPeriod.SegmentEndsOn);
+                            var isActive =  localNow.IsBetween(hourlyPeriod.SegmentStartsOn, hourlyPeriod.SegmentEndsOn);
 
                             energies.Add(new PlannerViewModelItem(presonalHourlyEnergy, presonalHourlyEnergy, hourlyPeriod.SegmentStartsOn, hourlyPeriod.SegmentEndsOn, isActive, EPlannerView.Day));
                         }
@@ -530,12 +530,12 @@ namespace K9.WebApplication.Services
                         if (navigationDirection != EPlannerNavigationDirection.None)
                         {
                             nineStarKiModel = CalculateNineStarKiProfile(new PersonModel
-                                {
-                                    DateOfBirth = dateOfBirth,
-                                    BirthTimeZoneId = birthTimeZoneId,
-                                    TimeOfBirth = timeOfBirth,
-                                    Gender = gender
-                                }, false, false, selectedDateTime, calculationMethod, true, false, userTimeZoneId,
+                            {
+                                DateOfBirth = dateOfBirth,
+                                BirthTimeZoneId = birthTimeZoneId,
+                                TimeOfBirth = timeOfBirth,
+                                Gender = gender
+                            }, false, false, selectedDateTime, calculationMethod, true, false, userTimeZoneId,
                                 useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
                         }
 
@@ -585,12 +585,12 @@ namespace K9.WebApplication.Services
                         if (navigationDirection != EPlannerNavigationDirection.None)
                         {
                             nineStarKiModel = CalculateNineStarKiProfile(new PersonModel
-                                {
-                                    DateOfBirth = dateOfBirth,
-                                    BirthTimeZoneId = birthTimeZoneId,
-                                    TimeOfBirth = timeOfBirth,
-                                    Gender = gender
-                                }, false, false, selectedDateTime, calculationMethod, true, false, userTimeZoneId,
+                            {
+                                DateOfBirth = dateOfBirth,
+                                BirthTimeZoneId = birthTimeZoneId,
+                                TimeOfBirth = timeOfBirth,
+                                Gender = gender
+                            }, false, false, selectedDateTime, calculationMethod, true, false, userTimeZoneId,
                                 useHolograhpicCycleCalculation, invertDailyAndHourlyKiForSouthernHemisphere, invertDailyAndHourlyCycleKiForSouthernHemisphere);
                         }
 

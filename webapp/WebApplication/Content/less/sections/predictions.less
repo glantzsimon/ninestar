@@ -77,6 +77,14 @@
             padding-top: 3px;
         }
 
+        &.current {
+            background-color: @mist-grey;
+            outline: 2px solid @primary-blue;
+            border-radius: 7px;
+            position: relative;
+            z-index: 1 !important;
+        }
+
         &.active {
             background-color: @primary-blue;
             box-shadow: 0 6px 16px rgba(0,0,0,0.5);
@@ -297,9 +305,17 @@
                             z-index: 3 !important;
                         }
 
+                        &.current {
+                            background-color: @mist-grey;
+                            border: 2px solid @primary-blue;
+                            border-radius: 7px;
+                            position: relative;
+                            z-index: 1 !important;
+                        }
+
                         &.active {
                             box-shadow: 0 6px 16px rgba(0,0,0,0.3);
-                            background-color: @primary-blue;
+                            background-color: @primary-blue !important;
                             transform: scale(1.05);
                             transform: translateY(-1x);
                             position: relative;
@@ -345,7 +361,7 @@
     outline: 1px solid #ddd;
     background-color: #f9f9f9;
     overflow-y: auto;
-    
+
     .time-slot {
         display: flex;
         flex-direction: row;
@@ -362,7 +378,7 @@
         .img-container {
             display: block;
             margin: 0;
-            flex-shrink: 0;            
+            flex-shrink: 0;
 
             img {
                 max-width: 25px;
@@ -380,9 +396,15 @@
             background-color: @whisper-white;
         }
 
+        &.current {
+            background-color: @mist-grey;
+            border: 2px solid @primary-blue;            
+            border-radius: 7px;
+        }
+
         &.active {
             box-shadow: 0 6px 16px rgba(0,0,0,0.3);
-            background-color: @primary-blue;
+            background-color: @primary-blue !important;
             color: @whisper-white;
             font-weight: bold;
         }

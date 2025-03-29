@@ -5401,6 +5401,19 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Our lives also move in monthly cycles. The Energy associated with the month affects us on a more immediate and emotional level.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    In addition to the yearly cycles that each our lives move through, there are also smaller, monthly cycles. The energy or &apos;Ki&apos; of the yearly cycle or &apos;spiral&apos; is always felt and is the overarching influence in our lives. However, the effect of the monthly ki is more immediate and felt on an emotional level. For example, we could be in the 1 Water house dur [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string day_description {
+            get {
+                return ResourceManager.GetString("day_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    The Day Star Energy is similar to the Mirror Energy in that its influence is more superficial than the yearly or monthly Ki of our birth chart. The Day Star influences &lt;strong&gt;how we appear to others&lt;/strong&gt; and also our general mannerisms and demeanour. 
         ///&lt;/p&gt;.
@@ -6521,6 +6534,19 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Our lives also move in monthly cycles. The Energy associated with the month affects us on a more immediate and emotional level.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    In addition to the yearly cycles that each our lives move through, there are also smaller, monthly cycles. The energy or &apos;Ki&apos; of the yearly cycle or &apos;spiral&apos; is always felt and is the overarching influence in our lives. However, the effect of the monthly ki is more immediate and felt on an emotional level. For example, we could be in the 1 Water house dur [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string epoch_description {
+            get {
+                return ResourceManager.GetString("epoch_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Epoch Cycle Energy.
         /// </summary>
         public static string EpochCycleEnergy {
@@ -7534,6 +7560,19 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Our lives also move in monthly cycles. The Energy associated with the month affects us on a more immediate and emotional level.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    In addition to the yearly cycles that each our lives move through, there are also smaller, monthly cycles. The energy or &apos;Ki&apos; of the yearly cycle or &apos;spiral&apos; is always felt and is the overarching influence in our lives. However, the effect of the monthly ki is more immediate and felt on an emotional level. For example, we could be in the 1 Water house dur [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string generation_description {
+            get {
+                return ResourceManager.GetString("generation_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Generational Cycle Energy.
         /// </summary>
         public static string GenerationalCycleEnergy {
@@ -8200,6 +8239,19 @@ namespace K9.Globalisation {
         public static string HoldingTogetherTitle {
             get {
                 return ResourceManager.GetString("HoldingTogetherTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Our lives also move in monthly cycles. The Energy associated with the month affects us on a more immediate and emotional level.
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    In addition to the yearly cycles that each our lives move through, there are also smaller, monthly cycles. The energy or &apos;Ki&apos; of the yearly cycle or &apos;spiral&apos; is always felt and is the overarching influence in our lives. However, the effect of the monthly ki is more immediate and felt on an emotional level. For example, we could be in the 1 Water house dur [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string hour_description {
+            get {
+                return ResourceManager.GetString("hour_description", resourceCulture);
             }
         }
         
@@ -18284,22 +18336,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Our lives pass through each of the houses in nine-year cycles, with each house or year representing one of the nine Energies of the 9 Star Ki system.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Not only does each person have a 9 Star Ki birth chart, which is determined by their date of birth, but in addition, each of our lives passes through each of the nine houses in nine-year cycles. Each house is governed by one of the nine Energies of the 9 Star Ki system and influences our lives in powerful ways. 
-        ///&lt;/p&gt;
-        ///&lt;h5&gt;
-        ///    Thes [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string year_day_cycle {
-            get {
-                return ResourceManager.GetString("year_day_cycle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;h5 class=&quot;dark&quot;&gt;
         ///    Our lives pass through each of the houses in nine-year cycles, with each house or year representing one of the nine Energies of the 9 Star Ki system.
         ///&lt;/h5&gt;
@@ -18311,54 +18347,6 @@ namespace K9.Globalisation {
         public static string year_description {
             get {
                 return ResourceManager.GetString("year_description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Our lives pass through each of the houses in nine-year cycles, with each house or year representing one of the nine Energies of the 9 Star Ki system.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Not only does each person have a 9 Star Ki birth chart, which is determined by their date of birth, but in addition, each of our lives passes through each of the nine houses in nine-year cycles. Each house is governed by one of the nine Energies of the 9 Star Ki system and influences our lives in powerful ways. 
-        ///&lt;/p&gt;
-        ///&lt;h5&gt;
-        ///    Thes [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string year_epoch_cycle {
-            get {
-                return ResourceManager.GetString("year_epoch_cycle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Our lives pass through each of the houses in nine-year cycles, with each house or year representing one of the nine Energies of the 9 Star Ki system.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Not only does each person have a 9 Star Ki birth chart, which is determined by their date of birth, but in addition, each of our lives passes through each of the nine houses in nine-year cycles. Each house is governed by one of the nine Energies of the 9 Star Ki system and influences our lives in powerful ways. 
-        ///&lt;/p&gt;
-        ///&lt;h5&gt;
-        ///    Thes [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string year_generation_cycle {
-            get {
-                return ResourceManager.GetString("year_generation_cycle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Our lives pass through each of the houses in nine-year cycles, with each house or year representing one of the nine Energies of the 9 Star Ki system.
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    Not only does each person have a 9 Star Ki birth chart, which is determined by their date of birth, but in addition, each of our lives passes through each of the nine houses in nine-year cycles. Each house is governed by one of the nine Energies of the 9 Star Ki system and influences our lives in powerful ways. 
-        ///&lt;/p&gt;
-        ///&lt;h5&gt;
-        ///    Thes [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string year_hour_cycle {
-            get {
-                return ResourceManager.GetString("year_hour_cycle", resourceCulture);
             }
         }
         

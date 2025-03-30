@@ -5383,7 +5383,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This is more subtle than &quot;Go O Satsu&quot;. Travelling in this direction tends to bring unexpected kinds of misfortune, hence the image of a sword coming at you in the darkness..
+        ///   Looks up a localized string similar to Travelling in this direction tends to bring unexpected kinds of misfortune, hence the image of a sword coming at you in the darkness..
         /// </summary>
         public static string DarkSwordKillingDescription {
             get {
@@ -14016,7 +14016,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Travelling in this direction tends to lead to problems or difficulties caused direclty by self..
+        ///   Looks up a localized string similar to Travelling in this direction tends to lead to problems or difficulties that are caused directly by the person themselves..
         /// </summary>
         public static string SelfLifeKillingDescription {
             get {
@@ -15624,7 +15624,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Travelling in this direction is similar to &quot;Hon Mei Satsu&quot; but the problems or difficulties are caused by others..
+        ///   Looks up a localized string similar to Travelling in this direction tends to lead to problems or difficulties that are caused by others..
         /// </summary>
         public static string TargetKillingDescription {
             get {

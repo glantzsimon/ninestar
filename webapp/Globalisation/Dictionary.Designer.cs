@@ -14034,7 +14034,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Avoid travelling {Direction}. Doing so could easily lead to problems or difficulties that are caused directly by the person themselves. If you must travel {Direction2} then at the very least, avoid travelling long distances or for a long period of time, if possible. Short distances and duration shouldn&apos;t pose much of a problem..
+        ///   Looks up a localized string similar to Avoid travelling {Direction}. Doing so could easily lead to problems or difficulties caused directly by you. If you must travel {Direction2} then at the very least, avoid travelling long distances or for a long period of time, if possible. Short distances and duration shouldn&apos;t pose much of a problem..
         /// </summary>
         public static string SelfLifeKillingDescription {
             get {

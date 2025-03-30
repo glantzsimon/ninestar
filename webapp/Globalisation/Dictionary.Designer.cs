@@ -14446,6 +14446,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show Directions.
+        /// </summary>
+        public static string ShowDirectionsLabel {
+            get {
+                return ResourceManager.GetString("ShowDirectionsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sibling Elements.
         /// </summary>
         public static string SiblingElements {

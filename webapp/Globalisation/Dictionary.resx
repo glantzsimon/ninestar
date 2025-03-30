@@ -5014,4 +5014,7 @@
   <data name="PlannerTitle" xml:space="preserve">
     <value>Calendar of Global Ki &amp; Occupied Houses</value>
   </data>
+  <data name="ShowDirectionsLabel" xml:space="preserve">
+    <value>Show Directions</value>
+  </data>
 </root>

@@ -47,6 +47,9 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyDisplayLabel)]
         public EEnergyDisplay EnergyDisplay { get; set; } = (EEnergyDisplay)SessionHelper.GetEnergyDefaultDisplay();
 
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyDisplayLabel)]
+        public bool ShowDirections { get; set; }
+
         [ScriptIgnore]
         public bool IsCycleSwitchActive => EnableCycleSwitch && SelectedDate >= CYCLE_SWITCH_DATE;
 
@@ -279,7 +282,7 @@ namespace K9.WebApplication.Models
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MonthlyEnergyLabel)]
         public NineStarKiEnergy MonthlyCycleEnergy => PersonalHousesOccupiedEnergies?.Month;
-        
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SummaryLabel)]
         public string Summary => GetSummary();
 

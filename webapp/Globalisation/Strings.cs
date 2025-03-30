@@ -27,6 +27,7 @@
             public const string ViewLabel = "ViewLabel";
             public const string DisplayLabel = "DisplayLabel";
 
+            public const string ShowDirectionsLabel = "ShowDirectionsLabel";
             public const string EnergyDisplayLabel = "EnergyDisplayLabel";
             public const string CalculationMethodLabel = "CalculationMethodLabel";
             public const string InvertDailyAndHourlyKiForSouthernHemisphereLabel = "InvertDailyAndHourlyKiForSouthernHemisphereLabel";

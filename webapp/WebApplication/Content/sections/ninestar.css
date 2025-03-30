@@ -250,9 +250,25 @@ a > .ninestar-summary-container:hover {
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.7);
   opacity: 0.72;
   pointer-events: auto;
+  cursor: help;
+}
+.magic-square-container .magic-square .directions-line-overlay .line::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 1.5px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 11px solid currentColor;
 }
 .magic-square-container .magic-square .directions-line-overlay .line.five-yellow-killing {
   background: yellow;
+}
+.magic-square-container .magic-square .directions-line-overlay .line.five-yellow-killing::after {
+  border-top: 8px solid yellow;
 }
 .magic-square-container .magic-square .directions-line-overlay .line.five-yellow-killing.to-Centre {
   background: rgba(255, 255, 0, 0.22);
@@ -260,17 +276,26 @@ a > .ninestar-summary-container:hover {
 .magic-square-container .magic-square .directions-line-overlay .line.dark-sword-killing {
   background: #333;
 }
+.magic-square-container .magic-square .directions-line-overlay .line.dark-sword-killing::after {
+  border-top: 8px solid #333;
+}
 .magic-square-container .magic-square .directions-line-overlay .line.dark-sword-killing.to-Centre {
   background: rgba(51, 51, 51, 0.22);
 }
 .magic-square-container .magic-square .directions-line-overlay .line.self-life-killing {
   background: red;
 }
+.magic-square-container .magic-square .directions-line-overlay .line.self-life-killing::after {
+  border-top: 8px solid red;
+}
 .magic-square-container .magic-square .directions-line-overlay .line.self-life-killing.to-Centre {
   background: rgba(255, 0, 0, 0.22);
 }
 .magic-square-container .magic-square .directions-line-overlay .line.target-killing {
   background: blue;
+}
+.magic-square-container .magic-square .directions-line-overlay .line.target-killing::after {
+  border-top: 8px solid blue;
 }
 .magic-square-container .magic-square .directions-line-overlay .line.target-killing.to-Centre {
   background: rgba(0, 0, 255, 0.22);
@@ -311,14 +336,14 @@ a > .ninestar-summary-container:hover {
   height: 101%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  border: 2px solid red;
+  border: 3px solid red;
   background-color: rgba(255, 255, 255, 0.22);
 }
 .magic-tooltip {
   position: absolute;
   width: 333px;
   height: auto;
-  background: rgba(0, 0, 0, 0.8);
+  background: #337ab7;
   color: #fff;
   padding: 6px 10px;
   border-radius: 4px;

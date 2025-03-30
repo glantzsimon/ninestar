@@ -28,22 +28,26 @@ namespace K9.WebApplication.Models
 
         public string FiveYellowKillingDescription => TemplateParser.Parse(FiveYelloKilling.Description, new
         {
-            Direction = FiveYelloKilling.Direction.ToString().ToProperCase()
+            Direction = FiveYelloKilling.Direction == ENineStarKiDirection.Centre ? Dictionary.InAnyDirection : FiveYelloKilling.Direction.ToString().ToProperCase(),
+            Direction2 = Dictionary.Somewhere
         });
 
         public string DarkSwordKillingDescription => TemplateParser.Parse(DarkSwordKilling.Description, new
         {
-            Direction = DarkSwordKilling.Direction.ToString().ToProperCase()
+            Direction = DarkSwordKilling.Direction == ENineStarKiDirection.Centre ? Dictionary.InAnyDirection : DarkSwordKilling.Direction.ToString().ToProperCase(),
+            Direction2 = Dictionary.Somewhere
         });
 
         public string SelfLifeKillingDescription => TemplateParser.Parse(SelfLifeKilling.Description, new
         {
-            Direction = SelfLifeKilling.Direction.ToString().ToProperCase()
+            Direction = SelfLifeKilling.Direction == ENineStarKiDirection.Centre ? Dictionary.InAnyDirection : SelfLifeKilling.Direction.ToString().ToProperCase(),
+            Direction2 = Dictionary.Somewhere
         });
 
         public string TargetKillingDescription => TemplateParser.Parse(TargetKilling.Description, new
         {
-            Direction = TargetKilling.Direction.ToString().ToProperCase()
+            Direction = TargetKilling.Direction == ENineStarKiDirection.Centre ? Dictionary.InAnyDirection : TargetKilling.Direction.ToString().ToProperCase(),
+            Direction2 = Dictionary.Somewhere
         });
 
         public NineStarKiDirections(ENineStarKiDirection fiveYellowKilling, ENineStarKiDirection darkSwordKilling, ENineStarKiDirection selfLifeKilling, ENineStarKiDirection targetKilling)

@@ -5383,7 +5383,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Avoid travelling {Direction}. Travelling in this direction could very well bring unexpected kinds of misfortune, hence the image of a sword coming at you in the darkness. If you must travel {Direction} then at the very least, avoid travelling long distances or for a long period of time, if possible. Short distances and duration shouldn&apos;t pose much of a problem..
+        ///   Looks up a localized string similar to Avoid travelling {Direction}. Doing so could very well bring unexpected kinds of misfortune, hence the image of a sword coming at you in the darkness. If you must travel {Direction2} then at the very least, avoid travelling long distances or for a long period of time, if possible. Short distances and duration shouldn&apos;t pose much of a problem..
         /// </summary>
         public static string DarkSwordKillingDescription {
             get {
@@ -7280,7 +7280,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Avoid travelling {Direction}. Travelling in this direction could very well bring some obvious difficulty or misfortune, such as an accident, sickness, financial difficulty, failure, etc. If you must travel {Direction} then at the very least, avoid travelling long distances or for a long period of time, if possible. Short distances and duration shouldn&apos;t pose much of a problem..
+        ///   Looks up a localized string similar to Avoid travelling {Direction}. Doing so could very well bring some obvious difficulty or misfortune, such as an accident, sickness, financial difficulty, failure, etc. If you must travel {Direction2} then at the very least, avoid travelling long distances or for a long period of time, if possible. Short distances and duration shouldn&apos;t pose much of a problem..
         /// </summary>
         public static string FiveYellowKillingDescription {
             get {
@@ -8436,6 +8436,15 @@ namespace K9.Globalisation {
         public static string IfYouNeedToChangeYourAppointment {
             get {
                 return ResourceManager.GetString("IfYouNeedToChangeYourAppointment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In any direction, as 5 is at the centre..
+        /// </summary>
+        public static string InAnyDirection {
+            get {
+                return ResourceManager.GetString("InAnyDirection", resourceCulture);
             }
         }
         
@@ -14025,7 +14034,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Avoid travelling {Direction}. Travelling in this direction could easily lead to problems or difficulties that are caused directly by the person themselves. If you must travel {Direction} then at the very least, avoid travelling long distances or for a long period of time, if possible. Short distances and duration shouldn&apos;t pose much of a problem..
+        ///   Looks up a localized string similar to Avoid travelling {Direction}. Doing so could easily lead to problems or difficulties that are caused directly by the person themselves. If you must travel {Direction2} then at the very least, avoid travelling long distances or for a long period of time, if possible. Short distances and duration shouldn&apos;t pose much of a problem..
         /// </summary>
         public static string SelfLifeKillingDescription {
             get {
@@ -14892,6 +14901,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to somewhere.
+        /// </summary>
+        public static string Somewhere {
+            get {
+                return ResourceManager.GetString("Somewhere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to South.
         /// </summary>
         public static string South {
@@ -15642,7 +15660,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Avoid travelling {Direction}. Travelling in this direction could lead to problems or difficulties caused by others. If you must travel {Direction} then at the very least, avoid travelling long distances or for a long period of time, if possible. Short distances and duration shouldn&apos;t pose much of a problem..
+        ///   Looks up a localized string similar to Avoid travelling {Direction}. Doing so could lead to problems or difficulties caused by others. If you must travel {Direction2} then at the very least, avoid travelling long distances or for a long period of time, if possible. Short distances and duration shouldn&apos;t pose much of a problem..
         /// </summary>
         public static string TargetKillingDescription {
             get {

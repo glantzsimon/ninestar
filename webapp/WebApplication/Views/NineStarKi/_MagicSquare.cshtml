@@ -4,15 +4,17 @@
 
 @{
     var magicSquareNumbers = Model.GlobalEnergy.GetMagicSquareNumbers();
-    var active1Class = 4 == Model.PersonalEnergy.EnergyNumber ? "active " : "";
-    var active2Class = 9 == Model.PersonalEnergy.EnergyNumber ? "active " : "";
-    var active3Class = 2 == Model.PersonalEnergy.EnergyNumber ? "active " : "";
-    var active4Class = 3 == Model.PersonalEnergy.EnergyNumber ? "active " : "";
-    var active5Class = 5 == Model.PersonalEnergy.EnergyNumber ? "active " : "";
-    var active6Class = 7 == Model.PersonalEnergy.EnergyNumber ? "active " : "";
-    var active7Class = 8 == Model.PersonalEnergy.EnergyNumber ? "active " : "";
-    var active8Class = 1 == Model.PersonalEnergy.EnergyNumber ? "active " : "";
-    var active9Class = 6 == Model.PersonalEnergy.EnergyNumber ? "active " : "";
+    var numbersMatch = Model.GlobalEnergy.EnergyNumber == Model.PersonalEnergy.EnergyNumber;
+
+    var active1Class = 4 == Model.PersonalEnergy.EnergyNumber && !numbersMatch ? "active " : "";
+    var active2Class = 9 == Model.PersonalEnergy.EnergyNumber && !numbersMatch ? "active " : "";
+    var active3Class = 2 == Model.PersonalEnergy.EnergyNumber && !numbersMatch ? "active " : "";
+    var active4Class = 3 == Model.PersonalEnergy.EnergyNumber && !numbersMatch ? "active " : "";
+    var active5Class = 5 == Model.PersonalEnergy.EnergyNumber || numbersMatch ? "active " : "";
+    var active6Class = 7 == Model.PersonalEnergy.EnergyNumber && !numbersMatch ? "active " : "";
+    var active7Class = 8 == Model.PersonalEnergy.EnergyNumber && !numbersMatch ? "active " : "";
+    var active8Class = 1 == Model.PersonalEnergy.EnergyNumber && !numbersMatch ? "active " : "";
+    var active9Class = 6 == Model.PersonalEnergy.EnergyNumber && !numbersMatch ? "active " : "";
 }
 
 
@@ -30,7 +32,7 @@
     </div>
     @*<div data-toggle="tooltip" data-placement="top" title="@Dictionary.GenderSelectionTooltip">
 
-    </div>*@
+        </div>*@
     <div class="directions-line-overlay five-yellow-killing bad"></div>
     <div class="directions-line-overlay dark-sword-killing bad"></div>
     <div class="directions-line-overlay self-life-killing bad"></div>

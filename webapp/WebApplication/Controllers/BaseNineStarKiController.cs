@@ -16,6 +16,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
+using K9.SharedLibrary.Extensions;
 using SessionHelper = K9.Base.WebApplication.Helpers.SessionHelper;
 
 namespace K9.WebApplication.Controllers
@@ -36,7 +37,7 @@ namespace K9.WebApplication.Controllers
 
             SetBetaWarningSessionVariable();
             SetSessionRoles(Current.UserId);
-            
+
             ViewBag.DeviceType = GetDeviceType();
         }
 
@@ -109,6 +110,19 @@ namespace K9.WebApplication.Controllers
         {
             return new BrowserInfo(Request.Headers["User-Agent"]).DeviceType;
         }
+        
+        public JsonResult UpdateUserPrefernce(string key, object value)
+        {
+            try
+            {
+                SessionHelper.SetValue(key, value);
+            }
+            catch (Exception e)
+            {
+                return Json(new { success = false, error = e.GetFullErrorMessage() }, JsonRequestBehavior.AllowGet);
+            }
+            return Json(new { success = true }, JsonRequestBehavior.AllowGet);
+        }
 
         public void SetSessionRoles(int userId)
         {
@@ -132,7 +146,7 @@ namespace K9.WebApplication.Controllers
             viewEngineResult.View.Render(viewContext, stringWriter);
             return stringWriter.ToString();
         }
-        
+
         private static void SetBetaWarningSessionVariable()
         {
             var numberOfDisplays = Helpers.SessionHelper.GetIntValue(Constants.SessionConstants.BetaWarningDisplay);
@@ -169,15 +183,15 @@ namespace K9.WebApplication.Controllers
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             base.OnActionExecuting(filterContext);
-            
+
             SetSessionRoles(Current.UserId);
         }
-        
+
         public void SetSessionRoles(int userId)
         {
             Helpers.SessionHelper.SetCurrentUserRoles(My.RolesRepository, My.UserRolesRepository, userId);
         }
-        
+
         private void BaseNineStarKiController_RecordBeforeUpdated(object sender, CrudEventArgs e)
         {
             var model = e.Item as T;

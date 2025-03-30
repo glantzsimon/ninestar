@@ -2,7 +2,17 @@
 @using K9.SharedLibrary.Extensions
 @using K9.WebApplication.Enums
 @using K9.WebApplication.Helpers
+@using SessionConstants = K9.WebApplication.Constants.SessionConstants
 @model K9.WebApplication.Models.NineStarKiModel
+
+<div class="row margin-0 margin-bottom-20">
+    <div class="col-sm-4 col-sm-offset-4 col-xs-12 col-xs-offset-0 padding-0">
+        @Html.BootstrapEditorFor(e => e.EnergyDisplay, new EditorOptions
+        {
+            Label = ""
+        })
+    </div>
+</div>
 
 @if (Model.DisplayDataForPeriod != EDisplayDataForPeriod.Now)
 {
@@ -15,34 +25,99 @@
 
 <div class="row">
     <div class="col-sm-4 col-sm-offset-4 very-small-energy">
-        @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Epoch)
+        <div class="graphical-display">
+            @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Epoch)
+        </div>
+        <div class="magic-square-display">
+            @Html.Partial("../NineStarKi/_MagicSquare", Model.PersonalHousesOccupiedEnergies.Epoch)
+        </div>
     </div>
 </div>
 <div class="row">
     <div class="col-sm-4 col-sm-offset-4 very-small-energy">
-        @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Generation)
+        <div class="graphical-display">
+            @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Generation)
+        </div>
+        <div class="magic-square-display">
+            @Html.Partial("../NineStarKi/_MagicSquare", Model.PersonalHousesOccupiedEnergies.Generation)
+        </div>
     </div>
 </div>
 <div class="row">
     <div class="col-sm-4 medium-energy">
-        @Html.Partial("_CycleTitle", Model.MonthlyCycleEnergy)
+        <div class="graphical-display">
+            @Html.Partial("_CycleTitle", Model.MonthlyCycleEnergy)
+        </div>
+        <div class="magic-square-display">
+            @Html.Partial("../NineStarKi/_MagicSquare", Model.MonthlyCycleEnergy)
+        </div>
     </div>
     <div class="col-sm-4">
-        @Html.Partial("_CycleTitle", Model.YearlyCycleEnergy)
+        <div class="graphical-display">
+            @Html.Partial("_CycleTitle", Model.YearlyCycleEnergy)
+        </div>
+        <div class="magic-square-display">
+            @Html.Partial("../NineStarKi/_MagicSquare", Model.YearlyCycleEnergy)
+        </div>
     </div>
     <div class="col-sm-4 small-energy">
         @if (Model.PersonalHousesOccupiedEnergies.Day.EnergyNumber == Model.PersonalHousesOccupiedEnergies.Day2.EnergyNumber)
         {
-            @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Day)
+            <div class="graphical-display">
+                @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Day)
+            </div>
+            <div class="magic-square-display">
+                @Html.Partial("../NineStarKi/_MagicSquare", Model.PersonalHousesOccupiedEnergies.Day)
+            </div>
         }
         else
         {
-            @Html.Partial("_CycleSplitTitle", (Model.PersonalHousesOccupiedEnergies.Day, Model.PersonalHousesOccupiedEnergies.Day2))
+            <div class="graphical-display">
+                @Html.Partial("_CycleSplitTitle", (Model.PersonalHousesOccupiedEnergies.Day, Model.PersonalHousesOccupiedEnergies.Day2))
+            </div>
+            <div class="magic-square-display">
+                @Html.Partial("../NineStarKi/_MagicSquare", Model.PersonalHousesOccupiedEnergies.Day2)
+            </div>
         }
     </div>
 </div>
 <div class="row">
     <div class="col-sm-4 col-sm-offset-4 very-small-energy">
-        @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Hour)
+        <div class="graphical-display">
+            @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Hour)
+        </div>
+        <div class="magic-square-display">
+            @Html.Partial("../NineStarKi/_MagicSquare", Model.PersonalHousesOccupiedEnergies.Hour)
+        </div>
     </div>
 </div>
+
+<script>
+
+    $(function () {
+        $("#EnergyDisplay").change(function (e) {
+            let displayValue = $(this).val();
+            if (displayValue === '0') {
+                $(".magic-square-display").fadeOut(200, function () {
+                    $(".graphical-display").fadeIn(200);
+                });
+            } else {
+                $(".graphical-display").fadeOut(200, function () {
+                    $(".magic-square-display").fadeIn(200);
+                });
+            }
+
+            ajaxcontroller().send('@Url.Action("UpdateUserPrefernce")',
+                {
+                    key: '@SessionConstants.DefaultEnergyDisplay',
+                    value: displayValue
+                }, "GET").done(
+                function (result) {
+                    if (!result.data.success) {
+                        console.log(result.data.error)
+                    }
+                });
+        });
+    })
+
+</script>

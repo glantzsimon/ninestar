@@ -52,11 +52,20 @@ a > .ninestar-summary-container:hover {
 .small-energy img {
   width: 38%;
 }
+.small-energy .magic-square-container {
+  font-size: 38%;
+}
 .medium-energy img {
   width: 62%;
 }
+.medium-energy .magic-square-container {
+  font-size: 62%;
+}
 .very-small-energy img {
   width: 24%;
+}
+.very-small-energy .magic-square-container {
+  font-size: 24%;
 }
 .profile-warning {
   color: #a94442;
@@ -117,4 +126,38 @@ a > .ninestar-summary-container:hover {
 }
 .organs-container h5 {
   margin-top: 5px;
+}
+.magic-square-display {
+  display: none;
+}
+.magic-square-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.magic-square {
+  width: 100%;
+  aspect-ratio: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  outline: 1px solid #dddddd;
+  box-sizing: border-box;
+  -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+}
+.magic-square .cell {
+  border-bottom: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.magic-square .cell.active {
+  font-weight: bold;
 }

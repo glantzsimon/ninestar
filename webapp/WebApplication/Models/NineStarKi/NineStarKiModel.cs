@@ -43,6 +43,10 @@ namespace K9.WebApplication.Models
         [ScriptIgnore]
         public bool IsPredictionsScreen { get; set; }
 
+        [UIHint("EnergyDisplay")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyDisplayLabel)]
+        public EEnergyDisplay EnergyDisplay { get; set; } = (EEnergyDisplay)SessionHelper.GetEnergyDefaultDisplay();
+
         [ScriptIgnore]
         public bool IsCycleSwitchActive => EnableCycleSwitch && SelectedDate >= CYCLE_SWITCH_DATE;
 

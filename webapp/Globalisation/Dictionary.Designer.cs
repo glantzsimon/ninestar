@@ -6441,6 +6441,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Display.
+        /// </summary>
+        public static string EnergyDisplayLabel {
+            get {
+                return ResourceManager.GetString("EnergyDisplayLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enerty Type.
         /// </summary>
         public static string EnergyTypeLabel {
@@ -7699,6 +7708,15 @@ namespace K9.Globalisation {
         public static string GradualProgressTitle {
             get {
                 return ResourceManager.GetString("GradualProgressTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Graphical Display.
+        /// </summary>
+        public static string Graphical {
+            get {
+                return ResourceManager.GetString("Graphical", resourceCulture);
             }
         }
         
@@ -9675,6 +9693,15 @@ namespace K9.Globalisation {
         public static string Lungs {
             get {
                 return ResourceManager.GetString("Lungs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Magic Square.
+        /// </summary>
+        public static string MagicSquare {
+            get {
+                return ResourceManager.GetString("MagicSquare", resourceCulture);
             }
         }
         

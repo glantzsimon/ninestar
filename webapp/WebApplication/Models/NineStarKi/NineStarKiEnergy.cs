@@ -313,235 +313,249 @@ namespace K9.WebApplication.Models
     public class NineStarKiEnergy
     {
         // Dictionaries for fast lookups instead of switch statements
-        private static readonly Dictionary<ENineStarKiEnergy, string> _trigramDescriptions = new Dictionary<ENineStarKiEnergy, string>
-        {
-            { ENineStarKiEnergy.Water, Dictionary.water_trigram },
-            { ENineStarKiEnergy.Wind, Dictionary.wind_trigram },
-            { ENineStarKiEnergy.Lake, Dictionary.lake_trigram },
-            { ENineStarKiEnergy.Soil, Dictionary.soil_trigram },
-            { ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_trigram },
-            { ENineStarKiEnergy.Mountain, Dictionary.mountain_trigram },
-            { ENineStarKiEnergy.Thunder, Dictionary.thunder_trigram },
-            { ENineStarKiEnergy.Heaven, Dictionary.heaven_trigram },
-            { ENineStarKiEnergy.Fire, Dictionary.fire_trigram }
-        };
+        private static readonly Dictionary<ENineStarKiEnergy, string> _trigramDescriptions =
+            new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_trigram},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_trigram},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_trigram},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_trigram},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_trigram},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_trigram},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_trigram},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_trigram},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_trigram}
+            };
 
         #region Personal Chart
 
-        private static readonly Dictionary<ENineStarKiEnergy, string> _epochDescriptions = new Dictionary<ENineStarKiEnergy, string>
-        {
-            { ENineStarKiEnergy.Water, Dictionary.water_epoch },
-            { ENineStarKiEnergy.Soil, Dictionary.soil_epoch },
-            { ENineStarKiEnergy.Thunder, Dictionary.thunder_epoch },
-            { ENineStarKiEnergy.Wind, Dictionary.wind_epoch },
-            { ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_epoch },
-            { ENineStarKiEnergy.Heaven, Dictionary.heaven_epoch },
-            { ENineStarKiEnergy.Lake, Dictionary.lake_epoch },
-            { ENineStarKiEnergy.Mountain, Dictionary.mountain_epoch },
-            { ENineStarKiEnergy.Fire, Dictionary.fire_epoch }
-        };
+        private static readonly Dictionary<ENineStarKiEnergy, string> _epochDescriptions =
+            new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_epoch},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_epoch},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_epoch},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_epoch},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_epoch},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_epoch},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_epoch},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_epoch},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_epoch}
+            };
 
-        private static readonly Dictionary<ENineStarKiEnergy, string> _generationDescriptions = new Dictionary<ENineStarKiEnergy, string>
-        {
-            { ENineStarKiEnergy.Water, Dictionary.water_generation },
-            { ENineStarKiEnergy.Soil, Dictionary.soil_generation },
-            { ENineStarKiEnergy.Thunder, Dictionary.thunder_generation },
-            { ENineStarKiEnergy.Wind, Dictionary.wind_generation },
-            { ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_generation },
-            { ENineStarKiEnergy.Heaven, Dictionary.heaven_generation },
-            { ENineStarKiEnergy.Lake, Dictionary.lake_generation },
-            { ENineStarKiEnergy.Mountain, Dictionary.mountain_generation },
-            { ENineStarKiEnergy.Fire, Dictionary.fire_generation }
-        };
+        private static readonly Dictionary<ENineStarKiEnergy, string> _generationDescriptions =
+            new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_generation},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_generation},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_generation},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_generation},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_generation},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_generation},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_generation},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_generation},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_generation}
+            };
 
-        private static readonly Dictionary<ENineStarKiEnergy, string> _mainEnergyDescriptions = new Dictionary<ENineStarKiEnergy, string>
-        {
-            { ENineStarKiEnergy.Water, Dictionary.water_description },
-            { ENineStarKiEnergy.Soil, Dictionary.soil_description },
-            { ENineStarKiEnergy.Thunder, Dictionary.thunder_description },
-            { ENineStarKiEnergy.Wind, Dictionary.wind_description },
-            { ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_description },
-            { ENineStarKiEnergy.Heaven, Dictionary.heaven_description },
-            { ENineStarKiEnergy.Lake, Dictionary.lake_description },
-            { ENineStarKiEnergy.Mountain, Dictionary.mountain_description },
-            { ENineStarKiEnergy.Fire, Dictionary.fire_description }
-        };
+        private static readonly Dictionary<ENineStarKiEnergy, string> _mainEnergyDescriptions =
+            new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_description},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_description},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_description},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_description},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_description},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_description},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_description},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_description},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_description}
+            };
 
-        private static readonly Dictionary<ENineStarKiEnergy, string> _emotionalDescriptions = new Dictionary<ENineStarKiEnergy, string>
-        {
-            { ENineStarKiEnergy.Water, Dictionary.water_emotional_description },
-            { ENineStarKiEnergy.Soil, Dictionary.soil_emotional_description  },
-            { ENineStarKiEnergy.Thunder, Dictionary.thunder_emotional_description  },
-            { ENineStarKiEnergy.Wind, Dictionary.wind_emotional_description  },
-            { ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_emotional_description  },
-            { ENineStarKiEnergy.Heaven, Dictionary.heaven_emotional_description  },
-            { ENineStarKiEnergy.Lake, Dictionary.lake_emotional_description  },
-            { ENineStarKiEnergy.Mountain, Dictionary.mountain_emotional_description  },
-            { ENineStarKiEnergy.Fire, Dictionary.fire_emotional_description  }
-        };
+        private static readonly Dictionary<ENineStarKiEnergy, string> _emotionalDescriptions =
+            new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_emotional_description},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_emotional_description},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_emotional_description},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_emotional_description},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_emotional_description},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_emotional_description},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_emotional_description},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_emotional_description},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_emotional_description}
+            };
 
-        private static readonly Dictionary<ENineStarKiEnergy, string> _surfaceEnergyDescriptions = new Dictionary<ENineStarKiEnergy, string>
-        {
-            { ENineStarKiEnergy.Water, Dictionary.water_surface_description },
-            { ENineStarKiEnergy.Soil, Dictionary.soil_surface_description  },
-            { ENineStarKiEnergy.Thunder, Dictionary.thunder_surface_description  },
-            { ENineStarKiEnergy.Wind, Dictionary.wind_surface_description  },
-            { ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_surface_description  },
-            { ENineStarKiEnergy.Heaven, Dictionary.heaven_surface_description  },
-            { ENineStarKiEnergy.Lake, Dictionary.lake_surface_description  },
-            { ENineStarKiEnergy.Mountain, Dictionary.mountain_surface_description  },
-            { ENineStarKiEnergy.Fire, Dictionary.fire_surface_description  }
-        };
+        private static readonly Dictionary<ENineStarKiEnergy, string> _surfaceEnergyDescriptions =
+            new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_surface_description},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_surface_description},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_surface_description},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_surface_description},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_surface_description},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_surface_description},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_surface_description},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_surface_description},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_surface_description}
+            };
 
-        private static readonly Dictionary<ENineStarKiEnergy, string> _childDescriptions = new Dictionary<ENineStarKiEnergy, string>
-        {
-            { ENineStarKiEnergy.Water, Dictionary.water_child },
-            { ENineStarKiEnergy.Soil, Dictionary.soil_child },
-            { ENineStarKiEnergy.Thunder, Dictionary.thunder_child },
-            { ENineStarKiEnergy.Wind, Dictionary.wind_child },
-            { ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_child },
-            { ENineStarKiEnergy.Heaven, Dictionary.heaven_child },
-            { ENineStarKiEnergy.Lake, Dictionary.lake_child },
-            { ENineStarKiEnergy.Mountain, Dictionary.mountain_child },
-            { ENineStarKiEnergy.Fire, Dictionary.fire_child }
-        };
+        private static readonly Dictionary<ENineStarKiEnergy, string> _childDescriptions =
+            new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_child},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_child},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_child},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_child},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_child},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_child},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_child},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_child},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_child}
+            };
 
-        private static readonly Dictionary<ENineStarKiEnergy, string> _dayStarDescriptions = new Dictionary<ENineStarKiEnergy, string>
-        {
-            { ENineStarKiEnergy.Water, Dictionary.water_daystar },
-            { ENineStarKiEnergy.Soil, Dictionary.soil_daystar },
-            { ENineStarKiEnergy.Thunder, Dictionary.thunder_daystar },
-            { ENineStarKiEnergy.Wind, Dictionary.wind_daystar },
-            { ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_daystar },
-            { ENineStarKiEnergy.Heaven, Dictionary.heaven_daystar },
-            { ENineStarKiEnergy.Lake, Dictionary.lake_daystar },
-            { ENineStarKiEnergy.Mountain, Dictionary.mountain_daystar },
-            { ENineStarKiEnergy.Fire, Dictionary.fire_daystar }
-        };
+        private static readonly Dictionary<ENineStarKiEnergy, string> _dayStarDescriptions =
+            new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_daystar},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_daystar},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_daystar},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_daystar},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_daystar},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_daystar},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_daystar},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_daystar},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_daystar}
+            };
 
         private static readonly Dictionary<ENineStarKiEnergy, string> _overviews
             = new Dictionary<ENineStarKiEnergy, string>
             {
-                { ENineStarKiEnergy.Water, Dictionary.water_overview },
-                { ENineStarKiEnergy.Soil, Dictionary.soil_overview },
-                { ENineStarKiEnergy.Thunder, Dictionary.thunder_overview },
-                { ENineStarKiEnergy.Wind, Dictionary.wind_overview },
-                { ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_overview },
-                { ENineStarKiEnergy.Heaven, Dictionary.heaven_overview },
-                { ENineStarKiEnergy.Lake, Dictionary.lake_overview },
-                { ENineStarKiEnergy.Mountain,Dictionary.mountain_overview },
-                { ENineStarKiEnergy.Fire, Dictionary.fire_overview }
+                {ENineStarKiEnergy.Water, Dictionary.water_overview},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_overview},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_overview},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_overview},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_overview},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_overview},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_overview},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_overview},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_overview}
             };
 
         private static readonly Dictionary<ENineStarKiEnergy, string> _healthDetails
             = new Dictionary<ENineStarKiEnergy, string>
             {
-                { ENineStarKiEnergy.Water, Dictionary.water_health },
-                { ENineStarKiEnergy.Soil, Dictionary.soil_health },
-                { ENineStarKiEnergy.Thunder, Dictionary.thunder_health },
-                { ENineStarKiEnergy.Wind, Dictionary.wind_health },
-                { ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_health },
-                { ENineStarKiEnergy.Heaven, Dictionary.heaven_health },
-                { ENineStarKiEnergy.Lake, Dictionary.lake_health },
-                { ENineStarKiEnergy.Mountain,Dictionary.mountain_health },
-                { ENineStarKiEnergy.Fire, Dictionary.fire_health }
+                {ENineStarKiEnergy.Water, Dictionary.water_health},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_health},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_health},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_health},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_health},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_health},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_health},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_health},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_health}
             };
 
         private static readonly Dictionary<ENineStarKiEnergy, string> _careerDetails
             = new Dictionary<ENineStarKiEnergy, string>
             {
-                { ENineStarKiEnergy.Water, Dictionary.water_career },
-                { ENineStarKiEnergy.Soil, Dictionary.soil_career },
-                { ENineStarKiEnergy.Thunder, Dictionary.thunder_career },
-                { ENineStarKiEnergy.Wind, Dictionary.wind_career },
-                { ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_career },
-                { ENineStarKiEnergy.Heaven, Dictionary.heaven_career },
-                { ENineStarKiEnergy.Lake, Dictionary.lake_career },
-                { ENineStarKiEnergy.Mountain,Dictionary.mountain_career },
-                { ENineStarKiEnergy.Fire, Dictionary.fire_career }
+                {ENineStarKiEnergy.Water, Dictionary.water_career},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_career},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_career},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_career},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.coreearth_career},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_career},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_career},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_career},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_career}
             };
 
         #endregion
 
         #region Predictions
 
-        private static readonly Dictionary<ENineStarKiEnergy, string> _epochCycleDescriptions = new Dictionary<ENineStarKiEnergy, string>
-        {
-            { ENineStarKiEnergy.Water, Dictionary.water_epoch_cycle },
-            { ENineStarKiEnergy.Soil, Dictionary.soil_epoch_cycle },
-            { ENineStarKiEnergy.Thunder, Dictionary.thunder_epoch_cycle },
-            { ENineStarKiEnergy.Wind, Dictionary.wind_epoch_cycle },
-            { ENineStarKiEnergy.CoreEarth, Dictionary.core_earth_epoch_cycle },
-            { ENineStarKiEnergy.Heaven, Dictionary.heaven_epoch_cycle },
-            { ENineStarKiEnergy.Lake, Dictionary.lake_epoch_cycle },
-            { ENineStarKiEnergy.Mountain, Dictionary.mountain_epoch_cycle },
-            { ENineStarKiEnergy.Fire, Dictionary.fire_epoch_cycle }
-        };
+        private static readonly Dictionary<ENineStarKiEnergy, string> _epochCycleDescriptions =
+            new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_epoch_cycle},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_epoch_cycle},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_epoch_cycle},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_epoch_cycle},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.core_earth_epoch_cycle},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_epoch_cycle},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_epoch_cycle},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_epoch_cycle},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_epoch_cycle}
+            };
 
-        private static readonly Dictionary<ENineStarKiEnergy, string> _generationCycleDescriptions = new Dictionary<ENineStarKiEnergy, string>
-        {
-            { ENineStarKiEnergy.Water, Dictionary.water_generation_cycle },
-            { ENineStarKiEnergy.Soil, Dictionary.soil_generation_cycle },
-            { ENineStarKiEnergy.Thunder, Dictionary.thunder_generation_cycle },
-            { ENineStarKiEnergy.Wind, Dictionary.wind_generation_cycle },
-            { ENineStarKiEnergy.CoreEarth, Dictionary.core_earth_generation_cycle },
-            { ENineStarKiEnergy.Heaven, Dictionary.heaven_generation_cycle },
-            { ENineStarKiEnergy.Lake, Dictionary.lake_generation_cycle },
-            { ENineStarKiEnergy.Mountain, Dictionary.mountain_generation_cycle },
-            { ENineStarKiEnergy.Fire, Dictionary.fire_generation_cycle }
-        };
+        private static readonly Dictionary<ENineStarKiEnergy, string> _generationCycleDescriptions =
+            new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_generation_cycle},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_generation_cycle},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_generation_cycle},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_generation_cycle},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.core_earth_generation_cycle},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_generation_cycle},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_generation_cycle},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_generation_cycle},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_generation_cycle}
+            };
 
-        private static readonly Dictionary<ENineStarKiEnergy, string> _yearlyCycleDescriptions = new Dictionary<ENineStarKiEnergy, string>
-        {
-            { ENineStarKiEnergy.Water, Dictionary.water_year },
-            { ENineStarKiEnergy.Soil, Dictionary.soil_year },
-            { ENineStarKiEnergy.Thunder, Dictionary.thunder_year },
-            { ENineStarKiEnergy.Wind, Dictionary.wind_year },
-            { ENineStarKiEnergy.CoreEarth, Dictionary.core_earth_year },
-            { ENineStarKiEnergy.Heaven, Dictionary.heaven_year },
-            { ENineStarKiEnergy.Lake, Dictionary.lake_year },
-            { ENineStarKiEnergy.Mountain, Dictionary.mountain_year },
-            { ENineStarKiEnergy.Fire, Dictionary.fire_year }
-        };
+        private static readonly Dictionary<ENineStarKiEnergy, string> _yearlyCycleDescriptions =
+            new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_year},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_year},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_year},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_year},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.core_earth_year},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_year},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_year},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_year},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_year}
+            };
 
-        private static readonly Dictionary<ENineStarKiEnergy, string> _monthlyCycleDescriptions = new Dictionary<ENineStarKiEnergy, string>
-        {
-            { ENineStarKiEnergy.Water, Dictionary.water_month },
-            { ENineStarKiEnergy.Soil, Dictionary.soil_month  },
-            { ENineStarKiEnergy.Thunder, Dictionary.thunder_month  },
-            { ENineStarKiEnergy.Wind, Dictionary.wind_month  },
-            { ENineStarKiEnergy.CoreEarth, Dictionary.core_earth_month  },
-            { ENineStarKiEnergy.Heaven, Dictionary.heaven_month  },
-            { ENineStarKiEnergy.Lake, Dictionary.lake_month  },
-            { ENineStarKiEnergy.Mountain, Dictionary.mountain_month  },
-            { ENineStarKiEnergy.Fire, Dictionary.fire_month  }
-        };
+        private static readonly Dictionary<ENineStarKiEnergy, string> _monthlyCycleDescriptions =
+            new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_month},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_month},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_month},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_month},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.core_earth_month},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_month},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_month},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_month},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_month}
+            };
 
-        private static readonly Dictionary<ENineStarKiEnergy, string> _daycycleCycleDescriptions = new Dictionary<ENineStarKiEnergy, string>
-        {
-            { ENineStarKiEnergy.Water, Dictionary.water_day_cycle },
-            { ENineStarKiEnergy.Soil, Dictionary.soil_day_cycle },
-            { ENineStarKiEnergy.Thunder, Dictionary.thunder_day_cycle },
-            { ENineStarKiEnergy.Wind, Dictionary.wind_day_cycle },
-            { ENineStarKiEnergy.CoreEarth, Dictionary.core_earth_day_cycle },
-            { ENineStarKiEnergy.Heaven, Dictionary.heaven_day_cycle },
-            { ENineStarKiEnergy.Lake, Dictionary.lake_day_cycle },
-            { ENineStarKiEnergy.Mountain, Dictionary.mountain_day_cycle },
-            { ENineStarKiEnergy.Fire, Dictionary.fire_day_cycle }
-        };
+        private static readonly Dictionary<ENineStarKiEnergy, string> _daycycleCycleDescriptions =
+            new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_day_cycle},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_day_cycle},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_day_cycle},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_day_cycle},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.core_earth_day_cycle},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_day_cycle},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_day_cycle},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_day_cycle},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_day_cycle}
+            };
 
-        private static readonly Dictionary<ENineStarKiEnergy, string> _hourCycleDescriptions = new Dictionary<ENineStarKiEnergy, string>
-        {
-            { ENineStarKiEnergy.Water, Dictionary.water_hour_cycle },
-            { ENineStarKiEnergy.Soil, Dictionary.soil_hour_cycle },
-            { ENineStarKiEnergy.Thunder, Dictionary.thunder_hour_cycle },
-            { ENineStarKiEnergy.Wind, Dictionary.wind_hour_cycle },
-            { ENineStarKiEnergy.CoreEarth, Dictionary.core_earth_hour_cycle },
-            { ENineStarKiEnergy.Heaven, Dictionary.heaven_hour_cycle },
-            { ENineStarKiEnergy.Lake, Dictionary.lake_hour_cycle },
-            { ENineStarKiEnergy.Mountain, Dictionary.mountain_hour_cycle },
-            { ENineStarKiEnergy.Fire, Dictionary.fire_hour_cycle }
-        };
+        private static readonly Dictionary<ENineStarKiEnergy, string> _hourCycleDescriptions =
+            new Dictionary<ENineStarKiEnergy, string>
+            {
+                {ENineStarKiEnergy.Water, Dictionary.water_hour_cycle},
+                {ENineStarKiEnergy.Soil, Dictionary.soil_hour_cycle},
+                {ENineStarKiEnergy.Thunder, Dictionary.thunder_hour_cycle},
+                {ENineStarKiEnergy.Wind, Dictionary.wind_hour_cycle},
+                {ENineStarKiEnergy.CoreEarth, Dictionary.core_earth_hour_cycle},
+                {ENineStarKiEnergy.Heaven, Dictionary.heaven_hour_cycle},
+                {ENineStarKiEnergy.Lake, Dictionary.lake_hour_cycle},
+                {ENineStarKiEnergy.Mountain, Dictionary.mountain_hour_cycle},
+                {ENineStarKiEnergy.Fire, Dictionary.fire_hour_cycle}
+            };
 
         #endregion
 
@@ -552,7 +566,8 @@ namespace K9.WebApplication.Models
             IsAdult = isAdult;
         }
 
-        public NineStarKiEnergy(ENineStarKiEnergy energy, ENineStarKiEnergyCycleType energyCycleType = ENineStarKiEnergyCycleType.Unspecified)
+        public NineStarKiEnergy(ENineStarKiEnergy energy,
+            ENineStarKiEnergyCycleType energyCycleType = ENineStarKiEnergyCycleType.Unspecified)
         {
             Energy = energy;
             EnergyCycleType = energyCycleType;
@@ -561,56 +576,81 @@ namespace K9.WebApplication.Models
         #region Personal Chart
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EpochEnergyLabel)]
-        public string EpochDescription => EnergyType == ENineStarKiEnergyType.EpochEnergy ? GetEpochDescription() : string.Empty;
+        public string EpochDescription =>
+            EnergyType == ENineStarKiEnergyType.EpochEnergy ? GetEpochDescription() : string.Empty;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GenerationalEnergyLabel)]
-        public string GenerationDescription => EnergyType == ENineStarKiEnergyType.GenerationalEnergy ? GetGenerationDescription() : string.Empty;
+        public string GenerationDescription => EnergyType == ENineStarKiEnergyType.GenerationalEnergy
+            ? GetGenerationDescription()
+            : string.Empty;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MainEnergyLabel)]
-        public string MainEnergyDescription => EnergyType == ENineStarKiEnergyType.MainEnergy ? GetMainEnergyDescription() : string.Empty;
+        public string MainEnergyDescription =>
+            EnergyType == ENineStarKiEnergyType.MainEnergy ? GetMainEnergyDescription() : string.Empty;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CharacterEnergyLabel)]
-        public string EmotionalEnergyDescription => EnergyType == ENineStarKiEnergyType.CharacterEnergy ? GetEmotionalEnergyDescription() : string.Empty;
+        public string EmotionalEnergyDescription => EnergyType == ENineStarKiEnergyType.CharacterEnergy
+            ? GetEmotionalEnergyDescription()
+            : string.Empty;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SurfaceEnergyLabel)]
-        public string SurfaceEnergyDescription => EnergyType == ENineStarKiEnergyType.SurfaceEnergy ? GetSurfaceEnergyDescription() : string.Empty;
+        public string SurfaceEnergyDescription => EnergyType == ENineStarKiEnergyType.SurfaceEnergy
+            ? GetSurfaceEnergyDescription()
+            : string.Empty;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ChildLabel)]
-        public string ChildDescription => EnergyType == ENineStarKiEnergyType.CharacterEnergy ? GetChildDescription() : string.Empty;
+        public string ChildDescription =>
+            EnergyType == ENineStarKiEnergyType.CharacterEnergy ? GetChildDescription() : string.Empty;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DayStarLabel)]
-        public string DayStarDescription => EnergyType == ENineStarKiEnergyType.DailyEnergy ? GetDayStarDescription() : string.Empty;
+        public string DayStarDescription =>
+            EnergyType == ENineStarKiEnergyType.DailyEnergy ? GetDayStarDescription() : string.Empty;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DayStarLabel)]
-        public string OverviewDescription => EnergyType == ENineStarKiEnergyType.MainEnergy ? GetOverview() : string.Empty;
+        public string OverviewDescription =>
+            EnergyType == ENineStarKiEnergyType.MainEnergy ? GetOverview() : string.Empty;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DayStarLabel)]
-        public string HealthDescription => EnergyType == ENineStarKiEnergyType.MainEnergy ? GetHealthDescription() : string.Empty;
+        public string HealthDescription =>
+            EnergyType == ENineStarKiEnergyType.MainEnergy ? GetHealthDescription() : string.Empty;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DayStarLabel)]
-        public string CareerDescription => EnergyType == ENineStarKiEnergyType.MainEnergy ? GetCareerDescription() : string.Empty;
+        public string CareerDescription =>
+            EnergyType == ENineStarKiEnergyType.MainEnergy ? GetCareerDescription() : string.Empty;
 
         #endregion
 
         #region Cycles
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.EpochCycleEnergy)]
-        public string EpochCycleDescription => EnergyCycleType == ENineStarKiEnergyCycleType.EpochEnergy ? GetEpochCycleDescription() : string.Empty;
+        public string EpochCycleDescription => EnergyCycleType == ENineStarKiEnergyCycleType.EpochEnergy
+            ? GetEpochCycleDescription()
+            : string.Empty;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.GenerationalCycleEnergy)]
-        public string GenerationCycleDescription => EnergyCycleType == ENineStarKiEnergyCycleType.GenerationalEnergy ? GetGenerationCycleDescription() : string.Empty;
+        public string GenerationCycleDescription => EnergyCycleType == ENineStarKiEnergyCycleType.GenerationalEnergy
+            ? GetGenerationCycleDescription()
+            : string.Empty;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.YearlyCycleEnergy)]
-        public string YearlyCycleDescription => EnergyCycleType == ENineStarKiEnergyCycleType.YearlyCycleEnergy ? GetYearlyCycleDescription() : string.Empty;
+        public string YearlyCycleDescription => EnergyCycleType == ENineStarKiEnergyCycleType.YearlyCycleEnergy
+            ? GetYearlyCycleDescription()
+            : string.Empty;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.MonthlyCycleEnergy)]
-        public string MonthlyCycleDescription => EnergyCycleType == ENineStarKiEnergyCycleType.MonthlyCycleEnergy ? GetMonthlyCycleDescription() : string.Empty;
+        public string MonthlyCycleDescription => EnergyCycleType == ENineStarKiEnergyCycleType.MonthlyCycleEnergy
+            ? GetMonthlyCycleDescription()
+            : string.Empty;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.DailyCycleEnergy)]
-        public string DailyCycleDescription => EnergyCycleType == ENineStarKiEnergyCycleType.DailyEnergy ? GetDailyCycleDescription() : string.Empty;
+        public string DailyCycleDescription => EnergyCycleType == ENineStarKiEnergyCycleType.DailyEnergy
+            ? GetDailyCycleDescription()
+            : string.Empty;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.HourlyEnergy)]
-        public string HourlyCycleDescription => EnergyCycleType == ENineStarKiEnergyCycleType.HourlyEnergy ? GetHourlyCycleDescription() : string.Empty;
+        public string HourlyCycleDescription => EnergyCycleType == ENineStarKiEnergyCycleType.HourlyEnergy
+            ? GetHourlyCycleDescription()
+            : string.Empty;
 
         #endregion
 
@@ -621,6 +661,18 @@ namespace K9.WebApplication.Models
         public string EnergyUIName => EnergyName.RemoveSpaces().ToLower();
 
         public int EnergyNumber => (int)Energy;
+
+        public int[] GetMagicSquareNumbers() => new[] {
+            NineStarKiModel.GetNineStarKiNumber(EnergyNumber - 4),
+            NineStarKiModel.GetNineStarKiNumber(EnergyNumber - 3),
+            NineStarKiModel.GetNineStarKiNumber(EnergyNumber - 2),
+            NineStarKiModel.GetNineStarKiNumber(EnergyNumber - 1),
+            EnergyNumber,
+            NineStarKiModel.GetNineStarKiNumber(EnergyNumber + 1),
+            NineStarKiModel.GetNineStarKiNumber(EnergyNumber + 2),
+            NineStarKiModel.GetNineStarKiNumber(EnergyNumber + 3),
+            NineStarKiModel.GetNineStarKiNumber(EnergyNumber + 4)
+        };
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyDescriptionLabel)]
         public string EnergyDescription => GetEnergyDescription();
@@ -712,7 +764,7 @@ namespace K9.WebApplication.Models
 
         [ScriptIgnore]
         public string DayStarLabel => Dictionary.DayStarLabel;
-        
+
         public string CycleDescriptiveName => CycleMetaData.DescriptiveTitle;
 
         [ScriptIgnore]

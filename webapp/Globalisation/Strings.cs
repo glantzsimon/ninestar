@@ -4,6 +4,9 @@
     {
         public static class Labels
         {
+            public const string Graphical = "Graphical";
+            public const string MagicSquare = "MagicSquare";
+
             public const string PersonalHouses = "PersonalHouses";
             public const string GlobalKi = "GlobalKi";
 
@@ -24,6 +27,7 @@
             public const string ViewLabel = "ViewLabel";
             public const string DisplayLabel = "DisplayLabel";
 
+            public const string EnergyDisplayLabel = "EnergyDisplayLabel";
             public const string CalculationMethodLabel = "CalculationMethodLabel";
             public const string InvertDailyAndHourlyKiForSouthernHemisphereLabel = "InvertDailyAndHourlyKiForSouthernHemisphereLabel";
             public const string InvertDailyAndHourlyCycleKiForSouthernHemisphereLabel = "InvertDailyAndHourlyCycleKiForSouthernHemisphereLabel";

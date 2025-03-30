@@ -1,0 +1,29 @@
+﻿@using K9.WebApplication.Config
+@using K9.WebApplication.Models
+@model NineStarKiEnergy
+
+@{
+    var label = Model.EnergyType == ENineStarKiEnergyType.MainEnergy ? Model.AdultEnergyLabel
+        : Model.EnergyType == ENineStarKiEnergyType.CharacterEnergy ? Model.CharacteEnergyLabel
+            : Model.EnergyType == ENineStarKiEnergyType.SurfaceEnergy ? Dictionary.SurfaceEnergyShortLabel
+                : Model.EnergyType == ENineStarKiEnergyType.DailyEnergy ? Dictionary.DayStarLabel
+                    : Model.EnergyType == ENineStarKiEnergyType.GenerationalEnergy ? Dictionary.GenerationalEnergyLabel
+                        : Model.EnergyType == ENineStarKiEnergyType.EpochEnergy ? Dictionary.EpochEnergyLabel
+                            : string.Empty;
+
+    var magicSquareNumbers = Model.GetMagicSquareNumbers();
+}
+
+<div class="ninestar-summary-container magic-square-container margin-3">
+    <div class="magic-square">
+        <div class="cell" data-index="1">@magicSquareNumbers[3]</div>
+        <div class="cell" data-index="2">@magicSquareNumbers[8]</div>
+        <div class="cell" data-index="3">@magicSquareNumbers[1]</div>
+        <div class="cell" data-index="4">@magicSquareNumbers[2]</div>
+        <div class="cell active" data-index="5">@Model.EnergyNumber</div>
+        <div class="cell" data-index="6">@magicSquareNumbers[6]</div>
+        <div class="cell" data-index="7">@magicSquareNumbers[7]</div>
+        <div class="cell" data-index="8">@magicSquareNumbers[0]</div>
+        <div class="cell" data-index="9">@magicSquareNumbers[5]</div>
+    </div>
+</div>

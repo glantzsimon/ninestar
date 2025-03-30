@@ -77,6 +77,11 @@ namespace K9.WebApplication.Helpers
             return false;
         }
 
+        public static int GetEnergyDefaultDisplay()
+        {
+            return GetIntValue(Constants.SessionConstants.DefaultEnergyDisplay);
+        }
+
         public static void SetCurrentUserCalculationMethod(int value)
         {
             SetValue(Constants.SessionConstants.UserCalculationMethod, value);

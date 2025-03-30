@@ -321,10 +321,10 @@ namespace K9.WebApplication.Models
         public ESexualityRelationType SexualityRelationType => GetSexualityRelationType();
 
         [ScriptIgnore]
-        public string OverviewLabel => MainEnergy != null ? $"{MainEnergy.EnergyNameAndNumber} Overview" : "";
+        public string OverviewLabel => MainEnergy != null ? $"{MainEnergy.ElementNameAndNumber} Overview" : "";
 
         [ScriptIgnore]
-        public string EnergySexualityLabel => MainEnergy != null ? $"{MainEnergy.EnergyNameAndNumber} {Dictionary.Relationships}" : "";
+        public string EnergySexualityLabel => MainEnergy != null ? $"{MainEnergy.ElementNameAndNumber} {Dictionary.Relationships}" : "";
 
         [ScriptIgnore]
         public string SexualityRelationTypeDetailsStraight => GetSexualityGenderDescription();

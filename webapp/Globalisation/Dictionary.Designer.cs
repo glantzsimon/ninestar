@@ -5383,7 +5383,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Travelling in this direction tends to bring unexpected kinds of misfortune, hence the image of a sword coming at you in the darkness..
+        ///   Looks up a localized string similar to Avoid travelling {Direction}. Travelling in this direction could very well bring unexpected kinds of misfortune, hence the image of a sword coming at you in the darkness. If you must travel {Direction} then at the very least, avoid travelling long distances or for a long period of time, if possible. Short distances and duration shouldn&apos;t pose much of a problem..
         /// </summary>
         public static string DarkSwordKillingDescription {
             get {
@@ -5618,6 +5618,15 @@ namespace K9.Globalisation {
         public static string Diplomat {
             get {
                 return ResourceManager.GetString("Diplomat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hover over any of the lines to display a tooltip with more information..
+        /// </summary>
+        public static string DirectionsInstructions {
+            get {
+                return ResourceManager.GetString("DirectionsInstructions", resourceCulture);
             }
         }
         
@@ -7271,7 +7280,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Travelling in this direction will tend to bring some obvious difficulty or misfortune, such as an accident, sickness, financial difficulty, failure, etc..
+        ///   Looks up a localized string similar to Avoid travelling {Direction}. Travelling in this direction could very well bring some obvious difficulty or misfortune, such as an accident, sickness, financial difficulty, failure, etc. If you must travel {Direction} then at the very least, avoid travelling long distances or for a long period of time, if possible. Short distances and duration shouldn&apos;t pose much of a problem..
         /// </summary>
         public static string FiveYellowKillingDescription {
             get {
@@ -14016,7 +14025,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Travelling in this direction tends to lead to problems or difficulties that are caused directly by the person themselves..
+        ///   Looks up a localized string similar to Avoid travelling {Direction}. Travelling in this direction could easily lead to problems or difficulties that are caused directly by the person themselves. If you must travel {Direction} then at the very least, avoid travelling long distances or for a long period of time, if possible. Short distances and duration shouldn&apos;t pose much of a problem..
         /// </summary>
         public static string SelfLifeKillingDescription {
             get {
@@ -15633,7 +15642,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Travelling in this direction tends to lead to problems or difficulties that are caused by others..
+        ///   Looks up a localized string similar to Avoid travelling {Direction}. Travelling in this direction could lead to problems or difficulties caused by others. If you must travel {Direction} then at the very least, avoid travelling long distances or for a long period of time, if possible. Short distances and duration shouldn&apos;t pose much of a problem..
         /// </summary>
         public static string TargetKillingDescription {
             get {

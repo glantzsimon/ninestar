@@ -12,6 +12,8 @@
     var isUnlimited = membership != null && membership.IsUnlimited() || K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin();
     var displayPreference = K9.WebApplication.Helpers.SessionHelper.GetEnergyDefaultDisplay();
     var magicStyle = displayPreference == (int)EEnergyDisplay.Graphical ? "display: none;" : "";
+    var showDirections = displayPreference == (int)EEnergyDisplay.Graphical && K9.WebApplication.Helpers.SessionHelper.GetShowDirections() ? "" :
+    "display: none;";
 }
 
 @if (isUnlimited)
@@ -25,6 +27,9 @@
         </div>
         <div class="col-sm-4 col-xs-12 padding-0 show-directions-container" style="@magicStyle">
             @Html.BootstrapEditorFor(e => e.ShowDirections)
+            <div id="directions-instructions" class="magic-tooltip" style="@showDirections">
+                @Dictionary.DirectionsInstructions
+            </div>
         </div>
     </div>
 }

@@ -20,7 +20,7 @@
 <div class="graphical-display" style="@graphicalStyle">
     <div class="ninestar-summary-container margin-3">
         <h3 class="margin-bottom-0 padding-bottom-0 margin-top-2">@label</h3>
-        <p class="margin-bottom-2">@Model.EnergyName</p>
+        <p class="margin-bottom-2">@Model.ElementNameAndNumber</p>
         <div class="energy-image-container">
             <img loading="lazy" title="@Model.SeasonDescription" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @Model.SeasonDescription" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(Model.Energy.ToString().ToLower()).png" />
         </div>

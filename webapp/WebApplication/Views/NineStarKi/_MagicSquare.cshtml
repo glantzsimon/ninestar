@@ -1,5 +1,6 @@
 ﻿@using K9.WebApplication.Config
 @using K9.WebApplication.Models
+@using TemplateParser = K9.SharedLibrary.Helpers.TemplateParser
 @model K9.WebApplication.ViewModels.MagicSquareViewModel
 
 @{
@@ -18,6 +19,23 @@
     var active7Class = 8 == Model.PersonalEnergy.EnergyNumber && !numbersMatch ? "active " : "";
     var active8Class = 1 == Model.PersonalEnergy.EnergyNumber && !numbersMatch ? "active " : "";
     var active9Class = 6 == Model.PersonalEnergy.EnergyNumber && !numbersMatch ? "active " : "";
+
+    var fiveYellowKillingDescription = TemplateParser.Parse(directions.FiveYelloKilling.Description, new
+    {
+        Direction = directions.FiveYelloKilling.Direction
+    });
+    var darkSwordKillingDescription = TemplateParser.Parse(directions.DarkSwordKilling.Description, new
+    {
+        Direction = directions.DarkSwordKilling.Direction
+    });
+    var selfLifeKillingDescription = TemplateParser.Parse(directions.SelfLifeKilling.Description, new
+    {
+        Direction = directions.SelfLifeKilling.Direction
+    });
+    var targetKillingDescription = TemplateParser.Parse(directions.TargetKilling.Description, new
+    {
+        Direction = directions.TargetKilling.Direction
+    });
 }
 
 
@@ -34,10 +52,10 @@
         <div class="cell @active9Class number-@magicSquareNumbers[5]" data-index="9">@magicSquareNumbers[5]</div>
 
         <div class="directions-line-overlay" style="@directionsStyle">
-            <div data-tooltip-title="@directions.FiveYelloKilling.Name" data-tooltip="@directions.FiveYelloKilling.Description" class="line five-yellow-killing to-@directions.FiveYelloKilling.Direction"></div>
-            <div data-tooltip-title="@directions.DarkSwordKilling.Name" data-tooltip="@directions.DarkSwordKilling.Description" class="line dark-sword-killing to-@directions.DarkSwordKilling.Direction"></div>
-            <div data-tooltip-title="@directions.SelfLifeKilling.Name" data-tooltip="@directions.SelfLifeKilling.Description" class="line self-life-killing to-@directions.SelfLifeKilling.Direction"></div>
-            <div data-tooltip-title="@directions.TargetKilling.Name" data-tooltip="@directions.TargetKilling.Description" class="line target-killing to-@directions.TargetKilling.Direction"></div>
+            <div data-tooltip-title="@directions.FiveYelloKilling.Name" data-tooltip="@fiveYellowKillingDescription" class="line five-yellow-killing to-@directions.FiveYelloKilling.Direction"></div>
+            <div data-tooltip-title="@directions.DarkSwordKilling.Name" data-tooltip="@darkSwordKillingDescription" class="line dark-sword-killing to-@directions.DarkSwordKilling.Direction"></div>
+            <div data-tooltip-title="@directions.SelfLifeKilling.Name" data-tooltip="@selfLifeKillingDescription" class="line self-life-killing to-@directions.SelfLifeKilling.Direction"></div>
+            <div data-tooltip-title="@directions.TargetKilling.Name" data-tooltip="@targetKillingDescription" class="line target-killing to-@directions.TargetKilling.Direction"></div>
         </div>
     </div>
 </div>

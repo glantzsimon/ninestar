@@ -726,7 +726,7 @@ namespace K9.WebApplication.Models
         [ScriptIgnore] public ENineStarKiEnergyType EnergyType { get; }
         [ScriptIgnore] public ENineStarKiEnergyCycleType EnergyCycleType { get; set; }
         [ScriptIgnore] public string EnergyLowerCase => Energy.ToString().ToLower();
-        [ScriptIgnore] public string EnergyNameAndNumber => $"{EnergyNumber} {ElementName}";
+        [ScriptIgnore] public string ElementNameAndNumber => $"{EnergyNumber} {ElementName}";
         [ScriptIgnore] public string EnergyNameNumberAndElement => ElementName == EnergyName ? $"{EnergyNumber} {ElementName}" : $"{EnergyNumber} {ElementName} - {EnergyName}";
         [ScriptIgnore] public string EnergyTitle => $"{EnergyNumber} {ElementName} / {EnergyName} - {DescriptiveTitle}";
         [ScriptIgnore] public string DescriptiveTitle => $"The {MetaData.GetDescriptiveTitle()}";

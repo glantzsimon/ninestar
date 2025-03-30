@@ -4343,25 +4343,25 @@
     <value>Dark Sword Killing ("An Ken Satsu")</value>
   </data>
   <data name="DarkSwordKillingDescription" xml:space="preserve">
-    <value>Travelling in this direction tends to bring unexpected kinds of misfortune, hence the image of a sword coming at you in the darkness.</value>
+    <value>Avoid travelling {Direction}. Travelling in this direction could very well bring unexpected kinds of misfortune, hence the image of a sword coming at you in the darkness. If you must travel {Direction} then at the very least, avoid travelling long distances or for a long period of time, if possible. Short distances and duration shouldn't pose much of a problem.</value>
   </data>
   <data name="FiveYellowKilling" xml:space="preserve">
     <value>Five Yellow Killing ("Go O Satsu")</value>
   </data>
   <data name="FiveYellowKillingDescription" xml:space="preserve">
-    <value>Travelling in this direction will tend to bring some obvious difficulty or misfortune, such as an accident, sickness, financial difficulty, failure, etc.</value>
+    <value>Avoid travelling {Direction}. Travelling in this direction could very well bring some obvious difficulty or misfortune, such as an accident, sickness, financial difficulty, failure, etc. If you must travel {Direction} then at the very least, avoid travelling long distances or for a long period of time, if possible. Short distances and duration shouldn't pose much of a problem.</value>
   </data>
   <data name="SelfLifeKilling" xml:space="preserve">
     <value>Self Life Killing ("Hon Mei Satsu")</value>
   </data>
   <data name="SelfLifeKillingDescription" xml:space="preserve">
-    <value>Travelling in this direction tends to lead to problems or difficulties that are caused directly by the person themselves.</value>
+    <value>Avoid travelling {Direction}. Travelling in this direction could easily lead to problems or difficulties that are caused directly by the person themselves. If you must travel {Direction} then at the very least, avoid travelling long distances or for a long period of time, if possible. Short distances and duration shouldn't pose much of a problem.</value>
   </data>
   <data name="TargetKilling" xml:space="preserve">
     <value>Target Killing ("Teki Satsu")</value>
   </data>
   <data name="TargetKillingDescription" xml:space="preserve">
-    <value>Travelling in this direction tends to lead to problems or difficulties that are caused by others.</value>
+    <value>Avoid travelling {Direction}. Travelling in this direction could lead to problems or difficulties caused by others. If you must travel {Direction} then at the very least, avoid travelling long distances or for a long period of time, if possible. Short distances and duration shouldn't pose much of a problem.</value>
   </data>
   <data name="TimeZone" xml:space="preserve">
     <value>Time Zone</value>
@@ -4998,6 +4998,9 @@
   </data>
   <data name="Calendar" xml:space="preserve">
     <value>Calendar</value>
+  </data>
+  <data name="DirectionsInstructions" xml:space="preserve">
+    <value>Hover over any of the lines to display a tooltip with more information.</value>
   </data>
   <data name="EnergyDisplayLabel" xml:space="preserve">
     <value>Display</value>

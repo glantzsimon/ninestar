@@ -350,8 +350,6 @@ a > .ninestar-summary-container:hover {
   font-size: 0.9rem;
   z-index: 1000;
   pointer-events: none;
-  opacity: 1;
-  transition: opacity 0.2s ease;
   -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.7);
   -moz-box-shadow: 0 0 7px rgba(0, 0, 0, 0.7);
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.7);

@@ -14,11 +14,11 @@
 
 <div class="ninestar-summary-container margin-3">
     <h3 class="margin-bottom-0 padding-bottom-0 margin-top-2">@label</h3>
-    <p class="margin-bottom-2">@Model.Energy1.EnergyName</p>
+    <p class="margin-bottom-2">@Model.Energy1.ElementNameAndNumber</p>
     <div class="energy-image-container">
         <img loading="lazy" title="@Model.Energy1.SeasonDescription" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @Model.Energy1.SeasonDescription" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(Model.Energy1.Energy.ToString().ToLower()).png" />
     </div>
-    <p class="margin-bottom-2">@Model.Energy2.EnergyName</p>
+    <p class="margin-bottom-2">@Model.Energy2.ElementNameAndNumber</p>
     <div class="energy-image-container">
         <img loading="lazy" title="@Model.Energy2.SeasonDescription" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @Model.Energy2.SeasonDescription" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(Model.Energy2.Energy.ToString().ToLower()).png" />
     </div>

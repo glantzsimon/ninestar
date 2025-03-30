@@ -111,7 +111,7 @@ namespace K9.WebApplication.Controllers
             return new BrowserInfo(Request.Headers["User-Agent"]).DeviceType;
         }
         
-        public JsonResult UpdateUserPrefernce(string key, object value)
+        public JsonResult UpdateUserPrefernceInt(string key, int value)
         {
             try
             {

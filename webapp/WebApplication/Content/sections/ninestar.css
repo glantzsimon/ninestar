@@ -52,20 +52,21 @@ a > .ninestar-summary-container:hover {
 .small-energy img {
   width: 38%;
 }
-.small-energy .magic-square-container {
-  font-size: 38%;
+.small-energy div.magic-square {
+  width: 68%;
+  font-size: 0.5 em;
 }
 .medium-energy img {
   width: 62%;
 }
-.medium-energy .magic-square-container {
-  font-size: 62%;
+.medium-energy div.magic-square {
+  width: 88%;
 }
 .very-small-energy img {
   width: 24%;
 }
-.very-small-energy .magic-square-container {
-  font-size: 24%;
+.very-small-energy div.magic-square {
+  width: 48%;
 }
 .profile-warning {
   color: #a94442;

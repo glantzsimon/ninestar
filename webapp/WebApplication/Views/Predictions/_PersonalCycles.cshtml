@@ -25,99 +25,35 @@
 
 <div class="row">
     <div class="col-sm-4 col-sm-offset-4 very-small-energy">
-        <div class="graphical-display">
-            @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Epoch)
-        </div>
-        <div class="magic-square-display">
-            @Html.Partial("../NineStarKi/_MagicSquare", Model.PersonalHousesOccupiedEnergies.Epoch)
-        </div>
+        @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Epoch)
     </div>
 </div>
 <div class="row">
     <div class="col-sm-4 col-sm-offset-4 very-small-energy">
-        <div class="graphical-display">
-            @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Generation)
-        </div>
-        <div class="magic-square-display">
-            @Html.Partial("../NineStarKi/_MagicSquare", Model.PersonalHousesOccupiedEnergies.Generation)
-        </div>
+        @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Generation)
     </div>
 </div>
 <div class="row">
     <div class="col-sm-4 medium-energy">
-        <div class="graphical-display">
-            @Html.Partial("_CycleTitle", Model.MonthlyCycleEnergy)
-        </div>
-        <div class="magic-square-display">
-            @Html.Partial("../NineStarKi/_MagicSquare", Model.MonthlyCycleEnergy)
-        </div>
+        @Html.Partial("_CycleTitle", Model.MonthlyCycleEnergy)
     </div>
     <div class="col-sm-4">
-        <div class="graphical-display">
-            @Html.Partial("_CycleTitle", Model.YearlyCycleEnergy)
-        </div>
-        <div class="magic-square-display">
-            @Html.Partial("../NineStarKi/_MagicSquare", Model.YearlyCycleEnergy)
-        </div>
+        @Html.Partial("_CycleTitle", Model.YearlyCycleEnergy)
     </div>
     <div class="col-sm-4 small-energy">
         @if (Model.PersonalHousesOccupiedEnergies.Day.EnergyNumber == Model.PersonalHousesOccupiedEnergies.Day2.EnergyNumber)
         {
-            <div class="graphical-display">
-                @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Day)
-            </div>
-            <div class="magic-square-display">
-                @Html.Partial("../NineStarKi/_MagicSquare", Model.PersonalHousesOccupiedEnergies.Day)
-            </div>
+            @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Day)
         }
         else
         {
-            <div class="graphical-display">
-                @Html.Partial("_CycleSplitTitle", (Model.PersonalHousesOccupiedEnergies.Day, Model.PersonalHousesOccupiedEnergies.Day2))
-            </div>
-            <div class="magic-square-display">
-                @Html.Partial("../NineStarKi/_MagicSquare", Model.PersonalHousesOccupiedEnergies.Day2)
-            </div>
+            @Html.Partial("_CycleSplitTitle", (Model.PersonalHousesOccupiedEnergies.Day, Model.PersonalHousesOccupiedEnergies.Day2))
         }
     </div>
 </div>
 <div class="row">
     <div class="col-sm-4 col-sm-offset-4 very-small-energy">
-        <div class="graphical-display">
-            @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Hour)
-        </div>
-        <div class="magic-square-display">
-            @Html.Partial("../NineStarKi/_MagicSquare", Model.PersonalHousesOccupiedEnergies.Hour)
-        </div>
+        @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Hour)
     </div>
 </div>
 
-<script>
-
-    $(function () {
-        $("#EnergyDisplay").change(function (e) {
-            let displayValue = $(this).val();
-            if (displayValue === '0') {
-                $(".magic-square-display").fadeOut(200, function () {
-                    $(".graphical-display").fadeIn(200);
-                });
-            } else {
-                $(".graphical-display").fadeOut(200, function () {
-                    $(".magic-square-display").fadeIn(200);
-                });
-            }
-
-            ajaxcontroller().send('@Url.Action("UpdateUserPrefernce")',
-                {
-                    key: '@SessionConstants.DefaultEnergyDisplay',
-                    value: displayValue
-                }, "GET").done(
-                function (result) {
-                    if (!result.data.success) {
-                        console.log(result.data.error)
-                    }
-                });
-        });
-    })
-
-</script>

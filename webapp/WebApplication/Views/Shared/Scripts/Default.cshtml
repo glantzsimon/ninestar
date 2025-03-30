@@ -177,6 +177,10 @@
 
 		buttonBehaviours().init();
 
+        ninestarki().init({
+            updatePreferencesUrl: '@Url.Action("UpdateUserPrefernceInt")'
+        });
+
 		fadePageIn({
 		    isFirstLoad: @SessionHelper.GetBoolValue("SessionConstants.IsFirstLoad").ToString().ToLower()
 		}).init();

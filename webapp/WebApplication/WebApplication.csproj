@@ -1047,6 +1047,7 @@
     <Content Include="Scripts\ajax\ajaxcontroller.js" />
     <Content Include="Scripts\imageSwitcher\backgroundSwitcher.js" />
     <Content Include="Scripts\imageSwitcher\responsiveslides.js" />
+    <Content Include="Scripts\k9\ninestarki.js" />
     <Content Include="Scripts\k9\datasetsHelper.js" />
     <Content Include="Scripts\k9\buttonBehaviours.js" />
     <Content Include="Scripts\k9\bootstrapControls.js" />

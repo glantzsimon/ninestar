@@ -150,14 +150,14 @@ a > .ninestar-summary-container:hover {
   margin-top: 5px;
 }
 .magic-square-container {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
 }
-.magic-square {
+.magic-square-container .magic-square {
+  position: relative;
   width: 100%;
   aspect-ratio: 1;
   display: grid;
@@ -169,7 +169,7 @@ a > .ninestar-summary-container:hover {
   -moz-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
 }
-.magic-square .cell {
+.magic-square-container .magic-square .cell {
   border-bottom: 1px solid #dddddd;
   border-right: 1px solid #dddddd;
   display: flex;
@@ -181,7 +181,7 @@ a > .ninestar-summary-container:hover {
   overflow: hidden;
   padding-bottom: 2px;
 }
-.magic-square .cell.active {
+.magic-square-container .magic-square .cell.active {
   border: 0;
   font-size: calc(2rem * 1.5);
   font-weight: bold;
@@ -190,39 +190,122 @@ a > .ninestar-summary-container:hover {
   position: relative;
   z-index: 2 !important;
 }
-.magic-square .cell.number-1 {
+.magic-square-container .magic-square .cell.number-1 {
   background-color: white;
   color: black;
 }
-.magic-square .cell.number-2 {
+.magic-square-container .magic-square .cell.number-2 {
   background-color: black;
   color: #cd853f;
 }
-.magic-square .cell.number-3 {
+.magic-square-container .magic-square .cell.number-3 {
   background-color: #4cff00;
   color: #8b4513;
 }
-.magic-square .cell.number-4 {
+.magic-square-container .magic-square .cell.number-4 {
   background-color: #307813;
   color: white;
 }
-.magic-square .cell.number-5 {
+.magic-square-container .magic-square .cell.number-5 {
   background-color: yellow;
   color: #8b4513;
 }
-.magic-square .cell.number-6 {
+.magic-square-container .magic-square .cell.number-6 {
   background-color: white;
   color: red;
 }
-.magic-square .cell.number-7 {
+.magic-square-container .magic-square .cell.number-7 {
   background-color: red;
   color: white;
 }
-.magic-square .cell.number-8 {
+.magic-square-container .magic-square .cell.number-8 {
   background-color: white;
   color: #8b4513;
 }
-.magic-square .cell.number-9 {
+.magic-square-container .magic-square .cell.number-9 {
   background-color: #c321dc;
   color: white;
+}
+.magic-square-container .magic-square .directions-line-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+  filter: grayscale(45%);
+}
+.magic-square-container .magic-square .directions-line-overlay .line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center top;
+  transform: translate(-50%, 0);
+  width: 2px;
+  height: 50%;
+  /* adjust for corners vs edges */
+}
+.magic-square-container .magic-square .directions-line-overlay .line.five-yellow-killing {
+  background: yellow;
+}
+.magic-square-container .magic-square .directions-line-overlay .line.five-yellow-killing.to-Centre {
+  background: rgba(255, 255, 0, 0.22);
+}
+.magic-square-container .magic-square .directions-line-overlay .line.dark-sword-killing {
+  background: #333;
+}
+.magic-square-container .magic-square .directions-line-overlay .line.dark-sword-killing.to-Centre {
+  background: rgba(51, 51, 51, 0.22);
+}
+.magic-square-container .magic-square .directions-line-overlay .line.self-life-killing {
+  background: red;
+}
+.magic-square-container .magic-square .directions-line-overlay .line.self-life-killing.to-Centre {
+  background: rgba(255, 0, 0, 0.22);
+}
+.magic-square-container .magic-square .directions-line-overlay .line.target-killing {
+  background: blue;
+}
+.magic-square-container .magic-square .directions-line-overlay .line.target-killing.to-Centre {
+  background: rgba(0, 0, 255, 0.22);
+}
+.magic-square-container .magic-square .directions-line-overlay .to-North {
+  transform: translate(-50%, 0) rotate(0deg);
+}
+.magic-square-container .magic-square .directions-line-overlay .to-South {
+  transform: translate(-50%, 0) rotate(180deg);
+}
+.magic-square-container .magic-square .directions-line-overlay .to-East {
+  transform: translate(-50%, 0) rotate(90deg);
+}
+.magic-square-container .magic-square .directions-line-overlay .to-West {
+  transform: translate(-50%, 0) rotate(-90deg);
+}
+.magic-square-container .magic-square .directions-line-overlay .to-NorthEast {
+  height: 70.7%;
+  transform: translate(-50%, 0) rotate(45deg);
+}
+.magic-square-container .magic-square .directions-line-overlay .to-SouthEast {
+  height: 70.7%;
+  transform: translate(-50%, 0) rotate(135deg);
+}
+.magic-square-container .magic-square .directions-line-overlay .to-SouthWest {
+  height: 70.7%;
+  transform: translate(-50%, 0) rotate(225deg);
+}
+.magic-square-container .magic-square .directions-line-overlay .to-NorthWest {
+  height: 70.7%;
+  transform: translate(-50%, 0) rotate(315deg);
+}
+.magic-square-container .magic-square .directions-line-overlay .to-Centre {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 81px;
+  height: 81px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid red;
+  background-color: rgba(255, 255, 255, 0.22);
 }

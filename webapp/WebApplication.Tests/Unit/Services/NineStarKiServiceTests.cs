@@ -354,8 +354,8 @@ namespace K9.WebApplication.Tests.Unit.Services
             Assert.Equal(globalMonthlyCycleEnergy, ninestar.GlobalCycleEnergies.Month.Energy);
             Assert.Equal(personalYearlyCycleEnergy, ninestar.PersonalHousesOccupiedEnergies.Year.Energy);
             Assert.Equal(personalMonthlyCycleEnergy, ninestar.PersonalHousesOccupiedEnergies.Month.Energy);
-            Assert.Equal(coreEarthYearlyCycleEnergy, ninestar.GlobalCycleEnergies.Year.HouseOfFive.Energy);
-            Assert.Equal(coreEarthMonthlyCycleEnergy, ninestar.GlobalCycleEnergies.Month.HouseOfFive.Energy);
+            Assert.Equal(coreEarthYearlyCycleEnergy, ninestar.GlobalCycleEnergies.Year.GetHouseOfFive().Energy);
+            Assert.Equal(coreEarthMonthlyCycleEnergy, ninestar.GlobalCycleEnergies.Month.GetHouseOfFive().Energy);
         }
 
         [Theory]

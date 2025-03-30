@@ -4996,13 +4996,22 @@
   <data name="YearView" xml:space="preserve">
     <value>Year View</value>
   </data>
+  <data name="Calendar" xml:space="preserve">
+    <value>Calendar</value>
+  </data>
   <data name="EnergyDisplayLabel" xml:space="preserve">
     <value>Display</value>
   </data>
   <data name="Graphical" xml:space="preserve">
     <value>Graphical Display</value>
   </data>
+  <data name="HousesYouCurrentlyOccupy" xml:space="preserve">
+    <value>Houses You Currently Occupy</value>
+  </data>
   <data name="MagicSquare" xml:space="preserve">
     <value>Magic Square</value>
+  </data>
+  <data name="PlannerTitle" xml:space="preserve">
+    <value>Calendar of Global Ki &amp; Occupied Houses</value>
   </data>
 </root>

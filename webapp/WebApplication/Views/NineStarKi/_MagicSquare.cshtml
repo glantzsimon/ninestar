@@ -3,6 +3,7 @@
 @model K9.WebApplication.ViewModels.MagicSquareViewModel
 
 @{
+    var directions = Model.GetDirections();
     var magicSquareNumbers = Model.GlobalEnergy.GetMagicSquareNumbers();
     var numbersMatch = Model.GlobalEnergy.EnergyNumber == Model.PersonalEnergy.EnergyNumber;
 
@@ -29,12 +30,16 @@
         <div class="cell @active7Class number-@magicSquareNumbers[7]" data-index="7">@magicSquareNumbers[7]</div>
         <div class="cell @active8Class number-@magicSquareNumbers[0]" data-index="8">@magicSquareNumbers[0]</div>
         <div class="cell @active9Class number-@magicSquareNumbers[5]" data-index="9">@magicSquareNumbers[5]</div>
+        
+        <div class="directions-line-overlay">
+            <div class="line five-yellow-killing to-@directions.FiveYelloKilling.Direction"></div>
+            <div class="line dark-sword-killing to-@directions.DarkSwordKilling.Direction"></div>
+            <div class="line self-life-killing to-@directions.SelfLifeKilling.Direction"></div>
+            <div class="line target-killing to-@directions.TargetKilling.Direction"></div>
+        </div>
     </div>
     @*<div data-toggle="tooltip" data-placement="top" title="@Dictionary.GenderSelectionTooltip">
 
         </div>*@
-    <div class="directions-line-overlay five-yellow-killing bad"></div>
-    <div class="directions-line-overlay dark-sword-killing bad"></div>
-    <div class="directions-line-overlay self-life-killing bad"></div>
-    <div class="directions-line-overlay target-killing bad"></div>
+    
 </div>

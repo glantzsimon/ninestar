@@ -3661,6 +3661,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Calendar.
+        /// </summary>
+        public static string Calendar {
+            get {
+                return ResourceManager.GetString("Calendar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sorry, you cannot upgrade to the selected membership. .
         /// </summary>
         public static string CannotSwitchMembershipError {
@@ -8301,6 +8310,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Houses You Currently Occupy.
+        /// </summary>
+        public static string HousesYouCurrentlyOccupy {
+            get {
+                return ResourceManager.GetString("HousesYouCurrentlyOccupy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    &lt;strong&gt;
         ///        These are the instructions for removing all of your data.
@@ -12779,6 +12797,15 @@ namespace K9.Globalisation {
         public static string PlannerInstructions {
             get {
                 return ResourceManager.GetString("PlannerInstructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Calendar of Global Ki &amp; Occupied Houses.
+        /// </summary>
+        public static string PlannerTitle {
+            get {
+                return ResourceManager.GetString("PlannerTitle", resourceCulture);
             }
         }
         

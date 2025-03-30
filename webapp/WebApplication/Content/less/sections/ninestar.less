@@ -203,91 +203,191 @@ a > .ninestar-summary-container {
 }
 
 .magic-square-container {
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     width: 100%;
-}
 
-.magic-square {
-    width: 100%;
-    aspect-ratio: 1;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    outline: 1px solid @border-grey;
-    box-sizing: border-box;
-    -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+    .magic-square {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        outline: 1px solid @border-grey;
+        box-sizing: border-box;
+        -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
 
-    .cell {
-        border-bottom: 1px solid @border-grey;
-        border-right: 1px solid @border-grey;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 2rem;
-        line-height: unset;
-        filter: grayscale(45%);
-        overflow: hidden;
-        padding-bottom: 2px;
+        .cell {
+            border-bottom: 1px solid @border-grey;
+            border-right: 1px solid @border-grey;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            line-height: unset;
+            filter: grayscale(45%);
+            overflow: hidden;
+            padding-bottom: 2px;
 
-        &.active {
-            border: 0;
-            font-size: calc(2rem * 1.5);
-            font-weight: bold;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.5);
-            transform: scale(1.11);            
-            position: relative;
-            z-index: 2 !important;
+            &.active {
+                border: 0;
+                font-size: calc(2rem * 1.5);
+                font-weight: bold;
+                box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+                transform: scale(1.11);
+                position: relative;
+                z-index: 2 !important;
+            }
+
+            &.number-1 {
+                background-color: white;
+                color: black;
+            }
+
+            &.number-2 {
+                background-color: black;
+                color: @peru-brown;
+            }
+
+            &.number-3 {
+                background-color: #4cff00;
+                color: @saddle-brown;
+            }
+
+            &.number-4 {
+                background-color: #307813;
+                color: white;
+            }
+
+            &.number-5 {
+                background-color: yellow;
+                color: @saddle-brown;
+            }
+
+            &.number-6 {
+                background-color: white;
+                color: red;
+            }
+
+            &.number-7 {
+                background-color: red;
+                color: white;
+            }
+
+            &.number-8 {
+                background-color: white;
+                color: @saddle-brown;
+            }
+
+            &.number-9 {
+                background-color: #c321dc;
+                color: white;
+            }
         }
 
-        &.number-1 {
-            background-color: white;
-            color: black;
-        }
+        .directions-line-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 3;
+            filter: grayscale(45%);
 
-        &.number-2 {
-            background-color: black;
-            color: @peru-brown;
-        }
+            .line {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform-origin: center top;
+                transform: translate(-50%, 0);
+                width: 2px;
+                height: 50%; /* adjust for corners vs edges */
+                &.five-yellow-killing {
+                    background: yellow;
 
-        &.number-3 {
-            background-color: #4cff00;
-            color: @saddle-brown;
-        }
+                    &.to-Centre {
+                        background: rgba(255, 255, 0, 0.22);
+                    }
+                }
 
-        &.number-4 {
-            background-color: #307813;
-            color: white;
-        }
+                &.dark-sword-killing {
+                    background: #333;
 
-        &.number-5 {
-            background-color: yellow;
-            color: @saddle-brown;
-        }
+                    &.to-Centre {
+                        background: rgba(51, 51, 51, 0.22);
+                    }
+                }
 
-        &.number-6 {
-            background-color: white;
-            color: red;
-        }
+                &.self-life-killing {
+                    background: red;
 
-        &.number-7 {
-            background-color: red;
-            color: white;
-        }
+                    &.to-Centre {
+                        background: rgba(255, 0, 0, 0.22);
+                    }
+                }
 
-        &.number-8 {
-            background-color: white;
-            color: @saddle-brown;
-        }
+                &.target-killing {
+                    background: blue;
 
-        &.number-9 {
-            background-color: #c321dc;
-            color: white;
+                    &.to-Centre {
+                        background: rgba(0, 0, 255, 0.22);
+                    }
+                }
+            }
+
+            .to-North {
+                transform: translate(-50%, 0) rotate(0deg);
+            }
+
+            .to-South {
+                transform: translate(-50%, 0) rotate(180deg);
+            }
+
+            .to-East {
+                transform: translate(-50%, 0) rotate(90deg);
+            }
+
+            .to-West {
+                transform: translate(-50%, 0) rotate(-90deg);
+            }
+
+            .to-NorthEast {
+                height: 70.7%;
+                transform: translate(-50%, 0) rotate(45deg);
+            }
+
+            .to-SouthEast {
+                height: 70.7%;
+                transform: translate(-50%, 0) rotate(135deg);
+            }
+
+            .to-SouthWest {
+                height: 70.7%;
+                transform: translate(-50%, 0) rotate(225deg);
+            }
+
+            .to-NorthWest {
+                height: 70.7%;
+                transform: translate(-50%, 0) rotate(315deg);
+            }
+
+            .to-Centre {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 81px;
+                height: 81px;
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+                border: 2px solid red;
+                background-color: rgba(255, 255, 255, 0.22);
+            }
         }
     }
 }

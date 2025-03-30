@@ -47,7 +47,7 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyDisplayLabel)]
         public EEnergyDisplay EnergyDisplay { get; set; } = (EEnergyDisplay)SessionHelper.GetEnergyDefaultDisplay();
 
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnergyDisplayLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ShowDirectionsLabel)]
         public bool ShowDirections { get; set; }
 
         [ScriptIgnore]
@@ -61,6 +61,7 @@ namespace K9.WebApplication.Models
             CalculationMethod = (ECalculationMethod)SessionHelper.GetCurrentUserCalculationMethod();
             InvertDailyAndHourlyKiForSouthernHemisphere = SessionHelper.GetInvertDailyAndHourlyKiForSouthernHemisphere();
             InvertDailyAndHourlyCycleKiForSouthernHemisphere = SessionHelper.GetInvertDailyAndHourlyCycleKiForSouthernHemisphere();
+            ShowDirections = SessionHelper.GetInvertDailyAndHourlyCycleKiForSouthernHemisphere();
         }
 
         public NineStarKiModel()

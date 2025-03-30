@@ -117,6 +117,11 @@ namespace K9.WebApplication.Helpers
             return GetBoolValue(Constants.SessionConstants.InvertDailyAndHourlyCycleKiForSouthernHemisphere);
         }
 
+        public static bool GetShowDirections()
+        {
+            return GetBoolValue(Constants.SessionConstants.ShowDirections);
+        }
+
         public static void SetInvertDailyAndHourlyCycleKiForSouthernHemisphere(bool value)
         {
             SetValue(Constants.SessionConstants.InvertDailyAndHourlyCycleKiForSouthernHemisphere, value);

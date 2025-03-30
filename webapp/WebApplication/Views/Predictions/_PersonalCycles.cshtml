@@ -10,6 +10,8 @@
 @{
     var membership = this.GetActiveUserMembership();
     var isUnlimited = membership != null && membership.IsUnlimited() || K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin();
+    var displayPreference = K9.WebApplication.Helpers.SessionHelper.GetEnergyDefaultDisplay();
+    var magicStyle = displayPreference == (int)EEnergyDisplay.Graphical ? "display: none;" : "";
 }
 
 @if (isUnlimited)
@@ -21,7 +23,7 @@
                 Label = ""
             })
         </div>
-        <div class="col-sm-4 col-sm-offset-4 col-xs-12 col-xs-offset-0 padding-0">
+        <div class="col-sm-4 col-xs-12 padding-0 show-directions-container" style="@magicStyle">
             @Html.BootstrapEditorFor(e => e.ShowDirections)
         </div>
     </div>

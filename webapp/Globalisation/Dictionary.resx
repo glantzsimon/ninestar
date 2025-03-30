@@ -5012,7 +5012,7 @@
     <value>Houses You Currently Occupy</value>
   </data>
   <data name="InAnyDirection" xml:space="preserve">
-    <value>In any direction, as 5 is at the centre.</value>
+    <value>In any direction, as 5 is at the centre</value>
   </data>
   <data name="MagicSquare" xml:space="preserve">
     <value>Magic Square</value>

@@ -8440,7 +8440,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to In any direction, as 5 is at the centre..
+        ///   Looks up a localized string similar to In any direction, as 5 is at the centre.
         /// </summary>
         public static string InAnyDirection {
             get {

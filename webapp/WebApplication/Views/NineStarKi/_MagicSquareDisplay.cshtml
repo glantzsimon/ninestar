@@ -1,0 +1,28 @@
+﻿@using K9.WebApplication.Config
+@using K9.WebApplication.Enums
+@using K9.WebApplication.Models
+@model K9.WebApplication.ViewModels.MagicSquareViewModel
+
+@{
+    var label = Model.HouseOccupiedEnergy.EnergyType == ENineStarKiEnergyType.MainEnergy ? Model.HouseOccupiedEnergy.AdultEnergyLabel
+        : Model.HouseOccupiedEnergy.EnergyType == ENineStarKiEnergyType.CharacterEnergy ? Model.HouseOccupiedEnergy.CharacteEnergyLabel
+            : Model.HouseOccupiedEnergy.EnergyType == ENineStarKiEnergyType.SurfaceEnergy ? Dictionary.SurfaceEnergyShortLabel
+                : Model.HouseOccupiedEnergy.EnergyType == ENineStarKiEnergyType.DailyEnergy ? Dictionary.DayStarLabel
+                    : Model.HouseOccupiedEnergy.EnergyType == ENineStarKiEnergyType.GenerationalEnergy ? Dictionary.GenerationalEnergyLabel
+                        : Model.HouseOccupiedEnergy.EnergyType == ENineStarKiEnergyType.EpochEnergy ? Dictionary.EpochEnergyLabel
+                            : string.Empty;
+
+    var magicSquareNumbers = Model.GlobalEnergy.GetMagicSquareNumbers();
+
+    var displayPreference = K9.WebApplication.Helpers.SessionHelper.GetEnergyDefaultDisplay();
+    var magicStyle = displayPreference == (int)EEnergyDisplay.Graphical ? "display: none" : "";
+}
+
+
+<div class="magic-square-display" style="@magicStyle">
+    <div class="ninestar-summary-container margin-3">
+        <h3 class="margin-bottom-0 padding-bottom-0 margin-top-2">@label</h3>
+        <p class="margin-bottom-2">@Model.HouseOccupiedEnergy.EnergyName</p>
+        @Html.Partial("_MagicSquare", Model)
+    </div>
+</div>

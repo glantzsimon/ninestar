@@ -15,7 +15,6 @@
 
     var displayPreference = SessionHelper.GetEnergyDefaultDisplay();
     var graphicalStyle = displayPreference == (int)EEnergyDisplay.Graphical ? "" : "display: none";
-    var magicStyle = displayPreference == (int)EEnergyDisplay.Graphical ? "display: none" : "";
 }
 
 <div class="graphical-display" style="@graphicalStyle">
@@ -31,12 +30,5 @@
                 @Model.CycleDescriptiveName
             </p>
         }
-    </div>
-</div>
-<div class="magic-square-display" style="@magicStyle">
-    <div class="ninestar-summary-container margin-3">
-        <h3 class="margin-bottom-0 padding-bottom-0 margin-top-2">@label</h3>
-        <p class="margin-bottom-2">@Model.EnergyName</p>
-        @Html.Partial("../NineStarKi/_MagicSquare", Model)
     </div>
 </div>

@@ -1,5 +1,6 @@
 ﻿@using K9.WebApplication.Enums
 @using K9.WebApplication.Helpers
+@using K9.WebApplication.ViewModels
 @model K9.WebApplication.Models.NineStarKiModel
 
 @{
@@ -23,6 +24,11 @@
     <div class="col-sm-4 col-sm-offset-4 very-small-energy">
         <a href="#" id="epoch-energy">
             @Html.Partial("../NineStarKi/_EnergyTitle", Model.PersonalChartEnergies.Epoch)
+            @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
+            {
+                GlobalEnergy = Model.GlobalCycleEnergies.Epoch,
+                HouseOccupiedEnergy = Model.PersonalHousesOccupiedEnergies.Epoch
+            })
         </a>
     </div>
 </div>
@@ -30,6 +36,11 @@
     <div class="col-sm-4 col-sm-offset-4 very-small-energy">
         <a href="#" id="generation-energy">
             @Html.Partial("../NineStarKi/_EnergyTitle", Model.PersonalChartEnergies.Generation)
+            @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
+            {
+                GlobalEnergy = Model.GlobalCycleEnergies.Generation,
+                HouseOccupiedEnergy = Model.PersonalHousesOccupiedEnergies.Generation
+            })
         </a>
     </div>
 </div>
@@ -37,18 +48,33 @@
     <div class="col-sm-4 medium-energy">
         <a href="#" id="character-energy">
             @Html.Partial("../NineStarKi/_EnergyTitle", Model.CharacterEnergy)
+            @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
+            {
+                GlobalEnergy = Model.GlobalCycleEnergies.Month,
+                HouseOccupiedEnergy = Model.PersonalHousesOccupiedEnergies.Month
+            })
         </a>
     </div>
     <div class="col-sm-4 @childClass">
         <div class="adult-profile">
             <a href="#" id="fundamental-energy">
                 @Html.Partial("../NineStarKi/_EnergyTitle", Model.MainEnergy)
+                @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
+                {
+                    GlobalEnergy = Model.GlobalCycleEnergies.Year,
+                    HouseOccupiedEnergy = Model.PersonalHousesOccupiedEnergies.Year
+                })
             </a>
         </div>
     </div>
     <div class="col-sm-4 small-energy">
         <a href="#" id="surface-energy">
             @Html.Partial("../NineStarKi/_EnergyTitle", Model.SurfaceEnergy)
+            @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
+            {
+                GlobalEnergy = Model.PersonalHousesOccupiedEnergies.Surface,
+                HouseOccupiedEnergy = Model.PersonalHousesOccupiedEnergies.Surface
+            })
         </a>
     </div>
 </div>
@@ -56,6 +82,11 @@
     <div class="col-sm-4 col-sm-offset-4 very-small-energy">
         <a href="#" id="daystar-energy">
             @Html.Partial("../NineStarKi/_EnergyTitle", Model.PersonalChartEnergies.Day)
+            @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
+            {
+                GlobalEnergy = Model.PersonalHousesOccupiedEnergies.Day,
+                HouseOccupiedEnergy = Model.PersonalHousesOccupiedEnergies.Day
+            })
         </a>
     </div>
 </div>

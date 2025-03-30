@@ -1,31 +1,38 @@
 ﻿@using K9.WebApplication.Config
 @using K9.WebApplication.Models
-@model NineStarKiEnergy
+@model K9.WebApplication.ViewModels.MagicSquareViewModel
 
 @{
-    var label = Model.EnergyType == ENineStarKiEnergyType.MainEnergy ? Model.AdultEnergyLabel
-        : Model.EnergyType == ENineStarKiEnergyType.CharacterEnergy ? Model.CharacteEnergyLabel
-            : Model.EnergyType == ENineStarKiEnergyType.SurfaceEnergy ? Dictionary.SurfaceEnergyShortLabel
-                : Model.EnergyType == ENineStarKiEnergyType.DailyEnergy ? Dictionary.DayStarLabel
-                    : Model.EnergyType == ENineStarKiEnergyType.GenerationalEnergy ? Dictionary.GenerationalEnergyLabel
-                        : Model.EnergyType == ENineStarKiEnergyType.EpochEnergy ? Dictionary.EpochEnergyLabel
-                            : string.Empty;
-
-    var magicSquareNumbers = Model.GetMagicSquareNumbers();
+    var magicSquareNumbers = Model.GlobalEnergy.GetMagicSquareNumbers();
+    var active1Class = magicSquareNumbers[3] == Model.HouseOccupiedEnergy.EnergyNumber ? "active " : "";
+    var active2Class = magicSquareNumbers[8] == Model.HouseOccupiedEnergy.EnergyNumber ? "active " : "";
+    var active3Class = magicSquareNumbers[1] == Model.HouseOccupiedEnergy.EnergyNumber ? "active " : "";
+    var active4Class = magicSquareNumbers[2] == Model.HouseOccupiedEnergy.EnergyNumber ? "active " : "";
+    var active5Class = Model.GlobalEnergy.EnergyNumber == Model.HouseOccupiedEnergy.EnergyNumber ? "active " : "";
+    var active6Class = magicSquareNumbers[6] == Model.HouseOccupiedEnergy.EnergyNumber ? "active " : "";
+    var active7Class = magicSquareNumbers[7] == Model.HouseOccupiedEnergy.EnergyNumber ? "active " : "";
+    var active8Class = magicSquareNumbers[0] == Model.HouseOccupiedEnergy.EnergyNumber ? "active " : "";
+    var active9Class = magicSquareNumbers[5] == Model.HouseOccupiedEnergy.EnergyNumber ? "active " : "";
 }
+
 
 <div class="ninestar-summary-container magic-square-container margin-3">
     <div class="magic-square">
-        <div class="cell number-@magicSquareNumbers[3]" data-index="1">@magicSquareNumbers[3]</div>
-        <div class="cell number-@magicSquareNumbers[8]" data-index="2">@magicSquareNumbers[8]</div>
-        <div class="cell number-@magicSquareNumbers[1]" data-index="3">@magicSquareNumbers[1]</div>
-        <div class="cell number-@magicSquareNumbers[2]" data-index="4">@magicSquareNumbers[2]</div>
-        <div class="cell active number-@Model.EnergyNumber" data-index="5">@Model.EnergyNumber</div>
-        <div class="cell number-@magicSquareNumbers[6]" data-index="6">@magicSquareNumbers[6]</div>
-        <div class="cell number-@magicSquareNumbers[7]" data-index="7">@magicSquareNumbers[7]</div>
-        <div class="cell number-@magicSquareNumbers[0]" data-index="8">@magicSquareNumbers[0]</div>
-        <div class="cell number-@magicSquareNumbers[5]" data-index="9">@magicSquareNumbers[5]</div>
+        <div class="cell @active1Class number-@magicSquareNumbers[3]" data-index="1">@magicSquareNumbers[3]</div>
+        <div class="cell @active2Class number-@magicSquareNumbers[8]" data-index="2">@magicSquareNumbers[8]</div>
+        <div class="cell @active3Class number-@magicSquareNumbers[1]" data-index="3">@magicSquareNumbers[1]</div>
+        <div class="cell @active4Class number-@magicSquareNumbers[2]" data-index="4">@magicSquareNumbers[2]</div>
+        <div class="cell @active5Class number-@Model.GlobalEnergy.EnergyNumber" data-index="5">@Model.GlobalEnergy.EnergyNumber</div>
+        <div class="cell @active6Class number-@magicSquareNumbers[6]" data-index="6">@magicSquareNumbers[6]</div>
+        <div class="cell @active7Class number-@magicSquareNumbers[7]" data-index="7">@magicSquareNumbers[7]</div>
+        <div class="cell @active8Class number-@magicSquareNumbers[0]" data-index="8">@magicSquareNumbers[0]</div>
+        <div class="cell @active9Class number-@magicSquareNumbers[5]" data-index="9">@magicSquareNumbers[5]</div>
     </div>
-    <div class="directions-line-overlay good"></div>
-    <div class="directions-line-overlay bad"></div>
+    @*<div data-toggle="tooltip" data-placement="top" title="@Dictionary.GenderSelectionTooltip">
+
+    </div>*@
+    <div class="directions-line-overlay five-yellow-killing bad"></div>
+    <div class="directions-line-overlay dark-sword-killing bad"></div>
+    <div class="directions-line-overlay self-life-killing bad"></div>
+    <div class="directions-line-overlay target-killing bad"></div>
 </div>

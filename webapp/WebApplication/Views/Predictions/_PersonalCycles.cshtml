@@ -3,6 +3,7 @@
 @using K9.WebApplication.Enums
 @using K9.WebApplication.Extensions
 @using K9.WebApplication.Helpers
+@using K9.WebApplication.ViewModels
 @using SessionConstants = K9.WebApplication.Constants.SessionConstants
 @model K9.WebApplication.Models.NineStarKiModel
 
@@ -37,34 +38,69 @@
     <div class="row">
         <div class="col-sm-4 col-sm-offset-4 very-small-energy">
             @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Epoch)
+            @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
+            {
+                GlobalEnergy = Model.GlobalCycleEnergies.Epoch,
+                HouseOccupiedEnergy = Model.PersonalHousesOccupiedEnergies.Epoch
+            })
         </div>
     </div>
     <div class="row">
         <div class="col-sm-4 col-sm-offset-4 very-small-energy">
             @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Generation)
+            @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
+            {
+                GlobalEnergy = Model.GlobalCycleEnergies.Generation,
+                HouseOccupiedEnergy = Model.PersonalHousesOccupiedEnergies.Generation
+            })
         </div>
     </div>
     <div class="row">
         <div class="col-sm-4 medium-energy">
             @Html.Partial("_CycleTitle", Model.MonthlyCycleEnergy)
+            @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
+            {
+                GlobalEnergy = Model.GlobalCycleEnergies.Month,
+                HouseOccupiedEnergy = Model.PersonalHousesOccupiedEnergies.Month
+            })
         </div>
         <div class="col-sm-4">
             @Html.Partial("_CycleTitle", Model.YearlyCycleEnergy)
+            @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
+            {
+                GlobalEnergy = Model.GlobalCycleEnergies.Year,
+                HouseOccupiedEnergy = Model.PersonalHousesOccupiedEnergies.Year
+            })
         </div>
         <div class="col-sm-4 small-energy">
             @if (Model.PersonalHousesOccupiedEnergies.Day.EnergyNumber == Model.PersonalHousesOccupiedEnergies.Day2.EnergyNumber)
             {
                 @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Day)
+                @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
+                {
+                    GlobalEnergy = Model.GlobalCycleEnergies.Day,
+                    HouseOccupiedEnergy = Model.PersonalHousesOccupiedEnergies.Day
+                })
             }
             else
             {
                 @Html.Partial("_CycleSplitTitle", (Model.PersonalHousesOccupiedEnergies.Day, Model.PersonalHousesOccupiedEnergies.Day2))
+                @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
+                {
+                    GlobalEnergy = Model.GlobalCycleEnergies.Day2,
+                    HouseOccupiedEnergy = Model.PersonalHousesOccupiedEnergies.Day2
+                })
             }
         </div>
     </div>
     <div class="row">
         <div class="col-sm-4 col-sm-offset-4 very-small-energy">
             @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Hour)
+            @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
+            {
+                GlobalEnergy = Model.GlobalCycleEnergies.Hour,
+                HouseOccupiedEnergy = Model.PersonalHousesOccupiedEnergies.Hour
+            })
         </div>
     </div>
 }

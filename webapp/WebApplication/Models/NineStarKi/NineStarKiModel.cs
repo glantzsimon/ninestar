@@ -279,9 +279,7 @@ namespace K9.WebApplication.Models
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MonthlyEnergyLabel)]
         public NineStarKiEnergy MonthlyCycleEnergy => PersonalHousesOccupiedEnergies?.Month;
-
-        public NineStarKiEnergy GetHouseOfFive(int energy) => new NineStarKiEnergy((ENineStarKiEnergy)GetNineStarKiNumber(energy + (5 - MainEnergy?.EnergyNumber ?? 0)));
-
+        
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SummaryLabel)]
         public string Summary => GetSummary();
 

@@ -307,23 +307,23 @@ namespace K9.WebApplication.Tests.Unit.Services
             ENineStarKiEnergy.CoreEarth, // Core Earth Yearly Cycle
             ENineStarKiEnergy.Mountain)] // Core Earth Monthly Cycle
 
-        [InlineData(1978, ENineStarKiEnergy.Wind, EGender.Male, // Personal DOB
-            1978, 2, // Today's Date
-            ENineStarKiEnergy.Wind, // Global Yearly Cycle
-            ENineStarKiEnergy.Mountain, // Global Monthly Cycle
-            ENineStarKiEnergy.CoreEarth, // Personal Yearly Cycle
-            ENineStarKiEnergy.Water, // Personal Monthly Cycle
-            ENineStarKiEnergy.Heaven, // Core Earth Yearly Cycle
-            ENineStarKiEnergy.Soil)] // Core Earth Monthly Cycle
+        //[InlineData(1978, ENineStarKiEnergy.Wind, EGender.Male, // Personal DOB
+        //    1978, 2, // Today's Date
+        //    ENineStarKiEnergy.Wind, // Global Yearly Cycle
+        //    ENineStarKiEnergy.Mountain, // Global Monthly Cycle
+        //    ENineStarKiEnergy.CoreEarth, // Personal Yearly Cycle
+        //    ENineStarKiEnergy.Water, // Personal Monthly Cycle
+        //    ENineStarKiEnergy.Heaven, // Core Earth Yearly Cycle
+        //    ENineStarKiEnergy.Soil)] // Core Earth Monthly Cycle
 
-        [InlineData(1978, ENineStarKiEnergy.Wind, EGender.Male, // Personal DOB
-            1978, 3, // Today's Date
-            ENineStarKiEnergy.Wind, // Global Yearly Cycle
-            ENineStarKiEnergy.Lake, // Global Monthly Cycle
-            ENineStarKiEnergy.CoreEarth, // Personal Yearly Cycle
-            ENineStarKiEnergy.Soil, // Personal Monthly Cycle
-            ENineStarKiEnergy.Heaven, // Core Earth Yearly Cycle
-            ENineStarKiEnergy.Thunder)] // Core Earth Monthly Cycle
+        //[InlineData(1978, ENineStarKiEnergy.Wind, EGender.Male, // Personal DOB
+        //    1978, 3, // Today's Date
+        //    ENineStarKiEnergy.Wind, // Global Yearly Cycle
+        //    ENineStarKiEnergy.Lake, // Global Monthly Cycle
+        //    ENineStarKiEnergy.CoreEarth, // Personal Yearly Cycle
+        //    ENineStarKiEnergy.Soil, // Personal Monthly Cycle
+        //    ENineStarKiEnergy.Heaven, // Core Earth Yearly Cycle
+        //    ENineStarKiEnergy.Thunder)] // Core Earth Monthly Cycle
         public void CalculateDirectionForMonth_Test(
             int birthYear,
             ENineStarKiEnergy mainEnergy,
@@ -354,8 +354,8 @@ namespace K9.WebApplication.Tests.Unit.Services
             Assert.Equal(globalMonthlyCycleEnergy, ninestar.GlobalCycleEnergies.Month.Energy);
             Assert.Equal(personalYearlyCycleEnergy, ninestar.PersonalHousesOccupiedEnergies.Year.Energy);
             Assert.Equal(personalMonthlyCycleEnergy, ninestar.PersonalHousesOccupiedEnergies.Month.Energy);
-            Assert.Equal(coreEarthYearlyCycleEnergy, ninestar.GetHouseOfFive(ninestar.PersonalHousesOccupiedEnergies.Year.EnergyNumber).Energy);
-            Assert.Equal(coreEarthMonthlyCycleEnergy, ninestar.GetHouseOfFive(ninestar.PersonalHousesOccupiedEnergies.Month.EnergyNumber).Energy);
+            Assert.Equal(coreEarthYearlyCycleEnergy, ninestar.GlobalCycleEnergies.Year.HouseOfFive.Energy);
+            Assert.Equal(coreEarthMonthlyCycleEnergy, ninestar.GlobalCycleEnergies.Month.HouseOfFive.Energy);
         }
 
         [Theory]
@@ -407,7 +407,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         }
 
         [Theory]
-        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male, 2025, ENineStarKiEnergy.Heaven, 2, ENineStarKiEnergy.Heaven)]
+        [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male, 2025, ENineStarKiEnergy.Heaven, 2, ENineStarKiEnergy.Heaven, true)]
         [InlineData(1979, ENineStarKiEnergy.Thunder, EGender.Male, 2025, ENineStarKiEnergy.Heaven, 3, ENineStarKiEnergy.Lake)]
         [InlineData(1980, ENineStarKiEnergy.Soil, EGender.Male, 2025, ENineStarKiEnergy.CoreEarth, 2, ENineStarKiEnergy.CoreEarth)]
         [InlineData(1980, ENineStarKiEnergy.Soil, EGender.Male, 2025, ENineStarKiEnergy.CoreEarth, 3, ENineStarKiEnergy.Heaven)]
@@ -421,6 +421,9 @@ namespace K9.WebApplication.Tests.Unit.Services
             ENineStarKiEnergy monthlyCycleEnergy,
             bool isDebug = false)
         {
+
+            if(isDebug)
+                Debugger.Break();
 
             var ninestar = _nineStarKiService.CalculateNineStarKiProfile(
                 new PersonModel

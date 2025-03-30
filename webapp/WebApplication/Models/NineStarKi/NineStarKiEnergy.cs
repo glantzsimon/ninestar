@@ -573,6 +573,8 @@ namespace K9.WebApplication.Models
             EnergyCycleType = energyCycleType;
         }
 
+        public NineStarKiEnergy HouseOfFive => new NineStarKiEnergy((ENineStarKiEnergy)NineStarKiModel.GetNineStarKiNumber(5 + (5 - EnergyNumber)));
+
         #region Personal Chart
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EpochEnergyLabel)]

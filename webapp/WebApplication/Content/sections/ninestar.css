@@ -150,6 +150,7 @@ a > .ninestar-summary-container:hover {
   margin-top: 5px;
 }
 .magic-square-container {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;

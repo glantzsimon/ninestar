@@ -18,7 +18,7 @@ namespace K9.WebApplication.Services
             bool includePlannerData = false, string userTimeZoneId = "", bool useHolograhpicCycleCalculation = false,
             bool invertDailyAndHourlyKiForSouthernHemisphere = false,
             bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false,
-            EDisplayDataForPeriod displayDataForPeriod = EDisplayDataForPeriod.Now);
+            EDisplayDataForPeriod displayDataForPeriod = EDisplayDataForPeriod.SelectedDate);
 
         NineStarKiSummaryViewModel GetNineStarKiSummaryViewModel();
         CompatibilityModel CalculateCompatibility(DateTime dateOfBirth1, EGender gender1, DateTime dateOfBirth2,

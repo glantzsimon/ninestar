@@ -10,6 +10,15 @@
     <h5>@Dictionary.ClickOnTheNumbersBelowForMoreDetails</h5>
 </div>
 
+<div class="row margin-0 margin-bottom-20">
+    <div class="col-sm-4 col-sm-offset-4 col-xs-12 col-xs-offset-0 padding-0">
+        @Html.BootstrapEditorFor(e => e.EnergyDisplay, new EditorOptions
+        {
+            Label = ""
+        })
+    </div>
+</div>
+
 <div class="row">
     <div class="col-sm-4 col-sm-offset-4 very-small-energy">
         <a href="#" id="epoch-energy">

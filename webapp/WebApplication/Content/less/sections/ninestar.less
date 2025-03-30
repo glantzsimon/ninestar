@@ -38,8 +38,18 @@ a > .ninestar-summary-container {
     }
 }
 
-.energy-summary-container a {
-    text-decoration: none !important;
+.energy-summary-container {
+
+    a {
+        text-decoration: none !important;
+    }
+
+    .row {
+        div.col-sm-4 {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+    }
 }
 
 .ninestar-summmary {
@@ -68,7 +78,14 @@ a > .ninestar-summary-container {
 
     div.magic-square {
         width: 68%;
-        font-size: 0.5  em;
+
+        div.cell {
+            font-size: 1.3rem;
+
+            &.active {
+                font-size: calc(1.3rem * 1.5);
+            }
+        }
     }
 }
 
@@ -79,6 +96,14 @@ a > .ninestar-summary-container {
 
     div.magic-square {
         width: 88%;
+
+        div.cell {
+            font-size: 1.6rem;
+
+            &.active {
+                font-size: calc(1.6rem * 1.5);
+            }
+        }
     }
 }
 
@@ -89,6 +114,14 @@ a > .ninestar-summary-container {
 
     div.magic-square {
         width: 48%;
+
+        div.cell {
+            font-size: 1rem;
+
+            &.active {
+                font-size: calc(1rem * 1.5);
+            }
+        }
     }
 }
 
@@ -195,11 +228,65 @@ a > .ninestar-summary-container {
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 1rem;
-        font-weight: bold;
+        font-size: 2rem;
+        line-height: unset;
+        filter: grayscale(45%);
+        overflow: hidden;
+        padding-bottom: 2px;
 
         &.active {
+            border: 0;
+            font-size: calc(2rem * 1.5);
             font-weight: bold;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+            transform: scale(1.11);            
+            position: relative;
+            z-index: 2 !important;
+        }
+
+        &.number-1 {
+            background-color: white;
+            color: black;
+        }
+
+        &.number-2 {
+            background-color: black;
+            color: @peru-brown;
+        }
+
+        &.number-3 {
+            background-color: #4cff00;
+            color: @saddle-brown;
+        }
+
+        &.number-4 {
+            background-color: #307813;
+            color: white;
+        }
+
+        &.number-5 {
+            background-color: yellow;
+            color: @saddle-brown;
+        }
+
+        &.number-6 {
+            background-color: white;
+            color: red;
+        }
+
+        &.number-7 {
+            background-color: red;
+            color: white;
+        }
+
+        &.number-8 {
+            background-color: white;
+            color: @saddle-brown;
+        }
+
+        &.number-9 {
+            background-color: #c321dc;
+            color: white;
         }
     }
 }

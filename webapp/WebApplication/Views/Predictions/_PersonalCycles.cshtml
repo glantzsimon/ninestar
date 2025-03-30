@@ -1,18 +1,27 @@
 ﻿@using K9.Base.WebApplication.Extensions
 @using K9.SharedLibrary.Extensions
 @using K9.WebApplication.Enums
+@using K9.WebApplication.Extensions
 @using K9.WebApplication.Helpers
 @using SessionConstants = K9.WebApplication.Constants.SessionConstants
 @model K9.WebApplication.Models.NineStarKiModel
 
-<div class="row margin-0 margin-bottom-20">
-    <div class="col-sm-4 col-sm-offset-4 col-xs-12 col-xs-offset-0 padding-0">
-        @Html.BootstrapEditorFor(e => e.EnergyDisplay, new EditorOptions
-        {
-            Label = ""
-        })
+@{
+    var membership = this.GetActiveUserMembership();
+    var isUnlimited = membership != null && membership.IsUnlimited() || K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin();
+}
+
+@if (isUnlimited)
+{
+    <div class="row margin-0 margin-bottom-20">
+        <div class="col-sm-4 col-sm-offset-4 col-xs-12 col-xs-offset-0 padding-0">
+            @Html.BootstrapEditorFor(e => e.EnergyDisplay, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
     </div>
-</div>
+}
 
 @if (Model.DisplayDataForPeriod != EDisplayDataForPeriod.Now)
 {
@@ -23,37 +32,50 @@
     </div>
 }
 
-<div class="row">
-    <div class="col-sm-4 col-sm-offset-4 very-small-energy">
-        @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Epoch)
+@if (isUnlimited)
+{
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4 very-small-energy">
+            @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Epoch)
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-sm-4 col-sm-offset-4 very-small-energy">
-        @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Generation)
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4 very-small-energy">
+            @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Generation)
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-sm-4 medium-energy">
-        @Html.Partial("_CycleTitle", Model.MonthlyCycleEnergy)
+    <div class="row">
+        <div class="col-sm-4 medium-energy">
+            @Html.Partial("_CycleTitle", Model.MonthlyCycleEnergy)
+        </div>
+        <div class="col-sm-4">
+            @Html.Partial("_CycleTitle", Model.YearlyCycleEnergy)
+        </div>
+        <div class="col-sm-4 small-energy">
+            @if (Model.PersonalHousesOccupiedEnergies.Day.EnergyNumber == Model.PersonalHousesOccupiedEnergies.Day2.EnergyNumber)
+            {
+                @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Day)
+            }
+            else
+            {
+                @Html.Partial("_CycleSplitTitle", (Model.PersonalHousesOccupiedEnergies.Day, Model.PersonalHousesOccupiedEnergies.Day2))
+            }
+        </div>
     </div>
-    <div class="col-sm-4">
-        @Html.Partial("_CycleTitle", Model.YearlyCycleEnergy)
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4 very-small-energy">
+            @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Hour)
+        </div>
     </div>
-    <div class="col-sm-4 small-energy">
-        @if (Model.PersonalHousesOccupiedEnergies.Day.EnergyNumber == Model.PersonalHousesOccupiedEnergies.Day2.EnergyNumber)
-        {
-            @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Day)
-        }
-        else
-        {
-            @Html.Partial("_CycleSplitTitle", (Model.PersonalHousesOccupiedEnergies.Day, Model.PersonalHousesOccupiedEnergies.Day2))
-        }
+}
+else
+{
+    <div class="row">
+        <div class="col-sm-4">
+            @Html.Partial("_CycleTitle", Model.YearlyCycleEnergy)
+        </div>
+        <div class="col-sm-4 medium-energy">
+            @Html.Partial("_CycleTitle", Model.MonthlyCycleEnergy)
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-sm-4 col-sm-offset-4 very-small-energy">
-        @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Hour)
-    </div>
-</div>
-
+}

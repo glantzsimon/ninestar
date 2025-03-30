@@ -34,6 +34,10 @@ a > .ninestar-summary-container:hover {
 .energy-summary-container a {
   text-decoration: none !important;
 }
+.energy-summary-container .row div.col-sm-4 {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
 .ninestar-summmary {
   width: 100%;
 }
@@ -54,7 +58,12 @@ a > .ninestar-summary-container:hover {
 }
 .small-energy div.magic-square {
   width: 68%;
-  font-size: 0.5 em;
+}
+.small-energy div.magic-square div.cell {
+  font-size: 1.3rem;
+}
+.small-energy div.magic-square div.cell.active {
+  font-size: calc(1.3rem * 1.5);
 }
 .medium-energy img {
   width: 62%;
@@ -62,11 +71,23 @@ a > .ninestar-summary-container:hover {
 .medium-energy div.magic-square {
   width: 88%;
 }
+.medium-energy div.magic-square div.cell {
+  font-size: 1.6rem;
+}
+.medium-energy div.magic-square div.cell.active {
+  font-size: calc(1.6rem * 1.5);
+}
 .very-small-energy img {
   width: 24%;
 }
 .very-small-energy div.magic-square {
   width: 48%;
+}
+.very-small-energy div.magic-square div.cell {
+  font-size: 1rem;
+}
+.very-small-energy div.magic-square div.cell.active {
+  font-size: calc(1rem * 1.5);
 }
 .profile-warning {
   color: #a94442;
@@ -153,9 +174,54 @@ a > .ninestar-summary-container:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 2rem;
+  line-height: unset;
+  filter: grayscale(45%);
+  overflow: hidden;
+  padding-bottom: 2px;
 }
 .magic-square .cell.active {
+  border: 0;
+  font-size: calc(2rem * 1.5);
   font-weight: bold;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  transform: scale(1.11);
+  position: relative;
+  z-index: 2 !important;
+}
+.magic-square .cell.number-1 {
+  background-color: white;
+  color: black;
+}
+.magic-square .cell.number-2 {
+  background-color: black;
+  color: #cd853f;
+}
+.magic-square .cell.number-3 {
+  background-color: #4cff00;
+  color: #8b4513;
+}
+.magic-square .cell.number-4 {
+  background-color: #307813;
+  color: white;
+}
+.magic-square .cell.number-5 {
+  background-color: yellow;
+  color: #8b4513;
+}
+.magic-square .cell.number-6 {
+  background-color: white;
+  color: red;
+}
+.magic-square .cell.number-7 {
+  background-color: red;
+  color: white;
+}
+.magic-square .cell.number-8 {
+  background-color: white;
+  color: #8b4513;
+}
+.magic-square .cell.number-9 {
+  background-color: #c321dc;
+  color: white;
 }

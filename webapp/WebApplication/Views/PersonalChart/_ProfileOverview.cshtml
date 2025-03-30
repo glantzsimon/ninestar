@@ -6,15 +6,18 @@
 @{
     var childClass = Model.PersonModel.IsAdult() ? "" : "child-profile";
     var panelTitle = Model.IsMyProfile ? Dictionary.MyPersonalProfile : Dictionary.PersonalChartOverview;
+
+    var membership = this.GetActiveUserMembership();
+    var isUnlimited = membership != null && membership.IsUnlimited() || K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin();
 }
 
 <div class="energy-summary-container">
-    @*@if (this.GetActiveUserMembership().IsUnlimited())*@
-    
+    @if (isUnlimited)
+    {
         @Html.Panel(panelTitle, Html.Partial("../PersonalChart/_PersonalChartExtended").ToString())
-    
-    @*else
+    }
+    else
     {
         @Html.Panel(panelTitle, Html.Partial("../PersonalChart/_PersonalChart").ToString())
-    }*@
+    }
 </div>

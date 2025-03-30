@@ -24,7 +24,7 @@ namespace K9.WebApplication.Models
         [ScriptIgnore]
         [UIHint("CalculationMethod")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CalculationMethodLabel)]
-        public ECalculationMethod CalculationMethod { get; set; } = (ECalculationMethod)SessionHelper.GetCurrentUserCalculationMethod();
+        public ECalculationMethod CalculationMethod { get; set; }
 
         [ScriptIgnore]
         public bool EnableCycleSwitch { get; set; } = true;
@@ -34,11 +34,11 @@ namespace K9.WebApplication.Models
 
         [ScriptIgnore]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InvertDailyAndHourlyKiForSouthernHemisphereLabel)]
-        public bool InvertDailyAndHourlyKiForSouthernHemisphere { get; set; } = SessionHelper.GetInvertDailyAndHourlyKiForSouthernHemisphere();
+        public bool InvertDailyAndHourlyKiForSouthernHemisphere { get; set; }
 
         [ScriptIgnore]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InvertDailyAndHourlyKiForSouthernHemisphereLabel)]
-        public bool InvertDailyAndHourlyCycleKiForSouthernHemisphere { get; set; } = SessionHelper.GetInvertDailyAndHourlyCycleKiForSouthernHemisphere();
+        public bool InvertDailyAndHourlyCycleKiForSouthernHemisphere { get; set; }
 
         [ScriptIgnore]
         public bool IsPredictionsScreen { get; set; }
@@ -51,6 +51,14 @@ namespace K9.WebApplication.Models
         public bool IsCycleSwitchActive => EnableCycleSwitch && SelectedDate >= CYCLE_SWITCH_DATE;
 
         #endregion
+
+        private void Init()
+        {
+            EnergyDisplay = (EEnergyDisplay)K9.WebApplication.Helpers.SessionHelper.GetEnergyDefaultDisplay();
+            CalculationMethod = (ECalculationMethod)SessionHelper.GetCurrentUserCalculationMethod();
+            InvertDailyAndHourlyKiForSouthernHemisphere = SessionHelper.GetInvertDailyAndHourlyKiForSouthernHemisphere();
+            InvertDailyAndHourlyCycleKiForSouthernHemisphere = SessionHelper.GetInvertDailyAndHourlyCycleKiForSouthernHemisphere();
+        }
 
         public NineStarKiModel()
         {
@@ -65,6 +73,8 @@ namespace K9.WebApplication.Models
             PersonModel = personModel;
             UserTimeZoneId = Current.UserTimeZoneId;
             SelectedTime = new TimeSpan?();
+
+            Init();
         }
 
         public NineStarKiModel(PersonModel personModel)
@@ -72,6 +82,8 @@ namespace K9.WebApplication.Models
             PersonModel = personModel;
             UserTimeZoneId = Current.UserTimeZoneId;
             SelectedTime = new TimeSpan?();
+
+            Init();
         }
 
         public NineStarKiModel(PersonModel personModel, int precisePersonEpochEnergy, int precisePersonGenerationalEnergy, int preciseMainEnergy, int preciseEmotionalEnergy, int preciseEmotionalEnergyForInvertedYear, int precisePersonalDayStarEnergy, int precisePersonalHourlyEnergy,
@@ -80,6 +92,8 @@ namespace K9.WebApplication.Models
 
             ECalculationMethod calculationMethod = ECalculationMethod.Chinese, bool useHolograhpicCycleCalculation = false, bool invertDailyAndHourlyKiForSouthernHemisphere = false, bool invertDailyAndHourlyCycleKiForSouthernHemisphere = false, string displayDataForTimeZoneId = "")
         {
+            Init();
+
             UserTimeZoneId = string.IsNullOrEmpty(displayDataForTimeZoneId) ? Current.UserTimeZoneId : displayDataForTimeZoneId;
             SelectedDate = selectedDate ?? DateTime.UtcNow;
             CalculationMethod = calculationMethod;

@@ -3,6 +3,7 @@
 @using K9.SharedLibrary.Extensions
 @using K9.SharedLibrary.Helpers
 @using K9.WebApplication.Config
+@using SessionConstants = K9.WebApplication.Constants.SessionConstants
 
 <script type="text/javascript">
 
@@ -177,9 +178,10 @@
 
 		buttonBehaviours().init();
 
-        ninestarki().init({
-            updatePreferencesUrl: '@Url.Action("UpdateUserPrefernceInt")'
-        });
+        ninestarki({
+            updatePreferencesUrl: '@Url.Action("UpdateUserPrefernceInt")',
+            defaultEnergyDisplayKey: '@SessionConstants.DefaultEnergyDisplay'
+        }).init();
 
 		fadePageIn({
 		    isFirstLoad: @SessionHelper.GetBoolValue("SessionConstants.IsFirstLoad").ToString().ToLower()

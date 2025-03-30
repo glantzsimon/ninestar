@@ -1,13 +1,25 @@
 ﻿@using K9.WebApplication.Config
+@using K9.WebApplication.Enums
+@using SessionHelper = K9.WebApplication.Helpers.SessionHelper
 @model K9.WebApplication.Models.NineStarKiEnergy
 
-<div class="graphical-display">
+@{
+    var displayPreference = SessionHelper.GetEnergyDefaultDisplay();
+    var graphicalStyle = displayPreference == (int)EEnergyDisplay.Graphical ? "" : "display: none";
+    var magicStyle = displayPreference == (int)EEnergyDisplay.Graphical ? "display: none" : "";
+}
+
+<div class="graphical-display" style="@graphicalStyle">
     <div class="ninestar-summary-container margin-3">
         <h3 class="margin-bottom-0 padding-bottom-0 margin-top-2">@Dictionary.Energy</h3>
         <p>@Model.EnergyName</p>
         <img loading="lazy" title="@Model.EnergyName" alt="@Dictionary.NineStarKiAstrologyFreeCalculator @Model.EnergyName" class="auto-size center-block" src="@DefaultValuesConfiguration.Instance.BaseImagesPath/ninestar/energies/@(Model.Energy.ToString().ToLower()).png" />
     </div>
 </div>
-<div class="magic-square-display">
-    @Html.Partial("../NineStarKi/_MagicSquare", Model)
+<div class="magic-square-display" style="@magicStyle">
+    <div class="ninestar-summary-container margin-3">
+        <h3 class="margin-bottom-0 padding-bottom-0 margin-top-2">@Dictionary.Energy</h3>
+        <p class="margin-bottom-2">@Model.EnergyName</p>
+        @Html.Partial("../NineStarKi/_MagicSquare", Model)
+    </div>
 </div>

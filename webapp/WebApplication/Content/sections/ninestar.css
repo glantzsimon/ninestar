@@ -128,9 +128,6 @@ a > .ninestar-summary-container:hover {
 .organs-container h5 {
   margin-top: 5px;
 }
-.magic-square-display {
-  display: none;
-}
 .magic-square-container {
   display: flex;
   justify-content: center;

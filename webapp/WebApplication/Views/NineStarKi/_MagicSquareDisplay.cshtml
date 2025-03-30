@@ -4,13 +4,23 @@
 @model K9.WebApplication.ViewModels.MagicSquareViewModel
 
 @{
-    var label = Model.HouseOccupiedEnergy.EnergyType == ENineStarKiEnergyType.MainEnergy ? Model.HouseOccupiedEnergy.AdultEnergyLabel
-        : Model.HouseOccupiedEnergy.EnergyType == ENineStarKiEnergyType.CharacterEnergy ? Model.HouseOccupiedEnergy.CharacteEnergyLabel
-            : Model.HouseOccupiedEnergy.EnergyType == ENineStarKiEnergyType.SurfaceEnergy ? Dictionary.SurfaceEnergyShortLabel
-                : Model.HouseOccupiedEnergy.EnergyType == ENineStarKiEnergyType.DailyEnergy ? Dictionary.DayStarLabel
-                    : Model.HouseOccupiedEnergy.EnergyType == ENineStarKiEnergyType.GenerationalEnergy ? Dictionary.GenerationalEnergyLabel
-                        : Model.HouseOccupiedEnergy.EnergyType == ENineStarKiEnergyType.EpochEnergy ? Dictionary.EpochEnergyLabel
-                            : string.Empty;
+    var label = Model.PersonalEnergy.EnergyCycleType == ENineStarKiEnergyCycleType.Unspecified ?
+        
+        Model.PersonalEnergy.EnergyType == ENineStarKiEnergyType.MainEnergy ? Model.PersonalEnergy.AdultEnergyLabel
+        : Model.PersonalEnergy.EnergyType == ENineStarKiEnergyType.CharacterEnergy ? Model.PersonalEnergy.CharacteEnergyLabel
+            : Model.PersonalEnergy.EnergyType == ENineStarKiEnergyType.SurfaceEnergy ? Dictionary.SurfaceEnergyShortLabel
+                : Model.PersonalEnergy.EnergyType == ENineStarKiEnergyType.DailyEnergy ? Dictionary.DayStarLabel
+                    : Model.PersonalEnergy.EnergyType == ENineStarKiEnergyType.GenerationalEnergy ? Dictionary.GenerationalEnergyLabel
+                        : Model.PersonalEnergy.EnergyType == ENineStarKiEnergyType.EpochEnergy ? Dictionary.EpochEnergyLabel
+                            : string.Empty :
+        
+        Model.PersonalEnergy.EnergyCycleType == ENineStarKiEnergyCycleType.YearlyCycleEnergy ? Dictionary.YearlyEnergyLabel
+            : Model.PersonalEnergy.EnergyCycleType == ENineStarKiEnergyCycleType.MonthlyCycleEnergy ? Dictionary.MonthlyEnergyLabel
+                : Model.PersonalEnergy.EnergyCycleType == ENineStarKiEnergyCycleType.HourlyEnergy ? Dictionary.HourlyEnergyLabel
+                    : Model.PersonalEnergy.EnergyCycleType == ENineStarKiEnergyCycleType.DailyEnergy ? Dictionary.DailyEnergyLabel
+                        : Model.PersonalEnergy.EnergyCycleType == ENineStarKiEnergyCycleType.GenerationalEnergy ? Dictionary.GenerationalEnergyLabel
+                            : Model.PersonalEnergy.EnergyCycleType == ENineStarKiEnergyCycleType.EpochEnergy ? Dictionary.EpochEnergyLabel
+                                : string.Empty;
 
     var magicSquareNumbers = Model.GlobalEnergy.GetMagicSquareNumbers();
 
@@ -22,7 +32,7 @@
 <div class="magic-square-display" style="@magicStyle">
     <div class="ninestar-summary-container margin-3">
         <h3 class="margin-bottom-0 padding-bottom-0 margin-top-2">@label</h3>
-        <p class="margin-bottom-2">@Model.HouseOccupiedEnergy.EnergyName</p>
-        @Html.Partial("_MagicSquare", Model)
+        <p class="margin-bottom-2">@Model.PersonalEnergy.EnergyName</p>
+        @Html.Partial("../NineStarKi/_MagicSquare", Model)
     </div>
 </div>

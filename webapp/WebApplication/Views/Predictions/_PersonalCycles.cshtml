@@ -41,7 +41,7 @@
             @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
             {
                 GlobalEnergy = Model.GlobalCycleEnergies.Epoch,
-                HouseOccupiedEnergy = Model.PersonalHousesOccupiedEnergies.Epoch
+                PersonalEnergy = Model.PersonalHousesOccupiedEnergies.Epoch
             })
         </div>
     </div>
@@ -51,7 +51,7 @@
             @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
             {
                 GlobalEnergy = Model.GlobalCycleEnergies.Generation,
-                HouseOccupiedEnergy = Model.PersonalHousesOccupiedEnergies.Generation
+                PersonalEnergy = Model.PersonalHousesOccupiedEnergies.Generation
             })
         </div>
     </div>
@@ -61,7 +61,7 @@
             @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
             {
                 GlobalEnergy = Model.GlobalCycleEnergies.Month,
-                HouseOccupiedEnergy = Model.PersonalHousesOccupiedEnergies.Month
+                PersonalEnergy = Model.PersonalHousesOccupiedEnergies.Month
             })
         </div>
         <div class="col-sm-4">
@@ -69,7 +69,7 @@
             @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
             {
                 GlobalEnergy = Model.GlobalCycleEnergies.Year,
-                HouseOccupiedEnergy = Model.PersonalHousesOccupiedEnergies.Year
+                PersonalEnergy = Model.PersonalHousesOccupiedEnergies.Year
             })
         </div>
         <div class="col-sm-4 small-energy">
@@ -79,7 +79,7 @@
                 @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
                 {
                     GlobalEnergy = Model.GlobalCycleEnergies.Day,
-                    HouseOccupiedEnergy = Model.PersonalHousesOccupiedEnergies.Day
+                    PersonalEnergy = Model.PersonalHousesOccupiedEnergies.Day
                 })
             }
             else
@@ -88,7 +88,7 @@
                 @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
                 {
                     GlobalEnergy = Model.GlobalCycleEnergies.Day2,
-                    HouseOccupiedEnergy = Model.PersonalHousesOccupiedEnergies.Day2
+                    PersonalEnergy = Model.PersonalHousesOccupiedEnergies.Day2
                 })
             }
         </div>
@@ -99,7 +99,7 @@
             @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
             {
                 GlobalEnergy = Model.GlobalCycleEnergies.Hour,
-                HouseOccupiedEnergy = Model.PersonalHousesOccupiedEnergies.Hour
+                PersonalEnergy = Model.PersonalHousesOccupiedEnergies.Hour
             })
         </div>
     </div>

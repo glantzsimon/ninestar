@@ -4,15 +4,15 @@
 
 @{
     var magicSquareNumbers = Model.GlobalEnergy.GetMagicSquareNumbers();
-    var active1Class = magicSquareNumbers[3] == Model.HouseOccupiedEnergy.EnergyNumber ? "active " : "";
-    var active2Class = magicSquareNumbers[8] == Model.HouseOccupiedEnergy.EnergyNumber ? "active " : "";
-    var active3Class = magicSquareNumbers[1] == Model.HouseOccupiedEnergy.EnergyNumber ? "active " : "";
-    var active4Class = magicSquareNumbers[2] == Model.HouseOccupiedEnergy.EnergyNumber ? "active " : "";
-    var active5Class = Model.GlobalEnergy.EnergyNumber == Model.HouseOccupiedEnergy.EnergyNumber ? "active " : "";
-    var active6Class = magicSquareNumbers[6] == Model.HouseOccupiedEnergy.EnergyNumber ? "active " : "";
-    var active7Class = magicSquareNumbers[7] == Model.HouseOccupiedEnergy.EnergyNumber ? "active " : "";
-    var active8Class = magicSquareNumbers[0] == Model.HouseOccupiedEnergy.EnergyNumber ? "active " : "";
-    var active9Class = magicSquareNumbers[5] == Model.HouseOccupiedEnergy.EnergyNumber ? "active " : "";
+    var active1Class = 4 == Model.PersonalEnergy.EnergyNumber ? "active " : "";
+    var active2Class = 9 == Model.PersonalEnergy.EnergyNumber ? "active " : "";
+    var active3Class = 2 == Model.PersonalEnergy.EnergyNumber ? "active " : "";
+    var active4Class = 3 == Model.PersonalEnergy.EnergyNumber ? "active " : "";
+    var active5Class = 5 == Model.PersonalEnergy.EnergyNumber ? "active " : "";
+    var active6Class = 7 == Model.PersonalEnergy.EnergyNumber ? "active " : "";
+    var active7Class = 8 == Model.PersonalEnergy.EnergyNumber ? "active " : "";
+    var active8Class = 1 == Model.PersonalEnergy.EnergyNumber ? "active " : "";
+    var active9Class = 6 == Model.PersonalEnergy.EnergyNumber ? "active " : "";
 }
 
 

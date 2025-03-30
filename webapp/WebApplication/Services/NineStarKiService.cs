@@ -620,7 +620,7 @@ namespace K9.WebApplication.Services
 
         private NineStarKiDirections GetYearlyDirections(NineStarKiModel model)
         {
-            var houseOfFive = model.GlobalCycleEnergies.Year.HouseOfFive;
+            var houseOfFive = model.GlobalCycleEnergies.Year.GetHouseOfFive();
 
             return new NineStarKiDirections(houseOfFive.Direction,
                 GetInvertedEnergy(houseOfFive).Direction,
@@ -630,7 +630,7 @@ namespace K9.WebApplication.Services
 
         private NineStarKiDirections GetMonthlyDirections(NineStarKiModel model)
         {
-            var houseOfFive = model.GlobalCycleEnergies.Month.HouseOfFive;
+            var houseOfFive = model.GlobalCycleEnergies.Month.GetHouseOfFive();
 
             return new NineStarKiDirections(houseOfFive.Direction,
                 GetInvertedEnergy(houseOfFive).Direction,

@@ -9,10 +9,10 @@ namespace K9.WebApplication.ViewModels
 
         public NineStarKiDirections GetDirections()
         {
-            var oppositeHouseOfFiveEnergy = new NineStarKiEnergy((ENineStarKiEnergy)NineStarKiModel.GetOppositeEnergyInMagicSquare(GlobalEnergy.HouseOfFive.EnergyNumber));
+            var oppositeHouseOfFiveEnergy = new NineStarKiEnergy((ENineStarKiEnergy)NineStarKiModel.GetOppositeEnergyInMagicSquare(GlobalEnergy.GetHouseOfFive().EnergyNumber));
             var oppositeHouseOccupiedEnergy = new NineStarKiEnergy((ENineStarKiEnergy)NineStarKiModel.GetOppositeEnergyInMagicSquare(PersonalEnergy.EnergyNumber));
 
-            return new NineStarKiDirections(GlobalEnergy.HouseOfFive.Direction,
+            return new NineStarKiDirections(GlobalEnergy.GetHouseOfFive().Direction,
                oppositeHouseOfFiveEnergy.Direction,
                 PersonalEnergy.Direction,
                 oppositeHouseOccupiedEnergy.Direction);

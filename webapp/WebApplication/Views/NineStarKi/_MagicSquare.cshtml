@@ -6,6 +6,8 @@
     var directions = Model.GetDirections();
     var magicSquareNumbers = Model.GlobalEnergy.GetMagicSquareNumbers();
     var numbersMatch = Model.GlobalEnergy.EnergyNumber == Model.PersonalEnergy.EnergyNumber;
+    var showDirections = K9.WebApplication.Helpers.SessionHelper.GetShowDirections();
+    var directionsStyle = !showDirections ? "display: none;" : "";
 
     var active1Class = 4 == Model.PersonalEnergy.EnergyNumber && !numbersMatch ? "active " : "";
     var active2Class = 9 == Model.PersonalEnergy.EnergyNumber && !numbersMatch ? "active " : "";
@@ -31,7 +33,7 @@
         <div class="cell @active8Class number-@magicSquareNumbers[0]" data-index="8">@magicSquareNumbers[0]</div>
         <div class="cell @active9Class number-@magicSquareNumbers[5]" data-index="9">@magicSquareNumbers[5]</div>
 
-        <div class="directions-line-overlay">
+        <div class="directions-line-overlay" style="@directionsStyle">
             <div data-tooltip-title="@directions.FiveYelloKilling.Name" data-tooltip="@directions.FiveYelloKilling.Description" class="line five-yellow-killing to-@directions.FiveYelloKilling.Direction"></div>
             <div data-tooltip-title="@directions.DarkSwordKilling.Name" data-tooltip="@directions.DarkSwordKilling.Description" class="line dark-sword-killing to-@directions.DarkSwordKilling.Direction"></div>
             <div data-tooltip-title="@directions.SelfLifeKilling.Name" data-tooltip="@directions.SelfLifeKilling.Description" class="line self-life-killing to-@directions.SelfLifeKilling.Direction"></div>

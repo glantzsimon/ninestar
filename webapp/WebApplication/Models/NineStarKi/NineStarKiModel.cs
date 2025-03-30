@@ -61,7 +61,7 @@ namespace K9.WebApplication.Models
             CalculationMethod = (ECalculationMethod)SessionHelper.GetCurrentUserCalculationMethod();
             InvertDailyAndHourlyKiForSouthernHemisphere = SessionHelper.GetInvertDailyAndHourlyKiForSouthernHemisphere();
             InvertDailyAndHourlyCycleKiForSouthernHemisphere = SessionHelper.GetInvertDailyAndHourlyCycleKiForSouthernHemisphere();
-            ShowDirections = SessionHelper.GetInvertDailyAndHourlyCycleKiForSouthernHemisphere();
+            ShowDirections = SessionHelper.GetShowDirections();
         }
 
         public NineStarKiModel()

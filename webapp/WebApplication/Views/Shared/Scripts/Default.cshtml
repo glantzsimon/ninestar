@@ -179,7 +179,8 @@
 		buttonBehaviours().init();
 
         ninestarki({
-            updatePreferencesUrl: '@Url.Action("UpdateUserPrefernceInt")',
+            updatePreferencesIntUrl: '@Url.Action("UpdateUserPreferenceInt")',
+            updatePreferencesBoolUrl: '@Url.Action("UpdateUserPreferenceBool")',
             defaultEnergyDisplayKey: '@SessionConstants.DefaultEnergyDisplay',
             showDirectionsKey: '@SessionConstants.ShowDirections'
         }).init();

@@ -1,4 +1,6 @@
 ﻿using K9.Globalisation;
+using K9.SharedLibrary.Extensions;
+using K9.SharedLibrary.Helpers;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -23,7 +25,27 @@ namespace K9.WebApplication.Models
         public NineStarKiDirection DarkSwordKilling { get; }
         public NineStarKiDirection SelfLifeKilling { get; }
         public NineStarKiDirection TargetKilling { get; }
-        
+
+        public string FiveYellowKillingDescription => TemplateParser.Parse(FiveYelloKilling.Description, new
+        {
+            Direction = FiveYelloKilling.Direction.ToString().ToProperCase()
+        });
+
+        public string DarkSwordKillingDescription => TemplateParser.Parse(DarkSwordKilling.Description, new
+        {
+            Direction = DarkSwordKilling.Direction.ToString().ToProperCase()
+        });
+
+        public string SelfLifeKillingDescription => TemplateParser.Parse(SelfLifeKilling.Description, new
+        {
+            Direction = SelfLifeKilling.Direction.ToString().ToProperCase()
+        });
+
+        public string TargetKillingDescription => TemplateParser.Parse(TargetKilling.Description, new
+        {
+            Direction = TargetKilling.Direction.ToString().ToProperCase()
+        });
+
         public NineStarKiDirections(ENineStarKiDirection fiveYellowKilling, ENineStarKiDirection darkSwordKilling, ENineStarKiDirection selfLifeKilling, ENineStarKiDirection targetKilling)
         {
             FiveYelloKilling = new NineStarKiDirection(Dictionary.FiveYellowKilling, Dictionary.FiveYellowKillingDescription, fiveYellowKilling);

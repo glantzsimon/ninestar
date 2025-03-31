@@ -353,11 +353,13 @@
     <Compile Include="Controllers\UserPromotionsController.cs" />
     <Compile Include="Controllers\UserMembershipsController.cs" />
     <Compile Include="Controllers\MailingListUsersController.cs" />
+    <Compile Include="Enums\EPrimaryAttribute.cs" />
     <Compile Include="Enums\EDisplayDataForPeriod.cs" />
     <Compile Include="Enums\ECalculationsMethod.cs" />
     <Compile Include="Enums\ENumerologyCode.cs" />
     <Compile Include="Enums\EForecastType.cs" />
     <Compile Include="Enums\EEnergyDisplay.cs" />
+    <Compile Include="Enums\EBodyPart.cs" />
     <Compile Include="Enums\EPlannerDisplay.cs" />
     <Compile Include="Enums\EPlannerNavigationDirection.cs" />
     <Compile Include="Enums\EPlannerView.cs" />

@@ -2509,6 +2509,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Abdomen.
+        /// </summary>
+        public static string Abdomen {
+            get {
+                return ResourceManager.GetString("Abdomen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About Monthly Cycles.
         /// </summary>
         public static string AboutMonthlyCycles {
@@ -3415,6 +3424,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bladder.
+        /// </summary>
+        public static string Bladder {
+            get {
+                return ResourceManager.GetString("Bladder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Blessings.
         /// </summary>
         public static string Blessings {
@@ -3438,6 +3456,15 @@ namespace K9.Globalisation {
         public static string BodyLabel {
             get {
                 return ResourceManager.GetString("BodyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bones.
+        /// </summary>
+        public static string Bones {
+            get {
+                return ResourceManager.GetString("Bones", resourceCulture);
             }
         }
         
@@ -5335,6 +5362,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Danger.
+        /// </summary>
+        public static string Danger {
+            get {
+                return ResourceManager.GetString("Danger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Darkening of the Light&lt;/h5&gt;
         ///&lt;p&gt;Darkening of the Light signifies a time of difficulty, where truth and clarity are obscured. It represents situations where darkness prevails, requiring patience and inner strength to endure.&lt;/p&gt;
         ///&lt;p&gt;This hexagram advises caution and restraint. Rather than fighting against the darkness, one should conserve energy and wait for the right moment to act. Wisdom lies in knowing when to retreat and when to advance.&lt;/p&gt;
@@ -5961,6 +5997,15 @@ namespace K9.Globalisation {
         public static string dynamic_modality {
             get {
                 return ResourceManager.GetString("dynamic_modality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ear.
+        /// </summary>
+        public static string Ear {
+            get {
+                return ResourceManager.GetString("Ear", resourceCulture);
             }
         }
         
@@ -7753,6 +7798,15 @@ namespace K9.Globalisation {
         public static string GrowthAndStability {
             get {
                 return ResourceManager.GetString("GrowthAndStability", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hardship.
+        /// </summary>
+        public static string Hardship {
+            get {
+                return ResourceManager.GetString("Hardship", resourceCulture);
             }
         }
         
@@ -9729,6 +9783,15 @@ namespace K9.Globalisation {
         public static string Low {
             get {
                 return ResourceManager.GetString("Low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lower Body.
+        /// </summary>
+        public static string LowerBody {
+            get {
+                return ResourceManager.GetString("LowerBody", resourceCulture);
             }
         }
         
@@ -11817,6 +11880,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nervous System.
+        /// </summary>
+        public static string NervousSystem {
+            get {
+                return ResourceManager.GetString("NervousSystem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to News.
         /// </summary>
         public static string News {
@@ -12548,13 +12620,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The 9 Star Ki personal chart is comprised of three numbers, each from 1 to 9. For example: &lt;strong&gt;&quot;3.1.7&quot;&lt;/strong&gt;. 
+        ///    The main part of the 9 Star Ki personal chart is comprised of three numbers, each from 1 to 9. For example: &lt;strong&gt;&quot;3.1.7&quot;&lt;/strong&gt;. 
         ///&lt;/p&gt;
         ///&lt;h5&gt;
         ///    First Number - Fundamental Energy
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    The first number is &lt;strong&gt;determined by the year we were born&lt;/strong&gt; and corresponds to our &lt;strong&gt;fundamental nature&lt;/strong&gt;; the lens through which we view the world and the way we make sense of reality. It is also the Energy &lt;strong&gt;that holds the strongest influence as we reach adulthood&lt;/strong&gt;, round th [rest of string was truncated]&quot;;.
+        ///    The first number is &lt;strong&gt;determined by the year we were born&lt;/strong&gt; and corresponds to our &lt;strong&gt;fundamental nature&lt;/strong&gt;; the lens through which we view the world and the way we make sense of reality. It is also the Energy &lt;strong&gt;that holds the strongest influence as we reach adulthood&lt;/ [rest of string was truncated]&quot;;.
         /// </summary>
         public static string personal_chart {
             get {
@@ -14097,6 +14169,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sex Organs.
+        /// </summary>
+        public static string SexOrgans {
+            get {
+                return ResourceManager.GetString("SexOrgans", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    High
         ///&lt;/h5&gt;
@@ -14559,6 +14640,15 @@ namespace K9.Globalisation {
         public static string SmallIntestine {
             get {
                 return ResourceManager.GetString("SmallIntestine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Soft Tissue.
+        /// </summary>
+        public static string SoftTissue {
+            get {
+                return ResourceManager.GetString("SoftTissue", resourceCulture);
             }
         }
         
@@ -17520,12 +17610,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Water Energies&lt;/h4&gt;
-        ///&lt;p&gt;
-        ///    Water people can often appear &lt;strong&gt;quiet, brooding, and contemplative&lt;/strong&gt;, like a deep lake or ocean. Yet, like a bubbling mountain stream, they may also be &lt;strong&gt;lively, curious, and vivacious&lt;/strong&gt;, possessing a &lt;strong&gt;natural sense of adventure and exploration&lt;/strong&gt;. Indeed, &lt;strong&gt;many famous explorers were born under this sign&lt;/strong&gt;.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    &lt;strong&gt;Water needs a container&lt;/strong&gt;, just as a river needs its banks or the ocean it [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string water_description {
             get {

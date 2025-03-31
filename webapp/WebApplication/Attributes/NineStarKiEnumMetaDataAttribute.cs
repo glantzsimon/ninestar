@@ -20,6 +20,11 @@ namespace K9.WebApplication.Attributes
         public ENineStarKiDescriptiveName DescriptiveName { get; set; }
         public ENineStarKiModality Modality { get; set; }
         public ENineStarKiCycle Cycle { get; set; }
+
+        public EBodyPart[] InternalRepresentation { get; set; }
+        public EBodyPart[] Physiognomy { get; set; }
+        public EPrimaryAttribute[] PrimaryAttributes { get; set; }
+
         public EOrgan StrongYinOrgans => GetStrongYinOrgans();
         public EOrgan StrongYangOrgans => GetStrongYangOrgans();
         public EOrgan[] WeakYinOrgans => GetWeakYinOrgans();

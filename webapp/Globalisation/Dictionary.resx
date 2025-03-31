@@ -5029,4 +5029,34 @@
   <data name="Somewhere" xml:space="preserve">
     <value>somewhere</value>
   </data>
+  <data name="Abdomen" xml:space="preserve">
+    <value>Abdomen</value>
+  </data>
+  <data name="Bladder" xml:space="preserve">
+    <value>Bladder</value>
+  </data>
+  <data name="Bones" xml:space="preserve">
+    <value>Bones</value>
+  </data>
+  <data name="Danger" xml:space="preserve">
+    <value>Danger</value>
+  </data>
+  <data name="Ear" xml:space="preserve">
+    <value>Ear</value>
+  </data>
+  <data name="Hardship" xml:space="preserve">
+    <value>Hardship</value>
+  </data>
+  <data name="LowerBody" xml:space="preserve">
+    <value>Lower Body</value>
+  </data>
+  <data name="NervousSystem" xml:space="preserve">
+    <value>Nervous System</value>
+  </data>
+  <data name="SexOrgans" xml:space="preserve">
+    <value>Sex Organs</value>
+  </data>
+  <data name="SoftTissue" xml:space="preserve">
+    <value>Soft Tissue</value>
+  </data>
 </root>

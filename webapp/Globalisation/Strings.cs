@@ -271,6 +271,19 @@
             public const string Dynamic = "Dynamic";
             public const string Reflective = "Reflective";
 
+            public const string Hardship = "Hardship";
+            public const string Danger = "Danger";
+            public const string Receptive = "Receptive";
+
+            public const string Bladder = "Bladder";
+            public const string SexOrgans = "SexOrgans";
+            public const string Bones = "Bones";
+            public const string NervousSystem = "NervousSystem";
+            public const string Ear = "Ear";
+            public const string LowerBody = "LowerBody";
+            public const string SoftTissue = "SoftTissue";
+            public const string Abdomen = "Abdomen";
+
             public const string SpleenPancreas = "SpleenPancreas";
             public const string Lungs = "Lungs";
             public const string Kidneys = "Kidneys";

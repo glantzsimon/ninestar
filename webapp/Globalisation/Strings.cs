@@ -278,7 +278,9 @@
             public const string Penetrating = "Penetrating";
             public const string Catalyst = "Catalyst";
             public const string Ease = "Ease";
+            public const string Stillness = "Stillness";
             public const string Creative = "Creative";
+            public const string Clarity = "Clarity";
 
             public const string Bladder = "Bladder";
             public const string SexOrgans = "SexOrgans";
@@ -319,6 +321,10 @@
             public const string Mouth = "Mouth";
             public const string Lips = "Lips";
             public const string Back = "Back";
+            public const string CardiovascularSystem = "CardiovascularSystem";
+            public const string HeartGovernor = "HeartGovernor";
+            public const string TripleHeater = "TripleHeater";
+            public const string GlandularSystem = "GlandularSystem";
 
             public const string FirstDiscount = "FirstDiscount";
             public const string SecondDiscount = "SecondDiscount";

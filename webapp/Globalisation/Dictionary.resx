@@ -5104,11 +5104,20 @@
   <data name="VocalAnatomy" xml:space="preserve">
     <value>Vocal Anatomy</value>
   </data>
+  <data name="CardiovascularSystem" xml:space="preserve">
+    <value>Cardiovascular System</value>
+  </data>
   <data name="Creative" xml:space="preserve">
     <value>Creative</value>
   </data>
+  <data name="GlandularSystem" xml:space="preserve">
+    <value>Glandular System</value>
+  </data>
   <data name="Head" xml:space="preserve">
     <value>Head</value>
+  </data>
+  <data name="HeartGovernor" xml:space="preserve">
+    <value>Heart Governor</value>
   </data>
   <data name="Lips" xml:space="preserve">
     <value>Lips</value>
@@ -5127,5 +5136,32 @@
   </data>
   <data name="SpeechAnatomy" xml:space="preserve">
     <value>Speech Anatomy</value>
+  </data>
+  <data name="Stillness" xml:space="preserve">
+    <value>Stillness</value>
+  </data>
+  <data name="TripleHeater" xml:space="preserve">
+    <value>Triple Heater</value>
+  </data>
+  <data name="water_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\main\en-gb\summary\water-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_emotional_landscape" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\emotionallandscape\en-gb\water-emotional-landscape.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_emotional_landscape_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\emotionallandscape\en-gb\summary\water-emotional-landscape-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_intellectual_qualities" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\intellectualqualities\en-gb\water-intellectual-qualities.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_intellectual_qualities_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\intellectualqualities\en-gb\summary\water-intellectual-qualities-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_interpersonal_qualities" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\interpersonalqualities\en-gb\water-interpersonal-qualities.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_interpersonal_qualities_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\interpersonalqualities\en-gb\summary\water-interpersonal-qualities-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

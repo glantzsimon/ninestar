@@ -195,6 +195,9 @@
     <Content Include="Energies\Generation\en-gb\thunder-generation.htm" />
     <Content Include="Energies\Generation\en-gb\water-generation.htm" />
     <Content Include="Energies\Generation\en-gb\wind-generation.htm" />
+    <Content Include="Energies\IntellectualQualities\en-gb\Summary\water-intellectual-qualities-summary.htm" />
+    <Content Include="Energies\IntellectualQualities\en-gb\water-intellectual-qualities.htm" />
+    <Content Include="Energies\Main\en-gb\Summary\water-description-summary.htm" />
     <Content Include="Energies\Spirituality\en-gb\coreearth-spirituality.htm" />
     <Content Include="Energies\Spirituality\en-gb\fire-spirituality.htm" />
     <Content Include="Energies\Spirituality\en-gb\heaven-spirituality.htm" />

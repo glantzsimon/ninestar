@@ -3715,6 +3715,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cardiovascular System.
+        /// </summary>
+        public static string CardiovascularSystem {
+            get {
+                return ResourceManager.GetString("CardiovascularSystem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Career.
         /// </summary>
         public static string Career {
@@ -6938,12 +6947,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Fire Energies&lt;/h4&gt;
-        ///&lt;p&gt;
-        ///    Fire Energies are known for their &lt;strong&gt;enlightenment, vision, and brilliance&lt;/strong&gt;. They often possess the clarity to &lt;strong&gt;navigate complex or emotionally charged situations&lt;/strong&gt; and are naturally drawn to roles where they can &lt;strong&gt;spark transformation and inspire others&lt;/strong&gt;. Their energy is radiant and captivating, lighting up any space they enter.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Of all the Nine Star Ki types, 9 Fires are the &lt;strong&gt;most comfortable and ski [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string fire_description {
             get {
@@ -7722,6 +7726,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Glandular System.
+        /// </summary>
+        public static string GlandularSystem {
+            get {
+                return ResourceManager.GetString("GlandularSystem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Display Global Ki.
         /// </summary>
         public static string GlobalKi {
@@ -7946,6 +7959,15 @@ namespace K9.Globalisation {
         public static string Heart {
             get {
                 return ResourceManager.GetString("Heart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heart Governor.
+        /// </summary>
+        public static string HeartGovernor {
+            get {
+                return ResourceManager.GetString("HeartGovernor", resourceCulture);
             }
         }
         
@@ -15517,6 +15539,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Stillness.
+        /// </summary>
+        public static string Stillness {
+            get {
+                return ResourceManager.GetString("Stillness", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Stomach.
         /// </summary>
         public static string Stomach {
@@ -17173,6 +17204,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Triple Heater.
+        /// </summary>
+        public static string TripleHeater {
+            get {
+                return ResourceManager.GetString("TripleHeater", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tui.
         /// </summary>
         public static string Tui {
@@ -17790,11 +17830,31 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Water Energies&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Water people can often appear &lt;strong&gt;quiet, brooding, and contemplative&lt;/strong&gt;, like a deep lake or the silent ocean. Yet, like a bubbling mountain stream, they may also be &lt;strong&gt;lively, curious, and vivacious&lt;/strong&gt;, animated by a &lt;strong&gt;natural sense of adventure and exploration&lt;/strong&gt;. Indeed, &lt;strong&gt;many famous explorers were born under this sign&lt;/strong&gt;.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    &lt;strong&gt;Water needs a container&lt;/strong&gt;, just as a river relies on its banks [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_description {
             get {
                 return ResourceManager.GetString("water_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Water Energies&lt;/h4&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;&lt;strong&gt;Fluid, contemplative, and mysterious&lt;/strong&gt; — like a still lake or an ocean trench.&lt;/li&gt;
+        ///    &lt;li&gt;Can also be &lt;strong&gt;lively, curious, and adventurous&lt;/strong&gt;, like a bubbling stream.&lt;/li&gt;
+        ///    &lt;li&gt;Deep inner world; often &lt;strong&gt;quiet, secretive, or hard to read&lt;/strong&gt;.&lt;/li&gt;
+        ///    &lt;li&gt;&lt;strong&gt;Fiercely independent&lt;/strong&gt; but may withdraw into isolation.&lt;/li&gt;
+        ///    &lt;li&gt;&lt;strong&gt;Need structure&lt;/strong&gt; to avoid becoming chaotic or lost in emotion o [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_description_summary {
+            get {
+                return ResourceManager.GetString("water_description_summary", resourceCulture);
             }
         }
         
@@ -17826,6 +17886,43 @@ namespace K9.Globalisation {
         public static string water_emotional_description {
             get {
                 return ResourceManager.GetString("water_emotional_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Emotional Landscape&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Water people possess a profound and often mysterious emotional depth. Beneath their calm exterior lies an inner world that is &lt;strong&gt;capable of intense feeling, subtle intuition, and quiet emotional strength&lt;/strong&gt;. When balanced, they demonstrate a rare &lt;strong&gt;courage to venture into the unknown&lt;/strong&gt; — not only outwardly, through exploration and discovery, but also inwardly, into the hidden landscapes of the soul.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    These individuals are not afra [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_emotional_landscape {
+            get {
+                return ResourceManager.GetString("water_emotional_landscape", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Emotional Landscape&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;Gift:&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Emotionally deep and resilient&lt;/li&gt;
+        ///    &lt;li&gt;Courageous in facing internal and external unknowns&lt;/li&gt;
+        ///    &lt;li&gt;Willing to explore the hidden and mysterious aspects of life&lt;/li&gt;
+        ///    &lt;li&gt;Capable of holding complex emotional states with grace&lt;/li&gt;
+        ///    &lt;li&gt;Quiet strength, able to endure emotional intensity without avoidance&lt;/li&gt;
+        ///    &lt;li&gt;Feels life deeply and responds with compassion and insight&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenge:&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;May [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_emotional_landscape_summary {
+            get {
+                return ResourceManager.GetString("water_emotional_landscape_summary", resourceCulture);
             }
         }
         
@@ -17936,6 +18033,75 @@ namespace K9.Globalisation {
         public static string water_hour_cycle {
             get {
                 return ResourceManager.GetString("water_hour_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Intellectual Qualities&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Water Energies are gifted with a mind that flows beneath the surface — &lt;strong&gt;penetrating, reflective, and drawn to depths unseen&lt;/strong&gt;. They are often captivated by &lt;strong&gt;philosophy, spirituality, and the mysteries of life&lt;/strong&gt;, and they have a natural inclination to explore things from all angles before forming a conclusion. Their ability to &lt;strong&gt;gather information, synthesize meaning, and perceive subtle nuances&lt;/strong&gt; gives them a kind of wisdom t [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_intellectual_qualities {
+            get {
+                return ResourceManager.GetString("water_intellectual_qualities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Intellectual Qualities&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;Gift:&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Penetrating, reflective, and philosophical thinker&lt;/li&gt;
+        ///    &lt;li&gt;Deeply intuitive and spiritually perceptive&lt;/li&gt;
+        ///    &lt;li&gt;Sees multiple sides of an issue before forming conclusions&lt;/li&gt;
+        ///    &lt;li&gt;Creative, insightful, and articulate in writing and speech&lt;/li&gt;
+        ///    &lt;li&gt;Good at gathering, synthesizing, and distilling complex information&lt;/li&gt;
+        ///    &lt;li&gt;Brings wisdom through quiet observation and deep understanding&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenge:&lt;/h5 [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_intellectual_qualities_summary {
+            get {
+                return ResourceManager.GetString("water_intellectual_qualities_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Interpersonal Qualities&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    In relationships, Water Energies move with grace and sensitivity. They are often &lt;strong&gt;adaptive, flexible, diplomatic, and deeply receptive&lt;/strong&gt;, able to feel the emotional currents in a room without anyone needing to speak. Their presence tends to be subtle yet magnetic — they draw others in without demanding attention, connecting in ways that are gentle, intuitive, and emotionally resonant.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    As listeners, they are exceptional — quiet, patient [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_interpersonal_qualities {
+            get {
+                return ResourceManager.GetString("water_interpersonal_qualities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Interpersonal Qualities&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;Gift:&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Adaptive, flexible, and emotionally attuned&lt;/li&gt;
+        ///    &lt;li&gt;Diplomatic and patient in social situations&lt;/li&gt;
+        ///    &lt;li&gt;Excellent listener; quietly supportive and understanding&lt;/li&gt;
+        ///    &lt;li&gt;Deeply receptive and capable of forming intimate bonds&lt;/li&gt;
+        ///    &lt;li&gt;Possesses a subtle magnetic presence and persuasive charm&lt;/li&gt;
+        ///    &lt;li&gt;Creates emotional safety and harmony for others&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///
+        ///&lt;h5&gt;Challenge:&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Can become shy, rese [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_interpersonal_qualities_summary {
+            get {
+                return ResourceManager.GetString("water_interpersonal_qualities_summary", resourceCulture);
             }
         }
         

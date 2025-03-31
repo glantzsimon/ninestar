@@ -274,6 +274,8 @@
             public const string Hardship = "Hardship";
             public const string Danger = "Danger";
             public const string Receptive = "Receptive";
+            public const string Rousing = "Rousing";
+            public const string Penetrating = "Penetrating";
 
             public const string Bladder = "Bladder";
             public const string SexOrgans = "SexOrgans";
@@ -283,6 +285,12 @@
             public const string LowerBody = "LowerBody";
             public const string SoftTissue = "SoftTissue";
             public const string Abdomen = "Abdomen";
+            public const string Muscles = "Muscles";
+            public const string Feet = "Feet";
+            public const string ConnectiveTissue = "ConnectiveTissue";
+            public const string VocalAnatomy = "VocalAnatomy";
+            public const string RespiratorySystem = "RespiratorySystem";
+            public const string Diaphragm = "Diaphragm";
 
             public const string SpleenPancreas = "SpleenPancreas";
             public const string Lungs = "Lungs";
@@ -294,6 +302,8 @@
             public const string UrinaryBladder = "UrinaryBladder";
             public const string Gallbladder = "Gallbladder";
             public const string SmallIntestine = "SmallIntestine";
+            public const string Legs = "Legs";
+            public const string Eyes = "Eyes";
 
             public const string FirstDiscount = "FirstDiscount";
             public const string SecondDiscount = "SecondDiscount";

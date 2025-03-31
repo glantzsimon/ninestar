@@ -9,6 +9,10 @@ namespace K9.WebApplication.Enums
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Danger)]
         Danger,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Receptive)]
-        Receptive
+        Receptive,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Rousing)]
+        Rousing,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Penetrating)]
+        Penetrating
     }
 }

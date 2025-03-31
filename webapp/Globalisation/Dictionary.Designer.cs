@@ -4387,6 +4387,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Connective Tissue.
+        /// </summary>
+        public static string ConnectiveTissue {
+            get {
+                return ResourceManager.GetString("ConnectiveTissue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Consolidating / Ups and Downs.
         /// </summary>
         public static string Consolidating {
@@ -5602,6 +5611,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Diaphragm.
+        /// </summary>
+        public static string Diahpragm {
+            get {
+                return ResourceManager.GetString("Diahpragm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Didn&apos;t receive a code?.
         /// </summary>
         public static string DidntReceiveCodePrompt {
@@ -6719,6 +6737,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Eyes.
+        /// </summary>
+        public static string Eyes {
+            get {
+                return ResourceManager.GetString("Eyes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Family Member.
         /// </summary>
         public static string FamilyMember {
@@ -6755,6 +6782,15 @@ namespace K9.Globalisation {
         public static string Father {
             get {
                 return ResourceManager.GetString("Father", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Feet.
+        /// </summary>
+        public static string Feet {
+            get {
+                return ResourceManager.GetString("Feet", resourceCulture);
             }
         }
         
@@ -9618,6 +9654,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Legs.
+        /// </summary>
+        public static string Legs {
+            get {
+                return ResourceManager.GetString("Legs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lesbian.
         /// </summary>
         public static string Lesbian {
@@ -11763,6 +11808,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Muscles.
+        /// </summary>
+        public static string Muscles {
+            get {
+                return ResourceManager.GetString("Muscles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mutual Support.
         /// </summary>
         public static string MutualSupport {
@@ -12606,6 +12660,15 @@ namespace K9.Globalisation {
         public static string PeaceTitle {
             get {
                 return ResourceManager.GetString("PeaceTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Penetrating.
+        /// </summary>
+        public static string Penetrating {
+            get {
+                return ResourceManager.GetString("Penetrating", resourceCulture);
             }
         }
         
@@ -13681,6 +13744,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Respiratory System.
+        /// </summary>
+        public static string RespiratorySystem {
+            get {
+                return ResourceManager.GetString("RespiratorySystem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Result.
         /// </summary>
         public static string ResultLabel {
@@ -13875,6 +13947,15 @@ namespace K9.Globalisation {
         public static string Ripening {
             get {
                 return ResourceManager.GetString("Ripening", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rousing.
+        /// </summary>
+        public static string Rousing {
+            get {
+                return ResourceManager.GetString("Rousing", resourceCulture);
             }
         }
         
@@ -14727,9 +14808,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Soil Energies&lt;/h4&gt;
-        ///&lt;p&gt;
-        ///    Soil Energies are deeply &lt;strong&gt;maternal, caring, and supportive&lt;/strong&gt; by nature. They find fulfillment in &lt;strong&gt;serving and nurturing others&lt;/strong&gt;, and their presence often brings a sense of stability and comfort to those around them. While they may not be natural-born leaders, they &lt;strong&gt;work diligently and tirelessly&lt;/strong&gt; behind the scenes to get the job done. Number Two Soil Energies are considered among the &lt;strong&gt;most reliable and steadfast&lt;/ [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string soil_description {
             get {
@@ -16490,12 +16569,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Thunder Energies&lt;/h4&gt;
-        ///&lt;p&gt;
-        ///    Thunder Energies embody the vitality and power of springtime. They are &lt;strong&gt;dynamic, action-oriented, and full of life&lt;/strong&gt;, preferring to &lt;strong&gt;do rather than be&lt;/strong&gt;. They are &lt;strong&gt;initiators and catalysts&lt;/strong&gt;, with a boldness that pushes things forward and shakes up stagnation.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Known for their &lt;strong&gt;joyful, optimistic energy&lt;/strong&gt;, Thunder Energies often emerge as &lt;strong&gt;pioneers and change-makers&lt;/strong&gt;. Their en [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string thunder_description {
             get {
@@ -17504,6 +17578,15 @@ namespace K9.Globalisation {
         public static string VisionaryTitle {
             get {
                 return ResourceManager.GetString("VisionaryTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vocal Anatomy.
+        /// </summary>
+        public static string VocalAnatomy {
+            get {
+                return ResourceManager.GetString("VocalAnatomy", resourceCulture);
             }
         }
         

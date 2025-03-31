@@ -25,6 +25,26 @@ namespace K9.WebApplication.Enums
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.SoftTissue)]
         SoftTissue,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Abdomen)]
-        Abdomen
+        Abdomen,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Liver)]
+        Liver,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Feet)]
+        Feet,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Muscles)]
+        Muscles,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.ConnectiveTissue)]
+        ConnectiveTissue,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.VocalAnatomy)]
+        VocalAnatomy,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.RespiratorySystem)]
+        RespiratorySystem,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Diaphragm)]
+        Diaphragm,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Gallbladder)]
+        Gallbladder,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Gallbladder)]
+        Legs,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Gallbladder)]
+        Eyes
     }
 }

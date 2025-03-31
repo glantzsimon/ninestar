@@ -302,10 +302,16 @@ namespace K9.WebApplication.Models
             PrimaryAttributes = new[] { EPrimaryAttribute.Receptive })]
         Soil,
 
-        [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Thunder, Colour = ENineStarKiColour.BrightGreen, Element = ENineStarKiElement.Tree, Direction = ENineStarKiDirection.East, FamilyMember = ENineStarKiFamilyMember.EldestSon, YinYang = ENineStarKiYinYang.Yang, TrigramName = "Chen", DescriptiveName = ENineStarKiDescriptiveName.Pioneer, Modality = ENineStarKiModality.Dynamic, Cycle = ENineStarKiCycle.EarlySpring)]
+        [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Thunder, Colour = ENineStarKiColour.BrightGreen, Element = ENineStarKiElement.Tree, Direction = ENineStarKiDirection.East, FamilyMember = ENineStarKiFamilyMember.EldestSon, YinYang = ENineStarKiYinYang.Yang, TrigramName = "Chen", DescriptiveName = ENineStarKiDescriptiveName.Pioneer, Modality = ENineStarKiModality.Dynamic, Cycle = ENineStarKiCycle.EarlySpring,
+            InternalRepresentation = new[] { EBodyPart.Liver, EBodyPart.Feet, EBodyPart.Muscles, EBodyPart.ConnectiveTissue },
+            Physiognomy = new[] { EBodyPart.VocalAnatomy },
+            PrimaryAttributes = new[] { EPrimaryAttribute.Rousing })]
         Thunder,
 
-        [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Wind, Colour = ENineStarKiColour.Green, Element = ENineStarKiElement.Tree, Direction = ENineStarKiDirection.SouthEast, FamilyMember = ENineStarKiFamilyMember.EldestDaughter, YinYang = ENineStarKiYinYang.Yin, TrigramName = "Sun", DescriptiveName = ENineStarKiDescriptiveName.Influencer, Modality = ENineStarKiModality.Reflective, Cycle = ENineStarKiCycle.LateSpring)]
+        [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Wind, Colour = ENineStarKiColour.Green, Element = ENineStarKiElement.Tree, Direction = ENineStarKiDirection.SouthEast, FamilyMember = ENineStarKiFamilyMember.EldestDaughter, YinYang = ENineStarKiYinYang.Yin, TrigramName = "Sun", DescriptiveName = ENineStarKiDescriptiveName.Influencer, Modality = ENineStarKiModality.Reflective, Cycle = ENineStarKiCycle.LateSpring,
+            InternalRepresentation = new[] { EBodyPart.NervousSystem, EBodyPart.Diaphragm, EBodyPart.Gallbladder },
+            Physiognomy = new[] { EBodyPart.Legs, EBodyPart.Eyes },
+            PrimaryAttributes = new[] { EPrimaryAttribute.Penetrating })]
         Wind,
 
         [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.CoreEarth, Colour = ENineStarKiColour.Yellow, Element = ENineStarKiElement.Earth, Direction = ENineStarKiDirection.Centre, FamilyMember = ENineStarKiFamilyMember.SeventhChild, YinYang = ENineStarKiYinYang.Unspecified, TrigramName = "None", DescriptiveName = ENineStarKiDescriptiveName.Hub, Modality = ENineStarKiModality.Stable, Cycle = ENineStarKiCycle.Centre)]

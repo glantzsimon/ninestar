@@ -3762,7 +3762,7 @@ namespace K9.Globalisation {
         ///    The Emotional Energies have the same element. There is a potential for a &lt;strong&gt;deep emotional connection&lt;/strong&gt; as well as a very good &lt;strong&gt;mutual understanding on an emotional level&lt;/strong&gt;. This can help to create more harmony in the relationship, especially if the fundamental Energies are antagonistic.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    In romantic relationships, sharing the same Emotional Energy el [rest of string was truncated]&quot;;.
+        ///    In romantic relationships, sharing the same Emotional Ki elemen [rest of string was truncated]&quot;;.
         /// </summary>
         public static string character_element_same {
             get {
@@ -3788,7 +3788,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Please note that the &apos;Emotional Energy&apos; alone does not give a very detailed description of a person. It is important to also take into account the &apos;Fundamental Adult Nature&apos;, as well as the &apos;Mirror Energy&apos;. However, it does give a useful overview of their deeper character. The Emotional Energy also has quite a significant influence on intimate relationships, where the more emotional aspects of ourselves tend to be revealed.
+        ///    Please note that the &apos;Emotional Ki&apos; alone does not give a very detailed description of a person. It is important to also take into account the &apos;Fundamental Adult Nature&apos;, as well as the &apos;Mirror Ki&apos;. However, it does give a useful overview of their deeper character. The Emotional Ki also has quite a significant influence on intimate relationships, where the more emotional aspects of ourselves tend to be revealed.
         ///&lt;/p&gt;.
         /// </summary>
         public static string character_energies_short_description {
@@ -3900,10 +3900,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    This describes our &lt;strong&gt;deeper, emotional nature&lt;/strong&gt;, which is typically only &lt;strong&gt;revealed as people get to know us better&lt;/strong&gt;. It&apos;s also the Energy that &lt;strong&gt;most influences us when we are stressed or emotional&lt;/strong&gt;. Our Emotional Energy also &lt;strong&gt;plays a significant role in our romantic relationships&lt;/strong&gt; and close friendships.
+        ///    This describes our &lt;strong&gt;deeper, emotional nature&lt;/strong&gt;, which is typically only &lt;strong&gt;revealed as people get to know us better&lt;/strong&gt;. It&apos;s also the Energy that &lt;strong&gt;most influences us when we are stressed or emotional&lt;/strong&gt;. Our Emotional Ki also &lt;strong&gt;plays a significant role in our romantic relationships&lt;/strong&gt; and close friendships.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    This Energy is also &lt;strong&gt;connected to our inner child&lt;/strong&gt;, as it is the Energy that we &lt;strong&gt;primarily embody and  [rest of string was truncated]&quot;;.
+        ///    This Energy is also &lt;strong&gt;connected to our inner child&lt;/strong&gt;, as it is the Energy that we &lt;strong&gt;primarily embody and expr [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CharacterEnergyDescription {
             get {
@@ -3912,7 +3912,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Emotional Energy.
+        ///   Looks up a localized string similar to Emotional Ki.
         /// </summary>
         public static string CharacterEnergyLabel {
             get {
@@ -3921,7 +3921,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Emotional Energy.
+        ///   Looks up a localized string similar to Emotional Ki.
         /// </summary>
         public static string CharacterEnergyShortLabel {
             get {
@@ -5424,7 +5424,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The Day Star Energy is similar to the Mirror Energy in that its influence is more superficial than the yearly or monthly Ki of our birth chart. The Day Star influences &lt;strong&gt;how we appear to others&lt;/strong&gt; and also our general mannerisms and demeanour. 
+        ///    The Day Star Ki is similar to the Mirror Ki in that its influence is more superficial than the yearly or monthly Ki of our birth chart. The Day Star influences &lt;strong&gt;how we appear to others&lt;/strong&gt; and also our general mannerisms and demeanour. 
         ///&lt;/p&gt;.
         /// </summary>
         public static string DayStarDescription {
@@ -6656,7 +6656,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mirror Energy.
+        ///   Looks up a localized string similar to Mirror Ki.
         /// </summary>
         public static string ExternalPersona {
             get {
@@ -6798,7 +6798,7 @@ namespace K9.Globalisation {
         ///    Without adequate discipline, Fire children can become spoilt, conceited and vain.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Fire needs to be contained, and since this Emotional Energy can be extremely impulsive, it&apos;s important that parents and caregivers introduce order and boundaries early on in life.
+        ///    Fire needs to be contained, and since this Emotional Ki can be extremely impulsive, it&apos;s important that parents and caregivers introduce order and boundaries early on in life.
         ///&lt;/p&gt;.
         /// </summary>
         public static string fire_child {
@@ -6834,7 +6834,7 @@ namespace K9.Globalisation {
         ///    Without adequate discipline, Fire children can become spoilt, conceited and vain.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Fire needs to be contained, and since this Emotional Energy can be extremely impulsive, it&apos;s important that parents and caregivers introduce order and boundaries early on in life.
+        ///    Fire needs to be contained, and since this Emotional Ki can be extremely impulsive, it&apos;s important that parents and caregivers introduce order and boundaries early on in life.
         ///&lt;/p&gt;.
         /// </summary>
         public static string fire_daystar {
@@ -10728,7 +10728,7 @@ namespace K9.Globalisation {
         ///    The Fundamental Energy description alone is not very granular and only describes one aspect of the chart.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Please note that the &apos;Fundamental Energy&apos; alone does not give a very granular description of a person. The &apos;Emotional Energy&apos;, as well as the &apos;Mirror Energy&apos; play a significant role in shaping a person&apos;s character traits. However, the Fundamental Energy does give a very useful overview. Also, of the three components of a personal chart, the Fundamental Energy has the most sign [rest of string was truncated]&quot;;.
+        ///    Please note that the &apos;Fundamental Energy&apos; alone does not give a very granular description of a person. The &apos;Emotional Ki&apos;, as well as the &apos;Mirror Ki&apos; play a significant role in shaping a person&apos;s character traits. However, the Fundamental Energy does give a very useful overview. Also, of the three components of a personal chart, the Fundamental Energy has the most significant  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string main_energies_short_description {
             get {
@@ -14324,7 +14324,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Fundamental Energy is Yin and in line with gender. Emotional Energy is Yang and opposite to gender
+        ///    Fundamental Energy is Yin and in line with gender. Emotional Ki is Yang and opposite to gender
         ///&lt;/h4&gt;
         ///&lt;h5&gt;
         ///    Quite a balanced combination
@@ -14333,10 +14333,10 @@ namespace K9.Globalisation {
         ///    This is quite a balanced combination that gives women of this combination a fairly even keel in understanding both their own sexuality and that of {SexualPartnersText}.
         ///&lt;/p&gt;
         ///&lt;h5&gt;
-        ///    Emotional Energy is opposite to gender, resulting in these men having a good understanding of {PotentialMatesText}
+        ///    Emotional Ki is opposite to gender, resulting in these men having a good understanding of {PotentialMatesText}
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Emotional Energy is o [rest of string was truncated]&quot;;.
+        ///    Emotional Ki is opposite to g [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_match_opposite_female {
             get {
@@ -14346,7 +14346,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Fundamental Energy is Yang and in line with gender. Emotional Energy is Yin and opposite to gender
+        ///    Fundamental Energy is Yang and in line with gender. Emotional Ki is Yin and opposite to gender
         ///&lt;/h4&gt;
         ///&lt;h5&gt;
         ///    Quite a balanced combination
@@ -14355,10 +14355,10 @@ namespace K9.Globalisation {
         ///    This is quite a balanced combination that gives men a fairly even keel in understanding both their own sexuality and that of {SexualPartnersText}.
         ///&lt;/p&gt;
         ///&lt;h5&gt;
-        ///    Emotional Energy is opposite to gender, resulting in a good understanding of {PotentialMatesText}
+        ///    Emotional Ki is opposite to gender, resulting in a good understanding of {PotentialMatesText}
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Emotional Energy is opposite to gender, which likely gives m [rest of string was truncated]&quot;;.
+        ///    Emotional Ki is opposite to gender, which likely gives men with this [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_match_opposite_male {
             get {
@@ -14368,13 +14368,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Fundamental Energy is Yang and opposite to gender. Emotional Energy is Yin and in line with gender
+        ///    Fundamental Energy is Yang and opposite to gender. Emotional Ki is Yin and in line with gender
         ///&lt;/h4&gt;
         ///&lt;h5&gt;
         ///    Women with this combination are usually very confident in their sexuality during adolescence, but less so as they move into adulthood
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    During adolescence, the Emotional Energy is the driving force of one&apos;s personality and, in this instance, would have been in line with gender. Women with this combination are therefore typically very confident and at ease with {Sexual [rest of string was truncated]&quot;;.
+        ///    During adolescence, the Emotional Ki is the driving force of one&apos;s personality and, in this instance, would have been in line with gender. Women with this combination are therefore typically very confident and at ease with {SexualPartners [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_opposite_match_female {
             get {
@@ -14384,13 +14384,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Fundamental Energy is Yin and opposite to gender. Emotional Energy is Yang and in line with gender
+        ///    Fundamental Energy is Yin and opposite to gender. Emotional Ki is Yang and in line with gender
         ///&lt;/h4&gt;
         ///&lt;h5&gt;
         ///    Men with this combination are usually very confident in their sexuality during adolescence, but less so as they move into adulthood
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    During adolescence, the Emotional Energy is the driving force of one&apos;s personality and, in this instance, would have been in line with gender. Men with this combination are therefore typically very confident and at ease with {SexualPart [rest of string was truncated]&quot;;.
+        ///    During adolescence, the Emotional Ki is the driving force of one&apos;s personality and, in this instance, would have been in line with gender. Men with this combination are therefore typically very confident and at ease with {SexualPartnersText [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sexuality_opposite_match_male {
             get {
@@ -15502,7 +15502,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mirror Energy.
+        ///   Looks up a localized string similar to Mirror Ki.
         /// </summary>
         public static string SurfaceEnergyLabel {
             get {
@@ -15511,7 +15511,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mirror Energy.
+        ///   Looks up a localized string similar to Mirror Ki.
         /// </summary>
         public static string SurfaceEnergyShortLabel {
             get {

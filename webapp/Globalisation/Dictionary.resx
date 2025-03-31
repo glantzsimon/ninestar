@@ -221,7 +221,7 @@
     <value>Centre</value>
   </data>
   <data name="CharacterEnergyLabel" xml:space="preserve">
-    <value>Emotional Energy</value>
+    <value>Emotional Ki</value>
   </data>
   <data name="CoreEarth" xml:space="preserve">
     <value>Core Earth</value>
@@ -308,7 +308,7 @@
     <value>Red</value>
   </data>
   <data name="SurfaceEnergyLabel" xml:space="preserve">
-    <value>Mirror Energy</value>
+    <value>Mirror Ki</value>
   </data>
   <data name="SeventhChild" xml:space="preserve">
     <value>Seventh Child</value>
@@ -623,10 +623,10 @@
     <value>Adult Nature</value>
   </data>
   <data name="CharacterEnergyShortLabel" xml:space="preserve">
-    <value>Emotional Energy</value>
+    <value>Emotional Ki</value>
   </data>
   <data name="ExternalPersona" xml:space="preserve">
-    <value>Mirror Energy</value>
+    <value>Mirror Ki</value>
   </data>
   <data name="MainChildLabel" xml:space="preserve">
     <value>Fundamental Nature</value>
@@ -641,7 +641,7 @@
     <value>Personal Chart Details</value>
   </data>
   <data name="SurfaceEnergyShortLabel" xml:space="preserve">
-    <value>Mirror Energy</value>
+    <value>Mirror Ki</value>
   </data>
   <data name="_216" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>summaries\en-gb\_216.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

@@ -5038,6 +5038,9 @@
   <data name="Bones" xml:space="preserve">
     <value>Bones</value>
   </data>
+  <data name="Catalyst" xml:space="preserve">
+    <value>Catalyst</value>
+  </data>
   <data name="ConnectiveTissue" xml:space="preserve">
     <value>Connective Tissue</value>
   </data>
@@ -5056,6 +5059,9 @@
   <data name="Feet" xml:space="preserve">
     <value>Feet</value>
   </data>
+  <data name="Hands" xml:space="preserve">
+    <value>Hands</value>
+  </data>
   <data name="Hardship" xml:space="preserve">
     <value>Hardship</value>
   </data>
@@ -5065,11 +5071,17 @@
   <data name="LowerBody" xml:space="preserve">
     <value>Lower Body</value>
   </data>
+  <data name="LymphaticSystem" xml:space="preserve">
+    <value>Lymphatic System</value>
+  </data>
   <data name="Muscles" xml:space="preserve">
     <value>Muscles</value>
   </data>
   <data name="NervousSystem" xml:space="preserve">
     <value>Nervous System</value>
+  </data>
+  <data name="Pancreas" xml:space="preserve">
+    <value>Pancreas</value>
   </data>
   <data name="Penetrating" xml:space="preserve">
     <value>Penetrating</value>
@@ -5085,6 +5097,9 @@
   </data>
   <data name="SoftTissue" xml:space="preserve">
     <value>Soft Tissue</value>
+  </data>
+  <data name="Spleen" xml:space="preserve">
+    <value>Spleen</value>
   </data>
   <data name="VocalAnatomy" xml:space="preserve">
     <value>Vocal Anatomy</value>

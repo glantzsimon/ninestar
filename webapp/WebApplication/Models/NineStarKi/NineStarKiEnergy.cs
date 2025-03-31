@@ -297,7 +297,7 @@ namespace K9.WebApplication.Models
         Water,
 
         [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Soil, Colour = ENineStarKiColour.Black, Element = ENineStarKiElement.Earth, Direction = ENineStarKiDirection.SouthWest, FamilyMember = ENineStarKiFamilyMember.Mother, YinYang = ENineStarKiYinYang.Yin, TrigramName = "Kun", DescriptiveName = ENineStarKiDescriptiveName.Nurturer, Modality = ENineStarKiModality.Stable, Cycle = ENineStarKiCycle.WinterToSpring,
-            InternalRepresentation = new[] { EBodyPart.Stomach, EBodyPart.SpleenPancreas, EBodyPart.LowerBody, EBodyPart.SoftTissue },
+            InternalRepresentation = new[] { EBodyPart.Stomach, EBodyPart.Spleen, EBodyPart.LowerBody, EBodyPart.SoftTissue },
             Physiognomy = new[] { EBodyPart.Abdomen },
             PrimaryAttributes = new[] { EPrimaryAttribute.Receptive })]
         Soil,
@@ -314,7 +314,10 @@ namespace K9.WebApplication.Models
             PrimaryAttributes = new[] { EPrimaryAttribute.Penetrating })]
         Wind,
 
-        [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.CoreEarth, Colour = ENineStarKiColour.Yellow, Element = ENineStarKiElement.Earth, Direction = ENineStarKiDirection.Centre, FamilyMember = ENineStarKiFamilyMember.SeventhChild, YinYang = ENineStarKiYinYang.Unspecified, TrigramName = "None", DescriptiveName = ENineStarKiDescriptiveName.Hub, Modality = ENineStarKiModality.Stable, Cycle = ENineStarKiCycle.Centre)]
+        [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.CoreEarth, Colour = ENineStarKiColour.Yellow, Element = ENineStarKiElement.Earth, Direction = ENineStarKiDirection.Centre, FamilyMember = ENineStarKiFamilyMember.SeventhChild, YinYang = ENineStarKiYinYang.Unspecified, TrigramName = "None", DescriptiveName = ENineStarKiDescriptiveName.Hub, Modality = ENineStarKiModality.Stable, Cycle = ENineStarKiCycle.Centre,
+            InternalRepresentation = new[] { EBodyPart.Stomach, EBodyPart.Spleen, EBodyPart.Pancreas, EBodyPart.LymphaticSystem },
+            Physiognomy = new[] { EBodyPart.Hands, EBodyPart.Abdomen },
+            PrimaryAttributes = new[] { EPrimaryAttribute.Catalyst })]
         CoreEarth,
 
         [NineStarKiEnumMetaData(ResourceType = typeof(Dictionary), Name = Strings.Names.Heaven, Colour = ENineStarKiColour.White, Element = ENineStarKiElement.Metal, Direction = ENineStarKiDirection.NorthWest, FamilyMember = ENineStarKiFamilyMember.Father, YinYang = ENineStarKiYinYang.Yang, TrigramName = "Chien", DescriptiveName = ENineStarKiDescriptiveName.Leader, Modality = ENineStarKiModality.Dynamic, Cycle = ENineStarKiCycle.EarlyAutumn)]

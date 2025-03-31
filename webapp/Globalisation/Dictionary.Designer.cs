@@ -3724,6 +3724,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Catalyst.
+        /// </summary>
+        public static string Catalyst {
+            get {
+                return ResourceManager.GetString("Catalyst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Centre.
         /// </summary>
         public static string Centre {
@@ -7838,6 +7847,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hands.
+        /// </summary>
+        public static string Hands {
+            get {
+                return ResourceManager.GetString("Hands", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hardship.
         /// </summary>
         public static string Hardship {
@@ -9846,6 +9864,15 @@ namespace K9.Globalisation {
         public static string Lungs {
             get {
                 return ResourceManager.GetString("Lungs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lymphatic System.
+        /// </summary>
+        public static string LymphaticSystem {
+            get {
+                return ResourceManager.GetString("LymphaticSystem", resourceCulture);
             }
         }
         
@@ -12570,6 +12597,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pancreas.
+        /// </summary>
+        public static string Pancreas {
+            get {
+                return ResourceManager.GetString("Pancreas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;Dear {FirstName},&lt;/p&gt;
         ///&lt;p&gt;Your password has been reset. Please click on the link below to create a new password:&lt;/p&gt;
         ///&lt;p&gt;&lt;a href=&quot;{ResetPasswordLink}&quot;&gt;{ResetPasswordLink}&lt;/a&gt;&lt;/p&gt;.
@@ -15244,6 +15280,15 @@ namespace K9.Globalisation {
         public static string SpiritualBiorhytm {
             get {
                 return ResourceManager.GetString("SpiritualBiorhytm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spleen.
+        /// </summary>
+        public static string Spleen {
+            get {
+                return ResourceManager.GetString("Spleen", resourceCulture);
             }
         }
         
@@ -18258,12 +18303,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Wind Energies&lt;/h4&gt;
-        ///&lt;p&gt;
-        ///    Wind Energies, as their name suggests, embody the qualities of movement and transformation. They can express anything from &lt;strong&gt;gentle stillness to sudden intensity&lt;/strong&gt;—like a quiet breeze or a sweeping gust. Among the Nine Star Ki Energies, Wind is &lt;strong&gt;one of the most changeable and emotionally expressive&lt;/strong&gt;.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Like their Thunder counterparts (also of the Tree element), Wind Energies can be &lt;strong&gt;impulsive&lt;/strong&gt;, but typically [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string wind_description {
             get {

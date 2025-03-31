@@ -276,6 +276,7 @@
             public const string Receptive = "Receptive";
             public const string Rousing = "Rousing";
             public const string Penetrating = "Penetrating";
+            public const string Catalyst = "Catalyst";
 
             public const string Bladder = "Bladder";
             public const string SexOrgans = "SexOrgans";
@@ -292,6 +293,8 @@
             public const string RespiratorySystem = "RespiratorySystem";
             public const string Diaphragm = "Diaphragm";
 
+            public const string Pancreas = "Pancreas";
+            public const string Spleen = "Spleen";
             public const string SpleenPancreas = "SpleenPancreas";
             public const string Lungs = "Lungs";
             public const string Kidneys = "Kidneys";
@@ -304,6 +307,8 @@
             public const string SmallIntestine = "SmallIntestine";
             public const string Legs = "Legs";
             public const string Eyes = "Eyes";
+            public const string LymphaticSystem = "LymphaticSystem";
+            public const string Hands = "Hands";
 
             public const string FirstDiscount = "FirstDiscount";
             public const string SecondDiscount = "SecondDiscount";

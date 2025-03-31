@@ -13,6 +13,8 @@ namespace K9.WebApplication.Enums
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Rousing)]
         Rousing,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Penetrating)]
-        Penetrating
+        Penetrating,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Catalyst)]
+        Catalyst
     }
 }

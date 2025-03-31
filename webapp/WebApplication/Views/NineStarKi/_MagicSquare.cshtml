@@ -11,15 +11,25 @@
     var showDirections = K9.WebApplication.Helpers.SessionHelper.GetShowDirections();
     var directionsStyle = !showDirections ? "display: none;" : "";
 
-    var active1Class = 4 == Model.PersonalEnergy.EnergyNumber && !numbersMatch ? "active " : "";
-    var active2Class = 9 == Model.PersonalEnergy.EnergyNumber && !numbersMatch ? "active " : "";
-    var active3Class = 2 == Model.PersonalEnergy.EnergyNumber && !numbersMatch ? "active " : "";
-    var active4Class = 3 == Model.PersonalEnergy.EnergyNumber && !numbersMatch ? "active " : "";
-    var active5Class = 5 == Model.PersonalEnergy.EnergyNumber || numbersMatch ? "active " : "";
-    var active6Class = 7 == Model.PersonalEnergy.EnergyNumber && !numbersMatch ? "active " : "";
-    var active7Class = 8 == Model.PersonalEnergy.EnergyNumber && !numbersMatch ? "active " : "";
-    var active8Class = 1 == Model.PersonalEnergy.EnergyNumber && !numbersMatch ? "active " : "";
-    var active9Class = 6 == Model.PersonalEnergy.EnergyNumber && !numbersMatch ? "active " : "";
+    var isActive1 = Model.IsPersonalChart ? false : 4 == Model.PersonalEnergy.EnergyNumber;
+    var isActive2 = Model.IsPersonalChart ? false : 9 == Model.PersonalEnergy.EnergyNumber;
+    var isActive3 = Model.IsPersonalChart ? false : 2 == Model.PersonalEnergy.EnergyNumber;
+    var isActive4 = Model.IsPersonalChart ? false : 3 == Model.PersonalEnergy.EnergyNumber;
+    var isActive5 = Model.IsPersonalChart ? true : 5 == Model.PersonalEnergy.EnergyNumber;
+    var isActive6 = Model.IsPersonalChart ? false : 7 == Model.PersonalEnergy.EnergyNumber;
+    var isActive7 = Model.IsPersonalChart ? false : 8 == Model.PersonalEnergy.EnergyNumber;
+    var isActive8 = Model.IsPersonalChart ? false : 1 == Model.PersonalEnergy.EnergyNumber;
+    var isActive9 = Model.IsPersonalChart ? false : 6 == Model.PersonalEnergy.EnergyNumber;
+
+    var active1Class = isActive1 ? "active " : "";
+    var active2Class = isActive2 ? "active " : "";
+    var active3Class = isActive3 ? "active " : "";
+    var active4Class = isActive4 ? "active " : "";
+    var active5Class = isActive5 ? "active " : "";
+    var active6Class = isActive6 ? "active " : "";
+    var active7Class = isActive7 ? "active " : "";
+    var active8Class = isActive8 ? "active " : "";
+    var active9Class = isActive9 ? "active " : "";
 }
 
 
@@ -34,7 +44,7 @@
         <div class="cell @active7Class number-@magicSquareNumbers[7]" data-index="7">@magicSquareNumbers[7]</div>
         <div class="cell @active8Class number-@magicSquareNumbers[0]" data-index="8">@magicSquareNumbers[0]</div>
         <div class="cell @active9Class number-@magicSquareNumbers[5]" data-index="9">@magicSquareNumbers[5]</div>
-        
+
         @if (Model.GlobalEnergy.EnergyCycleType != ENineStarKiEnergyCycleType.EpochEnergy && Model.GlobalEnergy.EnergyCycleType != ENineStarKiEnergyCycleType.GenerationalEnergy)
         {
             <div class="directions-line-overlay" style="@directionsStyle">

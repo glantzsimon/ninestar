@@ -48,6 +48,7 @@
                     <div class="parent-label">
                         <div class="parent-title">@Model.PeriodDatesTitle</div>
                         <div class="parent-dates">@Model.PeriodDatesDetails</div>
+                        <div class="parent-dates age-details">@Model.PeriodAgesDetails</div>
                     </div>
                     <div class="parent-detail narrow">
                         <img loading="lazy" title="@Model.Energy.EnergyName" alt="@Model.ImgAlt" class="auto-size center-block" src="@Model.ImgSrc" />
@@ -89,6 +90,7 @@
                         {
                             var energyTitle = Model.GetEnergyTitle(energy);
                             var datesDisplay = Model.GetEnergyDatesDetails(energy);
+                            var ageDisplay = Model.GetEnergAgeDetails(energy);
                             var columnClass = Model.View == EPlannerView.Year ? "col-md-1 col-sm-1 col-xs-2" : "";
 
                             <div class="padding-0 margin-0 child-container @columnClass">
@@ -97,6 +99,7 @@
                                     <div class="planner-item-container child-block clickable @energy.SelectedCssClass">
                                         <div class="child-name">@energyTitle</div>
                                         <div class="desktop-only child-dates">@datesDisplay</div>
+                                        <div class="desktop-only child-dates age-details">@ageDisplay</div>
                                         <img loading="lazy" title="@energy.EnergyName" alt="@energy.ImageAlt" class="auto-size center-block" src="@energy.ImageSrc" />
                                     </div>
                                 </div>

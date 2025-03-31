@@ -5,6 +5,7 @@
 
 @{
     var childClass = Model.PersonModel.IsAdult() ? "" : "child-profile";
+    var magicSquaresModel = Model.GetPersonalChartMagicSquares();
 }
 
 <div class="text-center">
@@ -24,11 +25,7 @@
     <div class="col-sm-4 col-sm-offset-4 very-small-energy">
         <a href="#" id="epoch-energy">
             @Html.Partial("../NineStarKi/_EnergyTitle", Model.PersonalChartEnergies.Epoch)
-            @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
-            {
-                GlobalEnergy = Model.PersonalChartEnergies.Epoch,
-                PersonalEnergy = Model.PersonalChartEnergies.Epoch
-            })
+            @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Epoch)
         </a>
     </div>
 </div>
@@ -36,11 +33,7 @@
     <div class="col-sm-4 col-sm-offset-4 very-small-energy">
         <a href="#" id="generation-energy">
             @Html.Partial("../NineStarKi/_EnergyTitle", Model.PersonalChartEnergies.Generation)
-            @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
-            {
-                GlobalEnergy = Model.PersonalChartEnergies.Generation,
-                PersonalEnergy = Model.PersonalChartEnergies.Generation
-            })
+            @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Generation)
         </a>
     </div>
 </div>
@@ -48,33 +41,21 @@
     <div class="col-sm-4 medium-energy">
         <a href="#" id="character-energy">
             @Html.Partial("../NineStarKi/_EnergyTitle", Model.CharacterEnergy)
-            @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
-            {
-                GlobalEnergy = Model.PersonalChartEnergies.Month,
-                PersonalEnergy = Model.PersonalChartEnergies.Month
-            })
+            @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Emotional)
         </a>
     </div>
     <div class="col-sm-4 @childClass">
         <div class="adult-profile">
             <a href="#" id="fundamental-energy">
                 @Html.Partial("../NineStarKi/_EnergyTitle", Model.MainEnergy)
-                @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
-                {
-                    GlobalEnergy = Model.PersonalChartEnergies.Year,
-                    PersonalEnergy = Model.PersonalChartEnergies.Year
-                })
+                @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Main)
             </a>
         </div>
     </div>
     <div class="col-sm-4 small-energy">
         <a href="#" id="surface-energy">
             @Html.Partial("../NineStarKi/_EnergyTitle", Model.SurfaceEnergy)
-            @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
-            {
-                GlobalEnergy = Model.PersonalChartEnergies.Surface,
-                PersonalEnergy = Model.PersonalChartEnergies.Surface
-            })
+            @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.Surface)
         </a>
     </div>
 </div>
@@ -82,11 +63,7 @@
     <div class="col-sm-4 col-sm-offset-4 small-energy">
         <a href="#" id="daystar-energy">
             @Html.Partial("../NineStarKi/_EnergyTitle", Model.PersonalChartEnergies.Day)
-            @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
-            {
-                GlobalEnergy = Model.PersonalChartEnergies.Day,
-                PersonalEnergy = Model.PersonalChartEnergies.Day
-            })
+            @Html.Partial("../NineStarKi/_MagicSquareDisplay", magicSquaresModel.DayStar)
         </a>
     </div>
 </div>

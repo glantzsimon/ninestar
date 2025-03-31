@@ -4,16 +4,18 @@
 @model K9.WebApplication.ViewModels.MagicSquareViewModel
 
 @{
-    var label = Model.PersonalEnergy.EnergyCycleType == ENineStarKiEnergyCycleType.Unspecified ?
-        
-        Model.PersonalEnergy.EnergyType == ENineStarKiEnergyType.MainEnergy ? Model.PersonalEnergy.AdultEnergyLabel
+    var label = Model.IsPersonalChart ?
+
+    Model.PersonalEnergy.EnergyType == ENineStarKiEnergyType.MainEnergy ? Model.PersonalEnergy.AdultEnergyLabel
         : Model.PersonalEnergy.EnergyType == ENineStarKiEnergyType.CharacterEnergy ? Model.PersonalEnergy.CharacteEnergyLabel
             : Model.PersonalEnergy.EnergyType == ENineStarKiEnergyType.SurfaceEnergy ? Dictionary.SurfaceEnergyShortLabel
                 : Model.PersonalEnergy.EnergyType == ENineStarKiEnergyType.DailyEnergy ? Dictionary.DayStarLabel
                     : Model.PersonalEnergy.EnergyType == ENineStarKiEnergyType.GenerationalEnergy ? Dictionary.GenerationalEnergyLabel
                         : Model.PersonalEnergy.EnergyType == ENineStarKiEnergyType.EpochEnergy ? Dictionary.EpochEnergyLabel
-                            : string.Empty :
-        
+                            : string.Empty
+
+        :
+
         Model.PersonalEnergy.EnergyCycleType == ENineStarKiEnergyCycleType.YearlyCycleEnergy ? Dictionary.YearlyEnergyLabel
             : Model.PersonalEnergy.EnergyCycleType == ENineStarKiEnergyCycleType.MonthlyCycleEnergy ? Dictionary.MonthlyEnergyLabel
                 : Model.PersonalEnergy.EnergyCycleType == ENineStarKiEnergyCycleType.HourlyEnergy ? Dictionary.HourlyEnergyLabel
@@ -22,17 +24,22 @@
                             : Model.PersonalEnergy.EnergyCycleType == ENineStarKiEnergyCycleType.EpochEnergy ? Dictionary.EpochEnergyLabel
                                 : string.Empty;
 
-    var magicSquareNumbers = Model.GlobalEnergy.GetMagicSquareNumbers();
-
     var displayPreference = K9.WebApplication.Helpers.SessionHelper.GetEnergyDefaultDisplay();
     var magicStyle = displayPreference == (int)EEnergyDisplay.Graphical ? "display: none;" : "";
+    var houseDetails = Model.IsPersonalChart ? Model.PersonalEnergy.ElementNameAndNumber : $"{Model.PersonalEnergy.ElementNameAndNumber} {Dictionary.House}";
+    var houseDetails2 = Model.IsSplit ? Model.IsPersonalChart ? Model.SecondMagicSquareViewModel.PersonalEnergy.ElementNameAndNumber : $"{Model.SecondMagicSquareViewModel.PersonalEnergy.ElementNameAndNumber} {Dictionary.House}" : "";
 }
-
 
 <div class="magic-square-display" style="@magicStyle">
     <div class="ninestar-summary-container margin-3">
         <h3 class="margin-bottom-0 padding-bottom-0 margin-top-2">@label</h3>
-        <p class="margin-bottom-2">@Model.PersonalEnergy.ElementNameAndNumber</p>
+        <p class="margin-bottom-2">@houseDetails</p>
         @Html.Partial("../NineStarKi/_MagicSquare", Model)
+
+        @if (Model.IsSplit)
+        {
+            <p class="margin-bottom-2">@houseDetails2</p>
+            @Html.Partial("../NineStarKi/_MagicSquare", Model.SecondMagicSquareViewModel)
+        }
     </div>
 </div>

@@ -344,7 +344,7 @@
             public const string SoilGeneration = "soil_generation";
             public const string ThunderGeneration = "thunder_generation";
             public const string WindGeneration = "wind_generation";
-            public const string CoreEarthGeneration = "core_earth_generation";
+            public const string CoreEarthGeneration = "coreearth_generation";
             public const string HeavenGeneration = "heaven_generation";
             public const string LakeGeneration = "lake_generation";
             public const string MountainGeneration = "mountain_generation";

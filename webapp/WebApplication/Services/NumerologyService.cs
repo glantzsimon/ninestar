@@ -211,7 +211,7 @@ namespace K9.WebApplication.Services
         {
             var items = new List<NumerologyPlannerModel>();
             var currentYear = CalculateCurrentYearCode(person);
-            var birthdayFactor = person.DateOfBirth.HasBirthdayPassedThisYear() ? -1 : 0;
+            var birthdayFactor = person.DateOfBirth.HasBirthdayPassed() ? -1 : 0;
             int year = person.DateOfBirth.Year + person.YearsOld + birthdayFactor;
             int offset = 5;
             var yearEnergy = currentYear.CodeNumber.Decrement(offset + 1);

@@ -263,6 +263,156 @@ namespace K9.WebApplication.Models
 
         public NineStarKiEnergiesModel PersonalChartEnergies { get; }
 
+        private (
+            MagicSquareViewModel Epoch,
+            MagicSquareViewModel Generation,
+            MagicSquareViewModel Main,
+            MagicSquareViewModel Emotional,
+            MagicSquareViewModel Surface,
+            MagicSquareViewModel DayStar,
+            MagicSquareViewModel Hour)? _personalChartMagicSquare;
+
+        public (
+            MagicSquareViewModel Epoch,
+            MagicSquareViewModel Generation,
+            MagicSquareViewModel Main,
+            MagicSquareViewModel Emotional,
+            MagicSquareViewModel Surface,
+            MagicSquareViewModel DayStar,
+            MagicSquareViewModel Hour) GetPersonalChartMagicSquares()
+        {
+            if (!_personalChartMagicSquare.HasValue)
+            {
+                var epoch = new MagicSquareViewModel
+                {
+                    GlobalEnergy = PersonalChartEnergies.Epoch,
+                    PersonalEnergy = PersonalChartEnergies.Epoch,
+                    IsPersonalChart = true
+                };
+
+                var generation = new MagicSquareViewModel
+                {
+                    GlobalEnergy = PersonalChartEnergies.Generation,
+                    PersonalEnergy = PersonalChartEnergies.Generation,
+                    IsPersonalChart = true
+                };
+
+                var year = new MagicSquareViewModel
+                {
+                    GlobalEnergy = PersonalChartEnergies.Year,
+                    PersonalEnergy = PersonalChartEnergies.Year,
+                    IsPersonalChart = true
+                };
+
+                var month = new MagicSquareViewModel
+                {
+                    GlobalEnergy = PersonalChartEnergies.Month,
+                    PersonalEnergy = PersonalChartEnergies.Month,
+                    IsPersonalChart = true
+                };
+
+                var mirror = new MagicSquareViewModel
+                {
+                    GlobalEnergy = PersonalChartEnergies.Surface,
+                    PersonalEnergy = PersonalChartEnergies.Surface,
+                    IsPersonalChart = true
+                };
+
+                var day = new MagicSquareViewModel
+                {
+                    GlobalEnergy = PersonalChartEnergies.Day,
+                    PersonalEnergy = PersonalChartEnergies.Day,
+                    IsPersonalChart = true
+                };
+
+                var hour = new MagicSquareViewModel
+                {
+                    GlobalEnergy = PersonalChartEnergies.Hour,
+                    PersonalEnergy = PersonalChartEnergies.Hour,
+                    IsPersonalChart = true
+                };
+
+                _personalChartMagicSquare = (epoch, generation, year, month, mirror, day, hour);
+            }
+
+            return _personalChartMagicSquare.Value;
+        }
+
+        private (
+            MagicSquareViewModel Epoch,
+            MagicSquareViewModel Generation,
+            MagicSquareViewModel Year,
+            MagicSquareViewModel Month,
+            MagicSquareViewModel Day,
+            MagicSquareViewModel Hour)? _cycleMagicSquare;
+
+        public (
+            MagicSquareViewModel Epoch,
+            MagicSquareViewModel Generation,
+            MagicSquareViewModel Year,
+            MagicSquareViewModel Month,
+            MagicSquareViewModel Day,
+            MagicSquareViewModel Hour) GetCycleMagicSquares()
+        {
+            if (!_cycleMagicSquare.HasValue)
+            {
+                var epoch = new MagicSquareViewModel
+                {
+                    GlobalEnergy = GlobalCycleEnergies.Epoch,
+                    PersonalEnergy = PersonalHousesOccupiedEnergies.Epoch
+                };
+
+                var generation = new MagicSquareViewModel
+                {
+                    GlobalEnergy = GlobalCycleEnergies.Generation,
+                    PersonalEnergy = PersonalHousesOccupiedEnergies.Generation
+                };
+
+                var year = new MagicSquareViewModel
+                {
+                    GlobalEnergy = GlobalCycleEnergies.Year,
+                    PersonalEnergy = PersonalHousesOccupiedEnergies.Year
+                };
+
+                var month = new MagicSquareViewModel
+                {
+                    GlobalEnergy = GlobalCycleEnergies.Month,
+                    PersonalEnergy = PersonalHousesOccupiedEnergies.Month
+                };
+
+                var day = (GlobalCycleEnergies.Day2 == null || GlobalCycleEnergies.Day.EnergyNumber == GlobalCycleEnergies.Day2.EnergyNumber) ?
+
+                    new MagicSquareViewModel
+                    {
+                        GlobalEnergy = GlobalCycleEnergies.Day,
+                        PersonalEnergy = PersonalHousesOccupiedEnergies.Day
+                    } :
+
+                    new MagicSquareViewModel
+                    {
+                        IsSplit = true,
+                        GlobalEnergy = GlobalCycleEnergies.Day,
+                        PersonalEnergy = PersonalHousesOccupiedEnergies.Day,
+
+                        SecondMagicSquareViewModel = new MagicSquareViewModel
+                        {
+                            GlobalEnergy = GlobalCycleEnergies.Day2,
+                            PersonalEnergy = PersonalHousesOccupiedEnergies.Day2,
+                        }
+                    };
+
+                var hour = new MagicSquareViewModel
+                {
+                    GlobalEnergy = GlobalCycleEnergies.Hour,
+                    PersonalEnergy = PersonalHousesOccupiedEnergies.Hour
+                };
+
+                _cycleMagicSquare = (epoch, generation, year, month, day, hour);
+            }
+
+            return _cycleMagicSquare.Value;
+        }
+
         public NineStarKiEnergiesModel GlobalCycleEnergies { get; }
 
         public NineStarKiEnergiesModel PersonalHousesOccupiedEnergies { get; }

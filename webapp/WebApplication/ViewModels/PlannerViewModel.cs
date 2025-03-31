@@ -37,7 +37,7 @@ namespace K9.WebApplication.ViewModels
         public string EnergyName => Energy.EnergyName;
 
         public EPlannerView NextViewUp => GetNextViewUp();
-        
+
         public string ImgSrc => $"{DefaultValuesConfiguration.Instance.BaseImagesPath}/ninestar/energies/{Energy.EnergyUIName}.png";
 
         public string ImgAlt => $"{Dictionary.NineStarKiAstrologyFreeCalculator} {Energy.EnergyTitle}";
@@ -45,6 +45,8 @@ namespace K9.WebApplication.ViewModels
         public string PeriodDatesTitle => GetPeriodDatesTitle();
 
         public string PeriodDatesDetails => GetPeriodDatesDetails();
+
+        public string PeriodAgesDetails => GetPeriodAgeDetails();
 
         public EPlannerView ChildView => GetChildView();
 
@@ -70,6 +72,14 @@ namespace K9.WebApplication.ViewModels
         public string GetEnergyDatesDetails(PlannerViewModelItem energy)
         {
             return $"{energy.EnergyStartsOn.ToString("MMM/dd")} {energy.EnergyEndsOn.ToString("MMM/dd")}";
+        }
+
+        public string GetEnergAgeDetails(PlannerViewModelItem energy)
+        {
+            var startAge = NineStarKiModel.PersonModel.DateOfBirth.GetAgeInYearsAsOf(energy.EnergyStartsOn);
+            var endAge = NineStarKiModel.PersonModel.DateOfBirth.GetAgeInYearsAsOf(energy.EnergyEndsOn);
+
+            return ToAgeString(startAge, endAge);   
         }
 
         private EPlannerView GetNextViewUp()
@@ -179,6 +189,19 @@ namespace K9.WebApplication.ViewModels
                 default:
                     return string.Empty;
             }
+        }
+
+        private string GetPeriodAgeDetails()
+        {
+            var startAge = NineStarKiModel.PersonModel.DateOfBirth.GetAgeInYearsAsOf(PeriodStarsOn);
+            var endAge = NineStarKiModel.PersonModel.DateOfBirth.GetAgeInYearsAsOf(PeriodEndsOn);
+
+            return ToAgeString(startAge, endAge);
+        }
+
+        private static string ToAgeString(int startAge, int endAge)
+        {
+            return startAge == endAge ? $"Age {startAge}" : $"Age {startAge} - {endAge}";
         }
     }
 }

@@ -112,6 +112,9 @@
   margin-bottom: 0;
   padding-bottom: 0;
 }
+.global-planner-container .age-details {
+  font-weight: bold;
+}
 .global-planner-container .parent-planner {
   display: flex;
   flex-direction: column;

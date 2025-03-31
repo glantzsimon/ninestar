@@ -5008,6 +5008,9 @@
   <data name="Graphical" xml:space="preserve">
     <value>Graphical Display</value>
   </data>
+  <data name="House" xml:space="preserve">
+    <value>House</value>
+  </data>
   <data name="HousesYouCurrentlyOccupy" xml:space="preserve">
     <value>Houses You Currently Occupy</value>
   </data>

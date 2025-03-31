@@ -277,6 +277,8 @@
             public const string Rousing = "Rousing";
             public const string Penetrating = "Penetrating";
             public const string Catalyst = "Catalyst";
+            public const string Ease = "Ease";
+            public const string Creative = "Creative";
 
             public const string Bladder = "Bladder";
             public const string SexOrgans = "SexOrgans";
@@ -309,6 +311,14 @@
             public const string Eyes = "Eyes";
             public const string LymphaticSystem = "LymphaticSystem";
             public const string Hands = "Hands";
+            public const string PinealGland = "PinealGland";
+            public const string Skin = "Skin";
+            public const string Skull = "Skull";
+            public const string Head = "Head";
+            public const string SpeechAnatomy = "SpeechAnatomy";
+            public const string Mouth = "Mouth";
+            public const string Lips = "Lips";
+            public const string Back = "Back";
 
             public const string FirstDiscount = "FirstDiscount";
             public const string SecondDiscount = "SecondDiscount";

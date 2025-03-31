@@ -5104,4 +5104,28 @@
   <data name="VocalAnatomy" xml:space="preserve">
     <value>Vocal Anatomy</value>
   </data>
+  <data name="Creative" xml:space="preserve">
+    <value>Creative</value>
+  </data>
+  <data name="Head" xml:space="preserve">
+    <value>Head</value>
+  </data>
+  <data name="Lips" xml:space="preserve">
+    <value>Lips</value>
+  </data>
+  <data name="Mouth" xml:space="preserve">
+    <value>Mouth</value>
+  </data>
+  <data name="PinealGland" xml:space="preserve">
+    <value>Pineal Gland</value>
+  </data>
+  <data name="Skin" xml:space="preserve">
+    <value>Skin</value>
+  </data>
+  <data name="Skull" xml:space="preserve">
+    <value>Skull</value>
+  </data>
+  <data name="SpeechAnatomy" xml:space="preserve">
+    <value>Speech Anatomy</value>
+  </data>
 </root>

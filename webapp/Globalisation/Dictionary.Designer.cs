@@ -4791,12 +4791,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Core Earth Energies&lt;/h4&gt;
-        ///&lt;p&gt;
-        ///    Core Earth Energies sit at the centre of the Nine Star Ki system, and this centrality is often reflected in their lives. They are frequently &lt;strong&gt;at the heart of everything they do&lt;/strong&gt;—in work, family, or social settings. Others naturally &lt;strong&gt;gravitate toward them for support, leadership, and guidance&lt;/strong&gt;. When this central role is absent, they may even feel &lt;strong&gt;unseen or left out&lt;/strong&gt;.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    In their private lives, Core Ea [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string coreearth_description {
             get {
@@ -5000,6 +4995,15 @@ namespace K9.Globalisation {
         public static string CreateMultiple {
             get {
                 return ResourceManager.GetString("CreateMultiple", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Creative.
+        /// </summary>
+        public static string Creative {
+            get {
+                return ResourceManager.GetString("Creative", resourceCulture);
             }
         }
         
@@ -7883,6 +7887,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Head.
+        /// </summary>
+        public static string Head {
+            get {
+                return ResourceManager.GetString("Head", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Deeply intuitive and highly sensitive, these individuals possess a profound emotional depth paired with a grounded, introspective nature. Their innate compassion and empathy allow them to connect with others on a soul level, offering support, guidance, and healing where it is needed most. They play a vital role in both personal and collective transformation, helping to mend emotional wounds and uplift humanity toward a higher state of love and light. Whether working in the healing arts, serving in nonprofit [rest of string was truncated]&quot;;.
         /// </summary>
         public static string healer {
@@ -8013,12 +8026,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Heaven Energies&lt;/h4&gt;
-        ///&lt;p&gt;
-        ///    Heaven Energies are often seen as &lt;strong&gt;natural leaders&lt;/strong&gt;—steady, commanding, and confident in roles of &lt;strong&gt;authority and influence&lt;/strong&gt;. Whether in politics, the military, business, or the arts, they frequently rise to positions of respect and responsibility.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Their &lt;strong&gt;strong and consistent nature&lt;/strong&gt; enables them to break new ground, paving the way for future generations. Many 6 Metal Energies have a lasting impact in  [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string heaven_description {
             get {
@@ -9313,12 +9321,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Lake Energies&lt;/h4&gt;
-        ///&lt;p&gt;
-        ///    Lake Energies are associated with &lt;strong&gt;late autumn&lt;/strong&gt;, a season of enjoyment, celebration, and reflection after the harvest. This symbolism reflects their &lt;strong&gt;love of pleasure, beauty, and connection&lt;/strong&gt;. Of all the Nine Star Ki Energies, 7 Metal types are perhaps the most inclined to &lt;strong&gt;enjoy fashion, entertainment, and social life&lt;/strong&gt;. They are natural pleasure seekers and know how to have a good time.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    These individual [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string lake_description {
             get {
@@ -9765,6 +9768,15 @@ namespace K9.Globalisation {
         public static string LimitationTitle {
             get {
                 return ResourceManager.GetString("LimitationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lips.
+        /// </summary>
+        public static string Lips {
+            get {
+                return ResourceManager.GetString("Lips", resourceCulture);
             }
         }
         
@@ -11573,12 +11585,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Essence of Mountain Energies&lt;/h4&gt;
-        ///&lt;p&gt;
-        ///    As the youngest son in the family archetype, Mountain Energies benefit from the &lt;strong&gt;accumulated wisdom of those who came before&lt;/strong&gt;. They often &lt;strong&gt;develop a strong sense of independence early in life&lt;/strong&gt; and may accumulate material wealth through &lt;strong&gt;persistence, discipline, or inheritance&lt;/strong&gt;. However, their success is typically the result of &lt;strong&gt;single-minded dedication&lt;/strong&gt; rather than charisma or creativity.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        /// [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string mountain_description {
             get {
@@ -11831,6 +11838,15 @@ namespace K9.Globalisation {
         public static string mountain_year {
             get {
                 return ResourceManager.GetString("mountain_year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mouth.
+        /// </summary>
+        public static string Mouth {
+            get {
+                return ResourceManager.GetString("Mouth", resourceCulture);
             }
         }
         
@@ -12941,6 +12957,15 @@ namespace K9.Globalisation {
         public static string PhysicalBiorhythm {
             get {
                 return ResourceManager.GetString("PhysicalBiorhythm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pineal Gland.
+        /// </summary>
+        public static string PinealGland {
+            get {
+                return ResourceManager.GetString("PinealGland", resourceCulture);
             }
         }
         
@@ -14725,11 +14750,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Skin.
+        /// </summary>
+        public static string Skin {
+            get {
+                return ResourceManager.GetString("Skin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Skip.
         /// </summary>
         public static string Skip {
             get {
                 return ResourceManager.GetString("Skip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Skull.
+        /// </summary>
+        public static string Skull {
+            get {
+                return ResourceManager.GetString("Skull", resourceCulture);
             }
         }
         
@@ -15165,6 +15208,15 @@ namespace K9.Globalisation {
         public static string SpecialPromotion {
             get {
                 return ResourceManager.GetString("SpecialPromotion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Speech Anatomy.
+        /// </summary>
+        public static string SpeechAnatomy {
+            get {
+                return ResourceManager.GetString("SpeechAnatomy", resourceCulture);
             }
         }
         

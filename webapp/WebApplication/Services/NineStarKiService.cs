@@ -524,7 +524,7 @@ namespace K9.WebApplication.Services
                             var presonalHourlyEnergy = display == EPlannerDisplay.PersonalKi ? nineStarKiModel.GetPersonalCycleEnergy(preciseHourlyCycleEnergy, useHolograhpicCycleCalculation ? nineStarKiModel.PersonalChartEnergies.Hour.EnergyNumber : nineStarKiModel.MainEnergy.EnergyNumber, ENineStarKiEnergyCycleType.HourlyEnergy) : nineStarKiModel.GetGlobalCycleEnergy(preciseHourlyCycleEnergy, ENineStarKiEnergyCycleType.HourlyEnergy);
 
                             var isActive = localNow.IsBetween(hourlyPeriod.SegmentStartsOn, hourlyPeriod.SegmentEndsOn);
-                            
+
                             energies.Add(new PlannerViewModelItem(presonalHourlyEnergy, presonalHourlyEnergy, hourlyPeriod.SegmentStartsOn, hourlyPeriod.SegmentEndsOn, isActive, EPlannerView.Day));
                         }
 
@@ -622,20 +622,22 @@ namespace K9.WebApplication.Services
         {
             var houseOfFive = model.GlobalCycleEnergies.Year.GetHouseOfFive();
 
-            return new NineStarKiDirections(houseOfFive.Direction,
-                GetInvertedEnergy(houseOfFive).Direction,
-                model.PersonalHousesOccupiedEnergies.Year.Direction,
-                GetInvertedEnergy(model.PersonalHousesOccupiedEnergies.Year).Direction);
+            return new NineStarKiDirections(houseOfFive,
+                GetInvertedEnergy(houseOfFive),
+                model.PersonalHousesOccupiedEnergies.Year,
+                GetInvertedEnergy(model.PersonalHousesOccupiedEnergies.Year),
+                model.PersonalChartEnergies.Year);
         }
 
         private NineStarKiDirections GetMonthlyDirections(NineStarKiModel model)
         {
             var houseOfFive = model.GlobalCycleEnergies.Month.GetHouseOfFive();
 
-            return new NineStarKiDirections(houseOfFive.Direction,
-                GetInvertedEnergy(houseOfFive).Direction,
-                model.PersonalHousesOccupiedEnergies.Month.Direction,
-                GetInvertedEnergy(model.PersonalHousesOccupiedEnergies.Month).Direction);
+            return new NineStarKiDirections(houseOfFive,
+                GetInvertedEnergy(houseOfFive),
+                model.PersonalHousesOccupiedEnergies.Month,
+                GetInvertedEnergy(model.PersonalHousesOccupiedEnergies.Month),
+                model.PersonalChartEnergies.Month);
         }
     }
 }

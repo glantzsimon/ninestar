@@ -15,6 +15,7 @@
     var showDirections = displayPreference == (int)EEnergyDisplay.Graphical && K9.WebApplication.Helpers.SessionHelper.GetShowDirections() ? "" :
     "display: none;";
     var magicSquaresModel = Model.GetCycleMagicSquares();
+    var directionsChartData = Model.GetDrectionsChartViewModel().GetDirectionsChartData();
 }
 
 @if (isUnlimited)
@@ -88,6 +89,43 @@
                 GlobalEnergy = Model.GlobalCycleEnergies.Hour,
                 PersonalEnergy = Model.PersonalHousesOccupiedEnergies.Hour
             })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="directions-more-info">
+                <h4>@Dictionary.WorstDirectionsToTravelIn</h4>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>@Dictionary.Direction</th>
+                                <th>@Dictionary.Score</th>
+                                <th>@Dictionary.Guidance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var score in directionsChartData)
+                            {
+                                <tr>
+                                    <td>@score.DirectionName</td>
+                                    <td>
+                                        <span class="status-circle @score.CssClassName">
+                                            @score.Score
+                                            @if (score.Score >= 10)
+                                            {
+                                                <i class="fa fa-warning"></i>
+                                            }
+                                        </span>
+                                    </td>
+                                    <td class="">@score.Guidance</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 }

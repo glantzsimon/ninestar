@@ -8,6 +8,8 @@ namespace K9.WebApplication.Models
 {
     public class NineStarKiDirections
     {
+        private readonly NineStarKiEnergy _personalChartEnergy;
+
         private static readonly Dictionary<int, ENineStarKiDirection> _Directions = new Dictionary<int, ENineStarKiDirection>
         {
             { 1, ENineStarKiDirection.North },
@@ -26,47 +28,92 @@ namespace K9.WebApplication.Models
         public NineStarKiDirection SelfLifeKilling { get; }
         public NineStarKiDirection TargetKilling { get; }
 
-        public string FiveYellowKillingDescription => TemplateParser.Parse(FiveYelloKilling.Description, new
+        public string FiveYellowKillingDescription
         {
-            Direction = FiveYelloKilling.Direction == ENineStarKiDirection.Centre ? Dictionary.InAnyDirection : FiveYelloKilling.Direction.ToString().ToProperCase(),
-            Direction2 = Dictionary.Somewhere
-        });
+            get
+            {
+                var centreDescription = TemplateParser.Parse(Dictionary.InAnyDirection, new { Energy = 5 });
+                return TemplateParser.Parse(FiveYelloKilling.Description, new
+                {
+                    Direction = FiveYelloKilling.Direction == ENineStarKiDirection.Centre
+                        ? centreDescription
+                        : FiveYelloKilling.Direction.ToString().ToProperCase(),
+                    Direction2 = Dictionary.Somewhere
+                });
+            }
+        }
 
-        public string DarkSwordKillingDescription => TemplateParser.Parse(DarkSwordKilling.Description, new
+        public string DarkSwordKillingDescription
         {
-            Direction = DarkSwordKilling.Direction == ENineStarKiDirection.Centre ? Dictionary.InAnyDirection : DarkSwordKilling.Direction.ToString().ToProperCase(),
-            Direction2 = Dictionary.Somewhere
-        });
+            get
+            {
+                var centreDescription = TemplateParser.Parse(Dictionary.InAnyDirection, new { Energy = 5 });
+                return TemplateParser.Parse(DarkSwordKilling.Description, new
+                {
+                    Direction = DarkSwordKilling.Direction == ENineStarKiDirection.Centre
+                    ? centreDescription
+                    : DarkSwordKilling.Direction.ToString().ToProperCase(),
+                    Direction2 = Dictionary.Somewhere
+                });
+            }
+        }
 
-        public string SelfLifeKillingDescription => TemplateParser.Parse(SelfLifeKilling.Description, new
+        public string SelfLifeKillingDescription
         {
-            Direction = SelfLifeKilling.Direction == ENineStarKiDirection.Centre ? Dictionary.InAnyDirection : SelfLifeKilling.Direction.ToString().ToProperCase(),
-            Direction2 = Dictionary.Somewhere
-        });
+            get
+            {
+                var directionDescription = TemplateParser.Parse(Dictionary.InAnyDirection, new { Energy = _personalChartEnergy?.EnergyNumber });
+                return TemplateParser.Parse(SelfLifeKilling.Description, new
+                {
+                    Direction = SelfLifeKilling.Direction == ENineStarKiDirection.Centre
+                        ? directionDescription
+                        : SelfLifeKilling.Direction.ToString().ToProperCase(),
+                    Direction2 = Dictionary.Somewhere
+                });
+            }
+        }
 
-        public string TargetKillingDescription => TemplateParser.Parse(TargetKilling.Description, new
+        public string TargetKillingDescription
         {
-            Direction = TargetKilling.Direction == ENineStarKiDirection.Centre ? Dictionary.InAnyDirection : TargetKilling.Direction.ToString().ToProperCase(),
-            Direction2 = Dictionary.Somewhere
-        });
+            get
+            {
+                var directionDescription = TemplateParser.Parse(Dictionary.InAnyDirection, new { Energy = _personalChartEnergy?.EnergyNumber });
+                return TemplateParser.Parse(TargetKilling.Description, new
+                {
+                    Direction = TargetKilling.Direction == ENineStarKiDirection.Centre
+                        ? directionDescription
+                        : TargetKilling.Direction.ToString().ToProperCase(),
+                    Direction2 = Dictionary.Somewhere
+                });
+            }
+        }
 
-        public NineStarKiDirections(ENineStarKiDirection fiveYellowKilling, ENineStarKiDirection darkSwordKilling, ENineStarKiDirection selfLifeKilling, ENineStarKiDirection targetKilling)
+        public NineStarKiDirections(NineStarKiEnergy fiveYellowKilling, NineStarKiEnergy darkSwordKilling, NineStarKiEnergy selfLifeKilling, NineStarKiEnergy targetKilling, NineStarKiEnergy personalChartEnergy)
         {
+            _personalChartEnergy = personalChartEnergy;
             FiveYelloKilling = new NineStarKiDirection(Dictionary.FiveYellowKilling, Dictionary.FiveYellowKillingDescription, fiveYellowKilling);
             DarkSwordKilling = new NineStarKiDirection(Dictionary.DarkSwordKilling, Dictionary.DarkSwordKillingDescription, darkSwordKilling);
             SelfLifeKilling = new NineStarKiDirection(Dictionary.SelfLifeKilling, Dictionary.SelfLifeKillingDescription, selfLifeKilling);
             TargetKilling = new NineStarKiDirection(Dictionary.TargetKilling, Dictionary.TargetKillingDescription, targetKilling);
 
-            FavourableDirections = _Directions.Where(e => new List<ENineStarKiDirection>
+            FavourableDirections = _Directions.Where(e => !new List<ENineStarKiDirection>
             {
-                fiveYellowKilling,
-                darkSwordKilling,
-                selfLifeKilling,
-                targetKilling
+                fiveYellowKilling.Direction,
+                darkSwordKilling.Direction,
+                selfLifeKilling.Direction,
+                targetKilling.Direction
             }.Contains(e.Value))
                 .Select(e => e.Value)
                 .ToList();
         }
+
+        public List<NineStarKiDirection> UnfavourableDirections  => new List<NineStarKiDirection>
+        {
+            FiveYelloKilling,
+            DarkSwordKilling,
+            SelfLifeKilling,
+            TargetKilling
+        };
 
         public List<ENineStarKiDirection> FavourableDirections { get; }
     }

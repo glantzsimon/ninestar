@@ -3153,6 +3153,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to It’s advised to avoid all travel during this time. Short trips to places in the local vicinity are OK. If you must travel, be extra vigilant and avoid any unnecessary risks..
+        /// </summary>
+        public static string AvoidAllTravel {
+            get {
+                return ResourceManager.GetString("AvoidAllTravel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to It’s advised to avoid travel as much as possible during this time. Short trips to places in the local vicinity are OK. If you must travel, be extra vigilant and avoid any unnecessary risks..
+        /// </summary>
+        public static string AvoidTravel {
+            get {
+                return ResourceManager.GetString("AvoidTravel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string Back {
@@ -4772,10 +4790,10 @@ namespace K9.Globalisation {
         ///    Like other Earth children, it is especially important for 5 Earth children to have a stable family and school life.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Core Earth is at the centre of 9 Star Ki and this can sometimes make it hard for these children to navigate a clear path. Without appropriate guidance, they may lose their way and even succumb to undesirable influences.
+        ///    Core Earth is at the centre of the magic square, which brings many different paths and opportunities to choose from. This can sometimes make it hard for these children to move forward with clarity. Without appropriate guidance, they may lose their way and even succumb to undesirable influences.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    5 Earth characters are naturally nurturing and supportive and children with this character number display these qualities early on in t [rest of string was truncated]&quot;;.
+        ///    5 Earth characters are naturally nurturing and supportive a [rest of string was truncated]&quot;;.
         /// </summary>
         public static string coreearth_child {
             get {
@@ -5694,6 +5712,15 @@ namespace K9.Globalisation {
         public static string Diplomat {
             get {
                 return ResourceManager.GetString("Diplomat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Direction.
+        /// </summary>
+        public static string Direction {
+            get {
+                return ResourceManager.GetString("Direction", resourceCulture);
             }
         }
         
@@ -7864,6 +7891,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Guidance.
+        /// </summary>
+        public static string Guidance {
+            get {
+                return ResourceManager.GetString("Guidance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hands.
         /// </summary>
         public static string Hands {
@@ -8587,7 +8623,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to In any direction, as 5 is at the centre.
+        ///   Looks up a localized string similar to In any direction, as {Energy} is at the centre.
         /// </summary>
         public static string InAnyDirection {
             get {
@@ -9226,6 +9262,15 @@ namespace K9.Globalisation {
         public static string KeepingStillTitle {
             get {
                 return ResourceManager.GetString("KeepingStillTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to It is advised to minimise travel as much as possible and to keep trips short and infrequent during this time. Short trips to places in the local vicinity are OK. If you must travel, be extra vigilant and avoid any unnecessary risks..
+        /// </summary>
+        public static string KeepTravelShortAndInfrequent {
+            get {
+                return ResourceManager.GetString("KeepTravelShortAndInfrequent", resourceCulture);
             }
         }
         
@@ -14133,6 +14178,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Score.
+        /// </summary>
+        public static string Score {
+            get {
+                return ResourceManager.GetString("Score", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Season.
         /// </summary>
         public static string Season {
@@ -17087,6 +17141,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to It should be relatively safe to travel at this time; however, it’s advisable to take care and remain more vigilant than usual..
+        /// </summary>
+        public static string TravelWithCare {
+            get {
+                return ResourceManager.GetString("TravelWithCare", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to It’s advised to take care when travelling during this time. Be extra vigilant and avoid any unnecessary risks..
+        /// </summary>
+        public static string TravelWithGreatCare {
+            get {
+                return ResourceManager.GetString("TravelWithGreatCare", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Treading (Conduct).
         /// </summary>
         public static string Treading {
@@ -17775,15 +17847,30 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Water Energies are sensitive and deep thinkers, and as such, many of them are drawn to poetry, writing, composition, philosophy and some become therapists and healers.
-        ///    On the other hand, their natural ability to find a well thought-out and balanced argument means they can make excellent lawyers.
-        ///&lt;/p&gt;
-        ///.
+        ///   Looks up a localized string similar to &lt;h4&gt;Career and Professional Qualities&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    One-Water individuals bring a unique kind of presence to the professional world — &lt;strong&gt;deeply thoughtful, observant, and quietly persistent&lt;/strong&gt;. They excel in roles that require &lt;strong&gt;clear, distilled communication&lt;/strong&gt; and have a remarkable ability to translate complexity into clarity. Their capacity to synthesize large volumes of information into succinct, meaningful insights makes them &lt;strong&gt;invaluable in advisory, strategic, or communi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_career {
             get {
                 return ResourceManager.GetString("water_career", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Career and Professional Qualities&lt;/h4&gt;
+        ///
+        ///&lt;h5&gt;Gift:&lt;/h5&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Excellent at &lt;strong&gt;distilling complex ideas into clear, succinct communication&lt;/strong&gt;&lt;/li&gt;
+        ///    &lt;li&gt;Strong in &lt;strong&gt;strategy, vision, and systems thinking&lt;/strong&gt;&lt;/li&gt;
+        ///    &lt;li&gt;Capable of &lt;strong&gt;operating independently within structured environments&lt;/strong&gt;&lt;/li&gt;
+        ///    &lt;li&gt;Deeply &lt;strong&gt;reflective, persistent, and bold&lt;/strong&gt; when aligned with meaningful goals&lt;/li&gt;
+        ///    &lt;li&gt;Talented at &lt;strong&gt;mapping interconnections and  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_career_summary {
+            get {
+                return ResourceManager.GetString("water_career_summary", resourceCulture);
             }
         }
         
@@ -17961,6 +18048,34 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Financial Outlook&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Financially, One-Water individuals tend to live somewhere between extremes. They are not typically destined for great riches, but neither are they burdened by lasting misfortune. Instead, they generally &lt;strong&gt;get by with quiet resourcefulness&lt;/strong&gt;, sustaining themselves with what they have and being cautious in how they use it.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    In fast-paced or competitive business environments — particularly those involving &lt;strong&gt;risk, high-stakes negotiation, or [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_finances {
+            get {
+                return ResourceManager.GetString("water_finances", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Financial Outlook&lt;/h4&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Neither extremely wealthy nor impoverished — typically &lt;strong&gt;gets by with quiet resourcefulness&lt;/strong&gt;.&lt;/li&gt;
+        ///    &lt;li&gt;Not well-suited to &lt;strong&gt;high-risk or competitive financial environments&lt;/strong&gt;; may be easily swindled.&lt;/li&gt;
+        ///    &lt;li&gt;Can be &lt;strong&gt;impressed or influenced by displays of power and wealth&lt;/strong&gt;, especially from the opposite sex.&lt;/li&gt;
+        ///    &lt;li&gt;&lt;strong&gt;Cautious and measured&lt;/strong&gt; when dealing with non-monetary resources like time, energ [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_finances_summary {
+            get {
+                return ResourceManager.GetString("water_finances_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The Water element runs deep and loves to explore the emotional world, flowing endlessly from one vantage point to the next. Fire people, on the other hand, are more comfortable with the perspective of the midday sun, where everything is illuminated and in plain view. What can therefore happen, is that Fire people can feel rather &apos;lost&apos; in the world of Water people. They don&apos;t have much common ground and it can result in their flame going out. Water people also typically react to Fire&apos;s clearly defined opini [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_fire {
@@ -18004,19 +18119,30 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Water Energies are most likely to suffer health problems related to the kidneys, bladder, reproductive system and adrenal glands, all of which are governed by the element water in Traditional Chinese Medicine.
+        ///   Looks up a localized string similar to &lt;h4&gt;Health and Physical Wellbeing&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Water Energies are inherently sensitive beings, both emotionally and physically. In Traditional Chinese Medicine, the Water element governs the &lt;strong&gt;kidneys, bladder, reproductive system, adrenal glands, and skeletal structure&lt;/strong&gt;, making these the primary areas of vulnerability for those born under this sign.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    It is important for people of this sign to keep warm and take plenty of rest. Alcohol, caffeine, sugar, late nights and stress are particularly depleting for Water Energies.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    It is also especially important to avoid cold, damp living environments.
-        ///&lt;/p&gt;.
+        ///    Individuals with strong Water energy must pay careful attention to their &lt;strong&gt;internal warmth and physical resilience&lt;/stron [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_health {
             get {
                 return ResourceManager.GetString("water_health", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Health and Physical Wellbeing&lt;/h4&gt;
+        ///
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Prone to imbalances in the &lt;strong&gt;kidneys, bladder, adrenal glands, reproductive organs, and skeletal system&lt;/strong&gt;.&lt;/li&gt;
+        ///    &lt;li&gt;&lt;strong&gt;Cold and damp environments&lt;/strong&gt; can significantly weaken vitality; warmth is essential, especially around the stomach, lower back, and ears.&lt;/li&gt;
+        ///    &lt;li&gt;&lt;strong&gt;Women&lt;/strong&gt; may experience gynecological issues such as irregular menstruation; &lt;strong&gt;men&lt;/strong&gt; may face prostate problems or impotence.&lt;/l [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_health_summary {
+            get {
+                return ResourceManager.GetString("water_health_summary", resourceCulture);
             }
         }
         
@@ -18033,6 +18159,26 @@ namespace K9.Globalisation {
         public static string water_hour_cycle {
             get {
                 return ResourceManager.GetString("water_hour_cycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Common Health Vulnerabilities&lt;/h4&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Kidney ailments&lt;/li&gt;
+        ///    &lt;li&gt;Earache&lt;/li&gt;
+        ///    &lt;li&gt;Venereal disease&lt;/li&gt;
+        ///    &lt;li&gt;Melancholia (chronic sadness or depression)&lt;/li&gt;
+        ///    &lt;li&gt;Abnormal menstruation&lt;/li&gt;
+        ///    &lt;li&gt;Haemorrhoids&lt;/li&gt;
+        ///    &lt;li&gt;Neurasthenia (nervous exhaustion)&lt;/li&gt;
+        ///    &lt;li&gt;Paranoia&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///.
+        /// </summary>
+        public static string water_illnesses {
+            get {
+                return ResourceManager.GetString("water_illnesses", resourceCulture);
             }
         }
         
@@ -18125,6 +18271,26 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Suitable Occupations for Water Energies&lt;/h4&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Philosopher, thinker, or writer&lt;/li&gt;
+        ///    &lt;li&gt;Lawyer or legal consultant&lt;/li&gt;
+        ///    &lt;li&gt;Politician or policy advisor&lt;/li&gt;
+        ///    &lt;li&gt;Doctor or holistic health practitioner&lt;/li&gt;
+        ///    &lt;li&gt;Social worker or counselor&lt;/li&gt;
+        ///    &lt;li&gt;Massage therapist or healer&lt;/li&gt;
+        ///    &lt;li&gt;Painter, entertainer, or performing artist&lt;/li&gt;
+        ///    &lt;li&gt;Bookstore owner or curator&lt;/li&gt;
+        ///    &lt;li&gt;Manager of a fish or seafood business&lt;/li&gt;
+        ///    &lt;li&gt;Worker in the fishing or marine  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_occupations {
+            get {
+                return ResourceManager.GetString("water_occupations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
         ///    &lt;table class=&quot;table&quot;&gt;
         ///        &lt;thead&gt;
@@ -18154,12 +18320,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Relationships and Intimacy for Water Energies&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Of all the Nine Star Ki types, &lt;strong&gt;1 Water Energies are among the most deeply intuitive and emotionally complex&lt;/strong&gt;, and this extends into their romantic and intimate lives. In traditional Chinese medicine, Water governs the reproductive system, and this symbolic link often corresponds to a &lt;strong&gt;naturally strong connection to sensual and emotional intimacy&lt;/strong&gt;.
+        ///    Of all the Nine Star Ki types, &lt;strong&gt;1 Water Energies are among the most deeply intuitive and emotionally complex&lt;/strong&gt;, and this sensitivity extends profoundly into their romantic and intimate lives. In traditional Chinese medicine, Water governs the reproductive system, and this symbolic link often corresponds to a &lt;strong&gt;natural connection to sensuality and emotional intimacy&lt;/strong&gt;.
         ///&lt;/p&gt;
         ///
         ///&lt;h4&gt;A Dual Expression of Energy&lt;/h4&gt;
-        ///&lt;p&gt;
-        ///    Much like  [rest of string was truncated]&quot;;.
+        ///&lt;p [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_relationships {
             get {
@@ -18168,29 +18333,31 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;table-responsive&quot;&gt;
-        ///    &lt;table class=&quot;table&quot;&gt;
-        ///        &lt;thead&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;th&gt;When in balance:&lt;/th&gt;
-        ///                &lt;th&gt;When out of balance:&lt;/th&gt;
-        ///            &lt;/tr&gt;
-        ///        &lt;/thead&gt;
-        ///        &lt;tbody&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Sensitive&lt;/td&gt;
-        ///                &lt;td&gt;Hypersensitive&lt;/td&gt;
-        ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Curious&lt;/td&gt;
-        ///                &lt;td&gt;Disinterested&lt;/td&gt;
-        ///            &lt;/tr&gt;
-        ///            &lt;tr&gt;
-        ///                &lt;td&gt;Diplomatic&lt; [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h4&gt;Spiritual Life&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    For One-Water individuals, the spiritual path is one of &lt;strong&gt;depth, meaning, and emotional honesty&lt;/strong&gt;. Their minds are naturally reflective, and life’s events often arrive with intensity and speed. Their challenge is to &lt;strong&gt;learn from experience while simultaneously letting go&lt;/strong&gt; — to remain fluid, present, and unattached amidst life&apos;s constant movement.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    To access peace, One-Waters must undergo a kind of inner purification — a symbolic &lt;st [rest of string was truncated]&quot;;.
         /// </summary>
         public static string water_spirituality {
             get {
                 return ResourceManager.GetString("water_spirituality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Spiritual Life&lt;/h4&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Spiritual life centers on &lt;strong&gt;meaning, emotional depth, and reflection&lt;/strong&gt;&lt;/li&gt;
+        ///    &lt;li&gt;Challenge is to &lt;strong&gt;learn and let go quickly&lt;/strong&gt; — without clinging to past experiences&lt;/li&gt;
+        ///    &lt;li&gt;Needs &lt;strong&gt;inner purification and emotional release&lt;/strong&gt; to stay spiritually aligned&lt;/li&gt;
+        ///    &lt;li&gt;&lt;strong&gt;Humour&lt;/strong&gt; helps balance their tendency toward seriousness and over-significance&lt;/li&gt;
+        ///    &lt;li&gt;Innate sense of the &lt;strong&gt;human condition&lt;/stron [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string water_spirituality_summary {
+            get {
+                return ResourceManager.GetString("water_spirituality_summary", resourceCulture);
             }
         }
         
@@ -18830,6 +18997,15 @@ namespace K9.Globalisation {
         public static string WorkOnWhatHasBeenSpoiledTitle {
             get {
                 return ResourceManager.GetString("WorkOnWhatHasBeenSpoiledTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Worst Directions of Travel.
+        /// </summary>
+        public static string WorstDirectionsToTravelIn {
+            get {
+                return ResourceManager.GetString("WorstDirectionsToTravelIn", resourceCulture);
             }
         }
         

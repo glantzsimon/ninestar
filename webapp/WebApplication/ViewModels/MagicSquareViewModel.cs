@@ -6,6 +6,7 @@ namespace K9.WebApplication.ViewModels
     {
         public NineStarKiEnergy GlobalEnergy { get; set; }
         public NineStarKiEnergy PersonalEnergy { get; set; }
+        public NineStarKiEnergy PersonalChartEnergy { get; set; }
 
         public MagicSquareViewModel SecondMagicSquareViewModel { get; set; }
 
@@ -17,10 +18,11 @@ namespace K9.WebApplication.ViewModels
             var oppositeHouseOfFiveEnergy = new NineStarKiEnergy((ENineStarKiEnergy)NineStarKiModel.GetOppositeEnergyInMagicSquare(GlobalEnergy.GetHouseOfFive().EnergyNumber));
             var oppositeHouseOccupiedEnergy = new NineStarKiEnergy((ENineStarKiEnergy)NineStarKiModel.GetOppositeEnergyInMagicSquare(PersonalEnergy.EnergyNumber));
 
-            return new NineStarKiDirections(GlobalEnergy.GetHouseOfFive().Direction,
-               oppositeHouseOfFiveEnergy.Direction,
-                PersonalEnergy.Direction,
-                oppositeHouseOccupiedEnergy.Direction);
+            return new NineStarKiDirections(GlobalEnergy.GetHouseOfFive(),
+               oppositeHouseOfFiveEnergy,
+                PersonalEnergy,
+                oppositeHouseOccupiedEnergy,
+                PersonalChartEnergy);
         }
     }
 }

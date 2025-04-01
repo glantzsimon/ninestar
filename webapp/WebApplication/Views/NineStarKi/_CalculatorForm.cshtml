@@ -51,9 +51,7 @@
     @Html.BootstrapEditorFor(model => model.PersonModel.DateOfBirth)
     @Html.BootstrapEditorFor(model => model.PersonModel.TimeOfBirth)
     @Html.BootstrapEditorFor(model => model.PersonModel.BirthTimeZoneId)
-    <div data-toggle="tooltip" data-placement="top" title="@Dictionary.GenderSelectionTooltip">
-        @Html.BootstrapEditorFor(model => model.PersonModel.Gender)
-    </div>
+    @Html.BootstrapEditorFor(model => model.PersonModel.Gender)
 
     if (Model.IsPredictionsScreen)
     {

@@ -5015,7 +5015,7 @@
     <value>Houses You Currently Occupy</value>
   </data>
   <data name="InAnyDirection" xml:space="preserve">
-    <value>In any direction, as 5 is at the centre</value>
+    <value>In any direction, as {Energy} is at the centre</value>
   </data>
   <data name="MagicSquare" xml:space="preserve">
     <value>Magic Square</value>
@@ -5143,6 +5143,9 @@
   <data name="TripleHeater" xml:space="preserve">
     <value>Triple Heater</value>
   </data>
+  <data name="water_career_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\career\en-gb\summary\water-career-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="water_description_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\main\en-gb\summary\water-description-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -5151,6 +5154,18 @@
   </data>
   <data name="water_emotional_landscape_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\emotionallandscape\en-gb\summary\water-emotional-landscape-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_finances" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\finances\en-gb\water-finances.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_finances_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\finances\en-gb\summary\water-finances-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_health_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\health\en-gb\summary\water-health-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_illnesses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\health\en-gb\illnesses\water-illnesses.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="water_intellectual_qualities" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\intellectualqualities\en-gb\water-intellectual-qualities.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -5163,5 +5178,38 @@
   </data>
   <data name="water_interpersonal_qualities_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>energies\interpersonalqualities\en-gb\summary\water-interpersonal-qualities-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_occupations" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\career\en-gb\occupations\water-occupations.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="water_spirituality_summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>energies\spirituality\en-gb\summary\water-spirituality-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="AvoidAllTravel" xml:space="preserve">
+    <value>It’s advised to avoid all travel during this time. Short trips to places in the local vicinity are OK. If you must travel, be extra vigilant and avoid any unnecessary risks.</value>
+  </data>
+  <data name="AvoidTravel" xml:space="preserve">
+    <value>It’s advised to avoid travel as much as possible during this time. Short trips to places in the local vicinity are OK. If you must travel, be extra vigilant and avoid any unnecessary risks.</value>
+  </data>
+  <data name="Direction" xml:space="preserve">
+    <value>Direction</value>
+  </data>
+  <data name="Guidance" xml:space="preserve">
+    <value>Guidance</value>
+  </data>
+  <data name="KeepTravelShortAndInfrequent" xml:space="preserve">
+    <value>It is advised to minimise travel as much as possible and to keep trips short and infrequent during this time. Short trips to places in the local vicinity are OK. If you must travel, be extra vigilant and avoid any unnecessary risks.</value>
+  </data>
+  <data name="Score" xml:space="preserve">
+    <value>Score</value>
+  </data>
+  <data name="TravelWithCare" xml:space="preserve">
+    <value>It should be relatively safe to travel at this time; however, it’s advisable to take care and remain more vigilant than usual.</value>
+  </data>
+  <data name="TravelWithGreatCare" xml:space="preserve">
+    <value>It’s advised to take care when travelling during this time. Be extra vigilant and avoid any unnecessary risks.</value>
+  </data>
+  <data name="WorstDirectionsToTravelIn" xml:space="preserve">
+    <value>Worst Directions of Travel</value>
   </data>
 </root>

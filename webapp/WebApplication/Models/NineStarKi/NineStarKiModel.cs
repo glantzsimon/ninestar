@@ -263,6 +263,26 @@ namespace K9.WebApplication.Models
 
         public NineStarKiEnergiesModel PersonalChartEnergies { get; }
 
+        private NineStarKiDrectionsChartViewModel _directionsChartViewModel;
+
+        public NineStarKiDrectionsChartViewModel GetDrectionsChartViewModel()
+        {
+            if (_directionsChartViewModel == null)
+            {
+                var directions = GetCycleMagicSquares();
+                var unfavourableDirections = new List<NineStarKiDirection>();
+
+                unfavourableDirections.AddRange(directions.Year.GetDirections().UnfavourableDirections);
+                unfavourableDirections.AddRange(directions.Month.GetDirections().UnfavourableDirections);
+                unfavourableDirections.AddRange(directions.Day.GetDirections().UnfavourableDirections);
+
+                _directionsChartViewModel = new NineStarKiDrectionsChartViewModel(
+                    new List<NineStarKiDirection>(unfavourableDirections));
+            }
+
+            return _directionsChartViewModel;
+        }
+
         private (
             MagicSquareViewModel Epoch,
             MagicSquareViewModel Generation,
@@ -287,6 +307,7 @@ namespace K9.WebApplication.Models
                 {
                     GlobalEnergy = PersonalChartEnergies.Epoch,
                     PersonalEnergy = PersonalChartEnergies.Epoch,
+                    PersonalChartEnergy = PersonalChartEnergies.Epoch,
                     IsPersonalChart = true
                 };
 
@@ -294,6 +315,7 @@ namespace K9.WebApplication.Models
                 {
                     GlobalEnergy = PersonalChartEnergies.Generation,
                     PersonalEnergy = PersonalChartEnergies.Generation,
+                    PersonalChartEnergy = PersonalChartEnergies.Generation,
                     IsPersonalChart = true
                 };
 
@@ -301,6 +323,7 @@ namespace K9.WebApplication.Models
                 {
                     GlobalEnergy = PersonalChartEnergies.Year,
                     PersonalEnergy = PersonalChartEnergies.Year,
+                    PersonalChartEnergy = PersonalChartEnergies.Year,
                     IsPersonalChart = true
                 };
 
@@ -308,6 +331,7 @@ namespace K9.WebApplication.Models
                 {
                     GlobalEnergy = PersonalChartEnergies.Month,
                     PersonalEnergy = PersonalChartEnergies.Month,
+                    PersonalChartEnergy = PersonalChartEnergies.Month,
                     IsPersonalChart = true
                 };
 
@@ -315,6 +339,7 @@ namespace K9.WebApplication.Models
                 {
                     GlobalEnergy = PersonalChartEnergies.Surface,
                     PersonalEnergy = PersonalChartEnergies.Surface,
+                    PersonalChartEnergy = PersonalChartEnergies.Surface,
                     IsPersonalChart = true
                 };
 
@@ -322,6 +347,7 @@ namespace K9.WebApplication.Models
                 {
                     GlobalEnergy = PersonalChartEnergies.Day,
                     PersonalEnergy = PersonalChartEnergies.Day,
+                    PersonalChartEnergy = PersonalChartEnergies.Day,
                     IsPersonalChart = true
                 };
 
@@ -329,6 +355,7 @@ namespace K9.WebApplication.Models
                 {
                     GlobalEnergy = PersonalChartEnergies.Hour,
                     PersonalEnergy = PersonalChartEnergies.Hour,
+                    PersonalChartEnergy = PersonalChartEnergies.Hour,
                     IsPersonalChart = true
                 };
 
@@ -359,25 +386,29 @@ namespace K9.WebApplication.Models
                 var epoch = new MagicSquareViewModel
                 {
                     GlobalEnergy = GlobalCycleEnergies.Epoch,
-                    PersonalEnergy = PersonalHousesOccupiedEnergies.Epoch
+                    PersonalEnergy = PersonalHousesOccupiedEnergies.Epoch,
+                    PersonalChartEnergy = PersonalChartEnergies.Epoch
                 };
 
                 var generation = new MagicSquareViewModel
                 {
                     GlobalEnergy = GlobalCycleEnergies.Generation,
-                    PersonalEnergy = PersonalHousesOccupiedEnergies.Generation
+                    PersonalEnergy = PersonalHousesOccupiedEnergies.Generation,
+                    PersonalChartEnergy = PersonalChartEnergies.Generation
                 };
 
                 var year = new MagicSquareViewModel
                 {
                     GlobalEnergy = GlobalCycleEnergies.Year,
-                    PersonalEnergy = PersonalHousesOccupiedEnergies.Year
+                    PersonalEnergy = PersonalHousesOccupiedEnergies.Year,
+                    PersonalChartEnergy = PersonalChartEnergies.Year
                 };
 
                 var month = new MagicSquareViewModel
                 {
                     GlobalEnergy = GlobalCycleEnergies.Month,
-                    PersonalEnergy = PersonalHousesOccupiedEnergies.Month
+                    PersonalEnergy = PersonalHousesOccupiedEnergies.Month,
+                    PersonalChartEnergy = PersonalChartEnergies.Month
                 };
 
                 var day = (GlobalCycleEnergies.Day2 == null || GlobalCycleEnergies.Day.EnergyNumber == GlobalCycleEnergies.Day2.EnergyNumber) ?
@@ -385,7 +416,8 @@ namespace K9.WebApplication.Models
                     new MagicSquareViewModel
                     {
                         GlobalEnergy = GlobalCycleEnergies.Day,
-                        PersonalEnergy = PersonalHousesOccupiedEnergies.Day
+                        PersonalEnergy = PersonalHousesOccupiedEnergies.Day,
+                        PersonalChartEnergy = PersonalChartEnergies.Day
                     } :
 
                     new MagicSquareViewModel
@@ -393,18 +425,21 @@ namespace K9.WebApplication.Models
                         IsSplit = true,
                         GlobalEnergy = GlobalCycleEnergies.Day,
                         PersonalEnergy = PersonalHousesOccupiedEnergies.Day,
+                        PersonalChartEnergy = PersonalChartEnergies.Day,
 
                         SecondMagicSquareViewModel = new MagicSquareViewModel
                         {
                             GlobalEnergy = GlobalCycleEnergies.Day2,
                             PersonalEnergy = PersonalHousesOccupiedEnergies.Day2,
+                            PersonalChartEnergy = PersonalChartEnergies.Day2
                         }
                     };
 
                 var hour = new MagicSquareViewModel
                 {
                     GlobalEnergy = GlobalCycleEnergies.Hour,
-                    PersonalEnergy = PersonalHousesOccupiedEnergies.Hour
+                    PersonalEnergy = PersonalHousesOccupiedEnergies.Hour,
+                    PersonalChartEnergy = PersonalChartEnergies.Hour
                 };
 
                 _cycleMagicSquare = (epoch, generation, year, month, day, hour);

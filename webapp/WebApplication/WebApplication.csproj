@@ -373,6 +373,7 @@
     <Compile Include="Exceptions\UserAlreadySubscribedException.cs" />
     <Compile Include="Extensions\NumerologyExtensions.cs" />
     <Compile Include="ViewModels\MagicSquareViewModel.cs" />
+    <Compile Include="ViewModels\NineStarKiDrectionsChartViewModel.cs" />
     <Compile Include="ViewModels\PlannerViewModelItem.cs" />
     <Compile Include="Models\NineStarKi\NineStarKiDirections.cs" />
     <Compile Include="Models\NineStarKi\NineStarKiDirection.cs" />

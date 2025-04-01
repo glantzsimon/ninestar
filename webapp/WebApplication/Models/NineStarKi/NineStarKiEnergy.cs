@@ -617,7 +617,7 @@ namespace K9.WebApplication.Models
             EnergyCycleType = energyCycleType;
         }
 
-        public NineStarKiEnergy GetHouseOfFive() => new NineStarKiEnergy((ENineStarKiEnergy)NineStarKiModel.GetNineStarKiNumber(5 + (5 - EnergyNumber)));
+        public NineStarKiEnergy GetHouseOfFive() => new NineStarKiEnergy((ENineStarKiEnergy)NineStarKiModel.GetNineStarKiNumber(5 + (5 - EnergyNumber)), EnergyCycleType);
 
         #region Personal Chart
 

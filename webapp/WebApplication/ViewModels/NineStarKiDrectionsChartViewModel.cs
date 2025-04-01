@@ -38,10 +38,9 @@ namespace K9.WebApplication.ViewModels
 
         private void AddDirectionsForCentre()
         {
-            var newDirections = new List<NineStarKiDirection>();
-
             foreach (var item in _directionModels)
             {
+                var newDirections = new List<NineStarKiDirection>();
                 if (item.PersonalHouseOccupied.EnergyNumber == 5 || item.GlobalKi.EnergyNumber == 5)
                 {
                     newDirections.AddRange(new List<NineStarKiDirection>

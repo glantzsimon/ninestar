@@ -63,24 +63,24 @@ namespace K9.WebApplication.ViewModels
         private string GetCssClassName(int score)
         {
             if (score >= 11) return "purple-warning";
-            if (score == 10) return "red-warning";
-            if (score == 8) return "red";
-            if (score == 7) return "light-red";
-            if (score == 5) return "orange";
-            if (score == 3) return "yellow";
-            if (score == 1) return "light-yellow";
+            if (score >= 10) return "red-warning";
+            if (score >= 8) return "red";
+            if (score >= 7) return "light-red";
+            if (score >= 5) return "orange";
+            if (score >= 3) return "yellow";
+            if (score >= 1) return "light-yellow";
             return "green";
         }
 
         private string GetGuidance(int score)
         {
             if (score >= 11) return Dictionary.AvoidAllTravel;
-            if (score == 10) return Dictionary.AvoidAllTravel;
-            if (score == 8) return Dictionary.AvoidTravel;
-            if (score == 7) return Dictionary.KeepTravelShortAndInfrequent;
-            if (score == 5) return Dictionary.TravelWithGreatCare;
-            if (score == 3) return Dictionary.TravelWithCare;
-            if (score == 1) return Dictionary.TravelWithCare;
+            if (score >= 10) return Dictionary.AvoidAllTravel;
+            if (score >= 8) return Dictionary.AvoidTravel;
+            if (score >= 7) return Dictionary.KeepTravelShortAndInfrequent;
+            if (score >= 5) return Dictionary.TravelWithGreatCare;
+            if (score >= 3) return Dictionary.TravelWithCare;
+            if (score >= 1) return Dictionary.TravelWithCare;
             return "OK";
         }
 

@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
+using K9.SharedLibrary.Helpers;
 using K9.WebApplication.Attributes;
 using K9.WebApplication.Enums;
 
@@ -31,18 +32,27 @@ namespace K9.WebApplication.ViewModels
                         Direction: e.Direction,
                         DirectionName: e.GetDirectionName(),
                         CssClassName: GetCssClassName(totalScore),
-                        Guidance: GetGuidance(totalScore),
+                        Guidance: "",
                         Score: totalScore
                         ));
                 })
                 .OrderBy(e => e.Direction.GetAttribute<DisplayAttribute>().Order)
                 .GroupBy(x => x.Score)
-                .Select(g => (
-                    Score: g.Key,
-                    CssClassName: g.First().CssClassName,
-                    Guidance: g.First().Guidance,
-                    Directions: g.Select(d => (d.Direction, d.Direction.GetAttribute<NineStarKiDirectionAttribute>().DisplayDirection, d.DirectionName)).Distinct().ToList()
-                    ))
+                .Select(g =>
+                {
+                    var directions = g.Select(d =>
+                        (d.Direction, d.Direction.GetAttribute<NineStarKiDirectionAttribute>().DisplayDirection, d
+                            .DirectionName)).Distinct().ToList();
+
+                    var guidance = GetGuidance(g.Key, directions);
+
+                    return (
+                        Score: g.Key,
+                        CssClassName: g.First().CssClassName,
+                        Guidance: g.First().Guidance,
+                        Directions: directions
+                        );
+                })
                 .OrderByDescending(e => e.Score)
                 .ToList();
         }
@@ -83,15 +93,15 @@ namespace K9.WebApplication.ViewModels
             return "green";
         }
 
-        private string GetGuidance(int score)
+        private string GetGuidance(int score, List<(ENineStarKiDirection, ENineStarKiDirection, string)> directions)
         {
-            if (score >= 11) return Dictionary.AvoidAllTravel;
-            if (score >= 10) return Dictionary.AvoidAllTravel;
-            if (score >= 8) return Dictionary.AvoidTravel;
-            if (score >= 7) return Dictionary.KeepTravelShortAndInfrequent;
-            if (score >= 5) return Dictionary.TravelWithGreatCare;
-            if (score >= 3) return Dictionary.TravelWithCare;
-            if (score >= 1) return Dictionary.TravelWithCare;
+            if (score >= 11) return TemplateParser.Parse(Dictionary.AvoidAllTravel, new { Directions = directions.Select(e => e.Item1.ToString()).JoinWithOr() });
+            if (score >= 10) return TemplateParser.Parse(Dictionary.AvoidAllTravel, new { Directions = directions.Select(e => e.Item1.ToString()).JoinWithOr() });
+            if (score >= 8) return TemplateParser.Parse(Dictionary.AvoidTravel, new { Directions = directions.Select(e => e.Item1.ToString()).JoinWithOr() });
+            if (score >= 7) return TemplateParser.Parse(Dictionary.KeepTravelShortAndInfrequent, new { Directions = directions.Select(e => e.Item1.ToString()).JoinWithOr() });
+            if (score >= 5) return TemplateParser.Parse(Dictionary.TravelWithGreatCare, new { Directions = directions.Select(e => e.Item1.ToString()).JoinWithOr() });
+            if (score >= 3) return TemplateParser.Parse(Dictionary.TravelWithCare, new { Directions = directions.Select(e => e.Item1.ToString()).JoinWithOr() });
+            if (score >= 1) return TemplateParser.Parse(Dictionary.TravelWithCare, new { Directions = directions.Select(e => e.Item1.ToString()).JoinWithOr() });
             return "OK";
         }
 

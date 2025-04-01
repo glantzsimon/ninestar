@@ -3153,7 +3153,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to It’s advised to avoid all travel during this time. Short trips to places in the local vicinity are OK. If you must travel, be extra vigilant and avoid any unnecessary risks..
+        ///   Looks up a localized string similar to It’s advised to completely avoid travelling {Directions} during this time. Short trips to places in the local vicinity are OK. If you must travel, be extra vigilant and avoid any unnecessary risks..
         /// </summary>
         public static string AvoidAllTravel {
             get {
@@ -3162,7 +3162,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to It’s advised to avoid travel as much as possible during this time. Short trips to places in the local vicinity are OK. If you must travel, be extra vigilant and avoid any unnecessary risks..
+        ///   Looks up a localized string similar to It’s advised to avoid travelling {Directions} as much as possible during this time. Short trips to places in the local vicinity are OK. If you must travel, be extra vigilant and avoid any unnecessary risks..
         /// </summary>
         public static string AvoidTravel {
             get {
@@ -9266,7 +9266,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to It is advised to minimise travel as much as possible and to keep trips short and infrequent during this time. Short trips to places in the local vicinity are OK. If you must travel, be extra vigilant and avoid any unnecessary risks..
+        ///   Looks up a localized string similar to It is advised to minimise travelling {Directions} as much as possible and to keep trips short and infrequent during this time. Short trips to places in the local vicinity are OK. If you must travel, be extra vigilant and avoid any unnecessary risks..
         /// </summary>
         public static string KeepTravelShortAndInfrequent {
             get {
@@ -17150,7 +17150,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to It’s advised to take care when travelling during this time. Be extra vigilant and avoid any unnecessary risks..
+        ///   Looks up a localized string similar to It’s advised to take care when travelling {Directions} during this time. Be extra vigilant and avoid any unnecessary risks..
         /// </summary>
         public static string TravelWithGreatCare {
             get {

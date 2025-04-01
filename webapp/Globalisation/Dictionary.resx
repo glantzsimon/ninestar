@@ -5186,10 +5186,10 @@
     <value>energies\spirituality\en-gb\summary\water-spirituality-summary.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="AvoidAllTravel" xml:space="preserve">
-    <value>It’s advised to avoid all travel during this time. Short trips to places in the local vicinity are OK. If you must travel, be extra vigilant and avoid any unnecessary risks.</value>
+    <value>It’s advised to completely avoid travelling {Directions} during this time. Short trips to places in the local vicinity are OK. If you must travel, be extra vigilant and avoid any unnecessary risks.</value>
   </data>
   <data name="AvoidTravel" xml:space="preserve">
-    <value>It’s advised to avoid travel as much as possible during this time. Short trips to places in the local vicinity are OK. If you must travel, be extra vigilant and avoid any unnecessary risks.</value>
+    <value>It’s advised to avoid travelling {Directions} as much as possible during this time. Short trips to places in the local vicinity are OK. If you must travel, be extra vigilant and avoid any unnecessary risks.</value>
   </data>
   <data name="Direction" xml:space="preserve">
     <value>Direction</value>
@@ -5198,7 +5198,7 @@
     <value>Guidance</value>
   </data>
   <data name="KeepTravelShortAndInfrequent" xml:space="preserve">
-    <value>It is advised to minimise travel as much as possible and to keep trips short and infrequent during this time. Short trips to places in the local vicinity are OK. If you must travel, be extra vigilant and avoid any unnecessary risks.</value>
+    <value>It is advised to minimise travelling {Directions} as much as possible and to keep trips short and infrequent during this time. Short trips to places in the local vicinity are OK. If you must travel, be extra vigilant and avoid any unnecessary risks.</value>
   </data>
   <data name="Score" xml:space="preserve">
     <value>Score</value>
@@ -5207,7 +5207,7 @@
     <value>It should be relatively safe to travel at this time; however, it’s advisable to take care and remain more vigilant than usual.</value>
   </data>
   <data name="TravelWithGreatCare" xml:space="preserve">
-    <value>It’s advised to take care when travelling during this time. Be extra vigilant and avoid any unnecessary risks.</value>
+    <value>It’s advised to take care when travelling {Directions} during this time. Be extra vigilant and avoid any unnecessary risks.</value>
   </data>
   <data name="WorstDirectionsToTravelIn" xml:space="preserve">
     <value>Directions of Travel Summary</value>

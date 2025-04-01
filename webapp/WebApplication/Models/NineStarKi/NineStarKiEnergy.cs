@@ -201,38 +201,47 @@ namespace K9.WebApplication.Models
     public enum ENineStarKiDirection
     {
         [Display(Order = 1)]
+        [NineStarKiDirectionAttribute(DisplayDirection = South)]
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.North)]
         North = 1,
 
         [Display(Order = 6)]
+        [NineStarKiDirectionAttribute(DisplayDirection = NorthEast)]
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.SouthWest)]
         SouthWest,
 
         [Display(Order = 3)]
+        [NineStarKiDirectionAttribute(DisplayDirection = West)]
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.East)]
         East,
 
         [Display(Order = 4)]
+        [NineStarKiDirectionAttribute(DisplayDirection = NorthWest)]
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.SouthEast)]
         SouthEast,
 
         [Display(Order = 0)]
+        [NineStarKiDirectionAttribute(DisplayDirection = Centre)]
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Centre)]
         Centre,
 
         [Display(Order = 8)]
+        [NineStarKiDirectionAttribute(DisplayDirection = SouthEast)]
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.NorthWest)]
         NorthWest,
 
         [Display(Order = 7)]
+        [NineStarKiDirectionAttribute(DisplayDirection = East)]
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.West)]
         West,
 
         [Display(Order = 2)]
+        [NineStarKiDirectionAttribute(DisplayDirection = SouthWest)]
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.NorthEast)]
         NorthEast,
 
         [Display(Order = 5)]
+        [NineStarKiDirectionAttribute(DisplayDirection = North)]
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.South)]
         South
     }

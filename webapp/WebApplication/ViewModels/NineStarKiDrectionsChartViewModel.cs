@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
+using K9.WebApplication.Attributes;
 using K9.WebApplication.Enums;
 
 namespace K9.WebApplication.ViewModels
@@ -18,7 +19,7 @@ namespace K9.WebApplication.ViewModels
             AddDirectionsForCentre();
         }
 
-        public List<(int Score, string CssClassName, string Guidance, List<(ENineStarKiDirection Direction, string DirectionName)> Directions)> GetDirectionsChartData()
+        public List<(int Score, string CssClassName, string Guidance, List<(ENineStarKiDirection Direction, ENineStarKiDirection DisplayDirection, string DirectionName)> Directions)> GetDirectionsChartData()
         {
             return _directionModels.SelectMany(e => e.Directions)
                 .Where(e => e.Direction != ENineStarKiDirection.Centre)
@@ -40,7 +41,7 @@ namespace K9.WebApplication.ViewModels
                     Score: g.Key,
                     CssClassName: g.First().CssClassName,
                     Guidance: g.First().Guidance,
-                    Directions: g.Select(d => (d.Direction, d.DirectionName)).Distinct().ToList()
+                    Directions: g.Select(d => (d.Direction, d.Direction.GetAttribute<NineStarKiDirectionAttribute>().DisplayDirection, d.DirectionName)).Distinct().ToList()
                     ))
                 .OrderByDescending(e => e.Score)
                 .ToList();

@@ -226,7 +226,7 @@ a > .ninestar-summary-container:hover {
   background-color: #c321dc;
   color: white;
 }
-.magic-square-container .magic-square .directions-line-overlay {
+.directions-line-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -237,7 +237,7 @@ a > .ninestar-summary-container:hover {
   z-index: 3;
   filter: grayscale(45%);
 }
-.magic-square-container .magic-square .directions-line-overlay .line {
+.directions-line-overlay .line {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -252,7 +252,7 @@ a > .ninestar-summary-container:hover {
   pointer-events: auto;
   cursor: help;
 }
-.magic-square-container .magic-square .directions-line-overlay .line::after {
+.directions-line-overlay .line::after {
   content: "";
   position: absolute;
   bottom: -4px;
@@ -264,71 +264,71 @@ a > .ninestar-summary-container:hover {
   border-right: 5px solid transparent;
   border-top: 11px solid currentColor;
 }
-.magic-square-container .magic-square .directions-line-overlay .line.five-yellow-killing {
+.directions-line-overlay .line.five-yellow-killing {
   background: yellow;
 }
-.magic-square-container .magic-square .directions-line-overlay .line.five-yellow-killing::after {
+.directions-line-overlay .line.five-yellow-killing::after {
   border-top: 8px solid yellow;
 }
-.magic-square-container .magic-square .directions-line-overlay .line.five-yellow-killing.to-Centre {
+.directions-line-overlay .line.five-yellow-killing.to-Centre {
   background: rgba(255, 255, 0, 0.22);
 }
-.magic-square-container .magic-square .directions-line-overlay .line.dark-sword-killing {
+.directions-line-overlay .line.dark-sword-killing {
   background: #333;
 }
-.magic-square-container .magic-square .directions-line-overlay .line.dark-sword-killing::after {
+.directions-line-overlay .line.dark-sword-killing::after {
   border-top: 8px solid #333;
 }
-.magic-square-container .magic-square .directions-line-overlay .line.dark-sword-killing.to-Centre {
+.directions-line-overlay .line.dark-sword-killing.to-Centre {
   background: rgba(51, 51, 51, 0.22);
 }
-.magic-square-container .magic-square .directions-line-overlay .line.self-life-killing {
+.directions-line-overlay .line.self-life-killing {
   background: red;
 }
-.magic-square-container .magic-square .directions-line-overlay .line.self-life-killing::after {
+.directions-line-overlay .line.self-life-killing::after {
   border-top: 8px solid red;
 }
-.magic-square-container .magic-square .directions-line-overlay .line.self-life-killing.to-Centre {
+.directions-line-overlay .line.self-life-killing.to-Centre {
   background: rgba(255, 0, 0, 0.22);
 }
-.magic-square-container .magic-square .directions-line-overlay .line.target-killing {
+.directions-line-overlay .line.target-killing {
   background: blue;
 }
-.magic-square-container .magic-square .directions-line-overlay .line.target-killing::after {
+.directions-line-overlay .line.target-killing::after {
   border-top: 8px solid blue;
 }
-.magic-square-container .magic-square .directions-line-overlay .line.target-killing.to-Centre {
+.directions-line-overlay .line.target-killing.to-Centre {
   background: rgba(0, 0, 255, 0.22);
 }
-.magic-square-container .magic-square .directions-line-overlay .to-North {
+.directions-line-overlay .to-North {
   transform: translate(-50%, 0) rotate(0deg);
 }
-.magic-square-container .magic-square .directions-line-overlay .to-South {
+.directions-line-overlay .to-South {
   transform: translate(-50%, 0) rotate(180deg);
 }
-.magic-square-container .magic-square .directions-line-overlay .to-East {
+.directions-line-overlay .to-East {
   transform: translate(-50%, 0) rotate(90deg);
 }
-.magic-square-container .magic-square .directions-line-overlay .to-West {
+.directions-line-overlay .to-West {
   transform: translate(-50%, 0) rotate(-90deg);
 }
-.magic-square-container .magic-square .directions-line-overlay .to-NorthEast {
+.directions-line-overlay .to-NorthEast {
   height: 70.7%;
   transform: translate(-50%, 0) rotate(45deg);
 }
-.magic-square-container .magic-square .directions-line-overlay .to-SouthEast {
+.directions-line-overlay .to-SouthEast {
   height: 70.7%;
   transform: translate(-50%, 0) rotate(135deg);
 }
-.magic-square-container .magic-square .directions-line-overlay .to-SouthWest {
+.directions-line-overlay .to-SouthWest {
   height: 70.7%;
   transform: translate(-50%, 0) rotate(225deg);
 }
-.magic-square-container .magic-square .directions-line-overlay .to-NorthWest {
+.directions-line-overlay .to-NorthWest {
   height: 70.7%;
   transform: translate(-50%, 0) rotate(315deg);
 }
-.magic-square-container .magic-square .directions-line-overlay .to-Centre {
+.directions-line-overlay .to-Centre {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -339,7 +339,7 @@ a > .ninestar-summary-container:hover {
   border: 3px solid red;
   background-color: rgba(255, 255, 255, 0.22);
 }
-.magic-square-container .magic-square .directions-line-overlay .to-Centre::after {
+.directions-line-overlay .to-Centre::after {
   display: none;
 }
 .magic-tooltip {

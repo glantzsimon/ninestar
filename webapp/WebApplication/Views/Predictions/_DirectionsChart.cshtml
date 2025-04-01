@@ -35,12 +35,21 @@
                         <tr>
                             <td>@(string.Join(", ", score.Directions.Select(e => e.DirectionName)))</td>
                             <td>
-                                <span class="status-circle @score.CssClassName">
-                                    @if (score.Score >= 10)
-                                    {
-                                        <i class="fa fa-exclamation-triangle"></i>
-                                    }
-                                </span>
+                                <div class="directions-summary">
+                                    <!-- Acts as the relative container -->
+                                    <div class="status-circle @score.CssClassName">
+                                        @if (score.Score >= 10)
+                                        {
+                                            <i class="fa fa-exclamation-triangle"></i>
+                                        }
+                                    </div>
+                                    <div class="directions-line-overlay">
+                                        @foreach (var direction in score.Directions)
+                                        {
+                                            <div class="line to-@direction.DisplayDirection"></div>
+                                        }
+                                    </div>
+                                </div>
                             </td>
                             <td class="">@score.Guidance</td>
                         </tr>

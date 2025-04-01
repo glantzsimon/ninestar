@@ -1,5 +1,131 @@
 ﻿[
   {
+    "inputFile": "Content/less/sections/astrology.less",
+    "outputFile": "Content/sections/astrology.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/account.less",
+    "outputFile": "Content/sections/account.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/biorhythms.less",
+    "outputFile": "Content/sections/biorhythms.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/numerology.less",
+    "outputFile": "Content/sections/numerology.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/book-consultation.less",
+    "outputFile": "Content/sections/book-consultation.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/compatibility.less",
+    "outputFile": "Content/sections/compatibility.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/cookies.less",
+    "outputFile": "Content/sections/cookies.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/footer.less",
+    "outputFile": "Content/sections/footer.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/iching.less",
+    "outputFile": "Content/sections/iching.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/knowledgebase.less",
+    "outputFile": "Content/sections/knowledgebase.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/membership.less",
+    "outputFile": "Content/sections/membership.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/mailing-lists.less",
+    "outputFile": "Content/sections/mailing-lists.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/navbar.less",
+    "outputFile": "Content/sections/navbar.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/ninestar.less",
+    "outputFile": "Content/sections/ninestar.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/payments.less",
+    "outputFile": "Content/sections/payments.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/predictions.less",
+    "outputFile": "Content/sections/predictions.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/privacypolicy.less",
+    "outputFile": "Content/sections/privacypolicy.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
+    "inputFile": "Content/less/sections/stripe.less",
+    "outputFile": "Content/sections/stripe.css",
+    "options": {
+      "compress": false
+    }
+  },
+  {
     "inputFile": "Content/less/main/elements.less",
     "outputFile": "Content/main/elements.css",
     "options": {
@@ -303,125 +429,6 @@
   {
     "inputFile": "Content/less/sections/about.less",
     "outputFile": "Content/sections/about.css",
-    "options": {
-      "compress": false
-    }
-  },
-  {
-    "inputFile": "Content/less/sections/account.less",
-    "outputFile": "Content/sections/account.css",
-    "options": {
-      "compress": false
-    }
-  },
-  {
-    "inputFile": "Content/less/sections/biorhythms.less",
-    "outputFile": "Content/sections/biorhythms.css",
-    "options": {
-      "compress": false
-    }
-  },
-  {
-    "inputFile": "Content/less/sections/numerology.less",
-    "outputFile": "Content/sections/numerology.css",
-    "options": {
-      "compress": false
-    }
-  },
-  {
-    "inputFile": "Content/less/sections/book-consultation.less",
-    "outputFile": "Content/sections/book-consultation.css",
-    "options": {
-      "compress": false
-    }
-  },
-  {
-    "inputFile": "Content/less/sections/compatibility.less",
-    "outputFile": "Content/sections/compatibility.css",
-    "options": {
-      "compress": false
-    }
-  },
-  {
-    "inputFile": "Content/less/sections/cookies.less",
-    "outputFile": "Content/sections/cookies.css",
-    "options": {
-      "compress": false
-    }
-  },
-  {
-    "inputFile": "Content/less/sections/footer.less",
-    "outputFile": "Content/sections/footer.css",
-    "options": {
-      "compress": false
-    }
-  },
-  {
-    "inputFile": "Content/less/sections/iching.less",
-    "outputFile": "Content/sections/iching.css",
-    "options": {
-      "compress": false
-    }
-  },
-  {
-    "inputFile": "Content/less/sections/knowledgebase.less",
-    "outputFile": "Content/sections/knowledgebase.css",
-    "options": {
-      "compress": false
-    }
-  },
-  {
-    "inputFile": "Content/less/sections/membership.less",
-    "outputFile": "Content/sections/membership.css",
-    "options": {
-      "compress": false
-    }
-  },
-  {
-    "inputFile": "Content/less/sections/mailing-lists.less",
-    "outputFile": "Content/sections/mailing-lists.css",
-    "options": {
-      "compress": false
-    }
-  },
-  {
-    "inputFile": "Content/less/sections/navbar.less",
-    "outputFile": "Content/sections/navbar.css",
-    "options": {
-      "compress": false
-    }
-  },
-  {
-    "inputFile": "Content/less/sections/ninestar.less",
-    "outputFile": "Content/sections/ninestar.css",
-    "options": {
-      "compress": false
-    }
-  },
-  {
-    "inputFile": "Content/less/sections/payments.less",
-    "outputFile": "Content/sections/payments.css",
-    "options": {
-      "compress": false
-    }
-  },
-  {
-    "inputFile": "Content/less/sections/predictions.less",
-    "outputFile": "Content/sections/predictions.css",
-    "options": {
-      "compress": false
-    }
-  },
-  {
-    "inputFile": "Content/less/sections/privacypolicy.less",
-    "outputFile": "Content/sections/privacypolicy.css",
-    "options": {
-      "compress": false
-    }
-  },
-  {
-    "inputFile": "Content/less/sections/stripe.less",
-    "outputFile": "Content/sections/stripe.css",
     "options": {
       "compress": false
     }

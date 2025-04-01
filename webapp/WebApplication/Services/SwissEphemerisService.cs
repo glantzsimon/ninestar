@@ -677,6 +677,50 @@ namespace K9.WebApplication.Services
             return localSegments.OrderBy(e => e.LocalStart).ToArray();
         }
 
+        public double GetMoonIlluminationPercentage(DateTime selectedDateTime, string timeZoneId)
+        {
+            using (var sweph = new SwissEph())
+            {
+                sweph.swe_set_ephe_path(My.DefaultValuesConfiguration.SwephPath);
+                // Convert the selected date to UT.
+                DateTime utDate = ConvertToUT(selectedDateTime, timeZoneId);
+                double jd = GetJulianDate(sweph, utDate);
+
+                double[] xxSun = new double[6];
+                double[] xxMoon = new double[6];
+                string serr = "";
+
+                // Calculate the Sun's position.
+                int retSun = sweph.swe_calc_ut(jd, SwissEph.SE_SUN, SwissEph.SEFLG_SWIEPH, xxSun, ref serr);
+                if (retSun < 0)
+                    throw new Exception("Error calculating Sun position: " + serr);
+
+                // Calculate the Moon's position.
+                int retMoon = sweph.swe_calc_ut(jd, SwissEph.SE_MOON, SwissEph.SEFLG_SWIEPH, xxMoon, ref serr);
+                if (retMoon < 0)
+                    throw new Exception("Error calculating Moon position: " + serr);
+
+                // Get the ecliptic longitudes (in degrees).
+                double sunLong = xxSun[0];
+                double moonLong = xxMoon[0];
+
+                // Compute the phase angle (absolute difference) and adjust if needed.
+                double phaseAngle = Math.Abs(moonLong - sunLong) % 360;
+                if (phaseAngle > 180)
+                    phaseAngle = 360 - phaseAngle;
+
+                // Convert phase angle to radians.
+                double phaseAngleRad = phaseAngle * Math.PI / 180.0;
+
+                // Compute illuminated fraction.
+                double illuminatedFraction = (1 - Math.Cos(phaseAngleRad)) / 2.0;
+
+                // Return as a percentage.
+                return illuminatedFraction * 100.0;
+            }
+        }
+
+
         /// <summary>
         /// Generates fixed 2‑hour segments in UTC (with boundaries at 1:00, 3:00, etc.) over an extended range.
         /// </summary>

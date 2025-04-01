@@ -1,5 +1,6 @@
 ﻿@using K9.SharedLibrary.Extensions
 @using K9.WebApplication.Config
+@using K9.WebApplication.Enums
 @model K9.WebApplication.ViewModels.PlannerViewModel
 
 <div class="container main-content clear-both daily-planner-container margin-bottom-0">
@@ -24,7 +25,7 @@
         @foreach (var energy in Model.Energies)
         {
             // Add padding for first row
-                if (isFirst)
+            if (isFirst)
             {
                 int offset = ((int)energy.EnergyStartsOn.DayOfWeek + 6) % 7;
                 for (int i = 0; i < offset; i++)
@@ -51,7 +52,9 @@
                         {
                             <img loading="lazy" title="@energy.Energy.EnergyName" alt="@energy.ImageAlt" class="auto-size center-block" src="@energy.ImageSrc" />
                         }
-
+                    </div>
+                    <div class="custom-content">
+                        @Html.Partial("../../Astrology/_MoonPhase.cshtml", Model.MoonIlluminationPercentage)
                     </div>
                 </div>
             </div>

@@ -52,5 +52,7 @@ namespace K9.WebApplication.Services
             DateTime selectedDateTime, string timeZoneId);
 
         DateTime GetLichun(DateTime selectedDateTime, string timeZoneId);
+
+        double GetMoonIlluminationPercentage(DateTime selectedDateTime, string timeZoneId);
     }
 }

@@ -14,7 +14,7 @@ namespace K9.WebApplication.ViewModels
         }
 
         public PlannerViewModelItem(NineStarKiEnergy energy, NineStarKiEnergy secondEnergy, DateTime energyStartsOn, DateTime energyEndsOn,
-            bool isActive, EPlannerView childView)
+            bool isActive, EPlannerView childView, double? moonIlluminationPercentage = null)
         {
             Energy = energy;
             SecondEnergy = secondEnergy;
@@ -22,6 +22,7 @@ namespace K9.WebApplication.ViewModels
             EnergyEndsOn = energyEndsOn;
             IsActive = isActive;
             ChildView = childView;
+            MoonIlluminationPercentage = moonIlluminationPercentage ?? 0;
         }
 
         public NineStarKiEnergy Energy { get; set; }
@@ -35,6 +36,8 @@ namespace K9.WebApplication.ViewModels
         public bool IsActive { get; set; }
 
         public EPlannerView ChildView { get; set; }
+
+        public double MoonIlluminationPercentage { get; set; }
 
         public bool IsSplitEnergy => Energy.EnergyNumber != SecondEnergy.EnergyNumber;
 

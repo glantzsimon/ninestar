@@ -4,14 +4,15 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
+using K9.WebApplication.Enums;
 
 namespace K9.WebApplication.ViewModels
 {
     public class NineStarKiDrectionsChartViewModel
     {
-        private List<(NineStarKiEnergy PersonalHouseOccupied, List<NineStarKiDirection> Directions)> _directionModels { get; }
+        private List<(NineStarKiEnergy PersonalHouseOccupied, NineStarKiEnergy GlobalKi, ENineStarKiEnergyCycleType CycleType, List<NineStarKiDirection> Directions)> _directionModels { get; }
 
-        public NineStarKiDrectionsChartViewModel(List<(NineStarKiEnergy PersonalChartEnergy, List<NineStarKiDirection> Directions)> directionModels)
+        public NineStarKiDrectionsChartViewModel(List<(NineStarKiEnergy PersonalHouseOccupied, NineStarKiEnergy GlobalKi, ENineStarKiEnergyCycleType CycleType, List<NineStarKiDirection> Directions)> directionModels)
         {
             _directionModels = directionModels;
             AddDirectionsForCentre();
@@ -21,7 +22,6 @@ namespace K9.WebApplication.ViewModels
         {
             return _directionModels.SelectMany(e => e.Directions)
                 .Where(e => e.Direction != ENineStarKiDirection.Centre)
-                .OrderBy(e => e.Direction.GetAttribute<DisplayAttribute>().Order)
                 .GroupBy(e => e.Direction)
                 .SelectMany(g =>
                 {
@@ -33,7 +33,7 @@ namespace K9.WebApplication.ViewModels
                         Guidance: GetGuidance(totalScore),
                         Score: totalScore
                     ));
-                }).Distinct().OrderByDescending(e => e.Score).ThenBy(e => e.DirectionName).ToList();
+                }).Distinct().OrderByDescending(e => e.Score).ThenBy(e => e.Direction.GetAttribute<DisplayAttribute>().Order).ToList();
         }
 
         private void AddDirectionsForCentre()
@@ -42,30 +42,28 @@ namespace K9.WebApplication.ViewModels
 
             foreach (var item in _directionModels)
             {
-                foreach (var direction in item.Directions)
+                if (item.PersonalHouseOccupied.EnergyNumber == 5 || item.GlobalKi.EnergyNumber == 5)
                 {
-                    if (direction.Direction == ENineStarKiDirection.Centre || item.PersonalHouseOccupied.EnergyNumber == 5)
+                    newDirections.AddRange(new List<NineStarKiDirection>
                     {
-                        newDirections.AddRange(new List<NineStarKiDirection>
-                        {
-                            new NineStarKiDirection("", "", new NineStarKiEnergy(ENineStarKiEnergy.Water) { EnergyCycleType =  direction.Energy.EnergyCycleType }),
-                            new NineStarKiDirection("", "", new NineStarKiEnergy(ENineStarKiEnergy.Soil) { EnergyCycleType =  direction.Energy.EnergyCycleType }),
-                            new NineStarKiDirection("", "", new NineStarKiEnergy(ENineStarKiEnergy.Thunder) { EnergyCycleType =  direction.Energy.EnergyCycleType }),
-                            new NineStarKiDirection("", "", new NineStarKiEnergy(ENineStarKiEnergy.Wind) { EnergyCycleType =  direction.Energy.EnergyCycleType }),
-                            new NineStarKiDirection("", "", new NineStarKiEnergy(ENineStarKiEnergy.Heaven) { EnergyCycleType =  direction.Energy.EnergyCycleType }),
-                            new NineStarKiDirection("", "", new NineStarKiEnergy(ENineStarKiEnergy.Lake) { EnergyCycleType =  direction.Energy.EnergyCycleType }),
-                            new NineStarKiDirection("", "", new NineStarKiEnergy(ENineStarKiEnergy.Mountain) { EnergyCycleType =  direction.Energy.EnergyCycleType }),
-                            new NineStarKiDirection("", "", new NineStarKiEnergy(ENineStarKiEnergy.Fire) { EnergyCycleType =  direction.Energy.EnergyCycleType })
-                        });
-                    }
+                        new NineStarKiDirection(EUnfavourableDirection.Unspecified, "", new NineStarKiEnergy(ENineStarKiEnergy.Water) { EnergyCycleType = item.CycleType }),
+                        new NineStarKiDirection(EUnfavourableDirection.Unspecified, "", new NineStarKiEnergy(ENineStarKiEnergy.Soil) { EnergyCycleType =  item.CycleType }),
+                        new NineStarKiDirection(EUnfavourableDirection.Unspecified, "", new NineStarKiEnergy(ENineStarKiEnergy.Thunder) { EnergyCycleType =  item.CycleType }),
+                        new NineStarKiDirection(EUnfavourableDirection.Unspecified, "", new NineStarKiEnergy(ENineStarKiEnergy.Wind) { EnergyCycleType =  item.CycleType }),
+                        new NineStarKiDirection(EUnfavourableDirection.Unspecified, "", new NineStarKiEnergy(ENineStarKiEnergy.Heaven) { EnergyCycleType =  item.CycleType }),
+                        new NineStarKiDirection(EUnfavourableDirection.Unspecified, "", new NineStarKiEnergy(ENineStarKiEnergy.Lake) { EnergyCycleType =  item.CycleType }),
+                        new NineStarKiDirection(EUnfavourableDirection.Unspecified, "", new NineStarKiEnergy(ENineStarKiEnergy.Mountain) { EnergyCycleType =  item.CycleType }),
+                        new NineStarKiDirection(EUnfavourableDirection.Unspecified, "", new NineStarKiEnergy(ENineStarKiEnergy.Fire) { EnergyCycleType =  item.CycleType })
+                    });
                 }
+
                 item.Directions.AddRange(newDirections);
             }
         }
 
         private string GetCssClassName(int score)
         {
-            if (score == 11) return "purple-warning";
+            if (score >= 11) return "purple-warning";
             if (score == 10) return "red-warning";
             if (score == 8) return "red";
             if (score == 7) return "light-red";
@@ -77,7 +75,7 @@ namespace K9.WebApplication.ViewModels
 
         private string GetGuidance(int score)
         {
-            if (score == 11) return Dictionary.AvoidAllTravel;
+            if (score >= 11) return Dictionary.AvoidAllTravel;
             if (score == 10) return Dictionary.AvoidAllTravel;
             if (score == 8) return Dictionary.AvoidTravel;
             if (score == 7) return Dictionary.KeepTravelShortAndInfrequent;

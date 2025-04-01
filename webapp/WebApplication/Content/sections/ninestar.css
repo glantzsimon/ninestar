@@ -339,6 +339,9 @@ a > .ninestar-summary-container:hover {
   border: 3px solid red;
   background-color: rgba(255, 255, 255, 0.22);
 }
+.magic-square-container .magic-square .directions-line-overlay .to-Centre::after {
+  display: none;
+}
 .magic-tooltip {
   position: absolute;
   width: 333px;

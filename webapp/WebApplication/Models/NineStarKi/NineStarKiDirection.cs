@@ -1,5 +1,6 @@
 ﻿using K9.Base.DataAccessLayer.Attributes;
 using K9.SharedLibrary.Extensions;
+using K9.WebApplication.Enums;
 
 namespace K9.WebApplication.Models
 {
@@ -8,13 +9,15 @@ namespace K9.WebApplication.Models
         public string Name { get; }
         public string Description { get; }
         public NineStarKiEnergy Energy { get; }
+        public EUnfavourableDirection UnfavourableDirection { get; }
         public ENineStarKiDirection Direction => Energy.Direction;
         public int Score => GetScore();
         public string GetDirectionName() => Direction.GetAttribute<EnumDescriptionAttribute>().Name.ToProperCase();
 
-        public NineStarKiDirection(string name, string description, NineStarKiEnergy energy)
+        public NineStarKiDirection(EUnfavourableDirection unfavourableDirection, string description, NineStarKiEnergy energy)
         {
-            Name = name;
+            UnfavourableDirection = unfavourableDirection;
+            Name = unfavourableDirection.GetAttribute<EnumDescriptionAttribute>().Name;
             Description = description;
             Energy = energy;
         }

@@ -3,6 +3,7 @@ using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using System.Collections.Generic;
 using System.Linq;
+using K9.WebApplication.Enums;
 
 namespace K9.WebApplication.Models
 {
@@ -91,10 +92,10 @@ namespace K9.WebApplication.Models
         public NineStarKiDirections(NineStarKiEnergy fiveYellowKilling, NineStarKiEnergy darkSwordKilling, NineStarKiEnergy selfLifeKilling, NineStarKiEnergy targetKilling, NineStarKiEnergy personalChartEnergy)
         {
             PersonalChartEnergy = personalChartEnergy;
-            FiveYelloKilling = new NineStarKiDirection(Dictionary.FiveYellowKilling, Dictionary.FiveYellowKillingDescription, fiveYellowKilling);
-            DarkSwordKilling = new NineStarKiDirection(Dictionary.DarkSwordKilling, Dictionary.DarkSwordKillingDescription, darkSwordKilling);
-            SelfLifeKilling = new NineStarKiDirection(Dictionary.SelfLifeKilling, Dictionary.SelfLifeKillingDescription, selfLifeKilling);
-            TargetKilling = new NineStarKiDirection(Dictionary.TargetKilling, Dictionary.TargetKillingDescription, targetKilling);
+            FiveYelloKilling = new NineStarKiDirection(EUnfavourableDirection.FiveYelloKilling, Dictionary.FiveYellowKillingDescription, fiveYellowKilling);
+            DarkSwordKilling = new NineStarKiDirection(EUnfavourableDirection.DarkSwordKilling, Dictionary.DarkSwordKillingDescription, darkSwordKilling);
+            SelfLifeKilling = new NineStarKiDirection(EUnfavourableDirection.SelfLifeKilling, Dictionary.SelfLifeKillingDescription, selfLifeKilling);
+            TargetKilling = new NineStarKiDirection(EUnfavourableDirection.TargetKilling, Dictionary.TargetKillingDescription, targetKilling);
 
             FavourableDirections = _Directions.Where(e => !new List<ENineStarKiDirection>
             {

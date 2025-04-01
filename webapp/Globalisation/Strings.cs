@@ -331,6 +331,11 @@
             public const string ThirdDiscount = "ThirdDiscount";
             public const string None = "None";
 
+            public const string FiveYelloKilling = "FiveYelloKilling";
+            public const string DarkSwordKilling = "DarkSwordKilling";
+            public const string SelfLifeKilling = "SelfLifeKilling";
+            public const string TargetKilling = "TargetKilling";
+            
             public const string UnchangingYang = "UnchangingYang";
             public const string UnchangingYin = "UnchangingYin";
             public const string YangToYin = "YangToYin";

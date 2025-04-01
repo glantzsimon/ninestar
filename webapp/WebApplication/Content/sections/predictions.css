@@ -5,9 +5,6 @@
   position: relative;
   top: -180px;
 }
-.directions-more-info {
-  display: none;
-}
 .directions-more-info .status-circle {
   display: inline-flex;
   align-items: center;

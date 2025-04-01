@@ -140,3 +140,6 @@ Show global predictions in tab
 
 --
 
+Cycles - click on energies, display tab / info below
+
+--

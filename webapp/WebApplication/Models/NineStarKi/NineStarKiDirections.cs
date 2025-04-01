@@ -8,7 +8,7 @@ namespace K9.WebApplication.Models
 {
     public class NineStarKiDirections
     {
-        private readonly NineStarKiEnergy _personalChartEnergy;
+        public NineStarKiEnergy PersonalChartEnergy { get; }
 
         private static readonly Dictionary<int, ENineStarKiDirection> _Directions = new Dictionary<int, ENineStarKiDirection>
         {
@@ -62,7 +62,7 @@ namespace K9.WebApplication.Models
         {
             get
             {
-                var directionDescription = TemplateParser.Parse(Dictionary.InAnyDirection, new { Energy = _personalChartEnergy?.EnergyNumber });
+                var directionDescription = TemplateParser.Parse(Dictionary.InAnyDirection, new { Energy = PersonalChartEnergy?.EnergyNumber });
                 return TemplateParser.Parse(SelfLifeKilling.Description, new
                 {
                     Direction = SelfLifeKilling.Direction == ENineStarKiDirection.Centre
@@ -77,7 +77,7 @@ namespace K9.WebApplication.Models
         {
             get
             {
-                var directionDescription = TemplateParser.Parse(Dictionary.InAnyDirection, new { Energy = _personalChartEnergy?.EnergyNumber });
+                var directionDescription = TemplateParser.Parse(Dictionary.InAnyDirection, new { Energy = PersonalChartEnergy?.EnergyNumber });
                 return TemplateParser.Parse(TargetKilling.Description, new
                 {
                     Direction = TargetKilling.Direction == ENineStarKiDirection.Centre
@@ -90,7 +90,7 @@ namespace K9.WebApplication.Models
 
         public NineStarKiDirections(NineStarKiEnergy fiveYellowKilling, NineStarKiEnergy darkSwordKilling, NineStarKiEnergy selfLifeKilling, NineStarKiEnergy targetKilling, NineStarKiEnergy personalChartEnergy)
         {
-            _personalChartEnergy = personalChartEnergy;
+            PersonalChartEnergy = personalChartEnergy;
             FiveYelloKilling = new NineStarKiDirection(Dictionary.FiveYellowKilling, Dictionary.FiveYellowKillingDescription, fiveYellowKilling);
             DarkSwordKilling = new NineStarKiDirection(Dictionary.DarkSwordKilling, Dictionary.DarkSwordKillingDescription, darkSwordKilling);
             SelfLifeKilling = new NineStarKiDirection(Dictionary.SelfLifeKilling, Dictionary.SelfLifeKillingDescription, selfLifeKilling);
@@ -107,7 +107,7 @@ namespace K9.WebApplication.Models
                 .ToList();
         }
 
-        public List<NineStarKiDirection> UnfavourableDirections  => new List<NineStarKiDirection>
+        public List<NineStarKiDirection> UnfavourableDirections => new List<NineStarKiDirection>
         {
             FiveYelloKilling,
             DarkSwordKilling,

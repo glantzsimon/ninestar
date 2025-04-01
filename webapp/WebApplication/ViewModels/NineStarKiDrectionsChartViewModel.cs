@@ -9,17 +9,17 @@ namespace K9.WebApplication.ViewModels
 {
     public class NineStarKiDrectionsChartViewModel
     {
-        private List<NineStarKiDirection> _directions { get; }
+        private List<(NineStarKiEnergy PersonalHouseOccupied, List<NineStarKiDirection> Directions)> _directionModels { get; }
 
-        public NineStarKiDrectionsChartViewModel(List<NineStarKiDirection> directions)
+        public NineStarKiDrectionsChartViewModel(List<(NineStarKiEnergy PersonalChartEnergy, List<NineStarKiDirection> Directions)> directionModels)
         {
-            _directions = directions;
+            _directionModels = directionModels;
             AddDirectionsForCentre();
         }
 
         public List<(ENineStarKiDirection Direction, string DirectionName, string CssClassName, string Guidance, int Score)> GetDirectionsChartData()
         {
-            return _directions
+            return _directionModels.SelectMany(e => e.Directions)
                 .Where(e => e.Direction != ENineStarKiDirection.Centre)
                 .OrderBy(e => e.Direction.GetAttribute<DisplayAttribute>().Order)
                 .GroupBy(e => e.Direction)
@@ -33,32 +33,34 @@ namespace K9.WebApplication.ViewModels
                         Guidance: GetGuidance(totalScore),
                         Score: totalScore
                     ));
-                }).OrderByDescending(e => e.Score).ThenBy(e => e.DirectionName).ToList();
+                }).Distinct().OrderByDescending(e => e.Score).ThenBy(e => e.DirectionName).ToList();
         }
 
         private void AddDirectionsForCentre()
         {
             var newDirections = new List<NineStarKiDirection>();
 
-            foreach (var direction in _directions)
+            foreach (var item in _directionModels)
             {
-                if (direction.Direction == ENineStarKiDirection.Centre)
+                foreach (var direction in item.Directions)
                 {
-                    newDirections.AddRange(new List<NineStarKiDirection>
+                    if (direction.Direction == ENineStarKiDirection.Centre || item.PersonalHouseOccupied.EnergyNumber == 5)
                     {
-                        new NineStarKiDirection("", "", new NineStarKiEnergy(ENineStarKiEnergy.Water) { EnergyCycleType =  direction.Energy.EnergyCycleType }),
-                        new NineStarKiDirection("", "", new NineStarKiEnergy(ENineStarKiEnergy.Soil) { EnergyCycleType =  direction.Energy.EnergyCycleType }),
-                        new NineStarKiDirection("", "", new NineStarKiEnergy(ENineStarKiEnergy.Thunder) { EnergyCycleType =  direction.Energy.EnergyCycleType }),
-                        new NineStarKiDirection("", "", new NineStarKiEnergy(ENineStarKiEnergy.Wind) { EnergyCycleType =  direction.Energy.EnergyCycleType }),
-                        new NineStarKiDirection("", "", new NineStarKiEnergy(ENineStarKiEnergy.Heaven) { EnergyCycleType =  direction.Energy.EnergyCycleType }),
-                        new NineStarKiDirection("", "", new NineStarKiEnergy(ENineStarKiEnergy.Lake) { EnergyCycleType =  direction.Energy.EnergyCycleType }),
-                        new NineStarKiDirection("", "", new NineStarKiEnergy(ENineStarKiEnergy.Mountain) { EnergyCycleType =  direction.Energy.EnergyCycleType }),
-                        new NineStarKiDirection("", "", new NineStarKiEnergy(ENineStarKiEnergy.Fire) { EnergyCycleType =  direction.Energy.EnergyCycleType })
-                    });
+                        newDirections.AddRange(new List<NineStarKiDirection>
+                        {
+                            new NineStarKiDirection("", "", new NineStarKiEnergy(ENineStarKiEnergy.Water) { EnergyCycleType =  direction.Energy.EnergyCycleType }),
+                            new NineStarKiDirection("", "", new NineStarKiEnergy(ENineStarKiEnergy.Soil) { EnergyCycleType =  direction.Energy.EnergyCycleType }),
+                            new NineStarKiDirection("", "", new NineStarKiEnergy(ENineStarKiEnergy.Thunder) { EnergyCycleType =  direction.Energy.EnergyCycleType }),
+                            new NineStarKiDirection("", "", new NineStarKiEnergy(ENineStarKiEnergy.Wind) { EnergyCycleType =  direction.Energy.EnergyCycleType }),
+                            new NineStarKiDirection("", "", new NineStarKiEnergy(ENineStarKiEnergy.Heaven) { EnergyCycleType =  direction.Energy.EnergyCycleType }),
+                            new NineStarKiDirection("", "", new NineStarKiEnergy(ENineStarKiEnergy.Lake) { EnergyCycleType =  direction.Energy.EnergyCycleType }),
+                            new NineStarKiDirection("", "", new NineStarKiEnergy(ENineStarKiEnergy.Mountain) { EnergyCycleType =  direction.Energy.EnergyCycleType }),
+                            new NineStarKiDirection("", "", new NineStarKiEnergy(ENineStarKiEnergy.Fire) { EnergyCycleType =  direction.Energy.EnergyCycleType })
+                        });
+                    }
                 }
+                item.Directions.AddRange(newDirections);
             }
-
-            _directions.AddRange(newDirections);
         }
 
         private string GetCssClassName(int score)

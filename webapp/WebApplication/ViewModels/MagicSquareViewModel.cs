@@ -4,8 +4,8 @@ namespace K9.WebApplication.ViewModels
 {
     public class MagicSquareViewModel
     {
-        public NineStarKiEnergy GlobalEnergy { get; set; }
-        public NineStarKiEnergy PersonalEnergy { get; set; }
+        public NineStarKiEnergy GlobalKi { get; set; }
+        public NineStarKiEnergy PersonalHouseOccupied { get; set; }
         public NineStarKiEnergy PersonalChartEnergy { get; set; }
 
         public MagicSquareViewModel SecondMagicSquareViewModel { get; set; }
@@ -15,12 +15,12 @@ namespace K9.WebApplication.ViewModels
         
         public NineStarKiDirections GetDirections()
         {
-            var oppositeHouseOfFiveEnergy = new NineStarKiEnergy((ENineStarKiEnergy)NineStarKiModel.GetOppositeEnergyInMagicSquare(GlobalEnergy.GetHouseOfFive().EnergyNumber));
-            var oppositeHouseOccupiedEnergy = new NineStarKiEnergy((ENineStarKiEnergy)NineStarKiModel.GetOppositeEnergyInMagicSquare(PersonalEnergy.EnergyNumber));
+            var oppositeHouseOfFiveEnergy = new NineStarKiEnergy((ENineStarKiEnergy)NineStarKiModel.GetOppositeEnergyInMagicSquare(GlobalKi.GetHouseOfFive().EnergyNumber));
+            var oppositeHouseOccupiedEnergy = new NineStarKiEnergy((ENineStarKiEnergy)NineStarKiModel.GetOppositeEnergyInMagicSquare(PersonalHouseOccupied.EnergyNumber));
 
-            return new NineStarKiDirections(GlobalEnergy.GetHouseOfFive(),
+            return new NineStarKiDirections(GlobalKi.GetHouseOfFive(),
                oppositeHouseOfFiveEnergy,
-                PersonalEnergy,
+                PersonalHouseOccupied,
                 oppositeHouseOccupiedEnergy,
                 PersonalChartEnergy);
         }

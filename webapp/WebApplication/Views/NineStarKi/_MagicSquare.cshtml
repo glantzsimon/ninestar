@@ -6,20 +6,20 @@
 
 @{
     var directions = Model.GetDirections();
-    var magicSquareNumbers = Model.GlobalEnergy.GetMagicSquareNumbers();
-    var numbersMatch = Model.GlobalEnergy.EnergyNumber == Model.PersonalEnergy.EnergyNumber;
+    var magicSquareNumbers = Model.GlobalKi.GetMagicSquareNumbers();
+    var numbersMatch = Model.GlobalKi.EnergyNumber == Model.PersonalHouseOccupied.EnergyNumber;
     var showDirections = K9.WebApplication.Helpers.SessionHelper.GetShowDirections();
     var directionsStyle = !showDirections ? "display: none;" : "";
 
-    var isActive1 = Model.IsPersonalChart ? false : 4 == Model.PersonalEnergy.EnergyNumber;
-    var isActive2 = Model.IsPersonalChart ? false : 9 == Model.PersonalEnergy.EnergyNumber;
-    var isActive3 = Model.IsPersonalChart ? false : 2 == Model.PersonalEnergy.EnergyNumber;
-    var isActive4 = Model.IsPersonalChart ? false : 3 == Model.PersonalEnergy.EnergyNumber;
-    var isActive5 = Model.IsPersonalChart ? true : 5 == Model.PersonalEnergy.EnergyNumber;
-    var isActive6 = Model.IsPersonalChart ? false : 7 == Model.PersonalEnergy.EnergyNumber;
-    var isActive7 = Model.IsPersonalChart ? false : 8 == Model.PersonalEnergy.EnergyNumber;
-    var isActive8 = Model.IsPersonalChart ? false : 1 == Model.PersonalEnergy.EnergyNumber;
-    var isActive9 = Model.IsPersonalChart ? false : 6 == Model.PersonalEnergy.EnergyNumber;
+    var isActive1 = Model.IsPersonalChart ? false : 4 == Model.PersonalHouseOccupied.EnergyNumber;
+    var isActive2 = Model.IsPersonalChart ? false : 9 == Model.PersonalHouseOccupied.EnergyNumber;
+    var isActive3 = Model.IsPersonalChart ? false : 2 == Model.PersonalHouseOccupied.EnergyNumber;
+    var isActive4 = Model.IsPersonalChart ? false : 3 == Model.PersonalHouseOccupied.EnergyNumber;
+    var isActive5 = Model.IsPersonalChart ? true : 5 == Model.PersonalHouseOccupied.EnergyNumber;
+    var isActive6 = Model.IsPersonalChart ? false : 7 == Model.PersonalHouseOccupied.EnergyNumber;
+    var isActive7 = Model.IsPersonalChart ? false : 8 == Model.PersonalHouseOccupied.EnergyNumber;
+    var isActive8 = Model.IsPersonalChart ? false : 1 == Model.PersonalHouseOccupied.EnergyNumber;
+    var isActive9 = Model.IsPersonalChart ? false : 6 == Model.PersonalHouseOccupied.EnergyNumber;
 
     var active1Class = isActive1 ? "active " : "";
     var active2Class = isActive2 ? "active " : "";
@@ -39,13 +39,13 @@
         <div class="cell @active2Class number-@magicSquareNumbers[8]" data-index="2">@magicSquareNumbers[8]</div>
         <div class="cell @active3Class number-@magicSquareNumbers[1]" data-index="3">@magicSquareNumbers[1]</div>
         <div class="cell @active4Class number-@magicSquareNumbers[2]" data-index="4">@magicSquareNumbers[2]</div>
-        <div class="cell @active5Class number-@Model.GlobalEnergy.EnergyNumber" data-index="5">@Model.GlobalEnergy.EnergyNumber</div>
+        <div class="cell @active5Class number-@Model.GlobalKi.EnergyNumber" data-index="5">@Model.GlobalKi.EnergyNumber</div>
         <div class="cell @active6Class number-@magicSquareNumbers[6]" data-index="6">@magicSquareNumbers[6]</div>
         <div class="cell @active7Class number-@magicSquareNumbers[7]" data-index="7">@magicSquareNumbers[7]</div>
         <div class="cell @active8Class number-@magicSquareNumbers[0]" data-index="8">@magicSquareNumbers[0]</div>
         <div class="cell @active9Class number-@magicSquareNumbers[5]" data-index="9">@magicSquareNumbers[5]</div>
 
-        @if (Model.GlobalEnergy.EnergyCycleType != ENineStarKiEnergyCycleType.EpochEnergy && Model.GlobalEnergy.EnergyCycleType != ENineStarKiEnergyCycleType.GenerationalEnergy)
+        @if (Model.GlobalKi.EnergyCycleType != ENineStarKiEnergyCycleType.EpochEnergy && Model.GlobalKi.EnergyCycleType != ENineStarKiEnergyCycleType.GenerationalEnergy)
         {
             <div class="directions-line-overlay" style="@directionsStyle">
                 <div data-tooltip-title="@directions.FiveYelloKilling.Name" data-tooltip="@directions.FiveYellowKillingDescription" class="line five-yellow-killing to-@directions.FiveYelloKilling.Direction"></div>

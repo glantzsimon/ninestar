@@ -86,8 +86,8 @@
             @Html.Partial("_CycleTitle", Model.PersonalHousesOccupiedEnergies.Hour)
             @Html.Partial("../NineStarKi/_MagicSquareDisplay", new MagicSquareViewModel
             {
-                GlobalEnergy = Model.GlobalCycleEnergies.Hour,
-                PersonalEnergy = Model.PersonalHousesOccupiedEnergies.Hour
+                GlobalKi = Model.GlobalCycleEnergies.Hour,
+                PersonalHouseOccupied = Model.PersonalHousesOccupiedEnergies.Hour
             })
         </div>
     </div>

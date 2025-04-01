@@ -200,30 +200,39 @@ namespace K9.WebApplication.Models
 
     public enum ENineStarKiDirection
     {
+        [Display(Order = 1)]
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.North)]
         North = 1,
 
+        [Display(Order = 6)]
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.SouthWest)]
         SouthWest,
 
+        [Display(Order = 3)]
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.East)]
         East,
 
+        [Display(Order = 4)]
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.SouthEast)]
         SouthEast,
 
-        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Unspecified)]
+        [Display(Order = 0)]
+        [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.Centre)]
         Centre,
 
+        [Display(Order = 8)]
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.NorthWest)]
         NorthWest,
 
+        [Display(Order = 7)]
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.West)]
         West,
 
+        [Display(Order = 2)]
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.NorthEast)]
         NorthEast,
 
+        [Display(Order = 5)]
         [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.South)]
         South
     }

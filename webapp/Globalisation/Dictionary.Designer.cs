@@ -19001,7 +19001,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Worst Directions of Travel.
+        ///   Looks up a localized string similar to Directions of Travel Details.
         /// </summary>
         public static string WorstDirectionsToTravelIn {
             get {

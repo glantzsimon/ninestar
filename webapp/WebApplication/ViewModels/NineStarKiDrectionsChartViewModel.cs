@@ -49,7 +49,7 @@ namespace K9.WebApplication.ViewModels
                     return (
                         Score: g.Key,
                         CssClassName: g.First().CssClassName,
-                        Guidance: g.First().Guidance,
+                        Guidance: guidance,
                         Directions: directions
                         );
                 })

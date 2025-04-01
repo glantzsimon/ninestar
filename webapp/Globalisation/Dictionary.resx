@@ -5210,6 +5210,6 @@
     <value>It’s advised to take care when travelling during this time. Be extra vigilant and avoid any unnecessary risks.</value>
   </data>
   <data name="WorstDirectionsToTravelIn" xml:space="preserve">
-    <value>Directions of Travel Details</value>
+    <value>Directions of Travel Summary</value>
   </data>
 </root>

@@ -1,0 +1,52 @@
+﻿@using K9.Base.WebApplication.Extensions
+@using K9.SharedLibrary.Extensions
+@using K9.WebApplication.Enums
+@using K9.WebApplication.Extensions
+@using K9.WebApplication.Helpers
+@using K9.WebApplication.ViewModels
+@using SessionConstants = K9.WebApplication.Constants.SessionConstants
+@model K9.WebApplication.Models.NineStarKiModel
+
+@{
+    var membership = this.GetActiveUserMembership();
+    var isUnlimited = membership != null && membership.IsUnlimited() || K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin();
+    var displayPreference = K9.WebApplication.Helpers.SessionHelper.GetEnergyDefaultDisplay();
+    var showDirectionsStyle = displayPreference == (int)EEnergyDisplay.MagicSquare && K9.WebApplication.Helpers.SessionHelper.GetShowDirections() ? "" :
+    "display: none;";
+    var directionsChartData = Model.GetDrectionsChartViewModel().GetDirectionsChartData();
+}
+
+@if (isUnlimited)
+{
+    <div class="directions-more-info" style="@showDirectionsStyle">
+        <h4>@Dictionary.WorstDirectionsToTravelIn</h4>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>@Dictionary.Direction</th>
+                        <th>@Dictionary.Score</th>
+                        <th>@Dictionary.Guidance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var score in directionsChartData)
+                    {
+                        <tr>
+                            <td>@(string.Join(", ", score.Directions.Select(e => e.DirectionName)))</td>
+                            <td>
+                                <span class="status-circle @score.CssClassName">
+                                    @if (score.Score >= 10)
+                                    {
+                                        <i class="fa fa-exclamation-triangle"></i>
+                                    }
+                                </span>
+                            </td>
+                            <td class="">@score.Guidance</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}

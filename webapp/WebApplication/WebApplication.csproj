@@ -1659,6 +1659,7 @@
     <Content Include="Views\NineStarKi\_MagicSquare.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\EnergyDisplay.cshtml" />
     <Content Include="Views\NineStarKi\_MagicSquareDisplay.cshtml" />
+    <Content Include="Views\Predictions\_DirectionsChart.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

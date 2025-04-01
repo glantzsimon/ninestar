@@ -17141,7 +17141,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to It should be relatively safe to travel at this time; however, it’s advisable to take care and remain more vigilant than usual..
+        ///   Looks up a localized string similar to It should be relatively safe to travel {Directions} at this time; however, it’s advisable to take care and remain more vigilant than usual..
         /// </summary>
         public static string TravelWithCare {
             get {

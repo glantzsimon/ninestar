@@ -95,13 +95,13 @@ namespace K9.WebApplication.ViewModels
 
         private string GetGuidance(int score, List<(ENineStarKiDirection, ENineStarKiDirection, string)> directions)
         {
-            if (score >= 11) return TemplateParser.Parse(Dictionary.AvoidAllTravel, new { Directions = directions.Select(e => e.Item1.ToString()).JoinWithOr() });
-            if (score >= 10) return TemplateParser.Parse(Dictionary.AvoidAllTravel, new { Directions = directions.Select(e => e.Item1.ToString()).JoinWithOr() });
-            if (score >= 8) return TemplateParser.Parse(Dictionary.AvoidTravel, new { Directions = directions.Select(e => e.Item1.ToString()).JoinWithOr() });
-            if (score >= 7) return TemplateParser.Parse(Dictionary.KeepTravelShortAndInfrequent, new { Directions = directions.Select(e => e.Item1.ToString()).JoinWithOr() });
-            if (score >= 5) return TemplateParser.Parse(Dictionary.TravelWithGreatCare, new { Directions = directions.Select(e => e.Item1.ToString()).JoinWithOr() });
-            if (score >= 3) return TemplateParser.Parse(Dictionary.TravelWithCare, new { Directions = directions.Select(e => e.Item1.ToString()).JoinWithOr() });
-            if (score >= 1) return TemplateParser.Parse(Dictionary.TravelWithCare, new { Directions = directions.Select(e => e.Item1.ToString()).JoinWithOr() });
+            if (score >= 11) return TemplateParser.Parse(Dictionary.AvoidAllTravel, new { Directions = directions.Select(e => e.Item1.ToString().ToProperCase()).JoinWithOr() });
+            if (score >= 10) return TemplateParser.Parse(Dictionary.AvoidAllTravel, new { Directions = directions.Select(e => e.Item1.ToString().ToProperCase()).JoinWithOr() });
+            if (score >= 8) return TemplateParser.Parse(Dictionary.AvoidTravel, new { Directions = directions.Select(e => e.Item1.ToString().ToProperCase()).JoinWithOr() });
+            if (score >= 7) return TemplateParser.Parse(Dictionary.KeepTravelShortAndInfrequent, new { Directions = directions.Select(e => e.Item1.ToString().ToProperCase()).JoinWithOr() });
+            if (score >= 5) return TemplateParser.Parse(Dictionary.TravelWithGreatCare, new { Directions = directions.Select(e => e.Item1.ToString().ToProperCase()).JoinWithOr() });
+            if (score >= 3) return TemplateParser.Parse(Dictionary.TravelWithCare, new { Directions = directions.Select(e => e.Item1.ToString().ToProperCase()).JoinWithOr() });
+            if (score >= 1) return TemplateParser.Parse(Dictionary.TravelWithCare, new { Directions = directions.Select(e => e.Item1.ToString().ToProperCase()).JoinWithOr() });
             return "OK";
         }
 

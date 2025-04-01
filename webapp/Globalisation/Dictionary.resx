@@ -5204,7 +5204,7 @@
     <value>Score</value>
   </data>
   <data name="TravelWithCare" xml:space="preserve">
-    <value>It should be relatively safe to travel at this time; however, it’s advisable to take care and remain more vigilant than usual.</value>
+    <value>It should be relatively safe to travel {Directions} at this time; however, it’s advisable to take care and remain more vigilant than usual.</value>
   </data>
   <data name="TravelWithGreatCare" xml:space="preserve">
     <value>It’s advised to take care when travelling {Directions} during this time. Be extra vigilant and avoid any unnecessary risks.</value>
